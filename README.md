@@ -1,5 +1,7 @@
 # Hebrew Calendar
 
+>This project follows the [Ordisoftware Development Guidelines](https://github.com/Ordisoftware/Development-Guidelines).
+
 >Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
 >[GitHub Repository](https://github.com/Ordisoftware/Hebrew-Calendar)<br/>
 >[Project Website](http://www.ordisoftware.com/projects/hebrew-calendar)<br/>
