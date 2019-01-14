@@ -224,16 +224,5 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Ordinateur\\SQLExpress;Initial Catalog=Hebrew-calendar;Integrated Secu" +
-            "rity=True")]
-        public string Hebrew_calendarConnectionString {
-            get {
-                return ((string)(this["Hebrew_calendarConnectionString"]));
-            }
-        }
     }
 }

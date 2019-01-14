@@ -42,6 +42,7 @@
       this.labelLunarMonthValue = new System.Windows.Forms.Label();
       this.labelSunset = new System.Windows.Forms.Label();
       this.labelSunrise = new System.Windows.Forms.Label();
+      this.panel3 = new System.Windows.Forms.Panel();
       this.panel1.SuspendLayout();
       this.panel2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMoon)).BeginInit();
@@ -50,7 +51,6 @@
       // panel1
       // 
       this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-      this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.panel1.Controls.Add(this.labelDate);
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -65,14 +65,13 @@
       this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.labelDate.Location = new System.Drawing.Point(5, 5);
       this.labelDate.Name = "labelDate";
-      this.labelDate.Size = new System.Drawing.Size(282, 23);
+      this.labelDate.Size = new System.Drawing.Size(284, 25);
       this.labelDate.TabIndex = 0;
       this.labelDate.Text = "labelDate";
       this.labelDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
       // panel2
       // 
-      this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.panel2.Controls.Add(this.pictureMoon);
       this.panel2.Controls.Add(this.labelMoonsetValue);
       this.panel2.Controls.Add(this.labelMoonriseValue);
@@ -198,11 +197,21 @@
       this.labelSunrise.TabIndex = 5;
       this.labelSunrise.Text = "Sunset";
       // 
+      // panel3
+      // 
+      this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+      this.panel3.Location = new System.Drawing.Point(0, 35);
+      this.panel3.Name = "panel3";
+      this.panel3.Size = new System.Drawing.Size(294, 1);
+      this.panel3.TabIndex = 6;
+      // 
       // ShowDayForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(294, 193);
+      this.Controls.Add(this.panel3);
       this.Controls.Add(this.panel2);
       this.Controls.Add(this.panel1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -237,5 +246,6 @@
     internal System.Windows.Forms.Label labelLunarMonthValue;
     internal System.Windows.Forms.Label labelSunset;
     internal System.Windows.Forms.Label labelSunrise;
+    private System.Windows.Forms.Panel panel3;
   }
 }

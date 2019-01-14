@@ -32,11 +32,10 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrayIconForm));
       this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
-      this.SeparatorTrayMenuSettings = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenuView = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTray.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -53,43 +52,37 @@
             this.MenuShowHide,
             this.MenuAbout,
             this.SeparatorTrayMenuView,
-            this.MenuExit,
-            this.SeparatorTrayMenuSettings});
+            this.MenuExit});
       this.MenuTray.Name = "contextMenuStrip";
-      this.MenuTray.Size = new System.Drawing.Size(114, 82);
+      this.MenuTray.Size = new System.Drawing.Size(181, 98);
       // 
-      // MenuExit
+      // MenuShowHide
       // 
-      this.MenuExit.Image = ((System.Drawing.Image)(resources.GetObject("MenuExit.Image")));
-      this.MenuExit.Name = "MenuExit";
-      this.MenuExit.Size = new System.Drawing.Size(113, 22);
-      this.MenuExit.Text = "Exit";
-      this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
-      // 
-      // SeparatorTrayMenuSettings
-      // 
-      this.SeparatorTrayMenuSettings.Name = "SeparatorTrayMenuSettings";
-      this.SeparatorTrayMenuSettings.Size = new System.Drawing.Size(110, 6);
+      this.MenuShowHide.Name = "MenuShowHide";
+      this.MenuShowHide.Size = new System.Drawing.Size(180, 22);
+      this.MenuShowHide.Text = "Restore";
+      this.MenuShowHide.Click += new System.EventHandler(this.MenuShowHide_Click);
       // 
       // MenuAbout
       // 
       this.MenuAbout.Image = ((System.Drawing.Image)(resources.GetObject("MenuAbout.Image")));
       this.MenuAbout.Name = "MenuAbout";
-      this.MenuAbout.Size = new System.Drawing.Size(113, 22);
+      this.MenuAbout.Size = new System.Drawing.Size(180, 22);
       this.MenuAbout.Text = "About";
       this.MenuAbout.Click += new System.EventHandler(this.MenuAbout_Click);
       // 
       // SeparatorTrayMenuView
       // 
       this.SeparatorTrayMenuView.Name = "SeparatorTrayMenuView";
-      this.SeparatorTrayMenuView.Size = new System.Drawing.Size(110, 6);
+      this.SeparatorTrayMenuView.Size = new System.Drawing.Size(177, 6);
       // 
-      // MenuShowHide
+      // MenuExit
       // 
-      this.MenuShowHide.Name = "MenuShowHide";
-      this.MenuShowHide.Size = new System.Drawing.Size(113, 22);
-      this.MenuShowHide.Text = "Restore";
-      this.MenuShowHide.Click += new System.EventHandler(this.MenuShowHide_Click);
+      this.MenuExit.Image = ((System.Drawing.Image)(resources.GetObject("MenuExit.Image")));
+      this.MenuExit.Name = "MenuExit";
+      this.MenuExit.Size = new System.Drawing.Size(180, 22);
+      this.MenuExit.Text = "Exit";
+      this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
       // 
       // TrayIconForm
       // 
@@ -115,7 +108,6 @@
 
     private System.Windows.Forms.ContextMenuStrip MenuTray;
     internal System.Windows.Forms.ToolStripMenuItem MenuExit;
-    private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenuSettings;
     private System.Windows.Forms.ToolStripMenuItem MenuAbout;
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenuView;
     internal System.Windows.Forms.ToolStripMenuItem MenuShowHide;
