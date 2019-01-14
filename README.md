@@ -7,3 +7,9 @@
 A tool for Windows written in C# that allows to generate a daily calendar based on the lunar cycle in order to determine the new year and the celebration times according to the hebrew Torah.
 
 [Download v1.0](https://github.com/Ordisoftware/Hebrew-Calendar/releases/tag/v1.0)
+
+###Requirements
+
+- Windows 7
+- Framework .NET 3.5
+- Screen 1024x768
