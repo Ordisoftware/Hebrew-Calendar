@@ -133,9 +133,11 @@ namespace Ordisoftware.HebrewCalendar
     private void actionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       DateTime date = DateTime.Now;
-      //TODO
-      //if ( DisplayManager.QueryValue("Birthday", ref date) == InputValueResult.Modified )
-        //Program.Settings.ShabatDay = date.AddDays(-1).DayOfWeek;
+      var form = new SelectDayForm();
+      form.Text = "Select birthday";
+      form.ShowDialog();
+      date = form.monthCalendar.SelectionStart;
+      Program.Settings.ShabatDay = date.AddDays(-1).DayOfWeek;
     }
 
     /// <summary>

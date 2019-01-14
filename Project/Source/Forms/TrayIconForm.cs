@@ -187,6 +187,16 @@ namespace Ordisoftware.HebrewCalendar
           form.labelMoonriseValue.Text = item.Moonrise.ToString();
           form.labelMoonsetValue.Text = item.Moonset.ToString();
           form.pictureMoon.Image = ResizeImage(MoonPhase.MoonPhaseImage.Draw(date.Year, date.Month, date.Day, 200, 200), 100, 100);
+          if ( (MoonriseType)item.MoonriseType == MoonriseType.AfterSet )
+          {
+            int p1 = form.labelMoonrise.Top;
+            int p2 = form.labelMoonset.Top;
+            form.labelMoonrise.Top = p2;
+            form.labelMoonset.Top = p1;
+            form.labelMoonriseValue.Top = p2;
+            form.labelMoonsetValue.Top = p1;
+          }
+          // TODO invert moonrise/set if after
           form.Visible = true;
           form.BringToFront();
         }
@@ -220,7 +230,6 @@ namespace Ordisoftware.HebrewCalendar
         graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
         graphics.SmoothingMode = SmoothingMode.HighQuality;
         graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
         using ( var wrapMode = new ImageAttributes() )
         {
           wrapMode.SetWrapMode(WrapMode.TileFlipXY);
