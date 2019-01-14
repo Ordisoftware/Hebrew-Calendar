@@ -187,6 +187,7 @@ namespace Ordisoftware.HebrewCalendar
           form.labelMoonriseValue.Text = item.Moonrise.ToString();
           form.labelMoonsetValue.Text = item.Moonset.ToString();
           form.pictureMoon.Image = ResizeImage(MoonPhase.MoonPhaseImage.Draw(date.Year, date.Month, date.Day, 200, 200), 100, 100);
+          // TODO invert moonrise/set if after
           form.Visible = true;
           form.BringToFront();
         }
