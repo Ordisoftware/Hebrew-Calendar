@@ -658,7 +658,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="buttonNextDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+    <value>Flat</value>
   </data>
   <data name="buttonNextDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -691,7 +691,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="buttonSelectDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+    <value>Flat</value>
   </data>
   <data name="buttonSelectDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -727,7 +727,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="buttonPreviousDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+    <value>Flat</value>
   </data>
   <data name="buttonPreviousDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
