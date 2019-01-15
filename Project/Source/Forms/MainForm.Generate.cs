@@ -24,11 +24,6 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    public const string ProgressDeleteDaysText = "Deleting days...";
-    public const string ProgressCreateDaysText = "Populating days...";
-    public const string ProgressAnalyzingDaysText = "Analyzing days...";
-    public const string ProgressGenerateResultText = "Generating report...";
-
     private int Count;
 
     /// <summary>
@@ -80,7 +75,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( year == yearLast && month > 12 ) break;
           for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
           {
-            if ( !UpdateProgress(progress++, Count, ProgressCreateDaysText) ) return;
+            if ( !UpdateProgress(progress++, Count, LocalizerHelper.ProgressCreateDaysText.GetLang()) ) return;
             var row = lunisolarCalendar.LunisolarDays.NewLunisolarDaysRow();
             row.Date = SQLiteDateTool.GetDate(year, month, day);
             InitializeDay(row);
@@ -130,7 +125,7 @@ namespace Ordisoftware.HebrewCalendar
       AAPlus.Date date = new AAPlus.Date();
       long jdYear, jdMonth, jdDay, jdHour, jdMinute;
       double second;
-      void set(SeasonEventType season, Func<long, double> action)
+      void set(SeasonChangeType season, Func<long, double> action)
       {
         date.Set(action(year), true);
         date.Get(out jdYear, out jdMonth, out jdDay, out jdHour, out jdMinute, out second);
@@ -139,10 +134,10 @@ namespace Ordisoftware.HebrewCalendar
         var day = lunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == strDate);
         if ( day != null ) day.SeasonChange = (int)season;
       }
-      set(SeasonEventType.SpringEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
-      set(SeasonEventType.SummerSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
-      set(SeasonEventType.AutumnEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
-      set(SeasonEventType.WinterSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
+      set(SeasonChangeType.SpringEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
+      set(SeasonChangeType.SummerSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
+      set(SeasonChangeType.AutumnEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
+      set(SeasonChangeType.WinterSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
     }
 
     /// <summary>
@@ -158,7 +153,7 @@ namespace Ordisoftware.HebrewCalendar
       int delta = 0;
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in lunisolarCalendar.LunisolarDays.Rows )
       {
-        if ( !UpdateProgress(progress++, Count, ProgressAnalyzingDaysText) ) return;
+        if ( !UpdateProgress(progress++, Count, LocalizerHelper.ProgressAnalyzingDaysText.GetLang()) ) return;
         if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month, ref delta);
         day.LunarMonth = month;
         if ( day.LunarDay == 1 ) delta = 0;
@@ -194,7 +189,7 @@ namespace Ordisoftware.HebrewCalendar
       var dateDay = SQLiteDateTool.GetDate(day.Date);
       var equinoxe = ( from d in lunisolarCalendar.LunisolarDays
                        where dateDay.Year == SQLiteDateTool.GetDate(day.Date).Year 
-                          && d.SeasonChange == (int)SeasonEventType.SpringEquinox
+                          && d.SeasonChange == (int)SeasonChangeType.SpringEquinox
                        select d ).First();
       var dateEquinox = SQLiteDateTool.GetDate(equinoxe.Date);
       int deltaNewLambDay = dateEquinox.Day - TorahCelebrations.NewLambDay;

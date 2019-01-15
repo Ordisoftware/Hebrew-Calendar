@@ -31,7 +31,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicates application title from file version info or executable path.
     /// </summary>
-    static private string Title
+    static public string Title
     {
       get
       {

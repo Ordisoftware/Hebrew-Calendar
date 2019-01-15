@@ -12,7 +12,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2019-01 </edited>
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -41,12 +41,14 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate the japanese calendar instance.
     /// </summary>
-    static public readonly ChineseLunisolarCalendar JapaneseCalendar = new ChineseLunisolarCalendar();
+    static public readonly ChineseLunisolarCalendar JapaneseCalendar 
+      = new ChineseLunisolarCalendar();
 
     /// <summary>
     /// Indicate the SunMoon instance.
     /// </summary>
-    static public readonly SunMoon SunMoon = new SunMoon();
+    static public readonly SunMoon SunMoon 
+      = new SunMoon();
 
     /// <summary>
     /// Get the sun and moon ephemeris.
@@ -100,27 +102,13 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Convert a phase into a string representation.
-    /// </summary>
-    /// <param name="phase">The phase.</param>
-    /// <returns>
-    /// A string that represents the phase.
-    /// </returns>
-    static public string ToString(MoonPhaseType phase)
-    {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !MoonPhaseNames[phase].ContainsKey(lang) ) lang = "en";
-      return MoonPhaseNames[phase][lang];
-    }
-
-    /// <summary>
-    /// List of names of the hebrew months.
+    /// List of names of the babylonian hebrew months.
     /// </summary>
     static public readonly string[] BabylonianHebrewMonthNames =
     {
       "",
-      "Nissane", "Iyar", "Sivane", "Tamouz", "Av", "Eloul",
-      "Yichri", "Hèchvane", "Kislev", "Téveth", "Chevat", "Adar",
+      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
+      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
       "Adar II"
     };
 

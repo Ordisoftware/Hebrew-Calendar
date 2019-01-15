@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewCalendar
   /// <summary>
   /// Provide the season event type.
   /// </summary>
-  public enum SeasonEventType
+  public enum SeasonChangeType
   {
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// The spring equinox.
     /// </summary>
-
     SpringEquinox,
+
     /// <summary>
     /// The summer solstice.
     /// </summary>

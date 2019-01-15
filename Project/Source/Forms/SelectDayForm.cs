@@ -25,6 +25,7 @@ namespace Ordisoftware.HebrewCalendar
     public SelectDayForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
     }
 
     private void buttonOk_Click(object sender, EventArgs e)

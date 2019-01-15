@@ -26,6 +26,7 @@ namespace Ordisoftware.HebrewCalendar
     public SelectYearsForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
     }
 
     private void SelectYearsRangeForm_Load(object sender, EventArgs e)

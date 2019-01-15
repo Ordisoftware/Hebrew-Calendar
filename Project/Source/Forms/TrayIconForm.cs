@@ -13,11 +13,11 @@
 /// </license>
 /// <created> 2018-11 </created>
 /// <edited> 2019-01 </edited>
+using Microsoft.Win32;
+using Ordisoftware.Core;
 using System;
 using System.Drawing;
-using Ordisoftware.Core;
 using System.Windows.Forms;
-using Microsoft.Win32;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// The instance.
+    /// Indicate the singleton instance.
     /// </summary>
     static internal TrayIconForm Instance { get; private set; }
 
@@ -51,12 +51,9 @@ namespace Ordisoftware.HebrewCalendar
       Icon = MainForm.Instance.Icon;
       TrayIcon.Icon = Icon;
       Visible = false;
+      ShowInTaskbar = false;
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      Form form = new Form();
-      form.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-      form.ShowInTaskbar = false;
-      Owner = form;
     }
 
     /// <summary>
@@ -73,8 +70,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( MainForm.Instance.lunisolarCalendar.LunisolarDays.Count > 0 )
           MenuShowHide_Click(null, null);
         else
-        if ( DisplayManager.QueryYesNo("Database is empty." + Environment.NewLine +
-                                       "Do you want to generate a calendar?") )
+        if ( DisplayManager.QueryYesNo(LocalizerHelper.GenerateCalendarText.GetLang()) )
         {
           PreferencesForm.Instance.ShowDialog();
           MainForm.Instance.actionGenerate.PerformClick();
@@ -115,7 +111,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MenuExit_Click(object sender, EventArgs e)
     {
-      if ( Program.Settings.ConfirmClosing && !DisplayManager.QueryYesNo("Exit application ?") ) return;
+      if ( Program.Settings.ConfirmClosing 
+        && !DisplayManager.QueryYesNo(LocalizerHelper.ExitApplicationText.GetLang()) )
+        return;
       Close();
     }
 
@@ -156,7 +154,7 @@ namespace Ordisoftware.HebrewCalendar
         form.Visible = false;
         form.ShowInTaskbar = false;
       }
-      MenuShowHide.Text = form.Visible ? "Hide" : "Restore";
+      MenuShowHide.Text = LocalizerHelper.HideRestoreText.GetLang(form.Visible);
     }
 
     /// <summary>
@@ -168,7 +166,12 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( e.Button != MouseButtons.Left ) return;
       var form = ShowDayForm.Instance;
-      if ( !form.Visible )
+      if ( form.Visible )
+      {
+        form.Visible = false;
+        form.ShowInTaskbar = false;
+      }
+      else
       {
         try
         {
@@ -179,11 +182,6 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
-      }
-      else
-      {
-        form.Visible = false;
-        form.ShowInTaskbar = false;
       }
     }
 

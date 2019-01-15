@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("Ordisoftware Hebrew Calendar")]
-[assembly: AssemblyDescription("A tool to generate a lunisolar calendar based on the Torah")]
+[assembly: AssemblyDescription("A tool to generate a hebrew lunisolar calendar")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ordisoftware")]
 [assembly: AssemblyProduct("www.ordisoftware.com/projects/hebrew-calendar")]

@@ -39,6 +39,7 @@ namespace Ordisoftware.HebrewCalendar
     [STAThread]
     static void Main(string[] args)
     {
+      //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
       string filenameIcon = @"..\Application.ico";
       try
       {
@@ -47,6 +48,7 @@ namespace Ordisoftware.HebrewCalendar
         MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(filenameIcon);
         PreferencesForm.Instance.Icon = MainForm.Instance.Icon;
         AboutBox.Instance.Icon = MainForm.Instance.Icon;
+        ShowDayForm.Instance.Icon = MainForm.Instance.Icon;
         Application.Run(TrayIconForm.Instance);
       }
       catch ( Exception except )

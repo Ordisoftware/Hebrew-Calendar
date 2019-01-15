@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectDayForm));
       this.monthCalendar = new System.Windows.Forms.MonthCalendar();
       this.panel1 = new System.Windows.Forms.Panel();
       this.buttonCancel = new System.Windows.Forms.Button();
@@ -37,53 +38,38 @@
       // 
       // monthCalendar
       // 
-      this.monthCalendar.Location = new System.Drawing.Point(8, 9);
+      resources.ApplyResources(this.monthCalendar, "monthCalendar");
       this.monthCalendar.Name = "monthCalendar";
-      this.monthCalendar.TabIndex = 0;
       // 
       // panel1
       // 
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.buttonCancel);
       this.panel1.Controls.Add(this.buttonOk);
-      this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.panel1.Location = new System.Drawing.Point(0, 178);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(242, 28);
-      this.panel1.TabIndex = 53;
       // 
       // buttonCancel
       // 
-      this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.buttonCancel, "buttonCancel");
       this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.buttonCancel.Location = new System.Drawing.Point(164, 2);
       this.buttonCancel.Name = "buttonCancel";
-      this.buttonCancel.Size = new System.Drawing.Size(75, 24);
-      this.buttonCancel.TabIndex = 24;
-      this.buttonCancel.Text = "Cancel";
       // 
       // buttonOk
       // 
-      this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.buttonOk.Location = new System.Drawing.Point(83, 2);
+      resources.ApplyResources(this.buttonOk, "buttonOk");
       this.buttonOk.Name = "buttonOk";
-      this.buttonOk.Size = new System.Drawing.Size(75, 24);
-      this.buttonOk.TabIndex = 50;
-      this.buttonOk.Text = "Ok";
       this.buttonOk.UseVisualStyleBackColor = true;
       this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
       // 
-      // FindDayForm
+      // SelectDayForm
       // 
       this.AcceptButton = this.buttonOk;
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.buttonCancel;
-      this.ClientSize = new System.Drawing.Size(242, 206);
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.monthCalendar);
-      this.Name = "FindDayForm";
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Select date";
+      this.Name = "SelectDayForm";
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 

@@ -26,6 +26,9 @@ namespace Ordisoftware.HebrewCalendar
   public partial class ShowDayForm : Form
   {
 
+    /// <summary>
+    /// Indicate the singleton instance.
+    /// </summary>
     static internal ShowDayForm Instance { get; private set; }
 
     static ShowDayForm()
@@ -45,13 +48,19 @@ namespace Ordisoftware.HebrewCalendar
                      where day.Date == strDate
                      select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
         labelDate.Text = value.ToLongDateString();
-        labelLunarMonthValue.Text = AstronomyUtility.BabylonianHebrewMonthNames[item.LunarMonth] + " #" + item.LunarMonth.ToString();
+        string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[item.LunarMonth];
+        labelLunarMonthValue.Text = strMonth + " #" + item.LunarMonth.ToString();
         labelLunarDayValue.Text = "Day #" + item.LunarDay.ToString();
         labelSunriseValue.Text = item.Sunrise.ToString();
         labelSunsetValue.Text = item.Sunset.ToString();
         labelMoonriseValue.Text = item.Moonrise.ToString();
         labelMoonsetValue.Text = item.Moonset.ToString();
-        pictureMoon.Image = ResizeImage(MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200), 100, 100);
+        labelEventSeasonValue.Text = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)item.SeasonChange);
+        if ( labelEventSeasonValue.Text == "" ) labelEventSeasonValue.Text = "-";
+        labelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)item.TorahEvents);
+        if ( labelEventTorahValue.Text == "" ) labelEventTorahValue.Text = "-";
+        var image = MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
+        pictureMoon.Image = ResizeImage(image, 100, 100);
         if ( (MoonriseType)item.MoonriseType == MoonriseType.AfterSet )
         {
           labelMoonrise.Top = 125;
@@ -75,11 +84,49 @@ namespace Ordisoftware.HebrewCalendar
     public ShowDayForm()
     {
       InitializeComponent();
+      Text = Core.DisplayManager.Title;
       int left = SystemInformation.WorkingArea.Left;
       int top = SystemInformation.WorkingArea.Top;
       int width = SystemInformation.WorkingArea.Width;
       int height = SystemInformation.WorkingArea.Height;
       Location = new Point(left + width - Width, top + height - Height);
+    }
+
+    private void buttonSelectDay_Click(object sender, EventArgs e)
+    {
+      try
+      {
+        DateTime date;
+        var form = new SelectDayForm();
+        form.TopMost = true;
+        if ( form.ShowDialog() != DialogResult.OK ) return;
+        Date = form.monthCalendar.SelectionStart;
+      }
+      catch
+      {
+      }
+    }
+
+    private void buttonPreviousDay_Click(object sender, EventArgs e)
+    {
+      try
+      {
+        Date = _Date.AddDays(-1);
+      }
+      catch
+      {
+      }
+    }
+
+    private void buttonNextDay_Click(object sender, EventArgs e)
+    {
+      try
+      {
+        Date = _Date.AddDays(1);
+      }
+      catch
+      {
+      }
     }
 
     /// <summary>
@@ -110,27 +157,6 @@ namespace Ordisoftware.HebrewCalendar
       return destImage;
     }
 
-    private void buttonPreviousDay_Click(object sender, EventArgs e)
-    {
-      try
-      {
-        Date = _Date.AddDays(-1);
-      }
-      catch
-      {
-      }
-    }
-
-    private void buttonNextDay_Click(object sender, EventArgs e)
-    {
-      try
-      {
-        Date = _Date.AddDays(1);
-      }
-      catch
-      {
-      }
-    }
   }
 
 }

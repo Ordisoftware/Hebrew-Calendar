@@ -84,7 +84,7 @@ Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion; Excludes: *.
 Source: ..\*; DestDir: {app}; Flags: ignoreversion
 Source: *; DestDir: {app}\Setup; Excludes: *.---
 DestDir: {app}; Source: ..\Register ODBC.reg
-DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite; Flags: onlyifdoesntexist
+DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite
 
 [Icons]
 Name: {commondesktop}\{#MyAppPublisher} {#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: desktopicon; IconFilename: {app}\Application.ico
