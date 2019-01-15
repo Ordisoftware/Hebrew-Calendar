@@ -73,9 +73,12 @@ namespace Ordisoftware.HebrewCalendar
         if ( MainForm.Instance.lunisolarCalendar.LunisolarDays.Count > 0 )
           MenuShowHide_Click(null, null);
         else
-        if ( DisplayManager.QueryYesNo("Database is empty." + Environment.NewLine + 
+        if ( DisplayManager.QueryYesNo("Database is empty." + Environment.NewLine +
                                        "Do you want to generate a calendar?") )
+        {
+          PreferencesForm.Instance.ShowDialog();
           MainForm.Instance.actionGenerate.PerformClick();
+        }
         else
           MenuShowHide_Click(null, null);
       }

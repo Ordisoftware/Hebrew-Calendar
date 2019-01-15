@@ -250,7 +250,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( DisplayManager.QueryYesNo("Preferences changed." + Environment.NewLine + 
                                        "Do you want to regenerate the report?") )
         {
-          GenerateTextReport();
+          actionGenerate.PerformClick();
           actionFindDay_Click(null, null);
         }
   
