@@ -40,6 +40,7 @@ namespace Ordisoftware.HebrewCalendar
     static void Main(string[] args)
     {
       //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+      //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
       string filenameIcon = @"..\Application.ico";
       try
       {
