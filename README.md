@@ -48,11 +48,6 @@ The setup tries to register an ODBC dsn to the registry but in case of problem r
 
 ## Changelog
 
-#### 2019.__.__ - Version 1.1
-
-- Fix translation of season change events not displayed in English.
-- Improve translation from English to French.
-
 #### 2019.01.14 - Version 1.0
 
 - Initial release
