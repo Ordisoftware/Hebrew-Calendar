@@ -13,12 +13,7 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2019-01 </edited>
-using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
-using System.Linq;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -31,16 +26,15 @@ namespace Ordisoftware.HebrewCalendar
     private enum EphemerisType { Rise, Set, SummerHour, WinterHour }
 
     const int ColumnEventLenght = 38;
-    const string ColumnSepLeft = "| ";
-    const string ColumnSepInner = " | ";
-    const string ColumnSepRight = " |";
+    const string SeparatorV = "|";
+    const string SeparatorH = "-";
+    const string ColumnSepLeft = SeparatorV + " ";
+    const string ColumnSepInner = " " + SeparatorV + " ";
+    const string ColumnSepRight = " " + SeparatorV;
     const string MoonNoText = "        ";
     const string ShabatText = "[S]";
     const string MoonFullText = "○";
     internal readonly string MoonNewText = "●";
-
-    private string HeaderSep;
-    private string HeaderTxt;
 
     private bool TrimBeforeNewLunarYear = true;
     private bool ShowWinterSummerHour = true;

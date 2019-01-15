@@ -91,9 +91,9 @@
       this.actionWebsite = new System.Windows.Forms.ToolStripButton();
       this.sep5 = new System.Windows.Forms.ToolStripSeparator();
       this.actionHelp = new System.Windows.Forms.ToolStripButton();
-      this.actionPreferences = new System.Windows.Forms.ToolStripButton();
       this.actionAbout = new System.Windows.Forms.ToolStripButton();
       this.sep6 = new System.Windows.Forms.ToolStripSeparator();
+      this.actionPreferences = new System.Windows.Forms.ToolStripButton();
       this.menuSettings = new System.Windows.Forms.ToolStripDropDownButton();
       this.menuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
       this.editScreenNone = new System.Windows.Forms.ToolStripMenuItem();
@@ -139,27 +139,22 @@
       this.statusBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.labelStatus});
-      this.statusBottom.Location = new System.Drawing.Point(0, 644);
+      resources.ApplyResources(this.statusBottom, "statusBottom");
       this.statusBottom.Name = "statusBottom";
-      this.statusBottom.Size = new System.Drawing.Size(1012, 22);
-      this.statusBottom.TabIndex = 8;
-      this.statusBottom.Text = "statusStrip1";
       // 
       // toolStripStatusLabel1
       // 
-      this.toolStripStatusLabel1.AutoSize = false;
+      resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
       this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-      this.toolStripStatusLabel1.Size = new System.Drawing.Size(10, 17);
       // 
       // labelStatus
       // 
       this.labelStatus.Name = "labelStatus";
-      this.labelStatus.Size = new System.Drawing.Size(59, 17);
-      this.labelStatus.Text = "Label Info";
+      resources.ApplyResources(this.labelStatus, "labelStatus");
       // 
       // saveFileDialog
       // 
-      this.saveFileDialog.Filter = "Text files|*.txt|CSV files|*.csv";
+      resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
       // 
       // panelMain
       // 
@@ -168,109 +163,72 @@
       this.panelMain.Controls.Add(this.panelSepTop);
       this.panelMain.Controls.Add(this.panelProgress);
       this.panelMain.Controls.Add(this.panelTitle);
-      this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.panelMain.Location = new System.Drawing.Point(0, 54);
+      resources.ApplyResources(this.panelMain, "panelMain");
       this.panelMain.Name = "panelMain";
-      this.panelMain.Padding = new System.Windows.Forms.Padding(10);
-      this.panelMain.Size = new System.Drawing.Size(1012, 590);
-      this.panelMain.TabIndex = 9;
       // 
       // panelCalendarOuter
       // 
       this.panelCalendarOuter.BackColor = System.Drawing.SystemColors.ControlDarkDark;
       this.panelCalendarOuter.Controls.Add(this.panelCalendarInner);
-      this.panelCalendarOuter.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.panelCalendarOuter.Location = new System.Drawing.Point(10, 44);
+      resources.ApplyResources(this.panelCalendarOuter, "panelCalendarOuter");
       this.panelCalendarOuter.Name = "panelCalendarOuter";
-      this.panelCalendarOuter.Padding = new System.Windows.Forms.Padding(1);
-      this.panelCalendarOuter.Size = new System.Drawing.Size(992, 512);
-      this.panelCalendarOuter.TabIndex = 18;
       // 
       // panelCalendarInner
       // 
       this.panelCalendarInner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       this.panelCalendarInner.Controls.Add(this.panelCalendar);
-      this.panelCalendarInner.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.panelCalendarInner.Location = new System.Drawing.Point(1, 1);
+      resources.ApplyResources(this.panelCalendarInner, "panelCalendarInner");
       this.panelCalendarInner.Name = "panelCalendarInner";
-      this.panelCalendarInner.Size = new System.Drawing.Size(990, 510);
-      this.panelCalendarInner.TabIndex = 0;
       // 
       // panelCalendar
       // 
       this.panelCalendar.Controls.Add(this.tabControl);
-      this.panelCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.panelCalendar.Location = new System.Drawing.Point(0, 0);
+      resources.ApplyResources(this.panelCalendar, "panelCalendar");
       this.panelCalendar.Name = "panelCalendar";
-      this.panelCalendar.Size = new System.Drawing.Size(990, 510);
-      this.panelCalendar.TabIndex = 0;
       // 
       // tabControl
       // 
       this.tabControl.Controls.Add(this.tabPageText);
       this.tabControl.Controls.Add(this.tabPageGrid);
-      this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.tabControl.Location = new System.Drawing.Point(0, 0);
+      resources.ApplyResources(this.tabControl, "tabControl");
       this.tabControl.Name = "tabControl";
       this.tabControl.SelectedIndex = 0;
-      this.tabControl.Size = new System.Drawing.Size(990, 510);
-      this.tabControl.TabIndex = 1;
       this.tabControl.TabStop = false;
-      this.tabControl.Visible = false;
       // 
       // tabPageText
       // 
       this.tabPageText.Controls.Add(this.panelViewText);
-      this.tabPageText.Location = new System.Drawing.Point(4, 22);
+      resources.ApplyResources(this.tabPageText, "tabPageText");
       this.tabPageText.Name = "tabPageText";
-      this.tabPageText.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageText.Size = new System.Drawing.Size(982, 484);
-      this.tabPageText.TabIndex = 0;
-      this.tabPageText.Text = "Raw text";
       this.tabPageText.UseVisualStyleBackColor = true;
       // 
       // panelViewText
       // 
       this.panelViewText.Controls.Add(this.calendarText);
-      this.panelViewText.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.panelViewText.Location = new System.Drawing.Point(3, 3);
+      resources.ApplyResources(this.panelViewText, "panelViewText");
       this.panelViewText.Name = "panelViewText";
-      this.panelViewText.Size = new System.Drawing.Size(976, 478);
-      this.panelViewText.TabIndex = 0;
       // 
       // calendarText
       // 
       this.calendarText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
       this.calendarText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.calendarText.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.calendarText.Location = new System.Drawing.Point(0, 0);
+      resources.ApplyResources(this.calendarText, "calendarText");
       this.calendarText.Name = "calendarText";
       this.calendarText.ReadOnly = true;
-      this.calendarText.Size = new System.Drawing.Size(976, 478);
-      this.calendarText.TabIndex = 17;
-      this.calendarText.Text = "";
-      this.calendarText.WordWrap = false;
       // 
       // tabPageGrid
       // 
       this.tabPageGrid.Controls.Add(this.panelViewGrid);
-      this.tabPageGrid.Location = new System.Drawing.Point(4, 22);
+      resources.ApplyResources(this.tabPageGrid, "tabPageGrid");
       this.tabPageGrid.Name = "tabPageGrid";
-      this.tabPageGrid.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageGrid.Size = new System.Drawing.Size(982, 484);
-      this.tabPageGrid.TabIndex = 1;
-      this.tabPageGrid.Text = "Simple grid";
       this.tabPageGrid.UseVisualStyleBackColor = true;
       // 
       // panelViewGrid
       // 
       this.panelViewGrid.Controls.Add(this.calendarGrid);
       this.panelViewGrid.Controls.Add(this.lunisolarDaysBindingNavigator);
-      this.panelViewGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.panelViewGrid.Location = new System.Drawing.Point(3, 3);
+      resources.ApplyResources(this.panelViewGrid, "panelViewGrid");
       this.panelViewGrid.Name = "panelViewGrid";
-      this.panelViewGrid.Size = new System.Drawing.Size(976, 478);
-      this.panelViewGrid.TabIndex = 0;
       // 
       // calendarGrid
       // 
@@ -291,88 +249,85 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
       this.calendarGrid.DataSource = this.lunisolarDaysBindingSource;
-      this.calendarGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.calendarGrid.Location = new System.Drawing.Point(0, 25);
+      resources.ApplyResources(this.calendarGrid, "calendarGrid");
       this.calendarGrid.Name = "calendarGrid";
-      this.calendarGrid.Size = new System.Drawing.Size(976, 453);
-      this.calendarGrid.TabIndex = 11;
       // 
       // dataGridViewTextBoxColumn1
       // 
       this.dataGridViewTextBoxColumn1.DataPropertyName = "Date";
-      this.dataGridViewTextBoxColumn1.HeaderText = "Date";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
       this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
       // 
       // dataGridViewTextBoxColumn2
       // 
       this.dataGridViewTextBoxColumn2.DataPropertyName = "LunarMonth";
-      this.dataGridViewTextBoxColumn2.HeaderText = "LunarMonth";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
       this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
       // 
       // dataGridViewTextBoxColumn3
       // 
       this.dataGridViewTextBoxColumn3.DataPropertyName = "LunarDay";
-      this.dataGridViewTextBoxColumn3.HeaderText = "LunarDay";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
       this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
       // 
       // dataGridViewTextBoxColumn4
       // 
       this.dataGridViewTextBoxColumn4.DataPropertyName = "Sunrise";
-      this.dataGridViewTextBoxColumn4.HeaderText = "Sunrise";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
       this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
       // 
       // dataGridViewTextBoxColumn5
       // 
       this.dataGridViewTextBoxColumn5.DataPropertyName = "Sunset";
-      this.dataGridViewTextBoxColumn5.HeaderText = "Sunset";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
       this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
       // 
       // dataGridViewTextBoxColumn6
       // 
       this.dataGridViewTextBoxColumn6.DataPropertyName = "Moonrise";
-      this.dataGridViewTextBoxColumn6.HeaderText = "Moonrise";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
       this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
       // 
       // dataGridViewTextBoxColumn7
       // 
       this.dataGridViewTextBoxColumn7.DataPropertyName = "Moonset";
-      this.dataGridViewTextBoxColumn7.HeaderText = "Moonset";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
       this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
       // 
       // dataGridViewTextBoxColumn8
       // 
       this.dataGridViewTextBoxColumn8.DataPropertyName = "MoonriseType";
-      this.dataGridViewTextBoxColumn8.HeaderText = "MoonriseType";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn8, "dataGridViewTextBoxColumn8");
       this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
       // 
       // dataGridViewTextBoxColumn9
       // 
       this.dataGridViewTextBoxColumn9.DataPropertyName = "IsNewMoon";
-      this.dataGridViewTextBoxColumn9.HeaderText = "IsNewMoon";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn9, "dataGridViewTextBoxColumn9");
       this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
       // 
       // dataGridViewTextBoxColumn10
       // 
       this.dataGridViewTextBoxColumn10.DataPropertyName = "IsFullMoon";
-      this.dataGridViewTextBoxColumn10.HeaderText = "IsFullMoon";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn10, "dataGridViewTextBoxColumn10");
       this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
       // 
       // dataGridViewTextBoxColumn11
       // 
       this.dataGridViewTextBoxColumn11.DataPropertyName = "MoonPhase";
-      this.dataGridViewTextBoxColumn11.HeaderText = "MoonPhase";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn11, "dataGridViewTextBoxColumn11");
       this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
       // 
       // dataGridViewTextBoxColumn12
       // 
       this.dataGridViewTextBoxColumn12.DataPropertyName = "SeasonChange";
-      this.dataGridViewTextBoxColumn12.HeaderText = "SeasonChange";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn12, "dataGridViewTextBoxColumn12");
       this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
       // 
       // dataGridViewTextBoxColumn13
       // 
       this.dataGridViewTextBoxColumn13.DataPropertyName = "TorahEvents";
-      this.dataGridViewTextBoxColumn13.HeaderText = "TorahEvents";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn13, "dataGridViewTextBoxColumn13");
       this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
       // 
       // lunisolarDaysBindingSource
@@ -400,154 +355,104 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem});
-      this.lunisolarDaysBindingNavigator.Location = new System.Drawing.Point(0, 0);
+      resources.ApplyResources(this.lunisolarDaysBindingNavigator, "lunisolarDaysBindingNavigator");
       this.lunisolarDaysBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
       this.lunisolarDaysBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
       this.lunisolarDaysBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
       this.lunisolarDaysBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
       this.lunisolarDaysBindingNavigator.Name = "lunisolarDaysBindingNavigator";
       this.lunisolarDaysBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-      this.lunisolarDaysBindingNavigator.Size = new System.Drawing.Size(976, 25);
-      this.lunisolarDaysBindingNavigator.TabIndex = 10;
-      this.lunisolarDaysBindingNavigator.Text = "bindingNavigator1";
       // 
       // bindingNavigatorCountItem
       // 
       this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-      this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-      this.bindingNavigatorCountItem.Text = "de {0}";
-      this.bindingNavigatorCountItem.ToolTipText = "Nombre total d\'éléments";
+      resources.ApplyResources(this.bindingNavigatorCountItem, "bindingNavigatorCountItem");
       // 
       // bindingNavigatorMoveFirstItem
       // 
       this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+      resources.ApplyResources(this.bindingNavigatorMoveFirstItem, "bindingNavigatorMoveFirstItem");
       this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-      this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-      this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-      this.bindingNavigatorMoveFirstItem.Text = "Placer en premier";
       // 
       // bindingNavigatorMovePreviousItem
       // 
       this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+      resources.ApplyResources(this.bindingNavigatorMovePreviousItem, "bindingNavigatorMovePreviousItem");
       this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-      this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-      this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-      this.bindingNavigatorMovePreviousItem.Text = "Déplacer vers le haut";
       // 
       // bindingNavigatorSeparator
       // 
       this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-      this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+      resources.ApplyResources(this.bindingNavigatorSeparator, "bindingNavigatorSeparator");
       // 
       // bindingNavigatorPositionItem
       // 
-      this.bindingNavigatorPositionItem.AccessibleName = "Position";
-      this.bindingNavigatorPositionItem.AutoSize = false;
+      resources.ApplyResources(this.bindingNavigatorPositionItem, "bindingNavigatorPositionItem");
       this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-      this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-      this.bindingNavigatorPositionItem.Text = "0";
-      this.bindingNavigatorPositionItem.ToolTipText = "Position actuelle";
       // 
       // bindingNavigatorSeparator1
       // 
       this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-      this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+      resources.ApplyResources(this.bindingNavigatorSeparator1, "bindingNavigatorSeparator1");
       // 
       // bindingNavigatorMoveNextItem
       // 
       this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+      resources.ApplyResources(this.bindingNavigatorMoveNextItem, "bindingNavigatorMoveNextItem");
       this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-      this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-      this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-      this.bindingNavigatorMoveNextItem.Text = "Déplacer vers le bas";
       // 
       // bindingNavigatorMoveLastItem
       // 
       this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+      resources.ApplyResources(this.bindingNavigatorMoveLastItem, "bindingNavigatorMoveLastItem");
       this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-      this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-      this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-      this.bindingNavigatorMoveLastItem.Text = "Placer en dernier";
       // 
       // panelSepBottom
       // 
-      this.panelSepBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.panelSepBottom.Location = new System.Drawing.Point(10, 556);
+      resources.ApplyResources(this.panelSepBottom, "panelSepBottom");
       this.panelSepBottom.Name = "panelSepBottom";
-      this.panelSepBottom.Size = new System.Drawing.Size(992, 10);
-      this.panelSepBottom.TabIndex = 17;
       // 
       // panelSepTop
       // 
-      this.panelSepTop.Dock = System.Windows.Forms.DockStyle.Top;
-      this.panelSepTop.Location = new System.Drawing.Point(10, 34);
+      resources.ApplyResources(this.panelSepTop, "panelSepTop");
       this.panelSepTop.Name = "panelSepTop";
-      this.panelSepTop.Size = new System.Drawing.Size(992, 10);
-      this.panelSepTop.TabIndex = 16;
       // 
       // panelProgress
       // 
       this.panelProgress.Controls.Add(this.barProgress);
-      this.panelProgress.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.panelProgress.Location = new System.Drawing.Point(10, 566);
+      resources.ApplyResources(this.panelProgress, "panelProgress");
       this.panelProgress.Name = "panelProgress";
-      this.panelProgress.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-      this.panelProgress.Size = new System.Drawing.Size(992, 14);
-      this.panelProgress.TabIndex = 14;
       // 
       // barProgress
       // 
-      this.barProgress.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.barProgress.Location = new System.Drawing.Point(0, 0);
+      resources.ApplyResources(this.barProgress, "barProgress");
       this.barProgress.Name = "barProgress";
-      this.barProgress.Size = new System.Drawing.Size(992, 12);
       this.barProgress.Step = 1;
-      this.barProgress.TabIndex = 0;
       // 
       // panelTitle
       // 
       this.panelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
       this.panelTitle.Controls.Add(this.labelTitle);
-      this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-      this.panelTitle.Location = new System.Drawing.Point(10, 10);
+      resources.ApplyResources(this.panelTitle, "panelTitle");
       this.panelTitle.Name = "panelTitle";
-      this.panelTitle.Padding = new System.Windows.Forms.Padding(1);
-      this.panelTitle.Size = new System.Drawing.Size(992, 24);
-      this.panelTitle.TabIndex = 3;
       // 
       // labelTitle
       // 
       this.labelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      this.labelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelTitle.Location = new System.Drawing.Point(1, 1);
+      resources.ApplyResources(this.labelTitle, "labelTitle");
       this.labelTitle.Name = "labelTitle";
-      this.labelTitle.Size = new System.Drawing.Size(990, 22);
-      this.labelTitle.TabIndex = 0;
-      this.labelTitle.Text = "LUNASOLAIR CALENDAR";
-      this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
       // moonPhaseImagePictureBox
       // 
       this.moonPhaseImagePictureBox.BackColor = System.Drawing.SystemColors.ButtonFace;
-      this.moonPhaseImagePictureBox.Location = new System.Drawing.Point(3, 3);
+      resources.ApplyResources(this.moonPhaseImagePictureBox, "moonPhaseImagePictureBox");
       this.moonPhaseImagePictureBox.Name = "moonPhaseImagePictureBox";
-      this.moonPhaseImagePictureBox.Size = new System.Drawing.Size(40, 40);
-      this.moonPhaseImagePictureBox.TabIndex = 4;
       this.moonPhaseImagePictureBox.TabStop = false;
       // 
       // label1
       // 
-      this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(49, 3);
+      resources.ApplyResources(this.label1, "label1");
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(35, 13);
-      this.label1.TabIndex = 2;
-      this.label1.Text = "label1";
       // 
       // timerTooltip
       // 
@@ -556,7 +461,7 @@
       // 
       // toolStrip
       // 
-      this.toolStrip.AutoSize = false;
+      resources.ApplyResources(this.toolStrip, "toolStrip");
       this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -578,30 +483,20 @@
             this.menuSettings,
             this.menuView,
             this.actionStop});
-      this.toolStrip.Location = new System.Drawing.Point(0, 0);
       this.toolStrip.Name = "toolStrip";
-      this.toolStrip.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
       this.toolStrip.ShowItemToolTips = false;
-      this.toolStrip.Size = new System.Drawing.Size(1012, 54);
-      this.toolStrip.TabIndex = 7;
-      this.toolStrip.Text = "toolStrip1";
       // 
       // sep2
       // 
       this.sep2.Name = "sep2";
-      this.sep2.Size = new System.Drawing.Size(6, 49);
-      this.sep2.Visible = false;
+      resources.ApplyResources(this.sep2, "sep2");
       // 
       // actionSaveReport
       // 
       this.actionSaveReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionSaveReport.Image = ((System.Drawing.Image)(resources.GetObject("actionSaveReport.Image")));
-      this.actionSaveReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.actionSaveReport, "actionSaveReport");
       this.actionSaveReport.Name = "actionSaveReport";
       this.actionSaveReport.Padding = new System.Windows.Forms.Padding(5);
-      this.actionSaveReport.Size = new System.Drawing.Size(46, 46);
-      this.actionSaveReport.Text = "Save report to file";
-      this.actionSaveReport.ToolTipText = "Save report to file (Ctrl+S)";
       this.actionSaveReport.Click += new System.EventHandler(this.actionSaveReport_Click);
       this.actionSaveReport.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionSaveReport.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
@@ -609,13 +504,9 @@
       // actionCopyReportToClipboard
       // 
       this.actionCopyReportToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionCopyReportToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("actionCopyReportToClipboard.Image")));
-      this.actionCopyReportToClipboard.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.actionCopyReportToClipboard, "actionCopyReportToClipboard");
       this.actionCopyReportToClipboard.Name = "actionCopyReportToClipboard";
       this.actionCopyReportToClipboard.Padding = new System.Windows.Forms.Padding(5);
-      this.actionCopyReportToClipboard.Size = new System.Drawing.Size(46, 46);
-      this.actionCopyReportToClipboard.Text = "Copy report to clipboard";
-      this.actionCopyReportToClipboard.ToolTipText = "Copy report to clipboard (Ctrl+C)";
       this.actionCopyReportToClipboard.Click += new System.EventHandler(this.actionCopyReportToClipboard_Click);
       this.actionCopyReportToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionCopyReportToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
@@ -623,13 +514,9 @@
       // actionFindDay
       // 
       this.actionFindDay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionFindDay.Image = ((System.Drawing.Image)(resources.GetObject("actionFindDay.Image")));
-      this.actionFindDay.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.actionFindDay, "actionFindDay");
       this.actionFindDay.Name = "actionFindDay";
       this.actionFindDay.Padding = new System.Windows.Forms.Padding(5);
-      this.actionFindDay.Size = new System.Drawing.Size(46, 46);
-      this.actionFindDay.Text = "Find a day";
-      this.actionFindDay.ToolTipText = "Find a day (Ctrl+D)";
       this.actionFindDay.Click += new System.EventHandler(this.actionFindDay_Click);
       this.actionFindDay.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionFindDay.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
@@ -637,18 +524,14 @@
       // sep3
       // 
       this.sep3.Name = "sep3";
-      this.sep3.Size = new System.Drawing.Size(6, 49);
+      resources.ApplyResources(this.sep3, "sep3");
       // 
       // actionGenerate
       // 
       this.actionGenerate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionGenerate.Image = ((System.Drawing.Image)(resources.GetObject("actionGenerate.Image")));
-      this.actionGenerate.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.actionGenerate, "actionGenerate");
       this.actionGenerate.Name = "actionGenerate";
       this.actionGenerate.Padding = new System.Windows.Forms.Padding(5);
-      this.actionGenerate.Size = new System.Drawing.Size(46, 46);
-      this.actionGenerate.Text = "Generate";
-      this.actionGenerate.ToolTipText = "Generate (F2)";
       this.actionGenerate.Click += new System.EventHandler(this.actionGenerate_Click);
       this.actionGenerate.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionGenerate.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
@@ -657,13 +540,9 @@
       // 
       this.actionExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.actionExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionExit.Image = ((System.Drawing.Image)(resources.GetObject("actionExit.Image")));
-      this.actionExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.actionExit, "actionExit");
       this.actionExit.Name = "actionExit";
       this.actionExit.Padding = new System.Windows.Forms.Padding(5);
-      this.actionExit.Size = new System.Drawing.Size(46, 46);
-      this.actionExit.Text = "Exit";
-      this.actionExit.ToolTipText = "Exit (Esc, Alt+F4)";
       this.actionExit.Click += new System.EventHandler(this.actionExit_Click);
       this.actionExit.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionExit.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
@@ -672,18 +551,15 @@
       // 
       this.sep4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.sep4.Name = "sep4";
-      this.sep4.Size = new System.Drawing.Size(6, 49);
+      resources.ApplyResources(this.sep4, "sep4");
       // 
       // actionContact
       // 
       this.actionContact.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.actionContact.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionContact.Image = ((System.Drawing.Image)(resources.GetObject("actionContact.Image")));
-      this.actionContact.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.actionContact, "actionContact");
       this.actionContact.Name = "actionContact";
       this.actionContact.Padding = new System.Windows.Forms.Padding(5);
-      this.actionContact.Size = new System.Drawing.Size(46, 46);
-      this.actionContact.Text = "Contact";
       this.actionContact.Click += new System.EventHandler(this.actionContact_Click);
       this.actionContact.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionContact.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
@@ -692,12 +568,9 @@
       // 
       this.actionWebsite.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.actionWebsite.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionWebsite.Image = ((System.Drawing.Image)(resources.GetObject("actionWebsite.Image")));
-      this.actionWebsite.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.actionWebsite, "actionWebsite");
       this.actionWebsite.Name = "actionWebsite";
       this.actionWebsite.Padding = new System.Windows.Forms.Padding(5);
-      this.actionWebsite.Size = new System.Drawing.Size(46, 46);
-      this.actionWebsite.Text = "Website";
       this.actionWebsite.Click += new System.EventHandler(this.actionApplicationHome_Click);
       this.actionWebsite.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionWebsite.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
@@ -706,51 +579,26 @@
       // 
       this.sep5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.sep5.Name = "sep5";
-      this.sep5.Size = new System.Drawing.Size(6, 49);
-      this.sep5.Visible = false;
+      resources.ApplyResources(this.sep5, "sep5");
       // 
       // actionHelp
       // 
       this.actionHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.actionHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionHelp.Image = ((System.Drawing.Image)(resources.GetObject("actionHelp.Image")));
-      this.actionHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.actionHelp, "actionHelp");
       this.actionHelp.Name = "actionHelp";
       this.actionHelp.Padding = new System.Windows.Forms.Padding(5);
-      this.actionHelp.Size = new System.Drawing.Size(46, 46);
-      this.actionHelp.Text = "Help";
-      this.actionHelp.ToolTipText = "Help (F1)";
-      this.actionHelp.Visible = false;
       this.actionHelp.Click += new System.EventHandler(this.actionHelp_Click);
       this.actionHelp.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionHelp.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // actionPreferences
-      // 
-      this.actionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.actionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionPreferences.Image = ((System.Drawing.Image)(resources.GetObject("actionPreferences.Image")));
-      this.actionPreferences.ImageTransparentColor = System.Drawing.Color.Magenta;
-      this.actionPreferences.Name = "actionPreferences";
-      this.actionPreferences.Padding = new System.Windows.Forms.Padding(5);
-      this.actionPreferences.Size = new System.Drawing.Size(46, 46);
-      this.actionPreferences.Text = "Preferences";
-      this.actionPreferences.ToolTipText = "Preferences (F8)";
-      this.actionPreferences.Click += new System.EventHandler(this.actionPreferences_Click);
-      this.actionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // actionAbout
       // 
       this.actionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.actionAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionAbout.Image = ((System.Drawing.Image)(resources.GetObject("actionAbout.Image")));
-      this.actionAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.actionAbout, "actionAbout");
       this.actionAbout.Name = "actionAbout";
       this.actionAbout.Padding = new System.Windows.Forms.Padding(5);
-      this.actionAbout.Size = new System.Drawing.Size(46, 46);
-      this.actionAbout.Text = "About";
-      this.actionAbout.ToolTipText = "About (F12)";
       this.actionAbout.Click += new System.EventHandler(this.actionAbout_Click);
       this.actionAbout.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionAbout.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
@@ -759,7 +607,18 @@
       // 
       this.sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.sep6.Name = "sep6";
-      this.sep6.Size = new System.Drawing.Size(6, 49);
+      resources.ApplyResources(this.sep6, "sep6");
+      // 
+      // actionPreferences
+      // 
+      this.actionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.actionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.actionPreferences, "actionPreferences");
+      this.actionPreferences.Name = "actionPreferences";
+      this.actionPreferences.Padding = new System.Windows.Forms.Padding(5);
+      this.actionPreferences.Click += new System.EventHandler(this.actionPreferences_Click);
+      this.actionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.actionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // menuSettings
       // 
@@ -772,10 +631,8 @@
             this.editShowTips,
             this.editESCtoExit,
             this.editConfirmClosing});
-      this.menuSettings.Image = ((System.Drawing.Image)(resources.GetObject("menuSettings.Image")));
-      this.menuSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.menuSettings, "menuSettings");
       this.menuSettings.Name = "menuSettings";
-      this.menuSettings.Size = new System.Drawing.Size(45, 46);
       // 
       // menuitemScreenPosition
       // 
@@ -786,114 +643,85 @@
             this.editScreenBottomLeft,
             this.editScreenBottomRight,
             this.editScreenCenter});
-      this.menuitemScreenPosition.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      resources.ApplyResources(this.menuitemScreenPosition, "menuitemScreenPosition");
       this.menuitemScreenPosition.Name = "menuitemScreenPosition";
-      this.menuitemScreenPosition.Size = new System.Drawing.Size(221, 22);
-      this.menuitemScreenPosition.Text = "Screen position";
       // 
       // editScreenNone
       // 
       this.editScreenNone.CheckOnClick = true;
-      this.editScreenNone.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      resources.ApplyResources(this.editScreenNone, "editScreenNone");
       this.editScreenNone.Name = "editScreenNone";
-      this.editScreenNone.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D0)));
-      this.editScreenNone.Size = new System.Drawing.Size(178, 22);
-      this.editScreenNone.Text = "None";
       this.editScreenNone.Click += new System.EventHandler(this.editScreenPosition_Click);
       // 
       // editScreenTopLeft
       // 
       this.editScreenTopLeft.CheckOnClick = true;
-      this.editScreenTopLeft.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      resources.ApplyResources(this.editScreenTopLeft, "editScreenTopLeft");
       this.editScreenTopLeft.Name = "editScreenTopLeft";
-      this.editScreenTopLeft.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D1)));
-      this.editScreenTopLeft.Size = new System.Drawing.Size(178, 22);
-      this.editScreenTopLeft.Text = "Top left";
       this.editScreenTopLeft.Click += new System.EventHandler(this.editScreenPosition_Click);
       // 
       // editScreenTopRight
       // 
       this.editScreenTopRight.CheckOnClick = true;
-      this.editScreenTopRight.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      resources.ApplyResources(this.editScreenTopRight, "editScreenTopRight");
       this.editScreenTopRight.Name = "editScreenTopRight";
-      this.editScreenTopRight.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D2)));
-      this.editScreenTopRight.Size = new System.Drawing.Size(178, 22);
-      this.editScreenTopRight.Text = "Top right";
       this.editScreenTopRight.Click += new System.EventHandler(this.editScreenPosition_Click);
       // 
       // editScreenBottomLeft
       // 
       this.editScreenBottomLeft.CheckOnClick = true;
-      this.editScreenBottomLeft.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      resources.ApplyResources(this.editScreenBottomLeft, "editScreenBottomLeft");
       this.editScreenBottomLeft.Name = "editScreenBottomLeft";
-      this.editScreenBottomLeft.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D3)));
-      this.editScreenBottomLeft.Size = new System.Drawing.Size(178, 22);
-      this.editScreenBottomLeft.Text = "Bottom left";
       this.editScreenBottomLeft.Click += new System.EventHandler(this.editScreenPosition_Click);
       // 
       // editScreenBottomRight
       // 
       this.editScreenBottomRight.CheckOnClick = true;
-      this.editScreenBottomRight.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      resources.ApplyResources(this.editScreenBottomRight, "editScreenBottomRight");
       this.editScreenBottomRight.Name = "editScreenBottomRight";
-      this.editScreenBottomRight.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D4)));
-      this.editScreenBottomRight.Size = new System.Drawing.Size(178, 22);
-      this.editScreenBottomRight.Text = "Bottom right";
       this.editScreenBottomRight.Click += new System.EventHandler(this.editScreenPosition_Click);
       // 
       // editScreenCenter
       // 
       this.editScreenCenter.CheckOnClick = true;
-      this.editScreenCenter.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      resources.ApplyResources(this.editScreenCenter, "editScreenCenter");
       this.editScreenCenter.Name = "editScreenCenter";
-      this.editScreenCenter.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D5)));
-      this.editScreenCenter.Size = new System.Drawing.Size(178, 22);
-      this.editScreenCenter.Text = "Center";
       this.editScreenCenter.Click += new System.EventHandler(this.editScreenPosition_Click);
       // 
       // actionResetWinSettings
       // 
-      this.actionResetWinSettings.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      resources.ApplyResources(this.actionResetWinSettings, "actionResetWinSettings");
       this.actionResetWinSettings.Name = "actionResetWinSettings";
-      this.actionResetWinSettings.Size = new System.Drawing.Size(221, 22);
-      this.actionResetWinSettings.Text = "Reset window settings";
       this.actionResetWinSettings.Click += new System.EventHandler(this.actionResetWinSettings_Click);
       // 
       // sep7
       // 
       this.sep7.Name = "sep7";
-      this.sep7.Size = new System.Drawing.Size(218, 6);
+      resources.ApplyResources(this.sep7, "sep7");
       // 
       // editShowTips
       // 
       this.editShowTips.Checked = true;
       this.editShowTips.CheckOnClick = true;
       this.editShowTips.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.editShowTips.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      resources.ApplyResources(this.editShowTips, "editShowTips");
       this.editShowTips.Name = "editShowTips";
-      this.editShowTips.Size = new System.Drawing.Size(221, 22);
-      this.editShowTips.Text = "Show menu tips";
       // 
       // editESCtoExit
       // 
       this.editESCtoExit.Checked = true;
       this.editESCtoExit.CheckOnClick = true;
       this.editESCtoExit.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.editESCtoExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      resources.ApplyResources(this.editESCtoExit, "editESCtoExit");
       this.editESCtoExit.Name = "editESCtoExit";
-      this.editESCtoExit.Size = new System.Drawing.Size(221, 22);
-      this.editESCtoExit.Text = "Escape key hides form";
       // 
       // editConfirmClosing
       // 
-      this.editConfirmClosing.AccessibleName = "";
+      resources.ApplyResources(this.editConfirmClosing, "editConfirmClosing");
       this.editConfirmClosing.Checked = true;
       this.editConfirmClosing.CheckOnClick = true;
       this.editConfirmClosing.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.editConfirmClosing.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
       this.editConfirmClosing.Name = "editConfirmClosing";
-      this.editConfirmClosing.Size = new System.Drawing.Size(221, 22);
-      this.editConfirmClosing.Text = "Confirm application closing";
       // 
       // menuView
       // 
@@ -902,39 +730,29 @@
       this.menuView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actionViewText,
             this.actionViewGrid});
-      this.menuView.Image = ((System.Drawing.Image)(resources.GetObject("menuView.Image")));
-      this.menuView.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.menuView, "menuView");
       this.menuView.Name = "menuView";
-      this.menuView.Size = new System.Drawing.Size(45, 46);
       // 
       // actionViewText
       // 
       this.actionViewText.CheckOnClick = true;
-      this.actionViewText.Image = ((System.Drawing.Image)(resources.GetObject("actionViewText.Image")));
+      resources.ApplyResources(this.actionViewText, "actionViewText");
       this.actionViewText.Name = "actionViewText";
-      this.actionViewText.Size = new System.Drawing.Size(134, 22);
-      this.actionViewText.Text = "Raw text";
       this.actionViewText.Click += new System.EventHandler(this.actionViewText_Click);
       // 
       // actionViewGrid
       // 
       this.actionViewGrid.CheckOnClick = true;
-      this.actionViewGrid.Image = ((System.Drawing.Image)(resources.GetObject("actionViewGrid.Image")));
+      resources.ApplyResources(this.actionViewGrid, "actionViewGrid");
       this.actionViewGrid.Name = "actionViewGrid";
-      this.actionViewGrid.Size = new System.Drawing.Size(134, 22);
-      this.actionViewGrid.Text = "Simple grid";
       this.actionViewGrid.Click += new System.EventHandler(this.actionViewGrid_Click);
       // 
       // actionStop
       // 
       this.actionStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionStop.Image = ((System.Drawing.Image)(resources.GetObject("actionStop.Image")));
-      this.actionStop.ImageTransparentColor = System.Drawing.Color.Magenta;
+      resources.ApplyResources(this.actionStop, "actionStop");
       this.actionStop.Name = "actionStop";
       this.actionStop.Padding = new System.Windows.Forms.Padding(5);
-      this.actionStop.Size = new System.Drawing.Size(46, 46);
-      this.actionStop.Text = "Stop";
-      this.actionStop.ToolTipText = "Stop (Esc)";
       this.actionStop.Click += new System.EventHandler(this.actionStop_Click);
       this.actionStop.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionStop.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
@@ -951,16 +769,12 @@
       // 
       // MainForm
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1012, 666);
       this.Controls.Add(this.panelMain);
       this.Controls.Add(this.toolStrip);
       this.Controls.Add(this.statusBottom);
-      this.MinimumSize = new System.Drawing.Size(1020, 700);
       this.Name = "MainForm";
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "Ordisoftware Hebrew Calendar";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
       this.Load += new System.EventHandler(this.MainForm_Load);

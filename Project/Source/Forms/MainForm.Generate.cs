@@ -24,11 +24,6 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    public const string ProgressDeleteDaysText = "Deleting days...";
-    public const string ProgressCreateDaysText = "Populating days...";
-    public const string ProgressAnalyzingDaysText = "Analyzing days...";
-    public const string ProgressGenerateResultText = "Generating report...";
-
     private int Count;
 
     /// <summary>
@@ -80,7 +75,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( year == yearLast && month > 12 ) break;
           for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
           {
-            if ( !UpdateProgress(progress++, Count, ProgressCreateDaysText) ) return;
+            if ( !UpdateProgress(progress++, Count, LocalizerHelper.ProgressCreateDaysText.GetLang()) ) return;
             var row = lunisolarCalendar.LunisolarDays.NewLunisolarDaysRow();
             row.Date = SQLiteDateTool.GetDate(year, month, day);
             InitializeDay(row);
@@ -158,7 +153,7 @@ namespace Ordisoftware.HebrewCalendar
       int delta = 0;
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in lunisolarCalendar.LunisolarDays.Rows )
       {
-        if ( !UpdateProgress(progress++, Count, ProgressAnalyzingDaysText) ) return;
+        if ( !UpdateProgress(progress++, Count, LocalizerHelper.ProgressAnalyzingDaysText.GetLang()) ) return;
         if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month, ref delta);
         day.LunarMonth = month;
         if ( day.LunarDay == 1 ) delta = 0;

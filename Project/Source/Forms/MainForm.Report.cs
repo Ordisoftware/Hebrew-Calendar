@@ -14,7 +14,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-01 </edited>
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Linq;
@@ -35,7 +34,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         calendarText.Clear();
-        DoGenerateTextReport();
+        DoGenerateTextReport(lunisolarCalendar.YearMin, lunisolarCalendar.YearMax);
       }
       catch ( Exception except )
       {
@@ -49,26 +48,21 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    private void DoGenerateTextReport()
-    {
-      DoGenerateTextReport(lunisolarCalendar.YearMin, lunisolarCalendar.YearMax);
-    }
-
     private void DoGenerateTextReport(int yearFirst, int yearLast)
     {
-      HeaderSep = "|";
-      HeaderTxt = "|";
+      var headerSep = SeparatorV;
+      var headerTxt = SeparatorV;
       foreach ( CalendarFieldType v in Enum.GetValues(typeof(CalendarFieldType)) )
       {
         string str = CalendarFieldNames.GetLang(v);
-        HeaderSep += new string('-', CalendarFieldSize[v]) + '|';
-        HeaderTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " |";
+        headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
+        headerTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " " + SeparatorV.ToString();
       }
-      HeaderSep = HeaderSep.Remove(HeaderSep.Length - 1) + '|';
+      headerSep = headerSep.Remove(headerSep.Length - 1) + SeparatorV;
       var content = new StringBuilder();
-      content.Append(HeaderSep + Environment.NewLine);
-      content.Append(HeaderTxt + Environment.NewLine);
-      if ( !TrimBeforeNewLunarYear ) content.Append(HeaderSep + Environment.NewLine);
+      content.Append(headerSep + Environment.NewLine);
+      content.Append(headerTxt + Environment.NewLine);
+      if ( !TrimBeforeNewLunarYear ) content.Append(headerSep + Environment.NewLine);
       int progress = 0;
       int count = lunisolarCalendar.LunisolarDays.Count;
       if ( count == 0 ) return;
@@ -76,11 +70,11 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in lunisolarCalendar.LunisolarDays.Rows )
       {
         var dayDate = SQLiteDateTool.GetDate(day.Date);
-        if ( !UpdateProgress(progress++, count, ProgressGenerateResultText) ) return;
+        if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
         if ( TrimBeforeNewLunarYear && day.LunarMonth == 0 ) continue;
         if ( TrimBeforeNewLunarYear && dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
 
-        if ( day.IsNewMoon == 1 ) content.Append(HeaderSep + Environment.NewLine);
+        if ( day.IsNewMoon == 1 ) content.Append(headerSep + Environment.NewLine);
         string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
         string strDay = ((MoonriseType)day.MoonriseType == MoonriseType.NextDay 
                       ? "  " 
@@ -119,7 +113,7 @@ namespace Ordisoftware.HebrewCalendar
         content.Append(strDesc);
         content.Append(Environment.NewLine);
       }
-      content.Append(HeaderSep + Environment.NewLine);
+      content.Append(headerSep + Environment.NewLine);
       calendarText.Text = content.ToString();
     }
 
