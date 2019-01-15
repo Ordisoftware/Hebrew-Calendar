@@ -329,8 +329,8 @@ namespace Ordisoftware.HebrewCalendar
       var form = new SelectYearsForm();
       if ( form.ShowDialog() == DialogResult.Cancel ) return;
       if ( lunisolarCalendar.LunisolarDays.Count > 0 )
-        if ( DisplayManager.QueryYesNo("The new calendar will replace the old." + Environment.NewLine +
-                                       "Do you want to continue?", "Confirmation") )
+        if ( !DisplayManager.QueryYesNo("The new calendar will replace the old." + Environment.NewLine +
+                                        "Do you want to continue?") )
           return;
       IsGenerating = true;
       UseWaitCursor = true;
