@@ -61,9 +61,9 @@
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+      this.panel1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
       this.panel1.Controls.Add(this.labelDate);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // labelDate
@@ -73,7 +73,7 @@
       // 
       // panel2
       // 
-      resources.ApplyResources(this.panel2, "panel2");
+      this.panel2.BackColor = System.Drawing.Color.AliceBlue;
       this.panel2.Controls.Add(this.labelEventTorahValue);
       this.panel2.Controls.Add(this.labelEventTorah);
       this.panel2.Controls.Add(this.labelEventSeason);
@@ -89,6 +89,7 @@
       this.panel2.Controls.Add(this.labelLunarMonthValue);
       this.panel2.Controls.Add(this.labelSunset);
       this.panel2.Controls.Add(this.labelSunrise);
+      resources.ApplyResources(this.panel2, "panel2");
       this.panel2.Name = "panel2";
       // 
       // labelEventTorahValue
@@ -190,23 +191,23 @@
       // 
       // panel3
       // 
-      resources.ApplyResources(this.panel3, "panel3");
       this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.panel3, "panel3");
       this.panel3.Name = "panel3";
       // 
       // panel4
       // 
-      resources.ApplyResources(this.panel4, "panel4");
-      this.panel4.BackColor = System.Drawing.SystemColors.Control;
+      this.panel4.BackColor = System.Drawing.Color.LightGoldenrodYellow;
       this.panel4.Controls.Add(this.buttonSelectDay);
       this.panel4.Controls.Add(this.buttonPreviousDay);
       this.panel4.Controls.Add(this.buttonNextDay);
+      resources.ApplyResources(this.panel4, "panel4");
       this.panel4.Name = "panel4";
       // 
       // panel5
       // 
-      resources.ApplyResources(this.panel5, "panel5");
       this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.panel5, "panel5");
       this.panel5.Name = "panel5";
       // 
       // ShowDayForm
