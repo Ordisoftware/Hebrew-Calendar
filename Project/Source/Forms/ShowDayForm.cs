@@ -85,10 +85,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Resize an image.
     /// </summary>
-    /// <param name="image">The image</param>
-    /// <param name="width">The width</param>
-    /// <param name="height">The height</param>
-    /// <returns></returns>
+    /// <param name="image">The image.</param>
+    /// <param name="width">The width.</param>
+    /// <param name="height">The height.</param>
+    /// <returns>The image resized.</returns>
     private Bitmap ResizeImage(Image image, int width, int height)
     {
       var destRect = new Rectangle(0, 0, width, height);
