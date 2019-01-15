@@ -9,7 +9,7 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 [Download v1.0](https://github.com/Ordisoftware/Hebrew-Calendar/releases/tag/v1.0)
 
-## Functionnalities
+## Functionalities
 
 - Generate a calendar.
 - Create a tabular text report.
@@ -31,7 +31,7 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 ![Main Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-main-768x527.jpg)
 
-![Trayicon Popup Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-popup2-300x225.jpg)
+![Trayicon Popup Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-popup2-300x281.jpg)
 
 ## Frequently asked questions
 
