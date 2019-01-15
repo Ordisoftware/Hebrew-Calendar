@@ -112,12 +112,24 @@ namespace Ordisoftware.HebrewCalendar
 
     private void buttonPreviousDay_Click(object sender, EventArgs e)
     {
-      Date = _Date.AddDays(-1);
+      try
+      {
+        Date = _Date.AddDays(-1);
+      }
+      catch
+      {
+      }
     }
 
     private void buttonNextDay_Click(object sender, EventArgs e)
     {
-      Date = _Date.AddDays(1);
+      try
+      {
+        Date = _Date.AddDays(1);
+      }
+      catch
+      {
+      }
     }
   }
 
