@@ -226,7 +226,7 @@ namespace Ordisoftware.HebrewCalendar
                            TorahEventType.ChavouotDiet);
           if ( date != null )
           {
-            while ( date.Value.DayOfWeek != Program.Settings.ShabatDay )
+            while ( date.Value.DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
               date = date.Value.AddDays(1);
             calculate(OmerType.DaySun, 
                       date.Value.AddDays(1), 

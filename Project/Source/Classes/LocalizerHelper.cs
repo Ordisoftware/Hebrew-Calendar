@@ -52,6 +52,60 @@ namespace Ordisoftware.HebrewCalendar
       return values[value][lang];
     }
 
+    static public readonly Dictionary<DayOfWeek, Dictionary<string, string>> DayOfWeekText
+      = new Dictionary<DayOfWeek, Dictionary<string, string>>()
+      {
+        {
+          DayOfWeek.Friday, new Dictionary<string, string>
+          {
+            { "en", "Friday" },
+            { "fr", "Vendredi" }
+          }
+        },
+        {
+          DayOfWeek.Monday, new Dictionary<string, string>
+          {
+            { "en", "Monday" },
+            { "fr", "Lundi" }
+          }
+        },
+        {
+          DayOfWeek.Saturday, new Dictionary<string, string>
+          {
+            { "en", "Saturday" },
+            { "fr", "Samedi" }
+          }
+        },
+        {
+          DayOfWeek.Sunday, new Dictionary<string, string>
+          {
+            { "en", "Sunday" },
+            { "fr", "Dimanche" }
+          }
+        },
+        {
+          DayOfWeek.Thursday, new Dictionary<string, string>
+          {
+            { "en", "Thursday" },
+            { "fr", "Jeudi" }
+          }
+        },
+        {
+          DayOfWeek.Tuesday, new Dictionary<string, string>
+          {
+            { "en", "Tuesday" },
+            { "fr", "Mardi" }
+          }
+        },
+        {
+          DayOfWeek.Wednesday, new Dictionary<string, string>
+          {
+            { "en", "Wednesday" },
+            { "fr", "Mercredi" }
+          }
+        }
+      };
+
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestoreText
       = new Dictionary<bool, Dictionary<string, string>>()
       {

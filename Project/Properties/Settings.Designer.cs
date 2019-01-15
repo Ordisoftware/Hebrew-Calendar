@@ -157,10 +157,10 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Saturday")]
-        public global::System.DayOfWeek ShabatDay {
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public int ShabatDay {
             get {
-                return ((global::System.DayOfWeek)(this["ShabatDay"]));
+                return ((int)(this["ShabatDay"]));
             }
             set {
                 this["ShabatDay"] = value;

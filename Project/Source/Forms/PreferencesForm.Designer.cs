@@ -35,7 +35,6 @@
       this.dialogColor = new System.Windows.Forms.ColorDialog();
       this.buttonClose = new System.Windows.Forms.Button();
       this.editFontName = new System.Windows.Forms.ComboBox();
-      this.bindingSettings = new System.Windows.Forms.BindingSource(this.components);
       this.labelShabatDay = new System.Windows.Forms.Label();
       this.editFontSize = new System.Windows.Forms.NumericUpDown();
       this.labelFontSize = new System.Windows.Forms.Label();
@@ -49,11 +48,12 @@
       this.gPSLongitudeTextBox = new System.Windows.Forms.TextBox();
       this.panel1 = new System.Windows.Forms.Panel();
       this.actionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
+      this.bindingSettings = new System.Windows.Forms.BindingSource(this.components);
       gPSLatitudeLabel = new System.Windows.Forms.Label();
       gPSLongitudeLabel = new System.Windows.Forms.Label();
-      ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.editFontSize)).BeginInit();
       this.panel1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).BeginInit();
       this.SuspendLayout();
       // 
       // gPSLatitudeLabel
@@ -76,20 +76,15 @@
       this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.buttonClose.Name = "buttonClose";
       this.buttonClose.UseVisualStyleBackColor = true;
-      this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
       // 
       // editFontName
       // 
-      resources.ApplyResources(this.editFontName, "editFontName");
       this.editFontName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "FontName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.editFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.editFontName.FormattingEnabled = true;
+      resources.ApplyResources(this.editFontName, "editFontName");
       this.editFontName.Name = "editFontName";
       this.editFontName.SelectedIndexChanged += new System.EventHandler(this.editFont_Changed);
-      // 
-      // bindingSettings
-      // 
-      this.bindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
       // 
       // labelShabatDay
       // 
@@ -98,8 +93,8 @@
       // 
       // editFontSize
       // 
-      resources.ApplyResources(this.editFontSize, "editFontSize");
       this.editFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSettings, "FontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.editFontSize, "editFontSize");
       this.editFontSize.Maximum = new decimal(new int[] {
             32,
             0,
@@ -125,9 +120,9 @@
       // 
       // panelBackColor
       // 
-      resources.ApplyResources(this.panelBackColor, "panelBackColor");
       this.panelBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
       this.panelBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.panelBackColor, "panelBackColor");
       this.panelBackColor.Name = "panelBackColor";
       this.panelBackColor.Click += new System.EventHandler(this.panelBackColor_Click);
       // 
@@ -138,10 +133,9 @@
       // 
       // editShabatDay
       // 
-      resources.ApplyResources(this.editShabatDay, "editShabatDay");
-      this.editShabatDay.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "ShabatDay", true));
       this.editShabatDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.editShabatDay.FormattingEnabled = true;
+      resources.ApplyResources(this.editShabatDay, "editShabatDay");
       this.editShabatDay.Name = "editShabatDay";
       // 
       // labelFontName
@@ -151,9 +145,9 @@
       // 
       // panelTextColor
       // 
-      resources.ApplyResources(this.panelTextColor, "panelTextColor");
       this.panelTextColor.BackColor = System.Drawing.Color.Black;
       this.panelTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.panelTextColor, "panelTextColor");
       this.panelTextColor.Name = "panelTextColor";
       this.panelTextColor.Click += new System.EventHandler(this.panelTextColor_Click);
       // 
@@ -164,20 +158,20 @@
       // 
       // gPSLatitudeTextBox
       // 
-      resources.ApplyResources(this.gPSLatitudeTextBox, "gPSLatitudeTextBox");
       this.gPSLatitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "Latitude", true));
+      resources.ApplyResources(this.gPSLatitudeTextBox, "gPSLatitudeTextBox");
       this.gPSLatitudeTextBox.Name = "gPSLatitudeTextBox";
       // 
       // gPSLongitudeTextBox
       // 
-      resources.ApplyResources(this.gPSLongitudeTextBox, "gPSLongitudeTextBox");
       this.gPSLongitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "Longitude", true));
+      resources.ApplyResources(this.gPSLongitudeTextBox, "gPSLongitudeTextBox");
       this.gPSLongitudeTextBox.Name = "gPSLongitudeTextBox";
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.buttonClose);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // actionUsePersonalShabat
@@ -187,6 +181,10 @@
       this.actionUsePersonalShabat.Name = "actionUsePersonalShabat";
       this.actionUsePersonalShabat.TabStop = true;
       this.actionUsePersonalShabat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.actionUsePersonalShabat_LinkClicked);
+      // 
+      // bindingSettings
+      // 
+      this.bindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
       // 
       // PreferencesForm
       // 
@@ -214,10 +212,11 @@
       this.MinimizeBox = false;
       this.Name = "PreferencesForm";
       this.ShowInTaskbar = false;
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
-      ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.editFontSize)).EndInit();
       this.panel1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
