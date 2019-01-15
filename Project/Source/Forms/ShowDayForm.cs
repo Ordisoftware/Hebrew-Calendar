@@ -51,6 +51,10 @@ namespace Ordisoftware.HebrewCalendar
         labelSunsetValue.Text = item.Sunset.ToString();
         labelMoonriseValue.Text = item.Moonrise.ToString();
         labelMoonsetValue.Text = item.Moonset.ToString();
+        labelEventSeasonValue.Text = TorahCelebrations.SeasonEventToString((SeasonChangeType)item.SeasonChange);
+        if ( labelEventSeasonValue.Text == "" ) labelEventSeasonValue.Text = "-";
+        labelEventTorahValue.Text = TorahCelebrations.TorahEventToString((TorahEventType)item.TorahEvents);
+        if ( labelEventTorahValue.Text == "" ) labelEventTorahValue.Text = "-";
         pictureMoon.Image = ResizeImage(MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200), 100, 100);
         if ( (MoonriseType)item.MoonriseType == MoonriseType.AfterSet )
         {
@@ -75,11 +79,43 @@ namespace Ordisoftware.HebrewCalendar
     public ShowDayForm()
     {
       InitializeComponent();
+      Text = AboutBox.Instance.AssemblyTitle;
       int left = SystemInformation.WorkingArea.Left;
       int top = SystemInformation.WorkingArea.Top;
       int width = SystemInformation.WorkingArea.Width;
       int height = SystemInformation.WorkingArea.Height;
       Location = new Point(left + width - Width, top + height - Height);
+    }
+
+    private void buttonSelectDay_Click(object sender, EventArgs e)
+    {
+      DateTime date;
+      var form = new SelectDayForm();
+      form.TopMost = true;
+      if ( form.ShowDialog() != DialogResult.OK ) return;
+      Date = form.monthCalendar.SelectionStart;
+    }
+
+    private void buttonPreviousDay_Click(object sender, EventArgs e)
+    {
+      try
+      {
+        Date = _Date.AddDays(-1);
+      }
+      catch
+      {
+      }
+    }
+
+    private void buttonNextDay_Click(object sender, EventArgs e)
+    {
+      try
+      {
+        Date = _Date.AddDays(1);
+      }
+      catch
+      {
+      }
     }
 
     /// <summary>
@@ -110,27 +146,6 @@ namespace Ordisoftware.HebrewCalendar
       return destImage;
     }
 
-    private void buttonPreviousDay_Click(object sender, EventArgs e)
-    {
-      try
-      {
-        Date = _Date.AddDays(-1);
-      }
-      catch
-      {
-      }
-    }
-
-    private void buttonNextDay_Click(object sender, EventArgs e)
-    {
-      try
-      {
-        Date = _Date.AddDays(1);
-      }
-      catch
-      {
-      }
-    }
   }
 
 }

@@ -397,7 +397,7 @@ namespace Ordisoftware.HebrewCalendar
       else
       {
         var form = new SelectDayForm();
-        form.ShowDialog();
+        if ( form.ShowDialog() != DialogResult.OK ) return;
         date = form.monthCalendar.SelectionStart;
       }
       string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");

@@ -30,8 +30,8 @@
     {
       this.components = new System.ComponentModel.Container();
       System.Windows.Forms.Label gPSLatitudeLabel;
-      System.Windows.Forms.Label gPSLongitudeLabel;
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
+      System.Windows.Forms.Label gPSLongitudeLabel;
       this.dialogColor = new System.Windows.Forms.ColorDialog();
       this.buttonClose = new System.Windows.Forms.Button();
       this.editFontName = new System.Windows.Forms.ComboBox();
@@ -58,21 +58,13 @@
       // 
       // gPSLatitudeLabel
       // 
-      gPSLatitudeLabel.AutoSize = true;
-      gPSLatitudeLabel.Location = new System.Drawing.Point(38, 66);
+      resources.ApplyResources(gPSLatitudeLabel, "gPSLatitudeLabel");
       gPSLatitudeLabel.Name = "gPSLatitudeLabel";
-      gPSLatitudeLabel.Size = new System.Drawing.Size(45, 13);
-      gPSLatitudeLabel.TabIndex = 54;
-      gPSLatitudeLabel.Text = "Latitude";
       // 
       // gPSLongitudeLabel
       // 
-      gPSLongitudeLabel.AutoSize = true;
-      gPSLongitudeLabel.Location = new System.Drawing.Point(29, 92);
+      resources.ApplyResources(gPSLongitudeLabel, "gPSLongitudeLabel");
       gPSLongitudeLabel.Name = "gPSLongitudeLabel";
-      gPSLongitudeLabel.Size = new System.Drawing.Size(54, 13);
-      gPSLongitudeLabel.TabIndex = 55;
-      gPSLongitudeLabel.Text = "Longitude";
       // 
       // dialogColor
       // 
@@ -80,25 +72,19 @@
       // 
       // buttonClose
       // 
-      this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.buttonClose, "buttonClose");
       this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.buttonClose.Location = new System.Drawing.Point(382, 3);
       this.buttonClose.Name = "buttonClose";
-      this.buttonClose.Size = new System.Drawing.Size(75, 23);
-      this.buttonClose.TabIndex = 0;
-      this.buttonClose.Text = "Close";
       this.buttonClose.UseVisualStyleBackColor = true;
       this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
       // 
       // editFontName
       // 
+      resources.ApplyResources(this.editFontName, "editFontName");
       this.editFontName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "FontName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.editFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.editFontName.FormattingEnabled = true;
-      this.editFontName.Location = new System.Drawing.Point(284, 35);
       this.editFontName.Name = "editFontName";
-      this.editFontName.Size = new System.Drawing.Size(175, 21);
-      this.editFontName.TabIndex = 5;
       this.editFontName.SelectedIndexChanged += new System.EventHandler(this.editFont_Changed);
       // 
       // bindingSettings
@@ -107,17 +93,13 @@
       // 
       // labelShabatDay
       // 
-      this.labelShabatDay.AutoSize = true;
-      this.labelShabatDay.Location = new System.Drawing.Point(22, 37);
+      resources.ApplyResources(this.labelShabatDay, "labelShabatDay");
       this.labelShabatDay.Name = "labelShabatDay";
-      this.labelShabatDay.Size = new System.Drawing.Size(61, 13);
-      this.labelShabatDay.TabIndex = 48;
-      this.labelShabatDay.Text = "Shabat day";
       // 
       // editFontSize
       // 
+      resources.ApplyResources(this.editFontSize, "editFontSize");
       this.editFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSettings, "FontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.editFontSize.Location = new System.Drawing.Point(284, 65);
       this.editFontSize.Maximum = new decimal(new int[] {
             32,
             0,
@@ -129,8 +111,6 @@
             0,
             0});
       this.editFontSize.Name = "editFontSize";
-      this.editFontSize.Size = new System.Drawing.Size(37, 20);
-      this.editFontSize.TabIndex = 6;
       this.editFontSize.Value = new decimal(new int[] {
             10,
             0,
@@ -140,113 +120,79 @@
       // 
       // labelFontSize
       // 
-      this.labelFontSize.AutoSize = true;
-      this.labelFontSize.Location = new System.Drawing.Point(229, 69);
+      resources.ApplyResources(this.labelFontSize, "labelFontSize");
       this.labelFontSize.Name = "labelFontSize";
-      this.labelFontSize.Size = new System.Drawing.Size(49, 13);
-      this.labelFontSize.TabIndex = 45;
-      this.labelFontSize.Text = "Font size";
       // 
       // panelBackColor
       // 
+      resources.ApplyResources(this.panelBackColor, "panelBackColor");
       this.panelBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
       this.panelBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.panelBackColor.Location = new System.Drawing.Point(284, 96);
       this.panelBackColor.Name = "panelBackColor";
-      this.panelBackColor.Size = new System.Drawing.Size(25, 25);
-      this.panelBackColor.TabIndex = 7;
       this.panelBackColor.Click += new System.EventHandler(this.panelBackColor_Click);
       // 
       // labelTextColor
       // 
-      this.labelTextColor.AutoSize = true;
-      this.labelTextColor.Location = new System.Drawing.Point(224, 137);
+      resources.ApplyResources(this.labelTextColor, "labelTextColor");
       this.labelTextColor.Name = "labelTextColor";
-      this.labelTextColor.Size = new System.Drawing.Size(54, 13);
-      this.labelTextColor.TabIndex = 49;
-      this.labelTextColor.Text = "Text color";
       // 
       // editShabatDay
       // 
+      resources.ApplyResources(this.editShabatDay, "editShabatDay");
       this.editShabatDay.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "ShabatDay", true));
       this.editShabatDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.editShabatDay.FormattingEnabled = true;
-      this.editShabatDay.Location = new System.Drawing.Point(89, 34);
       this.editShabatDay.Name = "editShabatDay";
-      this.editShabatDay.Size = new System.Drawing.Size(100, 21);
-      this.editShabatDay.TabIndex = 0;
       // 
       // labelFontName
       // 
-      this.labelFontName.AutoSize = true;
-      this.labelFontName.Location = new System.Drawing.Point(221, 37);
+      resources.ApplyResources(this.labelFontName, "labelFontName");
       this.labelFontName.Name = "labelFontName";
-      this.labelFontName.Size = new System.Drawing.Size(57, 13);
-      this.labelFontName.TabIndex = 46;
-      this.labelFontName.Text = "Font name";
       // 
       // panelTextColor
       // 
+      resources.ApplyResources(this.panelTextColor, "panelTextColor");
       this.panelTextColor.BackColor = System.Drawing.Color.Black;
       this.panelTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.panelTextColor.Location = new System.Drawing.Point(284, 131);
       this.panelTextColor.Name = "panelTextColor";
-      this.panelTextColor.Size = new System.Drawing.Size(25, 25);
-      this.panelTextColor.TabIndex = 8;
       this.panelTextColor.Click += new System.EventHandler(this.panelTextColor_Click);
       // 
       // labelBackColor
       // 
-      this.labelBackColor.AutoSize = true;
-      this.labelBackColor.Location = new System.Drawing.Point(220, 102);
+      resources.ApplyResources(this.labelBackColor, "labelBackColor");
       this.labelBackColor.Name = "labelBackColor";
-      this.labelBackColor.Size = new System.Drawing.Size(58, 13);
-      this.labelBackColor.TabIndex = 47;
-      this.labelBackColor.Text = "Back color";
       // 
       // gPSLatitudeTextBox
       // 
+      resources.ApplyResources(this.gPSLatitudeTextBox, "gPSLatitudeTextBox");
       this.gPSLatitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "Latitude", true));
-      this.gPSLatitudeTextBox.Location = new System.Drawing.Point(89, 64);
       this.gPSLatitudeTextBox.Name = "gPSLatitudeTextBox";
-      this.gPSLatitudeTextBox.Size = new System.Drawing.Size(100, 20);
-      this.gPSLatitudeTextBox.TabIndex = 3;
       // 
       // gPSLongitudeTextBox
       // 
+      resources.ApplyResources(this.gPSLongitudeTextBox, "gPSLongitudeTextBox");
       this.gPSLongitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "Longitude", true));
-      this.gPSLongitudeTextBox.Location = new System.Drawing.Point(90, 90);
       this.gPSLongitudeTextBox.Name = "gPSLongitudeTextBox";
-      this.gPSLongitudeTextBox.Size = new System.Drawing.Size(100, 20);
-      this.gPSLongitudeTextBox.TabIndex = 4;
       // 
       // panel1
       // 
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.buttonClose);
-      this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.panel1.Location = new System.Drawing.Point(10, 172);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(460, 28);
-      this.panel1.TabIndex = 57;
       // 
       // actionUsePersonalShabat
       // 
-      this.actionUsePersonalShabat.AutoSize = true;
+      resources.ApplyResources(this.actionUsePersonalShabat, "actionUsePersonalShabat");
       this.actionUsePersonalShabat.LinkColor = System.Drawing.Color.Blue;
-      this.actionUsePersonalShabat.Location = new System.Drawing.Point(87, 14);
       this.actionUsePersonalShabat.Name = "actionUsePersonalShabat";
-      this.actionUsePersonalShabat.Size = new System.Drawing.Size(104, 13);
-      this.actionUsePersonalShabat.TabIndex = 58;
       this.actionUsePersonalShabat.TabStop = true;
-      this.actionUsePersonalShabat.Text = "Use personal shabat";
       this.actionUsePersonalShabat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.actionUsePersonalShabat_LinkClicked);
       // 
       // PreferencesForm
       // 
       this.AcceptButton = this.buttonClose;
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(480, 210);
       this.Controls.Add(this.actionUsePersonalShabat);
       this.Controls.Add(this.panel1);
       this.Controls.Add(gPSLongitudeLabel);
@@ -264,14 +210,10 @@
       this.Controls.Add(this.panelTextColor);
       this.Controls.Add(this.labelBackColor);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "PreferencesForm";
-      this.Padding = new System.Windows.Forms.Padding(10);
       this.ShowInTaskbar = false;
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Preferences";
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
       ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.editFontSize)).EndInit();

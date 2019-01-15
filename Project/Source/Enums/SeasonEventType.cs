@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewCalendar
   /// <summary>
   /// Provide the season event type.
   /// </summary>
-  public enum SeasonEventType
+  public enum SeasonChangeType
   {
 
     /// <summary>

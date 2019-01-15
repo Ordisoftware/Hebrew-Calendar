@@ -26,42 +26,6 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private enum CalendarFieldType { Date, Month, Sun, Moon, Events }
-
-    private Dictionary<CalendarFieldType, int> CalendarFieldSize
-      = new Dictionary<CalendarFieldType, int>()
-      {
-        { CalendarFieldType.Date, 16 },
-        { CalendarFieldType.Month, 11 },
-        { CalendarFieldType.Sun, 23 },
-        { CalendarFieldType.Moon, 21 },
-        { CalendarFieldType.Events, 40 },
-      };
-
-    string HeaderSep;
-    string HeaderTxt;
-    string ColumnSepLeft = "| ";
-    string ColumnSepInner = " | ";
-    string ColumnSepRight = " |";
-    string ShabatText = "[S]";
-    string MoonriseText = "R: ";
-    string MoonsetText = "S: ";
-    string MoonNoText = "        ";
-    string HourSummerText = "(S)";
-    string HourWinterText = "(W)";
-    int ColumnEventLenght = 38;
-    public string MoonNewText = "●";
-    public string MoonFullText = "○";
-
-    bool TrimBeforeNewLunarYear = true;
-    bool ShowWinterSummerHour = true;
-    bool ShowShabat = true;
-
-    private string FormatTime(TimeSpan? time)
-    {
-      return time.Value.Hours.ToString("00") + ":" + time.Value.Minutes.ToString("00");
-    }
-
     private void GenerateTextReport()
     {
       IsGenerating = true;
@@ -96,8 +60,9 @@ namespace Ordisoftware.HebrewCalendar
       HeaderTxt = "|";
       foreach ( CalendarFieldType v in Enum.GetValues(typeof(CalendarFieldType)) )
       {
+        string str = CalendarFieldToString(v);
         HeaderSep += new string('-', CalendarFieldSize[v]) + '|';
-        HeaderTxt += " " + v.ToString() + new string(' ', CalendarFieldSize[v] - v.ToString().Length - 2) + " |";
+        HeaderTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " |";
       }
       HeaderSep = HeaderSep.Remove(HeaderSep.Length - 1) + '|';
       var content = new StringBuilder();
@@ -136,30 +101,9 @@ namespace Ordisoftware.HebrewCalendar
         textDate += dayDate.Month.ToString("00") + ".";
         textDate += dayDate.Year;
         string strDesc = "";
-        void AddResult(string str) { strDesc = ( strDesc == "" ? "" : strDesc + " - " ) + str; }
-        AddResult(TorahCelebrations.SeasonEventToString((SeasonEventType)day.SeasonChange));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.NewYearD1) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.NewYearD1));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.NewYearD10) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.NewYearD10));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.PessahD1) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.PessahD1));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.PessahD8) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.PessahD8));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.ChavouotDiet) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.ChavouotDiet));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.Chavouot1) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.Chavouot1));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.Chavouot2) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.Chavouot2));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.YomTerouah) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.YomTerouah));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.YomHaKipourim) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.YomHaKipourim));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.SoukotD1) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.SoukotD1));
-        if ( ((TorahEventType)day.TorahEvents).HasFlag(TorahEventType.SoukotD8) )
-          AddResult(TorahCelebrations.TorahEventToString(TorahEventType.SoukotD8)); 
+        string s1 = TorahCelebrations.SeasonEventToString((SeasonChangeType)day.SeasonChange);
+        string s2 = TorahCelebrations.TorahEventToString((TorahEventType)day.TorahEvents);
+        strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
         strDesc += new string(' ', ColumnEventLenght - strDesc.Length) + ColumnSepRight;
         content.Append(ColumnSepLeft);
         content.Append(textDate);

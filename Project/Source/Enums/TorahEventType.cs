@@ -19,75 +19,70 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide the torah events type (flags).
+  /// Provide the torah event type.
   /// </summary>
   [Flags]
   public enum TorahEventType
   {
     /// <summary>
-    /// The no event flag.
+    /// The no event.
     /// </summary>
-    None = 0,
+    None,
 
     /// <summary>
-    /// The shabat flag.
+    /// The new year day 1.
     /// </summary>
-    Shabat = 1 << 1,
+    NewYearD1,
 
     /// <summary>
-    /// The new year day 1 flag.
+    /// The new year day 10.
     /// </summary>
-    NewYearD1 = 1 << 2,
+    NewYearD10,
 
     /// <summary>
-    /// The new year day 10 flag.
+    /// The pessah first day.
     /// </summary>
-    NewYearD10 = 1 << 3,
+    PessahD1,
 
     /// <summary>
-    /// The pessah first day flag.
+    /// The pessah last day.
     /// </summary>
-    PessahD1 = 1 << 4,
+    PessahD8,
 
     /// <summary>
-    /// The pessah last day flag.
+    /// The chavouot diet start.
     /// </summary>
-    PessahD8 = 1 << 5,
+    ChavouotDiet,
 
     /// <summary>
-    /// The chavouot diet start flag.
+    /// The chavouot first celebration.
     /// </summary>
-    ChavouotDiet = 1 << 6,
+    Chavouot1,
 
     /// <summary>
-    /// The chavouot first celebration flag.
+    /// The chavouot second celebration.
     /// </summary>
-    Chavouot1 = 1 << 7,
+    Chavouot2,
 
     /// <summary>
-    /// The chavouot second celebration flag.
+    /// The yom terouah.
     /// </summary>
-    Chavouot2 = 1 << 8,
+    YomTerouah,
 
     /// <summary>
-    /// The yom terouah flag.
+    /// The yom hakipourim.
     /// </summary>
-    YomTerouah = 1 << 9,
+    YomHaKipourim,
 
     /// <summary>
-    /// The yom hakipourim flag.
+    /// The soukot first day.
     /// </summary>
-    YomHaKipourim = 1 << 10,
+    SoukotD1,
 
     /// <summary>
-    /// The soukot first day flag.
+    /// The soukot last day.
     /// </summary>
-    SoukotD1 = 1 << 11,
-
-    /// <summary>
-    /// The soukot last day flag.
-    /// </summary>
-    SoukotD8 = 1 << 12
+    SoukotD8
 
   }
 

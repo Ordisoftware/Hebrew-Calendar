@@ -112,24 +112,113 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="gPSLatitudeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="gPSLongitudeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="dialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 17</value>
-  </metadata>
-  <metadata name="bindingSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;labelFontSize.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonClose.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelTextColor.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;editFontName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelBackColor.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="actionUsePersonalShabat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelTextColor.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;labelFontName.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="labelTextColor.Text" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="labelBackColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 102</value>
+  </data>
+  <data name="editShabatDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 34</value>
+  </data>
+  <data name="labelFontName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="&gt;&gt;labelShabatDay.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="labelTextColor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;bindingSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gPSLatitudeTextBox.Name" xml:space="preserve">
+    <value>gPSLatitudeTextBox</value>
+  </data>
+  <data name="&gt;&gt;gPSLatitudeTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="panelBackColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 96</value>
+  </data>
+  <data name="labelTextColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 137</value>
+  </data>
+  <data name="editShabatDay.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelShabatDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
+  </data>
+  <data name="&gt;&gt;editFontSize.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panelTextColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="&gt;&gt;gPSLongitudeTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelFontSize.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
@@ -154,4 +243,367 @@
         AAD8HwAA//8AAA==
 </value>
   </data>
+  <data name="&gt;&gt;gPSLongitudeLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;editShabatDay.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;editFontSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gPSLongitudeTextBox.Name" xml:space="preserve">
+    <value>gPSLongitudeTextBox</value>
+  </data>
+  <data name="labelFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 172</value>
+  </data>
+  <data name="&gt;&gt;dialogColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="actionUsePersonalShabat.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;panelTextColor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelBackColor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="gPSLongitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 90</value>
+  </data>
+  <data name="actionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="labelBackColor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;actionUsePersonalShabat.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gPSLongitudeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;bindingSettings.Name" xml:space="preserve">
+    <value>bindingSettings</value>
+  </data>
+  <data name="&gt;&gt;labelTextColor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="gPSLatitudeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="&gt;&gt;labelTextColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>PreferencesForm</value>
+  </data>
+  <data name="panelBackColor.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;labelTextColor.Name" xml:space="preserve">
+    <value>labelTextColor</value>
+  </data>
+  <data name="labelBackColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="editFontSize.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;labelShabatDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;actionUsePersonalShabat.Name" xml:space="preserve">
+    <value>actionUsePersonalShabat</value>
+  </data>
+  <data name="&gt;&gt;gPSLongitudeTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panelTextColor.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="labelShabatDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 37</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="&gt;&gt;labelFontName.Name" xml:space="preserve">
+    <value>labelFontName</value>
+  </data>
+  <data name="&gt;&gt;gPSLatitudeLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dialogColor.Name" xml:space="preserve">
+    <value>dialogColor</value>
+  </data>
+  <data name="labelBackColor.Text" xml:space="preserve">
+    <value>Back color</value>
+  </data>
+  <data name="&gt;&gt;editFontName.Name" xml:space="preserve">
+    <value>editFontName</value>
+  </data>
+  <data name="labelFontSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gPSLongitudeTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="gPSLatitudeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;gPSLatitudeTextBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;gPSLongitudeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelBackColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editShabatDay.Name" xml:space="preserve">
+    <value>editShabatDay</value>
+  </data>
+  <data name="gPSLatitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 64</value>
+  </data>
+  <data name="gPSLatitudeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="labelBackColor.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;labelBackColor.Name" xml:space="preserve">
+    <value>labelBackColor</value>
+  </data>
+  <data name="editFontSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 65</value>
+  </data>
+  <data name="&gt;&gt;gPSLongitudeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editFontName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;gPSLatitudeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelShabatDay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;actionUsePersonalShabat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFontName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gPSLatitudeTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="actionUsePersonalShabat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 14</value>
+  </data>
+  <data name="gPSLongitudeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="editShabatDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 21</value>
+  </data>
+  <data name="gPSLongitudeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 92</value>
+  </data>
+  <data name="&gt;&gt;editFontName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelFontSize.Name" xml:space="preserve">
+    <value>labelFontSize</value>
+  </data>
+  <data name="&gt;&gt;labelShabatDay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelFontSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelTextColor.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="gPSLongitudeLabel.Text" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="&gt;&gt;panelBackColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFontSize.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;editShabatDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="&gt;&gt;panelTextColor.Name" xml:space="preserve">
+    <value>panelTextColor</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFontName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 37</value>
+  </data>
+  <data name="gPSLongitudeTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;editFontSize.Name" xml:space="preserve">
+    <value>editFontSize</value>
+  </data>
+  <data name="&gt;&gt;labelFontName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelBackColor.Name" xml:space="preserve">
+    <value>panelBackColor</value>
+  </data>
+  <data name="panelTextColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 131</value>
+  </data>
+  <data name="editFontName.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;gPSLatitudeTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gPSLatitudeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gPSLongitudeLabel.Name" xml:space="preserve">
+    <value>gPSLongitudeLabel</value>
+  </data>
+  <data name="&gt;&gt;panelTextColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelBackColor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelFontName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;editShabatDay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="editFontName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 35</value>
+  </data>
+  <data name="labelFontName.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="labelFontSize.Text" xml:space="preserve">
+    <value>Font size</value>
+  </data>
+  <data name="labelTextColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="actionUsePersonalShabat.Text" xml:space="preserve">
+    <value>Use personal shabat</value>
+  </data>
+  <data name="gPSLongitudeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="labelShabatDay.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="panelBackColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>480, 210</value>
+  </data>
+  <data name="labelFontName.Text" xml:space="preserve">
+    <value>Font name</value>
+  </data>
+  <data name="&gt;&gt;gPSLongitudeTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="editFontName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 21</value>
+  </data>
+  <data name="gPSLatitudeLabel.Text" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="editFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.Name" xml:space="preserve">
+    <value>buttonClose</value>
+  </data>
+  <data name="labelShabatDay.Text" xml:space="preserve">
+    <value>Shabat day</value>
+  </data>
+  <data name="&gt;&gt;gPSLatitudeLabel.Name" xml:space="preserve">
+    <value>gPSLatitudeLabel</value>
+  </data>
+  <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 3</value>
+  </data>
+  <data name="labelFontSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 69</value>
+  </data>
+  <data name="&gt;&gt;editFontSize.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="gPSLatitudeTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;labelBackColor.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;actionUsePersonalShabat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelShabatDay.Name" xml:space="preserve">
+    <value>labelShabatDay</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>460, 28</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="gPSLatitudeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 66</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>154, 17</value>
+  </metadata>
+  <metadata name="gPSLongitudeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="bindingSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="gPSLatitudeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
 </root>

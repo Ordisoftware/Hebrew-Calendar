@@ -130,7 +130,7 @@ namespace Ordisoftware.HebrewCalendar
       AAPlus.Date date = new AAPlus.Date();
       long jdYear, jdMonth, jdDay, jdHour, jdMinute;
       double second;
-      void set(SeasonEventType season, Func<long, double> action)
+      void set(SeasonChangeType season, Func<long, double> action)
       {
         date.Set(action(year), true);
         date.Get(out jdYear, out jdMonth, out jdDay, out jdHour, out jdMinute, out second);
@@ -139,10 +139,10 @@ namespace Ordisoftware.HebrewCalendar
         var day = lunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == strDate);
         if ( day != null ) day.SeasonChange = (int)season;
       }
-      set(SeasonEventType.SpringEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
-      set(SeasonEventType.SummerSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
-      set(SeasonEventType.AutumnEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
-      set(SeasonEventType.WinterSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
+      set(SeasonChangeType.SpringEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
+      set(SeasonChangeType.SummerSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
+      set(SeasonChangeType.AutumnEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
+      set(SeasonChangeType.WinterSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
     }
 
     /// <summary>
@@ -194,7 +194,7 @@ namespace Ordisoftware.HebrewCalendar
       var dateDay = SQLiteDateTool.GetDate(day.Date);
       var equinoxe = ( from d in lunisolarCalendar.LunisolarDays
                        where dateDay.Year == SQLiteDateTool.GetDate(day.Date).Year 
-                          && d.SeasonChange == (int)SeasonEventType.SpringEquinox
+                          && d.SeasonChange == (int)SeasonChangeType.SpringEquinox
                        select d ).First();
       var dateEquinox = SQLiteDateTool.GetDate(equinoxe.Date);
       int deltaNewLambDay = dateEquinox.Day - TorahCelebrations.NewLambDay;

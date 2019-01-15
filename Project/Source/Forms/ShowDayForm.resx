@@ -117,4 +117,688 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;labelMoonset.Name" xml:space="preserve">
+    <value>labelMoonset</value>
+  </data>
+  <data name="&gt;&gt;labelMoonriseValue.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelEventSeason.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;buttonNextDay.Name" xml:space="preserve">
+    <value>buttonNextDay</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labelEventSeasonValue.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonSelectDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelEventSeason.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 25</value>
+  </data>
+  <data name="&gt;&gt;labelSunriseValue.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="labelSunsetValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 16</value>
+  </data>
+  <data name="labelMoonsetValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;buttonNextDay.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;labelMoonsetValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelEventSeason.Text" xml:space="preserve">
+    <value>Season:</value>
+  </data>
+  <data name="labelEventTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="labelEventTorahValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 170</value>
+  </data>
+  <data name="&gt;&gt;labelMoonset.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;labelLunarDayValue.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelSunrise.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelMoonsetValue.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="labelSunsetValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="buttonPreviousDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 205</value>
+  </data>
+  <data name="&gt;&gt;labelDate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelSunriseValue.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelEventTorah.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelEventTorahValue.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelMoonrise.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelMoonset.Text" xml:space="preserve">
+    <value>Moonset</value>
+  </data>
+  <data name="labelSunriseValue.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="labelMoonset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 125</value>
+  </data>
+  <data name="labelMoonrise.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 16</value>
+  </data>
+  <data name="&gt;&gt;labelSunrise.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelEventSeasonValue.Name" xml:space="preserve">
+    <value>labelEventSeasonValue</value>
+  </data>
+  <data name="labelMoonrise.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;labelMoonrise.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;labelMoonset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureMoon.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviousDay.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSunset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelDate.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelMoonsetValue.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;buttonNextDay.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelLunarMonthValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 15</value>
+  </data>
+  <data name="labelSunriseValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 60</value>
+  </data>
+  <data name="labelEventSeasonValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelEventTorahValue.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;labelDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelMoonriseValue.Name" xml:space="preserve">
+    <value>labelMoonriseValue</value>
+  </data>
+  <data name="labelEventSeasonValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 16</value>
+  </data>
+  <data name="&gt;&gt;labelSunsetValue.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;labelLunarMonthValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelLunarMonthValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 233</value>
+  </data>
+  <data name="buttonSelectDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="labelDate.Text" xml:space="preserve">
+    <value>labelDate</value>
+  </data>
+  <data name="labelSunset.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="pictureMoon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;pictureMoon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelMoonrise.Text" xml:space="preserve">
+    <value>Moonrise</value>
+  </data>
+  <data name="&gt;&gt;labelMoonrise.Name" xml:space="preserve">
+    <value>labelMoonrise</value>
+  </data>
+  <data name="labelEventTorahValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 16</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;labelLunarMonthValue.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="labelDate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="buttonNextDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="buttonPreviousDay.Text" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="labelMoonriseValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;labelEventTorah.Name" xml:space="preserve">
+    <value>labelEventTorah</value>
+  </data>
+  <data name="buttonSelectDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;labelSunset.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="labelMoonrise.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelEventSeasonValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelMoonriseValue.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="labelLunarMonthValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 16</value>
+  </data>
+  <data name="&gt;&gt;buttonNextDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pictureMoon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 75</value>
+  </data>
+  <data name="labelEventTorahValue.Text" xml:space="preserve">
+    <value>labelEventTorahValue</value>
+  </data>
+  <data name="labelEventTorahValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelSunrise.Text" xml:space="preserve">
+    <value>Sunset</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectDay.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelSunset.Name" xml:space="preserve">
+    <value>labelSunset</value>
+  </data>
+  <data name="&gt;&gt;labelEventTorahValue.Name" xml:space="preserve">
+    <value>labelEventTorahValue</value>
+  </data>
+  <data name="labelEventSeason.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 16</value>
+  </data>
+  <data name="labelMoonset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;labelEventTorah.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="labelLunarDayValue.Text" xml:space="preserve">
+    <value>labelLunarDayValue</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectDay.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="buttonNextDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="labelSunrise.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 80</value>
+  </data>
+  <data name="labelSunriseValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="labelSunriseValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 16</value>
+  </data>
+  <data name="labelSunriseValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelMoonset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelEventTorah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 170</value>
+  </data>
+  <data name="&gt;&gt;labelEventSeasonValue.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelMoonrise.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelSunriseValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSunset.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="&gt;&gt;labelDate.Name" xml:space="preserve">
+    <value>labelDate</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectDay.Name" xml:space="preserve">
+    <value>buttonSelectDay</value>
+  </data>
+  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviousDay.Name" xml:space="preserve">
+    <value>buttonPreviousDay</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelLunarDayValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 35</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>Manual</value>
+  </data>
+  <data name="&gt;&gt;pictureMoon.Name" xml:space="preserve">
+    <value>pictureMoon</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelLunarMonthValue.Text" xml:space="preserve">
+    <value>labelLunarMonthValue</value>
+  </data>
+  <data name="labelMoonriseValue.Text" xml:space="preserve">
+    <value>00:00</value>
+  </data>
+  <data name="&gt;&gt;labelEventSeason.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelEventSeason.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonPreviousDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="labelEventSeasonValue.Text" xml:space="preserve">
+    <value>labelEventSeasonValue</value>
+  </data>
+  <data name="labelEventSeason.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Italic</value>
+  </data>
+  <data name="labelSunsetValue.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 35</value>
+  </data>
+  <data name="&gt;&gt;labelMoonset.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="labelMoonsetValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelMoonsetValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 16</value>
+  </data>
+  <data name="&gt;&gt;labelSunsetValue.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelLunarMonthValue.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;labelLunarDayValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelMoonsetValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 125</value>
+  </data>
+  <data name="labelEventTorah.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Italic</value>
+  </data>
+  <data name="&gt;&gt;labelLunarDayValue.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Hebrew Calendar</value>
+  </data>
+  <data name="labelMoonriseValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelLunarDayValue.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="labelEventSeasonValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 150</value>
+  </data>
+  <data name="labelEventTorah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelSunsetValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 80</value>
+  </data>
+  <data name="&gt;&gt;labelEventSeasonValue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonNextDay.Text" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="&gt;&gt;labelLunarMonthValue.Name" xml:space="preserve">
+    <value>labelLunarMonthValue</value>
+  </data>
+  <data name="labelEventTorahValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;labelMoonsetValue.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="labelSunrise.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonNextDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>286, 205</value>
+  </data>
+  <data name="labelMoonriseValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 16</value>
+  </data>
+  <data name="&gt;&gt;labelEventSeason.Name" xml:space="preserve">
+    <value>labelEventSeason</value>
+  </data>
+  <data name="buttonSelectDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 25</value>
+  </data>
+  <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ShowDayForm</value>
+  </data>
+  <data name="labelSunset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 16</value>
+  </data>
+  <data name="buttonSelectDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="labelLunarDayValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;labelEventTorah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelMoonrise.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 105</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 35</value>
+  </data>
+  <data name="labelSunset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pictureMoon.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="labelDate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 35</value>
+  </data>
+  <data name="labelSunset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 60</value>
+  </data>
+  <data name="labelLunarDayValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 16</value>
+  </data>
+  <data name="buttonSelectDay.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;labelSunsetValue.Name" xml:space="preserve">
+    <value>labelSunsetValue</value>
+  </data>
+  <data name="&gt;&gt;labelMoonriseValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSunsetValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelEventSeason.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 150</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 1</value>
+  </data>
+  <data name="labelEventSeasonValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;labelMoonsetValue.Name" xml:space="preserve">
+    <value>labelMoonsetValue</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="labelSunrise.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 16</value>
+  </data>
+  <data name="labelMoonset.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="buttonNextDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="buttonNextDay.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="labelSunsetValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelLunarMonthValue.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="labelEventTorah.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="buttonPreviousDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="labelEventTorah.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelEventTorahValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelMoonriseValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 105</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviousDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSunrise.Name" xml:space="preserve">
+    <value>labelSunrise</value>
+  </data>
+  <data name="&gt;&gt;labelEventTorahValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelSunset.Text" xml:space="preserve">
+    <value>Sunrise</value>
+  </data>
+  <data name="labelDate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelEventSeason.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelSunsetValue.Text" xml:space="preserve">
+    <value>00:00</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="buttonPreviousDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="buttonPreviousDay.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>314, 268</value>
+  </data>
+  <data name="buttonSelectDay.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="labelSunrise.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="labelLunarDayValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="buttonNextDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="labelEventSeason.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviousDay.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;labelSunriseValue.Name" xml:space="preserve">
+    <value>labelSunriseValue</value>
+  </data>
+  <data name="labelEventTorah.Text" xml:space="preserve">
+    <value>Torah:</value>
+  </data>
+  <data name="labelMoonrise.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="labelSunriseValue.Text" xml:space="preserve">
+    <value>00:00</value>
+  </data>
+  <data name="&gt;&gt;labelEventTorahValue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelSunrise.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pictureMoon.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelSunrise.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonSelectDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 205</value>
+  </data>
+  <data name="labelDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="labelMoonset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 16</value>
+  </data>
+  <data name="labelDate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="labelMoonsetValue.Text" xml:space="preserve">
+    <value>00:00</value>
+  </data>
+  <data name="buttonPreviousDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelLunarMonthValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="labelSunset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="labelMoonriseValue.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;labelLunarDayValue.Name" xml:space="preserve">
+    <value>labelLunarDayValue</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

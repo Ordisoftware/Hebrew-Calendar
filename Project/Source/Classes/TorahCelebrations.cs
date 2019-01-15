@@ -64,70 +64,70 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Convert a season event into a string representation.
     /// </summary>
-    /// <param name="season">The season event.</param>
+    /// <param name="value">The season event.</param>
     /// <returns>
     /// A string that represents the season event.
     /// </returns>
-    static public string SeasonEventToString(SeasonEventType season)
+    static public string SeasonEventToString(SeasonChangeType value)
     {
       string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !SeasonEventNames[season].ContainsKey(lang) ) lang = "en";
-      return SeasonEventNames[season][lang];
+      if ( !SeasonEventNames[value].ContainsKey(lang) ) lang = "en";
+      return SeasonEventNames[value][lang];
     }
 
     /// <summary>
     /// Convert a torah event into a string representation.
     /// </summary>
-    /// <param name="torah">The torah event.</param>
+    /// <param name="value">The torah event.</param>
     /// <returns>
     /// A string that represents the torah event.
     /// </returns>
-    static public string TorahEventToString(TorahEventType torah)
+    static public string TorahEventToString(TorahEventType value)
     {
       string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !TorahEventNames[torah].ContainsKey(lang) ) lang = "en";
-      return TorahEventNames[torah][lang];
+      if ( !TorahEventNames[value].ContainsKey(lang) ) lang = "en";
+      return TorahEventNames[value][lang];
     }
 
     /// <summary>
     /// List of names of the season change events.
     /// </summary>
-    static private readonly Dictionary<SeasonEventType, Dictionary<string, string>> SeasonEventNames
-      = new Dictionary<SeasonEventType, Dictionary<string, string>>()
+    static private readonly Dictionary<SeasonChangeType, Dictionary<string, string>> SeasonEventNames
+      = new Dictionary<SeasonChangeType, Dictionary<string, string>>()
       {
         {
-          SeasonEventType.None, new Dictionary<string, string>
+          SeasonChangeType.None, new Dictionary<string, string>
           {
             { "en", "" },
             { "fr", "" }
           }
         },
         {
-          SeasonEventType.AutumnEquinox, new Dictionary<string, string>
+          SeasonChangeType.AutumnEquinox, new Dictionary<string, string>
           {
-            { "en", "" },
-            { "fr", "Automne" }
+            { "en", "Autumn equinox" },
+            { "fr", "Equinoxe d'automne" }
           }
         },
         {
-          SeasonEventType.SpringEquinox, new Dictionary<string, string>
+          SeasonChangeType.SpringEquinox, new Dictionary<string, string>
           {
-            { "en", "" },
-            { "fr", "Printemps" }
+            { "en", "Spring equinox" },
+            { "fr", "Ewuinoxe de printemps" }
           }
         },
         {
-          SeasonEventType.SummerSolstice, new Dictionary<string, string>
+          SeasonChangeType.SummerSolstice, new Dictionary<string, string>
           {
-            { "en", "" },
-            { "fr", "Été" }
+            { "en", "Summer solstice" },
+            { "fr", "Solstice d'été" }
           }
         },
         {
-          SeasonEventType.WinterSolstice, new Dictionary<string, string>
+          SeasonChangeType.WinterSolstice, new Dictionary<string, string>
           {
-            { "en", "" },
-            { "fr", "Hiver" }
+            { "en", "Winter solstice" },
+            { "fr", "Solstice d'hiver" }
           }
         }
       };

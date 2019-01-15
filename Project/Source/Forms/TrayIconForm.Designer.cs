@@ -41,61 +41,52 @@
       // 
       // TrayIcon
       // 
+      resources.ApplyResources(this.TrayIcon, "TrayIcon");
       this.TrayIcon.ContextMenuStrip = this.MenuTray;
-      this.TrayIcon.Text = "Hebrew Calendar";
-      this.TrayIcon.Visible = true;
       this.TrayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TrayIcon_MouseClick);
       // 
       // MenuTray
       // 
+      resources.ApplyResources(this.MenuTray, "MenuTray");
       this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuShowHide,
             this.MenuAbout,
             this.SeparatorTrayMenuView,
             this.MenuExit});
       this.MenuTray.Name = "contextMenuStrip";
-      this.MenuTray.Size = new System.Drawing.Size(181, 98);
       // 
       // MenuShowHide
       // 
+      resources.ApplyResources(this.MenuShowHide, "MenuShowHide");
       this.MenuShowHide.Name = "MenuShowHide";
-      this.MenuShowHide.Size = new System.Drawing.Size(180, 22);
-      this.MenuShowHide.Text = "Restore";
       this.MenuShowHide.Click += new System.EventHandler(this.MenuShowHide_Click);
       // 
       // MenuAbout
       // 
-      this.MenuAbout.Image = ((System.Drawing.Image)(resources.GetObject("MenuAbout.Image")));
+      resources.ApplyResources(this.MenuAbout, "MenuAbout");
       this.MenuAbout.Name = "MenuAbout";
-      this.MenuAbout.Size = new System.Drawing.Size(180, 22);
-      this.MenuAbout.Text = "About";
       this.MenuAbout.Click += new System.EventHandler(this.MenuAbout_Click);
       // 
       // SeparatorTrayMenuView
       // 
+      resources.ApplyResources(this.SeparatorTrayMenuView, "SeparatorTrayMenuView");
       this.SeparatorTrayMenuView.Name = "SeparatorTrayMenuView";
-      this.SeparatorTrayMenuView.Size = new System.Drawing.Size(177, 6);
       // 
       // MenuExit
       // 
-      this.MenuExit.Image = ((System.Drawing.Image)(resources.GetObject("MenuExit.Image")));
+      resources.ApplyResources(this.MenuExit, "MenuExit");
       this.MenuExit.Name = "MenuExit";
-      this.MenuExit.Size = new System.Drawing.Size(180, 22);
-      this.MenuExit.Text = "Exit";
       this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
       // 
       // TrayIconForm
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(292, 66);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "TrayIconForm";
       this.ShowInTaskbar = false;
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "TrayIcon";
       this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TrayIconForm_FormClosed);
       this.Load += new System.EventHandler(this.TrayIconForm_Load);
