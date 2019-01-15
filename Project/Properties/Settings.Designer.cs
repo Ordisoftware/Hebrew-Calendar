@@ -157,10 +157,10 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Saturday")]
-        public global::System.DayOfWeek ShabatDay {
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public int ShabatDay {
             get {
-                return ((global::System.DayOfWeek)(this["ShabatDay"]));
+                return ((int)(this["ShabatDay"]));
             }
             set {
                 this["ShabatDay"] = value;
@@ -181,7 +181,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("48.52")]
+        [global::System.Configuration.DefaultSettingValueAttribute("48.85")]
         public float Latitude {
             get {
                 return ((float)(this["Latitude"]));
@@ -193,7 +193,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2.15")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.35")]
         public float Longitude {
             get {
                 return ((float)(this["Longitude"]));

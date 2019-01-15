@@ -48,7 +48,7 @@ namespace Ordisoftware.HebrewCalendar
       Instance = new PreferencesForm();
     }
 
-    public DayOfWeek OldShabatDay;
+    public int OldShabatDay;
     public float OldLatitude;
     public float OldLongitude;
 
@@ -77,13 +77,14 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by buttonClose for click events.
+    /// Event handler. Called by PreferencesForm for closing events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void buttonClose_Click(object sender, EventArgs e)
+    private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      Program.Settings.Store();
+      Program.Settings.ShabatDay = (int)( (DayOfWeekItem)editShabatDay.SelectedItem ).Day;
+      Program.Settings.Save();
     }
 
     /// <summary>
@@ -137,7 +138,7 @@ namespace Ordisoftware.HebrewCalendar
       form.Text = "Select birthday";
       form.ShowDialog();
       date = form.monthCalendar.SelectionStart;
-      Program.Settings.ShabatDay = date.AddDays(-1).DayOfWeek;
+      Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
     }
 
     /// <summary>
@@ -145,8 +146,12 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private void LoadDays()
     {
-      foreach ( DayOfWeek item in Enum.GetValues(typeof(DayOfWeek)) )
-        editShabatDay.Items.Add(new DayOfWeekItem() { Text = item.ToString(), Index = item });
+      foreach ( DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)) )
+      {
+        var item = new DayOfWeekItem() { Text = LocalizerHelper.DayOfWeekText.GetLang(day), Day = day };
+        editShabatDay.Items.Add(item);
+        if ( (DayOfWeek)Program.Settings.ShabatDay == day ) editShabatDay.SelectedItem = item;
+      }
     }
 
     /// <summary>
@@ -186,7 +191,7 @@ namespace Ordisoftware.HebrewCalendar
       /// <summary>
       /// Indicate the day of week enum value.
       /// </summary>
-      public DayOfWeek Index { get; set; }
+      public DayOfWeek Day { get; set; }
 
       /// <summary>
       /// Return a <see cref="T:System.String" /> that represents the day.

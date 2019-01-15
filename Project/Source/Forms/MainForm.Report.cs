@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCalendar
         strSun = ShowWinterSummerHour
                ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) ? EphemerisNames.GetLang(EphemerisType.SummerHour) : EphemerisNames.GetLang(EphemerisType.WinterHour) ) + " " + strSun
                : strSun + new string(' ', 3 + 1);
-        strSun += " " + (ShowShabat && dayDate.DayOfWeek == Program.Settings.ShabatDay ? ShabatText : "   ");
+        strSun += " " + (ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay ? ShabatText : "   ");
         string strMoonrise = day.Moonrise == "" ? MoonNoText : EphemerisNames.GetLang(EphemerisType.Rise) + day.Moonrise;
         string strMoonset = day.Moonset == "" ? MoonNoText : EphemerisNames.GetLang(EphemerisType.Set) + day.Moonset;
         string strMoon = (MoonriseType)day.MoonriseType == MoonriseType.BeforeSet ? strMoonrise + ColumnSepInner + strMoonset : strMoonset + ColumnSepInner + strMoonrise;

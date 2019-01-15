@@ -46,6 +46,10 @@ The setup tries to register an ODBC dsn to the registry but in case of problem r
 
 "%USERPROFILE%\AppData\Roaming\Ordisoftware\Hebrew Calendar\Hebrew-calendar.sqlite"
 
+#### How to get latitude and longitude?
+
+They can be found using an [online service](https://www.google.com/search?q=latitude+longitude).
+
 ## Changelog
 
 #### 2019.01.14 - Version 1.0

@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="labelEventTorahValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -217,7 +217,7 @@
     <value>True</value>
   </data>
   <data name="labelEventTorah.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Italic</value>
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="labelEventTorah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -250,7 +250,7 @@
     <value>True</value>
   </data>
   <data name="labelEventSeason.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Italic</value>
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="labelEventSeason.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -309,108 +309,6 @@
   <data name="&gt;&gt;labelEventSeasonValue.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="buttonNextDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="buttonNextDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="buttonNextDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="buttonNextDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>286, 205</value>
-  </data>
-  <data name="buttonNextDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="buttonNextDay.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="buttonNextDay.Text" xml:space="preserve">
-    <value>&gt;</value>
-  </data>
-  <data name="&gt;&gt;buttonNextDay.Name" xml:space="preserve">
-    <value>buttonNextDay</value>
-  </data>
-  <data name="&gt;&gt;buttonNextDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonNextDay.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;buttonNextDay.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="buttonSelectDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="buttonSelectDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="buttonSelectDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="buttonSelectDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonSelectDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 205</value>
-  </data>
-  <data name="buttonSelectDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 25</value>
-  </data>
-  <data name="buttonSelectDay.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="buttonSelectDay.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;buttonSelectDay.Name" xml:space="preserve">
-    <value>buttonSelectDay</value>
-  </data>
-  <data name="&gt;&gt;buttonSelectDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSelectDay.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;buttonSelectDay.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="buttonPreviousDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="buttonPreviousDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="buttonPreviousDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="buttonPreviousDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 205</value>
-  </data>
-  <data name="buttonPreviousDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="buttonPreviousDay.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="buttonPreviousDay.Text" xml:space="preserve">
-    <value>&lt;</value>
-  </data>
-  <data name="&gt;&gt;buttonPreviousDay.Name" xml:space="preserve">
-    <value>buttonPreviousDay</value>
-  </data>
-  <data name="&gt;&gt;buttonPreviousDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonPreviousDay.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;buttonPreviousDay.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="pictureMoon.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 2</value>
   </data>
@@ -430,7 +328,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;pictureMoon.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="labelMoonsetValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -460,7 +358,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;labelMoonsetValue.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="labelMoonriseValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -490,7 +388,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;labelMoonriseValue.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="labelSunsetValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -520,7 +418,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;labelSunsetValue.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="labelSunriseValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -550,7 +448,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;labelSunriseValue.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="labelMoonset.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -580,7 +478,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;labelMoonset.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>9</value>
   </data>
   <data name="labelMoonrise.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -610,7 +508,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;labelMoonrise.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>10</value>
   </data>
   <data name="labelLunarDayValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -640,7 +538,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;labelLunarDayValue.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>11</value>
   </data>
   <data name="labelLunarMonthValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -670,7 +568,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;labelLunarMonthValue.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>12</value>
   </data>
   <data name="labelSunset.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -700,7 +598,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;labelSunset.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>13</value>
   </data>
   <data name="labelSunrise.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -730,16 +628,16 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;labelSunrise.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>14</value>
   </data>
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 36</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 233</value>
+    <value>314, 202</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -754,6 +652,108 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonNextDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="buttonNextDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonNextDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="buttonNextDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 5</value>
+  </data>
+  <data name="buttonNextDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="buttonNextDay.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonNextDay.Text" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="&gt;&gt;buttonNextDay.Name" xml:space="preserve">
+    <value>buttonNextDay</value>
+  </data>
+  <data name="&gt;&gt;buttonNextDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonNextDay.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;buttonNextDay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonSelectDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="buttonSelectDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonSelectDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="buttonSelectDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonSelectDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 5</value>
+  </data>
+  <data name="buttonSelectDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 25</value>
+  </data>
+  <data name="buttonSelectDay.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonSelectDay.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectDay.Name" xml:space="preserve">
+    <value>buttonSelectDay</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectDay.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectDay.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonPreviousDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="buttonPreviousDay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonPreviousDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="buttonPreviousDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="buttonPreviousDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="buttonPreviousDay.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonPreviousDay.Text" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviousDay.Name" xml:space="preserve">
+    <value>buttonPreviousDay</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviousDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviousDay.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviousDay.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -778,6 +778,57 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 238</value>
+  </data>
+  <data name="panel4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 35</value>
+  </data>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 237</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 1</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -787,7 +838,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>314, 268</value>
+    <value>314, 273</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>

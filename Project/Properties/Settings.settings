@@ -35,17 +35,17 @@
     <Setting Name="ShowTips" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ShabatDay" Type="System.DayOfWeek" Scope="User">
-      <Value Profile="(Default)">Saturday</Value>
+    <Setting Name="ShabatDay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">6</Value>
     </Setting>
     <Setting Name="CurrentView" Type="Ordisoftware.HebrewCalendar.ViewModeType" Scope="User">
       <Value Profile="(Default)">Text</Value>
     </Setting>
     <Setting Name="Latitude" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">48.52</Value>
+      <Value Profile="(Default)">48.85</Value>
     </Setting>
     <Setting Name="Longitude" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">2.15</Value>
+      <Value Profile="(Default)">2.35</Value>
     </Setting>
     <Setting Name="CountDayMoonAsSun" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
