@@ -61,7 +61,7 @@
       // 
       // panel1
       // 
-      this.panel1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+      this.panel1.BackColor = System.Drawing.Color.LemonChiffon;
       this.panel1.Controls.Add(this.labelDate);
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
@@ -197,7 +197,7 @@
       // 
       // panel4
       // 
-      this.panel4.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+      this.panel4.BackColor = System.Drawing.Color.Honeydew;
       this.panel4.Controls.Add(this.buttonSelectDay);
       this.panel4.Controls.Add(this.buttonPreviousDay);
       this.panel4.Controls.Add(this.buttonNextDay);
