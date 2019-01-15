@@ -51,9 +51,9 @@ namespace Ordisoftware.HebrewCalendar
         labelSunsetValue.Text = item.Sunset.ToString();
         labelMoonriseValue.Text = item.Moonrise.ToString();
         labelMoonsetValue.Text = item.Moonset.ToString();
-        labelEventSeasonValue.Text = TorahCelebrations.SeasonEventToString((SeasonChangeType)item.SeasonChange);
+        labelEventSeasonValue.Text = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)item.SeasonChange);
         if ( labelEventSeasonValue.Text == "" ) labelEventSeasonValue.Text = "-";
-        labelEventTorahValue.Text = TorahCelebrations.TorahEventToString((TorahEventType)item.TorahEvents);
+        labelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)item.TorahEvents);
         if ( labelEventTorahValue.Text == "" ) labelEventTorahValue.Text = "-";
         pictureMoon.Image = ResizeImage(MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200), 100, 100);
         if ( (MoonriseType)item.MoonriseType == MoonriseType.AfterSet )
@@ -89,11 +89,17 @@ namespace Ordisoftware.HebrewCalendar
 
     private void buttonSelectDay_Click(object sender, EventArgs e)
     {
-      DateTime date;
-      var form = new SelectDayForm();
-      form.TopMost = true;
-      if ( form.ShowDialog() != DialogResult.OK ) return;
-      Date = form.monthCalendar.SelectionStart;
+      try
+      {
+        DateTime date;
+        var form = new SelectDayForm();
+        form.TopMost = true;
+        if ( form.ShowDialog() != DialogResult.OK ) return;
+        Date = form.monthCalendar.SelectionStart;
+      }
+      catch
+      {
+      }
     }
 
     private void buttonPreviousDay_Click(object sender, EventArgs e)
@@ -101,13 +107,13 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         Date = _Date.AddDays(-1);
+        }
+        catch
+        {
+        }
       }
-      catch
-      {
-      }
-    }
 
-    private void buttonNextDay_Click(object sender, EventArgs e)
+      private void buttonNextDay_Click(object sender, EventArgs e)
     {
       try
       {

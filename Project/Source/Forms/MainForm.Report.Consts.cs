@@ -28,18 +28,16 @@ namespace Ordisoftware.HebrewCalendar
 
     private enum CalendarFieldType { Date, Month, Sun, Moon, Events }
 
+    private enum EphemerisType { Rise, Set, SummerHour, WinterHour }
+
     string HeaderSep;
     string HeaderTxt;
     string ColumnSepLeft = "| ";
     string ColumnSepInner = " | ";
     string ColumnSepRight = " |";
     string ShabatText = "[S]";
-    string MoonriseText = "R: ";
-    string MoonsetText = "S: ";
-    string MoonNoText = "        ";
-    string HourSummerText = "(S)";
-    string HourWinterText = "(W)";
     int ColumnEventLenght = 38;
+    string MoonNoText = "        ";
     public string MoonNewText = "●";
     public string MoonFullText = "○";
 
@@ -57,12 +55,38 @@ namespace Ordisoftware.HebrewCalendar
         { CalendarFieldType.Events, 40 },
       };
 
-    static private string CalendarFieldToString(CalendarFieldType value)
-    {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !CalendarFieldNames[value].ContainsKey(lang) ) lang = "en";
-      return CalendarFieldNames[value][lang];
-    }
+    static private readonly Dictionary<EphemerisType, Dictionary<string, string>> EphemerisNames
+      = new Dictionary<EphemerisType, Dictionary<string, string>>()
+      {
+        {
+          EphemerisType.Rise, new Dictionary<string, string>
+          {
+            { "en", "R: " },
+            { "fr", "L: " }
+          }
+        },
+        {
+          EphemerisType.Set, new Dictionary<string, string>
+          {
+            { "en", "S: " },
+            { "fr", "C: " }
+          }
+        },
+        {
+          EphemerisType.SummerHour, new Dictionary<string, string>
+          {
+            { "en", "(S)" },
+            { "fr", "(E)" }
+          }
+        },
+        {
+          EphemerisType.WinterHour, new Dictionary<string, string>
+          {
+            { "en", "(W)" },
+            { "fr", "(H)" }
+          }
+        }
+      };
 
     static private readonly Dictionary<CalendarFieldType, Dictionary<string, string>> CalendarFieldNames
       = new Dictionary<CalendarFieldType, Dictionary<string, string>>()

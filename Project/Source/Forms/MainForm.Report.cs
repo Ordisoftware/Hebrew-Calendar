@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
       HeaderTxt = "|";
       foreach ( CalendarFieldType v in Enum.GetValues(typeof(CalendarFieldType)) )
       {
-        string str = CalendarFieldToString(v);
+        string str = CalendarFieldNames.GetLang(v);
         HeaderSep += new string('-', CalendarFieldSize[v]) + '|';
         HeaderTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " |";
       }
@@ -89,11 +89,11 @@ namespace Ordisoftware.HebrewCalendar
                                                                                                                  : " ");
         string strSun = day.Sunrise + " - " + day.Sunset;
         strSun = ShowWinterSummerHour
-               ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) ? HourSummerText : HourWinterText) + " " + strSun
-               : strSun + new string(' ', HourWinterText.Length + 1);
+               ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) ? EphemerisNames.GetLang(EphemerisType.SummerHour) : EphemerisNames.GetLang(EphemerisType.WinterHour) ) + " " + strSun
+               : strSun + new string(' ', 3 + 1);
         strSun += " " + (ShowShabat && dayDate.DayOfWeek == Program.Settings.ShabatDay ? ShabatText : "   ");
-        string strMoonrise = day.Moonrise == "" ? MoonNoText : MoonriseText + day.Moonrise;
-        string strMoonset = day.Moonset == "" ? MoonNoText : MoonsetText + day.Moonset;
+        string strMoonrise = day.Moonrise == "" ? MoonNoText : EphemerisNames.GetLang(EphemerisType.Rise) + day.Moonrise;
+        string strMoonset = day.Moonset == "" ? MoonNoText : EphemerisNames.GetLang(EphemerisType.Set) + day.Moonset;
         string strMoon = (MoonriseType)day.MoonriseType == MoonriseType.BeforeSet ? strMoonrise + ColumnSepInner + strMoonset : strMoonset + ColumnSepInner + strMoonrise;
         string textDate = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames[(int)dayDate.DayOfWeek];
         textDate = textDate.Replace(".", "") + " ";
@@ -101,8 +101,8 @@ namespace Ordisoftware.HebrewCalendar
         textDate += dayDate.Month.ToString("00") + ".";
         textDate += dayDate.Year;
         string strDesc = "";
-        string s1 = TorahCelebrations.SeasonEventToString((SeasonChangeType)day.SeasonChange);
-        string s2 = TorahCelebrations.TorahEventToString((TorahEventType)day.TorahEvents);
+        string s1 = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)day.SeasonChange);
+        string s2 = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
         strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
         strDesc += new string(' ', ColumnEventLenght - strDesc.Length) + ColumnSepRight;
         content.Append(ColumnSepLeft);
