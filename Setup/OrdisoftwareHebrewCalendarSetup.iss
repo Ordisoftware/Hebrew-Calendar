@@ -59,10 +59,13 @@ english.LicenseFile_msg=License of %1
 french.LicenseFile_msg=Licence de %1
 english.SourceCode_msg=Source code of %1
 french.SourceCode_msg=Code source de %1
+english.StartWithWindows_msg=Start with Windows
+french.StartWithWindows_msg=Démarrer avec Windows
 
 [Tasks]
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}
 Name: quicklaunchicon; Description: {cm:CreateQuickLaunchIcon}; GroupDescription: {cm:AdditionalIcons}
+Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription: Windows
 
 [Dirs]
 
@@ -83,8 +86,6 @@ Source: *; DestDir: {app}\Setup; Excludes: *.---
 DestDir: {app}; Source: ..\Register ODBC.reg
 DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite; Flags: onlyifdoesntexist
 
-[Registry]
-
 [Icons]
 Name: {commondesktop}\{#MyAppPublisher} {#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: desktopicon; IconFilename: {app}\Application.ico
 Name: {app}\{cm:LaunchProgram,{#MyAppName}}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
@@ -95,6 +96,7 @@ Name: {group}\{#MyAppName}\{cm:HelpFile_msg,{#MyAppName}}; Filename: {app}\Help\
 Name: {group}\{#MyAppName}\{cm:LicenseFile_msg,{#MyAppName}}; Filename: {app}\Project\License\MPL 2.0.htm; IconFilename: {app}\Project\Dependencies\Fatcow\info_rhombus.ico
 Name: {group}\{#MyAppName}\{cm:ProgramOnTheWeb,{#MyAppName}}; Filename: {app}\Hebrew Calendar.url; IconFilename: {app}\Project\Dependencies\Fatcow\house.ico
 Name: {group}\{#MyAppName}\{cm:UninstallProgram,{#MyAppName}}; Filename: {uninstallexe}
+Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: startwithwindows
 
 [Run]
 ;Parameters: /passive /norestart;
