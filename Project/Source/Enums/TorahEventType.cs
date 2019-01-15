@@ -12,7 +12,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2019-01 </edited>
 using System;
 
 namespace Ordisoftware.HebrewCalendar
@@ -21,7 +21,6 @@ namespace Ordisoftware.HebrewCalendar
   /// <summary>
   /// Provide the torah event type.
   /// </summary>
-  [Flags]
   public enum TorahEventType
   {
     /// <summary>

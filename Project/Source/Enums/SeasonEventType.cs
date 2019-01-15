@@ -32,8 +32,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// The spring equinox.
     /// </summary>
-
     SpringEquinox,
+
     /// <summary>
     /// The summer solstice.
     /// </summary>

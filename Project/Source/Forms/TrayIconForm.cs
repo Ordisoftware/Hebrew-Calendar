@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// The instance.
+    /// Indicate the singleton instance.
     /// </summary>
     static internal TrayIconForm Instance { get; private set; }
 
@@ -51,12 +51,9 @@ namespace Ordisoftware.HebrewCalendar
       Icon = MainForm.Instance.Icon;
       TrayIcon.Icon = Icon;
       Visible = false;
+      ShowInTaskbar = false;
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      Form form = new Form();
-      form.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-      form.ShowInTaskbar = false;
-      Owner = form;
     }
 
     /// <summary>

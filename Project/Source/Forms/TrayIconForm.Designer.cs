@@ -41,24 +41,24 @@
       // 
       // TrayIcon
       // 
-      resources.ApplyResources(this.TrayIcon, "TrayIcon");
       this.TrayIcon.ContextMenuStrip = this.MenuTray;
+      resources.ApplyResources(this.TrayIcon, "TrayIcon");
       this.TrayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TrayIcon_MouseClick);
       // 
       // MenuTray
       // 
-      resources.ApplyResources(this.MenuTray, "MenuTray");
       this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuShowHide,
             this.MenuAbout,
             this.SeparatorTrayMenuView,
             this.MenuExit});
       this.MenuTray.Name = "contextMenuStrip";
+      resources.ApplyResources(this.MenuTray, "MenuTray");
       // 
       // MenuShowHide
       // 
-      resources.ApplyResources(this.MenuShowHide, "MenuShowHide");
       this.MenuShowHide.Name = "MenuShowHide";
+      resources.ApplyResources(this.MenuShowHide, "MenuShowHide");
       this.MenuShowHide.Click += new System.EventHandler(this.MenuShowHide_Click);
       // 
       // MenuAbout
@@ -69,8 +69,8 @@
       // 
       // SeparatorTrayMenuView
       // 
-      resources.ApplyResources(this.SeparatorTrayMenuView, "SeparatorTrayMenuView");
       this.SeparatorTrayMenuView.Name = "SeparatorTrayMenuView";
+      resources.ApplyResources(this.SeparatorTrayMenuView, "SeparatorTrayMenuView");
       // 
       // MenuExit
       // 
@@ -86,7 +86,6 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "TrayIconForm";
-      this.ShowInTaskbar = false;
       this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TrayIconForm_FormClosed);
       this.Load += new System.EventHandler(this.TrayIconForm_Load);

@@ -26,6 +26,9 @@ namespace Ordisoftware.HebrewCalendar
   public partial class ShowDayForm : Form
   {
 
+    /// <summary>
+    /// Indicate the singleton instance.
+    /// </summary>
     static internal ShowDayForm Instance { get; private set; }
 
     static ShowDayForm()
@@ -45,7 +48,8 @@ namespace Ordisoftware.HebrewCalendar
                      where day.Date == strDate
                      select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
         labelDate.Text = value.ToLongDateString();
-        labelLunarMonthValue.Text = AstronomyUtility.BabylonianHebrewMonthNames[item.LunarMonth] + " #" + item.LunarMonth.ToString();
+        string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[item.LunarMonth];
+        labelLunarMonthValue.Text = strMonth + " #" + item.LunarMonth.ToString();
         labelLunarDayValue.Text = "Day #" + item.LunarDay.ToString();
         labelSunriseValue.Text = item.Sunrise.ToString();
         labelSunsetValue.Text = item.Sunset.ToString();
@@ -55,7 +59,8 @@ namespace Ordisoftware.HebrewCalendar
         if ( labelEventSeasonValue.Text == "" ) labelEventSeasonValue.Text = "-";
         labelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)item.TorahEvents);
         if ( labelEventTorahValue.Text == "" ) labelEventTorahValue.Text = "-";
-        pictureMoon.Image = ResizeImage(MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200), 100, 100);
+        var image = MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
+        pictureMoon.Image = ResizeImage(image, 100, 100);
         if ( (MoonriseType)item.MoonriseType == MoonriseType.AfterSet )
         {
           labelMoonrise.Top = 125;
@@ -79,7 +84,7 @@ namespace Ordisoftware.HebrewCalendar
     public ShowDayForm()
     {
       InitializeComponent();
-      Text = AboutBox.Instance.AssemblyTitle;
+      Text = Core.DisplayManager.Title;
       int left = SystemInformation.WorkingArea.Left;
       int top = SystemInformation.WorkingArea.Top;
       int width = SystemInformation.WorkingArea.Width;
@@ -107,13 +112,13 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         Date = _Date.AddDays(-1);
-        }
-        catch
-        {
-        }
       }
+      catch
+      {
+      }
+    }
 
-      private void buttonNextDay_Click(object sender, EventArgs e)
+    private void buttonNextDay_Click(object sender, EventArgs e)
     {
       try
       {

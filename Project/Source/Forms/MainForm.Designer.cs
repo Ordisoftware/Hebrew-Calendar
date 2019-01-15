@@ -91,9 +91,9 @@
       this.actionWebsite = new System.Windows.Forms.ToolStripButton();
       this.sep5 = new System.Windows.Forms.ToolStripSeparator();
       this.actionHelp = new System.Windows.Forms.ToolStripButton();
+      this.actionPreferences = new System.Windows.Forms.ToolStripButton();
       this.actionAbout = new System.Windows.Forms.ToolStripButton();
       this.sep6 = new System.Windows.Forms.ToolStripSeparator();
-      this.actionPreferences = new System.Windows.Forms.ToolStripButton();
       this.menuSettings = new System.Windows.Forms.ToolStripDropDownButton();
       this.menuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
       this.editScreenNone = new System.Windows.Forms.ToolStripMenuItem();
@@ -572,9 +572,9 @@
             this.actionWebsite,
             this.sep5,
             this.actionHelp,
-            this.actionPreferences,
             this.actionAbout,
             this.sep6,
+            this.actionPreferences,
             this.menuSettings,
             this.menuView,
             this.actionStop});
@@ -725,6 +725,21 @@
       this.actionHelp.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionHelp.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
+      // actionPreferences
+      // 
+      this.actionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.actionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.actionPreferences.Image = ((System.Drawing.Image)(resources.GetObject("actionPreferences.Image")));
+      this.actionPreferences.ImageTransparentColor = System.Drawing.Color.Magenta;
+      this.actionPreferences.Name = "actionPreferences";
+      this.actionPreferences.Padding = new System.Windows.Forms.Padding(5);
+      this.actionPreferences.Size = new System.Drawing.Size(46, 46);
+      this.actionPreferences.Text = "Preferences";
+      this.actionPreferences.ToolTipText = "Preferences (F8)";
+      this.actionPreferences.Click += new System.EventHandler(this.actionPreferences_Click);
+      this.actionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.actionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
       // actionAbout
       // 
       this.actionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -745,21 +760,6 @@
       this.sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.sep6.Name = "sep6";
       this.sep6.Size = new System.Drawing.Size(6, 49);
-      // 
-      // actionPreferences
-      // 
-      this.actionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.actionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.actionPreferences.Image = ((System.Drawing.Image)(resources.GetObject("actionPreferences.Image")));
-      this.actionPreferences.ImageTransparentColor = System.Drawing.Color.Magenta;
-      this.actionPreferences.Name = "actionPreferences";
-      this.actionPreferences.Padding = new System.Windows.Forms.Padding(5);
-      this.actionPreferences.Size = new System.Drawing.Size(46, 46);
-      this.actionPreferences.Text = "Preferences";
-      this.actionPreferences.ToolTipText = "Preferences (F8)";
-      this.actionPreferences.Click += new System.EventHandler(this.actionPreferences_Click);
-      this.actionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // menuSettings
       // 

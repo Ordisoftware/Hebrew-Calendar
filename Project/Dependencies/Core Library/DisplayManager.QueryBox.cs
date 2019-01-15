@@ -35,7 +35,7 @@ namespace Ordisoftware.Core
     /// <param name="caption">The caption.</param>
     static public bool QueryOkCancel(string caption)
     {
-      return QueryOkCancel("", caption, null, null);
+      return QueryOkCancel(Title, caption, null, null);
     }
 
     /// <summary>
@@ -63,7 +63,7 @@ namespace Ordisoftware.Core
     static public bool QueryOkCancel(string caption,
                                      Action onOk, Action onCancel)
     {
-      return QueryOkCancel("", caption, onOk, onCancel);
+      return QueryOkCancel(Title, caption, onOk, onCancel);
     }
 
     /// <summary>
@@ -101,7 +101,7 @@ namespace Ordisoftware.Core
     /// <param name="caption">The caption.</param>
     static public bool QueryRetryCancel(string caption)
     {
-      return QueryRetryCancel("", caption, null, null);
+      return QueryRetryCancel(Title, caption, null, null);
     }
 
     /// <summary>
@@ -129,7 +129,7 @@ namespace Ordisoftware.Core
     static public bool QueryRetryCancel(string caption,
                                         Action onRetry, Action onCancel)
     {
-      return QueryRetryCancel("", caption, onRetry, onCancel);
+      return QueryRetryCancel(Title, caption, onRetry, onCancel);
     }
 
     /// <summary>
@@ -167,7 +167,7 @@ namespace Ordisoftware.Core
     /// <param name="caption">The caption.</param>
     static public bool QueryYesNo(string caption)
     {
-      return QueryYesNo("", caption, null, null);
+      return QueryYesNo(Title, caption, null, null);
     }
 
     /// <summary>
@@ -195,7 +195,7 @@ namespace Ordisoftware.Core
     static public bool QueryYesNo(string caption,
                                   Action onYes, Action onNo)
     {
-      return QueryYesNo("", caption, onYes, onNo);
+      return QueryYesNo(Title, caption, onYes, onNo);
     }
 
     /// <summary>
@@ -234,7 +234,7 @@ namespace Ordisoftware.Core
     static public void QueryYesNoCancel(string caption,
                                         Action onYes, Action onNo, Action onCancel)
     {
-      QueryYesNoCancel("", caption, onYes, onNo, onCancel);
+      QueryYesNoCancel(Title, caption, onYes, onNo, onCancel);
     }
 
     /// <summary>
@@ -274,7 +274,7 @@ namespace Ordisoftware.Core
     static public void QueryRetryIgnoreAbort(string caption,
                                              Action onRetry, Action onIgnore, Action onAbort)
     {
-      QueryRetryIgnoreAbort("", caption, onRetry, onIgnore, onAbort);
+      QueryRetryIgnoreAbort(Title, caption, onRetry, onIgnore, onAbort);
     }
 
     /// <summary>

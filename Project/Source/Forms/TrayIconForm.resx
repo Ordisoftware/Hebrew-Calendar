@@ -117,33 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;SeparatorTrayMenuView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuAbout.Name" xml:space="preserve">
-    <value>MenuAbout</value>
-  </data>
-  <data name="&gt;&gt;TrayIcon.Name" xml:space="preserve">
-    <value>TrayIcon</value>
-  </data>
+  <metadata name="TrayIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="MenuTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>115, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="MenuShowHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 22</value>
   </data>
-  <data name="&gt;&gt;MenuShowHide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuExit.Name" xml:space="preserve">
-    <value>MenuExit</value>
-  </data>
-  <data name="&gt;&gt;SeparatorTrayMenuView.Name" xml:space="preserve">
-    <value>SeparatorTrayMenuView</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuTray.Name" xml:space="preserve">
-    <value>MenuTray</value>
+  <data name="MenuShowHide.Text" xml:space="preserve">
+    <value>Restore</value>
   </data>
   <data name="MenuAbout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -159,33 +144,14 @@
         t1xZrCXgcv0DxfGQ7mO5Fi4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="&gt;&gt;TrayIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>292, 66</value>
-  </data>
-  <data name="MenuExit.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MenuAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 22</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="MenuAbout.Text" xml:space="preserve">
+    <value>About</value>
   </data>
-  <data name="MenuShowHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 22</value>
-  </data>
-  <data name="&gt;&gt;MenuShowHide.Name" xml:space="preserve">
-    <value>MenuShowHide</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>TrayIconForm</value>
+  <data name="SeparatorTrayMenuView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 6</value>
   </data>
   <data name="MenuExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -205,44 +171,78 @@
         pATCqsio1ToAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="MenuAbout.Text" xml:space="preserve">
-    <value>About</value>
+  <data name="MenuExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 22</value>
   </data>
   <data name="MenuExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="SeparatorTrayMenuView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 6</value>
-  </data>
   <data name="MenuTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 76</value>
   </data>
+  <data name="&gt;&gt;MenuTray.Name" xml:space="preserve">
+    <value>MenuTray</value>
+  </data>
   <data name="&gt;&gt;MenuTray.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TrayIcon.Text" xml:space="preserve">
+    <value>Hebrew Calendar</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TrayIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="MenuShowHide.Text" xml:space="preserve">
-    <value>Restore</value>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
-  <data name="TrayIcon.Text" xml:space="preserve">
-    <value>Hebrew Calendar</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>292, 66</value>
   </data>
-  <data name="MenuAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 22</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Hebrew Calendar</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TrayIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="MenuTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>115, 17</value>
-  </metadata>
+  <data name="&gt;&gt;TrayIcon.Name" xml:space="preserve">
+    <value>TrayIcon</value>
+  </data>
+  <data name="&gt;&gt;TrayIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuShowHide.Name" xml:space="preserve">
+    <value>MenuShowHide</value>
+  </data>
+  <data name="&gt;&gt;MenuShowHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuAbout.Name" xml:space="preserve">
+    <value>MenuAbout</value>
+  </data>
+  <data name="&gt;&gt;MenuAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SeparatorTrayMenuView.Name" xml:space="preserve">
+    <value>SeparatorTrayMenuView</value>
+  </data>
+  <data name="&gt;&gt;SeparatorTrayMenuView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuExit.Name" xml:space="preserve">
+    <value>MenuExit</value>
+  </data>
+  <data name="&gt;&gt;MenuExit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TrayIconForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -12,7 +12,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2019-01 </edited>
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -26,7 +26,14 @@ namespace Ordisoftware.HebrewCalendar
   static public class LocalizerHelper
   {
 
-    static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value) 
+    /// <summary>
+    /// Get the string translation of an enum value.
+    /// </summary>
+    /// <typeparam name="T">The type that is an enum.</typeparam>
+    /// <param name="values">The dictionary containing values>langs>translations.</param>
+    /// <param name="value">The value to translate.</param>
+    /// <returns></returns>
+    static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
       string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
       if ( !values[value].ContainsKey(lang) ) lang = "en";

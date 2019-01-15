@@ -24,22 +24,39 @@ namespace Ordisoftware.HebrewCalendar
   static public class SQLiteDateTool
   {
 
+    /// <summary>
+    /// Get a date like "2019.01.01".
+    /// </summary>
+    /// <param name="date">The date.</param>
     static public string GetDate(DateTime date)
     {
       return date.Year.ToString("0000") + "-" + date.Month.ToString("00") + "-" + date.Day.ToString("00");
     }
 
+    /// <summary>
+    /// Get a date like "2019.01.01".
+    /// </summary>
+    /// <param name="date">The date.</param>
     static public string GetDate(int year, int month, int day)
     {
       return year.ToString("0000") + "-" + month.ToString("00") + "-" + day.ToString("00");
     }
 
+    /// <summary>
+    /// Get a date from a string like "2019.01.01".
+    /// </summary>
+    /// <param name="date">The date.</param>
     static public DateTime GetDate(string date)
     {
       string[] items = date.Split('-');
       return new DateTime(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]), Convert.ToInt32(items[2]));
     }
 
+    /// <summary>
+    /// Get a time like "18:00".
+    /// </summary>
+    /// <param name="date">The date.</param>
+    /// <returns>An empty string if time is null</returns>
     static public string FormatTime(TimeSpan? time)
     {
       return time.HasValue ? time.Value.Hours.ToString("00") + ":" + time.Value.Minutes.ToString("00") : "";
