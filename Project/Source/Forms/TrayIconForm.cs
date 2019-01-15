@@ -15,9 +15,6 @@
 /// <edited> 2019-01 </edited>
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Linq;
 using Ordisoftware.Core;
 using System.Windows.Forms;
 using Microsoft.Win32;
@@ -172,31 +169,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         try
         {
-          var date = DateTime.Now;
-          string strText = date.ToString();
-          strText = strText.Remove(strText.Length - 3, 3);
-          string strDate = SQLiteDateTool.GetDate(date.Year, date.Month, date.Day);
-          var item = ( from day in MainForm.Instance.lunisolarCalendar.LunisolarDays
-                       where day.Date == strDate
-                       select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
-          form.labelDate.Text = date.ToLongDateString();
-          form.labelLunarMonthValue.Text = AstronomyUtility.BabylonianHebrewMonthNames[item.LunarMonth] + " #" + item.LunarMonth.ToString();
-          form.labelLunarDayValue.Text = "Day n° " + item.LunarDay.ToString();
-          form.labelSunriseValue.Text = item.Sunrise.ToString();
-          form.labelSunsetValue.Text = item.Sunset.ToString();
-          form.labelMoonriseValue.Text = item.Moonrise.ToString();
-          form.labelMoonsetValue.Text = item.Moonset.ToString();
-          form.pictureMoon.Image = ResizeImage(MoonPhase.MoonPhaseImage.Draw(date.Year, date.Month, date.Day, 200, 200), 100, 100);
-          if ( (MoonriseType)item.MoonriseType == MoonriseType.AfterSet )
-          {
-            int p1 = form.labelMoonrise.Top;
-            int p2 = form.labelMoonset.Top;
-            form.labelMoonrise.Top = p2;
-            form.labelMoonset.Top = p1;
-            form.labelMoonriseValue.Top = p2;
-            form.labelMoonsetValue.Top = p1;
-          }
-          // TODO invert moonrise/set if after
+          form.Date = DateTime.Now;
           form.Visible = true;
           form.BringToFront();
         }
@@ -209,34 +182,6 @@ namespace Ordisoftware.HebrewCalendar
         form.Visible = false;
         form.ShowInTaskbar = false;
       }
-    }
-
-    /// <summary>
-    /// Resize an image.
-    /// </summary>
-    /// <param name="image">The image</param>
-    /// <param name="width">The width</param>
-    /// <param name="height">The height</param>
-    /// <returns></returns>
-    public Bitmap ResizeImage(Image image, int width, int height)
-    {
-      var destRect = new Rectangle(0, 0, width, height);
-      var destImage = new Bitmap(width, height);
-      destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-      using ( var graphics = Graphics.FromImage(destImage) )
-      {
-        graphics.CompositingMode = CompositingMode.SourceCopy;
-        graphics.CompositingQuality = CompositingQuality.HighQuality;
-        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        graphics.SmoothingMode = SmoothingMode.HighQuality;
-        graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-        using ( var wrapMode = new ImageAttributes() )
-        {
-          wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-          graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-        }
-      }
-      return destImage;
     }
 
   }

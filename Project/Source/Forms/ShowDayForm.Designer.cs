@@ -43,6 +43,8 @@
       this.labelSunset = new System.Windows.Forms.Label();
       this.labelSunrise = new System.Windows.Forms.Label();
       this.panel3 = new System.Windows.Forms.Panel();
+      this.buttonPreviousDay = new System.Windows.Forms.Button();
+      this.buttonNextDay = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
       this.panel2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMoon)).BeginInit();
@@ -72,6 +74,8 @@
       // 
       // panel2
       // 
+      this.panel2.Controls.Add(this.buttonNextDay);
+      this.panel2.Controls.Add(this.buttonPreviousDay);
       this.panel2.Controls.Add(this.pictureMoon);
       this.panel2.Controls.Add(this.labelMoonsetValue);
       this.panel2.Controls.Add(this.labelMoonriseValue);
@@ -206,6 +210,30 @@
       this.panel3.Size = new System.Drawing.Size(294, 1);
       this.panel3.TabIndex = 6;
       // 
+      // buttonPreviousDay
+      // 
+      this.buttonPreviousDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+      this.buttonPreviousDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonPreviousDay.Location = new System.Drawing.Point(3, 130);
+      this.buttonPreviousDay.Name = "buttonPreviousDay";
+      this.buttonPreviousDay.Size = new System.Drawing.Size(25, 25);
+      this.buttonPreviousDay.TabIndex = 16;
+      this.buttonPreviousDay.Text = "<";
+      this.buttonPreviousDay.UseVisualStyleBackColor = true;
+      this.buttonPreviousDay.Click += new System.EventHandler(this.buttonPreviousDay_Click);
+      // 
+      // buttonNextDay
+      // 
+      this.buttonNextDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+      this.buttonNextDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonNextDay.Location = new System.Drawing.Point(266, 130);
+      this.buttonNextDay.Name = "buttonNextDay";
+      this.buttonNextDay.Size = new System.Drawing.Size(25, 25);
+      this.buttonNextDay.TabIndex = 16;
+      this.buttonNextDay.Text = ">";
+      this.buttonNextDay.UseVisualStyleBackColor = true;
+      this.buttonNextDay.Click += new System.EventHandler(this.buttonNextDay_Click);
+      // 
       // ShowDayForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,5 +275,7 @@
     internal System.Windows.Forms.Label labelSunset;
     internal System.Windows.Forms.Label labelSunrise;
     private System.Windows.Forms.Panel panel3;
+    private System.Windows.Forms.Button buttonNextDay;
+    private System.Windows.Forms.Button buttonPreviousDay;
   }
 }
