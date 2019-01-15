@@ -81,7 +81,7 @@ Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion; Excludes: *.
 Source: ..\*; DestDir: {app}; Flags: ignoreversion
 Source: *; DestDir: {app}\Setup; Excludes: *.---
 DestDir: {app}; Source: ..\Register ODBC.reg
-DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite
+DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite; Flags: onlyifdoesntexist
 
 [Registry]
 
