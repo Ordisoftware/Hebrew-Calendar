@@ -9,6 +9,17 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 [Download v1.0](https://github.com/Ordisoftware/Hebrew-Calendar/releases/tag/v1.0)
 
+## Functionnalities
+
+- Generate a calendar.
+- Create a tabular text report.
+- Search for a day in the database.
+- Save the report to a text file.
+- Copy the report to the clipboard.
+- Visualization of the data in a grid.
+- Popup box from the tray icon displaying the day data.
+- English, French.
+
 ## Requirements
 
 - Windows Vista x32/x64 or superior
