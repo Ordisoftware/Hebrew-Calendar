@@ -30,20 +30,21 @@ namespace Ordisoftware.HebrewCalendar
 
     private enum EphemerisType { Rise, Set, SummerHour, WinterHour }
 
-    string HeaderSep;
-    string HeaderTxt;
-    string ColumnSepLeft = "| ";
-    string ColumnSepInner = " | ";
-    string ColumnSepRight = " |";
-    string ShabatText = "[S]";
-    int ColumnEventLenght = 38;
-    string MoonNoText = "        ";
-    public string MoonNewText = "●";
-    public string MoonFullText = "○";
+    const int ColumnEventLenght = 38;
+    const string ColumnSepLeft = "| ";
+    const string ColumnSepInner = " | ";
+    const string ColumnSepRight = " |";
+    const string MoonNoText = "        ";
+    const string ShabatText = "[S]";
+    const string MoonFullText = "○";
+    internal readonly string MoonNewText = "●";
 
-    bool TrimBeforeNewLunarYear = true;
-    bool ShowWinterSummerHour = true;
-    bool ShowShabat = true;
+    private string HeaderSep;
+    private string HeaderTxt;
+
+    private bool TrimBeforeNewLunarYear = true;
+    private bool ShowWinterSummerHour = true;
+    private bool ShowShabat = true;
 
     private Dictionary<CalendarFieldType, int> CalendarFieldSize
       = new Dictionary<CalendarFieldType, int>()
