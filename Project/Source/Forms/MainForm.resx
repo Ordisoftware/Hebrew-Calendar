@@ -159,10 +159,10 @@
     <value>2</value>
   </data>
   <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>364, 18</value>
+    <value>433, 55</value>
   </metadata>
   <data name="saveFileDialog.Filter" xml:space="preserve">
-    <value>Text files|*.txt|CSV files|*.csv</value>
+    <value>Text files|*.txt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="calendarText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -292,7 +292,7 @@
     <value>17, 56</value>
   </metadata>
   <metadata name="lunisolarCalendar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>493, 18</value>
+    <value>373, 19</value>
   </metadata>
   <data name="calendarGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -901,6 +901,58 @@
   <data name="actionSaveReport.ToolTipText" xml:space="preserve">
     <value>Save report to file (Ctrl+S)</value>
   </data>
+  <data name="actionExportCSV.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        0YH/A4ApxL+E5fY6AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="actionExportCSV.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="actionExportCSV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 46</value>
+  </data>
+  <data name="actionExportCSV.Text" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
+  <data name="actionExportCSV.ToolTipText" xml:space="preserve">
+    <value>Export to CSV (Ctrl+E)</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 49</value>
+  </data>
   <data name="actionCopyReportToClipboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -944,7 +996,7 @@
   <data name="actionCopyReportToClipboard.ToolTipText" xml:space="preserve">
     <value>Copy report to clipboard (Ctrl+C)</value>
   </data>
-  <data name="actionFindDay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="actionSearchDay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATQSURBVFhHzZdLTFxVHMYnEQZodeHCu1DjTjduaCQ+WisB
@@ -971,16 +1023,16 @@
         zhOWjQBBiwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="actionFindDay.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="actionSearchDay.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="actionFindDay.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="actionSearchDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 46</value>
   </data>
-  <data name="actionFindDay.Text" xml:space="preserve">
+  <data name="actionSearchDay.Text" xml:space="preserve">
     <value>Search a day</value>
   </data>
-  <data name="actionFindDay.ToolTipText" xml:space="preserve">
+  <data name="actionSearchDay.ToolTipText" xml:space="preserve">
     <value>Search a day (Ctrl+D)</value>
   </data>
   <data name="sep3.Size" type="System.Drawing.Size, System.Drawing">
@@ -1647,11 +1699,17 @@
     <value>1</value>
   </data>
   <metadata name="lunisolarDaysTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>634, 16</value>
+    <value>514, 17</value>
   </metadata>
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>815, 17</value>
+    <value>695, 18</value>
   </metadata>
+  <metadata name="saveCSVDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>563, 54</value>
+  </metadata>
+  <data name="saveCSVDialog.Filter" xml:space="preserve">
+    <value>CSV files|*.csv</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1847,16 +1905,28 @@
   <data name="&gt;&gt;actionSaveReport.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;actionExportCSV.Name" xml:space="preserve">
+    <value>actionExportCSV</value>
+  </data>
+  <data name="&gt;&gt;actionExportCSV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;actionCopyReportToClipboard.Name" xml:space="preserve">
     <value>actionCopyReportToClipboard</value>
   </data>
   <data name="&gt;&gt;actionCopyReportToClipboard.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;actionFindDay.Name" xml:space="preserve">
-    <value>actionFindDay</value>
+  <data name="&gt;&gt;actionSearchDay.Name" xml:space="preserve">
+    <value>actionSearchDay</value>
   </data>
-  <data name="&gt;&gt;actionFindDay.Type" xml:space="preserve">
+  <data name="&gt;&gt;actionSearchDay.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;sep3.Name" xml:space="preserve">
@@ -2038,6 +2108,12 @@
   </data>
   <data name="&gt;&gt;tableAdapterManager.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager, Ordisoftware.HebrewCalendar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;saveCSVDialog.Name" xml:space="preserve">
+    <value>saveCSVDialog</value>
+  </data>
+  <data name="&gt;&gt;saveCSVDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

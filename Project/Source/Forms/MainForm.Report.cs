@@ -52,7 +52,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       var headerSep = SeparatorV;
       var headerTxt = SeparatorV;
-      foreach ( CalendarFieldType v in Enum.GetValues(typeof(CalendarFieldType)) )
+      foreach ( ReportFieldType v in Enum.GetValues(typeof(ReportFieldType)) )
       {
         string str = CalendarFieldNames.GetLang(v);
         headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
@@ -73,7 +73,6 @@ namespace Ordisoftware.HebrewCalendar
         if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
         if ( TrimBeforeNewLunarYear && day.LunarMonth == 0 ) continue;
         if ( TrimBeforeNewLunarYear && dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-
         if ( day.IsNewMoon == 1 ) content.Append(headerSep + Environment.NewLine);
         string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
         string strDay = ((MoonriseType)day.MoonriseType == MoonriseType.NextDay 

@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       SetView(Program.Settings.CurrentView, true);
       GenerateTextReport();
-      actionFindDay_Click(null, null);
+      actionSearchDay_Click(null, null);
     }
 
     /// <summary>
@@ -248,7 +248,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( DisplayManager.QueryYesNo(LocalizerHelper.RegenerateCalendarText.GetLang()) )
         {
           actionGenerate.PerformClick();
-          actionFindDay_Click(null, null);
+          actionSearchDay_Click(null, null);
         }
   
     }
@@ -346,7 +346,7 @@ namespace Ordisoftware.HebrewCalendar
         UpdateButtons();
       }
       GenerateTextReport();
-      actionFindDay_Click(null, null);
+      actionSearchDay_Click(null, null);
     }
 
     /// <summary>
@@ -381,11 +381,21 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by actionFindDay for click events.
+    /// Event handler. Called by actionExportCSV for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionFindDay_Click(object sender, EventArgs e)
+    private void actionExportCSV_Click(object sender, EventArgs e)
+    {
+      DoExportCSV();
+    }
+
+    /// <summary>
+    /// Event handler. Called by actionSearchDay for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void actionSearchDay_Click(object sender, EventArgs e)
     {
       DateTime date;
       if ( sender == null )

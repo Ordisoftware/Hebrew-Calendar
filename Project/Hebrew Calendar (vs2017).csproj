@@ -91,6 +91,9 @@
     </Compile>
     <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
     <Compile Include="Source\Classes\LocalizerHelper.cs" />
+    <Compile Include="Source\Forms\MainForm.ExportCSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm.Report.Consts.cs">
       <SubType>Form</SubType>
     </Compile>
