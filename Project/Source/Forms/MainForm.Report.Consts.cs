@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private enum EphemerisType { Rise, Set, SummerHour, WinterHour }
 
-    const int ColumnEventLenght = 38;
+    //const int ColumnEventLenght = 40;
     const string SeparatorV = "|";
     const string SeparatorH = "-";
     const string ColumnSepLeft = SeparatorV + " ";
@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewCalendar
         { ReportFieldType.Month, 11 },
         { ReportFieldType.Sun, 23 },
         { ReportFieldType.Moon, 21 },
-        { ReportFieldType.Events, 40 },
+        { ReportFieldType.Events, 42 },
       };
 
     static private readonly Dictionary<EphemerisType, Dictionary<string, string>> EphemerisNames

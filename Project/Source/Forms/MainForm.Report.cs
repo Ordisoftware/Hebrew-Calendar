@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( !TrimBeforeNewLunarYear ) content.Append(headerSep + Environment.NewLine);
       int progress = 0;
       int count = lunisolarCalendar.LunisolarDays.Count;
-      if ( count == 0 ) return;
+      if ( count <= 0 ) return;
       var lastyear = SQLiteDateTool.GetDate(lunisolarCalendar.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in lunisolarCalendar.LunisolarDays.Rows )
       {
@@ -97,7 +97,8 @@ namespace Ordisoftware.HebrewCalendar
         string s1 = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)day.SeasonChange);
         string s2 = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
         strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
-        strDesc += new string(' ', ColumnEventLenght - strDesc.Length) + ColumnSepRight;
+        System.Diagnostics.Debug.WriteLine(strDesc);
+        strDesc += new string(' ', CalendarFieldSize[ReportFieldType.Events] - 2 - strDesc.Length) + ColumnSepRight;
         content.Append(ColumnSepLeft);
         content.Append(textDate);
         content.Append(ColumnSepInner);
