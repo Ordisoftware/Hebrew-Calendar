@@ -76,7 +76,13 @@ namespace Ordisoftware.HebrewCalendar
           labelMoonsetValue.Top = 125;
         }
         _Date = value;
-        ActiveControl = labelDate;
+        try
+        {
+          ActiveControl = labelDate;
+        }
+        catch
+        {
+        }
       }
     }
 
