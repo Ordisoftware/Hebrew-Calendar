@@ -203,6 +203,49 @@
   <data name="actionSaveReport.ToolTipText" xml:space="preserve">
     <value>Enregistrer le rapport dans un fichier (Ctrl+S)</value>
   </data>
+  <data name="actionSaveCSV.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        2PczpLXExDwFxR0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="actionSaveCSV.Text" xml:space="preserve">
+    <value>Exporter CSV</value>
+  </data>
+  <data name="actionSaveCSV.ToolTipText" xml:space="preserve">
+    <value>Exporter CSV (Ctrl+E)</value>
+  </data>
   <data name="actionCopyReportToClipboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -240,7 +283,7 @@
   <data name="actionCopyReportToClipboard.ToolTipText" xml:space="preserve">
     <value>Copier le rapport dans le presse-papier (Ctrl+C)</value>
   </data>
-  <data name="actionFindDay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="actionSearchDay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATQSURBVFhHzZdLTFxVHMYnEQZodeHCu1DjTjduaCQ+WisB
@@ -266,12 +309,6 @@
         SK2eOnbi5KihtAJFhlKc+I/NTGaTQZaK1IrvcC8Kpwu/uUVmNhkx3xf5FssbrI5btBVmNhnLb8w63V9f
         zhOWjQBBiwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="actionFindDay.Text" xml:space="preserve">
-    <value>Rechercher un jour</value>
-  </data>
-  <data name="actionFindDay.ToolTipText" xml:space="preserve">
-    <value>Rechercher un jour (Ctrl+D)</value>
   </data>
   <data name="actionGenerate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -526,6 +563,57 @@
   <data name="actionPreferences.ToolTipText" xml:space="preserve">
     <value>Préférences (F8)</value>
   </data>
+  <data name="editScreenNone.Text" xml:space="preserve">
+    <value>Libre</value>
+  </data>
+  <data name="editScreenTopLeft.Text" xml:space="preserve">
+    <value>Haut gauche</value>
+  </data>
+  <data name="editScreenTopRight.Text" xml:space="preserve">
+    <value>Haut droit</value>
+  </data>
+  <data name="editScreenBottomLeft.Text" xml:space="preserve">
+    <value>Bas gauche</value>
+  </data>
+  <data name="editScreenBottomRight.Text" xml:space="preserve">
+    <value>Bas droit</value>
+  </data>
+  <data name="editScreenCenter.Text" xml:space="preserve">
+    <value>Centrer</value>
+  </data>
+  <data name="menuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="menuitemScreenPosition.Text" xml:space="preserve">
+    <value>Position à l'écran</value>
+  </data>
+  <data name="actionResetWinSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="actionResetWinSettings.Text" xml:space="preserve">
+    <value>Réinitialiser les paramètres de fenêtre</value>
+  </data>
+  <data name="sep7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 6</value>
+  </data>
+  <data name="editShowTips.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="editShowTips.Text" xml:space="preserve">
+    <value>Afficher les astuces des menus</value>
+  </data>
+  <data name="editESCtoExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="editESCtoExit.Text" xml:space="preserve">
+    <value>Touche Escape pour cacher la fenêtre</value>
+  </data>
+  <data name="editConfirmClosing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="editConfirmClosing.Text" xml:space="preserve">
+    <value>Confirmer la fermeture de l'application</value>
+  </data>
   <data name="menuSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -566,90 +654,6 @@
         Bg/Is+IbbiHxHPHrNJxzjfv4mf+5+L0xY4ZnyjxAVCb7Dw6Kw4mSO+IxAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="menuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="menuitemScreenPosition.Text" xml:space="preserve">
-    <value>Position à l'écran</value>
-  </data>
-  <data name="editScreenNone.Text" xml:space="preserve">
-    <value>Libre</value>
-  </data>
-  <data name="editScreenTopLeft.Text" xml:space="preserve">
-    <value>Haut gauche</value>
-  </data>
-  <data name="editScreenTopRight.Text" xml:space="preserve">
-    <value>Haut droit</value>
-  </data>
-  <data name="editScreenBottomLeft.Text" xml:space="preserve">
-    <value>Bas gauche</value>
-  </data>
-  <data name="editScreenBottomRight.Text" xml:space="preserve">
-    <value>Bas droit</value>
-  </data>
-  <data name="editScreenCenter.Text" xml:space="preserve">
-    <value>Centrer</value>
-  </data>
-  <data name="actionResetWinSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="actionResetWinSettings.Text" xml:space="preserve">
-    <value>Réinitialiser les paramètres de fenêtre</value>
-  </data>
-  <data name="sep7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 6</value>
-  </data>
-  <data name="editShowTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="editShowTips.Text" xml:space="preserve">
-    <value>Afficher les astuces des menus</value>
-  </data>
-  <data name="editESCtoExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="editESCtoExit.Text" xml:space="preserve">
-    <value>Touche Escape pour cacher la fenêtre</value>
-  </data>
-  <data name="editConfirmClosing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="editConfirmClosing.Text" xml:space="preserve">
-    <value>Confirmer la fermeture de l'application</value>
-  </data>
-  <data name="menuView.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
   <data name="actionViewText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -676,7 +680,7 @@
 </value>
   </data>
   <data name="actionViewText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 38</value>
+    <value>139, 22</value>
   </data>
   <data name="actionViewText.Text" xml:space="preserve">
     <value>Texte brut</value>
@@ -710,10 +714,43 @@
 </value>
   </data>
   <data name="actionViewGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 38</value>
+    <value>139, 22</value>
   </data>
   <data name="actionViewGrid.Text" xml:space="preserve">
     <value>Grille simple</value>
+  </data>
+  <data name="menuView.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
   <data name="actionStop.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

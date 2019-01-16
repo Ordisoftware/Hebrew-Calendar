@@ -107,7 +107,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         actionSaveReport.Enabled = !IsGenerating && lunisolarCalendar.LunisolarDays.Count > 0;
         actionCopyReportToClipboard.Enabled = actionSaveReport.Enabled;
-        actionFindDay.Enabled = actionSaveReport.Enabled;
+        actionSearchDay.Enabled = actionSaveReport.Enabled;
         actionGenerate.Enabled = !IsGenerating;
         actionStop.Enabled = IsGenerating;
         actionPreferences.Enabled = !IsGenerating;

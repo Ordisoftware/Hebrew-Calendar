@@ -84,7 +84,7 @@ namespace Ordisoftware.HebrewCalendar
           SeasonChangeType.SpringEquinox, new Dictionary<string, string>
           {
             { "en", "Spring equinox" },
-            { "fr", "Ewuinoxe de printemps" }
+            { "fr", "Equinoxe de printemps" }
           }
         },
         {

@@ -33,11 +33,14 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Control | Keys.S:
           actionSaveReport.PerformClick();
           return true;
+        case Keys.Control | Keys.E:
+          actionExportCSV.PerformClick();
+          return true;
         case Keys.Control | Keys.C:
           actionCopyReportToClipboard.PerformClick();
           return true;
         case Keys.Control | Keys.D:
-          actionFindDay.PerformClick();
+          actionSearchDay.PerformClick();
           return true;
         case Keys.Escape:
           if ( IsGenerating )

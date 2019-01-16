@@ -81,8 +81,10 @@
       this.toolStrip = new System.Windows.Forms.ToolStrip();
       this.sep2 = new System.Windows.Forms.ToolStripSeparator();
       this.actionSaveReport = new System.Windows.Forms.ToolStripButton();
+      this.actionExportCSV = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.actionCopyReportToClipboard = new System.Windows.Forms.ToolStripButton();
-      this.actionFindDay = new System.Windows.Forms.ToolStripButton();
+      this.actionSearchDay = new System.Windows.Forms.ToolStripButton();
       this.sep3 = new System.Windows.Forms.ToolStripSeparator();
       this.actionGenerate = new System.Windows.Forms.ToolStripButton();
       this.actionExit = new System.Windows.Forms.ToolStripButton();
@@ -113,6 +115,7 @@
       this.actionStop = new System.Windows.Forms.ToolStripButton();
       this.lunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
       this.tableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
+      this.saveCSVDialog = new System.Windows.Forms.SaveFileDialog();
       this.statusBottom.SuspendLayout();
       this.panelMain.SuspendLayout();
       this.panelCalendarOuter.SuspendLayout();
@@ -467,8 +470,10 @@
       this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sep2,
             this.actionSaveReport,
+            this.actionExportCSV,
+            this.toolStripSeparator1,
             this.actionCopyReportToClipboard,
-            this.actionFindDay,
+            this.actionSearchDay,
             this.sep3,
             this.actionGenerate,
             this.actionExit,
@@ -501,6 +506,21 @@
       this.actionSaveReport.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionSaveReport.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
+      // actionExportCSV
+      // 
+      this.actionExportCSV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.actionExportCSV, "actionExportCSV");
+      this.actionExportCSV.Name = "actionExportCSV";
+      this.actionExportCSV.Padding = new System.Windows.Forms.Padding(5);
+      this.actionExportCSV.Click += new System.EventHandler(this.actionExportCSV_Click);
+      this.actionExportCSV.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.actionExportCSV.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
       // actionCopyReportToClipboard
       // 
       this.actionCopyReportToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -511,15 +531,15 @@
       this.actionCopyReportToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionCopyReportToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // actionFindDay
+      // actionSearchDay
       // 
-      this.actionFindDay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionFindDay, "actionFindDay");
-      this.actionFindDay.Name = "actionFindDay";
-      this.actionFindDay.Padding = new System.Windows.Forms.Padding(5);
-      this.actionFindDay.Click += new System.EventHandler(this.actionFindDay_Click);
-      this.actionFindDay.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionFindDay.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.actionSearchDay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.actionSearchDay, "actionSearchDay");
+      this.actionSearchDay.Name = "actionSearchDay";
+      this.actionSearchDay.Padding = new System.Windows.Forms.Padding(5);
+      this.actionSearchDay.Click += new System.EventHandler(this.actionSearchDay_Click);
+      this.actionSearchDay.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.actionSearchDay.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // sep3
       // 
@@ -767,6 +787,10 @@
       this.tableAdapterManager.LunisolarDaysTableAdapter = this.lunisolarDaysTableAdapter;
       this.tableAdapterManager.UpdateOrder = Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
+      // saveCSVDialog
+      // 
+      resources.ApplyResources(this.saveCSVDialog, "saveCSVDialog");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -889,9 +913,12 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     internal Data.LunisolarCalendar lunisolarCalendar;
     private System.Windows.Forms.ToolStripButton actionSaveReport;
-    private System.Windows.Forms.ToolStripButton actionFindDay;
+    private System.Windows.Forms.ToolStripButton actionSearchDay;
     internal System.Windows.Forms.ToolStripButton actionGenerate;
     internal System.Windows.Forms.ToolStripButton actionPreferences;
+    private System.Windows.Forms.ToolStripButton actionExportCSV;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.SaveFileDialog saveCSVDialog;
   }
 }
 

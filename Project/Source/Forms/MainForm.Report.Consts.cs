@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private enum CalendarFieldType { Date, Month, Sun, Moon, Events }
+    private enum ReportFieldType { Date, Month, Sun, Moon, Events }
 
     private enum EphemerisType { Rise, Set, SummerHour, WinterHour }
 
@@ -40,14 +40,14 @@ namespace Ordisoftware.HebrewCalendar
     private bool ShowWinterSummerHour = true;
     private bool ShowShabat = true;
 
-    private Dictionary<CalendarFieldType, int> CalendarFieldSize
-      = new Dictionary<CalendarFieldType, int>()
+    private Dictionary<ReportFieldType, int> CalendarFieldSize
+      = new Dictionary<ReportFieldType, int>()
       {
-        { CalendarFieldType.Date, 16 },
-        { CalendarFieldType.Month, 11 },
-        { CalendarFieldType.Sun, 23 },
-        { CalendarFieldType.Moon, 21 },
-        { CalendarFieldType.Events, 40 },
+        { ReportFieldType.Date, 16 },
+        { ReportFieldType.Month, 11 },
+        { ReportFieldType.Sun, 23 },
+        { ReportFieldType.Moon, 21 },
+        { ReportFieldType.Events, 40 },
       };
 
     static private readonly Dictionary<EphemerisType, Dictionary<string, string>> EphemerisNames
@@ -83,39 +83,39 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static private readonly Dictionary<CalendarFieldType, Dictionary<string, string>> CalendarFieldNames
-      = new Dictionary<CalendarFieldType, Dictionary<string, string>>()
+    static private readonly Dictionary<ReportFieldType, Dictionary<string, string>> CalendarFieldNames
+      = new Dictionary<ReportFieldType, Dictionary<string, string>>()
       {
         {
-          CalendarFieldType.Date, new Dictionary<string, string>
+          ReportFieldType.Date, new Dictionary<string, string>
           {
             { "en", "Date" },
             { "fr", "Date" }
           }
         },
         {
-          CalendarFieldType.Month, new Dictionary<string, string>
+          ReportFieldType.Month, new Dictionary<string, string>
           {
             { "en", "Month" },
             { "fr", "Mois" }
           }
         },
         {
-          CalendarFieldType.Sun, new Dictionary<string, string>
+          ReportFieldType.Sun, new Dictionary<string, string>
           {
             { "en", "Sun" },
             { "fr", "Soleil" }
           }
         },
         {
-          CalendarFieldType.Moon, new Dictionary<string, string>
+          ReportFieldType.Moon, new Dictionary<string, string>
           {
             { "en", "Moon" },
             { "fr", "Lune" }
           }
         },
         {
-          CalendarFieldType.Events, new Dictionary<string, string>
+          ReportFieldType.Events, new Dictionary<string, string>
           {
             { "en", "Events" },
             { "fr", "Évènements" }
