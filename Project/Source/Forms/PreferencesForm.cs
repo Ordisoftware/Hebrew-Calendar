@@ -139,6 +139,10 @@ namespace Ordisoftware.HebrewCalendar
       form.ShowDialog();
       date = form.monthCalendar.SelectionStart;
       Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
+      foreach ( DayOfWeekItem item in editShabatDay.Items)
+      {
+        if ( (DayOfWeek)Program.Settings.ShabatDay == item.Day ) editShabatDay.SelectedItem = item;
+      }
     }
 
     /// <summary>
