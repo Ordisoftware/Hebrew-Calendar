@@ -99,6 +99,12 @@ namespace Ordisoftware.HebrewCalendar
       Location = new Point(left + width - Width, top + height - Height);
     }
 
+    private void ShowDayForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      e.Cancel = true;
+      Hide();
+    }
+
     private void buttonSelectDay_Click(object sender, EventArgs e)
     {
       try
