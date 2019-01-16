@@ -63,9 +63,6 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     public MainForm()
     {
-      string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-      path += "\\Ordisoftware\\Hebrew Calendar";
-      Directory.CreateDirectory(path);
       InitializeComponent();
     }
 
