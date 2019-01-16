@@ -260,7 +260,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void actionAbout_Click(object sender, EventArgs e)
     {
-      AboutBox.Instance.ShowDialog();
+      if ( AboutBox.Instance.Visible )
+        AboutBox.Instance.BringToFront();
+      else
+        AboutBox.Instance.ShowDialog();
     }
 
     /// <summary>
