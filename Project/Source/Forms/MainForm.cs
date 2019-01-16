@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewCalendar
         ex.Manage();
       }
       SetView(Program.Settings.CurrentView, true);
-      GenerateTextReport();
+      GenerateReport();
       actionSearchDay_Click(null, null);
     }
 
@@ -331,24 +331,8 @@ namespace Ordisoftware.HebrewCalendar
       if ( lunisolarCalendar.LunisolarDays.Count > 0 )
         if ( !DisplayManager.QueryYesNo(LocalizerHelper.ReplaceCalendarText.GetLang()) )
           return;
-      IsGenerating = true;
-      UseWaitCursor = true;
-      try
-      {
-        UpdateButtons();
-        Generate((int)form.editYearFirst.Value, (int)form.editYearLast.Value);
-      }
-      catch ( Exception except )
-      {
-        except.Manage();
-      }
-      finally
-      {
-        UseWaitCursor = false;
-        IsGenerating = false;
-        UpdateButtons();
-      }
-      GenerateTextReport();
+      GenerateDB((int)form.editYearFirst.Value, (int)form.editYearLast.Value);
+      GenerateReport();
       actionSearchDay_Click(null, null);
     }
 

@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private void GenerateTextReport()
+    private void GenerateReport()
     {
       IsGenerating = true;
       UseWaitCursor = true;
