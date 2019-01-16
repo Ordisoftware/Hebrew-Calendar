@@ -26,7 +26,9 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private enum CSVFieldType { Date, Month, Day, Sunrise, Sunset, Moonrise, Moonset, Events }
+    private enum CSVFieldType { Date, IsNewMoon, IsFullMoon, Month, Day, Sunrise, Sunset, Moonrise, Moonset, Events }
+
+    private const string CSVSeparator = ",";
 
     private void ExportCSV()
     {
@@ -53,7 +55,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       string headerTxt = "";
       foreach ( CSVFieldType v in Enum.GetValues(typeof(CSVFieldType)) )
-        headerTxt += v.ToString() + ",";
+        headerTxt += v.ToString() + CSVSeparator;
       headerTxt = headerTxt.Remove(headerTxt.Length - 1);
       var content = new StringBuilder();
       content.AppendLine(headerTxt);
@@ -67,13 +69,15 @@ namespace Ordisoftware.HebrewCalendar
         if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
         if ( TrimBeforeNewLunarYear && day.LunarMonth == 0 ) continue;
         if ( TrimBeforeNewLunarYear && dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-        content.Append(day.Date + ',');
-        content.Append(day.LunarMonth.ToString() + ',');
-        content.Append(day.LunarDay.ToString() + ',');
-        content.Append(day.Sunrise + ',');
-        content.Append(day.Sunset + ',');
-        content.Append(day.Moonrise + ',');
-        content.Append(day.Moonset + ',');
+        content.Append(day.Date + CSVSeparator);
+        content.Append(day.IsNewMoon + CSVSeparator);
+        content.Append(day.IsFullMoon + CSVSeparator);
+        content.Append(day.LunarMonth + CSVSeparator);
+        content.Append(day.LunarDay + CSVSeparator);
+        content.Append(day.Sunrise + CSVSeparator);
+        content.Append(day.Sunset + CSVSeparator);
+        content.Append(day.Moonrise + CSVSeparator);
+        content.Append(day.Moonset + CSVSeparator);
         string strDesc = "";
         string s1 = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)day.SeasonChange);
         string s2 = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
