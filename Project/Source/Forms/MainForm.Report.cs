@@ -62,7 +62,6 @@ namespace Ordisoftware.HebrewCalendar
       var content = new StringBuilder();
       content.Append(headerSep + Environment.NewLine);
       content.Append(headerTxt + Environment.NewLine);
-      if ( !TrimBeforeNewLunarYear ) content.Append(headerSep + Environment.NewLine);
       int progress = 0;
       int count = lunisolarCalendar.LunisolarDays.Count;
       if ( count <= 0 ) return;
@@ -71,8 +70,8 @@ namespace Ordisoftware.HebrewCalendar
       {
         var dayDate = SQLiteDateTool.GetDate(day.Date);
         if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
-        if ( TrimBeforeNewLunarYear && day.LunarMonth == 0 ) continue;
-        if ( TrimBeforeNewLunarYear && dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
+        if ( day.LunarMonth == 0 ) continue;
+        if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
         if ( day.IsNewMoon == 1 ) content.Append(headerSep + Environment.NewLine);
         string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
         string strDay = ((MoonriseType)day.MoonriseType == MoonriseType.NextDay 

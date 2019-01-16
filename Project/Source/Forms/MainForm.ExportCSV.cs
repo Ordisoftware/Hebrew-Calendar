@@ -67,8 +67,8 @@ namespace Ordisoftware.HebrewCalendar
       {
         var dayDate = SQLiteDateTool.GetDate(day.Date);
         if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
-        if ( TrimBeforeNewLunarYear && day.LunarMonth == 0 ) continue;
-        if ( TrimBeforeNewLunarYear && dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
+        if ( day.LunarMonth == 0 ) continue;
+        if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
         content.Append(day.Date + CSVSeparator);
         content.Append(day.IsNewMoon + CSVSeparator);
         content.Append(day.IsFullMoon + CSVSeparator);
