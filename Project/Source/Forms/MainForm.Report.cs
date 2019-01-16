@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         calendarText.Clear();
-        DoGenerateTextReport(lunisolarCalendar.YearMin, lunisolarCalendar.YearMax);
+        DoGenerateTextReport();
       }
       catch ( Exception except )
       {
@@ -48,7 +48,7 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    private void DoGenerateTextReport(int yearFirst, int yearLast)
+    private void DoGenerateTextReport()
     {
       var headerSep = SeparatorV;
       var headerTxt = SeparatorV;
