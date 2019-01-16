@@ -99,6 +99,19 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Update progress bar.
+    /// </summary>
+    private bool UpdateProgress(int index, int count, string text)
+    {
+      if ( index == 0 ) barProgress.Maximum = count;
+      barProgress.Value = index > count ? count : index;
+      barProgress.Update();
+      SetStatus(text);
+      Application.DoEvents();
+      return IsGenerating;
+    }
+
+    /// <summary>
     /// Update the buttons.
     /// </summary>
     private void UpdateButtons()
@@ -106,6 +119,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         actionSaveReport.Enabled = !IsGenerating && lunisolarCalendar.LunisolarDays.Count > 0;
+        actionExportCSV.Enabled = actionSaveReport.Enabled;
         actionCopyReportToClipboard.Enabled = actionSaveReport.Enabled;
         actionSearchDay.Enabled = actionSaveReport.Enabled;
         actionGenerate.Enabled = !IsGenerating;

@@ -16,7 +16,7 @@
 using System;
 using System.Linq;
 using System.Data;
-using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -31,32 +31,41 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="yearFirst">The first year.</param>
     /// <param name="yearLast">The last year.</param>
-    public void Generate(int yearFirst, int yearLast)
+    public void GenerateDB(int yearFirst, int yearLast)
     {
-      lunisolarDaysTableAdapter.DeleteAllQuery();
-      tableAdapterManager.UpdateAll(lunisolarCalendar);
-      lunisolarDaysTableAdapter.Fill(lunisolarCalendar.LunisolarDays);
-      var d1 = new DateTime(yearFirst, 1, DateTime.DaysInMonth(yearFirst, 1));
-      var d2 = new DateTime(yearLast, 12, DateTime.DaysInMonth(yearLast, 12));
-      Count = (int)( d2 - d1 ).TotalDays;
-      lunisolarDaysBindingSource.DataSource = null;
-      PopulateDays(yearFirst, yearLast);
-      Analyse(yearFirst, yearLast);
-      tableAdapterManager.UpdateAll(lunisolarCalendar);
-      lunisolarDaysBindingSource.DataSource = lunisolarCalendar.LunisolarDays;
-    }
-
-    /// <summary>
-    /// Update progress bar.
-    /// </summary>
-    private bool UpdateProgress(int index, int count, string text)
-    {
-      if ( index == 0 ) barProgress.Maximum = count;
-      barProgress.Value = index > count ? count : index;
-      barProgress.Update();
-      SetStatus(text);
-      Application.DoEvents();
-      return true;
+      IsGenerating = true;
+      UseWaitCursor = true;
+      try
+      {
+        UpdateButtons();
+        lunisolarDaysTableAdapter.DeleteAllQuery();
+        tableAdapterManager.UpdateAll(lunisolarCalendar);
+        lunisolarDaysTableAdapter.Fill(lunisolarCalendar.LunisolarDays);
+        var d1 = new DateTime(yearFirst, 1, DateTime.DaysInMonth(yearFirst, 1));
+        var d2 = new DateTime(yearLast, 12, DateTime.DaysInMonth(yearLast, 12));
+        Count = (int)( d2 - d1 ).TotalDays;
+        lunisolarDaysBindingSource.DataSource = null;
+        try
+        {
+          if ( IsGenerating ) PopulateDays(yearFirst, yearLast);
+          if ( IsGenerating ) Analyse(yearFirst, yearLast);
+        }
+        finally
+        {
+          tableAdapterManager.UpdateAll(lunisolarCalendar);
+          lunisolarDaysBindingSource.DataSource = lunisolarCalendar.LunisolarDays;
+        }
+      }
+      catch ( Exception except )
+      {
+        except.Manage();
+      }
+      finally
+      {
+        UseWaitCursor = false;
+        IsGenerating = false;
+        UpdateButtons();
+      }
     }
 
     /// <summary>
