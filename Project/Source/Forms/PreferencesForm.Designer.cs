@@ -35,6 +35,7 @@
       this.dialogColor = new System.Windows.Forms.ColorDialog();
       this.buttonClose = new System.Windows.Forms.Button();
       this.editFontName = new System.Windows.Forms.ComboBox();
+      this.bindingSettings = new System.Windows.Forms.BindingSource(this.components);
       this.labelShabatDay = new System.Windows.Forms.Label();
       this.editFontSize = new System.Windows.Forms.NumericUpDown();
       this.labelFontSize = new System.Windows.Forms.Label();
@@ -48,12 +49,11 @@
       this.gPSLongitudeTextBox = new System.Windows.Forms.TextBox();
       this.panel1 = new System.Windows.Forms.Panel();
       this.actionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
-      this.bindingSettings = new System.Windows.Forms.BindingSource(this.components);
       gPSLatitudeLabel = new System.Windows.Forms.Label();
       gPSLongitudeLabel = new System.Windows.Forms.Label();
+      ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.editFontSize)).BeginInit();
       this.panel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).BeginInit();
       this.SuspendLayout();
       // 
       // gPSLatitudeLabel
@@ -85,6 +85,10 @@
       resources.ApplyResources(this.editFontName, "editFontName");
       this.editFontName.Name = "editFontName";
       this.editFontName.SelectedIndexChanged += new System.EventHandler(this.editFont_Changed);
+      // 
+      // bindingSettings
+      // 
+      this.bindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
       // 
       // labelShabatDay
       // 
@@ -182,15 +186,12 @@
       this.actionUsePersonalShabat.TabStop = true;
       this.actionUsePersonalShabat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.actionUsePersonalShabat_LinkClicked);
       // 
-      // bindingSettings
-      // 
-      this.bindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
-      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.buttonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.CancelButton = this.buttonClose;
       this.Controls.Add(this.actionUsePersonalShabat);
       this.Controls.Add(this.panel1);
       this.Controls.Add(gPSLongitudeLabel);
@@ -214,9 +215,9 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
+      ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.editFontSize)).EndInit();
       this.panel1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
