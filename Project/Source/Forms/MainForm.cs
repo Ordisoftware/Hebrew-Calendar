@@ -391,6 +391,7 @@ namespace Ordisoftware.HebrewCalendar
         date = form.MonthCalendar.SelectionStart;
       }
       GoToDate(date);
+      NavigationForm.Instance.Date = date;
     }
 
     internal void GoToDate(DateTime date)
@@ -421,6 +422,11 @@ namespace Ordisoftware.HebrewCalendar
       catch
       {
       }
+    }
+
+    private void ActionViewCelebrations_Click(object sender, EventArgs e)
+    {
+      CelebrationsForm.Execute();
     }
   }
 

@@ -86,6 +86,7 @@
       this.ActionCopyReportToClipboard = new System.Windows.Forms.ToolStripButton();
       this.ActionSearchDay = new System.Windows.Forms.ToolStripButton();
       this.ActionNavigate = new System.Windows.Forms.ToolStripButton();
+      this.ActionViewCelebrations = new System.Windows.Forms.ToolStripButton();
       this.Sep3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGenerate = new System.Windows.Forms.ToolStripButton();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
@@ -477,6 +478,7 @@
             this.ActionCopyReportToClipboard,
             this.ActionSearchDay,
             this.ActionNavigate,
+            this.ActionViewCelebrations,
             this.Sep3,
             this.ActionGenerate,
             this.ActionExit,
@@ -553,6 +555,16 @@
       this.ActionNavigate.Click += new System.EventHandler(this.ActionNavigate_Click);
       this.ActionNavigate.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionNavigate.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionViewCelebrations
+      // 
+      resources.ApplyResources(this.ActionViewCelebrations, "ActionViewCelebrations");
+      this.ActionViewCelebrations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.ActionViewCelebrations.Name = "ActionViewCelebrations";
+      this.ActionViewCelebrations.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewCelebrations.Click += new System.EventHandler(this.ActionViewCelebrations_Click);
+      this.ActionViewCelebrations.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionViewCelebrations.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // Sep3
       // 
@@ -939,6 +951,7 @@
     private System.Windows.Forms.SaveFileDialog SaveCSVDialog;
     private Data.LunisolarCalendarTableAdapters.ReportTableAdapter ReportTableAdapter;
     private System.Windows.Forms.ToolStripButton ActionNavigate;
+    private System.Windows.Forms.ToolStripButton ActionViewCelebrations;
   }
 }
 
