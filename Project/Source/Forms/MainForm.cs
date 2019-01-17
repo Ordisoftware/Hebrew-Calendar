@@ -14,6 +14,8 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-01 </edited>
 using System;
+using System.Data;
+using System.Data.Odbc;
 using System.Linq;
 using System.Diagnostics;
 using System.Drawing;
@@ -76,10 +78,23 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MainForm_Load(object sender, EventArgs e)
     {
+      int progress = 0;
+      void update(object tableSender, DataRowChangeEventArgs tableEvent)
+      {
+        UpdateProgress(progress++, Count, LocalizerHelper.LoadingDataText.GetLang());
+      };
       Program.Settings.Retrieve();
+      LunisolarCalendar.LunisolarDays.RowChanged += update;
+      Cursor = Cursors.WaitCursor;
       try
       {
+        Refresh();
         SQLiteUtility.CheckDB();
+        var connection = new OdbcConnection(Program.Settings.ConnectionString);
+        connection.Open();
+        var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
+        Count = (int)command.ExecuteScalar();
+        connection.Close();
         LunisolarDaysTableAdapter.Fill(LunisolarCalendar.LunisolarDays);
         ReportTableAdapter.Fill(LunisolarCalendar.Report);
         SetView(Program.Settings.CurrentView, true);
@@ -87,9 +102,15 @@ namespace Ordisoftware.HebrewCalendar
         CalendarText.Text = row == null ? "" : row.Content;
         ActionSearchDay_Click(null, null);
       }
-      catch (Exception ex)
+      catch ( Exception ex )
       {
         ex.Manage();
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+        LunisolarCalendar.LunisolarDays.RowChanged -= update;
+        UpdateButtons();
       }
     }
 

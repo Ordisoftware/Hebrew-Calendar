@@ -149,9 +149,9 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> GenerateCalendarText
       = new Dictionary<string, string>()
       {
-        { "en", "Database is empty." + Environment.NewLine + 
+        { "en", "Database is empty." + Environment.NewLine +
                 "Do you want to generate a calendar?" },
-        { "fr", "La base de données est vide." + Environment.NewLine + 
+        { "fr", "La base de données est vide." + Environment.NewLine + Environment.NewLine +
                 "Voulez-vous générer un calendrier ?" }
       };
 
@@ -160,6 +160,13 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "Do you want to stop the generation process?" },
         { "fr", "Voulez-vous arrêter le processus de génération ?" }
+      };
+
+    static public readonly Dictionary<string, string> LoadingDataText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Loading data..." },
+        { "fr", "Chargement des données..." }
       };
 
     static public readonly Dictionary<string, string> ProgressCreateDaysText
@@ -186,9 +193,9 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> RestoreWinPosText
       = new Dictionary<string, string>()
       {
-        { "en", "This action will restore windows position." + Environment.NewLine + 
+        { "en", "This action will restore windows position." + Environment.NewLine + Environment.NewLine +
                 "Are you sure you want to do this?" },
-        { "fr", "Cette action va restaurer la position de la fenêtre"  + Environment.NewLine + 
+        { "fr", "Cette action va restaurer la position de la fenêtre"  + Environment.NewLine + Environment.NewLine +
                 "Etes vous sûr de vouloir faire cela ?" }
       };
 
@@ -204,9 +211,9 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> ReplaceCalendarText
       = new Dictionary<string, string>()
       {
-        { "en", "The new calendar will replace the old." + Environment.NewLine + 
+        { "en", "The new calendar will replace the old." + Environment.NewLine + Environment.NewLine +
                 "Do you want to continue?" },
-        { "fr", "Le nouveau calendrier va remplacer l'ancien." + Environment.NewLine + 
+        { "fr", "Le nouveau calendrier va remplacer l'ancien." + Environment.NewLine + Environment.NewLine +
                 "Voulez-vous continuer ?" }
       };
 

@@ -136,7 +136,7 @@ namespace Ordisoftware.HebrewCalendar
       DateTime date = DateTime.Now;
       var form = new SelectDayForm();
       form.Text = "Select birthday";
-      form.ShowDialog();
+      if ( form.ShowDialog() == DialogResult.Cancel ) return;
       date = form.MonthCalendar.SelectionStart;
       Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
       foreach ( DayOfWeekItem item in EditShabatDay.Items)
