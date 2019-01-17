@@ -25,30 +25,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private void GenerateReport()
-    {
-      IsGenerating = true;
-      UseWaitCursor = true;
-      calendarText.Clear();
-      UpdateButtons();
-      try
-      {
-        calendarText.Clear();
-        DoGenerateTextReport();
-      }
-      catch ( Exception except )
-      {
-        except.Manage();
-      }
-      finally
-      {
-        UseWaitCursor = false;
-        IsGenerating = false;
-        UpdateButtons();
-      }
-    }
-
-    private void DoGenerateTextReport()
+    private string GenerateReport()
     {
       var headerSep = SeparatorV;
       var headerTxt = SeparatorV;
@@ -64,12 +41,12 @@ namespace Ordisoftware.HebrewCalendar
       content.Append(headerTxt + Environment.NewLine);
       int progress = 0;
       int count = lunisolarCalendar.LunisolarDays.Count;
-      if ( count <= 0 ) return;
+      if ( count <= 0 ) return "";
       var lastyear = SQLiteUtility.GetDate(lunisolarCalendar.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in lunisolarCalendar.LunisolarDays.Rows )
       {
         var dayDate = SQLiteUtility.GetDate(day.Date);
-        if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
+        if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return "";
         if ( day.LunarMonth == 0 ) continue;
         if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
         if ( day.IsNewMoon == 1 ) content.Append(headerSep + Environment.NewLine);
@@ -113,7 +90,10 @@ namespace Ordisoftware.HebrewCalendar
         content.Append(Environment.NewLine);
       }
       content.Append(headerSep + Environment.NewLine);
-      calendarText.Text = content.ToString();
+      var row = lunisolarCalendar.Report.NewReportRow();
+      row.Content = content.ToString();
+      lunisolarCalendar.Report.AddReportRow(row);
+      return content.ToString();
     }
 
   }

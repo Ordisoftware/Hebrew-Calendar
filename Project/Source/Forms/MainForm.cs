@@ -14,6 +14,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-01 </edited>
 using System;
+using System.Linq;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -77,14 +78,16 @@ namespace Ordisoftware.HebrewCalendar
       {
         SQLiteUtility.CheckDB();
         lunisolarDaysTableAdapter.Fill(lunisolarCalendar.LunisolarDays);
+        reportTableAdapter.Fill(lunisolarCalendar.Report);
+        SetView(Program.Settings.CurrentView, true);
+        var row = lunisolarCalendar.Report.FirstOrDefault();
+        calendarText.Text = row == null ? "" : row.Content;
+        actionSearchDay_Click(null, null);
       }
       catch (Exception ex)
       {
         ex.Manage();
       }
-      SetView(Program.Settings.CurrentView, true);
-      GenerateReport();
-      actionSearchDay_Click(null, null);
     }
 
     /// <summary>
@@ -303,7 +306,6 @@ namespace Ordisoftware.HebrewCalendar
         if ( !DisplayManager.QueryYesNo(LocalizerHelper.ReplaceCalendarText.GetLang()) )
           return;
       GenerateDB((int)form.editYearFirst.Value, (int)form.editYearLast.Value);
-      GenerateReport();
       actionSearchDay_Click(null, null);
     }
 

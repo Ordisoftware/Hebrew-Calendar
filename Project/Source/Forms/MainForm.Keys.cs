@@ -15,6 +15,7 @@
 /// <edited> 2016-04 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -44,7 +45,10 @@ namespace Ordisoftware.HebrewCalendar
           return true;
         case Keys.Escape:
           if ( IsGenerating )
-            IsGenerating = false;
+          {
+            if ( DisplayManager.QueryYesNo(LocalizerHelper.StopGenerationText.GetLang()) )
+              IsGenerating = false;
+          }
           else
           if ( editESCtoExit.Checked )
             Close();

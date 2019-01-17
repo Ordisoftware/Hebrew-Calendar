@@ -73,12 +73,14 @@ namespace Ordisoftware.HebrewCalendar
     {
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
-      var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                          "WHERE type = 'table' AND name = 'LunisolarDays'", connection);
-      int result = (int)cmdCheckTable.ExecuteScalar();
-      if ( result == 0 )
+      try
       {
-        var cmdCreateTable = new OdbcCommand(@"CREATE TABLE LunisolarDays (
+        var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
+                                            "WHERE type = 'table' AND name = 'LunisolarDays'", connection);
+        int result = (int)cmdCheckTable.ExecuteScalar();
+        if ( result == 0 )
+        {
+          var cmdCreateTable = new OdbcCommand(@"CREATE TABLE LunisolarDays (
                                                  Date text,
                                                  LunarMonth integer,
                                                  LunarDay integer,
@@ -94,21 +96,24 @@ namespace Ordisoftware.HebrewCalendar
                                                  TorahEvents integer,
                                                  PRIMARY KEY('Date')
                                                );", connection);
-        cmdCreateTable.ExecuteNonQuery();
+          cmdCreateTable.ExecuteNonQuery();
+        }
         cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
                                             "WHERE type = 'table' AND name = 'Report'", connection);
         result = (int)cmdCheckTable.ExecuteScalar();
         if ( result == 0 )
         {
-          cmdCreateTable = new OdbcCommand(@"CREATE TABLE Report (
-                                               Content text
-                                             );", connection);
+          var cmdCreateTable = new OdbcCommand(@"CREATE TABLE Report (
+                                                   Content text
+                                                 );", connection);
           cmdCreateTable.ExecuteNonQuery();
         }
+      }
+      finally
+      {
         connection.Close();
       }
     }
-
   }
 
 }

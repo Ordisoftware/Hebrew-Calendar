@@ -31,24 +31,28 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="yearFirst">The first year.</param>
     /// <param name="yearLast">The last year.</param>
-    public void GenerateDB(int yearFirst, int yearLast)
+    private void GenerateDB(int yearFirst, int yearLast)
     {
       IsGenerating = true;
       UseWaitCursor = true;
       try
       {
         UpdateButtons();
+        calendarText.Clear();
+        lunisolarDaysBindingSource.DataSource = null;
         lunisolarDaysTableAdapter.DeleteAllQuery();
+        reportTableAdapter.DeleteAllQuery();
         tableAdapterManager.UpdateAll(lunisolarCalendar);
         lunisolarDaysTableAdapter.Fill(lunisolarCalendar.LunisolarDays);
+        reportTableAdapter.Fill(lunisolarCalendar.Report);
         var d1 = new DateTime(yearFirst, 1, DateTime.DaysInMonth(yearFirst, 1));
         var d2 = new DateTime(yearLast, 12, DateTime.DaysInMonth(yearLast, 12));
         Count = (int)( d2 - d1 ).TotalDays;
-        lunisolarDaysBindingSource.DataSource = null;
         try
         {
           if ( IsGenerating ) PopulateDays(yearFirst, yearLast);
-          if ( IsGenerating ) Analyse(yearFirst, yearLast);
+          if ( IsGenerating ) AnalyseDays();
+          if ( IsGenerating ) calendarText.Text = GenerateReport();
         }
         finally
         {
@@ -150,9 +154,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Create the calendar items.
     /// </summary>
-    /// <param name="yearFirst">The first year.</param>
-    /// <param name="yearLast">The last year.</param>
-    private void Analyse(int yearFirst, int yearLast)
+    private void AnalyseDays()
     {
       int progress = 0;
       progress = 0;
