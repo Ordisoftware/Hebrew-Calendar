@@ -86,7 +86,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             if ( !UpdateProgress(progress++, Count, LocalizerHelper.ProgressCreateDaysText.GetLang()) ) return;
             var row = lunisolarCalendar.LunisolarDays.NewLunisolarDaysRow();
-            row.Date = SQLiteDateTool.GetDate(year, month, day);
+            row.Date = SQLiteUtility.GetDate(year, month, day);
             InitializeDay(row);
             lunisolarCalendar.LunisolarDays.AddLunisolarDaysRow(row);
           }
@@ -101,16 +101,16 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="day">The day.</param>
     private void InitializeDay(Data.LunisolarCalendar.LunisolarDaysRow day)
     {
-      var date = SQLiteDateTool.GetDate(day.Date);
+      var date = SQLiteUtility.GetDate(day.Date);
       var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
       day.LunarDay = AstronomyUtility.JapaneseCalendar.GetDayOfMonth(date);
       day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
       day.MoonPhase = (int)AstronomyUtility.GetMoonPhase(date.Year, date.Month, date.Day);
       day.IsFullMoon = Convert.ToInt32((MoonPhaseType)day.MoonPhase == MoonPhaseType.Full);
-      day.Sunrise = SQLiteDateTool.FormatTime(ephemeris.Sunrise);
-      day.Sunset = SQLiteDateTool.FormatTime(ephemeris.Sunset);
-      day.Moonrise = SQLiteDateTool.FormatTime(ephemeris.Moonrise);
-      day.Moonset = SQLiteDateTool.FormatTime(ephemeris.Moonset);
+      day.Sunrise = SQLiteUtility.FormatTime(ephemeris.Sunrise);
+      day.Sunset = SQLiteUtility.FormatTime(ephemeris.Sunset);
+      day.Moonrise = SQLiteUtility.FormatTime(ephemeris.Moonrise);
+      day.Moonset = SQLiteUtility.FormatTime(ephemeris.Moonset);
       MoonriseType moonrisetype;
       if ( ephemeris.Moonrise == null )
         moonrisetype = MoonriseType.NextDay;
@@ -139,7 +139,7 @@ namespace Ordisoftware.HebrewCalendar
         date.Set(action(year), true);
         date.Get(out jdYear, out jdMonth, out jdDay, out jdHour, out jdMinute, out second);
         var dateJulian = new DateTime((int)jdYear, (int)jdMonth, (int)jdDay, 0, 0, 0);
-        string strDate = SQLiteDateTool.GetDate((int)jdYear, (int)jdMonth, (int)jdDay);
+        string strDate = SQLiteUtility.GetDate((int)jdYear, (int)jdMonth, (int)jdDay);
         var day = lunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == strDate);
         if ( day != null ) day.SeasonChange = (int)season;
       }
@@ -186,21 +186,21 @@ namespace Ordisoftware.HebrewCalendar
     {
       DateTime? calculate(OmerType omer, DateTime date, TorahEventType type)
       {
-        var row = lunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteDateTool.GetDate(date));
+        var row = lunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(date));
         if ( row == null ) return null;
         var v = row.Moonrise == null && omer == OmerType.DayMoon && !Program.Settings.CountDayMoonAsSun
               ? date.AddDays(1)
               : date;
-        row = lunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteDateTool.GetDate(v));
+        row = lunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(v));
         if ( row != null ) row.TorahEvents |= (int)type;
         return v;
       }
-      var dateDay = SQLiteDateTool.GetDate(day.Date);
+      var dateDay = SQLiteUtility.GetDate(day.Date);
       var equinoxe = ( from d in lunisolarCalendar.LunisolarDays
-                       where dateDay.Year == SQLiteDateTool.GetDate(day.Date).Year 
+                       where dateDay.Year == SQLiteUtility.GetDate(day.Date).Year 
                           && d.SeasonChange == (int)SeasonChangeType.SpringEquinox
                        select d ).First();
-      var dateEquinox = SQLiteDateTool.GetDate(equinoxe.Date);
+      var dateEquinox = SQLiteUtility.GetDate(equinoxe.Date);
       int deltaNewLambDay = dateEquinox.Day - TorahCelebrations.NewLambDay;
       bool newEquinoxe = ( dateDay.Month == dateEquinox.Month && dateDay.Day >= deltaNewLambDay )
                       || ( dateDay.Month == dateEquinox.Month + 1 );

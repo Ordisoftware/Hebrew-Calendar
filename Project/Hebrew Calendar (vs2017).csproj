@@ -134,7 +134,7 @@
     <Compile Include="Source\Forms\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\SQLiteDateTool.cs" />
+    <Compile Include="Source\Classes\SQLiteUtility.cs" />
     <Compile Include="Source\Forms\MainForm.Generate.cs">
       <SubType>Form</SubType>
     </Compile>

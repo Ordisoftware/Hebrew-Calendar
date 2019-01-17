@@ -18,7 +18,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using System.Data.Odbc;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
@@ -76,32 +75,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.Retrieve();
       try
       {
-        var connection = new OdbcConnection(Program.Settings.ConnectionString);
-        connection.Open();
-        var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                            "WHERE type = 'table' AND name = 'LunisolarDays'", connection);
-        int result = (int)cmdCheckTable.ExecuteScalar();
-        if ( result == 0 )
-        {
-          var cmdCreateTable = new OdbcCommand(@"CREATE TABLE LunisolarDays (
-                                                   Date text,
-                                                   LunarMonth integer,
-                                                   LunarDay integer,
-                                                   Sunrise text,
-                                                   Sunset text,
-                                                   Moonrise text,
-                                                   Moonset text,
-                                                   MoonriseType integer,
-                                                   IsNewMoon integer,
-                                                   IsFullMoon integer,
-                                                   MoonPhase integer,
-                                                   SeasonChange integer,
-                                                   TorahEvents integer,
-                                                   PRIMARY KEY('Date')
-                                                 );", connection);
-          cmdCreateTable.ExecuteNonQuery();
-        }
-        connection.Close();
+        SQLiteUtility.CheckDB();
         lunisolarDaysTableAdapter.Fill(lunisolarCalendar.LunisolarDays);
       }
       catch (Exception ex)
