@@ -62,13 +62,13 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       int count = lunisolarCalendar.LunisolarDays.Count;
       if ( count == 0 ) return;
-      var lastyear = SQLiteDateTool.GetDate(lunisolarCalendar.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+      var lastyear = SQLiteUtility.GetDate(lunisolarCalendar.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in lunisolarCalendar.LunisolarDays.Rows )
       {
-        var dayDate = SQLiteDateTool.GetDate(day.Date);
+        var dayDate = SQLiteUtility.GetDate(day.Date);
         if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
-        if ( TrimBeforeNewLunarYear && day.LunarMonth == 0 ) continue;
-        if ( TrimBeforeNewLunarYear && dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
+        if ( day.LunarMonth == 0 ) continue;
+        if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
         content.Append(day.Date + CSVSeparator);
         content.Append(day.IsNewMoon + CSVSeparator);
         content.Append(day.IsFullMoon + CSVSeparator);

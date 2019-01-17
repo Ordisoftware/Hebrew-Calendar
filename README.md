@@ -53,6 +53,10 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 
 ## Changelog
 
+#### 2019.01.17 - Version 1.1
+
+- Add a Report table to not generate it at every startup.
+
 #### 2019.01.14 - Version 1.0
 
-- Initial release
+- Initial release.

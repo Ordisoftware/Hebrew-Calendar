@@ -94,7 +94,7 @@
     <Compile Include="Source\Forms\MainForm.ExportCSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.Report.Consts.cs">
+    <Compile Include="Source\Forms\MainForm.GenerateReport.Consts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\ShowDayForm.cs">
@@ -134,8 +134,8 @@
     <Compile Include="Source\Forms\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\SQLiteDateTool.cs" />
-    <Compile Include="Source\Forms\MainForm.Generate.cs">
+    <Compile Include="Source\Classes\SQLiteUtility.cs" />
+    <Compile Include="Source\Forms\MainForm.GenerateDB.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm.Update.cs">
@@ -147,7 +147,7 @@
     <Compile Include="Source\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm.Report.cs">
+    <Compile Include="Source\Forms\MainForm.GenerateReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm.Keys.cs">

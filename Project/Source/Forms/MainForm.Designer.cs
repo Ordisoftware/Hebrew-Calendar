@@ -69,6 +69,7 @@
       this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+      this.tabPage1 = new System.Windows.Forms.TabPage();
       this.panelSepBottom = new System.Windows.Forms.Panel();
       this.panelSepTop = new System.Windows.Forms.Panel();
       this.panelProgress = new System.Windows.Forms.Panel();
@@ -113,9 +114,10 @@
       this.actionViewText = new System.Windows.Forms.ToolStripMenuItem();
       this.actionViewGrid = new System.Windows.Forms.ToolStripMenuItem();
       this.actionStop = new System.Windows.Forms.ToolStripButton();
+      this.saveCSVDialog = new System.Windows.Forms.SaveFileDialog();
       this.lunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
       this.tableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
-      this.saveCSVDialog = new System.Windows.Forms.SaveFileDialog();
+      this.reportTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter();
       this.statusBottom.SuspendLayout();
       this.panelMain.SuspendLayout();
       this.panelCalendarOuter.SuspendLayout();
@@ -193,6 +195,7 @@
       // 
       this.tabControl.Controls.Add(this.tabPageText);
       this.tabControl.Controls.Add(this.tabPageGrid);
+      this.tabControl.Controls.Add(this.tabPage1);
       resources.ApplyResources(this.tabControl, "tabControl");
       this.tabControl.Name = "tabControl";
       this.tabControl.SelectedIndex = 0;
@@ -409,6 +412,12 @@
       this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.bindingNavigatorMoveLastItem, "bindingNavigatorMoveLastItem");
       this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+      // 
+      // tabPage1
+      // 
+      resources.ApplyResources(this.tabPage1, "tabPage1");
+      this.tabPage1.Name = "tabPage1";
+      this.tabPage1.UseVisualStyleBackColor = true;
       // 
       // panelSepBottom
       // 
@@ -777,6 +786,10 @@
       this.actionStop.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.actionStop.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
+      // saveCSVDialog
+      // 
+      resources.ApplyResources(this.saveCSVDialog, "saveCSVDialog");
+      // 
       // lunisolarDaysTableAdapter
       // 
       this.lunisolarDaysTableAdapter.ClearBeforeFill = true;
@@ -785,11 +798,12 @@
       // 
       this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
       this.tableAdapterManager.LunisolarDaysTableAdapter = this.lunisolarDaysTableAdapter;
+      this.tableAdapterManager.ReportTableAdapter = this.reportTableAdapter;
       this.tableAdapterManager.UpdateOrder = Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
-      // saveCSVDialog
+      // reportTableAdapter
       // 
-      resources.ApplyResources(this.saveCSVDialog, "saveCSVDialog");
+      this.reportTableAdapter.ClearBeforeFill = true;
       // 
       // MainForm
       // 
@@ -919,6 +933,8 @@
     private System.Windows.Forms.ToolStripButton actionExportCSV;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.SaveFileDialog saveCSVDialog;
+    private System.Windows.Forms.TabPage tabPage1;
+    private Data.LunisolarCalendarTableAdapters.ReportTableAdapter reportTableAdapter;
   }
 }
 

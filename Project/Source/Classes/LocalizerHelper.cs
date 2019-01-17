@@ -155,6 +155,13 @@ namespace Ordisoftware.HebrewCalendar
                 "Voulez-vous générer un calendrier ?" }
       };
 
+    static public readonly Dictionary<string, string> StopGenerationText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to stop the generation process?" },
+        { "fr", "Voulez-vous arrêter le processus de génération ?" }
+      };
+
     static public readonly Dictionary<string, string> ProgressCreateDaysText
       = new Dictionary<string, string>()
       {

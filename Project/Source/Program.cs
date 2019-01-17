@@ -12,8 +12,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2019-01 </edited>
 using System;
+using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -33,6 +34,11 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Properties.Settings Settings = Properties.Settings.Default;
 
     /// <summary>
+    /// Indicate user data folder in roaming.
+    /// </summary>
+    static public string UserDataFolder { get; private set; }
+
+    /// <summary>
     /// Main entry-point for this application.
     /// </summary>
     /// <param name="args">Array of command-line argument strings.</param>
@@ -41,15 +47,20 @@ namespace Ordisoftware.HebrewCalendar
     {
       //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
       //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-      string filenameIcon = @"..\Application.ico";
+      string filenameIcon = ".." + Path.DirectorySeparatorChar + "Application.ico";
       try
       {
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(filenameIcon);
+        ShowDayForm.Instance.Icon = MainForm.Instance.Icon;
         PreferencesForm.Instance.Icon = MainForm.Instance.Icon;
         AboutBox.Instance.Icon = MainForm.Instance.Icon;
-        ShowDayForm.Instance.Icon = MainForm.Instance.Icon;
+        UserDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                       + Path.DirectorySeparatorChar + AboutBox.Instance.CompanyName
+                       + Path.DirectorySeparatorChar + AboutBox.Instance.AssemblyTitle
+                       + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(UserDataFolder);
         Application.Run(TrayIconForm.Instance);
       }
       catch ( Exception except )

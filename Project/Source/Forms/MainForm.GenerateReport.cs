@@ -25,30 +25,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private void GenerateReport()
-    {
-      IsGenerating = true;
-      UseWaitCursor = true;
-      calendarText.Clear();
-      UpdateButtons();
-      try
-      {
-        calendarText.Clear();
-        DoGenerateTextReport();
-      }
-      catch ( Exception except )
-      {
-        except.Manage();
-      }
-      finally
-      {
-        UseWaitCursor = false;
-        IsGenerating = false;
-        UpdateButtons();
-      }
-    }
-
-    private void DoGenerateTextReport()
+    private string GenerateReport()
     {
       var headerSep = SeparatorV;
       var headerTxt = SeparatorV;
@@ -62,17 +39,16 @@ namespace Ordisoftware.HebrewCalendar
       var content = new StringBuilder();
       content.Append(headerSep + Environment.NewLine);
       content.Append(headerTxt + Environment.NewLine);
-      if ( !TrimBeforeNewLunarYear ) content.Append(headerSep + Environment.NewLine);
       int progress = 0;
       int count = lunisolarCalendar.LunisolarDays.Count;
-      if ( count <= 0 ) return;
-      var lastyear = SQLiteDateTool.GetDate(lunisolarCalendar.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
+      if ( count <= 0 ) return "";
+      var lastyear = SQLiteUtility.GetDate(lunisolarCalendar.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in lunisolarCalendar.LunisolarDays.Rows )
       {
-        var dayDate = SQLiteDateTool.GetDate(day.Date);
-        if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
-        if ( TrimBeforeNewLunarYear && day.LunarMonth == 0 ) continue;
-        if ( TrimBeforeNewLunarYear && dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
+        var dayDate = SQLiteUtility.GetDate(day.Date);
+        if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return "";
+        if ( day.LunarMonth == 0 ) continue;
+        if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
         if ( day.IsNewMoon == 1 ) content.Append(headerSep + Environment.NewLine);
         string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
         string strDay = ((MoonriseType)day.MoonriseType == MoonriseType.NextDay 
@@ -114,7 +90,10 @@ namespace Ordisoftware.HebrewCalendar
         content.Append(Environment.NewLine);
       }
       content.Append(headerSep + Environment.NewLine);
-      calendarText.Text = content.ToString();
+      var row = lunisolarCalendar.Report.NewReportRow();
+      row.Content = content.ToString();
+      lunisolarCalendar.Report.AddReportRow(row);
+      return content.ToString();
     }
 
   }

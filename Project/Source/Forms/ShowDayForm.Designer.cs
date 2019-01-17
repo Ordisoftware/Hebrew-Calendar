@@ -225,6 +225,7 @@
       this.Name = "ShowDayForm";
       this.ShowInTaskbar = false;
       this.TopMost = true;
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowDayForm_FormClosing);
       this.panel1.ResumeLayout(false);
       this.panel2.ResumeLayout(false);
       this.panel2.PerformLayout();

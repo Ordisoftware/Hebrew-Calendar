@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         string strText = value.ToString();
         strText = strText.Remove(strText.Length - 3, 3);
-        string strDate = SQLiteDateTool.GetDate(value.Year, value.Month, value.Day);
+        string strDate = SQLiteUtility.GetDate(value.Year, value.Month, value.Day);
         var item = ( from day in MainForm.Instance.lunisolarCalendar.LunisolarDays
                      where day.Date == strDate
                      select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
@@ -99,11 +99,16 @@ namespace Ordisoftware.HebrewCalendar
       Location = new Point(left + width - Width, top + height - Height);
     }
 
+    private void ShowDayForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      e.Cancel = true;
+      Hide();
+    }
+
     private void buttonSelectDay_Click(object sender, EventArgs e)
     {
       try
       {
-        DateTime date;
         var form = new SelectDayForm();
         form.TopMost = true;
         if ( form.ShowDialog() != DialogResult.OK ) return;

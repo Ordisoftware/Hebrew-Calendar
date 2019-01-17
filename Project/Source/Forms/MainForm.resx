@@ -502,6 +502,33 @@
   <data name="&gt;&gt;tabPageGrid.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>982, 484</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -904,38 +931,38 @@
   <data name="actionExportCSV.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
-        0YH/A4ApxL+E5fY6AAAAAElFTkSuQmCC
+        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
+        2vd/feLEvalyLpwAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="actionExportCSV.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1698,18 +1725,21 @@
   <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="lunisolarDaysTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>514, 17</value>
-  </metadata>
-  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>695, 18</value>
-  </metadata>
   <metadata name="saveCSVDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>563, 54</value>
   </metadata>
   <data name="saveCSVDialog.Filter" xml:space="preserve">
     <value>CSV files|*.csv</value>
   </data>
+  <metadata name="lunisolarDaysTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>713, 19</value>
+  </metadata>
+  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>540, 19</value>
+  </metadata>
+  <metadata name="reportTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>921, 23</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2097,6 +2127,12 @@
   <data name="&gt;&gt;actionStop.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;saveCSVDialog.Name" xml:space="preserve">
+    <value>saveCSVDialog</value>
+  </data>
+  <data name="&gt;&gt;saveCSVDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;lunisolarDaysTableAdapter.Name" xml:space="preserve">
     <value>lunisolarDaysTableAdapter</value>
   </data>
@@ -2109,11 +2145,11 @@
   <data name="&gt;&gt;tableAdapterManager.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager, Ordisoftware.HebrewCalendar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;saveCSVDialog.Name" xml:space="preserve">
-    <value>saveCSVDialog</value>
+  <data name="&gt;&gt;reportTableAdapter.Name" xml:space="preserve">
+    <value>reportTableAdapter</value>
   </data>
-  <data name="&gt;&gt;saveCSVDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;reportTableAdapter.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter, Ordisoftware.HebrewCalendar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
