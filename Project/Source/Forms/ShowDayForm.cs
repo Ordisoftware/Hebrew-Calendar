@@ -109,7 +109,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        DateTime date;
         var form = new SelectDayForm();
         form.TopMost = true;
         if ( form.ShowDialog() != DialogResult.OK ) return;

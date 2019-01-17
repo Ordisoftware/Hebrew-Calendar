@@ -73,8 +73,6 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="yearFirst">The first year.</param>
     /// <param name="yearLast">The last year.</param>
-    /// <param name="monthFirst">The first month of the first year.</param>
-    /// <param name="monthLast">The last month of the last year.</param>
     private void PopulateDays(int yearFirst, int yearLast)
     {
       for ( int progress = 0, year = yearFirst; year <= yearLast; year++ )

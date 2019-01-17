@@ -140,7 +140,7 @@ namespace Ordisoftware.Core
     /// Set a value in bounds.
     /// </summary>
     /// <remarks>
-    /// Value is not changed if min = max = default(T). </summary>
+    /// Value is not changed if min = max = default(T).
     /// </remarks>
     /// <typeparam name="T">Generic type parameter.</typeparam>
     /// <param name="value">The value to act on.</param>

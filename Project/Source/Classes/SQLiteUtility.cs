@@ -37,7 +37,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Get a date like "2019.01.01".
     /// </summary>
-    /// <param name="date">The date.</param>
+    /// <param name="year">The year.</param>
+    /// <param name="month">The month.</param>
+    /// <param name="day">The day.</param>
+    /// <returns></returns>
     static public string GetDate(int year, int month, int day)
     {
       return year.ToString("0000") + "-" + month.ToString("00") + "-" + day.ToString("00");
@@ -56,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Get a time like "18:00".
     /// </summary>
-    /// <param name="date">The date.</param>
+    /// <param name="time">The time.</param>
     /// <returns>An empty string if time is null</returns>
     static public string FormatTime(TimeSpan? time)
     {
