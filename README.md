@@ -54,7 +54,10 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 
 #### 2019.01.17 - Version 1.1
 
-- Add a Report table to not generate it at every startup.
+- Report is no more generated at every startup.
+- Improve navigation window.
+- Improve settings.
+- Some bug fixes.
 
 #### 2019.01.14 - Version 1.0
 
