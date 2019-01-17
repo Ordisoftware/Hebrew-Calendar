@@ -35,6 +35,10 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 ![Trayicon Navigation Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-navigation.png)
 
+## Video
+
+[![Video](https://img.youtube.com/vi/u9LD-0u3wdE/0.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
+
 ## Frequently asked questions
 
 #### How to install SQlite ODBC Driver?
