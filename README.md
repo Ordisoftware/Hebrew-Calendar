@@ -10,7 +10,7 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 ## Functionalities
 
-- Generate a calendar.
+- Generate a calendar with sun and moon rises and sets.
 - Create a tabular text report.
 - Search for a day in the database.
 - Save the report to a text file.
@@ -52,12 +52,16 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 
 ## Changelog
 
+#### 2019.01.__ - Version 1.2
+
+- Add celebrations window.
+- Improve navigation window.
+- Improve preferences window.
+- Some bug fixes.
+
 #### 2019.01.17 - Version 1.1
 
 - Report is no more generated at every startup.
-- Improve navigation window.
-- Improve settings.
-- Some bug fixes.
 
 #### 2019.01.14 - Version 1.0
 

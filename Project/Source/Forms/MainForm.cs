@@ -161,7 +161,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !EditShowTips.Checked ) return;
       var item = (ToolStripItem)LastToolTip.Tag;
-      var location = new Point(item.Bounds.Left, item.Bounds.Top - 25);
+      var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionSaveReport.Height + 5);
       LastToolTip.Tag = sender;
       LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
       TimerTooltip.Enabled = false;
@@ -390,6 +390,11 @@ namespace Ordisoftware.HebrewCalendar
         if ( form.ShowDialog() != DialogResult.OK ) return;
         date = form.MonthCalendar.SelectionStart;
       }
+      GoToDate(date);
+    }
+
+    internal void GoToDate(DateTime date)
+    {
       string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");
       int pos = CalendarText.Find(strDate);
       if ( pos != -1 )
@@ -399,7 +404,8 @@ namespace Ordisoftware.HebrewCalendar
         CalendarText.ScrollToCaret();
         CalendarText.SelectionStart = pos - 6;
         CalendarText.SelectionLength = 118;
-        LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", strDate);
+        LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
+        CalendarGrid.Update();
       }
     }
 

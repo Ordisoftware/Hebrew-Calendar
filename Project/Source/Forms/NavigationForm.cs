@@ -59,13 +59,13 @@ namespace Ordisoftware.HebrewCalendar
         if ( LabelEventSeasonValue.Text == "" ) LabelEventSeasonValue.Text = "-";
         LabelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents);
         if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
-        row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
-                 where SQLiteUtility.GetDate(day.Date) > value && day.TorahEvents > 0
-                 select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
-        if ( row != null )
+        var rowNext = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+                        where SQLiteUtility.GetDate(day.Date) > value && day.TorahEvents > 0
+                        select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
+        if ( rowNext != null )
         {
-          LabelTorahNextValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents);
-          LabelTorahNextDateValue.Text = SQLiteUtility.GetDate(row.Date).ToLongDateString();
+          LabelTorahNextValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)rowNext.TorahEvents);
+          LabelTorahNextDateValue.Text = SQLiteUtility.GetDate(rowNext.Date).ToLongDateString();
         }
         else
         {
@@ -89,6 +89,7 @@ namespace Ordisoftware.HebrewCalendar
           LabelMoonsetValue.Top = 125;
         }
         _Date = value;
+        MainForm.Instance.GoToDate(value);
         try
         {
           ActiveControl = LabelDate;

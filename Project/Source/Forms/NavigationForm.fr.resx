@@ -118,46 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelEventTorah.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelTorahNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 190</value>
+  </data>
+  <data name="LabelTorahNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 16</value>
+  </data>
+  <data name="LabelTorahNext.Text" xml:space="preserve">
+    <value>Suivant :</value>
+  </data>
+  <data name="LabelEventTorah.Location" type="System.Drawing.Point, System.Drawing">
     <value>48, 170</value>
   </data>
-  <data name="labelEventTorah.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelEventTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 16</value>
   </data>
-  <data name="labelEventTorah.Text" xml:space="preserve">
+  <data name="LabelEventTorah.Text" xml:space="preserve">
     <value>Torah :</value>
   </data>
-  <data name="labelEventSeason.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelEventSeason.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 150</value>
   </data>
-  <data name="labelEventSeason.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelEventSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 16</value>
   </data>
-  <data name="labelEventSeason.Text" xml:space="preserve">
+  <data name="LabelEventSeason.Text" xml:space="preserve">
     <value>Saison :</value>
   </data>
-  <data name="labelMoonset.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelMoonset.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 16</value>
   </data>
-  <data name="labelMoonset.Text" xml:space="preserve">
+  <data name="LabelMoonset.Text" xml:space="preserve">
     <value>Coucher de la lune</value>
   </data>
-  <data name="labelMoonrise.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelMoonrise.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 16</value>
   </data>
-  <data name="labelMoonrise.Text" xml:space="preserve">
+  <data name="LabelMoonrise.Text" xml:space="preserve">
     <value>Lever de la lune</value>
   </data>
-  <data name="labelSunset.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelSunset.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 16</value>
   </data>
-  <data name="labelSunset.Text" xml:space="preserve">
+  <data name="LabelSunset.Text" xml:space="preserve">
     <value>Lever du soleil</value>
   </data>
-  <data name="labelSunrise.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelSunrise.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 16</value>
   </data>
-  <data name="labelSunrise.Text" xml:space="preserve">
+  <data name="LabelSunrise.Text" xml:space="preserve">
     <value>Coucher du soleil</value>
   </data>
 </root>
