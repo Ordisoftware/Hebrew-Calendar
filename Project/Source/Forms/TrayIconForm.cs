@@ -177,8 +177,9 @@ namespace Ordisoftware.HebrewCalendar
           form.Visible = true;
           form.BringToFront();
         }
-        catch
+        catch (Exception ex)
         {
+          ex.Manage();
         }
       }
     }

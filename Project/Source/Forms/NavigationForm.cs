@@ -44,24 +44,37 @@ namespace Ordisoftware.HebrewCalendar
         string strText = value.ToString();
         strText = strText.Remove(strText.Length - 3, 3);
         string strDate = SQLiteUtility.GetDate(value.Year, value.Month, value.Day);
-        var item = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+        var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
                      where day.Date == strDate
                      select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
         LabelDate.Text = value.ToLongDateString();
-        string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[item.LunarMonth];
-        LabelLunarMonthValue.Text = strMonth + " #" + item.LunarMonth.ToString();
-        LabelLunarDayValue.Text = "Day #" + item.LunarDay.ToString();
-        LabelSunriseValue.Text = item.Sunrise.ToString();
-        LabelSunsetValue.Text = item.Sunset.ToString();
-        LabelMoonriseValue.Text = item.Moonrise.ToString();
-        LabelMoonsetValue.Text = item.Moonset.ToString();
-        LabelEventSeasonValue.Text = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)item.SeasonChange);
+        string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[row.LunarMonth];
+        LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
+        LabelLunarDayValue.Text = "Day #" + row.LunarDay.ToString();
+        LabelSunriseValue.Text = row.Sunrise.ToString();
+        LabelSunsetValue.Text = row.Sunset.ToString();
+        LabelMoonriseValue.Text = row.Moonrise.ToString();
+        LabelMoonsetValue.Text = row.Moonset.ToString();
+        LabelEventSeasonValue.Text = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)row.SeasonChange);
         if ( LabelEventSeasonValue.Text == "" ) LabelEventSeasonValue.Text = "-";
-        LabelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)item.TorahEvents);
+        LabelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents);
         if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
+        row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+                 where SQLiteUtility.GetDate(day.Date) > value && day.TorahEvents > 0
+                 select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
+        if ( row != null )
+        {
+          LabelTorahNextValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents);
+          LabelTorahNextDateValue.Text = SQLiteUtility.GetDate(row.Date).ToLongDateString();
+        }
+        else
+        {
+          LabelTorahNextValue.Text = "-";
+          LabelTorahNextDateValue.Text = "";
+        }
         var image = MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
         PictureMoon.Image = ResizeImage(image, 100, 100);
-        if ( (MoonriseType)item.MoonriseType == MoonriseType.AfterSet )
+        if ( (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
         {
           LabelMoonrise.Top = 125;
           LabelMoonriseValue.Top = 125;
