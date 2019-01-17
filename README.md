@@ -23,15 +23,17 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 ## Requirements
 
 - Windows Vista x32/x64 or superior
+- Screen 1024x768 or superior
 - Framework .NET 3.5 or superior
 - [SQLite ODBC Driver](http://www.ch-werner.de/sqliteodbc/)
-- Screen 1024x768 or superior
 
 ## Screenshots
 
-![Main Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-main-700x480.jpg)
+![Main Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-app-768x527.jpg)
 
-![Trayicon Popup Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-popup-320x305.jpg)
+![Trayicon Navigation Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-navigation.jpg)
+
+![Trayicon Celebration Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-celebrations.jpg)
 
 ## Frequently asked questions
 
