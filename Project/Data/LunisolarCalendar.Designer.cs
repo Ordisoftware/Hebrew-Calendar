@@ -859,7 +859,7 @@ namespace Ordisoftware.HebrewCalendar.Data {
             private void InitClass() {
                 this.columnContent = new global::System.Data.DataColumn("Content", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnContent);
-                this.columnContent.MaxLength = 65536;
+                this.columnContent.MaxLength = 1000000000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

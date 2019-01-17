@@ -237,7 +237,7 @@
               <xs:element name="Content" msprop:Generator_ColumnVarNameInTable="columnContent" msprop:Generator_ColumnPropNameInRow="Content" msprop:Generator_ColumnPropNameInTable="ContentColumn" msprop:Generator_UserColumnName="Content" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="65536" />
+                    <xs:maxLength value="1000000000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

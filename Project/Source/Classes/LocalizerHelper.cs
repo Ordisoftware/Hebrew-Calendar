@@ -158,10 +158,8 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> StopGenerationText
       = new Dictionary<string, string>()
       {
-        { "en", "Do you want to stop the generation process?" + Environment.NewLine +
-                "Data and report will be in inconsistant state." },
-        { "fr", "Voulez-vous arrêter le processus de génération ?" + Environment.NewLine +
-                "Les données et le rapport peuvent seront dans un état inconsistant." }
+        { "en", "Do you want to stop the generation process?" },
+        { "fr", "Voulez-vous arrêter le processus de génération ?" }
       };
 
     static public readonly Dictionary<string, string> ProgressCreateDaysText
