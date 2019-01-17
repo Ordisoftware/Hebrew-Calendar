@@ -23,17 +23,17 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  public partial class ShowDayForm : Form
+  public partial class NavigationForm : Form
   {
 
     /// <summary>
     /// Indicate the singleton instance.
     /// </summary>
-    static internal ShowDayForm Instance { get; private set; }
+    static internal NavigationForm Instance { get; private set; }
 
-    static ShowDayForm()
+    static NavigationForm()
     {
-      Instance = new ShowDayForm();
+      Instance = new NavigationForm();
     }
 
     public DateTime Date
@@ -44,41 +44,41 @@ namespace Ordisoftware.HebrewCalendar
         string strText = value.ToString();
         strText = strText.Remove(strText.Length - 3, 3);
         string strDate = SQLiteUtility.GetDate(value.Year, value.Month, value.Day);
-        var item = ( from day in MainForm.Instance.lunisolarCalendar.LunisolarDays
+        var item = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
                      where day.Date == strDate
                      select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
-        labelDate.Text = value.ToLongDateString();
+        LabelDate.Text = value.ToLongDateString();
         string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[item.LunarMonth];
-        labelLunarMonthValue.Text = strMonth + " #" + item.LunarMonth.ToString();
-        labelLunarDayValue.Text = "Day #" + item.LunarDay.ToString();
-        labelSunriseValue.Text = item.Sunrise.ToString();
-        labelSunsetValue.Text = item.Sunset.ToString();
-        labelMoonriseValue.Text = item.Moonrise.ToString();
-        labelMoonsetValue.Text = item.Moonset.ToString();
-        labelEventSeasonValue.Text = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)item.SeasonChange);
-        if ( labelEventSeasonValue.Text == "" ) labelEventSeasonValue.Text = "-";
-        labelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)item.TorahEvents);
-        if ( labelEventTorahValue.Text == "" ) labelEventTorahValue.Text = "-";
+        LabelLunarMonthValue.Text = strMonth + " #" + item.LunarMonth.ToString();
+        LabelLunarDayValue.Text = "Day #" + item.LunarDay.ToString();
+        LabelSunriseValue.Text = item.Sunrise.ToString();
+        LabelSunsetValue.Text = item.Sunset.ToString();
+        LabelMoonriseValue.Text = item.Moonrise.ToString();
+        LabelMoonsetValue.Text = item.Moonset.ToString();
+        LabelEventSeasonValue.Text = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)item.SeasonChange);
+        if ( LabelEventSeasonValue.Text == "" ) LabelEventSeasonValue.Text = "-";
+        LabelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)item.TorahEvents);
+        if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
         var image = MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
-        pictureMoon.Image = ResizeImage(image, 100, 100);
+        PictureMoon.Image = ResizeImage(image, 100, 100);
         if ( (MoonriseType)item.MoonriseType == MoonriseType.AfterSet )
         {
-          labelMoonrise.Top = 125;
-          labelMoonriseValue.Top = 125;
-          labelMoonset.Top = 105;
-          labelMoonsetValue.Top = 105;
+          LabelMoonrise.Top = 125;
+          LabelMoonriseValue.Top = 125;
+          LabelMoonset.Top = 105;
+          LabelMoonsetValue.Top = 105;
         }
         else
         {
-          labelMoonrise.Top = 105;
-          labelMoonriseValue.Top = 105;
-          labelMoonset.Top = 125;
-          labelMoonsetValue.Top = 125;
+          LabelMoonrise.Top = 105;
+          LabelMoonriseValue.Top = 105;
+          LabelMoonset.Top = 125;
+          LabelMoonsetValue.Top = 125;
         }
         _Date = value;
         try
         {
-          ActiveControl = labelDate;
+          ActiveControl = LabelDate;
         }
         catch
         {
@@ -88,15 +88,29 @@ namespace Ordisoftware.HebrewCalendar
 
     private DateTime _Date;
 
-    public ShowDayForm()
+    public NavigationForm()
     {
       InitializeComponent();
       Text = Core.DisplayManager.Title;
+      PanelTop.BackColor = Program.Settings.NavigateTopColor;
+      PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
+      PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
       int left = SystemInformation.WorkingArea.Left;
       int top = SystemInformation.WorkingArea.Top;
       int width = SystemInformation.WorkingArea.Width;
       int height = SystemInformation.WorkingArea.Height;
       Location = new Point(left + width - Width, top + height - Height);
+    }
+
+    /// <summary>
+    /// Process the command key.
+    /// </summary>
+    /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
+    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+    {
+      if ( keyData != Keys.Escape ) return base.ProcessCmdKey(ref msg, keyData);
+      Hide();
+      return true;
     }
 
     private void ShowDayForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -112,7 +126,7 @@ namespace Ordisoftware.HebrewCalendar
         var form = new SelectDayForm();
         form.TopMost = true;
         if ( form.ShowDialog() != DialogResult.OK ) return;
-        Date = form.monthCalendar.SelectionStart;
+        Date = form.MonthCalendar.SelectionStart;
       }
       catch
       {

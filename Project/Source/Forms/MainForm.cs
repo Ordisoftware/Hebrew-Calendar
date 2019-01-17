@@ -64,6 +64,9 @@ namespace Ordisoftware.HebrewCalendar
     public MainForm()
     {
       InitializeComponent();
+      Text = DisplayManager.Title;
+      CalendarText.ForeColor = Program.Settings.TextColor;
+      CalendarText.BackColor = Program.Settings.TextBackground;
     }
 
     /// <summary>
@@ -77,12 +80,12 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         SQLiteUtility.CheckDB();
-        lunisolarDaysTableAdapter.Fill(lunisolarCalendar.LunisolarDays);
-        reportTableAdapter.Fill(lunisolarCalendar.Report);
+        LunisolarDaysTableAdapter.Fill(LunisolarCalendar.LunisolarDays);
+        ReportTableAdapter.Fill(LunisolarCalendar.Report);
         SetView(Program.Settings.CurrentView, true);
-        var row = lunisolarCalendar.Report.FirstOrDefault();
-        calendarText.Text = row == null ? "" : row.Content;
-        actionSearchDay_Click(null, null);
+        var row = LunisolarCalendar.Report.FirstOrDefault();
+        CalendarText.Text = row == null ? "" : row.Content;
+        ActionSearchDay_Click(null, null);
       }
       catch (Exception ex)
       {
@@ -133,14 +136,14 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Timer event
     /// </summary>
-    private void timerTooltip_Tick(object sender, EventArgs e)
+    private void TimerTooltip_Tick(object sender, EventArgs e)
     {
-      if ( !editShowTips.Checked ) return;
+      if ( !EditShowTips.Checked ) return;
       var item = (ToolStripItem)LastToolTip.Tag;
       var location = new Point(item.Bounds.Left, item.Bounds.Top - 25);
       LastToolTip.Tag = sender;
-      LastToolTip.Show(item.ToolTipText, toolStrip, location, 3000);
-      timerTooltip.Enabled = false;
+      LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
+      TimerTooltip.Enabled = false;
     }
 
     /// <summary>
@@ -148,12 +151,12 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private void ShowToolTipOnMouseEnter(object sender, EventArgs e)
     {
-      if ( !editShowTips.Checked ) return;
+      if ( !EditShowTips.Checked ) return;
       if ( !( sender is ToolStripItem ) ) return;
       if ( LastToolTip.Tag == sender ) return;
       LastToolTip.Tag = sender;
       if ( ( (ToolStripItem)sender ).ToolTipText == "" ) return;
-      timerTooltip.Enabled = true;
+      TimerTooltip.Enabled = true;
     }
 
     /// <summary>
@@ -161,59 +164,59 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private void ShowToolTipOnMouseLeave(object sender, EventArgs e)
     {
-      if ( !editShowTips.Checked ) return;
-      timerTooltip.Enabled = false;
+      if ( !EditShowTips.Checked ) return;
+      TimerTooltip.Enabled = false;
       LastToolTip.Tag = null;
-      LastToolTip.Hide(toolStrip);
+      LastToolTip.Hide(ToolStrip);
     }
 
     /// <summary>
-    /// Event handler. Called by actionViewText for click events.
+    /// Event handler. Called by ActionViewText for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionViewText_Click(object sender, EventArgs e)
+    private void ActionViewText_Click(object sender, EventArgs e)
     {
       SetView(ViewModeType.Text);
     }
 
     /// <summary>
-    /// Event handler. Called by actionViewGrid for click events.
+    /// Event handler. Called by ActionViewGrid for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionViewGrid_Click(object sender, EventArgs e)
+    private void ActionViewGrid_Click(object sender, EventArgs e)
     {
       SetView(ViewModeType.Grid);
     }
 
     /// <summary>
-    /// Event handler. Called by miReset for click events.
+    /// Event handler. Called by ActionResetWinSettings for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionResetWinSettings_Click(object sender, EventArgs e)
+    private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
       if ( DisplayManager.QueryYesNo(LocalizerHelper.RestoreWinPosText.GetLang()) )
         Program.Settings.RestoreMainForm();
     }
 
     /// <summary>
-    /// Event handler. Called by editScreenPosition for click events.
+    /// Event handler. Called by EditScreenPosition for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void editScreenPosition_Click(object sender, EventArgs e)
+    internal void EditScreenPosition_Click(object sender, EventArgs e)
     {
       DoScreenPosition(sender, e);
     }
 
     /// <summary>
-    /// Event handler. Called by actionPreferences for click events.
+    /// Event handler. Called by ActionPreferences for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionPreferences_Click(object sender, EventArgs e)
+    private void ActionPreferences_Click(object sender, EventArgs e)
     {
       PreferencesForm.Instance.ShowDialog();
       if ( PreferencesForm.Instance.OldShabatDay != Program.Settings.ShabatDay
@@ -221,18 +224,18 @@ namespace Ordisoftware.HebrewCalendar
         || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )
         if ( DisplayManager.QueryYesNo(LocalizerHelper.RegenerateCalendarText.GetLang()) )
         {
-          actionGenerate.PerformClick();
-          actionSearchDay_Click(null, null);
+          ActionGenerate.PerformClick();
+          ActionSearchDay_Click(null, null);
         }
   
     }
 
     /// <summary>
-    /// Event handler. Called by actionAbout for click events.
+    /// Event handler. Called by ActionAbout for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionAbout_Click(object sender, EventArgs e)
+    private void ActionAbout_Click(object sender, EventArgs e)
     {
       if ( AboutBox.Instance.Visible )
         AboutBox.Instance.BringToFront();
@@ -241,11 +244,11 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by actionHelp for click events.
+    /// Event handler. Called by ActionHelp for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionHelp_Click(object sender, EventArgs e)
+    private void ActionHelp_Click(object sender, EventArgs e)
     {
       using ( var process = new Process() )
         try
@@ -260,33 +263,33 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by actionApplicationHome for click events.
+    /// Event handler. Called by ActionApplicationHome for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionApplicationHome_Click(object sender, EventArgs e)
+    private void ActionApplicationHome_Click(object sender, EventArgs e)
     {
       AboutBox.Instance.OpenApplicationHome();
     }
 
     /// <summary>
-    /// Event handler. Called by actionContact for click events.
+    /// Event handler. Called by ActionContact for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionContact_Click(object sender, EventArgs e)
+    private void ActionContact_Click(object sender, EventArgs e)
     {
       AboutBox.Instance.OpenContactPage();
     }
 
     /// <summary>
-    /// Event handler. Called by actionExit for click events.
+    /// Event handler. Called by ActionExit for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionExit_Click(object sender, EventArgs e)
+    private void ActionExit_Click(object sender, EventArgs e)
     {
-      if ( editConfirmClosing.Checked )
+      if ( EditConfirmClosing.Checked )
         if ( !DisplayManager.QueryYesNo(LocalizerHelper.ExitApplicationText.GetLang()) )
           return;
       TrayIconForm.Instance.Close();
@@ -294,68 +297,68 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by actionGenerate for click events.
+    /// Event handler. Called by ActionGenerate for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionGenerate_Click(object sender, EventArgs e)
+    private void ActionGenerate_Click(object sender, EventArgs e)
     {
       var form = new SelectYearsForm();
       if ( form.ShowDialog() == DialogResult.Cancel ) return;
-      if ( lunisolarCalendar.LunisolarDays.Count > 0 )
+      if ( LunisolarCalendar.LunisolarDays.Count > 0 )
         if ( !DisplayManager.QueryYesNo(LocalizerHelper.ReplaceCalendarText.GetLang()) )
           return;
-      GenerateDB((int)form.editYearFirst.Value, (int)form.editYearLast.Value);
-      actionSearchDay_Click(null, null);
+      GenerateDB((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
+      ActionSearchDay_Click(null, null);
     }
 
     /// <summary>
-    /// Event handler. Called by actionStop for click events.
+    /// Event handler. Called by ActionStop for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionStop_Click(object sender, EventArgs e)
+    private void ActionStop_Click(object sender, EventArgs e)
     {
       IsGenerating = false;
     }
 
     /// <summary>
-    /// Event handler. Called by actionCopyReportToClipboard for click events.
+    /// Event handler. Called by ActionCopyReportToClipboard for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionCopyReportToClipboard_Click(object sender, EventArgs e)
+    private void ActionCopyReportToClipboard_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(calendarText.Text);
+      Clipboard.SetText(CalendarText.Text);
     }
 
     /// <summary>
-    /// Event handler. Called by actionSaveReport for click events.
+    /// Event handler. Called by ActionSaveReport for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionSaveReport_Click(object sender, EventArgs e)
+    private void ActionSaveReport_Click(object sender, EventArgs e)
     {
-      if ( saveFileDialog.ShowDialog() != DialogResult.OK ) return;
-      File.WriteAllText(saveFileDialog.FileName, calendarText.Text);
+      if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
+      File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
     }
 
     /// <summary>
-    /// Event handler. Called by actionExportCSV for click events.
+    /// Event handler. Called by ActionExportCSV for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionExportCSV_Click(object sender, EventArgs e)
+    private void ActionExportCSV_Click(object sender, EventArgs e)
     {
       ExportCSV();
     }
 
     /// <summary>
-    /// Event handler. Called by actionSearchDay for click events.
+    /// Event handler. Called by ActionSearchDay for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionSearchDay_Click(object sender, EventArgs e)
+    private void ActionSearchDay_Click(object sender, EventArgs e)
     {
       DateTime date;
       if ( sender == null )
@@ -364,21 +367,34 @@ namespace Ordisoftware.HebrewCalendar
       {
         var form = new SelectDayForm();
         if ( form.ShowDialog() != DialogResult.OK ) return;
-        date = form.monthCalendar.SelectionStart;
+        date = form.MonthCalendar.SelectionStart;
       }
       string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");
-      int pos = calendarText.Find(strDate);
+      int pos = CalendarText.Find(strDate);
       if ( pos != -1 )
       {
-        calendarText.SelectionStart = pos - 6 - 118;
-        calendarText.SelectionLength = 0;
-        calendarText.ScrollToCaret();
-        calendarText.SelectionStart = pos - 6;
-        calendarText.SelectionLength = 118;
-        lunisolarDaysBindingSource.Position = lunisolarDaysBindingSource.Find("Date", strDate);
+        CalendarText.SelectionStart = pos - 6 - 118;
+        CalendarText.SelectionLength = 0;
+        CalendarText.ScrollToCaret();
+        CalendarText.SelectionStart = pos - 6;
+        CalendarText.SelectionLength = 118;
+        LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", strDate);
       }
     }
 
+    private void ActionNavigate_Click(object sender, EventArgs e)
+    {
+      var form = NavigationForm.Instance;
+      try
+      {
+        form.Date = DateTime.Now;
+        form.Visible = true;
+        form.BringToFront();
+      }
+      catch
+      {
+      }
+    }
   }
 
 }

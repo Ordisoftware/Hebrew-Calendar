@@ -30,21 +30,76 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      this.statusBottom = new System.Windows.Forms.StatusStrip();
-      this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-      this.labelStatus = new System.Windows.Forms.ToolStripStatusLabel();
-      this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-      this.panelMain = new System.Windows.Forms.Panel();
-      this.panelCalendarOuter = new System.Windows.Forms.Panel();
-      this.panelCalendarInner = new System.Windows.Forms.Panel();
-      this.panelCalendar = new System.Windows.Forms.Panel();
-      this.tabControl = new System.Windows.Forms.TabControl();
-      this.tabPageText = new System.Windows.Forms.TabPage();
-      this.panelViewText = new System.Windows.Forms.Panel();
-      this.calendarText = new System.Windows.Forms.RichTextBox();
-      this.tabPageGrid = new System.Windows.Forms.TabPage();
-      this.panelViewGrid = new System.Windows.Forms.Panel();
-      this.calendarGrid = new System.Windows.Forms.DataGridView();
+      this.StatusBottom = new System.Windows.Forms.StatusStrip();
+      this.LabelStripMargin = new System.Windows.Forms.ToolStripStatusLabel();
+      this.LabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
+      this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+      this.PanelMain = new System.Windows.Forms.Panel();
+      this.PanelCalendarOuter = new System.Windows.Forms.Panel();
+      this.PanelCalendarInner = new System.Windows.Forms.Panel();
+      this.PanelCalendar = new System.Windows.Forms.Panel();
+      this.TabControl = new System.Windows.Forms.TabControl();
+      this.TabPageText = new System.Windows.Forms.TabPage();
+      this.PanelViewText = new System.Windows.Forms.Panel();
+      this.CalendarText = new System.Windows.Forms.RichTextBox();
+      this.TabPageGrid = new System.Windows.Forms.TabPage();
+      this.PanelViewGrid = new System.Windows.Forms.Panel();
+      this.CalendarGrid = new System.Windows.Forms.DataGridView();
+      this.LunisolarDaysBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+      this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+      this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+      this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+      this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+      this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+      this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+      this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+      this.PanelSepBottom = new System.Windows.Forms.Panel();
+      this.PanelSepTop = new System.Windows.Forms.Panel();
+      this.PanelProgress = new System.Windows.Forms.Panel();
+      this.BarProgress = new System.Windows.Forms.ProgressBar();
+      this.PanelTitle = new System.Windows.Forms.Panel();
+      this.LabelTitle = new System.Windows.Forms.Label();
+      this.moonPhaseImagePictureBox = new System.Windows.Forms.PictureBox();
+      this.label1 = new System.Windows.Forms.Label();
+      this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
+      this.ToolStrip = new System.Windows.Forms.ToolStrip();
+      this.Sep1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionSaveReport = new System.Windows.Forms.ToolStripButton();
+      this.ActionExportCSV = new System.Windows.Forms.ToolStripButton();
+      this.Sep2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCopyReportToClipboard = new System.Windows.Forms.ToolStripButton();
+      this.ActionSearchDay = new System.Windows.Forms.ToolStripButton();
+      this.Sep3 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionGenerate = new System.Windows.Forms.ToolStripButton();
+      this.ActionExit = new System.Windows.Forms.ToolStripButton();
+      this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionContact = new System.Windows.Forms.ToolStripButton();
+      this.ActionWebsite = new System.Windows.Forms.ToolStripButton();
+      this.Sep5 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionHelp = new System.Windows.Forms.ToolStripButton();
+      this.ActionAbout = new System.Windows.Forms.ToolStripButton();
+      this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
+      this.SctionPreferences = new System.Windows.Forms.ToolStripButton();
+      this.MenuSettings = new System.Windows.Forms.ToolStripDropDownButton();
+      this.MenuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenNone = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenTopLeft = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenTopRight = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenBottomLeft = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenBottomRight = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditScreenCenter = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionResetWinSettings = new System.Windows.Forms.ToolStripMenuItem();
+      this.Sep7 = new System.Windows.Forms.ToolStripSeparator();
+      this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditESCtoExit = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuView = new System.Windows.Forms.ToolStripDropDownButton();
+      this.ActionViewText = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewGrid = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionStop = new System.Windows.Forms.ToolStripButton();
+      this.SaveCSVDialog = new System.Windows.Forms.SaveFileDialog();
+      this.ActionNavigate = new System.Windows.Forms.ToolStripButton();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,189 +113,133 @@
       this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.lunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.lunisolarCalendar = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendar();
-      this.lunisolarDaysBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-      this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-      this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-      this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-      this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-      this.tabPage1 = new System.Windows.Forms.TabPage();
-      this.panelSepBottom = new System.Windows.Forms.Panel();
-      this.panelSepTop = new System.Windows.Forms.Panel();
-      this.panelProgress = new System.Windows.Forms.Panel();
-      this.barProgress = new System.Windows.Forms.ProgressBar();
-      this.panelTitle = new System.Windows.Forms.Panel();
-      this.labelTitle = new System.Windows.Forms.Label();
-      this.moonPhaseImagePictureBox = new System.Windows.Forms.PictureBox();
-      this.label1 = new System.Windows.Forms.Label();
-      this.timerTooltip = new System.Windows.Forms.Timer(this.components);
-      this.toolStrip = new System.Windows.Forms.ToolStrip();
-      this.sep2 = new System.Windows.Forms.ToolStripSeparator();
-      this.actionSaveReport = new System.Windows.Forms.ToolStripButton();
-      this.actionExportCSV = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.actionCopyReportToClipboard = new System.Windows.Forms.ToolStripButton();
-      this.actionSearchDay = new System.Windows.Forms.ToolStripButton();
-      this.sep3 = new System.Windows.Forms.ToolStripSeparator();
-      this.actionGenerate = new System.Windows.Forms.ToolStripButton();
-      this.actionExit = new System.Windows.Forms.ToolStripButton();
-      this.sep4 = new System.Windows.Forms.ToolStripSeparator();
-      this.actionContact = new System.Windows.Forms.ToolStripButton();
-      this.actionWebsite = new System.Windows.Forms.ToolStripButton();
-      this.sep5 = new System.Windows.Forms.ToolStripSeparator();
-      this.actionHelp = new System.Windows.Forms.ToolStripButton();
-      this.actionAbout = new System.Windows.Forms.ToolStripButton();
-      this.sep6 = new System.Windows.Forms.ToolStripSeparator();
-      this.actionPreferences = new System.Windows.Forms.ToolStripButton();
-      this.menuSettings = new System.Windows.Forms.ToolStripDropDownButton();
-      this.menuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
-      this.editScreenNone = new System.Windows.Forms.ToolStripMenuItem();
-      this.editScreenTopLeft = new System.Windows.Forms.ToolStripMenuItem();
-      this.editScreenTopRight = new System.Windows.Forms.ToolStripMenuItem();
-      this.editScreenBottomLeft = new System.Windows.Forms.ToolStripMenuItem();
-      this.editScreenBottomRight = new System.Windows.Forms.ToolStripMenuItem();
-      this.editScreenCenter = new System.Windows.Forms.ToolStripMenuItem();
-      this.actionResetWinSettings = new System.Windows.Forms.ToolStripMenuItem();
-      this.sep7 = new System.Windows.Forms.ToolStripSeparator();
-      this.editShowTips = new System.Windows.Forms.ToolStripMenuItem();
-      this.editESCtoExit = new System.Windows.Forms.ToolStripMenuItem();
-      this.editConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
-      this.menuView = new System.Windows.Forms.ToolStripDropDownButton();
-      this.actionViewText = new System.Windows.Forms.ToolStripMenuItem();
-      this.actionViewGrid = new System.Windows.Forms.ToolStripMenuItem();
-      this.actionStop = new System.Windows.Forms.ToolStripButton();
-      this.saveCSVDialog = new System.Windows.Forms.SaveFileDialog();
-      this.lunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
-      this.tableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
-      this.reportTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter();
-      this.statusBottom.SuspendLayout();
-      this.panelMain.SuspendLayout();
-      this.panelCalendarOuter.SuspendLayout();
-      this.panelCalendarInner.SuspendLayout();
-      this.panelCalendar.SuspendLayout();
-      this.tabControl.SuspendLayout();
-      this.tabPageText.SuspendLayout();
-      this.panelViewText.SuspendLayout();
-      this.tabPageGrid.SuspendLayout();
-      this.panelViewGrid.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.calendarGrid)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.lunisolarDaysBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.lunisolarCalendar)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.lunisolarDaysBindingNavigator)).BeginInit();
-      this.lunisolarDaysBindingNavigator.SuspendLayout();
-      this.panelProgress.SuspendLayout();
-      this.panelTitle.SuspendLayout();
+      this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.LunisolarCalendar = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendar();
+      this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
+      this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
+      this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter();
+      this.StatusBottom.SuspendLayout();
+      this.PanelMain.SuspendLayout();
+      this.PanelCalendarOuter.SuspendLayout();
+      this.PanelCalendarInner.SuspendLayout();
+      this.PanelCalendar.SuspendLayout();
+      this.TabControl.SuspendLayout();
+      this.TabPageText.SuspendLayout();
+      this.PanelViewText.SuspendLayout();
+      this.TabPageGrid.SuspendLayout();
+      this.PanelViewGrid.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).BeginInit();
+      this.LunisolarDaysBindingNavigator.SuspendLayout();
+      this.PanelProgress.SuspendLayout();
+      this.PanelTitle.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
-      this.toolStrip.SuspendLayout();
+      this.ToolStrip.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.LunisolarCalendar)).BeginInit();
       this.SuspendLayout();
       // 
-      // statusBottom
+      // StatusBottom
       // 
-      this.statusBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.labelStatus});
-      resources.ApplyResources(this.statusBottom, "statusBottom");
-      this.statusBottom.Name = "statusBottom";
+      this.StatusBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LabelStripMargin,
+            this.LabelStatus});
+      resources.ApplyResources(this.StatusBottom, "StatusBottom");
+      this.StatusBottom.Name = "StatusBottom";
       // 
-      // toolStripStatusLabel1
+      // LabelStripMargin
       // 
-      resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
-      this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+      resources.ApplyResources(this.LabelStripMargin, "LabelStripMargin");
+      this.LabelStripMargin.Name = "LabelStripMargin";
       // 
-      // labelStatus
+      // LabelStatus
       // 
-      this.labelStatus.Name = "labelStatus";
-      resources.ApplyResources(this.labelStatus, "labelStatus");
+      this.LabelStatus.Name = "LabelStatus";
+      resources.ApplyResources(this.LabelStatus, "LabelStatus");
       // 
-      // saveFileDialog
+      // SaveFileDialog
       // 
-      resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
+      resources.ApplyResources(this.SaveFileDialog, "SaveFileDialog");
       // 
-      // panelMain
+      // PanelMain
       // 
-      this.panelMain.Controls.Add(this.panelCalendarOuter);
-      this.panelMain.Controls.Add(this.panelSepBottom);
-      this.panelMain.Controls.Add(this.panelSepTop);
-      this.panelMain.Controls.Add(this.panelProgress);
-      this.panelMain.Controls.Add(this.panelTitle);
-      resources.ApplyResources(this.panelMain, "panelMain");
-      this.panelMain.Name = "panelMain";
+      this.PanelMain.Controls.Add(this.PanelCalendarOuter);
+      this.PanelMain.Controls.Add(this.PanelSepBottom);
+      this.PanelMain.Controls.Add(this.PanelSepTop);
+      this.PanelMain.Controls.Add(this.PanelProgress);
+      this.PanelMain.Controls.Add(this.PanelTitle);
+      resources.ApplyResources(this.PanelMain, "PanelMain");
+      this.PanelMain.Name = "PanelMain";
       // 
-      // panelCalendarOuter
+      // PanelCalendarOuter
       // 
-      this.panelCalendarOuter.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.panelCalendarOuter.Controls.Add(this.panelCalendarInner);
-      resources.ApplyResources(this.panelCalendarOuter, "panelCalendarOuter");
-      this.panelCalendarOuter.Name = "panelCalendarOuter";
+      this.PanelCalendarOuter.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.PanelCalendarOuter.Controls.Add(this.PanelCalendarInner);
+      resources.ApplyResources(this.PanelCalendarOuter, "PanelCalendarOuter");
+      this.PanelCalendarOuter.Name = "PanelCalendarOuter";
       // 
-      // panelCalendarInner
+      // PanelCalendarInner
       // 
-      this.panelCalendarInner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      this.panelCalendarInner.Controls.Add(this.panelCalendar);
-      resources.ApplyResources(this.panelCalendarInner, "panelCalendarInner");
-      this.panelCalendarInner.Name = "panelCalendarInner";
+      this.PanelCalendarInner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      this.PanelCalendarInner.Controls.Add(this.PanelCalendar);
+      resources.ApplyResources(this.PanelCalendarInner, "PanelCalendarInner");
+      this.PanelCalendarInner.Name = "PanelCalendarInner";
       // 
-      // panelCalendar
+      // PanelCalendar
       // 
-      this.panelCalendar.Controls.Add(this.tabControl);
-      resources.ApplyResources(this.panelCalendar, "panelCalendar");
-      this.panelCalendar.Name = "panelCalendar";
+      this.PanelCalendar.Controls.Add(this.TabControl);
+      resources.ApplyResources(this.PanelCalendar, "PanelCalendar");
+      this.PanelCalendar.Name = "PanelCalendar";
       // 
-      // tabControl
+      // TabControl
       // 
-      this.tabControl.Controls.Add(this.tabPageText);
-      this.tabControl.Controls.Add(this.tabPageGrid);
-      this.tabControl.Controls.Add(this.tabPage1);
-      resources.ApplyResources(this.tabControl, "tabControl");
-      this.tabControl.Name = "tabControl";
-      this.tabControl.SelectedIndex = 0;
-      this.tabControl.TabStop = false;
+      this.TabControl.Controls.Add(this.TabPageText);
+      this.TabControl.Controls.Add(this.TabPageGrid);
+      resources.ApplyResources(this.TabControl, "TabControl");
+      this.TabControl.Name = "TabControl";
+      this.TabControl.SelectedIndex = 0;
+      this.TabControl.TabStop = false;
       // 
-      // tabPageText
+      // TabPageText
       // 
-      this.tabPageText.Controls.Add(this.panelViewText);
-      resources.ApplyResources(this.tabPageText, "tabPageText");
-      this.tabPageText.Name = "tabPageText";
-      this.tabPageText.UseVisualStyleBackColor = true;
+      this.TabPageText.Controls.Add(this.PanelViewText);
+      resources.ApplyResources(this.TabPageText, "TabPageText");
+      this.TabPageText.Name = "TabPageText";
+      this.TabPageText.UseVisualStyleBackColor = true;
       // 
-      // panelViewText
+      // PanelViewText
       // 
-      this.panelViewText.Controls.Add(this.calendarText);
-      resources.ApplyResources(this.panelViewText, "panelViewText");
-      this.panelViewText.Name = "panelViewText";
+      this.PanelViewText.Controls.Add(this.CalendarText);
+      resources.ApplyResources(this.PanelViewText, "PanelViewText");
+      this.PanelViewText.Name = "PanelViewText";
       // 
-      // calendarText
+      // CalendarText
       // 
-      this.calendarText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-      this.calendarText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      resources.ApplyResources(this.calendarText, "calendarText");
-      this.calendarText.Name = "calendarText";
-      this.calendarText.ReadOnly = true;
+      this.CalendarText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+      this.CalendarText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      resources.ApplyResources(this.CalendarText, "CalendarText");
+      this.CalendarText.Name = "CalendarText";
+      this.CalendarText.ReadOnly = true;
       // 
-      // tabPageGrid
+      // TabPageGrid
       // 
-      this.tabPageGrid.Controls.Add(this.panelViewGrid);
-      resources.ApplyResources(this.tabPageGrid, "tabPageGrid");
-      this.tabPageGrid.Name = "tabPageGrid";
-      this.tabPageGrid.UseVisualStyleBackColor = true;
+      this.TabPageGrid.Controls.Add(this.PanelViewGrid);
+      resources.ApplyResources(this.TabPageGrid, "TabPageGrid");
+      this.TabPageGrid.Name = "TabPageGrid";
+      this.TabPageGrid.UseVisualStyleBackColor = true;
       // 
-      // panelViewGrid
+      // PanelViewGrid
       // 
-      this.panelViewGrid.Controls.Add(this.calendarGrid);
-      this.panelViewGrid.Controls.Add(this.lunisolarDaysBindingNavigator);
-      resources.ApplyResources(this.panelViewGrid, "panelViewGrid");
-      this.panelViewGrid.Name = "panelViewGrid";
+      this.PanelViewGrid.Controls.Add(this.CalendarGrid);
+      this.PanelViewGrid.Controls.Add(this.LunisolarDaysBindingNavigator);
+      resources.ApplyResources(this.PanelViewGrid, "PanelViewGrid");
+      this.PanelViewGrid.Name = "PanelViewGrid";
       // 
-      // calendarGrid
+      // CalendarGrid
       // 
-      this.calendarGrid.AutoGenerateColumns = false;
-      this.calendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.calendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+      this.CalendarGrid.AutoGenerateColumns = false;
+      this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -254,9 +253,458 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
-      this.calendarGrid.DataSource = this.lunisolarDaysBindingSource;
-      resources.ApplyResources(this.calendarGrid, "calendarGrid");
-      this.calendarGrid.Name = "calendarGrid";
+      this.CalendarGrid.DataSource = this.LunisolarDaysBindingSource;
+      resources.ApplyResources(this.CalendarGrid, "CalendarGrid");
+      this.CalendarGrid.Name = "CalendarGrid";
+      // 
+      // LunisolarDaysBindingNavigator
+      // 
+      this.LunisolarDaysBindingNavigator.AddNewItem = null;
+      this.LunisolarDaysBindingNavigator.BindingSource = this.LunisolarDaysBindingSource;
+      this.LunisolarDaysBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+      this.LunisolarDaysBindingNavigator.DeleteItem = null;
+      this.LunisolarDaysBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem});
+      resources.ApplyResources(this.LunisolarDaysBindingNavigator, "LunisolarDaysBindingNavigator");
+      this.LunisolarDaysBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+      this.LunisolarDaysBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+      this.LunisolarDaysBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+      this.LunisolarDaysBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+      this.LunisolarDaysBindingNavigator.Name = "LunisolarDaysBindingNavigator";
+      this.LunisolarDaysBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+      // 
+      // bindingNavigatorCountItem
+      // 
+      this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+      resources.ApplyResources(this.bindingNavigatorCountItem, "bindingNavigatorCountItem");
+      // 
+      // bindingNavigatorMoveFirstItem
+      // 
+      this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.bindingNavigatorMoveFirstItem, "bindingNavigatorMoveFirstItem");
+      this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+      // 
+      // bindingNavigatorMovePreviousItem
+      // 
+      this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.bindingNavigatorMovePreviousItem, "bindingNavigatorMovePreviousItem");
+      this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+      // 
+      // bindingNavigatorSeparator
+      // 
+      this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+      resources.ApplyResources(this.bindingNavigatorSeparator, "bindingNavigatorSeparator");
+      // 
+      // bindingNavigatorPositionItem
+      // 
+      resources.ApplyResources(this.bindingNavigatorPositionItem, "bindingNavigatorPositionItem");
+      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+      // 
+      // bindingNavigatorSeparator1
+      // 
+      this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+      resources.ApplyResources(this.bindingNavigatorSeparator1, "bindingNavigatorSeparator1");
+      // 
+      // bindingNavigatorMoveNextItem
+      // 
+      this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.bindingNavigatorMoveNextItem, "bindingNavigatorMoveNextItem");
+      this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+      // 
+      // bindingNavigatorMoveLastItem
+      // 
+      this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.bindingNavigatorMoveLastItem, "bindingNavigatorMoveLastItem");
+      this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+      // 
+      // PanelSepBottom
+      // 
+      resources.ApplyResources(this.PanelSepBottom, "PanelSepBottom");
+      this.PanelSepBottom.Name = "PanelSepBottom";
+      // 
+      // PanelSepTop
+      // 
+      resources.ApplyResources(this.PanelSepTop, "PanelSepTop");
+      this.PanelSepTop.Name = "PanelSepTop";
+      // 
+      // PanelProgress
+      // 
+      this.PanelProgress.Controls.Add(this.BarProgress);
+      resources.ApplyResources(this.PanelProgress, "PanelProgress");
+      this.PanelProgress.Name = "PanelProgress";
+      // 
+      // BarProgress
+      // 
+      resources.ApplyResources(this.BarProgress, "BarProgress");
+      this.BarProgress.Name = "BarProgress";
+      this.BarProgress.Step = 1;
+      // 
+      // PanelTitle
+      // 
+      this.PanelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.PanelTitle.Controls.Add(this.LabelTitle);
+      resources.ApplyResources(this.PanelTitle, "PanelTitle");
+      this.PanelTitle.Name = "PanelTitle";
+      // 
+      // LabelTitle
+      // 
+      this.LabelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelTitle, "LabelTitle");
+      this.LabelTitle.Name = "LabelTitle";
+      // 
+      // moonPhaseImagePictureBox
+      // 
+      this.moonPhaseImagePictureBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+      resources.ApplyResources(this.moonPhaseImagePictureBox, "moonPhaseImagePictureBox");
+      this.moonPhaseImagePictureBox.Name = "moonPhaseImagePictureBox";
+      this.moonPhaseImagePictureBox.TabStop = false;
+      // 
+      // label1
+      // 
+      resources.ApplyResources(this.label1, "label1");
+      this.label1.Name = "label1";
+      // 
+      // TimerTooltip
+      // 
+      this.TimerTooltip.Interval = 500;
+      this.TimerTooltip.Tick += new System.EventHandler(this.TimerTooltip_Tick);
+      // 
+      // ToolStrip
+      // 
+      resources.ApplyResources(this.ToolStrip, "ToolStrip");
+      this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+      this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+      this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Sep1,
+            this.ActionSaveReport,
+            this.ActionExportCSV,
+            this.Sep2,
+            this.ActionCopyReportToClipboard,
+            this.ActionSearchDay,
+            this.ActionNavigate,
+            this.Sep3,
+            this.ActionGenerate,
+            this.ActionExit,
+            this.Sep4,
+            this.ActionContact,
+            this.ActionWebsite,
+            this.Sep5,
+            this.ActionHelp,
+            this.ActionAbout,
+            this.Sep6,
+            this.SctionPreferences,
+            this.MenuSettings,
+            this.MenuView,
+            this.ActionStop});
+      this.ToolStrip.Name = "ToolStrip";
+      this.ToolStrip.ShowItemToolTips = false;
+      // 
+      // Sep1
+      // 
+      this.Sep1.Name = "Sep1";
+      resources.ApplyResources(this.Sep1, "Sep1");
+      // 
+      // ActionSaveReport
+      // 
+      this.ActionSaveReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionSaveReport, "ActionSaveReport");
+      this.ActionSaveReport.Name = "ActionSaveReport";
+      this.ActionSaveReport.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionSaveReport.Click += new System.EventHandler(this.ActionSaveReport_Click);
+      this.ActionSaveReport.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionSaveReport.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionExportCSV
+      // 
+      this.ActionExportCSV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionExportCSV, "ActionExportCSV");
+      this.ActionExportCSV.Name = "ActionExportCSV";
+      this.ActionExportCSV.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionExportCSV.Click += new System.EventHandler(this.ActionExportCSV_Click);
+      this.ActionExportCSV.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionExportCSV.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // Sep2
+      // 
+      this.Sep2.Name = "Sep2";
+      resources.ApplyResources(this.Sep2, "Sep2");
+      // 
+      // ActionCopyReportToClipboard
+      // 
+      this.ActionCopyReportToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionCopyReportToClipboard, "ActionCopyReportToClipboard");
+      this.ActionCopyReportToClipboard.Name = "ActionCopyReportToClipboard";
+      this.ActionCopyReportToClipboard.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionCopyReportToClipboard.Click += new System.EventHandler(this.ActionCopyReportToClipboard_Click);
+      this.ActionCopyReportToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionCopyReportToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionSearchDay
+      // 
+      this.ActionSearchDay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionSearchDay, "ActionSearchDay");
+      this.ActionSearchDay.Name = "ActionSearchDay";
+      this.ActionSearchDay.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionSearchDay.Click += new System.EventHandler(this.ActionSearchDay_Click);
+      this.ActionSearchDay.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionSearchDay.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // Sep3
+      // 
+      this.Sep3.Name = "Sep3";
+      resources.ApplyResources(this.Sep3, "Sep3");
+      // 
+      // ActionGenerate
+      // 
+      this.ActionGenerate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
+      this.ActionGenerate.Name = "ActionGenerate";
+      this.ActionGenerate.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
+      this.ActionGenerate.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionGenerate.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionExit
+      // 
+      this.ActionExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionExit, "ActionExit");
+      this.ActionExit.Name = "ActionExit";
+      this.ActionExit.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionExit.Click += new System.EventHandler(this.ActionExit_Click);
+      this.ActionExit.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionExit.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // Sep4
+      // 
+      this.Sep4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.Sep4.Name = "Sep4";
+      resources.ApplyResources(this.Sep4, "Sep4");
+      // 
+      // ActionContact
+      // 
+      this.ActionContact.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionContact.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionContact, "ActionContact");
+      this.ActionContact.Name = "ActionContact";
+      this.ActionContact.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionContact.Click += new System.EventHandler(this.ActionContact_Click);
+      this.ActionContact.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionContact.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionWebsite
+      // 
+      this.ActionWebsite.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionWebsite.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionWebsite, "ActionWebsite");
+      this.ActionWebsite.Name = "ActionWebsite";
+      this.ActionWebsite.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionWebsite.Click += new System.EventHandler(this.ActionApplicationHome_Click);
+      this.ActionWebsite.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionWebsite.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // Sep5
+      // 
+      this.Sep5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.Sep5.Name = "Sep5";
+      resources.ApplyResources(this.Sep5, "Sep5");
+      // 
+      // ActionHelp
+      // 
+      this.ActionHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionHelp, "ActionHelp");
+      this.ActionHelp.Name = "ActionHelp";
+      this.ActionHelp.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
+      this.ActionHelp.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionHelp.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionAbout
+      // 
+      this.ActionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionAbout, "ActionAbout");
+      this.ActionAbout.Name = "ActionAbout";
+      this.ActionAbout.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
+      this.ActionAbout.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionAbout.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // Sep6
+      // 
+      this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.Sep6.Name = "Sep6";
+      resources.ApplyResources(this.Sep6, "Sep6");
+      // 
+      // SctionPreferences
+      // 
+      this.SctionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.SctionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.SctionPreferences, "SctionPreferences");
+      this.SctionPreferences.Name = "SctionPreferences";
+      this.SctionPreferences.Padding = new System.Windows.Forms.Padding(5);
+      this.SctionPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
+      this.SctionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.SctionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // MenuSettings
+      // 
+      this.MenuSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.MenuSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.MenuSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuitemScreenPosition,
+            this.ActionResetWinSettings,
+            this.Sep7,
+            this.EditShowTips,
+            this.EditESCtoExit,
+            this.EditConfirmClosing});
+      resources.ApplyResources(this.MenuSettings, "MenuSettings");
+      this.MenuSettings.Name = "MenuSettings";
+      // 
+      // MenuitemScreenPosition
+      // 
+      this.MenuitemScreenPosition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditScreenNone,
+            this.EditScreenTopLeft,
+            this.EditScreenTopRight,
+            this.EditScreenBottomLeft,
+            this.EditScreenBottomRight,
+            this.EditScreenCenter});
+      resources.ApplyResources(this.MenuitemScreenPosition, "MenuitemScreenPosition");
+      this.MenuitemScreenPosition.Name = "MenuitemScreenPosition";
+      // 
+      // EditScreenNone
+      // 
+      this.EditScreenNone.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenNone, "EditScreenNone");
+      this.EditScreenNone.Name = "EditScreenNone";
+      this.EditScreenNone.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // EditScreenTopLeft
+      // 
+      this.EditScreenTopLeft.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenTopLeft, "EditScreenTopLeft");
+      this.EditScreenTopLeft.Name = "EditScreenTopLeft";
+      this.EditScreenTopLeft.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // EditScreenTopRight
+      // 
+      this.EditScreenTopRight.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenTopRight, "EditScreenTopRight");
+      this.EditScreenTopRight.Name = "EditScreenTopRight";
+      this.EditScreenTopRight.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // EditScreenBottomLeft
+      // 
+      this.EditScreenBottomLeft.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenBottomLeft, "EditScreenBottomLeft");
+      this.EditScreenBottomLeft.Name = "EditScreenBottomLeft";
+      this.EditScreenBottomLeft.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // EditScreenBottomRight
+      // 
+      this.EditScreenBottomRight.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenBottomRight, "EditScreenBottomRight");
+      this.EditScreenBottomRight.Name = "EditScreenBottomRight";
+      this.EditScreenBottomRight.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // EditScreenCenter
+      // 
+      this.EditScreenCenter.CheckOnClick = true;
+      resources.ApplyResources(this.EditScreenCenter, "EditScreenCenter");
+      this.EditScreenCenter.Name = "EditScreenCenter";
+      this.EditScreenCenter.Click += new System.EventHandler(this.EditScreenPosition_Click);
+      // 
+      // ActionResetWinSettings
+      // 
+      resources.ApplyResources(this.ActionResetWinSettings, "ActionResetWinSettings");
+      this.ActionResetWinSettings.Name = "ActionResetWinSettings";
+      this.ActionResetWinSettings.Click += new System.EventHandler(this.ActionResetWinSettings_Click);
+      // 
+      // Sep7
+      // 
+      this.Sep7.Name = "Sep7";
+      resources.ApplyResources(this.Sep7, "Sep7");
+      // 
+      // EditShowTips
+      // 
+      this.EditShowTips.Checked = true;
+      this.EditShowTips.CheckOnClick = true;
+      this.EditShowTips.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditShowTips, "EditShowTips");
+      this.EditShowTips.Name = "EditShowTips";
+      // 
+      // EditESCtoExit
+      // 
+      this.EditESCtoExit.Checked = true;
+      this.EditESCtoExit.CheckOnClick = true;
+      this.EditESCtoExit.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditESCtoExit, "EditESCtoExit");
+      this.EditESCtoExit.Name = "EditESCtoExit";
+      // 
+      // EditConfirmClosing
+      // 
+      resources.ApplyResources(this.EditConfirmClosing, "EditConfirmClosing");
+      this.EditConfirmClosing.Checked = true;
+      this.EditConfirmClosing.CheckOnClick = true;
+      this.EditConfirmClosing.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditConfirmClosing.Name = "EditConfirmClosing";
+      // 
+      // MenuView
+      // 
+      this.MenuView.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.MenuView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.MenuView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionViewText,
+            this.ActionViewGrid});
+      resources.ApplyResources(this.MenuView, "MenuView");
+      this.MenuView.Name = "MenuView";
+      // 
+      // ActionViewText
+      // 
+      this.ActionViewText.CheckOnClick = true;
+      resources.ApplyResources(this.ActionViewText, "ActionViewText");
+      this.ActionViewText.Name = "ActionViewText";
+      this.ActionViewText.Click += new System.EventHandler(this.ActionViewText_Click);
+      // 
+      // ActionViewGrid
+      // 
+      this.ActionViewGrid.CheckOnClick = true;
+      resources.ApplyResources(this.ActionViewGrid, "ActionViewGrid");
+      this.ActionViewGrid.Name = "ActionViewGrid";
+      this.ActionViewGrid.Click += new System.EventHandler(this.ActionViewGrid_Click);
+      // 
+      // ActionStop
+      // 
+      this.ActionStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionStop, "ActionStop");
+      this.ActionStop.Name = "ActionStop";
+      this.ActionStop.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionStop.Click += new System.EventHandler(this.ActionStop_Click);
+      this.ActionStop.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionStop.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // SaveCSVDialog
+      // 
+      resources.ApplyResources(this.SaveCSVDialog, "SaveCSVDialog");
+      // 
+      // ActionNavigate
+      // 
+      this.ActionNavigate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionNavigate, "ActionNavigate");
+      this.ActionNavigate.Name = "ActionNavigate";
+      this.ActionNavigate.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionNavigate.Click += new System.EventHandler(this.ActionNavigate_Click);
+      this.ActionNavigate.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionNavigate.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // dataGridViewTextBoxColumn1
       // 
@@ -336,510 +784,66 @@
       resources.ApplyResources(this.dataGridViewTextBoxColumn13, "dataGridViewTextBoxColumn13");
       this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
       // 
-      // lunisolarDaysBindingSource
+      // LunisolarDaysBindingSource
       // 
-      this.lunisolarDaysBindingSource.DataMember = "LunisolarDays";
-      this.lunisolarDaysBindingSource.DataSource = this.lunisolarCalendar;
+      this.LunisolarDaysBindingSource.DataMember = "LunisolarDays";
+      this.LunisolarDaysBindingSource.DataSource = this.LunisolarCalendar;
       // 
-      // lunisolarCalendar
+      // LunisolarCalendar
       // 
-      this.lunisolarCalendar.DataSetName = "LunisolarCalendar";
-      this.lunisolarCalendar.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      this.LunisolarCalendar.DataSetName = "LunisolarCalendar";
+      this.LunisolarCalendar.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
-      // lunisolarDaysBindingNavigator
+      // LunisolarDaysTableAdapter
       // 
-      this.lunisolarDaysBindingNavigator.AddNewItem = null;
-      this.lunisolarDaysBindingNavigator.BindingSource = this.lunisolarDaysBindingSource;
-      this.lunisolarDaysBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-      this.lunisolarDaysBindingNavigator.DeleteItem = null;
-      this.lunisolarDaysBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem});
-      resources.ApplyResources(this.lunisolarDaysBindingNavigator, "lunisolarDaysBindingNavigator");
-      this.lunisolarDaysBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-      this.lunisolarDaysBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-      this.lunisolarDaysBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-      this.lunisolarDaysBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-      this.lunisolarDaysBindingNavigator.Name = "lunisolarDaysBindingNavigator";
-      this.lunisolarDaysBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+      this.LunisolarDaysTableAdapter.ClearBeforeFill = true;
       // 
-      // bindingNavigatorCountItem
+      // TableAdapterManager
       // 
-      this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-      resources.ApplyResources(this.bindingNavigatorCountItem, "bindingNavigatorCountItem");
+      this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
+      this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
+      this.TableAdapterManager.ReportTableAdapter = this.ReportTableAdapter;
+      this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
-      // bindingNavigatorMoveFirstItem
+      // ReportTableAdapter
       // 
-      this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMoveFirstItem, "bindingNavigatorMoveFirstItem");
-      this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-      // 
-      // bindingNavigatorMovePreviousItem
-      // 
-      this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMovePreviousItem, "bindingNavigatorMovePreviousItem");
-      this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-      // 
-      // bindingNavigatorSeparator
-      // 
-      this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-      resources.ApplyResources(this.bindingNavigatorSeparator, "bindingNavigatorSeparator");
-      // 
-      // bindingNavigatorPositionItem
-      // 
-      resources.ApplyResources(this.bindingNavigatorPositionItem, "bindingNavigatorPositionItem");
-      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-      // 
-      // bindingNavigatorSeparator1
-      // 
-      this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-      resources.ApplyResources(this.bindingNavigatorSeparator1, "bindingNavigatorSeparator1");
-      // 
-      // bindingNavigatorMoveNextItem
-      // 
-      this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMoveNextItem, "bindingNavigatorMoveNextItem");
-      this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-      // 
-      // bindingNavigatorMoveLastItem
-      // 
-      this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMoveLastItem, "bindingNavigatorMoveLastItem");
-      this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-      // 
-      // tabPage1
-      // 
-      resources.ApplyResources(this.tabPage1, "tabPage1");
-      this.tabPage1.Name = "tabPage1";
-      this.tabPage1.UseVisualStyleBackColor = true;
-      // 
-      // panelSepBottom
-      // 
-      resources.ApplyResources(this.panelSepBottom, "panelSepBottom");
-      this.panelSepBottom.Name = "panelSepBottom";
-      // 
-      // panelSepTop
-      // 
-      resources.ApplyResources(this.panelSepTop, "panelSepTop");
-      this.panelSepTop.Name = "panelSepTop";
-      // 
-      // panelProgress
-      // 
-      this.panelProgress.Controls.Add(this.barProgress);
-      resources.ApplyResources(this.panelProgress, "panelProgress");
-      this.panelProgress.Name = "panelProgress";
-      // 
-      // barProgress
-      // 
-      resources.ApplyResources(this.barProgress, "barProgress");
-      this.barProgress.Name = "barProgress";
-      this.barProgress.Step = 1;
-      // 
-      // panelTitle
-      // 
-      this.panelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.panelTitle.Controls.Add(this.labelTitle);
-      resources.ApplyResources(this.panelTitle, "panelTitle");
-      this.panelTitle.Name = "panelTitle";
-      // 
-      // labelTitle
-      // 
-      this.labelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.labelTitle, "labelTitle");
-      this.labelTitle.Name = "labelTitle";
-      // 
-      // moonPhaseImagePictureBox
-      // 
-      this.moonPhaseImagePictureBox.BackColor = System.Drawing.SystemColors.ButtonFace;
-      resources.ApplyResources(this.moonPhaseImagePictureBox, "moonPhaseImagePictureBox");
-      this.moonPhaseImagePictureBox.Name = "moonPhaseImagePictureBox";
-      this.moonPhaseImagePictureBox.TabStop = false;
-      // 
-      // label1
-      // 
-      resources.ApplyResources(this.label1, "label1");
-      this.label1.Name = "label1";
-      // 
-      // timerTooltip
-      // 
-      this.timerTooltip.Interval = 500;
-      this.timerTooltip.Tick += new System.EventHandler(this.timerTooltip_Tick);
-      // 
-      // toolStrip
-      // 
-      resources.ApplyResources(this.toolStrip, "toolStrip");
-      this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-      this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
-      this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sep2,
-            this.actionSaveReport,
-            this.actionExportCSV,
-            this.toolStripSeparator1,
-            this.actionCopyReportToClipboard,
-            this.actionSearchDay,
-            this.sep3,
-            this.actionGenerate,
-            this.actionExit,
-            this.sep4,
-            this.actionContact,
-            this.actionWebsite,
-            this.sep5,
-            this.actionHelp,
-            this.actionAbout,
-            this.sep6,
-            this.actionPreferences,
-            this.menuSettings,
-            this.menuView,
-            this.actionStop});
-      this.toolStrip.Name = "toolStrip";
-      this.toolStrip.ShowItemToolTips = false;
-      // 
-      // sep2
-      // 
-      this.sep2.Name = "sep2";
-      resources.ApplyResources(this.sep2, "sep2");
-      // 
-      // actionSaveReport
-      // 
-      this.actionSaveReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionSaveReport, "actionSaveReport");
-      this.actionSaveReport.Name = "actionSaveReport";
-      this.actionSaveReport.Padding = new System.Windows.Forms.Padding(5);
-      this.actionSaveReport.Click += new System.EventHandler(this.actionSaveReport_Click);
-      this.actionSaveReport.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionSaveReport.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // actionExportCSV
-      // 
-      this.actionExportCSV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionExportCSV, "actionExportCSV");
-      this.actionExportCSV.Name = "actionExportCSV";
-      this.actionExportCSV.Padding = new System.Windows.Forms.Padding(5);
-      this.actionExportCSV.Click += new System.EventHandler(this.actionExportCSV_Click);
-      this.actionExportCSV.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionExportCSV.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // toolStripSeparator1
-      // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-      // 
-      // actionCopyReportToClipboard
-      // 
-      this.actionCopyReportToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionCopyReportToClipboard, "actionCopyReportToClipboard");
-      this.actionCopyReportToClipboard.Name = "actionCopyReportToClipboard";
-      this.actionCopyReportToClipboard.Padding = new System.Windows.Forms.Padding(5);
-      this.actionCopyReportToClipboard.Click += new System.EventHandler(this.actionCopyReportToClipboard_Click);
-      this.actionCopyReportToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionCopyReportToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // actionSearchDay
-      // 
-      this.actionSearchDay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionSearchDay, "actionSearchDay");
-      this.actionSearchDay.Name = "actionSearchDay";
-      this.actionSearchDay.Padding = new System.Windows.Forms.Padding(5);
-      this.actionSearchDay.Click += new System.EventHandler(this.actionSearchDay_Click);
-      this.actionSearchDay.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionSearchDay.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // sep3
-      // 
-      this.sep3.Name = "sep3";
-      resources.ApplyResources(this.sep3, "sep3");
-      // 
-      // actionGenerate
-      // 
-      this.actionGenerate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionGenerate, "actionGenerate");
-      this.actionGenerate.Name = "actionGenerate";
-      this.actionGenerate.Padding = new System.Windows.Forms.Padding(5);
-      this.actionGenerate.Click += new System.EventHandler(this.actionGenerate_Click);
-      this.actionGenerate.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionGenerate.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // actionExit
-      // 
-      this.actionExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.actionExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionExit, "actionExit");
-      this.actionExit.Name = "actionExit";
-      this.actionExit.Padding = new System.Windows.Forms.Padding(5);
-      this.actionExit.Click += new System.EventHandler(this.actionExit_Click);
-      this.actionExit.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionExit.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // sep4
-      // 
-      this.sep4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.sep4.Name = "sep4";
-      resources.ApplyResources(this.sep4, "sep4");
-      // 
-      // actionContact
-      // 
-      this.actionContact.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.actionContact.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionContact, "actionContact");
-      this.actionContact.Name = "actionContact";
-      this.actionContact.Padding = new System.Windows.Forms.Padding(5);
-      this.actionContact.Click += new System.EventHandler(this.actionContact_Click);
-      this.actionContact.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionContact.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // actionWebsite
-      // 
-      this.actionWebsite.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.actionWebsite.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionWebsite, "actionWebsite");
-      this.actionWebsite.Name = "actionWebsite";
-      this.actionWebsite.Padding = new System.Windows.Forms.Padding(5);
-      this.actionWebsite.Click += new System.EventHandler(this.actionApplicationHome_Click);
-      this.actionWebsite.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionWebsite.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // sep5
-      // 
-      this.sep5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.sep5.Name = "sep5";
-      resources.ApplyResources(this.sep5, "sep5");
-      // 
-      // actionHelp
-      // 
-      this.actionHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.actionHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionHelp, "actionHelp");
-      this.actionHelp.Name = "actionHelp";
-      this.actionHelp.Padding = new System.Windows.Forms.Padding(5);
-      this.actionHelp.Click += new System.EventHandler(this.actionHelp_Click);
-      this.actionHelp.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionHelp.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // actionAbout
-      // 
-      this.actionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.actionAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionAbout, "actionAbout");
-      this.actionAbout.Name = "actionAbout";
-      this.actionAbout.Padding = new System.Windows.Forms.Padding(5);
-      this.actionAbout.Click += new System.EventHandler(this.actionAbout_Click);
-      this.actionAbout.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionAbout.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // sep6
-      // 
-      this.sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.sep6.Name = "sep6";
-      resources.ApplyResources(this.sep6, "sep6");
-      // 
-      // actionPreferences
-      // 
-      this.actionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.actionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionPreferences, "actionPreferences");
-      this.actionPreferences.Name = "actionPreferences";
-      this.actionPreferences.Padding = new System.Windows.Forms.Padding(5);
-      this.actionPreferences.Click += new System.EventHandler(this.actionPreferences_Click);
-      this.actionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // menuSettings
-      // 
-      this.menuSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.menuSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.menuSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuitemScreenPosition,
-            this.actionResetWinSettings,
-            this.sep7,
-            this.editShowTips,
-            this.editESCtoExit,
-            this.editConfirmClosing});
-      resources.ApplyResources(this.menuSettings, "menuSettings");
-      this.menuSettings.Name = "menuSettings";
-      // 
-      // menuitemScreenPosition
-      // 
-      this.menuitemScreenPosition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editScreenNone,
-            this.editScreenTopLeft,
-            this.editScreenTopRight,
-            this.editScreenBottomLeft,
-            this.editScreenBottomRight,
-            this.editScreenCenter});
-      resources.ApplyResources(this.menuitemScreenPosition, "menuitemScreenPosition");
-      this.menuitemScreenPosition.Name = "menuitemScreenPosition";
-      // 
-      // editScreenNone
-      // 
-      this.editScreenNone.CheckOnClick = true;
-      resources.ApplyResources(this.editScreenNone, "editScreenNone");
-      this.editScreenNone.Name = "editScreenNone";
-      this.editScreenNone.Click += new System.EventHandler(this.editScreenPosition_Click);
-      // 
-      // editScreenTopLeft
-      // 
-      this.editScreenTopLeft.CheckOnClick = true;
-      resources.ApplyResources(this.editScreenTopLeft, "editScreenTopLeft");
-      this.editScreenTopLeft.Name = "editScreenTopLeft";
-      this.editScreenTopLeft.Click += new System.EventHandler(this.editScreenPosition_Click);
-      // 
-      // editScreenTopRight
-      // 
-      this.editScreenTopRight.CheckOnClick = true;
-      resources.ApplyResources(this.editScreenTopRight, "editScreenTopRight");
-      this.editScreenTopRight.Name = "editScreenTopRight";
-      this.editScreenTopRight.Click += new System.EventHandler(this.editScreenPosition_Click);
-      // 
-      // editScreenBottomLeft
-      // 
-      this.editScreenBottomLeft.CheckOnClick = true;
-      resources.ApplyResources(this.editScreenBottomLeft, "editScreenBottomLeft");
-      this.editScreenBottomLeft.Name = "editScreenBottomLeft";
-      this.editScreenBottomLeft.Click += new System.EventHandler(this.editScreenPosition_Click);
-      // 
-      // editScreenBottomRight
-      // 
-      this.editScreenBottomRight.CheckOnClick = true;
-      resources.ApplyResources(this.editScreenBottomRight, "editScreenBottomRight");
-      this.editScreenBottomRight.Name = "editScreenBottomRight";
-      this.editScreenBottomRight.Click += new System.EventHandler(this.editScreenPosition_Click);
-      // 
-      // editScreenCenter
-      // 
-      this.editScreenCenter.CheckOnClick = true;
-      resources.ApplyResources(this.editScreenCenter, "editScreenCenter");
-      this.editScreenCenter.Name = "editScreenCenter";
-      this.editScreenCenter.Click += new System.EventHandler(this.editScreenPosition_Click);
-      // 
-      // actionResetWinSettings
-      // 
-      resources.ApplyResources(this.actionResetWinSettings, "actionResetWinSettings");
-      this.actionResetWinSettings.Name = "actionResetWinSettings";
-      this.actionResetWinSettings.Click += new System.EventHandler(this.actionResetWinSettings_Click);
-      // 
-      // sep7
-      // 
-      this.sep7.Name = "sep7";
-      resources.ApplyResources(this.sep7, "sep7");
-      // 
-      // editShowTips
-      // 
-      this.editShowTips.Checked = true;
-      this.editShowTips.CheckOnClick = true;
-      this.editShowTips.CheckState = System.Windows.Forms.CheckState.Checked;
-      resources.ApplyResources(this.editShowTips, "editShowTips");
-      this.editShowTips.Name = "editShowTips";
-      // 
-      // editESCtoExit
-      // 
-      this.editESCtoExit.Checked = true;
-      this.editESCtoExit.CheckOnClick = true;
-      this.editESCtoExit.CheckState = System.Windows.Forms.CheckState.Checked;
-      resources.ApplyResources(this.editESCtoExit, "editESCtoExit");
-      this.editESCtoExit.Name = "editESCtoExit";
-      // 
-      // editConfirmClosing
-      // 
-      resources.ApplyResources(this.editConfirmClosing, "editConfirmClosing");
-      this.editConfirmClosing.Checked = true;
-      this.editConfirmClosing.CheckOnClick = true;
-      this.editConfirmClosing.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.editConfirmClosing.Name = "editConfirmClosing";
-      // 
-      // menuView
-      // 
-      this.menuView.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.menuView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.menuView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.actionViewText,
-            this.actionViewGrid});
-      resources.ApplyResources(this.menuView, "menuView");
-      this.menuView.Name = "menuView";
-      // 
-      // actionViewText
-      // 
-      this.actionViewText.CheckOnClick = true;
-      resources.ApplyResources(this.actionViewText, "actionViewText");
-      this.actionViewText.Name = "actionViewText";
-      this.actionViewText.Click += new System.EventHandler(this.actionViewText_Click);
-      // 
-      // actionViewGrid
-      // 
-      this.actionViewGrid.CheckOnClick = true;
-      resources.ApplyResources(this.actionViewGrid, "actionViewGrid");
-      this.actionViewGrid.Name = "actionViewGrid";
-      this.actionViewGrid.Click += new System.EventHandler(this.actionViewGrid_Click);
-      // 
-      // actionStop
-      // 
-      this.actionStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.actionStop, "actionStop");
-      this.actionStop.Name = "actionStop";
-      this.actionStop.Padding = new System.Windows.Forms.Padding(5);
-      this.actionStop.Click += new System.EventHandler(this.actionStop_Click);
-      this.actionStop.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.actionStop.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // saveCSVDialog
-      // 
-      resources.ApplyResources(this.saveCSVDialog, "saveCSVDialog");
-      // 
-      // lunisolarDaysTableAdapter
-      // 
-      this.lunisolarDaysTableAdapter.ClearBeforeFill = true;
-      // 
-      // tableAdapterManager
-      // 
-      this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-      this.tableAdapterManager.LunisolarDaysTableAdapter = this.lunisolarDaysTableAdapter;
-      this.tableAdapterManager.ReportTableAdapter = this.reportTableAdapter;
-      this.tableAdapterManager.UpdateOrder = Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-      // 
-      // reportTableAdapter
-      // 
-      this.reportTableAdapter.ClearBeforeFill = true;
+      this.ReportTableAdapter.ClearBeforeFill = true;
       // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.panelMain);
-      this.Controls.Add(this.toolStrip);
-      this.Controls.Add(this.statusBottom);
+      this.Controls.Add(this.PanelMain);
+      this.Controls.Add(this.ToolStrip);
+      this.Controls.Add(this.StatusBottom);
       this.Name = "MainForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
       this.Load += new System.EventHandler(this.MainForm_Load);
       this.Shown += new System.EventHandler(this.MainForm_Shown);
-      this.statusBottom.ResumeLayout(false);
-      this.statusBottom.PerformLayout();
-      this.panelMain.ResumeLayout(false);
-      this.panelCalendarOuter.ResumeLayout(false);
-      this.panelCalendarInner.ResumeLayout(false);
-      this.panelCalendar.ResumeLayout(false);
-      this.tabControl.ResumeLayout(false);
-      this.tabPageText.ResumeLayout(false);
-      this.panelViewText.ResumeLayout(false);
-      this.tabPageGrid.ResumeLayout(false);
-      this.panelViewGrid.ResumeLayout(false);
-      this.panelViewGrid.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.calendarGrid)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.lunisolarDaysBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.lunisolarCalendar)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.lunisolarDaysBindingNavigator)).EndInit();
-      this.lunisolarDaysBindingNavigator.ResumeLayout(false);
-      this.lunisolarDaysBindingNavigator.PerformLayout();
-      this.panelProgress.ResumeLayout(false);
-      this.panelTitle.ResumeLayout(false);
+      this.StatusBottom.ResumeLayout(false);
+      this.StatusBottom.PerformLayout();
+      this.PanelMain.ResumeLayout(false);
+      this.PanelCalendarOuter.ResumeLayout(false);
+      this.PanelCalendarInner.ResumeLayout(false);
+      this.PanelCalendar.ResumeLayout(false);
+      this.TabControl.ResumeLayout(false);
+      this.TabPageText.ResumeLayout(false);
+      this.PanelViewText.ResumeLayout(false);
+      this.TabPageGrid.ResumeLayout(false);
+      this.PanelViewGrid.ResumeLayout(false);
+      this.PanelViewGrid.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).EndInit();
+      this.LunisolarDaysBindingNavigator.ResumeLayout(false);
+      this.LunisolarDaysBindingNavigator.PerformLayout();
+      this.PanelProgress.ResumeLayout(false);
+      this.PanelTitle.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).EndInit();
-      this.toolStrip.ResumeLayout(false);
-      this.toolStrip.PerformLayout();
+      this.ToolStrip.ResumeLayout(false);
+      this.ToolStrip.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.LunisolarCalendar)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -847,62 +851,62 @@
 
     #endregion
 
-    private System.Windows.Forms.ToolStrip toolStrip;
-    private System.Windows.Forms.ToolStripButton actionWebsite;
-    private System.Windows.Forms.ToolStripButton actionContact;
-    private System.Windows.Forms.ToolStripButton actionExit;
-    private System.Windows.Forms.ToolStripButton actionAbout;
-    private System.Windows.Forms.ToolStripSeparator sep4;
-    private System.Windows.Forms.ToolStripSeparator sep5;
-    private System.Windows.Forms.StatusStrip statusBottom;
-    private System.Windows.Forms.ToolStripButton actionStop;
-    private System.Windows.Forms.ToolStripStatusLabel labelStatus;
-    private System.Windows.Forms.ToolStripDropDownButton menuSettings;
-    private System.Windows.Forms.ToolStripMenuItem menuitemScreenPosition;
-    private System.Windows.Forms.ToolStripButton actionHelp;
-    private System.Windows.Forms.ToolStripSeparator sep7;
-    internal System.Windows.Forms.ToolStripMenuItem editScreenNone;
-    internal System.Windows.Forms.ToolStripMenuItem editScreenCenter;
-    internal System.Windows.Forms.ToolStripMenuItem editScreenTopLeft;
-    internal System.Windows.Forms.ToolStripMenuItem editScreenTopRight;
-    internal System.Windows.Forms.ToolStripMenuItem editScreenBottomLeft;
-    internal System.Windows.Forms.ToolStripMenuItem editScreenBottomRight;
-    internal System.Windows.Forms.ToolStripMenuItem editConfirmClosing;
-    internal System.Windows.Forms.ToolStripMenuItem editESCtoExit;
-    private System.Windows.Forms.ToolStripMenuItem actionResetWinSettings;
-    private System.Windows.Forms.ToolStripSeparator sep3;
-    internal System.Windows.Forms.ToolStripMenuItem editShowTips;
-    private System.Windows.Forms.SaveFileDialog saveFileDialog;
-    private System.Windows.Forms.ToolStripSeparator sep6;
-    private System.Windows.Forms.ToolStripSeparator sep2;
-    private System.Windows.Forms.ToolStripButton actionCopyReportToClipboard;
-    private System.Windows.Forms.Panel panelMain;
-    private System.Windows.Forms.Panel panelProgress;
-    private System.Windows.Forms.ProgressBar barProgress;
-    private System.Windows.Forms.Panel panelSepTop;
-    private System.Windows.Forms.Panel panelTitle;
-    private System.Windows.Forms.Label labelTitle;
-    private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-    private System.Windows.Forms.Panel panelSepBottom;
-    private System.Windows.Forms.Panel panelCalendarOuter;
-    private System.Windows.Forms.Panel panelCalendarInner;
-    private System.Windows.Forms.ToolStripDropDownButton menuView;
-    internal System.Windows.Forms.ToolStripMenuItem actionViewText;
-    internal System.Windows.Forms.ToolStripMenuItem actionViewGrid;
-    private System.Windows.Forms.TabControl tabControl;
-    private System.Windows.Forms.TabPage tabPageText;
-    private System.Windows.Forms.Panel panelViewText;
-    internal System.Windows.Forms.RichTextBox calendarText;
-    private System.Windows.Forms.TabPage tabPageGrid;
-    private System.Windows.Forms.Panel panelViewGrid;
+    private System.Windows.Forms.ToolStrip ToolStrip;
+    private System.Windows.Forms.ToolStripButton ActionWebsite;
+    private System.Windows.Forms.ToolStripButton ActionContact;
+    private System.Windows.Forms.ToolStripButton ActionExit;
+    private System.Windows.Forms.ToolStripButton ActionAbout;
+    private System.Windows.Forms.ToolStripSeparator Sep4;
+    private System.Windows.Forms.ToolStripSeparator Sep5;
+    private System.Windows.Forms.StatusStrip StatusBottom;
+    private System.Windows.Forms.ToolStripButton ActionStop;
+    private System.Windows.Forms.ToolStripStatusLabel LabelStatus;
+    private System.Windows.Forms.ToolStripDropDownButton MenuSettings;
+    private System.Windows.Forms.ToolStripMenuItem MenuitemScreenPosition;
+    private System.Windows.Forms.ToolStripButton ActionHelp;
+    private System.Windows.Forms.ToolStripSeparator Sep7;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenNone;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenCenter;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenTopLeft;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenTopRight;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenBottomLeft;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenBottomRight;
+    internal System.Windows.Forms.ToolStripMenuItem EditConfirmClosing;
+    internal System.Windows.Forms.ToolStripMenuItem EditESCtoExit;
+    private System.Windows.Forms.ToolStripMenuItem ActionResetWinSettings;
+    private System.Windows.Forms.ToolStripSeparator Sep3;
+    internal System.Windows.Forms.ToolStripMenuItem EditShowTips;
+    private System.Windows.Forms.SaveFileDialog SaveFileDialog;
+    private System.Windows.Forms.ToolStripSeparator Sep6;
+    private System.Windows.Forms.ToolStripSeparator Sep1;
+    private System.Windows.Forms.ToolStripButton ActionCopyReportToClipboard;
+    private System.Windows.Forms.Panel PanelMain;
+    private System.Windows.Forms.Panel PanelProgress;
+    private System.Windows.Forms.ProgressBar BarProgress;
+    private System.Windows.Forms.Panel PanelSepTop;
+    private System.Windows.Forms.Panel PanelTitle;
+    private System.Windows.Forms.Label LabelTitle;
+    private System.Windows.Forms.ToolStripStatusLabel LabelStripMargin;
+    private System.Windows.Forms.Panel PanelSepBottom;
+    private System.Windows.Forms.Panel PanelCalendarOuter;
+    private System.Windows.Forms.Panel PanelCalendarInner;
+    private System.Windows.Forms.ToolStripDropDownButton MenuView;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewText;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewGrid;
+    private System.Windows.Forms.TabControl TabControl;
+    private System.Windows.Forms.TabPage TabPageText;
+    private System.Windows.Forms.Panel PanelViewText;
+    internal System.Windows.Forms.RichTextBox CalendarText;
+    private System.Windows.Forms.TabPage TabPageGrid;
+    private System.Windows.Forms.Panel PanelViewGrid;
     private System.Windows.Forms.PictureBox moonPhaseImagePictureBox;
     private System.Windows.Forms.Label label1;
-    internal System.Windows.Forms.Panel panelCalendar;
-    private System.Windows.Forms.Timer timerTooltip;
-    private Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter lunisolarDaysTableAdapter;
-    private Data.LunisolarCalendarTableAdapters.TableAdapterManager tableAdapterManager;
-    private System.Windows.Forms.BindingSource lunisolarDaysBindingSource;
-    private System.Windows.Forms.BindingNavigator lunisolarDaysBindingNavigator;
+    internal System.Windows.Forms.Panel PanelCalendar;
+    private System.Windows.Forms.Timer TimerTooltip;
+    private Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter LunisolarDaysTableAdapter;
+    private Data.LunisolarCalendarTableAdapters.TableAdapterManager TableAdapterManager;
+    private System.Windows.Forms.BindingSource LunisolarDaysBindingSource;
+    private System.Windows.Forms.BindingNavigator LunisolarDaysBindingNavigator;
     private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
     private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
@@ -911,7 +915,7 @@
     private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-    private System.Windows.Forms.DataGridView calendarGrid;
+    private System.Windows.Forms.DataGridView CalendarGrid;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -925,16 +929,16 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-    internal Data.LunisolarCalendar lunisolarCalendar;
-    private System.Windows.Forms.ToolStripButton actionSaveReport;
-    private System.Windows.Forms.ToolStripButton actionSearchDay;
-    internal System.Windows.Forms.ToolStripButton actionGenerate;
-    internal System.Windows.Forms.ToolStripButton actionPreferences;
-    private System.Windows.Forms.ToolStripButton actionExportCSV;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-    private System.Windows.Forms.SaveFileDialog saveCSVDialog;
-    private System.Windows.Forms.TabPage tabPage1;
-    private Data.LunisolarCalendarTableAdapters.ReportTableAdapter reportTableAdapter;
+    internal Data.LunisolarCalendar LunisolarCalendar;
+    private System.Windows.Forms.ToolStripButton ActionSaveReport;
+    private System.Windows.Forms.ToolStripButton ActionSearchDay;
+    internal System.Windows.Forms.ToolStripButton ActionGenerate;
+    internal System.Windows.Forms.ToolStripButton SctionPreferences;
+    private System.Windows.Forms.ToolStripButton ActionExportCSV;
+    private System.Windows.Forms.ToolStripSeparator Sep2;
+    private System.Windows.Forms.SaveFileDialog SaveCSVDialog;
+    private Data.LunisolarCalendarTableAdapters.ReportTableAdapter ReportTableAdapter;
+    private System.Windows.Forms.ToolStripButton ActionNavigate;
   }
 }
 

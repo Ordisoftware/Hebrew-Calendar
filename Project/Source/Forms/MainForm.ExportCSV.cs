@@ -60,10 +60,10 @@ namespace Ordisoftware.HebrewCalendar
       var content = new StringBuilder();
       content.AppendLine(headerTxt);
       int progress = 0;
-      int count = lunisolarCalendar.LunisolarDays.Count;
+      int count = LunisolarCalendar.LunisolarDays.Count;
       if ( count == 0 ) return;
-      var lastyear = SQLiteUtility.GetDate(lunisolarCalendar.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
-      foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in lunisolarCalendar.LunisolarDays.Rows )
+      var lastyear = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+      foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
       {
         var dayDate = SQLiteUtility.GetDate(day.Date);
         if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
@@ -84,8 +84,8 @@ namespace Ordisoftware.HebrewCalendar
         strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
         content.AppendLine(strDesc);
       }
-      if ( saveCSVDialog.ShowDialog() != DialogResult.OK ) return;
-      File.WriteAllText(saveCSVDialog.FileName, content.ToString());
+      if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
+      File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
 
     }
 

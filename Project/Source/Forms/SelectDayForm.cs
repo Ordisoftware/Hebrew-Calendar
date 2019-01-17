@@ -28,11 +28,10 @@ namespace Ordisoftware.HebrewCalendar
       Icon = MainForm.Instance.Icon;
     }
 
-    private void buttonOk_Click(object sender, EventArgs e)
+    private void ButtonOk_Click(object sender, EventArgs e)
     {
       DialogResult = DialogResult.OK;
     }
-
   }
 
 }

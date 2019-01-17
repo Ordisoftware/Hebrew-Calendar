@@ -99,7 +99,7 @@ namespace Ordisoftware.HebrewCalendar
           cmdCreateTable.ExecuteNonQuery();
         }
         cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                            "WHERE type = 'table' AND name = 'Report'", connection);
+                                        "WHERE type = 'table' AND name = 'Report'", connection);
         result = (int)cmdCheckTable.ExecuteScalar();
         if ( result == 0 )
         {

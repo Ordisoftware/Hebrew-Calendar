@@ -74,18 +74,18 @@ namespace Ordisoftware.HebrewCalendar
           ViewModeType.Text,
           new ViewConnector
           {
-            MenuItem = actionViewText,
-            Panel = panelViewText,
-            Focused = calendarText
+            MenuItem = ActionViewText,
+            Panel = PanelViewText,
+            Focused = CalendarText
           }
         },
         {
           ViewModeType.Grid,
           new ViewConnector
           {
-            MenuItem = actionViewGrid,
-            Panel = panelViewGrid,
-            Focused = calendarGrid
+            MenuItem = ActionViewGrid,
+            Panel = PanelViewGrid,
+            Focused = CalendarGrid
           }
         }
       };
@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewCalendar
       ViewPanels[Program.Settings.CurrentView].MenuItem.Checked = false;
       ViewPanels[Program.Settings.CurrentView].Panel.Parent = null;
       ViewPanels[view].MenuItem.Checked = true;
-      ViewPanels[view].Panel.Parent = panelCalendar;
+      ViewPanels[view].Panel.Parent = PanelCalendar;
       ViewPanels[view].Focused.Focus();
       Program.Settings.CurrentView = view;
     }
@@ -103,9 +103,9 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private bool UpdateProgress(int index, int count, string text)
     {
-      if ( index == 0 ) barProgress.Maximum = count;
-      barProgress.Value = index > count ? count : index;
-      barProgress.Update();
+      if ( index == 0 ) BarProgress.Maximum = count;
+      BarProgress.Value = index > count ? count : index;
+      BarProgress.Update();
       SetStatus(text);
       Application.DoEvents();
       return IsGenerating;
@@ -118,15 +118,15 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        actionSaveReport.Enabled = !IsGenerating && lunisolarCalendar.LunisolarDays.Count > 0;
-        actionExportCSV.Enabled = actionSaveReport.Enabled;
-        actionCopyReportToClipboard.Enabled = actionSaveReport.Enabled;
-        actionSearchDay.Enabled = actionSaveReport.Enabled;
-        actionGenerate.Enabled = !IsGenerating;
-        actionStop.Enabled = IsGenerating;
-        actionPreferences.Enabled = !IsGenerating;
-        barProgress.Value = 0;
-        labelStatus.Text = "";
+        ActionSaveReport.Enabled = !IsGenerating && LunisolarCalendar.LunisolarDays.Count > 0;
+        ActionExportCSV.Enabled = ActionSaveReport.Enabled;
+        ActionCopyReportToClipboard.Enabled = ActionSaveReport.Enabled;
+        ActionSearchDay.Enabled = ActionSaveReport.Enabled;
+        ActionGenerate.Enabled = !IsGenerating;
+        ActionStop.Enabled = IsGenerating;
+        SctionPreferences.Enabled = !IsGenerating;
+        BarProgress.Value = 0;
+        LabelStatus.Text = "";
         Refresh();
       }
       catch ( Exception except )
@@ -140,7 +140,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     public void UpdateTextCalendar()
     {
-      calendarText.Font = new Font(Program.Settings.FontName, Program.Settings.FontSize);
+      CalendarText.Font = new Font(Program.Settings.FontName, Program.Settings.FontSize);
     }
 
     /// <summary>
@@ -149,9 +149,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="text">The text.</param>
     private void SetStatus(string text)
     {
-      if ( labelStatus.Text == text ) return;
-      labelStatus.Text = text;
-      statusBottom.Refresh();
+      if ( LabelStatus.Text == text ) return;
+      LabelStatus.Text = text;
+      StatusBottom.Refresh();
     }
 
     /// <summary>
@@ -179,19 +179,19 @@ namespace Ordisoftware.HebrewCalendar
         var list = ( (ToolStripMenuItem)value.OwnerItem ).DropDownItems;
         foreach ( ToolStripMenuItem item in list ) item.Checked = item == value;
       }
-      if ( editScreenTopLeft.Checked )
+      if ( EditScreenTopLeft.Checked )
         Location = new Point(left, top);
       else
-      if ( editScreenTopRight.Checked )
+      if ( EditScreenTopRight.Checked )
         Location = new Point(left + width - Width, top);
       else
-      if ( editScreenBottomLeft.Checked )
+      if ( EditScreenBottomLeft.Checked )
         Location = new Point(left, top + height - Height);
       else
-      if ( editScreenBottomRight.Checked )
+      if ( EditScreenBottomRight.Checked )
         Location = new Point(left + width - Width, top + height - Height);
       else
-      if ( editScreenCenter.Checked )
+      if ( EditScreenCenter.Checked )
         CenterToScreen();
     }
 

@@ -97,11 +97,11 @@
     <Compile Include="Source\Forms\MainForm.GenerateReport.Consts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\ShowDayForm.cs">
+    <Compile Include="Source\Forms\NavigationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\ShowDayForm.Designer.cs">
-      <DependentUpon>ShowDayForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\NavigationForm.Designer.cs">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\SelectDayForm.cs">
       <SubType>Form</SubType>
@@ -204,11 +204,11 @@
     <EmbeddedResource Include="Source\Forms\SelectYearsForm.resx">
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\ShowDayForm.fr.resx">
-      <DependentUpon>ShowDayForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\NavigationForm.fr.resx">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\ShowDayForm.resx">
-      <DependentUpon>ShowDayForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\NavigationForm.resx">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\TrayIconForm.fr.resx">
       <DependentUpon>TrayIconForm.cs</DependentUpon>

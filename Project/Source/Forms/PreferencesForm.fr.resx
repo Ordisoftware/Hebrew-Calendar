@@ -118,35 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="gPSLatitudeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 66</value>
+  <data name="GPSLatitudeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 28</value>
   </data>
-  <data name="gPSLongitudeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 92</value>
+  <data name="GPSLongitudeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 54</value>
   </data>
-  <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 3</value>
+  <data name="EditFontName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 25</value>
   </data>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Fermer</value>
+  <data name="EditFontName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 21</value>
   </data>
-  <data name="editFontName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>321, 35</value>
+  <data name="LabelShabatDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 38</value>
   </data>
-  <data name="labelShabatDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 37</value>
+  <data name="LabelShabatDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 13</value>
   </data>
-  <data name="labelShabatDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
+  <data name="LabelShabatDay.Text" xml:space="preserve">
+    <value>Jour</value>
   </data>
-  <data name="labelShabatDay.Text" xml:space="preserve">
-    <value>Jour du Shabat</value>
-  </data>
-  <data name="editFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>321, 65</value>
+  <data name="EditFontSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 60</value>
   </data>
   <data name="labelFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 69</value>
+    <value>3, 62</value>
   </data>
   <data name="labelFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 13</value>
@@ -154,23 +151,26 @@
   <data name="labelFontSize.Text" xml:space="preserve">
     <value>Taille de la police</value>
   </data>
-  <data name="panelBackColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>321, 96</value>
+  <data name="PanelBackColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 90</value>
   </data>
-  <data name="labelTextColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 137</value>
+  <data name="LabelTextColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 130</value>
   </data>
-  <data name="labelTextColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelTextColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 13</value>
   </data>
-  <data name="labelTextColor.Text" xml:space="preserve">
+  <data name="LabelTextColor.Text" xml:space="preserve">
     <value>Couleur du texte</value>
   </data>
-  <data name="editShabatDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 34</value>
+  <data name="EditShabatDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 34</value>
+  </data>
+  <data name="EditShabatDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 21</value>
   </data>
   <data name="labelFontName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 37</value>
+    <value>6, 30</value>
   </data>
   <data name="labelFontName.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -178,11 +178,11 @@
   <data name="labelFontName.Text" xml:space="preserve">
     <value>Nom de la police</value>
   </data>
-  <data name="panelTextColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>321, 131</value>
+  <data name="PanelTextColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 125</value>
   </data>
   <data name="labelBackColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 102</value>
+    <value>10, 95</value>
   </data>
   <data name="labelBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -190,26 +190,80 @@
   <data name="labelBackColor.Text" xml:space="preserve">
     <value>Couleur du fond</value>
   </data>
-  <data name="gPSLatitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 64</value>
+  <data name="GPSLatitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 26</value>
   </data>
-  <data name="gPSLongitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 90</value>
+  <data name="GPSLongitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 52</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>494, 28</value>
+  <data name="ActionUsePersonalShabat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 63</value>
   </data>
-  <data name="actionUsePersonalShabat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 14</value>
-  </data>
-  <data name="actionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 13</value>
   </data>
-  <data name="actionUsePersonalShabat.Text" xml:space="preserve">
+  <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
     <value>Utiliser le shabat personnel</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>514, 210</value>
+  <data name="GroupBoxGPS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 15</value>
+  </data>
+  <data name="GroupBoxGPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 100</value>
+  </data>
+  <data name="GroupBoxGPS.Text" xml:space="preserve">
+    <value>Coordonnées GPS</value>
+  </data>
+  <data name="GroupBoxText.Text" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="GroupBoxTrayicon.Text" xml:space="preserve">
+    <value>Fenêtre de navigation</value>
+  </data>
+  <data name="ActionUseDefaultColors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 144</value>
+  </data>
+  <data name="ActionUseDefaultColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 13</value>
+  </data>
+  <data name="ActionUseDefaultColors.Text" xml:space="preserve">
+    <value>Utiliser couleurs par défaut</value>
+  </data>
+  <data name="LabelTopColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 30</value>
+  </data>
+  <data name="LabelTopColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="LabelTopColor.Text" xml:space="preserve">
+    <value>Couleur du haut</value>
+  </data>
+  <data name="ActionUseSystemColors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 129</value>
+  </data>
+  <data name="ActionUseSystemColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 13</value>
+  </data>
+  <data name="ActionUseSystemColors.Text" xml:space="preserve">
+    <value>Utiliser couleurs système</value>
+  </data>
+  <data name="labelBottomColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 100</value>
+  </data>
+  <data name="labelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="labelBottomColor.Text" xml:space="preserve">
+    <value>Couleur du bas</value>
+  </data>
+  <data name="LabelMiddleColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 65</value>
+  </data>
+  <data name="LabelMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="LabelMiddleColor.Text" xml:space="preserve">
+    <value>Couleur du milieu</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

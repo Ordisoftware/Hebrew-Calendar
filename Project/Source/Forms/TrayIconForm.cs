@@ -48,6 +48,7 @@ namespace Ordisoftware.HebrewCalendar
     public TrayIconForm()
     {
       InitializeComponent();
+      Text = DisplayManager.Title;
       Icon = MainForm.Instance.Icon;
       TrayIcon.Icon = Icon;
       Visible = false;
@@ -67,13 +68,13 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         MenuShowHide_Click(null, null);
-        if ( MainForm.Instance.lunisolarCalendar.LunisolarDays.Count > 0 )
+        if ( MainForm.Instance.LunisolarCalendar.LunisolarDays.Count > 0 )
           MenuShowHide_Click(null, null);
         else
         if ( DisplayManager.QueryYesNo(LocalizerHelper.GenerateCalendarText.GetLang()) )
         {
           PreferencesForm.Instance.ShowDialog();
-          MainForm.Instance.actionGenerate.PerformClick();
+          MainForm.Instance.ActionGenerate.PerformClick();
         }
         else
           MenuShowHide_Click(null, null);
@@ -165,12 +166,9 @@ namespace Ordisoftware.HebrewCalendar
     private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
     {
       if ( e.Button != MouseButtons.Left ) return;
-      var form = ShowDayForm.Instance;
+      var form = NavigationForm.Instance;
       if ( form.Visible )
-      {
         form.Visible = false;
-        form.ShowInTaskbar = false;
-      }
       else
       {
         try

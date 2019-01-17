@@ -34,21 +34,21 @@ namespace Ordisoftware.HebrewCalendar
       DateTime date = DateTime.Now;
       int year = date.Year;
       if ( date.Month < 3 ) year--;
-      editYearFirst.Value = year;
-      editYearLast.Value = year + 1;
+      EditYearFirst.Value = year;
+      EditYearLast.Value = year + 1;
     }
 
-    private void buttonOk_Click(object sender, EventArgs e)
+    private void ButtonOk_Click(object sender, EventArgs e)
     {
-      int yearFirst = (int)editYearFirst.Value;
-      int yearLast = (int)editYearLast.Value;
+      int yearFirst = (int)EditYearFirst.Value;
+      int yearLast = (int)EditYearLast.Value;
       if ( yearFirst == yearLast )
         yearLast = yearFirst + 1;
       else
       if ( yearFirst > yearLast )
         ObjectUtility.Swap(ref yearFirst, ref yearLast);
-      editYearFirst.Value = yearFirst;
-      editYearLast.Value = yearLast;
+      EditYearFirst.Value = yearFirst;
+      EditYearLast.Value = yearLast;
       DialogResult = DialogResult.OK;
     }
 

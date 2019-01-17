@@ -224,5 +224,65 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color TextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["TextColor"]));
+            }
+            set {
+                this["TextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color TextBackground {
+            get {
+                return ((global::System.Drawing.Color)(this["TextBackground"]));
+            }
+            set {
+                this["TextBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LemonChiffon")]
+        public global::System.Drawing.Color NavigateTopColor {
+            get {
+                return ((global::System.Drawing.Color)(this["NavigateTopColor"]));
+            }
+            set {
+                this["NavigateTopColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AliceBlue")]
+        public global::System.Drawing.Color NavigateMiddleColor {
+            get {
+                return ((global::System.Drawing.Color)(this["NavigateMiddleColor"]));
+            }
+            set {
+                this["NavigateMiddleColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Honeydew")]
+        public global::System.Drawing.Color NavigateBottomColor {
+            get {
+                return ((global::System.Drawing.Color)(this["NavigateBottomColor"]));
+            }
+            set {
+                this["NavigateBottomColor"] = value;
+            }
+        }
     }
 }
