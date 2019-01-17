@@ -14,9 +14,19 @@ namespace Ordisoftware.HebrewCalendar
   public partial class CelebrationsForm : Form
   {
 
+    /// <summary>
+    /// Indicate the singleton instance.
+    /// </summary>
+    static internal CelebrationsForm Instance { get; private set; }
+
+    static CelebrationsForm()
+    {
+      Instance = new CelebrationsForm();
+    }
+
     static public void Execute()
     {
-      var form = new CelebrationsForm();
+      Instance.ListView.Items.Clear();
       var dateStart = DateTime.Now;
       var dateEnd = dateStart.AddYears(1);
       var rows = from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
@@ -27,20 +37,32 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( var row in rows )
       {
         if ( (SeasonChangeType)row.SeasonChange != SeasonChangeType.None )
-          form.ListView.Items.Add(SQLiteUtility.GetDate(row.Date).ToLongDateString())
+          Instance.ListView.Items.Add(SQLiteUtility.GetDate(row.Date).ToLongDateString())
             .SubItems.Add(TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)row.SeasonChange))
             .Tag = row.Date;
         if ( (TorahEventType)row.TorahEvents != TorahEventType.None )
-          form.ListView.Items.Add(SQLiteUtility.GetDate(row.Date).ToLongDateString())
+          Instance.ListView.Items.Add(SQLiteUtility.GetDate(row.Date).ToLongDateString())
             .SubItems.Add(TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents))
             .Tag = row.Date;
       }
-      form.ShowDialog();
+      Instance.Show();
+      Instance.BringToFront();
     }
 
     private CelebrationsForm()
     {
       InitializeComponent();
+    }
+
+    private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      e.Cancel = true;
+      Hide();
+    }
+
+    private void buttonClose_Click(object sender, EventArgs e)
+    {
+      Hide();
     }
 
     private void ListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,6 +71,7 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Instance.GoToDate(date);
       NavigationForm.Instance.Date = date;
     }
+
   }
 
 }

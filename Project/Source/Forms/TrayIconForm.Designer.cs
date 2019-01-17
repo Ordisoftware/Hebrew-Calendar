@@ -33,8 +33,10 @@
       this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuNavigate = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuCelebrations = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenuView = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTray.SuspendLayout();
       this.SuspendLayout();
@@ -49,8 +51,10 @@
       // 
       this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuShowHide,
-            this.MenuAbout,
+            this.MenuNavigate,
+            this.MenuCelebrations,
             this.SeparatorTrayMenuView,
+            this.MenuAbout,
             this.MenuExit});
       this.MenuTray.Name = "contextMenuStrip";
       resources.ApplyResources(this.MenuTray, "MenuTray");
@@ -61,16 +65,28 @@
       resources.ApplyResources(this.MenuShowHide, "MenuShowHide");
       this.MenuShowHide.Click += new System.EventHandler(this.MenuShowHide_Click);
       // 
-      // MenuAbout
+      // MenuNavigate
       // 
-      resources.ApplyResources(this.MenuAbout, "MenuAbout");
-      this.MenuAbout.Name = "MenuAbout";
-      this.MenuAbout.Click += new System.EventHandler(this.MenuAbout_Click);
+      resources.ApplyResources(this.MenuNavigate, "MenuNavigate");
+      this.MenuNavigate.Name = "MenuNavigate";
+      this.MenuNavigate.Click += new System.EventHandler(this.MenuNavigate_Click);
+      // 
+      // MenuCelebrations
+      // 
+      resources.ApplyResources(this.MenuCelebrations, "MenuCelebrations");
+      this.MenuCelebrations.Name = "MenuCelebrations";
+      this.MenuCelebrations.Click += new System.EventHandler(this.MenuCelebrations_Click);
       // 
       // SeparatorTrayMenuView
       // 
       this.SeparatorTrayMenuView.Name = "SeparatorTrayMenuView";
       resources.ApplyResources(this.SeparatorTrayMenuView, "SeparatorTrayMenuView");
+      // 
+      // MenuAbout
+      // 
+      resources.ApplyResources(this.MenuAbout, "MenuAbout");
+      this.MenuAbout.Name = "MenuAbout";
+      this.MenuAbout.Click += new System.EventHandler(this.MenuAbout_Click);
       // 
       // MenuExit
       // 
@@ -102,5 +118,7 @@
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenuView;
     internal System.Windows.Forms.ToolStripMenuItem MenuShowHide;
     internal System.Windows.Forms.NotifyIcon TrayIcon;
+    private System.Windows.Forms.ToolStripMenuItem MenuNavigate;
+    private System.Windows.Forms.ToolStripMenuItem MenuCelebrations;
   }
 }

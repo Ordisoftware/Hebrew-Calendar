@@ -81,10 +81,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CelebrationsForm.cs">
+    <Compile Include="Source\Forms\CelebrationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CelebrationsForm.Designer.cs">
+    <Compile Include="Source\Forms\CelebrationsForm.Designer.cs">
       <DependentUpon>CelebrationsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\LunisolarCalendar.cs">
@@ -170,10 +170,10 @@
     <Compile Include="Source\Enums\TorahEventType.cs" />
     <Compile Include="Source\Enums\MoonPhaseType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CelebrationsForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\CelebrationsForm.fr.resx">
       <DependentUpon>CelebrationsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CelebrationsForm.resx">
+    <EmbeddedResource Include="Source\Forms\CelebrationsForm.resx">
       <DependentUpon>CelebrationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

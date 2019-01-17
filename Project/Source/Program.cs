@@ -54,6 +54,7 @@ namespace Ordisoftware.HebrewCalendar
         Application.SetCompatibleTextRenderingDefault(false);
         MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(filenameIcon);
         NavigationForm.Instance.Icon = MainForm.Instance.Icon;
+        CelebrationsForm.Instance.Icon = MainForm.Instance.Icon;
         PreferencesForm.Instance.Icon = MainForm.Instance.Icon;
         AboutBox.Instance.Icon = MainForm.Instance.Icon;
         UserDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)

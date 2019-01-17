@@ -48,6 +48,7 @@
       resources.ApplyResources(this.buttonClose, "buttonClose");
       this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.buttonClose.Name = "buttonClose";
+      this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
       // 
       // ListView
       // 
@@ -79,6 +80,7 @@
       this.Controls.Add(this.ListView);
       this.Controls.Add(this.panel1);
       this.Name = "CelebrationsForm";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CelebrationsForm_FormClosing);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 

@@ -82,8 +82,8 @@
       this.Sep1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSaveReport = new System.Windows.Forms.ToolStripButton();
       this.ActionExportCSV = new System.Windows.Forms.ToolStripButton();
-      this.Sep2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyReportToClipboard = new System.Windows.Forms.ToolStripButton();
+      this.Sep2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchDay = new System.Windows.Forms.ToolStripButton();
       this.ActionNavigate = new System.Windows.Forms.ToolStripButton();
       this.ActionViewCelebrations = new System.Windows.Forms.ToolStripButton();
@@ -474,8 +474,8 @@
             this.Sep1,
             this.ActionSaveReport,
             this.ActionExportCSV,
-            this.Sep2,
             this.ActionCopyReportToClipboard,
+            this.Sep2,
             this.ActionSearchDay,
             this.ActionNavigate,
             this.ActionViewCelebrations,
@@ -521,11 +521,6 @@
       this.ActionExportCSV.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionExportCSV.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // Sep2
-      // 
-      resources.ApplyResources(this.Sep2, "Sep2");
-      this.Sep2.Name = "Sep2";
-      // 
       // ActionCopyReportToClipboard
       // 
       resources.ApplyResources(this.ActionCopyReportToClipboard, "ActionCopyReportToClipboard");
@@ -535,6 +530,11 @@
       this.ActionCopyReportToClipboard.Click += new System.EventHandler(this.ActionCopyReportToClipboard_Click);
       this.ActionCopyReportToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionCopyReportToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // Sep2
+      // 
+      resources.ApplyResources(this.Sep2, "Sep2");
+      this.Sep2.Name = "Sep2";
       // 
       // ActionSearchDay
       // 

@@ -165,7 +165,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Mouse event information.</param>
     private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
     {
-      if ( e.Button != MouseButtons.Left ) return;
+      if ( e != null && e.Button != MouseButtons.Left ) return;
       var form = NavigationForm.Instance;
       if ( form.Visible )
         form.Visible = false;
@@ -182,6 +182,16 @@ namespace Ordisoftware.HebrewCalendar
           ex.Manage();
         }
       }
+    }
+
+    private void MenuNavigate_Click(object sender, EventArgs e)
+    {
+      TrayIcon_MouseClick(null, null);
+    }
+
+    private void MenuCelebrations_Click(object sender, EventArgs e)
+    {
+      CelebrationsForm.Execute();
     }
 
   }
