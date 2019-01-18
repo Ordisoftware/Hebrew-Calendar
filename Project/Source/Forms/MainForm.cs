@@ -81,7 +81,7 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
-        UpdateProgress(progress++, Count, LocalizerHelper.LoadingDataText.GetLang());
+        UpdateProgress(progress++, Count, Localizer.LoadingDataText.GetLang());
       };
       Program.Settings.Retrieve();
       LunisolarCalendar.LunisolarDays.RowChanged += update;
@@ -135,7 +135,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( IsGenerating )
       {
         e.Cancel = true;
-        DisplayManager.ShowAdvert(LocalizerHelper.CantExitApplicationWhileGeneratingText.GetLang());
+        DisplayManager.ShowAdvert(Localizer.CantExitApplicationWhileGeneratingText.GetLang());
       }
       else
       {
@@ -218,7 +218,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(LocalizerHelper.RestoreWinPosText.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Localizer.RestoreWinPosText.GetLang()) )
         Program.Settings.RestoreMainForm();
     }
 
@@ -243,7 +243,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( PreferencesForm.Instance.OldShabatDay != Program.Settings.ShabatDay
         || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
         || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )
-        if ( DisplayManager.QueryYesNo(LocalizerHelper.RegenerateCalendarText.GetLang()) )
+        if ( DisplayManager.QueryYesNo(Localizer.RegenerateCalendarText.GetLang()) )
         {
           ActionGenerate.PerformClick();
           ActionSearchDay_Click(null, null);
@@ -311,7 +311,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionExit_Click(object sender, EventArgs e)
     {
       if ( EditConfirmClosing.Checked )
-        if ( !DisplayManager.QueryYesNo(LocalizerHelper.ExitApplicationText.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
           return;
       TrayIconForm.Instance.Close();
 
@@ -327,7 +327,7 @@ namespace Ordisoftware.HebrewCalendar
       var form = new SelectYearsForm();
       if ( form.ShowDialog() == DialogResult.Cancel ) return;
       if ( LunisolarCalendar.LunisolarDays.Count > 0 )
-        if ( !DisplayManager.QueryYesNo(LocalizerHelper.ReplaceCalendarText.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Localizer.ReplaceCalendarText.GetLang()) )
           return;
       GenerateDB((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
       ActionSearchDay_Click(null, null);

@@ -21,9 +21,9 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide localization helper.
+  /// Provide localization.
   /// </summary>
-  static public class LocalizerHelper
+  static public class Localizer
   {
 
     /// <summary>
@@ -56,38 +56,10 @@ namespace Ordisoftware.HebrewCalendar
       = new Dictionary<DayOfWeek, Dictionary<string, string>>()
       {
         {
-          DayOfWeek.Friday, new Dictionary<string, string>
-          {
-            { "en", "Friday" },
-            { "fr", "Vendredi" }
-          }
-        },
-        {
           DayOfWeek.Monday, new Dictionary<string, string>
           {
             { "en", "Monday" },
             { "fr", "Lundi" }
-          }
-        },
-        {
-          DayOfWeek.Saturday, new Dictionary<string, string>
-          {
-            { "en", "Saturday" },
-            { "fr", "Samedi" }
-          }
-        },
-        {
-          DayOfWeek.Sunday, new Dictionary<string, string>
-          {
-            { "en", "Sunday" },
-            { "fr", "Dimanche" }
-          }
-        },
-        {
-          DayOfWeek.Thursday, new Dictionary<string, string>
-          {
-            { "en", "Thursday" },
-            { "fr", "Jeudi" }
           }
         },
         {
@@ -102,6 +74,34 @@ namespace Ordisoftware.HebrewCalendar
           {
             { "en", "Wednesday" },
             { "fr", "Mercredi" }
+          }
+        },
+        {
+          DayOfWeek.Thursday, new Dictionary<string, string>
+          {
+            { "en", "Thursday" },
+            { "fr", "Jeudi" }
+          }
+        },
+        {
+          DayOfWeek.Friday, new Dictionary<string, string>
+          {
+            { "en", "Friday" },
+            { "fr", "Vendredi" }
+          }
+        },
+        {
+          DayOfWeek.Saturday, new Dictionary<string, string>
+          {
+            { "en", "Saturday" },
+            { "fr", "Samedi" }
+          }
+        },
+        {
+          DayOfWeek.Sunday, new Dictionary<string, string>
+          {
+            { "en", "Sunday" },
+            { "fr", "Dimanche" }
           }
         }
       };
@@ -149,7 +149,7 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> GenerateCalendarText
       = new Dictionary<string, string>()
       {
-        { "en", "Database is empty." + Environment.NewLine +
+        { "en", "Database is empty." + Environment.NewLine + Environment.NewLine +
                 "Do you want to generate a calendar?" },
         { "fr", "La base de données est vide." + Environment.NewLine + Environment.NewLine +
                 "Voulez-vous générer un calendrier ?" }
@@ -176,14 +176,14 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Garnissage des jours..." }
       };
 
-    static public readonly Dictionary<string, string> ProgressAnalyzingDaysText
+    static public readonly Dictionary<string, string> ProgressAnalyzeDaysText
       = new Dictionary<string, string>()
       {
         { "en", "Analyzing days..." },
         { "fr", "Analyse des jours..." }
       };
 
-    static public readonly Dictionary<string, string> ProgressGenerateResultText
+    static public readonly Dictionary<string, string> ProgressGenerateReportText
       = new Dictionary<string, string>()
       {
         { "en", "Generating report..." },
@@ -202,9 +202,9 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> RegenerateCalendarText
       = new Dictionary<string, string>()
       {
-        { "en", "Preferences changed." + Environment.NewLine + 
+        { "en", "Preferences changed." + Environment.NewLine + Environment.NewLine +
                 "Do you want to generate the calendrier?" },
-        { "fr", "Préférences changées." + Environment.NewLine + 
+        { "fr", "Préférences changées." + Environment.NewLine + Environment.NewLine +
                 "Voulez-vous générer le calendrier ?" }
       };
 

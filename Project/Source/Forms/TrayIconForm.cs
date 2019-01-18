@@ -71,7 +71,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( MainForm.Instance.LunisolarCalendar.LunisolarDays.Count > 0 )
           MenuShowHide_Click(null, null);
         else
-        if ( DisplayManager.QueryYesNo(LocalizerHelper.GenerateCalendarText.GetLang()) )
+        if ( DisplayManager.QueryYesNo(Localizer.GenerateCalendarText.GetLang()) )
         {
           PreferencesForm.Instance.ShowDialog();
           MainForm.Instance.ActionGenerate.PerformClick();
@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewCalendar
     private void MenuExit_Click(object sender, EventArgs e)
     {
       if ( Program.Settings.ConfirmClosing 
-        && !DisplayManager.QueryYesNo(LocalizerHelper.ExitApplicationText.GetLang()) )
+        && !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
         return;
       Close();
     }
@@ -155,7 +155,7 @@ namespace Ordisoftware.HebrewCalendar
         form.Visible = false;
         form.ShowInTaskbar = false;
       }
-      MenuShowHide.Text = LocalizerHelper.HideRestoreText.GetLang(form.Visible);
+      MenuShowHide.Text = Localizer.HideRestoreText.GetLang(form.Visible);
     }
 
     /// <summary>

@@ -196,7 +196,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       foreach ( DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)) )
       {
-        var item = new DayOfWeekItem() { Text = LocalizerHelper.DayOfWeekText.GetLang(day), Day = day };
+        var item = new DayOfWeekItem() { Text = Localizer.DayOfWeekText.GetLang(day), Day = day };
         EditShabatDay.Items.Add(item);
         if ( (DayOfWeek)Program.Settings.ShabatDay == day ) EditShabatDay.SelectedItem = item;
       }

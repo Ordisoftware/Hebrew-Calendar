@@ -19,18 +19,18 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide view mode type.
+  /// Provide data view mode type.
   /// </summary>
   public enum ViewModeType
   {
 
     /// <summary>
-    /// Text view mode to display report.
+    /// Text view mode to display report in raw text.
     /// </summary>
     Text,
 
     /// <summary>
-    /// Grid view mode to display days list.
+    /// Grid view mode to display days in grid list.
     /// </summary>
     Grid
 

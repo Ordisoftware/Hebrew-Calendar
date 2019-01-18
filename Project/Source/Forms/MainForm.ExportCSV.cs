@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
       {
         var dayDate = SQLiteUtility.GetDate(day.Date);
-        if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
+        if ( !UpdateProgress(progress++, count, Localizer.ProgressGenerateReportText.GetLang()) ) return;
         if ( day.LunarMonth == 0 ) continue;
         if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
         content.Append(day.Date + CSVSeparator);

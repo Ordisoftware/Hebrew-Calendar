@@ -23,6 +23,7 @@ namespace Ordisoftware.HebrewCalendar
   /// </summary>
   public enum MoonPhaseType
   {
+
     /// <summary>
     /// The new moon.
     /// </summary>

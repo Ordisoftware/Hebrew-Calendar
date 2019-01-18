@@ -23,6 +23,7 @@ namespace Ordisoftware.HebrewCalendar
   /// </summary>
   public enum MoonriseType
   {
+
     /// <summary>
     /// Moonrise is after moonset.
     /// </summary>
@@ -37,6 +38,7 @@ namespace Ordisoftware.HebrewCalendar
     /// Moonrise is on next day.
     /// </summary>
     NextDay
+
   }
 
 }

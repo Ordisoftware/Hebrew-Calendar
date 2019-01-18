@@ -23,13 +23,13 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provides the main program.
+  /// Provide the main program.
   /// </summary>
   static class Program
   {
 
     /// <summary>
-    /// Default Settings instance.
+    /// Indicate the default Settings instance.
     /// </summary>
     static public readonly Properties.Settings Settings = Properties.Settings.Default;
 
@@ -45,8 +45,8 @@ namespace Ordisoftware.HebrewCalendar
     [STAThread]
     static void Main(string[] args)
     {
-      System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-      System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+      //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+      //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
       string filenameIcon = ".." + Path.DirectorySeparatorChar + "Application.ico";
       try
       {
