@@ -95,7 +95,9 @@ namespace Ordisoftware.HebrewCalendar
           }
           _Date = value;
           MainForm.Instance.GoToDate(value);
-          
+        }
+        catch
+        {
         }
         finally
         {
