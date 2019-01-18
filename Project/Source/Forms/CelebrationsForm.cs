@@ -67,7 +67,13 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ListView_SelectedIndexChanged(object sender, EventArgs e)
     {
-      NavigationForm.Instance.Date = SQLiteUtility.GetDate(ListView.SelectedItems[0].SubItems[1].Tag.ToString());
+      try
+      {
+        NavigationForm.Instance.Date = SQLiteUtility.GetDate(ListView.SelectedItems[0].SubItems[1].Tag.ToString());
+      }
+      catch
+      {
+      }
     }
 
   }

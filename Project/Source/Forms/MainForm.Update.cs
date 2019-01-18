@@ -123,6 +123,7 @@ namespace Ordisoftware.HebrewCalendar
         ActionCopyReportToClipboard.Enabled = ActionSaveReport.Enabled;
         ActionSearchDay.Enabled = ActionSaveReport.Enabled;
         ActionNavigate.Enabled = ActionSaveReport.Enabled;
+        ActionViewCelebrations.Enabled = ActionSaveReport.Enabled;
         ActionGenerate.Enabled = !IsGenerating;
         ActionStop.Enabled = IsGenerating;
         SctionPreferences.Enabled = !IsGenerating;

@@ -48,7 +48,7 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 #### What to do in case of ODBC datasource connection error?
 
-The setup tries to register an ODBC dsn to the registry but in case of problem run "C:\Program Files\Ordisoftware\Hebrew Calendar\Register ODBC.reg" or open the ODBC datasource manager (Admin tools in Windows' Control panel) and create a user datasource named "Hebrew-calendar" for "SQLite 3 ODBC Driver" with "Database Name" sets to:
+The setup tries to register an ODBC DSN to the registry but in case of problem run "C:\Program Files\Ordisoftware\Hebrew Calendar\Register ODBC.reg" or open the ODBC datasource manager (Admin tools in Windows' Control panel) and create a user datasource named "Hebrew-calendar" for "SQLite 3 ODBC Driver" with "Database Name" sets to:
 
 "%USERPROFILE%\AppData\Roaming\Ordisoftware\Hebrew Calendar\Hebrew-calendar.sqlite"
 
