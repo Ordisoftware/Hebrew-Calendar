@@ -133,7 +133,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="year">The year.</param>
     private void InitializeSeasons(int year)
     {
-      AAPlus.Date date = new AAPlus.Date();
+      var date = new AAPlus.Date();
       long jdYear, jdMonth, jdDay, jdHour, jdMinute;
       double second;
       void set(SeasonChangeType season, Func<long, double> action)

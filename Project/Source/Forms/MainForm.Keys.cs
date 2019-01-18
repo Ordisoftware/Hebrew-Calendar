@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Control | Keys.S:
           ActionSaveReport.PerformClick();
           return true;
-        case Keys.Control | Keys.E:
+        case Keys.Alt | Keys.S:
           ActionExportCSV.PerformClick();
           return true;
         case Keys.Control | Keys.C:

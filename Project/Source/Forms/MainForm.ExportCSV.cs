@@ -26,7 +26,20 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private enum CSVFieldType { Date, IsNewMoon, IsFullMoon, Month, Day, Sunrise, Sunset, Moonrise, Moonset, Events }
+    private enum CSVFieldType
+    {
+      Date,
+      IsNewMoon,
+      IsFullMoon,
+      Month,
+      Day,
+      Sunrise,
+      Sunset,
+      Moonrise,
+      Moonset,
+      Season,
+      Event
+    }
 
     private const string CSVSeparator = ",";
 
@@ -78,15 +91,13 @@ namespace Ordisoftware.HebrewCalendar
         content.Append(day.Sunset + CSVSeparator);
         content.Append(day.Moonrise + CSVSeparator);
         content.Append(day.Moonset + CSVSeparator);
-        string strDesc = "";
-        string s1 = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)day.SeasonChange);
-        string s2 = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
-        strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
-        content.AppendLine(strDesc);
+        string strSeason = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)day.SeasonChange);
+        string strEvent = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
+        content.Append(strSeason + CSVSeparator);
+        content.AppendLine(strEvent);
       }
-      if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
-      File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
-
+      if ( SaveCSVDialog.ShowDialog() == DialogResult.OK )
+        File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
     }
 
   }
