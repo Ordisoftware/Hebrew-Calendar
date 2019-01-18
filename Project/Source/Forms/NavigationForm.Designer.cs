@@ -32,7 +32,7 @@
       this.PanelTop = new System.Windows.Forms.Panel();
       this.LabelDate = new System.Windows.Forms.Label();
       this.PanelMiddle = new System.Windows.Forms.Panel();
-      this.LabelTorahNextDateValue = new System.Windows.Forms.Label();
+      this.LabelTorahNextDateValue = new System.Windows.Forms.LinkLabel();
       this.LabelTorahNextValue = new System.Windows.Forms.Label();
       this.LabelTorahNext = new System.Windows.Forms.Label();
       this.LabelEventTorahValue = new System.Windows.Forms.Label();
@@ -64,9 +64,9 @@
       // 
       // PanelTop
       // 
-      resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.BackColor = System.Drawing.Color.LemonChiffon;
       this.PanelTop.Controls.Add(this.LabelDate);
+      resources.ApplyResources(this.PanelTop, "PanelTop");
       this.PanelTop.Name = "PanelTop";
       // 
       // LabelDate
@@ -76,7 +76,6 @@
       // 
       // PanelMiddle
       // 
-      resources.ApplyResources(this.PanelMiddle, "PanelMiddle");
       this.PanelMiddle.BackColor = System.Drawing.Color.AliceBlue;
       this.PanelMiddle.Controls.Add(this.LabelTorahNextDateValue);
       this.PanelMiddle.Controls.Add(this.LabelTorahNextValue);
@@ -96,12 +95,15 @@
       this.PanelMiddle.Controls.Add(this.LabelLunarMonthValue);
       this.PanelMiddle.Controls.Add(this.LabelSunset);
       this.PanelMiddle.Controls.Add(this.LabelSunrise);
+      resources.ApplyResources(this.PanelMiddle, "PanelMiddle");
       this.PanelMiddle.Name = "PanelMiddle";
       // 
       // LabelTorahNextDateValue
       // 
       resources.ApplyResources(this.LabelTorahNextDateValue, "LabelTorahNextDateValue");
       this.LabelTorahNextDateValue.Name = "LabelTorahNextDateValue";
+      this.LabelTorahNextDateValue.TabStop = true;
+      this.LabelTorahNextDateValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelTorahNextDateValue_LinkClicked);
       // 
       // LabelTorahNextValue
       // 
@@ -212,23 +214,23 @@
       // 
       // PanelSeparatorTop
       // 
-      resources.ApplyResources(this.PanelSeparatorTop, "PanelSeparatorTop");
       this.PanelSeparatorTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelSeparatorTop, "PanelSeparatorTop");
       this.PanelSeparatorTop.Name = "PanelSeparatorTop";
       // 
       // PanelBottom
       // 
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.BackColor = System.Drawing.Color.Honeydew;
       this.PanelBottom.Controls.Add(this.ButtonSelectDay);
       this.PanelBottom.Controls.Add(this.ButtonPreviousDay);
       this.PanelBottom.Controls.Add(this.ButtonNextDay);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // PanelSeparatorBottom
       // 
-      resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
       // 
       // NavigationForm
@@ -283,6 +285,6 @@
     internal System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Label LabelTorahNextValue;
     private System.Windows.Forms.Label LabelTorahNext;
-    private System.Windows.Forms.Label LabelTorahNextDateValue;
+    private System.Windows.Forms.LinkLabel LabelTorahNextDateValue;
   }
 }

@@ -66,13 +66,16 @@ namespace Ordisoftware.HebrewCalendar
                           select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
           if ( rowNext != null )
           {
+            var date = SQLiteUtility.GetDate(rowNext.Date);
             LabelTorahNextValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)rowNext.TorahEvents);
-            LabelTorahNextDateValue.Text = SQLiteUtility.GetDate(rowNext.Date).ToLongDateString();
+            LabelTorahNextDateValue.Text = date.ToLongDateString();
+            LabelTorahNext.Tag = date;
           }
           else
           {
             LabelTorahNextValue.Text = "-";
             LabelTorahNextDateValue.Text = "";
+            LabelTorahNext.Tag = null;
           }
           var image = MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
           PictureMoon.Image = ResizeImage(image, 100, 100);
@@ -92,6 +95,7 @@ namespace Ordisoftware.HebrewCalendar
           }
           _Date = value;
           MainForm.Instance.GoToDate(value);
+          
         }
         finally
         {
@@ -155,6 +159,12 @@ namespace Ordisoftware.HebrewCalendar
     private void buttonNextDay_Click(object sender, EventArgs e)
     {
       Date = _Date.AddDays(1);
+    }
+
+    private void LabelTorahNextDateValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      if ( LabelTorahNext.Tag != null)
+        Date = (DateTime)LabelTorahNext.Tag;
     }
 
     /// <summary>
