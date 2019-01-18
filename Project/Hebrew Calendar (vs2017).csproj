@@ -221,12 +221,6 @@
     <EmbeddedResource Include="Source\Forms\NavigationForm.resx">
       <DependentUpon>NavigationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\TrayIconForm.fr.resx">
-      <DependentUpon>TrayIconForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\TrayIconForm.resx">
-      <DependentUpon>TrayIconForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -253,12 +247,6 @@
     </Compile>
     <Compile Include="Source\Classes\AstronomyUtility.cs" />
     <Compile Include="Dependencies\Moonr2cs\Moonr2cs.cs" />
-    <Compile Include="Source\Forms\TrayIconForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\TrayIconForm.Designer.cs">
-      <DependentUpon>TrayIconForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Program.cs" />
     <None Include="Resources\MPL 2.0.rtf" />
   </ItemGroup>

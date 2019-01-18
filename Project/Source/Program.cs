@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewCalendar
                        + Path.DirectorySeparatorChar + AboutBox.Instance.AssemblyTitle
                        + Path.DirectorySeparatorChar;
         Directory.CreateDirectory(UserDataFolder);
-        Application.Run(TrayIconForm.Instance);
+        Application.Run(MainForm.Instance);
       }
       catch ( Exception except )
       {

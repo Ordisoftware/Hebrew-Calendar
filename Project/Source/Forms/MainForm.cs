@@ -13,15 +13,16 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2019-01 </edited>
+using Microsoft.Win32;
+using Ordisoftware.Core;
 using System;
 using System.Data;
 using System.Data.Odbc;
-using System.Linq;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -58,6 +59,8 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private bool IsGenerating = false;
 
+    private bool AllowClose = false;
+
     private ToolTip LastToolTip = new ToolTip();
 
     /// <summary>
@@ -67,6 +70,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Text = DisplayManager.Title;
+      Visible = false;
+      SystemEvents.SessionEnding += SessionEnding;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
     }
@@ -78,6 +83,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MainForm_Load(object sender, EventArgs e)
     {
+      TrayIcon.Icon = Icon;
+      MenuShowHide.Image = Icon.ToBitmap();
       int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
@@ -98,14 +105,23 @@ namespace Ordisoftware.HebrewCalendar
         LunisolarDaysTableAdapter.Fill(LunisolarCalendar.LunisolarDays);
         ReportTableAdapter.Fill(LunisolarCalendar.Report);
         SetView(Program.Settings.CurrentView, true);
-        var row = LunisolarCalendar.Report.FirstOrDefault();
-        CalendarText.Text = row == null ? "" : row.Content;
-        try
+        if ( LunisolarCalendar.LunisolarDays.Count > 0 )
         {
-          ActionSearchDay_Click(null, null);
+          var row = LunisolarCalendar.Report.FirstOrDefault();
+          CalendarText.Text = row == null ? "" : row.Content;
+          try
+          {
+            ActionSearchDay_Click(null, null);
+          }
+          catch
+          {
+          }
         }
-        catch
+        else
+        if ( DisplayManager.QueryYesNo(Localizer.GenerateCalendarText.GetLang()) )
         {
+          PreferencesForm.Instance.ShowDialog();
+          ActionGenerate.PerformClick();
         }
       }
       catch ( Exception ex )
@@ -144,10 +160,21 @@ namespace Ordisoftware.HebrewCalendar
         DisplayManager.ShowAdvert(Localizer.CantExitApplicationWhileGeneratingText.GetLang());
       }
       else
+      if ( !AllowClose )
       {
         e.Cancel = true;
-        TrayIconForm.Instance.MenuShowHide.PerformClick();
+        MenuShowHide.PerformClick();
       }
+    }
+
+    /// <summary>
+    /// Event handler. Called by MainForm_Form for form closing events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Form closing event information.</param>
+    private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Program.Settings.Store();
     }
 
     /// <summary>
@@ -244,7 +271,6 @@ namespace Ordisoftware.HebrewCalendar
           ActionGenerate.PerformClick();
           ActionSearchDay_Click(null, null);
         }
-  
     }
 
     /// <summary>
@@ -309,8 +335,8 @@ namespace Ordisoftware.HebrewCalendar
       if ( EditConfirmClosing.Checked )
         if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
           return;
-      TrayIconForm.Instance.Close();
-
+      AllowClose = true;
+      Close();
     }
 
     /// <summary>
@@ -430,6 +456,94 @@ namespace Ordisoftware.HebrewCalendar
     {
       CelebrationsForm.Execute();
     }
+
+
+
+
+
+
+
+
+
+
+
+    /// <summary>
+    /// Session ending.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Session ending event information.</param>
+    private void SessionEnding(object sender, SessionEndingEventArgs e)
+    {
+      Close();
+    }
+
+    /// <summary>
+    /// Event handler. Called by MenuShowHide for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void MenuShowHide_Click(object sender, EventArgs e)
+    {
+      if ( !Visible )
+      {
+        Visible = true;
+        WindowState = Program.Settings.MainFormState;
+        ShowInTaskbar = true;
+      }
+      else
+      {
+        Program.Settings.MainFormState = WindowState;
+        WindowState = FormWindowState.Minimized;
+        Visible = false;
+        ShowInTaskbar = false;
+      }
+      MenuShowHide.Text = Localizer.HideRestoreText.GetLang(Visible);
+    }
+
+    /// <summary>
+    /// Event handler. Called by MenuNavigate for mouse click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Mouse event information.</param>
+    private void MenuNavigate_Click(object sender, EventArgs e)
+    {
+      TrayIcon_MouseClick(null, null);
+    }
+
+    /// <summary>
+    /// Event handler. Called by MenuCelebrations for mouse click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Mouse event information.</param>
+    private void MenuCelebrations_Click(object sender, EventArgs e)
+    {
+      CelebrationsForm.Execute();
+    }
+
+    /// <summary>
+    /// Event handler. Called by TrayIcon for mouse click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Mouse event information.</param>
+    private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
+    {
+      if ( e != null && e.Button != MouseButtons.Left ) return;
+      var form = NavigationForm.Instance;
+      if ( form.Visible )
+        form.Visible = false;
+      else
+        try
+        {
+          form.Date = DateTime.Now;
+          form.Visible = true;
+          form.BringToFront();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
+    }
+
   }
 
 }
