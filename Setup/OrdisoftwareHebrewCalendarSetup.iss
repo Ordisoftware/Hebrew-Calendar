@@ -3,7 +3,7 @@
 
 #define MyAppName "Hebrew Calendar"
 #define MyAppNameNoSpace "HebrewCalendar"
-#define MyAppVersion "1.1"
+#define MyAppVersion "1.2"
 #define MyAppPublisher "Ordisoftware"
 #define MyAppURL "http://www.ordisoftware.com/projects/hebrew-calendar"
 #define MyAppExeName "Ordisoftware.HebrewCalendar.exe"
@@ -72,10 +72,10 @@ Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: ..\Bin\*.exe; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs; Excludes: *vshost.exe
-Source: ..\Bin\*.dll; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Bin\*.pdb; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Bin\*.xml; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: ..\Bin\Release\*.exe; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs; Excludes: *vshost.exe
+Source: ..\Bin\Release\*.dll; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: ..\Bin\Release\*.pdb; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: ..\Bin\Release\*.xml; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Help\*; DestDir: {app}\Help; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Project\License\*; DestDir: {app}\Project\License; Flags: ignoreversion recursesubdirs
 Source: ..\Project\Dependencies\*; DestDir: {app}\Project\Dependencies\; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
@@ -83,7 +83,7 @@ Source: ..\Project\Properties\*; DestDir: {app}\Project\Properties\; Flags: igno
 Source: ..\Project\Source\*; DestDir: {app}\Project\Source\; Flags: ignoreversion recursesubdirs; Excludes: *.lnk
 Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion; Excludes: *.suo, *.user
 Source: ..\*; DestDir: {app}; Flags: ignoreversion
-Source: *; DestDir: {app}\Setup; Excludes: *.---
+Source: *; DestDir: {app}\Setup; Excludes: *.---, OrdisoftwareHebrewCalendarSetup*.exe
 DestDir: {app}; Source: ..\Register ODBC.reg
 DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite
 

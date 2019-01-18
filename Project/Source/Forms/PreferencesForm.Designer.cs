@@ -29,185 +29,292 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.Windows.Forms.Label gPSLatitudeLabel;
+      System.Windows.Forms.Label GPSLatitudeLabel;
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
-      System.Windows.Forms.Label gPSLongitudeLabel;
-      this.dialogColor = new System.Windows.Forms.ColorDialog();
-      this.buttonClose = new System.Windows.Forms.Button();
-      this.editFontName = new System.Windows.Forms.ComboBox();
-      this.bindingSettings = new System.Windows.Forms.BindingSource(this.components);
-      this.labelShabatDay = new System.Windows.Forms.Label();
-      this.editFontSize = new System.Windows.Forms.NumericUpDown();
-      this.labelFontSize = new System.Windows.Forms.Label();
-      this.panelBackColor = new System.Windows.Forms.Panel();
-      this.labelTextColor = new System.Windows.Forms.Label();
-      this.editShabatDay = new System.Windows.Forms.ComboBox();
-      this.labelFontName = new System.Windows.Forms.Label();
-      this.panelTextColor = new System.Windows.Forms.Panel();
-      this.labelBackColor = new System.Windows.Forms.Label();
-      this.gPSLatitudeTextBox = new System.Windows.Forms.TextBox();
-      this.gPSLongitudeTextBox = new System.Windows.Forms.TextBox();
-      this.panel1 = new System.Windows.Forms.Panel();
-      this.actionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
-      gPSLatitudeLabel = new System.Windows.Forms.Label();
-      gPSLongitudeLabel = new System.Windows.Forms.Label();
-      ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.editFontSize)).BeginInit();
-      this.panel1.SuspendLayout();
+      System.Windows.Forms.Label GPSLongitudeLabel;
+      this.DialogColor = new System.Windows.Forms.ColorDialog();
+      this.ButtonClose = new System.Windows.Forms.Button();
+      this.EditFontName = new System.Windows.Forms.ComboBox();
+      this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
+      this.LabelShabatDay = new System.Windows.Forms.Label();
+      this.EditFontSize = new System.Windows.Forms.NumericUpDown();
+      this.LabelFontSize = new System.Windows.Forms.Label();
+      this.PanelBackColor = new System.Windows.Forms.Panel();
+      this.LabelTextColor = new System.Windows.Forms.Label();
+      this.EditShabatDay = new System.Windows.Forms.ComboBox();
+      this.LabelFontName = new System.Windows.Forms.Label();
+      this.PanelTextColor = new System.Windows.Forms.Panel();
+      this.LabelBackColor = new System.Windows.Forms.Label();
+      this.GPSLatitudeTextBox = new System.Windows.Forms.TextBox();
+      this.GPSLongitudeTextBox = new System.Windows.Forms.TextBox();
+      this.PanelButtons = new System.Windows.Forms.Panel();
+      this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
+      this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
+      this.GroupBoxText = new System.Windows.Forms.GroupBox();
+      this.BroupBoxShabat = new System.Windows.Forms.GroupBox();
+      this.GroupBoxTrayicon = new System.Windows.Forms.GroupBox();
+      this.ActionUseDefaultColors = new System.Windows.Forms.LinkLabel();
+      this.LabelTopColor = new System.Windows.Forms.Label();
+      this.ActionUseSystemColors = new System.Windows.Forms.LinkLabel();
+      this.PanelTopColor = new System.Windows.Forms.Panel();
+      this.PanelBottomColor = new System.Windows.Forms.Panel();
+      this.PanelMiddleColor = new System.Windows.Forms.Panel();
+      this.labelBottomColor = new System.Windows.Forms.Label();
+      this.LabelMiddleColor = new System.Windows.Forms.Label();
+      GPSLatitudeLabel = new System.Windows.Forms.Label();
+      GPSLongitudeLabel = new System.Windows.Forms.Label();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
+      this.PanelButtons.SuspendLayout();
+      this.GroupBoxGPS.SuspendLayout();
+      this.GroupBoxText.SuspendLayout();
+      this.BroupBoxShabat.SuspendLayout();
+      this.GroupBoxTrayicon.SuspendLayout();
       this.SuspendLayout();
       // 
-      // gPSLatitudeLabel
+      // GPSLatitudeLabel
       // 
-      resources.ApplyResources(gPSLatitudeLabel, "gPSLatitudeLabel");
-      gPSLatitudeLabel.Name = "gPSLatitudeLabel";
+      resources.ApplyResources(GPSLatitudeLabel, "GPSLatitudeLabel");
+      GPSLatitudeLabel.Name = "GPSLatitudeLabel";
       // 
-      // gPSLongitudeLabel
+      // GPSLongitudeLabel
       // 
-      resources.ApplyResources(gPSLongitudeLabel, "gPSLongitudeLabel");
-      gPSLongitudeLabel.Name = "gPSLongitudeLabel";
+      resources.ApplyResources(GPSLongitudeLabel, "GPSLongitudeLabel");
+      GPSLongitudeLabel.Name = "GPSLongitudeLabel";
       // 
-      // dialogColor
+      // DialogColor
       // 
-      this.dialogColor.FullOpen = true;
+      this.DialogColor.FullOpen = true;
       // 
-      // buttonClose
+      // ButtonClose
       // 
-      resources.ApplyResources(this.buttonClose, "buttonClose");
-      this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.buttonClose.Name = "buttonClose";
-      this.buttonClose.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ButtonClose, "ButtonClose");
+      this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ButtonClose.Name = "ButtonClose";
+      this.ButtonClose.UseVisualStyleBackColor = true;
       // 
-      // editFontName
+      // EditFontName
       // 
-      this.editFontName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "FontName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.editFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.editFontName.FormattingEnabled = true;
-      resources.ApplyResources(this.editFontName, "editFontName");
-      this.editFontName.Name = "editFontName";
-      this.editFontName.SelectedIndexChanged += new System.EventHandler(this.editFont_Changed);
+      resources.ApplyResources(this.EditFontName, "EditFontName");
+      this.EditFontName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingSettings, "FontName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditFontName.FormattingEnabled = true;
+      this.EditFontName.Name = "EditFontName";
+      this.EditFontName.SelectedIndexChanged += new System.EventHandler(this.EitFontName_Changed);
       // 
-      // bindingSettings
+      // BindingSettings
       // 
-      this.bindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
+      this.BindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
       // 
-      // labelShabatDay
+      // LabelShabatDay
       // 
-      resources.ApplyResources(this.labelShabatDay, "labelShabatDay");
-      this.labelShabatDay.Name = "labelShabatDay";
+      resources.ApplyResources(this.LabelShabatDay, "LabelShabatDay");
+      this.LabelShabatDay.Name = "LabelShabatDay";
       // 
-      // editFontSize
+      // EditFontSize
       // 
-      this.editFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSettings, "FontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      resources.ApplyResources(this.editFontSize, "editFontSize");
-      this.editFontSize.Maximum = new decimal(new int[] {
+      resources.ApplyResources(this.EditFontSize, "EditFontSize");
+      this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BindingSettings, "FontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditFontSize.Maximum = new decimal(new int[] {
             32,
             0,
             0,
             0});
-      this.editFontSize.Minimum = new decimal(new int[] {
+      this.EditFontSize.Minimum = new decimal(new int[] {
             4,
             0,
             0,
             0});
-      this.editFontSize.Name = "editFontSize";
-      this.editFontSize.Value = new decimal(new int[] {
+      this.EditFontSize.Name = "EditFontSize";
+      this.EditFontSize.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
-      this.editFontSize.ValueChanged += new System.EventHandler(this.editFont_Changed);
+      this.EditFontSize.ValueChanged += new System.EventHandler(this.EitFontName_Changed);
       // 
-      // labelFontSize
+      // LabelFontSize
       // 
-      resources.ApplyResources(this.labelFontSize, "labelFontSize");
-      this.labelFontSize.Name = "labelFontSize";
+      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
+      this.LabelFontSize.Name = "LabelFontSize";
       // 
-      // panelBackColor
+      // PanelBackColor
       // 
-      this.panelBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-      this.panelBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.panelBackColor, "panelBackColor");
-      this.panelBackColor.Name = "panelBackColor";
-      this.panelBackColor.Click += new System.EventHandler(this.panelBackColor_Click);
+      resources.ApplyResources(this.PanelBackColor, "PanelBackColor");
+      this.PanelBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+      this.PanelBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.PanelBackColor.Name = "PanelBackColor";
+      this.PanelBackColor.Click += new System.EventHandler(this.PanelBackColor_Click);
       // 
-      // labelTextColor
+      // LabelTextColor
       // 
-      resources.ApplyResources(this.labelTextColor, "labelTextColor");
-      this.labelTextColor.Name = "labelTextColor";
+      resources.ApplyResources(this.LabelTextColor, "LabelTextColor");
+      this.LabelTextColor.Name = "LabelTextColor";
       // 
-      // editShabatDay
+      // EditShabatDay
       // 
-      this.editShabatDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.editShabatDay.FormattingEnabled = true;
-      resources.ApplyResources(this.editShabatDay, "editShabatDay");
-      this.editShabatDay.Name = "editShabatDay";
+      resources.ApplyResources(this.EditShabatDay, "EditShabatDay");
+      this.EditShabatDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditShabatDay.FormattingEnabled = true;
+      this.EditShabatDay.Name = "EditShabatDay";
       // 
-      // labelFontName
+      // LabelFontName
       // 
-      resources.ApplyResources(this.labelFontName, "labelFontName");
-      this.labelFontName.Name = "labelFontName";
+      resources.ApplyResources(this.LabelFontName, "LabelFontName");
+      this.LabelFontName.Name = "LabelFontName";
       // 
-      // panelTextColor
+      // PanelTextColor
       // 
-      this.panelTextColor.BackColor = System.Drawing.Color.Black;
-      this.panelTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.panelTextColor, "panelTextColor");
-      this.panelTextColor.Name = "panelTextColor";
-      this.panelTextColor.Click += new System.EventHandler(this.panelTextColor_Click);
+      resources.ApplyResources(this.PanelTextColor, "PanelTextColor");
+      this.PanelTextColor.BackColor = System.Drawing.Color.Black;
+      this.PanelTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.PanelTextColor.Name = "PanelTextColor";
+      this.PanelTextColor.Click += new System.EventHandler(this.PanelTextColor_Click);
       // 
-      // labelBackColor
+      // LabelBackColor
       // 
-      resources.ApplyResources(this.labelBackColor, "labelBackColor");
-      this.labelBackColor.Name = "labelBackColor";
+      resources.ApplyResources(this.LabelBackColor, "LabelBackColor");
+      this.LabelBackColor.Name = "LabelBackColor";
       // 
-      // gPSLatitudeTextBox
+      // GPSLatitudeTextBox
       // 
-      this.gPSLatitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "Latitude", true));
-      resources.ApplyResources(this.gPSLatitudeTextBox, "gPSLatitudeTextBox");
-      this.gPSLatitudeTextBox.Name = "gPSLatitudeTextBox";
+      resources.ApplyResources(this.GPSLatitudeTextBox, "GPSLatitudeTextBox");
+      this.GPSLatitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingSettings, "Latitude", true));
+      this.GPSLatitudeTextBox.Name = "GPSLatitudeTextBox";
       // 
-      // gPSLongitudeTextBox
+      // GPSLongitudeTextBox
       // 
-      this.gPSLongitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSettings, "Longitude", true));
-      resources.ApplyResources(this.gPSLongitudeTextBox, "gPSLongitudeTextBox");
-      this.gPSLongitudeTextBox.Name = "gPSLongitudeTextBox";
+      resources.ApplyResources(this.GPSLongitudeTextBox, "GPSLongitudeTextBox");
+      this.GPSLongitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingSettings, "Longitude", true));
+      this.GPSLongitudeTextBox.Name = "GPSLongitudeTextBox";
       // 
-      // panel1
+      // PanelButtons
       // 
-      this.panel1.Controls.Add(this.buttonClose);
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Name = "panel1";
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
+      this.PanelButtons.Controls.Add(this.ButtonClose);
+      this.PanelButtons.Name = "PanelButtons";
       // 
-      // actionUsePersonalShabat
+      // ActionUsePersonalShabat
       // 
-      resources.ApplyResources(this.actionUsePersonalShabat, "actionUsePersonalShabat");
-      this.actionUsePersonalShabat.LinkColor = System.Drawing.Color.Blue;
-      this.actionUsePersonalShabat.Name = "actionUsePersonalShabat";
-      this.actionUsePersonalShabat.TabStop = true;
-      this.actionUsePersonalShabat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.actionUsePersonalShabat_LinkClicked);
+      resources.ApplyResources(this.ActionUsePersonalShabat, "ActionUsePersonalShabat");
+      this.ActionUsePersonalShabat.LinkColor = System.Drawing.Color.Blue;
+      this.ActionUsePersonalShabat.Name = "ActionUsePersonalShabat";
+      this.ActionUsePersonalShabat.TabStop = true;
+      this.ActionUsePersonalShabat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUsePersonalShabat_LinkClicked);
+      // 
+      // GroupBoxGPS
+      // 
+      resources.ApplyResources(this.GroupBoxGPS, "GroupBoxGPS");
+      this.GroupBoxGPS.Controls.Add(this.GPSLatitudeTextBox);
+      this.GroupBoxGPS.Controls.Add(GPSLatitudeLabel);
+      this.GroupBoxGPS.Controls.Add(this.GPSLongitudeTextBox);
+      this.GroupBoxGPS.Controls.Add(GPSLongitudeLabel);
+      this.GroupBoxGPS.Name = "GroupBoxGPS";
+      this.GroupBoxGPS.TabStop = false;
+      // 
+      // GroupBoxText
+      // 
+      resources.ApplyResources(this.GroupBoxText, "GroupBoxText");
+      this.GroupBoxText.Controls.Add(this.LabelFontName);
+      this.GroupBoxText.Controls.Add(this.LabelBackColor);
+      this.GroupBoxText.Controls.Add(this.PanelTextColor);
+      this.GroupBoxText.Controls.Add(this.LabelTextColor);
+      this.GroupBoxText.Controls.Add(this.EditFontName);
+      this.GroupBoxText.Controls.Add(this.PanelBackColor);
+      this.GroupBoxText.Controls.Add(this.LabelFontSize);
+      this.GroupBoxText.Controls.Add(this.EditFontSize);
+      this.GroupBoxText.Name = "GroupBoxText";
+      this.GroupBoxText.TabStop = false;
+      // 
+      // BroupBoxShabat
+      // 
+      resources.ApplyResources(this.BroupBoxShabat, "BroupBoxShabat");
+      this.BroupBoxShabat.Controls.Add(this.EditShabatDay);
+      this.BroupBoxShabat.Controls.Add(this.ActionUsePersonalShabat);
+      this.BroupBoxShabat.Controls.Add(this.LabelShabatDay);
+      this.BroupBoxShabat.Name = "BroupBoxShabat";
+      this.BroupBoxShabat.TabStop = false;
+      // 
+      // GroupBoxTrayicon
+      // 
+      resources.ApplyResources(this.GroupBoxTrayicon, "GroupBoxTrayicon");
+      this.GroupBoxTrayicon.Controls.Add(this.ActionUseDefaultColors);
+      this.GroupBoxTrayicon.Controls.Add(this.LabelTopColor);
+      this.GroupBoxTrayicon.Controls.Add(this.ActionUseSystemColors);
+      this.GroupBoxTrayicon.Controls.Add(this.PanelTopColor);
+      this.GroupBoxTrayicon.Controls.Add(this.PanelBottomColor);
+      this.GroupBoxTrayicon.Controls.Add(this.PanelMiddleColor);
+      this.GroupBoxTrayicon.Controls.Add(this.labelBottomColor);
+      this.GroupBoxTrayicon.Controls.Add(this.LabelMiddleColor);
+      this.GroupBoxTrayicon.Name = "GroupBoxTrayicon";
+      this.GroupBoxTrayicon.TabStop = false;
+      // 
+      // ActionUseDefaultColors
+      // 
+      resources.ApplyResources(this.ActionUseDefaultColors, "ActionUseDefaultColors");
+      this.ActionUseDefaultColors.LinkColor = System.Drawing.Color.Blue;
+      this.ActionUseDefaultColors.Name = "ActionUseDefaultColors";
+      this.ActionUseDefaultColors.TabStop = true;
+      this.ActionUseDefaultColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseDefaultColors_LinkClicked);
+      // 
+      // LabelTopColor
+      // 
+      resources.ApplyResources(this.LabelTopColor, "LabelTopColor");
+      this.LabelTopColor.Name = "LabelTopColor";
+      // 
+      // ActionUseSystemColors
+      // 
+      resources.ApplyResources(this.ActionUseSystemColors, "ActionUseSystemColors");
+      this.ActionUseSystemColors.LinkColor = System.Drawing.Color.Blue;
+      this.ActionUseSystemColors.Name = "ActionUseSystemColors";
+      this.ActionUseSystemColors.TabStop = true;
+      this.ActionUseSystemColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseSystemColors_LinkClicked);
+      // 
+      // PanelTopColor
+      // 
+      resources.ApplyResources(this.PanelTopColor, "PanelTopColor");
+      this.PanelTopColor.BackColor = System.Drawing.Color.LemonChiffon;
+      this.PanelTopColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.PanelTopColor.Name = "PanelTopColor";
+      this.PanelTopColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelTopColor_MouseClick);
+      // 
+      // PanelBottomColor
+      // 
+      resources.ApplyResources(this.PanelBottomColor, "PanelBottomColor");
+      this.PanelBottomColor.BackColor = System.Drawing.Color.Honeydew;
+      this.PanelBottomColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.PanelBottomColor.Name = "PanelBottomColor";
+      this.PanelBottomColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelBottomColor_MouseClick);
+      // 
+      // PanelMiddleColor
+      // 
+      resources.ApplyResources(this.PanelMiddleColor, "PanelMiddleColor");
+      this.PanelMiddleColor.BackColor = System.Drawing.Color.AliceBlue;
+      this.PanelMiddleColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.PanelMiddleColor.Name = "PanelMiddleColor";
+      this.PanelMiddleColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelMiddleColor_MouseClick);
+      // 
+      // labelBottomColor
+      // 
+      resources.ApplyResources(this.labelBottomColor, "labelBottomColor");
+      this.labelBottomColor.Name = "labelBottomColor";
+      // 
+      // LabelMiddleColor
+      // 
+      resources.ApplyResources(this.LabelMiddleColor, "LabelMiddleColor");
+      this.LabelMiddleColor.Name = "LabelMiddleColor";
       // 
       // PreferencesForm
       // 
-      this.AcceptButton = this.buttonClose;
+      this.AcceptButton = this.ButtonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.buttonClose;
-      this.Controls.Add(this.actionUsePersonalShabat);
-      this.Controls.Add(this.panel1);
-      this.Controls.Add(gPSLongitudeLabel);
-      this.Controls.Add(this.gPSLongitudeTextBox);
-      this.Controls.Add(gPSLatitudeLabel);
-      this.Controls.Add(this.gPSLatitudeTextBox);
-      this.Controls.Add(this.editFontName);
-      this.Controls.Add(this.labelShabatDay);
-      this.Controls.Add(this.editFontSize);
-      this.Controls.Add(this.labelFontSize);
-      this.Controls.Add(this.panelBackColor);
-      this.Controls.Add(this.labelTextColor);
-      this.Controls.Add(this.editShabatDay);
-      this.Controls.Add(this.labelFontName);
-      this.Controls.Add(this.panelTextColor);
-      this.Controls.Add(this.labelBackColor);
+      this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.GroupBoxText);
+      this.Controls.Add(this.GroupBoxTrayicon);
+      this.Controls.Add(this.BroupBoxShabat);
+      this.Controls.Add(this.GroupBoxGPS);
+      this.Controls.Add(this.PanelButtons);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
@@ -215,31 +322,50 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
-      ((System.ComponentModel.ISupportInitialize)(this.bindingSettings)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.editFontSize)).EndInit();
-      this.panel1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
+      this.PanelButtons.ResumeLayout(false);
+      this.GroupBoxGPS.ResumeLayout(false);
+      this.GroupBoxGPS.PerformLayout();
+      this.GroupBoxText.ResumeLayout(false);
+      this.GroupBoxText.PerformLayout();
+      this.BroupBoxShabat.ResumeLayout(false);
+      this.BroupBoxShabat.PerformLayout();
+      this.GroupBoxTrayicon.ResumeLayout(false);
+      this.GroupBoxTrayicon.PerformLayout();
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
     #endregion
-    private System.Windows.Forms.ColorDialog dialogColor;
-    private System.Windows.Forms.Button buttonClose;
-    private System.Windows.Forms.Label labelShabatDay;
-    private System.Windows.Forms.Label labelFontSize;
-    private System.Windows.Forms.Label labelTextColor;
-    private System.Windows.Forms.Label labelFontName;
-    private System.Windows.Forms.Label labelBackColor;
-    private System.Windows.Forms.BindingSource bindingSettings;
-    private System.Windows.Forms.ComboBox editFontName;
-    private System.Windows.Forms.NumericUpDown editFontSize;
-    private System.Windows.Forms.Panel panelBackColor;
-    private System.Windows.Forms.ComboBox editShabatDay;
-    private System.Windows.Forms.Panel panelTextColor;
-    private System.Windows.Forms.TextBox gPSLatitudeTextBox;
-    private System.Windows.Forms.TextBox gPSLongitudeTextBox;
-    private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.LinkLabel actionUsePersonalShabat;
+    private System.Windows.Forms.ColorDialog DialogColor;
+    private System.Windows.Forms.Button ButtonClose;
+    private System.Windows.Forms.Label LabelShabatDay;
+    private System.Windows.Forms.Label LabelFontSize;
+    private System.Windows.Forms.Label LabelTextColor;
+    private System.Windows.Forms.Label LabelFontName;
+    private System.Windows.Forms.Label LabelBackColor;
+    private System.Windows.Forms.BindingSource BindingSettings;
+    private System.Windows.Forms.ComboBox EditFontName;
+    private System.Windows.Forms.NumericUpDown EditFontSize;
+    private System.Windows.Forms.ComboBox EditShabatDay;
+    private System.Windows.Forms.TextBox GPSLatitudeTextBox;
+    private System.Windows.Forms.TextBox GPSLongitudeTextBox;
+    private System.Windows.Forms.Panel PanelButtons;
+    private System.Windows.Forms.LinkLabel ActionUsePersonalShabat;
+    private System.Windows.Forms.GroupBox GroupBoxGPS;
+    private System.Windows.Forms.GroupBox GroupBoxText;
+    private System.Windows.Forms.GroupBox BroupBoxShabat;
+    private System.Windows.Forms.GroupBox GroupBoxTrayicon;
+    private System.Windows.Forms.Label LabelTopColor;
+    private System.Windows.Forms.Label labelBottomColor;
+    private System.Windows.Forms.Label LabelMiddleColor;
+    private System.Windows.Forms.LinkLabel ActionUseSystemColors;
+    internal System.Windows.Forms.Panel PanelBackColor;
+    internal System.Windows.Forms.Panel PanelTextColor;
+    internal System.Windows.Forms.Panel PanelTopColor;
+    internal System.Windows.Forms.Panel PanelBottomColor;
+    internal System.Windows.Forms.Panel PanelMiddleColor;
+    private System.Windows.Forms.LinkLabel ActionUseDefaultColors;
   }
 }

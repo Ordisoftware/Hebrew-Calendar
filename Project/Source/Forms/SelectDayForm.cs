@@ -28,7 +28,12 @@ namespace Ordisoftware.HebrewCalendar
       Icon = MainForm.Instance.Icon;
     }
 
-    private void buttonOk_Click(object sender, EventArgs e)
+    private void SelectDayForm_Shown(object sender, EventArgs e)
+    {
+      TopMost = MainForm.Instance.TopMost;
+    }
+
+    private void ButtonOk_Click(object sender, EventArgs e)
     {
       DialogResult = DialogResult.OK;
     }

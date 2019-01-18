@@ -118,44 +118,44 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="editYearLast.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditYearLast.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 44</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="labelYearLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelYearLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="labelYearLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 46</value>
+  <data name="LabelYearLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 46</value>
   </data>
-  <data name="labelYearLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
+  <data name="LabelYearLast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
   </data>
-  <data name="labelYearLast.Text" xml:space="preserve">
-    <value>Dernière année</value>
+  <data name="LabelYearLast.Text" xml:space="preserve">
+    <value>Année de fin</value>
   </data>
-  <data name="editYearFirst.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditYearFirst.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 19</value>
   </data>
-  <data name="labelYearFirst.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelYearFirst.Location" type="System.Drawing.Point, System.Drawing">
     <value>47, 21</value>
   </data>
-  <data name="labelYearFirst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
+  <data name="LabelYearFirst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
   </data>
-  <data name="labelYearFirst.Text" xml:space="preserve">
-    <value>Première année</value>
+  <data name="LabelYearFirst.Text" xml:space="preserve">
+    <value>Année de début</value>
   </data>
-  <data name="buttonOk.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ButtonOk.Location" type="System.Drawing.Point, System.Drawing">
     <value>53, 2</value>
   </data>
-  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ButtonCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>134, 2</value>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
+  <data name="ButtonCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 28</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">

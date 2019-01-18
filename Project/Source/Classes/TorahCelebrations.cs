@@ -74,13 +74,6 @@ namespace Ordisoftware.HebrewCalendar
           }
         },
         {
-          SeasonChangeType.AutumnEquinox, new Dictionary<string, string>
-          {
-            { "en", "Autumn equinox" },
-            { "fr", "Equinoxe d'automne" }
-          }
-        },
-        {
           SeasonChangeType.SpringEquinox, new Dictionary<string, string>
           {
             { "en", "Spring equinox" },
@@ -92,6 +85,13 @@ namespace Ordisoftware.HebrewCalendar
           {
             { "en", "Summer solstice" },
             { "fr", "Solstice d'été" }
+          }
+        },
+        {
+          SeasonChangeType.AutumnEquinox, new Dictionary<string, string>
+          {
+            { "en", "Autumn equinox" },
+            { "fr", "Equinoxe d'automne" }
           }
         },
         {

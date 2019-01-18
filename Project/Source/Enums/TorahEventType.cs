@@ -23,6 +23,7 @@ namespace Ordisoftware.HebrewCalendar
   /// </summary>
   public enum TorahEventType
   {
+
     /// <summary>
     /// The no event.
     /// </summary>

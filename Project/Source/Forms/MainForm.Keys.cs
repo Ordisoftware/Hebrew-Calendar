@@ -32,38 +32,41 @@ namespace Ordisoftware.HebrewCalendar
       switch ( keyData )
       {
         case Keys.Control | Keys.S:
-          actionSaveReport.PerformClick();
+          ActionSaveReport.PerformClick();
           return true;
-        case Keys.Control | Keys.E:
-          actionExportCSV.PerformClick();
+        case Keys.Alt | Keys.S:
+          ActionExportCSV.PerformClick();
           return true;
         case Keys.Control | Keys.C:
-          actionCopyReportToClipboard.PerformClick();
+          ActionCopyReportToClipboard.PerformClick();
           return true;
         case Keys.Control | Keys.D:
-          actionSearchDay.PerformClick();
+          ActionSearchDay.PerformClick();
+          return true;
+        case Keys.Control | Keys.N:
+          ActionNavigate.PerformClick();
           return true;
         case Keys.Escape:
           if ( IsGenerating )
           {
-            if ( DisplayManager.QueryYesNo(LocalizerHelper.StopGenerationText.GetLang()) )
+            if ( DisplayManager.QueryYesNo(Localizer.StopGenerationText.GetLang()) )
               IsGenerating = false;
           }
           else
-          if ( editESCtoExit.Checked )
+          if ( EditESCtoExit.Checked )
             Close();
           return true;
         case Keys.F1:
-          actionHelp.PerformClick();
+          ActionHelp.PerformClick();
           return true;
         case Keys.F2:
-          actionGenerate.PerformClick();
+          ActionGenerate.PerformClick();
           return true;
         case Keys.F8:
-          actionPreferences.PerformClick();
+          SctionPreferences.PerformClick();
           return true;
         case Keys.F12:
-          actionAbout.PerformClick();
+          ActionAbout.PerformClick();
           return true;
       }
       return base.ProcessCmdKey(ref msg, keyData);

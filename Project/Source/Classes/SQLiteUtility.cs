@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// Get a date like "2019.01.01".
+    /// Get a date like "Year.Month.Day".
     /// </summary>
     /// <param name="date">The date.</param>
     static public string GetDate(DateTime date)
@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Get a date like "2019.01.01".
+    /// Get a date like "Year.Month.Day".
     /// </summary>
     /// <param name="year">The year.</param>
     /// <param name="month">The month.</param>
@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Get a date from a string like "2019.01.01".
+    /// Get a date from a string like "Year.Month.Day".
     /// </summary>
     /// <param name="date">The date.</param>
     static public DateTime GetDate(string date)
@@ -99,7 +99,7 @@ namespace Ordisoftware.HebrewCalendar
           cmdCreateTable.ExecuteNonQuery();
         }
         cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                            "WHERE type = 'table' AND name = 'Report'", connection);
+                                        "WHERE type = 'table' AND name = 'Report'", connection);
         result = (int)cmdCheckTable.ExecuteScalar();
         if ( result == 0 )
         {

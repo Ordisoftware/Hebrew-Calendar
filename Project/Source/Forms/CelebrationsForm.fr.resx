@@ -117,47 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelEventTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 170</value>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Fermer</value>
   </data>
-  <data name="labelEventTorah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 16</value>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Évènement</value>
   </data>
-  <data name="labelEventTorah.Text" xml:space="preserve">
-    <value>Torah :</value>
-  </data>
-  <data name="labelEventSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 150</value>
-  </data>
-  <data name="labelEventSeason.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 16</value>
-  </data>
-  <data name="labelEventSeason.Text" xml:space="preserve">
-    <value>Saison :</value>
-  </data>
-  <data name="labelMoonset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 16</value>
-  </data>
-  <data name="labelMoonset.Text" xml:space="preserve">
-    <value>Coucher de la lune</value>
-  </data>
-  <data name="labelMoonrise.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 16</value>
-  </data>
-  <data name="labelMoonrise.Text" xml:space="preserve">
-    <value>Lever de la lune</value>
-  </data>
-  <data name="labelSunset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 16</value>
-  </data>
-  <data name="labelSunset.Text" xml:space="preserve">
-    <value>Lever du soleil</value>
-  </data>
-  <data name="labelSunrise.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 16</value>
-  </data>
-  <data name="labelSunrise.Text" xml:space="preserve">
-    <value>Coucher du soleil</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Célébrations à venir</value>
   </data>
 </root>

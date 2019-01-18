@@ -25,7 +25,6 @@ namespace Ordisoftware.HebrewCalendar
 
     private enum EphemerisType { Rise, Set, SummerHour, WinterHour }
 
-    //const int ColumnEventLenght = 40;
     const string SeparatorV = "|";
     const string SeparatorH = "-";
     const string ColumnSepLeft = SeparatorV + " ";

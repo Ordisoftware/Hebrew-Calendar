@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="date">The date.</param>
     /// <returns>
-    /// The ephemerides.
+    /// The ephemeris.
     /// </returns>
     static public Ephemeris GetSunMoonEphemeris(DateTime date)
     {
@@ -81,7 +81,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Get moon phase type.
+    /// Get the moon phase type.
     /// </summary>
     /// <remarks>
     /// Adapted from http://jivebay.com/2008/09/07/calculating-the-moon-phase.
@@ -102,7 +102,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// List of names of the babylonian hebrew months.
+    /// List of the names of the babylonian hebrew months.
     /// </summary>
     static public readonly string[] BabylonianHebrewMonthNames =
     {

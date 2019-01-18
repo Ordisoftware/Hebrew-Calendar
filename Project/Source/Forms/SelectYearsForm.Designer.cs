@@ -29,116 +29,117 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectYearsForm));
-      this.editYearLast = new System.Windows.Forms.NumericUpDown();
-      this.labelYearLast = new System.Windows.Forms.Label();
-      this.editYearFirst = new System.Windows.Forms.NumericUpDown();
-      this.labelYearFirst = new System.Windows.Forms.Label();
-      this.buttonOk = new System.Windows.Forms.Button();
-      this.panel1 = new System.Windows.Forms.Panel();
-      this.buttonCancel = new System.Windows.Forms.Button();
-      ((System.ComponentModel.ISupportInitialize)(this.editYearLast)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.editYearFirst)).BeginInit();
-      this.panel1.SuspendLayout();
+      this.EditYearLast = new System.Windows.Forms.NumericUpDown();
+      this.LabelYearLast = new System.Windows.Forms.Label();
+      this.EditYearFirst = new System.Windows.Forms.NumericUpDown();
+      this.LabelYearFirst = new System.Windows.Forms.Label();
+      this.ButtonOk = new System.Windows.Forms.Button();
+      this.PanelButtons = new System.Windows.Forms.Panel();
+      this.ButtonCancel = new System.Windows.Forms.Button();
+      ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).BeginInit();
+      this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
-      // editYearLast
+      // EditYearLast
       // 
-      resources.ApplyResources(this.editYearLast, "editYearLast");
-      this.editYearLast.Maximum = new decimal(new int[] {
+      resources.ApplyResources(this.EditYearLast, "EditYearLast");
+      this.EditYearLast.Maximum = new decimal(new int[] {
             2100,
             0,
             0,
             0});
-      this.editYearLast.Minimum = new decimal(new int[] {
+      this.EditYearLast.Minimum = new decimal(new int[] {
             1902,
             0,
             0,
             0});
-      this.editYearLast.Name = "editYearLast";
-      this.editYearLast.Value = new decimal(new int[] {
+      this.EditYearLast.Name = "EditYearLast";
+      this.EditYearLast.Value = new decimal(new int[] {
             2017,
             0,
             0,
             0});
       // 
-      // labelYearLast
+      // LabelYearLast
       // 
-      resources.ApplyResources(this.labelYearLast, "labelYearLast");
-      this.labelYearLast.Name = "labelYearLast";
+      resources.ApplyResources(this.LabelYearLast, "LabelYearLast");
+      this.LabelYearLast.Name = "LabelYearLast";
       // 
-      // editYearFirst
+      // EditYearFirst
       // 
-      resources.ApplyResources(this.editYearFirst, "editYearFirst");
-      this.editYearFirst.Maximum = new decimal(new int[] {
+      resources.ApplyResources(this.EditYearFirst, "EditYearFirst");
+      this.EditYearFirst.Maximum = new decimal(new int[] {
             2100,
             0,
             0,
             0});
-      this.editYearFirst.Minimum = new decimal(new int[] {
+      this.EditYearFirst.Minimum = new decimal(new int[] {
             1902,
             0,
             0,
             0});
-      this.editYearFirst.Name = "editYearFirst";
-      this.editYearFirst.Value = new decimal(new int[] {
+      this.EditYearFirst.Name = "EditYearFirst";
+      this.EditYearFirst.Value = new decimal(new int[] {
             2016,
             0,
             0,
             0});
       // 
-      // labelYearFirst
+      // LabelYearFirst
       // 
-      resources.ApplyResources(this.labelYearFirst, "labelYearFirst");
-      this.labelYearFirst.Name = "labelYearFirst";
+      resources.ApplyResources(this.LabelYearFirst, "LabelYearFirst");
+      this.LabelYearFirst.Name = "LabelYearFirst";
       // 
-      // buttonOk
+      // ButtonOk
       // 
-      resources.ApplyResources(this.buttonOk, "buttonOk");
-      this.buttonOk.Name = "buttonOk";
-      this.buttonOk.UseVisualStyleBackColor = true;
-      this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+      resources.ApplyResources(this.ButtonOk, "ButtonOk");
+      this.ButtonOk.Name = "ButtonOk";
+      this.ButtonOk.UseVisualStyleBackColor = true;
+      this.ButtonOk.Click += new System.EventHandler(this.ButtonOk_Click);
       // 
-      // panel1
+      // PanelButtons
       // 
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Controls.Add(this.buttonCancel);
-      this.panel1.Controls.Add(this.buttonOk);
-      this.panel1.Name = "panel1";
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
+      this.PanelButtons.Controls.Add(this.ButtonCancel);
+      this.PanelButtons.Controls.Add(this.ButtonOk);
+      this.PanelButtons.Name = "PanelButtons";
       // 
-      // buttonCancel
+      // ButtonCancel
       // 
-      resources.ApplyResources(this.buttonCancel, "buttonCancel");
-      this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.buttonCancel.Name = "buttonCancel";
+      resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
+      this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ButtonCancel.Name = "ButtonCancel";
       // 
       // SelectYearsForm
       // 
-      this.AcceptButton = this.buttonOk;
+      this.AcceptButton = this.ButtonOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.buttonCancel;
-      this.Controls.Add(this.panel1);
-      this.Controls.Add(this.editYearLast);
-      this.Controls.Add(this.labelYearLast);
-      this.Controls.Add(this.editYearFirst);
-      this.Controls.Add(this.labelYearFirst);
+      this.CancelButton = this.ButtonCancel;
+      this.Controls.Add(this.PanelButtons);
+      this.Controls.Add(this.EditYearLast);
+      this.Controls.Add(this.LabelYearLast);
+      this.Controls.Add(this.EditYearFirst);
+      this.Controls.Add(this.LabelYearFirst);
       this.Name = "SelectYearsForm";
+      this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.SelectYearsRangeForm_Load);
-      ((System.ComponentModel.ISupportInitialize)(this.editYearLast)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.editYearFirst)).EndInit();
-      this.panel1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).EndInit();
+      this.PanelButtons.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
     }
 
     #endregion
-    private System.Windows.Forms.Label labelYearLast;
-    private System.Windows.Forms.Label labelYearFirst;
-    private System.Windows.Forms.Button buttonOk;
-    private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.Button buttonCancel;
-    internal System.Windows.Forms.NumericUpDown editYearLast;
-    internal System.Windows.Forms.NumericUpDown editYearFirst;
+    private System.Windows.Forms.Label LabelYearLast;
+    private System.Windows.Forms.Label LabelYearFirst;
+    private System.Windows.Forms.Button ButtonOk;
+    private System.Windows.Forms.Panel PanelButtons;
+    private System.Windows.Forms.Button ButtonCancel;
+    internal System.Windows.Forms.NumericUpDown EditYearLast;
+    internal System.Windows.Forms.NumericUpDown EditYearFirst;
   }
 }

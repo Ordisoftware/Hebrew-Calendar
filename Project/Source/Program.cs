@@ -23,13 +23,13 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provides the main program.
+  /// Provide the main program.
   /// </summary>
   static class Program
   {
 
     /// <summary>
-    /// Default Settings instance.
+    /// Indicate the default Settings instance.
     /// </summary>
     static public readonly Properties.Settings Settings = Properties.Settings.Default;
 
@@ -53,7 +53,8 @@ namespace Ordisoftware.HebrewCalendar
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(filenameIcon);
-        ShowDayForm.Instance.Icon = MainForm.Instance.Icon;
+        NavigationForm.Instance.Icon = MainForm.Instance.Icon;
+        CelebrationsForm.Instance.Icon = MainForm.Instance.Icon;
         PreferencesForm.Instance.Icon = MainForm.Instance.Icon;
         AboutBox.Instance.Icon = MainForm.Instance.Icon;
         UserDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
@@ -61,7 +62,7 @@ namespace Ordisoftware.HebrewCalendar
                        + Path.DirectorySeparatorChar + AboutBox.Instance.AssemblyTitle
                        + Path.DirectorySeparatorChar;
         Directory.CreateDirectory(UserDataFolder);
-        Application.Run(TrayIconForm.Instance);
+        Application.Run(MainForm.Instance);
       }
       catch ( Exception except )
       {

@@ -48,6 +48,7 @@ namespace Ordisoftware.HebrewCalendar
     /// The winter solstice.
     /// </summary>
     WinterSolstice
+
   }
 
 }

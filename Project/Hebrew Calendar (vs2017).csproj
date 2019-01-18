@@ -40,23 +40,23 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
+    <OutputPath>..\Bin\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Bin\Ordisoftware.HebrewCalendar.xml</DocumentationFile>
+    <DocumentationFile>..\Bin\Debug\Ordisoftware.HebrewCalendar.xml</DocumentationFile>
     <NoWarn>1587, 1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
+    <OutputPath>..\Bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Bin\Ordisoftware.HebrewCalendar.xml</DocumentationFile>
-    <NoWarn>1587</NoWarn>
+    <DocumentationFile>..\Bin\Debug\Ordisoftware.HebrewCalendar.xml</DocumentationFile>
+    <NoWarn>1587, 1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -81,6 +81,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\Forms\CelebrationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\CelebrationsForm.Designer.cs">
+      <DependentUpon>CelebrationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\LunisolarCalendar.cs">
       <DependentUpon>LunisolarCalendar.xsd</DependentUpon>
     </Compile>
@@ -97,11 +103,11 @@
     <Compile Include="Source\Forms\MainForm.GenerateReport.Consts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\ShowDayForm.cs">
+    <Compile Include="Source\Forms\NavigationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\ShowDayForm.Designer.cs">
-      <DependentUpon>ShowDayForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\NavigationForm.Designer.cs">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\SelectDayForm.cs">
       <SubType>Form</SubType>
@@ -121,7 +127,6 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.ManageException.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.QueryBox.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
-    <Compile Include="Dependencies\Core Library\ObjectUtility.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Enums\MoonriseType.cs" />
     <Compile Include="Properties\Settings.cs" />
@@ -164,6 +169,12 @@
     <Compile Include="Source\Enums\TorahEventType.cs" />
     <Compile Include="Source\Enums\MoonPhaseType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Source\Forms\CelebrationsForm.fr.resx">
+      <DependentUpon>CelebrationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\CelebrationsForm.resx">
+      <DependentUpon>CelebrationsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -204,17 +215,11 @@
     <EmbeddedResource Include="Source\Forms\SelectYearsForm.resx">
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\ShowDayForm.fr.resx">
-      <DependentUpon>ShowDayForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\NavigationForm.fr.resx">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\ShowDayForm.resx">
-      <DependentUpon>ShowDayForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\TrayIconForm.fr.resx">
-      <DependentUpon>TrayIconForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\TrayIconForm.resx">
-      <DependentUpon>TrayIconForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\NavigationForm.resx">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
@@ -242,12 +247,6 @@
     </Compile>
     <Compile Include="Source\Classes\AstronomyUtility.cs" />
     <Compile Include="Dependencies\Moonr2cs\Moonr2cs.cs" />
-    <Compile Include="Source\Forms\TrayIconForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\TrayIconForm.Designer.cs">
-      <DependentUpon>TrayIconForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Program.cs" />
     <None Include="Resources\MPL 2.0.rtf" />
   </ItemGroup>

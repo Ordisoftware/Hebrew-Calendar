@@ -41,15 +41,15 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Height = MainForm.MinimumSize.Height;
       MainForm.WindowState = FormWindowState.Normal;
       MainForm.CenterToScreen();
-      MainForm.editScreenNone.Checked = false;
-      MainForm.editScreenTopLeft.Checked = false;
-      MainForm.editScreenTopRight.Checked = false;
-      MainForm.editScreenBottomLeft.Checked = false;
-      MainForm.editScreenBottomRight.Checked = false;
-      MainForm.editScreenCenter.Checked = true;
-      MainForm.editConfirmClosing.Checked = true;
-      MainForm.editESCtoExit.Checked = false;
-      MainForm.editShowTips.Checked = true;
+      MainForm.EditScreenNone.Checked = false;
+      MainForm.EditScreenTopLeft.Checked = false;
+      MainForm.EditScreenTopRight.Checked = false;
+      MainForm.EditScreenBottomLeft.Checked = false;
+      MainForm.EditScreenBottomRight.Checked = false;
+      MainForm.EditScreenCenter.Checked = true;
+      MainForm.EditConfirmClosing.Checked = true;
+      MainForm.EditESCtoExit.Checked = false;
+      MainForm.EditShowTips.Checked = true;
       MainForm.SetView(ViewModeType.Text);
       settings.Store();
     }
@@ -69,17 +69,22 @@ namespace Ordisoftware.HebrewCalendar
         MainForm.Width = settings.MainFormWidth;
       if ( settings.MainFormHeight > MainForm.MinimumSize.Height && settings.MainFormHeight < area.Height )
         MainForm.Height = settings.MainFormHeight;
-      MainForm.editScreenNone.Checked = settings.MainFormPosition == ControlLocation.Loose;
-      MainForm.editScreenTopLeft.Checked = settings.MainFormPosition == ControlLocation.TopLeft;
-      MainForm.editScreenTopRight.Checked = settings.MainFormPosition == ControlLocation.TopRight;
-      MainForm.editScreenBottomLeft.Checked = settings.MainFormPosition == ControlLocation.BottomLeft;
-      MainForm.editScreenBottomRight.Checked = settings.MainFormPosition == ControlLocation.BottomRight;
-      MainForm.editScreenCenter.Checked = settings.MainFormPosition == ControlLocation.Center;
-      MainForm.editScreenPosition_Click(null, null);
+      MainForm.EditScreenNone.Checked = settings.MainFormPosition == ControlLocation.Loose;
+      MainForm.EditScreenTopLeft.Checked = settings.MainFormPosition == ControlLocation.TopLeft;
+      MainForm.EditScreenTopRight.Checked = settings.MainFormPosition == ControlLocation.TopRight;
+      MainForm.EditScreenBottomLeft.Checked = settings.MainFormPosition == ControlLocation.BottomLeft;
+      MainForm.EditScreenBottomRight.Checked = settings.MainFormPosition == ControlLocation.BottomRight;
+      MainForm.EditScreenCenter.Checked = settings.MainFormPosition == ControlLocation.Center;
+      MainForm.EditScreenPosition_Click(null, null);
       MainForm.WindowState = settings.MainFormState;
-      MainForm.editConfirmClosing.Checked = settings.ConfirmClosing;
-      MainForm.editESCtoExit.Checked = settings.ESCtoExit;
-      MainForm.editShowTips.Checked = settings.ShowTips;
+      MainForm.EditConfirmClosing.Checked = settings.ConfirmClosing;
+      MainForm.EditESCtoExit.Checked = settings.ESCtoExit;
+      MainForm.EditShowTips.Checked = settings.ShowTips;
+      PreferencesForm.Instance.PanelTopColor.BackColor = settings.NavigateTopColor;
+      PreferencesForm.Instance.PanelMiddleColor.BackColor = settings.NavigateMiddleColor;
+      PreferencesForm.Instance.PanelBottomColor.BackColor = settings.NavigateBottomColor;
+      PreferencesForm.Instance.PanelTextColor.BackColor = settings.TextColor;
+      PreferencesForm.Instance.PanelBackColor.BackColor = settings.TextBackground;
     }
 
     /// <summary>
@@ -97,15 +102,20 @@ namespace Ordisoftware.HebrewCalendar
         settings.MainFormWidth = MainForm.Width;
         settings.MainFormHeight = MainForm.Height;
       }
-      if ( MainForm.editScreenNone.Checked ) settings.MainFormPosition = ControlLocation.Loose;
-      if ( MainForm.editScreenTopLeft.Checked ) settings.MainFormPosition = ControlLocation.TopLeft;
-      if ( MainForm.editScreenTopRight.Checked ) settings.MainFormPosition = ControlLocation.TopRight;
-      if ( MainForm.editScreenBottomLeft.Checked ) settings.MainFormPosition = ControlLocation.BottomLeft;
-      if ( MainForm.editScreenBottomRight.Checked ) settings.MainFormPosition = ControlLocation.BottomRight;
-      if ( MainForm.editScreenCenter.Checked ) settings.MainFormPosition = ControlLocation.Center;
-      settings.ConfirmClosing = MainForm.editConfirmClosing.Checked;
-      settings.ESCtoExit = MainForm.editESCtoExit.Checked;
-      settings.ShowTips = MainForm.editShowTips.Checked;
+      if ( MainForm.EditScreenNone.Checked ) settings.MainFormPosition = ControlLocation.Loose;
+      if ( MainForm.EditScreenTopLeft.Checked ) settings.MainFormPosition = ControlLocation.TopLeft;
+      if ( MainForm.EditScreenTopRight.Checked ) settings.MainFormPosition = ControlLocation.TopRight;
+      if ( MainForm.EditScreenBottomLeft.Checked ) settings.MainFormPosition = ControlLocation.BottomLeft;
+      if ( MainForm.EditScreenBottomRight.Checked ) settings.MainFormPosition = ControlLocation.BottomRight;
+      if ( MainForm.EditScreenCenter.Checked ) settings.MainFormPosition = ControlLocation.Center;
+      settings.ConfirmClosing = MainForm.EditConfirmClosing.Checked;
+      settings.ESCtoExit = MainForm.EditESCtoExit.Checked;
+      settings.ShowTips = MainForm.EditShowTips.Checked;
+      settings.NavigateTopColor = PreferencesForm.Instance.PanelTopColor.BackColor;
+      settings.NavigateMiddleColor = PreferencesForm.Instance.PanelMiddleColor.BackColor;
+      settings.NavigateBottomColor = PreferencesForm.Instance.PanelBottomColor.BackColor;
+      settings.TextColor = PreferencesForm.Instance.PanelTextColor.BackColor;
+      settings.TextBackground = PreferencesForm.Instance.PanelBackColor.BackColor;
       settings.Save();
     }
 

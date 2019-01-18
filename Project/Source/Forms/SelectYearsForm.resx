@@ -117,203 +117,203 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;buttonOk.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditYearFirst.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ButtonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;ButtonCancel.Name" xml:space="preserve">
+    <value>ButtonCancel</value>
+  </data>
+  <data name="&gt;&gt;ButtonOk.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <data name="&gt;&gt;labelYearLast.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="editYearLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="editYearFirst.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+  <data name="LabelYearFirst.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 2</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ButtonOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
   </data>
-  <data name="&gt;&gt;editYearLast.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;ButtonOk.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
   </data>
-  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="editYearFirst.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditYearLast.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SelectYearsForm</value>
+  <data name="ButtonCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
+  <data name="&gt;&gt;ButtonCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;editYearFirst.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;ButtonOk.Name" xml:space="preserve">
+    <value>ButtonOk</value>
   </data>
-  <data name="&gt;&gt;labelYearFirst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="EditYearFirst.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
   </data>
-  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+  <data name="&gt;&gt;ButtonCancel.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
   </data>
-  <data name="editYearLast.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 28</value>
-  </data>
-  <data name="labelYearFirst.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelYearFirst.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <data name="labelYearLast.TabIndex" type="System.Int32, mscorlib">
-    <value>48</value>
+  <data name="LabelYearLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 46</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
     <value>52</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ButtonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
-  <data name="&gt;&gt;editYearFirst.Name" xml:space="preserve">
-    <value>editYearFirst</value>
+  <data name="&gt;&gt;LabelYearFirst.Name" xml:space="preserve">
+    <value>LabelYearFirst</value>
   </data>
-  <data name="labelYearFirst.Text" xml:space="preserve">
-    <value>First Year</value>
+  <data name="LabelYearLast.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
+  <data name="&gt;&gt;EditYearLast.Name" xml:space="preserve">
+    <value>EditYearLast</value>
   </data>
-  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
-    <value>buttonCancel</value>
+  <data name="&gt;&gt;LabelYearLast.Name" xml:space="preserve">
+    <value>LabelYearLast</value>
   </data>
-  <data name="&gt;&gt;labelYearLast.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="LabelYearLast.Text" xml:space="preserve">
+    <value>Last Year</value>
   </data>
-  <data name="&gt;&gt;labelYearFirst.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="labelYearFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 21</value>
-  </data>
-  <data name="&gt;&gt;labelYearLast.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Name" xml:space="preserve">
-    <value>buttonOk</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="&gt;&gt;editYearFirst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="editYearLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 44</value>
-  </data>
-  <data name="editYearFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 19</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;editYearLast.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;labelYearFirst.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditYearLast.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="labelYearLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 46</value>
+  <data name="ButtonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 2</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;LabelYearLast.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="&gt;&gt;EditYearFirst.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ButtonOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ButtonOk.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditYearLast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LabelYearFirst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="LabelYearFirst.Text" xml:space="preserve">
+    <value>First Year</value>
+  </data>
+  <data name="&gt;&gt;ButtonCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditYearFirst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="&gt;&gt;LabelYearFirst.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 78</value>
+  </data>
+  <data name="&gt;&gt;EditYearFirst.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LabelYearLast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ButtonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="&gt;&gt;LabelYearFirst.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LabelYearFirst.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 21</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;editYearLast.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="EditYearLast.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
   </data>
-  <data name="labelYearFirst.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="ButtonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Select years</value>
   </data>
-  <data name="labelYearLast.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="LabelYearLast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
   </data>
-  <data name="labelYearLast.Text" xml:space="preserve">
-    <value>Last Year</value>
+  <data name="ButtonOk.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelYearLast.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;editYearFirst.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 78</value>
+  <data name="&gt;&gt;EditYearLast.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="buttonOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
+  <data name="LabelYearLast.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
   </data>
-  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;LabelYearFirst.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="buttonOk.Text" xml:space="preserve">
-    <value>Ok</value>
-  </data>
-  <data name="labelYearLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
+  <data name="EditYearFirst.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 19</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>181, 116</value>
   </data>
-  <data name="buttonOk.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
+  <data name="ButtonOk.Text" xml:space="preserve">
+    <value>Ok</value>
   </data>
-  <data name="&gt;&gt;labelYearLast.Name" xml:space="preserve">
-    <value>labelYearLast</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SelectYearsForm</value>
   </data>
-  <data name="labelYearFirst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 13</value>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;labelYearFirst.Name" xml:space="preserve">
-    <value>labelYearFirst</value>
+  <data name="&gt;&gt;EditYearFirst.Name" xml:space="preserve">
+    <value>EditYearFirst</value>
   </data>
-  <data name="&gt;&gt;editYearLast.Name" xml:space="preserve">
-    <value>editYearLast</value>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 28</value>
+  </data>
+  <data name="EditYearLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 44</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

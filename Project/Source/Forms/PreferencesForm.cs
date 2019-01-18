@@ -17,7 +17,6 @@ using System;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -48,9 +47,9 @@ namespace Ordisoftware.HebrewCalendar
       Instance = new PreferencesForm();
     }
 
-    public int OldShabatDay;
-    public float OldLatitude;
-    public float OldLongitude;
+    public int OldShabatDay { get; private set; }
+    public float OldLatitude { get; private set; }
+    public float OldLongitude { get; private set; }
 
     /// <summary>
     /// Default constructor.
@@ -60,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
       InitializeComponent();
       LoadFonts();
       LoadDays();
-      bindingSettings.DataSource = Program.Settings;
+      BindingSettings.DataSource = Program.Settings;
   }
 
   /// <summary>
@@ -83,66 +82,135 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      Program.Settings.ShabatDay = (int)( (DayOfWeekItem)editShabatDay.SelectedItem ).Day;
+      Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
       Program.Settings.Save();
     }
 
     /// <summary>
-    /// Event handler. Called by editFontName and editFontSize for changed events.
+    /// Event handler. Called by ActionUsePersonalShabat for click event.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void editFont_Changed(object sender, EventArgs e)
+    private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      DateTime date = DateTime.Now;
+      var form = new SelectDayForm();
+      form.Text = Localizer.SelectBirthdayText.GetLang();
+      if ( form.ShowDialog() == DialogResult.Cancel ) return;
+      date = form.MonthCalendar.SelectionStart;
+      Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
+      foreach ( DayOfWeekItem item in EditShabatDay.Items )
+        if ( (DayOfWeek)Program.Settings.ShabatDay == item.Day )
+          EditShabatDay.SelectedItem = item;
+    }
+
+    /// <summary>
+    /// Event handler. Called by EditFontName and editFontSize for changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void EitFontName_Changed(object sender, EventArgs e)
     {
       var control = sender as Control;
       if ( control == null ) return;
-      control.DataBindings.WriteValues();
+      foreach ( Binding binding in control.DataBindings )
+        binding.WriteValue();
       MainForm.UpdateTextCalendar();
     }
 
     /// <summary>
-    /// Event handler. Called by panelBackColor for click events.
+    /// Event handler. Called by PanelBackColor for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void panelBackColor_Click(object sender, EventArgs e)
+    private void PanelBackColor_Click(object sender, EventArgs e)
     {
-      dialogColor.Color = panelBackColor.BackColor;
-      if ( dialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      panelBackColor.BackColor = dialogColor.Color;
-      MainForm.calendarText.BackColor = dialogColor.Color;
+      DialogColor.Color = PanelBackColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelBackColor.BackColor = DialogColor.Color;
+      MainForm.CalendarText.BackColor = DialogColor.Color;
     }
 
     /// <summary>
-    /// Event handler. Called by panelTextColor for click events.
+    /// Event handler. Called by PanelTextColor for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void panelTextColor_Click(object sender, EventArgs e)
+    private void PanelTextColor_Click(object sender, EventArgs e)
     {
-      dialogColor.Color = panelTextColor.BackColor;
-      if ( dialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      panelTextColor.BackColor = dialogColor.Color;
-      MainForm.calendarText.ForeColor = dialogColor.Color;
+      DialogColor.Color = PanelTextColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelTextColor.BackColor = DialogColor.Color;
+      MainForm.CalendarText.ForeColor = DialogColor.Color;
     }
 
     /// <summary>
-    /// Event handler. Called by actionUsePersonalShabat for click event.
+    /// Event handler. Called by PanelTopColor for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void actionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void PanelTopColor_MouseClick(object sender, MouseEventArgs e)
     {
-      DateTime date = DateTime.Now;
-      var form = new SelectDayForm();
-      form.Text = "Select birthday";
-      form.ShowDialog();
-      date = form.monthCalendar.SelectionStart;
-      Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
-      foreach ( DayOfWeekItem item in editShabatDay.Items)
-      {
-        if ( (DayOfWeek)Program.Settings.ShabatDay == item.Day ) editShabatDay.SelectedItem = item;
-      }
+      DialogColor.Color = PanelTopColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelTopColor.BackColor = DialogColor.Color;
+      NavigationForm.Instance.PanelTop.BackColor = PanelTopColor.BackColor;
+    }
+
+    /// <summary>
+    /// Event handler. Called by PanelMiddleColor for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PanelMiddleColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = PanelMiddleColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelMiddleColor.BackColor = DialogColor.Color;
+      NavigationForm.Instance.PanelMiddle.BackColor = PanelMiddleColor.BackColor;
+    }
+
+    /// <summary>
+    /// Event handler. Called by PanelBottomColor for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PanelBottomColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = PanelBottomColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelBottomColor.BackColor = DialogColor.Color;
+      NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionUseSystemColors for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      PanelTopColor.BackColor = SystemColors.Control;
+      PanelMiddleColor.BackColor = SystemColors.Control;
+      PanelBottomColor.BackColor = SystemColors.Control;
+      NavigationForm.Instance.PanelTop.BackColor = PanelTopColor.BackColor;
+      NavigationForm.Instance.PanelMiddle.BackColor = PanelMiddleColor.BackColor;
+      NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionUseDefaultColors for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionUseDefaultColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      PanelTopColor.BackColor = Color.LemonChiffon;
+      PanelMiddleColor.BackColor = Color.AliceBlue;
+      PanelBottomColor.BackColor = Color.Honeydew;
+      NavigationForm.Instance.PanelTop.BackColor = PanelTopColor.BackColor;
+      NavigationForm.Instance.PanelMiddle.BackColor = PanelMiddleColor.BackColor;
+      NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
     }
 
     /// <summary>
@@ -152,9 +220,9 @@ namespace Ordisoftware.HebrewCalendar
     {
       foreach ( DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)) )
       {
-        var item = new DayOfWeekItem() { Text = LocalizerHelper.DayOfWeekText.GetLang(day), Day = day };
-        editShabatDay.Items.Add(item);
-        if ( (DayOfWeek)Program.Settings.ShabatDay == day ) editShabatDay.SelectedItem = item;
+        var item = new DayOfWeekItem() { Text = Localizer.DayOfWeekText.GetLang(day), Day = day };
+        EditShabatDay.Items.Add(item);
+        if ( (DayOfWeek)Program.Settings.ShabatDay == day ) EditShabatDay.SelectedItem = item;
       }
     }
 
@@ -166,10 +234,10 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private void LoadFonts()
     {
-      editFontName.Size = new Size(150, editFontName.Size.Height);
+      EditFontName.Size = new Size(150, EditFontName.Size.Height);
       foreach ( var item in new InstalledFontCollection().Families )
         if ( item.Name == "Bitstream Vera Sans Mono" || item.Name == "Droid Sans Mono" )
-          editFontName.Items.Add(item.Name);
+          EditFontName.Items.Add(item.Name);
         else
         if ( item.IsStyleAvailable(FontStyle.Regular) && !item.Name.StartsWith("Webdings") )
           using ( var font = new Font(item, 10) )
@@ -177,7 +245,7 @@ namespace Ordisoftware.HebrewCalendar
             float delta = TextRenderer.MeasureText("|" + MainForm.Instance.MoonNewText + "ABCDE", font).Width
                         - TextRenderer.MeasureText("|" + " abcde", font).Width;
             if ( Math.Abs(delta) < float.Epsilon * 2 )
-              editFontName.Items.Add(item.Name);
+              EditFontName.Items.Add(item.Name);
           }
     }
 

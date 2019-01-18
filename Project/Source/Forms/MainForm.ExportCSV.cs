@@ -26,7 +26,20 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private enum CSVFieldType { Date, IsNewMoon, IsFullMoon, Month, Day, Sunrise, Sunset, Moonrise, Moonset, Events }
+    private enum CSVFieldType
+    {
+      Date,
+      IsNewMoon,
+      IsFullMoon,
+      Month,
+      Day,
+      Sunrise,
+      Sunset,
+      Moonrise,
+      Moonset,
+      Season,
+      Event
+    }
 
     private const string CSVSeparator = ",";
 
@@ -60,13 +73,13 @@ namespace Ordisoftware.HebrewCalendar
       var content = new StringBuilder();
       content.AppendLine(headerTxt);
       int progress = 0;
-      int count = lunisolarCalendar.LunisolarDays.Count;
+      int count = LunisolarCalendar.LunisolarDays.Count;
       if ( count == 0 ) return;
-      var lastyear = SQLiteUtility.GetDate(lunisolarCalendar.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
-      foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in lunisolarCalendar.LunisolarDays.Rows )
+      var lastyear = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+      foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
       {
         var dayDate = SQLiteUtility.GetDate(day.Date);
-        if ( !UpdateProgress(progress++, count, LocalizerHelper.ProgressGenerateResultText.GetLang()) ) return;
+        if ( !UpdateProgress(progress++, count, Localizer.ProgressGenerateReportText.GetLang()) ) return;
         if ( day.LunarMonth == 0 ) continue;
         if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
         content.Append(day.Date + CSVSeparator);
@@ -78,15 +91,13 @@ namespace Ordisoftware.HebrewCalendar
         content.Append(day.Sunset + CSVSeparator);
         content.Append(day.Moonrise + CSVSeparator);
         content.Append(day.Moonset + CSVSeparator);
-        string strDesc = "";
-        string s1 = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)day.SeasonChange);
-        string s2 = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
-        strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
-        content.AppendLine(strDesc);
+        string strSeason = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)day.SeasonChange);
+        string strEvent = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
+        content.Append(strSeason + CSVSeparator);
+        content.AppendLine(strEvent);
       }
-      if ( saveCSVDialog.ShowDialog() != DialogResult.OK ) return;
-      File.WriteAllText(saveCSVDialog.FileName, content.ToString());
-
+      if ( SaveCSVDialog.ShowDialog() == DialogResult.OK )
+        File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
     }
 
   }
