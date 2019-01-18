@@ -41,61 +41,67 @@ namespace Ordisoftware.HebrewCalendar
       get { return _Date; }
       set
       {
-        string strText = value.ToString();
-        strText = strText.Remove(strText.Length - 3, 3);
-        string strDate = SQLiteUtility.GetDate(value.Year, value.Month, value.Day);
-        var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
-                    where day.Date == strDate
-                    select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
-        LabelDate.Text = value.ToLongDateString();
-        string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[row.LunarMonth];
-        LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
-        LabelLunarDayValue.Text = "Day #" + row.LunarDay.ToString();
-        LabelSunriseValue.Text = row.Sunrise.ToString();
-        LabelSunsetValue.Text = row.Sunset.ToString();
-        LabelMoonriseValue.Text = row.Moonrise.ToString();
-        LabelMoonsetValue.Text = row.Moonset.ToString();
-        LabelEventSeasonValue.Text = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)row.SeasonChange);
-        if ( LabelEventSeasonValue.Text == "" ) LabelEventSeasonValue.Text = "-";
-        LabelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents);
-        if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
-        var rowNext = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
-                        where SQLiteUtility.GetDate(day.Date) > value && day.TorahEvents > 0
-                        select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
-        if ( rowNext != null )
-        {
-          LabelTorahNextValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)rowNext.TorahEvents);
-          LabelTorahNextDateValue.Text = SQLiteUtility.GetDate(rowNext.Date).ToLongDateString();
-        }
-        else
-        {
-          LabelTorahNextValue.Text = "-";
-          LabelTorahNextDateValue.Text = "";
-        }
-        var image = MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
-        PictureMoon.Image = ResizeImage(image, 100, 100);
-        if ( (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
-        {
-          LabelMoonrise.Top = 125;
-          LabelMoonriseValue.Top = 125;
-          LabelMoonset.Top = 105;
-          LabelMoonsetValue.Top = 105;
-        }
-        else
-        {
-          LabelMoonrise.Top = 105;
-          LabelMoonriseValue.Top = 105;
-          LabelMoonset.Top = 125;
-          LabelMoonsetValue.Top = 125;
-        }
-        _Date = value;
-        MainForm.Instance.GoToDate(value);
         try
         {
-          ActiveControl = LabelDate;
+          string strText = value.ToString();
+          strText = strText.Remove(strText.Length - 3, 3);
+          string strDate = SQLiteUtility.GetDate(value.Year, value.Month, value.Day);
+          var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+                      where day.Date == strDate
+                      select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
+          LabelDate.Text = value.ToLongDateString();
+          string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[row.LunarMonth];
+          LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
+          LabelLunarDayValue.Text = "Day #" + row.LunarDay.ToString();
+          LabelSunriseValue.Text = row.Sunrise.ToString();
+          LabelSunsetValue.Text = row.Sunset.ToString();
+          LabelMoonriseValue.Text = row.Moonrise.ToString();
+          LabelMoonsetValue.Text = row.Moonset.ToString();
+          LabelEventSeasonValue.Text = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)row.SeasonChange);
+          if ( LabelEventSeasonValue.Text == "" ) LabelEventSeasonValue.Text = "-";
+          LabelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents);
+          if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
+          var rowNext = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+                          where SQLiteUtility.GetDate(day.Date) > value && day.TorahEvents > 0
+                          select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
+          if ( rowNext != null )
+          {
+            LabelTorahNextValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)rowNext.TorahEvents);
+            LabelTorahNextDateValue.Text = SQLiteUtility.GetDate(rowNext.Date).ToLongDateString();
+          }
+          else
+          {
+            LabelTorahNextValue.Text = "-";
+            LabelTorahNextDateValue.Text = "";
+          }
+          var image = MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
+          PictureMoon.Image = ResizeImage(image, 100, 100);
+          if ( (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
+          {
+            LabelMoonrise.Top = 125;
+            LabelMoonriseValue.Top = 125;
+            LabelMoonset.Top = 105;
+            LabelMoonsetValue.Top = 105;
+          }
+          else
+          {
+            LabelMoonrise.Top = 105;
+            LabelMoonriseValue.Top = 105;
+            LabelMoonset.Top = 125;
+            LabelMoonsetValue.Top = 125;
+          }
+          _Date = value;
+          MainForm.Instance.GoToDate(value);
         }
-        catch
+        finally
         {
+          try
+          {
+            ActiveControl = LabelDate;
+          }
+          catch
+          {
+          }
         }
       }
     }
@@ -135,38 +141,20 @@ namespace Ordisoftware.HebrewCalendar
 
     private void buttonSelectDay_Click(object sender, EventArgs e)
     {
-      try
-      {
-        var form = new SelectDayForm();
-        form.TopMost = true;
-        if ( form.ShowDialog() == DialogResult.OK )
-          Date = form.MonthCalendar.SelectionStart;
-      }
-      catch
-      {
-      }
+      var form = new SelectDayForm();
+      form.TopMost = true;
+      if ( form.ShowDialog() == DialogResult.OK )
+        Date = form.MonthCalendar.SelectionStart;
     }
 
     private void buttonPreviousDay_Click(object sender, EventArgs e)
     {
-      try
-      {
-        Date = _Date.AddDays(-1);
-      }
-      catch
-      {
-      }
+      Date = _Date.AddDays(-1);
     }
 
     private void buttonNextDay_Click(object sender, EventArgs e)
     {
-      try
-      {
-        Date = _Date.AddDays(1);
-      }
-      catch
-      {
-      }
+      Date = _Date.AddDays(1);
     }
 
     /// <summary>

@@ -70,6 +70,7 @@
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.MonthCalendar);
       this.Name = "SelectDayForm";
+      this.ShowInTaskbar = false;
       this.Shown += new System.EventHandler(this.SelectDayForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.ResumeLayout(false);

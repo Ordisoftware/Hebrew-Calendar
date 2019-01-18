@@ -123,6 +123,7 @@
       this.Controls.Add(this.EditYearFirst);
       this.Controls.Add(this.LabelYearFirst);
       this.Name = "SelectYearsForm";
+      this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.SelectYearsRangeForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).EndInit();

@@ -386,7 +386,6 @@ namespace Ordisoftware.HebrewCalendar
         if ( form.ShowDialog() != DialogResult.OK ) return;
         date = form.MonthCalendar.SelectionStart;
       }
-      GoToDate(date);
       NavigationForm.Instance.Date = date;
     }
 
@@ -417,15 +416,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
-      try
-      {
-        NavigationForm.Instance.Date = DateTime.Now;
-        NavigationForm.Instance.Visible = true;
-        NavigationForm.Instance.BringToFront();
-      }
-      catch
-      {
-      }
+      NavigationForm.Instance.Visible = true;
+      NavigationForm.Instance.BringToFront();
+      NavigationForm.Instance.Date = DateTime.Now;
     }
 
     /// <summary>
