@@ -10,7 +10,7 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 ## Functionalities
 
-- Generate a calendar.
+- Generate a calendar with sun and moon rises and sets.
 - Create a tabular text report.
 - Search for a day in the database.
 - Save the report to a text file.
@@ -23,15 +23,21 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 ## Requirements
 
 - Windows Vista x32/x64 or superior
+- Screen 1024x768 or superior
 - Framework .NET 3.5 or superior
 - [SQLite ODBC Driver](http://www.ch-werner.de/sqliteodbc/)
-- Screen 1024x768 or superior
 
 ## Screenshots
 
-![Main Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-main-700x480.jpg)
+![Main Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-app-768x527.png)
 
-![Trayicon Popup Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-popup-320x305.jpg)
+![Trayicon Celebration Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-celebrations.png)
+
+![Trayicon Navigation Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-navigation.png)
+
+## Video
+
+[![Video](https://img.youtube.com/vi/u9LD-0u3wdE/0.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
 
 ## Frequently asked questions
 
@@ -42,9 +48,11 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 #### What to do in case of ODBC datasource connection error?
 
-The setup tries to register an ODBC dsn to the registry but in case of problem run "C:\Program Files\Ordisoftware\Hebrew Calendar\Register ODBC.reg" or open the ODBC datasource manager (Admin tools in Windows' Control panel) and create a user datasource named "Hebrew-calendar" for "SQLite 3 ODBC Driver" with "Database Name" sets to:
+The setup tries to register an ODBC DSN to the registry but in case of problem run "C:\Program Files\Ordisoftware\Hebrew Calendar\Register ODBC.reg" or open the ODBC datasource manager (Admin tools in Windows' Control panel) and create a user datasource named "Hebrew-calendar" for "SQLite 3 ODBC Driver" with "Database Name" sets to:
 
 "%USERPROFILE%\AppData\Roaming\Ordisoftware\Hebrew Calendar\Hebrew-calendar.sqlite"
+
+Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 #### How to get latitude and longitude?
 
@@ -52,9 +60,16 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 
 ## Changelog
 
+#### 2019.01.19 - Version 1.2
+
+- Add celebrations window.
+- Improve navigation window.
+- Improve preferences window.
+- Some bug fixes.
+
 #### 2019.01.17 - Version 1.1
 
-- Add a Report table to not generate it at every startup.
+- Report is no more generated at every startup.
 
 #### 2019.01.14 - Version 1.0
 
