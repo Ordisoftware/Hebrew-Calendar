@@ -45,8 +45,8 @@ namespace Ordisoftware.HebrewCalendar
         strText = strText.Remove(strText.Length - 3, 3);
         string strDate = SQLiteUtility.GetDate(value.Year, value.Month, value.Day);
         var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
-                     where day.Date == strDate
-                     select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
+                    where day.Date == strDate
+                    select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
         LabelDate.Text = value.ToLongDateString();
         string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[row.LunarMonth];
         LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();

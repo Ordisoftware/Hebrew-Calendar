@@ -58,7 +58,7 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 
 ## Changelog
 
-#### 2019.01.__ - Version 1.2
+#### 2019.01.19 - Version 1.2
 
 - Add celebrations window.
 - Improve navigation window.

@@ -100,7 +100,13 @@ namespace Ordisoftware.HebrewCalendar
         SetView(Program.Settings.CurrentView, true);
         var row = LunisolarCalendar.Report.FirstOrDefault();
         CalendarText.Text = row == null ? "" : row.Content;
-        ActionSearchDay_Click(null, null);
+        try
+        {
+          ActionSearchDay_Click(null, null);
+        }
+        catch
+        {
+        }
       }
       catch ( Exception ex )
       {
