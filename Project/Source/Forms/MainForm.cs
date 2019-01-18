@@ -27,14 +27,14 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// The application's main form.
+  /// Provide application's main form.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class MainForm : Form
   {
 
     /// <summary>
-    /// Filename of the help file.
+    /// INdicate filename of the help file.
     /// </summary>
     static public readonly string HelpFilename = ".." + Path.DirectorySeparatorChar
                                                + "Help" + Path.DirectorySeparatorChar
@@ -63,7 +63,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Default constructor.
     /// </summary>
-    public MainForm()
+    private MainForm()
     {
       InitializeComponent();
       Text = DisplayManager.Title;
@@ -142,16 +142,6 @@ namespace Ordisoftware.HebrewCalendar
         e.Cancel = true;
         TrayIconForm.Instance.MenuShowHide.PerformClick();
       }
-    }
-
-    /// <summary>
-    /// Event handler. Called by MainForm for form closed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Form closed event information.</param>
-    private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-    {
-      //Calendar.Dispose();
     }
 
     /// <summary>
@@ -277,9 +267,9 @@ namespace Ordisoftware.HebrewCalendar
           process.StartInfo.FileName = HelpFilename;
           process.Start();
         }
-        catch ( Exception except )
+        catch ( Exception ex )
         {
-          DisplayManager.ShowError(except.Message);
+          DisplayManager.ShowError(ex.Message);
         }
     }
 
@@ -360,8 +350,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionSaveReport_Click(object sender, EventArgs e)
     {
-      if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
-      File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
+      if ( SaveFileDialog.ShowDialog() == DialogResult.OK )
+        File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
     }
 
     /// <summary>
@@ -394,6 +384,10 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.Date = date;
     }
 
+    /// <summary>
+    /// Set the data position.
+    /// </summary>
+    /// <param name="date">The date.</param>
     internal void GoToDate(DateTime date)
     {
       string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");
@@ -410,20 +404,29 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionNavigate for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
-      var form = NavigationForm.Instance;
       try
       {
-        form.Date = DateTime.Now;
-        form.Visible = true;
-        form.BringToFront();
+        NavigationForm.Instance.Date = DateTime.Now;
+        NavigationForm.Instance.Visible = true;
+        NavigationForm.Instance.BringToFront();
       }
       catch
       {
       }
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionViewCelebrations for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionViewCelebrations_Click(object sender, EventArgs e)
     {
       CelebrationsForm.Execute();

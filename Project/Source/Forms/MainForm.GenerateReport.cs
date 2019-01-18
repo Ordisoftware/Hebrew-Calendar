@@ -58,12 +58,15 @@ namespace Ordisoftware.HebrewCalendar
                                                                                                                  : " ");
         string strSun = day.Sunrise + " - " + day.Sunset;
         strSun = ShowWinterSummerHour
-               ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) ? EphemerisNames.GetLang(EphemerisType.SummerHour) : EphemerisNames.GetLang(EphemerisType.WinterHour) ) + " " + strSun
+               ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) ? EphemerisNames.GetLang(EphemerisType.SummerHour) 
+                                                                              : EphemerisNames.GetLang(EphemerisType.WinterHour) ) + " " + strSun
                : strSun + new string(' ', 3 + 1);
         strSun += " " + (ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay ? ShabatText : "   ");
         string strMoonrise = day.Moonrise == "" ? MoonNoText : EphemerisNames.GetLang(EphemerisType.Rise) + day.Moonrise;
         string strMoonset = day.Moonset == "" ? MoonNoText : EphemerisNames.GetLang(EphemerisType.Set) + day.Moonset;
-        string strMoon = (MoonriseType)day.MoonriseType == MoonriseType.BeforeSet ? strMoonrise + ColumnSepInner + strMoonset : strMoonset + ColumnSepInner + strMoonrise;
+        string strMoon = (MoonriseType)day.MoonriseType == MoonriseType.BeforeSet 
+                       ? strMoonrise + ColumnSepInner + strMoonset 
+                       : strMoonset + ColumnSepInner + strMoonrise;
         string textDate = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames[(int)dayDate.DayOfWeek];
         textDate = textDate.Replace(".", "") + " ";
         textDate += dayDate.Day.ToString("00") + ".";
@@ -73,7 +76,6 @@ namespace Ordisoftware.HebrewCalendar
         string s1 = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)day.SeasonChange);
         string s2 = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
         strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
-        System.Diagnostics.Debug.WriteLine(strDesc);
         strDesc += new string(' ', CalendarFieldSize[ReportFieldType.Events] - 2 - strDesc.Length) + ColumnSepRight;
         content.Append(ColumnSepLeft);
         content.Append(textDate);
