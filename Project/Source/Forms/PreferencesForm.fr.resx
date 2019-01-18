@@ -193,9 +193,6 @@
   <data name="GPSLongitudeTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 20</value>
   </data>
-  <data name="ActionUsePersonalShabat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 66</value>
-  </data>
   <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 13</value>
   </data>

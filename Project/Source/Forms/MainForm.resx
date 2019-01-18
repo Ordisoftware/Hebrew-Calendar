@@ -2037,7 +2037,7 @@
 </value>
   </data>
   <data name="MenuNavigate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="MenuNavigate.Text" xml:space="preserve">
     <value>Navigate</value>
@@ -2078,7 +2078,7 @@
 </value>
   </data>
   <data name="MenuCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="MenuCelebrations.Text" xml:space="preserve">
     <value>Celebrations</value>
@@ -2131,7 +2131,7 @@
     <value>Exit</value>
   </data>
   <data name="MenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 120</value>
+    <value>181, 142</value>
   </data>
   <data name="&gt;&gt;MenuTray.Name" xml:space="preserve">
     <value>MenuTray</value>

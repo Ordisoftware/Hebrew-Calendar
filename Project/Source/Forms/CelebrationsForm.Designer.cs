@@ -79,6 +79,9 @@
       this.CancelButton = this.buttonClose;
       this.Controls.Add(this.ListView);
       this.Controls.Add(this.panel1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "CelebrationsForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CelebrationsForm_FormClosing);
       this.panel1.ResumeLayout(false);

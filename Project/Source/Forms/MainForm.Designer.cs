@@ -755,13 +755,13 @@
       // 
       resources.ApplyResources(this.MenuNavigate, "MenuNavigate");
       this.MenuNavigate.Name = "MenuNavigate";
-      this.MenuNavigate.Click += new System.EventHandler(this.MenuNavigate_Click);
+      this.MenuNavigate.Click += new System.EventHandler(this.ActionNavigate_Click);
       // 
       // MenuCelebrations
       // 
       resources.ApplyResources(this.MenuCelebrations, "MenuCelebrations");
       this.MenuCelebrations.Name = "MenuCelebrations";
-      this.MenuCelebrations.Click += new System.EventHandler(this.MenuCelebrations_Click);
+      this.MenuCelebrations.Click += new System.EventHandler(this.ActionViewCelebrations_Click);
       // 
       // SeparatorTrayMenuView
       // 

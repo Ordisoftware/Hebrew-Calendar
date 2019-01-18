@@ -145,6 +145,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       UpdateTextCalendar();
       UpdateButtons();
+      MenuShowHide.PerformClick();
     }
 
     /// <summary>
@@ -175,6 +176,64 @@ namespace Ordisoftware.HebrewCalendar
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Program.Settings.Store();
+    }
+
+    /// <summary>
+    /// Session ending.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Session ending event information.</param>
+    private void SessionEnding(object sender, SessionEndingEventArgs e)
+    {
+      AllowClose = true;
+      Close();
+    }
+
+    /// <summary>
+    /// Event handler. Called by MenuShowHide for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void MenuShowHide_Click(object sender, EventArgs e)
+    {
+      if ( !Visible )
+      {
+        Visible = true;
+        WindowState = Program.Settings.MainFormState;
+        ShowInTaskbar = true;
+      }
+      else
+      {
+        Program.Settings.MainFormState = WindowState;
+        WindowState = FormWindowState.Minimized;
+        Visible = false;
+        ShowInTaskbar = false;
+      }
+      MenuShowHide.Text = Localizer.HideRestoreText.GetLang(Visible);
+    }
+
+    /// <summary>
+    /// Event handler. Called by TrayIcon for mouse click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Mouse event information.</param>
+    private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
+    {
+      if ( e != null && e.Button != MouseButtons.Left ) return;
+      var form = NavigationForm.Instance;
+      if ( form.Visible )
+        form.Visible = false;
+      else
+        try
+        {
+          form.Date = DateTime.Now;
+          form.Visible = true;
+          form.BringToFront();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
     }
 
     /// <summary>
@@ -455,93 +514,6 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionViewCelebrations_Click(object sender, EventArgs e)
     {
       CelebrationsForm.Execute();
-    }
-
-
-
-
-
-
-
-
-
-
-
-    /// <summary>
-    /// Session ending.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Session ending event information.</param>
-    private void SessionEnding(object sender, SessionEndingEventArgs e)
-    {
-      Close();
-    }
-
-    /// <summary>
-    /// Event handler. Called by MenuShowHide for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void MenuShowHide_Click(object sender, EventArgs e)
-    {
-      if ( !Visible )
-      {
-        Visible = true;
-        WindowState = Program.Settings.MainFormState;
-        ShowInTaskbar = true;
-      }
-      else
-      {
-        Program.Settings.MainFormState = WindowState;
-        WindowState = FormWindowState.Minimized;
-        Visible = false;
-        ShowInTaskbar = false;
-      }
-      MenuShowHide.Text = Localizer.HideRestoreText.GetLang(Visible);
-    }
-
-    /// <summary>
-    /// Event handler. Called by MenuNavigate for mouse click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Mouse event information.</param>
-    private void MenuNavigate_Click(object sender, EventArgs e)
-    {
-      TrayIcon_MouseClick(null, null);
-    }
-
-    /// <summary>
-    /// Event handler. Called by MenuCelebrations for mouse click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Mouse event information.</param>
-    private void MenuCelebrations_Click(object sender, EventArgs e)
-    {
-      CelebrationsForm.Execute();
-    }
-
-    /// <summary>
-    /// Event handler. Called by TrayIcon for mouse click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Mouse event information.</param>
-    private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
-    {
-      if ( e != null && e.Button != MouseButtons.Left ) return;
-      var form = NavigationForm.Instance;
-      if ( form.Visible )
-        form.Visible = false;
-      else
-        try
-        {
-          form.Date = DateTime.Now;
-          form.Visible = true;
-          form.BringToFront();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
     }
 
   }
