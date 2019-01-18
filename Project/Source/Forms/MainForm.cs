@@ -515,6 +515,33 @@ namespace Ordisoftware.HebrewCalendar
     {
       CelebrationsForm.Execute();
     }
+
+    /// <summary>
+    /// Event handler. Called by CalendarGrid for cell formatting events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void CalendarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+    {
+      switch ( e.ColumnIndex )
+      {
+        case 7:
+          e.Value = ( (MoonriseType)e.Value ).ToString();
+          break;
+        case 10:
+          e.Value = ( (MoonPhaseType)e.Value ).ToString();
+          break;
+        case 11:
+          var season = (SeasonChangeType)e.Value;
+          e.Value = season == SeasonChangeType.None ? "-" : TorahCelebrations.SeasonEventNames.GetLang(season);
+          break;
+        case 12:
+          var torah = (TorahEventType)e.Value;
+          e.Value = torah == TorahEventType.None ? "-" : TorahCelebrations.TorahEventNames.GetLang(torah);
+          break;
+      }
+    }
+
   }
 
 }
