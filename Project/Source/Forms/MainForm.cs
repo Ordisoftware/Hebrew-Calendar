@@ -515,7 +515,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       CelebrationsForm.Execute();
     }
-
   }
 
 }
