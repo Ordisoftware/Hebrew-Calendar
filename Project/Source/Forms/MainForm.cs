@@ -92,7 +92,7 @@ namespace Ordisoftware.HebrewCalendar
       };
       Program.Settings.Retrieve();
       LunisolarCalendar.LunisolarDays.RowChanged += update;
-      Cursor = Cursors.WaitCursor;
+      UseWaitCursor = true;
       try
       {
         Refresh();
@@ -130,7 +130,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        Cursor = Cursors.Default;
+        UseWaitCursor = false;
         LunisolarCalendar.LunisolarDays.RowChanged -= update;
         UpdateButtons();
       }
