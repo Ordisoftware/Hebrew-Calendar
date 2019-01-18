@@ -139,6 +139,13 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Quitter l'application ?" }
       };
 
+    static public readonly Dictionary<string, string> SelectBirthdayText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Select birthday" },
+        { "fr", "Date de naissance" }
+      };
+
     static public readonly Dictionary<string, string> CantExitApplicationWhileGeneratingText
       = new Dictionary<string, string>()
       {

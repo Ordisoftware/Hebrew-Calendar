@@ -45,14 +45,13 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Default constructor.
     /// </summary>
-    public TrayIconForm()
+    private TrayIconForm()
     {
       InitializeComponent();
       Text = DisplayManager.Title;
       Icon = MainForm.Instance.Icon;
       TrayIcon.Icon = Icon;
       Visible = false;
-      ShowInTaskbar = false;
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
     }
@@ -159,6 +158,26 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Event handler. Called by MenuNavigate for mouse click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Mouse event information.</param>
+    private void MenuNavigate_Click(object sender, EventArgs e)
+    {
+      TrayIcon_MouseClick(null, null);
+    }
+
+    /// <summary>
+    /// Event handler. Called by MenuCelebrations for mouse click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Mouse event information.</param>
+    private void MenuCelebrations_Click(object sender, EventArgs e)
+    {
+      CelebrationsForm.Execute();
+    }
+
+    /// <summary>
     /// Event handler. Called by TrayIcon for mouse click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -170,28 +189,16 @@ namespace Ordisoftware.HebrewCalendar
       if ( form.Visible )
         form.Visible = false;
       else
-      {
         try
         {
           form.Date = DateTime.Now;
           form.Visible = true;
           form.BringToFront();
         }
-        catch (Exception ex)
+        catch ( Exception ex )
         {
           ex.Manage();
         }
-      }
-    }
-
-    private void MenuNavigate_Click(object sender, EventArgs e)
-    {
-      TrayIcon_MouseClick(null, null);
-    }
-
-    private void MenuCelebrations_Click(object sender, EventArgs e)
-    {
-      CelebrationsForm.Execute();
     }
 
   }

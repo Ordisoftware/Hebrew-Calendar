@@ -102,6 +102,7 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "TrayIconForm";
+      this.ShowInTaskbar = false;
       this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TrayIconForm_FormClosed);
       this.Load += new System.EventHandler(this.TrayIconForm_Load);

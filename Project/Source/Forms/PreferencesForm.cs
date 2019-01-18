@@ -17,7 +17,6 @@ using System;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -48,9 +47,9 @@ namespace Ordisoftware.HebrewCalendar
       Instance = new PreferencesForm();
     }
 
-    public int OldShabatDay;
-    public float OldLatitude;
-    public float OldLongitude;
+    public int OldShabatDay { get; private set; }
+    public float OldLatitude { get; private set; }
+    public float OldLongitude { get; private set; }
 
     /// <summary>
     /// Default constructor.
@@ -88,15 +87,34 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionUsePersonalShabat for click event.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      DateTime date = DateTime.Now;
+      var form = new SelectDayForm();
+      form.Text = Localizer.SelectBirthdayText.GetLang();
+      if ( form.ShowDialog() == DialogResult.Cancel ) return;
+      date = form.MonthCalendar.SelectionStart;
+      Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
+      foreach ( DayOfWeekItem item in EditShabatDay.Items )
+        if ( (DayOfWeek)Program.Settings.ShabatDay == item.Day )
+          EditShabatDay.SelectedItem = item;
+    }
+
+    /// <summary>
     /// Event handler. Called by EditFontName and editFontSize for changed events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void EitFont_Changed(object sender, EventArgs e)
+    private void EitFontName_Changed(object sender, EventArgs e)
     {
       var control = sender as Control;
       if ( control == null ) return;
-      control.DataBindings.WriteValues();
+      foreach ( Binding binding in control.DataBindings )
+        binding.WriteValue();
       MainForm.UpdateTextCalendar();
     }
 
@@ -127,24 +145,10 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionUsePersonalShabat for click event.
+    /// Event handler. Called by PanelTopColor for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      DateTime date = DateTime.Now;
-      var form = new SelectDayForm();
-      form.Text = "Select birthday";
-      if ( form.ShowDialog() == DialogResult.Cancel ) return;
-      date = form.MonthCalendar.SelectionStart;
-      Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
-      foreach ( DayOfWeekItem item in EditShabatDay.Items)
-      {
-        if ( (DayOfWeek)Program.Settings.ShabatDay == item.Day ) EditShabatDay.SelectedItem = item;
-      }
-    }
-
     private void PanelTopColor_MouseClick(object sender, MouseEventArgs e)
     {
       DialogColor.Color = PanelTopColor.BackColor;
@@ -153,6 +157,11 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.PanelTop.BackColor = PanelTopColor.BackColor;
     }
 
+    /// <summary>
+    /// Event handler. Called by PanelMiddleColor for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void PanelMiddleColor_MouseClick(object sender, MouseEventArgs e)
     {
       DialogColor.Color = PanelMiddleColor.BackColor;
@@ -161,6 +170,11 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.PanelMiddle.BackColor = PanelMiddleColor.BackColor;
     }
 
+    /// <summary>
+    /// Event handler. Called by PanelBottomColor for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void PanelBottomColor_MouseClick(object sender, MouseEventArgs e)
     {
       DialogColor.Color = PanelBottomColor.BackColor;
@@ -169,6 +183,11 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionUseSystemColors for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       PanelTopColor.BackColor = SystemColors.Control;
@@ -179,6 +198,11 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionUseDefaultColors for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionUseDefaultColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       PanelTopColor.BackColor = Color.LemonChiffon;

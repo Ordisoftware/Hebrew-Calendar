@@ -43,9 +43,9 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ButtonCancel);
       this.PanelButtons.Controls.Add(this.ButtonOk);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ButtonCancel
@@ -70,6 +70,7 @@
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.MonthCalendar);
       this.Name = "SelectDayForm";
+      this.Shown += new System.EventHandler(this.SelectDayForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.ResumeLayout(false);
 

@@ -100,7 +100,7 @@
       this.EditFontName.FormattingEnabled = true;
       resources.ApplyResources(this.EditFontName, "EditFontName");
       this.EditFontName.Name = "EditFontName";
-      this.EditFontName.SelectedIndexChanged += new System.EventHandler(this.EitFont_Changed);
+      this.EditFontName.SelectedIndexChanged += new System.EventHandler(this.EitFontName_Changed);
       // 
       // BindingSettings
       // 
@@ -131,7 +131,7 @@
             0,
             0,
             0});
-      this.EditFontSize.ValueChanged += new System.EventHandler(this.EitFont_Changed);
+      this.EditFontSize.ValueChanged += new System.EventHandler(this.EitFontName_Changed);
       // 
       // LabelFontSize
       // 

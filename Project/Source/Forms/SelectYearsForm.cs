@@ -46,7 +46,11 @@ namespace Ordisoftware.HebrewCalendar
         yearLast = yearFirst + 1;
       else
       if ( yearFirst > yearLast )
-        ObjectUtility.Swap(ref yearFirst, ref yearLast);
+      {
+        int temp = yearFirst;
+        yearFirst = yearLast;
+        yearLast = temp;
+      }
       EditYearFirst.Value = yearFirst;
       EditYearLast.Value = yearLast;
       DialogResult = DialogResult.OK;

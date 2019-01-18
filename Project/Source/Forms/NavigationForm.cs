@@ -102,7 +102,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private DateTime _Date;
 
-    public NavigationForm()
+    private NavigationForm()
     {
       InitializeComponent();
       Text = Core.DisplayManager.Title;
@@ -139,8 +139,8 @@ namespace Ordisoftware.HebrewCalendar
       {
         var form = new SelectDayForm();
         form.TopMost = true;
-        if ( form.ShowDialog() != DialogResult.OK ) return;
-        Date = form.MonthCalendar.SelectionStart;
+        if ( form.ShowDialog() == DialogResult.OK )
+          Date = form.MonthCalendar.SelectionStart;
       }
       catch
       {
