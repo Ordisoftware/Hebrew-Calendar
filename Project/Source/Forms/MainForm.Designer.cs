@@ -70,6 +70,7 @@
       this.ActionSaveReport = new System.Windows.Forms.ToolStripButton();
       this.ActionExportCSV = new System.Windows.Forms.ToolStripButton();
       this.ActionCopyReportToClipboard = new System.Windows.Forms.ToolStripButton();
+      this.ActionPrint = new System.Windows.Forms.ToolStripButton();
       this.Sep2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchDay = new System.Windows.Forms.ToolStripButton();
       this.ActionNavigate = new System.Windows.Forms.ToolStripButton();
@@ -112,6 +113,7 @@
       this.SeparatorTrayMenuView = new System.Windows.Forms.ToolStripSeparator();
       this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
+      this.PrintDialog = new System.Windows.Forms.PrintDialog();
       this.CalendarMonth = new Calendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -131,6 +133,7 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.StatusBottom.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
@@ -422,7 +425,9 @@
             this.Sep1,
             this.ActionSaveReport,
             this.ActionExportCSV,
+            this.toolStripSeparator1,
             this.ActionCopyReportToClipboard,
+            this.ActionPrint,
             this.Sep2,
             this.ActionSearchDay,
             this.ActionNavigate,
@@ -478,6 +483,16 @@
       this.ActionCopyReportToClipboard.Click += new System.EventHandler(this.ActionCopyReportToClipboard_Click);
       this.ActionCopyReportToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionCopyReportToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionPrint
+      // 
+      this.ActionPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionPrint, "ActionPrint");
+      this.ActionPrint.Name = "ActionPrint";
+      this.ActionPrint.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionPrint.Click += new System.EventHandler(this.ActionPrint_Click);
+      this.ActionPrint.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionPrint.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // Sep2
       // 
@@ -814,6 +829,10 @@
       this.MenuExit.Name = "MenuExit";
       this.MenuExit.Click += new System.EventHandler(this.ActionExit_Click);
       // 
+      // PrintDialog
+      // 
+      this.PrintDialog.UseEXDialog = true;
+      // 
       // CalendarMonth
       // 
       this.CalendarMonth.AllowEditingEvents = false;
@@ -966,6 +985,11 @@
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
       // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1112,6 +1136,9 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     private Calendar.NET.Calendar CalendarMonth;
+    private System.Windows.Forms.ToolStripButton ActionPrint;
+    private System.Windows.Forms.PrintDialog PrintDialog;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
   }
 }
 

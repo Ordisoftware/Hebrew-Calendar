@@ -16,6 +16,7 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 - Grid view.
 - Search for a day in the database.
 - Window listing annual celebrations.
+- Print the month view.
 - Copy the report to the clipboard.
 - Save the report to a text file.
 - Export data to CSV.
@@ -71,6 +72,7 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 - Add an option for the Tray Icon mouse click.
 - Add an option to show/hide the main form at startup.
 - Add a month view.
+- Add a print menu.
 - Improve the grid view.
 
 #### 2019.01.18 - Version 1.2

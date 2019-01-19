@@ -23,6 +23,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -455,6 +456,24 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCopyReportToClipboard_Click(object sender, EventArgs e)
     {
       Clipboard.SetText(CalendarText.Text);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionPrint for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionPrint_Click(object sender, EventArgs e)
+    {
+      SetView(ViewModeType.Month);
+      var bitmap = new Bitmap(CalendarMonth.Width, CalendarMonth.Height);
+      CalendarMonth.DrawToBitmap(bitmap, new Rectangle(0, 0, CalendarMonth.Width, CalendarMonth.Height));
+      var document = new PrintDocument();
+      document.DefaultPageSettings.Landscape = true;
+      document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 100, 100);
+      PrintDialog.Document = document;
+      if ( PrintDialog.ShowDialog() == DialogResult.Cancel ) return;
+      document.Print();
     }
 
     /// <summary>

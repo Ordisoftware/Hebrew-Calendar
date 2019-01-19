@@ -12,7 +12,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2019-01 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -45,6 +45,9 @@ namespace Ordisoftware.HebrewCalendar
           return true;
         case Keys.Control | Keys.N:
           ActionNavigate.PerformClick();
+          return true;
+        case Keys.Control | Keys.P:
+          ActionPrint.PerformClick();
           return true;
         case Keys.Escape:
           if ( IsGenerating )
