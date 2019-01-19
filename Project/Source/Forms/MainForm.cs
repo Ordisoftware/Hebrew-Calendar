@@ -70,6 +70,10 @@ namespace Ordisoftware.HebrewCalendar
     private MainForm()
     {
       InitializeComponent();
+      CalendarMonth.CalendarDateChanged += (date) =>
+      {
+        NavigationForm.Instance.Date = date;
+      };
       Text = DisplayManager.Title;
       SystemEvents.SessionEnding += SessionEnding;
       CalendarText.ForeColor = Program.Settings.TextColor;
@@ -554,6 +558,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
+      NavigationForm.Instance.Date = DateTime.Now;
       NavigationForm.Instance.Visible = true;
       NavigationForm.Instance.BringToFront();
     }
@@ -600,6 +605,13 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private void LunisolarDaysBindingSource_CurrentItemChanged(object sender, EventArgs e)
+    {
+      var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
+      NavigationForm.Instance.Date = SQLiteUtility.GetDate(( (Data.LunisolarCalendar.LunisolarDaysRow)rowview ).Date);
+    }
+
   }
 
 }
+

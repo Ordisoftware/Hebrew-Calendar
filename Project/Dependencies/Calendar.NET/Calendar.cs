@@ -61,6 +61,11 @@ namespace Calendar.NET
     private System.ComponentModel.IContainer components;
     private ToolStripMenuItem _miProperties;
 
+
+    // ORDISOFTWARE MODIF BEGIN
+    public event Action<DateTime> CalendarDateChanged;
+    // ORDISOFTWARE MODIF END
+
     // ORDISOFTWARE MODIF BEGIN
     //private const int MarginSize = 20;
     private const int MarginSize = 10;
@@ -560,6 +565,9 @@ namespace Calendar.NET
     {
       _calendarDate = DateTime.Now;
       Refresh();
+      // ORDISOFTWARE MODIF BEGIN
+      CalendarDateChanged(_calendarDate);
+      // ORDISOFTWARE MODIF END
     }
 
     private void BtnLeftButtonClicked(object sender)
@@ -569,6 +577,9 @@ namespace Calendar.NET
       else if ( _calendarView == CalendarViews.Day )
         _calendarDate = _calendarDate.AddDays(-1);
       Refresh();
+      // ORDISOFTWARE MODIF BEGIN
+      CalendarDateChanged(_calendarDate);
+      // ORDISOFTWARE MODIF END
     }
 
     private void BtnRightButtonClicked(object sender)
@@ -578,6 +589,9 @@ namespace Calendar.NET
       else if ( _calendarView == CalendarViews.Month )
         _calendarDate = _calendarDate.AddMonths(1);
       Refresh();
+      // ORDISOFTWARE MODIF BEGIN
+      CalendarDateChanged(_calendarDate);
+      // ORDISOFTWARE MODIF END
     }
 
     private void MenuItemPropertiesClick(object sender, EventArgs e)
