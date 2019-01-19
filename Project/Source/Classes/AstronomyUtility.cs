@@ -115,7 +115,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// List of names of the moon phases.
     /// </summary>
-    static private readonly Dictionary<MoonPhaseType, Dictionary<string, string>> MoonPhaseNames
+    static public readonly Dictionary<MoonPhaseType, Dictionary<string, string>> MoonPhaseNames
       = new Dictionary<MoonPhaseType, Dictionary<string, string>>()
       {
         {

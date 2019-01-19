@@ -37,6 +37,7 @@ namespace Ordisoftware.HebrewCalendar
       Sunset,
       Moonrise,
       Moonset,
+      MoonPhase,
       Season,
       Event
     }
@@ -91,9 +92,11 @@ namespace Ordisoftware.HebrewCalendar
         content.Append(day.Sunset + CSVSeparator);
         content.Append(day.Moonrise + CSVSeparator);
         content.Append(day.Moonset + CSVSeparator);
+        string strPhase = AstronomyUtility.MoonPhaseNames.GetLang((MoonPhaseType)day.MoonPhase);
+        content.Append(strPhase + CSVSeparator);
         string strSeason = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)day.SeasonChange);
-        string strEvent = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
         content.Append(strSeason + CSVSeparator);
+        string strEvent = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
         content.AppendLine(strEvent);
       }
       if ( SaveCSVDialog.ShowDialog() == DialogResult.OK )

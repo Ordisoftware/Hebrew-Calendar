@@ -11,13 +11,15 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 ## Functionalities
 
 - Generate a calendar with sun and moon rises and sets.
-- Create a tabular text report.
+- Tabular text report view.
+- Month view.
+- Grid view.
 - Search for a day in the database.
+- Window listing annual celebrations.
+- Copy the report to the clipboard.
 - Save the report to a text file.
 - Export data to CSV.
-- Copy the report to the clipboard.
-- Visualization of the data in a grid.
-- Popup box from the tray icon displaying the day data.
+- Navigation by day window from the tray icon.
 - English, French.
 
 ## Requirements
@@ -29,7 +31,9 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 ## Screenshots
 
-![Main Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-app-768x527.png)
+![Repport Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-app-768x527.png)
+
+![Month Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-month-768x527.png)
 
 ![Trayicon Celebration Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-celebrations.png)
 

@@ -39,7 +39,7 @@
       <Value Profile="(Default)">6</Value>
     </Setting>
     <Setting Name="CurrentView" Type="Ordisoftware.HebrewCalendar.ViewModeType" Scope="User">
-      <Value Profile="(Default)">Text</Value>
+      <Value Profile="(Default)">Month</Value>
     </Setting>
     <Setting Name="Latitude" Type="System.Single" Scope="User">
       <Value Profile="(Default)">48.85</Value>

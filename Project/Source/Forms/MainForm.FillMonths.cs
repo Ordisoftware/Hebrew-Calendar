@@ -51,7 +51,9 @@ namespace Ordisoftware.HebrewCalendar
             CalendarMonth.AddEvent(item);
           }
           Color colorMoon = Color.Black;
-          colorMoon = row.IsNewMoon == 1 ? Color.DarkRed : ( row.IsFullMoon == 1 ? Color.DarkGoldenrod : Color.DarkBlue );
+          colorMoon = row.IsNewMoon == 1 
+                    ? Color.DarkRed 
+                    : ( row.IsFullMoon == 1 ? Color.DarkGoldenrod : Color.DarkBlue );
           if ( (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
           {
             add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);

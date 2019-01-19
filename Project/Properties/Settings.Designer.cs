@@ -169,7 +169,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Text")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Month")]
         public global::Ordisoftware.HebrewCalendar.ViewModeType CurrentView {
             get {
                 return ((global::Ordisoftware.HebrewCalendar.ViewModeType)(this["CurrentView"]));
