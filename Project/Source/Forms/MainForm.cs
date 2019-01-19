@@ -23,6 +23,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -170,7 +171,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by MainForm_Form for form closing events.
+    /// Event handler. Called by MainForm_Form for form closed events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Form closing event information.</param>
@@ -458,6 +459,34 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionPrint for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionPrint_Click(object sender, EventArgs e)
+    {
+      SetView(ViewModeType.Month);
+      CalendarMonth.ShowTodayButton = false;
+      CalendarMonth.ShowArrowControls = false;
+      try
+      {
+        var bitmap = new Bitmap(CalendarMonth.Width, CalendarMonth.Height);
+        CalendarMonth.DrawToBitmap(bitmap, new Rectangle(0, 0, CalendarMonth.Width, CalendarMonth.Height));
+        var document = new PrintDocument();
+        document.DefaultPageSettings.Landscape = true;
+        document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 100, 100);
+        PrintDialog.Document = document;
+        if ( PrintDialog.ShowDialog() == DialogResult.Cancel ) return;
+        document.Print();
+      }
+      finally
+      {
+        CalendarMonth.ShowTodayButton = true;
+        CalendarMonth.ShowArrowControls = true;
+      }
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionSaveReport for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -527,7 +556,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       NavigationForm.Instance.Visible = true;
       NavigationForm.Instance.BringToFront();
-      //NavigationForm.Instance.Date = DateTime.Now;
     }
 
     /// <summary>
@@ -553,13 +581,13 @@ namespace Ordisoftware.HebrewCalendar
           e.Value = ( (MoonriseType)e.Value ).ToString();
           break;
         case 10:
-          e.Value = ( (MoonPhaseType)e.Value ).ToString();
+          e.Value = AstronomyUtility.MoonPhaseNames.GetLang((MoonPhaseType)e.Value);
           break;
         case 8:
-          e.Value = (int)e.Value == 0 ? "" : "Yes";
+          e.Value = (int)e.Value == 0 ? "" : "*";
           break;
         case 9:
-          e.Value = (int)e.Value == 0 ? "" : "Yes";
+          e.Value = (int)e.Value == 0 ? "" : "*";
           break;
         case 11:
           var season = (SeasonChangeType)e.Value;
