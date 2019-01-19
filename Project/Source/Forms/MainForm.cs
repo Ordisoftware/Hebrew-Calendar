@@ -155,17 +155,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( IsGenerating )
-      {
-        e.Cancel = true;
-        DisplayManager.ShowAdvert(Localizer.CantExitApplicationWhileGeneratingText.GetLang());
-      }
-      else
-      if ( !AllowClose )
-      {
-        e.Cancel = true;
-        MenuShowHide.PerformClick();
-      }
+      if ( AllowClose ) return;
+      e.Cancel = true;
+      MenuShowHide.PerformClick();
     }
 
     /// <summary>
@@ -391,6 +383,11 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionExit_Click(object sender, EventArgs e)
     {
+      if ( IsGenerating )
+      {
+        DisplayManager.ShowAdvert(Localizer.CantExitApplicationWhileGeneratingText.GetLang());
+        return;
+      }
       if ( EditConfirmClosing.Checked )
         if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
           return;
@@ -531,13 +528,19 @@ namespace Ordisoftware.HebrewCalendar
         case 10:
           e.Value = ( (MoonPhaseType)e.Value ).ToString();
           break;
+        case 8:
+          e.Value = (int)e.Value == 0 ? "" : "Yes";
+          break;
+        case 9:
+          e.Value = (int)e.Value == 0 ? "" : "Yes";
+          break;
         case 11:
           var season = (SeasonChangeType)e.Value;
-          e.Value = season == SeasonChangeType.None ? "-" : TorahCelebrations.SeasonEventNames.GetLang(season);
+          e.Value = season == SeasonChangeType.None ? "" : TorahCelebrations.SeasonEventNames.GetLang(season);
           break;
         case 12:
           var torah = (TorahEventType)e.Value;
-          e.Value = torah == TorahEventType.None ? "-" : TorahCelebrations.TorahEventNames.GetLang(torah);
+          e.Value = torah == TorahEventType.None ? "" : TorahCelebrations.TorahEventNames.GetLang(torah);
           break;
       }
     }
