@@ -69,10 +69,18 @@ namespace Ordisoftware.HebrewCalendar
   /// <param name="e">Event information.</param>
   private void PreferencesForm_Shown(object sender, EventArgs e)
     {
-      TopMost = MainForm.TopMost;
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.Latitude;
       OldLongitude = Program.Settings.Longitude;
+      switch ( Program.Settings.TrayIconClickOpen )
+      {
+        case TrayIconClickOpen.MainForm:
+          RadioButtonMainForm.Select();
+          break;
+        case TrayIconClickOpen.NavigationForm:
+          RadioButtonNavigationForm.Select();
+          break;
+      }
     }
 
     /// <summary>
@@ -82,6 +90,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( RadioButtonMainForm.Checked ) Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
+      if ( RadioButtonNavigationForm.Checked ) Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
       Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
       Program.Settings.Save();
     }
@@ -270,7 +280,6 @@ namespace Ordisoftware.HebrewCalendar
       /// </summary>
       public override string ToString() { return Text; }
     }
-
   }
 
 }

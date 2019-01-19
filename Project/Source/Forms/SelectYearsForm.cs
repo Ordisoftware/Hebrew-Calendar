@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewCalendar
       int year = date.Year;
       if ( date.Month < 3 ) year--;
       EditYearFirst.Value = year;
-      EditYearLast.Value = year + 1;
+      EditYearLast.Value = year + 2;
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)

@@ -50,9 +50,11 @@ namespace Ordisoftware.HebrewCalendar
                       where day.Date == strDate
                       select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
           LabelDate.Text = value.ToLongDateString();
-          string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[row.LunarMonth];
+          string strMonth = TorahCelebrations.BabylonianHebrewMonthNames[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
           LabelLunarDayValue.Text = "Day #" + row.LunarDay.ToString();
+          if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+            LabelLunarDayValue.Text += " (Shabat)";
           LabelSunriseValue.Text = row.Sunrise.ToString();
           LabelSunsetValue.Text = row.Sunset.ToString();
           LabelMoonriseValue.Text = row.Moonrise.ToString();
@@ -151,6 +153,14 @@ namespace Ordisoftware.HebrewCalendar
       form.TopMost = true;
       if ( form.ShowDialog() == DialogResult.OK )
         Date = form.MonthCalendar.SelectionStart;
+      else
+        try
+        {
+          ActiveControl = LabelDate;
+        }
+        catch
+        {
+        }
     }
 
     private void buttonPreviousDay_Click(object sender, EventArgs e)

@@ -169,7 +169,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Text")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Month")]
         public global::Ordisoftware.HebrewCalendar.ViewModeType CurrentView {
             get {
                 return ((global::Ordisoftware.HebrewCalendar.ViewModeType)(this["CurrentView"]));
@@ -282,6 +282,30 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
             set {
                 this["NavigateBottomColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MainForm")]
+        public global::Ordisoftware.HebrewCalendar.TrayIconClickOpen TrayIconClickOpen {
+            get {
+                return ((global::Ordisoftware.HebrewCalendar.TrayIconClickOpen)(this["TrayIconClickOpen"]));
+            }
+            set {
+                this["TrayIconClickOpen"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool StartupHide {
+            get {
+                return ((bool)(this["StartupHide"]));
+            }
+            set {
+                this["StartupHide"] = value;
             }
         }
     }

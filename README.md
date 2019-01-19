@@ -11,13 +11,15 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 ## Functionalities
 
 - Generate a calendar with sun and moon rises and sets.
-- Create a tabular text report.
+- Tabular text report view.
+- Month view.
+- Grid view.
 - Search for a day in the database.
+- Window listing annual celebrations.
+- Copy the report to the clipboard.
 - Save the report to a text file.
 - Export data to CSV.
-- Copy the report to the clipboard.
-- Visualization of the data in a grid.
-- Popup box from the tray icon displaying the day data.
+- Navigation by day window from the Tray Icon.
 - English, French.
 
 ## Requirements
@@ -29,15 +31,19 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 ## Screenshots
 
-![Main Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-app-768x527.png)
+![Repport Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-app-768x527.png)
 
-![Trayicon Celebration Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-celebrations.png)
+![Month Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-month-768x527.png)
 
-![Trayicon Navigation Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-navigation.png)
+![TrayIcon Celebrations Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-celebrations.png)
 
-## Video
+![TrayIcon Navigation Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-navigation.png)
 
-[![Video](https://img.youtube.com/vi/u9LD-0u3wdE/0.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
+## Videos
+
+[![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/0.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
+
+[![Month view showing video](https://img.youtube.com/vi/EJni1fiXpMk/0.jpg)](https://www.youtube.com/watch?v=EJni1fiXpMk)
 
 ## Frequently asked questions
 
@@ -60,11 +66,18 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 
 ## Changelog
 
+#### 2019.01.20 - Version 1.3
+
+- Add an option for the Tray Icon mouse click.
+- Add an option to show/hide the main form at startup.
+- Add a month view.
+- Improve the grid view.
+
 #### 2019.01.18 - Version 1.2
 
-- Add celebrations window.
-- Improve navigation window.
-- Improve preferences window.
+- Add a celebrations window.
+- Improve the navigation window.
+- Improve the preferences window.
 - Some bug fixes.
 
 #### 2019.01.17 - Version 1.1

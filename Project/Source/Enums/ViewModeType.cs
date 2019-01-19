@@ -12,7 +12,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2019-01 </edited>
 using System;
 
 namespace Ordisoftware.HebrewCalendar
@@ -25,12 +25,17 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// Text view mode to display report in raw text.
+    /// Text view mode to display the report.
     /// </summary>
     Text,
 
     /// <summary>
-    /// Grid view mode to display days in grid list.
+    /// Grid view mode to display the month calendar.
+    /// </summary>
+    Month,
+
+    /// <summary>
+    /// Grid view mode to display the grid.
     /// </summary>
     Grid
 

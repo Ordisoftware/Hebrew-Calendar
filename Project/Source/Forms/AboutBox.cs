@@ -67,16 +67,6 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by AboutBox for shown events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void AboutBox_Shown(object sender, EventArgs e)
-    {
-      TopMost = MainForm.Instance.TopMost;
-    }
-
-    /// <summary>
     /// Event handler. Called by labelIconsProvider for link clicked events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

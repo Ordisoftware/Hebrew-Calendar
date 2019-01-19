@@ -70,7 +70,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Text = DisplayManager.Title;
-      Visible = false;
       SystemEvents.SessionEnding += SessionEnding;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
@@ -92,7 +91,7 @@ namespace Ordisoftware.HebrewCalendar
       };
       Program.Settings.Retrieve();
       LunisolarCalendar.LunisolarDays.RowChanged += update;
-      UseWaitCursor = true;
+      Cursor = Cursors.WaitCursor;
       try
       {
         Refresh();
@@ -104,14 +103,23 @@ namespace Ordisoftware.HebrewCalendar
         connection.Close();
         LunisolarDaysTableAdapter.Fill(LunisolarCalendar.LunisolarDays);
         ReportTableAdapter.Fill(LunisolarCalendar.Report);
-        SetView(Program.Settings.CurrentView, true);
+        IsGenerating = true;
+        try
+        {
+          FillMonths();
+        }
+        finally
+        {
+          IsGenerating = false;
+          SetView(Program.Settings.CurrentView, true);
+        }
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
         {
           var row = LunisolarCalendar.Report.FirstOrDefault();
           CalendarText.Text = row == null ? "" : row.Content;
           try
           {
-            ActionSearchDay_Click(null, null);
+            NavigationForm.Instance.Date = DateTime.Now;
           }
           catch
           {
@@ -130,7 +138,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        UseWaitCursor = false;
+        Cursor = Cursors.Default;
         LunisolarCalendar.LunisolarDays.RowChanged -= update;
         UpdateButtons();
       }
@@ -145,7 +153,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       UpdateTextCalendar();
       UpdateButtons();
-      MenuShowHide.PerformClick();
+      NavigationForm.Instance.Date = DateTime.Now;
+      if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
     }
 
     /// <summary>
@@ -193,6 +202,7 @@ namespace Ordisoftware.HebrewCalendar
         Visible = true;
         WindowState = Program.Settings.MainFormState;
         ShowInTaskbar = true;
+        NavigationForm.Instance.Date = DateTime.Now;
       }
       else
       {
@@ -212,20 +222,29 @@ namespace Ordisoftware.HebrewCalendar
     private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
     {
       if ( e != null && e.Button != MouseButtons.Left ) return;
-      var form = NavigationForm.Instance;
-      if ( form.Visible )
-        form.Visible = false;
-      else
-        try
-        {
-          form.Date = DateTime.Now;
-          form.Visible = true;
-          form.BringToFront();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
+
+      switch ( Program.Settings.TrayIconClickOpen )
+      {
+        case TrayIconClickOpen.MainForm:
+          MenuShowHide.PerformClick();
+          break;
+        case TrayIconClickOpen.NavigationForm:
+          var form = NavigationForm.Instance;
+          if ( form.Visible )
+            form.Visible = false;
+          else
+            try
+            {
+              form.Date = DateTime.Now;
+              form.Visible = true;
+              form.BringToFront();
+            }
+            catch ( Exception ex )
+            {
+              ex.Manage();
+            }
+          break;
+      }
     }
 
     /// <summary>
@@ -266,13 +285,23 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionViewText for click events.
+    /// Event handler. Called by ActionViewReport for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionViewText_Click(object sender, EventArgs e)
+    private void ActionViewReport_Click(object sender, EventArgs e)
     {
       SetView(ViewModeType.Text);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewMonth for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewMonth_Click(object sender, EventArgs e)
+    {
+      SetView(ViewModeType.Month);
     }
 
     /// <summary>
@@ -318,10 +347,7 @@ namespace Ordisoftware.HebrewCalendar
         || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
         || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )
         if ( DisplayManager.QueryYesNo(Localizer.RegenerateCalendarText.GetLang()) )
-        {
           ActionGenerate.PerformClick();
-          ActionSearchDay_Click(null, null);
-        }
     }
 
     /// <summary>
@@ -408,7 +434,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( !DisplayManager.QueryYesNo(Localizer.ReplaceCalendarText.GetLang()) )
           return;
       GenerateDB((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
-      ActionSearchDay_Click(null, null);
+      NavigationForm.Instance.Date = DateTime.Now;
     }
 
     /// <summary>
@@ -488,6 +514,7 @@ namespace Ordisoftware.HebrewCalendar
         CalendarText.SelectionLength = 118;
         LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
         CalendarGrid.Update();
+        CalendarMonth.CalendarDate = date;
       }
     }
 
@@ -500,7 +527,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       NavigationForm.Instance.Visible = true;
       NavigationForm.Instance.BringToFront();
-      NavigationForm.Instance.Date = DateTime.Now;
+      //NavigationForm.Instance.Date = DateTime.Now;
     }
 
     /// <summary>

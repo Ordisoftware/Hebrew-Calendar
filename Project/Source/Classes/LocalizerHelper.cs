@@ -125,6 +125,13 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
+    static public readonly Dictionary<string, string> TodayText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Today" },
+        { "fr", "Aujourd'hui" }
+      };
+
     static public readonly Dictionary<string, string> ApplicationDescriptionText
       = new Dictionary<string, string>()
       {
@@ -195,6 +202,13 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "Generating report..." },
         { "fr", "Génération du rapport..." }
+      };
+
+    static public readonly Dictionary<string, string> ProgressFillMonthsText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Filling months..." },
+        { "fr", "Remplissage des mois..." }
       };
 
     static public readonly Dictionary<string, string> RestoreWinPosText

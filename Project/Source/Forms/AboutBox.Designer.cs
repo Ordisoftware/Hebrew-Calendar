@@ -50,6 +50,8 @@
       this.linkLabel3 = new System.Windows.Forms.LinkLabel();
       this.label6 = new System.Windows.Forms.Label();
       this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+      this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+      this.label7 = new System.Windows.Forms.Label();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -156,8 +158,8 @@
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.buttonClose);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // label5
@@ -184,12 +186,25 @@
       this.linkLabel4.TabStop = true;
       this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
       // 
+      // linkLabel5
+      // 
+      resources.ApplyResources(this.linkLabel5, "linkLabel5");
+      this.linkLabel5.Name = "linkLabel5";
+      this.linkLabel5.TabStop = true;
+      // 
+      // label7
+      // 
+      resources.ApplyResources(this.label7, "label7");
+      this.label7.Name = "label7";
+      // 
       // AboutBox
       // 
       this.AcceptButton = this.buttonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.buttonClose;
+      this.Controls.Add(this.linkLabel5);
+      this.Controls.Add(this.label7);
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.linkLabel3);
       this.Controls.Add(this.linkLabel4);
@@ -217,7 +232,6 @@
       this.Name = "AboutBox";
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.AboutBox_Load);
-      this.Shown += new System.EventHandler(this.AboutBox_Shown);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -248,5 +262,7 @@
     private System.Windows.Forms.LinkLabel linkLabel3;
     private System.Windows.Forms.Label label6;
     private System.Windows.Forms.LinkLabel linkLabel4;
+    private System.Windows.Forms.LinkLabel linkLabel5;
+    private System.Windows.Forms.Label label7;
   }
 }

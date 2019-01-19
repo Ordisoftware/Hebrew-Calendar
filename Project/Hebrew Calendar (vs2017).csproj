@@ -81,6 +81,51 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dependencies\Calendar.NET\Calendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\CalendarEvent.cs" />
+    <Compile Include="Dependencies\Calendar.NET\CoolButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\CoolButton.designer.cs">
+      <DependentUpon>CoolButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\CustomEvent.cs" />
+    <Compile Include="Dependencies\Calendar.NET\CustomRecurringFunctionAttribute.cs" />
+    <Compile Include="Dependencies\Calendar.NET\EventComparer.cs" />
+    <Compile Include="Dependencies\Calendar.NET\EventDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\EventDetails.designer.cs">
+      <DependentUpon>EventDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\EventToolTip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\EventToolTip.designer.cs">
+      <DependentUpon>EventToolTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\HolidayEvent.cs" />
+    <Compile Include="Dependencies\Calendar.NET\IEvent.cs" />
+    <Compile Include="Dependencies\Calendar.NET\NavigateLeftButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\NavigateRightButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\RectangleComparer.cs" />
+    <Compile Include="Dependencies\Calendar.NET\RoundedRectangle.cs" />
+    <Compile Include="Dependencies\Calendar.NET\ScrollPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\ScrollPanel.designer.cs">
+      <DependentUpon>ScrollPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Enums\TrayIconClickOpen.cs" />
     <Compile Include="Source\Forms\CelebrationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +146,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm.GenerateReport.Consts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm.FillMonths.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm.SetView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\NavigationForm.cs">
@@ -169,6 +220,30 @@
     <Compile Include="Source\Enums\TorahEventType.cs" />
     <Compile Include="Source\Enums\MoonPhaseType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dependencies\Calendar.NET\Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependencies\Calendar.NET\CoolButton.resx">
+      <DependentUpon>CoolButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependencies\Calendar.NET\EventDetails.resx">
+      <DependentUpon>EventDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependencies\Calendar.NET\EventToolTip.resx">
+      <DependentUpon>EventToolTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependencies\Calendar.NET\NavigateLeftButton.resx">
+      <DependentUpon>NavigateLeftButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependencies\Calendar.NET\NavigateRightButton.resx">
+      <DependentUpon>NavigateRightButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependencies\Calendar.NET\ScrollPanel.resx">
+      <DependentUpon>ScrollPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependencies\Calendar.NET\TodayButton.resx">
+      <DependentUpon>TodayButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\CelebrationsForm.fr.resx">
       <DependentUpon>CelebrationsForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -39,7 +39,7 @@
       <Value Profile="(Default)">6</Value>
     </Setting>
     <Setting Name="CurrentView" Type="Ordisoftware.HebrewCalendar.ViewModeType" Scope="User">
-      <Value Profile="(Default)">Text</Value>
+      <Value Profile="(Default)">Month</Value>
     </Setting>
     <Setting Name="Latitude" Type="System.Single" Scope="User">
       <Value Profile="(Default)">48.85</Value>
@@ -72,6 +72,12 @@
     </Setting>
     <Setting Name="NavigateBottomColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Honeydew</Value>
+    </Setting>
+    <Setting Name="TrayIconClickOpen" Type="Ordisoftware.HebrewCalendar.TrayIconClickOpen" Scope="User">
+      <Value Profile="(Default)">MainForm</Value>
+    </Setting>
+    <Setting Name="StartupHide" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
