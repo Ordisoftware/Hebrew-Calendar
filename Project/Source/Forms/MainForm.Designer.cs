@@ -42,6 +42,8 @@
       this.TabPageText = new System.Windows.Forms.TabPage();
       this.PanelViewText = new System.Windows.Forms.Panel();
       this.CalendarText = new System.Windows.Forms.RichTextBox();
+      this.TabPageMonth = new System.Windows.Forms.TabPage();
+      this.PanelViewMonth = new System.Windows.Forms.Panel();
       this.TabPageGrid = new System.Windows.Forms.TabPage();
       this.PanelViewGrid = new System.Windows.Forms.Panel();
       this.CalendarGrid = new System.Windows.Forms.DataGridView();
@@ -97,7 +99,8 @@
       this.EditESCtoExit = new System.Windows.Forms.ToolStripMenuItem();
       this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuView = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionViewText = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewReport = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewMonth = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewGrid = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionStop = new System.Windows.Forms.ToolStripButton();
       this.SaveCSVDialog = new System.Windows.Forms.SaveFileDialog();
@@ -109,11 +112,7 @@
       this.SeparatorTrayMenuView = new System.Windows.Forms.ToolStripSeparator();
       this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
-      this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.LunisolarCalendar = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendar();
-      this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
-      this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
-      this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter();
+      this.CalendarMonth = new Calendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -127,6 +126,11 @@
       this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.LunisolarCalendar = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendar();
+      this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
+      this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
+      this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter();
       this.StatusBottom.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
@@ -135,6 +139,8 @@
       this.TabControl.SuspendLayout();
       this.TabPageText.SuspendLayout();
       this.PanelViewText.SuspendLayout();
+      this.TabPageMonth.SuspendLayout();
+      this.PanelViewMonth.SuspendLayout();
       this.TabPageGrid.SuspendLayout();
       this.PanelViewGrid.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).BeginInit();
@@ -204,6 +210,7 @@
       // TabControl
       // 
       this.TabControl.Controls.Add(this.TabPageText);
+      this.TabControl.Controls.Add(this.TabPageMonth);
       this.TabControl.Controls.Add(this.TabPageGrid);
       resources.ApplyResources(this.TabControl, "TabControl");
       this.TabControl.Name = "TabControl";
@@ -230,6 +237,19 @@
       resources.ApplyResources(this.CalendarText, "CalendarText");
       this.CalendarText.Name = "CalendarText";
       this.CalendarText.ReadOnly = true;
+      // 
+      // TabPageMonth
+      // 
+      this.TabPageMonth.Controls.Add(this.PanelViewMonth);
+      resources.ApplyResources(this.TabPageMonth, "TabPageMonth");
+      this.TabPageMonth.Name = "TabPageMonth";
+      this.TabPageMonth.UseVisualStyleBackColor = true;
+      // 
+      // PanelViewMonth
+      // 
+      this.PanelViewMonth.Controls.Add(this.CalendarMonth);
+      resources.ApplyResources(this.PanelViewMonth, "PanelViewMonth");
+      this.PanelViewMonth.Name = "PanelViewMonth";
       // 
       // TabPageGrid
       // 
@@ -270,6 +290,7 @@
       this.CalendarGrid.MultiSelect = false;
       this.CalendarGrid.Name = "CalendarGrid";
       this.CalendarGrid.ReadOnly = true;
+      this.CalendarGrid.RowHeadersVisible = false;
       this.CalendarGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.CalendarGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.CalendarGrid_CellFormatting);
       // 
@@ -700,17 +721,24 @@
       this.MenuView.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.MenuView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionViewText,
+            this.ActionViewReport,
+            this.ActionViewMonth,
             this.ActionViewGrid});
       resources.ApplyResources(this.MenuView, "MenuView");
       this.MenuView.Name = "MenuView";
       // 
-      // ActionViewText
+      // ActionViewReport
       // 
-      this.ActionViewText.CheckOnClick = true;
-      resources.ApplyResources(this.ActionViewText, "ActionViewText");
-      this.ActionViewText.Name = "ActionViewText";
-      this.ActionViewText.Click += new System.EventHandler(this.ActionViewText_Click);
+      this.ActionViewReport.CheckOnClick = true;
+      resources.ApplyResources(this.ActionViewReport, "ActionViewReport");
+      this.ActionViewReport.Name = "ActionViewReport";
+      this.ActionViewReport.Click += new System.EventHandler(this.ActionViewReport_Click);
+      // 
+      // ActionViewMonth
+      // 
+      resources.ApplyResources(this.ActionViewMonth, "ActionViewMonth");
+      this.ActionViewMonth.Name = "ActionViewMonth";
+      this.ActionViewMonth.Click += new System.EventHandler(this.ActionViewMonth_Click);
       // 
       // ActionViewGrid
       // 
@@ -786,6 +814,133 @@
       this.MenuExit.Name = "MenuExit";
       this.MenuExit.Click += new System.EventHandler(this.ActionExit_Click);
       // 
+      // CalendarMonth
+      // 
+      this.CalendarMonth.AllowEditingEvents = false;
+      this.CalendarMonth.BackColor = System.Drawing.Color.White;
+      this.CalendarMonth.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
+      this.CalendarMonth.CalendarView = Calendar.NET.CalendarViews.Month;
+      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DimDisabledEvents = true;
+      resources.ApplyResources(this.CalendarMonth, "CalendarMonth");
+      this.CalendarMonth.HighlightCurrentDay = true;
+      this.CalendarMonth.LoadPresetHolidays = false;
+      this.CalendarMonth.Name = "CalendarMonth";
+      this.CalendarMonth.ShowArrowControls = true;
+      this.CalendarMonth.ShowDashedBorderOnDisabledEvents = true;
+      this.CalendarMonth.ShowDateInHeader = true;
+      this.CalendarMonth.ShowDisabledEvents = false;
+      this.CalendarMonth.ShowEventTooltips = false;
+      this.CalendarMonth.ShowTodayButton = true;
+      this.CalendarMonth.TodayFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      // 
+      // dataGridViewTextBoxColumn1
+      // 
+      this.dataGridViewTextBoxColumn1.DataPropertyName = "Date";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
+      this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+      this.dataGridViewTextBoxColumn1.ReadOnly = true;
+      this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn2
+      // 
+      this.dataGridViewTextBoxColumn2.DataPropertyName = "LunarMonth";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+      this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+      this.dataGridViewTextBoxColumn2.ReadOnly = true;
+      this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn3
+      // 
+      this.dataGridViewTextBoxColumn3.DataPropertyName = "LunarDay";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+      this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+      this.dataGridViewTextBoxColumn3.ReadOnly = true;
+      this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn4
+      // 
+      this.dataGridViewTextBoxColumn4.DataPropertyName = "Sunrise";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
+      this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+      this.dataGridViewTextBoxColumn4.ReadOnly = true;
+      this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn5
+      // 
+      this.dataGridViewTextBoxColumn5.DataPropertyName = "Sunset";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
+      this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+      this.dataGridViewTextBoxColumn5.ReadOnly = true;
+      this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn6
+      // 
+      this.dataGridViewTextBoxColumn6.DataPropertyName = "Moonrise";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
+      this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+      this.dataGridViewTextBoxColumn6.ReadOnly = true;
+      this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn7
+      // 
+      this.dataGridViewTextBoxColumn7.DataPropertyName = "Moonset";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
+      this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+      this.dataGridViewTextBoxColumn7.ReadOnly = true;
+      this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn8
+      // 
+      this.dataGridViewTextBoxColumn8.DataPropertyName = "MoonriseType";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn8, "dataGridViewTextBoxColumn8");
+      this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+      this.dataGridViewTextBoxColumn8.ReadOnly = true;
+      this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn9
+      // 
+      this.dataGridViewTextBoxColumn9.DataPropertyName = "IsNewMoon";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn9, "dataGridViewTextBoxColumn9");
+      this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+      this.dataGridViewTextBoxColumn9.ReadOnly = true;
+      this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn10
+      // 
+      this.dataGridViewTextBoxColumn10.DataPropertyName = "IsFullMoon";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn10, "dataGridViewTextBoxColumn10");
+      this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+      this.dataGridViewTextBoxColumn10.ReadOnly = true;
+      this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn11
+      // 
+      this.dataGridViewTextBoxColumn11.DataPropertyName = "MoonPhase";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn11, "dataGridViewTextBoxColumn11");
+      this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+      this.dataGridViewTextBoxColumn11.ReadOnly = true;
+      this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn12
+      // 
+      this.dataGridViewTextBoxColumn12.DataPropertyName = "SeasonChange";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn12, "dataGridViewTextBoxColumn12");
+      this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+      this.dataGridViewTextBoxColumn12.ReadOnly = true;
+      this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn13
+      // 
+      this.dataGridViewTextBoxColumn13.DataPropertyName = "TorahEvents";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn13, "dataGridViewTextBoxColumn13");
+      this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+      this.dataGridViewTextBoxColumn13.ReadOnly = true;
+      this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
       // LunisolarDaysBindingSource
       // 
       this.LunisolarDaysBindingSource.DataMember = "LunisolarDays";
@@ -811,97 +966,6 @@
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
       // 
-      // dataGridViewTextBoxColumn1
-      // 
-      this.dataGridViewTextBoxColumn1.DataPropertyName = "Date";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
-      this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-      this.dataGridViewTextBoxColumn1.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn2
-      // 
-      this.dataGridViewTextBoxColumn2.DataPropertyName = "LunarMonth";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
-      this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-      this.dataGridViewTextBoxColumn2.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn3
-      // 
-      this.dataGridViewTextBoxColumn3.DataPropertyName = "LunarDay";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
-      this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-      this.dataGridViewTextBoxColumn3.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn4
-      // 
-      this.dataGridViewTextBoxColumn4.DataPropertyName = "Sunrise";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
-      this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-      this.dataGridViewTextBoxColumn4.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn5
-      // 
-      this.dataGridViewTextBoxColumn5.DataPropertyName = "Sunset";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
-      this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-      this.dataGridViewTextBoxColumn5.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn6
-      // 
-      this.dataGridViewTextBoxColumn6.DataPropertyName = "Moonrise";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
-      this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-      this.dataGridViewTextBoxColumn6.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn7
-      // 
-      this.dataGridViewTextBoxColumn7.DataPropertyName = "Moonset";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
-      this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-      this.dataGridViewTextBoxColumn7.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn8
-      // 
-      this.dataGridViewTextBoxColumn8.DataPropertyName = "MoonriseType";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn8, "dataGridViewTextBoxColumn8");
-      this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-      this.dataGridViewTextBoxColumn8.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn9
-      // 
-      this.dataGridViewTextBoxColumn9.DataPropertyName = "IsNewMoon";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn9, "dataGridViewTextBoxColumn9");
-      this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-      this.dataGridViewTextBoxColumn9.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn10
-      // 
-      this.dataGridViewTextBoxColumn10.DataPropertyName = "IsFullMoon";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn10, "dataGridViewTextBoxColumn10");
-      this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-      this.dataGridViewTextBoxColumn10.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn11
-      // 
-      this.dataGridViewTextBoxColumn11.DataPropertyName = "MoonPhase";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn11, "dataGridViewTextBoxColumn11");
-      this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-      this.dataGridViewTextBoxColumn11.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn12
-      // 
-      this.dataGridViewTextBoxColumn12.DataPropertyName = "SeasonChange";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn12, "dataGridViewTextBoxColumn12");
-      this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-      this.dataGridViewTextBoxColumn12.ReadOnly = true;
-      // 
-      // dataGridViewTextBoxColumn13
-      // 
-      this.dataGridViewTextBoxColumn13.DataPropertyName = "TorahEvents";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn13, "dataGridViewTextBoxColumn13");
-      this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-      this.dataGridViewTextBoxColumn13.ReadOnly = true;
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -923,6 +987,8 @@
       this.TabControl.ResumeLayout(false);
       this.TabPageText.ResumeLayout(false);
       this.PanelViewText.ResumeLayout(false);
+      this.TabPageMonth.ResumeLayout(false);
+      this.PanelViewMonth.ResumeLayout(false);
       this.TabPageGrid.ResumeLayout(false);
       this.PanelViewGrid.ResumeLayout(false);
       this.PanelViewGrid.PerformLayout();
@@ -985,7 +1051,7 @@
     private System.Windows.Forms.Panel PanelCalendarOuter;
     private System.Windows.Forms.Panel PanelCalendarInner;
     private System.Windows.Forms.ToolStripDropDownButton MenuView;
-    internal System.Windows.Forms.ToolStripMenuItem ActionViewText;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewReport;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewGrid;
     private System.Windows.Forms.TabControl TabControl;
     private System.Windows.Forms.TabPage TabPageText;
@@ -1029,6 +1095,10 @@
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenuView;
     private System.Windows.Forms.ToolStripMenuItem MenuAbout;
     internal System.Windows.Forms.ToolStripMenuItem MenuExit;
+    private System.Windows.Forms.TabPage TabPageMonth;
+    private System.Windows.Forms.Panel PanelViewMonth;
+    private Calendar.NET.Calendar CalendarMonth;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

@@ -95,6 +95,7 @@ namespace Ordisoftware.HebrewCalendar
       UseWaitCursor = true;
       try
       {
+        SetView(Program.Settings.CurrentView, true);
         Refresh();
         SQLiteUtility.CheckDB();
         var connection = new OdbcConnection(Program.Settings.ConnectionString);
@@ -104,7 +105,15 @@ namespace Ordisoftware.HebrewCalendar
         connection.Close();
         LunisolarDaysTableAdapter.Fill(LunisolarCalendar.LunisolarDays);
         ReportTableAdapter.Fill(LunisolarCalendar.Report);
-        SetView(Program.Settings.CurrentView, true);
+        IsGenerating = true;
+        try
+        {
+          FillMonths();
+        }
+        finally
+        {
+          IsGenerating = false;
+        }
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
         {
           var row = LunisolarCalendar.Report.FirstOrDefault();
@@ -145,7 +154,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       UpdateTextCalendar();
       UpdateButtons();
-      MenuShowHide.PerformClick();
+      //TODO remove comment MenuShowHide.PerformClick();
     }
 
     /// <summary>
@@ -266,13 +275,23 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionViewText for click events.
+    /// Event handler. Called by ActionViewReport for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionViewText_Click(object sender, EventArgs e)
+    private void ActionViewReport_Click(object sender, EventArgs e)
     {
       SetView(ViewModeType.Text);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewMonth for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewMonth_Click(object sender, EventArgs e)
+    {
+      SetView(ViewModeType.Month);
     }
 
     /// <summary>
@@ -488,6 +507,7 @@ namespace Ordisoftware.HebrewCalendar
         CalendarText.SelectionLength = 118;
         LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
         CalendarGrid.Update();
+        CalendarMonth.CalendarDate = date;
       }
     }
 

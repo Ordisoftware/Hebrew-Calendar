@@ -197,6 +197,13 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Génération du rapport..." }
       };
 
+    static public readonly Dictionary<string, string> ProgressFillMonthsText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Filling months..." },
+        { "fr", "Remplissage des mois..." }
+      };
+
     static public readonly Dictionary<string, string> RestoreWinPosText
       = new Dictionary<string, string>()
       {

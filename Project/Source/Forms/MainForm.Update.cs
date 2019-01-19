@@ -74,9 +74,18 @@ namespace Ordisoftware.HebrewCalendar
           ViewModeType.Text,
           new ViewConnector
           {
-            MenuItem = ActionViewText,
+            MenuItem = ActionViewReport,
             Panel = PanelViewText,
             Focused = CalendarText
+          }
+        },
+        {
+          ViewModeType.Month,
+          new ViewConnector
+          {
+            MenuItem = ActionViewMonth,
+            Panel = PanelViewMonth,
+            Focused = CalendarMonth
           }
         },
         {
@@ -126,6 +135,7 @@ namespace Ordisoftware.HebrewCalendar
         ActionViewCelebrations.Enabled = ActionSaveReport.Enabled;
         ActionGenerate.Enabled = !IsGenerating;
         ActionStop.Enabled = IsGenerating;
+        MenuView.Enabled = !IsGenerating;
         SctionPreferences.Enabled = !IsGenerating;
         BarProgress.Value = 0;
         LabelStatus.Text = "";

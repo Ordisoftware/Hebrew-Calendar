@@ -39,6 +39,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         UpdateButtons();
         CalendarText.Clear();
+        CalendarMonth.LoadPresetHolidays = false;
         LunisolarDaysBindingSource.DataSource = null;
         LunisolarDaysTableAdapter.DeleteAllQuery();
         ReportTableAdapter.DeleteAllQuery();
@@ -53,6 +54,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( IsGenerating ) PopulateDays(yearFirst, yearLast);
           if ( IsGenerating ) AnalyseDays();
           if ( IsGenerating ) CalendarText.Text = GenerateReport();
+          if ( IsGenerating ) FillMonths();
         }
         finally
         {
@@ -157,7 +159,6 @@ namespace Ordisoftware.HebrewCalendar
     private void AnalyseDays()
     {
       int progress = 0;
-      progress = 0;
       int month = 0;
       int delta = 0;
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )

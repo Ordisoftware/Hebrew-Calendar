@@ -60,6 +60,11 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 
 ## Changelog
 
+#### 2019.__.__ - Version 1.3
+
+- Add month view
+- Improve grid view
+
 #### 2019.01.18 - Version 1.2
 
 - Add celebrations window.
