@@ -70,6 +70,10 @@ namespace Ordisoftware.HebrewCalendar
     private MainForm()
     {
       InitializeComponent();
+      CalendarMonth.CalendarDateChanged += (date) =>
+      {
+        NavigationForm.Instance.Date = date;
+      };
       Text = DisplayManager.Title;
       SystemEvents.SessionEnding += SessionEnding;
       CalendarText.ForeColor = Program.Settings.TextColor;
@@ -601,6 +605,9 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private void CalendarMonth_Click(object sender, EventArgs e)
+    {
+    }
   }
 
 }
