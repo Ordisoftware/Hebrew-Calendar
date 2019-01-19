@@ -50,16 +50,18 @@ namespace Ordisoftware.HebrewCalendar
             item.Rank = rank++;
             CalendarMonth.AddEvent(item);
           }
-          //add(Color.DarkGoldenrod, row.Sunrise);
-          //add(Color.DarkGoldenrod, row.Sunset);
+          Color colorMoon = Color.Black;
+          colorMoon = row.IsNewMoon == 1 ? Color.DarkRed : ( row.IsFullMoon == 1 ? Color.DarkGoldenrod : Color.DarkBlue );
           if ( (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
           {
             add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);
-            add(Color.Black, EphemerisNames.GetLang(EphemerisType.Rise) + row.Moonrise);
+            if ( (MoonriseType)row.MoonriseType != MoonriseType.NextDay )
+              add(colorMoon, EphemerisNames.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay);
           }
           else
           {
-            add(Color.Black, EphemerisNames.GetLang(EphemerisType.Rise) + row.Moonrise);
+            if ( (MoonriseType)row.MoonriseType != MoonriseType.NextDay )
+              add(colorMoon, EphemerisNames.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay);
             add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);
           }
           if ( row.SeasonChange != 0 )

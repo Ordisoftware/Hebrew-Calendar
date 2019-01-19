@@ -125,6 +125,13 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
+    static public readonly Dictionary<string, string> TodayText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Today" },
+        { "fr", "Aujourd'hui" }
+      };
+
     static public readonly Dictionary<string, string> ApplicationDescriptionText
       = new Dictionary<string, string>()
       {

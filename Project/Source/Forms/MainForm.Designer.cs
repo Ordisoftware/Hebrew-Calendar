@@ -820,8 +820,8 @@
       this.CalendarMonth.BackColor = System.Drawing.Color.White;
       this.CalendarMonth.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
       this.CalendarMonth.CalendarView = Calendar.NET.CalendarViews.Month;
-      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.CalendarMonth.DimDisabledEvents = true;
@@ -835,7 +835,7 @@
       this.CalendarMonth.ShowDisabledEvents = false;
       this.CalendarMonth.ShowEventTooltips = false;
       this.CalendarMonth.ShowTodayButton = true;
-      this.CalendarMonth.TodayFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.TodayFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       // 
       // dataGridViewTextBoxColumn1
       // 
@@ -1097,7 +1097,6 @@
     internal System.Windows.Forms.ToolStripMenuItem MenuExit;
     private System.Windows.Forms.TabPage TabPageMonth;
     private System.Windows.Forms.Panel PanelViewMonth;
-    private Calendar.NET.Calendar CalendarMonth;
     private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -1112,6 +1111,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+    private Calendar.NET.Calendar CalendarMonth;
   }
 }
 

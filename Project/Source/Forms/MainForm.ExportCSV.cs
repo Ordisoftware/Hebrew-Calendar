@@ -46,8 +46,8 @@ namespace Ordisoftware.HebrewCalendar
     private void ExportCSV()
     {
       IsGenerating = true;
-      UseWaitCursor = true;
       UpdateButtons();
+      Cursor = Cursors.WaitCursor;
       try
       {
         DoExportCSV();
@@ -58,7 +58,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        UseWaitCursor = false;
+        Cursor = Cursors.Default;
         IsGenerating = false;
         UpdateButtons();
       }

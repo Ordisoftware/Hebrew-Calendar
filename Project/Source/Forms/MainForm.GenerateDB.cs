@@ -14,6 +14,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-01 </edited>
 using System;
+using System.Windows.Forms;
 using System.Linq;
 using System.Data;
 using Ordisoftware.Core;
@@ -34,7 +35,7 @@ namespace Ordisoftware.HebrewCalendar
     private void GenerateDB(int yearFirst, int yearLast)
     {
       IsGenerating = true;
-      UseWaitCursor = true;
+      Cursor = Cursors.WaitCursor;
       try
       {
         UpdateButtons();
@@ -68,7 +69,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        UseWaitCursor = false;
+        Cursor = Cursors.Default;
         IsGenerating = false;
         UpdateButtons();
       }

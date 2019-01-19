@@ -92,10 +92,9 @@ namespace Ordisoftware.HebrewCalendar
       };
       Program.Settings.Retrieve();
       LunisolarCalendar.LunisolarDays.RowChanged += update;
-      UseWaitCursor = true;
+      Cursor = Cursors.WaitCursor;
       try
       {
-        SetView(Program.Settings.CurrentView, true);
         Refresh();
         SQLiteUtility.CheckDB();
         var connection = new OdbcConnection(Program.Settings.ConnectionString);
@@ -113,6 +112,7 @@ namespace Ordisoftware.HebrewCalendar
         finally
         {
           IsGenerating = false;
+          SetView(Program.Settings.CurrentView, true);
         }
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
         {
@@ -139,7 +139,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        UseWaitCursor = false;
+        Cursor = Cursors.Default;
         LunisolarCalendar.LunisolarDays.RowChanged -= update;
         UpdateButtons();
       }
