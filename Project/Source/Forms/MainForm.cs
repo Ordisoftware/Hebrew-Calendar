@@ -605,9 +605,13 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    private void CalendarMonth_Click(object sender, EventArgs e)
+    private void LunisolarDaysBindingSource_CurrentItemChanged(object sender, EventArgs e)
     {
+      var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
+      NavigationForm.Instance.Date = SQLiteUtility.GetDate(( (Data.LunisolarCalendar.LunisolarDaysRow)rowview ).Date);
     }
+
   }
 
 }
+

@@ -969,6 +969,7 @@
       // 
       this.LunisolarDaysBindingSource.DataMember = "LunisolarDays";
       this.LunisolarDaysBindingSource.DataSource = this.LunisolarCalendar;
+      this.LunisolarDaysBindingSource.CurrentItemChanged += new System.EventHandler(this.LunisolarDaysBindingSource_CurrentItemChanged);
       // 
       // LunisolarCalendar
       // 
