@@ -554,6 +554,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
+      NavigationForm.Instance.Date = DateTime.Now;
       NavigationForm.Instance.Visible = true;
       NavigationForm.Instance.BringToFront();
     }
