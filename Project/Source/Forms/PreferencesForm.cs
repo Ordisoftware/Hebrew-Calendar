@@ -69,7 +69,6 @@ namespace Ordisoftware.HebrewCalendar
   /// <param name="e">Event information.</param>
   private void PreferencesForm_Shown(object sender, EventArgs e)
     {
-      TopMost = MainForm.TopMost;
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.Latitude;
       OldLongitude = Program.Settings.Longitude;

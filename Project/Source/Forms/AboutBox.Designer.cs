@@ -156,8 +156,8 @@
       // 
       // panel1
       // 
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.buttonClose);
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // label5
@@ -217,7 +217,6 @@
       this.Name = "AboutBox";
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.AboutBox_Load);
-      this.Shown += new System.EventHandler(this.AboutBox_Shown);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
