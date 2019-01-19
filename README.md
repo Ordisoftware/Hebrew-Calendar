@@ -39,9 +39,11 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 ![TrayIcon Navigation Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-navigation.png)
 
-## Video
+## Videos
 
-[![Video](https://img.youtube.com/vi/u9LD-0u3wdE/0.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
+[![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/0.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
+
+[![Month view showing video](https://img.youtube.com/vi/EJni1fiXpMk/0.jpg)](https://www.youtube.com/watch?v=EJni1fiXpMk)
 
 ## Frequently asked questions
 

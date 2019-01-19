@@ -26,59 +26,48 @@ namespace Ordisoftware.HebrewCalendar
     private void FillMonths()
     {
       int progress = 0;
-      CalendarMonth.SuspendLayout();
-      var oldview = Program.Settings.CurrentView;
-      SetView(ViewModeType.Text);
-      try
+      foreach ( var row in LunisolarCalendar.LunisolarDays )
       {
-        foreach ( var row in LunisolarCalendar.LunisolarDays )
+        if ( !UpdateProgress(progress++, Count, Localizer.ProgressFillMonthsText.GetLang()) ) return;
+        int rank = 0;
+        void add(Color color, string text)
         {
-          if ( !UpdateProgress(progress++, Count, Localizer.ProgressFillMonthsText.GetLang()) ) return;
-          int rank = 0;
-          void add(Color color, string text)
-          {
-            var item = new CustomEvent();
-            item.Date = SQLiteUtility.GetDate(row.Date);
-            item.EventFont = new Font("Calibri", 9f);
-            item.EventColor = item.Date.Year == DateTime.Now.Year 
-                           && item.Date.Month == DateTime.Now.Month 
-                           && item.Date.Day == DateTime.Now.Day 
-                           ? Color.FromArgb(234, 234, 234) // Color from Calendar.cs line 935
-                           : Color.White;
-            item.EventTextColor = color;
-            item.EventText = text;
-            item.Rank = rank++;
-            CalendarMonth.AddEvent(item);
-          }
-          Color colorMoon = Color.Black;
-          string strMonth = row.IsNewMoon == 1
-                          ? " " + TorahCelebrations.BabylonianHebrewMonthNames[row.LunarMonth]
-                          : "";
-          colorMoon = row.IsNewMoon == 1 
-                    ? Color.DarkRed 
-                    : ( row.IsFullMoon == 1 ? Color.DarkGoldenrod : Color.DarkBlue );
-          if ( (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
-          {
-            add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);
-            if ( (MoonriseType)row.MoonriseType != MoonriseType.NextDay )
-              add(colorMoon, EphemerisNames.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
-          }
-          else
-          {
-            if ( (MoonriseType)row.MoonriseType != MoonriseType.NextDay )
-              add(colorMoon, EphemerisNames.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
-            add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);
-          }
-          if ( row.SeasonChange != 0 )
-            add(Color.DarkGreen, TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)row.SeasonChange));
-          if ( row.TorahEvents != 0 )
-            add(Color.DarkRed, TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents));
+          var item = new CustomEvent();
+          item.Date = SQLiteUtility.GetDate(row.Date);
+          item.EventFont = new Font("Calibri", 9f);
+          item.EventColor = item.Date.Year == DateTime.Now.Year
+                         && item.Date.Month == DateTime.Now.Month
+                         && item.Date.Day == DateTime.Now.Day
+                         ? Color.FromArgb(234, 234, 234) // Color from Calendar.cs line 935
+                         : Color.White;
+          item.EventTextColor = color;
+          item.EventText = text;
+          item.Rank = rank++;
+          CalendarMonth.AddEvent(item);
         }
-      }
-      finally
-      {
-        CalendarMonth.ResumeLayout();
-        SetView(oldview);
+        Color colorMoon = Color.Black;
+        string strMonth = row.IsNewMoon == 1
+                        ? " " + TorahCelebrations.BabylonianHebrewMonthNames[row.LunarMonth]
+                        : "";
+        colorMoon = row.IsNewMoon == 1
+                  ? Color.DarkRed
+                  : ( row.IsFullMoon == 1 ? Color.DarkGoldenrod : Color.DarkBlue );
+        if ( (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
+        {
+          add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);
+          if ( (MoonriseType)row.MoonriseType != MoonriseType.NextDay )
+            add(colorMoon, EphemerisNames.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
+        }
+        else
+        {
+          if ( (MoonriseType)row.MoonriseType != MoonriseType.NextDay )
+            add(colorMoon, EphemerisNames.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
+          add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);
+        }
+        if ( row.SeasonChange != 0 )
+          add(Color.DarkGreen, TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)row.SeasonChange));
+        if ( row.TorahEvents != 0 )
+          add(Color.DarkRed, TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents));
       }
     }
 

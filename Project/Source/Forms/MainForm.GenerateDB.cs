@@ -35,6 +35,9 @@ namespace Ordisoftware.HebrewCalendar
     private void GenerateDB(int yearFirst, int yearLast)
     {
       IsGenerating = true;
+      PanelViewText.Parent = null;
+      PanelViewMonth.Parent = null;
+      PanelViewGrid.Parent = null;
       Cursor = Cursors.WaitCursor;
       try
       {
@@ -71,6 +74,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         Cursor = Cursors.Default;
         IsGenerating = false;
+        SetView(Program.Settings.CurrentView, true);
         UpdateButtons();
       }
     }
