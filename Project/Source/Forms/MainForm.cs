@@ -466,14 +466,24 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionPrint_Click(object sender, EventArgs e)
     {
       SetView(ViewModeType.Month);
-      var bitmap = new Bitmap(CalendarMonth.Width, CalendarMonth.Height);
-      CalendarMonth.DrawToBitmap(bitmap, new Rectangle(0, 0, CalendarMonth.Width, CalendarMonth.Height));
-      var document = new PrintDocument();
-      document.DefaultPageSettings.Landscape = true;
-      document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 100, 100);
-      PrintDialog.Document = document;
-      if ( PrintDialog.ShowDialog() == DialogResult.Cancel ) return;
-      document.Print();
+      CalendarMonth.ShowTodayButton = false;
+      CalendarMonth.ShowArrowControls = false;
+      try
+      {
+        var bitmap = new Bitmap(CalendarMonth.Width, CalendarMonth.Height);
+        CalendarMonth.DrawToBitmap(bitmap, new Rectangle(0, 0, CalendarMonth.Width, CalendarMonth.Height));
+        var document = new PrintDocument();
+        document.DefaultPageSettings.Landscape = true;
+        document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 100, 100);
+        PrintDialog.Document = document;
+        if ( PrintDialog.ShowDialog() == DialogResult.Cancel ) return;
+        document.Print();
+      }
+      finally
+      {
+        CalendarMonth.ShowTodayButton = true;
+        CalendarMonth.ShowArrowControls = true;
+      }
     }
 
     /// <summary>
