@@ -70,7 +70,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Text = DisplayManager.Title;
-      Visible = false;
       SystemEvents.SessionEnding += SessionEnding;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
@@ -120,7 +119,7 @@ namespace Ordisoftware.HebrewCalendar
           CalendarText.Text = row == null ? "" : row.Content;
           try
           {
-            ActionSearchDay_Click(null, null);
+            NavigationForm.Instance.Date = DateTime.Now;
           }
           catch
           {
@@ -154,6 +153,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       UpdateTextCalendar();
       UpdateButtons();
+      NavigationForm.Instance.Date = DateTime.Now;
       if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
     }
 
@@ -202,6 +202,7 @@ namespace Ordisoftware.HebrewCalendar
         Visible = true;
         WindowState = Program.Settings.MainFormState;
         ShowInTaskbar = true;
+        NavigationForm.Instance.Date = DateTime.Now;
       }
       else
       {
@@ -346,10 +347,7 @@ namespace Ordisoftware.HebrewCalendar
         || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
         || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )
         if ( DisplayManager.QueryYesNo(Localizer.RegenerateCalendarText.GetLang()) )
-        {
           ActionGenerate.PerformClick();
-          ActionSearchDay_Click(null, null);
-        }
     }
 
     /// <summary>
@@ -436,7 +434,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( !DisplayManager.QueryYesNo(Localizer.ReplaceCalendarText.GetLang()) )
           return;
       GenerateDB((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
-      ActionSearchDay_Click(null, null);
+      NavigationForm.Instance.Date = DateTime.Now;
     }
 
     /// <summary>
@@ -529,7 +527,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       NavigationForm.Instance.Visible = true;
       NavigationForm.Instance.BringToFront();
-      NavigationForm.Instance.Date = DateTime.Now;
+      //NavigationForm.Instance.Date = DateTime.Now;
     }
 
     /// <summary>
