@@ -28,7 +28,7 @@ AllowNoIcons=true
 LicenseFile=..\Project\License\MPL 2.0.rtf
 InfoBeforeFile=
 OutputDir=.\
-OutputBaseFilename={#MyAppPublisher}{#MyAppNameNoSpace}Setup_{#MyAppVersion}
+OutputBaseFilename={#MyAppPublisher}{#MyAppNameNoSpace}Setup-{#MyAppVersion}
 SetupIconFile=
 Compression=lzma
 SolidCompression=true
@@ -83,7 +83,7 @@ Source: ..\Project\Properties\*; DestDir: {app}\Project\Properties\; Flags: igno
 Source: ..\Project\Source\*; DestDir: {app}\Project\Source\; Flags: ignoreversion recursesubdirs; Excludes: *.lnk
 Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion; Excludes: *.suo, *.user
 Source: ..\*; DestDir: {app}; Flags: ignoreversion
-Source: *; DestDir: {app}\Setup; Excludes: *.---, OrdisoftwareHebrewCalendarSetup*.exe
+Source: *; DestDir: {app}\Setup; Excludes: *.---, {#MyAppPublisher}{#MyAppNameNoSpace}Setup*.exe
 DestDir: {app}; Source: ..\Register ODBC.reg
 DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite
 
