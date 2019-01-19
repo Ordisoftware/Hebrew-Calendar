@@ -154,7 +154,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       UpdateTextCalendar();
       UpdateButtons();
-      //TODO remove comment MenuShowHide.PerformClick();
+      MenuShowHide.PerformClick();
     }
 
     /// <summary>

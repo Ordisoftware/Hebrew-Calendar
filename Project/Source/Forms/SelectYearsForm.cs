@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
       int yearFirst = (int)EditYearFirst.Value;
       int yearLast = (int)EditYearLast.Value;
       if ( yearFirst == yearLast )
-        yearLast = yearFirst + 1;
+        yearLast = yearFirst + 2;
       else
       if ( yearFirst > yearLast )
       {

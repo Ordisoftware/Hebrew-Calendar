@@ -102,17 +102,6 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// List of the names of the babylonian hebrew months.
-    /// </summary>
-    static public readonly string[] BabylonianHebrewMonthNames =
-    {
-      "",
-      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
-      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
-      "Adar II"
-    };
-
-    /// <summary>
     /// List of names of the moon phases.
     /// </summary>
     static public readonly Dictionary<MoonPhaseType, Dictionary<string, string>> MoonPhaseNames

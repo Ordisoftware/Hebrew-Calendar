@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewCalendar
                       where day.Date == strDate
                       select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
           LabelDate.Text = value.ToLongDateString();
-          string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[row.LunarMonth];
+          string strMonth = TorahCelebrations.BabylonianHebrewMonthNames[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
           LabelLunarDayValue.Text = "Day #" + row.LunarDay.ToString();
           if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
