@@ -171,7 +171,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by MainForm_Form for form closing events.
+    /// Event handler. Called by MainForm_Form for form closed events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Form closing event information.</param>
@@ -556,7 +556,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       NavigationForm.Instance.Visible = true;
       NavigationForm.Instance.BringToFront();
-      //NavigationForm.Instance.Date = DateTime.Now;
     }
 
     /// <summary>
@@ -582,13 +581,13 @@ namespace Ordisoftware.HebrewCalendar
           e.Value = ( (MoonriseType)e.Value ).ToString();
           break;
         case 10:
-          e.Value = ( (MoonPhaseType)e.Value ).ToString();
+          e.Value = AstronomyUtility.MoonPhaseNames.GetLang((MoonPhaseType)e.Value);
           break;
         case 8:
-          e.Value = (int)e.Value == 0 ? "" : "Yes";
+          e.Value = (int)e.Value == 0 ? "" : "*";
           break;
         case 9:
-          e.Value = (int)e.Value == 0 ? "" : "Yes";
+          e.Value = (int)e.Value == 0 ? "" : "*";
           break;
         case 11:
           var season = (SeasonChangeType)e.Value;

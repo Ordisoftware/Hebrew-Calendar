@@ -117,22 +117,22 @@ namespace Ordisoftware.HebrewCalendar
         {
           MoonPhaseType.WaxingCrescent, new Dictionary<string, string>
           {
-            { "en", "Waxing crescent moon" },
-            { "fr", "Premier croissant lunaire" }
+            { "en", "Waxing crescent" },
+            { "fr", "Premier croissant" }
           }
         },
         {
           MoonPhaseType.FirstQuarter, new Dictionary<string, string>
           {
-            { "en", "First quarter moon" },
-            { "fr", "Premier quartier lunaire" }
+            { "en", "First quarter" },
+            { "fr", "Premier quartier" }
           }
         },
         {
           MoonPhaseType.WaxingGibbous, new Dictionary<string, string>
           {
-            { "en", "Waxing gibbous moon" },
-            { "fr", "Lune gibbeuse croissante" }
+            { "en", "Waxing gibbous" },
+            { "fr", "Gibbeuse croissante" }
           }
         },
         {
@@ -145,22 +145,22 @@ namespace Ordisoftware.HebrewCalendar
         {
           MoonPhaseType.WaningGibbous, new Dictionary<string, string>
           {
-            { "en", "Waning gibbous moon" },
-            { "fr", "Lune gibbeuse décroissante" }
+            { "en", "Waning gibbous" },
+            { "fr", "Gibbeuse décroissante" }
           }
         },
         {
           MoonPhaseType.LastQuarter, new Dictionary<string, string>
           {
-            { "en", "Last quarter moon" },
-            { "fr", "Dernier quartier lunaire" }
+            { "en", "Last quarter" },
+            { "fr", "Dernier quartier" }
           }
         },
         {
           MoonPhaseType.WaningCrescent, new Dictionary<string, string>
           {
-            { "en", "Waning crescent moon" },
-            { "fr", "Dernier croissant lunaire" }
+            { "en", "Waning crescent" },
+            { "fr", "Dernier croissant" }
           }
         }
       };
