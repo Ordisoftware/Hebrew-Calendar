@@ -35,11 +35,7 @@ namespace Ordisoftware.HebrewCalendar
           var item = new CustomEvent();
           item.Date = SQLiteUtility.GetDate(row.Date);
           item.EventFont = new Font("Calibri", 9f);
-          item.EventColor = item.Date.Year == DateTime.Now.Year
-                         && item.Date.Month == DateTime.Now.Month
-                         && item.Date.Day == DateTime.Now.Day
-                         ? Color.FromArgb(234, 234, 234) // Color from Calendar.cs line 935
-                         : Color.White;
+          item.EventColor = Color.White;
           item.EventTextColor = color;
           item.EventText = text;
           item.Rank = rank++;
