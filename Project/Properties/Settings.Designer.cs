@@ -284,5 +284,29 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["NavigateBottomColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MainForm")]
+        public global::Ordisoftware.HebrewCalendar.TrayIconClickOpen TrayIconClickOpen {
+            get {
+                return ((global::Ordisoftware.HebrewCalendar.TrayIconClickOpen)(this["TrayIconClickOpen"]));
+            }
+            set {
+                this["TrayIconClickOpen"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool StartupHide {
+            get {
+                return ((bool)(this["StartupHide"]));
+            }
+            set {
+                this["StartupHide"] = value;
+            }
+        }
     }
 }

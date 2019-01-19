@@ -52,7 +52,7 @@
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
       this.GroupBoxText = new System.Windows.Forms.GroupBox();
       this.BroupBoxShabat = new System.Windows.Forms.GroupBox();
-      this.GroupBoxTrayicon = new System.Windows.Forms.GroupBox();
+      this.GroupBoxNavigation = new System.Windows.Forms.GroupBox();
       this.ActionUseDefaultColors = new System.Windows.Forms.LinkLabel();
       this.LabelTopColor = new System.Windows.Forms.Label();
       this.ActionUseSystemColors = new System.Windows.Forms.LinkLabel();
@@ -61,6 +61,11 @@
       this.PanelMiddleColor = new System.Windows.Forms.Panel();
       this.labelBottomColor = new System.Windows.Forms.Label();
       this.LabelMiddleColor = new System.Windows.Forms.Label();
+      this.GroupBoxTrayIcon = new System.Windows.Forms.GroupBox();
+      this.RadioButtonNavigationForm = new System.Windows.Forms.RadioButton();
+      this.RadioButtonMainForm = new System.Windows.Forms.RadioButton();
+      this.GroupBoxStartup = new System.Windows.Forms.GroupBox();
+      this.editStartupHide = new System.Windows.Forms.CheckBox();
       GPSLatitudeLabel = new System.Windows.Forms.Label();
       GPSLongitudeLabel = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).BeginInit();
@@ -69,7 +74,9 @@
       this.GroupBoxGPS.SuspendLayout();
       this.GroupBoxText.SuspendLayout();
       this.BroupBoxShabat.SuspendLayout();
-      this.GroupBoxTrayicon.SuspendLayout();
+      this.GroupBoxNavigation.SuspendLayout();
+      this.GroupBoxTrayIcon.SuspendLayout();
+      this.GroupBoxStartup.SuspendLayout();
       this.SuspendLayout();
       // 
       // GPSLatitudeLabel
@@ -95,10 +102,10 @@
       // 
       // EditFontName
       // 
-      resources.ApplyResources(this.EditFontName, "EditFontName");
       this.EditFontName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingSettings, "FontName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.EditFontName.FormattingEnabled = true;
+      resources.ApplyResources(this.EditFontName, "EditFontName");
       this.EditFontName.Name = "EditFontName";
       this.EditFontName.SelectedIndexChanged += new System.EventHandler(this.EitFontName_Changed);
       // 
@@ -113,8 +120,8 @@
       // 
       // EditFontSize
       // 
-      resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BindingSettings, "FontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.Maximum = new decimal(new int[] {
             32,
             0,
@@ -140,9 +147,9 @@
       // 
       // PanelBackColor
       // 
-      resources.ApplyResources(this.PanelBackColor, "PanelBackColor");
       this.PanelBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
       this.PanelBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelBackColor, "PanelBackColor");
       this.PanelBackColor.Name = "PanelBackColor";
       this.PanelBackColor.Click += new System.EventHandler(this.PanelBackColor_Click);
       // 
@@ -153,9 +160,9 @@
       // 
       // EditShabatDay
       // 
-      resources.ApplyResources(this.EditShabatDay, "EditShabatDay");
       this.EditShabatDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.EditShabatDay.FormattingEnabled = true;
+      resources.ApplyResources(this.EditShabatDay, "EditShabatDay");
       this.EditShabatDay.Name = "EditShabatDay";
       // 
       // LabelFontName
@@ -165,9 +172,9 @@
       // 
       // PanelTextColor
       // 
-      resources.ApplyResources(this.PanelTextColor, "PanelTextColor");
       this.PanelTextColor.BackColor = System.Drawing.Color.Black;
       this.PanelTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelTextColor, "PanelTextColor");
       this.PanelTextColor.Name = "PanelTextColor";
       this.PanelTextColor.Click += new System.EventHandler(this.PanelTextColor_Click);
       // 
@@ -178,20 +185,20 @@
       // 
       // GPSLatitudeTextBox
       // 
-      resources.ApplyResources(this.GPSLatitudeTextBox, "GPSLatitudeTextBox");
       this.GPSLatitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingSettings, "Latitude", true));
+      resources.ApplyResources(this.GPSLatitudeTextBox, "GPSLatitudeTextBox");
       this.GPSLatitudeTextBox.Name = "GPSLatitudeTextBox";
       // 
       // GPSLongitudeTextBox
       // 
-      resources.ApplyResources(this.GPSLongitudeTextBox, "GPSLongitudeTextBox");
       this.GPSLongitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingSettings, "Longitude", true));
+      resources.ApplyResources(this.GPSLongitudeTextBox, "GPSLongitudeTextBox");
       this.GPSLongitudeTextBox.Name = "GPSLongitudeTextBox";
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ButtonClose);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionUsePersonalShabat
@@ -204,17 +211,16 @@
       // 
       // GroupBoxGPS
       // 
-      resources.ApplyResources(this.GroupBoxGPS, "GroupBoxGPS");
       this.GroupBoxGPS.Controls.Add(this.GPSLatitudeTextBox);
       this.GroupBoxGPS.Controls.Add(GPSLatitudeLabel);
       this.GroupBoxGPS.Controls.Add(this.GPSLongitudeTextBox);
       this.GroupBoxGPS.Controls.Add(GPSLongitudeLabel);
+      resources.ApplyResources(this.GroupBoxGPS, "GroupBoxGPS");
       this.GroupBoxGPS.Name = "GroupBoxGPS";
       this.GroupBoxGPS.TabStop = false;
       // 
       // GroupBoxText
       // 
-      resources.ApplyResources(this.GroupBoxText, "GroupBoxText");
       this.GroupBoxText.Controls.Add(this.LabelFontName);
       this.GroupBoxText.Controls.Add(this.LabelBackColor);
       this.GroupBoxText.Controls.Add(this.PanelTextColor);
@@ -223,31 +229,32 @@
       this.GroupBoxText.Controls.Add(this.PanelBackColor);
       this.GroupBoxText.Controls.Add(this.LabelFontSize);
       this.GroupBoxText.Controls.Add(this.EditFontSize);
+      resources.ApplyResources(this.GroupBoxText, "GroupBoxText");
       this.GroupBoxText.Name = "GroupBoxText";
       this.GroupBoxText.TabStop = false;
       // 
       // BroupBoxShabat
       // 
-      resources.ApplyResources(this.BroupBoxShabat, "BroupBoxShabat");
       this.BroupBoxShabat.Controls.Add(this.EditShabatDay);
       this.BroupBoxShabat.Controls.Add(this.ActionUsePersonalShabat);
       this.BroupBoxShabat.Controls.Add(this.LabelShabatDay);
+      resources.ApplyResources(this.BroupBoxShabat, "BroupBoxShabat");
       this.BroupBoxShabat.Name = "BroupBoxShabat";
       this.BroupBoxShabat.TabStop = false;
       // 
-      // GroupBoxTrayicon
+      // GroupBoxNavigation
       // 
-      resources.ApplyResources(this.GroupBoxTrayicon, "GroupBoxTrayicon");
-      this.GroupBoxTrayicon.Controls.Add(this.ActionUseDefaultColors);
-      this.GroupBoxTrayicon.Controls.Add(this.LabelTopColor);
-      this.GroupBoxTrayicon.Controls.Add(this.ActionUseSystemColors);
-      this.GroupBoxTrayicon.Controls.Add(this.PanelTopColor);
-      this.GroupBoxTrayicon.Controls.Add(this.PanelBottomColor);
-      this.GroupBoxTrayicon.Controls.Add(this.PanelMiddleColor);
-      this.GroupBoxTrayicon.Controls.Add(this.labelBottomColor);
-      this.GroupBoxTrayicon.Controls.Add(this.LabelMiddleColor);
-      this.GroupBoxTrayicon.Name = "GroupBoxTrayicon";
-      this.GroupBoxTrayicon.TabStop = false;
+      this.GroupBoxNavigation.Controls.Add(this.ActionUseDefaultColors);
+      this.GroupBoxNavigation.Controls.Add(this.LabelTopColor);
+      this.GroupBoxNavigation.Controls.Add(this.ActionUseSystemColors);
+      this.GroupBoxNavigation.Controls.Add(this.PanelTopColor);
+      this.GroupBoxNavigation.Controls.Add(this.PanelBottomColor);
+      this.GroupBoxNavigation.Controls.Add(this.PanelMiddleColor);
+      this.GroupBoxNavigation.Controls.Add(this.labelBottomColor);
+      this.GroupBoxNavigation.Controls.Add(this.LabelMiddleColor);
+      resources.ApplyResources(this.GroupBoxNavigation, "GroupBoxNavigation");
+      this.GroupBoxNavigation.Name = "GroupBoxNavigation";
+      this.GroupBoxNavigation.TabStop = false;
       // 
       // ActionUseDefaultColors
       // 
@@ -272,25 +279,25 @@
       // 
       // PanelTopColor
       // 
-      resources.ApplyResources(this.PanelTopColor, "PanelTopColor");
       this.PanelTopColor.BackColor = System.Drawing.Color.LemonChiffon;
       this.PanelTopColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelTopColor, "PanelTopColor");
       this.PanelTopColor.Name = "PanelTopColor";
       this.PanelTopColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelTopColor_MouseClick);
       // 
       // PanelBottomColor
       // 
-      resources.ApplyResources(this.PanelBottomColor, "PanelBottomColor");
       this.PanelBottomColor.BackColor = System.Drawing.Color.Honeydew;
       this.PanelBottomColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelBottomColor, "PanelBottomColor");
       this.PanelBottomColor.Name = "PanelBottomColor";
       this.PanelBottomColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelBottomColor_MouseClick);
       // 
       // PanelMiddleColor
       // 
-      resources.ApplyResources(this.PanelMiddleColor, "PanelMiddleColor");
       this.PanelMiddleColor.BackColor = System.Drawing.Color.AliceBlue;
       this.PanelMiddleColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelMiddleColor, "PanelMiddleColor");
       this.PanelMiddleColor.Name = "PanelMiddleColor";
       this.PanelMiddleColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelMiddleColor_MouseClick);
       // 
@@ -304,14 +311,52 @@
       resources.ApplyResources(this.LabelMiddleColor, "LabelMiddleColor");
       this.LabelMiddleColor.Name = "LabelMiddleColor";
       // 
+      // GroupBoxTrayIcon
+      // 
+      this.GroupBoxTrayIcon.Controls.Add(this.RadioButtonNavigationForm);
+      this.GroupBoxTrayIcon.Controls.Add(this.RadioButtonMainForm);
+      resources.ApplyResources(this.GroupBoxTrayIcon, "GroupBoxTrayIcon");
+      this.GroupBoxTrayIcon.Name = "GroupBoxTrayIcon";
+      this.GroupBoxTrayIcon.TabStop = false;
+      // 
+      // RadioButtonNavigationForm
+      // 
+      resources.ApplyResources(this.RadioButtonNavigationForm, "RadioButtonNavigationForm");
+      this.RadioButtonNavigationForm.Name = "RadioButtonNavigationForm";
+      this.RadioButtonNavigationForm.TabStop = true;
+      this.RadioButtonNavigationForm.UseVisualStyleBackColor = true;
+      // 
+      // RadioButtonMainForm
+      // 
+      resources.ApplyResources(this.RadioButtonMainForm, "RadioButtonMainForm");
+      this.RadioButtonMainForm.Name = "RadioButtonMainForm";
+      this.RadioButtonMainForm.TabStop = true;
+      this.RadioButtonMainForm.UseVisualStyleBackColor = true;
+      // 
+      // GroupBoxStartup
+      // 
+      this.GroupBoxStartup.Controls.Add(this.editStartupHide);
+      resources.ApplyResources(this.GroupBoxStartup, "GroupBoxStartup");
+      this.GroupBoxStartup.Name = "GroupBoxStartup";
+      this.GroupBoxStartup.TabStop = false;
+      // 
+      // editStartupHide
+      // 
+      resources.ApplyResources(this.editStartupHide, "editStartupHide");
+      this.editStartupHide.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.BindingSettings, "StartupHide", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.editStartupHide.Name = "editStartupHide";
+      this.editStartupHide.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.GroupBoxStartup);
+      this.Controls.Add(this.GroupBoxTrayIcon);
       this.Controls.Add(this.GroupBoxText);
-      this.Controls.Add(this.GroupBoxTrayicon);
+      this.Controls.Add(this.GroupBoxNavigation);
       this.Controls.Add(this.BroupBoxShabat);
       this.Controls.Add(this.GroupBoxGPS);
       this.Controls.Add(this.PanelButtons);
@@ -331,8 +376,12 @@
       this.GroupBoxText.PerformLayout();
       this.BroupBoxShabat.ResumeLayout(false);
       this.BroupBoxShabat.PerformLayout();
-      this.GroupBoxTrayicon.ResumeLayout(false);
-      this.GroupBoxTrayicon.PerformLayout();
+      this.GroupBoxNavigation.ResumeLayout(false);
+      this.GroupBoxNavigation.PerformLayout();
+      this.GroupBoxTrayIcon.ResumeLayout(false);
+      this.GroupBoxTrayIcon.PerformLayout();
+      this.GroupBoxStartup.ResumeLayout(false);
+      this.GroupBoxStartup.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -356,7 +405,7 @@
     private System.Windows.Forms.GroupBox GroupBoxGPS;
     private System.Windows.Forms.GroupBox GroupBoxText;
     private System.Windows.Forms.GroupBox BroupBoxShabat;
-    private System.Windows.Forms.GroupBox GroupBoxTrayicon;
+    private System.Windows.Forms.GroupBox GroupBoxNavigation;
     private System.Windows.Forms.Label LabelTopColor;
     private System.Windows.Forms.Label labelBottomColor;
     private System.Windows.Forms.Label LabelMiddleColor;
@@ -367,5 +416,10 @@
     internal System.Windows.Forms.Panel PanelBottomColor;
     internal System.Windows.Forms.Panel PanelMiddleColor;
     private System.Windows.Forms.LinkLabel ActionUseDefaultColors;
+    private System.Windows.Forms.GroupBox GroupBoxTrayIcon;
+    private System.Windows.Forms.RadioButton RadioButtonNavigationForm;
+    private System.Windows.Forms.RadioButton RadioButtonMainForm;
+    private System.Windows.Forms.GroupBox GroupBoxStartup;
+    private System.Windows.Forms.CheckBox editStartupHide;
   }
 }

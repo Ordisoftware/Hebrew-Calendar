@@ -154,7 +154,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       UpdateTextCalendar();
       UpdateButtons();
-      MenuShowHide.PerformClick();
+      if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
     }
 
     /// <summary>
@@ -221,20 +221,29 @@ namespace Ordisoftware.HebrewCalendar
     private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
     {
       if ( e != null && e.Button != MouseButtons.Left ) return;
-      var form = NavigationForm.Instance;
-      if ( form.Visible )
-        form.Visible = false;
-      else
-        try
-        {
-          form.Date = DateTime.Now;
-          form.Visible = true;
-          form.BringToFront();
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
+
+      switch ( Program.Settings.TrayIconClickOpen )
+      {
+        case TrayIconClickOpen.MainForm:
+          MenuShowHide.PerformClick();
+          break;
+        case TrayIconClickOpen.NavigationForm:
+          var form = NavigationForm.Instance;
+          if ( form.Visible )
+            form.Visible = false;
+          else
+            try
+            {
+              form.Date = DateTime.Now;
+              form.Visible = true;
+              form.BringToFront();
+            }
+            catch ( Exception ex )
+            {
+              ex.Manage();
+            }
+          break;
+      }
     }
 
     /// <summary>

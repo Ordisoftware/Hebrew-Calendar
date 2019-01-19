@@ -125,6 +125,7 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Enums\TrayIconClickOpen.cs" />
     <Compile Include="Source\Forms\CelebrationsForm.cs">
       <SubType>Form</SubType>
     </Compile>

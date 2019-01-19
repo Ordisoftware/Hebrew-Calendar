@@ -19,7 +19,7 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 - Copy the report to the clipboard.
 - Save the report to a text file.
 - Export data to CSV.
-- Navigation by day window from the tray icon.
+- Navigation by day window from the Tray Icon.
 - English, French.
 
 ## Requirements
@@ -35,9 +35,9 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 ![Month Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-month-768x527.png)
 
-![Trayicon Celebration Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-celebrations.png)
+![TrayIcon Celebrations Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-celebrations.png)
 
-![Trayicon Navigation Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-navigation.png)
+![TrayIcon Navigation Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-navigation.png)
 
 ## Video
 
@@ -64,16 +64,18 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 
 ## Changelog
 
-#### 2019.__.__ - Version 1.3
+#### 2019.01.20 - Version 1.3
 
-- Add month view
-- Improve grid view
+- Add an option for the Tray Icon mouse click.
+- Add an option to show/hide the main form at startup.
+- Add a month view.
+- Improve the grid view.
 
 #### 2019.01.18 - Version 1.2
 
-- Add celebrations window.
-- Improve navigation window.
-- Improve preferences window.
+- Add a celebrations window.
+- Improve the navigation window.
+- Improve the preferences window.
 - Some bug fixes.
 
 #### 2019.01.17 - Version 1.1
