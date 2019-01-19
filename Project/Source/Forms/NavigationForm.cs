@@ -53,6 +53,8 @@ namespace Ordisoftware.HebrewCalendar
           string strMonth = AstronomyUtility.BabylonianHebrewMonthNames[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
           LabelLunarDayValue.Text = "Day #" + row.LunarDay.ToString();
+          if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+            LabelLunarDayValue.Text += " (Shabat)";
           LabelSunriseValue.Text = row.Sunrise.ToString();
           LabelSunsetValue.Text = row.Sunset.ToString();
           LabelMoonriseValue.Text = row.Moonrise.ToString();
