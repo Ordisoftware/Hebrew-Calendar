@@ -153,6 +153,14 @@ namespace Ordisoftware.HebrewCalendar
       form.TopMost = true;
       if ( form.ShowDialog() == DialogResult.OK )
         Date = form.MonthCalendar.SelectionStart;
+      else
+        try
+        {
+          ActiveControl = LabelDate;
+        }
+        catch
+        {
+        }
     }
 
     private void buttonPreviousDay_Click(object sender, EventArgs e)
