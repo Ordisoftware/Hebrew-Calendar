@@ -62,6 +62,7 @@
       this.ListView.UseCompatibleStateImageBehavior = false;
       this.ListView.View = System.Windows.Forms.View.Details;
       this.ListView.SelectedIndexChanged += new System.EventHandler(this.ListView_SelectedIndexChanged);
+      this.ListView.DoubleClick += new System.EventHandler(this.ListView_DoubleClick);
       // 
       // columnHeader1
       // 

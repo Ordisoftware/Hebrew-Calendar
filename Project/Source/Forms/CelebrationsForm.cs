@@ -76,6 +76,10 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private void ListView_DoubleClick(object sender, EventArgs e)
+    {
+      Close();
+    }
   }
 
 }
