@@ -14,6 +14,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -23,8 +24,16 @@ namespace Ordisoftware.HebrewCalendar
   public partial class ReminderForm : Form
   {
 
+    static internal readonly List<Form> Forms = new List<Form>();
+
     static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row)
     {
+      foreach ( var item in Forms )
+        if ( (string)item.Tag == row.Date )
+        {
+          item.Show();
+          return;
+        }
       var form = new ReminderForm();
       var date = SQLiteUtility.GetDate(row.Date);
       form.LabelNextCelebrationText.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents);
@@ -35,7 +44,9 @@ namespace Ordisoftware.HebrewCalendar
       int width = SystemInformation.WorkingArea.Width;
       int height = SystemInformation.WorkingArea.Height;
       form.Location = new Point(left + width - form.Width, top + height - form.Height);
+      form.Tag = row.Date;
       form.Show();
+      Forms.Add(form);
     }
 
     protected override bool ShowWithoutActivation { get { return true; } }

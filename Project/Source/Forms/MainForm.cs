@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
-        UpdateProgress(progress++, Count, Localizer.LoadingDataText.GetLang());
+        if ( !IsGenerating ) UpdateProgress(progress++, Count, Localizer.LoadingDataText.GetLang());
       };
       Program.Settings.Retrieve();
       LunisolarCalendar.LunisolarDays.RowChanged += update;
@@ -449,6 +449,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
+        Reminded.Clear();
         Timer.Enabled = Program.Settings.ReminderEnabled;
         if ( Timer.Enabled ) Timer_Tick(this, null);
       }
