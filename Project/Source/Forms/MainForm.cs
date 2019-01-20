@@ -16,6 +16,7 @@
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
 using System.Diagnostics;
@@ -146,6 +147,8 @@ namespace Ordisoftware.HebrewCalendar
         Cursor = Cursors.Default;
         LunisolarCalendar.LunisolarDays.RowChanged -= update;
         UpdateButtons();
+        Timer.Enabled = Program.Settings.ReminderEnabled;
+        if ( Timer.Enabled ) Timer_Tick(this, null);
       }
     }
 
@@ -348,6 +351,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       PreferencesForm.Instance.ShowDialog();
+      Timer.Enabled = Program.Settings.ReminderEnabled;
       if ( PreferencesForm.Instance.OldShabatDay != Program.Settings.ShabatDay
         || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
         || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )
@@ -570,7 +574,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewCelebrations_Click(object sender, EventArgs e)
     {
-      CelebrationsForm.Execute();
+      CelebrationsForm.Run();
     }
 
     /// <summary>
@@ -605,13 +609,58 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    /// <summary>
+    /// Event handler. Called by LunisolarDaysBindingSource for current item changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void LunisolarDaysBindingSource_CurrentItemChanged(object sender, EventArgs e)
     {
-      var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-      NavigationForm.Instance.Date = SQLiteUtility.GetDate(( (Data.LunisolarCalendar.LunisolarDaysRow)rowview ).Date);
+      try
+      {
+        if ( LunisolarDaysBindingSource.Current == null ) return;
+        var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
+        NavigationForm.Instance.Date = SQLiteUtility.GetDate(( (Data.LunisolarCalendar.LunisolarDaysRow)rowview ).Date);
+      }
+      catch
+      {
+      }
     }
 
+    private List<string> Reminded = new List<string>();
+
+    /// <summary>
+    /// Event handler. Called by Timer for tick events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void Timer_Tick(object sender, EventArgs e)
+    {
+      try
+      {
+        var dateStart = DateTime.Now;
+        var dateEnd = DateTime.Now.AddDays(Program.Settings.ReminderInterval);
+        string strDateStart = SQLiteUtility.GetDate(dateStart);
+        string strDateEnd = SQLiteUtility.GetDate(dateEnd);
+        var row = ( from day in LunisolarCalendar.LunisolarDays
+                    where !Reminded.Contains(day.Date)
+                       && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDateStart)
+                       && SQLiteUtility.GetDate(day.Date) <= SQLiteUtility.GetDate(strDateEnd)
+                       && ( (TorahEventType)day.TorahEvents == TorahEventType.PessahD1
+                         || (TorahEventType)day.TorahEvents == TorahEventType.ChavouotDiet
+                         || (TorahEventType)day.TorahEvents == TorahEventType.Chavouot2
+                         || (TorahEventType)day.TorahEvents == TorahEventType.YomTerouah
+                         || (TorahEventType)day.TorahEvents == TorahEventType.YomHaKipourim
+                         || (TorahEventType)day.TorahEvents == TorahEventType.SoukotD1 )
+                    select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
+        if ( row == null ) return;
+        Reminded.Add(row.Date);
+        ReminderForm.Run(row);
+      }
+      catch
+      {
+      }
+    }
   }
 
 }
-

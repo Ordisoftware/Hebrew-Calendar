@@ -131,7 +131,7 @@
     <value>19, 42</value>
   </data>
   <data name="EditFontName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 21</value>
+    <value>147, 21</value>
   </data>
   <data name="LabelShabatDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 13</value>
@@ -161,7 +161,7 @@
     <value>Couleur du texte</value>
   </data>
   <data name="EditShabatDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 21</value>
+    <value>147, 21</value>
   </data>
   <data name="LabelFontName.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -184,14 +184,8 @@
   <data name="GPSLatitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>75, 31</value>
   </data>
-  <data name="GPSLatitudeTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 20</value>
-  </data>
   <data name="GPSLongitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>75, 57</value>
-  </data>
-  <data name="GPSLongitudeTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 20</value>
   </data>
   <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 13</value>
@@ -256,11 +250,26 @@
   <data name="GroupBoxStartup.Text" xml:space="preserve">
     <value>Démarrage</value>
   </data>
-  <data name="editStartupHide.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 17</value>
   </data>
-  <data name="editStartupHide.Text" xml:space="preserve">
+  <data name="EditStartupHide.Text" xml:space="preserve">
     <value>Cacher l'application</value>
+  </data>
+  <data name="GroupBoxReminder.Text" xml:space="preserve">
+    <value>Rappel</value>
+  </data>
+  <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
+  </data>
+  <data name="LabelTimerInterval.Text" xml:space="preserve">
+    <value>Nombre de jours</value>
+  </data>
+  <data name="EditTimerEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="EditTimerEnabled.Text" xml:space="preserve">
+    <value>Activé</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -285,6 +294,10 @@
         AAAAAAAA//8AAPwfAAD8HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwf
         AAD8HwAA//8AAA==
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>

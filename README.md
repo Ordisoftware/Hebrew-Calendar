@@ -14,6 +14,7 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 - Tabular text report view.
 - Month view.
 - Grid view.
+- Event reminder.
 - Search for a day in the database.
 - Window listing annual celebrations.
 - Print the month view.
@@ -66,6 +67,10 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 They can be found using an [online service](https://www.google.com/search?q=latitude+longitude).
 
 ## Changelog
+
+#### 2019.__.__ - Version 1.4
+
+- Add an event reminder.
 
 #### 2019.01.20 - Version 1.3
 

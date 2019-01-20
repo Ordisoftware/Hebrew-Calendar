@@ -308,5 +308,29 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["StartupHide"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("14")]
+        public int ReminderInterval {
+            get {
+                return ((int)(this["ReminderInterval"]));
+            }
+            set {
+                this["ReminderInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ReminderEnabled {
+            get {
+                return ((bool)(this["ReminderEnabled"]));
+            }
+            set {
+                this["ReminderEnabled"] = value;
+            }
+        }
     }
 }

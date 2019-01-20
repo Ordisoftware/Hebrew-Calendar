@@ -265,7 +265,7 @@
     <value>CalendarMonth</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Type" xml:space="preserve">
-    <value>Calendar.NET.Calendar, Ordisoftware.HebrewCalendar, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Calendar.NET.Calendar, Ordisoftware.HebrewCalendar, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Parent" xml:space="preserve">
     <value>PanelViewMonth</value>
@@ -1244,36 +1244,36 @@
   <data name="ActionViewCelebrations.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionViewCelebrations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2161,6 +2161,9 @@
   <metadata name="PrintDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>944, 55</value>
   </metadata>
+  <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1056, 55</value>
+  </metadata>
   <metadata name="LunisolarDaysTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>713, 19</value>
   </metadata>
@@ -2297,7 +2300,7 @@
     <value>LunisolarCalendar</value>
   </data>
   <data name="&gt;&gt;LunisolarCalendar.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendar, Ordisoftware.HebrewCalendar, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendar, Ordisoftware.HebrewCalendar, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorCountItem.Name" xml:space="preserve">
     <value>bindingNavigatorCountItem</value>
@@ -2641,23 +2644,29 @@
   <data name="&gt;&gt;PrintDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.PrintDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;Timer.Name" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="&gt;&gt;Timer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;LunisolarDaysTableAdapter.Name" xml:space="preserve">
     <value>LunisolarDaysTableAdapter</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.HebrewCalendar, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.HebrewCalendar, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager, Ordisoftware.HebrewCalendar, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager, Ordisoftware.HebrewCalendar, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ReportTableAdapter.Name" xml:space="preserve">
     <value>ReportTableAdapter</value>
   </data>
   <data name="&gt;&gt;ReportTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter, Ordisoftware.HebrewCalendar, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter, Ordisoftware.HebrewCalendar, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

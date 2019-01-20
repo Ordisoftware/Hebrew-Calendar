@@ -65,7 +65,11 @@
       this.RadioButtonNavigationForm = new System.Windows.Forms.RadioButton();
       this.RadioButtonMainForm = new System.Windows.Forms.RadioButton();
       this.GroupBoxStartup = new System.Windows.Forms.GroupBox();
-      this.editStartupHide = new System.Windows.Forms.CheckBox();
+      this.EditStartupHide = new System.Windows.Forms.CheckBox();
+      this.GroupBoxReminder = new System.Windows.Forms.GroupBox();
+      this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
+      this.LabelTimerInterval = new System.Windows.Forms.Label();
+      this.EditTimerEnabled = new System.Windows.Forms.CheckBox();
       GPSLatitudeLabel = new System.Windows.Forms.Label();
       GPSLongitudeLabel = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).BeginInit();
@@ -77,6 +81,8 @@
       this.GroupBoxNavigation.SuspendLayout();
       this.GroupBoxTrayIcon.SuspendLayout();
       this.GroupBoxStartup.SuspendLayout();
+      this.GroupBoxReminder.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).BeginInit();
       this.SuspendLayout();
       // 
       // GPSLatitudeLabel
@@ -335,17 +341,49 @@
       // 
       // GroupBoxStartup
       // 
-      this.GroupBoxStartup.Controls.Add(this.editStartupHide);
+      this.GroupBoxStartup.Controls.Add(this.EditStartupHide);
       resources.ApplyResources(this.GroupBoxStartup, "GroupBoxStartup");
       this.GroupBoxStartup.Name = "GroupBoxStartup";
       this.GroupBoxStartup.TabStop = false;
       // 
-      // editStartupHide
+      // EditStartupHide
       // 
-      resources.ApplyResources(this.editStartupHide, "editStartupHide");
-      this.editStartupHide.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.BindingSettings, "StartupHide", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.editStartupHide.Name = "editStartupHide";
-      this.editStartupHide.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.EditStartupHide, "EditStartupHide");
+      this.EditStartupHide.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.BindingSettings, "StartupHide", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditStartupHide.Name = "EditStartupHide";
+      this.EditStartupHide.UseVisualStyleBackColor = true;
+      // 
+      // GroupBoxReminder
+      // 
+      this.GroupBoxReminder.Controls.Add(this.EditTimerInterval);
+      this.GroupBoxReminder.Controls.Add(this.LabelTimerInterval);
+      this.GroupBoxReminder.Controls.Add(this.EditTimerEnabled);
+      resources.ApplyResources(this.GroupBoxReminder, "GroupBoxReminder");
+      this.GroupBoxReminder.Name = "GroupBoxReminder";
+      this.GroupBoxReminder.TabStop = false;
+      // 
+      // EditTimerInterval
+      // 
+      this.EditTimerInterval.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BindingSettings, "ReminderInterval", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditTimerInterval, "EditTimerInterval");
+      this.EditTimerInterval.Maximum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+      this.EditTimerInterval.Name = "EditTimerInterval";
+      // 
+      // LabelTimerInterval
+      // 
+      resources.ApplyResources(this.LabelTimerInterval, "LabelTimerInterval");
+      this.LabelTimerInterval.Name = "LabelTimerInterval";
+      // 
+      // EditTimerEnabled
+      // 
+      resources.ApplyResources(this.EditTimerEnabled, "EditTimerEnabled");
+      this.EditTimerEnabled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.BindingSettings, "ReminderEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditTimerEnabled.Name = "EditTimerEnabled";
+      this.EditTimerEnabled.UseVisualStyleBackColor = true;
       // 
       // PreferencesForm
       // 
@@ -353,6 +391,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.GroupBoxReminder);
       this.Controls.Add(this.GroupBoxStartup);
       this.Controls.Add(this.GroupBoxTrayIcon);
       this.Controls.Add(this.GroupBoxText);
@@ -382,6 +421,9 @@
       this.GroupBoxTrayIcon.PerformLayout();
       this.GroupBoxStartup.ResumeLayout(false);
       this.GroupBoxStartup.PerformLayout();
+      this.GroupBoxReminder.ResumeLayout(false);
+      this.GroupBoxReminder.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -420,6 +462,10 @@
     private System.Windows.Forms.RadioButton RadioButtonNavigationForm;
     private System.Windows.Forms.RadioButton RadioButtonMainForm;
     private System.Windows.Forms.GroupBox GroupBoxStartup;
-    private System.Windows.Forms.CheckBox editStartupHide;
+    private System.Windows.Forms.CheckBox EditStartupHide;
+    private System.Windows.Forms.GroupBox GroupBoxReminder;
+    private System.Windows.Forms.NumericUpDown EditTimerInterval;
+    private System.Windows.Forms.Label LabelTimerInterval;
+    private System.Windows.Forms.CheckBox EditTimerEnabled;
   }
 }

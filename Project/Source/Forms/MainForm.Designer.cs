@@ -131,6 +131,7 @@
       this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
       this.PrintDialog = new System.Windows.Forms.PrintDialog();
+      this.Timer = new System.Windows.Forms.Timer(this.components);
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter();
@@ -976,6 +977,11 @@
       // 
       this.PrintDialog.UseEXDialog = true;
       // 
+      // Timer
+      // 
+      this.Timer.Interval = 60000;
+      this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+      // 
       // LunisolarDaysTableAdapter
       // 
       this.LunisolarDaysTableAdapter.ClearBeforeFill = true;
@@ -1140,6 +1146,7 @@
     private System.Windows.Forms.ToolStripButton ActionPrint;
     private System.Windows.Forms.PrintDialog PrintDialog;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.Timer Timer;
   }
 }
 

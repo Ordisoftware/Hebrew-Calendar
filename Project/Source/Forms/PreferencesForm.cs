@@ -93,6 +93,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( RadioButtonMainForm.Checked ) Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
       if ( RadioButtonNavigationForm.Checked ) Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
       Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
+      Program.Settings.ReminderInterval = (int)EditTimerInterval.Value;
       Program.Settings.Save();
     }
 
@@ -279,7 +280,9 @@ namespace Ordisoftware.HebrewCalendar
       /// Return a <see cref="T:System.String" /> that represents the day.
       /// </summary>
       public override string ToString() { return Text; }
+
     }
+
   }
 
 }
