@@ -68,7 +68,8 @@ namespace Ordisoftware.HebrewCalendar
         string strDate = SQLiteUtility.GetDate(date);
         var row = ( from day in LunisolarCalendar.LunisolarDays
                     where SQLiteUtility.GetDate(day.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
-                       && SQLiteUtility.GetDate(day.Date).AddDays(-1) == date
+                       && (SQLiteUtility.GetDate(day.Date).AddDays(-1) == date
+                        || SQLiteUtility.GetDate(day.Date) == date)
                        && !Reminded.Contains(day.Date)
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
