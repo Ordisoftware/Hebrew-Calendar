@@ -476,5 +476,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["RemindShabat"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MonthViewSunToolTips {
+            get {
+                return ((bool)(this["MonthViewSunToolTips"]));
+            }
+            set {
+                this["MonthViewSunToolTips"] = value;
+            }
+        }
     }
 }

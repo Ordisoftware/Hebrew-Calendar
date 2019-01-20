@@ -148,6 +148,7 @@ namespace Ordisoftware.HebrewCalendar
         Cursor = Cursors.Default;
         LunisolarCalendar.LunisolarDays.RowChanged -= update;
         UpdateButtons();
+        CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
         Timer.Enabled = Program.Settings.ReminderEnabled;
         if ( Timer.Enabled ) Timer_Tick(this, null);
       }
@@ -352,6 +353,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       PreferencesForm.Instance.ShowDialog();
+      CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
       if ( PreferencesForm.Instance.OldShabatDay != Program.Settings.ShabatDay
         || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
         || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )

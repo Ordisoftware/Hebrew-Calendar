@@ -64,7 +64,6 @@
       this.GroupBoxTrayIcon = new System.Windows.Forms.GroupBox();
       this.RadioButtonNavigationForm = new System.Windows.Forms.RadioButton();
       this.RadioButtonMainForm = new System.Windows.Forms.RadioButton();
-      this.GroupBoxStartup = new System.Windows.Forms.GroupBox();
       this.EditStartupHide = new System.Windows.Forms.CheckBox();
       this.GroupBoxReminder = new System.Windows.Forms.GroupBox();
       this.EditRemindShabat = new System.Windows.Forms.CheckBox();
@@ -72,6 +71,7 @@
       this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
       this.EditTimerEnabled = new System.Windows.Forms.CheckBox();
+      this.EditShowMonthDayToolTip = new System.Windows.Forms.CheckBox();
       GPSLatitudeLabel = new System.Windows.Forms.Label();
       GPSLongitudeLabel = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).BeginInit();
@@ -82,7 +82,6 @@
       this.BroupBoxShabat.SuspendLayout();
       this.GroupBoxNavigation.SuspendLayout();
       this.GroupBoxTrayIcon.SuspendLayout();
-      this.GroupBoxStartup.SuspendLayout();
       this.GroupBoxReminder.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).BeginInit();
       this.SuspendLayout();
@@ -341,13 +340,6 @@
       this.RadioButtonMainForm.TabStop = true;
       this.RadioButtonMainForm.UseVisualStyleBackColor = true;
       // 
-      // GroupBoxStartup
-      // 
-      resources.ApplyResources(this.GroupBoxStartup, "GroupBoxStartup");
-      this.GroupBoxStartup.Controls.Add(this.EditStartupHide);
-      this.GroupBoxStartup.Name = "GroupBoxStartup";
-      this.GroupBoxStartup.TabStop = false;
-      // 
       // EditStartupHide
       // 
       resources.ApplyResources(this.EditStartupHide, "EditStartupHide");
@@ -403,14 +395,22 @@
       this.EditTimerEnabled.Name = "EditTimerEnabled";
       this.EditTimerEnabled.UseVisualStyleBackColor = true;
       // 
+      // EditShowMonthDayToolTip
+      // 
+      resources.ApplyResources(this.EditShowMonthDayToolTip, "EditShowMonthDayToolTip");
+      this.EditShowMonthDayToolTip.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.BindingSettings, "MonthViewSunToolTips", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditShowMonthDayToolTip.Name = "EditShowMonthDayToolTip";
+      this.EditShowMonthDayToolTip.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
+      this.Controls.Add(this.EditShowMonthDayToolTip);
+      this.Controls.Add(this.EditStartupHide);
       this.Controls.Add(this.GroupBoxReminder);
-      this.Controls.Add(this.GroupBoxStartup);
       this.Controls.Add(this.GroupBoxTrayIcon);
       this.Controls.Add(this.GroupBoxText);
       this.Controls.Add(this.GroupBoxNavigation);
@@ -437,12 +437,11 @@
       this.GroupBoxNavigation.PerformLayout();
       this.GroupBoxTrayIcon.ResumeLayout(false);
       this.GroupBoxTrayIcon.PerformLayout();
-      this.GroupBoxStartup.ResumeLayout(false);
-      this.GroupBoxStartup.PerformLayout();
       this.GroupBoxReminder.ResumeLayout(false);
       this.GroupBoxReminder.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).EndInit();
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
@@ -479,7 +478,6 @@
     private System.Windows.Forms.GroupBox GroupBoxTrayIcon;
     private System.Windows.Forms.RadioButton RadioButtonNavigationForm;
     private System.Windows.Forms.RadioButton RadioButtonMainForm;
-    private System.Windows.Forms.GroupBox GroupBoxStartup;
     private System.Windows.Forms.CheckBox EditStartupHide;
     private System.Windows.Forms.GroupBox GroupBoxReminder;
     private System.Windows.Forms.NumericUpDown EditTimerInterval;
@@ -487,5 +485,6 @@
     private System.Windows.Forms.CheckBox EditTimerEnabled;
     private System.Windows.Forms.CheckedListBox EditEvents;
     private System.Windows.Forms.CheckBox EditRemindShabat;
+    private System.Windows.Forms.CheckBox EditShowMonthDayToolTip;
   }
 }

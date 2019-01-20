@@ -247,14 +247,11 @@
   <data name="RadioButtonMainForm.Text" xml:space="preserve">
     <value>Fenêtre de l'application</value>
   </data>
-  <data name="GroupBoxStartup.Text" xml:space="preserve">
-    <value>Démarrage</value>
-  </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
+    <value>186, 17</value>
   </data>
   <data name="EditStartupHide.Text" xml:space="preserve">
-    <value>Cacher l'application</value>
+    <value>Cacher l'application au démarrage</value>
   </data>
   <data name="GroupBoxReminder.Text" xml:space="preserve">
     <value>Rappel</value>
@@ -288,6 +285,12 @@
   </data>
   <data name="EditTimerEnabled.Text" xml:space="preserve">
     <value>Activé</value>
+  </data>
+  <data name="EditShowMonthDayToolTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 17</value>
+  </data>
+  <data name="EditShowMonthDayToolTip.Text" xml:space="preserve">
+    <value>Afficher le lever et coucher du soleil dans la vue par mois</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

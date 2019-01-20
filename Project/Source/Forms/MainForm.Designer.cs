@@ -274,7 +274,7 @@
       this.CalendarMonth.ShowDashedBorderOnDisabledEvents = true;
       this.CalendarMonth.ShowDateInHeader = true;
       this.CalendarMonth.ShowDisabledEvents = false;
-      this.CalendarMonth.ShowEventTooltips = false;
+      this.CalendarMonth.ShowEventTooltips = true;
       this.CalendarMonth.ShowTodayButton = true;
       this.CalendarMonth.TodayFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       // 
