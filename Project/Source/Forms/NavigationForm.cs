@@ -176,7 +176,6 @@ namespace Ordisoftware.HebrewCalendar
     private void LabelTorahNextDateValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( LabelTorahNext.Tag == null ) return;
-      if ( !MainForm.Instance.Visible ) MainForm.Instance.MenuShowHide.PerformClick();
       Date = (DateTime)LabelTorahNext.Tag;
     }
 

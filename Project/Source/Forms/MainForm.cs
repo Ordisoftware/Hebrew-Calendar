@@ -39,9 +39,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// INdicate filename of the help file.
     /// </summary>
-    static public readonly string HelpFilename = ".." + Path.DirectorySeparatorChar
-                                               + "Help" + Path.DirectorySeparatorChar
-                                               + "index.htm";
+    static public readonly string HelpFilename 
+      = Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath.Replace("\\Debug\\", "\\").Replace("\\Release\\", "\\"))).FullName + Path.DirectorySeparatorChar
+      + "Help" + Path.DirectorySeparatorChar
+      + "index.htm";
 
     /// <summary>
     /// Indicate the singleton instance.
