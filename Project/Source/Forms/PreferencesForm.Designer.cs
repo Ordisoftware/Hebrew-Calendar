@@ -35,6 +35,7 @@
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ButtonClose = new System.Windows.Forms.Button();
       this.EditFontName = new System.Windows.Forms.ComboBox();
+      this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
       this.LabelShabatDay = new System.Windows.Forms.Label();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelFontSize = new System.Windows.Forms.Label();
@@ -66,13 +67,13 @@
       this.GroupBoxStartup = new System.Windows.Forms.GroupBox();
       this.EditStartupHide = new System.Windows.Forms.CheckBox();
       this.GroupBoxReminder = new System.Windows.Forms.GroupBox();
+      this.EditEvents = new System.Windows.Forms.CheckedListBox();
       this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
       this.EditTimerEnabled = new System.Windows.Forms.CheckBox();
-      this.EditEvents = new System.Windows.Forms.CheckedListBox();
-      this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
       GPSLatitudeLabel = new System.Windows.Forms.Label();
       GPSLongitudeLabel = new System.Windows.Forms.Label();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxGPS.SuspendLayout();
@@ -83,7 +84,6 @@
       this.GroupBoxStartup.SuspendLayout();
       this.GroupBoxReminder.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).BeginInit();
       this.SuspendLayout();
       // 
       // GPSLatitudeLabel
@@ -115,6 +115,10 @@
       resources.ApplyResources(this.EditFontName, "EditFontName");
       this.EditFontName.Name = "EditFontName";
       this.EditFontName.SelectedIndexChanged += new System.EventHandler(this.EitFontName_Changed);
+      // 
+      // BindingSettings
+      // 
+      this.BindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
       // 
       // LabelShabatDay
       // 
@@ -360,6 +364,13 @@
       this.GroupBoxReminder.Name = "GroupBoxReminder";
       this.GroupBoxReminder.TabStop = false;
       // 
+      // EditEvents
+      // 
+      this.EditEvents.CheckOnClick = true;
+      this.EditEvents.FormattingEnabled = true;
+      resources.ApplyResources(this.EditEvents, "EditEvents");
+      this.EditEvents.Name = "EditEvents";
+      // 
       // EditTimerInterval
       // 
       this.EditTimerInterval.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BindingSettings, "ReminderInterval", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -383,17 +394,6 @@
       this.EditTimerEnabled.Name = "EditTimerEnabled";
       this.EditTimerEnabled.UseVisualStyleBackColor = true;
       // 
-      // EditEvents
-      // 
-      this.EditEvents.CheckOnClick = true;
-      this.EditEvents.FormattingEnabled = true;
-      resources.ApplyResources(this.EditEvents, "EditEvents");
-      this.EditEvents.Name = "EditEvents";
-      // 
-      // BindingSettings
-      // 
-      this.BindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
-      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
@@ -415,6 +415,7 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       this.PanelButtons.ResumeLayout(false);
       this.GroupBoxGPS.ResumeLayout(false);
@@ -432,7 +433,6 @@
       this.GroupBoxReminder.ResumeLayout(false);
       this.GroupBoxReminder.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).EndInit();
       this.ResumeLayout(false);
 
     }

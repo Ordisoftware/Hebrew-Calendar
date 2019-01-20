@@ -645,22 +645,6 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void Timer_Tick(object sender, EventArgs e)
     {
-
-      bool check(TorahEventType item)
-      {
-        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-          if ( type != TorahEventType.None )
-            try
-            {
-              if ( item == type && (bool)Program.Settings["TorahEventRemind" + item.ToString()] )
-                return true;
-            }
-            catch
-            {
-            }
-        return false;
-      }
-
       try
       {
         var dateStart = DateTime.Now;
@@ -679,6 +663,20 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch
       {
+      }
+      bool check(TorahEventType item)
+      {
+        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
+          if ( type != TorahEventType.None )
+            try
+            {
+              if ( item == type && (bool)Program.Settings["TorahEventRemind" + item.ToString()] )
+                return true;
+            }
+            catch
+            {
+            }
+        return false;
       }
     }
   }
