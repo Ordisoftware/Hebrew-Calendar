@@ -70,9 +70,10 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 
 ## Changelog
 
-#### 2019.__.__ - Version 1.4
+#### 2019.01.22 - Version 1.4
 
 - Add an event reminder.
+- Add help file.
 
 #### 2019.01.20 - Version 1.3
 
