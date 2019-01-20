@@ -35,7 +35,6 @@
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ButtonClose = new System.Windows.Forms.Button();
       this.EditFontName = new System.Windows.Forms.ComboBox();
-      this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
       this.LabelShabatDay = new System.Windows.Forms.Label();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelFontSize = new System.Windows.Forms.Label();
@@ -70,9 +69,10 @@
       this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
       this.EditTimerEnabled = new System.Windows.Forms.CheckBox();
+      this.EditEvents = new System.Windows.Forms.CheckedListBox();
+      this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
       GPSLatitudeLabel = new System.Windows.Forms.Label();
       GPSLongitudeLabel = new System.Windows.Forms.Label();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxGPS.SuspendLayout();
@@ -83,6 +83,7 @@
       this.GroupBoxStartup.SuspendLayout();
       this.GroupBoxReminder.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).BeginInit();
       this.SuspendLayout();
       // 
       // GPSLatitudeLabel
@@ -114,10 +115,6 @@
       resources.ApplyResources(this.EditFontName, "EditFontName");
       this.EditFontName.Name = "EditFontName";
       this.EditFontName.SelectedIndexChanged += new System.EventHandler(this.EitFontName_Changed);
-      // 
-      // BindingSettings
-      // 
-      this.BindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
       // 
       // LabelShabatDay
       // 
@@ -355,6 +352,7 @@
       // 
       // GroupBoxReminder
       // 
+      this.GroupBoxReminder.Controls.Add(this.EditEvents);
       this.GroupBoxReminder.Controls.Add(this.EditTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.LabelTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.EditTimerEnabled);
@@ -385,6 +383,17 @@
       this.EditTimerEnabled.Name = "EditTimerEnabled";
       this.EditTimerEnabled.UseVisualStyleBackColor = true;
       // 
+      // EditEvents
+      // 
+      this.EditEvents.CheckOnClick = true;
+      this.EditEvents.FormattingEnabled = true;
+      resources.ApplyResources(this.EditEvents, "EditEvents");
+      this.EditEvents.Name = "EditEvents";
+      // 
+      // BindingSettings
+      // 
+      this.BindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
@@ -406,7 +415,6 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       this.PanelButtons.ResumeLayout(false);
       this.GroupBoxGPS.ResumeLayout(false);
@@ -424,6 +432,7 @@
       this.GroupBoxReminder.ResumeLayout(false);
       this.GroupBoxReminder.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -467,5 +476,6 @@
     private System.Windows.Forms.NumericUpDown EditTimerInterval;
     private System.Windows.Forms.Label LabelTimerInterval;
     private System.Windows.Forms.CheckBox EditTimerEnabled;
+    private System.Windows.Forms.CheckedListBox EditEvents;
   }
 }

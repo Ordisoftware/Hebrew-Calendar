@@ -243,9 +243,6 @@
   <data name="&gt;&gt;EditFontName.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="BindingSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="LabelShabatDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1105,7 +1102,7 @@
     <value>399, 131</value>
   </data>
   <data name="GroupBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 75</value>
+    <value>188, 52</value>
   </data>
   <data name="GroupBoxStartup.TabIndex" type="System.Int32, mscorlib">
     <value>64</value>
@@ -1132,7 +1129,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditStartupHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 34</value>
+    <value>19, 25</value>
   </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 17</value>
@@ -1155,8 +1152,80 @@
   <data name="&gt;&gt;EditStartupHide.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;EditEvents.Name" xml:space="preserve">
+    <value>EditEvents</value>
+  </data>
+  <data name="&gt;&gt;EditEvents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditEvents.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;EditEvents.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditTimerInterval.Name" xml:space="preserve">
+    <value>EditTimerInterval</value>
+  </data>
+  <data name="&gt;&gt;EditTimerInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditTimerInterval.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;EditTimerInterval.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelTimerInterval.Name" xml:space="preserve">
+    <value>LabelTimerInterval</value>
+  </data>
+  <data name="&gt;&gt;LabelTimerInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTimerInterval.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;LabelTimerInterval.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditTimerEnabled.Name" xml:space="preserve">
+    <value>EditTimerEnabled</value>
+  </data>
+  <data name="&gt;&gt;EditTimerEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditTimerEnabled.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;EditTimerEnabled.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupBoxReminder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>399, 199</value>
+  </data>
+  <data name="GroupBoxReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 170</value>
+  </data>
+  <data name="GroupBoxReminder.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="GroupBoxReminder.Text" xml:space="preserve">
+    <value>Reminder</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxReminder.Name" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxReminder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxReminder.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxReminder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="EditTimerInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 77</value>
+    <value>103, 50</value>
   </data>
   <data name="EditTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 20</value>
@@ -1174,7 +1243,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditTimerInterval.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="LabelTimerInterval.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1183,7 +1252,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTimerInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 59</value>
+    <value>101, 32</value>
   </data>
   <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -1204,7 +1273,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;LabelTimerInterval.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditTimerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1213,7 +1282,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditTimerEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 29</value>
+    <value>19, 30</value>
   </data>
   <data name="EditTimerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 17</value>
@@ -1234,32 +1303,35 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditTimerEnabled.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <data name="GroupBoxReminder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>399, 222</value>
+  <data name="EditEvents.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 81</value>
   </data>
-  <data name="GroupBoxReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 147</value>
+  <data name="EditEvents.ScrollAlwaysVisible" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="GroupBoxReminder.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
+  <data name="EditEvents.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 79</value>
   </data>
-  <data name="GroupBoxReminder.Text" xml:space="preserve">
-    <value>Reminder</value>
+  <data name="EditEvents.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;GroupBoxReminder.Name" xml:space="preserve">
+  <data name="&gt;&gt;EditEvents.Name" xml:space="preserve">
+    <value>EditEvents</value>
+  </data>
+  <data name="&gt;&gt;EditEvents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditEvents.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;GroupBoxReminder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxReminder.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxReminder.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEvents.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="BindingSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1292,6 +1364,9 @@
         AAAAAAAA//8AAPwfAAD8HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwf
         AAD8HwAA//8AAA==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

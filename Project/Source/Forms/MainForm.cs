@@ -645,6 +645,22 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void Timer_Tick(object sender, EventArgs e)
     {
+
+      bool check(TorahEventType item)
+      {
+        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
+          if ( type != TorahEventType.None )
+            try
+            {
+              if ( item == type && (bool)Program.Settings["TorahEventRemind" + item.ToString()] )
+                return true;
+            }
+            catch
+            {
+            }
+        return false;
+      }
+
       try
       {
         var dateStart = DateTime.Now;
@@ -655,12 +671,7 @@ namespace Ordisoftware.HebrewCalendar
                     where !Reminded.Contains(day.Date)
                        && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDateStart)
                        && SQLiteUtility.GetDate(day.Date) <= SQLiteUtility.GetDate(strDateEnd)
-                       && ( (TorahEventType)day.TorahEvents == TorahEventType.PessahD1
-                         || (TorahEventType)day.TorahEvents == TorahEventType.ChavouotDiet
-                         || (TorahEventType)day.TorahEvents == TorahEventType.Chavouot2
-                         || (TorahEventType)day.TorahEvents == TorahEventType.YomTerouah
-                         || (TorahEventType)day.TorahEvents == TorahEventType.YomHaKipourim
-                         || (TorahEventType)day.TorahEvents == TorahEventType.SoukotD1 )
+                       && check((TorahEventType)day.TorahEvents)
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
         Reminded.Add(row.Date);

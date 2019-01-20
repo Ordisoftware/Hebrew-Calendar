@@ -54,6 +54,7 @@ namespace Ordisoftware.HebrewCalendar
     private ReminderForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
     }
 
     private void ReminderForm_FormClosed(object sender, FormClosedEventArgs e)
