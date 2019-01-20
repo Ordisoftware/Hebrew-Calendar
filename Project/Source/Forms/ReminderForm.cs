@@ -38,6 +38,8 @@ namespace Ordisoftware.HebrewCalendar
       form.Show();
     }
 
+    protected override bool ShowWithoutActivation { get { return true; } }
+
     private ReminderForm()
     {
       InitializeComponent();
@@ -54,6 +56,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( LabelNextCelebrationDate.Tag == null ) return;
       if ( !MainForm.Instance.Visible ) MainForm.Instance.MenuShowHide.PerformClick();
       NavigationForm.Instance.Date = (DateTime)LabelNextCelebrationDate.Tag;
+      Close();
     }
   }
 

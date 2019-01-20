@@ -351,7 +351,6 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       PreferencesForm.Instance.ShowDialog();
-      Timer.Enabled = Program.Settings.ReminderEnabled;
       if ( PreferencesForm.Instance.OldShabatDay != Program.Settings.ShabatDay
         || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
         || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )
@@ -437,13 +436,22 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionGenerate_Click(object sender, EventArgs e)
     {
-      var form = new SelectYearsForm();
-      if ( form.ShowDialog() == DialogResult.Cancel ) return;
-      if ( LunisolarCalendar.LunisolarDays.Count > 0 )
-        if ( !DisplayManager.QueryYesNo(Localizer.ReplaceCalendarText.GetLang()) )
-          return;
-      GenerateDB((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
-      NavigationForm.Instance.Date = DateTime.Now;
+      Timer.Enabled = false;
+      try
+      {
+        var form = new SelectYearsForm();
+        if ( form.ShowDialog() == DialogResult.Cancel ) return;
+        if ( LunisolarCalendar.LunisolarDays.Count > 0 )
+          if ( !DisplayManager.QueryYesNo(Localizer.ReplaceCalendarText.GetLang()) )
+            return;
+        GenerateDB((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
+        NavigationForm.Instance.Date = DateTime.Now;
+      }
+      finally
+      {
+        Timer.Enabled = Program.Settings.ReminderEnabled;
+        if ( Timer.Enabled ) Timer_Tick(this, null);
+      }
     }
 
     /// <summary>
