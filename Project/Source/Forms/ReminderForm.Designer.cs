@@ -77,6 +77,7 @@
       this.MinimizeBox = false;
       this.Name = "ReminderForm";
       this.TopMost = true;
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReminderForm_FormClosed);
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();

@@ -54,7 +54,11 @@ namespace Ordisoftware.HebrewCalendar
     private ReminderForm()
     {
       InitializeComponent();
-      Icon = MainForm.Instance.Icon;
+    }
+
+    private void ReminderForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Forms.Remove(this);
     }
 
     private void ButtonClose_Click(object sender, EventArgs e)
@@ -69,6 +73,7 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.Date = (DateTime)LabelNextCelebrationDate.Tag;
       Close();
     }
+
   }
 
 }

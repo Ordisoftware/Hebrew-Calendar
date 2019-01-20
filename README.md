@@ -37,9 +37,11 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 ![Month Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-month-768x527.png)
 
-![TrayIcon Celebrations Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-celebrations.png)
+![Celebrations Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-celebrations.png)
 
-![TrayIcon Navigation Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-navigation.png)
+![Navigation Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-navigation.png)
+
+![Reminder Window](http://www.ordisoftware.com/uploads/2019/01/hebrew-calendar-reminder.png)
 
 ## Videos
 
