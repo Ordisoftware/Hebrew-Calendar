@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCalendar
 
     static internal readonly List<Form> Forms = new List<Form>();
 
-    static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row)
+    static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row, bool isShabat)
     {
       foreach ( var item in Forms )
         if ( (string)item.Tag == row.Date )
@@ -36,7 +36,9 @@ namespace Ordisoftware.HebrewCalendar
         }
       var form = new ReminderForm();
       var date = SQLiteUtility.GetDate(row.Date);
-      form.LabelNextCelebrationText.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents);
+      form.LabelNextCelebrationText.Text = !isShabat
+                                         ? TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents)
+                                         : "Shabat";
       form.LabelNextCelebrationDate.Text = date.ToLongDateString();
       form.LabelNextCelebrationDate.Tag = date;
       int left = SystemInformation.WorkingArea.Left;

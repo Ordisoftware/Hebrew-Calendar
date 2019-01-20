@@ -645,40 +645,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void Timer_Tick(object sender, EventArgs e)
     {
-      try
-      {
-        var dateStart = DateTime.Now;
-        var dateEnd = DateTime.Now.AddDays(Program.Settings.ReminderInterval);
-        string strDateStart = SQLiteUtility.GetDate(dateStart);
-        string strDateEnd = SQLiteUtility.GetDate(dateEnd);
-        var row = ( from day in LunisolarCalendar.LunisolarDays
-                    where !Reminded.Contains(day.Date)
-                       && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDateStart)
-                       && SQLiteUtility.GetDate(day.Date) <= SQLiteUtility.GetDate(strDateEnd)
-                       && check((TorahEventType)day.TorahEvents)
-                    select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
-        if ( row == null ) return;
-        Reminded.Add(row.Date);
-        ReminderForm.Run(row);
-      }
-      catch
-      {
-      }
-      bool check(TorahEventType item)
-      {
-        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-          if ( type != TorahEventType.None )
-            try
-            {
-              if ( item == type && (bool)Program.Settings["TorahEventRemind" + item.ToString()] )
-                return true;
-            }
-            catch
-            {
-            }
-        return false;
-      }
+      CheckEvents();
+      CheckShabat();
     }
+
   }
 
 }

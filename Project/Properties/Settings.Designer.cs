@@ -467,13 +467,13 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool Paramètre {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RemindShabat {
             get {
-                return ((bool)(this["Paramètre"]));
+                return ((bool)(this["RemindShabat"]));
             }
             set {
-                this["Paramètre"] = value;
+                this["RemindShabat"] = value;
             }
         }
     }

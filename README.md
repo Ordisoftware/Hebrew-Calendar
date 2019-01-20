@@ -14,7 +14,7 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 - Tabular text report view.
 - Month view.
 - Grid view.
-- Event reminder.
+- Event reminder for shabat and celebrations.
 - Search for a day in the database.
 - Window listing annual celebrations.
 - Print the month view.
