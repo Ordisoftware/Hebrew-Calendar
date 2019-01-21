@@ -224,6 +224,22 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionUseBlackAndWhiteColors for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionUseBlackAndWhiteColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      NavigationForm.Instance.Show();
+      PanelTopColor.BackColor = Color.White;
+      PanelMiddleColor.BackColor = Color.Gainsboro;
+      PanelBottomColor.BackColor = Color.White;
+      NavigationForm.Instance.PanelTop.BackColor = PanelTopColor.BackColor;
+      NavigationForm.Instance.PanelMiddle.BackColor = PanelMiddleColor.BackColor;
+      NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionUseDefaultColors for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -340,6 +356,7 @@ namespace Ordisoftware.HebrewCalendar
       public override string ToString() { return Text; }
 
     }
+
   }
 
 }

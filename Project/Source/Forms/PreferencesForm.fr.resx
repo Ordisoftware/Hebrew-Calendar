@@ -202,11 +202,17 @@
   <data name="GroupBoxNavigation.Text" xml:space="preserve">
     <value>Fenêtre de navigation</value>
   </data>
+  <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 13</value>
+  </data>
+  <data name="ActionUseBlackAndWhiteColors.Text" xml:space="preserve">
+    <value>Utiliser couleurs noir et blanc</value>
+  </data>
   <data name="ActionUseDefaultColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 13</value>
+    <value>112, 13</value>
   </data>
   <data name="ActionUseDefaultColors.Text" xml:space="preserve">
-    <value>Utiliser couleurs par défaut</value>
+    <value>Utiliser couleurs pastel</value>
   </data>
   <data name="LabelTopColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
