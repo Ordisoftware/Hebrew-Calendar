@@ -667,13 +667,13 @@
     <value>300, 436</value>
   </data>
   <data name="linkLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 13</value>
+    <value>156, 13</value>
   </data>
   <data name="linkLabel3.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
-    <value>ordisoftware/projects/core-library</value>
+    <value>www.ordisoftware.com/projects/core-library</value>
   </data>
   <data name="&gt;&gt;linkLabel3.Name" xml:space="preserve">
     <value>linkLabel3</value>

@@ -163,6 +163,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       UpdateTextCalendar();
       UpdateButtons();
+      MenuShowHide.Text = Localizer.HideRestoreText.GetLang(Visible);
       NavigationForm.Instance.Date = DateTime.Now;
       if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
     }
