@@ -172,6 +172,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PanelTopColor_MouseClick(object sender, MouseEventArgs e)
     {
+      NavigationForm.Instance.Show();
       DialogColor.Color = PanelTopColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelTopColor.BackColor = DialogColor.Color;
@@ -185,6 +186,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PanelMiddleColor_MouseClick(object sender, MouseEventArgs e)
     {
+      NavigationForm.Instance.Show();
       DialogColor.Color = PanelMiddleColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelMiddleColor.BackColor = DialogColor.Color;
@@ -198,6 +200,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PanelBottomColor_MouseClick(object sender, MouseEventArgs e)
     {
+      NavigationForm.Instance.Show();
       DialogColor.Color = PanelBottomColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelBottomColor.BackColor = DialogColor.Color;
@@ -211,6 +214,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
+      NavigationForm.Instance.Show();
       PanelTopColor.BackColor = SystemColors.Control;
       PanelMiddleColor.BackColor = SystemColors.Control;
       PanelBottomColor.BackColor = SystemColors.Control;
@@ -226,6 +230,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionUseDefaultColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
+      NavigationForm.Instance.Show();
       PanelTopColor.BackColor = Color.LemonChiffon;
       PanelMiddleColor.BackColor = Color.AliceBlue;
       PanelBottomColor.BackColor = Color.Honeydew;
