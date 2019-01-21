@@ -53,6 +53,7 @@
       this.GroupBoxText = new System.Windows.Forms.GroupBox();
       this.BroupBoxShabat = new System.Windows.Forms.GroupBox();
       this.GroupBoxNavigation = new System.Windows.Forms.GroupBox();
+      this.ActionUseBlackAndWhiteColors = new System.Windows.Forms.LinkLabel();
       this.ActionUseDefaultColors = new System.Windows.Forms.LinkLabel();
       this.LabelTopColor = new System.Windows.Forms.Label();
       this.ActionUseSystemColors = new System.Windows.Forms.LinkLabel();
@@ -252,6 +253,7 @@
       // GroupBoxNavigation
       // 
       resources.ApplyResources(this.GroupBoxNavigation, "GroupBoxNavigation");
+      this.GroupBoxNavigation.Controls.Add(this.ActionUseBlackAndWhiteColors);
       this.GroupBoxNavigation.Controls.Add(this.ActionUseDefaultColors);
       this.GroupBoxNavigation.Controls.Add(this.LabelTopColor);
       this.GroupBoxNavigation.Controls.Add(this.ActionUseSystemColors);
@@ -262,6 +264,14 @@
       this.GroupBoxNavigation.Controls.Add(this.LabelMiddleColor);
       this.GroupBoxNavigation.Name = "GroupBoxNavigation";
       this.GroupBoxNavigation.TabStop = false;
+      // 
+      // ActionUseBlackAndWhiteColors
+      // 
+      resources.ApplyResources(this.ActionUseBlackAndWhiteColors, "ActionUseBlackAndWhiteColors");
+      this.ActionUseBlackAndWhiteColors.LinkColor = System.Drawing.Color.Blue;
+      this.ActionUseBlackAndWhiteColors.Name = "ActionUseBlackAndWhiteColors";
+      this.ActionUseBlackAndWhiteColors.TabStop = true;
+      this.ActionUseBlackAndWhiteColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseBlackAndWhiteColors_LinkClicked);
       // 
       // ActionUseDefaultColors
       // 
@@ -486,5 +496,6 @@
     private System.Windows.Forms.CheckedListBox EditEvents;
     private System.Windows.Forms.CheckBox EditRemindShabat;
     private System.Windows.Forms.CheckBox EditShowMonthDayToolTip;
+    private System.Windows.Forms.LinkLabel ActionUseBlackAndWhiteColors;
   }
 }
