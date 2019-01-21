@@ -64,15 +64,21 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        var date = DateTime.Today;
-        string strDate = SQLiteUtility.GetDate(date);
+        var today = DateTime.Today;
+        var now = DateTime.Now;
+        var timeNow = new TimeSpan(now.Hour, now.Minute, 0);
+        string strDate = SQLiteUtility.GetDate(today);
         var row = ( from day in LunisolarCalendar.LunisolarDays
                     where SQLiteUtility.GetDate(day.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
-                       && (SQLiteUtility.GetDate(day.Date).AddDays(-1) == date
-                        || SQLiteUtility.GetDate(day.Date) == date)
-                       && !Reminded.Contains(day.Date)
+                        && ( SQLiteUtility.GetDate(day.Date).AddDays(-1) == today
+                        || SQLiteUtility.GetDate(day.Date) == today )
+                        && !Reminded.Contains(day.Date)
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
+        string[] times = row.Sunset.Split(':');
+        if ( SQLiteUtility.GetDate(row.Date) == today 
+          && timeNow > new TimeSpan(Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), 0) )
+          return;
         Reminded.Add(row.Date);
         ReminderForm.Run(row, true);
       }
