@@ -78,7 +78,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
-#### 2019.01.22 - Version 1.4
+#### 2019.01.21 - Version 1.4
 
 - Add an event reminder.
 - Add help file.
