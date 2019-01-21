@@ -149,8 +149,8 @@ namespace Ordisoftware.HebrewCalendar
         LunisolarCalendar.LunisolarDays.RowChanged -= update;
         UpdateButtons();
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-        Timer.Enabled = Program.Settings.ReminderEnabled;
-        if ( Timer.Enabled ) Timer_Tick(this, null);
+        TimerReminder.Enabled = Program.Settings.ReminderEnabled;
+        Timer_Tick(null, null);
       }
     }
 
@@ -354,6 +354,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       PreferencesForm.Instance.ShowDialog();
       CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
+      TimerReminder.Enabled = Program.Settings.ReminderEnabled;
+      Timer_Tick(null, null);
       if ( PreferencesForm.Instance.OldShabatDay != Program.Settings.ShabatDay
         || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
         || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )
@@ -439,7 +441,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionGenerate_Click(object sender, EventArgs e)
     {
-      Timer.Enabled = false;
+      TimerReminder.Enabled = false;
       try
       {
         var form = new SelectYearsForm();
@@ -453,8 +455,8 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         Reminded.Clear();
-        Timer.Enabled = Program.Settings.ReminderEnabled;
-        if ( Timer.Enabled ) Timer_Tick(this, null);
+        TimerReminder.Enabled = Program.Settings.ReminderEnabled;
+        Timer_Tick(this, null);
       }
     }
 
@@ -648,8 +650,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void Timer_Tick(object sender, EventArgs e)
     {
+      if ( !TimerReminder.Enabled ) return;
       CheckEvents();
-      CheckShabat();
+      if (Program.Settings.RemindShabat) CheckShabat();
     }
 
   }
