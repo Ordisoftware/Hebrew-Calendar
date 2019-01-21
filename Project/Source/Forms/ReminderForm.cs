@@ -77,6 +77,11 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
+    private void PictureBox_Click(object sender, EventArgs e)
+    {
+      LabelNextCelebrationDate_LinkClicked(LabelNextCelebrationDate, null);
+    }
+
   }
 
 }

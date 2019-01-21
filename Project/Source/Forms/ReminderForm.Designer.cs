@@ -31,9 +31,9 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReminderForm));
       this.LabelNextCelebrationText = new System.Windows.Forms.Label();
       this.LabelNextCelebrationDate = new System.Windows.Forms.LinkLabel();
-      this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.PictureBox = new System.Windows.Forms.PictureBox();
       this.ButtonClose = new System.Windows.Forms.Button();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.SuspendLayout();
       // 
       // LabelNextCelebrationText
@@ -50,11 +50,12 @@
       this.LabelNextCelebrationDate.TabStop = true;
       this.LabelNextCelebrationDate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelNextCelebrationDate_LinkClicked);
       // 
-      // pictureBox1
+      // PictureBox
       // 
-      resources.ApplyResources(this.pictureBox1, "pictureBox1");
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.TabStop = false;
+      resources.ApplyResources(this.PictureBox, "PictureBox");
+      this.PictureBox.Name = "PictureBox";
+      this.PictureBox.TabStop = false;
+      this.PictureBox.Click += new System.EventHandler(this.PictureBox_Click);
       // 
       // ButtonClose
       // 
@@ -70,7 +71,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.ButtonClose);
-      this.Controls.Add(this.pictureBox1);
+      this.Controls.Add(this.PictureBox);
       this.Controls.Add(this.LabelNextCelebrationDate);
       this.Controls.Add(this.LabelNextCelebrationText);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -79,7 +80,7 @@
       this.Name = "ReminderForm";
       this.TopMost = true;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReminderForm_FormClosed);
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -88,7 +89,7 @@
     #endregion
     private System.Windows.Forms.Label LabelNextCelebrationText;
     private System.Windows.Forms.LinkLabel LabelNextCelebrationDate;
-    private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.PictureBox PictureBox;
     private System.Windows.Forms.Button ButtonClose;
   }
 }
