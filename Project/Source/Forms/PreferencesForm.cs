@@ -57,8 +57,9 @@ namespace Ordisoftware.HebrewCalendar
     private PreferencesForm()
     {
       InitializeComponent();
-      LoadFonts();
       LoadDays();
+      LoadEvents();
+      LoadFonts();
       BindingSettings.DataSource = Program.Settings;
   }
 
@@ -93,6 +94,16 @@ namespace Ordisoftware.HebrewCalendar
       if ( RadioButtonMainForm.Checked ) Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
       if ( RadioButtonNavigationForm.Checked ) Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
       Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
+      Program.Settings.ReminderInterval = (int)EditTimerInterval.Value;
+      for (int index = 0; index < EditEvents.Items.Count; index++ )
+        try
+        {
+          string indexName = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
+          Program.Settings[indexName] = EditEvents.GetItemChecked(index);
+        }
+        catch
+        {
+        }
       Program.Settings.Save();
     }
 
@@ -232,8 +243,28 @@ namespace Ordisoftware.HebrewCalendar
       {
         var item = new DayOfWeekItem() { Text = Localizer.DayOfWeekText.GetLang(day), Day = day };
         EditShabatDay.Items.Add(item);
-        if ( (DayOfWeek)Program.Settings.ShabatDay == day ) EditShabatDay.SelectedItem = item;
+        if ( (DayOfWeek)Program.Settings.ShabatDay == day )
+          EditShabatDay.SelectedItem = item;
       }
+    }
+
+    /// <summary>
+    /// Loads the events.
+    /// </summary>
+    private void LoadEvents()
+    {
+      foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
+        if ( type != TorahEventType.None )
+          try
+          {
+            var item = new TorahEventItem() { Text = TorahCelebrations.TorahEventNames.GetLang(type), Event = type };
+            int index = EditEvents.Items.Add(item);
+            if ( (bool)Program.Settings["TorahEventRemind" + type.ToString()] )
+              EditEvents.SetItemChecked(index, true);
+          }
+          catch
+          {
+          }
     }
 
     /// <summary>
@@ -279,6 +310,30 @@ namespace Ordisoftware.HebrewCalendar
       /// Return a <see cref="T:System.String" /> that represents the day.
       /// </summary>
       public override string ToString() { return Text; }
+
+    }
+
+    /// <summary>
+    /// provide day of week item.
+    /// </summary>
+    private class TorahEventItem
+    {
+
+      /// <summary>
+      /// Indicate the text of the day.
+      /// </summary>
+      public string Text { get; set; }
+
+      /// <summary>
+      /// Indicate the day of week enum value.
+      /// </summary>
+      public TorahEventType Event { get; set; }
+
+      /// <summary>
+      /// Return a <see cref="T:System.String" /> that represents the day.
+      /// </summary>
+      public override string ToString() { return Text; }
+
     }
   }
 

@@ -50,6 +50,12 @@ namespace Ordisoftware.HebrewCalendar
       string filenameIcon = ".." + Path.DirectorySeparatorChar + "Application.ico";
       try
       {
+        if ( Settings.UpgradeRequired )
+        {
+          Settings.Upgrade();
+          Settings.UpgradeRequired = false;
+          Settings.Save();
+        }
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(filenameIcon);

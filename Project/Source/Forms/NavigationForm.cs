@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           string strText = value.ToString();
           strText = strText.Remove(strText.Length - 3, 3);
-          string strDate = SQLiteUtility.GetDate(value.Year, value.Month, value.Day);
+          string strDate = SQLiteUtility.GetDate(value);
           var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
                       where day.Date == strDate
                       select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
@@ -175,8 +175,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LabelTorahNextDateValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( LabelTorahNext.Tag != null)
-        Date = (DateTime)LabelTorahNext.Tag;
+      if ( LabelTorahNext.Tag == null ) return;
+      Date = (DateTime)LabelTorahNext.Tag;
     }
 
     /// <summary>

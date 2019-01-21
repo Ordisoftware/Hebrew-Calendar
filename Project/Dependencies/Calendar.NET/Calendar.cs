@@ -500,7 +500,10 @@ namespace Calendar.NET
         {
           _eventTip.ShouldRender = false;
           _showingToolTip = true;
-          _eventTip.EventToolTipText = z.Event.EventText;
+          // ORDISOFTWARE MODIF BEGIN
+          //_eventTip.EventToolTipText = z.Event.EventText;
+          _eventTip.EventToolTipText = z.Event.ToolTipText;
+          // ORDISOFTWARE MODIF END
           if ( z.Event.IgnoreTimeComponent == false )
             _eventTip.EventToolTipText += "\n" + z.Event.Date.ToShortTimeString();
           _eventTip.Location = new Point(e.X + 5, e.Y - _eventTip.CalculateSize().Height);

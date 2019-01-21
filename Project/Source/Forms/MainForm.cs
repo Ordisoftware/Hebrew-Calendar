@@ -16,6 +16,7 @@
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
 using System.Diagnostics;
@@ -38,9 +39,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// INdicate filename of the help file.
     /// </summary>
-    static public readonly string HelpFilename = ".." + Path.DirectorySeparatorChar
-                                               + "Help" + Path.DirectorySeparatorChar
-                                               + "index.htm";
+    static public readonly string HelpFilename 
+      = Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath.Replace("\\Debug\\", "\\").Replace("\\Release\\", "\\"))).FullName + Path.DirectorySeparatorChar
+      + "Help" + Path.DirectorySeparatorChar
+      + "index.htm";
 
     /// <summary>
     /// Indicate the singleton instance.
@@ -92,7 +94,7 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
-        UpdateProgress(progress++, Count, Localizer.LoadingDataText.GetLang());
+        if ( !IsGenerating ) UpdateProgress(progress++, Count, Localizer.LoadingDataText.GetLang());
       };
       Program.Settings.Retrieve();
       LunisolarCalendar.LunisolarDays.RowChanged += update;
@@ -146,6 +148,9 @@ namespace Ordisoftware.HebrewCalendar
         Cursor = Cursors.Default;
         LunisolarCalendar.LunisolarDays.RowChanged -= update;
         UpdateButtons();
+        CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
+        Timer.Enabled = Program.Settings.ReminderEnabled;
+        if ( Timer.Enabled ) Timer_Tick(this, null);
       }
     }
 
@@ -348,6 +353,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       PreferencesForm.Instance.ShowDialog();
+      CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
       if ( PreferencesForm.Instance.OldShabatDay != Program.Settings.ShabatDay
         || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
         || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )
@@ -433,13 +439,23 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionGenerate_Click(object sender, EventArgs e)
     {
-      var form = new SelectYearsForm();
-      if ( form.ShowDialog() == DialogResult.Cancel ) return;
-      if ( LunisolarCalendar.LunisolarDays.Count > 0 )
-        if ( !DisplayManager.QueryYesNo(Localizer.ReplaceCalendarText.GetLang()) )
-          return;
-      GenerateDB((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
-      NavigationForm.Instance.Date = DateTime.Now;
+      Timer.Enabled = false;
+      try
+      {
+        var form = new SelectYearsForm();
+        if ( form.ShowDialog() == DialogResult.Cancel ) return;
+        if ( LunisolarCalendar.LunisolarDays.Count > 0 )
+          if ( !DisplayManager.QueryYesNo(Localizer.ReplaceCalendarText.GetLang()) )
+            return;
+        GenerateDB((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
+        NavigationForm.Instance.Date = DateTime.Now;
+      }
+      finally
+      {
+        Reminded.Clear();
+        Timer.Enabled = Program.Settings.ReminderEnabled;
+        if ( Timer.Enabled ) Timer_Tick(this, null);
+      }
     }
 
     /// <summary>
@@ -570,7 +586,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewCelebrations_Click(object sender, EventArgs e)
     {
-      CelebrationsForm.Execute();
+      CelebrationsForm.Run();
     }
 
     /// <summary>
@@ -605,13 +621,37 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    /// <summary>
+    /// Event handler. Called by LunisolarDaysBindingSource for current item changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void LunisolarDaysBindingSource_CurrentItemChanged(object sender, EventArgs e)
     {
-      var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-      NavigationForm.Instance.Date = SQLiteUtility.GetDate(( (Data.LunisolarCalendar.LunisolarDaysRow)rowview ).Date);
+      try
+      {
+        if ( LunisolarDaysBindingSource.Current == null ) return;
+        var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
+        NavigationForm.Instance.Date = SQLiteUtility.GetDate(( (Data.LunisolarCalendar.LunisolarDaysRow)rowview ).Date);
+      }
+      catch
+      {
+      }
+    }
+
+    private List<string> Reminded = new List<string>();
+
+    /// <summary>
+    /// Event handler. Called by Timer for tick events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void Timer_Tick(object sender, EventArgs e)
+    {
+      CheckEvents();
+      CheckShabat();
     }
 
   }
 
 }
-

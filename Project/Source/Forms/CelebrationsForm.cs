@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewCalendar
       Instance = new CelebrationsForm();
     }
 
-    static public void Execute()
+    static public void Run()
     {
       Instance.ListView.Items.Clear();
       var dateStart = DateTime.Now;

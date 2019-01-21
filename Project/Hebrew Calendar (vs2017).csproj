@@ -125,6 +125,15 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Forms\MainForm.Reminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\ReminderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\ReminderForm.Designer.cs">
+      <DependentUpon>ReminderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Enums\TrayIconClickOpen.cs" />
     <Compile Include="Source\Forms\CelebrationsForm.cs">
       <SubType>Form</SubType>
@@ -266,6 +275,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\PreferencesForm.fr.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\PreferencesForm.sah-RU.resx">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\ReminderForm.fr.resx">
+      <DependentUpon>ReminderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\ReminderForm.resx">
+      <DependentUpon>ReminderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\SelectDayForm.fr.resx">
       <DependentUpon>SelectDayForm.cs</DependentUpon>

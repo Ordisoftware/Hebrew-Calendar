@@ -117,11 +117,51 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;LabelDate.Name" xml:space="preserve">
+    <value>LabelDate</value>
+  </data>
+  <data name="&gt;&gt;LabelDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelDate.Parent" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;LabelDate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PanelTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PanelTop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 35</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.Name" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="LabelDate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelDate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
@@ -131,7 +171,6 @@
   <data name="LabelDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 25</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LabelDate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -152,33 +191,6 @@
   </data>
   <data name="&gt;&gt;LabelDate.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="PanelTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PanelTop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 35</value>
-  </data>
-  <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Name" xml:space="preserve">
-    <value>PanelTop</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="LabelTorahNextDateValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

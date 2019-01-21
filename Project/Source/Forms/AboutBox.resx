@@ -772,16 +772,16 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 452</value>
+    <value>118, 452</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 13</value>
+    <value>184, 13</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Calendar.NET (CPOL 1.02) :</value>
+    <value>Modified Calendar.NET (CPOL 1.02) :</value>
   </data>
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>

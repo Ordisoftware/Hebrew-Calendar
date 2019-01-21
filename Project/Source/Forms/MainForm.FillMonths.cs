@@ -25,6 +25,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void FillMonths()
     {
+      string strToolTip = "Error on getting sun rise and set";
       int progress = 0;
       foreach ( var row in LunisolarCalendar.LunisolarDays )
       {
@@ -39,8 +40,13 @@ namespace Ordisoftware.HebrewCalendar
           item.EventTextColor = color;
           item.EventText = text;
           item.Rank = rank++;
+          item.TooltipEnabled = true;
+          item.IgnoreTimeComponent = true;
+          item.ToolTipText = strToolTip;
           CalendarMonth.AddEvent(item);
         }
+        strToolTip = EphemerisNames.GetLang(EphemerisType.Rise) + row.Sunrise + Environment.NewLine 
+                   + EphemerisNames.GetLang(EphemerisType.Set) + row.Sunset;
         Color colorMoon = Color.Black;
         string strMonth = row.IsNewMoon == 1
                         ? " " + TorahCelebrations.BabylonianHebrewMonthNames[row.LunarMonth]

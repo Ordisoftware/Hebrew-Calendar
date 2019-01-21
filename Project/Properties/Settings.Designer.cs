@@ -308,5 +308,197 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["StartupHide"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("14")]
+        public int ReminderInterval {
+            get {
+                return ((int)(this["ReminderInterval"]));
+            }
+            set {
+                this["ReminderInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ReminderEnabled {
+            get {
+                return ((bool)(this["ReminderEnabled"]));
+            }
+            set {
+                this["ReminderEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorahEventRemindNewYearD1 {
+            get {
+                return ((bool)(this["TorahEventRemindNewYearD1"]));
+            }
+            set {
+                this["TorahEventRemindNewYearD1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorahEventRemindNewYearD10 {
+            get {
+                return ((bool)(this["TorahEventRemindNewYearD10"]));
+            }
+            set {
+                this["TorahEventRemindNewYearD10"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindPessahD1 {
+            get {
+                return ((bool)(this["TorahEventRemindPessahD1"]));
+            }
+            set {
+                this["TorahEventRemindPessahD1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorahEventRemindPessahD8 {
+            get {
+                return ((bool)(this["TorahEventRemindPessahD8"]));
+            }
+            set {
+                this["TorahEventRemindPessahD8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindChavouotDiet {
+            get {
+                return ((bool)(this["TorahEventRemindChavouotDiet"]));
+            }
+            set {
+                this["TorahEventRemindChavouotDiet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorahEventRemindChavouot1 {
+            get {
+                return ((bool)(this["TorahEventRemindChavouot1"]));
+            }
+            set {
+                this["TorahEventRemindChavouot1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindChavouot2 {
+            get {
+                return ((bool)(this["TorahEventRemindChavouot2"]));
+            }
+            set {
+                this["TorahEventRemindChavouot2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindYomTerouah {
+            get {
+                return ((bool)(this["TorahEventRemindYomTerouah"]));
+            }
+            set {
+                this["TorahEventRemindYomTerouah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindYomHaKipourim {
+            get {
+                return ((bool)(this["TorahEventRemindYomHaKipourim"]));
+            }
+            set {
+                this["TorahEventRemindYomHaKipourim"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindSoukotD1 {
+            get {
+                return ((bool)(this["TorahEventRemindSoukotD1"]));
+            }
+            set {
+                this["TorahEventRemindSoukotD1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorahEventRemindSoukotD8 {
+            get {
+                return ((bool)(this["TorahEventRemindSoukotD8"]));
+            }
+            set {
+                this["TorahEventRemindSoukotD8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RemindShabat {
+            get {
+                return ((bool)(this["RemindShabat"]));
+            }
+            set {
+                this["RemindShabat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSunToolTips {
+            get {
+                return ((bool)(this["MonthViewSunToolTips"]));
+            }
+            set {
+                this["MonthViewSunToolTips"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UpgradeRequired {
+            get {
+                return ((bool)(this["UpgradeRequired"]));
+            }
+            set {
+                this["UpgradeRequired"] = value;
+            }
+        }
     }
 }
