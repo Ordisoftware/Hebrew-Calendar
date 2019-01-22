@@ -157,7 +157,7 @@ namespace Ordisoftware.HebrewCalendar
       = new Dictionary<string, string>()
       {
         { "en", "Can't close while generating." },
-        { "fr", "Impossibme de quitter durant la génération." }
+        { "fr", "Impossible de quitter durant la génération." }
       };
 
     static public readonly Dictionary<string, string> GenerateCalendarText
