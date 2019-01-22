@@ -56,7 +56,7 @@ namespace Ordisoftware.HebrewCalendar
                   : ( row.IsFullMoon == 1 ? Color.DarkGoldenrod : Color.DarkBlue );
         if ( (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
         {
-          add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);
+          if ( row.Moonset != "" ) add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);
           if ( (MoonriseType)row.MoonriseType != MoonriseType.NextDay )
             add(colorMoon, EphemerisNames.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
         }
@@ -64,7 +64,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           if ( (MoonriseType)row.MoonriseType != MoonriseType.NextDay )
             add(colorMoon, EphemerisNames.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
-          add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);
+          if ( row.Moonset != "" ) add(Color.Black, EphemerisNames.GetLang(EphemerisType.Set) + row.Moonset);
         }
         if ( row.SeasonChange != 0 )
           add(Color.DarkGreen, TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)row.SeasonChange));
