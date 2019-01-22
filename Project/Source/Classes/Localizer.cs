@@ -2,7 +2,6 @@
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// Project is registered at Depotnumerique.com (Agence des Depots Numeriques).
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
 /// https://mozilla.org/MPL/2.0/.
@@ -236,6 +235,277 @@ namespace Ordisoftware.HebrewCalendar
                 "Do you want to continue?" },
         { "fr", "Le nouveau calendrier va remplacer l'ancien." + Environment.NewLine + Environment.NewLine +
                 "Voulez-vous continuer ?" }
+      };
+
+    static public readonly Dictionary<MoonPhaseType, Dictionary<string, string>> MoonPhaseText
+      = new Dictionary<MoonPhaseType, Dictionary<string, string>>()
+      {
+        {
+          MoonPhaseType.New, new Dictionary<string, string>
+          {
+            { "en", "New moon" },
+            { "fr", "Nouvelle lune" }
+          }
+        },
+        {
+          MoonPhaseType.WaxingCrescent, new Dictionary<string, string>
+          {
+            { "en", "Waxing crescent" },
+            { "fr", "Premier croissant" }
+          }
+        },
+        {
+          MoonPhaseType.FirstQuarter, new Dictionary<string, string>
+          {
+            { "en", "First quarter" },
+            { "fr", "Premier quartier" }
+          }
+        },
+        {
+          MoonPhaseType.WaxingGibbous, new Dictionary<string, string>
+          {
+            { "en", "Waxing gibbous" },
+            { "fr", "Gibbeuse croissante" }
+          }
+        },
+        {
+          MoonPhaseType.Full, new Dictionary<string, string>
+          {
+            { "en", "Full moon" },
+            { "fr", "Pleine lune" }
+          }
+        },
+        {
+          MoonPhaseType.WaningGibbous, new Dictionary<string, string>
+          {
+            { "en", "Waning gibbous" },
+            { "fr", "Gibbeuse décroissante" }
+          }
+        },
+        {
+          MoonPhaseType.LastQuarter, new Dictionary<string, string>
+          {
+            { "en", "Last quarter" },
+            { "fr", "Dernier quartier" }
+          }
+        },
+        {
+          MoonPhaseType.WaningCrescent, new Dictionary<string, string>
+          {
+            { "en", "Waning crescent" },
+            { "fr", "Dernier croissant" }
+          }
+        }
+      };
+
+    static public readonly Dictionary<EphemerisType, Dictionary<string, string>> EphemerisText
+      = new Dictionary<EphemerisType, Dictionary<string, string>>()
+      {
+        {
+          EphemerisType.Rise, new Dictionary<string, string>
+          {
+            { "en", "R: " },
+            { "fr", "L: " }
+          }
+        },
+        {
+          EphemerisType.Set, new Dictionary<string, string>
+          {
+            { "en", "S: " },
+            { "fr", "C: " }
+          }
+        },
+        {
+          EphemerisType.SummerHour, new Dictionary<string, string>
+          {
+            { "en", "(S)" },
+            { "fr", "(E)" }
+          }
+        },
+        {
+          EphemerisType.WinterHour, new Dictionary<string, string>
+          {
+            { "en", "(W)" },
+            { "fr", "(H)" }
+          }
+        }
+      };
+
+    static public readonly Dictionary<ReportFieldType, Dictionary<string, string>> CalendarFieldText
+      = new Dictionary<ReportFieldType, Dictionary<string, string>>()
+      {
+        {
+          ReportFieldType.Date, new Dictionary<string, string>
+          {
+            { "en", "Date" },
+            { "fr", "Date" }
+          }
+        },
+        {
+          ReportFieldType.Month, new Dictionary<string, string>
+          {
+            { "en", "Month" },
+            { "fr", "Mois" }
+          }
+        },
+        {
+          ReportFieldType.Sun, new Dictionary<string, string>
+          {
+            { "en", "Sun" },
+            { "fr", "Soleil" }
+          }
+        },
+        {
+          ReportFieldType.Moon, new Dictionary<string, string>
+          {
+            { "en", "Moon" },
+            { "fr", "Lune" }
+          }
+        },
+        {
+          ReportFieldType.Events, new Dictionary<string, string>
+          {
+            { "en", "Events" },
+            { "fr", "Évènements" }
+          }
+        }
+      };
+
+    static public readonly string[] BabylonianHebrewMonthText =
+    {
+      "",
+      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
+      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
+      "Adar II"
+    };
+
+    static public readonly Dictionary<SeasonChangeType, Dictionary<string, string>> SeasonEventText
+      = new Dictionary<SeasonChangeType, Dictionary<string, string>>()
+      {
+        {
+          SeasonChangeType.None, new Dictionary<string, string>
+          {
+            { "en", "" },
+            { "fr", "" }
+          }
+        },
+        {
+          SeasonChangeType.SpringEquinox, new Dictionary<string, string>
+          {
+            { "en", "Spring equinox" },
+            { "fr", "Equinoxe de printemps" }
+          }
+        },
+        {
+          SeasonChangeType.SummerSolstice, new Dictionary<string, string>
+          {
+            { "en", "Summer solstice" },
+            { "fr", "Solstice d'été" }
+          }
+        },
+        {
+          SeasonChangeType.AutumnEquinox, new Dictionary<string, string>
+          {
+            { "en", "Autumn equinox" },
+            { "fr", "Equinoxe d'automne" }
+          }
+        },
+        {
+          SeasonChangeType.WinterSolstice, new Dictionary<string, string>
+          {
+            { "en", "Winter solstice" },
+            { "fr", "Solstice d'hiver" }
+          }
+        }
+      };
+
+    static public readonly Dictionary<TorahEventType, Dictionary<string, string>> TorahEventText
+      = new Dictionary<TorahEventType, Dictionary<string, string>>()
+      {
+        {
+          TorahEventType.None, new Dictionary<string, string>
+          {
+            { "en", "" },
+            { "fr", "" }
+          }
+        },
+        {
+          TorahEventType.NewYearD1, new Dictionary<string, string>
+          {
+            { "en", "New year" },
+            { "fr", "Début de l'année" }
+          }
+        },
+        {
+          TorahEventType.NewYearD10, new Dictionary<string, string>
+          {
+            { "en", "Set aside lamb" },
+            { "fr", "Réserver agneau" }
+          }
+        },
+        {
+          TorahEventType.PessahD1, new Dictionary<string, string>
+          {
+            { "en", "Pessa'h start" },
+            { "fr", "Début de Pessah" }
+          }
+        },
+        {
+          TorahEventType.PessahD8, new Dictionary<string, string>
+          {
+            { "en", "Pessa'h end" },
+            { "fr", "Fin de Pessah" }
+          }
+        },
+        {
+          TorahEventType.ChavouotDiet, new Dictionary<string, string>
+          {
+            { "en", "Chavouot diet" },
+            { "fr", "Régime de Chavouot" }
+          }
+        },
+        {
+          TorahEventType.Chavouot1, new Dictionary<string, string>
+          {
+            { "en", "Chavouot lamb" },
+            { "fr", "Agneau de Chavouot" }
+          }
+        },
+        {
+          TorahEventType.Chavouot2, new Dictionary<string, string>
+          {
+            { "en", "Chavouot end" },
+            { "fr", "Fin de Chavouot" }
+          }
+        },
+        {
+          TorahEventType.YomTerouah, new Dictionary<string, string>
+          {
+            { "en", "Yom Terou'ah" },
+            { "fr", "Yom Terou'ah" }
+          }
+        },
+        {
+          TorahEventType.YomHaKipourim, new Dictionary<string, string>
+          {
+            { "en", "Yom HaKipourim" },
+            { "fr", "Yom HaKipourim" }
+          }
+        },
+        {
+          TorahEventType.SoukotD1, new Dictionary<string, string>
+          {
+            { "en", "Soukot start" },
+            { "fr", "Début de Soukot" }
+          }
+        },
+        {
+          TorahEventType.SoukotD8, new Dictionary<string, string>
+          {
+            { "en", "Soukot end" },
+            { "fr", "Fin de Soukot" }
+          }
+        }
       };
 
   }

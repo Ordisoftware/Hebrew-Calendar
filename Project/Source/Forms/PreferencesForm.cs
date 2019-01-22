@@ -2,7 +2,6 @@
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// Project is registered at Depotnumerique.com (Agence des Depots Numeriques).
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
 /// https://mozilla.org/MPL/2.0/.
@@ -91,15 +90,18 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( RadioButtonMainForm.Checked ) Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
-      if ( RadioButtonNavigationForm.Checked ) Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
+      if ( RadioButtonMainForm.Checked )
+        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
+      else
+      if ( RadioButtonNavigationForm.Checked )
+        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
       Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
       Program.Settings.ReminderInterval = (int)EditTimerInterval.Value;
       for (int index = 0; index < EditEvents.Items.Count; index++ )
         try
         {
-          string indexName = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
-          Program.Settings[indexName] = EditEvents.GetItemChecked(index);
+          string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
+          Program.Settings[name] = EditEvents.GetItemChecked(index);
         }
         catch
         {
@@ -120,9 +122,9 @@ namespace Ordisoftware.HebrewCalendar
       if ( form.ShowDialog() == DialogResult.Cancel ) return;
       date = form.MonthCalendar.SelectionStart;
       Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
-      foreach ( DayOfWeekItem item in EditShabatDay.Items )
-        if ( (DayOfWeek)Program.Settings.ShabatDay == item.Day )
-          EditShabatDay.SelectedItem = item;
+      foreach ( DayOfWeekItem day in EditShabatDay.Items )
+        if ( (DayOfWeek)Program.Settings.ShabatDay == day.Day )
+          EditShabatDay.SelectedItem = day;
     }
 
     /// <summary>
@@ -278,7 +280,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( type != TorahEventType.None )
           try
           {
-            var item = new TorahEventItem() { Text = TorahCelebrations.TorahEventNames.GetLang(type), Event = type };
+            var item = new TorahEventItem() { Text = Localizer.TorahEventText.GetLang(type), Event = type };
             int index = EditEvents.Items.Add(item);
             if ( (bool)Program.Settings["TorahEventRemind" + type.ToString()] )
               EditEvents.SetItemChecked(index, true);

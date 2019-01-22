@@ -2,7 +2,6 @@
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// Project is registered at Depotnumerique.com (Agence des Depots Numeriques).
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
 /// https://mozilla.org/MPL/2.0/.
@@ -14,10 +13,10 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-01 </edited>
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Linq;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -25,13 +24,36 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
+    const string SeparatorV = "|";
+    const string SeparatorH = "-";
+    const string ColumnSepLeft = SeparatorV + " ";
+    const string ColumnSepInner = " " + SeparatorV + " ";
+    const string ColumnSepRight = " " + SeparatorV;
+    const string MoonNoText = "        ";
+    const string ShabatText = "[S]";
+    const string MoonFullText = "○";
+    internal readonly string MoonNewText = "●";
+
+    private bool ShowWinterSummerHour = true;
+    private bool ShowShabat = true;
+
+    private Dictionary<ReportFieldType, int> CalendarFieldSize
+      = new Dictionary<ReportFieldType, int>()
+      {
+        { ReportFieldType.Date, 16 },
+        { ReportFieldType.Month, 11 },
+        { ReportFieldType.Sun, 23 },
+        { ReportFieldType.Moon, 21 },
+        { ReportFieldType.Events, 42 },
+      };
+
     private string GenerateReport()
     {
       var headerSep = SeparatorV;
       var headerTxt = SeparatorV;
       foreach ( ReportFieldType v in Enum.GetValues(typeof(ReportFieldType)) )
       {
-        string str = CalendarFieldNames.GetLang(v);
+        string str = Localizer.CalendarFieldText.GetLang(v);
         headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
         headerTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " " + SeparatorV.ToString();
       }
@@ -58,12 +80,12 @@ namespace Ordisoftware.HebrewCalendar
                                                                                                                  : " ");
         string strSun = day.Sunrise + " - " + day.Sunset;
         strSun = ShowWinterSummerHour
-               ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) ? EphemerisNames.GetLang(EphemerisType.SummerHour) 
-                                                                              : EphemerisNames.GetLang(EphemerisType.WinterHour) ) + " " + strSun
+               ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) ? Localizer.EphemerisText.GetLang(EphemerisType.SummerHour) 
+                                                                              : Localizer.EphemerisText.GetLang(EphemerisType.WinterHour) ) + " " + strSun
                : strSun + new string(' ', 3 + 1);
         strSun += " " + (ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay ? ShabatText : "   ");
-        string strMoonrise = day.Moonrise == "" ? MoonNoText : EphemerisNames.GetLang(EphemerisType.Rise) + day.Moonrise;
-        string strMoonset = day.Moonset == "" ? MoonNoText : EphemerisNames.GetLang(EphemerisType.Set) + day.Moonset;
+        string strMoonrise = day.Moonrise == "" ? MoonNoText : Localizer.EphemerisText.GetLang(EphemerisType.Rise) + day.Moonrise;
+        string strMoonset = day.Moonset == "" ? MoonNoText : Localizer.EphemerisText.GetLang(EphemerisType.Set) + day.Moonset;
         string strMoon = (MoonriseType)day.MoonriseType == MoonriseType.BeforeSet 
                        ? strMoonrise + ColumnSepInner + strMoonset 
                        : strMoonset + ColumnSepInner + strMoonrise;
@@ -73,8 +95,8 @@ namespace Ordisoftware.HebrewCalendar
         textDate += dayDate.Month.ToString("00") + ".";
         textDate += dayDate.Year;
         string strDesc = "";
-        string s1 = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)day.SeasonChange);
-        string s2 = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)day.TorahEvents);
+        string s1 = Localizer.SeasonEventText.GetLang((SeasonChangeType)day.SeasonChange);
+        string s2 = Localizer.TorahEventText.GetLang((TorahEventType)day.TorahEvents);
         strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
         strDesc += new string(' ', CalendarFieldSize[ReportFieldType.Events] - 2 - strDesc.Length) + ColumnSepRight;
         content.Append(ColumnSepLeft);

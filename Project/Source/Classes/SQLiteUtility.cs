@@ -2,7 +2,6 @@
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// Project is registered at Depotnumerique.com (Agence des Depots Numeriques).
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
 /// https://mozilla.org/MPL/2.0/.
@@ -69,7 +68,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Check if tables exists or create them.
     /// </summary>
-    static public void CheckDB()
+    static public void CreateDatabaseIfNotExists()
     {
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
