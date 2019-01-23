@@ -53,7 +53,6 @@ namespace Ordisoftware.HebrewCalendar
         finally
         {
           IsGenerating = false;
-          SetView(Program.Settings.CurrentView, true);
         }
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
         {
@@ -82,6 +81,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         Cursor = Cursors.Default;
         LunisolarCalendar.LunisolarDays.RowChanged -= update;
+        SetView(Program.Settings.CurrentView, true);
         UpdateButtons();
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
         TimerReminder.Enabled = Program.Settings.ReminderEnabled;

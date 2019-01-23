@@ -125,6 +125,7 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Classes\SQLiteUtility.cs" />
     <Compile Include="Source\Enums\ReportFieldType.cs" />
     <Compile Include="Source\Enums\EphemerisType.cs" />
     <Compile Include="Source\Forms\MainForm.LoadData.cs">
@@ -201,7 +202,6 @@
     <Compile Include="Source\Forms\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\SQLiteUtility.cs" />
     <Compile Include="Source\Forms\MainForm.GenerateData.cs">
       <SubType>Form</SubType>
     </Compile>
