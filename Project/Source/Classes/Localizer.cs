@@ -214,9 +214,9 @@ namespace Ordisoftware.HebrewCalendar
       = new Dictionary<string, string>()
       {
         { "en", "This action will restore windows position." + Environment.NewLine + Environment.NewLine +
-                "Are you sure you want to do this?" },
+                "Do you want to continue?" },
         { "fr", "Cette action va restaurer la position de la fenêtre"  + Environment.NewLine + Environment.NewLine +
-                "Etes vous sûr de vouloir faire cela ?" }
+                "Voulez-vous continuer ?" }
       };
 
     static public readonly Dictionary<string, string> RegenerateCalendarText
