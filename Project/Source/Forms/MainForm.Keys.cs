@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewCalendar
           ActionGenerate.PerformClick();
           return true;
         case Keys.F8:
-          SctionPreferences.PerformClick();
+          ActionPreferences.PerformClick();
           return true;
         case Keys.F12:
           ActionAbout.PerformClick();

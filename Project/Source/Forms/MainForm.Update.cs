@@ -56,7 +56,7 @@ namespace Ordisoftware.HebrewCalendar
         ActionGenerate.Enabled = !IsGenerating;
         ActionStop.Enabled = IsGenerating;
         MenuView.Enabled = !IsGenerating;
-        SctionPreferences.Enabled = !IsGenerating;
+        ActionPreferences.Enabled = !IsGenerating;
         BarProgress.Value = 0;
         LabelStatus.Text = "";
         Refresh();
