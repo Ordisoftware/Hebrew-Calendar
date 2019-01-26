@@ -125,6 +125,12 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Classes\SQLiteUtility.cs" />
+    <Compile Include="Source\Enums\ReportFieldType.cs" />
+    <Compile Include="Source\Enums\EphemerisType.cs" />
+    <Compile Include="Source\Forms\MainForm.LoadData.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm.Reminder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,11 +156,8 @@
       <DependentUpon>LunisolarCalendar.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
-    <Compile Include="Source\Classes\LocalizerHelper.cs" />
-    <Compile Include="Source\Forms\MainForm.ExportCSV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\MainForm.GenerateReport.Consts.cs">
+    <Compile Include="Source\Classes\Localizer.cs" />
+    <Compile Include="Source\Forms\MainForm.GenerateCSV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm.FillMonths.cs">
@@ -199,8 +202,7 @@
     <Compile Include="Source\Forms\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\SQLiteUtility.cs" />
-    <Compile Include="Source\Forms\MainForm.GenerateDB.cs">
+    <Compile Include="Source\Forms\MainForm.GenerateData.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm.Update.cs">
@@ -274,9 +276,6 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\PreferencesForm.fr.resx">
-      <DependentUpon>PreferencesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\PreferencesForm.sah-RU.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\ReminderForm.fr.resx">

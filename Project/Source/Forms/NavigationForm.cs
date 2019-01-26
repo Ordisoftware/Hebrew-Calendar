@@ -2,7 +2,6 @@
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// Project is registered at Depotnumerique.com (Agence des Depots Numeriques).
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
 /// https://mozilla.org/MPL/2.0/.
@@ -50,7 +49,7 @@ namespace Ordisoftware.HebrewCalendar
                       where day.Date == strDate
                       select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
           LabelDate.Text = value.ToLongDateString();
-          string strMonth = TorahCelebrations.BabylonianHebrewMonthNames[row.LunarMonth];
+          string strMonth = Localizer.BabylonianHebrewMonthText[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
           LabelLunarDayValue.Text = "Day #" + row.LunarDay.ToString();
           if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
@@ -59,9 +58,9 @@ namespace Ordisoftware.HebrewCalendar
           LabelSunsetValue.Text = row.Sunset.ToString();
           LabelMoonriseValue.Text = row.Moonrise.ToString();
           LabelMoonsetValue.Text = row.Moonset.ToString();
-          LabelEventSeasonValue.Text = TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)row.SeasonChange);
+          LabelEventSeasonValue.Text = Localizer.SeasonEventText.GetLang((SeasonChangeType)row.SeasonChange);
           if ( LabelEventSeasonValue.Text == "" ) LabelEventSeasonValue.Text = "-";
-          LabelEventTorahValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents);
+          LabelEventTorahValue.Text = Localizer.TorahEventText.GetLang((TorahEventType)row.TorahEvents);
           if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
                           where SQLiteUtility.GetDate(day.Date) > value && day.TorahEvents > 0
@@ -69,7 +68,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( rowNext != null )
           {
             var date = SQLiteUtility.GetDate(rowNext.Date);
-            LabelTorahNextValue.Text = TorahCelebrations.TorahEventNames.GetLang((TorahEventType)rowNext.TorahEvents);
+            LabelTorahNextValue.Text = Localizer.TorahEventText.GetLang((TorahEventType)rowNext.TorahEvents);
             LabelTorahNextDateValue.Text = date.ToLongDateString();
             LabelTorahNext.Tag = date;
           }

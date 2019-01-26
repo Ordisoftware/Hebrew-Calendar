@@ -11,33 +11,22 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2016-04 </edited>
 using System;
 
 namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide data view mode type.
+  /// Provide the report field type.
   /// </summary>
-  public enum ViewModeType
+  public enum ReportFieldType
   {
-
-    /// <summary>
-    /// Text view mode to display the report.
-    /// </summary>
-    Text,
-
-    /// <summary>
-    /// Grid view mode to display the month calendar.
-    /// </summary>
+    Date,
     Month,
-
-    /// <summary>
-    /// Grid view mode to display the grid.
-    /// </summary>
-    Grid
-
+    Sun,
+    Moon,
+    Events
   }
 
 }

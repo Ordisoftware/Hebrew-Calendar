@@ -2,7 +2,6 @@
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// Project is registered at Depotnumerique.com (Agence des Depots Numeriques).
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
 /// https://mozilla.org/MPL/2.0/.
@@ -100,70 +99,6 @@ namespace Ordisoftware.HebrewCalendar
       int result = (int)Math.Round(( julian - (int)julian ) * 8);
       return result > 7 ? MoonPhaseType.New : (MoonPhaseType)result;
     }
-
-    /// <summary>
-    /// List of names of the moon phases.
-    /// </summary>
-    static public readonly Dictionary<MoonPhaseType, Dictionary<string, string>> MoonPhaseNames
-      = new Dictionary<MoonPhaseType, Dictionary<string, string>>()
-      {
-        {
-          MoonPhaseType.New, new Dictionary<string, string>
-          {
-            { "en", "New moon" },
-            { "fr", "Nouvelle lune" }
-          }
-        },
-        {
-          MoonPhaseType.WaxingCrescent, new Dictionary<string, string>
-          {
-            { "en", "Waxing crescent" },
-            { "fr", "Premier croissant" }
-          }
-        },
-        {
-          MoonPhaseType.FirstQuarter, new Dictionary<string, string>
-          {
-            { "en", "First quarter" },
-            { "fr", "Premier quartier" }
-          }
-        },
-        {
-          MoonPhaseType.WaxingGibbous, new Dictionary<string, string>
-          {
-            { "en", "Waxing gibbous" },
-            { "fr", "Gibbeuse croissante" }
-          }
-        },
-        {
-          MoonPhaseType.Full, new Dictionary<string, string>
-          {
-            { "en", "Full moon" },
-            { "fr", "Pleine lune" }
-          }
-        },
-        {
-          MoonPhaseType.WaningGibbous, new Dictionary<string, string>
-          {
-            { "en", "Waning gibbous" },
-            { "fr", "Gibbeuse décroissante" }
-          }
-        },
-        {
-          MoonPhaseType.LastQuarter, new Dictionary<string, string>
-          {
-            { "en", "Last quarter" },
-            { "fr", "Dernier quartier" }
-          }
-        },
-        {
-          MoonPhaseType.WaningCrescent, new Dictionary<string, string>
-          {
-            { "en", "Waning crescent" },
-            { "fr", "Dernier croissant" }
-          }
-        }
-      };
 
   }
 

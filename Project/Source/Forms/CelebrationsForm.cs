@@ -2,7 +2,6 @@
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// Project is registered at Depotnumerique.com (Agence des Depots Numeriques).
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
 /// https://mozilla.org/MPL/2.0/.
@@ -48,11 +47,11 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( (SeasonChangeType)row.SeasonChange != SeasonChangeType.None )
           Instance.ListView.Items.Add(SQLiteUtility.GetDate(row.Date).ToLongDateString())
-            .SubItems.Add(TorahCelebrations.SeasonEventNames.GetLang((SeasonChangeType)row.SeasonChange))
+            .SubItems.Add(Localizer.SeasonEventText.GetLang((SeasonChangeType)row.SeasonChange))
             .Tag = row.Date;
         if ( (TorahEventType)row.TorahEvents != TorahEventType.None )
           Instance.ListView.Items.Add(SQLiteUtility.GetDate(row.Date).ToLongDateString())
-            .SubItems.Add(TorahCelebrations.TorahEventNames.GetLang((TorahEventType)row.TorahEvents))
+            .SubItems.Add(Localizer.TorahEventText.GetLang((TorahEventType)row.TorahEvents))
             .Tag = row.Date;
       }
       Instance.Show();

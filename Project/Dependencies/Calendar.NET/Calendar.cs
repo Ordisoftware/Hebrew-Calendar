@@ -977,7 +977,10 @@ namespace Calendar.NET
               if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month
            && counter == DateTime.Now.Day )
               {
-                g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
+                //ORDISOFTWARE MODIF BEGIN
+                //g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
+                g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.DarkRed, xStart + 5, yStart + 2);
+                //ORDISOFTWARE MODIF END
               }
               else
               {
