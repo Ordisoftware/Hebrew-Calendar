@@ -278,9 +278,6 @@
     <EmbeddedResource Include="Source\Forms\PreferencesForm.fr.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\PreferencesForm.sah-RU.resx">
-      <DependentUpon>PreferencesForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\ReminderForm.fr.resx">
       <DependentUpon>ReminderForm.cs</DependentUpon>
     </EmbeddedResource>
