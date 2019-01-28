@@ -15,6 +15,8 @@
 using System;
 using System.IO;
 using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -67,6 +69,12 @@ namespace Ordisoftware.HebrewCalendar
       //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
       try
       {
+        var assembly = typeof(Program).Assembly;
+        var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
+        string id = "Hebrew Calendar " + attribute.Value;
+        bool created;
+        var mutex = new Mutex(true, id, out created);
+        if ( !created ) return;
         if ( Settings.UpgradeRequired )
         {
           Settings.Upgrade();
