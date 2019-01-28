@@ -68,18 +68,13 @@ They can be found using an [online service](https://www.google.com/search?q=lati
 
 #### What is Shabat?
 
-It's the "day of rest" where one do not work for a livelihood and where there is no creative activity. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity. Tradition attributes this day to Saturday. We can however think according to Béréshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Béréshit 1.5 and 1.16 as well as from Shémot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately.
+It's the "day of rest" where one do not work for a livelihood and where there is no creative activity. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity. Tradition attributes this day to Saturday. We can however think according to BÃ©rÃ©shit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From BÃ©rÃ©shit 1.5 and 1.16 as well as from ShÃ©mot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately.
 
 #### What are the times of celebration?
 
 These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teruah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrow of losses, and Sukot or Tabernacles which is the construction of the future. These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.
 
 ## Changelog
-
-#### 2019.__.__ - Version 1.5
-
-- Change current day color in month view.
-- Some code refactorings.
 
 #### 2019.01.21 - Version 1.4
 
