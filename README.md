@@ -80,6 +80,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 - Change current day color in month view.
 - Some code refactorings.
+- Some improvments.
 
 #### 2019.01.21 - Version 1.4
 
