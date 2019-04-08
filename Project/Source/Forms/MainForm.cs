@@ -152,9 +152,10 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !Visible )
       {
+        FormBorderStyle = FormBorderStyle.Sizable;
         Visible = true;
-        WindowState = Program.Settings.MainFormState;
         ShowInTaskbar = true;
+        WindowState = Program.Settings.MainFormState;
         NavigationForm.Instance.Date = DateTime.Now;
       }
       else
@@ -163,6 +164,7 @@ namespace Ordisoftware.HebrewCalendar
         WindowState = FormWindowState.Minimized;
         Visible = false;
         ShowInTaskbar = false;
+        FormBorderStyle = FormBorderStyle.SizableToolWindow;
       }
       MenuShowHide.Text = Localizer.HideRestoreText.GetLang(Visible);
     }
