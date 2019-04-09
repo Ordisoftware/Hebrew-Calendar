@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -46,6 +46,7 @@ namespace Ordisoftware.HebrewCalendar
       int height = SystemInformation.WorkingArea.Height;
       form.Location = new Point(left + width - form.Width, top + height - form.Height);
       form.Tag = row.Date;
+      form.Text = form.LabelNextCelebrationText.Text;
       form.Show();
       Forms.Add(form);
     }
