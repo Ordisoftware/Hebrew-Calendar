@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// The pessah length.
     /// </summary>
-    static public readonly int PessahLenght = 7 + 1;
+    static public readonly int PessahLenght = 7;
 
     /// <summary>
     /// The chavouot length.
