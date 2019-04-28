@@ -372,12 +372,12 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TorahEventRemindPessahD8 {
+        public bool TorahEventRemindPessahD7 {
             get {
-                return ((bool)(this["TorahEventRemindPessahD8"]));
+                return ((bool)(this["TorahEventRemindPessahD7"]));
             }
             set {
-                this["TorahEventRemindPessahD8"] = value;
+                this["TorahEventRemindPessahD7"] = value;
             }
         }
         
