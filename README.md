@@ -76,9 +76,13 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
+#### 2019.05.22 - Version 1.8
+
+- Add check update.
+
 #### 2019.04.25 - Version 1.7
 
-- Fix pessah lenght.
+- Fix pessah length.
 
 #### 2019.04.08 - Version 1.6
 

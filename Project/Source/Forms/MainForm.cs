@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-04 </edited>
+/// <edited> 2019-05 </edited>
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
@@ -20,6 +20,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 
@@ -107,6 +108,7 @@ namespace Ordisoftware.HebrewCalendar
       UpdateButtons();
       MenuShowHide.Text = Localizer.HideRestoreText.GetLang(Visible);
       NavigationForm.Instance.Date = DateTime.Now;
+      CheckUpdate();
       if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
     }
 
@@ -141,6 +143,31 @@ namespace Ordisoftware.HebrewCalendar
     {
       AllowClose = true;
       Close();
+    }
+
+    /// <summary>
+    /// Check if a newer version is available.
+    /// </summary>
+    private void CheckUpdate()
+    {
+      try
+      {
+        string title = AboutBox.Instance.AssemblyTitle;
+        string url = "http://www.ordisoftware.com/files/" + title.Replace(" ", "") + ".update";
+        using ( WebClient client = new WebClient() )
+        {
+
+          string version = client.DownloadString(url);
+          if ( version != AboutBox.Instance.AssemblyVersion )
+            if ( DisplayManager.QueryYesNo(Localizer.CheckUpdateResultText.GetLang() + version + Environment.NewLine + 
+                                           Environment.NewLine +
+                                           Localizer.CheckUpdateAskDownloadText.GetLang()) ) 
+              AboutBox.Instance.OpenApplicationHome();
+        }
+      }
+      catch
+      {
+      }
     }
 
     /// <summary>
