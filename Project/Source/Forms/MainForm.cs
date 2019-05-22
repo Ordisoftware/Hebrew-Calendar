@@ -108,7 +108,7 @@ namespace Ordisoftware.HebrewCalendar
       UpdateButtons();
       MenuShowHide.Text = Localizer.HideRestoreText.GetLang(Visible);
       NavigationForm.Instance.Date = DateTime.Now;
-      CheckUpdate();
+      CheckUpdate(true);
       if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
     }
 
@@ -148,7 +148,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Check if a newer version is available.
     /// </summary>
-    private void CheckUpdate()
+    private void CheckUpdate(bool auto)
     {
       try
       {
@@ -158,11 +158,16 @@ namespace Ordisoftware.HebrewCalendar
         {
 
           string version = client.DownloadString(url);
-          if ( version != AboutBox.Instance.AssemblyVersion )
-            if ( DisplayManager.QueryYesNo(Localizer.CheckUpdateResultText.GetLang() + version + Environment.NewLine + 
+          if ( version == AboutBox.Instance.AssemblyVersion )
+          {
+            if ( !auto )
+              DisplayManager.Show(Localizer.CheckUpdateNoNewText.GetLang());
+          }
+          else
+            if ( DisplayManager.QueryYesNo(Localizer.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
                                            Environment.NewLine +
-                                           Localizer.CheckUpdateAskDownloadText.GetLang()) ) 
-              AboutBox.Instance.OpenApplicationHome();
+                                           Localizer.CheckUpdateAskDownloadText.GetLang()) )
+            AboutBox.Instance.OpenApplicationHome();
         }
       }
       catch
@@ -383,6 +388,16 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionContact_Click(object sender, EventArgs e)
     {
       AboutBox.Instance.OpenContactPage();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionCheckUpdate for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionCheckUpdate_Click(object sender, EventArgs e)
+    {
+      CheckUpdate(false);
     }
 
     /// <summary>
