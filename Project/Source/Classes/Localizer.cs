@@ -145,6 +145,20 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Quitter l'application ?" }
       };
 
+    static public readonly Dictionary<string, string> CheckUpdateResultText
+      = new Dictionary<string, string>()
+      {
+        { "en", "A newer version is available : " },
+        { "fr", "Une nouvelle version est disponible : " }
+      };
+
+    static public readonly Dictionary<string, string> CheckUpdateAskDownloadText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to open the download page?" },
+        { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
+      };
+
     static public readonly Dictionary<string, string> SelectBirthdayText
       = new Dictionary<string, string>()
       {
