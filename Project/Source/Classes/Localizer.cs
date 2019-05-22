@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-05 </edited>
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -143,6 +143,13 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "Exit application?" },
         { "fr", "Quitter l'application ?" }
+      };
+
+    static public readonly Dictionary<string, string> CheckUpdateNoNewText
+      = new Dictionary<string, string>()
+      {
+        { "en", "There is no new version available." },
+        { "fr", "Il n'y a pas de nouvelle version de disponible." }
       };
 
     static public readonly Dictionary<string, string> CheckUpdateResultText
