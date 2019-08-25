@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2019-08 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCalendar.Properties;
@@ -82,8 +82,13 @@ namespace Ordisoftware.HebrewCalendar
       PreferencesForm.Instance.PanelTopColor.BackColor = settings.NavigateTopColor;
       PreferencesForm.Instance.PanelMiddleColor.BackColor = settings.NavigateMiddleColor;
       PreferencesForm.Instance.PanelBottomColor.BackColor = settings.NavigateBottomColor;
-      PreferencesForm.Instance.PanelTextColor.BackColor = settings.TextColor;
-      PreferencesForm.Instance.PanelBackColor.BackColor = settings.TextBackground;
+      PreferencesForm.Instance.PanelTextColor2.BackColor = settings.TextColor;
+      PreferencesForm.Instance.PanelBackColor2.BackColor = settings.TextBackground;
+      PreferencesForm.Instance.PanelCurrentDayColor.BackColor = settings.CurrentDayColor;
+      PreferencesForm.Instance.PanelTorahEventColor.BackColor = settings.TorahEventColor;
+      PreferencesForm.Instance.PanelSeasonEventColor.BackColor = settings.SeasonEventColor;
+      PreferencesForm.Instance.PanelMoonEventColor.BackColor = settings.MoonEventColor;
+      PreferencesForm.Instance.PanelFullMoonColor.BackColor = settings.FullMoonColor;
     }
 
     /// <summary>
@@ -113,8 +118,13 @@ namespace Ordisoftware.HebrewCalendar
       settings.NavigateTopColor = PreferencesForm.Instance.PanelTopColor.BackColor;
       settings.NavigateMiddleColor = PreferencesForm.Instance.PanelMiddleColor.BackColor;
       settings.NavigateBottomColor = PreferencesForm.Instance.PanelBottomColor.BackColor;
-      settings.TextColor = PreferencesForm.Instance.PanelTextColor.BackColor;
-      settings.TextBackground = PreferencesForm.Instance.PanelBackColor.BackColor;
+      settings.TextColor = PreferencesForm.Instance.PanelTextColor2.BackColor;
+      settings.TextBackground = PreferencesForm.Instance.PanelBackColor2.BackColor;
+      settings.CurrentDayColor = PreferencesForm.Instance.PanelCurrentDayColor.BackColor;
+      settings.TorahEventColor = PreferencesForm.Instance.PanelTorahEventColor.BackColor;
+      settings.SeasonEventColor = PreferencesForm.Instance.PanelSeasonEventColor.BackColor;
+      settings.MoonEventColor = PreferencesForm.Instance.PanelMoonEventColor.BackColor;
+      settings.FullMoonColor = PreferencesForm.Instance.PanelFullMoonColor.BackColor;
       settings.Save();
     }
 

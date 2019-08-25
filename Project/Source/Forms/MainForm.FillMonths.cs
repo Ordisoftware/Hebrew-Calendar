@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-08 </edited>
 using System;
 using System.Drawing;
 using Calendar.NET;
@@ -22,7 +22,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private void FillMonths()
+    internal void FillMonths()
     {
       string strToolTip = "Error on getting sun rise and set";
       int progress = 0;
@@ -51,8 +51,8 @@ namespace Ordisoftware.HebrewCalendar
                         ? " " + Localizer.BabylonianHebrewMonthText[row.LunarMonth]
                         : "";
         colorMoon = row.IsNewMoon == 1
-                  ? Color.DarkRed
-                  : ( row.IsFullMoon == 1 ? Color.DarkGoldenrod : Color.DarkBlue );
+                  ? Program.Settings.TorahEventColor
+                  : ( row.IsFullMoon == 1 ? Program.Settings.FullMoonColor : Program.Settings.MoonEventColor );
         if ( (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
         {
           if ( row.Moonset != "" ) add(Color.Black, Localizer.EphemerisText.GetLang(EphemerisType.Set) + row.Moonset);
@@ -66,9 +66,9 @@ namespace Ordisoftware.HebrewCalendar
           if ( row.Moonset != "" ) add(Color.Black, Localizer.EphemerisText.GetLang(EphemerisType.Set) + row.Moonset);
         }
         if ( row.SeasonChange != 0 )
-          add(Color.DarkGreen, Localizer.SeasonEventText.GetLang((SeasonChangeType)row.SeasonChange));
+          add(Program.Settings.SeasonEventColor, Localizer.SeasonEventText.GetLang((SeasonChangeType)row.SeasonChange));
         if ( row.TorahEvents != 0 )
-          add(Color.DarkRed, Localizer.TorahEventText.GetLang((TorahEventType)row.TorahEvents));
+          add(Program.Settings.TorahEventColor, Localizer.TorahEventText.GetLang((TorahEventType)row.TorahEvents));
       }
     }
 

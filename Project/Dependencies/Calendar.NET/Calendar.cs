@@ -71,6 +71,10 @@ namespace Calendar.NET
     private const int MarginSize = 10;
     // ORDISOFTWARE MODIF END
 
+    // ORDISOFTWARE MODIF BEGIN
+    public Color CurrentDayColor = Color.Red;
+    // ORDISOFTWARE MODIF END
+
     /// <summary>
     /// Indicates the font for the times on the day view
     /// </summary>
@@ -979,7 +983,7 @@ namespace Calendar.NET
               {
                 //ORDISOFTWARE MODIF BEGIN
                 //g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
-                g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.DarkRed, xStart + 5, yStart + 2);
+                g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, new SolidBrush(CurrentDayColor), xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else

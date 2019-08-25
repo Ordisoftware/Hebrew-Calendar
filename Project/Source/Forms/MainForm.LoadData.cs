@@ -27,7 +27,6 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LoadData()
     {
-
       int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
@@ -35,6 +34,7 @@ namespace Ordisoftware.HebrewCalendar
       };
       LunisolarCalendar.LunisolarDays.RowChanged += update;
       Cursor = Cursors.WaitCursor;
+      Enabled = false;
       try
       {
         SQLiteUtility.CreateDatabaseIfNotExists();
@@ -79,6 +79,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
+        Enabled = true;
         Cursor = Cursors.Default;
         LunisolarCalendar.LunisolarDays.RowChanged -= update;
         SetView(Program.Settings.CurrentView, true);

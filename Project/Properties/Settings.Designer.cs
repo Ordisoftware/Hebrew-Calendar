@@ -500,5 +500,76 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["UpgradeRequired"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        public global::System.Drawing.Color CurrentDayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["CurrentDayColor"]));
+            }
+            set {
+                this["CurrentDayColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkRed")]
+        public global::System.Drawing.Color TorahEventColor {
+            get {
+                return ((global::System.Drawing.Color)(this["TorahEventColor"]));
+            }
+            set {
+                this["TorahEventColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkGreen")]
+        public global::System.Drawing.Color SeasonEventColor {
+            get {
+                return ((global::System.Drawing.Color)(this["SeasonEventColor"]));
+            }
+            set {
+                this["SeasonEventColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkBlue")]
+        public global::System.Drawing.Color MoonEventColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MoonEventColor"]));
+            }
+            set {
+                this["MoonEventColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkGoldenrod")]
+        public global::System.Drawing.Color FullMoonColor {
+            get {
+                return ((global::System.Drawing.Color)(this["FullMoonColor"]));
+            }
+            set {
+                this["FullMoonColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color Paramètre {
+            get {
+                return ((global::System.Drawing.Color)(this["Paramètre"]));
+            }
+            set {
+                this["Paramètre"] = value;
+            }
+        }
     }
 }

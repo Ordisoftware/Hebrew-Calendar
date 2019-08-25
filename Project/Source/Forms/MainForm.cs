@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate if generation is in progress.
     /// </summary>
-    private bool IsGenerating = false;
+    internal bool IsGenerating = false;
 
     /// <summary>
     /// Indicate if application can be closed.
@@ -77,6 +77,7 @@ namespace Ordisoftware.HebrewCalendar
       SystemEvents.SessionEnding += SessionEnding;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
+      CalendarMonth.CurrentDayColor = Program.Settings.CurrentDayColor;
       CalendarMonth.CalendarDateChanged += (date) =>
       {
         NavigationForm.Instance.Date = date;
