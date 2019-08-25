@@ -191,7 +191,7 @@
     <value>59, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Jour actuel</value>
+    <value>Aujourd'hui</value>
   </data>
   <data name="linkLabel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 13</value>
