@@ -128,7 +128,7 @@
     <value>Fermer</value>
   </data>
   <data name="EditFontName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 47</value>
+    <value>19, 52</value>
   </data>
   <data name="EditFontName.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 21</value>
@@ -139,26 +139,11 @@
   <data name="LabelShabatDay.Text" xml:space="preserve">
     <value>Jour</value>
   </data>
-  <data name="EditFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 97</value>
-  </data>
   <data name="LabelFontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 13</value>
+    <value>36, 13</value>
   </data>
   <data name="LabelFontSize.Text" xml:space="preserve">
-    <value>Taille de la police</value>
-  </data>
-  <data name="PanelBackColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 150</value>
-  </data>
-  <data name="LabelTextColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 131</value>
-  </data>
-  <data name="LabelTextColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 13</value>
-  </data>
-  <data name="LabelTextColor.Text" xml:space="preserve">
-    <value>Couleur du texte</value>
+    <value>Police</value>
   </data>
   <data name="EditShabatDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 21</value>
@@ -168,18 +153,6 @@
   </data>
   <data name="LabelFontName.Text" xml:space="preserve">
     <value>Nom de la police</value>
-  </data>
-  <data name="PanelTextColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 204</value>
-  </data>
-  <data name="LabelBackColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 185</value>
-  </data>
-  <data name="LabelBackColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 13</value>
-  </data>
-  <data name="LabelBackColor.Text" xml:space="preserve">
-    <value>Couleur du fond</value>
   </data>
   <data name="GPSLatitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>75, 31</value>
@@ -195,6 +168,9 @@
   </data>
   <data name="GroupBoxGPS.Text" xml:space="preserve">
     <value>Coordonnées GPS</value>
+  </data>
+  <data name="GroupBoxText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 89</value>
   </data>
   <data name="GroupBoxText.Text" xml:space="preserve">
     <value>Texte</value>
@@ -215,10 +191,10 @@
     <value>Utiliser couleurs pastel</value>
   </data>
   <data name="LabelTopColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 13</value>
+    <value>30, 13</value>
   </data>
   <data name="LabelTopColor.Text" xml:space="preserve">
-    <value>Couleur du haut</value>
+    <value>Haut</value>
   </data>
   <data name="ActionUseSystemColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 13</value>
@@ -227,16 +203,16 @@
     <value>Utiliser couleurs système</value>
   </data>
   <data name="labelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
+    <value>25, 13</value>
   </data>
   <data name="labelBottomColor.Text" xml:space="preserve">
-    <value>Couleur du bas</value>
+    <value>Bas</value>
   </data>
   <data name="LabelMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
+    <value>34, 13</value>
   </data>
   <data name="LabelMiddleColor.Text" xml:space="preserve">
-    <value>Couleur du milieu</value>
+    <value>Milieu</value>
   </data>
   <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
     <value>Clic sur la Tray Icon ouvre</value>
@@ -297,6 +273,69 @@
   </data>
   <data name="EditShowMonthDayToolTip.Text" xml:space="preserve">
     <value>Afficher le lever et coucher du soleil dans la vue par mois</value>
+  </data>
+  <data name="GroupBoxCalendar.Text" xml:space="preserve">
+    <value>Calendrier</value>
+  </data>
+  <data name="ActionRestoreCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
+  </data>
+  <data name="ActionRestoreCalendarColors.Text" xml:space="preserve">
+    <value>Restaurer les valeurs par défaut</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 70</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Pleine lune</value>
+  </data>
+  <data name="PanelFullMoonColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 88</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 70</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Lune</value>
+  </data>
+  <data name="PanelMoonEventColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 21</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Saison</value>
+  </data>
+  <data name="PanelSeasonEventColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 39</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="PanelTorahEventColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 39</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 21</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Aujourd'hui</value>
+  </data>
+  <data name="PanelCurrentDayColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 39</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

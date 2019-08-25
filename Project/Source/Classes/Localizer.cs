@@ -258,6 +258,13 @@ namespace Ordisoftware.HebrewCalendar
                 "Voulez-vous continuer ?" }
       };
 
+    static public readonly Dictionary<string, string> NavigationDayText
+      = new Dictionary<string, string>()
+      {
+        { "en", "Day #" },
+        { "fr", "Jour #" }
+      };
+
     static public readonly Dictionary<MoonPhaseType, Dictionary<string, string>> MoonPhaseText
       = new Dictionary<MoonPhaseType, Dictionary<string, string>>()
       {

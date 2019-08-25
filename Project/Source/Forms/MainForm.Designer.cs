@@ -1140,7 +1140,6 @@
     private System.Windows.Forms.ToolStripMenuItem MenuAbout;
     internal System.Windows.Forms.ToolStripMenuItem MenuExit;
     private System.Windows.Forms.TabPage TabPageMonth;
-    private System.Windows.Forms.Panel PanelViewMonth;
     private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -1161,6 +1160,7 @@
     private System.Windows.Forms.Timer TimerReminder;
     private System.Windows.Forms.ToolStripButton ActionCheckUpdate;
     internal Calendar.NET.Calendar CalendarMonth;
+    internal System.Windows.Forms.Panel PanelViewMonth;
   }
 }
 

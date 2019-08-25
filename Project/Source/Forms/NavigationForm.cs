@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewCalendar
           LabelDate.Text = value.ToLongDateString();
           string strMonth = Localizer.BabylonianHebrewMonthText[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
-          LabelLunarDayValue.Text = "Day #" + row.LunarDay.ToString();
+          LabelLunarDayValue.Text = Localizer.NavigationDayText.GetLang() + row.LunarDay.ToString();
           if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
             LabelLunarDayValue.Text += " (Shabat)";
           LabelSunriseValue.Text = row.Sunrise.ToString();

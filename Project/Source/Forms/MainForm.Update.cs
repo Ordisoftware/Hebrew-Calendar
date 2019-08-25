@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2019-08 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Update the buttons.
     /// </summary>
-    private void UpdateButtons()
+    internal void UpdateButtons()
     {
       try
       {

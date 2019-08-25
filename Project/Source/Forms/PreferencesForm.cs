@@ -60,14 +60,14 @@ namespace Ordisoftware.HebrewCalendar
       LoadEvents();
       LoadFonts();
       BindingSettings.DataSource = Program.Settings;
-  }
+    }
 
-  /// <summary>
-  /// Event handler. Called by PreferencesForm for shown events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void PreferencesForm_Shown(object sender, EventArgs e)
+    /// <summary>
+    /// Event handler. Called by PreferencesForm for shown events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PreferencesForm_Shown(object sender, EventArgs e)
     {
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.Latitude;
@@ -97,7 +97,7 @@ namespace Ordisoftware.HebrewCalendar
         Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
       Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
       Program.Settings.ReminderInterval = (int)EditTimerInterval.Value;
-      for (int index = 0; index < EditEvents.Items.Count; index++ )
+      for ( int index = 0; index < EditEvents.Items.Count; index++ )
         try
         {
           string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
@@ -106,7 +106,7 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
-      Program.Settings.Save();
+      Program.Settings.Store();
     }
 
     /// <summary>
@@ -148,9 +148,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PanelBackColor_Click(object sender, EventArgs e)
     {
-      DialogColor.Color = PanelBackColor.BackColor;
+      DialogColor.Color = PanelBackColor2.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelBackColor.BackColor = DialogColor.Color;
+      PanelBackColor2.BackColor = DialogColor.Color;
       MainForm.CalendarText.BackColor = DialogColor.Color;
     }
 
@@ -161,9 +161,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PanelTextColor_Click(object sender, EventArgs e)
     {
-      DialogColor.Color = PanelTextColor.BackColor;
+      DialogColor.Color = PanelTextColor2.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelTextColor.BackColor = DialogColor.Color;
+      PanelTextColor2.BackColor = DialogColor.Color;
       MainForm.CalendarText.ForeColor = DialogColor.Color;
     }
 
@@ -255,6 +255,86 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.PanelTop.BackColor = PanelTopColor.BackColor;
       NavigationForm.Instance.PanelMiddle.BackColor = PanelMiddleColor.BackColor;
       NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
+    }
+
+    private void UpdateCalendarMonth()
+    {
+      Program.Settings.Store();
+      MainForm.Instance.IsGenerating = true;
+      Cursor = Cursors.WaitCursor;
+      MainForm.Instance.Cursor = Cursors.WaitCursor;
+      Enabled = false;
+      MainForm.Instance.PanelViewMonth.Parent = null;
+      try
+      {
+        MainForm.Instance.CalendarMonth.CurrentDayColor = PanelCurrentDayColor.BackColor;
+        MainForm.Instance.CalendarMonth.LoadPresetHolidays = false;
+        MainForm.Instance.FillMonths();
+      }
+      finally
+      {
+        Enabled = true;
+        Cursor = Cursors.Default;
+        MainForm.Instance.Cursor = Cursors.Default;
+        MainForm.Instance.IsGenerating = false;
+        MainForm.Instance.SetView(Program.Settings.CurrentView, true);
+        MainForm.Instance.UpdateButtons();
+      }
+    }
+
+    /// <summary>
+    /// Event handler. Called by PanelCurrentDayColor for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = PanelCurrentDayColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelCurrentDayColor.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+
+    private void PanelTorahEventColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = PanelTorahEventColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelTorahEventColor.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+
+    private void PanelSeasonEventColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = PanelSeasonEventColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelSeasonEventColor.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+
+    private void PanelMoonEventColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = PanelMoonEventColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelMoonEventColor.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+
+    private void PanelFullMoonColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = PanelFullMoonColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelFullMoonColor.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+
+    private void ActionRestoreCalendarColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      PanelCurrentDayColor.BackColor = Color.Red;
+      PanelTorahEventColor.BackColor = Color.DarkRed;
+      PanelSeasonEventColor.BackColor = Color.DarkGreen;
+      PanelMoonEventColor.BackColor = Color.DarkBlue;
+      PanelFullMoonColor.BackColor = Color.DarkGoldenrod;
+      UpdateCalendarMonth();
     }
 
     /// <summary>
@@ -359,13 +439,6 @@ namespace Ordisoftware.HebrewCalendar
 
     }
 
-    private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = PanelCurrentDayColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelCurrentDayColor.BackColor = DialogColor.Color;
-      
-    }
   }
 
 }

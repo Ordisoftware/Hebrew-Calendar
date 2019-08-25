@@ -78,7 +78,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 #### __________ - Version 1.10
 
-- Add current day color parameter.
+- Add colors parameters for calendar month view.
 
 #### 2019.08.25 - Version 1.9
 
