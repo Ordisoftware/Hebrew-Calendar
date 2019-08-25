@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-05 </edited>
+/// <edited> 2019-08 </edited>
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
@@ -156,9 +156,10 @@ namespace Ordisoftware.HebrewCalendar
         string url = "http://www.ordisoftware.com/files/" + title.Replace(" ", "") + ".update";
         using ( WebClient client = new WebClient() )
         {
-
-          string version = client.DownloadString(url);
-          if ( version == AboutBox.Instance.AssemblyVersion )
+          string[] partsVersion = client.DownloadString(url).Split('.');
+          var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
+          string[] partsAssemblyVersion = AboutBox.Instance.AssemblyVersion.Split('.');
+          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
               DisplayManager.Show(Localizer.CheckUpdateNoNewText.GetLang());
