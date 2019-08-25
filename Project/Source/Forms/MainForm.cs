@@ -156,9 +156,10 @@ namespace Ordisoftware.HebrewCalendar
         string url = "http://www.ordisoftware.com/files/" + title.Replace(" ", "") + ".update";
         using ( WebClient client = new WebClient() )
         {
-
-          string version = client.DownloadString(url);
-          if ( version.CompareTo(AboutBox.Instance.AssemblyVersion) < 0 )
+          string[] partsVersion = client.DownloadString(url).Split('.');
+          var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
+          string[] partsAssemblyVersion = AboutBox.Instance.AssemblyVersion.Split('.');
+          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
               DisplayManager.Show(Localizer.CheckUpdateNoNewText.GetLang());
