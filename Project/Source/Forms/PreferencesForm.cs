@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-08 </edited>
 using System;
 using System.Drawing;
 using System.Drawing.Text;
@@ -359,6 +359,13 @@ namespace Ordisoftware.HebrewCalendar
 
     }
 
+    private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = PanelCurrentDayColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelCurrentDayColor.BackColor = DialogColor.Color;
+      
+    }
   }
 
 }

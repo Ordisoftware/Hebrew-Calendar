@@ -1155,12 +1155,12 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-    private Calendar.NET.Calendar CalendarMonth;
     private System.Windows.Forms.ToolStripButton ActionPrint;
     private System.Windows.Forms.PrintDialog PrintDialog;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.Timer TimerReminder;
     private System.Windows.Forms.ToolStripButton ActionCheckUpdate;
+    internal Calendar.NET.Calendar CalendarMonth;
   }
 }
 

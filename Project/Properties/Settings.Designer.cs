@@ -500,5 +500,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["UpgradeRequired"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkRed")]
+        public global::System.Drawing.Color CurrentDayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["CurrentDayColor"]));
+            }
+            set {
+                this["CurrentDayColor"] = value;
+            }
+        }
     }
 }
