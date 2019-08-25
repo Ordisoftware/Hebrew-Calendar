@@ -142,8 +142,14 @@
     <Setting Name="FullMoonColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">DarkGoldenrod</Value>
     </Setting>
-    <Setting Name="Paramètre" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="RemindShabatOnlyLight" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RemindShabatHoursBefore" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="RemindShabatEveryMinutes" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
     </Setting>
   </Settings>
 </SettingsFile>
