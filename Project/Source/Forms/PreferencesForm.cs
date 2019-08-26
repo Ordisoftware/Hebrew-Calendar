@@ -75,10 +75,10 @@ namespace Ordisoftware.HebrewCalendar
       switch ( Program.Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
-          RadioButtonMainForm.Select();
+          SelectOpenMainForm.Select();
           break;
         case TrayIconClickOpen.NavigationForm:
-          RadioButtonNavigationForm.Select();
+          SelectOpenNavigationForm.Select();
           break;
       }
     }
@@ -90,10 +90,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( RadioButtonMainForm.Checked )
+      if ( SelectOpenMainForm.Checked )
         Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
       else
-      if ( RadioButtonNavigationForm.Checked )
+      if ( SelectOpenNavigationForm.Checked )
         Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
       Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
       Program.Settings.ReminderInterval = (int)EditTimerInterval.Value;
@@ -148,9 +148,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PanelBackColor_Click(object sender, EventArgs e)
     {
-      DialogColor.Color = PanelBackColor2.BackColor;
+      DialogColor.Color = PanelBackColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelBackColor2.BackColor = DialogColor.Color;
+      PanelBackColor.BackColor = DialogColor.Color;
       MainForm.CalendarText.BackColor = DialogColor.Color;
     }
 
@@ -161,9 +161,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PanelTextColor_Click(object sender, EventArgs e)
     {
-      DialogColor.Color = PanelTextColor2.BackColor;
+      DialogColor.Color = PanelTextColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelTextColor2.BackColor = DialogColor.Color;
+      PanelTextColor.BackColor = DialogColor.Color;
       MainForm.CalendarText.ForeColor = DialogColor.Color;
     }
 
@@ -341,11 +341,11 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( sender == EditRemindShabat )
       {
-        remindShabatOnlyLightCheckBox.Enabled = EditRemindShabat.Checked;
+        EditRemindShabatOnlyLight.Enabled = EditRemindShabat.Checked;
         LabelRemindShabatHoursBefore.Enabled = EditRemindShabat.Checked;
-        remindShabatHoursBeforeNumericUpDown.Enabled = EditRemindShabat.Checked;
+        EditRemindShabatHoursBefore.Enabled = EditRemindShabat.Checked;
         LabelRemindShabatEveryMinutes.Enabled = EditRemindShabat.Checked;
-        remindShabatEveryMinutesNumericUpDown.Enabled = EditRemindShabat.Checked;
+        EditRemindShabatEveryMinutes.Enabled = EditRemindShabat.Checked;
       }
     }
 

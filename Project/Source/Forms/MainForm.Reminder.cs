@@ -113,6 +113,8 @@ namespace Ordisoftware.HebrewCalendar
         {
           if ( dateNow < LastShabatReminded.Value.AddMinutes(Program.Settings.RemindShabatEveryMinutes) )
             return;
+          else
+            LastShabatReminded = dateNow;
         }
         else
           LastShabatReminded = dateNow;
