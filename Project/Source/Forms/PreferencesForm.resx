@@ -168,8 +168,8 @@
   <data name="&gt;&gt;GroupBoxCalendar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="GroupBoxCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 386</value>
+  <data name="&gt;&gt;ActionUsePersonalShabat.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
   </data>
   <data name="LabelFontName.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
@@ -504,9 +504,6 @@
   <data name="&gt;&gt;GroupBoxSystem.Name" xml:space="preserve">
     <value>GroupBoxSystem</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="EditRemindShabatHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 170</value>
   </data>
@@ -738,6 +735,9 @@
   <data name="PanelTopColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
+  <data name="&gt;&gt;GroupBoxNavigation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="GroupBoxCalendar.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 162</value>
   </data>
@@ -908,9 +908,6 @@
   </data>
   <data name="GroupBoxNavigation.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
-  </data>
-  <data name="&gt;&gt;ActionUsePersonalShabat.Parent" xml:space="preserve">
-    <value>BroupBoxShabat</value>
   </data>
   <data name="LabelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -1365,8 +1362,8 @@
   <data name="LabelMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
   </data>
-  <data name="&gt;&gt;GroupBoxNavigation.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="GroupBoxCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 386</value>
   </data>
   <data name="LabelTopColor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
