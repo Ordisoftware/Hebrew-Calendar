@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCalendar
         SetView(Program.Settings.CurrentView, true);
         UpdateButtons();
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-        TimerReminder.Enabled = Program.Settings.ReminderEnabled;
+        TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
         Timer_Tick(null, null);
       }
     }

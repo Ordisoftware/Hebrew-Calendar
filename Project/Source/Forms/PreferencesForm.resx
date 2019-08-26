@@ -186,72 +186,6 @@
   <data name="&gt;&gt;GPSLongitudeLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="remindShabatHoursBeforeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="remindShabatHoursBeforeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="remindShabatHoursBeforeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="remindShabatHoursBeforeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 152</value>
-  </data>
-  <data name="remindShabatHoursBeforeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 13</value>
-  </data>
-  <data name="remindShabatHoursBeforeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
-  <data name="remindShabatHoursBeforeLabel.Text" xml:space="preserve">
-    <value>Remind shabat hours before</value>
-  </data>
-  <data name="&gt;&gt;remindShabatHoursBeforeLabel.Name" xml:space="preserve">
-    <value>remindShabatHoursBeforeLabel</value>
-  </data>
-  <data name="&gt;&gt;remindShabatHoursBeforeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remindShabatHoursBeforeLabel.Parent" xml:space="preserve">
-    <value>BroupBoxShabat</value>
-  </data>
-  <data name="&gt;&gt;remindShabatHoursBeforeLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="remindShabatEveryMinutesLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="remindShabatEveryMinutesLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="remindShabatEveryMinutesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="remindShabatEveryMinutesLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 198</value>
-  </data>
-  <data name="remindShabatEveryMinutesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 13</value>
-  </data>
-  <data name="remindShabatEveryMinutesLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
-  </data>
-  <data name="remindShabatEveryMinutesLabel.Text" xml:space="preserve">
-    <value>Remind shabat every minutes</value>
-  </data>
-  <data name="&gt;&gt;remindShabatEveryMinutesLabel.Name" xml:space="preserve">
-    <value>remindShabatEveryMinutesLabel</value>
-  </data>
-  <data name="&gt;&gt;remindShabatEveryMinutesLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remindShabatEveryMinutesLabel.Parent" xml:space="preserve">
-    <value>BroupBoxShabat</value>
-  </data>
-  <data name="&gt;&gt;remindShabatEveryMinutesLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>154, 17</value>
   </metadata>
@@ -388,7 +322,7 @@
     <value>BroupBoxShabat</value>
   </data>
   <data name="&gt;&gt;EditShabatDay.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LabelFontName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -514,7 +448,7 @@
     <value>BroupBoxShabat</value>
   </data>
   <data name="&gt;&gt;ActionUsePersonalShabat.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxGPS.Location" type="System.Drawing.Point, System.Drawing">
     <value>218, 15</value>
@@ -687,6 +621,66 @@
   <data name="&gt;&gt;GroupBoxText.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="LabelRemindShabatHoursBefore.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelRemindShabatHoursBefore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelRemindShabatHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 149</value>
+  </data>
+  <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 13</value>
+  </data>
+  <data name="LabelRemindShabatHoursBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LabelRemindShabatHoursBefore.Text" xml:space="preserve">
+    <value>Remind shabat hours before</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.Name" xml:space="preserve">
+    <value>LabelRemindShabatHoursBefore</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 200</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 13</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Text" xml:space="preserve">
+    <value>Remind shabat every minutes</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.Name" xml:space="preserve">
+    <value>LabelRemindShabatEveryMinutes</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="remindShabatOnlyLightCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -712,10 +706,10 @@
     <value>BroupBoxShabat</value>
   </data>
   <data name="&gt;&gt;remindShabatOnlyLightCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="remindShabatHoursBeforeNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 170</value>
+    <value>18, 170</value>
   </data>
   <data name="remindShabatHoursBeforeNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -733,10 +727,10 @@
     <value>BroupBoxShabat</value>
   </data>
   <data name="&gt;&gt;remindShabatHoursBeforeNumericUpDown.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="remindShabatEveryMinutesNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 216</value>
+    <value>18, 216</value>
   </data>
   <data name="remindShabatEveryMinutesNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1277,9 +1271,6 @@
   </data>
   <data name="EditTimerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="EditTimerEnabled.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
   </data>
   <data name="EditTimerEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

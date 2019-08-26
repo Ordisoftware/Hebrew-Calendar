@@ -340,6 +340,21 @@ namespace Ordisoftware.HebrewCalendar
     private void remindShabat_ValueChanged(object sender, EventArgs e)
     {
       MainForm.Instance.LastShabatReminded = null;
+      if ( sender == EditRemindShabat )
+      {
+        remindShabatOnlyLightCheckBox.Enabled = EditRemindShabat.Checked;
+        LabelRemindShabatHoursBefore.Enabled = EditRemindShabat.Checked;
+        remindShabatHoursBeforeNumericUpDown.Enabled = EditRemindShabat.Checked;
+        LabelRemindShabatEveryMinutes.Enabled = EditRemindShabat.Checked;
+        remindShabatEveryMinutesNumericUpDown.Enabled = EditRemindShabat.Checked;
+      }
+    }
+
+    private void EditTimerEnabled_CheckedChanged(object sender, EventArgs e)
+    {
+      LabelTimerInterval.Enabled = EditTimerEnabled.Checked;
+      EditTimerInterval.Enabled = EditTimerEnabled.Checked;
+      EditEvents.Enabled = EditTimerEnabled.Checked;
     }
 
     /// <summary>
