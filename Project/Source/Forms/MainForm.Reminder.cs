@@ -26,13 +26,11 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        var dateStart = DateTime.Now;
-        var dateEnd = DateTime.Now.AddDays(Program.Settings.ReminderInterval);
-        string strDateStart = SQLiteUtility.GetDate(dateStart);
-        string strDateEnd = SQLiteUtility.GetDate(dateEnd);
+        var dateStart = DateTime.Today;
+        var dateEnd = dateStart.AddDays(Program.Settings.ReminderInterval);
         var row = ( from day in LunisolarCalendar.LunisolarDays
-                    where SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDateStart)
-                       && SQLiteUtility.GetDate(day.Date) <= SQLiteUtility.GetDate(strDateEnd)
+                    where SQLiteUtility.GetDate(day.Date) >= dateStart
+                       && SQLiteUtility.GetDate(day.Date) <= dateEnd
                        && check((TorahEventType)day.TorahEvents)
                        && !Reminded.Contains(day.Date)
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
@@ -70,7 +68,7 @@ namespace Ordisoftware.HebrewCalendar
         string strDate = SQLiteUtility.GetDate(today);
         var row = ( from day in LunisolarCalendar.LunisolarDays
                     where SQLiteUtility.GetDate(day.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
-                       && SQLiteUtility.GetDate(day.Date) >= today
+                       && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDate)
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
         var rowPrevious = LunisolarCalendar.LunisolarDays.FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
@@ -95,7 +93,7 @@ namespace Ordisoftware.HebrewCalendar
         else
           initTimes(rowPrevious.Sunset, row.Sunset, -1);
         var dateTrigger = dateStart.Value.AddHours(-Program.Settings.RemindShabatHoursBefore);
-        if ( dateNow < dateTrigger || dateNow > dateEnd )
+        if ( dateNow < dateTrigger )
         {
           LastShabatReminded = null;
           return;
@@ -105,6 +103,12 @@ namespace Ordisoftware.HebrewCalendar
             return;
           else
             LastShabatReminded = dateNow;
+        if ( dateNow > dateEnd && ReminderForm.ShabatForm != null )
+        {
+          LastShabatReminded = null;
+          ReminderForm.ShabatForm.Close();
+          return;
+        }
         if ( dateNow >= dateStart && dateNow < dateEnd )
           if ( LastShabatReminded.HasValue )
             if ( dateNow < LastShabatReminded.Value.AddMinutes(Program.Settings.RemindShabatEveryMinutes) )

@@ -89,8 +89,8 @@
       this.PanelCurrentDayColor = new System.Windows.Forms.Panel();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.LabelRemindShabatHoursBefore = new System.Windows.Forms.Label();
-      this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
       this.LabelRemindShabatEveryMinutes = new System.Windows.Forms.Label();
+      this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
       GPSLatitudeLabel = new System.Windows.Forms.Label();
       GPSLongitudeLabel = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
@@ -593,14 +593,14 @@
       resources.ApplyResources(this.LabelRemindShabatHoursBefore, "LabelRemindShabatHoursBefore");
       this.LabelRemindShabatHoursBefore.Name = "LabelRemindShabatHoursBefore";
       // 
-      // BindingSettings
-      // 
-      this.BindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
-      // 
       // LabelRemindShabatEveryMinutes
       // 
       resources.ApplyResources(this.LabelRemindShabatEveryMinutes, "LabelRemindShabatEveryMinutes");
       this.LabelRemindShabatEveryMinutes.Name = "LabelRemindShabatEveryMinutes";
+      // 
+      // BindingSettings
+      // 
+      this.BindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
       // 
       // PreferencesForm
       // 
