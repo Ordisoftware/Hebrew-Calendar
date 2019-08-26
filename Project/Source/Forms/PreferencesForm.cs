@@ -339,7 +339,6 @@ namespace Ordisoftware.HebrewCalendar
 
     private void remindShabat_ValueChanged(object sender, EventArgs e)
     {
-      MainForm.Instance.LastShabatReminded = null;
       if ( sender == EditRemindShabat )
       {
         remindShabatOnlyLightCheckBox.Enabled = EditRemindShabat.Checked;
