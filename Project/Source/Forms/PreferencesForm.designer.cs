@@ -53,6 +53,10 @@
       this.LabelTextColor2 = new System.Windows.Forms.Label();
       this.PanelBackColor2 = new System.Windows.Forms.Panel();
       this.BroupBoxShabat = new System.Windows.Forms.GroupBox();
+      this.remindShabatOnlyLightCheckBox = new System.Windows.Forms.CheckBox();
+      this.remindShabatHoursBeforeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+      this.remindShabatEveryMinutesNumericUpDown = new System.Windows.Forms.NumericUpDown();
+      this.EditRemindShabat = new System.Windows.Forms.CheckBox();
       this.GroupBoxNavigation = new System.Windows.Forms.GroupBox();
       this.ActionUseBlackAndWhiteColors = new System.Windows.Forms.LinkLabel();
       this.ActionUseDefaultColors = new System.Windows.Forms.LinkLabel();
@@ -72,7 +76,6 @@
       this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
       this.EditTimerEnabled = new System.Windows.Forms.CheckBox();
-      this.EditRemindShabat = new System.Windows.Forms.CheckBox();
       this.EditShowMonthDayToolTip = new System.Windows.Forms.CheckBox();
       this.GroupBoxCalendar = new System.Windows.Forms.GroupBox();
       this.ActionRestoreCalendarColors = new System.Windows.Forms.LinkLabel();
@@ -86,10 +89,8 @@
       this.PanelTorahEventColor = new System.Windows.Forms.Panel();
       this.label1 = new System.Windows.Forms.Label();
       this.PanelCurrentDayColor = new System.Windows.Forms.Panel();
-      this.remindShabatHoursBeforeNumericUpDown = new System.Windows.Forms.NumericUpDown();
-      this.remindShabatOnlyLightCheckBox = new System.Windows.Forms.CheckBox();
+      this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
-      this.remindShabatEveryMinutesNumericUpDown = new System.Windows.Forms.NumericUpDown();
       GPSLatitudeLabel = new System.Windows.Forms.Label();
       GPSLongitudeLabel = new System.Windows.Forms.Label();
       remindShabatHoursBeforeLabel = new System.Windows.Forms.Label();
@@ -99,16 +100,15 @@
       this.GroupBoxText.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize2)).BeginInit();
       this.BroupBoxShabat.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.remindShabatHoursBeforeNumericUpDown)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.remindShabatEveryMinutesNumericUpDown)).BeginInit();
       this.GroupBoxNavigation.SuspendLayout();
       this.GroupBoxTrayIcon.SuspendLayout();
       this.GroupBoxReminder.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).BeginInit();
       this.GroupBoxCalendar.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.remindShabatHoursBeforeNumericUpDown)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings ) ).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings ) ).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings ) ).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.remindShabatEveryMinutesNumericUpDown)).BeginInit();
+      this.groupBox1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).BeginInit();
       this.SuspendLayout();
       // 
       // GPSLatitudeLabel
@@ -120,6 +120,16 @@
       // 
       resources.ApplyResources(GPSLongitudeLabel, "GPSLongitudeLabel");
       GPSLongitudeLabel.Name = "GPSLongitudeLabel";
+      // 
+      // remindShabatHoursBeforeLabel
+      // 
+      resources.ApplyResources(remindShabatHoursBeforeLabel, "remindShabatHoursBeforeLabel");
+      remindShabatHoursBeforeLabel.Name = "remindShabatHoursBeforeLabel";
+      // 
+      // remindShabatEveryMinutesLabel
+      // 
+      resources.ApplyResources(remindShabatEveryMinutesLabel, "remindShabatEveryMinutesLabel");
+      remindShabatEveryMinutesLabel.Name = "remindShabatEveryMinutesLabel";
       // 
       // DialogColor
       // 
@@ -157,6 +167,7 @@
       this.EditShabatDay.FormattingEnabled = true;
       resources.ApplyResources(this.EditShabatDay, "EditShabatDay");
       this.EditShabatDay.Name = "EditShabatDay";
+      this.EditShabatDay.SelectedIndexChanged += new System.EventHandler(this.remindShabat_ValueChanged);
       // 
       // LabelFontName
       // 
@@ -275,6 +286,66 @@
       resources.ApplyResources(this.BroupBoxShabat, "BroupBoxShabat");
       this.BroupBoxShabat.Name = "BroupBoxShabat";
       this.BroupBoxShabat.TabStop = false;
+      // 
+      // remindShabatOnlyLightCheckBox
+      // 
+      this.remindShabatOnlyLightCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BindingSettings, "RemindShabatOnlyLight", true));
+      resources.ApplyResources(this.remindShabatOnlyLightCheckBox, "remindShabatOnlyLightCheckBox");
+      this.remindShabatOnlyLightCheckBox.Name = "remindShabatOnlyLightCheckBox";
+      this.remindShabatOnlyLightCheckBox.UseVisualStyleBackColor = true;
+      this.remindShabatOnlyLightCheckBox.CheckedChanged += new System.EventHandler(this.remindShabat_ValueChanged);
+      // 
+      // remindShabatHoursBeforeNumericUpDown
+      // 
+      this.remindShabatHoursBeforeNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BindingSettings, "RemindShabatHoursBefore", true));
+      resources.ApplyResources(this.remindShabatHoursBeforeNumericUpDown, "remindShabatHoursBeforeNumericUpDown");
+      this.remindShabatHoursBeforeNumericUpDown.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+      this.remindShabatHoursBeforeNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.remindShabatHoursBeforeNumericUpDown.Name = "remindShabatHoursBeforeNumericUpDown";
+      this.remindShabatHoursBeforeNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.remindShabatHoursBeforeNumericUpDown.ValueChanged += new System.EventHandler(this.remindShabat_ValueChanged);
+      // 
+      // remindShabatEveryMinutesNumericUpDown
+      // 
+      this.remindShabatEveryMinutesNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BindingSettings, "RemindShabatEveryMinutes", true));
+      resources.ApplyResources(this.remindShabatEveryMinutesNumericUpDown, "remindShabatEveryMinutesNumericUpDown");
+      this.remindShabatEveryMinutesNumericUpDown.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+      this.remindShabatEveryMinutesNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.remindShabatEveryMinutesNumericUpDown.Name = "remindShabatEveryMinutesNumericUpDown";
+      this.remindShabatEveryMinutesNumericUpDown.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      this.remindShabatEveryMinutesNumericUpDown.ValueChanged += new System.EventHandler(this.remindShabat_ValueChanged);
+      // 
+      // EditRemindShabat
+      // 
+      resources.ApplyResources(this.EditRemindShabat, "EditRemindShabat");
+      this.EditRemindShabat.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.BindingSettings, "RemindShabat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditRemindShabat.Name = "EditRemindShabat";
+      this.EditRemindShabat.UseVisualStyleBackColor = true;
+      this.EditRemindShabat.CheckedChanged += new System.EventHandler(this.remindShabat_ValueChanged);
       // 
       // GroupBoxNavigation
       // 
@@ -423,13 +494,6 @@
       this.EditTimerEnabled.Name = "EditTimerEnabled";
       this.EditTimerEnabled.UseVisualStyleBackColor = true;
       // 
-      // EditRemindShabat
-      // 
-      resources.ApplyResources(this.EditRemindShabat, "EditRemindShabat");
-      this.EditRemindShabat.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.BindingSettings, "RemindShabat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditRemindShabat.Name = "EditRemindShabat";
-      this.EditRemindShabat.UseVisualStyleBackColor = true;
-      // 
       // EditShowMonthDayToolTip
       // 
       resources.ApplyResources(this.EditShowMonthDayToolTip, "EditShowMonthDayToolTip");
@@ -527,38 +591,17 @@
       this.PanelCurrentDayColor.Name = "PanelCurrentDayColor";
       this.PanelCurrentDayColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelCurrentDayColor_MouseClick);
       // 
-      // remindShabatHoursBeforeLabel
+      // groupBox1
       // 
-      resources.ApplyResources(remindShabatHoursBeforeLabel, "remindShabatHoursBeforeLabel");
-      remindShabatHoursBeforeLabel.Name = "remindShabatHoursBeforeLabel";
-      // 
-      // remindShabatHoursBeforeNumericUpDown
-      // 
-      this.remindShabatHoursBeforeNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BindingSettings, "RemindShabatHoursBefore", true));
-      resources.ApplyResources(this.remindShabatHoursBeforeNumericUpDown, "remindShabatHoursBeforeNumericUpDown");
-      this.remindShabatHoursBeforeNumericUpDown.Name = "remindShabatHoursBeforeNumericUpDown";
-      // 
-      // remindShabatOnlyLightCheckBox
-      // 
-      this.remindShabatOnlyLightCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BindingSettings, "RemindShabatOnlyLight", true));
-      resources.ApplyResources(this.remindShabatOnlyLightCheckBox, "remindShabatOnlyLightCheckBox");
-      this.remindShabatOnlyLightCheckBox.Name = "remindShabatOnlyLightCheckBox";
-      this.remindShabatOnlyLightCheckBox.UseVisualStyleBackColor = true;
+      this.groupBox1.Controls.Add(this.EditStartupHide);
+      this.groupBox1.Controls.Add(this.EditShowMonthDayToolTip);
+      resources.ApplyResources(this.groupBox1, "groupBox1");
+      this.groupBox1.Name = "groupBox1";
+      this.groupBox1.TabStop = false;
       // 
       // BindingSettings
       // 
       this.BindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
-      // 
-      // remindShabatEveryMinutesLabel
-      // 
-      resources.ApplyResources(remindShabatEveryMinutesLabel, "remindShabatEveryMinutesLabel");
-      remindShabatEveryMinutesLabel.Name = "remindShabatEveryMinutesLabel";
-      // 
-      // remindShabatEveryMinutesNumericUpDown
-      // 
-      this.remindShabatEveryMinutesNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BindingSettings, "RemindShabatEveryMinutes", true));
-      resources.ApplyResources(this.remindShabatEveryMinutesNumericUpDown, "remindShabatEveryMinutesNumericUpDown");
-      this.remindShabatEveryMinutesNumericUpDown.Name = "remindShabatEveryMinutesNumericUpDown";
       // 
       // PreferencesForm
       // 
@@ -566,8 +609,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonClose;
-      this.Controls.Add(this.EditShowMonthDayToolTip);
-      this.Controls.Add(this.EditStartupHide);
+      this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.GroupBoxReminder);
       this.Controls.Add(this.GroupBoxTrayIcon);
       this.Controls.Add(this.GroupBoxText);
@@ -591,6 +633,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize2)).EndInit();
       this.BroupBoxShabat.ResumeLayout(false);
       this.BroupBoxShabat.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.remindShabatHoursBeforeNumericUpDown)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.remindShabatEveryMinutesNumericUpDown)).EndInit();
       this.GroupBoxNavigation.ResumeLayout(false);
       this.GroupBoxNavigation.PerformLayout();
       this.GroupBoxTrayIcon.ResumeLayout(false);
@@ -600,13 +644,9 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).EndInit();
       this.GroupBoxCalendar.ResumeLayout(false);
       this.GroupBoxCalendar.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.remindShabatHoursBeforeNumericUpDown)).EndInit();
+      this.groupBox1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings ) ).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSettings ) ).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.remindShabatEveryMinutesNumericUpDown)).EndInit();
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
@@ -667,5 +707,6 @@
     private System.Windows.Forms.NumericUpDown remindShabatHoursBeforeNumericUpDown;
     private System.Windows.Forms.CheckBox remindShabatOnlyLightCheckBox;
     private System.Windows.Forms.NumericUpDown remindShabatEveryMinutesNumericUpDown;
+    private System.Windows.Forms.GroupBox groupBox1;
   }
 }

@@ -337,6 +337,11 @@ namespace Ordisoftware.HebrewCalendar
       UpdateCalendarMonth();
     }
 
+    private void remindShabat_ValueChanged(object sender, EventArgs e)
+    {
+      MainForm.Instance.LastShabatReminded = null;
+    }
+
     /// <summary>
     /// Loads the days.
     /// </summary>

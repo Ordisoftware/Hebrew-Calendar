@@ -186,6 +186,72 @@
   <data name="&gt;&gt;GPSLongitudeLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="remindShabatHoursBeforeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="remindShabatHoursBeforeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="remindShabatHoursBeforeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="remindShabatHoursBeforeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 152</value>
+  </data>
+  <data name="remindShabatHoursBeforeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 13</value>
+  </data>
+  <data name="remindShabatHoursBeforeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="remindShabatHoursBeforeLabel.Text" xml:space="preserve">
+    <value>Remind shabat hours before</value>
+  </data>
+  <data name="&gt;&gt;remindShabatHoursBeforeLabel.Name" xml:space="preserve">
+    <value>remindShabatHoursBeforeLabel</value>
+  </data>
+  <data name="&gt;&gt;remindShabatHoursBeforeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;remindShabatHoursBeforeLabel.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
+  </data>
+  <data name="&gt;&gt;remindShabatHoursBeforeLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="remindShabatEveryMinutesLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="remindShabatEveryMinutesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="remindShabatEveryMinutesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="remindShabatEveryMinutesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 198</value>
+  </data>
+  <data name="remindShabatEveryMinutesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 13</value>
+  </data>
+  <data name="remindShabatEveryMinutesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="remindShabatEveryMinutesLabel.Text" xml:space="preserve">
+    <value>Remind shabat every minutes</value>
+  </data>
+  <data name="&gt;&gt;remindShabatEveryMinutesLabel.Name" xml:space="preserve">
+    <value>remindShabatEveryMinutesLabel</value>
+  </data>
+  <data name="&gt;&gt;remindShabatEveryMinutesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;remindShabatEveryMinutesLabel.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
+  </data>
+  <data name="&gt;&gt;remindShabatEveryMinutesLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>154, 17</value>
   </metadata>
@@ -400,7 +466,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 595</value>
+    <value>10, 565</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>609, 28</value>
@@ -418,7 +484,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="ActionUsePersonalShabat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -472,7 +538,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxGPS.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="EditFontSize2.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 46</value>
@@ -619,11 +685,8 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxText.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
-  <metadata name="settingsBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>443, 17</value>
-  </metadata>
   <data name="remindShabatOnlyLightCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -651,41 +714,8 @@
   <data name="&gt;&gt;remindShabatOnlyLightCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="remindShabatHoursBeforeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="remindShabatHoursBeforeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="remindShabatHoursBeforeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="remindShabatHoursBeforeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 196</value>
-  </data>
-  <data name="remindShabatHoursBeforeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 13</value>
-  </data>
-  <data name="remindShabatHoursBeforeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
-  <data name="remindShabatHoursBeforeLabel.Text" xml:space="preserve">
-    <value>Remind shabat hours before</value>
-  </data>
-  <data name="&gt;&gt;remindShabatHoursBeforeLabel.Name" xml:space="preserve">
-    <value>remindShabatHoursBeforeLabel</value>
-  </data>
-  <data name="&gt;&gt;remindShabatHoursBeforeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remindShabatHoursBeforeLabel.Parent" xml:space="preserve">
-    <value>BroupBoxShabat</value>
-  </data>
-  <data name="&gt;&gt;remindShabatHoursBeforeLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="remindShabatHoursBeforeNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 212</value>
+    <value>19, 170</value>
   </data>
   <data name="remindShabatHoursBeforeNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -705,44 +735,8 @@
   <data name="&gt;&gt;remindShabatHoursBeforeNumericUpDown.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="remindShabatEveryMinutesLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="remindShabatEveryMinutesLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="remindShabatEveryMinutesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="remindShabatEveryMinutesLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 152</value>
-  </data>
-  <data name="remindShabatEveryMinutesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 13</value>
-  </data>
-  <data name="remindShabatEveryMinutesLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
-  </data>
-  <data name="remindShabatEveryMinutesLabel.Text" xml:space="preserve">
-    <value>Remind shabat every minutes</value>
-  </data>
-  <data name="&gt;&gt;remindShabatEveryMinutesLabel.Name" xml:space="preserve">
-    <value>remindShabatEveryMinutesLabel</value>
-  </data>
-  <data name="&gt;&gt;remindShabatEveryMinutesLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remindShabatEveryMinutesLabel.Parent" xml:space="preserve">
-    <value>BroupBoxShabat</value>
-  </data>
-  <data name="&gt;&gt;remindShabatEveryMinutesLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="settingsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>270, 17</value>
-  </metadata>
   <data name="remindShabatEveryMinutesNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 168</value>
+    <value>19, 216</value>
   </data>
   <data name="remindShabatEveryMinutesNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -814,7 +808,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BroupBoxShabat.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1081,7 +1075,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxNavigation.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="RadioButtonNavigationForm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1165,28 +1159,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxTrayIcon.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="EditStartupHide.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="EditStartupHide.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="EditStartupHide.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
   </data>
   <data name="EditStartupHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="EditStartupHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 565</value>
+    <value>20, 35</value>
   </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 17</value>
+    <value>170, 43</value>
   </data>
   <data name="EditStartupHide.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="EditStartupHide.Text" xml:space="preserve">
     <value>Hide the application at startup</value>
+  </data>
+  <data name="EditStartupHide.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
   </data>
   <data name="&gt;&gt;EditStartupHide.Name" xml:space="preserve">
     <value>EditStartupHide</value>
@@ -1195,13 +1192,13 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditStartupHide.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;EditStartupHide.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="EditEvents.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Top, Left, Right</value>
   </data>
   <data name="EditEvents.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 100</value>
@@ -1210,7 +1207,7 @@
     <value>True</value>
   </data>
   <data name="EditEvents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 409</value>
+    <value>171, 229</value>
   </data>
   <data name="EditEvents.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1315,7 +1312,7 @@
     <value>399, 19</value>
   </data>
   <data name="GroupBoxReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 529</value>
+    <value>212, 351</value>
   </data>
   <data name="GroupBoxReminder.TabIndex" type="System.Int32, mscorlib">
     <value>65</value>
@@ -1333,22 +1330,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxReminder.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="EditShowMonthDayToolTip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="EditShowMonthDayToolTip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="EditShowMonthDayToolTip.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
   </data>
   <data name="EditShowMonthDayToolTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="EditShowMonthDayToolTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 565</value>
+    <value>20, 84</value>
   </data>
   <data name="EditShowMonthDayToolTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 17</value>
+    <value>171, 33</value>
   </data>
   <data name="EditShowMonthDayToolTip.TabIndex" type="System.Int32, mscorlib">
     <value>66</value>
@@ -1363,10 +1360,10 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditShowMonthDayToolTip.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;EditShowMonthDayToolTip.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionRestoreCalendarColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1663,7 +1660,7 @@
     <value>62</value>
   </data>
   <data name="GroupBoxCalendar.Text" xml:space="preserve">
-    <value>Calendar viex</value>
+    <value>Calendar view</value>
   </data>
   <data name="&gt;&gt;GroupBoxCalendar.Name" xml:space="preserve">
     <value>GroupBoxCalendar</value>
@@ -1675,7 +1672,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxCalendar.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>399, 386</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 162</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1684,7 +1705,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>629, 633</value>
+    <value>629, 603</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1710,6 +1731,9 @@
         AAD8HwAA//8AAA==
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
@@ -1729,18 +1753,6 @@
     <value>BindingSettings</value>
   </data>
   <data name="&gt;&gt;BindingSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;settingsBindingSource1.Name" xml:space="preserve">
-    <value>settingsBindingSource1</value>
-  </data>
-  <data name="&gt;&gt;settingsBindingSource1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;settingsBindingSource.Name" xml:space="preserve">
-    <value>settingsBindingSource</value>
-  </data>
-  <data name="&gt;&gt;settingsBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

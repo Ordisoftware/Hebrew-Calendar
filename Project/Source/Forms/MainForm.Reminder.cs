@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-08 </edited>
 using System;
 using System.Data;
 using System.Linq;
@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewCalendar
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
         Reminded.Add(row.Date);
-        ReminderForm.Run(row, false);
+        ReminderForm.Run(row, false, "", "");
       }
       catch
       {
@@ -59,27 +59,59 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    internal DateTime? LastShabatReminded = null;
+
     private void CheckShabat()
     {
       try
       {
         var today = DateTime.Today;
-        var now = DateTime.Now;
-        var timeNow = new TimeSpan(now.Hour, now.Minute, 0);
+        var dateNow = DateTime.Now;
         string strDate = SQLiteUtility.GetDate(today);
         var row = ( from day in LunisolarCalendar.LunisolarDays
                     where SQLiteUtility.GetDate(day.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
-                        && ( SQLiteUtility.GetDate(day.Date).AddDays(-1) == today
-                        || SQLiteUtility.GetDate(day.Date) == today )
-                        && !Reminded.Contains(day.Date)
+                       && SQLiteUtility.GetDate(day.Date) >= today
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
-        string[] times = row.Sunset.Split(':');
-        if ( SQLiteUtility.GetDate(row.Date) == today 
-          && timeNow > new TimeSpan(Convert.ToInt32(times[0]), Convert.ToInt32(times[1]), 0) )
+        var rowPrevious = LunisolarCalendar.LunisolarDays.FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
+        string timeStart = "";
+        string timeEnd = "";
+        string[] timesStart = null;
+        string[] timesEnd = null;
+        DateTime? dateStart = null;
+        DateTime? dateEnd = null;
+        Action<string, string, int> initTimes = (start, end, delta) =>
+        {
+          timeStart = start;
+          timeEnd = end;
+          timesStart = timeStart.Split(':');
+          timesEnd = timeEnd.Split(':');
+          var date = SQLiteUtility.GetDate(row.Date);
+          dateStart = date.AddDays(delta).AddHours(Convert.ToInt32(timesStart[0])).AddMinutes(Convert.ToInt32(timesStart[1]));
+          dateEnd = date.AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
+        };
+        if ( Program.Settings.RemindShabatOnlyLight )
+          initTimes(row.Sunrise, row.Sunset, 0);
+        else
+          initTimes(rowPrevious.Sunset, row.Sunset, -1);
+        var dateTrigger = dateStart.Value.AddHours(-Program.Settings.RemindShabatHoursBefore);
+        if ( dateNow < dateTrigger || dateNow > dateEnd )
+        {
+          LastShabatReminded = null;
           return;
-        Reminded.Add(row.Date);
-        ReminderForm.Run(row, true);
+        }
+        if ( dateNow >= dateTrigger && dateNow < dateStart )
+          if ( LastShabatReminded.HasValue )
+            return;
+          else
+            LastShabatReminded = dateNow;
+        if ( dateNow >= dateStart && dateNow < dateEnd )
+          if ( LastShabatReminded.HasValue )
+            if ( dateNow < LastShabatReminded.Value.AddMinutes(Program.Settings.RemindShabatEveryMinutes) )
+              return;
+            else
+              LastShabatReminded = dateNow;
+        ReminderForm.Run(row, true, timeStart, timeEnd);
       }
       catch
       {
