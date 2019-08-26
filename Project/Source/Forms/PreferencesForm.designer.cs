@@ -51,6 +51,8 @@
       this.LabelTextColor2 = new System.Windows.Forms.Label();
       this.PanelBackColor2 = new System.Windows.Forms.Panel();
       this.BroupBoxShabat = new System.Windows.Forms.GroupBox();
+      this.LabelRemindShabatHoursBefore = new System.Windows.Forms.Label();
+      this.LabelRemindShabatEveryMinutes = new System.Windows.Forms.Label();
       this.remindShabatOnlyLightCheckBox = new System.Windows.Forms.CheckBox();
       this.remindShabatHoursBeforeNumericUpDown = new System.Windows.Forms.NumericUpDown();
       this.remindShabatEveryMinutesNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -88,8 +90,6 @@
       this.label1 = new System.Windows.Forms.Label();
       this.PanelCurrentDayColor = new System.Windows.Forms.Panel();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.LabelRemindShabatHoursBefore = new System.Windows.Forms.Label();
-      this.LabelRemindShabatEveryMinutes = new System.Windows.Forms.Label();
       this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
       GPSLatitudeLabel = new System.Windows.Forms.Label();
       GPSLongitudeLabel = new System.Windows.Forms.Label();
@@ -274,6 +274,16 @@
       resources.ApplyResources(this.BroupBoxShabat, "BroupBoxShabat");
       this.BroupBoxShabat.Name = "BroupBoxShabat";
       this.BroupBoxShabat.TabStop = false;
+      // 
+      // LabelRemindShabatHoursBefore
+      // 
+      resources.ApplyResources(this.LabelRemindShabatHoursBefore, "LabelRemindShabatHoursBefore");
+      this.LabelRemindShabatHoursBefore.Name = "LabelRemindShabatHoursBefore";
+      // 
+      // LabelRemindShabatEveryMinutes
+      // 
+      resources.ApplyResources(this.LabelRemindShabatEveryMinutes, "LabelRemindShabatEveryMinutes");
+      this.LabelRemindShabatEveryMinutes.Name = "LabelRemindShabatEveryMinutes";
       // 
       // remindShabatOnlyLightCheckBox
       // 
@@ -587,16 +597,6 @@
       resources.ApplyResources(this.groupBox1, "groupBox1");
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.TabStop = false;
-      // 
-      // LabelRemindShabatHoursBefore
-      // 
-      resources.ApplyResources(this.LabelRemindShabatHoursBefore, "LabelRemindShabatHoursBefore");
-      this.LabelRemindShabatHoursBefore.Name = "LabelRemindShabatHoursBefore";
-      // 
-      // LabelRemindShabatEveryMinutes
-      // 
-      resources.ApplyResources(this.LabelRemindShabatEveryMinutes, "LabelRemindShabatEveryMinutes");
-      this.LabelRemindShabatEveryMinutes.Name = "LabelRemindShabatEveryMinutes";
       // 
       // BindingSettings
       // 

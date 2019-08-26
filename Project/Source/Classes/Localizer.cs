@@ -479,7 +479,7 @@ namespace Ordisoftware.HebrewCalendar
           }
         },
         {
-          TorahEventType.PessahD8, new Dictionary<string, string>
+          TorahEventType.PessahD7, new Dictionary<string, string>
           {
             { "en", "Pessa'h end" },
             { "fr", "Fin de Pessah" }

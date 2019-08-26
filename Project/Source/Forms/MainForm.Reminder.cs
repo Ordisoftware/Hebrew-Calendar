@@ -93,28 +93,29 @@ namespace Ordisoftware.HebrewCalendar
         else
           initTimes(rowPrevious.Sunset, row.Sunset, -1);
         var dateTrigger = dateStart.Value.AddHours(-Program.Settings.RemindShabatHoursBefore);
-        if ( dateNow < dateTrigger )
+        if ( dateNow < dateTrigger || dateNow >= dateEnd.Value.AddMinutes(-Program.Settings.RemindShabatEveryMinutes) )
         {
           LastShabatReminded = null;
+          if ( ReminderForm.ShabatForm != null )
+            ReminderForm.ShabatForm.Close();
           return;
         }
+        else
         if ( dateNow >= dateTrigger && dateNow < dateStart )
+        {
           if ( LastShabatReminded.HasValue )
             return;
           else
             LastShabatReminded = dateNow;
-        if ( dateNow > dateEnd && ReminderForm.ShabatForm != null )
-        {
-          LastShabatReminded = null;
-          ReminderForm.ShabatForm.Close();
-          return;
         }
-        if ( dateNow >= dateStart && dateNow < dateEnd )
-          if ( LastShabatReminded.HasValue )
-            if ( dateNow < LastShabatReminded.Value.AddMinutes(Program.Settings.RemindShabatEveryMinutes) )
-              return;
-            else
-              LastShabatReminded = dateNow;
+        else
+        if ( LastShabatReminded.HasValue )
+        {
+          if ( dateNow < LastShabatReminded.Value.AddMinutes(Program.Settings.RemindShabatEveryMinutes) )
+            return;
+        }
+        else
+          LastShabatReminded = dateNow;
         ReminderForm.Run(row, true, timeStart, timeEnd);
       }
       catch

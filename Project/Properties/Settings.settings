@@ -89,10 +89,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindNewYearD10" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindPessahD1" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindPessahD7" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -110,10 +110,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindYomHaKipourim" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindSoukotD1" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindSoukotD8" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

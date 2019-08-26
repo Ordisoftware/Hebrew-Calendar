@@ -436,12 +436,19 @@ namespace Ordisoftware.HebrewCalendar
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
           if ( !DisplayManager.QueryYesNo(Localizer.ReplaceCalendarText.GetLang()) )
             return;
+        Reminded.Clear();
+        LastShabatReminded = null;
+        foreach ( var f in ReminderForm.Forms ) f.Close();
+        if ( ReminderForm.ShabatForm != null )
+        {
+          ReminderForm.ShabatForm.Close();
+          ReminderForm.ShabatForm = null;
+        }
         GenerateData((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
         NavigationForm.Instance.Date = DateTime.Now;
       }
       finally
       {
-        Reminded.Clear();
         TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
         Timer_Tick(this, null);
       }

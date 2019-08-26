@@ -234,7 +234,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           calculate(OmerType.DayMoon, 
                     date.Value.AddDays(TorahCelebrations.PessahLenght), 
-                    TorahEventType.PessahD8);
+                    TorahEventType.PessahD7);
           date = calculate(OmerType.DaySun, 
                            date.Value.AddDays(TorahCelebrations.ChavouotLenght - 1), 
                            TorahEventType.ChavouotDiet);
