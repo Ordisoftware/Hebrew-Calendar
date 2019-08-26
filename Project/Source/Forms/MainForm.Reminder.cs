@@ -97,7 +97,10 @@ namespace Ordisoftware.HebrewCalendar
         {
           LastShabatReminded = null;
           if ( ReminderForm.ShabatForm != null )
+          {
             ReminderForm.ShabatForm.Close();
+            ReminderForm.ShabatForm = null;
+          }
           return;
         }
         else
