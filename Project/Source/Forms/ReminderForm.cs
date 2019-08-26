@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-04 </edited>
+/// <edited> 2019-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -25,20 +25,33 @@ namespace Ordisoftware.HebrewCalendar
 
     static internal readonly List<Form> Forms = new List<Form>();
 
-    static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row, bool isShabat)
+    static internal ReminderForm ShabatForm;
+
+    static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row, bool isShabat, string time1, string time2)
     {
-      foreach ( var item in Forms )
-        if ( (string)item.Tag == row.Date )
-        {
-          item.Show();
-          return;
-        }
-      var form = new ReminderForm();
+      ReminderForm form = null;
+      if ( isShabat && ShabatForm != null )
+      {
+        ShabatForm.Show();
+        ShabatForm.BringToFront();
+        return;
+      }
+      else
+        foreach ( var item in Forms )
+          if ( (string)item.Tag == row.Date )
+          {
+            item.Show();
+            item.BringToFront();
+            return;
+          }
+      form = new ReminderForm();
       var date = SQLiteUtility.GetDate(row.Date);
       form.LabelNextCelebrationText.Text = !isShabat
                                          ? Localizer.TorahEventText.GetLang((TorahEventType)row.TorahEvents)
                                          : "Shabat";
       form.LabelNextCelebrationDate.Text = date.ToLongDateString();
+      if ( isShabat )
+        form.LabelHours.Text = time1 + " - " + time2;
       form.LabelNextCelebrationDate.Tag = date;
       int left = SystemInformation.WorkingArea.Left;
       int top = SystemInformation.WorkingArea.Top;
@@ -47,11 +60,18 @@ namespace Ordisoftware.HebrewCalendar
       form.Location = new Point(left + width - form.Width, top + height - form.Height);
       form.Tag = row.Date;
       form.Text = form.LabelNextCelebrationText.Text;
+      form.IsShabat = isShabat;
+      if ( isShabat )
+        ShabatForm = form;
+      else
+        Forms.Add(form);
       form.Show();
-      Forms.Add(form);
+      form.BringToFront();
     }
 
     protected override bool ShowWithoutActivation { get { return true; } }
+
+    private bool IsShabat;
 
     private ReminderForm()
     {
@@ -61,7 +81,10 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ReminderForm_FormClosed(object sender, FormClosedEventArgs e)
     {
-      Forms.Remove(this);
+      if ( IsShabat )
+        ShabatForm = null;
+      else
+        Forms.Remove(this);
     }
 
     private void ButtonClose_Click(object sender, EventArgs e)

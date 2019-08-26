@@ -117,22 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="GPSLatitudeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 33</value>
-  </data>
-  <data name="GPSLongitudeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 59</value>
-  </data>
   <data name="ButtonClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
-  <data name="EditFontName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 52</value>
-  </data>
-  <data name="EditFontName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 21</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelShabatDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 13</value>
   </data>
@@ -140,25 +128,16 @@
     <value>Jour</value>
   </data>
   <data name="LabelFontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 13</value>
+    <value>63, 13</value>
   </data>
   <data name="LabelFontSize.Text" xml:space="preserve">
-    <value>Police</value>
-  </data>
-  <data name="EditShabatDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 21</value>
+    <value>Taille police</value>
   </data>
   <data name="LabelFontName.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
   </data>
   <data name="LabelFontName.Text" xml:space="preserve">
     <value>Nom de la police</value>
-  </data>
-  <data name="GPSLatitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 31</value>
-  </data>
-  <data name="GPSLongitudeTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 57</value>
   </data>
   <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 13</value>
@@ -169,11 +148,44 @@
   <data name="GroupBoxGPS.Text" xml:space="preserve">
     <value>Coordonnées GPS</value>
   </data>
-  <data name="GroupBoxText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 89</value>
+  <data name="GroupBoxTextReport.Text" xml:space="preserve">
+    <value>Rapport textuel</value>
   </data>
-  <data name="GroupBoxText.Text" xml:space="preserve">
+  <data name="LabelBackColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="LabelBackColor.Text" xml:space="preserve">
+    <value>Fond</value>
+  </data>
+  <data name="LabelTextColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="LabelTextColor.Text" xml:space="preserve">
     <value>Texte</value>
+  </data>
+  <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 13</value>
+  </data>
+  <data name="LabelRemindShabatHoursBefore.Text" xml:space="preserve">
+    <value>Heures avant le rappel du shabat</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 13</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Text" xml:space="preserve">
+    <value>Rappel toutes les minutes</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 17</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.Text" xml:space="preserve">
+    <value>Seulement durant la lumière</value>
+  </data>
+  <data name="EditRemindShabat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
+  </data>
+  <data name="EditRemindShabat.Text" xml:space="preserve">
+    <value>Rappel du Shabat</value>
   </data>
   <data name="GroupBoxNavigation.Text" xml:space="preserve">
     <value>Fenêtre de navigation</value>
@@ -202,10 +214,10 @@
   <data name="ActionUseSystemColors.Text" xml:space="preserve">
     <value>Utiliser couleurs système</value>
   </data>
-  <data name="labelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 13</value>
   </data>
-  <data name="labelBottomColor.Text" xml:space="preserve">
+  <data name="LabelBottomColor.Text" xml:space="preserve">
     <value>Bas</value>
   </data>
   <data name="LabelMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
@@ -215,52 +227,31 @@
     <value>Milieu</value>
   </data>
   <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
-    <value>Clic sur la Tray Icon ouvre</value>
+    <value>Click sur la Tray Icon ouvre</value>
   </data>
-  <data name="RadioButtonNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 17</value>
   </data>
-  <data name="RadioButtonNavigationForm.Text" xml:space="preserve">
+  <data name="SelectOpenNavigationForm.Text" xml:space="preserve">
     <value>Fenêtre de navigation</value>
   </data>
-  <data name="RadioButtonMainForm.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 17</value>
   </data>
-  <data name="RadioButtonMainForm.Text" xml:space="preserve">
+  <data name="SelectOpenMainForm.Text" xml:space="preserve">
     <value>Fenêtre de l'application</value>
-  </data>
-  <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 17</value>
   </data>
   <data name="EditStartupHide.Text" xml:space="preserve">
     <value>Cacher l'application au démarrage</value>
   </data>
   <data name="GroupBoxReminder.Text" xml:space="preserve">
-    <value>Rappel</value>
-  </data>
-  <data name="EditRemindShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 17</value>
-  </data>
-  <data name="EditRemindShabat.Text" xml:space="preserve">
-    <value>Rappel du Shabat</value>
-  </data>
-  <data name="EditTimerInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 38</value>
-  </data>
-  <data name="EditTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 20</value>
-  </data>
-  <data name="LabelTimerInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 21</value>
+    <value>Rappel des célébrations</value>
   </data>
   <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 13</value>
+    <value>114, 13</value>
   </data>
   <data name="LabelTimerInterval.Text" xml:space="preserve">
-    <value>Nombre de jours</value>
-  </data>
-  <data name="EditTimerEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 40</value>
+    <value>Nombre de jours avant</value>
   </data>
   <data name="EditTimerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 17</value>
@@ -268,14 +259,11 @@
   <data name="EditTimerEnabled.Text" xml:space="preserve">
     <value>Activé</value>
   </data>
-  <data name="EditShowMonthDayToolTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 17</value>
-  </data>
   <data name="EditShowMonthDayToolTip.Text" xml:space="preserve">
-    <value>Afficher le lever et coucher du soleil dans la vue par mois</value>
+    <value>Afficher les levers et couchers du soleil dans la vue par mois</value>
   </data>
   <data name="GroupBoxCalendar.Text" xml:space="preserve">
-    <value>Calendrier</value>
+    <value>Vue du calendrier</value>
   </data>
   <data name="ActionRestoreCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 13</value>
@@ -283,59 +271,26 @@
   <data name="ActionRestoreCalendarColors.Text" xml:space="preserve">
     <value>Restaurer les valeurs par défaut</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 70</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
+  <data name="LabelColorFullMoon.Text" xml:space="preserve">
     <value>Pleine lune</value>
   </data>
-  <data name="PanelFullMoonColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 88</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 70</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelColorMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="LabelColorMoon.Text" xml:space="preserve">
     <value>Lune</value>
   </data>
-  <data name="PanelMoonEventColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 21</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Saison</value>
-  </data>
-  <data name="PanelSeasonEventColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 39</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <data name="PanelTorahEventColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 39</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 21</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
+  <data name="LabelColorToday.Text" xml:space="preserve">
     <value>Aujourd'hui</value>
   </data>
-  <data name="PanelCurrentDayColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 39</value>
+  <data name="GroupBoxSystem.Text" xml:space="preserve">
+    <value>Système</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -361,7 +316,8 @@
         AAD8HwAA//8AAA==
 </value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Préférences</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

@@ -89,10 +89,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindNewYearD10" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindPessahD1" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindPessahD7" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -110,10 +110,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindYomHaKipourim" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindSoukotD1" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindSoukotD8" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -142,8 +142,14 @@
     <Setting Name="FullMoonColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">DarkGoldenrod</Value>
     </Setting>
-    <Setting Name="Paramètre" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="RemindShabatOnlyLight" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RemindShabatHoursBefore" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="RemindShabatEveryMinutes" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15</Value>
     </Setting>
   </Settings>
 </SettingsFile>

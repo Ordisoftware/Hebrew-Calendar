@@ -331,7 +331,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       PreferencesForm.Instance.ShowDialog();
       CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-      TimerReminder.Enabled = Program.Settings.ReminderEnabled;
+      TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
       Timer_Tick(null, null);
       if ( PreferencesForm.Instance.OldShabatDay != Program.Settings.ShabatDay
         || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
@@ -436,13 +436,20 @@ namespace Ordisoftware.HebrewCalendar
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
           if ( !DisplayManager.QueryYesNo(Localizer.ReplaceCalendarText.GetLang()) )
             return;
+        Reminded.Clear();
+        LastShabatReminded = null;
+        foreach ( var f in ReminderForm.Forms ) f.Close();
+        if ( ReminderForm.ShabatForm != null )
+        {
+          ReminderForm.ShabatForm.Close();
+          ReminderForm.ShabatForm = null;
+        }
         GenerateData((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
         NavigationForm.Instance.Date = DateTime.Now;
       }
       finally
       {
-        Reminded.Clear();
-        TimerReminder.Enabled = Program.Settings.ReminderEnabled;
+        TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
         Timer_Tick(this, null);
       }
     }
@@ -615,7 +622,7 @@ namespace Ordisoftware.HebrewCalendar
     private void Timer_Tick(object sender, EventArgs e)
     {
       if ( !TimerReminder.Enabled ) return;
-      CheckEvents();
+      if ( Program.Settings.ReminderEnabled ) CheckEvents();
       if ( Program.Settings.RemindShabat ) CheckShabat();
     }
 

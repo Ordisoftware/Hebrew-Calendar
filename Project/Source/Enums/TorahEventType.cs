@@ -46,7 +46,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// The pessah last day.
     /// </summary>
-    PessahD8,
+    PessahD7,
 
     /// <summary>
     /// The chavouot diet start.

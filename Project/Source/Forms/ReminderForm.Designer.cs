@@ -33,6 +33,7 @@
       this.LabelNextCelebrationDate = new System.Windows.Forms.LinkLabel();
       this.PictureBox = new System.Windows.Forms.PictureBox();
       this.ButtonClose = new System.Windows.Forms.Button();
+      this.LabelHours = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.SuspendLayout();
       // 
@@ -66,10 +67,16 @@
       this.ButtonClose.UseVisualStyleBackColor = true;
       this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
       // 
+      // LabelHours
+      // 
+      resources.ApplyResources(this.LabelHours, "LabelHours");
+      this.LabelHours.Name = "LabelHours";
+      // 
       // ReminderForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.LabelHours);
       this.Controls.Add(this.ButtonClose);
       this.Controls.Add(this.PictureBox);
       this.Controls.Add(this.LabelNextCelebrationDate);
@@ -91,5 +98,6 @@
     private System.Windows.Forms.LinkLabel LabelNextCelebrationDate;
     private System.Windows.Forms.PictureBox PictureBox;
     private System.Windows.Forms.Button ButtonClose;
+    private System.Windows.Forms.Label LabelHours;
   }
 }

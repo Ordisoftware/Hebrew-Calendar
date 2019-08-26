@@ -275,9 +275,6 @@
     <EmbeddedResource Include="Source\Forms\MainForm.fr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\PreferencesForm.fr-FR.resx">
-      <DependentUpon>PreferencesForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\PreferencesForm.fr.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>

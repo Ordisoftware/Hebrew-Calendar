@@ -347,7 +347,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool TorahEventRemindNewYearD10 {
             get {
                 return ((bool)(this["TorahEventRemindNewYearD10"]));
@@ -359,7 +359,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool TorahEventRemindPessahD1 {
             get {
                 return ((bool)(this["TorahEventRemindPessahD1"]));
@@ -431,7 +431,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool TorahEventRemindYomHaKipourim {
             get {
                 return ((bool)(this["TorahEventRemindYomHaKipourim"]));
@@ -443,7 +443,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool TorahEventRemindSoukotD1 {
             get {
                 return ((bool)(this["TorahEventRemindSoukotD1"]));
@@ -563,12 +563,37 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Drawing.Color Paramètre {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RemindShabatOnlyLight {
             get {
-                return ((global::System.Drawing.Color)(this["Paramètre"]));
+                return ((bool)(this["RemindShabatOnlyLight"]));
             }
             set {
-                this["Paramètre"] = value;
+                this["RemindShabatOnlyLight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public int RemindShabatHoursBefore {
+            get {
+                return ((int)(this["RemindShabatHoursBefore"]));
+            }
+            set {
+                this["RemindShabatHoursBefore"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        public int RemindShabatEveryMinutes {
+            get {
+                return ((int)(this["RemindShabatEveryMinutes"]));
+            }
+            set {
+                this["RemindShabatEveryMinutes"] = value;
             }
         }
     }
