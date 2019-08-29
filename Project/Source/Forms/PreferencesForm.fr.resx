@@ -128,16 +128,16 @@
     <value>Jour</value>
   </data>
   <data name="LabelFontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
+    <value>32, 13</value>
   </data>
   <data name="LabelFontSize.Text" xml:space="preserve">
-    <value>Taille police</value>
+    <value>Taille</value>
   </data>
   <data name="LabelFontName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 13</value>
+    <value>36, 13</value>
   </data>
   <data name="LabelFontName.Text" xml:space="preserve">
-    <value>Nom de la police</value>
+    <value>Police</value>
   </data>
   <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 13</value>
@@ -147,9 +147,6 @@
   </data>
   <data name="GroupBoxGPS.Text" xml:space="preserve">
     <value>Coordonnées GPS</value>
-  </data>
-  <data name="GroupBoxTextReport.Text" xml:space="preserve">
-    <value>Rapport textuel</value>
   </data>
   <data name="LabelBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -162,6 +159,9 @@
   </data>
   <data name="LabelTextColor.Text" xml:space="preserve">
     <value>Texte</value>
+  </data>
+  <data name="GroupBoxTextReport.Text" xml:space="preserve">
+    <value>Rapport textuel</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 13</value>
@@ -186,9 +186,6 @@
   </data>
   <data name="EditRemindShabat.Text" xml:space="preserve">
     <value>Rappel du Shabat</value>
-  </data>
-  <data name="GroupBoxNavigation.Text" xml:space="preserve">
-    <value>Fenêtre de navigation</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
@@ -226,8 +223,8 @@
   <data name="LabelMiddleColor.Text" xml:space="preserve">
     <value>Milieu</value>
   </data>
-  <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
-    <value>Click sur la Tray Icon ouvre</value>
+  <data name="GroupBoxNavigation.Text" xml:space="preserve">
+    <value>Fenêtre de navigation</value>
   </data>
   <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 17</value>
@@ -241,11 +238,11 @@
   <data name="SelectOpenMainForm.Text" xml:space="preserve">
     <value>Fenêtre de l'application</value>
   </data>
+  <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
+    <value>Click sur la Tray Icon ouvre</value>
+  </data>
   <data name="EditStartupHide.Text" xml:space="preserve">
     <value>Cacher l'application au démarrage</value>
-  </data>
-  <data name="GroupBoxReminder.Text" xml:space="preserve">
-    <value>Rappel des célébrations</value>
   </data>
   <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -259,11 +256,11 @@
   <data name="EditTimerEnabled.Text" xml:space="preserve">
     <value>Activé</value>
   </data>
+  <data name="GroupBoxReminder.Text" xml:space="preserve">
+    <value>Rappel des célébrations</value>
+  </data>
   <data name="EditShowMonthDayToolTip.Text" xml:space="preserve">
     <value>Afficher les levers et couchers du soleil dans la vue par mois</value>
-  </data>
-  <data name="GroupBoxCalendar.Text" xml:space="preserve">
-    <value>Vue du calendrier</value>
   </data>
   <data name="ActionRestoreCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 13</value>
@@ -288,6 +285,9 @@
   </data>
   <data name="LabelColorToday.Text" xml:space="preserve">
     <value>Aujourd'hui</value>
+  </data>
+  <data name="GroupBoxCalendar.Text" xml:space="preserve">
+    <value>Vue du calendrier</value>
   </data>
   <data name="GroupBoxSystem.Text" xml:space="preserve">
     <value>Système</value>
@@ -315,9 +315,5 @@
         AAAAAAAA//8AAPwfAAD8HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwf
         AAD8HwAA//8AAA==
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>
