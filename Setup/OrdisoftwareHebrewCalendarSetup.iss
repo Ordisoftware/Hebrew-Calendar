@@ -99,6 +99,12 @@ Name: {group}\{#MyAppName}\{cm:ProgramOnTheWeb,{#MyAppName}}; Filename: {app}\He
 Name: {group}\{#MyAppName}\{cm:UninstallProgram,{#MyAppName}}; Filename: {uninstallexe}
 Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: startwithwindows
 
+[InstallDelete]
+Name: {app}\Bin\fr-FR\*.*; Type: filesandordirs
+Name: {app}\Bin\fr-FR; Type: dirifempty
+Name: {app}\Bin\sah-RU\*.*; Type: filesandordirs
+Name: {app}\Bin\sah-RU; Type: dirifempty
+
 [Run]
 ;Parameters: /passive /norestart;
 Filename: {app}\Setup\dotnetfx35setup.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}
