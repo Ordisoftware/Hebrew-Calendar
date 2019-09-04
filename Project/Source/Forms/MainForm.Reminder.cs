@@ -85,7 +85,9 @@ namespace Ordisoftware.HebrewCalendar
           timesStart = timeStart.Split(':');
           timesEnd = timeEnd.Split(':');
           var date = SQLiteUtility.GetDate(row.Date);
-          dateStart = date.AddDays(delta).AddHours(Convert.ToInt32(timesStart[0])).AddMinutes(Convert.ToInt32(timesStart[1]));
+          dateStart = date.AddDays(delta).AddHours(Convert.ToInt32(timesStart[0]))
+                      .AddMinutes(Convert.ToInt32(timesStart[1]))
+                      .AddMinutes(-Program.Settings.RemindShabatEveryMinutes);
           dateEnd = date.AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
         };
         if ( Program.Settings.RemindShabatOnlyLight )

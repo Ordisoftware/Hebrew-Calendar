@@ -159,7 +159,6 @@ namespace Ordisoftware.HebrewCalendar
         {
           string[] partsVersion = client.DownloadString(url).Split('.');
           var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
-          string[] partsAssemblyVersion = AboutBox.Instance.AssemblyVersion.Split('.');
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )

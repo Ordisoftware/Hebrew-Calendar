@@ -81,6 +81,7 @@ namespace Ordisoftware.HebrewCalendar
           SelectOpenNavigationForm.Select();
           break;
       }
+      ActiveControl = EditShabatDay;
     }
 
     /// <summary>
