@@ -490,7 +490,7 @@
     <value>180, 144</value>
   </data>
   <data name="GroupBoxGPS.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
+    <value>2</value>
   </data>
   <data name="GroupBoxGPS.Text" xml:space="preserve">
     <value>GPS coordonates</value>
@@ -655,7 +655,7 @@
     <value>383, 91</value>
   </data>
   <data name="GroupBoxTextReport.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxTextReport.Text" xml:space="preserve">
     <value>Text report</value>
@@ -754,7 +754,7 @@
     <value>98, 17</value>
   </data>
   <data name="EditRemindShabatOnlyLight.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="EditRemindShabatOnlyLight.Text" xml:space="preserve">
     <value>Only when light</value>
@@ -781,7 +781,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindShabatHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatHoursBefore.Name" xml:space="preserve">
     <value>EditRemindShabatHoursBefore</value>
@@ -805,7 +805,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindShabatEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatEveryMinutes.Name" xml:space="preserve">
     <value>EditRemindShabatEveryMinutes</value>
@@ -835,7 +835,7 @@
     <value>99, 17</value>
   </data>
   <data name="EditRemindShabat.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="EditRemindShabat.Text" xml:space="preserve">
     <value>Remind Shabat</value>
@@ -862,7 +862,7 @@
     <value>187, 248</value>
   </data>
   <data name="BroupBoxShabat.TabIndex" type="System.Int32, mscorlib">
-    <value>61</value>
+    <value>1</value>
   </data>
   <data name="BroupBoxShabat.Text" xml:space="preserve">
     <value>Shabat</value>
@@ -1159,7 +1159,7 @@
     <value>180, 162</value>
   </data>
   <data name="GroupBoxNavigation.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
+    <value>7</value>
   </data>
   <data name="GroupBoxNavigation.Text" xml:space="preserve">
     <value>Navigation window</value>
@@ -1252,7 +1252,7 @@
     <value>180, 84</value>
   </data>
   <data name="GroupBoxTrayIcon.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
+    <value>3</value>
   </data>
   <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
     <value>Tray Icon click open</value>
@@ -1438,7 +1438,7 @@
     <value>212, 355</value>
   </data>
   <data name="GroupBoxReminder.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
+    <value>4</value>
   </data>
   <data name="GroupBoxReminder.Text" xml:space="preserve">
     <value>Celebrations reminder</value>
@@ -1819,7 +1819,7 @@
     <value>187, 162</value>
   </data>
   <data name="GroupBoxCalendar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>6</value>
   </data>
   <data name="GroupBoxCalendar.Text" xml:space="preserve">
     <value>Calendar view</value>
@@ -1846,7 +1846,7 @@
     <value>212, 162</value>
   </data>
   <data name="GroupBoxSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>67</value>
+    <value>8</value>
   </data>
   <data name="GroupBoxSystem.Text" xml:space="preserve">
     <value>System</value>
