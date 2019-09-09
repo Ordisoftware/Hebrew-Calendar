@@ -621,6 +621,10 @@ namespace Ordisoftware.HebrewCalendar
     private void Timer_Tick(object sender, EventArgs e)
     {
       if ( !TimerReminder.Enabled ) return;
+      int active = 1;
+      SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
+      if ( active != 0 ) return;
+      if ( IsForegroundFullScreen() ) return;
       if ( Program.Settings.ReminderEnabled ) CheckEvents();
       if ( Program.Settings.RemindShabat ) CheckShabat();
     }
