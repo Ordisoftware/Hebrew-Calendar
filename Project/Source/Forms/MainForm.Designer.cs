@@ -992,7 +992,7 @@
       // 
       // TimerReminder
       // 
-      this.TimerReminder.Interval = 300000;
+      this.TimerReminder.Interval = 60000;
       this.TimerReminder.Tick += new System.EventHandler(this.Timer_Tick);
       // 
       // LunisolarDaysTableAdapter
