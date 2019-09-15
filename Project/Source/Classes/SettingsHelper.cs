@@ -60,14 +60,22 @@ namespace Ordisoftware.HebrewCalendar
     static internal void Retrieve(this Settings settings)
     {
       var area = SystemInformation.WorkingArea;
-      if ( settings.MainFormLeft > area.Left && settings.MainFormLeft < area.Width )
+      if ( settings.MainFormLeft >= area.Left && settings.MainFormLeft <= area.Width )
         MainForm.Left = settings.MainFormLeft;
-      if ( settings.MainFormTop > area.Right && settings.MainFormTop < area.Height )
+      else
+        MainForm.Left = area.Left;
+      if ( settings.MainFormTop >= area.Top && settings.MainFormTop <= area.Height )
         MainForm.Top = settings.MainFormTop;
-      if ( settings.MainFormWidth > MainForm.MinimumSize.Width && settings.MainFormWidth < area.Width )
+      else
+        MainForm.Top = area.Top;
+      if ( settings.MainFormWidth >= MainForm.MinimumSize.Width && settings.MainFormWidth <= area.Width )
         MainForm.Width = settings.MainFormWidth;
-      if ( settings.MainFormHeight > MainForm.MinimumSize.Height && settings.MainFormHeight < area.Height )
+      else
+        MainForm.Width = MainForm.MinimumSize.Width;
+      if ( settings.MainFormHeight >= MainForm.MinimumSize.Height && settings.MainFormHeight <= area.Height )
         MainForm.Height = settings.MainFormHeight;
+      else
+        MainForm.Height = MainForm.MinimumSize.Height;
       MainForm.EditScreenNone.Checked = settings.MainFormPosition == ControlLocation.Loose;
       MainForm.EditScreenTopLeft.Checked = settings.MainFormPosition == ControlLocation.TopLeft;
       MainForm.EditScreenTopRight.Checked = settings.MainFormPosition == ControlLocation.TopRight;
