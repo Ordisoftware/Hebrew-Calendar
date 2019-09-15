@@ -1022,6 +1022,8 @@
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
       this.Load += new System.EventHandler(this.MainForm_Load);
       this.Shown += new System.EventHandler(this.MainForm_Shown);
+      this.ClientSizeChanged += new System.EventHandler(this.MainForm_WindowsChanged);
+      this.LocationChanged += new System.EventHandler(this.MainForm_WindowsChanged);
       this.StatusBottom.ResumeLayout(false);
       this.StatusBottom.PerformLayout();
       this.PanelMain.ResumeLayout(false);

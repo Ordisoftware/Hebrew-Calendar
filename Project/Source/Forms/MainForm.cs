@@ -48,6 +48,11 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Indicate if the application is ready for the user.
+    /// </summary>
+    public bool IsReady { get; private set; }
+
+    /// <summary>
     /// Indicate if generation is in progress.
     /// </summary>
     internal bool IsGenerating = false;
@@ -111,6 +116,7 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.Date = DateTime.Now;
       CheckUpdate(true);
       if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
+      IsReady = true;
     }
 
     /// <summary>
@@ -648,6 +654,12 @@ namespace Ordisoftware.HebrewCalendar
         CalendarGrid.Update();
         CalendarMonth.CalendarDate = date;
       }
+    }
+
+    private void MainForm_WindowsChanged(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      EditScreenNone.PerformClick();
     }
 
   }
