@@ -76,6 +76,10 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
+#### 2019.09.__ - Version 2.3
+
+- Fix window location and settings.
+
 #### 2019.09.10 - Version 2.2
 
 - Reminder is disabled if fullscreen or if screen saver is active.
