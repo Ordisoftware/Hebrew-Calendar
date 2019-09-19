@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewCalendar
   static public class Translations
   {
 
-    static public readonly string NewLine = NewLine;
+    static public readonly string NewLine = Environment.NewLine;
 
     static public readonly Dictionary<DayOfWeek, Dictionary<string, string>> DayOfWeekText
       = new Dictionary<DayOfWeek, Dictionary<string, string>>()
