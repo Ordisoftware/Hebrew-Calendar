@@ -119,7 +119,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       DateTime date = DateTime.Now;
       var form = new SelectDayForm();
-      form.Text = Localizer.SelectBirthdayText.GetLang();
+      form.Text = Translations.SelectBirthdayText.GetLang();
       if ( form.ShowDialog() == DialogResult.Cancel ) return;
       date = form.MonthCalendar.SelectionStart;
       Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
@@ -364,7 +364,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       foreach ( DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)) )
       {
-        var item = new DayOfWeekItem() { Text = Localizer.DayOfWeekText.GetLang(day), Day = day };
+        var item = new DayOfWeekItem() { Text = Translations.DayOfWeekText.GetLang(day), Day = day };
         EditShabatDay.Items.Add(item);
         if ( (DayOfWeek)Program.Settings.ShabatDay == day )
           EditShabatDay.SelectedItem = item;
@@ -380,7 +380,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( type != TorahEventType.None )
           try
           {
-            var item = new TorahEventItem() { Text = Localizer.TorahEventText.GetLang(type), Event = type };
+            var item = new TorahEventItem() { Text = Translations.TorahEventText.GetLang(type), Event = type };
             int index = EditEvents.Items.Add(item);
             if ( (bool)Program.Settings["TorahEventRemind" + type.ToString()] )
               EditEvents.SetItemChecked(index, true);

@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewCalendar
       var headerTxt = SeparatorV;
       foreach ( ReportFieldType v in Enum.GetValues(typeof(ReportFieldType)) )
       {
-        string str = Localizer.CalendarFieldText.GetLang(v);
+        string str = Translations.CalendarFieldText.GetLang(v);
         headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
         headerTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " " + SeparatorV.ToString();
       }
@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
       {
         var dayDate = SQLiteUtility.GetDate(day.Date);
-        if ( !UpdateProgress(progress++, count, Localizer.ProgressGenerateReportText.GetLang()) ) return "";
+        if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReportText.GetLang()) ) return "";
         if ( day.LunarMonth == 0 ) continue;
         if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
         if ( day.IsNewMoon == 1 ) content.Append(headerSep + Environment.NewLine);
@@ -80,12 +80,12 @@ namespace Ordisoftware.HebrewCalendar
                                                                                                                  : " ");
         string strSun = day.Sunrise + " - " + day.Sunset;
         strSun = ShowWinterSummerHour
-               ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) ? Localizer.EphemerisText.GetLang(EphemerisType.SummerHour) 
-                                                                              : Localizer.EphemerisText.GetLang(EphemerisType.WinterHour) ) + " " + strSun
+               ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) ? Translations.EphemerisText.GetLang(EphemerisType.SummerHour) 
+                                                                              : Translations.EphemerisText.GetLang(EphemerisType.WinterHour) ) + " " + strSun
                : strSun + new string(' ', 3 + 1);
         strSun += " " + (ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay ? ShabatText : "   ");
-        string strMoonrise = day.Moonrise == "" ? MoonNoText : Localizer.EphemerisText.GetLang(EphemerisType.Rise) + day.Moonrise;
-        string strMoonset = day.Moonset == "" ? MoonNoText : Localizer.EphemerisText.GetLang(EphemerisType.Set) + day.Moonset;
+        string strMoonrise = day.Moonrise == "" ? MoonNoText : Translations.EphemerisText.GetLang(EphemerisType.Rise) + day.Moonrise;
+        string strMoonset = day.Moonset == "" ? MoonNoText : Translations.EphemerisText.GetLang(EphemerisType.Set) + day.Moonset;
         string strMoon = (MoonriseType)day.MoonriseType == MoonriseType.BeforeSet 
                        ? strMoonrise + ColumnSepInner + strMoonset 
                        : strMoonset + ColumnSepInner + strMoonrise;
@@ -95,8 +95,8 @@ namespace Ordisoftware.HebrewCalendar
         textDate += dayDate.Month.ToString("00") + ".";
         textDate += dayDate.Year;
         string strDesc = "";
-        string s1 = Localizer.SeasonEventText.GetLang((SeasonChangeType)day.SeasonChange);
-        string s2 = Localizer.TorahEventText.GetLang((TorahEventType)day.TorahEvents);
+        string s1 = Translations.SeasonEventText.GetLang((SeasonChangeType)day.SeasonChange);
+        string s2 = Translations.TorahEventText.GetLang((TorahEventType)day.TorahEvents);
         strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
         strDesc += new string(' ', CalendarFieldSize[ReportFieldType.Events] - 2 - strDesc.Length) + ColumnSepRight;
         content.Append(ColumnSepLeft);

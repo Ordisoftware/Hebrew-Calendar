@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewCalendar
       form = new ReminderForm();
       var date = SQLiteUtility.GetDate(row.Date);
       form.LabelNextCelebrationText.Text = !isShabat
-                                         ? Localizer.TorahEventText.GetLang((TorahEventType)row.TorahEvents)
+                                         ? Translations.TorahEventText.GetLang((TorahEventType)row.TorahEvents)
                                          : "Shabat";
       form.LabelNextCelebrationDate.Text = date.ToLongDateString();
       if ( isShabat )

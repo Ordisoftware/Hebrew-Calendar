@@ -92,7 +92,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( year == yearLast && month > 12 ) break;
           for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
           {
-            if ( !UpdateProgress(progress++, Count, Localizer.ProgressCreateDaysText.GetLang()) ) return;
+            if ( !UpdateProgress(progress++, Count, Translations.ProgressCreateDaysText.GetLang()) ) return;
             var row = LunisolarCalendar.LunisolarDays.NewLunisolarDaysRow();
             row.Date = SQLiteUtility.GetDate(year, month, day);
             InitializeDay(row);
@@ -167,7 +167,7 @@ namespace Ordisoftware.HebrewCalendar
       int delta = 0;
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
       {
-        if ( !UpdateProgress(progress++, Count, Localizer.ProgressAnalyzeDaysText.GetLang()) ) return;
+        if ( !UpdateProgress(progress++, Count, Translations.ProgressAnalyzeDaysText.GetLang()) ) return;
         if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month, ref delta);
         day.LunarMonth = month;
         if ( day.LunarDay == 1 ) delta = 0;

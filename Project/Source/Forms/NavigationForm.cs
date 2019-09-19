@@ -49,18 +49,18 @@ namespace Ordisoftware.HebrewCalendar
                       where day.Date == strDate
                       select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
           LabelDate.Text = value.ToLongDateString();
-          string strMonth = Localizer.BabylonianHebrewMonthText[row.LunarMonth];
+          string strMonth = Translations.BabylonianHebrewMonthText[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
-          LabelLunarDayValue.Text = Localizer.NavigationDayText.GetLang() + row.LunarDay.ToString();
+          LabelLunarDayValue.Text = Translations.NavigationDayText.GetLang() + row.LunarDay.ToString();
           if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
             LabelLunarDayValue.Text += " (Shabat)";
           LabelSunriseValue.Text = row.Sunrise.ToString();
           LabelSunsetValue.Text = row.Sunset.ToString();
           LabelMoonriseValue.Text = row.Moonrise.ToString();
           LabelMoonsetValue.Text = row.Moonset.ToString();
-          LabelEventSeasonValue.Text = Localizer.SeasonEventText.GetLang((SeasonChangeType)row.SeasonChange);
+          LabelEventSeasonValue.Text = Translations.SeasonEventText.GetLang((SeasonChangeType)row.SeasonChange);
           if ( LabelEventSeasonValue.Text == "" ) LabelEventSeasonValue.Text = "-";
-          LabelEventTorahValue.Text = Localizer.TorahEventText.GetLang((TorahEventType)row.TorahEvents);
+          LabelEventTorahValue.Text = Translations.TorahEventText.GetLang((TorahEventType)row.TorahEvents);
           if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
                           where SQLiteUtility.GetDate(day.Date) > value && day.TorahEvents > 0
@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( rowNext != null )
           {
             var date = SQLiteUtility.GetDate(rowNext.Date);
-            LabelTorahNextValue.Text = Localizer.TorahEventText.GetLang((TorahEventType)rowNext.TorahEvents);
+            LabelTorahNextValue.Text = Translations.TorahEventText.GetLang((TorahEventType)rowNext.TorahEvents);
             LabelTorahNextDateValue.Text = date.ToLongDateString();
             LabelTorahNext.Tag = date;
           }

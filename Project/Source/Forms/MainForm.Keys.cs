@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Escape:
           if ( IsGenerating )
           {
-            if ( DisplayManager.QueryYesNo(Localizer.StopGenerationText.GetLang()) )
+            if ( DisplayManager.QueryYesNo(Translations.StopGenerationText.GetLang()) )
               IsGenerating = false;
           }
           else

@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
-        if ( !IsGenerating ) UpdateProgress(progress++, Count, Localizer.LoadingDataText.GetLang());
+        if ( !IsGenerating ) UpdateProgress(progress++, Count, Translations.LoadingDataText.GetLang());
       };
       LunisolarCalendar.LunisolarDays.RowChanged += update;
       Cursor = Cursors.WaitCursor;
@@ -67,7 +67,7 @@ namespace Ordisoftware.HebrewCalendar
           }
         }
         else
-        if ( DisplayManager.QueryYesNo(Localizer.GenerateCalendarText.GetLang()) )
+        if ( DisplayManager.QueryYesNo(Translations.GenerateCalendarText.GetLang()) )
         {
           PreferencesForm.Instance.ShowDialog();
           Enabled = true;

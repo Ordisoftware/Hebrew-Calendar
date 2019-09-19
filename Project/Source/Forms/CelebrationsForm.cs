@@ -47,11 +47,11 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( (SeasonChangeType)row.SeasonChange != SeasonChangeType.None )
           Instance.ListView.Items.Add(SQLiteUtility.GetDate(row.Date).ToLongDateString())
-            .SubItems.Add(Localizer.SeasonEventText.GetLang((SeasonChangeType)row.SeasonChange))
+            .SubItems.Add(Translations.SeasonEventText.GetLang((SeasonChangeType)row.SeasonChange))
             .Tag = row.Date;
         if ( (TorahEventType)row.TorahEvents != TorahEventType.None )
           Instance.ListView.Items.Add(SQLiteUtility.GetDate(row.Date).ToLongDateString())
-            .SubItems.Add(Localizer.TorahEventText.GetLang((TorahEventType)row.TorahEvents))
+            .SubItems.Add(Translations.TorahEventText.GetLang((TorahEventType)row.TorahEvents))
             .Tag = row.Date;
       }
       Instance.Show();

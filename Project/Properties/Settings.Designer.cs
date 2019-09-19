@@ -596,5 +596,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["RemindShabatEveryMinutes"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckUpdateAtStartup {
+            get {
+                return ((bool)(this["CheckUpdateAtStartup"]));
+            }
+            set {
+                this["CheckUpdateAtStartup"] = value;
+            }
+        }
     }
 }
