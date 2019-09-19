@@ -80,7 +80,6 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 - Add option to disable startup check update.
 - Some code refactorings.
-- Some fixes.
 
 #### 2019.09.15 - Version 2.3
 
