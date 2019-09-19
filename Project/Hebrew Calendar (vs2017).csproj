@@ -125,6 +125,7 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Enums\Translations.cs" />
     <Compile Include="Source\Classes\SQLiteUtility.cs" />
     <Compile Include="Source\Enums\ReportFieldType.cs" />
     <Compile Include="Source\Enums\EphemerisType.cs" />
@@ -188,7 +189,7 @@
     <Compile Include="Source\Forms\SelectYearsForm.Designer.cs">
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\TorahCelebrations.cs" />
+    <Compile Include="Source\Enums\TorahCelebrations.cs" />
     <Compile Include="Source\Enums\ControlLocation.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.ManageException.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.QueryBox.cs" />

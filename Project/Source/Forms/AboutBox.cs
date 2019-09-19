@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCalendar
       InitializeComponent();
       Text = Text + " " + AssemblyTitle;
       labelTitle.Text = AssemblyTitle;
-      labelDescription.Text = Localizer.ApplicationDescriptionText.GetLang();
+      labelDescription.Text = Translations.ApplicationDescriptionText.GetLang();
       labelVersion.Text = labelVersion.Text + AssemblyVersion;
       labelCopyright.Text = AssemblyCopyright;
       labelTrademark.Text = AssemblyTrademark;

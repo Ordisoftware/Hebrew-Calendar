@@ -63,7 +63,7 @@ namespace Ordisoftware.HebrewCalendar
         foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
         {
           var dayDate = SQLiteUtility.GetDate(day.Date);
-          if ( !UpdateProgress(progress++, count, Localizer.ProgressGenerateReportText.GetLang()) ) return;
+          if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReportText.GetLang()) ) return;
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
           content.Append(day.Date + CSVSeparator);
@@ -75,11 +75,11 @@ namespace Ordisoftware.HebrewCalendar
           content.Append(day.Sunset + CSVSeparator);
           content.Append(day.Moonrise + CSVSeparator);
           content.Append(day.Moonset + CSVSeparator);
-          string strPhase = Localizer.MoonPhaseText.GetLang((MoonPhaseType)day.MoonPhase);
+          string strPhase = Translations.MoonPhaseText.GetLang((MoonPhaseType)day.MoonPhase);
           content.Append(strPhase + CSVSeparator);
-          string strSeason = Localizer.SeasonEventText.GetLang((SeasonChangeType)day.SeasonChange);
+          string strSeason = Translations.SeasonEventText.GetLang((SeasonChangeType)day.SeasonChange);
           content.Append(strSeason + CSVSeparator);
-          string strEvent = Localizer.TorahEventText.GetLang((TorahEventType)day.TorahEvents);
+          string strEvent = Translations.TorahEventText.GetLang((TorahEventType)day.TorahEvents);
           content.AppendLine(strEvent);
         }
         if ( SaveCSVDialog.ShowDialog() == DialogResult.OK )

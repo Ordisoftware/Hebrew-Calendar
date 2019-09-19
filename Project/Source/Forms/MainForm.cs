@@ -20,7 +20,6 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Net;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 
@@ -112,9 +111,9 @@ namespace Ordisoftware.HebrewCalendar
     {
       UpdateTextCalendar();
       UpdateButtons();
-      MenuShowHide.Text = Localizer.HideRestoreText.GetLang(Visible);
+      MenuShowHide.Text = Translations.HideRestoreText.GetLang(Visible);
       NavigationForm.Instance.Date = DateTime.Now;
-      CheckUpdate(true);
+      Program.CheckUpdate(true);
       if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
       IsReady = true;
     }
@@ -153,36 +152,6 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Check if a newer version is available.
-    /// </summary>
-    private void CheckUpdate(bool auto)
-    {
-      try
-      {
-        string title = AboutBox.Instance.AssemblyTitle;
-        string url = "http://www.ordisoftware.com/files/" + title.Replace(" ", "") + ".update";
-        using ( WebClient client = new WebClient() )
-        {
-          string[] partsVersion = client.DownloadString(url).Split('.');
-          var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
-          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
-          {
-            if ( !auto )
-              DisplayManager.Show(Localizer.CheckUpdateNoNewText.GetLang());
-          }
-          else
-            if ( DisplayManager.QueryYesNo(Localizer.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
-                                           Environment.NewLine +
-                                           Localizer.CheckUpdateAskDownloadText.GetLang()) )
-            AboutBox.Instance.OpenApplicationHome();
-        }
-      }
-      catch
-      {
-      }
-    }
-
-    /// <summary>
     /// Event handler. Called by MenuShowHide for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -205,7 +174,7 @@ namespace Ordisoftware.HebrewCalendar
         ShowInTaskbar = false;
         FormBorderStyle = FormBorderStyle.SizableToolWindow;
       }
-      MenuShowHide.Text = Localizer.HideRestoreText.GetLang(Visible);
+      MenuShowHide.Text = Translations.HideRestoreText.GetLang(Visible);
     }
 
     /// <summary>
@@ -313,7 +282,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Localizer.RestoreWinPosText.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.RestoreWinPosText.GetLang()) )
         Program.Settings.RestoreMainForm();
     }
 
@@ -341,7 +310,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( PreferencesForm.Instance.OldShabatDay != Program.Settings.ShabatDay
         || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
         || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )
-        if ( DisplayManager.QueryYesNo(Localizer.RegenerateCalendarText.GetLang()) )
+        if ( DisplayManager.QueryYesNo(Translations.RegenerateCalendarText.GetLang()) )
           ActionGenerate.PerformClick();
     }
 
@@ -404,7 +373,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
-      CheckUpdate(false);
+      Program.CheckUpdate(false);
     }
 
     /// <summary>
@@ -416,11 +385,11 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( IsGenerating )
       {
-        DisplayManager.ShowAdvert(Localizer.CantExitApplicationWhileGeneratingText.GetLang());
+        DisplayManager.ShowAdvert(Translations.CantExitApplicationWhileGeneratingText.GetLang());
         return;
       }
       if ( EditConfirmClosing.Checked )
-        if ( !DisplayManager.QueryYesNo(Localizer.ExitApplicationText.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Translations.ExitApplicationText.GetLang()) )
           return;
       AllowClose = true;
       Close();
@@ -439,7 +408,7 @@ namespace Ordisoftware.HebrewCalendar
         var form = new SelectYearsForm();
         if ( form.ShowDialog() == DialogResult.Cancel ) return;
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
-          if ( !DisplayManager.QueryYesNo(Localizer.ReplaceCalendarText.GetLang()) )
+          if ( !DisplayManager.QueryYesNo(Translations.ReplaceCalendarText.GetLang()) )
             return;
         Reminded.Clear();
         LastShabatReminded = null;
@@ -582,7 +551,7 @@ namespace Ordisoftware.HebrewCalendar
           e.Value = ( (MoonriseType)e.Value ).ToString();
           break;
         case 10:
-          e.Value = Localizer.MoonPhaseText.GetLang((MoonPhaseType)e.Value);
+          e.Value = Translations.MoonPhaseText.GetLang((MoonPhaseType)e.Value);
           break;
         case 8:
           e.Value = (int)e.Value == 0 ? "" : "*";
@@ -592,11 +561,11 @@ namespace Ordisoftware.HebrewCalendar
           break;
         case 11:
           var season = (SeasonChangeType)e.Value;
-          e.Value = season == SeasonChangeType.None ? "" : Localizer.SeasonEventText.GetLang(season);
+          e.Value = season == SeasonChangeType.None ? "" : Translations.SeasonEventText.GetLang(season);
           break;
         case 12:
           var torah = (TorahEventType)e.Value;
-          e.Value = torah == TorahEventType.None ? "" : Localizer.TorahEventText.GetLang(torah);
+          e.Value = torah == TorahEventType.None ? "" : Translations.TorahEventText.GetLang(torah);
           break;
       }
     }

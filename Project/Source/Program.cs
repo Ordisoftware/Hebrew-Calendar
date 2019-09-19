@@ -11,10 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 using System.IO;
+using System.Diagnostics;
 using System.Drawing;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -30,33 +33,43 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// Indicate filepath of application.
+    /// Indicate root folder path of the application.
     /// </summary>
-    static public readonly string RootPath
-      = Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath.Replace("\\Bin\\Debug\\", "\\Bin\\").Replace("\\Bin\\Release\\", "\\Bin\\"))).FullName + Path.DirectorySeparatorChar;
+    static public readonly string RootFolderPath
+      = Directory.GetParent
+        (
+          Path.GetDirectoryName(Application.ExecutablePath
+                                .Replace("\\Bin\\Debug\\", "\\Bin\\")
+                                .Replace("\\Bin\\Release\\", "\\Bin\\"))
+        ).FullName
+      + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate filename of the application's icon.
     /// </summary>
-    static public readonly string IconFilename = RootPath + "Application.ico";
+    static public readonly string IconFilename
+      = RootFolderPath + "Application.ico";
 
     /// <summary>
-    /// Indicate filename of the help file.
+    /// Indicate name of the help file.
     /// </summary>
     static public readonly string HelpFilename
-      = RootPath
-      + "Help" + Path.DirectorySeparatorChar
-      + "index.htm";
+      = RootFolderPath + "Help" + Path.DirectorySeparatorChar + "index.htm";
+
+    /// <summary>
+    /// Indicate user data folder in roaming.
+    /// </summary>
+    static public string UserDataFolderPath { get; private set; }
+
+    /// <summary>
+    /// Indicate user documents folder path.
+    /// </summary>
+    static public string UserDocumentsFolderPath { get; private set; }
 
     /// <summary>
     /// Indicate the default Settings instance.
     /// </summary>
     static public readonly Properties.Settings Settings = Properties.Settings.Default;
-
-    /// <summary>
-    /// Indicate user data folder in roaming.
-    /// </summary>
-    static public string UserDataFolder { get; private set; }
 
     /// <summary>
     /// Main entry-point for this application.
@@ -65,39 +78,76 @@ namespace Ordisoftware.HebrewCalendar
     [STAThread]
     static void Main(string[] args)
     {
-      //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-      //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+      if ( args.Length == 2 && args[0] == "/lang" )
+        try
+        {
+          // args[1] is like "en-US"
+          Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(args[1]);
+          Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(args[1]);
+        }
+        catch
+        {
+        }
+      var assembly = typeof(Program).Assembly;
+      var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
+      string id = assembly.FullName + attribute.Value;
+      bool created;
+      var mutex = new Mutex(true, id, out created);
+      if ( !created ) return;
+      if ( Settings.UpgradeRequired )
+      {
+        Settings.Upgrade();
+        Settings.UpgradeRequired = false;
+        Settings.Save();
+      }
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+      MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
+      NavigationForm.Instance.Icon = MainForm.Instance.Icon;
+      CelebrationsForm.Instance.Icon = MainForm.Instance.Icon;
+      PreferencesForm.Instance.Icon = MainForm.Instance.Icon;
+      AboutBox.Instance.Icon = MainForm.Instance.Icon;
+      UserDataFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                         + Path.DirectorySeparatorChar
+                         + AboutBox.Instance.AssemblyCompany
+                         + Path.DirectorySeparatorChar
+                         + AboutBox.Instance.AssemblyTitle
+                         + Path.DirectorySeparatorChar;
+      UserDocumentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                              + Path.DirectorySeparatorChar
+                              + AboutBox.Instance.AssemblyCompany
+                              + Path.DirectorySeparatorChar
+                              + AboutBox.Instance.AssemblyTitle
+                              + Path.DirectorySeparatorChar;
+      Directory.CreateDirectory(UserDataFolderPath);
+      Application.Run(MainForm.Instance);
+    }
+
+    static public void CheckUpdate(bool auto)
+    {
+      if ( auto && !Settings.CheckUpdateAtStartup ) return;
       try
       {
-        var assembly = typeof(Program).Assembly;
-        var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
-        string id = "Hebrew Calendar " + attribute.Value;
-        bool created;
-        var mutex = new Mutex(true, id, out created);
-        if ( !created ) return;
-        if ( Settings.UpgradeRequired )
+        string title = AboutBox.Instance.AssemblyTitle;
+        string url = "http://www.ordisoftware.com/files/" + title.Replace(" ", "") + ".update";
+        using ( WebClient client = new WebClient() )
         {
-          Settings.Upgrade();
-          Settings.UpgradeRequired = false;
-          Settings.Save();
+          string[] partsVersion = client.DownloadString(url).Split('.');
+          var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
+          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
+          {
+            if ( !auto )
+              DisplayManager.Show(Translations.CheckUpdateNoNewText.GetLang());
+          }
+          else
+          if ( DisplayManager.QueryYesNo(Translations.CheckUpdateResultText.GetLang() + version + Environment.NewLine +
+                                         Environment.NewLine +
+                                         Translations.CheckUpdateAskDownloadText.GetLang()) )
+            AboutBox.Instance.OpenApplicationHome();
         }
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
-        NavigationForm.Instance.Icon = MainForm.Instance.Icon;
-        CelebrationsForm.Instance.Icon = MainForm.Instance.Icon;
-        PreferencesForm.Instance.Icon = MainForm.Instance.Icon;
-        AboutBox.Instance.Icon = MainForm.Instance.Icon;
-        UserDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-                       + Path.DirectorySeparatorChar + AboutBox.Instance.CompanyName
-                       + Path.DirectorySeparatorChar + AboutBox.Instance.AssemblyTitle
-                       + Path.DirectorySeparatorChar;
-        Directory.CreateDirectory(UserDataFolder);
-        Application.Run(MainForm.Instance);
       }
-      catch ( Exception except )
+      catch
       {
-        except.Manage();
       }
     }
 
