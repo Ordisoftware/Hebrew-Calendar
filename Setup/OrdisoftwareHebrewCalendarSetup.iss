@@ -73,16 +73,17 @@ Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription
 [InstallDelete]
 Name: {app}\Project\*; Type: filesandordirs
 Name: {app}\Documents\*; Type: filesandordirs
+Name: {app}\Help\*; Type: filesandordirs
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: *; DestDir: {app}\Setup; Excludes: *.---, {#MyAppPublisher}{#MyAppNameNoSpace}Setup*.exe
+Source: *; DestDir: {app}\Setup; Excludes: *.---, *.bak, {#MyAppPublisher}{#MyAppNameNoSpace}Setup*.exe
 Source: ..\*; DestDir: {app}; Flags: ignoreversion
 Source: ..\Bin\Release\*.exe; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs; Excludes: *vshost.exe
 Source: ..\Bin\Release\*.dll; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Bin\Release\*.pdb; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Bin\Release\*.xml; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Help\*; DestDir: {app}\Help; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: ..\Help\*; DestDir: {app}\Help; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.suo, *.user, obj
 DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite
 
