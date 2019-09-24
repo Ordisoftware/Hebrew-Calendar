@@ -76,6 +76,13 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
+#### 2019.__.__ - Version 2.5
+
+- Add option to choose language.
+- Improve UI.
+- Update help.
+- Some code refactorings.
+
 #### 2019.09.19 - Version 2.4
 
 - Add option to disable startup check update.
