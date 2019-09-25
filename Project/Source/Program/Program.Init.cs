@@ -28,13 +28,15 @@ namespace Ordisoftware.HebrewCalendar
   static partial class Program
   {
 
+    static private Mutex Mutex;
+
     static private bool CheckApplicationOnlyOneInstance()
     {
       var assembly = typeof(Program).Assembly;
       var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
       string id = assembly.FullName + attribute.Value;
       bool created;
-      var mutex = new Mutex(true, id, out created);
+      Mutex = new Mutex(true, id, out created);
       return created;
     }
 
