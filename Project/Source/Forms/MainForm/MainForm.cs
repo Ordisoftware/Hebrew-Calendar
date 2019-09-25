@@ -15,6 +15,7 @@
 using Microsoft.Win32;
 using Ordisoftware.Core;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -303,15 +304,12 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
-      PreferencesForm.Instance.ShowDialog();
+      if ( PreferencesForm.Run() )
+        if ( DisplayManager.QueryYesNo(Translations.RegenerateCalendar.GetLang()) )
+          ActionGenerate.PerformClick();
       CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
       TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
       Timer_Tick(null, null);
-      if ( PreferencesForm.Instance.OldShabatDay != Program.Settings.ShabatDay
-        || PreferencesForm.Instance.OldLatitude != Program.Settings.Latitude
-        || PreferencesForm.Instance.OldLongitude != Program.Settings.Longitude )
-        if ( DisplayManager.QueryYesNo(Translations.RegenerateCalendar.GetLang()) )
-          ActionGenerate.PerformClick();
     }
 
     /// <summary>
@@ -412,7 +410,7 @@ namespace Ordisoftware.HebrewCalendar
             return;
         Reminded.Clear();
         LastShabatReminded = null;
-        foreach ( var f in ReminderForm.Forms ) f.Close();
+        foreach ( var f in ReminderForm.Forms.ToList() ) f.Close();
         if ( ReminderForm.ShabatForm != null )
         {
           ReminderForm.ShabatForm.Close();
@@ -593,7 +591,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void Timer_Tick(object sender, EventArgs e)
+    internal void Timer_Tick(object sender, EventArgs e)
     {
       if ( !TimerReminder.Enabled ) return;
       int active = 1;

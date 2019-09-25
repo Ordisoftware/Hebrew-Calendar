@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
 using System;
+using System.Linq;
 using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
@@ -70,6 +71,13 @@ namespace Ordisoftware.HebrewCalendar
       var culture = new CultureInfo(lang);
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
+      string str = MainForm.Instance.CalendarText.Text;
+      foreach ( var f in ReminderForm.Forms.ToList() ) f.Close();
+      if ( ReminderForm.ShabatForm != null )
+      {
+        ReminderForm.ShabatForm.Close();
+        ReminderForm.ShabatForm = null;
+      }
       foreach ( Form form in Application.OpenForms )
         if ( form != AboutBox.Instance )
         {
@@ -80,6 +88,7 @@ namespace Ordisoftware.HebrewCalendar
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       AboutBox.Instance.AboutBox_Shown(null, null);
+      MainForm.Instance.CalendarText.Text = str;
     }
 
     static private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
@@ -96,7 +105,6 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
       NavigationForm.Instance.Icon = MainForm.Instance.Icon;
       CelebrationsForm.Instance.Icon = MainForm.Instance.Icon;
-      PreferencesForm.Instance.Icon = MainForm.Instance.Icon;
       AboutBox.Instance.Icon = MainForm.Instance.Icon;
     }
 

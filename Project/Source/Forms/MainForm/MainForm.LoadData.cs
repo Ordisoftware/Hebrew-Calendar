@@ -69,7 +69,7 @@ namespace Ordisoftware.HebrewCalendar
         else
         if ( DisplayManager.QueryYesNo(Translations.GenerateCalendar.GetLang()) )
         {
-          PreferencesForm.Instance.ShowDialog();
+          PreferencesForm.Run();
           Enabled = true;
           ActionGenerate.PerformClick();
         }

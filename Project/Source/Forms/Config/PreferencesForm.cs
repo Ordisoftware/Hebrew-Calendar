@@ -27,24 +27,30 @@ namespace Ordisoftware.HebrewCalendar
   public partial class PreferencesForm : Form
   {
 
-    /// <summary>
-    /// Indicate the singleton instance.
-    /// </summary>
-    static internal PreferencesForm Instance { get; private set; }
+    static private bool LanguageChanged;
+
+    static public bool Run()
+    {
+      string lang = Program.Settings.Language;
+      var form = new PreferencesForm();
+      form.ShowDialog();
+      while ( LanguageChanged )
+      {
+        LanguageChanged = false;
+        form = new PreferencesForm();
+        form.ShowDialog();
+      }
+      MainForm.Instance.Refresh();
+      return form.OldShabatDay != Program.Settings.ShabatDay
+          || form.OldLatitude != Program.Settings.Latitude
+          || form.OldLongitude != Program.Settings.Longitude
+          || lang != Program.Settings.Language;
+    }
 
     /// <summary>
     /// Indicate the main form.
     /// </summary>
     static private MainForm MainForm;
-
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static PreferencesForm()
-    {
-      MainForm = MainForm.Instance;
-      Instance = new PreferencesForm();
-    }
 
     public int OldShabatDay { get; private set; }
     public float OldLatitude { get; private set; }
@@ -56,6 +62,7 @@ namespace Ordisoftware.HebrewCalendar
     private PreferencesForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
       LoadDays();
       LoadEvents();
       LoadFonts();
@@ -69,6 +76,19 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
+      UpdateLanguagesButtons();
+      PanelTopColor.BackColor = Program.Settings.NavigateTopColor;
+      PanelMiddleColor.BackColor = Program.Settings.NavigateMiddleColor;
+      PanelBottomColor.BackColor = Program.Settings.NavigateBottomColor;
+      PanelTextColor.BackColor = Program.Settings.TextColor;
+      PanelBackColor.BackColor = Program.Settings.TextBackground;
+      PanelCurrentDayColor.BackColor = Program.Settings.CurrentDayColor;
+      PanelTorahEventColor.BackColor = Program.Settings.TorahEventColor;
+      PanelSeasonEventColor.BackColor = Program.Settings.SeasonEventColor;
+      PanelMoonEventColor.BackColor = Program.Settings.MoonEventColor;
+      PanelFullMoonColor.BackColor = Program.Settings.FullMoonColor;
+
+
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.Latitude;
       OldLongitude = Program.Settings.Longitude;
@@ -107,6 +127,16 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
+      Program.Settings.NavigateTopColor = PanelTopColor.BackColor;
+      Program.Settings.NavigateMiddleColor = PanelMiddleColor.BackColor;
+      Program.Settings.NavigateBottomColor = PanelBottomColor.BackColor;
+      Program.Settings.TextColor = PanelTextColor.BackColor;
+      Program.Settings.TextBackground = PanelBackColor.BackColor;
+      Program.Settings.CurrentDayColor = PanelCurrentDayColor.BackColor;
+      Program.Settings.TorahEventColor = PanelTorahEventColor.BackColor;
+      Program.Settings.SeasonEventColor = PanelSeasonEventColor.BackColor;
+      Program.Settings.MoonEventColor = PanelMoonEventColor.BackColor;
+      Program.Settings.FullMoonColor = PanelFullMoonColor.BackColor;
       Program.Settings.Store();
     }
 
@@ -411,6 +441,38 @@ namespace Ordisoftware.HebrewCalendar
             if ( Math.Abs(delta) < float.Epsilon * 2 )
               EditFontName.Items.Add(item.Name);
           }
+    }
+
+    private void UpdateLanguagesButtons()
+    {
+      if ( Program.Settings.Language == "en" )
+      {
+        ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
+        ActionSelectLangFR.BackColor = SystemColors.Control;
+      }
+      if ( Program.Settings.Language == "fr" )
+      {
+        ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
+        ActionSelectLangEN.BackColor = SystemColors.Control;
+      }
+    }
+
+    private void ActionSelectLangEN_Click(object sender, EventArgs e)
+    {
+      Program.Settings.Language = "en";
+      Program.ApplyCurrentLanguage();
+      UpdateLanguagesButtons();
+      LanguageChanged = true;
+      Close();
+    }
+
+    private void ActionSelectLangFR_Click(object sender, EventArgs e)
+    {
+      Program.Settings.Language = "fr";
+      Program.ApplyCurrentLanguage();
+      UpdateLanguagesButtons();
+      LanguageChanged = true;
+      Close();
     }
 
     /// <summary>
