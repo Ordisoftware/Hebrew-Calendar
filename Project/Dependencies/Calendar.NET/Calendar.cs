@@ -373,7 +373,7 @@ namespace Calendar.NET
       this._btnToday.ButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
       this._btnToday.ButtonFont = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
       // ORDISOFTWARE MODIF BEGIN
-      this._btnToday.ButtonText = Translations.TodayText.GetLang();
+      this._btnToday.ButtonText = Translations.Today.GetLang();
       // ORDISOFTWARE MODIF END
       this._btnToday.FocusColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
       this._btnToday.HighlightBorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
@@ -1031,25 +1031,25 @@ namespace Calendar.NET
       yStart = MarginSize + controlsSpacing;
 
       // ORDISOFTWARE MODIF BEGIN
-      g.DrawString(Translations.DayOfWeekText.GetLang(DayOfWeek.Sunday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Sunday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)monSize.Width ) / 2 ) + cellWidth;
-      g.DrawString(Translations.DayOfWeekText.GetLang(DayOfWeek.Monday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Monday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)tueSize.Width ) / 2 ) + cellWidth * 2;
-      g.DrawString(Translations.DayOfWeekText.GetLang(DayOfWeek.Tuesday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Tuesday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)wedSize.Width ) / 2 ) + cellWidth * 3;
-      g.DrawString(Translations.DayOfWeekText.GetLang(DayOfWeek.Wednesday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Wednesday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)thuSize.Width ) / 2 ) + cellWidth * 4;
-      g.DrawString(Translations.DayOfWeekText.GetLang(DayOfWeek.Thursday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Thursday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)friSize.Width ) / 2 ) + cellWidth * 5;
-      g.DrawString(Translations.DayOfWeekText.GetLang(DayOfWeek.Friday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Friday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)satSize.Width ) / 2 ) + cellWidth * 6;
-      g.DrawString(Translations.DayOfWeekText.GetLang(DayOfWeek.Saturday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Saturday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
       // ORDISOFTWARE MODIF END
 
       if ( _showDateInHeader )
