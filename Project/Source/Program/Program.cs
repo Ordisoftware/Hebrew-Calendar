@@ -24,6 +24,7 @@ namespace Ordisoftware.HebrewCalendar
     [STAThread]
     static void Main(string[] args)
     {
+      if ( !CheckApplicationOnlyOneInstance() ) return;
       CheckSettingsUpgrade();
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
