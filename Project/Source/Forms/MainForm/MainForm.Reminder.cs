@@ -36,7 +36,8 @@ namespace Ordisoftware.HebrewCalendar
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
         Reminded.Add(row.Date);
-        ReminderForm.Run(row, false, "", "");
+        var rowPrevious = LunisolarCalendar.LunisolarDays.FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
+        ReminderForm.Run(row, false, rowPrevious.Sunset, row.Sunset);
       }
       catch
       {

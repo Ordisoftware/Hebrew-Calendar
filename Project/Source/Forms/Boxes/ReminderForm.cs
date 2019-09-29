@@ -50,8 +50,7 @@ namespace Ordisoftware.HebrewCalendar
                                          ? Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents)
                                          : "Shabat";
       form.LabelNextCelebrationDate.Text = date.ToLongDateString();
-      if ( isShabat )
-        form.LabelHours.Text = time1 + " - " + time2;
+      form.LabelHours.Text = time1 + " - " + time2;
       form.LabelNextCelebrationDate.Tag = date;
       int left = SystemInformation.WorkingArea.Left;
       int top = SystemInformation.WorkingArea.Top;
