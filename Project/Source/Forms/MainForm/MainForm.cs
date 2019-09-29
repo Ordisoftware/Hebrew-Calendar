@@ -166,6 +166,13 @@ namespace Ordisoftware.HebrewCalendar
         ShowInTaskbar = true;
         WindowState = Program.Settings.MainFormState;
         NavigationForm.Instance.Date = DateTime.Now;
+        if ( IsReady )
+        {
+          var old = TopMost;
+          TopMost = true;
+          BringToFront();
+          TopMost = old;
+        }
       }
       else
       {
