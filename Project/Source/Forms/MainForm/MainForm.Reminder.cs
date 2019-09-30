@@ -58,8 +58,6 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    internal DateTime? LastShabatReminded = null;
-
     private void CheckShabat()
     {
       try

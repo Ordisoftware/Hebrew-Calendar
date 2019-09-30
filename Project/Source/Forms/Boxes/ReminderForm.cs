@@ -27,11 +27,15 @@ namespace Ordisoftware.HebrewCalendar
 
     static internal ReminderForm ShabatForm;
 
+    static internal ReminderForm CelebrationForm;
+
     static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row, bool isShabat, string time1, string time2)
     {
       ReminderForm form = null;
       if ( isShabat && ShabatForm != null )
       {
+        ShabatForm.Hide();
+        System.Threading.Thread.Sleep(1000);
         ShabatForm.Show();
         ShabatForm.BringToFront();
         return;
@@ -40,6 +44,8 @@ namespace Ordisoftware.HebrewCalendar
         foreach ( var item in Forms )
           if ( (string)item.Tag == row.Date )
           {
+            item.Hide();
+            System.Threading.Thread.Sleep(1000);
             item.Show();
             item.BringToFront();
             return;
