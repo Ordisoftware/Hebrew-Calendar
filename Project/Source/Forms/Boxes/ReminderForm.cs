@@ -25,9 +25,9 @@ namespace Ordisoftware.HebrewCalendar
 
     static internal readonly List<Form> Forms = new List<Form>();
 
-    static internal ReminderForm ShabatForm;
+    static internal DateTime? LastShabatReminded = null;
 
-    static internal ReminderForm CelebrationForm;
+    static internal ReminderForm ShabatForm;
 
     static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row, bool isShabat, string time1, string time2)
     {

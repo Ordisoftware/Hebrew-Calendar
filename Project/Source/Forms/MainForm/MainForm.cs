@@ -383,7 +383,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( !DisplayManager.QueryYesNo(Translations.ReplaceCalendar.GetLang()) )
             return;
         Reminded.Clear();
-        LastShabatReminded = null;
+        ReminderForm.LastShabatReminded = null;
         foreach ( var f in ReminderForm.Forms.ToList() ) f.Close();
         if ( ReminderForm.ShabatForm != null )
         {
