@@ -12,17 +12,16 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2019-08 </edited>
-using Microsoft.Win32;
-using Ordisoftware.Core;
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using Microsoft.Win32;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -33,44 +32,6 @@ namespace Ordisoftware.HebrewCalendar
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class MainForm : Form
   {
-
-    /// <summary>
-    /// Indicate the singleton instance.
-    /// </summary>
-    static public readonly MainForm Instance;
-
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static MainForm()
-    {
-      Instance = new MainForm();
-    }
-
-    /// <summary>
-    /// Indicate if the application is ready for the user.
-    /// </summary>
-    public bool IsReady { get; private set; }
-
-    /// <summary>
-    /// Indicate if generation is in progress.
-    /// </summary>
-    internal bool IsGenerating = false;
-
-    /// <summary>
-    /// Indicate if application can be closed.
-    /// </summary>
-    private bool AllowClose = false;
-
-    /// <summary>
-    /// INdicate last showned tooltip.
-    /// </summary>
-    private ToolTip LastToolTip = new ToolTip();
-
-    /// <summary>
-    /// Indicate list of events reminded.
-    /// </summary>
-    private List<string> Reminded = new List<string>();
 
     /// <summary>
     /// Default constructor.
@@ -139,6 +100,12 @@ namespace Ordisoftware.HebrewCalendar
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Program.Settings.Store();
+    }
+
+    private void MainForm_WindowsChanged(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      EditScreenNone.PerformClick();
     }
 
     /// <summary>
@@ -628,12 +595,6 @@ namespace Ordisoftware.HebrewCalendar
         CalendarGrid.Update();
         CalendarMonth.CalendarDate = date;
       }
-    }
-
-    private void MainForm_WindowsChanged(object sender, EventArgs e)
-    {
-      if ( !IsReady ) return;
-      EditScreenNone.PerformClick();
     }
 
   }
