@@ -132,6 +132,9 @@
     <Compile Include="Source\Classes\SQLiteUtility.cs" />
     <Compile Include="Source\Enums\ReportFieldType.cs" />
     <Compile Include="Source\Enums\EphemerisType.cs" />
+    <Compile Include="Source\Forms\MainForm\MainForm.Vars.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Screensaver.cs">
       <SubType>Form</SubType>
     </Compile>
