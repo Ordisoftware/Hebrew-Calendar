@@ -80,6 +80,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 - Improve the reminder to remind during the celebration day like with the shabat.
 - Improve the reminder to flash the form if already displayed.
+- Add loading data box instead of using the bottom progressbar.
 - Add displaying hours in the celebration reminder form like with the shabat.
 - Add option to choose language.
 - Improve UI.
