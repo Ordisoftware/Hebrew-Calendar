@@ -138,6 +138,9 @@
     <Compile Include="Source\Forms\Config\LoadingForm.designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.Shabat.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Vars.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,7 +150,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.LoadData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.Celebrations.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Boxes\ReminderForm.cs">
