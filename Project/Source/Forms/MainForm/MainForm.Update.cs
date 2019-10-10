@@ -27,15 +27,25 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
+    private LoadingForm LoadingForm;
+
     /// <summary>
     /// Update progress bar.
     /// </summary>
     private bool UpdateProgress(int index, int count, string text)
     {
-      if ( index == 0 ) BarProgress.Maximum = count;
-      BarProgress.Value = index > count ? count : index;
-      BarProgress.Update();
-      SetStatus(text);
+      if ( LoadingForm == null )
+        LoadingForm = new LoadingForm();
+      if ( !LoadingForm.Visible )
+        LoadingForm.Show();
+      if ( index == 0 ) LoadingForm.ProgressBar.Maximum = count;
+      LoadingForm.ProgressBar.Value = index > count ? count : index;
+      LoadingForm.ProgressBar.Update();
+      if ( LoadingForm.LabelOperation.Text != text )
+      {
+        LoadingForm.LabelOperation.Text = text;
+        LoadingForm.LabelOperation.Refresh();
+      }
       Application.DoEvents();
       return IsGenerating;
     }
@@ -57,8 +67,8 @@ namespace Ordisoftware.HebrewCalendar
         ActionStop.Enabled = IsGenerating;
         MenuView.Enabled = !IsGenerating;
         ActionPreferences.Enabled = !IsGenerating;
-        BarProgress.Value = 0;
-        LabelStatus.Text = "";
+        if ( LoadingForm.Visible )
+          LoadingForm.Hide();
         Refresh();
       }
       catch ( Exception except )
@@ -73,17 +83,6 @@ namespace Ordisoftware.HebrewCalendar
     public void UpdateTextCalendar()
     {
       CalendarText.Font = new Font(Program.Settings.FontName, Program.Settings.FontSize);
-    }
-
-    /// <summary>
-    /// Set the status label text.
-    /// </summary>
-    /// <param name="text">The text.</param>
-    private void SetStatus(string text)
-    {
-      if ( LabelStatus.Text == text ) return;
-      LabelStatus.Text = text;
-      StatusBottom.Refresh();
     }
 
     /// <summary>

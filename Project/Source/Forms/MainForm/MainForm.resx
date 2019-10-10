@@ -112,62 +112,22 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="StatusBottom.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>122, 18</value>
-  </metadata>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LabelStripMargin.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="LabelStripMargin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 17</value>
-  </data>
-  <data name="LabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 17</value>
-  </data>
-  <data name="LabelStatus.Text" xml:space="preserve">
-    <value>Label Info</value>
-  </data>
-  <data name="StatusBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 644</value>
-  </data>
-  <data name="StatusBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1012, 22</value>
-  </data>
-  <data name="StatusBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="StatusBottom.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;StatusBottom.Name" xml:space="preserve">
-    <value>StatusBottom</value>
-  </data>
-  <data name="&gt;&gt;StatusBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;StatusBottom.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="SaveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="SaveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>433, 55</value>
   </metadata>
   <data name="SaveFileDialog.Filter" xml:space="preserve">
     <value>Text files|*.txt</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CalendarText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="CalendarText.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 9.75pt</value>
   </data>
@@ -175,8 +135,9 @@
     <value>0, 0</value>
   </data>
   <data name="CalendarText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 478</value>
+    <value>976, 524</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CalendarText.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
@@ -190,7 +151,7 @@
     <value>CalendarText</value>
   </data>
   <data name="&gt;&gt;CalendarText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CalendarText.Parent" xml:space="preserve">
     <value>PanelViewText</value>
@@ -205,7 +166,7 @@
     <value>3, 3</value>
   </data>
   <data name="PanelViewText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 478</value>
+    <value>976, 524</value>
   </data>
   <data name="PanelViewText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -214,7 +175,7 @@
     <value>PanelViewText</value>
   </data>
   <data name="&gt;&gt;PanelViewText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelViewText.Parent" xml:space="preserve">
     <value>TabPageText</value>
@@ -229,7 +190,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>982, 484</value>
+    <value>982, 530</value>
   </data>
   <data name="TabPageText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -241,7 +202,7 @@
     <value>TabPageText</value>
   </data>
   <data name="&gt;&gt;TabPageText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageText.Parent" xml:space="preserve">
     <value>TabControl</value>
@@ -265,7 +226,7 @@
     <value>CalendarMonth</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Type" xml:space="preserve">
-    <value>Calendar.NET.Calendar, Ordisoftware.HebrewCalendar, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Calendar.NET.Calendar, Ordisoftware.HebrewCalendar, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Parent" xml:space="preserve">
     <value>PanelViewMonth</value>
@@ -289,7 +250,7 @@
     <value>PanelViewMonth</value>
   </data>
   <data name="&gt;&gt;PanelViewMonth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelViewMonth.Parent" xml:space="preserve">
     <value>TabPageMonth</value>
@@ -316,7 +277,7 @@
     <value>TabPageMonth</value>
   </data>
   <data name="&gt;&gt;TabPageMonth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageMonth.Parent" xml:space="preserve">
     <value>TabControl</value>
@@ -399,10 +360,10 @@
   <data name="dataGridViewTextBoxColumn13.Width" type="System.Int32, mscorlib">
     <value>120</value>
   </data>
-  <metadata name="LunisolarDaysBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="LunisolarDaysBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
-  <metadata name="LunisolarCalendar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="LunisolarCalendar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>373, 19</value>
   </metadata>
   <data name="CalendarGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -421,7 +382,7 @@
     <value>CalendarGrid</value>
   </data>
   <data name="&gt;&gt;CalendarGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CalendarGrid.Parent" xml:space="preserve">
     <value>PanelViewGrid</value>
@@ -429,7 +390,7 @@
   <data name="&gt;&gt;CalendarGrid.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="LunisolarDaysBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="LunisolarDaysBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>220, 56</value>
   </metadata>
   <data name="bindingNavigatorCountItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -554,7 +515,7 @@
     <value>LunisolarDaysBindingNavigator</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysBindingNavigator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingNavigator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.BindingNavigator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysBindingNavigator.Parent" xml:space="preserve">
     <value>PanelViewGrid</value>
@@ -578,7 +539,7 @@
     <value>PanelViewGrid</value>
   </data>
   <data name="&gt;&gt;PanelViewGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelViewGrid.Parent" xml:space="preserve">
     <value>TabPageGrid</value>
@@ -605,7 +566,7 @@
     <value>TabPageGrid</value>
   </data>
   <data name="&gt;&gt;TabPageGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageGrid.Parent" xml:space="preserve">
     <value>TabControl</value>
@@ -620,7 +581,7 @@
     <value>0, 0</value>
   </data>
   <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>990, 510</value>
+    <value>990, 556</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -632,7 +593,7 @@
     <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabControl.Parent" xml:space="preserve">
     <value>PanelCalendar</value>
@@ -647,7 +608,7 @@
     <value>0, 0</value>
   </data>
   <data name="PanelCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>990, 510</value>
+    <value>990, 556</value>
   </data>
   <data name="PanelCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -656,7 +617,7 @@
     <value>PanelCalendar</value>
   </data>
   <data name="&gt;&gt;PanelCalendar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelCalendar.Parent" xml:space="preserve">
     <value>PanelCalendarInner</value>
@@ -671,7 +632,7 @@
     <value>1, 1</value>
   </data>
   <data name="PanelCalendarInner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>990, 510</value>
+    <value>990, 556</value>
   </data>
   <data name="PanelCalendarInner.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -680,7 +641,7 @@
     <value>PanelCalendarInner</value>
   </data>
   <data name="&gt;&gt;PanelCalendarInner.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelCalendarInner.Parent" xml:space="preserve">
     <value>PanelCalendarOuter</value>
@@ -698,7 +659,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="PanelCalendarOuter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 512</value>
+    <value>992, 558</value>
   </data>
   <data name="PanelCalendarOuter.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -707,37 +668,13 @@
     <value>PanelCalendarOuter</value>
   </data>
   <data name="&gt;&gt;PanelCalendarOuter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelCalendarOuter.Parent" xml:space="preserve">
     <value>PanelMain</value>
   </data>
   <data name="&gt;&gt;PanelCalendarOuter.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="PanelSepBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelSepBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 556</value>
-  </data>
-  <data name="PanelSepBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 10</value>
-  </data>
-  <data name="PanelSepBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;PanelSepBottom.Name" xml:space="preserve">
-    <value>PanelSepBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelSepBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelSepBottom.Parent" xml:space="preserve">
-    <value>PanelMain</value>
-  </data>
-  <data name="&gt;&gt;PanelSepBottom.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="PanelSepTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -755,67 +692,13 @@
     <value>PanelSepTop</value>
   </data>
   <data name="&gt;&gt;PanelSepTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelSepTop.Parent" xml:space="preserve">
     <value>PanelMain</value>
   </data>
   <data name="&gt;&gt;PanelSepTop.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="BarProgress.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="BarProgress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BarProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="BarProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 12</value>
-  </data>
-  <data name="BarProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;BarProgress.Name" xml:space="preserve">
-    <value>BarProgress</value>
-  </data>
-  <data name="&gt;&gt;BarProgress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BarProgress.Parent" xml:space="preserve">
-    <value>PanelProgress</value>
-  </data>
-  <data name="&gt;&gt;BarProgress.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PanelProgress.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 566</value>
-  </data>
-  <data name="PanelProgress.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 2</value>
-  </data>
-  <data name="PanelProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 14</value>
-  </data>
-  <data name="PanelProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;PanelProgress.Name" xml:space="preserve">
-    <value>PanelProgress</value>
-  </data>
-  <data name="&gt;&gt;PanelProgress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelProgress.Parent" xml:space="preserve">
-    <value>PanelMain</value>
-  </data>
-  <data name="&gt;&gt;PanelProgress.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="LabelTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -845,7 +728,7 @@
     <value>LabelTitle</value>
   </data>
   <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelTitle.Parent" xml:space="preserve">
     <value>PanelTitle</value>
@@ -872,13 +755,13 @@
     <value>PanelTitle</value>
   </data>
   <data name="&gt;&gt;PanelTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelTitle.Parent" xml:space="preserve">
     <value>PanelMain</value>
   </data>
   <data name="&gt;&gt;PanelTitle.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -890,7 +773,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1012, 590</value>
+    <value>1012, 612</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -899,7 +782,7 @@
     <value>PanelMain</value>
   </data>
   <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -923,7 +806,7 @@
     <value>moonPhaseImagePictureBox</value>
   </data>
   <data name="&gt;&gt;moonPhaseImagePictureBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -947,12 +830,12 @@
     <value>label1</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="TimerTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="TimerTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>246, 18</value>
   </metadata>
-  <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>22, 16</value>
   </metadata>
   <data name="ToolStrip.AutoSize" type="System.Boolean, mscorlib">
@@ -1265,15 +1148,15 @@
         RZ6ZkPuaW+vWxAVEnEPEOkG8JzqWoo1EsHo3gkLC6HIKEyPZP2DXOAfuNyXNRuuB2TBWhuPaz7/h4o8/
         CcLbIqYhI4gzcqFNzsLehDRExWgRGq4h0lC6lELEdRygCIC3t/eFbdu2GdavX588d+7cd4j7EXbg0bq4
         ORgwF6Ip+31c7L0K87nvbkJsgL66FpVHj6GMptnB4nLk5BchLTMPB1IyoYlNQkLYZmTIrKCUb/rVzWun
-        eZNEkrNq1Sp/Ozs7J+J5i/A6YSlhAWE2QXykzFIrlX/0dRfgUMh9MBlL0dF1Hi2tbeJi4elXdfwEjuiP
-        o+xINQ6W65GsyybC/VCFRUMWoOzfvMWz5uO1zil5O62QTQj91AFvzJ/JpIsI/E34JIEJHyVMJ3D/3xhC
-        jwW7PKGrUE1BaaAV9CkfoaX9LBoaW8TtVlBYRLdaIrWN8g+90hZBaxdh3XsrEm1nzPiI3n2b8AaBo3ol
-        x8ca2T7kgGQlPnl17ie0xmQcJZNNePk89NaqDzcWqmyh854F9caXoJTt6P9KJuvYsGFDnr29vfu0adM+
-        oH2rq9RPImiDA3wdn4rSuttGZnw1vSRHNr2zwP8B5MttkCu3Ru7X5IDTCjittFtD79wrGG5hNoRnwiXL
-        oJTa/e789oOR9H8FwZ7wIj8jPE54vjhgPooUzyHL53kkey5EkscCaKRLodn6MiKcX4PaaaUgV0ocxmj/
-        U4Tb+gZkaWYQWEYHwl8FwmPyQQI7yHtmfr12WYPaaTkRLYdyk/2virX2F2SOr3RIVy/KcX13cb7Dwjnu
-        7yx52oP28lmc79u+8zlP3BL8EhfIzT6ZphFeILA6nPuVBHZ4GWExwY7ABceR8zns+KQa55Od4PnNA4R/
-        mehhAq+z47csuP9tvFlZ/QncnlSZsQPmKwAAAABJRU5ErkJggg==
+        eZNEkrNq1Sp/Ozs7J+J5i/A6YSlhAWE2QXykzApRKv/o6y7AoZD7YDKWoqPrPFpa28TFwtOv6vgJHNEf
+        R9mRahws1yNZl02E+6EKi4YsQNm/eYtnzcdrnVPydlohmxD6qQPemD+TSRcR+JvwSQITPkqYTuD+vzGE
+        Hgt2eUJXoZqC0kAr6FM+Qkv7WTQ0tojbraCwiG61RGob5R96pS2C1i7CuvdWJNrOmPERvfs24Q0CR/VK
+        jo81sn3IAclKfPLq3E9ojck4Siab8PJ56K1VH24sVNlC5z0L6o0vQSnb0f+VTNaxYcOGPHt7e/dp06Z9
+        QPtWV6mfRNAGB/g6PhWldbeNzPhqekmObHpngf8DyJfbIFdujdyvyQGnFXBaabeG3rlXMNzCbAjPhEuW
+        QSm1+9357Qcj6f8Kgj3hRX5GeJzwfHHAfBQpnkOWz/NI9lyIJI8F0EiXQrP1ZUQ4vwa100pBrpQ4jNH+
+        pwi39Q3I0swgsIwOhL8KhMfkgwR2kPfM/Hrtsga103IiWg7lJvtfFWvtL8gcX+mQrl6U4/ru4nyHhXPc
+        31nytAft5bM437d953OeuCX4JS6Qm30yTSO8QGB1OPcrCezwMsJigh2BC44j53PY8Uk1zic7wfObBwj/
+        MtHDBF5nx29ZcP/beLOy+hPYGlSYXmaHgAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionViewCelebrations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2012,7 +1895,7 @@
     <value>ToolStrip</value>
   </data>
   <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2020,16 +1903,16 @@
   <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="SaveCSVDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="SaveCSVDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>563, 54</value>
   </metadata>
   <data name="SaveCSVDialog.Filter" xml:space="preserve">
     <value>CSV files|*.csv</value>
   </data>
-  <metadata name="TrayIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="TrayIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>717, 55</value>
   </metadata>
-  <metadata name="MenuTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="MenuTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>838, 55</value>
   </metadata>
   <data name="MenuShowHide.Size" type="System.Drawing.Size, System.Drawing">
@@ -2184,7 +2067,7 @@
     <value>MenuTray</value>
   </data>
   <data name="&gt;&gt;MenuTray.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="TrayIcon.Text" xml:space="preserve">
     <value>Hebrew Calendar</value>
@@ -2192,25 +2075,25 @@
   <data name="TrayIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <metadata name="PrintDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="PrintDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>944, 55</value>
   </metadata>
-  <metadata name="TimerReminder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="TimerReminder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1056, 55</value>
   </metadata>
-  <metadata name="LunisolarDaysTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="LunisolarDaysTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>713, 19</value>
   </metadata>
-  <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>540, 19</value>
   </metadata>
-  <metadata name="ReportTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ReportTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>921, 23</value>
   </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>109</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -2228,490 +2111,478 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Hebrew Calendar</value>
   </data>
-  <data name="&gt;&gt;LabelStripMargin.Name" xml:space="preserve">
-    <value>LabelStripMargin</value>
-  </data>
-  <data name="&gt;&gt;LabelStripMargin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelStatus.Name" xml:space="preserve">
-    <value>LabelStatus</value>
-  </data>
-  <data name="&gt;&gt;LabelStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;SaveFileDialog.Name" xml:space="preserve">
     <value>SaveFileDialog</value>
   </data>
   <data name="&gt;&gt;SaveFileDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn1</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn2</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn3</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn4.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn4</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn5.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn5</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn6</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn7.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn7</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn8.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn8</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn9.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn9</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn10.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn10</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn11.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn11</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn12.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn12</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn13.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn13</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysBindingSource.Name" xml:space="preserve">
     <value>LunisolarDaysBindingSource</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LunisolarCalendar.Name" xml:space="preserve">
     <value>LunisolarCalendar</value>
   </data>
   <data name="&gt;&gt;LunisolarCalendar.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendar, Ordisoftware.HebrewCalendar, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendar, Ordisoftware.HebrewCalendar, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorCountItem.Name" xml:space="preserve">
     <value>bindingNavigatorCountItem</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorCountItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMoveFirstItem.Name" xml:space="preserve">
     <value>bindingNavigatorMoveFirstItem</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMoveFirstItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMovePreviousItem.Name" xml:space="preserve">
     <value>bindingNavigatorMovePreviousItem</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMovePreviousItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorSeparator.Name" xml:space="preserve">
     <value>bindingNavigatorSeparator</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorSeparator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorPositionItem.Name" xml:space="preserve">
     <value>bindingNavigatorPositionItem</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorPositionItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorSeparator1.Name" xml:space="preserve">
     <value>bindingNavigatorSeparator1</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMoveNextItem.Name" xml:space="preserve">
     <value>bindingNavigatorMoveNextItem</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMoveNextItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMoveLastItem.Name" xml:space="preserve">
     <value>bindingNavigatorMoveLastItem</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMoveLastItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Name" xml:space="preserve">
     <value>TimerTooltip</value>
   </data>
   <data name="&gt;&gt;TimerTooltip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Sep1.Name" xml:space="preserve">
     <value>Sep1</value>
   </data>
   <data name="&gt;&gt;Sep1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionSaveReport.Name" xml:space="preserve">
     <value>ActionSaveReport</value>
   </data>
   <data name="&gt;&gt;ActionSaveReport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionExportCSV.Name" xml:space="preserve">
     <value>ActionExportCSV</value>
   </data>
   <data name="&gt;&gt;ActionExportCSV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCopyReportToClipboard.Name" xml:space="preserve">
     <value>ActionCopyReportToClipboard</value>
   </data>
   <data name="&gt;&gt;ActionCopyReportToClipboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionPrint.Name" xml:space="preserve">
     <value>ActionPrint</value>
   </data>
   <data name="&gt;&gt;ActionPrint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Sep2.Name" xml:space="preserve">
     <value>Sep2</value>
   </data>
   <data name="&gt;&gt;Sep2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionSearchDay.Name" xml:space="preserve">
     <value>ActionSearchDay</value>
   </data>
   <data name="&gt;&gt;ActionSearchDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionNavigate.Name" xml:space="preserve">
     <value>ActionNavigate</value>
   </data>
   <data name="&gt;&gt;ActionNavigate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewCelebrations.Name" xml:space="preserve">
     <value>ActionViewCelebrations</value>
   </data>
   <data name="&gt;&gt;ActionViewCelebrations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Sep3.Name" xml:space="preserve">
     <value>Sep3</value>
   </data>
   <data name="&gt;&gt;Sep3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionGenerate.Name" xml:space="preserve">
     <value>ActionGenerate</value>
   </data>
   <data name="&gt;&gt;ActionGenerate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionExit.Name" xml:space="preserve">
     <value>ActionExit</value>
   </data>
   <data name="&gt;&gt;ActionExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Sep4.Name" xml:space="preserve">
     <value>Sep4</value>
   </data>
   <data name="&gt;&gt;Sep4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionContact.Name" xml:space="preserve">
     <value>ActionContact</value>
   </data>
   <data name="&gt;&gt;ActionContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCheckUpdate.Name" xml:space="preserve">
     <value>ActionCheckUpdate</value>
   </data>
   <data name="&gt;&gt;ActionCheckUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionWebsite.Name" xml:space="preserve">
     <value>ActionWebsite</value>
   </data>
   <data name="&gt;&gt;ActionWebsite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Sep5.Name" xml:space="preserve">
     <value>Sep5</value>
   </data>
   <data name="&gt;&gt;Sep5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionHelp.Name" xml:space="preserve">
     <value>ActionHelp</value>
   </data>
   <data name="&gt;&gt;ActionHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionAbout.Name" xml:space="preserve">
     <value>ActionAbout</value>
   </data>
   <data name="&gt;&gt;ActionAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Sep6.Name" xml:space="preserve">
     <value>Sep6</value>
   </data>
   <data name="&gt;&gt;Sep6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionPreferences.Name" xml:space="preserve">
     <value>ActionPreferences</value>
   </data>
   <data name="&gt;&gt;ActionPreferences.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuSettings.Name" xml:space="preserve">
     <value>MenuSettings</value>
   </data>
   <data name="&gt;&gt;MenuSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuitemScreenPosition.Name" xml:space="preserve">
     <value>MenuitemScreenPosition</value>
   </data>
   <data name="&gt;&gt;MenuitemScreenPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditScreenNone.Name" xml:space="preserve">
     <value>EditScreenNone</value>
   </data>
   <data name="&gt;&gt;EditScreenNone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditScreenTopLeft.Name" xml:space="preserve">
     <value>EditScreenTopLeft</value>
   </data>
   <data name="&gt;&gt;EditScreenTopLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditScreenTopRight.Name" xml:space="preserve">
     <value>EditScreenTopRight</value>
   </data>
   <data name="&gt;&gt;EditScreenTopRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditScreenBottomLeft.Name" xml:space="preserve">
     <value>EditScreenBottomLeft</value>
   </data>
   <data name="&gt;&gt;EditScreenBottomLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditScreenBottomRight.Name" xml:space="preserve">
     <value>EditScreenBottomRight</value>
   </data>
   <data name="&gt;&gt;EditScreenBottomRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditScreenCenter.Name" xml:space="preserve">
     <value>EditScreenCenter</value>
   </data>
   <data name="&gt;&gt;EditScreenCenter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionResetWinSettings.Name" xml:space="preserve">
     <value>ActionResetWinSettings</value>
   </data>
   <data name="&gt;&gt;ActionResetWinSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Sep7.Name" xml:space="preserve">
     <value>Sep7</value>
   </data>
   <data name="&gt;&gt;Sep7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditShowTips.Name" xml:space="preserve">
     <value>EditShowTips</value>
   </data>
   <data name="&gt;&gt;EditShowTips.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditESCtoExit.Name" xml:space="preserve">
     <value>EditESCtoExit</value>
   </data>
   <data name="&gt;&gt;EditESCtoExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditConfirmClosing.Name" xml:space="preserve">
     <value>EditConfirmClosing</value>
   </data>
   <data name="&gt;&gt;EditConfirmClosing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuView.Name" xml:space="preserve">
     <value>MenuView</value>
   </data>
   <data name="&gt;&gt;MenuView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewReport.Name" xml:space="preserve">
     <value>ActionViewReport</value>
   </data>
   <data name="&gt;&gt;ActionViewReport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewMonth.Name" xml:space="preserve">
     <value>ActionViewMonth</value>
   </data>
   <data name="&gt;&gt;ActionViewMonth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewGrid.Name" xml:space="preserve">
     <value>ActionViewGrid</value>
   </data>
   <data name="&gt;&gt;ActionViewGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionStop.Name" xml:space="preserve">
     <value>ActionStop</value>
   </data>
   <data name="&gt;&gt;ActionStop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SaveCSVDialog.Name" xml:space="preserve">
     <value>SaveCSVDialog</value>
   </data>
   <data name="&gt;&gt;SaveCSVDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TrayIcon.Name" xml:space="preserve">
     <value>TrayIcon</value>
   </data>
   <data name="&gt;&gt;TrayIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuShowHide.Name" xml:space="preserve">
     <value>MenuShowHide</value>
   </data>
   <data name="&gt;&gt;MenuShowHide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuNavigate.Name" xml:space="preserve">
     <value>MenuNavigate</value>
   </data>
   <data name="&gt;&gt;MenuNavigate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuCelebrations.Name" xml:space="preserve">
     <value>MenuCelebrations</value>
   </data>
   <data name="&gt;&gt;MenuCelebrations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SeparatorTrayMenuView.Name" xml:space="preserve">
     <value>SeparatorTrayMenuView</value>
   </data>
   <data name="&gt;&gt;SeparatorTrayMenuView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuAbout.Name" xml:space="preserve">
     <value>MenuAbout</value>
   </data>
   <data name="&gt;&gt;MenuAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuExit.Name" xml:space="preserve">
     <value>MenuExit</value>
   </data>
   <data name="&gt;&gt;MenuExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PrintDialog.Name" xml:space="preserve">
     <value>PrintDialog</value>
   </data>
   <data name="&gt;&gt;PrintDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PrintDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PrintDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TimerReminder.Name" xml:space="preserve">
     <value>TimerReminder</value>
   </data>
   <data name="&gt;&gt;TimerReminder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysTableAdapter.Name" xml:space="preserve">
     <value>LunisolarDaysTableAdapter</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.HebrewCalendar, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.HebrewCalendar, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager, Ordisoftware.HebrewCalendar, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager, Ordisoftware.HebrewCalendar, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ReportTableAdapter.Name" xml:space="preserve">
     <value>ReportTableAdapter</value>
   </data>
   <data name="&gt;&gt;ReportTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter, Ordisoftware.HebrewCalendar, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter, Ordisoftware.HebrewCalendar, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

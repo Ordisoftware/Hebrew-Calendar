@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewCalendar
       int year = date.Year;
       if ( date.Month < 3 ) year--;
       EditYearFirst.Value = year;
-      EditYearLast.Value = year + 2;
+      EditYearLast.Value = year + 10;
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)

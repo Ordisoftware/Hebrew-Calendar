@@ -30,9 +30,6 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      this.StatusBottom = new System.Windows.Forms.StatusStrip();
-      this.LabelStripMargin = new System.Windows.Forms.ToolStripStatusLabel();
-      this.LabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
       this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelCalendarOuter = new System.Windows.Forms.Panel();
@@ -72,10 +69,7 @@
       this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-      this.PanelSepBottom = new System.Windows.Forms.Panel();
       this.PanelSepTop = new System.Windows.Forms.Panel();
-      this.PanelProgress = new System.Windows.Forms.Panel();
-      this.BarProgress = new System.Windows.Forms.ProgressBar();
       this.PanelTitle = new System.Windows.Forms.Panel();
       this.LabelTitle = new System.Windows.Forms.Label();
       this.moonPhaseImagePictureBox = new System.Windows.Forms.PictureBox();
@@ -136,7 +130,6 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter();
-      this.StatusBottom.SuspendLayout();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -153,30 +146,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarCalendar)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).BeginInit();
       this.LunisolarDaysBindingNavigator.SuspendLayout();
-      this.PanelProgress.SuspendLayout();
       this.PanelTitle.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
       this.ToolStrip.SuspendLayout();
       this.MenuTray.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // StatusBottom
-      // 
-      this.StatusBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.LabelStripMargin,
-            this.LabelStatus});
-      resources.ApplyResources(this.StatusBottom, "StatusBottom");
-      this.StatusBottom.Name = "StatusBottom";
-      // 
-      // LabelStripMargin
-      // 
-      resources.ApplyResources(this.LabelStripMargin, "LabelStripMargin");
-      this.LabelStripMargin.Name = "LabelStripMargin";
-      // 
-      // LabelStatus
-      // 
-      this.LabelStatus.Name = "LabelStatus";
-      resources.ApplyResources(this.LabelStatus, "LabelStatus");
       // 
       // SaveFileDialog
       // 
@@ -185,9 +159,7 @@
       // PanelMain
       // 
       this.PanelMain.Controls.Add(this.PanelCalendarOuter);
-      this.PanelMain.Controls.Add(this.PanelSepBottom);
       this.PanelMain.Controls.Add(this.PanelSepTop);
-      this.PanelMain.Controls.Add(this.PanelProgress);
       this.PanelMain.Controls.Add(this.PanelTitle);
       resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
@@ -504,27 +476,10 @@
       resources.ApplyResources(this.bindingNavigatorMoveLastItem, "bindingNavigatorMoveLastItem");
       this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
       // 
-      // PanelSepBottom
-      // 
-      resources.ApplyResources(this.PanelSepBottom, "PanelSepBottom");
-      this.PanelSepBottom.Name = "PanelSepBottom";
-      // 
       // PanelSepTop
       // 
       resources.ApplyResources(this.PanelSepTop, "PanelSepTop");
       this.PanelSepTop.Name = "PanelSepTop";
-      // 
-      // PanelProgress
-      // 
-      this.PanelProgress.Controls.Add(this.BarProgress);
-      resources.ApplyResources(this.PanelProgress, "PanelProgress");
-      this.PanelProgress.Name = "PanelProgress";
-      // 
-      // BarProgress
-      // 
-      resources.ApplyResources(this.BarProgress, "BarProgress");
-      this.BarProgress.Name = "BarProgress";
-      this.BarProgress.Step = 1;
       // 
       // PanelTitle
       // 
@@ -1016,7 +971,6 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.ToolStrip);
-      this.Controls.Add(this.StatusBottom);
       this.Name = "MainForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
@@ -1024,8 +978,6 @@
       this.Shown += new System.EventHandler(this.MainForm_Shown);
       this.ClientSizeChanged += new System.EventHandler(this.MainForm_WindowsChanged);
       this.LocationChanged += new System.EventHandler(this.MainForm_WindowsChanged);
-      this.StatusBottom.ResumeLayout(false);
-      this.StatusBottom.PerformLayout();
       this.PanelMain.ResumeLayout(false);
       this.PanelCalendarOuter.ResumeLayout(false);
       this.PanelCalendarInner.ResumeLayout(false);
@@ -1044,14 +996,12 @@
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).EndInit();
       this.LunisolarDaysBindingNavigator.ResumeLayout(false);
       this.LunisolarDaysBindingNavigator.PerformLayout();
-      this.PanelProgress.ResumeLayout(false);
       this.PanelTitle.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).EndInit();
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.MenuTray.ResumeLayout(false);
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
@@ -1064,9 +1014,7 @@
     private System.Windows.Forms.ToolStripButton ActionAbout;
     private System.Windows.Forms.ToolStripSeparator Sep4;
     private System.Windows.Forms.ToolStripSeparator Sep5;
-    private System.Windows.Forms.StatusStrip StatusBottom;
     private System.Windows.Forms.ToolStripButton ActionStop;
-    private System.Windows.Forms.ToolStripStatusLabel LabelStatus;
     private System.Windows.Forms.ToolStripDropDownButton MenuSettings;
     private System.Windows.Forms.ToolStripMenuItem MenuitemScreenPosition;
     private System.Windows.Forms.ToolStripButton ActionHelp;
@@ -1087,13 +1035,9 @@
     private System.Windows.Forms.ToolStripSeparator Sep1;
     private System.Windows.Forms.ToolStripButton ActionCopyReportToClipboard;
     private System.Windows.Forms.Panel PanelMain;
-    private System.Windows.Forms.Panel PanelProgress;
-    private System.Windows.Forms.ProgressBar BarProgress;
     private System.Windows.Forms.Panel PanelSepTop;
     private System.Windows.Forms.Panel PanelTitle;
     private System.Windows.Forms.Label LabelTitle;
-    private System.Windows.Forms.ToolStripStatusLabel LabelStripMargin;
-    private System.Windows.Forms.Panel PanelSepBottom;
     private System.Windows.Forms.Panel PanelCalendarOuter;
     private System.Windows.Forms.Panel PanelCalendarInner;
     private System.Windows.Forms.ToolStripDropDownButton MenuView;
