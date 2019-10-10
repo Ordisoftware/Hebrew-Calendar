@@ -46,7 +46,7 @@ namespace Ordisoftware.HebrewCalendar
       CalendarMonth.CurrentDayColor = Program.Settings.CurrentDayColor;
       CalendarMonth.CalendarDateChanged += (date) =>
       {
-        NavigationForm.Instance.Date = date;
+        GoToDate(date);
       };
     }
 
@@ -74,10 +74,10 @@ namespace Ordisoftware.HebrewCalendar
       UpdateTextCalendar();
       UpdateButtons();
       MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
-      NavigationForm.Instance.Date = DateTime.Now;
+      IsReady = true;
+      GoToDate(DateTime.Now);
       Program.CheckUpdate(true);
       if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
-      IsReady = true;
     }
 
     /// <summary>
@@ -374,6 +374,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionGenerate_Click(object sender, EventArgs e)
     {
+      IsReady = false;
       TimerReminder.Enabled = false;
       try
       {
@@ -391,10 +392,11 @@ namespace Ordisoftware.HebrewCalendar
           ReminderForm.ShabatForm = null;
         }
         GenerateData((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
-        NavigationForm.Instance.Date = DateTime.Now;
       }
       finally
       {
+        IsReady = true;
+        GoToDate(DateTime.Now);
         TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
         Timer_Tick(this, null);
       }
@@ -485,7 +487,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( form.ShowDialog() != DialogResult.OK ) return;
         date = form.MonthCalendar.SelectionStart;
       }
-      NavigationForm.Instance.Date = date;
+      GoToDate(date);
     }
 
     /// <summary>
@@ -495,9 +497,14 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
-      NavigationForm.Instance.Date = DateTime.Now;
-      NavigationForm.Instance.Visible = true;
-      NavigationForm.Instance.BringToFront();
+      if ( NavigationForm.Instance.Visible )
+        NavigationForm.Instance.Visible = false;
+      else
+      {
+        NavigationForm.Instance.Date = DateTime.Now;
+        NavigationForm.Instance.Visible = true;
+        NavigationForm.Instance.BringToFront();
+      }
     }
 
     /// <summary>
@@ -582,6 +589,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="date">The date.</param>
     internal void GoToDate(DateTime date)
     {
+      if ( !IsReady ) return;
       string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");
       int pos = CalendarText.Find(strDate);
       if ( pos != -1 )
@@ -595,6 +603,8 @@ namespace Ordisoftware.HebrewCalendar
         CalendarGrid.Update();
         CalendarMonth.CalendarDate = date;
       }
+      else
+        DisplayManager.Show(Translations.DateNotFound.GetLang(strDate));
     }
 
   }

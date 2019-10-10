@@ -35,6 +35,11 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void Run()
     {
+      if ( Instance.Visible )
+      {
+        Instance.BringToFront();
+        return;
+      }
       Instance.ListView.Items.Clear();
       var dateStart = DateTime.Now;
       var dateEnd = dateStart.AddYears(1);

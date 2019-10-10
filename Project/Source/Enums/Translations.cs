@@ -100,6 +100,13 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Date de naissance" }
       };
 
+    static public readonly Dictionary<string, string> DateNotFound
+      = new Dictionary<string, string>()
+      {
+        { "en", "Date not found in the database: {0}" },
+        { "fr", "Date non trouvée dans la base de données: {0}" }
+      };
+
     static public readonly Dictionary<string, string> CantExitApplicationWhileGenerating
       = new Dictionary<string, string>()
       {

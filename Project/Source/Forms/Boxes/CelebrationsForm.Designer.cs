@@ -57,6 +57,7 @@
             this.columnHeader1,
             this.columnHeader2});
       this.ListView.FullRowSelect = true;
+      this.ListView.HideSelection = false;
       this.ListView.MultiSelect = false;
       this.ListView.Name = "ListView";
       this.ListView.UseCompatibleStateImageBehavior = false;
