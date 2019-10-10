@@ -85,6 +85,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - Add loading data box instead of using the bottom progressbar.
 - Add displaying hours in the celebration reminder form like with the shabat.
 - Add option to choose language.
+- Add check end of data to propose to regenerate the database if less than one year.
 - Improve UI.
 - Update help.
 - Some code refactorings.
