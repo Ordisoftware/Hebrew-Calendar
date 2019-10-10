@@ -22,42 +22,6 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private void CheckEvents()
-    {
-      try
-      {
-        var dateStart = DateTime.Today;
-        var dateEnd = dateStart.AddDays(Program.Settings.ReminderInterval);
-        var row = ( from day in LunisolarCalendar.LunisolarDays
-                    where SQLiteUtility.GetDate(day.Date) >= dateStart
-                       && SQLiteUtility.GetDate(day.Date) <= dateEnd
-                       && check((TorahEventType)day.TorahEvents)
-                       && !Reminded.Contains(day.Date)
-                    select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
-        if ( row == null ) return;
-        Reminded.Add(row.Date);
-        var rowPrevious = LunisolarCalendar.LunisolarDays.FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
-        ReminderForm.Run(row, false, rowPrevious.Sunset, row.Sunset);
-      }
-      catch
-      {
-      }
-      bool check(TorahEventType item)
-      {
-        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-          if ( type != TorahEventType.None )
-            try
-            {
-              if ( item == type && (bool)Program.Settings["TorahEventRemind" + item.ToString()] )
-                return true;
-            }
-            catch
-            {
-            }
-        return false;
-      }
-    }
-
     private void CheckShabat()
     {
       try
