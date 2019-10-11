@@ -293,15 +293,12 @@
       // EditRemindShabatOnlyLight
       // 
       resources.ApplyResources(this.EditRemindShabatOnlyLight, "EditRemindShabatOnlyLight");
-      this.EditRemindShabatOnlyLight.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.RemindShabatOnlyLight;
-      this.EditRemindShabatOnlyLight.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "RemindShabatOnlyLight", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditRemindShabatOnlyLight.Name = "EditRemindShabatOnlyLight";
       this.EditRemindShabatOnlyLight.UseVisualStyleBackColor = true;
       this.EditRemindShabatOnlyLight.CheckedChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
       // 
       // EditRemindShabatHoursBefore
       // 
-      this.EditRemindShabatHoursBefore.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "RemindCelebrationHoursBefore", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditRemindShabatHoursBefore, "EditRemindShabatHoursBefore");
       this.EditRemindShabatHoursBefore.Maximum = new decimal(new int[] {
             12,
@@ -314,11 +311,9 @@
             0,
             0});
       this.EditRemindShabatHoursBefore.Name = "EditRemindShabatHoursBefore";
-      this.EditRemindShabatHoursBefore.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.RemindCelebrationHoursBefore;
       // 
       // EditRemindShabatEveryMinutes
       // 
-      this.EditRemindShabatEveryMinutes.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "RemindCelebrationEveryMinutes", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditRemindShabatEveryMinutes, "EditRemindShabatEveryMinutes");
       this.EditRemindShabatEveryMinutes.Maximum = new decimal(new int[] {
             120,
@@ -331,14 +326,11 @@
             0,
             0});
       this.EditRemindShabatEveryMinutes.Name = "EditRemindShabatEveryMinutes";
-      this.EditRemindShabatEveryMinutes.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.RemindCelebrationEveryMinutes;
       // 
       // EditRemindShabat
       // 
       resources.ApplyResources(this.EditRemindShabat, "EditRemindShabat");
-      this.EditRemindShabat.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.RemindShabat;
       this.EditRemindShabat.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditRemindShabat.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "RemindShabat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditRemindShabat.Name = "EditRemindShabat";
       this.EditRemindShabat.UseVisualStyleBackColor = true;
       this.EditRemindShabat.CheckedChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
@@ -446,8 +438,6 @@
       // EditStartupHide
       // 
       resources.ApplyResources(this.EditStartupHide, "EditStartupHide");
-      this.EditStartupHide.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.StartupHide;
-      this.EditStartupHide.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "StartupHide", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditStartupHide.Name = "EditStartupHide";
       this.EditStartupHide.UseVisualStyleBackColor = true;
       // 
@@ -492,7 +482,6 @@
       // 
       // EditTimerInterval
       // 
-      this.EditTimerInterval.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "ReminderInterval", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditTimerInterval, "EditTimerInterval");
       this.EditTimerInterval.Maximum = new decimal(new int[] {
             90,
@@ -500,7 +489,6 @@
             0,
             0});
       this.EditTimerInterval.Name = "EditTimerInterval";
-      this.EditTimerInterval.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.ReminderInterval;
       // 
       // LabelTimerInterval
       // 
@@ -521,14 +509,11 @@
             0,
             0});
       this.EditRemindCelebrationHoursBefore.Name = "EditRemindCelebrationHoursBefore";
-      this.EditRemindCelebrationHoursBefore.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.RemindCelebrationHoursBefore;
       // 
       // EditTimerEnabled
       // 
       resources.ApplyResources(this.EditTimerEnabled, "EditTimerEnabled");
-      this.EditTimerEnabled.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.ReminderEnabled;
       this.EditTimerEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditTimerEnabled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "ReminderEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditTimerEnabled.Name = "EditTimerEnabled";
       this.EditTimerEnabled.UseVisualStyleBackColor = true;
       this.EditTimerEnabled.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
@@ -547,13 +532,10 @@
             0,
             0});
       this.EditRemindCelebrationEveryMinutes.Name = "EditRemindCelebrationEveryMinutes";
-      this.EditRemindCelebrationEveryMinutes.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.RemindCelebrationEveryMinutes;
       // 
       // EditShowMonthDayToolTip
       // 
       resources.ApplyResources(this.EditShowMonthDayToolTip, "EditShowMonthDayToolTip");
-      this.EditShowMonthDayToolTip.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.MonthViewSunToolTips;
-      this.EditShowMonthDayToolTip.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "MonthViewSunToolTips", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditShowMonthDayToolTip.Name = "EditShowMonthDayToolTip";
       this.EditShowMonthDayToolTip.UseVisualStyleBackColor = true;
       // 
@@ -679,9 +661,7 @@
       // EditCheckUpdateAtStartup
       // 
       resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
-      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.CheckUpdateAtStartup;
       this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 

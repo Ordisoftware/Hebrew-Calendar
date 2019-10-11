@@ -72,6 +72,17 @@ namespace Ordisoftware.HebrewCalendar
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
       UpdateLanguagesButtons();
+      EditTimerEnabled.Checked = Program.Settings.ReminderEnabled;
+      EditStartupHide.Checked = Program.Settings.StartupHide;
+      EditShowMonthDayToolTip.Checked = Program.Settings.MonthViewSunToolTips;
+      EditCheckUpdateAtStartup.Checked = Program.Settings.CheckUpdateAtStartup;
+      EditRemindShabat.Checked = Program.Settings.RemindShabat;
+      EditRemindShabatOnlyLight.Checked = Program.Settings.RemindShabatOnlyLight;
+      EditTimerInterval.Value = Program.Settings.ReminderInterval;
+      EditRemindShabatHoursBefore.Value = Program.Settings.RemindShabatHoursBefore;
+      EditRemindShabatEveryMinutes.Value = Program.Settings.RemindShabatEveryMinutes;
+      EditRemindCelebrationHoursBefore.Value = Program.Settings.RemindCelebrationHoursBefore;
+      EditRemindCelebrationEveryMinutes.Value = Program.Settings.RemindCelebrationEveryMinutes;
       PanelTopColor.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddleColor.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottomColor.BackColor = Program.Settings.NavigateBottomColor;
@@ -133,6 +144,17 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
+      Program.Settings.ReminderEnabled = EditTimerEnabled.Checked;
+      Program.Settings.StartupHide = EditStartupHide.Checked;
+      Program.Settings.MonthViewSunToolTips = EditShowMonthDayToolTip.Checked;
+      Program.Settings.CheckUpdateAtStartup = EditCheckUpdateAtStartup.Checked;
+      Program.Settings.RemindShabat = EditRemindShabat.Checked;
+      Program.Settings.RemindShabatOnlyLight = EditRemindShabatOnlyLight.Checked;
+      Program.Settings.ReminderInterval = EditTimerInterval.Value;
+      Program.Settings.RemindShabatHoursBefore = EditRemindShabatHoursBefore.Value;
+      Program.Settings.RemindShabatEveryMinutes = EditRemindShabatEveryMinutes.Value;
+      Program.Settings.RemindCelebrationHoursBefore = EditRemindCelebrationHoursBefore.Value;
+      Program.Settings.RemindCelebrationEveryMinutes = EditRemindCelebrationEveryMinutes.Value;
       Program.Settings.NavigateTopColor = PanelTopColor.BackColor;
       Program.Settings.NavigateMiddleColor = PanelMiddleColor.BackColor;
       Program.Settings.NavigateBottomColor = PanelBottomColor.BackColor;
