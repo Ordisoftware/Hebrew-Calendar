@@ -202,7 +202,7 @@
     <value>NoControl</value>
   </data>
   <data name="ButtonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>679, 3</value>
+    <value>671, 3</value>
   </data>
   <data name="ButtonClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -403,7 +403,7 @@
     <value>10, 565</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>757, 28</value>
+    <value>749, 28</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -1567,7 +1567,7 @@
     <value>414, 15</value>
   </data>
   <data name="GroupBoxReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 355</value>
+    <value>337, 355</value>
   </data>
   <data name="GroupBoxReminder.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2104,7 +2104,7 @@
     <value>414, 386</value>
   </data>
   <data name="GroupBoxSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 162</value>
+    <value>337, 162</value>
   </data>
   <data name="GroupBoxSystem.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2131,7 +2131,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>777, 603</value>
+    <value>769, 603</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

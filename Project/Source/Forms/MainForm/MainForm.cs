@@ -78,6 +78,7 @@ namespace Ordisoftware.HebrewCalendar
       GoToDate(DateTime.Now);
       Program.CheckUpdate(true);
       if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
+      Timer_Tick(null, null);
     }
 
     /// <summary>
@@ -574,6 +575,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void Timer_Tick(object sender, EventArgs e)
     {
+      if ( !IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
       int active = 1;
       SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);

@@ -73,6 +73,7 @@
       this.GroupBoxReminder = new System.Windows.Forms.GroupBox();
       this.LabelRemindCelebrationHoursBefore = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationEveryMinutes = new System.Windows.Forms.Label();
+      this.EditEventsDay = new System.Windows.Forms.CheckedListBox();
       this.EditEvents = new System.Windows.Forms.CheckedListBox();
       this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
@@ -96,7 +97,6 @@
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditEventsDay = new System.Windows.Forms.CheckedListBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
@@ -476,6 +476,13 @@
       resources.ApplyResources(this.LabelRemindCelebrationEveryMinutes, "LabelRemindCelebrationEveryMinutes");
       this.LabelRemindCelebrationEveryMinutes.Name = "LabelRemindCelebrationEveryMinutes";
       // 
+      // EditEventsDay
+      // 
+      this.EditEventsDay.CheckOnClick = true;
+      resources.ApplyResources(this.EditEventsDay, "EditEventsDay");
+      this.EditEventsDay.FormattingEnabled = true;
+      this.EditEventsDay.Name = "EditEventsDay";
+      // 
       // EditEvents
       // 
       this.EditEvents.CheckOnClick = true;
@@ -677,13 +684,6 @@
       this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
-      // 
-      // EditEventsDay
-      // 
-      this.EditEventsDay.CheckOnClick = true;
-      resources.ApplyResources(this.EditEventsDay, "EditEventsDay");
-      this.EditEventsDay.FormattingEnabled = true;
-      this.EditEventsDay.Name = "EditEventsDay";
       // 
       // PreferencesForm
       // 
