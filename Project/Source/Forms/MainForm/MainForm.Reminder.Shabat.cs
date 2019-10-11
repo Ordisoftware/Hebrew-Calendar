@@ -34,7 +34,8 @@ namespace Ordisoftware.HebrewCalendar
                        && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDate)
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
-        var rowPrevious = LunisolarCalendar.LunisolarDays.FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
+        var rowPrevious = LunisolarCalendar.LunisolarDays
+                          .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
         string timeStart = "";
         string timeEnd = "";
         string[] timesStart = null;
@@ -58,34 +59,35 @@ namespace Ordisoftware.HebrewCalendar
         else
           initTimes(rowPrevious.Sunset, row.Sunset, -1);
         var dateTrigger = dateStart.Value.AddHours((double)-Program.Settings.RemindShabatHoursBefore);
-        if ( dateNow < dateTrigger || dateNow >= dateEnd.Value.AddMinutes((double)-Program.Settings.RemindShabatEveryMinutes) )
+        if ( dateNow < dateTrigger || dateNow >= dateEnd.Value
+                                                 .AddMinutes((double)-Program.Settings.RemindShabatEveryMinutes) )
         {
-          ReminderForm.LastShabatReminded = null;
-          if ( ReminderForm.ShabatForm != null )
+          LastShabatReminded = null;
+          if ( ShabatForm != null )
           {
-            ReminderForm.ShabatForm.Close();
-            ReminderForm.ShabatForm = null;
+            ShabatForm.Close();
+            ShabatForm = null;
           }
           return;
         }
         else
         if ( dateNow >= dateTrigger && dateNow < dateStart )
         {
-          if ( ReminderForm.LastShabatReminded.HasValue )
+          if ( LastShabatReminded.HasValue )
             return;
           else
-            ReminderForm.LastShabatReminded = dateNow;
+            LastShabatReminded = dateNow;
         }
         else
-        if ( ReminderForm.LastShabatReminded.HasValue )
+        if ( LastShabatReminded.HasValue )
         {
-          if ( dateNow < ReminderForm.LastShabatReminded.Value.AddMinutes((double)Program.Settings.RemindShabatEveryMinutes) )
+          if ( dateNow < LastShabatReminded.Value.AddMinutes((double)Program.Settings.RemindShabatEveryMinutes) )
             return;
           else
-            ReminderForm.LastShabatReminded = dateNow;
+            LastShabatReminded = dateNow;
         }
         else
-          ReminderForm.LastShabatReminded = dateNow;
+          LastShabatReminded = dateNow;
         ReminderForm.Run(row, true, TorahEventType.None, timeStart, timeEnd);
       }
       catch

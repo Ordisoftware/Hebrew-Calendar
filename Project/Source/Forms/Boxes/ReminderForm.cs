@@ -24,73 +24,37 @@ namespace Ordisoftware.HebrewCalendar
   public partial class ReminderForm : Form
   {
 
-    static internal readonly List<Form> RemindCelebrationForms = new List<Form>();
-
-    static internal readonly List<string> RemindCelebrationDates = new List<string>();
-
-    static internal readonly Dictionary<TorahEventType, DateTime?> LastCelebrationReminded
-      = new Dictionary<TorahEventType, DateTime?>();
-
-    static internal readonly Dictionary<TorahEventType, ReminderForm> RemindCelebrationDayForms
-      = new Dictionary<TorahEventType, ReminderForm>();
-
-    static internal DateTime? LastShabatReminded = null;
-
-    static internal ReminderForm ShabatForm;
-
-    static internal void ClearLists()
-    {
-      int min = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Min();
-      int max = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Max();
-      foreach ( Form item in RemindCelebrationForms.ToList() )
-        item.Close();
-      RemindCelebrationDates.Clear();
-      for ( int index = min; index < max; index++ )
-        if ( LastCelebrationReminded.ContainsKey((TorahEventType)index) )
-          LastCelebrationReminded[(TorahEventType)index] = null;
-      for ( int index = min; index < max; index++ )
-        if ( RemindCelebrationDayForms.ContainsKey((TorahEventType)index) )
-          RemindCelebrationDayForms[(TorahEventType)index].Close();
-      RemindCelebrationDayForms.Clear();
-      LastShabatReminded = null;
-      if ( ShabatForm != null )
-      {
-        ShabatForm.Close();
-        ShabatForm = null;
-      }
-    }
-
     static ReminderForm()
     {
       foreach ( TorahEventType value in Enum.GetValues(typeof(TorahEventType)) )
-        LastCelebrationReminded.Add(value, null);
+        MainForm.Instance.LastCelebrationReminded.Add(value, null);
     }
 
     static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row, bool isShabat, TorahEventType torahevent, string time1, string time2)
     {
       ReminderForm form = null;
-      if ( isShabat && ShabatForm != null )
+      if ( isShabat && MainForm.Instance.ShabatForm != null )
       {
-        ShabatForm.Hide();
+        MainForm.Instance.ShabatForm.Hide();
         System.Threading.Thread.Sleep(1000);
-        ShabatForm.Show();
-        ShabatForm.BringToFront();
+        MainForm.Instance.ShabatForm.Show();
+        MainForm.Instance.ShabatForm.BringToFront();
         return;
       }
       else
       if ( torahevent != TorahEventType.None )
       {
-        if ( RemindCelebrationDayForms.ContainsKey(torahevent) )
+        if ( MainForm.Instance.RemindCelebrationDayForms.ContainsKey(torahevent) )
         {
-          RemindCelebrationDayForms[torahevent].Hide();
+          MainForm.Instance.RemindCelebrationDayForms[torahevent].Hide();
           System.Threading.Thread.Sleep(1000);
-          RemindCelebrationDayForms[torahevent].Show();
-          RemindCelebrationDayForms[torahevent].BringToFront();
+          MainForm.Instance.RemindCelebrationDayForms[torahevent].Show();
+          MainForm.Instance.RemindCelebrationDayForms[torahevent].BringToFront();
           return;
         }
       }
       else
-        foreach ( var item in RemindCelebrationForms )
+        foreach ( var item in MainForm.Instance.RemindCelebrationForms )
           if ( (string)item.Tag == row.Date )
           {
             item.Hide();
@@ -116,20 +80,20 @@ namespace Ordisoftware.HebrewCalendar
       form.Text = form.LabelNextCelebrationText.Text;
       form.IsShabat = isShabat;
       if ( isShabat )
-        ShabatForm = form;
+        MainForm.Instance.ShabatForm = form;
       else
       if ( torahevent != TorahEventType.None )
       {
-        foreach ( var item in RemindCelebrationForms.ToList() )
+        foreach ( var item in MainForm.Instance.RemindCelebrationForms.ToList() )
           if ( (string)item.Tag == row.Date )
           {
             item.Close();
             break;
           }
-        RemindCelebrationDayForms.Add(torahevent, form);
+        MainForm.Instance.RemindCelebrationDayForms.Add(torahevent, form);
       }
       else
-        RemindCelebrationForms.Add(form);
+        MainForm.Instance.RemindCelebrationForms.Add(form);
       form.Show();
       form.BringToFront();
       Application.DoEvents();
@@ -148,11 +112,12 @@ namespace Ordisoftware.HebrewCalendar
     private void ReminderForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       if ( IsShabat )
-        ShabatForm = null;
+        MainForm.Instance.ShabatForm = null;
       else
       {
-        RemindCelebrationForms.Remove(this);
-        RemindCelebrationDayForms.Remove(RemindCelebrationDayForms.FirstOrDefault(x => x.Value == this).Key);
+        MainForm.Instance.RemindCelebrationForms.Remove(this);
+        var key = MainForm.Instance.RemindCelebrationDayForms.FirstOrDefault(x => x.Value == this).Key;
+        MainForm.Instance.RemindCelebrationDayForms.Remove(key);
       }
     }
 
@@ -177,12 +142,12 @@ namespace Ordisoftware.HebrewCalendar
     private void ReminderForm_Shown(object sender, EventArgs e)
     {
       var list = new List<Form>();
-      foreach ( var item in RemindCelebrationForms )
+      foreach ( var item in MainForm.Instance.RemindCelebrationForms )
         list.Add(item);
-      foreach ( var item in RemindCelebrationDayForms )
+      foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
         list.Add(item.Value);
-      if ( ShabatForm != null )
-        list.Add(ShabatForm);
+      if ( MainForm.Instance.ShabatForm != null )
+        list.Add(MainForm.Instance.ShabatForm);
       int dx = 0;
       foreach ( var item in list )
       {

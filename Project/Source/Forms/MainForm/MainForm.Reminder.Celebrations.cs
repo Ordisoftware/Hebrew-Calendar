@@ -24,38 +24,27 @@ namespace Ordisoftware.HebrewCalendar
 
     private void CheckEvents()
     {
-      var events = Enum.GetValues(typeof(TorahEventType));
+      bool check(TorahEventType item)
+      {
+        return TorahEventRemindList.ContainsKey(item) && TorahEventRemindList[item];
+      }
       try
       {
         var dateStart = DateTime.Today;
         var dateEnd = dateStart.AddDays((int)Program.Settings.ReminderInterval);
         var row = ( from day in LunisolarCalendar.LunisolarDays
-                    where !ReminderForm.RemindCelebrationDates.Contains(day.Date)
+                    where !RemindCelebrationDates.Contains(day.Date)
+                       && check((TorahEventType)day.TorahEvents)
                        && SQLiteUtility.GetDate(day.Date) >= dateStart
                        && SQLiteUtility.GetDate(day.Date) < dateEnd
-                       && check((TorahEventType)day.TorahEvents)
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
-        ReminderForm.RemindCelebrationDates.Add(row.Date);
+        RemindCelebrationDates.Add(row.Date);
         var rowPrevious = LunisolarCalendar.LunisolarDays.FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
         ReminderForm.Run(row, false, TorahEventType.None, rowPrevious.Sunset, row.Sunset);
       }
       catch
       {
-      }
-      bool check(TorahEventType item)
-      {
-        foreach ( TorahEventType type in events )
-          if ( type != TorahEventType.None )
-            try
-            {
-              if ( item == type && (bool)Program.Settings["TorahEventRemind" + item.ToString()] )
-                return true;
-            }
-            catch
-            {
-            }
-        return false;
       }
     }
 

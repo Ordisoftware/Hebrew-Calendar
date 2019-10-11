@@ -62,6 +62,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.Retrieve();
       Refresh();
       LoadData();
+      InitRemindLists();
     }
 
     /// <summary>
@@ -283,7 +284,8 @@ namespace Ordisoftware.HebrewCalendar
         if ( DisplayManager.QueryYesNo(Translations.RegenerateCalendar.GetLang()) )
           ActionGenerate.PerformClick();
       CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-      ReminderForm.ClearLists();
+      InitRemindLists();
+      ClearLists();
       TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
       Timer_Tick(null, null);
     }
@@ -385,12 +387,12 @@ namespace Ordisoftware.HebrewCalendar
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
           if ( !DisplayManager.QueryYesNo(Translations.ReplaceCalendar.GetLang()) )
             return;
-        ReminderForm.ClearLists();
-        foreach ( var f in ReminderForm.RemindCelebrationForms.ToList() ) f.Close();
-        if ( ReminderForm.ShabatForm != null )
+        ClearLists();
+        foreach ( var f in RemindCelebrationForms.ToList() ) f.Close();
+        if ( ShabatForm != null )
         {
-          ReminderForm.ShabatForm.Close();
-          ReminderForm.ShabatForm = null;
+          ShabatForm.Close();
+          ShabatForm = null;
         }
         GenerateData((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
       }

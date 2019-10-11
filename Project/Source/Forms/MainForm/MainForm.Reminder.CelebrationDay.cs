@@ -24,7 +24,10 @@ namespace Ordisoftware.HebrewCalendar
 
     private void CheckCelebrationDay()
     {
-      var events = Enum.GetValues(typeof(TorahEventType));
+      bool check(TorahEventType item)
+      {
+        return TorahEventDayRemindList.ContainsKey(item) && TorahEventDayRemindList[item];
+      }
       try
       {
         var today = DateTime.Today;
@@ -32,11 +35,12 @@ namespace Ordisoftware.HebrewCalendar
         string strDate = SQLiteUtility.GetDate(today);
         var row = ( from day in LunisolarCalendar.LunisolarDays
                     where (TorahEventType)day.TorahEvents != TorahEventType.None
-                       && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDate)
                        && check((TorahEventType)day.TorahEvents)
+                       && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDate)
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
-        var rowPrevious = LunisolarCalendar.LunisolarDays.FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
+        var rowPrevious = LunisolarCalendar.LunisolarDays
+                          .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
         string timeStart = "";
         string timeEnd = "";
         string[] timesStart = null;
@@ -57,49 +61,37 @@ namespace Ordisoftware.HebrewCalendar
         };
         initTimes(rowPrevious.Sunset, row.Sunset, -1);
         var dateTrigger = dateStart.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
-        if ( dateNow < dateTrigger || dateNow >= dateEnd.Value.AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes) )
+        if ( dateNow < dateTrigger || dateNow >= dateEnd.Value
+                                                 .AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes) )
         {
-          ReminderForm.LastCelebrationReminded[(TorahEventType)row.TorahEvents] = null;
-          if ( ReminderForm.RemindCelebrationDayForms.ContainsKey((TorahEventType)row.TorahEvents) )
-            ReminderForm.RemindCelebrationDayForms[(TorahEventType)row.TorahEvents].Close();
+          LastCelebrationReminded[(TorahEventType)row.TorahEvents] = null;
+          if ( RemindCelebrationDayForms.ContainsKey((TorahEventType)row.TorahEvents) )
+            RemindCelebrationDayForms[(TorahEventType)row.TorahEvents].Close();
           return;
         }
         else
         if ( dateNow >= dateTrigger && dateNow < dateStart )
         {
-          if ( ReminderForm.LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
+          if ( LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
             return;
           else
-            ReminderForm.LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
+            LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
         }
         else
-        if ( ReminderForm.LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
+        if ( LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
         {
-          if ( dateNow < ReminderForm.LastCelebrationReminded[(TorahEventType)row.TorahEvents].Value.AddMinutes((double)Program.Settings.RemindCelebrationEveryMinutes) )
+          if ( dateNow < LastCelebrationReminded[(TorahEventType)row.TorahEvents].Value
+                         .AddMinutes((double)Program.Settings.RemindCelebrationEveryMinutes) )
             return;
           else
-            ReminderForm.LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
+            LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
         }
         else
-          ReminderForm.LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
+          LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
         ReminderForm.Run(row, false, (TorahEventType)row.TorahEvents, timeStart, timeEnd);
       }
       catch
       {
-      }
-      bool check(TorahEventType item)
-      {
-        foreach ( TorahEventType type in events )
-          if ( type != TorahEventType.None )
-            try
-            {
-              if ( item == type && (bool)Program.Settings["TorahEventDayRemind" + item.ToString()] )
-                return true;
-            }
-            catch
-            {
-            }
-        return false;
       }
     }
 

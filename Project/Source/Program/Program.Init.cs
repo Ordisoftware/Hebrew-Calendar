@@ -74,15 +74,15 @@ namespace Ordisoftware.HebrewCalendar
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
       string str = MainForm.Instance.CalendarText.Text;
-      foreach ( var f in ReminderForm.RemindCelebrationForms.ToList() )
+      foreach ( var f in MainForm.Instance.RemindCelebrationForms.ToList() )
       {
         f.Close();
       }
-      if ( ReminderForm.ShabatForm != null )
+      if ( MainForm.Instance.ShabatForm != null )
       {
-        ReminderForm.ShabatForm.Close();
-        ReminderForm.ShabatForm = null;
-        ReminderForm.LastShabatReminded = null;
+        MainForm.Instance.ShabatForm.Close();
+        MainForm.Instance.ShabatForm = null;
+        MainForm.Instance.LastShabatReminded = null;
       }
       foreach ( Form form in Application.OpenForms )
         if ( form != AboutBox.Instance )
