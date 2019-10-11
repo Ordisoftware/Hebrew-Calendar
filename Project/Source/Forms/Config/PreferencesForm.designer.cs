@@ -257,12 +257,10 @@
       // 
       // EditFontName
       // 
-      this.EditFontName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "FontName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       resources.ApplyResources(this.EditFontName, "EditFontName");
       this.EditFontName.FormattingEnabled = true;
       this.EditFontName.Name = "EditFontName";
-      this.EditFontName.Text = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.FontName;
       this.EditFontName.SelectedIndexChanged += new System.EventHandler(this.EitFontName_Changed);
       // 
       // BroupBoxShabat
@@ -311,6 +309,11 @@
             0,
             0});
       this.EditRemindShabatHoursBefore.Name = "EditRemindShabatHoursBefore";
+      this.EditRemindShabatHoursBefore.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
       // 
       // EditRemindShabatEveryMinutes
       // 
@@ -326,10 +329,16 @@
             0,
             0});
       this.EditRemindShabatEveryMinutes.Name = "EditRemindShabatEveryMinutes";
+      this.EditRemindShabatEveryMinutes.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
       // 
       // EditRemindShabat
       // 
       resources.ApplyResources(this.EditRemindShabat, "EditRemindShabat");
+      this.EditRemindShabat.Checked = true;
       this.EditRemindShabat.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditRemindShabat.Name = "EditRemindShabat";
       this.EditRemindShabat.UseVisualStyleBackColor = true;
@@ -509,10 +518,16 @@
             0,
             0});
       this.EditRemindCelebrationHoursBefore.Name = "EditRemindCelebrationHoursBefore";
+      this.EditRemindCelebrationHoursBefore.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
       // 
       // EditTimerEnabled
       // 
       resources.ApplyResources(this.EditTimerEnabled, "EditTimerEnabled");
+      this.EditTimerEnabled.Checked = true;
       this.EditTimerEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditTimerEnabled.Name = "EditTimerEnabled";
       this.EditTimerEnabled.UseVisualStyleBackColor = true;
@@ -532,6 +547,11 @@
             0,
             0});
       this.EditRemindCelebrationEveryMinutes.Name = "EditRemindCelebrationEveryMinutes";
+      this.EditRemindCelebrationEveryMinutes.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
       // 
       // EditShowMonthDayToolTip
       // 
@@ -661,6 +681,7 @@
       // EditCheckUpdateAtStartup
       // 
       resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
+      this.EditCheckUpdateAtStartup.Checked = true;
       this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;

@@ -27,7 +27,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="FontName" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Courier New</Value>
     </Setting>
     <Setting Name="FontSize" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10</Value>

@@ -72,6 +72,12 @@ namespace Ordisoftware.HebrewCalendar
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
       UpdateLanguagesButtons();
+      foreach ( var item in EditFontName.Items )
+        if ( (string)item == Program.Settings.FontName )
+        {
+          EditFontName.SelectedItem = item;
+          break;
+        }
       EditTimerEnabled.Checked = Program.Settings.ReminderEnabled;
       EditStartupHide.Checked = Program.Settings.StartupHide;
       EditShowMonthDayToolTip.Checked = Program.Settings.MonthViewSunToolTips;
@@ -198,10 +204,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void EitFontName_Changed(object sender, EventArgs e)
     {
-      var control = sender as Control;
-      if ( control == null ) return;
-      foreach ( Binding binding in control.DataBindings )
-        binding.WriteValue();
+      Program.Settings.FontName = EditFontName.Text;
       MainForm.Instance.UpdateTextCalendar();
     }
 
