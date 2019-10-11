@@ -119,6 +119,7 @@ namespace Ordisoftware.HebrewCalendar
         var key = MainForm.Instance.RemindCelebrationDayForms.FirstOrDefault(x => x.Value == this).Key;
         MainForm.Instance.RemindCelebrationDayForms.Remove(key);
       }
+      SetFormsLocation();
     }
 
     private void ButtonClose_Click(object sender, EventArgs e)
@@ -141,6 +142,11 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ReminderForm_Shown(object sender, EventArgs e)
     {
+      SetFormsLocation();
+    }
+
+    private void SetFormsLocation()
+    {
       var list = new List<Form>();
       foreach ( var item in MainForm.Instance.RemindCelebrationForms )
         list.Add(item);
@@ -148,11 +154,12 @@ namespace Ordisoftware.HebrewCalendar
         list.Add(item.Value);
       if ( MainForm.Instance.ShabatForm != null )
         list.Add(MainForm.Instance.ShabatForm);
-      int dx = 0;
+      int dy = 0;
+      int y = SystemInformation.WorkingArea.Top + SystemInformation.WorkingArea.Height;
       foreach ( var item in list )
       {
-        item.Location = new Point(item.Left, item.Top - dx);
-        dx += item.Height;
+        item.Location = new Point(item.Left, y - item.Height - dy);
+        dy += item.Height;
       }
 
     }
