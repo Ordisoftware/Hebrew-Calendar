@@ -87,6 +87,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - Add option to choose language.
 - Add check end of data to propose to regenerate the database if less than one year.
 - Improve UI.
+- Improve speed.
 - Update help.
 - Some code refactorings.
 
