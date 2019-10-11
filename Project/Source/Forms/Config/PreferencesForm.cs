@@ -85,8 +85,8 @@ namespace Ordisoftware.HebrewCalendar
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.Latitude;
       OldLongitude = Program.Settings.Longitude;
-      EditGPSLatitude.Text = Convert.ToString(OldLatitude);
-      EditGPSLongitude.Text = Convert.ToString(OldLongitude);
+      EditGPSLatitude.Text = OldLatitude.ToString();
+      EditGPSLongitude.Text = OldLongitude.ToString();
       switch ( Program.Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
@@ -143,8 +143,11 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.SeasonEventColor = PanelSeasonEventColor.BackColor;
       Program.Settings.MoonEventColor = PanelMoonEventColor.BackColor;
       Program.Settings.FullMoonColor = PanelFullMoonColor.BackColor;
-      Program.Settings.Latitude = (float)Convert.ToDouble(EditGPSLatitude.Text);
-      Program.Settings.Longitude = (float)Convert.ToDouble(EditGPSLongitude.Text);
+      float value;
+      float.TryParse(EditGPSLatitude.Text, out value);
+      Program.Settings.Latitude = value;
+      float.TryParse(EditGPSLongitude.Text, out value);
+      Program.Settings.Longitude = value;
       Program.Settings.Store();
     }
 
