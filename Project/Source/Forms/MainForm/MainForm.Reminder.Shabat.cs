@@ -50,15 +50,15 @@ namespace Ordisoftware.HebrewCalendar
           var date = SQLiteUtility.GetDate(row.Date);
           dateStart = date.AddDays(delta).AddHours(Convert.ToInt32(timesStart[0]))
                       .AddMinutes(Convert.ToInt32(timesStart[1]))
-                      .AddMinutes(-Program.Settings.RemindShabatEveryMinutes);
+                      .AddMinutes((double)-Program.Settings.RemindShabatEveryMinutes);
           dateEnd = date.AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
         };
         if ( Program.Settings.RemindShabatOnlyLight )
           initTimes(row.Sunrise, row.Sunset, 0);
         else
           initTimes(rowPrevious.Sunset, row.Sunset, -1);
-        var dateTrigger = dateStart.Value.AddHours(-Program.Settings.RemindShabatHoursBefore);
-        if ( dateNow < dateTrigger || dateNow >= dateEnd.Value.AddMinutes(-Program.Settings.RemindShabatEveryMinutes) )
+        var dateTrigger = dateStart.Value.AddHours((double)-Program.Settings.RemindShabatHoursBefore);
+        if ( dateNow < dateTrigger || dateNow >= dateEnd.Value.AddMinutes((double)-Program.Settings.RemindShabatEveryMinutes) )
         {
           ReminderForm.LastShabatReminded = null;
           if ( ReminderForm.ShabatForm != null )
@@ -79,7 +79,7 @@ namespace Ordisoftware.HebrewCalendar
         else
         if ( ReminderForm.LastShabatReminded.HasValue )
         {
-          if ( dateNow < ReminderForm.LastShabatReminded.Value.AddMinutes(Program.Settings.RemindShabatEveryMinutes) )
+          if ( dateNow < ReminderForm.LastShabatReminded.Value.AddMinutes((double)Program.Settings.RemindShabatEveryMinutes) )
             return;
           else
             ReminderForm.LastShabatReminded = dateNow;

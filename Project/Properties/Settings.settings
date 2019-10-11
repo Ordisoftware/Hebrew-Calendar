@@ -27,7 +27,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="FontName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Courier New</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="FontSize" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10</Value>
@@ -79,8 +79,8 @@
     <Setting Name="StartupHide" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ReminderInterval" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">14</Value>
+    <Setting Name="ReminderInterval" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">7</Value>
     </Setting>
     <Setting Name="ReminderEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -113,7 +113,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindSoukotD1" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindSoukotD8" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -145,10 +145,10 @@
     <Setting Name="RemindShabatOnlyLight" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="RemindShabatHoursBefore" Type="System.Int32" Scope="User">
+    <Setting Name="RemindShabatHoursBefore" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">6</Value>
     </Setting>
-    <Setting Name="RemindShabatEveryMinutes" Type="System.Int32" Scope="User">
+    <Setting Name="RemindShabatEveryMinutes" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">15</Value>
     </Setting>
     <Setting Name="CheckUpdateAtStartup" Type="System.Boolean" Scope="User">
@@ -157,11 +157,44 @@
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="RemindCelebrationHoursBefore" Type="System.Int32" Scope="User">
+    <Setting Name="RemindCelebrationHoursBefore" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">6</Value>
     </Setting>
-    <Setting Name="RemindCelebrationEveryMinutes" Type="System.Int32" Scope="User">
+    <Setting Name="RemindCelebrationEveryMinutes" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayNewYearD1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayNewYearD10" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayPessahD1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayPessahD7" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayChavouotDiet" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayChavouot1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayChavouot2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayYomTerouah" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayYomHaKipourim" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDaySoukotD1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDaySoukotD8" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

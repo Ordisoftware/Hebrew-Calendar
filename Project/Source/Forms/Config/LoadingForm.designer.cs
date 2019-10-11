@@ -81,8 +81,8 @@
     #endregion
 
     private System.Windows.Forms.Panel PanelMain;
-    private System.Windows.Forms.Label LabelApplicationName;
     internal System.Windows.Forms.ProgressBar ProgressBar;
     internal System.Windows.Forms.Label LabelOperation;
+    internal System.Windows.Forms.Label LabelApplicationName;
   }
 }

@@ -74,7 +74,7 @@ namespace Ordisoftware.HebrewCalendar
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
       string str = MainForm.Instance.CalendarText.Text;
-      foreach ( var f in ReminderForm.Forms.ToList() )
+      foreach ( var f in ReminderForm.RemindCelebrationForms.ToList() )
       {
         f.Close();
       }

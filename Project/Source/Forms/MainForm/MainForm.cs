@@ -282,6 +282,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( DisplayManager.QueryYesNo(Translations.RegenerateCalendar.GetLang()) )
           ActionGenerate.PerformClick();
       CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
+      ReminderForm.ClearLists();
       TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
       Timer_Tick(null, null);
     }
@@ -383,9 +384,8 @@ namespace Ordisoftware.HebrewCalendar
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
           if ( !DisplayManager.QueryYesNo(Translations.ReplaceCalendar.GetLang()) )
             return;
-        ReminderForm.CelebrationsReminded.Clear();
-        ReminderForm.LastShabatReminded = null;
-        foreach ( var f in ReminderForm.Forms.ToList() ) f.Close();
+        ReminderForm.ClearLists();
+        foreach ( var f in ReminderForm.RemindCelebrationForms.ToList() ) f.Close();
         if ( ReminderForm.ShabatForm != null )
         {
           ReminderForm.ShabatForm.Close();

@@ -25,7 +25,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       this.CenterToMainForm();
-      LabelApplicationName.Text = AboutBox.Instance.AssemblyTitle;
     }
 
   }

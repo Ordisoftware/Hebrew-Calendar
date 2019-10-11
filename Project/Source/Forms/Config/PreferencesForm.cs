@@ -48,11 +48,6 @@ namespace Ordisoftware.HebrewCalendar
           || lang != Program.Settings.Language;
     }
 
-    /// <summary>
-    /// Indicate the main form.
-    /// </summary>
-    static private MainForm MainForm;
-
     public int OldShabatDay { get; private set; }
     public float OldLatitude { get; private set; }
     public float OldLongitude { get; private set; }
@@ -67,7 +62,6 @@ namespace Ordisoftware.HebrewCalendar
       LoadDays();
       LoadEvents();
       LoadFonts();
-      BindingSettings.DataSource = Program.Settings;
     }
 
     /// <summary>
@@ -91,6 +85,8 @@ namespace Ordisoftware.HebrewCalendar
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.Latitude;
       OldLongitude = Program.Settings.Longitude;
+      EditGPSLatitude.Text = Convert.ToString(OldLatitude);
+      EditGPSLongitude.Text = Convert.ToString(OldLongitude);
       switch ( Program.Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
@@ -100,6 +96,8 @@ namespace Ordisoftware.HebrewCalendar
           SelectOpenNavigationForm.Select();
           break;
       }
+      EditRemindShabat_ValueChanged(null, null);
+      EditTimerEnabled_CheckedChanged(null, null);
       ActiveControl = EditShabatDay;
     }
 
@@ -126,6 +124,15 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
+      for ( int index = 0; index < EditEventsDay.Items.Count; index++ )
+        try
+        {
+          string name = "TorahEventDayRemind" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
+          Program.Settings[name] = EditEventsDay.GetItemChecked(index);
+        }
+        catch
+        {
+        }
       Program.Settings.NavigateTopColor = PanelTopColor.BackColor;
       Program.Settings.NavigateMiddleColor = PanelMiddleColor.BackColor;
       Program.Settings.NavigateBottomColor = PanelBottomColor.BackColor;
@@ -136,6 +143,8 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.SeasonEventColor = PanelSeasonEventColor.BackColor;
       Program.Settings.MoonEventColor = PanelMoonEventColor.BackColor;
       Program.Settings.FullMoonColor = PanelFullMoonColor.BackColor;
+      Program.Settings.Latitude = (float)Convert.ToDouble(EditGPSLatitude.Text);
+      Program.Settings.Longitude = (float)Convert.ToDouble(EditGPSLongitude.Text);
       Program.Settings.Store();
     }
 
@@ -168,7 +177,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( control == null ) return;
       foreach ( Binding binding in control.DataBindings )
         binding.WriteValue();
-      MainForm.UpdateTextCalendar();
+      MainForm.Instance.UpdateTextCalendar();
     }
 
     /// <summary>
@@ -181,7 +190,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = PanelBackColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelBackColor.BackColor = DialogColor.Color;
-      MainForm.CalendarText.BackColor = DialogColor.Color;
+      MainForm.Instance.CalendarText.BackColor = DialogColor.Color;
     }
 
     /// <summary>
@@ -194,7 +203,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = PanelTextColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelTextColor.BackColor = DialogColor.Color;
-      MainForm.CalendarText.ForeColor = DialogColor.Color;
+      MainForm.Instance.CalendarText.ForeColor = DialogColor.Color;
     }
 
     /// <summary>
@@ -414,6 +423,9 @@ namespace Ordisoftware.HebrewCalendar
             int index = EditEvents.Items.Add(item);
             if ( (bool)Program.Settings["TorahEventRemind" + type.ToString()] )
               EditEvents.SetItemChecked(index, true);
+            index = EditEventsDay.Items.Add(item);
+            if ( (bool)Program.Settings["TorahEventRemindDay" + type.ToString()] )
+              EditEventsDay.SetItemChecked(index, true);
           }
           catch
           {
