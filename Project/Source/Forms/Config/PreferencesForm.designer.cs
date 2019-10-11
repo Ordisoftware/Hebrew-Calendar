@@ -72,10 +72,14 @@
       this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
       this.EditStartupHide = new System.Windows.Forms.CheckBox();
       this.GroupBoxReminder = new System.Windows.Forms.GroupBox();
+      this.LabelRemindCelebrationHoursBefore = new System.Windows.Forms.Label();
+      this.LabelRemindCelebrationEveryMinutes = new System.Windows.Forms.Label();
       this.EditEvents = new System.Windows.Forms.CheckedListBox();
       this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
+      this.EditRemindCelebrationHoursBefore = new System.Windows.Forms.NumericUpDown();
       this.EditTimerEnabled = new System.Windows.Forms.CheckBox();
+      this.EditRemindCelebrationEveryMinutes = new System.Windows.Forms.NumericUpDown();
       this.EditShowMonthDayToolTip = new System.Windows.Forms.CheckBox();
       this.GroupBoxCalendar = new System.Windows.Forms.GroupBox();
       this.ActionRestoreCalendarColors = new System.Windows.Forms.LinkLabel();
@@ -90,10 +94,10 @@
       this.LabelColorToday = new System.Windows.Forms.Label();
       this.PanelCurrentDayColor = new System.Windows.Forms.Panel();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
-      this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
+      this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
+      this.BindingSettings = new System.Windows.Forms.BindingSource(this.components);
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
@@ -107,6 +111,8 @@
       this.GroupBoxTrayIcon.SuspendLayout();
       this.GroupBoxReminder.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       this.GroupBoxCalendar.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.BindingSettings)).BeginInit();
@@ -158,7 +164,7 @@
       resources.ApplyResources(this.EditShabatDay, "EditShabatDay");
       this.EditShabatDay.FormattingEnabled = true;
       this.EditShabatDay.Name = "EditShabatDay";
-      this.EditShabatDay.SelectedIndexChanged += new System.EventHandler(this.remindShabat_ValueChanged);
+      this.EditShabatDay.SelectedIndexChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
       // 
       // LabelFontName
       // 
@@ -294,7 +300,7 @@
       this.EditRemindShabatOnlyLight.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BindingSettings, "RemindShabatOnlyLight", true));
       this.EditRemindShabatOnlyLight.Name = "EditRemindShabatOnlyLight";
       this.EditRemindShabatOnlyLight.UseVisualStyleBackColor = true;
-      this.EditRemindShabatOnlyLight.CheckedChanged += new System.EventHandler(this.remindShabat_ValueChanged);
+      this.EditRemindShabatOnlyLight.CheckedChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
       // 
       // EditRemindShabatHoursBefore
       // 
@@ -316,7 +322,6 @@
             0,
             0,
             0});
-      this.EditRemindShabatHoursBefore.ValueChanged += new System.EventHandler(this.remindShabat_ValueChanged);
       // 
       // EditRemindShabatEveryMinutes
       // 
@@ -338,7 +343,6 @@
             0,
             0,
             0});
-      this.EditRemindShabatEveryMinutes.ValueChanged += new System.EventHandler(this.remindShabat_ValueChanged);
       // 
       // EditRemindShabat
       // 
@@ -346,7 +350,7 @@
       this.EditRemindShabat.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.BindingSettings, "RemindShabat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditRemindShabat.Name = "EditRemindShabat";
       this.EditRemindShabat.UseVisualStyleBackColor = true;
-      this.EditRemindShabat.CheckedChanged += new System.EventHandler(this.remindShabat_ValueChanged);
+      this.EditRemindShabat.CheckedChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
       // 
       // GroupBoxNavigation
       // 
@@ -457,13 +461,27 @@
       // 
       // GroupBoxReminder
       // 
+      resources.ApplyResources(this.GroupBoxReminder, "GroupBoxReminder");
+      this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationHoursBefore);
+      this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationEveryMinutes);
       this.GroupBoxReminder.Controls.Add(this.EditEvents);
       this.GroupBoxReminder.Controls.Add(this.EditTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.LabelTimerInterval);
+      this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationHoursBefore);
       this.GroupBoxReminder.Controls.Add(this.EditTimerEnabled);
-      resources.ApplyResources(this.GroupBoxReminder, "GroupBoxReminder");
+      this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationEveryMinutes);
       this.GroupBoxReminder.Name = "GroupBoxReminder";
       this.GroupBoxReminder.TabStop = false;
+      // 
+      // LabelRemindCelebrationHoursBefore
+      // 
+      resources.ApplyResources(this.LabelRemindCelebrationHoursBefore, "LabelRemindCelebrationHoursBefore");
+      this.LabelRemindCelebrationHoursBefore.Name = "LabelRemindCelebrationHoursBefore";
+      // 
+      // LabelRemindCelebrationEveryMinutes
+      // 
+      resources.ApplyResources(this.LabelRemindCelebrationEveryMinutes, "LabelRemindCelebrationEveryMinutes");
+      this.LabelRemindCelebrationEveryMinutes.Name = "LabelRemindCelebrationEveryMinutes";
       // 
       // EditEvents
       // 
@@ -488,6 +506,24 @@
       resources.ApplyResources(this.LabelTimerInterval, "LabelTimerInterval");
       this.LabelTimerInterval.Name = "LabelTimerInterval";
       // 
+      // EditRemindCelebrationHoursBefore
+      // 
+      this.EditRemindCelebrationHoursBefore.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "RemindCelebrationHoursBefore", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditRemindCelebrationHoursBefore, "EditRemindCelebrationHoursBefore");
+      this.EditRemindCelebrationHoursBefore.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+      this.EditRemindCelebrationHoursBefore.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.EditRemindCelebrationHoursBefore.Name = "EditRemindCelebrationHoursBefore";
+      this.EditRemindCelebrationHoursBefore.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.RemindCelebrationHoursBefore;
+      this.EditRemindCelebrationHoursBefore.ValueChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
+      // 
       // EditTimerEnabled
       // 
       resources.ApplyResources(this.EditTimerEnabled, "EditTimerEnabled");
@@ -495,6 +531,24 @@
       this.EditTimerEnabled.Name = "EditTimerEnabled";
       this.EditTimerEnabled.UseVisualStyleBackColor = true;
       this.EditTimerEnabled.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
+      // 
+      // EditRemindCelebrationEveryMinutes
+      // 
+      this.EditRemindCelebrationEveryMinutes.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "RemindCelebrationEveryMinutes", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditRemindCelebrationEveryMinutes, "EditRemindCelebrationEveryMinutes");
+      this.EditRemindCelebrationEveryMinutes.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+      this.EditRemindCelebrationEveryMinutes.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      this.EditRemindCelebrationEveryMinutes.Name = "EditRemindCelebrationEveryMinutes";
+      this.EditRemindCelebrationEveryMinutes.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.RemindCelebrationEveryMinutes;
+      this.EditRemindCelebrationEveryMinutes.ValueChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
       // 
       // EditShowMonthDayToolTip
       // 
@@ -595,27 +649,14 @@
       // 
       // GroupBoxSystem
       // 
+      resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangFR);
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangEN);
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
       this.GroupBoxSystem.Controls.Add(this.EditShowMonthDayToolTip);
-      resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
       this.GroupBoxSystem.TabStop = false;
-      // 
-      // EditCheckUpdateAtStartup
-      // 
-      resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
-      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.CheckUpdateAtStartup;
-      this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
-      this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
-      // 
-      // BindingSettings
-      // 
-      this.BindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
       // 
       // ActionSelectLangFR
       // 
@@ -634,6 +675,19 @@
       this.ActionSelectLangEN.Name = "ActionSelectLangEN";
       this.ActionSelectLangEN.UseVisualStyleBackColor = true;
       this.ActionSelectLangEN.Click += new System.EventHandler(this.ActionSelectLangEN_Click);
+      // 
+      // EditCheckUpdateAtStartup
+      // 
+      resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
+      this.EditCheckUpdateAtStartup.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.CheckUpdateAtStartup;
+      this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditCheckUpdateAtStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "CheckUpdateAtStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
+      this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
+      // 
+      // BindingSettings
+      // 
+      this.BindingSettings.DataSource = typeof(System.Configuration.ApplicationSettingsBase);
       // 
       // PreferencesForm
       // 
@@ -674,6 +728,8 @@
       this.GroupBoxReminder.ResumeLayout(false);
       this.GroupBoxReminder.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).EndInit();
       this.GroupBoxCalendar.ResumeLayout(false);
       this.GroupBoxCalendar.PerformLayout();
       this.GroupBoxSystem.ResumeLayout(false);
@@ -745,5 +801,9 @@
     private System.Windows.Forms.CheckBox EditCheckUpdateAtStartup;
     private System.Windows.Forms.Button ActionSelectLangFR;
     private System.Windows.Forms.Button ActionSelectLangEN;
+    private System.Windows.Forms.Label LabelRemindCelebrationHoursBefore;
+    private System.Windows.Forms.Label LabelRemindCelebrationEveryMinutes;
+    private System.Windows.Forms.NumericUpDown EditRemindCelebrationHoursBefore;
+    private System.Windows.Forms.NumericUpDown EditRemindCelebrationEveryMinutes;
   }
 }

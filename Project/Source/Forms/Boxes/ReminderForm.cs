@@ -25,11 +25,19 @@ namespace Ordisoftware.HebrewCalendar
 
     static internal readonly List<Form> Forms = new List<Form>();
 
+    static internal List<string> CelebrationsReminded = new List<string>();
+
     static internal DateTime? LastShabatReminded = null;
 
     static internal ReminderForm ShabatForm;
 
-    static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row, bool isShabat, string time1, string time2)
+    static internal Dictionary<TorahEventType, DateTime?> LastCelebrationReminded
+      = new Dictionary<TorahEventType, DateTime?>();
+
+    static internal Dictionary<TorahEventType, ReminderForm> CelebrationsForm
+      = new Dictionary<TorahEventType, ReminderForm>();
+
+    static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row, bool isShabat, TorahEventType torahevent, string time1, string time2)
     {
       ReminderForm form = null;
       if ( isShabat && ShabatForm != null )
@@ -38,6 +46,17 @@ namespace Ordisoftware.HebrewCalendar
         System.Threading.Thread.Sleep(1000);
         ShabatForm.Show();
         ShabatForm.BringToFront();
+        return;
+      }
+      else
+      if ( torahevent != TorahEventType.None )
+      {
+        if ( CelebrationsReminded.Contains(row.Date) )
+          CelebrationsReminded.Remove(row.Date);
+        CelebrationsForm[torahevent].Hide();
+        System.Threading.Thread.Sleep(1000);
+        CelebrationsForm[torahevent].Show();
+        CelebrationsForm[torahevent].BringToFront();
         return;
       }
       else
@@ -68,6 +87,9 @@ namespace Ordisoftware.HebrewCalendar
       form.IsShabat = isShabat;
       if ( isShabat )
         ShabatForm = form;
+      else
+      if ( torahevent != TorahEventType.None )
+        CelebrationsForm[torahevent] = form;
       else
         Forms.Add(form);
       form.Show();

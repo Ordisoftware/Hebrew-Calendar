@@ -29,15 +29,15 @@ namespace Ordisoftware.HebrewCalendar
         var dateStart = DateTime.Today;
         var dateEnd = dateStart.AddDays(Program.Settings.ReminderInterval);
         var row = ( from day in LunisolarCalendar.LunisolarDays
-                    where SQLiteUtility.GetDate(day.Date) >= dateStart
-                       && SQLiteUtility.GetDate(day.Date) <= dateEnd
+                    where !ReminderForm.CelebrationsReminded.Contains(day.Date)
                        && check((TorahEventType)day.TorahEvents)
-                       && !Reminded.Contains(day.Date)
+                       && SQLiteUtility.GetDate(day.Date) >= dateStart
+                       && SQLiteUtility.GetDate(day.Date) < dateEnd
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
-        Reminded.Add(row.Date);
+        ReminderForm.CelebrationsReminded.Add(row.Date);
         var rowPrevious = LunisolarCalendar.LunisolarDays.FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
-        ReminderForm.Run(row, false, rowPrevious.Sunset, row.Sunset);
+        ReminderForm.Run(row, false, TorahEventType.None, rowPrevious.Sunset, row.Sunset);
       }
       catch
       {

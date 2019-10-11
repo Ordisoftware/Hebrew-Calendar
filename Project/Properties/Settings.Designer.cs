@@ -620,5 +620,29 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["Language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public int RemindCelebrationHoursBefore {
+            get {
+                return ((int)(this["RemindCelebrationHoursBefore"]));
+            }
+            set {
+                this["RemindCelebrationHoursBefore"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        public int RemindCelebrationEveryMinutes {
+            get {
+                return ((int)(this["RemindCelebrationEveryMinutes"]));
+            }
+            set {
+                this["RemindCelebrationEveryMinutes"] = value;
+            }
+        }
     }
 }

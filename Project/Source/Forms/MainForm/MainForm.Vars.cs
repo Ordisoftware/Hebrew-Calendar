@@ -55,11 +55,6 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
-    /// <summary>
-    /// Indicate list of events reminded.
-    /// </summary>
-    private List<string> Reminded = new List<string>();
-
   }
 
 }

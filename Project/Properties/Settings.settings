@@ -157,5 +157,11 @@
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="RemindCelebrationHoursBefore" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="RemindCelebrationEveryMinutes" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

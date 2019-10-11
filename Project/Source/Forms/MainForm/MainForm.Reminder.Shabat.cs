@@ -86,7 +86,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
           ReminderForm.LastShabatReminded = dateNow;
-        ReminderForm.Run(row, true, timeStart, timeEnd);
+        ReminderForm.Run(row, true, TorahEventType.None, timeStart, timeEnd);
       }
       catch
       {

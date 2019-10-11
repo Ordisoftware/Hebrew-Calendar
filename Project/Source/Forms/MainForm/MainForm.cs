@@ -383,7 +383,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
           if ( !DisplayManager.QueryYesNo(Translations.ReplaceCalendar.GetLang()) )
             return;
-        Reminded.Clear();
+        ReminderForm.CelebrationsReminded.Clear();
         ReminderForm.LastShabatReminded = null;
         foreach ( var f in ReminderForm.Forms.ToList() ) f.Close();
         if ( ReminderForm.ShabatForm != null )
@@ -580,6 +580,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( active != 0 ) return;
       if ( IsForegroundFullScreen() ) return;
       if ( Program.Settings.ReminderEnabled ) CheckEvents();
+      if ( Program.Settings.ReminderEnabled ) CheckCelebrationDay();
       if ( Program.Settings.RemindShabat ) CheckShabat();
     }
 

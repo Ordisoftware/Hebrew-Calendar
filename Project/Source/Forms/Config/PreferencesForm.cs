@@ -88,8 +88,6 @@ namespace Ordisoftware.HebrewCalendar
       PanelSeasonEventColor.BackColor = Program.Settings.SeasonEventColor;
       PanelMoonEventColor.BackColor = Program.Settings.MoonEventColor;
       PanelFullMoonColor.BackColor = Program.Settings.FullMoonColor;
-
-
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.Latitude;
       OldLongitude = Program.Settings.Longitude;
@@ -369,16 +367,13 @@ namespace Ordisoftware.HebrewCalendar
       UpdateCalendarMonth();
     }
 
-    private void remindShabat_ValueChanged(object sender, EventArgs e)
+    private void EditRemindShabat_ValueChanged(object sender, EventArgs e)
     {
-      if ( sender == EditRemindShabat )
-      {
-        EditRemindShabatOnlyLight.Enabled = EditRemindShabat.Checked;
-        LabelRemindShabatHoursBefore.Enabled = EditRemindShabat.Checked;
-        EditRemindShabatHoursBefore.Enabled = EditRemindShabat.Checked;
-        LabelRemindShabatEveryMinutes.Enabled = EditRemindShabat.Checked;
-        EditRemindShabatEveryMinutes.Enabled = EditRemindShabat.Checked;
-      }
+      EditRemindShabatOnlyLight.Enabled = EditRemindShabat.Checked;
+      LabelRemindShabatHoursBefore.Enabled = EditRemindShabat.Checked;
+      EditRemindShabatHoursBefore.Enabled = EditRemindShabat.Checked;
+      LabelRemindShabatEveryMinutes.Enabled = EditRemindShabat.Checked;
+      EditRemindShabatEveryMinutes.Enabled = EditRemindShabat.Checked;
     }
 
     private void EditTimerEnabled_CheckedChanged(object sender, EventArgs e)
@@ -386,6 +381,10 @@ namespace Ordisoftware.HebrewCalendar
       LabelTimerInterval.Enabled = EditTimerEnabled.Checked;
       EditTimerInterval.Enabled = EditTimerEnabled.Checked;
       EditEvents.Enabled = EditTimerEnabled.Checked;
+      LabelRemindCelebrationHoursBefore.Enabled = EditTimerEnabled.Checked;
+      EditRemindCelebrationHoursBefore.Enabled = EditTimerEnabled.Checked;
+      LabelRemindCelebrationEveryMinutes.Enabled = EditTimerEnabled.Checked;
+      EditRemindCelebrationEveryMinutes.Enabled = EditTimerEnabled.Checked;
     }
 
     /// <summary>
