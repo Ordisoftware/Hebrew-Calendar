@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-08 </edited>
+/// <edited> 2019-10 </edited>
 using System;
 using System.Data;
 using System.Linq;
