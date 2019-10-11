@@ -53,7 +53,11 @@ namespace Ordisoftware.HebrewCalendar
           RemindCelebrationDayForms[(TorahEventType)index].Close();
       RemindCelebrationDayForms.Clear();
       LastShabatReminded = null;
-      ShabatForm = null;
+      if ( ShabatForm != null )
+      {
+        ShabatForm.Close();
+        ShabatForm = null;
+      }
     }
 
     static ReminderForm()
@@ -170,6 +174,23 @@ namespace Ordisoftware.HebrewCalendar
       LabelNextCelebrationDate_LinkClicked(LabelNextCelebrationDate, null);
     }
 
+    private void ReminderForm_Shown(object sender, EventArgs e)
+    {
+      var list = new List<Form>();
+      foreach ( var item in RemindCelebrationForms )
+        list.Add(item);
+      foreach ( var item in RemindCelebrationDayForms )
+        list.Add(item.Value);
+      if ( ShabatForm != null )
+        list.Add(ShabatForm);
+      int dx = 0;
+      foreach ( var item in list )
+      {
+        item.Location = new Point(item.Left, item.Top - dx);
+        dx += item.Height;
+      }
+
+    }
   }
 
 }

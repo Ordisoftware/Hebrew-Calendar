@@ -32,8 +32,8 @@ namespace Ordisoftware.HebrewCalendar
         string strDate = SQLiteUtility.GetDate(today);
         var row = ( from day in LunisolarCalendar.LunisolarDays
                     where (TorahEventType)day.TorahEvents != TorahEventType.None
-                       && check((TorahEventType)day.TorahEvents)
                        && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDate)
+                       && check((TorahEventType)day.TorahEvents)
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
         var rowPrevious = LunisolarCalendar.LunisolarDays.FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));

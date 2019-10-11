@@ -31,9 +31,9 @@ namespace Ordisoftware.HebrewCalendar
         var dateEnd = dateStart.AddDays((int)Program.Settings.ReminderInterval);
         var row = ( from day in LunisolarCalendar.LunisolarDays
                     where !ReminderForm.RemindCelebrationDates.Contains(day.Date)
-                       && check((TorahEventType)day.TorahEvents)
                        && SQLiteUtility.GetDate(day.Date) >= dateStart
                        && SQLiteUtility.GetDate(day.Date) < dateEnd
+                       && check((TorahEventType)day.TorahEvents)
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
         ReminderForm.RemindCelebrationDates.Add(row.Date);
