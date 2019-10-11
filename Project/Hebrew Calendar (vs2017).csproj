@@ -138,6 +138,9 @@
     <Compile Include="Source\Forms\Config\LoadingForm.designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.DB.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.CelebrationDay.cs">
       <SubType>Form</SubType>
     </Compile>

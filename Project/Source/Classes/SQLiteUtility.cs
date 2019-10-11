@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
 using System;
-using System.Data.Odbc;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -65,54 +64,6 @@ namespace Ordisoftware.HebrewCalendar
       return time.HasValue ? time.Value.Hours.ToString("00") + ":" + time.Value.Minutes.ToString("00") : "";
     }
 
-    /// <summary>
-    /// Check if tables exists or create them.
-    /// </summary>
-    static public void CreateDatabaseIfNotExists()
-    {
-      var connection = new OdbcConnection(Program.Settings.ConnectionString);
-      connection.Open();
-      try
-      {
-        var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                            "WHERE type = 'table' AND name = 'LunisolarDays'", connection);
-        int result = (int)cmdCheckTable.ExecuteScalar();
-        if ( result == 0 )
-        {
-          var cmdCreateTable = new OdbcCommand(@"CREATE TABLE LunisolarDays (
-                                                 Date text,
-                                                 LunarMonth integer,
-                                                 LunarDay integer,
-                                                 Sunrise text,
-                                                 Sunset text,
-                                                 Moonrise text,
-                                                 Moonset text,
-                                                 MoonriseType integer,
-                                                 IsNewMoon integer,
-                                                 IsFullMoon integer,
-                                                 MoonPhase integer,
-                                                 SeasonChange integer,
-                                                 TorahEvents integer,
-                                                 PRIMARY KEY('Date')
-                                               );", connection);
-          cmdCreateTable.ExecuteNonQuery();
-        }
-        cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                        "WHERE type = 'table' AND name = 'Report'", connection);
-        result = (int)cmdCheckTable.ExecuteScalar();
-        if ( result == 0 )
-        {
-          var cmdCreateTable = new OdbcCommand(@"CREATE TABLE Report (
-                                                   Content text
-                                                 );", connection);
-          cmdCreateTable.ExecuteNonQuery();
-        }
-      }
-      finally
-      {
-        connection.Close();
-      }
-    }
   }
 
 }

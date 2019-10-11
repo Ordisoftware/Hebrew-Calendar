@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewCalendar
       Enabled = false;
       try
       {
-        SQLiteUtility.CreateDatabaseIfNotExists();
+        CreateDatabaseIfNotExists();
         var connection = new OdbcConnection(Program.Settings.ConnectionString);
         connection.Open();
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
