@@ -24,6 +24,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void CheckCelebrationDay()
     {
+      var events = Enum.GetValues(typeof(TorahEventType));
       try
       {
         var today = DateTime.Today;
@@ -88,7 +89,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       bool check(TorahEventType item)
       {
-        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
+        foreach ( TorahEventType type in events )
           if ( type != TorahEventType.None )
             try
             {

@@ -128,6 +128,7 @@ namespace Ordisoftware.HebrewCalendar
         RemindCelebrationForms.Add(form);
       form.Show();
       form.BringToFront();
+      Application.DoEvents();
     }
 
     protected override bool ShowWithoutActivation { get { return true; } }
