@@ -179,10 +179,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindDayChavouot1" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindDayChavouot2" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindDayYomTerouah" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
