@@ -101,6 +101,7 @@
       // LabelTorahNextDateValue
       // 
       resources.ApplyResources(this.LabelTorahNextDateValue, "LabelTorahNextDateValue");
+      this.LabelTorahNextDateValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelTorahNextDateValue.Name = "LabelTorahNextDateValue";
       this.LabelTorahNextDateValue.TabStop = true;
       this.LabelTorahNextDateValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelTorahNextDateValue_LinkClicked);

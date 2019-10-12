@@ -72,6 +72,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
+      InitializeDialogsDirectory();
       UpdateTextCalendar();
       UpdateButtons();
       MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
@@ -119,6 +120,15 @@ namespace Ordisoftware.HebrewCalendar
     {
       AllowClose = true;
       Close();
+    }
+
+    /// <summary>
+    /// Set the initial directories of dialog boxes.
+    /// </summary>
+    internal void InitializeDialogsDirectory()
+    {
+      SaveCSVDialog.InitialDirectory = Program.UserDocumentsFolderPath;
+      SaveFileDialog.InitialDirectory = Program.UserDocumentsFolderPath;
     }
 
     /// <summary>

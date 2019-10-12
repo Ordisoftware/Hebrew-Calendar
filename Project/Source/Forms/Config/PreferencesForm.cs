@@ -179,6 +179,13 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.Store();
     }
 
+    private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      // todo ask city
+      string city = "Paris";
+      Program.RunShell("https://www.google.com/search?q=latitude+longitude+" + city);
+    }
+
     /// <summary>
     /// Event handler. Called by ActionUsePersonalShabat for click event.
     /// </summary>

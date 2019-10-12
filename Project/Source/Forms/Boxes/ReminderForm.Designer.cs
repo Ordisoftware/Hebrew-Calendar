@@ -47,6 +47,7 @@
       // 
       resources.ApplyResources(this.LabelNextCelebrationDate, "LabelNextCelebrationDate");
       this.LabelNextCelebrationDate.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.LabelNextCelebrationDate.LinkColor = System.Drawing.Color.Navy;
       this.LabelNextCelebrationDate.Name = "LabelNextCelebrationDate";
       this.LabelNextCelebrationDate.TabStop = true;
       this.LabelNextCelebrationDate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelNextCelebrationDate_LinkClicked);
@@ -70,6 +71,7 @@
       // LabelHours
       // 
       resources.ApplyResources(this.LabelHours, "LabelHours");
+      this.LabelHours.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
       this.LabelHours.Name = "LabelHours";
       // 
       // ReminderForm

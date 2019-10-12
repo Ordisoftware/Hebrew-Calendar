@@ -154,6 +154,7 @@
       // 
       // SaveFileDialog
       // 
+      this.SaveFileDialog.FileName = "Hebrew Calendar.txt";
       resources.ApplyResources(this.SaveFileDialog, "SaveFileDialog");
       // 
       // PanelMain
@@ -886,6 +887,7 @@
       // 
       // SaveCSVDialog
       // 
+      this.SaveCSVDialog.FileName = "Hebrew Calendar.csv";
       resources.ApplyResources(this.SaveCSVDialog, "SaveCSVDialog");
       // 
       // TrayIcon

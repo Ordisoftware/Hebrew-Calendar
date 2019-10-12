@@ -109,6 +109,11 @@ namespace Ordisoftware.HebrewCalendar
       form.Show();
       form.BringToFront();
       Application.DoEvents();
+      if ( MainForm.Instance.Visible )
+      {
+        MainForm.Instance.Focus();
+        MainForm.Instance.BringToFront();
+      }
     }
 
     protected override bool ShowWithoutActivation { get { return true; } }
