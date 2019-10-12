@@ -88,7 +88,8 @@ Source: ..\Bin\Release\*.dll; DestDir: {app}\Bin; Flags: ignoreversion recursesu
 Source: ..\Bin\Release\*.pdb; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Bin\Release\*.xml; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Help\*; DestDir: {app}\Help; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.bak, *.suo, *.user, obj
+Source: ..\Documents\*; DestDir: {app}\Documents; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.bak, *.suo, *.user, obj, .vs
 DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite
 
 [Icons]

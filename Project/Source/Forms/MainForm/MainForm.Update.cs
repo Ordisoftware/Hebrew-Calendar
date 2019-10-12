@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewCalendar
         ActionStop.Enabled = IsGenerating;
         MenuView.Enabled = !IsGenerating;
         ActionPreferences.Enabled = !IsGenerating;
-        if ( LoadingForm.Visible )
+        if ( LoadingForm != null && LoadingForm.Visible )
           LoadingForm.Hide();
         Refresh();
       }
