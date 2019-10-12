@@ -513,6 +513,8 @@ namespace Ordisoftware.HebrewCalendar
       Program.ApplyCurrentLanguage();
       UpdateLanguagesButtons();
       LanguageChanged = true;
+      EditGPSLatitude.Text = "0";
+      EditGPSLongitude.Text = "0";
       Close();
     }
 
@@ -522,6 +524,8 @@ namespace Ordisoftware.HebrewCalendar
       Program.ApplyCurrentLanguage();
       UpdateLanguagesButtons();
       LanguageChanged = true;
+      EditGPSLatitude.Text = "0";
+      EditGPSLongitude.Text = "0";
       Close();
     }
 

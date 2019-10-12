@@ -117,30 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="EditYearLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 44</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LabelYearLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelYearLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 46</value>
-  </data>
-  <data name="ButtonOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 2</value>
-  </data>
-  <data name="ButtonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 2</value>
-  </data>
   <data name="ButtonCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 28</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelCountry.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="LabelCountry.Text" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="LabelCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="LabelCity.Text" xml:space="preserve">
+    <value>Ville</value>
+  </data>
+  <data name="LabelFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 13</value>
+  </data>
+  <data name="LabelFilter.Text" xml:space="preserve">
+    <value>Entrez un pays et une ville séparés par une virgule</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Selectionnez la ville</value>
+    <value>Sélectionnez la ville</value>
   </data>
 </root>

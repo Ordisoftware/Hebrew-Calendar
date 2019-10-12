@@ -117,268 +117,256 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ButtonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ButtonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ButtonOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 2</value>
-  </data>
-  <data name="ButtonOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ButtonOk.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ButtonOk.Text" xml:space="preserve">
-    <value>Ok</value>
-  </data>
-  <data name="&gt;&gt;ButtonOk.Name" xml:space="preserve">
-    <value>ButtonOk</value>
-  </data>
-  <data name="&gt;&gt;ButtonOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonOk.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ButtonOk.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;ButtonCancel.Name" xml:space="preserve">
     <value>ButtonCancel</value>
   </data>
+  <data name="ButtonOk.Text" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ListBoxCountries.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 34</value>
+  </data>
+  <data name="&gt;&gt;EditFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ListBoxCountries.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 368</value>
+  </data>
+  <data name="ButtonOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="&gt;&gt;LabelCity.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>451, 20</value>
+  </data>
+  <data name="LabelCity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>247, 13</value>
+  </data>
+  <data name="&gt;&gt;ButtonOk.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="LabelFilter.Text" xml:space="preserve">
+    <value>Enter a country and a city seperated by a comma</value>
+  </data>
+  <data name="ButtonCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LabelCountry.Text" xml:space="preserve">
+    <value>Country</value>
+  </data>
   <data name="&gt;&gt;ButtonCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ButtonCancel.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
+  <data name="LabelCountry.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
   </data>
-  <data name="&gt;&gt;ButtonCancel.ZOrder" xml:space="preserve">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ListBoxCities.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelCity.Name" xml:space="preserve">
+    <value>LabelCity</value>
+  </data>
+  <data name="LabelCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 13</value>
+  </data>
+  <data name="&gt;&gt;LabelFilter.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="&gt;&gt;ListBoxCountries.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 470</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 28</value>
-  </data>
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>52</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+  <data name="&gt;&gt;ButtonCancel.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
   <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="ButtonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ButtonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 2</value>
-  </data>
-  <data name="ButtonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <data name="ButtonCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ButtonCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;ButtonCancel.Name" xml:space="preserve">
-    <value>ButtonCancel</value>
-  </data>
-  <data name="&gt;&gt;ButtonCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonCancel.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ButtonCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ListBoxCountries.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 34</value>
-  </data>
-  <data name="ListBoxCountries.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 368</value>
-  </data>
-  <data name="ListBoxCountries.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
   <data name="&gt;&gt;ListBoxCountries.Name" xml:space="preserve">
     <value>ListBoxCountries</value>
   </data>
-  <data name="&gt;&gt;ListBoxCountries.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ListBoxCountries.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ListBoxCountries.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="ListBoxCities.Location" type="System.Drawing.Point, System.Drawing">
     <value>248, 34</value>
   </data>
-  <data name="ListBoxCities.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 368</value>
+  <data name="&gt;&gt;LabelFilter.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="ListBoxCities.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="ButtonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
   <data name="&gt;&gt;ListBoxCities.Name" xml:space="preserve">
     <value>ListBoxCities</value>
   </data>
+  <data name="LabelFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 13</value>
+  </data>
   <data name="&gt;&gt;ListBoxCities.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="LabelCity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;ButtonOk.Name" xml:space="preserve">
+    <value>ButtonOk</value>
+  </data>
+  <data name="&gt;&gt;LabelCountry.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="LabelCountry.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 13</value>
+  </data>
+  <data name="LabelCity.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
   <data name="&gt;&gt;ListBoxCities.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ButtonOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>305, 2</value>
+  </data>
+  <data name="&gt;&gt;LabelCountry.Name" xml:space="preserve">
+    <value>LabelCountry</value>
+  </data>
+  <data name="&gt;&gt;ButtonOk.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ListBoxCountries.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="EditFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 433</value>
+  </data>
+  <data name="LabelCity.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;LabelCountry.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditFilter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="&gt;&gt;LabelFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 470</value>
+  </data>
+  <data name="&gt;&gt;EditFilter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ButtonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="LabelCountry.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCity.Text" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="&gt;&gt;LabelCountry.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListBoxCountries.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 415</value>
+  </data>
+  <data name="&gt;&gt;LabelFilter.Name" xml:space="preserve">
+    <value>LabelFilter</value>
+  </data>
+  <data name="&gt;&gt;LabelCity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SelectCityForm</value>
+  </data>
+  <data name="ButtonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Select a city</value>
+  </data>
+  <data name="ButtonOk.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LabelCity.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ListBoxCities.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="LabelCountry.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountry.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 13</value>
-  </data>
-  <data name="LabelCountry.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
-  </data>
-  <data name="LabelCountry.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
-  </data>
-  <data name="LabelCountry.Text" xml:space="preserve">
-    <value>Country</value>
-  </data>
-  <data name="&gt;&gt;LabelCountry.Name" xml:space="preserve">
-    <value>LabelCountry</value>
-  </data>
-  <data name="&gt;&gt;LabelCountry.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCountry.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LabelCountry.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LabelCity.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 13</value>
-  </data>
-  <data name="LabelCity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 13</value>
-  </data>
-  <data name="LabelCity.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
-  </data>
-  <data name="LabelCity.Text" xml:space="preserve">
-    <value>City</value>
-  </data>
-  <data name="&gt;&gt;LabelCity.Name" xml:space="preserve">
-    <value>LabelCity</value>
-  </data>
-  <data name="&gt;&gt;LabelCity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCity.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LabelCity.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="EditFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 433</value>
-  </data>
-  <data name="EditFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>451, 20</value>
+  <data name="ListBoxCities.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 368</value>
   </data>
   <data name="EditFilter.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
-  <data name="&gt;&gt;EditFilter.Name" xml:space="preserve">
-    <value>EditFilter</value>
-  </data>
-  <data name="&gt;&gt;EditFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditFilter.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;EditFilter.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
   </data>
   <data name="LabelFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 415</value>
-  </data>
-  <data name="LabelFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 13</value>
-  </data>
-  <data name="LabelFilter.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="LabelFilter.Text" xml:space="preserve">
-    <value>Enter a country and a city separated by a coma</value>
-  </data>
-  <data name="&gt;&gt;LabelFilter.Name" xml:space="preserve">
-    <value>LabelFilter</value>
-  </data>
-  <data name="&gt;&gt;LabelFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelFilter.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LabelFilter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>484, 508</value>
   </data>
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Select city</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SelectCityForm</value>
+  <data name="&gt;&gt;EditFilter.Name" xml:space="preserve">
+    <value>EditFilter</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="LabelCountry.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;ButtonOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ButtonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 2</value>
+  </data>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>464, 28</value>
+  </data>
+  <data name="&gt;&gt;ListBoxCountries.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
