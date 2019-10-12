@@ -181,7 +181,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("48.85")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public float Latitude {
             get {
                 return ((float)(this["Latitude"]));
@@ -193,7 +193,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2.35")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public float Longitude {
             get {
                 return ((float)(this["Longitude"]));
@@ -311,10 +311,10 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("14")]
-        public int ReminderInterval {
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public decimal ReminderInterval {
             get {
-                return ((int)(this["ReminderInterval"]));
+                return ((decimal)(this["ReminderInterval"]));
             }
             set {
                 this["ReminderInterval"] = value;
@@ -443,7 +443,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool TorahEventRemindSoukotD1 {
             get {
                 return ((bool)(this["TorahEventRemindSoukotD1"]));
@@ -576,9 +576,9 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("6")]
-        public int RemindShabatHoursBefore {
+        public decimal RemindShabatHoursBefore {
             get {
-                return ((int)(this["RemindShabatHoursBefore"]));
+                return ((decimal)(this["RemindShabatHoursBefore"]));
             }
             set {
                 this["RemindShabatHoursBefore"] = value;
@@ -588,9 +588,9 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("15")]
-        public int RemindShabatEveryMinutes {
+        public decimal RemindShabatEveryMinutes {
             get {
-                return ((int)(this["RemindShabatEveryMinutes"]));
+                return ((decimal)(this["RemindShabatEveryMinutes"]));
             }
             set {
                 this["RemindShabatEveryMinutes"] = value;
@@ -606,6 +606,174 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
             set {
                 this["CheckUpdateAtStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Language {
+            get {
+                return ((string)(this["Language"]));
+            }
+            set {
+                this["Language"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("12")]
+        public decimal RemindCelebrationHoursBefore {
+            get {
+                return ((decimal)(this["RemindCelebrationHoursBefore"]));
+            }
+            set {
+                this["RemindCelebrationHoursBefore"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        public decimal RemindCelebrationEveryMinutes {
+            get {
+                return ((decimal)(this["RemindCelebrationEveryMinutes"]));
+            }
+            set {
+                this["RemindCelebrationEveryMinutes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorahEventRemindDayNewYearD1 {
+            get {
+                return ((bool)(this["TorahEventRemindDayNewYearD1"]));
+            }
+            set {
+                this["TorahEventRemindDayNewYearD1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorahEventRemindDayNewYearD10 {
+            get {
+                return ((bool)(this["TorahEventRemindDayNewYearD10"]));
+            }
+            set {
+                this["TorahEventRemindDayNewYearD10"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindDayPessahD1 {
+            get {
+                return ((bool)(this["TorahEventRemindDayPessahD1"]));
+            }
+            set {
+                this["TorahEventRemindDayPessahD1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindDayPessahD7 {
+            get {
+                return ((bool)(this["TorahEventRemindDayPessahD7"]));
+            }
+            set {
+                this["TorahEventRemindDayPessahD7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorahEventRemindDayChavouotDiet {
+            get {
+                return ((bool)(this["TorahEventRemindDayChavouotDiet"]));
+            }
+            set {
+                this["TorahEventRemindDayChavouotDiet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorahEventRemindDayChavouot1 {
+            get {
+                return ((bool)(this["TorahEventRemindDayChavouot1"]));
+            }
+            set {
+                this["TorahEventRemindDayChavouot1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorahEventRemindDayChavouot2 {
+            get {
+                return ((bool)(this["TorahEventRemindDayChavouot2"]));
+            }
+            set {
+                this["TorahEventRemindDayChavouot2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindDayYomTerouah {
+            get {
+                return ((bool)(this["TorahEventRemindDayYomTerouah"]));
+            }
+            set {
+                this["TorahEventRemindDayYomTerouah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindDayYomHaKipourim {
+            get {
+                return ((bool)(this["TorahEventRemindDayYomHaKipourim"]));
+            }
+            set {
+                this["TorahEventRemindDayYomHaKipourim"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindDaySoukotD1 {
+            get {
+                return ((bool)(this["TorahEventRemindDaySoukotD1"]));
+            }
+            set {
+                this["TorahEventRemindDaySoukotD1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventRemindDaySoukotD8 {
+            get {
+                return ((bool)(this["TorahEventRemindDaySoukotD8"]));
+            }
+            set {
+                this["TorahEventRemindDaySoukotD8"] = value;
             }
         }
     }

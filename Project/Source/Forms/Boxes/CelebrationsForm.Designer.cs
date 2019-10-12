@@ -1,0 +1,102 @@
+﻿namespace Ordisoftware.HebrewCalendar
+{
+  partial class CelebrationsForm
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
+    {
+      if ( disposing && ( components != null ) )
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
+
+    #region Windows Form Designer generated code
+
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CelebrationsForm));
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.buttonClose = new System.Windows.Forms.Button();
+      this.ListView = new System.Windows.Forms.ListView();
+      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.panel1.SuspendLayout();
+      this.SuspendLayout();
+      // 
+      // panel1
+      // 
+      this.panel1.Controls.Add(this.buttonClose);
+      resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Name = "panel1";
+      // 
+      // buttonClose
+      // 
+      resources.ApplyResources(this.buttonClose, "buttonClose");
+      this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.buttonClose.Name = "buttonClose";
+      this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+      // 
+      // ListView
+      // 
+      resources.ApplyResources(this.ListView, "ListView");
+      this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+      this.ListView.FullRowSelect = true;
+      this.ListView.HideSelection = false;
+      this.ListView.MultiSelect = false;
+      this.ListView.Name = "ListView";
+      this.ListView.UseCompatibleStateImageBehavior = false;
+      this.ListView.View = System.Windows.Forms.View.Details;
+      this.ListView.SelectedIndexChanged += new System.EventHandler(this.ListView_SelectedIndexChanged);
+      this.ListView.DoubleClick += new System.EventHandler(this.ListView_DoubleClick);
+      // 
+      // columnHeader1
+      // 
+      resources.ApplyResources(this.columnHeader1, "columnHeader1");
+      // 
+      // columnHeader2
+      // 
+      resources.ApplyResources(this.columnHeader2, "columnHeader2");
+      // 
+      // CelebrationsForm
+      // 
+      this.AcceptButton = this.buttonClose;
+      resources.ApplyResources(this, "$this");
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.CancelButton = this.buttonClose;
+      this.Controls.Add(this.ListView);
+      this.Controls.Add(this.panel1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
+      this.Name = "CelebrationsForm";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CelebrationsForm_FormClosing);
+      this.panel1.ResumeLayout(false);
+      this.ResumeLayout(false);
+
+    }
+
+    #endregion
+
+    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Button buttonClose;
+    private System.Windows.Forms.ListView ListView;
+    private System.Windows.Forms.ColumnHeader columnHeader1;
+    private System.Windows.Forms.ColumnHeader columnHeader2;
+  }
+}

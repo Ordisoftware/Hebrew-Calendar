@@ -13,9 +13,10 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-09 </edited>
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -68,9 +69,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <returns></returns>
     static public string[] GetLang(this Dictionary<string, string[]> values)
     {
-      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-      if ( !values.ContainsKey(lang) ) lang = "en";
-      return values[lang];
+      return values[Language];
     }
 
     /// <summary>
@@ -83,6 +82,16 @@ namespace Ordisoftware.HebrewCalendar
     static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
       return values[value][Language];
+    }
+
+    /// <summary>
+    /// Remove diacritics letters.
+    /// </summary>
+    public static string RemoveDiacritics(this string text)
+    {
+      if ( string.IsNullOrEmpty(text) )
+        return string.Empty;
+      return Encoding.ASCII.GetString(Encoding.GetEncoding("ISO-8859-8").GetBytes(text));
     }
 
   }

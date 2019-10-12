@@ -23,61 +23,176 @@ namespace Ordisoftware.HebrewCalendar
 
     static public readonly string NewLine = Environment.NewLine;
 
-    static public readonly Dictionary<DayOfWeek, Dictionary<string, string>> DayOfWeekText
-      = new Dictionary<DayOfWeek, Dictionary<string, string>>()
+    static public readonly Dictionary<string, string> AboutBoxTitle
+      = new Dictionary<string, string>()
       {
-        {
-          DayOfWeek.Monday, new Dictionary<string, string>
-          {
-            { "en", "Monday" },
-            { "fr", "Lundi" }
-          }
-        },
-        {
-          DayOfWeek.Tuesday, new Dictionary<string, string>
-          {
-            { "en", "Tuesday" },
-            { "fr", "Mardi" }
-          }
-        },
-        {
-          DayOfWeek.Wednesday, new Dictionary<string, string>
-          {
-            { "en", "Wednesday" },
-            { "fr", "Mercredi" }
-          }
-        },
-        {
-          DayOfWeek.Thursday, new Dictionary<string, string>
-          {
-            { "en", "Thursday" },
-            { "fr", "Jeudi" }
-          }
-        },
-        {
-          DayOfWeek.Friday, new Dictionary<string, string>
-          {
-            { "en", "Friday" },
-            { "fr", "Vendredi" }
-          }
-        },
-        {
-          DayOfWeek.Saturday, new Dictionary<string, string>
-          {
-            { "en", "Saturday" },
-            { "fr", "Samedi" }
-          }
-        },
-        {
-          DayOfWeek.Sunday, new Dictionary<string, string>
-          {
-            { "en", "Sunday" },
-            { "fr", "Dimanche" }
-          }
-        }
+        { "en", "About {0}" },
+        { "fr", "À propos de {0}" }
       };
 
-    static public readonly Dictionary<bool, Dictionary<string, string>> HideRestoreText
+    static public readonly Dictionary<string, string> AboutBoxVersion
+      = new Dictionary<string, string>()
+      {
+        { "en", "Version {0}" },
+        { "fr", "Version {0}" }
+      };
+
+    static public readonly Dictionary<string, string> ApplicationDescription
+      = new Dictionary<string, string>()
+      {
+        { "en", "A tool to generate a hebrew lunisolar calendar" },
+        { "fr", "Un outil pour générer un calendrier luni-solaire hébraïque" }
+      };
+
+    static public readonly Dictionary<string, string> ExitApplication
+      = new Dictionary<string, string>()
+      {
+        { "en", "Exit application?" },
+        { "fr", "Quitter l'application ?" }
+      };
+
+    static public readonly Dictionary<string, string> NoNewVersionAvailable
+      = new Dictionary<string, string>()
+      {
+        { "en", "There is no new version available." },
+        { "fr", "Il n'y a pas de nouvelle version de disponible." }
+      };
+
+    static public readonly Dictionary<string, string> NewVersionAvailable
+      = new Dictionary<string, string>()
+      {
+        { "en", "A newer version is available : {0}" },
+        { "fr", "Une nouvelle version est disponible : {0}" }
+      };
+
+    static public readonly Dictionary<string, string> AskDownloadNewVersion
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to open the download page?" },
+        { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
+      };
+
+    static public readonly Dictionary<string, string> CheckUpdateNoNewText
+      = new Dictionary<string, string>()
+      {
+        { "en", "There is no new version available." },
+        { "fr", "Il n'y a pas de nouvelle version de disponible." }
+      };
+
+    static public readonly Dictionary<string, string> CheckUpdateResult
+      = new Dictionary<string, string>()
+      {
+        { "en", "A newer version is available : " },
+        { "fr", "Une nouvelle version est disponible : " }
+      };
+
+    static public readonly Dictionary<string, string> CheckUpdateAskDownload
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to open the download page?" },
+        { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
+      };
+
+    static public readonly Dictionary<string, string> SelectBirthday
+      = new Dictionary<string, string>()
+      {
+        { "en", "Select birthday" },
+        { "fr", "Date de naissance" }
+      };
+
+    static public readonly Dictionary<string, string> DateNotFound
+      = new Dictionary<string, string>()
+      {
+        { "en", "Date not found in the database: {0}" },
+        { "fr", "Date non trouvée dans la base de données: {0}" }
+      };
+
+    static public readonly Dictionary<string, string> CantExitApplicationWhileGenerating
+      = new Dictionary<string, string>()
+      {
+        { "en", "Can't close while generating." },
+        { "fr", "Impossible de quitter durant la génération." }
+      };
+
+    static public readonly Dictionary<string, string> GenerateCalendar
+      = new Dictionary<string, string>()
+      {
+        { "en", "Database is empty." + NewLine + NewLine +
+                "Do you want to generate a calendar?" },
+        { "fr", "La base de données est vide." + NewLine + NewLine +
+                "Voulez-vous générer un calendrier ?" }
+      };
+
+    static public readonly Dictionary<string, string> StopGeneration
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to stop the generation process?" },
+        { "fr", "Voulez-vous arrêter le processus de génération ?" }
+      };
+
+    static public readonly Dictionary<string, string> LoadingData
+      = new Dictionary<string, string>()
+      {
+        { "en", "Loading data..." },
+        { "fr", "Chargement des données..." }
+      };
+
+    static public readonly Dictionary<string, string> ProgressCreateDays
+      = new Dictionary<string, string>()
+      {
+        { "en", "Populating days..." },
+        { "fr", "Garnissage des jours..." }
+      };
+
+    static public readonly Dictionary<string, string> ProgressAnalyzeDays
+      = new Dictionary<string, string>()
+      {
+        { "en", "Analyzing days..." },
+        { "fr", "Analyse des jours..." }
+      };
+
+    static public readonly Dictionary<string, string> ProgressGenerateReport
+      = new Dictionary<string, string>()
+      {
+        { "en", "Generating report..." },
+        { "fr", "Génération du rapport..." }
+      };
+
+    static public readonly Dictionary<string, string> ProgressFillMonths
+      = new Dictionary<string, string>()
+      {
+        { "en", "Filling months..." },
+        { "fr", "Remplissage des mois..." }
+      };
+
+    static public readonly Dictionary<string, string> RestoreWinPos
+      = new Dictionary<string, string>()
+      {
+        { "en", "This action will restore windows position." + NewLine + NewLine +
+                "Do you want to continue?" },
+        { "fr", "Cette action va restaurer la position de la fenêtre"  + NewLine + NewLine +
+                "Voulez-vous continuer ?" }
+      };
+
+    static public readonly Dictionary<string, string> RegenerateCalendar
+      = new Dictionary<string, string>()
+      {
+        { "en", "Preferences changed." + NewLine + NewLine +
+                "Do you want to generate the calendrier?" },
+        { "fr", "Préférences changées." + NewLine + NewLine +
+                "Voulez-vous générer le calendrier ?" }
+      };
+
+    static public readonly Dictionary<string, string> ReplaceCalendar
+      = new Dictionary<string, string>()
+      {
+        { "en", "The new calendar will replace the old." + NewLine + NewLine +
+                "Do you want to continue?" },
+        { "fr", "Le nouveau calendrier va remplacer l'ancien." + NewLine + NewLine +
+                "Voulez-vous continuer ?" }
+      };
+
+    static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
       = new Dictionary<bool, Dictionary<string, string>>()
       {
         {
@@ -96,148 +211,75 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<string, string> TodayText
+    static public readonly Dictionary<string, string> Today
       = new Dictionary<string, string>()
       {
         { "en", "Today" },
         { "fr", "Aujourd'hui" }
       };
 
-    static public readonly Dictionary<string, string> ApplicationDescriptionText
-      = new Dictionary<string, string>()
-      {
-        { "en", "A tool to generate a hebrew lunisolar calendar" },
-        { "fr", "Un outil pour générer un calendrier luni-solaire hébraïque" }
-      };
-
-    static public readonly Dictionary<string, string> ExitApplicationText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Exit application?" },
-        { "fr", "Quitter l'application ?" }
-      };
-
-    static public readonly Dictionary<string, string> CheckUpdateNoNewText
-      = new Dictionary<string, string>()
-      {
-        { "en", "There is no new version available." },
-        { "fr", "Il n'y a pas de nouvelle version de disponible." }
-      };
-
-    static public readonly Dictionary<string, string> CheckUpdateResultText
-      = new Dictionary<string, string>()
-      {
-        { "en", "A newer version is available : " },
-        { "fr", "Une nouvelle version est disponible : " }
-      };
-
-    static public readonly Dictionary<string, string> CheckUpdateAskDownloadText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Do you want to open the download page?" },
-        { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
-      };
-
-    static public readonly Dictionary<string, string> SelectBirthdayText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Select birthday" },
-        { "fr", "Date de naissance" }
-      };
-
-    static public readonly Dictionary<string, string> CantExitApplicationWhileGeneratingText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Can't close while generating." },
-        { "fr", "Impossible de quitter durant la génération." }
-      };
-
-    static public readonly Dictionary<string, string> GenerateCalendarText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Database is empty." + NewLine + NewLine +
-                "Do you want to generate a calendar?" },
-        { "fr", "La base de données est vide." + NewLine + NewLine +
-                "Voulez-vous générer un calendrier ?" }
-      };
-
-    static public readonly Dictionary<string, string> StopGenerationText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Do you want to stop the generation process?" },
-        { "fr", "Voulez-vous arrêter le processus de génération ?" }
-      };
-
-    static public readonly Dictionary<string, string> LoadingDataText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Loading data..." },
-        { "fr", "Chargement des données..." }
-      };
-
-    static public readonly Dictionary<string, string> ProgressCreateDaysText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Populating days..." },
-        { "fr", "Garnissage des jours..." }
-      };
-
-    static public readonly Dictionary<string, string> ProgressAnalyzeDaysText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Analyzing days..." },
-        { "fr", "Analyse des jours..." }
-      };
-
-    static public readonly Dictionary<string, string> ProgressGenerateReportText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Generating report..." },
-        { "fr", "Génération du rapport..." }
-      };
-
-    static public readonly Dictionary<string, string> ProgressFillMonthsText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Filling months..." },
-        { "fr", "Remplissage des mois..." }
-      };
-
-    static public readonly Dictionary<string, string> RestoreWinPosText
-      = new Dictionary<string, string>()
-      {
-        { "en", "This action will restore windows position." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Cette action va restaurer la position de la fenêtre"  + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
-      };
-
-    static public readonly Dictionary<string, string> RegenerateCalendarText
-      = new Dictionary<string, string>()
-      {
-        { "en", "Preferences changed." + NewLine + NewLine +
-                "Do you want to generate the calendrier?" },
-        { "fr", "Préférences changées." + NewLine + NewLine +
-                "Voulez-vous générer le calendrier ?" }
-      };
-
-    static public readonly Dictionary<string, string> ReplaceCalendarText
-      = new Dictionary<string, string>()
-      {
-        { "en", "The new calendar will replace the old." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Le nouveau calendrier va remplacer l'ancien." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
-      };
-
-    static public readonly Dictionary<string, string> NavigationDayText
+    static public readonly Dictionary<string, string> NavigationDay
       = new Dictionary<string, string>()
       {
         { "en", "Day #" },
         { "fr", "Jour #" }
       };
 
-    static public readonly Dictionary<MoonPhaseType, Dictionary<string, string>> MoonPhaseText
+    static public readonly Dictionary<DayOfWeek, Dictionary<string, string>> DayOfWeek
+      = new Dictionary<DayOfWeek, Dictionary<string, string>>()
+      {
+        {
+          System.DayOfWeek.Monday, new Dictionary<string, string>
+          {
+            { "en", "Monday" },
+            { "fr", "Lundi" }
+          }
+        },
+        {
+          System.DayOfWeek.Tuesday, new Dictionary<string, string>
+          {
+            { "en", "Tuesday" },
+            { "fr", "Mardi" }
+          }
+        },
+        {
+          System.DayOfWeek.Wednesday, new Dictionary<string, string>
+          {
+            { "en", "Wednesday" },
+            { "fr", "Mercredi" }
+          }
+        },
+        {
+          System.DayOfWeek.Thursday, new Dictionary<string, string>
+          {
+            { "en", "Thursday" },
+            { "fr", "Jeudi" }
+          }
+        },
+        {
+          System.DayOfWeek.Friday, new Dictionary<string, string>
+          {
+            { "en", "Friday" },
+            { "fr", "Vendredi" }
+          }
+        },
+        {
+          System.DayOfWeek.Saturday, new Dictionary<string, string>
+          {
+            { "en", "Saturday" },
+            { "fr", "Samedi" }
+          }
+        },
+        {
+          System.DayOfWeek.Sunday, new Dictionary<string, string>
+          {
+            { "en", "Sunday" },
+            { "fr", "Dimanche" }
+          }
+        }
+      };
+
+    static public readonly Dictionary<MoonPhaseType, Dictionary<string, string>> MoonPhase
       = new Dictionary<MoonPhaseType, Dictionary<string, string>>()
       {
         {
@@ -298,7 +340,7 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<EphemerisType, Dictionary<string, string>> EphemerisText
+    static public readonly Dictionary<EphemerisType, Dictionary<string, string>> Ephemeris
       = new Dictionary<EphemerisType, Dictionary<string, string>>()
       {
         {
@@ -331,7 +373,7 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<ReportFieldType, Dictionary<string, string>> CalendarFieldText
+    static public readonly Dictionary<ReportFieldType, Dictionary<string, string>> CalendarField
       = new Dictionary<ReportFieldType, Dictionary<string, string>>()
       {
         {
@@ -379,7 +421,7 @@ namespace Ordisoftware.HebrewCalendar
       "Adar II"
     };
 
-    static public readonly Dictionary<SeasonChangeType, Dictionary<string, string>> SeasonEventText
+    static public readonly Dictionary<SeasonChangeType, Dictionary<string, string>> SeasonEvent
       = new Dictionary<SeasonChangeType, Dictionary<string, string>>()
       {
         {
@@ -419,7 +461,7 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<TorahEventType, Dictionary<string, string>> TorahEventText
+    static public readonly Dictionary<TorahEventType, Dictionary<string, string>> TorahEvent
       = new Dictionary<TorahEventType, Dictionary<string, string>>()
       {
         {
