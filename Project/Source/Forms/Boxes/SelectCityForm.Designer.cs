@@ -50,9 +50,9 @@
       // 
       // PanelButtons
       // 
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ButtonCancel);
       this.PanelButtons.Controls.Add(this.ButtonOk);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ButtonCancel
@@ -63,15 +63,15 @@
       // 
       // ListBoxCountries
       // 
-      this.ListBoxCountries.FormattingEnabled = true;
       resources.ApplyResources(this.ListBoxCountries, "ListBoxCountries");
+      this.ListBoxCountries.FormattingEnabled = true;
       this.ListBoxCountries.Name = "ListBoxCountries";
       this.ListBoxCountries.SelectedIndexChanged += new System.EventHandler(this.ListBoxCountries_SelectedIndexChanged);
       // 
       // ListBoxCities
       // 
-      this.ListBoxCities.FormattingEnabled = true;
       resources.ApplyResources(this.ListBoxCities, "ListBoxCities");
+      this.ListBoxCities.FormattingEnabled = true;
       this.ListBoxCities.Name = "ListBoxCities";
       this.ListBoxCities.SelectedIndexChanged += new System.EventHandler(this.ListBoxCities_SelectedIndexChanged);
       // 
