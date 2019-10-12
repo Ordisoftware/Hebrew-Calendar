@@ -74,15 +74,15 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
-#### ____.__.__ - Version 3.0
+#### 2019.10.__ - Version 3.0
 
-- Improve the reminder to remind during the celebration day like with the shabat.
+- Improve the reminder to remind during the celebration day like with the shabat day.
 - Improve the reminder to flash the form if already displayed.
+- Improve reminder boxes location on the desktop.
 - Add loading data box instead of using a bottom progressbar.
 - Add displaying begin and end date in the celebration reminder form like with the shabat.
-- Add check end of data to propose to regenerate the database if less than one year.
 - Add option to choose language.
-- Add GPS database.
+- Add world cities GPS database.
 - Improve UI.
 - Improve speed.
 - Update help.
