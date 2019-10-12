@@ -72,11 +72,10 @@ namespace Ordisoftware.HebrewCalendar
         if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.BeforeSet )
           initTimes(rowPrevious.Moonset, row.Moonset, -1, 0);
         else
-
-        if ( row.Moonset == "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
-          initTimes(rowPrevious.Moonset, row.Moonset, -1, 0);
+        if ( row.Moonset == "" )
+          initTimes(rowPrevious.Moonset, rowNext.Moonset, -1, 1);
         else
-          throw new Exception("Error on calculating date and times.");
+          throw new Exception("Error on calculating celebration dates and times.");
         var dateTrigger = dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
         if ( dateNow < dateTrigger || dateNow >= dateEnd.Value
                                                  .AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes) )
