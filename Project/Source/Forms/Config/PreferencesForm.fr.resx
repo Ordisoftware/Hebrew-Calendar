@@ -149,10 +149,10 @@
     <value>Coordonnées GPS</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 13</value>
+    <value>143, 13</value>
   </data>
   <data name="ActionGetGPS.Text" xml:space="preserve">
-    <value>Chercher en ligne</value>
+    <value>Ouvrir le découvreur de GPS</value>
   </data>
   <data name="GroupBoxTextReport.Text" xml:space="preserve">
     <value>Rapport textuel</value>

@@ -78,6 +78,7 @@ namespace Ordisoftware.HebrewCalendar
           EditFontName.SelectedItem = item;
           break;
         }
+      EditFontSize.Value = Program.Settings.FontSize;
       EditTimerEnabled.Checked = Program.Settings.ReminderEnabled;
       EditStartupHide.Checked = Program.Settings.StartupHide;
       EditShowMonthDayToolTip.Checked = Program.Settings.MonthViewSunToolTips;
@@ -150,6 +151,7 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
+      Program.Settings.FontSize = (int)EditFontSize.Value;
       Program.Settings.ReminderEnabled = EditTimerEnabled.Checked;
       Program.Settings.StartupHide = EditStartupHide.Checked;
       Program.Settings.MonthViewSunToolTips = EditShowMonthDayToolTip.Checked;
@@ -181,9 +183,10 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      // todo ask city
-      string city = "Paris";
-      Program.RunShell("https://www.google.com/search?q=latitude+longitude+" + city);
+      var form = new SelectCityForm();
+      if ( form.ShowDialog() != DialogResult.OK ) return;
+      EditGPSLatitude.Text = form.Latitude.ToString();
+      EditGPSLongitude.Text = form.Longitude.ToString();
     }
 
     /// <summary>

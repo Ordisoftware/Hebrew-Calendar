@@ -100,9 +100,9 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ButtonCancel);
       this.PanelButtons.Controls.Add(this.ButtonOk);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ButtonCancel
@@ -122,6 +122,9 @@
       this.Controls.Add(this.LabelYearLast);
       this.Controls.Add(this.EditYearFirst);
       this.Controls.Add(this.LabelYearFirst);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "SelectYearsForm";
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.SelectYearsRangeForm_Load);

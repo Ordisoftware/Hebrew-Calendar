@@ -69,6 +69,9 @@
       this.CancelButton = this.ButtonCancel;
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.MonthCalendar);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "SelectDayForm";
       this.ShowInTaskbar = false;
       this.PanelButtons.ResumeLayout(false);

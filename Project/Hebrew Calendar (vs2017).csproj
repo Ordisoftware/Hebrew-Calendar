@@ -128,10 +128,22 @@
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Dependencies\GenericParsing\FieldType.cs" />
+    <Compile Include="Dependencies\GenericParsing\GenericParser.cs" />
+    <Compile Include="Dependencies\GenericParsing\GenericParserAdapter.cs" />
+    <Compile Include="Dependencies\GenericParsing\Legacy Support\StringArray.cs" />
+    <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
+    <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Source\Enums\Translations.cs" />
     <Compile Include="Source\Classes\SQLiteUtility.cs" />
     <Compile Include="Source\Enums\ReportFieldType.cs" />
     <Compile Include="Source\Enums\EphemerisType.cs" />
+    <Compile Include="Source\Forms\Boxes\SelectCityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectCityForm.Designer.cs">
+      <DependentUpon>SelectCityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Config\LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +305,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectCityForm.fr.resx">
+      <DependentUpon>SelectCityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectCityForm.resx">
+      <DependentUpon>SelectCityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\AboutBox.fr.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>

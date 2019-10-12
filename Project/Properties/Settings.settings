@@ -42,10 +42,10 @@
       <Value Profile="(Default)">Month</Value>
     </Setting>
     <Setting Name="Latitude" Type="System.Single" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="Longitude" Type="System.Single" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="CountDayMoonAsSun" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
