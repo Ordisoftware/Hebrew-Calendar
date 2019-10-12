@@ -63,7 +63,6 @@ namespace Ordisoftware.HebrewCalendar
           dateStartCheck = dateStart.Value.AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes);
           dateEnd = date.AddDays(delta2).AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
         };
-
         if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
           initTimes(row.Moonset, rowNext.Moonset, 0, 1);
         else
@@ -78,7 +77,6 @@ namespace Ordisoftware.HebrewCalendar
           initTimes(rowPrevious.Moonset, row.Moonset, -1, 0);
         else
           throw new Exception("Error on calculating date and times.");
-
         var dateTrigger = dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
         if ( dateNow < dateTrigger || dateNow >= dateEnd.Value
                                                  .AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes) )
