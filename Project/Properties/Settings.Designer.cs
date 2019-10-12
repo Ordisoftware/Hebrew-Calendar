@@ -623,7 +623,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        [global::System.Configuration.DefaultSettingValueAttribute("12")]
         public decimal RemindCelebrationHoursBefore {
             get {
                 return ((decimal)(this["RemindCelebrationHoursBefore"]));

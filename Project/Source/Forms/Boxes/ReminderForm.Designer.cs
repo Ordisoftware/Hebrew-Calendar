@@ -60,8 +60,8 @@
       // 
       // ButtonClose
       // 
-      this.ButtonClose.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ButtonClose, "ButtonClose");
+      this.ButtonClose.FlatAppearance.BorderSize = 0;
       this.ButtonClose.ForeColor = System.Drawing.SystemColors.ActiveCaption;
       this.ButtonClose.Name = "ButtonClose";
       this.ButtonClose.UseVisualStyleBackColor = true;

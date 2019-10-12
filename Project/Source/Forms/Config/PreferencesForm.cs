@@ -144,7 +144,7 @@ namespace Ordisoftware.HebrewCalendar
       for ( int index = 0; index < EditEventsDay.Items.Count; index++ )
         try
         {
-          string name = "TorahEventDayRemind" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
+          string name = "TorahEventRemindDay" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
           Program.Settings[name] = EditEventsDay.GetItemChecked(index);
         }
         catch

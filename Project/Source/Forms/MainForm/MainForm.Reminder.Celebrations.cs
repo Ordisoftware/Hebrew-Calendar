@@ -36,12 +36,11 @@ namespace Ordisoftware.HebrewCalendar
                     where !RemindCelebrationDates.Contains(day.Date)
                        && check((TorahEventType)day.TorahEvents)
                        && SQLiteUtility.GetDate(day.Date) >= dateStart
-                       && SQLiteUtility.GetDate(day.Date) < dateEnd
+                       && SQLiteUtility.GetDate(day.Date) <= dateEnd
                     select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
         if ( row == null ) return;
         RemindCelebrationDates.Add(row.Date);
-        var rowPrevious = LunisolarCalendar.LunisolarDays.FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
-        ReminderForm.Run(row, false, TorahEventType.None, rowPrevious.Sunset, row.Sunset);
+        ReminderForm.Run(row, false, TorahEventType.None, null, null, "", "");
       }
       catch
       {

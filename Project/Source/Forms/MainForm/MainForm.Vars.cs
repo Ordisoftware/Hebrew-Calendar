@@ -59,19 +59,19 @@ namespace Ordisoftware.HebrewCalendar
     private Dictionary<TorahEventType, bool> TorahEventRemindList
       = new Dictionary<TorahEventType, bool>();
 
-    private Dictionary<TorahEventType, bool> TorahEventDayRemindList
+    private Dictionary<TorahEventType, bool> TorahEventRemindDayList
       = new Dictionary<TorahEventType, bool>();
 
     private void InitRemindLists()
     {
       TorahEventRemindList.Clear();
-      TorahEventDayRemindList.Clear();
+      TorahEventRemindDayList.Clear();
       foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
         if ( type != TorahEventType.None )
           try
           {
             TorahEventRemindList.Add(type, (bool)Program.Settings["TorahEventRemind" + type.ToString()]);
-            TorahEventDayRemindList.Add(type, (bool)Program.Settings["TorahEventDayRemind" + type.ToString()]);
+            TorahEventRemindDayList.Add(type, (bool)Program.Settings["TorahEventRemindDay" + type.ToString()]);
           }
           catch
           {

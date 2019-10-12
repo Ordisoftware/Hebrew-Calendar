@@ -40,6 +40,7 @@ namespace Ordisoftware.HebrewCalendar
         string timeEnd = "";
         string[] timesStart = null;
         string[] timesEnd = null;
+        DateTime? dateStartCheck = null;
         DateTime? dateStart = null;
         DateTime? dateEnd = null;
         Action<string, string, int> initTimes = (start, end, delta) =>
@@ -50,15 +51,15 @@ namespace Ordisoftware.HebrewCalendar
           timesEnd = timeEnd.Split(':');
           var date = SQLiteUtility.GetDate(row.Date);
           dateStart = date.AddDays(delta).AddHours(Convert.ToInt32(timesStart[0]))
-                      .AddMinutes(Convert.ToInt32(timesStart[1]))
-                      .AddMinutes((double)-Program.Settings.RemindShabatEveryMinutes);
+                      .AddMinutes(Convert.ToInt32(timesStart[1]));
+          dateStartCheck = dateStart.Value.AddMinutes((double)-Program.Settings.RemindShabatEveryMinutes);
           dateEnd = date.AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
         };
         if ( Program.Settings.RemindShabatOnlyLight )
           initTimes(row.Sunrise, row.Sunset, 0);
         else
           initTimes(rowPrevious.Sunset, row.Sunset, -1);
-        var dateTrigger = dateStart.Value.AddHours((double)-Program.Settings.RemindShabatHoursBefore);
+        var dateTrigger = dateStartCheck.Value.AddHours((double)-Program.Settings.RemindShabatHoursBefore);
         if ( dateNow < dateTrigger || dateNow >= dateEnd.Value
                                                  .AddMinutes((double)-Program.Settings.RemindShabatEveryMinutes) )
         {
@@ -71,7 +72,7 @@ namespace Ordisoftware.HebrewCalendar
           return;
         }
         else
-        if ( dateNow >= dateTrigger && dateNow < dateStart )
+        if ( dateNow >= dateTrigger && dateNow < dateStartCheck )
         {
           if ( LastShabatReminded.HasValue )
             return;
@@ -88,7 +89,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
           LastShabatReminded = dateNow;
-        ReminderForm.Run(row, true, TorahEventType.None, timeStart, timeEnd);
+        ReminderForm.Run(row, true, TorahEventType.None, dateStart.Value, dateEnd.Value, timeStart, timeEnd);
       }
       catch
       {

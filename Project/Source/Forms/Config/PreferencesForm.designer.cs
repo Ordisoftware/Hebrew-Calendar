@@ -508,18 +508,18 @@
       // 
       resources.ApplyResources(this.EditRemindCelebrationHoursBefore, "EditRemindCelebrationHoursBefore");
       this.EditRemindCelebrationHoursBefore.Maximum = new decimal(new int[] {
-            12,
+            24,
             0,
             0,
             0});
       this.EditRemindCelebrationHoursBefore.Minimum = new decimal(new int[] {
-            1,
+            6,
             0,
             0,
             0});
       this.EditRemindCelebrationHoursBefore.Name = "EditRemindCelebrationHoursBefore";
       this.EditRemindCelebrationHoursBefore.Value = new decimal(new int[] {
-            1,
+            6,
             0,
             0,
             0});

@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using System.Linq;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -26,7 +27,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       bool check(TorahEventType item)
       {
-        return TorahEventDayRemindList.ContainsKey(item) && TorahEventDayRemindList[item];
+        return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
       }
       try
       {
@@ -41,26 +42,44 @@ namespace Ordisoftware.HebrewCalendar
         if ( row == null ) return;
         var rowPrevious = LunisolarCalendar.LunisolarDays
                           .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
+        var rowNext = LunisolarCalendar.LunisolarDays
+                      .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(+1)));
         string timeStart = "";
         string timeEnd = "";
         string[] timesStart = null;
         string[] timesEnd = null;
+        DateTime? dateStartCheck = null;
         DateTime? dateStart = null;
         DateTime? dateEnd = null;
-        Action<string, string, int> initTimes = (start, end, delta) =>
+        Action<string, string, int, int> initTimes = (start, end, delta1, delta2) =>
         {
           timeStart = start;
           timeEnd = end;
           timesStart = timeStart.Split(':');
           timesEnd = timeEnd.Split(':');
           var date = SQLiteUtility.GetDate(row.Date);
-          dateStart = date.AddDays(delta).AddHours(Convert.ToInt32(timesStart[0]))
-                      .AddMinutes(Convert.ToInt32(timesStart[1]))
-                      .AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes);
-          dateEnd = date.AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
+          dateStart = date.AddDays(delta1).AddHours(Convert.ToInt32(timesStart[0]))
+                      .AddMinutes(Convert.ToInt32(timesStart[1]));
+          dateStartCheck = dateStart.Value.AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes);
+          dateEnd = date.AddDays(delta2).AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
         };
-        initTimes(rowPrevious.Sunset, row.Sunset, -1);
-        var dateTrigger = dateStart.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
+
+        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
+          initTimes(row.Moonset, rowNext.Moonset, 0, 1);
+        else
+        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.NextDay )
+          initTimes(row.Moonset, rowNext.Moonset, 0, 1);
+        else
+        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.BeforeSet )
+          initTimes(rowPrevious.Moonset, row.Moonset, -1, 0);
+        else
+
+        if ( row.Moonset == "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
+          initTimes(rowPrevious.Moonset, row.Moonset, -1, 0);
+        else
+          throw new Exception("Error on calculating date and times.");
+
+        var dateTrigger = dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
         if ( dateNow < dateTrigger || dateNow >= dateEnd.Value
                                                  .AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes) )
         {
@@ -70,7 +89,7 @@ namespace Ordisoftware.HebrewCalendar
           return;
         }
         else
-        if ( dateNow >= dateTrigger && dateNow < dateStart )
+        if ( dateNow >= dateTrigger && dateNow < dateStartCheck )
         {
           if ( LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
             return;
@@ -88,7 +107,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
           LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
-        ReminderForm.Run(row, false, (TorahEventType)row.TorahEvents, timeStart, timeEnd);
+        ReminderForm.Run(row, false, (TorahEventType)row.TorahEvents, dateStart, dateEnd, timeStart, timeEnd);
       }
       catch
       {
