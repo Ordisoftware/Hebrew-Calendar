@@ -67,9 +67,13 @@ namespace Ordisoftware.HebrewCalendar
       return form.OldShabatDay != Program.Settings.ShabatDay
           || form.OldLatitude != Program.Settings.GPSLatitude
           || form.OldLongitude != Program.Settings.GPSLongitude
+          || form.OldReminderCurrentDayNoColor != Program.Settings.ReminderCurrentDayNoColor
+          || form.OldReminderCurrentDayColor != Program.Settings.ReminderCurrentDayColor
           || lang != Program.Settings.Language;
     }
 
+    public Color OldReminderCurrentDayColor { get; private set; }
+    public bool OldReminderCurrentDayNoColor { get; private set; }
     public int OldShabatDay { get; private set; }
     public string OldLatitude { get; private set; }
     public string OldLongitude { get; private set; }
@@ -146,6 +150,8 @@ namespace Ordisoftware.HebrewCalendar
       PanelFullMoonColor.BackColor = Program.Settings.FullMoonColor;
       PanelReminderDayColor.BackColor = Program.Settings.ReminderCurrentDayColor;
       EditReminderCurrentDayNoColor.Checked = Program.Settings.ReminderCurrentDayNoColor;
+      OldReminderCurrentDayColor = Program.Settings.ReminderCurrentDayColor;
+      OldReminderCurrentDayNoColor = Program.Settings.ReminderCurrentDayNoColor;
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.GPSLatitude;
       OldLongitude = Program.Settings.GPSLongitude;
@@ -577,6 +583,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void UpdateLanguagesButtons()
     {
+      MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
       if ( Program.Settings.Language == "en" )
       {
         ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;

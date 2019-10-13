@@ -839,7 +839,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("LightYellow")]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 255, 235")]
         public global::System.Drawing.Color ReminderCurrentDayColor {
             get {
                 return ((global::System.Drawing.Color)(this["ReminderCurrentDayColor"]));

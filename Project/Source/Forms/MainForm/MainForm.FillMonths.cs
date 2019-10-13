@@ -13,7 +13,10 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-08 </edited>
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Drawing;
+using Ordisoftware.Core;
 using Calendar.NET;
 
 namespace Ordisoftware.HebrewCalendar
@@ -22,8 +25,45 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
+    private bool IsCelebrationWeekStart = false;
+    private bool IsCelebrationWeekEnd = false;
+
+    private bool[,,] IsCelebrationWeek = new bool[5000, 15, 40];
+
+    internal bool IsCelebration(int counter, int month, int year)
+    {
+      return !Program.Settings.ReminderCurrentDayNoColor && IsCelebrationWeek[year, month, counter];
+    }
+
+    private void InitIsCelebrationWeek()
+    {
+      try
+      {
+        foreach ( var row in LunisolarCalendar.LunisolarDays )
+        {
+          var ev = (TorahEventType)row.TorahEvents;
+          if ( ev == TorahEventType.PessahD1 || ev == TorahEventType.SoukotD1 )
+            IsCelebrationWeekStart = true;
+          if ( ev == TorahEventType.PessahD7 || ev == TorahEventType.SoukotD8 )
+            IsCelebrationWeekEnd = true;
+          var result = IsCelebrationWeekStart || IsCelebrationWeekEnd;
+          var date = SQLiteUtility.GetDate(row.Date);
+          IsCelebrationWeek[date.Year, date.Month, date.Day] = IsCelebrationWeekStart || IsCelebrationWeekEnd;
+          if ( IsCelebrationWeekEnd )
+          {
+            IsCelebrationWeekStart = false;
+            IsCelebrationWeekEnd = false;
+          }
+        }
+      }
+      catch
+      {
+      }
+    }
+
     internal void FillMonths()
     {
+      InitIsCelebrationWeek();
       string strToolTip = "Error on getting sun rise and set";
       int progress = 0;
       foreach ( var row in LunisolarCalendar.LunisolarDays )
@@ -42,6 +82,9 @@ namespace Ordisoftware.HebrewCalendar
           item.TooltipEnabled = true;
           item.IgnoreTimeComponent = true;
           item.ToolTipText = strToolTip;
+          if ( !Program.Settings.ReminderCurrentDayNoColor )
+            if ( IsCelebration(item.Date.Day, item.Date.Month, item.Date.Year) )
+              item.EventColor = Program.Settings.ReminderCurrentDayColor;
           CalendarMonth.AddEvent(item);
         }
         strToolTip = Translations.Ephemeris.GetLang(EphemerisType.Rise) + row.Sunrise + Environment.NewLine 

@@ -2072,7 +2072,7 @@
     <value>807, 62</value>
   </metadata>
   <data name="MenuShowHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="MenuShowHide.Text" xml:space="preserve">
     <value>Restore</value>
@@ -2123,7 +2123,7 @@
 </value>
   </data>
   <data name="MenuNavigate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="MenuNavigate.Text" xml:space="preserve">
     <value>Navigate</value>
@@ -2164,7 +2164,7 @@
 </value>
   </data>
   <data name="MenuCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="MenuCelebrations.Text" xml:space="preserve">
     <value>Celebrations</value>
@@ -2172,7 +2172,7 @@
   <data name="MenuRefreshReminder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAIZSURBVDhPjVLNS1RxFL1W0ErByVpMKJHbwsUQtAtsRp2x
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAIZSURBVDhPjVLNS1RxFL1W0ErByVpMKJHbwsUQtAtsRp2x
         2lQWjX1Im2jTIoIWEVRMOTMqSvQxo5H2gW8eZbQoyiDQMVMzaRplhPlYRC2D+gtO577nc2ycoQ5c3v3d
         373n/u55VwDIv9DeIz/9USmf+D8EXYONWPo2gv23ypCUErRFxGgJC7zdNBa00u97JRib2Y5PhftoLiVZ
         S+CPVmFosg3TuU7MFIL4WDiB6XwQyWwnYkmBOb+VfghsUixyCPwMml/24GVmB0bT1RhdrIZBU/9Jqgbx
@@ -2185,13 +2185,13 @@
 </value>
   </data>
   <data name="MenuRefreshReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="MenuRefreshReminder.Text" xml:space="preserve">
     <value>Reset reminder</value>
   </data>
   <data name="SeparatorTrayMenuView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>150, 6</value>
   </data>
   <data name="MenuAbout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2208,7 +2208,7 @@
 </value>
   </data>
   <data name="MenuAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="MenuAbout.Text" xml:space="preserve">
     <value>About</value>
@@ -2232,13 +2232,13 @@
 </value>
   </data>
   <data name="MenuExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="MenuExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="MenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 164</value>
+    <value>154, 142</value>
   </data>
   <data name="&gt;&gt;MenuTray.Name" xml:space="preserve">
     <value>MenuTray</value>

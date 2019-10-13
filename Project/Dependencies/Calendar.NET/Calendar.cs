@@ -38,7 +38,7 @@ namespace Calendar.NET
     private bool _showArrowControls;
     private bool _showTodayButton;
     private bool _showDateInHeader;
-    private TodayButton _btnToday;
+    internal TodayButton _btnToday;
     private NavigateLeftButton _btnLeft;
     private NavigateRightButton _btnRight;
     private bool _showingToolTip;
@@ -948,6 +948,11 @@ namespace Calendar.NET
       {
         for ( int x = 0; x < 7; x++ )
         {
+          // ORDISOFTWARE MODIF BEGIN
+          if (MainForm.Instance != null)
+            if (MainForm.Instance.IsCelebration(counter, _calendarDate.Month, _calendarDate.Year) )
+              g.FillRectangle(new SolidBrush(Color.FromArgb(255, Program.Settings.ReminderCurrentDayColor.R, Program.Settings.ReminderCurrentDayColor.G, Program.Settings.ReminderCurrentDayColor.B)), xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
+          // ORDISOFTWARE MODIF END
           if ( rogueDays == 0 && counter <= DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month) )
           {
             if ( !_calendarDays.ContainsKey(counter) )
