@@ -179,7 +179,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "Generate a calendar for more than {0} years is not recommanded." + NewLine + NewLine +
                 "Do you want to continue?" },
-        { "fr", "Générer uin calendrier sur plus de {0} ans n'est pas recommandé."  + NewLine + NewLine +
+        { "fr", "Générer un calendrier pour plus de {0} ans n'est pas recommandé."  + NewLine + NewLine +
                 "Voulez-vous continuer ?" }
       };
 

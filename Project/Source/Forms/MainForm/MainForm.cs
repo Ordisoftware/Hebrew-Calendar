@@ -360,8 +360,8 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       ClearLists();
-      if ( !PreferencesForm.Run() ) return;
-      ActionGenerate_Click(null, null);
+      if ( PreferencesForm.Run() )
+        ActionGenerate_Click(null, null);
       CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
       InitRemindLists();
       Timer_Tick(null, null);
