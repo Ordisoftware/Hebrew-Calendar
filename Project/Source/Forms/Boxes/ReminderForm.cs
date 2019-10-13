@@ -79,7 +79,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( date1 != null)
       {
         form.LabelHours.Text = Translations.DayOfWeek.GetLang(date1.Value.DayOfWeek) + " "
-                             + time1 + " -> "
+                             + time1 + " ➜ "
                              + Translations.DayOfWeek.GetLang(date2.Value.DayOfWeek) + " "
                              + time2;
       }
