@@ -85,6 +85,9 @@ namespace Ordisoftware.HebrewCalendar
       form.Location = new Point(left + width - form.Width, top + height - form.Height);
       form.Tag = row.Date;
       form.Text = " " + form.LabelNextCelebrationText.Text;
+      var now = DateTime.Now;
+      if ( !Program.Settings.ReminderCurrentDayNoColor && now >= date1 && now <= date2 )
+        form.BackColor = Program.Settings.ReminderCurrentDayColor;
       form.IsShabat = isShabat;
       if ( isShabat )
         MainForm.Instance.ShabatForm = form;

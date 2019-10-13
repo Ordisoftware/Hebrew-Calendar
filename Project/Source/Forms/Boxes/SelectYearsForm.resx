@@ -126,7 +126,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="EditYearLast.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;EditYearLast.Name" xml:space="preserve">
     <value>EditYearLast</value>
@@ -174,7 +174,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditYearFirst.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;EditYearFirst.Name" xml:space="preserve">
     <value>EditYearFirst</value>
@@ -226,7 +226,7 @@
     <value>75, 24</value>
   </data>
   <data name="ButtonOk.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>0</value>
   </data>
   <data name="ButtonOk.Text" xml:space="preserve">
     <value>Ok</value>
@@ -253,7 +253,7 @@
     <value>75, 24</value>
   </data>
   <data name="ButtonCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>1</value>
   </data>
   <data name="ButtonCancel.Text" xml:space="preserve">
     <value>Cancel</value>

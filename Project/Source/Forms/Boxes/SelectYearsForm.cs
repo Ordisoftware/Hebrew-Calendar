@@ -14,6 +14,7 @@
 /// <edited> 2019-01 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -27,40 +28,62 @@ namespace Ordisoftware.HebrewCalendar
       Icon = MainForm.Instance.Icon;
     }
 
+    private bool Mutex;
+    private int Year;
+
     private void SelectYearsRangeForm_Load(object sender, EventArgs e)
     {
       DateTime date = DateTime.Now;
-      int year = date.Year;
-      if ( date.Month < 3 ) year--;
-      EditYearFirst.Value = year;
-      EditYearLast.Value = year + 4;
+      Year = date.Year;
+      if ( date.Month < 3 ) Year--;
+      Mutex = true;
+      EditYearFirst.Minimum = Year - Program.Settings.GenerateIntervalPeriod;
+      EditYearFirst.Maximum = Year + Program.Settings.GenerateIntervalPeriod;
+      EditYearLast.Minimum = Year - Program.Settings.GenerateIntervalPeriod;
+      EditYearLast.Maximum = Year + Program.Settings.GenerateIntervalPeriod;
+      EditYearFirst.Value = Year;
+      EditYearLast.Value = Year + Program.Settings.GenerateIntervalDefault;
+      Mutex = false;
     }
 
     private void EditYearFirst_ValueChanged(object sender, EventArgs e)
     {
-      if ( EditYearFirst.Value >= EditYearLast.Value )
-        EditYearLast.Value = EditYearFirst.Value + 1;
+      if ( Mutex ) return;
+      if ( EditYearFirst.Value > Year )
+        EditYearFirst.Value = Year;
+      if ( EditYearFirst.Value >= EditYearLast.Value - 1 )
+        EditYearLast.Value = EditYearFirst.Value + Program.Settings.GenerateIntervalMin;
     }
 
     private void EditYearLast_ValueChanged(object sender, EventArgs e)
     {
-      if ( EditYearLast.Value <= EditYearFirst.Value )
-        EditYearFirst.Value = EditYearLast.Value - 1;
+      if ( Mutex ) return;
+      if ( EditYearLast.Value < Year + Program.Settings.GenerateIntervalMin )
+        EditYearLast.Value = Year + Program.Settings.GenerateIntervalMin;
+      if ( EditYearLast.Value <= EditYearFirst.Value + 1 )
+        EditYearFirst.Value = EditYearLast.Value - Program.Settings.GenerateIntervalMin;
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)
     {
       int yearFirst = (int)EditYearFirst.Value;
       int yearLast = (int)EditYearLast.Value;
-      if ( yearFirst == yearLast )
-        yearLast = yearFirst + 1;
-      else
       if ( yearFirst > yearLast )
       {
         int temp = yearFirst;
         yearFirst = yearLast;
         yearLast = temp;
       }
+      if ( yearFirst == yearLast || yearFirst == yearLast + 1 )
+        yearLast = yearFirst + Program.Settings.GenerateIntervalDefault;
+      if ( yearFirst > Year || Year > yearLast )
+      {
+        yearFirst = Year;
+        yearLast = Year + Program.Settings.GenerateIntervalDefault;
+      }
+      if ( yearLast - yearFirst > Program.Settings.GenerateIntervalMax )
+        if ( !DisplayManager.QueryYesNo(Translations.BigCalendar.GetLang(Program.Settings.GenerateIntervalMax)) )
+          return;
       EditYearFirst.Value = yearFirst;
       EditYearLast.Value = yearLast;
       DialogResult = DialogResult.OK;

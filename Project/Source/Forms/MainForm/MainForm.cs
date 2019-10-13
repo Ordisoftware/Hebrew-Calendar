@@ -142,8 +142,12 @@ namespace Ordisoftware.HebrewCalendar
     {
       var result = LunisolarCalendar.LunisolarDays.OrderBy(d => d.Date).LastOrDefault();
       if ( result == null || SQLiteUtility.GetDate(result.Date) < DateTime.Now.AddMonths(6) )
-        if ( DisplayManager.QueryYesNo(Translations.EndOfCalendar.GetLang()) )
-          ActionGenerate.PerformClick();
+      {
+        var diff = YearLast - YearFirst;
+        YearFirst = DateTime.Now.Year;
+        YearLast = YearFirst + diff;
+        ActionGenerate_Click(null, null);
+      }
     }
 
     /// <summary>
@@ -357,8 +361,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       ClearLists();
       if ( PreferencesForm.Run() )
-        if ( DisplayManager.QueryYesNo(Translations.RegenerateCalendar.GetLang()) )
-          ActionGenerate.PerformClick();
+        ActionGenerate_Click(null, null);
       CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
       InitRemindLists();
       Timer_Tick(null, null);
@@ -467,24 +470,27 @@ namespace Ordisoftware.HebrewCalendar
       TimerReminder.Enabled = false;
       try
       {
-        var form = new SelectYearsForm();
-        if ( form.ShowDialog() == DialogResult.Cancel ) return;
-        if ( LunisolarCalendar.LunisolarDays.Count > 0 )
-          if ( !DisplayManager.QueryYesNo(Translations.ReplaceCalendar.GetLang()) )
-            return;
-        ClearLists();
-        foreach ( var f in RemindCelebrationForms.ToList() ) f.Close();
-        if ( ShabatForm != null )
+        int yearFirst;
+        int yearLast;
+        if ( sender != null )
         {
-          ShabatForm.Close();
-          ShabatForm = null;
+          var form = new SelectYearsForm();
+          if ( form.ShowDialog() == DialogResult.Cancel ) return;
+          yearFirst = (int)form.EditYearFirst.Value;
+          yearLast = (int)form.EditYearLast.Value;
         }
-        GenerateData((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
+        else
+        {
+          yearFirst = YearFirst;
+          yearLast = YearLast;
+        }
+        ClearLists();
+        GenerateData(yearFirst, yearLast);
+        GoToDate(DateTime.Now);
       }
       finally
       {
         IsReady = true;
-        GoToDate(DateTime.Now);
         TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
         Timer_Tick(this, null);
       }
@@ -585,17 +591,23 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
-      TimerBallon.Stop();
-      NavigationTrayOpened = sender == null;
-      if ( NavigationForm.Instance.Visible )
+      try
       {
-        NavigationForm.Instance.Visible = false;
+        TimerBallon.Stop();
+        NavigationTrayOpened = sender == null;
+        if ( NavigationForm.Instance.Visible )
+        {
+          NavigationForm.Instance.Hide();
+        }
+        else
+        {
+          NavigationForm.Instance.Date = DateTime.Now;
+          NavigationForm.Instance.Show();
+          NavigationForm.Instance.BringToFront();
+        }
       }
-      else
+      catch
       {
-        NavigationForm.Instance.Date = DateTime.Now;
-        NavigationForm.Instance.Visible = true;
-        NavigationForm.Instance.BringToFront();
       }
     }
 
@@ -689,22 +701,29 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="date">The date.</param>
     internal void GoToDate(DateTime date)
     {
-      if ( !IsReady ) return;
-      string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");
-      int pos = CalendarText.Find(strDate);
-      if ( pos != -1 )
+      try
       {
-        CalendarText.SelectionStart = pos - 6 - 118;
-        CalendarText.SelectionLength = 0;
-        CalendarText.ScrollToCaret();
-        CalendarText.SelectionStart = pos - 6;
-        CalendarText.SelectionLength = 118;
-        LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
-        CalendarGrid.Update();
-        CalendarMonth.CalendarDate = date;
+        if ( !IsReady ) return;
+        string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");
+        int pos = CalendarText.Find(strDate);
+        if ( pos != -1 )
+        {
+          CalendarText.SelectionStart = pos - 6 - 118;
+          CalendarText.SelectionLength = 0;
+          CalendarText.ScrollToCaret();
+          CalendarText.SelectionStart = pos - 6;
+          CalendarText.SelectionLength = 118;
+          LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
+          CalendarGrid.Update();
+          CalendarMonth.CalendarDate = date;
+        }
+        else
+          DisplayManager.Show(Translations.DateNotFound.GetLang(strDate));
       }
-      else
-        DisplayManager.Show(Translations.DateNotFound.GetLang(strDate));
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
   }

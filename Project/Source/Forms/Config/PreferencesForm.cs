@@ -67,9 +67,13 @@ namespace Ordisoftware.HebrewCalendar
       return form.OldShabatDay != Program.Settings.ShabatDay
           || form.OldLatitude != Program.Settings.GPSLatitude
           || form.OldLongitude != Program.Settings.GPSLongitude
+          || form.OldReminderCurrentDayNoColor != Program.Settings.ReminderCurrentDayNoColor
+          || form.OldReminderCurrentDayColor != Program.Settings.ReminderCurrentDayColor
           || lang != Program.Settings.Language;
     }
 
+    public Color OldReminderCurrentDayColor { get; private set; }
+    public bool OldReminderCurrentDayNoColor { get; private set; }
     public int OldShabatDay { get; private set; }
     public string OldLatitude { get; private set; }
     public string OldLongitude { get; private set; }
@@ -144,6 +148,10 @@ namespace Ordisoftware.HebrewCalendar
       PanelSeasonEventColor.BackColor = Program.Settings.SeasonEventColor;
       PanelMoonEventColor.BackColor = Program.Settings.MoonEventColor;
       PanelFullMoonColor.BackColor = Program.Settings.FullMoonColor;
+      PanelReminderDayColor.BackColor = Program.Settings.ReminderCurrentDayColor;
+      EditReminderCurrentDayNoColor.Checked = Program.Settings.ReminderCurrentDayNoColor;
+      OldReminderCurrentDayColor = Program.Settings.ReminderCurrentDayColor;
+      OldReminderCurrentDayNoColor = Program.Settings.ReminderCurrentDayNoColor;
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.GPSLatitude;
       OldLongitude = Program.Settings.GPSLongitude;
@@ -234,12 +242,16 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.SeasonEventColor = PanelSeasonEventColor.BackColor;
       Program.Settings.MoonEventColor = PanelMoonEventColor.BackColor;
       Program.Settings.FullMoonColor = PanelFullMoonColor.BackColor;
+      Program.Settings.ReminderCurrentDayColor = PanelReminderDayColor.BackColor;
+      Program.Settings.ReminderCurrentDayNoColor = EditReminderCurrentDayNoColor.Checked;
       Program.Settings.Store();
     }
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      Properties.Settings.Default.Reset();
+      if ( !DisplayManager.QueryYesNo(Translations.ResetPreferences.GetLang()) ) return;
+      Program.Settings.Reset();
+      Program.Settings.Reload();
       Program.Settings.Save();
       DoReset = true;
       Close();
@@ -352,6 +364,13 @@ namespace Ordisoftware.HebrewCalendar
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelBottomColor.BackColor = DialogColor.Color;
       NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
+    }
+
+    private void PanelReminderDayColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = PanelReminderDayColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelReminderDayColor.BackColor = DialogColor.Color;
     }
 
     /// <summary>
@@ -564,6 +583,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void UpdateLanguagesButtons()
     {
+      MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
       if ( Program.Settings.Language == "en" )
       {
         ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
@@ -639,7 +659,6 @@ namespace Ordisoftware.HebrewCalendar
       public override string ToString() { return Text; }
 
     }
-
   }
 
 }
