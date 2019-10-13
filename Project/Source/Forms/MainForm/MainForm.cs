@@ -404,6 +404,11 @@ namespace Ordisoftware.HebrewCalendar
       AboutBox.Instance.OpenContactPage();
     }
 
+    private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
+    {
+      SystemManager.OpenWebLink(Program.GitHubRepositoryURL + "/issues");
+    }
+
     /// <summary>
     /// Event handler. Called by ActionCheckUpdate for click events.
     /// </summary>
