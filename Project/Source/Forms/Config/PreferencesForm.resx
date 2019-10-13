@@ -223,7 +223,7 @@
     <value>PanelButtons</value>
   </data>
   <data name="&gt;&gt;ButtonClose.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="LabelShabatDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -396,6 +396,39 @@
   <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="ActionResetSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionResetSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ActionResetSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionResetSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 8</value>
+  </data>
+  <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 13</value>
+  </data>
+  <data name="ActionResetSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="ActionResetSettings.Text" xml:space="preserve">
+    <value>Restore defaults préférences</value>
+  </data>
+  <data name="&gt;&gt;ActionResetSettings.Name" xml:space="preserve">
+    <value>ActionResetSettings</value>
+  </data>
+  <data name="&gt;&gt;ActionResetSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionResetSettings.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionResetSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -453,27 +486,6 @@
   <data name="&gt;&gt;ActionUsePersonalShabat.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ActionGetGPS.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ActionGetGPS.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="ActionGetGPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 106</value>
-  </data>
-  <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
-  </data>
-  <data name="ActionGetGPS.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="ActionGetGPS.Text" xml:space="preserve">
-    <value>Open GPS finder</value>
-  </data>
   <data name="&gt;&gt;ActionGetGPS.Name" xml:space="preserve">
     <value>ActionGetGPS</value>
   </data>
@@ -512,6 +524,138 @@
   </data>
   <data name="&gt;&gt;GroupBoxGPS.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="ActionGetGPS.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionGetGPS.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ActionGetGPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 106</value>
+  </data>
+  <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="ActionGetGPS.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="ActionGetGPS.Text" xml:space="preserve">
+    <value>Open GPS finder</value>
+  </data>
+  <data name="&gt;&gt;ActionGetGPS.Name" xml:space="preserve">
+    <value>ActionGetGPS</value>
+  </data>
+  <data name="&gt;&gt;ActionGetGPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionGetGPS.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;ActionGetGPS.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Name" xml:space="preserve">
+    <value>EditFontSize</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LabelBackColor.Name" xml:space="preserve">
+    <value>LabelBackColor</value>
+  </data>
+  <data name="&gt;&gt;LabelBackColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelBackColor.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;LabelBackColor.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PanelTextColor.Name" xml:space="preserve">
+    <value>PanelTextColor</value>
+  </data>
+  <data name="&gt;&gt;PanelTextColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelTextColor.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;PanelTextColor.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LabelTextColor.Name" xml:space="preserve">
+    <value>LabelTextColor</value>
+  </data>
+  <data name="&gt;&gt;LabelTextColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTextColor.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;LabelTextColor.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;PanelBackColor.Name" xml:space="preserve">
+    <value>PanelBackColor</value>
+  </data>
+  <data name="&gt;&gt;PanelBackColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBackColor.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;PanelBackColor.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;EditFontName.Name" xml:space="preserve">
+    <value>EditFontName</value>
+  </data>
+  <data name="&gt;&gt;EditFontName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFontName.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;EditFontName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="GroupBoxTextReport.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GroupBoxTextReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 279</value>
+  </data>
+  <data name="GroupBoxTextReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>383, 91</value>
+  </data>
+  <data name="GroupBoxTextReport.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="GroupBoxTextReport.Text" xml:space="preserve">
+    <value>Text report</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTextReport.Name" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTextReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTextReport.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTextReport.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="EditFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -675,32 +819,104 @@
   <data name="&gt;&gt;EditFontName.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="GroupBoxTextReport.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.Name" xml:space="preserve">
+    <value>LabelRemindShabatHoursBefore</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.Name" xml:space="preserve">
+    <value>LabelRemindShabatEveryMinutes</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatOnlyLight.Name" xml:space="preserve">
+    <value>EditRemindShabatOnlyLight</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatOnlyLight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatOnlyLight.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatOnlyLight.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatHoursBefore.Name" xml:space="preserve">
+    <value>EditRemindShabatHoursBefore</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatHoursBefore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatHoursBefore.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatHoursBefore.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatEveryMinutes.Name" xml:space="preserve">
+    <value>EditRemindShabatEveryMinutes</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatEveryMinutes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatEveryMinutes.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatEveryMinutes.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabat.Name" xml:space="preserve">
+    <value>EditRemindShabat</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabat.Parent" xml:space="preserve">
+    <value>BroupBoxShabat</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabat.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="BroupBoxShabat.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="GroupBoxTextReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 279</value>
+  <data name="BroupBoxShabat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 15</value>
   </data>
-  <data name="GroupBoxTextReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 91</value>
+  <data name="BroupBoxShabat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 248</value>
   </data>
-  <data name="GroupBoxTextReport.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="BroupBoxShabat.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="GroupBoxTextReport.Text" xml:space="preserve">
-    <value>Text report</value>
+  <data name="BroupBoxShabat.Text" xml:space="preserve">
+    <value>Shabat</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTextReport.Name" xml:space="preserve">
-    <value>GroupBoxTextReport</value>
+  <data name="&gt;&gt;BroupBoxShabat.Name" xml:space="preserve">
+    <value>BroupBoxShabat</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTextReport.Type" xml:space="preserve">
+  <data name="&gt;&gt;BroupBoxShabat.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTextReport.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BroupBoxShabat.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTextReport.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;BroupBoxShabat.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -882,32 +1098,140 @@
   <data name="&gt;&gt;EditRemindShabat.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="BroupBoxShabat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  <data name="&gt;&gt;ActionUseBlackAndWhiteColors.Name" xml:space="preserve">
+    <value>ActionUseBlackAndWhiteColors</value>
   </data>
-  <data name="BroupBoxShabat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 15</value>
+  <data name="&gt;&gt;ActionUseBlackAndWhiteColors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="BroupBoxShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 248</value>
+  <data name="&gt;&gt;ActionUseBlackAndWhiteColors.Parent" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
   </data>
-  <data name="BroupBoxShabat.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;ActionUseBlackAndWhiteColors.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionUseDefaultColors.Name" xml:space="preserve">
+    <value>ActionUseDefaultColors</value>
+  </data>
+  <data name="&gt;&gt;ActionUseDefaultColors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionUseDefaultColors.Parent" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
+  </data>
+  <data name="&gt;&gt;ActionUseDefaultColors.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="BroupBoxShabat.Text" xml:space="preserve">
-    <value>Shabat</value>
+  <data name="&gt;&gt;LabelTopColor.Name" xml:space="preserve">
+    <value>LabelTopColor</value>
   </data>
-  <data name="&gt;&gt;BroupBoxShabat.Name" xml:space="preserve">
-    <value>BroupBoxShabat</value>
+  <data name="&gt;&gt;LabelTopColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BroupBoxShabat.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelTopColor.Parent" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
+  </data>
+  <data name="&gt;&gt;LabelTopColor.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionUseSystemColors.Name" xml:space="preserve">
+    <value>ActionUseSystemColors</value>
+  </data>
+  <data name="&gt;&gt;ActionUseSystemColors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionUseSystemColors.Parent" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
+  </data>
+  <data name="&gt;&gt;ActionUseSystemColors.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PanelTopColor.Name" xml:space="preserve">
+    <value>PanelTopColor</value>
+  </data>
+  <data name="&gt;&gt;PanelTopColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelTopColor.Parent" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
+  </data>
+  <data name="&gt;&gt;PanelTopColor.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;PanelBottomColor.Name" xml:space="preserve">
+    <value>PanelBottomColor</value>
+  </data>
+  <data name="&gt;&gt;PanelBottomColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottomColor.Parent" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
+  </data>
+  <data name="&gt;&gt;PanelBottomColor.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddleColor.Name" xml:space="preserve">
+    <value>PanelMiddleColor</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddleColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddleColor.Parent" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddleColor.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;LabelBottomColor.Name" xml:space="preserve">
+    <value>LabelBottomColor</value>
+  </data>
+  <data name="&gt;&gt;LabelBottomColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelBottomColor.Parent" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
+  </data>
+  <data name="&gt;&gt;LabelBottomColor.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleColor.Name" xml:space="preserve">
+    <value>LabelMiddleColor</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleColor.Parent" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
+  </data>
+  <data name="&gt;&gt;LabelMiddleColor.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="GroupBoxNavigation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GroupBoxNavigation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>218, 386</value>
+  </data>
+  <data name="GroupBoxNavigation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 162</value>
+  </data>
+  <data name="GroupBoxNavigation.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="GroupBoxNavigation.Text" xml:space="preserve">
+    <value>Navigation window</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxNavigation.Name" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxNavigation.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BroupBoxShabat.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupBoxNavigation.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;BroupBoxShabat.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;GroupBoxNavigation.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1179,32 +1503,80 @@
   <data name="&gt;&gt;LabelMiddleColor.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="GroupBoxNavigation.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="&gt;&gt;EditBalloonAutoHide.Name" xml:space="preserve">
+    <value>EditBalloonAutoHide</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Name" xml:space="preserve">
+    <value>EditBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.Name" xml:space="preserve">
+    <value>SelectOpenNavigationForm</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.Name" xml:space="preserve">
+    <value>SelectOpenMainForm</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupBoxTrayIcon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="GroupBoxNavigation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 386</value>
+  <data name="GroupBoxTrayIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>218, 161</value>
   </data>
-  <data name="GroupBoxNavigation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 162</value>
+  <data name="GroupBoxTrayIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 102</value>
   </data>
-  <data name="GroupBoxNavigation.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="GroupBoxTrayIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="GroupBoxNavigation.Text" xml:space="preserve">
-    <value>Navigation window</value>
+  <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
+    <value>Tray Icon click open</value>
   </data>
-  <data name="&gt;&gt;GroupBoxNavigation.Name" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
+  <data name="&gt;&gt;GroupBoxTrayIcon.Name" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
   </data>
-  <data name="&gt;&gt;GroupBoxNavigation.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupBoxTrayIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBoxNavigation.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupBoxTrayIcon.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GroupBoxNavigation.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;GroupBoxTrayIcon.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="EditBalloonAutoHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1338,33 +1710,6 @@
   <data name="&gt;&gt;SelectOpenMainForm.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="GroupBoxTrayIcon.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="GroupBoxTrayIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 161</value>
-  </data>
-  <data name="GroupBoxTrayIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 102</value>
-  </data>
-  <data name="GroupBoxTrayIcon.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
-    <value>Tray Icon click open</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTrayIcon.Name" xml:space="preserve">
-    <value>GroupBoxTrayIcon</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTrayIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTrayIcon.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTrayIcon.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="EditStartupHide.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -1409,6 +1754,141 @@
   </data>
   <data name="GroupBoxReminder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.Name" xml:space="preserve">
+    <value>LabelRemindCelebrationHoursBefore</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.Name" xml:space="preserve">
+    <value>LabelRemindCelebrationEveryMinutes</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditEventsDay.Name" xml:space="preserve">
+    <value>EditEventsDay</value>
+  </data>
+  <data name="&gt;&gt;EditEventsDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditEventsDay.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;EditEventsDay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditEvents.Name" xml:space="preserve">
+    <value>EditEvents</value>
+  </data>
+  <data name="&gt;&gt;EditEvents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditEvents.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;EditEvents.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditTimerInterval.Name" xml:space="preserve">
+    <value>EditTimerInterval</value>
+  </data>
+  <data name="&gt;&gt;EditTimerInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditTimerInterval.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;EditTimerInterval.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LabelTimerInterval.Name" xml:space="preserve">
+    <value>LabelTimerInterval</value>
+  </data>
+  <data name="&gt;&gt;LabelTimerInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTimerInterval.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;LabelTimerInterval.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationHoursBefore.Name" xml:space="preserve">
+    <value>EditRemindCelebrationHoursBefore</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationHoursBefore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationHoursBefore.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;EditTimerEnabled.Name" xml:space="preserve">
+    <value>EditTimerEnabled</value>
+  </data>
+  <data name="&gt;&gt;EditTimerEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditTimerEnabled.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;EditTimerEnabled.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.Name" xml:space="preserve">
+    <value>EditRemindCelebrationEveryMinutes</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="GroupBoxReminder.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GroupBoxReminder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 15</value>
+  </data>
+  <data name="GroupBoxReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 355</value>
+  </data>
+  <data name="GroupBoxReminder.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="GroupBoxReminder.Text" xml:space="preserve">
+    <value>Celebrations reminder</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxReminder.Name" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxReminder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxReminder.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxReminder.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1662,33 +2142,6 @@
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="GroupBoxReminder.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="GroupBoxReminder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>414, 15</value>
-  </data>
-  <data name="GroupBoxReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 355</value>
-  </data>
-  <data name="GroupBoxReminder.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="GroupBoxReminder.Text" xml:space="preserve">
-    <value>Celebrations reminder</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxReminder.Name" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxReminder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxReminder.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxReminder.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="EditShowMonthDayToolTip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -1728,6 +2181,165 @@
   <data name="&gt;&gt;EditShowMonthDayToolTip.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="&gt;&gt;ActionRestoreCalendarColors.Name" xml:space="preserve">
+    <value>ActionRestoreCalendarColors</value>
+  </data>
+  <data name="&gt;&gt;ActionRestoreCalendarColors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionRestoreCalendarColors.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;ActionRestoreCalendarColors.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LabelColorFullMoon.Name" xml:space="preserve">
+    <value>LabelColorFullMoon</value>
+  </data>
+  <data name="&gt;&gt;LabelColorFullMoon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelColorFullMoon.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;LabelColorFullMoon.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PanelFullMoonColor.Name" xml:space="preserve">
+    <value>PanelFullMoonColor</value>
+  </data>
+  <data name="&gt;&gt;PanelFullMoonColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelFullMoonColor.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;PanelFullMoonColor.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LabelColorMoon.Name" xml:space="preserve">
+    <value>LabelColorMoon</value>
+  </data>
+  <data name="&gt;&gt;LabelColorMoon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelColorMoon.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;LabelColorMoon.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PanelMoonEventColor.Name" xml:space="preserve">
+    <value>PanelMoonEventColor</value>
+  </data>
+  <data name="&gt;&gt;PanelMoonEventColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMoonEventColor.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;PanelMoonEventColor.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LabelColorSeason.Name" xml:space="preserve">
+    <value>LabelColorSeason</value>
+  </data>
+  <data name="&gt;&gt;LabelColorSeason.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelColorSeason.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;LabelColorSeason.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;PanelSeasonEventColor.Name" xml:space="preserve">
+    <value>PanelSeasonEventColor</value>
+  </data>
+  <data name="&gt;&gt;PanelSeasonEventColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSeasonEventColor.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;PanelSeasonEventColor.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;LabelColorTorah.Name" xml:space="preserve">
+    <value>LabelColorTorah</value>
+  </data>
+  <data name="&gt;&gt;LabelColorTorah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelColorTorah.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;LabelColorTorah.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;PanelTorahEventColor.Name" xml:space="preserve">
+    <value>PanelTorahEventColor</value>
+  </data>
+  <data name="&gt;&gt;PanelTorahEventColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelTorahEventColor.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;PanelTorahEventColor.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;LabelColorToday.Name" xml:space="preserve">
+    <value>LabelColorToday</value>
+  </data>
+  <data name="&gt;&gt;LabelColorToday.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelColorToday.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;LabelColorToday.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;PanelCurrentDayColor.Name" xml:space="preserve">
+    <value>PanelCurrentDayColor</value>
+  </data>
+  <data name="&gt;&gt;PanelCurrentDayColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelCurrentDayColor.Parent" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;PanelCurrentDayColor.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="GroupBoxCalendar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GroupBoxCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 386</value>
+  </data>
+  <data name="GroupBoxCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 162</value>
+  </data>
+  <data name="GroupBoxCalendar.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="GroupBoxCalendar.Text" xml:space="preserve">
+    <value>Calendar view</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxCalendar.Name" xml:space="preserve">
+    <value>GroupBoxCalendar</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxCalendar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxCalendar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="ActionRestoreCalendarColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1741,13 +2353,13 @@
     <value>17, 133</value>
   </data>
   <data name="ActionRestoreCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 13</value>
+    <value>118, 13</value>
   </data>
   <data name="ActionRestoreCalendarColors.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="ActionRestoreCalendarColors.Text" xml:space="preserve">
-    <value>Restore to defaults</value>
+    <value>Restore defaults values</value>
   </data>
   <data name="&gt;&gt;ActionRestoreCalendarColors.Name" xml:space="preserve">
     <value>ActionRestoreCalendarColors</value>
@@ -2046,35 +2658,83 @@
   <data name="&gt;&gt;PanelCurrentDayColor.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="GroupBoxCalendar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="GroupBoxCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 386</value>
-  </data>
-  <data name="GroupBoxCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 162</value>
-  </data>
-  <data name="GroupBoxCalendar.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="GroupBoxCalendar.Text" xml:space="preserve">
-    <value>Calendar view</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxCalendar.Name" xml:space="preserve">
-    <value>GroupBoxCalendar</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxCalendar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxCalendar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxCalendar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="GroupBoxSystem.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangFR.Name" xml:space="preserve">
+    <value>ActionSelectLangFR</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangFR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangFR.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangEN.Name" xml:space="preserve">
+    <value>ActionSelectLangEN</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangEN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangEN.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditShowReminderInTaskBar.Name" xml:space="preserve">
+    <value>EditShowReminderInTaskBar</value>
+  </data>
+  <data name="&gt;&gt;EditShowReminderInTaskBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditShowReminderInTaskBar.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;EditShowReminderInTaskBar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditCheckUpdateAtStartup.Name" xml:space="preserve">
+    <value>EditCheckUpdateAtStartup</value>
+  </data>
+  <data name="&gt;&gt;EditCheckUpdateAtStartup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCheckUpdateAtStartup.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="GroupBoxSystem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GroupBoxSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 386</value>
+  </data>
+  <data name="GroupBoxSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 162</value>
+  </data>
+  <data name="GroupBoxSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="GroupBoxSystem.Text" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSystem.Name" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSystem.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSystem.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2243,33 +2903,6 @@
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="GroupBoxSystem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="GroupBoxSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>414, 386</value>
-  </data>
-  <data name="GroupBoxSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 162</value>
-  </data>
-  <data name="GroupBoxSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="GroupBoxSystem.Text" xml:space="preserve">
-    <value>Application</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxSystem.Name" xml:space="preserve">
-    <value>GroupBoxSystem</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxSystem.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxSystem.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -46,16 +46,18 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindCelebrationEveryMinutesValue = 15;
 
     static private bool LanguageChanged;
+    static private bool DoReset;
 
     static public bool Run()
     {
       string lang = Program.Settings.Language;
       var form = new PreferencesForm();
       form.ShowDialog();
-      while ( LanguageChanged )
+      while ( LanguageChanged || DoReset )
       {
         NavigationForm.Instance.Close();
         LanguageChanged = false;
+        DoReset = false;
         form = new PreferencesForm();
         form.ShowDialog();
       }
@@ -164,6 +166,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( DoReset ) return;
       try
       {
         var v1 = (float)XmlConvert.ToDouble(EditGPSLatitude.Text);
@@ -228,6 +231,14 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSLatitude = EditGPSLatitude.Text;
       Program.Settings.GPSLongitude = EditGPSLongitude.Text;
       Program.Settings.Store();
+    }
+
+    private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Properties.Settings.Default.Reset();
+      Program.Settings.Save();
+      DoReset = true;
+      Close();
     }
 
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -344,7 +355,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      NavigationForm.Instance.Show();
+      if ( NavigationForm.Instance != null )
+        NavigationForm.Instance.Show();
       PanelTopColor.BackColor = SystemColors.Control;
       PanelMiddleColor.BackColor = SystemColors.Control;
       PanelBottomColor.BackColor = SystemColors.Control;

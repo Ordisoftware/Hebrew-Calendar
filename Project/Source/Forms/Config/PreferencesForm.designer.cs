@@ -40,6 +40,7 @@
       this.EditGPSLatitude = new System.Windows.Forms.TextBox();
       this.EditGPSLongitude = new System.Windows.Forms.TextBox();
       this.PanelButtons = new System.Windows.Forms.Panel();
+      this.ActionResetSettings = new System.Windows.Forms.LinkLabel();
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
@@ -176,9 +177,19 @@
       // 
       // PanelButtons
       // 
+      this.PanelButtons.Controls.Add(this.ActionResetSettings);
       this.PanelButtons.Controls.Add(this.ButtonClose);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
+      // 
+      // ActionResetSettings
+      // 
+      this.ActionResetSettings.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionResetSettings, "ActionResetSettings");
+      this.ActionResetSettings.LinkColor = System.Drawing.Color.Navy;
+      this.ActionResetSettings.Name = "ActionResetSettings";
+      this.ActionResetSettings.TabStop = true;
+      this.ActionResetSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionResetSettings_LinkClicked);
       // 
       // ActionUsePersonalShabat
       // 
@@ -684,6 +695,7 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
       this.PanelButtons.ResumeLayout(false);
+      this.PanelButtons.PerformLayout();
       this.GroupBoxGPS.ResumeLayout(false);
       this.GroupBoxGPS.PerformLayout();
       this.GroupBoxTextReport.ResumeLayout(false);
@@ -781,5 +793,6 @@
     private System.Windows.Forms.CheckBox EditBalloon;
     private System.Windows.Forms.CheckBox EditShowReminderInTaskBar;
     private System.Windows.Forms.CheckBox EditBalloonAutoHide;
+    private System.Windows.Forms.LinkLabel ActionResetSettings;
   }
 }

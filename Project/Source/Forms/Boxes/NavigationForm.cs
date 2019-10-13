@@ -28,12 +28,17 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate the singleton instance.
     /// </summary>
-    static internal NavigationForm Instance { get; private set; }
-
-    static NavigationForm()
+    static internal NavigationForm Instance
     {
-      Instance = new NavigationForm();
+      get
+      {
+        if ( _Instance == null )
+          _Instance = new NavigationForm();
+        return _Instance;
+      }
     }
+
+    static internal NavigationForm _Instance;
 
     public DateTime Date
     {
