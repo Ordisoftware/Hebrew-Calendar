@@ -1443,34 +1443,34 @@
   <data name="GroupBoxReminder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="EditReminderCurrentDayNoColor.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditReminderUseColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditReminderCurrentDayNoColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditReminderUseColors.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditReminderCurrentDayNoColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 326</value>
+  <data name="EditReminderUseColors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 324</value>
   </data>
-  <data name="EditReminderCurrentDayNoColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 17</value>
+  <data name="EditReminderUseColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 17</value>
   </data>
-  <data name="EditReminderCurrentDayNoColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditReminderUseColors.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
   </data>
-  <data name="EditReminderCurrentDayNoColor.Text" xml:space="preserve">
-    <value>Don't use</value>
+  <data name="EditReminderUseColors.Text" xml:space="preserve">
+    <value>Use colors</value>
   </data>
-  <data name="&gt;&gt;EditReminderCurrentDayNoColor.Name" xml:space="preserve">
-    <value>EditReminderCurrentDayNoColor</value>
+  <data name="&gt;&gt;EditReminderUseColors.Name" xml:space="preserve">
+    <value>EditReminderUseColors</value>
   </data>
-  <data name="&gt;&gt;EditReminderCurrentDayNoColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderUseColors.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditReminderCurrentDayNoColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderUseColors.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditReminderCurrentDayNoColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderUseColors.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.AutoSize" type="System.Boolean, mscorlib">
@@ -1539,6 +1539,72 @@
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 298</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Shabat</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 298</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1552,13 +1618,13 @@
     <value>18, 298</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>41, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Current day</value>
+    <value>Current</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -1570,7 +1636,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="EditEventsDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1594,7 +1660,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditEventsDay.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="EditEvents.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1618,13 +1684,13 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditEvents.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="PanelReminderDayColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="PanelReminderDayColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 316</value>
+    <value>73, 316</value>
   </data>
   <data name="PanelReminderDayColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -1642,7 +1708,55 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;PanelReminderDayColor.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
+  </data>
+  <data name="PanelReminderShabatColor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="PanelReminderShabatColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 316</value>
+  </data>
+  <data name="PanelReminderShabatColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="PanelReminderShabatColor.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderShabatColor.Name" xml:space="preserve">
+    <value>PanelReminderShabatColor</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderShabatColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderShabatColor.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderShabatColor.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="PanelReminderCurrentDayColor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="PanelReminderCurrentDayColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 316</value>
+  </data>
+  <data name="PanelReminderCurrentDayColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="PanelReminderCurrentDayColor.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderCurrentDayColor.Name" xml:space="preserve">
+    <value>PanelReminderCurrentDayColor</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderCurrentDayColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderCurrentDayColor.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderCurrentDayColor.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="EditTimerInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1666,7 +1780,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditTimerInterval.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="LabelTimerInterval.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1699,7 +1813,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;LabelTimerInterval.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="EditRemindCelebrationHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1723,7 +1837,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="EditTimerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1756,7 +1870,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditTimerEnabled.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="EditRemindCelebrationEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1780,7 +1894,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="GroupBoxReminder.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>

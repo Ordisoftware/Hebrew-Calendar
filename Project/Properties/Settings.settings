@@ -128,7 +128,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CurrentDayColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Red</Value>
+      <Value Profile="(Default)">220, 0, 0</Value>
     </Setting>
     <Setting Name="TorahEventColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">DarkRed</Value>
@@ -212,10 +212,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ReminderCurrentDayColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">255, 255, 235</Value>
+      <Value Profile="(Default)">255, 255, 230</Value>
     </Setting>
-    <Setting Name="ReminderCurrentDayNoColor" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+    <Setting Name="ReminderUseColors" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="GenerateIntervalMin" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>
@@ -228,6 +228,15 @@
     </Setting>
     <Setting Name="GenerateIntervalPeriod" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">120</Value>
+    </Setting>
+    <Setting Name="ReminderShabatDayColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">242, 242, 242</Value>
+    </Setting>
+    <Setting Name="ReminderDayColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">245, 255, 240</Value>
+    </Setting>
+    <Setting Name="NextCelebrationsFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

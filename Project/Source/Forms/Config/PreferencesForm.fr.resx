@@ -274,6 +274,12 @@
   <data name="GroupBoxReminder.Text" xml:space="preserve">
     <value>Rappel des célébrations</value>
   </data>
+  <data name="EditReminderUseColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 17</value>
+  </data>
+  <data name="EditReminderUseColors.Text" xml:space="preserve">
+    <value>Utiliser couleurs</value>
+  </data>
   <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
   </data>
@@ -285,6 +291,18 @@
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.Text" xml:space="preserve">
     <value>Rappel toutes les minutes</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Prochain</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Courant</value>
   </data>
   <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
