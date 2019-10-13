@@ -125,6 +125,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      ShowInTaskbar = Program.Settings.ShowReminderInTaskBar;
     }
 
     private void ReminderForm_FormClosed(object sender, FormClosedEventArgs e)

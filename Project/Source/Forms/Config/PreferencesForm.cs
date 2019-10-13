@@ -113,6 +113,8 @@ namespace Ordisoftware.HebrewCalendar
           EditFontName.SelectedItem = item;
           break;
         }
+      EditBalloon.Checked = Program.Settings.BalloonEnabled;
+      EditShowReminderInTaskBar.Checked = Program.Settings.ShowReminderInTaskBar;
       EditFontSize.Value = Program.Settings.FontSize;
       EditTimerEnabled.Checked = Program.Settings.ReminderEnabled;
       EditStartupHide.Checked = Program.Settings.StartupHide;
@@ -197,6 +199,8 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
+      Program.Settings.BalloonEnabled = EditBalloon.Checked;
+      Program.Settings.ShowReminderInTaskBar = EditShowReminderInTaskBar.Checked;
       Program.Settings.FontSize = (int)EditFontSize.Value;
       Program.Settings.ReminderEnabled = EditTimerEnabled.Checked;
       Program.Settings.StartupHide = EditStartupHide.Checked;

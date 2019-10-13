@@ -124,16 +124,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key != null )
             found = true;
         if ( found && !EditFilter.Text.Contains(",") )
-        {
-          EditFilter.Text = strCountry + ", ";
-          EditFilter.Enabled = false;
-          Application.DoEvents();
-          System.Threading.Thread.Sleep(500);
-          Application.DoEvents();
-          EditFilter.Enabled = true;
-          ActiveControl = EditFilter;
-          EditFilter.SelectionStart = EditFilter.Text.Length;
-        }
+          tempo(EditFilter.Text = strCountry + ", ");
         int index = ListBoxCountries.FindString(strCountry);
         if ( ListBoxCountries.SelectedIndex != index )
           ListBoxCountries.SelectedIndex = index;
@@ -150,24 +141,26 @@ namespace Ordisoftware.HebrewCalendar
         string strCity = resultCity.ElementAt(0).Name;
         found = resultCity.Count() == 1;
         if ( !found )
-          if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key != null )
+          if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[1]).Key != null )
             found = true;
         if ( found )
-        {
-          EditFilter.Text = strCountry + ", " + strCity;
-          EditFilter.Enabled = false;
-          Application.DoEvents();
-          System.Threading.Thread.Sleep(500);
-          Application.DoEvents();
-          EditFilter.Enabled = true;
-          ActiveControl = EditFilter;
-          EditFilter.SelectionStart = EditFilter.Text.Length;
-        }
+          tempo(EditFilter.Text = strCountry + ", " + strCity);
         ListBoxCities.SelectedIndex = ListBoxCities.FindString(strCity);
       }
       finally
       {
         Mutex = false;
+      }
+      void tempo(string str)
+      {
+        EditFilter.Text = str;
+        EditFilter.Enabled = false;
+        Application.DoEvents();
+        System.Threading.Thread.Sleep(500);
+        Application.DoEvents();
+        EditFilter.Enabled = true;
+        ActiveControl = EditFilter;
+        EditFilter.SelectionStart = EditFilter.Text.Length;
       }
     }
   }

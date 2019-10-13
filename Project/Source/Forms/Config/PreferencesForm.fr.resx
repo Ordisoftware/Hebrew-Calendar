@@ -235,6 +235,12 @@
   <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
     <value>Click sur la Tray Icon ouvre</value>
   </data>
+  <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 17</value>
+  </data>
+  <data name="EditBalloon.Text" xml:space="preserve">
+    <value>Utiliser le ballon</value>
+  </data>
   <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 17</value>
   </data>
@@ -246,6 +252,9 @@
   </data>
   <data name="SelectOpenMainForm.Text" xml:space="preserve">
     <value>Fenêtre de l'application</value>
+  </data>
+  <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 17</value>
   </data>
   <data name="EditStartupHide.Text" xml:space="preserve">
     <value>Cacher l'application au démarrage</value>
@@ -337,6 +346,15 @@
         +8l0NPSU/TNEq2k7Jnybo/+yv0PxC0/PmXQSJ4tzAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 17</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
+    <value>Afficher le rappeleur dans la barre de tâche</value>
+  </data>
+  <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 17</value>
+  </data>
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>Vérifier mise à jour au démarrage</value>
   </data>
@@ -363,5 +381,8 @@
         AAAAAAAA//8AAPwfAAD8HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwf
         AAD8HwAA//8AAA==
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Préférences</value>
   </data>
 </root>

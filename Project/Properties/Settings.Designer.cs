@@ -800,5 +800,29 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["GPSCity"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BalloonEnabled {
+            get {
+                return ((bool)(this["BalloonEnabled"]));
+            }
+            set {
+                this["BalloonEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowReminderInTaskBar {
+            get {
+                return ((bool)(this["ShowReminderInTaskBar"]));
+            }
+            set {
+                this["ShowReminderInTaskBar"] = value;
+            }
+        }
     }
 }

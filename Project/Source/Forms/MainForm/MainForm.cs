@@ -166,6 +166,43 @@ namespace Ordisoftware.HebrewCalendar
       MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
     }
 
+    private bool CanBallon = true;
+
+    private void MenuTray_VisibleChanged(object sender, EventArgs e)
+    {
+      CanBallon = !MenuTray.Visible;
+    }
+
+    private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
+    {
+      TrayIcon.Text = Program.Settings.BalloonEnabled ? "" : Text;
+      if ( !Program.Settings.BalloonEnabled ) return;
+      TimerBallon.Start();
+      p = Cursor.Position;
+      if ( !TimerTrayMouseMove.Enabled )
+        TimerTrayMouseMove.Start();
+    }
+
+    private void TimerBallon_Tick(object sender, EventArgs e)
+    {
+      TimerBallon.Stop();
+      if ( !CanBallon ) return;
+      if ( !NavigationForm.Instance.Visible )
+        ActionNavigate.PerformClick();
+    }
+
+    private Point p;
+
+    private void TimerTrayMouseMove_Tick(object sender, EventArgs e)
+    {
+      if ( Cursor.Position != p )
+      {
+        TimerTrayMouseMove.Stop();
+        if ( NavigationForm.Instance.Visible )
+          ActionNavigate.PerformClick();
+      }
+    }
+
     /// <summary>
     /// Event handler. Called by TrayIcon for mouse click events.
     /// </summary>
@@ -173,7 +210,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Mouse event information.</param>
     private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
     {
-      if ( e != null && e.Button == MouseButtons.Left )
+      TimerBallon.Stop();
+      TimerTrayMouseMove.Stop();
+      if ( e == null ) return;
+      if ( e.Button == MouseButtons.Left )
         switch ( Program.Settings.TrayIconClickOpen )
         {
           case TrayIconClickOpen.MainForm:
@@ -195,6 +235,10 @@ namespace Ordisoftware.HebrewCalendar
               }
             break;
         }
+      else
+      if ( e.Button == MouseButtons.Right )
+        if ( NavigationForm.Instance.Visible )
+          ActionNavigate.PerformClick();
     }
 
     /// <summary>
@@ -512,8 +556,11 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
+      TimerBallon.Stop();
       if ( NavigationForm.Instance.Visible )
+      {
         NavigationForm.Instance.Visible = false;
+      }
       else
       {
         NavigationForm.Instance.Date = DateTime.Now;
