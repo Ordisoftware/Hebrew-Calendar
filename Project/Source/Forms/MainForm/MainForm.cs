@@ -121,10 +121,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Session ending event information.</param>
     private void SessionEnding(object sender, SessionEndingEventArgs e)
     {
+      ClearLists();
       foreach ( Form form in Application.OpenForms )
         if ( form != this && form.Visible )
           form.Close();
-      ClearLists();
       AllowClose = true;
       Close();
     }
