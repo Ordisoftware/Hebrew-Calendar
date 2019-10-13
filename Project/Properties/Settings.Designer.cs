@@ -824,5 +824,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["ShowReminderInTaskBar"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BalloonAutoHide {
+            get {
+                return ((bool)(this["BalloonAutoHide"]));
+            }
+            set {
+                this["BalloonAutoHide"] = value;
+            }
+        }
     }
 }

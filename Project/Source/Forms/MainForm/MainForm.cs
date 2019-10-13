@@ -175,11 +175,12 @@ namespace Ordisoftware.HebrewCalendar
 
     private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
     {
+      if ( !IsReady ) return;
       TrayIcon.Text = Program.Settings.BalloonEnabled ? "" : Text;
       if ( !Program.Settings.BalloonEnabled ) return;
       TimerBallon.Start();
       p = Cursor.Position;
-      if ( !TimerTrayMouseMove.Enabled )
+      if ( !TimerTrayMouseMove.Enabled && Program.Settings.BalloonAutoHide )
         TimerTrayMouseMove.Start();
     }
 
@@ -188,17 +189,22 @@ namespace Ordisoftware.HebrewCalendar
       TimerBallon.Stop();
       if ( !CanBallon ) return;
       if ( !NavigationForm.Instance.Visible )
-        ActionNavigate.PerformClick();
+      {
+        ActionNavigate_Click(null, null);
+      }
     }
 
     private Point p;
+
+    private bool NavigationTrayOpened;
 
     private void TimerTrayMouseMove_Tick(object sender, EventArgs e)
     {
       if ( Cursor.Position != p )
       {
+        TimerBallon.Stop();
         TimerTrayMouseMove.Stop();
-        if ( NavigationForm.Instance.Visible )
+        if ( NavigationForm.Instance.Visible && NavigationTrayOpened )
           ActionNavigate.PerformClick();
       }
     }
@@ -557,6 +563,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
       TimerBallon.Stop();
+      NavigationTrayOpened = sender == null;
       if ( NavigationForm.Instance.Visible )
       {
         NavigationForm.Instance.Visible = false;

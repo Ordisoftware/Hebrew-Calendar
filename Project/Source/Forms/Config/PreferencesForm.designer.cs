@@ -68,6 +68,7 @@
       this.LabelBottomColor = new System.Windows.Forms.Label();
       this.LabelMiddleColor = new System.Windows.Forms.Label();
       this.GroupBoxTrayIcon = new System.Windows.Forms.GroupBox();
+      this.EditBalloonAutoHide = new System.Windows.Forms.CheckBox();
       this.EditBalloon = new System.Windows.Forms.CheckBox();
       this.SelectOpenNavigationForm = new System.Windows.Forms.RadioButton();
       this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
@@ -407,11 +408,18 @@
       // GroupBoxTrayIcon
       // 
       resources.ApplyResources(this.GroupBoxTrayIcon, "GroupBoxTrayIcon");
+      this.GroupBoxTrayIcon.Controls.Add(this.EditBalloonAutoHide);
       this.GroupBoxTrayIcon.Controls.Add(this.EditBalloon);
       this.GroupBoxTrayIcon.Controls.Add(this.SelectOpenNavigationForm);
       this.GroupBoxTrayIcon.Controls.Add(this.SelectOpenMainForm);
       this.GroupBoxTrayIcon.Name = "GroupBoxTrayIcon";
       this.GroupBoxTrayIcon.TabStop = false;
+      // 
+      // EditBalloonAutoHide
+      // 
+      resources.ApplyResources(this.EditBalloonAutoHide, "EditBalloonAutoHide");
+      this.EditBalloonAutoHide.Name = "EditBalloonAutoHide";
+      this.EditBalloonAutoHide.UseVisualStyleBackColor = true;
       // 
       // EditBalloon
       // 
@@ -766,5 +774,6 @@
     private System.Windows.Forms.LinkLabel ActionGetGPS;
     private System.Windows.Forms.CheckBox EditBalloon;
     private System.Windows.Forms.CheckBox EditShowReminderInTaskBar;
+    private System.Windows.Forms.CheckBox EditBalloonAutoHide;
   }
 }

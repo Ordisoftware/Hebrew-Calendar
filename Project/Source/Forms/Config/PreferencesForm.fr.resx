@@ -235,6 +235,12 @@
   <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
     <value>Click sur la Tray Icon ouvre</value>
   </data>
+  <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="EditBalloonAutoHide.Text" xml:space="preserve">
+    <value>Cacher le ballon autom.</value>
+  </data>
   <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 17</value>
   </data>

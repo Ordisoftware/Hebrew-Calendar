@@ -187,7 +187,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="GroupBoxTrayIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 98</value>
+    <value>180, 102</value>
   </data>
   <data name="&gt;&gt;LabelFontName.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -208,7 +208,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="SelectOpenMainForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 22</value>
+    <value>18, 20</value>
   </data>
   <data name="LabelGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -229,16 +229,13 @@
     <value>GroupBoxNavigation</value>
   </data>
   <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 41</value>
+    <value>23, 38</value>
   </data>
   <data name="&gt;&gt;EditFontSize.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="EditEventsDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 214</value>
-  </data>
-  <data name="&gt;&gt;SelectOpenMainForm.Name" xml:space="preserve">
-    <value>SelectOpenMainForm</value>
   </data>
   <data name="&gt;&gt;PanelTorahEventColor.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
@@ -381,8 +378,8 @@
   <data name="EditRemindShabatOnlyLight.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="LabelRemindCelebrationEveryMinutes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="EditBalloonAutoHide.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;GroupBoxTextReport.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -448,7 +445,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 85</value>
+    <value>23, 80</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -502,7 +499,7 @@
     <value>PanelMoonEventColor</value>
   </data>
   <data name="LabelGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 23</value>
+    <value>20, 20</value>
   </data>
   <data name="LabelShabatDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -624,8 +621,11 @@
   <data name="ActionUseSystemColors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="&gt;&gt;ActionSelectLangEN.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="LabelMiddleColor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="LabelMiddleColor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -634,7 +634,7 @@
     <value>1</value>
   </data>
   <data name="&gt;&gt;SelectOpenMainForm.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditTimerEnabled.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
@@ -644,6 +644,9 @@
   </data>
   <data name="&gt;&gt;LabelTextColor.Name" xml:space="preserve">
     <value>LabelTextColor</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;ButtonClose.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -818,6 +821,9 @@
   </data>
   <data name="EditRemindShabatOnlyLight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Name" xml:space="preserve">
+    <value>EditBalloon</value>
   </data>
   <data name="ActionGetGPS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1008,8 +1014,8 @@
   <data name="&gt;&gt;EditBalloon.Parent" xml:space="preserve">
     <value>GroupBoxTrayIcon</value>
   </data>
-  <data name="&gt;&gt;GroupBoxCalendar.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;EditBalloonAutoHide.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>769, 603</value>
@@ -1030,7 +1036,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="LabelGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 67</value>
+    <value>20, 62</value>
   </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -1042,7 +1048,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="&gt;&gt;SelectOpenNavigationForm.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditEvents.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1050,8 +1056,8 @@
   <data name="&gt;&gt;ActionUseBlackAndWhiteColors.Name" xml:space="preserve">
     <value>ActionUseBlackAndWhiteColors</value>
   </data>
-  <data name="&gt;&gt;PanelTopColor.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;ActionUsePersonalShabat.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionUseBlackAndWhiteColors.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1076,6 +1082,9 @@
   </data>
   <data name="&gt;&gt;PanelFullMoonColor.Name" xml:space="preserve">
     <value>PanelFullMoonColor</value>
+  </data>
+  <data name="EditBalloonAutoHide.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="LabelGPSLatitude.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1227,8 +1236,8 @@
   <data name="&gt;&gt;GroupBoxReminder.Name" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="PanelMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
+  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ButtonClose.Name" xml:space="preserve">
     <value>ButtonClose</value>
@@ -1272,6 +1281,9 @@
   <data name="LabelBackColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="PanelMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
   <data name="LabelBottomColor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1310,6 +1322,9 @@
   </data>
   <data name="LabelFontSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>200, 26</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;DialogColor.Name" xml:space="preserve">
     <value>DialogColor</value>
@@ -1462,7 +1477,7 @@
     <value>PanelBackColor</value>
   </data>
   <data name="GroupBoxGPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 136</value>
+    <value>180, 130</value>
   </data>
   <data name="ActionUsePersonalShabat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1509,9 +1524,6 @@
   <data name="&gt;&gt;PanelBottomColor.Parent" xml:space="preserve">
     <value>GroupBoxNavigation</value>
   </data>
-  <data name="EditBalloon.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;EditRemindShabatEveryMinutes.Parent" xml:space="preserve">
     <value>BroupBoxShabat</value>
   </data>
@@ -1543,9 +1555,6 @@
   </data>
   <data name="LabelTimerInterval.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="LabelMiddleColor.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="GroupBoxNavigation.Text" xml:space="preserve">
     <value>Navigation window</value>
@@ -1581,7 +1590,7 @@
     <value>GroupBoxNavigation</value>
   </data>
   <data name="GroupBoxTrayIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 165</value>
+    <value>218, 161</value>
   </data>
   <data name="&gt;&gt;EditShowMonthDayToolTip.Name" xml:space="preserve">
     <value>EditShowMonthDayToolTip</value>
@@ -1596,7 +1605,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditBalloon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 70</value>
+    <value>18, 60</value>
   </data>
   <data name="ActionSelectLangEN.TabIndex" type="System.Int32, mscorlib">
     <value>76</value>
@@ -1625,8 +1634,8 @@
   <data name="&gt;&gt;GroupBoxSystem.Name" xml:space="preserve">
     <value>GroupBoxSystem</value>
   </data>
-  <data name="&gt;&gt;ActionUsePersonalShabat.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;EditBalloonAutoHide.Name" xml:space="preserve">
+    <value>EditBalloonAutoHide</value>
   </data>
   <data name="LabelShabatDay.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 24</value>
@@ -1643,6 +1652,9 @@
   <data name="LabelColorMoon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="EditStartupHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1656,7 +1668,7 @@
     <value>3</value>
   </data>
   <data name="&gt;&gt;EditBalloon.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;GroupBoxTextReport.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -1697,8 +1709,8 @@
   <data name="&gt;&gt;GroupBoxCalendar.Name" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;EditBalloon.Name" xml:space="preserve">
-    <value>EditBalloon</value>
+  <data name="EditBalloonAutoHide.Text" xml:space="preserve">
+    <value>Auto hide balloon</value>
   </data>
   <data name="LabelTopColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1725,10 +1737,7 @@
     <value>203, 46</value>
   </data>
   <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 111</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>20, 106</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1766,6 +1775,9 @@
   <data name="ActionUseDefaultColors.Text" xml:space="preserve">
     <value>Use pastel colors</value>
   </data>
+  <data name="EditBalloonAutoHide.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 13</value>
   </data>
@@ -1774,6 +1786,9 @@
   </data>
   <data name="LabelBackColor.Text" xml:space="preserve">
     <value>Back</value>
+  </data>
+  <data name="&gt;&gt;PanelTopColor.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -1908,17 +1923,23 @@
   <data name="LabelFontName.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
   </data>
+  <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 17</value>
+  </data>
   <data name="EditBalloon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ActionUseSystemColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="EditBalloonAutoHide.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 80</value>
+  </data>
   <data name="LabelFontName.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 26</value>
   </data>
-  <data name="&gt;&gt;ActionSelectLangEN.Parent" xml:space="preserve">
-    <value>GroupBoxSystem</value>
+  <data name="EditBalloon.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="EditShowMonthDayToolTip.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
@@ -1971,6 +1992,9 @@
   <data name="GroupBoxSystem.Text" xml:space="preserve">
     <value>Application</value>
   </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
   <data name="&gt;&gt;PanelTextColor.Name" xml:space="preserve">
     <value>PanelTextColor</value>
   </data>
@@ -1987,6 +2011,9 @@
     <value>LabelShabatDay</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PanelTextColor.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="&gt;&gt;BroupBoxShabat.Type" xml:space="preserve">
@@ -2130,8 +2157,8 @@
   <data name="&gt;&gt;EditRemindShabatOnlyLight.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelTextColor.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;SelectOpenMainForm.Name" xml:space="preserve">
+    <value>SelectOpenMainForm</value>
   </data>
   <data name="&gt;&gt;ActionUseBlackAndWhiteColors.Parent" xml:space="preserve">
     <value>GroupBoxNavigation</value>
@@ -2230,13 +2257,16 @@
     <value>54, 13</value>
   </data>
   <data name="SelectOpenNavigationForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 45</value>
+    <value>18, 40</value>
   </data>
   <data name="EditRemindShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 17</value>
   </data>
   <data name="EditStartupHide.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 83</value>
+  </data>
+  <data name="EditBalloonAutoHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;EditTimerEnabled.Name" xml:space="preserve">
     <value>EditTimerEnabled</value>
@@ -2252,6 +2282,9 @@
   </data>
   <data name="&gt;&gt;LabelColorToday.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxCalendar.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="LabelColorToday.Text" xml:space="preserve">
     <value>Today</value>

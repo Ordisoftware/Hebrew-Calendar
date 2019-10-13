@@ -114,6 +114,7 @@ namespace Ordisoftware.HebrewCalendar
           break;
         }
       EditBalloon.Checked = Program.Settings.BalloonEnabled;
+      EditBalloonAutoHide.Checked = Program.Settings.BalloonAutoHide;
       EditShowReminderInTaskBar.Checked = Program.Settings.ShowReminderInTaskBar;
       EditFontSize.Value = Program.Settings.FontSize;
       EditTimerEnabled.Checked = Program.Settings.ReminderEnabled;
@@ -200,6 +201,7 @@ namespace Ordisoftware.HebrewCalendar
         {
         }
       Program.Settings.BalloonEnabled = EditBalloon.Checked;
+      Program.Settings.BalloonAutoHide = EditBalloonAutoHide.Checked;
       Program.Settings.ShowReminderInTaskBar = EditShowReminderInTaskBar.Checked;
       Program.Settings.FontSize = (int)EditFontSize.Value;
       Program.Settings.ReminderEnabled = EditTimerEnabled.Checked;

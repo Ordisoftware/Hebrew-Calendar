@@ -820,7 +820,7 @@
       // 
       // TimerBallon
       // 
-      this.TimerBallon.Interval = 1500;
+      this.TimerBallon.Interval = 1000;
       this.TimerBallon.Tick += new System.EventHandler(this.TimerBallon_Tick);
       // 
       // CalendarMonth
@@ -978,6 +978,7 @@
       // 
       // TimerTrayMouseMove
       // 
+      this.TimerTrayMouseMove.Interval = 10;
       this.TimerTrayMouseMove.Tick += new System.EventHandler(this.TimerTrayMouseMove_Tick);
       // 
       // MainForm

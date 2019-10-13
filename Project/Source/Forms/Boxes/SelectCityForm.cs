@@ -77,6 +77,8 @@ namespace Ordisoftware.HebrewCalendar
     private void SelectCityForm_Load(object sender, EventArgs e)
     {
       ListBoxCountries.DataSource = GPS.Keys.OrderBy(c => c).ToList();
+      ListBoxCountries.SelectedIndex = -1;
+      ListBoxCities.SelectedIndex = -1;
       ActiveControl = EditFilter;
     }
 
@@ -98,6 +100,7 @@ namespace Ordisoftware.HebrewCalendar
       Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
       Country = (string)ListBoxCountries.SelectedItem;
       City = ( (CityItem)ListBoxCities.SelectedItem ).Name;
+      ButtonOk.Enabled = true;
     }
 
     private bool Mutex;
@@ -106,7 +109,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Mutex ) return;
       Mutex = true;
-      bool found;
+      bool foundCountry = false;
+      bool foundCity = false;
       try
       {
         var list = EditFilter.Text.Split(',');
@@ -119,11 +123,11 @@ namespace Ordisoftware.HebrewCalendar
                             select country;
         if ( resultCountry.Count() == 0 ) return;
         string strCountry = resultCountry.ElementAt(0).Key;
-        found = resultCountry.Count() == 1;
-        if ( !found )
+        foundCountry = resultCountry.Count() == 1;
+        if ( !foundCountry )
           if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key != null )
-            found = true;
-        if ( found && !EditFilter.Text.Contains(",") )
+            foundCountry = true;
+        if ( foundCountry && !EditFilter.Text.Contains(",") )
           tempo(EditFilter.Text = strCountry + ", ");
         int index = ListBoxCountries.FindString(strCountry);
         if ( ListBoxCountries.SelectedIndex != index )
@@ -139,16 +143,17 @@ namespace Ordisoftware.HebrewCalendar
                          select city;
         if ( resultCity.Count() == 0 ) return;
         string strCity = resultCity.ElementAt(0).Name;
-        found = resultCity.Count() == 1;
-        if ( !found )
+        foundCity = resultCity.Count() == 1;
+        if ( !foundCity )
           if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[1]).Key != null )
-            found = true;
-        if ( found )
+            foundCity = true;
+        if ( foundCity )
           tempo(EditFilter.Text = strCountry + ", " + strCity);
         ListBoxCities.SelectedIndex = ListBoxCities.FindString(strCity);
       }
       finally
       {
+        ButtonOk.Enabled = foundCountry && foundCity;
         Mutex = false;
       }
       void tempo(string str)
