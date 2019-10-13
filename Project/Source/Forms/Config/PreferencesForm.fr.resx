@@ -293,16 +293,16 @@
     <value>Rappel toutes les minutes</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 13</value>
+    <value>49, 13</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Jour</value>
+    <value>Prochain</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Jour en cours</value>
+    <value>Courant</value>
   </data>
   <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>

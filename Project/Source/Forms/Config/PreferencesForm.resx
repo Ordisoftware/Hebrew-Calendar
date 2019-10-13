@@ -1450,7 +1450,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditReminderUseColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 324</value>
+    <value>176, 324</value>
   </data>
   <data name="EditReminderUseColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 17</value>
@@ -1549,7 +1549,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 298</value>
+    <value>124, 298</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -1582,16 +1582,16 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 298</value>
+    <value>71, 298</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 13</value>
+    <value>29, 13</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Day</value>
+    <value>Next</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -1615,16 +1615,16 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 298</value>
+    <value>18, 298</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>41, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Current day</value>
+    <value>Current</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -1690,7 +1690,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="PanelReminderDayColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 316</value>
+    <value>73, 316</value>
   </data>
   <data name="PanelReminderDayColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -1714,7 +1714,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="PanelReminderShabatColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 316</value>
+    <value>126, 316</value>
   </data>
   <data name="PanelReminderShabatColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -1738,7 +1738,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="PanelReminderCurrentDayColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 316</value>
+    <value>20, 316</value>
   </data>
   <data name="PanelReminderCurrentDayColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>

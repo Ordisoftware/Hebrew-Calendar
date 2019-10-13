@@ -911,7 +911,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("242, 255, 242")]
+        [global::System.Configuration.DefaultSettingValueAttribute("240, 240, 240")]
         public global::System.Drawing.Color ReminderShabatDayColor {
             get {
                 return ((global::System.Drawing.Color)(this["ReminderShabatDayColor"]));
@@ -923,7 +923,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("WhiteSmoke")]
+        [global::System.Configuration.DefaultSettingValueAttribute("245, 255, 240")]
         public global::System.Drawing.Color ReminderDayColor {
             get {
                 return ((global::System.Drawing.Color)(this["ReminderDayColor"]));
