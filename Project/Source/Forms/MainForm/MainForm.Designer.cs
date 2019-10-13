@@ -98,6 +98,12 @@
       this.ActionCreateGitHubIssue = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.MenuSettings = new System.Windows.Forms.ToolStripDropDownButton();
@@ -695,7 +701,13 @@
             this.ActionWebContact,
             this.ActionCreateGitHubIssue,
             this.toolStripSeparator2,
-            this.ActionWebCheckUpdate});
+            this.ActionWebCheckUpdate,
+            this.toolStripSeparator3,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem2,
+            this.toolStripSeparator4,
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem4});
       resources.ApplyResources(this.MenuWeb, "MenuWeb");
       this.MenuWeb.Name = "MenuWeb";
       // 
@@ -732,6 +744,44 @@
       resources.ApplyResources(this.ActionWebCheckUpdate, "ActionWebCheckUpdate");
       this.ActionWebCheckUpdate.Name = "ActionWebCheckUpdate";
       this.ActionWebCheckUpdate.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
+      // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+      // 
+      // toolStripMenuItem3
+      // 
+      resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+      this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+      this.toolStripMenuItem3.Tag = "https://www.sunrise-and-sunset.com";
+      this.toolStripMenuItem3.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripMenuItem2
+      // 
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      this.toolStripMenuItem2.Tag = "http://www.calendrier-lunaire.net";
+      this.toolStripMenuItem2.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      // 
+      // toolStripMenuItem1
+      // 
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      this.toolStripMenuItem1.Tag = "https://fr.wikipedia.org/wiki/Calendrier_h%C3%A9bra%C3%AFque";
+      this.toolStripMenuItem1.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripMenuItem4
+      // 
+      resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+      this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+      this.toolStripMenuItem4.Tag = "http://www.calj.net";
+      this.toolStripMenuItem4.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // Sep6
       // 
@@ -1134,6 +1184,12 @@
     private System.Windows.Forms.ToolStripMenuItem ActionCreateGitHubIssue;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.ToolStripMenuItem ActionWebCheckUpdate;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
   }
 }
 

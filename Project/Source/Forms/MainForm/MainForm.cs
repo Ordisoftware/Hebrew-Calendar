@@ -404,11 +404,6 @@ namespace Ordisoftware.HebrewCalendar
       AboutBox.Instance.OpenContactPage();
     }
 
-    private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
-    {
-      SystemManager.OpenWebLink(Program.GitHubRepositoryURL + "/issues");
-    }
-
     /// <summary>
     /// Event handler. Called by ActionCheckUpdate for click events.
     /// </summary>
@@ -417,6 +412,17 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
       Program.CheckUpdate(false);
+    }
+
+    private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
+    {
+      SystemManager.OpenWebLink(Program.GitHubRepositoryURL + "/issues");
+    }
+
+    private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
+    {
+      string url = (string)( (ToolStripItem)sender ).Tag;
+      SystemManager.OpenWebLink(url);
     }
 
     /// <summary>
@@ -683,6 +689,10 @@ namespace Ordisoftware.HebrewCalendar
         DisplayManager.Show(Translations.DateNotFound.GetLang(strDate));
     }
 
+    private void ActionOpenTanakMP3_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 
 }
