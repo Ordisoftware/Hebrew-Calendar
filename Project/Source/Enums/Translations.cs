@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2019-10 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -190,6 +190,15 @@ namespace Ordisoftware.HebrewCalendar
                 "Do you want to generate the calendrier?" },
         { "fr", "Préférences changées." + NewLine + NewLine +
                 "Voulez-vous générer le calendrier ?" }
+      };
+
+    static public readonly Dictionary<string, string> ResetPreferences
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to reset the preferences" + NewLine + 
+                "to their default values?" },
+        { "fr", "Voulez-vous réinitialiser les préférences" + NewLine +
+                "à leurs valeurs par défaut ?" }
       };
 
     static public readonly Dictionary<string, string> ReplaceCalendar

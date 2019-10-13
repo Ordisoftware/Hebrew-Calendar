@@ -239,7 +239,9 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      Properties.Settings.Default.Reset();
+      if ( !DisplayManager.QueryYesNo(Translations.ResetPreferences.GetLang()) ) return;
+      Program.Settings.Reset();
+      Program.Settings.Reload();
       Program.Settings.Save();
       DoReset = true;
       Close();
