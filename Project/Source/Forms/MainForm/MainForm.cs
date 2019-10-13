@@ -342,12 +342,12 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
+      ClearLists();
       if ( PreferencesForm.Run() )
         if ( DisplayManager.QueryYesNo(Translations.RegenerateCalendar.GetLang()) )
           ActionGenerate.PerformClick();
       CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
       InitRemindLists();
-      ClearLists();
       TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
       Timer_Tick(null, null);
     }

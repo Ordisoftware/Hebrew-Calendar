@@ -100,6 +100,7 @@
       // 
       // LabelTorahNextDateValue
       // 
+      this.LabelTorahNextDateValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelTorahNextDateValue, "LabelTorahNextDateValue");
       this.LabelTorahNextDateValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelTorahNextDateValue.Name = "LabelTorahNextDateValue";

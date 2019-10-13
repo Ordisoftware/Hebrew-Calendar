@@ -70,6 +70,7 @@
       // 
       // labelTrademark
       // 
+      this.labelTrademark.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.labelTrademark, "labelTrademark");
       this.labelTrademark.LinkColor = System.Drawing.Color.Navy;
       this.labelTrademark.Name = "labelTrademark";
@@ -97,6 +98,7 @@
       // 
       // linkProvider1
       // 
+      this.linkProvider1.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkProvider1, "linkProvider1");
       this.linkProvider1.LinkColor = System.Drawing.Color.Navy;
       this.linkProvider1.Name = "linkProvider1";
@@ -110,6 +112,7 @@
       // 
       // linkProvider2
       // 
+      this.linkProvider2.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkProvider2, "linkProvider2");
       this.linkProvider2.LinkColor = System.Drawing.Color.Navy;
       this.linkProvider2.Name = "linkProvider2";
@@ -118,6 +121,7 @@
       // 
       // linkProvider3
       // 
+      this.linkProvider3.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkProvider3, "linkProvider3");
       this.linkProvider3.LinkColor = System.Drawing.Color.Navy;
       this.linkProvider3.Name = "linkProvider3";
@@ -146,6 +150,7 @@
       // 
       // linkLabel1
       // 
+      this.linkLabel1.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
       resources.ApplyResources(this.linkLabel1, "linkLabel1");
       this.linkLabel1.Name = "linkLabel1";
@@ -173,6 +178,7 @@
       // 
       // linkLabel4
       // 
+      this.linkLabel4.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel4.LinkColor = System.Drawing.Color.Navy;
       resources.ApplyResources(this.linkLabel4, "linkLabel4");
       this.linkLabel4.Name = "linkLabel4";
@@ -181,6 +187,7 @@
       // 
       // linkLabel5
       // 
+      this.linkLabel5.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel5, "linkLabel5");
       this.linkLabel5.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel5.Name = "linkLabel5";
