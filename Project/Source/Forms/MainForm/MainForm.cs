@@ -589,12 +589,12 @@ namespace Ordisoftware.HebrewCalendar
       NavigationTrayOpened = sender == null;
       if ( NavigationForm.Instance.Visible )
       {
-        NavigationForm.Instance.Visible = false;
+        NavigationForm.Instance.Hide();
       }
       else
       {
         NavigationForm.Instance.Date = DateTime.Now;
-        NavigationForm.Instance.Visible = true;
+        NavigationForm.Instance.Show();
         NavigationForm.Instance.BringToFront();
       }
     }

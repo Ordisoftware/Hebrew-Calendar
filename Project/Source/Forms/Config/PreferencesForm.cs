@@ -144,6 +144,8 @@ namespace Ordisoftware.HebrewCalendar
       PanelSeasonEventColor.BackColor = Program.Settings.SeasonEventColor;
       PanelMoonEventColor.BackColor = Program.Settings.MoonEventColor;
       PanelFullMoonColor.BackColor = Program.Settings.FullMoonColor;
+      PanelReminderDayColor.BackColor = Program.Settings.ReminderCurrentDayColor;
+      EditReminderCurrentDayNoColor.Checked = Program.Settings.ReminderCurrentDayNoColor;
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.GPSLatitude;
       OldLongitude = Program.Settings.GPSLongitude;
@@ -234,6 +236,8 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.SeasonEventColor = PanelSeasonEventColor.BackColor;
       Program.Settings.MoonEventColor = PanelMoonEventColor.BackColor;
       Program.Settings.FullMoonColor = PanelFullMoonColor.BackColor;
+      Program.Settings.ReminderCurrentDayColor = PanelReminderDayColor.BackColor;
+      Program.Settings.ReminderCurrentDayNoColor = EditReminderCurrentDayNoColor.Checked;
       Program.Settings.Store();
     }
 
@@ -354,6 +358,13 @@ namespace Ordisoftware.HebrewCalendar
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelBottomColor.BackColor = DialogColor.Color;
       NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
+    }
+
+    private void PanelReminderDayColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = PanelReminderDayColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelReminderDayColor.BackColor = DialogColor.Color;
     }
 
     /// <summary>
@@ -641,7 +652,6 @@ namespace Ordisoftware.HebrewCalendar
       public override string ToString() { return Text; }
 
     }
-
   }
 
 }

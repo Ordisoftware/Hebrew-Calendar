@@ -836,5 +836,29 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["BalloonAutoHide"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightYellow")]
+        public global::System.Drawing.Color ReminderCurrentDayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ReminderCurrentDayColor"]));
+            }
+            set {
+                this["ReminderCurrentDayColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReminderCurrentDayNoColor {
+            get {
+                return ((bool)(this["ReminderCurrentDayNoColor"]));
+            }
+            set {
+                this["ReminderCurrentDayNoColor"] = value;
+            }
+        }
     }
 }
