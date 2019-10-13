@@ -206,7 +206,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ShowReminderInTaskBar" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="BalloonAutoHide" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

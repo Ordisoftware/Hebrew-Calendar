@@ -32,34 +32,38 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindShabatHoursBeforeMin = 1;
     const int RemindShabatHoursBeforeMax = 12;
     const int RemindShabatHoursBeforeValue = 6;
-    const int RemindShabatEveryMinutesMin = 5;
+    const int RemindShabatEveryMinutesMin = 1;
     const int RemindShabatEveryMinutesMax = 60;
     const int RemindShabatEveryMinutesValue = 15;
     const int RemindCelebrationBeforeMin = 1;
-    const int RemindCelebrationBeforeMax = 60;
+    const int RemindCelebrationBeforeMax = 30;
     const int RemindCelebrationBeforeValue = 7;
-    const int RemindCelebrationHoursBeforeMin = 2;
+    const int RemindCelebrationHoursBeforeMin = 1;
     const int RemindCelebrationHoursBeforeMax = 24;
     const int RemindCelebrationHoursBeforeValue = 6;
-    const int RemindCelebrationEveryMinutesMin = 5;
+    const int RemindCelebrationEveryMinutesMin = 1;
     const int RemindCelebrationEveryMinutesMax = 60;
     const int RemindCelebrationEveryMinutesValue = 15;
 
     static private bool LanguageChanged;
+    static private bool DoReset;
 
     static public bool Run()
     {
+      MainForm.Instance.TimerReminder.Enabled = false;
       string lang = Program.Settings.Language;
       var form = new PreferencesForm();
       form.ShowDialog();
-      while ( LanguageChanged )
+      while ( LanguageChanged || DoReset )
       {
         NavigationForm.Instance.Close();
         LanguageChanged = false;
+        DoReset = false;
         form = new PreferencesForm();
         form.ShowDialog();
       }
       MainForm.Instance.Refresh();
+      MainForm.Instance.TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
       return form.OldShabatDay != Program.Settings.ShabatDay
           || form.OldLatitude != Program.Settings.GPSLatitude
           || form.OldLongitude != Program.Settings.GPSLongitude
@@ -80,15 +84,15 @@ namespace Ordisoftware.HebrewCalendar
       LoadDays();
       LoadEvents();
       LoadFonts();
-      EditTimerInterval.Minimum = RemindShabatHoursBeforeMin;
-      EditTimerInterval.Maximum = RemindShabatHoursBeforeMax;
-      EditTimerInterval.Value = RemindShabatHoursBeforeValue;
-      EditRemindShabatHoursBefore.Minimum = RemindShabatEveryMinutesMin;
-      EditRemindShabatHoursBefore.Maximum = RemindShabatEveryMinutesMax;
-      EditRemindShabatHoursBefore.Value = RemindShabatEveryMinutesValue;
-      EditRemindShabatEveryMinutes.Minimum = RemindCelebrationBeforeMin;
-      EditRemindShabatEveryMinutes.Maximum = RemindCelebrationBeforeMax;
-      EditRemindShabatEveryMinutes.Value = RemindCelebrationBeforeValue;
+      EditTimerInterval.Minimum = RemindCelebrationBeforeMin;
+      EditTimerInterval.Maximum = RemindCelebrationBeforeMax;
+      EditTimerInterval.Value = RemindCelebrationBeforeValue;
+      EditRemindShabatHoursBefore.Minimum = RemindShabatHoursBeforeMin;
+      EditRemindShabatHoursBefore.Maximum = RemindShabatHoursBeforeMax;
+      EditRemindShabatHoursBefore.Value = RemindShabatHoursBeforeValue;
+      EditRemindShabatEveryMinutes.Minimum = RemindShabatEveryMinutesMin;
+      EditRemindShabatEveryMinutes.Maximum = RemindShabatEveryMinutesMax;
+      EditRemindShabatEveryMinutes.Value = RemindShabatEveryMinutesValue;
       EditRemindCelebrationHoursBefore.Minimum = RemindCelebrationHoursBeforeMin;
       EditRemindCelebrationHoursBefore.Maximum = RemindCelebrationHoursBeforeMax;
       EditRemindCelebrationHoursBefore.Value = RemindCelebrationHoursBeforeValue;
@@ -164,6 +168,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( DoReset ) return;
       try
       {
         var v1 = (float)XmlConvert.ToDouble(EditGPSLatitude.Text);
@@ -228,6 +233,14 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSLatitude = EditGPSLatitude.Text;
       Program.Settings.GPSLongitude = EditGPSLongitude.Text;
       Program.Settings.Store();
+    }
+
+    private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Properties.Settings.Default.Reset();
+      Program.Settings.Save();
+      DoReset = true;
+      Close();
     }
 
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -344,7 +357,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      NavigationForm.Instance.Show();
+      if ( NavigationForm.Instance != null )
+        NavigationForm.Instance.Show();
       PanelTopColor.BackColor = SystemColors.Control;
       PanelMiddleColor.BackColor = SystemColors.Control;
       PanelBottomColor.BackColor = SystemColors.Control;

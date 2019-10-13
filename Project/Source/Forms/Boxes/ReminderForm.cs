@@ -46,6 +46,7 @@ namespace Ordisoftware.HebrewCalendar
         System.Threading.Thread.Sleep(1000);
         MainForm.Instance.ShabatForm.Show();
         MainForm.Instance.ShabatForm.BringToFront();
+        BringMainForm();
         return;
       }
       else
@@ -57,10 +58,15 @@ namespace Ordisoftware.HebrewCalendar
           System.Threading.Thread.Sleep(1000);
           MainForm.Instance.RemindCelebrationDayForms[torahevent].Show();
           MainForm.Instance.RemindCelebrationDayForms[torahevent].BringToFront();
+          BringMainForm();
           return;
         }
       }
       else
+      {
+        foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
+          if ( (string)item.Value.Tag == row.Date )
+            return;
         foreach ( var item in MainForm.Instance.RemindCelebrationForms )
           if ( (string)item.Tag == row.Date )
           {
@@ -68,8 +74,10 @@ namespace Ordisoftware.HebrewCalendar
             System.Threading.Thread.Sleep(1000);
             item.Show();
             item.BringToFront();
+            BringMainForm();
             return;
           }
+      }
       form = new ReminderForm();
       var date = SQLiteUtility.GetDate(row.Date);
       form.LabelNextCelebrationText.Text = !isShabat
@@ -90,7 +98,7 @@ namespace Ordisoftware.HebrewCalendar
       int height = SystemInformation.WorkingArea.Height;
       form.Location = new Point(left + width - form.Width, top + height - form.Height);
       form.Tag = row.Date;
-      form.Text = form.LabelNextCelebrationText.Text;
+      form.Text = " " + form.LabelNextCelebrationText.Text;
       form.IsShabat = isShabat;
       if ( isShabat )
         MainForm.Instance.ShabatForm = form;
@@ -110,6 +118,11 @@ namespace Ordisoftware.HebrewCalendar
       form.Show();
       form.BringToFront();
       Application.DoEvents();
+      BringMainForm();
+    }
+
+    static private void BringMainForm()
+    {
       if ( MainForm.Instance.Visible )
       {
         MainForm.Instance.Focus();
@@ -167,12 +180,12 @@ namespace Ordisoftware.HebrewCalendar
     private void SetFormsLocation()
     {
       var list = new List<Form>();
-      foreach ( var item in MainForm.Instance.RemindCelebrationForms )
-        list.Add(item);
-      foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
-        list.Add(item.Value);
       if ( MainForm.Instance.ShabatForm != null )
         list.Add(MainForm.Instance.ShabatForm);
+      foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
+        list.Add(item.Value);
+      foreach ( var item in MainForm.Instance.RemindCelebrationForms )
+        list.Add(item);
       int dy = 0;
       int y = SystemInformation.WorkingArea.Top + SystemInformation.WorkingArea.Height;
       foreach ( var item in list )

@@ -82,6 +82,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - Improve tray icon with open navigation popup on mouse mouve.
 - Add loading data box instead of using a bottom progressbar.
 - Add displaying begin and end date in the celebration reminder form like with the shabat.
+- Add check end of calendar to regenerate it.
 - Add option to choose language.
 - Add world cities GPS database.
 - Improve UI.

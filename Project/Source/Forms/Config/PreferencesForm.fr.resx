@@ -139,6 +139,12 @@
   <data name="LabelFontName.Text" xml:space="preserve">
     <value>Police</value>
   </data>
+  <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 13</value>
+  </data>
+  <data name="ActionResetSettings.Text" xml:space="preserve">
+    <value>Restaurer les préférences par défaut</value>
+  </data>
   <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 13</value>
   </data>

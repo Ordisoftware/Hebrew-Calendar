@@ -114,6 +114,15 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Impossible de quitter durant la génération." }
       };
 
+    static public readonly Dictionary<string, string> EndOfCalendar
+      = new Dictionary<string, string>()
+      {
+        { "en", "The current calendar ends in less than 6 months." + Environment.NewLine +
+                "Do you want to regenerate it?"},
+        { "fr", "Le calendrier actuel s'arrête dans moins de 6 mois." + Environment.NewLine +
+                "Voulez-vous l'actualiser ?" }
+      };
+
     static public readonly Dictionary<string, string> GenerateCalendar
       = new Dictionary<string, string>()
       {
