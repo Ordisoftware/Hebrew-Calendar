@@ -60,6 +60,7 @@
             0,
             0,
             0});
+      this.EditYearLast.ValueChanged += new System.EventHandler(this.EditYearLast_ValueChanged);
       // 
       // LabelYearLast
       // 
@@ -85,6 +86,7 @@
             0,
             0,
             0});
+      this.EditYearFirst.ValueChanged += new System.EventHandler(this.EditYearFirst_ValueChanged);
       // 
       // LabelYearFirst
       // 
