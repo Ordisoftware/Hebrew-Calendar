@@ -32,7 +32,7 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindShabatHoursBeforeMin = 1;
     const int RemindShabatHoursBeforeMax = 12;
     const int RemindShabatHoursBeforeValue = 6;
-    const int RemindShabatEveryMinutesMin = 1;
+    const int RemindShabatEveryMinutesMin = 5;
     const int RemindShabatEveryMinutesMax = 60;
     const int RemindShabatEveryMinutesValue = 15;
     const int RemindCelebrationBeforeMin = 1;
@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindCelebrationHoursBeforeMin = 1;
     const int RemindCelebrationHoursBeforeMax = 24;
     const int RemindCelebrationHoursBeforeValue = 6;
-    const int RemindCelebrationEveryMinutesMin = 1;
+    const int RemindCelebrationEveryMinutesMin = 5;
     const int RemindCelebrationEveryMinutesMax = 60;
     const int RemindCelebrationEveryMinutesValue = 15;
 
