@@ -13,7 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-01 </edited>
 using System;
-using System.Collections.Generic;
+using System.Xml;
 using System.Globalization;
 using Keith_Burnett_moonr2cs;
 
@@ -66,8 +66,8 @@ namespace Ordisoftware.HebrewCalendar
           : new Nullable<TimeSpan>();
       }
       var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,
-                                 Convert.ToSingle(Program.Settings.Latitude),
-                                 Convert.ToSingle(Program.Settings.Longitude),
+                                 (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude),
+                                 (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude),
                                  TimeZoneInfo.Local.IsDaylightSavingTime(date.AddDays(1)) ? 2.0f : 1.0f,
                                  1);
       return new Ephemeris()

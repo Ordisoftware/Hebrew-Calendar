@@ -13,7 +13,6 @@
 /// <created> 2019-10 </created>
 /// <edited> 2019-10 </edited>
 using System;
-using System.Xml;
 using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -26,18 +25,18 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectCityForm : Form
   {
 
-    public class City
+    public class CityItem
     {
       public string Name;
-      public float Latitude;
-      public float Longitude;
+      public string Latitude;
+      public string Longitude;
       public override string ToString()
       {
         return Name;
       }
     }
 
-    static private Dictionary<string, List<City>> GPS = new Dictionary<string, List<City>>();
+    static public readonly Dictionary<string, List<CityItem>> GPS = new Dictionary<string, List<CityItem>>();
 
     static SelectCityForm()
     {
@@ -48,13 +47,13 @@ namespace Ordisoftware.HebrewCalendar
         parser.FirstRowHasHeader = true;
         while ( parser.Read() )
         {
-          var city = new City();
+          var city = new CityItem();
           city.Name = parser["city"].RemoveDiacritics();
-          city.Latitude = (float)XmlConvert.ToDouble(parser["lat"]);
-          city.Longitude = (float)XmlConvert.ToDouble(parser["lng"]);
+          city.Latitude = parser["lat"];
+          city.Longitude = parser["lng"];
           string country = parser["country"].RemoveDiacritics(); ;
           if ( !GPS.ContainsKey(country) )
-            GPS.Add(country, new List<City>());
+            GPS.Add(country, new List<CityItem>());
           GPS[country].Add(city);
         }
       }
@@ -64,8 +63,10 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    internal float Latitude;
-    internal float Longitude;
+    internal string Latitude;
+    internal string Longitude;
+    internal string Country;
+    internal string City;
 
     public SelectCityForm()
     {
@@ -76,6 +77,8 @@ namespace Ordisoftware.HebrewCalendar
     private void SelectCityForm_Load(object sender, EventArgs e)
     {
       ListBoxCountries.DataSource = GPS.Keys.OrderBy(c => c).ToList();
+      ListBoxCountries.SelectedIndex = -1;
+      ListBoxCities.SelectedIndex = -1;
       ActiveControl = EditFilter;
     }
 
@@ -93,8 +96,11 @@ namespace Ordisoftware.HebrewCalendar
     private void ListBoxCities_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( ListBoxCities.SelectedIndex == -1 ) return;
-      Latitude = ( (City)ListBoxCities.SelectedItem ).Latitude;
-      Longitude = ( (City)ListBoxCities.SelectedItem ).Longitude;
+      Latitude = ( (CityItem)ListBoxCities.SelectedItem ).Latitude;
+      Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
+      Country = (string)ListBoxCountries.SelectedItem;
+      City = ( (CityItem)ListBoxCities.SelectedItem ).Name;
+      ButtonOk.Enabled = true;
     }
 
     private bool Mutex;
@@ -103,59 +109,63 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Mutex ) return;
       Mutex = true;
+      bool foundCountry = false;
+      bool foundCity = false;
       try
       {
         var list = EditFilter.Text.Split(',');
         if ( list.Length == 0 ) return;
-        list[0] = list[0].Trim().ToLowerInvariant();
+        list[0] = list[0].Trim().ToLower().RemoveDiacritics();
         if ( list[0].Length < 3 ) return;
         var resultCountry = from country in GPS
-                            where country.Key.ToLowerInvariant().Contains(list[0])
+                            where country.Key.ToLower().Contains(list[0])
                             orderby country.Key
                             select country;
         if ( resultCountry.Count() == 0 ) return;
         string strCountry = resultCountry.ElementAt(0).Key;
-        if ( resultCountry.Count() == 1 && !EditFilter.Text.Contains(",") )
-        {
-          EditFilter.Text = strCountry + ", ";
-          EditFilter.Enabled = false;
-          Application.DoEvents();
-          System.Threading.Thread.Sleep(500);
-          Application.DoEvents();
-          EditFilter.Enabled = true;
-          ActiveControl = EditFilter;
-          EditFilter.SelectionStart = EditFilter.Text.Length;
-        }
+        foundCountry = resultCountry.Count() == 1;
+        if ( !foundCountry )
+          if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key != null )
+            foundCountry = true;
+        if ( foundCountry && !EditFilter.Text.Contains(",") )
+          tempo(EditFilter.Text = strCountry + ", ");
         int index = ListBoxCountries.FindString(strCountry);
         if ( ListBoxCountries.SelectedIndex != index )
           ListBoxCountries.SelectedIndex = index;
         if ( list.Length == 1 ) return;
-        list[1] = list[1].Trim().ToLowerInvariant();
+        list[1] = list[1].Trim().ToLower().RemoveDiacritics();
         if ( list[1].Length < 3 ) return;
         var resultCity = from country in GPS
                          from city in country.Value
                          where country.Key == strCountry
-                            && city.Name.ToLowerInvariant().Contains(list[1])
+                            && city.Name.ToLower().Contains(list[1])
                          orderby city.Name
                          select city;
         if ( resultCity.Count() == 0 ) return;
         string strCity = resultCity.ElementAt(0).Name;
-        if ( resultCity.Count() == 1 )
-        {
-          EditFilter.Text = strCountry + ", " + strCity;
-          EditFilter.Enabled = false;
-          Application.DoEvents();
-          System.Threading.Thread.Sleep(500);
-          Application.DoEvents();
-          EditFilter.Enabled = true;
-          ActiveControl = EditFilter;
-          EditFilter.SelectionStart = EditFilter.Text.Length;
-        }
+        foundCity = resultCity.Count() == 1;
+        if ( !foundCity )
+          if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[1]).Key != null )
+            foundCity = true;
+        if ( foundCity )
+          tempo(EditFilter.Text = strCountry + ", " + strCity);
         ListBoxCities.SelectedIndex = ListBoxCities.FindString(strCity);
       }
       finally
       {
+        ButtonOk.Enabled = foundCountry && foundCity;
         Mutex = false;
+      }
+      void tempo(string str)
+      {
+        EditFilter.Text = str;
+        EditFilter.Enabled = false;
+        Application.DoEvents();
+        System.Threading.Thread.Sleep(500);
+        Application.DoEvents();
+        EditFilter.Enabled = true;
+        ActiveControl = EditFilter;
+        EditFilter.SelectionStart = EditFilter.Text.Length;
       }
     }
   }
