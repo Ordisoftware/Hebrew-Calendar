@@ -13,9 +13,11 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-10 </edited>
 using System;
+using System.Xml;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -26,6 +28,22 @@ namespace Ordisoftware.HebrewCalendar
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class PreferencesForm : Form
   {
+
+    const int RemindShabatHoursBeforeMin = 1;
+    const int RemindShabatHoursBeforeMax = 12;
+    const int RemindShabatHoursBeforeValue = 6;
+    const int RemindShabatEveryMinutesMin = 5;
+    const int RemindShabatEveryMinutesMax = 60;
+    const int RemindShabatEveryMinutesValue = 15;
+    const int RemindCelebrationBeforeMin = 1;
+    const int RemindCelebrationBeforeMax = 60;
+    const int RemindCelebrationBeforeValue = 7;
+    const int RemindCelebrationHoursBeforeMin = 2;
+    const int RemindCelebrationHoursBeforeMax = 24;
+    const int RemindCelebrationHoursBeforeValue = 6;
+    const int RemindCelebrationEveryMinutesMin = 5;
+    const int RemindCelebrationEveryMinutesMax = 60;
+    const int RemindCelebrationEveryMinutesValue = 15;
 
     static private bool LanguageChanged;
 
@@ -43,14 +61,14 @@ namespace Ordisoftware.HebrewCalendar
       }
       MainForm.Instance.Refresh();
       return form.OldShabatDay != Program.Settings.ShabatDay
-          || form.OldLatitude != Program.Settings.Latitude
-          || form.OldLongitude != Program.Settings.Longitude
+          || form.OldLatitude != Program.Settings.GPSLatitude
+          || form.OldLongitude != Program.Settings.GPSLongitude
           || lang != Program.Settings.Language;
     }
 
     public int OldShabatDay { get; private set; }
-    public float OldLatitude { get; private set; }
-    public float OldLongitude { get; private set; }
+    public string OldLatitude { get; private set; }
+    public string OldLongitude { get; private set; }
 
     /// <summary>
     /// Default constructor.
@@ -62,6 +80,21 @@ namespace Ordisoftware.HebrewCalendar
       LoadDays();
       LoadEvents();
       LoadFonts();
+      EditTimerInterval.Minimum = RemindShabatHoursBeforeMin;
+      EditTimerInterval.Maximum = RemindShabatHoursBeforeMax;
+      EditTimerInterval.Value = RemindShabatHoursBeforeValue;
+      EditRemindShabatHoursBefore.Minimum = RemindShabatEveryMinutesMin;
+      EditRemindShabatHoursBefore.Maximum = RemindShabatEveryMinutesMax;
+      EditRemindShabatHoursBefore.Value = RemindShabatEveryMinutesValue;
+      EditRemindShabatEveryMinutes.Minimum = RemindCelebrationBeforeMin;
+      EditRemindShabatEveryMinutes.Maximum = RemindCelebrationBeforeMax;
+      EditRemindShabatEveryMinutes.Value = RemindCelebrationBeforeValue;
+      EditRemindCelebrationHoursBefore.Minimum = RemindCelebrationHoursBeforeMin;
+      EditRemindCelebrationHoursBefore.Maximum = RemindCelebrationHoursBeforeMax;
+      EditRemindCelebrationHoursBefore.Value = RemindCelebrationHoursBeforeValue;
+      EditRemindCelebrationEveryMinutes.Minimum = RemindCelebrationEveryMinutesMin;
+      EditRemindCelebrationEveryMinutes.Maximum = RemindCelebrationEveryMinutesMax;
+      EditRemindCelebrationEveryMinutes.Value = RemindCelebrationEveryMinutesValue;
     }
 
     /// <summary>
@@ -71,6 +104,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
+      if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
+        ActionGetGPS_LinkClicked(null, null);
       UpdateLanguagesButtons();
       foreach ( var item in EditFontName.Items )
         if ( (string)item == Program.Settings.FontName )
@@ -101,8 +136,8 @@ namespace Ordisoftware.HebrewCalendar
       PanelMoonEventColor.BackColor = Program.Settings.MoonEventColor;
       PanelFullMoonColor.BackColor = Program.Settings.FullMoonColor;
       OldShabatDay = Program.Settings.ShabatDay;
-      OldLatitude = Program.Settings.Latitude;
-      OldLongitude = Program.Settings.Longitude;
+      OldLatitude = Program.Settings.GPSLatitude;
+      OldLongitude = Program.Settings.GPSLongitude;
       EditGPSLatitude.Text = OldLatitude.ToString();
       EditGPSLongitude.Text = OldLongitude.ToString();
       switch ( Program.Settings.TrayIconClickOpen )
@@ -126,6 +161,17 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      try
+      {
+        var v1 = (float)XmlConvert.ToDouble(EditGPSLatitude.Text);
+        var v2 = (float)XmlConvert.ToDouble(EditGPSLongitude.Text);
+      }
+      catch
+      {
+        DisplayManager.ShowError("Coordonnées GPS invalides.");
+        e.Cancel = true;
+        return;
+      }
       if ( SelectOpenMainForm.Checked )
         Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
       else
@@ -173,11 +219,8 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.SeasonEventColor = PanelSeasonEventColor.BackColor;
       Program.Settings.MoonEventColor = PanelMoonEventColor.BackColor;
       Program.Settings.FullMoonColor = PanelFullMoonColor.BackColor;
-      float value;
-      float.TryParse(EditGPSLatitude.Text, out value);
-      Program.Settings.Latitude = value;
-      float.TryParse(EditGPSLongitude.Text, out value);
-      Program.Settings.Longitude = value;
+      Program.Settings.GPSLatitude = EditGPSLatitude.Text;
+      Program.Settings.GPSLongitude = EditGPSLongitude.Text;
       Program.Settings.Store();
     }
 
@@ -185,8 +228,10 @@ namespace Ordisoftware.HebrewCalendar
     {
       var form = new SelectCityForm();
       if ( form.ShowDialog() != DialogResult.OK ) return;
-      EditGPSLatitude.Text = form.Latitude.ToString();
-      EditGPSLongitude.Text = form.Longitude.ToString();
+      EditGPSLatitude.Text = form.Latitude;
+      EditGPSLongitude.Text = form.Longitude;
+      Program.Settings.GPSCountry = form.Country;
+      Program.Settings.GPSCity = form.City;
     }
 
     /// <summary>
@@ -513,8 +558,6 @@ namespace Ordisoftware.HebrewCalendar
       Program.ApplyCurrentLanguage();
       UpdateLanguagesButtons();
       LanguageChanged = true;
-      EditGPSLatitude.Text = "0";
-      EditGPSLongitude.Text = "0";
       Close();
     }
 
@@ -524,8 +567,6 @@ namespace Ordisoftware.HebrewCalendar
       Program.ApplyCurrentLanguage();
       UpdateLanguagesButtons();
       LanguageChanged = true;
-      EditGPSLatitude.Text = "0";
-      EditGPSLongitude.Text = "0";
       Close();
     }
 

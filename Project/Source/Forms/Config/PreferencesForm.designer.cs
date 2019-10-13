@@ -308,42 +308,12 @@
       // EditRemindShabatHoursBefore
       // 
       resources.ApplyResources(this.EditRemindShabatHoursBefore, "EditRemindShabatHoursBefore");
-      this.EditRemindShabatHoursBefore.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-      this.EditRemindShabatHoursBefore.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
       this.EditRemindShabatHoursBefore.Name = "EditRemindShabatHoursBefore";
-      this.EditRemindShabatHoursBefore.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
       // 
       // EditRemindShabatEveryMinutes
       // 
       resources.ApplyResources(this.EditRemindShabatEveryMinutes, "EditRemindShabatEveryMinutes");
-      this.EditRemindShabatEveryMinutes.Maximum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-      this.EditRemindShabatEveryMinutes.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
       this.EditRemindShabatEveryMinutes.Name = "EditRemindShabatEveryMinutes";
-      this.EditRemindShabatEveryMinutes.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
       // 
       // EditRemindShabat
       // 
@@ -502,11 +472,6 @@
       // EditTimerInterval
       // 
       resources.ApplyResources(this.EditTimerInterval, "EditTimerInterval");
-      this.EditTimerInterval.Maximum = new decimal(new int[] {
-            90,
-            0,
-            0,
-            0});
       this.EditTimerInterval.Name = "EditTimerInterval";
       // 
       // LabelTimerInterval
@@ -517,22 +482,7 @@
       // EditRemindCelebrationHoursBefore
       // 
       resources.ApplyResources(this.EditRemindCelebrationHoursBefore, "EditRemindCelebrationHoursBefore");
-      this.EditRemindCelebrationHoursBefore.Maximum = new decimal(new int[] {
-            24,
-            0,
-            0,
-            0});
-      this.EditRemindCelebrationHoursBefore.Minimum = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
       this.EditRemindCelebrationHoursBefore.Name = "EditRemindCelebrationHoursBefore";
-      this.EditRemindCelebrationHoursBefore.Value = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
       // 
       // EditTimerEnabled
       // 
@@ -546,22 +496,7 @@
       // EditRemindCelebrationEveryMinutes
       // 
       resources.ApplyResources(this.EditRemindCelebrationEveryMinutes, "EditRemindCelebrationEveryMinutes");
-      this.EditRemindCelebrationEveryMinutes.Maximum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-      this.EditRemindCelebrationEveryMinutes.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
       this.EditRemindCelebrationEveryMinutes.Name = "EditRemindCelebrationEveryMinutes";
-      this.EditRemindCelebrationEveryMinutes.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
       // 
       // EditShowMonthDayToolTip
       // 

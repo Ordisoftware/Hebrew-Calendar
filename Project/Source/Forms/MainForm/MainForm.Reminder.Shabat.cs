@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using System.Linq;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -91,8 +92,11 @@ namespace Ordisoftware.HebrewCalendar
           LastShabatReminded = dateNow;
         ReminderForm.Run(row, true, TorahEventType.None, dateStart.Value, dateEnd.Value, timeStart, timeEnd);
       }
-      catch
+      catch ( Exception ex )
       {
+        if ( TimerErrorShown ) return;
+        TimerErrorShown = true;
+        ex.Manage();
       }
     }
 

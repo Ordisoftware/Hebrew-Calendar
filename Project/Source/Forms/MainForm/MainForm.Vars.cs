@@ -56,6 +56,8 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
+    private bool TimerErrorShown = false;
+
     private Dictionary<TorahEventType, bool> TorahEventRemindList
       = new Dictionary<TorahEventType, bool>();
 

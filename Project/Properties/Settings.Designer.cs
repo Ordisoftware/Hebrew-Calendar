@@ -181,25 +181,25 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public float Latitude {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GPSLatitude {
             get {
-                return ((float)(this["Latitude"]));
+                return ((string)(this["GPSLatitude"]));
             }
             set {
-                this["Latitude"] = value;
+                this["GPSLatitude"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public float Longitude {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GPSLongitude {
             get {
-                return ((float)(this["Longitude"]));
+                return ((string)(this["GPSLongitude"]));
             }
             set {
-                this["Longitude"] = value;
+                this["GPSLongitude"] = value;
             }
         }
         
@@ -774,6 +774,30 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
             set {
                 this["TorahEventRemindDaySoukotD8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GPSCountry {
+            get {
+                return ((string)(this["GPSCountry"]));
+            }
+            set {
+                this["GPSCountry"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GPSCity {
+            get {
+                return ((string)(this["GPSCity"]));
+            }
+            set {
+                this["GPSCity"] = value;
             }
         }
     }

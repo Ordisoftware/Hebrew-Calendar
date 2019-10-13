@@ -41,11 +41,11 @@
     <Setting Name="CurrentView" Type="Ordisoftware.HebrewCalendar.ViewModeType" Scope="User">
       <Value Profile="(Default)">Month</Value>
     </Setting>
-    <Setting Name="Latitude" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="GPSLatitude" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Longitude" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="GPSLongitude" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="CountDayMoonAsSun" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -195,6 +195,12 @@
     </Setting>
     <Setting Name="TorahEventRemindDaySoukotD8" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="GPSCountry" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="GPSCity" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

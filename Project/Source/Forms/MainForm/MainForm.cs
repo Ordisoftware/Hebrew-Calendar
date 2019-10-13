@@ -79,6 +79,8 @@ namespace Ordisoftware.HebrewCalendar
       IsReady = true;
       GoToDate(DateTime.Now);
       Program.CheckUpdate(true);
+      if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
+        ActionPreferences.PerformClick();
       if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
       Timer_Tick(null, null);
     }

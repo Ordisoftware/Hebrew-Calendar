@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using System.Linq;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -75,11 +76,16 @@ namespace Ordisoftware.HebrewCalendar
           initTimes(rowPrevious.Moonset, rowNext.Moonset, -1, 1);
         else
           throw new Exception("Error on calculating celebration dates and times.");
+        var dateTrigger = dateStart.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
+        if ( dateTrigger < DateTime.Now ) return;
         RemindCelebrationDates.Add(row.Date);
         ReminderForm.Run(row, false, TorahEventType.None, dateStart, dateEnd, timeStart, timeEnd);
       }
-      catch
+      catch ( Exception ex )
       {
+        if ( TimerErrorShown ) return;
+        TimerErrorShown = true;
+        ex.Manage();
       }
     }
 

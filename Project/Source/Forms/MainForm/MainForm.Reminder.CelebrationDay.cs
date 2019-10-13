@@ -88,7 +88,8 @@ namespace Ordisoftware.HebrewCalendar
         else
         if ( dateNow >= dateTrigger && dateNow < dateStartCheck )
         {
-          if ( LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
+          if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents) 
+            && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
             return;
           else
             LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
@@ -106,8 +107,11 @@ namespace Ordisoftware.HebrewCalendar
           LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
         ReminderForm.Run(row, false, (TorahEventType)row.TorahEvents, dateStart, dateEnd, timeStart, timeEnd);
       }
-      catch
+      catch ( Exception ex )
       {
+        if ( TimerErrorShown ) return;
+        TimerErrorShown = true;
+        ex.Manage();
       }
     }
 

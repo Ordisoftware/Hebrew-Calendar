@@ -27,7 +27,8 @@ namespace Ordisoftware.HebrewCalendar
     static ReminderForm()
     {
       foreach ( TorahEventType value in Enum.GetValues(typeof(TorahEventType)) )
-        MainForm.Instance.LastCelebrationReminded.Add(value, null);
+        if ( !MainForm.Instance.LastCelebrationReminded.ContainsKey(value))
+          MainForm.Instance.LastCelebrationReminded.Add(value, null);
     }
 
     static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row, 

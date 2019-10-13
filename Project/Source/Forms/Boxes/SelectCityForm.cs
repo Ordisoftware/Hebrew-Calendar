@@ -13,7 +13,6 @@
 /// <created> 2019-10 </created>
 /// <edited> 2019-10 </edited>
 using System;
-using System.Xml;
 using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -26,18 +25,18 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectCityForm : Form
   {
 
-    public class City
+    public class CityItem
     {
       public string Name;
-      public float Latitude;
-      public float Longitude;
+      public string Latitude;
+      public string Longitude;
       public override string ToString()
       {
         return Name;
       }
     }
 
-    static private Dictionary<string, List<City>> GPS = new Dictionary<string, List<City>>();
+    static public readonly Dictionary<string, List<CityItem>> GPS = new Dictionary<string, List<CityItem>>();
 
     static SelectCityForm()
     {
@@ -48,13 +47,13 @@ namespace Ordisoftware.HebrewCalendar
         parser.FirstRowHasHeader = true;
         while ( parser.Read() )
         {
-          var city = new City();
+          var city = new CityItem();
           city.Name = parser["city"].RemoveDiacritics();
-          city.Latitude = (float)XmlConvert.ToDouble(parser["lat"]);
-          city.Longitude = (float)XmlConvert.ToDouble(parser["lng"]);
+          city.Latitude = parser["lat"];
+          city.Longitude = parser["lng"];
           string country = parser["country"].RemoveDiacritics(); ;
           if ( !GPS.ContainsKey(country) )
-            GPS.Add(country, new List<City>());
+            GPS.Add(country, new List<CityItem>());
           GPS[country].Add(city);
         }
       }
@@ -64,8 +63,10 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    internal float Latitude;
-    internal float Longitude;
+    internal string Latitude;
+    internal string Longitude;
+    internal string Country;
+    internal string City;
 
     public SelectCityForm()
     {
@@ -93,8 +94,10 @@ namespace Ordisoftware.HebrewCalendar
     private void ListBoxCities_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( ListBoxCities.SelectedIndex == -1 ) return;
-      Latitude = ( (City)ListBoxCities.SelectedItem ).Latitude;
-      Longitude = ( (City)ListBoxCities.SelectedItem ).Longitude;
+      Latitude = ( (CityItem)ListBoxCities.SelectedItem ).Latitude;
+      Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
+      Country = (string)ListBoxCountries.SelectedItem;
+      City = ( (CityItem)ListBoxCities.SelectedItem ).Name;
     }
 
     private bool Mutex;
