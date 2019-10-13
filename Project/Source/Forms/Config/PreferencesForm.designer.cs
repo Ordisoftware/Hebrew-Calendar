@@ -75,12 +75,17 @@
       this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
       this.EditStartupHide = new System.Windows.Forms.CheckBox();
       this.GroupBoxReminder = new System.Windows.Forms.GroupBox();
+      this.EditReminderUseColors = new System.Windows.Forms.CheckBox();
       this.LabelRemindCelebrationHoursBefore = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationEveryMinutes = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.EditEventsDay = new System.Windows.Forms.CheckedListBox();
       this.EditEvents = new System.Windows.Forms.CheckedListBox();
       this.PanelReminderDayColor = new System.Windows.Forms.Panel();
+      this.PanelReminderShabatColor = new System.Windows.Forms.Panel();
+      this.PanelReminderCurrentDayColor = new System.Windows.Forms.Panel();
       this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
       this.EditRemindCelebrationHoursBefore = new System.Windows.Forms.NumericUpDown();
@@ -104,7 +109,6 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditReminderCurrentDayNoColor = new System.Windows.Forms.CheckBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
@@ -469,13 +473,17 @@
       // GroupBoxReminder
       // 
       resources.ApplyResources(this.GroupBoxReminder, "GroupBoxReminder");
-      this.GroupBoxReminder.Controls.Add(this.EditReminderCurrentDayNoColor);
+      this.GroupBoxReminder.Controls.Add(this.EditReminderUseColors);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationHoursBefore);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationEveryMinutes);
+      this.GroupBoxReminder.Controls.Add(this.label2);
+      this.GroupBoxReminder.Controls.Add(this.label3);
       this.GroupBoxReminder.Controls.Add(this.label1);
       this.GroupBoxReminder.Controls.Add(this.EditEventsDay);
       this.GroupBoxReminder.Controls.Add(this.EditEvents);
       this.GroupBoxReminder.Controls.Add(this.PanelReminderDayColor);
+      this.GroupBoxReminder.Controls.Add(this.PanelReminderShabatColor);
+      this.GroupBoxReminder.Controls.Add(this.PanelReminderCurrentDayColor);
       this.GroupBoxReminder.Controls.Add(this.EditTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.LabelTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationHoursBefore);
@@ -483,6 +491,12 @@
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationEveryMinutes);
       this.GroupBoxReminder.Name = "GroupBoxReminder";
       this.GroupBoxReminder.TabStop = false;
+      // 
+      // EditReminderUseColors
+      // 
+      resources.ApplyResources(this.EditReminderUseColors, "EditReminderUseColors");
+      this.EditReminderUseColors.Name = "EditReminderUseColors";
+      this.EditReminderUseColors.UseVisualStyleBackColor = true;
       // 
       // LabelRemindCelebrationHoursBefore
       // 
@@ -493,6 +507,16 @@
       // 
       resources.ApplyResources(this.LabelRemindCelebrationEveryMinutes, "LabelRemindCelebrationEveryMinutes");
       this.LabelRemindCelebrationEveryMinutes.Name = "LabelRemindCelebrationEveryMinutes";
+      // 
+      // label2
+      // 
+      resources.ApplyResources(this.label2, "label2");
+      this.label2.Name = "label2";
+      // 
+      // label3
+      // 
+      resources.ApplyResources(this.label3, "label3");
+      this.label3.Name = "label3";
       // 
       // label1
       // 
@@ -515,11 +539,27 @@
       // 
       // PanelReminderDayColor
       // 
-      this.PanelReminderDayColor.BackColor = System.Drawing.Color.LightYellow;
+      this.PanelReminderDayColor.BackColor = System.Drawing.Color.Honeydew;
       this.PanelReminderDayColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.PanelReminderDayColor, "PanelReminderDayColor");
       this.PanelReminderDayColor.Name = "PanelReminderDayColor";
       this.PanelReminderDayColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelReminderDayColor_MouseClick);
+      // 
+      // PanelReminderShabatColor
+      // 
+      this.PanelReminderShabatColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+      this.PanelReminderShabatColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelReminderShabatColor, "PanelReminderShabatColor");
+      this.PanelReminderShabatColor.Name = "PanelReminderShabatColor";
+      this.PanelReminderShabatColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelReminderShabatColor_MouseClick);
+      // 
+      // PanelReminderCurrentDayColor
+      // 
+      this.PanelReminderCurrentDayColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
+      this.PanelReminderCurrentDayColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelReminderCurrentDayColor, "PanelReminderCurrentDayColor");
+      this.PanelReminderCurrentDayColor.Name = "PanelReminderCurrentDayColor";
+      this.PanelReminderCurrentDayColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelReminderCurrentDayColor_MouseClick);
       // 
       // EditTimerInterval
       // 
@@ -691,12 +731,6 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
-      // EditReminderCurrentDayNoColor
-      // 
-      resources.ApplyResources(this.EditReminderCurrentDayNoColor, "EditReminderCurrentDayNoColor");
-      this.EditReminderCurrentDayNoColor.Name = "EditReminderCurrentDayNoColor";
-      this.EditReminderCurrentDayNoColor.UseVisualStyleBackColor = true;
-      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
@@ -820,7 +854,11 @@
     private System.Windows.Forms.CheckBox EditBalloonAutoHide;
     private System.Windows.Forms.LinkLabel ActionResetSettings;
     private System.Windows.Forms.Label label1;
+    internal System.Windows.Forms.Panel PanelReminderCurrentDayColor;
+    private System.Windows.Forms.CheckBox EditReminderUseColors;
+    private System.Windows.Forms.Label label2;
+    internal System.Windows.Forms.Panel PanelReminderShabatColor;
+    private System.Windows.Forms.Label label3;
     internal System.Windows.Forms.Panel PanelReminderDayColor;
-    private System.Windows.Forms.CheckBox EditReminderCurrentDayNoColor;
   }
 }

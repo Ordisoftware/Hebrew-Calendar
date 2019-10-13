@@ -13,10 +13,8 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-08 </edited>
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using Ordisoftware.Core;
 using Calendar.NET;
 
 namespace Ordisoftware.HebrewCalendar
@@ -28,11 +26,20 @@ namespace Ordisoftware.HebrewCalendar
     private int YearFirst;
     private int YearLast;
 
-    private bool[,,] IsCelebrationWeek;
+    private Color[,,] DayColors;
 
-    internal bool IsCelebration(int counter, int month, int year)
+    internal Color GetDayColor(int counter, int month, int year)
     {
-      return !Program.Settings.ReminderCurrentDayNoColor && IsCelebrationWeek[YearLast - year, month, counter];
+      return DayColors[YearLast - year, month, counter];
+    }
+
+    static public Color MixColor(Color c1, Color c2)
+    {
+
+      int _r = Math.Min(( c1.R + c2.R ) / 2, 255);
+      int _g = Math.Min(( c1.G + c2.G ) / 2, 255);
+      int _b = Math.Min(( c1.B + c2.B ) / 2, 255);
+      return Color.FromArgb(Convert.ToByte(_r), Convert.ToByte(_g), Convert.ToByte(_b));
     }
 
     internal void FillMonths()
@@ -41,15 +48,10 @@ namespace Ordisoftware.HebrewCalendar
       bool IsCelebrationWeekStart = false;
       bool IsCelebrationWeekEnd = false;
       int progress = 0;
-      try
-      {
-        YearFirst = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.FirstOrDefault().Date).Year;
-        YearLast = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.LastOrDefault().Date).Year;
-        IsCelebrationWeek = new bool[YearLast - YearFirst + 1, 13, 35];
-      }
-      catch
-      {
-      }
+      if ( LunisolarCalendar.LunisolarDays.Count == 0 ) return;
+      YearFirst = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.FirstOrDefault().Date).Year;
+      YearLast = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.LastOrDefault().Date).Year;
+      DayColors = new Color[YearLast - YearFirst + 1, 13, 35];
       foreach ( var row in LunisolarCalendar.LunisolarDays )
       {
         if ( !UpdateProgress(progress++, Count, Translations.ProgressFillMonths.GetLang()) ) return;
@@ -59,7 +61,14 @@ namespace Ordisoftware.HebrewCalendar
         IsCelebrationWeekEnd = ev == TorahEventType.PessahD7 || ev == TorahEventType.SoukotD8;
         var result = IsCelebrationWeekStart || IsCelebrationWeekEnd;
         var date = SQLiteUtility.GetDate(row.Date);
-        IsCelebrationWeek[YearLast - date.Year, date.Month, date.Day] = IsCelebrationWeekStart;
+        DayColors[YearLast - date.Year, date.Month, date.Day] = Color.Transparent;
+        if ( IsCelebrationWeekStart )
+          DayColors[YearLast - date.Year, date.Month, date.Day] = Program.Settings.ReminderCurrentDayColor;
+        if ( SQLiteUtility.GetDate(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+          if ( IsCelebrationWeekStart )
+            DayColors[YearLast - date.Year, date.Month, date.Day] = MixColor(Program.Settings.ReminderShabatDayColor, DayColors[YearLast - date.Year, date.Month, date.Day]); 
+          else
+            DayColors[YearLast - date.Year, date.Month, date.Day] = Program.Settings.ReminderShabatDayColor;
         if ( IsCelebrationWeekEnd )
           IsCelebrationWeekStart = false;
         int rank = 0;
@@ -75,9 +84,8 @@ namespace Ordisoftware.HebrewCalendar
           item.TooltipEnabled = true;
           item.IgnoreTimeComponent = true;
           item.ToolTipText = strToolTip;
-          if ( !Program.Settings.ReminderCurrentDayNoColor )
-            if ( IsCelebration(item.Date.Day, item.Date.Month, item.Date.Year) )
-              item.EventColor = Program.Settings.ReminderCurrentDayColor;
+          if ( Program.Settings.ReminderUseColors )
+            item.EventColor = GetDayColor(item.Date.Day, item.Date.Month, item.Date.Year);
           CalendarMonth.AddEvent(item);
         }
         strToolTip = Translations.Ephemeris.GetLang(EphemerisType.Rise) + row.Sunrise + Environment.NewLine 

@@ -839,7 +839,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("255, 255, 235")]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 255, 230")]
         public global::System.Drawing.Color ReminderCurrentDayColor {
             get {
                 return ((global::System.Drawing.Color)(this["ReminderCurrentDayColor"]));
@@ -851,13 +851,13 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ReminderCurrentDayNoColor {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ReminderUseColors {
             get {
-                return ((bool)(this["ReminderCurrentDayNoColor"]));
+                return ((bool)(this["ReminderUseColors"]));
             }
             set {
-                this["ReminderCurrentDayNoColor"] = value;
+                this["ReminderUseColors"] = value;
             }
         }
         
@@ -906,6 +906,30 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
             set {
                 this["GenerateIntervalPeriod"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("242, 255, 242")]
+        public global::System.Drawing.Color ReminderShabatDayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ReminderShabatDayColor"]));
+            }
+            set {
+                this["ReminderShabatDayColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("WhiteSmoke")]
+        public global::System.Drawing.Color ReminderDayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ReminderDayColor"]));
+            }
+            set {
+                this["ReminderDayColor"] = value;
             }
         }
     }

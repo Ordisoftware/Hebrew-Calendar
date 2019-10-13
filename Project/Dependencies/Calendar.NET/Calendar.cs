@@ -952,8 +952,12 @@ namespace Calendar.NET
           {
             // ORDISOFTWARE MODIF BEGIN
             if ( MainForm.Instance != null )
-              if ( MainForm.Instance.IsCelebration(counter, _calendarDate.Month, _calendarDate.Year) )
-                g.FillRectangle(new SolidBrush(Color.FromArgb(255, Program.Settings.ReminderCurrentDayColor.R, Program.Settings.ReminderCurrentDayColor.G, Program.Settings.ReminderCurrentDayColor.B)), xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
+              if ( Program.Settings.ReminderUseColors )
+              {
+                var color = MainForm.Instance.GetDayColor(counter, _calendarDate.Month, _calendarDate.Year);
+                if ( color != Color.Transparent )
+                  g.FillRectangle(new SolidBrush(Color.FromArgb(255, color.R, color.G, color.B)), xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
+              }
             // ORDISOFTWARE MODIF END
             if ( !_calendarDays.ContainsKey(counter) )
               _calendarDays.Add(counter, new Point(xStart, (int)( yStart + 2f + g.MeasureString(counter.ToString(CultureInfo.InvariantCulture), _daysFont).Height )));

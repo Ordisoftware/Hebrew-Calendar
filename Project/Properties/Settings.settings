@@ -212,10 +212,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ReminderCurrentDayColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">255, 255, 235</Value>
+      <Value Profile="(Default)">255, 255, 230</Value>
     </Setting>
-    <Setting Name="ReminderCurrentDayNoColor" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+    <Setting Name="ReminderUseColors" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="GenerateIntervalMin" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>
@@ -228,6 +228,12 @@
     </Setting>
     <Setting Name="GenerateIntervalPeriod" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">120</Value>
+    </Setting>
+    <Setting Name="ReminderShabatDayColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">242, 255, 242</Value>
+    </Setting>
+    <Setting Name="ReminderDayColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">WhiteSmoke</Value>
     </Setting>
   </Settings>
 </SettingsFile>
