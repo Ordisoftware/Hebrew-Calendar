@@ -605,6 +605,12 @@ namespace Ordisoftware.HebrewCalendar
       CelebrationsForm.Run();
     }
 
+    private void MenuRefreshReminder_Click(object sender, EventArgs e)
+    {
+      ClearLists();
+      Timer_Tick(null, null);
+    }
+
     /// <summary>
     /// Event handler. Called by CalendarGrid for cell formatting events.
     /// </summary>
@@ -697,10 +703,6 @@ namespace Ordisoftware.HebrewCalendar
         DisplayManager.Show(Translations.DateNotFound.GetLang(strDate));
     }
 
-    private void ActionOpenTanakMP3_Click(object sender, EventArgs e)
-    {
-
-    }
   }
 
 }

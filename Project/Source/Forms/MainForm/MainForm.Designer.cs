@@ -130,6 +130,7 @@
       this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuNavigate = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuCelebrations = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuRefreshReminder = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenuView = new System.Windows.Forms.ToolStripSeparator();
       this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -962,6 +963,7 @@
             this.MenuShowHide,
             this.MenuNavigate,
             this.MenuCelebrations,
+            this.MenuRefreshReminder,
             this.SeparatorTrayMenuView,
             this.MenuAbout,
             this.MenuExit});
@@ -986,6 +988,12 @@
       resources.ApplyResources(this.MenuCelebrations, "MenuCelebrations");
       this.MenuCelebrations.Name = "MenuCelebrations";
       this.MenuCelebrations.Click += new System.EventHandler(this.ActionViewCelebrations_Click);
+      // 
+      // MenuRefreshReminder
+      // 
+      resources.ApplyResources(this.MenuRefreshReminder, "MenuRefreshReminder");
+      this.MenuRefreshReminder.Name = "MenuRefreshReminder";
+      this.MenuRefreshReminder.Click += new System.EventHandler(this.MenuRefreshReminder_Click);
       // 
       // SeparatorTrayMenuView
       // 
@@ -1190,6 +1198,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     internal System.Windows.Forms.Timer TimerReminder;
+    private System.Windows.Forms.ToolStripMenuItem MenuRefreshReminder;
   }
 }
 

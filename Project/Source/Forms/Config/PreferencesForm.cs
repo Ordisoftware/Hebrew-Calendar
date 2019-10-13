@@ -117,6 +117,8 @@ namespace Ordisoftware.HebrewCalendar
           EditFontName.SelectedItem = item;
           break;
         }
+      EditGPSLongitude.Text = Program.Settings.GPSLongitude;
+      EditGPSLatitude.Text = Program.Settings.GPSLatitude;
       EditBalloon.Checked = Program.Settings.BalloonEnabled;
       EditBalloonAutoHide.Checked = Program.Settings.BalloonAutoHide;
       EditShowReminderInTaskBar.Checked = Program.Settings.ShowReminderInTaskBar;
@@ -205,6 +207,8 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
+      Program.Settings.GPSLatitude = EditGPSLatitude.Text;
+      Program.Settings.GPSLongitude = EditGPSLongitude.Text;
       Program.Settings.BalloonEnabled = EditBalloon.Checked;
       Program.Settings.BalloonAutoHide = EditBalloonAutoHide.Checked;
       Program.Settings.ShowReminderInTaskBar = EditShowReminderInTaskBar.Checked;
@@ -230,8 +234,6 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.SeasonEventColor = PanelSeasonEventColor.BackColor;
       Program.Settings.MoonEventColor = PanelMoonEventColor.BackColor;
       Program.Settings.FullMoonColor = PanelFullMoonColor.BackColor;
-      Program.Settings.GPSLatitude = EditGPSLatitude.Text;
-      Program.Settings.GPSLongitude = EditGPSLongitude.Text;
       Program.Settings.Store();
     }
 
@@ -249,6 +251,8 @@ namespace Ordisoftware.HebrewCalendar
       if ( form.ShowDialog() != DialogResult.OK ) return;
       EditGPSLatitude.Text = form.Latitude;
       EditGPSLongitude.Text = form.Longitude;
+      Program.Settings.GPSLatitude = form.Latitude;
+      Program.Settings.GPSLongitude = form.Longitude;
       Program.Settings.GPSCountry = form.Country;
       Program.Settings.GPSCity = form.City;
     }

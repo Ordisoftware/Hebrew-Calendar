@@ -36,6 +36,18 @@ namespace Ordisoftware.HebrewCalendar
       EditYearLast.Value = year + 4;
     }
 
+    private void EditYearFirst_ValueChanged(object sender, EventArgs e)
+    {
+      if ( EditYearFirst.Value >= EditYearLast.Value )
+        EditYearLast.Value = EditYearFirst.Value + 1;
+    }
+
+    private void EditYearLast_ValueChanged(object sender, EventArgs e)
+    {
+      if ( EditYearLast.Value <= EditYearFirst.Value )
+        EditYearFirst.Value = EditYearLast.Value - 1;
+    }
+
     private void ButtonOk_Click(object sender, EventArgs e)
     {
       int yearFirst = (int)EditYearFirst.Value;
