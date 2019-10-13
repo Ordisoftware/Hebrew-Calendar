@@ -32,16 +32,16 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindShabatHoursBeforeMin = 1;
     const int RemindShabatHoursBeforeMax = 12;
     const int RemindShabatHoursBeforeValue = 6;
-    const int RemindShabatEveryMinutesMin = 5;
+    const int RemindShabatEveryMinutesMin = 1;
     const int RemindShabatEveryMinutesMax = 60;
     const int RemindShabatEveryMinutesValue = 15;
     const int RemindCelebrationBeforeMin = 1;
-    const int RemindCelebrationBeforeMax = 60;
+    const int RemindCelebrationBeforeMax = 30;
     const int RemindCelebrationBeforeValue = 7;
-    const int RemindCelebrationHoursBeforeMin = 2;
+    const int RemindCelebrationHoursBeforeMin = 1;
     const int RemindCelebrationHoursBeforeMax = 24;
     const int RemindCelebrationHoursBeforeValue = 6;
-    const int RemindCelebrationEveryMinutesMin = 5;
+    const int RemindCelebrationEveryMinutesMin = 1;
     const int RemindCelebrationEveryMinutesMax = 60;
     const int RemindCelebrationEveryMinutesValue = 15;
 
@@ -50,6 +50,7 @@ namespace Ordisoftware.HebrewCalendar
 
     static public bool Run()
     {
+      MainForm.Instance.TimerReminder.Enabled = false;
       string lang = Program.Settings.Language;
       var form = new PreferencesForm();
       form.ShowDialog();
@@ -62,6 +63,7 @@ namespace Ordisoftware.HebrewCalendar
         form.ShowDialog();
       }
       MainForm.Instance.Refresh();
+      MainForm.Instance.TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
       return form.OldShabatDay != Program.Settings.ShabatDay
           || form.OldLatitude != Program.Settings.GPSLatitude
           || form.OldLongitude != Program.Settings.GPSLongitude
@@ -82,15 +84,15 @@ namespace Ordisoftware.HebrewCalendar
       LoadDays();
       LoadEvents();
       LoadFonts();
-      EditTimerInterval.Minimum = RemindShabatHoursBeforeMin;
-      EditTimerInterval.Maximum = RemindShabatHoursBeforeMax;
-      EditTimerInterval.Value = RemindShabatHoursBeforeValue;
-      EditRemindShabatHoursBefore.Minimum = RemindShabatEveryMinutesMin;
-      EditRemindShabatHoursBefore.Maximum = RemindShabatEveryMinutesMax;
-      EditRemindShabatHoursBefore.Value = RemindShabatEveryMinutesValue;
-      EditRemindShabatEveryMinutes.Minimum = RemindCelebrationBeforeMin;
-      EditRemindShabatEveryMinutes.Maximum = RemindCelebrationBeforeMax;
-      EditRemindShabatEveryMinutes.Value = RemindCelebrationBeforeValue;
+      EditTimerInterval.Minimum = RemindCelebrationBeforeMin;
+      EditTimerInterval.Maximum = RemindCelebrationBeforeMax;
+      EditTimerInterval.Value = RemindCelebrationBeforeValue;
+      EditRemindShabatHoursBefore.Minimum = RemindShabatHoursBeforeMin;
+      EditRemindShabatHoursBefore.Maximum = RemindShabatHoursBeforeMax;
+      EditRemindShabatHoursBefore.Value = RemindShabatHoursBeforeValue;
+      EditRemindShabatEveryMinutes.Minimum = RemindShabatEveryMinutesMin;
+      EditRemindShabatEveryMinutes.Maximum = RemindShabatEveryMinutesMax;
+      EditRemindShabatEveryMinutes.Value = RemindShabatEveryMinutesValue;
       EditRemindCelebrationHoursBefore.Minimum = RemindCelebrationHoursBeforeMin;
       EditRemindCelebrationHoursBefore.Maximum = RemindCelebrationHoursBeforeMax;
       EditRemindCelebrationHoursBefore.Value = RemindCelebrationHoursBeforeValue;

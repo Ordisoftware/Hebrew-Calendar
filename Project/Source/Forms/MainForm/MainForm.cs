@@ -357,7 +357,6 @@ namespace Ordisoftware.HebrewCalendar
           ActionGenerate.PerformClick();
       CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
       InitRemindLists();
-      TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
       Timer_Tick(null, null);
     }
 
@@ -669,9 +668,9 @@ namespace Ordisoftware.HebrewCalendar
       SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
       if ( active != 0 ) return;
       if ( IsForegroundFullScreen() ) return;
-      if ( Program.Settings.ReminderEnabled ) CheckEvents();
-      if ( Program.Settings.ReminderEnabled ) CheckCelebrationDay();
       if ( Program.Settings.RemindShabat ) CheckShabat();
+      if ( Program.Settings.ReminderEnabled ) CheckCelebrationDay();
+      if ( Program.Settings.ReminderEnabled ) CheckEvents();
     }
 
     /// <summary>

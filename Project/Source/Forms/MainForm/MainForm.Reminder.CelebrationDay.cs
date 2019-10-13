@@ -44,6 +44,7 @@ namespace Ordisoftware.HebrewCalendar
                           .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
         var rowNext = LunisolarCalendar.LunisolarDays
                       .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(+1)));
+        if ( rowPrevious == null || rowNext == null ) return;
         string timeStart = "";
         string timeEnd = "";
         string[] timesStart = null;
