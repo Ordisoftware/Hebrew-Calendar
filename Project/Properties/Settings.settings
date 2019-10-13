@@ -128,7 +128,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CurrentDayColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Red</Value>
+      <Value Profile="(Default)">220, 0, 0</Value>
     </Setting>
     <Setting Name="TorahEventColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">DarkRed</Value>
@@ -234,6 +234,9 @@
     </Setting>
     <Setting Name="ReminderDayColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">245, 255, 240</Value>
+    </Setting>
+    <Setting Name="NextCelebrationsFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

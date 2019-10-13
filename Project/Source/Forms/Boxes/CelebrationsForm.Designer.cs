@@ -81,11 +81,14 @@
       this.CancelButton = this.buttonClose;
       this.Controls.Add(this.ListView);
       this.Controls.Add(this.panel1);
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "NextCelebrationsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.NextCelebrationsFormLocation;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "CelebrationsForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CelebrationsForm_FormClosing);
+      this.Load += new System.EventHandler(this.CelebrationsForm_Load);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 

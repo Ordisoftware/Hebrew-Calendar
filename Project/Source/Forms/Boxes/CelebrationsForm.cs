@@ -68,6 +68,12 @@ namespace Ordisoftware.HebrewCalendar
       InitializeComponent();
     }
 
+    private void CelebrationsForm_Load(object sender, EventArgs e)
+    {
+      if ( Location.X == 0 && Location.Y == 0 )
+        this.CenterToMainForm();
+    }
+
     private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       e.Cancel = true;
@@ -94,6 +100,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       Close();
     }
+
   }
 
 }

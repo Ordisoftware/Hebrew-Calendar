@@ -503,7 +503,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        [global::System.Configuration.DefaultSettingValueAttribute("220, 0, 0")]
         public global::System.Drawing.Color CurrentDayColor {
             get {
                 return ((global::System.Drawing.Color)(this["CurrentDayColor"]));
@@ -930,6 +930,18 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
             set {
                 this["ReminderDayColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point NextCelebrationsFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["NextCelebrationsFormLocation"]));
+            }
+            set {
+                this["NextCelebrationsFormLocation"] = value;
             }
         }
     }
