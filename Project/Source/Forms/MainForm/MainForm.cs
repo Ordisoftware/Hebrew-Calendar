@@ -79,6 +79,7 @@ namespace Ordisoftware.HebrewCalendar
       IsReady = true;
       GoToDate(DateTime.Now);
       Program.CheckUpdate(true);
+      CheckRegenerateCalendar();
       if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
         ActionPreferences.PerformClick();
       if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
@@ -131,6 +132,14 @@ namespace Ordisoftware.HebrewCalendar
     {
       SaveCSVDialog.InitialDirectory = Program.UserDocumentsFolderPath;
       SaveFileDialog.InitialDirectory = Program.UserDocumentsFolderPath;
+    }
+
+    private void CheckRegenerateCalendar()
+    {
+      var result = LunisolarCalendar.LunisolarDays.OrderBy(d => d.Date).LastOrDefault();
+      if ( result == null || SQLiteUtility.GetDate(result.Date) < DateTime.Now.AddMonths(6) )
+        if ( DisplayManager.QueryYesNo(Translations.EndOfCalendar.GetLang()) )
+          ActionGenerate.PerformClick();
     }
 
     /// <summary>
