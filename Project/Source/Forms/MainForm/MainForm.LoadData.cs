@@ -45,17 +45,17 @@ namespace Ordisoftware.HebrewCalendar
         connection.Close();
         LunisolarDaysTableAdapter.Fill(LunisolarCalendar.LunisolarDays);
         ReportTableAdapter.Fill(LunisolarCalendar.Report);
-        IsGenerating = true;
-        try
-        {
-          FillMonths();
-        }
-        finally
-        {
-          IsGenerating = false;
-        }
         if ( LunisolarCalendar.LunisolarDays.Count > 0 )
         {
+          IsGenerating = true;
+          try
+          {
+            FillMonths();
+          }
+          finally
+          {
+            IsGenerating = false;
+          }
           var row = LunisolarCalendar.Report.FirstOrDefault();
           CalendarText.Text = row == null ? "" : row.Content;
           try
@@ -67,11 +67,14 @@ namespace Ordisoftware.HebrewCalendar
           }
         }
         else
-        if ( DisplayManager.QueryYesNo(Translations.GenerateCalendar.GetLang()) )
         {
           PreferencesForm.Run();
           Enabled = true;
-          ActionGenerate.PerformClick();
+          do
+          {
+            ActionGenerate.PerformClick();
+          }
+          while ( LunisolarCalendar.LunisolarDays.Count == 0 );
         }
       }
       catch ( Exception ex )

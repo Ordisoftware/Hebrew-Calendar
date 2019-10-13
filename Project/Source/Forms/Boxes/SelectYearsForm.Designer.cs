@@ -44,23 +44,14 @@
       // EditYearLast
       // 
       resources.ApplyResources(this.EditYearLast, "EditYearLast");
-      this.EditYearLast.Maximum = new decimal(new int[] {
-            2100,
-            0,
-            0,
-            0});
-      this.EditYearLast.Minimum = new decimal(new int[] {
-            1902,
-            0,
-            0,
-            0});
       this.EditYearLast.Name = "EditYearLast";
       this.EditYearLast.Value = new decimal(new int[] {
-            2017,
+            100,
             0,
             0,
             0});
       this.EditYearLast.ValueChanged += new System.EventHandler(this.EditYearLast_ValueChanged);
+      this.EditYearLast.Leave += new System.EventHandler(this.EditYearLast_ValueChanged);
       // 
       // LabelYearLast
       // 
@@ -70,23 +61,14 @@
       // EditYearFirst
       // 
       resources.ApplyResources(this.EditYearFirst, "EditYearFirst");
-      this.EditYearFirst.Maximum = new decimal(new int[] {
-            2100,
-            0,
-            0,
-            0});
-      this.EditYearFirst.Minimum = new decimal(new int[] {
-            1902,
-            0,
-            0,
-            0});
       this.EditYearFirst.Name = "EditYearFirst";
       this.EditYearFirst.Value = new decimal(new int[] {
-            2016,
+            100,
             0,
             0,
             0});
       this.EditYearFirst.ValueChanged += new System.EventHandler(this.EditYearFirst_ValueChanged);
+      this.EditYearFirst.Leave += new System.EventHandler(this.EditYearFirst_ValueChanged);
       // 
       // LabelYearFirst
       // 

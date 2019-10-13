@@ -25,50 +25,43 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private bool IsCelebrationWeekStart = false;
-    private bool IsCelebrationWeekEnd = false;
+    private int YearFirst;
+    private int YearLast;
 
-    private bool[,,] IsCelebrationWeek = new bool[5000, 15, 40];
+    private bool[,,] IsCelebrationWeek;
 
     internal bool IsCelebration(int counter, int month, int year)
     {
-      return !Program.Settings.ReminderCurrentDayNoColor && IsCelebrationWeek[year, month, counter];
-    }
-
-    private void InitIsCelebrationWeek()
-    {
-      try
-      {
-        foreach ( var row in LunisolarCalendar.LunisolarDays )
-        {
-          var ev = (TorahEventType)row.TorahEvents;
-          if ( ev == TorahEventType.PessahD1 || ev == TorahEventType.SoukotD1 )
-            IsCelebrationWeekStart = true;
-          if ( ev == TorahEventType.PessahD7 || ev == TorahEventType.SoukotD8 )
-            IsCelebrationWeekEnd = true;
-          var result = IsCelebrationWeekStart || IsCelebrationWeekEnd;
-          var date = SQLiteUtility.GetDate(row.Date);
-          IsCelebrationWeek[date.Year, date.Month, date.Day] = IsCelebrationWeekStart || IsCelebrationWeekEnd;
-          if ( IsCelebrationWeekEnd )
-          {
-            IsCelebrationWeekStart = false;
-            IsCelebrationWeekEnd = false;
-          }
-        }
-      }
-      catch
-      {
-      }
+      return !Program.Settings.ReminderCurrentDayNoColor && IsCelebrationWeek[YearLast - year, month, counter];
     }
 
     internal void FillMonths()
     {
-      InitIsCelebrationWeek();
       string strToolTip = "Error on getting sun rise and set";
+      bool IsCelebrationWeekStart = false;
+      bool IsCelebrationWeekEnd = false;
       int progress = 0;
+      try
+      {
+        YearFirst = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.FirstOrDefault().Date).Year;
+        YearLast = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.LastOrDefault().Date).Year;
+        IsCelebrationWeek = new bool[YearLast - YearFirst + 1, 13, 35];
+      }
+      catch
+      {
+      }
       foreach ( var row in LunisolarCalendar.LunisolarDays )
       {
         if ( !UpdateProgress(progress++, Count, Translations.ProgressFillMonths.GetLang()) ) return;
+        var ev = (TorahEventType)row.TorahEvents;
+        if ( ev == TorahEventType.PessahD1 || ev == TorahEventType.SoukotD1 )
+          IsCelebrationWeekStart = true;
+        IsCelebrationWeekEnd = ev == TorahEventType.PessahD7 || ev == TorahEventType.SoukotD8;
+        var result = IsCelebrationWeekStart || IsCelebrationWeekEnd;
+        var date = SQLiteUtility.GetDate(row.Date);
+        IsCelebrationWeek[YearLast - date.Year, date.Month, date.Day] = IsCelebrationWeekStart;
+        if ( IsCelebrationWeekEnd )
+          IsCelebrationWeekStart = false;
         int rank = 0;
         void add(Color color, string text)
         {

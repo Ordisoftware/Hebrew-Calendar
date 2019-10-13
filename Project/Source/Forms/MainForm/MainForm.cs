@@ -142,8 +142,12 @@ namespace Ordisoftware.HebrewCalendar
     {
       var result = LunisolarCalendar.LunisolarDays.OrderBy(d => d.Date).LastOrDefault();
       if ( result == null || SQLiteUtility.GetDate(result.Date) < DateTime.Now.AddMonths(6) )
-        if ( DisplayManager.QueryYesNo(Translations.EndOfCalendar.GetLang()) )
-          ActionGenerate.PerformClick();
+      {
+        var diff = YearLast - YearFirst;
+        YearFirst = DateTime.Now.Year;
+        YearLast = YearFirst + diff;
+        ActionGenerate_Click(null, null);
+      }
     }
 
     /// <summary>
@@ -356,9 +360,8 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       ClearLists();
-      if ( PreferencesForm.Run() )
-        //if ( DisplayManager.QueryYesNo(Translations.RegenerateCalendar.GetLang()) )
-          ActionGenerate.PerformClick();
+      if ( !PreferencesForm.Run() ) return;
+      ActionGenerate_Click(null, null);
       CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
       InitRemindLists();
       Timer_Tick(null, null);
@@ -467,24 +470,27 @@ namespace Ordisoftware.HebrewCalendar
       TimerReminder.Enabled = false;
       try
       {
-        var form = new SelectYearsForm();
-        if ( form.ShowDialog() == DialogResult.Cancel ) return;
-        //if ( LunisolarCalendar.LunisolarDays.Count > 0 )
-          //if ( !DisplayManager.QueryYesNo(Translations.ReplaceCalendar.GetLang()) )
-            //return;
-        ClearLists();
-        foreach ( var f in RemindCelebrationForms.ToList() ) f.Close();
-        if ( ShabatForm != null )
+        int yearFirst;
+        int yearLast;
+        if ( sender != null )
         {
-          ShabatForm.Close();
-          ShabatForm = null;
+          var form = new SelectYearsForm();
+          if ( form.ShowDialog() == DialogResult.Cancel ) return;
+          yearFirst = (int)form.EditYearFirst.Value;
+          yearLast = (int)form.EditYearLast.Value;
         }
-        GenerateData((int)form.EditYearFirst.Value, (int)form.EditYearLast.Value);
+        else
+        {
+          yearFirst = YearFirst;
+          yearLast = YearLast;
+        }
+        ClearLists();
+        GenerateData(yearFirst, yearLast);
+        GoToDate(DateTime.Now);
       }
       finally
       {
         IsReady = true;
-        GoToDate(DateTime.Now);
         TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
         Timer_Tick(this, null);
       }
