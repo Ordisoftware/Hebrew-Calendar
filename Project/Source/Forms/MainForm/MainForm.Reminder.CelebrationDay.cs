@@ -89,7 +89,7 @@ namespace Ordisoftware.HebrewCalendar
         else
         if ( dateNow >= dateTrigger && dateNow < dateStartCheck )
         {
-          if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents) 
+          if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents)
             && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
             return;
           else
@@ -97,7 +97,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
         if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents)
-          && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
+            && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
         {
           if ( dateNow < LastCelebrationReminded[(TorahEventType)row.TorahEvents].Value
                          .AddMinutes((double)Program.Settings.RemindCelebrationEveryMinutes) )
