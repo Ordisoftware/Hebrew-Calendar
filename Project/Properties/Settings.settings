@@ -80,7 +80,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ReminderInterval" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">7</Value>
+      <Value Profile="(Default)">14</Value>
     </Setting>
     <Setting Name="ReminderEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
