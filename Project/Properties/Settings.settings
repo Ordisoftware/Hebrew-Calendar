@@ -92,16 +92,16 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindPessahD1" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindPessahD7" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindChavouotDiet" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindChavouot1" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindChavouot2" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -110,13 +110,13 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindYomHaKipourim" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindSoukotD1" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindSoukotD8" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="RemindShabat" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -237,6 +237,9 @@
     </Setting>
     <Setting Name="NextCelebrationsFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="SettingsResetRequiredV3_0" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
