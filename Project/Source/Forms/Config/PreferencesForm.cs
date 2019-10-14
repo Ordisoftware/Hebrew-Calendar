@@ -184,6 +184,7 @@ namespace Ordisoftware.HebrewCalendar
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( DoReset ) return;
+      NavigationForm.Instance.Hide();
       try
       {
         var v1 = (float)XmlConvert.ToDouble(EditGPSLatitude.Text);

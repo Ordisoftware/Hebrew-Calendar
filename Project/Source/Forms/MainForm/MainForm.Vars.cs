@@ -110,6 +110,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
+        CelebrationsForm.Instance.Hide();
+        NavigationForm.Instance.Hide();
         int min = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Min();
         int max = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Max();
         foreach ( Form item in RemindCelebrationForms.ToList() )
