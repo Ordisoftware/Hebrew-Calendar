@@ -53,12 +53,15 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( !UpdateProgress(progress++, Count, Translations.ProgressFillMonths.GetLang()) ) return;
         var ev = (TorahEventType)row.TorahEvents;
+        var season = (SeasonChangeType)row.SeasonChange;
         if ( ev == TorahEventType.PessahD1 || ev == TorahEventType.SoukotD1 || ev == TorahEventType.ChavouotDiet )
           IsCelebrationWeekStart = true;
         IsCelebrationWeekEnd = ev == TorahEventType.PessahD7 || ev == TorahEventType.SoukotD8 || ev == TorahEventType.Chavouot1;
         var result = IsCelebrationWeekStart || IsCelebrationWeekEnd;
         var date = SQLiteUtility.GetDate(row.Date);
         DayColors[YearLast - date.Year, date.Month, date.Day] = Color.Transparent;
+        if ( season != SeasonChangeType.None )
+          DayColors[YearLast - date.Year, date.Month, date.Day] = Program.Settings.ReminderDayColor;
         if ( IsCelebrationWeekStart || ev != TorahEventType.None )
           DayColors[YearLast - date.Year, date.Month, date.Day] = Program.Settings.ReminderCurrentDayColor;
         if ( SQLiteUtility.GetDate(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
