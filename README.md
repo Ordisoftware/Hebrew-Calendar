@@ -74,7 +74,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
-#### 2019.10.__ - Version 3.0
+#### 2019.10.14 - Version 3.0
 
 - Improve the reminder to remind during the celebration day like with the shabat day.
 - Improve the reminder to flash the form if already displayed.
