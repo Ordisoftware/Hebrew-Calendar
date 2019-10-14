@@ -77,9 +77,15 @@ namespace Ordisoftware.HebrewCalendar
     private void SelectCityForm_Load(object sender, EventArgs e)
     {
       ListBoxCountries.DataSource = GPS.Keys.OrderBy(c => c).ToList();
-      ListBoxCountries.SelectedIndex = -1;
-      ListBoxCities.SelectedIndex = -1;
       ActiveControl = EditFilter;
+      if ( Program.Settings.GPSCountry != "" )
+      {
+        EditFilter.Text = Program.Settings.GPSCountry;
+        if ( Program.Settings.GPSCity != "" )
+          EditFilter.Text += Program.Settings.GPSCity;
+      }
+      else
+        EditFilter_TextChanged(null, null);
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)
@@ -91,6 +97,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( ListBoxCountries.SelectedIndex == -1 ) return;
       ListBoxCities.DataSource = GPS[(string)ListBoxCountries.SelectedItem].OrderBy(c => c.Name).ToList();
+      ListBoxCities.SelectedIndex = -1;
     }
 
     private void ListBoxCities_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,6 +118,8 @@ namespace Ordisoftware.HebrewCalendar
       Mutex = true;
       bool foundCountry = false;
       bool foundCity = false;
+      ListBoxCountries.SelectedIndex = -1;
+      ListBoxCities.SelectedIndex = -1;
       try
       {
         var list = EditFilter.Text.Split(',');
@@ -149,7 +158,9 @@ namespace Ordisoftware.HebrewCalendar
             foundCity = true;
         if ( foundCity )
           tempo(EditFilter.Text = strCountry + ", " + strCity);
-        ListBoxCities.SelectedIndex = ListBoxCities.FindString(strCity);
+        index = ListBoxCities.FindString(strCity);
+        if ( ListBoxCities.SelectedIndex != index )
+          ListBoxCities.SelectedIndex = index;
       }
       finally
       {
