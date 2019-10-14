@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using System.Linq;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCalendar
@@ -51,11 +52,11 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( var row in rows )
       {
         if ( (SeasonChangeType)row.SeasonChange != SeasonChangeType.None )
-          Instance.ListView.Items.Add(SQLiteUtility.GetDate(row.Date).ToLongDateString())
+          Instance.ListView.Items.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()))
             .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChangeType)row.SeasonChange))
             .Tag = row.Date;
         if ( (TorahEventType)row.TorahEvents != TorahEventType.None )
-          Instance.ListView.Items.Add(SQLiteUtility.GetDate(row.Date).ToLongDateString())
+          Instance.ListView.Items.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()))
             .SubItems.Add(Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents))
             .Tag = row.Date;
       }

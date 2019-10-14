@@ -23,9 +23,6 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    internal int YearFirst;
-    internal int YearLast;
-
     private Color[,,] DayColors;
 
     internal Color GetDayColor(int counter, int month, int year)

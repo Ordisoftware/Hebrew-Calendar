@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCalendar
@@ -71,7 +72,7 @@ namespace Ordisoftware.HebrewCalendar
       form.LabelNextCelebrationText.Text = !isShabat
                                          ? Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents)
                                          : "Shabat";
-      form.LabelNextCelebrationDate.Text = date.ToLongDateString();
+      form.LabelNextCelebrationDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
       if ( date1 != null)
         form.LabelHours.Text = Translations.DayOfWeek.GetLang(date1.Value.DayOfWeek) + " "
                              + time1 + " ➜ "

@@ -17,6 +17,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCalendar
@@ -53,7 +54,7 @@ namespace Ordisoftware.HebrewCalendar
           var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
                       where day.Date == strDate
                       select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
-          LabelDate.Text = value.ToLongDateString();
+          LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(value.ToLongDateString());
           string strMonth = Translations.BabylonianHebrewMonthText[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
           LabelLunarDayValue.Text = Translations.NavigationDay.GetLang() + row.LunarDay.ToString();
@@ -74,7 +75,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             var date = SQLiteUtility.GetDate(rowNext.Date);
             LabelTorahNextValue.Text = Translations.TorahEvent.GetLang((TorahEventType)rowNext.TorahEvents);
-            LabelTorahNextDateValue.Text = date.ToLongDateString();
+            LabelTorahNextDateValue.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
             LabelTorahNext.Tag = date;
           }
           else
@@ -120,7 +121,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private DateTime _Date;
 
-    private NavigationForm()
+    internal NavigationForm()
     {
       InitializeComponent();
       Text = Core.DisplayManager.Title;

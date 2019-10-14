@@ -89,7 +89,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         for ( int month = 1; month <= 12; month++ )
         {
-          if ( year == yearLast && month > 12 ) break;
+          //if ( year == yearLast && month > 12 ) break;
           for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
           {
             if ( !UpdateProgress(progress++, Count, Translations.ProgressCreateDays.GetLang()) ) return;

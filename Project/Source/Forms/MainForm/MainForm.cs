@@ -628,6 +628,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
+      retry:
       try
       {
         TimerBallon.Stop();
@@ -642,6 +643,11 @@ namespace Ordisoftware.HebrewCalendar
           NavigationForm.Instance.Show();
           NavigationForm.Instance.BringToFront();
         }
+      }
+      catch ( ObjectDisposedException ex )
+      {
+        NavigationForm._Instance = new NavigationForm();
+        goto retry;
       }
       catch ( Exception ex )
       {
@@ -754,9 +760,24 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="date">The date.</param>
     internal void GoToDate(DateTime date)
     {
+      if ( !IsReady ) return;
       try
       {
-        if ( !IsReady ) return;
+        CalendarMonth.CalendarDate = date;
+      }
+      catch
+      {
+      }
+      try
+      {
+        LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
+        CalendarGrid.Update();
+      }
+      catch
+      {
+      }
+      try
+      {
         string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");
         int pos = CalendarText.Find(strDate);
         if ( pos != -1 )
@@ -766,16 +787,10 @@ namespace Ordisoftware.HebrewCalendar
           CalendarText.ScrollToCaret();
           CalendarText.SelectionStart = pos - 6;
           CalendarText.SelectionLength = 118;
-          LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
-          CalendarGrid.Update();
-          CalendarMonth.CalendarDate = date;
         }
-        else
-          DisplayManager.Show(Translations.DateNotFound.GetLang(strDate));
       }
-      catch ( Exception ex )
+      catch
       {
-        ex.Manage();
       }
     }
 
