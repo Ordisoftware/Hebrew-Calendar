@@ -315,6 +315,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SearchEventForm.fr.resx">
+      <DependentUpon>SearchEventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SearchEventForm.resx">
       <DependentUpon>SearchEventForm.cs</DependentUpon>
     </EmbeddedResource>
