@@ -669,29 +669,6 @@ namespace Ordisoftware.HebrewCalendar
 
     }
 
-    /// <summary>
-    /// provide day of week item.
-    /// </summary>
-    private class TorahEventItem
-    {
-
-      /// <summary>
-      /// Indicate the text of the day.
-      /// </summary>
-      public string Text { get; set; }
-
-      /// <summary>
-      /// Indicate the day of week enum value.
-      /// </summary>
-      public TorahEventType Event { get; set; }
-
-      /// <summary>
-      /// Return a <see cref="T:System.String" /> that represents the day.
-      /// </summary>
-      public override string ToString() { return Text; }
-
-    }
-
   }
 
 }

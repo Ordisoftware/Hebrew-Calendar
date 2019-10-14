@@ -925,14 +925,18 @@ namespace Calendar.NET
       int headerSpacing = Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height,
                     satSize.Height) + 5;
       int controlsSpacing = ( ( !_showTodayButton ) && ( !_showDateInHeader ) && ( !_showArrowControls ) ) ? 0 : 30;
-      int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
-      int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
-      int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
+      // ORDISOFWTARE MODIF BEGIN
+      //int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
       int xStart = MarginSize;
       int yStart = MarginSize;
-      DayOfWeek startWeekEnum = new DateTime(_calendarDate.Year, _calendarDate.Month, 1).DayOfWeek;
+      DayOfWeek startWeekEnum = DayOfWeekMap.Position[(DayOfWeek)Program.Settings.ShabatDay][(int)new DateTime(_calendarDate.Year, _calendarDate.Month, 1).DayOfWeek];
       int startWeek = ( (int)startWeekEnum ) + 1;
       int rogueDays = startWeek - 1;
+      var value = (float)( DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month) + rogueDays ) / 7;
+      int numWeeks = (int)value < value ? (int)value + 1 : (int)value;
+      int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
+      int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
+      // ORDISOFWTARE MODIF END
 
       yStart += headerSpacing + controlsSpacing;
 
@@ -1040,25 +1044,25 @@ namespace Calendar.NET
       yStart = MarginSize + controlsSpacing;
 
       // ORDISOFTWARE MODIF BEGIN
-      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Sunday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Sunday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)monSize.Width ) / 2 ) + cellWidth;
-      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Monday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Monday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)tueSize.Width ) / 2 ) + cellWidth * 2;
-      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Tuesday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Tuesday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)wedSize.Width ) / 2 ) + cellWidth * 3;
-      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Wednesday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Wednesday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)thuSize.Width ) / 2 ) + cellWidth * 4;
-      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Thursday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Thursday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)friSize.Width ) / 2 ) + cellWidth * 5;
-      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Friday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Friday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
 
       xStart = MarginSize + ( ( cellWidth - (int)satSize.Width ) / 2 ) + cellWidth * 6;
-      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeek.Saturday).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+      g.DrawString(Translations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Saturday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
       // ORDISOFTWARE MODIF END
 
       if ( _showDateInHeader )
@@ -1189,8 +1193,11 @@ namespace Calendar.NET
     {
       var beginningOfMonth = new DateTime(date.Year, date.Month, 1);
 
+      // ORDISOFTWARE MODIF BEGIN
       while ( date.Date.AddDays(1).DayOfWeek != CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek )
+      //while ( date.Date.AddDays(1).DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
         date = date.AddDays(1);
+      //ORDISOFTWARE MODIF END
 
       return (int)Math.Truncate(date.Subtract(beginningOfMonth).TotalDays / 7f) + 1;
     }
