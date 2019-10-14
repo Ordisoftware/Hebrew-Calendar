@@ -937,6 +937,8 @@ namespace Calendar.NET
       int numWeeks = (int)value < value ? (int)value + 1 : (int)value;
       int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
       int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
+
+      var roguebrush = new SolidBrush(Color.FromArgb(255, 251, 251, 251));
       // ORDISOFWTARE MODIF END
 
       yStart += headerSpacing + controlsSpacing;
@@ -1015,6 +1017,7 @@ namespace Calendar.NET
             int dm =
                 DateTime.DaysInMonth(_calendarDate.AddMonths(-1).Year, _calendarDate.AddMonths(-1).Month) -
                 rogueDays + 1;
+            g.FillRectangle(roguebrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
             g.DrawString(dm.ToString(CultureInfo.InvariantCulture), _daysFont, new SolidBrush(Color.FromArgb(170, 170, 170)), xStart + 5, yStart + 2);
             rogueDays--;
           }
@@ -1028,11 +1031,13 @@ namespace Calendar.NET
             {
               if ( counter2 == 1 )
               {
+                g.FillRectangle(roguebrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
                 g.DrawString(_calendarDate.AddMonths(1).ToString("MMM") + " " + counter2.ToString(CultureInfo.InvariantCulture), _daysFont,
                              new SolidBrush(Color.FromArgb(170, 170, 170)), xStart + 5, yStart + 2);
               }
               else
               {
+                g.FillRectangle(roguebrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
                 g.DrawString(counter2.ToString(CultureInfo.InvariantCulture), _daysFont,
                              new SolidBrush(Color.FromArgb(170, 170, 170)), xStart + 5, yStart + 2);
               }
