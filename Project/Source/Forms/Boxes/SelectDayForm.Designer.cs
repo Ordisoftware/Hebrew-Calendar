@@ -39,6 +39,7 @@
       // MonthCalendar
       // 
       resources.ApplyResources(this.MonthCalendar, "MonthCalendar");
+      this.MonthCalendar.MaxSelectionCount = 1;
       this.MonthCalendar.Name = "MonthCalendar";
       // 
       // PanelButtons
