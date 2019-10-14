@@ -140,7 +140,7 @@
       <Value Profile="(Default)">DarkBlue</Value>
     </Setting>
     <Setting Name="FullMoonColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">DarkGoldenrod</Value>
+      <Value Profile="(Default)">150, 100, 0</Value>
     </Setting>
     <Setting Name="RemindShabatOnlyLight" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

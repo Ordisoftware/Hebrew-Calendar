@@ -42,6 +42,15 @@ namespace Ordisoftware.HebrewCalendar
       return Color.FromArgb(Convert.ToByte(_r), Convert.ToByte(_g), Convert.ToByte(_b));
     }
 
+    static public Color MixColor(Color c1, Color c2, Color c3)
+    {
+
+      int _r = Math.Min(( c1.R + c2.R + c3.R ) / 3, 255);
+      int _g = Math.Min(( c1.G + c2.G + c3.G ) / 3, 255);
+      int _b = Math.Min(( c1.B + c2.B + c3.B ) / 3, 255);
+      return Color.FromArgb(Convert.ToByte(_r), Convert.ToByte(_g), Convert.ToByte(_b));
+    }
+
     internal void FillMonths()
     {
       string strToolTip = "Error on getting sun rise and set";
@@ -64,16 +73,38 @@ namespace Ordisoftware.HebrewCalendar
         IsCelebrationWeekEnd = ev == TorahEventType.PessahD7 || ev == TorahEventType.SoukotD8 || ev == TorahEventType.Chavouot1;
         var result = IsCelebrationWeekStart || IsCelebrationWeekEnd;
         var date = SQLiteUtility.GetDate(row.Date);
-        DayColors[YearLast - date.Year, date.Month, date.Day] = Color.Transparent;
+        Color? color1 = null;
+        Color? color2 = null;
+        Color? color3 = null;
         if ( season != SeasonChangeType.None )
-          DayColors[YearLast - date.Year, date.Month, date.Day] = Program.Settings.ReminderDayColor;
+          color1 = Program.Settings.ReminderDayColor;
         if ( IsCelebrationWeekStart || ev != TorahEventType.None )
-          DayColors[YearLast - date.Year, date.Month, date.Day] = Program.Settings.ReminderCurrentDayColor;
+          color2 = Program.Settings.ReminderCurrentDayColor;
+        if ( ev == TorahEventType.NewYearD1)
+          color2 = Program.Settings.ReminderDayColor;
         if ( SQLiteUtility.GetDate(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
-          if ( IsCelebrationWeekStart )
-            DayColors[YearLast - date.Year, date.Month, date.Day] = MixColor(Program.Settings.ReminderShabatDayColor, DayColors[YearLast - date.Year, date.Month, date.Day]); 
-          else
-            DayColors[YearLast - date.Year, date.Month, date.Day] = Program.Settings.ReminderShabatDayColor;
+          color3 = Program.Settings.ReminderShabatDayColor;
+        if ( color1 != null && color2 != null && color3 != null )
+          color1 = MixColor(color1.Value, color2.Value, color3.Value);
+        else
+        if ( color1 != null && color2 != null && color3 == null )
+          color1 = MixColor(color1.Value, color2.Value);
+        else
+        if ( color1 != null && color2 == null && color3 != null )
+          color1 = MixColor(color1.Value, color3.Value);
+        else
+        if ( color1 == null && color2 != null && color3 != null )
+          color1 = MixColor(color2.Value, color3.Value);
+        else
+        if ( color2 != null )
+          color1 = color2;
+        else
+        if ( color3 != null )
+          color1 = color3;
+        else
+        if ( color1 == null )
+          color1 = Color.Transparent;
+        DayColors[YearLast - date.Year, date.Month, date.Day] = color1.Value;
         if ( IsCelebrationWeekEnd )
           IsCelebrationWeekStart = false;
         int rank = 0;

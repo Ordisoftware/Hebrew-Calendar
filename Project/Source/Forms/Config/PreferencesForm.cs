@@ -545,7 +545,7 @@ namespace Ordisoftware.HebrewCalendar
       PanelTorahEventColor.BackColor = Color.DarkRed;
       PanelSeasonEventColor.BackColor = Color.DarkGreen;
       PanelMoonEventColor.BackColor = Color.DarkBlue;
-      PanelFullMoonColor.BackColor = Color.DarkGoldenrod;
+      PanelFullMoonColor.BackColor = Color.FromArgb(150, 100, 0);
       UpdateCalendarMonth();
     }
 
