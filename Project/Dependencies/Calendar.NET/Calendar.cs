@@ -925,16 +925,18 @@ namespace Calendar.NET
       int headerSpacing = Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height,
                     satSize.Height) + 5;
       int controlsSpacing = ( ( !_showTodayButton ) && ( !_showDateInHeader ) && ( !_showArrowControls ) ) ? 0 : 30;
-      int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
-      int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
-      int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
+      // ORDISOFWTARE MODIF BEGIN
+      //int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
       int xStart = MarginSize;
       int yStart = MarginSize;
-      // ORDISOFWTARE MODIF BEGIN
       DayOfWeek startWeekEnum = DayOfWeekMap.Position[(DayOfWeek)Program.Settings.ShabatDay][(int)new DateTime(_calendarDate.Year, _calendarDate.Month, 1).DayOfWeek];
-      // ORDISOFWTARE MODIF END
       int startWeek = ( (int)startWeekEnum ) + 1;
       int rogueDays = startWeek - 1;
+      var value = (float)( DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month) + rogueDays ) / 7;
+      int numWeeks = (int)value < value ? (int)value + 1 : (int)value;
+      int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
+      int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
+      // ORDISOFWTARE MODIF END
 
       yStart += headerSpacing + controlsSpacing;
 
@@ -1191,8 +1193,11 @@ namespace Calendar.NET
     {
       var beginningOfMonth = new DateTime(date.Year, date.Month, 1);
 
+      // ORDISOFTWARE MODIF BEGIN
       while ( date.Date.AddDays(1).DayOfWeek != CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek )
+      //while ( date.Date.AddDays(1).DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
         date = date.AddDays(1);
+      //ORDISOFTWARE MODIF END
 
       return (int)Math.Truncate(date.Subtract(beginningOfMonth).TotalDays / 7f) + 1;
     }
