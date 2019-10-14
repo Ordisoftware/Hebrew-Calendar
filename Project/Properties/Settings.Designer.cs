@@ -503,7 +503,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("200, 0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
         public global::System.Drawing.Color CurrentDayColor {
             get {
                 return ((global::System.Drawing.Color)(this["CurrentDayColor"]));
@@ -954,6 +954,18 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
             set {
                 this["SettingsResetRequiredV3_0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200, 0, 0")]
+        public global::System.Drawing.Color CurrentDayBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["CurrentDayBackColor"]));
+            }
+            set {
+                this["CurrentDayBackColor"] = value;
             }
         }
     }
