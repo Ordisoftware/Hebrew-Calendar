@@ -76,8 +76,8 @@ namespace Ordisoftware.HebrewCalendar
       else
         throw new Exception("Error on calculating celebration dates and times.");
       var dateTrigger = dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
-      if ( dateNow < dateTrigger || dateNow >= dateEnd.Value
-                                               .AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes) )
+      if ( dateNow < dateTrigger || dateNow >= dateEnd.Value )
+                                               //.AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes) )
       {
         LastCelebrationReminded[(TorahEventType)row.TorahEvents] = null;
         if ( RemindCelebrationDayForms.ContainsKey((TorahEventType)row.TorahEvents) )

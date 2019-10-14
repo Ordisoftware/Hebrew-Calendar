@@ -59,8 +59,8 @@ namespace Ordisoftware.HebrewCalendar
       else
         initTimes(rowPrevious.Sunset, row.Sunset, -1);
       var dateTrigger = dateStartCheck.Value.AddHours((double)-Program.Settings.RemindShabatHoursBefore);
-      if ( dateNow < dateTrigger || dateNow >= dateEnd.Value
-                                               .AddMinutes((double)-Program.Settings.RemindShabatEveryMinutes) )
+      if ( dateNow < dateTrigger || dateNow >= dateEnd.Value )
+                                               //.AddMinutes((double)-Program.Settings.RemindShabatEveryMinutes) )
       {
         LastShabatReminded = null;
         if ( ShabatForm != null )
