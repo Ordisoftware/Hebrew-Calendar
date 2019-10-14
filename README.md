@@ -72,6 +72,21 @@ It's the "day of rest" where one do not work for a livelihood and where there is
 
 These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teruah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrow of losses, and Sukot or Tabernacles which is the construction of the future. These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.
 
+#### Keyboard shortcuts
+
+- Ctrl+C : Copy report to clipboard
+- Ctrl+D : Search a day
+- Ctrl+E : Search a celebration
+- Ctrl+N : Open the navigation window
+- Ctrl+P : Print the month view
+- Ctrl+S : Save report to text file
+- Alt+S : Save report to CSV file
+- F2 : Generate calender
+- F8 : Preferences
+- F11 : Help
+- F12 : About
+- Escape : Close window or Cancel process 
+
 ## Changelog
 
 #### 2019.10.14 - Version 3.0
