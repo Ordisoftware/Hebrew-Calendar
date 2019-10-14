@@ -85,6 +85,9 @@ namespace Ordisoftware.HebrewCalendar
       form.Location = new Point(left + width - form.Width, top + height - form.Height);
       form.Tag = row.Date;
       form.Text = " " + form.LabelNextCelebrationText.Text;
+      form.LabelNextCelebrationText.ForeColor = Program.Settings.TorahEventColor;
+      form.LabelNextCelebrationDate.LinkColor = Program.Settings.MoonEventColor;
+      form.LabelNextCelebrationDate.ActiveLinkColor = Program.Settings.MoonEventColor;
       var now = DateTime.Now;
       if ( Program.Settings.ReminderUseColors)
         if ( isShabat )

@@ -455,7 +455,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void UpdateCalendarMonth()
     {
-      Program.Settings.Store();
+      PreferencesForm_FormClosing(null, null);
       MainForm.Instance.IsGenerating = true;
       Cursor = Cursors.WaitCursor;
       MainForm.Instance.Cursor = Cursors.WaitCursor;
