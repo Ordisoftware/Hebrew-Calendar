@@ -999,7 +999,7 @@ namespace Calendar.NET
                 //g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
                 string strCounter = counter.ToString(CultureInfo.InvariantCulture);
                 SizeF stringSize = g.MeasureString(strCounter, _todayFont);
-                g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5 + 1, yStart + 2 + 1, stringSize.Width - 4, stringSize.Height - 4);
+                g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 2, stringSize.Height - 4);
                 g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
