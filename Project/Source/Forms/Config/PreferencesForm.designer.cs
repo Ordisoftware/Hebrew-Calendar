@@ -78,11 +78,13 @@
       this.EditReminderUseColors = new System.Windows.Forms.CheckBox();
       this.LabelRemindCelebrationHoursBefore = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationEveryMinutes = new System.Windows.Forms.Label();
+      this.label4 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.EditEventsDay = new System.Windows.Forms.CheckedListBox();
       this.EditEvents = new System.Windows.Forms.CheckedListBox();
+      this.PanelNewMonthColor = new System.Windows.Forms.Panel();
       this.PanelReminderDayColor = new System.Windows.Forms.Panel();
       this.PanelReminderShabatColor = new System.Windows.Forms.Panel();
       this.PanelReminderCurrentDayColor = new System.Windows.Forms.Panel();
@@ -478,11 +480,13 @@
       this.GroupBoxReminder.Controls.Add(this.EditReminderUseColors);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationHoursBefore);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationEveryMinutes);
+      this.GroupBoxReminder.Controls.Add(this.label4);
       this.GroupBoxReminder.Controls.Add(this.label2);
       this.GroupBoxReminder.Controls.Add(this.label3);
       this.GroupBoxReminder.Controls.Add(this.label1);
       this.GroupBoxReminder.Controls.Add(this.EditEventsDay);
       this.GroupBoxReminder.Controls.Add(this.EditEvents);
+      this.GroupBoxReminder.Controls.Add(this.PanelNewMonthColor);
       this.GroupBoxReminder.Controls.Add(this.PanelReminderDayColor);
       this.GroupBoxReminder.Controls.Add(this.PanelReminderShabatColor);
       this.GroupBoxReminder.Controls.Add(this.PanelReminderCurrentDayColor);
@@ -509,6 +513,11 @@
       // 
       resources.ApplyResources(this.LabelRemindCelebrationEveryMinutes, "LabelRemindCelebrationEveryMinutes");
       this.LabelRemindCelebrationEveryMinutes.Name = "LabelRemindCelebrationEveryMinutes";
+      // 
+      // label4
+      // 
+      resources.ApplyResources(this.label4, "label4");
+      this.label4.Name = "label4";
       // 
       // label2
       // 
@@ -539,9 +548,17 @@
       this.EditEvents.FormattingEnabled = true;
       this.EditEvents.Name = "EditEvents";
       // 
+      // PanelNewMonthColor
+      // 
+      this.PanelNewMonthColor.BackColor = System.Drawing.Color.AliceBlue;
+      this.PanelNewMonthColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelNewMonthColor, "PanelNewMonthColor");
+      this.PanelNewMonthColor.Name = "PanelNewMonthColor";
+      this.PanelNewMonthColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelNewMonthColor_MouseClick);
+      // 
       // PanelReminderDayColor
       // 
-      this.PanelReminderDayColor.BackColor = System.Drawing.Color.Honeydew;
+      this.PanelReminderDayColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
       this.PanelReminderDayColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.PanelReminderDayColor, "PanelReminderDayColor");
       this.PanelReminderDayColor.Name = "PanelReminderDayColor";
@@ -549,7 +566,7 @@
       // 
       // PanelReminderShabatColor
       // 
-      this.PanelReminderShabatColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+      this.PanelReminderShabatColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
       this.PanelReminderShabatColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.PanelReminderShabatColor, "PanelReminderShabatColor");
       this.PanelReminderShabatColor.Name = "PanelReminderShabatColor";
@@ -879,5 +896,7 @@
     internal System.Windows.Forms.Panel PanelReminderDayColor;
     private System.Windows.Forms.Label LabelColorTodayBack;
     internal System.Windows.Forms.Panel PanelCurrentDayBackColor;
+    private System.Windows.Forms.Label label4;
+    internal System.Windows.Forms.Panel PanelNewMonthColor;
   }
 }

@@ -244,5 +244,8 @@
     <Setting Name="CurrentDayBackColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">200, 0, 0</Value>
     </Setting>
+    <Setting Name="NewMonthColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">AliceBlue</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
