@@ -156,6 +156,7 @@ namespace Ordisoftware.HebrewCalendar
       PanelReminderDayColor.BackColor = Program.Settings.ReminderDayColor;
       PanelReminderCurrentDayColor.BackColor = Program.Settings.ReminderCurrentDayColor;
       PanelReminderShabatColor.BackColor = Program.Settings.ReminderShabatDayColor;
+      PanelNewMonthColor.BackColor = Program.Settings.NewMonthColor;
       EditReminderUseColors.Checked = Program.Settings.ReminderUseColors;
       OldReminderCurrentDayColor = Program.Settings.ReminderCurrentDayColor;
       OldReminderUseColors = Program.Settings.ReminderUseColors;
@@ -255,6 +256,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.ReminderShabatDayColor = PanelReminderShabatColor.BackColor;
       Program.Settings.ReminderDayColor = PanelReminderDayColor.BackColor;
       Program.Settings.ReminderCurrentDayColor = PanelReminderCurrentDayColor.BackColor;
+      Program.Settings.NewMonthColor = PanelNewMonthColor.BackColor;
       Program.Settings.ReminderUseColors = EditReminderUseColors.Checked;
       Program.Settings.Store();
     }
@@ -395,6 +397,15 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = PanelReminderShabatColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelReminderShabatColor.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+
+    private void PanelNewMonthColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = PanelNewMonthColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelNewMonthColor.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
     }
 
     private void PanelReminderDayColor_MouseClick(object sender, MouseEventArgs e)
@@ -402,6 +413,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = PanelReminderDayColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelReminderDayColor.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
     }
 
     private void PanelReminderCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
@@ -409,6 +421,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = PanelReminderCurrentDayColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelReminderCurrentDayColor.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
     }
 
     /// <summary>

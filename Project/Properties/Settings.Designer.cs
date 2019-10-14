@@ -968,5 +968,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["CurrentDayBackColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AliceBlue")]
+        public global::System.Drawing.Color NewMonthColor {
+            get {
+                return ((global::System.Drawing.Color)(this["NewMonthColor"]));
+            }
+            set {
+                this["NewMonthColor"] = value;
+            }
+        }
     }
 }
