@@ -628,6 +628,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
+      retry:
       try
       {
         TimerBallon.Stop();
@@ -642,6 +643,11 @@ namespace Ordisoftware.HebrewCalendar
           NavigationForm.Instance.Show();
           NavigationForm.Instance.BringToFront();
         }
+      }
+      catch ( ObjectDisposedException ex )
+      {
+        NavigationForm._Instance = new NavigationForm();
+        goto retry;
       }
       catch ( Exception ex )
       {
