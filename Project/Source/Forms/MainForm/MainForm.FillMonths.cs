@@ -23,8 +23,8 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private int YearFirst;
-    private int YearLast;
+    internal int YearFirst;
+    internal int YearLast;
 
     private Color[,,] DayColors;
 

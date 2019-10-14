@@ -84,6 +84,7 @@
       this.ActionPrint = new System.Windows.Forms.ToolStripButton();
       this.Sep2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchDay = new System.Windows.Forms.ToolStripButton();
+      this.ActionSearchEvent = new System.Windows.Forms.ToolStripButton();
       this.ActionNavigate = new System.Windows.Forms.ToolStripButton();
       this.ActionViewCelebrations = new System.Windows.Forms.ToolStripButton();
       this.Sep3 = new System.Windows.Forms.ToolStripSeparator();
@@ -537,6 +538,7 @@
             this.ActionPrint,
             this.Sep2,
             this.ActionSearchDay,
+            this.ActionSearchEvent,
             this.ActionNavigate,
             this.ActionViewCelebrations,
             this.Sep3,
@@ -618,6 +620,16 @@
       this.ActionSearchDay.Click += new System.EventHandler(this.ActionSearchDay_Click);
       this.ActionSearchDay.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionSearchDay.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionSearchEvent
+      // 
+      this.ActionSearchEvent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionSearchEvent, "ActionSearchEvent");
+      this.ActionSearchEvent.Name = "ActionSearchEvent";
+      this.ActionSearchEvent.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionSearchEvent.Click += new System.EventHandler(this.ActionSearchEvent_Click);
+      this.ActionSearchEvent.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionSearchEvent.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // ActionNavigate
       // 
@@ -1199,6 +1211,7 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     internal System.Windows.Forms.Timer TimerReminder;
     private System.Windows.Forms.ToolStripMenuItem MenuRefreshReminder;
+    private System.Windows.Forms.ToolStripButton ActionSearchEvent;
   }
 }
 

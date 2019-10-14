@@ -609,6 +609,18 @@ namespace Ordisoftware.HebrewCalendar
       GoToDate(date);
     }
 
+    private void ActionSearchEvent_Click(object sender, EventArgs e)
+    {
+      var form = new SearchEventForm();
+      if ( form.ShowDialog() != DialogResult.OK ) return;
+      var result = ( from day in LunisolarCalendar.LunisolarDays
+                     where (TorahEventType)day.TorahEvents == ( (TorahEventItem)form.SelectEvents.SelectedItem ).Event
+                        && SQLiteUtility.GetDate(day.Date).Year == form.EditYear.Value
+                     select day ).FirstOrDefault();
+      if ( result == null ) return;
+      GoToDate(SQLiteUtility.GetDate(result.Date));
+    }
+
     /// <summary>
     /// Event handler. Called by ActionNavigate for click events.
     /// </summary>

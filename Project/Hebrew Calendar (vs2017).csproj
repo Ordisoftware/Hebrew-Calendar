@@ -136,10 +136,17 @@
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Names.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Positions.cs" />
+    <Compile Include="Source\Enums\TorahEventItem.cs" />
     <Compile Include="Source\Enums\Translations.cs" />
     <Compile Include="Source\Classes\SQLiteUtility.cs" />
     <Compile Include="Source\Enums\ReportFieldType.cs" />
     <Compile Include="Source\Enums\EphemerisType.cs" />
+    <Compile Include="Source\Forms\Boxes\SearchEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SearchEventForm.Designer.cs">
+      <DependentUpon>SearchEventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\SelectCityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +314,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SearchEventForm.resx">
+      <DependentUpon>SearchEventForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SelectCityForm.fr.resx">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
