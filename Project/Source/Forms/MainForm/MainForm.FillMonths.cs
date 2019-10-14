@@ -27,7 +27,10 @@ namespace Ordisoftware.HebrewCalendar
 
     internal Color GetDayColor(int counter, int month, int year)
     {
-      return DayColors[YearLast - year, month, counter];
+      int indexYear = YearLast - year;
+      if (indexYear < 0 || indexYear > DayColors.GetUpperBound(0))
+        return Color.Transparent;
+      return DayColors[indexYear, month, counter];
     }
 
     static public Color MixColor(Color c1, Color c2)
