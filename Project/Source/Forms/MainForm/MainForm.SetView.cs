@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -95,13 +96,20 @@ namespace Ordisoftware.HebrewCalendar
           }
         }
       };
-      if ( Program.Settings.CurrentView == view && !first ) return;
-      ViewPanels[Program.Settings.CurrentView].MenuItem.Checked = false;
-      ViewPanels[Program.Settings.CurrentView].Panel.Parent = null;
-      ViewPanels[view].MenuItem.Checked = true;
-      ViewPanels[view].Panel.Parent = PanelCalendar;
-      ViewPanels[view].Focused.Focus();
-      Program.Settings.CurrentView = view;
+      try
+      {
+        if ( Program.Settings.CurrentView == view && !first ) return;
+        ViewPanels[Program.Settings.CurrentView].MenuItem.Checked = false;
+        ViewPanels[Program.Settings.CurrentView].Panel.Parent = null;
+        ViewPanels[view].MenuItem.Checked = true;
+        ViewPanels[view].Panel.Parent = PanelCalendar;
+        ViewPanels[view].Focused.Focus();
+        Program.Settings.CurrentView = view;
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
   }

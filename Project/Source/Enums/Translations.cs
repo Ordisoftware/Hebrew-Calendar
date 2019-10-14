@@ -204,10 +204,12 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> ResetPreferences
       = new Dictionary<string, string>()
       {
-        { "en", "Do you want to reset the preferences" + NewLine + 
-                "to their default values?" },
-        { "fr", "Voulez-vous réinitialiser les préférences" + NewLine +
-                "à leurs valeurs par défaut ?" }
+        { "en", "Preferences will be reseted to their default values." + NewLine +
+                "GPS location and shabat day will be keeped." + NewLine + NewLine +
+                "Do you want to continue?" },
+        { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine +
+                "La position GPS et le jour du shabat seront conservés." + NewLine + NewLine +
+                "Voulez-vous continuer ?" }
       };
 
     static public readonly Dictionary<string, string> ReplaceCalendar

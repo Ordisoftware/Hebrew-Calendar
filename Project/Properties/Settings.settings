@@ -128,7 +128,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CurrentDayColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">220, 0, 0</Value>
+      <Value Profile="(Default)">200, 0, 0</Value>
     </Setting>
     <Setting Name="TorahEventColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">DarkRed</Value>
@@ -230,7 +230,7 @@
       <Value Profile="(Default)">120</Value>
     </Setting>
     <Setting Name="ReminderShabatDayColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">242, 242, 242</Value>
+      <Value Profile="(Default)">243, 243, 243</Value>
     </Setting>
     <Setting Name="ReminderDayColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">245, 255, 240</Value>

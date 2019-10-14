@@ -13,9 +13,11 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-10 </edited>
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -56,6 +58,12 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
+    private Point TrayIconMouse;
+
+    private bool CanBallon = true;
+
+    private bool NavigationTrayBallooned;
+
     private bool TimerErrorShown = false;
 
     private Dictionary<TorahEventType, bool> TorahEventRemindList
@@ -66,24 +74,26 @@ namespace Ordisoftware.HebrewCalendar
 
     private void InitRemindLists()
     {
-      TorahEventRemindList.Clear();
-      TorahEventRemindDayList.Clear();
-      foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-        if ( type != TorahEventType.None )
-          try
+      try
+      {
+        TorahEventRemindList.Clear();
+        TorahEventRemindDayList.Clear();
+        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
+          if ( type != TorahEventType.None )
           {
             TorahEventRemindList.Add(type, (bool)Program.Settings["TorahEventRemind" + type.ToString()]);
             TorahEventRemindDayList.Add(type, (bool)Program.Settings["TorahEventRemindDay" + type.ToString()]);
           }
-          catch
-          {
-          }
+      }
+      catch
+      {
+      }
     }
 
-    internal readonly List<Form> RemindCelebrationForms 
+    internal readonly List<Form> RemindCelebrationForms
       = new List<Form>();
 
-    internal readonly List<string> RemindCelebrationDates 
+    internal readonly List<string> RemindCelebrationDates
       = new List<string>();
 
     internal readonly Dictionary<TorahEventType, DateTime?> LastCelebrationReminded
@@ -98,23 +108,30 @@ namespace Ordisoftware.HebrewCalendar
 
     internal void ClearLists()
     {
-      int min = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Min();
-      int max = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Max();
-      foreach ( Form item in RemindCelebrationForms.ToList() )
-        item.Close();
-      RemindCelebrationDates.Clear();
-      for ( int index = min; index < max; index++ )
-        if ( LastCelebrationReminded.ContainsKey((TorahEventType)index) )
-          LastCelebrationReminded[(TorahEventType)index] = null;
-      for ( int index = min; index < max; index++ )
-        if ( RemindCelebrationDayForms.ContainsKey((TorahEventType)index) )
-          RemindCelebrationDayForms[(TorahEventType)index].Close();
-      RemindCelebrationDayForms.Clear();
-      LastShabatReminded = null;
-      if ( ShabatForm != null )
+      try
       {
-        ShabatForm.Close();
-        ShabatForm = null;
+        int min = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Min();
+        int max = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Max();
+        foreach ( Form item in RemindCelebrationForms.ToList() )
+          item.Close();
+        RemindCelebrationDates.Clear();
+        for ( int index = min; index < max; index++ )
+          if ( LastCelebrationReminded.ContainsKey((TorahEventType)index) )
+            LastCelebrationReminded[(TorahEventType)index] = null;
+        for ( int index = min; index < max; index++ )
+          if ( RemindCelebrationDayForms.ContainsKey((TorahEventType)index) )
+            RemindCelebrationDayForms[(TorahEventType)index].Close();
+        RemindCelebrationDayForms.Clear();
+        LastShabatReminded = null;
+        if ( ShabatForm != null )
+        {
+          ShabatForm.Close();
+          ShabatForm = null;
+        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
       }
     }
 

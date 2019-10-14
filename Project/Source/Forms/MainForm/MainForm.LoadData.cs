@@ -56,10 +56,10 @@ namespace Ordisoftware.HebrewCalendar
           {
             IsGenerating = false;
           }
-          var row = LunisolarCalendar.Report.FirstOrDefault();
-          CalendarText.Text = row == null ? "" : row.Content;
           try
           {
+            var row = LunisolarCalendar.Report.FirstOrDefault();
+            CalendarText.Text = row == null ? "" : row.Content;
             NavigationForm.Instance.Date = DateTime.Now;
           }
           catch
@@ -86,8 +86,15 @@ namespace Ordisoftware.HebrewCalendar
         Enabled = true;
         Cursor = Cursors.Default;
         LunisolarCalendar.LunisolarDays.RowChanged -= update;
-        SetView(Program.Settings.CurrentView, true);
-        UpdateButtons();
+        try
+        {
+          SetView(Program.Settings.CurrentView, true);
+          UpdateButtons();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
         TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
         Timer_Tick(null, null);
