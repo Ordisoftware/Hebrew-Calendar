@@ -74,16 +74,15 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
-#### 2019.10.__ - Version 3.0
+#### 2019.10.14 - Version 3.0
 
 - Improve the reminder to remind during the celebration day like with the shabat day.
 - Improve the reminder to flash the form if already displayed.
 - Improve reminder boxes location on the desktop.
-- Improve tray icon with open navigation popup on mouse mouve.
 - Improve session ending.
 - Add loading data box instead of using a bottom progressbar.
 - Add displaying begin and end dates and times in the celebration reminder form like with the shabat.
-- Add looming navigation popup from the tray icon wher mouse is over.
+- Add looming navigation popup from the tray icon when mouse is over.
 - Add celebration weeks, shabat days and reminders popup olorization.
 - Add check end of calendar to automatically regenerate it.
 - Add option to choose language.
