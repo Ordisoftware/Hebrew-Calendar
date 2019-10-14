@@ -380,7 +380,7 @@ namespace Calendar.NET
       this._btnToday.HighlightButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
       this._btnToday.Location = new System.Drawing.Point(19, 20);
       this._btnToday.Name = "_btnToday";
-      this._btnToday.Size = new System.Drawing.Size(72, 29);
+      //this._btnToday.Size = new System.Drawing.Size(72, 29);
       this._btnToday.TabIndex = 0;
       this._btnToday.TextColor = System.Drawing.Color.Black;
       this._btnToday.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnTodayButtonClicked);

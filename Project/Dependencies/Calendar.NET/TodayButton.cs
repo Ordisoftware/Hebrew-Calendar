@@ -4,7 +4,7 @@
     {
         public TodayButton()
         {
-            Size = new System.Drawing.Size(72, 29);
+            Size = new System.Drawing.Size(85, 29);
             ButtonText = "Today";
         }
 
