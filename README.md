@@ -33,9 +33,9 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 
 ![Repport Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-raw-en-768x527.png)
 
-![Month Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-month-en-768x527.png)
+![Month Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-viewmonth-en-768x527.png)
 
-![Settings Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-config-en.png)
+![Settings Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-preferences-en.png)
 
 ![Celebrations Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-celebrations-en.png)
 
@@ -82,9 +82,10 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - Improve tray icon with open navigation popup on mouse mouve.
 - Improve session ending.
 - Add loading data box instead of using a bottom progressbar.
-- Add celebration week colorization.
-- Add displaying begin and end date in the celebration reminder form like with the shabat.
-- Add check end of calendar to regenerate it.
+- Add displaying begin and end dates and times in the celebration reminder form like with the shabat.
+- Add looming navigation popup from the tray icon wher mouse is over.
+- Add celebration weeks, shabat days and reminders popup olorization.
+- Add check end of calendar to automatically regenerate it.
 - Add option to choose language.
 - Add world cities GPS database.
 - Improve UI.

@@ -257,10 +257,20 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(Translations.ResetPreferences.GetLang()) ) return;
+      string country = Program.Settings.GPSCountry;
+      string city = Program.Settings.GPSCity;
+      string lat = Program.Settings.GPSLatitude;
+      string lng = Program.Settings.GPSLongitude;
+      int shabat = EditShabatDay.SelectedIndex;
       Program.Settings.Reset();
       Program.Settings.Reload();
       Program.Settings.Save();
       DoReset = true;
+      Program.Settings.GPSCountry = country;
+      Program.Settings.GPSCity = city;
+      Program.Settings.GPSLatitude = lat;
+      Program.Settings.GPSLongitude = lng;
+      Program.Settings.ShabatDay = shabat;
       Close();
     }
 

@@ -15,7 +15,6 @@
 using System;
 using System.Linq;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -41,13 +40,6 @@ namespace Ordisoftware.HebrewCalendar
       InitializeComponent();
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      CalendarText.ForeColor = Program.Settings.TextColor;
-      CalendarText.BackColor = Program.Settings.TextBackground;
-      CalendarMonth.CurrentDayColor = Program.Settings.CurrentDayColor;
-      CalendarMonth.CalendarDateChanged += (date) =>
-      {
-        GoToDate(date);
-      };
     }
 
     /// <summary>
@@ -74,6 +66,13 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeDialogsDirectory();
       UpdateTextCalendar();
+      CalendarText.ForeColor = Program.Settings.TextColor;
+      CalendarText.BackColor = Program.Settings.TextBackground;
+      CalendarMonth.CurrentDayColor = Program.Settings.CurrentDayColor;
+      CalendarMonth.CalendarDateChanged += (date) =>
+      {
+        GoToDate(date);
+      };
       UpdateButtons();
       MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
       IsReady = true;
@@ -82,7 +81,8 @@ namespace Ordisoftware.HebrewCalendar
       CheckRegenerateCalendar();
       if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
         ActionPreferences.PerformClick();
-      if ( Program.Settings.StartupHide ) MenuShowHide.PerformClick();
+      if ( Program.Settings.StartupHide )
+        MenuShowHide.PerformClick();
       Timer_Tick(null, null);
     }
 
@@ -121,10 +121,17 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Session ending event information.</param>
     private void SessionEnding(object sender, SessionEndingEventArgs e)
     {
-      ClearLists();
-      foreach ( Form form in Application.OpenForms )
-        if ( form != this && form.Visible )
-          form.Close();
+      try
+      {
+        ClearLists();
+        foreach ( Form form in Application.OpenForms )
+          if ( form != this && form.Visible )
+            form.Close();
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
       AllowClose = true;
       Close();
     }
@@ -140,13 +147,20 @@ namespace Ordisoftware.HebrewCalendar
 
     private void CheckRegenerateCalendar()
     {
-      var result = LunisolarCalendar.LunisolarDays.OrderBy(d => d.Date).LastOrDefault();
-      if ( result == null || SQLiteUtility.GetDate(result.Date) < DateTime.Now.AddMonths(6) )
+      try
       {
-        var diff = YearLast - YearFirst;
-        YearFirst = DateTime.Now.Year;
-        YearLast = YearFirst + diff;
-        ActionGenerate_Click(null, null);
+        var result = LunisolarCalendar.LunisolarDays.OrderBy(d => d.Date).LastOrDefault();
+        if ( result == null || SQLiteUtility.GetDate(result.Date) < DateTime.Now.AddMonths(6) )
+        {
+          var diff = YearLast - YearFirst;
+          YearFirst = DateTime.Now.Year;
+          YearLast = YearFirst + diff;
+          ActionGenerate_Click(null, null);
+        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
       }
     }
 
@@ -157,33 +171,38 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MenuShowHide_Click(object sender, EventArgs e)
     {
-      if ( !Visible )
+      try
       {
-        FormBorderStyle = FormBorderStyle.Sizable;
-        Visible = true;
-        ShowInTaskbar = true;
-        WindowState = Program.Settings.MainFormState;
-        NavigationForm.Instance.Date = DateTime.Now;
-        if ( IsReady )
+        if ( !Visible )
         {
-          var old = TopMost;
-          TopMost = true;
-          BringToFront();
-          TopMost = old;
+          FormBorderStyle = FormBorderStyle.Sizable;
+          Visible = true;
+          ShowInTaskbar = true;
+          WindowState = Program.Settings.MainFormState;
+          NavigationForm.Instance.Date = DateTime.Now;
+          if ( IsReady )
+          {
+            var old = TopMost;
+            TopMost = true;
+            BringToFront();
+            TopMost = old;
+          }
         }
+        else
+        {
+          Program.Settings.MainFormState = WindowState;
+          WindowState = FormWindowState.Minimized;
+          Visible = false;
+          ShowInTaskbar = false;
+          FormBorderStyle = FormBorderStyle.SizableToolWindow;
+        }
+        MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
       }
-      else
+      catch ( Exception ex )
       {
-        Program.Settings.MainFormState = WindowState;
-        WindowState = FormWindowState.Minimized;
-        Visible = false;
-        ShowInTaskbar = false;
-        FormBorderStyle = FormBorderStyle.SizableToolWindow;
+        ex.Manage();
       }
-      MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
     }
-
-    private bool CanBallon = true;
 
     private void MenuTray_VisibleChanged(object sender, EventArgs e)
     {
@@ -196,7 +215,7 @@ namespace Ordisoftware.HebrewCalendar
       TrayIcon.Text = Program.Settings.BalloonEnabled ? "" : Text;
       if ( !Program.Settings.BalloonEnabled ) return;
       TimerBallon.Start();
-      p = Cursor.Position;
+      TrayIconMouse = Cursor.Position;
       if ( !TimerTrayMouseMove.Enabled && Program.Settings.BalloonAutoHide )
         TimerTrayMouseMove.Start();
     }
@@ -206,22 +225,16 @@ namespace Ordisoftware.HebrewCalendar
       TimerBallon.Stop();
       if ( !CanBallon ) return;
       if ( !NavigationForm.Instance.Visible )
-      {
         ActionNavigate_Click(null, null);
-      }
     }
-
-    private Point p;
-
-    private bool NavigationTrayOpened;
 
     private void TimerTrayMouseMove_Tick(object sender, EventArgs e)
     {
-      if ( Cursor.Position != p )
+      if ( Cursor.Position != TrayIconMouse )
       {
         TimerBallon.Stop();
         TimerTrayMouseMove.Stop();
-        if ( NavigationForm.Instance.Visible && NavigationTrayOpened )
+        if ( NavigationForm.Instance.Visible && NavigationTrayBallooned )
           ActionNavigate.PerformClick();
       }
     }
@@ -233,35 +246,42 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Mouse event information.</param>
     private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
     {
-      TimerBallon.Stop();
-      TimerTrayMouseMove.Stop();
-      if ( e == null ) return;
-      if ( e.Button == MouseButtons.Left )
-        switch ( Program.Settings.TrayIconClickOpen )
-        {
-          case TrayIconClickOpen.MainForm:
-            MenuShowHide.PerformClick();
-            break;
-          case TrayIconClickOpen.NavigationForm:
-            var form = NavigationForm.Instance;
-            if ( form.Visible )
-              form.Visible = false;
-            else
-              try
-              {
-                form.Date = DateTime.Now;
-                form.Visible = true;
-              }
-              catch ( Exception ex )
-              {
-                ex.Manage();
-              }
-            break;
-        }
-      else
-      if ( e.Button == MouseButtons.Right )
-        if ( NavigationForm.Instance.Visible )
-          ActionNavigate.PerformClick();
+      try
+      {
+        TimerBallon.Stop();
+        TimerTrayMouseMove.Stop();
+        if ( e == null ) return;
+        if ( e.Button == MouseButtons.Left )
+          switch ( Program.Settings.TrayIconClickOpen )
+          {
+            case TrayIconClickOpen.MainForm:
+              MenuShowHide.PerformClick();
+              break;
+            case TrayIconClickOpen.NavigationForm:
+              var form = NavigationForm.Instance;
+              if ( form.Visible )
+                form.Visible = false;
+              else
+                try
+                {
+                  form.Date = DateTime.Now;
+                  form.Visible = true;
+                }
+                catch ( Exception ex )
+                {
+                  ex.Manage();
+                }
+              break;
+          }
+        else
+        if ( e.Button == MouseButtons.Right )
+          if ( NavigationForm.Instance.Visible )
+            ActionNavigate.PerformClick();
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
     /// <summary>
@@ -359,12 +379,19 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
-      ClearLists();
-      if ( PreferencesForm.Run() )
-        ActionGenerate_Click(null, null);
-      CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-      InitRemindLists();
-      Timer_Tick(null, null);
+      try
+      {
+        ClearLists();
+        if ( PreferencesForm.Run() )
+          ActionGenerate_Click(null, null);
+        CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
+        InitRemindLists();
+        Timer_Tick(null, null);
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
     /// <summary>
@@ -387,16 +414,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      using ( var process = new Process() )
-        try
-        {
-          process.StartInfo.FileName = Program.HelpFilename;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          DisplayManager.ShowError(ex.Message);
-        }
+      Program.RunShell(Program.HelpFilename);
     }
 
     /// <summary>
@@ -466,33 +484,40 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionGenerate_Click(object sender, EventArgs e)
     {
-      IsReady = false;
-      TimerReminder.Enabled = false;
       try
       {
-        int yearFirst;
-        int yearLast;
-        if ( sender != null )
+        IsReady = false;
+        TimerReminder.Enabled = false;
+        try
         {
-          var form = new SelectYearsForm();
-          if ( form.ShowDialog() == DialogResult.Cancel ) return;
-          yearFirst = (int)form.EditYearFirst.Value;
-          yearLast = (int)form.EditYearLast.Value;
+          int yearFirst;
+          int yearLast;
+          if ( sender != null )
+          {
+            var form = new SelectYearsForm();
+            if ( form.ShowDialog() == DialogResult.Cancel ) return;
+            yearFirst = (int)form.EditYearFirst.Value;
+            yearLast = (int)form.EditYearLast.Value;
+          }
+          else
+          {
+            yearFirst = YearFirst;
+            yearLast = YearLast;
+          }
+          ClearLists();
+          GenerateData(yearFirst, yearLast);
+          GoToDate(DateTime.Now);
         }
-        else
+        finally
         {
-          yearFirst = YearFirst;
-          yearLast = YearLast;
+          IsReady = true;
+          TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
+          Timer_Tick(this, null);
         }
-        ClearLists();
-        GenerateData(yearFirst, yearLast);
-        GoToDate(DateTime.Now);
       }
-      finally
+      catch ( Exception ex )
       {
-        IsReady = true;
-        TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
-        Timer_Tick(this, null);
+        ex.Manage();
       }
     }
 
@@ -594,7 +619,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         TimerBallon.Stop();
-        NavigationTrayOpened = sender == null;
+        NavigationTrayBallooned = sender == null;
         if ( NavigationForm.Instance.Visible )
         {
           NavigationForm.Instance.Hide();
@@ -606,8 +631,9 @@ namespace Ordisoftware.HebrewCalendar
           NavigationForm.Instance.BringToFront();
         }
       }
-      catch
+      catch ( Exception ex )
       {
+        ex.Manage();
       }
     }
 
@@ -634,28 +660,34 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void CalendarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
-      switch ( e.ColumnIndex )
+      try
       {
-        case 7:
-          e.Value = ( (MoonriseType)e.Value ).ToString();
-          break;
-        case 10:
-          e.Value = Translations.MoonPhase.GetLang((MoonPhaseType)e.Value);
-          break;
-        case 8:
-          e.Value = (int)e.Value == 0 ? "" : "*";
-          break;
-        case 9:
-          e.Value = (int)e.Value == 0 ? "" : "*";
-          break;
-        case 11:
-          var season = (SeasonChangeType)e.Value;
-          e.Value = season == SeasonChangeType.None ? "" : Translations.SeasonEvent.GetLang(season);
-          break;
-        case 12:
-          var torah = (TorahEventType)e.Value;
-          e.Value = torah == TorahEventType.None ? "" : Translations.TorahEvent.GetLang(torah);
-          break;
+        switch ( e.ColumnIndex )
+        {
+          case 7:
+            e.Value = ( (MoonriseType)e.Value ).ToString();
+            break;
+          case 10:
+            e.Value = Translations.MoonPhase.GetLang((MoonPhaseType)e.Value);
+            break;
+          case 8:
+            e.Value = (int)e.Value == 0 ? "" : "*";
+            break;
+          case 9:
+            e.Value = (int)e.Value == 0 ? "" : "*";
+            break;
+          case 11:
+            var season = (SeasonChangeType)e.Value;
+            e.Value = season == SeasonChangeType.None ? "" : Translations.SeasonEvent.GetLang(season);
+            break;
+          case 12:
+            var torah = (TorahEventType)e.Value;
+            e.Value = torah == TorahEventType.None ? "" : Translations.TorahEvent.GetLang(torah);
+            break;
+        }
+      }
+      catch
+      {
       }
     }
 
@@ -684,15 +716,24 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void Timer_Tick(object sender, EventArgs e)
     {
-      if ( !IsReady ) return;
-      if ( !TimerReminder.Enabled ) return;
-      int active = 1;
-      SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
-      if ( active != 0 ) return;
-      if ( IsForegroundFullScreen() ) return;
-      if ( Program.Settings.RemindShabat ) CheckShabat();
-      if ( Program.Settings.ReminderEnabled ) CheckCelebrationDay();
-      if ( Program.Settings.ReminderEnabled ) CheckEvents();
+      try
+      {
+        if ( !IsReady ) return;
+        if ( !TimerReminder.Enabled ) return;
+        int active = 1;
+        SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
+        if ( active != 0 ) return;
+        if ( IsForegroundFullScreen() ) return;
+        if ( Program.Settings.RemindShabat ) CheckShabat();
+        if ( Program.Settings.ReminderEnabled ) CheckCelebrationDay();
+        if ( Program.Settings.ReminderEnabled ) CheckEvents();
+      }
+      catch ( Exception ex )
+      {
+        if ( TimerErrorShown ) return;
+        TimerErrorShown = true;
+        ex.Manage();
+      }
     }
 
     /// <summary>

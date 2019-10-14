@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception except )
       {
-        DisplayManager.ShowError(except.Message);
+        except.Manage();
       }
     }
 
