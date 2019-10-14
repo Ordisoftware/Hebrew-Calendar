@@ -761,6 +761,8 @@ namespace Ordisoftware.HebrewCalendar
     internal void GoToDate(DateTime date)
     {
       if ( !IsReady ) return;
+      if ( date < DateFirst ) date = DateFirst;
+      if ( date > DateLast ) date = DateLast;
       try
       {
         CalendarMonth.CalendarDate = date;

@@ -66,8 +66,10 @@ namespace Ordisoftware.HebrewCalendar
 
     private bool TimerErrorShown = false;
 
+    internal DateTime DateFirst;
     internal int YearFirst;
 
+    internal DateTime DateLast;
     internal int YearLast;
 
     private Dictionary<TorahEventType, bool> TorahEventRemindList

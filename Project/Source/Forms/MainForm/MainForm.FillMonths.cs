@@ -49,8 +49,10 @@ namespace Ordisoftware.HebrewCalendar
       bool IsCelebrationWeekEnd = false;
       int progress = 0;
       if ( LunisolarCalendar.LunisolarDays.Count == 0 ) return;
-      YearFirst = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.FirstOrDefault().Date).Year;
-      YearLast = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.LastOrDefault().Date).Year;
+      DateFirst = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.FirstOrDefault().Date);
+      YearFirst = DateFirst.Year;
+      DateLast = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.LastOrDefault().Date);
+      YearLast = DateLast.Year;
       DayColors = new Color[YearLast - YearFirst + 1, 13, 35];
       foreach ( var row in LunisolarCalendar.LunisolarDays )
       {
