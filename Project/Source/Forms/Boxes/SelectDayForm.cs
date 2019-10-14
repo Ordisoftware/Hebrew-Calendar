@@ -25,6 +25,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)
