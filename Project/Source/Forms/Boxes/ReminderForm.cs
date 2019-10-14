@@ -94,7 +94,7 @@ namespace Ordisoftware.HebrewCalendar
             form.BackColor = Program.Settings.ReminderDayColor;
         else
         if ( now >= date1 && now <= date2 )
-          form.BackColor = Program.Settings.ReminderDayColor;
+          form.BackColor = Program.Settings.ReminderCurrentDayColor;
         else
           form.BackColor = Program.Settings.ReminderDayColor;
       form.IsShabat = isShabat;
