@@ -102,7 +102,9 @@
       this.PanelSeasonEventColor = new System.Windows.Forms.Panel();
       this.LabelColorTorah = new System.Windows.Forms.Label();
       this.PanelTorahEventColor = new System.Windows.Forms.Panel();
+      this.LabelColorTodayBack = new System.Windows.Forms.Label();
       this.LabelColorToday = new System.Windows.Forms.Label();
+      this.PanelCurrentDayBackColor = new System.Windows.Forms.Panel();
       this.PanelCurrentDayColor = new System.Windows.Forms.Panel();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
@@ -607,7 +609,9 @@
       this.GroupBoxCalendar.Controls.Add(this.PanelSeasonEventColor);
       this.GroupBoxCalendar.Controls.Add(this.LabelColorTorah);
       this.GroupBoxCalendar.Controls.Add(this.PanelTorahEventColor);
+      this.GroupBoxCalendar.Controls.Add(this.LabelColorTodayBack);
       this.GroupBoxCalendar.Controls.Add(this.LabelColorToday);
+      this.GroupBoxCalendar.Controls.Add(this.PanelCurrentDayBackColor);
       this.GroupBoxCalendar.Controls.Add(this.PanelCurrentDayColor);
       resources.ApplyResources(this.GroupBoxCalendar, "GroupBoxCalendar");
       this.GroupBoxCalendar.Name = "GroupBoxCalendar";
@@ -674,14 +678,27 @@
       this.PanelTorahEventColor.Name = "PanelTorahEventColor";
       this.PanelTorahEventColor.Click += new System.EventHandler(this.PanelTorahEventColor_Click);
       // 
+      // LabelColorTodayBack
+      // 
+      resources.ApplyResources(this.LabelColorTodayBack, "LabelColorTodayBack");
+      this.LabelColorTodayBack.Name = "LabelColorTodayBack";
+      // 
       // LabelColorToday
       // 
       resources.ApplyResources(this.LabelColorToday, "LabelColorToday");
       this.LabelColorToday.Name = "LabelColorToday";
       // 
+      // PanelCurrentDayBackColor
+      // 
+      this.PanelCurrentDayBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+      this.PanelCurrentDayBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelCurrentDayBackColor, "PanelCurrentDayBackColor");
+      this.PanelCurrentDayBackColor.Name = "PanelCurrentDayBackColor";
+      this.PanelCurrentDayBackColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelCurrentDayBackColor_MouseClick);
+      // 
       // PanelCurrentDayColor
       // 
-      this.PanelCurrentDayColor.BackColor = System.Drawing.Color.Red;
+      this.PanelCurrentDayColor.BackColor = System.Drawing.Color.White;
       this.PanelCurrentDayColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.PanelCurrentDayColor, "PanelCurrentDayColor");
       this.PanelCurrentDayColor.Name = "PanelCurrentDayColor";
@@ -860,5 +877,7 @@
     internal System.Windows.Forms.Panel PanelReminderShabatColor;
     private System.Windows.Forms.Label label3;
     internal System.Windows.Forms.Panel PanelReminderDayColor;
+    private System.Windows.Forms.Label LabelColorTodayBack;
+    internal System.Windows.Forms.Panel PanelCurrentDayBackColor;
   }
 }

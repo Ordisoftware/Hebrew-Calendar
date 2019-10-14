@@ -128,7 +128,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CurrentDayColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">200, 0, 0</Value>
+      <Value Profile="(Default)">White</Value>
     </Setting>
     <Setting Name="TorahEventColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">DarkRed</Value>
@@ -240,6 +240,9 @@
     </Setting>
     <Setting Name="SettingsResetRequiredV3_0" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CurrentDayBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">200, 0, 0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

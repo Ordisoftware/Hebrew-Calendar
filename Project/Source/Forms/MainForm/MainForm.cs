@@ -68,7 +68,8 @@ namespace Ordisoftware.HebrewCalendar
       UpdateTextCalendar();
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
-      CalendarMonth.CurrentDayColor = Program.Settings.CurrentDayColor;
+      CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayColor;
+      CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
       CalendarMonth.CalendarDateChanged += (date) =>
       {
         GoToDate(date);
@@ -383,7 +384,11 @@ namespace Ordisoftware.HebrewCalendar
       {
         ClearLists();
         if ( PreferencesForm.Run() )
+        {
+          CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayColor;
+          CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
           ActionGenerate_Click(null, null);
+        }
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
         InitRemindLists();
         Timer_Tick(null, null);

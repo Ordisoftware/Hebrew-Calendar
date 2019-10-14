@@ -72,7 +72,8 @@ namespace Calendar.NET
     // ORDISOFTWARE MODIF END
 
     // ORDISOFTWARE MODIF BEGIN
-    public Color CurrentDayColor = Color.Red;
+    public Color CurrentDayForeColor = Color.White;
+    public Color CurrentDayBackColor = Color.Red;
     // ORDISOFTWARE MODIF END
 
     /// <summary>
@@ -996,7 +997,10 @@ namespace Calendar.NET
               {
                 //ORDISOFTWARE MODIF BEGIN
                 //g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
-                g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, new SolidBrush(CurrentDayColor), xStart + 5, yStart + 2);
+                string strCounter = counter.ToString(CultureInfo.InvariantCulture);
+                SizeF stringSize = g.MeasureString(strCounter, _todayFont);
+                g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5 + 1, yStart + 2 + 1, stringSize.Width - 4, stringSize.Height - 4);
+                g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else

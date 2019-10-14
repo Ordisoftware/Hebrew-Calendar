@@ -64,7 +64,8 @@ namespace Ordisoftware.HebrewCalendar
       }
       MainForm.Instance.Refresh();
       MainForm.Instance.TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
-      return form.OldShabatDay != Program.Settings.ShabatDay
+      return form.Reseted
+          || form.OldShabatDay != Program.Settings.ShabatDay
           || form.OldLatitude != Program.Settings.GPSLatitude
           || form.OldLongitude != Program.Settings.GPSLongitude
           || form.OldReminderUseColors != Program.Settings.ReminderUseColors
@@ -79,6 +80,7 @@ namespace Ordisoftware.HebrewCalendar
     public int OldShabatDay { get; private set; }
     public string OldLatitude { get; private set; }
     public string OldLongitude { get; private set; }
+    public bool Reseted = false;
 
     /// <summary>
     /// Default constructor.
@@ -146,6 +148,7 @@ namespace Ordisoftware.HebrewCalendar
       PanelTextColor.BackColor = Program.Settings.TextColor;
       PanelBackColor.BackColor = Program.Settings.TextBackground;
       PanelCurrentDayColor.BackColor = Program.Settings.CurrentDayColor;
+      PanelCurrentDayBackColor.BackColor = Program.Settings.CurrentDayBackColor;
       PanelTorahEventColor.BackColor = Program.Settings.TorahEventColor;
       PanelSeasonEventColor.BackColor = Program.Settings.SeasonEventColor;
       PanelMoonEventColor.BackColor = Program.Settings.MoonEventColor;
@@ -244,6 +247,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.TextColor = PanelTextColor.BackColor;
       Program.Settings.TextBackground = PanelBackColor.BackColor;
       Program.Settings.CurrentDayColor = PanelCurrentDayColor.BackColor;
+      Program.Settings.CurrentDayBackColor = PanelCurrentDayBackColor.BackColor;
       Program.Settings.TorahEventColor = PanelTorahEventColor.BackColor;
       Program.Settings.SeasonEventColor = PanelSeasonEventColor.BackColor;
       Program.Settings.MoonEventColor = PanelMoonEventColor.BackColor;
@@ -268,6 +272,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.SettingsResetRequiredV3_0 = false;
       Program.Settings.Save();
       DoReset = true;
+      Reseted = true;
       Program.Settings.GPSCountry = country;
       Program.Settings.GPSCity = city;
       Program.Settings.GPSLatitude = lat;
@@ -465,7 +470,8 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Instance.PanelViewMonth.Parent = null;
       try
       {
-        MainForm.Instance.CalendarMonth.CurrentDayColor = PanelCurrentDayColor.BackColor;
+        MainForm.Instance.CalendarMonth.CurrentDayForeColor = PanelCurrentDayColor.BackColor;
+        MainForm.Instance.CalendarMonth.CurrentDayBackColor = PanelCurrentDayBackColor.BackColor;
         MainForm.Instance.CalendarMonth.LoadPresetHolidays = false;
         MainForm.Instance.FillMonths();
       }
@@ -490,6 +496,14 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = PanelCurrentDayColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelCurrentDayColor.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+
+    private void PanelCurrentDayBackColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = PanelCurrentDayBackColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelCurrentDayBackColor.BackColor = DialogColor.Color;
       UpdateCalendarMonth();
     }
 
