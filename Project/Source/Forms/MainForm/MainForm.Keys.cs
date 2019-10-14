@@ -61,14 +61,14 @@ namespace Ordisoftware.HebrewCalendar
           if ( EditESCtoExit.Checked )
             Close();
           return true;
-        case Keys.F1:
-          ActionHelp.PerformClick();
-          return true;
         case Keys.F2:
           ActionGenerate.PerformClick();
           return true;
         case Keys.F8:
           ActionPreferences.PerformClick();
+          return true;
+        case Keys.F11:
+          ActionHelp.PerformClick();
           return true;
         case Keys.F12:
           ActionAbout.PerformClick();
