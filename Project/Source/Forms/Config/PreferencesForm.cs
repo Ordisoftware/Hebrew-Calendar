@@ -273,7 +273,7 @@ namespace Ordisoftware.HebrewCalendar
       int shabat = EditShabatDay.SelectedIndex;
       Program.Settings.Reset();
       Program.Settings.Reload();
-      Program.Settings.SettingsResetRequiredV3_0 = false;
+      Program.Settings.UpgradeResetRequiredV3_0 = false;
       Program.Settings.Save();
       DoReset = true;
       Reseted = true;
