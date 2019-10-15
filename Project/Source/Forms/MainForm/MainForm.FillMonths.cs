@@ -77,14 +77,14 @@ namespace Ordisoftware.HebrewCalendar
         Color? color2 = null;
         Color? color3 = null;
         if ( season != SeasonChangeType.None )
-          color1 = Program.Settings.ReminderDayColor;
+          color1 = Program.Settings.EventColorSeason;
         if ( row.LunarDay == 1 && ev == TorahEventType.None )
-          color2 = Program.Settings.NewMonthColor;
+          color2 = Program.Settings.EventColorNext;
         else
         if ( IsCelebrationWeekStart || ev != TorahEventType.None )
-          color2 = Program.Settings.ReminderCurrentDayColor;
+          color2 = Program.Settings.EventColorTorah;
         if ( SQLiteUtility.GetDate(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
-          color3 = Program.Settings.ReminderShabatDayColor;
+          color3 = Program.Settings.EventColorShabat;
         if ( color1 != null && color2 != null && color3 != null )
           color1 = MixColor(color1.Value, color2.Value, color3.Value);
         else

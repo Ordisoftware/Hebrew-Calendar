@@ -69,8 +69,8 @@ namespace Ordisoftware.HebrewCalendar
           || form.OldLatitude != Program.Settings.GPSLatitude
           || form.OldLongitude != Program.Settings.GPSLongitude
           || form.OldReminderUseColors != Program.Settings.ReminderUseColors
-          || form.OldReminderShabatDayColor != Program.Settings.ReminderShabatDayColor
-          || form.OldReminderCurrentDayColor != Program.Settings.ReminderCurrentDayColor
+          || form.OldReminderShabatDayColor != Program.Settings.EventColorShabat
+          || form.OldReminderCurrentDayColor != Program.Settings.EventColorTorah
           || lang != Program.Settings.Language;
     }
 
@@ -153,14 +153,14 @@ namespace Ordisoftware.HebrewCalendar
       PanelSeasonEventColor.BackColor = Program.Settings.SeasonEventColor;
       PanelMoonEventColor.BackColor = Program.Settings.MoonEventColor;
       PanelFullMoonColor.BackColor = Program.Settings.FullMoonColor;
-      PanelReminderDayColor.BackColor = Program.Settings.ReminderDayColor;
-      PanelReminderCurrentDayColor.BackColor = Program.Settings.ReminderCurrentDayColor;
-      PanelReminderShabatColor.BackColor = Program.Settings.ReminderShabatDayColor;
-      PanelNewMonthColor.BackColor = Program.Settings.NewMonthColor;
+      PanelEventColorSeason.BackColor = Program.Settings.EventColorSeason;
+      PanelEventColorTorah.BackColor = Program.Settings.EventColorTorah;
+      PanelEventColorShabat.BackColor = Program.Settings.EventColorShabat;
+      PanelEventColorNext.BackColor = Program.Settings.EventColorNext;
       EditReminderUseColors.Checked = Program.Settings.ReminderUseColors;
-      OldReminderCurrentDayColor = Program.Settings.ReminderCurrentDayColor;
+      OldReminderCurrentDayColor = Program.Settings.EventColorTorah;
       OldReminderUseColors = Program.Settings.ReminderUseColors;
-      OldReminderShabatDayColor = Program.Settings.ReminderShabatDayColor;
+      OldReminderShabatDayColor = Program.Settings.EventColorShabat;
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.GPSLatitude;
       OldLongitude = Program.Settings.GPSLongitude;
@@ -253,10 +253,10 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.SeasonEventColor = PanelSeasonEventColor.BackColor;
       Program.Settings.MoonEventColor = PanelMoonEventColor.BackColor;
       Program.Settings.FullMoonColor = PanelFullMoonColor.BackColor;
-      Program.Settings.ReminderShabatDayColor = PanelReminderShabatColor.BackColor;
-      Program.Settings.ReminderDayColor = PanelReminderDayColor.BackColor;
-      Program.Settings.ReminderCurrentDayColor = PanelReminderCurrentDayColor.BackColor;
-      Program.Settings.NewMonthColor = PanelNewMonthColor.BackColor;
+      Program.Settings.EventColorShabat = PanelEventColorShabat.BackColor;
+      Program.Settings.EventColorSeason = PanelEventColorSeason.BackColor;
+      Program.Settings.EventColorTorah = PanelEventColorTorah.BackColor;
+      Program.Settings.EventColorNext = PanelEventColorNext.BackColor;
       Program.Settings.ReminderUseColors = EditReminderUseColors.Checked;
       Program.Settings.Store();
     }
@@ -392,35 +392,35 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
     }
 
-    private void PanelReminderShabatColor_MouseClick(object sender, MouseEventArgs e)
+    private void PanelEventColorShabat_MouseClick(object sender, MouseEventArgs e)
     {
-      DialogColor.Color = PanelReminderShabatColor.BackColor;
+      DialogColor.Color = PanelEventColorShabat.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelReminderShabatColor.BackColor = DialogColor.Color;
+      PanelEventColorShabat.BackColor = DialogColor.Color;
       UpdateCalendarMonth();
     }
 
-    private void PanelNewMonthColor_MouseClick(object sender, MouseEventArgs e)
+    private void PanelEventColorNext_MouseClick(object sender, MouseEventArgs e)
     {
-      DialogColor.Color = PanelNewMonthColor.BackColor;
+      DialogColor.Color = PanelEventColorNext.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelNewMonthColor.BackColor = DialogColor.Color;
+      PanelEventColorNext.BackColor = DialogColor.Color;
       UpdateCalendarMonth();
     }
 
-    private void PanelReminderDayColor_MouseClick(object sender, MouseEventArgs e)
+    private void PanelEventColorSeason_MouseClick(object sender, MouseEventArgs e)
     {
-      DialogColor.Color = PanelReminderDayColor.BackColor;
+      DialogColor.Color = PanelEventColorSeason.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelReminderDayColor.BackColor = DialogColor.Color;
+      PanelEventColorSeason.BackColor = DialogColor.Color;
       UpdateCalendarMonth();
     }
 
-    private void PanelReminderCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
+    private void PanelEventColorTorah_MouseClick(object sender, MouseEventArgs e)
     {
-      DialogColor.Color = PanelReminderCurrentDayColor.BackColor;
+      DialogColor.Color = PanelEventColorTorah.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelReminderCurrentDayColor.BackColor = DialogColor.Color;
+      PanelEventColorTorah.BackColor = DialogColor.Color;
       UpdateCalendarMonth();
     }
 

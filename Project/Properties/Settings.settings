@@ -211,7 +211,7 @@
     <Setting Name="BalloonAutoHide" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="ReminderCurrentDayColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="EventColorTorah" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">255, 255, 230</Value>
     </Setting>
     <Setting Name="ReminderUseColors" Type="System.Boolean" Scope="User">
@@ -229,10 +229,10 @@
     <Setting Name="GenerateIntervalPeriod" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">120</Value>
     </Setting>
-    <Setting Name="ReminderShabatDayColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="EventColorShabat" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">240, 240, 240</Value>
     </Setting>
-    <Setting Name="ReminderDayColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="EventColorSeason" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">245, 255, 240</Value>
     </Setting>
     <Setting Name="NextCelebrationsFormLocation" Type="System.Drawing.Point" Scope="User">
@@ -244,7 +244,7 @@
     <Setting Name="CurrentDayBackColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">200, 0, 0</Value>
     </Setting>
-    <Setting Name="NewMonthColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="EventColorNext" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">AliceBlue</Value>
     </Setting>
   </Settings>
