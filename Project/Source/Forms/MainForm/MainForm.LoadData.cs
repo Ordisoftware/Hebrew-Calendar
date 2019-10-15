@@ -77,6 +77,11 @@ namespace Ordisoftware.HebrewCalendar
           while ( LunisolarCalendar.LunisolarDays.Count == 0 );
         }
       }
+      catch ( OdbcException ex )
+      {
+        DisplayManager.ShowError(ex.Message);
+        Application.Exit();
+      }
       catch ( Exception ex )
       {
         ex.Manage();

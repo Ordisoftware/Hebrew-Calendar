@@ -84,10 +84,10 @@
       this.label1 = new System.Windows.Forms.Label();
       this.EditEventsDay = new System.Windows.Forms.CheckedListBox();
       this.EditEvents = new System.Windows.Forms.CheckedListBox();
-      this.PanelNewMonthColor = new System.Windows.Forms.Panel();
-      this.PanelReminderDayColor = new System.Windows.Forms.Panel();
-      this.PanelReminderShabatColor = new System.Windows.Forms.Panel();
-      this.PanelReminderCurrentDayColor = new System.Windows.Forms.Panel();
+      this.PanelEventColorNext = new System.Windows.Forms.Panel();
+      this.PanelEventColorSeason = new System.Windows.Forms.Panel();
+      this.PanelEventColorShabat = new System.Windows.Forms.Panel();
+      this.PanelEventColorTorah = new System.Windows.Forms.Panel();
       this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
       this.EditRemindCelebrationHoursBefore = new System.Windows.Forms.NumericUpDown();
@@ -492,10 +492,10 @@
       this.GroupBoxReminder.Controls.Add(this.label1);
       this.GroupBoxReminder.Controls.Add(this.EditEventsDay);
       this.GroupBoxReminder.Controls.Add(this.EditEvents);
-      this.GroupBoxReminder.Controls.Add(this.PanelNewMonthColor);
-      this.GroupBoxReminder.Controls.Add(this.PanelReminderDayColor);
-      this.GroupBoxReminder.Controls.Add(this.PanelReminderShabatColor);
-      this.GroupBoxReminder.Controls.Add(this.PanelReminderCurrentDayColor);
+      this.GroupBoxReminder.Controls.Add(this.PanelEventColorNext);
+      this.GroupBoxReminder.Controls.Add(this.PanelEventColorSeason);
+      this.GroupBoxReminder.Controls.Add(this.PanelEventColorShabat);
+      this.GroupBoxReminder.Controls.Add(this.PanelEventColorTorah);
       this.GroupBoxReminder.Controls.Add(this.EditTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.LabelTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationHoursBefore);
@@ -554,37 +554,37 @@
       this.EditEvents.FormattingEnabled = true;
       this.EditEvents.Name = "EditEvents";
       // 
-      // PanelNewMonthColor
+      // PanelEventColorNext
       // 
-      this.PanelNewMonthColor.BackColor = System.Drawing.Color.AliceBlue;
-      this.PanelNewMonthColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelNewMonthColor, "PanelNewMonthColor");
-      this.PanelNewMonthColor.Name = "PanelNewMonthColor";
-      this.PanelNewMonthColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelNewMonthColor_MouseClick);
+      this.PanelEventColorNext.BackColor = System.Drawing.Color.AliceBlue;
+      this.PanelEventColorNext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelEventColorNext, "PanelEventColorNext");
+      this.PanelEventColorNext.Name = "PanelEventColorNext";
+      this.PanelEventColorNext.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNext_MouseClick);
       // 
-      // PanelReminderDayColor
+      // PanelEventColorSeason
       // 
-      this.PanelReminderDayColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
-      this.PanelReminderDayColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelReminderDayColor, "PanelReminderDayColor");
-      this.PanelReminderDayColor.Name = "PanelReminderDayColor";
-      this.PanelReminderDayColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelReminderDayColor_MouseClick);
+      this.PanelEventColorSeason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
+      this.PanelEventColorSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelEventColorSeason, "PanelEventColorSeason");
+      this.PanelEventColorSeason.Name = "PanelEventColorSeason";
+      this.PanelEventColorSeason.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorSeason_MouseClick);
       // 
-      // PanelReminderShabatColor
+      // PanelEventColorShabat
       // 
-      this.PanelReminderShabatColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-      this.PanelReminderShabatColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelReminderShabatColor, "PanelReminderShabatColor");
-      this.PanelReminderShabatColor.Name = "PanelReminderShabatColor";
-      this.PanelReminderShabatColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelReminderShabatColor_MouseClick);
+      this.PanelEventColorShabat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+      this.PanelEventColorShabat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelEventColorShabat, "PanelEventColorShabat");
+      this.PanelEventColorShabat.Name = "PanelEventColorShabat";
+      this.PanelEventColorShabat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorShabat_MouseClick);
       // 
-      // PanelReminderCurrentDayColor
+      // PanelEventColorTorah
       // 
-      this.PanelReminderCurrentDayColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
-      this.PanelReminderCurrentDayColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelReminderCurrentDayColor, "PanelReminderCurrentDayColor");
-      this.PanelReminderCurrentDayColor.Name = "PanelReminderCurrentDayColor";
-      this.PanelReminderCurrentDayColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelReminderCurrentDayColor_MouseClick);
+      this.PanelEventColorTorah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
+      this.PanelEventColorTorah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelEventColorTorah, "PanelEventColorTorah");
+      this.PanelEventColorTorah.Name = "PanelEventColorTorah";
+      this.PanelEventColorTorah.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorTorah_MouseClick);
       // 
       // EditTimerInterval
       // 
@@ -900,15 +900,15 @@
     private System.Windows.Forms.CheckBox EditBalloonAutoHide;
     private System.Windows.Forms.LinkLabel ActionResetSettings;
     private System.Windows.Forms.Label label1;
-    internal System.Windows.Forms.Panel PanelReminderCurrentDayColor;
+    internal System.Windows.Forms.Panel PanelEventColorTorah;
     private System.Windows.Forms.CheckBox EditReminderUseColors;
     private System.Windows.Forms.Label label2;
-    internal System.Windows.Forms.Panel PanelReminderShabatColor;
+    internal System.Windows.Forms.Panel PanelEventColorShabat;
     private System.Windows.Forms.Label label3;
-    internal System.Windows.Forms.Panel PanelReminderDayColor;
+    internal System.Windows.Forms.Panel PanelEventColorSeason;
     private System.Windows.Forms.Label LabelColorTodayBack;
     internal System.Windows.Forms.Panel PanelCurrentDayBackColor;
     private System.Windows.Forms.Label label4;
-    internal System.Windows.Forms.Panel PanelNewMonthColor;
+    internal System.Windows.Forms.Panel PanelEventColorNext;
   }
 }
