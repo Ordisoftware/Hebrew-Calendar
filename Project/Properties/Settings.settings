@@ -245,7 +245,7 @@
       <Value Profile="(Default)">200, 0, 0</Value>
     </Setting>
     <Setting Name="EventColorNext" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">250, 250, 250</Value>
+      <Value Profile="(Default)">240, 240, 240</Value>
     </Setting>
     <Setting Name="EventColorMonth" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">AliceBlue</Value>
