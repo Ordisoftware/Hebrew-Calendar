@@ -91,12 +91,6 @@ namespace Ordisoftware.HebrewCalendar
       form.LabelNextCelebrationDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
       var now = DateTime.Now;
       if ( Program.Settings.UseColors)
-        if ( isShabat )
-          if ( now >= date1 && now <= date2 )
-            form.BackColor = Program.Settings.EventColorTorah;
-          else
-            form.BackColor = Program.Settings.EventColorNext;
-        else
         if ( now >= date1 && now <= date2 )
           form.BackColor = Program.Settings.EventColorTorah;
         else
