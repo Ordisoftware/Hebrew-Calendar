@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewCalendar
         return TorahEventRemindList.ContainsKey(item) && TorahEventRemindList[item];
       }
       var today = DateTime.Today;
-      var dateLimit = today.AddDays((int)Program.Settings.ReminderInterval);
+      var dateLimit = today.AddDays((int)Program.Settings.ReminderCelebrationsInterval);
       var list = ( from day in LunisolarCalendar.LunisolarDays
                    where !RemindCelebrationDates.Contains(day.Date)
                       && check((TorahEventType)day.TorahEvents)

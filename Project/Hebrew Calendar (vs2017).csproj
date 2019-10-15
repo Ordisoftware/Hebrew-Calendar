@@ -141,6 +141,12 @@
     <Compile Include="Source\Classes\SQLiteUtility.cs" />
     <Compile Include="Source\Enums\ReportFieldType.cs" />
     <Compile Include="Source\Enums\EphemerisType.cs" />
+    <Compile Include="Source\Forms\Boxes\SearchMonthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SearchMonthForm.Designer.cs">
+      <DependentUpon>SearchMonthForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\SearchEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +320,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SearchMonthForm.fr.resx">
+      <DependentUpon>SearchMonthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SearchMonthForm.resx">
+      <DependentUpon>SearchMonthForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SearchEventForm.fr.resx">
       <DependentUpon>SearchEventForm.cs</DependentUpon>

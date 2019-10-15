@@ -45,6 +45,9 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Control | Keys.E:
           ActionSearchEvent.PerformClick();
           return true;
+        case Keys.Control | Keys.M:
+          ActionSearchMonth.PerformClick();
+          return true;
         case Keys.Control | Keys.N:
           ActionNavigate.PerformClick();
           return true;

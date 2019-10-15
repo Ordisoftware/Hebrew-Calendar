@@ -151,14 +151,17 @@
   <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
     <value>Utiliser le shabat personnel</value>
   </data>
+  <data name="GroupBoxGPS.Text" xml:space="preserve">
+    <value>Coordonnées GPS</value>
+  </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 13</value>
   </data>
   <data name="ActionGetGPS.Text" xml:space="preserve">
     <value>Ouvrir le découvreur de GPS</value>
   </data>
-  <data name="GroupBoxGPS.Text" xml:space="preserve">
-    <value>Coordonnées GPS</value>
+  <data name="GroupBoxTextReport.Text" xml:space="preserve">
+    <value>Rapport textuel</value>
   </data>
   <data name="LabelBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -171,9 +174,6 @@
   </data>
   <data name="LabelTextColor.Text" xml:space="preserve">
     <value>Texte</value>
-  </data>
-  <data name="GroupBoxTextReport.Text" xml:space="preserve">
-    <value>Rapport textuel</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -198,6 +198,9 @@
   </data>
   <data name="EditRemindShabat.Text" xml:space="preserve">
     <value>Rappel du Shabat</value>
+  </data>
+  <data name="GroupBoxNavigation.Text" xml:space="preserve">
+    <value>Fenêtre de navigation</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
@@ -235,8 +238,8 @@
   <data name="LabelMiddleColor.Text" xml:space="preserve">
     <value>Milieu</value>
   </data>
-  <data name="GroupBoxNavigation.Text" xml:space="preserve">
-    <value>Fenêtre de navigation</value>
+  <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
+    <value>Click sur la Tray Icon ouvre</value>
   </data>
   <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
@@ -262,17 +265,24 @@
   <data name="SelectOpenMainForm.Text" xml:space="preserve">
     <value>Fenêtre de l'application</value>
   </data>
-  <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
-    <value>Click sur la Tray Icon ouvre</value>
-  </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 17</value>
   </data>
   <data name="EditStartupHide.Text" xml:space="preserve">
     <value>Cacher l'application au démarrage</value>
   </data>
+  <data name="GroupBoxReminder.Text" xml:space="preserve">
+    <value>Rappel des célébrations</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EditReminderUseColors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditReminderUseColors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 314</value>
+  </data>
   <data name="EditReminderUseColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 17</value>
+    <value>66, 36</value>
   </data>
   <data name="EditReminderUseColors.Text" xml:space="preserve">
     <value>Utiliser couleurs</value>
@@ -288,6 +298,12 @@
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.Text" xml:space="preserve">
     <value>Rappel toutes les minutes</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Mois</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
@@ -313,11 +329,11 @@
   <data name="EditTimerEnabled.Text" xml:space="preserve">
     <value>Activé</value>
   </data>
-  <data name="GroupBoxReminder.Text" xml:space="preserve">
-    <value>Rappel des célébrations</value>
-  </data>
   <data name="EditShowMonthDayToolTip.Text" xml:space="preserve">
     <value>Afficher les levers et couchers du soleil dans la vue par mois</value>
+  </data>
+  <data name="GroupBoxCalendar.Text" xml:space="preserve">
+    <value>Vue du calendrier</value>
   </data>
   <data name="ActionRestoreCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 13</value>
@@ -354,9 +370,6 @@
   </data>
   <data name="LabelColorToday.Text" xml:space="preserve">
     <value>Aujourd'hui</value>
-  </data>
-  <data name="GroupBoxCalendar.Text" xml:space="preserve">
-    <value>Vue du calendrier</value>
   </data>
   <data name="ActionSelectLangFR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
