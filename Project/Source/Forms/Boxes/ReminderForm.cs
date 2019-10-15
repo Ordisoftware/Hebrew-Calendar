@@ -95,7 +95,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( now >= date1 && now <= date2 )
             form.BackColor = Program.Settings.EventColorTorah;
           else
-            form.BackColor = Program.Settings.EventColorSeason;
+            form.BackColor = Program.Settings.EventColorNext;
         else
         if ( now >= date1 && now <= date2 )
           form.BackColor = Program.Settings.EventColorTorah;
