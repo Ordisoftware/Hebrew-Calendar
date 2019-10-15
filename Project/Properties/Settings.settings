@@ -230,7 +230,7 @@
       <Value Profile="(Default)">120</Value>
     </Setting>
     <Setting Name="ReminderShabatDayColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">243, 243, 243</Value>
+      <Value Profile="(Default)">240, 240, 240</Value>
     </Setting>
     <Setting Name="ReminderDayColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">245, 255, 240</Value>
