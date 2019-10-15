@@ -89,11 +89,6 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
-#### ____.__.__ - Version 3.1
-
-- Add hebrew month search.
-- Improve UI.
-
 #### 2019.10.14 - Version 3.0
 
 - Improve the reminder to remind during the celebration day like with the shabat day.
