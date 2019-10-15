@@ -43,8 +43,10 @@
       // 
       // EditYearLast
       // 
+      this.EditYearLast.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditYearLast, "EditYearLast");
       this.EditYearLast.Name = "EditYearLast";
+      this.EditYearLast.ReadOnly = true;
       this.EditYearLast.Value = new decimal(new int[] {
             100,
             0,
@@ -60,15 +62,17 @@
       // 
       // EditYearFirst
       // 
+      this.EditYearFirst.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditYearFirst, "EditYearFirst");
       this.EditYearFirst.Name = "EditYearFirst";
+      this.EditYearFirst.ReadOnly = true;
       this.EditYearFirst.Value = new decimal(new int[] {
             100,
             0,
             0,
             0});
       this.EditYearFirst.ValueChanged += new System.EventHandler(this.EditYearFirst_ValueChanged);
-      this.EditYearFirst.Leave += new System.EventHandler(this.EditYearFirst_ValueChanged);
+      this.EditYearFirst.Enter += new System.EventHandler(this.EditYearFirst_ValueChanged);
       // 
       // LabelYearFirst
       // 

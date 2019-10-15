@@ -17,6 +17,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
@@ -66,6 +67,9 @@ namespace Ordisoftware.HebrewCalendar
                                    process.StartInfo.FileName);
         }
     }
+
+    [DllImport("user32.dll")]
+    static public extern bool HideCaret(IntPtr hWnd);
 
     static public void CenterToMainForm(this Form form)
     {

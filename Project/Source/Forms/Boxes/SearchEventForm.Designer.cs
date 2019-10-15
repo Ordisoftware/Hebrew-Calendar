@@ -61,8 +61,10 @@
       // 
       // EditYear
       // 
+      this.EditYear.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditYear, "EditYear");
       this.EditYear.Name = "EditYear";
+      this.EditYear.ReadOnly = true;
       this.EditYear.Value = new decimal(new int[] {
             100,
             0,
