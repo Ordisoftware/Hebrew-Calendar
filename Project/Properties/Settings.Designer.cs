@@ -971,7 +971,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("WhiteSmoke")]
+        [global::System.Configuration.DefaultSettingValueAttribute("250, 250, 250")]
         public global::System.Drawing.Color EventColorNext {
             get {
                 return ((global::System.Drawing.Color)(this["EventColorNext"]));
