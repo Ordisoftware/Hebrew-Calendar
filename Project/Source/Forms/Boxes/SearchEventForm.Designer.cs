@@ -81,6 +81,7 @@
       resources.ApplyResources(this.SelectEvents, "SelectEvents");
       this.SelectEvents.FormattingEnabled = true;
       this.SelectEvents.Name = "SelectEvents";
+      this.SelectEvents.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
       // 
       // SearchEventForm
       // 
