@@ -62,11 +62,14 @@ english.SourceCode_msg=Source code of %1
 french.SourceCode_msg=Code source de %1
 english.StartWithWindows_msg=Start with Windows
 french.StartWithWindows_msg=Démarrer avec Windows
+english.OpenSQLiteODBC_msg=Open SQLite ODBC website
+french.OpenSQLiteODBC_msg=Ouvrir le site web SQLite ODBC
 
 [Tasks]
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
 Name: quicklaunchicon; Description: {cm:CreateQuickLaunchIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
 Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription: Windows
+Name: opensqliteodbc; Description: {cm:OpenSQLiteODBC_msg}; GroupDescription: ODBC Driver
 
 [Dirs]
 
@@ -109,7 +112,7 @@ Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: 
 Filename: {app}\Setup\dotNetFx45_Full_setup.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}
 Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall skipifsilent unchecked
 Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
-Filename: http://www.ch-werner.de/sqliteodbc; Flags: shellexec runasoriginaluser
+Filename: http://www.ch-werner.de/sqliteodbc; Flags: shellexec runasoriginaluser; Tasks: opensqliteodbc
 
 [Code]
 function IsDotNetDetected(version: string; service: cardinal): boolean;
