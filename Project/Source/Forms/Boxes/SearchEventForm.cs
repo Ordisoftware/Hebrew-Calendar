@@ -47,6 +47,10 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
+    private void SelectEvents_DoubleClick(object sender, EventArgs e)
+    {
+      ButtonOk.PerformClick();
+    }
   }
 
 }
