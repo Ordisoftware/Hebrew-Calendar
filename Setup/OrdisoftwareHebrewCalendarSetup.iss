@@ -109,6 +109,7 @@ Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: 
 Filename: {app}\Setup\dotNetFx45_Full_setup.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}
 Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall skipifsilent unchecked
 Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
+Filename: http://www.ch-werner.de/sqliteodbc; Flags: shellexec runasoriginaluser
 
 [Code]
 function IsDotNetDetected(version: string; service: cardinal): boolean;
