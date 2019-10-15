@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewCalendar
       UpdateTextCalendar();
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
-      CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayColor;
+      CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
       CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
       CalendarMonth.CalendarDateChanged += (date) =>
       {
@@ -386,7 +386,7 @@ namespace Ordisoftware.HebrewCalendar
         ClearLists();
         if ( PreferencesForm.Run() )
         {
-          CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayColor;
+          CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
           CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
           ActionGenerate_Click(null, null);
         }
@@ -517,7 +517,7 @@ namespace Ordisoftware.HebrewCalendar
         finally
         {
           IsReady = true;
-          TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
+          TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled || Program.Settings.ReminderShabatEnabled;
           Timer_Tick(this, null);
         }
       }
@@ -625,6 +625,12 @@ namespace Ordisoftware.HebrewCalendar
                      select day ).FirstOrDefault();
       if ( result == null ) return;
       GoToDate(SQLiteUtility.GetDate(result.Date));
+    }
+
+    private void ActionSearchMonth_Click(object sender, EventArgs e)
+    {
+      //var form = new SearchMonthForm();
+      //if ( form.ShowDialog() != DialogResult.OK ) return;
     }
 
     /// <summary>
@@ -748,9 +754,9 @@ namespace Ordisoftware.HebrewCalendar
         SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
         if ( active != 0 ) return;
         if ( IsForegroundFullScreen() ) return;
-        if ( Program.Settings.RemindShabat ) CheckShabat();
-        if ( Program.Settings.ReminderEnabled ) CheckCelebrationDay();
-        if ( Program.Settings.ReminderEnabled ) CheckEvents();
+        if ( Program.Settings.ReminderShabatEnabled ) CheckShabat();
+        if ( Program.Settings.ReminderCelebrationsEnabled ) CheckCelebrationDay();
+        if ( Program.Settings.ReminderCelebrationsEnabled ) CheckEvents();
       }
       catch ( Exception ex )
       {

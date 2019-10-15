@@ -63,12 +63,12 @@ namespace Ordisoftware.HebrewCalendar
         form.ShowDialog();
       }
       MainForm.Instance.Refresh();
-      MainForm.Instance.TimerReminder.Enabled = Program.Settings.ReminderEnabled || Program.Settings.RemindShabat;
+      MainForm.Instance.TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled || Program.Settings.ReminderShabatEnabled;
       return form.Reseted
           || form.OldShabatDay != Program.Settings.ShabatDay
           || form.OldLatitude != Program.Settings.GPSLatitude
           || form.OldLongitude != Program.Settings.GPSLongitude
-          || form.OldReminderUseColors != Program.Settings.ReminderUseColors
+          || form.OldReminderUseColors != Program.Settings.UseColors
           || form.OldReminderShabatDayColor != Program.Settings.EventColorShabat
           || form.OldReminderCurrentDayColor != Program.Settings.EventColorTorah
           || lang != Program.Settings.Language;
@@ -131,13 +131,13 @@ namespace Ordisoftware.HebrewCalendar
       EditBalloonAutoHide.Checked = Program.Settings.BalloonAutoHide;
       EditShowReminderInTaskBar.Checked = Program.Settings.ShowReminderInTaskBar;
       EditFontSize.Value = Program.Settings.FontSize;
-      EditTimerEnabled.Checked = Program.Settings.ReminderEnabled;
+      EditTimerEnabled.Checked = Program.Settings.ReminderCelebrationsEnabled;
       EditStartupHide.Checked = Program.Settings.StartupHide;
       EditShowMonthDayToolTip.Checked = Program.Settings.MonthViewSunToolTips;
       EditCheckUpdateAtStartup.Checked = Program.Settings.CheckUpdateAtStartup;
-      EditRemindShabat.Checked = Program.Settings.RemindShabat;
+      EditRemindShabat.Checked = Program.Settings.ReminderShabatEnabled;
       EditRemindShabatOnlyLight.Checked = Program.Settings.RemindShabatOnlyLight;
-      EditTimerInterval.Value = Program.Settings.ReminderInterval;
+      EditTimerInterval.Value = Program.Settings.ReminderCelebrationsInterval;
       EditRemindShabatHoursBefore.Value = Program.Settings.RemindShabatHoursBefore;
       EditRemindShabatEveryMinutes.Value = Program.Settings.RemindShabatEveryMinutes;
       EditRemindCelebrationHoursBefore.Value = Program.Settings.RemindCelebrationHoursBefore;
@@ -147,19 +147,20 @@ namespace Ordisoftware.HebrewCalendar
       PanelBottomColor.BackColor = Program.Settings.NavigateBottomColor;
       PanelTextColor.BackColor = Program.Settings.TextColor;
       PanelBackColor.BackColor = Program.Settings.TextBackground;
-      PanelCurrentDayColor.BackColor = Program.Settings.CurrentDayColor;
+      PanelCurrentDayColor.BackColor = Program.Settings.CurrentDayForeColor;
       PanelCurrentDayBackColor.BackColor = Program.Settings.CurrentDayBackColor;
-      PanelTorahEventColor.BackColor = Program.Settings.TorahEventColor;
-      PanelSeasonEventColor.BackColor = Program.Settings.SeasonEventColor;
-      PanelMoonEventColor.BackColor = Program.Settings.MoonEventColor;
-      PanelFullMoonColor.BackColor = Program.Settings.FullMoonColor;
-      PanelEventColorSeason.BackColor = Program.Settings.EventColorSeason;
+      PanelTorahEventColor.BackColor = Program.Settings.CalendarColorTorahEvent;
+      PanelSeasonEventColor.BackColor = Program.Settings.CalendarColorSeason;
+      PanelMoonEventColor.BackColor = Program.Settings.CalendarColorMoon;
+      PanelFullMoonColor.BackColor = Program.Settings.CalendarColorFullMoon;
       PanelEventColorTorah.BackColor = Program.Settings.EventColorTorah;
+      PanelEventColorSeason.BackColor = Program.Settings.EventColorSeason;
       PanelEventColorShabat.BackColor = Program.Settings.EventColorShabat;
+      PanelEventColorNewMonth.BackColor = Program.Settings.EventColorMonth;
       PanelEventColorNext.BackColor = Program.Settings.EventColorNext;
-      EditReminderUseColors.Checked = Program.Settings.ReminderUseColors;
+      EditReminderUseColors.Checked = Program.Settings.UseColors;
       OldReminderCurrentDayColor = Program.Settings.EventColorTorah;
-      OldReminderUseColors = Program.Settings.ReminderUseColors;
+      OldReminderUseColors = Program.Settings.UseColors;
       OldReminderShabatDayColor = Program.Settings.EventColorShabat;
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.GPSLatitude;
@@ -206,7 +207,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( SelectOpenNavigationForm.Checked )
         Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
       Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-      Program.Settings.ReminderInterval = (int)EditTimerInterval.Value;
+      Program.Settings.ReminderCelebrationsInterval = (int)EditTimerInterval.Value;
       for ( int index = 0; index < EditEvents.Items.Count; index++ )
         try
         {
@@ -231,13 +232,13 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.BalloonAutoHide = EditBalloonAutoHide.Checked;
       Program.Settings.ShowReminderInTaskBar = EditShowReminderInTaskBar.Checked;
       Program.Settings.FontSize = (int)EditFontSize.Value;
-      Program.Settings.ReminderEnabled = EditTimerEnabled.Checked;
+      Program.Settings.ReminderCelebrationsEnabled = EditTimerEnabled.Checked;
       Program.Settings.StartupHide = EditStartupHide.Checked;
       Program.Settings.MonthViewSunToolTips = EditShowMonthDayToolTip.Checked;
       Program.Settings.CheckUpdateAtStartup = EditCheckUpdateAtStartup.Checked;
-      Program.Settings.RemindShabat = EditRemindShabat.Checked;
+      Program.Settings.ReminderShabatEnabled = EditRemindShabat.Checked;
       Program.Settings.RemindShabatOnlyLight = EditRemindShabatOnlyLight.Checked;
-      Program.Settings.ReminderInterval = EditTimerInterval.Value;
+      Program.Settings.ReminderCelebrationsInterval = EditTimerInterval.Value;
       Program.Settings.RemindShabatHoursBefore = EditRemindShabatHoursBefore.Value;
       Program.Settings.RemindShabatEveryMinutes = EditRemindShabatEveryMinutes.Value;
       Program.Settings.RemindCelebrationHoursBefore = EditRemindCelebrationHoursBefore.Value;
@@ -247,17 +248,18 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.NavigateBottomColor = PanelBottomColor.BackColor;
       Program.Settings.TextColor = PanelTextColor.BackColor;
       Program.Settings.TextBackground = PanelBackColor.BackColor;
-      Program.Settings.CurrentDayColor = PanelCurrentDayColor.BackColor;
+      Program.Settings.CurrentDayForeColor = PanelCurrentDayColor.BackColor;
       Program.Settings.CurrentDayBackColor = PanelCurrentDayBackColor.BackColor;
-      Program.Settings.TorahEventColor = PanelTorahEventColor.BackColor;
-      Program.Settings.SeasonEventColor = PanelSeasonEventColor.BackColor;
-      Program.Settings.MoonEventColor = PanelMoonEventColor.BackColor;
-      Program.Settings.FullMoonColor = PanelFullMoonColor.BackColor;
-      Program.Settings.EventColorShabat = PanelEventColorShabat.BackColor;
-      Program.Settings.EventColorSeason = PanelEventColorSeason.BackColor;
+      Program.Settings.CalendarColorTorahEvent = PanelTorahEventColor.BackColor;
+      Program.Settings.CalendarColorSeason = PanelSeasonEventColor.BackColor;
+      Program.Settings.CalendarColorMoon = PanelMoonEventColor.BackColor;
+      Program.Settings.CalendarColorFullMoon = PanelFullMoonColor.BackColor;
       Program.Settings.EventColorTorah = PanelEventColorTorah.BackColor;
+      Program.Settings.EventColorSeason = PanelEventColorSeason.BackColor;
+      Program.Settings.EventColorShabat = PanelEventColorShabat.BackColor;
+      Program.Settings.EventColorMonth = PanelEventColorNewMonth.BackColor;
       Program.Settings.EventColorNext = PanelEventColorNext.BackColor;
-      Program.Settings.ReminderUseColors = EditReminderUseColors.Checked;
+      Program.Settings.UseColors = EditReminderUseColors.Checked;
       Program.Settings.Store();
     }
 
@@ -405,6 +407,14 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = PanelEventColorNext.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       PanelEventColorNext.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+
+    private void PanelEventColorNewMonth_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = PanelEventColorNewMonth.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      PanelEventColorNewMonth.BackColor = DialogColor.Color;
       UpdateCalendarMonth();
     }
 

@@ -86,11 +86,11 @@ namespace Ordisoftware.HebrewCalendar
       form.Location = new Point(left + width - form.Width, top + height - form.Height);
       form.Tag = row.Date;
       form.Text = " " + form.LabelNextCelebrationText.Text;
-      form.LabelNextCelebrationText.ForeColor = Program.Settings.TorahEventColor;
-      form.LabelNextCelebrationDate.LinkColor = Program.Settings.MoonEventColor;
-      form.LabelNextCelebrationDate.ActiveLinkColor = Program.Settings.MoonEventColor;
+      form.LabelNextCelebrationText.ForeColor = Program.Settings.CalendarColorTorahEvent;
+      form.LabelNextCelebrationDate.LinkColor = Program.Settings.CalendarColorMoon;
+      form.LabelNextCelebrationDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
       var now = DateTime.Now;
-      if ( Program.Settings.ReminderUseColors)
+      if ( Program.Settings.UseColors)
         if ( isShabat )
           if ( now >= date1 && now <= date2 )
             form.BackColor = Program.Settings.EventColorTorah;

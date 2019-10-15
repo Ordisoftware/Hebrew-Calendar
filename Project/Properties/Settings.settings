@@ -79,10 +79,10 @@
     <Setting Name="StartupHide" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ReminderInterval" Type="System.Decimal" Scope="User">
+    <Setting Name="ReminderCelebrationsInterval" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">14</Value>
     </Setting>
-    <Setting Name="ReminderEnabled" Type="System.Boolean" Scope="User">
+    <Setting Name="ReminderCelebrationsEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindNewYearD1" Type="System.Boolean" Scope="User">
@@ -118,7 +118,7 @@
     <Setting Name="TorahEventRemindSoukotD8" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="RemindShabat" Type="System.Boolean" Scope="User">
+    <Setting Name="ReminderShabatEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="MonthViewSunToolTips" Type="System.Boolean" Scope="User">
@@ -127,19 +127,19 @@
     <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="CurrentDayColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="CurrentDayForeColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">White</Value>
     </Setting>
-    <Setting Name="TorahEventColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="CalendarColorTorahEvent" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">DarkRed</Value>
     </Setting>
-    <Setting Name="SeasonEventColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="CalendarColorSeason" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">DarkGreen</Value>
     </Setting>
-    <Setting Name="MoonEventColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="CalendarColorMoon" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">DarkBlue</Value>
     </Setting>
-    <Setting Name="FullMoonColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="CalendarColorFullMoon" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">150, 100, 0</Value>
     </Setting>
     <Setting Name="RemindShabatOnlyLight" Type="System.Boolean" Scope="User">
@@ -214,7 +214,7 @@
     <Setting Name="EventColorTorah" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">255, 255, 230</Value>
     </Setting>
-    <Setting Name="ReminderUseColors" Type="System.Boolean" Scope="User">
+    <Setting Name="UseColors" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="GenerateIntervalMin" Type="System.Int32" Scope="User">
@@ -245,6 +245,9 @@
       <Value Profile="(Default)">200, 0, 0</Value>
     </Setting>
     <Setting Name="EventColorNext" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">WhiteSmoke</Value>
+    </Setting>
+    <Setting Name="EventColorMonth" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">AliceBlue</Value>
     </Setting>
   </Settings>

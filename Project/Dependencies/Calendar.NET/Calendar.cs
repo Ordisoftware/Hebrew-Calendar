@@ -958,7 +958,7 @@ namespace Calendar.NET
           {
             // ORDISOFTWARE MODIF BEGIN
             if ( MainForm.Instance != null )
-              if ( Program.Settings.ReminderUseColors )
+              if ( Program.Settings.UseColors )
               {
                 var color = MainForm.Instance.GetDayColor(counter, _calendarDate.Month, _calendarDate.Year);
                 if ( color != Color.Transparent )

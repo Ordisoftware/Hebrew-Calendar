@@ -312,24 +312,24 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("14")]
-        public decimal ReminderInterval {
+        public decimal ReminderCelebrationsInterval {
             get {
-                return ((decimal)(this["ReminderInterval"]));
+                return ((decimal)(this["ReminderCelebrationsInterval"]));
             }
             set {
-                this["ReminderInterval"] = value;
+                this["ReminderCelebrationsInterval"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ReminderEnabled {
+        public bool ReminderCelebrationsEnabled {
             get {
-                return ((bool)(this["ReminderEnabled"]));
+                return ((bool)(this["ReminderCelebrationsEnabled"]));
             }
             set {
-                this["ReminderEnabled"] = value;
+                this["ReminderCelebrationsEnabled"] = value;
             }
         }
         
@@ -468,12 +468,12 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool RemindShabat {
+        public bool ReminderShabatEnabled {
             get {
-                return ((bool)(this["RemindShabat"]));
+                return ((bool)(this["ReminderShabatEnabled"]));
             }
             set {
-                this["RemindShabat"] = value;
+                this["ReminderShabatEnabled"] = value;
             }
         }
         
@@ -504,60 +504,60 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("White")]
-        public global::System.Drawing.Color CurrentDayColor {
+        public global::System.Drawing.Color CurrentDayForeColor {
             get {
-                return ((global::System.Drawing.Color)(this["CurrentDayColor"]));
+                return ((global::System.Drawing.Color)(this["CurrentDayForeColor"]));
             }
             set {
-                this["CurrentDayColor"] = value;
+                this["CurrentDayForeColor"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("DarkRed")]
-        public global::System.Drawing.Color TorahEventColor {
+        public global::System.Drawing.Color CalendarColorTorahEvent {
             get {
-                return ((global::System.Drawing.Color)(this["TorahEventColor"]));
+                return ((global::System.Drawing.Color)(this["CalendarColorTorahEvent"]));
             }
             set {
-                this["TorahEventColor"] = value;
+                this["CalendarColorTorahEvent"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("DarkGreen")]
-        public global::System.Drawing.Color SeasonEventColor {
+        public global::System.Drawing.Color CalendarColorSeason {
             get {
-                return ((global::System.Drawing.Color)(this["SeasonEventColor"]));
+                return ((global::System.Drawing.Color)(this["CalendarColorSeason"]));
             }
             set {
-                this["SeasonEventColor"] = value;
+                this["CalendarColorSeason"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("DarkBlue")]
-        public global::System.Drawing.Color MoonEventColor {
+        public global::System.Drawing.Color CalendarColorMoon {
             get {
-                return ((global::System.Drawing.Color)(this["MoonEventColor"]));
+                return ((global::System.Drawing.Color)(this["CalendarColorMoon"]));
             }
             set {
-                this["MoonEventColor"] = value;
+                this["CalendarColorMoon"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("150, 100, 0")]
-        public global::System.Drawing.Color FullMoonColor {
+        public global::System.Drawing.Color CalendarColorFullMoon {
             get {
-                return ((global::System.Drawing.Color)(this["FullMoonColor"]));
+                return ((global::System.Drawing.Color)(this["CalendarColorFullMoon"]));
             }
             set {
-                this["FullMoonColor"] = value;
+                this["CalendarColorFullMoon"] = value;
             }
         }
         
@@ -852,12 +852,12 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ReminderUseColors {
+        public bool UseColors {
             get {
-                return ((bool)(this["ReminderUseColors"]));
+                return ((bool)(this["UseColors"]));
             }
             set {
-                this["ReminderUseColors"] = value;
+                this["UseColors"] = value;
             }
         }
         
@@ -971,13 +971,25 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("AliceBlue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("WhiteSmoke")]
         public global::System.Drawing.Color EventColorNext {
             get {
                 return ((global::System.Drawing.Color)(this["EventColorNext"]));
             }
             set {
                 this["EventColorNext"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AliceBlue")]
+        public global::System.Drawing.Color EventColorMonth {
+            get {
+                return ((global::System.Drawing.Color)(this["EventColorMonth"]));
+            }
+            set {
+                this["EventColorMonth"] = value;
             }
         }
     }

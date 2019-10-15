@@ -79,7 +79,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( season != SeasonChangeType.None )
           color1 = Program.Settings.EventColorSeason;
         if ( row.LunarDay == 1 && ev == TorahEventType.None )
-          color2 = Program.Settings.EventColorNext;
+          color2 = Program.Settings.EventColorMonth;
         else
         if ( IsCelebrationWeekStart || ev != TorahEventType.None )
           color2 = Program.Settings.EventColorTorah;
@@ -121,7 +121,7 @@ namespace Ordisoftware.HebrewCalendar
           item.TooltipEnabled = true;
           item.IgnoreTimeComponent = true;
           item.ToolTipText = strToolTip;
-          if ( Program.Settings.ReminderUseColors )
+          if ( Program.Settings.UseColors )
             item.EventColor = GetDayColor(item.Date.Day, item.Date.Month, item.Date.Year);
           CalendarMonth.AddEvent(item);
         }
@@ -132,8 +132,8 @@ namespace Ordisoftware.HebrewCalendar
                         ? " " + Translations.BabylonianHebrewMonthText[row.LunarMonth]
                         : "";
         colorMoon = row.IsNewMoon == 1
-                  ? Program.Settings.TorahEventColor
-                  : ( row.IsFullMoon == 1 ? Program.Settings.FullMoonColor : Program.Settings.MoonEventColor );
+                  ? Program.Settings.CalendarColorTorahEvent
+                  : ( row.IsFullMoon == 1 ? Program.Settings.CalendarColorFullMoon : Program.Settings.CalendarColorMoon );
         if ( (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
         {
           if ( row.Moonset != "" ) add(Color.Black, Translations.Ephemeris.GetLang(EphemerisType.Set) + row.Moonset);
@@ -147,9 +147,9 @@ namespace Ordisoftware.HebrewCalendar
           if ( row.Moonset != "" ) add(Color.Black, Translations.Ephemeris.GetLang(EphemerisType.Set) + row.Moonset);
         }
         if ( row.SeasonChange != 0 )
-          add(Program.Settings.SeasonEventColor, Translations.SeasonEvent.GetLang((SeasonChangeType)row.SeasonChange));
+          add(Program.Settings.CalendarColorSeason, Translations.SeasonEvent.GetLang((SeasonChangeType)row.SeasonChange));
         if ( row.TorahEvents != 0 )
-          add(Program.Settings.TorahEventColor, Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents));
+          add(Program.Settings.CalendarColorTorahEvent, Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents));
       }
     }
 
