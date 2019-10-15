@@ -948,12 +948,12 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SettingsResetRequiredV3_0 {
+        public bool UpgradeResetRequiredV3_0 {
             get {
-                return ((bool)(this["SettingsResetRequiredV3_0"]));
+                return ((bool)(this["UpgradeResetRequiredV3_0"]));
             }
             set {
-                this["SettingsResetRequiredV3_0"] = value;
+                this["UpgradeResetRequiredV3_0"] = value;
             }
         }
         
@@ -971,7 +971,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("WhiteSmoke")]
+        [global::System.Configuration.DefaultSettingValueAttribute("240, 240, 240")]
         public global::System.Drawing.Color EventColorNext {
             get {
                 return ((global::System.Drawing.Color)(this["EventColorNext"]));

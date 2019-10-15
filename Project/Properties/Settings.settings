@@ -238,14 +238,14 @@
     <Setting Name="NextCelebrationsFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
-    <Setting Name="SettingsResetRequiredV3_0" Type="System.Boolean" Scope="User">
+    <Setting Name="UpgradeResetRequiredV3_0" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CurrentDayBackColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">200, 0, 0</Value>
     </Setting>
     <Setting Name="EventColorNext" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">WhiteSmoke</Value>
+      <Value Profile="(Default)">240, 240, 240</Value>
     </Setting>
     <Setting Name="EventColorMonth" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">AliceBlue</Value>
