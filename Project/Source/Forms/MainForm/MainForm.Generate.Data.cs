@@ -197,7 +197,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
           thedate = thedate.AddDays(toadd);
-        var thethedate = Program.Settings.TorahEventsCountAsMoon ? thedate : thedate.AddDays(1);
+        var thethedate = thedate;// Program.Settings.TorahEventsCountAsMoon ? thedate : thedate.AddDays(1);
         var rowEnd = LunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(thethedate));
         if ( rowEnd != null ) rowEnd.TorahEvents |= (int)type;
         return thedate;
