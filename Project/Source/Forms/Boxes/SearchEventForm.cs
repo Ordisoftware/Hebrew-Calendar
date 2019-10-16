@@ -49,6 +49,11 @@ namespace Ordisoftware.HebrewCalendar
       Mutex = false;
     }
 
+    private void SearchEventForm_Shown(object sender, EventArgs e)
+    {
+      SelectChanged(null, null);
+    }
+
     private void ButtonCancel_Click(object sender, EventArgs e)
     {
       if ( CurrentDay != null )
