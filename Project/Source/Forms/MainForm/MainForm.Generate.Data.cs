@@ -183,16 +183,19 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="delta">[in,out] The current delta to skip days w/o moonrise.</param>
     private void AnalyzeDay(Data.LunisolarCalendar.LunisolarDaysRow day, ref int monthMoon)
     {
-      DateTime calculate(DateTime thedate, int toadd, TorahEventType type)
+      DateTime calculate(DateTime thedate, int toadd, TorahEventType type, bool forceSunOmer)
       {
         if ( Program.Settings.TorahEventsCountAsMoon )
         {
           var rowStart = LunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(thedate));
           int index = LunisolarCalendar.LunisolarDays.Rows.IndexOf(rowStart);
           int count = 0;
-          for ( int i = 0; i < toadd; i++, count++ )
-            if ( (MoonriseType)LunisolarCalendar.LunisolarDays[index + i].MoonriseType == MoonriseType.NextDay )
-              count++;
+          if ( forceSunOmer )
+            count = toadd;
+          else
+            for ( int i = 0; i < toadd; i++, count++ )
+              if ( (MoonriseType)LunisolarCalendar.LunisolarDays[index + i].MoonriseType == MoonriseType.NextDay )
+                count++;
           thedate = thedate.AddDays(count);
         }
         else
@@ -224,25 +227,25 @@ namespace Ordisoftware.HebrewCalendar
       if ( equinoxe != null && ( monthMoon == 0 || monthMoon >= 12 ) && isNewYear )
       {
         monthMoon = 1;
-        calculate(date, 0, TorahEventType.NewYearD1);
-        calculate(date, TorahCelebrations.NewLambDay - 1, TorahEventType.NewYearD10);
-        date = calculate(date, TorahCelebrations.PessahStartDay - 1 + delta, TorahEventType.PessahD1);
-        calculate(date, TorahCelebrations.PessahLenght - 1, TorahEventType.PessahD7);
-        date = calculate(date, TorahCelebrations.ChavouotLenght - 1, TorahEventType.ChavouotDiet);
+        calculate(date, 0, TorahEventType.NewYearD1, false);
+        calculate(date, TorahCelebrations.NewLambDay - 1, TorahEventType.NewYearD10, false);
+        date = calculate(date, TorahCelebrations.PessahStartDay - 1 + delta, TorahEventType.PessahD1, false);
+        calculate(date, TorahCelebrations.PessahLenght - 1, TorahEventType.PessahD7, false);
+        date = calculate(date, TorahCelebrations.ChavouotLenght - 1 - delta, TorahEventType.ChavouotDiet, true);
         while ( date.DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
           date = date.AddDays(1);
-        calculate(date, 1, TorahEventType.Chavouot1);
-        calculate(date, 1 + TorahCelebrations.ChavouotLenght - 1, TorahEventType.Chavouot2);
+        calculate(date, 1, TorahEventType.Chavouot1, true);
+        calculate(date, 1 + TorahCelebrations.ChavouotLenght - 1, TorahEventType.Chavouot2, false);
       }
       else
       if ( monthMoon > 0 )
         monthMoon++;
       if ( monthMoon == 7 )
       {
-        date = calculate(date, 0, TorahEventType.YomTerouah);
-        calculate(date, TorahCelebrations.YomHaKipourimDay - 1, TorahEventType.YomHaKipourim);
-        date = calculate(date, TorahCelebrations.SoukotStartDay - 1 + delta, TorahEventType.SoukotD1);
-        calculate(date, TorahCelebrations.SoukotLenght - 1, TorahEventType.SoukotD8);
+        date = calculate(date, 0, TorahEventType.YomTerouah, false);
+        calculate(date, TorahCelebrations.YomHaKipourimDay - 1, TorahEventType.YomHaKipourim, false);
+        date = calculate(date, TorahCelebrations.SoukotStartDay - 1 + delta, TorahEventType.SoukotD1, false);
+        calculate(date, TorahCelebrations.SoukotLenght - 1, TorahEventType.SoukotD8, false);
       }
     }
 
