@@ -231,7 +231,7 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "L'application utilise par défaut un omer" + Environment.NewLine +
                 "selon la lune pour les célébrations." + Environment.NewLine + Environment.NewLine +
                 "Vous pouvez utiliser les jours solaires traditionnels" + Environment.NewLine +
-                "en modifiant l'option dans le rapelleur." }
+                "en modifiant l'option dans le rappeleur." }
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
