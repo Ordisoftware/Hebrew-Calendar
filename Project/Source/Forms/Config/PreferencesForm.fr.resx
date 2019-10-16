@@ -323,6 +323,12 @@
   <data name="LabelTimerInterval.Text" xml:space="preserve">
     <value>Nombre de jours avant</value>
   </data>
+  <data name="EditUseMoonDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="EditUseMoonDays.Text" xml:space="preserve">
+    <value>Utiliser les jours lunaires</value>
+  </data>
   <data name="EditTimerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 17</value>
   </data>

@@ -93,6 +93,7 @@
       this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
       this.EditRemindCelebrationHoursBefore = new System.Windows.Forms.NumericUpDown();
+      this.EditUseMoonDays = new System.Windows.Forms.CheckBox();
       this.EditTimerEnabled = new System.Windows.Forms.CheckBox();
       this.EditRemindCelebrationEveryMinutes = new System.Windows.Forms.NumericUpDown();
       this.EditShowMonthDayToolTip = new System.Windows.Forms.CheckBox();
@@ -503,6 +504,7 @@
       this.GroupBoxReminder.Controls.Add(this.EditTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.LabelTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationHoursBefore);
+      this.GroupBoxReminder.Controls.Add(this.EditUseMoonDays);
       this.GroupBoxReminder.Controls.Add(this.EditTimerEnabled);
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationEveryMinutes);
       this.GroupBoxReminder.Name = "GroupBoxReminder";
@@ -621,6 +623,15 @@
       this.EditRemindCelebrationHoursBefore.BackColor = System.Drawing.SystemColors.Window;
       this.EditRemindCelebrationHoursBefore.Name = "EditRemindCelebrationHoursBefore";
       this.EditRemindCelebrationHoursBefore.ReadOnly = true;
+      // 
+      // EditUseMoonDays
+      // 
+      resources.ApplyResources(this.EditUseMoonDays, "EditUseMoonDays");
+      this.EditUseMoonDays.Checked = true;
+      this.EditUseMoonDays.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditUseMoonDays.Name = "EditUseMoonDays";
+      this.EditUseMoonDays.UseVisualStyleBackColor = true;
+      this.EditUseMoonDays.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
       // 
       // EditTimerEnabled
       // 
@@ -929,5 +940,6 @@
     internal System.Windows.Forms.Panel PanelEventColorNext;
     private System.Windows.Forms.Label label5;
     internal System.Windows.Forms.Panel PanelEventColorNewMonth;
+    private System.Windows.Forms.CheckBox EditUseMoonDays;
   }
 }

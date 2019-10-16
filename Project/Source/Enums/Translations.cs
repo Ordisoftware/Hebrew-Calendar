@@ -221,6 +221,19 @@ namespace Ordisoftware.HebrewCalendar
                 "Voulez-vous continuer ?" }
       };
 
+    static public readonly Dictionary<string, string> OmerMoon
+      = new Dictionary<string, string>()
+      {
+        { "en", "The application uses by default " + Environment.NewLine +
+                "moon omer for celebrations." + Environment.NewLine + Environment.NewLine +
+                "You can use traditionnals sun days" + Environment.NewLine +
+                "by modifying the option in the reminder." },
+        { "fr", "L'application utilise par défaut un omer" + Environment.NewLine +
+                "selon la lune pour les célébrations." + Environment.NewLine + Environment.NewLine +
+                "Vous pouvez utiliser les jours solaires traditionnels" + Environment.NewLine +
+                "en modifiant l'option dans le rapelleur." }
+      };
+
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
       = new Dictionary<bool, Dictionary<string, string>>()
       {

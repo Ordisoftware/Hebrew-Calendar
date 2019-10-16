@@ -203,18 +203,6 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool CountDayMoonAsSun {
-            get {
-                return ((bool)(this["CountDayMoonAsSun"]));
-            }
-            set {
-                this["CountDayMoonAsSun"] = value;
-            }
-        }
-        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
@@ -990,6 +978,30 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
             set {
                 this["EventColorMonth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TorahEventsCountAsMoon {
+            get {
+                return ((bool)(this["TorahEventsCountAsMoon"]));
+            }
+            set {
+                this["TorahEventsCountAsMoon"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunch {
+            get {
+                return ((bool)(this["FirstLaunch"]));
+            }
+            set {
+                this["FirstLaunch"] = value;
             }
         }
     }
