@@ -102,6 +102,7 @@
       this.Name = "SearchEventForm";
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.SearchEventForm_Load);
+      this.Shown += new System.EventHandler(this.SearchEventForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.EditYear)).EndInit();
       this.ResumeLayout(false);

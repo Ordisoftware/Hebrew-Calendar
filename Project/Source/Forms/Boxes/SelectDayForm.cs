@@ -32,6 +32,11 @@ namespace Ordisoftware.HebrewCalendar
       CurrentDay = MainForm.Instance.CurrentDay;
     }
 
+    private void SelectDayForm_Shown(object sender, EventArgs e)
+    {
+      MonthCalendar_DateChanged(null, null);
+    }
+
     private void ButtonCancel_Click(object sender, EventArgs e)
     {
       if ( CurrentDay != null )

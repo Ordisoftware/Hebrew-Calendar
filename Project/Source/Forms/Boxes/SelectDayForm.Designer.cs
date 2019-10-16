@@ -77,6 +77,7 @@
       this.MinimizeBox = false;
       this.Name = "SelectDayForm";
       this.ShowInTaskbar = false;
+      this.Shown += new System.EventHandler(this.SelectDayForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.ResumeLayout(false);
 
