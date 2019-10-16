@@ -51,6 +51,7 @@
       resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
       this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ButtonCancel.Name = "ButtonCancel";
+      this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
       // 
       // ButtonOk
       // 
@@ -70,6 +71,7 @@
             0,
             0,
             0});
+      this.EditYear.ValueChanged += new System.EventHandler(this.SelectChanged);
       // 
       // LabelYear
       // 
@@ -81,6 +83,7 @@
       resources.ApplyResources(this.SelectEvents, "SelectEvents");
       this.SelectEvents.FormattingEnabled = true;
       this.SelectEvents.Name = "SelectEvents";
+      this.SelectEvents.SelectedIndexChanged += new System.EventHandler(this.SelectChanged);
       this.SelectEvents.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
       // 
       // SearchEventForm
@@ -111,8 +114,8 @@
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ButtonCancel;
     private System.Windows.Forms.Button ButtonOk;
-    internal System.Windows.Forms.NumericUpDown EditYear;
     private System.Windows.Forms.Label LabelYear;
-    internal System.Windows.Forms.ListBox SelectEvents;
+    private System.Windows.Forms.NumericUpDown EditYear;
+    private System.Windows.Forms.ListBox SelectEvents;
   }
 }

@@ -41,6 +41,7 @@
       resources.ApplyResources(this.MonthCalendar, "MonthCalendar");
       this.MonthCalendar.MaxSelectionCount = 1;
       this.MonthCalendar.Name = "MonthCalendar";
+      this.MonthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.MonthCalendar_DateChanged);
       // 
       // PanelButtons
       // 
@@ -54,6 +55,7 @@
       resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
       this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ButtonCancel.Name = "ButtonCancel";
+      this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
       // 
       // ButtonOk
       // 
