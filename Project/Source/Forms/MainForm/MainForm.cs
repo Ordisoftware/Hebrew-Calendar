@@ -609,6 +609,7 @@ namespace Ordisoftware.HebrewCalendar
       else
       {
         var form = new SelectDayForm();
+        form.LiveGoTo = true;
         if ( form.ShowDialog() != DialogResult.OK ) return;
         date = form.MonthCalendar.SelectionStart;
       }

@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-10 </edited>
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCalendar
@@ -23,6 +22,8 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     private Data.LunisolarCalendar.LunisolarDaysRow CurrentDay;
+
+    internal bool LiveGoTo = false;
 
     public SelectDayForm()
     {
@@ -39,7 +40,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ButtonCancel_Click(object sender, EventArgs e)
     {
-      if ( CurrentDay != null )
+      if ( LiveGoTo && CurrentDay != null )
         MainForm.Instance.GoToDate(SQLiteUtility.GetDate(CurrentDay.Date));
     }
 
@@ -50,6 +51,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
     {
+      if ( !LiveGoTo ) return;
       string date = SQLiteUtility.GetDate(MonthCalendar.SelectionStart);
       if ( MonthCalendar.SelectionStart < MainForm.Instance.DateFirst )
         date = SQLiteUtility.GetDate(MainForm.Instance.DateFirst);

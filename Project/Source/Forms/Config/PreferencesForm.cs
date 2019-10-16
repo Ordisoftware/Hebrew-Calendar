@@ -314,6 +314,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
+      DisplayManager.Show(Translations.SelectBirthDay.GetLang());
       DateTime date = DateTime.Now;
       var form = new SelectDayForm();
       form.Text = Translations.SelectBirthday.GetLang();
