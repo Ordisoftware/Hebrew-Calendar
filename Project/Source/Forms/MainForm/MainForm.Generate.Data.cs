@@ -165,7 +165,7 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
       {
         if ( !UpdateProgress(progress++, Count, Translations.ProgressAnalyzeDays.GetLang()) ) return;
-        if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month, ref delta);
+        if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month);
         day.LunarMonth = month;
         if ( day.LunarDay == 1 ) delta = 0;
         if ( (MoonriseType)day.MoonriseType == MoonriseType.NextDay
@@ -181,7 +181,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="day">The day.</param>
     /// <param name="monthMoon">[in,out] The current mooon month.</param>
     /// <param name="delta">[in,out] The current delta to skip days w/o moonrise.</param>
-    private void AnalyzeDay(Data.LunisolarCalendar.LunisolarDaysRow day, ref int monthMoon, ref int delta)
+    private void AnalyzeDay(Data.LunisolarCalendar.LunisolarDaysRow day, ref int monthMoon)
     {
       DateTime calculate(DateTime thedate, int toadd, TorahEventType type)
       {
@@ -218,6 +218,7 @@ namespace Ordisoftware.HebrewCalendar
         dayEquinoxe += 30;
       }
       var date = dateDay;
+      int delta = Program.Settings.TorahEventsCountAsMoon ? 0 : 1;
       bool isNewYear = ( dateDay.Month == monthExuinoxe && dateDay.Day >= dayEquinoxe )
                     || ( dateDay.Month == monthExuinoxe + 1 );
       if ( equinoxe != null && ( monthMoon == 0 || monthMoon >= 12 ) && isNewYear )
@@ -225,7 +226,7 @@ namespace Ordisoftware.HebrewCalendar
         monthMoon = 1;
         calculate(date, 0, TorahEventType.NewYearD1);
         calculate(date, TorahCelebrations.NewLambDay - 1, TorahEventType.NewYearD10);
-        date = calculate(date, TorahCelebrations.PessahStartDay - 1, TorahEventType.PessahD1);
+        date = calculate(date, TorahCelebrations.PessahStartDay - 1 + delta, TorahEventType.PessahD1);
         calculate(date, TorahCelebrations.PessahLenght - 1, TorahEventType.PessahD7);
         date = calculate(date, TorahCelebrations.ChavouotLenght - 1, TorahEventType.ChavouotDiet);
         while ( date.DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
@@ -240,7 +241,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         date = calculate(date, 0, TorahEventType.YomTerouah);
         calculate(date, TorahCelebrations.YomHaKipourimDay - 1, TorahEventType.YomHaKipourim);
-        date = calculate(date, TorahCelebrations.SoukotStartDay - 1, TorahEventType.SoukotD1);
+        date = calculate(date, TorahCelebrations.SoukotStartDay - 1 + delta, TorahEventType.SoukotD1);
         calculate(date, TorahCelebrations.SoukotLenght - 1, TorahEventType.SoukotD8);
       }
     }
