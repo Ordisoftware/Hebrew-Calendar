@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewCalendar
     static internal void RestoreMainForm(this Settings settings)
     {
       MainForm.Width = MainForm.MinimumSize.Width;
-      MainForm.Height = MainForm.MinimumSize.Height;
+      MainForm.Height = 770;
       MainForm.WindowState = FormWindowState.Normal;
       MainForm.CenterToScreen();
       MainForm.EditScreenNone.Checked = false;

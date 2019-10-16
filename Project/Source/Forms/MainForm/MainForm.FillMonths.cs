@@ -81,6 +81,9 @@ namespace Ordisoftware.HebrewCalendar
         if ( row.LunarDay == 1 && ev == TorahEventType.None )
           color2 = Program.Settings.EventColorMonth;
         else
+        if ( row.LunarDay == 1 && ev == TorahEventType.NewYearD1 )
+          color2 = MixColor(Program.Settings.EventColorMonth, Program.Settings.EventColorSeason, Program.Settings.EventColorNext);
+        else
         if ( IsCelebrationWeekStart || ev != TorahEventType.None )
           color2 = Program.Settings.EventColorTorah;
         if ( SQLiteUtility.GetDate(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )

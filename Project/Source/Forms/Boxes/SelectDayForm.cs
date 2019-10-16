@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-10 </edited>
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCalendar
@@ -21,16 +22,35 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectDayForm : Form
   {
 
+    private Data.LunisolarCalendar.LunisolarDaysRow CurrentDay;
+
     public SelectDayForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
+      CurrentDay = MainForm.Instance.CurrentDay;
+    }
+
+    private void ButtonCancel_Click(object sender, EventArgs e)
+    {
+      if ( CurrentDay != null )
+        MainForm.Instance.GoToDate(SQLiteUtility.GetDate(CurrentDay.Date));
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)
     {
       DialogResult = DialogResult.OK;
+    }
+
+    private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
+    {
+      string date = SQLiteUtility.GetDate(MonthCalendar.SelectionStart);
+      var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+                  where day.Date == date
+                  select day ).FirstOrDefault();
+      if ( row == null ) return;
+      MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
     }
 
   }

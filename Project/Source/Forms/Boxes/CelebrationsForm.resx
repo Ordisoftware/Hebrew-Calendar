@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>290, 2</value>
+    <value>292, 2</value>
   </data>
   <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -154,10 +154,10 @@
     <value>Bottom</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 308</value>
+    <value>10, 330</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 28</value>
+    <value>374, 28</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -193,7 +193,7 @@
     <value>13, 13</value>
   </data>
   <data name="ListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 282</value>
+    <value>367, 304</value>
   </data>
   <data name="ListView.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -217,7 +217,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>392, 346</value>
+    <value>394, 368</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

@@ -13,6 +13,7 @@
 /// <created> 2019-10 </created>
 /// <edited> 2019-10 </edited>
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCalendar
@@ -20,6 +21,10 @@ namespace Ordisoftware.HebrewCalendar
 
   public partial class SearchEventForm : Form
   {
+
+    private Data.LunisolarCalendar.LunisolarDaysRow CurrentDay;
+
+    private bool Mutex;
 
     public SearchEventForm()
     {
@@ -29,6 +34,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SearchEventForm_Load(object sender, EventArgs e)
     {
+      Mutex = true;
+      CurrentDay = MainForm.Instance.CurrentDay;
       EditYear.Minimum = MainForm.Instance.YearFirst;
       EditYear.Maximum = MainForm.Instance.YearLast;
       EditYear.Value = EditYear.Minimum;
@@ -39,6 +46,13 @@ namespace Ordisoftware.HebrewCalendar
           int index = SelectEvents.Items.Add(item);
         }
       SelectEvents.SelectedIndex = 0;
+      Mutex = false;
+    }
+
+    private void ButtonCancel_Click(object sender, EventArgs e)
+    {
+      if ( CurrentDay != null )
+        MainForm.Instance.GoToDate(SQLiteUtility.GetDate(CurrentDay.Date));
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)
@@ -51,6 +65,18 @@ namespace Ordisoftware.HebrewCalendar
     {
       ButtonOk.PerformClick();
     }
+
+    private void SelectChanged(object sender, EventArgs e)
+    {
+      if ( Mutex ) return;
+      var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+                  where (TorahEventType)day.TorahEvents == ( (TorahEventItem)SelectEvents.SelectedItem ).Event
+                      && SQLiteUtility.GetDate(day.Date).Year == EditYear.Value
+                  select day ).FirstOrDefault();
+      if ( row == null ) return;
+      MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
+    }
+
   }
 
 }

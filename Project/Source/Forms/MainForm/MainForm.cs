@@ -618,13 +618,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionSearchEvent_Click(object sender, EventArgs e)
     {
       var form = new SearchEventForm();
-      if ( form.ShowDialog() != DialogResult.OK ) return;
-      var result = ( from day in LunisolarCalendar.LunisolarDays
-                     where (TorahEventType)day.TorahEvents == ( (TorahEventItem)form.SelectEvents.SelectedItem ).Event
-                        && SQLiteUtility.GetDate(day.Date).Year == form.EditYear.Value
-                     select day ).FirstOrDefault();
-      if ( result == null ) return;
-      GoToDate(SQLiteUtility.GetDate(result.Date));
+      form.ShowDialog();
     }
 
     private void ActionSearchMonth_Click(object sender, EventArgs e)
@@ -763,6 +757,16 @@ namespace Ordisoftware.HebrewCalendar
         if ( TimerErrorShown ) return;
         TimerErrorShown = true;
         ex.Manage();
+      }
+    }
+
+    internal Data.LunisolarCalendar.LunisolarDaysRow CurrentDay
+    {
+      get
+      {
+        return ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+                 where SQLiteUtility.GetDate(day.Date) == CalendarMonth.CalendarDate
+                 select day ).FirstOrDefault();
       }
     }
 
