@@ -51,11 +51,12 @@ namespace Ordisoftware.HebrewCalendar
     private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
     {
       string date = SQLiteUtility.GetDate(MonthCalendar.SelectionStart);
-      var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
-                  where day.Date == date
-                  select day ).FirstOrDefault();
-      if ( row == null ) return;
-      MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
+      if ( MonthCalendar.SelectionStart < MainForm.Instance.DateFirst )
+        date = SQLiteUtility.GetDate(MainForm.Instance.DateFirst);
+      else
+      if ( MonthCalendar.SelectionStart > MainForm.Instance.DateLast )
+        date = SQLiteUtility.GetDate(MainForm.Instance.DateLast);
+      MainForm.Instance.GoToDate(SQLiteUtility.GetDate(date));
     }
 
   }
