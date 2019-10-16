@@ -174,7 +174,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void PictureBox_Click(object sender, EventArgs e)
     {
-      LabelNextCelebrationDate_LinkClicked(LabelNextCelebrationDate, null);
+      //LabelNextCelebrationDate_LinkClicked(LabelNextCelebrationDate, null);
+      Close();
     }
 
     private void ReminderForm_Shown(object sender, EventArgs e)
