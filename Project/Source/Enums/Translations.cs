@@ -224,14 +224,31 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> OmerMoon
       = new Dictionary<string, string>()
       {
-        { "en", "The application uses by default " + Environment.NewLine +
-                "moon omer for celebrations." + Environment.NewLine + Environment.NewLine +
-                "You can use traditionnals sun days" + Environment.NewLine +
+        { "en", "The application uses by default " + NewLine +
+                "moon omer for celebrations." + NewLine + NewLine +
+                "You can use traditionnals sun days" + NewLine +
                 "by modifying the option in the reminder." },
-        { "fr", "L'application utilise par défaut un omer" + Environment.NewLine +
-                "selon la lune pour les célébrations." + Environment.NewLine + Environment.NewLine +
-                "Vous pouvez utiliser les jours solaires traditionnels" + Environment.NewLine +
+        { "fr", "L'application utilise par défaut un omer" + NewLine +
+                "selon la lune pour les célébrations." + NewLine + NewLine +
+                "Vous pouvez utiliser les jours solaires traditionnels" + NewLine +
                 "en modifiant l'option dans le rappeleur." }
+      };
+
+    static public readonly Dictionary<string, string> SelectBirthDay
+      = new Dictionary<string, string>()
+      {
+        { "en", "The application uses by default " + NewLine +
+                "moon omer for celebrations." + NewLine + NewLine +
+                "You can use traditionnals sun days" + NewLine +
+                "by modifying the option in the reminder." },
+        { "fr", "Le shabat personnel est la veille du jour de la naissance." + NewLine + NewLine +
+                "Si vous êtes né entre le coucher du soleil la veille de ce jour" + NewLine +
+                "et son coucher lors de ce jour, sélectionnez ce jour-là." + NewLine + NewLine +
+                "Si vous êtes né entre le coucher du soleil lors de ce jour" + NewLine +
+                "et le lendemain matin, sélectionnez le jour suivant." + NewLine + NewLine +
+                "Si vous préférez utiliser le shabat de groupe traditionnel," + NewLine +
+                "sélectionnez par exemple le samedi pour le judaïsme" + NewLine +
+                "ou le dimanche pour le catholicisme."}
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
