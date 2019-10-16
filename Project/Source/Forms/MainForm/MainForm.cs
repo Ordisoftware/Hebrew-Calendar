@@ -512,11 +512,11 @@ namespace Ordisoftware.HebrewCalendar
           }
           ClearLists();
           GenerateData(yearFirst, yearLast);
-          GoToDate(DateTime.Now);
         }
         finally
         {
           IsReady = true;
+          GoToDate(DateTime.Now);
           TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled || Program.Settings.ReminderShabatEnabled;
           Timer_Tick(this, null);
         }
