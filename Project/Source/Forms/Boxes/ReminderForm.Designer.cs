@@ -91,6 +91,7 @@
       this.TopMost = true;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReminderForm_FormClosed);
       this.Shown += new System.EventHandler(this.ReminderForm_Shown);
+      this.Click += new System.EventHandler(this.PictureBox_Click);
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
