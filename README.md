@@ -91,7 +91,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 #### 2019.10.16 - Version 3.1
 
-- Add option to use sun or moon omer for celebrations.
+- Add option to choose between sun or moon day count to determine celebrations to allow a more traditional use.
 
 #### 2019.10.14 - Version 3.0
 
