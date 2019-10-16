@@ -62,7 +62,6 @@ namespace Ordisoftware.HebrewCalendar
         dateStartCheck = dateStart.Value.AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes);
         dateEnd = date.AddDays(delta2).AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
       };
-      var realrow = row;
       if ( Program.Settings.TorahEventsCountAsMoon )
       {
         if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
@@ -81,8 +80,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       else
       {
-        realrow = rowNext;
-        initTimes(row.Sunset, rowNext.Sunset, 0, 1);
+        initTimes(rowPrevious.Sunset, row.Sunset, -1, 0);
       }
       var dateTrigger = dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= dateEnd.Value )
@@ -113,7 +111,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       else
         LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
-      ReminderForm.Run(row, realrow, false, (TorahEventType)row.TorahEvents, dateStart, dateEnd, timeStart, timeEnd);
+      ReminderForm.Run(row, false, (TorahEventType)row.TorahEvents, dateStart, dateEnd, timeStart, timeEnd);
     }
 
   }
