@@ -237,10 +237,14 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> SelectBirthDay
       = new Dictionary<string, string>()
       {
-        { "en", "The application uses by default " + NewLine +
-                "moon omer for celebrations." + NewLine + NewLine +
-                "You can use traditionnals sun days" + NewLine +
-                "by modifying the option in the reminder." },
+        { "en", "The personal shabbat is the previous day of the birth." + NewLine + NewLine +
+                "If you were born between sunset the day before that day" + NewLine +
+                "and sunset on that day, select that day." + NewLine + NewLine +
+                "If you were born between sunset on this day" + NewLine +
+                "and the next morning, select the next day." + NewLine + NewLine +
+                "If you prefer to use the traditional group shabat," + NewLine +
+                "select for example Saturday for Judaism" + NewLine +
+                "or Sunday for Catholicism." },
         { "fr", "Le shabat personnel est la veille du jour de la naissance." + NewLine + NewLine +
                 "Si vous êtes né entre le coucher du soleil la veille de ce jour" + NewLine +
                 "et son coucher lors de ce jour, sélectionnez ce jour-là." + NewLine + NewLine +
