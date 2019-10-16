@@ -62,8 +62,8 @@ english.SourceCode_msg=Source code of %1
 french.SourceCode_msg=Code source de %1
 english.StartWithWindows_msg=Start with Windows
 french.StartWithWindows_msg=Démarrer avec Windows
-english.OpenSQLiteODBC_msg=Open SQLite ODBC website
-french.OpenSQLiteODBC_msg=Ouvrir le site web SQLite ODBC
+english.OpenSQLiteODBC_msg=Open SQLite ODBC website to download sqliteodbc(_w64).exe
+french.OpenSQLiteODBC_msg=Ouvrir le site web SQLite ODBC pour télécharger sqliteodbc(_w64).exe
 
 [Tasks]
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
