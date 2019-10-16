@@ -32,7 +32,8 @@ namespace Ordisoftware.HebrewCalendar
           MainForm.Instance.LastCelebrationReminded.Add(value, null);
     }
 
-    static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row, 
+    static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row,
+                           Data.LunisolarCalendar.LunisolarDaysRow realrow,
                            bool isShabat, 
                            TorahEventType torahevent,
                            DateTime? date1,
@@ -69,10 +70,11 @@ namespace Ordisoftware.HebrewCalendar
       }
       form = new ReminderForm();
       var date = SQLiteUtility.GetDate(row.Date);
+      var realdate = SQLiteUtility.GetDate(realrow.Date);
       form.LabelNextCelebrationText.Text = !isShabat
                                          ? Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents)
                                          : "Shabat";
-      form.LabelNextCelebrationDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
+      form.LabelNextCelebrationDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(realdate.ToLongDateString());
       if ( date1 != null)
         form.LabelHours.Text = Translations.DayOfWeek.GetLang(date1.Value.DayOfWeek) + " "
                              + time1 + " ➜ "

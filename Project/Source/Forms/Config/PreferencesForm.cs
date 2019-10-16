@@ -71,6 +71,7 @@ namespace Ordisoftware.HebrewCalendar
           || form.OldReminderUseColors != Program.Settings.UseColors
           || form.OldReminderShabatDayColor != Program.Settings.EventColorShabat
           || form.OldReminderCurrentDayColor != Program.Settings.EventColorTorah
+          || form.OldUseMoonDays != Program.Settings.TorahEventsCountAsMoon
           || lang != Program.Settings.Language;
     }
 
@@ -80,6 +81,7 @@ namespace Ordisoftware.HebrewCalendar
     public int OldShabatDay { get; private set; }
     public string OldLatitude { get; private set; }
     public string OldLongitude { get; private set; }
+    public bool OldUseMoonDays { get; private set; }
     public bool Reseted = false;
 
     /// <summary>
@@ -116,6 +118,11 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
+      if ( Program.Settings.FirstLaunch )
+      {
+        Program.Settings.FirstLaunch = false;
+        DisplayManager.ShowAdvert(Translations.OmerMoon.GetLang());
+      }
       if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
         ActionGetGPS_LinkClicked(null, null);
       UpdateLanguagesButtons();
@@ -131,6 +138,7 @@ namespace Ordisoftware.HebrewCalendar
       EditBalloonAutoHide.Checked = Program.Settings.BalloonAutoHide;
       EditShowReminderInTaskBar.Checked = Program.Settings.ShowReminderInTaskBar;
       EditFontSize.Value = Program.Settings.FontSize;
+      EditUseMoonDays.Checked = Program.Settings.TorahEventsCountAsMoon;
       EditTimerEnabled.Checked = Program.Settings.ReminderCelebrationsEnabled;
       EditStartupHide.Checked = Program.Settings.StartupHide;
       EditShowMonthDayToolTip.Checked = Program.Settings.MonthViewSunToolTips;
@@ -165,6 +173,7 @@ namespace Ordisoftware.HebrewCalendar
       OldShabatDay = Program.Settings.ShabatDay;
       OldLatitude = Program.Settings.GPSLatitude;
       OldLongitude = Program.Settings.GPSLongitude;
+      OldUseMoonDays = Program.Settings.TorahEventsCountAsMoon;
       EditGPSLatitude.Text = OldLatitude.ToString();
       EditGPSLongitude.Text = OldLongitude.ToString();
       switch ( Program.Settings.TrayIconClickOpen )
@@ -236,6 +245,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.StartupHide = EditStartupHide.Checked;
       Program.Settings.MonthViewSunToolTips = EditShowMonthDayToolTip.Checked;
       Program.Settings.CheckUpdateAtStartup = EditCheckUpdateAtStartup.Checked;
+      Program.Settings.TorahEventsCountAsMoon = EditUseMoonDays.Checked;
       Program.Settings.ReminderShabatEnabled = EditRemindShabat.Checked;
       Program.Settings.RemindShabatOnlyLight = EditRemindShabatOnlyLight.Checked;
       Program.Settings.ReminderCelebrationsInterval = EditTimerInterval.Value;

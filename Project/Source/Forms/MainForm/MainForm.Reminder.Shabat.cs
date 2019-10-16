@@ -60,7 +60,6 @@ namespace Ordisoftware.HebrewCalendar
         initTimes(rowPrevious.Sunset, row.Sunset, -1);
       var dateTrigger = dateStartCheck.Value.AddHours((double)-Program.Settings.RemindShabatHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= dateEnd.Value )
-                                               //.AddMinutes((double)-Program.Settings.RemindShabatEveryMinutes) )
       {
         LastShabatReminded = null;
         if ( ShabatForm != null )
@@ -88,7 +87,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       else
         LastShabatReminded = dateNow;
-      ReminderForm.Run(row, true, TorahEventType.None, dateStart.Value, dateEnd.Value, timeStart, timeEnd);
+      ReminderForm.Run(row, row, true, TorahEventType.None, dateStart.Value, dateEnd.Value, timeStart, timeEnd);
     }
 
   }

@@ -64,21 +64,30 @@ namespace Ordisoftware.HebrewCalendar
           dateStartCheck = dateStart.Value.AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes);
           dateEnd = date.AddDays(delta2).AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
         };
-        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
-          initTimes(row.Moonset, rowNext.Moonset, 0, 1);
+        var realrow = row;
+        if ( Program.Settings.TorahEventsCountAsMoon )
+        {
+          if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
+            initTimes(row.Moonset, rowNext.Moonset, 0, 1);
+          else
+          if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.NextDay )
+            initTimes(row.Moonset, rowNext.Moonset, 0, 1);
+          else
+          if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.BeforeSet )
+            initTimes(rowPrevious.Moonset, row.Moonset, -1, 0);
+          else
+          if ( row.Moonset == "" )
+            initTimes(rowPrevious.Moonset, rowNext.Moonset, -1, 1);
+          else
+            throw new Exception("Error on calculating celebration dates and times.");
+        }
         else
-        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.NextDay )
-          initTimes(row.Moonset, rowNext.Moonset, 0, 1);
-        else
-        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.BeforeSet )
-          initTimes(rowPrevious.Moonset, row.Moonset, -1, 0);
-        else
-        if ( row.Moonset == "" )
-          initTimes(rowPrevious.Moonset, rowNext.Moonset, -1, 1);
-        else
-          throw new Exception("Error on calculating celebration dates and times.");
+        {
+          realrow = rowNext;
+          initTimes(row.Sunset, rowNext.Sunset, 0, 1);
+        }
         RemindCelebrationDates.Add(row.Date);
-        ReminderForm.Run(row, false, TorahEventType.None, dateStart, dateEnd, timeStart, timeEnd);
+        ReminderForm.Run(row, realrow, false, TorahEventType.None, dateStart, dateEnd, timeStart, timeEnd);
       }
     }
 
