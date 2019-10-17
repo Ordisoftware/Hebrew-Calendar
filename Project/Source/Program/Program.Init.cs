@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       var assembly = typeof(Program).Assembly;
       var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
-      string id = assembly.FullName + attribute.Value;
+      string id = attribute.Value;
       bool created;
       Mutex = new Mutex(true, id, out created);
       return created;
