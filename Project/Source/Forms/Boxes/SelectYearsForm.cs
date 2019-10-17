@@ -22,6 +22,11 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectYearsForm : Form
   {
 
+    const int GenerateIntervalPeriod = 120;
+    const int GenerateIntervalDefault = 5;
+    const int GenerateIntervalMin = 2;
+    const int GenerateIntervalMax = 10;
+
     public SelectYearsForm()
     {
       InitializeComponent();
@@ -35,14 +40,13 @@ namespace Ordisoftware.HebrewCalendar
     {
       DateTime date = DateTime.Now.AddYears(-1);
       Year = date.Year;
-      //if ( date.Month < 3 ) Year--;
       Mutex = true;
-      EditYearFirst.Minimum = Year - Program.Settings.GenerateIntervalPeriod;
-      EditYearFirst.Maximum = Year + Program.Settings.GenerateIntervalPeriod;
-      EditYearLast.Minimum = Year - Program.Settings.GenerateIntervalPeriod;
-      EditYearLast.Maximum = Year + Program.Settings.GenerateIntervalPeriod;
+      EditYearFirst.Minimum = Year - GenerateIntervalPeriod;
+      EditYearFirst.Maximum = Year + GenerateIntervalPeriod;
+      EditYearLast.Minimum = Year - GenerateIntervalPeriod;
+      EditYearLast.Maximum = Year + GenerateIntervalPeriod;
       EditYearFirst.Value = Year;
-      EditYearLast.Value = Year + Program.Settings.GenerateIntervalDefault;
+      EditYearLast.Value = Year + GenerateIntervalDefault - 1;
       Mutex = false;
     }
 
@@ -52,16 +56,16 @@ namespace Ordisoftware.HebrewCalendar
       if ( EditYearFirst.Value > Year )
         EditYearFirst.Value = Year;
       if ( EditYearFirst.Value >= EditYearLast.Value - 1 )
-        EditYearLast.Value = EditYearFirst.Value + Program.Settings.GenerateIntervalMin;
+        EditYearLast.Value = EditYearFirst.Value + GenerateIntervalMin;
     }
 
     private void EditYearLast_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      if ( EditYearLast.Value < Year + Program.Settings.GenerateIntervalMin )
-        EditYearLast.Value = Year + Program.Settings.GenerateIntervalMin;
+      if ( EditYearLast.Value < Year + GenerateIntervalMin )
+        EditYearLast.Value = Year + GenerateIntervalMin;
       if ( EditYearLast.Value <= EditYearFirst.Value + 1 )
-        EditYearFirst.Value = EditYearLast.Value - Program.Settings.GenerateIntervalMin;
+        EditYearFirst.Value = EditYearLast.Value - GenerateIntervalMin;
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)
@@ -75,14 +79,14 @@ namespace Ordisoftware.HebrewCalendar
         yearLast = temp;
       }
       if ( yearFirst == yearLast || yearFirst == yearLast + 1 )
-        yearLast = yearFirst + Program.Settings.GenerateIntervalDefault;
+        yearLast = yearFirst + GenerateIntervalDefault;
       if ( yearFirst > Year || Year > yearLast )
       {
         yearFirst = Year;
-        yearLast = Year + Program.Settings.GenerateIntervalDefault;
+        yearLast = Year + GenerateIntervalDefault;
       }
-      if ( yearLast - yearFirst > Program.Settings.GenerateIntervalMax )
-        if ( !DisplayManager.QueryYesNo(Translations.BigCalendar.GetLang(Program.Settings.GenerateIntervalMax)) )
+      if ( yearLast - yearFirst > GenerateIntervalMax )
+        if ( !DisplayManager.QueryYesNo(Translations.BigCalendar.GetLang(GenerateIntervalMax)) )
           return;
       EditYearFirst.Value = yearFirst;
       EditYearLast.Value = yearLast;
