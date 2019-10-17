@@ -62,25 +62,24 @@ english.SourceCode_msg=Source code of %1
 french.SourceCode_msg=Code source de %1
 english.StartWithWindows_msg=Start with Windows
 french.StartWithWindows_msg=Démarrer avec Windows
-english.OpenSQLiteODBC_msg=Open SQLite ODBC website to download sqliteodbc(_w64).exe
-french.OpenSQLiteODBC_msg=Ouvrir le site web SQLite ODBC pour télécharger sqliteodbc(_w64).exe
+english.OpenSQLiteODBC_msg=Open SQLite ODBC website to download "sqliteodbc.exe" for Windows-32bits or "sqliteodbc_w64.exe" for Windows-64bite
+french.OpenSQLiteODBC_msg=Ouvrir le site web SQLite ODBC pour télécharger "sqliteodbc.exe" pour Windows-32bits ou "sqliteodbc_w64.exe" pour Windows-64bits
 
 [Tasks]
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
 Name: quicklaunchicon; Description: {cm:CreateQuickLaunchIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
-Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription: Windows
 Name: opensqliteodbc; Description: {cm:OpenSQLiteODBC_msg}; GroupDescription: ODBC Driver
+Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription: Windows
 
 [Dirs]
 
 [InstallDelete]
-Name: {app}\Project\*; Type: filesandordirs
+Name: {app}\Bin\*; Type: filesandordirs
 Name: {app}\Documents\*; Type: filesandordirs
 Name: {app}\Help\*; Type: filesandordirs
-Name: {app}\Bin\fr-FR\*.*; Type: filesandordirs
-Name: {app}\Bin\fr-FR; Type: dirifempty
-Name: {app}\Bin\sah-RU\*.*; Type: filesandordirs
-Name: {app}\Bin\sah-RU; Type: dirifempty
+Name: {app}\Project\*; Type: filesandordirs
+Name: {app}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
+Name: {group}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
@@ -90,21 +89,22 @@ Source: ..\Bin\Release\*.exe; DestDir: {app}\Bin; Flags: ignoreversion recursesu
 Source: ..\Bin\Release\*.dll; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Bin\Release\*.pdb; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Bin\Release\*.xml; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Help\*; DestDir: {app}\Help; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Documents\*; DestDir: {app}\Documents; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: ..\Help\*; DestDir: {app}\Help; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.bak, *.suo, *.user, obj, .vs
 DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite
 
 [Icons]
 Name: {commondesktop}\{#MyAppPublisher} {#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: desktopicon; IconFilename: {app}\Application.ico
-Name: {app}\{cm:LaunchProgram,{#MyAppName}}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
-Name: {group}\{cm:LaunchProgram,{#MyAppName}}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
+Name: {app}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
+Name: {group}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
 Name: {group}\{cm:ProgramOnTheWeb,{#MyAppPublisher}}; Filename: {app}\Ordisoftware.com.url; IconFilename: {app}\Project\Dependencies\Fatcow\house.ico
 Name: {group}\{#MyAppName}\{cm:SourceCode_msg,{#MyAppName}}; Filename: {app}\Project; IconFilename: {app}\Project\Dependencies\Fatcow\page_white_csharp.ico; WorkingDir: {app}\Project
 Name: {group}\{#MyAppName}\{cm:HelpFile_msg,{#MyAppName}}; Filename: {app}\Help\index.htm; IconFilename: {app}\Project\Dependencies\Fatcow\help.ico
 Name: {group}\{#MyAppName}\{cm:LicenseFile_msg,{#MyAppName}}; Filename: {app}\Project\License\MPL 2.0.htm; IconFilename: {app}\Project\Dependencies\Fatcow\info_rhombus.ico
 Name: {group}\{#MyAppName}\{cm:ProgramOnTheWeb,{#MyAppName}}; Filename: {app}\{#MyAppName}.url; IconFilename: {app}\Project\Dependencies\Fatcow\house.ico
 Name: {group}\{#MyAppName}\{cm:UninstallProgram,{#MyAppName}}; Filename: {uninstallexe}
+Name: {group}\{#MyAppName}\Register {#MyAppName} ODBC Datasource; Filename: {app}\Register ODBC.reg
 Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: startwithwindows
 
 [Run]
