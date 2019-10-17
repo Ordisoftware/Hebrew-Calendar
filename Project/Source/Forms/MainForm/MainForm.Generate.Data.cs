@@ -244,7 +244,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         date = calculate(date, 0, TorahEventType.YomTerouah, false);
         calculate(date, TorahCelebrations.YomHaKipourimDay - 1, TorahEventType.YomHaKipourim, false);
-        date = calculate(date, TorahCelebrations.SoukotStartDay - 1 + delta, TorahEventType.SoukotD1, false);
+        date = calculate(date, TorahCelebrations.SoukotStartDay - 1, TorahEventType.SoukotD1, false);
         calculate(date, TorahCelebrations.SoukotLenght - 1, TorahEventType.SoukotD8, false);
       }
     }
