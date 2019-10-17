@@ -162,7 +162,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( day != null ) day.SeasonChange = (int)season;
       }
       var lat = XmlConvert.ToDouble(Program.Settings.GPSLatitude);
-      if ( lat >= 0 )
+      if ( lat >= 0 || !Program.Settings.TorahEventsCountAsMoon )
       {
         set(SeasonChangeType.SpringEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
         set(SeasonChangeType.SummerSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
