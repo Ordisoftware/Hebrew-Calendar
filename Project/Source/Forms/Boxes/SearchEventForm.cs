@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewCalendar
       CurrentDay = MainForm.Instance.CurrentDay;
       EditYear.Minimum = MainForm.Instance.YearFirst;
       EditYear.Maximum = MainForm.Instance.YearLast;
-      EditYear.Value = EditYear.Minimum;
+      EditYear.Value = DateTime.Now.Year;
       foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
         if ( type != TorahEventType.None )
         {
