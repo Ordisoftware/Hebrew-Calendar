@@ -60,7 +60,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AAPlus">
+    <Reference Include="AAPlus, Version=1.37.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>Dependencies\AAPlus\AAPlus.dll</HintPath>
     </Reference>
     <Reference Include="System" />

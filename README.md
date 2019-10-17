@@ -89,9 +89,10 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
-#### 2019.10.16 - Version 3.2
+#### 2019.10.17 - Version 3.2
 
 - Fix soukot sun omer date.
+- Fix calendar generated only for north hemisphere.
 
 #### 2019.10.16 - Version 3.1
 

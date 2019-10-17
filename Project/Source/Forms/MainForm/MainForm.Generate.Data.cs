@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-10 </edited>
 using System;
+using System.Xml;
 using System.Windows.Forms;
 using System.Linq;
 using System.Data;
@@ -89,13 +90,18 @@ namespace Ordisoftware.HebrewCalendar
       {
         for ( int month = 1; month <= 12; month++ )
           for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
-          {
-            if ( !UpdateProgress(progress++, Count, Translations.ProgressCreateDays.GetLang()) ) return;
-            var row = LunisolarCalendar.LunisolarDays.NewLunisolarDaysRow();
-            row.Date = SQLiteUtility.GetDate(year, month, day);
-            InitializeDay(row);
-            LunisolarCalendar.LunisolarDays.AddLunisolarDaysRow(row);
-          }
+            try
+            {
+              if ( !UpdateProgress(progress++, Count, Translations.ProgressCreateDays.GetLang()) ) return;
+              var row = LunisolarCalendar.LunisolarDays.NewLunisolarDaysRow();
+              row.Date = SQLiteUtility.GetDate(year, month, day);
+              InitializeDay(row);
+              LunisolarCalendar.LunisolarDays.AddLunisolarDaysRow(row);
+            }
+            catch ( Exception ex )
+            {
+              //DisplayManager.ShowError("Generating", ex.Message);
+            }
         InitializeSeasons(year);
       }
     }
@@ -106,28 +112,35 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="day">The day.</param>
     private void InitializeDay(Data.LunisolarCalendar.LunisolarDaysRow day)
     {
-      var date = SQLiteUtility.GetDate(day.Date);
-      var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
-      day.LunarDay = AstronomyUtility.JapaneseCalendar.GetDayOfMonth(date);
-      day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
-      day.MoonPhase = (int)AstronomyUtility.GetMoonPhase(date.Year, date.Month, date.Day);
-      day.IsFullMoon = Convert.ToInt32((MoonPhaseType)day.MoonPhase == MoonPhaseType.Full);
-      day.Sunrise = SQLiteUtility.FormatTime(ephemeris.Sunrise);
-      day.Sunset = SQLiteUtility.FormatTime(ephemeris.Sunset);
-      day.Moonrise = SQLiteUtility.FormatTime(ephemeris.Moonrise);
-      day.Moonset = SQLiteUtility.FormatTime(ephemeris.Moonset);
-      MoonriseType moonrisetype;
-      if ( ephemeris.Moonrise == null )
-        moonrisetype = MoonriseType.NextDay;
-      else
-      if ( ephemeris.Moonrise < ephemeris.Moonset )
-        moonrisetype = MoonriseType.BeforeSet;
-      else
-        moonrisetype = MoonriseType.AfterSet;
-      day.MoonriseType = (int)moonrisetype;
-      day.SeasonChange = 0;
-      day.LunarMonth = 0;
-      day.TorahEvents = 0;
+      try
+      {
+        var date = SQLiteUtility.GetDate(day.Date);
+        var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
+        day.LunarDay = AstronomyUtility.JapaneseCalendar.GetDayOfMonth(date);
+        day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
+        day.MoonPhase = (int)AstronomyUtility.GetMoonPhase(date.Year, date.Month, date.Day);
+        day.IsFullMoon = Convert.ToInt32((MoonPhaseType)day.MoonPhase == MoonPhaseType.Full);
+        day.Sunrise = SQLiteUtility.FormatTime(ephemeris.Sunrise);
+        day.Sunset = SQLiteUtility.FormatTime(ephemeris.Sunset);
+        day.Moonrise = SQLiteUtility.FormatTime(ephemeris.Moonrise);
+        day.Moonset = SQLiteUtility.FormatTime(ephemeris.Moonset);
+        MoonriseType moonrisetype;
+        if ( ephemeris.Moonrise == null )
+          moonrisetype = MoonriseType.NextDay;
+        else
+        if ( ephemeris.Moonrise < ephemeris.Moonset )
+          moonrisetype = MoonriseType.BeforeSet;
+        else
+          moonrisetype = MoonriseType.AfterSet;
+        day.MoonriseType = (int)moonrisetype;
+        day.SeasonChange = 0;
+        day.LunarMonth = 0;
+        day.TorahEvents = 0;
+      }
+      catch ( Exception ex )
+      {
+        //DisplayManager.ShowError("Generating", ex.Message);
+      }
     }
 
     /// <summary>
@@ -148,10 +161,21 @@ namespace Ordisoftware.HebrewCalendar
         var day = LunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == strDate);
         if ( day != null ) day.SeasonChange = (int)season;
       }
-      set(SeasonChangeType.SpringEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
-      set(SeasonChangeType.SummerSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
-      set(SeasonChangeType.AutumnEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
-      set(SeasonChangeType.WinterSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
+      var lat = XmlConvert.ToDouble(Program.Settings.GPSLatitude);
+      if ( lat >= 0 )
+      {
+        set(SeasonChangeType.SpringEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
+        set(SeasonChangeType.SummerSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
+        set(SeasonChangeType.AutumnEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
+        set(SeasonChangeType.WinterSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
+      }
+      else
+      {
+        set(SeasonChangeType.SpringEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
+        set(SeasonChangeType.SummerSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
+        set(SeasonChangeType.AutumnEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
+        set(SeasonChangeType.WinterSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
+      }
     }
 
     /// <summary>
@@ -163,16 +187,21 @@ namespace Ordisoftware.HebrewCalendar
       int month = 0;
       int delta = 0;
       foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
-      {
-        if ( !UpdateProgress(progress++, Count, Translations.ProgressAnalyzeDays.GetLang()) ) return;
-        if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month);
-        day.LunarMonth = month;
-        if ( day.LunarDay == 1 ) delta = 0;
-        if ( (MoonriseType)day.MoonriseType == MoonriseType.NextDay
-          && Program.Settings.TorahEventsCountAsMoon )
-          delta = 1;
-        day.LunarDay -= delta;
-      }
+        try
+        {
+          if ( !UpdateProgress(progress++, Count, Translations.ProgressAnalyzeDays.GetLang()) ) return;
+          if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month);
+          day.LunarMonth = month;
+          if ( day.LunarDay == 1 ) delta = 0;
+          if ( (MoonriseType)day.MoonriseType == MoonriseType.NextDay
+            && Program.Settings.TorahEventsCountAsMoon )
+            delta = 1;
+          day.LunarDay -= delta;
+        }
+        catch ( Exception ex )
+        {
+          //DisplayManager.ShowError("Generating", ex.Message);
+        }
     }
 
     /// <summary>
