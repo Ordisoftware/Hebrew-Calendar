@@ -151,11 +151,10 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        var result = LunisolarCalendar.LunisolarDays.OrderBy(d => d.Date).LastOrDefault();
-        if ( result == null || SQLiteUtility.GetDate(result.Date) < DateTime.Now.AddMonths(6) )
+        if (DateTime.Now.Year >= YearLast )
         {
           var diff = YearLast - YearFirst;
-          YearFirst = DateTime.Now.Year;
+          YearFirst = DateTime.Now.Year - 1;
           YearLast = YearFirst + diff;
           ActionGenerate_Click(null, null);
         }

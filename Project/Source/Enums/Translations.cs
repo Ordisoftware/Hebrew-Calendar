@@ -72,27 +72,6 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
       };
 
-    static public readonly Dictionary<string, string> CheckUpdateNoNewText
-      = new Dictionary<string, string>()
-      {
-        { "en", "There is no new version available." },
-        { "fr", "Il n'y a pas de nouvelle version de disponible." }
-      };
-
-    static public readonly Dictionary<string, string> CheckUpdateResult
-      = new Dictionary<string, string>()
-      {
-        { "en", "A newer version is available : " },
-        { "fr", "Une nouvelle version est disponible : " }
-      };
-
-    static public readonly Dictionary<string, string> CheckUpdateAskDownload
-      = new Dictionary<string, string>()
-      {
-        { "en", "Do you want to open the download page?" },
-        { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
-      };
-
     static public readonly Dictionary<string, string> SelectBirthday
       = new Dictionary<string, string>()
       {
@@ -104,7 +83,7 @@ namespace Ordisoftware.HebrewCalendar
       = new Dictionary<string, string>()
       {
         { "en", "Date not found in the database: {0}" },
-        { "fr", "Date non trouvée dans la base de données: {0}" }
+        { "fr", "Date non trouvée dans la base de données : {0}" }
       };
 
     static public readonly Dictionary<string, string> CantExitApplicationWhileGenerating
@@ -112,24 +91,6 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "Can't close while generating." },
         { "fr", "Impossible de quitter durant la génération." }
-      };
-
-    static public readonly Dictionary<string, string> EndOfCalendar
-      = new Dictionary<string, string>()
-      {
-        { "en", "The current calendar ends in less than 6 months." + Environment.NewLine +
-                "Do you want to regenerate it?"},
-        { "fr", "Le calendrier actuel s'arrête dans moins de 6 mois." + Environment.NewLine +
-                "Voulez-vous l'actualiser ?" }
-      };
-
-    static public readonly Dictionary<string, string> GenerateCalendar
-      = new Dictionary<string, string>()
-      {
-        { "en", "Database is empty." + NewLine + NewLine +
-                "Do you want to generate a calendar?" },
-        { "fr", "La base de données est vide." + NewLine + NewLine +
-                "Voulez-vous générer un calendrier ?" }
       };
 
     static public readonly Dictionary<string, string> StopGeneration
@@ -177,9 +138,11 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> BigCalendar
       = new Dictionary<string, string>()
       {
-        { "en", "Generate a calendar for more than {0} years is not recommanded." + NewLine + NewLine +
+        { "en", "Generate a calendar for more than {0} years" + NewLine +
+                "is not recommanded." + NewLine + NewLine +
                 "Do you want to continue?" },
-        { "fr", "Générer un calendrier pour plus de {0} ans n'est pas recommandé."  + NewLine + NewLine +
+        { "fr", "Générer un calendrier pour plus de {0} ans" + NewLine +
+                "n'est pas recommandé." + NewLine + NewLine +
                 "Voulez-vous continuer ?" }
       };
 
@@ -212,32 +175,25 @@ namespace Ordisoftware.HebrewCalendar
                 "Voulez-vous continuer ?" }
       };
 
-    static public readonly Dictionary<string, string> ReplaceCalendar
-      = new Dictionary<string, string>()
-      {
-        { "en", "The new calendar will replace the old." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Le nouveau calendrier va remplacer l'ancien." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
-      };
-
     static public readonly Dictionary<string, string> OmerMoon
       = new Dictionary<string, string>()
       {
-        { "en", "The application uses by default " + NewLine +
-                "moon omer for celebrations." + NewLine + NewLine +
-                "If you use moon omer then celebrations dates" + NewLine +
-                "will be calculated according to real seasons." + NewLine + NewLine +
-                "You can use traditionnals sun days by" + NewLine +
-                "modifying the option in the reminder," + NewLine +
-                "hence celebrations will be same." },
-        { "fr", "L'application utilise par défaut un omer" + NewLine +
-                "selon la lune pour les célébrations." + NewLine + NewLine +
+        { "en", "The application uses by default moon omer for" + NewLine +
+                "celebrations." + NewLine + NewLine +
+                "If you use moon omer then celebrations dates will" + NewLine +
+                "be calculated according to seasons and there will" + NewLine +
+                "be an inversion between north and south hemispheres." + NewLine + NewLine +
+                "You can use traditionnals sun days by modifying" + NewLine +
+                "the option in the reminder, hence celebrations" + NewLine +
+                "will be same in north and south." },
+        { "fr", "L'application utilise par défaut un omer selon la lune" + NewLine +
+                "pour les célébrations." + NewLine + NewLine +
                 "Si vous utilisez le omer de la lune alors les dates des" + NewLine +
-                "célébrations seront calculées selon les vraies saisons." + NewLine + NewLine +
+                "célébrations seront calculées selon les saisons et il y" + NewLine +
+                "aura une inversion entre les hémisphères nord et sud." + NewLine + NewLine +
                 "Vous pouvez utiliser les jours solaires traditionnels" + NewLine +
                 "en modifiant l'option dans le rappeleur, alors les" + NewLine +
-                "célébrations seront les mêmes." }
+                "célébrations seront les mêmes pour le nord et le sud." }
       };
 
     static public readonly Dictionary<string, string> SelectBirthDay
@@ -246,19 +202,18 @@ namespace Ordisoftware.HebrewCalendar
         { "en", "The personal shabbat is the previous day of the birth." + NewLine + NewLine +
                 "If you were born between sunset the day before that day" + NewLine +
                 "and sunset on that day, select that day." + NewLine + NewLine +
-                "If you were born between sunset on this day" + NewLine +
-                "and the next morning, select the next day." + NewLine + NewLine +
-                "If you prefer to use the traditional group shabat," + NewLine +
-                "select for example Saturday for Judaism" + NewLine +
-                "or Sunday for Catholicism." },
+                "If you were born between sunset on this day and the next" + NewLine +
+                "morning, select the next day." + NewLine + NewLine +
+                "If you prefer to use the traditional group shabat, select for" + NewLine +
+                "example Saturday for Judaism or Sunday for Catholicism." },
         { "fr", "Le shabat personnel est la veille du jour de la naissance." + NewLine + NewLine +
                 "Si vous êtes né entre le coucher du soleil la veille de ce jour" + NewLine +
                 "et son coucher lors de ce jour, sélectionnez ce jour-là." + NewLine + NewLine +
-                "Si vous êtes né entre le coucher du soleil lors de ce jour" + NewLine +
-                "et le lendemain matin, sélectionnez le jour suivant." + NewLine + NewLine +
+                "Si vous êtes né entre le coucher du soleil lors de ce jour et" + NewLine +
+                "le lendemain matin, sélectionnez le jour suivant." + NewLine + NewLine +
                 "Si vous préférez utiliser le shabat de groupe traditionnel," + NewLine +
-                "sélectionnez par exemple le samedi pour le judaïsme" + NewLine +
-                "ou le dimanche pour le catholicisme."}
+                "sélectionnez par exemple le samedi pour le judaïsme ou" + NewLine +
+                "le dimanche pour le catholicisme."}
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
