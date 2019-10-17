@@ -226,12 +226,18 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "The application uses by default " + NewLine +
                 "moon omer for celebrations." + NewLine + NewLine +
-                "You can use traditionnals sun days" + NewLine +
-                "by modifying the option in the reminder." },
+                "If you use moon omer then celebrations dates" + NewLine +
+                "will be calculated according to real seasons." + NewLine + NewLine +
+                "You can use traditionnals sun days by" + NewLine +
+                "modifying the option in the reminder," + NewLine +
+                "hence celebrations will be same." },
         { "fr", "L'application utilise par défaut un omer" + NewLine +
                 "selon la lune pour les célébrations." + NewLine + NewLine +
+                "Si vous utilisez le omer de la lune alors les dates des" + NewLine +
+                "célébrations seront calculées selon les vraies saisons." + NewLine + NewLine +
                 "Vous pouvez utiliser les jours solaires traditionnels" + NewLine +
-                "en modifiant l'option dans le rappeleur." }
+                "en modifiant l'option dans le rappeleur, alors les" + NewLine +
+                "célébrations seront les mêmes." }
       };
 
     static public readonly Dictionary<string, string> SelectBirthDay
