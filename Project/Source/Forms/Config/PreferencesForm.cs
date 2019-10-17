@@ -206,7 +206,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch
       {
-        DisplayManager.ShowError("Coordonnées GPS invalides.");
+        DisplayManager.ShowError("Invalid GPS coordonates.");
         e.Cancel = true;
         return;
       }
@@ -291,6 +291,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSLongitude = lng;
       Program.Settings.ShabatDay = shabat;
       Program.Settings.RestoreMainForm();
+      Program.Settings.Language = Localizer.Language;
       Close();
     }
 

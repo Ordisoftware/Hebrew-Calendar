@@ -1106,9 +1106,6 @@
   <data name="ActionSearchMonth.ToolTipText" xml:space="preserve">
     <value>Search month (Ctrl+M)</value>
   </data>
-  <data name="ActionSearchMonth.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="ActionSearchDay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1577,7 +1574,7 @@
   <data name="toolStripMenuItem5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAEMSURBVDhPpZM9SgNRGEW/zh9QC0ELrSToAlyFoLuxUgkq
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAEMSURBVDhPpZM9SgNRGEW/zh9QC0ELrSToAlyFoLuxUgkq
         ZANiIdobK7Ew0VTiBsQieRGLyVQZCzOCJKQY5ZozGQI28WW8cOE9OOfyGBj7d1ZKtZvl43stHd1NVJzV
         Uu3VOFw8xzp7ete5Z2FxcG3xsKrrl0+tndS1flrXxh+FgcXBtYViRQ9hX1uXobbLoXauxhcGFgfXZg8q
         yhtcm96/TS/ONdRwTq7ZHNuUGbAEdzTQCgIFrdCrsOTXQNSO1I7evApLhgN7w4GPuKNOHHsVluDaVDbQ
@@ -2023,7 +2020,7 @@
 </value>
   </data>
   <data name="ActionViewReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 38</value>
+    <value>110, 22</value>
   </data>
   <data name="ActionViewReport.Text" xml:space="preserve">
     <value>Report</value>
@@ -2058,7 +2055,7 @@
 </value>
   </data>
   <data name="ActionViewMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 38</value>
+    <value>110, 22</value>
   </data>
   <data name="ActionViewMonth.Text" xml:space="preserve">
     <value>Month</value>
@@ -2092,7 +2089,7 @@
 </value>
   </data>
   <data name="ActionViewGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 38</value>
+    <value>110, 22</value>
   </data>
   <data name="ActionViewGrid.Text" xml:space="preserve">
     <value>Grid</value>

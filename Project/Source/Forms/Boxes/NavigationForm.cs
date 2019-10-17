@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-10 </edited>
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -26,20 +26,12 @@ namespace Ordisoftware.HebrewCalendar
   public partial class NavigationForm : Form
   {
 
-    /// <summary>
-    /// Indicate the singleton instance.
-    /// </summary>
-    static internal NavigationForm Instance
-    {
-      get
-      {
-        if ( _Instance == null )
-          _Instance = new NavigationForm();
-        return _Instance;
-      }
-    }
+    static internal NavigationForm Instance;
 
-    static internal NavigationForm _Instance;
+    static NavigationForm()
+    {
+      Instance = new NavigationForm();
+    }
 
     public DateTime Date
     {
@@ -53,7 +45,7 @@ namespace Ordisoftware.HebrewCalendar
           string strDate = SQLiteUtility.GetDate(value);
           var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
                       where day.Date == strDate
-                      select day ).Single() as Data.LunisolarCalendar.LunisolarDaysRow;
+                      select day ).Single();
           LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(value.ToLongDateString());
           string strMonth = Translations.BabylonianHebrewMonthText[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
@@ -70,7 +62,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
                           where SQLiteUtility.GetDate(day.Date) > value && day.TorahEvents > 0
-                          select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
+                          select day ).FirstOrDefault();
           if ( rowNext != null )
           {
             var date = SQLiteUtility.GetDate(rowNext.Date);
@@ -135,10 +127,6 @@ namespace Ordisoftware.HebrewCalendar
       Location = new Point(left + width - Width, top + height - Height);
     }
 
-    /// <summary>
-    /// Process the command key.
-    /// </summary>
-    /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
       if ( keyData != Keys.Escape ) return base.ProcessCmdKey(ref msg, keyData);

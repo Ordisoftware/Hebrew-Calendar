@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-10 </edited>
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -110,6 +111,12 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static public readonly string IconFilename
       = AppRootFolderPath + "Application.ico";
+
+    /// <summary>
+    /// Indicate filename of the application's icon.
+    /// </summary>
+    static public readonly string GPSFilename
+      = AppDocumentsFolderPath + "WorldCities.csv";
 
     /// <summary>
     /// Indicate name of the help file.

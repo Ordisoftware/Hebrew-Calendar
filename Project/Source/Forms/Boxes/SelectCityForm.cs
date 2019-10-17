@@ -36,13 +36,14 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    static public readonly Dictionary<string, List<CityItem>> GPS = new Dictionary<string, List<CityItem>>();
+    static public readonly SortedDictionary<string, List<CityItem>> GPS 
+      = new SortedDictionary<string, List<CityItem>>();
 
     static SelectCityForm()
     {
       try
       {
-        string filename = Program.AppDocumentsFolderPath + "WorldCities.csv";
+        string filename = Program.GPSFilename;
         var parser = new GenericParser(filename);
         parser.FirstRowHasHeader = true;
         while ( parser.Read() )
@@ -63,10 +64,12 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    internal string Latitude;
-    internal string Longitude;
-    internal string Country;
-    internal string City;
+    public string Country { get; private set; }
+    public string City { get; private set; }
+    public string Latitude { get; private set; }
+    public string Longitude { get; private set; }
+
+    private bool Mutex;
 
     public SelectCityForm()
     {
@@ -76,7 +79,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SelectCityForm_Load(object sender, EventArgs e)
     {
-      ListBoxCountries.DataSource = GPS.Keys.OrderBy(c => c).ToList();
+      ListBoxCountries.DataSource = GPS.Keys.ToList();
       ActiveControl = EditFilter;
       if ( Program.Settings.GPSCountry != "" )
       {
@@ -103,14 +106,12 @@ namespace Ordisoftware.HebrewCalendar
     private void ListBoxCities_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( ListBoxCities.SelectedIndex == -1 ) return;
-      Latitude = ( (CityItem)ListBoxCities.SelectedItem ).Latitude;
-      Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
       Country = (string)ListBoxCountries.SelectedItem;
       City = ( (CityItem)ListBoxCities.SelectedItem ).Name;
+      Latitude = ( (CityItem)ListBoxCities.SelectedItem ).Latitude;
+      Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
       ButtonOk.Enabled = true;
     }
-
-    private bool Mutex;
 
     private void EditFilter_TextChanged(object sender, EventArgs e)
     {
@@ -123,14 +124,18 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         var list = EditFilter.Text.Split(',');
-        if ( list.Length == 0 ) return;
-        list[0] = list[0].Trim().ToLower().RemoveDiacritics();
-        if ( list[0].Length < 3 ) return;
+        if ( list.Length == 0 )
+          return;
+        // Country
+        list[0] = list[0].Trim().RemoveDiacritics().ToLower();
+        if ( list[0].Length < 3 )
+          return;
         var resultCountry = from country in GPS
                             where country.Key.ToLower().Contains(list[0])
                             orderby country.Key
                             select country;
-        if ( resultCountry.Count() == 0 ) return;
+        if ( resultCountry.Count() == 0 )
+          return;
         string strCountry = resultCountry.ElementAt(0).Key;
         foundCountry = resultCountry.Count() == 1;
         if ( !foundCountry )
@@ -141,16 +146,20 @@ namespace Ordisoftware.HebrewCalendar
         int index = ListBoxCountries.FindString(strCountry);
         if ( ListBoxCountries.SelectedIndex != index )
           ListBoxCountries.SelectedIndex = index;
-        if ( list.Length == 1 ) return;
-        list[1] = list[1].Trim().ToLower().RemoveDiacritics();
-        if ( list[1].Length < 3 ) return;
+        if ( list.Length == 1 )
+          return;
+        // City
+        list[1] = list[1].Trim().RemoveDiacritics().ToLower();
+        if ( list[1].Length < 3 )
+          return;
         var resultCity = from country in GPS
                          from city in country.Value
                          where country.Key == strCountry
                             && city.Name.ToLower().Contains(list[1])
                          orderby city.Name
                          select city;
-        if ( resultCity.Count() == 0 ) return;
+        if ( resultCity.Count() == 0 )
+          return;
         string strCity = resultCity.ElementAt(0).Name;
         foundCity = resultCity.Count() == 1;
         if ( !foundCity )
