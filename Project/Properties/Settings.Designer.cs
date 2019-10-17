@@ -851,54 +851,6 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
-        public int GenerateIntervalMin {
-            get {
-                return ((int)(this["GenerateIntervalMin"]));
-            }
-            set {
-                this["GenerateIntervalMin"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
-        public int GenerateIntervalMax {
-            get {
-                return ((int)(this["GenerateIntervalMax"]));
-            }
-            set {
-                this["GenerateIntervalMax"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int GenerateIntervalDefault {
-            get {
-                return ((int)(this["GenerateIntervalDefault"]));
-            }
-            set {
-                this["GenerateIntervalDefault"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("120")]
-        public int GenerateIntervalPeriod {
-            get {
-                return ((int)(this["GenerateIntervalPeriod"]));
-            }
-            set {
-                this["GenerateIntervalPeriod"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("240, 240, 240")]
         public global::System.Drawing.Color EventColorShabat {
             get {
