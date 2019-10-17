@@ -48,12 +48,12 @@ Name: english; MessagesFile: compiler:Default.isl
 Name: french; MessagesFile: compiler:Languages\French.isl
 
 [CustomMessages]
-english.RunSettings_msg=Modify application settings
-french.RunSettings_msg=Modifier les paramètres de l'application
 english.DotNetRequired_msg=Install .NET Framework 4.5
 french.DotNetRequired_msg=Installer .NET Framework 4.5
 english.DotNetInstalling_msg=Microsoft Framework 4.5 is being installed. Please wait...
 french.DotNetInstalling_msg=Microsoft Framework 4.5 est en cours d'installation. Veuillez patienter...
+english.RunSettings_msg=Modify application settings
+french.RunSettings_msg=Modifier les paramètres de l'application
 english.HelpFile_msg=Documentation of %1
 french.HelpFile_msg=Documentation de %1
 english.LicenseFile_msg=License of %1
@@ -62,13 +62,13 @@ english.SourceCode_msg=Source code of %1
 french.SourceCode_msg=Code source de %1
 english.StartWithWindows_msg=Start with Windows
 french.StartWithWindows_msg=Démarrer avec Windows
-english.OpenSQLiteODBC_msg=Open SQLite ODBC website to download "sqliteodbc.exe" for Windows-32bits or "sqliteodbc_w64.exe" for Windows-64bite
-french.OpenSQLiteODBC_msg=Ouvrir le site web SQLite ODBC pour télécharger "sqliteodbc.exe" pour Windows-32bits ou "sqliteodbc_w64.exe" pour Windows-64bits
+;english.OpenSQLiteODBC_msg=Open SQLite ODBC website to download "sqliteodbc.exe" for Windows-32bits or "sqliteodbc_w64.exe" for Windows-64bite
+;french.OpenSQLiteODBC_msg=Ouvrir le site web SQLite ODBC pour télécharger "sqliteodbc.exe" pour Windows-32bits ou "sqliteodbc_w64.exe" pour Windows-64bits
 
 [Tasks]
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
-Name: quicklaunchicon; Description: {cm:CreateQuickLaunchIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
-Name: opensqliteodbc; Description: {cm:OpenSQLiteODBC_msg}; GroupDescription: ODBC Driver
+;Name: quicklaunchicon; Description: {cm:CreateQuickLaunchIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
+;Name: opensqliteodbc; Description: {cm:OpenSQLiteODBC_msg}; GroupDescription: ODBC Driver
 Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription: Windows
 
 [Dirs]
@@ -83,7 +83,7 @@ Name: {group}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: *; DestDir: {app}\Setup; Excludes: *.---, *.bak, {#MyAppPublisher}{#MyAppNameNoSpace}Setup*.exe
+Source: *; DestDir: {app}\Setup; Flags: ignoreversion recursesubdirs; Excludes: *.---, *.bak,  *.bak, *.suo, *.user, obj, .vs, {#MyAppPublisher}{#MyAppNameNoSpace}Setup*.exe
 Source: ..\*; DestDir: {app}; Flags: ignoreversion
 Source: ..\Bin\Release\*.exe; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs; Excludes: *vshost.exe
 Source: ..\Bin\Release\*.dll; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
@@ -110,41 +110,71 @@ Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: 
 [Run]
 ;Parameters: /passive /norestart;
 Filename: {app}\Setup\dotNetFx45_Full_setup.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}
-Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall skipifsilent unchecked
+Filename: {app}\Setup\SQLiteODBCInstaller.exe
+;Filename: http://www.ch-werner.de/sqliteodbc; Flags: shellexec runasoriginaluser; Tasks: opensqliteodbc
 Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
-Filename: http://www.ch-werner.de/sqliteodbc; Flags: shellexec runasoriginaluser; Tasks: opensqliteodbc
+Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall skipifsilent unchecked
 
 [Code]
 function IsDotNetDetected(version: string; service: cardinal): boolean;
 // Indicates whether the specified version and service pack of the .NET Framework is installed.
 //
 // version -- Specify one of these strings for the required .NET Framework version:
-//    'v1.1.4322'     .NET Framework 1.1
-//    'v2.0.50727'    .NET Framework 2.0
+//    'v1.1'          .NET Framework 1.1
+//    'v2.0'          .NET Framework 2.0
 //    'v3.0'          .NET Framework 3.0
 //    'v3.5'          .NET Framework 3.5
 //    'v4\Client'     .NET Framework 4.0 Client Profile
 //    'v4\Full'       .NET Framework 4.0 Full Installation
 //    'v4.5'          .NET Framework 4.5
+//    'v4.5.1'        .NET Framework 4.5.1
+//    'v4.5.2'        .NET Framework 4.5.2
+//    'v4.6'          .NET Framework 4.6
+//    'v4.6.1'        .NET Framework 4.6.1
+//    'v4.6.2'        .NET Framework 4.6.2
+//    'v4.7'          .NET Framework 4.7
+//    'v4.7.1'        .NET Framework 4.7.1
+//    'v4.7.2'        .NET Framework 4.7.2
+//    'v4.8'          .NET Framework 4.8
 //
 // service -- Specify any non-negative integer for the required service pack level:
 //    0               No service packs required
 //    1, 2, etc.      Service pack 1, 2, etc. required
 var
-    key: string;
-    install, release, serviceCount: cardinal;
-    check45, success: boolean;
+    key, versionKey: string;
+    install, release, serviceCount, versionRelease: cardinal;
+    success: boolean;
 var reqNetVer : string;
 begin
-    // .NET 4.5 installs as update to .NET 4.0 Full
-    if version = 'v4.5' then begin
-        version := 'v4\Full';
-        check45 := true;
-    end else
-        check45 := false;
+    versionKey := version;
+    versionRelease := 0;
+
+    // .NET 1.1 and 2.0 embed release number in version key
+    if version = 'v1.1' then begin
+        versionKey := 'v1.1.4322';
+    end else if version = 'v2.0' then begin
+        versionKey := 'v2.0.50727';
+    end
+
+    // .NET 4.5 and newer install as update to .NET 4.0 Full
+    else if Pos('v4.', version) = 1 then begin
+        versionKey := 'v4\Full';
+        case version of
+          'v4.5':   versionRelease := 378389;
+          'v4.5.1': versionRelease := 378675; // 378758 on Windows 8 and older
+          'v4.5.2': versionRelease := 379893;
+          'v4.6':   versionRelease := 393295; // 393297 on Windows 8.1 and older
+          'v4.6.1': versionRelease := 394254; // 394271 before Win10 November Update
+          'v4.6.2': versionRelease := 394802; // 394806 before Win10 Anniversary Update
+          'v4.7':   versionRelease := 460798; // 460805 before Win10 Creators Update
+          'v4.7.1': versionRelease := 461308; // 461310 before Win10 Fall Creators Update
+          'v4.7.2': versionRelease := 461808; // 461814 before Win10 April 2018 Update
+          'v4.8':   versionRelease := 528040; // 528049 before Win10 May 2019 Update
+        end;
+    end;
 
     // installation key group for all .NET versions
-    key := 'SOFTWARE\Microsoft\NET Framework Setup\NDP\' + version;
+    key := 'SOFTWARE\Microsoft\NET Framework Setup\NDP\' + versionKey;
 
     // .NET 3.0 uses value InstallSuccess in subkey Setup
     if Pos('v3.0', version) = 1 then begin
@@ -153,17 +183,17 @@ begin
         success := RegQueryDWordValue(HKLM, key, 'Install', install);
     end;
 
-    // .NET 4.0/4.5 uses value Servicing instead of SP
+    // .NET 4.0 and newer use value Servicing instead of SP
     if Pos('v4', version) = 1 then begin
         success := success and RegQueryDWordValue(HKLM, key, 'Servicing', serviceCount);
     end else begin
         success := success and RegQueryDWordValue(HKLM, key, 'SP', serviceCount);
     end;
 
-    // .NET 4.5 uses additional value Release
-    if check45 then begin
+    // .NET 4.5 and newer use additional value Release
+    if versionRelease > 0 then begin
         success := success and RegQueryDWordValue(HKLM, key, 'Release', release);
-        success := success and (release >= 378389);
+        success := success and (release >= versionRelease);
     end;
 
     result := success and (install = 1) and (serviceCount >= service);
