@@ -221,7 +221,7 @@
       <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="GenerateIntervalDefault" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">3</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="GenerateIntervalPeriod" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">120</Value>
