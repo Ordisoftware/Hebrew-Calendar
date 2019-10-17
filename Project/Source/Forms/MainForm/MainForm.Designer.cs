@@ -109,6 +109,7 @@
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.MenuSettings = new System.Windows.Forms.ToolStripDropDownButton();
@@ -146,7 +147,6 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter();
-      this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -833,6 +833,13 @@
       this.toolStripMenuItem4.Tag = "http://www.calj.net";
       this.toolStripMenuItem4.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
+      // toolStripMenuItem7
+      // 
+      resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
+      this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+      this.toolStripMenuItem7.Tag = "http://www.chiourim.com/cal/calendrier_hebraique.php";
+      this.toolStripMenuItem7.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
       // Sep6
       // 
       this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -1095,13 +1102,6 @@
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
       // 
-      // toolStripMenuItem7
-      // 
-      resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
-      this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-      this.toolStripMenuItem7.Tag = "http://www.chiourim.com/cal/calendrier_hebraique.php";
-      this.toolStripMenuItem7.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1161,7 +1161,6 @@
     internal System.Windows.Forms.ToolStripMenuItem EditScreenBottomRight;
     internal System.Windows.Forms.ToolStripMenuItem EditConfirmClosing;
     internal System.Windows.Forms.ToolStripMenuItem EditESCtoExit;
-    private System.Windows.Forms.ToolStripMenuItem ActionResetWinSettings;
     private System.Windows.Forms.ToolStripSeparator Sep3;
     internal System.Windows.Forms.ToolStripMenuItem EditShowTips;
     private System.Windows.Forms.SaveFileDialog SaveFileDialog;
@@ -1261,6 +1260,7 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+    internal System.Windows.Forms.ToolStripMenuItem ActionResetWinSettings;
   }
 }
 

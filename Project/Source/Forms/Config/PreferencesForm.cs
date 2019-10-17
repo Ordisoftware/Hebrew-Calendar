@@ -282,9 +282,7 @@ namespace Ordisoftware.HebrewCalendar
       string lng = Program.Settings.GPSLongitude;
       int shabat = EditShabatDay.SelectedIndex;
       Program.Settings.Reset();
-      Program.Settings.Reload();
       Program.Settings.UpgradeResetRequiredV3_0 = false;
-      Program.Settings.Save();
       DoReset = true;
       Reseted = true;
       Program.Settings.GPSCountry = country;
@@ -292,6 +290,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSLatitude = lat;
       Program.Settings.GPSLongitude = lng;
       Program.Settings.ShabatDay = shabat;
+      Program.Settings.RestoreMainForm();
       Close();
     }
 
