@@ -50,6 +50,10 @@
       this.linkLabel4 = new System.Windows.Forms.LinkLabel();
       this.linkLabel5 = new System.Windows.Forms.LinkLabel();
       this.label7 = new System.Windows.Forms.Label();
+      this.label5 = new System.Windows.Forms.Label();
+      this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+      this.label8 = new System.Windows.Forms.Label();
+      this.linkLabel6 = new System.Windows.Forms.LinkLabel();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -198,12 +202,42 @@
       resources.ApplyResources(this.label7, "label7");
       this.label7.Name = "label7";
       // 
+      // label5
+      // 
+      resources.ApplyResources(this.label5, "label5");
+      this.label5.Name = "label5";
+      // 
+      // linkLabel3
+      // 
+      this.linkLabel3.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel3, "linkLabel3");
+      this.linkLabel3.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel3.Name = "linkLabel3";
+      this.linkLabel3.TabStop = true;
+      // 
+      // label8
+      // 
+      resources.ApplyResources(this.label8, "label8");
+      this.label8.Name = "label8";
+      // 
+      // linkLabel6
+      // 
+      this.linkLabel6.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel6, "linkLabel6");
+      this.linkLabel6.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel6.Name = "linkLabel6";
+      this.linkLabel6.TabStop = true;
+      // 
       // AboutBox
       // 
       this.AcceptButton = this.buttonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.buttonClose;
+      this.Controls.Add(this.linkLabel6);
+      this.Controls.Add(this.label8);
+      this.Controls.Add(this.linkLabel3);
+      this.Controls.Add(this.label5);
       this.Controls.Add(this.linkLabel5);
       this.Controls.Add(this.label7);
       this.Controls.Add(this.panel1);
@@ -262,5 +296,9 @@
     private System.Windows.Forms.LinkLabel linkLabel4;
     private System.Windows.Forms.LinkLabel linkLabel5;
     private System.Windows.Forms.Label label7;
+    private System.Windows.Forms.Label label5;
+    private System.Windows.Forms.LinkLabel linkLabel3;
+    private System.Windows.Forms.Label label8;
+    private System.Windows.Forms.LinkLabel linkLabel6;
   }
 }

@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-10 </edited>
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -113,13 +112,7 @@ namespace Ordisoftware.HebrewCalendar
       = AppRootFolderPath + "Application.ico";
 
     /// <summary>
-    /// Indicate filename of the application's icon.
-    /// </summary>
-    static public readonly string GPSFilename
-      = AppDocumentsFolderPath + "WorldCities.csv";
-
-    /// <summary>
-    /// Indicate name of the help file.
+    /// Indicate filename of the help.
     /// </summary>
     static public string HelpFilename
     {
@@ -128,6 +121,12 @@ namespace Ordisoftware.HebrewCalendar
         return AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "index-" + Localizer.Language + ".htm";
       }
     }
+
+    /// <summary>
+    /// Indicate filename of the GPS database.
+    /// </summary>
+    static public readonly string GPSFilename
+      = AppDocumentsFolderPath + "WorldCities.csv";
 
   }
 

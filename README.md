@@ -91,6 +91,12 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
+#### 2019.10.18 - Version 3.3
+
+- Improve UI.
+- Some fixes.
+- Some code refactorings.
+
 #### 2019.10.17 - Version 3.2
 
 - Add search month window.

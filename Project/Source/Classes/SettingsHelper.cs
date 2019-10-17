@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-08 </edited>
+/// <edited> 2019-10 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCalendar.Properties;
@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.EditScreenBottomRight.Checked = false;
       MainForm.EditScreenCenter.Checked = true;
       MainForm.EditConfirmClosing.Checked = true;
-      MainForm.EditESCtoExit.Checked = false;
+      MainForm.EditESCtoExit.Checked = true;
       MainForm.EditShowTips.Checked = true;
       MainForm.SetView(ViewModeType.Month);
       settings.Store();
