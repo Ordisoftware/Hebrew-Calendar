@@ -24,9 +24,6 @@ namespace Ordisoftware.HebrewCalendar
   public partial class CelebrationsForm : Form
   {
 
-    /// <summary>
-    /// Indicate the singleton instance.
-    /// </summary>
     static internal CelebrationsForm Instance { get; private set; }
 
     static CelebrationsForm()
@@ -53,12 +50,12 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( (SeasonChangeType)row.SeasonChange != SeasonChangeType.None )
           Instance.ListView.Items.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()))
-            .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChangeType)row.SeasonChange))
-            .Tag = row.Date;
+          .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChangeType)row.SeasonChange))
+          .Tag = row.Date;
         if ( (TorahEventType)row.TorahEvents != TorahEventType.None )
           Instance.ListView.Items.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()))
-            .SubItems.Add(Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents))
-            .Tag = row.Date;
+          .SubItems.Add(Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents))
+          .Tag = row.Date;
       }
       Instance.Show();
       Instance.BringToFront();

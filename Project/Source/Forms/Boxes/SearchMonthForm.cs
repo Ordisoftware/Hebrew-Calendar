@@ -19,14 +19,14 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  public partial class SearchEventForm : Form
+  public partial class SearchMonthForm : Form
   {
 
     private Data.LunisolarCalendar.LunisolarDaysRow CurrentDay;
 
     private bool Mutex;
 
-    public SearchEventForm()
+    public SearchMonthForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
@@ -38,21 +38,9 @@ namespace Ordisoftware.HebrewCalendar
       CurrentDay = MainForm.Instance.CurrentDay;
       EditYear.Minimum = MainForm.Instance.YearFirst;
       EditYear.Maximum = MainForm.Instance.YearLast;
-      EditYear.Value = DateTime.Now.Year;
-      foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-        if ( type != TorahEventType.None )
-        {
-          var item = new TorahEventItem() { Text = Translations.TorahEvent.GetLang(type), Event = type };
-          int index = SelectEvents.Items.Add(item);
-        }
-      SelectEvents.SelectedIndex = 0;
       Mutex = false;
-      ActiveControl = SelectEvents;
-    }
-
-    private void SearchEventForm_Shown(object sender, EventArgs e)
-    {
-      SelectChanged(null, null);
+      EditYear.Value = DateTime.Now.Year;
+      ActiveControl = SelectMonth;
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)
@@ -72,17 +60,34 @@ namespace Ordisoftware.HebrewCalendar
       ButtonOk.PerformClick();
     }
 
-    private void SelectChanged(object sender, EventArgs e)
+    private void EditYear_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
-                  where (TorahEventType)day.TorahEvents == ( (TorahEventItem)SelectEvents.SelectedItem ).Event
-                      && SQLiteUtility.GetDate(day.Date).Year == EditYear.Value
-                  select day ).FirstOrDefault();
-      if ( row == null ) return;
-      MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
+      SelectMonth.Items.Clear();
+      var rows = from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+                 where day.LunarDay == 1
+                    && SQLiteUtility.GetDate(day.Date).Year == EditYear.Value
+                 orderby day.LunarMonth
+                 select day;
+      foreach ( var row in rows )
+        if (row.LunarMonth > 0)
+          SelectMonth.Items.Add(row);
+      SelectMonth.SelectedIndex = 0;
     }
 
+    private void SelectMonth_Format(object sender, ListControlConvertEventArgs e)
+    {
+      if ( Mutex ) return;
+      int month = ( (Data.LunisolarCalendar.LunisolarDaysRow)e.ListItem ).LunarMonth;
+      e.Value = Translations.BabylonianHebrewMonthText[month];
+    }
+
+    private void SelectMonth_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( Mutex ) return;
+      var row = (Data.LunisolarCalendar.LunisolarDaysRow)SelectMonth.SelectedItem;
+      MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
+    }
   }
 
 }

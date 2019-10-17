@@ -58,7 +58,7 @@
       resources.ApplyResources(this.PictureBox, "PictureBox");
       this.PictureBox.Name = "PictureBox";
       this.PictureBox.TabStop = false;
-      this.PictureBox.Click += new System.EventHandler(this.PictureBox_Click);
+      this.PictureBox.Click += new System.EventHandler(this.Form_Click);
       // 
       // ButtonClose
       // 
@@ -91,7 +91,7 @@
       this.TopMost = true;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReminderForm_FormClosed);
       this.Shown += new System.EventHandler(this.ReminderForm_Shown);
-      this.Click += new System.EventHandler(this.PictureBox_Click);
+      this.Click += new System.EventHandler(this.Form_Click);
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-10 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -22,10 +22,13 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectYearsForm : Form
   {
 
-    const int GenerateIntervalPeriod = 120;
-    const int GenerateIntervalDefault = 5;
-    const int GenerateIntervalMin = 2;
-    const int GenerateIntervalMax = 10;
+    private const int GenerateIntervalPeriod = 120;
+    private const int GenerateIntervalDefault = 5;
+    private const int GenerateIntervalMin = 2;
+    private const int GenerateIntervalMax = 10;
+
+    private bool Mutex;
+    private int Year;
 
     public SelectYearsForm()
     {
@@ -33,14 +36,10 @@ namespace Ordisoftware.HebrewCalendar
       Icon = MainForm.Instance.Icon;
     }
 
-    private bool Mutex;
-    private int Year;
-
     private void SelectYearsRangeForm_Load(object sender, EventArgs e)
     {
-      DateTime date = DateTime.Now.AddYears(-1);
-      Year = date.Year;
       Mutex = true;
+      Year = DateTime.Now.AddYears(-1).Year;
       EditYearFirst.Minimum = Year - GenerateIntervalPeriod;
       EditYearFirst.Maximum = Year + GenerateIntervalPeriod;
       EditYearLast.Minimum = Year - GenerateIntervalPeriod;
@@ -70,26 +69,9 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ButtonOk_Click(object sender, EventArgs e)
     {
-      int yearFirst = (int)EditYearFirst.Value;
-      int yearLast = (int)EditYearLast.Value;
-      if ( yearFirst > yearLast )
-      {
-        int temp = yearFirst;
-        yearFirst = yearLast;
-        yearLast = temp;
-      }
-      if ( yearFirst == yearLast || yearFirst == yearLast + 1 )
-        yearLast = yearFirst + GenerateIntervalDefault;
-      if ( yearFirst > Year || Year > yearLast )
-      {
-        yearFirst = Year;
-        yearLast = Year + GenerateIntervalDefault;
-      }
-      if ( yearLast - yearFirst > GenerateIntervalMax )
+      if ( EditYearLast.Value - EditYearFirst.Value > GenerateIntervalMax )
         if ( !DisplayManager.QueryYesNo(Translations.BigCalendar.GetLang(GenerateIntervalMax)) )
           return;
-      EditYearFirst.Value = yearFirst;
-      EditYearLast.Value = yearLast;
       DialogResult = DialogResult.OK;
     }
 

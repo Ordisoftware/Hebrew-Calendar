@@ -23,7 +23,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private Data.LunisolarCalendar.LunisolarDaysRow CurrentDay;
 
-    internal bool LiveGoTo = false;
+    public bool LiveGoTo { get; set; }
 
     public SelectDayForm()
     {

@@ -623,8 +623,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSearchMonth_Click(object sender, EventArgs e)
     {
-      //var form = new SearchMonthForm();
-      //if ( form.ShowDialog() != DialogResult.OK ) return;
+      var form = new SearchMonthForm();
+      if ( form.ShowDialog() != DialogResult.OK ) return;
     }
 
     /// <summary>
@@ -652,7 +652,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( ObjectDisposedException ex )
       {
-        NavigationForm._Instance = new NavigationForm();
+        NavigationForm.Instance = new NavigationForm();
         goto retry;
       }
       catch ( Exception ex )
