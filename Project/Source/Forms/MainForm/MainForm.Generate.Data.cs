@@ -57,6 +57,22 @@ namespace Ordisoftware.HebrewCalendar
         {
           if ( IsGenerating ) PopulateDays(yearFirst, yearLast);
           if ( IsGenerating ) AnalyseDays();
+          var lat = XmlConvert.ToDouble(Program.Settings.GPSLatitude);
+          if ( lat < 0 && !Program.Settings.TorahEventsCountAsMoon )
+            foreach ( var row in LunisolarCalendar.LunisolarDays )
+            {
+              if ( (SeasonChangeType)row.SeasonChange == SeasonChangeType.SpringEquinox )
+                row.SeasonChange = (int)SeasonChangeType.AutumnEquinox;
+              else
+              if ( (SeasonChangeType)row.SeasonChange == SeasonChangeType.AutumnEquinox )
+                row.SeasonChange = (int)SeasonChangeType.SpringEquinox;
+              else
+              if ( (SeasonChangeType)row.SeasonChange == SeasonChangeType.WinterSolstice )
+                row.SeasonChange = (int)SeasonChangeType.SummerSolstice;
+              else
+              if ( (SeasonChangeType)row.SeasonChange == SeasonChangeType.SummerSolstice )
+                row.SeasonChange = (int)SeasonChangeType.WinterSolstice;
+            }
           if ( IsGenerating ) CalendarText.Text = GenerateReport();
           if ( IsGenerating ) FillMonths();
         }
@@ -159,7 +175,8 @@ namespace Ordisoftware.HebrewCalendar
         var dateJulian = new DateTime((int)jdYear, (int)jdMonth, (int)jdDay, 0, 0, 0);
         string strDate = SQLiteUtility.GetDate((int)jdYear, (int)jdMonth, (int)jdDay);
         var day = LunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == strDate);
-        if ( day != null ) day.SeasonChange = (int)season;
+        if ( day == null ) return;
+        day.SeasonChange = (int)season;
       }
       var lat = XmlConvert.ToDouble(Program.Settings.GPSLatitude);
       if ( lat >= 0 || !Program.Settings.TorahEventsCountAsMoon )
