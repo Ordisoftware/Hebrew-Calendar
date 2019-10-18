@@ -40,7 +40,8 @@ namespace Ordisoftware.HebrewCalendar
       EditYear.Minimum = MainForm.Instance.YearFirst;
       EditYear.Maximum = MainForm.Instance.YearLast;
       Mutex = false;
-      EditYear.Value = DateTime.Now.Year;
+      var day = MainForm.Instance.CurrentDay;
+      EditYear.Value = day == null ? DateTime.Now.Year : SQLiteUtility.GetDate(day.Date).Year;
       ActiveControl = ListItems;
     }
 
