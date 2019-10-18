@@ -133,8 +133,8 @@
   <data name="LabelYear.Text" xml:space="preserve">
     <value>Année</value>
   </data>
-  <data name="SelectEvents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 59</value>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Célébration</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Chercher célébration</value>

@@ -14,6 +14,7 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Linq;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCalendar
@@ -40,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
       EditYear.Maximum = MainForm.Instance.YearLast;
       Mutex = false;
       EditYear.Value = DateTime.Now.Year;
-      ActiveControl = SelectMonth;
+      ActiveControl = ListItems;
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)
@@ -63,32 +64,35 @@ namespace Ordisoftware.HebrewCalendar
     private void EditYear_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      SelectMonth.Items.Clear();
+      ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
-                 where day.LunarDay == 1
+                 where day.IsNewMoon == 1
                     && SQLiteUtility.GetDate(day.Date).Year == EditYear.Value
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
         if ( row.LunarMonth > 0 )
         {
-          var item = SelectMonth.Items.Add(Translations.BabylonianHebrewMonthText[row.LunarMonth]);
-          item.SubItems.Add(SQLiteUtility.GetDate(row.Date).ToShortDateString());
+          var item = ListItems.Items.Add(Translations.BabylonianHebrewMonthText[row.LunarMonth]);
+          item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()));
           item.Tag = row;
+          if ( (TorahEventType)row.TorahEvents == TorahEventType.NewYearD1 )
+            item.Selected = true;
         }
-      if ( SelectMonth.Items.Count > 0 )
-        SelectMonth.Items[0].Selected = true;
+      if ( ListItems.Items.Count > 0 && ListItems.SelectedItems.Count == 0 )
+        ListItems.Items[0].Selected = true;
     }
 
     private void SelectMonth_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      if ( SelectMonth.SelectedItems.Count > 0 )
+      if ( ListItems.SelectedItems.Count > 0 )
       {
-        var row = (Data.LunisolarCalendar.LunisolarDaysRow)SelectMonth.SelectedItems[0].Tag;
+        var row = (Data.LunisolarCalendar.LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
         MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
       }
     }
+
   }
 
 }

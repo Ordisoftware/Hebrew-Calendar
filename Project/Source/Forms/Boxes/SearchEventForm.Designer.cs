@@ -34,7 +34,9 @@
       this.ButtonOk = new System.Windows.Forms.Button();
       this.EditYear = new System.Windows.Forms.NumericUpDown();
       this.LabelYear = new System.Windows.Forms.Label();
-      this.SelectEvents = new System.Windows.Forms.ListBox();
+      this.ListItems = new System.Windows.Forms.ListView();
+      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditYear)).BeginInit();
       this.SuspendLayout();
@@ -71,20 +73,35 @@
             0,
             0,
             0});
-      this.EditYear.ValueChanged += new System.EventHandler(this.SelectChanged);
+      this.EditYear.ValueChanged += new System.EventHandler(this.EditYear_ValueChanged);
       // 
       // LabelYear
       // 
       resources.ApplyResources(this.LabelYear, "LabelYear");
       this.LabelYear.Name = "LabelYear";
       // 
-      // SelectEvents
+      // ListItems
       // 
-      resources.ApplyResources(this.SelectEvents, "SelectEvents");
-      this.SelectEvents.FormattingEnabled = true;
-      this.SelectEvents.Name = "SelectEvents";
-      this.SelectEvents.SelectedIndexChanged += new System.EventHandler(this.SelectChanged);
-      this.SelectEvents.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
+      resources.ApplyResources(this.ListItems, "ListItems");
+      this.ListItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+      this.ListItems.FullRowSelect = true;
+      this.ListItems.HideSelection = false;
+      this.ListItems.MultiSelect = false;
+      this.ListItems.Name = "ListItems";
+      this.ListItems.UseCompatibleStateImageBehavior = false;
+      this.ListItems.View = System.Windows.Forms.View.Details;
+      this.ListItems.SelectedIndexChanged += new System.EventHandler(this.SelectEvents_SelectedIndexChanged);
+      this.ListItems.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
+      // 
+      // columnHeader1
+      // 
+      resources.ApplyResources(this.columnHeader1, "columnHeader1");
+      // 
+      // columnHeader2
+      // 
+      resources.ApplyResources(this.columnHeader2, "columnHeader2");
       // 
       // SearchEventForm
       // 
@@ -92,7 +109,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonCancel;
-      this.Controls.Add(this.SelectEvents);
+      this.Controls.Add(this.ListItems);
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.EditYear);
       this.Controls.Add(this.LabelYear);
@@ -102,7 +119,6 @@
       this.Name = "SearchEventForm";
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.SearchEventForm_Load);
-      this.Shown += new System.EventHandler(this.SearchEventForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.EditYear)).EndInit();
       this.ResumeLayout(false);
@@ -117,6 +133,8 @@
     private System.Windows.Forms.Button ButtonOk;
     private System.Windows.Forms.Label LabelYear;
     private System.Windows.Forms.NumericUpDown EditYear;
-    private System.Windows.Forms.ListBox SelectEvents;
+    internal System.Windows.Forms.ListView ListItems;
+    private System.Windows.Forms.ColumnHeader columnHeader1;
+    private System.Windows.Forms.ColumnHeader columnHeader2;
   }
 }

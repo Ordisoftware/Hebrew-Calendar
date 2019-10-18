@@ -133,6 +133,9 @@
   <data name="LabelYear.Text" xml:space="preserve">
     <value>Année</value>
   </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Mois</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Chercher mois lunaire</value>
   </data>

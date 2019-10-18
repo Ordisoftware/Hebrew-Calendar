@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ButtonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 2</value>
+    <value>246, 2</value>
   </data>
   <data name="ButtonCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="ButtonOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
+    <value>165, 2</value>
   </data>
   <data name="ButtonOk.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -184,10 +184,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 230</value>
+    <value>10, 291</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 28</value>
+    <value>324, 28</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -255,28 +255,43 @@
   <data name="&gt;&gt;LabelYear.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="SelectEvents.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="ListItems.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Celebration</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
+    <value>175</value>
+  </data>
+  <data name="ListItems.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="SelectEvents.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ListItems.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 59</value>
   </data>
-  <data name="SelectEvents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 160</value>
+  <data name="ListItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 218</value>
   </data>
-  <data name="SelectEvents.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="ListItems.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
   </data>
-  <data name="&gt;&gt;SelectEvents.Name" xml:space="preserve">
-    <value>SelectEvents</value>
+  <data name="&gt;&gt;ListItems.Name" xml:space="preserve">
+    <value>ListItems</value>
   </data>
-  <data name="&gt;&gt;SelectEvents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ListItems.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SelectEvents.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ListItems.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SelectEvents.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ListItems.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -286,7 +301,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>181, 268</value>
+    <value>344, 329</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -296,6 +311,18 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Search celebration</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
+    <value>columnHeader1</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
+    <value>columnHeader2</value>
+  </data>
+  <data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SearchEventForm</value>

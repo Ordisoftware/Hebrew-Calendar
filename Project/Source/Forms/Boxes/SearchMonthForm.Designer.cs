@@ -34,7 +34,7 @@
       this.ButtonOk = new System.Windows.Forms.Button();
       this.EditYear = new System.Windows.Forms.NumericUpDown();
       this.LabelYear = new System.Windows.Forms.Label();
-      this.SelectMonth = new System.Windows.Forms.ListView();
+      this.ListItems = new System.Windows.Forms.ListView();
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.PanelButtons.SuspendLayout();
@@ -43,9 +43,9 @@
       // 
       // PanelButtons
       // 
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ButtonCancel);
       this.PanelButtons.Controls.Add(this.ButtonOk);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ButtonCancel
@@ -64,8 +64,8 @@
       // 
       // EditYear
       // 
-      this.EditYear.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditYear, "EditYear");
+      this.EditYear.BackColor = System.Drawing.SystemColors.Window;
       this.EditYear.Name = "EditYear";
       this.EditYear.ReadOnly = true;
       this.EditYear.Value = new decimal(new int[] {
@@ -80,20 +80,20 @@
       resources.ApplyResources(this.LabelYear, "LabelYear");
       this.LabelYear.Name = "LabelYear";
       // 
-      // SelectMonth
+      // ListItems
       // 
-      resources.ApplyResources(this.SelectMonth, "SelectMonth");
-      this.SelectMonth.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+      resources.ApplyResources(this.ListItems, "ListItems");
+      this.ListItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-      this.SelectMonth.FullRowSelect = true;
-      this.SelectMonth.HideSelection = false;
-      this.SelectMonth.MultiSelect = false;
-      this.SelectMonth.Name = "SelectMonth";
-      this.SelectMonth.UseCompatibleStateImageBehavior = false;
-      this.SelectMonth.View = System.Windows.Forms.View.Details;
-      this.SelectMonth.SelectedIndexChanged += new System.EventHandler(this.SelectMonth_SelectedIndexChanged);
-      this.SelectMonth.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
+      this.ListItems.FullRowSelect = true;
+      this.ListItems.HideSelection = false;
+      this.ListItems.MultiSelect = false;
+      this.ListItems.Name = "ListItems";
+      this.ListItems.UseCompatibleStateImageBehavior = false;
+      this.ListItems.View = System.Windows.Forms.View.Details;
+      this.ListItems.SelectedIndexChanged += new System.EventHandler(this.SelectMonth_SelectedIndexChanged);
+      this.ListItems.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
       // 
       // columnHeader1
       // 
@@ -109,7 +109,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonCancel;
-      this.Controls.Add(this.SelectMonth);
+      this.Controls.Add(this.ListItems);
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.EditYear);
       this.Controls.Add(this.LabelYear);
@@ -133,7 +133,7 @@
     private System.Windows.Forms.Button ButtonOk;
     internal System.Windows.Forms.NumericUpDown EditYear;
     private System.Windows.Forms.Label LabelYear;
-    internal System.Windows.Forms.ListView SelectMonth;
+    internal System.Windows.Forms.ListView ListItems;
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader2;
   }
