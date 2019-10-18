@@ -67,7 +67,7 @@ namespace Ordisoftware.HebrewCalendar
       var rows = from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
                  where day.LunarDay == 1
                     && SQLiteUtility.GetDate(day.Date).Year == EditYear.Value
-                 orderby day.LunarMonth
+                 orderby day.Date
                  select day;
       foreach ( var row in rows )
         if (row.LunarMonth > 0)
