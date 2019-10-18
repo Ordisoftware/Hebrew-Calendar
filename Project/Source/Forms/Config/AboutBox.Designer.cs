@@ -196,6 +196,7 @@
       this.linkLabel5.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel5.Name = "linkLabel5";
       this.linkLabel5.TabStop = true;
+      this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
       // 
       // label7
       // 
@@ -214,6 +215,7 @@
       this.linkLabel3.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel3.Name = "linkLabel3";
       this.linkLabel3.TabStop = true;
+      this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
       // 
       // label8
       // 
@@ -227,6 +229,7 @@
       this.linkLabel6.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel6.Name = "linkLabel6";
       this.linkLabel6.TabStop = true;
+      this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
       // 
       // AboutBox
       // 
