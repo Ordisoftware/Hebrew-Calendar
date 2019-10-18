@@ -91,7 +91,15 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( string.IsNullOrEmpty(text) )
         return string.Empty;
-      return Encoding.ASCII.GetString(Encoding.GetEncoding("ISO-8859-8").GetBytes(text));
+      var normalizedString = text.Normalize(NormalizationForm.FormD);
+      var stringBuilder = new StringBuilder();
+      foreach ( var c in normalizedString )
+      {
+        var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+        if ( unicodeCategory != UnicodeCategory.NonSpacingMark )
+          stringBuilder.Append(c);
+      }
+      return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
     }
 
   }
