@@ -96,7 +96,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - Improve celebration and lunar month finder.
 - Improve select city window.
 - Fix cities names having special diacritics.
-- Fix lunar month's first day duplicated if no moon rise the next sun day.
+- Fix lunar month's first day duplicated if no moon rise on the next sun day.
 
 #### 2019.10.18 - Version 3.3
 
