@@ -72,7 +72,7 @@ namespace Ordisoftware.HebrewCalendar
           Enabled = true;
           do
           {
-            ActionGenerate.PerformClick();
+            ActionGenerate_Click(this, null);
           }
           while ( LunisolarCalendar.LunisolarDays.Count == 0 );
         }

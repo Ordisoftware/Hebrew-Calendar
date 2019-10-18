@@ -156,7 +156,7 @@ namespace Ordisoftware.HebrewCalendar
           var diff = YearLast - YearFirst;
           YearFirst = DateTime.Now.Year - 1;
           YearLast = YearFirst + diff;
-          ActionGenerate_Click(null, null);
+          ActionGenerate_Click(null, new EventArgs());
         }
       }
       catch ( Exception ex )
@@ -387,7 +387,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
           CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
-          ActionGenerate_Click(null, null);
+          ActionGenerate_Click(null, new EventArgs());
         }
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
         InitRemindLists();
@@ -515,9 +515,12 @@ namespace Ordisoftware.HebrewCalendar
         finally
         {
           IsReady = true;
-          GoToDate(DateTime.Now);
-          TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled || Program.Settings.ReminderShabatEnabled;
-          Timer_Tick(this, null);
+          if ( e != null )
+          {
+            GoToDate(DateTime.Now);
+            TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled || Program.Settings.ReminderShabatEnabled;
+            Timer_Tick(this, null);
+          }
         }
       }
       catch ( Exception ex )
