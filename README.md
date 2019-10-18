@@ -91,7 +91,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
-#### 2019.10.__ - Version 3.4
+#### 2019.10.20 - Version 3.4
 
 - Improve celebration and lunar month finder.
 - Improve select city window.
