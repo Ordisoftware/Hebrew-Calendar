@@ -70,23 +70,24 @@ namespace Ordisoftware.HebrewCalendar
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
-        if (row.LunarMonth > 0)
-          SelectMonth.Items.Add(row);
-      SelectMonth.SelectedIndex = 0;
-    }
-
-    private void SelectMonth_Format(object sender, ListControlConvertEventArgs e)
-    {
-      if ( Mutex ) return;
-      int month = ( (Data.LunisolarCalendar.LunisolarDaysRow)e.ListItem ).LunarMonth;
-      e.Value = Translations.BabylonianHebrewMonthText[month];
+        if ( row.LunarMonth > 0 )
+        {
+          var item = SelectMonth.Items.Add(Translations.BabylonianHebrewMonthText[row.LunarMonth]);
+          item.SubItems.Add(SQLiteUtility.GetDate(row.Date).ToShortDateString());
+          item.Tag = row;
+        }
+      if ( SelectMonth.Items.Count > 0 )
+        SelectMonth.Items[0].Selected = true;
     }
 
     private void SelectMonth_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      var row = (Data.LunisolarCalendar.LunisolarDaysRow)SelectMonth.SelectedItem;
-      MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
+      if ( SelectMonth.SelectedItems.Count > 0 )
+      {
+        var row = (Data.LunisolarCalendar.LunisolarDaysRow)SelectMonth.SelectedItems[0].Tag;
+        MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
+      }
     }
   }
 

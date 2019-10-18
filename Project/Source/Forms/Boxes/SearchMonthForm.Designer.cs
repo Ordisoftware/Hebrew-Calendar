@@ -34,7 +34,9 @@
       this.ButtonOk = new System.Windows.Forms.Button();
       this.EditYear = new System.Windows.Forms.NumericUpDown();
       this.LabelYear = new System.Windows.Forms.Label();
-      this.SelectMonth = new System.Windows.Forms.ListBox();
+      this.SelectMonth = new System.Windows.Forms.ListView();
+      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditYear)).BeginInit();
       this.SuspendLayout();
@@ -81,11 +83,25 @@
       // SelectMonth
       // 
       resources.ApplyResources(this.SelectMonth, "SelectMonth");
-      this.SelectMonth.FormattingEnabled = true;
+      this.SelectMonth.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+      this.SelectMonth.FullRowSelect = true;
+      this.SelectMonth.HideSelection = false;
+      this.SelectMonth.MultiSelect = false;
       this.SelectMonth.Name = "SelectMonth";
+      this.SelectMonth.UseCompatibleStateImageBehavior = false;
+      this.SelectMonth.View = System.Windows.Forms.View.Details;
       this.SelectMonth.SelectedIndexChanged += new System.EventHandler(this.SelectMonth_SelectedIndexChanged);
-      this.SelectMonth.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.SelectMonth_Format);
       this.SelectMonth.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
+      // 
+      // columnHeader1
+      // 
+      resources.ApplyResources(this.columnHeader1, "columnHeader1");
+      // 
+      // columnHeader2
+      // 
+      resources.ApplyResources(this.columnHeader2, "columnHeader2");
       // 
       // SearchMonthForm
       // 
@@ -117,6 +133,8 @@
     private System.Windows.Forms.Button ButtonOk;
     internal System.Windows.Forms.NumericUpDown EditYear;
     private System.Windows.Forms.Label LabelYear;
-    internal System.Windows.Forms.ListBox SelectMonth;
+    internal System.Windows.Forms.ListView SelectMonth;
+    private System.Windows.Forms.ColumnHeader columnHeader1;
+    private System.Windows.Forms.ColumnHeader columnHeader2;
   }
 }
