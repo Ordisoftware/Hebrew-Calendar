@@ -95,6 +95,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 - Improve celebration and lunar month finder.
 - Improve select city window.
+- Change exit button now doesn't shutdown app but minimize to tray.
 - Fix cities names having special diacritics.
 - Fix lunar month's first day duplicated if no moon rise on the next sun day.
 
