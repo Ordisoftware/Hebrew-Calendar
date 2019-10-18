@@ -205,15 +205,17 @@ namespace Ordisoftware.HebrewCalendar
                 "If you were born between sunset on this day and the next" + NewLine +
                 "morning, select the next day." + NewLine + NewLine +
                 "If you prefer to use the traditional group shabat, select for" + NewLine +
-                "example Saturday for Judaism or Sunday for Catholicism." },
+                "example Saturday for Judaism, Sunday for Catholicism or" + NewLine +
+                "Friday for Islam." },
         { "fr", "Le shabat personnel est la veille du jour de la naissance." + NewLine + NewLine +
                 "Si vous êtes né entre le coucher du soleil la veille de ce jour" + NewLine +
                 "et son coucher lors de ce jour, sélectionnez ce jour-là." + NewLine + NewLine +
-                "Si vous êtes né entre le coucher du soleil lors de ce jour et" + NewLine +
-                "le lendemain matin, sélectionnez le jour suivant." + NewLine + NewLine +
+                "Si vous êtes né entre le coucher du soleil lors de ce jour" + NewLine +
+                "et le lendemain matin, sélectionnez le jour suivant." + NewLine + NewLine +
                 "Si vous préférez utiliser le shabat de groupe traditionnel," + NewLine +
-                "sélectionnez par exemple le samedi pour le judaïsme ou" + NewLine +
-                "le dimanche pour le catholicisme."}
+                "sélectionnez par exemple le samedi pour le Judaïsme," + NewLine +
+                "le dimanche pour le Christianisme ou le vendredi" + NewLine +
+                "pour l'Islam" }
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
