@@ -52,19 +52,23 @@ namespace Ordisoftware.HebrewCalendar
     private void EditYearFirst_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
+      if ( EditYearFirst.Value < AstronomyUtility.LunisolerCalendar.MinSupportedDateTime.Year + 1 )
+        EditYearFirst.Value = AstronomyUtility.LunisolerCalendar.MinSupportedDateTime.Year + 1;
       if ( EditYearFirst.Value > Year )
         EditYearFirst.Value = Year;
-      if ( EditYearFirst.Value >= EditYearLast.Value - 1 )
-        EditYearLast.Value = EditYearFirst.Value + GenerateIntervalMin;
+      if ( EditYearLast.Value - EditYearFirst.Value > GenerateIntervalPeriod )
+        EditYearLast.Value = EditYearFirst.Value + GenerateIntervalPeriod;
     }
 
     private void EditYearLast_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
+      if ( EditYearLast.Value > AstronomyUtility.LunisolerCalendar.MaxSupportedDateTime.Year - 1 )
+        EditYearLast.Value = AstronomyUtility.LunisolerCalendar.MaxSupportedDateTime.Year - 1;
       if ( EditYearLast.Value < Year + GenerateIntervalMin )
         EditYearLast.Value = Year + GenerateIntervalMin;
-      if ( EditYearLast.Value <= EditYearFirst.Value + 1 )
-        EditYearFirst.Value = EditYearLast.Value - GenerateIntervalMin;
+      if ( EditYearLast.Value - EditYearFirst.Value > GenerateIntervalPeriod )
+        EditYearFirst.Value = EditYearLast.Value - GenerateIntervalPeriod;
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)

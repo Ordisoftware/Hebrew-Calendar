@@ -135,6 +135,7 @@
     <Compile Include="Dependencies\GenericParsing\Legacy Support\StringArray.cs" />
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
+    <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Names.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Positions.cs" />
     <Compile Include="Source\Enums\TorahEventItem.cs" />

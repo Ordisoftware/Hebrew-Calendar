@@ -55,12 +55,9 @@ namespace Ordisoftware.HebrewCalendar
           ActionPrint.PerformClick();
           return true;
         case Keys.Escape:
-          if ( IsGenerating )
-          {
-            if ( DisplayManager.QueryYesNo(Translations.StopGeneration.GetLang()) )
-              IsGenerating = false;
-          }
-          else
+          //if ( IsGenerating )
+          //  IsGenerating = false;
+          //else
           if ( EditESCtoExit.Checked )
             Close();
           return true;

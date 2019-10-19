@@ -40,8 +40,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate the japanese calendar instance.
     /// </summary>
-    static public readonly ChineseLunisolarCalendar JapaneseCalendar 
-      = new ChineseLunisolarCalendar();
+    static public readonly VietnameseCalendar LunisolerCalendar 
+      = new VietnameseCalendar();
 
     /// <summary>
     /// Indicate the SunMoon instance.

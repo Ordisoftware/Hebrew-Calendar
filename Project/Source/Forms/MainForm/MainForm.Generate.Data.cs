@@ -132,8 +132,8 @@ namespace Ordisoftware.HebrewCalendar
       {
         var date = SQLiteUtility.GetDate(day.Date);
         var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
-        day.LunarDay = AstronomyUtility.JapaneseCalendar.GetDayOfMonth(date);
-        day.IsNewMoon = day.LunarDay == 1 /*&& day.MoonriseType != MoonriseType.NextDay*/ ? 1 : 0;
+        day.LunarDay = AstronomyUtility.LunisolerCalendar.GetDayOfMonth(date);
+        day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
         day.MoonPhase = (int)AstronomyUtility.GetMoonPhase(date.Year, date.Month, date.Day);
         day.IsFullMoon = Convert.ToInt32((MoonPhaseType)day.MoonPhase == MoonPhaseType.Full);
         day.Sunrise = SQLiteUtility.FormatTime(ephemeris.Sunrise);
