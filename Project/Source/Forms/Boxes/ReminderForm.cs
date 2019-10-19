@@ -159,6 +159,17 @@ namespace Ordisoftware.HebrewCalendar
       SetFormsLocation();
     }
 
+    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+    {
+      switch ( keyData )
+      {
+        case Keys.Escape:
+          Close();
+          return true;
+      }
+      return base.ProcessCmdKey(ref msg, keyData);
+    }
+
     private void ButtonClose_Click(object sender, EventArgs e)
     {
       Close();
