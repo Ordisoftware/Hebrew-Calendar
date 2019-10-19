@@ -54,6 +54,9 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Control | Keys.P:
           ActionPrint.PerformClick();
           return true;
+        case Keys.Control | Keys.T:
+          GoToDate(DateTime.Now);
+          return true;
         case Keys.Escape:
           //if ( IsGenerating )
           //  IsGenerating = false;
