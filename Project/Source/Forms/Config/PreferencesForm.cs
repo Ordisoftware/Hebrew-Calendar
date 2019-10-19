@@ -132,6 +132,7 @@ namespace Ordisoftware.HebrewCalendar
           EditFontName.SelectedItem = item;
           break;
         }
+      EditLoomingDelay.Value = Program.Settings.BalloonLoomingDelay;
       EditGPSLongitude.Text = Program.Settings.GPSLongitude;
       EditGPSLatitude.Text = Program.Settings.GPSLatitude;
       EditBalloon.Checked = Program.Settings.BalloonEnabled;
@@ -235,6 +236,7 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
+      Program.Settings.BalloonLoomingDelay = (int)EditLoomingDelay.Value;
       Program.Settings.GPSLatitude = EditGPSLatitude.Text;
       Program.Settings.GPSLongitude = EditGPSLongitude.Text;
       Program.Settings.BalloonEnabled = EditBalloon.Checked;
@@ -293,6 +295,13 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.RestoreMainForm();
       Program.Settings.Language = Localizer.Language;
       Close();
+    }
+
+    private void EditBalloon_CheckedChanged(object sender, EventArgs e)
+    {
+      EditBalloonAutoHide.Enabled = EditBalloon.Checked;
+      LabelLoomingDelay.Enabled = EditBalloon.Checked;
+      EditLoomingDelay.Enabled = EditBalloon.Checked;
     }
 
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

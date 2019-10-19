@@ -84,6 +84,7 @@ namespace Ordisoftware.HebrewCalendar
         ActionPreferences.PerformClick();
       if ( Program.Settings.StartupHide )
         MenuShowHide.PerformClick();
+      TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
       Timer_Tick(null, null);
     }
 
@@ -389,6 +390,7 @@ namespace Ordisoftware.HebrewCalendar
           CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
           ActionGenerate_Click(null, new EventArgs());
         }
+        TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
         InitRemindLists();
         Timer_Tick(null, null);

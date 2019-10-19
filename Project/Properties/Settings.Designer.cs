@@ -956,5 +956,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["FirstLaunch"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int BalloonLoomingDelay {
+            get {
+                return ((int)(this["BalloonLoomingDelay"]));
+            }
+            set {
+                this["BalloonLoomingDelay"] = value;
+            }
+        }
     }
 }
