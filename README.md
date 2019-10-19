@@ -79,6 +79,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - Ctrl+C : Copy report to clipboard
 - Ctrl+D : Search a day
 - Ctrl+E : Search a celebration
+- Ctrl+M : Search a lunar month
 - Ctrl+N : Open the navigation window
 - Ctrl+P : Print the month view
 - Ctrl+S : Save report to text file
