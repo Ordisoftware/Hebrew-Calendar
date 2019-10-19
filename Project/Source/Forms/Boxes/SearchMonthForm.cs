@@ -84,7 +84,7 @@ namespace Ordisoftware.HebrewCalendar
         ListItems.Items[0].Selected = true;
     }
 
-    private void SelectMonth_SelectedIndexChanged(object sender, EventArgs e)
+    private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
       if ( ListItems.SelectedItems.Count > 0 )

@@ -92,7 +92,7 @@
       this.ListItems.Name = "ListItems";
       this.ListItems.UseCompatibleStateImageBehavior = false;
       this.ListItems.View = System.Windows.Forms.View.Details;
-      this.ListItems.SelectedIndexChanged += new System.EventHandler(this.SelectMonth_SelectedIndexChanged);
+      this.ListItems.SelectedIndexChanged += new System.EventHandler(this.ListItems_SelectedIndexChanged);
       this.ListItems.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
       // 
       // columnHeader1
