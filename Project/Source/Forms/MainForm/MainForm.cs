@@ -470,6 +470,11 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionExit_Click(object sender, EventArgs e)
     {
+      MenuShowHide.PerformClick();
+    }
+
+    private void MenuExit_Click(object sender, EventArgs e)
+    {
       if ( IsGenerating )
       {
         DisplayManager.ShowAdvert(Translations.CantExitApplicationWhileGenerating.GetLang());

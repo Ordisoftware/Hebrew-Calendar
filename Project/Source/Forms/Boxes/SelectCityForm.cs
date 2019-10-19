@@ -49,10 +49,10 @@ namespace Ordisoftware.HebrewCalendar
         while ( parser.Read() )
         {
           var city = new CityItem();
-          city.Name = parser["city"].RemoveDiacritics();
+          city.Name = parser["city"].Trim().RemoveDiacritics();
           city.Latitude = parser["lat"];
           city.Longitude = parser["lng"];
-          string country = parser["country"].RemoveDiacritics(); ;
+          string country = parser["country"].Trim().RemoveDiacritics(); ;
           if ( !GPS.ContainsKey(country) )
             GPS.Add(country, new List<CityItem>());
           GPS[country].Add(city);
@@ -70,6 +70,7 @@ namespace Ordisoftware.HebrewCalendar
     public string Longitude { get; private set; }
 
     private bool Mutex;
+    private bool IsLoading;
 
     public SelectCityForm()
     {
@@ -79,16 +80,24 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SelectCityForm_Load(object sender, EventArgs e)
     {
-      ListBoxCountries.DataSource = GPS.Keys.ToList();
-      ActiveControl = EditFilter;
-      if ( Program.Settings.GPSCountry != "" )
+      IsLoading = true;
+      try
       {
-        EditFilter.Text = Program.Settings.GPSCountry;
-        if ( Program.Settings.GPSCity != "" )
-          EditFilter.Text += Program.Settings.GPSCity;
+        ListBoxCountries.DataSource = GPS.Keys.ToList();
+        ActiveControl = EditFilter;
+        if ( Program.Settings.GPSCountry != "" )
+        {
+          EditFilter.Text = Program.Settings.GPSCountry;
+          if ( Program.Settings.GPSCity != "" )
+            EditFilter.Text += Program.Settings.GPSCity;
+        }
+        else
+          EditFilter_TextChanged(null, null);
       }
-      else
-        EditFilter_TextChanged(null, null);
+      finally
+      {
+        IsLoading = false;
+      }
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)
@@ -131,7 +140,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( list[0].Length < 3 )
           return;
         var resultCountry = from country in GPS
-                            where country.Key.ToLower().Contains(list[0])
+                            where country.Key.ToLower().StartsWith(list[0])
                             orderby country.Key
                             select country;
         if ( resultCountry.Count() == 0 )
@@ -155,7 +164,7 @@ namespace Ordisoftware.HebrewCalendar
         var resultCity = from country in GPS
                          from city in country.Value
                          where country.Key == strCountry
-                            && city.Name.ToLower().Contains(list[1])
+                            && city.Name.ToLower().StartsWith(list[1])
                          orderby city.Name
                          select city;
         if ( resultCity.Count() == 0 )
@@ -178,16 +187,24 @@ namespace Ordisoftware.HebrewCalendar
       }
       void tempo(string str)
       {
-        EditFilter.Text = str;
-        EditFilter.Enabled = false;
-        Application.DoEvents();
-        System.Threading.Thread.Sleep(500);
-        Application.DoEvents();
-        EditFilter.Enabled = true;
+        if ( !IsLoading )
+        {
+          ListBoxCountries.Enabled = false;
+          ListBoxCities.Enabled = false;
+          EditFilter.Text = str;
+          EditFilter.Enabled = false;
+          Application.DoEvents();
+          System.Threading.Thread.Sleep(1000);
+          Application.DoEvents();
+          EditFilter.Enabled = true;
+          ListBoxCountries.Enabled = true;
+          ListBoxCities.Enabled = true;
+        }
         ActiveControl = EditFilter;
         EditFilter.SelectionStart = EditFilter.Text.Length;
       }
     }
+
   }
 
 }

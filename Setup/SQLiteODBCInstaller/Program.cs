@@ -32,7 +32,7 @@ namespace SQLiteODBCInstaller
       if ( IntPtr.Size == 8 )
         RunShell("sqliteodbc_w64.exe", "/S");
       else
-        RunShell("sqliteodbc_w32.exe", "/S");
+        RunShell("sqliteodbc.exe", "/S");
     }
 
     static public void RunShell(string filename, string arguments)

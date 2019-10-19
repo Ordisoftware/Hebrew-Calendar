@@ -14,6 +14,7 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Linq;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCalendar
@@ -38,21 +39,10 @@ namespace Ordisoftware.HebrewCalendar
       CurrentDay = MainForm.Instance.CurrentDay;
       EditYear.Minimum = MainForm.Instance.YearFirst;
       EditYear.Maximum = MainForm.Instance.YearLast;
-      EditYear.Value = DateTime.Now.Year;
-      foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-        if ( type != TorahEventType.None )
-        {
-          var item = new TorahEventItem() { Text = Translations.TorahEvent.GetLang(type), Event = type };
-          int index = SelectEvents.Items.Add(item);
-        }
-      SelectEvents.SelectedIndex = 0;
       Mutex = false;
-      ActiveControl = SelectEvents;
-    }
-
-    private void SearchEventForm_Shown(object sender, EventArgs e)
-    {
-      SelectChanged(null, null);
+      var day = MainForm.Instance.CurrentDay;
+      EditYear.Value = day == null ? DateTime.Now.Year : SQLiteUtility.GetDate(day.Date).Year;
+      ActiveControl = ListItems;
     }
 
     private void ButtonOk_Click(object sender, EventArgs e)
@@ -72,15 +62,35 @@ namespace Ordisoftware.HebrewCalendar
       ButtonOk.PerformClick();
     }
 
-    private void SelectChanged(object sender, EventArgs e)
+    private void EditYear_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      var row = ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
-                  where (TorahEventType)day.TorahEvents == ( (TorahEventItem)SelectEvents.SelectedItem ).Event
-                      && SQLiteUtility.GetDate(day.Date).Year == EditYear.Value
-                  select day ).FirstOrDefault();
-      if ( row == null ) return;
-      MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
+      ListItems.Items.Clear();
+      var rows = from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+                 where (TorahEventType)day.TorahEvents != TorahEventType.None
+                    && SQLiteUtility.GetDate(day.Date).Year == EditYear.Value
+                 orderby day.Date
+                 select day;
+      foreach ( var row in rows )
+      {
+        var item = ListItems.Items.Add(Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents));
+        item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()));
+        item.Tag = row;
+        if ( (TorahEventType)row.TorahEvents == TorahEventType.NewYearD1 )
+          item.Selected = true;
+      }
+      if ( ListItems.Items.Count > 0 && ListItems.SelectedItems.Count == 0 )
+        ListItems.Items[0].Selected = true;
+    }
+
+    private void SelectEvents_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( Mutex ) return;
+      if ( ListItems.SelectedItems.Count > 0 )
+      {
+        var row = (Data.LunisolarCalendar.LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
+        MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
+      }
     }
 
   }

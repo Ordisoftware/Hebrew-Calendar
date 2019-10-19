@@ -91,6 +91,14 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 ## Changelog
 
+#### 2019.10.20 - Version 3.4
+
+- Improve celebration and lunar month finder.
+- Improve select city window.
+- Change exit button now doesn't shutdown app but minimize to tray.
+- Fix cities names having special diacritics.
+- Fix lunar month's first day duplicated if no moon rise on the next sun day.
+
 #### 2019.10.18 - Version 3.3
 
 - Improve UI.

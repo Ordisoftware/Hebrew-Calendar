@@ -133,7 +133,7 @@ namespace Ordisoftware.HebrewCalendar
         var date = SQLiteUtility.GetDate(day.Date);
         var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
         day.LunarDay = AstronomyUtility.JapaneseCalendar.GetDayOfMonth(date);
-        day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
+        day.IsNewMoon = day.LunarDay == 1 /*&& day.MoonriseType != MoonriseType.NextDay*/ ? 1 : 0;
         day.MoonPhase = (int)AstronomyUtility.GetMoonPhase(date.Year, date.Month, date.Day);
         day.IsFullMoon = Convert.ToInt32((MoonPhaseType)day.MoonPhase == MoonPhaseType.Full);
         day.Sunrise = SQLiteUtility.FormatTime(ephemeris.Sunrise);
@@ -209,7 +209,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( !UpdateProgress(progress++, Count, Translations.ProgressAnalyzeDays.GetLang()) ) return;
           if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month);
           day.LunarMonth = month;
-          if ( day.LunarDay == 1 ) delta = 0;
+          if ( day.IsNewMoon == 1 ) delta = 0;
           if ( (MoonriseType)day.MoonriseType == MoonriseType.NextDay
             && Program.Settings.TorahEventsCountAsMoon )
             delta = 1;
