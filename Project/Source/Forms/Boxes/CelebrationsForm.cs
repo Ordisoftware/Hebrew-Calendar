@@ -85,13 +85,17 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ListView_SelectedIndexChanged(object sender, EventArgs e)
     {
-      try
-      {
-        NavigationForm.Instance.Date = SQLiteUtility.GetDate(ListView.SelectedItems[0].SubItems[1].Tag.ToString());
-      }
-      catch
-      {
-      }
+      if ( ListView.SelectedItems.Count > 0 )
+        try
+        {
+          if ( !MainForm.Instance.Visible )
+            MainForm.Instance.MenuShowHide.PerformClick();
+          NavigationForm.Instance.Date = SQLiteUtility.GetDate(ListView.SelectedItems[0].SubItems[1].Tag.ToString());
+          BringToFront();
+        }
+        catch
+        {
+        }
     }
 
     private void ListView_DoubleClick(object sender, EventArgs e)
