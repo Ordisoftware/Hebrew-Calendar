@@ -66,11 +66,13 @@ namespace Ordisoftware.HebrewCalendar
 
     private bool TimerErrorShown = false;
 
-    internal DateTime DateFirst;
-    internal int YearFirst;
+    internal Data.LunisolarCalendar.LunisolarDaysRow CurrentDay { get; private set; }
 
-    internal DateTime DateLast;
+    internal int YearFirst;
+    internal DateTime DateFirst;
+
     internal int YearLast;
+    internal DateTime DateLast;
 
     private Dictionary<TorahEventType, bool> TorahEventRemindList
       = new Dictionary<TorahEventType, bool>();
