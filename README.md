@@ -22,6 +22,14 @@ A tool for Windows written in C# that allows to generate a daily calendar based 
 - Navigation by day window from the Tray Icon.
 - English, French.
 
+# Review
+
+[Softpedia.com](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml)
+
+_"Efficient and intuitive calendar app for the Hebrew Torah"_
+
+![Note](http://www.ordisoftware.com/uploads/2019/10/softpedia4.5-1.png)
+
 ## Requirements
 
 - Windows Vista x32/x64 or superior
