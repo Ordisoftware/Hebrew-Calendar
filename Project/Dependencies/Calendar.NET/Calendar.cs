@@ -923,7 +923,7 @@ namespace Calendar.NET
       SizeF friSize = g.MeasureString("Fri", _dayOfWeekFont);
       SizeF satSize = g.MeasureString("Sat", _dayOfWeekFont);
       SizeF dateHeaderSize = g.MeasureString(
-          _calendarDate.ToString("MMMM") + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
+          CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
       int headerSpacing = Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height,
                     satSize.Height) + 5;
       int controlsSpacing = ( ( !_showTodayButton ) && ( !_showDateInHeader ) && ( !_showArrowControls ) ) ? 0 : 30;
@@ -1082,7 +1082,7 @@ namespace Calendar.NET
       if ( _showDateInHeader )
       {
         g.DrawString(
-            _calendarDate.ToString("MMMM") + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture),
+            CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture),
             _dateHeaderFont, Brushes.Black, ClientSize.Width - MarginSize - dateHeaderSize.Width,
             MarginSize);
       }
