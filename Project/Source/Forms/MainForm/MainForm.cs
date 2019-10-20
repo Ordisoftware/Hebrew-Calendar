@@ -181,7 +181,6 @@ namespace Ordisoftware.HebrewCalendar
           Visible = true;
           ShowInTaskbar = true;
           WindowState = Program.Settings.MainFormState;
-          NavigationForm.Instance.Date = DateTime.Now;
           if ( IsReady )
           {
             var old = TopMost;
@@ -655,7 +654,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
         {
-          NavigationForm.Instance.Date = DateTime.Now;
+          NavigationForm.Instance.Date = SQLiteUtility.GetDate(CurrentDay.Date);
           NavigationForm.Instance.Show();
           NavigationForm.Instance.BringToFront();
         }
