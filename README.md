@@ -96,7 +96,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - F8 : Preferences
 - F11 : Help
 - F12 : About
-- Escape : Close window or Cancel process 
+- Escape : Close window
 
 ## Changelog
 
