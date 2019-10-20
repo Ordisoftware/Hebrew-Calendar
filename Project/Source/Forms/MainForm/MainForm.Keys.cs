@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       switch ( keyData )
       {
-        case Keys.Tab:
+        case Keys.Control | Keys.Tab:
           if ( Program.Settings.CurrentView == ViewModeType.Text )
             SetView(ViewModeType.Month);
           else
