@@ -53,10 +53,15 @@ namespace Ordisoftware.HebrewCalendar
           if ( e != null )
           {
             GoToDate(DateTime.Now);
-            TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled || Program.Settings.ReminderShabatEnabled;
+            TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled 
+                                 || Program.Settings.ReminderShabatEnabled;
             Timer_Tick(this, null);
           }
         }
+      }
+      catch ( SunSetRiseException )
+      {
+        throw;
       }
       catch ( Exception ex )
       {

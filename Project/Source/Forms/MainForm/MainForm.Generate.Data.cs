@@ -82,6 +82,10 @@ namespace Ordisoftware.HebrewCalendar
           LunisolarDaysBindingSource.DataSource = LunisolarCalendar.LunisolarDays;
         }
       }
+      catch ( SunSetRiseException )
+      {
+        throw;
+      }
       catch ( Exception except )
       {
         except.Manage();
@@ -113,6 +117,10 @@ namespace Ordisoftware.HebrewCalendar
               row.Date = SQLiteUtility.GetDate(year, month, day);
               InitializeDay(row);
               LunisolarCalendar.LunisolarDays.AddLunisolarDaysRow(row);
+            }
+            catch ( SunSetRiseException )
+            {
+              throw;
             }
             catch ( Exception ex )
             {
@@ -152,6 +160,10 @@ namespace Ordisoftware.HebrewCalendar
         day.SeasonChange = 0;
         day.LunarMonth = 0;
         day.TorahEvents = 0;
+      }
+      catch ( SunSetRiseException )
+      {
+        throw;
       }
       catch ( Exception ex )
       {
