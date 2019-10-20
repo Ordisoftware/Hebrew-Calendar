@@ -770,15 +770,7 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    internal Data.LunisolarCalendar.LunisolarDaysRow CurrentDay
-    {
-      get
-      {
-        return ( from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
-                 where SQLiteUtility.GetDate(day.Date) == CalendarMonth.CalendarDate
-                 select day ).FirstOrDefault();
-      }
-    }
+    internal Data.LunisolarCalendar.LunisolarDaysRow CurrentDay { get; private set; }
 
     /// <summary>
     /// Set the data position.
@@ -799,6 +791,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
+        CurrentDay = (Data.LunisolarCalendar.LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
         CalendarGrid.Update();
       }
       catch
