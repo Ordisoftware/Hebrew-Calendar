@@ -323,16 +323,16 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.SelectBirthDay.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Translations.PersonalShabatNotice.GetLang()) ) return;
       DateTime date = DateTime.Now;
       var formDate = new SelectDayForm();
       formDate.Text = Translations.SelectBirthday.GetLang();
-      if ( formDate.ShowDialog() == DialogResult.Cancel ) return;
+      if ( formDate.ShowDialog() != DialogResult.OK ) return;
       date = formDate.MonthCalendar.SelectionStart.Date;
       var formTime = new SelectBirthTime();
-      formTime.ShowDialog();
-      var time = formTime.EditTime.Value.TimeOfDay;
+      if ( formTime.ShowDialog() != DialogResult.OK ) return;
       var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
+      var time = formTime.EditTime.Value.TimeOfDay;
       if ( time >= new TimeSpan(0, 0, 0) && time < ephemeris.Sunset )
         date = date.AddDays(-1);
       Program.Settings.ShabatDay = (int)date.DayOfWeek;

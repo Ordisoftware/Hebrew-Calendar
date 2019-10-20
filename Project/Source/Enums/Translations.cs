@@ -196,7 +196,7 @@ namespace Ordisoftware.HebrewCalendar
                 "célébrations seront les mêmes pour le nord et le sud." }
       };
 
-    static public readonly Dictionary<string, string> SelectBirthDay
+    static public readonly Dictionary<string, string> PersonalShabatNotice
       = new Dictionary<string, string>()
       {
         { "en", "The personal shabat is the previous day of the birth." + NewLine + NewLine +
