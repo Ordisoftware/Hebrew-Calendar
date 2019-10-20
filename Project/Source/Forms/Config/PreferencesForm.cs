@@ -325,11 +325,17 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !DisplayManager.QueryYesNo(Translations.SelectBirthDay.GetLang()) ) return;
       DateTime date = DateTime.Now;
-      var form = new SelectDayForm();
-      form.Text = Translations.SelectBirthday.GetLang();
-      if ( form.ShowDialog() == DialogResult.Cancel ) return;
-      date = form.MonthCalendar.SelectionStart;
-      Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
+      var formDate = new SelectDayForm();
+      formDate.Text = Translations.SelectBirthday.GetLang();
+      if ( formDate.ShowDialog() == DialogResult.Cancel ) return;
+      date = formDate.MonthCalendar.SelectionStart.Date;
+      var formTime = new SelectBirthTime();
+      formTime.ShowDialog();
+      var time = formTime.EditTime.Value.TimeOfDay;
+      var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
+      if ( time >= new TimeSpan(0, 0, 0) && time < ephemeris.Sunset )
+        date = date.AddDays(-1);
+      Program.Settings.ShabatDay = (int)date.DayOfWeek;
       foreach ( DayOfWeekItem day in EditShabatDay.Items )
         if ( (DayOfWeek)Program.Settings.ShabatDay == day.Day )
           EditShabatDay.SelectedItem = day;
