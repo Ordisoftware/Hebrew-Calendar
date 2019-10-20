@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 2</value>
+    <value>272, 2</value>
   </data>
   <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -157,7 +157,7 @@
     <value>10, 330</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>374, 28</value>
+    <value>354, 28</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -181,19 +181,19 @@
     <value>Date</value>
   </data>
   <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>185</value>
+    <value>180</value>
   </data>
   <data name="columnHeader2.Text" xml:space="preserve">
     <value>Event</value>
   </data>
   <data name="columnHeader2.Width" type="System.Int32, mscorlib">
-    <value>155</value>
+    <value>145</value>
   </data>
   <data name="ListView.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 13</value>
   </data>
   <data name="ListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 304</value>
+    <value>347, 304</value>
   </data>
   <data name="ListView.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -217,7 +217,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>394, 368</value>
+    <value>374, 368</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

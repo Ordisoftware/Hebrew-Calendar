@@ -113,7 +113,9 @@
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.EditYear);
       this.Controls.Add(this.LabelYear);
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "SearchCelebrationFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.SearchCelebrationFormLocation;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SearchEventForm";

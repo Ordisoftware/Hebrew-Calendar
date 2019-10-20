@@ -33,6 +33,8 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void Run()
     {
+      if ( Instance.Location.X == 0 && Instance.Location.Y == 0 )
+        Instance.CenterToMainForm();
       if ( Instance.Visible )
       {
         Instance.BringToFront();
@@ -64,12 +66,6 @@ namespace Ordisoftware.HebrewCalendar
     private CelebrationsForm()
     {
       InitializeComponent();
-    }
-
-    private void CelebrationsForm_Load(object sender, EventArgs e)
-    {
-      if ( Location.X == 0 && Location.Y == 0 )
-        this.CenterToMainForm();
     }
 
     private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -968,5 +968,29 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["BalloonLoomingDelay"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point SearchLunarMonthFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["SearchLunarMonthFormLocation"]));
+            }
+            set {
+                this["SearchLunarMonthFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point SearchCelebrationFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["SearchCelebrationFormLocation"]));
+            }
+            set {
+                this["SearchCelebrationFormLocation"] = value;
+            }
+        }
     }
 }
