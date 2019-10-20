@@ -173,7 +173,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Generate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.GoTo.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.GoToDate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.CelebrationDay.cs">
