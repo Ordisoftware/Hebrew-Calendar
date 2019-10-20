@@ -572,7 +572,7 @@ namespace Ordisoftware.HebrewCalendar
         CalendarMonth.DrawToBitmap(bitmap, new Rectangle(0, 0, CalendarMonth.Width, CalendarMonth.Height));
         var document = new PrintDocument();
         document.DefaultPageSettings.Landscape = true;
-        document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 100, 100);
+        document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
         PrintDialog.Document = document;
         if ( PrintDialog.ShowDialog() == DialogResult.Cancel ) return;
         document.Print();
