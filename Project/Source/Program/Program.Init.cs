@@ -88,7 +88,6 @@ namespace Ordisoftware.HebrewCalendar
       if ( MainForm.Instance.ShabatForm != null )
       {
         MainForm.Instance.ShabatForm.Close();
-        MainForm.Instance.ShabatForm = null;
         MainForm.Instance.LastShabatReminded = null;
       }
       foreach ( Form form in Application.OpenForms )

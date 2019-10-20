@@ -134,10 +134,7 @@ namespace Ordisoftware.HebrewCalendar
         RemindCelebrationDayForms.Clear();
         LastShabatReminded = null;
         if ( ShabatForm != null )
-        {
           ShabatForm.Close();
-          ShabatForm = null;
-        }
       }
       catch ( Exception ex )
       {
