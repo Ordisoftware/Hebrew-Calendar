@@ -40,8 +40,8 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> ApplicationDescription
       = new Dictionary<string, string>()
       {
-        { "en", "A tool to generate a hebrew lunisolar calendar" },
-        { "fr", "Un outil pour générer un calendrier luni-solaire hébraïque" }
+        { "en", "A tool to generate a hebrew lunisolar calendar and remind celebrations" },
+        { "fr", "Un outil pour générer un calendrier luni-solaire hébraïque et rappeler les célébrations" }
       };
 
     static public readonly Dictionary<string, string> ExitApplication
