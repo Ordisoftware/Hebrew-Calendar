@@ -125,6 +125,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - Improve UI.
 - Some fixes.
 - Some code refactorings.
+- Setup install SQLite ODBC Driver if not present.
 
 #### 2019.10.17 - Version 3.2
 
