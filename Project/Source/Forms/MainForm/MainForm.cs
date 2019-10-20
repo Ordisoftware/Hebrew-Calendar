@@ -790,9 +790,13 @@ namespace Ordisoftware.HebrewCalendar
       }
       try
       {
-        LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
-        CurrentDay = (Data.LunisolarCalendar.LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-        CalendarGrid.Update();
+        int position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
+        if ( position > 0 )
+        {
+          LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
+          CurrentDay = (Data.LunisolarCalendar.LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
+          CalendarGrid.Update();
+        }
       }
       catch
       {
