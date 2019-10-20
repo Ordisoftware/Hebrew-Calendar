@@ -29,7 +29,7 @@ namespace SQLiteODBCInstaller
       {
         MessageBox.Show(ex.Message);
       }
-      if ( IntPtr.Size == 8 )
+      if ( IntPtr.Size > 4 )
         RunShell("sqliteodbc_w64.exe", "/S");
       else
         RunShell("sqliteodbc.exe", "/S");
