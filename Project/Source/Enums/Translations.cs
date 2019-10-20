@@ -199,14 +199,15 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> SelectBirthDay
       = new Dictionary<string, string>()
       {
-        { "en", "The personal shabbat is the previous day of the birth." + NewLine + NewLine +
+        { "en", "The personal shabat is the previous day of the birth." + NewLine + NewLine +
                 "If you were born between sunset the day before that day" + NewLine +
                 "and sunset on that day, select that day." + NewLine + NewLine +
                 "If you were born between sunset on this day and the next" + NewLine +
                 "morning, select the next day." + NewLine + NewLine +
                 "If you prefer to use the traditional group shabat, select for" + NewLine +
                 "example Saturday for Judaism, Sunday for Catholicism or" + NewLine +
-                "Friday for Islam." },
+                "Friday for Islam." + NewLine + NewLine + 
+                "Do you want to setup the personal shabat?" },
         { "fr", "Le shabat personnel est la veille du jour de la naissance." + NewLine + NewLine +
                 "Si vous êtes né entre le coucher du soleil la veille de ce jour" + NewLine +
                 "et son coucher lors de ce jour, sélectionnez ce jour-là." + NewLine + NewLine +
@@ -215,7 +216,8 @@ namespace Ordisoftware.HebrewCalendar
                 "Si vous préférez utiliser le shabat de groupe traditionnel," + NewLine +
                 "sélectionnez par exemple le samedi pour le Judaïsme," + NewLine +
                 "le dimanche pour le Christianisme ou le vendredi" + NewLine +
-                "pour l'Islam" }
+                "pour l'Islam" + NewLine + NewLine +
+                "Voulez-vous configurer le shabat personnel ?" }
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
