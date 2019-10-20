@@ -901,16 +901,16 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 484</value>
+    <value>88, 484</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 13</value>
+    <value>227, 13</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Unmodified VietnameseCalendar :</value>
+    <value>Unmodified VietnameseCalendar (CPOL 1.02) :</value>
   </data>
   <data name="&gt;&gt;label9.Name" xml:space="preserve">
     <value>label9</value>

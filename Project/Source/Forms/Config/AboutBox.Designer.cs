@@ -240,6 +240,7 @@
       this.linkLabel7.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel7.Name = "linkLabel7";
       this.linkLabel7.TabStop = true;
+      this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
       // 
       // label9
       // 
