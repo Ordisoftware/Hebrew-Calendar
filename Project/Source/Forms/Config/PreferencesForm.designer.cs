@@ -118,6 +118,7 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
+      this.LabelCountryCity = new System.Windows.Forms.Label();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
@@ -219,6 +220,7 @@
       // 
       // GroupBoxGPS
       // 
+      this.GroupBoxGPS.Controls.Add(this.LabelCountryCity);
       this.GroupBoxGPS.Controls.Add(this.ActionGetGPS);
       this.GroupBoxGPS.Controls.Add(this.EditGPSLatitude);
       this.GroupBoxGPS.Controls.Add(LabelGPSLatitude);
@@ -843,6 +845,12 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
+      // LabelCountryCity
+      // 
+      resources.ApplyResources(this.LabelCountryCity, "LabelCountryCity");
+      this.LabelCountryCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelCountryCity.Name = "LabelCountryCity";
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
@@ -982,5 +990,6 @@
     private System.Windows.Forms.CheckBox EditUseMoonDays;
     private System.Windows.Forms.NumericUpDown EditLoomingDelay;
     private System.Windows.Forms.Label LabelLoomingDelay;
+    private System.Windows.Forms.Label LabelCountryCity;
   }
 }
