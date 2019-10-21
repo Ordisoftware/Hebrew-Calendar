@@ -106,6 +106,10 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 ## Changelog
 
+#### 2019.10.21 - Version 3.6
+
+- Add time zone setting to have good sun and moon rise and set.
+
 #### 2019.10.21 - Version 3.5
 
 - Improve personal shabat setup by asking birth time.
