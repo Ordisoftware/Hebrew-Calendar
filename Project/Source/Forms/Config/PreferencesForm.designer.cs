@@ -43,6 +43,7 @@
       this.ActionResetSettings = new System.Windows.Forms.LinkLabel();
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
+      this.LabelCountryCity = new System.Windows.Forms.Label();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
       this.GroupBoxTextReport = new System.Windows.Forms.GroupBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -118,7 +119,6 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.LabelCountryCity = new System.Windows.Forms.Label();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
@@ -185,13 +185,17 @@
       // 
       // EditGPSLatitude
       // 
+      this.EditGPSLatitude.BackColor = System.Drawing.Color.White;
       resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
       this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
       // 
       // EditGPSLongitude
       // 
+      this.EditGPSLongitude.BackColor = System.Drawing.Color.White;
       resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
       this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
       // 
       // PanelButtons
       // 
@@ -229,6 +233,12 @@
       resources.ApplyResources(this.GroupBoxGPS, "GroupBoxGPS");
       this.GroupBoxGPS.Name = "GroupBoxGPS";
       this.GroupBoxGPS.TabStop = false;
+      // 
+      // LabelCountryCity
+      // 
+      resources.ApplyResources(this.LabelCountryCity, "LabelCountryCity");
+      this.LabelCountryCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelCountryCity.Name = "LabelCountryCity";
       // 
       // ActionGetGPS
       // 
@@ -525,7 +535,6 @@
       // 
       // GroupBoxReminder
       // 
-      resources.ApplyResources(this.GroupBoxReminder, "GroupBoxReminder");
       this.GroupBoxReminder.Controls.Add(this.EditReminderUseColors);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationHoursBefore);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationEveryMinutes);
@@ -547,6 +556,7 @@
       this.GroupBoxReminder.Controls.Add(this.EditUseMoonDays);
       this.GroupBoxReminder.Controls.Add(this.EditTimerEnabled);
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationEveryMinutes);
+      resources.ApplyResources(this.GroupBoxReminder, "GroupBoxReminder");
       this.GroupBoxReminder.Name = "GroupBoxReminder";
       this.GroupBoxReminder.TabStop = false;
       // 
@@ -803,13 +813,13 @@
       // 
       // GroupBoxSystem
       // 
-      resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangFR);
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangEN);
       this.GroupBoxSystem.Controls.Add(this.EditShowReminderInTaskBar);
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
       this.GroupBoxSystem.Controls.Add(this.EditShowMonthDayToolTip);
+      resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
       this.GroupBoxSystem.TabStop = false;
       // 
@@ -844,12 +854,6 @@
       this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
-      // 
-      // LabelCountryCity
-      // 
-      resources.ApplyResources(this.LabelCountryCity, "LabelCountryCity");
-      this.LabelCountryCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-      this.LabelCountryCity.Name = "LabelCountryCity";
       // 
       // PreferencesForm
       // 

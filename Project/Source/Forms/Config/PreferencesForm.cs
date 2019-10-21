@@ -178,6 +178,12 @@ namespace Ordisoftware.HebrewCalendar
       EditGPSLatitude.Text = OldLatitude.ToString();
       EditGPSLongitude.Text = OldLongitude.ToString();
       LabelCountryCity.Text = Program.Settings.GPSCountry + ", " + Program.Settings.GPSCity;
+      if ( Program.Settings.TimeZone != "" )
+      {
+        foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+          if ( Program.Settings.TimeZone == item.Id )
+            LabelCountryCity.Text += ", " + item.DisplayName;
+      }
       switch ( Program.Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
@@ -285,7 +291,7 @@ namespace Ordisoftware.HebrewCalendar
       string lng = Program.Settings.GPSLongitude;
       int shabat = EditShabatDay.SelectedIndex;
       Program.Settings.Reset();
-      Program.Settings.UpgradeResetRequiredV3_0 = false;
+      Program.Settings.UpgradeResetRequiredV3_6 = false;
       DoReset = true;
       Reseted = true;
       Program.Settings.GPSCountry = country;
@@ -316,6 +322,11 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSLongitude = form.Longitude;
       Program.Settings.GPSCountry = form.Country;
       Program.Settings.GPSCity = form.City;
+      if ( form.EditTimeZone.SelectedItem != null )
+      {
+        Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
+        LabelCountryCity.Text += ", " + ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
+      }
     }
 
     /// <summary>

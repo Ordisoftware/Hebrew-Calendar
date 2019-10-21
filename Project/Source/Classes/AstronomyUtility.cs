@@ -65,25 +65,23 @@ namespace Ordisoftware.HebrewCalendar
           ? new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0)
           : new Nullable<TimeSpan>();
       }
+      TimeZoneInfo timezoneinfo = null;
+      var timezoneinfos = TimeZoneInfo.GetSystemTimeZones();
+      foreach ( var item in timezoneinfos )
+        if ( item.Id == Program.Settings.TimeZone )
+          timezoneinfo = item;
+      if ( timezoneinfo == null )
+        throw new InvalidTimeZoneException();
+      var timezone = timezoneinfo.BaseUtcOffset.Hours + ( timezoneinfo.IsDaylightSavingTime(date) ? 1 : 0 );
       var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude),
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude),
-                                 TimeZoneInfo.Local.IsDaylightSavingTime(date.AddDays(1)) ? 2.0f : 1.0f,
+                                 timezone,
                                  1);
+      TimeSpan? sunRiseTime = calcEphem(strEphem.Substring(10, 4));
+      TimeSpan? sunSetTime = calcEphem(strEphem.Substring(15, 4));
       TimeSpan? moonRiseTime = calcEphem(strEphem.Substring(51, 4));
       TimeSpan? moonSetTime = calcEphem(strEphem.Substring(56, 4));
-      TimeSpan? sunRiseTime = new Nullable<TimeSpan>();
-      TimeSpan? sunSetTime = new Nullable<TimeSpan>();
-      DateTime sunRiseDate = DateTime.Now;
-      DateTime sunSetDate = DateTime.Now;
-      bool isSunRise = false;
-      bool isSunSet = false;
-      var v = SunTimes.Instance.CalculateSunRiseSetTimes(XmlConvert.ToDouble(Program.Settings.GPSLatitude),
-                                                         XmlConvert.ToDouble(Program.Settings.GPSLongitude),
-                                                         date, ref sunRiseDate, ref sunSetDate,
-                                                         ref isSunRise, ref isSunSet);
-      if ( isSunRise ) sunRiseTime = sunRiseDate.TimeOfDay;
-      if ( isSunSet ) sunSetTime = sunSetDate.TimeOfDay;
       return new Ephemeris()
       {
         Sunrise = sunRiseTime,

@@ -83,6 +83,12 @@ namespace Ordisoftware.HebrewCalendar
       IsLoading = true;
       try
       {
+        foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        {
+          int index = EditTimeZone.Items.Add(item);
+          if (Program.Settings.TimeZone == item.Id)
+            EditTimeZone.SelectedIndex = index;
+        }
         ListBoxCountries.DataSource = GPS.Keys.ToList();
         ActiveControl = EditFilter;
         if ( Program.Settings.GPSCountry != "" )
@@ -119,15 +125,18 @@ namespace Ordisoftware.HebrewCalendar
       City = ( (CityItem)ListBoxCities.SelectedItem ).Name;
       Latitude = ( (CityItem)ListBoxCities.SelectedItem ).Latitude;
       Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
-      ButtonOk.Enabled = true;
+      ButtonOk.Enabled = EditTimeZone.SelectedItem != null;
     }
+
+    bool foundCountry = false;
+    bool foundCity = false;
 
     private void EditFilter_TextChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
       Mutex = true;
-      bool foundCountry = false;
-      bool foundCity = false;
+      foundCountry = false;
+      foundCity = false;
       ListBoxCountries.SelectedIndex = -1;
       ListBoxCities.SelectedIndex = -1;
       try
@@ -182,13 +191,14 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        ButtonOk.Enabled = foundCountry && foundCity;
+        ButtonOk.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
         Mutex = false;
       }
       void tempo(string str)
       {
         if ( !IsLoading )
         {
+          EditTimeZone.Enabled = false;
           ListBoxCountries.Enabled = false;
           ListBoxCities.Enabled = false;
           EditFilter.Text = str;
@@ -196,6 +206,7 @@ namespace Ordisoftware.HebrewCalendar
           Application.DoEvents();
           System.Threading.Thread.Sleep(750);
           Application.DoEvents();
+          EditTimeZone.Enabled = true;
           EditFilter.Enabled = true;
           ListBoxCountries.Enabled = true;
           ListBoxCities.Enabled = true;
@@ -205,6 +216,10 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private void EditTimeZone_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      ButtonOk.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
+    }
   }
 
 }

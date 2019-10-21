@@ -48,10 +48,10 @@ namespace Ordisoftware.HebrewCalendar
         Settings.UpgradeRequired = false;
         Settings.Save();
       }
-      if ( Settings.UpgradeResetRequiredV3_0 )
+      if ( Settings.UpgradeResetRequiredV3_6 )
       {
         Settings.Reset();
-        Settings.UpgradeResetRequiredV3_0 = false;
+        Settings.UpgradeResetRequiredV3_6 = false;
         Settings.Language = Localizer.Language;
         Settings.Save();
       }

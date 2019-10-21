@@ -992,5 +992,29 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["SearchCelebrationFormLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TimeZone {
+            get {
+                return ((string)(this["TimeZone"]));
+            }
+            set {
+                this["TimeZone"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UpgradeResetRequiredV3_6 {
+            get {
+                return ((bool)(this["UpgradeResetRequiredV3_6"]));
+            }
+            set {
+                this["UpgradeResetRequiredV3_6"] = value;
+            }
+        }
     }
 }
