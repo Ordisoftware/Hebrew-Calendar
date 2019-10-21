@@ -36,6 +36,8 @@ namespace Ordisoftware.HebrewCalendar
     static MainForm()
     {
       Instance = new MainForm();
+      foreach ( TorahEventType value in Enum.GetValues(typeof(TorahEventType)) )
+        Instance.LastCelebrationReminded.Add(value, null);
     }
 
     /// <summary>
@@ -66,11 +68,13 @@ namespace Ordisoftware.HebrewCalendar
 
     private bool TimerErrorShown = false;
 
-    internal DateTime DateFirst;
-    internal int YearFirst;
+    internal Data.LunisolarCalendar.LunisolarDaysRow CurrentDay { get; private set; }
 
-    internal DateTime DateLast;
+    internal int YearFirst;
+    internal DateTime DateFirst;
+
     internal int YearLast;
+    internal DateTime DateLast;
 
     private Dictionary<TorahEventType, bool> TorahEventRemindList
       = new Dictionary<TorahEventType, bool>();
@@ -118,24 +122,19 @@ namespace Ordisoftware.HebrewCalendar
       {
         CelebrationsForm.Instance.Hide();
         NavigationForm.Instance.Hide();
+        foreach ( Form form in RemindCelebrationForms.ToList() )
+          form.Close();
+        foreach ( Form form in RemindCelebrationDayForms.Values.ToList() )
+          form.Close();
+        if ( ShabatForm != null )
+          ShabatForm.Close();
+        LastShabatReminded = null;
         int min = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Min();
         int max = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Max();
-        foreach ( Form item in RemindCelebrationForms.ToList() )
-          item.Close();
-        RemindCelebrationDates.Clear();
-        for ( int index = min; index < max; index++ )
+        for ( int index = min; index <= max; index++ )
           if ( LastCelebrationReminded.ContainsKey((TorahEventType)index) )
             LastCelebrationReminded[(TorahEventType)index] = null;
-        for ( int index = min; index < max; index++ )
-          if ( RemindCelebrationDayForms.ContainsKey((TorahEventType)index) )
-            RemindCelebrationDayForms[(TorahEventType)index].Close();
-        RemindCelebrationDayForms.Clear();
-        LastShabatReminded = null;
-        if ( ShabatForm != null )
-        {
-          ShabatForm.Close();
-          ShabatForm = null;
-        }
+        RemindCelebrationDates.Clear();
       }
       catch ( Exception ex )
       {

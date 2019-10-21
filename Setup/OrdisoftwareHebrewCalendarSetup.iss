@@ -3,7 +3,7 @@
 
 #define MyAppName "Hebrew Calendar"
 #define MyAppNameNoSpace "HebrewCalendar"
-#define MyAppVersion "3.4"
+#define MyAppVersion "3.5"
 #define MyAppPublisher "Ordisoftware"
 #define MyAppURL "http://www.ordisoftware.com/projects/hebrew-calendar"
 #define MyAppExeName "Ordisoftware.HebrewCalendar.exe"
@@ -72,6 +72,7 @@ Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription
 [Dirs]
 
 [InstallDelete]
+Name: {app}\*; Type: files
 Name: {app}\Bin\*; Type: filesandordirs
 Name: {app}\Documents\*; Type: filesandordirs
 Name: {app}\Help\*; Type: filesandordirs
@@ -95,7 +96,7 @@ DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sql
 
 [Icons]
 Name: {commondesktop}\{#MyAppPublisher} {#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: desktopicon; IconFilename: {app}\Application.ico
-Name: {app}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
+;Name: {app}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
 Name: {group}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
 Name: {group}\{cm:ProgramOnTheWeb,{#MyAppPublisher}}; Filename: {app}\Ordisoftware.com.url; IconFilename: {app}\Project\Dependencies\Fatcow\house.ico
 Name: {group}\{#MyAppName}\{cm:SourceCode_msg,{#MyAppName}}; Filename: {app}\Project; IconFilename: {app}\Project\Dependencies\Fatcow\page_white_csharp.ico; WorkingDir: {app}\Project

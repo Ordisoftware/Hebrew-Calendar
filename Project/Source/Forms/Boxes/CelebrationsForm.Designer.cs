@@ -88,7 +88,6 @@
       this.MinimizeBox = false;
       this.Name = "CelebrationsForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CelebrationsForm_FormClosing);
-      this.Load += new System.EventHandler(this.CelebrationsForm_Load);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 

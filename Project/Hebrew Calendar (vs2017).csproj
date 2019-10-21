@@ -135,6 +135,7 @@
     <Compile Include="Dependencies\GenericParsing\Legacy Support\StringArray.cs" />
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
+    <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Names.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Positions.cs" />
     <Compile Include="Source\Enums\TorahEventItem.cs" />
@@ -166,7 +167,19 @@
     <Compile Include="Source\Forms\Config\LoadingForm.designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Config\SelectBirthTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\SelectBirthTime.Designer.cs">
+      <DependentUpon>SelectBirthTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.DB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Generate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.GoToDate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.CelebrationDay.cs">
@@ -352,6 +365,12 @@
     <EmbeddedResource Include="Source\Forms\Config\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\SelectBirthTime.fr.resx">
+      <DependentUpon>SelectBirthTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\SelectBirthTime.resx">
+      <DependentUpon>SelectBirthTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

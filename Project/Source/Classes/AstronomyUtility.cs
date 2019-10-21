@@ -31,6 +31,14 @@ namespace Ordisoftware.HebrewCalendar
     public TimeSpan? Moonset;
   }
 
+  public class SunSetRiseException : Exception
+  {
+    public SunSetRiseException()
+      : base("Can't process sunset before sunrise.")
+    {
+    }
+  }
+
   /// <summary>
   /// Provide astronomy utility.
   /// </summary>
@@ -40,8 +48,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate the japanese calendar instance.
     /// </summary>
-    static public readonly ChineseLunisolarCalendar JapaneseCalendar 
-      = new ChineseLunisolarCalendar();
+    static public readonly VietnameseCalendar LunisolerCalendar 
+      = new VietnameseCalendar();
 
     /// <summary>
     /// Indicate the SunMoon instance.
@@ -70,10 +78,14 @@ namespace Ordisoftware.HebrewCalendar
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude),
                                  TimeZoneInfo.Local.IsDaylightSavingTime(date.AddDays(1)) ? 2.0f : 1.0f,
                                  1);
+      var sunrise = calcEphem(strEphem.Substring(10, 4));
+      var sunset = calcEphem(strEphem.Substring(15, 4)); 
+      if ( sunset <= sunrise )
+        throw new SunSetRiseException();
       return new Ephemeris()
       {
-        Sunrise = calcEphem(strEphem.Substring(10, 4)),
-        Sunset = calcEphem(strEphem.Substring(15, 4)),
+        Sunrise = sunrise,
+        Sunset = sunset,
         Moonrise = calcEphem(strEphem.Substring(51, 4)),
         Moonset = calcEphem(strEphem.Substring(56, 4))
       };

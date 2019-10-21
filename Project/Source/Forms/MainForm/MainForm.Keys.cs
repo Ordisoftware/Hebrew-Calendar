@@ -30,6 +30,16 @@ namespace Ordisoftware.HebrewCalendar
     {
       switch ( keyData )
       {
+        case Keys.Control | Keys.Tab:
+          if ( Program.Settings.CurrentView == ViewModeType.Text )
+            SetView(ViewModeType.Month);
+          else
+          if ( Program.Settings.CurrentView == ViewModeType.Month )
+            SetView(ViewModeType.Grid);
+          else
+          if ( Program.Settings.CurrentView == ViewModeType.Grid )
+            SetView(ViewModeType.Text);
+          return true;
         case Keys.Control | Keys.S:
           ActionSaveReport.PerformClick();
           return true;
@@ -54,13 +64,13 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Control | Keys.P:
           ActionPrint.PerformClick();
           return true;
+        case Keys.Control | Keys.T:
+          GoToDate(DateTime.Now);
+          return true;
         case Keys.Escape:
-          if ( IsGenerating )
-          {
-            if ( DisplayManager.QueryYesNo(Translations.StopGeneration.GetLang()) )
-              IsGenerating = false;
-          }
-          else
+          //if ( IsGenerating )
+          //  IsGenerating = false;
+          //else
           if ( EditESCtoExit.Checked )
             Close();
           return true;

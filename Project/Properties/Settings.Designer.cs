@@ -956,5 +956,41 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["FirstLaunch"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int BalloonLoomingDelay {
+            get {
+                return ((int)(this["BalloonLoomingDelay"]));
+            }
+            set {
+                this["BalloonLoomingDelay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point SearchLunarMonthFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["SearchLunarMonthFormLocation"]));
+            }
+            set {
+                this["SearchLunarMonthFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point SearchCelebrationFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["SearchCelebrationFormLocation"]));
+            }
+            set {
+                this["SearchCelebrationFormLocation"] = value;
+            }
+        }
     }
 }

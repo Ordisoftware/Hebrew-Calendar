@@ -1,0 +1,99 @@
+﻿namespace Ordisoftware.HebrewCalendar
+{
+  partial class SelectBirthTime
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
+    {
+      if ( disposing && ( components != null ) )
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
+
+    #region Windows Form Designer generated code
+
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectBirthTime));
+      this.EditTime = new System.Windows.Forms.DateTimePicker();
+      this.Label = new System.Windows.Forms.Label();
+      this.PanelButtons = new System.Windows.Forms.Panel();
+      this.ButtonCancel = new System.Windows.Forms.Button();
+      this.ButtonOk = new System.Windows.Forms.Button();
+      this.PanelButtons.SuspendLayout();
+      this.SuspendLayout();
+      // 
+      // EditTime
+      // 
+      resources.ApplyResources(this.EditTime, "EditTime");
+      this.EditTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+      this.EditTime.Name = "EditTime";
+      this.EditTime.ShowUpDown = true;
+      this.EditTime.Value = new System.DateTime(2019, 10, 20, 0, 0, 0, 0);
+      // 
+      // Label
+      // 
+      resources.ApplyResources(this.Label, "Label");
+      this.Label.Name = "Label";
+      // 
+      // PanelButtons
+      // 
+      this.PanelButtons.Controls.Add(this.ButtonCancel);
+      this.PanelButtons.Controls.Add(this.ButtonOk);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
+      this.PanelButtons.Name = "PanelButtons";
+      // 
+      // ButtonCancel
+      // 
+      resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
+      this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ButtonCancel.Name = "ButtonCancel";
+      // 
+      // ButtonOk
+      // 
+      resources.ApplyResources(this.ButtonOk, "ButtonOk");
+      this.ButtonOk.Name = "ButtonOk";
+      this.ButtonOk.UseVisualStyleBackColor = true;
+      this.ButtonOk.Click += new System.EventHandler(this.ButtonOk_Click);
+      // 
+      // SelectBirthTime
+      // 
+      this.AcceptButton = this.ButtonOk;
+      resources.ApplyResources(this, "$this");
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.CancelButton = this.ButtonCancel;
+      this.Controls.Add(this.PanelButtons);
+      this.Controls.Add(this.Label);
+      this.Controls.Add(this.EditTime);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
+      this.Name = "SelectBirthTime";
+      this.PanelButtons.ResumeLayout(false);
+      this.ResumeLayout(false);
+      this.PerformLayout();
+
+    }
+
+    #endregion
+    private System.Windows.Forms.Label Label;
+    private System.Windows.Forms.Panel PanelButtons;
+    private System.Windows.Forms.Button ButtonCancel;
+    private System.Windows.Forms.Button ButtonOk;
+    internal System.Windows.Forms.DateTimePicker EditTime;
+  }
+}

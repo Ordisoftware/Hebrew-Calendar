@@ -63,6 +63,9 @@ namespace Ordisoftware.HebrewCalendar
       };
       if ( Program.Settings.TorahEventsCountAsMoon )
       {
+        if ( rowNext.Date == SQLiteUtility.GetDate(today) )
+          initTimes(row.Moonset, rowNext.Moonset, 0, 1);
+        else
         if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
           initTimes(row.Moonset, rowNext.Moonset, 0, 1);
         else
@@ -102,8 +105,14 @@ namespace Ordisoftware.HebrewCalendar
       if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents)
           && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
       {
-        if ( dateNow < LastCelebrationReminded[(TorahEventType)row.TorahEvents].Value
-                       .AddMinutes((double)Program.Settings.RemindCelebrationEveryMinutes) )
+        if ( dateNow > dateStart && LastCelebrationReminded[(TorahEventType)row.TorahEvents].Value < dateStart )
+        {
+          if ( RemindCelebrationDayForms[(TorahEventType)row.TorahEvents] != null )
+            RemindCelebrationDayForms[(TorahEventType)row.TorahEvents].Close();
+          LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
+        }
+        else
+        if ( dateNow < LastCelebrationReminded[(TorahEventType)row.TorahEvents].Value.AddMinutes((double)Program.Settings.RemindCelebrationEveryMinutes) )
           return;
         else
           LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;

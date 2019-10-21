@@ -25,13 +25,6 @@ namespace Ordisoftware.HebrewCalendar
   public partial class ReminderForm : Form
   {
 
-    static ReminderForm()
-    {
-      foreach ( TorahEventType value in Enum.GetValues(typeof(TorahEventType)) )
-        if ( !MainForm.Instance.LastCelebrationReminded.ContainsKey(value))
-          MainForm.Instance.LastCelebrationReminded.Add(value, null);
-    }
-
     static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row,
                            bool isShabat, 
                            TorahEventType torahevent,
@@ -157,6 +150,17 @@ namespace Ordisoftware.HebrewCalendar
         MainForm.Instance.RemindCelebrationDayForms.Remove(key);
       }
       SetFormsLocation();
+    }
+
+    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+    {
+      switch ( keyData )
+      {
+        case Keys.Escape:
+          Close();
+          return true;
+      }
+      return base.ProcessCmdKey(ref msg, keyData);
     }
 
     private void ButtonClose_Click(object sender, EventArgs e)

@@ -35,13 +35,14 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SearchEventForm_Load(object sender, EventArgs e)
     {
+      if ( Location.X == 0 && Location.Y == 0 )
+        this.CenterToMainForm();
       Mutex = true;
       CurrentDay = MainForm.Instance.CurrentDay;
       EditYear.Minimum = MainForm.Instance.YearFirst;
       EditYear.Maximum = MainForm.Instance.YearLast;
       Mutex = false;
-      var day = MainForm.Instance.CurrentDay;
-      EditYear.Value = day == null ? DateTime.Now.Year : SQLiteUtility.GetDate(day.Date).Year;
+      EditYear.Value = CurrentDay == null ? DateTime.Now.Year : SQLiteUtility.GetDate(CurrentDay.Date).Year;
       ActiveControl = ListItems;
     }
 
@@ -83,7 +84,7 @@ namespace Ordisoftware.HebrewCalendar
         ListItems.Items[0].Selected = true;
     }
 
-    private void SelectEvents_SelectedIndexChanged(object sender, EventArgs e)
+    private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
       if ( ListItems.SelectedItems.Count > 0 )

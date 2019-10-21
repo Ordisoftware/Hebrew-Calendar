@@ -40,8 +40,8 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> ApplicationDescription
       = new Dictionary<string, string>()
       {
-        { "en", "A tool to generate a hebrew lunisolar calendar" },
-        { "fr", "Un outil pour générer un calendrier luni-solaire hébraïque" }
+        { "en", "A tool to generate a hebrew lunisolar calendar and remind celebrations" },
+        { "fr", "Un outil pour générer un calendrier luni-solaire hébraïque et rappeler les célébrations" }
       };
 
     static public readonly Dictionary<string, string> ExitApplication
@@ -75,7 +75,7 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> SelectBirthday
       = new Dictionary<string, string>()
       {
-        { "en", "Select birthday" },
+        { "en", "Birth day" },
         { "fr", "Date de naissance" }
       };
 
@@ -182,40 +182,46 @@ namespace Ordisoftware.HebrewCalendar
                 "celebrations." + NewLine + NewLine +
                 "If you use moon omer then celebrations dates will" + NewLine +
                 "be calculated according to seasons and there will" + NewLine +
-                "be an inversion between north and south hemispheres." + NewLine + NewLine +
+                "be an inversion between north and south hemispheres." + NewLine +
+                "In this case, a day is from one moon set to the next set." + NewLine + NewLine +
                 "You can use traditionnals sun days by modifying" + NewLine +
                 "the option in the reminder, hence celebrations" + NewLine +
-                "will be same in north and south." },
+                "will be same in north and south." + NewLine +
+                "In this case, a day is from one sun set to the next set." },
         { "fr", "L'application utilise par défaut un omer selon la lune" + NewLine +
                 "pour les célébrations." + NewLine + NewLine +
                 "Si vous utilisez le omer de la lune alors les dates des" + NewLine +
                 "célébrations seront calculées selon les saisons et il y" + NewLine +
-                "aura une inversion entre les hémisphères nord et sud." + NewLine + NewLine +
+                "aura une inversion entre les hémisphères nord et sud." + NewLine +
+                "Dans ce cas, un jour est du coucher de la lune au suivant." + NewLine + NewLine +
                 "Vous pouvez utiliser les jours solaires traditionnels" + NewLine +
                 "en modifiant l'option dans le rappeleur, alors les" + NewLine +
-                "célébrations seront les mêmes pour le nord et le sud." }
+                "célébrations seront les mêmes pour le nord et le sud." + NewLine +
+                "Dans ce cas, un jour est du coucher du soleil au suivant." }
       };
 
-    static public readonly Dictionary<string, string> SelectBirthDay
+    static public readonly Dictionary<string, string> PersonalShabatNotice
       = new Dictionary<string, string>()
       {
-        { "en", "The personal shabbat is the previous day of the birth." + NewLine + NewLine +
-                "If you were born between sunset the day before that day" + NewLine +
-                "and sunset on that day, select that day." + NewLine + NewLine +
-                "If you were born between sunset on this day and the next" + NewLine +
-                "morning, select the next day." + NewLine + NewLine +
-                "If you prefer to use the traditional group shabat, select for" + NewLine +
-                "example Saturday for Judaism, Sunday for Catholicism or" + NewLine +
-                "Friday for Islam." },
+        { "en", "The personal shabat is the previous day of the birth." + NewLine + NewLine +
+                "If you were born between midnight and the sunset," + NewLine +
+                "your shabat is the day before." + NewLine + NewLine +
+                "If you were born between sunset and midnight," + NewLine +
+                "your shabat is that day." + NewLine + NewLine +
+                "If you prefer to use the traditional group shabat," + NewLine +
+                "select for example Saturday for Judaism, Sunday" + NewLine +
+                "for Catholicism or Friday for Islam." + NewLine + NewLine + 
+                "Do you want to setup the personal shabat?" },
         { "fr", "Le shabat personnel est la veille du jour de la naissance." + NewLine + NewLine +
-                "Si vous êtes né entre le coucher du soleil la veille de ce jour" + NewLine +
-                "et son coucher lors de ce jour, sélectionnez ce jour-là." + NewLine + NewLine +
-                "Si vous êtes né entre le coucher du soleil lors de ce jour" + NewLine +
-                "et le lendemain matin, sélectionnez le jour suivant." + NewLine + NewLine +
+                "Si vous êtes né entre minuit et le coucher du soleil, votre" + NewLine +
+                "shabat est la veille." + NewLine + NewLine +
+                "Si vous êtes né entre le coucher du soleil et minuit, votre" + NewLine +
+                "shabat est ce jour." + NewLine + NewLine +
                 "Si vous préférez utiliser le shabat de groupe traditionnel," + NewLine +
                 "sélectionnez par exemple le samedi pour le Judaïsme," + NewLine +
-                "le dimanche pour le Christianisme ou le vendredi" + NewLine +
-                "pour l'Islam" }
+                "le dimanche pour le Christianisme ou le vendredi pour" + NewLine +
+                "l'Islam" + NewLine + NewLine +
+                "Voulez-vous configurer le shabat personnel ?" }
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore

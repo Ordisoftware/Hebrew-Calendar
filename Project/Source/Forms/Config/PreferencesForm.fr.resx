@@ -265,6 +265,12 @@
   <data name="SelectOpenMainForm.Text" xml:space="preserve">
     <value>Fenêtre de l'application</value>
   </data>
+  <data name="LabelLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="LabelLoomingDelay.Text" xml:space="preserve">
+    <value>Délai avant surgissement (ms)</value>
+  </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 17</value>
   </data>
@@ -278,14 +284,11 @@
   <data name="EditReminderUseColors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditReminderUseColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 314</value>
-  </data>
   <data name="EditReminderUseColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 36</value>
+    <value>270, 17</value>
   </data>
   <data name="EditReminderUseColors.Text" xml:space="preserve">
-    <value>Utiliser couleurs</value>
+    <value>Utiliser les couleurs pour le calendrier et le rappeleur</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>

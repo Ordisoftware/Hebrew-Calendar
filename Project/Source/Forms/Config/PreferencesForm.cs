@@ -132,6 +132,7 @@ namespace Ordisoftware.HebrewCalendar
           EditFontName.SelectedItem = item;
           break;
         }
+      EditLoomingDelay.Value = Program.Settings.BalloonLoomingDelay;
       EditGPSLongitude.Text = Program.Settings.GPSLongitude;
       EditGPSLatitude.Text = Program.Settings.GPSLatitude;
       EditBalloon.Checked = Program.Settings.BalloonEnabled;
@@ -235,6 +236,7 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
+      Program.Settings.BalloonLoomingDelay = (int)EditLoomingDelay.Value;
       Program.Settings.GPSLatitude = EditGPSLatitude.Text;
       Program.Settings.GPSLongitude = EditGPSLongitude.Text;
       Program.Settings.BalloonEnabled = EditBalloon.Checked;
@@ -295,6 +297,13 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
+    private void EditBalloon_CheckedChanged(object sender, EventArgs e)
+    {
+      EditBalloonAutoHide.Enabled = EditBalloon.Checked;
+      LabelLoomingDelay.Enabled = EditBalloon.Checked;
+      EditLoomingDelay.Enabled = EditBalloon.Checked;
+    }
+
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       var form = new SelectCityForm();
@@ -314,13 +323,19 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      DisplayManager.Show(Translations.SelectBirthDay.GetLang());
+      if ( !DisplayManager.QueryYesNo(Translations.PersonalShabatNotice.GetLang()) ) return;
       DateTime date = DateTime.Now;
-      var form = new SelectDayForm();
-      form.Text = Translations.SelectBirthday.GetLang();
-      if ( form.ShowDialog() == DialogResult.Cancel ) return;
-      date = form.MonthCalendar.SelectionStart;
-      Program.Settings.ShabatDay = (int)date.AddDays(-1).DayOfWeek;
+      var formDate = new SelectDayForm();
+      formDate.Text = Translations.SelectBirthday.GetLang();
+      if ( formDate.ShowDialog() != DialogResult.OK ) return;
+      date = formDate.MonthCalendar.SelectionStart.Date;
+      var formTime = new SelectBirthTime();
+      if ( formTime.ShowDialog() != DialogResult.OK ) return;
+      var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
+      var time = formTime.EditTime.Value.TimeOfDay;
+      if ( time >= new TimeSpan(0, 0, 0) && time < ephemeris.Sunset )
+        date = date.AddDays(-1);
+      Program.Settings.ShabatDay = (int)date.DayOfWeek;
       foreach ( DayOfWeekItem day in EditShabatDay.Items )
         if ( (DayOfWeek)Program.Settings.ShabatDay == day.Day )
           EditShabatDay.SelectedItem = day;

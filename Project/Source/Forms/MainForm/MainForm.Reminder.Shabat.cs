@@ -62,10 +62,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         LastShabatReminded = null;
         if ( ShabatForm != null )
-        {
           ShabatForm.Close();
-          ShabatForm = null;
-        }
         return;
       }
       else
@@ -79,6 +76,13 @@ namespace Ordisoftware.HebrewCalendar
       else
       if ( LastShabatReminded.HasValue )
       {
+        if ( dateNow > dateStart && LastShabatReminded.Value < dateStart )
+        {
+          if ( ShabatForm != null )
+            ShabatForm.Close();
+          LastShabatReminded = dateNow;
+        }
+        else
         if ( dateNow < LastShabatReminded.Value.AddMinutes((double)Program.Settings.RemindShabatEveryMinutes) )
           return;
         else

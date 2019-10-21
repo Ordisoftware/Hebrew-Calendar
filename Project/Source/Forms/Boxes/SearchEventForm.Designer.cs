@@ -92,7 +92,7 @@
       this.ListItems.Name = "ListItems";
       this.ListItems.UseCompatibleStateImageBehavior = false;
       this.ListItems.View = System.Windows.Forms.View.Details;
-      this.ListItems.SelectedIndexChanged += new System.EventHandler(this.SelectEvents_SelectedIndexChanged);
+      this.ListItems.SelectedIndexChanged += new System.EventHandler(this.ListItems_SelectedIndexChanged);
       this.ListItems.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
       // 
       // columnHeader1
@@ -113,7 +113,9 @@
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.EditYear);
       this.Controls.Add(this.LabelYear);
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "SearchCelebrationFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.SearchCelebrationFormLocation;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SearchEventForm";

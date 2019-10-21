@@ -194,7 +194,7 @@ namespace Ordisoftware.HebrewCalendar
           EditFilter.Text = str;
           EditFilter.Enabled = false;
           Application.DoEvents();
-          System.Threading.Thread.Sleep(1000);
+          System.Threading.Thread.Sleep(750);
           Application.DoEvents();
           EditFilter.Enabled = true;
           ListBoxCountries.Enabled = true;

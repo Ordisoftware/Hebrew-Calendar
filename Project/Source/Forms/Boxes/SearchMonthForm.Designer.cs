@@ -43,9 +43,9 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ButtonCancel);
       this.PanelButtons.Controls.Add(this.ButtonOk);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ButtonCancel
@@ -64,8 +64,8 @@
       // 
       // EditYear
       // 
-      resources.ApplyResources(this.EditYear, "EditYear");
       this.EditYear.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditYear, "EditYear");
       this.EditYear.Name = "EditYear";
       this.EditYear.ReadOnly = true;
       this.EditYear.Value = new decimal(new int[] {
@@ -92,7 +92,7 @@
       this.ListItems.Name = "ListItems";
       this.ListItems.UseCompatibleStateImageBehavior = false;
       this.ListItems.View = System.Windows.Forms.View.Details;
-      this.ListItems.SelectedIndexChanged += new System.EventHandler(this.SelectMonth_SelectedIndexChanged);
+      this.ListItems.SelectedIndexChanged += new System.EventHandler(this.ListItems_SelectedIndexChanged);
       this.ListItems.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
       // 
       // columnHeader1
@@ -113,7 +113,9 @@
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.EditYear);
       this.Controls.Add(this.LabelYear);
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "SearchLunarMonthFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.SearchLunarMonthFormLocation;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SearchMonthForm";

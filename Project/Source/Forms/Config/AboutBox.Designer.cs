@@ -54,6 +54,8 @@
       this.linkLabel3 = new System.Windows.Forms.LinkLabel();
       this.label8 = new System.Windows.Forms.Label();
       this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+      this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+      this.label9 = new System.Windows.Forms.Label();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -155,16 +157,16 @@
       // linkLabel1
       // 
       this.linkLabel1.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
       resources.ApplyResources(this.linkLabel1, "linkLabel1");
+      this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel1.Name = "linkLabel1";
       this.linkLabel1.TabStop = true;
       this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
       // 
       // linkLabel2
       // 
-      this.linkLabel2.LinkColor = System.Drawing.Color.Navy;
       resources.ApplyResources(this.linkLabel2, "linkLabel2");
+      this.linkLabel2.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel2.Name = "linkLabel2";
       this.linkLabel2.TabStop = true;
       this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
@@ -183,8 +185,8 @@
       // linkLabel4
       // 
       this.linkLabel4.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      this.linkLabel4.LinkColor = System.Drawing.Color.Navy;
       resources.ApplyResources(this.linkLabel4, "linkLabel4");
+      this.linkLabel4.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel4.Name = "linkLabel4";
       this.linkLabel4.TabStop = true;
       this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
@@ -231,12 +233,28 @@
       this.linkLabel6.TabStop = true;
       this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
       // 
+      // linkLabel7
+      // 
+      this.linkLabel7.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel7, "linkLabel7");
+      this.linkLabel7.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel7.Name = "linkLabel7";
+      this.linkLabel7.TabStop = true;
+      this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
+      // 
+      // label9
+      // 
+      resources.ApplyResources(this.label9, "label9");
+      this.label9.Name = "label9";
+      // 
       // AboutBox
       // 
       this.AcceptButton = this.buttonClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.buttonClose;
+      this.Controls.Add(this.linkLabel7);
+      this.Controls.Add(this.label9);
       this.Controls.Add(this.linkLabel6);
       this.Controls.Add(this.label8);
       this.Controls.Add(this.linkLabel3);
@@ -303,5 +321,7 @@
     private System.Windows.Forms.LinkLabel linkLabel3;
     private System.Windows.Forms.Label label8;
     private System.Windows.Forms.LinkLabel linkLabel6;
+    private System.Windows.Forms.LinkLabel linkLabel7;
+    private System.Windows.Forms.Label label9;
   }
 }

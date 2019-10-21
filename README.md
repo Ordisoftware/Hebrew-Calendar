@@ -6,7 +6,7 @@
 >[Project Website](http://www.ordisoftware.com/projects/hebrew-calendar)<br/>
 >[Twitter](https://twitter.com/ordisoftware)<br/>
 
-A tool for Windows written in C# that allows to generate a daily calendar based on the lunar cycle in order to determine the new year and the celebration times according to the hebrew Torah with with a reminder for Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippour and Sukkot festivities.
+A tool for Windows written in C# that allows to generate a daily calendar based on the lunar cycle in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippour and Sukkot festivities.
 
 ## Functionalities
 
@@ -84,21 +84,34 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 #### Keyboard shortcuts
 
+- Ctrl+Tab : Change view
+- Ctrl+T : Go to today
+- Ctrl+D : Search day
+- Ctrl+E : Search celebration
+- Ctrl+M : Search lunar month
+- Ctrl+N : Open navigation window
+- Ctrl+P : Print month view
 - Ctrl+C : Copy report to clipboard
-- Ctrl+D : Search a day
-- Ctrl+E : Search a celebration
-- Ctrl+M : Search a lunar month
-- Ctrl+N : Open the navigation window
-- Ctrl+P : Print the month view
 - Ctrl+S : Save report to text file
 - Alt+S : Save report to CSV file
-- F2 : Generate calender
+- F2 : Generate calendar
 - F8 : Preferences
 - F11 : Help
 - F12 : About
 - Escape : Close window
 
 ## Changelog
+
+#### 2019.10.21 - Version 3.5
+
+- Improve personal shabat setup by asking birth time.
+- Improve min and max years that can be generated (up to 2198).
+- Improve reminder to change the window color when just passing the start date without waiting the remind delay.
+- Add Ctrl+T shortcut to go to today.
+- Add option to define the delay to open the looming navigation popup.
+- Some improvments.
+- Some fixes.
+- Update help.
 
 #### 2019.10.19 - Version 3.4
 
@@ -113,6 +126,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - Improve UI.
 - Some fixes.
 - Some code refactorings.
+- Setup install SQLite ODBC Driver if not present.
 
 #### 2019.10.17 - Version 3.2
 
