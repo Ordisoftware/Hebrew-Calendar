@@ -108,7 +108,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 #### 2019.10.21 - Version 3.6
 
-- Add time zone setting to have good sun and moon rise and set.
+- Add time zone setting to have good sun and moon rise and set in the whole world.
 
 #### 2019.10.21 - Version 3.5
 
