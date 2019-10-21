@@ -135,6 +135,15 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Remplissage des mois..." }
       };
 
+    static public readonly Dictionary<string, string> InvalidTimeZone
+      = new Dictionary<string, string>()
+      {
+        { "en", "Operating System Time Zone and GPS coordonates are incompatible." + NewLine + NewLine +
+                "Solve this problem and restart the application." },
+        { "fr", "Le fuseau horaire du Système d'exploitation et les coordonnées GPS sont incompatibles." + NewLine + NewLine +
+                "Corrigez le problème et relancez l'application." },
+      };
+
     static public readonly Dictionary<string, string> BigCalendar
       = new Dictionary<string, string>()
       {

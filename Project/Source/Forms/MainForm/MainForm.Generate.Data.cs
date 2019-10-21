@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewCalendar
           LunisolarDaysBindingSource.DataSource = LunisolarCalendar.LunisolarDays;
         }
       }
-      catch ( SunSetRiseException )
+      catch ( InvalidTimeZoneException )
       {
         throw;
       }
@@ -118,7 +118,7 @@ namespace Ordisoftware.HebrewCalendar
               InitializeDay(row);
               LunisolarCalendar.LunisolarDays.AddLunisolarDaysRow(row);
             }
-            catch ( SunSetRiseException )
+            catch ( InvalidTimeZoneException )
             {
               throw;
             }
@@ -161,7 +161,7 @@ namespace Ordisoftware.HebrewCalendar
         day.LunarMonth = 0;
         day.TorahEvents = 0;
       }
-      catch ( SunSetRiseException )
+      catch ( InvalidTimeZoneException )
       {
         throw;
       }

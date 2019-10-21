@@ -31,14 +31,6 @@ namespace Ordisoftware.HebrewCalendar
     public TimeSpan? Moonset;
   }
 
-  public class SunSetRiseException : Exception
-  {
-    public SunSetRiseException()
-      : base("Can't process sunset before sunrise.")
-    {
-    }
-  }
-
   /// <summary>
   /// Provide astronomy utility.
   /// </summary>
@@ -78,16 +70,26 @@ namespace Ordisoftware.HebrewCalendar
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude),
                                  TimeZoneInfo.Local.IsDaylightSavingTime(date.AddDays(1)) ? 2.0f : 1.0f,
                                  1);
-      var sunrise = calcEphem(strEphem.Substring(10, 4));
-      var sunset = calcEphem(strEphem.Substring(15, 4)); 
-      //if ( sunset <= sunrise )
-        //throw new SunSetRiseException();
+      TimeSpan? moonRiseTime = calcEphem(strEphem.Substring(51, 4));
+      TimeSpan? moonSetTime = calcEphem(strEphem.Substring(56, 4));
+      TimeSpan? sunRiseTime = new Nullable<TimeSpan>();
+      TimeSpan? sunSetTime = new Nullable<TimeSpan>();
+      DateTime sunRiseDate = DateTime.Now;
+      DateTime sunSetDate = DateTime.Now;
+      bool isSunRise = false;
+      bool isSunSet = false;
+      var v = SunTimes.Instance.CalculateSunRiseSetTimes(XmlConvert.ToDouble(Program.Settings.GPSLatitude),
+                                                         XmlConvert.ToDouble(Program.Settings.GPSLongitude),
+                                                         date, ref sunRiseDate, ref sunSetDate,
+                                                         ref isSunRise, ref isSunSet);
+      if ( isSunRise ) sunRiseTime = sunRiseDate.TimeOfDay;
+      if ( isSunSet ) sunSetTime = sunSetDate.TimeOfDay;
       return new Ephemeris()
       {
-        Sunrise = sunrise,
-        Sunset = sunset,
-        Moonrise = calcEphem(strEphem.Substring(51, 4)),
-        Moonset = calcEphem(strEphem.Substring(56, 4))
+        Sunrise = sunRiseTime,
+        Sunset = sunSetTime,
+        Moonrise = moonRiseTime,
+        Moonset = moonSetTime
       };
     }
 

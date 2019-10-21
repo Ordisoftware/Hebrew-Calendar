@@ -77,10 +77,14 @@ namespace Ordisoftware.HebrewCalendar
           while ( LunisolarCalendar.LunisolarDays.Count == 0 );
         }
       }
+      catch ( InvalidTimeZoneException )
+      {
+        Environment.Exit(-1);
+      }
       catch ( OdbcException ex )
       {
         DisplayManager.ShowError(ex.Message);
-        Application.Exit();
+        Environment.Exit(-1);
       }
       catch ( Exception ex )
       {

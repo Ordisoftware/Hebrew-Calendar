@@ -82,6 +82,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dependencies\CalcSunTimes\CalcSunTimes.cs" />
     <Compile Include="Dependencies\Calendar.NET\Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
