@@ -107,7 +107,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - Improve personal shabat setup by asking birth time.
 - Improve min and max years that can be generated (up to 2198).
 - Improve reminder to change the window color when just passing the start date without waiting the remind delay.
-- Fix reminder using moon days that stops remind after mifnight.
+- Fix reminder using moon days that stops remind after midnight.
 - Add Ctrl+T shortcut to go to today.
 - Add option to define the delay to open the looming navigation popup.
 - Some improvments.
