@@ -178,26 +178,12 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> OmerMoon
       = new Dictionary<string, string>()
       {
-        { "en", "The application uses by default moon omer for" + NewLine +
-                "celebrations." + NewLine + NewLine +
-                "If you use moon omer then celebrations dates will" + NewLine +
-                "be calculated according to seasons and there will" + NewLine +
-                "be an inversion between north and south hemispheres." + NewLine +
-                "In this case, a day is from one moon set to the next set." + NewLine + NewLine +
-                "You can use traditionnals sun days by modifying" + NewLine +
-                "the option in the reminder, hence celebrations" + NewLine +
-                "will be same in north and south." + NewLine +
-                "In this case, a day is from one sun set to the next set." },
-        { "fr", "L'application utilise par défaut un omer selon la lune" + NewLine +
-                "pour les célébrations." + NewLine + NewLine +
-                "Si vous utilisez le omer de la lune alors les dates des" + NewLine +
-                "célébrations seront calculées selon les saisons et il y" + NewLine +
-                "aura une inversion entre les hémisphères nord et sud." + NewLine +
-                "Dans ce cas, un jour est du coucher de la lune au suivant." + NewLine + NewLine +
-                "Vous pouvez utiliser les jours solaires traditionnels" + NewLine +
-                "en modifiant l'option dans le rappeleur, alors les" + NewLine +
-                "célébrations seront les mêmes pour le nord et le sud." + NewLine +
-                "Dans ce cas, un jour est du coucher du soleil au suivant." }
+        { "en", "The application uses by default moon omer forcelebrations." + NewLine + NewLine +
+                "If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set." + NewLine + NewLine +
+                "You can use traditionnals sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set." },
+        { "fr", "L'application utilise par défaut un omer selon la lune pour les célébrations." + NewLine + NewLine +
+                "Si vous utilisez le omer de la lune alors les dates des célébrations seront calculées selon les saisons et il y aura une inversion entre les hémisphères nord et sud. Dans ce cas, un jour est du coucher de la lune au suivant." + NewLine + NewLine +
+                "Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option dans le rappeleur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant." }
       };
 
     static public readonly Dictionary<string, string> PersonalShabatNotice
@@ -211,7 +197,7 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Le shabat personnel d'un homme est la veille du jour de la naissance." + NewLine + 
                 "Le shabat d'une femme est celui de son père ou de son mari/concubin." + NewLine + NewLine +
                 "Si l'homme est né entre minuit et le coucher du soleil, le shabat est la veille. Entre le coucher du soleil et minuit, le shabat est ce jour." + NewLine + NewLine +
-                "Si vous préférez utiliser le shabat de groupe traditionnel, sélectionnez par exemple le samedi pour le Judaïsme, le dimanche pour le Christianisme ou le vendredi pour l'Islam" + NewLine + NewLine +
+                "Si vous préférez utiliser le shabat de groupe traditionnel, sélectionnez par exemple le samedi pour le Judaïsme, le dimanche pour le Christianisme ou le vendredi pour l'Islam." + NewLine + NewLine +
                 "Voulez-vous configurer le shabat personnel ?" }
       };
 
