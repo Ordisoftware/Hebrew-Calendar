@@ -34,7 +34,7 @@ _"Efficient and intuitive calendar app for the Hebrew Torah"_
 
 - Windows Vista x32/x64 or higher
 - Screen 1024x768 or higher
-- Framework .NET 4.5 or higher
+- Framework .NET 4.5
 - SQLite ODBC Driver
 
 ## Screenshots
