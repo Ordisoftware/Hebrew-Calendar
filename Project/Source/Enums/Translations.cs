@@ -189,14 +189,14 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> PersonalShabatNotice
       = new Dictionary<string, string>()
       {
-        { "en", "The personal shabat of a man is the previous day of the birth." + NewLine +
-                "The shabat of a woman is the shabat of her father or her husband/concubin." + NewLine +
+        { "en", "The personal shabat of a maried/concubin/divorced man is the previous day of the birth. A son follows his father's shabat." + NewLine + NewLine +
+                "The shabat of a woman is the shabat of her father or her husband/concubin." + NewLine + NewLine +
                 "So the man and the woman respect their mutual cycles." + NewLine + NewLine +
                 "If the man were born between midnight and the sunset, the shabat is the day before. Between sunset and midnight, the shabat is that day." + NewLine + NewLine +
                 "If you prefer to use the traditional group shabat, select for example example Saturday for Judaism, Sunday for Catholicism or Friday for Islam." + NewLine + NewLine + 
                 "Do you want to setup the personal shabat?" },
-        { "fr", "Le shabat personnel d'un homme est la veille du jour de la naissance." + NewLine +
-                "Le shabat d'une femme est celui de son père ou de son mari/concubin." + NewLine +
+        { "fr", "Le shabat personnel d'un homme marié/concubin/divorcé est la veille du jour de la naissance. Un fils suit le shabat de son père." + NewLine + NewLine +
+                "Le shabat d'une femme est celui de son père ou de son mari/concubin." + NewLine + NewLine +
                 "Ainsi l'homme et la femme respectent leurs cycles mutuels." + NewLine + NewLine +
                 "Si l'homme est né entre minuit et le coucher du soleil, le shabat est la veille. Entre le coucher du soleil et minuit, le shabat est ce jour." + NewLine + NewLine +
                 "Si vous préférez utiliser le shabat de groupe traditionnel, sélectionnez par exemple le samedi pour le Judaïsme, le dimanche pour le Christianisme ou le vendredi pour l'Islam." + NewLine + NewLine +
