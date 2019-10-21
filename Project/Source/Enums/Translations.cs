@@ -182,18 +182,22 @@ namespace Ordisoftware.HebrewCalendar
                 "celebrations." + NewLine + NewLine +
                 "If you use moon omer then celebrations dates will" + NewLine +
                 "be calculated according to seasons and there will" + NewLine +
-                "be an inversion between north and south hemispheres." + NewLine + NewLine +
+                "be an inversion between north and south hemispheres." + NewLine +
+                "In this case, a day is from one moon set to the next set." + NewLine + NewLine +
                 "You can use traditionnals sun days by modifying" + NewLine +
                 "the option in the reminder, hence celebrations" + NewLine +
-                "will be same in north and south." },
+                "will be same in north and south." + NewLine +
+                "In this case, a day is from one sun set to the next set." },
         { "fr", "L'application utilise par défaut un omer selon la lune" + NewLine +
                 "pour les célébrations." + NewLine + NewLine +
                 "Si vous utilisez le omer de la lune alors les dates des" + NewLine +
                 "célébrations seront calculées selon les saisons et il y" + NewLine +
-                "aura une inversion entre les hémisphères nord et sud." + NewLine + NewLine +
+                "aura une inversion entre les hémisphères nord et sud." + NewLine +
+                "Dans ce cas, un jour est du coucher de la lune au suivant." + NewLine + NewLine +
                 "Vous pouvez utiliser les jours solaires traditionnels" + NewLine +
                 "en modifiant l'option dans le rappeleur, alors les" + NewLine +
-                "célébrations seront les mêmes pour le nord et le sud." }
+                "célébrations seront les mêmes pour le nord et le sud." + NewLine +
+                "Dans ce cas, un jour est du coucher du soleil au suivant." }
       };
 
     static public readonly Dictionary<string, string> PersonalShabatNotice
@@ -214,8 +218,8 @@ namespace Ordisoftware.HebrewCalendar
                 "Si vous êtes né entre le coucher du soleil et minuit, votre" + NewLine +
                 "shabat est ce jour." + NewLine + NewLine +
                 "Si vous préférez utiliser le shabat de groupe traditionnel," + NewLine +
-                "sélectionnez par exemple le samedi pour le Judaïsme, le" + NewLine +
-                "dimanche pour le Christianisme ou le vendredi pour" + NewLine +
+                "sélectionnez par exemple le samedi pour le Judaïsme," + NewLine +
+                "le dimanche pour le Christianisme ou le vendredi pour" + NewLine +
                 "l'Islam" + NewLine + NewLine +
                 "Voulez-vous configurer le shabat personnel ?" }
       };
