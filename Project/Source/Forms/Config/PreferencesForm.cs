@@ -177,6 +177,7 @@ namespace Ordisoftware.HebrewCalendar
       OldUseMoonDays = Program.Settings.TorahEventsCountAsMoon;
       EditGPSLatitude.Text = OldLatitude.ToString();
       EditGPSLongitude.Text = OldLongitude.ToString();
+      LabelCountryCity.Text = Program.Settings.GPSCountry + ", " + Program.Settings.GPSCity;
       switch ( Program.Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
@@ -310,6 +311,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( form.ShowDialog() != DialogResult.OK ) return;
       EditGPSLatitude.Text = form.Latitude;
       EditGPSLongitude.Text = form.Longitude;
+      LabelCountryCity.Text = Program.Settings.GPSCountry + ", " + Program.Settings.GPSCity;
       Program.Settings.GPSLatitude = form.Latitude;
       Program.Settings.GPSLongitude = form.Longitude;
       Program.Settings.GPSCountry = form.Country;

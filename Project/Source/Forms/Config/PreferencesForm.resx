@@ -133,7 +133,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 27</value>
+    <value>20, 24</value>
   </data>
   <data name="LabelGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -154,7 +154,7 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;LabelGPSLatitude.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="LabelGPSLongitude.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -169,7 +169,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 79</value>
+    <value>20, 69</value>
   </data>
   <data name="LabelGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
@@ -190,7 +190,7 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;LabelGPSLongitude.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>23, 21</value>
@@ -352,7 +352,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 45</value>
+    <value>23, 42</value>
   </data>
   <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 20</value>
@@ -370,13 +370,13 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 97</value>
+    <value>23, 87</value>
   </data>
   <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 20</value>
@@ -394,7 +394,7 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;ActionResetSettings.Name" xml:space="preserve">
     <value>ActionResetSettings</value>
@@ -498,6 +498,57 @@
   <data name="&gt;&gt;ActionUsePersonalShabat.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="LabelCountryCity.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCountryCity.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelCountryCity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 116</value>
+  </data>
+  <data name="LabelCountryCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 13</value>
+  </data>
+  <data name="LabelCountryCity.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="LabelCountryCity.Text" xml:space="preserve">
+    <value> City</value>
+  </data>
+  <data name="&gt;&gt;LabelCountryCity.Name" xml:space="preserve">
+    <value>LabelCountryCity</value>
+  </data>
+  <data name="&gt;&gt;LabelCountryCity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountryCity.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;LabelCountryCity.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionGetGPS.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionGetGPS.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ActionGetGPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 138</value>
+  </data>
+  <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="ActionGetGPS.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="ActionGetGPS.Text" xml:space="preserve">
+    <value>Open GPS finder</value>
+  </data>
   <data name="&gt;&gt;ActionGetGPS.Name" xml:space="preserve">
     <value>ActionGetGPS</value>
   </data>
@@ -508,7 +559,7 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;ActionGetGPS.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="GroupBoxGPS.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -536,39 +587,6 @@
   </data>
   <data name="&gt;&gt;GroupBoxGPS.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="ActionGetGPS.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ActionGetGPS.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="ActionGetGPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 133</value>
-  </data>
-  <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
-  </data>
-  <data name="ActionGetGPS.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="ActionGetGPS.Text" xml:space="preserve">
-    <value>Open GPS finder</value>
-  </data>
-  <data name="&gt;&gt;ActionGetGPS.Name" xml:space="preserve">
-    <value>ActionGetGPS</value>
-  </data>
-  <data name="&gt;&gt;ActionGetGPS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionGetGPS.Parent" xml:space="preserve">
-    <value>GroupBoxGPS</value>
-  </data>
-  <data name="&gt;&gt;ActionGetGPS.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;EditFontSize.Name" xml:space="preserve">
     <value>EditFontSize</value>
@@ -1515,6 +1533,105 @@
   <data name="&gt;&gt;LabelMiddleColor.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Name" xml:space="preserve">
+    <value>EditBalloonAutoHide</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Name" xml:space="preserve">
+    <value>EditBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.Name" xml:space="preserve">
+    <value>SelectOpenNavigationForm</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.Name" xml:space="preserve">
+    <value>SelectOpenMainForm</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditLoomingDelay.Name" xml:space="preserve">
+    <value>EditLoomingDelay</value>
+  </data>
+  <data name="&gt;&gt;EditLoomingDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditLoomingDelay.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditLoomingDelay.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelay.Name" xml:space="preserve">
+    <value>LabelLoomingDelay</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelay.Parent" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelay.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="GroupBoxTrayIcon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GroupBoxTrayIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>218, 196</value>
+  </data>
+  <data name="GroupBoxTrayIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 213</value>
+  </data>
+  <data name="GroupBoxTrayIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
+    <value>Tray Icon click open</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTrayIcon.Name" xml:space="preserve">
+    <value>GroupBoxTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTrayIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTrayIcon.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTrayIcon.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="EditBalloonAutoHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1703,33 +1820,6 @@
   </data>
   <data name="&gt;&gt;LabelLoomingDelay.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="GroupBoxTrayIcon.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="GroupBoxTrayIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 196</value>
-  </data>
-  <data name="GroupBoxTrayIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 213</value>
-  </data>
-  <data name="GroupBoxTrayIcon.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="GroupBoxTrayIcon.Text" xml:space="preserve">
-    <value>Tray Icon click open</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTrayIcon.Name" xml:space="preserve">
-    <value>GroupBoxTrayIcon</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTrayIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTrayIcon.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTrayIcon.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="EditStartupHide.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
