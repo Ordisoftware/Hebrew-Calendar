@@ -105,7 +105,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 #### 2019.10.21 - Version 3.5
 
 - Improve personal shabat setup by asking birth time.
-- Improve min and max years that can be generated (1800-2199).
+- Improve min and max years that can be generated (up to 2198).
 - Improve reminder to change the window color when just passing the start date without waiting the remind delay.
 - Add Ctrl+T shortcut to go to today.
 - Add option to define the delay to open the looming navigation popup.
