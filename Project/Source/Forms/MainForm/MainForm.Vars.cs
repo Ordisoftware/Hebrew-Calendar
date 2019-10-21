@@ -131,7 +131,7 @@ namespace Ordisoftware.HebrewCalendar
         LastShabatReminded = null;
         int min = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Min();
         int max = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Max();
-        for ( int index = min; index < max; index++ )
+        for ( int index = min; index <= max; index++ )
           if ( LastCelebrationReminded.ContainsKey((TorahEventType)index) )
             LastCelebrationReminded[(TorahEventType)index] = null;
         RemindCelebrationDates.Clear();
