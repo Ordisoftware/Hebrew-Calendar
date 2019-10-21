@@ -80,8 +80,8 @@ namespace Ordisoftware.HebrewCalendar
                                  1);
       var sunrise = calcEphem(strEphem.Substring(10, 4));
       var sunset = calcEphem(strEphem.Substring(15, 4)); 
-      if ( sunset <= sunrise )
-        throw new SunSetRiseException();
+      //if ( sunset <= sunrise )
+        //throw new SunSetRiseException();
       return new Ephemeris()
       {
         Sunrise = sunrise,
