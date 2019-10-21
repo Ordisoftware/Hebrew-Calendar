@@ -110,7 +110,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 - Fix reminder using moon days that stops remind after midnight.
 - Add Ctrl+T shortcut to go to today.
 - Add option to define the delay to open the looming navigation popup.
-- Some improvments.
+- Some improvements.
 - Some fixes.
 - Update help.
 
@@ -205,7 +205,7 @@ These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Week
 
 - Change current day color in month view.
 - Some code refactorings.
-- Some improvments.
+- Some improvements.
 
 #### 2019.01.21 - Version 1.4
 
