@@ -78,9 +78,13 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 It's the "day of rest" where one do not work for a livelihood and where there is no creative activity. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity. Tradition attributes this day to Saturday. We can however think according to Béréshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Béréshit 1.5 and 1.16 as well as from Shémot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately.
 
+The personal shabat of a man is the previous day of the birth. The shabat of a woman is the shabat of her father or her husband/concubin. If the man were born between midnight and the sunset, the shabat is the day before. Between sunset and midnight, the shabat is that day. If you prefer to use the traditional group shabat, select for example example Saturday for Judaism, Sunday for Catholicism or Friday for Islam.
+
 #### What are the times of celebration?
 
 These are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teruah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrow of losses, and Sukot or Tabernacles which is the construction of the future. These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.
+
+The application uses by default moon omer forcelebrations. If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set. You can use traditionnals sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.
 
 #### Keyboard shortcuts
 
