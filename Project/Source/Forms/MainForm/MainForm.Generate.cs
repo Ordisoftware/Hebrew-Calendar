@@ -59,8 +59,9 @@ namespace Ordisoftware.HebrewCalendar
           }
         }
       }
-      catch ( SunSetRiseException )
+      catch ( InvalidTimeZoneException )
       {
+        DisplayManager.ShowError(Translations.InvalidTimeZone.GetLang());
         throw;
       }
       catch ( Exception ex )

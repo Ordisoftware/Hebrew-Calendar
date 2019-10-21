@@ -38,6 +38,8 @@
       this.LabelCity = new System.Windows.Forms.Label();
       this.EditFilter = new System.Windows.Forms.TextBox();
       this.LabelFilter = new System.Windows.Forms.Label();
+      this.LabelTimeZone = new System.Windows.Forms.Label();
+      this.EditTimeZone = new System.Windows.Forms.ComboBox();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -96,12 +98,27 @@
       resources.ApplyResources(this.LabelFilter, "LabelFilter");
       this.LabelFilter.Name = "LabelFilter";
       // 
+      // LabelTimeZone
+      // 
+      resources.ApplyResources(this.LabelTimeZone, "LabelTimeZone");
+      this.LabelTimeZone.Name = "LabelTimeZone";
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditTimeZone.FormattingEnabled = true;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.SelectedIndexChanged += new System.EventHandler(this.EditTimeZone_SelectedIndexChanged);
+      // 
       // SelectCityForm
       // 
       this.AcceptButton = this.ButtonOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ButtonCancel;
+      this.Controls.Add(this.EditTimeZone);
+      this.Controls.Add(this.LabelTimeZone);
       this.Controls.Add(this.LabelFilter);
       this.Controls.Add(this.EditFilter);
       this.Controls.Add(this.LabelCity);
@@ -131,5 +148,7 @@
     private System.Windows.Forms.Label LabelCity;
     private System.Windows.Forms.TextBox EditFilter;
     private System.Windows.Forms.Label LabelFilter;
+    private System.Windows.Forms.Label LabelTimeZone;
+    internal System.Windows.Forms.ComboBox EditTimeZone;
   }
 }

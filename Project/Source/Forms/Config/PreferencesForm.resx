@@ -202,7 +202,7 @@
     <value>NoControl</value>
   </data>
   <data name="ButtonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>671, 3</value>
+    <value>676, 3</value>
   </data>
   <data name="ButtonClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -355,7 +355,7 @@
     <value>23, 42</value>
   </data>
   <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 20</value>
+    <value>79, 20</value>
   </data>
   <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -379,7 +379,7 @@
     <value>23, 87</value>
   </data>
   <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 20</value>
+    <value>79, 20</value>
   </data>
   <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -415,7 +415,7 @@
     <value>10, 605</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>749, 28</value>
+    <value>754, 28</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -498,9 +498,6 @@
   <data name="&gt;&gt;ActionUsePersonalShabat.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="LabelCountryCity.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="LabelCountryCity.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -508,13 +505,13 @@
     <value>22, 116</value>
   </data>
   <data name="LabelCountryCity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 13</value>
+    <value>150, 13</value>
   </data>
   <data name="LabelCountryCity.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
   </data>
   <data name="LabelCountryCity.Text" xml:space="preserve">
-    <value> City</value>
+    <value>City</value>
   </data>
   <data name="&gt;&gt;LabelCountryCity.Name" xml:space="preserve">
     <value>LabelCountryCity</value>
@@ -568,7 +565,7 @@
     <value>218, 15</value>
   </data>
   <data name="GroupBoxGPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 165</value>
+    <value>187, 165</value>
   </data>
   <data name="GroupBoxGPS.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1243,7 +1240,7 @@
     <value>235, 425</value>
   </data>
   <data name="GroupBoxNavigation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 162</value>
+    <value>170, 162</value>
   </data>
   <data name="GroupBoxNavigation.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1612,7 +1609,7 @@
     <value>218, 196</value>
   </data>
   <data name="GroupBoxTrayIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 213</value>
+    <value>187, 213</value>
   </data>
   <data name="GroupBoxTrayIcon.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1862,9 +1859,6 @@
   </data>
   <data name="&gt;&gt;EditStartupHide.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="GroupBoxReminder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
   </data>
   <data name="&gt;&gt;EditReminderUseColors.Name" xml:space="preserve">
     <value>EditReminderUseColors</value>
@@ -2122,7 +2116,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="GroupBoxReminder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>414, 15</value>
+    <value>421, 15</value>
   </data>
   <data name="GroupBoxReminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>337, 394</value>
@@ -3342,9 +3336,6 @@
   <data name="&gt;&gt;PanelCurrentDayColor.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="GroupBoxSystem.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="&gt;&gt;ActionSelectLangFR.Name" xml:space="preserve">
     <value>ActionSelectLangFR</value>
   </data>
@@ -3397,7 +3388,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="GroupBoxSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>414, 425</value>
+    <value>421, 425</value>
   </data>
   <data name="GroupBoxSystem.Size" type="System.Drawing.Size, System.Drawing">
     <value>337, 162</value>
@@ -3595,7 +3586,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>769, 643</value>
+    <value>774, 643</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

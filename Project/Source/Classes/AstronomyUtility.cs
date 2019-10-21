@@ -31,14 +31,6 @@ namespace Ordisoftware.HebrewCalendar
     public TimeSpan? Moonset;
   }
 
-  public class SunSetRiseException : Exception
-  {
-    public SunSetRiseException()
-      : base("Can't process sunset before sunrise.")
-    {
-    }
-  }
-
   /// <summary>
   /// Provide astronomy utility.
   /// </summary>
@@ -73,19 +65,25 @@ namespace Ordisoftware.HebrewCalendar
           ? new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0)
           : new Nullable<TimeSpan>();
       }
+      TimeZoneInfo timezoneinfo = null;
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        if ( item.Id == Program.Settings.TimeZone )
+        {
+          timezoneinfo = item;
+          break;
+        }
+      if ( timezoneinfo == null )
+        throw new InvalidTimeZoneException();
+      var timezone = timezoneinfo.BaseUtcOffset.Hours + ( timezoneinfo.IsDaylightSavingTime(date) ? 1 : 0 );
       var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude),
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude),
-                                 TimeZoneInfo.Local.IsDaylightSavingTime(date.AddDays(1)) ? 2.0f : 1.0f,
+                                 timezone,
                                  1);
-      var sunrise = calcEphem(strEphem.Substring(10, 4));
-      var sunset = calcEphem(strEphem.Substring(15, 4)); 
-      //if ( sunset <= sunrise )
-        //throw new SunSetRiseException();
       return new Ephemeris()
       {
-        Sunrise = sunrise,
-        Sunset = sunset,
+        Sunrise = calcEphem(strEphem.Substring(10, 4)),
+        Sunset = calcEphem(strEphem.Substring(15, 4)),
         Moonrise = calcEphem(strEphem.Substring(51, 4)),
         Moonset = calcEphem(strEphem.Substring(56, 4))
       };
