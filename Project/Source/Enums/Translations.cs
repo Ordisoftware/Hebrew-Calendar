@@ -193,7 +193,7 @@ namespace Ordisoftware.HebrewCalendar
                 "The shabat of a woman is the shabat of her father or her husband/concubin." + NewLine + NewLine +
                 "So the man and the woman respect their mutual cycles." + NewLine + NewLine +
                 "If the man were born between midnight and the sunset, the shabat is the day before. Between sunset and midnight, the shabat is that day." + NewLine + NewLine +
-                "If you prefer to use the traditional group shabat, select for example example Saturday for Judaism, Sunday for Catholicism or Friday for Islam." + NewLine + NewLine + 
+                "If you prefer to use the traditional group shabat, select for example Saturday for Judaism, Sunday for Catholicism or Friday for Islam." + NewLine + NewLine + 
                 "Do you want to setup the personal shabat?" },
         { "fr", "Le shabat personnel d'un homme marié/concubin/divorcé est la veille du jour de la naissance. Un fils suit le shabat de son père." + NewLine + NewLine +
                 "Le shabat d'une femme est celui de son père ou de son mari/concubin." + NewLine + NewLine +
