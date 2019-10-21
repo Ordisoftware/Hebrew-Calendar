@@ -178,7 +178,7 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> OmerMoon
       = new Dictionary<string, string>()
       {
-        { "en", "The application uses by default moon omer forcelebrations." + NewLine + NewLine +
+        { "en", "The application uses by default moon omer for celebrations." + NewLine + NewLine +
                 "If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set." + NewLine + NewLine +
                 "You can use traditionnals sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set." },
         { "fr", "L'application utilise par défaut un omer selon la lune pour les célébrations." + NewLine + NewLine +
