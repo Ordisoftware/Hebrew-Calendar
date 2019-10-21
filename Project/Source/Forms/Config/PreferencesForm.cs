@@ -322,6 +322,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSLongitude = form.Longitude;
       Program.Settings.GPSCountry = form.Country;
       Program.Settings.GPSCity = form.City;
+      Program.Settings.Save();
       if ( form.EditTimeZone.SelectedItem != null )
       {
         Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;

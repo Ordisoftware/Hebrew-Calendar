@@ -66,10 +66,12 @@ namespace Ordisoftware.HebrewCalendar
           : new Nullable<TimeSpan>();
       }
       TimeZoneInfo timezoneinfo = null;
-      var timezoneinfos = TimeZoneInfo.GetSystemTimeZones();
-      foreach ( var item in timezoneinfos )
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == Program.Settings.TimeZone )
+        {
           timezoneinfo = item;
+          break;
+        }
       if ( timezoneinfo == null )
         throw new InvalidTimeZoneException();
       var timezone = timezoneinfo.BaseUtcOffset.Hours + ( timezoneinfo.IsDaylightSavingTime(date) ? 1 : 0 );
@@ -78,16 +80,12 @@ namespace Ordisoftware.HebrewCalendar
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude),
                                  timezone,
                                  1);
-      TimeSpan? sunRiseTime = calcEphem(strEphem.Substring(10, 4));
-      TimeSpan? sunSetTime = calcEphem(strEphem.Substring(15, 4));
-      TimeSpan? moonRiseTime = calcEphem(strEphem.Substring(51, 4));
-      TimeSpan? moonSetTime = calcEphem(strEphem.Substring(56, 4));
       return new Ephemeris()
       {
-        Sunrise = sunRiseTime,
-        Sunset = sunSetTime,
-        Moonrise = moonRiseTime,
-        Moonset = moonSetTime
+        Sunrise = calcEphem(strEphem.Substring(10, 4)),
+        Sunset = calcEphem(strEphem.Substring(15, 4)),
+        Moonrise = calcEphem(strEphem.Substring(51, 4)),
+        Moonset = calcEphem(strEphem.Substring(56, 4))
       };
     }
 

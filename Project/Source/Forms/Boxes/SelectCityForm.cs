@@ -116,6 +116,10 @@ namespace Ordisoftware.HebrewCalendar
       if ( ListBoxCountries.SelectedIndex == -1 ) return;
       ListBoxCities.DataSource = GPS[(string)ListBoxCountries.SelectedItem].OrderBy(c => c.Name).ToList();
       ListBoxCities.SelectedIndex = -1;
+      if ( Mutex ) return;
+      EditFilter.Text = ListBoxCountries.SelectedItem.ToString() + ", ";
+      EditFilter.Focus();
+      EditFilter.SelectionStart = EditFilter.Text.Length;
     }
 
     private void ListBoxCities_SelectedIndexChanged(object sender, EventArgs e)
@@ -126,6 +130,10 @@ namespace Ordisoftware.HebrewCalendar
       Latitude = ( (CityItem)ListBoxCities.SelectedItem ).Latitude;
       Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
       ButtonOk.Enabled = EditTimeZone.SelectedItem != null;
+      if ( Mutex ) return;
+      EditFilter.Text = ListBoxCountries.SelectedItem.ToString() + ", " + ListBoxCities.SelectedItem.ToString();
+      EditFilter.Focus();
+      EditFilter.SelectionStart = EditFilter.Text.Length;
     }
 
     bool foundCountry = false;
@@ -192,6 +200,9 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         ButtonOk.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
+        if ( !IsLoading )
+          if ( !foundCountry || !foundCity )
+            EditTimeZone.SelectedItem = null;
         Mutex = false;
       }
       void tempo(string str)
