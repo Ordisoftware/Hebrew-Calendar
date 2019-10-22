@@ -62,26 +62,26 @@ namespace Ordisoftware.HebrewCalendar
       }
       form = new ReminderForm();
       var date = SQLiteUtility.GetDate(row.Date);
-      form.LabelNextCelebrationText.Text = !isShabat
+      form.LabelTitle.Text = !isShabat
                                          ? Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents)
                                          : "Shabat";
-      form.LabelNextCelebrationDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
+      form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
       if ( date1 != null)
         form.LabelHours.Text = Translations.DayOfWeek.GetLang(date1.Value.DayOfWeek) + " "
                              + time1 + " ➜ "
                              + Translations.DayOfWeek.GetLang(date2.Value.DayOfWeek) + " "
                              + time2;
-      form.LabelNextCelebrationDate.Tag = date;
+      form.LabelDate.Tag = date;
       int left = SystemInformation.WorkingArea.Left;
       int top = SystemInformation.WorkingArea.Top;
       int width = SystemInformation.WorkingArea.Width;
       int height = SystemInformation.WorkingArea.Height;
       form.Location = new Point(left + width - form.Width, top + height - form.Height);
       form.Tag = row.Date;
-      form.Text = " " + form.LabelNextCelebrationText.Text;
-      form.LabelNextCelebrationText.ForeColor = Program.Settings.CalendarColorTorahEvent;
-      form.LabelNextCelebrationDate.LinkColor = Program.Settings.CalendarColorMoon;
-      form.LabelNextCelebrationDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
+      form.Text = " " + form.LabelTitle.Text;
+      form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
+      form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
+      form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
       var dateNow = DateTime.Now;
       if ( Program.Settings.UseColors)
         if ( dateNow >= date1 && dateNow <= date2 )
@@ -191,9 +191,9 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LabelNextCelebrationDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( LabelNextCelebrationDate.Tag == null ) return;
+      if ( LabelDate.Tag == null ) return;
       if ( !MainForm.Instance.Visible ) MainForm.Instance.MenuShowHide.PerformClick();
-      NavigationForm.Instance.Date = (DateTime)LabelNextCelebrationDate.Tag;
+      NavigationForm.Instance.Date = (DateTime)LabelDate.Tag;
       Close();
     }
 

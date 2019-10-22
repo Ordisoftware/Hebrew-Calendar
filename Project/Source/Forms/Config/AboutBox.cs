@@ -52,11 +52,11 @@ namespace Ordisoftware.HebrewCalendar
     internal void AboutBox_Shown(object sender, EventArgs e)
     {
       Text = Translations.AboutBoxTitle.GetLang(AssemblyTitle);
-      labelTitle.Text = AssemblyTitle;
-      labelDescription.Text = Translations.ApplicationDescription.GetLang();
-      labelVersion.Text = Translations.AboutBoxVersion.GetLang(AssemblyVersion);
-      labelCopyright.Text = AssemblyCopyright;
-      labelTrademark.Text = AssemblyTrademark;
+      LabelTitle.Text = AssemblyTitle;
+      LabelDescription.Text = Translations.ApplicationDescription.GetLang();
+      LabelVersion.Text = Translations.AboutBoxVersion.GetLang(AssemblyVersion);
+      LabelCopyright.Text = AssemblyCopyright;
+      LabelTrademark.Text = AssemblyTrademark;
     }
 
     /// <summary>
@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void AboutBox_Load(object sender, EventArgs e)
     {
-      editLicense.Rtf = Properties.Resources.MPL_2_0;
+      EditLicense.Rtf = Properties.Resources.MPL_2_0;
     }
 
     /// <summary>

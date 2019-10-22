@@ -29,22 +29,22 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingForm));
-      this.PanelMain = new System.Windows.Forms.Panel();
+      this.Panel = new System.Windows.Forms.Panel();
       this.ProgressBar = new System.Windows.Forms.ProgressBar();
-      this.LabelApplicationName = new System.Windows.Forms.Label();
+      this.LabelTitle = new System.Windows.Forms.Label();
       this.LabelOperation = new System.Windows.Forms.Label();
-      this.PanelMain.SuspendLayout();
+      this.Panel.SuspendLayout();
       this.SuspendLayout();
       // 
-      // PanelMain
+      // Panel
       // 
-      this.PanelMain.BackColor = System.Drawing.Color.LemonChiffon;
-      this.PanelMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.PanelMain.Controls.Add(this.ProgressBar);
-      this.PanelMain.Controls.Add(this.LabelApplicationName);
-      this.PanelMain.Controls.Add(this.LabelOperation);
-      resources.ApplyResources(this.PanelMain, "PanelMain");
-      this.PanelMain.Name = "PanelMain";
+      this.Panel.BackColor = System.Drawing.Color.LemonChiffon;
+      this.Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.Panel.Controls.Add(this.ProgressBar);
+      this.Panel.Controls.Add(this.LabelTitle);
+      this.Panel.Controls.Add(this.LabelOperation);
+      resources.ApplyResources(this.Panel, "Panel");
+      this.Panel.Name = "Panel";
       // 
       // ProgressBar
       // 
@@ -52,10 +52,10 @@
       this.ProgressBar.Name = "ProgressBar";
       this.ProgressBar.Step = 1;
       // 
-      // LabelApplicationName
+      // LabelTitle
       // 
-      resources.ApplyResources(this.LabelApplicationName, "LabelApplicationName");
-      this.LabelApplicationName.Name = "LabelApplicationName";
+      resources.ApplyResources(this.LabelTitle, "LabelTitle");
+      this.LabelTitle.Name = "LabelTitle";
       // 
       // LabelOperation
       // 
@@ -66,23 +66,23 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.PanelMain);
+      this.Controls.Add(this.Panel);
       this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
       this.Name = "LoadingForm";
       this.ShowInTaskbar = false;
       this.TopMost = true;
-      this.PanelMain.ResumeLayout(false);
-      this.PanelMain.PerformLayout();
+      this.Panel.ResumeLayout(false);
+      this.Panel.PerformLayout();
       this.ResumeLayout(false);
 
     }
 
     #endregion
 
-    private System.Windows.Forms.Panel PanelMain;
+    private System.Windows.Forms.Panel Panel;
     internal System.Windows.Forms.ProgressBar ProgressBar;
     internal System.Windows.Forms.Label LabelOperation;
-    internal System.Windows.Forms.Label LabelApplicationName;
+    internal System.Windows.Forms.Label LabelTitle;
   }
 }

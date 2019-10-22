@@ -118,315 +118,315 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="labelTitle.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelTitle.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 15.75pt, style=Bold</value>
   </data>
-  <data name="labelTitle.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 10</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="labelTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="LabelTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 3, 0</value>
   </data>
-  <data name="labelTitle.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 25</value>
   </data>
-  <data name="labelTitle.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="labelTitle.Text" xml:space="preserve">
+  <data name="LabelTitle.Text" xml:space="preserve">
     <value>-Title-</value>
   </data>
-  <data name="labelTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="LabelTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;labelTitle.Name" xml:space="preserve">
-    <value>labelTitle</value>
+  <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
+    <value>LabelTitle</value>
   </data>
-  <data name="&gt;&gt;labelTitle.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelTitle.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelTitle.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelTitle.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelTitle.ZOrder" xml:space="preserve">
     <value>26</value>
   </data>
-  <data name="labelVersion.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelVersion.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 60</value>
   </data>
-  <data name="labelVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="LabelVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 3, 0</value>
   </data>
-  <data name="labelVersion.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelVersion.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
   </data>
-  <data name="labelVersion.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelVersion.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
   </data>
-  <data name="labelVersion.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelVersion.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="labelVersion.Text" xml:space="preserve">
+  <data name="LabelVersion.Text" xml:space="preserve">
     <value>Version </value>
   </data>
-  <data name="labelVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="LabelVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;labelVersion.Name" xml:space="preserve">
-    <value>labelVersion</value>
+  <data name="&gt;&gt;LabelVersion.Name" xml:space="preserve">
+    <value>LabelVersion</value>
   </data>
-  <data name="&gt;&gt;labelVersion.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelVersion.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelVersion.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelVersion.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelVersion.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelVersion.ZOrder" xml:space="preserve">
     <value>25</value>
   </data>
-  <data name="labelCopyright.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelCopyright.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelCopyright.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelCopyright.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
   </data>
-  <data name="labelCopyright.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="LabelCopyright.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 3, 0</value>
   </data>
-  <data name="labelCopyright.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelCopyright.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
   </data>
-  <data name="labelCopyright.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelCopyright.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
   </data>
-  <data name="labelCopyright.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelCopyright.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
+  <data name="LabelCopyright.Text" xml:space="preserve">
     <value>-Copyright-</value>
   </data>
-  <data name="labelCopyright.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="LabelCopyright.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;labelCopyright.Name" xml:space="preserve">
-    <value>labelCopyright</value>
+  <data name="&gt;&gt;LabelCopyright.Name" xml:space="preserve">
+    <value>LabelCopyright</value>
   </data>
-  <data name="&gt;&gt;labelCopyright.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelCopyright.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelCopyright.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelCopyright.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelCopyright.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelCopyright.ZOrder" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="labelTrademark.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelTrademark.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelTrademark.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelTrademark.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 100</value>
   </data>
-  <data name="labelTrademark.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="LabelTrademark.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 3, 0</value>
   </data>
-  <data name="labelTrademark.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelTrademark.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
   </data>
-  <data name="labelTrademark.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelTrademark.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 13</value>
   </data>
-  <data name="labelTrademark.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelTrademark.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="labelTrademark.Text" xml:space="preserve">
+  <data name="LabelTrademark.Text" xml:space="preserve">
     <value>-Trademark-</value>
   </data>
-  <data name="labelTrademark.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="LabelTrademark.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;labelTrademark.Name" xml:space="preserve">
-    <value>labelTrademark</value>
+  <data name="&gt;&gt;LabelTrademark.Name" xml:space="preserve">
+    <value>LabelTrademark</value>
   </data>
-  <data name="&gt;&gt;labelTrademark.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelTrademark.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelTrademark.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelTrademark.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelTrademark.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelTrademark.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
-  <data name="buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
     <value>521, 2</value>
   </data>
-  <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
-  <data name="buttonClose.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
-  <data name="buttonClose.Text" xml:space="preserve">
+  <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="&gt;&gt;buttonClose.Name" xml:space="preserve">
-    <value>buttonClose</value>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
   </data>
-  <data name="&gt;&gt;buttonClose.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonClose.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
   </data>
-  <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="editLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="EditLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="editLicense.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditLicense.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 125</value>
   </data>
-  <data name="editLicense.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditLicense.Size" type="System.Drawing.Size, System.Drawing">
     <value>588, 204</value>
   </data>
-  <data name="editLicense.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditLicense.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="editLicense.Text" xml:space="preserve">
+  <data name="EditLicense.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;editLicense.Name" xml:space="preserve">
-    <value>editLicense</value>
+  <data name="&gt;&gt;EditLicense.Name" xml:space="preserve">
+    <value>EditLicense</value>
   </data>
-  <data name="&gt;&gt;editLicense.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditLicense.Type" xml:space="preserve">
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;editLicense.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditLicense.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;editLicense.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditLicense.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="labelIcons.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelIcons.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 340</value>
   </data>
-  <data name="labelIcons.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 13</value>
   </data>
-  <data name="labelIcons.TabIndex" type="System.Int32, mscorlib">
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
-  <data name="labelIcons.Text" xml:space="preserve">
+  <data name="label10.Text" xml:space="preserve">
     <value>Unmodified buttons icons (CC BY 3.0) :</value>
   </data>
-  <data name="&gt;&gt;labelIcons.Name" xml:space="preserve">
-    <value>labelIcons</value>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
   </data>
-  <data name="&gt;&gt;labelIcons.Type" xml:space="preserve">
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelIcons.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelIcons.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
-  <data name="linkProvider1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="linkLabel10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="linkProvider1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="linkLabel10.Location" type="System.Drawing.Point, System.Drawing">
     <value>313, 340</value>
   </data>
-  <data name="linkProvider1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="linkLabel10.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 13</value>
   </data>
-  <data name="linkProvider1.TabIndex" type="System.Int32, mscorlib">
+  <data name="linkLabel10.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
-  <data name="linkProvider1.Text" xml:space="preserve">
+  <data name="linkLabel10.Text" xml:space="preserve">
     <value>www.fatcow.com/free-icons</value>
   </data>
-  <data name="&gt;&gt;linkProvider1.Name" xml:space="preserve">
-    <value>linkProvider1</value>
+  <data name="&gt;&gt;linkLabel10.Name" xml:space="preserve">
+    <value>linkLabel10</value>
   </data>
-  <data name="&gt;&gt;linkProvider1.Type" xml:space="preserve">
+  <data name="&gt;&gt;linkLabel10.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;linkProvider1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;linkLabel10.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;linkProvider1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;linkLabel10.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="labelDescription.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelDescription.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelDescription.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 9pt, style=Bold</value>
   </data>
-  <data name="labelDescription.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 40</value>
   </data>
-  <data name="labelDescription.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 14</value>
   </data>
-  <data name="labelDescription.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelDescription.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
-  <data name="labelDescription.Text" xml:space="preserve">
+  <data name="LabelDescription.Text" xml:space="preserve">
     <value>-Description-</value>
   </data>
-  <data name="&gt;&gt;labelDescription.Name" xml:space="preserve">
-    <value>labelDescription</value>
+  <data name="&gt;&gt;LabelDescription.Name" xml:space="preserve">
+    <value>LabelDescription</value>
   </data>
-  <data name="&gt;&gt;labelDescription.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelDescription.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelDescription.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelDescription.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelDescription.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="linkProvider2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="linkLabel11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="linkProvider2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="linkLabel11.Location" type="System.Drawing.Point, System.Drawing">
     <value>313, 356</value>
   </data>
-  <data name="linkProvider2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="linkLabel11.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 13</value>
   </data>
-  <data name="linkProvider2.TabIndex" type="System.Int32, mscorlib">
+  <data name="linkLabel11.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
-  <data name="linkProvider2.Text" xml:space="preserve">
+  <data name="linkLabel11.Text" xml:space="preserve">
     <value>github.com/pasnox/oxygen-icons-png</value>
   </data>
-  <data name="&gt;&gt;linkProvider2.Name" xml:space="preserve">
-    <value>linkProvider2</value>
+  <data name="&gt;&gt;linkLabel11.Name" xml:space="preserve">
+    <value>linkLabel11</value>
   </data>
-  <data name="&gt;&gt;linkProvider2.Type" xml:space="preserve">
+  <data name="&gt;&gt;linkLabel11.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;linkProvider2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;linkLabel11.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;linkProvider2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;linkLabel11.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
   <data name="linkProvider3.AutoSize" type="System.Boolean, mscorlib">
@@ -618,28 +618,28 @@
   <data name="&gt;&gt;linkLabel2.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 510</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>599, 28</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">

@@ -28,16 +28,16 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
-      this.labelTitle = new System.Windows.Forms.Label();
-      this.labelVersion = new System.Windows.Forms.Label();
-      this.labelCopyright = new System.Windows.Forms.Label();
-      this.labelTrademark = new System.Windows.Forms.LinkLabel();
-      this.buttonClose = new System.Windows.Forms.Button();
-      this.editLicense = new System.Windows.Forms.RichTextBox();
-      this.labelIcons = new System.Windows.Forms.Label();
-      this.linkProvider1 = new System.Windows.Forms.LinkLabel();
-      this.labelDescription = new System.Windows.Forms.Label();
-      this.linkProvider2 = new System.Windows.Forms.LinkLabel();
+      this.LabelTitle = new System.Windows.Forms.Label();
+      this.LabelVersion = new System.Windows.Forms.Label();
+      this.LabelCopyright = new System.Windows.Forms.Label();
+      this.LabelTrademark = new System.Windows.Forms.LinkLabel();
+      this.ActionClose = new System.Windows.Forms.Button();
+      this.EditLicense = new System.Windows.Forms.RichTextBox();
+      this.label10 = new System.Windows.Forms.Label();
+      this.linkLabel10 = new System.Windows.Forms.LinkLabel();
+      this.LabelDescription = new System.Windows.Forms.Label();
+      this.linkLabel11 = new System.Windows.Forms.LinkLabel();
       this.linkProvider3 = new System.Windows.Forms.LinkLabel();
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
       this.label4 = new System.Windows.Forms.Label();
       this.linkLabel1 = new System.Windows.Forms.LinkLabel();
       this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-      this.panel1 = new System.Windows.Forms.Panel();
+      this.PanelBottom = new System.Windows.Forms.Panel();
       this.label6 = new System.Windows.Forms.Label();
       this.linkLabel4 = new System.Windows.Forms.LinkLabel();
       this.linkLabel5 = new System.Windows.Forms.LinkLabel();
@@ -56,74 +56,74 @@
       this.linkLabel6 = new System.Windows.Forms.LinkLabel();
       this.linkLabel7 = new System.Windows.Forms.LinkLabel();
       this.label9 = new System.Windows.Forms.Label();
-      this.panel1.SuspendLayout();
+      this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
-      // labelTitle
+      // LabelTitle
       // 
-      resources.ApplyResources(this.labelTitle, "labelTitle");
-      this.labelTitle.Name = "labelTitle";
+      resources.ApplyResources(this.LabelTitle, "LabelTitle");
+      this.LabelTitle.Name = "LabelTitle";
       // 
-      // labelVersion
+      // LabelVersion
       // 
-      resources.ApplyResources(this.labelVersion, "labelVersion");
-      this.labelVersion.Name = "labelVersion";
+      resources.ApplyResources(this.LabelVersion, "LabelVersion");
+      this.LabelVersion.Name = "LabelVersion";
       // 
-      // labelCopyright
+      // LabelCopyright
       // 
-      resources.ApplyResources(this.labelCopyright, "labelCopyright");
-      this.labelCopyright.Name = "labelCopyright";
+      resources.ApplyResources(this.LabelCopyright, "LabelCopyright");
+      this.LabelCopyright.Name = "LabelCopyright";
       // 
-      // labelTrademark
+      // LabelTrademark
       // 
-      this.labelTrademark.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.labelTrademark, "labelTrademark");
-      this.labelTrademark.LinkColor = System.Drawing.Color.Navy;
-      this.labelTrademark.Name = "labelTrademark";
-      this.labelTrademark.TabStop = true;
-      this.labelTrademark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelTrademarkName_LinkClicked);
+      this.LabelTrademark.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.LabelTrademark, "LabelTrademark");
+      this.LabelTrademark.LinkColor = System.Drawing.Color.Navy;
+      this.LabelTrademark.Name = "LabelTrademark";
+      this.LabelTrademark.TabStop = true;
+      this.LabelTrademark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelTrademarkName_LinkClicked);
       // 
-      // buttonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.buttonClose, "buttonClose");
-      this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.buttonClose.Name = "buttonClose";
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionClose.Name = "ActionClose";
       // 
-      // editLicense
+      // EditLicense
       // 
-      resources.ApplyResources(this.editLicense, "editLicense");
-      this.editLicense.BackColor = System.Drawing.SystemColors.Window;
-      this.editLicense.Name = "editLicense";
-      this.editLicense.ReadOnly = true;
-      this.editLicense.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.editLicense_LinkClicked);
+      resources.ApplyResources(this.EditLicense, "EditLicense");
+      this.EditLicense.BackColor = System.Drawing.SystemColors.Window;
+      this.EditLicense.Name = "EditLicense";
+      this.EditLicense.ReadOnly = true;
+      this.EditLicense.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.editLicense_LinkClicked);
       // 
-      // labelIcons
+      // label10
       // 
-      resources.ApplyResources(this.labelIcons, "labelIcons");
-      this.labelIcons.Name = "labelIcons";
+      resources.ApplyResources(this.label10, "label10");
+      this.label10.Name = "label10";
       // 
-      // linkProvider1
+      // linkLabel10
       // 
-      this.linkProvider1.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.linkProvider1, "linkProvider1");
-      this.linkProvider1.LinkColor = System.Drawing.Color.Navy;
-      this.linkProvider1.Name = "linkProvider1";
-      this.linkProvider1.TabStop = true;
-      this.linkProvider1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
+      this.linkLabel10.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel10, "linkLabel10");
+      this.linkLabel10.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel10.Name = "linkLabel10";
+      this.linkLabel10.TabStop = true;
+      this.linkLabel10.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
       // 
-      // labelDescription
+      // LabelDescription
       // 
-      resources.ApplyResources(this.labelDescription, "labelDescription");
-      this.labelDescription.Name = "labelDescription";
+      resources.ApplyResources(this.LabelDescription, "LabelDescription");
+      this.LabelDescription.Name = "LabelDescription";
       // 
-      // linkProvider2
+      // linkLabel11
       // 
-      this.linkProvider2.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.linkProvider2, "linkProvider2");
-      this.linkProvider2.LinkColor = System.Drawing.Color.Navy;
-      this.linkProvider2.Name = "linkProvider2";
-      this.linkProvider2.TabStop = true;
-      this.linkProvider2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
+      this.linkLabel11.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel11, "linkLabel11");
+      this.linkLabel11.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel11.Name = "linkLabel11";
+      this.linkLabel11.TabStop = true;
+      this.linkLabel11.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
       // 
       // linkProvider3
       // 
@@ -171,11 +171,11 @@
       this.linkLabel2.TabStop = true;
       this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
       // 
-      // panel1
+      // PanelBottom
       // 
-      this.panel1.Controls.Add(this.buttonClose);
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Name = "panel1";
+      this.PanelBottom.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Name = "PanelBottom";
       // 
       // label6
       // 
@@ -249,10 +249,10 @@
       // 
       // AboutBox
       // 
-      this.AcceptButton = this.buttonClose;
+      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.buttonClose;
+      this.CancelButton = this.ActionClose;
       this.Controls.Add(this.linkLabel7);
       this.Controls.Add(this.label9);
       this.Controls.Add(this.linkLabel6);
@@ -261,7 +261,7 @@
       this.Controls.Add(this.label5);
       this.Controls.Add(this.linkLabel5);
       this.Controls.Add(this.label7);
-      this.Controls.Add(this.panel1);
+      this.Controls.Add(this.PanelBottom);
       this.Controls.Add(this.linkLabel4);
       this.Controls.Add(this.linkLabel2);
       this.Controls.Add(this.linkLabel1);
@@ -270,16 +270,16 @@
       this.Controls.Add(this.label4);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.label1);
-      this.Controls.Add(this.linkProvider2);
-      this.Controls.Add(this.labelDescription);
-      this.Controls.Add(this.linkProvider1);
+      this.Controls.Add(this.linkLabel11);
+      this.Controls.Add(this.LabelDescription);
+      this.Controls.Add(this.linkLabel10);
       this.Controls.Add(this.label2);
-      this.Controls.Add(this.labelIcons);
-      this.Controls.Add(this.editLicense);
-      this.Controls.Add(this.labelTrademark);
-      this.Controls.Add(this.labelCopyright);
-      this.Controls.Add(this.labelVersion);
-      this.Controls.Add(this.labelTitle);
+      this.Controls.Add(this.label10);
+      this.Controls.Add(this.EditLicense);
+      this.Controls.Add(this.LabelTrademark);
+      this.Controls.Add(this.LabelCopyright);
+      this.Controls.Add(this.LabelVersion);
+      this.Controls.Add(this.LabelTitle);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
@@ -287,7 +287,7 @@
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.AboutBox_Load);
       this.Shown += new System.EventHandler(this.AboutBox_Shown);
-      this.panel1.ResumeLayout(false);
+      this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -295,16 +295,16 @@
 
     #endregion
 
-    private System.Windows.Forms.Label labelTitle;
-    private System.Windows.Forms.Label labelVersion;
-    private System.Windows.Forms.Label labelCopyright;
-    private System.Windows.Forms.LinkLabel labelTrademark;
-    private System.Windows.Forms.Button buttonClose;
-    private System.Windows.Forms.RichTextBox editLicense;
-    private System.Windows.Forms.Label labelIcons;
-    private System.Windows.Forms.LinkLabel linkProvider1;
-    private System.Windows.Forms.Label labelDescription;
-    private System.Windows.Forms.LinkLabel linkProvider2;
+    private System.Windows.Forms.Label LabelTitle;
+    private System.Windows.Forms.Label LabelVersion;
+    private System.Windows.Forms.Label LabelCopyright;
+    private System.Windows.Forms.LinkLabel LabelTrademark;
+    private System.Windows.Forms.Button ActionClose;
+    private System.Windows.Forms.RichTextBox EditLicense;
+    private System.Windows.Forms.Label label10;
+    private System.Windows.Forms.LinkLabel linkLabel10;
+    private System.Windows.Forms.Label LabelDescription;
+    private System.Windows.Forms.LinkLabel linkLabel11;
     private System.Windows.Forms.LinkLabel linkProvider3;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
@@ -312,7 +312,7 @@
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.LinkLabel linkLabel1;
     private System.Windows.Forms.LinkLabel linkLabel2;
-    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Label label6;
     private System.Windows.Forms.LinkLabel linkLabel4;
     private System.Windows.Forms.LinkLabel linkLabel5;

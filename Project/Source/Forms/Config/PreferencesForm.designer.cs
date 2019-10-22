@@ -32,7 +32,7 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
       System.Windows.Forms.Label LabelGPSLongitude;
       this.DialogColor = new System.Windows.Forms.ColorDialog();
-      this.ButtonClose = new System.Windows.Forms.Button();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.LabelShabatDay = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
       this.EditShabatDay = new System.Windows.Forms.ComboBox();
@@ -155,12 +155,12 @@
       // 
       this.DialogColor.FullOpen = true;
       // 
-      // ButtonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.ButtonClose, "ButtonClose");
-      this.ButtonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ButtonClose.Name = "ButtonClose";
-      this.ButtonClose.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.UseVisualStyleBackColor = true;
       // 
       // LabelShabatDay
       // 
@@ -202,7 +202,7 @@
       // PanelButtons
       // 
       this.PanelButtons.Controls.Add(this.ActionResetSettings);
-      this.PanelButtons.Controls.Add(this.ButtonClose);
+      this.PanelButtons.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
@@ -873,10 +873,10 @@
       // 
       // PreferencesForm
       // 
-      this.AcceptButton = this.ButtonClose;
+      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonClose;
+      this.CancelButton = this.ActionClose;
       this.Controls.Add(this.GroupBoxSystem);
       this.Controls.Add(this.GroupBoxReminder);
       this.Controls.Add(this.GroupBoxTrayIcon);
@@ -924,7 +924,7 @@
 
     #endregion
     private System.Windows.Forms.ColorDialog DialogColor;
-    private System.Windows.Forms.Button ButtonClose;
+    private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Label LabelShabatDay;
     private System.Windows.Forms.Label LabelFontSize;
     private System.Windows.Forms.Label LabelFontName;

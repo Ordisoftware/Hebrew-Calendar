@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewCalendar
         LoadingForm = new LoadingForm();
       if ( !LoadingForm.Visible )
       {
-        LoadingForm.LabelApplicationName.Text = AboutBox.Instance.AssemblyTitle;
+        LoadingForm.LabelTitle.Text = AboutBox.Instance.AssemblyTitle;
         LoadingForm.Show();
       }
       if ( index == 0 ) LoadingForm.ProgressBar.Maximum = count;

@@ -29,29 +29,29 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReminderForm));
-      this.LabelNextCelebrationText = new System.Windows.Forms.Label();
-      this.LabelNextCelebrationDate = new System.Windows.Forms.LinkLabel();
+      this.LabelTitle = new System.Windows.Forms.Label();
+      this.LabelDate = new System.Windows.Forms.LinkLabel();
       this.PictureBox = new System.Windows.Forms.PictureBox();
       this.ActionClose = new System.Windows.Forms.Button();
       this.LabelHours = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.SuspendLayout();
       // 
-      // LabelNextCelebrationText
+      // LabelTitle
       // 
-      resources.ApplyResources(this.LabelNextCelebrationText, "LabelNextCelebrationText");
-      this.LabelNextCelebrationText.ForeColor = System.Drawing.Color.DarkRed;
-      this.LabelNextCelebrationText.Name = "LabelNextCelebrationText";
+      resources.ApplyResources(this.LabelTitle, "LabelTitle");
+      this.LabelTitle.ForeColor = System.Drawing.Color.DarkRed;
+      this.LabelTitle.Name = "LabelTitle";
       // 
-      // LabelNextCelebrationDate
+      // LabelDate
       // 
-      this.LabelNextCelebrationDate.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.LabelNextCelebrationDate, "LabelNextCelebrationDate");
-      this.LabelNextCelebrationDate.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.LabelNextCelebrationDate.LinkColor = System.Drawing.Color.Navy;
-      this.LabelNextCelebrationDate.Name = "LabelNextCelebrationDate";
-      this.LabelNextCelebrationDate.TabStop = true;
-      this.LabelNextCelebrationDate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelNextCelebrationDate_LinkClicked);
+      this.LabelDate.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.LabelDate, "LabelDate");
+      this.LabelDate.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.LabelDate.LinkColor = System.Drawing.Color.Navy;
+      this.LabelDate.Name = "LabelDate";
+      this.LabelDate.TabStop = true;
+      this.LabelDate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelNextCelebrationDate_LinkClicked);
       // 
       // PictureBox
       // 
@@ -82,8 +82,8 @@
       this.Controls.Add(this.LabelHours);
       this.Controls.Add(this.ActionClose);
       this.Controls.Add(this.PictureBox);
-      this.Controls.Add(this.LabelNextCelebrationDate);
-      this.Controls.Add(this.LabelNextCelebrationText);
+      this.Controls.Add(this.LabelDate);
+      this.Controls.Add(this.LabelTitle);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
@@ -99,8 +99,8 @@
     }
 
     #endregion
-    private System.Windows.Forms.Label LabelNextCelebrationText;
-    private System.Windows.Forms.LinkLabel LabelNextCelebrationDate;
+    private System.Windows.Forms.Label LabelTitle;
+    private System.Windows.Forms.LinkLabel LabelDate;
     private System.Windows.Forms.PictureBox PictureBox;
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Label LabelHours;

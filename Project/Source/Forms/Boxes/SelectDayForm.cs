@@ -38,13 +38,13 @@ namespace Ordisoftware.HebrewCalendar
       MonthCalendar_DateChanged(null, null);
     }
 
-    private void ButtonCancel_Click(object sender, EventArgs e)
+    private void ActionCancel_Click(object sender, EventArgs e)
     {
       if ( LiveGoTo && CurrentDay != null )
         MainForm.Instance.GoToDate(SQLiteUtility.GetDate(CurrentDay.Date));
     }
 
-    private void ButtonOk_Click(object sender, EventArgs e)
+    private void ActionOk_Click(object sender, EventArgs e)
     {
       DialogResult = DialogResult.OK;
     }

@@ -195,34 +195,34 @@
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>23, 21</value>
   </metadata>
-  <data name="ButtonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="ButtonClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ButtonClose.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
     <value>676, 3</value>
   </data>
-  <data name="ButtonClose.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="ButtonClose.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="ButtonClose.Text" xml:space="preserve">
+  <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="&gt;&gt;ButtonClose.Name" xml:space="preserve">
-    <value>ButtonClose</value>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
   </data>
-  <data name="&gt;&gt;ButtonClose.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ButtonClose.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
-  <data name="&gt;&gt;ButtonClose.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="LabelShabatDay.AutoSize" type="System.Boolean, mscorlib">

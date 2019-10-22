@@ -29,38 +29,38 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchMonthForm));
-      this.PanelButtons = new System.Windows.Forms.Panel();
-      this.ButtonCancel = new System.Windows.Forms.Button();
-      this.ButtonOk = new System.Windows.Forms.Button();
+      this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionCancel = new System.Windows.Forms.Button();
+      this.ActionOk = new System.Windows.Forms.Button();
       this.EditYear = new System.Windows.Forms.NumericUpDown();
       this.LabelYear = new System.Windows.Forms.Label();
       this.ListItems = new System.Windows.Forms.ListView();
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.PanelButtons.SuspendLayout();
+      this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditYear)).BeginInit();
       this.SuspendLayout();
       // 
-      // PanelButtons
+      // PanelBottom
       // 
-      this.PanelButtons.Controls.Add(this.ButtonCancel);
-      this.PanelButtons.Controls.Add(this.ButtonOk);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
-      this.PanelButtons.Name = "PanelButtons";
+      this.PanelBottom.Controls.Add(this.ActionCancel);
+      this.PanelBottom.Controls.Add(this.ActionOk);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Name = "PanelBottom";
       // 
-      // ButtonCancel
+      // ActionCancel
       // 
-      resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
-      this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ButtonCancel.Name = "ButtonCancel";
-      this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
+      this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionCancel.Name = "ActionCancel";
+      this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
       // 
-      // ButtonOk
+      // ActionOk
       // 
-      resources.ApplyResources(this.ButtonOk, "ButtonOk");
-      this.ButtonOk.Name = "ButtonOk";
-      this.ButtonOk.UseVisualStyleBackColor = true;
-      this.ButtonOk.Click += new System.EventHandler(this.ButtonOk_Click);
+      resources.ApplyResources(this.ActionOk, "ActionOk");
+      this.ActionOk.Name = "ActionOk";
+      this.ActionOk.UseVisualStyleBackColor = true;
+      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
       // 
       // EditYear
       // 
@@ -93,7 +93,7 @@
       this.ListItems.UseCompatibleStateImageBehavior = false;
       this.ListItems.View = System.Windows.Forms.View.Details;
       this.ListItems.SelectedIndexChanged += new System.EventHandler(this.ListItems_SelectedIndexChanged);
-      this.ListItems.DoubleClick += new System.EventHandler(this.SelectEvents_DoubleClick);
+      this.ListItems.DoubleClick += new System.EventHandler(this.ListItems_DoubleClick);
       // 
       // columnHeader1
       // 
@@ -105,12 +105,12 @@
       // 
       // SearchMonthForm
       // 
-      this.AcceptButton = this.ButtonOk;
+      this.AcceptButton = this.ActionOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonCancel;
+      this.CancelButton = this.ActionCancel;
       this.Controls.Add(this.ListItems);
-      this.Controls.Add(this.PanelButtons);
+      this.Controls.Add(this.PanelBottom);
       this.Controls.Add(this.EditYear);
       this.Controls.Add(this.LabelYear);
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "SearchLunarMonthFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -121,7 +121,7 @@
       this.Name = "SearchMonthForm";
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.SearchEventForm_Load);
-      this.PanelButtons.ResumeLayout(false);
+      this.PanelBottom.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.EditYear)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -130,9 +130,9 @@
 
     #endregion
 
-    private System.Windows.Forms.Panel PanelButtons;
-    private System.Windows.Forms.Button ButtonCancel;
-    private System.Windows.Forms.Button ButtonOk;
+    private System.Windows.Forms.Panel PanelBottom;
+    private System.Windows.Forms.Button ActionCancel;
+    private System.Windows.Forms.Button ActionOk;
     internal System.Windows.Forms.NumericUpDown EditYear;
     private System.Windows.Forms.Label LabelYear;
     internal System.Windows.Forms.ListView ListItems;

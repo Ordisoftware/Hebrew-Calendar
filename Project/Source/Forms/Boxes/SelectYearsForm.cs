@@ -71,7 +71,7 @@ namespace Ordisoftware.HebrewCalendar
         EditYearFirst.Value = EditYearLast.Value - GenerateIntervalPeriod;
     }
 
-    private void ButtonOk_Click(object sender, EventArgs e)
+    private void ActionOk_Click(object sender, EventArgs e)
     {
       if ( EditYearLast.Value - EditYearFirst.Value > GenerateIntervalMax )
         if ( !DisplayManager.QueryYesNo(Translations.BigCalendar.GetLang(GenerateIntervalMax)) )

@@ -124,7 +124,7 @@
   <data name="Label.Text" xml:space="preserve">
     <value>Entrez l'heure de naissance</value>
   </data>
-  <data name="ButtonCancel.Text" xml:space="preserve">
+  <data name="ActionCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
   <data name="$this.Text" xml:space="preserve">

@@ -32,8 +32,8 @@
       this.EditTime = new System.Windows.Forms.DateTimePicker();
       this.Label = new System.Windows.Forms.Label();
       this.PanelButtons = new System.Windows.Forms.Panel();
-      this.ButtonCancel = new System.Windows.Forms.Button();
-      this.ButtonOk = new System.Windows.Forms.Button();
+      this.ActionCancel = new System.Windows.Forms.Button();
+      this.ActionOk = new System.Windows.Forms.Button();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -52,30 +52,30 @@
       // 
       // PanelButtons
       // 
-      this.PanelButtons.Controls.Add(this.ButtonCancel);
-      this.PanelButtons.Controls.Add(this.ButtonOk);
+      this.PanelButtons.Controls.Add(this.ActionCancel);
+      this.PanelButtons.Controls.Add(this.ActionOk);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
-      // ButtonCancel
+      // ActionCancel
       // 
-      resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
-      this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ButtonCancel.Name = "ButtonCancel";
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
+      this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionCancel.Name = "ActionCancel";
       // 
-      // ButtonOk
+      // ActionOk
       // 
-      resources.ApplyResources(this.ButtonOk, "ButtonOk");
-      this.ButtonOk.Name = "ButtonOk";
-      this.ButtonOk.UseVisualStyleBackColor = true;
-      this.ButtonOk.Click += new System.EventHandler(this.ButtonOk_Click);
+      resources.ApplyResources(this.ActionOk, "ActionOk");
+      this.ActionOk.Name = "ActionOk";
+      this.ActionOk.UseVisualStyleBackColor = true;
+      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
       // 
       // SelectBirthTime
       // 
-      this.AcceptButton = this.ButtonOk;
+      this.AcceptButton = this.ActionOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonCancel;
+      this.CancelButton = this.ActionCancel;
       this.Controls.Add(this.PanelButtons);
       this.Controls.Add(this.Label);
       this.Controls.Add(this.EditTime);
@@ -92,8 +92,8 @@
     #endregion
     private System.Windows.Forms.Label Label;
     private System.Windows.Forms.Panel PanelButtons;
-    private System.Windows.Forms.Button ButtonCancel;
-    private System.Windows.Forms.Button ButtonOk;
+    private System.Windows.Forms.Button ActionCancel;
+    private System.Windows.Forms.Button ActionOk;
     internal System.Windows.Forms.DateTimePicker EditTime;
   }
 }

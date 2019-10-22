@@ -142,39 +142,39 @@
     <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ProgressBar.Parent" xml:space="preserve">
-    <value>PanelMain</value>
+    <value>Panel</value>
   </data>
   <data name="&gt;&gt;ProgressBar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="LabelApplicationName.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelApplicationName.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelApplicationName.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 27</value>
   </data>
-  <data name="LabelApplicationName.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
   </data>
-  <data name="LabelApplicationName.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="LabelApplicationName.Text" xml:space="preserve">
+  <data name="LabelTitle.Text" xml:space="preserve">
     <value>Application name</value>
   </data>
-  <data name="&gt;&gt;LabelApplicationName.Name" xml:space="preserve">
-    <value>LabelApplicationName</value>
+  <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
+    <value>LabelTitle</value>
   </data>
-  <data name="&gt;&gt;LabelApplicationName.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelApplicationName.Parent" xml:space="preserve">
-    <value>PanelMain</value>
+  <data name="&gt;&gt;LabelTitle.Parent" xml:space="preserve">
+    <value>Panel</value>
   </data>
-  <data name="&gt;&gt;LabelApplicationName.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelTitle.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="LabelOperation.AutoSize" type="System.Boolean, mscorlib">
@@ -202,33 +202,33 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelOperation.Parent" xml:space="preserve">
-    <value>PanelMain</value>
+    <value>Panel</value>
   </data>
   <data name="&gt;&gt;LabelOperation.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="Panel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="Panel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Panel.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 110</value>
   </data>
-  <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
+  <data name="Panel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
-    <value>PanelMain</value>
+  <data name="&gt;&gt;Panel.Name" xml:space="preserve">
+    <value>Panel</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
+  <data name="&gt;&gt;Panel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Panel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Panel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
