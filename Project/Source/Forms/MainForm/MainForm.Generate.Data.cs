@@ -82,9 +82,14 @@ namespace Ordisoftware.HebrewCalendar
           LunisolarDaysBindingSource.DataSource = LunisolarCalendar.LunisolarDays;
         }
       }
-      catch ( Exception except )
+      catch ( AbortException )
       {
-        except.Manage();
+        throw;
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.Show("Generating", ex.Message);
+        throw new AbortException();
       }
       finally
       {
@@ -114,9 +119,13 @@ namespace Ordisoftware.HebrewCalendar
               InitializeDay(row);
               LunisolarCalendar.LunisolarDays.AddLunisolarDaysRow(row);
             }
+            catch ( AbortException )
+            {
+              throw;
+            }
             catch ( Exception ex )
             {
-              //DisplayManager.ShowError("Generating", ex.Message);
+              if ( !DisplayManager.QueryOkCancel("Generating", ex.Message) ) throw new AbortException();
             }
         InitializeSeasons(year);
       }
@@ -153,9 +162,13 @@ namespace Ordisoftware.HebrewCalendar
         day.LunarMonth = 0;
         day.TorahEvents = 0;
       }
+      catch ( AbortException )
+      {
+        throw;
+      }
       catch ( Exception ex )
       {
-        //DisplayManager.ShowError("Generating", ex.Message);
+        if ( !DisplayManager.QueryOkCancel("Generating", ex.Message) ) throw new AbortException();
       }
     }
 
@@ -215,9 +228,13 @@ namespace Ordisoftware.HebrewCalendar
             delta = 1;
           day.LunarDay -= delta;
         }
+        catch ( AbortException )
+        {
+          throw;
+        }
         catch ( Exception ex )
         {
-          //DisplayManager.ShowError("Generating", ex.Message);
+          if ( !DisplayManager.QueryOkCancel("Generating", ex.Message) ) throw new AbortException();
         }
     }
 

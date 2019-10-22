@@ -22,10 +22,10 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectYearsForm : Form
   {
 
-    private const int GenerateIntervalPeriod = 120;
-    private const int GenerateIntervalDefault = 5;
-    private const int GenerateIntervalMin = 2;
-    private const int GenerateIntervalMax = 10;
+    public const int GenerateIntervalPeriod = 120;
+    public const int GenerateIntervalDefault = 5;
+    public const int GenerateIntervalMin = 2;
+    public const int GenerateIntervalMax = 10;
 
     private bool Mutex;
     private int Year;

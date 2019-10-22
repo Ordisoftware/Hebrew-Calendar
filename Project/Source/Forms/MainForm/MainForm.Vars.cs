@@ -68,6 +68,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private bool TimerErrorShown = false;
 
+    internal TimeZoneInfo CurrentTimeZoneInfo;
+
     internal Data.LunisolarCalendar.LunisolarDaysRow CurrentDay { get; private set; }
 
     internal int YearFirst;

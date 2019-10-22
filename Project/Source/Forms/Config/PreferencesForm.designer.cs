@@ -43,7 +43,7 @@
       this.ActionResetSettings = new System.Windows.Forms.LinkLabel();
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
-      this.LabelCountryCity = new System.Windows.Forms.Label();
+      this.LabelCountry = new System.Windows.Forms.Label();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
       this.GroupBoxTextReport = new System.Windows.Forms.GroupBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -119,6 +119,8 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
+      this.LabelCity = new System.Windows.Forms.Label();
+      this.LabelTimeZone = new System.Windows.Forms.Label();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
@@ -224,7 +226,9 @@
       // 
       // GroupBoxGPS
       // 
-      this.GroupBoxGPS.Controls.Add(this.LabelCountryCity);
+      this.GroupBoxGPS.Controls.Add(this.LabelTimeZone);
+      this.GroupBoxGPS.Controls.Add(this.LabelCity);
+      this.GroupBoxGPS.Controls.Add(this.LabelCountry);
       this.GroupBoxGPS.Controls.Add(this.ActionGetGPS);
       this.GroupBoxGPS.Controls.Add(this.EditGPSLatitude);
       this.GroupBoxGPS.Controls.Add(LabelGPSLatitude);
@@ -234,11 +238,11 @@
       this.GroupBoxGPS.Name = "GroupBoxGPS";
       this.GroupBoxGPS.TabStop = false;
       // 
-      // LabelCountryCity
+      // LabelCountry
       // 
-      resources.ApplyResources(this.LabelCountryCity, "LabelCountryCity");
-      this.LabelCountryCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-      this.LabelCountryCity.Name = "LabelCountryCity";
+      resources.ApplyResources(this.LabelCountry, "LabelCountry");
+      this.LabelCountry.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelCountry.Name = "LabelCountry";
       // 
       // ActionGetGPS
       // 
@@ -855,6 +859,18 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
+      // LabelCity
+      // 
+      resources.ApplyResources(this.LabelCity, "LabelCity");
+      this.LabelCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelCity.Name = "LabelCity";
+      // 
+      // LabelTimeZone
+      // 
+      resources.ApplyResources(this.LabelTimeZone, "LabelTimeZone");
+      this.LabelTimeZone.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelTimeZone.Name = "LabelTimeZone";
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ButtonClose;
@@ -994,6 +1010,8 @@
     private System.Windows.Forms.CheckBox EditUseMoonDays;
     private System.Windows.Forms.NumericUpDown EditLoomingDelay;
     private System.Windows.Forms.Label LabelLoomingDelay;
-    private System.Windows.Forms.Label LabelCountryCity;
+    private System.Windows.Forms.Label LabelCountry;
+    private System.Windows.Forms.Label LabelTimeZone;
+    private System.Windows.Forms.Label LabelCity;
   }
 }
