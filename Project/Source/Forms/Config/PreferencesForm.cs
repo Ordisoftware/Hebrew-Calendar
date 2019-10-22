@@ -298,6 +298,7 @@ namespace Ordisoftware.HebrewCalendar
       string city = Program.Settings.GPSCity;
       string lat = Program.Settings.GPSLatitude;
       string lng = Program.Settings.GPSLongitude;
+      string timezone = Program.Settings.TimeZone;
       int shabat = EditShabatDay.SelectedIndex;
       Program.Settings.Reset();
       Program.Settings.UpgradeResetRequiredV3_6 = false;
@@ -307,6 +308,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSCity = city;
       Program.Settings.GPSLatitude = lat;
       Program.Settings.GPSLongitude = lng;
+      Program.Settings.TimeZone = timezone;
       Program.Settings.ShabatDay = shabat;
       Program.Settings.RestoreMainForm();
       Program.Settings.Language = Localizer.Language;
