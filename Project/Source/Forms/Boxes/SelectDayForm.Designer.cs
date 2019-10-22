@@ -30,10 +30,10 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectDayForm));
       this.MonthCalendar = new System.Windows.Forms.MonthCalendar();
-      this.PanelButtons = new System.Windows.Forms.Panel();
-      this.ButtonCancel = new System.Windows.Forms.Button();
-      this.ButtonOk = new System.Windows.Forms.Button();
-      this.PanelButtons.SuspendLayout();
+      this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionCancel = new System.Windows.Forms.Button();
+      this.ActionOk = new System.Windows.Forms.Button();
+      this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
       // MonthCalendar
@@ -43,34 +43,34 @@
       this.MonthCalendar.Name = "MonthCalendar";
       this.MonthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.MonthCalendar_DateChanged);
       // 
-      // PanelButtons
+      // PanelBottom
       // 
-      this.PanelButtons.Controls.Add(this.ButtonCancel);
-      this.PanelButtons.Controls.Add(this.ButtonOk);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
-      this.PanelButtons.Name = "PanelButtons";
+      this.PanelBottom.Controls.Add(this.ActionCancel);
+      this.PanelBottom.Controls.Add(this.ActionOk);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Name = "PanelBottom";
       // 
-      // ButtonCancel
+      // ActionCancel
       // 
-      resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
-      this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ButtonCancel.Name = "ButtonCancel";
-      this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
+      this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionCancel.Name = "ActionCancel";
+      this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
       // 
-      // ButtonOk
+      // ActionOk
       // 
-      resources.ApplyResources(this.ButtonOk, "ButtonOk");
-      this.ButtonOk.Name = "ButtonOk";
-      this.ButtonOk.UseVisualStyleBackColor = true;
-      this.ButtonOk.Click += new System.EventHandler(this.ButtonOk_Click);
+      resources.ApplyResources(this.ActionOk, "ActionOk");
+      this.ActionOk.Name = "ActionOk";
+      this.ActionOk.UseVisualStyleBackColor = true;
+      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
       // 
       // SelectDayForm
       // 
-      this.AcceptButton = this.ButtonOk;
+      this.AcceptButton = this.ActionOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonCancel;
-      this.Controls.Add(this.PanelButtons);
+      this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.PanelBottom);
       this.Controls.Add(this.MonthCalendar);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
@@ -78,15 +78,15 @@
       this.Name = "SelectDayForm";
       this.ShowInTaskbar = false;
       this.Shown += new System.EventHandler(this.SelectDayForm_Shown);
-      this.PanelButtons.ResumeLayout(false);
+      this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
 
     #endregion
-    private System.Windows.Forms.Panel PanelButtons;
-    private System.Windows.Forms.Button ButtonCancel;
-    private System.Windows.Forms.Button ButtonOk;
+    private System.Windows.Forms.Panel PanelBottom;
+    private System.Windows.Forms.Button ActionCancel;
+    private System.Windows.Forms.Button ActionOk;
     internal System.Windows.Forms.MonthCalendar MonthCalendar;
   }
 }

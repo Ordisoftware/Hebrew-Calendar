@@ -171,64 +171,64 @@
     <value>1</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ButtonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="ButtonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ButtonCancel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>84, 2</value>
   </data>
-  <data name="ButtonCancel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
-  <data name="ButtonCancel.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="ButtonCancel.Text" xml:space="preserve">
+  <data name="ActionCancel.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="&gt;&gt;ButtonCancel.Name" xml:space="preserve">
-    <value>ButtonCancel</value>
+  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
+    <value>ActionCancel</value>
   </data>
-  <data name="&gt;&gt;ButtonCancel.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ButtonCancel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
-  <data name="&gt;&gt;ButtonCancel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ButtonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ActionOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="ButtonOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ButtonOk.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionOk.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 2</value>
   </data>
-  <data name="ButtonOk.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
-  <data name="ButtonOk.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionOk.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="ButtonOk.Text" xml:space="preserve">
+  <data name="ActionOk.Text" xml:space="preserve">
     <value>Ok</value>
   </data>
-  <data name="&gt;&gt;ButtonOk.Name" xml:space="preserve">
-    <value>ButtonOk</value>
+  <data name="&gt;&gt;ActionOk.Name" xml:space="preserve">
+    <value>ActionOk</value>
   </data>
-  <data name="&gt;&gt;ButtonOk.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionOk.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ButtonOk.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionOk.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
-  <data name="&gt;&gt;ButtonOk.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionOk.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">

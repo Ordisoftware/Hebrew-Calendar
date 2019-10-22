@@ -29,9 +29,9 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectCityForm));
-      this.ButtonOk = new System.Windows.Forms.Button();
-      this.PanelButtons = new System.Windows.Forms.Panel();
-      this.ButtonCancel = new System.Windows.Forms.Button();
+      this.ActionOk = new System.Windows.Forms.Button();
+      this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionCancel = new System.Windows.Forms.Button();
       this.ListBoxCountries = new System.Windows.Forms.ListBox();
       this.ListBoxCities = new System.Windows.Forms.ListBox();
       this.LabelCountry = new System.Windows.Forms.Label();
@@ -40,28 +40,28 @@
       this.LabelFilter = new System.Windows.Forms.Label();
       this.LabelTimeZone = new System.Windows.Forms.Label();
       this.EditTimeZone = new System.Windows.Forms.ComboBox();
-      this.PanelButtons.SuspendLayout();
+      this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
-      // ButtonOk
+      // ActionOk
       // 
-      resources.ApplyResources(this.ButtonOk, "ButtonOk");
-      this.ButtonOk.Name = "ButtonOk";
-      this.ButtonOk.UseVisualStyleBackColor = true;
-      this.ButtonOk.Click += new System.EventHandler(this.ButtonOk_Click);
+      resources.ApplyResources(this.ActionOk, "ActionOk");
+      this.ActionOk.Name = "ActionOk";
+      this.ActionOk.UseVisualStyleBackColor = true;
+      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
       // 
-      // PanelButtons
+      // PanelBottom
       // 
-      this.PanelButtons.Controls.Add(this.ButtonCancel);
-      this.PanelButtons.Controls.Add(this.ButtonOk);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
-      this.PanelButtons.Name = "PanelButtons";
+      this.PanelBottom.Controls.Add(this.ActionCancel);
+      this.PanelBottom.Controls.Add(this.ActionOk);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Name = "PanelBottom";
       // 
-      // ButtonCancel
+      // ActionCancel
       // 
-      resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
-      this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ButtonCancel.Name = "ButtonCancel";
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
+      this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionCancel.Name = "ActionCancel";
       // 
       // ListBoxCountries
       // 
@@ -113,10 +113,10 @@
       // 
       // SelectCityForm
       // 
-      this.AcceptButton = this.ButtonOk;
+      this.AcceptButton = this.ActionOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonCancel;
+      this.CancelButton = this.ActionCancel;
       this.Controls.Add(this.EditTimeZone);
       this.Controls.Add(this.LabelTimeZone);
       this.Controls.Add(this.LabelFilter);
@@ -125,23 +125,23 @@
       this.Controls.Add(this.LabelCountry);
       this.Controls.Add(this.ListBoxCities);
       this.Controls.Add(this.ListBoxCountries);
-      this.Controls.Add(this.PanelButtons);
+      this.Controls.Add(this.PanelBottom);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SelectCityForm";
       this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.SelectCityForm_Load);
-      this.PanelButtons.ResumeLayout(false);
+      this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
     }
 
     #endregion
-    private System.Windows.Forms.Button ButtonOk;
-    private System.Windows.Forms.Panel PanelButtons;
-    private System.Windows.Forms.Button ButtonCancel;
+    private System.Windows.Forms.Button ActionOk;
+    private System.Windows.Forms.Panel PanelBottom;
+    private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.ListBox ListBoxCountries;
     private System.Windows.Forms.ListBox ListBoxCities;
     private System.Windows.Forms.Label LabelCountry;

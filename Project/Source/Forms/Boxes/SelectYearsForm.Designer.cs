@@ -33,12 +33,12 @@
       this.LabelYearLast = new System.Windows.Forms.Label();
       this.EditYearFirst = new System.Windows.Forms.NumericUpDown();
       this.LabelYearFirst = new System.Windows.Forms.Label();
-      this.ButtonOk = new System.Windows.Forms.Button();
-      this.PanelButtons = new System.Windows.Forms.Panel();
-      this.ButtonCancel = new System.Windows.Forms.Button();
+      this.ActionOk = new System.Windows.Forms.Button();
+      this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionCancel = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).BeginInit();
-      this.PanelButtons.SuspendLayout();
+      this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
       // EditYearLast
@@ -79,34 +79,33 @@
       resources.ApplyResources(this.LabelYearFirst, "LabelYearFirst");
       this.LabelYearFirst.Name = "LabelYearFirst";
       // 
-      // ButtonOk
+      // ActionOk
       // 
-      resources.ApplyResources(this.ButtonOk, "ButtonOk");
-      this.ButtonOk.Name = "ButtonOk";
-      this.ButtonOk.UseVisualStyleBackColor = true;
-      this.ButtonOk.Click += new System.EventHandler(this.ButtonOk_Click);
+      resources.ApplyResources(this.ActionOk, "ActionOk");
+      this.ActionOk.Name = "ActionOk";
+      this.ActionOk.UseVisualStyleBackColor = true;
+      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
       // 
-      // PanelButtons
+      // PanelBottom
       // 
-      this.PanelButtons.Controls.Add(this.ButtonCancel);
-      this.PanelButtons.Controls.Add(this.ButtonOk);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
-      this.PanelButtons.Name = "PanelButtons";
+      this.PanelBottom.Controls.Add(this.ActionCancel);
+      this.PanelBottom.Controls.Add(this.ActionOk);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Name = "PanelBottom";
       // 
-      // ButtonCancel
+      // ActionCancel
       // 
-      resources.ApplyResources(this.ButtonCancel, "ButtonCancel");
-      this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ButtonCancel.Name = "ButtonCancel";
-
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
+      this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionCancel.Name = "ActionCancel";
       // 
       // SelectYearsForm
       // 
-      this.AcceptButton = this.ButtonOk;
+      this.AcceptButton = this.ActionOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ButtonCancel;
-      this.Controls.Add(this.PanelButtons);
+      this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.PanelBottom);
       this.Controls.Add(this.EditYearLast);
       this.Controls.Add(this.LabelYearLast);
       this.Controls.Add(this.EditYearFirst);
@@ -119,7 +118,7 @@
       this.Load += new System.EventHandler(this.SelectYearsRangeForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).EndInit();
-      this.PanelButtons.ResumeLayout(false);
+      this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -128,9 +127,9 @@
     #endregion
     private System.Windows.Forms.Label LabelYearLast;
     private System.Windows.Forms.Label LabelYearFirst;
-    private System.Windows.Forms.Button ButtonOk;
-    private System.Windows.Forms.Panel PanelButtons;
-    private System.Windows.Forms.Button ButtonCancel;
+    private System.Windows.Forms.Button ActionOk;
+    private System.Windows.Forms.Panel PanelBottom;
+    private System.Windows.Forms.Button ActionCancel;
     internal System.Windows.Forms.NumericUpDown EditYearLast;
     internal System.Windows.Forms.NumericUpDown EditYearFirst;
   }
