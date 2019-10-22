@@ -80,6 +80,7 @@ namespace Ordisoftware.HebrewCalendar
       catch ( AbortException ex )
       {
         LoadData();
+        return;
       }
       catch ( OdbcException ex )
       {
@@ -89,6 +90,8 @@ namespace Ordisoftware.HebrewCalendar
       catch ( Exception ex )
       {
         ex.Manage();
+        LoadData();
+        return;
       }
       finally
       {
@@ -104,9 +107,16 @@ namespace Ordisoftware.HebrewCalendar
         {
           ex.Manage();
         }
-        CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-        TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled || Program.Settings.ReminderShabatEnabled;
-        Timer_Tick(null, null);
+        try
+        {
+          CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
+          TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled || Program.Settings.ReminderShabatEnabled;
+          Timer_Tick(null, null);
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
       }
     }
 
