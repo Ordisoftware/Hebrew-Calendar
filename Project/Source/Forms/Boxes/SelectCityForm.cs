@@ -83,13 +83,11 @@ namespace Ordisoftware.HebrewCalendar
       IsLoading = true;
       try
       {
-        foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        {
-          int index = EditTimeZone.Items.Add(item);
-          if (Program.Settings.TimeZone == item.Id)
-            EditTimeZone.SelectedIndex = index;
-        }
         ListBoxCountries.DataSource = GPS.Keys.ToList();
+      }
+      finally
+      {
+        IsLoading = false;
         ActiveControl = EditFilter;
         if ( Program.Settings.GPSCountry != "" )
         {
@@ -99,10 +97,12 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
           EditFilter_TextChanged(null, null);
-      }
-      finally
-      {
-        IsLoading = false;
+        foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        {
+          int index = EditTimeZone.Items.Add(item);
+          if ( Program.Settings.TimeZone == item.Id )
+            EditTimeZone.SelectedIndex = index;
+        }
       }
     }
 
@@ -113,6 +113,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ListBoxCountries_SelectedIndexChanged(object sender, EventArgs e)
     {
+      if ( IsLoading ) return;
       if ( ListBoxCountries.SelectedIndex == -1 ) return;
       ListBoxCities.DataSource = GPS[(string)ListBoxCountries.SelectedItem].OrderBy(c => c.Name).ToList();
       ListBoxCities.SelectedIndex = -1;
@@ -124,6 +125,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ListBoxCities_SelectedIndexChanged(object sender, EventArgs e)
     {
+      if ( IsLoading ) return;
       if ( ListBoxCities.SelectedIndex == -1 ) return;
       Country = (string)ListBoxCountries.SelectedItem;
       City = ( (CityItem)ListBoxCities.SelectedItem ).Name;

@@ -32,7 +32,7 @@
       this.LabelNextCelebrationText = new System.Windows.Forms.Label();
       this.LabelNextCelebrationDate = new System.Windows.Forms.LinkLabel();
       this.PictureBox = new System.Windows.Forms.PictureBox();
-      this.ButtonClose = new System.Windows.Forms.Button();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.LabelHours = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.SuspendLayout();
@@ -60,14 +60,14 @@
       this.PictureBox.TabStop = false;
       this.PictureBox.Click += new System.EventHandler(this.Form_Click);
       // 
-      // ButtonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.ButtonClose, "ButtonClose");
-      this.ButtonClose.FlatAppearance.BorderSize = 0;
-      this.ButtonClose.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.ButtonClose.Name = "ButtonClose";
-      this.ButtonClose.UseVisualStyleBackColor = true;
-      this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.FlatAppearance.BorderSize = 0;
+      this.ActionClose.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.UseVisualStyleBackColor = true;
+      this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
       // LabelHours
       // 
@@ -80,7 +80,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.LabelHours);
-      this.Controls.Add(this.ButtonClose);
+      this.Controls.Add(this.ActionClose);
       this.Controls.Add(this.PictureBox);
       this.Controls.Add(this.LabelNextCelebrationDate);
       this.Controls.Add(this.LabelNextCelebrationText);
@@ -102,7 +102,7 @@
     private System.Windows.Forms.Label LabelNextCelebrationText;
     private System.Windows.Forms.LinkLabel LabelNextCelebrationDate;
     private System.Windows.Forms.PictureBox PictureBox;
-    private System.Windows.Forms.Button ButtonClose;
+    private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Label LabelHours;
   }
 }

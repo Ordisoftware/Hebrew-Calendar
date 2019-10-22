@@ -43,6 +43,8 @@
       this.ActionResetSettings = new System.Windows.Forms.LinkLabel();
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
+      this.LabelTimeZone = new System.Windows.Forms.Label();
+      this.LabelCity = new System.Windows.Forms.Label();
       this.LabelCountry = new System.Windows.Forms.Label();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
       this.GroupBoxTextReport = new System.Windows.Forms.GroupBox();
@@ -119,8 +121,6 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.LabelCity = new System.Windows.Forms.Label();
-      this.LabelTimeZone = new System.Windows.Forms.Label();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
@@ -237,6 +237,18 @@
       resources.ApplyResources(this.GroupBoxGPS, "GroupBoxGPS");
       this.GroupBoxGPS.Name = "GroupBoxGPS";
       this.GroupBoxGPS.TabStop = false;
+      // 
+      // LabelTimeZone
+      // 
+      resources.ApplyResources(this.LabelTimeZone, "LabelTimeZone");
+      this.LabelTimeZone.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelTimeZone.Name = "LabelTimeZone";
+      // 
+      // LabelCity
+      // 
+      resources.ApplyResources(this.LabelCity, "LabelCity");
+      this.LabelCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelCity.Name = "LabelCity";
       // 
       // LabelCountry
       // 
@@ -858,18 +870,6 @@
       this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
-      // 
-      // LabelCity
-      // 
-      resources.ApplyResources(this.LabelCity, "LabelCity");
-      this.LabelCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-      this.LabelCity.Name = "LabelCity";
-      // 
-      // LabelTimeZone
-      // 
-      resources.ApplyResources(this.LabelTimeZone, "LabelTimeZone");
-      this.LabelTimeZone.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-      this.LabelTimeZone.Name = "LabelTimeZone";
       // 
       // PreferencesForm
       // 

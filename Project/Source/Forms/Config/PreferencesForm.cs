@@ -282,6 +282,13 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.EventColorNext = PanelEventColorNext.BackColor;
       Program.Settings.UseColors = EditReminderUseColors.Checked;
       Program.Settings.Store();
+      MainForm.Instance.CurrentTimeZoneInfo = null;
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        if ( item.Id == Program.Settings.TimeZone )
+        {
+          MainForm.Instance.CurrentTimeZoneInfo = item;
+          break;
+        }
     }
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2019-10 </edited>
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <returns></returns>
     static public string GetLang(this Dictionary<string, string> values, params object[] parameters)
     {
-      return String.Format(values.GetLang(), parameters);
+      return string.Format(values.GetLang(), parameters);
     }
 
     /// <summary>
@@ -94,11 +94,8 @@ namespace Ordisoftware.HebrewCalendar
       var normalizedString = text.Normalize(NormalizationForm.FormD);
       var stringBuilder = new StringBuilder();
       foreach ( var c in normalizedString )
-      {
-        var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
-        if ( unicodeCategory != UnicodeCategory.NonSpacingMark )
+        if ( CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark )
           stringBuilder.Append(c);
-      }
       return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
     }
 

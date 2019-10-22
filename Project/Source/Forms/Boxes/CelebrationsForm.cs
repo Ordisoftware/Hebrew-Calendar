@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-10 </edited>
 using System;
 using System.Data;
 using System.Linq;
@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void Run()
     {
-      if ( Instance.Location.X == 0 && Instance.Location.Y == 0 )
+      if ( Instance.Location.X == -1 || Instance.Location.Y == -1 )
         Instance.CenterToMainForm();
       if ( Instance.Visible )
       {
@@ -50,12 +50,13 @@ namespace Ordisoftware.HebrewCalendar
                  select day;
       foreach ( var row in rows )
       {
+        var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString());
         if ( (SeasonChangeType)row.SeasonChange != SeasonChangeType.None )
-          Instance.ListView.Items.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()))
+          Instance.ListView.Items.Add(item)
           .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChangeType)row.SeasonChange))
           .Tag = row.Date;
         if ( (TorahEventType)row.TorahEvents != TorahEventType.None )
-          Instance.ListView.Items.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()))
+          Instance.ListView.Items.Add(item)
           .SubItems.Add(Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents))
           .Tag = row.Date;
       }
@@ -74,7 +75,7 @@ namespace Ordisoftware.HebrewCalendar
       Hide();
     }
 
-    private void buttonClose_Click(object sender, EventArgs e)
+    private void ActionClose_Click(object sender, EventArgs e)
     {
       Hide();
     }
@@ -86,7 +87,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           if ( !MainForm.Instance.Visible )
             MainForm.Instance.MenuShowHide.PerformClick();
-          NavigationForm.Instance.Date = SQLiteUtility.GetDate(ListView.SelectedItems[0].SubItems[1].Tag.ToString());
+          MainForm.Instance.GoToDate(SQLiteUtility.GetDate(ListView.SelectedItems[0].SubItems[1].Tag.ToString()));
           BringToFront();
         }
         catch
