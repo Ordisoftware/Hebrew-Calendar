@@ -79,6 +79,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( AbortException ex )
       {
+        LoadData();
       }
       catch ( OdbcException ex )
       {
