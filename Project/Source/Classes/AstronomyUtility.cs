@@ -65,16 +65,10 @@ namespace Ordisoftware.HebrewCalendar
           ? new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0)
           : new Nullable<TimeSpan>();
       }
-      TimeZoneInfo timezoneinfo = null;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Program.Settings.TimeZone )
-        {
-          timezoneinfo = item;
-          break;
-        }
-      if ( timezoneinfo == null )
+      if ( MainForm.Instance.CurrentTimeZoneInfo == null )
         throw new InvalidTimeZoneException();
-      var timezone = timezoneinfo.BaseUtcOffset.Hours + ( timezoneinfo.IsDaylightSavingTime(date) ? 1 : 0 );
+      var timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours 
+                   + ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date) ? 1 : 0 );
       var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude),
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude),

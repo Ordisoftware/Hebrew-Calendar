@@ -63,7 +63,8 @@ namespace Ordisoftware.HebrewCalendar
         form.ShowDialog();
       }
       MainForm.Instance.Refresh();
-      MainForm.Instance.TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled || Program.Settings.ReminderShabatEnabled;
+      MainForm.Instance.TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled 
+                                             || Program.Settings.ReminderShabatEnabled;
       return form.Reseted
           || form.OldShabatDay != Program.Settings.ShabatDay
           || form.OldLatitude != Program.Settings.GPSLatitude
@@ -180,13 +181,11 @@ namespace Ordisoftware.HebrewCalendar
       OldUseMoonDays = Program.Settings.TorahEventsCountAsMoon;
       EditGPSLatitude.Text = OldLatitude.ToString();
       EditGPSLongitude.Text = OldLongitude.ToString();
-      LabelCountryCity.Text = Program.Settings.GPSCountry + ", " + Program.Settings.GPSCity;
-      if ( Program.Settings.TimeZone != "" )
-      {
-        foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-          if ( Program.Settings.TimeZone == item.Id )
-            LabelCountryCity.Text += ", " + item.DisplayName;
-      }
+      LabelCountry.Text = Program.Settings.GPSCountry;
+      LabelCity.Text = Program.Settings.GPSCity;
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        if ( Program.Settings.TimeZone == item.Id )
+          LabelTimeZone.Text = item.DisplayName;
       switch ( Program.Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
@@ -325,11 +324,12 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSCountry = form.Country;
       Program.Settings.GPSCity = form.City;
       Program.Settings.Save();
-      LabelCountryCity.Text = Program.Settings.GPSCountry + ", " + Program.Settings.GPSCity;
+      LabelCountry.Text = Program.Settings.GPSCountry;
+      LabelCity.Text = Program.Settings.GPSCity;
       if ( form.EditTimeZone.SelectedItem != null )
       {
         Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-        LabelCountryCity.Text += ", " + ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
+        LabelTimeZone.Text = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
       }
     }
 

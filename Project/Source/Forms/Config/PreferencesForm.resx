@@ -133,7 +133,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 24</value>
+    <value>15, 29</value>
   </data>
   <data name="LabelGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -154,7 +154,7 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;LabelGPSLatitude.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <metadata name="LabelGPSLongitude.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -169,7 +169,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 69</value>
+    <value>15, 62</value>
   </data>
   <data name="LabelGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
@@ -190,7 +190,7 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;LabelGPSLongitude.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>23, 21</value>
@@ -352,10 +352,10 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 42</value>
+    <value>78, 26</value>
   </data>
   <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 20</value>
+    <value>89, 20</value>
   </data>
   <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -370,16 +370,16 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 87</value>
+    <value>78, 59</value>
   </data>
   <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 20</value>
+    <value>89, 20</value>
   </data>
   <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -394,7 +394,7 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;ActionResetSettings.Name" xml:space="preserve">
     <value>ActionResetSettings</value>
@@ -498,32 +498,83 @@
   <data name="&gt;&gt;ActionUsePersonalShabat.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="LabelCountryCity.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelTimeZone.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelCountryCity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 116</value>
+  <data name="LabelTimeZone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="LabelCountryCity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 13</value>
+  <data name="LabelTimeZone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 124</value>
   </data>
-  <data name="LabelCountryCity.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 41</value>
+  </data>
+  <data name="LabelTimeZone.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
   </data>
-  <data name="LabelCountryCity.Text" xml:space="preserve">
-    <value>City</value>
+  <data name="&gt;&gt;LabelTimeZone.Name" xml:space="preserve">
+    <value>LabelTimeZone</value>
   </data>
-  <data name="&gt;&gt;LabelCountryCity.Name" xml:space="preserve">
-    <value>LabelCountryCity</value>
-  </data>
-  <data name="&gt;&gt;LabelCountryCity.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelTimeZone.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelCountryCity.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelTimeZone.Parent" xml:space="preserve">
     <value>GroupBoxGPS</value>
   </data>
-  <data name="&gt;&gt;LabelCountryCity.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelTimeZone.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="LabelCity.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelCity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 107</value>
+  </data>
+  <data name="LabelCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 13</value>
+  </data>
+  <data name="LabelCity.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;LabelCity.Name" xml:space="preserve">
+    <value>LabelCity</value>
+  </data>
+  <data name="&gt;&gt;LabelCity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCity.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;LabelCity.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelCountry.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelCountry.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 90</value>
+  </data>
+  <data name="LabelCountry.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 13</value>
+  </data>
+  <data name="LabelCountry.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;LabelCountry.Name" xml:space="preserve">
+    <value>LabelCountry</value>
+  </data>
+  <data name="&gt;&gt;LabelCountry.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountry.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;LabelCountry.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="ActionGetGPS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -535,7 +586,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 138</value>
+    <value>17, 175</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -556,7 +607,7 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;ActionGetGPS.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="GroupBoxGPS.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -565,7 +616,7 @@
     <value>218, 15</value>
   </data>
   <data name="GroupBoxGPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 165</value>
+    <value>187, 200</value>
   </data>
   <data name="GroupBoxGPS.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1606,10 +1657,10 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="GroupBoxTrayIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 196</value>
+    <value>218, 231</value>
   </data>
   <data name="GroupBoxTrayIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 213</value>
+    <value>187, 178</value>
   </data>
   <data name="GroupBoxTrayIcon.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1639,7 +1690,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloonAutoHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 122</value>
+    <value>20, 100</value>
   </data>
   <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 17</value>
@@ -1672,7 +1723,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 97</value>
+    <value>20, 77</value>
   </data>
   <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 17</value>
@@ -1705,7 +1756,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenNavigationForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 56</value>
+    <value>20, 47</value>
   </data>
   <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 17</value>
@@ -1738,7 +1789,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenMainForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 30</value>
+    <value>20, 25</value>
   </data>
   <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 17</value>
@@ -1765,7 +1816,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 174</value>
+    <value>20, 145</value>
   </data>
   <data name="EditLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1795,7 +1846,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 156</value>
+    <value>18, 127</value>
   </data>
   <data name="LabelLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 13</value>
@@ -3611,6 +3662,9 @@
         AAAAAAAA//8AAPwfAAD8HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwf
         AAD8HwAA//8AAA==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

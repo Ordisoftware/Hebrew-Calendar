@@ -51,6 +51,12 @@ namespace Ordisoftware.HebrewCalendar
       TrayIcon.Icon = Icon;
       MenuShowHide.Image = Icon.ToBitmap();
       Program.Settings.Retrieve();
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        if ( item.Id == Program.Settings.TimeZone )
+        {
+          CurrentTimeZoneInfo = item;
+          break;
+        }
       Refresh();
       LoadData();
       InitRemindLists();
@@ -151,13 +157,18 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        if (DateTime.Now.Year >= YearLast )
+        if ( DateTime.Now.Year >= YearLast )
         {
           var diff = YearLast - YearFirst;
+          if ( diff < SelectYearsForm.GenerateIntervalDefault )
+            diff = SelectYearsForm.GenerateIntervalDefault;
           YearFirst = DateTime.Now.Year - 1;
           YearLast = YearFirst + diff;
-          ActionGenerate_Click(null, new EventArgs());
+          DoGenerate(null, new EventArgs());
         }
+      }
+      catch ( AbortException ex )
+      {
       }
       catch ( Exception ex )
       {
@@ -382,8 +393,16 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         ClearLists();
+        TimerReminder.Enabled = false;
         if ( PreferencesForm.Run() )
         {
+          CurrentTimeZoneInfo = null;
+          foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+            if ( item.Id == Program.Settings.TimeZone )
+            {
+              CurrentTimeZoneInfo = item;
+              break;
+            }
           CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
           CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
           ActionGenerate_Click(null, new EventArgs());
@@ -391,7 +410,8 @@ namespace Ordisoftware.HebrewCalendar
         TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
         InitRemindLists();
-        Timer_Tick(null, null);
+        TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled
+                             || Program.Settings.ReminderShabatEnabled;
       }
       catch ( Exception ex )
       {
@@ -494,7 +514,17 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionGenerate_Click(object sender, EventArgs e)
     {
-      DoGenerate(sender, e);
+      try
+      {
+        DoGenerate(sender, e);
+      }
+      catch ( AbortException )
+      {
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
     /// <summary>

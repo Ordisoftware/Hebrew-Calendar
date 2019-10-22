@@ -72,14 +72,13 @@ namespace Ordisoftware.HebrewCalendar
           Enabled = true;
           do
           {
-            ActionGenerate_Click(this, null);
+            DoGenerate(this, null);
           }
           while ( LunisolarCalendar.LunisolarDays.Count == 0 );
         }
       }
-      catch ( InvalidTimeZoneException )
+      catch ( AbortException ex )
       {
-        Environment.Exit(-1);
       }
       catch ( OdbcException ex )
       {
