@@ -93,7 +93,6 @@ namespace Ordisoftware.HebrewCalendar
             LabelMoonsetValue.Top = 125;
           }
           _Date = value;
-          MainForm.Instance.GoToDate(value);
         }
         catch
         {
@@ -129,7 +128,8 @@ namespace Ordisoftware.HebrewCalendar
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-      if ( keyData != Keys.Escape ) return base.ProcessCmdKey(ref msg, keyData);
+      if ( keyData != Keys.Escape )
+        return base.ProcessCmdKey(ref msg, keyData);
       Hide();
       return true;
     }
@@ -140,12 +140,12 @@ namespace Ordisoftware.HebrewCalendar
       Hide();
     }
 
-    private void buttonSelectDay_Click(object sender, EventArgs e)
+    private void ActionSelectDay_Click(object sender, EventArgs e)
     {
       var form = new SelectDayForm();
       form.TopMost = true;
       if ( form.ShowDialog() == DialogResult.OK )
-        Date = form.MonthCalendar.SelectionStart;
+        MainForm.Instance.GoToDate(form.MonthCalendar.SelectionStart);
       else
         try
         {
@@ -156,20 +156,20 @@ namespace Ordisoftware.HebrewCalendar
         }
     }
 
-    private void buttonPreviousDay_Click(object sender, EventArgs e)
+    private void ActionPreviousDay_Click(object sender, EventArgs e)
     {
-      Date = _Date.AddDays(-1);
+      MainForm.Instance.GoToDate(_Date.AddDays(-1));
     }
 
-    private void buttonNextDay_Click(object sender, EventArgs e)
+    private void ActionNextDay_Click(object sender, EventArgs e)
     {
-      Date = _Date.AddDays(1);
+      MainForm.Instance.GoToDate(_Date.AddDays(1));
     }
 
     private void LabelTorahNextDateValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( LabelTorahNext.Tag == null ) return;
-      Date = (DateTime)LabelTorahNext.Tag;
+      MainForm.Instance.GoToDate((DateTime)LabelTorahNext.Tag);
     }
 
     /// <summary>

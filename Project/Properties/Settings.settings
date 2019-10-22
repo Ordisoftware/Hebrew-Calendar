@@ -221,7 +221,7 @@
       <Value Profile="(Default)">245, 255, 240</Value>
     </Setting>
     <Setting Name="NextCelebrationsFormLocation" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">-1, -1</Value>
     </Setting>
     <Setting Name="UpgradeResetRequiredV3_0" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -245,10 +245,10 @@
       <Value Profile="(Default)">1000</Value>
     </Setting>
     <Setting Name="SearchLunarMonthFormLocation" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">-1, -1</Value>
     </Setting>
     <Setting Name="SearchCelebrationFormLocation" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">-1, -1</Value>
     </Setting>
     <Setting Name="TimeZone" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

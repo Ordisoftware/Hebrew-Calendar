@@ -40,8 +40,8 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> ApplicationDescription
       = new Dictionary<string, string>()
       {
-        { "en", "A tool to generate a hebrew lunisolar calendar and remind celebrations" },
-        { "fr", "Un outil pour générer un calendrier luni-solaire hébraïque et rappeler les célébrations" }
+        { "en", "Generate a hebrew lunisolar calendar and remind celebrations" },
+        { "fr", "Génère un calendrier luni-solaire hébraïque et rappelle les célébrations" }
       };
 
     static public readonly Dictionary<string, string> ExitApplication
@@ -49,6 +49,13 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "Exit application?" },
         { "fr", "Quitter l'application ?" }
+      };
+
+    static public readonly Dictionary<string, string> CantExitApplicationWhileGenerating
+      = new Dictionary<string, string>()
+      {
+        { "en", "Can't close while generating." },
+        { "fr", "Impossible de quitter durant la génération." }
       };
 
     static public readonly Dictionary<string, string> NoNewVersionAvailable
@@ -72,32 +79,11 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
       };
 
-    static public readonly Dictionary<string, string> SelectBirthday
-      = new Dictionary<string, string>()
-      {
-        { "en", "Birth day" },
-        { "fr", "Date de naissance" }
-      };
-
     static public readonly Dictionary<string, string> DateNotFound
       = new Dictionary<string, string>()
       {
         { "en", "Date not found in the database: {0}" },
         { "fr", "Date non trouvée dans la base de données : {0}" }
-      };
-
-    static public readonly Dictionary<string, string> CantExitApplicationWhileGenerating
-      = new Dictionary<string, string>()
-      {
-        { "en", "Can't close while generating." },
-        { "fr", "Impossible de quitter durant la génération." }
-      };
-
-    static public readonly Dictionary<string, string> StopGeneration
-      = new Dictionary<string, string>()
-      {
-        { "en", "Do you want to stop the generation process?" },
-        { "fr", "Voulez-vous arrêter le processus de génération ?" }
       };
 
     static public readonly Dictionary<string, string> LoadingData
@@ -135,13 +121,11 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Remplissage des mois..." }
       };
 
-    static public readonly Dictionary<string, string> InvalidTimeZone
+    static public readonly Dictionary<string, string> SelectBirthday
       = new Dictionary<string, string>()
       {
-        { "en", "Operating System Time Zone and GPS coordonates are incompatible." + NewLine + NewLine +
-                "Solve this problem and restart the application." },
-        { "fr", "Le fuseau horaire du Système d'exploitation et les coordonnées GPS sont incompatibles." + NewLine + NewLine +
-                "Corrigez le problème et relancez l'application." },
+        { "en", "Birth day" },
+        { "fr", "Date de naissance" }
       };
 
     static public readonly Dictionary<string, string> BigCalendar
@@ -160,17 +144,8 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "This action will restore windows position." + NewLine + NewLine +
                 "Do you want to continue?" },
-        { "fr", "Cette action va restaurer la position de la fenêtre"  + NewLine + NewLine +
+        { "fr", "Cette action va restaurer la position de la fenêtre."  + NewLine + NewLine +
                 "Voulez-vous continuer ?" }
-      };
-
-    static public readonly Dictionary<string, string> RegenerateCalendar
-      = new Dictionary<string, string>()
-      {
-        { "en", "Preferences changed." + NewLine + NewLine +
-                "Do you want to generate the calendrier?" },
-        { "fr", "Préférences changées." + NewLine + NewLine +
-                "Voulez-vous générer le calendrier ?" }
       };
 
     static public readonly Dictionary<string, string> ResetPreferences
@@ -198,15 +173,11 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> PersonalShabatNotice
       = new Dictionary<string, string>()
       {
-        { "en", "The personal shabat of a maried/concubin/divorced man is the previous day of the birth. A son follows his father's shabat." + NewLine + NewLine +
-                "The shabat of a woman is the shabat of her father or her husband/concubin." + NewLine + NewLine +
-                "So the man and the woman respect their mutual cycles." + NewLine + NewLine +
+        { "en", "The personal shabat of a maried or concubin or divorced man is the previous day of the birth. A son follows his father's shabat. The shabat of a woman is the shabat of her father or her husband or her concubin. So the man and the woman respect their mutual cycles." + NewLine + NewLine +
                 "If the man were born between midnight and the sunset, the shabat is the day before. Between sunset and midnight, the shabat is that day." + NewLine + NewLine +
                 "If you prefer to use the traditional group shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam." + NewLine + NewLine + 
                 "Do you want to setup the personal shabat?" },
-        { "fr", "Le shabat personnel d'un homme marié/concubin/divorcé est la veille du jour de la naissance. Un fils suit le shabat de son père." + NewLine + NewLine +
-                "Le shabat d'une femme est celui de son père ou de son mari/concubin." + NewLine + NewLine +
-                "Ainsi l'homme et la femme respectent leurs cycles mutuels." + NewLine + NewLine +
+        { "fr", "Le shabat personnel d'un homme marié ou concubin ou divorcé est la veille du jour de la naissance. Un fils suit le shabat de son père. Le shabat d'une femme est celui de son père ou de son mari ou de son concubin. Ainsi l'homme et la femme respectent leurs cycles mutuels." + NewLine + NewLine +
                 "Si l'homme est né entre minuit et le coucher du soleil, le shabat est la veille. Entre le coucher du soleil et minuit, le shabat est ce jour." + NewLine + NewLine +
                 "Si vous préférez utiliser le shabat de groupe traditionnel, sélectionnez par exemple le samedi pour le Judaïsme, le dimanche pour le Christianisme ou le vendredi pour l'Islam." + NewLine + NewLine +
                 "Voulez-vous configurer le shabat personnel ?" }

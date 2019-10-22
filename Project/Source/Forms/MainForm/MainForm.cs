@@ -396,13 +396,6 @@ namespace Ordisoftware.HebrewCalendar
         TimerReminder.Enabled = false;
         if ( PreferencesForm.Run() )
         {
-          CurrentTimeZoneInfo = null;
-          foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-            if ( item.Id == Program.Settings.TimeZone )
-            {
-              CurrentTimeZoneInfo = item;
-              break;
-            }
           CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
           CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
           ActionGenerate_Click(null, new EventArgs());

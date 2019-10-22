@@ -875,7 +875,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
         public global::System.Drawing.Point NextCelebrationsFormLocation {
             get {
                 return ((global::System.Drawing.Point)(this["NextCelebrationsFormLocation"]));
@@ -971,7 +971,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
         public global::System.Drawing.Point SearchLunarMonthFormLocation {
             get {
                 return ((global::System.Drawing.Point)(this["SearchLunarMonthFormLocation"]));
@@ -983,7 +983,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
         public global::System.Drawing.Point SearchCelebrationFormLocation {
             get {
                 return ((global::System.Drawing.Point)(this["SearchCelebrationFormLocation"]));

@@ -29,26 +29,26 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CelebrationsForm));
-      this.panel1 = new System.Windows.Forms.Panel();
-      this.buttonClose = new System.Windows.Forms.Button();
+      this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.ListView = new System.Windows.Forms.ListView();
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.panel1.SuspendLayout();
+      this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
-      // panel1
+      // PanelBottom
       // 
-      this.panel1.Controls.Add(this.buttonClose);
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Name = "panel1";
+      this.PanelBottom.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Name = "PanelBottom";
       // 
-      // buttonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.buttonClose, "buttonClose");
-      this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.buttonClose.Name = "buttonClose";
-      this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
       // ListView
       // 
@@ -75,12 +75,12 @@
       // 
       // CelebrationsForm
       // 
-      this.AcceptButton = this.buttonClose;
+      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.buttonClose;
+      this.CancelButton = this.ActionClose;
       this.Controls.Add(this.ListView);
-      this.Controls.Add(this.panel1);
+      this.Controls.Add(this.PanelBottom);
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "NextCelebrationsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.NextCelebrationsFormLocation;
@@ -88,15 +88,15 @@
       this.MinimizeBox = false;
       this.Name = "CelebrationsForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CelebrationsForm_FormClosing);
-      this.panel1.ResumeLayout(false);
+      this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
 
     #endregion
 
-    private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.Button buttonClose;
+    private System.Windows.Forms.Panel PanelBottom;
+    private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.ListView ListView;
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader2;

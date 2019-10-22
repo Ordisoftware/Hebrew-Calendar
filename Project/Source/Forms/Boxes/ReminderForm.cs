@@ -82,9 +82,9 @@ namespace Ordisoftware.HebrewCalendar
       form.LabelNextCelebrationText.ForeColor = Program.Settings.CalendarColorTorahEvent;
       form.LabelNextCelebrationDate.LinkColor = Program.Settings.CalendarColorMoon;
       form.LabelNextCelebrationDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
-      var now = DateTime.Now;
+      var dateNow = DateTime.Now;
       if ( Program.Settings.UseColors)
-        if ( now >= date1 && now <= date2 )
+        if ( dateNow >= date1 && dateNow <= date2 )
           form.BackColor = Program.Settings.EventColorTorah;
         else
           form.BackColor = Program.Settings.EventColorNext;
@@ -128,7 +128,31 @@ namespace Ordisoftware.HebrewCalendar
       BringMainForm();
     }
 
-    protected override bool ShowWithoutActivation { get { return true; } }
+    static private void SetFormsLocation()
+    {
+      var list = new List<ReminderForm>();
+      if ( MainForm.Instance.ShabatForm != null )
+        list.Add(MainForm.Instance.ShabatForm);
+      foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
+        list.Add(item.Value);
+      foreach ( ReminderForm item in MainForm.Instance.RemindCelebrationForms )
+        list.Add(item);
+      int dy = 0;
+      int y = SystemInformation.WorkingArea.Top + SystemInformation.WorkingArea.Height;
+      foreach ( var item in list.OrderBy(f => f.Tag) )
+      {
+        item.Location = new Point(item.Left, y - item.Height - dy);
+        dy += item.Height;
+      }
+    }
+
+    protected override bool ShowWithoutActivation
+    {
+      get
+      {
+        return true;
+      }
+    }
 
     private bool IsShabat;
 
@@ -154,16 +178,13 @@ namespace Ordisoftware.HebrewCalendar
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-      switch ( keyData )
-      {
-        case Keys.Escape:
-          Close();
-          return true;
-      }
-      return base.ProcessCmdKey(ref msg, keyData);
+      if ( keyData != Keys.Escape )
+        return base.ProcessCmdKey(ref msg, keyData);
+      Hide();
+      return true;
     }
 
-    private void ButtonClose_Click(object sender, EventArgs e)
+    private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
     }
@@ -186,24 +207,6 @@ namespace Ordisoftware.HebrewCalendar
       SetFormsLocation();
     }
 
-    private void SetFormsLocation()
-    {
-      var list = new List<ReminderForm>();
-      if ( MainForm.Instance.ShabatForm != null )
-        list.Add(MainForm.Instance.ShabatForm);
-      foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
-        list.Add(item.Value);
-      foreach ( ReminderForm item in MainForm.Instance.RemindCelebrationForms )
-        list.Add(item);
-      int dy = 0;
-      int y = SystemInformation.WorkingArea.Top + SystemInformation.WorkingArea.Height;
-      foreach ( var item in list.OrderBy(f => f.Tag) )
-      {
-        item.Location = new Point(item.Left, y - item.Height - dy);
-        dy += item.Height;
-      }
-
-    }
   }
 
 }

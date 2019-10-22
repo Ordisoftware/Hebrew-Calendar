@@ -50,9 +50,9 @@
       this.LabelLunarMonthValue = new System.Windows.Forms.Label();
       this.LabelSunset = new System.Windows.Forms.Label();
       this.LabelSunrise = new System.Windows.Forms.Label();
-      this.ButtonNextDay = new System.Windows.Forms.Button();
-      this.ButtonSelectDay = new System.Windows.Forms.Button();
-      this.ButtonPreviousDay = new System.Windows.Forms.Button();
+      this.ActionNextDay = new System.Windows.Forms.Button();
+      this.ActionSelectDay = new System.Windows.Forms.Button();
+      this.ActionPreviousDay = new System.Windows.Forms.Button();
       this.PanelSeparatorTop = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
@@ -193,26 +193,26 @@
       resources.ApplyResources(this.LabelSunrise, "LabelSunrise");
       this.LabelSunrise.Name = "LabelSunrise";
       // 
-      // ButtonNextDay
+      // ActionNextDay
       // 
-      resources.ApplyResources(this.ButtonNextDay, "ButtonNextDay");
-      this.ButtonNextDay.Name = "ButtonNextDay";
-      this.ButtonNextDay.UseVisualStyleBackColor = true;
-      this.ButtonNextDay.Click += new System.EventHandler(this.buttonNextDay_Click);
+      resources.ApplyResources(this.ActionNextDay, "ActionNextDay");
+      this.ActionNextDay.Name = "ActionNextDay";
+      this.ActionNextDay.UseVisualStyleBackColor = true;
+      this.ActionNextDay.Click += new System.EventHandler(this.ActionNextDay_Click);
       // 
-      // ButtonSelectDay
+      // ActionSelectDay
       // 
-      resources.ApplyResources(this.ButtonSelectDay, "ButtonSelectDay");
-      this.ButtonSelectDay.Name = "ButtonSelectDay";
-      this.ButtonSelectDay.UseVisualStyleBackColor = true;
-      this.ButtonSelectDay.Click += new System.EventHandler(this.buttonSelectDay_Click);
+      resources.ApplyResources(this.ActionSelectDay, "ActionSelectDay");
+      this.ActionSelectDay.Name = "ActionSelectDay";
+      this.ActionSelectDay.UseVisualStyleBackColor = true;
+      this.ActionSelectDay.Click += new System.EventHandler(this.ActionSelectDay_Click);
       // 
-      // ButtonPreviousDay
+      // ActionPreviousDay
       // 
-      resources.ApplyResources(this.ButtonPreviousDay, "ButtonPreviousDay");
-      this.ButtonPreviousDay.Name = "ButtonPreviousDay";
-      this.ButtonPreviousDay.UseVisualStyleBackColor = true;
-      this.ButtonPreviousDay.Click += new System.EventHandler(this.buttonPreviousDay_Click);
+      resources.ApplyResources(this.ActionPreviousDay, "ActionPreviousDay");
+      this.ActionPreviousDay.Name = "ActionPreviousDay";
+      this.ActionPreviousDay.UseVisualStyleBackColor = true;
+      this.ActionPreviousDay.Click += new System.EventHandler(this.ActionPreviousDay_Click);
       // 
       // PanelSeparatorTop
       // 
@@ -223,9 +223,9 @@
       // PanelBottom
       // 
       this.PanelBottom.BackColor = System.Drawing.Color.Honeydew;
-      this.PanelBottom.Controls.Add(this.ButtonSelectDay);
-      this.PanelBottom.Controls.Add(this.ButtonPreviousDay);
-      this.PanelBottom.Controls.Add(this.ButtonNextDay);
+      this.PanelBottom.Controls.Add(this.ActionSelectDay);
+      this.PanelBottom.Controls.Add(this.ActionPreviousDay);
+      this.PanelBottom.Controls.Add(this.ActionNextDay);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
@@ -264,10 +264,10 @@
     internal System.Windows.Forms.Label LabelDate;
     internal System.Windows.Forms.PictureBox PictureMoon;
     private System.Windows.Forms.Panel PanelSeparatorTop;
-    private System.Windows.Forms.Button ButtonNextDay;
-    private System.Windows.Forms.Button ButtonPreviousDay;
+    private System.Windows.Forms.Button ActionNextDay;
+    private System.Windows.Forms.Button ActionPreviousDay;
     private System.Windows.Forms.Label LabelEventSeasonValue;
-    private System.Windows.Forms.Button ButtonSelectDay;
+    private System.Windows.Forms.Button ActionSelectDay;
     private System.Windows.Forms.Label LabelMoonsetValue;
     private System.Windows.Forms.Label LabelMoonriseValue;
     private System.Windows.Forms.Label LabelSunsetValue;

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2019-10 </edited>
 using System;
 using System.Xml;
 using System.Globalization;
@@ -67,7 +67,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       if ( MainForm.Instance.CurrentTimeZoneInfo == null )
         throw new InvalidTimeZoneException();
-      var timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours 
+      int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours 
                    + ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date) ? 1 : 0 );
       var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude),
@@ -97,7 +97,11 @@ namespace Ordisoftware.HebrewCalendar
     /// </returns>
     static public MoonPhaseType GetMoonPhase(int year, int month, int day)
     {
-      if ( month < 3 ) { year--; month += 12; }
+      if ( month < 3 )
+      {
+        year--;
+        month += 12;
+      }
       month++;
       double julian = ( ( 365.25 * year ) + ( 30.6 * month ) + day - 694039.09 ) / 29.5305882;
       int result = (int)Math.Round(( julian - (int)julian ) * 8);

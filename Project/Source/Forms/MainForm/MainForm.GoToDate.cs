@@ -32,6 +32,14 @@ namespace Ordisoftware.HebrewCalendar
       if ( date > DateLast ) date = DateLast;
       try
       {
+        if ( NavigationForm.Instance != null )
+          NavigationForm.Instance.Date = date;
+      }
+      catch
+      {
+      }
+      try
+      {
         CalendarMonth.CalendarDate = date;
       }
       catch
