@@ -80,6 +80,7 @@ namespace Ordisoftware.HebrewCalendar
       catch ( AbortException ex )
       {
         LoadData();
+        return;
       }
       catch ( OdbcException ex )
       {
@@ -89,6 +90,8 @@ namespace Ordisoftware.HebrewCalendar
       catch ( Exception ex )
       {
         ex.Manage();
+        LoadData();
+        return;
       }
       finally
       {
