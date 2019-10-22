@@ -88,8 +88,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception ex )
       {
-        DisplayManager.Show("Generating", ex.Message);
-        throw new AbortException();
+        DisplayManager.ShowAndAbort("Generating", ex.Message);
       }
       finally
       {
@@ -125,7 +124,7 @@ namespace Ordisoftware.HebrewCalendar
             }
             catch ( Exception ex )
             {
-              if ( !DisplayManager.QueryOkCancel("Generating", ex.Message) ) throw new AbortException();
+              DisplayManager.ShowAndAbort("Generating", ex.Message);
             }
         InitializeSeasons(year);
       }
@@ -168,7 +167,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception ex )
       {
-        if ( !DisplayManager.QueryOkCancel("Generating", ex.Message) ) throw new AbortException();
+        DisplayManager.ShowAndAbort("Generating", ex.Message);
       }
     }
 
@@ -234,7 +233,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         catch ( Exception ex )
         {
-          if ( !DisplayManager.QueryOkCancel("Generating", ex.Message) ) throw new AbortException();
+          DisplayManager.ShowAndAbort("Generating", ex.Message);
         }
     }
 
