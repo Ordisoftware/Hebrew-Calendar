@@ -69,8 +69,10 @@ namespace Ordisoftware.HebrewCalendar
     public string Latitude { get; private set; }
     public string Longitude { get; private set; }
 
+    private const int DefaultDelay = 750;
     private bool Mutex;
     private bool IsLoading;
+    private bool IsReady;
 
     public SelectCityForm()
     {
@@ -103,6 +105,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( Program.Settings.TimeZone == item.Id )
             EditTimeZone.SelectedIndex = index;
         }
+        IsReady = true;
       }
     }
 
@@ -217,7 +220,8 @@ namespace Ordisoftware.HebrewCalendar
           EditFilter.Text = str;
           EditFilter.Enabled = false;
           Application.DoEvents();
-          System.Threading.Thread.Sleep(750);
+          if ( IsReady )
+            System.Threading.Thread.Sleep(DefaultDelay);
           Application.DoEvents();
           EditTimeZone.Enabled = true;
           EditFilter.Enabled = true;
