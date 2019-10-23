@@ -189,11 +189,11 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
-    private void LabelNextCelebrationDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( LabelDate.Tag == null ) return;
       if ( !MainForm.Instance.Visible ) MainForm.Instance.MenuShowHide.PerformClick();
-      NavigationForm.Instance.Date = (DateTime)LabelDate.Tag;
+      MainForm.Instance.GoToDate((DateTime)LabelDate.Tag);
       Close();
     }
 

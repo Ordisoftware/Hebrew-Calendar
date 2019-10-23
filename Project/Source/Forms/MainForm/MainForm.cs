@@ -198,6 +198,7 @@ namespace Ordisoftware.HebrewCalendar
             BringToFront();
             TopMost = old;
           }
+          GoToDate(DateTime.Now);
         }
         else
         {
@@ -639,7 +640,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
         {
-          NavigationForm.Instance.Date = SQLiteUtility.GetDate(CurrentDay.Date);
+          GoToDate(DateTime.Now); 
           NavigationForm.Instance.Show();
           NavigationForm.Instance.BringToFront();
         }
@@ -720,7 +721,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( LunisolarDaysBindingSource.Current == null ) return;
         var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-        NavigationForm.Instance.Date = SQLiteUtility.GetDate(( (Data.LunisolarCalendar.LunisolarDaysRow)rowview ).Date);
+        GoToDate(SQLiteUtility.GetDate(( (Data.LunisolarCalendar.LunisolarDaysRow)rowview ).Date));
       }
       catch
       {
