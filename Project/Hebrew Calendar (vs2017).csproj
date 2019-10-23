@@ -167,10 +167,10 @@
     <Compile Include="Source\Forms\Config\LoadingForm.designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Config\SelectBirthTime.cs">
+    <Compile Include="Source\Forms\Boxes\SelectBirthTime.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Config\SelectBirthTime.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\SelectBirthTime.Designer.cs">
       <DependentUpon>SelectBirthTime.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.DB.cs">
@@ -366,10 +366,10 @@
       <DependentUpon>LoadingForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\SelectBirthTime.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectBirthTime.fr.resx">
       <DependentUpon>SelectBirthTime.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\SelectBirthTime.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectBirthTime.resx">
       <DependentUpon>SelectBirthTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
