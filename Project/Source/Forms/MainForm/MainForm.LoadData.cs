@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             var row = LunisolarCalendar.Report.FirstOrDefault();
             CalendarText.Text = row == null ? "" : row.Content;
-            NavigationForm.Instance.Date = DateTime.Now;
+            GoToDate(DateTime.Now);
           }
           catch
           {

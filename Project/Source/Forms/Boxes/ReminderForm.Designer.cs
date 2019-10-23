@@ -51,7 +51,7 @@
       this.LabelDate.LinkColor = System.Drawing.Color.Navy;
       this.LabelDate.Name = "LabelDate";
       this.LabelDate.TabStop = true;
-      this.LabelDate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelNextCelebrationDate_LinkClicked);
+      this.LabelDate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelDate_LinkClicked);
       // 
       // PictureBox
       // 
