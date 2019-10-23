@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewCalendar
         try
         {
           CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-          TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled || Program.Settings.ReminderShabatEnabled;
+          TimerReminder.Enabled = true;
           Timer_Tick(null, null);
         }
         catch ( Exception ex )

@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
         }
       Refresh();
       LoadData();
-      InitRemindLists();
+      ClearLists();
     }
 
     /// <summary>
@@ -394,7 +394,6 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         ClearLists();
-        TimerReminder.Enabled = false;
         if ( PreferencesForm.Run() )
         {
           CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
@@ -403,9 +402,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-        InitRemindLists();
-        TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled
-                             || Program.Settings.ReminderShabatEnabled;
+        Timer_Tick(this, null);
       }
       catch ( Exception ex )
       {
@@ -739,6 +736,8 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( !IsReady ) return;
         if ( !TimerReminder.Enabled ) return;
+        if ( CalendarMonth.CalendarDate.Day != DateTime.Now.Day )
+          GoToDate(DateTime.Now);
         int active = 1;
         SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
         if ( active != 0 ) return;

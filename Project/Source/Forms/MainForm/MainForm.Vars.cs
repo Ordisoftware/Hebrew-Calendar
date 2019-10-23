@@ -84,24 +84,6 @@ namespace Ordisoftware.HebrewCalendar
     private Dictionary<TorahEventType, bool> TorahEventRemindDayList
       = new Dictionary<TorahEventType, bool>();
 
-    private void InitRemindLists()
-    {
-      try
-      {
-        TorahEventRemindList.Clear();
-        TorahEventRemindDayList.Clear();
-        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-          if ( type != TorahEventType.None )
-          {
-            TorahEventRemindList.Add(type, (bool)Program.Settings["TorahEventRemind" + type.ToString()]);
-            TorahEventRemindDayList.Add(type, (bool)Program.Settings["TorahEventRemindDay" + type.ToString()]);
-          }
-      }
-      catch
-      {
-      }
-    }
-
     internal readonly List<Form> RemindCelebrationForms
       = new List<Form>();
 
@@ -122,6 +104,14 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
+        TorahEventRemindList.Clear();
+        TorahEventRemindDayList.Clear();
+        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
+          if ( type != TorahEventType.None )
+          {
+            TorahEventRemindList.Add(type, (bool)Program.Settings["TorahEventRemind" + type.ToString()]);
+            TorahEventRemindDayList.Add(type, (bool)Program.Settings["TorahEventRemindDay" + type.ToString()]);
+          }
         CelebrationsForm.Instance.Hide();
         NavigationForm.Instance.Hide();
         foreach ( Form form in RemindCelebrationForms.ToList() )
