@@ -106,6 +106,11 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 ## Changelog
 
+#### 2019.10.__ - Version 3.7
+
+- Update internal current day when passing midnight.
+- Some code refactorings.
+
 #### 2019.10.21 - Version 3.6
 
 - Add time zone setting to have good sun and moon rise and set in the whole world.
