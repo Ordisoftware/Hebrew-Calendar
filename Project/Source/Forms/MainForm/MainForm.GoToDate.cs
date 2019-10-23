@@ -21,13 +21,16 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
+    private bool GoToDateMutex;
+
     /// <summary>
     /// Set the data position.
     /// </summary>
     /// <param name="date">The date.</param>
     internal void GoToDate(DateTime date)
     {
-      if ( !IsReady ) return;
+      if ( !IsReady || IsGenerating || GoToDateMutex ) return;
+      GoToDateMutex = true;
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;
       try
@@ -74,6 +77,7 @@ namespace Ordisoftware.HebrewCalendar
       catch
       {
       }
+      GoToDateMutex = false;
     }
 
   }

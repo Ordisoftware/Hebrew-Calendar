@@ -725,6 +725,8 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private bool TimerMutex;
+
     /// <summary>
     /// Event handler. Called by Timer for tick events.
     /// </summary>
@@ -732,10 +734,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void Timer_Tick(object sender, EventArgs e)
     {
+      if ( !TimerReminder.Enabled || !IsReady || TimerMutex ) return;
+      TimerMutex = true;
       try
       {
-        if ( !IsReady ) return;
-        if ( !TimerReminder.Enabled ) return;
         if ( CalendarMonth.CalendarDate.Day != DateTime.Now.Day )
           GoToDate(DateTime.Now);
         int active = 1;
@@ -752,6 +754,7 @@ namespace Ordisoftware.HebrewCalendar
         TimerErrorShown = true;
         ex.Manage();
       }
+      TimerMutex = false;
     }
 
   }
