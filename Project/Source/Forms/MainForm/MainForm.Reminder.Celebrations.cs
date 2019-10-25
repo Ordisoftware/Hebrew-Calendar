@@ -30,18 +30,18 @@ namespace Ordisoftware.HebrewCalendar
       }
       var today = DateTime.Today;
       var dateLimit = today.AddDays((int)Program.Settings.ReminderCelebrationsInterval);
-      var list = ( from day in LunisolarCalendar.LunisolarDays
+      var list = ( from day in DataSet.LunisolarDays
                    where !RemindCelebrationDates.Contains(day.Date)
                       && check((TorahEventType)day.TorahEvents)
                       && SQLiteUtility.GetDate(day.Date) >= today
                       && SQLiteUtility.GetDate(day.Date) <= dateLimit
                    select day );
       int c = list.Count();
-      foreach ( Data.LunisolarCalendar.LunisolarDaysRow row in list )
+      foreach ( Data.DataSet.LunisolarDaysRow row in list )
       {
-        var rowPrevious = LunisolarCalendar.LunisolarDays
+        var rowPrevious = DataSet.LunisolarDays
                           .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
-        var rowNext = LunisolarCalendar.LunisolarDays
+        var rowNext = DataSet.LunisolarDays
                       .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(+1)));
         if ( rowPrevious == null || rowNext == null ) return;
         string timeStart = "";

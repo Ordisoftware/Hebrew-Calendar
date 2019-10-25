@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewCalendar
 
     internal TimeZoneInfo CurrentTimeZoneInfo;
 
-    internal Data.LunisolarCalendar.LunisolarDaysRow CurrentDay { get; private set; }
+    internal Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
 
     internal int YearFirst;
     internal DateTime DateFirst;

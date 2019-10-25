@@ -20,9 +20,9 @@ namespace Ordisoftware.HebrewCalendar.Data {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("LunisolarCalendar")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class LunisolarCalendar : global::System.Data.DataSet {
+    public partial class DataSet : global::System.Data.DataSet {
         
         private LunisolarDaysDataTable tableLunisolarDays;
         
@@ -32,7 +32,7 @@ namespace Ordisoftware.HebrewCalendar.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public LunisolarCalendar() {
+        public DataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected LunisolarCalendar(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -142,7 +142,7 @@ namespace Ordisoftware.HebrewCalendar.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            LunisolarCalendar cln = ((LunisolarCalendar)(base.Clone()));
+            DataSet cln = ((DataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -223,7 +223,7 @@ namespace Ordisoftware.HebrewCalendar.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "LunisolarCalendar";
+            this.DataSetName = "DataSet";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/LunisolarCalendar.xsd";
             this.EnforceConstraints = true;
@@ -257,7 +257,7 @@ namespace Ordisoftware.HebrewCalendar.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            LunisolarCalendar ds = new LunisolarCalendar();
+            DataSet ds = new DataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -679,7 +679,7 @@ namespace Ordisoftware.HebrewCalendar.Data {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                LunisolarCalendar ds = new LunisolarCalendar();
+                DataSet ds = new DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -927,7 +927,7 @@ namespace Ordisoftware.HebrewCalendar.Data {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                LunisolarCalendar ds = new LunisolarCalendar();
+                DataSet ds = new DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1463,7 +1463,7 @@ namespace Ordisoftware.HebrewCalendar.Data {
         }
     }
 }
-namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
+namespace Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters {
     
     
     /// <summary>
@@ -1720,7 +1720,7 @@ namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LunisolarCalendar.LunisolarDaysDataTable dataTable) {
+        public virtual int Fill(DataSet.LunisolarDaysDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1733,9 +1733,9 @@ namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LunisolarCalendar.LunisolarDaysDataTable GetData() {
+        public virtual DataSet.LunisolarDaysDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            LunisolarCalendar.LunisolarDaysDataTable dataTable = new LunisolarCalendar.LunisolarDaysDataTable();
+            DataSet.LunisolarDaysDataTable dataTable = new DataSet.LunisolarDaysDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1743,14 +1743,14 @@ namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LunisolarCalendar.LunisolarDaysDataTable dataTable) {
+        public virtual int Update(DataSet.LunisolarDaysDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LunisolarCalendar dataSet) {
+        public virtual int Update(DataSet dataSet) {
             return this.Adapter.Update(dataSet, "LunisolarDays");
         }
         
@@ -2430,7 +2430,7 @@ namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LunisolarCalendar.ReportDataTable dataTable) {
+        public virtual int Fill(DataSet.ReportDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2443,9 +2443,9 @@ namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LunisolarCalendar.ReportDataTable GetData() {
+        public virtual DataSet.ReportDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            LunisolarCalendar.ReportDataTable dataTable = new LunisolarCalendar.ReportDataTable();
+            DataSet.ReportDataTable dataTable = new DataSet.ReportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2453,14 +2453,14 @@ namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LunisolarCalendar.ReportDataTable dataTable) {
+        public virtual int Update(DataSet.ReportDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LunisolarCalendar dataSet) {
+        public virtual int Update(DataSet dataSet) {
             return this.Adapter.Update(dataSet, "Report");
         }
         
@@ -2644,7 +2644,7 @@ namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(LunisolarCalendar dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._lunisolarDaysTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.LunisolarDays.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -2672,7 +2672,7 @@ namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(LunisolarCalendar dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._lunisolarDaysTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.LunisolarDays.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -2698,7 +2698,7 @@ namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(LunisolarCalendar dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._reportTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Report.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -2748,7 +2748,7 @@ namespace Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(LunisolarCalendar dataSet) {
+        public virtual int UpdateAll(DataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

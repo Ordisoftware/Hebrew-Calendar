@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class ReminderForm : Form
   {
 
-    static public void Run(Data.LunisolarCalendar.LunisolarDaysRow row,
+    static public void Run(Data.DataSet.LunisolarDaysRow row,
                            bool isShabat, 
                            TorahEventType torahevent,
                            DateTime? date1,

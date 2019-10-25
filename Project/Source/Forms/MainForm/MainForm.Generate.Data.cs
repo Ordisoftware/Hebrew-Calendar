@@ -47,9 +47,9 @@ namespace Ordisoftware.HebrewCalendar
         LunisolarDaysBindingSource.DataSource = null;
         LunisolarDaysTableAdapter.DeleteAllQuery();
         ReportTableAdapter.DeleteAllQuery();
-        TableAdapterManager.UpdateAll(LunisolarCalendar);
-        LunisolarDaysTableAdapter.Fill(LunisolarCalendar.LunisolarDays);
-        ReportTableAdapter.Fill(LunisolarCalendar.Report);
+        TableAdapterManager.UpdateAll(DataSet);
+        LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
+        ReportTableAdapter.Fill(DataSet.Report);
         var d1 = new DateTime(yearFirst, 1, DateTime.DaysInMonth(yearFirst, 1));
         var d2 = new DateTime(yearLast, 12, DateTime.DaysInMonth(yearLast, 12));
         Count = (int)( d2 - d1 ).TotalDays;
@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( IsGenerating ) AnalyseDays();
           var lat = XmlConvert.ToDouble(Program.Settings.GPSLatitude);
           if ( lat < 0 && !Program.Settings.TorahEventsCountAsMoon )
-            foreach ( var row in LunisolarCalendar.LunisolarDays )
+            foreach ( var row in DataSet.LunisolarDays )
             {
               if ( (SeasonChangeType)row.SeasonChange == SeasonChangeType.SpringEquinox )
                 row.SeasonChange = (int)SeasonChangeType.AutumnEquinox;
@@ -78,8 +78,8 @@ namespace Ordisoftware.HebrewCalendar
         }
         finally
         {
-          TableAdapterManager.UpdateAll(LunisolarCalendar);
-          LunisolarDaysBindingSource.DataSource = LunisolarCalendar.LunisolarDays;
+          TableAdapterManager.UpdateAll(DataSet);
+          LunisolarDaysBindingSource.DataSource = DataSet.LunisolarDays;
         }
       }
       catch ( AbortException )
@@ -113,10 +113,10 @@ namespace Ordisoftware.HebrewCalendar
             try
             {
               if ( !UpdateProgress(progress++, Count, Translations.ProgressCreateDays.GetLang()) ) return;
-              var row = LunisolarCalendar.LunisolarDays.NewLunisolarDaysRow();
+              var row = DataSet.LunisolarDays.NewLunisolarDaysRow();
               row.Date = SQLiteUtility.GetDate(year, month, day);
               InitializeDay(row);
-              LunisolarCalendar.LunisolarDays.AddLunisolarDaysRow(row);
+              DataSet.LunisolarDays.AddLunisolarDaysRow(row);
             }
             catch ( AbortException )
             {
@@ -134,7 +134,7 @@ namespace Ordisoftware.HebrewCalendar
     /// Initialize a day.
     /// </summary>
     /// <param name="day">The day.</param>
-    private void InitializeDay(Data.LunisolarCalendar.LunisolarDaysRow day)
+    private void InitializeDay(Data.DataSet.LunisolarDaysRow day)
     {
       try
       {
@@ -186,7 +186,7 @@ namespace Ordisoftware.HebrewCalendar
         date.Get(out jdYear, out jdMonth, out jdDay, out jdHour, out jdMinute, out second);
         var dateJulian = new DateTime((int)jdYear, (int)jdMonth, (int)jdDay, 0, 0, 0);
         string strDate = SQLiteUtility.GetDate((int)jdYear, (int)jdMonth, (int)jdDay);
-        var day = LunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == strDate);
+        var day = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == strDate);
         if ( day == null ) return;
         day.SeasonChange = (int)season;
       }
@@ -215,7 +215,7 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       int month = 0;
       int delta = 0;
-      foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
+      foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         try
         {
           if ( !UpdateProgress(progress++, Count, Translations.ProgressAnalyzeDays.GetLang()) ) return;
@@ -243,31 +243,31 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="day">The day.</param>
     /// <param name="monthMoon">[in,out] The current mooon month.</param>
     /// <param name="delta">[in,out] The current delta to skip days w/o moonrise.</param>
-    private void AnalyzeDay(Data.LunisolarCalendar.LunisolarDaysRow day, ref int monthMoon)
+    private void AnalyzeDay(Data.DataSet.LunisolarDaysRow day, ref int monthMoon)
     {
       DateTime calculate(DateTime thedate, int toadd, TorahEventType type, bool forceSunOmer)
       {
         if ( Program.Settings.TorahEventsCountAsMoon )
         {
-          var rowStart = LunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(thedate));
-          int index = LunisolarCalendar.LunisolarDays.Rows.IndexOf(rowStart);
+          var rowStart = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(thedate));
+          int index = DataSet.LunisolarDays.Rows.IndexOf(rowStart);
           int count = 0;
           if ( forceSunOmer )
             count = toadd;
           else
             for ( int i = 0; i < toadd; i++, count++ )
-              if ( (MoonriseType)LunisolarCalendar.LunisolarDays[index + i].MoonriseType == MoonriseType.NextDay )
+              if ( (MoonriseType)DataSet.LunisolarDays[index + i].MoonriseType == MoonriseType.NextDay )
                 count++;
           thedate = thedate.AddDays(count);
         }
         else
           thedate = thedate.AddDays(toadd);
-        var rowEnd = LunisolarCalendar.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(thedate));
+        var rowEnd = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(thedate));
         if ( rowEnd != null ) rowEnd.TorahEvents |= (int)type;
         return thedate;
       }
       var dateDay = SQLiteUtility.GetDate(day.Date);
-      var equinoxe = ( from d in LunisolarCalendar.LunisolarDays
+      var equinoxe = ( from d in DataSet.LunisolarDays
                        where dateDay.Year == SQLiteUtility.GetDate(day.Date).Year
                           && d.SeasonChange == (int)SeasonChangeType.SpringEquinox
                        select d ).First();

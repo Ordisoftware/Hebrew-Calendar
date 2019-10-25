@@ -32,7 +32,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( !IsGenerating ) UpdateProgress(progress++, Count, Translations.LoadingData.GetLang());
       };
-      LunisolarCalendar.LunisolarDays.RowChanged += update;
+      DataSet.LunisolarDays.RowChanged += update;
       Cursor = Cursors.WaitCursor;
       Enabled = false;
       try
@@ -43,9 +43,9 @@ namespace Ordisoftware.HebrewCalendar
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
         Count = (int)command.ExecuteScalar();
         connection.Close();
-        LunisolarDaysTableAdapter.Fill(LunisolarCalendar.LunisolarDays);
-        ReportTableAdapter.Fill(LunisolarCalendar.Report);
-        if ( LunisolarCalendar.LunisolarDays.Count > 0 )
+        LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
+        ReportTableAdapter.Fill(DataSet.Report);
+        if ( DataSet.LunisolarDays.Count > 0 )
         {
           IsGenerating = true;
           try
@@ -58,7 +58,7 @@ namespace Ordisoftware.HebrewCalendar
           }
           try
           {
-            var row = LunisolarCalendar.Report.FirstOrDefault();
+            var row = DataSet.Report.FirstOrDefault();
             CalendarText.Text = row == null ? "" : row.Content;
             GoToDate(DateTime.Now);
           }
@@ -74,7 +74,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             DoGenerate(this, null);
           }
-          while ( LunisolarCalendar.LunisolarDays.Count == 0 );
+          while ( DataSet.LunisolarDays.Count == 0 );
         }
       }
       catch ( AbortException ex )
@@ -97,7 +97,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         Enabled = true;
         Cursor = Cursors.Default;
-        LunisolarCalendar.LunisolarDays.RowChanged -= update;
+        DataSet.LunisolarDays.RowChanged -= update;
         try
         {
           SetView(Program.Settings.CurrentView, true);

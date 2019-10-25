@@ -31,15 +31,15 @@ namespace Ordisoftware.HebrewCalendar
       var today = DateTime.Today;
       var dateNow = DateTime.Now;
       string strDate = SQLiteUtility.GetDate(today);
-      var row = ( from day in LunisolarCalendar.LunisolarDays
+      var row = ( from day in DataSet.LunisolarDays
                   where (TorahEventType)day.TorahEvents != TorahEventType.None
                      && check((TorahEventType)day.TorahEvents)
                      && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDate).AddDays(-1)
-                  select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
+                  select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
-      var rowPrevious = LunisolarCalendar.LunisolarDays
+      var rowPrevious = DataSet.LunisolarDays
                         .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
-      var rowNext = LunisolarCalendar.LunisolarDays
+      var rowNext = DataSet.LunisolarDays
                     .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(+1)));
       if ( rowPrevious == null || rowNext == null ) return;
       string timeStart = "";

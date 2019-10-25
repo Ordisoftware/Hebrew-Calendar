@@ -57,13 +57,13 @@ namespace Ordisoftware.HebrewCalendar
       bool IsCelebrationWeekStart = false;
       bool IsCelebrationWeekEnd = false;
       int progress = 0;
-      if ( LunisolarCalendar.LunisolarDays.Count == 0 ) return;
-      DateFirst = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.FirstOrDefault().Date);
+      if ( DataSet.LunisolarDays.Count == 0 ) return;
+      DateFirst = SQLiteUtility.GetDate(DataSet.LunisolarDays.FirstOrDefault().Date);
       YearFirst = DateFirst.Year;
-      DateLast = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.LastOrDefault().Date);
+      DateLast = SQLiteUtility.GetDate(DataSet.LunisolarDays.LastOrDefault().Date);
       YearLast = DateLast.Year;
       DayColors = new Color[YearLast - YearFirst + 1, 13, 35];
-      foreach ( var row in LunisolarCalendar.LunisolarDays )
+      foreach ( var row in DataSet.LunisolarDays )
       {
         if ( !UpdateProgress(progress++, Count, Translations.ProgressFillMonths.GetLang()) ) return;
         var ev = (TorahEventType)row.TorahEvents;

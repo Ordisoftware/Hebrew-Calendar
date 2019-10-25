@@ -62,10 +62,10 @@ namespace Ordisoftware.HebrewCalendar
       content.Append(headerSep + Environment.NewLine);
       content.Append(headerTxt + Environment.NewLine);
       int progress = 0;
-      int count = LunisolarCalendar.LunisolarDays.Count;
+      int count = DataSet.LunisolarDays.Count;
       if ( count <= 0 ) return "";
-      var lastyear = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
-      foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
+      var lastyear = SQLiteUtility.GetDate(DataSet.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
+      foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
       {
         var dayDate = SQLiteUtility.GetDate(day.Date);
         if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReport.GetLang()) ) return "";
@@ -114,9 +114,9 @@ namespace Ordisoftware.HebrewCalendar
         content.Append(Environment.NewLine);
       }
       content.Append(headerSep + Environment.NewLine);
-      var row = LunisolarCalendar.Report.NewReportRow();
+      var row = DataSet.Report.NewReportRow();
       row.Content = content.ToString();
-      LunisolarCalendar.Report.AddReportRow(row);
+      DataSet.Report.AddReportRow(row);
       return content.ToString();
     }
 

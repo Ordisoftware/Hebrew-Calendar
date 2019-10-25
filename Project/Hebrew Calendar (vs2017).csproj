@@ -213,13 +213,13 @@
     <Compile Include="Source\Forms\Boxes\CelebrationsForm.Designer.cs">
       <DependentUpon>CelebrationsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\LunisolarCalendar.cs">
-      <DependentUpon>LunisolarCalendar.xsd</DependentUpon>
+    <Compile Include="Data\DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\LunisolarCalendar.Designer.cs">
+    <Compile Include="Data\DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LunisolarCalendar.xsd</DependentUpon>
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
     <Compile Include="Source\Classes\Localizer.cs" />
@@ -417,16 +417,16 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Data\LunisolarCalendar.xsc">
-      <DependentUpon>LunisolarCalendar.xsd</DependentUpon>
+    <None Include="Data\DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="Data\LunisolarCalendar.xsd">
+    <None Include="Data\DataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LunisolarCalendar.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Data\LunisolarCalendar.xss">
-      <DependentUpon>LunisolarCalendar.xsd</DependentUpon>
+    <None Include="Data\DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Ordisoftware.HebrewCalendar.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
