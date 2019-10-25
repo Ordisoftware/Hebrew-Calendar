@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
-        if ( !IsGenerating ) UpdateProgress(progress++, Count, Translations.LoadingData.GetLang());
+        if ( !IsGenerating ) UpdateProgress(progress++, ProgressCount, Translations.LoadingData.GetLang());
       };
       DataSet.LunisolarDays.RowChanged += update;
       Cursor = Cursors.WaitCursor;
@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
         var connection = new OdbcConnection(Program.Settings.ConnectionString);
         connection.Open();
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
-        Count = (int)command.ExecuteScalar();
+        ProgressCount = (int)command.ExecuteScalar();
         connection.Close();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         ReportTableAdapter.Fill(DataSet.Report);

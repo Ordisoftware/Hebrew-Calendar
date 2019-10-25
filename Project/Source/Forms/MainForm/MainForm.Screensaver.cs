@@ -55,7 +55,8 @@ namespace Ordisoftware.HebrewCalendar
       if ( screen == null ) screen = Screen.PrimaryScreen;
       RECT rect = new RECT();
       GetWindowRect(new HandleRef(null, GetForegroundWindow()), ref rect);
-      return new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top).Contains(screen.Bounds);
+      return new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top)
+                 .Contains(screen.Bounds);
     }
 
   }

@@ -25,8 +25,6 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private int Count;
-
     /// <summary>
     /// Create the calendar days items.
     /// </summary>
@@ -52,7 +50,7 @@ namespace Ordisoftware.HebrewCalendar
         ReportTableAdapter.Fill(DataSet.Report);
         var d1 = new DateTime(yearFirst, 1, DateTime.DaysInMonth(yearFirst, 1));
         var d2 = new DateTime(yearLast, 12, DateTime.DaysInMonth(yearLast, 12));
-        Count = (int)( d2 - d1 ).TotalDays;
+        ProgressCount = (int)( d2 - d1 ).TotalDays;
         try
         {
           if ( IsGenerating ) PopulateDays(yearFirst, yearLast);
@@ -112,7 +110,7 @@ namespace Ordisoftware.HebrewCalendar
           for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
             try
             {
-              if ( !UpdateProgress(progress++, Count, Translations.ProgressCreateDays.GetLang()) ) return;
+              if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressCreateDays.GetLang()) ) return;
               var row = DataSet.LunisolarDays.NewLunisolarDaysRow();
               row.Date = SQLiteUtility.GetDate(year, month, day);
               InitializeDay(row);
@@ -218,7 +216,7 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         try
         {
-          if ( !UpdateProgress(progress++, Count, Translations.ProgressAnalyzeDays.GetLang()) ) return;
+          if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressAnalyzeDays.GetLang()) ) return;
           if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month);
           day.LunarMonth = month;
           if ( day.IsNewMoon == 1 ) delta = 0;

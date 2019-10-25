@@ -176,12 +176,14 @@ namespace Ordisoftware.HebrewCalendar
       SetFormsLocation();
     }
 
-    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+    private void ReminderForm_Shown(object sender, EventArgs e)
     {
-      if ( keyData != Keys.Escape )
-        return base.ProcessCmdKey(ref msg, keyData);
-      Hide();
-      return true;
+      SetFormsLocation();
+    }
+
+    private void Form_Click(object sender, EventArgs e)
+    {
+      Close();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
@@ -195,16 +197,6 @@ namespace Ordisoftware.HebrewCalendar
       if ( !MainForm.Instance.Visible ) MainForm.Instance.MenuShowHide.PerformClick();
       MainForm.Instance.GoToDate((DateTime)LabelDate.Tag);
       Close();
-    }
-
-    private void Form_Click(object sender, EventArgs e)
-    {
-      Close();
-    }
-
-    private void ReminderForm_Shown(object sender, EventArgs e)
-    {
-      SetFormsLocation();
     }
 
   }

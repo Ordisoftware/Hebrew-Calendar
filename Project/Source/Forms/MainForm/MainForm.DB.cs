@@ -58,9 +58,7 @@ namespace Ordisoftware.HebrewCalendar
         result = (int)cmdCheckTable.ExecuteScalar();
         if ( result == 0 )
         {
-          var cmdCreateTable = new OdbcCommand(@"CREATE TABLE Report (
-                                                   Content text
-                                                 );", connection);
+          var cmdCreateTable = new OdbcCommand(@"CREATE TABLE Report ( Content text );", connection);
           cmdCreateTable.ExecuteNonQuery();
         }
       }

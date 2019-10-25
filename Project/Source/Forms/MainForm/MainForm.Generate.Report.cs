@@ -75,17 +75,26 @@ namespace Ordisoftware.HebrewCalendar
         string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
         string strDay = ((MoonriseType)day.MoonriseType == MoonriseType.NextDay 
                       ? "  " 
-                      : string.Format("{0:00}", day.LunarDay)) + " " + (day.IsNewMoon == 1 ? MoonNewText 
-                                                                                           : day.IsFullMoon == 1 ? MoonFullText 
-                                                                                                                 : " ");
+                      : string.Format("{0:00}", day.LunarDay)) + " " + (day.IsNewMoon == 1 
+                                                                        ? MoonNewText 
+                                                                        : day.IsFullMoon == 1 
+                                                                          ? MoonFullText 
+                                                                          : " ");
         string strSun = day.Sunrise + " - " + day.Sunset;
         strSun = ShowWinterSummerHour
-               ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) ? Translations.Ephemeris.GetLang(EphemerisType.SummerHour) 
-                                                                              : Translations.Ephemeris.GetLang(EphemerisType.WinterHour) ) + " " + strSun
+               ? (TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1)) 
+                                                          ? Translations.Ephemeris.GetLang(EphemerisType.SummerHour) 
+                                                          : Translations.Ephemeris.GetLang(EphemerisType.WinterHour) ) 
+                                                            + " " + strSun
                : strSun + new string(' ', 3 + 1);
-        strSun += " " + (ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay ? ShabatText : "   ");
-        string strMoonrise = day.Moonrise == "" ? MoonNoText : Translations.Ephemeris.GetLang(EphemerisType.Rise) + day.Moonrise;
-        string strMoonset = day.Moonset == "" ? MoonNoText : Translations.Ephemeris.GetLang(EphemerisType.Set) + day.Moonset;
+        strSun += " " 
+                + (ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay ? ShabatText : "   ");
+        string strMoonrise = day.Moonrise == "" 
+                           ? MoonNoText 
+                           : Translations.Ephemeris.GetLang(EphemerisType.Rise) + day.Moonrise;
+        string strMoonset = day.Moonset == "" 
+                          ? MoonNoText 
+                          : Translations.Ephemeris.GetLang(EphemerisType.Set) + day.Moonset;
         string strMoon = (MoonriseType)day.MoonriseType == MoonriseType.BeforeSet 
                        ? strMoonrise + ColumnSepInner + strMoonset 
                        : strMoonset + ColumnSepInner + strMoonrise;

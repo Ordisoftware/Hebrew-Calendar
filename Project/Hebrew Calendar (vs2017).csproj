@@ -138,6 +138,7 @@
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Names.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Positions.cs" />
+    <Compile Include="Source\Enums\DayOfWeekItem.cs" />
     <Compile Include="Source\Enums\TorahEventItem.cs" />
     <Compile Include="Source\Enums\Translations.cs" />
     <Compile Include="Source\Classes\SQLiteUtility.cs" />

@@ -84,7 +84,7 @@ namespace Ordisoftware.HebrewCalendar
     public string OldLongitude { get; private set; }
     public string OldTimeZone { get; private set; }
     public bool OldUseMoonDays { get; private set; }
-    public bool Reseted = false;
+    public bool Reseted { get; private set; }
 
     /// <summary>
     /// Default constructor.
@@ -111,6 +111,65 @@ namespace Ordisoftware.HebrewCalendar
       EditRemindCelebrationEveryMinutes.Minimum = RemindCelebrationEveryMinutesMin;
       EditRemindCelebrationEveryMinutes.Maximum = RemindCelebrationEveryMinutesMax;
       EditRemindCelebrationEveryMinutes.Value = RemindCelebrationEveryMinutesValue;
+    }
+
+    /// <summary>
+    /// Loads the days.
+    /// </summary>
+    private void LoadDays()
+    {
+      foreach ( DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)) )
+      {
+        var item = new DayOfWeekItem() { Text = Translations.DayOfWeek.GetLang(day), Day = day };
+        EditShabatDay.Items.Add(item);
+        if ( (DayOfWeek)Program.Settings.ShabatDay == day )
+          EditShabatDay.SelectedItem = item;
+      }
+    }
+
+    /// <summary>
+    /// Loads the events.
+    /// </summary>
+    private void LoadEvents()
+    {
+      foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
+        if ( type != TorahEventType.None )
+          try
+          {
+            var item = new TorahEventItem() { Text = Translations.TorahEvent.GetLang(type), Event = type };
+            int index = EditEvents.Items.Add(item);
+            if ( (bool)Program.Settings["TorahEventRemind" + type.ToString()] )
+              EditEvents.SetItemChecked(index, true);
+            index = EditEventsDay.Items.Add(item);
+            if ( (bool)Program.Settings["TorahEventRemindDay" + type.ToString()] )
+              EditEventsDay.SetItemChecked(index, true);
+          }
+          catch
+          {
+          }
+    }
+
+    /// <summary>
+    /// Loads the fonts.
+    /// <remarks>
+    /// Tips taken from http://stackoverflow.com/questions/224865/how-do-i-get-all-installed-fixed-width-fonts/225027
+    /// </remarks>
+    /// </summary>
+    private void LoadFonts()
+    {
+      EditFontName.Size = new Size(150, EditFontName.Size.Height);
+      foreach ( var item in new InstalledFontCollection().Families )
+        if ( item.Name == "Bitstream Vera Sans Mono" || item.Name == "Droid Sans Mono" )
+          EditFontName.Items.Add(item.Name);
+        else
+        if ( item.IsStyleAvailable(FontStyle.Regular) && !item.Name.StartsWith("Webdings") )
+          using ( var font = new Font(item, 10) )
+          {
+            float delta = TextRenderer.MeasureText("|" + MainForm.Instance.MoonNewText + "ABCDE", font).Width
+                        - TextRenderer.MeasureText("|" + " abcde", font).Width;
+            if ( Math.Abs(delta) < float.Epsilon * 2 )
+              EditFontName.Items.Add(item.Name);
+          }
     }
 
     /// <summary>
@@ -643,65 +702,6 @@ namespace Ordisoftware.HebrewCalendar
       EditRemindCelebrationEveryMinutes.Enabled = EditTimerEnabled.Checked;
     }
 
-    /// <summary>
-    /// Loads the days.
-    /// </summary>
-    private void LoadDays()
-    {
-      foreach ( DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)) )
-      {
-        var item = new DayOfWeekItem() { Text = Translations.DayOfWeek.GetLang(day), Day = day };
-        EditShabatDay.Items.Add(item);
-        if ( (DayOfWeek)Program.Settings.ShabatDay == day )
-          EditShabatDay.SelectedItem = item;
-      }
-    }
-
-    /// <summary>
-    /// Loads the events.
-    /// </summary>
-    private void LoadEvents()
-    {
-      foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-        if ( type != TorahEventType.None )
-          try
-          {
-            var item = new TorahEventItem() { Text = Translations.TorahEvent.GetLang(type), Event = type };
-            int index = EditEvents.Items.Add(item);
-            if ( (bool)Program.Settings["TorahEventRemind" + type.ToString()] )
-              EditEvents.SetItemChecked(index, true);
-            index = EditEventsDay.Items.Add(item);
-            if ( (bool)Program.Settings["TorahEventRemindDay" + type.ToString()] )
-              EditEventsDay.SetItemChecked(index, true);
-          }
-          catch
-          {
-          }
-    }
-
-    /// <summary>
-    /// Loads the fonts.
-    /// <remarks>
-    /// Tips taken from http://stackoverflow.com/questions/224865/how-do-i-get-all-installed-fixed-width-fonts/225027
-    /// </remarks>
-    /// </summary>
-    private void LoadFonts()
-    {
-      EditFontName.Size = new Size(150, EditFontName.Size.Height);
-      foreach ( var item in new InstalledFontCollection().Families )
-        if ( item.Name == "Bitstream Vera Sans Mono" || item.Name == "Droid Sans Mono" )
-          EditFontName.Items.Add(item.Name);
-        else
-        if ( item.IsStyleAvailable(FontStyle.Regular) && !item.Name.StartsWith("Webdings") )
-          using ( var font = new Font(item, 10) )
-          {
-            float delta = TextRenderer.MeasureText("|" + MainForm.Instance.MoonNewText + "ABCDE", font).Width
-                        - TextRenderer.MeasureText("|" + " abcde", font).Width;
-            if ( Math.Abs(delta) < float.Epsilon * 2 )
-              EditFontName.Items.Add(item.Name);
-          }
-    }
-
     private void UpdateLanguagesButtons()
     {
       MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
@@ -733,29 +733,6 @@ namespace Ordisoftware.HebrewCalendar
       UpdateLanguagesButtons();
       LanguageChanged = true;
       Close();
-    }
-
-    /// <summary>
-    /// provide day of week item.
-    /// </summary>
-    private class DayOfWeekItem
-    {
-
-      /// <summary>
-      /// Indicate the text of the day.
-      /// </summary>
-      public string Text { get; set; }
-
-      /// <summary>
-      /// Indicate the day of week enum value.
-      /// </summary>
-      public DayOfWeek Day { get; set; }
-
-      /// <summary>
-      /// Return a <see cref="T:System.String" /> that represents the day.
-      /// </summary>
-      public override string ToString() { return Text; }
-
     }
 
   }
