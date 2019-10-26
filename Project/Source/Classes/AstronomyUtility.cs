@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( MainForm.Instance.CurrentTimeZoneInfo == null )
         throw new InvalidTimeZoneException();
       int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours 
-                   + ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date) ? 1 : 0 );
+                   + ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date.AddDays(1)) ? 1 : 0 );
       var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude),
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude),
