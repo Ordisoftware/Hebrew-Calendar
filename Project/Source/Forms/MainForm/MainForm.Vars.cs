@@ -66,6 +66,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private bool NavigationTrayBallooned;
 
+    private bool TimerMutex;
+
     private bool TimerErrorShown;
 
     internal TimeZoneInfo CurrentTimeZoneInfo;

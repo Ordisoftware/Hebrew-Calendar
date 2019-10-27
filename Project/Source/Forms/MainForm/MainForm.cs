@@ -129,17 +129,16 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Session ending event information.</param>
     private void SessionEnding(object sender, SessionEndingEventArgs e)
     {
-      try
-      {
-        ClearLists();
-        foreach ( Form form in Application.OpenForms )
-          if ( form != this && form.Visible )
+      ClearLists();
+      foreach ( Form form in Application.OpenForms )
+        if ( form != this && form.Visible )
+          try
+          {
             form.Close();
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+          }
+          catch
+          {
+          }
       AllowClose = true;
       Close();
     }
@@ -725,8 +724,6 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    private bool TimerMutex;
-
     /// <summary>
     /// Event handler. Called by Timer for tick events.
     /// </summary>
@@ -738,8 +735,10 @@ namespace Ordisoftware.HebrewCalendar
       TimerMutex = true;
       try
       {
-        if ( CalendarMonth.CalendarDate.Day != DateTime.Now.Day )
-          GoToDate(DateTime.Now);
+
+        //if ( CalendarMonth.CalendarDate.Day != DateTime.Now.Day )
+          //GoToDate(DateTime.Now);
+
         int active = 1;
         SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
         if ( active != 0 ) return;

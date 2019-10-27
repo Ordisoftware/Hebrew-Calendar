@@ -186,6 +186,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.CelebrationDay.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.cs" />
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.Shabat.cs">
       <SubType>Form</SubType>
     </Compile>

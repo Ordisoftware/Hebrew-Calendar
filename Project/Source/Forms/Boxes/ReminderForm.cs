@@ -28,10 +28,7 @@ namespace Ordisoftware.HebrewCalendar
     static public void Run(Data.DataSet.LunisolarDaysRow row,
                            bool isShabat, 
                            TorahEventType torahevent,
-                           DateTime? date1,
-                           DateTime? date2,
-                           string time1, 
-                           string time2)
+                           ReminderTimes times)
     {
       ReminderForm form = null;
       if ( isShabat && MainForm.Instance.ShabatForm != null )
@@ -66,11 +63,11 @@ namespace Ordisoftware.HebrewCalendar
                                          ? Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents)
                                          : "Shabat";
       form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
-      if ( date1 != null)
-        form.LabelHours.Text = Translations.DayOfWeek.GetLang(date1.Value.DayOfWeek) + " "
-                             + time1 + " ➜ "
-                             + Translations.DayOfWeek.GetLang(date2.Value.DayOfWeek) + " "
-                             + time2;
+      if ( times.dateStart != null && times.dateEnd != null )
+        form.LabelHours.Text = Translations.DayOfWeek.GetLang(times.dateStart.Value.DayOfWeek) + " "
+                             + times.timeStart + " ➜ "
+                             + Translations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " "
+                             + times.timeEnd;
       form.LabelDate.Tag = date;
       int left = SystemInformation.WorkingArea.Left;
       int top = SystemInformation.WorkingArea.Top;
@@ -83,11 +80,12 @@ namespace Ordisoftware.HebrewCalendar
       form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
       form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
       var dateNow = DateTime.Now;
-      if ( Program.Settings.UseColors)
-        if ( dateNow >= date1 && dateNow <= date2 )
-          form.BackColor = Program.Settings.EventColorTorah;
-        else
-          form.BackColor = Program.Settings.EventColorNext;
+      if ( times.dateStart != null && times.dateEnd != null )
+        if ( Program.Settings.UseColors )
+          if ( dateNow >= times.dateStart && dateNow <= times.dateEnd )
+            form.BackColor = Program.Settings.EventColorTorah;
+          else
+            form.BackColor = Program.Settings.EventColorNext;
       form.IsShabat = isShabat;
       if ( isShabat )
         MainForm.Instance.ShabatForm = form;
