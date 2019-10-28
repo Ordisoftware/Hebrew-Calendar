@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             GoToDate(DateTime.Now);
             TimerReminder.Enabled = true;
-            Timer_Tick(this, null);
+            TimerReminder_Tick(this, null);
           }
         }
       }

@@ -17,6 +17,7 @@ using System.Drawing;
 using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using DandTSoftware.Timers;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
@@ -70,6 +71,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private bool TimerErrorShown;
 
+    private MidnightTimer MidnightTimer = new MidnightTimer();
+
     internal TimeZoneInfo CurrentTimeZoneInfo;
 
     internal Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
@@ -108,16 +111,17 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
+        CelebrationsForm.Instance.Hide();
+        NavigationForm.Instance.Hide();
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();
+        RemindCelebrationDates.Clear();
         foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
           if ( type != TorahEventType.None )
           {
             TorahEventRemindList.Add(type, (bool)Program.Settings["TorahEventRemind" + type.ToString()]);
             TorahEventRemindDayList.Add(type, (bool)Program.Settings["TorahEventRemindDay" + type.ToString()]);
           }
-        CelebrationsForm.Instance.Hide();
-        NavigationForm.Instance.Hide();
         foreach ( Form form in RemindCelebrationForms.ToList() )
           form.Close();
         foreach ( Form form in RemindCelebrationDayForms.Values.ToList() )
@@ -130,7 +134,6 @@ namespace Ordisoftware.HebrewCalendar
         for ( int index = min; index <= max; index++ )
           if ( LastCelebrationReminded.ContainsKey((TorahEventType)index) )
             LastCelebrationReminded[(TorahEventType)index] = null;
-        RemindCelebrationDates.Clear();
       }
       catch ( Exception ex )
       {

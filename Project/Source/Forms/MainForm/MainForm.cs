@@ -90,7 +90,9 @@ namespace Ordisoftware.HebrewCalendar
       if ( Program.Settings.StartupHide )
         MenuShowHide.PerformClick();
       TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
-      Timer_Tick(null, null);
+      TimerReminder_Tick(null, null);
+      MidnightTimer.TimeReached += MidnightTimer_Tick;
+      MidnightTimer.Start();
     }
 
     /// <summary>
@@ -113,6 +115,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
+      MidnightTimer.Stop();
       Program.Settings.Store();
     }
 
@@ -401,7 +404,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-        Timer_Tick(this, null);
+        TimerReminder_Tick(this, null);
       }
       catch ( Exception ex )
       {
@@ -665,7 +668,7 @@ namespace Ordisoftware.HebrewCalendar
     private void MenuRefreshReminder_Click(object sender, EventArgs e)
     {
       ClearLists();
-      Timer_Tick(null, null);
+      TimerReminder_Tick(null, null);
     }
 
     /// <summary>
@@ -729,16 +732,12 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void Timer_Tick(object sender, EventArgs e)
+    internal void TimerReminder_Tick(object sender, EventArgs e)
     {
       if ( !TimerReminder.Enabled || !IsReady || TimerMutex ) return;
       TimerMutex = true;
       try
       {
-
-        //if ( CalendarMonth.CalendarDate.Day != DateTime.Now.Day )
-          //GoToDate(DateTime.Now);
-
         int active = 1;
         SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
         if ( active != 0 ) return;

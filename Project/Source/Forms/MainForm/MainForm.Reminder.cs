@@ -14,22 +14,23 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Data;
-using System.Linq;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
 
-  public class ReminderTimes
-  {
-    public string timeStart;
-    public string timeEnd;
-    public DateTime? dateStartCheck;
-    public DateTime? dateStart;
-    public DateTime? dateEnd;
-  }
-
   public partial class MainForm
   {
+
+    private void MidnightTimer_Tick(DateTime Time)
+    {
+      if ( !IsReady ) return;
+      this.SyncUI(() =>
+      {
+        System.Threading.Thread.Sleep(1000);
+        GoToDate(DateTime.Now);
+      });
+    }
 
     private void SetTimes(ReminderTimes times, 
                           DateTime date, 
@@ -81,6 +82,15 @@ namespace Ordisoftware.HebrewCalendar
       return times;
     }
 
+  }
+
+  public class ReminderTimes
+  {
+    public string timeStart;
+    public string timeEnd;
+    public DateTime? dateStartCheck;
+    public DateTime? dateStart;
+    public DateTime? dateEnd;
   }
 
 }

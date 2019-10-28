@@ -111,7 +111,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
           TimerReminder.Enabled = true;
-          Timer_Tick(null, null);
+          TimerReminder_Tick(null, null);
         }
         catch ( Exception ex )
         {
