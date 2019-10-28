@@ -727,6 +727,16 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private void MidnightTimer_Tick(DateTime Time)
+    {
+      if ( !IsReady ) return;
+      this.SyncUI(() =>
+      {
+        System.Threading.Thread.Sleep(1000);
+        GoToDate(DateTime.Now);
+      });
+    }
+
     /// <summary>
     /// Event handler. Called by Timer for tick events.
     /// </summary>

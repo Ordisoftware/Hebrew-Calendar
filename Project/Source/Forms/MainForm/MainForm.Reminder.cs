@@ -22,16 +22,6 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private void MidnightTimer_Tick(DateTime Time)
-    {
-      if ( !IsReady ) return;
-      this.SyncUI(() =>
-      {
-        System.Threading.Thread.Sleep(1000);
-        GoToDate(DateTime.Now);
-      });
-    }
-
     private void SetTimes(ReminderTimes times, 
                           DateTime date, 
                           string timeStart, 
