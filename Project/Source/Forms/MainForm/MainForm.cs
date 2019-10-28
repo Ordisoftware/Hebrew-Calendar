@@ -762,7 +762,10 @@ namespace Ordisoftware.HebrewCalendar
         TimerErrorShown = true;
         ex.Manage();
       }
-      TimerMutex = false;
+      finally
+      {
+        TimerMutex = false;
+      }
     }
 
   }
