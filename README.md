@@ -108,7 +108,9 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 #### 2019.10.__ - Version 3.7
 
-- Update internal current day when passing midnight.
+- Update current day highlighting when passing midnight.
+- Fix first day of month label not highlighted like the other days.
+- Fix sun rise and set on the first day of daylight saving time that was shifted by one day in the previous version.
 - Some code refactorings.
 
 #### 2019.10.21 - Version 3.6
