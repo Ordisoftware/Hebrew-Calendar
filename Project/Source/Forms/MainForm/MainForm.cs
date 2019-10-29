@@ -733,6 +733,7 @@ namespace Ordisoftware.HebrewCalendar
       this.SyncUI(() =>
       {
         System.Threading.Thread.Sleep(1000);
+        CalendarMonth.Refresh();
         if ( SQLiteUtility.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
       });
