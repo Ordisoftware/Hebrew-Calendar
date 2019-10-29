@@ -749,13 +749,12 @@ namespace Ordisoftware.HebrewCalendar
       TimerMutex = true;
       try
       {
-        int active = 1;
-        SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
-        if ( active != 0 ) return;
-        if ( IsForegroundFullScreen() ) return;
-        if ( Program.Settings.ReminderShabatEnabled ) CheckShabat();
-        if ( Program.Settings.ReminderCelebrationsEnabled ) CheckCelebrationDay();
-        if ( Program.Settings.ReminderCelebrationsEnabled ) CheckEvents();
+        if ( !IsFullScreenOrScreensaver() )
+        {
+          if ( Program.Settings.ReminderShabatEnabled ) CheckShabat();
+          if ( Program.Settings.ReminderCelebrationsEnabled ) CheckCelebrationDay();
+          if ( Program.Settings.ReminderCelebrationsEnabled ) CheckEvents();
+        }
       }
       catch ( Exception ex )
       {

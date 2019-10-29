@@ -40,23 +40,32 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     [DllImport("user32.dll")]
-    private static extern bool GetWindowRect(HandleRef hWnd, [In, Out] ref RECT rect);
+    static private extern bool GetWindowRect(HandleRef hWnd, [In, Out] ref RECT rect);
 
     [DllImport("user32.dll")]
-    private static extern IntPtr GetForegroundWindow();
+    static private extern IntPtr GetForegroundWindow();
 
-    public static bool IsForegroundFullScreen()
+    static private bool IsForegroundFullScreen()
     {
       return IsForegroundFullScreen(null);
     }
 
-    public static bool IsForegroundFullScreen(Screen screen)
+    static private bool IsForegroundFullScreen(Screen screen)
     {
       if ( screen == null ) screen = Screen.PrimaryScreen;
       RECT rect = new RECT();
       GetWindowRect(new HandleRef(null, GetForegroundWindow()), ref rect);
       return new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top)
                  .Contains(screen.Bounds);
+    }
+
+    private bool IsFullScreenOrScreensaver()
+    {
+      int active = 1;
+      SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
+      if ( active != 0 ) return true;
+      if ( IsForegroundFullScreen() ) return true;
+      return false;
     }
 
   }
