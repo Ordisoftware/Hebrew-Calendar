@@ -408,7 +408,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(Translations.PersonalShabatNotice.GetLang()) ) return;
-      DateTime date = DateTime.Now;
+      DateTime date = DateTime.Today;
       var formDate = new SelectDayForm();
       formDate.Text = Translations.SelectBirthday.GetLang();
       if ( formDate.ShowDialog() != DialogResult.OK ) return;

@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewCalendar
       UpdateButtons();
       MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
       IsReady = true;
-      GoToDate(DateTime.Now);
+      GoToDate(DateTime.Today);
       Program.CheckUpdate(true);
       CheckRegenerateCalendar();
       if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
@@ -159,12 +159,12 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        if ( DateTime.Now.Year >= YearLast )
+        if ( DateTime.Today.Year >= YearLast )
         {
           var diff = YearLast - YearFirst;
           if ( diff < SelectYearsForm.GenerateIntervalDefault )
             diff = SelectYearsForm.GenerateIntervalDefault;
-          YearFirst = DateTime.Now.Year - 1;
+          YearFirst = DateTime.Today.Year - 1;
           YearLast = YearFirst + diff;
           DoGenerate(null, new EventArgs());
         }
@@ -200,7 +200,7 @@ namespace Ordisoftware.HebrewCalendar
             BringToFront();
             TopMost = old;
           }
-          GoToDate(DateTime.Now);
+          GoToDate(DateTime.Today);
         }
         else
         {
@@ -278,7 +278,7 @@ namespace Ordisoftware.HebrewCalendar
               else
                 try
                 {
-                  form.Date = DateTime.Now;
+                  form.Date = DateTime.Today;
                   form.Visible = true;
                 }
                 catch ( Exception ex )
@@ -598,7 +598,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       DateTime date;
       if ( sender == null )
-        date = DateTime.Now;
+        date = DateTime.Today;
       else
       {
         var form = new SelectDayForm();
@@ -639,7 +639,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
         {
-          GoToDate(DateTime.Now); 
+          GoToDate(DateTime.Today); 
           NavigationForm.Instance.Show();
           NavigationForm.Instance.BringToFront();
         }
@@ -733,7 +733,8 @@ namespace Ordisoftware.HebrewCalendar
       this.SyncUI(() =>
       {
         System.Threading.Thread.Sleep(1000);
-        GoToDate(DateTime.Now);
+        if ( SQLiteUtility.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
+          GoToDate(DateTime.Today);
       });
     }
 

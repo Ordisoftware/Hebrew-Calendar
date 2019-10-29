@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( rowPrevious == null || rowNext == null ) return null;
       if ( Program.Settings.TorahEventsCountAsMoon )
       {
-        if ( rowNext.Date == SQLiteUtility.GetDate(DateTime.Now) )
+        if ( rowNext.Date == SQLiteUtility.GetDate(DateTime.Today) )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
         if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )

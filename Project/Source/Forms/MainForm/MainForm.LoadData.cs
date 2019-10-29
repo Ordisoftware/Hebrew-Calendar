@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             var row = DataSet.Report.FirstOrDefault();
             CalendarText.Text = row == null ? "" : row.Content;
-            GoToDate(DateTime.Now);
+            GoToDate(DateTime.Today);
           }
           catch
           {

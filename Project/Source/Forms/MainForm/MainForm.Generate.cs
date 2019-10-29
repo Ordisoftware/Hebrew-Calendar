@@ -52,7 +52,7 @@ namespace Ordisoftware.HebrewCalendar
           IsReady = true;
           if ( e != null )
           {
-            GoToDate(DateTime.Now);
+            GoToDate(DateTime.Today);
             TimerReminder.Enabled = true;
             TimerReminder_Tick(this, null);
           }

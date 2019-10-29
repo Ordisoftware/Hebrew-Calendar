@@ -39,7 +39,7 @@ namespace Ordisoftware.HebrewCalendar
     private void SelectYearsRangeForm_Load(object sender, EventArgs e)
     {
       Mutex = true;
-      Year = DateTime.Now.AddYears(-1).Year;
+      Year = DateTime.Today.AddYears(-1).Year;
       EditYearFirst.Minimum = Year - GenerateIntervalPeriod;
       EditYearFirst.Maximum = Year + GenerateIntervalPeriod;
       EditYearLast.Minimum = Year - GenerateIntervalPeriod;
