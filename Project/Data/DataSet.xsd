@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="LunisolarCalendar" targetNamespace="http://tempuri.org/LunisolarCalendar.xsd" xmlns:mstns="http://tempuri.org/LunisolarCalendar.xsd" xmlns="http://tempuri.org/LunisolarCalendar.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DataSet" targetNamespace="http://tempuri.org/LunisolarCalendar.xsd" xmlns:mstns="http://tempuri.org/LunisolarCalendar.xsd" xmlns="http://tempuri.org/LunisolarCalendar.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -179,10 +179,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="LunisolarCalendar" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LunisolarCalendar" msprop:Generator_UserDSName="LunisolarCalendar">
+  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="LunisolarDays" msprop:Generator_TableClassName="LunisolarDaysDataTable" msprop:Generator_TableVarName="tableLunisolarDays" msprop:Generator_TablePropName="LunisolarDays" msprop:Generator_RowDeletingName="LunisolarDaysRowDeleting" msprop:Generator_RowChangingName="LunisolarDaysRowChanging" msprop:Generator_RowEvHandlerName="LunisolarDaysRowChangeEventHandler" msprop:Generator_RowDeletedName="LunisolarDaysRowDeleted" msprop:Generator_UserTableName="LunisolarDays" msprop:Generator_RowChangedName="LunisolarDaysRowChanged" msprop:Generator_RowEvArgName="LunisolarDaysRowChangeEvent" msprop:Generator_RowClassName="LunisolarDaysRow">
+        <xs:element name="LunisolarDays" msprop:Generator_TableClassName="LunisolarDaysDataTable" msprop:Generator_TableVarName="tableLunisolarDays" msprop:Generator_RowChangedName="LunisolarDaysRowChanged" msprop:Generator_TablePropName="LunisolarDays" msprop:Generator_RowDeletingName="LunisolarDaysRowDeleting" msprop:Generator_RowChangingName="LunisolarDaysRowChanging" msprop:Generator_RowEvHandlerName="LunisolarDaysRowChangeEventHandler" msprop:Generator_RowDeletedName="LunisolarDaysRowDeleted" msprop:Generator_RowClassName="LunisolarDaysRow" msprop:Generator_UserTableName="LunisolarDays" msprop:Generator_RowEvArgName="LunisolarDaysRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date">
@@ -231,7 +231,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Report" msprop:Generator_TableClassName="ReportDataTable" msprop:Generator_TableVarName="tableReport" msprop:Generator_TablePropName="Report" msprop:Generator_RowDeletingName="ReportRowDeleting" msprop:Generator_RowChangingName="ReportRowChanging" msprop:Generator_RowEvHandlerName="ReportRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportRowDeleted" msprop:Generator_UserTableName="Report" msprop:Generator_RowChangedName="ReportRowChanged" msprop:Generator_RowEvArgName="ReportRowChangeEvent" msprop:Generator_RowClassName="ReportRow">
+        <xs:element name="Report" msprop:Generator_TableClassName="ReportDataTable" msprop:Generator_TableVarName="tableReport" msprop:Generator_RowChangedName="ReportRowChanged" msprop:Generator_TablePropName="Report" msprop:Generator_RowDeletingName="ReportRowDeleting" msprop:Generator_RowChangingName="ReportRowChanging" msprop:Generator_RowEvHandlerName="ReportRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportRowDeleted" msprop:Generator_RowClassName="ReportRow" msprop:Generator_UserTableName="Report" msprop:Generator_RowEvArgName="ReportRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Content" msprop:Generator_ColumnVarNameInTable="columnContent" msprop:Generator_ColumnPropNameInRow="Content" msprop:Generator_ColumnPropNameInTable="ContentColumn" msprop:Generator_UserColumnName="Content" minOccurs="0">

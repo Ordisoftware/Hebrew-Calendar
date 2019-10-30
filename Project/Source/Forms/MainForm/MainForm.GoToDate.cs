@@ -21,13 +21,16 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
+    private bool GoToDateMutex;
+
     /// <summary>
     /// Set the data position.
     /// </summary>
     /// <param name="date">The date.</param>
     internal void GoToDate(DateTime date)
     {
-      if ( !IsReady ) return;
+      if ( !IsReady || IsGenerating || GoToDateMutex ) return;
+      GoToDateMutex = true;
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;
       try
@@ -51,7 +54,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( position > 0 )
         {
           LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
-          CurrentDay = (Data.LunisolarCalendar.LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
+          CurrentDay = (Data.DataSet.LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
           CalendarGrid.Update();
         }
       }
@@ -74,6 +77,7 @@ namespace Ordisoftware.HebrewCalendar
       catch
       {
       }
+      GoToDateMutex = false;
     }
 
   }

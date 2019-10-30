@@ -41,9 +41,9 @@ namespace Ordisoftware.HebrewCalendar
         return;
       }
       Instance.ListView.Items.Clear();
-      var dateStart = DateTime.Now;
+      var dateStart = DateTime.Today;
       var dateEnd = dateStart.AddYears(1);
-      var rows = from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+      var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where SQLiteUtility.GetDate(day.Date) >= dateStart && SQLiteUtility.GetDate(day.Date) <= dateEnd
                  && ( (SeasonChangeType)day.SeasonChange != SeasonChangeType.None
                    || (TorahEventType)day.TorahEvents != TorahEventType.None )

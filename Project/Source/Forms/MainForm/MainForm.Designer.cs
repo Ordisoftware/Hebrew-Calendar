@@ -59,7 +59,7 @@
       this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.LunisolarCalendar = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendar();
+      this.DataSet = new Ordisoftware.HebrewCalendar.Data.DataSet();
       this.LunisolarDaysBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
       this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -144,9 +144,9 @@
       this.TimerReminder = new System.Windows.Forms.Timer(this.components);
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
-      this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter();
-      this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager();
-      this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.ReportTableAdapter();
+      this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
+      this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
+      this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -160,7 +160,7 @@
       this.PanelViewGrid.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarCalendar)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).BeginInit();
       this.LunisolarDaysBindingNavigator.SuspendLayout();
       this.PanelTitle.SuspendLayout();
@@ -420,13 +420,13 @@
       // LunisolarDaysBindingSource
       // 
       this.LunisolarDaysBindingSource.DataMember = "LunisolarDays";
-      this.LunisolarDaysBindingSource.DataSource = this.LunisolarCalendar;
+      this.LunisolarDaysBindingSource.DataSource = this.DataSet;
       this.LunisolarDaysBindingSource.CurrentItemChanged += new System.EventHandler(this.LunisolarDaysBindingSource_CurrentItemChanged);
       // 
-      // LunisolarCalendar
+      // DataSet
       // 
-      this.LunisolarCalendar.DataSetName = "LunisolarCalendar";
-      this.LunisolarCalendar.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // LunisolarDaysBindingNavigator
       // 
@@ -1078,7 +1078,7 @@
       // TimerReminder
       // 
       this.TimerReminder.Interval = 60000;
-      this.TimerReminder.Tick += new System.EventHandler(this.Timer_Tick);
+      this.TimerReminder.Tick += new System.EventHandler(this.TimerReminder_Tick);
       // 
       // TimerBallon
       // 
@@ -1099,7 +1099,7 @@
       this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.ReportTableAdapter = this.ReportTableAdapter;
-      this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewCalendar.Data.LunisolarCalendarTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+      this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
       // ReportTableAdapter
       // 
@@ -1132,7 +1132,7 @@
       this.PanelViewGrid.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarCalendar)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).EndInit();
       this.LunisolarDaysBindingNavigator.ResumeLayout(false);
       this.LunisolarDaysBindingNavigator.PerformLayout();
@@ -1189,8 +1189,8 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Panel PanelCalendar;
     private System.Windows.Forms.Timer TimerTooltip;
-    private Data.LunisolarCalendarTableAdapters.LunisolarDaysTableAdapter LunisolarDaysTableAdapter;
-    private Data.LunisolarCalendarTableAdapters.TableAdapterManager TableAdapterManager;
+    private Data.DataSetTableAdapters.LunisolarDaysTableAdapter LunisolarDaysTableAdapter;
+    private Data.DataSetTableAdapters.TableAdapterManager TableAdapterManager;
     private System.Windows.Forms.BindingSource LunisolarDaysBindingSource;
     private System.Windows.Forms.BindingNavigator LunisolarDaysBindingNavigator;
     private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -1202,7 +1202,7 @@
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
     private System.Windows.Forms.DataGridView CalendarGrid;
-    internal Data.LunisolarCalendar LunisolarCalendar;
+    internal Data.DataSet DataSet;
     private System.Windows.Forms.ToolStripButton ActionSaveReport;
     private System.Windows.Forms.ToolStripButton ActionSearchDay;
     private System.Windows.Forms.ToolStripButton ActionGenerate;
@@ -1210,7 +1210,7 @@
     private System.Windows.Forms.ToolStripButton ActionExportCSV;
     private System.Windows.Forms.ToolStripSeparator Sep2;
     private System.Windows.Forms.SaveFileDialog SaveCSVDialog;
-    private Data.LunisolarCalendarTableAdapters.ReportTableAdapter ReportTableAdapter;
+    private Data.DataSetTableAdapters.ReportTableAdapter ReportTableAdapter;
     private System.Windows.Forms.ToolStripButton ActionNavigate;
     private System.Windows.Forms.ToolStripButton ActionViewCelebrations;
     private System.Windows.Forms.NotifyIcon TrayIcon;

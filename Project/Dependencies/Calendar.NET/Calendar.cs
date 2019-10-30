@@ -980,9 +980,15 @@ namespace Calendar.NET
               if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month
            && counter == DateTime.Now.Day )
               {
-                g.DrawString(
+                //ORDISOFTWARE MODIF BEGIN
+                string strCounter = _calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture);
+                SizeF stringSize = g.MeasureString(strCounter, _todayFont);
+                g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
+                g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
+                /*g.DrawString(
                     _calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture),
-                    _todayFont, Brushes.Black, xStart + 5, yStart + 2);
+                    _todayFont, Brushes.Black, xStart + 5, yStart + 2);*/
+                //ORDISOFTWARE MODIF END
               }
               else
               {

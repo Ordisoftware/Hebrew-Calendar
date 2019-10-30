@@ -63,6 +63,7 @@
       // ActionClose
       // 
       resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionClose.FlatAppearance.BorderSize = 0;
       this.ActionClose.ForeColor = System.Drawing.SystemColors.GrayText;
       this.ActionClose.Name = "ActionClose";
@@ -77,8 +78,10 @@
       // 
       // ReminderForm
       // 
+      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.CancelButton = this.ActionClose;
       this.Controls.Add(this.LabelHours);
       this.Controls.Add(this.ActionClose);
       this.Controls.Add(this.PictureBox);

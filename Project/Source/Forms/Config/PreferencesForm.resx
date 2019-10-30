@@ -406,7 +406,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionResetSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-3, 8</value>
+    <value>5, 8</value>
   </data>
   <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 13</value>

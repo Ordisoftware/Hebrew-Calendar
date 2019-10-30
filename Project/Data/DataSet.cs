@@ -3,7 +3,7 @@
 namespace Ordisoftware.HebrewCalendar.Data
 {
 
-  partial class LunisolarCalendar
+  partial class DataSet
   {
 
   }

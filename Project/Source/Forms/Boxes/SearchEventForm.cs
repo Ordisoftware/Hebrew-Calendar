@@ -23,7 +23,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SearchEventForm : Form
   {
 
-    private Data.LunisolarCalendar.LunisolarDaysRow CurrentDay;
+    private Data.DataSet.LunisolarDaysRow CurrentDay;
 
     private bool Mutex;
 
@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
       CurrentDay = MainForm.Instance.CurrentDay;
       EditYear.Minimum = MainForm.Instance.YearFirst;
       EditYear.Maximum = MainForm.Instance.YearLast;
-      EditYear.Value = CurrentDay == null ? DateTime.Now.Year : SQLiteUtility.GetDate(CurrentDay.Date).Year;
+      EditYear.Value = CurrentDay == null ? DateTime.Today.Year : SQLiteUtility.GetDate(CurrentDay.Date).Year;
       Mutex = false;
       EditYear_ValueChanged(null, null);
       ActiveControl = ListItems;
@@ -63,7 +63,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Mutex ) return;
       ListItems.Items.Clear();
-      var rows = from day in MainForm.Instance.LunisolarCalendar.LunisolarDays
+      var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where (TorahEventType)day.TorahEvents != TorahEventType.None
                     && SQLiteUtility.GetDate(day.Date).Year == EditYear.Value
                  orderby day.Date
@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( Mutex ) return;
       if ( ListItems.SelectedItems.Count > 0 )
       {
-        var row = (Data.LunisolarCalendar.LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
+        var row = (Data.DataSet.LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
         MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
       }
     }

@@ -17,6 +17,7 @@ using System.Drawing;
 using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using DandTSoftware.Timers;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
@@ -43,20 +44,20 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate if the application is ready for the user.
     /// </summary>
-    public bool IsReady { get; private set; }
+    internal bool IsReady { get; private set; }
 
     /// <summary>
     /// Indicate if generation is in progress.
     /// </summary>
-    internal bool IsGenerating = false;
+    internal bool IsGenerating;
 
     /// <summary>
     /// Indicate if application can be closed.
     /// </summary>
-    private bool AllowClose = false;
+    private bool AllowClose;
 
     /// <summary>
-    /// INdicate last showned tooltip.
+    /// Indicate last showned tooltip.
     /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
@@ -66,41 +67,29 @@ namespace Ordisoftware.HebrewCalendar
 
     private bool NavigationTrayBallooned;
 
-    private bool TimerErrorShown = false;
+    private bool TimerMutex;
+
+    private bool TimerErrorShown;
+
+    private MidnightTimer MidnightTimer = new MidnightTimer();
 
     internal TimeZoneInfo CurrentTimeZoneInfo;
 
-    internal Data.LunisolarCalendar.LunisolarDaysRow CurrentDay { get; private set; }
+    internal Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
 
-    internal int YearFirst;
-    internal DateTime DateFirst;
+    internal int YearFirst { get; private set; }
+    internal DateTime DateFirst { get; private set; }
 
-    internal int YearLast;
-    internal DateTime DateLast;
+    internal int YearLast { get; private set; }
+    internal DateTime DateLast { get; private set; }
+
+    private int ProgressCount;
 
     private Dictionary<TorahEventType, bool> TorahEventRemindList
       = new Dictionary<TorahEventType, bool>();
 
     private Dictionary<TorahEventType, bool> TorahEventRemindDayList
       = new Dictionary<TorahEventType, bool>();
-
-    private void InitRemindLists()
-    {
-      try
-      {
-        TorahEventRemindList.Clear();
-        TorahEventRemindDayList.Clear();
-        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-          if ( type != TorahEventType.None )
-          {
-            TorahEventRemindList.Add(type, (bool)Program.Settings["TorahEventRemind" + type.ToString()]);
-            TorahEventRemindDayList.Add(type, (bool)Program.Settings["TorahEventRemindDay" + type.ToString()]);
-          }
-      }
-      catch
-      {
-      }
-    }
 
     internal readonly List<Form> RemindCelebrationForms
       = new List<Form>();
@@ -114,7 +103,7 @@ namespace Ordisoftware.HebrewCalendar
     internal readonly Dictionary<TorahEventType, ReminderForm> RemindCelebrationDayForms
       = new Dictionary<TorahEventType, ReminderForm>();
 
-    internal DateTime? LastShabatReminded = null;
+    internal DateTime? LastShabatReminded;
 
     internal ReminderForm ShabatForm;
 
@@ -124,6 +113,15 @@ namespace Ordisoftware.HebrewCalendar
       {
         CelebrationsForm.Instance.Hide();
         NavigationForm.Instance.Hide();
+        TorahEventRemindList.Clear();
+        TorahEventRemindDayList.Clear();
+        RemindCelebrationDates.Clear();
+        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
+          if ( type != TorahEventType.None )
+          {
+            TorahEventRemindList.Add(type, (bool)Program.Settings["TorahEventRemind" + type.ToString()]);
+            TorahEventRemindDayList.Add(type, (bool)Program.Settings["TorahEventRemindDay" + type.ToString()]);
+          }
         foreach ( Form form in RemindCelebrationForms.ToList() )
           form.Close();
         foreach ( Form form in RemindCelebrationDayForms.Values.ToList() )
@@ -136,7 +134,6 @@ namespace Ordisoftware.HebrewCalendar
         for ( int index = min; index <= max; index++ )
           if ( LastCelebrationReminded.ContainsKey((TorahEventType)index) )
             LastCelebrationReminded[(TorahEventType)index] = null;
-        RemindCelebrationDates.Clear();
       }
       catch ( Exception ex )
       {

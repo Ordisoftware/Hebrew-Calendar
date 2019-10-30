@@ -14,7 +14,6 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -65,12 +64,9 @@ namespace Ordisoftware.HebrewCalendar
           ActionPrint.PerformClick();
           return true;
         case Keys.Control | Keys.T:
-          GoToDate(DateTime.Now);
+          GoToDate(DateTime.Today);
           return true;
         case Keys.Escape:
-          //if ( IsGenerating )
-          //  IsGenerating = false;
-          //else
           if ( EditESCtoExit.Checked )
             Close();
           return true;

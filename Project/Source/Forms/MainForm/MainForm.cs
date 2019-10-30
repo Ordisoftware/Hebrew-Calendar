@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
         }
       Refresh();
       LoadData();
-      InitRemindLists();
+      ClearLists();
     }
 
     /// <summary>
@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewCalendar
       UpdateButtons();
       MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
       IsReady = true;
-      GoToDate(DateTime.Now);
+      GoToDate(DateTime.Today);
       Program.CheckUpdate(true);
       CheckRegenerateCalendar();
       if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
@@ -90,7 +90,9 @@ namespace Ordisoftware.HebrewCalendar
       if ( Program.Settings.StartupHide )
         MenuShowHide.PerformClick();
       TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
-      Timer_Tick(null, null);
+      TimerReminder_Tick(null, null);
+      MidnightTimer.TimeReached += MidnightTimer_Tick;
+      MidnightTimer.Start();
     }
 
     /// <summary>
@@ -113,6 +115,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
+      MidnightTimer.Stop();
       Program.Settings.Store();
     }
 
@@ -129,17 +132,16 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Session ending event information.</param>
     private void SessionEnding(object sender, SessionEndingEventArgs e)
     {
-      try
-      {
-        ClearLists();
-        foreach ( Form form in Application.OpenForms )
-          if ( form != this && form.Visible )
+      ClearLists();
+      foreach ( Form form in Application.OpenForms )
+        if ( form != this && form.Visible )
+          try
+          {
             form.Close();
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+          }
+          catch
+          {
+          }
       AllowClose = true;
       Close();
     }
@@ -157,12 +159,12 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        if ( DateTime.Now.Year >= YearLast )
+        if ( DateTime.Today.Year >= YearLast )
         {
           var diff = YearLast - YearFirst;
           if ( diff < SelectYearsForm.GenerateIntervalDefault )
             diff = SelectYearsForm.GenerateIntervalDefault;
-          YearFirst = DateTime.Now.Year - 1;
+          YearFirst = DateTime.Today.Year - 1;
           YearLast = YearFirst + diff;
           DoGenerate(null, new EventArgs());
         }
@@ -198,7 +200,7 @@ namespace Ordisoftware.HebrewCalendar
             BringToFront();
             TopMost = old;
           }
-          GoToDate(DateTime.Now);
+          GoToDate(DateTime.Today);
         }
         else
         {
@@ -276,7 +278,7 @@ namespace Ordisoftware.HebrewCalendar
               else
                 try
                 {
-                  form.Date = DateTime.Now;
+                  form.Date = DateTime.Today;
                   form.Visible = true;
                 }
                 catch ( Exception ex )
@@ -394,7 +396,6 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         ClearLists();
-        TimerReminder.Enabled = false;
         if ( PreferencesForm.Run() )
         {
           CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
@@ -403,9 +404,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-        InitRemindLists();
-        TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled
-                             || Program.Settings.ReminderShabatEnabled;
+        TimerReminder_Tick(this, null);
       }
       catch ( Exception ex )
       {
@@ -599,7 +598,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       DateTime date;
       if ( sender == null )
-        date = DateTime.Now;
+        date = DateTime.Today;
       else
       {
         var form = new SelectDayForm();
@@ -640,7 +639,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
         {
-          GoToDate(DateTime.Now); 
+          GoToDate(DateTime.Today); 
           NavigationForm.Instance.Show();
           NavigationForm.Instance.BringToFront();
         }
@@ -669,7 +668,7 @@ namespace Ordisoftware.HebrewCalendar
     private void MenuRefreshReminder_Click(object sender, EventArgs e)
     {
       ClearLists();
-      Timer_Tick(null, null);
+      TimerReminder_Tick(null, null);
     }
 
     /// <summary>
@@ -721,11 +720,23 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( LunisolarDaysBindingSource.Current == null ) return;
         var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-        GoToDate(SQLiteUtility.GetDate(( (Data.LunisolarCalendar.LunisolarDaysRow)rowview ).Date));
+        GoToDate(SQLiteUtility.GetDate(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
       }
       catch
       {
       }
+    }
+
+    private void MidnightTimer_Tick(DateTime Time)
+    {
+      if ( !IsReady ) return;
+      this.SyncUI(() =>
+      {
+        System.Threading.Thread.Sleep(1000);
+        CalendarMonth.Refresh();
+        if ( SQLiteUtility.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
+          GoToDate(DateTime.Today);
+      });
     }
 
     /// <summary>
@@ -733,25 +744,28 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void Timer_Tick(object sender, EventArgs e)
+    internal void TimerReminder_Tick(object sender, EventArgs e)
     {
+      if ( !TimerReminder.Enabled || !IsReady || TimerMutex ) return;
+      TimerMutex = true;
       try
       {
-        if ( !IsReady ) return;
-        if ( !TimerReminder.Enabled ) return;
-        int active = 1;
-        SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
-        if ( active != 0 ) return;
-        if ( IsForegroundFullScreen() ) return;
-        if ( Program.Settings.ReminderShabatEnabled ) CheckShabat();
-        if ( Program.Settings.ReminderCelebrationsEnabled ) CheckCelebrationDay();
-        if ( Program.Settings.ReminderCelebrationsEnabled ) CheckEvents();
+        if ( !IsFullScreenOrScreensaver() )
+        {
+          if ( Program.Settings.ReminderShabatEnabled ) CheckShabat();
+          if ( Program.Settings.ReminderCelebrationsEnabled ) CheckCelebrationDay();
+          if ( Program.Settings.ReminderCelebrationsEnabled ) CheckEvents();
+        }
       }
       catch ( Exception ex )
       {
         if ( TimerErrorShown ) return;
         TimerErrorShown = true;
         ex.Manage();
+      }
+      finally
+      {
+        TimerMutex = false;
       }
     }
 

@@ -52,10 +52,9 @@ namespace Ordisoftware.HebrewCalendar
           IsReady = true;
           if ( e != null )
           {
-            GoToDate(DateTime.Now);
-            TimerReminder.Enabled = Program.Settings.ReminderCelebrationsEnabled 
-                                 || Program.Settings.ReminderShabatEnabled;
-            Timer_Tick(this, null);
+            GoToDate(DateTime.Today);
+            TimerReminder.Enabled = true;
+            TimerReminder_Tick(this, null);
           }
         }
       }

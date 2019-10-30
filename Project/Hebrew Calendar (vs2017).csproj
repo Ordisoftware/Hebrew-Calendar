@@ -126,9 +126,11 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
     <Compile Include="Dependencies\GenericParsing\FieldType.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParser.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParserAdapter.cs" />
@@ -138,6 +140,7 @@
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Names.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Positions.cs" />
+    <Compile Include="Source\Enums\DayOfWeekItem.cs" />
     <Compile Include="Source\Enums\TorahEventItem.cs" />
     <Compile Include="Source\Enums\Translations.cs" />
     <Compile Include="Source\Classes\SQLiteUtility.cs" />
@@ -185,6 +188,9 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.CelebrationDay.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.Shabat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,13 +219,13 @@
     <Compile Include="Source\Forms\Boxes\CelebrationsForm.Designer.cs">
       <DependentUpon>CelebrationsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\LunisolarCalendar.cs">
-      <DependentUpon>LunisolarCalendar.xsd</DependentUpon>
+    <Compile Include="Data\DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\LunisolarCalendar.Designer.cs">
+    <Compile Include="Data\DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LunisolarCalendar.xsd</DependentUpon>
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
     <Compile Include="Source\Classes\Localizer.cs" />
@@ -417,16 +423,16 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Data\LunisolarCalendar.xsc">
-      <DependentUpon>LunisolarCalendar.xsd</DependentUpon>
+    <None Include="Data\DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="Data\LunisolarCalendar.xsd">
+    <None Include="Data\DataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LunisolarCalendar.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Data\LunisolarCalendar.xss">
-      <DependentUpon>LunisolarCalendar.xsd</DependentUpon>
+    <None Include="Data\DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Ordisoftware.HebrewCalendar.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">

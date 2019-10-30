@@ -28,64 +28,18 @@ namespace Ordisoftware.HebrewCalendar
       {
         return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
       }
-      var today = DateTime.Today;
       var dateNow = DateTime.Now;
-      string strDate = SQLiteUtility.GetDate(today);
-      var row = ( from day in LunisolarCalendar.LunisolarDays
+      string strDateNow = SQLiteUtility.GetDate(dateNow);
+      var row = ( from day in DataSet.LunisolarDays
                   where (TorahEventType)day.TorahEvents != TorahEventType.None
                      && check((TorahEventType)day.TorahEvents)
-                     && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDate).AddDays(-1)
-                  select day ).FirstOrDefault() as Data.LunisolarCalendar.LunisolarDaysRow;
+                     && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDateNow).AddDays(-1)
+                  select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
-      var rowPrevious = LunisolarCalendar.LunisolarDays
-                        .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(-1)));
-      var rowNext = LunisolarCalendar.LunisolarDays
-                    .FindByDate(SQLiteUtility.GetDate(SQLiteUtility.GetDate(row.Date).AddDays(+1)));
-      if ( rowPrevious == null || rowNext == null ) return;
-      string timeStart = "";
-      string timeEnd = "";
-      string[] timesStart = null;
-      string[] timesEnd = null;
-      DateTime? dateStartCheck = null;
-      DateTime? dateStart = null;
-      DateTime? dateEnd = null;
-      Action<string, string, int, int> initTimes = (start, end, delta1, delta2) =>
-      {
-        timeStart = start;
-        timeEnd = end;
-        timesStart = timeStart.Split(':');
-        timesEnd = timeEnd.Split(':');
-        var date = SQLiteUtility.GetDate(row.Date);
-        dateStart = date.AddDays(delta1).AddHours(Convert.ToInt32(timesStart[0]))
-                    .AddMinutes(Convert.ToInt32(timesStart[1]));
-        dateStartCheck = dateStart.Value.AddMinutes((double)-Program.Settings.RemindCelebrationEveryMinutes);
-        dateEnd = date.AddDays(delta2).AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
-      };
-      if ( Program.Settings.TorahEventsCountAsMoon )
-      {
-        if ( rowNext.Date == SQLiteUtility.GetDate(today) )
-          initTimes(row.Moonset, rowNext.Moonset, 0, 1);
-        else
-        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
-          initTimes(row.Moonset, rowNext.Moonset, 0, 1);
-        else
-        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.NextDay )
-          initTimes(row.Moonset, rowNext.Moonset, 0, 1);
-        else
-        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.BeforeSet )
-          initTimes(rowPrevious.Moonset, row.Moonset, -1, 0);
-        else
-        if ( row.Moonset == "" )
-          initTimes(rowPrevious.Moonset, rowNext.Moonset, -1, 1);
-        else
-          throw new Exception("Error on calculating celebration dates and times.");
-      }
-      else
-      {
-        initTimes(rowPrevious.Sunset, row.Sunset, -1, 0);
-      }
-      var dateTrigger = dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
-      if ( dateNow < dateTrigger || dateNow >= dateEnd.Value )
+      var times = CreateCelebrationTimes(row, Program.Settings.RemindCelebrationEveryMinutes);
+      if ( times == null ) return;
+      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
+      if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
       {
         LastCelebrationReminded[(TorahEventType)row.TorahEvents] = null;
         if ( RemindCelebrationDayForms.ContainsKey((TorahEventType)row.TorahEvents) )
@@ -93,19 +47,17 @@ namespace Ordisoftware.HebrewCalendar
         return;
       }
       else
-      if ( dateNow >= dateTrigger && dateNow < dateStartCheck )
+      if ( dateNow >= dateTrigger && dateNow < times.dateStartCheck )
       {
-        if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents)
-          && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
+        if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents) && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
           return;
         else
           LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
       }
       else
-      if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents)
-          && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
+      if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents) && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
       {
-        if ( dateNow > dateStart && LastCelebrationReminded[(TorahEventType)row.TorahEvents].Value < dateStart )
+        if ( dateNow > times.dateStart && LastCelebrationReminded[(TorahEventType)row.TorahEvents].Value < times.dateStart )
         {
           if ( RemindCelebrationDayForms[(TorahEventType)row.TorahEvents] != null )
             RemindCelebrationDayForms[(TorahEventType)row.TorahEvents].Close();
@@ -119,7 +71,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       else
         LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
-      ReminderForm.Run(row, false, (TorahEventType)row.TorahEvents, dateStart, dateEnd, timeStart, timeEnd);
+      ReminderForm.Run(row, false, (TorahEventType)row.TorahEvents, times);
     }
 
   }

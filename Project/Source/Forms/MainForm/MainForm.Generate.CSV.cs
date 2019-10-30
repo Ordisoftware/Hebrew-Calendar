@@ -57,10 +57,10 @@ namespace Ordisoftware.HebrewCalendar
         var content = new StringBuilder();
         content.AppendLine(headerTxt);
         int progress = 0;
-        int count = LunisolarCalendar.LunisolarDays.Count;
+        int count = DataSet.LunisolarDays.Count;
         if ( count == 0 ) return;
-        var lastyear = SQLiteUtility.GetDate(LunisolarCalendar.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
-        foreach ( Data.LunisolarCalendar.LunisolarDaysRow day in LunisolarCalendar.LunisolarDays.Rows )
+        var lastyear = SQLiteUtility.GetDate(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+        foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         {
           var dayDate = SQLiteUtility.GetDate(day.Date);
           if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReport.GetLang()) ) return;

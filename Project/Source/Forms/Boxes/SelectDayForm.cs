@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectDayForm : Form
   {
 
-    private Data.LunisolarCalendar.LunisolarDaysRow CurrentDay;
+    private Data.DataSet.LunisolarDaysRow CurrentDay;
 
     public bool LiveGoTo { get; set; }
 

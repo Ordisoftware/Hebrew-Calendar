@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        ActionSaveReport.Enabled = !IsGenerating && LunisolarCalendar.LunisolarDays.Count > 0;
+        ActionSaveReport.Enabled = !IsGenerating && DataSet.LunisolarDays.Count > 0;
         ActionExportCSV.Enabled = ActionSaveReport.Enabled;
         ActionCopyReportToClipboard.Enabled = ActionSaveReport.Enabled;
         ActionSearchDay.Enabled = ActionSaveReport.Enabled;
