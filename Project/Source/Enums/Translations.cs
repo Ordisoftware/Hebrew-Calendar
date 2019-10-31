@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
       = new Dictionary<string, string>()
       {
         { "en", "Generate a hebrew lunisolar calendar with shabat and celebrations reminder" },
-        { "fr", "Génère un calendrier luni-solaire hébraïque avec rappel du chabat et des célébrations" }
+        { "fr", "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations" }
       };
 
     static public readonly Dictionary<string, string> ExitApplication
