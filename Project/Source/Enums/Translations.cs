@@ -40,8 +40,8 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> ApplicationDescription
       = new Dictionary<string, string>()
       {
-        { "en", "Generate a hebrew lunisolar calendar and remind celebrations" },
-        { "fr", "Génère un calendrier luni-solaire hébraïque et rappelle les célébrations" }
+        { "en", "Generate a hebrew lunisolar calendar with shabat and celebrations reminder" },
+        { "fr", "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations" }
       };
 
     static public readonly Dictionary<string, string> ExitApplication
@@ -364,39 +364,39 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<ReportFieldType, Dictionary<string, string>> CalendarField
-      = new Dictionary<ReportFieldType, Dictionary<string, string>>()
+    static public readonly Dictionary<ReportField, Dictionary<string, string>> CalendarField
+      = new Dictionary<ReportField, Dictionary<string, string>>()
       {
         {
-          ReportFieldType.Date, new Dictionary<string, string>
+          ReportField.Date, new Dictionary<string, string>
           {
             { "en", "Date" },
             { "fr", "Date" }
           }
         },
         {
-          ReportFieldType.Month, new Dictionary<string, string>
+          ReportField.Month, new Dictionary<string, string>
           {
             { "en", "Month" },
             { "fr", "Mois" }
           }
         },
         {
-          ReportFieldType.Sun, new Dictionary<string, string>
+          ReportField.Sun, new Dictionary<string, string>
           {
             { "en", "Sun" },
             { "fr", "Soleil" }
           }
         },
         {
-          ReportFieldType.Moon, new Dictionary<string, string>
+          ReportField.Moon, new Dictionary<string, string>
           {
             { "en", "Moon" },
             { "fr", "Lune" }
           }
         },
         {
-          ReportFieldType.Events, new Dictionary<string, string>
+          ReportField.Events, new Dictionary<string, string>
           {
             { "en", "Events" },
             { "fr", "Évènements" }
@@ -412,39 +412,39 @@ namespace Ordisoftware.HebrewCalendar
       "Adar II"
     };
 
-    static public readonly Dictionary<SeasonChangeType, Dictionary<string, string>> SeasonEvent
-      = new Dictionary<SeasonChangeType, Dictionary<string, string>>()
+    static public readonly Dictionary<SeasonChange, Dictionary<string, string>> SeasonEvent
+      = new Dictionary<SeasonChange, Dictionary<string, string>>()
       {
         {
-          SeasonChangeType.None, new Dictionary<string, string>
+          SeasonChange.None, new Dictionary<string, string>
           {
             { "en", "" },
             { "fr", "" }
           }
         },
         {
-          SeasonChangeType.SpringEquinox, new Dictionary<string, string>
+          SeasonChange.SpringEquinox, new Dictionary<string, string>
           {
             { "en", "Spring equinox" },
             { "fr", "Equinoxe de printemps" }
           }
         },
         {
-          SeasonChangeType.SummerSolstice, new Dictionary<string, string>
+          SeasonChange.SummerSolstice, new Dictionary<string, string>
           {
             { "en", "Summer solstice" },
             { "fr", "Solstice d'été" }
           }
         },
         {
-          SeasonChangeType.AutumnEquinox, new Dictionary<string, string>
+          SeasonChange.AutumnEquinox, new Dictionary<string, string>
           {
             { "en", "Autumn equinox" },
             { "fr", "Equinoxe d'automne" }
           }
         },
         {
-          SeasonChangeType.WinterSolstice, new Dictionary<string, string>
+          SeasonChange.WinterSolstice, new Dictionary<string, string>
           {
             { "en", "Winter solstice" },
             { "fr", "Solstice d'hiver" }
@@ -452,88 +452,88 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<TorahEventType, Dictionary<string, string>> TorahEvent
-      = new Dictionary<TorahEventType, Dictionary<string, string>>()
+    static public readonly Dictionary<TorahEvent, Dictionary<string, string>> TorahEvent
+      = new Dictionary<TorahEvent, Dictionary<string, string>>()
       {
         {
-          TorahEventType.None, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.None, new Dictionary<string, string>
           {
             { "en", "" },
             { "fr", "" }
           }
         },
         {
-          TorahEventType.NewYearD1, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.NewYearD1, new Dictionary<string, string>
           {
             { "en", "New year" },
             { "fr", "Début de l'année" }
           }
         },
         {
-          TorahEventType.NewYearD10, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.NewYearD10, new Dictionary<string, string>
           {
             { "en", "Set aside lamb" },
             { "fr", "Réserver agneau" }
           }
         },
         {
-          TorahEventType.PessahD1, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.PessahD1, new Dictionary<string, string>
           {
             { "en", "Pessa'h start" },
             { "fr", "Début de Pessah" }
           }
         },
         {
-          TorahEventType.PessahD7, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.PessahD7, new Dictionary<string, string>
           {
             { "en", "Pessa'h end" },
             { "fr", "Fin de Pessah" }
           }
         },
         {
-          TorahEventType.ChavouotDiet, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.ChavouotDiet, new Dictionary<string, string>
           {
             { "en", "Chavouot diet" },
             { "fr", "Régime de Chavouot" }
           }
         },
         {
-          TorahEventType.Chavouot1, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.Chavouot1, new Dictionary<string, string>
           {
             { "en", "Chavouot lamb" },
             { "fr", "Agneau de Chavouot" }
           }
         },
         {
-          TorahEventType.Chavouot2, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.Chavouot2, new Dictionary<string, string>
           {
             { "en", "Chavouot end" },
             { "fr", "Fin de Chavouot" }
           }
         },
         {
-          TorahEventType.YomTerouah, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.YomTerouah, new Dictionary<string, string>
           {
             { "en", "Yom Terou'ah" },
             { "fr", "Yom Terou'ah" }
           }
         },
         {
-          TorahEventType.YomHaKipourim, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.YomHaKipourim, new Dictionary<string, string>
           {
             { "en", "Yom HaKipourim" },
             { "fr", "Yom HaKipourim" }
           }
         },
         {
-          TorahEventType.SoukotD1, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.SoukotD1, new Dictionary<string, string>
           {
             { "en", "Soukot start" },
             { "fr", "Début de Soukot" }
           }
         },
         {
-          TorahEventType.SoukotD8, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.SoukotD8, new Dictionary<string, string>
           {
             { "en", "Soukot end" },
             { "fr", "Fin de Soukot" }

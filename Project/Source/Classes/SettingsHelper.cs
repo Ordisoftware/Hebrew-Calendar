@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.EditConfirmClosing.Checked = true;
       MainForm.EditESCtoExit.Checked = true;
       MainForm.EditShowTips.Checked = true;
-      MainForm.SetView(ViewModeType.Month);
+      MainForm.SetView(ViewMode.Month);
       settings.Store();
     }
 

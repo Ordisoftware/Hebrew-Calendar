@@ -342,7 +342,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewReport_Click(object sender, EventArgs e)
     {
-      SetView(ViewModeType.Text);
+      SetView(ViewMode.Text);
     }
 
     /// <summary>
@@ -352,7 +352,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewMonth_Click(object sender, EventArgs e)
     {
-      SetView(ViewModeType.Month);
+      SetView(ViewMode.Month);
     }
 
     /// <summary>
@@ -362,7 +362,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewGrid_Click(object sender, EventArgs e)
     {
-      SetView(ViewModeType.Grid);
+      SetView(ViewMode.Grid);
     }
 
     /// <summary>
@@ -547,7 +547,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionPrint_Click(object sender, EventArgs e)
     {
-      SetView(ViewModeType.Month);
+      SetView(ViewMode.Month);
       CalendarMonth.ShowTodayButton = false;
       CalendarMonth.ShowArrowControls = false;
       try
@@ -683,7 +683,7 @@ namespace Ordisoftware.HebrewCalendar
         switch ( e.ColumnIndex )
         {
           case 7:
-            e.Value = ( (MoonriseType)e.Value ).ToString();
+            e.Value = ( (MoonRise)e.Value ).ToString();
             break;
           case 10:
             e.Value = Translations.MoonPhase.GetLang((MoonPhaseType)e.Value);
@@ -695,12 +695,12 @@ namespace Ordisoftware.HebrewCalendar
             e.Value = (int)e.Value == 0 ? "" : "*";
             break;
           case 11:
-            var season = (SeasonChangeType)e.Value;
-            e.Value = season == SeasonChangeType.None ? "" : Translations.SeasonEvent.GetLang(season);
+            var season = (SeasonChange)e.Value;
+            e.Value = season == SeasonChange.None ? "" : Translations.SeasonEvent.GetLang(season);
             break;
           case 12:
-            var torah = (TorahEventType)e.Value;
-            e.Value = torah == TorahEventType.None ? "" : Translations.TorahEvent.GetLang(torah);
+            var torah = (TorahEvent)e.Value;
+            e.Value = torah == TorahEvent.None ? "" : Translations.TorahEvent.GetLang(torah);
             break;
         }
       }

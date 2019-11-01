@@ -64,16 +64,16 @@ namespace Ordisoftware.HebrewCalendar
       if ( Mutex ) return;
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
-                 where (TorahEventType)day.TorahEvents != TorahEventType.None
+                 where (TorahEvent)day.TorahEvents != TorahEvent.None
                     && SQLiteUtility.GetDate(day.Date).Year == EditYear.Value
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
       {
-        var item = ListItems.Items.Add(Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents));
+        var item = ListItems.Items.Add(Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
         item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()));
         item.Tag = row;
-        if ( (TorahEventType)row.TorahEvents == TorahEventType.NewYearD1 )
+        if ( (TorahEvent)row.TorahEvents == TorahEvent.NewYearD1 )
           item.Selected = true;
       }
       if ( ListItems.Items.Count > 0 && ListItems.SelectedItems.Count == 0 )

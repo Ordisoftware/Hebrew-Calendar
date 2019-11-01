@@ -10,22 +10,20 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <created> 2019-10 </created>
+/// <edited> 2019-10 </edited>
 using System;
 
 namespace Ordisoftware.HebrewCalendar
 {
 
-  /// <summary>
-  /// Ephemeris type enum.
-  /// </summary>
-  public enum EphemerisType
+  public class ReminderTimes
   {
-    Rise,
-    Set,
-    SummerHour,
-    WinterHour
+    public string timeStart;
+    public string timeEnd;
+    public DateTime? dateStartCheck;
+    public DateTime? dateStart;
+    public DateTime? dateEnd;
   }
 
 }

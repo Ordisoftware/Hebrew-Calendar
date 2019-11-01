@@ -56,6 +56,8 @@
       this.linkLabel6 = new System.Windows.Forms.LinkLabel();
       this.linkLabel7 = new System.Windows.Forms.LinkLabel();
       this.label9 = new System.Windows.Forms.Label();
+      this.label11 = new System.Windows.Forms.Label();
+      this.linkLabel8 = new System.Windows.Forms.LinkLabel();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -247,13 +249,29 @@
       resources.ApplyResources(this.label9, "label9");
       this.label9.Name = "label9";
       // 
+      // label11
+      // 
+      resources.ApplyResources(this.label11, "label11");
+      this.label11.Name = "label11";
+      // 
+      // linkLabel8
+      // 
+      this.linkLabel8.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel8, "linkLabel8");
+      this.linkLabel8.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel8.Name = "linkLabel8";
+      this.linkLabel8.TabStop = true;
+      this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIconsProvider_LinkClicked);
+      // 
       // AboutBox
       // 
       this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.linkLabel8);
       this.Controls.Add(this.linkLabel7);
+      this.Controls.Add(this.label11);
       this.Controls.Add(this.label9);
       this.Controls.Add(this.linkLabel6);
       this.Controls.Add(this.label8);
@@ -323,5 +341,7 @@
     private System.Windows.Forms.LinkLabel linkLabel6;
     private System.Windows.Forms.LinkLabel linkLabel7;
     private System.Windows.Forms.Label label9;
+    private System.Windows.Forms.Label label11;
+    private System.Windows.Forms.LinkLabel linkLabel8;
   }
 }

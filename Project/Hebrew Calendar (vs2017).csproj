@@ -55,7 +55,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Bin\Debug\Ordisoftware.HebrewCalendar.xml</DocumentationFile>
+    <DocumentationFile>..\Bin\Release\Ordisoftware.HebrewCalendar.xml</DocumentationFile>
     <NoWarn>1587, 1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -140,11 +140,11 @@
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Names.cs" />
     <Compile Include="Source\Enums\DayOfWeekMap.Positions.cs" />
-    <Compile Include="Source\Enums\DayOfWeekItem.cs" />
-    <Compile Include="Source\Enums\TorahEventItem.cs" />
+    <Compile Include="Source\Items\DayOfWeekItem.cs" />
+    <Compile Include="Source\Items\TorahEventItem.cs" />
     <Compile Include="Source\Enums\Translations.cs" />
     <Compile Include="Source\Classes\SQLiteUtility.cs" />
-    <Compile Include="Source\Enums\ReportFieldType.cs" />
+    <Compile Include="Source\Enums\ReportField.cs" />
     <Compile Include="Source\Enums\EphemerisType.cs" />
     <Compile Include="Source\Forms\Boxes\SearchMonthForm.cs">
       <SubType>Form</SubType>
@@ -250,7 +250,7 @@
     <Compile Include="Source\Forms\Boxes\SelectDayForm.Designer.cs">
       <DependentUpon>SelectDayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Enums\ViewModeType.cs" />
+    <Compile Include="Source\Enums\ViewMode.cs" />
     <Compile Include="Source\Forms\Boxes\SelectYearsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,7 +263,7 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.QueryBox.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
-    <Compile Include="Source\Enums\MoonriseType.cs" />
+    <Compile Include="Source\Enums\MoonRise.cs" />
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="Dependencies\MoonPhase\MoonPhase.cs">
     </Compile>
@@ -292,7 +292,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Keys.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Enums\SeasonEventType.cs" />
+    <Compile Include="Source\Enums\SeasonChange.cs" />
     <Compile Include="Source\Forms\Config\PreferencesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,9 +300,10 @@
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Classes\SettingsHelper.cs" />
-    <Compile Include="Source\Enums\TorahEventType.cs" />
+    <Compile Include="Source\Enums\TorahEvent.cs" />
     <Compile Include="Source\Enums\MoonPhaseType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Items\ReminderTimes.cs" />
     <Compile Include="Source\Program\Program.Init.cs" />
     <Compile Include="Source\Program\Program.System.cs" />
     <Compile Include="Source\Program\Program.Vars.cs" />

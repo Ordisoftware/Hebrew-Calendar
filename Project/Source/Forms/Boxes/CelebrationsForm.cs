@@ -45,19 +45,19 @@ namespace Ordisoftware.HebrewCalendar
       var dateEnd = dateStart.AddYears(1);
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where SQLiteUtility.GetDate(day.Date) >= dateStart && SQLiteUtility.GetDate(day.Date) <= dateEnd
-                 && ( (SeasonChangeType)day.SeasonChange != SeasonChangeType.None
-                   || (TorahEventType)day.TorahEvents != TorahEventType.None )
+                 && ( (SeasonChange)day.SeasonChange != SeasonChange.None
+                   || (TorahEvent)day.TorahEvents != TorahEvent.None )
                  select day;
       foreach ( var row in rows )
       {
         var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString());
-        if ( (SeasonChangeType)row.SeasonChange != SeasonChangeType.None )
+        if ( (SeasonChange)row.SeasonChange != SeasonChange.None )
           Instance.ListView.Items.Add(item)
-          .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChangeType)row.SeasonChange))
+          .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange))
           .Tag = row.Date;
-        if ( (TorahEventType)row.TorahEvents != TorahEventType.None )
+        if ( (TorahEvent)row.TorahEvents != TorahEvent.None )
           Instance.ListView.Items.Add(item)
-          .SubItems.Add(Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents))
+          .SubItems.Add(Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents))
           .Tag = row.Date;
       }
       Instance.Show();

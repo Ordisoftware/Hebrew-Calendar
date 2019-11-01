@@ -59,17 +59,17 @@ namespace Ordisoftware.HebrewCalendar
           if ( lat < 0 && !Program.Settings.TorahEventsCountAsMoon )
             foreach ( var row in DataSet.LunisolarDays )
             {
-              if ( (SeasonChangeType)row.SeasonChange == SeasonChangeType.SpringEquinox )
-                row.SeasonChange = (int)SeasonChangeType.AutumnEquinox;
+              if ( (SeasonChange)row.SeasonChange == SeasonChange.SpringEquinox )
+                row.SeasonChange = (int)SeasonChange.AutumnEquinox;
               else
-              if ( (SeasonChangeType)row.SeasonChange == SeasonChangeType.AutumnEquinox )
-                row.SeasonChange = (int)SeasonChangeType.SpringEquinox;
+              if ( (SeasonChange)row.SeasonChange == SeasonChange.AutumnEquinox )
+                row.SeasonChange = (int)SeasonChange.SpringEquinox;
               else
-              if ( (SeasonChangeType)row.SeasonChange == SeasonChangeType.WinterSolstice )
-                row.SeasonChange = (int)SeasonChangeType.SummerSolstice;
+              if ( (SeasonChange)row.SeasonChange == SeasonChange.WinterSolstice )
+                row.SeasonChange = (int)SeasonChange.SummerSolstice;
               else
-              if ( (SeasonChangeType)row.SeasonChange == SeasonChangeType.SummerSolstice )
-                row.SeasonChange = (int)SeasonChangeType.WinterSolstice;
+              if ( (SeasonChange)row.SeasonChange == SeasonChange.SummerSolstice )
+                row.SeasonChange = (int)SeasonChange.WinterSolstice;
             }
           if ( IsGenerating ) CalendarText.Text = GenerateReport();
           if ( IsGenerating ) FillMonths();
@@ -146,14 +146,14 @@ namespace Ordisoftware.HebrewCalendar
         day.Sunset = SQLiteUtility.FormatTime(ephemeris.Sunset);
         day.Moonrise = SQLiteUtility.FormatTime(ephemeris.Moonrise);
         day.Moonset = SQLiteUtility.FormatTime(ephemeris.Moonset);
-        MoonriseType moonrisetype;
+        MoonRise moonrisetype;
         if ( ephemeris.Moonrise == null )
-          moonrisetype = MoonriseType.NextDay;
+          moonrisetype = MoonRise.NextDay;
         else
         if ( ephemeris.Moonrise < ephemeris.Moonset )
-          moonrisetype = MoonriseType.BeforeSet;
+          moonrisetype = MoonRise.BeforeSet;
         else
-          moonrisetype = MoonriseType.AfterSet;
+          moonrisetype = MoonRise.AfterSet;
         day.MoonriseType = (int)moonrisetype;
         day.SeasonChange = 0;
         day.LunarMonth = 0;
@@ -178,7 +178,7 @@ namespace Ordisoftware.HebrewCalendar
       var date = new AAPlus.Date();
       long jdYear, jdMonth, jdDay, jdHour, jdMinute;
       double second;
-      void set(SeasonChangeType season, Func<long, double> action)
+      void set(SeasonChange season, Func<long, double> action)
       {
         date.Set(action(year), true);
         date.Get(out jdYear, out jdMonth, out jdDay, out jdHour, out jdMinute, out second);
@@ -191,17 +191,17 @@ namespace Ordisoftware.HebrewCalendar
       var lat = XmlConvert.ToDouble(Program.Settings.GPSLatitude);
       if ( lat >= 0 || !Program.Settings.TorahEventsCountAsMoon )
       {
-        set(SeasonChangeType.SpringEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
-        set(SeasonChangeType.SummerSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
-        set(SeasonChangeType.AutumnEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
-        set(SeasonChangeType.WinterSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
+        set(SeasonChange.SpringEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
+        set(SeasonChange.SummerSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
+        set(SeasonChange.AutumnEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
+        set(SeasonChange.WinterSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
       }
       else
       {
-        set(SeasonChangeType.SpringEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
-        set(SeasonChangeType.SummerSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
-        set(SeasonChangeType.AutumnEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
-        set(SeasonChangeType.WinterSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
+        set(SeasonChange.SpringEquinox, AAPlus.EquinoxesAndSolstices.AutumnEquinox);
+        set(SeasonChange.SummerSolstice, AAPlus.EquinoxesAndSolstices.WinterSolstice);
+        set(SeasonChange.AutumnEquinox, AAPlus.EquinoxesAndSolstices.SpringEquinox);
+        set(SeasonChange.WinterSolstice, AAPlus.EquinoxesAndSolstices.SummerSolstice);
       }
     }
 
@@ -220,7 +220,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month);
           day.LunarMonth = month;
           if ( day.IsNewMoon == 1 ) delta = 0;
-          if ( (MoonriseType)day.MoonriseType == MoonriseType.NextDay
+          if ( (MoonRise)day.MoonriseType == MoonRise.NextDay
             && Program.Settings.TorahEventsCountAsMoon )
             delta = 1;
           day.LunarDay -= delta;
@@ -243,7 +243,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="delta">[in,out] The current delta to skip days w/o moonrise.</param>
     private void AnalyzeDay(Data.DataSet.LunisolarDaysRow day, ref int monthMoon)
     {
-      DateTime calculate(DateTime thedate, int toadd, TorahEventType type, bool forceSunOmer)
+      DateTime calculate(DateTime thedate, int toadd, TorahEvent type, bool forceSunOmer)
       {
         if ( Program.Settings.TorahEventsCountAsMoon )
         {
@@ -254,7 +254,7 @@ namespace Ordisoftware.HebrewCalendar
             count = toadd;
           else
             for ( int i = 0; i < toadd; i++, count++ )
-              if ( (MoonriseType)DataSet.LunisolarDays[index + i].MoonriseType == MoonriseType.NextDay )
+              if ( (MoonRise)DataSet.LunisolarDays[index + i].MoonriseType == MoonRise.NextDay )
                 count++;
           thedate = thedate.AddDays(count);
         }
@@ -267,7 +267,7 @@ namespace Ordisoftware.HebrewCalendar
       var dateDay = SQLiteUtility.GetDate(day.Date);
       var equinoxe = ( from d in DataSet.LunisolarDays
                        where dateDay.Year == SQLiteUtility.GetDate(day.Date).Year
-                          && d.SeasonChange == (int)SeasonChangeType.SpringEquinox
+                          && d.SeasonChange == (int)SeasonChange.SpringEquinox
                        select d ).First();
       var dateEquinox = SQLiteUtility.GetDate(equinoxe.Date);
       int deltaNewLambDay = dateEquinox.Day - TorahCelebrations.NewLambDay;
@@ -287,25 +287,25 @@ namespace Ordisoftware.HebrewCalendar
       if ( equinoxe != null && ( monthMoon == 0 || monthMoon >= 12 ) && isNewYear )
       {
         monthMoon = 1;
-        calculate(date, 0, TorahEventType.NewYearD1, false);
-        calculate(date, TorahCelebrations.NewLambDay - 1, TorahEventType.NewYearD10, false);
-        date = calculate(date, TorahCelebrations.PessahStartDay - 1 + delta, TorahEventType.PessahD1, false);
-        calculate(date, TorahCelebrations.PessahLenght - 1, TorahEventType.PessahD7, false);
-        date = calculate(date, TorahCelebrations.ChavouotLenght - 1 - delta, TorahEventType.ChavouotDiet, true);
+        calculate(date, 0, TorahEvent.NewYearD1, false);
+        calculate(date, TorahCelebrations.NewLambDay - 1, TorahEvent.NewYearD10, false);
+        date = calculate(date, TorahCelebrations.PessahStartDay - 1 + delta, TorahEvent.PessahD1, false);
+        calculate(date, TorahCelebrations.PessahLenght - 1, TorahEvent.PessahD7, false);
+        date = calculate(date, TorahCelebrations.ChavouotLenght - 1 - delta, TorahEvent.ChavouotDiet, true);
         while ( date.DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
           date = date.AddDays(1);
-        calculate(date, 1, TorahEventType.Chavouot1, true);
-        calculate(date, 1 + TorahCelebrations.ChavouotLenght - 1, TorahEventType.Chavouot2, false);
+        calculate(date, 1, TorahEvent.Chavouot1, true);
+        calculate(date, 1 + TorahCelebrations.ChavouotLenght - 1, TorahEvent.Chavouot2, false);
       }
       else
       if ( monthMoon > 0 )
         monthMoon++;
       if ( monthMoon == 7 )
       {
-        date = calculate(date, 0, TorahEventType.YomTerouah, false);
-        calculate(date, TorahCelebrations.YomHaKipourimDay - 1, TorahEventType.YomHaKipourim, false);
-        date = calculate(date, TorahCelebrations.SoukotStartDay - 1, TorahEventType.SoukotD1, false);
-        calculate(date, TorahCelebrations.SoukotLenght - 1, TorahEventType.SoukotD8, false);
+        date = calculate(date, 0, TorahEvent.YomTerouah, false);
+        calculate(date, TorahCelebrations.YomHaKipourimDay - 1, TorahEvent.YomHaKipourim, false);
+        date = calculate(date, TorahCelebrations.SoukotStartDay - 1, TorahEvent.SoukotD1, false);
+        calculate(date, TorahCelebrations.SoukotLenght - 1, TorahEvent.SoukotD8, false);
       }
     }
 

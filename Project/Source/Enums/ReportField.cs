@@ -17,11 +17,16 @@ using System;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  public class TorahEventItem
+  /// <summary>
+  /// Report field enum.
+  /// </summary>
+  public enum ReportField
   {
-    public string Text { get; set; }
-    public TorahEventType Event { get; set; }
-    public override string ToString() { return Text; }
+    Date,
+    Month,
+    Sun,
+    Moon,
+    Events
   }
 
 }

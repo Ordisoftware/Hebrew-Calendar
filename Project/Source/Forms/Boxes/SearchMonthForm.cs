@@ -74,7 +74,7 @@ namespace Ordisoftware.HebrewCalendar
           var item = ListItems.Items.Add(Translations.BabylonianHebrewMonthText[row.LunarMonth]);
           item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()));
           item.Tag = row;
-          if ( (TorahEventType)row.TorahEvents == TorahEventType.NewYearD1 )
+          if ( (TorahEvent)row.TorahEvents == TorahEvent.NewYearD1 )
             item.Selected = true;
         }
       if ( ListItems.Items.Count > 0 && ListItems.SelectedItems.Count == 0 )

@@ -17,27 +17,11 @@ using System;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  /// <summary>
-  /// Provide the moonrise type.
-  /// </summary>
-  public enum MoonriseType
+  public class TorahEventItem
   {
-
-    /// <summary>
-    /// Moonrise is after moonset.
-    /// </summary>
-    AfterSet,
-
-    /// <summary>
-    /// Moonrise is before moonset.
-    /// </summary>
-    BeforeSet,
-
-    /// <summary>
-    /// Moonrise is on next day.
-    /// </summary>
-    NextDay
-
+    public string Text { get; set; }
+    public TorahEvent Event { get; set; }
+    public override string ToString() { return Text; }
   }
 
 }
