@@ -18,7 +18,7 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Indicate the location of a control.
+  /// Control location enum.
   /// </summary>
   [Serializable]
   public enum ControlLocation

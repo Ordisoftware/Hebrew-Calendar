@@ -11,42 +11,32 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2019-01 </edited>
 using System;
 
 namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide the season event type.
+  /// View mode enum.
   /// </summary>
-  public enum SeasonChangeType
+  public enum ViewMode
   {
 
     /// <summary>
-    /// No season change.
+    /// Text view mode to display the report.
     /// </summary>
-    None,
+    Text,
 
     /// <summary>
-    /// The spring equinox.
+    /// Grid view mode to display the month calendar.
     /// </summary>
-    SpringEquinox,
+    Month,
 
     /// <summary>
-    /// The summer solstice.
+    /// Grid view mode to display the grid.
     /// </summary>
-
-    SummerSolstice,
-    /// <summary>
-    /// The autumn equinox.
-    /// </summary>
-    AutumnEquinox,
-
-    /// <summary>
-    /// The winter solstice.
-    /// </summary>
-    WinterSolstice
+    Grid
 
   }
 

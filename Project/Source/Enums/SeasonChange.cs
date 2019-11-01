@@ -11,77 +11,42 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2016-04 </edited>
 using System;
 
 namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide the torah event type.
+  /// Season change enum.
   /// </summary>
-  public enum TorahEventType
+  public enum SeasonChange
   {
 
     /// <summary>
-    /// The no event.
+    /// No season change.
     /// </summary>
     None,
 
     /// <summary>
-    /// The new year day 1.
+    /// The spring equinox.
     /// </summary>
-    NewYearD1,
+    SpringEquinox,
 
     /// <summary>
-    /// The new year day 10.
+    /// The summer solstice.
     /// </summary>
-    NewYearD10,
+
+    SummerSolstice,
+    /// <summary>
+    /// The autumn equinox.
+    /// </summary>
+    AutumnEquinox,
 
     /// <summary>
-    /// The pessah first day.
+    /// The winter solstice.
     /// </summary>
-    PessahD1,
-
-    /// <summary>
-    /// The pessah last day.
-    /// </summary>
-    PessahD7,
-
-    /// <summary>
-    /// The chavouot diet start.
-    /// </summary>
-    ChavouotDiet,
-
-    /// <summary>
-    /// The chavouot first celebration.
-    /// </summary>
-    Chavouot1,
-
-    /// <summary>
-    /// The chavouot second celebration.
-    /// </summary>
-    Chavouot2,
-
-    /// <summary>
-    /// The yom terouah.
-    /// </summary>
-    YomTerouah,
-
-    /// <summary>
-    /// The yom hakipourim.
-    /// </summary>
-    YomHaKipourim,
-
-    /// <summary>
-    /// The soukot first day.
-    /// </summary>
-    SoukotD1,
-
-    /// <summary>
-    /// The soukot last day.
-    /// </summary>
-    SoukotD8
+    WinterSolstice
 
   }
 

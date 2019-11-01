@@ -18,15 +18,26 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide the report field type.
+  /// Moon rise enum.
   /// </summary>
-  public enum ReportFieldType
+  public enum MoonRise
   {
-    Date,
-    Month,
-    Sun,
-    Moon,
-    Events
+
+    /// <summary>
+    /// Moonrise is after moonset.
+    /// </summary>
+    AfterSet,
+
+    /// <summary>
+    /// Moonrise is before moonset.
+    /// </summary>
+    BeforeSet,
+
+    /// <summary>
+    /// Moonrise is on next day.
+    /// </summary>
+    NextDay
+
   }
 
 }

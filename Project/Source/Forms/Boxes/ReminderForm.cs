@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void Run(Data.DataSet.LunisolarDaysRow row,
                            bool isShabat, 
-                           TorahEventType torahevent,
+                           TorahEvent torahevent,
                            ReminderTimes times)
     {
       ReminderForm form = null;
@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewCalendar
         return;
       }
       else
-      if ( torahevent != TorahEventType.None )
+      if ( torahevent != TorahEvent.None )
       {
         if ( MainForm.Instance.RemindCelebrationDayForms.ContainsKey(torahevent) )
         {
@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
       form = new ReminderForm();
       var date = SQLiteUtility.GetDate(row.Date);
       form.LabelTitle.Text = !isShabat
-                                         ? Translations.TorahEvent.GetLang((TorahEventType)row.TorahEvents)
+                                         ? Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
                                          : "Shabat";
       form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
       if ( times.dateStart != null && times.dateEnd != null )
@@ -90,7 +90,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( isShabat )
         MainForm.Instance.ShabatForm = form;
       else
-      if ( torahevent != TorahEventType.None )
+      if ( torahevent != TorahEvent.None )
       {
         foreach ( var item in MainForm.Instance.RemindCelebrationForms.ToList() )
           if ( (string)item.Tag == row.Date )

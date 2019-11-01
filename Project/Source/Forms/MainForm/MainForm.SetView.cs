@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewCalendar
     /// Set the view panel.
     /// </summary>
     /// <param name="view">The view mode.</param>
-    internal void SetView(ViewModeType view)
+    internal void SetView(ViewMode view)
     {
       SetView(view, false);
     }
@@ -64,12 +64,12 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="view">The view mode.</param>
     /// <param name="first">true to first.</param>
-    internal void SetView(ViewModeType view, bool first)
+    internal void SetView(ViewMode view, bool first)
     {
-      var ViewPanels = new Dictionary<ViewModeType, ViewConnector>()
+      var ViewPanels = new Dictionary<ViewMode, ViewConnector>()
       {
         {
-          ViewModeType.Text,
+          ViewMode.Text,
           new ViewConnector
           {
             MenuItem = ActionViewReport,
@@ -78,7 +78,7 @@ namespace Ordisoftware.HebrewCalendar
           }
         },
         {
-          ViewModeType.Month,
+          ViewMode.Month,
           new ViewConnector
           {
             MenuItem = ActionViewMonth,
@@ -87,7 +87,7 @@ namespace Ordisoftware.HebrewCalendar
           }
         },
         {
-          ViewModeType.Grid,
+          ViewMode.Grid,
           new ViewConnector
           {
             MenuItem = ActionViewGrid,

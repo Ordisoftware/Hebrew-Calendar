@@ -77,9 +77,9 @@ namespace Ordisoftware.HebrewCalendar
           content.Append(day.Moonset + CSVSeparator);
           string strPhase = Translations.MoonPhase.GetLang((MoonPhaseType)day.MoonPhase);
           content.Append(strPhase + CSVSeparator);
-          string strSeason = Translations.SeasonEvent.GetLang((SeasonChangeType)day.SeasonChange);
+          string strSeason = Translations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
           content.Append(strSeason + CSVSeparator);
-          string strEvent = Translations.TorahEvent.GetLang((TorahEventType)day.TorahEvents);
+          string strEvent = Translations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
           content.AppendLine(strEvent);
         }
         if ( SaveCSVDialog.ShowDialog() == DialogResult.OK )

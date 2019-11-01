@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewCalendar
     static MainForm()
     {
       Instance = new MainForm();
-      foreach ( TorahEventType value in Enum.GetValues(typeof(TorahEventType)) )
+      foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         Instance.LastCelebrationReminded.Add(value, null);
     }
 
@@ -85,11 +85,11 @@ namespace Ordisoftware.HebrewCalendar
 
     private int ProgressCount;
 
-    private Dictionary<TorahEventType, bool> TorahEventRemindList
-      = new Dictionary<TorahEventType, bool>();
+    private Dictionary<TorahEvent, bool> TorahEventRemindList
+      = new Dictionary<TorahEvent, bool>();
 
-    private Dictionary<TorahEventType, bool> TorahEventRemindDayList
-      = new Dictionary<TorahEventType, bool>();
+    private Dictionary<TorahEvent, bool> TorahEventRemindDayList
+      = new Dictionary<TorahEvent, bool>();
 
     internal readonly List<Form> RemindCelebrationForms
       = new List<Form>();
@@ -97,11 +97,11 @@ namespace Ordisoftware.HebrewCalendar
     internal readonly List<string> RemindCelebrationDates
       = new List<string>();
 
-    internal readonly Dictionary<TorahEventType, DateTime?> LastCelebrationReminded
-      = new Dictionary<TorahEventType, DateTime?>();
+    internal readonly Dictionary<TorahEvent, DateTime?> LastCelebrationReminded
+      = new Dictionary<TorahEvent, DateTime?>();
 
-    internal readonly Dictionary<TorahEventType, ReminderForm> RemindCelebrationDayForms
-      = new Dictionary<TorahEventType, ReminderForm>();
+    internal readonly Dictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
+      = new Dictionary<TorahEvent, ReminderForm>();
 
     internal DateTime? LastShabatReminded;
 
@@ -116,8 +116,8 @@ namespace Ordisoftware.HebrewCalendar
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();
         RemindCelebrationDates.Clear();
-        foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-          if ( type != TorahEventType.None )
+        foreach ( TorahEvent type in Enum.GetValues(typeof(TorahEvent)) )
+          if ( type != TorahEvent.None )
           {
             TorahEventRemindList.Add(type, (bool)Program.Settings["TorahEventRemind" + type.ToString()]);
             TorahEventRemindDayList.Add(type, (bool)Program.Settings["TorahEventRemindDay" + type.ToString()]);
@@ -129,11 +129,11 @@ namespace Ordisoftware.HebrewCalendar
         if ( ShabatForm != null )
           ShabatForm.Close();
         LastShabatReminded = null;
-        int min = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Min();
-        int max = Enum.GetValues(typeof(TorahEventType)).Cast<int>().Max();
+        int min = Enum.GetValues(typeof(TorahEvent)).Cast<int>().Min();
+        int max = Enum.GetValues(typeof(TorahEvent)).Cast<int>().Max();
         for ( int index = min; index <= max; index++ )
-          if ( LastCelebrationReminded.ContainsKey((TorahEventType)index) )
-            LastCelebrationReminded[(TorahEventType)index] = null;
+          if ( LastCelebrationReminded.ContainsKey((TorahEvent)index) )
+            LastCelebrationReminded[(TorahEvent)index] = null;
       }
       catch ( Exception ex )
       {

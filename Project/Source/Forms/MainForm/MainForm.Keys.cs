@@ -30,14 +30,14 @@ namespace Ordisoftware.HebrewCalendar
       switch ( keyData )
       {
         case Keys.Control | Keys.Tab:
-          if ( Program.Settings.CurrentView == ViewModeType.Text )
-            SetView(ViewModeType.Month);
+          if ( Program.Settings.CurrentView == ViewMode.Text )
+            SetView(ViewMode.Month);
           else
-          if ( Program.Settings.CurrentView == ViewModeType.Month )
-            SetView(ViewModeType.Grid);
+          if ( Program.Settings.CurrentView == ViewMode.Month )
+            SetView(ViewMode.Grid);
           else
-          if ( Program.Settings.CurrentView == ViewModeType.Grid )
-            SetView(ViewModeType.Text);
+          if ( Program.Settings.CurrentView == ViewMode.Grid )
+            SetView(ViewMode.Text);
           return true;
         case Keys.Control | Keys.S:
           ActionSaveReport.PerformClick();

@@ -38,7 +38,7 @@
     <Setting Name="ShabatDay" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">6</Value>
     </Setting>
-    <Setting Name="CurrentView" Type="Ordisoftware.HebrewCalendar.ViewModeType" Scope="User">
+    <Setting Name="CurrentView" Type="Ordisoftware.HebrewCalendar.ViewMode" Scope="User">
       <Value Profile="(Default)">Month</Value>
     </Setting>
     <Setting Name="GPSLatitude" Type="System.String" Scope="User">

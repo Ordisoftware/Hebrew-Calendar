@@ -53,13 +53,13 @@ namespace Ordisoftware.HebrewCalendar
         if ( rowNext.Date == SQLiteUtility.GetDate(DateTime.Today) )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
-        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.AfterSet )
+        if ( row.Moonset != "" && (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
-        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.NextDay )
+        if ( row.Moonset != "" && (MoonRise)row.MoonriseType == MoonRise.NextDay )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
-        if ( row.Moonset != "" && (MoonriseType)row.MoonriseType == MoonriseType.BeforeSet )
+        if ( row.Moonset != "" && (MoonRise)row.MoonriseType == MoonRise.BeforeSet )
           SetTimes(times, dateRow, rowPrevious.Moonset, row.Moonset, -1, 0, delta3);
         else
         if ( row.Moonset == "" )
@@ -72,15 +72,6 @@ namespace Ordisoftware.HebrewCalendar
       return times;
     }
 
-  }
-
-  public class ReminderTimes
-  {
-    public string timeStart;
-    public string timeEnd;
-    public DateTime? dateStartCheck;
-    public DateTime? dateStart;
-    public DateTime? dateEnd;
   }
 
 }

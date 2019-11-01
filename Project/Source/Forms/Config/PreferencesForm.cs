@@ -132,8 +132,8 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private void LoadEvents()
     {
-      foreach ( TorahEventType type in Enum.GetValues(typeof(TorahEventType)) )
-        if ( type != TorahEventType.None )
+      foreach ( TorahEvent type in Enum.GetValues(typeof(TorahEvent)) )
+        if ( type != TorahEvent.None )
           try
           {
             var item = new TorahEventItem() { Text = Translations.TorahEvent.GetLang(type), Event = type };

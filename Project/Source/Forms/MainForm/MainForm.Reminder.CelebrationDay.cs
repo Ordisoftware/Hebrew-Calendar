@@ -24,15 +24,15 @@ namespace Ordisoftware.HebrewCalendar
 
     private void CheckCelebrationDay()
     {
-      bool check(TorahEventType item)
+      bool check(TorahEvent item)
       {
         return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
       }
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteUtility.GetDate(dateNow);
       var row = ( from day in DataSet.LunisolarDays
-                  where (TorahEventType)day.TorahEvents != TorahEventType.None
-                     && check((TorahEventType)day.TorahEvents)
+                  where (TorahEvent)day.TorahEvents != TorahEvent.None
+                     && check((TorahEvent)day.TorahEvents)
                      && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDateNow).AddDays(-1)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
@@ -41,37 +41,37 @@ namespace Ordisoftware.HebrewCalendar
       var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
       {
-        LastCelebrationReminded[(TorahEventType)row.TorahEvents] = null;
-        if ( RemindCelebrationDayForms.ContainsKey((TorahEventType)row.TorahEvents) )
-          RemindCelebrationDayForms[(TorahEventType)row.TorahEvents].Close();
+        LastCelebrationReminded[(TorahEvent)row.TorahEvents] = null;
+        if ( RemindCelebrationDayForms.ContainsKey((TorahEvent)row.TorahEvents) )
+          RemindCelebrationDayForms[(TorahEvent)row.TorahEvents].Close();
         return;
       }
       else
       if ( dateNow >= dateTrigger && dateNow < times.dateStartCheck )
       {
-        if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents) && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
+        if ( LastCelebrationReminded.ContainsKey((TorahEvent)row.TorahEvents) && LastCelebrationReminded[(TorahEvent)row.TorahEvents].HasValue )
           return;
         else
-          LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
+          LastCelebrationReminded[(TorahEvent)row.TorahEvents] = dateNow;
       }
       else
-      if ( LastCelebrationReminded.ContainsKey((TorahEventType)row.TorahEvents) && LastCelebrationReminded[(TorahEventType)row.TorahEvents].HasValue )
+      if ( LastCelebrationReminded.ContainsKey((TorahEvent)row.TorahEvents) && LastCelebrationReminded[(TorahEvent)row.TorahEvents].HasValue )
       {
-        if ( dateNow > times.dateStart && LastCelebrationReminded[(TorahEventType)row.TorahEvents].Value < times.dateStart )
+        if ( dateNow > times.dateStart && LastCelebrationReminded[(TorahEvent)row.TorahEvents].Value < times.dateStart )
         {
-          if ( RemindCelebrationDayForms[(TorahEventType)row.TorahEvents] != null )
-            RemindCelebrationDayForms[(TorahEventType)row.TorahEvents].Close();
-          LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
+          if ( RemindCelebrationDayForms[(TorahEvent)row.TorahEvents] != null )
+            RemindCelebrationDayForms[(TorahEvent)row.TorahEvents].Close();
+          LastCelebrationReminded[(TorahEvent)row.TorahEvents] = dateNow;
         }
         else
-        if ( dateNow < LastCelebrationReminded[(TorahEventType)row.TorahEvents].Value.AddMinutes((double)Program.Settings.RemindCelebrationEveryMinutes) )
+        if ( dateNow < LastCelebrationReminded[(TorahEvent)row.TorahEvents].Value.AddMinutes((double)Program.Settings.RemindCelebrationEveryMinutes) )
           return;
         else
-          LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
+          LastCelebrationReminded[(TorahEvent)row.TorahEvents] = dateNow;
       }
       else
-        LastCelebrationReminded[(TorahEventType)row.TorahEvents] = dateNow;
-      ReminderForm.Run(row, false, (TorahEventType)row.TorahEvents, times);
+        LastCelebrationReminded[(TorahEvent)row.TorahEvents] = dateNow;
+      ReminderForm.Run(row, false, (TorahEvent)row.TorahEvents, times);
     }
 
   }

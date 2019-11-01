@@ -18,25 +18,70 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide data view mode type.
+  /// Ttorah event enum.
   /// </summary>
-  public enum ViewModeType
+  public enum TorahEvent
   {
 
     /// <summary>
-    /// Text view mode to display the report.
+    /// The no event.
     /// </summary>
-    Text,
+    None,
 
     /// <summary>
-    /// Grid view mode to display the month calendar.
+    /// The new year day 1.
     /// </summary>
-    Month,
+    NewYearD1,
 
     /// <summary>
-    /// Grid view mode to display the grid.
+    /// The new year day 10.
     /// </summary>
-    Grid
+    NewYearD10,
+
+    /// <summary>
+    /// The pessah first day.
+    /// </summary>
+    PessahD1,
+
+    /// <summary>
+    /// The pessah last day.
+    /// </summary>
+    PessahD7,
+
+    /// <summary>
+    /// The chavouot diet start.
+    /// </summary>
+    ChavouotDiet,
+
+    /// <summary>
+    /// The chavouot first celebration.
+    /// </summary>
+    Chavouot1,
+
+    /// <summary>
+    /// The chavouot second celebration.
+    /// </summary>
+    Chavouot2,
+
+    /// <summary>
+    /// The yom terouah.
+    /// </summary>
+    YomTerouah,
+
+    /// <summary>
+    /// The yom hakipourim.
+    /// </summary>
+    YomHaKipourim,
+
+    /// <summary>
+    /// The soukot first day.
+    /// </summary>
+    SoukotD1,
+
+    /// <summary>
+    /// The soukot last day.
+    /// </summary>
+    SoukotD8
 
   }
 
