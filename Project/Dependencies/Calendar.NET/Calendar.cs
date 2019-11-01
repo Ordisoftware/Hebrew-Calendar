@@ -981,7 +981,7 @@ namespace Calendar.NET
            && counter == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN
-                string strCounter = _calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture);
+                string strCounter = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture);
                 SizeF stringSize = g.MeasureString(strCounter, _todayFont);
                 g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
                 g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
@@ -993,7 +993,7 @@ namespace Calendar.NET
               else
               {
                 g.DrawString(
-                    _calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture),
+                    CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture),
                     _daysFont, Brushes.Black, xStart + 5, yStart + 2);
               }
             }
@@ -1041,7 +1041,7 @@ namespace Calendar.NET
                 // ORDISOFWTARE MODIF BEGIN
                 g.FillRectangle(RogueBrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
                 // ORDISOFWTARE MODIF END
-                g.DrawString(_calendarDate.AddMonths(1).ToString("MMM") + " " + counter2.ToString(CultureInfo.InvariantCulture), _daysFont,
+                g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.AddMonths(1).ToString("MMMM")) + " " + counter2.ToString(CultureInfo.InvariantCulture), _daysFont,
                              new SolidBrush(Color.FromArgb(170, 170, 170)), xStart + 5, yStart + 2);
               }
               else
