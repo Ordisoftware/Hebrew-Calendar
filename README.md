@@ -106,13 +106,13 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 ## Changelog
 
-#### 2019.11.__ - Version 3.7
+#### 2019.11.01 - Version 3.7
 
 - Update current day highlighting when passing midnight.
-- Fix first day of month label not highlighted like other days.
+- Fix first day of month not highlighted like other days.
 - Fix sun rise and set on the first day of daylight saving time that was shifted by one day in the previous version.
 - Fix the reminder that sometimes does not work anymore after a while if screensaver or fullscreen mode has been detected.
-- Some code refactorings.
+- Code refactoring.
 
 #### 2019.10.21 - Version 3.6
 
