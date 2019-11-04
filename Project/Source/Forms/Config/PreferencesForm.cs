@@ -217,9 +217,6 @@ namespace Ordisoftware.HebrewCalendar
       EditRemindShabatOnlyLight.Checked = Program.Settings.RemindShabatOnlyLight;
       EditTimerInterval.Value = Program.Settings.ReminderCelebrationsInterval;
       EditRemindShabatHoursBefore.Value = Program.Settings.RemindShabatHoursBefore;
-
-      EditRemindShabatEveryMinutes.Minimum = 0;
-
       EditRemindShabatEveryMinutes.Value = Program.Settings.RemindShabatEveryMinutes;
       EditRemindCelebrationHoursBefore.Value = Program.Settings.RemindCelebrationHoursBefore;
       EditRemindCelebrationEveryMinutes.Value = Program.Settings.RemindCelebrationEveryMinutes;
