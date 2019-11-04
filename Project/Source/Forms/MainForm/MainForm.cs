@@ -51,6 +51,9 @@ namespace Ordisoftware.HebrewCalendar
       TrayIcon.Icon = Icon;
       MenuShowHide.Image = Icon.ToBitmap();
       Program.Settings.Retrieve();
+
+      Program.Settings.RemindShabatEveryMinutes = 1;
+
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == Program.Settings.TimeZone )
         {
