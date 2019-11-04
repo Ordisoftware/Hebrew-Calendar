@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2019-11 </edited>
 using System;
 using System.Xml;
 using System.Drawing;
@@ -44,6 +44,9 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindCelebrationEveryMinutesMin = 5;
     const int RemindCelebrationEveryMinutesMax = 60;
     const int RemindCelebrationEveryMinutesValue = 15;
+    const int RemindAutoLockTimeOutMin = 5;
+    const int RemindAutoLockTimeOutMax = 60;
+    const int RemindAutoLockTimeOutValue = 15;
 
     static private bool LanguageChanged;
     static private bool DoReset;
@@ -111,6 +114,9 @@ namespace Ordisoftware.HebrewCalendar
       EditRemindCelebrationEveryMinutes.Minimum = RemindCelebrationEveryMinutesMin;
       EditRemindCelebrationEveryMinutes.Maximum = RemindCelebrationEveryMinutesMax;
       EditRemindCelebrationEveryMinutes.Value = RemindCelebrationEveryMinutesValue;
+      EditRemindAutoLockTimeOut.Minimum = RemindAutoLockTimeOutMin;
+      EditRemindAutoLockTimeOut.Maximum = RemindAutoLockTimeOutMax;
+      EditRemindAutoLockTimeOut.Value = RemindAutoLockTimeOutValue;
     }
 
     /// <summary>
@@ -193,6 +199,8 @@ namespace Ordisoftware.HebrewCalendar
           EditFontName.SelectedItem = item;
           break;
         }
+      EditRemindAutoLockTimeOut.Value = Program.Settings.AutoLockSessionTimeOut;
+      EditRemindAutoLock.Checked = Program.Settings.AutoLockSession;
       EditLoomingDelay.Value = Program.Settings.BalloonLoomingDelay;
       EditGPSLongitude.Text = Program.Settings.GPSLongitude;
       EditGPSLatitude.Text = Program.Settings.GPSLatitude;
@@ -303,6 +311,8 @@ namespace Ordisoftware.HebrewCalendar
         catch
         {
         }
+      Program.Settings.AutoLockSessionTimeOut = (int)EditRemindAutoLockTimeOut.Value;
+      Program.Settings.AutoLockSession = EditRemindAutoLock.Checked;
       Program.Settings.BalloonLoomingDelay = (int)EditLoomingDelay.Value;
       Program.Settings.GPSLatitude = EditGPSLatitude.Text;
       Program.Settings.GPSLongitude = EditGPSLongitude.Text;
@@ -735,6 +745,11 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
+    private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)
+    {
+      LabelRemindAutoLockTimeOut.Enabled = EditRemindAutoLock.Checked;
+      EditRemindAutoLockTimeOut.Enabled = EditRemindAutoLock.Checked;
+    }
   }
 
 }

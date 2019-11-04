@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2019-11 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -30,6 +30,7 @@ namespace Ordisoftware.HebrewCalendar
                            TorahEvent torahevent,
                            ReminderTimes times)
     {
+      bool doLockSession = false;
       ReminderForm form = null;
       if ( isShabat && MainForm.Instance.ShabatForm != null )
       {
@@ -81,11 +82,12 @@ namespace Ordisoftware.HebrewCalendar
       form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
       var dateNow = DateTime.Now;
       if ( times.dateStart != null && times.dateEnd != null )
-        if ( Program.Settings.UseColors )
-          if ( dateNow >= times.dateStart && dateNow <= times.dateEnd )
-            form.BackColor = Program.Settings.EventColorTorah;
-          else
-            form.BackColor = Program.Settings.EventColorNext;
+        doLockSession = dateNow >= times.dateStart && dateNow <= times.dateEnd;
+      if ( Program.Settings.UseColors )
+        if ( doLockSession )
+          form.BackColor = Program.Settings.EventColorTorah;
+        else
+          form.BackColor = Program.Settings.EventColorNext;
       form.IsShabat = isShabat;
       if ( isShabat )
         MainForm.Instance.ShabatForm = form;
@@ -106,6 +108,8 @@ namespace Ordisoftware.HebrewCalendar
       form.BringToFront();
       Application.DoEvents();
       BringMainForm();
+      if ( doLockSession )
+        LockSessionForm.Run();
     }
 
     static private void BringMainForm()

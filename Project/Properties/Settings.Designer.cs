@@ -1016,5 +1016,29 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["UpgradeResetRequiredV3_6"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoLockSession {
+            get {
+                return ((bool)(this["AutoLockSession"]));
+            }
+            set {
+                this["AutoLockSession"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        public int AutoLockSessionTimeOut {
+            get {
+                return ((int)(this["AutoLockSessionTimeOut"]));
+            }
+            set {
+                this["AutoLockSessionTimeOut"] = value;
+            }
+        }
     }
 }
