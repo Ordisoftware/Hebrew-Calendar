@@ -106,6 +106,10 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 ## Changelog
 
+#### 2019.__.__ - Version 3.8
+
+- Add option to auto lock session during shabat and celebration day.
+
 #### 2019.11.01 - Version 3.7
 
 - Update current day highlighting when passing midnight.
