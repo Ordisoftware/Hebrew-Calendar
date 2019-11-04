@@ -123,13 +123,6 @@
   <data name="&gt;&gt;ActionOk.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Auto lock session</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -141,8 +134,12 @@
   <data name="LabelCountDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
   </data>
-  <data name="&gt;&gt;LabelMessage.Name" xml:space="preserve">
-    <value>LabelMessage</value>
+  <data name="&gt;&gt;LabelCountDown.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelCountDown.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -166,10 +163,10 @@
     <value>1</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>344, 143</value>
+    <value>344, 158</value>
   </data>
-  <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 120</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>246, 2</value>
@@ -183,21 +180,31 @@
   <data name="&gt;&gt;LabelMessage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="LabelCountDown.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="LabelMessage.Text" xml:space="preserve">
     <value>It's time to rest.
+
 Hebrew Calendar will lock the session in {0} seconds.
 
 Press the Lock button to do it now.
 Press the Cancel button to ignore this alert.</value>
   </data>
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="&gt;&gt;ActionOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="LabelMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 65</value>
+    <value>259, 78</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelCountDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -205,8 +212,8 @@ Press the Cancel button to ignore this alert.</value>
   <data name="&gt;&gt;LabelCountDown.Name" xml:space="preserve">
     <value>LabelCountDown</value>
   </data>
-  <data name="&gt;&gt;LabelCountDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
   <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -214,17 +221,11 @@ Press the Cancel button to ignore this alert.</value>
   <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
     <value>ActionCancel</value>
   </data>
-  <data name="LabelMessage.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
-  </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 28</value>
-  </data>
-  <data name="LabelCountDown.Text" xml:space="preserve">
-    <value>0</value>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -237,9 +238,6 @@ Press the Cancel button to ignore this alert.</value>
   </data>
   <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Timer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ActionOk.Text" xml:space="preserve">
     <value>Lock</value>
@@ -262,17 +260,20 @@ Press the Cancel button to ignore this alert.</value>
   <data name="LabelMessage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;LabelCountDown.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
+  <data name="&gt;&gt;Timer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="LabelCountDown.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 105</value>
+  <data name="&gt;&gt;LabelMessage.Name" xml:space="preserve">
+    <value>LabelMessage</value>
   </data>
-  <data name="&gt;&gt;ActionOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="LabelMessage.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 28</value>
   </data>
   <data name="&gt;&gt;Timer.Name" xml:space="preserve">
     <value>Timer</value>
@@ -280,8 +281,8 @@ Press the Cancel button to ignore this alert.</value>
   <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
-  <data name="LabelCountDown.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Auto lock session</value>
   </data>
   <data name="&gt;&gt;ActionOk.ZOrder" xml:space="preserve">
     <value>2</value>
