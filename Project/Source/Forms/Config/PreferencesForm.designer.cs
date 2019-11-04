@@ -121,6 +121,9 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
+      this.EditRemindAutoLock = new System.Windows.Forms.CheckBox();
+      this.EditRemindAutoLockTimeOut = new System.Windows.Forms.NumericUpDown();
+      this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
@@ -139,6 +142,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       this.GroupBoxCalendar.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindAutoLockTimeOut)).BeginInit();
       this.SuspendLayout();
       // 
       // LabelGPSLatitude
@@ -552,6 +556,7 @@
       // GroupBoxReminder
       // 
       this.GroupBoxReminder.Controls.Add(this.EditReminderUseColors);
+      this.GroupBoxReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationHoursBefore);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationEveryMinutes);
       this.GroupBoxReminder.Controls.Add(this.label5);
@@ -568,7 +573,9 @@
       this.GroupBoxReminder.Controls.Add(this.PanelEventColorTorah);
       this.GroupBoxReminder.Controls.Add(this.EditTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.LabelTimerInterval);
+      this.GroupBoxReminder.Controls.Add(this.EditRemindAutoLockTimeOut);
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationHoursBefore);
+      this.GroupBoxReminder.Controls.Add(this.EditRemindAutoLock);
       this.GroupBoxReminder.Controls.Add(this.EditUseMoonDays);
       this.GroupBoxReminder.Controls.Add(this.EditTimerEnabled);
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationEveryMinutes);
@@ -871,6 +878,27 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
+      // EditRemindAutoLock
+      // 
+      resources.ApplyResources(this.EditRemindAutoLock, "EditRemindAutoLock");
+      this.EditRemindAutoLock.Checked = true;
+      this.EditRemindAutoLock.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditRemindAutoLock.Name = "EditRemindAutoLock";
+      this.EditRemindAutoLock.UseVisualStyleBackColor = true;
+      this.EditRemindAutoLock.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
+      // 
+      // EditRemindAutoLockTimeOut
+      // 
+      this.EditRemindAutoLockTimeOut.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditRemindAutoLockTimeOut, "EditRemindAutoLockTimeOut");
+      this.EditRemindAutoLockTimeOut.Name = "EditRemindAutoLockTimeOut";
+      this.EditRemindAutoLockTimeOut.ReadOnly = true;
+      // 
+      // LabelRemindAutoLockTimeOut
+      // 
+      resources.ApplyResources(this.LabelRemindAutoLockTimeOut, "LabelRemindAutoLockTimeOut");
+      this.LabelRemindAutoLockTimeOut.Name = "LabelRemindAutoLockTimeOut";
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -918,6 +946,7 @@
       this.GroupBoxCalendar.PerformLayout();
       this.GroupBoxSystem.ResumeLayout(false);
       this.GroupBoxSystem.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindAutoLockTimeOut)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1013,5 +1042,8 @@
     private System.Windows.Forms.Label LabelCountry;
     private System.Windows.Forms.Label LabelTimeZone;
     private System.Windows.Forms.Label LabelCity;
+    private System.Windows.Forms.Label LabelRemindAutoLockTimeOut;
+    private System.Windows.Forms.NumericUpDown EditRemindAutoLockTimeOut;
+    private System.Windows.Forms.CheckBox EditRemindAutoLock;
   }
 }
