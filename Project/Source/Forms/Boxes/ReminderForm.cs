@@ -31,85 +31,91 @@ namespace Ordisoftware.HebrewCalendar
                            ReminderTimes times)
     {
       bool doLockSession = false;
-      ReminderForm form = null;
-      if ( isShabat && MainForm.Instance.ShabatForm != null )
-      {
-        Flash(MainForm.Instance.ShabatForm);
-        return;
-      }
-      else
-      if ( torahevent != TorahEvent.None )
-      {
-        if ( MainForm.Instance.RemindCelebrationDayForms.ContainsKey(torahevent) )
-        {
-          Flash(MainForm.Instance.RemindCelebrationDayForms[torahevent]);
-          return;
-        }
-      }
-      else
-      {
-        foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
-          if ( (string)item.Value.Tag == row.Date )
-            return;
-        foreach ( var item in MainForm.Instance.RemindCelebrationForms )
-          if ( (string)item.Tag == row.Date )
-          {
-            Flash(item);
-            return;
-          }
-      }
-      form = new ReminderForm();
-      var date = SQLiteUtility.GetDate(row.Date);
-      form.LabelTitle.Text = !isShabat
-                                         ? Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
-                                         : "Shabat";
-      form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
-      if ( times.dateStart != null && times.dateEnd != null )
-        form.LabelHours.Text = Translations.DayOfWeek.GetLang(times.dateStart.Value.DayOfWeek) + " "
-                             + times.timeStart + " ➜ "
-                             + Translations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " "
-                             + times.timeEnd;
-      form.LabelDate.Tag = date;
-      int left = SystemInformation.WorkingArea.Left;
-      int top = SystemInformation.WorkingArea.Top;
-      int width = SystemInformation.WorkingArea.Width;
-      int height = SystemInformation.WorkingArea.Height;
-      form.Location = new Point(left + width - form.Width, top + height - form.Height);
-      form.Tag = row.Date;
-      form.Text = " " + form.LabelTitle.Text;
-      form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
-      form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
-      form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
       var dateNow = DateTime.Now;
       if ( times.dateStart != null && times.dateEnd != null )
         doLockSession = dateNow >= times.dateStart && dateNow <= times.dateEnd;
-      if ( Program.Settings.UseColors )
-        if ( doLockSession )
-          form.BackColor = Program.Settings.EventColorTorah;
-        else
-          form.BackColor = Program.Settings.EventColorNext;
-      form.IsShabat = isShabat;
-      if ( isShabat )
-        MainForm.Instance.ShabatForm = form;
-      else
-      if ( torahevent != TorahEvent.None )
+      try
       {
-        foreach ( var item in MainForm.Instance.RemindCelebrationForms.ToList() )
-          if ( (string)item.Tag == row.Date )
+        ReminderForm form = null;
+        if ( isShabat && MainForm.Instance.ShabatForm != null )
+        {
+          Flash(MainForm.Instance.ShabatForm);
+          return;
+        }
+        else
+        if ( torahevent != TorahEvent.None )
+        {
+          if ( MainForm.Instance.RemindCelebrationDayForms.ContainsKey(torahevent) )
           {
-            item.Close();
-            break;
+            Flash(MainForm.Instance.RemindCelebrationDayForms[torahevent]);
+            return;
           }
-        MainForm.Instance.RemindCelebrationDayForms.Add(torahevent, form);
+        }
+        else
+        {
+          foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
+            if ( (string)item.Value.Tag == row.Date )
+              return;
+          foreach ( var item in MainForm.Instance.RemindCelebrationForms )
+            if ( (string)item.Tag == row.Date )
+            {
+              Flash(item);
+              return;
+            }
+        }
+        form = new ReminderForm();
+        var date = SQLiteUtility.GetDate(row.Date);
+        form.LabelTitle.Text = !isShabat
+                             ? Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
+                             : "Shabat";
+        form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
+        if ( times.dateStart != null && times.dateEnd != null )
+          form.LabelHours.Text = Translations.DayOfWeek.GetLang(times.dateStart.Value.DayOfWeek) + " "
+                               + times.timeStart + " ➜ "
+                               + Translations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " "
+                               + times.timeEnd;
+        form.LabelDate.Tag = date;
+        int left = SystemInformation.WorkingArea.Left;
+        int top = SystemInformation.WorkingArea.Top;
+        int width = SystemInformation.WorkingArea.Width;
+        int height = SystemInformation.WorkingArea.Height;
+        form.Location = new Point(left + width - form.Width, top + height - form.Height);
+        form.Tag = row.Date;
+        form.Text = " " + form.LabelTitle.Text;
+        form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
+        form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
+        form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
+        if ( Program.Settings.UseColors )
+          if ( doLockSession )
+            form.BackColor = Program.Settings.EventColorTorah;
+          else
+            form.BackColor = Program.Settings.EventColorNext;
+        form.IsShabat = isShabat;
+        if ( isShabat )
+          MainForm.Instance.ShabatForm = form;
+        else
+        if ( torahevent != TorahEvent.None )
+        {
+          foreach ( var item in MainForm.Instance.RemindCelebrationForms.ToList() )
+            if ( (string)item.Tag == row.Date )
+            {
+              item.Close();
+              break;
+            }
+          MainForm.Instance.RemindCelebrationDayForms.Add(torahevent, form);
+        }
+        else
+          MainForm.Instance.RemindCelebrationForms.Add(form);
+        form.Show();
+        form.BringToFront();
+        Application.DoEvents();
+        BringMainForm();
       }
-      else
-        MainForm.Instance.RemindCelebrationForms.Add(form);
-      form.Show();
-      form.BringToFront();
-      Application.DoEvents();
-      BringMainForm();
-      if ( doLockSession && Program.Settings.AutoLockSession )
-        LockSessionForm.Run();
+      finally
+      {
+        if ( doLockSession && Program.Settings.AutoLockSession )
+          LockSessionForm.Run();
+      }
     }
 
     static private void BringMainForm()

@@ -46,7 +46,7 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindCelebrationEveryMinutesValue = 15;
     const int RemindAutoLockTimeOutMin = 5;
     const int RemindAutoLockTimeOutMax = 60;
-    const int RemindAutoLockTimeOutValue = 15;
+    const int RemindAutoLockTimeOutValue = 30;
 
     static private bool LanguageChanged;
     static private bool DoReset;
