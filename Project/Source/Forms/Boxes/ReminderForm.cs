@@ -108,7 +108,7 @@ namespace Ordisoftware.HebrewCalendar
       form.BringToFront();
       Application.DoEvents();
       BringMainForm();
-      if ( doLockSession )
+      if ( doLockSession && Program.Settings.AutoLockSession )
         LockSessionForm.Run();
     }
 
