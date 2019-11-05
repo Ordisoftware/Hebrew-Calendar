@@ -706,6 +706,7 @@ namespace Ordisoftware.HebrewCalendar
       LabelTimerInterval.Enabled = EditTimerEnabled.Checked;
       EditTimerInterval.Enabled = EditTimerEnabled.Checked;
       EditEvents.Enabled = EditTimerEnabled.Checked;
+      EditEventsDay.Enabled = EditTimerEnabled.Checked;
       LabelRemindCelebrationHoursBefore.Enabled = EditTimerEnabled.Checked;
       EditRemindCelebrationHoursBefore.Enabled = EditTimerEnabled.Checked;
       LabelRemindCelebrationEveryMinutes.Enabled = EditTimerEnabled.Checked;
