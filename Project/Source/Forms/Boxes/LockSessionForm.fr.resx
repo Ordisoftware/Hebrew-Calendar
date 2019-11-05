@@ -132,8 +132,8 @@
 
 Hebrew Calendar va verrouiller la session dans {0} secondes.
 
-Appuyez sur le bouton Verrouiller pour le faire maintenant.
-Appuyez sur le bouton Annuler pour ignorer cette alerte.</value>
+Appuyez sur Verrouiller pour le faire maintenant.
+Appuyez sur Annuler pour ignorer cette alerte.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Verrouillage automatique de la session</value>
