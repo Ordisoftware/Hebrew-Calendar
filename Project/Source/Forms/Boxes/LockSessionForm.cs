@@ -114,7 +114,6 @@ namespace Ordisoftware.HebrewCalendar
       MediaStop();
       Program.RunShell("shutdown", "/s /t 0");
       MainForm.Instance.SessionEnding(null, null);
-      Application.Exit();
     }
 
     private void ActionHibernate_Click(object sender, LinkLabelLinkClickedEventArgs e)
