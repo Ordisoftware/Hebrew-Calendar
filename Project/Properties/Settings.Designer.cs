@@ -1040,5 +1040,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["AutoLockSessionTimeOut"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LockSessionMediaStop {
+            get {
+                return ((bool)(this["LockSessionMediaStop"]));
+            }
+            set {
+                this["LockSessionMediaStop"] = value;
+            }
+        }
     }
 }
