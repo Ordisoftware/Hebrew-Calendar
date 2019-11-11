@@ -106,6 +106,11 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 ## Changelog
 
+#### 2019.11.11 - Version 3.9
+
+- Add shutdown, hibernate and standby actions to auto lock session dialog box.
+- Add option to stop current media playing to auto lock session dialog box.
+
 #### 2019.11.04 - Version 3.8
 
 - Add option to auto lock session during shabat and celebrations days.

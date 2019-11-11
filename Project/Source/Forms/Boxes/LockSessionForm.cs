@@ -13,8 +13,11 @@
 /// <created> 2019-11 </created>
 /// <edited> 2019-11 </edited>
 using System;
+using System.IO;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Ordisoftware.Core;
+using Microsoft.Win32;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -45,12 +48,44 @@ namespace Ordisoftware.HebrewCalendar
     private void LockSessionForm_Load(object sender, EventArgs e)
     {
       LabelMessage.Text = string.Format(LabelMessage.Text, Program.Settings.AutoLockSessionTimeOut);
+      int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 5;
+      if ( width > Width )
+        Width = width;
+      ActionHibernate.Left = ActionStandby.Left + ActionStandby.Width + 5;
+      ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
+      ActionHibernate.Enabled = CanHibernate();
+      ActionStandby.Enabled = CanStandby();
+      CenterToScreen();
       Timer.Start();
       Timer_Tick(null, null);
     }
 
+    private bool CanStandby()
+    {
+      return true;
+    }
+
+    private bool CanHibernate()
+    {
+      try
+      {
+        using ( RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Power") )
+          if ( key != null )
+          {
+            var value = key.GetValue("HibernateEnabled", 0);
+            return value == null ? false : (bool)value;
+          }
+      }
+      catch
+      {
+        return File.Exists(@"C:\hiberfil.sys");
+      }
+      return false;
+    }
+
     private void LockSessionForm_FormClosed(object sender, FormClosedEventArgs e)
     {
+      Timer.Stop();
       Instance = null;
     }
 
@@ -62,22 +97,45 @@ namespace Ordisoftware.HebrewCalendar
       LockSession();
     }
 
-    private void ActionOk_Click(object sender, EventArgs e)
-    {
-      LockSession();
-    }
-
     private void ActionCancel_Click(object sender, EventArgs e)
     {
       Close();
     }
 
+    private void ActionOk_Click(object sender, EventArgs e)
+    {
+      LockSession();
+    }
+
+    private void ActionShutdown_Click(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      if ( !DisplayManager.QueryYesNo(Translations.ShutdownComputer.GetLang()) ) return;
+      Close();
+      MediaStop();
+      Program.RunShell("shutdown", "/s /t 0");
+      MainForm.Instance.SessionEnding(null, null);
+    }
+
+    private void ActionHibernate_Click(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Close();
+      MediaStop();
+      Application.SetSuspendState(PowerState.Hibernate, false, false);
+    }
+
+    private void ActionStandby_Click(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Close();
+      MediaStop();
+      Application.SetSuspendState(PowerState.Suspend, false, false);
+    }
+
     private void LockSession()
     {
-      Timer.Enabled = false;
+      MediaStop();
       Close();
       if ( !LockWorkStation() )
-        MessageBox.Show("Lock Session Error: " + Marshal.GetLastWin32Error());
+        MessageBox.Show(Translations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
     }
 
   }

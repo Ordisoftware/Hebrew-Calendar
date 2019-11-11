@@ -138,6 +138,9 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
+    <Compile Include="Source\Forms\Boxes\LockSessionForm.MediaStop.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\LockSessionForm.cs">
       <SubType>Form</SubType>
     </Compile>

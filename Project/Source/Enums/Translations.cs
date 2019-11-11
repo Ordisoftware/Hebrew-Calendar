@@ -51,11 +51,25 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Quitter l'application ?" }
       };
 
+    static public readonly Dictionary<string, string> ShutdownComputer
+      = new Dictionary<string, string>()
+      {
+        { "en", "Shutdown the computer?" },
+        { "fr", "Arrêter l'ordinateur ?" }
+      };
+
+    static public readonly Dictionary<string, string> LockSessionError
+      = new Dictionary<string, string>()
+      {
+        { "en", "Shutdown the computer?" },
+        { "fr", "Arrêter l'ordinateur ?" }
+      };
+
     static public readonly Dictionary<string, string> CantExitApplicationWhileGenerating
       = new Dictionary<string, string>()
       {
-        { "en", "Can't close while generating." },
-        { "fr", "Impossible de quitter durant la génération." }
+        { "en", "Lock Session Error: {0}" },
+        { "fr", "Erreur de verrouillage de session : {0}" }
       };
 
     static public readonly Dictionary<string, string> NoNewVersionAvailable
