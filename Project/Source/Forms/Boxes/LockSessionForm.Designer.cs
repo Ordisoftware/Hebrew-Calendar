@@ -31,9 +31,9 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LockSessionForm));
       this.PanelButtons = new System.Windows.Forms.Panel();
-      this.ActionShutdown = new System.Windows.Forms.Button();
-      this.ActionHibernate = new System.Windows.Forms.Button();
-      this.ActionStandby = new System.Windows.Forms.Button();
+      this.ActionShutdown = new System.Windows.Forms.LinkLabel();
+      this.ActionHibernate = new System.Windows.Forms.LinkLabel();
+      this.ActionStandby = new System.Windows.Forms.LinkLabel();
       this.LabelCountDown = new System.Windows.Forms.Label();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionOk = new System.Windows.Forms.Button();
@@ -45,9 +45,6 @@
       // 
       // PanelButtons
       // 
-      this.PanelButtons.Controls.Add(this.ActionShutdown);
-      this.PanelButtons.Controls.Add(this.ActionHibernate);
-      this.PanelButtons.Controls.Add(this.ActionStandby);
       this.PanelButtons.Controls.Add(this.LabelCountDown);
       this.PanelButtons.Controls.Add(this.ActionCancel);
       this.PanelButtons.Controls.Add(this.ActionOk);
@@ -56,31 +53,35 @@
       // 
       // ActionShutdown
       // 
+      this.ActionShutdown.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionShutdown, "ActionShutdown");
-      this.ActionShutdown.FlatAppearance.BorderSize = 0;
+      this.ActionShutdown.LinkColor = System.Drawing.Color.DarkBlue;
       this.ActionShutdown.Name = "ActionShutdown";
-      this.ActionShutdown.UseVisualStyleBackColor = true;
-      this.ActionShutdown.Click += new System.EventHandler(this.ActionShutdown_Click);
+      this.ActionShutdown.TabStop = true;
+      this.ActionShutdown.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionShutdown_Click);
       // 
       // ActionHibernate
       // 
+      this.ActionHibernate.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionHibernate, "ActionHibernate");
-      this.ActionHibernate.FlatAppearance.BorderSize = 0;
+      this.ActionHibernate.LinkColor = System.Drawing.Color.DarkBlue;
       this.ActionHibernate.Name = "ActionHibernate";
-      this.ActionHibernate.UseVisualStyleBackColor = true;
-      this.ActionHibernate.Click += new System.EventHandler(this.ActionHibernate_Click);
+      this.ActionHibernate.TabStop = true;
+      this.ActionHibernate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionHibernate_Click);
       // 
       // ActionStandby
       // 
+      this.ActionStandby.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionStandby, "ActionStandby");
-      this.ActionStandby.FlatAppearance.BorderSize = 0;
+      this.ActionStandby.LinkColor = System.Drawing.Color.DarkBlue;
       this.ActionStandby.Name = "ActionStandby";
-      this.ActionStandby.UseVisualStyleBackColor = true;
-      this.ActionStandby.Click += new System.EventHandler(this.ActionStandby_Click);
+      this.ActionStandby.TabStop = true;
+      this.ActionStandby.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionStandby_Click);
       // 
       // LabelCountDown
       // 
       resources.ApplyResources(this.LabelCountDown, "LabelCountDown");
+      this.LabelCountDown.ForeColor = System.Drawing.Color.DarkRed;
       this.LabelCountDown.Name = "LabelCountDown";
       // 
       // ActionCancel
@@ -121,7 +122,10 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.ActionShutdown);
       this.Controls.Add(this.EditMediaStop);
+      this.Controls.Add(this.ActionHibernate);
+      this.Controls.Add(this.ActionStandby);
       this.Controls.Add(this.LabelMessage);
       this.Controls.Add(this.PanelButtons);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -147,8 +151,8 @@
     private System.Windows.Forms.Label LabelMessage;
     private System.Windows.Forms.Timer Timer;
     private System.Windows.Forms.CheckBox EditMediaStop;
-    private System.Windows.Forms.Button ActionHibernate;
-    private System.Windows.Forms.Button ActionStandby;
-    private System.Windows.Forms.Button ActionShutdown;
+    private System.Windows.Forms.LinkLabel ActionHibernate;
+    private System.Windows.Forms.LinkLabel ActionStandby;
+    private System.Windows.Forms.LinkLabel ActionShutdown;
   }
 }

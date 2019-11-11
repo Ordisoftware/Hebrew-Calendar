@@ -117,47 +117,110 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;LabelCountDown.Name" xml:space="preserve">
+    <value>LabelCountDown</value>
+  </data>
+  <data name="&gt;&gt;LabelCountDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCountDown.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;LabelCountDown.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
+    <value>ActionCancel</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionOk.Name" xml:space="preserve">
+    <value>ActionOk</value>
+  </data>
+  <data name="&gt;&gt;ActionOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOk.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionOk.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ActionShutdown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ActionShutdown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 2</value>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 155</value>
   </data>
-  <data name="ActionShutdown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 28</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ActionShutdown.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionShutdown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 100</value>
+  </data>
+  <data name="ActionShutdown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
   <data name="ActionShutdown.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="ActionShutdown.Text" xml:space="preserve">
     <value>Shutdown</value>
   </data>
+  <data name="ActionShutdown.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
   <data name="&gt;&gt;ActionShutdown.Name" xml:space="preserve">
     <value>ActionShutdown</value>
   </data>
   <data name="&gt;&gt;ActionShutdown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionShutdown.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionShutdown.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ActionHibernate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="ActionHibernate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="ActionHibernate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ActionHibernate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 2</value>
+    <value>72, 100</value>
   </data>
   <data name="ActionHibernate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>53, 13</value>
   </data>
   <data name="ActionHibernate.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -165,29 +228,32 @@
   <data name="ActionHibernate.Text" xml:space="preserve">
     <value>Hibernate</value>
   </data>
+  <data name="ActionHibernate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
   <data name="&gt;&gt;ActionHibernate.Name" xml:space="preserve">
     <value>ActionHibernate</value>
   </data>
   <data name="&gt;&gt;ActionHibernate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionHibernate.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionHibernate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="ActionStandby.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="ActionStandby.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="ActionStandby.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ActionStandby.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 2</value>
+    <value>20, 100</value>
   </data>
   <data name="ActionStandby.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>46, 13</value>
   </data>
   <data name="ActionStandby.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -195,17 +261,20 @@
   <data name="ActionStandby.Text" xml:space="preserve">
     <value>Standby</value>
   </data>
+  <data name="ActionStandby.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
   <data name="&gt;&gt;ActionStandby.Name" xml:space="preserve">
     <value>ActionStandby</value>
   </data>
   <data name="&gt;&gt;ActionStandby.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionStandby.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionStandby.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LabelCountDown.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -235,7 +304,7 @@
     <value>PanelButtons</value>
   </data>
   <data name="&gt;&gt;LabelCountDown.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -244,7 +313,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>371, 2</value>
+    <value>196, 2</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -265,7 +334,7 @@
     <value>PanelButtons</value>
   </data>
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="ActionOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -274,7 +343,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>290, 2</value>
+    <value>115, 2</value>
   </data>
   <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -295,30 +364,6 @@
     <value>PanelButtons</value>
   </data>
   <data name="&gt;&gt;ActionOk.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 130</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>449, 28</value>
-  </data>
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="LabelMessage.AutoSize" type="System.Boolean, mscorlib">
@@ -353,7 +398,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelMessage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -365,7 +410,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>NoControl</value>
   </data>
   <data name="EditMediaStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 101</value>
+    <value>23, 125</value>
   </data>
   <data name="EditMediaStop.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 17</value>
@@ -386,7 +431,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditMediaStop.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -395,7 +440,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>469, 168</value>
+    <value>294, 193</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
