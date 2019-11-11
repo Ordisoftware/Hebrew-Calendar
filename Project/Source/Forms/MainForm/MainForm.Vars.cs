@@ -111,6 +111,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
+        LockSessionForm.Instance?.Close();
         CelebrationsForm.Instance.Hide();
         NavigationForm.Instance.Hide();
         TorahEventRemindList.Clear();
