@@ -130,7 +130,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Session ending event information.</param>
-    private void SessionEnding(object sender, SessionEndingEventArgs e)
+    internal void SessionEnding(object sender, SessionEndingEventArgs e)
     {
       ClearLists();
       foreach ( Form form in Application.OpenForms )

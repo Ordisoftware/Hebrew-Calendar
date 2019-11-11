@@ -55,6 +55,7 @@ namespace Ordisoftware.HebrewCalendar
       ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
       ActionHibernate.Enabled = CanHibernate();
       ActionStandby.Enabled = CanStandby();
+      CenterToScreen();
       Timer.Start();
       Timer_Tick(null, null);
     }
@@ -112,6 +113,8 @@ namespace Ordisoftware.HebrewCalendar
       Close();
       MediaStop();
       Program.RunShell("shutdown", "/s /t 0");
+      MainForm.Instance.SessionEnding(null, null);
+      Application.Exit();
     }
 
     private void ActionHibernate_Click(object sender, LinkLabelLinkClickedEventArgs e)
