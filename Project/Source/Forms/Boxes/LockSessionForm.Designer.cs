@@ -31,12 +31,12 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LockSessionForm));
       this.PanelButtons = new System.Windows.Forms.Panel();
-      this.ActionShutdown = new System.Windows.Forms.LinkLabel();
-      this.ActionHibernate = new System.Windows.Forms.LinkLabel();
-      this.ActionStandby = new System.Windows.Forms.LinkLabel();
       this.LabelCountDown = new System.Windows.Forms.Label();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionOk = new System.Windows.Forms.Button();
+      this.ActionShutdown = new System.Windows.Forms.LinkLabel();
+      this.ActionHibernate = new System.Windows.Forms.LinkLabel();
+      this.ActionStandby = new System.Windows.Forms.LinkLabel();
       this.LabelMessage = new System.Windows.Forms.Label();
       this.Timer = new System.Windows.Forms.Timer(this.components);
       this.EditMediaStop = new System.Windows.Forms.CheckBox();
@@ -50,6 +50,26 @@
       this.PanelButtons.Controls.Add(this.ActionOk);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
+      // 
+      // LabelCountDown
+      // 
+      resources.ApplyResources(this.LabelCountDown, "LabelCountDown");
+      this.LabelCountDown.ForeColor = System.Drawing.Color.DarkRed;
+      this.LabelCountDown.Name = "LabelCountDown";
+      // 
+      // ActionCancel
+      // 
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
+      this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionCancel.Name = "ActionCancel";
+      this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
+      // 
+      // ActionOk
+      // 
+      resources.ApplyResources(this.ActionOk, "ActionOk");
+      this.ActionOk.Name = "ActionOk";
+      this.ActionOk.UseVisualStyleBackColor = true;
+      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
       // 
       // ActionShutdown
       // 
@@ -77,26 +97,6 @@
       this.ActionStandby.Name = "ActionStandby";
       this.ActionStandby.TabStop = true;
       this.ActionStandby.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionStandby_Click);
-      // 
-      // LabelCountDown
-      // 
-      resources.ApplyResources(this.LabelCountDown, "LabelCountDown");
-      this.LabelCountDown.ForeColor = System.Drawing.Color.DarkRed;
-      this.LabelCountDown.Name = "LabelCountDown";
-      // 
-      // ActionCancel
-      // 
-      resources.ApplyResources(this.ActionCancel, "ActionCancel");
-      this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ActionCancel.Name = "ActionCancel";
-      this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
-      // 
-      // ActionOk
-      // 
-      resources.ApplyResources(this.ActionOk, "ActionOk");
-      this.ActionOk.Name = "ActionOk";
-      this.ActionOk.UseVisualStyleBackColor = true;
-      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
       // 
       // LabelMessage
       // 
