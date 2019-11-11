@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelCountDown.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelCountDown.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelCountDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 8</value>
+  </data>
+  <data name="LabelCountDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="LabelCountDown.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="LabelCountDown.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;LabelCountDown.Name" xml:space="preserve">
     <value>LabelCountDown</value>
   </data>
@@ -128,6 +149,24 @@
   </data>
   <data name="&gt;&gt;LabelCountDown.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 2</value>
+  </data>
+  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ActionCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
     <value>ActionCancel</value>
@@ -141,6 +180,24 @@
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="ActionOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 2</value>
+  </data>
+  <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="ActionOk.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ActionOk.Text" xml:space="preserve">
+    <value>Lock</value>
+  </data>
   <data name="&gt;&gt;ActionOk.Name" xml:space="preserve">
     <value>ActionOk</value>
   </data>
@@ -153,18 +210,15 @@
   <data name="&gt;&gt;ActionOk.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 155</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 28</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
   </data>
@@ -276,96 +330,6 @@
   <data name="&gt;&gt;ActionStandby.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="LabelCountDown.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCountDown.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCountDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 8</value>
-  </data>
-  <data name="LabelCountDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="LabelCountDown.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="LabelCountDown.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LabelCountDown.Name" xml:space="preserve">
-    <value>LabelCountDown</value>
-  </data>
-  <data name="&gt;&gt;LabelCountDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCountDown.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;LabelCountDown.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 2</value>
-  </data>
-  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ActionCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
-    <value>ActionCancel</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ActionOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ActionOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 2</value>
-  </data>
-  <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <data name="ActionOk.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ActionOk.Text" xml:space="preserve">
-    <value>Lock</value>
-  </data>
-  <data name="&gt;&gt;ActionOk.Name" xml:space="preserve">
-    <value>ActionOk</value>
-  </data>
-  <data name="&gt;&gt;ActionOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOk.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionOk.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="LabelMessage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -376,7 +340,7 @@
     <value>20, 20</value>
   </data>
   <data name="LabelMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 65</value>
+    <value>259, 65</value>
   </data>
   <data name="LabelMessage.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -384,7 +348,7 @@
   <data name="LabelMessage.Text" xml:space="preserve">
     <value>It's time to rest.
 
-Hebrew Calendar will lock the sessionin {0} seconds.
+Hebrew Calendar will lock the session in {0} seconds.
 
 Press Lock to do it now or Cancel to ignore this alert.</value>
   </data>
