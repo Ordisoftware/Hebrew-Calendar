@@ -51,6 +51,8 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 ![Reminder Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-popupreminder-en.png)
 
+![LockSession Window](http://www.ordisoftware.com/uploads/2019/11/hebrew-calendar-locksession-en.png)
+
 ## Videos
 
 [![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/0.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
