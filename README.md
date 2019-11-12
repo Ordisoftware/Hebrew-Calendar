@@ -106,6 +106,12 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 ## Changelog
 
+#### 2019.11.12 - Version 3.10
+
+- Change dependency AAPlus for AASharp.
+- Improve data generation to show all warnings.
+- Fix data generation for south emisphere for the last year when using moon omer.
+
 #### 2019.11.11 - Version 3.9
 
 - Add shutdown, hibernate and standby actions to auto lock session dialog box.

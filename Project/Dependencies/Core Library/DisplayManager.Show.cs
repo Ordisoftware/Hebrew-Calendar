@@ -159,6 +159,16 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Show an warning message.
+    /// </summary>
+    /// <param name="title">The title.</param>
+    /// <param name="text">The text.</param>
+    static public void ShowWarning(string title, string text)
+    {
+      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+    }
+
+    /// <summary>
     /// Show an error message and throw an AbortException.
     /// </summary>
     /// <param name="text">The text.</param>
