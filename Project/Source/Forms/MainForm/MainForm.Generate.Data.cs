@@ -119,6 +119,8 @@ namespace Ordisoftware.HebrewCalendar
               if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressCreateDays.GetLang()) ) return;
               var row = DataSet.LunisolarDays.NewLunisolarDaysRow();
               row.Date = SQLiteUtility.GetDate(year, month, day);
+              row.TorahEvents = 0;
+              row.LunarMonth = 0;
               InitializeDay(row);
               DataSet.LunisolarDays.AddLunisolarDaysRow(row);
             }
@@ -297,9 +299,9 @@ namespace Ordisoftware.HebrewCalendar
           date = calculate(date, TorahCelebrations.ChavouotLenght - 1 - delta, TorahEvent.ChavouotDiet, true);
           while ( date.DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
             date = date.AddDays(1);
-          calculate(date, 1, TorahEvent.Chavouot1, true);
           try
           {
+            calculate(date, 1, TorahEvent.Chavouot1, true);
             calculate(date, 1 + TorahCelebrations.ChavouotLenght - 1, TorahEvent.Chavouot2, false);
           }
           catch

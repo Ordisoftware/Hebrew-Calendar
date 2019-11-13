@@ -61,9 +61,16 @@ namespace Ordisoftware.HebrewCalendar
       TimeSpan? calcEphem(string str)
       {
         if ( str == "2400" ) str = "0000";
-        return str != "----"
-          ? new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0)
-          : new Nullable<TimeSpan>();
+        try
+        {
+          return str != "----" && str != "****" && str != "...."
+            ? new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0)
+            : new Nullable<TimeSpan>();
+        }
+        catch
+        {
+          return new Nullable<TimeSpan>();
+        }
       }
       if ( MainForm.Instance.CurrentTimeZoneInfo == null )
         throw new InvalidTimeZoneException();
