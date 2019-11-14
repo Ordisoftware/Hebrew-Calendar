@@ -1032,8 +1032,8 @@
       // 
       // MenuShowHide
       // 
-      this.MenuShowHide.Name = "MenuShowHide";
       resources.ApplyResources(this.MenuShowHide, "MenuShowHide");
+      this.MenuShowHide.Name = "MenuShowHide";
       this.MenuShowHide.Click += new System.EventHandler(this.MenuShowHide_Click);
       // 
       // MenuNavigate

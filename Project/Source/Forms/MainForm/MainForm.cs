@@ -49,7 +49,6 @@ namespace Ordisoftware.HebrewCalendar
     private void MainForm_Load(object sender, EventArgs e)
     {
       TrayIcon.Icon = Icon;
-      MenuShowHide.Image = Icon.ToBitmap();
       Program.Settings.Retrieve();
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == Program.Settings.TimeZone )
