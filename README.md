@@ -108,6 +108,11 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 ## Changelog
 
+#### 2019.__.__ - Version 4.0
+
+- Rework of the preferences form
+- Some UX improvements.
+
 #### 2019.11.12 - Version 3.10
 
 - Change dependency AAPlus for AASharp.
