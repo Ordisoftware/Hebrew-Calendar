@@ -31,12 +31,12 @@ namespace Ordisoftware.HebrewCalendar
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteUtility.GetDate(dateNow);
       var dateLimit = dateNow.AddDays((int)Program.Settings.ReminderCelebrationsInterval);
-      var rows = ( from day in DataSet.LunisolarDays
-                   where !RemindCelebrationDates.Contains(day.Date)
-                      && check((TorahEvent)day.TorahEvents)
-                      && SQLiteUtility.GetDate(day.Date) >= dateNow
-                      && SQLiteUtility.GetDate(day.Date) <= dateLimit
-                   select day );
+      var rows = from day in DataSet.LunisolarDays
+                 where !RemindCelebrationDates.Contains(day.Date)
+                    && check((TorahEvent)day.TorahEvents)
+                    && SQLiteUtility.GetDate(day.Date) >= dateNow
+                    && SQLiteUtility.GetDate(day.Date) <= dateLimit
+                 select day;
       foreach ( Data.DataSet.LunisolarDaysRow row in rows )
       {
         var times = CreateCelebrationTimes(row, Program.Settings.RemindCelebrationEveryMinutes);
