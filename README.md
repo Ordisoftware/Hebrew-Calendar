@@ -110,9 +110,12 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 #### 2020.__.__ - Version 4.0
 
-- Rework of the preferences form.
-- Add lunar month number in search box.
-- Some UX improvements.
+- Add current lunar month name beside the common month name in the calendar view.
+- Add calculate number of moons between two dates.
+- Add link to windows calculator.
+- Add 'Hanouka and Pourim dates.
+- Fix controls tabs and focus in auto lock session form.
+- Improve UI.
 
 #### 2019.11.12 - Version 3.10
 
