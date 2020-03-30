@@ -110,10 +110,15 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 #### 2020.__.__ - Version 4.0
 
+- Add enable/disable reminder from the tray icon.
+- Add deny running and auto close some running applications during the shabat.
 - Add current lunar month name beside the common month name in the calendar view.
 - Add calculate number of moons between two dates.
 - Add link to windows calculator.
 - Add 'Hanouka and Pourim dates.
+- Add additional info about shabat allowing 3% de margin hence 1 hour before or after sun times.
+Soit on garde et on renforce le couple lors du le shabat soit on illumine et on fait briller le couple pour shabat mais à shabat on sort pas du temple et sauf cas d'urgence on travaille pas, on cuisine pas et on s'interesse le moins possible aux informations.
+  ==> update help
 - Fix controls tabs and focus in auto lock session form.
 - Improve UI.
 
