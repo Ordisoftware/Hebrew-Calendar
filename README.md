@@ -122,6 +122,10 @@ Soit on garde et on renforce le couple lors du le shabat soit on illumine et on 
 - Fix controls tabs and focus in auto lock session form.
 - Improve UI.
 
+#### 2020.__.__ - Version 3.11
+
+- Improve personal shabat dialog box.
+
 #### 2019.11.12 - Version 3.10
 
 - Change dependency AAPlus for AASharp.
