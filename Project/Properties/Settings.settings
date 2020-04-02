@@ -164,7 +164,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindDayNewYearD10" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindDayPessahD1" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
