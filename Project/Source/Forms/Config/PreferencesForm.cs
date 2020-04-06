@@ -48,11 +48,13 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindAutoLockTimeOutMax = 60;
     const int RemindAutoLockTimeOutValue = 30;
 
+    static private bool IsCenteredToScreen;
     static private bool LanguageChanged;
     static private bool DoReset;
 
-    static public bool Run()
+    static public bool Run(bool isCenteredToScreen = false)
     {
+      IsCenteredToScreen = isCenteredToScreen;
       MainForm.Instance.TimerReminder.Enabled = false;
       string lang = Program.Settings.Language;
       var form = new PreferencesForm();
@@ -95,6 +97,7 @@ namespace Ordisoftware.HebrewCalendar
     private PreferencesForm()
     {
       InitializeComponent();
+      if (IsCenteredToScreen) StartPosition = FormStartPosition.CenterScreen;
       Icon = MainForm.Instance.Icon;
       LoadDays();
       LoadEvents();

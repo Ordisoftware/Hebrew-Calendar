@@ -395,7 +395,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         ClearLists();
-        if ( PreferencesForm.Run() )
+        if ( PreferencesForm.Run(sender == MenuPreferences) )
         {
           CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
           CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
@@ -403,7 +403,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-        TimerReminder_Tick(this, null);
+        TimerReminder_Tick(null, null);
       }
       catch ( Exception ex )
       {
@@ -670,6 +670,21 @@ namespace Ordisoftware.HebrewCalendar
       TimerReminder_Tick(null, null);
     }
 
+    private void MenuEnableReminder_Click(object sender, EventArgs e)
+    {
+      MenuEnableReminder.Visible = false;
+      MenuDisableReminder.Visible = true;
+      TimerReminder.Enabled = true;
+      TimerReminder_Tick(this, null);
+    }
+
+    private void MenuDisableReminder_Click(object sender, EventArgs e)
+    {
+      MenuEnableReminder.Visible = true;
+      MenuDisableReminder.Visible = false;
+      TimerReminder.Enabled = false;
+    }
+
     /// <summary>
     /// Event handler. Called by CalendarGrid for cell formatting events.
     /// </summary>
@@ -751,9 +766,13 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( !IsFullScreenOrScreensaver() )
         {
-          if ( Program.Settings.ReminderShabatEnabled ) CheckShabat();
-          if ( Program.Settings.ReminderCelebrationsEnabled ) CheckCelebrationDay();
-          if ( Program.Settings.ReminderCelebrationsEnabled ) CheckEvents();
+          if ( Program.Settings.ReminderShabatEnabled )
+            CheckShabat();
+          if ( Program.Settings.ReminderCelebrationsEnabled )
+          {
+            CheckCelebrationDay();
+            CheckEvents();
+          }
         }
       }
       catch ( Exception ex )
