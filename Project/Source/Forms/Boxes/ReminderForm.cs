@@ -125,6 +125,12 @@ namespace Ordisoftware.HebrewCalendar
         MainForm.Instance.Focus();
         MainForm.Instance.BringToFront();
       }
+      if ( LockSessionForm.Instance?.Visible ?? false)
+      {
+        LockSessionForm.Instance.Focus();
+        LockSessionForm.Instance.BringToFront();
+      }
+
     }
 
     static private void Flash(Form form)

@@ -163,7 +163,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -193,7 +193,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionOk.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionOk.Text" xml:space="preserve">
     <value>Lock</value>
@@ -244,7 +244,7 @@
     <value>55, 13</value>
   </data>
   <data name="ActionShutdown.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="ActionShutdown.Text" xml:space="preserve">
     <value>Shutdown</value>
@@ -277,7 +277,7 @@
     <value>53, 13</value>
   </data>
   <data name="ActionHibernate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="ActionHibernate.Text" xml:space="preserve">
     <value>Hibernate</value>
@@ -310,7 +310,7 @@
     <value>46, 13</value>
   </data>
   <data name="ActionStandby.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="ActionStandby.Text" xml:space="preserve">
     <value>Standby</value>
@@ -380,7 +380,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>115, 17</value>
   </data>
   <data name="EditMediaStop.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
+    <value>0</value>
   </data>
   <data name="EditMediaStop.Text" xml:space="preserve">
     <value>Stop media playing</value>
