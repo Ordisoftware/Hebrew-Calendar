@@ -675,7 +675,7 @@ namespace Ordisoftware.HebrewCalendar
       MenuEnableReminder.Visible = false;
       MenuDisableReminder.Visible = true;
       TimerReminder.Enabled = true;
-      TimerReminder_Tick(this, null);
+      TimerReminder_Tick(null, null);
     }
 
     private void MenuDisableReminder_Click(object sender, EventArgs e)

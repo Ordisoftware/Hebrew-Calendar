@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewCalendar
         form.ShowDialog();
       }
       MainForm.Instance.Refresh();
-      MainForm.Instance.TimerReminder.Enabled = true;
+      MainForm.Instance.TimerReminder.Enabled = MainForm.Instance.MenuEnableReminder.Visible;
       return form.Reseted
           || form.OldShabatDay != Program.Settings.ShabatDay
           || form.OldLatitude != Program.Settings.GPSLatitude
