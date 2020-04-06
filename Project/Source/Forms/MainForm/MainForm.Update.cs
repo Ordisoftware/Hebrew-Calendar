@@ -60,16 +60,21 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        ActionSaveReport.Enabled = !IsGenerating && DataSet.LunisolarDays.Count > 0;
+        MenuTray.Enabled = !IsGenerating;
+        ToolStrip.Enabled = !IsGenerating;
+        ActionSaveReport.Enabled = DataSet.LunisolarDays.Count > 0;
         ActionExportCSV.Enabled = ActionSaveReport.Enabled;
         ActionCopyReportToClipboard.Enabled = ActionSaveReport.Enabled;
+        ActionPrint.Enabled = ActionSaveReport.Enabled;
+        ActionSearchEvent.Enabled = ActionSaveReport.Enabled;
+        ActionSearchMonth.Enabled = ActionSaveReport.Enabled;
         ActionSearchDay.Enabled = ActionSaveReport.Enabled;
         ActionNavigate.Enabled = ActionSaveReport.Enabled;
         ActionViewCelebrations.Enabled = ActionSaveReport.Enabled;
-        ActionGenerate.Enabled = !IsGenerating;
-        ActionStop.Enabled = IsGenerating;
-        MenuView.Enabled = !IsGenerating;
-        ActionPreferences.Enabled = !IsGenerating;
+        //ActionGenerate.Enabled = !IsGenerating;
+        //MenuView.Enabled = !IsGenerating;
+        //MenuSettings.Enabled = !IsGenerating;
+        //ActionPreferences.Enabled = !IsGenerating;
         if ( LoadingForm != null && LoadingForm.Visible )
           LoadingForm.Hide();
         Refresh();

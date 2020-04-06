@@ -92,6 +92,7 @@ namespace Ordisoftware.HebrewCalendar
       TimerReminder_Tick(null, null);
       MidnightTimer.TimeReached += MidnightTimer_Tick;
       MidnightTimer.Start();
+      MenuTray.Enabled = true;
     }
 
     /// <summary>
@@ -101,9 +102,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( !IsReady ) return;
       if ( AllowClose ) return;
       e.Cancel = true;
+      if ( !IsReady ) return;
       MenuShowHide.PerformClick();
     }
 
@@ -524,10 +525,10 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionStop_Click(object sender, EventArgs e)
+    /*private void ActionStop_Click(object sender, EventArgs e)
     {
       IsGenerating = false;
-    }
+    }*/
 
     /// <summary>
     /// Event handler. Called by ActionCopyReportToClipboard for click events.
@@ -672,16 +673,33 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MenuEnableReminder_Click(object sender, EventArgs e)
     {
+      MenuResetReminder.Enabled = true;
+      ActionResetReminder.Enabled = true;
       MenuEnableReminder.Visible = false;
       MenuDisableReminder.Visible = true;
+      MenuEnableReminder.Enabled = false;
+      MenuDisableReminder.Enabled = true;
+      ActionEnableReminder.Visible = false;
+      ActionDisableReminder.Visible = true;
+      ActionEnableReminder.Enabled = false;
+      ActionDisableReminder.Enabled = true;
       TimerReminder.Enabled = true;
       TimerReminder_Tick(null, null);
     }
 
     private void MenuDisableReminder_Click(object sender, EventArgs e)
     {
+      ClearLists();
+      MenuResetReminder.Enabled = false;
+      ActionResetReminder.Enabled = false;
       MenuEnableReminder.Visible = true;
       MenuDisableReminder.Visible = false;
+      MenuEnableReminder.Enabled = true;
+      MenuDisableReminder.Enabled = false;
+      ActionEnableReminder.Visible = true;
+      ActionDisableReminder.Visible = false;
+      ActionEnableReminder.Enabled = true;
+      ActionDisableReminder.Enabled = false;
       TimerReminder.Enabled = false;
     }
 
