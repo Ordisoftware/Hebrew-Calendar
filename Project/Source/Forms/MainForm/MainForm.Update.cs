@@ -71,10 +71,6 @@ namespace Ordisoftware.HebrewCalendar
         ActionSearchDay.Enabled = ActionSaveReport.Enabled;
         ActionNavigate.Enabled = ActionSaveReport.Enabled;
         ActionViewCelebrations.Enabled = ActionSaveReport.Enabled;
-        //ActionGenerate.Enabled = !IsGenerating;
-        //MenuView.Enabled = !IsGenerating;
-        //MenuSettings.Enabled = !IsGenerating;
-        //ActionPreferences.Enabled = !IsGenerating;
         if ( LoadingForm != null && LoadingForm.Visible )
           LoadingForm.Hide();
         Refresh();
