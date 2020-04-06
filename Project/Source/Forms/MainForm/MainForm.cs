@@ -50,6 +50,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       TrayIcon.Icon = Icon;
       Program.Settings.Retrieve();
+      MenuTray.Enabled = false;
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == Program.Settings.TimeZone )
         {
@@ -78,9 +79,9 @@ namespace Ordisoftware.HebrewCalendar
       {
         GoToDate(date);
       };
-      UpdateButtons();
       MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
       IsReady = true;
+      UpdateButtons();
       GoToDate(DateTime.Today);
       Program.CheckUpdate(true);
       CheckRegenerateCalendar();
@@ -92,7 +93,6 @@ namespace Ordisoftware.HebrewCalendar
       TimerReminder_Tick(null, null);
       MidnightTimer.TimeReached += MidnightTimer_Tick;
       MidnightTimer.Start();
-      MenuTray.Enabled = true;
     }
 
     /// <summary>

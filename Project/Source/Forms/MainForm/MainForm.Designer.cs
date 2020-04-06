@@ -115,6 +115,8 @@
       this.ActionResetReminder = new System.Windows.Forms.ToolStripButton();
       this.ActionEnableReminder = new System.Windows.Forms.ToolStripButton();
       this.ActionDisableReminder = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionGenerate = new System.Windows.Forms.ToolStripButton();
       this.SaveCSVDialog = new System.Windows.Forms.SaveFileDialog();
       this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -133,8 +135,6 @@
       this.TimerReminder = new System.Windows.Forms.Timer(this.components);
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
-      this.ActionGenerate = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.CalendarMonth = new Calendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -886,6 +886,21 @@
       this.ActionDisableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionDisableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
+      // toolStripSeparator6
+      // 
+      this.toolStripSeparator6.Name = "toolStripSeparator6";
+      resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+      // 
+      // ActionGenerate
+      // 
+      this.ActionGenerate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
+      this.ActionGenerate.Name = "ActionGenerate";
+      this.ActionGenerate.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
+      this.ActionGenerate.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionGenerate.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
       // SaveCSVDialog
       // 
       this.SaveCSVDialog.FileName = "Hebrew Calendar.csv";
@@ -900,7 +915,6 @@
       // 
       // MenuTray
       // 
-      resources.ApplyResources(this.MenuTray, "MenuTray");
       this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuShowHide,
             this.MenuNavigate,
@@ -914,6 +928,7 @@
             this.MenuAbout,
             this.MenuExit});
       this.MenuTray.Name = "contextMenuStrip";
+      resources.ApplyResources(this.MenuTray, "MenuTray");
       this.MenuTray.VisibleChanged += new System.EventHandler(this.MenuTray_VisibleChanged);
       // 
       // MenuShowHide
@@ -998,21 +1013,6 @@
       // 
       this.TimerTrayMouseMove.Interval = 10;
       this.TimerTrayMouseMove.Tick += new System.EventHandler(this.TimerTrayMouseMove_Tick);
-      // 
-      // ActionGenerate
-      // 
-      this.ActionGenerate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
-      this.ActionGenerate.Name = "ActionGenerate";
-      this.ActionGenerate.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
-      this.ActionGenerate.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionGenerate.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // toolStripSeparator6
-      // 
-      this.toolStripSeparator6.Name = "toolStripSeparator6";
-      resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
       // 
       // CalendarMonth
       // 

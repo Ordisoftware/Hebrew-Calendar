@@ -50,6 +50,7 @@ namespace Ordisoftware.HebrewCalendar
         finally
         {
           IsReady = true;
+          UpdateButtons();
           if ( e != null )
           {
             GoToDate(DateTime.Today);
