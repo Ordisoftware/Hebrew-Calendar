@@ -111,15 +111,14 @@ The application uses by default moon omer for celebrations. If you use moon omer
 #### 2020.__.__ - Version 3.11
 
 - Add preferences menu in the tray icon.
-- Add enable and disable reminder menu in the tray icon.
-- Add enable/disable reminder in the tray icon menu.
-- Add current lunar month name beside the common month name in the calendar view.
-- Add calculate number of moons between two dates.
-- Add link to windows calculator.
+- Add temporary enable/disable reminder menu in the tray icon.
+>>>>- Add current lunar month name beside the common month name in the calendar view.
+>>>>- Add calculate number of moons between two dates.
+>>>>- Add link to windows calculator.
 - Improve search lunar month form.
-- Fix controls tabs and focus in auto lock session form.
-- Improve personal shabat dialog box (allowing 3% de margin hence 1 hour before or after sun times).
-- Update help (La veille de shabat, soit on garde sans sortir et on renforce le couple lors du shabat, soit on sort et illumine pour faire briller le couple pour shabat, mais à shabat on sort pas du temple et sauf cas d'urgence on ne travaille pas, on ne cuisine pas, on ne s'interesse pas aux informations, etc.)
+>>>>- Fix controls tabs and focus in auto lock session form.
+>>>>- Improve personal shabat dialog box (allowing 3% de margin hence 1 hour before or after sun times).
+>>>>- Update help (La veille de shabat, soit on garde sans sortir et on renforce le couple lors du shabat, soit on sort et illumine pour faire briller le couple pour shabat, mais à shabat on sort pas du temple et sauf cas d'urgence on ne travaille pas, on ne cuisine pas, on ne s'interesse pas aux informations, etc.)
 
 #### 2019.11.12 - Version 3.10
 
