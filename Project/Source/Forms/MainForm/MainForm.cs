@@ -554,12 +554,20 @@ namespace Ordisoftware.HebrewCalendar
       {
         var bitmap = new Bitmap(CalendarMonth.Width, CalendarMonth.Height);
         CalendarMonth.DrawToBitmap(bitmap, new Rectangle(0, 0, CalendarMonth.Width, CalendarMonth.Height));
+        bitmap = Program.ResizeImage(bitmap, 1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
         var document = new PrintDocument();
         document.DefaultPageSettings.Landscape = true;
         document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
         PrintDialog.Document = document;
         if ( PrintDialog.ShowDialog() == DialogResult.Cancel ) return;
-        document.Print();
+        try
+        {
+          document.Print();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
       }
       finally
       {
