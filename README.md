@@ -118,7 +118,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Add tools menu.
 - Add shabat notice link (tools).
 - Add link to windows calculator (tools).
->>>>- Add calculate number of moons between two dates (tools).
+- Add calculate number of days between two dates (tools).
 - Add month number column in the search lunar month form.
 - Fix controls tabs and focus in auto lock session form.
 - Improve exports to open destination folder after done.
