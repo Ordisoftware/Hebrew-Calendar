@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -140,6 +140,34 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "Birth day" },
         { "fr", "Date de naissance" }
+      };
+
+    static public readonly Dictionary<string, string> DiffDatesFirst
+      = new Dictionary<string, string>()
+      {
+        { "en", "First day" },
+        { "fr", "Premièr jour" }
+      };
+
+    static public readonly Dictionary<string, string> DiffDatesLast
+      = new Dictionary<string, string>()
+      {
+        { "en", "Last day" },
+        { "fr", "Dernier jour" }
+      };
+
+    static public readonly Dictionary<string, string> DiffDatesSolarCount
+      = new Dictionary<string, string>()
+      {
+        { "en", "Solar days count: {0}" },
+        { "fr", "Nombre de jours solaires : {0}" }
+      };
+
+    static public readonly Dictionary<string, string> DiffDatesMoonCount
+      = new Dictionary<string, string>()
+      {
+        { "en", "Moon days count: {0}" },
+        { "fr", "Nombre de jours lunaires : {0}" }
       };
 
     static public readonly Dictionary<string, string> BigCalendar

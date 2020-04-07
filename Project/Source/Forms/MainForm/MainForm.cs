@@ -512,8 +512,30 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
     {
-      // TODO
-      throw new NotImplementedException();
+      var formDate = new SelectDayForm();
+      formDate.Text = Translations.DiffDatesFirst.GetLang();
+      if ( formDate.ShowDialog() != DialogResult.OK ) return;
+      var date1 = formDate.MonthCalendar.SelectionStart.Date;
+      formDate.Text = Translations.DiffDatesLast.GetLang();
+      if ( formDate.ShowDialog() != DialogResult.OK ) return;
+      var date2 = formDate.MonthCalendar.SelectionStart.Date;
+      if ( date1 > date2 )
+      {
+        var temp = date2;
+        date2 = date1;
+        date1 = temp;
+      }
+      int diffSolar = (date2 - date1).Days + 1;
+      int diffMoon = 0;
+      if (date1 >= DateFirst && date2 <= DateLast)
+        for ( DateTime date = date1; date <= date2; date = date.AddDays(1) )
+          if ( DataSet.LunisolarDays.FindByDate(SQLiteUtility.GetDate(date)).Moonrise != "" )
+            diffMoon++;
+      string str = Translations.DiffDatesSolarCount.GetLang(diffSolar);
+      if (diffMoon != 0)
+        str += Environment.NewLine + Translations.DiffDatesMoonCount.GetLang(diffMoon);
+
+      DisplayManager.Show(str);
     }
 
     /// <summary>
