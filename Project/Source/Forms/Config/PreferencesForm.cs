@@ -420,7 +420,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.PersonalShabatNotice.GetLang()) ) return;
+      string str = Translations.PersonalShabatNotice.GetLang() + Environment.NewLine + Environment.NewLine +
+                   Translations.AskToGenerateShabat.GetLang();
+      if ( !DisplayManager.QueryYesNo(str) ) return;
       DateTime date = DateTime.Today;
       var formDate = new SelectDayForm();
       formDate.Text = Translations.SelectBirthday.GetLang();
