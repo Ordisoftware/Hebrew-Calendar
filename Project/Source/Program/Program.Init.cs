@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -84,11 +84,6 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( var f in MainForm.Instance.RemindCelebrationForms.ToList() )
       {
         f.Close();
-      }
-      if ( MainForm.Instance.ShabatForm != null )
-      {
-        MainForm.Instance.ShabatForm.Close();
-        MainForm.Instance.LastShabatReminded = null;
       }
       foreach ( Form form in Application.OpenForms )
         if ( form != AboutBox.Instance )
