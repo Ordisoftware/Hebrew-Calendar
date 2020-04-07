@@ -58,6 +58,8 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Instance.TimerReminder.Enabled = false;
       string lang = Program.Settings.Language;
       var form = new PreferencesForm();
+      if ( !MainForm.Instance.Visible )
+        form.ShowInTaskbar = true;
       form.ShowDialog();
       while ( LanguageChanged || DoReset )
       {
@@ -757,6 +759,7 @@ namespace Ordisoftware.HebrewCalendar
       LabelRemindAutoLockTimeOut.Enabled = EditRemindAutoLock.Checked;
       EditRemindAutoLockTimeOut.Enabled = EditRemindAutoLock.Checked;
     }
+
   }
 
 }

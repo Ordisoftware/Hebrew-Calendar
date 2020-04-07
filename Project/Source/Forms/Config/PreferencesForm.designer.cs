@@ -81,6 +81,7 @@
       this.EditStartupHide = new System.Windows.Forms.CheckBox();
       this.GroupBoxReminder = new System.Windows.Forms.GroupBox();
       this.EditReminderUseColors = new System.Windows.Forms.CheckBox();
+      this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationHoursBefore = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationEveryMinutes = new System.Windows.Forms.Label();
       this.label5 = new System.Windows.Forms.Label();
@@ -97,7 +98,9 @@
       this.PanelEventColorTorah = new System.Windows.Forms.Panel();
       this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
+      this.EditRemindAutoLockTimeOut = new System.Windows.Forms.NumericUpDown();
       this.EditRemindCelebrationHoursBefore = new System.Windows.Forms.NumericUpDown();
+      this.EditRemindAutoLock = new System.Windows.Forms.CheckBox();
       this.EditUseMoonDays = new System.Windows.Forms.CheckBox();
       this.EditTimerEnabled = new System.Windows.Forms.CheckBox();
       this.EditRemindCelebrationEveryMinutes = new System.Windows.Forms.NumericUpDown();
@@ -121,9 +124,6 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditRemindAutoLock = new System.Windows.Forms.CheckBox();
-      this.EditRemindAutoLockTimeOut = new System.Windows.Forms.NumericUpDown();
-      this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
@@ -138,11 +138,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditLoomingDelay)).BeginInit();
       this.GroupBoxReminder.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindAutoLockTimeOut)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       this.GroupBoxCalendar.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditRemindAutoLockTimeOut)).BeginInit();
       this.SuspendLayout();
       // 
       // LabelGPSLatitude
@@ -589,6 +589,11 @@
       this.EditReminderUseColors.Name = "EditReminderUseColors";
       this.EditReminderUseColors.UseVisualStyleBackColor = true;
       // 
+      // LabelRemindAutoLockTimeOut
+      // 
+      resources.ApplyResources(this.LabelRemindAutoLockTimeOut, "LabelRemindAutoLockTimeOut");
+      this.LabelRemindAutoLockTimeOut.Name = "LabelRemindAutoLockTimeOut";
+      // 
       // LabelRemindCelebrationHoursBefore
       // 
       resources.ApplyResources(this.LabelRemindCelebrationHoursBefore, "LabelRemindCelebrationHoursBefore");
@@ -690,12 +695,28 @@
       resources.ApplyResources(this.LabelTimerInterval, "LabelTimerInterval");
       this.LabelTimerInterval.Name = "LabelTimerInterval";
       // 
+      // EditRemindAutoLockTimeOut
+      // 
+      this.EditRemindAutoLockTimeOut.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditRemindAutoLockTimeOut, "EditRemindAutoLockTimeOut");
+      this.EditRemindAutoLockTimeOut.Name = "EditRemindAutoLockTimeOut";
+      this.EditRemindAutoLockTimeOut.ReadOnly = true;
+      // 
       // EditRemindCelebrationHoursBefore
       // 
       this.EditRemindCelebrationHoursBefore.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditRemindCelebrationHoursBefore, "EditRemindCelebrationHoursBefore");
       this.EditRemindCelebrationHoursBefore.Name = "EditRemindCelebrationHoursBefore";
       this.EditRemindCelebrationHoursBefore.ReadOnly = true;
+      // 
+      // EditRemindAutoLock
+      // 
+      resources.ApplyResources(this.EditRemindAutoLock, "EditRemindAutoLock");
+      this.EditRemindAutoLock.Checked = true;
+      this.EditRemindAutoLock.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditRemindAutoLock.Name = "EditRemindAutoLock";
+      this.EditRemindAutoLock.UseVisualStyleBackColor = true;
+      this.EditRemindAutoLock.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
       // 
       // EditUseMoonDays
       // 
@@ -878,27 +899,6 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
-      // EditRemindAutoLock
-      // 
-      resources.ApplyResources(this.EditRemindAutoLock, "EditRemindAutoLock");
-      this.EditRemindAutoLock.Checked = true;
-      this.EditRemindAutoLock.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditRemindAutoLock.Name = "EditRemindAutoLock";
-      this.EditRemindAutoLock.UseVisualStyleBackColor = true;
-      this.EditRemindAutoLock.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
-      // 
-      // EditRemindAutoLockTimeOut
-      // 
-      this.EditRemindAutoLockTimeOut.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditRemindAutoLockTimeOut, "EditRemindAutoLockTimeOut");
-      this.EditRemindAutoLockTimeOut.Name = "EditRemindAutoLockTimeOut";
-      this.EditRemindAutoLockTimeOut.ReadOnly = true;
-      // 
-      // LabelRemindAutoLockTimeOut
-      // 
-      resources.ApplyResources(this.LabelRemindAutoLockTimeOut, "LabelRemindAutoLockTimeOut");
-      this.LabelRemindAutoLockTimeOut.Name = "LabelRemindAutoLockTimeOut";
-      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -940,13 +940,13 @@
       this.GroupBoxReminder.ResumeLayout(false);
       this.GroupBoxReminder.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindAutoLockTimeOut)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).EndInit();
       this.GroupBoxCalendar.ResumeLayout(false);
       this.GroupBoxCalendar.PerformLayout();
       this.GroupBoxSystem.ResumeLayout(false);
       this.GroupBoxSystem.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditRemindAutoLockTimeOut)).EndInit();
       this.ResumeLayout(false);
 
     }

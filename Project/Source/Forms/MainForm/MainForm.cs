@@ -395,6 +395,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
+        MenuTray.Enabled = false;
         ClearLists();
         if ( PreferencesForm.Run(sender == MenuPreferences) )
         {
@@ -409,6 +410,10 @@ namespace Ordisoftware.HebrewCalendar
       catch ( Exception ex )
       {
         ex.Manage();
+      }
+      finally
+      {
+        MenuTray.Enabled = true;
       }
     }
 
