@@ -32,11 +32,6 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoonMonthsForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
-      this.ListView = new System.Windows.Forms.ListView();
-      this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,13 +39,18 @@
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLine = new System.Windows.Forms.ToolStripMenuItem();
+      this.PanelMonths = new System.Windows.Forms.Panel();
+      this.ActionEditFiles = new System.Windows.Forms.LinkLabel();
+      this.ActionSwapColors = new System.Windows.Forms.LinkLabel();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionSwapColors);
       this.PanelBottom.Controls.Add(this.ActionClose);
+      this.PanelBottom.Controls.Add(this.ActionEditFiles);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
@@ -59,39 +59,6 @@
       resources.ApplyResources(this.ActionClose, "ActionClose");
       this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionClose.Name = "ActionClose";
-      // 
-      // ListView
-      // 
-      resources.ApplyResources(this.ListView, "ListView");
-      this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-      this.ListView.ContextMenuStrip = this.ContextMenuStrip;
-      this.ListView.FullRowSelect = true;
-      this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-      this.ListView.HideSelection = false;
-      this.ListView.MultiSelect = false;
-      this.ListView.Name = "ListView";
-      this.ListView.UseCompatibleStateImageBehavior = false;
-      this.ListView.View = System.Windows.Forms.View.Details;
-      // 
-      // columnHeader4
-      // 
-      resources.ApplyResources(this.columnHeader4, "columnHeader4");
-      // 
-      // columnHeader1
-      // 
-      resources.ApplyResources(this.columnHeader1, "columnHeader1");
-      // 
-      // columnHeader2
-      // 
-      resources.ApplyResources(this.columnHeader2, "columnHeader2");
-      // 
-      // columnHeader3
-      // 
-      resources.ApplyResources(this.columnHeader3, "columnHeader3");
       // 
       // ContextMenuStrip
       // 
@@ -139,19 +106,44 @@
       this.ActionCopyLine.Name = "ActionCopyLine";
       this.ActionCopyLine.Click += new System.EventHandler(this.ActionCopyLine_Click);
       // 
+      // PanelMonths
+      // 
+      resources.ApplyResources(this.PanelMonths, "PanelMonths");
+      this.PanelMonths.Name = "PanelMonths";
+      // 
+      // ActionEditFiles
+      // 
+      this.ActionEditFiles.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
+      this.ActionEditFiles.LinkColor = System.Drawing.Color.Navy;
+      this.ActionEditFiles.Name = "ActionEditFiles";
+      this.ActionEditFiles.TabStop = true;
+      this.ActionEditFiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionEditFiles_LinkClicked);
+      // 
+      // ActionSwapColors
+      // 
+      this.ActionSwapColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
+      this.ActionSwapColors.LinkColor = System.Drawing.Color.Navy;
+      this.ActionSwapColors.Name = "ActionSwapColors";
+      this.ActionSwapColors.TabStop = true;
+      this.ActionSwapColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionSwapColors_LinkClicked);
+      // 
       // MoonMonthsForm
       // 
       this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.ListView);
+      this.Controls.Add(this.PanelMonths);
       this.Controls.Add(this.PanelBottom);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "MoonMonthsForm";
       this.ShowInTaskbar = false;
       this.PanelBottom.ResumeLayout(false);
+      this.PanelBottom.PerformLayout();
       this.ContextMenuStrip.ResumeLayout(false);
       this.ResumeLayout(false);
 
@@ -161,11 +153,6 @@
 
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionClose;
-    private System.Windows.Forms.ListView ListView;
-    private System.Windows.Forms.ColumnHeader columnHeader1;
-    private System.Windows.Forms.ColumnHeader columnHeader2;
-    private System.Windows.Forms.ColumnHeader columnHeader4;
-    private System.Windows.Forms.ColumnHeader columnHeader3;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
@@ -173,5 +160,8 @@
     private System.Windows.Forms.ToolStripMenuItem ActionCopyFontChars;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyUnicodeChars;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyLine;
+    private System.Windows.Forms.Panel PanelMonths;
+    private System.Windows.Forms.LinkLabel ActionSwapColors;
+    private System.Windows.Forms.LinkLabel ActionEditFiles;
   }
 }

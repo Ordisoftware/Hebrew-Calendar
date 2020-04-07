@@ -31,7 +31,7 @@ namespace Ordisoftware.HebrewCalendar
       "Adar II"
     };
 
-    static public readonly string[] Hebrew =
+    static public readonly string[] Unicode =
     {
       "",
       "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
@@ -68,11 +68,6 @@ namespace Ordisoftware.HebrewCalendar
       };
       process("MoonMonthsMeanings", Meanings);
       process("MoonMonthsLettriqs", Lettriqs);
-    }
-
-    static MoonMonths()
-    {
-      Load();
     }
 
   }

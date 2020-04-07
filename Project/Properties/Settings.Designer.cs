@@ -1064,5 +1064,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["HebrewLettersExe"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MoonMonthsFormUseColors {
+            get {
+                return ((bool)(this["MoonMonthsFormUseColors"]));
+            }
+            set {
+                this["MoonMonthsFormUseColors"] = value;
+            }
+        }
     }
 }
