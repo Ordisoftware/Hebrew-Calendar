@@ -138,9 +138,10 @@ namespace Ordisoftware.HebrewCalendar
           strToolTip = Translations.Ephemeris.GetLang(EphemerisType.Rise) + row.Sunrise + Environment.NewLine
                      + Translations.Ephemeris.GetLang(EphemerisType.Set) + row.Sunset;
           Color colorMoon = Color.Black;
-          string strMonth = row.IsNewMoon == 1
+          /*string strMonth = row.IsNewMoon == 1
                           ? " " + Translations.BabylonianHebrewMonthText[row.LunarMonth]
-                          : "";
+                          : "";*/
+          string strMonth = " " + Translations.BabylonianHebrewMonthText[row.LunarMonth];
           colorMoon = row.IsNewMoon == 1
                     ? Program.Settings.CalendarColorTorahEvent
                     : ( row.IsFullMoon == 1
