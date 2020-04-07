@@ -46,7 +46,7 @@
       // ActionClose
       // 
       resources.ApplyResources(this.ActionClose, "ActionClose");
-      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionClose.Name = "ActionClose";
       this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
