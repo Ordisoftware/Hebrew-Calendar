@@ -96,6 +96,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Ctrl+E : Search celebration
 - Ctrl+M : Search lunar month
 - Ctrl+N : Open navigation window
+- Ctrl+A : Open annual celebrations window
 - Ctrl+P : Print month view
 - Ctrl+C : Copy report to clipboard
 - Ctrl+S : Save report to text file

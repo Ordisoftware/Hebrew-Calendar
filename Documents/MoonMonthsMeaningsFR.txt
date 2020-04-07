@@ -1,11 +1,11 @@
-Nissan = Premiers fruits (Abib : épis, germination)
-Iyar = Fleur (Ziv : éclat)
-Sivan = Saison
+Nissan = Premiers fruits, Ses prodiges (Torah), Leur fuite (sauvegarde) {Abib : épis, germination}
+Iyar = Fleur, Il (HaShem) a clarifié (illuminé) {Ziv : éclat}
+Sivan = Saison, Leur vêtement
 Tamouz = 
 Av = Roseaux, feu, père
 Eloul = Récolte
-Tishri = Commencement (Ethanim : renforcement)
-Heshvan = Huitième mois (Boul : )
+Tishri = Commencement {Ethanim : renforcement}
+Heshvan = Huitième mois {Boul : }
 Kislev = Epaisseur, espoir
 Tevet = Fortes pluies
 Chevat = 
