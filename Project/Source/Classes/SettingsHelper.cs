@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCalendar.Properties;
@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewCalendar
     static internal void RestoreMainForm(this Settings settings)
     {
       MainForm.Width = MainForm.MinimumSize.Width;
-      MainForm.Height = 770;
+      MainForm.Height = 750;
       MainForm.WindowState = FormWindowState.Normal;
       MainForm.CenterToScreen();
       MainForm.EditScreenNone.Checked = false;
