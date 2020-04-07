@@ -718,7 +718,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewCelebrations_Click(object sender, EventArgs e)
     {
-      CelebrationsForm.Run();
+      if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
+        CelebrationsForm.Instance.Close();
+      else
+        CelebrationsForm.Run();
     }
 
     private void MenuRefreshReminder_Click(object sender, EventArgs e)
