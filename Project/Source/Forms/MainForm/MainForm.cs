@@ -577,6 +577,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( SaveFileDialog.ShowDialog() == DialogResult.OK )
         File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
+      Program.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
 
     /// <summary>
@@ -587,6 +588,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionExportCSV_Click(object sender, EventArgs e)
     {
       GenerateCSV();
+      Program.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
 
     /// <summary>
