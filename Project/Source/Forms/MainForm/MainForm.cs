@@ -732,6 +732,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MenuEnableReminder_Click(object sender, EventArgs e)
     {
+      TrayIcon.Icon = Icon;
       MenuResetReminder.Enabled = true;
       ActionResetReminder.Enabled = true;
       MenuEnableReminder.Visible = false;
@@ -748,7 +749,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MenuDisableReminder_Click(object sender, EventArgs e)
     {
-      ClearLists();
+      TrayIcon.Icon = new Icon(Program.AppRootFolderPath + "ApplicationPause.ico");
+      TimerReminder.Enabled = false;
       MenuResetReminder.Enabled = false;
       ActionResetReminder.Enabled = false;
       MenuEnableReminder.Visible = true;
@@ -759,7 +761,7 @@ namespace Ordisoftware.HebrewCalendar
       ActionDisableReminder.Visible = false;
       ActionEnableReminder.Enabled = true;
       ActionDisableReminder.Enabled = false;
-      TimerReminder.Enabled = false;
+      ClearLists();
     }
 
     /// <summary>

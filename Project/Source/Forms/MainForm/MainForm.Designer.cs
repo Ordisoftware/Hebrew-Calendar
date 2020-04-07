@@ -144,6 +144,7 @@
       this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuNavigate = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuCelebrations = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -153,6 +154,7 @@
       this.SeparatorTrayMenuView = new System.Windows.Forms.ToolStripSeparator();
       this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
       this.PrintDialog = new System.Windows.Forms.PrintDialog();
       this.TimerReminder = new System.Windows.Forms.Timer(this.components);
@@ -575,8 +577,8 @@
             this.MenuSettings,
             this.MenuView,
             this.ActionResetReminder,
-            this.ActionEnableReminder,
             this.ActionDisableReminder,
+            this.ActionEnableReminder,
             this.toolStripSeparator6,
             this.ActionGenerate});
       this.ToolStrip.Name = "ToolStrip";
@@ -1113,6 +1115,7 @@
       // 
       this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuShowHide,
+            this.toolStripSeparator11,
             this.MenuNavigate,
             this.MenuCelebrations,
             this.toolStripSeparator7,
@@ -1122,6 +1125,7 @@
             this.SeparatorTrayMenuView,
             this.MenuPreferences,
             this.MenuAbout,
+            this.toolStripSeparator10,
             this.MenuExit});
       this.MenuTray.Name = "contextMenuStrip";
       resources.ApplyResources(this.MenuTray, "MenuTray");
@@ -1132,6 +1136,11 @@
       resources.ApplyResources(this.MenuShowHide, "MenuShowHide");
       this.MenuShowHide.Name = "MenuShowHide";
       this.MenuShowHide.Click += new System.EventHandler(this.MenuShowHide_Click);
+      // 
+      // toolStripSeparator11
+      // 
+      this.toolStripSeparator11.Name = "toolStripSeparator11";
+      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
       // 
       // MenuNavigate
       // 
@@ -1184,6 +1193,11 @@
       resources.ApplyResources(this.MenuAbout, "MenuAbout");
       this.MenuAbout.Name = "MenuAbout";
       this.MenuAbout.Click += new System.EventHandler(this.ActionAbout_Click);
+      // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // MenuExit
       // 
@@ -1398,6 +1412,8 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewMoonMonths;
     internal System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
   }
 }
 
