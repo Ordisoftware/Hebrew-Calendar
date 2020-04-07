@@ -217,7 +217,7 @@
     <value>0, 0</value>
   </data>
   <data name="CalendarMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 574</value>
+    <value>978, 576</value>
   </data>
   <data name="CalendarMonth.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -241,7 +241,7 @@
     <value>3, 3</value>
   </data>
   <data name="PanelViewMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 574</value>
+    <value>978, 576</value>
   </data>
   <data name="PanelViewMonth.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -265,7 +265,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>982, 580</value>
+    <value>984, 582</value>
   </data>
   <data name="TabPageMonth.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -373,7 +373,7 @@
     <value>0, 25</value>
   </data>
   <data name="CalendarGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 549</value>
+    <value>978, 551</value>
   </data>
   <data name="CalendarGrid.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -503,7 +503,7 @@
     <value>0, 0</value>
   </data>
   <data name="LunisolarDaysBindingNavigator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 25</value>
+    <value>978, 25</value>
   </data>
   <data name="LunisolarDaysBindingNavigator.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -530,7 +530,7 @@
     <value>3, 3</value>
   </data>
   <data name="PanelViewGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 574</value>
+    <value>978, 576</value>
   </data>
   <data name="PanelViewGrid.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -554,7 +554,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>982, 580</value>
+    <value>984, 582</value>
   </data>
   <data name="TabPageGrid.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1735,6 +1735,101 @@
   <data name="MenuWeb.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 46</value>
   </data>
+  <data name="shabatNoticeToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADYSURBVDhPYxh84Mle5/77a+w1oFw4AImB5KBc3ODpAddv
+        D2bZZkO5cPBgrm02SA7KxQ5u5ZrJPN7l8vlel039mTRjVqgwA4gNEgPJgdRAhVHBtWxT4Zu+Jq9vZ1v8
+        uxlk8vNWtGkFVIrhVqRpBUgMLAdUA1ILlUKAuxHm4kDJ/zB8I8i4GyrFAGIjy4HUQqUQ4K4vmgF+SAYA
+        2chyILVQKQTAMMAXyQAgG1lu1AAcBtzyUGG/6WPSedPX+NQNH5MtN72NzaBSDCA2WAwoB1IDUguVGnDA
+        wAAAvw/bWOy/LRYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="shabatNoticeToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="shabatNoticeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="shabatNoticeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Shabat notice</value>
+  </data>
+  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
+  <data name="ActionOpenCalculator.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVDhPjZLfS5NRHMbPX9B/0E3dBF10UUEXFazVRYUZ
+        /bgrsKs0yiCKLiq8STZrc2sz24/acitUrDYHjtiEWgmClgWTKdtw0y1Nprhg/TDTp/OcHRihVA888PD9
+        fp7zvu/hFX9T+KJA+IIAszcY6fb6nuKRr6tfLf+lnnMCCXc9Eq469JwRcPojmF9I4YHHrw5cp1CzCPfL
+        J9IBWYjZDmIVwJp0zLIfj08IzC3l4XR1bXxA73mBiYARnlMCUYsRP359x9dKAd+kl1eXETXvxcM6Abv3
+        2cYHBBoEOo/LNzAZsVgpobyUxvYrQ8rlckbNIq374K6v3sk6OWX5eesBzJSmMF1MYq44AnE0LB1SeebT
+        OIqlnGQMuC9ZXavKLk+1Ne7CivzedH4Umekx5GeT+CwvjWbmLJ17pxi7ZNnRdSFuGUS8w/8CC18KmJBQ
+        zLoHvfIi+85WzcwZd2TIsqPrSlsc7ifIFd4jlRtD8LTA7IduzKcGlJk5444MWXaqVS2bw4vJ7FsF+U4K
+        5BPtGLgslJk5444MWV2ryWrrQCrzCuNTo3AdE8hGryF+c5MyM2fckSGrazXdsdiRnIzjY3YYjsPyn+hr
+        wJvbm5WZOeOODFldq8lktmJlrYKf8path+TrBo9gpH2bMjNn3JEhq2s1mdqsGBwKYXD4JSwGgbR/N1Ke
+        HcrMnHFHhqyu1XSjpeW1qc0C8917aLp0FU3N19GozcwZd2TI6tof2iq98z9NVkqI3wpv2oRqRJVKAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionOpenCalculator.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionOpenCalculator.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionOpenCalculator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionOpenCalculator.Text" xml:space="preserve">
+    <value>Calculator</value>
+  </data>
+  <data name="MenuTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="MenuTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="MenuTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 46</value>
+  </data>
   <data name="Sep6.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
@@ -1979,7 +2074,7 @@
 </value>
   </data>
   <data name="ActionViewReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+    <value>126, 38</value>
   </data>
   <data name="ActionViewReport.Text" xml:space="preserve">
     <value>Report</value>
@@ -2014,7 +2109,7 @@
 </value>
   </data>
   <data name="ActionViewMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+    <value>126, 38</value>
   </data>
   <data name="ActionViewMonth.Text" xml:space="preserve">
     <value>Month</value>
@@ -2048,7 +2143,7 @@
 </value>
   </data>
   <data name="ActionViewGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+    <value>126, 38</value>
   </data>
   <data name="ActionViewGrid.Text" xml:space="preserve">
     <value>Grid</value>
@@ -2095,32 +2190,32 @@
   <data name="ActionResetReminder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
-        PdEGfkzkXwEc4YjpXxA1AAAAAElFTkSuQmCC
+        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
+        3mgDPybyL3jk4Xkf7V9xAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionResetReminder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2630,96 +2725,6 @@
   <data name="&gt;&gt;SaveFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn1</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn2</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn3</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn4</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn5</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn6</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn7</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn8</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn9.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn9</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn10.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn10</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn11.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn11</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn12.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn12</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn13.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn13</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LunisolarDaysBindingSource.Name" xml:space="preserve">
-    <value>LunisolarDaysBindingSource</value>
-  </data>
-  <data name="&gt;&gt;LunisolarDaysBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCalendar.Data.DataSet, Ordisoftware.HebrewCalendar, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;bindingNavigatorCountItem.Name" xml:space="preserve">
     <value>bindingNavigatorCountItem</value>
   </data>
@@ -2972,6 +2977,24 @@
   <data name="&gt;&gt;toolStripMenuItem7.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;MenuTools.Name" xml:space="preserve">
+    <value>MenuTools</value>
+  </data>
+  <data name="&gt;&gt;MenuTools.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenCalculator.Name" xml:space="preserve">
+    <value>ActionOpenCalculator</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenCalculator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;shabatNoticeToolStripMenuItem.Name" xml:space="preserve">
+    <value>shabatNoticeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;shabatNoticeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;Sep6.Name" xml:space="preserve">
     <value>Sep6</value>
   </data>
@@ -3218,6 +3241,96 @@
   <data name="&gt;&gt;TimerTrayMouseMove.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn1</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn2</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn3</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn4</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn5</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn6</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn7</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn8</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn9.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn9</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn10.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn10</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn11.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn11</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn12.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn12</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn13.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn13</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LunisolarDaysBindingSource.Name" xml:space="preserve">
+    <value>LunisolarDaysBindingSource</value>
+  </data>
+  <data name="&gt;&gt;LunisolarDaysBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
+    <value>DataSet</value>
+  </data>
+  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCalendar.Data.DataSet, Ordisoftware.HebrewCalendar, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;LunisolarDaysTableAdapter.Name" xml:space="preserve">
     <value>LunisolarDaysTableAdapter</value>
   </data>
@@ -3235,6 +3348,12 @@
   </data>
   <data name="&gt;&gt;ReportTableAdapter.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter, Ordisoftware.HebrewCalendar, Version=3.11.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">
+    <value>toolStripSeparator8</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

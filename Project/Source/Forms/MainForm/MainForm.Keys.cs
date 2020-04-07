@@ -66,6 +66,9 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Control | Keys.T:
           GoToDate(DateTime.Today);
           return true;
+        case Keys.Alt | Keys.C:
+          ActionOpenCalculator.PerformClick();
+          return true;
         case Keys.Escape:
           if ( EditESCtoExit.Checked )
             Close();

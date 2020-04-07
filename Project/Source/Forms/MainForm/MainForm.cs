@@ -500,6 +500,16 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
+    private void ActionOpenCalculator_Click(object sender, EventArgs e)
+    {
+      Program.RunShell("calc.exe");
+    }
+
+    private void shabatNoticeToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInfo(Translations.PersonalShabatNotice.GetLang());
+    }
+
     /// <summary>
     /// Event handler. Called by ActionGenerate for click events.
     /// </summary>
