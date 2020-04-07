@@ -40,10 +40,10 @@
       this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLine = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
@@ -116,6 +116,11 @@
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
+      // MenuSeparator2
+      // 
+      this.MenuSeparator2.Name = "MenuSeparator2";
+      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
+      // 
       // ActionCopyFontChars
       // 
       resources.ApplyResources(this.ActionCopyFontChars, "ActionCopyFontChars");
@@ -134,11 +139,6 @@
       this.ActionCopyLine.Name = "ActionCopyLine";
       this.ActionCopyLine.Click += new System.EventHandler(this.ActionCopyLine_Click);
       // 
-      // MenuSeparator2
-      // 
-      this.MenuSeparator2.Name = "MenuSeparator2";
-      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
-      // 
       // MoonMonthsForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -150,6 +150,7 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.Name = "MoonMonthsForm";
+      this.ShowInTaskbar = false;
       this.PanelBottom.ResumeLayout(false);
       this.ContextMenuStrip.ResumeLayout(false);
       this.ResumeLayout(false);
