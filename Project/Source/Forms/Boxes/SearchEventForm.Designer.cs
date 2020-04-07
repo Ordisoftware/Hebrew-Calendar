@@ -87,6 +87,7 @@
             this.columnHeader1,
             this.columnHeader2});
       this.ListItems.FullRowSelect = true;
+      this.ListItems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListItems.HideSelection = false;
       this.ListItems.MultiSelect = false;
       this.ListItems.Name = "ListItems";

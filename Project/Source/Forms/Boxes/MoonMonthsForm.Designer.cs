@@ -28,92 +28,99 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoonMonthsForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ListView = new System.Windows.Forms.ListView();
+      this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
+      this.ContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.ActionClose);
-      this.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.PanelBottom.Location = new System.Drawing.Point(10, 280);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
-      this.PanelBottom.Size = new System.Drawing.Size(720, 28);
-      this.PanelBottom.TabIndex = 37;
       // 
       // ActionClose
       // 
-      this.ActionClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.ActionClose, "ActionClose");
       this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ActionClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.ActionClose.Location = new System.Drawing.Point(638, 2);
       this.ActionClose.Name = "ActionClose";
-      this.ActionClose.Size = new System.Drawing.Size(75, 24);
-      this.ActionClose.TabIndex = 24;
-      this.ActionClose.Text = "Close";
       // 
       // ListView
       // 
-      this.ListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.ListView, "ListView");
       this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+      this.ListView.ContextMenuStrip = this.ContextMenuStrip;
       this.ListView.FullRowSelect = true;
+      this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListView.HideSelection = false;
-      this.ListView.Location = new System.Drawing.Point(13, 13);
       this.ListView.MultiSelect = false;
       this.ListView.Name = "ListView";
-      this.ListView.Size = new System.Drawing.Size(714, 256);
-      this.ListView.TabIndex = 38;
       this.ListView.UseCompatibleStateImageBehavior = false;
       this.ListView.View = System.Windows.Forms.View.Details;
       // 
+      // columnHeader4
+      // 
+      resources.ApplyResources(this.columnHeader4, "columnHeader4");
+      // 
       // columnHeader1
       // 
-      this.columnHeader1.Text = "Name";
-      this.columnHeader1.Width = 125;
+      resources.ApplyResources(this.columnHeader1, "columnHeader1");
       // 
       // columnHeader2
       // 
-      this.columnHeader2.Text = "Meaning";
-      this.columnHeader2.Width = 200;
+      resources.ApplyResources(this.columnHeader2, "columnHeader2");
       // 
       // columnHeader3
       // 
-      this.columnHeader3.Text = "Lettriq";
-      this.columnHeader3.Width = 300;
+      resources.ApplyResources(this.columnHeader3, "columnHeader3");
       // 
-      // columnHeader4
+      // ContextMenuStrip
       // 
-      this.columnHeader4.Text = "Hebrew";
-      this.columnHeader4.Width = 75;
+      this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionSearchOnline,
+            this.ActionOpenHebrewLetters});
+      this.ContextMenuStrip.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
+      // 
+      // ActionSearchOnline
+      // 
+      resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
+      this.ActionSearchOnline.Name = "ActionSearchOnline";
+      // 
+      // ActionOpenHebrewLetters
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
       // MoonMonthsForm
       // 
       this.AcceptButton = this.ActionClose;
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.ClientSize = new System.Drawing.Size(740, 318);
       this.Controls.Add(this.ListView);
       this.Controls.Add(this.PanelBottom);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.Name = "MoonMonthsForm";
-      this.Padding = new System.Windows.Forms.Padding(10);
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Moon months";
       this.PanelBottom.ResumeLayout(false);
+      this.ContextMenuStrip.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -127,5 +134,8 @@
     private System.Windows.Forms.ColumnHeader columnHeader2;
     private System.Windows.Forms.ColumnHeader columnHeader4;
     private System.Windows.Forms.ColumnHeader columnHeader3;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
+    private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
   }
 }
