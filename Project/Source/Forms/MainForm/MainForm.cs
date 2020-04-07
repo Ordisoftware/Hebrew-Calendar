@@ -500,14 +500,20 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
+    private void ActionShowShabatNotice_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInfo(Translations.PersonalShabatNotice.GetLang());
+    }
+
     private void ActionOpenCalculator_Click(object sender, EventArgs e)
     {
       Program.RunShell("calc.exe");
     }
 
-    private void shabatNoticeToolStripMenuItem_Click(object sender, EventArgs e)
+    private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowInfo(Translations.PersonalShabatNotice.GetLang());
+      // TODO
+      throw new NotImplementedException();
     }
 
     /// <summary>
