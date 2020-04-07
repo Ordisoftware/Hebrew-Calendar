@@ -113,18 +113,18 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 - Add lunar month name to all days in the calendar view.
 - Add temporary enable/disable reminder main form button and tray icon menu.
+- Improve tray icon to show if reminder is on or off.
 - Add preferences menu in the tray icon.
 - Improve personal shabat dialog box.
 - Add tools menu.
 - Add shabat notice link (tools).
 - Add link to windows calculator (tools).
 - Add calculate number of days between two dates (tools).
-- Add moon months form (tools).
+- Add moon months list form (tools).
 - Add month number column in the search lunar month form.
 - Fix controls tabs and focus in auto lock session form.
 - Improve exports to open destination folder after done.
 - Fix print bitmap size if main form is resized.
->>>>- Add option to set calendar view font size.
 - Improve UI/UX.
 - Few UI fixes.
 - Update help.
