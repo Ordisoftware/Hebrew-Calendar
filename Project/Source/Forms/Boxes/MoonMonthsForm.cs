@@ -54,6 +54,25 @@ namespace Ordisoftware.HebrewCalendar
       Program.OpenHebrewLetters(HebrewLetters.ConvertToHebrewFont(ListView.FocusedItem.Text));
     }
 
+    private void ActionCopyFontChars_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText(HebrewLetters.ConvertToHebrewFont(ListView.FocusedItem.Text));
+    }
+
+    private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText(ListView.FocusedItem.Text);
+    }
+
+    private void ActionCopyLine_Click(object sender, EventArgs e)
+    {
+      string str = ListView.FocusedItem.Text + " ("
+                 + ListView.FocusedItem.SubItems[1].Text + ") : "
+                 + ListView.FocusedItem.SubItems[2].Text + " ("
+                 + ListView.FocusedItem.SubItems[3].Text + ")";
+      Clipboard.SetText(str);
+    }
+
   }
 
 }
