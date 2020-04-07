@@ -545,10 +545,16 @@ namespace Ordisoftware.HebrewCalendar
         for ( DateTime date = date1; date <= date2; date = date.AddDays(1) )
           if ( DataSet.LunisolarDays.FindByDate(SQLiteUtility.GetDate(date)).Moonrise != "" )
             diffMoon++;
-      string str = Translations.DiffDatesSolarCount.GetLang(diffSolar);
+      string str = ActionCalculateDateDiff.Text
+                 + Environment.NewLine + Environment.NewLine
+                 + $"{date1.ToShortDateString()} -> {date2.ToShortDateString()}"
+                 + Environment.NewLine + Environment.NewLine
+                 + Translations.DiffDatesSolarCount.GetLang(diffSolar)
+                 + Environment.NewLine + Environment.NewLine;
       if (diffMoon != 0)
-        str += Environment.NewLine + Translations.DiffDatesMoonCount.GetLang(diffMoon);
-
+        str += Translations.DiffDatesMoonCount.GetLang(diffMoon);
+      else
+        str += Translations.DiffDatesMoonOutOfRange.GetLang(DateFirst.Year, DateLast.Year);
       DisplayManager.Show(str);
     }
 

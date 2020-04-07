@@ -170,6 +170,13 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Nombre de jours lunaires : {0}" }
       };
 
+    static public readonly Dictionary<string, string> DiffDatesMoonOutOfRange
+      = new Dictionary<string, string>()
+      {
+        { "en", "Moon days count: out of range ({0} - {1})" },
+        { "fr", "Nombre de jours lunaires : hors limites ({0} - {1})" }
+      };
+
     static public readonly Dictionary<string, string> BigCalendar
       = new Dictionary<string, string>()
       {
