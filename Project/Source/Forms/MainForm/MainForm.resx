@@ -135,7 +135,7 @@
     <value>0, 0</value>
   </data>
   <data name="CalendarText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>978, 576</value>
+    <value>978, 594</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CalendarText.TabIndex" type="System.Int32, mscorlib">
@@ -166,7 +166,7 @@
     <value>3, 3</value>
   </data>
   <data name="PanelViewText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>978, 576</value>
+    <value>978, 594</value>
   </data>
   <data name="PanelViewText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -190,7 +190,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 582</value>
+    <value>984, 600</value>
   </data>
   <data name="TabPageText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -581,7 +581,7 @@
     <value>0, 0</value>
   </data>
   <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 608</value>
+    <value>992, 626</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -608,7 +608,7 @@
     <value>0, 0</value>
   </data>
   <data name="PanelCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 608</value>
+    <value>992, 626</value>
   </data>
   <data name="PanelCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -632,7 +632,7 @@
     <value>1, 1</value>
   </data>
   <data name="PanelCalendarInner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 608</value>
+    <value>992, 626</value>
   </data>
   <data name="PanelCalendarInner.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -659,7 +659,7 @@
     <value>1, 1, 1, 1</value>
   </data>
   <data name="PanelCalendarOuter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>994, 610</value>
+    <value>994, 628</value>
   </data>
   <data name="PanelCalendarOuter.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -773,7 +773,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1014, 664</value>
+    <value>1014, 682</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2768,10 +2768,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1014, 718</value>
+    <value>1014, 736</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1020, 750</value>
+    <value>1020, 770</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
@@ -2982,6 +2982,12 @@
   </data>
   <data name="&gt;&gt;ActionSearchMonth.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator12.Name" xml:space="preserve">
+    <value>toolStripSeparator12</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionSearchDay.Name" xml:space="preserve">
     <value>ActionSearchDay</value>
@@ -3444,12 +3450,6 @@
   </data>
   <data name="&gt;&gt;ReportTableAdapter.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter, Ordisoftware.HebrewCalendar, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator12.Name" xml:space="preserve">
-    <value>toolStripSeparator12</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

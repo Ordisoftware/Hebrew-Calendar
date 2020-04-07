@@ -85,6 +85,7 @@
       this.Sep2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchEvent = new System.Windows.Forms.ToolStripButton();
       this.ActionSearchMonth = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchDay = new System.Windows.Forms.ToolStripButton();
       this.ActionNavigate = new System.Windows.Forms.ToolStripButton();
       this.ActionViewCelebrations = new System.Windows.Forms.ToolStripButton();
@@ -163,7 +164,6 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
-      this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -660,6 +660,11 @@
       this.ActionSearchMonth.Click += new System.EventHandler(this.ActionSearchMonth_Click);
       this.ActionSearchMonth.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionSearchMonth.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // toolStripSeparator12
+      // 
+      this.toolStripSeparator12.Name = "toolStripSeparator12";
+      resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
       // 
       // ActionSearchDay
       // 
@@ -1240,11 +1245,6 @@
       // ReportTableAdapter
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
-      // 
-      // toolStripSeparator12
-      // 
-      this.toolStripSeparator12.Name = "toolStripSeparator12";
-      resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
       // 
       // MainForm
       // 
