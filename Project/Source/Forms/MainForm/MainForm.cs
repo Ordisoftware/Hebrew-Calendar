@@ -396,6 +396,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
+        TimerReminder.Enabled = false;
         MenuTray.Enabled = false;
         ClearLists();
         if ( PreferencesForm.Run(sender == MenuPreferences) )
@@ -406,7 +407,6 @@ namespace Ordisoftware.HebrewCalendar
         }
         TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-        TimerReminder_Tick(null, null);
       }
       catch ( Exception ex )
       {
@@ -415,6 +415,9 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         MenuTray.Enabled = true;
+        TimerReminder.Enabled = Instance.MenuDisableReminder.Enabled;
+        Refresh();
+        TimerReminder_Tick(null, null);
       }
     }
 

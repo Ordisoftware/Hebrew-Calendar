@@ -55,7 +55,6 @@ namespace Ordisoftware.HebrewCalendar
     static public bool Run(bool isCenteredToScreen = false)
     {
       IsCenteredToScreen = isCenteredToScreen;
-      MainForm.Instance.TimerReminder.Enabled = false;
       string lang = Program.Settings.Language;
       var form = new PreferencesForm();
       if ( !MainForm.Instance.Visible )
@@ -67,10 +66,10 @@ namespace Ordisoftware.HebrewCalendar
         LanguageChanged = false;
         DoReset = false;
         form = new PreferencesForm();
+        if ( !MainForm.Instance.Visible )
+          form.ShowInTaskbar = true;
         form.ShowDialog();
       }
-      MainForm.Instance.Refresh();
-      MainForm.Instance.TimerReminder.Enabled = MainForm.Instance.MenuDisableReminder.Enabled;
       return form.Reseted
           || form.OldShabatDay != Program.Settings.ShabatDay
           || form.OldLatitude != Program.Settings.GPSLatitude
