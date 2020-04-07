@@ -268,6 +268,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       EditRemindShabat_ValueChanged(null, null);
       EditTimerEnabled_CheckedChanged(null, null);
+      EditBalloon_CheckedChanged(null, null);
       ActiveControl = EditShabatDay;
     }
 

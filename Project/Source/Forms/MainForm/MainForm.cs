@@ -226,6 +226,7 @@ namespace Ordisoftware.HebrewCalendar
     private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
     {
       if ( !IsReady ) return;
+      if ( !MenuTray.Enabled ) return;
       TrayIcon.Text = Program.Settings.BalloonEnabled ? "" : Text;
       if ( !Program.Settings.BalloonEnabled ) return;
       TimerBallon.Start();
