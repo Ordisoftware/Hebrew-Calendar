@@ -100,6 +100,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Ctrl+C : Copy report to clipboard
 - Ctrl+S : Save report to text file
 - Alt+S : Save report to CSV file
+- Alt+C : Open calculator
 - F2 : Generate calendar
 - F8 : Preferences
 - F11 : Help
@@ -108,21 +109,24 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 ## Changelog
 
-#### 2020.__.__ - Version 3.11
+#### 2020.04.__ - Version 4.0
 
+- Add lunar month name to all days in the calendar view.
+- Add temporary enable/disable reminder main form button and tray icon menu.
 - Add preferences menu in the tray icon.
-- Add temporary enable/disable reminder menu in the tray icon.
->>>>- Add current lunar month name beside the common month name in the calendar view.
->>>>- Add calculate number of moons between two dates.
->>>>- Add link to windows calculator.
-- Improve search lunar month form.
->>>>- Fix controls tabs and focus in auto lock session form.
->>>>- Improve personal shabat dialog box (allowing 3% de margin hence 1 hour before or after sun times).
-- Improve export to open folder after.
+- Improve personal shabat dialog box.
+- Add tools menu.
+- Add shabat notice link (tools).
+- Add link to windows calculator (tools).
+>>>>- Add calculate number of moons between two dates (tools).
+- Add month number column in the search lunar month form.
+- Fix controls tabs and focus in auto lock session form.
+- Improve exports to open destination folder after done.
+- Fix print bitmap size if main form is resized.
 >>>>- Add option to set calendar view font size.
 - Improve UI/UX.
 - Few UI fixes.
->>>>- Update help (La veille de shabat, soit on garde sans sortir et on renforce le couple lors du shabat, soit on sort et illumine pour faire briller le couple pour shabat, mais à shabat on sort pas du temple et sauf cas d'urgence on ne travaille pas, on ne cuisine pas, on ne s'interesse pas aux informations, etc.)
+- Update help.
 
 #### 2019.11.12 - Version 3.10
 
