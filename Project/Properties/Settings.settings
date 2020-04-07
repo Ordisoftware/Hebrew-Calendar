@@ -265,5 +265,8 @@
     <Setting Name="LockSessionMediaStop" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

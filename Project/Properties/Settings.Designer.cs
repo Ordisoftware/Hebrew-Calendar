@@ -1052,5 +1052,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["LockSessionMediaStop"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.HebrewLetters.exe")]
+        public string HebrewLettersExe {
+            get {
+                return ((string)(this["HebrewLettersExe"]));
+            }
+            set {
+                this["HebrewLettersExe"] = value;
+            }
+        }
     }
 }

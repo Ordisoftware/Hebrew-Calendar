@@ -138,7 +138,9 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
+    <Compile Include="Source\Classes\HebrewLetters.cs" />
     <Compile Include="Source\Enums\MoonMonths.cs" />
+    <Compile Include="Source\Enums\OnlineWordProvider.cs" />
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\LockSessionForm.resx">
       <DependentUpon>LockSessionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\MoonMonthsForm.fr.resx">
+      <DependentUpon>MoonMonthsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\MoonMonthsForm.resx">
       <DependentUpon>MoonMonthsForm.cs</DependentUpon>

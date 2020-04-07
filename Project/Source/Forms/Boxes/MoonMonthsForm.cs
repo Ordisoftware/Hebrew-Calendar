@@ -14,6 +14,7 @@
 /// <edited> 2020-03 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.HebrewWords;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -24,13 +25,33 @@ namespace Ordisoftware.HebrewCalendar
     public MoonMonthsForm()
     {
       InitializeComponent();
-      for (int index = 1; index < MoonMonths.Names.Length; index++ )
+      Icon = MainForm.Instance.Icon;
+      EventHandler action = (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var control = ( (ContextMenuStrip)menuitem.OwnerItem.Owner ).SourceControl;
+        Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", ListView.FocusedItem.Text));
+      };
+      int index = 0;
+      foreach ( var item in OnlineWordProviders.Items )
+      {
+        if ( item.Name == "-" )
+          ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
+        else
+          ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
+      }
+      for ( index = 1; index < MoonMonths.Names.Length; index++ )
       {
         var item = ListView.Items.Add(MoonMonths.Hebrew[index]);
         item.SubItems.Add(MoonMonths.Names[index]);
         item.SubItems.Add(MoonMonths.Meanings[index]);
         item.SubItems.Add(MoonMonths.Lettriqs[index]);
       }
+    }
+
+    private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
+    {
+      Program.OpenHebrewLetters(HebrewLetters.ConvertToHebrewFont(ListView.FocusedItem.Text));
     }
 
   }

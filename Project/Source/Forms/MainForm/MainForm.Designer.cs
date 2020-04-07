@@ -1371,7 +1371,6 @@
     private System.Windows.Forms.ToolStripButton ActionSearchMonth;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
-    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
     private System.Windows.Forms.ToolStripMenuItem ActionResetWinSettings;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
@@ -1389,6 +1388,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
     private System.Windows.Forms.ToolStripMenuItem ActionCalculateDateDiff;
     private System.Windows.Forms.ToolStripMenuItem ActionViewMoonMonths;
+    internal System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
   }
 }
 
