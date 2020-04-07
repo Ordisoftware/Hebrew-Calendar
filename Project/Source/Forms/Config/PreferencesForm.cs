@@ -739,6 +739,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.ApplyCurrentLanguage();
       UpdateLanguagesButtons();
       LanguageChanged = true;
+      MoonMonths.Load();
       Close();
     }
 

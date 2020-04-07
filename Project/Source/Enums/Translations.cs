@@ -461,14 +461,6 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly string[] BabylonianHebrewMonthText =
-    {
-      "",
-      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
-      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
-      "Adar II"
-    };
-
     static public readonly Dictionary<SeasonChange, Dictionary<string, string>> SeasonEvent
       = new Dictionary<SeasonChange, Dictionary<string, string>>()
       {

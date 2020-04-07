@@ -505,6 +505,11 @@ namespace Ordisoftware.HebrewCalendar
       DisplayManager.ShowInfo(Translations.PersonalShabatNotice.GetLang());
     }
 
+    private void ActionViewMoonMonths_Click(object sender, EventArgs e)
+    {
+      new MoonMonthsForm().ShowDialog();
+    }
+
     private void ActionOpenCalculator_Click(object sender, EventArgs e)
     {
       Program.RunShell("calc.exe");

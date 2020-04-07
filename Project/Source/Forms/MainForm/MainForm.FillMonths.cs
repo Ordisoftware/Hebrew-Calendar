@@ -141,7 +141,7 @@ namespace Ordisoftware.HebrewCalendar
           /*string strMonth = row.IsNewMoon == 1
                           ? " " + Translations.BabylonianHebrewMonthText[row.LunarMonth]
                           : "";*/
-          string strMonth = " " + Translations.BabylonianHebrewMonthText[row.LunarMonth];
+          string strMonth = " " + MoonMonths.Names[row.LunarMonth];
           colorMoon = row.IsNewMoon == 1
                     ? Program.Settings.CalendarColorTorahEvent
                     : ( row.IsFullMoon == 1
