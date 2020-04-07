@@ -1247,7 +1247,7 @@
     <value>View annual celebrations</value>
   </data>
   <data name="ActionViewCelebrations.ToolTipText" xml:space="preserve">
-    <value>View annual celebrations</value>
+    <value>View annual celebrations (Ctrl+A)</value>
   </data>
   <data name="Sep3.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
@@ -1741,7 +1741,7 @@
   <data name="ActionViewMoonMonths.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAH+SURBVDhPnVNNaBNRGBwFe+zNHnpQG6RBwUu8CIp6LNSD
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAH+SURBVDhPnVNNaBNRGBwFe+zNHnpQG6RBwUu8CIp6LNSD
         1ZMnL4oo/iAYSppqQUFaBEVLpdiilwo1iqWiYNXGJrvZ0oMNJKWXSPC/bI0tESuGqONs9x2iBkMdmIXd
         N9/s9817D5VwutAy2QWa15XBjiKW6Qsw1fkfBnYE59NXGknaTLav0CAVxXrnHMjvcXJhB7M3NtP7ZpZr
         IxFBbD51lHy9m8yC+dhOjodxwCzXhqWWudDDmbezzBbJlx9c2u0omuXa8GYuvzrGuTK5pBS2NW2iO9bK
@@ -2758,9 +2758,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1014, 718</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1020, 750</value>
   </data>
@@ -3310,6 +3307,12 @@
   <data name="&gt;&gt;TimerTrayMouseMove.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator9.Name" xml:space="preserve">
+    <value>toolStripSeparator9</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn1</value>
   </data>
@@ -3417,12 +3420,6 @@
   </data>
   <data name="&gt;&gt;ReportTableAdapter.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter, Ordisoftware.HebrewCalendar, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator9.Name" xml:space="preserve">
-    <value>toolStripSeparator9</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

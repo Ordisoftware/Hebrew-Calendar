@@ -141,6 +141,7 @@
       this.TimerReminder = new System.Windows.Forms.Timer(this.components);
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
+      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
       this.CalendarMonth = new Calendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -160,7 +161,6 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
-      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1066,6 +1066,12 @@
       this.TimerTrayMouseMove.Interval = 10;
       this.TimerTrayMouseMove.Tick += new System.EventHandler(this.TimerTrayMouseMove_Tick);
       // 
+      // toolStripSeparator9
+      // 
+      this.toolStripSeparator9.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.toolStripSeparator9.Name = "toolStripSeparator9";
+      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      // 
       // CalendarMonth
       // 
       this.CalendarMonth.AllowEditingEvents = false;
@@ -1218,12 +1224,6 @@
       // ReportTableAdapter
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
-      // 
-      // toolStripSeparator9
-      // 
-      this.toolStripSeparator9.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.toolStripSeparator9.Name = "toolStripSeparator9";
-      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
       // 
       // MainForm
       // 
