@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private const string CSVSeparator = ",";
 
-    private void GenerateCSV()
+    private StringBuilder GenerateCSV()
     {
       IsGenerating = true;
       UpdateButtons();
@@ -54,40 +54,40 @@ namespace Ordisoftware.HebrewCalendar
         foreach ( CSVFieldType v in Enum.GetValues(typeof(CSVFieldType)) )
           headerTxt += v.ToString() + CSVSeparator;
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
-        var content = new StringBuilder();
-        content.AppendLine(headerTxt);
+        var result = new StringBuilder();
+        result.AppendLine(headerTxt);
         int progress = 0;
         int count = DataSet.LunisolarDays.Count;
-        if ( count == 0 ) return;
+        if ( count == 0 ) return null;
         var lastyear = SQLiteUtility.GetDate(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
         foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         {
           var dayDate = SQLiteUtility.GetDate(day.Date);
-          if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReport.GetLang()) ) return;
+          if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReport.GetLang()) ) return null;
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-          content.Append(day.Date + CSVSeparator);
-          content.Append(day.IsNewMoon + CSVSeparator);
-          content.Append(day.IsFullMoon + CSVSeparator);
-          content.Append(day.LunarMonth + CSVSeparator);
-          content.Append(day.LunarDay + CSVSeparator);
-          content.Append(day.Sunrise + CSVSeparator);
-          content.Append(day.Sunset + CSVSeparator);
-          content.Append(day.Moonrise + CSVSeparator);
-          content.Append(day.Moonset + CSVSeparator);
+          result.Append(day.Date + CSVSeparator);
+          result.Append(day.IsNewMoon + CSVSeparator);
+          result.Append(day.IsFullMoon + CSVSeparator);
+          result.Append(day.LunarMonth + CSVSeparator);
+          result.Append(day.LunarDay + CSVSeparator);
+          result.Append(day.Sunrise + CSVSeparator);
+          result.Append(day.Sunset + CSVSeparator);
+          result.Append(day.Moonrise + CSVSeparator);
+          result.Append(day.Moonset + CSVSeparator);
           string strPhase = Translations.MoonPhase.GetLang((MoonPhaseType)day.MoonPhase);
-          content.Append(strPhase + CSVSeparator);
+          result.Append(strPhase + CSVSeparator);
           string strSeason = Translations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
-          content.Append(strSeason + CSVSeparator);
+          result.Append(strSeason + CSVSeparator);
           string strEvent = Translations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
-          content.AppendLine(strEvent);
+          result.AppendLine(strEvent);
         }
-        if ( SaveCSVDialog.ShowDialog() == DialogResult.OK )
-          File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
+        return result;
       }
       catch ( Exception except )
       {
         except.Manage();
+        return null;
       }
       finally
       {

@@ -626,8 +626,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionSaveReport_Click(object sender, EventArgs e)
     {
-      if ( SaveFileDialog.ShowDialog() == DialogResult.OK )
-        File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
+      if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
+      File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
       Program.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
 
@@ -638,8 +638,11 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionExportCSV_Click(object sender, EventArgs e)
     {
-      GenerateCSV();
-      Program.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
+      var content = GenerateCSV();
+      if ( content == null ) return;
+      if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
+      File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
+      Program.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
     }
 
     /// <summary>
