@@ -118,6 +118,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Improve search lunar month form.
 >>>>- Fix controls tabs and focus in auto lock session form.
 >>>>- Improve personal shabat dialog box (allowing 3% de margin hence 1 hour before or after sun times).
+- Improve export to open folder after.
 >>>>- Add option to set calendar view font size.
 - Improve UI/UX.
 - Few UI fixes.

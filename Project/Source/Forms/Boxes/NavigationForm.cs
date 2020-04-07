@@ -11,11 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 using System.Linq;
 using System.Globalization;
 using System.Windows.Forms;
@@ -77,7 +75,7 @@ namespace Ordisoftware.HebrewCalendar
             LabelTorahNext.Tag = null;
           }
           var image = MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
-          PictureMoon.Image = ResizeImage(image, 100, 100);
+          PictureMoon.Image = Program.ResizeImage(image, 100, 100);
           if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           {
             LabelMoonrise.Top = 125;
@@ -170,34 +168,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( LabelTorahNext.Tag == null ) return;
       MainForm.Instance.GoToDate((DateTime)LabelTorahNext.Tag);
-    }
-
-    /// <summary>
-    /// Resize an image.
-    /// </summary>
-    /// <param name="image">The image.</param>
-    /// <param name="width">The width.</param>
-    /// <param name="height">The height.</param>
-    /// <returns>The image resized.</returns>
-    private Bitmap ResizeImage(Image image, int width, int height)
-    {
-      var destRect = new Rectangle(0, 0, width, height);
-      var destImage = new Bitmap(width, height);
-      destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-      using ( var graphics = Graphics.FromImage(destImage) )
-      {
-        graphics.CompositingMode = CompositingMode.SourceCopy;
-        graphics.CompositingQuality = CompositingQuality.HighQuality;
-        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        graphics.SmoothingMode = SmoothingMode.HighQuality;
-        graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-        using ( var wrapMode = new ImageAttributes() )
-        {
-          wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-          graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-        }
-      }
-      return destImage;
     }
 
   }
