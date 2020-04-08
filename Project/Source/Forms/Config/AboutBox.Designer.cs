@@ -302,7 +302,6 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "AboutBox";
-      this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.AboutBox_Load);
       this.Shown += new System.EventHandler(this.AboutBox_Shown);
       this.PanelBottom.ResumeLayout(false);
