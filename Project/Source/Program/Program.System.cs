@@ -21,7 +21,6 @@ using System.Drawing.Imaging;
 using System.Net;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using Ordisoftware.HebrewWords;
 
 namespace Ordisoftware.HebrewCalendar
 {

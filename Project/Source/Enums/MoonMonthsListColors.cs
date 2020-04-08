@@ -17,16 +17,11 @@ using System;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  /// <summary>
-  /// View mode enum.
-  /// </summary>
   public enum MoonMonthsListColors
   {
-
     System,
     Pastel,
     Flashy
-
   }
 
 }
