@@ -138,6 +138,12 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
+    <Compile Include="Source\Forms\Boxes\ShowTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\ShowTextForm.Designer.cs">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Classes\EnumHelper.cs" />
     <Compile Include="Source\Classes\HebrewLetters.cs" />
     <Compile Include="Source\Enums\MoonMonths.cs" />
@@ -350,6 +356,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dependencies\Calendar.NET\TodayButton.resx">
       <DependentUpon>TodayButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\ShowTextForm.fr.resx">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\ShowTextForm.resx">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsForm.fr.resx">
       <DependentUpon>CelebrationsForm.cs</DependentUpon>
