@@ -192,7 +192,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( Program.Settings.FirstLaunch )
       {
         Program.Settings.FirstLaunch = false;
-        DisplayManager.ShowAdvert(Translations.OmerMoon.GetLang());
+        ShowTextForm.RunShabatNotice();
       }
       if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
         ActionGetGPS_LinkClicked(null, null);
@@ -422,9 +422,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      string str = Translations.PersonalShabatNotice.GetLang() + Environment.NewLine + Environment.NewLine +
-                   Translations.AskToGenerateShabat.GetLang();
-      if ( !DisplayManager.QueryYesNo(str) ) return;
+      ShowTextForm.RunShabatNotice();
+      if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateShabat.GetLang()) ) return;
       DateTime date = DateTime.Today;
       var formDate = new SelectDayForm();
       formDate.Text = Translations.SelectBirthday.GetLang();

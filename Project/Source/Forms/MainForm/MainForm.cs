@@ -511,7 +511,12 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionShowShabatNotice_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowInfo(Translations.PersonalShabatNotice.GetLang());
+      ShowTextForm.RunShabatNotice();
+    }
+
+    private void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
+    {
+      ShowTextForm.RunCelebrationsNotice();
     }
 
     private void ActionViewMoonMonths_Click(object sender, EventArgs e)
@@ -880,6 +885,7 @@ namespace Ordisoftware.HebrewCalendar
         TimerMutex = false;
       }
     }
+
   }
 
 }

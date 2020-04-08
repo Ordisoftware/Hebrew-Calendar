@@ -1768,6 +1768,28 @@
   <data name="ActionViewMoonMonths.Text" xml:space="preserve">
     <value>Lunar months</value>
   </data>
+  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 6</value>
+  </data>
+  <data name="ActionShowCelebrationsNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAADYSURBVDhPYxh84Mle5/77a+w1oFw4AImB5KBc3ODpAddv
+        D2bZZkO5cPBgrm02SA7KxQ5u5ZrJPN7l8vlel039mTRjVqgwA4gNEgPJgdRAhVHBtWxT4Zu+Jq9vZ1v8
+        uxlk8vNWtGkFVIrhVqRpBUgMLAdUA1ILlUKAuxHm4kDJ/zB8I8i4GyrFAGIjy4HUQqUQ4K4vmgF+SAYA
+        2chyILVQKQTAMMAXyQAgG1lu1AAcBtzyUGG/6WPSedPX+NQNH5MtN72NzaBSDCA2WAwoB1IDUguVGnDA
+        wAAAvw/bWOy/LRYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionShowCelebrationsNotice.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionShowCelebrationsNotice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 22</value>
+  </data>
+  <data name="ActionShowCelebrationsNotice.Text" xml:space="preserve">
+    <value>Celebrations notice</value>
+  </data>
   <data name="ActionShowShabatNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -2481,13 +2503,13 @@
 </value>
   </data>
   <data name="MenuShowHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuShowHide.Text" xml:space="preserve">
     <value>Restore</value>
   </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>160, 6</value>
   </data>
   <data name="MenuNavigate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2535,7 +2557,7 @@
 </value>
   </data>
   <data name="MenuNavigate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuNavigate.Text" xml:space="preserve">
     <value>Navigate</value>
@@ -2576,13 +2598,13 @@
 </value>
   </data>
   <data name="MenuCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuCelebrations.Text" xml:space="preserve">
     <value>Celebrations</value>
   </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>160, 6</value>
   </data>
   <data name="MenuResetReminder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2600,7 +2622,7 @@
 </value>
   </data>
   <data name="MenuResetReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuResetReminder.Text" xml:space="preserve">
     <value>Reset reminder</value>
@@ -2625,7 +2647,7 @@
 </value>
   </data>
   <data name="MenuEnableReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuEnableReminder.Text" xml:space="preserve">
     <value>Enable reminder</value>
@@ -2648,18 +2670,18 @@
 </value>
   </data>
   <data name="MenuDisableReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuDisableReminder.Text" xml:space="preserve">
     <value>Disable reminder</value>
   </data>
   <data name="SeparatorTrayMenuView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>160, 6</value>
   </data>
   <data name="MenuMoonMonths.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAH+SURBVDhPnVNNaBNRGBwFe+zNHnpQG6RBwUu8CIp6LNSD
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAH+SURBVDhPnVNNaBNRGBwFe+zNHnpQG6RBwUu8CIp6LNSD
         1ZMnL4oo/iAYSppqQUFaBEVLpdiilwo1iqWiYNXGJrvZ0oMNJKWXSPC/bI0tESuGqONs9x2iBkMdmIXd
         N9/s9817D5VwutAy2QWa15XBjiKW6Qsw1fkfBnYE59NXGknaTLav0CAVxXrnHMjvcXJhB7M3NtP7ZpZr
         IxFBbD51lHy9m8yC+dhOjodxwCzXhqWWudDDmbezzBbJlx9c2u0omuXa8GYuvzrGuTK5pBS2NW2iO9bK
@@ -2672,7 +2694,7 @@
 </value>
   </data>
   <data name="MenuMoonMonths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuMoonMonths.Text" xml:space="preserve">
     <value>Lunar months</value>
@@ -2691,7 +2713,7 @@
 </value>
   </data>
   <data name="MenuPreferences.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuPreferences.Text" xml:space="preserve">
     <value>Preferences</value>
@@ -2711,13 +2733,13 @@
 </value>
   </data>
   <data name="MenuAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuAbout.Text" xml:space="preserve">
     <value>About</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>160, 6</value>
   </data>
   <data name="MenuExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2738,13 +2760,13 @@
 </value>
   </data>
   <data name="MenuExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="MenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 270</value>
+    <value>164, 248</value>
   </data>
   <data name="&gt;&gt;MenuTray.Name" xml:space="preserve">
     <value>MenuTray</value>
@@ -3172,6 +3194,18 @@
   <data name="&gt;&gt;ActionViewMoonMonths.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator13.Name" xml:space="preserve">
+    <value>toolStripSeparator13</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowCelebrationsNotice.Name" xml:space="preserve">
+    <value>ActionShowCelebrationsNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionShowCelebrationsNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionShowShabatNotice.Name" xml:space="preserve">
     <value>ActionShowShabatNotice</value>
   </data>
@@ -3376,12 +3410,6 @@
   <data name="&gt;&gt;MenuCelebrations.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MenuMoonMonths.Name" xml:space="preserve">
-    <value>MenuMoonMonths</value>
-  </data>
-  <data name="&gt;&gt;MenuMoonMonths.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">
     <value>toolStripSeparator7</value>
   </data>
@@ -3411,6 +3439,12 @@
   </data>
   <data name="&gt;&gt;SeparatorTrayMenuView.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuMoonMonths.Name" xml:space="preserve">
+    <value>MenuMoonMonths</value>
+  </data>
+  <data name="&gt;&gt;MenuMoonMonths.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuPreferences.Name" xml:space="preserve">
     <value>MenuPreferences</value>
