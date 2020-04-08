@@ -43,6 +43,7 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLine = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMonths = new System.Windows.Forms.Panel();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
@@ -94,6 +95,7 @@
       // 
       this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionSearchOnline,
+            this.toolStripSeparator1,
             this.ActionOpenHebrewLetters,
             this.MenuSeparator2,
             this.ActionCopyFontChars,
@@ -141,6 +143,11 @@
       resources.ApplyResources(this.PanelMonths, "PanelMonths");
       this.PanelMonths.Name = "PanelMonths";
       // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
       // MoonMonthsForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -178,5 +185,6 @@
     private System.Windows.Forms.LinkLabel ActionSwapColors;
     private System.Windows.Forms.LinkLabel ActionEditFiles;
     private System.Windows.Forms.LinkLabel ActionReloadFiles;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
   }
 }
