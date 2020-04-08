@@ -61,7 +61,6 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionEditFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      Close();
       Program.RunShell(Program.AppDocumentsFolderPath + "MoonMonthsMeaningsEN.txt");
       Program.RunShell(Program.AppDocumentsFolderPath + "MoonMonthsMeaningsFR.txt");
       Program.RunShell(Program.AppDocumentsFolderPath + "MoonMonthsLettriqsEN.txt");
