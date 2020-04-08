@@ -22,12 +22,12 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void RunCelebrationsNotice()
     {
-      Run(MainForm.Instance.ActionShowCelebrationsNotice.Text, Translations.CelebrationsNotice.GetLang(), 500, 325);
+      Run(MainForm.Instance.ActionShowCelebrationsNotice.Text, Translations.CelebrationsNotice.GetLang(), 500, 350);
     }
 
     static public void RunShabatNotice()
     {
-      Run(MainForm.Instance.ActionShowShabatNotice.Text, Translations.PersonalShabatNotice.GetLang(), 625, 500);
+      Run(MainForm.Instance.ActionShowShabatNotice.Text, Translations.PersonalShabatNotice.GetLang(), 650, 510);
     }
 
     static public void Run(string title, string str, int width, int height)
