@@ -141,6 +141,18 @@
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;ActionReloadFiles.Name" xml:space="preserve">
+    <value>ActionReloadFiles</value>
+  </data>
+  <data name="&gt;&gt;ActionReloadFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionReloadFiles.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionReloadFiles.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;ActionEditFiles.Name" xml:space="preserve">
     <value>ActionEditFiles</value>
   </data>
@@ -151,7 +163,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionEditFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -179,6 +191,39 @@
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="ActionSwapColors.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionSwapColors.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ActionSwapColors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSwapColors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 14</value>
+  </data>
+  <data name="ActionSwapColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="ActionSwapColors.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="ActionSwapColors.Text" xml:space="preserve">
+    <value>Swap colors</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapColors.Name" xml:space="preserve">
+    <value>ActionSwapColors</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapColors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapColors.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapColors.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -209,6 +254,72 @@
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="ActionReloadFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionReloadFiles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ActionReloadFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionReloadFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 14</value>
+  </data>
+  <data name="ActionReloadFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 13</value>
+  </data>
+  <data name="ActionReloadFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="ActionReloadFiles.Text" xml:space="preserve">
+    <value>Reload definitions files</value>
+  </data>
+  <data name="&gt;&gt;ActionReloadFiles.Name" xml:space="preserve">
+    <value>ActionReloadFiles</value>
+  </data>
+  <data name="&gt;&gt;ActionReloadFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionReloadFiles.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionReloadFiles.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionEditFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionEditFiles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ActionEditFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionEditFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 14</value>
+  </data>
+  <data name="ActionEditFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 13</value>
+  </data>
+  <data name="ActionEditFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="ActionEditFiles.Text" xml:space="preserve">
+    <value>Edit definitions files</value>
+  </data>
+  <data name="&gt;&gt;ActionEditFiles.Name" xml:space="preserve">
+    <value>ActionEditFiles</value>
+  </data>
+  <data name="&gt;&gt;ActionEditFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionEditFiles.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionEditFiles.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="ContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -355,72 +466,6 @@
   <data name="&gt;&gt;PanelMonths.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ActionEditFiles.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ActionEditFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="ActionEditFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionEditFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 14</value>
-  </data>
-  <data name="ActionEditFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 13</value>
-  </data>
-  <data name="ActionEditFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="ActionEditFiles.Text" xml:space="preserve">
-    <value>Edit definitions files</value>
-  </data>
-  <data name="&gt;&gt;ActionEditFiles.Name" xml:space="preserve">
-    <value>ActionEditFiles</value>
-  </data>
-  <data name="&gt;&gt;ActionEditFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionEditFiles.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionEditFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ActionSwapColors.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ActionSwapColors.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="ActionSwapColors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSwapColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 14</value>
-  </data>
-  <data name="ActionSwapColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
-  </data>
-  <data name="ActionSwapColors.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="ActionSwapColors.Text" xml:space="preserve">
-    <value>Swap colors</value>
-  </data>
-  <data name="&gt;&gt;ActionSwapColors.Name" xml:space="preserve">
-    <value>ActionSwapColors</value>
-  </data>
-  <data name="&gt;&gt;ActionSwapColors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSwapColors.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionSwapColors.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -431,7 +476,7 @@
     <value>894, 545</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Moon months</value>

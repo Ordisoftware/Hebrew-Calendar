@@ -27,122 +27,34 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      ActionEditFiles.Left = ActionSwapColors.Left + ActionSwapColors.Width + 10;
       EventHandler action = (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        //var control1 = ( (ContextMenuStrip)menuitem.OwnerItem.Owner );
-        //var control = control1.SourceControl;
         Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", MoonMonths.Unicode[(int)LastControl.Tag]));
       };
       int index = 0;
       foreach ( var item in OnlineWordProviders.Items )
-      {
         if ( item.Name == "-" )
           ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
         else
           ActionSearchOnline.DropDownItems.Insert(index++, item.CreateMenuItem(action));
-      }
       CreateControls();
     }
 
-    private void CreateControls()
+    private void MoonMonthsForm_Load(object sender, EventArgs e)
     {
-      PanelMonths.Controls.Clear();
-      MoonMonths.Load();
-      bool usecolors = Program.Settings.MoonMonthsFormUseColors;
-      int x = 10;
-      int dx1 = 80;
-      int dx2 = 150;
-      int dy1 = 4;
-      int dy2 = 4;
-      int dy3 = 22;
-      int dyline = 45;
-      int xmax = 0;
-      int y = 10;
-      int countColor = 0;
-      var colors = new Color[] { Color.Yellow, Color.Fuchsia, Color.Lime, Color.White };
-      var colorText1 = Color.Red;
-      var colorText2 = Color.Cyan;
-      var colorActiveLink = usecolors ? Color.Gainsboro : Color.MediumBlue;
-      var colorLink = SystemColors.ControlText;
-      if ( usecolors )
-        PanelMonths.BackColor = Color.Black;
-      else
-        PanelMonths.BackColor = SystemColors.Control;
-      for ( int index = 1; index < MoonMonths.Names.Length; index++ )
-      {
-        countColor++;
-        var label1 = new LinkLabel();
-        label1.Location = new Point(x, y);
-        label1.AutoSize = true;
-        label1.Font = new Font("Hebrew", 14f);
-        label1.LinkBehavior = LinkBehavior.NeverUnderline;
-        label1.ActiveLinkColor = colorActiveLink;
-        label1.LinkColor = usecolors ? colors[(int)Math.Truncate(countColor / 4f)] : colorLink;
-        label1.Text = HebrewLetters.ConvertToHebrewFont(MoonMonths.Unicode[index]);
-        var label2 = new LinkLabel();
-        label2.Location = new Point(x + dx1, y + dy1);
-        label2.AutoSize = true;
-        label2.Font = new Font("Microsoft Sans Serif", 10f);
-        label2.LinkBehavior = LinkBehavior.NeverUnderline;
-        label2.ActiveLinkColor = colorActiveLink;
-        label2.LinkColor = usecolors ? colors[(int)Math.Truncate(countColor / 4f)] : colorLink;
-        label2.Text = MoonMonths.Names[index];
-        var label3 = new LinkLabel();
-        label3.Location = new Point(x + dx2, y + dy2);
-        label3.AutoSize = true;
-        label3.Font = new Font("Microsoft Sans Serif", 10f);
-        label3.LinkBehavior = LinkBehavior.NeverUnderline;
-        label3.ActiveLinkColor = colorActiveLink;
-        label3.LinkColor = usecolors ? colors[(int)Math.Truncate(countColor / 4f)] : colorLink;
-        label3.Text = MoonMonths.Meanings[index];
-        var label4 = new LinkLabel();
-        label4.Location = new Point(x + dx2, y + dy3);
-        label4.AutoSize = true;
-        label4.Font = new Font("Microsoft Sans Serif", 10f);
-        label4.LinkBehavior = LinkBehavior.NeverUnderline;
-        label4.ActiveLinkColor = colorActiveLink;
-        label4.LinkColor = usecolors ? colors[(int)Math.Truncate(countColor / 4f)] : colorLink;
-        label4.Text = MoonMonths.Lettriqs[index];
-        PanelMonths.Controls.Add(label1);
-        PanelMonths.Controls.Add(label2);
-        PanelMonths.Controls.Add(label3);
-        PanelMonths.Controls.Add(label4);
-        label1.LinkClicked += Label_LinkClicked;
-        label2.LinkClicked += Label_LinkClicked;
-        label3.LinkClicked += Label_LinkClicked;
-        label4.LinkClicked += Label_LinkClicked;
-        label1.ContextMenuStrip = ContextMenuStrip;
-        label2.ContextMenuStrip = ContextMenuStrip;
-        label3.ContextMenuStrip = ContextMenuStrip;
-        label4.ContextMenuStrip = ContextMenuStrip;
-        label1.Tag = index;
-        label2.Tag = index;
-        label3.Tag = index;
-        label4.Tag = index;
-        int dx = label3.Left + label3.Width;
-        if ( xmax < dx ) xmax = dx;
-        dx = label4.Left + label4.Width;
-        if ( xmax < dx ) xmax = dx;
-        y = y + dyline;
-      }
-      Width = xmax + 20;
-      Height = y + PanelBottom.Height + 40;
+      if ( Location.X == -1 && Location.Y == -1 )
+        this.CenterToMainForm();
     }
 
-    private Control LastControl;
-
-    private void Label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionClose_Click(object sender, EventArgs e)
     {
-      LastControl = sender as Control;
-      if ( e.Button == MouseButtons.Left )
-        ContextMenuStrip.Show(LastControl, LastControl.PointToClient(Cursor.Position));
+      Close();
     }
 
     private void ActionSwapColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      Program.Settings.MoonMonthsFormUseColors = !Program.Settings.MoonMonthsFormUseColors;
+      Program.Settings.MoonMonthsFormUseColors = Program.Settings.MoonMonthsFormUseColors.Next();
       Program.Settings.Save();
       CreateControls();
     }
@@ -154,6 +66,20 @@ namespace Ordisoftware.HebrewCalendar
       Program.RunShell(Program.AppDocumentsFolderPath + "MoonMonthsMeaningsFR.txt");
       Program.RunShell(Program.AppDocumentsFolderPath + "MoonMonthsLettriqsEN.txt");
       Program.RunShell(Program.AppDocumentsFolderPath + "MoonMonthsLettriqsFR.txt");
+    }
+
+    private void ActionReloadFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      CreateControls();
+    }
+
+    private Control LastControl;
+
+    private void Label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      LastControl = sender as Control;
+      if ( e.Button == MouseButtons.Left )
+        ContextMenuStrip.Show(LastControl, LastControl.PointToClient(Cursor.Position));
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
@@ -190,6 +116,104 @@ namespace Ordisoftware.HebrewCalendar
                  + MoonMonths.Meanings[index] + " ("
                  + MoonMonths.Lettriqs[index] + ")";
       Clipboard.SetText(str);
+    }
+
+    internal void CreateControls()
+    {
+      PanelMonths.Controls.Clear();
+      MoonMonths.Load();
+      int x = 10;
+      int dx1 = 80;
+      int dx2 = 150;
+      int dy1 = 4;
+      int dy2 = 4;
+      int dy3 = 22;
+      int dyline = 45;
+      int xmax = 0;
+      int y = 10;
+      int countMonths = 0;
+      Color[] colorsMonth = new Color[0];
+      Color colorLinkTextMeaning = SystemColors.ControlText;
+      Color colorLinkTextLettriq = SystemColors.ControlText;
+      Color colorLink;
+      Color colorActiveLink;
+      switch ( Program.Settings.MoonMonthsFormUseColors )
+      {
+        case MoonMonthsListColors.System:
+          PanelMonths.BackColor = SystemColors.Control;
+          colorLink =
+          colorActiveLink = Color.MediumBlue;
+          colorsMonth = new Color[] { SystemColors.ControlText, SystemColors.ControlText, SystemColors.ControlText, SystemColors.ControlText };
+          break;
+        case MoonMonthsListColors.Pastel:
+          PanelMonths.BackColor = Color.Black;
+          colorLink =
+          colorActiveLink = Color.Gainsboro;
+          colorLinkTextMeaning = Color.Tomato;
+          colorLinkTextLettriq = Color.LightSkyBlue;
+          colorsMonth = new Color[] { Color.FromArgb(255, 230, 80), Color.Orchid, Color.SpringGreen, Color.White };
+          break;
+        case MoonMonthsListColors.Flashy:
+          PanelMonths.BackColor = Color.Black;
+          colorLink =
+          colorActiveLink = Color.Gainsboro;
+          colorLinkTextMeaning = Color.Red;
+          colorLinkTextLettriq = Color.Cyan;
+          colorsMonth = new Color[] { Color.Yellow, Color.Fuchsia, Color.Lime, Color.White };
+          break;
+        default:
+          throw new NotImplementedException();
+      }
+      for ( int index = 1; index < MoonMonths.Names.Length; index++ )
+      {
+        Action<int, int, string, Color, Font, bool, bool> createLabel
+          = (posX, posY, text, color, font, isAlignRight, checkWidth) =>
+          {
+            var label = new LinkLabel();
+            PanelMonths.Controls.Add(label);
+            label.Location = new Point(posX, posY);
+            label.AutoSize = true;
+            label.Font = font;
+            label.Text = text;
+            label.Tag = index;
+            label.LinkBehavior = LinkBehavior.NeverUnderline;
+            label.ActiveLinkColor = colorActiveLink;
+            label.LinkColor = color;
+            label.LinkClicked += Label_LinkClicked;
+            label.ContextMenuStrip = ContextMenuStrip;
+            if ( isAlignRight )
+              label.Left = x + dx1 - 5 - label.Width;
+            if ( checkWidth )
+            {
+              int dx = label.Left + label.Width;
+              if ( xmax < dx ) xmax = dx;
+            }
+          };
+        countMonths++;
+        createLabel(x, y,
+                    HebrewLetters.ConvertToHebrewFont(MoonMonths.Unicode[index]),
+                    colorsMonth[(int)Math.Truncate(countMonths / 4f)],
+                    new Font("Hebrew", 14f),
+                    true, false);
+        createLabel(x + dx1, y + dy1,
+                    MoonMonths.Names[index],
+                    colorsMonth[(int)Math.Truncate(countMonths / 4f)],
+                    new Font("Microsoft Sans Serif", 10f),
+                    false, false);
+        createLabel(x + dx2, y + dy2,
+                    MoonMonths.Meanings[index],
+                    colorLinkTextMeaning,
+                    new Font("Microsoft Sans Serif", 10f),
+                    false, true);
+        createLabel(x + dx2, y + dy3,
+                    MoonMonths.Lettriqs[index],
+                    colorLinkTextLettriq,
+                    new Font("Microsoft Sans Serif", 10f),
+                    false, true);
+        y = y + dyline;
+      }
+      Width = xmax + 20;
+      Height = y + PanelBottom.Height + 40;
     }
 
   }

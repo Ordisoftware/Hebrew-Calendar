@@ -31,7 +31,10 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoonMonthsForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionSwapColors = new System.Windows.Forms.LinkLabel();
       this.ActionClose = new System.Windows.Forms.Button();
+      this.ActionReloadFiles = new System.Windows.Forms.LinkLabel();
+      this.ActionEditFiles = new System.Windows.Forms.LinkLabel();
       this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,8 +43,6 @@
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLine = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMonths = new System.Windows.Forms.Panel();
-      this.ActionEditFiles = new System.Windows.Forms.LinkLabel();
-      this.ActionSwapColors = new System.Windows.Forms.LinkLabel();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
@@ -50,15 +51,44 @@
       // 
       this.PanelBottom.Controls.Add(this.ActionSwapColors);
       this.PanelBottom.Controls.Add(this.ActionClose);
+      this.PanelBottom.Controls.Add(this.ActionReloadFiles);
       this.PanelBottom.Controls.Add(this.ActionEditFiles);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionSwapColors
+      // 
+      this.ActionSwapColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
+      this.ActionSwapColors.LinkColor = System.Drawing.Color.Navy;
+      this.ActionSwapColors.Name = "ActionSwapColors";
+      this.ActionSwapColors.TabStop = true;
+      this.ActionSwapColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionSwapColors_LinkClicked);
       // 
       // ActionClose
       // 
       resources.ApplyResources(this.ActionClose, "ActionClose");
       this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionClose.Name = "ActionClose";
+      this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
+      // 
+      // ActionReloadFiles
+      // 
+      this.ActionReloadFiles.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionReloadFiles, "ActionReloadFiles");
+      this.ActionReloadFiles.LinkColor = System.Drawing.Color.Navy;
+      this.ActionReloadFiles.Name = "ActionReloadFiles";
+      this.ActionReloadFiles.TabStop = true;
+      this.ActionReloadFiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionReloadFiles_LinkClicked);
+      // 
+      // ActionEditFiles
+      // 
+      this.ActionEditFiles.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
+      this.ActionEditFiles.LinkColor = System.Drawing.Color.Navy;
+      this.ActionEditFiles.Name = "ActionEditFiles";
+      this.ActionEditFiles.TabStop = true;
+      this.ActionEditFiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionEditFiles_LinkClicked);
       // 
       // ContextMenuStrip
       // 
@@ -111,24 +141,6 @@
       resources.ApplyResources(this.PanelMonths, "PanelMonths");
       this.PanelMonths.Name = "PanelMonths";
       // 
-      // ActionEditFiles
-      // 
-      this.ActionEditFiles.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
-      this.ActionEditFiles.LinkColor = System.Drawing.Color.Navy;
-      this.ActionEditFiles.Name = "ActionEditFiles";
-      this.ActionEditFiles.TabStop = true;
-      this.ActionEditFiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionEditFiles_LinkClicked);
-      // 
-      // ActionSwapColors
-      // 
-      this.ActionSwapColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
-      this.ActionSwapColors.LinkColor = System.Drawing.Color.Navy;
-      this.ActionSwapColors.Name = "ActionSwapColors";
-      this.ActionSwapColors.TabStop = true;
-      this.ActionSwapColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionSwapColors_LinkClicked);
-      // 
       // MoonMonthsForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -137,11 +149,13 @@
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.PanelMonths);
       this.Controls.Add(this.PanelBottom);
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "MoonMonthsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.MoonMonthsFormLocation;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "MoonMonthsForm";
-      this.ShowInTaskbar = false;
+      this.Load += new System.EventHandler(this.MoonMonthsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
       this.ContextMenuStrip.ResumeLayout(false);
@@ -163,5 +177,6 @@
     private System.Windows.Forms.Panel PanelMonths;
     private System.Windows.Forms.LinkLabel ActionSwapColors;
     private System.Windows.Forms.LinkLabel ActionEditFiles;
+    private System.Windows.Forms.LinkLabel ActionReloadFiles;
   }
 }

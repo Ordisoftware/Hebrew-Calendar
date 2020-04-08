@@ -138,9 +138,11 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
+    <Compile Include="Source\Classes\EnumHelper.cs" />
     <Compile Include="Source\Classes\HebrewLetters.cs" />
     <Compile Include="Source\Enums\MoonMonths.cs" />
     <Compile Include="Source\Enums\OnlineWordProvider.cs" />
+    <Compile Include="Source\Enums\MoonMonthsListColors.cs" />
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.cs">
       <SubType>Form</SubType>
     </Compile>

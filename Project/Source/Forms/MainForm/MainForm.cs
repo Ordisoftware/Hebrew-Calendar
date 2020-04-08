@@ -516,7 +516,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionViewMoonMonths_Click(object sender, EventArgs e)
     {
-      new MoonMonthsForm().ShowDialog();
+      new MoonMonthsForm().Show();
     }
 
     private void ActionOpenCalculator_Click(object sender, EventArgs e)
@@ -880,7 +880,6 @@ namespace Ordisoftware.HebrewCalendar
         TimerMutex = false;
       }
     }
-
   }
 
 }

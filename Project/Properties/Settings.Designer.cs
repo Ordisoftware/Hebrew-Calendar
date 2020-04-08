@@ -1067,13 +1067,25 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool MoonMonthsFormUseColors {
+        [global::System.Configuration.DefaultSettingValueAttribute("System")]
+        public global::Ordisoftware.HebrewCalendar.MoonMonthsListColors MoonMonthsFormUseColors {
             get {
-                return ((bool)(this["MoonMonthsFormUseColors"]));
+                return ((global::Ordisoftware.HebrewCalendar.MoonMonthsListColors)(this["MoonMonthsFormUseColors"]));
             }
             set {
                 this["MoonMonthsFormUseColors"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point MoonMonthsFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["MoonMonthsFormLocation"]));
+            }
+            set {
+                this["MoonMonthsFormLocation"] = value;
             }
         }
     }
