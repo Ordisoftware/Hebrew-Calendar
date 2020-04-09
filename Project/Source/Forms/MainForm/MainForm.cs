@@ -198,12 +198,23 @@ namespace Ordisoftware.HebrewCalendar
             var old = TopMost;
             TopMost = true;
             BringToFront();
+            Show();
             TopMost = old;
           }
           GoToDate(DateTime.Today);
         }
         else
         {
+          if ( WindowState == FormWindowState.Minimized )
+          {
+            WindowState = FormWindowState.Normal;
+            var old = TopMost;
+            TopMost = true;
+            BringToFront();
+            Show();
+            TopMost = old;
+            return;
+          }
           Program.Settings.MainFormState = WindowState;
           WindowState = FormWindowState.Minimized;
           Visible = false;
