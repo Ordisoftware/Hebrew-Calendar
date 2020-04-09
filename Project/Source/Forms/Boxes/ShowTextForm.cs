@@ -13,6 +13,7 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCalendar
@@ -22,28 +23,62 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void RunCelebrationsNotice()
     {
-      Run(MainForm.Instance.ActionShowCelebrationsNotice.Text, Translations.CelebrationsNotice.GetLang(), 500, 350);
+      var form = Create(Notices.CelebrationsTitle, Notices.CelebrationsText, 500, 350);
     }
 
     static public void RunShabatNotice()
     {
-      Run(MainForm.Instance.ActionShowShabatNotice.Text, Translations.PersonalShabatNotice.GetLang(), 650, 510);
+      Create(Notices.ShabatTitle, Notices.ShabatText, 650, 510).Show();
     }
 
-    static public void Run(string title, string str, int width, int height)
+    static public ShowTextForm Create(string title, string str, int width, int height)
     {
-      var form = new ShowTextForm();
+      ShowTextForm form = null;
+      foreach ( Form item in Application.OpenForms )
+        if ( item is ShowTextForm )
+          if ( ( (ShowTextForm)item ).Text == title )
+            form = (ShowTextForm)item;
+      if ( form == null )
+        form = new ShowTextForm();
+      else
+      {
+        if ( form.WindowState == FormWindowState.Minimized )
+          form.WindowState = FormWindowState.Normal;
+        form.BringToFront();
+      }
       form.Text = title;
       form.TextBox.Text = str;
       form.Width = width;
       form.Height = height;
-      form.ShowDialog();
+      return form;
     }
+
+    static public ShowTextForm Create(Dictionary<string, string> localizedTitle, Dictionary<string, string> localizedText, int width, int height)
+    {
+      var form = Create(localizedTitle.GetLang(), localizedText.GetLang(), width, height);
+      form.LocalizedTitle = localizedTitle;
+      form.LocalizedText = localizedText;
+      return form;
+    }
+
+    private Dictionary<string, string> LocalizedTitle;
+    private Dictionary<string, string> LocalizedText;
 
     private ShowTextForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+    }
+
+    public void RelocalizeText()
+    {
+      if ( LocalizedTitle != null ) Text = LocalizedTitle.GetLang();
+      if ( LocalizedText != null ) TextBox.Text = LocalizedText.GetLang();
+    }
+
+    private void ActionClose_Click(object sender, EventArgs e)
+    {
+      Close();
     }
 
   }

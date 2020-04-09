@@ -423,7 +423,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       ShowTextForm.RunShabatNotice();
-      if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateShabat.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Translations.AskToSetupPersonalShabat.GetLang()) ) return;
       DateTime date = DateTime.Today;
       var formDate = new SelectDayForm();
       formDate.Text = Translations.SelectBirthday.GetLang();
@@ -740,7 +740,6 @@ namespace Ordisoftware.HebrewCalendar
       Program.ApplyCurrentLanguage();
       UpdateLanguagesButtons();
       LanguageChanged = true;
-      MoonMonths.Load();
       Close();
     }
 

@@ -81,21 +81,24 @@ namespace Ordisoftware.HebrewCalendar
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
       string str = MainForm.Instance.CalendarText.Text;
+      AboutBox.Instance.Hide();
       foreach ( var f in MainForm.Instance.RemindCelebrationForms.ToList() )
-      {
         f.Close();
-      }
+      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+      AboutBox.Instance.AboutBox_Shown(null, null);
+      MainForm.Instance.CalendarText.Text = str;
       foreach ( Form form in Application.OpenForms )
+      {
         if ( form != AboutBox.Instance )
         {
           new Infralution.Localization.CultureManager().ManagedControl = form;
           ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
           ApplyResources(resources, form.Controls);
         }
-      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-      AboutBox.Instance.AboutBox_Shown(null, null);
-      MainForm.Instance.CalendarText.Text = str;
+        if ( form is ShowTextForm )
+          ( (ShowTextForm)form ).RelocalizeText();
+      }
     }
 
     static private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)

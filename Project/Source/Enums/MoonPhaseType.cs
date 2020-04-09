@@ -18,7 +18,7 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Moon phase type enum.
+  /// Moon phase enum.
   /// </summary>
   public enum MoonPhaseType
   {
