@@ -63,9 +63,10 @@ namespace Ordisoftware.HebrewCalendar
         if ( str == "2400" ) str = "0000";
         try
         {
-          return str != "----" && str != "****" && str != "...."
-            ? new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0)
-            : new Nullable<TimeSpan>();
+          if ( str != "----" && str != "****" && str != "...." )
+            return new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0);
+          else
+            return new Nullable<TimeSpan>();
         }
         catch
         {

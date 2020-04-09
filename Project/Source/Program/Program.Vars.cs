@@ -39,7 +39,7 @@ namespace Ordisoftware.HebrewCalendar
       get
       {
         string title = AboutBox.Instance.AssemblyTitle;
-        return "http://" + AboutBox.Instance.AssemblyTrademark + "/files/" + title.Replace(" ", "") + ".update";
+        return $"http://{AboutBox.Instance.AssemblyTrademark}/files/{title.Replace(" ", "")}.update";
       }
     }
 
@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewCalendar
       get
       {
         string title = AboutBox.Instance.AssemblyTitle;
-        return "https://github.com/" + AboutBox.Instance.CompanyName + "/" + title.Replace(" ", "-");
+        return $"https://github.com/{AboutBox.Instance.CompanyName}/{title.Replace(" ", "-")}";
       }
     }
 
@@ -121,7 +121,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       get
       {
-        return AppRootFolderPath + "Help" + Path.DirectorySeparatorChar + "index-" + Localizer.Language + ".htm";
+        return AppRootFolderPath + $"Help{Path.DirectorySeparatorChar}index-{Localizer.Language}.htm";
       }
     }
 

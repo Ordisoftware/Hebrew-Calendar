@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         try
         {
-          string filename = Program.AppDocumentsFolderPath + filenamepart + lang + ".txt";
+          string filename = $"{Program.AppDocumentsFolderPath}{filenamepart}{lang}.txt";
           var lines = File.ReadAllLines(filename);
           list.Add("");
           foreach ( string line in lines )

@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="date">The date.</param>
     static public string GetDate(DateTime date)
     {
-      return date.Year.ToString("0000") + "-" + date.Month.ToString("00") + "-" + date.Day.ToString("00");
+      return $"{date.Year.ToString("0000")}-{date.Month.ToString("00")}-{date.Day.ToString("00")}";
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <returns></returns>
     static public string GetDate(int year, int month, int day)
     {
-      return year.ToString("0000") + "-" + month.ToString("00") + "-" + day.ToString("00");
+      return $"{year.ToString("0000")}-{month.ToString("00")}-{day.ToString("00")}";
     }
 
     /// <summary>
@@ -61,7 +61,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <returns>An empty string if time is null</returns>
     static public string FormatTime(TimeSpan? time)
     {
-      return time.HasValue ? time.Value.Hours.ToString("00") + ":" + time.Value.Minutes.ToString("00") : "";
+      return time.HasValue ? $"{time.Value.Hours.ToString("00")}:{time.Value.Minutes.ToString("00")}" : "";
     }
 
   }
