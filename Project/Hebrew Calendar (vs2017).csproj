@@ -148,10 +148,10 @@
     <Compile Include="Source\Forms\Boxes\ShowTextForm.Designer.cs">
       <DependentUpon>ShowTextForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\EnumHelper.cs" />
-    <Compile Include="Source\Classes\HebrewLetters.cs" />
+    <Compile Include="Source\Common\EnumHelper.cs" />
+    <Compile Include="Source\Common\HebrewAlphabet.cs" />
     <Compile Include="Source\Entities\MoonMonths.cs" />
-    <Compile Include="Source\Classes\OnlineProviders.cs" />
+    <Compile Include="Source\Common\OnlineProviders.cs" />
     <Compile Include="Source\Enums\MoonMonthsListColors.cs" />
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.cs">
       <SubType>Form</SubType>
@@ -173,7 +173,7 @@
     <Compile Include="Source\Entities\DayOfWeekItem.cs" />
     <Compile Include="Source\Entities\TorahEventItem.cs" />
     <Compile Include="Source\Classes\Translations.cs" />
-    <Compile Include="Source\Classes\SQLiteUtility.cs" />
+    <Compile Include="Source\Common\SQLiteUtility.cs" />
     <Compile Include="Source\Enums\TextReportField.cs" />
     <Compile Include="Source\Enums\Ephemeris.cs" />
     <Compile Include="Source\Forms\Boxes\SearchMonthForm.cs">
@@ -258,7 +258,7 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
-    <Compile Include="Source\Classes\Localizer.cs" />
+    <Compile Include="Source\Common\Localizer.cs" />
     <Compile Include="Source\Forms\MainForm\MainForm.Generate.CSV.cs">
       <SubType>Form</SubType>
     </Compile>

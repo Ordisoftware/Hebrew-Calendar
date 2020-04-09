@@ -5,6 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.HebrewCalendar;
 
 namespace Calendar.NET

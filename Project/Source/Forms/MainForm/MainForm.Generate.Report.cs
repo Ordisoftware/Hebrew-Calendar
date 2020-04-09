@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Linq;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {

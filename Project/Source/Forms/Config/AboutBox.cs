@@ -17,6 +17,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {

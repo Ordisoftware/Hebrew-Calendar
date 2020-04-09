@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Drawing;
 using Calendar.NET;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {

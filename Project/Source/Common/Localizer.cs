@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2020 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -18,7 +18,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Get the string list translation.
+    /// Get the string translation.
     /// </summary>
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing values>langs>translations.</param>
@@ -91,6 +91,18 @@ namespace Ordisoftware.HebrewCalendar
     static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
       return values[value][Language];
+    }
+
+    /// <summary>
+    /// Get the string translation.
+    /// </summary>
+    /// <typeparam name="T">The type.</typeparam>
+    /// <param name="values">The dictionary containing langs>values>translations.</param>
+    /// <param name="value">The value to translate.</param>
+    /// <returns></returns>
+    static public string GetLang<T>(this Dictionary<string, Dictionary<T, string>> values, T value)
+    {
+      return values[Language][value];
     }
 
     /// <summary>

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2016-04 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCalendar.Properties;
@@ -47,8 +47,8 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.EditScreenBottomRight.Checked = false;
       MainForm.EditScreenCenter.Checked = true;
       MainForm.EditConfirmClosing.Checked = true;
-      MainForm.EditESCtoExit.Checked = true;
       MainForm.EditShowTips.Checked = true;
+      MainForm.EditESCtoExit.Checked = true;
       MainForm.SetView(ViewMode.Month);
       settings.Store();
     }
@@ -85,8 +85,8 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.EditScreenPosition_Click(null, null);
       MainForm.WindowState = settings.MainFormState;
       MainForm.EditConfirmClosing.Checked = settings.ConfirmClosing;
-      MainForm.EditESCtoExit.Checked = settings.ESCtoExit;
       MainForm.EditShowTips.Checked = settings.ShowTips;
+      MainForm.EditESCtoExit.Checked = settings.ESCtoExit;
     }
 
     /// <summary>
@@ -112,8 +112,8 @@ namespace Ordisoftware.HebrewCalendar
       if ( MainForm.EditScreenBottomRight.Checked ) settings.MainFormPosition = ControlLocation.BottomRight;
       if ( MainForm.EditScreenCenter.Checked ) settings.MainFormPosition = ControlLocation.Center;
       settings.ConfirmClosing = MainForm.EditConfirmClosing.Checked;
-      settings.ESCtoExit = MainForm.EditESCtoExit.Checked;
       settings.ShowTips = MainForm.EditShowTips.Checked;
+      settings.ESCtoExit = MainForm.EditESCtoExit.Checked;
       settings.Save();
     }
 

@@ -15,6 +15,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -85,7 +86,7 @@ namespace Ordisoftware.HebrewCalendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      Program.OpenHebrewLetters(HebrewLetters.ConvertToHebrewFont(MoonMonths.Unicode[index]));
+      Program.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]));
     }
 
     private void ActionCopyFontChars_Click(object sender, EventArgs e)
@@ -93,7 +94,7 @@ namespace Ordisoftware.HebrewCalendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      Clipboard.SetText(HebrewLetters.ConvertToHebrewFont(MoonMonths.Unicode[index]));
+      Clipboard.SetText(HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]));
     }
 
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
@@ -189,7 +190,7 @@ namespace Ordisoftware.HebrewCalendar
           };
         countMonths++;
         createLabel(x, y,
-                    HebrewLetters.ConvertToHebrewFont(MoonMonths.Unicode[index]),
+                    HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]),
                     colorsMonth[(int)Math.Truncate(countMonths / 4f)],
                     new Font("Hebrew", 14f),
                     true, false);

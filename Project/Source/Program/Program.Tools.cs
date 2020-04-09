@@ -15,6 +15,7 @@
 using System;
 using System.IO;
 using Ordisoftware.Core;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -37,7 +38,7 @@ namespace Ordisoftware.HebrewCalendar
           MainForm.Instance.toolStripMenuItem5.PerformClick();
         return;
       }
-      hebrew = HebrewLetters.SetFinal(hebrew, false);
+      hebrew = HebrewAlphabet.SetFinal(hebrew, false);
       RunShell(Settings.HebrewLettersExe, hebrew);
     }
     

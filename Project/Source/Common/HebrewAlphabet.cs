@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2020 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -15,14 +15,14 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
   /// Provide hebrew letters class to manage hebrew font and unicode chars
   /// from text available at www.fourmilab.ch/etexts/www/hebrew/Bible.
   /// </summary>
-  static public class HebrewLetters
+  static public class HebrewAlphabet
   {
 
     /// <summary>
@@ -222,7 +222,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate letters names.
     /// </summary>
-    static public readonly string[] HebrewNames =
+    static public readonly string[] HebrewFontNames =
     {
       "pla", "tyb", "lmyg", "tld", "ah", "vv", "]yz", "tx", "tu", "dvy", "pk",
       "dml", ",m", "]vn", "!mc", "]yi", "hp", "ydj", "pvq", ">r", "]y>", "vt",
