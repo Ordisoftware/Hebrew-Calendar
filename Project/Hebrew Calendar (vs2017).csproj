@@ -151,7 +151,7 @@
     <Compile Include="Source\Classes\EnumHelper.cs" />
     <Compile Include="Source\Classes\HebrewLetters.cs" />
     <Compile Include="Source\Entities\MoonMonths.cs" />
-    <Compile Include="Source\Entities\OnlineWordProviders.cs" />
+    <Compile Include="Source\Classes\OnlineProviders.cs" />
     <Compile Include="Source\Enums\MoonMonthsListColors.cs" />
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.cs">
       <SubType>Form</SubType>

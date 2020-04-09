@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -82,9 +82,9 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Get the string translation of an enum value.
+    /// Get the string list translation.
     /// </summary>
-    /// <typeparam name="T">The type that is an enum.</typeparam>
+    /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing values>langs>translations.</param>
     /// <param name="value">The value to translate.</param>
     /// <returns></returns>

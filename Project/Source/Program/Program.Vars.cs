@@ -144,10 +144,16 @@ namespace Ordisoftware.HebrewCalendar
       = AppDocumentsFolderPath + "MoonMonthsLettriqs%LANG%.txt";
 
     /// <summary>
-    /// Indicate filename of the online word providers.
+    /// Indicate filename of the online search word providers.
     /// </summary>
     static public readonly string OnlineWordProvidersFileName
       = AppDocumentsFolderPath + "OnlineWordProviders.txt";
+
+    /// <summary>
+    /// Indicate online search word providers.
+    /// </summary>
+    static public readonly OnlineProviders OnlineWordProviders
+      = new OnlineProviders(OnlineWordProvidersFileName);
 
   }
 

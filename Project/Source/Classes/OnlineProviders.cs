@@ -23,9 +23,9 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Online word search provider item.
+  /// Online provider item.
   /// </summary>
-  public class OnlineWordProvider
+  public class OnlineProvider
   {
     public string Name { get; set; }
     public string URL { get; set; }
@@ -39,15 +39,15 @@ namespace Ordisoftware.HebrewCalendar
   }
 
   /// <summary>
-  /// Online word search providers list.
+  /// Online providers list.
   /// </summary>
-  static public class OnlineWordProviders
+  public class OnlineProviders
   {
 
     /// <summary>
     /// Indicate items.
     /// </summary>
-    static public List<OnlineWordProvider> Items
+    public List<OnlineProvider> Items
     {
       get;
       private set;
@@ -56,23 +56,21 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Static constructor.
     /// </summary>
-    static OnlineWordProviders()
+    public OnlineProviders(string filename)
     {
-      Items = new List<OnlineWordProvider>();
+      Items = new List<OnlineProvider>();
       try
       {
-        var lines = File.ReadAllLines(Program.OnlineWordProvidersFileName);
+        var lines = File.ReadAllLines(filename);
         for ( int index = 0; index < lines.Length; index++ )
         {
           Action showError = () =>
           {
-            DisplayManager.ShowError("Error in " + Program.OnlineWordProvidersFileName + ": " + Environment.NewLine +
-                                     Environment.NewLine +
-                                     "Line n° " + index + Environment.NewLine +
-                                     Environment.NewLine +
+            DisplayManager.ShowError("Error in " + filename + ": " + Environment.NewLine + Environment.NewLine +
+                                     "Line n° " + index + Environment.NewLine + Environment.NewLine +
                                      lines[index]);
           };
-          var item = new OnlineWordProvider(); ;
+          var item = new OnlineProvider(); ;
           if ( lines[index].Trim() == "" )
             continue;
           if ( lines[index].StartsWith(";") )

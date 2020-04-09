@@ -32,7 +32,7 @@ namespace Ordisoftware.HebrewCalendar
         Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", MoonMonths.Unicode[(int)LastControl.Tag]));
       };
       int index = 0;
-      foreach ( var item in OnlineWordProviders.Items )
+      foreach ( var item in Program.OnlineWordProviders.Items )
         if ( item.Name == "-" )
           ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
         else
