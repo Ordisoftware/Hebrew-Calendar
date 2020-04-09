@@ -131,6 +131,18 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly string GPSFilename
       = AppDocumentsFolderPath + "WorldCities.csv";
 
+    /// <summary>
+    /// Indicate filename of the moon months meanings.
+    /// </summary>
+    static public readonly string MoonMonthsMeaningsFilename
+      = AppDocumentsFolderPath + "MoonMonthsMeanings%LANG%.txt";
+
+    /// <summary>
+    /// Indicate filename of the moon months lettriqs.
+    /// </summary>
+    static public readonly string MoonMonthsLettriqsFilename
+      = AppDocumentsFolderPath + "MoonMonthsLettriqs%LANG%.txt";
+
   }
 
 }

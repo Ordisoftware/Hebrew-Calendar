@@ -65,13 +65,11 @@ namespace Ordisoftware.HebrewCalendar
     {
       Meanings.Clear();
       Lettriqs.Clear();
-      string lang = Program.Settings.Language.ToUpper();
-      Action<string, List<string>> process = (filenamepart, list) =>
+      Action<string, List<string>> process = (filename, list) =>
       {
         try
         {
-          string filename = $"{Program.AppDocumentsFolderPath}{filenamepart}{lang}.txt";
-          var lines = File.ReadAllLines(filename);
+          var lines = File.ReadAllLines(filename.Replace("%LANG%", Program.Settings.Language.ToUpper()));
           list.Add("");
           foreach ( string line in lines )
           {
@@ -84,8 +82,8 @@ namespace Ordisoftware.HebrewCalendar
           ex.Manage();
         }
       };
-      process("MoonMonthsMeanings", Meanings);
-      process("MoonMonthsLettriqs", Lettriqs);
+      process(Program.MoonMonthsMeaningsFilename, Meanings);
+      process(Program.MoonMonthsLettriqsFilename, Lettriqs);
     }
 
   }
