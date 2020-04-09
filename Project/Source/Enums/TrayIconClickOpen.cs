@@ -17,10 +17,22 @@ using System;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Tray Icon click open enum.
+  /// </summary>
   public enum TrayIconClickOpen
   {
+
+    /// <summary>
+    /// Open the main form.
+    /// </summary>
     MainForm,
+
+    /// <summary>
+    /// Open the navigation form.
+    /// </summary>
     NavigationForm
+
   }
 
 }
