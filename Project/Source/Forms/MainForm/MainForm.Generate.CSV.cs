@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
 using System;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -25,22 +24,6 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private enum CSVFieldType
-    {
-      Date,
-      IsNewMoon,
-      IsFullMoon,
-      Month,
-      Day,
-      Sunrise,
-      Sunset,
-      Moonrise,
-      Moonset,
-      MoonPhase,
-      Season,
-      Event
-    }
-
     private const string CSVSeparator = ",";
 
     private StringBuilder GenerateCSV()
@@ -51,7 +34,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         string headerTxt = "";
-        foreach ( CSVFieldType v in Enum.GetValues(typeof(CSVFieldType)) )
+        foreach ( CSVReportField v in Enum.GetValues(typeof(CSVReportField)) )
           headerTxt += v.ToString() + CSVSeparator;
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
         var result = new StringBuilder();

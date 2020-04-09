@@ -138,6 +138,7 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
+    <Compile Include="Source\Enums\CSVReportField.cs" />
     <Compile Include="Source\Enums\Translations.Notices.cs" />
     <Compile Include="Source\Enums\Translations.Calendar.cs" />
     <Compile Include="Source\Forms\Boxes\ShowTextForm.cs">
@@ -172,7 +173,7 @@
     <Compile Include="Source\Items\TorahEventItem.cs" />
     <Compile Include="Source\Enums\Translations.cs" />
     <Compile Include="Source\Classes\SQLiteUtility.cs" />
-    <Compile Include="Source\Enums\ReportField.cs" />
+    <Compile Include="Source\Enums\TextReportField.cs" />
     <Compile Include="Source\Enums\EphemerisType.cs" />
     <Compile Include="Source\Forms\Boxes\SearchMonthForm.cs">
       <SubType>Form</SubType>

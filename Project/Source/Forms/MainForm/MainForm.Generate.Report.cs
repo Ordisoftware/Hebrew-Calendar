@@ -37,21 +37,21 @@ namespace Ordisoftware.HebrewCalendar
     private bool ShowWinterSummerHour = true;
     private bool ShowShabat = true;
 
-    private Dictionary<ReportField, int> CalendarFieldSize
-      = new Dictionary<ReportField, int>()
+    private Dictionary<TextReportField, int> CalendarFieldSize
+      = new Dictionary<TextReportField, int>()
       {
-        { ReportField.Date, 16 },
-        { ReportField.Month, 11 },
-        { ReportField.Sun, 23 },
-        { ReportField.Moon, 21 },
-        { ReportField.Events, 42 },
+        { TextReportField.Date, 16 },
+        { TextReportField.Month, 11 },
+        { TextReportField.Sun, 23 },
+        { TextReportField.Moon, 21 },
+        { TextReportField.Events, 42 },
       };
 
     private string GenerateReport()
     {
       var headerSep = SeparatorV;
       var headerTxt = SeparatorV;
-      foreach ( ReportField v in Enum.GetValues(typeof(ReportField)) )
+      foreach ( TextReportField v in Enum.GetValues(typeof(TextReportField)) )
       {
         string str = Translations.CalendarField.GetLang(v);
         headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
@@ -108,7 +108,7 @@ namespace Ordisoftware.HebrewCalendar
           string s1 = Translations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
           string s2 = Translations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
           strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
-          strDesc += new string(' ', CalendarFieldSize[ReportField.Events] - 2 - strDesc.Length) + ColumnSepRight;
+          strDesc += new string(' ', CalendarFieldSize[TextReportField.Events] - 2 - strDesc.Length) + ColumnSepRight;
           content.Append(ColumnSepLeft);
           content.Append(textDate);
           content.Append(ColumnSepInner);
