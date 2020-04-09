@@ -23,12 +23,12 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void RunCelebrationsNotice()
     {
-      var form = Create(Notices.CelebrationsTitle, Notices.CelebrationsText, 500, 350);
+      var form = Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 500, 350);
     }
 
     static public void RunShabatNotice()
     {
-      Create(Notices.ShabatTitle, Notices.ShabatText, 650, 510).Show();
+      Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 650, 510).Show();
     }
 
     static public ShowTextForm Create(string title, string str, int width, int height)

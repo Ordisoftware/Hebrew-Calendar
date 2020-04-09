@@ -138,7 +138,8 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
-    <Compile Include="Source\Enums\Notices.cs" />
+    <Compile Include="Source\Enums\Translations.Notices.cs" />
+    <Compile Include="Source\Enums\Translations.Calendar.cs" />
     <Compile Include="Source\Forms\Boxes\ShowTextForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -18,19 +18,20 @@ using System.Collections.Generic;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  static public class Notices
+  /// <summary>
+  /// Localization strings.
+  /// </summary>
+  static public partial class Translations
   {
 
-    static public readonly string NewLine = Environment.NewLine;
-
-    static public readonly Dictionary<string, string> ShabatTitle
+    static public readonly Dictionary<string, string> NoticeShabatTitle
       = new Dictionary<string, string>()
       {
         { "en", "Shabat notice" },
         { "fr", "Notice du shabat" }
       };
 
-    static public readonly Dictionary<string, string> ShabatText
+    static public readonly Dictionary<string, string> NoticeShabatText
       = new Dictionary<string, string>()
       {
         { "en", "The shabat is the \"day of rest\" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity." + NewLine + NewLine +
@@ -53,14 +54,14 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<string, string> CelebrationsTitle
+    static public readonly Dictionary<string, string> NoticeCelebrationsTitle
       = new Dictionary<string, string>()
       {
         { "en", "Celebrations notice" },
         { "fr", "Notice des célébrations" }
       };
 
-    static public readonly Dictionary<string, string> CelebrationsText
+    static public readonly Dictionary<string, string> NoticeCelebrationsText
       = new Dictionary<string, string>()
       {
         { "en", "The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teruah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future." + NewLine + NewLine +
