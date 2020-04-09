@@ -50,16 +50,6 @@ namespace Ordisoftware.HebrewCalendar
       ActiveControl = ActionClose;
     }
 
-    internal void AboutBox_Shown(object sender, EventArgs e)
-    {
-      Text = Translations.AboutBoxTitle.GetLang(AssemblyTitle);
-      LabelTitle.Text = AssemblyTitle;
-      LabelDescription.Text = Translations.ApplicationDescription.GetLang();
-      LabelVersion.Text = Translations.AboutBoxVersion.GetLang(AssemblyVersion);
-      LabelCopyright.Text = AssemblyCopyright;
-      LabelTrademark.Text = AssemblyTrademark;
-    }
-
     /// <summary>
     /// Event handler. Called by AboutBox for load events.
     /// </summary>
@@ -68,6 +58,16 @@ namespace Ordisoftware.HebrewCalendar
     private void AboutBox_Load(object sender, EventArgs e)
     {
       EditLicense.Rtf = Properties.Resources.MPL_2_0;
+    }
+
+    internal void AboutBox_Shown(object sender, EventArgs e)
+    {
+      Text = Translations.AboutBoxTitle.GetLang(AssemblyTitle);
+      LabelTitle.Text = AssemblyTitle;
+      LabelDescription.Text = Translations.ApplicationDescription.GetLang();
+      LabelVersion.Text = Translations.AboutBoxVersion.GetLang(AssemblyVersion);
+      LabelCopyright.Text = AssemblyCopyright;
+      LabelTrademark.Text = AssemblyTrademark;
     }
 
     /// <summary>
