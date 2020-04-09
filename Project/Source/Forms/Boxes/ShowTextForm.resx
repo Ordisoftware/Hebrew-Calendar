@@ -204,28 +204,28 @@
   <data name="&gt;&gt;TextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="Panel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="Panel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelSeparator.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 220</value>
   </data>
-  <data name="Panel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>474, 10</value>
   </data>
-  <data name="Panel.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelSeparator.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
-  <data name="&gt;&gt;Panel.Name" xml:space="preserve">
-    <value>Panel</value>
+  <data name="&gt;&gt;PanelSeparator.Name" xml:space="preserve">
+    <value>PanelSeparator</value>
   </data>
-  <data name="&gt;&gt;Panel.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelSeparator.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Panel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PanelSeparator.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;Panel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

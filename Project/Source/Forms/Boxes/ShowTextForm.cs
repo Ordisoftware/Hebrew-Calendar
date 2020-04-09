@@ -13,6 +13,7 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -21,31 +22,23 @@ namespace Ordisoftware.HebrewCalendar
   public partial class ShowTextForm : Form
   {
 
-    static public void RunShabatNotice()
+    static public ShowTextForm CreateShabatNotice()
     {
-      Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 650, 510).Show();
+      return Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 650, 520);
     }
 
-    static public void RunCelebrationsNotice()
+    static public ShowTextForm CreateCelebrationsNotice()
     {
-      Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 500, 350).Show();
+      return Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 500, 360);
     }
 
     static public ShowTextForm Create(string title, string str, int width, int height)
     {
-      ShowTextForm form = null;
-      foreach ( Form item in Application.OpenForms )
-        if ( item is ShowTextForm )
-          if ( ( (ShowTextForm)item ).Text == title )
-            form = (ShowTextForm)item;
-      if ( form == null )
-        form = new ShowTextForm();
-      else
-      {
-        if ( form.WindowState == FormWindowState.Minimized )
-          form.WindowState = FormWindowState.Normal;
-        form.BringToFront();
-      }
+      for ( int index = Application.OpenForms.Count - 1; index >= 0; index-- )
+        if ( Application.OpenForms[index] is ShowTextForm )
+          if ( Application.OpenForms[index].Text == title )
+            Application.OpenForms[index].Close();
+      var form = new ShowTextForm();
       form.Text = title;
       form.TextBox.Text = str;
       form.Width = width;

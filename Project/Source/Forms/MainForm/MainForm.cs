@@ -522,12 +522,12 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionShowShabatNotice_Click(object sender, EventArgs e)
     {
-      ShowTextForm.RunShabatNotice();
+      ShowTextForm.CreateShabatNotice().Show();
     }
 
     private void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      ShowTextForm.RunCelebrationsNotice();
+      ShowTextForm.CreateCelebrationsNotice().Show();
     }
 
     private void ActionViewMoonMonths_Click(object sender, EventArgs e)

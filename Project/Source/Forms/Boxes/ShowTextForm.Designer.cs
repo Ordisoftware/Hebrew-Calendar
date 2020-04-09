@@ -32,7 +32,7 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.TextBox = new System.Windows.Forms.TextBox();
-      this.Panel = new System.Windows.Forms.Panel();
+      this.PanelSeparator = new System.Windows.Forms.Panel();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -57,10 +57,10 @@
       this.TextBox.ReadOnly = true;
       this.TextBox.TabStop = false;
       // 
-      // Panel
+      // PanelSeparator
       // 
-      resources.ApplyResources(this.Panel, "Panel");
-      this.Panel.Name = "Panel";
+      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
+      this.PanelSeparator.Name = "PanelSeparator";
       // 
       // ShowTextForm
       // 
@@ -69,7 +69,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.TextBox);
-      this.Controls.Add(this.Panel);
+      this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.PanelBottom);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
@@ -85,6 +85,6 @@
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.TextBox TextBox;
-    private System.Windows.Forms.Panel Panel;
+    private System.Windows.Forms.Panel PanelSeparator;
   }
 }
