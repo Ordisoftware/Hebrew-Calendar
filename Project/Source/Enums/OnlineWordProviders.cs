@@ -22,6 +22,9 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Online word search provider item.
+  /// </summary>
   public class OnlineWordProvider
   {
     public string Name { get; set; }
@@ -35,15 +38,24 @@ namespace Ordisoftware.HebrewCalendar
     }
   }
 
+  /// <summary>
+  /// Online word search providers list.
+  /// </summary>
   static public class OnlineWordProviders
   {
 
+    /// <summary>
+    /// Indicate items.
+    /// </summary>
     static public List<OnlineWordProvider> Items
     {
       get;
       private set;
     }
 
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
     static OnlineWordProviders()
     {
       Items = new List<OnlineWordProvider>();
