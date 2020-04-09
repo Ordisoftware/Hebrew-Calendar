@@ -18,6 +18,9 @@ using System.Collections.Generic;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Localization strings.
+  /// </summary>
   static public class Translations
   {
 
@@ -61,8 +64,8 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> LockSessionError
       = new Dictionary<string, string>()
       {
-        { "en", "Shutdown the computer?" },
-        { "fr", "Arrêter l'ordinateur ?" }
+        { "en", "Lock session error: {0}" },
+        { "fr", "Erreur de vérouillage de la session : {0}" }
       };
 
     static public readonly Dictionary<string, string> CantExitApplicationWhileGenerating
@@ -91,13 +94,6 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "Do you want to open the download page?" },
         { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
-      };
-
-    static public readonly Dictionary<string, string> DateNotFound
-      = new Dictionary<string, string>()
-      {
-        { "en", "Date not found in the database: {0}" },
-        { "fr", "Date non trouvée dans la base de données : {0}" }
       };
 
     static public readonly Dictionary<string, string> LoadingData
@@ -135,6 +131,56 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Remplissage des mois..." }
       };
 
+    static public readonly Dictionary<string, string> RestoreWinPos
+      = new Dictionary<string, string>()
+      {
+        { "en", "This action will restore windows position." + NewLine + NewLine +
+                "Do you want to continue?" },
+        { "fr", "Cette action va restaurer la position de la fenêtre."  + NewLine + NewLine +
+                "Voulez-vous continuer ?" }
+      };
+
+    static public readonly Dictionary<string, string> ResetPreferences
+      = new Dictionary<string, string>()
+      {
+        { "en", "Preferences will be reseted to their default values." + NewLine +
+                "GPS location and shabat day will be keeped." + NewLine + NewLine +
+                "Do you want to continue?" },
+        { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine +
+                "La position GPS et le jour du shabat seront conservés." + NewLine + NewLine +
+                "Voulez-vous continuer ?" }
+      };
+
+    static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
+      = new Dictionary<bool, Dictionary<string, string>>()
+      {
+        {
+          true, new Dictionary<string, string>
+          {
+            { "en", "Hide" },
+            { "fr", "Cacher" }
+          }
+        },
+        {
+          false, new Dictionary<string, string>
+          {
+            { "en", "Restore" },
+            { "fr", "Restaurer" }
+          }
+        }
+      };
+
+    static public readonly Dictionary<string, string> HebrewLettersNotFound
+      = new Dictionary<string, string>()
+      {
+        { "en", "Hebrew Letters not found." + NewLine +
+                "Check preferences." + NewLine + NewLine +
+                "Do you want to download it?" },
+        { "fr", "Hebrew Letters n'a pas été trouvé." + NewLine +
+                "Vérifiez les préférences." + NewLine + NewLine +
+                "Voulez-vous le télécharger ?" }
+      };
+
     static public readonly Dictionary<string, string> SelectBirthday
       = new Dictionary<string, string>()
       {
@@ -142,11 +188,18 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Date de naissance" }
       };
 
+    static public readonly Dictionary<string, string> DateNotFound
+      = new Dictionary<string, string>()
+      {
+        { "en", "Date not found in the database: {0}" },
+        { "fr", "Date non trouvée dans la base de données : {0}" }
+      };
+
     static public readonly Dictionary<string, string> DiffDatesFirst
       = new Dictionary<string, string>()
       {
         { "en", "First day" },
-        { "fr", "Premièr jour" }
+        { "fr", "Premier jour" }
       };
 
     static public readonly Dictionary<string, string> DiffDatesLast
@@ -177,7 +230,7 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Nombre de jours lunaires : hors limites ({0} - {1})" }
       };
 
-    static public readonly Dictionary<string, string> BigCalendar
+    static public readonly Dictionary<string, string> AskToGenerateBigCalendar
       = new Dictionary<string, string>()
       {
         { "en", "Generate a calendar for more than {0} years" + NewLine +
@@ -188,61 +241,11 @@ namespace Ordisoftware.HebrewCalendar
                 "Voulez-vous continuer ?" }
       };
 
-    static public readonly Dictionary<string, string> RestoreWinPos
-      = new Dictionary<string, string>()
-      {
-        { "en", "This action will restore windows position." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Cette action va restaurer la position de la fenêtre."  + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
-      };
-
-    static public readonly Dictionary<string, string> ResetPreferences
-      = new Dictionary<string, string>()
-      {
-        { "en", "Preferences will be reseted to their default values." + NewLine +
-                "GPS location and shabat day will be keeped." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine +
-                "La position GPS et le jour du shabat seront conservés." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
-      };
-
-    static public readonly Dictionary<string, string> HebrewLettersNotFound
-      = new Dictionary<string, string>()
-      {
-        { "en", "Hebrew Letters not found." + NewLine +
-                "Check preferences." + NewLine + NewLine +
-                "Do you want to download it?" },
-        { "fr", "Hebrew Letters n'a pas été trouvé." + NewLine +
-                "Vérifiez les préférences." + NewLine + NewLine +
-                "Voulez-vous le télécharger ?" }
-      };
-
     static public readonly Dictionary<string, string> AskToSetupPersonalShabat
       = new Dictionary<string, string>()
       {
         { "en", "Do you want to setup the personal shabat?" },
         { "fr", "Voulez-vous configurer le shabat personnel ?" }
-      };
-
-    static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
-      = new Dictionary<bool, Dictionary<string, string>>()
-      {
-        {
-          true, new Dictionary<string, string>
-          {
-            { "en", "Hide" },
-            { "fr", "Cacher" }
-          }
-        },
-        {
-          false, new Dictionary<string, string>
-          {
-            { "en", "Restore" },
-            { "fr", "Restaurer" }
-          }
-        }
       };
 
     static public readonly Dictionary<string, string> Today
