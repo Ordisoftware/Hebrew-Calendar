@@ -172,6 +172,8 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
+      this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -768,12 +770,14 @@
             this.toolStripMenuItem6,
             this.toolStripMenuItem5,
             this.toolStripSeparator3,
+            this.toolStripMenuItem12,
             this.toolStripMenuItem3,
             this.toolStripMenuItem2,
             this.toolStripSeparator4,
             this.toolStripMenuItem1,
             this.toolStripMenuItem9,
             this.toolStripSeparator14,
+            this.toolStripMenuItem11,
             this.toolStripMenuItem10,
             this.toolStripMenuItem8,
             this.toolStripSeparator16,
@@ -1310,6 +1314,20 @@
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
       // 
+      // toolStripMenuItem11
+      // 
+      resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
+      this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+      this.toolStripMenuItem11.Tag = "https://www.hebcal.com";
+      this.toolStripMenuItem11.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripMenuItem12
+      // 
+      resources.ApplyResources(this.toolStripMenuItem12, "toolStripMenuItem12");
+      this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+      this.toolStripMenuItem12.Tag = "http://www.webexhibits.org/calendars/";
+      this.toolStripMenuItem12.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1494,6 +1512,8 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
   }
 }
 
