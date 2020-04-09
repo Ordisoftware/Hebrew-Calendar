@@ -11,35 +11,36 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2016-04 </edited>
 using System;
-using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide Program class.
+  /// Ephemeris enum.
   /// </summary>
-  static partial class Program
+  public enum Ephemeris
   {
+    /// <summary>
+    /// Moon or sun rise.
+    /// </summary>
+    Rise,
 
     /// <summary>
-    /// Process startup method.
+    /// Moon or sun set.
     /// </summary>
-    [STAThread]
-    static void Main(string[] args)
-    {
-      if ( !CheckApplicationOnlyOneInstance() ) return;
-      CheckSettingsUpgrade();
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      CheckCommandLineArguments(args);
-      UpdateLocalization();
-      SetFormsIcon();
-      InitializeUserFolders();
-      Application.Run(MainForm.Instance);
-    }
+    Set,
+
+    /// <summary>
+    /// In daylight saving time.
+    /// </summary>
+    SummerHour,
+
+    /// <summary>
+    /// Not in daylight saving time.
+    /// </summary>
+    WinterHour
 
   }
 

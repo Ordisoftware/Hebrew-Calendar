@@ -153,32 +153,32 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<EphemerisType, Dictionary<string, string>> Ephemeris
-      = new Dictionary<EphemerisType, Dictionary<string, string>>()
+    static public readonly Dictionary<Ephemeris, Dictionary<string, string>> Ephemeris
+      = new Dictionary<Ephemeris, Dictionary<string, string>>()
       {
         {
-          EphemerisType.Rise, new Dictionary<string, string>
+          HebrewCalendar.Ephemeris.Rise, new Dictionary<string, string>
           {
             { "en", "R: " },
             { "fr", "L: " }
           }
         },
         {
-          EphemerisType.Set, new Dictionary<string, string>
+          HebrewCalendar.Ephemeris.Set, new Dictionary<string, string>
           {
             { "en", "S: " },
             { "fr", "C: " }
           }
         },
         {
-          EphemerisType.SummerHour, new Dictionary<string, string>
+          HebrewCalendar.Ephemeris.SummerHour, new Dictionary<string, string>
           {
             { "en", "(S)" },
             { "fr", "(E)" }
           }
         },
         {
-          EphemerisType.WinterHour, new Dictionary<string, string>
+          HebrewCalendar.Ephemeris.WinterHour, new Dictionary<string, string>
           {
             { "en", "(W)" },
             { "fr", "(H)" }

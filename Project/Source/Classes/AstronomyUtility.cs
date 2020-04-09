@@ -21,17 +21,6 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide sun and moon rise and set structure.
-  /// </summary>
-  public struct Ephemeris
-  {
-    public TimeSpan? Sunrise;
-    public TimeSpan? Sunset;
-    public TimeSpan? Moonrise;
-    public TimeSpan? Moonset;
-  }
-
-  /// <summary>
   /// Provide astronomy utility.
   /// </summary>
   static public class AstronomyUtility
@@ -40,13 +29,13 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate the japanese calendar instance.
     /// </summary>
-    static public readonly VietnameseCalendar LunisolerCalendar 
+    static public readonly VietnameseCalendar LunisolerCalendar
       = new VietnameseCalendar();
 
     /// <summary>
     /// Indicate the SunMoon instance.
     /// </summary>
-    static public readonly SunMoon SunMoon 
+    static public readonly SunMoon SunMoon
       = new SunMoon();
 
     /// <summary>
@@ -56,7 +45,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <returns>
     /// The ephemeris.
     /// </returns>
-    static public Ephemeris GetSunMoonEphemeris(DateTime date)
+    static public SunAndMoonRiseAndSet GetSunMoonEphemeris(DateTime date)
     {
       TimeSpan? calcEphem(string str)
       {
@@ -75,14 +64,14 @@ namespace Ordisoftware.HebrewCalendar
       }
       if ( MainForm.Instance.CurrentTimeZoneInfo == null )
         throw new InvalidTimeZoneException();
-      int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours 
+      int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours
                    + ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date.AddDays(1)) ? 1 : 0 );
       var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude),
                                  (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude),
                                  timezone,
                                  1);
-      return new Ephemeris()
+      return new SunAndMoonRiseAndSet()
       {
         Sunrise = calcEphem(strEphem.Substring(10, 4)),
         Sunset = calcEphem(strEphem.Substring(15, 4)),

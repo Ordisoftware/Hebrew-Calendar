@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-03 </edited>
 using System;
-using System.Windows.Forms;
+using System.IO;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -25,22 +26,21 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// Process startup method.
+    /// Start Hebrew Letters process.
     /// </summary>
-    [STAThread]
-    static void Main(string[] args)
+    /// <param name="hebrew">The hebrew font chars of teh word.</param>
+    static public void OpenHebrewLetters(string hebrew)
     {
-      if ( !CheckApplicationOnlyOneInstance() ) return;
-      CheckSettingsUpgrade();
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      CheckCommandLineArguments(args);
-      UpdateLocalization();
-      SetFormsIcon();
-      InitializeUserFolders();
-      Application.Run(MainForm.Instance);
+      if ( !File.Exists(Settings.HebrewLettersExe) )
+      {
+        if ( DisplayManager.QueryYesNo(Translations.HebrewLettersNotFound.GetLang()) )
+          MainForm.Instance.toolStripMenuItem5.PerformClick();
+        return;
+      }
+      hebrew = HebrewLetters.SetFinal(hebrew, false);
+      RunShell(Settings.HebrewLettersExe, hebrew);
     }
-
+    
   }
 
 }

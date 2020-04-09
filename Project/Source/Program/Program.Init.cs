@@ -98,8 +98,8 @@ namespace Ordisoftware.HebrewCalendar
       var culture = new CultureInfo(lang);
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
-      string str = MainForm.Instance.CalendarText.Text;
       AboutBox.Instance.Hide();
+      string str = MainForm.Instance.CalendarText.Text;
       foreach ( var f in MainForm.Instance.RemindCelebrationForms.ToList() )
         f.Close();
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
@@ -137,9 +137,9 @@ namespace Ordisoftware.HebrewCalendar
     static private void SetFormsIcon()
     {
       MainForm.Instance.Icon = Icon.ExtractAssociatedIcon(IconFilename);
+      AboutBox.Instance.Icon = MainForm.Instance.Icon;
       NavigationForm.Instance.Icon = MainForm.Instance.Icon;
       CelebrationsForm.Instance.Icon = MainForm.Instance.Icon;
-      AboutBox.Instance.Icon = MainForm.Instance.Icon;
     }
 
     /// <summary>

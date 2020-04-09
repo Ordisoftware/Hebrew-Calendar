@@ -135,8 +135,8 @@ namespace Ordisoftware.HebrewCalendar
               item.EventColor = GetDayColor(item.Date.Day, item.Date.Month, item.Date.Year);
             CalendarMonth.AddEvent(item);
           }
-          strToolTip = Translations.Ephemeris.GetLang(EphemerisType.Rise) + row.Sunrise + Environment.NewLine
-                     + Translations.Ephemeris.GetLang(EphemerisType.Set) + row.Sunset;
+          strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Environment.NewLine
+                     + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
           Color colorMoon = Color.Black;
           /*string strMonth = row.IsNewMoon == 1
                           ? " " + Translations.BabylonianHebrewMonthText[row.LunarMonth]
@@ -150,16 +150,16 @@ namespace Ordisoftware.HebrewCalendar
           if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           {
             if ( row.Moonset != "" )
-              add(Color.Black, Translations.Ephemeris.GetLang(EphemerisType.Set) + row.Moonset);
+              add(Color.Black, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
-              add(colorMoon, Translations.Ephemeris.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
+              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
           }
           else
           {
             if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
-              add(colorMoon, Translations.Ephemeris.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
+              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
             if ( row.Moonset != "" )
-              add(Color.Black, Translations.Ephemeris.GetLang(EphemerisType.Set) + row.Moonset);
+              add(Color.Black, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
           }
           if ( row.SeasonChange != 0 )
             add(Program.Settings.CalendarColorSeason, Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange));

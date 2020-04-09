@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-03 </edited>
 using System;
-using System.IO;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -30,22 +29,6 @@ namespace Ordisoftware.HebrewCalendar
   /// </summary>
   static partial class Program
   {
-
-    /// <summary>
-    /// Start Hebrew Letters process.
-    /// </summary>
-    /// <param name="hebrew">The hebrew font chars of teh word.</param>
-    static public void OpenHebrewLetters(string hebrew)
-    {
-      if ( !File.Exists(Settings.HebrewLettersExe) )
-      {
-        if ( DisplayManager.QueryYesNo(Translations.HebrewLettersNotFound.GetLang()) )
-          MainForm.Instance.toolStripMenuItem5.PerformClick();
-        return;
-      }
-      hebrew = HebrewLetters.SetFinal(hebrew, false);
-      RunShell(Settings.HebrewLettersExe, hebrew);
-    }
 
     /// <summary>
     /// Check if an update is available online.
