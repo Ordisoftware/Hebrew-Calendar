@@ -18,9 +18,16 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide Program class.
+  /// </summary>
   static partial class Program
   {
 
+    /// <summary>
+    /// Process startup method.
+    /// </summary>
+    /// <param name="args"></param>
     [STAThread]
     static void Main(string[] args)
     {
@@ -29,7 +36,7 @@ namespace Ordisoftware.HebrewCalendar
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       CheckCommandLineArguments(args);
-      ApplyCurrentLanguage();
+      UpdateLocalization();
       SetFormsIcon();
       InitializeUserFolders();
       Application.Run(MainForm.Instance);

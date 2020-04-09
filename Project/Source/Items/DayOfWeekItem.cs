@@ -18,7 +18,7 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide day of week item.
+  /// Provide day of week item to be displayed in a control.
   /// </summary>
   public class DayOfWeekItem
   {

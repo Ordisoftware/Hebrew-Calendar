@@ -17,11 +17,27 @@ using System;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide Torah event item to be displayed in a control.
+  /// </summary>
   public class TorahEventItem
   {
+
+    /// <summary>
+    /// Indicate the text of the event.
+    /// </summary>
     public string Text { get; set; }
+
+    /// <summary>
+    /// Indicate the event enum value.
+    /// </summary>
     public TorahEvent Event { get; set; }
+
+    /// <summary>
+    /// Return a <see cref="T:System.String" /> that represents the day.
+    /// </summary>
     public override string ToString() { return Text; }
+
   }
 
 }

@@ -17,6 +17,9 @@ using System;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide reminder times.
+  /// </summary>
   public class ReminderTimes
   {
     public string timeStart;

@@ -25,9 +25,16 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide Program class.
+  /// </summary>
   static partial class Program
   {
 
+    /// <summary>
+    /// Start Hebrew Letters process.
+    /// </summary>
+    /// <param name="hebrew">The hebrew font chars of teh word.</param>
     static public void OpenHebrewLetters(string hebrew)
     {
       if ( !File.Exists(Settings.HebrewLettersExe) )
@@ -40,6 +47,10 @@ namespace Ordisoftware.HebrewCalendar
       RunShell(Settings.HebrewLettersExe, hebrew);
     }
 
+    /// <summary>
+    /// Check if an update is available online.
+    /// </summary>
+    /// <param name="auto">True if no user interaction else false</param>
     static public void CheckUpdate(bool auto)
     {
       if ( auto && !Settings.CheckUpdateAtStartup ) return;
@@ -66,6 +77,11 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    /// <summary>
+    /// Start a process
+    /// </summary>
+    /// <param name="filename">The filename.</param>
+    /// <param name="arguments">The comamnd line arguments.</param>
     static public void RunShell(string filename, string arguments = "")
     {
       using ( var process = new Process() )
@@ -82,6 +98,10 @@ namespace Ordisoftware.HebrewCalendar
         }
     }
 
+    /// <summary>
+    /// Center a form beside the main form.
+    /// </summary>
+    /// <param name="form">The form.</param>
     static public void CenterToMainForm(this Form form)
     {
       form.Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - form.Width / 2,

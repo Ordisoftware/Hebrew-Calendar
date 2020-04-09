@@ -19,6 +19,9 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide Program class.
+  /// </summary>
   static partial class Program
   {
 
