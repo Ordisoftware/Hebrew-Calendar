@@ -129,6 +129,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Add link to aish.com calendar.
 - Add month number column in the search lunar month form.
 - Fix controls tabs and focus in auto lock session form.
+- Fix default current day color.
 - Improve exports to open destination folder after done.
 - Fix print bitmap size if the main form is resized.
 - Improve UI/UX.
