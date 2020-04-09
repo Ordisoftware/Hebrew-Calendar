@@ -59,44 +59,49 @@ namespace Ordisoftware.HebrewCalendar
     static OnlineWordProviders()
     {
       Items = new List<OnlineWordProvider>();
-      var lines = File.ReadAllLines(Program.OnlineWordProvidersFileName);
-      for ( int index = 0; index < lines.Length; index++ )
+      try
       {
-        Action showError = () =>
+        var lines = File.ReadAllLines(Program.OnlineWordProvidersFileName);
+        for ( int index = 0; index < lines.Length; index++ )
         {
-          DisplayManager.ShowError("Error in " + Program.OnlineWordProvidersFileName + ": " + Environment.NewLine +
-                                   Environment.NewLine +
-                                   "Line n° " + index + Environment.NewLine +
-                                   Environment.NewLine +
-                                   lines[index]);
-        };
-        var item = new OnlineWordProvider(); ;
-        if ( lines[index].Trim() == "" )
-          continue;
-        if ( lines[index].StartsWith(";") )
-          continue;
-        if ( lines[index].StartsWith("-") )
-        {
-          item.Name = "-";
-          Items.Add(item);
-        }
-        else
-        if ( lines[index].StartsWith("Name") )
-        {
-          var parts = lines[index].Split(new string[] { " = " }, StringSplitOptions.None);
-          if ( parts.Length == 2 )
+          Action showError = () =>
           {
-            item.Name = parts[1].Trim();
-            index++;
-            if ( index >= lines.Length )
-              showError();
-            if ( lines[index].StartsWith("URL") )
+            DisplayManager.ShowError("Error in " + Program.OnlineWordProvidersFileName + ": " + Environment.NewLine +
+                                     Environment.NewLine +
+                                     "Line n° " + index + Environment.NewLine +
+                                     Environment.NewLine +
+                                     lines[index]);
+          };
+          var item = new OnlineWordProvider(); ;
+          if ( lines[index].Trim() == "" )
+            continue;
+          if ( lines[index].StartsWith(";") )
+            continue;
+          if ( lines[index].StartsWith("-") )
+          {
+            item.Name = "-";
+            Items.Add(item);
+          }
+          else
+          if ( lines[index].StartsWith("Name") )
+          {
+            var parts = lines[index].Split(new string[] { " = " }, StringSplitOptions.None);
+            if ( parts.Length == 2 )
             {
-              parts = lines[index].Split(new string[] { " = " }, StringSplitOptions.None);
-              if ( parts.Length == 2 )
+              item.Name = parts[1].Trim();
+              index++;
+              if ( index >= lines.Length )
+                showError();
+              if ( lines[index].StartsWith("URL") )
               {
-                item.URL = parts[1].Trim();
-                Items.Add(item);
+                parts = lines[index].Split(new string[] { " = " }, StringSplitOptions.None);
+                if ( parts.Length == 2 )
+                {
+                  item.URL = parts[1].Trim();
+                  Items.Add(item);
+                }
+                else
+                  showError();
               }
               else
                 showError();
@@ -107,10 +112,12 @@ namespace Ordisoftware.HebrewCalendar
           else
             showError();
         }
-        else
-          showError();
       }
-
+      catch ( Exception ex )
+      {
+        ex.Manage();
+        return;
+      }
     }
 
   }
