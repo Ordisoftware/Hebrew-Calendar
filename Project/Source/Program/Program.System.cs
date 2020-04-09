@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewCalendar
           MainForm.Instance.toolStripMenuItem5.PerformClick();
         return;
       }
-      hebrew = HebrewLetters.SetFinale(hebrew, false);
+      hebrew = HebrewLetters.SetFinal(hebrew, false);
       RunShell(Settings.HebrewLettersExe, hebrew);
     }
 

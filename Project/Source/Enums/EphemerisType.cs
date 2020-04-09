@@ -22,10 +22,26 @@ namespace Ordisoftware.HebrewCalendar
   /// </summary>
   public enum EphemerisType
   {
+    /// <summary>
+    /// Moon or sun rise.
+    /// </summary>
     Rise,
+
+    /// <summary>
+    /// Moon or sun set.
+    /// </summary>
     Set,
+
+    /// <summary>
+    /// In daylight saving time.
+    /// </summary>
     SummerHour,
+
+    /// <summary>
+    /// Not in daylight saving time.
+    /// </summary>
     WinterHour
+
   }
 
 }

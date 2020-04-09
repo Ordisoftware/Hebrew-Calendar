@@ -22,15 +22,24 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide localization.
+  /// Provide localization helper.
   /// </summary>
   static public class Localizer
   {
 
+    /// <summary>
+    /// Indicate managed languages list.
+    /// </summary>
     static public readonly string[] AvailableLanguages = { "en", "fr" };
 
+    /// <summary>
+    /// Indicate default language.
+    /// </summary>
     static public readonly string DefaultLanguage = "en";
 
+    /// <summary>
+    /// Indicate current language.
+    /// </summary>
     static public string Language
     {
       get

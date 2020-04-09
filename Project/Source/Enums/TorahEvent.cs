@@ -18,7 +18,7 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Ttorah event enum.
+  /// Torah event enum.
   /// </summary>
   public enum TorahEvent
   {

@@ -19,7 +19,8 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide hebreu letters class.
+  /// Provide hebrew letters class to manage hebrew font and unicode chars
+  /// from text available at www.fourmilab.ch/etexts/www/hebrew/Bible.
   /// </summary>
   static public class HebrewLetters
   {
@@ -34,27 +35,27 @@ namespace Ordisoftware.HebrewCalendar
     };
 
     /// <summary>
-    /// Indicate finale letters enabled keys values.
+    /// Indicate final letters disabled keys values.
     /// </summary>
-    static private readonly Dictionary<char, char> FinaleDisable = new Dictionary<char, char>()
+    static private readonly Dictionary<char, char> FinalDisable = new Dictionary<char, char>()
     {
       { '!', 'k' }, { ',', 'm' }, { ']', 'n' }, { '[', 'p' }, { '/', 'j' }
     };
 
     /// <summary>
-    /// Indicate finale letters disabled keys values.
+    /// Indicate final letters enabled keys values.
     /// </summary>
-    static private Dictionary<char, char> FinaleEnable = new Dictionary<char, char>()
+    static private Dictionary<char, char> FinalEnable = new Dictionary<char, char>()
     {
       { 'k', '!' }, { 'm', ',' }, { 'n', ']' }, { 'p', '[' }, { 'j', '/' }
     };
 
     /// <summary>
-    // Convert finale letters from www.fourmilab.ch/etexts/www/hebrew/Bible.
+    // Set final letter.
     /// </summary>
-    static public string SetFinale(string str, bool enable)
+    static public string SetFinal(string str, bool enable)
     {
-      var array = enable ? FinaleEnable : FinaleDisable;
+      var array = enable ? FinalEnable : FinalDisable;
       str = str.Trim();
       if ( str.Length == 0 ) return str;
       char c = str[0];
@@ -69,17 +70,17 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    // Convert all finale letters to non finale.
+    // Convert all final letters to non final.
     /// </summary>
-    static public string UnFinaleAll(string str)
+    static public string UnFinalAll(string str)
     {
-      foreach ( var v in FinaleDisable )
+      foreach ( var v in FinalDisable )
         str = str.Replace(v.Key, v.Value);
       return str;
     }
 
     /// <summary>
-    // Convert standard hebrew letters of a word to hebrew font key codes.
+    // Convert unicode hebrew chars to hebrew font chars.
     /// </summary>
     static public string ConvertToHebrewFont(string str)
     {
@@ -90,7 +91,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    // Convert hebrew font key codes to standard hebrew letters.
+    // Convert hebrew font chars to unicode hebrew chars.
     /// </summary>
     static public string ConvertToUnicode(string str)
     {
@@ -101,7 +102,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    // Convert letters from www.fourmilab.ch/etexts/www/hebrew/Bible to font codes.
+    // Convert unicode hebrew chars to hebrew font chars.
     /// </summary>
     static public char ConvertToKey(char c)
     {
@@ -140,6 +141,9 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    /// <summary>
+    // Convert hebrew font chars to unicode hebrew chars.
+    /// </summary>
     static public char ConvertToUnicode(char c)
     {
       switch ( c )
@@ -216,7 +220,7 @@ namespace Ordisoftware.HebrewCalendar
       };
 
     /// <summary>
-    /// Indicate hebrew letters names.
+    /// Indicate letters names.
     /// </summary>
     static public readonly string[] HebrewNames =
     {

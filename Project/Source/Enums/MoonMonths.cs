@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -20,9 +20,15 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Moon months names in hebrew unicode and latin phonetic.
+  /// </summary>
   static public class MoonMonths
   {
 
+    /// <summary>
+    /// Phonetic names.
+    /// </summary>
     static public readonly string[] Names =
     {
       "",
@@ -31,6 +37,9 @@ namespace Ordisoftware.HebrewCalendar
       "Adar II"
     };
 
+    /// <summary>
+    /// Unicode names.
+    /// </summary>
     static public readonly string[] Unicode =
     {
       "",
@@ -39,10 +48,19 @@ namespace Ordisoftware.HebrewCalendar
       "אדר ב"
     };
 
+    /// <summary>
+    /// Meanings list.
+    /// </summary>
     static public readonly List<string> Meanings = new List<string>();
 
+    /// <summary>
+    /// Lettriq list
+    /// </summary>
     static public readonly List<string> Lettriqs = new List<string>();
 
+    /// <summary>
+    /// Load lists from definitions files.
+    /// </summary>
     static public void Load()
     {
       Meanings.Clear();
