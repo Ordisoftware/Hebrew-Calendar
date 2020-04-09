@@ -1,0 +1,75 @@
+; --------------------------------------------------------------------------------------------------
+; File format for online providers items to search a hebrew word having unicode chars
+; --------------------------------------------------------------------------------------------------
+; Name = title
+; URL = web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+; Use the %WORD% tag in URL to allow the application to replace it by the word to process
+; --------------------------------------------------------------------------------------------------
+
+Name = Pealim Hebrew Verb Tables EN
+URL = https://www.pealim.com/search/?q=%WORD%
+
+Name = Sefaria Klein Dictionary EN
+URL = https://www.sefaria.org/Klein_Dictionary%2C_%WORD%_%E1%B4%B5?lang=bi
+
+Name = Dict.com FR
+URL = https://www.dict.com/hebreu-francais/%WORD%
+
+-
+
+Name = Wiktionary EN
+URL = https://en.wiktionary.org/wiki/%WORD%
+
+Name = Wiktionary FR
+URL = https://fr.wiktionary.org/w/index.php?search=%WORD%
+
+-
+
+Name = Google Translate EN
+URL = https://translate.google.com/?op=translate&sl=iw&tl=en&text=%WORD%
+
+Name = Google Translate FR
+URL = https://translate.google.com/?op=translate&sl=iw&tl=fr&text=%WORD%
+
+-
+
+Name = Bing Translate EN
+URL = https://www.bing.com/translator/?from=he&to=en&text=%WORD%
+
+Name = Bing Translate FR
+URL = https://www.bing.com/translator/?from=he&to=fr&text=%WORD%
+
+-
+
+Name = Reverso Dictionary EN
+URL = https://dictionary.reverso.net/hebrew-english/%WORD%
+
+Name = Reverso Dictionary FR
+URL = https://dictionnaire.reverso.net/hebreu-francais/%WORD%
+
+-
+
+Name = Reverso Context EN
+URL = https://context.reverso.net/translation/hebrew-english/%WORD%
+
+Name = Reverso Context FR
+URL = https://context.reverso.net/translation/hebrew-french/%WORD%
+
+-
+
+Name = Glosbe Dictionary EN
+URL = https://en.glosbe.com/he/en/%WORD%
+
+Name = Glosbe Dictionary FR
+URL = https://fr.glosbe.com/he/fr/%WORD%
+
+-
+
+Name = Google Search
+URL = https://www.google.com/search?q=hebrew+strong+%WORD%
+
+Name = Bing Search
+URL = http://www.bing.com/search?q=hebrew+strong+%WORD%
