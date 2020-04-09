@@ -102,7 +102,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <returns>
     /// The moon phase.
     /// </returns>
-    static public MoonPhaseType GetMoonPhase(int year, int month, int day)
+    static public MoonPhase GetMoonPhase(int year, int month, int day)
     {
       if ( month < 3 )
       {
@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewCalendar
       month++;
       double julian = ( ( 365.25 * year ) + ( 30.6 * month ) + day - 694039.09 ) / 29.5305882;
       int result = (int)Math.Round(( julian - (int)julian ) * 8);
-      return result > 7 ? MoonPhaseType.New : (MoonPhaseType)result;
+      return result > 7 ? MoonPhase.New : (MoonPhase)result;
     }
 
   }

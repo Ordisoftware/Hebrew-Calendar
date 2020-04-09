@@ -74,7 +74,7 @@ namespace Ordisoftware.HebrewCalendar
             LabelTorahNextDateValue.Text = "";
             LabelTorahNext.Tag = null;
           }
-          var image = MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
+          var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
           PictureMoon.Image = Program.ResizeImage(image, 100, 100);
           if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           {

@@ -145,7 +145,7 @@ namespace Ordisoftware.HebrewCalendar
         day.LunarDay = AstronomyUtility.LunisolerCalendar.GetDayOfMonth(date);
         day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
         day.MoonPhase = (int)AstronomyUtility.GetMoonPhase(date.Year, date.Month, date.Day);
-        day.IsFullMoon = Convert.ToInt32((MoonPhaseType)day.MoonPhase == MoonPhaseType.Full);
+        day.IsFullMoon = Convert.ToInt32((MoonPhase)day.MoonPhase == MoonPhase.Full);
         day.Sunrise = SQLiteUtility.FormatTime(ephemeris.Sunrise);
         day.Sunset = SQLiteUtility.FormatTime(ephemeris.Sunset);
         day.Moonrise = SQLiteUtility.FormatTime(ephemeris.Moonrise);

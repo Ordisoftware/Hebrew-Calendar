@@ -313,60 +313,60 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<MoonPhaseType, Dictionary<string, string>> MoonPhase
-      = new Dictionary<MoonPhaseType, Dictionary<string, string>>()
+    static public readonly Dictionary<MoonPhase, Dictionary<string, string>> MoonPhase
+      = new Dictionary<MoonPhase, Dictionary<string, string>>()
       {
         {
-          MoonPhaseType.New, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.New, new Dictionary<string, string>
           {
             { "en", "New moon" },
             { "fr", "Nouvelle lune" }
           }
         },
         {
-          MoonPhaseType.WaxingCrescent, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.WaxingCrescent, new Dictionary<string, string>
           {
             { "en", "Waxing crescent" },
             { "fr", "Premier croissant" }
           }
         },
         {
-          MoonPhaseType.FirstQuarter, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.FirstQuarter, new Dictionary<string, string>
           {
             { "en", "First quarter" },
             { "fr", "Premier quartier" }
           }
         },
         {
-          MoonPhaseType.WaxingGibbous, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.WaxingGibbous, new Dictionary<string, string>
           {
             { "en", "Waxing gibbous" },
             { "fr", "Gibbeuse croissante" }
           }
         },
         {
-          MoonPhaseType.Full, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.Full, new Dictionary<string, string>
           {
             { "en", "Full moon" },
             { "fr", "Pleine lune" }
           }
         },
         {
-          MoonPhaseType.WaningGibbous, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.WaningGibbous, new Dictionary<string, string>
           {
             { "en", "Waning gibbous" },
             { "fr", "Gibbeuse décroissante" }
           }
         },
         {
-          MoonPhaseType.LastQuarter, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.LastQuarter, new Dictionary<string, string>
           {
             { "en", "Last quarter" },
             { "fr", "Dernier quartier" }
           }
         },
         {
-          MoonPhaseType.WaningCrescent, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.WaningCrescent, new Dictionary<string, string>
           {
             { "en", "Waning crescent" },
             { "fr", "Dernier croissant" }

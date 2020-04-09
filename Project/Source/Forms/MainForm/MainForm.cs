@@ -810,7 +810,7 @@ namespace Ordisoftware.HebrewCalendar
             e.Value = ( (MoonRise)e.Value ).ToString();
             break;
           case 10:
-            e.Value = Translations.MoonPhase.GetLang((MoonPhaseType)e.Value);
+            e.Value = Translations.MoonPhase.GetLang((MoonPhase)e.Value);
             break;
           case 8:
             e.Value = (int)e.Value == 0 ? "" : "*";

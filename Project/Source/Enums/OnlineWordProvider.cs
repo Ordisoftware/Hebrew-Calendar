@@ -139,7 +139,6 @@ namespace Ordisoftware.HebrewWords
       item.Name = "Bing Search";
       item.URL = "http://www.bing.com/search?q=hebrew+strong+%WORD%";
       Items.Add(item);
-
     }
 
   }
