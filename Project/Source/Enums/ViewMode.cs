@@ -29,12 +29,12 @@ namespace Ordisoftware.HebrewCalendar
     Text,
 
     /// <summary>
-    /// Grid view mode to display the month calendar.
+    /// Month view mode to display the month calendar.
     /// </summary>
     Month,
 
     /// <summary>
-    /// Grid view mode to display the grid.
+    /// Grid view mode to display the database table.
     /// </summary>
     Grid
 
