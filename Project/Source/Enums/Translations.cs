@@ -24,7 +24,7 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public readonly string NewLine = Environment.NewLine;
+    static public string NewLine { get { return Environment.NewLine; } }
 
     static public readonly Dictionary<string, string> AboutBoxTitle
       = new Dictionary<string, string>()

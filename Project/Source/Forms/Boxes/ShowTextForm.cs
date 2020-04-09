@@ -21,14 +21,14 @@ namespace Ordisoftware.HebrewCalendar
   public partial class ShowTextForm : Form
   {
 
-    static public void RunCelebrationsNotice()
-    {
-      var form = Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 500, 350);
-    }
-
     static public void RunShabatNotice()
     {
       Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 650, 510).Show();
+    }
+
+    static public void RunCelebrationsNotice()
+    {
+      Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 500, 350).Show();
     }
 
     static public ShowTextForm Create(string title, string str, int width, int height)
