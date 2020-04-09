@@ -47,6 +47,7 @@ namespace Ordisoftware.HebrewCalendar
     private AboutBox()
     {
       InitializeComponent();
+      ActiveControl = ActionClose;
     }
 
     internal void AboutBox_Shown(object sender, EventArgs e)

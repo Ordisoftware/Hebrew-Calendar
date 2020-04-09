@@ -244,7 +244,7 @@
     <value>64, 13</value>
   </data>
   <data name="LabelTrademark.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>0</value>
   </data>
   <data name="LabelTrademark.Text" xml:space="preserve">
     <value>-Trademark-</value>
@@ -274,7 +274,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>0</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>
@@ -301,7 +301,7 @@
     <value>588, 204</value>
   </data>
   <data name="EditLicense.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>12</value>
   </data>
   <data name="EditLicense.Text" xml:space="preserve">
     <value />
@@ -355,7 +355,7 @@
     <value>140, 13</value>
   </data>
   <data name="linkLabel10.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>1</value>
   </data>
   <data name="linkLabel10.Text" xml:space="preserve">
     <value>www.fatcow.com/free-icons</value>
@@ -412,7 +412,7 @@
     <value>186, 13</value>
   </data>
   <data name="linkLabel11.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>2</value>
   </data>
   <data name="linkLabel11.Text" xml:space="preserve">
     <value>github.com/pasnox/oxygen-icons-png</value>
@@ -439,7 +439,7 @@
     <value>142, 13</value>
   </data>
   <data name="linkProvider3.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
+    <value>6</value>
   </data>
   <data name="linkProvider3.Text" xml:space="preserve">
     <value>github.com/jsauve/AASharp</value>
@@ -574,7 +574,7 @@
     <value>120, 13</value>
   </data>
   <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
+    <value>5</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>samik26.webgarden.cz/temata/class-sun-moonrise-set</value>
@@ -601,7 +601,7 @@
     <value>65, 13</value>
   </data>
   <data name="linkLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
+    <value>4</value>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>jivebay.com/2008/09/07/calculating-the-moon-phase</value>
@@ -679,7 +679,7 @@
     <value>196, 13</value>
   </data>
   <data name="linkLabel4.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
+    <value>3</value>
   </data>
   <data name="linkLabel4.Text" xml:space="preserve">
     <value>www.codeproject.com/Articles/100174/Calculate-and-Draw-Moon-Phase</value>
@@ -706,7 +706,7 @@
     <value>195, 13</value>
   </data>
   <data name="linkLabel5.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+    <value>7</value>
   </data>
   <data name="linkLabel5.Text" xml:space="preserve">
     <value>www.codeproject.com/Articles/378900/Calendar-NET</value>
@@ -793,7 +793,7 @@
     <value>190, 13</value>
   </data>
   <data name="linkLabel3.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+    <value>8</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>www.codeproject.com/Articles/23694/Changing-Your-Application-User-Interface-Culture-O</value>
@@ -850,7 +850,7 @@
     <value>190, 13</value>
   </data>
   <data name="linkLabel6.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+    <value>9</value>
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
     <value>www.codeproject.com/Articles/11698/A-Portable-and-Efficient-Generic-Parser-for-Flat-F</value>
@@ -877,7 +877,7 @@
     <value>190, 13</value>
   </data>
   <data name="linkLabel7.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
+    <value>10</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>www.codeproject.com/Articles/30193/Vietnamese-Lunar-Calendar-for-NET</value>
@@ -964,7 +964,7 @@
     <value>190, 13</value>
   </data>
   <data name="linkLabel8.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
+    <value>11</value>
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>www.codeproject.com/Articles/18201/Midnight-Timer-A-Way-to-Detect-When-it-is-Midnight</value>
