@@ -691,7 +691,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionRestoreCalendarColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      PanelCurrentDayColor.BackColor = Color.Red;
+      PanelCurrentDayColor.BackColor = Color.White;
       PanelTorahEventColor.BackColor = Color.DarkRed;
       PanelSeasonEventColor.BackColor = Color.DarkGreen;
       PanelMoonEventColor.BackColor = Color.DarkBlue;
