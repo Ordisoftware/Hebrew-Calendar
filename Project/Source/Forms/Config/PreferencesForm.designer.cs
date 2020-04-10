@@ -44,16 +44,16 @@
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
       this.LabelTimeZone = new System.Windows.Forms.Label();
-      this.LabelCity = new System.Windows.Forms.Label();
-      this.LabelCountry = new System.Windows.Forms.Label();
+      this.LabelGPSCity = new System.Windows.Forms.Label();
+      this.LabelGPSCountry = new System.Windows.Forms.Label();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
       this.GroupBoxTextReport = new System.Windows.Forms.GroupBox();
-      this.EditCalendarViewFontSize = new System.Windows.Forms.NumericUpDown();
+      this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelBackColor = new System.Windows.Forms.Label();
-      this.PanelTextColor = new System.Windows.Forms.Panel();
+      this.EditTextColor = new System.Windows.Forms.Panel();
       this.LabelTextColor = new System.Windows.Forms.Label();
-      this.PanelBackColor = new System.Windows.Forms.Panel();
+      this.EditTextBackground = new System.Windows.Forms.Panel();
       this.label6 = new System.Windows.Forms.Label();
       this.EditFontName = new System.Windows.Forms.ComboBox();
       this.BroupBoxShabat = new System.Windows.Forms.GroupBox();
@@ -62,15 +62,15 @@
       this.EditRemindShabatOnlyLight = new System.Windows.Forms.CheckBox();
       this.EditRemindShabatHoursBefore = new System.Windows.Forms.NumericUpDown();
       this.EditRemindShabatEveryMinutes = new System.Windows.Forms.NumericUpDown();
-      this.EditRemindShabat = new System.Windows.Forms.CheckBox();
+      this.EditReminderShabatEnabled = new System.Windows.Forms.CheckBox();
       this.GroupBoxNavigation = new System.Windows.Forms.GroupBox();
       this.ActionUseBlackAndWhiteColors = new System.Windows.Forms.LinkLabel();
       this.ActionUseDefaultColors = new System.Windows.Forms.LinkLabel();
       this.LabelTopColor = new System.Windows.Forms.Label();
       this.ActionUseSystemColors = new System.Windows.Forms.LinkLabel();
-      this.PanelTopColor = new System.Windows.Forms.Panel();
-      this.PanelBottomColor = new System.Windows.Forms.Panel();
-      this.PanelMiddleColor = new System.Windows.Forms.Panel();
+      this.EditNavigateTopColor = new System.Windows.Forms.Panel();
+      this.EditNavigateBottomColor = new System.Windows.Forms.Panel();
+      this.EditNavigateMiddleColor = new System.Windows.Forms.Panel();
       this.LabelBottomColor = new System.Windows.Forms.Label();
       this.LabelMiddleColor = new System.Windows.Forms.Label();
       this.GroupBoxTrayIcon = new System.Windows.Forms.GroupBox();
@@ -78,11 +78,11 @@
       this.EditBalloon = new System.Windows.Forms.CheckBox();
       this.SelectOpenNavigationForm = new System.Windows.Forms.RadioButton();
       this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
-      this.EditLoomingDelay = new System.Windows.Forms.NumericUpDown();
+      this.EditBalloonLoomingDelay = new System.Windows.Forms.NumericUpDown();
       this.LabelLoomingDelay = new System.Windows.Forms.Label();
       this.EditStartupHide = new System.Windows.Forms.CheckBox();
       this.GroupBoxReminder = new System.Windows.Forms.GroupBox();
-      this.EditReminderUseColors = new System.Windows.Forms.CheckBox();
+      this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationHoursBefore = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationEveryMinutes = new System.Windows.Forms.Label();
@@ -93,34 +93,34 @@
       this.label1 = new System.Windows.Forms.Label();
       this.EditEventsDay = new System.Windows.Forms.CheckedListBox();
       this.EditEvents = new System.Windows.Forms.CheckedListBox();
-      this.PanelEventColorNewMonth = new System.Windows.Forms.Panel();
-      this.PanelEventColorNext = new System.Windows.Forms.Panel();
-      this.PanelEventColorSeason = new System.Windows.Forms.Panel();
-      this.PanelEventColorShabat = new System.Windows.Forms.Panel();
-      this.PanelEventColorTorah = new System.Windows.Forms.Panel();
-      this.EditTimerInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditEventColorMonth = new System.Windows.Forms.Panel();
+      this.EditEventColorNext = new System.Windows.Forms.Panel();
+      this.EditEventColorSeason = new System.Windows.Forms.Panel();
+      this.EditEventColorShabat = new System.Windows.Forms.Panel();
+      this.EditEventColorTorah = new System.Windows.Forms.Panel();
+      this.EditReminderCelebrationsInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
-      this.EditRemindAutoLockTimeOut = new System.Windows.Forms.NumericUpDown();
+      this.EditAutoLockSessionTimeOut = new System.Windows.Forms.NumericUpDown();
       this.EditRemindCelebrationHoursBefore = new System.Windows.Forms.NumericUpDown();
-      this.EditRemindAutoLock = new System.Windows.Forms.CheckBox();
-      this.EditUseMoonDays = new System.Windows.Forms.CheckBox();
-      this.EditTimerEnabled = new System.Windows.Forms.CheckBox();
+      this.EditAutoLockSession = new System.Windows.Forms.CheckBox();
+      this.EditTorahEventsCountAsMoon = new System.Windows.Forms.CheckBox();
+      this.EditReminderCelebrationsEnabled = new System.Windows.Forms.CheckBox();
       this.EditRemindCelebrationEveryMinutes = new System.Windows.Forms.NumericUpDown();
-      this.EditShowMonthDayToolTip = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
       this.GroupBoxCalendar = new System.Windows.Forms.GroupBox();
       this.ActionRestoreCalendarColors = new System.Windows.Forms.LinkLabel();
       this.LabelColorFullMoon = new System.Windows.Forms.Label();
-      this.PanelFullMoonColor = new System.Windows.Forms.Panel();
+      this.EditCalendarColorFullMoon = new System.Windows.Forms.Panel();
       this.LabelColorMoon = new System.Windows.Forms.Label();
-      this.PanelMoonEventColor = new System.Windows.Forms.Panel();
+      this.EditCalendarColorMoon = new System.Windows.Forms.Panel();
       this.LabelColorSeason = new System.Windows.Forms.Label();
-      this.PanelSeasonEventColor = new System.Windows.Forms.Panel();
+      this.EditCalendarColorSeason = new System.Windows.Forms.Panel();
       this.LabelColorTorah = new System.Windows.Forms.Label();
-      this.PanelTorahEventColor = new System.Windows.Forms.Panel();
+      this.EditCalendarColorTorahEvent = new System.Windows.Forms.Panel();
       this.LabelColorTodayBack = new System.Windows.Forms.Label();
       this.LabelColorToday = new System.Windows.Forms.Label();
-      this.PanelCurrentDayBackColor = new System.Windows.Forms.Panel();
-      this.PanelCurrentDayColor = new System.Windows.Forms.Panel();
+      this.EditCurrentDayBackColor = new System.Windows.Forms.Panel();
+      this.EditCurrentDayForeColor = new System.Windows.Forms.Panel();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
@@ -131,17 +131,17 @@
       this.PanelButtons.SuspendLayout();
       this.GroupBoxGPS.SuspendLayout();
       this.GroupBoxTextReport.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarViewFontSize)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.BroupBoxShabat.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatHoursBefore)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatEveryMinutes)).BeginInit();
       this.GroupBoxNavigation.SuspendLayout();
       this.GroupBoxTrayIcon.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditLoomingDelay)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).BeginInit();
       this.GroupBoxReminder.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditRemindAutoLockTimeOut)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditReminderCelebrationsInterval)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoLockSessionTimeOut)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       this.GroupBoxCalendar.SuspendLayout();
@@ -234,8 +234,8 @@
       // GroupBoxGPS
       // 
       this.GroupBoxGPS.Controls.Add(this.LabelTimeZone);
-      this.GroupBoxGPS.Controls.Add(this.LabelCity);
-      this.GroupBoxGPS.Controls.Add(this.LabelCountry);
+      this.GroupBoxGPS.Controls.Add(this.LabelGPSCity);
+      this.GroupBoxGPS.Controls.Add(this.LabelGPSCountry);
       this.GroupBoxGPS.Controls.Add(this.ActionGetGPS);
       this.GroupBoxGPS.Controls.Add(this.EditGPSLatitude);
       this.GroupBoxGPS.Controls.Add(LabelGPSLatitude);
@@ -253,15 +253,15 @@
       // 
       // LabelCity
       // 
-      resources.ApplyResources(this.LabelCity, "LabelCity");
-      this.LabelCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-      this.LabelCity.Name = "LabelCity";
+      resources.ApplyResources(this.LabelGPSCity, "LabelCity");
+      this.LabelGPSCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelGPSCity.Name = "LabelCity";
       // 
       // LabelCountry
       // 
-      resources.ApplyResources(this.LabelCountry, "LabelCountry");
-      this.LabelCountry.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-      this.LabelCountry.Name = "LabelCountry";
+      resources.ApplyResources(this.LabelGPSCountry, "LabelCountry");
+      this.LabelGPSCountry.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelGPSCountry.Name = "LabelCountry";
       // 
       // ActionGetGPS
       // 
@@ -274,13 +274,13 @@
       // 
       // GroupBoxTextReport
       // 
-      this.GroupBoxTextReport.Controls.Add(this.EditCalendarViewFontSize);
+      this.GroupBoxTextReport.Controls.Add(this.EditMonthViewFontSize);
       this.GroupBoxTextReport.Controls.Add(this.EditFontSize);
       this.GroupBoxTextReport.Controls.Add(this.LabelFontName);
       this.GroupBoxTextReport.Controls.Add(this.LabelBackColor);
-      this.GroupBoxTextReport.Controls.Add(this.PanelTextColor);
+      this.GroupBoxTextReport.Controls.Add(this.EditTextColor);
       this.GroupBoxTextReport.Controls.Add(this.LabelTextColor);
-      this.GroupBoxTextReport.Controls.Add(this.PanelBackColor);
+      this.GroupBoxTextReport.Controls.Add(this.EditTextBackground);
       this.GroupBoxTextReport.Controls.Add(this.label6);
       this.GroupBoxTextReport.Controls.Add(this.EditFontName);
       this.GroupBoxTextReport.Controls.Add(this.LabelFontSize);
@@ -290,21 +290,21 @@
       // 
       // EditCalendarViewFontSize
       // 
-      this.EditCalendarViewFontSize.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditCalendarViewFontSize, "EditCalendarViewFontSize");
-      this.EditCalendarViewFontSize.Maximum = new decimal(new int[] {
+      this.EditMonthViewFontSize.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditMonthViewFontSize, "EditCalendarViewFontSize");
+      this.EditMonthViewFontSize.Maximum = new decimal(new int[] {
             20,
             0,
             0,
             0});
-      this.EditCalendarViewFontSize.Minimum = new decimal(new int[] {
+      this.EditMonthViewFontSize.Minimum = new decimal(new int[] {
             8,
             0,
             0,
             0});
-      this.EditCalendarViewFontSize.Name = "EditCalendarViewFontSize";
-      this.EditCalendarViewFontSize.ReadOnly = true;
-      this.EditCalendarViewFontSize.Value = new decimal(new int[] {
+      this.EditMonthViewFontSize.Name = "EditCalendarViewFontSize";
+      this.EditMonthViewFontSize.ReadOnly = true;
+      this.EditMonthViewFontSize.Value = new decimal(new int[] {
             10,
             0,
             0,
@@ -340,11 +340,11 @@
       // 
       // PanelTextColor
       // 
-      this.PanelTextColor.BackColor = System.Drawing.Color.Black;
-      this.PanelTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelTextColor, "PanelTextColor");
-      this.PanelTextColor.Name = "PanelTextColor";
-      this.PanelTextColor.Click += new System.EventHandler(this.PanelTextColor_Click);
+      this.EditTextColor.BackColor = System.Drawing.Color.Black;
+      this.EditTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditTextColor, "PanelTextColor");
+      this.EditTextColor.Name = "PanelTextColor";
+      this.EditTextColor.Click += new System.EventHandler(this.PanelTextColor_Click);
       // 
       // LabelTextColor
       // 
@@ -353,11 +353,11 @@
       // 
       // PanelBackColor
       // 
-      this.PanelBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-      this.PanelBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelBackColor, "PanelBackColor");
-      this.PanelBackColor.Name = "PanelBackColor";
-      this.PanelBackColor.Click += new System.EventHandler(this.PanelBackColor_Click);
+      this.EditTextBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+      this.EditTextBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditTextBackground, "PanelBackColor");
+      this.EditTextBackground.Name = "PanelBackColor";
+      this.EditTextBackground.Click += new System.EventHandler(this.PanelBackColor_Click);
       // 
       // label6
       // 
@@ -382,7 +382,7 @@
       this.BroupBoxShabat.Controls.Add(this.ActionUsePersonalShabat);
       this.BroupBoxShabat.Controls.Add(this.LabelShabatDay);
       this.BroupBoxShabat.Controls.Add(this.EditRemindShabatEveryMinutes);
-      this.BroupBoxShabat.Controls.Add(this.EditRemindShabat);
+      this.BroupBoxShabat.Controls.Add(this.EditReminderShabatEnabled);
       resources.ApplyResources(this.BroupBoxShabat, "BroupBoxShabat");
       this.BroupBoxShabat.Name = "BroupBoxShabat";
       this.BroupBoxShabat.TabStop = false;
@@ -420,12 +420,12 @@
       // 
       // EditRemindShabat
       // 
-      resources.ApplyResources(this.EditRemindShabat, "EditRemindShabat");
-      this.EditRemindShabat.Checked = true;
-      this.EditRemindShabat.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditRemindShabat.Name = "EditRemindShabat";
-      this.EditRemindShabat.UseVisualStyleBackColor = true;
-      this.EditRemindShabat.CheckedChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
+      resources.ApplyResources(this.EditReminderShabatEnabled, "EditRemindShabat");
+      this.EditReminderShabatEnabled.Checked = true;
+      this.EditReminderShabatEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditReminderShabatEnabled.Name = "EditRemindShabat";
+      this.EditReminderShabatEnabled.UseVisualStyleBackColor = true;
+      this.EditReminderShabatEnabled.CheckedChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
       // 
       // GroupBoxNavigation
       // 
@@ -433,9 +433,9 @@
       this.GroupBoxNavigation.Controls.Add(this.ActionUseDefaultColors);
       this.GroupBoxNavigation.Controls.Add(this.LabelTopColor);
       this.GroupBoxNavigation.Controls.Add(this.ActionUseSystemColors);
-      this.GroupBoxNavigation.Controls.Add(this.PanelTopColor);
-      this.GroupBoxNavigation.Controls.Add(this.PanelBottomColor);
-      this.GroupBoxNavigation.Controls.Add(this.PanelMiddleColor);
+      this.GroupBoxNavigation.Controls.Add(this.EditNavigateTopColor);
+      this.GroupBoxNavigation.Controls.Add(this.EditNavigateBottomColor);
+      this.GroupBoxNavigation.Controls.Add(this.EditNavigateMiddleColor);
       this.GroupBoxNavigation.Controls.Add(this.LabelBottomColor);
       this.GroupBoxNavigation.Controls.Add(this.LabelMiddleColor);
       resources.ApplyResources(this.GroupBoxNavigation, "GroupBoxNavigation");
@@ -476,27 +476,27 @@
       // 
       // PanelTopColor
       // 
-      this.PanelTopColor.BackColor = System.Drawing.Color.LemonChiffon;
-      this.PanelTopColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelTopColor, "PanelTopColor");
-      this.PanelTopColor.Name = "PanelTopColor";
-      this.PanelTopColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelTopColor_MouseClick);
+      this.EditNavigateTopColor.BackColor = System.Drawing.Color.LemonChiffon;
+      this.EditNavigateTopColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditNavigateTopColor, "PanelTopColor");
+      this.EditNavigateTopColor.Name = "PanelTopColor";
+      this.EditNavigateTopColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelTopColor_MouseClick);
       // 
       // PanelBottomColor
       // 
-      this.PanelBottomColor.BackColor = System.Drawing.Color.Honeydew;
-      this.PanelBottomColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelBottomColor, "PanelBottomColor");
-      this.PanelBottomColor.Name = "PanelBottomColor";
-      this.PanelBottomColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelBottomColor_MouseClick);
+      this.EditNavigateBottomColor.BackColor = System.Drawing.Color.Honeydew;
+      this.EditNavigateBottomColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditNavigateBottomColor, "PanelBottomColor");
+      this.EditNavigateBottomColor.Name = "PanelBottomColor";
+      this.EditNavigateBottomColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelBottomColor_MouseClick);
       // 
       // PanelMiddleColor
       // 
-      this.PanelMiddleColor.BackColor = System.Drawing.Color.AliceBlue;
-      this.PanelMiddleColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelMiddleColor, "PanelMiddleColor");
-      this.PanelMiddleColor.Name = "PanelMiddleColor";
-      this.PanelMiddleColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelMiddleColor_MouseClick);
+      this.EditNavigateMiddleColor.BackColor = System.Drawing.Color.AliceBlue;
+      this.EditNavigateMiddleColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditNavigateMiddleColor, "PanelMiddleColor");
+      this.EditNavigateMiddleColor.Name = "PanelMiddleColor";
+      this.EditNavigateMiddleColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelMiddleColor_MouseClick);
       // 
       // LabelBottomColor
       // 
@@ -514,7 +514,7 @@
       this.GroupBoxTrayIcon.Controls.Add(this.EditBalloon);
       this.GroupBoxTrayIcon.Controls.Add(this.SelectOpenNavigationForm);
       this.GroupBoxTrayIcon.Controls.Add(this.SelectOpenMainForm);
-      this.GroupBoxTrayIcon.Controls.Add(this.EditLoomingDelay);
+      this.GroupBoxTrayIcon.Controls.Add(this.EditBalloonLoomingDelay);
       this.GroupBoxTrayIcon.Controls.Add(this.LabelLoomingDelay);
       resources.ApplyResources(this.GroupBoxTrayIcon, "GroupBoxTrayIcon");
       this.GroupBoxTrayIcon.Name = "GroupBoxTrayIcon";
@@ -549,26 +549,26 @@
       // 
       // EditLoomingDelay
       // 
-      this.EditLoomingDelay.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditLoomingDelay, "EditLoomingDelay");
-      this.EditLoomingDelay.Increment = new decimal(new int[] {
+      this.EditBalloonLoomingDelay.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditBalloonLoomingDelay, "EditLoomingDelay");
+      this.EditBalloonLoomingDelay.Increment = new decimal(new int[] {
             250,
             0,
             0,
             0});
-      this.EditLoomingDelay.Maximum = new decimal(new int[] {
+      this.EditBalloonLoomingDelay.Maximum = new decimal(new int[] {
             5000,
             0,
             0,
             0});
-      this.EditLoomingDelay.Minimum = new decimal(new int[] {
+      this.EditBalloonLoomingDelay.Minimum = new decimal(new int[] {
             500,
             0,
             0,
             0});
-      this.EditLoomingDelay.Name = "EditLoomingDelay";
-      this.EditLoomingDelay.ReadOnly = true;
-      this.EditLoomingDelay.Value = new decimal(new int[] {
+      this.EditBalloonLoomingDelay.Name = "EditLoomingDelay";
+      this.EditBalloonLoomingDelay.ReadOnly = true;
+      this.EditBalloonLoomingDelay.Value = new decimal(new int[] {
             500,
             0,
             0,
@@ -587,7 +587,7 @@
       // 
       // GroupBoxReminder
       // 
-      this.GroupBoxReminder.Controls.Add(this.EditReminderUseColors);
+      this.GroupBoxReminder.Controls.Add(this.EditUseColors);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationHoursBefore);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationEveryMinutes);
@@ -598,18 +598,18 @@
       this.GroupBoxReminder.Controls.Add(this.label1);
       this.GroupBoxReminder.Controls.Add(this.EditEventsDay);
       this.GroupBoxReminder.Controls.Add(this.EditEvents);
-      this.GroupBoxReminder.Controls.Add(this.PanelEventColorNewMonth);
-      this.GroupBoxReminder.Controls.Add(this.PanelEventColorNext);
-      this.GroupBoxReminder.Controls.Add(this.PanelEventColorSeason);
-      this.GroupBoxReminder.Controls.Add(this.PanelEventColorShabat);
-      this.GroupBoxReminder.Controls.Add(this.PanelEventColorTorah);
-      this.GroupBoxReminder.Controls.Add(this.EditTimerInterval);
+      this.GroupBoxReminder.Controls.Add(this.EditEventColorMonth);
+      this.GroupBoxReminder.Controls.Add(this.EditEventColorNext);
+      this.GroupBoxReminder.Controls.Add(this.EditEventColorSeason);
+      this.GroupBoxReminder.Controls.Add(this.EditEventColorShabat);
+      this.GroupBoxReminder.Controls.Add(this.EditEventColorTorah);
+      this.GroupBoxReminder.Controls.Add(this.EditReminderCelebrationsInterval);
       this.GroupBoxReminder.Controls.Add(this.LabelTimerInterval);
-      this.GroupBoxReminder.Controls.Add(this.EditRemindAutoLockTimeOut);
+      this.GroupBoxReminder.Controls.Add(this.EditAutoLockSessionTimeOut);
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationHoursBefore);
-      this.GroupBoxReminder.Controls.Add(this.EditRemindAutoLock);
-      this.GroupBoxReminder.Controls.Add(this.EditUseMoonDays);
-      this.GroupBoxReminder.Controls.Add(this.EditTimerEnabled);
+      this.GroupBoxReminder.Controls.Add(this.EditAutoLockSession);
+      this.GroupBoxReminder.Controls.Add(this.EditTorahEventsCountAsMoon);
+      this.GroupBoxReminder.Controls.Add(this.EditReminderCelebrationsEnabled);
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationEveryMinutes);
       resources.ApplyResources(this.GroupBoxReminder, "GroupBoxReminder");
       this.GroupBoxReminder.Name = "GroupBoxReminder";
@@ -617,9 +617,9 @@
       // 
       // EditReminderUseColors
       // 
-      resources.ApplyResources(this.EditReminderUseColors, "EditReminderUseColors");
-      this.EditReminderUseColors.Name = "EditReminderUseColors";
-      this.EditReminderUseColors.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.EditUseColors, "EditReminderUseColors");
+      this.EditUseColors.Name = "EditReminderUseColors";
+      this.EditUseColors.UseVisualStyleBackColor = true;
       // 
       // LabelRemindAutoLockTimeOut
       // 
@@ -677,50 +677,50 @@
       // 
       // PanelEventColorNewMonth
       // 
-      this.PanelEventColorNewMonth.BackColor = System.Drawing.Color.AliceBlue;
-      this.PanelEventColorNewMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelEventColorNewMonth, "PanelEventColorNewMonth");
-      this.PanelEventColorNewMonth.Name = "PanelEventColorNewMonth";
-      this.PanelEventColorNewMonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNewMonth_MouseClick);
+      this.EditEventColorMonth.BackColor = System.Drawing.Color.AliceBlue;
+      this.EditEventColorMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditEventColorMonth, "PanelEventColorNewMonth");
+      this.EditEventColorMonth.Name = "PanelEventColorNewMonth";
+      this.EditEventColorMonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNewMonth_MouseClick);
       // 
       // PanelEventColorNext
       // 
-      this.PanelEventColorNext.BackColor = System.Drawing.Color.WhiteSmoke;
-      this.PanelEventColorNext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelEventColorNext, "PanelEventColorNext");
-      this.PanelEventColorNext.Name = "PanelEventColorNext";
-      this.PanelEventColorNext.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNext_MouseClick);
+      this.EditEventColorNext.BackColor = System.Drawing.Color.WhiteSmoke;
+      this.EditEventColorNext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditEventColorNext, "PanelEventColorNext");
+      this.EditEventColorNext.Name = "PanelEventColorNext";
+      this.EditEventColorNext.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNext_MouseClick);
       // 
       // PanelEventColorSeason
       // 
-      this.PanelEventColorSeason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
-      this.PanelEventColorSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelEventColorSeason, "PanelEventColorSeason");
-      this.PanelEventColorSeason.Name = "PanelEventColorSeason";
-      this.PanelEventColorSeason.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorSeason_MouseClick);
+      this.EditEventColorSeason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
+      this.EditEventColorSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditEventColorSeason, "PanelEventColorSeason");
+      this.EditEventColorSeason.Name = "PanelEventColorSeason";
+      this.EditEventColorSeason.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorSeason_MouseClick);
       // 
       // PanelEventColorShabat
       // 
-      this.PanelEventColorShabat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-      this.PanelEventColorShabat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelEventColorShabat, "PanelEventColorShabat");
-      this.PanelEventColorShabat.Name = "PanelEventColorShabat";
-      this.PanelEventColorShabat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorShabat_MouseClick);
+      this.EditEventColorShabat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+      this.EditEventColorShabat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditEventColorShabat, "PanelEventColorShabat");
+      this.EditEventColorShabat.Name = "PanelEventColorShabat";
+      this.EditEventColorShabat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorShabat_MouseClick);
       // 
       // PanelEventColorTorah
       // 
-      this.PanelEventColorTorah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
-      this.PanelEventColorTorah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelEventColorTorah, "PanelEventColorTorah");
-      this.PanelEventColorTorah.Name = "PanelEventColorTorah";
-      this.PanelEventColorTorah.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorTorah_MouseClick);
+      this.EditEventColorTorah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
+      this.EditEventColorTorah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditEventColorTorah, "PanelEventColorTorah");
+      this.EditEventColorTorah.Name = "PanelEventColorTorah";
+      this.EditEventColorTorah.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorTorah_MouseClick);
       // 
       // EditTimerInterval
       // 
-      this.EditTimerInterval.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditTimerInterval, "EditTimerInterval");
-      this.EditTimerInterval.Name = "EditTimerInterval";
-      this.EditTimerInterval.ReadOnly = true;
+      this.EditReminderCelebrationsInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditReminderCelebrationsInterval, "EditTimerInterval");
+      this.EditReminderCelebrationsInterval.Name = "EditTimerInterval";
+      this.EditReminderCelebrationsInterval.ReadOnly = true;
       // 
       // LabelTimerInterval
       // 
@@ -729,10 +729,10 @@
       // 
       // EditRemindAutoLockTimeOut
       // 
-      this.EditRemindAutoLockTimeOut.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditRemindAutoLockTimeOut, "EditRemindAutoLockTimeOut");
-      this.EditRemindAutoLockTimeOut.Name = "EditRemindAutoLockTimeOut";
-      this.EditRemindAutoLockTimeOut.ReadOnly = true;
+      this.EditAutoLockSessionTimeOut.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditAutoLockSessionTimeOut, "EditRemindAutoLockTimeOut");
+      this.EditAutoLockSessionTimeOut.Name = "EditRemindAutoLockTimeOut";
+      this.EditAutoLockSessionTimeOut.ReadOnly = true;
       // 
       // EditRemindCelebrationHoursBefore
       // 
@@ -743,30 +743,30 @@
       // 
       // EditRemindAutoLock
       // 
-      resources.ApplyResources(this.EditRemindAutoLock, "EditRemindAutoLock");
-      this.EditRemindAutoLock.Checked = true;
-      this.EditRemindAutoLock.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditRemindAutoLock.Name = "EditRemindAutoLock";
-      this.EditRemindAutoLock.UseVisualStyleBackColor = true;
-      this.EditRemindAutoLock.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
+      resources.ApplyResources(this.EditAutoLockSession, "EditRemindAutoLock");
+      this.EditAutoLockSession.Checked = true;
+      this.EditAutoLockSession.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditAutoLockSession.Name = "EditRemindAutoLock";
+      this.EditAutoLockSession.UseVisualStyleBackColor = true;
+      this.EditAutoLockSession.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
       // 
       // EditUseMoonDays
       // 
-      resources.ApplyResources(this.EditUseMoonDays, "EditUseMoonDays");
-      this.EditUseMoonDays.Checked = true;
-      this.EditUseMoonDays.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditUseMoonDays.Name = "EditUseMoonDays";
-      this.EditUseMoonDays.UseVisualStyleBackColor = true;
-      this.EditUseMoonDays.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
+      resources.ApplyResources(this.EditTorahEventsCountAsMoon, "EditUseMoonDays");
+      this.EditTorahEventsCountAsMoon.Checked = true;
+      this.EditTorahEventsCountAsMoon.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditTorahEventsCountAsMoon.Name = "EditUseMoonDays";
+      this.EditTorahEventsCountAsMoon.UseVisualStyleBackColor = true;
+      this.EditTorahEventsCountAsMoon.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
       // 
       // EditTimerEnabled
       // 
-      resources.ApplyResources(this.EditTimerEnabled, "EditTimerEnabled");
-      this.EditTimerEnabled.Checked = true;
-      this.EditTimerEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditTimerEnabled.Name = "EditTimerEnabled";
-      this.EditTimerEnabled.UseVisualStyleBackColor = true;
-      this.EditTimerEnabled.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
+      resources.ApplyResources(this.EditReminderCelebrationsEnabled, "EditTimerEnabled");
+      this.EditReminderCelebrationsEnabled.Checked = true;
+      this.EditReminderCelebrationsEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditReminderCelebrationsEnabled.Name = "EditTimerEnabled";
+      this.EditReminderCelebrationsEnabled.UseVisualStyleBackColor = true;
+      this.EditReminderCelebrationsEnabled.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
       // 
       // EditRemindCelebrationEveryMinutes
       // 
@@ -777,25 +777,25 @@
       // 
       // EditShowMonthDayToolTip
       // 
-      resources.ApplyResources(this.EditShowMonthDayToolTip, "EditShowMonthDayToolTip");
-      this.EditShowMonthDayToolTip.Name = "EditShowMonthDayToolTip";
-      this.EditShowMonthDayToolTip.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.EditMonthViewSunToolTips, "EditShowMonthDayToolTip");
+      this.EditMonthViewSunToolTips.Name = "EditShowMonthDayToolTip";
+      this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       // 
       // GroupBoxCalendar
       // 
       this.GroupBoxCalendar.Controls.Add(this.ActionRestoreCalendarColors);
       this.GroupBoxCalendar.Controls.Add(this.LabelColorFullMoon);
-      this.GroupBoxCalendar.Controls.Add(this.PanelFullMoonColor);
+      this.GroupBoxCalendar.Controls.Add(this.EditCalendarColorFullMoon);
       this.GroupBoxCalendar.Controls.Add(this.LabelColorMoon);
-      this.GroupBoxCalendar.Controls.Add(this.PanelMoonEventColor);
+      this.GroupBoxCalendar.Controls.Add(this.EditCalendarColorMoon);
       this.GroupBoxCalendar.Controls.Add(this.LabelColorSeason);
-      this.GroupBoxCalendar.Controls.Add(this.PanelSeasonEventColor);
+      this.GroupBoxCalendar.Controls.Add(this.EditCalendarColorSeason);
       this.GroupBoxCalendar.Controls.Add(this.LabelColorTorah);
-      this.GroupBoxCalendar.Controls.Add(this.PanelTorahEventColor);
+      this.GroupBoxCalendar.Controls.Add(this.EditCalendarColorTorahEvent);
       this.GroupBoxCalendar.Controls.Add(this.LabelColorTodayBack);
       this.GroupBoxCalendar.Controls.Add(this.LabelColorToday);
-      this.GroupBoxCalendar.Controls.Add(this.PanelCurrentDayBackColor);
-      this.GroupBoxCalendar.Controls.Add(this.PanelCurrentDayColor);
+      this.GroupBoxCalendar.Controls.Add(this.EditCurrentDayBackColor);
+      this.GroupBoxCalendar.Controls.Add(this.EditCurrentDayForeColor);
       resources.ApplyResources(this.GroupBoxCalendar, "GroupBoxCalendar");
       this.GroupBoxCalendar.Name = "GroupBoxCalendar";
       this.GroupBoxCalendar.TabStop = false;
@@ -816,11 +816,11 @@
       // 
       // PanelFullMoonColor
       // 
-      this.PanelFullMoonColor.BackColor = System.Drawing.Color.DarkGoldenrod;
-      this.PanelFullMoonColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelFullMoonColor, "PanelFullMoonColor");
-      this.PanelFullMoonColor.Name = "PanelFullMoonColor";
-      this.PanelFullMoonColor.Click += new System.EventHandler(this.PanelFullMoonColor_Click);
+      this.EditCalendarColorFullMoon.BackColor = System.Drawing.Color.DarkGoldenrod;
+      this.EditCalendarColorFullMoon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorFullMoon, "PanelFullMoonColor");
+      this.EditCalendarColorFullMoon.Name = "PanelFullMoonColor";
+      this.EditCalendarColorFullMoon.Click += new System.EventHandler(this.PanelFullMoonColor_Click);
       // 
       // LabelColorMoon
       // 
@@ -829,11 +829,11 @@
       // 
       // PanelMoonEventColor
       // 
-      this.PanelMoonEventColor.BackColor = System.Drawing.Color.DarkBlue;
-      this.PanelMoonEventColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelMoonEventColor, "PanelMoonEventColor");
-      this.PanelMoonEventColor.Name = "PanelMoonEventColor";
-      this.PanelMoonEventColor.Click += new System.EventHandler(this.PanelMoonEventColor_Click);
+      this.EditCalendarColorMoon.BackColor = System.Drawing.Color.DarkBlue;
+      this.EditCalendarColorMoon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorMoon, "PanelMoonEventColor");
+      this.EditCalendarColorMoon.Name = "PanelMoonEventColor";
+      this.EditCalendarColorMoon.Click += new System.EventHandler(this.PanelMoonEventColor_Click);
       // 
       // LabelColorSeason
       // 
@@ -842,11 +842,11 @@
       // 
       // PanelSeasonEventColor
       // 
-      this.PanelSeasonEventColor.BackColor = System.Drawing.Color.DarkGreen;
-      this.PanelSeasonEventColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelSeasonEventColor, "PanelSeasonEventColor");
-      this.PanelSeasonEventColor.Name = "PanelSeasonEventColor";
-      this.PanelSeasonEventColor.Click += new System.EventHandler(this.PanelSeasonEventColor_Click);
+      this.EditCalendarColorSeason.BackColor = System.Drawing.Color.DarkGreen;
+      this.EditCalendarColorSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorSeason, "PanelSeasonEventColor");
+      this.EditCalendarColorSeason.Name = "PanelSeasonEventColor";
+      this.EditCalendarColorSeason.Click += new System.EventHandler(this.PanelSeasonEventColor_Click);
       // 
       // LabelColorTorah
       // 
@@ -855,11 +855,11 @@
       // 
       // PanelTorahEventColor
       // 
-      this.PanelTorahEventColor.BackColor = System.Drawing.Color.DarkRed;
-      this.PanelTorahEventColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelTorahEventColor, "PanelTorahEventColor");
-      this.PanelTorahEventColor.Name = "PanelTorahEventColor";
-      this.PanelTorahEventColor.Click += new System.EventHandler(this.PanelTorahEventColor_Click);
+      this.EditCalendarColorTorahEvent.BackColor = System.Drawing.Color.DarkRed;
+      this.EditCalendarColorTorahEvent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorTorahEvent, "PanelTorahEventColor");
+      this.EditCalendarColorTorahEvent.Name = "PanelTorahEventColor";
+      this.EditCalendarColorTorahEvent.Click += new System.EventHandler(this.PanelTorahEventColor_Click);
       // 
       // LabelColorTodayBack
       // 
@@ -873,19 +873,19 @@
       // 
       // PanelCurrentDayBackColor
       // 
-      this.PanelCurrentDayBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-      this.PanelCurrentDayBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelCurrentDayBackColor, "PanelCurrentDayBackColor");
-      this.PanelCurrentDayBackColor.Name = "PanelCurrentDayBackColor";
-      this.PanelCurrentDayBackColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelCurrentDayBackColor_MouseClick);
+      this.EditCurrentDayBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+      this.EditCurrentDayBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCurrentDayBackColor, "PanelCurrentDayBackColor");
+      this.EditCurrentDayBackColor.Name = "PanelCurrentDayBackColor";
+      this.EditCurrentDayBackColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelCurrentDayBackColor_MouseClick);
       // 
       // PanelCurrentDayColor
       // 
-      this.PanelCurrentDayColor.BackColor = System.Drawing.Color.White;
-      this.PanelCurrentDayColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelCurrentDayColor, "PanelCurrentDayColor");
-      this.PanelCurrentDayColor.Name = "PanelCurrentDayColor";
-      this.PanelCurrentDayColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelCurrentDayColor_MouseClick);
+      this.EditCurrentDayForeColor.BackColor = System.Drawing.Color.White;
+      this.EditCurrentDayForeColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCurrentDayForeColor, "PanelCurrentDayColor");
+      this.EditCurrentDayForeColor.Name = "PanelCurrentDayColor";
+      this.EditCurrentDayForeColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelCurrentDayColor_MouseClick);
       // 
       // GroupBoxSystem
       // 
@@ -894,7 +894,7 @@
       this.GroupBoxSystem.Controls.Add(this.EditShowReminderInTaskBar);
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
-      this.GroupBoxSystem.Controls.Add(this.EditShowMonthDayToolTip);
+      this.GroupBoxSystem.Controls.Add(this.EditMonthViewSunToolTips);
       resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
       this.GroupBoxSystem.TabStop = false;
@@ -961,7 +961,7 @@
       this.GroupBoxGPS.PerformLayout();
       this.GroupBoxTextReport.ResumeLayout(false);
       this.GroupBoxTextReport.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarViewFontSize)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       this.BroupBoxShabat.ResumeLayout(false);
       this.BroupBoxShabat.PerformLayout();
@@ -971,11 +971,11 @@
       this.GroupBoxNavigation.PerformLayout();
       this.GroupBoxTrayIcon.ResumeLayout(false);
       this.GroupBoxTrayIcon.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditLoomingDelay)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).EndInit();
       this.GroupBoxReminder.ResumeLayout(false);
       this.GroupBoxReminder.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditTimerInterval)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditRemindAutoLockTimeOut)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditReminderCelebrationsInterval)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoLockSessionTimeOut)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).EndInit();
       this.GroupBoxCalendar.ResumeLayout(false);
@@ -1006,37 +1006,37 @@
     private System.Windows.Forms.Label LabelBottomColor;
     private System.Windows.Forms.Label LabelMiddleColor;
     private System.Windows.Forms.LinkLabel ActionUseSystemColors;
-    internal System.Windows.Forms.Panel PanelTopColor;
-    internal System.Windows.Forms.Panel PanelBottomColor;
-    internal System.Windows.Forms.Panel PanelMiddleColor;
+    internal System.Windows.Forms.Panel EditNavigateTopColor;
+    internal System.Windows.Forms.Panel EditNavigateBottomColor;
+    internal System.Windows.Forms.Panel EditNavigateMiddleColor;
     private System.Windows.Forms.LinkLabel ActionUseDefaultColors;
     private System.Windows.Forms.GroupBox GroupBoxTrayIcon;
     private System.Windows.Forms.RadioButton SelectOpenNavigationForm;
     private System.Windows.Forms.RadioButton SelectOpenMainForm;
     private System.Windows.Forms.CheckBox EditStartupHide;
     private System.Windows.Forms.GroupBox GroupBoxReminder;
-    private System.Windows.Forms.NumericUpDown EditTimerInterval;
+    private System.Windows.Forms.NumericUpDown EditReminderCelebrationsInterval;
     private System.Windows.Forms.Label LabelTimerInterval;
-    private System.Windows.Forms.CheckBox EditTimerEnabled;
+    private System.Windows.Forms.CheckBox EditReminderCelebrationsEnabled;
     private System.Windows.Forms.CheckedListBox EditEvents;
-    private System.Windows.Forms.CheckBox EditRemindShabat;
-    private System.Windows.Forms.CheckBox EditShowMonthDayToolTip;
+    private System.Windows.Forms.CheckBox EditReminderShabatEnabled;
+    private System.Windows.Forms.CheckBox EditMonthViewSunToolTips;
     private System.Windows.Forms.LinkLabel ActionUseBlackAndWhiteColors;
     private System.Windows.Forms.GroupBox GroupBoxCalendar;
     private System.Windows.Forms.Label LabelColorToday;
-    internal System.Windows.Forms.Panel PanelCurrentDayColor;
+    internal System.Windows.Forms.Panel EditCurrentDayForeColor;
     private System.Windows.Forms.NumericUpDown EditFontSize;
     private System.Windows.Forms.Label LabelBackColor;
-    internal System.Windows.Forms.Panel PanelTextColor;
+    internal System.Windows.Forms.Panel EditTextColor;
     private System.Windows.Forms.Label LabelTextColor;
-    internal System.Windows.Forms.Panel PanelBackColor;
+    internal System.Windows.Forms.Panel EditTextBackground;
     private System.Windows.Forms.Label LabelColorMoon;
-    internal System.Windows.Forms.Panel PanelMoonEventColor;
+    internal System.Windows.Forms.Panel EditCalendarColorMoon;
     private System.Windows.Forms.Label LabelColorSeason;
-    internal System.Windows.Forms.Panel PanelSeasonEventColor;
-    internal System.Windows.Forms.Panel PanelTorahEventColor;
+    internal System.Windows.Forms.Panel EditCalendarColorSeason;
+    internal System.Windows.Forms.Panel EditCalendarColorTorahEvent;
     private System.Windows.Forms.Label LabelColorFullMoon;
-    internal System.Windows.Forms.Panel PanelFullMoonColor;
+    internal System.Windows.Forms.Panel EditCalendarColorFullMoon;
     private System.Windows.Forms.Label LabelColorTorah;
     private System.Windows.Forms.LinkLabel ActionRestoreCalendarColors;
     private System.Windows.Forms.NumericUpDown EditRemindShabatHoursBefore;
@@ -1059,28 +1059,28 @@
     private System.Windows.Forms.CheckBox EditBalloonAutoHide;
     private System.Windows.Forms.LinkLabel ActionResetSettings;
     private System.Windows.Forms.Label label1;
-    internal System.Windows.Forms.Panel PanelEventColorTorah;
-    private System.Windows.Forms.CheckBox EditReminderUseColors;
+    internal System.Windows.Forms.Panel EditEventColorTorah;
+    private System.Windows.Forms.CheckBox EditUseColors;
     private System.Windows.Forms.Label label2;
-    internal System.Windows.Forms.Panel PanelEventColorShabat;
+    internal System.Windows.Forms.Panel EditEventColorShabat;
     private System.Windows.Forms.Label label3;
-    internal System.Windows.Forms.Panel PanelEventColorSeason;
+    internal System.Windows.Forms.Panel EditEventColorSeason;
     private System.Windows.Forms.Label LabelColorTodayBack;
-    internal System.Windows.Forms.Panel PanelCurrentDayBackColor;
+    internal System.Windows.Forms.Panel EditCurrentDayBackColor;
     private System.Windows.Forms.Label label4;
-    internal System.Windows.Forms.Panel PanelEventColorNext;
+    internal System.Windows.Forms.Panel EditEventColorNext;
     private System.Windows.Forms.Label label5;
-    internal System.Windows.Forms.Panel PanelEventColorNewMonth;
-    private System.Windows.Forms.CheckBox EditUseMoonDays;
-    private System.Windows.Forms.NumericUpDown EditLoomingDelay;
+    internal System.Windows.Forms.Panel EditEventColorMonth;
+    private System.Windows.Forms.CheckBox EditTorahEventsCountAsMoon;
+    private System.Windows.Forms.NumericUpDown EditBalloonLoomingDelay;
     private System.Windows.Forms.Label LabelLoomingDelay;
-    private System.Windows.Forms.Label LabelCountry;
+    private System.Windows.Forms.Label LabelGPSCountry;
     private System.Windows.Forms.Label LabelTimeZone;
-    private System.Windows.Forms.Label LabelCity;
+    private System.Windows.Forms.Label LabelGPSCity;
     private System.Windows.Forms.Label LabelRemindAutoLockTimeOut;
-    private System.Windows.Forms.NumericUpDown EditRemindAutoLockTimeOut;
-    private System.Windows.Forms.CheckBox EditRemindAutoLock;
-    private System.Windows.Forms.NumericUpDown EditCalendarViewFontSize;
+    private System.Windows.Forms.NumericUpDown EditAutoLockSessionTimeOut;
+    private System.Windows.Forms.CheckBox EditAutoLockSession;
+    private System.Windows.Forms.NumericUpDown EditMonthViewFontSize;
     private System.Windows.Forms.Label label6;
   }
 }

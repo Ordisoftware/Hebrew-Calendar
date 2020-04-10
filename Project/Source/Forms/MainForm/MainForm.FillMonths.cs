@@ -124,7 +124,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             var item = new CustomEvent();
             item.Date = SQLiteUtility.GetDate(row.Date);
-            item.EventFont = new Font("Calibri", Program.Settings.MonthViewFontSize); //9f
+            item.EventFont = new Font("Calibri", Program.Settings.MonthViewFontSize);
             item.EventColor = Color.White;
             item.EventTextColor = color;
             item.EventText = text;
@@ -139,9 +139,6 @@ namespace Ordisoftware.HebrewCalendar
           strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Environment.NewLine
                      + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
           Color colorMoon = Color.Black;
-          /*string strMonth = row.IsNewMoon == 1
-                          ? " " + Translations.BabylonianHebrewMonthText[row.LunarMonth]
-                          : "";*/
           string strMonth = " " + MoonMonths.Names[row.LunarMonth];
           colorMoon = row.IsNewMoon == 1
                     ? Program.Settings.CalendarColorTorahEvent

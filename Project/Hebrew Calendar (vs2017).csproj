@@ -206,6 +206,15 @@
     <Compile Include="Source\Forms\Boxes\SelectBirthTime.Designer.cs">
       <DependentUpon>SelectBirthTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Settings.Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Settings.Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Static.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.DB.cs">
       <SubType>Form</SubType>
     </Compile>
