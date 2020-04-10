@@ -1088,5 +1088,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["MoonMonthsFormLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9")]
+        public int MonthViewFontSize {
+            get {
+                return ((int)(this["MonthViewFontSize"]));
+            }
+            set {
+                this["MonthViewFontSize"] = value;
+            }
+        }
     }
 }

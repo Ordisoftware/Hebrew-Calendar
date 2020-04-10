@@ -48,11 +48,13 @@
       this.LabelCountry = new System.Windows.Forms.Label();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
       this.GroupBoxTextReport = new System.Windows.Forms.GroupBox();
+      this.EditCalendarViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelBackColor = new System.Windows.Forms.Label();
       this.PanelTextColor = new System.Windows.Forms.Panel();
       this.LabelTextColor = new System.Windows.Forms.Label();
       this.PanelBackColor = new System.Windows.Forms.Panel();
+      this.label6 = new System.Windows.Forms.Label();
       this.EditFontName = new System.Windows.Forms.ComboBox();
       this.BroupBoxShabat = new System.Windows.Forms.GroupBox();
       this.LabelRemindShabatHoursBefore = new System.Windows.Forms.Label();
@@ -129,6 +131,7 @@
       this.PanelButtons.SuspendLayout();
       this.GroupBoxGPS.SuspendLayout();
       this.GroupBoxTextReport.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarViewFontSize)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.BroupBoxShabat.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatHoursBefore)).BeginInit();
@@ -178,8 +181,8 @@
       // 
       // EditShabatDay
       // 
-      resources.ApplyResources(this.EditShabatDay, "EditShabatDay");
       this.EditShabatDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.EditShabatDay, "EditShabatDay");
       this.EditShabatDay.FormattingEnabled = true;
       this.EditShabatDay.Name = "EditShabatDay";
       this.EditShabatDay.SelectedIndexChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
@@ -191,29 +194,29 @@
       // 
       // EditGPSLatitude
       // 
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
       this.EditGPSLatitude.BackColor = System.Drawing.Color.White;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
       this.EditGPSLatitude.Name = "EditGPSLatitude";
       this.EditGPSLatitude.ReadOnly = true;
       // 
       // EditGPSLongitude
       // 
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
       this.EditGPSLongitude.BackColor = System.Drawing.Color.White;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
       this.EditGPSLongitude.Name = "EditGPSLongitude";
       this.EditGPSLongitude.ReadOnly = true;
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ActionResetSettings);
       this.PanelButtons.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionResetSettings
       // 
-      resources.ApplyResources(this.ActionResetSettings, "ActionResetSettings");
       this.ActionResetSettings.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionResetSettings, "ActionResetSettings");
       this.ActionResetSettings.LinkColor = System.Drawing.Color.Navy;
       this.ActionResetSettings.Name = "ActionResetSettings";
       this.ActionResetSettings.TabStop = true;
@@ -221,8 +224,8 @@
       // 
       // ActionUsePersonalShabat
       // 
-      resources.ApplyResources(this.ActionUsePersonalShabat, "ActionUsePersonalShabat");
       this.ActionUsePersonalShabat.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionUsePersonalShabat, "ActionUsePersonalShabat");
       this.ActionUsePersonalShabat.LinkColor = System.Drawing.Color.Navy;
       this.ActionUsePersonalShabat.Name = "ActionUsePersonalShabat";
       this.ActionUsePersonalShabat.TabStop = true;
@@ -230,7 +233,6 @@
       // 
       // GroupBoxGPS
       // 
-      resources.ApplyResources(this.GroupBoxGPS, "GroupBoxGPS");
       this.GroupBoxGPS.Controls.Add(this.LabelTimeZone);
       this.GroupBoxGPS.Controls.Add(this.LabelCity);
       this.GroupBoxGPS.Controls.Add(this.LabelCountry);
@@ -239,6 +241,7 @@
       this.GroupBoxGPS.Controls.Add(LabelGPSLatitude);
       this.GroupBoxGPS.Controls.Add(this.EditGPSLongitude);
       this.GroupBoxGPS.Controls.Add(LabelGPSLongitude);
+      resources.ApplyResources(this.GroupBoxGPS, "GroupBoxGPS");
       this.GroupBoxGPS.Name = "GroupBoxGPS";
       this.GroupBoxGPS.TabStop = false;
       // 
@@ -262,8 +265,8 @@
       // 
       // ActionGetGPS
       // 
-      resources.ApplyResources(this.ActionGetGPS, "ActionGetGPS");
       this.ActionGetGPS.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionGetGPS, "ActionGetGPS");
       this.ActionGetGPS.LinkColor = System.Drawing.Color.Navy;
       this.ActionGetGPS.Name = "ActionGetGPS";
       this.ActionGetGPS.TabStop = true;
@@ -271,29 +274,53 @@
       // 
       // GroupBoxTextReport
       // 
-      resources.ApplyResources(this.GroupBoxTextReport, "GroupBoxTextReport");
+      this.GroupBoxTextReport.Controls.Add(this.EditCalendarViewFontSize);
       this.GroupBoxTextReport.Controls.Add(this.EditFontSize);
       this.GroupBoxTextReport.Controls.Add(this.LabelFontName);
       this.GroupBoxTextReport.Controls.Add(this.LabelBackColor);
       this.GroupBoxTextReport.Controls.Add(this.PanelTextColor);
       this.GroupBoxTextReport.Controls.Add(this.LabelTextColor);
       this.GroupBoxTextReport.Controls.Add(this.PanelBackColor);
+      this.GroupBoxTextReport.Controls.Add(this.label6);
       this.GroupBoxTextReport.Controls.Add(this.EditFontName);
       this.GroupBoxTextReport.Controls.Add(this.LabelFontSize);
+      resources.ApplyResources(this.GroupBoxTextReport, "GroupBoxTextReport");
       this.GroupBoxTextReport.Name = "GroupBoxTextReport";
       this.GroupBoxTextReport.TabStop = false;
       // 
+      // EditCalendarViewFontSize
+      // 
+      this.EditCalendarViewFontSize.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditCalendarViewFontSize, "EditCalendarViewFontSize");
+      this.EditCalendarViewFontSize.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+      this.EditCalendarViewFontSize.Minimum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+      this.EditCalendarViewFontSize.Name = "EditCalendarViewFontSize";
+      this.EditCalendarViewFontSize.ReadOnly = true;
+      this.EditCalendarViewFontSize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+      // 
       // EditFontSize
       // 
-      resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.Maximum = new decimal(new int[] {
-            32,
+            20,
             0,
             0,
             0});
       this.EditFontSize.Minimum = new decimal(new int[] {
-            4,
+            6,
             0,
             0,
             0});
@@ -304,7 +331,7 @@
             0,
             0,
             0});
-      this.EditFontSize.ValueChanged += new System.EventHandler(this.EitFontName_Changed);
+      this.EditFontSize.ValueChanged += new System.EventHandler(this.EitReportFont_Changed);
       // 
       // LabelBackColor
       // 
@@ -313,9 +340,9 @@
       // 
       // PanelTextColor
       // 
-      resources.ApplyResources(this.PanelTextColor, "PanelTextColor");
       this.PanelTextColor.BackColor = System.Drawing.Color.Black;
       this.PanelTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelTextColor, "PanelTextColor");
       this.PanelTextColor.Name = "PanelTextColor";
       this.PanelTextColor.Click += new System.EventHandler(this.PanelTextColor_Click);
       // 
@@ -326,23 +353,27 @@
       // 
       // PanelBackColor
       // 
-      resources.ApplyResources(this.PanelBackColor, "PanelBackColor");
       this.PanelBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
       this.PanelBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelBackColor, "PanelBackColor");
       this.PanelBackColor.Name = "PanelBackColor";
       this.PanelBackColor.Click += new System.EventHandler(this.PanelBackColor_Click);
       // 
+      // label6
+      // 
+      resources.ApplyResources(this.label6, "label6");
+      this.label6.Name = "label6";
+      // 
       // EditFontName
       // 
-      resources.ApplyResources(this.EditFontName, "EditFontName");
       this.EditFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.EditFontName, "EditFontName");
       this.EditFontName.FormattingEnabled = true;
       this.EditFontName.Name = "EditFontName";
-      this.EditFontName.SelectedIndexChanged += new System.EventHandler(this.EitFontName_Changed);
+      this.EditFontName.SelectedIndexChanged += new System.EventHandler(this.EitReportFont_Changed);
       // 
       // BroupBoxShabat
       // 
-      resources.ApplyResources(this.BroupBoxShabat, "BroupBoxShabat");
       this.BroupBoxShabat.Controls.Add(this.LabelRemindShabatHoursBefore);
       this.BroupBoxShabat.Controls.Add(this.LabelRemindShabatEveryMinutes);
       this.BroupBoxShabat.Controls.Add(this.EditRemindShabatOnlyLight);
@@ -352,6 +383,7 @@
       this.BroupBoxShabat.Controls.Add(this.LabelShabatDay);
       this.BroupBoxShabat.Controls.Add(this.EditRemindShabatEveryMinutes);
       this.BroupBoxShabat.Controls.Add(this.EditRemindShabat);
+      resources.ApplyResources(this.BroupBoxShabat, "BroupBoxShabat");
       this.BroupBoxShabat.Name = "BroupBoxShabat";
       this.BroupBoxShabat.TabStop = false;
       // 
@@ -374,15 +406,15 @@
       // 
       // EditRemindShabatHoursBefore
       // 
-      resources.ApplyResources(this.EditRemindShabatHoursBefore, "EditRemindShabatHoursBefore");
       this.EditRemindShabatHoursBefore.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditRemindShabatHoursBefore, "EditRemindShabatHoursBefore");
       this.EditRemindShabatHoursBefore.Name = "EditRemindShabatHoursBefore";
       this.EditRemindShabatHoursBefore.ReadOnly = true;
       // 
       // EditRemindShabatEveryMinutes
       // 
-      resources.ApplyResources(this.EditRemindShabatEveryMinutes, "EditRemindShabatEveryMinutes");
       this.EditRemindShabatEveryMinutes.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditRemindShabatEveryMinutes, "EditRemindShabatEveryMinutes");
       this.EditRemindShabatEveryMinutes.Name = "EditRemindShabatEveryMinutes";
       this.EditRemindShabatEveryMinutes.ReadOnly = true;
       // 
@@ -397,7 +429,6 @@
       // 
       // GroupBoxNavigation
       // 
-      resources.ApplyResources(this.GroupBoxNavigation, "GroupBoxNavigation");
       this.GroupBoxNavigation.Controls.Add(this.ActionUseBlackAndWhiteColors);
       this.GroupBoxNavigation.Controls.Add(this.ActionUseDefaultColors);
       this.GroupBoxNavigation.Controls.Add(this.LabelTopColor);
@@ -407,13 +438,14 @@
       this.GroupBoxNavigation.Controls.Add(this.PanelMiddleColor);
       this.GroupBoxNavigation.Controls.Add(this.LabelBottomColor);
       this.GroupBoxNavigation.Controls.Add(this.LabelMiddleColor);
+      resources.ApplyResources(this.GroupBoxNavigation, "GroupBoxNavigation");
       this.GroupBoxNavigation.Name = "GroupBoxNavigation";
       this.GroupBoxNavigation.TabStop = false;
       // 
       // ActionUseBlackAndWhiteColors
       // 
-      resources.ApplyResources(this.ActionUseBlackAndWhiteColors, "ActionUseBlackAndWhiteColors");
       this.ActionUseBlackAndWhiteColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionUseBlackAndWhiteColors, "ActionUseBlackAndWhiteColors");
       this.ActionUseBlackAndWhiteColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseBlackAndWhiteColors.Name = "ActionUseBlackAndWhiteColors";
       this.ActionUseBlackAndWhiteColors.TabStop = true;
@@ -421,8 +453,8 @@
       // 
       // ActionUseDefaultColors
       // 
-      resources.ApplyResources(this.ActionUseDefaultColors, "ActionUseDefaultColors");
       this.ActionUseDefaultColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionUseDefaultColors, "ActionUseDefaultColors");
       this.ActionUseDefaultColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseDefaultColors.Name = "ActionUseDefaultColors";
       this.ActionUseDefaultColors.TabStop = true;
@@ -435,8 +467,8 @@
       // 
       // ActionUseSystemColors
       // 
-      resources.ApplyResources(this.ActionUseSystemColors, "ActionUseSystemColors");
       this.ActionUseSystemColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionUseSystemColors, "ActionUseSystemColors");
       this.ActionUseSystemColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseSystemColors.Name = "ActionUseSystemColors";
       this.ActionUseSystemColors.TabStop = true;
@@ -444,25 +476,25 @@
       // 
       // PanelTopColor
       // 
-      resources.ApplyResources(this.PanelTopColor, "PanelTopColor");
       this.PanelTopColor.BackColor = System.Drawing.Color.LemonChiffon;
       this.PanelTopColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelTopColor, "PanelTopColor");
       this.PanelTopColor.Name = "PanelTopColor";
       this.PanelTopColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelTopColor_MouseClick);
       // 
       // PanelBottomColor
       // 
-      resources.ApplyResources(this.PanelBottomColor, "PanelBottomColor");
       this.PanelBottomColor.BackColor = System.Drawing.Color.Honeydew;
       this.PanelBottomColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelBottomColor, "PanelBottomColor");
       this.PanelBottomColor.Name = "PanelBottomColor";
       this.PanelBottomColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelBottomColor_MouseClick);
       // 
       // PanelMiddleColor
       // 
-      resources.ApplyResources(this.PanelMiddleColor, "PanelMiddleColor");
       this.PanelMiddleColor.BackColor = System.Drawing.Color.AliceBlue;
       this.PanelMiddleColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelMiddleColor, "PanelMiddleColor");
       this.PanelMiddleColor.Name = "PanelMiddleColor";
       this.PanelMiddleColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelMiddleColor_MouseClick);
       // 
@@ -478,13 +510,13 @@
       // 
       // GroupBoxTrayIcon
       // 
-      resources.ApplyResources(this.GroupBoxTrayIcon, "GroupBoxTrayIcon");
       this.GroupBoxTrayIcon.Controls.Add(this.EditBalloonAutoHide);
       this.GroupBoxTrayIcon.Controls.Add(this.EditBalloon);
       this.GroupBoxTrayIcon.Controls.Add(this.SelectOpenNavigationForm);
       this.GroupBoxTrayIcon.Controls.Add(this.SelectOpenMainForm);
       this.GroupBoxTrayIcon.Controls.Add(this.EditLoomingDelay);
       this.GroupBoxTrayIcon.Controls.Add(this.LabelLoomingDelay);
+      resources.ApplyResources(this.GroupBoxTrayIcon, "GroupBoxTrayIcon");
       this.GroupBoxTrayIcon.Name = "GroupBoxTrayIcon";
       this.GroupBoxTrayIcon.TabStop = false;
       // 
@@ -517,8 +549,8 @@
       // 
       // EditLoomingDelay
       // 
-      resources.ApplyResources(this.EditLoomingDelay, "EditLoomingDelay");
       this.EditLoomingDelay.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditLoomingDelay, "EditLoomingDelay");
       this.EditLoomingDelay.Increment = new decimal(new int[] {
             250,
             0,
@@ -555,7 +587,6 @@
       // 
       // GroupBoxReminder
       // 
-      resources.ApplyResources(this.GroupBoxReminder, "GroupBoxReminder");
       this.GroupBoxReminder.Controls.Add(this.EditReminderUseColors);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationHoursBefore);
@@ -580,6 +611,7 @@
       this.GroupBoxReminder.Controls.Add(this.EditUseMoonDays);
       this.GroupBoxReminder.Controls.Add(this.EditTimerEnabled);
       this.GroupBoxReminder.Controls.Add(this.EditRemindCelebrationEveryMinutes);
+      resources.ApplyResources(this.GroupBoxReminder, "GroupBoxReminder");
       this.GroupBoxReminder.Name = "GroupBoxReminder";
       this.GroupBoxReminder.TabStop = false;
       // 
@@ -631,62 +663,62 @@
       // 
       // EditEventsDay
       // 
-      resources.ApplyResources(this.EditEventsDay, "EditEventsDay");
       this.EditEventsDay.CheckOnClick = true;
+      resources.ApplyResources(this.EditEventsDay, "EditEventsDay");
       this.EditEventsDay.FormattingEnabled = true;
       this.EditEventsDay.Name = "EditEventsDay";
       // 
       // EditEvents
       // 
-      resources.ApplyResources(this.EditEvents, "EditEvents");
       this.EditEvents.CheckOnClick = true;
+      resources.ApplyResources(this.EditEvents, "EditEvents");
       this.EditEvents.FormattingEnabled = true;
       this.EditEvents.Name = "EditEvents";
       // 
       // PanelEventColorNewMonth
       // 
-      resources.ApplyResources(this.PanelEventColorNewMonth, "PanelEventColorNewMonth");
       this.PanelEventColorNewMonth.BackColor = System.Drawing.Color.AliceBlue;
       this.PanelEventColorNewMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelEventColorNewMonth, "PanelEventColorNewMonth");
       this.PanelEventColorNewMonth.Name = "PanelEventColorNewMonth";
       this.PanelEventColorNewMonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNewMonth_MouseClick);
       // 
       // PanelEventColorNext
       // 
-      resources.ApplyResources(this.PanelEventColorNext, "PanelEventColorNext");
       this.PanelEventColorNext.BackColor = System.Drawing.Color.WhiteSmoke;
       this.PanelEventColorNext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelEventColorNext, "PanelEventColorNext");
       this.PanelEventColorNext.Name = "PanelEventColorNext";
       this.PanelEventColorNext.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNext_MouseClick);
       // 
       // PanelEventColorSeason
       // 
-      resources.ApplyResources(this.PanelEventColorSeason, "PanelEventColorSeason");
       this.PanelEventColorSeason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
       this.PanelEventColorSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelEventColorSeason, "PanelEventColorSeason");
       this.PanelEventColorSeason.Name = "PanelEventColorSeason";
       this.PanelEventColorSeason.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorSeason_MouseClick);
       // 
       // PanelEventColorShabat
       // 
-      resources.ApplyResources(this.PanelEventColorShabat, "PanelEventColorShabat");
       this.PanelEventColorShabat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
       this.PanelEventColorShabat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelEventColorShabat, "PanelEventColorShabat");
       this.PanelEventColorShabat.Name = "PanelEventColorShabat";
       this.PanelEventColorShabat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorShabat_MouseClick);
       // 
       // PanelEventColorTorah
       // 
-      resources.ApplyResources(this.PanelEventColorTorah, "PanelEventColorTorah");
       this.PanelEventColorTorah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
       this.PanelEventColorTorah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelEventColorTorah, "PanelEventColorTorah");
       this.PanelEventColorTorah.Name = "PanelEventColorTorah";
       this.PanelEventColorTorah.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorTorah_MouseClick);
       // 
       // EditTimerInterval
       // 
-      resources.ApplyResources(this.EditTimerInterval, "EditTimerInterval");
       this.EditTimerInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditTimerInterval, "EditTimerInterval");
       this.EditTimerInterval.Name = "EditTimerInterval";
       this.EditTimerInterval.ReadOnly = true;
       // 
@@ -697,15 +729,15 @@
       // 
       // EditRemindAutoLockTimeOut
       // 
-      resources.ApplyResources(this.EditRemindAutoLockTimeOut, "EditRemindAutoLockTimeOut");
       this.EditRemindAutoLockTimeOut.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditRemindAutoLockTimeOut, "EditRemindAutoLockTimeOut");
       this.EditRemindAutoLockTimeOut.Name = "EditRemindAutoLockTimeOut";
       this.EditRemindAutoLockTimeOut.ReadOnly = true;
       // 
       // EditRemindCelebrationHoursBefore
       // 
-      resources.ApplyResources(this.EditRemindCelebrationHoursBefore, "EditRemindCelebrationHoursBefore");
       this.EditRemindCelebrationHoursBefore.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditRemindCelebrationHoursBefore, "EditRemindCelebrationHoursBefore");
       this.EditRemindCelebrationHoursBefore.Name = "EditRemindCelebrationHoursBefore";
       this.EditRemindCelebrationHoursBefore.ReadOnly = true;
       // 
@@ -738,8 +770,8 @@
       // 
       // EditRemindCelebrationEveryMinutes
       // 
-      resources.ApplyResources(this.EditRemindCelebrationEveryMinutes, "EditRemindCelebrationEveryMinutes");
       this.EditRemindCelebrationEveryMinutes.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditRemindCelebrationEveryMinutes, "EditRemindCelebrationEveryMinutes");
       this.EditRemindCelebrationEveryMinutes.Name = "EditRemindCelebrationEveryMinutes";
       this.EditRemindCelebrationEveryMinutes.ReadOnly = true;
       // 
@@ -751,7 +783,6 @@
       // 
       // GroupBoxCalendar
       // 
-      resources.ApplyResources(this.GroupBoxCalendar, "GroupBoxCalendar");
       this.GroupBoxCalendar.Controls.Add(this.ActionRestoreCalendarColors);
       this.GroupBoxCalendar.Controls.Add(this.LabelColorFullMoon);
       this.GroupBoxCalendar.Controls.Add(this.PanelFullMoonColor);
@@ -765,13 +796,14 @@
       this.GroupBoxCalendar.Controls.Add(this.LabelColorToday);
       this.GroupBoxCalendar.Controls.Add(this.PanelCurrentDayBackColor);
       this.GroupBoxCalendar.Controls.Add(this.PanelCurrentDayColor);
+      resources.ApplyResources(this.GroupBoxCalendar, "GroupBoxCalendar");
       this.GroupBoxCalendar.Name = "GroupBoxCalendar";
       this.GroupBoxCalendar.TabStop = false;
       // 
       // ActionRestoreCalendarColors
       // 
-      resources.ApplyResources(this.ActionRestoreCalendarColors, "ActionRestoreCalendarColors");
       this.ActionRestoreCalendarColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionRestoreCalendarColors, "ActionRestoreCalendarColors");
       this.ActionRestoreCalendarColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionRestoreCalendarColors.Name = "ActionRestoreCalendarColors";
       this.ActionRestoreCalendarColors.TabStop = true;
@@ -784,9 +816,9 @@
       // 
       // PanelFullMoonColor
       // 
-      resources.ApplyResources(this.PanelFullMoonColor, "PanelFullMoonColor");
       this.PanelFullMoonColor.BackColor = System.Drawing.Color.DarkGoldenrod;
       this.PanelFullMoonColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelFullMoonColor, "PanelFullMoonColor");
       this.PanelFullMoonColor.Name = "PanelFullMoonColor";
       this.PanelFullMoonColor.Click += new System.EventHandler(this.PanelFullMoonColor_Click);
       // 
@@ -797,9 +829,9 @@
       // 
       // PanelMoonEventColor
       // 
-      resources.ApplyResources(this.PanelMoonEventColor, "PanelMoonEventColor");
       this.PanelMoonEventColor.BackColor = System.Drawing.Color.DarkBlue;
       this.PanelMoonEventColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelMoonEventColor, "PanelMoonEventColor");
       this.PanelMoonEventColor.Name = "PanelMoonEventColor";
       this.PanelMoonEventColor.Click += new System.EventHandler(this.PanelMoonEventColor_Click);
       // 
@@ -810,9 +842,9 @@
       // 
       // PanelSeasonEventColor
       // 
-      resources.ApplyResources(this.PanelSeasonEventColor, "PanelSeasonEventColor");
       this.PanelSeasonEventColor.BackColor = System.Drawing.Color.DarkGreen;
       this.PanelSeasonEventColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelSeasonEventColor, "PanelSeasonEventColor");
       this.PanelSeasonEventColor.Name = "PanelSeasonEventColor";
       this.PanelSeasonEventColor.Click += new System.EventHandler(this.PanelSeasonEventColor_Click);
       // 
@@ -823,9 +855,9 @@
       // 
       // PanelTorahEventColor
       // 
-      resources.ApplyResources(this.PanelTorahEventColor, "PanelTorahEventColor");
       this.PanelTorahEventColor.BackColor = System.Drawing.Color.DarkRed;
       this.PanelTorahEventColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelTorahEventColor, "PanelTorahEventColor");
       this.PanelTorahEventColor.Name = "PanelTorahEventColor";
       this.PanelTorahEventColor.Click += new System.EventHandler(this.PanelTorahEventColor_Click);
       // 
@@ -841,37 +873,37 @@
       // 
       // PanelCurrentDayBackColor
       // 
-      resources.ApplyResources(this.PanelCurrentDayBackColor, "PanelCurrentDayBackColor");
       this.PanelCurrentDayBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
       this.PanelCurrentDayBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelCurrentDayBackColor, "PanelCurrentDayBackColor");
       this.PanelCurrentDayBackColor.Name = "PanelCurrentDayBackColor";
       this.PanelCurrentDayBackColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelCurrentDayBackColor_MouseClick);
       // 
       // PanelCurrentDayColor
       // 
-      resources.ApplyResources(this.PanelCurrentDayColor, "PanelCurrentDayColor");
       this.PanelCurrentDayColor.BackColor = System.Drawing.Color.White;
       this.PanelCurrentDayColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelCurrentDayColor, "PanelCurrentDayColor");
       this.PanelCurrentDayColor.Name = "PanelCurrentDayColor";
       this.PanelCurrentDayColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelCurrentDayColor_MouseClick);
       // 
       // GroupBoxSystem
       // 
-      resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangFR);
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangEN);
       this.GroupBoxSystem.Controls.Add(this.EditShowReminderInTaskBar);
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
       this.GroupBoxSystem.Controls.Add(this.EditShowMonthDayToolTip);
+      resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
       this.GroupBoxSystem.TabStop = false;
       // 
       // ActionSelectLangFR
       // 
-      resources.ApplyResources(this.ActionSelectLangFR, "ActionSelectLangFR");
       this.ActionSelectLangFR.AllowDrop = true;
       this.ActionSelectLangFR.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+      resources.ApplyResources(this.ActionSelectLangFR, "ActionSelectLangFR");
       this.ActionSelectLangFR.Name = "ActionSelectLangFR";
       this.ActionSelectLangFR.TabStop = false;
       this.ActionSelectLangFR.UseVisualStyleBackColor = true;
@@ -879,9 +911,9 @@
       // 
       // ActionSelectLangEN
       // 
-      resources.ApplyResources(this.ActionSelectLangEN, "ActionSelectLangEN");
       this.ActionSelectLangEN.AllowDrop = true;
       this.ActionSelectLangEN.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+      resources.ApplyResources(this.ActionSelectLangEN, "ActionSelectLangEN");
       this.ActionSelectLangEN.Name = "ActionSelectLangEN";
       this.ActionSelectLangEN.TabStop = false;
       this.ActionSelectLangEN.UseVisualStyleBackColor = true;
@@ -929,6 +961,7 @@
       this.GroupBoxGPS.PerformLayout();
       this.GroupBoxTextReport.ResumeLayout(false);
       this.GroupBoxTextReport.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarViewFontSize)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       this.BroupBoxShabat.ResumeLayout(false);
       this.BroupBoxShabat.PerformLayout();
@@ -1047,5 +1080,7 @@
     private System.Windows.Forms.Label LabelRemindAutoLockTimeOut;
     private System.Windows.Forms.NumericUpDown EditRemindAutoLockTimeOut;
     private System.Windows.Forms.CheckBox EditRemindAutoLock;
+    private System.Windows.Forms.NumericUpDown EditCalendarViewFontSize;
+    private System.Windows.Forms.Label label6;
   }
 }

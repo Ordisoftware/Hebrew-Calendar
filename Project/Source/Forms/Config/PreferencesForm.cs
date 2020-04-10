@@ -254,6 +254,7 @@ namespace Ordisoftware.HebrewCalendar
       EditGPSLongitude.Text = OldLongitude.ToString();
       LabelCountry.Text = Program.Settings.GPSCountry;
       LabelCity.Text = Program.Settings.GPSCity;
+      EditCalendarViewFontSize.Value = Program.Settings.MonthViewFontSize;
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( Program.Settings.TimeZone == item.Id )
           LabelTimeZone.Text = item.DisplayName;
@@ -355,6 +356,8 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.EventColorMonth = PanelEventColorNewMonth.BackColor;
       Program.Settings.EventColorNext = PanelEventColorNext.BackColor;
       Program.Settings.UseColors = EditReminderUseColors.Checked;
+      bool refresh = Program.Settings.MonthViewFontSize != (int)EditCalendarViewFontSize.Value;
+      Program.Settings.MonthViewFontSize = (int)EditCalendarViewFontSize.Value;
       Program.Settings.Store();
       MainForm.Instance.CurrentTimeZoneInfo = null;
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
@@ -363,6 +366,7 @@ namespace Ordisoftware.HebrewCalendar
           MainForm.Instance.CurrentTimeZoneInfo = item;
           break;
         }
+      if ( refresh ) UpdateCalendarMonth(true);
     }
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -386,6 +390,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.ShabatDay = shabat;
       Program.Settings.RestoreMainForm();
       Program.Settings.Language = Localizer.Language;
+      UpdateCalendarMonth(true);
       Close();
     }
 
@@ -447,9 +452,10 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void EitFontName_Changed(object sender, EventArgs e)
+    private void EitReportFont_Changed(object sender, EventArgs e)
     {
       Program.Settings.FontName = EditFontName.Text;
+      Program.Settings.FontSize = (int)EditFontSize.Value;
       MainForm.Instance.UpdateTextCalendar();
     }
 
@@ -610,9 +616,9 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
     }
 
-    private void UpdateCalendarMonth()
+    private void UpdateCalendarMonth(bool noclose = false)
     {
-      PreferencesForm_FormClosing(null, null);
+      if (!noclose) PreferencesForm_FormClosing(null, null);
       MainForm.Instance.IsGenerating = true;
       Cursor = Cursors.WaitCursor;
       MainForm.Instance.Cursor = Cursors.WaitCursor;
@@ -620,6 +626,11 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Instance.PanelViewMonth.Parent = null;
       try
       {
+        MainForm.Instance.CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1); //10
+        MainForm.Instance.CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold); //10
+        MainForm.Instance.CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
+        MainForm.Instance.CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
+        MainForm.Instance.CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
         MainForm.Instance.CalendarMonth.CurrentDayForeColor = PanelCurrentDayColor.BackColor;
         MainForm.Instance.CalendarMonth.CurrentDayBackColor = PanelCurrentDayBackColor.BackColor;
         MainForm.Instance.CalendarMonth.LoadPresetHolidays = false;

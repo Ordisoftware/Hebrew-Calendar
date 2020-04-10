@@ -124,7 +124,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             var item = new CustomEvent();
             item.Date = SQLiteUtility.GetDate(row.Date);
-            item.EventFont = new Font("Calibri", 9f);
+            item.EventFont = new Font("Calibri", Program.Settings.MonthViewFontSize); //9f
             item.EventColor = Color.White;
             item.EventTextColor = color;
             item.EventText = text;

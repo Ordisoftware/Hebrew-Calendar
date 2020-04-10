@@ -52,6 +52,17 @@ namespace Ordisoftware.HebrewCalendar
       TrayIcon.Icon = Icon;
       Program.Settings.Retrieve();
       MenuTray.Enabled = false;
+      //CalendarMonth.Events //Calibri 9
+      CalendarText.ForeColor = Program.Settings.TextColor;
+      CalendarText.BackColor = Program.Settings.TextBackground;
+      CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
+      CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
+      //Program.Settings.MonthViewFontSize = 18;
+      CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1); //10
+      CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold); //10
+      CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
+      CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
+      CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == Program.Settings.TimeZone )
         {
@@ -72,10 +83,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeDialogsDirectory();
       UpdateTextCalendar();
-      CalendarText.ForeColor = Program.Settings.TextColor;
-      CalendarText.BackColor = Program.Settings.TextBackground;
-      CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
-      CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
       CalendarMonth.CalendarDateChanged += (date) =>
       {
         GoToDate(date);
