@@ -121,6 +121,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Improve tray icon to show if the reminder is suspended.
 - Add preferences menu in the tray icon.
 - Improve personal shabat dialog box.
+- Improve preferences form.
 - Add dialog box to choose sun or moon omer at first startup.
 - Add month number column in the search lunar month form.
 - Add some links to calendars' websites.
