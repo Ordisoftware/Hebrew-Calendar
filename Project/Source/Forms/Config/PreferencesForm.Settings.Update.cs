@@ -19,7 +19,7 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Form for viewing the preferences.
+  /// Provide form to edit the preferences.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class PreferencesForm : Form

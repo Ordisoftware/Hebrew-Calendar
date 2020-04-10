@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
-using System.Xml;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
@@ -79,39 +78,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
-      if ( Program.Settings.FirstLaunch )
-      {
-        Program.Settings.FirstLaunch = false;
-        ShowTextForm.CreateCelebrationsNotice().ShowDialog();
-        Program.Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(Translations.AskToUseMoonOmer.GetLang());
-      }
-      if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
-        ActionGetGPS_LinkClicked(null, null);
-      UpdateLanguagesButtons();
-      foreach ( var item in EditFontName.Items )
-        if ( (string)item == Program.Settings.FontName )
-        {
-          EditFontName.SelectedItem = item;
-          break;
-        }
-      LoadSettings();
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( Program.Settings.TimeZone == item.Id )
-          LabelTimeZone.Text = item.DisplayName;
-      switch ( Program.Settings.TrayIconClickOpen )
-      {
-        case TrayIconClickOpen.MainForm:
-          SelectOpenMainForm.Select();
-          break;
-        case TrayIconClickOpen.NavigationForm:
-          SelectOpenNavigationForm.Select();
-          break;
-      }
-      EditRemindShabat_ValueChanged(null, null);
-      EditTimerEnabled_CheckedChanged(null, null);
-      EditBalloon_CheckedChanged(null, null);
-      ActiveControl = ActionClose;
-      IsReady = true;
+      DoFormShown(sender, e);
     }
 
     /// <summary>
@@ -121,56 +88,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( DoReset ) return;
-      NavigationForm.Instance.Hide();
-      try
-      {
-        var v1 = (float)XmlConvert.ToDouble(EditGPSLatitude.Text);
-        var v2 = (float)XmlConvert.ToDouble(EditGPSLongitude.Text);
-      }
-      catch
-      {
-        DisplayManager.ShowError("Invalid GPS coordonates.");
-        e.Cancel = true;
-        return;
-      }
-      if ( SelectOpenMainForm.Checked )
-        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
-      else
-      if ( SelectOpenNavigationForm.Checked )
-        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
-      Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-      Program.Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsInterval.Value;
-      for ( int index = 0; index < EditEvents.Items.Count; index++ )
-        try
-        {
-          string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
-          Program.Settings[name] = EditEvents.GetItemChecked(index);
-        }
-        catch
-        {
-        }
-      for ( int index = 0; index < EditEventsDay.Items.Count; index++ )
-        try
-        {
-          string name = "TorahEventRemindDay" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
-          Program.Settings[name] = EditEventsDay.GetItemChecked(index);
-        }
-        catch
-        {
-        }
-      UpdateSettings();
-      MainForm.Instance.CurrentTimeZoneInfo = null;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Program.Settings.TimeZone )
-        {
-          MainForm.Instance.CurrentTimeZoneInfo = item;
-          break;
-        }
-      bool isCalendarFotnUpdated = Program.Settings.MonthViewFontSize != (int)EditMonthViewFontSize.Value;
-      Program.Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
-      Program.Settings.Store();
-      if ( isCalendarFotnUpdated ) UpdateCalendarMonth(true);
+      DoFormClosing(sender, e);
     }
 
     /// <summary>
@@ -212,7 +130,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Loads the fonts.
     /// <remarks>
-    /// Tips taken from http://stackoverflow.com/questions/224865/how-do-i-get-all-installed-fixed-width-fonts/225027
+    /// From http://stackoverflow.com/questions/224865/how-do-i-get-all-installed-fixed-width-fonts/225027
     /// </remarks>
     /// </summary>
     private void LoadFonts()
@@ -416,8 +334,6 @@ namespace Ordisoftware.HebrewCalendar
       EditCalendarColorFullMoon.BackColor = Color.FromArgb(150, 100, 0);
       UpdateCalendarMonth();
     }
-
-    //-------------------------------------------------------------------------------------------------------
 
     private void PanelTextColor_Click(object sender, EventArgs e)
     {
