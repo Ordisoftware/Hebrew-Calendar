@@ -31,6 +31,7 @@
       System.Windows.Forms.Label LabelGPSLatitude;
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
       System.Windows.Forms.Label LabelGPSLongitude;
+      System.Windows.Forms.Label label7;
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
       this.LabelShabatDay = new System.Windows.Forms.Label();
@@ -107,7 +108,7 @@
       this.EditReminderCelebrationsEnabled = new System.Windows.Forms.CheckBox();
       this.EditRemindCelebrationEveryMinutes = new System.Windows.Forms.NumericUpDown();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
-      this.GroupBoxCalendar = new System.Windows.Forms.GroupBox();
+      this.GroupBoxMonth = new System.Windows.Forms.GroupBox();
       this.ActionRestoreCalendarColors = new System.Windows.Forms.LinkLabel();
       this.LabelColorFullMoon = new System.Windows.Forms.Label();
       this.EditCalendarColorFullMoon = new System.Windows.Forms.Panel();
@@ -124,11 +125,12 @@
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
+      this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
+      label7 = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxGPS.SuspendLayout();
       this.GroupBoxTextReport.SuspendLayout();
@@ -145,7 +147,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoLockSessionTimeOut)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
-      this.GroupBoxCalendar.SuspendLayout();
+      this.GroupBoxMonth.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -158,6 +160,11 @@
       // 
       resources.ApplyResources(LabelGPSLongitude, "LabelGPSLongitude");
       LabelGPSLongitude.Name = "LabelGPSLongitude";
+      // 
+      // label7
+      // 
+      resources.ApplyResources(label7, "label7");
+      label7.Name = "label7";
       // 
       // DialogColor
       // 
@@ -517,6 +524,7 @@
       this.GroupBoxTrayIcon.Controls.Add(this.SelectOpenMainForm);
       this.GroupBoxTrayIcon.Controls.Add(this.EditBalloonLoomingDelay);
       this.GroupBoxTrayIcon.Controls.Add(this.LabelLoomingDelay);
+      this.GroupBoxTrayIcon.Controls.Add(label7);
       resources.ApplyResources(this.GroupBoxTrayIcon, "GroupBoxTrayIcon");
       this.GroupBoxTrayIcon.Name = "GroupBoxTrayIcon";
       this.GroupBoxTrayIcon.TabStop = false;
@@ -782,24 +790,24 @@
       this.EditMonthViewSunToolTips.Name = "EditMonthViewSunToolTips";
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       // 
-      // GroupBoxCalendar
+      // GroupBoxMonth
       // 
-      this.GroupBoxCalendar.Controls.Add(this.ActionRestoreCalendarColors);
-      this.GroupBoxCalendar.Controls.Add(this.LabelColorFullMoon);
-      this.GroupBoxCalendar.Controls.Add(this.EditCalendarColorFullMoon);
-      this.GroupBoxCalendar.Controls.Add(this.LabelColorMoon);
-      this.GroupBoxCalendar.Controls.Add(this.EditCalendarColorMoon);
-      this.GroupBoxCalendar.Controls.Add(this.LabelColorSeason);
-      this.GroupBoxCalendar.Controls.Add(this.EditCalendarColorSeason);
-      this.GroupBoxCalendar.Controls.Add(this.LabelColorTorah);
-      this.GroupBoxCalendar.Controls.Add(this.EditCalendarColorTorahEvent);
-      this.GroupBoxCalendar.Controls.Add(this.LabelColorTodayBack);
-      this.GroupBoxCalendar.Controls.Add(this.LabelColorToday);
-      this.GroupBoxCalendar.Controls.Add(this.EditCurrentDayBackColor);
-      this.GroupBoxCalendar.Controls.Add(this.EditCurrentDayForeColor);
-      resources.ApplyResources(this.GroupBoxCalendar, "GroupBoxCalendar");
-      this.GroupBoxCalendar.Name = "GroupBoxCalendar";
-      this.GroupBoxCalendar.TabStop = false;
+      this.GroupBoxMonth.Controls.Add(this.ActionRestoreCalendarColors);
+      this.GroupBoxMonth.Controls.Add(this.LabelColorFullMoon);
+      this.GroupBoxMonth.Controls.Add(this.EditCalendarColorFullMoon);
+      this.GroupBoxMonth.Controls.Add(this.LabelColorMoon);
+      this.GroupBoxMonth.Controls.Add(this.EditCalendarColorMoon);
+      this.GroupBoxMonth.Controls.Add(this.LabelColorSeason);
+      this.GroupBoxMonth.Controls.Add(this.EditCalendarColorSeason);
+      this.GroupBoxMonth.Controls.Add(this.LabelColorTorah);
+      this.GroupBoxMonth.Controls.Add(this.EditCalendarColorTorahEvent);
+      this.GroupBoxMonth.Controls.Add(this.LabelColorTodayBack);
+      this.GroupBoxMonth.Controls.Add(this.LabelColorToday);
+      this.GroupBoxMonth.Controls.Add(this.EditCurrentDayBackColor);
+      this.GroupBoxMonth.Controls.Add(this.EditCurrentDayForeColor);
+      resources.ApplyResources(this.GroupBoxMonth, "GroupBoxMonth");
+      this.GroupBoxMonth.Name = "GroupBoxMonth";
+      this.GroupBoxMonth.TabStop = false;
       // 
       // ActionRestoreCalendarColors
       // 
@@ -921,6 +929,12 @@
       this.ActionSelectLangEN.UseVisualStyleBackColor = true;
       this.ActionSelectLangEN.Click += new System.EventHandler(this.ActionSelectLangEN_Click);
       // 
+      // EditAutoOpenExportFolder
+      // 
+      resources.ApplyResources(this.EditAutoOpenExportFolder, "EditAutoOpenExportFolder");
+      this.EditAutoOpenExportFolder.Name = "EditAutoOpenExportFolder";
+      this.EditAutoOpenExportFolder.UseVisualStyleBackColor = true;
+      // 
       // EditShowReminderInTaskBar
       // 
       resources.ApplyResources(this.EditShowReminderInTaskBar, "EditShowReminderInTaskBar");
@@ -935,12 +949,6 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
-      // EditAutoOpenExportFolder
-      // 
-      resources.ApplyResources(this.EditAutoOpenExportFolder, "EditAutoOpenExportFolder");
-      this.EditAutoOpenExportFolder.Name = "EditAutoOpenExportFolder";
-      this.EditAutoOpenExportFolder.UseVisualStyleBackColor = true;
-      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -951,7 +959,7 @@
       this.Controls.Add(this.GroupBoxReminder);
       this.Controls.Add(this.GroupBoxTrayIcon);
       this.Controls.Add(this.GroupBoxTextReport);
-      this.Controls.Add(this.GroupBoxCalendar);
+      this.Controls.Add(this.GroupBoxMonth);
       this.Controls.Add(this.GroupBoxNavigation);
       this.Controls.Add(this.BroupBoxShabat);
       this.Controls.Add(this.GroupBoxGPS);
@@ -986,8 +994,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoLockSessionTimeOut)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).EndInit();
-      this.GroupBoxCalendar.ResumeLayout(false);
-      this.GroupBoxCalendar.PerformLayout();
+      this.GroupBoxMonth.ResumeLayout(false);
+      this.GroupBoxMonth.PerformLayout();
       this.GroupBoxSystem.ResumeLayout(false);
       this.GroupBoxSystem.PerformLayout();
       this.ResumeLayout(false);
@@ -1030,7 +1038,7 @@
     private System.Windows.Forms.CheckBox EditReminderShabatEnabled;
     private System.Windows.Forms.CheckBox EditMonthViewSunToolTips;
     private System.Windows.Forms.LinkLabel ActionUseBlackAndWhiteColors;
-    private System.Windows.Forms.GroupBox GroupBoxCalendar;
+    private System.Windows.Forms.GroupBox GroupBoxMonth;
     private System.Windows.Forms.Label LabelColorToday;
     internal System.Windows.Forms.Panel EditCurrentDayForeColor;
     private System.Windows.Forms.NumericUpDown EditFontSize;
