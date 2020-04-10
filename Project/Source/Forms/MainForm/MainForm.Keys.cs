@@ -39,14 +39,8 @@ namespace Ordisoftware.HebrewCalendar
           if ( Program.Settings.CurrentView == ViewMode.Grid )
             SetView(ViewMode.Text);
           return true;
-        case Keys.Control | Keys.S:
-          ActionSaveReport.PerformClick();
-          return true;
-        case Keys.Alt | Keys.S:
-          ActionExportCSV.PerformClick();
-          return true;
-        case Keys.Control | Keys.C:
-          ActionCopyReportToClipboard.PerformClick();
+        case Keys.Control | Keys.T:
+          GoToDate(DateTime.Today);
           return true;
         case Keys.Control | Keys.D:
           ActionSearchDay.PerformClick();
@@ -66,15 +60,17 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Control | Keys.P:
           ActionPrint.PerformClick();
           return true;
-        case Keys.Control | Keys.T:
-          GoToDate(DateTime.Today);
-          return true;
         case Keys.Alt | Keys.C:
           ActionOpenCalculator.PerformClick();
           return true;
-        case Keys.Escape:
-          if ( EditESCtoExit.Checked )
-            Close();
+        case Keys.Control | Keys.C:
+          ActionCopyReportToClipboard.PerformClick();
+          return true;
+        case Keys.Control | Keys.S:
+          ActionSaveReport.PerformClick();
+          return true;
+        case Keys.Alt | Keys.S:
+          ActionExportCSV.PerformClick();
           return true;
         case Keys.F2:
           ActionGenerate.PerformClick();
@@ -87,6 +83,10 @@ namespace Ordisoftware.HebrewCalendar
           return true;
         case Keys.F12:
           ActionAbout.PerformClick();
+          return true;
+        case Keys.Escape:
+          if ( EditESCtoExit.Checked )
+            Close();
           return true;
       }
       return base.ProcessCmdKey(ref msg, keyData);
