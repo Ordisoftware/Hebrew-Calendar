@@ -113,24 +113,27 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 #### 2020.04.__ - Version 4.0
 
-- Move default online providers values to a file in the application documents folder.
+- Move online providers values to a file in the application documents folder.
 >>>>- Create online providers database table.
 >>>>- Add online providers editor form.
-- Add moon month name to all days in the calendar view.
+- Add moon month name to all days in the month view.
 - Add suspend reminder menu in the main form and the tray icon.
 - Improve tray icon to show if the reminder is suspended.
 - Add preferences menu in the tray icon.
 - Improve personal shabat dialog box.
-- Add tools menu.
-- Add moon months list form (tools).
-- Add celebrations and shabat notices links (tools).
-- Add calculate number of days between two dates (tools).
-- Add link to windows calculator (tools).
-- Add link to aish.com calendar.
+- Add dialog box to choose sun or moon omer at first startup.
 - Add month number column in the search lunar month form.
+- Add some links to calendars' websites.
+- Add tools menu.
+- Add moon months list form in tools menu.
+- Add celebrations and shabat notices links in tools menu.
+- Add calculate number of days between two dates in tools menu.
+- Add link to windows calculator in tools menu.
+- Add option to change month view text size.
+- Add option to auto open destination folder after done.
 - Fix controls tabs and focus in auto lock session form.
 - Fix default current day color.
-- Improve exports to open destination folder after done.
+- Fix edit report text font size in preferences form.
 - Fix print bitmap size if the main form is resized.
 - Improve UI/UX.
 - Few UI fixes.
