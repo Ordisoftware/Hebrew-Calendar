@@ -71,8 +71,8 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> CantExitApplicationWhileGenerating
       = new Dictionary<string, string>()
       {
-        { "en", "Lock Session Error: {0}" },
-        { "fr", "Erreur de verrouillage de session : {0}" }
+        { "en", "Can't exit application while generating data..." },
+        { "fr", "Impossible de quitter l'application durant la génération des données..." }
       };
 
     static public readonly Dictionary<string, string> NoNewVersionAvailable
@@ -149,6 +149,13 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine +
                 "La position GPS et le jour du shabat seront conservés." + NewLine + NewLine +
                 "Voulez-vous continuer ?" }
+      };
+
+    static public readonly Dictionary<string, string> AskToUseMoonOmer
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to use the moon omer, else the sun?" },
+        { "fr", "Voulez-vous utiliser le omer de la lune, sinon du soleil ?" }
       };
 
     static public readonly Dictionary<string, string> AskToSetupPersonalShabat

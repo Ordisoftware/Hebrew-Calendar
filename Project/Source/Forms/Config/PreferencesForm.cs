@@ -83,6 +83,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         Program.Settings.FirstLaunch = false;
         ShowTextForm.CreateCelebrationsNotice().ShowDialog();
+        Program.Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(Translations.AskToUseMoonOmer.GetLang());
       }
       if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
         ActionGetGPS_LinkClicked(null, null);
