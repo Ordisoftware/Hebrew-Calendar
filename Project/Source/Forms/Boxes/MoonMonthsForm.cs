@@ -142,7 +142,22 @@ namespace Ordisoftware.HebrewCalendar
           PanelMonths.BackColor = SystemColors.Control;
           colorLink =
           colorActiveLink = Color.MediumBlue;
-          colorsMonth = new Color[] { SystemColors.ControlText, SystemColors.ControlText, SystemColors.ControlText, SystemColors.ControlText };
+          colorsMonth = new Color[] 
+          {
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText,
+            SystemColors.ControlText
+          };
           break;
         case MoonMonthsListColors.Pastel:
           PanelMonths.BackColor = Color.Black;
@@ -150,7 +165,22 @@ namespace Ordisoftware.HebrewCalendar
           colorActiveLink = Color.Gainsboro;
           colorLinkTextMeaning = Color.Tomato;
           colorLinkTextLettriq = Color.LightSkyBlue;
-          colorsMonth = new Color[] { Color.FromArgb(255, 230, 80), Color.Orchid, Color.SpringGreen, Color.White };
+          colorsMonth = new Color[] 
+          {
+            Color.FromArgb(255, 230, 80),
+            Color.FromArgb(255, 230, 80),
+            Color.FromArgb(255, 230, 80),
+            Color.Orchid,
+            Color.Orchid,
+            Color.Orchid,
+            Color.SpringGreen,
+            Color.SpringGreen,
+            Color.SpringGreen,
+            Color.White,
+            Color.White,
+            Color.White,
+            Color.White
+          };
           break;
         case MoonMonthsListColors.Flashy:
           PanelMonths.BackColor = Color.Black;
@@ -158,7 +188,22 @@ namespace Ordisoftware.HebrewCalendar
           colorActiveLink = Color.Gainsboro;
           colorLinkTextMeaning = Color.Red;
           colorLinkTextLettriq = Color.Cyan;
-          colorsMonth = new Color[] { Color.Yellow, Color.Fuchsia, Color.Lime, Color.White };
+          colorsMonth = new Color[] 
+          {
+            Color.Yellow,
+            Color.Yellow,
+            Color.Yellow,
+            Color.Fuchsia,
+            Color.Fuchsia,
+            Color.Fuchsia,
+            Color.Lime,
+            Color.Lime,
+            Color.Lime,
+            Color.White,
+            Color.White,
+            Color.White,
+            Color.White
+          };
           break;
         default:
           throw new NotImplementedException();
@@ -188,15 +233,14 @@ namespace Ordisoftware.HebrewCalendar
               if ( xmax < dx ) xmax = dx;
             }
           };
-        countMonths++;
         createLabel(x, y,
                     HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]),
-                    colorsMonth[(int)Math.Truncate(countMonths / 4f)],
+                    colorsMonth[countMonths],
                     new Font("Hebrew", 14f),
                     true, false);
         createLabel(x + dx1, y + dy1,
                     MoonMonths.Names[index],
-                    colorsMonth[(int)Math.Truncate(countMonths / 4f)],
+                    colorsMonth[countMonths],
                     new Font("Microsoft Sans Serif", 10f),
                     false, false);
         createLabel(x + dx2, y + dy2,
@@ -210,6 +254,7 @@ namespace Ordisoftware.HebrewCalendar
                     new Font("Microsoft Sans Serif", 10f),
                     false, true);
         y = y + dyline;
+        countMonths++;
       }
       Width = xmax + 20;
       Height = y + PanelBottom.Height + 40;
