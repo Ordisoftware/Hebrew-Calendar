@@ -113,9 +113,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 #### 2020.04.__ - Version 4.0
 
-- Move online providers values to a file in the application documents folder.
->>>>- Create online providers database table.
->>>>- Add online providers editor form.
+- Move online providers values from code to files in the application documents folder.
 - Add moon month name to all days in the month view.
 - Add suspend reminder menu in the main form and the tray icon.
 - Improve tray icon to show if the reminder is suspended.
@@ -139,8 +137,11 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Fix print bitmap size if the main form is resized.
 - Improve UI/UX.
 - Few UI fixes.
-- Some code refactoring.
+- Code refactoring.
 - Update help.
+
+>>>>- Create online providers database tables.
+>>>>- Add online providers editor form.
 
 #### 2019.11.12 - Version 3.10
 
