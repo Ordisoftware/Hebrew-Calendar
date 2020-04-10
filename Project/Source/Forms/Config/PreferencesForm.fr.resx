@@ -266,7 +266,7 @@
     <value>Fenêtre de l'application</value>
   </data>
   <data name="LabelLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>147, 13</value>
   </data>
   <data name="LabelLoomingDelay.Text" xml:space="preserve">
     <value>Délai avant surgissement (ms)</value>
@@ -289,6 +289,12 @@
   </data>
   <data name="EditReminderUseColors.Text" xml:space="preserve">
     <value>Utiliser les couleurs pour le calendrier et le rappeleur</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 13</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.Text" xml:space="preserve">
+    <value>Verrouillage auto. timeout secs.</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -325,6 +331,12 @@
   </data>
   <data name="LabelTimerInterval.Text" xml:space="preserve">
     <value>Nombre de jours avant</value>
+  </data>
+  <data name="EditRemindAutoLock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 17</value>
+  </data>
+  <data name="EditRemindAutoLock.Text" xml:space="preserve">
+    <value>Verrouillage auto. session</value>
   </data>
   <data name="EditUseMoonDays.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
