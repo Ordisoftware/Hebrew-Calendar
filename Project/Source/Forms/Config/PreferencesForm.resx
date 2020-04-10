@@ -202,7 +202,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>676, 3</value>
+    <value>696, 3</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -412,10 +412,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 645</value>
+    <value>10, 675</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>754, 28</value>
+    <value>774, 28</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -510,28 +510,28 @@
   <data name="&gt;&gt;LabelTimeZone.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;LabelCity.Name" xml:space="preserve">
-    <value>LabelCity</value>
+  <data name="&gt;&gt;LabelGPSCity.Name" xml:space="preserve">
+    <value>LabelGPSCity</value>
   </data>
-  <data name="&gt;&gt;LabelCity.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCity.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelCity.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCity.Parent" xml:space="preserve">
     <value>GroupBoxGPS</value>
   </data>
-  <data name="&gt;&gt;LabelCity.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCity.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;LabelCountry.Name" xml:space="preserve">
-    <value>LabelCountry</value>
+  <data name="&gt;&gt;LabelGPSCountry.Name" xml:space="preserve">
+    <value>LabelGPSCountry</value>
   </data>
-  <data name="&gt;&gt;LabelCountry.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCountry.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelCountry.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCountry.Parent" xml:space="preserve">
     <value>GroupBoxGPS</value>
   </data>
-  <data name="&gt;&gt;LabelCountry.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCountry.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;ActionGetGPS.Name" xml:space="preserve">
@@ -600,55 +600,55 @@
   <data name="&gt;&gt;LabelTimeZone.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="LabelCity.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelGPSCity.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelCity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelGPSCity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelCity.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelGPSCity.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 107</value>
   </data>
-  <data name="LabelCity.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelGPSCity.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 13</value>
   </data>
-  <data name="LabelCity.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelGPSCity.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
   </data>
-  <data name="&gt;&gt;LabelCity.Name" xml:space="preserve">
-    <value>LabelCity</value>
+  <data name="&gt;&gt;LabelGPSCity.Name" xml:space="preserve">
+    <value>LabelGPSCity</value>
   </data>
-  <data name="&gt;&gt;LabelCity.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCity.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelCity.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCity.Parent" xml:space="preserve">
     <value>GroupBoxGPS</value>
   </data>
-  <data name="&gt;&gt;LabelCity.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCity.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="LabelCountry.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelGPSCountry.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelCountry.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelGPSCountry.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 90</value>
   </data>
-  <data name="LabelCountry.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelGPSCountry.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 13</value>
   </data>
-  <data name="LabelCountry.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelGPSCountry.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
   </data>
-  <data name="&gt;&gt;LabelCountry.Name" xml:space="preserve">
-    <value>LabelCountry</value>
+  <data name="&gt;&gt;LabelGPSCountry.Name" xml:space="preserve">
+    <value>LabelGPSCountry</value>
   </data>
-  <data name="&gt;&gt;LabelCountry.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCountry.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelCountry.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCountry.Parent" xml:space="preserve">
     <value>GroupBoxGPS</value>
   </data>
-  <data name="&gt;&gt;LabelCountry.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelGPSCountry.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="ActionGetGPS.AutoSize" type="System.Boolean, mscorlib">
@@ -684,28 +684,151 @@
   <data name="&gt;&gt;ActionGetGPS.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="EditCalendarViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+  <data name="&gt;&gt;EditMonthViewFontSize.Name" xml:space="preserve">
+    <value>EditMonthViewFontSize</value>
   </data>
-  <data name="EditCalendarViewFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 144</value>
-  </data>
-  <data name="EditCalendarViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="EditCalendarViewFontSize.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarViewFontSize.Name" xml:space="preserve">
-    <value>EditCalendarViewFontSize</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarViewFontSize.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditMonthViewFontSize.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditCalendarViewFontSize.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditMonthViewFontSize.Parent" xml:space="preserve">
     <value>GroupBoxTextReport</value>
   </data>
-  <data name="&gt;&gt;EditCalendarViewFontSize.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditMonthViewFontSize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Name" xml:space="preserve">
+    <value>EditFontSize</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelBackColor.Name" xml:space="preserve">
+    <value>LabelBackColor</value>
+  </data>
+  <data name="&gt;&gt;LabelBackColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelBackColor.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;LabelBackColor.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditTextColor.Name" xml:space="preserve">
+    <value>EditTextColor</value>
+  </data>
+  <data name="&gt;&gt;EditTextColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditTextColor.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;EditTextColor.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LabelTextColor.Name" xml:space="preserve">
+    <value>LabelTextColor</value>
+  </data>
+  <data name="&gt;&gt;LabelTextColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTextColor.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;LabelTextColor.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;EditTextBackground.Name" xml:space="preserve">
+    <value>EditTextBackground</value>
+  </data>
+  <data name="&gt;&gt;EditTextBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditTextBackground.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;EditTextBackground.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;EditFontName.Name" xml:space="preserve">
+    <value>EditFontName</value>
+  </data>
+  <data name="&gt;&gt;EditFontName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFontName.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;EditFontName.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="GroupBoxTextReport.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GroupBoxTextReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 279</value>
+  </data>
+  <data name="GroupBoxTextReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 176</value>
+  </data>
+  <data name="GroupBoxTextReport.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="GroupBoxTextReport.Text" xml:space="preserve">
+    <value>Fonts</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTextReport.Name" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTextReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTextReport.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTextReport.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMonthViewFontSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 144</value>
+  </data>
+  <data name="EditMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="EditMonthViewFontSize.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewFontSize.Name" xml:space="preserve">
+    <value>EditMonthViewFontSize</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewFontSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewFontSize.Parent" xml:space="preserve">
+    <value>GroupBoxTextReport</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewFontSize.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="EditFontSize.Font" type="System.Drawing.Font, System.Drawing">
@@ -765,28 +888,28 @@
   <data name="&gt;&gt;LabelBackColor.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="PanelTextColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditTextColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelTextColor.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditTextColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 92</value>
   </data>
-  <data name="PanelTextColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditTextColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelTextColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditTextColor.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;PanelTextColor.Name" xml:space="preserve">
-    <value>PanelTextColor</value>
+  <data name="&gt;&gt;EditTextColor.Name" xml:space="preserve">
+    <value>EditTextColor</value>
   </data>
-  <data name="&gt;&gt;PanelTextColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditTextColor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelTextColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditTextColor.Parent" xml:space="preserve">
     <value>GroupBoxTextReport</value>
   </data>
-  <data name="&gt;&gt;PanelTextColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditTextColor.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="LabelTextColor.AutoSize" type="System.Boolean, mscorlib">
@@ -822,28 +945,28 @@
   <data name="&gt;&gt;LabelTextColor.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="PanelBackColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditTextBackground.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelBackColor.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditTextBackground.Location" type="System.Drawing.Point, System.Drawing">
     <value>164, 92</value>
   </data>
-  <data name="PanelBackColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditTextBackground.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelBackColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditTextBackground.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;PanelBackColor.Name" xml:space="preserve">
-    <value>PanelBackColor</value>
+  <data name="&gt;&gt;EditTextBackground.Name" xml:space="preserve">
+    <value>EditTextBackground</value>
   </data>
-  <data name="&gt;&gt;PanelBackColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditTextBackground.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelBackColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditTextBackground.Parent" xml:space="preserve">
     <value>GroupBoxTextReport</value>
   </data>
-  <data name="&gt;&gt;PanelBackColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditTextBackground.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
@@ -902,33 +1025,6 @@
   </data>
   <data name="&gt;&gt;EditFontName.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="GroupBoxTextReport.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="GroupBoxTextReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 279</value>
-  </data>
-  <data name="GroupBoxTextReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 176</value>
-  </data>
-  <data name="GroupBoxTextReport.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="GroupBoxTextReport.Text" xml:space="preserve">
-    <value>Fonts</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTextReport.Name" xml:space="preserve">
-    <value>GroupBoxTextReport</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTextReport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTextReport.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTextReport.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;LabelRemindShabatHoursBefore.Name" xml:space="preserve">
     <value>LabelRemindShabatHoursBefore</value>
@@ -990,16 +1086,16 @@
   <data name="&gt;&gt;EditRemindShabatEveryMinutes.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;EditRemindShabat.Name" xml:space="preserve">
-    <value>EditRemindShabat</value>
+  <data name="&gt;&gt;EditReminderShabatEnabled.Name" xml:space="preserve">
+    <value>EditReminderShabatEnabled</value>
   </data>
-  <data name="&gt;&gt;EditRemindShabat.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderShabatEnabled.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditRemindShabat.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderShabatEnabled.Parent" xml:space="preserve">
     <value>BroupBoxShabat</value>
   </data>
-  <data name="&gt;&gt;EditRemindShabat.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderShabatEnabled.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="BroupBoxShabat.Font" type="System.Drawing.Font, System.Drawing">
@@ -1176,173 +1272,38 @@
   <data name="&gt;&gt;EditRemindShabatEveryMinutes.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="EditRemindShabat.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditReminderShabatEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditRemindShabat.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditReminderShabatEnabled.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditRemindShabat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditReminderShabatEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditRemindShabat.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditReminderShabatEnabled.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 102</value>
   </data>
-  <data name="EditRemindShabat.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditReminderShabatEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 17</value>
   </data>
-  <data name="EditRemindShabat.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditReminderShabatEnabled.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="EditRemindShabat.Text" xml:space="preserve">
+  <data name="EditReminderShabatEnabled.Text" xml:space="preserve">
     <value>Reminder</value>
   </data>
-  <data name="&gt;&gt;EditRemindShabat.Name" xml:space="preserve">
-    <value>EditRemindShabat</value>
+  <data name="&gt;&gt;EditReminderShabatEnabled.Name" xml:space="preserve">
+    <value>EditReminderShabatEnabled</value>
   </data>
-  <data name="&gt;&gt;EditRemindShabat.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderShabatEnabled.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditRemindShabat.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderShabatEnabled.Parent" xml:space="preserve">
     <value>BroupBoxShabat</value>
   </data>
-  <data name="&gt;&gt;EditRemindShabat.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderShabatEnabled.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="&gt;&gt;ActionUseBlackAndWhiteColors.Name" xml:space="preserve">
-    <value>ActionUseBlackAndWhiteColors</value>
-  </data>
-  <data name="&gt;&gt;ActionUseBlackAndWhiteColors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionUseBlackAndWhiteColors.Parent" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
-  </data>
-  <data name="&gt;&gt;ActionUseBlackAndWhiteColors.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ActionUseDefaultColors.Name" xml:space="preserve">
-    <value>ActionUseDefaultColors</value>
-  </data>
-  <data name="&gt;&gt;ActionUseDefaultColors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionUseDefaultColors.Parent" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
-  </data>
-  <data name="&gt;&gt;ActionUseDefaultColors.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LabelTopColor.Name" xml:space="preserve">
-    <value>LabelTopColor</value>
-  </data>
-  <data name="&gt;&gt;LabelTopColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTopColor.Parent" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
-  </data>
-  <data name="&gt;&gt;LabelTopColor.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ActionUseSystemColors.Name" xml:space="preserve">
-    <value>ActionUseSystemColors</value>
-  </data>
-  <data name="&gt;&gt;ActionUseSystemColors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionUseSystemColors.Parent" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
-  </data>
-  <data name="&gt;&gt;ActionUseSystemColors.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;PanelTopColor.Name" xml:space="preserve">
-    <value>PanelTopColor</value>
-  </data>
-  <data name="&gt;&gt;PanelTopColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelTopColor.Parent" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
-  </data>
-  <data name="&gt;&gt;PanelTopColor.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;PanelBottomColor.Name" xml:space="preserve">
-    <value>PanelBottomColor</value>
-  </data>
-  <data name="&gt;&gt;PanelBottomColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottomColor.Parent" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
-  </data>
-  <data name="&gt;&gt;PanelBottomColor.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;PanelMiddleColor.Name" xml:space="preserve">
-    <value>PanelMiddleColor</value>
-  </data>
-  <data name="&gt;&gt;PanelMiddleColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelMiddleColor.Parent" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
-  </data>
-  <data name="&gt;&gt;PanelMiddleColor.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;LabelBottomColor.Name" xml:space="preserve">
-    <value>LabelBottomColor</value>
-  </data>
-  <data name="&gt;&gt;LabelBottomColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelBottomColor.Parent" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
-  </data>
-  <data name="&gt;&gt;LabelBottomColor.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleColor.Name" xml:space="preserve">
-    <value>LabelMiddleColor</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleColor.Parent" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
-  </data>
-  <data name="&gt;&gt;LabelMiddleColor.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="GroupBoxNavigation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="GroupBoxNavigation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 471</value>
-  </data>
-  <data name="GroupBoxNavigation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 162</value>
-  </data>
-  <data name="GroupBoxNavigation.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="GroupBoxNavigation.Text" xml:space="preserve">
-    <value>Navigation window</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxNavigation.Name" xml:space="preserve">
-    <value>GroupBoxNavigation</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxNavigation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxNavigation.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxNavigation.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1354,7 +1315,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 109</value>
+    <value>15, 125</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 13</value>
@@ -1387,7 +1348,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseDefaultColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 130</value>
+    <value>15, 153</value>
   </data>
   <data name="ActionUseDefaultColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -1420,7 +1381,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTopColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 26</value>
+    <value>15, 36</value>
   </data>
   <data name="LabelTopColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
@@ -1453,7 +1414,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseSystemColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 88</value>
+    <value>15, 97</value>
   </data>
   <data name="ActionUseSystemColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
@@ -1476,76 +1437,76 @@
   <data name="&gt;&gt;ActionUseSystemColors.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="PanelTopColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditNavigateTopColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelTopColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 44</value>
+  <data name="EditNavigateTopColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 54</value>
   </data>
-  <data name="PanelTopColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditNavigateTopColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelTopColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditNavigateTopColor.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelTopColor.Name" xml:space="preserve">
-    <value>PanelTopColor</value>
+  <data name="&gt;&gt;EditNavigateTopColor.Name" xml:space="preserve">
+    <value>EditNavigateTopColor</value>
   </data>
-  <data name="&gt;&gt;PanelTopColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditNavigateTopColor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelTopColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditNavigateTopColor.Parent" xml:space="preserve">
     <value>GroupBoxNavigation</value>
   </data>
-  <data name="&gt;&gt;PanelTopColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditNavigateTopColor.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="PanelBottomColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditNavigateBottomColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelBottomColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 44</value>
+  <data name="EditNavigateBottomColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 54</value>
   </data>
-  <data name="PanelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditNavigateBottomColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelBottomColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditNavigateBottomColor.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;PanelBottomColor.Name" xml:space="preserve">
-    <value>PanelBottomColor</value>
+  <data name="&gt;&gt;EditNavigateBottomColor.Name" xml:space="preserve">
+    <value>EditNavigateBottomColor</value>
   </data>
-  <data name="&gt;&gt;PanelBottomColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditNavigateBottomColor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelBottomColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditNavigateBottomColor.Parent" xml:space="preserve">
     <value>GroupBoxNavigation</value>
   </data>
-  <data name="&gt;&gt;PanelBottomColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditNavigateBottomColor.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="PanelMiddleColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditNavigateMiddleColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelMiddleColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 44</value>
+  <data name="EditNavigateMiddleColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 54</value>
   </data>
-  <data name="PanelMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditNavigateMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelMiddleColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditNavigateMiddleColor.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;PanelMiddleColor.Name" xml:space="preserve">
-    <value>PanelMiddleColor</value>
+  <data name="&gt;&gt;EditNavigateMiddleColor.Name" xml:space="preserve">
+    <value>EditNavigateMiddleColor</value>
   </data>
-  <data name="&gt;&gt;PanelMiddleColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditNavigateMiddleColor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelMiddleColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditNavigateMiddleColor.Parent" xml:space="preserve">
     <value>GroupBoxNavigation</value>
   </data>
-  <data name="&gt;&gt;PanelMiddleColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditNavigateMiddleColor.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="LabelBottomColor.AutoSize" type="System.Boolean, mscorlib">
@@ -1558,7 +1519,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBottomColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 26</value>
+    <value>121, 36</value>
   </data>
   <data name="LabelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -1591,7 +1552,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMiddleColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 26</value>
+    <value>68, 36</value>
   </data>
   <data name="LabelMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -1613,6 +1574,33 @@
   </data>
   <data name="&gt;&gt;LabelMiddleColor.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="GroupBoxNavigation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GroupBoxNavigation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 471</value>
+  </data>
+  <data name="GroupBoxNavigation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 190</value>
+  </data>
+  <data name="GroupBoxNavigation.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="GroupBoxNavigation.Text" xml:space="preserve">
+    <value>Navigation window</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxNavigation.Name" xml:space="preserve">
+    <value>GroupBoxNavigation</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxNavigation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxNavigation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxNavigation.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;EditBalloonAutoHide.Name" xml:space="preserve">
     <value>EditBalloonAutoHide</value>
@@ -1662,16 +1650,16 @@
   <data name="&gt;&gt;SelectOpenMainForm.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;EditLoomingDelay.Name" xml:space="preserve">
-    <value>EditLoomingDelay</value>
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Name" xml:space="preserve">
+    <value>EditBalloonLoomingDelay</value>
   </data>
-  <data name="&gt;&gt;EditLoomingDelay.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditLoomingDelay.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Parent" xml:space="preserve">
     <value>GroupBoxTrayIcon</value>
   </data>
-  <data name="&gt;&gt;EditLoomingDelay.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditBalloonLoomingDelay.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="&gt;&gt;LabelLoomingDelay.Name" xml:space="preserve">
@@ -1845,28 +1833,28 @@
   <data name="&gt;&gt;SelectOpenMainForm.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="EditLoomingDelay.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditBalloonLoomingDelay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditBalloonLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 172</value>
   </data>
-  <data name="EditLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditBalloonLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="EditLoomingDelay.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditBalloonLoomingDelay.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;EditLoomingDelay.Name" xml:space="preserve">
-    <value>EditLoomingDelay</value>
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Name" xml:space="preserve">
+    <value>EditBalloonLoomingDelay</value>
   </data>
-  <data name="&gt;&gt;EditLoomingDelay.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditLoomingDelay.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Parent" xml:space="preserve">
     <value>GroupBoxTrayIcon</value>
   </data>
-  <data name="&gt;&gt;EditLoomingDelay.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditBalloonLoomingDelay.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="LabelLoomingDelay.AutoSize" type="System.Boolean, mscorlib">
@@ -1902,9 +1890,6 @@
   <data name="&gt;&gt;LabelLoomingDelay.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="EditStartupHide.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
   <data name="EditStartupHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1918,7 +1903,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditStartupHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 83</value>
+    <value>29, 93</value>
   </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 17</value>
@@ -1942,18 +1927,18 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditStartupHide.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;EditReminderUseColors.Name" xml:space="preserve">
-    <value>EditReminderUseColors</value>
+  <data name="&gt;&gt;EditUseColors.Name" xml:space="preserve">
+    <value>EditUseColors</value>
   </data>
-  <data name="&gt;&gt;EditReminderUseColors.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditUseColors.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditReminderUseColors.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditUseColors.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditReminderUseColors.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditUseColors.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;LabelRemindAutoLockTimeOut.Name" xml:space="preserve">
@@ -2076,76 +2061,76 @@
   <data name="&gt;&gt;EditEvents.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNewMonth.Name" xml:space="preserve">
-    <value>PanelEventColorNewMonth</value>
+  <data name="&gt;&gt;EditEventColorMonth.Name" xml:space="preserve">
+    <value>EditEventColorMonth</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNewMonth.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorMonth.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNewMonth.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorMonth.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNewMonth.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorMonth.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNext.Name" xml:space="preserve">
-    <value>PanelEventColorNext</value>
+  <data name="&gt;&gt;EditEventColorNext.Name" xml:space="preserve">
+    <value>EditEventColorNext</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNext.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorNext.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNext.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorNext.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNext.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorNext.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorSeason.Name" xml:space="preserve">
-    <value>PanelEventColorSeason</value>
+  <data name="&gt;&gt;EditEventColorSeason.Name" xml:space="preserve">
+    <value>EditEventColorSeason</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorSeason.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorSeason.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorSeason.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorSeason.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorSeason.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorSeason.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorShabat.Name" xml:space="preserve">
-    <value>PanelEventColorShabat</value>
+  <data name="&gt;&gt;EditEventColorShabat.Name" xml:space="preserve">
+    <value>EditEventColorShabat</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorShabat.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorShabat.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorShabat.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorShabat.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorShabat.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorShabat.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorTorah.Name" xml:space="preserve">
-    <value>PanelEventColorTorah</value>
+  <data name="&gt;&gt;EditEventColorTorah.Name" xml:space="preserve">
+    <value>EditEventColorTorah</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorTorah.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorTorah.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorTorah.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorTorah.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorTorah.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorTorah.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="&gt;&gt;EditTimerInterval.Name" xml:space="preserve">
-    <value>EditTimerInterval</value>
+  <data name="&gt;&gt;EditReminderCelebrationsInterval.Name" xml:space="preserve">
+    <value>EditReminderCelebrationsInterval</value>
   </data>
-  <data name="&gt;&gt;EditTimerInterval.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsInterval.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditTimerInterval.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsInterval.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditTimerInterval.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsInterval.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
   <data name="&gt;&gt;LabelTimerInterval.Name" xml:space="preserve">
@@ -2160,16 +2145,16 @@
   <data name="&gt;&gt;LabelTimerInterval.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLockTimeOut.Name" xml:space="preserve">
-    <value>EditRemindAutoLockTimeOut</value>
+  <data name="&gt;&gt;EditAutoLockSessionTimeOut.Name" xml:space="preserve">
+    <value>EditAutoLockSessionTimeOut</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLockTimeOut.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSessionTimeOut.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLockTimeOut.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSessionTimeOut.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLockTimeOut.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSessionTimeOut.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.Name" xml:space="preserve">
@@ -2184,40 +2169,40 @@
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLock.Name" xml:space="preserve">
-    <value>EditRemindAutoLock</value>
+  <data name="&gt;&gt;EditAutoLockSession.Name" xml:space="preserve">
+    <value>EditAutoLockSession</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLock.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSession.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLock.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSession.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLock.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSession.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="&gt;&gt;EditUseMoonDays.Name" xml:space="preserve">
-    <value>EditUseMoonDays</value>
+  <data name="&gt;&gt;EditTorahEventsCountAsMoon.Name" xml:space="preserve">
+    <value>EditTorahEventsCountAsMoon</value>
   </data>
-  <data name="&gt;&gt;EditUseMoonDays.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditTorahEventsCountAsMoon.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditUseMoonDays.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditTorahEventsCountAsMoon.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditUseMoonDays.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditTorahEventsCountAsMoon.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
-  <data name="&gt;&gt;EditTimerEnabled.Name" xml:space="preserve">
-    <value>EditTimerEnabled</value>
+  <data name="&gt;&gt;EditReminderCelebrationsEnabled.Name" xml:space="preserve">
+    <value>EditReminderCelebrationsEnabled</value>
   </data>
-  <data name="&gt;&gt;EditTimerEnabled.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsEnabled.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditTimerEnabled.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsEnabled.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditTimerEnabled.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsEnabled.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.Name" xml:space="preserve">
@@ -2259,34 +2244,34 @@
   <data name="&gt;&gt;GroupBoxReminder.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="EditReminderUseColors.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditUseColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditReminderUseColors.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditUseColors.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditReminderUseColors.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditUseColors.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 360</value>
   </data>
-  <data name="EditReminderUseColors.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 17</value>
   </data>
-  <data name="EditReminderUseColors.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditUseColors.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="EditReminderUseColors.Text" xml:space="preserve">
+  <data name="EditUseColors.Text" xml:space="preserve">
     <value>Use colors for calendar and reminder</value>
   </data>
-  <data name="&gt;&gt;EditReminderUseColors.Name" xml:space="preserve">
-    <value>EditReminderUseColors</value>
+  <data name="&gt;&gt;EditUseColors.Name" xml:space="preserve">
+    <value>EditUseColors</value>
   </data>
-  <data name="&gt;&gt;EditReminderUseColors.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditUseColors.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditReminderUseColors.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditUseColors.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditReminderUseColors.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditUseColors.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.AutoSize" type="System.Boolean, mscorlib">
@@ -2601,148 +2586,148 @@
   <data name="&gt;&gt;EditEvents.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="PanelEventColorNewMonth.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditEventColorMonth.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelEventColorNewMonth.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditEventColorMonth.Location" type="System.Drawing.Point, System.Drawing">
     <value>194, 405</value>
   </data>
-  <data name="PanelEventColorNewMonth.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditEventColorMonth.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelEventColorNewMonth.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditEventColorMonth.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNewMonth.Name" xml:space="preserve">
-    <value>PanelEventColorNewMonth</value>
+  <data name="&gt;&gt;EditEventColorMonth.Name" xml:space="preserve">
+    <value>EditEventColorMonth</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNewMonth.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorMonth.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNewMonth.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorMonth.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNewMonth.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorMonth.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="PanelEventColorNext.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditEventColorNext.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelEventColorNext.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditEventColorNext.Location" type="System.Drawing.Point, System.Drawing">
     <value>252, 405</value>
   </data>
-  <data name="PanelEventColorNext.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditEventColorNext.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelEventColorNext.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditEventColorNext.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNext.Name" xml:space="preserve">
-    <value>PanelEventColorNext</value>
+  <data name="&gt;&gt;EditEventColorNext.Name" xml:space="preserve">
+    <value>EditEventColorNext</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNext.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorNext.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNext.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorNext.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorNext.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorNext.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="PanelEventColorSeason.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditEventColorSeason.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelEventColorSeason.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditEventColorSeason.Location" type="System.Drawing.Point, System.Drawing">
     <value>78, 405</value>
   </data>
-  <data name="PanelEventColorSeason.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditEventColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelEventColorSeason.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditEventColorSeason.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorSeason.Name" xml:space="preserve">
-    <value>PanelEventColorSeason</value>
+  <data name="&gt;&gt;EditEventColorSeason.Name" xml:space="preserve">
+    <value>EditEventColorSeason</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorSeason.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorSeason.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorSeason.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorSeason.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorSeason.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorSeason.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="PanelEventColorShabat.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditEventColorShabat.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelEventColorShabat.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditEventColorShabat.Location" type="System.Drawing.Point, System.Drawing">
     <value>136, 405</value>
   </data>
-  <data name="PanelEventColorShabat.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditEventColorShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelEventColorShabat.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditEventColorShabat.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorShabat.Name" xml:space="preserve">
-    <value>PanelEventColorShabat</value>
+  <data name="&gt;&gt;EditEventColorShabat.Name" xml:space="preserve">
+    <value>EditEventColorShabat</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorShabat.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorShabat.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorShabat.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorShabat.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorShabat.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorShabat.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="PanelEventColorTorah.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditEventColorTorah.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelEventColorTorah.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditEventColorTorah.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 405</value>
   </data>
-  <data name="PanelEventColorTorah.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditEventColorTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelEventColorTorah.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditEventColorTorah.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorTorah.Name" xml:space="preserve">
-    <value>PanelEventColorTorah</value>
+  <data name="&gt;&gt;EditEventColorTorah.Name" xml:space="preserve">
+    <value>EditEventColorTorah</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorTorah.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorTorah.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorTorah.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorTorah.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;PanelEventColorTorah.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditEventColorTorah.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="EditTimerInterval.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditReminderCelebrationsInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditTimerInterval.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditReminderCelebrationsInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 91</value>
   </data>
-  <data name="EditTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditReminderCelebrationsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="EditTimerInterval.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditReminderCelebrationsInterval.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;EditTimerInterval.Name" xml:space="preserve">
-    <value>EditTimerInterval</value>
+  <data name="&gt;&gt;EditReminderCelebrationsInterval.Name" xml:space="preserve">
+    <value>EditReminderCelebrationsInterval</value>
   </data>
-  <data name="&gt;&gt;EditTimerInterval.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsInterval.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditTimerInterval.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsInterval.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditTimerInterval.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsInterval.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
   <data name="LabelTimerInterval.AutoSize" type="System.Boolean, mscorlib">
@@ -2778,28 +2763,28 @@
   <data name="&gt;&gt;LabelTimerInterval.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="EditRemindAutoLockTimeOut.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditAutoLockSessionTimeOut.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditRemindAutoLockTimeOut.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditAutoLockSessionTimeOut.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 324</value>
   </data>
-  <data name="EditRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditAutoLockSessionTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="EditRemindAutoLockTimeOut.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditAutoLockSessionTimeOut.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLockTimeOut.Name" xml:space="preserve">
-    <value>EditRemindAutoLockTimeOut</value>
+  <data name="&gt;&gt;EditAutoLockSessionTimeOut.Name" xml:space="preserve">
+    <value>EditAutoLockSessionTimeOut</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLockTimeOut.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSessionTimeOut.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLockTimeOut.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSessionTimeOut.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLockTimeOut.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSessionTimeOut.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
   <data name="EditRemindCelebrationHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
@@ -2826,103 +2811,103 @@
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="EditRemindAutoLock.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditAutoLockSession.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditRemindAutoLock.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditAutoLockSession.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditRemindAutoLock.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditAutoLockSession.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditRemindAutoLock.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditAutoLockSession.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 305</value>
   </data>
-  <data name="EditRemindAutoLock.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
   </data>
-  <data name="EditRemindAutoLock.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditAutoLockSession.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="EditRemindAutoLock.Text" xml:space="preserve">
+  <data name="EditAutoLockSession.Text" xml:space="preserve">
     <value>Auto lock session</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLock.Name" xml:space="preserve">
-    <value>EditRemindAutoLock</value>
+  <data name="&gt;&gt;EditAutoLockSession.Name" xml:space="preserve">
+    <value>EditAutoLockSession</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLock.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSession.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLock.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSession.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditRemindAutoLock.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditAutoLockSession.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="EditUseMoonDays.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditTorahEventsCountAsMoon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditUseMoonDays.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditTorahEventsCountAsMoon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditUseMoonDays.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditTorahEventsCountAsMoon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditUseMoonDays.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditTorahEventsCountAsMoon.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 25</value>
   </data>
-  <data name="EditUseMoonDays.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 17</value>
   </data>
-  <data name="EditUseMoonDays.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditTorahEventsCountAsMoon.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="EditUseMoonDays.Text" xml:space="preserve">
+  <data name="EditTorahEventsCountAsMoon.Text" xml:space="preserve">
     <value>Use moon days</value>
   </data>
-  <data name="&gt;&gt;EditUseMoonDays.Name" xml:space="preserve">
-    <value>EditUseMoonDays</value>
+  <data name="&gt;&gt;EditTorahEventsCountAsMoon.Name" xml:space="preserve">
+    <value>EditTorahEventsCountAsMoon</value>
   </data>
-  <data name="&gt;&gt;EditUseMoonDays.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditTorahEventsCountAsMoon.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditUseMoonDays.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditTorahEventsCountAsMoon.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditUseMoonDays.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditTorahEventsCountAsMoon.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
-  <data name="EditTimerEnabled.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditReminderCelebrationsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditTimerEnabled.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditReminderCelebrationsEnabled.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditTimerEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditReminderCelebrationsEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditTimerEnabled.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditReminderCelebrationsEnabled.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 48</value>
   </data>
-  <data name="EditTimerEnabled.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditReminderCelebrationsEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 17</value>
   </data>
-  <data name="EditTimerEnabled.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditReminderCelebrationsEnabled.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="EditTimerEnabled.Text" xml:space="preserve">
+  <data name="EditReminderCelebrationsEnabled.Text" xml:space="preserve">
     <value>Remind</value>
   </data>
-  <data name="&gt;&gt;EditTimerEnabled.Name" xml:space="preserve">
-    <value>EditTimerEnabled</value>
+  <data name="&gt;&gt;EditReminderCelebrationsEnabled.Name" xml:space="preserve">
+    <value>EditReminderCelebrationsEnabled</value>
   </data>
-  <data name="&gt;&gt;EditTimerEnabled.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsEnabled.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditTimerEnabled.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsEnabled.Parent" xml:space="preserve">
     <value>GroupBoxReminder</value>
   </data>
-  <data name="&gt;&gt;EditTimerEnabled.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderCelebrationsEnabled.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
   <data name="EditRemindCelebrationEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
@@ -2949,44 +2934,44 @@
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
-  <data name="EditShowMonthDayToolTip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="EditMonthViewSunToolTips.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="EditShowMonthDayToolTip.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="EditMonthViewSunToolTips.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
   </data>
-  <data name="EditShowMonthDayToolTip.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditMonthViewSunToolTips.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditShowMonthDayToolTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditMonthViewSunToolTips.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditShowMonthDayToolTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 125</value>
+  <data name="EditMonthViewSunToolTips.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 160</value>
   </data>
-  <data name="EditShowMonthDayToolTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 32</value>
+  <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 17</value>
   </data>
-  <data name="EditShowMonthDayToolTip.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditMonthViewSunToolTips.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="EditShowMonthDayToolTip.Text" xml:space="preserve">
+  <data name="EditMonthViewSunToolTips.Text" xml:space="preserve">
     <value>Show sun rise and set in month view </value>
   </data>
-  <data name="EditShowMonthDayToolTip.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="EditMonthViewSunToolTips.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
   </data>
-  <data name="&gt;&gt;EditShowMonthDayToolTip.Name" xml:space="preserve">
-    <value>EditShowMonthDayToolTip</value>
+  <data name="&gt;&gt;EditMonthViewSunToolTips.Name" xml:space="preserve">
+    <value>EditMonthViewSunToolTips</value>
   </data>
-  <data name="&gt;&gt;EditShowMonthDayToolTip.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditMonthViewSunToolTips.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditShowMonthDayToolTip.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditMonthViewSunToolTips.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
   </data>
-  <data name="&gt;&gt;EditShowMonthDayToolTip.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;EditMonthViewSunToolTips.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;ActionRestoreCalendarColors.Name" xml:space="preserve">
     <value>ActionRestoreCalendarColors</value>
@@ -3012,16 +2997,16 @@
   <data name="&gt;&gt;LabelColorFullMoon.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;PanelFullMoonColor.Name" xml:space="preserve">
-    <value>PanelFullMoonColor</value>
+  <data name="&gt;&gt;EditCalendarColorFullMoon.Name" xml:space="preserve">
+    <value>EditCalendarColorFullMoon</value>
   </data>
-  <data name="&gt;&gt;PanelFullMoonColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorFullMoon.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelFullMoonColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorFullMoon.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelFullMoonColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorFullMoon.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;LabelColorMoon.Name" xml:space="preserve">
@@ -3036,16 +3021,16 @@
   <data name="&gt;&gt;LabelColorMoon.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;PanelMoonEventColor.Name" xml:space="preserve">
-    <value>PanelMoonEventColor</value>
+  <data name="&gt;&gt;EditCalendarColorMoon.Name" xml:space="preserve">
+    <value>EditCalendarColorMoon</value>
   </data>
-  <data name="&gt;&gt;PanelMoonEventColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorMoon.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelMoonEventColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorMoon.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelMoonEventColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorMoon.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="&gt;&gt;LabelColorSeason.Name" xml:space="preserve">
@@ -3060,16 +3045,16 @@
   <data name="&gt;&gt;LabelColorSeason.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;PanelSeasonEventColor.Name" xml:space="preserve">
-    <value>PanelSeasonEventColor</value>
+  <data name="&gt;&gt;EditCalendarColorSeason.Name" xml:space="preserve">
+    <value>EditCalendarColorSeason</value>
   </data>
-  <data name="&gt;&gt;PanelSeasonEventColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorSeason.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelSeasonEventColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorSeason.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelSeasonEventColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorSeason.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="&gt;&gt;LabelColorTorah.Name" xml:space="preserve">
@@ -3084,16 +3069,16 @@
   <data name="&gt;&gt;LabelColorTorah.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;PanelTorahEventColor.Name" xml:space="preserve">
-    <value>PanelTorahEventColor</value>
+  <data name="&gt;&gt;EditCalendarColorTorahEvent.Name" xml:space="preserve">
+    <value>EditCalendarColorTorahEvent</value>
   </data>
-  <data name="&gt;&gt;PanelTorahEventColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorTorahEvent.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelTorahEventColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorTorahEvent.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelTorahEventColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorTorahEvent.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="&gt;&gt;LabelColorTodayBack.Name" xml:space="preserve">
@@ -3120,28 +3105,28 @@
   <data name="&gt;&gt;LabelColorToday.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayBackColor.Name" xml:space="preserve">
-    <value>PanelCurrentDayBackColor</value>
+  <data name="&gt;&gt;EditCurrentDayBackColor.Name" xml:space="preserve">
+    <value>EditCurrentDayBackColor</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayBackColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayBackColor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayBackColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayBackColor.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayBackColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayBackColor.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayColor.Name" xml:space="preserve">
-    <value>PanelCurrentDayColor</value>
+  <data name="&gt;&gt;EditCurrentDayForeColor.Name" xml:space="preserve">
+    <value>EditCurrentDayForeColor</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayForeColor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayForeColor.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayForeColor.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
   <data name="GroupBoxCalendar.Font" type="System.Drawing.Font, System.Drawing">
@@ -3151,7 +3136,7 @@
     <value>15, 471</value>
   </data>
   <data name="GroupBoxCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 162</value>
+    <value>205, 190</value>
   </data>
   <data name="GroupBoxCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3181,7 +3166,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionRestoreCalendarColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 133</value>
+    <value>16, 153</value>
   </data>
   <data name="ActionRestoreCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 13</value>
@@ -3214,7 +3199,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorFullMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 78</value>
+    <value>137, 88</value>
   </data>
   <data name="LabelColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -3237,28 +3222,28 @@
   <data name="&gt;&gt;LabelColorFullMoon.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="PanelFullMoonColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditCalendarColorFullMoon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelFullMoonColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 96</value>
+  <data name="EditCalendarColorFullMoon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 106</value>
   </data>
-  <data name="PanelFullMoonColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditCalendarColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelFullMoonColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditCalendarColorFullMoon.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;PanelFullMoonColor.Name" xml:space="preserve">
-    <value>PanelFullMoonColor</value>
+  <data name="&gt;&gt;EditCalendarColorFullMoon.Name" xml:space="preserve">
+    <value>EditCalendarColorFullMoon</value>
   </data>
-  <data name="&gt;&gt;PanelFullMoonColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorFullMoon.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelFullMoonColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorFullMoon.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelFullMoonColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorFullMoon.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="LabelColorMoon.AutoSize" type="System.Boolean, mscorlib">
@@ -3271,7 +3256,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 78</value>
+    <value>77, 88</value>
   </data>
   <data name="LabelColorMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -3294,28 +3279,28 @@
   <data name="&gt;&gt;LabelColorMoon.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="PanelMoonEventColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditCalendarColorMoon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelMoonEventColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 96</value>
+  <data name="EditCalendarColorMoon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 106</value>
   </data>
-  <data name="PanelMoonEventColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditCalendarColorMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelMoonEventColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditCalendarColorMoon.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;PanelMoonEventColor.Name" xml:space="preserve">
-    <value>PanelMoonEventColor</value>
+  <data name="&gt;&gt;EditCalendarColorMoon.Name" xml:space="preserve">
+    <value>EditCalendarColorMoon</value>
   </data>
-  <data name="&gt;&gt;PanelMoonEventColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorMoon.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelMoonEventColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorMoon.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelMoonEventColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorMoon.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="LabelColorSeason.AutoSize" type="System.Boolean, mscorlib">
@@ -3328,7 +3313,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 26</value>
+    <value>137, 36</value>
   </data>
   <data name="LabelColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -3351,28 +3336,28 @@
   <data name="&gt;&gt;LabelColorSeason.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="PanelSeasonEventColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditCalendarColorSeason.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelSeasonEventColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 44</value>
+  <data name="EditCalendarColorSeason.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 54</value>
   </data>
-  <data name="PanelSeasonEventColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditCalendarColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelSeasonEventColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditCalendarColorSeason.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;PanelSeasonEventColor.Name" xml:space="preserve">
-    <value>PanelSeasonEventColor</value>
+  <data name="&gt;&gt;EditCalendarColorSeason.Name" xml:space="preserve">
+    <value>EditCalendarColorSeason</value>
   </data>
-  <data name="&gt;&gt;PanelSeasonEventColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorSeason.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelSeasonEventColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorSeason.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelSeasonEventColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorSeason.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="LabelColorTorah.AutoSize" type="System.Boolean, mscorlib">
@@ -3385,7 +3370,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 26</value>
+    <value>77, 36</value>
   </data>
   <data name="LabelColorTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -3408,28 +3393,28 @@
   <data name="&gt;&gt;LabelColorTorah.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="PanelTorahEventColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditCalendarColorTorahEvent.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelTorahEventColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 44</value>
+  <data name="EditCalendarColorTorahEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 54</value>
   </data>
-  <data name="PanelTorahEventColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditCalendarColorTorahEvent.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelTorahEventColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditCalendarColorTorahEvent.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;PanelTorahEventColor.Name" xml:space="preserve">
-    <value>PanelTorahEventColor</value>
+  <data name="&gt;&gt;EditCalendarColorTorahEvent.Name" xml:space="preserve">
+    <value>EditCalendarColorTorahEvent</value>
   </data>
-  <data name="&gt;&gt;PanelTorahEventColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorTorahEvent.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelTorahEventColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorTorahEvent.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelTorahEventColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCalendarColorTorahEvent.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="LabelColorTodayBack.AutoSize" type="System.Boolean, mscorlib">
@@ -3442,7 +3427,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorTodayBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 78</value>
+    <value>17, 88</value>
   </data>
   <data name="LabelColorTodayBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -3475,7 +3460,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorToday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 26</value>
+    <value>17, 36</value>
   </data>
   <data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -3498,52 +3483,52 @@
   <data name="&gt;&gt;LabelColorToday.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="PanelCurrentDayBackColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditCurrentDayBackColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelCurrentDayBackColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 96</value>
+  <data name="EditCurrentDayBackColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 106</value>
   </data>
-  <data name="PanelCurrentDayBackColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditCurrentDayBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelCurrentDayBackColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditCurrentDayBackColor.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayBackColor.Name" xml:space="preserve">
-    <value>PanelCurrentDayBackColor</value>
+  <data name="&gt;&gt;EditCurrentDayBackColor.Name" xml:space="preserve">
+    <value>EditCurrentDayBackColor</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayBackColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayBackColor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayBackColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayBackColor.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayBackColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayBackColor.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="PanelCurrentDayColor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditCurrentDayForeColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="PanelCurrentDayColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 44</value>
+  <data name="EditCurrentDayForeColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 54</value>
   </data>
-  <data name="PanelCurrentDayColor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditCurrentDayForeColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="PanelCurrentDayColor.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditCurrentDayForeColor.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayColor.Name" xml:space="preserve">
-    <value>PanelCurrentDayColor</value>
+  <data name="&gt;&gt;EditCurrentDayForeColor.Name" xml:space="preserve">
+    <value>EditCurrentDayForeColor</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayColor.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayForeColor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayColor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayForeColor.Parent" xml:space="preserve">
     <value>GroupBoxCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelCurrentDayColor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditCurrentDayForeColor.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.Name" xml:space="preserve">
@@ -3570,6 +3555,18 @@
   <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.Name" xml:space="preserve">
+    <value>EditAutoOpenExportFolder</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.Name" xml:space="preserve">
     <value>EditShowReminderInTaskBar</value>
   </data>
@@ -3580,7 +3577,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartup.Name" xml:space="preserve">
     <value>EditCheckUpdateAtStartup</value>
@@ -3592,7 +3589,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxSystem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -3601,7 +3598,7 @@
     <value>438, 471</value>
   </data>
   <data name="GroupBoxSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 162</value>
+    <value>337, 190</value>
   </data>
   <data name="GroupBoxSystem.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3644,7 +3641,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectLangFR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 25</value>
+    <value>66, 30</value>
   </data>
   <data name="ActionSelectLangFR.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 28</value>
@@ -3685,7 +3682,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectLangEN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 25</value>
+    <value>26, 30</value>
   </data>
   <data name="ActionSelectLangEN.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 28</value>
@@ -3705,9 +3702,6 @@
   <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="EditShowReminderInTaskBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
   <data name="EditShowReminderInTaskBar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3721,7 +3715,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditShowReminderInTaskBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 104</value>
+    <value>29, 114</value>
   </data>
   <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 17</value>
@@ -3745,10 +3739,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="EditCheckUpdateAtStartup.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>3</value>
   </data>
   <data name="EditCheckUpdateAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3763,7 +3754,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 62</value>
+    <value>29, 72</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 17</value>
@@ -3787,7 +3778,46 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 137</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 17</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
+    <value>Open export folder after success</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.Name" xml:space="preserve">
+    <value>EditAutoOpenExportFolder</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3796,7 +3826,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>774, 683</value>
+    <value>794, 713</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

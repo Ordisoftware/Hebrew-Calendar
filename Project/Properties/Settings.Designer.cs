@@ -1100,5 +1100,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["MonthViewFontSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoOpenExportFolder {
+            get {
+                return ((bool)(this["AutoOpenExportFolder"]));
+            }
+            set {
+                this["AutoOpenExportFolder"] = value;
+            }
+        }
     }
 }

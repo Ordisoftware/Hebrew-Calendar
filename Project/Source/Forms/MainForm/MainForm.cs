@@ -667,7 +667,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
-      Program.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
+      if ( Program.Settings.AutoOpenExportFolder )
+        Program.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
 
     /// <summary>
@@ -681,7 +682,8 @@ namespace Ordisoftware.HebrewCalendar
       if ( content == null ) return;
       if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
-      Program.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
+      if ( Program.Settings.AutoOpenExportFolder )
+        Program.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
     }
 
     /// <summary>

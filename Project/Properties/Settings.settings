@@ -277,5 +277,8 @@
     <Setting Name="MonthViewFontSize" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">9</Value>
     </Setting>
+    <Setting Name="AutoOpenExportFolder" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

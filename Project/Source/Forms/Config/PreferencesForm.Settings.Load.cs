@@ -29,6 +29,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       EditAutoLockSession.Checked = Program.Settings.AutoLockSession;
       EditAutoLockSessionTimeOut.Value = Program.Settings.AutoLockSessionTimeOut;
+      EditAutoOpenExportFolder.Checked = Program.Settings.AutoOpenExportFolder;
       EditBalloon.Checked = Program.Settings.BalloonEnabled;
       EditBalloonAutoHide.Checked = Program.Settings.BalloonAutoHide;
       EditBalloonLoomingDelay.Value = Program.Settings.BalloonLoomingDelay;

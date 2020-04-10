@@ -416,13 +416,7 @@ namespace Ordisoftware.HebrewCalendar
       UpdateCalendarMonth();
     }
 
-    private void PanelBackColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = EditTextBackground.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditTextBackground.BackColor = DialogColor.Color;
-      MainForm.Instance.CalendarText.BackColor = DialogColor.Color;
-    }
+    //-------------------------------------------------------------------------------------------------------
 
     private void PanelTextColor_Click(object sender, EventArgs e)
     {
@@ -430,6 +424,14 @@ namespace Ordisoftware.HebrewCalendar
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditTextColor.BackColor = DialogColor.Color;
       MainForm.Instance.CalendarText.ForeColor = DialogColor.Color;
+    }
+
+    private void PanelBackColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = EditTextBackground.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditTextBackground.BackColor = DialogColor.Color;
+      MainForm.Instance.CalendarText.BackColor = DialogColor.Color;
     }
 
     private void PanelTopColor_MouseClick(object sender, MouseEventArgs e)
@@ -459,27 +461,11 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
     }
 
-    private void PanelEventColorShabat_MouseClick(object sender, MouseEventArgs e)
+    private void PanelEventColorTorah_MouseClick(object sender, MouseEventArgs e)
     {
-      DialogColor.Color = EditEventColorShabat.BackColor;
+      DialogColor.Color = EditEventColorTorah.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditEventColorShabat.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelEventColorNext_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditEventColorNext.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditEventColorNext.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelEventColorNewMonth_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditEventColorMonth.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditEventColorMonth.BackColor = DialogColor.Color;
+      EditEventColorTorah.BackColor = DialogColor.Color;
       UpdateCalendarMonth();
     }
 
@@ -491,11 +477,34 @@ namespace Ordisoftware.HebrewCalendar
       UpdateCalendarMonth();
     }
 
-    private void PanelEventColorTorah_MouseClick(object sender, MouseEventArgs e)
+    private void PanelEventColorShabat_MouseClick(object sender, MouseEventArgs e)
     {
-      DialogColor.Color = EditEventColorTorah.BackColor;
+      DialogColor.Color = EditEventColorShabat.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditEventColorTorah.BackColor = DialogColor.Color;
+      EditEventColorShabat.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+
+    private void PanelEventColorNewMonth_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditEventColorMonth.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditEventColorMonth.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+    private void PanelEventColorNext_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditEventColorNext.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditEventColorNext.BackColor = DialogColor.Color;
+      UpdateCalendarMonth();
+    }
+
+    private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditCurrentDayForeColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCurrentDayForeColor.BackColor = DialogColor.Color;
       UpdateCalendarMonth();
     }
 
@@ -536,14 +545,6 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditCalendarColorFullMoon.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditCalendarColorFullMoon.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditCurrentDayForeColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditCurrentDayForeColor.BackColor = DialogColor.Color;
       UpdateCalendarMonth();
     }
 
