@@ -455,6 +455,9 @@
     <EmbeddedResource Include="Source\Forms\Boxes\SelectDayForm.resx">
       <DependentUpon>SelectDayForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
