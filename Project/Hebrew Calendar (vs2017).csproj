@@ -284,7 +284,7 @@
     </Compile>
     <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
     <Compile Include="Source\Common\Localizer.cs" />
-    <Compile Include="Source\Forms\MainForm\MainForm.Generate.CSV.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.ExportCSV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.FillMonths.cs">
