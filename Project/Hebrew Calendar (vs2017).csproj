@@ -140,7 +140,7 @@
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Classes\Translations.Generate.cs" />
     <Compile Include="Source\Entities\SunAndMoonRiseAndSet.cs" />
-    <Compile Include="Source\Enums\CSVReportField.cs" />
+    <Compile Include="Source\Enums\ReportFieldCSV.cs" />
     <Compile Include="Source\Classes\Translations.Notices.cs" />
     <Compile Include="Source\Classes\Translations.Calendar.cs" />
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.Colors.cs">
@@ -180,8 +180,8 @@
     <Compile Include="Source\Entities\DayOfWeekItem.cs" />
     <Compile Include="Source\Entities\TorahEventItem.cs" />
     <Compile Include="Source\Classes\Translations.cs" />
-    <Compile Include="Source\Common\SQLiteUtility.cs" />
-    <Compile Include="Source\Enums\TextReportField.cs" />
+    <Compile Include="Source\Common\SQLiteHelper.cs" />
+    <Compile Include="Source\Enums\ReportFieldText.cs" />
     <Compile Include="Source\Enums\Ephemeris.cs" />
     <Compile Include="Source\Forms\Boxes\SearchMonthForm.cs">
       <SubType>Form</SubType>
@@ -244,6 +244,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.Shabat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Vars.cs">
@@ -329,7 +332,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Generate.Data.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Update.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Location.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.cs">
@@ -517,7 +520,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Source\Classes\AstronomyUtility.cs" />
+    <Compile Include="Source\Classes\AstronomyHelper.cs" />
     <Compile Include="Dependencies\Moonr2cs\Moonr2cs.cs" />
     <Compile Include="Source\Program\Program.cs" />
   </ItemGroup>

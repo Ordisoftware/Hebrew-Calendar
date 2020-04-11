@@ -29,13 +29,13 @@ namespace Ordisoftware.HebrewCalendar
         return TorahEventRemindList.ContainsKey(item) && TorahEventRemindList[item];
       }
       var dateNow = DateTime.Now;
-      string strDateNow = SQLiteUtility.GetDate(dateNow);
+      string strDateNow = SQLiteHelper.GetDate(dateNow);
       var dateLimit = dateNow.AddDays((int)Program.Settings.ReminderCelebrationsInterval);
       var rows = from day in DataSet.LunisolarDays
                  where !RemindCelebrationDates.Contains(day.Date)
                     && check((TorahEvent)day.TorahEvents)
-                    && SQLiteUtility.GetDate(day.Date) >= dateNow
-                    && SQLiteUtility.GetDate(day.Date) <= dateLimit
+                    && SQLiteHelper.GetDate(day.Date) >= dateNow
+                    && SQLiteHelper.GetDate(day.Date) <= dateLimit
                  select day;
       foreach ( Data.DataSet.LunisolarDaysRow row in rows )
       {

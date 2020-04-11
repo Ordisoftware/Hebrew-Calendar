@@ -21,6 +21,9 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class DayOfWeekMap
   {
 
+    /// <summary>
+    /// Provide mapping table for Calendar.NET names.
+    /// </summary>
     static public Dictionary<DayOfWeek, DayOfWeek[]> Names = new Dictionary<DayOfWeek, DayOfWeek[]>()
     {
       { DayOfWeek.Monday,

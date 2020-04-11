@@ -39,7 +39,7 @@ namespace Ordisoftware.HebrewCalendar
         this.CenterToMainForm();
       Mutex = true;
       CurrentDay = MainForm.Instance.CurrentDay;
-      int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLiteUtility.GetDate(CurrentDay.Date).Year;
+      int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLiteHelper.GetDate(CurrentDay.Date).Year;
       for ( int indexYear = MainForm.Instance.YearFirst; indexYear <= MainForm.Instance.YearLast; indexYear++ )
       {
         int index = EditYear.Items.Add(indexYear);
@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCancel_Click(object sender, EventArgs e)
     {
       if ( CurrentDay != null )
-        MainForm.Instance.GoToDate(SQLiteUtility.GetDate(CurrentDay.Date));
+        MainForm.Instance.GoToDate(SQLiteHelper.GetDate(CurrentDay.Date));
     }
 
     private void EditYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewCalendar
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where day.IsNewMoon == 1
-                    && SQLiteUtility.GetDate(day.Date).Year == (int)EditYear.SelectedItem
+                    && SQLiteHelper.GetDate(day.Date).Year == (int)EditYear.SelectedItem
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           var item = ListItems.Items.Add(row.LunarMonth.ToString());
           item.SubItems.Add(MoonMonths.Names[row.LunarMonth]);
-          string str = SQLiteUtility.GetDate(row.Date).ToLongDateString();
+          string str = SQLiteHelper.GetDate(row.Date).ToLongDateString();
           item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
           item.Tag = row;
           if ( (TorahEvent)row.TorahEvents == TorahEvent.NewYearD1 )
@@ -92,7 +92,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( ListItems.SelectedItems.Count > 0 )
       {
         var row = (Data.DataSet.LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
-        MainForm.Instance.GoToDate(SQLiteUtility.GetDate(row.Date));
+        MainForm.Instance.GoToDate(SQLiteHelper.GetDate(row.Date));
       }
     }
 

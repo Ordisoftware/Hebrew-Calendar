@@ -21,9 +21,9 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide astronomy utility.
+  /// Provide astronomy helper.
   /// </summary>
-  static public class AstronomyUtility
+  static public class AstronomyHelper
   {
 
     /// <summary>
@@ -39,13 +39,39 @@ namespace Ordisoftware.HebrewCalendar
       = new SunMoon();
 
     /// <summary>
+    /// Get the moon phase type.
+    /// </summary>
+    /// <remarks>
+    /// Adapted from http://jivebay.com/2008/09/07/calculating-the-moon-phase.
+    /// </remarks>
+    /// <param name="date">The date.</param>
+    /// <returns>
+    /// The moon phase.
+    /// </returns>
+    static public MoonPhase GetMoonPhase(this DateTime date)
+    {
+      int year = date.Year;
+      int month = date.Month;
+      int day = date.Day;
+      if ( month < 3 )
+      {
+        year--;
+        month += 12;
+      }
+      month++;
+      double julian = ( ( 365.25 * year ) + ( 30.6 * month ) + day - 694039.09 ) / 29.5305882;
+      int result = (int)Math.Round(( julian - (int)julian ) * 8);
+      return result > 7 ? MoonPhase.New : (MoonPhase)result;
+    }
+
+    /// <summary>
     /// Get the sun and moon ephemeris.
     /// </summary>
     /// <param name="date">The date.</param>
     /// <returns>
     /// The ephemeris.
     /// </returns>
-    static public SunAndMoonRiseAndSet GetSunMoonEphemeris(DateTime date)
+    static public SunAndMoonRiseAndSet GetSunMoonEphemeris(this DateTime date)
     {
       TimeSpan? calcEphem(string str)
       {
@@ -78,31 +104,6 @@ namespace Ordisoftware.HebrewCalendar
         Moonrise = calcEphem(strEphem.Substring(51, 4)),
         Moonset = calcEphem(strEphem.Substring(56, 4))
       };
-    }
-
-    /// <summary>
-    /// Get the moon phase type.
-    /// </summary>
-    /// <remarks>
-    /// Adapted from http://jivebay.com/2008/09/07/calculating-the-moon-phase.
-    /// </remarks>
-    /// <param name="year">The year.</param>
-    /// <param name="month">The month.</param>
-    /// <param name="day">The day.</param>
-    /// <returns>
-    /// The moon phase.
-    /// </returns>
-    static public MoonPhase GetMoonPhase(int year, int month, int day)
-    {
-      if ( month < 3 )
-      {
-        year--;
-        month += 12;
-      }
-      month++;
-      double julian = ( ( 365.25 * year ) + ( 30.6 * month ) + day - 694039.09 ) / 29.5305882;
-      int result = (int)Math.Round(( julian - (int)julian ) * 8);
-      return result > 7 ? MoonPhase.New : (MoonPhase)result;
     }
 
   }

@@ -18,9 +18,9 @@ namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Provide SQLite utilities methods.
+  /// Provide SQLite helper methods.
   /// </summary>
-  static public class SQLiteUtility
+  static public class SQLiteHelper
   {
 
     /// <summary>

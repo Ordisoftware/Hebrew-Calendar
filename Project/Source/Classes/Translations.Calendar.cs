@@ -186,39 +186,39 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<TextReportField, Dictionary<string, string>> CalendarField
-      = new Dictionary<TextReportField, Dictionary<string, string>>()
+    static public readonly Dictionary<ReportFieldText, Dictionary<string, string>> CalendarField
+      = new Dictionary<ReportFieldText, Dictionary<string, string>>()
       {
         {
-          TextReportField.Date, new Dictionary<string, string>
+          ReportFieldText.Date, new Dictionary<string, string>
           {
             { "en", "Date" },
             { "fr", "Date" }
           }
         },
         {
-          TextReportField.Month, new Dictionary<string, string>
+          ReportFieldText.Month, new Dictionary<string, string>
           {
             { "en", "Month" },
             { "fr", "Mois" }
           }
         },
         {
-          TextReportField.Sun, new Dictionary<string, string>
+          ReportFieldText.Sun, new Dictionary<string, string>
           {
             { "en", "Sun" },
             { "fr", "Soleil" }
           }
         },
         {
-          TextReportField.Moon, new Dictionary<string, string>
+          ReportFieldText.Moon, new Dictionary<string, string>
           {
             { "en", "Moon" },
             { "fr", "Lune" }
           }
         },
         {
-          TextReportField.Events, new Dictionary<string, string>
+          ReportFieldText.Events, new Dictionary<string, string>
           {
             { "en", "Events" },
             { "fr", "Évènements" }

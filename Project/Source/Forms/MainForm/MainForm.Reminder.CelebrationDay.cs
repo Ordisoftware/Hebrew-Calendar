@@ -29,11 +29,11 @@ namespace Ordisoftware.HebrewCalendar
         return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
       }
       var dateNow = DateTime.Now;
-      string strDateNow = SQLiteUtility.GetDate(dateNow);
+      string strDateNow = SQLiteHelper.GetDate(dateNow);
       var row = ( from day in DataSet.LunisolarDays
                   where (TorahEvent)day.TorahEvents != TorahEvent.None
                      && check((TorahEvent)day.TorahEvents)
-                     && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDateNow).AddDays(-1)
+                     && SQLiteHelper.GetDate(day.Date) >= SQLiteHelper.GetDate(strDateNow).AddDays(-1)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
       var times = CreateCelebrationTimes(row, Program.Settings.RemindCelebrationEveryMinutes);

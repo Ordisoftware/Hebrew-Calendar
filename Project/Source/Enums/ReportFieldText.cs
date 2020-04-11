@@ -20,7 +20,7 @@ namespace Ordisoftware.HebrewCalendar
   /// <summary>
   /// Text report field enum.
   /// </summary>
-  public enum TextReportField
+  public enum ReportFieldText
   {
     Date,
     Month,

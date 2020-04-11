@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         string headerTxt = "";
-        foreach ( CSVReportField v in Enum.GetValues(typeof(CSVReportField)) )
+        foreach ( ReportFieldCSV v in Enum.GetValues(typeof(ReportFieldCSV)) )
           headerTxt += v.ToString() + CSVSeparator;
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
         var result = new StringBuilder();
@@ -43,10 +43,10 @@ namespace Ordisoftware.HebrewCalendar
         int progress = 0;
         int count = DataSet.LunisolarDays.Count;
         if ( count == 0 ) return null;
-        var lastyear = SQLiteUtility.GetDate(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+        var lastyear = SQLiteHelper.GetDate(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
         foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         {
-          var dayDate = SQLiteUtility.GetDate(day.Date);
+          var dayDate = SQLiteHelper.GetDate(day.Date);
           if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReport.GetLang()) ) return null;
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;

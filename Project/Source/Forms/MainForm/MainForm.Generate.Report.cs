@@ -38,21 +38,21 @@ namespace Ordisoftware.HebrewCalendar
     private bool ShowWinterSummerHour = true;
     private bool ShowShabat = true;
 
-    private Dictionary<TextReportField, int> CalendarFieldSize
-      = new Dictionary<TextReportField, int>()
+    private Dictionary<ReportFieldText, int> CalendarFieldSize
+      = new Dictionary<ReportFieldText, int>()
       {
-        { TextReportField.Date, 16 },
-        { TextReportField.Month, 11 },
-        { TextReportField.Sun, 23 },
-        { TextReportField.Moon, 21 },
-        { TextReportField.Events, 42 },
+        { ReportFieldText.Date, 16 },
+        { ReportFieldText.Month, 11 },
+        { ReportFieldText.Sun, 23 },
+        { ReportFieldText.Moon, 21 },
+        { ReportFieldText.Events, 42 },
       };
 
     private string GenerateReport()
     {
       var headerSep = SeparatorV;
       var headerTxt = SeparatorV;
-      foreach ( TextReportField v in Enum.GetValues(typeof(TextReportField)) )
+      foreach ( ReportFieldText v in Enum.GetValues(typeof(ReportFieldText)) )
       {
         string str = Translations.CalendarField.GetLang(v);
         headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
@@ -65,11 +65,11 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       int count = DataSet.LunisolarDays.Count;
       if ( count <= 0 ) return "";
-      var lastyear = SQLiteUtility.GetDate(DataSet.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
+      var lastyear = SQLiteHelper.GetDate(DataSet.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
       foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         try
         {
-          var dayDate = SQLiteUtility.GetDate(day.Date);
+          var dayDate = SQLiteHelper.GetDate(day.Date);
           if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReport.GetLang()) ) return "";
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewCalendar
           string s1 = Translations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
           string s2 = Translations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
           strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
-          strDesc += new string(' ', CalendarFieldSize[TextReportField.Events] - 2 - strDesc.Length) + ColumnSepRight;
+          strDesc += new string(' ', CalendarFieldSize[ReportFieldText.Events] - 2 - strDesc.Length) + ColumnSepRight;
           content.Append(ColumnSepLeft);
           content.Append(textDate);
           content.Append(ColumnSepInner);

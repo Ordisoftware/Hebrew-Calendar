@@ -206,7 +206,7 @@ namespace Ordisoftware.HebrewCalendar
       date = formDate.MonthCalendar.SelectionStart.Date;
       var formTime = new SelectBirthTime();
       if ( formTime.ShowDialog() != DialogResult.OK ) return;
-      var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
+      var ephemeris = date.GetSunMoonEphemeris();
       var time = formTime.EditTime.Value.TimeOfDay;
       if ( time >= new TimeSpan(0, 0, 0) && time < ephemeris.Sunset )
         date = date.AddDays(-1);

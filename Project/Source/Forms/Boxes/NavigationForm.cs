@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           string strText = value.ToString();
           strText = strText.Remove(strText.Length - 3, 3);
-          string strDate = SQLiteUtility.GetDate(value);
+          string strDate = SQLiteHelper.GetDate(value);
           var row = ( from day in MainForm.Instance.DataSet.LunisolarDays
                       where day.Date == strDate
                       select day ).Single();
@@ -60,11 +60,11 @@ namespace Ordisoftware.HebrewCalendar
           LabelEventTorahValue.Text = Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents);
           if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
-                          where SQLiteUtility.GetDate(day.Date) > value && day.TorahEvents > 0
+                          where SQLiteHelper.GetDate(day.Date) > value && day.TorahEvents > 0
                           select day ).FirstOrDefault();
           if ( rowNext != null )
           {
-            var date = SQLiteUtility.GetDate(rowNext.Date);
+            var date = SQLiteHelper.GetDate(rowNext.Date);
             LabelTorahNextValue.Text = Translations.TorahEvent.GetLang((TorahEvent)rowNext.TorahEvents);
             LabelTorahNextDateValue.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
             LabelTorahNext.Tag = date;

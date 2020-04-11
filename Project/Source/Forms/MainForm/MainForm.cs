@@ -565,7 +565,7 @@ namespace Ordisoftware.HebrewCalendar
       int diffMoon = 0;
       if (date1 >= DateFirst && date2 <= DateLast)
         for ( DateTime date = date1; date <= date2; date = date.AddDays(1) )
-          if ( DataSet.LunisolarDays.FindByDate(SQLiteUtility.GetDate(date)).Moonrise != "" )
+          if ( DataSet.LunisolarDays.FindByDate(SQLiteHelper.GetDate(date)).Moonrise != "" )
             diffMoon++;
       string str = ActionCalculateDateDiff.Text
                  + Environment.NewLine + Environment.NewLine
@@ -842,7 +842,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( LunisolarDaysBindingSource.Current == null ) return;
         var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-        GoToDate(SQLiteUtility.GetDate(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
+        GoToDate(SQLiteHelper.GetDate(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
       }
       catch
       {
@@ -856,7 +856,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         System.Threading.Thread.Sleep(1000);
         CalendarMonth.Refresh();
-        if ( SQLiteUtility.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
+        if ( SQLiteHelper.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
       });
     }

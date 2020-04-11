@@ -20,7 +20,7 @@ namespace Ordisoftware.HebrewCalendar
   /// <summary>
   /// CSV report field enum.
   /// </summary>
-  public enum CSVReportField
+  public enum ReportFieldCSV
   {
     Date,
     IsNewMoon,
