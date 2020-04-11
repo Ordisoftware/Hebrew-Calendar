@@ -122,6 +122,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Improve personal shabat dialog box.
 - Improve preferences form.
 - Add dialog box to choose sun or moon omer at first startup.
+- Improve search celebration and moon month forms to use a combobox.
 - Add month number column in the search lunar month form.
 - Add some links to calendars' websites.
 - Add tools menu.
