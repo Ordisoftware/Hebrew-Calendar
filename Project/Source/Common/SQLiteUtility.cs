@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 
 namespace Ordisoftware.HebrewCalendar
@@ -38,7 +38,6 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="year">The year.</param>
     /// <param name="month">The month.</param>
     /// <param name="day">The day.</param>
-    /// <returns></returns>
     static public string GetDate(int year, int month, int day)
     {
       return $"{year.ToString("0000")}-{month.ToString("00")}-{day.ToString("00")}";

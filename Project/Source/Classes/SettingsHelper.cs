@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// Indicate the main form.
+    /// Indicate the main form instance.
     /// </summary>
     static private readonly MainForm MainForm = MainForm.Instance;
 

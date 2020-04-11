@@ -191,7 +191,7 @@ namespace Ordisoftware.HebrewCommon
     };
 
     /// <summary>
-    /// Indicate letters simple values.
+    /// Indicate letters full values.
     /// </summary>
     static public readonly int[] ValuesFull =
     {
@@ -200,7 +200,7 @@ namespace Ordisoftware.HebrewCommon
     };
 
     /// <summary>
-    /// Indicate letters names.
+    /// Indicate letters names in phonetic.
     /// </summary>
     static public readonly Dictionary<string, string[]> Names
       = new Dictionary<string, string[]>()
@@ -220,7 +220,7 @@ namespace Ordisoftware.HebrewCommon
       };
 
     /// <summary>
-    /// Indicate letters names.
+    /// Indicate letters names in hebrew font chars.
     /// </summary>
     static public readonly string[] HebrewFontNames =
     {

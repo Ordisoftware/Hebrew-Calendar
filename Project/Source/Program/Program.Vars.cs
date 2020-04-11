@@ -151,7 +151,7 @@ namespace Ordisoftware.HebrewCalendar
       = AppDocumentsFolderPath + "OnlineWordProviders.txt";
 
     /// <summary>
-    /// Indicate online search word providers.
+    /// Indicate online search a word providers.
     /// </summary>
     static public readonly OnlineProviders OnlineWordProviders
       = new OnlineProviders(OnlineWordProvidersFileName);

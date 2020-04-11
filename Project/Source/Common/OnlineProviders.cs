@@ -73,7 +73,7 @@ namespace Ordisoftware.HebrewCommon
           var item = new OnlineProvider(); ;
           if ( lines[index].Trim() == "" )
             continue;
-          if ( lines[index].StartsWith(";") )
+          if ( lines[index].Trim().StartsWith(";") )
             continue;
           if ( lines[index].StartsWith("-") )
           {
