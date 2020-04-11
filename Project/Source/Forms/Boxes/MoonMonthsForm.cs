@@ -85,14 +85,7 @@ namespace Ordisoftware.HebrewCalendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      string strHebrew = HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]);
-      if ( strHebrew.StartsWith("a ") )
-        strHebrew = strHebrew.Substring(2, strHebrew.Length - 2);
-      else
-      if ( strHebrew.StartsWith("b ") )
-        strHebrew = strHebrew.Substring(2, strHebrew.Length - 2);
-      foreach ( string item in strHebrew.Split(' ') )
-        Program.OpenHebrewLetters(item);
+      Program.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]));
     }
 
     private void ActionCopyFontChars_Click(object sender, EventArgs e)

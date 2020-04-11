@@ -39,7 +39,13 @@ namespace Ordisoftware.HebrewCalendar
         return;
       }
       hebrew = HebrewAlphabet.SetFinal(hebrew, false);
-      RunShell(Settings.HebrewLettersExe, hebrew);
+      if ( hebrew.StartsWith("a ") )
+        hebrew = hebrew.Substring(2, hebrew.Length - 2);
+      else
+      if ( hebrew.StartsWith("b ") )
+        hebrew = hebrew.Substring(2, hebrew.Length - 2);
+      foreach ( string item in hebrew.Split(' ') )
+        RunShell(Settings.HebrewLettersExe, hebrew);
     }
     
   }
