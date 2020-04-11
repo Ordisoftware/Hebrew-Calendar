@@ -98,6 +98,8 @@ namespace Ordisoftware.HebrewCalendar
       base.CenterToScreen();
     }
 
+    private bool DoScreenPositionMutex;
+
     /// <summary>
     /// Execute the screen position operation.
     /// </summary>
@@ -105,30 +107,43 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     protected void DoScreenPosition(object sender, EventArgs e)
     {
-      int left = SystemInformation.WorkingArea.Left;
-      int top = SystemInformation.WorkingArea.Top;
-      int width = SystemInformation.WorkingArea.Width;
-      int height = SystemInformation.WorkingArea.Height;
-      if ( sender != null && sender is ToolStripMenuItem )
+      if ( DoScreenPositionMutex ) return;
+      try
       {
-        var value = sender as ToolStripMenuItem;
-        var list = ( (ToolStripMenuItem)value.OwnerItem ).DropDownItems;
-        foreach ( ToolStripMenuItem item in list ) item.Checked = item == value;
+        DoScreenPositionMutex = true;
+        int left = SystemInformation.WorkingArea.Left;
+        int top = SystemInformation.WorkingArea.Top;
+        int width = SystemInformation.WorkingArea.Width;
+        int height = SystemInformation.WorkingArea.Height;
+        if ( sender != null && sender is ToolStripMenuItem )
+        {
+          var value = sender as ToolStripMenuItem;
+          var list = ( (ToolStripMenuItem)value.OwnerItem ).DropDownItems;
+          foreach ( ToolStripMenuItem item in list )
+            item.Checked = item == value;
+        }
+        if ( EditScreenNone.Checked )
+          return;
+        if ( EditScreenTopLeft.Checked )
+          Location = new Point(left, top);
+        else
+        if ( EditScreenTopRight.Checked )
+          Location = new Point(left + width - Width, top);
+        else
+        if ( EditScreenBottomLeft.Checked )
+          Location = new Point(left, top + height - Height);
+        else
+        if ( EditScreenBottomRight.Checked )
+          Location = new Point(left + width - Width, top + height - Height);
+        else
+        if ( EditScreenCenter.Checked )
+          CenterToScreen();
+        EditScreenNone.Checked = false;
       }
-      if ( EditScreenTopLeft.Checked )
-        Location = new Point(left, top);
-      else
-      if ( EditScreenTopRight.Checked )
-        Location = new Point(left + width - Width, top);
-      else
-      if ( EditScreenBottomLeft.Checked )
-        Location = new Point(left, top + height - Height);
-      else
-      if ( EditScreenBottomRight.Checked )
-        Location = new Point(left + width - Width, top + height - Height);
-      else
-      if ( EditScreenCenter.Checked )
-        CenterToScreen();
+      finally
+      {
+        DoScreenPositionMutex = false;
+      }
     }
 
   }
