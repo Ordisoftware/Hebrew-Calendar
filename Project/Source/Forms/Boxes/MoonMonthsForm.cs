@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       LastControl = sender as Control;
       if ( e.Button == MouseButtons.Left )
-        ContextMenuStrip.Show(LastControl, LastControl.PointToClient(Cursor.Position));
+        ContextMenuItems.Show(LastControl, LastControl.PointToClient(Cursor.Position));
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)

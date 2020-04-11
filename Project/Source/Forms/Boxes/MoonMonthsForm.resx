@@ -273,7 +273,7 @@
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="ContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ContextMenuItems.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="ActionSearchOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -388,13 +388,13 @@
   <data name="ActionCopyLine.Text" xml:space="preserve">
     <value>Copy data</value>
   </data>
-  <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 126</value>
+  <data name="ContextMenuItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 148</value>
   </data>
-  <data name="&gt;&gt;ContextMenuStrip.Name" xml:space="preserve">
-    <value>ContextMenuStrip</value>
+  <data name="&gt;&gt;ContextMenuItems.Name" xml:space="preserve">
+    <value>ContextMenuItems</value>
   </data>
-  <data name="&gt;&gt;ContextMenuStrip.Type" xml:space="preserve">
+  <data name="&gt;&gt;ContextMenuItems.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PanelMonths.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -442,6 +442,12 @@
   <data name="&gt;&gt;ActionSearchOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
     <value>ActionOpenHebrewLetters</value>
   </data>
@@ -471,12 +477,6 @@
   </data>
   <data name="&gt;&gt;ActionCopyLine.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MoonMonthsForm</value>

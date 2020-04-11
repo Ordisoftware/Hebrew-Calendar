@@ -78,7 +78,7 @@ namespace Ordisoftware.HebrewCalendar
           while ( DataSet.LunisolarDays.Count == 0 );
         }
       }
-      catch ( AbortException ex )
+      catch ( AbortException )
       {
         LoadData();
         return;

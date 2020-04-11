@@ -65,6 +65,7 @@ namespace Ordisoftware.HebrewCommon
     /// Get the string translation.
     /// </summary>
     /// <param name="values">The dictionary containing langs>translations.</param>
+    /// <param name="parameters">Parameters for the string.</param>
     /// <returns></returns>
     static public string GetLang(this Dictionary<string, string> values, params object[] parameters)
     {

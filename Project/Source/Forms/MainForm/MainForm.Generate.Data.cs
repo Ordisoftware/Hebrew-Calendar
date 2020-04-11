@@ -244,7 +244,6 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="day">The day.</param>
     /// <param name="monthMoon">[in,out] The current mooon month.</param>
-    /// <param name="delta">[in,out] The current delta to skip days w/o moonrise.</param>
     private void AnalyzeDay(Data.DataSet.LunisolarDaysRow day, ref int monthMoon)
     {
       DateTime calculate(DateTime thedate, int toadd, TorahEvent type, bool forceSunOmer)

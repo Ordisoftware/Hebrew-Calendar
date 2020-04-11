@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewCalendar
             linklabel.ActiveLinkColor = colorActiveLink;
             linklabel.LinkColor = color;
             linklabel.LinkClicked += Label_LinkClicked;
-            linklabel.ContextMenuStrip = ContextMenuStrip;
+            linklabel.ContextMenuStrip = ContextMenuItems;
             if ( isAlignRight )
               linklabel.Left = x + dx1 - 5 - linklabel.Width;
             if ( checkWidth )

@@ -177,7 +177,7 @@ namespace Ordisoftware.HebrewCalendar
           DoGenerate(null, new EventArgs());
         }
       }
-      catch ( AbortException ex )
+      catch ( AbortException )
       {
       }
       catch ( Exception ex )
@@ -741,7 +741,7 @@ namespace Ordisoftware.HebrewCalendar
           NavigationForm.Instance.BringToFront();
         }
       }
-      catch ( ObjectDisposedException ex )
+      catch ( ObjectDisposedException )
       {
         NavigationForm.Instance = new NavigationForm();
         goto retry;

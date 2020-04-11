@@ -35,17 +35,17 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.ActionReloadFiles = new System.Windows.Forms.LinkLabel();
       this.ActionEditFiles = new System.Windows.Forms.LinkLabel();
-      this.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ContextMenuItems = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLine = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMonths = new System.Windows.Forms.Panel();
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelBottom.SuspendLayout();
-      this.ContextMenuStrip.SuspendLayout();
+      this.ContextMenuItems.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -91,9 +91,9 @@
       this.ActionEditFiles.TabStop = true;
       this.ActionEditFiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionEditFiles_LinkClicked);
       // 
-      // ContextMenuStrip
+      // ContextMenuItems
       // 
-      this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.ContextMenuItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionSearchOnline,
             this.toolStripSeparator1,
             this.ActionOpenHebrewLetters,
@@ -101,13 +101,18 @@
             this.ActionCopyFontChars,
             this.ActionCopyUnicodeChars,
             this.ActionCopyLine});
-      this.ContextMenuStrip.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuStrip, "ContextMenuStrip");
+      this.ContextMenuItems.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuItems, "ContextMenuItems");
       // 
       // ActionSearchOnline
       // 
       resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
       this.ActionSearchOnline.Name = "ActionSearchOnline";
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionOpenHebrewLetters
       // 
@@ -143,11 +148,6 @@
       resources.ApplyResources(this.PanelMonths, "PanelMonths");
       this.PanelMonths.Name = "PanelMonths";
       // 
-      // toolStripSeparator1
-      // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-      // 
       // MoonMonthsForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -165,7 +165,7 @@
       this.Load += new System.EventHandler(this.MoonMonthsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      this.ContextMenuStrip.ResumeLayout(false);
+      this.ContextMenuItems.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -174,7 +174,7 @@
 
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionClose;
-    private System.Windows.Forms.ContextMenuStrip ContextMenuStrip;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuItems;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
