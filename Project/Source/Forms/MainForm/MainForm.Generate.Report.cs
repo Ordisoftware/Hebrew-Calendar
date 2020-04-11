@@ -89,8 +89,9 @@ namespace Ordisoftware.HebrewCalendar
                                                             : Translations.Ephemeris.GetLang(Ephemeris.WinterHour) )
                                                               + " " + strSun
                  : strSun + new string(' ', 3 + 1);
-          strSun += " "
-                  + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay ? ShabatText : "   " );
+          strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay 
+                            ? ShabatText 
+                            : "   " );
           string strMoonrise = day.Moonrise == ""
                              ? MoonNoText
                              : Translations.Ephemeris.GetLang(Ephemeris.Rise) + day.Moonrise;

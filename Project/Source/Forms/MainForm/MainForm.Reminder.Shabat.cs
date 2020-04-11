@@ -30,7 +30,8 @@ namespace Ordisoftware.HebrewCalendar
                   where SQLiteUtility.GetDate(day.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
                      && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDateNow)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
-      if ( row == null ) return;
+      if ( row == null )
+        return;
       var dateRow = SQLiteUtility.GetDate(row.Date);
       var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteUtility.GetDate(dateRow.AddDays(-1)));
       var times = new ReminderTimes();

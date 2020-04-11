@@ -117,7 +117,8 @@ namespace Ordisoftware.HebrewCalendar
           for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
             try
             {
-              if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressCreateDays.GetLang()) ) return;
+              if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressCreateDays.GetLang()) )
+                return;
               var row = DataSet.LunisolarDays.NewLunisolarDaysRow();
               row.Date = SQLiteUtility.GetDate(year, month, day);
               row.TorahEvents = 0;
@@ -188,7 +189,8 @@ namespace Ordisoftware.HebrewCalendar
           var dateJulian = new DateTime((int)jdYear, (int)jdMonth, (int)jdDay, 0, 0, 0);
           string strDate = SQLiteUtility.GetDate((int)jdYear, (int)jdMonth, (int)jdDay);
           var day = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == strDate);
-          if ( day == null ) return;
+          if ( day == null )
+            return;
           day.SeasonChange = (int)season;
         }
         var lat = XmlConvert.ToDouble(Program.Settings.GPSLatitude);
@@ -224,12 +226,14 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         try
         {
-          if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressAnalyzeDays.GetLang()) ) return;
-          if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month);
+          if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressAnalyzeDays.GetLang()) )
+            return;
+          if ( day.IsNewMoon == 1 )
+            AnalyzeDay(day, ref month);
           day.LunarMonth = month;
-          if ( day.IsNewMoon == 1 ) delta = 0;
-          if ( (MoonRise)day.MoonriseType == MoonRise.NextDay
-            && Program.Settings.TorahEventsCountAsMoon )
+          if ( day.IsNewMoon == 1 )
+            delta = 0;
+          if ( (MoonRise)day.MoonriseType == MoonRise.NextDay && Program.Settings.TorahEventsCountAsMoon )
             delta = 1;
           day.LunarDay -= delta;
         }
@@ -264,7 +268,8 @@ namespace Ordisoftware.HebrewCalendar
         else
           thedate = thedate.AddDays(toadd);
         var rowEnd = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(thedate));
-        if ( rowEnd != null ) rowEnd.TorahEvents |= (int)type;
+        if ( rowEnd != null )
+          rowEnd.TorahEvents |= (int)type;
         return thedate;
       }
       try

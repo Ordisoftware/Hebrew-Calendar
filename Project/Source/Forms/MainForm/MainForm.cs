@@ -52,12 +52,10 @@ namespace Ordisoftware.HebrewCalendar
       TrayIcon.Icon = Icon;
       Program.Settings.Retrieve();
       MenuTray.Enabled = false;
-      //CalendarMonth.Events //Calibri 9
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
       CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
       CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
-      //Program.Settings.MonthViewFontSize = 18;
       CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1); //10
       CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold); //10
       CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
@@ -601,16 +599,6 @@ namespace Ordisoftware.HebrewCalendar
         ex.Manage();
       }
     }
-
-    /// <summary>
-    /// Event handler. Called by ActionStop for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    /*private void ActionStop_Click(object sender, EventArgs e)
-    {
-      IsGenerating = false;
-    }*/
 
     /// <summary>
     /// Event handler. Called by ActionCopyReportToClipboard for click events.

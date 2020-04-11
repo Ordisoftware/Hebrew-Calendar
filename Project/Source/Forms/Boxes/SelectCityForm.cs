@@ -156,8 +156,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         var list = EditFilter.Text.Split(',');
-        if ( list.Length == 0 )
-          return;
+        if ( list.Length == 0 ) return;
         // Country
         list[0] = list[0].Trim().RemoveDiacritics().ToLower();
         if ( list[0].Length < 3 )
@@ -166,8 +165,7 @@ namespace Ordisoftware.HebrewCalendar
                             where country.Key.ToLower().StartsWith(list[0])
                             orderby country.Key
                             select country;
-        if ( resultCountry.Count() == 0 )
-          return;
+        if ( resultCountry.Count() == 0 ) return;
         string strCountry = resultCountry.ElementAt(0).Key;
         foundCountry = resultCountry.Count() == 1;
         if ( !foundCountry )
@@ -182,16 +180,14 @@ namespace Ordisoftware.HebrewCalendar
           return;
         // City
         list[1] = list[1].Trim().RemoveDiacritics().ToLower();
-        if ( list[1].Length < 3 )
-          return;
+        if ( list[1].Length < 3 ) return;
         var resultCity = from country in GPS
                          from city in country.Value
                          where country.Key == strCountry
                             && city.Name.ToLower().StartsWith(list[1])
                          orderby city.Name
                          select city;
-        if ( resultCity.Count() == 0 )
-          return;
+        if ( resultCity.Count() == 0 ) return;
         string strCity = resultCity.ElementAt(0).Name;
         foundCity = resultCity.Count() == 1;
         if ( !foundCity )
@@ -221,8 +217,7 @@ namespace Ordisoftware.HebrewCalendar
           EditFilter.Text = str;
           EditFilter.Enabled = false;
           Application.DoEvents();
-          if ( IsReady )
-            System.Threading.Thread.Sleep(DefaultDelay);
+          if ( IsReady ) System.Threading.Thread.Sleep(DefaultDelay);
           Application.DoEvents();
           EditTimeZone.Enabled = true;
           EditFilter.Enabled = true;

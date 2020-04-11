@@ -51,8 +51,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       LabelMessage.Text = string.Format(LabelMessage.Text, Program.Settings.AutoLockSessionTimeOut);
       int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 5;
-      if ( width > Width )
-        Width = width;
+      if ( width > Width ) Width = width;
       ActionHibernate.Left = ActionStandby.Left + ActionStandby.Width + 5;
       ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
       ActionHibernate.Enabled = CanHibernate();
