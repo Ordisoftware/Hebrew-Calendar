@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2004-04 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -40,12 +40,15 @@ namespace Ordisoftware.HebrewCalendar
         this.CenterToMainForm();
       Mutex = true;
       CurrentDay = MainForm.Instance.CurrentDay;
-      EditYear.Minimum = MainForm.Instance.YearFirst;
-      EditYear.Maximum = MainForm.Instance.YearLast;
-      EditYear.Value = CurrentDay == null ? DateTime.Today.Year : SQLiteUtility.GetDate(CurrentDay.Date).Year;
+      int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLiteUtility.GetDate(CurrentDay.Date).Year;
+      for ( int indexYear = MainForm.Instance.YearFirst; indexYear <= MainForm.Instance.YearLast; indexYear++ )
+      {
+        int index = EditYear.Items.Add(indexYear);
+        if ( indexYear == yearSelected )
+          EditYear.SelectedIndex = index;
+      }
       Mutex = false;
-      EditYear_ValueChanged(null, null);
-      ActiveControl = ListItems;
+      EditYear_SelectedIndexChanged(null, null);
     }
 
     private void ActionOk_Click(object sender, EventArgs e)
@@ -60,19 +63,20 @@ namespace Ordisoftware.HebrewCalendar
         MainForm.Instance.GoToDate(SQLiteUtility.GetDate(CurrentDay.Date));
     }
 
-    private void EditYear_ValueChanged(object sender, EventArgs e)
+    private void EditYear_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where (TorahEvent)day.TorahEvents != TorahEvent.None
-                    && SQLiteUtility.GetDate(day.Date).Year == EditYear.Value
+                    && SQLiteUtility.GetDate(day.Date).Year == (int)EditYear.SelectedItem
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
       {
         var item = ListItems.Items.Add(Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
-        item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString()));
+        string str = SQLiteUtility.GetDate(row.Date).ToLongDateString();
+        item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
         item.Tag = row;
         if ( (TorahEvent)row.TorahEvents == TorahEvent.NewYearD1 )
           item.Selected = true;
@@ -95,7 +99,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       ActionOk.PerformClick();
     }
-
   }
 
 }
