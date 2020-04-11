@@ -244,17 +244,6 @@ namespace Ordisoftware.HebrewCalendar
         { "fr", "Nombre de jours lunaires : hors limites ({0} - {1})" }
       };
 
-    static public readonly Dictionary<string, string> AskToGenerateBigCalendar
-      = new Dictionary<string, string>()
-      {
-        { "en", "Generate a calendar for more than {0} years" + NewLine +
-                "is not recommanded." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Générer un calendrier pour plus de {0} ans" + NewLine +
-                "n'est pas recommandé." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
-      };
-
   }
 
 }

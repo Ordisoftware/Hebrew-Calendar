@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
@@ -26,7 +26,10 @@ namespace Ordisoftware.HebrewCalendar
     public const int GenerateIntervalPeriod = 120;
     public const int GenerateIntervalDefault = 5;
     public const int GenerateIntervalMin = 2;
-    public const int GenerateIntervalMax = 10;
+    public const int GenerateIntervalMax1 = 10;
+    public const int GenerateIntervalMax2 = 20;
+    public const int GenerateIntervalMax3 = 40;
+    public const int GenerateIntervalMax4 = 80;
 
     private bool Mutex;
     private int Year;
@@ -74,9 +77,30 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionOk_Click(object sender, EventArgs e)
     {
-      if ( EditYearLast.Value - EditYearFirst.Value > GenerateIntervalMax )
-        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar.GetLang(GenerateIntervalMax)) )
+      var diff = EditYearLast.Value - EditYearFirst.Value;
+      if ( diff > GenerateIntervalMax4 )
+      {
+        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar4.GetLang(GenerateIntervalMax4, diff)) )
           return;
+      }
+      else
+      if ( diff > GenerateIntervalMax3 )
+      {
+        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar3.GetLang(GenerateIntervalMax3, diff)) )
+          return;
+      }
+      else
+      if ( diff > GenerateIntervalMax2 )
+      {
+        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar2.GetLang(GenerateIntervalMax2, diff)) )
+          return;
+      }
+      else
+      if ( diff > GenerateIntervalMax1 )
+      {
+        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar1.GetLang(GenerateIntervalMax1, diff)) )
+          return;
+      }
       DialogResult = DialogResult.OK;
     }
 
