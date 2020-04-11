@@ -65,16 +65,27 @@ namespace Ordisoftware.HebrewCalendar
     {
       Meanings.Clear();
       Lettriqs.Clear();
+      for ( int index = 1; index <= Names.Length; index++ )
+      {
+        Meanings.Add("");
+        Lettriqs.Add("");
+      }
       Action<string, List<string>> process = (filename, list) =>
       {
         try
         {
           var lines = File.ReadAllLines(filename.Replace("%LANG%", Program.Settings.Language.ToUpper()));
-          list.Add("");
+          int index = 1;
           foreach ( string line in lines )
           {
+            if ( line.Trim() == "" )
+              continue;
+            if ( line.StartsWith(";") )
+              continue;
             var parts = line.Split('=');
-            list.Add(parts[1].Trim());
+            list[index] = parts[1].Trim();
+            if ( ++index >= Names.Length )
+              break;
           }
         }
         catch ( Exception ex )

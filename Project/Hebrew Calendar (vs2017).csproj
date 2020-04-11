@@ -143,6 +143,12 @@
     <Compile Include="Source\Enums\CSVReportField.cs" />
     <Compile Include="Source\Classes\Translations.Notices.cs" />
     <Compile Include="Source\Classes\Translations.Calendar.cs" />
+    <Compile Include="Source\Forms\Boxes\MoonMonthsForm.Colors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\MoonMonthsForm.CreateControls.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\ShowTextForm.cs">
       <SubType>Form</SubType>
     </Compile>

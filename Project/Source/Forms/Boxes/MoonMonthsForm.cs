@@ -13,7 +13,6 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
 
@@ -44,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
     private void MoonMonthsForm_Load(object sender, EventArgs e)
     {
       if ( Location.X == -1 && Location.Y == -1 )
-        this.CenterToMainForm();
+        CenterToScreen();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
@@ -115,149 +114,6 @@ namespace Ordisoftware.HebrewCalendar
                  + MoonMonths.Meanings[index] + " ("
                  + MoonMonths.Lettriqs[index] + ")";
       Clipboard.SetText(str);
-    }
-
-    internal void CreateControls()
-    {
-      PanelMonths.Controls.Clear();
-      MoonMonths.Load();
-      int x = 10;
-      int dx1 = 80;
-      int dx2 = 150;
-      int dy1 = 4;
-      int dy2 = 4;
-      int dy3 = 22;
-      int dyline = 45;
-      int xmax = 0;
-      int y = 10;
-      int countMonths = 0;
-      Color[] colorsMonth = new Color[0];
-      Color colorLinkTextMeaning = SystemColors.ControlText;
-      Color colorLinkTextLettriq = SystemColors.ControlText;
-      Color colorLink;
-      Color colorActiveLink;
-      switch ( Program.Settings.MoonMonthsFormUseColors )
-      {
-        case MoonMonthsListColors.System:
-          PanelMonths.BackColor = SystemColors.Control;
-          colorLink =
-          colorActiveLink = Color.MediumBlue;
-          colorsMonth = new Color[] 
-          {
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText,
-            SystemColors.ControlText
-          };
-          break;
-        case MoonMonthsListColors.Pastel:
-          PanelMonths.BackColor = Color.Black;
-          colorLink =
-          colorActiveLink = Color.Gainsboro;
-          colorLinkTextMeaning = Color.Tomato;
-          colorLinkTextLettriq = Color.LightSkyBlue;
-          colorsMonth = new Color[] 
-          {
-            Color.FromArgb(255, 230, 80),
-            Color.FromArgb(255, 230, 80),
-            Color.FromArgb(255, 230, 80),
-            Color.Orchid,
-            Color.Orchid,
-            Color.Orchid,
-            Color.SpringGreen,
-            Color.SpringGreen,
-            Color.SpringGreen,
-            Color.White,
-            Color.White,
-            Color.White,
-            Color.White
-          };
-          break;
-        case MoonMonthsListColors.Flashy:
-          PanelMonths.BackColor = Color.Black;
-          colorLink =
-          colorActiveLink = Color.Gainsboro;
-          colorLinkTextMeaning = Color.Red;
-          colorLinkTextLettriq = Color.Cyan;
-          colorsMonth = new Color[] 
-          {
-            Color.Yellow,
-            Color.Yellow,
-            Color.Yellow,
-            Color.Fuchsia,
-            Color.Fuchsia,
-            Color.Fuchsia,
-            Color.Lime,
-            Color.Lime,
-            Color.Lime,
-            Color.White,
-            Color.White,
-            Color.White,
-            Color.White
-          };
-          break;
-        default:
-          throw new NotImplementedException();
-      }
-      for ( int index = 1; index < MoonMonths.Names.Length; index++ )
-      {
-        Action<int, int, string, Color, Font, bool, bool> createLabel
-          = (posX, posY, text, color, font, isAlignRight, checkWidth) =>
-          {
-            var label = new LinkLabel();
-            PanelMonths.Controls.Add(label);
-            label.Location = new Point(posX, posY);
-            label.AutoSize = true;
-            label.Font = font;
-            label.Text = text;
-            label.Tag = index;
-            label.LinkBehavior = LinkBehavior.NeverUnderline;
-            label.ActiveLinkColor = colorActiveLink;
-            label.LinkColor = color;
-            label.LinkClicked += Label_LinkClicked;
-            label.ContextMenuStrip = ContextMenuStrip;
-            if ( isAlignRight )
-              label.Left = x + dx1 - 5 - label.Width;
-            if ( checkWidth )
-            {
-              int dx = label.Left + label.Width;
-              if ( xmax < dx ) xmax = dx;
-            }
-          };
-        createLabel(x, y,
-                    HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]),
-                    colorsMonth[countMonths],
-                    new Font("Hebrew", 14f),
-                    true, false);
-        createLabel(x + dx1, y + dy1,
-                    MoonMonths.Names[index],
-                    colorsMonth[countMonths],
-                    new Font("Microsoft Sans Serif", 10f),
-                    false, false);
-        createLabel(x + dx2, y + dy2,
-                    MoonMonths.Meanings[index],
-                    colorLinkTextMeaning,
-                    new Font("Microsoft Sans Serif", 10f),
-                    false, true);
-        createLabel(x + dx2, y + dy3,
-                    MoonMonths.Lettriqs[index],
-                    colorLinkTextLettriq,
-                    new Font("Microsoft Sans Serif", 10f),
-                    false, true);
-        y = y + dyline;
-        countMonths++;
-      }
-      Width = xmax + 20;
-      Height = y + PanelBottom.Height + 40;
     }
 
   }
