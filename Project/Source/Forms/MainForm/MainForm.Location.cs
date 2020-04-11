@@ -15,7 +15,6 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -26,69 +25,6 @@ namespace Ordisoftware.HebrewCalendar
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class MainForm
   {
-
-    private LoadingForm LoadingForm;
-
-    /// <summary>
-    /// Update progress bar.
-    /// </summary>
-    private bool UpdateProgress(int index, int count, string text)
-    {
-      if ( LoadingForm == null )
-        LoadingForm = new LoadingForm();
-      if ( !LoadingForm.Visible )
-      {
-        LoadingForm.LabelTitle.Text = AboutBox.Instance.AssemblyTitle;
-        LoadingForm.Show();
-      }
-      if ( index == 0 )
-        LoadingForm.ProgressBar.Maximum = count;
-      LoadingForm.ProgressBar.Value = index > count ? count : index;
-      LoadingForm.ProgressBar.Update();
-      if ( LoadingForm.LabelOperation.Text != text )
-      {
-        LoadingForm.LabelOperation.Text = text;
-        LoadingForm.LabelOperation.Refresh();
-      }
-      Application.DoEvents();
-      return IsGenerating;
-    }
-
-    /// <summary>
-    /// Update the buttons.
-    /// </summary>
-    internal void UpdateButtons()
-    {
-      try
-      {
-        MenuTray.Enabled = IsReady && !IsGenerating;
-        ToolStrip.Enabled = !IsGenerating;
-        ActionSaveReport.Enabled = DataSet.LunisolarDays.Count > 0;
-        ActionExportCSV.Enabled = ActionSaveReport.Enabled;
-        ActionCopyReportToClipboard.Enabled = ActionSaveReport.Enabled;
-        ActionPrint.Enabled = ActionSaveReport.Enabled;
-        ActionSearchEvent.Enabled = ActionSaveReport.Enabled;
-        ActionSearchMonth.Enabled = ActionSaveReport.Enabled;
-        ActionSearchDay.Enabled = ActionSaveReport.Enabled;
-        ActionNavigate.Enabled = ActionSaveReport.Enabled;
-        ActionViewCelebrations.Enabled = ActionSaveReport.Enabled;
-        if ( LoadingForm != null && LoadingForm.Visible )
-          LoadingForm.Hide();
-        Refresh();
-      }
-      catch ( Exception except )
-      {
-        except.Manage();
-      }
-    }
-
-    /// <summary>
-    /// Update the text calendar view aspect.
-    /// </summary>
-    public void UpdateTextCalendar()
-    {
-      CalendarText.Font = new Font(Program.Settings.FontName, Program.Settings.FontSize);
-    }
 
     /// <summary>
     /// Center the form to the screen.
@@ -101,7 +37,7 @@ namespace Ordisoftware.HebrewCalendar
     private bool DoScreenPositionMutex;
 
     /// <summary>
-    /// Execute the screen position operation.
+    /// Execute the screen location operation.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
