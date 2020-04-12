@@ -51,6 +51,11 @@ namespace Ordisoftware.HebrewCalendar
     {
       TrayIcon.Icon = Icon;
       Program.Settings.Retrieve();
+      if ( Program.CheckUpdate(true) )
+      {
+        Application.Exit();
+        return;
+      }
       MenuTray.Enabled = false;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
@@ -79,6 +84,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
+      if ( Program.IsExiting ) return;
       InitializeDialogsDirectory();
       UpdateTextCalendar();
       CalendarMonth.CalendarDateChanged += (date) =>
@@ -89,7 +95,6 @@ namespace Ordisoftware.HebrewCalendar
       IsReady = true;
       UpdateButtons();
       GoToDate(DateTime.Today);
-      Program.CheckUpdate(true);
       CheckRegenerateCalendar();
       if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
         ActionPreferences.PerformClick();
@@ -108,6 +113,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( Program.IsExiting ) return;
       if ( AllowClose ) return;
       e.Cancel = true;
       if ( !IsReady ) return;

@@ -32,12 +32,18 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
+    /// Indicate if the application is exiting.
+    /// </summary>
+    static public bool IsExiting { get; private set; }
+
+    /// <summary>
     /// Check if an update is available online.
     /// </summary>
     /// <param name="auto">True if no user interaction else false</param>
-    static public void CheckUpdate(bool auto)
+    /// <returns>True if application must exist else false.</returns>
+    static public bool CheckUpdate(bool auto)
     {
-      if ( auto && !Settings.CheckUpdateAtStartup ) return;
+      if ( auto && !Settings.CheckUpdateAtStartup ) return false;
       try
       {
         using ( WebClient client = new WebClient() )
@@ -53,12 +59,20 @@ namespace Ordisoftware.HebrewCalendar
           if ( DisplayManager.QueryYesNo(Translations.NewVersionAvailable.GetLang(version) + Environment.NewLine +
                                          Environment.NewLine +
                                          Translations.AskDownloadNewVersion.GetLang()) )
+          {
             SystemManager.OpenWebLink(DownloadApplicationURL);
+            if ( auto )
+            {
+              IsExiting = true;
+              return true;
+            }
+          }
         }
       }
       catch
       {
       }
+      return false;
     }
 
     /// <summary>
