@@ -42,19 +42,9 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Indicate if the application is ready for the user.
-    /// </summary>
-    internal bool IsReady { get; private set; }
-
-    /// <summary>
     /// Indicate if generation is in progress.
     /// </summary>
     internal bool IsGenerating;
-
-    /// <summary>
-    /// Indicate if application can be closed.
-    /// </summary>
-    private bool AllowClose;
 
     /// <summary>
     /// Indicate last showned tooltip.

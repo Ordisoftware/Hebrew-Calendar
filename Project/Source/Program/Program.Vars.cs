@@ -27,6 +27,31 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
+    /// Indicate if the application is exiting.
+    /// </summary>
+    static public bool IsExiting = false;
+
+    /// <summary>
+    /// Indicate if is in loading data stage.
+    /// </summary>
+    static public bool IsLoadingData = false;
+
+    /// <summary>
+    /// Indicate if the application is ready for the user.
+    /// </summary>
+    static public bool IsReady = false;
+
+    /// <summary>
+    /// Indicate if windows session is ending.
+    /// </summary>
+    static public bool IsSessionEnding = false;
+
+    /// <summary>
+    /// Indicate if application can be closed.
+    /// </summary>
+    static public bool AllowClose = false;
+
+    /// <summary>
     /// Indicate the default Settings instance.
     /// </summary>
     static public readonly Properties.Settings Settings 

@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="date">The date.</param>
     internal void GoToDate(DateTime date)
     {
-      if ( !IsReady || IsGenerating || GoToDateMutex ) return;
+      if ( !Program.IsReady || IsGenerating || GoToDateMutex ) return;
       GoToDateMutex = true;
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;

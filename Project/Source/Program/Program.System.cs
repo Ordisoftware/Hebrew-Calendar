@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -30,11 +30,6 @@ namespace Ordisoftware.HebrewCalendar
   /// </summary>
   static partial class Program
   {
-
-    /// <summary>
-    /// Indicate if the application is exiting.
-    /// </summary>
-    static public bool IsExiting { get; private set; }
 
     /// <summary>
     /// Check if an update is available online.

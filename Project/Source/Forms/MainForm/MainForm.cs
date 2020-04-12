@@ -92,7 +92,7 @@ namespace Ordisoftware.HebrewCalendar
         GoToDate(date);
       };
       MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
-      IsReady = true;
+      Program.IsReady = true;
       UpdateButtons();
       GoToDate(DateTime.Today);
       CheckRegenerateCalendar();
@@ -114,9 +114,9 @@ namespace Ordisoftware.HebrewCalendar
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( Program.IsExiting ) return;
-      if ( AllowClose ) return;
+      if ( Program.AllowClose ) return;
       e.Cancel = true;
-      if ( !IsReady ) return;
+      if ( !Program.IsReady ) return;
       MenuShowHide.PerformClick();
     }
 
@@ -133,7 +133,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
-      if ( !IsReady ) return;
+      if ( !Program.IsReady ) return;
       EditScreenNone.PerformClick();
     }
 
@@ -154,7 +154,7 @@ namespace Ordisoftware.HebrewCalendar
           catch
           {
           }
-      AllowClose = true;
+      Program.AllowClose = true;
       Close();
     }
 
@@ -205,7 +205,7 @@ namespace Ordisoftware.HebrewCalendar
           Visible = true;
           ShowInTaskbar = true;
           WindowState = Program.Settings.MainFormState;
-          if ( IsReady )
+          if ( Program.IsReady )
           {
             var old = TopMost;
             TopMost = true;
@@ -248,7 +248,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
     {
-      if ( !IsReady ) return;
+      if ( !Program.IsReady ) return;
       if ( !MenuTray.Enabled ) return;
       TrayIcon.Text = Program.Settings.BalloonEnabled ? "" : Text;
       if ( !Program.Settings.BalloonEnabled ) return;
@@ -528,7 +528,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( EditConfirmClosing.Checked )
         if ( !DisplayManager.QueryYesNo(Translations.ExitApplication.GetLang()) )
           return;
-      AllowClose = true;
+      Program.AllowClose = true;
       Close();
     }
 
@@ -857,7 +857,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MidnightTimer_Tick(DateTime Time)
     {
-      if ( !IsReady ) return;
+      if ( !Program.IsReady ) return;
       this.SyncUI(() =>
       {
         System.Threading.Thread.Sleep(1000);
@@ -874,7 +874,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void TimerReminder_Tick(object sender, EventArgs e)
     {
-      if ( !TimerReminder.Enabled || !IsReady || TimerMutex ) return;
+      if ( !TimerReminder.Enabled || !Program.IsReady || TimerMutex ) return;
       TimerMutex = true;
       try
       {

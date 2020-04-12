@@ -61,7 +61,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        MenuTray.Enabled = IsReady && !IsGenerating;
+        MenuTray.Enabled = Program.IsReady && !IsGenerating;
         ToolStrip.Enabled = !IsGenerating;
         ActionSaveReport.Enabled = DataSet.LunisolarDays.Count > 0;
         ActionExportCSV.Enabled = ActionSaveReport.Enabled;

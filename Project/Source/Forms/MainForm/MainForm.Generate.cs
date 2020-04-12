@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        IsReady = false;
+        Program.IsReady = false;
         TimerReminder.Enabled = false;
         try
         {
@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         finally
         {
-          IsReady = true;
+          Program.IsReady = true;
           UpdateButtons();
           if ( e != null )
           {
