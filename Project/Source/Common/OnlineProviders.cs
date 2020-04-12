@@ -54,6 +54,11 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Indicate the multilingual title of the list
+    /// </summary>
+    public Dictionary<string, string> Title = new Dictionary<string, string>();
+
+    /// <summary>
     /// Static constructor.
     /// </summary>
     public OnlineProviders(string filename)
@@ -79,6 +84,15 @@ namespace Ordisoftware.HebrewCommon
           {
             item.Name = "-";
             Items.Add(item);
+          }
+          else
+          if ( lines[index].StartsWith("Lang/") )
+          {
+            var parts = lines[index].Split(new string[] { "/", " = " }, StringSplitOptions.None);
+            if ( parts.Length == 3 )
+              Title.Add(parts[1].Trim(), parts[2].Trim());
+            else
+              showError();
           }
           else
           if ( lines[index].StartsWith("Name") )
