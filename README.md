@@ -130,6 +130,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Add celebrations and shabat notices links in tools menu.
 - Add calculate number of days between two dates in tools menu.
 - Add link to windows calculator in tools menu.
+>>>>- Add option to set reminder boxes location on corners' desktop.
 - Add option to change month view text size.
 - Add option to auto open destination folder after done.
 - Fix controls tabs and focus in auto lock session form.
@@ -138,6 +139,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Fix print bitmap size if the main form is resized.
 - Improve UI/UX.
 - Few UI fixes.
+- Exit application at startup if user choose to download the a newer version.
 - Code refactoring.
 - Update help.
 
