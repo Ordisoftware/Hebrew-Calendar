@@ -118,13 +118,12 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Add suspend reminder menu in the main form and the tray icon.
 - Improve tray icon to show if the reminder is suspended.
 - Add preferences menu in the tray icon.
-- Add choose moon or sun omer at first launch dialog box.
+- Add dialog box to choose sun or moon omer at first startup.
 - Improve personal shabat dialog box.
 - Improve preferences form.
-- Add dialog box to choose sun or moon omer at first startup.
 - Improve search celebration and moon month forms to use a combobox.
 - Add month number column in the search lunar month form.
-- Add some links to calendars' websites.
+- Add links to some calendar websites.
 - Add tools menu.
 - Add moon months list form in tools menu.
 - Add celebrations and shabat notices links in tools menu.
@@ -132,9 +131,9 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Add link to windows calculator in tools menu.
 >>>>- Add option to set reminder boxes location on corners' desktop.
 - Add option to change month view text size.
-- Add option to auto open destination folder after done.
+- Add option to auto open destination folder of exports after done.
 - Fix controls tabs and focus in auto lock session form.
-- Fix default current day color.
+- Fix default current day color in preferences form.
 - Fix edit report text font size in preferences form.
 - Fix print bitmap size if the main form is resized.
 - Improve UI/UX.
