@@ -217,7 +217,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static Program()
     {
-      foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "*WebLinks.txt") )
+      foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
         OnlineLinksProviders.Add(new OnlineProviders(file));
     }
 
