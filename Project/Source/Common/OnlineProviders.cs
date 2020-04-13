@@ -90,7 +90,7 @@ namespace Ordisoftware.HebrewCommon
           {
             var parts = lines[index].Split(new string[] { "/", " = " }, StringSplitOptions.None);
             if ( parts.Length == 3 )
-              Title.Add(parts[1].Trim(), parts[2].Trim());
+              Title.Add(parts[1].Trim().ToLower(), parts[2].Trim());
             else
               showError();
           }
