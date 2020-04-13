@@ -105,12 +105,14 @@
       this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
@@ -172,8 +174,13 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
-      this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenWebLinkTemplateFolder = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenWebLinkTemplateLink = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -763,13 +770,20 @@
       this.MenuWeb.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionWebHome,
             this.ActionWebContact,
-            this.ActionCreateGitHubIssue,
             this.toolStripSeparator2,
             this.ActionWebCheckUpdate,
+            this.ActionCreateGitHubIssue,
+            this.toolStripSeparator15,
+            this.toolStripMenuItem14,
+            this.toolStripMenuItem13,
+            this.toolStripMenuItem15,
+            this.toolStripMenuItem16,
             this.toolStripSeparator5,
             this.toolStripMenuItem6,
             this.toolStripMenuItem5,
             this.toolStripSeparator3,
+            this.ActionOpenWebLinkTemplateFolder,
+            this.ActionOpenWebLinkTemplateLink,
             this.toolStripMenuItem12,
             this.toolStripMenuItem3,
             this.toolStripMenuItem2,
@@ -844,6 +858,13 @@
       this.toolStripSeparator3.Name = "toolStripSeparator3";
       resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
+      // toolStripMenuItem12
+      // 
+      resources.ApplyResources(this.toolStripMenuItem12, "toolStripMenuItem12");
+      this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+      this.toolStripMenuItem12.Tag = "http://www.webexhibits.org/calendars/";
+      this.toolStripMenuItem12.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
       // toolStripMenuItem3
       // 
       resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
@@ -881,6 +902,13 @@
       // 
       this.toolStripSeparator14.Name = "toolStripSeparator14";
       resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
+      // 
+      // toolStripMenuItem11
+      // 
+      resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
+      this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+      this.toolStripMenuItem11.Tag = "https://www.hebcal.com";
+      this.toolStripMenuItem11.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripMenuItem10
       // 
@@ -1314,19 +1342,53 @@
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
       // 
-      // toolStripMenuItem11
+      // toolStripSeparator15
       // 
-      resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
-      this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-      this.toolStripMenuItem11.Tag = "https://www.hebcal.com";
-      this.toolStripMenuItem11.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      this.toolStripSeparator15.Name = "toolStripSeparator15";
+      resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
       // 
-      // toolStripMenuItem12
+      // toolStripMenuItem13
       // 
-      resources.ApplyResources(this.toolStripMenuItem12, "toolStripMenuItem12");
-      this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-      this.toolStripMenuItem12.Tag = "http://www.webexhibits.org/calendars/";
-      this.toolStripMenuItem12.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      this.toolStripMenuItem13.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.toolStripMenuItem13, "toolStripMenuItem13");
+      this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+      this.toolStripMenuItem13.Tag = "https://www.youtube.com/user/Ordisoftware";
+      this.toolStripMenuItem13.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
+      // 
+      // toolStripMenuItem14
+      // 
+      this.toolStripMenuItem14.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.toolStripMenuItem14, "toolStripMenuItem14");
+      this.toolStripMenuItem14.Name = "toolStripMenuItem14";
+      this.toolStripMenuItem14.Tag = "https://twitter.com/ordisoftware";
+      this.toolStripMenuItem14.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
+      // 
+      // toolStripMenuItem15
+      // 
+      this.toolStripMenuItem15.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.toolStripMenuItem15, "toolStripMenuItem15");
+      this.toolStripMenuItem15.Name = "toolStripMenuItem15";
+      this.toolStripMenuItem15.Tag = "https://www.youtube.com/user/Ordisoftware";
+      this.toolStripMenuItem15.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
+      // 
+      // toolStripMenuItem16
+      // 
+      this.toolStripMenuItem16.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.toolStripMenuItem16, "toolStripMenuItem16");
+      this.toolStripMenuItem16.Name = "toolStripMenuItem16";
+      this.toolStripMenuItem16.Tag = "https://www.linkedin.com/in/ordisoftware";
+      this.toolStripMenuItem16.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
+      // 
+      // ActionOpenWebLinkTemplateFolder
+      // 
+      resources.ApplyResources(this.ActionOpenWebLinkTemplateFolder, "ActionOpenWebLinkTemplateFolder");
+      this.ActionOpenWebLinkTemplateFolder.Name = "ActionOpenWebLinkTemplateFolder";
+      // 
+      // ActionOpenWebLinkTemplateLink
+      // 
+      resources.ApplyResources(this.ActionOpenWebLinkTemplateLink, "ActionOpenWebLinkTemplateLink");
+      this.ActionOpenWebLinkTemplateLink.Name = "ActionOpenWebLinkTemplateLink";
+      this.ActionOpenWebLinkTemplateLink.Tag = "";
       // 
       // MainForm
       // 
@@ -1514,6 +1576,13 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenWebLinkTemplateFolder;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenWebLinkTemplateLink;
   }
 }
 

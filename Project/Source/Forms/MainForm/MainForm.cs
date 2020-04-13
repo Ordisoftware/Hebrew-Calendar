@@ -40,6 +40,7 @@ namespace Ordisoftware.HebrewCalendar
       InitializeComponent();
       Text = AboutBox.Instance.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
+      Program.CreateWebLinks(MenuWeb, ActionOpenWebLinkTemplateFolder.Image, ActionOpenWebLinkTemplateLink.Image);
     }
 
     /// <summary>
