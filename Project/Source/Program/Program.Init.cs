@@ -16,12 +16,12 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -145,24 +145,37 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Initialize default folders.
+    /// Create winforms submenu items for web links from definitions files.
     /// </summary>
-    static private void InitializeUserFolders()
+    static public void CreateWebLinks(ToolStripDropDownButton menuRoot, Image imageFolder, Image imageLink)
     {
-      UserDataFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-                           + Path.DirectorySeparatorChar
-                           + AboutBox.Instance.AssemblyCompany
-                           + Path.DirectorySeparatorChar
-                           + AboutBox.Instance.AssemblyTitle
-                           + Path.DirectorySeparatorChar;
-      UserDocumentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-                              + Path.DirectorySeparatorChar
-                              + AboutBox.Instance.AssemblyCompany
-                              + Path.DirectorySeparatorChar
-                              + AboutBox.Instance.AssemblyTitle
-                              + Path.DirectorySeparatorChar;
-      Directory.CreateDirectory(UserDataFolderPath);
-      Directory.CreateDirectory(UserDocumentsFolderPath);
+      foreach ( var items in OnlineLinksProviders )
+        if ( items.Items.Count > 0 )
+        {
+          string title = items.Title.GetLang();
+          ToolStripDropDownItem menu;
+          if ( title != "" )
+          {
+            menu = new ToolStripMenuItem(title);
+            menu.ImageScaling = ToolStripItemImageScaling.None;
+            menu.Image = imageFolder;
+            menuRoot.DropDownItems.Add(menu);
+          }
+          else
+            menu = menuRoot;
+          foreach ( var item in items.Items )
+          {
+            var menuitem = menu.DropDownItems.Add(item.Name);
+            menuitem.ImageScaling = ToolStripItemImageScaling.None;
+            menuitem.Image = imageLink;
+            menuitem.Tag = item.URL;
+            menuitem.Click += (sender, e) =>
+            {
+              string url = (string)( (ToolStripItem)sender ).Tag;
+              SystemManager.OpenWebLink(url);
+            };
+          }
+        }
     }
 
   }

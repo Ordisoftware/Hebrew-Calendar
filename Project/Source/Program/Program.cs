@@ -37,7 +37,6 @@ namespace Ordisoftware.HebrewCalendar
       CheckCommandLineArguments(args);
       UpdateLocalization();
       SetFormsIcon();
-      InitializeUserFolders();
       Application.Run(MainForm.Instance);
     }
 

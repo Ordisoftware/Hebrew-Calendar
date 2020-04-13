@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
@@ -111,12 +112,32 @@ namespace Ordisoftware.HebrewCalendar
       = AppRootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
+    /// Indicate filename of the help.
+    /// </summary>
+    static public string HelpFilename
+    {
+      get
+      {
+        return AppRootFolderPath + $"Help{Path.DirectorySeparatorChar}index-{Localizer.Language}.htm";
+      }
+    }
+
+    /// <summary>
     /// Indicate user data folder in roaming.
     /// </summary>
     static public string UserDataFolderPath
     {
-      get;
-      private set;
+      get
+      {
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyCompany
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyTitle
+                    + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(path);
+        return path;
+      }
     }
 
     /// <summary>
@@ -124,8 +145,17 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static public string UserDocumentsFolderPath
     {
-      get;
-      private set;
+      get
+      {
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyCompany
+                    + Path.DirectorySeparatorChar
+                    + AboutBox.Instance.AssemblyTitle
+                    + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(path);
+        return path;
+      }
     }
 
     /// <summary>
@@ -141,15 +171,28 @@ namespace Ordisoftware.HebrewCalendar
       = AppRootFolderPath + "Application.ico";
 
     /// <summary>
-    /// Indicate filename of the help.
+    /// Indicate application documents folder.
     /// </summary>
-    static public string HelpFilename
-    {
-      get
-      {
-        return AppRootFolderPath + $"Help{Path.DirectorySeparatorChar}index-{Localizer.Language}.htm";
-      }
-    }
+    static public readonly string WebLinksFolderPath
+      = AppDocumentsFolderPath;
+
+    /// <summary>
+    /// Indicate online links providers.
+    /// </summary>
+    static public readonly List<OnlineProviders> OnlineLinksProviders
+      = new List<OnlineProviders>();
+
+    /// <summary>
+    /// Indicate filename of the online search word providers.
+    /// </summary>
+    static public readonly string OnlineWordProvidersFileName
+      = AppDocumentsFolderPath + "OnlineWordProviders.txt";
+
+    /// <summary>
+    /// Indicate online search a word providers.
+    /// </summary>
+    static public readonly OnlineProviders OnlineWordProviders
+      = new OnlineProviders(OnlineWordProvidersFileName);
 
     /// <summary>
     /// Indicate filename of the GPS database.
@@ -170,16 +213,13 @@ namespace Ordisoftware.HebrewCalendar
       = AppDocumentsFolderPath + "MoonMonthsLettriqs%LANG%.txt";
 
     /// <summary>
-    /// Indicate filename of the online search word providers.
+    /// Static constructor. 
     /// </summary>
-    static public readonly string OnlineWordProvidersFileName
-      = AppDocumentsFolderPath + "OnlineWordProviders.txt";
-
-    /// <summary>
-    /// Indicate online search a word providers.
-    /// </summary>
-    static public readonly OnlineProviders OnlineWordProviders
-      = new OnlineProviders(OnlineWordProvidersFileName);
+    static Program()
+    {
+      foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "*WebLinks.txt") )
+        OnlineLinksProviders.Add(new OnlineProviders(file));
+    }
 
   }
 
