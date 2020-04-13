@@ -36,6 +36,11 @@ namespace Ordisoftware.HebrewCalendar
                      && SQLiteHelper.GetDate(day.Date) >= SQLiteHelper.GetDate(strDateNow).AddDays(-1)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
+      if ( SQLiteHelper.GetDate(row.Date).Day < dateNow.Day )
+        if ( Program.Settings.TorahEventsCountAsMoon && row.MoonriseType == (int)MoonRise.BeforeSet )
+          return;
+        else
+          return;
       var times = CreateCelebrationTimes(row, Program.Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return;
       var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
