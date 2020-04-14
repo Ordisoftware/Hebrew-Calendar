@@ -148,8 +148,9 @@ namespace Ordisoftware.HebrewCalendar
           }
         }
       }
-      catch
+      catch ( Exception ex )
       {
+        DisplayManager.ShowAdvert(DisplayManager.Title + " Check Update", ex.Message);
       }
       return false;
     }
