@@ -1,3 +1,5 @@
+INSERT-FOLDER-SEPARATOR
+
 Lang/EN = YouTube Channels
 Lang/FR = YouTube Chaînes
 

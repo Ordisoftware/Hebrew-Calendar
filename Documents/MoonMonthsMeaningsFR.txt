@@ -1,13 +1,18 @@
-Nissan = Premiers fruits, Ses prodiges (Torah), Leur fuite (sauvegarde) {Abib : �pis, germination}
-Iyar = Fleur, Il (HaShem) a clarifi� (illumin�) {Ziv : �clat}
-Sivan = Saison, Leur v�tement
-Tamouz = 
-Av = Roseaux, feu, p�re
-Eloul = R�colte
+Nissan = Premiers fruits, Ses (Torah) prodiges, Leur fuite (sauvegarde) {Abib : épis, germination}
+Iyar = Fleur, Il (HaShem) a clarifié illuminé {Ziv : éclat}
+Sivan = Saison, Leur vêtement
+Tamouz = Signification à établir
+Av = Roseaux, feu, père
+Eloul = Récolte
 Tishri = Commencement {Ethanim : renforcement}
-Heshvan = Huiti�me mois {Boul : }
+Heshvan = Huitième mois {Boul : }
 Kislev = Epaisseur, espoir
 Tevet = Fortes pluies
-Chevat = 
-Adar = 
-Adar II = 
+Chevat = Signification à établir
+Adar = Signification à établir
+Adar II = Signification à établir
+
+Rouge-azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)
+Vert = air = action | A
+Blanc = eau = expir | C
+Jaune = terre = repos | G

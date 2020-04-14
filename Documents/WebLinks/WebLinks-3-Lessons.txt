@@ -21,6 +21,9 @@ URL = https://www.tsarfat.com
 
 -
 
+Name = (FR) Hassidout
+URL = http://hassidout.org
+
 Name = (FR) Beth Loubavitch
 URL = https://www.loubavitch.fr
 

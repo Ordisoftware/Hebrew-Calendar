@@ -1,3 +1,5 @@
+INSERT-FOLDER-SEPARATOR
+
 Lang/EN = Jewish bookstores
 Lang/FR = Librairies juives
 
