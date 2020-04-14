@@ -78,8 +78,8 @@
       // 
       // LabelTrademark
       // 
-      this.LabelTrademark.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelTrademark, "LabelTrademark");
+      this.LabelTrademark.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.LabelTrademark.LinkColor = System.Drawing.Color.Navy;
       this.LabelTrademark.Name = "LabelTrademark";
       this.LabelTrademark.TabStop = true;
@@ -106,8 +106,8 @@
       // 
       // linkLabel10
       // 
-      this.linkLabel10.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel10, "linkLabel10");
+      this.linkLabel10.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel10.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel10.Name = "linkLabel10";
       this.linkLabel10.TabStop = true;
@@ -120,8 +120,8 @@
       // 
       // linkLabel11
       // 
-      this.linkLabel11.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel11, "linkLabel11");
+      this.linkLabel11.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel11.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel11.Name = "linkLabel11";
       this.linkLabel11.TabStop = true;
@@ -129,8 +129,8 @@
       // 
       // linkProvider3
       // 
-      this.linkProvider3.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkProvider3, "linkProvider3");
+      this.linkProvider3.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkProvider3.LinkColor = System.Drawing.Color.Navy;
       this.linkProvider3.Name = "linkProvider3";
       this.linkProvider3.TabStop = true;
@@ -158,8 +158,8 @@
       // 
       // linkLabel1
       // 
-      this.linkLabel1.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel1, "linkLabel1");
+      this.linkLabel1.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel1.Name = "linkLabel1";
       this.linkLabel1.TabStop = true;
@@ -175,8 +175,8 @@
       // 
       // PanelBottom
       // 
-      this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Name = "PanelBottom";
       // 
       // label6
@@ -186,8 +186,8 @@
       // 
       // linkLabel4
       // 
-      this.linkLabel4.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel4, "linkLabel4");
+      this.linkLabel4.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel4.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel4.Name = "linkLabel4";
       this.linkLabel4.TabStop = true;
@@ -195,8 +195,8 @@
       // 
       // linkLabel5
       // 
-      this.linkLabel5.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel5, "linkLabel5");
+      this.linkLabel5.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel5.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel5.Name = "linkLabel5";
       this.linkLabel5.TabStop = true;
@@ -214,8 +214,8 @@
       // 
       // linkLabel3
       // 
-      this.linkLabel3.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel3, "linkLabel3");
+      this.linkLabel3.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel3.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel3.Name = "linkLabel3";
       this.linkLabel3.TabStop = true;
@@ -228,8 +228,8 @@
       // 
       // linkLabel6
       // 
-      this.linkLabel6.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel6, "linkLabel6");
+      this.linkLabel6.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel6.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel6.Name = "linkLabel6";
       this.linkLabel6.TabStop = true;
@@ -237,8 +237,8 @@
       // 
       // linkLabel7
       // 
-      this.linkLabel7.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel7, "linkLabel7");
+      this.linkLabel7.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel7.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel7.Name = "linkLabel7";
       this.linkLabel7.TabStop = true;
@@ -256,8 +256,8 @@
       // 
       // linkLabel8
       // 
-      this.linkLabel8.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel8, "linkLabel8");
+      this.linkLabel8.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel8.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel8.Name = "linkLabel8";
       this.linkLabel8.TabStop = true;

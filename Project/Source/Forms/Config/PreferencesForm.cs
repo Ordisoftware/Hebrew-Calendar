@@ -78,6 +78,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
+      TopMost = MainForm.Instance.TopMost;
+      BringToFront();
       DoFormShown(sender, e);
     }
 

@@ -69,6 +69,8 @@ namespace Ordisoftware.HebrewCalendar
       LabelVersion.Text = Translations.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
       LabelCopyright.Text = Globals.AssemblyCopyright;
       LabelTrademark.Text = Globals.AssemblyTrademark;
+      TopMost = MainForm.Instance.TopMost;
+      BringToFront();
     }
 
     /// <summary>
