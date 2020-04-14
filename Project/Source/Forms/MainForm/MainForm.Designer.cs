@@ -94,19 +94,23 @@
       this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionHelp = new System.Windows.Forms.ToolStripButton();
       this.MenuWeb = new System.Windows.Forms.ToolStripDropDownButton();
+      this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCreateGitHubIssue = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebHome = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebContact = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewMoonMonths = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
@@ -115,6 +119,9 @@
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
+      this.ActionOpenWebLinkTemplateFolder = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenWebLinkTemplateLink = new System.Windows.Forms.ToolStripMenuItem();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.MenuSettings = new System.Windows.Forms.ToolStripDropDownButton();
@@ -134,6 +141,7 @@
       this.ActionViewReport = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewMonth = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewGrid = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionResetReminder = new System.Windows.Forms.ToolStripButton();
       this.ActionDisableReminder = new System.Windows.Forms.ToolStripButton();
       this.ActionEnableReminder = new System.Windows.Forms.ToolStripButton();
@@ -163,14 +171,6 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
-      this.MenuWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
-      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenWebLinkTemplateFolder = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenWebLinkTemplateLink = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -761,6 +761,18 @@
       resources.ApplyResources(this.MenuWeb, "MenuWeb");
       this.MenuWeb.Name = "MenuWeb";
       // 
+      // ActionAbout
+      // 
+      this.ActionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionAbout, "ActionAbout");
+      this.ActionAbout.Name = "ActionAbout";
+      this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
+      // 
+      // toolStripSeparator9
+      // 
+      this.toolStripSeparator9.Name = "toolStripSeparator9";
+      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      // 
       // ActionWebCheckUpdate
       // 
       this.ActionWebCheckUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -788,14 +800,6 @@
       this.ActionWebHome.Name = "ActionWebHome";
       this.ActionWebHome.Click += new System.EventHandler(this.ActionApplicationHome_Click);
       // 
-      // toolStripMenuItem15
-      // 
-      this.toolStripMenuItem15.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.toolStripMenuItem15, "toolStripMenuItem15");
-      this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-      this.toolStripMenuItem15.Tag = "https://fr.tipeee.com/ordisoftware";
-      this.toolStripMenuItem15.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
-      // 
       // ActionWebContact
       // 
       this.ActionWebContact.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -803,26 +807,18 @@
       this.ActionWebContact.Name = "ActionWebContact";
       this.ActionWebContact.Click += new System.EventHandler(this.ActionContact_Click);
       // 
+      // toolStripMenuItem15
+      // 
+      this.toolStripMenuItem15.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.toolStripMenuItem15, "toolStripMenuItem15");
+      this.toolStripMenuItem15.Name = "toolStripMenuItem15";
+      this.toolStripMenuItem15.Tag = "https://fr.tipeee.com/ordisoftware";
+      this.toolStripMenuItem15.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
       // toolStripSeparator2
       // 
       this.toolStripSeparator2.Name = "toolStripSeparator2";
       resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-      // 
-      // toolStripMenuItem14
-      // 
-      this.toolStripMenuItem14.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.toolStripMenuItem14, "toolStripMenuItem14");
-      this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-      this.toolStripMenuItem14.Tag = "https://twitter.com/ordisoftware";
-      this.toolStripMenuItem14.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
-      // 
-      // toolStripMenuItem13
-      // 
-      this.toolStripMenuItem13.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.toolStripMenuItem13, "toolStripMenuItem13");
-      this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-      this.toolStripMenuItem13.Tag = "https://www.youtube.com/user/Ordisoftware";
-      this.toolStripMenuItem13.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
       // 
       // toolStripMenuItem16
       // 
@@ -830,7 +826,23 @@
       resources.ApplyResources(this.toolStripMenuItem16, "toolStripMenuItem16");
       this.toolStripMenuItem16.Name = "toolStripMenuItem16";
       this.toolStripMenuItem16.Tag = "https://www.linkedin.com/in/ordisoftware";
-      this.toolStripMenuItem16.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
+      this.toolStripMenuItem16.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripMenuItem14
+      // 
+      this.toolStripMenuItem14.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.toolStripMenuItem14, "toolStripMenuItem14");
+      this.toolStripMenuItem14.Name = "toolStripMenuItem14";
+      this.toolStripMenuItem14.Tag = "https://twitter.com/ordisoftware";
+      this.toolStripMenuItem14.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripMenuItem13
+      // 
+      this.toolStripMenuItem13.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.toolStripMenuItem13, "toolStripMenuItem13");
+      this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+      this.toolStripMenuItem13.Tag = "https://www.youtube.com/user/Ordisoftware";
+      this.toolStripMenuItem13.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // toolStripSeparator5
       // 
@@ -850,6 +862,18 @@
       this.toolStripMenuItem6.Name = "toolStripMenuItem6";
       this.toolStripMenuItem6.Tag = "http://www.ordisoftware.com/projects/hebrew-words";
       this.toolStripMenuItem6.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+      // 
+      // toolStripMenuItem2
+      // 
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      this.toolStripMenuItem2.Tag = "http://asherhaimhalevi.free-bb.fr/";
+      this.toolStripMenuItem2.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // MenuTools
       // 
@@ -905,6 +929,26 @@
       resources.ApplyResources(this.ActionOpenCalculator, "ActionOpenCalculator");
       this.ActionOpenCalculator.Name = "ActionOpenCalculator";
       this.ActionOpenCalculator.Click += new System.EventHandler(this.ActionOpenCalculator_Click);
+      // 
+      // MenuWebLinks
+      // 
+      this.MenuWebLinks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.MenuWebLinks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionOpenWebLinkTemplateFolder,
+            this.ActionOpenWebLinkTemplateLink});
+      resources.ApplyResources(this.MenuWebLinks, "MenuWebLinks");
+      this.MenuWebLinks.Name = "MenuWebLinks";
+      // 
+      // ActionOpenWebLinkTemplateFolder
+      // 
+      resources.ApplyResources(this.ActionOpenWebLinkTemplateFolder, "ActionOpenWebLinkTemplateFolder");
+      this.ActionOpenWebLinkTemplateFolder.Name = "ActionOpenWebLinkTemplateFolder";
+      // 
+      // ActionOpenWebLinkTemplateLink
+      // 
+      resources.ApplyResources(this.ActionOpenWebLinkTemplateLink, "ActionOpenWebLinkTemplateLink");
+      this.ActionOpenWebLinkTemplateLink.Name = "ActionOpenWebLinkTemplateLink";
+      this.ActionOpenWebLinkTemplateLink.Tag = "";
       // 
       // Sep6
       // 
@@ -1056,6 +1100,11 @@
       resources.ApplyResources(this.ActionViewGrid, "ActionViewGrid");
       this.ActionViewGrid.Name = "ActionViewGrid";
       this.ActionViewGrid.Click += new System.EventHandler(this.ActionViewGrid_Click);
+      // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
       // 
       // ActionResetReminder
       // 
@@ -1248,55 +1297,6 @@
       // ReportTableAdapter
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
-      // 
-      // MenuWebLinks
-      // 
-      this.MenuWebLinks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.MenuWebLinks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionOpenWebLinkTemplateFolder,
-            this.ActionOpenWebLinkTemplateLink});
-      resources.ApplyResources(this.MenuWebLinks, "MenuWebLinks");
-      this.MenuWebLinks.Name = "MenuWebLinks";
-      // 
-      // toolStripSeparator4
-      // 
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
-      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-      // 
-      // ActionAbout
-      // 
-      this.ActionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionAbout, "ActionAbout");
-      this.ActionAbout.Name = "ActionAbout";
-      this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
-      // 
-      // toolStripSeparator9
-      // 
-      this.toolStripSeparator9.Name = "toolStripSeparator9";
-      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
-      // 
-      // ActionOpenWebLinkTemplateFolder
-      // 
-      resources.ApplyResources(this.ActionOpenWebLinkTemplateFolder, "ActionOpenWebLinkTemplateFolder");
-      this.ActionOpenWebLinkTemplateFolder.Name = "ActionOpenWebLinkTemplateFolder";
-      // 
-      // ActionOpenWebLinkTemplateLink
-      // 
-      resources.ApplyResources(this.ActionOpenWebLinkTemplateLink, "ActionOpenWebLinkTemplateLink");
-      this.ActionOpenWebLinkTemplateLink.Name = "ActionOpenWebLinkTemplateLink";
-      this.ActionOpenWebLinkTemplateLink.Tag = "";
-      // 
-      // toolStripMenuItem2
-      // 
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      this.toolStripMenuItem2.Tag = "http://asherhaimhalevi.free-bb.fr/";
-      this.toolStripMenuItem2.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // toolStripSeparator3
-      // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
-      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // MainForm
       // 
