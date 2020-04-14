@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.IO;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -31,16 +32,22 @@ namespace Ordisoftware.HebrewCalendar
       = Globals.DocumentsFolderPath + "WorldCities.csv";
 
     /// <summary>
+    /// Indicate the moon months documents folder.
+    /// </summary>
+    static public readonly string MoonMonthsFolderPath
+      = Globals.DocumentsFolderPath + "MoonMonths" + Path.DirectorySeparatorChar;
+
+    /// <summary>
     /// Indicate filename of the moon months meanings.
     /// </summary>
     static public readonly string MoonMonthsMeaningsFilename
-      = Globals.DocumentsFolderPath + "MoonMonthsMeanings%LANG%.txt";
+      = MoonMonthsFolderPath + "MoonMonthsMeanings%LANG%.txt";
 
     /// <summary>
     /// Indicate filename of the moon months lettriqs.
     /// </summary>
     static public readonly string MoonMonthsLettriqsFilename
-      = Globals.DocumentsFolderPath + "MoonMonthsLettriqs%LANG%.txt";
+      = MoonMonthsFolderPath + "MoonMonthsLettriqs%LANG%.txt";
 
   }
 
