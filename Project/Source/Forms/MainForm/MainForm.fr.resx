@@ -618,9 +618,6 @@
   <data name="ActionAbout.Text" xml:space="preserve">
     <value>A propos</value>
   </data>
-  <data name="ActionAbout.ToolTipText" xml:space="preserve">
-    <value>A propos (F12)</value>
-  </data>
   <data name="ActionWebHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
