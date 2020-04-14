@@ -9,9 +9,6 @@ URL = https://www.youtube.com/channel/UCdAlxrOJveWBAcyOkilTqeQ
 Name = (FR) Rav Yehia Benchetrit
 URL = https://www.youtube.com/user/TheBenchetrit
 
-Name = (EN) Rav Manis Friedman
-URL = https://www.youtube.com/user/manisfriedman
-
 Name = (FR) Rav Raphaël Halimi
 URL = https://www.youtube.com/user/logohash
 

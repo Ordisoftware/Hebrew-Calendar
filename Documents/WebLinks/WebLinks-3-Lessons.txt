@@ -4,21 +4,6 @@ Lang/FR = Cours de Torah
 Name = (FR) Rav Yehia Benchetrit
 URL = http://ravbenchetrit.com
 
-Name = (FR) Torah de Vie
-URL = http://www.torahdevie.com
-
-Name = (FR) Torah Academy
-URL = http://www.torahacademy.fr
-
-Name = (FR) Torah Box
-URL = https://www.torah-box.com
-
-Name = (FR) Torah Times
-URL = https://torahtimes.fr
-
-Name = (FR) Tsarfat
-URL = https://www.tsarfat.com
-
 Name = (FR/EN) Hevrat Pinto
 URL = https://hevratpinto.org
 
@@ -27,8 +12,20 @@ URL = https://hevratpinto.org
 Name = (FR) Espace Torah
 URL = http://www.espacetorah.com
 
-Name = (FR) Univers Torah
-URL = http://www.universtorah.com
+Name = (FR) Torah Academy
+URL = http://www.torahacademy.fr
+
+Name = (FR) Torah Box
+URL = https://www.torah-box.com
+
+Name = (FR) Torah de Vie
+URL = http://www.torahdevie.com
+
+Name = (FR) Torah Times
+URL = https://torahtimes.fr
+
+Name = (FR) Tsarfat
+URL = https://www.tsarfat.com
 
 -
 
