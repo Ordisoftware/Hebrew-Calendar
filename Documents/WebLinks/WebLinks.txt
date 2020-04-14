@@ -4,10 +4,10 @@ URL  = http://www.webexhibits.org/calendars/
 -
 
 Name = (EN) Sun and moon rise and set @ sunrise-and-sunset.com
-URL  = https://www.sunrise-and-sunset.com
+URL  = https://www.sunrise-and-sunset.com/en
 
 Name = (FR) Levers et couchers du soleil et de la lune @ sunrise-and-sunset.com
-URL  = https://www.sunrise-and-sunset.com
+URL  = https://www.sunrise-and-sunset.com/fr
 
 -
 
