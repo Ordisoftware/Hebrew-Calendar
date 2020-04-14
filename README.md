@@ -113,7 +113,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 #### 2020.04.__ - Version 4.0
 
-- Exit application at startup if user choose to download the a newer version.
+- Exit application at startup if user choose to download a newer version.
 - Add moon month name to all days in the month view.
 - Add suspend reminder menu in the main form and the tray icon.
 - Improve tray icon to show if the reminder is suspended.
@@ -124,10 +124,9 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Improve preferences form.
 - Improve search celebration and moon month forms to use a combobox.
 - Add month number column in the search moon month form.
-- Add links to some calendar websites.
 - Add tools menu.
 - Add moon months list form in tools menu.
-- Add celebrations and shabat notices links in tools menu.
+- Add celebrations and shabat notices in tools menu.
 - Add calculate number of days between two dates in tools menu.
 - Add link to windows calculator in tools menu.
 - Add option to change month view text size.
@@ -138,13 +137,10 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Fix print bitmap size if the main form is resized.
 - Fix celebration reminder that can be shown even the next day too with bad times.
 - Few UI fixes.
+- Add menu for web links about judaism.
 - Improve UI/UX.
 - Code refactoring.
 - Update help.
-
->>>>- Add option to set reminder boxes location on corners' desktop.
->>>>- Create online providers database tables.
->>>>- Add online providers editor form.
 
 #### 2019.11.12 - Version 3.10
 
