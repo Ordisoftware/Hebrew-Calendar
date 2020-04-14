@@ -17,7 +17,7 @@ URL = https://www.youtube.com/user/logohash
 
 -
 
-Name = (IW/FR) Institut Ramhal
+Name = (FR/IW) Institut Ramhal
 URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
 
 Name = (FR) Sitré Haïm

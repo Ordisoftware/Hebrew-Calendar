@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -81,7 +82,54 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    /// <summary>
+    /// Indicate command line arguments.
+    /// </summary>
     static public string[] CommandLineArguments { get; private set; }
+
+    /// <summary>
+    /// Center a form beside the main form.
+    /// </summary>
+    /// <param name="form">The form.</param>
+    static public void CenterToMainForm(this Form form)
+    {
+      form.Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - form.Width / 2,
+                                MainForm.Instance.Top + MainForm.Instance.Height / 2 - form.Height / 2);
+    }
+
+    /// <summary>
+    /// Start a process
+    /// </summary>
+    /// <param name="filename">The filename.</param>
+    /// <param name="arguments">The comamnd line arguments.</param>
+    static public void RunShell(string filename, string arguments = "")
+    {
+      using ( var process = new Process() )
+        try
+        {
+          process.StartInfo.FileName = filename;
+          process.StartInfo.Arguments = arguments;
+          process.Start();
+        }
+        catch ( Exception ex )
+        {
+          DisplayManager.ShowError(ex.Message + Environment.NewLine + Environment.NewLine +
+                                   process.StartInfo.FileName);
+        }
+    }
+
+    /// <summary>
+    /// Apply localized resources.
+    /// </summary>
+    static private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
+    {
+      foreach ( Control control in controls )
+      {
+        if ( control is Label )
+          resources.ApplyResources(control, control.Name);
+        ApplyResources(resources, control.Controls);
+      }
+    }
 
     /// <summary>
     /// Open the application home page.
@@ -162,6 +210,28 @@ namespace Ordisoftware.HebrewCalendar
     {
       Globals.LoadWebLinks();
       menuRoot.DropDownItems.Clear();
+      Image FlagFR = null;
+      Image FlagEN = null;
+      Image FlagIW = null;
+      Image FlagFRIW = null;
+      try
+      {
+        FlagFR = Image.FromFile(Globals.HelpFolderPath + "flag_france.png");
+        FlagEN = Image.FromFile(Globals.HelpFolderPath + "flag_great_britain.png");
+        FlagIW = Image.FromFile(Globals.HelpFolderPath + "flag_israel.png");
+        FlagFRIW = Image.FromFile(Globals.HelpFolderPath + "flag_fr_iw.png");
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+      Dictionary<string, Image> Flags = new Dictionary<string, Image>()
+      {
+        { "(FR)", FlagFR },
+        { "(EN)", FlagEN },
+        { "(IW)", FlagIW },
+        { "(FR/IW)", FlagFRIW }
+      };
       foreach ( var items in Globals.OnlineLinksProviders )
         if ( items.Items.Count > 0 )
         {
@@ -180,61 +250,31 @@ namespace Ordisoftware.HebrewCalendar
             menu = menuRoot;
           foreach ( var item in items.Items )
           {
-            var menuitem = menu.DropDownItems.Add(item.Name);
-            menuitem.ImageScaling = ToolStripItemImageScaling.None;
-            menuitem.Image = imageLink;
-            menuitem.Tag = item.URL;
-            menuitem.Click += (sender, e) =>
+            string str = item.Name;
+            if ( str == "-" )
+              menu.DropDownItems.Add(new ToolStripSeparator());
+            else
             {
-              string url = (string)( (ToolStripItem)sender ).Tag;
-              SystemManager.OpenWebLink(url);
-            };
+              var menuitem = new ToolStripMenuItem();
+              menu.DropDownItems.Add(menuitem);
+              menuitem.ImageScaling = ToolStripItemImageScaling.None;
+              menuitem.Tag = item.URL;
+              menuitem.Click += (sender, e) =>
+              {
+                string url = (string)( (ToolStripItem)sender ).Tag;
+                SystemManager.OpenWebLink(url);
+              };
+              foreach ( var flag in Flags )
+                if ( str.StartsWith(flag.Key) )
+                {
+                  str = str.Replace(flag.Key, "").TrimStart();
+                  menuitem.Image = flag.Value;
+                  break;
+                }
+              menuitem.Text = str;
+            }
           }
         }
-    }
-
-    /// <summary>
-    /// Start a process
-    /// </summary>
-    /// <param name="filename">The filename.</param>
-    /// <param name="arguments">The comamnd line arguments.</param>
-    static public void RunShell(string filename, string arguments = "")
-    {
-      using ( var process = new Process() )
-        try
-        {
-          process.StartInfo.FileName = filename;
-          process.StartInfo.Arguments = arguments;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          DisplayManager.ShowError(ex.Message + Environment.NewLine + Environment.NewLine +
-                                   process.StartInfo.FileName);
-        }
-    }
-
-    /// <summary>
-    /// Apply localized resources.
-    /// </summary>
-    static private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
-    {
-      foreach ( Control control in controls )
-      {
-        if ( control is Label )
-          resources.ApplyResources(control, control.Name);
-        ApplyResources(resources, control.Controls);
-      }
-    }
-
-    /// <summary>
-    /// Center a form beside the main form.
-    /// </summary>
-    /// <param name="form">The form.</param>
-    static public void CenterToMainForm(this Form form)
-    {
-      form.Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - form.Width / 2,
-                                MainForm.Instance.Top + MainForm.Instance.Height / 2 - form.Height / 2);
     }
 
     /// <summary>
