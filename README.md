@@ -113,23 +113,23 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 #### 2020.04.__ - Version 4.0
 
-- Move online providers values from code to files in the application documents folder.
+- Exit application at startup if user choose to download the a newer version.
 - Add moon month name to all days in the month view.
 - Add suspend reminder menu in the main form and the tray icon.
 - Improve tray icon to show if the reminder is suspended.
 - Add preferences menu in the tray icon.
 - Add dialog box to choose sun or moon omer at first startup.
-- Improve personal shabat dialog box.
+- Improve personal shabat dialog box notice.
+- Add celebrations dialog box notice
 - Improve preferences form.
 - Improve search celebration and moon month forms to use a combobox.
-- Add month number column in the search lunar month form.
+- Add month number column in the search moon month form.
 - Add links to some calendar websites.
 - Add tools menu.
 - Add moon months list form in tools menu.
 - Add celebrations and shabat notices links in tools menu.
 - Add calculate number of days between two dates in tools menu.
 - Add link to windows calculator in tools menu.
->>>>- Add option to set reminder boxes location on corners' desktop.
 - Add option to change month view text size.
 - Add option to auto open destination folder of exports after done.
 - Fix controls tabs and focus in auto lock session form.
@@ -137,12 +137,12 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Fix edit report text font size in preferences form.
 - Fix print bitmap size if the main form is resized.
 - Fix celebration reminder that can be shown even the next day too with bad times.
-- Improve UI/UX.
 - Few UI fixes.
-- Exit application at startup if user choose to download the a newer version.
+- Improve UI/UX.
 - Code refactoring.
 - Update help.
 
+>>>>- Add option to set reminder boxes location on corners' desktop.
 >>>>- Create online providers database tables.
 >>>>- Add online providers editor form.
 
