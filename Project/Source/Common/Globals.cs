@@ -14,6 +14,7 @@
 /// <edited> 2020-04 </edited>
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -116,8 +117,19 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the filename of the help.
     /// </summary>
+    static public readonly string HelpFolderPath
+      = RootFolderPath + "Help" + Path.DirectorySeparatorChar;
+
+    /// <summary>
+    /// Indicate the filename of the help.
+    /// </summary>
     static public string HelpFilename
-      = RootFolderPath + $"Help{Path.DirectorySeparatorChar}index-{Localizer.Language}.htm";
+    {
+      get
+      {
+        return HelpFolderPath + $"index-{Localizer.Language}.htm";
+      }
+    }
 
     /// <summary>
     /// Indicate the user data folder in roaming.
