@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class NavigationForm : Form
   {
 
-    static internal NavigationForm Instance;
+    static public NavigationForm Instance { get; internal set; }
 
     static NavigationForm()
     {
@@ -114,6 +114,7 @@ namespace Ordisoftware.HebrewCalendar
     internal NavigationForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
       Text = Core.DisplayManager.Title;
       PanelTop.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;

@@ -29,9 +29,7 @@ namespace Ordisoftware.HebrewCalendar
     [DllImport("user32.dll", SetLastError = true)]
     static extern bool LockWorkStation();
 
-    static internal LockSessionForm Instance { get; private set; }
-
-    DateTime Start = DateTime.Now;
+    static public LockSessionForm Instance { get; private set; }
 
     static public void Run()
     {
@@ -39,6 +37,8 @@ namespace Ordisoftware.HebrewCalendar
         Instance = new LockSessionForm();
       Instance.Show();
     }
+
+    DateTime Start = DateTime.Now;
 
     private LockSessionForm()
     {

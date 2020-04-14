@@ -14,6 +14,7 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Data;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -29,7 +30,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="date">The date.</param>
     internal void GoToDate(DateTime date)
     {
-      if ( !Program.IsReady || IsGenerating || GoToDateMutex ) return;
+      if ( !Globals.IsReady || IsGenerating || GoToDateMutex ) return;
       GoToDateMutex = true;
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;

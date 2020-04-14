@@ -33,14 +33,30 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
+    /// Indicate the singleton instance.
+    /// </summary>
+    static public MainForm Instance { get; private set; }
+
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
+    static MainForm()
+    {
+      Instance = new MainForm();
+    }
+
+    /// <summary>
     /// Default constructor.
     /// </summary>
     private MainForm()
     {
       InitializeComponent();
-      Text = AboutBox.Instance.AssemblyTitle;
+      Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename);
+      Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
       Program.CreateWebLinks(MenuWebLinks, ActionOpenWebLinkTemplateFolder.Image, ActionOpenWebLinkTemplateLink.Image);
+      foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
+        LastCelebrationReminded.Add(value, null);
     }
 
     /// <summary>
@@ -85,7 +101,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
-      if ( Program.IsExiting ) return;
+      if ( Globals.IsExiting ) return;
       InitializeDialogsDirectory();
       UpdateTextCalendar();
       CalendarMonth.CalendarDateChanged += (date) =>
@@ -93,7 +109,7 @@ namespace Ordisoftware.HebrewCalendar
         GoToDate(date);
       };
       MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
-      Program.IsReady = true;
+      Globals.IsReady = true;
       UpdateButtons();
       GoToDate(DateTime.Today);
       CheckRegenerateCalendar();
@@ -114,10 +130,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( Program.IsExiting ) return;
-      if ( Program.AllowClose ) return;
+      if ( Globals.IsExiting ) return;
+      if ( Globals.AllowClose ) return;
       e.Cancel = true;
-      if ( !Program.IsReady ) return;
+      if ( !Globals.IsReady ) return;
       MenuShowHide.PerformClick();
     }
 
@@ -134,7 +150,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
-      if ( !Program.IsReady ) return;
+      if ( !Globals.IsReady ) return;
       EditScreenNone.PerformClick();
     }
 
@@ -155,7 +171,7 @@ namespace Ordisoftware.HebrewCalendar
           catch
           {
           }
-      Program.AllowClose = true;
+      Globals.AllowClose = true;
       Close();
     }
 
@@ -164,8 +180,8 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     internal void InitializeDialogsDirectory()
     {
-      SaveCSVDialog.InitialDirectory = Program.UserDocumentsFolderPath;
-      SaveFileDialog.InitialDirectory = Program.UserDocumentsFolderPath;
+      SaveCSVDialog.InitialDirectory = Globals.UserDocumentsFolderPath;
+      SaveFileDialog.InitialDirectory = Globals.UserDocumentsFolderPath;
     }
 
     private void CheckRegenerateCalendar()
@@ -206,7 +222,7 @@ namespace Ordisoftware.HebrewCalendar
           Visible = true;
           ShowInTaskbar = true;
           WindowState = Program.Settings.MainFormState;
-          if ( Program.IsReady )
+          if ( Globals.IsReady )
           {
             var old = TopMost;
             TopMost = true;
@@ -249,7 +265,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
     {
-      if ( !Program.IsReady ) return;
+      if ( !Globals.IsReady ) return;
       if ( !MenuTray.Enabled ) return;
       TrayIcon.Text = Program.Settings.BalloonEnabled ? "" : Text;
       if ( !Program.Settings.BalloonEnabled ) return;
@@ -465,7 +481,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      Program.RunShell(Program.HelpFilename);
+      Program.RunShell(Globals.HelpFilename);
     }
 
     /// <summary>
@@ -475,7 +491,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionApplicationHome_Click(object sender, EventArgs e)
     {
-      AboutBox.Instance.OpenApplicationHome();
+      Program.OpenApplicationHome();
     }
 
     /// <summary>
@@ -485,7 +501,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionContact_Click(object sender, EventArgs e)
     {
-      AboutBox.Instance.OpenContactPage();
+      Program.OpenContactPage();
     }
 
     /// <summary>
@@ -500,7 +516,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
-      SystemManager.OpenWebLink(Program.GitHubRepositoryURL + "/issues");
+      Program.OpenGitHibIssuesPage();
     }
 
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
@@ -529,7 +545,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( EditConfirmClosing.Checked )
         if ( !DisplayManager.QueryYesNo(Translations.ExitApplication.GetLang()) )
           return;
-      Program.AllowClose = true;
+      Globals.AllowClose = true;
       Close();
     }
 
@@ -785,7 +801,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MenuDisableReminder_Click(object sender, EventArgs e)
     {
-      TrayIcon.Icon = new Icon(Program.AppRootFolderPath + "ApplicationPause.ico");
+      TrayIcon.Icon = new Icon(Globals.RootFolderPath + "ApplicationPause.ico");
       TimerReminder.Enabled = false;
       MenuResetReminder.Enabled = false;
       ActionResetReminder.Enabled = false;
@@ -858,7 +874,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MidnightTimer_Tick(DateTime Time)
     {
-      if ( !Program.IsReady ) return;
+      if ( !Globals.IsReady ) return;
       this.SyncUI(() =>
       {
         System.Threading.Thread.Sleep(1000);
@@ -875,7 +891,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void TimerReminder_Tick(object sender, EventArgs e)
     {
-      if ( !TimerReminder.Enabled || !Program.IsReady || TimerMutex ) return;
+      if ( !TimerReminder.Enabled || !Globals.IsReady || TimerMutex ) return;
       TimerMutex = true;
       try
       {

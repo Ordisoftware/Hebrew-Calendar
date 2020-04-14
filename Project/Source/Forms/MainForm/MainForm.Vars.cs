@@ -27,21 +27,6 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// Indicate the singleton instance.
-    /// </summary>
-    static public readonly MainForm Instance;
-
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static MainForm()
-    {
-      Instance = new MainForm();
-      foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
-        Instance.LastCelebrationReminded.Add(value, null);
-    }
-
-    /// <summary>
     /// Indicate if generation is in progress.
     /// </summary>
     internal bool IsGenerating;

@@ -15,6 +15,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
@@ -38,7 +39,7 @@ namespace Ordisoftware.HebrewCalendar
         LoadingForm = new LoadingForm();
       if ( !LoadingForm.Visible )
       {
-        LoadingForm.LabelTitle.Text = AboutBox.Instance.AssemblyTitle;
+        LoadingForm.LabelTitle.Text = Globals.AssemblyTitle;
         LoadingForm.Show();
       }
       if ( index == 0 )
@@ -61,7 +62,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        MenuTray.Enabled = Program.IsReady && !IsGenerating;
+        MenuTray.Enabled = Globals.IsReady && !IsGenerating;
         ToolStrip.Enabled = !IsGenerating;
         ActionSaveReport.Enabled = DataSet.LunisolarDays.Count > 0;
         ActionExportCSV.Enabled = ActionSaveReport.Enabled;

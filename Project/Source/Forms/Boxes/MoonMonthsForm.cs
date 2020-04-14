@@ -32,7 +32,7 @@ namespace Ordisoftware.HebrewCalendar
         Program.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", MoonMonths.Unicode[(int)LastControl.Tag]));
       };
       int index = 0;
-      foreach ( var item in Program.OnlineWordProviders.Items )
+      foreach ( var item in Globals.OnlineWordProviders.Items )
         if ( item.Name == "-" )
           ActionSearchOnline.DropDownItems.Insert(index++, new ToolStripSeparator());
         else
@@ -60,10 +60,10 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionEditFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      Program.RunShell(Program.AppDocumentsFolderPath + "MoonMonthsMeaningsEN.txt");
-      Program.RunShell(Program.AppDocumentsFolderPath + "MoonMonthsMeaningsFR.txt");
-      Program.RunShell(Program.AppDocumentsFolderPath + "MoonMonthsLettriqsEN.txt");
-      Program.RunShell(Program.AppDocumentsFolderPath + "MoonMonthsLettriqsFR.txt");
+      Program.RunShell(Globals.DocumentsFolderPath + "MoonMonthsMeaningsEN.txt");
+      Program.RunShell(Globals.DocumentsFolderPath + "MoonMonthsMeaningsFR.txt");
+      Program.RunShell(Globals.DocumentsFolderPath + "MoonMonthsLettriqsEN.txt");
+      Program.RunShell(Globals.DocumentsFolderPath + "MoonMonthsLettriqsFR.txt");
     }
 
     private void ActionReloadFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

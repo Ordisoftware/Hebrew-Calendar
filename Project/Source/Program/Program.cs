@@ -11,9 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-04 </edited>
 using System;
+using System.ComponentModel;
+using System.Globalization;
+using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -25,6 +30,12 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
+    /// Indicate the default Settings instance.
+    /// </summary>
+    static public readonly Properties.Settings Settings
+      = Properties.Settings.Default;
+
+    /// <summary>
     /// Process startup method.
     /// </summary>
     [STAThread]
@@ -32,12 +43,49 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !CheckApplicationOnlyOneInstance() ) return;
       CheckSettingsUpgrade();
+      if ( Settings.UpgradeResetRequiredV3_6 )
+      {
+        Settings.Reset();
+        Settings.UpgradeResetRequiredV3_6 = false;
+        Settings.Language = Localizer.Language;
+        Settings.Save();
+      }
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       CheckCommandLineArguments(args);
       UpdateLocalization();
-      SetFormsIcon();
       Application.Run(MainForm.Instance);
+    }
+
+    /// <summary>
+    /// Update localization strings to the whole application.
+    /// </summary>
+    static internal void UpdateLocalization()
+    {
+      string lang = "en-US";
+      if ( Settings.Language == "fr" ) lang = "fr-FR";
+      var culture = new CultureInfo(lang);
+      Thread.CurrentThread.CurrentCulture = culture;
+      Thread.CurrentThread.CurrentUICulture = culture;
+      AboutBox.Instance.Hide();
+      string str = MainForm.Instance.CalendarText.Text;
+      foreach ( var f in MainForm.Instance.RemindCelebrationForms.ToList() )
+        f.Close();
+      foreach ( Form form in Application.OpenForms )
+      {
+        if ( form != AboutBox.Instance )
+        {
+          new Infralution.Localization.CultureManager().ManagedControl = form;
+          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
+          ApplyResources(resources, form.Controls);
+        }
+        if ( form is ShowTextForm )
+          ( (ShowTextForm)form ).RelocalizeText();
+      }
+      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+      AboutBox.Instance.AboutBox_Shown(null, null);
+      MainForm.Instance.CalendarText.Text = str;
     }
 
   }

@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class CelebrationsForm : Form
   {
 
-    static internal CelebrationsForm Instance { get; private set; }
+    static public CelebrationsForm Instance { get; private set; }
 
     static CelebrationsForm()
     {
@@ -68,6 +68,7 @@ namespace Ordisoftware.HebrewCalendar
     private CelebrationsForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
     }
 
     private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)

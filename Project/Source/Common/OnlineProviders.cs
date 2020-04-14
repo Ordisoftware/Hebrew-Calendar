@@ -61,9 +61,15 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Static constructor.
     /// </summary>
-    public OnlineProviders(string filename)
+    public OnlineProviders(string filename, bool showFileNotFound = true)
     {
       Items = new List<OnlineProvider>();
+      if ( !File.Exists(filename) )
+      {
+        if ( showFileNotFound )
+          DisplayManager.ShowError("File not found: " + filename);
+        return;
+      }
       try
       {
         var lines = File.ReadAllLines(filename);

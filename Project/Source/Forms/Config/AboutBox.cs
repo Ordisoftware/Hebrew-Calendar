@@ -14,7 +14,6 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Diagnostics;
-using System.Reflection;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
@@ -32,7 +31,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate the singleton instance.
     /// </summary>
-    static internal AboutBox Instance { get; private set; }
+    static public AboutBox Instance { get; private set; }
 
     /// <summary>
     /// Static constructor.
@@ -48,6 +47,7 @@ namespace Ordisoftware.HebrewCalendar
     private AboutBox()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
       ActiveControl = ActionClose;
     }
 
@@ -63,12 +63,12 @@ namespace Ordisoftware.HebrewCalendar
 
     internal void AboutBox_Shown(object sender, EventArgs e)
     {
-      Text = Translations.AboutBoxTitle.GetLang(AssemblyTitle);
-      LabelTitle.Text = AssemblyTitle;
+      Text = Translations.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
+      LabelTitle.Text = Globals.AssemblyTitle;
       LabelDescription.Text = Translations.ApplicationDescription.GetLang();
-      LabelVersion.Text = Translations.AboutBoxVersion.GetLang(AssemblyVersion);
-      LabelCopyright.Text = AssemblyCopyright;
-      LabelTrademark.Text = AssemblyTrademark;
+      LabelVersion.Text = Translations.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
+      LabelCopyright.Text = Globals.AssemblyCopyright;
+      LabelTrademark.Text = Globals.AssemblyTrademark;
     }
 
     /// <summary>
@@ -88,31 +88,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Link label link clicked event information.</param>
     private void labelTrademarkName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      OpenAuthorHome();
-    }
-
-    /// <summary>
-    /// Open the software home page.
-    /// </summary>
-    public void OpenApplicationHome()
-    {
-      SystemManager.OpenWebLink(AssemblyProduct);
-    }
-
-    /// <summary>
-    /// Open the author home page.
-    /// </summary>
-    public void OpenAuthorHome()
-    {
-      SystemManager.OpenWebLink(AssemblyTrademark);
-    }
-
-    /// <summary>
-    /// Open the author contact page.
-    /// </summary>
-    public void OpenContactPage()
-    {
-      SystemManager.OpenWebLink(AssemblyTrademark + "/contact");
+      Program.OpenAuthorHome();
     }
 
     /// <summary>
@@ -124,121 +100,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       Process.Start(e.LinkText);
     }
-
-    #region Accesseurs d'attribut de l'assembly
-
-    /// <summary>
-    /// get the assembly title.
-    /// </summary>
-    public string AssemblyTitle
-    {
-      get
-      {
-        object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
-        if ( attributes.Length > 0 )
-        {
-          AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
-          if ( titleAttribute.Title != "" )
-          {
-            return titleAttribute.Title;
-          }
-        }
-        return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
-      }
-    }
-
-    /// <summary>
-    /// get the assembly version.
-    /// </summary>
-    public string AssemblyVersion
-    {
-      get
-      {
-        var version = Assembly.GetExecutingAssembly().GetName().Version;
-        return version.Major + "." + version.Minor;
-      }
-    }
-
-    /// <summary>
-    /// get information describing the assembly.
-    /// </summary>
-    public string AssemblyDescription
-    {
-      get
-      {
-        object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
-        if ( attributes.Length == 0 )
-        {
-          return "";
-        }
-        return ((AssemblyDescriptionAttribute)attributes[0]).Description;
-      }
-    }
-
-    /// <summary>
-    /// get the assembly product.
-    /// </summary>
-    public string AssemblyProduct
-    {
-      get
-      {
-        object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
-        if ( attributes.Length == 0 )
-        {
-          return "";
-        }
-        return ((AssemblyProductAttribute)attributes[0]).Product;
-      }
-    }
-
-    /// <summary>
-    /// get the assembly copyright.
-    /// </summary>
-    public string AssemblyCopyright
-    {
-      get
-      {
-        object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
-        if ( attributes.Length == 0 )
-        {
-          return "";
-        }
-        return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
-      }
-    }
-
-    /// <summary>
-    /// get the assembly company.
-    /// </summary>
-    public string AssemblyCompany
-    {
-      get
-      {
-        object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
-        if ( attributes.Length == 0 )
-        {
-          return "";
-        }
-        return ((AssemblyCompanyAttribute)attributes[0]).Company;
-      }
-    }
-
-    /// <summary>
-    /// get the assembly trademark.
-    /// </summary>
-    public string AssemblyTrademark
-    {
-      get
-      {
-        object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTrademarkAttribute), false);
-        if ( attributes.Length == 0 )
-        {
-          return "";
-        }
-        return ((AssemblyTrademarkAttribute)attributes[0]).Trademark;
-      }
-    }
-    #endregion
 
   }
 

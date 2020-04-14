@@ -14,6 +14,7 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
@@ -26,7 +27,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        Program.IsReady = false;
+        Globals.IsReady = false;
         TimerReminder.Enabled = false;
         try
         {
@@ -49,7 +50,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         finally
         {
-          Program.IsReady = true;
+          Globals.IsReady = true;
           UpdateButtons();
           if ( e != null )
           {
