@@ -24,6 +24,14 @@ URL = https://hevratpinto.org
 
 -
 
+Name = (FR) Espace Torah
+URL = http://www.espacetorah.com
+
+Name = (FR) Univers Torah
+URL = http://www.universtorah.com
+
+-
+
 Name = (FR) Hassidout
 URL = http://hassidout.org
 
@@ -35,19 +43,3 @@ URL = https://fr.chabad.org
 
 Name = (EN) 'Habad Loubavitch
 URL = https://www.chabad.org
-
--
-
-Name = (FR) Chiourim
-URL = https://www.chiourim.com
-
-Name = (FR) Espace Torah
-URL = http://www.espacetorah.com
-
-Name = (FR) Univers Torah
-URL = http://www.universtorah.com
-
--
-
-Name = (FR) Akadem
-URL = http://www.akadem.org
