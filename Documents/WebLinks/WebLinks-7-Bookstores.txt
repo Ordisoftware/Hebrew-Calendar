@@ -1,0 +1,45 @@
+Lang/EN = Jewish bookstores
+Lang/FR = Librairies juives
+
+Name = (IW/EN/FR) Editions Gallia
+URL = http://librairiegallia.fr
+
+Name = (EN) ArtScroll Editions 
+URL = https://www.artscroll.com
+
+Name = (EN) Koren Publishers
+URL = https://korenpub.com
+
+Name = (FR) Editions La Délivrance
+URL = http://www.ladelivrance.org
+
+-
+
+Name = (FR) Editions Torah-Box
+URL = https://www.torah-box.com/editions
+
+Name = (FR) Librairie Biblieurope
+URL = http://biblieurope.fr
+
+Name = (FR) Librairie Espace Judaïsme
+URL = https://www.espace-judaisme.com
+
+Name = (FR) Librairie Espace Sarah
+URL = http://www.espacesarah.com
+
+Name = (FR) Librairie Judaïc Store
+URL = https://www.judaicstore.com
+
+Name = (FR) Librairie Ness
+URL = https://www.librairieness.fr
+
+Name = (FR) Librairie Sifrey Sajet
+URL = http://sifreysajet.fr
+
+Name = (FR) Librairie du Temple
+URL = https://www.librairiedutemple.fr
+
+-
+
+Name = (FR) Editions Lahy
+URL = http://editions-lahy.e-monsite.com

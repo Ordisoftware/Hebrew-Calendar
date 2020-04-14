@@ -1,0 +1,57 @@
+Lang/EN = Sacred texts
+Lang/FR = Textes sacrés
+
+Name = (EN) Tanak @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Hebrew_Bible
+
+Name = (EN) Tanak @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Tanakh
+
+-
+
+Name = (EN) Parasha @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Weekly_Torah_portion
+
+Name = (FR) Parasha @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Parasha_de_la_semaine
+-
+
+Name = (EN) Jewish Texts @ sefaria.org
+URL = https://www.sefaria.org/texts
+
+Name = (EN) English Babylonian Talmud @ halakhah.com
+URL = http://halakhah.com
+
+-
+
+Name = (IW) Tanak Hebrew Text @ fourmilab.ch
+URL = http://www.fourmilab.ch/etexts/www/hebrew/Bible/
+
+Name = (IW) Tanak Hebrew MP3 @ mechon-mamre.org
+URL = https://www.mechon-mamre.org/p/pt/ptmp3prq.htm
+
+-
+
+Name = (EN) Interlinear Bible @ studybible.info
+URL = https://studybible.info/IHOT/
+
+Name = (EN) Interlinear Euangélion @ studybible.info
+URL = https://studybible.info/IGNT
+
+-
+
+Name = (EN) Interlinear Bible @ biblehub.com
+URL = https://biblehub.com/interlinear/
+
+-
+
+Name = (FR) La Bible en hébreu @ lexilogos.com
+URL = https://www.lexilogos.com/bible_hebreu.htm
+
+-
+
+Name = (EN) Interlinear Quran @ corpus.quran.com
+URL = http://corpus.quran.com/wordbyword.jsp
+
+Name = (FR) Quran Interlinéaire @ coran-seul.com
+URL = http://coran-seul.com/index.php/home

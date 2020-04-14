@@ -1,0 +1,34 @@
+Lang/EN = Miscellaneous
+Lang/FR = Divers
+
+Name = (EN) Alex Grey Spiritual Art @ alexgrey.com
+URL = https://www.alexgrey.com/art
+
+-
+
+Name = (FR) Danses d'Israël @ dansesdisrael.fr
+URL = https://dansesdisrael.fr
+
+-
+
+Name = (FR) Précis de grammaire grecque @ bcs.fltr.ucl.ac.be
+URL = http://bcs.fltr.ucl.ac.be/GraGre/00.Plan.htm
+
+-
+
+Name = (EN) Sanskrit Monier-Williams Dictionary @ sanskrit.inria.fr
+URL = https://sanskrit.inria.fr/DICO/index.en.html
+
+Name = (FR) Dictionnaire Sanskrit Heritage @ sanskrit.inria.fr
+URL = https://sanskrit.inria.fr/DICO/index.fr.html
+
+Name = (EN) Sanskrit Dictionary @ spokensanskrit.org
+URL = https://spokensanskrit.org
+
+-
+
+Name = (EN) Akkadian Dictionary @ assyrianlanguages.org
+URL = http://www.assyrianlanguages.org/akkadian/index_en.php?langui=english
+
+Name = (FR) Dictionnaire Akkadian @ assyrianlanguages.org
+URL = http://www.assyrianlanguages.org/akkadian/index_fr.php?langui=french

@@ -1,3 +1,6 @@
+Lang/EN = hebrew calendar
+Lang/FR = Calendrier hébraïque
+
 Name = (EN) Calendars through the ages @ webexhibits.org
 URL  = http://www.webexhibits.org/calendars/
 
