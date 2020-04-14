@@ -1,4 +1,4 @@
-Lang/EN = hebrew calendar
+Lang/EN = Hebrew calendar
 Lang/FR = Calendrier hébraïque
 
 Name = (EN) Calendars through the ages @ webexhibits.org

@@ -160,6 +160,8 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static public void CreateWebLinks(ToolStripDropDownButton menuRoot, Image imageFolder, Image imageLink)
     {
+      Globals.LoadWebLinks();
+      menuRoot.DropDownItems.Clear();
       foreach ( var items in Globals.OnlineLinksProviders )
         if ( items.Items.Count > 0 )
         {
@@ -167,6 +169,8 @@ namespace Ordisoftware.HebrewCalendar
           ToolStripDropDownItem menu;
           if ( title != "" )
           {
+            if ( items.SeparatorBeforeFolder )
+              menuRoot.DropDownItems.Add(new ToolStripSeparator());
             menu = new ToolStripMenuItem(title);
             menu.ImageScaling = ToolStripItemImageScaling.None;
             menu.Image = imageFolder;

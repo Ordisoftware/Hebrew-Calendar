@@ -186,10 +186,11 @@ namespace Ordisoftware.HebrewCommon
       = new List<OnlineProviders>();
 
     /// <summary>
-    /// Static constructor. 
+    /// Load web links definitions files.
     /// </summary>
-    static Globals()
+    static public void LoadWebLinks()
     {
+      OnlineLinksProviders.Clear();
       if ( Directory.Exists(WebLinksFolderPath) )
         foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
           OnlineLinksProviders.Add(new OnlineProviders(file, false));

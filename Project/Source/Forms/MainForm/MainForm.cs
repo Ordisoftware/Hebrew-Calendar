@@ -54,9 +54,13 @@ namespace Ordisoftware.HebrewCalendar
       Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename);
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      Program.CreateWebLinks(MenuWebLinks, ActionOpenWebLinkTemplateFolder.Image, ActionOpenWebLinkTemplateLink.Image);
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
+    }
+
+    internal void CreateWebLinks()
+    {
+      Program.CreateWebLinks(MenuWebLinks, ActionOpenWebLinkTemplateFolder.Image, ActionOpenWebLinkTemplateLink.Image);
     }
 
     /// <summary>

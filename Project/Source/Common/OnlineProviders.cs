@@ -54,9 +54,14 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Indicate the multilingual title of the list
+    /// Indicate the multilingual title of the list to create a folder
     /// </summary>
     public Dictionary<string, string> Title = new Dictionary<string, string>();
+
+    /// <summary>
+    /// Indicate if a separator must be inserted before the folder
+    /// </summary>
+    public bool SeparatorBeforeFolder;
 
     /// <summary>
     /// Static constructor.
@@ -86,6 +91,9 @@ namespace Ordisoftware.HebrewCommon
             continue;
           if ( lines[index].Trim().StartsWith(";") )
             continue;
+          if ( lines[index].Trim().StartsWith("INSERT-FOLDER-SEPARATOR") )
+            SeparatorBeforeFolder = true;
+          else
           if ( lines[index].StartsWith("-") )
           {
             item.Name = "-";

@@ -86,6 +86,7 @@ namespace Ordisoftware.HebrewCalendar
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
+      MainForm.Instance.CreateWebLinks();
     }
 
   }
