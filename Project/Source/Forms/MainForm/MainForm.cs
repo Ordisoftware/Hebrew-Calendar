@@ -151,6 +151,7 @@ namespace Ordisoftware.HebrewCalendar
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
       if ( !Globals.IsReady ) return;
+      if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick();
     }
 
@@ -221,7 +222,16 @@ namespace Ordisoftware.HebrewCalendar
           FormBorderStyle = FormBorderStyle.Sizable;
           Visible = true;
           ShowInTaskbar = true;
-          WindowState = Program.Settings.MainFormState;
+          bool temp = Globals.IsReady;
+          try
+          {
+            Globals.IsReady = false;
+            WindowState = Program.Settings.MainFormState;
+          }
+          finally
+          {
+            Globals.IsReady = temp;
+          }
           if ( Globals.IsReady )
           {
             var old = TopMost;
