@@ -214,12 +214,14 @@ namespace Ordisoftware.HebrewCalendar
       Image FlagEN = null;
       Image FlagIW = null;
       Image FlagFRIW = null;
+      Image FlagFREN = null;
       try
       {
         FlagFR = Image.FromFile(Globals.HelpFolderPath + "flag_france.png");
         FlagEN = Image.FromFile(Globals.HelpFolderPath + "flag_great_britain.png");
         FlagIW = Image.FromFile(Globals.HelpFolderPath + "flag_israel.png");
         FlagFRIW = Image.FromFile(Globals.HelpFolderPath + "flag_fr_iw.png");
+        FlagFREN = Image.FromFile(Globals.HelpFolderPath + "flag_fr_en.png");
       }
       catch ( Exception ex )
       {
@@ -230,7 +232,8 @@ namespace Ordisoftware.HebrewCalendar
         { "(FR)", FlagFR },
         { "(EN)", FlagEN },
         { "(IW)", FlagIW },
-        { "(FR/IW)", FlagFRIW }
+        { "(FR/IW)", FlagFRIW },
+        { "(FR/EN)", FlagFREN }
       };
       foreach ( var items in Globals.OnlineLinksProviders )
         if ( items.Items.Count > 0 )

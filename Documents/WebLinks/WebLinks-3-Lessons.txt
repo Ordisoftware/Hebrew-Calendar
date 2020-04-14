@@ -19,6 +19,9 @@ URL = https://torahtimes.fr
 Name = (FR) Tsarfat
 URL = https://www.tsarfat.com
 
+Name = (FR/EN) Hevrat Pinto
+URL = https://hevratpinto.org
+
 -
 
 Name = (FR) Hassidout

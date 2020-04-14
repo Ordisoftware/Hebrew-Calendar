@@ -32,8 +32,17 @@ URL = https://www.espace-judaisme.com
 Name = (FR) Librairie Espace Sarah
 URL = http://www.espacesarah.com
 
+Name = (FR) Librairie Hasefer
+URL = https://hasefer.fr
+
 Name = (FR) Librairie Judaïc Store
 URL = https://www.judaicstore.com
+
+Name = (FR) Librairie Kol Yehouda
+URL = https://www.kolyehouda.com/
+
+Name = (FR) Librairie La Paracha
+URL = http://www.librairie-laparacha.com
 
 Name = (FR) Librairie Ness
 URL = https://www.librairieness.fr
