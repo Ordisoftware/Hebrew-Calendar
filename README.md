@@ -136,6 +136,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Fix default current day color in preferences form.
 - Fix edit report text font size in preferences form.
 - Fix print bitmap size if the main form is resized.
+- Fix celebration reminder that can be shown even the next day too with bad times.
 - Improve UI/UX.
 - Few UI fixes.
 - Exit application at startup if user choose to download the a newer version.
