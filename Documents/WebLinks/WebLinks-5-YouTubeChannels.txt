@@ -20,16 +20,20 @@ URL = https://www.youtube.com/user/logohash
 Name = (EN) Aleph Society (Rav Steinsaltz)
 URL = https://www.youtube.com/user/AlephSociety
 
-Name = (FR/IW) Institut Ramhal
-URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
-
-Name = (FR) Sitré Haïm
-URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
+Name = (FR) Alef Ledoroth
+URL = https://www.youtube.com/channel/UCxmbAfrpiMYTrgCLmKSRSLQ
 
 Name = (FR) Hevrat Pinto
 URL = https://www.youtube.com/user/HEVRATPINTO
 
+Name = (FR) Sitré Haïm
+URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
+
+Name = (FR/IW) Institut Ramhal
+URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
+
 -
+
 
 Name = (FR) Torah Academy
 URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ

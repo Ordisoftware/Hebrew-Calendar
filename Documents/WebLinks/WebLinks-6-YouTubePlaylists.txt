@@ -1,6 +1,14 @@
 Lang/EN = YouTube Playlists
 Lang/FR = YouTube Playlists
 
+Name = (FR/IW) Bénédictions
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DYtUXE9aE_WIuaGlCU08RN
+
+Name = (IW) Chants Hébreux
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Avg_Mab89AAsBVDF0uTHcp
+
+-
+
 Name = (FR) Cours de Torah
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dkv3zE0tAo494c64BBGTwz
 
@@ -21,11 +29,8 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-D124Or8KY9XHz4e76McKBT
 
 -
 
-Name = (FR/IW) Bénédictions
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DYtUXE9aE_WIuaGlCU08RN
-
-Name = (IW) Chants Hébreux
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Avg_Mab89AAsBVDF0uTHcp
+Name = (FR) Georges Lahy
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Cjlu1jQW7_xO1R03bCaKhs
 
 -
 
