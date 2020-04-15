@@ -18,6 +18,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using System.Data.Odbc;
 using Microsoft.Win32;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
@@ -937,6 +938,28 @@ namespace Ordisoftware.HebrewCalendar
       {
         TimerMutex = false;
       }
+    }
+
+    private void ActionVacuum_Click(object sender, EventArgs e)
+    {
+      /*Refresh();
+      DataSet.Clear();
+      UpdateButtons();
+      CalendarText.Clear();
+      CalendarMonth.LoadPresetHolidays = false;
+      LunisolarDaysBindingSource.DataSource = null;
+      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
+        try
+        {
+          connection.Open();
+          connection.Vacuum();
+        }
+        finally
+        {
+          connection.Close();
+        }
+        bug month view
+      LoadData();*/
     }
 
   }
