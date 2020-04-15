@@ -9,10 +9,21 @@ URL = https://hevratpinto.org
 
 -
 
+Name = (FR) Mahon Meir 
+URL = https://meirtv.com/fr
+
+Name = (EN) Mahon Meir 
+URL = https://meirtv.com/en
+
+Name = (IW) Mahon Meir 
+URL = http://www.meirtv.co.il
+
+-
+
 Name = (FR) Espace Torah
 URL = http://www.espacetorah.com
 
-Name = (FR) Pureté Juive
+Name = (FR) PuretÃ© Juive
 URL = https://www.puretejuive.com
 
 Name = (FR) Torah Academy

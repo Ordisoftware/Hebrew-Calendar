@@ -1,7 +1,7 @@
 Lang/EN = YouTube Playlists
 Lang/FR = YouTube Playlists
 
-Name = (FR/IW) Bénédictions
+Name = (IW) Bénédictions
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DYtUXE9aE_WIuaGlCU08RN
 
 Name = (IW) Chants Hébreux
