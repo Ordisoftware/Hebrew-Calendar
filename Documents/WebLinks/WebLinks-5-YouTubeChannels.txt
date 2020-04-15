@@ -48,9 +48,6 @@ URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
 Name = (FR) Torah Box
 URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
 
-Name = (FR) Torah Studio
-URL = https://www.youtube.com/channel/UCom83NIbCU3WuKcd4y4C8MQ
-
 Name = (FR) Torah Times
 URL = https://www.youtube.com/user/laparacha
 
