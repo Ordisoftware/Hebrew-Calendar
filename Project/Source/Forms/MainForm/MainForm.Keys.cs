@@ -72,9 +72,6 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Alt | Keys.S:
           ActionExportCSV.PerformClick();
           return true;
-        case Keys.F2:
-          ActionGenerate.PerformClick();
-          return true;
         case Keys.F8:
           ActionPreferences.PerformClick();
           return true;
