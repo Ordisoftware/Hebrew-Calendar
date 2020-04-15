@@ -14,6 +14,7 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Data;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
