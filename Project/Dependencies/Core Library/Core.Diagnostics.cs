@@ -1,4 +1,4 @@
-﻿/// <license>
+﻿/*/// <license>
 /// This file is part of Ordisoftware Core Library.
 /// Copyright 2004-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -46,3 +46,4 @@ namespace Ordisoftware.Core.Diagnostics
   }
 
 }
+*/
