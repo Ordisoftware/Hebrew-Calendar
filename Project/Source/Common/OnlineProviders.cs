@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewCommon
         {
           Action showError = () =>
           {
-            DisplayManager.ShowError("Error in " + filename + ": " + Environment.NewLine + Environment.NewLine +
+            DisplayManager.ShowError("Error in " + filename + Environment.NewLine + Environment.NewLine +
                                      "Line n° " + index + Environment.NewLine + Environment.NewLine +
                                      lines[index]);
           };

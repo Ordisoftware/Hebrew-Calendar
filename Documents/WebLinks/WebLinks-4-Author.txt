@@ -1,11 +1,6 @@
 Lang/EN = Asher 'Haïm HaLevi
 Lang/FR = Asher 'Haïm HaLevi
 
-Name = (FR) Bibliographie
-URL = https://sites.google.com/site/asherhaimhalevi/the-religious-problem/bibliography
-
--
-
 Name = (FR) Livret "L'alphabet hébreu"
 URL = https://sites.google.com/site/asherhaimhalevi/hebrew-alphabet
 
@@ -17,3 +12,8 @@ URL = https://sites.google.com/site/asherhaimhalevi/sefirot
 
 Name = (FR) Livre "Le problème religieux"
 URL = https://sites.google.com/site/asherhaimhalevi/the-religious-problem
+
+-
+
+Name = (FR) Bibliographie
+URL = https://sites.google.com/site/asherhaimhalevi/the-religious-problem/bibliography

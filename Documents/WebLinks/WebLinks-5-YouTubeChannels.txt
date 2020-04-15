@@ -9,16 +9,25 @@ URL = https://www.youtube.com/channel/UCdAlxrOJveWBAcyOkilTqeQ
 Name = (FR) Rav Yehia Benchetrit
 URL = https://www.youtube.com/user/TheBenchetrit
 
+Name = (FR) Rav Yonathan Benchetrit
+URL = https://www.youtube.com/channel/UC9x_d0qPTAy-K5GmIwwQfAQ
+
 Name = (FR) Rav Raphaël Halimi
 URL = https://www.youtube.com/user/logohash
 
 -
+
+Name = (EN) Aleph Society (Rav Steinsaltz)
+URL = https://www.youtube.com/user/AlephSociety
 
 Name = (FR/IW) Institut Ramhal
 URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
 
 Name = (FR) Sitré Haïm
 URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
+
+Name = (FR) Hevrat Pinto
+URL = https://www.youtube.com/user/HEVRATPINTO
 
 -
 
@@ -28,11 +37,19 @@ URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
 Name = (FR) Torah Box
 URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
 
+Name = (FR) Torah Studio
+URL = https://www.youtube.com/channel/UCom83NIbCU3WuKcd4y4C8MQ
+
 Name = (FR) Torah Times
 URL = https://www.youtube.com/user/laparacha
 
 Name = (FR) Tsarfat
 URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
+
+-
+
+Name = (FR) Georges Lahy
+URL = https://www.youtube.com/user/Adamantha
 
 -
 

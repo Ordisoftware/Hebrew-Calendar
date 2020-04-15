@@ -13,6 +13,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DP-nvpbjUq-Bjlug7TjxgU
 Name = (FR) Rav Yehia Benchetrit
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BGZKgCVDgtZqHZCpU8ieK2
 
+Name = (FR/IW) Rav Mordekhai Chriqui
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CVfZ2azPtXh8pXSwBNA_gV
+
 Name = (FR) Sitré Haïm
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-D124Or8KY9XHz4e76McKBT
 

@@ -210,30 +210,18 @@ namespace Ordisoftware.HebrewCalendar
     {
       Globals.LoadWebLinks();
       menuRoot.DropDownItems.Clear();
-      Image FlagFR = null;
-      Image FlagEN = null;
-      Image FlagIW = null;
-      Image FlagFRIW = null;
-      Image FlagFREN = null;
-      try
+      Func<string, Image> createImage = filename =>
       {
-        FlagFR = Image.FromFile(Globals.HelpFolderPath + "flag_france.png");
-        FlagEN = Image.FromFile(Globals.HelpFolderPath + "flag_great_britain.png");
-        FlagIW = Image.FromFile(Globals.HelpFolderPath + "flag_israel.png");
-        FlagFRIW = Image.FromFile(Globals.HelpFolderPath + "flag_fr_iw.png");
-        FlagFREN = Image.FromFile(Globals.HelpFolderPath + "flag_fr_en.png");
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+        try { return Image.FromFile(filename); }
+        catch ( Exception ex ) { DisplayManager.ShowError($"{ex.Message}{Environment.NewLine}{filename}"); return null; }
+      };
       Dictionary<string, Image> Flags = new Dictionary<string, Image>()
       {
-        { "(FR)", FlagFR },
-        { "(EN)", FlagEN },
-        { "(IW)", FlagIW },
-        { "(FR/IW)", FlagFRIW },
-        { "(FR/EN)", FlagFREN }
+        { "(FR)", createImage(Globals.HelpFolderPath + "flag_france.png") },
+        { "(EN)", createImage(Globals.HelpFolderPath + "flag_great_britain.png") },
+        { "(IW)", createImage(Globals.HelpFolderPath + "flag_israel.png") },
+        { "(FR/IW)", createImage(Globals.HelpFolderPath + "flag_fr_iw.png") },
+        { "(FR/EN)", createImage(Globals.HelpFolderPath + "flag_fr_en.png") }
       };
       foreach ( var items in Globals.OnlineLinksProviders )
         if ( items.Items.Count > 0 )
@@ -271,7 +259,7 @@ namespace Ordisoftware.HebrewCalendar
                 if ( str.StartsWith(flag.Key) )
                 {
                   str = str.Replace(flag.Key, "").TrimStart();
-                  menuitem.Image = flag.Value;
+                  menuitem.Image = flag.Value ?? imageLink;
                   break;
                 }
               menuitem.Text = str;
