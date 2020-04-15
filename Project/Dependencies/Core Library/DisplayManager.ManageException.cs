@@ -2,7 +2,6 @@
 /// This file is part of Ordisoftware Core Library.
 /// Copyright 2004-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// Project is registered at Depotnumerique.com (Agence des Depots Numeriques).
 /// This program is free software: you can redistribute it and/or modify it under the terms of
 /// the GNU Lesser General Public License (LGPL v3) as published by the Free Software Foundation,
 /// either version 3 of the License, or (at your option) any later version.
@@ -30,9 +29,9 @@ namespace Ordisoftware.Core
     /// Manage an exception with the debugger.
     /// </summary>
     /// <param name="exception">The exception to act on.</param>
-    static public void Manage(this Exception exception)
+    static public void Manage(this Exception ex)
     {
-      Debugger.ManageException(null, exception);
+      Debugger.ManageException(null, ex);
     }
 
     /// <summary>
@@ -40,9 +39,9 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <param name="exception">The exception to act on.</param>
     /// <param name="show">true to show a message or false to hide it.</param>
-    static public void Manage(this Exception exception, bool show)
+    static public void Manage(this Exception ex, bool show)
     {
-      Debugger.ManageException(null, exception, show);
+      Debugger.ManageException(null, ex, show);
     }
 
     /// <summary>
@@ -50,9 +49,9 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <param name="exception">The exception to act on.</param>
     /// <param name="sender">Source of the event.</param>
-    static public void Manage(this Exception exception, object sender)
+    static public void Manage(this Exception ex, object sender)
     {
-      Debugger.ManageException(sender, exception);
+      Debugger.ManageException(sender, ex);
     }
 
     /// <summary>
@@ -61,9 +60,9 @@ namespace Ordisoftware.Core
     /// <param name="exception">The exception to act on.</param>
     /// <param name="sender">Source of the event.</param>
     /// <param name="show">true to show a message or false to hide it.</param>
-    static public void Manage(this Exception exception, object sender, bool show)
+    static public void Manage(this Exception ex, object sender, bool show)
     {
-      Debugger.ManageException(sender, exception, show);
+      Debugger.ManageException(sender, ex, show);
     }
     
   }
