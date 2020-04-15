@@ -14,6 +14,7 @@
 /// <edited> 2019-01 </edited>
 using System;
 using System.Data.Odbc;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -28,6 +29,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
+      if ( Program.Settings.VacuumAtStartup )
+        connection.Vacuum();
       try
       {
         var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +

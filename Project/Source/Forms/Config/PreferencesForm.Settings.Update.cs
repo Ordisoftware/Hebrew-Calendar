@@ -66,6 +66,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.TextColor = EditTextColor.BackColor;
       Program.Settings.TorahEventsCountAsMoon = EditTorahEventsCountAsMoon.Checked;
       Program.Settings.UseColors = EditUseColors.Checked;
+      Program.Settings.VacuumAtStartup = EditVacuumAtStartup.Checked;
     }
 
   }

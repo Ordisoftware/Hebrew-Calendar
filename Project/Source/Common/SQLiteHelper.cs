@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2020 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -13,8 +13,10 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Data.Odbc;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
@@ -22,6 +24,22 @@ namespace Ordisoftware.HebrewCalendar
   /// </summary>
   static public class SQLiteHelper
   {
+
+    static public void Vacuum(this OdbcConnection connection)
+    {
+      try
+      {
+        using ( var sql = connection.CreateCommand() )
+        {
+          sql.CommandText = "VACUUM;";
+          int result = sql.ExecuteNonQuery();
+        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+    }
 
     /// <summary>
     /// Get a date like "Year.Month.Day".
