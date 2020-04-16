@@ -1,11 +1,6 @@
 Lang/EN = Miscellaneous
 Lang/FR = Divers
 
-Name = (EN) Alex Grey Spiritual Art @ alexgrey.com
-URL = https://www.alexgrey.com/art
-
--
-
 Name = (FR) Danses et chants d'Israël @ dansesdisrael.fr
 URL = https://dansesdisrael.fr
 
