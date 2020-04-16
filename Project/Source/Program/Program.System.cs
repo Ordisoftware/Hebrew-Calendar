@@ -239,12 +239,13 @@ namespace Ordisoftware.HebrewCalendar
             menu.MouseUp += (sender, e) =>
             {
               if ( e.Button != MouseButtons.Right ) return;
-              if ( !DisplayManager.QueryYesNo(Translations.AskToOpenAllLinks.GetLang()) ) return;
+              ( (ToolStripDropDownButton)menu.OwnerItem ).HideDropDown();
+              if ( !DisplayManager.QueryYesNo(Translations.AskToOpenAllLinks.GetLang(menu.Text)) ) return;
               foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
                 if ( item.Tag != null )
                 {
                   SystemManager.OpenWebLink((string)item.Tag);
-                  Thread.Sleep(2000);
+                  Thread.Sleep(1000);
                 }
             };
           }

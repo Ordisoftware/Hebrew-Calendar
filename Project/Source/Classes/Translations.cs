@@ -143,8 +143,8 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> AskToOpenAllLinks
       = new Dictionary<string, string>()
       {
-        { "en", "Do you want to open all links?" },
-        { "fr", "Voulez-vous ouvrir tous les liens ?" }
+        { "en", "Do you want to open all \"{0]\" links?" },
+        { "fr", "Voulez-vous ouvrir tous les liens de \"{0}\" ?" }
       };
 
     static public readonly Dictionary<string, string> ResetPreferences
