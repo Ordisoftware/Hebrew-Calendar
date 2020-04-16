@@ -4,19 +4,11 @@ Lang/FR = Cours de Torah
 Name = (FR) Rav Yehia Benchetrit
 URL = http://ravbenchetrit.com
 
+Name = (FR) Rav Avraham Ifrah
+URL = https://breslev.fr
+
 Name = (FR/EN) Hevrat Pinto
 URL = https://hevratpinto.org
-
--
-
-Name = (FR) Mahon Meir 
-URL = https://meirtv.com/fr
-
-Name = (EN) Mahon Meir 
-URL = https://meirtv.com/en
-
-Name = (IW) Mahon Meir 
-URL = http://www.meirtv.co.il
 
 -
 
@@ -54,3 +46,14 @@ URL = https://fr.chabad.org
 
 Name = (EN) 'Habad Loubavitch
 URL = https://www.chabad.org
+
+-
+
+Name = (FR) Breslev
+URL = https://www.breslev.co.il/default.aspx?language=french
+
+Name = (EN) Breslev
+URL = https://www.breslev.co.il/default.aspx?language=english
+
+Name = (IW) Breslev
+URL = https://www.breslev.co.il/default.aspx?language=hebrew

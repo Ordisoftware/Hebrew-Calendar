@@ -10,6 +10,8 @@ URL = https://sites.google.com/site/asherhaimhalevi/alliance
 Name = (FR) Livret "Les séfitot"
 URL = https://sites.google.com/site/asherhaimhalevi/sefirot
 
+-
+
 Name = (FR) Livre "Le problème religieux"
 URL = https://sites.google.com/site/asherhaimhalevi/the-religious-problem
 

@@ -3,7 +3,7 @@ INSERT-FOLDER-SEPARATOR
 Lang/EN = Jewish bookstores
 Lang/FR = Librairies juives
 
-Name = (FR) Editions Gallia
+Name = (FR) Gallia Editions
 URL = http://librairiegallia.fr
 
 Name = (EN) ArtScroll Editions 
@@ -12,16 +12,18 @@ URL = https://www.artscroll.com
 Name = (EN) Koren Publishers
 URL = https://korenpub.com
 
-Name = (FR/IW) Institut Ramhal
-URL = http://www.frramhal.com/Beit-Ramhal.html
+-
 
 Name = (FR) Editions La Délivrance
 URL = http://www.ladelivrance.org
 
--
-
 Name = (FR) Editions Torah-Box
 URL = https://www.torah-box.com/editions
+
+Name = (FR/IW) Ramhal Institute
+URL = http://www.frramhal.com/Beit-Ramhal.html
+
+-
 
 Name = (FR) Librairie Biblieurope
 URL = http://biblieurope.fr
