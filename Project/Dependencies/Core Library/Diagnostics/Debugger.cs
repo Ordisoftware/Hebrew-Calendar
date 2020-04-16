@@ -485,16 +485,6 @@ namespace Ordisoftware.Core.Diagnostics
       }
     }
 
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static Debugger()
-    {
-      Active = true;
-      //AppDomain.CurrentDomain.UnhandledException += OnAppDomainException;
-      //System.Windows.Forms.Application.ThreadException += OnThreadException;
-    }
-
   }
 
 }
