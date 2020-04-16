@@ -66,3 +66,8 @@ URL = https://www.breslev.co.il/default.aspx?language=english
 
 Name = (IW) Breslev
 URL = https://www.breslev.co.il/default.aspx?language=hebrew
+
+-
+
+Name = (FR) Lamed.fr
+URL = https://www.lamed.fr

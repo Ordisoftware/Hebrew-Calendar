@@ -6,8 +6,19 @@ URL = https://www.alexgrey.com/art
 
 -
 
-Name = (FR) Danses d'Israël @ dansesdisrael.fr
+Name = (FR) Danses et chants d'Israël @ dansesdisrael.fr
 URL = https://dansesdisrael.fr
+
+-
+
+Name = (FR) Musique et films juifs @ israel-music.com
+URL = http://fr.israel-music.com
+
+Name = (EN) Jewish music and movies @ israel-music.com
+URL = http://www.israel-music.com
+
+Name = (IW) Jewish music and movies @ israel-music.com
+URL = http://he.israel-music.com/
 
 -
 
