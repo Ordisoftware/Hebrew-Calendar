@@ -9,7 +9,7 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Avg_Mab89AAsBVDF0uTHcp
 
 -
 
-Name = (FR) Cours de Torah
+Name = (FR) Torah
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dkv3zE0tAo494c64BBGTwz
 
 Name = (FR) Rav Menahem Altabe
@@ -26,6 +26,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CVfZ2azPtXh8pXSwBNA_gV
 
 Name = (FR) Sitré Haïm
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-D124Or8KY9XHz4e76McKBT
+
+Name = (FR) Talmud
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BHHWXJ6_Skb-gFBeAmDlKw
 
 -
 

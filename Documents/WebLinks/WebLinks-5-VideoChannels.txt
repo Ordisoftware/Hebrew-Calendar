@@ -3,6 +3,9 @@ INSERT-FOLDER-SEPARATOR
 Lang/EN = Video Channels
 Lang/FR = Vidéo Chaînes
 
+Name = (FR) Rav Daniel Abdelhak
+URL = https://www.youtube.com/channel/UCez15LaVOMWjfR02aFCjCMA
+
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/channel/UCdAlxrOJveWBAcyOkilTqeQ
 
@@ -44,6 +47,9 @@ Name = (IW) Hevrat Pinto (Rav David Pinto)
 URL = https://www.youtube.com/channel/UCF3zPVhQgqqwktX11Nt-27A
 
 -
+
+Name = (FR) 613 TV
+URL = https://www.youtube.com/channel/UC0iLLG9ha8yShk7BPXvDXJw
 
 Name = (FR) Chiourim.com
 URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
