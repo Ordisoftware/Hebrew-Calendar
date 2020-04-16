@@ -244,7 +244,7 @@ namespace Ordisoftware.HebrewCalendar
                 if ( item.Tag != null )
                 {
                   SystemManager.OpenWebLink((string)item.Tag);
-                  Thread.Sleep(500);
+                  Thread.Sleep(2000);
                 }
             };
           }

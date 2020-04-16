@@ -6,7 +6,7 @@ Lang/FR = Textes sacrés
 Name = (EN) Tanak @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_Bible
 
-Name = (EN) Tanak @ fr.wikipedia.org
+Name = (FR) Tanak @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Tanakh
 
 -
