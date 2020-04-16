@@ -1,5 +1,5 @@
-Lang/EN = YouTube Playlists
-Lang/FR = YouTube Playlists
+Lang/EN = Video Playlists
+Lang/FR = Vidéo Playlists
 
 Name = (IW) Bénédictions
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DYtUXE9aE_WIuaGlCU08RN

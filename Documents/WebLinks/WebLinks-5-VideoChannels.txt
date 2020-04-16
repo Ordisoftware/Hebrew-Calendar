@@ -1,7 +1,7 @@
 INSERT-FOLDER-SEPARATOR
 
-Lang/EN = YouTube Channels
-Lang/FR = YouTube Chaînes
+Lang/EN = Video Channels
+Lang/FR = Vidéo Chaînes
 
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/channel/UCdAlxrOJveWBAcyOkilTqeQ

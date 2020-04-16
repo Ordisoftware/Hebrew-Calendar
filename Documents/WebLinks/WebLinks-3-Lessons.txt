@@ -21,8 +21,14 @@ URL = https://steinsaltz.org
 
 -
 
+Name = (FR) Consistoire de Paris
+URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
+
 Name = (FR) Chiourim.com
 URL = https://www.chiourim.com
+
+Name = (FR) Dvar Torah
+URL = https://www.dvartorah.org
 
 Name = (FR) Espace Torah
 URL = http://www.espacetorah.com
