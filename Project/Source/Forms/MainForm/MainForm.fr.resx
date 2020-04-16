@@ -707,22 +707,6 @@
   <data name="ActionCreateGitHubIssue.Text" xml:space="preserve">
     <value>Soumettre un problème ou une fonctionnalité</value>
   </data>
-  <data name="toolStripMenuItem2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJVSURBVDhPYyAERKPXrxKKWvcfhoWBWDRm/UrhpA28UCXY
-        gVjiFiWhyHX/E2dd+b/w3Mf/vftfgPH04+/+J86+AjZMPH69AlQ5JhCJXnc5c9GN/xMOvf6vmL7lP3/Y
-        8oeCIYsvSsZv/F+7+eH/ktV3gC5Z9xuqHBOIxKz/v/bOz//mFfv/87u1twGFdIBYg13K1FkqYeP/Gafe
-        g70DVowNCIcvOygSs/G/SNjCvUCuKEQUDFgEA+ftL19//79wNB4DgEAZiI2hNByIRWwUl0rY9L9t3/P/
-        wADGawAGEI3ZmCOZuPF/065n/23rjvwXDpq9msHZ2fl/UlLyHJACIDvOx8fnP4gG8X29vWd7OVmAbRGN
-        3rhEM3fX/9Z9L/47txz/LxK15hVQWI7B3t7+bFNr+38gbeLgYL+1oKD4v4ODw1YXFxeT8LDw/062JvsF
-        43fdcGg+8X/iiff/HZuO/heOWPkSqFkPZDCDiYlJSWZW9v+gwOAfvv5+/zMys/77+Pn+9/Ly+hEYEPDf
-        1EAjXjB+9/++kx//2zcCnR227CZQmy5YMxQI+fj6/i8sKvnv7+8Pcv5/X1+//2ERkf89PdxAzucTjFi1
-        UzQWGCMhC3YB+ZpgXcjAzs7uZENjC1izhISEJ9D5/xMTkv472lodhypRAmJQjIBoTGBmZlbp6enx38rK
-        ai6QywqiPdzd/lubGpaD5MXjt64Vi93wXyJuw3oQHxsQAWKQDdJgHoQG8YVBHLG4Tf9ByRpkCIhPMhCL
-        WHoQpFksYtFBqBDJQAWIQS4C0UiAgQEAIyf6RNngFfsAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>317, 22</value>
   </data>
