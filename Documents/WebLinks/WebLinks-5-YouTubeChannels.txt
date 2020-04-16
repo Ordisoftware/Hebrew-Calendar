@@ -12,33 +12,41 @@ URL = https://www.youtube.com/user/TheBenchetrit
 Name = (FR) Rav Yonathan Benchetrit
 URL = https://www.youtube.com/channel/UC9x_d0qPTAy-K5GmIwwQfAQ
 
-Name = (FR) Rav Raphaël Halimi
-URL = https://www.youtube.com/user/logohash
+Name = (FR) Rav Azriel Cohen-Arazi
+URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
 
 Name = (FR) Rav Avraham Ifrah
 URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
 
--
-
-Name = (EN) Aleph Society (Rav Steinsaltz)
-URL = https://www.youtube.com/user/AlephSociety
-
-Name = (FR) Alef Ledoroth
-URL = https://www.youtube.com/channel/UCxmbAfrpiMYTrgCLmKSRSLQ
-
-Name = (FR) Hevrat Pinto
-URL = https://www.youtube.com/user/HEVRATPINTO
-
-Name = (FR/IW) Ramhal Institute
-URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
-
-Name = (FR) Sitré Haïm
+Name = (FR) Rav Yossef Hay (Sitré Haïm)
 URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
 
 -
 
-Name = (FR) Torah Academy
-URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
+Name = (FR) Alef Ledoroth (Rav Yakov Sitruk)
+URL = https://www.youtube.com/channel/UCxmbAfrpiMYTrgCLmKSRSLQ
+
+Name = (EN) Aleph Society (Rabbi Adin Steinsaltz)
+URL = https://www.youtube.com/user/AlephSociety
+
+Name = (FR/IW) Ramhal Institute (Rav Mordechai Chriqui)
+URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
+
+-
+
+Name = (FR) Hevrat Pinto (Rav David Pinto)
+URL = https://www.youtube.com/user/HEVRATPINTO
+
+Name = (EN) Hevrat Pinto (Rav David Pinto)
+URL = https://www.youtube.com/channel/UC2dAMNXEjoaU8HrP2CGaFMQ
+
+Name = (IW) Hevrat Pinto (Rav David Pinto)
+URL = https://www.youtube.com/channel/UCF3zPVhQgqqwktX11Nt-27A
+
+-
+
+Name = (FR) Chiourim.com
+URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
 
 Name = (FR) Torah Box
 URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
