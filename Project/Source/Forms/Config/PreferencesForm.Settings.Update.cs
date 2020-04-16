@@ -27,6 +27,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void UpdateSettings()
     {
+      Program.Settings.VacuumAtStartup = EditVacuumAtStartup.Checked;
+      Program.Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
       Program.Settings.AutoLockSession = EditAutoLockSession.Checked;
       Program.Settings.AutoLockSessionTimeOut = (int)EditAutoLockSessionTimeOut.Value;
       Program.Settings.AutoOpenExportFolder = EditAutoOpenExportFolder.Checked;
@@ -66,7 +68,6 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.TextColor = EditTextColor.BackColor;
       Program.Settings.TorahEventsCountAsMoon = EditTorahEventsCountAsMoon.Checked;
       Program.Settings.UseColors = EditUseColors.Checked;
-      Program.Settings.VacuumAtStartup = EditVacuumAtStartup.Checked;
     }
 
   }

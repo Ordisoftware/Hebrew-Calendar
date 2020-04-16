@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.IO;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
@@ -498,6 +499,13 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
+    {
+      OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text);
+      OpenFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text);
+      if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
+        EditHebrewLettersPath.Text = OpenFileDialog.FileName;
+    }
   }
 
 }
