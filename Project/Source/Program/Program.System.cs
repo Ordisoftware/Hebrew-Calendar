@@ -233,9 +233,20 @@ namespace Ordisoftware.HebrewCalendar
             if ( items.SeparatorBeforeFolder )
               menuRoot.DropDownItems.Add(new ToolStripSeparator());
             menu = new ToolStripMenuItem(title);
+            menuRoot.DropDownItems.Add(menu);
             menu.ImageScaling = ToolStripItemImageScaling.None;
             menu.Image = imageFolder;
-            menuRoot.DropDownItems.Add(menu);
+            menu.MouseUp += (sender, e) =>
+            {
+              if ( e.Button != MouseButtons.Right ) return;
+              if ( !DisplayManager.QueryYesNo(Translations.AskToOpenAllLinks.GetLang()) ) return;
+              foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
+                if ( item.Tag != null )
+                {
+                  SystemManager.OpenWebLink((string)item.Tag);
+                  Thread.Sleep(500);
+                }
+            };
           }
           else
             menu = menuRoot;
@@ -265,7 +276,6 @@ namespace Ordisoftware.HebrewCalendar
               if ( menuitem.Image == null )
                 menuitem.Image = imageLink;
               menuitem.Text = str;
-
             }
           }
         }
