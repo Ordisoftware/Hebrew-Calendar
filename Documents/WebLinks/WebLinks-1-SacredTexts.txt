@@ -1,5 +1,3 @@
-INSERT-FOLDER-SEPARATOR
-
 Lang/EN = Sacred texts
 Lang/FR = Textes sacrés
 

@@ -1,5 +1,3 @@
-INSERT-FOLDER-SEPARATOR
-
 Lang/EN = Video Channels
 Lang/FR = Vidéo Chaînes
 

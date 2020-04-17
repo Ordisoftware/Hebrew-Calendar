@@ -1,5 +1,7 @@
-Lang/EN = Torah lessons
-Lang/FR = Cours de Torah
+INSERT-FOLDER-SEPARATOR
+
+Lang/EN = Online Torah lessons
+Lang/FR = Cours de Torah en ligne
 
 Name = (FR) Rav Yehia Benchetrit
 URL = http://ravbenchetrit.com
