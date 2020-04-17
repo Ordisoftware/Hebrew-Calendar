@@ -84,10 +84,5 @@ URL = https://www.youtube.com/user/Adamantha
 
 -
 
-Name = (FR) Havre de Savoir Islam
-URL = https://www.youtube.com/channel/UCASN_rsvvmEDT8iJihLyQew
-
--
-
 Name = (EN) Alex Grey's Chapel of Sacred Mirrors
 URL = https://www.youtube.com/channel/UCZVxulrA3TWY1_WSeFD3eGg
