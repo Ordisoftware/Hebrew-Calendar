@@ -9,67 +9,67 @@
 ; Use the %WORD% tag in URL to allow the application to replace it by the word to process
 ; --------------------------------------------------------------------------------------------------
 
-Name = Pealim Hebrew Verb Tables EN
+Name = (EN) Pealim Hebrew Verb Tables
 URL = https://www.pealim.com/search/?q=%WORD%
 
-Name = Sefaria Klein Dictionary EN
+Name = (EN) Sefaria Klein Dictionary
 URL = https://www.sefaria.org/Klein_Dictionary%2C_%WORD%_%E1%B4%B5?lang=bi
 
-Name = Dict.com FR
+Name = (FR) Dict.com
 URL = https://www.dict.com/hebreu-francais/%WORD%
 
 -
 
-Name = Wiktionary EN
+Name = (EN) Wiktionary
 URL = https://en.wiktionary.org/wiki/%WORD%
 
-Name = Wiktionary FR
+Name = (FR) Wiktionary
 URL = https://fr.wiktionary.org/w/index.php?search=%WORD%
 
 -
 
-Name = Google Translate EN
+Name = (EN) Google Translate
 URL = https://translate.google.com/?op=translate&sl=iw&tl=en&text=%WORD%
 
-Name = Google Translate FR
+Name = (FR) Google Translate
 URL = https://translate.google.com/?op=translate&sl=iw&tl=fr&text=%WORD%
 
 -
 
-Name = Bing Translate EN
+Name = (EN) Bing Translate
 URL = https://www.bing.com/translator/?from=he&to=en&text=%WORD%
 
-Name = Bing Translate FR
+Name = (FR) Bing Translate
 URL = https://www.bing.com/translator/?from=he&to=fr&text=%WORD%
 
 -
 
-Name = Reverso Dictionary EN
+Name = (EN) Reverso Dictionary
 URL = https://dictionary.reverso.net/hebrew-english/%WORD%
 
-Name = Reverso Dictionary FR
+Name = (FR) Reverso Dictionary
 URL = https://dictionnaire.reverso.net/hebreu-francais/%WORD%
 
 -
 
-Name = Reverso Context EN
+Name = (EN) Reverso Context
 URL = https://context.reverso.net/translation/hebrew-english/%WORD%
 
-Name = Reverso Context FR
+Name = (FR) Reverso Context
 URL = https://context.reverso.net/translation/hebrew-french/%WORD%
 
 -
 
-Name = Glosbe Dictionary EN
+Name = (EN) Glosbe Dictionary
 URL = https://en.glosbe.com/he/en/%WORD%
 
-Name = Glosbe Dictionary FR
+Name = (FR) Glosbe Dictionary
 URL = https://fr.glosbe.com/he/fr/%WORD%
 
 -
 
-Name = Google Search
+Name = (NONE) Google Search
 URL = https://www.google.com/search?q=hebrew+strong+%WORD%
 
-Name = Bing Search
+Name = (NONE) Bing Search
 URL = http://www.bing.com/search?q=hebrew+strong+%WORD%
