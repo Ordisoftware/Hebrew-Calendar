@@ -13,7 +13,6 @@
 /// <created> 2020-03 </created>
 /// <edited> 2020-04 </edited>
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
@@ -27,13 +26,6 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   public partial class OnlineProviders
   {
-
-    static public readonly Dictionary<string, string> AskToOpenAllLinks
-      = new Dictionary<string, string>()
-      {
-        { "en", "Do you want to open all \"{0]\" links?" },
-        { "fr", "Voulez-vous ouvrir tous les liens de \"{0}\" ?" }
-      };
 
     /// <summary>
     /// Create submenu items for providers menu.
@@ -58,7 +50,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Create submenu items for web links menu.
     /// </summary>
-    static public void CreateWebLinksMenuItems(ToolStripDropDownButton menuRoot, Image imageFolder, Image imageLink)
+    static public void CreateWebLinksMenuItems(ToolStripDropDownButton menuRoot, Image imageFolder)
     {
       Globals.LoadWebLinks();
       menuRoot.DropDownItems.Clear();

@@ -15,69 +15,10 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
 {
-
-  /// <summary>
-  /// Online provider item.
-  /// </summary>
-  public class OnlineProvider
-  {
-
-    static public Dictionary<string, Image> LanguageImages { get; private set; }
-
-    static OnlineProvider()
-    {
-      Func<string, Image> createImage = filename =>
-      {
-        try
-        {
-          return Image.FromFile(filename);
-        }
-        catch ( Exception ex )
-        {
-          DisplayManager.ShowError($"Error loading: {Environment.NewLine}{filename}");
-          return null;
-        }
-      };
-      LanguageImages = new Dictionary<string, Image>()
-      {
-        { "(NONE)", createImage(Globals.HelpFolderPath + "flag_none.png") },
-        { "(FR)", createImage(Globals.HelpFolderPath + "flag_france.png") },
-        { "(EN)", createImage(Globals.HelpFolderPath + "flag_great_britain.png") },
-        { "(IW)", createImage(Globals.HelpFolderPath + "flag_israel.png") },
-        { "(FR/IW)", createImage(Globals.HelpFolderPath + "flag_fr_iw.png") },
-        { "(FR/EN)", createImage(Globals.HelpFolderPath + "flag_fr_en.png") }
-      };
-    }
-
-    public string Name { get; set; }
-
-    public string URL { get; set; }
-
-    public ToolStripItem CreateMenuItem(EventHandler action, Image image = null)
-    {
-      if ( Name == "-" )
-        return new ToolStripSeparator();
-      foreach ( var flag in LanguageImages )
-        if ( Name.StartsWith(flag.Key) )
-        {
-          Name = Name.Replace(flag.Key, "").Trim();
-          image = flag.Value;
-          break;
-        }
-      var result = new ToolStripMenuItem(Name, image);
-      result.ImageScaling = ToolStripItemImageScaling.None;
-      result.Tag = URL;
-      result.Click += action;
-      return result;
-    }
-
-  }
 
   /// <summary>
   /// Online providers list.
@@ -88,32 +29,28 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate items.
     /// </summary>
-    public List<OnlineProvider> Items
-    {
-      get;
-      private set;
-    }
+    public List<OnlineProviderItem> Items { get; private set; }
 
     /// <summary>
     /// Indicate the multilingual title of the list to create a folder
     /// </summary>
-    public Dictionary<string, string> Title = new Dictionary<string, string>();
+    private readonly Dictionary<string, string> Title = new Dictionary<string, string>();
 
     /// <summary>
     /// Indicate if a separator must be inserted before the folder
     /// </summary>
-    public bool SeparatorBeforeFolder;
+    private readonly bool SeparatorBeforeFolder;
 
     /// <summary>
     /// Static constructor.
     /// </summary>
     public OnlineProviders(string filename, bool showFileNotFound = true)
     {
-      Items = new List<OnlineProvider>();
+      Items = new List<OnlineProviderItem>();
       if ( !File.Exists(filename) )
       {
         if ( showFileNotFound )
-          DisplayManager.ShowError("File not found: " + filename);
+          DisplayManager.ShowError(FileNotFound.GetLang(filename));
         return;
       }
       try
@@ -123,23 +60,17 @@ namespace Ordisoftware.HebrewCommon
         {
           Action showError = () =>
           {
-            DisplayManager.ShowError("Error in " + filename + Environment.NewLine + Environment.NewLine +
-                                     "Line n° " + index + Environment.NewLine + Environment.NewLine +
-                                     lines[index]);
+            DisplayManager.ShowError(ErrorMsg.GetLang(filename, index, lines[index]));
           };
-          var item = new OnlineProvider(); ;
           if ( lines[index].Trim() == "" )
             continue;
           if ( lines[index].Trim().StartsWith(";") )
             continue;
-          if ( lines[index].Trim().StartsWith("INSERT-FOLDER-SEPARATOR") )
+          if ( lines[index].Trim().StartsWith("FOLDER-SEPARATOR") )
             SeparatorBeforeFolder = true;
           else
           if ( lines[index].StartsWith("-") )
-          {
-            item.Name = "-";
-            Items.Add(item);
-          }
+            Items.Add(new OnlineProviderItem("-"));
           else
           if ( lines[index].StartsWith("Lang/") )
           {
@@ -155,7 +86,7 @@ namespace Ordisoftware.HebrewCommon
             var parts = lines[index].Split(new string[] { " = " }, StringSplitOptions.None);
             if ( parts.Length == 2 )
             {
-              item.Name = parts[1].Trim();
+              string name = parts[1].Trim();
               index++;
               if ( index >= lines.Length )
                 showError();
@@ -164,8 +95,8 @@ namespace Ordisoftware.HebrewCommon
                 parts = lines[index].Split(new string[] { " = " }, StringSplitOptions.None);
                 if ( parts.Length == 2 )
                 {
-                  item.URL = parts[1].Trim();
-                  Items.Add(item);
+                  string url = parts[1].Trim();
+                  Items.Add(new OnlineProviderItem(name, url));
                 }
                 else
                   showError();
