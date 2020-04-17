@@ -155,7 +155,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.ResetPreferences.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Translations.AskToResetPreferences.GetLang()) ) return;
       string country = Program.Settings.GPSCountry;
       string city = Program.Settings.GPSCity;
       string lat = Program.Settings.GPSLatitude;

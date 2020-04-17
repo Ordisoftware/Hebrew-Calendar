@@ -32,7 +32,7 @@ namespace Ordisoftware.HebrewCommon
         using ( var sql = connection.CreateCommand() )
         {
           sql.CommandText = "VACUUM;";
-          int result = sql.ExecuteNonQuery();
+          sql.ExecuteNonQuery();
         }
       }
       catch ( Exception ex )

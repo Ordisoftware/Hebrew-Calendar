@@ -185,7 +185,7 @@ namespace Ordisoftware.HebrewCalendar
           else
           if ( DisplayManager.QueryYesNo(Translations.NewVersionAvailable.GetLang(version) + Environment.NewLine +
                                          Environment.NewLine +
-                                         Translations.AskDownloadNewVersion.GetLang()) )
+                                         Translations.AskToDownloadNewVersion.GetLang()) )
           {
             SystemManager.OpenWebLink(Globals.DownloadApplicationURL);
             if ( auto )

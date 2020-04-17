@@ -142,7 +142,6 @@ namespace Ordisoftware.HebrewCommon
       catch ( Exception ex )
       {
         ex.Manage();
-        return;
       }
     }
 

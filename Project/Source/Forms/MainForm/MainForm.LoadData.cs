@@ -31,7 +31,7 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
-        if ( !IsGenerating ) UpdateProgress(progress++, ProgressCount, Translations.LoadingData.GetLang());
+        if ( !IsGenerating ) UpdateProgress(progress++, ProgressCount, Translations.ProgressLoadingData.GetLang());
       };
       DataSet.LunisolarDays.RowChanged += update;
       Cursor = Cursors.WaitCursor;

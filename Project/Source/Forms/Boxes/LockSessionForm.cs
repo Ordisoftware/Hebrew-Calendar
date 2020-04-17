@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionShutdown_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.ShutdownComputer.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Translations.AskToShutdownComputer.GetLang()) ) return;
       Close();
       MediaStop();
       Program.RunShell("shutdown", "/s /t 0");

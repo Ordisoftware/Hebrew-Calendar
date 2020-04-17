@@ -14,7 +14,6 @@
 /// <edited> 2020-04 </edited>
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -208,6 +207,8 @@ namespace Ordisoftware.HebrewCommon
           OnlineLinksProviders.Add(new OnlineProviders(file, false));
     }
 
+    #region Assembly information
+
     /// <summary>
     /// Get the assembly title.
     /// </summary>
@@ -310,6 +311,8 @@ namespace Ordisoftware.HebrewCommon
         return attributes.Length == 0 ? "" : ( (GuidAttribute)attributes[0] ).Value;
       }
     }
+
+    #endregion
 
   }
 

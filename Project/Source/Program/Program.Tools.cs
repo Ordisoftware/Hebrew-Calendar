@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !File.Exists(Settings.HebrewLettersExe) )
       {
-        if ( DisplayManager.QueryYesNo(Translations.HebrewLettersNotFound.GetLang()) )
+        if ( DisplayManager.QueryYesNo(Translations.AskToDownloadHebrewLetters.GetLang()) )
           MainForm.Instance.toolStripMenuItem5.PerformClick();
         return;
       }

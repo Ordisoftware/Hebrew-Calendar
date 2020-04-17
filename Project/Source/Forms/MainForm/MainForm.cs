@@ -18,7 +18,6 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing.Printing;
-using System.Data.Odbc;
 using Microsoft.Win32;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
@@ -435,7 +434,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Translations.RestoreWinPos.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Translations.AskToRestoreWindowPosition.GetLang()) )
         Program.Settings.RestoreMainForm();
     }
 
@@ -561,11 +560,11 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( IsGenerating )
       {
-        DisplayManager.ShowAdvert(Translations.CantExitApplicationWhileGenerating.GetLang());
+        DisplayManager.ShowAdvert(Translations.CantExitWhileGenerating.GetLang());
         return;
       }
       if ( EditConfirmClosing.Checked )
-        if ( !DisplayManager.QueryYesNo(Translations.ExitApplication.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Translations.AskToExitApplication.GetLang()) )
           return;
       Globals.AllowClose = true;
       Close();
@@ -594,10 +593,10 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
     {
       var formDate = new SelectDayForm();
-      formDate.Text = Translations.DiffDatesFirst.GetLang();
+      formDate.Text = Translations.FirstDay.GetLang();
       if ( formDate.ShowDialog() != DialogResult.OK ) return;
       var date1 = formDate.MonthCalendar.SelectionStart.Date;
-      formDate.Text = Translations.DiffDatesLast.GetLang();
+      formDate.Text = Translations.LastDay.GetLang();
       if ( formDate.ShowDialog() != DialogResult.OK ) return;
       var date2 = formDate.MonthCalendar.SelectionStart.Date;
       if ( date1 > date2 )
