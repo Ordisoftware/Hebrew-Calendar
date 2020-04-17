@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewCommon
     static private readonly Dictionary<string, string> AskToOpenAllLinks
       = new Dictionary<string, string>()
       {
-        { "en", "Do you want to open all \"{0]\" links?" },
+        { "en", "Do you want to open all \"{0}\" links?" },
         { "fr", "Voulez-vous ouvrir tous les liens de \"{0}\" ?" }
       };
 
