@@ -176,7 +176,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the online search a word providers.
     /// </summary>
     static public readonly OnlineProviders OnlineWordProviders
-      = new OnlineProviders(OnlineWordProvidersFileName, false);
+      = new OnlineProviders(OnlineWordProvidersFileName);
 
     /// <summary>
     /// Indicate the filename of the online search word providers.
@@ -188,7 +188,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the online bible verse providers.
     /// </summary>
     static public readonly OnlineProviders OnlineBibleProviders
-      = new OnlineProviders(OnlineBibleProvidersFileName, false);
+      = new OnlineProviders(OnlineBibleProvidersFileName);
 
     /// <summary>
     /// Indicate the online links providers.
@@ -204,7 +204,7 @@ namespace Ordisoftware.HebrewCommon
       OnlineLinksProviders.Clear();
       if ( Directory.Exists(WebLinksFolderPath) )
         foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
-          OnlineLinksProviders.Add(new OnlineProviders(file, false));
+          OnlineLinksProviders.Add(new OnlineProviders(file));
     }
 
     #region Assembly information

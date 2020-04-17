@@ -19,7 +19,7 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Online providers list.
+  /// Provide online providers list.
   /// </summary>
   public partial class OnlineProviders
   {
@@ -27,8 +27,8 @@ namespace Ordisoftware.HebrewCommon
     static private readonly Dictionary<string, string> FileNotFound
       = new Dictionary<string, string>()
       {
-        { "en", "File not found: {0}" },
-        { "fr", "Fichier non trouvé : {0}" }
+        { "en", "File not found: " + Environment.NewLine + Environment.NewLine + "{0}" },
+        { "fr", "Fichier non trouvé : " + Environment.NewLine + Environment.NewLine + "{0}" }
       };
 
     static private readonly Dictionary<string, string> ErrorMsg
@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewCommon
                 "Line n° {1]" + Environment.NewLine + Environment.NewLine +
                 "{2}" },
         { "fr", "Erreur dans {0}" + Environment.NewLine + Environment.NewLine +
-                "Ligne n° {1]" + Environment.NewLine + Environment.NewLine +
+                "Ligne n° {1}" + Environment.NewLine + Environment.NewLine +
                 "{2}" }
       };
 
