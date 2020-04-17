@@ -16,7 +16,7 @@ Name = (FR) Cours de Talmud
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BHHWXJ6_Skb-gFBeAmDlKw
 
 Name = (FR) Les célébrations de la Torah
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Clbv_vfSf0pNcGcbZjbgDS
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BbcpGqKOVnyktf9GMFwnVV
 
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-B8WqPCwLWyBC0gDQAoA2OZ
@@ -32,6 +32,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CVfZ2azPtXh8pXSwBNA_gV
 
 Name = (FR) Rav Yossef Hay (Sitré Haïm)
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-D124Or8KY9XHz4e76McKBT
+
+Name = (FR) Rav David Pito
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Clbv_vfSf0pNcGcbZjbgDS
 
 -
 
