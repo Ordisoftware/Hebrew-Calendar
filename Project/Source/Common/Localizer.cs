@@ -58,7 +58,7 @@ namespace Ordisoftware.HebrewCommon
     /// <returns></returns>
     static public string GetLang(this Dictionary<string, string> values)
     {
-      return values.ContainsKey(Language) ? values[Language] : "";
+      return values != null && values.ContainsKey(Language) ? values[Language] : "";
     }
 
     /// <summary>
@@ -69,6 +69,7 @@ namespace Ordisoftware.HebrewCommon
     /// <returns></returns>
     static public string GetLang(this Dictionary<string, string> values, params object[] parameters)
     {
+      if ( values == null ) return "";
       return string.Format(values.GetLang(), parameters);
     }
 
@@ -79,7 +80,7 @@ namespace Ordisoftware.HebrewCommon
     /// <returns></returns>
     static public string[] GetLang(this Dictionary<string, string[]> values)
     {
-      return values.ContainsKey(Language) ? values[Language] : new string[0];
+      return values != null && values.ContainsKey(Language) ? values[Language] : new string[0];
     }
 
     /// <summary>
@@ -91,7 +92,9 @@ namespace Ordisoftware.HebrewCommon
     /// <returns></returns>
     static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
-      return values.ContainsKey(value) ? values[value].ContainsKey(Language) ? values[value][Language] : "" : "";
+      return values != null && values.ContainsKey(value)
+             ? values[value] != null && values[value].ContainsKey(Language) ? values[value][Language] : ""
+             : "";
     }
 
     /// <summary>
@@ -103,7 +106,9 @@ namespace Ordisoftware.HebrewCommon
     /// <returns></returns>
     static public string GetLang<T>(this Dictionary<string, Dictionary<T, string>> values, T value)
     {
-      return values.ContainsKey(Language) ? values[Language].ContainsKey(value) ? values[Language][value] : "" : "";
+      return values != null && values.ContainsKey(Language)
+        ? values[Language] != null && values[Language].ContainsKey(value) ? values[Language][value] : ""
+        : "";
     }
 
     /// <summary>
