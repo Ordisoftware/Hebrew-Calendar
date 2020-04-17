@@ -15,7 +15,7 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dkv3zE0tAo494c64BBGTwz
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-B8WqPCwLWyBC0gDQAoA2OZ
 
-Name = (FR) Rav Chlomo Amar
+Name = (FR) Rav Shlomoh Amar
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DP-nvpbjUq-Bjlug7TjxgU
 
 Name = (FR) Rav Yehia Benchetrit

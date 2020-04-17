@@ -18,11 +18,14 @@ URL = https://www.youtube.com/channel/UC9x_d0qPTAy-K5GmIwwQfAQ
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
 
+Name = (FR) Rav Yossef Hay (Sitré Haïm)
+URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
+
 Name = (FR) Rav Avraham Ifrah
 URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
 
-Name = (FR) Rav Yossef Hay (Sitré Haïm)
-URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
+Name = (FR) Rav Amnon Itshak
+URL = https://www.youtube.com/channel/UCYYewptIS63Qur1V809labA
 
 -
 
