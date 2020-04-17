@@ -27,21 +27,62 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   public class OnlineProvider
   {
-    public string Name { get; set; }
-    public string URL { get; set; }
-    public ToolStripMenuItem CreateMenuItem(EventHandler action, Image image = null)
+
+    static public Dictionary<string, Image> LanguageImages { get; private set; }
+
+    static OnlineProvider()
     {
+      Func<string, Image> createImage = filename =>
+      {
+        try
+        {
+          return Image.FromFile(filename);
+        }
+        catch ( Exception ex )
+        {
+          DisplayManager.ShowError($"Error loading: {Environment.NewLine}{filename}");
+          return null;
+        }
+      };
+      LanguageImages = new Dictionary<string, Image>()
+      {
+        { "(NONE)", createImage(Globals.HelpFolderPath + "flag_none.png") },
+        { "(FR)", createImage(Globals.HelpFolderPath + "flag_france.png") },
+        { "(EN)", createImage(Globals.HelpFolderPath + "flag_great_britain.png") },
+        { "(IW)", createImage(Globals.HelpFolderPath + "flag_israel.png") },
+        { "(FR/IW)", createImage(Globals.HelpFolderPath + "flag_fr_iw.png") },
+        { "(FR/EN)", createImage(Globals.HelpFolderPath + "flag_fr_en.png") }
+      };
+    }
+
+    public string Name { get; set; }
+
+    public string URL { get; set; }
+
+    public ToolStripItem CreateMenuItem(EventHandler action, Image image = null)
+    {
+      if ( Name == "-" )
+        return new ToolStripSeparator();
+      foreach ( var flag in LanguageImages )
+        if ( Name.StartsWith(flag.Key) )
+        {
+          Name = Name.Replace(flag.Key, "").Trim();
+          image = flag.Value;
+          break;
+        }
       var result = new ToolStripMenuItem(Name, image);
+      result.ImageScaling = ToolStripItemImageScaling.None;
       result.Tag = URL;
       result.Click += action;
       return result;
     }
+
   }
 
   /// <summary>
   /// Online providers list.
   /// </summary>
-  public class OnlineProviders
+  public partial class OnlineProviders
   {
 
     /// <summary>

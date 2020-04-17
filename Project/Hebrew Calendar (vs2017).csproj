@@ -368,6 +368,7 @@
     <Compile Include="Source\Enums\MoonPhase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Entities\ReminderTimes.cs" />
+    <Compile Include="Source\Common\OnlineProviders.Menus.cs" />
     <Compile Include="Source\Program\Program.Tools.cs" />
     <Compile Include="Source\Program\Program.System.cs" />
     <Compile Include="Source\Common\Globals.cs" />

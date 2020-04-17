@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -88,6 +87,19 @@ namespace Ordisoftware.HebrewCalendar
     static public string[] CommandLineArguments { get; private set; }
 
     /// <summary>
+    /// Apply localized resources.
+    /// </summary>
+    static private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
+    {
+      foreach ( Control control in controls )
+      {
+        if ( control is Label )
+          resources.ApplyResources(control, control.Name);
+        ApplyResources(resources, control.Controls);
+      }
+    }
+
+    /// <summary>
     /// Center a form beside the main form.
     /// </summary>
     /// <param name="form">The form.</param>
@@ -116,19 +128,6 @@ namespace Ordisoftware.HebrewCalendar
           DisplayManager.ShowError(ex.Message + Environment.NewLine + Environment.NewLine +
                                    process.StartInfo.FileName);
         }
-    }
-
-    /// <summary>
-    /// Apply localized resources.
-    /// </summary>
-    static private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
-    {
-      foreach ( Control control in controls )
-      {
-        if ( control is Label )
-          resources.ApplyResources(control, control.Name);
-        ApplyResources(resources, control.Controls);
-      }
     }
 
     /// <summary>
@@ -201,85 +200,6 @@ namespace Ordisoftware.HebrewCalendar
         DisplayManager.ShowAdvert(DisplayManager.Title + " Check Update", ex.Message);
       }
       return false;
-    }
-
-    /// <summary>
-    /// Create winforms submenu items for web links from definitions files.
-    /// </summary>
-    static public void CreateWebLinks(ToolStripDropDownButton menuRoot, Image imageFolder, Image imageLink)
-    {
-      Globals.LoadWebLinks();
-      menuRoot.DropDownItems.Clear();
-      Func<string, Image> createImage = filename =>
-      {
-        try { return Image.FromFile(filename); }
-        catch ( Exception ex ) { DisplayManager.ShowError($"{ex.Message}{Environment.NewLine}{filename}"); return null; }
-      };
-      Dictionary<string, Image> Flags = new Dictionary<string, Image>()
-      {
-        { "(FR)", createImage(Globals.HelpFolderPath + "flag_france.png") },
-        { "(EN)", createImage(Globals.HelpFolderPath + "flag_great_britain.png") },
-        { "(IW)", createImage(Globals.HelpFolderPath + "flag_israel.png") },
-        { "(FR/IW)", createImage(Globals.HelpFolderPath + "flag_fr_iw.png") },
-        { "(FR/EN)", createImage(Globals.HelpFolderPath + "flag_fr_en.png") }
-      };
-      foreach ( var items in Globals.OnlineLinksProviders )
-        if ( items.Items.Count > 0 )
-        {
-          string title = items.Title.GetLang();
-          ToolStripDropDownItem menu;
-          if ( title != "" )
-          {
-            if ( items.SeparatorBeforeFolder )
-              menuRoot.DropDownItems.Add(new ToolStripSeparator());
-            menu = new ToolStripMenuItem(title);
-            menuRoot.DropDownItems.Add(menu);
-            menu.ImageScaling = ToolStripItemImageScaling.None;
-            menu.Image = imageFolder;
-            menu.MouseUp += (sender, e) =>
-            {
-              if ( e.Button != MouseButtons.Right ) return;
-              ( (ToolStripDropDownButton)menu.OwnerItem ).HideDropDown();
-              if ( !DisplayManager.QueryYesNo(Translations.AskToOpenAllLinks.GetLang(menu.Text)) ) return;
-              foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
-                if ( item.Tag != null )
-                {
-                  SystemManager.OpenWebLink((string)item.Tag);
-                  Thread.Sleep(1000);
-                }
-            };
-          }
-          else
-            menu = menuRoot;
-          foreach ( var item in items.Items )
-          {
-            string str = item.Name;
-            if ( str == "-" )
-              menu.DropDownItems.Add(new ToolStripSeparator());
-            else
-            {
-              var menuitem = new ToolStripMenuItem();
-              menu.DropDownItems.Add(menuitem);
-              menuitem.ImageScaling = ToolStripItemImageScaling.None;
-              menuitem.Tag = item.URL;
-              menuitem.Click += (sender, e) =>
-              {
-                string url = (string)( (ToolStripItem)sender ).Tag;
-                SystemManager.OpenWebLink(url);
-              };
-              foreach ( var flag in Flags )
-                if ( str.StartsWith(flag.Key) )
-                {
-                  str = str.Replace(flag.Key, "").TrimStart();
-                  menuitem.Image = flag.Value;
-                  break;
-                }
-              if ( menuitem.Image == null )
-                menuitem.Image = imageLink;
-              menuitem.Text = str;
-            }
-          }
-        }
     }
 
     /// <summary>
