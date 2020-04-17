@@ -1,3 +1,5 @@
+INSERT-FOLDER-SEPARATOR
+
 Lang/EN = Miscellaneous
 Lang/FR = Divers
 
