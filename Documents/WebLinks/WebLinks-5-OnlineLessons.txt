@@ -1,4 +1,4 @@
-INSERT-FOLDER-SEPARATOR
+FOLDER-SEPARATOR
 
 Lang/EN = Online Torah lessons
 Lang/FR = Cours de Torah en ligne
