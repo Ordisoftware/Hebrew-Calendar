@@ -25,6 +25,9 @@ URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
 Name = (FR) Rav Amnon Itshak
 URL = https://www.youtube.com/channel/UCYYewptIS63Qur1V809labA
 
+Name = (FR) Rav Yves Marciano
+URL = https://www.youtube.com/channel/UCin_W6_4xI0z0kvXoVHxQtQ
+
 -
 
 Name = (FR) Alef Ledoroth (Rav Yakov Sitruk)
@@ -51,6 +54,9 @@ URL = https://www.youtube.com/channel/UCF3zPVhQgqqwktX11Nt-27A
 
 Name = (FR) 613 TV
 URL = https://www.youtube.com/channel/UC0iLLG9ha8yShk7BPXvDXJw
+
+Name = (FR) Beit Ha-Zohar 
+URL = https://www.youtube.com/channel/UCcy6coS9yFqYlcxxNYkgWvQ
 
 Name = (FR) Chiourim.com
 URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
