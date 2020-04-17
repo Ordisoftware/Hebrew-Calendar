@@ -55,3 +55,15 @@ URL = http://corpus.quran.com/wordbyword.jsp
 
 Name = (FR) Quran Interlinéaire @ coran-seul.com
 URL = http://coran-seul.com/index.php/home
+
+-
+
+
+Name = (EN) Bhagavad Gita word-for-word (PDF 63 MB)
+URL = http://www.prabhupada-books.de/translations/gita-english/Bhagavad-gita-As-It-Is_McMillan1972.pdf
+
+Name = (FR) Bhagavad Gita mot-à-mot (PDF 42 Mo)
+URL = http://www.prabhupada-books.de/translations/gita-french/La_Bhagavad-gita_telle_quelle_est_Bhaktivedanta_Swami_Prabhupada.pdf
+
+Name = (FR) Yoga Sutra de Patanjali mot-à-mot (PDF 176 Ko)
+URL = http://www.lilashtanga.com/wp-content/uploads/2017/05/Sutra-de-patanjali-texte-.pdf
