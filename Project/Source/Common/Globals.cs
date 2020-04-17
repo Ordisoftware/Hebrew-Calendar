@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate if the application can be closed.
     /// </summary>
-    static public bool AllowClose = false;
+    static public bool AllowClose = true;
 
     /// <summary>
     /// Indicate the check update URL.

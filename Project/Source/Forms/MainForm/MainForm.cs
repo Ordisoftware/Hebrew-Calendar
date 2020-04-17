@@ -53,17 +53,16 @@ namespace Ordisoftware.HebrewCalendar
       InitializeComponent();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
+      try { Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename); }
+      catch { }
+      Globals.AllowClose = false;
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
-      try
-      {
-        Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename);
-      }
-      catch
-      {
-      }
     }
 
+    /// <summary>
+    /// Create web links menu items.
+    /// </summary>
     internal void CreateWebLinks()
     {
       Program.CreateWebLinks(MenuWebLinks, ActionOpenWebLinkTemplateFolder.Image, ActionOpenWebLinkTemplateLink.Image);
@@ -160,6 +159,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
+      if ( Globals.IsExiting ) return;
       if ( !Globals.IsReady ) return;
       if ( !Visible ) return;
       if ( WindowState != FormWindowState.Normal ) return;
@@ -174,16 +174,13 @@ namespace Ordisoftware.HebrewCalendar
     internal void SessionEnding(object sender, SessionEndingEventArgs e)
     {
       ClearLists();
+      Globals.IsExiting = true;
+      Globals.IsSessionEnding = true;
+      Globals.AllowClose = true;
       foreach ( Form form in Application.OpenForms )
         if ( form != this && form.Visible )
-          try
-          {
-            form.Close();
-          }
-          catch
-          {
-          }
-      Globals.AllowClose = true;
+          try { form.Close(); }
+          catch { }
       Close();
     }
 
