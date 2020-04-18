@@ -39,6 +39,11 @@ namespace Ordisoftware.HebrewCommon
     static public Form MainForm { get; set; }
 
     /// <summary>
+    /// Indicate the application settings.
+    /// </summary>
+    static public ApplicationSettingsBase Settings { get; set; }
+
+    /// <summary>
     /// Application mutex to allow only one process instance.
     /// </summary>
     static private Mutex Mutex;

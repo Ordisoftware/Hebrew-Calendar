@@ -58,8 +58,9 @@ namespace Ordisoftware.HebrewCalendar
       string lang = Settings.Language;
       SystemHelper.CheckCommandLineArguments(args, ref lang, Settings);
       Settings.Language = lang;
-      UpdateLocalization();
+      SystemHelper.Settings = Settings;
       SystemHelper.MainForm = MainForm.Instance;
+      UpdateLocalization();
       Application.Run(MainForm.Instance);
     }
 
