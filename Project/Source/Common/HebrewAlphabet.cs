@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-04 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Ordisoftware.HebrewCommon
@@ -28,7 +29,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate letters keyboard codes.
     /// </summary>
-    static public readonly string[] Codes = 
+    static public readonly string[] Codes =
     {
       "a", "b", "g", "d", "h", "v", "z", "x", "u", "y", "k",
       "l", "m", "n", "c", "i", "p", "j", "q", "r", ">", "t"
@@ -77,6 +78,18 @@ namespace Ordisoftware.HebrewCommon
       foreach ( var v in FinalDisable )
         str = str.Replace(v.Key, v.Value);
       return str;
+    }
+
+    /// <summary>
+    /// Returns only allowed chars for hebrew font.
+    /// </summary>
+    static public string OnlyHebrewFont(string str)
+    {
+      string result = "";
+      foreach ( char c in str.RemoveDiacritics() )
+        if ( Codes.Contains(c.ToString()) )
+          result = result + c;
+      return result;
     }
 
     /// <summary>

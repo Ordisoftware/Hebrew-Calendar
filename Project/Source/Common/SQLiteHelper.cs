@@ -25,6 +25,9 @@ namespace Ordisoftware.HebrewCommon
   static public class SQLiteHelper
   {
 
+    /// <summary>
+    ///  Vacuum the database
+    /// </summary>
     static public void Vacuum(this OdbcConnection connection)
     {
       try
