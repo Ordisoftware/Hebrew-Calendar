@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewCommon
         {
           return Image.FromFile(filename);
         }
-        catch ( Exception ex )
+        catch
         {
           DisplayManager.ShowError($"Error loading: {Environment.NewLine}{filename}");
           return null;
