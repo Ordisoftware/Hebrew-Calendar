@@ -24,7 +24,7 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public string NewLine = HebrewCommon.Globals.NewLine;
+    static public string NewLine { get { return Environment.NewLine; } }
 
     static public readonly Dictionary<string, string> ApplicationDescription
       = new Dictionary<string, string>()
@@ -36,10 +36,10 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> AskToResetPreferences
       = new Dictionary<string, string>()
       {
-        { "en", "Preferences will be reseted to their default values." + NewLine +
+        { "en", "Preferences will be reseted to their default values." + NewLine + NewLine +
                 "GPS location and shabat day will be keeped." + NewLine + NewLine +
                 "Do you want to continue?" },
-        { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine +
+        { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine + NewLine +
                 "La position GPS et le jour du shabat seront conservés." + NewLine + NewLine +
                 "Voulez-vous continuer ?" }
       };

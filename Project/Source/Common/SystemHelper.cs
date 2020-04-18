@@ -34,6 +34,11 @@ namespace Ordisoftware.HebrewCommon
   {
 
     /// <summary>
+    /// Indicate the main form.
+    /// </summary>
+    static public Form MainForm { get; set; }
+
+    /// <summary>
     /// Application mutex to allow only one process instance.
     /// </summary>
     static private Mutex Mutex;
@@ -105,9 +110,9 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="form">The form.</param>
     static public void CenterToMainForm(this Form form)
     {
-      // TODO
-      //form.Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - form.Width / 2,
-      //                          MainForm.Instance.Top + MainForm.Instance.Height / 2 - form.Height / 2);
+      if ( MainForm == null ) return;
+      form.Location = new Point(MainForm.Left + MainForm.Width / 2 - form.Width / 2,
+                                MainForm.Top + MainForm.Height / 2 - form.Height / 2);
     }
 
     /// <summary>
