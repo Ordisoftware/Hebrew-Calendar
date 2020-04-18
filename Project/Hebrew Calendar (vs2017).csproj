@@ -510,6 +510,9 @@
     <EmbeddedResource Include="Source\Forms\Boxes\NavigationForm.resx">
       <DependentUpon>NavigationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\README.md">
+      <Link>README.md</Link>
+    </None>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
