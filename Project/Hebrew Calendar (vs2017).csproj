@@ -147,9 +147,10 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
-    <Compile Include="Source\Classes\Translations.Generate.cs" />
+    <Compile Include="Source\Classes\Translations.BigCalendar.cs" />
+    <Compile Include="Source\Common\Globals.Translations.cs" />
     <Compile Include="Source\Common\OnlineProviderItem.cs" />
-    <Compile Include="Source\Common\OnlineProviders.Translations.cs" />
+    <Compile Include="Source\Common\SystemHelper.cs" />
     <Compile Include="Source\Entities\SunAndMoonRiseAndSet.cs" />
     <Compile Include="Source\Enums\ReportFieldCSV.cs" />
     <Compile Include="Source\Classes\Translations.Notices.cs" />
@@ -372,7 +373,6 @@
     <Compile Include="Source\Entities\ReminderTimes.cs" />
     <Compile Include="Source\Common\OnlineProviders.Menus.cs" />
     <Compile Include="Source\Program\Program.Tools.cs" />
-    <Compile Include="Source\Program\Program.System.cs" />
     <Compile Include="Source\Common\Globals.cs" />
     <Compile Include="Source\Program\Program.Vars.cs" />
     <EmbeddedResource Include="Dependencies\Calendar.NET\Calendar.resx">

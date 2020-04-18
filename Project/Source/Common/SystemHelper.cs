@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2020 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -14,6 +14,7 @@
 /// <edited> 2020-04 </edited>
 using System;
 using System.ComponentModel;
+using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -21,16 +22,15 @@ using System.Drawing.Imaging;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
   /// Provide Program class.
   /// </summary>
-  static partial class Program
+  static partial class SystemHelper
   {
 
     /// <summary>
@@ -51,30 +51,30 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Check is application's settings must be upgraded and apply it if necessary.
     /// </summary>
-    static private void CheckSettingsUpgrade()
+    static public void CheckSettingsUpgrade(ApplicationSettingsBase settings, ref bool upgradeRequired)
     {
-      if ( Settings.UpgradeRequired )
+      if ( upgradeRequired )
       {
-        Settings.Upgrade();
-        Settings.UpgradeRequired = false;
-        Settings.Save();
+        settings.Upgrade();
+        upgradeRequired = false;
+        settings.Save();
       }
     }
 
     /// <summary>
     /// Check command line arguments and apply them.
     /// </summary>
-    static private void CheckCommandLineArguments(string[] args)
+    static public void CheckCommandLineArguments(string[] args, ref string language, ApplicationSettingsBase settings)
     {
       CommandLineArguments = args;
       try
       {
         if ( args.Length == 2 && args[0] == "/lang" )
           if ( args[1] == "en" || args[1] == "fr" )
-            Settings.Language = args[1];
-        if ( Settings.Language == "" )
-          Settings.Language = Localizer.Language;
-        Settings.Save();
+            language = args[1];
+        if ( language == "" )
+          language = Localizer.Language;
+        settings.Save();
       }
       catch
       {
@@ -89,7 +89,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Apply localized resources.
     /// </summary>
-    static private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
+    static public void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
     {
       foreach ( Control control in controls )
       {
@@ -105,8 +105,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="form">The form.</param>
     static public void CenterToMainForm(this Form form)
     {
-      form.Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - form.Width / 2,
-                                MainForm.Instance.Top + MainForm.Instance.Height / 2 - form.Height / 2);
+      // TODO
+      //form.Location = new Point(MainForm.Instance.Left + MainForm.Instance.Width / 2 - form.Width / 2,
+      //                          MainForm.Instance.Top + MainForm.Instance.Height / 2 - form.Height / 2);
     }
 
     /// <summary>
@@ -167,9 +168,9 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="auto">True if no user interaction else false</param>
     /// <returns>True if application must exist else false.</returns>
-    static public bool CheckUpdate(bool auto)
+    static public bool CheckUpdate(bool checkAtStartup, bool auto)
     {
-      if ( auto && !Settings.CheckUpdateAtStartup ) return false;
+      if ( auto && !checkAtStartup ) return false;
       try
       {
         using ( WebClient client = new WebClient() )
@@ -179,12 +180,12 @@ namespace Ordisoftware.HebrewCalendar
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
-              DisplayManager.Show(Translations.NoNewVersionAvailable.GetLang());
+              DisplayManager.Show(Globals.NoNewVersionAvailable.GetLang());
           }
           else
-          if ( DisplayManager.QueryYesNo(Translations.NewVersionAvailable.GetLang(version) + Environment.NewLine +
+          if ( DisplayManager.QueryYesNo(Globals.NewVersionAvailable.GetLang(version) + Environment.NewLine +
                                          Environment.NewLine +
-                                         Translations.AskToDownloadNewVersion.GetLang()) )
+                                         Globals.AskToDownloadNewVersion.GetLang()) )
           {
             SystemManager.OpenWebLink(Globals.DownloadApplicationURL);
             if ( auto )

@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       TrayIcon.Icon = Icon;
       Program.Settings.Retrieve();
-      if ( Program.CheckUpdate(true) )
+      if ( SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, true) )
       {
         Application.Exit();
         return;
@@ -117,7 +117,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         GoToDate(date);
       };
-      MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
+      MenuShowHide.Text = Globals.HideRestore.GetLang(Visible);
       Globals.IsReady = true;
       UpdateButtons();
       GoToDate(DateTime.Today);
@@ -268,7 +268,7 @@ namespace Ordisoftware.HebrewCalendar
           ShowInTaskbar = false;
           FormBorderStyle = FormBorderStyle.SizableToolWindow;
         }
-        MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
+        MenuShowHide.Text = Globals.HideRestore.GetLang(Visible);
       }
       catch ( Exception ex )
       {
@@ -431,7 +431,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Translations.AskToRestoreWindowPosition.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Globals.AskToRestoreWindowPosition.GetLang()) )
         Program.Settings.RestoreMainForm();
     }
 
@@ -499,7 +499,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      Program.RunShell(Globals.HelpFilename);
+      SystemHelper.RunShell(Globals.HelpFilename);
     }
 
     /// <summary>
@@ -509,7 +509,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionApplicationHome_Click(object sender, EventArgs e)
     {
-      Program.OpenApplicationHome();
+      SystemHelper.OpenApplicationHome();
     }
 
     /// <summary>
@@ -519,7 +519,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionContact_Click(object sender, EventArgs e)
     {
-      Program.OpenContactPage();
+      SystemHelper.OpenContactPage();
     }
 
     /// <summary>
@@ -529,12 +529,12 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
-      Program.CheckUpdate(false);
+      SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, false);
     }
 
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
-      Program.OpenGitHibIssuesPage();
+      SystemHelper.OpenGitHibIssuesPage();
     }
 
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
@@ -561,7 +561,7 @@ namespace Ordisoftware.HebrewCalendar
         return;
       }
       if ( EditConfirmClosing.Checked )
-        if ( !DisplayManager.QueryYesNo(Translations.AskToExitApplication.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Globals.AskToExitApplication.GetLang()) )
           return;
       Globals.AllowClose = true;
       Close();
@@ -584,7 +584,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionOpenCalculator_Click(object sender, EventArgs e)
     {
-      Program.RunShell("calc.exe");
+      SystemHelper.RunShell("calc.exe");
     }
 
     private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
@@ -665,7 +665,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         var bitmap = new Bitmap(CalendarMonth.Width, CalendarMonth.Height);
         CalendarMonth.DrawToBitmap(bitmap, new Rectangle(0, 0, CalendarMonth.Width, CalendarMonth.Height));
-        bitmap = Program.ResizeImage(bitmap, 1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
+        bitmap = SystemHelper.ResizeImage(bitmap, 1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
         var document = new PrintDocument();
         document.DefaultPageSettings.Landscape = true;
         document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
@@ -697,7 +697,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
       if ( Program.Settings.AutoOpenExportFolder )
-        Program.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
+        SystemHelper.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
 
     /// <summary>
@@ -712,7 +712,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
       if ( Program.Settings.AutoOpenExportFolder )
-        Program.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
+        SystemHelper.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
     }
 
     /// <summary>

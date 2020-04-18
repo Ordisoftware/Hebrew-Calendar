@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewCalendar
             LabelTorahNext.Tag = null;
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
-          PictureMoon.Image = Program.ResizeImage(image, 100, 100);
+          PictureMoon.Image = SystemHelper.ResizeImage(image, 100, 100);
           if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           {
             LabelMoonrise.Top = 125;

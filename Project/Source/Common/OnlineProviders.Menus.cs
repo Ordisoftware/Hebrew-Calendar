@@ -71,7 +71,7 @@ namespace Ordisoftware.HebrewCommon
             {
               if ( e.Button != MouseButtons.Right ) return;
               ( (ToolStripDropDownButton)menu.OwnerItem ).HideDropDown();
-              if ( !DisplayManager.QueryYesNo(AskToOpenAllLinks.GetLang(menu.Text)) ) return;
+              if ( !DisplayManager.QueryYesNo(Globals.AskToOpenAllLinks.GetLang(menu.Text)) ) return;
               foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
                 if ( item.Tag != null )
                 {

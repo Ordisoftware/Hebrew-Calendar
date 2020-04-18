@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewCommon
       if ( !File.Exists(filename) )
       {
         if ( showFileNotFound )
-          DisplayManager.ShowError(FileNotFound.GetLang(filename));
+          DisplayManager.ShowError(Globals.FileNotFound.GetLang(filename));
         return;
       }
       try
@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCommon
         {
           Action showError = () =>
           {
-            DisplayManager.ShowError(ErrorMsg.GetLang(filename, index, lines[index]));
+            DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index, lines[index]));
           };
           if ( lines[index].Trim() == "" )
             continue;

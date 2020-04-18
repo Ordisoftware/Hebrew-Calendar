@@ -11,11 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.IO;
-using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !File.Exists(Settings.HebrewLettersExe) )
       {
-        if ( DisplayManager.QueryYesNo(Translations.AskToDownloadHebrewLetters.GetLang()) )
+        if ( DisplayManager.QueryYesNo(Globals.AskToDownloadHebrewLetters.GetLang()) )
           MainForm.Instance.ActionDownloadHebrewLetters.PerformClick();
         return;
       }
@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( hebrew.StartsWith("b ") )
         hebrew = hebrew.Substring(2, hebrew.Length - 2);
       foreach ( string item in hebrew.Split(' ') )
-        RunShell(Settings.HebrewLettersExe, hebrew);
+        SystemHelper.RunShell(Settings.HebrewLettersExe, item);
     }
     
   }
