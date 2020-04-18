@@ -33,6 +33,21 @@ namespace Ordisoftware.HebrewCommon
     private bool KeyProcessed = false;
 
     /// <summary>
+    /// Indicate if values must be shown.
+    /// </summary>
+    public bool ShowValues
+    {
+      get { return _ShowValues; }
+      set
+      {
+        if ( _ShowValues == value ) return;
+        _ShowValues = value;
+        CreateLetters();
+      }
+    }
+    private bool _ShowValues = true;
+
+    /// <summary>
     /// Indicate the background color of letters panel.
     /// </summary>
     public Color LettersBackground
@@ -75,6 +90,7 @@ namespace Ordisoftware.HebrewCommon
     {
       try
       {
+        Panel.Controls.Clear();
         int dy = 45;
         int dx = -dy;
         int x = 500 + dx;
@@ -88,17 +104,20 @@ namespace Ordisoftware.HebrewCommon
         for ( int index = 0; index < HebrewAlphabet.Codes.Length; index++ )
         {
           var labelValue = new Label();
-          labelValue.Location = new Point(x, y + dy);
-          labelValue.Size = sizeLabelKey;
-          labelValue.Font = fontValue;
-          labelValue.ForeColor = colorLabel;
-          labelValue.BackColor = Color.Transparent;
-          labelValue.Text = HebrewAlphabet.ValuesSimple[index].ToString();
-          labelValue.TextAlign = ContentAlignment.MiddleCenter;
-          Panel.Controls.Add(labelValue);
+          if ( _ShowValues )
+          {
+            labelValue.Location = new Point(x, y + dy);
+            labelValue.Size = sizeLabelKey;
+            labelValue.Font = fontValue;
+            labelValue.ForeColor = colorLabel;
+            labelValue.BackColor = Color.Transparent;
+            labelValue.Text = HebrewAlphabet.ValuesSimple[index].ToString();
+            labelValue.TextAlign = ContentAlignment.MiddleCenter;
+            Panel.Controls.Add(labelValue);
+          }
           //
           var labelKey = new Label();
-          labelKey.Location = new Point(x, y + dy + labelValue.Height + 2);
+          labelKey.Location = new Point(x, y + dy + ( _ShowValues ? labelValue.Height : -2 ) + 2);
           labelKey.Size = sizeLabelKey;
           labelKey.Text = HebrewAlphabet.Codes[index];
           labelKey.ForeColor = colorLabel;
@@ -129,7 +148,7 @@ namespace Ordisoftware.HebrewCommon
           else
           {
             x = 500 + dx;
-            y += dy + labelValue.Height + labelKey.Height + 15;
+            y += dy + ( _ShowValues ? labelValue.Height : -2 ) + labelKey.Height + 15;
           }
         }
       }
