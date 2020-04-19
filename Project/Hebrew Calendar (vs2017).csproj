@@ -548,7 +548,6 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="License\MPL 2.0.rtf" />
-    <None Include="Properties\DataSources\Ordisoftware.HebrewCalendar.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
