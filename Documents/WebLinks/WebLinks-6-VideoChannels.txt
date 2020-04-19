@@ -16,9 +16,6 @@ URL = https://www.youtube.com/channel/UC9x_d0qPTAy-K5GmIwwQfAQ
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
 
-Name = (FR) Rav Yossef Hay (Sitré Haïm)
-URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
-
 Name = (FR) Rav Avraham Ifrah
 URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
 
@@ -36,8 +33,11 @@ URL = https://www.youtube.com/channel/UCxmbAfrpiMYTrgCLmKSRSLQ
 Name = (EN) Aleph Society (Rabbi Adin Steinsaltz)
 URL = https://www.youtube.com/user/AlephSociety
 
-Name = (FR/IW) Ramhal Institute (Rav Mordechai Chriqui)
+Name = (FR/IW) Ramhal Institute (Rav Mordekhai Chriqui)
 URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
+
+Name = (FR) Sitré Haïm (Rav Yossef Hay)
+URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
 
 -
 
