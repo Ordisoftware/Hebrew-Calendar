@@ -2,44 +2,44 @@ Lang/EN = Hebrew calendar
 Lang/FR = Calendrier hébraïque
 
 Name = (EN) Calendars through the ages @ webexhibits.org
-URL  = http://www.webexhibits.org/calendars/
+URL = http://www.webexhibits.org/calendars/
 
 -
 
 Name = (EN) Sun and moon rise and set @ sunrise-and-sunset.com
-URL  = https://www.sunrise-and-sunset.com/en
+URL = https://www.sunrise-and-sunset.com/en
 
 Name = (FR) Levers et couchers du soleil et de la lune @ sunrise-and-sunset.com
-URL  = https://www.sunrise-and-sunset.com/fr
+URL = https://www.sunrise-and-sunset.com/fr
 
 -
 
 Name = (FR) Calendrier lunaire @ calendrier-lunaire.net
-URL  = http://www.calendrier-lunaire.net
+URL = http://www.calendrier-lunaire.net
 
 -
 
 Name = (EN) Hebrew calendar @ en.wikipédia.org
-URL  = https://en.wikipedia.org/wiki/Hebrew_calendar
+URL = https://en.wikipedia.org/wiki/Hebrew_calendar
 
 Name = (FR) Calendrier hébraïque @ fr.wikipédia.org
-URL  = https://fr.wikipedia.org/wiki/Calendrier_h%C3%A9bra%C3%AFque
+URL = https://fr.wikipedia.org/wiki/Calendrier_h%C3%A9bra%C3%AFque
 
 -
 
 Name = (EN) Jewish calendar @ hebcal.com
-URL  = https://www.hebcal.com
+URL = https://www.hebcal.com
 
 Name = (EN) Jewish calendar @ chabad.org
-URL  = https://www.chabad.org/calendar/view/month.htm
+URL = https://www.chabad.org/calendar/view/month.htm
 
 Name = (EN) Jewish calendar @ aish.com
-URL  = https://www.aish.com/jewish-calendar/Jewish_Calendar.html
+URL = https://www.aish.com/jewish-calendar/Jewish_Calendar.html
 
 -
 
 Name = (FR) Calendrier hébraïque @ calj.net
-URL  = http://www.calj.net
+URL = http://www.calj.net
 
 Name = (FR) Calendrier hébraïque @ chiourim.com
-URL  = http://www.chiourim.com/cal/calendrier_hebraique.php
+URL = http://www.chiourim.com/cal/calendrier_hebraique.php
