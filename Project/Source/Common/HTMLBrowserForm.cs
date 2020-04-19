@@ -24,6 +24,7 @@ namespace Ordisoftware.HebrewCommon
   {
 
     private Dictionary<string, string> Title;
+
     private string Filename;
 
     public HTMLBrowserForm()
@@ -37,18 +38,14 @@ namespace Ordisoftware.HebrewCommon
                            string filename,
                            string locationPropertyName,
                            string clientSizePropertyName)
+      : this()
     {
-      InitializeComponent();
-      ActiveControl = WebBrowser;
-      Icon = SystemHelper.MainForm.Icon;
       Title = title;
       Filename = filename;
       Location = (Point)SystemHelper.Settings[locationPropertyName];
       ClientSize = (Size)SystemHelper.Settings[clientSizePropertyName];
-      DataBindings.Add(new Binding("Location", SystemHelper.Settings, locationPropertyName, true,
-                       DataSourceUpdateMode.OnPropertyChanged));
-      DataBindings.Add(new Binding("ClientSize", SystemHelper.Settings, clientSizePropertyName, true,
-                       DataSourceUpdateMode.OnPropertyChanged));
+      DataBindings.Add(new Binding("Location", SystemHelper.Settings, locationPropertyName, true, DataSourceUpdateMode.OnPropertyChanged));
+      DataBindings.Add(new Binding("ClientSize", SystemHelper.Settings, clientSizePropertyName, true, DataSourceUpdateMode.OnPropertyChanged));
     }
 
     private void HTMLBrowserForm_Load(object sender, EventArgs e)
@@ -59,9 +56,8 @@ namespace Ordisoftware.HebrewCommon
 
     internal void HTMLBrowserForm_Shown(object sender, EventArgs e)
     {
-      Text = Title.GetLang();
-      if ( Filename != "" )
-        WebBrowser.Navigate(Filename.Replace("%LANG%", Localizer.Language));
+      if ( Title != null ) Text = Title.GetLang();
+      if ( Filename != "" ) WebBrowser.Navigate(Filename.Replace("%LANG%", Localizer.Language));
     }
 
     private void HTMLBrowserForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -72,13 +68,17 @@ namespace Ordisoftware.HebrewCommon
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-      switch ( keyData )
+      if ( keyData == Keys.Escape)
       {
-        case Keys.Escape:
-          Close();
-          break;
+        Close();
+        return true;
       }
       return base.ProcessCmdKey(ref msg, keyData);
+    }
+
+    private void ActionClose_Click(object sender, EventArgs e)
+    {
+      Close();
     }
 
   }

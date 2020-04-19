@@ -149,6 +149,18 @@
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Classes\Translations.BigCalendar.cs" />
     <Compile Include="Source\Common\Globals.Translations.cs" />
+    <Compile Include="Source\Common\HTMLBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\HTMLBrowserForm.Designer.cs">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\LettersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\LettersControl.Designer.cs">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Common\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\SystemHelper.cs" />
     <Compile Include="Source\Entities\SunAndMoonRiseAndSet.cs" />
@@ -331,7 +343,6 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
     <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Enums\MoonRise.cs" />
-    <Compile Include="Properties\Settings.cs" />
     <Compile Include="Dependencies\MoonPhaseImage\MoonPhaseImage.cs">
     </Compile>
     <Compile Include="Dependencies\Core Library\AbortException.cs" />
@@ -401,6 +412,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dependencies\Core Library\Diagnostics\ExceptionForm.resx">
       <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\HTMLBrowserForm.fr.resx">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\HTMLBrowserForm.resx">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\LettersControl.resx">
+      <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\ShowTextForm.fr.resx">
       <DependentUpon>ShowTextForm.cs</DependentUpon>

@@ -28,42 +28,72 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HTMLBrowserForm));
+      this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionClose = new System.Windows.Forms.Button();
+      this.PanelBottomSeparator = new System.Windows.Forms.Panel();
+      this.PanelMain = new System.Windows.Forms.Panel();
       this.WebBrowser = new System.Windows.Forms.WebBrowser();
+      this.PanelBottom.SuspendLayout();
+      this.PanelMain.SuspendLayout();
       this.SuspendLayout();
+      // 
+      // PanelBottom
+      // 
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Controls.Add(this.ActionClose);
+      this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionClose
+      // 
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
+      // 
+      // PanelBottomSeparator
+      // 
+      resources.ApplyResources(this.PanelBottomSeparator, "PanelBottomSeparator");
+      this.PanelBottomSeparator.Name = "PanelBottomSeparator";
+      // 
+      // PanelMain
+      // 
+      resources.ApplyResources(this.PanelMain, "PanelMain");
+      this.PanelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+      this.PanelMain.Controls.Add(this.WebBrowser);
+      this.PanelMain.Name = "PanelMain";
       // 
       // WebBrowser
       // 
+      resources.ApplyResources(this.WebBrowser, "WebBrowser");
       this.WebBrowser.AllowWebBrowserDrop = false;
-      this.WebBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
       this.WebBrowser.IsWebBrowserContextMenuEnabled = false;
-      this.WebBrowser.Location = new System.Drawing.Point(0, 0);
-      this.WebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
       this.WebBrowser.Name = "WebBrowser";
       this.WebBrowser.ScriptErrorsSuppressed = true;
-      this.WebBrowser.Size = new System.Drawing.Size(342, 466);
-      this.WebBrowser.TabIndex = 0;
       this.WebBrowser.WebBrowserShortcutsEnabled = false;
       // 
       // HTMLBrowserForm
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(342, 466);
-      this.Controls.Add(this.WebBrowser);
+      this.Controls.Add(this.PanelMain);
+      this.Controls.Add(this.PanelBottomSeparator);
+      this.Controls.Add(this.PanelBottom);
       this.MaximizeBox = false;
-      this.MinimumSize = new System.Drawing.Size(350, 500);
       this.Name = "HTMLBrowserForm";
-      this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-      this.Text = "Browser";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HTMLBrowserForm_FormClosing);
       this.Load += new System.EventHandler(this.HTMLBrowserForm_Load);
       this.Shown += new System.EventHandler(this.HTMLBrowserForm_Shown);
+      this.PanelBottom.ResumeLayout(false);
+      this.PanelMain.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
 
     #endregion
-
+    private System.Windows.Forms.Panel PanelBottom;
+    private System.Windows.Forms.Button ActionClose;
+    private System.Windows.Forms.Panel PanelBottomSeparator;
+    private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.WebBrowser WebBrowser;
   }
 }
