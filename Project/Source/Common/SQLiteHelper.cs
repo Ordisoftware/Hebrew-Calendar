@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCommon
   {
 
     /// <summary>
-    ///  Vacuum the database
+    ///  Vacuum the database.
     /// </summary>
     static public void Vacuum(this OdbcConnection connection)
     {

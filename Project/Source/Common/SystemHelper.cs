@@ -34,16 +34,6 @@ namespace Ordisoftware.HebrewCommon
   {
 
     /// <summary>
-    /// Indicate the main form.
-    /// </summary>
-    static public Form MainForm { get; set; }
-
-    /// <summary>
-    /// Indicate the application settings.
-    /// </summary>
-    static public ApplicationSettingsBase Settings { get; set; }
-
-    /// <summary>
     /// Application mutex to allow only one process instance.
     /// </summary>
     static private Mutex Mutex;
@@ -115,9 +105,9 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="form">The form.</param>
     static public void CenterToMainForm(this Form form)
     {
-      if ( MainForm == null ) return;
-      form.Location = new Point(MainForm.Left + MainForm.Width / 2 - form.Width / 2,
-                                MainForm.Top + MainForm.Height / 2 - form.Height / 2);
+      if ( Globals.MainForm == null ) return;
+      form.Location = new Point(Globals.MainForm.Left + Globals.MainForm.Width / 2 - form.Width / 2,
+                                Globals.MainForm.Top + Globals.MainForm.Height / 2 - form.Height / 2);
     }
 
     /// <summary>
@@ -146,7 +136,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void OpenApplicationHome()
     {
-      SystemManager.OpenWebLink(Globals.AssemblyProduct);
+      SystemManager.OpenWebLink(Globals.ApplicationHomeURL);
     }
 
     /// <summary>
@@ -154,7 +144,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void OpenAuthorHome()
     {
-      SystemManager.OpenWebLink(Globals.AssemblyTrademark);
+      SystemManager.OpenWebLink(Globals.AuthorHomeURL);
     }
 
     /// <summary>
@@ -162,7 +152,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void OpenContactPage()
     {
-      SystemManager.OpenWebLink(Globals.AssemblyTrademark + "/contact");
+      SystemManager.OpenWebLink(Globals.ContactURL);
     }
 
     /// <summary>
@@ -170,7 +160,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void OpenGitHibIssuesPage()
     {
-      SystemManager.OpenWebLink(Globals.GitHubRepositoryURL + "/issues");
+      SystemManager.OpenWebLink(Globals.GitHubIssuesURL);
     }
 
     /// <summary>

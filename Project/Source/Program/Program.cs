@@ -15,7 +15,6 @@
 using System;
 using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
@@ -45,6 +44,24 @@ namespace Ordisoftware.HebrewCalendar
       bool upgrade = Settings.UpgradeRequired;
       SystemHelper.CheckSettingsUpgrade(Settings, ref upgrade);
       Settings.UpgradeRequired = upgrade;
+      CheckSettingsReset();
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+      Core.Diagnostics.Debugger.Active = true;
+      Globals.Settings = Settings;
+      Globals.MainForm = MainForm.Instance;
+      string lang = Settings.Language;
+      SystemHelper.CheckCommandLineArguments(args, ref lang, Settings);
+      Settings.Language = lang;
+      UpdateLocalization();
+      Application.Run(MainForm.Instance);
+    }
+
+    /// <summary>
+    /// Check if settings must be reseted to default values.
+    /// </summary>
+    private static void CheckSettingsReset()
+    {
       if ( Settings.UpgradeResetRequiredV3_6 )
       {
         Settings.Reset();
@@ -52,16 +69,6 @@ namespace Ordisoftware.HebrewCalendar
         Settings.Language = Localizer.Language;
         Settings.Save();
       }
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      Core.Diagnostics.Debugger.Active = true;
-      string lang = Settings.Language;
-      SystemHelper.CheckCommandLineArguments(args, ref lang, Settings);
-      Settings.Language = lang;
-      SystemHelper.Settings = Settings;
-      SystemHelper.MainForm = MainForm.Instance;
-      UpdateLocalization();
-      Application.Run(MainForm.Instance);
     }
 
     /// <summary>
@@ -75,9 +82,8 @@ namespace Ordisoftware.HebrewCalendar
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
       AboutBox.Instance.Hide();
+      MainForm.Instance.ClearLists();
       string str = MainForm.Instance.CalendarText.Text;
-      foreach ( var f in MainForm.Instance.RemindCelebrationForms.ToList() )
-        f.Close();
       foreach ( Form form in Application.OpenForms )
       {
         if ( form != AboutBox.Instance )
@@ -94,6 +100,7 @@ namespace Ordisoftware.HebrewCalendar
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.CreateWebLinks();
+      MainForm.Instance.TimerReminder_Tick(null, null);
     }
 
   }

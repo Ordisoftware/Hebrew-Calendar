@@ -13,9 +13,11 @@
 /// <created> 2019-09 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.IO;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
 {
@@ -25,27 +27,29 @@ namespace Ordisoftware.HebrewCommon
 
     private Dictionary<string, string> Title;
 
-    private string Filename;
+    private string FilenameTemplate;
 
     public HTMLBrowserForm()
     {
       InitializeComponent();
-      Icon = SystemHelper.MainForm.Icon;
+      Icon = Globals.MainForm.Icon;
       ActiveControl = WebBrowser;
     }
 
     public HTMLBrowserForm(Dictionary<string, string> title,
-                           string filename,
+                           string filenameTemplate,
                            string locationPropertyName,
                            string clientSizePropertyName)
       : this()
     {
       Title = title;
-      Filename = filename;
-      Location = (Point)SystemHelper.Settings[locationPropertyName];
-      ClientSize = (Size)SystemHelper.Settings[clientSizePropertyName];
-      DataBindings.Add(new Binding("Location", SystemHelper.Settings, locationPropertyName, true, DataSourceUpdateMode.OnPropertyChanged));
-      DataBindings.Add(new Binding("ClientSize", SystemHelper.Settings, clientSizePropertyName, true, DataSourceUpdateMode.OnPropertyChanged));
+      FilenameTemplate = filenameTemplate;
+      Location = (Point)Globals.Settings[locationPropertyName];
+      ClientSize = (Size)Globals.Settings[clientSizePropertyName];
+      DataBindings.Add(new Binding("Location", Globals.Settings, locationPropertyName, true, 
+                                   DataSourceUpdateMode.OnPropertyChanged));
+      DataBindings.Add(new Binding("ClientSize", Globals.Settings, clientSizePropertyName, true, 
+                                   DataSourceUpdateMode.OnPropertyChanged));
     }
 
     private void HTMLBrowserForm_Load(object sender, EventArgs e)
@@ -57,7 +61,11 @@ namespace Ordisoftware.HebrewCommon
     internal void HTMLBrowserForm_Shown(object sender, EventArgs e)
     {
       if ( Title != null ) Text = Title.GetLang();
-      if ( Filename != "" ) WebBrowser.Navigate(Filename.Replace("%LANG%", Localizer.Language));
+      string filename = FilenameTemplate.Replace("%LANG%", Localizer.Language);
+      if ( File.Exists(filename) )
+        WebBrowser.Navigate(filename);
+      else
+        DisplayManager.ShowError(Globals.FileNotFound.GetLang(filename));
     }
 
     private void HTMLBrowserForm_FormClosing(object sender, FormClosingEventArgs e)

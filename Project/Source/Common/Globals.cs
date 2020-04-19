@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -27,6 +28,16 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   static public partial class Globals
   {
+
+    /// <summary>
+    /// Indicate the main form.
+    /// </summary>
+    static public Form MainForm { get; set; }
+
+    /// <summary>
+    /// Indicate the application settings.
+    /// </summary>
+    static public ApplicationSettingsBase Settings { get; set; }
 
     /// <summary>
     /// Indicate if the application is in loading data stage.
@@ -66,10 +77,34 @@ namespace Ordisoftware.HebrewCommon
       = AssemblyProduct;
 
     /// <summary>
+    /// Indicate the application home URL.
+    /// </summary>
+    static public string ApplicationHomeURL
+      = AssemblyProduct;
+
+    /// <summary>
+    /// Indicate the author home URL.
+    /// </summary>
+    static public string AuthorHomeURL
+      = AssemblyTrademark;
+
+    /// <summary>
+    /// Indicate the contact URL.
+    /// </summary>
+    static public string ContactURL
+      = AssemblyTrademark + "/contact";
+
+    /// <summary>
     /// Indicate the GitHub repository.
     /// </summary>
     static public string GitHubRepositoryURL
       = $"https://github.com/{AssemblyCompany}/{AssemblyTitle.Replace(" ", "-")}";
+
+    /// <summary>
+    /// Indicate the GitHub issues page.
+    /// </summary>
+    static public string GitHubIssuesURL
+      = GitHubRepositoryURL + "/issues";
 
     /// <summary>
     /// Indicate the extension of database files.

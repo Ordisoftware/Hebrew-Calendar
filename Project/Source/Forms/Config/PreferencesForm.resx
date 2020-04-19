@@ -481,13 +481,13 @@
     <value>5, 8</value>
   </data>
   <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 13</value>
+    <value>113, 13</value>
   </data>
   <data name="ActionResetSettings.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="ActionResetSettings.Text" xml:space="preserve">
-    <value>Restore default preferences</value>
+    <value>Restore default values</value>
   </data>
   <data name="&gt;&gt;ActionResetSettings.Name" xml:space="preserve">
     <value>ActionResetSettings</value>

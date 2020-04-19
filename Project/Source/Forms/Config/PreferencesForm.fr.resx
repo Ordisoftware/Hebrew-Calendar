@@ -155,7 +155,7 @@
     <value>179, 13</value>
   </data>
   <data name="ActionResetSettings.Text" xml:space="preserve">
-    <value>Restaurer les préférences par défaut</value>
+    <value>Restaurer les valeurs par défaut</value>
   </data>
   <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 13</value>
