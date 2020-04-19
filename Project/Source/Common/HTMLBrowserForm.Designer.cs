@@ -40,8 +40,8 @@
       // 
       // PanelBottom
       // 
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionClose
@@ -57,15 +57,15 @@
       // 
       // PanelMain
       // 
-      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.PanelMain.Controls.Add(this.WebBrowser);
+      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
       // WebBrowser
       // 
-      resources.ApplyResources(this.WebBrowser, "WebBrowser");
       this.WebBrowser.AllowWebBrowserDrop = false;
+      resources.ApplyResources(this.WebBrowser, "WebBrowser");
       this.WebBrowser.IsWebBrowserContextMenuEnabled = false;
       this.WebBrowser.Name = "WebBrowser";
       this.WebBrowser.ScriptErrorsSuppressed = true;

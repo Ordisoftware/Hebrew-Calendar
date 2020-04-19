@@ -47,9 +47,9 @@ namespace Ordisoftware.HebrewCalendar
       CheckSettingsReset();
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Core.Diagnostics.Debugger.Active = true;
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
+      Core.Diagnostics.Debugger.Active = true; // TODO Settings.DebuggerEnabled;
       string lang = Settings.Language;
       SystemHelper.CheckCommandLineArguments(args, ref lang, Settings);
       Settings.Language = lang;
@@ -84,14 +84,17 @@ namespace Ordisoftware.HebrewCalendar
       AboutBox.Instance.Hide();
       MainForm.Instance.ClearLists();
       string str = MainForm.Instance.CalendarText.Text;
+      Action<Form> update = form =>
+      {
+        new Infralution.Localization.CultureManager().ManagedControl = form;
+        ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
+        SystemHelper.ApplyResources(resources, form.Controls);
+      };
+      update(Globals.MainForm);
       foreach ( Form form in Application.OpenForms )
       {
-        if ( form != AboutBox.Instance )
-        {
-          new Infralution.Localization.CultureManager().ManagedControl = form;
-          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
-          SystemHelper.ApplyResources(resources, form.Controls);
-        }
+        if ( form != Globals.MainForm && form != AboutBox.Instance )
+          update(form);
         if ( form is ShowTextForm )
           ( (ShowTextForm)form ).RelocalizeText();
       }

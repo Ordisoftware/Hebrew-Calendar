@@ -306,7 +306,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
     <Compile Include="Source\Common\Localizer.cs" />
     <Compile Include="Source\Forms\MainForm\MainForm.ExportCSV.cs">
       <SubType>Form</SubType>
