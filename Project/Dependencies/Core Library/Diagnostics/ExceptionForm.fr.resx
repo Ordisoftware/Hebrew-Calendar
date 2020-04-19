@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,39 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="textMessage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="textMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 86</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="textMessage.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textMessage.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="textMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 110</value>
-  </data>
-  <data name="textMessage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;textMessage.Name" xml:space="preserve">
-    <value>textMessage</value>
-  </data>
-  <data name="&gt;&gt;textMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textMessage.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textMessage.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="pictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhHwAfAIcAAA8CATgBAUoBAVUBASQXF10BAW0BAXQBAXgBAX8AAIAAAIIAAIUAAIYAAIkAAIsA
@@ -182,96 +150,18 @@
         3gY4/nhBBRhwwAEGFNA3UQEBADs=
 </value>
   </data>
-  <data name="pictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 12</value>
-  </data>
-  <data name="pictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 32</value>
-  </data>
-  <data name="pictureBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox.Name" xml:space="preserve">
-    <value>pictureBox</value>
-  </data>
-  <data name="&gt;&gt;pictureBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBox.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 205</value>
-  </data>
-  <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="buttonClose.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="buttonClose.Text" xml:space="preserve">
-    <value>Continue</value>
-  </data>
-  <data name="&gt;&gt;buttonClose.Name" xml:space="preserve">
-    <value>buttonClose</value>
-  </data>
-  <data name="&gt;&gt;buttonClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonClose.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="buttonTerminate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="buttonTerminate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>276, 205</value>
-  </data>
-  <data name="buttonTerminate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="buttonTerminate.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>Continuer</value>
   </data>
   <data name="buttonTerminate.Text" xml:space="preserve">
-    <value>Terminate</value>
+    <value>Terminer</value>
   </data>
-  <data name="&gt;&gt;buttonTerminate.Name" xml:space="preserve">
-    <value>buttonTerminate</value>
-  </data>
-  <data name="&gt;&gt;buttonTerminate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonTerminate.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonTerminate.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="buttonViewLog.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="buttonViewLog.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <metadata name="imageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="imageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACy
-        EAAAAk1TRnQBSQFMAgEBAwEAATABAAEwAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        EAAAAk1TRnQBSQFMAgEBAwEAASQBAAEkAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABEAMAAQEBAAEgBgABEBYAA44B/wGBAWwBaQH/A44B/0QAA4YB/wOGAf8DhgH/A4YB/wOGAf8DhgH/
         A4YB/xAAA/4B/wHcAsUB/wGWAXIBZwH/AYcBcgFxAf8BwgG9AcUB/wG2AboBvQH/AfkB+wH8Af8QAAH7
         AvoB/wH7AvoB/wP6Af8D+wH/A/0B/0QAAW4BmgG1Af8BcgGQAdsB/wGcAWkBbwH/A44B/zwAA5QB/wNb
@@ -345,199 +235,25 @@
         AQEBwAF/BAABgAEBAcABfwQACw==
 </value>
   </data>
-  <data name="buttonViewLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 205</value>
-  </data>
-  <data name="buttonViewLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 23</value>
-  </data>
-  <data name="buttonViewLog.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;buttonViewLog.Name" xml:space="preserve">
-    <value>buttonViewLog</value>
-  </data>
-  <data name="&gt;&gt;buttonViewLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonViewLog.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonViewLog.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="buttonViewStack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 205</value>
-  </data>
-  <data name="buttonViewStack.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="buttonViewStack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="buttonViewStack.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="buttonViewStack.Text" xml:space="preserve">
-    <value>Stack</value>
-  </data>
-  <data name="&gt;&gt;buttonViewStack.Name" xml:space="preserve">
-    <value>buttonViewStack</value>
-  </data>
-  <data name="&gt;&gt;buttonViewStack.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonViewStack.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonViewStack.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="textStack.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="textStack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 239</value>
-  </data>
-  <data name="textStack.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textStack.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="textStack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 137</value>
-  </data>
-  <data name="textStack.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="textStack.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;textStack.Name" xml:space="preserve">
-    <value>textStack</value>
-  </data>
-  <data name="&gt;&gt;textStack.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textStack.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textStack.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="labelInfo1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelInfo1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 15</value>
+    <value>Pile</value>
   </data>
   <data name="labelInfo1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 13</value>
-  </data>
-  <data name="labelInfo1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>202, 13</value>
   </data>
   <data name="labelInfo1.Text" xml:space="preserve">
-    <value>Unhandled exception has occured in </value>
-  </data>
-  <data name="&gt;&gt;labelInfo1.Name" xml:space="preserve">
-    <value>labelInfo1</value>
-  </data>
-  <data name="&gt;&gt;labelInfo1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelInfo1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelInfo1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="textException.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="textException.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 55</value>
-  </data>
-  <data name="textException.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 20</value>
-  </data>
-  <data name="textException.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textException.Name" xml:space="preserve">
-    <value>textException</value>
-  </data>
-  <data name="&gt;&gt;textException.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textException.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textException.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="labelInfo2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelInfo2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 31</value>
+    <value>Une erreur non gérée s'est produite dans </value>
   </data>
   <data name="labelInfo2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 13</value>
-  </data>
-  <data name="labelInfo2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>343, 13</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
-    <value>You can choose to Continue execution or Terminate program.</value>
-  </data>
-  <data name="&gt;&gt;labelInfo2.Name" xml:space="preserve">
-    <value>labelInfo2</value>
-  </data>
-  <data name="&gt;&gt;labelInfo2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelInfo2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelInfo2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="buttonPrint.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="buttonPrint.ImageIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonPrint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 205</value>
-  </data>
-  <data name="buttonPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 23</value>
-  </data>
-  <data name="buttonPrint.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;buttonPrint.Name" xml:space="preserve">
-    <value>buttonPrint</value>
-  </data>
-  <data name="&gt;&gt;buttonPrint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonPrint.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonPrint.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="buttonSendMail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>Vous pouvez choisir de Continuer l'exécution ou Terminer le programme</value>
   </data>
   <data name="buttonSendMail.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAJhSURBVDhPfZM7bxNBFIVnx7v2Oux6H96dfWDLEiihIAZK
+        YQUAAAAJcEhZcwAACw4AAAsOAUC+4UEAAAJhSURBVDhPfZM7bxNBFIVnx7v2Oux6H96dfWDLEiihIAZK
         P3CBbBKCBH+Bip6SIhIlFVAgWkRDhVPSUYWHRIEECCEENCCClIanUBSMY84ZNiKi4EpHO3vvd+7Meq5F
         nueUzLJMpmlqNJvNg4fmF1bbhxcfHmm331NcM8caGbL00MuQkGEIUbUrlQuB52/Wg3AW+sEU+lVoyhxr
         ZMjSo710SsOoBn5ws5Hvn+VpNsmSdAea5kk6o7hmjjUyZOmhV0fNdS+iOAuD8IHruJdUPXqRKvVdRdEr
@@ -549,51 +265,6 @@
         1UL9TZZm240sRyP1GBu0WGPwz0SwgYm76845X5256rqURktXEWh0AKf7UHPcGZg7YHdvS4p+v0/Jbrcr
         Op2OHA1H50+vrIwHg0He6/UExTVyt0fD4blOt6tZevr9vvgNVRWcx5Sa3FMAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="buttonSendMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 205</value>
-  </data>
-  <data name="buttonSendMail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 23</value>
-  </data>
-  <data name="buttonSendMail.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;buttonSendMail.Name" xml:space="preserve">
-    <value>buttonSendMail</value>
-  </data>
-  <data name="&gt;&gt;buttonSendMail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSendMail.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonSendMail.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="printDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>116, 17</value>
-  </metadata>
-  <metadata name="printDocument.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>216, 17</value>
-  </metadata>
-  <metadata name="pageSetupDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>337, 17</value>
-  </metadata>
-  <metadata name="printPreviewDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>472, 17</value>
-  </metadata>
-  <data name="printPreviewDialog.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="printPreviewDialog.AutoScrollMinSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="printPreviewDialog.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 300</value>
-  </data>
-  <data name="printPreviewDialog.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="printPreviewDialog.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -768,88 +439,7 @@
         wf+0BQAAgAUAAIAFAACAAQAAgAHB/4ABAACAAQAAgAEAALwBAAC8AQAAvAHB/4ABbP///5H/
 </value>
   </data>
-  <data name="printPreviewDialog.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;printPreviewDialog.Name" xml:space="preserve">
-    <value>printPreviewDialog</value>
-  </data>
-  <data name="&gt;&gt;printPreviewDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PrintPreviewDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonViewInner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 205</value>
-  </data>
-  <data name="buttonViewInner.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="buttonViewInner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="buttonViewInner.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="buttonViewInner.Text" xml:space="preserve">
-    <value>Previous</value>
-  </data>
-  <data name="&gt;&gt;buttonViewInner.Name" xml:space="preserve">
-    <value>buttonViewInner</value>
-  </data>
-  <data name="&gt;&gt;buttonViewInner.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonViewInner.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonViewInner.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>444, 388</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>450, 270</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ExceptionForm</value>
-  </data>
-  <data name="&gt;&gt;imageList.Name" xml:space="preserve">
-    <value>imageList</value>
-  </data>
-  <data name="&gt;&gt;imageList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;printDialog.Name" xml:space="preserve">
-    <value>printDialog</value>
-  </data>
-  <data name="&gt;&gt;printDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PrintDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;printDocument.Name" xml:space="preserve">
-    <value>printDocument</value>
-  </data>
-  <data name="&gt;&gt;printDocument.Type" xml:space="preserve">
-    <value>System.Drawing.Printing.PrintDocument, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;pageSetupDialog.Name" xml:space="preserve">
-    <value>pageSetupDialog</value>
-  </data>
-  <data name="&gt;&gt;pageSetupDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PageSetupDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ExceptionForm</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Précédente</value>
   </data>
 </root>

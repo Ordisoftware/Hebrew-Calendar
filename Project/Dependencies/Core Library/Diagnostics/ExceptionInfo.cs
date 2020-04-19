@@ -299,7 +299,7 @@ namespace Ordisoftware.Core
       string s1 = "", s2 = "", s3 = "";
       int ln;
       bool b = false;
-      //if ( Debugger.UseStack )
+      if ( Diagnostics.Debugger.UseStack )
       {
         StackTrace stack = new StackTrace(_Instance, true);
         StackFrame[] sflist = stack.GetFrames();
@@ -357,7 +357,7 @@ namespace Ordisoftware.Core
                 + "Error Message: " + nl 
                 + _Message;
                
-      //if ( Debugger.UseStack )
+      if ( Diagnostics.Debugger.UseStack )
         _FullText = _FullText + nl
                   + "StackList: " + nl
                   + _StackText;
@@ -385,11 +385,11 @@ namespace Ordisoftware.Core
       _TargetSite = except.TargetSite;
       try
       {
-        /*_Emitter = _Sender is ExceptionForm
-                 ? ((ExceptionForm)_Sender).Text
+        _Emitter = _Sender is Windows.Forms.ExceptionForm
+                 ? ((Windows.Forms.ExceptionForm)_Sender).Text
                  : DisplayManager.MainForm != null
                    ? DisplayManager.MainForm.Text
-                   : except.Source;*/
+                   : except.Source;
         ExtractInherits();
         try 
         { 

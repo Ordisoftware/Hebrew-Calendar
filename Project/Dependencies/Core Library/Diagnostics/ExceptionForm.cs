@@ -53,15 +53,15 @@ namespace Ordisoftware.Core.Windows.Forms
     {
       using ( ExceptionForm f = new ExceptionForm() )
       {
-        f.Text = "\"" + einfo.Emitter + "\" " /* TODO + SystemManager.Translate("ApplicationErrorTitle")*/;
+        f.Text = einfo.Emitter + " has caused an error";
         f.printPreviewDialog.FindForm().WindowState = FormWindowState.Maximized;
         f.buttonViewLog.Visible = false; // SystemManager.Log.Active;
-        f.buttonViewStack.Visible = Debugger.UseStack;
+        f.buttonViewStack.Enabled = Debugger.UseStack;
         f.buttonViewInner.Visible = einfo.InnerInfo != null;
         f.buttonTerminate.Visible = Debugger.UserCanTerminate;
         f.textException.Text = einfo.TypeText;
         f.textMessage.Text = einfo.Message;
-        f.labelInfo1.Text += ""; // TODO SystemManager.Process.Name;
+        f.labelInfo1.Text += einfo.Emitter + " " + HebrewCommon.Globals.AssemblyVersion;
         f.textStack.Text = "[Thread: " + einfo.ThreadName + "]"
                          + Environment.NewLine + Environment.NewLine
                          + einfo.StackText;
@@ -74,8 +74,8 @@ namespace Ordisoftware.Core.Windows.Forms
         f._ErrorInfo = einfo;
         f._ButtonStackText = f.buttonViewStack.Text;
         f.buttonViewStack.Text += " <<";
-
-        //if ( Debugger.AutoHideStack ) f.buttonViewStack_Click(f, null);
+        //if ( Diagnostics.Debugger.AutoHideStack ) f.buttonViewStack_Click(f, null);
+        if ( !Diagnostics.Debugger.UseStack ) f.buttonViewStack_Click(f, null);
         f.BringToFront();
         f.ShowDialog();
       }
@@ -87,6 +87,7 @@ namespace Ordisoftware.Core.Windows.Forms
     public ExceptionForm()
     {
       InitializeComponent();
+      Icon = HebrewCommon.Globals.MainForm.Icon;
     }
 
     /// <summary>
@@ -166,7 +167,7 @@ namespace Ordisoftware.Core.Windows.Forms
       Font font1 = new Font("Arial", 12, FontStyle.Bold | FontStyle.Underline);
       Font font2 = new Font("Arial", 12, FontStyle.Regular);
       int x = 50, y = 50;
-      string msg = "Error report for application : " /* TODO + SystemManager.Assembly.TitleWithVer*/;
+      string msg = "Error report for application : " + HebrewCommon.Globals.AssemblyTitle;
       e.Graphics.DrawString(msg, font1, Brushes.Black, x, y);
       y = y + (int)( font1.Height * 3 );
       foreach ( string s in _ErrorMsg )
@@ -183,6 +184,7 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <param name="e">Event information.</param>
     private void buttonSendMail_Click(object sender, EventArgs e)
     {
+      HebrewCommon.SystemHelper.OpenGitHibIssuesPage();
       /*string email = SystemManager.User.UserMail;
       if ( email.IsNullOrEmpty() )
         if ( DisplayManager.QueryValue("User email", ref email) == InputValueResult.Cancelled)

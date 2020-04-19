@@ -60,63 +60,42 @@ namespace Ordisoftware.Core.Windows.Forms
       // 
       // textMessage
       // 
-      this.textMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                  | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.textMessage, "textMessage");
       this.textMessage.BackColor = System.Drawing.SystemColors.Info;
-      this.textMessage.Location = new System.Drawing.Point(12, 86);
-      this.textMessage.Multiline = true;
       this.textMessage.Name = "textMessage";
       this.textMessage.ReadOnly = true;
-      this.textMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.textMessage.Size = new System.Drawing.Size(418, 110);
-      this.textMessage.TabIndex = 0;
       this.textMessage.TabStop = false;
       // 
       // pictureBox
       // 
       this.pictureBox.BackColor = System.Drawing.Color.Transparent;
-      this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-      this.pictureBox.Location = new System.Drawing.Point(17, 12);
+      resources.ApplyResources(this.pictureBox, "pictureBox");
       this.pictureBox.Name = "pictureBox";
-      this.pictureBox.Size = new System.Drawing.Size(32, 32);
-      this.pictureBox.TabIndex = 1;
       this.pictureBox.TabStop = false;
       // 
       // buttonClose
       // 
-      this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.buttonClose, "buttonClose");
       this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.buttonClose.Location = new System.Drawing.Point(355, 205);
       this.buttonClose.Name = "buttonClose";
-      this.buttonClose.Size = new System.Drawing.Size(75, 23);
-      this.buttonClose.TabIndex = 1;
-      this.buttonClose.Text = "Close";
       this.buttonClose.UseVisualStyleBackColor = true;
       // 
       // buttonTerminate
       // 
-      this.buttonTerminate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.buttonTerminate.Location = new System.Drawing.Point(274, 205);
+      resources.ApplyResources(this.buttonTerminate, "buttonTerminate");
       this.buttonTerminate.Name = "buttonTerminate";
-      this.buttonTerminate.Size = new System.Drawing.Size(75, 23);
-      this.buttonTerminate.TabIndex = 2;
-      this.buttonTerminate.Text = "Terminate";
       this.buttonTerminate.UseVisualStyleBackColor = true;
       this.buttonTerminate.Click += new System.EventHandler(this.buttonTerminate_Click);
       // 
       // buttonViewLog
       // 
-      this.buttonViewLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.buttonViewLog, "buttonViewLog");
       this.buttonViewLog.FlatAppearance.BorderSize = 0;
       this.buttonViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       this.buttonViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.buttonViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.buttonViewLog.ImageIndex = 0;
       this.buttonViewLog.ImageList = this.imageList;
-      this.buttonViewLog.Location = new System.Drawing.Point(172, 205);
       this.buttonViewLog.Name = "buttonViewLog";
-      this.buttonViewLog.Size = new System.Drawing.Size(28, 23);
-      this.buttonViewLog.TabIndex = 4;
       this.buttonViewLog.UseVisualStyleBackColor = true;
       this.buttonViewLog.Click += new System.EventHandler(this.buttonViewLog_Click);
       // 
@@ -130,88 +109,55 @@ namespace Ordisoftware.Core.Windows.Forms
       // 
       // buttonViewStack
       // 
-      this.buttonViewStack.Location = new System.Drawing.Point(12, 205);
+      resources.ApplyResources(this.buttonViewStack, "buttonViewStack");
       this.buttonViewStack.Name = "buttonViewStack";
-      this.buttonViewStack.RightToLeft = System.Windows.Forms.RightToLeft.No;
-      this.buttonViewStack.Size = new System.Drawing.Size(75, 23);
-      this.buttonViewStack.TabIndex = 3;
-      this.buttonViewStack.Text = "Stack";
       this.buttonViewStack.UseVisualStyleBackColor = true;
       this.buttonViewStack.Click += new System.EventHandler(this.buttonViewStack_Click);
       // 
       // textStack
       // 
-      this.textStack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                  | System.Windows.Forms.AnchorStyles.Left)
-                  | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.textStack, "textStack");
       this.textStack.BackColor = System.Drawing.SystemColors.Info;
-      this.textStack.Location = new System.Drawing.Point(12, 239);
-      this.textStack.Multiline = true;
       this.textStack.Name = "textStack";
       this.textStack.ReadOnly = true;
-      this.textStack.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.textStack.Size = new System.Drawing.Size(418, 143);
-      this.textStack.TabIndex = 0;
       this.textStack.TabStop = false;
-      this.textStack.WordWrap = false;
       // 
       // labelInfo1
       // 
-      this.labelInfo1.AutoSize = true;
-      this.labelInfo1.Location = new System.Drawing.Point(60, 15);
+      resources.ApplyResources(this.labelInfo1, "labelInfo1");
       this.labelInfo1.Name = "labelInfo1";
-      this.labelInfo1.Size = new System.Drawing.Size(184, 13);
-      this.labelInfo1.TabIndex = 0;
-      this.labelInfo1.Text = "Unhandled exception has occured in ";
       // 
       // textException
       // 
-      this.textException.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                  | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.textException, "textException");
       this.textException.BackColor = System.Drawing.SystemColors.Info;
-      this.textException.Location = new System.Drawing.Point(12, 55);
       this.textException.Name = "textException";
       this.textException.ReadOnly = true;
-      this.textException.Size = new System.Drawing.Size(418, 20);
-      this.textException.TabIndex = 6;
       this.textException.TabStop = false;
       // 
       // labelInfo2
       // 
-      this.labelInfo2.AutoSize = true;
-      this.labelInfo2.Location = new System.Drawing.Point(60, 31);
+      resources.ApplyResources(this.labelInfo2, "labelInfo2");
       this.labelInfo2.Name = "labelInfo2";
-      this.labelInfo2.Size = new System.Drawing.Size(297, 13);
-      this.labelInfo2.TabIndex = 0;
-      this.labelInfo2.Text = "You can choose to Continue execution or Terminate program.";
       // 
       // buttonPrint
       // 
-      this.buttonPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.buttonPrint, "buttonPrint");
       this.buttonPrint.FlatAppearance.BorderSize = 0;
       this.buttonPrint.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       this.buttonPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.buttonPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.buttonPrint.ImageIndex = 1;
       this.buttonPrint.ImageList = this.imageList;
-      this.buttonPrint.Location = new System.Drawing.Point(206, 205);
       this.buttonPrint.Name = "buttonPrint";
-      this.buttonPrint.Size = new System.Drawing.Size(28, 23);
-      this.buttonPrint.TabIndex = 7;
       this.buttonPrint.UseVisualStyleBackColor = true;
       this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
       // 
       // buttonSendMail
       // 
-      this.buttonSendMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.buttonSendMail, "buttonSendMail");
       this.buttonSendMail.FlatAppearance.BorderSize = 0;
       this.buttonSendMail.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.buttonSendMail.ImageIndex = 2;
-      this.buttonSendMail.ImageList = this.imageList;
-      this.buttonSendMail.Location = new System.Drawing.Point(240, 205);
       this.buttonSendMail.Name = "buttonSendMail";
-      this.buttonSendMail.Size = new System.Drawing.Size(28, 23);
-      this.buttonSendMail.TabIndex = 8;
       this.buttonSendMail.UseVisualStyleBackColor = true;
       this.buttonSendMail.Click += new System.EventHandler(this.buttonSendMail_Click);
       // 
@@ -230,33 +176,23 @@ namespace Ordisoftware.Core.Windows.Forms
       // 
       // printPreviewDialog
       // 
-      this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
-      this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-      this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+      resources.ApplyResources(this.printPreviewDialog, "printPreviewDialog");
       this.printPreviewDialog.Document = this.printDocument;
-      this.printPreviewDialog.Enabled = true;
-      this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
       this.printPreviewDialog.Name = "printPreviewDialog";
       this.printPreviewDialog.UseAntiAlias = true;
-      this.printPreviewDialog.Visible = false;
       // 
       // buttonViewInner
       // 
-      this.buttonViewInner.Location = new System.Drawing.Point(91, 205);
+      resources.ApplyResources(this.buttonViewInner, "buttonViewInner");
       this.buttonViewInner.Name = "buttonViewInner";
-      this.buttonViewInner.RightToLeft = System.Windows.Forms.RightToLeft.No;
-      this.buttonViewInner.Size = new System.Drawing.Size(75, 23);
-      this.buttonViewInner.TabIndex = 9;
-      this.buttonViewInner.Text = "Inner Info";
       this.buttonViewInner.UseVisualStyleBackColor = true;
       this.buttonViewInner.Click += new System.EventHandler(this.buttonViewInner_Click);
       // 
       // ExceptionForm
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.buttonClose;
-      this.ClientSize = new System.Drawing.Size(442, 394);
       this.Controls.Add(this.buttonViewInner);
       this.Controls.Add(this.buttonSendMail);
       this.Controls.Add(this.buttonPrint);
@@ -264,19 +200,16 @@ namespace Ordisoftware.Core.Windows.Forms
       this.Controls.Add(this.labelInfo2);
       this.Controls.Add(this.labelInfo1);
       this.Controls.Add(this.textStack);
-      this.Controls.Add(this.buttonViewStack);
       this.Controls.Add(this.buttonViewLog);
       this.Controls.Add(this.buttonTerminate);
       this.Controls.Add(this.buttonClose);
       this.Controls.Add(this.pictureBox);
       this.Controls.Add(this.textMessage);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+      this.Controls.Add(this.buttonViewStack);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.MinimumSize = new System.Drawing.Size(450, 420);
       this.Name = "ExceptionForm";
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "ExceptionForm";
       this.TopMost = true;
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
       this.ResumeLayout(false);

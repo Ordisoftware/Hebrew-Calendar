@@ -460,7 +460,7 @@ namespace Ordisoftware.Core.Diagnostics
       string s;
       try
       {
-        s = "Unhandled exception has occured in " + /* TODO SystemManager.Process.FullExeName + */ nl + nl +
+        s = "Unhandled exception has occured in " + System.IO.Path.GetFileName(Application.ExecutablePath) + nl + nl +
             einfo.ReadableText + nl + nl +
             "You can choose OK to continue or Cancel to terminate.";
 
