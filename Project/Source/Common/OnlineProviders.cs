@@ -46,6 +46,9 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     public OnlineProviders(string filename, bool showFileNotFound = true)
     {
+      string tagName = "Name = ";
+      string tagURL = "URL = ";
+      //var separator = new string[] { " = " };
       Items = new List<OnlineProviderItem>();
       if ( !File.Exists(filename) )
       {
@@ -62,48 +65,38 @@ namespace Ordisoftware.HebrewCommon
           {
             DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index, lines[index]));
           };
-          if ( lines[index].Trim() == "" )
+          string line = lines[index].Trim();
+          if ( line == "" )
             continue;
-          if ( lines[index].Trim().StartsWith(";") )
+          if ( line.StartsWith(";") )
             continue;
-          if ( lines[index].Trim().StartsWith("FOLDER-SEPARATOR") )
+          if ( line.StartsWith("FOLDER-SEPARATOR") )
             SeparatorBeforeFolder = true;
           else
-          if ( lines[index].StartsWith("-") )
+          if ( line.StartsWith("-") )
             Items.Add(new OnlineProviderItem("-"));
           else
-          if ( lines[index].StartsWith("Lang/") )
+          if ( line.StartsWith("Lang/") )
           {
-            var parts = lines[index].Split(new string[] { "/", " = " }, StringSplitOptions.None);
+            var parts = line.Split('/', '=');
             if ( parts.Length == 3 )
               Title.Add(parts[1].Trim().ToLower(), parts[2].Trim());
             else
               showError();
           }
           else
-          if ( lines[index].StartsWith("Name") )
+          if ( line.StartsWith(tagName) )
           {
-            var parts = lines[index].Split(new string[] { " = " }, StringSplitOptions.None);
-            if ( parts.Length == 2 )
+            string name = line.Substring(tagName.Length);
+            index++;
+            if ( index >= lines.Length )
             {
-              string name = parts[1].Trim();
-              index++;
-              if ( index >= lines.Length )
-                showError();
-              if ( lines[index].StartsWith("URL") )
-              {
-                parts = lines[index].Split(new string[] { " = " }, StringSplitOptions.None);
-                if ( parts.Length == 2 )
-                {
-                  string url = parts[1].Trim();
-                  Items.Add(new OnlineProviderItem(name, url));
-                }
-                else
-                  showError();
-              }
-              else
-                showError();
+              showError();
+              break;
             }
+            line = lines[index].Trim();
+            if ( line.StartsWith(tagURL) )
+              Items.Add(new OnlineProviderItem(name, line.Substring(tagURL.Length)));
             else
               showError();
           }

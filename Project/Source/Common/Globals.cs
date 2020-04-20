@@ -210,8 +210,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the online search a word providers.
     /// </summary>
-    static public readonly OnlineProviders OnlineWordProviders
-      = new OnlineProviders(OnlineWordProvidersFileName);
+    static public OnlineProviders OnlineWordProviders { get; private set; }
 
     /// <summary>
     /// Indicate the filename of the online search word providers.
@@ -222,8 +221,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the online bible verse providers.
     /// </summary>
-    static public readonly OnlineProviders OnlineBibleProviders
-      = new OnlineProviders(OnlineBibleProvidersFileName);
+    static public OnlineProviders OnlineBibleProviders { get; private set; }
 
     /// <summary>
     /// Indicate the online links providers.
@@ -232,10 +230,13 @@ namespace Ordisoftware.HebrewCommon
       = new List<OnlineProviders>();
 
     /// <summary>
-    /// Load web links definitions files.
+    /// Static constructor.
     /// </summary>
-    static public void LoadWebLinks()
+    //static public void LoadProvidersAndLinks()
+    static Globals()
     {
+      OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName);
+      OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName);
       OnlineLinksProviders.Clear();
       if ( Directory.Exists(WebLinksFolderPath) )
         foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )

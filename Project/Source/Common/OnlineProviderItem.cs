@@ -79,8 +79,8 @@ namespace Ordisoftware.HebrewCommon
           image = flag.Value;
           break;
         }
-      Name = name;
-      URL = url;
+      Name = name.Trim();
+      URL = url.Trim();
       Image = image;
     }
 

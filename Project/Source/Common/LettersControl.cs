@@ -15,7 +15,9 @@
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
@@ -66,6 +68,15 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Indicate max length of the input text.
+    /// </summary>
+    public int MaxLength
+    {
+      get;
+      set;
+    }
+
+    /// <summary>
     /// Input textbox text changed event.
     /// </summary>
     public event EventHandler InputTextChanged
@@ -81,6 +92,7 @@ namespace Ordisoftware.HebrewCommon
     {
       InitializeComponent();
       CreateLetters();
+      MaxLength = 10;
     }
 
     /// <summary>
@@ -137,7 +149,8 @@ namespace Ordisoftware.HebrewCommon
           buttonLetter.TabStop = false;
           buttonLetter.Click += delegate (object sender, EventArgs e)
           {
-            Input.Text = ( (Button)sender ).Text + Input.Text;
+            if (Input.Text.Length < MaxLength)
+              Input.Text = ( (Button)sender ).Text + Input.Text;
             OnClick(new LetterEventArgs(( (Button)sender ).Text));
           };
           Panel.Controls.Add(buttonLetter);
@@ -166,6 +179,37 @@ namespace Ordisoftware.HebrewCommon
       if ( HebrewAlphabet.Codes.Contains(e.KeyChar.ToString()) )
         KeyProcessed = true;
       else
+      if ( Input.SelectedText != "" )
+      {
+        if ( e.KeyChar == '\u0018' ) // CTRL+X
+        {
+          Clipboard.SetText(Input.SelectedText);
+          int selectionStart = Input.SelectionStart;
+          Input.Text = Input.Text.Remove(selectionStart, Input.SelectionLength);
+          Input.SelectionStart = selectionStart;
+          e.Handled = true;
+        }
+        else
+        if ( e.KeyChar == '\u0003' ) // CTRL+C
+        {
+          Clipboard.SetText(Input.SelectedText);
+          e.Handled = true;
+        }
+      }
+      else
+        if ( e.KeyChar == '\u0016' ) // CTRL+V
+      {
+        string str = HebrewAlphabet.OnlyHebrewFont(Clipboard.GetText());
+        if ( Input.Text.Length + str.Length <= MaxLength )
+        {
+          int selectionStart = Input.SelectionStart;
+          Input.SelectedText = "";
+          Input.Text = Input.Text.Insert(selectionStart, str);
+          Input.SelectionStart = selectionStart;
+        }
+        e.Handled = true;
+      }
+      else
         e.KeyChar = '\x0';
     }
 
@@ -186,28 +230,8 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     private void Input_KeyDown(object sender, KeyEventArgs e)
     {
-      if ( Input.SelectedText != "" )
-      {
-        if ( e.Control && e.KeyCode == Keys.X )
-        {
-          Clipboard.SetText(Input.SelectedText);
-          int selectionStart = Input.SelectionStart;
-          Input.Text = Input.Text.Remove(selectionStart, Input.SelectionLength);
-          Input.SelectionStart = selectionStart;
-        }
-        else
-        if ( e.Control && e.KeyCode == Keys.C )
-          Clipboard.SetText(Input.SelectedText);
-      }
-      else
-      if ( e.Control && e.KeyCode == Keys.V )
-      {
-        string str = HebrewAlphabet.OnlyHebrewFont(Clipboard.GetText());
-        int selectionStart = Input.SelectionStart;
-        Input.SelectedText = "";
-        Input.Text = Input.Text.Insert(selectionStart, str);
-        Input.SelectionStart = selectionStart;
-      }
+      if ( e.Shift && e.KeyCode == Keys.Insert )
+        e.SuppressKeyPress = true;
     }
 
   }
