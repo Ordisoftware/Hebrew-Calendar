@@ -199,7 +199,7 @@ namespace Ordisoftware.HebrewCommon
       else
         if ( e.KeyChar == '\u0016' ) // CTRL+V
       {
-        string str = HebrewAlphabet.OnlyHebrewFont(Clipboard.GetText());
+        string str = HebrewAlphabet.OnlyHebrewFont(Clipboard.GetText()).Replace(" ", "");
         if ( Input.Text.Length + str.Length <= MaxLength )
         {
           int selectionStart = Input.SelectionStart;
