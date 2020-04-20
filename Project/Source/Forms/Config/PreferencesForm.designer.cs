@@ -328,6 +328,7 @@
             0,
             0,
             0});
+      this.EditMonthViewFontSize.ValueChanged += new System.EventHandler(this.EditMonthViewFontSize_ValueChanged);
       // 
       // EditFontSize
       // 

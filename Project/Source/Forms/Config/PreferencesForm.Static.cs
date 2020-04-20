@@ -47,9 +47,11 @@ namespace Ordisoftware.HebrewCalendar
     static private bool IsCenteredToScreen;
     static private bool LanguageChanged;
     static private bool DoReset;
+    static public bool Reseted { get; private set; }
 
     static public bool Run(bool isCenteredToScreen = false)
     {
+      Reseted = false;
       IsCenteredToScreen = isCenteredToScreen;
       string lang = Program.Settings.Language;
       var form = new PreferencesForm();
@@ -66,16 +68,19 @@ namespace Ordisoftware.HebrewCalendar
           form.ShowInTaskbar = true;
         form.ShowDialog();
       }
-      return form.Reseted
-          || form.OldShabatDay != Program.Settings.ShabatDay
-          || form.OldLatitude != Program.Settings.GPSLatitude
-          || form.OldLongitude != Program.Settings.GPSLongitude
-          || form.OldReminderUseColors != Program.Settings.UseColors
-          || form.OldReminderShabatDayColor != Program.Settings.EventColorShabat
-          || form.OldReminderCurrentDayColor != Program.Settings.EventColorTorah
-          || form.OldUseMoonDays != Program.Settings.TorahEventsCountAsMoon
-          || form.OldTimeZone != Program.Settings.TimeZone
-          || lang != Program.Settings.Language;
+      bool result = Reseted
+                 || form.OldShabatDay != Program.Settings.ShabatDay
+                 || form.OldLatitude != Program.Settings.GPSLatitude
+                 || form.OldLongitude != Program.Settings.GPSLongitude
+                 || form.OldReminderUseColors != Program.Settings.UseColors
+                 || form.OldReminderShabatDayColor != Program.Settings.EventColorShabat
+                 || form.OldReminderCurrentDayColor != Program.Settings.EventColorTorah
+                 || form.OldUseMoonDays != Program.Settings.TorahEventsCountAsMoon
+                 || form.OldTimeZone != Program.Settings.TimeZone
+                 || lang != Program.Settings.Language;
+      if ( !result && form.MustRefreshMonthView )
+        MainForm.Instance.UpdateCalendarMonth(true);
+      return result;
     }
 
   }

@@ -1124,5 +1124,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["VacuumAtStartup"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunchV4 {
+            get {
+                return ((bool)(this["FirstLaunchV4"]));
+            }
+            set {
+                this["FirstLaunchV4"] = value;
+            }
+        }
     }
 }

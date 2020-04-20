@@ -39,7 +39,7 @@ namespace Ordisoftware.HebrewCalendar
     public string OldLongitude { get; private set; }
     public string OldTimeZone { get; private set; }
     public bool OldUseMoonDays { get; private set; }
-    public bool Reseted { get; private set; }
+    public bool MustRefreshMonthView { get; private set; }
 
     /// <summary>
     /// Default constructor.
@@ -164,6 +164,7 @@ namespace Ordisoftware.HebrewCalendar
       int shabat = EditShabatDay.SelectedIndex;
       Program.Settings.Reset();
       Program.Settings.UpgradeResetRequiredV3_6 = false;
+      Program.Settings.FirstLaunchV4 = false;
       DoReset = true;
       Reseted = true;
       Program.Settings.GPSCountry = country;
@@ -174,7 +175,6 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.ShabatDay = shabat;
       Program.Settings.RestoreMainForm();
       Program.Settings.Language = Localizer.Language;
-      UpdateCalendarMonth(true);
       Close();
     }
 
@@ -335,7 +335,6 @@ namespace Ordisoftware.HebrewCalendar
       EditCalendarColorSeason.BackColor = Color.DarkGreen;
       EditCalendarColorMoon.BackColor = Color.DarkBlue;
       EditCalendarColorFullMoon.BackColor = Color.FromArgb(150, 100, 0);
-      UpdateCalendarMonth();
     }
 
     private void PanelTextColor_Click(object sender, EventArgs e)
@@ -386,7 +385,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditEventColorTorah.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditEventColorTorah.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
 
     private void PanelEventColorSeason_MouseClick(object sender, MouseEventArgs e)
@@ -394,7 +393,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditEventColorSeason.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditEventColorSeason.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
 
     private void PanelEventColorShabat_MouseClick(object sender, MouseEventArgs e)
@@ -402,7 +401,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditEventColorShabat.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditEventColorShabat.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
 
     private void PanelEventColorNewMonth_MouseClick(object sender, MouseEventArgs e)
@@ -410,14 +409,15 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditEventColorMonth.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditEventColorMonth.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
+
     private void PanelEventColorNext_MouseClick(object sender, MouseEventArgs e)
     {
       DialogColor.Color = EditEventColorNext.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditEventColorNext.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
 
     private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
@@ -425,7 +425,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditCurrentDayForeColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditCurrentDayForeColor.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
 
     private void PanelCurrentDayBackColor_MouseClick(object sender, MouseEventArgs e)
@@ -433,7 +433,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditCurrentDayBackColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditCurrentDayBackColor.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
 
     private void PanelTorahEventColor_Click(object sender, EventArgs e)
@@ -441,7 +441,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditCalendarColorTorahEvent.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditCalendarColorTorahEvent.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
 
     private void PanelSeasonEventColor_Click(object sender, EventArgs e)
@@ -449,7 +449,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditCalendarColorSeason.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditCalendarColorSeason.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
 
     private void PanelMoonEventColor_Click(object sender, EventArgs e)
@@ -457,7 +457,7 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditCalendarColorMoon.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditCalendarColorMoon.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
 
     private void PanelFullMoonColor_Click(object sender, EventArgs e)
@@ -465,38 +465,12 @@ namespace Ordisoftware.HebrewCalendar
       DialogColor.Color = EditCalendarColorFullMoon.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       EditCalendarColorFullMoon.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
+      MustRefreshMonthView = true;
     }
 
-    private void UpdateCalendarMonth(bool noclose = false)
+    private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
-      if ( !noclose ) PreferencesForm_FormClosing(null, null);
-      MainForm.Instance.IsGenerating = true;
-      Cursor = Cursors.WaitCursor;
-      MainForm.Instance.Cursor = Cursors.WaitCursor;
-      Enabled = false;
-      MainForm.Instance.PanelViewMonth.Parent = null;
-      try
-      {
-        MainForm.Instance.CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1); //10
-        MainForm.Instance.CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold); //10
-        MainForm.Instance.CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
-        MainForm.Instance.CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
-        MainForm.Instance.CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
-        MainForm.Instance.CalendarMonth.CurrentDayForeColor = EditCurrentDayForeColor.BackColor;
-        MainForm.Instance.CalendarMonth.CurrentDayBackColor = EditCurrentDayBackColor.BackColor;
-        MainForm.Instance.CalendarMonth.LoadPresetHolidays = false;
-        MainForm.Instance.FillMonths();
-      }
-      finally
-      {
-        Enabled = true;
-        Cursor = Cursors.Default;
-        MainForm.Instance.Cursor = Cursors.Default;
-        MainForm.Instance.IsGenerating = false;
-        MainForm.Instance.SetView(Program.Settings.CurrentView, true);
-        MainForm.Instance.UpdateButtons();
-      }
+      MustRefreshMonthView = EditMonthViewFontSize.Value != Program.Settings.MonthViewFontSize;
     }
 
     private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
@@ -506,6 +480,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
         EditHebrewLettersPath.Text = OpenFileDialog.FileName;
     }
+
   }
 
 }

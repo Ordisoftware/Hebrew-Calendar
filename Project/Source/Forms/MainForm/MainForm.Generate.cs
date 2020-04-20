@@ -36,6 +36,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( sender != null )
           {
             var form = new SelectYearsForm();
+            if ( e == null ) form.ActionCancel.Enabled = false;
             if ( form.ShowDialog() == DialogResult.Cancel ) return;
             yearFirst = (int)form.EditYearFirst.Value;
             yearLast = (int)form.EditYearLast.Value;

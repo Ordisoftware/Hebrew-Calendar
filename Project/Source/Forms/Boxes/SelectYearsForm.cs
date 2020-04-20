@@ -102,8 +102,13 @@ namespace Ordisoftware.HebrewCalendar
           return;
       }
       DialogResult = DialogResult.OK;
+      ActionCancel.Enabled = true;
     }
 
+    private void SelectYearsForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if ( !ActionCancel.Enabled ) e.Cancel = true;
+    }
   }
 
 }

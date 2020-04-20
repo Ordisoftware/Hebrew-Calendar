@@ -69,6 +69,13 @@ namespace Ordisoftware.HebrewCalendar
         Settings.Language = Localizer.Language;
         Settings.Save();
       }
+      else
+      if ( Settings.FirstLaunchV4 )
+      {
+        Settings.FirstLaunchV4 = false;
+        Settings.FirstLaunch = true;
+        Settings.Save();
+      }
     }
 
     /// <summary>

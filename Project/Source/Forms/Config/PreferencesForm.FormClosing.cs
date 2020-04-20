@@ -75,10 +75,8 @@ namespace Ordisoftware.HebrewCalendar
           MainForm.Instance.CurrentTimeZoneInfo = item;
           break;
         }
-      bool isCalendarFotnUpdated = Program.Settings.MonthViewFontSize != (int)EditMonthViewFontSize.Value;
       Program.Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       Program.Settings.Store();
-      if ( isCalendarFotnUpdated ) UpdateCalendarMonth(true);
     }
 
   }

@@ -115,6 +115,7 @@
       this.MinimizeBox = false;
       this.Name = "SelectYearsForm";
       this.ShowInTaskbar = false;
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectYearsForm_FormClosing);
       this.Load += new System.EventHandler(this.SelectYearsRangeForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).EndInit();
@@ -129,8 +130,8 @@
     private System.Windows.Forms.Label LabelYearFirst;
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.Panel PanelBottom;
-    private System.Windows.Forms.Button ActionCancel;
     internal System.Windows.Forms.NumericUpDown EditYearLast;
     internal System.Windows.Forms.NumericUpDown EditYearFirst;
+    internal System.Windows.Forms.Button ActionCancel;
   }
 }

@@ -204,7 +204,7 @@ namespace Ordisoftware.HebrewCalendar
             diff = SelectYearsForm.GenerateIntervalDefault;
           YearFirst = DateTime.Today.Year - 1;
           YearLast = YearFirst + diff;
-          DoGenerate(null, new EventArgs());
+          DoGenerate(this, new EventArgs());
         }
       }
       catch ( AbortException )
@@ -461,6 +461,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
           CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
+          UpdateCalendarMonth(false);
           ActionGenerate_Click(null, new EventArgs());
         }
         TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
@@ -933,6 +934,35 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         TimerMutex = false;
+      }
+    }
+
+    internal void UpdateCalendarMonth(bool doFill)
+    {
+      IsGenerating = true;
+      Cursor = Cursors.WaitCursor;
+      Enabled = false;
+      PanelViewMonth.Parent = null;
+      try
+      {
+        CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1); //10
+        CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold); //10
+        CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
+        CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
+        CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
+        CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
+        CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
+        CalendarMonth.LoadPresetHolidays = false;
+        if (doFill) FillMonths();
+      }
+      finally
+      {
+        Enabled = true;
+        Cursor = Cursors.Default;
+        Cursor = Cursors.Default;
+        IsGenerating = false;
+        SetView(Program.Settings.CurrentView, true);
+        UpdateButtons();
       }
     }
 

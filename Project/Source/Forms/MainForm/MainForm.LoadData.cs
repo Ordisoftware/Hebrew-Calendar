@@ -46,7 +46,7 @@ namespace Ordisoftware.HebrewCalendar
         connection.Close();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         ReportTableAdapter.Fill(DataSet.Report);
-        if ( DataSet.LunisolarDays.Count > 0 )
+        if ( DataSet.LunisolarDays.Count > 0 && !Program.Settings.FirstLaunch)
         {
           IsGenerating = true;
           try
