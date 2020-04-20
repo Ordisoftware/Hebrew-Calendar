@@ -21,6 +21,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CoV3JgJLim0FmSsE1MDZJP
 Name = (FR) Les célébrations de la Torah
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BbcpGqKOVnyktf9GMFwnVV
 
+Name = (FR) Le couple selon le Judaïsme
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BY91zgIakb6tHdc5AxqRyu
+
 -
 
 Name = (FR) Rav Menahem Altabe
