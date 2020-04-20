@@ -203,8 +203,7 @@ namespace Ordisoftware.HebrewCommon
         if ( Input.Text.Length + str.Length <= MaxLength )
         {
           int selectionStart = Input.SelectionStart;
-          Input.SelectedText = "";
-          Input.Text = Input.Text.Insert(selectionStart, str);
+          Input.SelectedText = str;
           Input.SelectionStart = selectionStart;
         }
         e.Handled = true;
