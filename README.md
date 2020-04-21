@@ -138,7 +138,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Fix celebration reminder that can be shown even the next day too with bad times.
 - Few UI fixes.
 - Add menu for web links about judaism.
-- Add option to auto vacuum database at startup.
+- Add option to auto optimize database at startup.
 - Add option to enable debugger.
 - Add debugger (exception information form).
 - Improve UI/UX.
