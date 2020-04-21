@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
 {
@@ -102,85 +101,6 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Create letters buttons.
-    /// </summary>
-    private void CreateLetters()
-    {
-      try
-      {
-        Panel.Controls.Clear();
-        int dy = 45;
-        int dx = -dy;
-        int x = 500 + dx;
-        int y = 5;
-        int n = 1;
-        var colorLabel = Color.DimGray;
-        var sizeLabelValue = new Size(45, 8);
-        var sizeLabelKey = new Size(45, 13);
-        var fontLetter = new Font("Hebrew", 20.25F, FontStyle.Bold);
-        var fontValue = new Font("Microsoft Sans Serif", 6.25F);
-        for ( int index = 0; index < HebrewAlphabet.Codes.Length; index++ )
-        {
-          var labelValue = new Label();
-          if ( _ShowValues )
-          {
-            labelValue.Location = new Point(x, y + dy);
-            labelValue.Size = sizeLabelKey;
-            labelValue.Font = fontValue;
-            labelValue.ForeColor = colorLabel;
-            labelValue.BackColor = Color.Transparent;
-            labelValue.Text = HebrewAlphabet.ValuesSimple[index].ToString();
-            labelValue.TextAlign = ContentAlignment.MiddleCenter;
-            Panel.Controls.Add(labelValue);
-          }
-          //
-          var labelKey = new Label();
-          labelKey.Location = new Point(x, y + dy + ( _ShowValues ? labelValue.Height : -2 ) + 2);
-          labelKey.Size = sizeLabelKey;
-          labelKey.Text = HebrewAlphabet.Codes[index];
-          labelKey.ForeColor = colorLabel;
-          labelKey.BackColor = Color.Transparent;
-          labelKey.TextAlign = ContentAlignment.MiddleCenter;
-          Panel.Controls.Add(labelKey);
-          //
-          var buttonLetter = new Button();
-          buttonLetter.Location = new Point(x, y);
-          buttonLetter.Size = new Size(Math.Abs(dx), dy);
-          buttonLetter.FlatStyle = FlatStyle.Flat;
-          buttonLetter.FlatAppearance.BorderSize = 0;
-          buttonLetter.FlatAppearance.BorderColor = SystemColors.Control;
-          buttonLetter.Font = fontLetter;
-          buttonLetter.Text = HebrewAlphabet.Codes[index];
-          buttonLetter.BackColor = Color.Transparent;
-          buttonLetter.TabStop = false;
-          buttonLetter.Click += delegate (object sender, EventArgs e)
-          {
-            if ( Input.Text.Length < MaxLength )
-            {
-              Previous.Set(Input.Text, Input.SelectionStart);
-              Input.Text = ( (Button)sender ).Text + Input.Text;
-            }
-            OnClick(new LetterEventArgs(( (Button)sender ).Text));
-          };
-          Panel.Controls.Add(buttonLetter);
-          //
-          n += 1;
-          if ( n != 12 )
-            x += dx;
-          else
-          {
-            x = 500 + dx;
-            y += dy + ( _ShowValues ? labelValue.Height : -2 ) + labelKey.Height + 15;
-          }
-        }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage(this);
-      }
-    }
-
-    /// <summary>
     /// Update menu items.
     /// </summary>
     private void ContextMenuStripInput_Opened(object sender, EventArgs e)
@@ -190,7 +110,46 @@ namespace Ordisoftware.HebrewCommon
       ActionPaste.Enabled = Clipboard.GetText() != "";
       ActionUndo.Enabled = UndoStack.Count != 0;
       ActionRedo.Enabled = RedoStack.Count != 0;
+    }
 
+    /// <summary>
+    /// Letter icon click event
+    /// </summary>
+    private void ButtonLetter_Click(object sender, EventArgs e)
+    {
+      if ( Input.Text.Length < MaxLength )
+      {
+        Previous.Set(Input.Text, Input.SelectionStart);
+        int pos = Input.SelectionStart;
+        Input.Text = Input.Text.Insert(Input.SelectionStart, ( (Button)sender ).Text);
+        Input.Focus();
+        Input.SelectionLength = 0;
+        Input.SelectionStart = pos;
+      }
+      OnClick(new LetterEventArgs(( (Button)sender ).Text));
+    }
+
+    /// <summary>
+    /// TextChanged event.
+    /// </summary>
+    private void Input_TextChanged(object sender, EventArgs e)
+    {
+      if ( UndoRedoMutex ) return;
+      UndoStack.Push(Previous);
+      RedoStack.Clear();
+    }
+
+    /// <summary>
+    /// KeyUp event.
+    /// </summary>
+    private void Input_KeyUp(object sender, KeyEventArgs e)
+    {
+      if ( KeyProcessed )
+      {
+        KeyProcessed = false;
+        if ( Input.SelectionStart > 0 )
+          Input.SelectionStart--;
+      }
     }
 
     /// <summary>
@@ -237,26 +196,10 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// KeyUp event.
-    /// </summary>
-    private void Input_KeyUp(object sender, KeyEventArgs e)
-    {
-      if ( KeyProcessed )
-      {
-        KeyProcessed = false;
-        if ( Input.SelectionStart > 0 )
-          Input.SelectionStart--;
-      }
-    }
-
-    private string PreviousText = "";
-
-    /// <summary>
     /// KeyDown event.
     /// </summary>
     private void Input_KeyDown(object sender, KeyEventArgs e)
     {
-      PreviousText = Input.Text;
       if ( e.Control && e.KeyCode == Keys.Z )
       {
         e.SuppressKeyPress = true;
@@ -349,13 +292,6 @@ namespace Ordisoftware.HebrewCommon
       UndoRedoMutex = false;
     }
 
-    private void Input_TextChanged(object sender, EventArgs e)
-    {
-      if ( UndoRedoMutex ) return;
-      UndoStack.Push(Previous);
-      RedoStack.Clear();
-    }
-
   }
 
   /// <summary>
@@ -367,6 +303,9 @@ namespace Ordisoftware.HebrewCommon
     public LetterEventArgs(string lettercode) { LetterCode = lettercode; }
   }
 
+  /// <summary>
+  ///  Provide undo or redo item
+  /// </summary>
   public struct UndoRedoItem
   {
     public string Text;
