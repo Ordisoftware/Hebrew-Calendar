@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCalendar
       Application.SetCompatibleTextRenderingDefault(false);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
-      Core.Diagnostics.Debugger.Active = true; // TODO Settings.DebuggerEnabled;
+      Core.Diagnostics.Debugger.Active = Settings.DebuggerEnabled;
       string lang = Settings.Language;
       SystemHelper.CheckCommandLineArguments(args, ref lang, Settings);
       Settings.Language = lang;
@@ -107,9 +107,9 @@ namespace Ordisoftware.HebrewCalendar
       }
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+      MainForm.Instance.CreateProvidersAndWebLinks();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
-      MainForm.Instance.CreateWebLinks();
       MainForm.Instance.TimerReminder_Tick(null, null);
     }
 

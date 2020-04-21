@@ -283,7 +283,10 @@
     <Setting Name="VacuumAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="FirstLaucnhV4" Type="System.Boolean" Scope="User">
+    <Setting Name="FirstLaunchV4" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DebuggerEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
