@@ -26,9 +26,9 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Center")]
-        public global::Ordisoftware.HebrewCalendar.ControlLocation MainFormPosition {
+        public global::Ordisoftware.HebrewCommon.ControlLocation MainFormPosition {
             get {
-                return ((global::Ordisoftware.HebrewCalendar.ControlLocation)(this["MainFormPosition"]));
+                return ((global::Ordisoftware.HebrewCommon.ControlLocation)(this["MainFormPosition"]));
             }
             set {
                 this["MainFormPosition"] = value;
