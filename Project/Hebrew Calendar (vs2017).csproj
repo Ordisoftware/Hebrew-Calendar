@@ -147,7 +147,7 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
-    <Compile Include="Source\Classes\Translations.BigCalendar.cs" />
+    <Compile Include="Source\Program\Translations.BigCalendar.cs" />
     <Compile Include="Source\Common\Globals.Translations.cs" />
     <Compile Include="Source\Common\HTMLBrowserForm.cs">
       <SubType>Form</SubType>
@@ -174,8 +174,8 @@
     </Compile>
     <Compile Include="Source\Entities\SunAndMoonRiseAndSet.cs" />
     <Compile Include="Source\Enums\ReportFieldCSV.cs" />
-    <Compile Include="Source\Classes\Translations.Notices.cs" />
-    <Compile Include="Source\Classes\Translations.Calendar.cs" />
+    <Compile Include="Source\Program\Translations.Notices.cs" />
+    <Compile Include="Source\Program\Translations.Calendar.cs" />
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.Colors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,7 +212,7 @@
     <Compile Include="Source\Entities\DayOfWeekMap.Positions.cs" />
     <Compile Include="Source\Entities\DayOfWeekItem.cs" />
     <Compile Include="Source\Entities\TorahEventItem.cs" />
-    <Compile Include="Source\Classes\Translations.cs" />
+    <Compile Include="Source\Program\Translations.cs" />
     <Compile Include="Source\Common\SQLiteHelper.cs" />
     <Compile Include="Source\Enums\ReportFieldText.cs" />
     <Compile Include="Source\Enums\Ephemeris.cs" />
@@ -385,7 +385,7 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\SettingsHelper.cs" />
+    <Compile Include="Source\Program\SettingsHelper.cs" />
     <Compile Include="Source\Enums\TorahEvent.cs" />
     <Compile Include="Source\Enums\MoonPhase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -568,7 +568,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Source\Classes\AstronomyHelper.cs" />
+    <Compile Include="Source\Program\AstronomyHelper.cs" />
     <Compile Include="Dependencies\Moonr2cs\Moonr2cs.cs" />
     <Compile Include="Source\Program\Program.cs" />
   </ItemGroup>
