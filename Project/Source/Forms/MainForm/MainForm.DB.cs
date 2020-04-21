@@ -30,7 +30,10 @@ namespace Ordisoftware.HebrewCalendar
       var connection = new OdbcConnection(Program.Settings.ConnectionString);
       connection.Open();
       if ( Program.Settings.VacuumAtStartup )
+      {
+        connection.CheckIntegrity();
         connection.Vacuum();
+      }
       try
       {
         var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +

@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Collections.Generic;
 using System.Data.Odbc;
 using Ordisoftware.Core;
 
@@ -24,6 +25,34 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   static public class SQLiteHelper
   {
+
+    /// <summary>
+    ///  Vacuum the database.
+    /// </summary>
+    static public void CheckIntegrity(this OdbcConnection connection)
+    {
+      try
+      {
+        using ( var sql = connection.CreateCommand() )
+        {
+          sql.CommandText = "SELECT integrity_check FROM pragma_integrity_check()";
+          var errors = new List<string>();
+          using ( var reader = sql.ExecuteReader() )
+            while ( reader.Read() )
+            {
+              string str = reader.GetString(0);
+              if ( str != "ok" ) errors.Add(str);
+            }
+          if ( errors.Count > 0 )
+            DisplayManager.ShowError("SQLite Database has errors:" + Environment.NewLine + Environment.NewLine +
+                                     string.Join(Environment.NewLine, errors));
+        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+    }
 
     /// <summary>
     ///  Vacuum the database.
