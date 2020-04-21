@@ -175,6 +175,14 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     private void ButtonLetter_Click(object sender, EventArgs e)
     {
+      if ( Input.SelectionLength > 0 )
+      {
+        int pos = Input.SelectionStart;
+        Input.SelectedText = ( (Button)sender ).Text;
+        Input.SelectionStart = pos;
+        Input.Focus();
+      }
+      else
       if ( Input.Text.Length < MaxLength )
       {
         int pos = Input.SelectionStart;

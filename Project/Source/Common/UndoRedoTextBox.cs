@@ -49,6 +49,29 @@ namespace Ordisoftware.HebrewCommon
         }
         else
           base.Text = value;
+        SelectionStart = 0;
+        SelectionLength = 0;
+      }
+    }
+
+    public override string SelectedText
+    {
+      get { return base.SelectedText; }
+      set
+      {
+        if ( SelectedText == value ) return;
+        if ( TextChanging != null ) TextChanging(this, ref value);
+        if ( !Mutex )
+        {
+          Mutex = true;
+          Previous.Set(Text, SelectionStart);
+          UndoStack.Push(Previous);
+          if ( RedoStack.Count > 0 ) RedoStack.Clear();
+          base.SelectedText = value;
+          Mutex = false;
+        }
+        else
+          base.SelectedText = value;
       }
     }
 
