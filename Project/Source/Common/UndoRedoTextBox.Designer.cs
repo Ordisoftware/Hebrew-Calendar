@@ -42,6 +42,7 @@
       // 
       // ContextMenuEdit
       // 
+      resources.ApplyResources(this.ContextMenuEdit, "ContextMenuEdit");
       this.ContextMenuEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionUndo,
             this.ActionRedo,
@@ -50,51 +51,41 @@
             this.ActionCut,
             this.ActionPaste});
       this.ContextMenuEdit.Name = "ContextMenuStrip";
-      this.ContextMenuEdit.Size = new System.Drawing.Size(104, 120);
       this.ContextMenuEdit.Opened += new System.EventHandler(this.ContextMenuEdit_Opened);
       // 
       // ActionUndo
       // 
-      this.ActionUndo.Image = ((System.Drawing.Image)(resources.GetObject("ActionUndo.Image")));
+      resources.ApplyResources(this.ActionUndo, "ActionUndo");
       this.ActionUndo.Name = "ActionUndo";
-      this.ActionUndo.Size = new System.Drawing.Size(103, 22);
-      this.ActionUndo.Text = "Undo";
       // 
       // ActionRedo
       // 
-      this.ActionRedo.Image = ((System.Drawing.Image)(resources.GetObject("ActionRedo.Image")));
+      resources.ApplyResources(this.ActionRedo, "ActionRedo");
       this.ActionRedo.Name = "ActionRedo";
-      this.ActionRedo.Size = new System.Drawing.Size(103, 22);
-      this.ActionRedo.Text = "Redo";
       // 
       // Separator
       // 
+      resources.ApplyResources(this.Separator, "Separator");
       this.Separator.Name = "Separator";
-      this.Separator.Size = new System.Drawing.Size(100, 6);
       // 
       // ActionCopy
       // 
-      this.ActionCopy.Image = ((System.Drawing.Image)(resources.GetObject("ActionCopy.Image")));
+      resources.ApplyResources(this.ActionCopy, "ActionCopy");
       this.ActionCopy.Name = "ActionCopy";
-      this.ActionCopy.Size = new System.Drawing.Size(103, 22);
-      this.ActionCopy.Text = "Copy";
       // 
       // ActionCut
       // 
-      this.ActionCut.Image = ((System.Drawing.Image)(resources.GetObject("ActionCut.Image")));
+      resources.ApplyResources(this.ActionCut, "ActionCut");
       this.ActionCut.Name = "ActionCut";
-      this.ActionCut.Size = new System.Drawing.Size(103, 22);
-      this.ActionCut.Text = "Cut";
       // 
       // ActionPaste
       // 
-      this.ActionPaste.Image = ((System.Drawing.Image)(resources.GetObject("ActionPaste.Image")));
+      resources.ApplyResources(this.ActionPaste, "ActionPaste");
       this.ActionPaste.Name = "ActionPaste";
-      this.ActionPaste.Size = new System.Drawing.Size(103, 22);
-      this.ActionPaste.Text = "Paste";
       // 
       // UndoRedoTextBox
       // 
+      resources.ApplyResources(this, "$this");
       this.ContextMenuStrip = this.ContextMenuEdit;
       this.TextChanged += new System.EventHandler(this.TextChangedEvent);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDownEvent);
