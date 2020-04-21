@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewCommon
       {
         try
         {
-          return Image.FromFile(filename);
+          return Image.FromFile(Globals.GuidesFolderPath + filename);
         }
         catch
         {
@@ -45,12 +45,12 @@ namespace Ordisoftware.HebrewCommon
       };
       LanguageImages = new Dictionary<string, Image>()
       {
-        { "(NONE)", createImage(Globals.HelpFolderPath + "flag_none.png") },
-        { "(FR)", createImage(Globals.HelpFolderPath + "flag_france.png") },
-        { "(EN)", createImage(Globals.HelpFolderPath + "flag_great_britain.png") },
-        { "(IW)", createImage(Globals.HelpFolderPath + "flag_israel.png") },
-        { "(FR/IW)", createImage(Globals.HelpFolderPath + "flag_fr_iw.png") },
-        { "(FR/EN)", createImage(Globals.HelpFolderPath + "flag_fr_en.png") }
+        { "(NONE)", createImage("flag_none.png") },
+        { "(FR)", createImage("flag_france.png") },
+        { "(EN)", createImage("flag_great_britain.png") },
+        { "(IW)", createImage("flag_israel.png") },
+        { "(FR/IW)", createImage("flag_fr_iw.png") },
+        { "(FR/EN)", createImage("flag_fr_en.png") }
       };
     }
 

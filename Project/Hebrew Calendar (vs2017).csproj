@@ -155,6 +155,9 @@
     <Compile Include="Source\Common\HTMLBrowserForm.Designer.cs">
       <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\LettersControl.CreateLetters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Source\Common\LettersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -163,6 +166,12 @@
     </Compile>
     <Compile Include="Source\Common\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\SystemHelper.cs" />
+    <Compile Include="Source\Common\UndoRedoTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\UndoRedoTextBox.Designer.cs">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Entities\SunAndMoonRiseAndSet.cs" />
     <Compile Include="Source\Enums\ReportFieldCSV.cs" />
     <Compile Include="Source\Classes\Translations.Notices.cs" />
@@ -420,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UndoRedoTextBox.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\ShowTextForm.fr.resx">
       <DependentUpon>ShowTextForm.cs</DependentUpon>

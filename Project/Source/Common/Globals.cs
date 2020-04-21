@@ -131,6 +131,12 @@ namespace Ordisoftware.HebrewCommon
       = RootFolderPath + "Application.ico";
 
     /// <summary>
+    /// Indicate the filename of the help.
+    /// </summary>
+    static public readonly string HelpFolderPath
+      = RootFolderPath + "Help" + Path.DirectorySeparatorChar;
+
+    /// <summary>
     /// Indicate the application documents folder.
     /// </summary>
     static public readonly string DocumentsFolderPath
@@ -143,16 +149,28 @@ namespace Ordisoftware.HebrewCommon
       = DocumentsFolderPath + "WebLinks" + Path.DirectorySeparatorChar;
 
     /// <summary>
-    /// Indicate the application online providers folder.
+    /// Indicate the application web providers folder.
     /// </summary>
-    static public readonly string OnlineProvidersFolderPath
+    static public readonly string WebProvidersFolderPath
       = DocumentsFolderPath + "WebProviders" + Path.DirectorySeparatorChar;
 
     /// <summary>
-    /// Indicate the filename of the help.
+    /// Indicate the application web links folder.
     /// </summary>
-    static public readonly string HelpFolderPath
-      = RootFolderPath + "Help" + Path.DirectorySeparatorChar;
+    static public readonly string GuidesFolderPath
+      = DocumentsFolderPath + "Guides" + Path.DirectorySeparatorChar;
+
+    /// <summary>
+    /// Indicate filename of the grammar guide.
+    /// </summary>
+    static public string GrammarGuideFilename
+      = GuidesFolderPath + $"grammar-%LANG%.htm";
+
+    /// <summary>
+    /// Indicate filename of the method notice.
+    /// </summary>
+    static public string MethodNoticeFilename
+      = GuidesFolderPath + $"method-%LANG%.htm";
 
     /// <summary>
     /// Indicate the filename of the help.
@@ -205,7 +223,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the filename of the online search word providers.
     /// </summary>
     static public readonly string OnlineWordProvidersFileName
-      = OnlineProvidersFolderPath + "OnlineWordProviders.txt";
+      = WebProvidersFolderPath + "OnlineWordProviders.txt";
 
     /// <summary>
     /// Indicate the online search a word providers.
@@ -216,7 +234,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the filename of the online search word providers.
     /// </summary>
     static public readonly string OnlineBibleProvidersFileName
-      = OnlineProvidersFolderPath + "OnlineBibleProviders.txt";
+      = WebProvidersFolderPath + "OnlineBibleProviders.txt";
 
     /// <summary>
     /// Indicate the online bible verse providers.

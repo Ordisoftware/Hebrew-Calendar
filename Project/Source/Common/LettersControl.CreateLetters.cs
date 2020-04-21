@@ -33,7 +33,8 @@ namespace Ordisoftware.HebrewCommon
     {
       try
       {
-        Panel.Controls.Clear();
+        // TODO calculate labels and buttons size from font size
+        PanelLetters.Controls.Clear();
         int dy = 45;
         int dx = -dy;
         int x = 500 + dx;
@@ -42,12 +43,14 @@ namespace Ordisoftware.HebrewCommon
         var colorLabel = Color.DimGray;
         var sizeLabelValue = new Size(45, 8);
         var sizeLabelKey = new Size(45, 13);
-        var fontLetter = new Font("Hebrew", 20.25F, FontStyle.Bold);
-        var fontValue = new Font("Microsoft Sans Serif", 6.25F);
+        var fontLetter = new Font("Hebrew", _FontSizeLetters, FontStyle.Bold);
+        var fontValue = new Font("Microsoft Sans Serif", _FontSizeLabels);
+        var labelValue = new Label();
+        var labelKey = new Label();
         for ( int index = 0; index < HebrewAlphabet.Codes.Length; index++ )
         {
           // Label value
-          var labelValue = new Label();
+          labelValue = new Label();
           if ( _ShowValues )
           {
             labelValue.Location = new Point(x, y + dy);
@@ -57,17 +60,20 @@ namespace Ordisoftware.HebrewCommon
             labelValue.BackColor = Color.Transparent;
             labelValue.Text = HebrewAlphabet.ValuesSimple[index].ToString();
             labelValue.TextAlign = ContentAlignment.MiddleCenter;
-            Panel.Controls.Add(labelValue);
+            PanelLetters.Controls.Add(labelValue);
           }
           // Label key
-          var labelKey = new Label();
-          labelKey.Location = new Point(x, y + dy + ( _ShowValues ? labelValue.Height : -2 ) + 2);
-          labelKey.Size = sizeLabelKey;
-          labelKey.Text = HebrewAlphabet.Codes[index];
-          labelKey.ForeColor = colorLabel;
-          labelKey.BackColor = Color.Transparent;
-          labelKey.TextAlign = ContentAlignment.MiddleCenter;
-          Panel.Controls.Add(labelKey);
+          labelKey = new Label();
+          if ( _ShowKeys )
+          {
+            labelKey.Location = new Point(x, y + dy + ( _ShowValues ? labelValue.Height : -2 ) + 2);
+            labelKey.Size = sizeLabelKey;
+            labelKey.Text = HebrewAlphabet.Codes[index];
+            labelKey.ForeColor = colorLabel;
+            labelKey.BackColor = Color.Transparent;
+            labelKey.TextAlign = ContentAlignment.MiddleCenter;
+            PanelLetters.Controls.Add(labelKey);
+          }
           // Button letter
           var buttonLetter = new Button();
           buttonLetter.Location = new Point(x, y);
@@ -79,20 +85,8 @@ namespace Ordisoftware.HebrewCommon
           buttonLetter.Text = HebrewAlphabet.Codes[index];
           buttonLetter.BackColor = Color.Transparent;
           buttonLetter.TabStop = false;
-          buttonLetter.Click += delegate (object sender, EventArgs e)
-          {
-            if ( Input.Text.Length < MaxLength )
-            {
-              Previous.Set(Input.Text, Input.SelectionStart);
-              int pos = Input.SelectionStart;
-              Input.Text = Input.Text.Insert(Input.SelectionStart, ( (Button)sender ).Text);
-              Input.Focus();
-              Input.SelectionLength = 0;
-              Input.SelectionStart = pos;
-            }
-            OnClick(new LetterEventArgs(( (Button)sender ).Text));
-          };
-          Panel.Controls.Add(buttonLetter);
+          buttonLetter.Click += ButtonLetter_Click;
+          PanelLetters.Controls.Add(buttonLetter);
           // Loop
           n += 1;
           if ( n != 12 )
@@ -100,9 +94,11 @@ namespace Ordisoftware.HebrewCommon
           else
           {
             x = 500 + dx;
-            y += dy + ( _ShowValues ? labelValue.Height : -2 ) + labelKey.Height + 15;
+            y += dy + ( _ShowValues ? labelValue.Height : -2 ) + ( _ShowKeys ? labelKey.Height : -2 ) + 15;
           }
         }
+        Height = y + dy + ( _ShowValues ? labelValue.Height : -2 ) + ( _ShowKeys ? labelKey.Height : -2 ) + 15
+               + PanelSeparator.Height + Input.Height + 2;
       }
       catch ( Exception ex )
       {
