@@ -145,6 +145,8 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Code refactoring.
 - Update help.
 
+>>>>- Fix find celebration and lunar month boxes when closing using form cross.
+
 #### 2019.11.12 - Version 3.10
 
 - Change dependency AAPlus for AASharp.
