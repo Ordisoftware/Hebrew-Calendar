@@ -19,6 +19,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 using Ordisoftware.Core.Diagnostics;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.Core.Windows.Forms
 {
@@ -49,22 +50,28 @@ namespace Ordisoftware.Core.Windows.Forms
     /// Run the given einfo.
     /// </summary>
     /// <param name="einfo">The einfo.</param>
-    static public void Run(ExceptionInfo einfo)
+    static public void Run(ExceptionInfo einfo, bool isInner = false)
     {
       using ( ExceptionForm f = new ExceptionForm() )
       {
-        f.Text = einfo.Emitter + " has caused an error";
+        //f.Text = einfo.Emitter + " has caused an error";
         f.printPreviewDialog.FindForm().WindowState = FormWindowState.Maximized;
         f.buttonViewLog.Visible = false; // SystemManager.Log.Active;
         f.buttonViewStack.Enabled = Debugger.UseStack;
-        f.buttonViewInner.Visible = einfo.InnerInfo != null;
-        f.buttonTerminate.Visible = Debugger.UserCanTerminate;
+        f.buttonViewInner.Enabled = einfo.InnerInfo != null;
+        f.buttonTerminate.Enabled = Debugger.UserCanTerminate && !isInner;
+        if ( isInner )
+        {
+          f.buttonPrint.Enabled = false;
+          f.buttonSendMail.Enabled = false;
+          f.buttonClose.Text = "Ok";
+        }
         f.textException.Text = einfo.TypeText;
         f.textMessage.Text = einfo.Message;
-        f.labelInfo1.Text += einfo.Emitter + " " + HebrewCommon.Globals.AssemblyVersion;
-        f.textStack.Text = "[Thread: " + einfo.ThreadName + "]"
+        f.labelInfo1.Text += einfo.Emitter + " " + Globals.AssemblyVersion;
+        f.textStack.Text = /*"[Thread: " + einfo.ThreadName + "]"
                          + Environment.NewLine + Environment.NewLine
-                         + einfo.StackText;
+                         +*/ einfo.StackText;
         f._ErrorMsg.Add(f.textException.Text);
         f._ErrorMsg.Add(Environment.NewLine);
         f._ErrorMsg.Add(f.textMessage.Text);
@@ -121,7 +128,7 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <param name="e">Event information.</param>
     private void buttonViewInner_Click(object sender, EventArgs e)
     {
-      ExceptionForm.Run(_ErrorInfo.InnerInfo);
+      ExceptionForm.Run(_ErrorInfo.InnerInfo, true);
     }
 
     /// <summary>
@@ -184,7 +191,31 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <param name="e">Event information.</param>
     private void buttonSendMail_Click(object sender, EventArgs e)
     {
-      HebrewCommon.SystemHelper.OpenGitHibIssuesPage();
+      if ( _ErrorInfo == null ) return;
+      TopMost = false;
+      string query = "?title=" + _ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion
+                   + "&labels=type:+bug"
+                   + "&assignees=" + Globals.AssemblyCompany
+                   + "&body=";
+      string body = "--------------------------------------------------------------------------------" + Environment.NewLine
+                  + "EXCEPTION : " + _ErrorInfo.Instance.GetType().Name + Environment.NewLine
+                  + "--------------------------------------------------------------------------------" + Environment.NewLine
+                  + _ErrorInfo.Message + Environment.NewLine + Environment.NewLine
+                  + _ErrorInfo.StackText;
+      ExceptionInfo inner = _ErrorInfo.InnerInfo;
+      while ( inner != null )
+      {
+        body = body + Environment.NewLine + Environment.NewLine
+             + "--------------------------------------------------------------------------------" + Environment.NewLine
+             + "INNER : " + inner.Instance.GetType().Name + Environment.NewLine
+             + "--------------------------------------------------------------------------------" + Environment.NewLine
+             + inner.Message + Environment.NewLine + Environment.NewLine
+             + inner.StackText;
+        inner = inner.InnerInfo;
+      }
+      query += body;
+      query = query.Replace(" ", "%20").Replace("+", "%2B").Replace(Environment.NewLine, "%0A");
+      SystemHelper.OpenGitHibIssuesPage(query);
       /*string email = SystemManager.User.UserMail;
       if ( email.IsNullOrEmpty() )
         if ( DisplayManager.QueryValue("User email", ref email) == InputValueResult.Cancelled)

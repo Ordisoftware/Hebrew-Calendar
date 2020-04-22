@@ -304,6 +304,7 @@ namespace Ordisoftware.Core
         StackTrace stack = new StackTrace(_Instance, true);
         StackFrame[] sflist = stack.GetFrames();
         if ( sflist == null ) return;
+        bool first = true;
         foreach ( StackFrame sf in sflist )
         {
           System.Reflection.MethodBase m = sf.GetMethod();
@@ -326,13 +327,20 @@ namespace Ordisoftware.Core
               _LineNumber = ln;
             }
             s2 += "." + m.Name;
-            if ( ln != 0 ) s2 = s3 + " line " + ln + ": " + Environment.NewLine + s2;
+            if ( ln != 0 )
+            {
+              s2 = s2 + Environment.NewLine + s3 + " line " + ln + Environment.NewLine;
+              if ( first )
+                first = false;
+              else
+                s2 = Environment.NewLine + s2 + Environment.NewLine;
+            }
             _StackList.Add(s2);
             if ( s1 != "" ) s1 += Environment.NewLine;
             s1 += s2;
           }
         }
-        _StackText = s1;
+        _StackText = s1.TrimEnd(Environment.NewLine.ToCharArray());
       }
     }
 

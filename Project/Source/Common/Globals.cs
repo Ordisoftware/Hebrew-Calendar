@@ -263,6 +263,17 @@ namespace Ordisoftware.HebrewCommon
     #region Assembly information
 
     /// <summary>
+    /// Get the assembly title with version.
+    /// </summary>
+    static public string AssemblyTitleWithVersion
+    {
+      get
+      {
+        return AssemblyTitle + " " + AssemblyVersion;
+      }
+    }
+
+    /// <summary>
     /// Get the assembly title.
     /// </summary>
     static public string AssemblyTitle

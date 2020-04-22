@@ -482,6 +482,11 @@ namespace Ordisoftware.HebrewCalendar
         EditHebrewLettersPath.Text = OpenFileDialog.FileName;
     }
 
+    private void checkBox1_CheckedChanged(object sender, EventArgs e)
+    {
+      //Core.Diagnostics.Debugger.Active = EditEnableDebugger.Checked; + add load/shown
+    }
+
   }
 
 }

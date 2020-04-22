@@ -229,9 +229,9 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Open the GitHub issues page.
     /// </summary>
-    static public void OpenGitHibIssuesPage()
+    static public void OpenGitHibIssuesPage(string query = "")
     {
-      OpenWebLink(Globals.GitHubIssuesURL);
+      OpenWebLink(Globals.GitHubIssuesURL + query);
     }
 
     /// <summary>

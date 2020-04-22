@@ -132,8 +132,8 @@
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.checkBox1 = new System.Windows.Forms.CheckBox();
+      this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -988,15 +988,16 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
-      // OpenFileDialog
-      // 
-      resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
-      // 
       // checkBox1
       // 
       resources.ApplyResources(this.checkBox1, "checkBox1");
       this.checkBox1.Name = "checkBox1";
       this.checkBox1.UseVisualStyleBackColor = true;
+      this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+      // 
+      // OpenFileDialog
+      // 
+      resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
       // 
       // PreferencesForm
       // 

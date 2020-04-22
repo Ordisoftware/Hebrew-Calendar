@@ -35,14 +35,12 @@ namespace Ordisoftware.Core.Windows.Forms
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExceptionForm));
       this.textMessage = new System.Windows.Forms.TextBox();
       this.pictureBox = new System.Windows.Forms.PictureBox();
       this.buttonClose = new System.Windows.Forms.Button();
       this.buttonTerminate = new System.Windows.Forms.Button();
       this.buttonViewLog = new System.Windows.Forms.Button();
-      this.imageList = new System.Windows.Forms.ImageList(this.components);
       this.buttonViewStack = new System.Windows.Forms.Button();
       this.textStack = new System.Windows.Forms.TextBox();
       this.labelInfo1 = new System.Windows.Forms.Label();
@@ -94,18 +92,9 @@ namespace Ordisoftware.Core.Windows.Forms
       this.buttonViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       this.buttonViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.buttonViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.buttonViewLog.ImageList = this.imageList;
       this.buttonViewLog.Name = "buttonViewLog";
       this.buttonViewLog.UseVisualStyleBackColor = true;
       this.buttonViewLog.Click += new System.EventHandler(this.buttonViewLog_Click);
-      // 
-      // imageList
-      // 
-      this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-      this.imageList.TransparentColor = System.Drawing.Color.White;
-      this.imageList.Images.SetKeyName(0, "shell32_dll_Bmp1111.bmp");
-      this.imageList.Images.SetKeyName(1, "comdlg32_dll_Bmp15.bmp");
-      this.imageList.Images.SetKeyName(2, "xp036.bmp");
       // 
       // buttonViewStack
       // 
@@ -147,7 +136,6 @@ namespace Ordisoftware.Core.Windows.Forms
       this.buttonPrint.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       this.buttonPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.buttonPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.buttonPrint.ImageList = this.imageList;
       this.buttonPrint.Name = "buttonPrint";
       this.buttonPrint.UseVisualStyleBackColor = true;
       this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
@@ -278,11 +266,6 @@ namespace Ordisoftware.Core.Windows.Forms
     /// The button send mail control.
     /// </summary>
     private System.Windows.Forms.Button buttonSendMail;
-
-    /// <summary>
-    /// List of images.
-    /// </summary>
-    private System.Windows.Forms.ImageList imageList;
 
     /// <summary>
     /// The print dialog.
