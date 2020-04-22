@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCommon
           string lang = name.Substring(0, pos + 1);
           if ( LanguageImages.ContainsKey(lang) )
           {
-            name = name.Substring(pos);
+            name = name.Substring(pos + 1);
             image = LanguageImages[lang];
           }
         }
