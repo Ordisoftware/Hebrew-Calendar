@@ -39,9 +39,11 @@ namespace Ordisoftware.HebrewCommon
         {
           return Image.FromFile(Globals.GuidesFolderPath + filename);
         }
-        catch
+        catch (Exception ex)
         {
-          DisplayManager.ShowError($"Error loading: {Environment.NewLine}{filename}");
+          DisplayManager.ShowError("Error loading:" + Environment.NewLine +
+                                   filename + Environment.NewLine + Environment.NewLine +
+                                   ex.Message);
           return null;
         }
       };

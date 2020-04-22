@@ -79,7 +79,7 @@ namespace Ordisoftware.HebrewCommon
                 if ( item.Tag != null )
                 {
                   SystemHelper.OpenWebLink((string)item.Tag);
-                  Thread.Sleep(1000);
+                  Thread.Sleep(2000);
                 }
             };
           }
