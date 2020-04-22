@@ -30,14 +30,15 @@ namespace Ordisoftware.HebrewCommon
   public partial class UndoRedoTextBox : TextBox
   {
 
+    private bool SetTextMutex;
+    private UndoRedoItem Previous = new UndoRedoItem();
     private Stack<UndoRedoItem> UndoStack = new Stack<UndoRedoItem>();
     private Stack<UndoRedoItem> RedoStack = new Stack<UndoRedoItem>();
-    private UndoRedoItem Previous = new UndoRedoItem();
-    private bool SetTextMutex;
+
+    public TextBoxCaretAfterPaste CaretAfterPaste { get; set; }
+      = TextBoxCaretAfterPaste.End;
 
     public event InsertingTextEventHandler InsertingText;
-
-    public TextBoxCaretAfterPaste CaretAfterPaste { get; set; } = TextBoxCaretAfterPaste.End;
 
     public override string Text
     {
@@ -103,21 +104,6 @@ namespace Ordisoftware.HebrewCommon
       }
     }
 
-    private void SetCaret(int pos, int length)
-    {
-      switch ( CaretAfterPaste )
-      {
-        case TextBoxCaretAfterPaste.Start:
-          SelectionStart = pos;
-          break;
-        case TextBoxCaretAfterPaste.End:
-          SelectionStart = pos + length;
-          break;
-        default:
-          throw new NotImplementedException();
-      }
-    }
-
     public UndoRedoTextBox()
     {
       InitializeComponent();
@@ -135,6 +121,21 @@ namespace Ordisoftware.HebrewCommon
       ActionCopy.Enabled = SelectedText != "";
       ActionCut.Enabled = ActionCopy.Enabled;
       ActionPaste.Enabled = Clipboard.GetText() != "";
+    }
+
+    private void SetCaret(int pos, int length)
+    {
+      switch ( CaretAfterPaste )
+      {
+        case TextBoxCaretAfterPaste.Start:
+          SelectionStart = pos;
+          break;
+        case TextBoxCaretAfterPaste.End:
+          SelectionStart = pos + length;
+          break;
+        default:
+          throw new NotImplementedException();
+      }
     }
 
     private void TextChangedEvent(object sender, EventArgs e)
