@@ -61,15 +61,7 @@ namespace Ordisoftware.HebrewCommon
               RedoStack.Clear();
           }
           base.Text = value;
-          switch ( CaretAfterPaste )
-          {
-            case TextBoxCaretAfterPaste.Start:
-              SelectionStart = 0;
-              break;
-            case TextBoxCaretAfterPaste.End:
-              SelectionStart = Text.Length;
-              break;
-          }
+          SetCaret(0, value.Length);
           SelectionLength = 0;
         }
         finally
@@ -102,20 +94,27 @@ namespace Ordisoftware.HebrewCommon
           }
           int selectionStart = SelectionStart;
           base.SelectedText = value;
-          switch ( CaretAfterPaste )
-          {
-            case TextBoxCaretAfterPaste.Start:
-              SelectionStart = selectionStart;
-              break;
-            case TextBoxCaretAfterPaste.End:
-              SelectionStart = selectionStart + value.Length;
-              break;
-          }
+          SetCaret(selectionStart, value.Length);
         }
         finally
         {
           SetTextMutex = false;
         }
+      }
+    }
+
+    private void SetCaret(int pos, int length)
+    {
+      switch ( CaretAfterPaste )
+      {
+        case TextBoxCaretAfterPaste.Start:
+          SelectionStart = pos;
+          break;
+        case TextBoxCaretAfterPaste.End:
+          SelectionStart = pos + length;
+          break;
+        default:
+          throw new NotImplementedException();
       }
     }
 
