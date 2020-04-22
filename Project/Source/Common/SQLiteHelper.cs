@@ -26,9 +26,41 @@ namespace Ordisoftware.HebrewCommon
   static public class SQLiteHelper
   {
 
+    static public int DefaultOptimizeDaysInterval = 7;
+
+    /// <summary>
+    /// Optimize the database.
+    /// </summary>
+    /// <param name="connection">The connection.</param>
+    /// <param name="lastdone">The last done date.</param>
+    /// <param name="days">The days interval.</param>
+    /// <returns>The new date if done else the same.</returns>
+    static public DateTime Optimize(this OdbcConnection connection, 
+                                    DateTime lastdone, 
+                                    bool force = false, 
+                                    int days = -1)
+    {
+      try
+      {
+        if ( days == -1 ) days = DefaultOptimizeDaysInterval;
+        if ( force || lastdone.AddDays(days) < DateTime.Now )
+        {
+          connection.CheckIntegrity();
+          connection.Vacuum();
+          lastdone = DateTime.Now;
+        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+      return lastdone;
+    }
+
     /// <summary>
     ///  Vacuum the database.
     /// </summary>
+    /// <param name="connection">The connection.</param>
     static public void CheckIntegrity(this OdbcConnection connection)
     {
       try
@@ -58,6 +90,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     ///  Vacuum the database.
     /// </summary>
+    /// <param name="connection">The connection.</param>
     static public void Vacuum(this OdbcConnection connection)
     {
       try

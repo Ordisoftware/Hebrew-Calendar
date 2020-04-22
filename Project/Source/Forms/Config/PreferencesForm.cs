@@ -165,7 +165,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.Reset();
       Program.Settings.UpgradeResetRequiredV3_6 = false;
       Program.Settings.FirstLaunchV4 = false;
-      Program.Settings.Save();
+      Program.Settings.Store();
       DoReset = true;
       Reseted = true;
       Program.Settings.GPSCountry = country;
