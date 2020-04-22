@@ -55,6 +55,7 @@
       // Input
       // 
       this.Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.Input.CaretAfterPaste = Ordisoftware.HebrewCommon.TextBoxCaretAfterPaste.End;
       this.Input.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.Input.Font = new System.Drawing.Font("Hebrew", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.Input.Location = new System.Drawing.Point(0, 187);

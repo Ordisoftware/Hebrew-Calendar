@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate max length of the input text.
     /// </summary>
-    public int InputMaxLength
+    public int MaxLengthInput
     {
       get { return Input.MaxLength; }
       set { Input.MaxLength = value; }
@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the background color of letters panel.
     /// </summary>
-    public Color LettersBackground
+    public Color BackColorLetters
     {
       get { return PanelLetters.BackColor; }
       set { PanelLetters.BackColor = value; }
@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the background color of input textbox.
     /// </summary>
-    public Color InputBackColor
+    public Color BackColorInput
     {
       get { return Input.BackColor; }
       set { Input.BackColor = value; }
@@ -56,35 +56,49 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate hebrew letters font size
     /// </summary>
-    public float LettersFontSize
+    public float FontSizeLetters
     {
-      get { return _LettersFontSize; }
+      get { return _FontSizeLetters; }
       set
       {
-        _LettersFontSize = value;
+        _FontSizeLetters = value;
         CreateLetters();
       }
     }
-    private float _LettersFontSize = 20.25F;
+    private float _FontSizeLetters = 20.25F;
 
     /// <summary>
-    /// Indicate labels font size.
+    /// Indicate values font size.
     /// </summary>
-    public float LabelsFontSize
+    public float FontSizeValues
     {
-      get { return _LabelsFontSize; }
+      get { return _FontSizeValues; }
       set
       {
-        _LabelsFontSize = value;
+        _FontSizeValues = value;
         CreateLetters();
       }
     }
-    private float _LabelsFontSize = 6.25F;
+    private float _FontSizeValues = 6.25F;
+
+    /// <summary>
+    /// Indicate keys font size.
+    /// </summary>
+    public float FontSizeKeys
+    {
+      get { return _FontSizeKeys; }
+      set
+      {
+        _FontSizeKeys = value;
+        CreateLetters();
+      }
+    }
+    private float _FontSizeKeys = 8.25F;
 
     /// <summary>
     /// Indicate Input font size.
     /// </summary>
-    public float InputFontSize
+    public float FontSizeInput
     {
       get { return Input.Font.Size; }
       set
@@ -127,7 +141,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Input Text property.
     /// </summary>
-    public string InputText
+    public string TextInput
     {
       get { return Input.Text; }
       set { Input.Text = value; }
@@ -136,7 +150,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Input Text property.
     /// </summary>
-    public int InputTextSelectionStart
+    public int SelectionStartInput
     {
       get { return Input.SelectionStart; }
       set { Input.SelectionStart = value; }
