@@ -27,6 +27,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LoadSettings()
     {
+      editdebug
       EditVacuumAtStartup.Checked = Program.Settings.VacuumAtStartup;
       EditHebrewLettersPath.Text = Program.Settings.HebrewLettersExe;
       EditAutoLockSession.Checked = Program.Settings.AutoLockSession;
