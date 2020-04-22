@@ -43,8 +43,8 @@ namespace Ordisoftware.HebrewCommon
         var colorLabel = Color.DimGray;
         var sizeLabelValue = new Size(45, 8);
         var sizeLabelKey = new Size(45, 13);
-        var fontLetter = new Font("Hebrew", _FontSizeLetters, FontStyle.Bold);
-        var fontValue = new Font("Microsoft Sans Serif", _FontSizeLabels);
+        var fontLetter = new Font("Hebrew", _LettersFontSize, FontStyle.Bold);
+        var fontValue = new Font("Microsoft Sans Serif", _LabelsFontSize);
         var labelValue = new Label();
         var labelKey = new Label();
         for ( int index = 0; index < HebrewAlphabet.Codes.Length; index++ )

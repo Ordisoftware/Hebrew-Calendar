@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate max length of the input text.
     /// </summary>
-    public int MaxLength
+    public int InputMaxLength
     {
       get { return Input.MaxLength; }
       set { Input.MaxLength = value; }
@@ -54,37 +54,37 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Indicate 
+    /// Indicate hebrew letters font size
     /// </summary>
-    public float FontSizeLetters
+    public float LettersFontSize
     {
-      get { return _FontSizeLetters; }
+      get { return _LettersFontSize; }
       set
       {
-        _FontSizeLetters = value;
+        _LettersFontSize = value;
         CreateLetters();
       }
     }
-    private float _FontSizeLetters = 20.25F;
+    private float _LettersFontSize = 20.25F;
 
     /// <summary>
-    /// Indicate 
+    /// Indicate labels font size.
     /// </summary>
-    public float FontSizeLabels
+    public float LabelsFontSize
     {
-      get { return _FontSizeLabels; }
+      get { return _LabelsFontSize; }
       set
       {
-        _FontSizeLabels = value;
+        _LabelsFontSize = value;
         CreateLetters();
       }
     }
-    private float _FontSizeLabels = 6.25F;
+    private float _LabelsFontSize = 6.25F;
 
     /// <summary>
-    /// Indicate 
+    /// Indicate Input font size.
     /// </summary>
-    public float FontSizeInput
+    public float InputFontSize
     {
       get { return Input.Font.Size; }
       set
@@ -125,18 +125,18 @@ namespace Ordisoftware.HebrewCommon
     private bool _ShowKeys = true;
 
     /// <summary>
-    /// Text property.
+    /// Input Text property.
     /// </summary>
-    public new string Text
+    public new string InputText
     {
       get { return Input.Text; }
       set { Input.Text = value; }
     }
 
     /// <summary>
-    /// Text changed event.
+    /// Input Text changed event.
     /// </summary>
-    public new event EventHandler TextChanged
+    public new event EventHandler InputTextChanged
     {
       add { Input.TextChanged += value; }
       remove { Input.TextChanged -= value; }
@@ -153,7 +153,7 @@ namespace Ordisoftware.HebrewCommon
     public LettersControl()
     {
       InitializeComponent();
-      MaxLength = 20;
+      InputMaxLength = 20;
     }
 
     private void LettersControl_Load(object sender, EventArgs e)
@@ -175,22 +175,22 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     private void ButtonLetter_Click(object sender, EventArgs e)
     {
-      if ( Input.SelectionLength > 0 )
+      string str = ( (Button)sender ).Text;
+      if ( Input.SelectionLength > 0 && Input.Text.Length - Input.SelectionLength + str.Length <= InputMaxLength )
       {
         int pos = Input.SelectionStart;
-        Input.SelectedText = ( (Button)sender ).Text;
+        Input.SelectedText = str;
         Input.SelectionStart = pos;
         Input.Focus();
       }
       else
-      if ( Input.Text.Length < MaxLength )
+      if ( Input.Text.Length < InputMaxLength )
       {
         int pos = Input.SelectionStart;
-        Input.Text = Input.Text.Insert(Input.SelectionStart, ( (Button)sender ).Text);
+        Input.Text = Input.Text.Insert(Input.SelectionStart, str);
         Input.SelectionStart = pos;
         Input.Focus();
       }
-      OnClick(new LetterEventArgs(( (Button)sender ).Text));
     }
 
     /// <summary>

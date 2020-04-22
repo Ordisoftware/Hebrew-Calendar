@@ -349,7 +349,6 @@
     <Compile Include="Dependencies\Core Library\DisplayManager.ManageException.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.QueryBox.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
-    <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Enums\MoonRise.cs" />
     <Compile Include="Dependencies\MoonPhaseImage\MoonPhaseImage.cs">
     </Compile>

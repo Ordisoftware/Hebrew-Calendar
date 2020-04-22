@@ -12,9 +12,8 @@
 /// </license>
 /// <created> 2012-10 </created>
 /// <edited> 2020-04 </edited>
-using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ordisoftware.HebrewCommon
 {

@@ -13,9 +13,9 @@
 /// <created> 2019-09 </created>
 /// <edited> 2020-04 </edited>
 using System;
-using System.IO;
-using System.Drawing;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 

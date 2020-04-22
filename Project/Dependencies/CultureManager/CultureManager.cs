@@ -9,31 +9,30 @@
 //
 #endregion
 using System;
-using System.ComponentModel;
 using System.Collections;
-using System.Reflection;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
-using System.Threading;
-using System.Globalization;
-using System.Windows.Forms;
+using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
+using System.Reflection;
 using System.Resources;
+using System.Threading;
+using System.Windows.Forms;
 namespace Infralution.Localization
 {
-    /// <summary>
-    /// Defines a component for managing the User Interface culture for
-    /// a form (or control) and allows the <see cref="UICulture"/> of an individual form 
-    /// or entire application be changed dynamically.
-    /// </summary>
-    /// <remarks>
-    /// This handles forms and components developed in C# and VB.NET but may or may not 
-    /// work for components/forms developed in other languages depending on how the language 
-    /// handles resource naming and serialization.
-    /// </remarks>
-    [ToolboxItem(true)]
+  /// <summary>
+  /// Defines a component for managing the User Interface culture for
+  /// a form (or control) and allows the <see cref="UICulture"/> of an individual form 
+  /// or entire application be changed dynamically.
+  /// </summary>
+  /// <remarks>
+  /// This handles forms and components developed in C# and VB.NET but may or may not 
+  /// work for components/forms developed in other languages depending on how the language 
+  /// handles resource naming and serialization.
+  /// </remarks>
+  [ToolboxItem(true)]
     public class CultureManager : Component
     {
 
