@@ -42,15 +42,15 @@
       // 
       // ContextMenuEdit
       // 
-      resources.ApplyResources(this.ContextMenuEdit, "ContextMenuEdit");
       this.ContextMenuEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionUndo,
             this.ActionRedo,
             this.Separator,
-            this.ActionCopy,
             this.ActionCut,
+            this.ActionCopy,
             this.ActionPaste});
       this.ContextMenuEdit.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuEdit, "ContextMenuEdit");
       this.ContextMenuEdit.Opened += new System.EventHandler(this.ContextMenuEdit_Opened);
       // 
       // ActionUndo
@@ -65,8 +65,8 @@
       // 
       // Separator
       // 
-      resources.ApplyResources(this.Separator, "Separator");
       this.Separator.Name = "Separator";
+      resources.ApplyResources(this.Separator, "Separator");
       // 
       // ActionCopy
       // 
@@ -85,7 +85,6 @@
       // 
       // UndoRedoTextBox
       // 
-      resources.ApplyResources(this, "$this");
       this.ContextMenuStrip = this.ContextMenuEdit;
       this.TextChanged += new System.EventHandler(this.TextChangedEvent);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDownEvent);
