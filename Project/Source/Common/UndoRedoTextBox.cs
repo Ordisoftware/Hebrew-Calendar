@@ -56,10 +56,7 @@ namespace Ordisoftware.HebrewCommon
           if ( !SetTextMutex )
           {
             SetTextMutex = true;
-            Previous.Set(Text, SelectionStart);
-            UndoStack.Push(Previous);
-            if ( RedoStack.Count > 0 )
-              RedoStack.Clear();
+            AddUndo();
           }
           base.Text = value;
           SetCaret(0, value.Length);
@@ -88,10 +85,7 @@ namespace Ordisoftware.HebrewCommon
           if ( !SetTextMutex )
           {
             SetTextMutex = true;
-            Previous.Set(Text, SelectionStart);
-            UndoStack.Push(Previous);
-            if ( RedoStack.Count > 0 )
-              RedoStack.Clear();
+            AddUndo();
           }
           int selectionStart = SelectionStart;
           base.SelectedText = value;
@@ -121,6 +115,14 @@ namespace Ordisoftware.HebrewCommon
       ActionCopy.Enabled = SelectedText != "";
       ActionCut.Enabled = ActionCopy.Enabled;
       ActionPaste.Enabled = Clipboard.GetText() != "";
+    }
+
+    private void AddUndo()
+    {
+      Previous.Set(Text, SelectionStart);
+      UndoStack.Push(Previous);
+      if ( RedoStack.Count > 0 )
+        RedoStack.Clear();
     }
 
     private void SetCaret(int pos, int length)
