@@ -1148,5 +1148,16 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["DebuggerEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime VacuumLastDone {
+            get {
+                return ((global::System.DateTime)(this["VacuumLastDone"]));
+            }
+            set {
+                this["VacuumLastDone"] = value;
+            }
+        }
     }
 }

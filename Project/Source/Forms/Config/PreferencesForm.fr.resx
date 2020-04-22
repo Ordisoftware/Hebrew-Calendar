@@ -362,7 +362,7 @@
     <value>306, 17</value>
   </data>
   <data name="EditMonthViewSunToolTips.Text" xml:space="preserve">
-    <value>Afficher les levers et couchers du soleil dans la vue du mois</value>
+    <value>Afficher levers et couchers soleil dans vue du mois</value>
   </data>
   <data name="GroupBoxMonth.Text" xml:space="preserve">
     <value>Vue du mois</value>
@@ -423,7 +423,7 @@
     <value>233, 17</value>
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
-    <value>Optimiser la base de données au démarrage</value>
+    <value>Optimiser BD au démarrage chaque semaine</value>
   </data>
   <data name="ActionSelectLangFR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

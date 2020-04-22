@@ -133,6 +133,7 @@
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+      this.checkBox1 = new System.Windows.Forms.CheckBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -920,6 +921,7 @@
       this.GroupBoxSystem.Controls.Add(this.EditShowReminderInTaskBar);
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
+      this.GroupBoxSystem.Controls.Add(this.checkBox1);
       this.GroupBoxSystem.Controls.Add(this.EditMonthViewSunToolTips);
       resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
@@ -989,6 +991,12 @@
       // OpenFileDialog
       // 
       resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
+      // 
+      // checkBox1
+      // 
+      resources.ApplyResources(this.checkBox1, "checkBox1");
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.UseVisualStyleBackColor = true;
       // 
       // PreferencesForm
       // 
@@ -1144,5 +1152,6 @@
     private System.Windows.Forms.Button ActionSelectHebrewLettersPath;
     private System.Windows.Forms.TextBox EditHebrewLettersPath;
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
+    private System.Windows.Forms.CheckBox checkBox1;
   }
 }
