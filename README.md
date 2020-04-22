@@ -140,7 +140,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Add menu for web links about judaism.
 - Add option to auto optimize database at startup.
 - Add option to enable debugger.
-- Add debugger (exception information form).
+- Add debugger (exception information form with GitHub issue creation).
 - Improve UI/UX.
 - Code refactoring.
 - Update help.
