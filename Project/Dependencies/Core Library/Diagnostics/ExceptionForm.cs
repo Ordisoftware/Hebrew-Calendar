@@ -194,7 +194,7 @@ namespace Ordisoftware.Core.Windows.Forms
       if ( _ErrorInfo == null ) return;
       TopMost = false;
       string query = "?title=" + _ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion
-                   + "&labels=type:+bug"
+                   + "&labels=type: bug"
                    + "&assignees=" + Globals.AssemblyCompany
                    + "&body=";
       string body = "## USER COMMENT" + Environment.NewLine + Environment.NewLine
