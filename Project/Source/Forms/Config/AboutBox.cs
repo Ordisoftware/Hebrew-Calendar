@@ -80,7 +80,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Link label link clicked event information.</param>
     private void labelIconsProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      SystemManager.OpenWebLink(((LinkLabel)sender).Text);
+      SystemHelper.OpenWebLink(((LinkLabel)sender).Text);
     }
 
     /// <summary>
@@ -100,7 +100,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Link clicked event information.</param>
     private void editLicense_LinkClicked(object sender, LinkClickedEventArgs e)
     {
-      Process.Start(e.LinkText);
+      SystemHelper.OpenWebLink(e.LinkText);
     }
 
   }

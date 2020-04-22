@@ -104,7 +104,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the GitHub issues page.
     /// </summary>
     static public string GitHubIssuesURL
-      = GitHubRepositoryURL + "/issues";
+      = GitHubRepositoryURL + "/issues/new";
 
     /// <summary>
     /// Indicate the extension of database files.
@@ -127,7 +127,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the filename of the application's icon.
     /// </summary>
-    static public readonly string IconFilename
+    static public readonly string ApplicationIconFilename
       = RootFolderPath + "Application.ico";
 
     /// <summary>
@@ -226,15 +226,15 @@ namespace Ordisoftware.HebrewCommon
       = WebProvidersFolderPath + "OnlineWordProviders.txt";
 
     /// <summary>
-    /// Indicate the online search a word providers.
-    /// </summary>
-    static public OnlineProviders OnlineWordProviders { get; private set; }
-
-    /// <summary>
     /// Indicate the filename of the online search word providers.
     /// </summary>
     static public readonly string OnlineBibleProvidersFileName
       = WebProvidersFolderPath + "OnlineBibleProviders.txt";
+
+    /// <summary>
+    /// Indicate the online search a word providers.
+    /// </summary>
+    static public OnlineProviders OnlineWordProviders { get; private set; }
 
     /// <summary>
     /// Indicate the online bible verse providers.
@@ -242,9 +242,9 @@ namespace Ordisoftware.HebrewCommon
     static public OnlineProviders OnlineBibleProviders { get; private set; }
 
     /// <summary>
-    /// Indicate the online links providers.
+    /// Indicate the web links providers.
     /// </summary>
-    static public readonly List<OnlineProviders> OnlineLinksProviders
+    static public readonly List<OnlineProviders> WebLinksProviders
       = new List<OnlineProviders>();
 
     /// <summary>
@@ -255,10 +255,9 @@ namespace Ordisoftware.HebrewCommon
     {
       OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName);
       OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName);
-      OnlineLinksProviders.Clear();
       if ( Directory.Exists(WebLinksFolderPath) )
         foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
-          OnlineLinksProviders.Add(new OnlineProviders(file));
+          WebLinksProviders.Add(new OnlineProviders(file));
     }
 
     #region Assembly information

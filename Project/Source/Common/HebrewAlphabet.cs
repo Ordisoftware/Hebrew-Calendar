@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewCommon
   {
 
     /// <summary>
-    /// Indicate letters keyboard codes.
+    /// Indicate letters keyboard codes for hebrew font.
     /// </summary>
     static public readonly string[] Codes =
     {
@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewCommon
     };
 
     /// <summary>
-    /// Indicate final letters disabled keys values.
+    /// Indicate final letters disabled keyboard codes for hebrew font.
     /// </summary>
     static private readonly Dictionary<char, char> FinalDisable = new Dictionary<char, char>()
     {
@@ -44,7 +44,7 @@ namespace Ordisoftware.HebrewCommon
     };
 
     /// <summary>
-    /// Indicate final letters enabled keys values.
+    /// Indicate final letters enabled keyboard codes for hebrew font.
     /// </summary>
     static private Dictionary<char, char> FinalEnable = new Dictionary<char, char>()
     {
@@ -52,8 +52,28 @@ namespace Ordisoftware.HebrewCommon
     };
 
     /// <summary>
+    /// Indicate letters simple values.
+    /// </summary>
+    static public readonly int[] ValuesSimple =
+    {
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20,
+      30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400
+    };
+
+    /// <summary>
+    /// Indicate letters full values.
+    /// </summary>
+    static public readonly int[] ValuesFull =
+    {
+      111, 412, 83, 434, 6, 12, 67, 418, 419, 20, 100,
+      74, 90, 106, 120, 130, 81, 104, 186, 510, 360, 406
+    };
+
+    /// <summary>
     /// Set final letter.
     /// </summary>
+    /// <param name="str">The word in hebrew font chars.</param>
+    /// <param name="enable">On else off</param>
     static public string SetFinal(string str, bool enable)
     {
       var array = enable ? FinalEnable : FinalDisable;
@@ -73,6 +93,8 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Convert all final letters to non final.
     /// </summary>
+    /// <param name="str">The sentence having some words.</param>
+    /// <returns></returns>
     static public string UnFinalAll(string str)
     {
       foreach ( var v in FinalDisable )
@@ -81,7 +103,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Returns only allowed chars for hebrew font.
+    /// Return only allowed chars for hebrew font.
     /// </summary>
     static public string OnlyHebrewFont(string str)
     {
@@ -195,38 +217,22 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Indicate letters simple values.
-    /// </summary>
-    static public readonly int[] ValuesSimple =
-    {
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20,
-      30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400
-    };
-
-    /// <summary>
-    /// Indicate letters full values.
-    /// </summary>
-    static public readonly int[] ValuesFull =
-    {
-      111, 412, 83, 434, 6, 12, 67, 418, 419, 20, 100,
-      74, 90, 106, 120, 130, 81, 104, 186, 510, 360, 406
-    };
-
-    /// <summary>
-    /// Indicate letters names in phonetic.
+    /// Indicate phonetic letters names.
     /// </summary>
     static public readonly Dictionary<string, string[]> Names
       = new Dictionary<string, string[]>()
       {
         {
           "en", new string[]
-          { "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
+          {
+            "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
             "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
           }
         },
         {
           "fr", new string[]
-          { "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
+          {
+            "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
             "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
           }
         }

@@ -10,7 +10,7 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2020-03 </created>
+/// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
 using System.Collections.Generic;
@@ -93,15 +93,15 @@ namespace Ordisoftware.HebrewCommon
       = new Dictionary<string, string>()
       {
         { "en", "Database upgraded." + NewLine + NewLine +
-                "Do you want to open the parameters page to check them?" },
+                "Do you want check the parameters?" },
         { "fr", "La base de données a été mise à jour." + NewLine + NewLine +
-                "Voulez-vous ouvrir la page des paramètres pour les vérifier ?" }
+                "Voulez-vous vérifier les paramètres ?" }
       };
 
     static public readonly Dictionary<string, string> AskToRestoreWindowPosition
       = new Dictionary<string, string>()
       {
-        { "en", "This action will restore windows position." + NewLine + NewLine +
+        { "en", "This action will restore the window position." + NewLine + NewLine +
                 "Do you want to continue?" },
         { "fr", "Cette action va restaurer la position de la fenêtre."  + NewLine + NewLine +
                 "Voulez-vous continuer ?" }
@@ -119,11 +119,11 @@ namespace Ordisoftware.HebrewCommon
     static public readonly Dictionary<string, string> ErrorInFile
       = new Dictionary<string, string>()
       {
-        { "en", "Error in {0}" + Environment.NewLine + Environment.NewLine +
-                "Line n° {1]" + Environment.NewLine + Environment.NewLine +
+        { "en", "Error in {0}" + NewLine + NewLine +
+                "Line n° {1]" + NewLine + NewLine +
                 "{2}" },
-        { "fr", "Erreur dans {0}" + Environment.NewLine + Environment.NewLine +
-                "Ligne n° {1}" + Environment.NewLine + Environment.NewLine +
+        { "fr", "Erreur dans {0}" + NewLine + NewLine +
+                "Ligne n° {1}" + NewLine + NewLine +
                 "{2}" }
       };
 
@@ -155,6 +155,17 @@ namespace Ordisoftware.HebrewCommon
                 "Check preferences." + NewLine + NewLine +
                 "Do you want to download it?" },
         { "fr", "Hebrew Letters n'a pas été trouvé." + NewLine +
+                "Vérifiez les préférences." + NewLine + NewLine +
+                "Voulez-vous le télécharger ?" }
+      };
+
+    static public readonly Dictionary<string, string> AskToDownloadHebrewWOrds
+      = new Dictionary<string, string>()
+      {
+        { "en", "Hebrew Words not found." + NewLine +
+                "Check preferences." + NewLine + NewLine +
+                "Do you want to download it?" },
+        { "fr", "Hebrew Words n'a pas été trouvé." + NewLine +
                 "Vérifiez les préférences." + NewLine + NewLine +
                 "Voulez-vous le télécharger ?" }
       };

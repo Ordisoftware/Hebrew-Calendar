@@ -44,7 +44,8 @@ namespace Ordisoftware.HebrewCommon
               if ( str != "ok" ) errors.Add(str);
             }
           if ( errors.Count > 0 )
-            DisplayManager.ShowError("SQLite Database has errors:" + Environment.NewLine + Environment.NewLine +
+            DisplayManager.ShowError("SQLite database has errors:" + Environment.NewLine + 
+                                     Environment.NewLine +
                                      string.Join(Environment.NewLine, errors));
         }
       }
@@ -64,7 +65,8 @@ namespace Ordisoftware.HebrewCommon
         using ( var sql = connection.CreateCommand() )
         {
           sql.CommandText = "VACUUM;";
-          sql.ExecuteNonQuery();
+          if ( sql.ExecuteNonQuery() != 0 )
+            DisplayManager.ShowError("SQLite database vacuum failed.");
         }
       }
       catch ( Exception ex )
@@ -79,6 +81,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="date">The date.</param>
     static public string GetDate(DateTime date)
     {
+      if ( date == null ) return "";
       return $"{date.Year.ToString("0000")}-{date.Month.ToString("00")}-{date.Day.ToString("00")}";
     }
 
@@ -99,6 +102,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="date">The date.</param>
     static public DateTime GetDate(string date)
     {
+      if ( string.IsNullOrEmpty(date) ) return DateTime.Now;
       string[] items = date.Split('-');
       return new DateTime(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]), Convert.ToInt32(items[2]));
     }

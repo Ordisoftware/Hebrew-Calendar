@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewCommon
     static public void CreateWebLinksMenuItems(ToolStripDropDownButton menuRoot, Image imageFolder)
     {
       menuRoot.DropDownItems.Clear();
-      foreach ( var items in Globals.OnlineLinksProviders )
+      foreach ( var items in Globals.WebLinksProviders )
         if ( items.Items.Count > 0 )
         {
           string title = items.Title.GetLang();
@@ -75,7 +75,7 @@ namespace Ordisoftware.HebrewCommon
               foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
                 if ( item.Tag != null )
                 {
-                  SystemManager.OpenWebLink((string)item.Tag);
+                  SystemHelper.OpenWebLink((string)item.Tag);
                   Thread.Sleep(1000);
                 }
             };
@@ -86,7 +86,7 @@ namespace Ordisoftware.HebrewCommon
             menu.DropDownItems.Add(item.CreateMenuItem((sender, e) =>
             {
               string url = (string)( (ToolStripItem)sender ).Tag;
-              SystemManager.OpenWebLink(url);
+              SystemHelper.OpenWebLink(url);
             }));
         }
     }

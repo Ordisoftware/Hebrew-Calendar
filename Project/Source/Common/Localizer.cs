@@ -54,8 +54,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Get the string translation.
     /// </summary>
-    /// <param name="values">The dictionary containing langs>translations.</param>
-    /// <returns></returns>
+    /// <param name="values">The dictionary containing lang>translation.</param>
     static public string GetLang(this Dictionary<string, string> values)
     {
       return values != null && values.ContainsKey(Language) ? values[Language] : "";
@@ -64,20 +63,17 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Get the string translation.
     /// </summary>
-    /// <param name="values">The dictionary containing langs>translations.</param>
-    /// <param name="parameters">Parameters for the string.</param>
-    /// <returns></returns>
+    /// <param name="values">The dictionary containing lang>translation.</param>
+    /// <param name="parameters">Parameters for the translated string.</param>
     static public string GetLang(this Dictionary<string, string> values, params object[] parameters)
     {
-      if ( values == null ) return "";
-      return string.Format(values.GetLang(), parameters);
+      return values != null ? string.Format(values.GetLang(), parameters) : "";
     }
 
     /// <summary>
     /// Get the string list translation.
     /// </summary>
-    /// <param name="values">The dictionary containing langs>translations.</param>
-    /// <returns></returns>
+    /// <param name="values">The dictionary containing lang>translations.</param>
     static public string[] GetLang(this Dictionary<string, string[]> values)
     {
       return values != null && values.ContainsKey(Language) ? values[Language] : new string[0];
@@ -87,9 +83,8 @@ namespace Ordisoftware.HebrewCommon
     /// Get the string translation.
     /// </summary>
     /// <typeparam name="T">The type.</typeparam>
-    /// <param name="values">The dictionary containing values>langs>translations.</param>
+    /// <param name="values">The dictionary containing value>lang>translation.</param>
     /// <param name="value">The value to translate.</param>
-    /// <returns></returns>
     static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
       return values != null && values.ContainsKey(value)
@@ -101,9 +96,8 @@ namespace Ordisoftware.HebrewCommon
     /// Get the string translation.
     /// </summary>
     /// <typeparam name="T">The type.</typeparam>
-    /// <param name="values">The dictionary containing langs>values>translations.</param>
+    /// <param name="values">The dictionary containing lang>value>translation.</param>
     /// <param name="value">The value to translate.</param>
-    /// <returns></returns>
     static public string GetLang<T>(this Dictionary<string, Dictionary<T, string>> values, T value)
     {
       return values != null && values.ContainsKey(Language)
@@ -112,7 +106,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Remove diacritics letters.
+    /// Remove diacritics signs.
     /// </summary>
     public static string RemoveDiacritics(this string text)
     {

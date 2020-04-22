@@ -36,16 +36,24 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Application mutex to allow only one process instance.
     /// </summary>
-    static private Mutex Mutex;
+    static private Mutex ApplicationMutex;
 
     /// <summary>
     /// Check if the process is already running.
     /// </summary>
     static public bool CheckApplicationOnlyOneInstance()
     {
-      bool created;
-      Mutex = new Mutex(true, Globals.AssemblyGUID, out created);
-      return created;
+      try
+      {
+        bool created;
+        ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out created);
+        return created;
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+        return false;
+      }
     }
 
     /// <summary>
@@ -53,31 +61,38 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void CheckSettingsUpgrade(ApplicationSettingsBase settings, ref bool upgradeRequired)
     {
-      if ( upgradeRequired )
+      try
       {
-        settings.Upgrade();
-        upgradeRequired = false;
-        settings.Save();
+        if ( upgradeRequired )
+        {
+          settings.Upgrade();
+          upgradeRequired = false;
+          settings.Save();
+        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
       }
     }
 
     /// <summary>
     /// Check command line arguments and apply them.
     /// </summary>
-    static public void CheckCommandLineArguments(string[] args, ref string language, ApplicationSettingsBase settings)
+    static public void CheckCommandLineArguments(string[] args, ref string language)
     {
-      CommandLineArguments = args;
       try
       {
+        CommandLineArguments = args;
         if ( args.Length == 2 && args[0] == "/lang" )
           if ( args[1] == "en" || args[1] == "fr" )
             language = args[1];
         if ( language == "" )
           language = Localizer.Language;
-        settings.Save();
       }
-      catch
+      catch ( Exception ex )
       {
+        ex.Manage();
       }
     }
 
@@ -91,11 +106,18 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
     {
-      foreach ( Control control in controls )
+      try
       {
-        if ( control is Label )
-          resources.ApplyResources(control, control.Name);
-        ApplyResources(resources, control.Controls);
+        foreach ( Control control in controls )
+        {
+          if ( control is Label )
+            resources.ApplyResources(control, control.Name);
+          ApplyResources(resources, control.Controls);
+        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
       }
     }
 
@@ -115,20 +137,69 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <param name="filename">The filename.</param>
     /// <param name="arguments">The comamnd line arguments.</param>
-    static public void RunShell(string filename, string arguments = "")
+    static public Process RunShell(string filename, string arguments = "")
     {
-      using ( var process = new Process() )
-        try
-        {
-          process.StartInfo.FileName = filename;
-          process.StartInfo.Arguments = arguments;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          DisplayManager.ShowError(ex.Message + Environment.NewLine + Environment.NewLine +
-                                   process.StartInfo.FileName);
-        }
+      var process = new Process();
+      try
+      {
+        process.StartInfo.FileName = filename;
+        process.StartInfo.Arguments = arguments;
+        process.Start();
+        return process;
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(ex.Message + Environment.NewLine + Environment.NewLine +
+                                 process.StartInfo.FileName);
+        return null;
+      }
+    }
+
+    /// <summary>
+    /// Add "http://" to a string if it does not start with http:// or https://.
+    /// </summary>
+    /// <param name="link">The link.</param>
+    /// <returns>
+    /// The browsable link.
+    /// </returns>
+    static public string MakeWebLink(string link)
+    {
+      if ( !link.StartsWith("http://") && !link.StartsWith("https://") )
+        link = "http://" + link;
+      return link;
+    }
+
+
+    /// <summary>
+    /// Open a web link.
+    /// </summary>
+    /// <param name="link">The link.</param>
+    static public void OpenWebLink(string link)
+    {
+      RunShell(MakeWebLink(link));
+    }
+
+    /// <summary>
+    /// Add "mailto:" to a string if it does not start with "mailto:".
+    /// </summary>
+    /// <param name="link">The link.</param>
+    /// <returns>
+    /// The openable mail link.
+    /// </returns>
+    static public string MakeMailLink(string link)
+    {
+      if ( !link.StartsWith("mailto:") )
+        link = "mailto:" + link;
+      return link;
+    }
+
+    /// <summary>
+    /// Open a mail link.
+    /// </summary>
+    /// <param name="link">The mail address.</param>
+    static public void OpenMailLink(string link)
+    {
+      RunShell(MakeMailLink(link));
     }
 
     /// <summary>
@@ -136,7 +207,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void OpenApplicationHome()
     {
-      SystemManager.OpenWebLink(Globals.ApplicationHomeURL);
+      OpenWebLink(Globals.ApplicationHomeURL);
     }
 
     /// <summary>
@@ -144,7 +215,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void OpenAuthorHome()
     {
-      SystemManager.OpenWebLink(Globals.AuthorHomeURL);
+      OpenWebLink(Globals.AuthorHomeURL);
     }
 
     /// <summary>
@@ -152,7 +223,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void OpenContactPage()
     {
-      SystemManager.OpenWebLink(Globals.ContactURL);
+      OpenWebLink(Globals.ContactURL);
     }
 
     /// <summary>
@@ -160,7 +231,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void OpenGitHibIssuesPage()
     {
-      SystemManager.OpenWebLink(Globals.GitHubIssuesURL);
+      OpenWebLink(Globals.GitHubIssuesURL);
     }
 
     /// <summary>
@@ -187,7 +258,7 @@ namespace Ordisoftware.HebrewCommon
                                          Environment.NewLine +
                                          Globals.AskToDownloadNewVersion.GetLang()) )
           {
-            SystemManager.OpenWebLink(Globals.DownloadApplicationURL);
+            OpenWebLink(Globals.DownloadApplicationURL);
             if ( auto )
             {
               Globals.IsExiting = true;

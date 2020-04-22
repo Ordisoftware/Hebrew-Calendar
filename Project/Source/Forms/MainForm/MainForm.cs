@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewCalendar
       InitializeComponent();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      try { Icon = Icon.ExtractAssociatedIcon(Globals.IconFilename); }
+      try { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilename); }
       catch { }
       Globals.AllowClose = false;
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
@@ -541,7 +541,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
       string url = (string)( (ToolStripItem)sender ).Tag;
-      SystemManager.OpenWebLink(url);
+      SystemHelper.OpenWebLink(url);
     }
 
     /// <summary>

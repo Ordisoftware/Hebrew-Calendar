@@ -61,6 +61,7 @@ namespace Ordisoftware.HebrewCommon
     internal void HTMLBrowserForm_Shown(object sender, EventArgs e)
     {
       if ( Title != null ) Text = Title.GetLang();
+      if ( FilenameTemplate == null ) return;
       string filename = FilenameTemplate.Replace("%LANG%", Localizer.Language);
       if ( File.Exists(filename) )
         WebBrowser.Navigate(filename);
