@@ -197,24 +197,24 @@ namespace Ordisoftware.Core.Windows.Forms
                    + "&labels=type:+bug"
                    + "&assignees=" + Globals.AssemblyCompany
                    + "&body=";
-      string body = "--------------------------------------------------------------------------------" + Environment.NewLine
-                  + "EXCEPTION : " + _ErrorInfo.Instance.GetType().Name + Environment.NewLine
-                  + "--------------------------------------------------------------------------------" + Environment.NewLine
+      string body = "## USER COMMENT" + Environment.NewLine + Environment.NewLine
+                  + "Describe here what you did, what you expected and what happened." + Environment.NewLine + Environment.NewLine
+                  + "## ERROR : " + _ErrorInfo.Instance.GetType().Name + Environment.NewLine + Environment.NewLine
                   + _ErrorInfo.Message + Environment.NewLine + Environment.NewLine
+                  + "#### _STACK_" + Environment.NewLine + Environment.NewLine
                   + _ErrorInfo.StackText;
       ExceptionInfo inner = _ErrorInfo.InnerInfo;
       while ( inner != null )
       {
         body = body + Environment.NewLine + Environment.NewLine
-             + "--------------------------------------------------------------------------------" + Environment.NewLine
-             + "INNER : " + inner.Instance.GetType().Name + Environment.NewLine
-             + "--------------------------------------------------------------------------------" + Environment.NewLine
+             + "## INNER : " + inner.Instance.GetType().Name + Environment.NewLine + Environment.NewLine
              + inner.Message + Environment.NewLine + Environment.NewLine
+             + "#### _STACK_" + Environment.NewLine + Environment.NewLine
              + inner.StackText;
         inner = inner.InnerInfo;
       }
       query += body;
-      query = query.Replace(" ", "%20").Replace("+", "%2B").Replace(Environment.NewLine, "%0A");
+      query = query.Replace(" ", "%20").Replace("+", "%2B").Replace("#", "%23").Replace(Environment.NewLine, "%0A");
       SystemHelper.OpenGitHibIssuesPage(query);
       /*string email = SystemManager.User.UserMail;
       if ( email.IsNullOrEmpty() )
