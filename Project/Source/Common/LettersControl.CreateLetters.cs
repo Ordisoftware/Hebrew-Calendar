@@ -40,6 +40,7 @@ namespace Ordisoftware.HebrewCommon
         int x = 500 + dx;
         int y = 5;
         int n = 1;
+        int delta;
         var colorLabel = Color.DimGray;
         var sizeLabelValue = new Size(45, 8);
         var sizeLabelKey = new Size(45, 13);
@@ -66,7 +67,8 @@ namespace Ordisoftware.HebrewCommon
           labelKey = new Label();
           if ( _ShowKeys )
           {
-            labelKey.Location = new Point(x, y + dy + ( _ShowValues ? labelValue.Height : -2 ) + 2);
+            delta = ( _ShowValues ? labelValue.Height : -2 );
+            labelKey.Location = new Point(x, y + dy + delta + 2);
             labelKey.Size = sizeLabelKey;
             labelKey.Text = HebrewAlphabet.Codes[index];
             labelKey.ForeColor = colorLabel;
@@ -94,11 +96,15 @@ namespace Ordisoftware.HebrewCommon
           else
           {
             x = 500 + dx;
-            y += dy + ( _ShowValues ? labelValue.Height : -2 ) + ( _ShowKeys ? labelKey.Height : -2 ) + 15;
+            y = y + dy + 15
+              + ( _ShowValues ? labelValue.Height : -2 )
+              + ( _ShowKeys ? labelKey.Height : -2 );
           }
         }
-        Height = y + dy + ( _ShowValues ? labelValue.Height : -2 ) + ( _ShowKeys ? labelKey.Height : -2 ) + 15
-               + PanelSeparator.Height + Input.Height + 2;
+        Height = y + dy + 15
+               + PanelSeparator.Height + Input.Height + 2
+               + ( _ShowValues ? labelValue.Height : -2 )
+               + ( _ShowKeys ? labelKey.Height : -2 );
       }
       catch ( Exception ex )
       {
