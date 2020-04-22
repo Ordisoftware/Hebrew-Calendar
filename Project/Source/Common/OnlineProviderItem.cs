@@ -27,7 +27,9 @@ namespace Ordisoftware.HebrewCommon
   public class OnlineProviderItem
   {
 
-    static private readonly Dictionary<string, Image> LanguageImages;
+    static public readonly Dictionary<string, Image> LanguageImages;
+
+    static public readonly Image FolderImage;
 
     static OnlineProviderItem()
     {
@@ -43,9 +45,10 @@ namespace Ordisoftware.HebrewCommon
           return null;
         }
       };
+      FolderImage = createImage("folder_vertical_open.png");
       LanguageImages = new Dictionary<string, Image>()
       {
-        { "(NONE)", createImage("flag_none.png") },
+        { "(NONE)", createImage("web_layout.png") },
         { "(FR)", createImage("flag_france.png") },
         { "(EN)", createImage("flag_great_britain.png") },
         { "(IW)", createImage("flag_israel.png") },
@@ -72,13 +75,19 @@ namespace Ordisoftware.HebrewCommon
 
     public OnlineProviderItem(string name, string url = "", Image image = null)
     {
-      foreach ( var flag in LanguageImages )
-        if ( name.StartsWith(flag.Key) )
+      if ( name[0] == '(' )
+      {
+        int pos = name.IndexOf(')');
+        if ( pos >= 3 )
         {
-          name = name.Replace(flag.Key, "").Trim();
-          image = flag.Value;
-          break;
+          string lang = name.Substring(0, pos + 1);
+          if ( LanguageImages.ContainsKey(lang) )
+          {
+            name = name.Substring(pos);
+            image = LanguageImages[lang];
+          }
         }
+      }
       Name = name.Trim();
       URL = url.Trim();
       Image = image;

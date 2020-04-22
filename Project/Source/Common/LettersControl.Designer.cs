@@ -82,8 +82,8 @@
     }
 
     #endregion
-    public System.Windows.Forms.Panel PanelLetters;
-    public UndoRedoTextBox Input;
     private System.Windows.Forms.Panel PanelSeparator;
+    private System.Windows.Forms.Panel PanelLetters;
+    private UndoRedoTextBox Input;
   }
 }

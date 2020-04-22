@@ -61,11 +61,11 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Create providers and web links menu items.
+    /// Create web links menu items.
     /// </summary>
-    internal void CreateProvidersAndWebLinks()
+    internal void CreateWebLinks()
     {
-      OnlineProviders.CreateWebLinksMenuItems(MenuWebLinks, ActionOpenWebLinkTemplateFolder.Image);
+      MenuWebLinks.InitializeFromWebLinks();
     }
 
     /// <summary>

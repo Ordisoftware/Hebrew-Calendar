@@ -26,6 +26,9 @@ namespace Ordisoftware.HebrewCommon
   public partial class OnlineProviders
   {
 
+    private const string TagName = "Name = ";
+    private string TagURL = "URL = ";
+
     /// <summary>
     /// Indicate items.
     /// </summary>
@@ -34,21 +37,19 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the multilingual title of the list to create a folder
     /// </summary>
-    private readonly Dictionary<string, string> Title = new Dictionary<string, string>();
+    public readonly Dictionary<string, string> Title = new Dictionary<string, string>();
 
     /// <summary>
     /// Indicate if a separator must be inserted before the folder
     /// </summary>
-    private readonly bool SeparatorBeforeFolder;
+    public readonly bool SeparatorBeforeFolder;
 
     /// <summary>
     /// Static constructor.
     /// </summary>
     public OnlineProviders(string filename, bool showFileNotFound = true)
     {
-      string tagName = "Name = ";
-      string tagURL = "URL = ";
-      //var separator = new string[] { " = " };
+      string name;
       Items = new List<OnlineProviderItem>();
       if ( !File.Exists(filename) )
       {
@@ -66,10 +67,8 @@ namespace Ordisoftware.HebrewCommon
             DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index, lines[index]));
           };
           string line = lines[index].Trim();
-          if ( line == "" )
-            continue;
-          if ( line.StartsWith(";") )
-            continue;
+          if ( line == "" ) continue;
+          if ( line.StartsWith(";") ) continue;
           if ( line.StartsWith("FOLDER-SEPARATOR") )
             SeparatorBeforeFolder = true;
           else
@@ -85,18 +84,17 @@ namespace Ordisoftware.HebrewCommon
               showError();
           }
           else
-          if ( line.StartsWith(tagName) )
+          if ( line.StartsWith(TagName) )
           {
-            string name = line.Substring(tagName.Length);
-            index++;
-            if ( index >= lines.Length )
+            name = line.Substring(TagName.Length);
+            if ( ++index >= lines.Length )
             {
               showError();
               break;
             }
             line = lines[index].Trim();
-            if ( line.StartsWith(tagURL) )
-              Items.Add(new OnlineProviderItem(name, line.Substring(tagURL.Length)));
+            if ( line.StartsWith(TagURL) )
+              Items.Add(new OnlineProviderItem(name, line.Substring(TagURL.Length)));
             else
               showError();
           }

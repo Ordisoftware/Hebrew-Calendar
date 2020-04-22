@@ -127,16 +127,25 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Input Text property.
     /// </summary>
-    public new string InputText
+    public string InputText
     {
       get { return Input.Text; }
       set { Input.Text = value; }
     }
 
     /// <summary>
+    /// Input Text property.
+    /// </summary>
+    public int InputTextSelectionStart
+    {
+      get { return Input.SelectionStart; }
+      set { Input.SelectionStart = value; }
+    }
+
+    /// <summary>
     /// Input Text changed event.
     /// </summary>
-    public new event EventHandler InputTextChanged
+    public event EventHandler InputTextChanged
     {
       add { Input.TextChanged += value; }
       remove { Input.TextChanged -= value; }
