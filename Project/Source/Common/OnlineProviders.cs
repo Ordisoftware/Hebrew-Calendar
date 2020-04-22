@@ -64,7 +64,7 @@ namespace Ordisoftware.HebrewCommon
         {
           Action showError = () =>
           {
-            DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index, lines[index]));
+            DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index + 1, lines[index]));
           };
           string line = lines[index].Trim();
           if ( line == "" ) continue;
