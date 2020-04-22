@@ -162,7 +162,8 @@ namespace Ordisoftware.HebrewCommon
     public LettersControl()
     {
       InitializeComponent();
-      InputMaxLength = 20;
+      Input.CaretAfterPaste = TextBoxCaretAfterPaste.Start;
+      Input.MaxLength = 20;
     }
 
     private void LettersControl_Load(object sender, EventArgs e)

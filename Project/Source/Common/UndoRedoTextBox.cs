@@ -19,7 +19,13 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
-  public delegate void TextChangingEventHandler(object sender, ref string text);
+  public delegate void InsertingTextEventHandler(object sender, ref string text);
+
+  public enum TextBoxCaretAfterPaste
+  {
+    Start,
+    End
+  }
 
   public partial class UndoRedoTextBox : TextBox
   {
@@ -27,30 +33,47 @@ namespace Ordisoftware.HebrewCommon
     private Stack<UndoRedoItem> UndoStack = new Stack<UndoRedoItem>();
     private Stack<UndoRedoItem> RedoStack = new Stack<UndoRedoItem>();
     private UndoRedoItem Previous = new UndoRedoItem();
-    private bool Mutex;
+    private bool SetTextMutex;
 
-    public event TextChangingEventHandler TextChanging;
+    public event InsertingTextEventHandler InsertingText;
+
+    public TextBoxCaretAfterPaste CaretAfterPaste { get; set; } = TextBoxCaretAfterPaste.End;
 
     public override string Text
     {
       get { return base.Text; }
       set
       {
-        if ( Text == value ) return;
-        if ( TextChanging != null ) TextChanging(this, ref value);
-        if ( !Mutex )
+        if ( Text == value )
+          return;
+        if ( InsertingText != null )
+          InsertingText(this, ref value);
+        try
         {
-          Mutex = true;
-          Previous.Set(Text, SelectionStart);
-          UndoStack.Push(Previous);
-          if ( RedoStack.Count > 0 ) RedoStack.Clear();
+          if ( !SetTextMutex )
+          {
+            SetTextMutex = true;
+            Previous.Set(Text, SelectionStart);
+            UndoStack.Push(Previous);
+            if ( RedoStack.Count > 0 )
+              RedoStack.Clear();
+          }
           base.Text = value;
-          Mutex = false;
+          switch ( CaretAfterPaste )
+          {
+            case TextBoxCaretAfterPaste.Start:
+              SelectionStart = 0;
+              break;
+            case TextBoxCaretAfterPaste.End:
+              SelectionStart = Text.Length;
+              break;
+          }
+          SelectionLength = 0;
         }
-        else
-          base.Text = value;
-        SelectionStart = 0;
-        SelectionLength = 0;
+        finally
+        {
+          SetTextMutex = false;
+        }
       }
     }
 
@@ -59,19 +82,36 @@ namespace Ordisoftware.HebrewCommon
       get { return base.SelectedText; }
       set
       {
-        if ( SelectedText == value ) return;
-        if ( TextChanging != null ) TextChanging(this, ref value);
-        if ( !Mutex )
+        if ( SelectedText == value )
+          return;
+        if ( InsertingText != null )
+          InsertingText(this, ref value);
+        try
         {
-          Mutex = true;
-          Previous.Set(Text, SelectionStart);
-          UndoStack.Push(Previous);
-          if ( RedoStack.Count > 0 ) RedoStack.Clear();
+          if ( !SetTextMutex )
+          {
+            SetTextMutex = true;
+            Previous.Set(Text, SelectionStart);
+            UndoStack.Push(Previous);
+            if ( RedoStack.Count > 0 )
+              RedoStack.Clear();
+          }
+          int selectionStart = SelectionStart;
           base.SelectedText = value;
-          Mutex = false;
+          switch ( CaretAfterPaste )
+          {
+            case TextBoxCaretAfterPaste.Start:
+              SelectionStart = selectionStart;
+              break;
+            case TextBoxCaretAfterPaste.End:
+              SelectionStart = selectionStart + value.Length;
+              break;
+          }
         }
-        else
-          base.SelectedText = value;
+        finally
+        {
+          SetTextMutex = false;
+        }
       }
     }
 
@@ -96,7 +136,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void TextChangedEvent(object sender, EventArgs e)
     {
-      if ( Mutex ) return;
+      if ( SetTextMutex ) return;
       UndoStack.Push(Previous);
       RedoStack.Clear();
     }
@@ -159,37 +199,43 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionPaste_Click(object sender, EventArgs e)
     {
-      string str = Clipboard.GetText();
-      if ( TextChanging != null ) TextChanging(this, ref str);
-      if ( str == "" ) return;
-      if ( Text.Length + str.Length > MaxLength ) return;
-      int selectionStart = SelectionStart;
-      SelectedText = str;
-      SelectionStart = selectionStart;
+      SelectedText = Clipboard.GetText();
     }
 
     private void ActionUndo_Click(object sender, EventArgs e)
     {
       if ( UndoStack.Count == 0 ) return;
-      Mutex = true;
-      Previous.Set(Text, SelectionStart);
-      RedoStack.Push(new UndoRedoItem().Set(Text, SelectionStart));
-      var item = UndoStack.Pop();
-      Text = item.Text;
-      SelectionStart = item.SelectionStart;
-      Mutex = false;
+      try
+      {
+        SetTextMutex = true;
+        Previous.Set(Text, SelectionStart);
+        RedoStack.Push(new UndoRedoItem().Set(Text, SelectionStart));
+        var item = UndoStack.Pop();
+        Text = item.Text;
+        SelectionStart = item.SelectionStart;
+      }
+      finally
+      {
+        SetTextMutex = false;
+      }
     }
 
     private void ActionRedo_Click(object sender, EventArgs e)
     {
       if ( RedoStack.Count == 0 ) return;
-      Mutex = true;
-      UndoStack.Push(new UndoRedoItem().Set(Text, SelectionStart));
-      var item = RedoStack.Pop();
-      Text = item.Text;
-      SelectionStart = item.SelectionStart;
-      Previous.Set(Text, SelectionStart);
-      Mutex = false;
+      try
+      {
+        SetTextMutex = true;
+        UndoStack.Push(new UndoRedoItem().Set(Text, SelectionStart));
+        var item = RedoStack.Pop();
+        Text = item.Text;
+        SelectionStart = item.SelectionStart;
+        Previous.Set(Text, SelectionStart);
+      }
+      finally
+      {
+        SetTextMutex = false;
+      }
     }
 
   }
