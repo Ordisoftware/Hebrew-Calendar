@@ -15,6 +15,7 @@
 using System;
 using System.Data.Odbc;
 using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -27,48 +28,39 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     public void CreateDatabaseIfNotExists()
     {
-      var connection = new OdbcConnection(Program.Settings.ConnectionString);
-      connection.Open();
-      if ( Program.Settings.VacuumAtStartup )
-        Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone);
-      try
-      {
-        var cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                            "WHERE type = 'table' AND name = 'LunisolarDays'", connection);
-        int result = (int)cmdCheckTable.ExecuteScalar();
-        if ( result == 0 )
+      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
+        try
         {
-          var cmdCreateTable = new OdbcCommand(@"CREATE TABLE LunisolarDays (
-                                                 Date text,
-                                                 LunarMonth integer,
-                                                 LunarDay integer,
-                                                 Sunrise text,
-                                                 Sunset text,
-                                                 Moonrise text,
-                                                 Moonset text,
-                                                 MoonriseType integer,
-                                                 IsNewMoon integer,
-                                                 IsFullMoon integer,
-                                                 MoonPhase integer,
-                                                 SeasonChange integer,
-                                                 TorahEvents integer,
-                                                 PRIMARY KEY('Date')
-                                               );", connection);
-          cmdCreateTable.ExecuteNonQuery();
+          connection.Open();
+          if ( Program.Settings.VacuumAtStartup )
+            Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone);
+          connection.CheckTable("LunisolarDays", @"CREATE TABLE LunisolarDays 
+                                                   (
+                                                     Date TEXT,
+                                                     LunarMonth INTEGER,
+                                                     LunarDay INTEGER,
+                                                     Sunrise TEXT,
+                                                     Sunset TEXT,
+                                                     Moonrise TEXT,
+                                                     Moonset TEXT,
+                                                     MoonriseType INTEGER,
+                                                     IsNewMoon INTEGER,
+                                                     IsFullMoon INTEGER,
+                                                     MoonPhase INTEGER,
+                                                     SeasonChange INTEGER,
+                                                     TorahEvents INTEGER,
+                                                     PRIMARY KEY('Date')
+                                                   )");
+          connection.CheckTable("Report", @"CREATE TABLE Report ( Content TEXT );");
         }
-        cmdCheckTable = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
-                                        "WHERE type = 'table' AND name = 'Report'", connection);
-        result = (int)cmdCheckTable.ExecuteScalar();
-        if ( result == 0 )
+        catch ( Exception ex )
         {
-          var cmdCreateTable = new OdbcCommand(@"CREATE TABLE Report ( Content text );", connection);
-          cmdCreateTable.ExecuteNonQuery();
+          ex.Manage();
         }
-      }
-      finally
-      {
-        connection.Close();
-      }
+        finally
+        {
+          connection.Close();
+        }
     }
 
   }

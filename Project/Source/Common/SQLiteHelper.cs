@@ -87,6 +87,37 @@ namespace Ordisoftware.HebrewCommon
       }
     }
 
+    static public bool CheckTable(this OdbcConnection connection, string table, string sql)
+    {
+      var command = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
+                                    "WHERE type = 'table' AND name = '" + table + "'", connection);
+      if ( (int)command.ExecuteScalar() != 0 ) return false;
+      if ( sql != "" )
+        new OdbcCommand(sql, connection).ExecuteNonQuery();
+      return true;
+    }
+
+    static public bool CheckColumn(this OdbcConnection connection, string table, string column, string sql)
+    {
+      var command = new OdbcCommand("PRAGMA table_info(" + table + ")", connection);
+      var reader = command.ExecuteReader();
+      int nameIndex = reader.GetOrdinal("Name");
+      bool found = false;
+      while ( reader.Read() )
+        if ( reader.GetString(nameIndex).Equals(column) )
+        {
+          found = true;
+          break;
+        }
+      if ( found ) return false;
+      if ( sql != "" )
+      {
+        sql = sql.Replace("%TABLE%", table).Replace("%COLUMN%", column);
+        new OdbcCommand(sql, connection).ExecuteNonQuery();
+      }
+      return true;
+    }
+
     /// <summary>
     ///  Vacuum the database.
     /// </summary>
