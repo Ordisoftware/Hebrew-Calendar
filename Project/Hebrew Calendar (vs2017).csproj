@@ -338,7 +338,7 @@
     <Compile Include="Source\Forms\Boxes\SelectDayForm.Designer.cs">
       <DependentUpon>SelectDayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Enums\ViewMode.cs" />
+    <Compile Include="Source\Forms\MainForm\ViewMode.cs" />
     <Compile Include="Source\Forms\Boxes\SelectYearsForm.cs">
       <SubType>Form</SubType>
     </Compile>
