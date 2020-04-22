@@ -48,6 +48,8 @@ namespace Ordisoftware.HebrewCommon
           return;
         if ( InsertingText != null )
           InsertingText(this, ref value);
+        if ( value.Length > MaxLength )
+          return;
         try
         {
           if ( !SetTextMutex )
@@ -86,6 +88,8 @@ namespace Ordisoftware.HebrewCommon
           return;
         if ( InsertingText != null )
           InsertingText(this, ref value);
+        if ( Text.Length + value.Length - SelectionLength > MaxLength )
+          return;
         try
         {
           if ( !SetTextMutex )
