@@ -117,892 +117,892 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 13</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Unmodified MidnightTimer (CPOL 1.02) :</value>
-  </data>
-  <data name="&gt;&gt;EditLicense.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="linkLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;linkLabel8.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;LabelVersion.Name" xml:space="preserve">
-    <value>LabelVersion</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 15.75pt, style=Bold</value>
   </data>
-  <data name="LabelCopyright.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
+  <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 10</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>521, 2</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="LabelVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
-    <value>linkLabel1</value>
-  </data>
-  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="linkProvider3.Text" xml:space="preserve">
-    <value>github.com/jsauve/AASharp</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 3, 0</value>
   </data>
   <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 25</value>
   </data>
-  <data name="linkLabel4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;linkLabel5.Name" xml:space="preserve">
-    <value>linkLabel5</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Unmodified rises and sets computation (unknown license) :</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="LabelCopyright.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 3, 0</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 500</value>
-  </data>
-  <data name="linkLabel10.Text" xml:space="preserve">
-    <value>www.fatcow.com/free-icons</value>
-  </data>
-  <data name="linkLabel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 13</value>
-  </data>
-  <data name="LabelCopyright.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelTrademark.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 3, 0</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 340</value>
-  </data>
-  <data name="LabelVersion.Text" xml:space="preserve">
-    <value>Version </value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 13</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 13</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 452</value>
-  </data>
-  <data name="linkLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 13</value>
-  </data>
-  <data name="LabelTrademark.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 100</value>
-  </data>
-  <data name="linkLabel7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LabelVersion.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>About </value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;LabelDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Name" xml:space="preserve">
-    <value>linkLabel2</value>
-  </data>
-  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>www.codeproject.com/Articles/18201/Midnight-Timer-A-Way-to-Detect-When-it-is-Midnight</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 13</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;LabelDescription.ZOrder" xml:space="preserve">
+  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="linkLabel10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="LabelTitle.Text" xml:space="preserve">
+    <value>-Title-</value>
+  </data>
+  <data name="LabelTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
     <value>LabelTitle</value>
   </data>
-  <data name="linkLabel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 13</value>
+  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;linkLabel6.Name" xml:space="preserve">
-    <value>linkLabel6</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="linkLabel3.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="linkLabel11.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;LabelTitle.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelTitle.ZOrder" xml:space="preserve">
     <value>28</value>
   </data>
-  <data name="linkLabel6.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="linkLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="linkLabel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 372</value>
-  </data>
-  <data name="linkLabel11.Text" xml:space="preserve">
-    <value>github.com/pasnox/oxygen-icons-png</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="linkLabel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 484</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="LabelTrademark.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="LabelTrademark.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>www.codeproject.com/Articles/23694/Changing-Your-Application-User-Interface-Culture-O</value>
-  </data>
-  <data name="LabelDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 14</value>
-  </data>
-  <data name="linkLabel11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;linkLabel3.Name" xml:space="preserve">
-    <value>linkLabel3</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="LabelVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 60</value>
   </data>
-  <data name="LabelDescription.Text" xml:space="preserve">
-    <value>-Description-</value>
-  </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabel11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 13</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="linkLabel8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;linkLabel6.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;LabelCopyright.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkLabel10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;linkProvider3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkLabel4.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>www.codeproject.com/Articles/11698/A-Portable-and-Efficient-Generic-Parser-for-Flat-F</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="LabelTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="LabelVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 3, 0</value>
   </data>
-  <data name="LabelCopyright.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
+  <data name="LabelVersion.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
+  <data name="LabelVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
   </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>17</value>
+  <data name="LabelVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
-  <data name="linkLabel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 13</value>
+  <data name="LabelVersion.Text" xml:space="preserve">
+    <value>Version </value>
   </data>
   <data name="LabelVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;LabelVersion.Name" xml:space="preserve">
+    <value>LabelVersion</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 13</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
-    <value>ActionClose</value>
-  </data>
-  <data name="LabelDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel3.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 372</value>
-  </data>
-  <data name="EditLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>588, 204</value>
-  </data>
-  <data name="&gt;&gt;linkLabel10.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 420</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Unmodified GenericParsing (MIT) :</value>
-  </data>
-  <data name="&gt;&gt;LabelTrademark.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="LabelCopyright.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;linkLabel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelVersion.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="LabelCopyright.Text" xml:space="preserve">
-    <value>-Copyright-</value>
-  </data>
-  <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelVersion.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="linkLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Unmodified CultureManager (CPOL 1.02) :</value>
-  </data>
-  <data name="linkProvider3.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 13</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="LabelDescription.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Verdana, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 388</value>
-  </data>
-  <data name="LabelTrademark.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 13</value>
-  </data>
-  <data name="&gt;&gt;linkLabel10.Name" xml:space="preserve">
-    <value>linkLabel10</value>
-  </data>
-  <data name="linkProvider3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 420</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 468</value>
-  </data>
-  <data name="LabelTrademark.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="LabelVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 3, 0</value>
-  </data>
-  <data name="LabelCopyright.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;LabelTrademark.Name" xml:space="preserve">
-    <value>LabelTrademark</value>
-  </data>
-  <data name="EditLicense.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="linkLabel11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 356</value>
-  </data>
-  <data name="linkLabel5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 404</value>
-  </data>
-  <data name="&gt;&gt;linkLabel11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditLicense.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkLabel11.Name" xml:space="preserve">
-    <value>linkLabel11</value>
-  </data>
-  <data name="&gt;&gt;LabelDescription.Name" xml:space="preserve">
-    <value>LabelDescription</value>
-  </data>
-  <data name="&gt;&gt;linkProvider3.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="ActionClose.Text" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="LabelTrademark.Text" xml:space="preserve">
-    <value>-Trademark-</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>599, 28</value>
-  </data>
-  <data name="&gt;&gt;linkLabel4.Name" xml:space="preserve">
-    <value>linkLabel4</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Unmodified buttons icons (CC BY 3.0) :</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Modified moon phase computation (unknown license) :</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 13</value>
-  </data>
-  <data name="&gt;&gt;linkLabel6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
   </data>
   <data name="&gt;&gt;LabelVersion.ZOrder" xml:space="preserve">
     <value>27</value>
   </data>
-  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="LabelCopyright.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="linkLabel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 468</value>
+  <data name="LabelCopyright.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
   </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="LabelCopyright.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 3, 0</value>
   </data>
-  <data name="&gt;&gt;linkLabel4.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="LabelCopyright.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Modified Calendar.NET (CPOL 1.02) :</value>
+  <data name="LabelCopyright.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
   </data>
-  <data name="LabelTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="LabelCopyright.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="LabelCopyright.Text" xml:space="preserve">
+    <value>-Copyright-</value>
+  </data>
+  <data name="LabelCopyright.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Unmodified VietnameseCalendar (CPOL 1.02) :</value>
+  <data name="&gt;&gt;LabelCopyright.Name" xml:space="preserve">
+    <value>LabelCopyright</value>
   </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
+  <data name="&gt;&gt;LabelCopyright.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="linkLabel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 13</value>
+  <data name="&gt;&gt;LabelCopyright.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="linkProvider3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 13</value>
+  <data name="&gt;&gt;LabelCopyright.ZOrder" xml:space="preserve">
+    <value>26</value>
   </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>23</value>
+  <data name="LabelTrademark.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 404</value>
+  <data name="LabelTrademark.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 100</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+  <data name="LabelTrademark.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 3, 0</value>
   </data>
-  <data name="linkLabel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 436</value>
+  <data name="LabelTrademark.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
   </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+  <data name="LabelTrademark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="LabelTrademark.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelTrademark.Text" xml:space="preserve">
+    <value>-Trademark-</value>
+  </data>
+  <data name="LabelTrademark.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;LabelTrademark.Name" xml:space="preserve">
+    <value>LabelTrademark</value>
+  </data>
+  <data name="&gt;&gt;LabelTrademark.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTrademark.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LabelTrademark.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>521, 2</value>
+  </data>
+  <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ActionClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="EditLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="LabelTitle.Text" xml:space="preserve">
-    <value>-Title-</value>
-  </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="&gt;&gt;linkLabel3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 10</value>
-  </data>
-  <data name="&gt;&gt;linkLabel7.Name" xml:space="preserve">
-    <value>linkLabel7</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="linkLabel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 13</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>AboutBox</value>
-  </data>
-  <data name="&gt;&gt;LabelTrademark.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;LabelCopyright.Name" xml:space="preserve">
-    <value>LabelCopyright</value>
-  </data>
-  <data name="linkLabel6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>samik26.webgarden.cz/temata/class-sun-moonrise-set</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LabelTitle.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkLabel7.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;LabelCopyright.ZOrder" xml:space="preserve">
-    <value>26</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <data name="linkLabel5.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Modified application icon (LGPL 3.0) :</value>
-  </data>
-  <data name="LabelVersion.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="&gt;&gt;linkLabel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabel4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 436</value>
-  </data>
-  <data name="&gt;&gt;linkLabel10.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="linkProvider3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;linkLabel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel8.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;linkLabel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>www.codeproject.com/Articles/100174/Calculate-and-Draw-Moon-Phase</value>
-  </data>
-  <data name="linkLabel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 500</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>jivebay.com/2008/09/07/calculating-the-moon-phase</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
   <data name="EditLicense.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 125</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="EditLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>588, 204</value>
   </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>www.codeproject.com/Articles/30193/Vietnamese-Lunar-Calendar-for-NET</value>
+  <data name="EditLicense.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Unmodified Astronomical Algorithms for C# (LGPL 3.0) :</value>
-  </data>
-  <data name="&gt;&gt;LabelDescription.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 13</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 484</value>
+  <data name="EditLicense.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;EditLicense.Name" xml:space="preserve">
     <value>EditLicense</value>
   </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
+  <data name="&gt;&gt;EditLicense.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;linkLabel5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditLicense.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 13</value>
+  <data name="&gt;&gt;EditLicense.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 340</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 13</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Unmodified buttons icons (CC BY 3.0) :</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="linkLabel10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLabel10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 340</value>
+  </data>
+  <data name="linkLabel10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 13</value>
+  </data>
+  <data name="linkLabel10.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="linkLabel10.Text" xml:space="preserve">
+    <value>www.fatcow.com/free-icons</value>
+  </data>
+  <data name="&gt;&gt;linkLabel10.Name" xml:space="preserve">
+    <value>linkLabel10</value>
+  </data>
+  <data name="&gt;&gt;linkLabel10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel10.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabel10.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="LabelDescription.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelDescription.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 9pt, style=Bold</value>
+  </data>
+  <data name="LabelDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="LabelDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="LabelDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="LabelDescription.Text" xml:space="preserve">
+    <value>-Description-</value>
+  </data>
+  <data name="&gt;&gt;LabelDescription.Name" xml:space="preserve">
+    <value>LabelDescription</value>
+  </data>
+  <data name="&gt;&gt;LabelDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelDescription.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LabelDescription.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="linkLabel11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLabel11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 356</value>
+  </data>
+  <data name="linkLabel11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 13</value>
+  </data>
+  <data name="linkLabel11.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="linkLabel11.Text" xml:space="preserve">
+    <value>github.com/pasnox/oxygen-icons-png</value>
+  </data>
+  <data name="&gt;&gt;linkLabel11.Name" xml:space="preserve">
+    <value>linkLabel11</value>
+  </data>
+  <data name="&gt;&gt;linkLabel11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel11.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;linkLabel11.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="linkProvider3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="LabelDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+  <data name="linkProvider3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 420</value>
   </data>
-  <data name="linkLabel7.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="linkProvider3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 13</value>
+  </data>
+  <data name="linkProvider3.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="linkProvider3.Text" xml:space="preserve">
+    <value>github.com/jsauve/AASharp</value>
   </data>
   <data name="&gt;&gt;linkProvider3.Name" xml:space="preserve">
     <value>linkProvider3</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>18</value>
+  <data name="&gt;&gt;linkProvider3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;linkProvider3.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="LabelVersion.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>www.codeproject.com/Articles/378900/Calendar-NET</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 356</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>619, 568</value>
-  </data>
-  <data name="linkLabel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 13</value>
+  <data name="&gt;&gt;linkProvider3.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;linkLabel11.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 420</value>
   </data>
-  <data name="&gt;&gt;LabelTrademark.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 13</value>
   </data>
-  <data name="&gt;&gt;LabelVersion.Type" xml:space="preserve">
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Unmodified Astronomical Algorithms for C# (LGPL 3.0) :</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;linkLabel5.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
-  <data name="LabelCopyright.TabIndex" type="System.Int32, mscorlib">
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 356</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Modified application icon (LGPL 3.0) :</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="LabelDescription.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>15</value>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 404</value>
   </data>
-  <data name="EditLicense.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 13</value>
   </data>
-  <data name="LabelTrademark.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
   </data>
-  <data name="&gt;&gt;linkLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Unmodified rises and sets computation (unknown license) :</value>
   </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 530</value>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
-  <data name="&gt;&gt;linkLabel8.Name" xml:space="preserve">
-    <value>linkLabel8</value>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="linkLabel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 452</value>
-  </data>
-  <data name="LabelTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Verdana, 15.75pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelVersion.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;EditLicense.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>17</value>
   </data>
-  <data name="linkLabel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 340</value>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 13</value>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 372</value>
   </data>
-  <data name="linkLabel10.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 13</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Modified moon phase drawing (COPL 1.02) :</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="linkLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 404</value>
+  </data>
+  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
   </data>
   <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>samik26.webgarden.cz/temata/class-sun-moonrise-set</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
+    <value>linkLabel1</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="linkLabel3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="linkLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="linkLabel8.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 388</value>
   </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 13</value>
+  <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+  <data name="linkLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>jivebay.com/2008/09/07/calculating-the-moon-phase</value>
+  </data>
+  <data name="&gt;&gt;linkLabel2.Name" xml:space="preserve">
+    <value>linkLabel2</value>
+  </data>
+  <data name="&gt;&gt;linkLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;linkLabel2.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;LabelCopyright.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 530</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>599, 28</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>51, 388</value>
   </data>
-  <data name="&gt;&gt;linkLabel7.Parent" xml:space="preserve">
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 13</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Modified moon phase computation (unknown license) :</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="linkLabel4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 372</value>
+  </data>
+  <data name="linkLabel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 13</value>
+  </data>
+  <data name="linkLabel4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>www.codeproject.com/Articles/100174/Calculate-and-Draw-Moon-Phase</value>
+  </data>
+  <data name="&gt;&gt;linkLabel4.Name" xml:space="preserve">
+    <value>linkLabel4</value>
+  </data>
+  <data name="&gt;&gt;linkLabel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabel4.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="linkLabel5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 436</value>
+  </data>
+  <data name="linkLabel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 13</value>
+  </data>
+  <data name="linkLabel5.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>www.codeproject.com/Articles/378900/Calendar-NET</value>
+  </data>
+  <data name="&gt;&gt;linkLabel5.Name" xml:space="preserve">
+    <value>linkLabel5</value>
+  </data>
+  <data name="&gt;&gt;linkLabel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabel5.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Modified moon phase drawing (COPL 1.02) :</value>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 436</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 13</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Modified Calendar.NET (CPOL 1.02) :</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 452</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Unmodified CultureManager (CPOL 1.02) :</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="linkLabel3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 452</value>
+  </data>
+  <data name="linkLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 13</value>
+  </data>
+  <data name="linkLabel3.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>www.codeproject.com/Articles/23694/Changing-Your-Application-User-Interface-Culture-O</value>
+  </data>
+  <data name="&gt;&gt;linkLabel3.Name" xml:space="preserve">
+    <value>linkLabel3</value>
+  </data>
+  <data name="&gt;&gt;linkLabel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabel3.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 468</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 13</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Unmodified GenericParsing (MIT) :</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="linkLabel6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 468</value>
+  </data>
+  <data name="linkLabel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 13</value>
+  </data>
+  <data name="linkLabel6.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>www.codeproject.com/Articles/11698/A-Portable-and-Efficient-Generic-Parser-for-Flat-F</value>
+  </data>
+  <data name="&gt;&gt;linkLabel6.Name" xml:space="preserve">
+    <value>linkLabel6</value>
+  </data>
+  <data name="&gt;&gt;linkLabel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabel6.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="linkLabel7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 484</value>
+  </data>
+  <data name="linkLabel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 13</value>
+  </data>
+  <data name="linkLabel7.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="linkLabel7.Text" xml:space="preserve">
+    <value>www.codeproject.com/Articles/30193/Vietnamese-Lunar-Calendar-for-NET</value>
+  </data>
+  <data name="&gt;&gt;linkLabel7.Name" xml:space="preserve">
+    <value>linkLabel7</value>
   </data>
   <data name="&gt;&gt;linkLabel7.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;linkProvider3.Type" xml:space="preserve">
+  <data name="&gt;&gt;linkLabel7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabel7.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 484</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 13</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Unmodified VietnameseCalendar (CPOL 1.02) :</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 500</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 13</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Unmodified MidnightTimer (CPOL 1.02) :</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="linkLabel8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 500</value>
+  </data>
+  <data name="linkLabel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 13</value>
+  </data>
+  <data name="linkLabel8.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="linkLabel8.Text" xml:space="preserve">
+    <value>www.codeproject.com/Articles/18201/Midnight-Timer-A-Way-to-Detect-When-it-is-Midnight</value>
+  </data>
+  <data name="&gt;&gt;linkLabel8.Name" xml:space="preserve">
+    <value>linkLabel8</value>
+  </data>
+  <data name="&gt;&gt;linkLabel8.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel8.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabel8.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>619, 568</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>About </value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AboutBox</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

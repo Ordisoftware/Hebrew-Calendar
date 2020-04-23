@@ -261,6 +261,11 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Instance.UpdateTextCalendar();
     }
 
+    private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
+    {
+      Core.Diagnostics.Debugger.Active = EditDebuggerEnabled.Checked;
+    }
+
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)
     {
       LabelRemindAutoLockTimeOut.Enabled = EditAutoLockSession.Checked;
@@ -329,13 +334,42 @@ namespace Ordisoftware.HebrewCalendar
       NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
     }
 
-    private void ActionRestoreCalendarColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionMonthViewThemeLight_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       EditCurrentDayForeColor.BackColor = Color.White;
+      EditCurrentDayBackColor.BackColor = Color.FromArgb(200, 0, 0);
       EditCalendarColorTorahEvent.BackColor = Color.DarkRed;
       EditCalendarColorSeason.BackColor = Color.DarkGreen;
       EditCalendarColorMoon.BackColor = Color.DarkBlue;
       EditCalendarColorFullMoon.BackColor = Color.FromArgb(150, 100, 0);
+      EditEventColorTorah.BackColor = Color.FromArgb(255, 255, 230);
+      EditEventColorSeason.BackColor = Color.FromArgb(245, 255, 240);
+      EditEventColorShabat.BackColor = Color.FromArgb(243, 243, 243);
+      EditEventColorMonth.BackColor = Color.AliceBlue;
+      EditEventColorNext.BackColor = Color.WhiteSmoke;
+      EditCalendarColorEmpty.BackColor = Color.White;
+      EditCalendarColorDefaultText.BackColor = Color.Black;
+      EditCalendarColorNoDay.BackColor = Color.FromArgb(250, 250, 250);
+      MustRefreshMonthView = true;
+    }
+
+    private void ActionMonthViewThemeDark_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      EditCurrentDayForeColor.BackColor = Color.Black;
+      EditCurrentDayBackColor.BackColor = Color.White;
+      EditCalendarColorTorahEvent.BackColor = Color.Red;
+      EditCalendarColorSeason.BackColor = Color.LightGreen;
+      EditCalendarColorMoon.BackColor = Color.LightBlue;
+      EditCalendarColorFullMoon.BackColor = Color.FromArgb(150, 100, 0);
+      EditEventColorTorah.BackColor = Color.Red;
+      EditEventColorSeason.BackColor = Color.LightGreen;
+      EditEventColorShabat.BackColor = Color.LightGray;
+      EditEventColorMonth.BackColor = Color.LightBlue;
+      EditEventColorNext.BackColor = Color.WhiteSmoke;
+      EditCalendarColorEmpty.BackColor = Color.Black;
+      EditCalendarColorDefaultText.BackColor = Color.White;
+      EditCalendarColorNoDay.BackColor = Color.FromArgb(50, 50, 50);
+      MustRefreshMonthView = true;
     }
 
     private void PanelTextColor_Click(object sender, EventArgs e)
@@ -469,6 +503,22 @@ namespace Ordisoftware.HebrewCalendar
       MustRefreshMonthView = true;
     }
 
+    private void EditCalendarColorEmpty_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditCalendarColorEmpty.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCalendarColorEmpty.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void EditCalendarColorDefaultText_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditCalendarColorDefaultText.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCalendarColorDefaultText.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
       MustRefreshMonthView = EditMonthViewFontSize.Value != Program.Settings.MonthViewFontSize;
@@ -480,11 +530,6 @@ namespace Ordisoftware.HebrewCalendar
       OpenFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text);
       if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
         EditHebrewLettersPath.Text = OpenFileDialog.FileName;
-    }
-
-    private void checkBox1_CheckedChanged(object sender, EventArgs e)
-    {
-      //Core.Diagnostics.Debugger.Active = EditEnableDebugger.Checked; + add load/shown
     }
 
   }

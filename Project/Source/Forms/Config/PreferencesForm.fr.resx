@@ -370,8 +370,8 @@
   <data name="ActionRestoreCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 13</value>
   </data>
-  <data name="ActionRestoreCalendarColors.Text" xml:space="preserve">
-    <value>Restaurer les valeurs par défaut</value>
+  <data name="ActionMonthViewThemeLight.Text" xml:space="preserve">
+    <value>Utiliser le thème clair</value>
   </data>
   <data name="LabelColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
@@ -479,5 +479,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.Text" xml:space="preserve">
+    <value>Utiliser le thème sombre</value>
   </data>
 </root>

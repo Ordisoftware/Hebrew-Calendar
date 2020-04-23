@@ -169,7 +169,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 62</value>
+    <value>15, 60</value>
   </data>
   <data name="LabelGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
@@ -448,7 +448,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 59</value>
+    <value>78, 57</value>
   </data>
   <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 20</value>
@@ -565,7 +565,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 124</value>
+    <value>17, 122</value>
   </data>
   <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 56</value>
@@ -592,7 +592,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSCity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 107</value>
+    <value>17, 105</value>
   </data>
   <data name="LabelGPSCity.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 13</value>
@@ -616,7 +616,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="LabelGPSCountry.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 90</value>
+    <value>17, 88</value>
   </data>
   <data name="LabelGPSCountry.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 13</value>
@@ -649,7 +649,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 182</value>
+    <value>17, 180</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -1162,7 +1162,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 140</value>
+    <value>18, 125</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 13</value>
@@ -1195,7 +1195,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseDefaultColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 163</value>
+    <value>18, 147</value>
   </data>
   <data name="ActionUseDefaultColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -1261,7 +1261,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseSystemColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 117</value>
+    <value>18, 103</value>
   </data>
   <data name="ActionUseSystemColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
@@ -2460,38 +2460,245 @@
   <data name="&gt;&gt;EditMonthViewSunToolTips.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="ActionRestoreCalendarColors.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelColorNoDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="ActionRestoreCalendarColors.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelColorNoDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="ActionRestoreCalendarColors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelColorNoDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionRestoreCalendarColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 163</value>
+  <data name="LabelColorNoDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 126</value>
   </data>
-  <data name="ActionRestoreCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 13</value>
+  <data name="LabelColorNoDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
   </data>
-  <data name="ActionRestoreCalendarColors.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="LabelColorNoDay.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
   </data>
-  <data name="ActionRestoreCalendarColors.Text" xml:space="preserve">
-    <value>Restore defaults values</value>
+  <data name="LabelColorNoDay.Text" xml:space="preserve">
+    <value>No days</value>
   </data>
-  <data name="&gt;&gt;ActionRestoreCalendarColors.Name" xml:space="preserve">
-    <value>ActionRestoreCalendarColors</value>
+  <data name="&gt;&gt;LabelColorNoDay.Name" xml:space="preserve">
+    <value>LabelColorNoDay</value>
   </data>
-  <data name="&gt;&gt;ActionRestoreCalendarColors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;LabelColorNoDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionRestoreCalendarColors.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelColorNoDay.Parent" xml:space="preserve">
     <value>GroupBoxMonth</value>
   </data>
-  <data name="&gt;&gt;ActionRestoreCalendarColors.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelColorNoDay.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="LabelColorText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelColorText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelColorText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelColorText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 126</value>
+  </data>
+  <data name="LabelColorText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelColorText.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="LabelColorText.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="&gt;&gt;LabelColorText.Name" xml:space="preserve">
+    <value>LabelColorText</value>
+  </data>
+  <data name="&gt;&gt;LabelColorText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelColorText.Parent" xml:space="preserve">
+    <value>GroupBoxMonth</value>
+  </data>
+  <data name="&gt;&gt;LabelColorText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditCalendarColorNoDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarColorNoDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 144</value>
+  </data>
+  <data name="EditCalendarColorNoDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditCalendarColorNoDay.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorNoDay.Name" xml:space="preserve">
+    <value>EditCalendarColorNoDay</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorNoDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorNoDay.Parent" xml:space="preserve">
+    <value>GroupBoxMonth</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorNoDay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditCalendarColorDefaultText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarColorDefaultText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 144</value>
+  </data>
+  <data name="EditCalendarColorDefaultText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditCalendarColorDefaultText.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorDefaultText.Name" xml:space="preserve">
+    <value>EditCalendarColorDefaultText</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorDefaultText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorDefaultText.Parent" xml:space="preserve">
+    <value>GroupBoxMonth</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorDefaultText.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LabelColorEmpty.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelColorEmpty.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelColorEmpty.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelColorEmpty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 126</value>
+  </data>
+  <data name="LabelColorEmpty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="LabelColorEmpty.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="LabelColorEmpty.Text" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="&gt;&gt;LabelColorEmpty.Name" xml:space="preserve">
+    <value>LabelColorEmpty</value>
+  </data>
+  <data name="&gt;&gt;LabelColorEmpty.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelColorEmpty.Parent" xml:space="preserve">
+    <value>GroupBoxMonth</value>
+  </data>
+  <data name="&gt;&gt;LabelColorEmpty.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="EditCalendarColorEmpty.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarColorEmpty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 144</value>
+  </data>
+  <data name="EditCalendarColorEmpty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditCalendarColorEmpty.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorEmpty.Name" xml:space="preserve">
+    <value>EditCalendarColorEmpty</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorEmpty.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorEmpty.Parent" xml:space="preserve">
+    <value>GroupBoxMonth</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorEmpty.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 203</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.Text" xml:space="preserve">
+    <value>Use dark theme</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ActionMonthViewThemeDark.Name" xml:space="preserve">
+    <value>ActionMonthViewThemeDark</value>
+  </data>
+  <data name="&gt;&gt;ActionMonthViewThemeDark.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionMonthViewThemeDark.Parent" xml:space="preserve">
+    <value>GroupBoxMonth</value>
+  </data>
+  <data name="&gt;&gt;ActionMonthViewThemeDark.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ActionMonthViewThemeLight.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionMonthViewThemeLight.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ActionMonthViewThemeLight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionMonthViewThemeLight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 183</value>
+  </data>
+  <data name="ActionMonthViewThemeLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="ActionMonthViewThemeLight.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ActionMonthViewThemeLight.Text" xml:space="preserve">
+    <value>Use light theme</value>
+  </data>
+  <data name="&gt;&gt;ActionMonthViewThemeLight.Name" xml:space="preserve">
+    <value>ActionMonthViewThemeLight</value>
+  </data>
+  <data name="&gt;&gt;ActionMonthViewThemeLight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionMonthViewThemeLight.Parent" xml:space="preserve">
+    <value>GroupBoxMonth</value>
+  </data>
+  <data name="&gt;&gt;ActionMonthViewThemeLight.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="LabelColorFullMoon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2503,7 +2710,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorFullMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 98</value>
+    <value>139, 73</value>
   </data>
   <data name="LabelColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -2524,13 +2731,13 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;LabelColorFullMoon.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="EditCalendarColorFullMoon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorFullMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 116</value>
+    <value>142, 91</value>
   </data>
   <data name="EditCalendarColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -2548,7 +2755,7 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorFullMoon.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>9</value>
   </data>
   <data name="LabelColorMoon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2560,7 +2767,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 98</value>
+    <value>77, 73</value>
   </data>
   <data name="LabelColorMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -2581,13 +2788,13 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;LabelColorMoon.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>10</value>
   </data>
   <data name="EditCalendarColorMoon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 116</value>
+    <value>80, 91</value>
   </data>
   <data name="EditCalendarColorMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -2605,7 +2812,7 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorMoon.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>11</value>
   </data>
   <data name="LabelColorSeason.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2617,7 +2824,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 36</value>
+    <value>139, 20</value>
   </data>
   <data name="LabelColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -2638,13 +2845,13 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;LabelColorSeason.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>12</value>
   </data>
   <data name="EditCalendarColorSeason.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 54</value>
+    <value>142, 38</value>
   </data>
   <data name="EditCalendarColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -2662,7 +2869,7 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorSeason.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>13</value>
   </data>
   <data name="LabelColorTorah.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2674,7 +2881,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 36</value>
+    <value>77, 20</value>
   </data>
   <data name="LabelColorTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -2695,13 +2902,13 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;LabelColorTorah.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>14</value>
   </data>
   <data name="EditCalendarColorTorahEvent.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorTorahEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 54</value>
+    <value>80, 38</value>
   </data>
   <data name="EditCalendarColorTorahEvent.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -2719,7 +2926,7 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorTorahEvent.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>15</value>
   </data>
   <data name="LabelColorTodayBack.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2731,7 +2938,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorTodayBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 98</value>
+    <value>15, 73</value>
   </data>
   <data name="LabelColorTodayBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -2752,7 +2959,7 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;LabelColorTodayBack.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>16</value>
   </data>
   <data name="LabelColorToday.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2764,7 +2971,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorToday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 36</value>
+    <value>15, 20</value>
   </data>
   <data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -2785,13 +2992,13 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;LabelColorToday.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>17</value>
   </data>
   <data name="EditCurrentDayBackColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCurrentDayBackColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 116</value>
+    <value>18, 91</value>
   </data>
   <data name="EditCurrentDayBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -2809,13 +3016,13 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;EditCurrentDayBackColor.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>18</value>
   </data>
   <data name="EditCurrentDayForeColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCurrentDayForeColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 54</value>
+    <value>18, 38</value>
   </data>
   <data name="EditCurrentDayForeColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -2833,7 +3040,7 @@
     <value>GroupBoxMonth</value>
   </data>
   <data name="&gt;&gt;EditCurrentDayForeColor.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>19</value>
   </data>
   <data name="GroupBoxMonth.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>

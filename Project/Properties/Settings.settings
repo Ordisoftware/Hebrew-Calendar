@@ -292,5 +292,14 @@
     <Setting Name="VacuumLastDone" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">2020-01-01</Value>
     </Setting>
+    <Setting Name="MonthViewBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="MonthViewTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="MonthViewNoDaysBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">250, 250, 250</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

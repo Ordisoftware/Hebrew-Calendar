@@ -110,7 +110,12 @@
       this.EditRemindCelebrationEveryMinutes = new System.Windows.Forms.NumericUpDown();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
       this.GroupBoxMonth = new System.Windows.Forms.GroupBox();
-      this.ActionRestoreCalendarColors = new System.Windows.Forms.LinkLabel();
+      this.LabelColorText = new System.Windows.Forms.Label();
+      this.EditCalendarColorDefaultText = new System.Windows.Forms.Panel();
+      this.LabelColorEmpty = new System.Windows.Forms.Label();
+      this.EditCalendarColorEmpty = new System.Windows.Forms.Panel();
+      this.ActionMonthViewThemeDark = new System.Windows.Forms.LinkLabel();
+      this.ActionMonthViewThemeLight = new System.Windows.Forms.LinkLabel();
       this.LabelColorFullMoon = new System.Windows.Forms.Label();
       this.EditCalendarColorFullMoon = new System.Windows.Forms.Panel();
       this.LabelColorMoon = new System.Windows.Forms.Label();
@@ -134,6 +139,8 @@
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+      this.EditCalendarColorNoDay = new System.Windows.Forms.Panel();
+      this.LabelColorNoDay = new System.Windows.Forms.Label();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -237,6 +244,7 @@
       // 
       this.ActionResetSettings.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionResetSettings, "ActionResetSettings");
+      this.ActionResetSettings.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionResetSettings.LinkColor = System.Drawing.Color.Navy;
       this.ActionResetSettings.Name = "ActionResetSettings";
       this.ActionResetSettings.TabStop = true;
@@ -246,6 +254,7 @@
       // 
       this.ActionUsePersonalShabat.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionUsePersonalShabat, "ActionUsePersonalShabat");
+      this.ActionUsePersonalShabat.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUsePersonalShabat.LinkColor = System.Drawing.Color.Navy;
       this.ActionUsePersonalShabat.Name = "ActionUsePersonalShabat";
       this.ActionUsePersonalShabat.TabStop = true;
@@ -287,6 +296,7 @@
       // 
       this.ActionGetGPS.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionGetGPS, "ActionGetGPS");
+      this.ActionGetGPS.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionGetGPS.LinkColor = System.Drawing.Color.Navy;
       this.ActionGetGPS.Name = "ActionGetGPS";
       this.ActionGetGPS.TabStop = true;
@@ -467,6 +477,7 @@
       // 
       this.ActionUseBlackAndWhiteColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionUseBlackAndWhiteColors, "ActionUseBlackAndWhiteColors");
+      this.ActionUseBlackAndWhiteColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUseBlackAndWhiteColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseBlackAndWhiteColors.Name = "ActionUseBlackAndWhiteColors";
       this.ActionUseBlackAndWhiteColors.TabStop = true;
@@ -476,6 +487,7 @@
       // 
       this.ActionUseDefaultColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionUseDefaultColors, "ActionUseDefaultColors");
+      this.ActionUseDefaultColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUseDefaultColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseDefaultColors.Name = "ActionUseDefaultColors";
       this.ActionUseDefaultColors.TabStop = true;
@@ -490,6 +502,7 @@
       // 
       this.ActionUseSystemColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionUseSystemColors, "ActionUseSystemColors");
+      this.ActionUseSystemColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUseSystemColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseSystemColors.Name = "ActionUseSystemColors";
       this.ActionUseSystemColors.TabStop = true;
@@ -805,7 +818,14 @@
       // 
       // GroupBoxMonth
       // 
-      this.GroupBoxMonth.Controls.Add(this.ActionRestoreCalendarColors);
+      this.GroupBoxMonth.Controls.Add(this.LabelColorNoDay);
+      this.GroupBoxMonth.Controls.Add(this.LabelColorText);
+      this.GroupBoxMonth.Controls.Add(this.EditCalendarColorNoDay);
+      this.GroupBoxMonth.Controls.Add(this.EditCalendarColorDefaultText);
+      this.GroupBoxMonth.Controls.Add(this.LabelColorEmpty);
+      this.GroupBoxMonth.Controls.Add(this.EditCalendarColorEmpty);
+      this.GroupBoxMonth.Controls.Add(this.ActionMonthViewThemeDark);
+      this.GroupBoxMonth.Controls.Add(this.ActionMonthViewThemeLight);
       this.GroupBoxMonth.Controls.Add(this.LabelColorFullMoon);
       this.GroupBoxMonth.Controls.Add(this.EditCalendarColorFullMoon);
       this.GroupBoxMonth.Controls.Add(this.LabelColorMoon);
@@ -822,14 +842,51 @@
       this.GroupBoxMonth.Name = "GroupBoxMonth";
       this.GroupBoxMonth.TabStop = false;
       // 
-      // ActionRestoreCalendarColors
+      // LabelColorText
       // 
-      this.ActionRestoreCalendarColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionRestoreCalendarColors, "ActionRestoreCalendarColors");
-      this.ActionRestoreCalendarColors.LinkColor = System.Drawing.Color.Navy;
-      this.ActionRestoreCalendarColors.Name = "ActionRestoreCalendarColors";
-      this.ActionRestoreCalendarColors.TabStop = true;
-      this.ActionRestoreCalendarColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionRestoreCalendarColors_LinkClicked);
+      resources.ApplyResources(this.LabelColorText, "LabelColorText");
+      this.LabelColorText.Name = "LabelColorText";
+      // 
+      // EditCalendarColorDefaultText
+      // 
+      this.EditCalendarColorDefaultText.BackColor = System.Drawing.Color.Black;
+      this.EditCalendarColorDefaultText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorDefaultText, "EditCalendarColorDefaultText");
+      this.EditCalendarColorDefaultText.Name = "EditCalendarColorDefaultText";
+      this.EditCalendarColorDefaultText.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditCalendarColorDefaultText_MouseClick);
+      // 
+      // LabelColorEmpty
+      // 
+      resources.ApplyResources(this.LabelColorEmpty, "LabelColorEmpty");
+      this.LabelColorEmpty.Name = "LabelColorEmpty";
+      // 
+      // EditCalendarColorEmpty
+      // 
+      this.EditCalendarColorEmpty.BackColor = System.Drawing.Color.White;
+      this.EditCalendarColorEmpty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorEmpty, "EditCalendarColorEmpty");
+      this.EditCalendarColorEmpty.Name = "EditCalendarColorEmpty";
+      this.EditCalendarColorEmpty.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditCalendarColorEmpty_MouseClick);
+      // 
+      // ActionMonthViewThemeDark
+      // 
+      this.ActionMonthViewThemeDark.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionMonthViewThemeDark, "ActionMonthViewThemeDark");
+      this.ActionMonthViewThemeDark.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionMonthViewThemeDark.LinkColor = System.Drawing.Color.Navy;
+      this.ActionMonthViewThemeDark.Name = "ActionMonthViewThemeDark";
+      this.ActionMonthViewThemeDark.TabStop = true;
+      this.ActionMonthViewThemeDark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionMonthViewThemeDark_LinkClicked);
+      // 
+      // ActionMonthViewThemeLight
+      // 
+      this.ActionMonthViewThemeLight.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionMonthViewThemeLight, "ActionMonthViewThemeLight");
+      this.ActionMonthViewThemeLight.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionMonthViewThemeLight.LinkColor = System.Drawing.Color.Navy;
+      this.ActionMonthViewThemeLight.Name = "ActionMonthViewThemeLight";
+      this.ActionMonthViewThemeLight.TabStop = true;
+      this.ActionMonthViewThemeLight.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionMonthViewThemeLight_LinkClicked);
       // 
       // LabelColorFullMoon
       // 
@@ -993,11 +1050,24 @@
       resources.ApplyResources(this.EditDebuggerEnabled, "EditDebuggerEnabled");
       this.EditDebuggerEnabled.Name = "EditDebuggerEnabled";
       this.EditDebuggerEnabled.UseVisualStyleBackColor = true;
-      this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+      this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.EditDebuggerEnabled_CheckedChanged);
       // 
       // OpenFileDialog
       // 
       resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
+      // 
+      // EditCalendarColorNoDay
+      // 
+      this.EditCalendarColorNoDay.BackColor = System.Drawing.Color.Black;
+      this.EditCalendarColorNoDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorNoDay, "EditCalendarColorNoDay");
+      this.EditCalendarColorNoDay.Name = "EditCalendarColorNoDay";
+      this.EditCalendarColorNoDay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditCalendarColorDefaultText_MouseClick);
+      // 
+      // LabelColorNoDay
+      // 
+      resources.ApplyResources(this.LabelColorNoDay, "LabelColorNoDay");
+      this.LabelColorNoDay.Name = "LabelColorNoDay";
       // 
       // PreferencesForm
       // 
@@ -1104,7 +1174,7 @@
     private System.Windows.Forms.Label LabelColorFullMoon;
     internal System.Windows.Forms.Panel EditCalendarColorFullMoon;
     private System.Windows.Forms.Label LabelColorTorah;
-    private System.Windows.Forms.LinkLabel ActionRestoreCalendarColors;
+    private System.Windows.Forms.LinkLabel ActionMonthViewThemeLight;
     private System.Windows.Forms.NumericUpDown EditRemindShabatHoursBefore;
     private System.Windows.Forms.CheckBox EditRemindShabatOnlyLight;
     private System.Windows.Forms.NumericUpDown EditRemindShabatEveryMinutes;
@@ -1154,5 +1224,12 @@
     private System.Windows.Forms.TextBox EditHebrewLettersPath;
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
     private System.Windows.Forms.CheckBox EditDebuggerEnabled;
+    private System.Windows.Forms.Label LabelColorText;
+    internal System.Windows.Forms.Panel EditCalendarColorDefaultText;
+    private System.Windows.Forms.Label LabelColorEmpty;
+    internal System.Windows.Forms.Panel EditCalendarColorEmpty;
+    private System.Windows.Forms.LinkLabel ActionMonthViewThemeDark;
+    private System.Windows.Forms.Label LabelColorNoDay;
+    internal System.Windows.Forms.Panel EditCalendarColorNoDay;
   }
 }

@@ -27,6 +27,9 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LoadSettings()
     {
+      EditCalendarColorNoDay.BackColor = Program.Settings.MonthViewNoDaysBackColor;
+      EditCalendarColorEmpty.BackColor = Program.Settings.MonthViewBackColor;
+      EditCalendarColorDefaultText.BackColor = Program.Settings.MonthViewTextColor;
       EditDebuggerEnabled.Checked = Program.Settings.DebuggerEnabled;
       EditVacuumAtStartup.Checked = Program.Settings.VacuumAtStartup;
       EditHebrewLettersPath.Text = Program.Settings.HebrewLettersExe;

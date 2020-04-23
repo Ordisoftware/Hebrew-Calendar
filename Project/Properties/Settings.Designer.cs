@@ -1160,5 +1160,41 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["VacuumLastDone"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color MonthViewBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MonthViewBackColor"]));
+            }
+            set {
+                this["MonthViewBackColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color MonthViewTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MonthViewTextColor"]));
+            }
+            set {
+                this["MonthViewTextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250, 250, 250")]
+        public global::System.Drawing.Color MonthViewNoDaysBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MonthViewNoDaysBackColor"]));
+            }
+            set {
+                this["MonthViewNoDaysBackColor"] = value;
+            }
+        }
     }
 }
