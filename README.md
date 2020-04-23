@@ -90,20 +90,23 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 #### Keyboard shortcuts
 
-- Ctrl+Tab : Change view
+- F1 : Text report view
+- F2 : Month view
+- F3 : Database grid view
+- F4 : Next celebrations window
+- F5 : Search celebration window
+- F6 : Search moon month window
+- F7 : Lunar months list window
+- Ctrl+Tab : Next view
+- Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today
-- Ctrl+D : Search day
-- Ctrl+E : Search celebration
-- Ctrl+M : Search lunar month
-- Ctrl+N : Open navigation window
-- Ctrl+A : Open annual celebrations window
-- Ctrl+L : Open moon months list window
+- Ctrl+D : Search a day
+- Ctrl+N : Navigation window
+- Ctrl+C : Copy text report to clipboard
 - Ctrl+P : Print month view
-- Ctrl+C : Copy report to clipboard
-- Ctrl+S : Save report to text file
-- Alt+S : Save report to CSV file
-- Alt+C : Open calculator
-- F2 : Generate calendar
+- Ctrl+S : Save text report to text file
+- Alt+S : Save text report to CSV file
+- Alt+C : Open windows calculator
 - F8 : Preferences
 - F11 : Help
 - F12 : About
@@ -114,15 +117,18 @@ The application uses by default moon omer for celebrations. If you use moon omer
 #### 2020.04.__ - Version 4.0
 
 - Exit application at startup if user choose to download a newer version.
+- Add F1/F2/F3 shortcuts to select the view.
+- Add F4/F5/F6/F7 shortcuts to open searches windows.
 - Add moon month name to all days in the month view.
 - Add suspend reminder menu in the main form and the tray icon.
 - Improve tray icon to show if the reminder is suspended.
 - Add preferences menu in the tray icon.
 - Add dialog box to choose sun or moon omer at first startup.
-- Improve personal shabat dialog box notice.
 - Add celebrations dialog box notice.
+- Improve personal shabat dialog box notice.
 - Improve preferences form.
 - Improve search celebration and moon month forms to use a combobox to select year.
+- Improve text report : Ctrl+A select all text.
 - Add month number column in the search moon month form.
 - Add tools menu.
 - Add moon months list form in tools menu.
@@ -130,11 +136,13 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Add calculate number of days between two dates in tools menu.
 - Add link to windows calculator in tools menu.
 - Add option to change month view text size.
+- Add option to change month view back and text colors for non-event days.
 - Add option to auto open destination folder of exports after done.
 - Fix controls tabs and focus in auto lock session form.
-- Fix default current day color in preferences form.
+- Fix reset default month view colors in preferences form.
 - Fix edit report text font size in preferences form.
 - Fix print bitmap size if the main form is resized.
+- Fix search celebration and moon month forms when closing using the top-right cross.
 - Fix celebration reminder that can be shown even the next day too with bad times.
 - Few UI fixes.
 - Add menu for web links about judaism.
@@ -144,8 +152,6 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Improve UI/UX.
 - Code refactoring.
 - Update help.
-
->>>>- Fix find celebration and lunar month boxes when closing using form cross.
 
 #### 2019.11.12 - Version 3.10
 
