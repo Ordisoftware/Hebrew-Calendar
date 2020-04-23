@@ -51,12 +51,16 @@ namespace Ordisoftware.HebrewCalendar
       EditYear_SelectedIndexChanged(null, null);
     }
 
-    private void ActionOk_Click(object sender, EventArgs e)
+    private void SearchEventForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( DialogResult == DialogResult.Cancel )
+        if ( CurrentDay != null )
+          MainForm.Instance.GoToDate(SQLiteHelper.GetDate(CurrentDay.Date));
     }
 
-    private void ActionCancel_Click(object sender, EventArgs e)
+    private void ListItems_DoubleClick(object sender, EventArgs e)
     {
+      ActionOk.PerformClick();
     }
 
     private void EditYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,18 +93,6 @@ namespace Ordisoftware.HebrewCalendar
         var row = (Data.DataSet.LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
         MainForm.Instance.GoToDate(SQLiteHelper.GetDate(row.Date));
       }
-    }
-
-    private void ListItems_DoubleClick(object sender, EventArgs e)
-    {
-      ActionOk.PerformClick();
-    }
-
-    private void SearchEventForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      if (DialogResult == DialogResult.Cancel)
-        if ( CurrentDay != null )
-          MainForm.Instance.GoToDate(SQLiteHelper.GetDate(CurrentDay.Date));
     }
 
   }

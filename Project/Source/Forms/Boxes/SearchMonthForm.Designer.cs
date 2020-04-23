@@ -53,7 +53,6 @@
       resources.ApplyResources(this.ActionCancel, "ActionCancel");
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
-      this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
       // 
       // ActionOk
       // 
@@ -61,7 +60,6 @@
       this.ActionOk.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionOk.Name = "ActionOk";
       this.ActionOk.UseVisualStyleBackColor = true;
-      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
       // 
       // LabelYear
       // 
