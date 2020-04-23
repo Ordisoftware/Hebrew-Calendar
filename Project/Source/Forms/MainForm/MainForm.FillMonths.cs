@@ -141,7 +141,7 @@ namespace Ordisoftware.HebrewCalendar
                      + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
           Color colorMoon = Color.Black;
           //string strMonth = " " + MoonMonths.Names[row.LunarMonth] + " (" + row.LunarMonth + ")";
-          string strMonthDay = $" {MoonMonths.Names[row.LunarMonth]} ({row.LunarMonth}) #{row.LunarDay}";
+          string strMonthDay = $" {MoonMonths.Names[row.LunarMonth]} [{row.LunarMonth}] #{row.LunarDay}";
           colorMoon = row.IsNewMoon == 1
                     ? Program.Settings.CalendarColorTorahEvent
                     : ( row.IsFullMoon == 1
