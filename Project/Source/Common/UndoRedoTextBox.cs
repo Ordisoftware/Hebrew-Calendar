@@ -55,14 +55,17 @@ namespace Ordisoftware.HebrewCommon
           return;
         try
         {
+          bool first = !( string.IsNullOrEmpty(Text) && UndoStack.Count == 0 );
           if ( !SetTextMutex )
           {
             SetTextMutex = true;
-            AddUndo();
+            if ( first )
+              AddUndo();
           }
           base.Text = value;
           if ( value != null )
-            SetCaret(0, value.Length);
+            if ( first )
+              SetCaret(0, value.Length);
           SelectionLength = 0;
         }
         finally
@@ -77,9 +80,11 @@ namespace Ordisoftware.HebrewCommon
       get { return base.SelectedText; }
       set
       {
+        if ( value == base.Text )
+          return;
         if ( value == null )
           value = "";
-        if ( SelectedText == value )
+        if ( base.SelectedText == value )
           return;
         if ( InsertingText != null )
           InsertingText(this, ref value);
@@ -94,7 +99,8 @@ namespace Ordisoftware.HebrewCommon
           }
           int selectionStart = SelectionStart;
           base.SelectedText = value;
-          if ( value != null ) SetCaret(selectionStart, value.Length);
+          if ( value != null )
+            SetCaret(selectionStart, value.Length);
         }
         finally
         {
