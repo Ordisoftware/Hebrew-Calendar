@@ -120,9 +120,9 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Add preferences menu in the tray icon.
 - Add dialog box to choose sun or moon omer at first startup.
 - Improve personal shabat dialog box notice.
-- Add celebrations dialog box notice
+- Add celebrations dialog box notice.
 - Improve preferences form.
-- Improve search celebration and moon month forms to use a combobox.
+- Improve search celebration and moon month forms to use a combobox to select year.
 - Add month number column in the search moon month form.
 - Add tools menu.
 - Add moon months list form in tools menu.
@@ -138,7 +138,7 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Fix celebration reminder that can be shown even the next day too with bad times.
 - Few UI fixes.
 - Add menu for web links about judaism.
-- Add option to auto optimize database at startup.
+- Add option to auto optimize database at startup once a week.
 - Add option to enable debugger.
 - Add debugger (exception information form with GitHub issue creation).
 - Improve UI/UX.
