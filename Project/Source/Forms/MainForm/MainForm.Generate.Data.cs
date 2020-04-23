@@ -88,7 +88,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowAndAbort("Generating", ex.Message);
+        ex.Manage();
       }
       finally
       {

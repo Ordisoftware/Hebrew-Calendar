@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( OdbcException ex )
       {
-        DisplayManager.ShowError(ex.Message);
+        ex.Manage();
         Environment.Exit(-1);
       }
       catch ( Exception ex )

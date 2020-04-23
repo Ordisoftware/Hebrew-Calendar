@@ -77,9 +77,9 @@ namespace Ordisoftware.HebrewCalendar
           LoadingForm.Hide();
         Refresh();
       }
-      catch ( Exception except )
+      catch ( Exception ex )
       {
-        except.Manage();
+        ex.Manage();
       }
     }
 

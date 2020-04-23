@@ -68,9 +68,9 @@ namespace Ordisoftware.HebrewCalendar
         }
         return result;
       }
-      catch ( Exception except )
+      catch ( Exception ex )
       {
-        except.Manage();
+        ex.Manage();
         return null;
       }
       finally
