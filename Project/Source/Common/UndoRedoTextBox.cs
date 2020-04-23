@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCommon
           return;
         if ( InsertingText != null )
           InsertingText(this, ref value);
-        if ( value.Length > MaxLength )
+        if ( value != null && value.Length > MaxLength )
           return;
         try
         {
@@ -59,7 +59,8 @@ namespace Ordisoftware.HebrewCommon
             AddUndo();
           }
           base.Text = value;
-          SetCaret(0, value.Length);
+          if (value != null)
+            SetCaret(0, value.Length);
           SelectionLength = 0;
         }
         finally
@@ -78,7 +79,7 @@ namespace Ordisoftware.HebrewCommon
           return;
         if ( InsertingText != null )
           InsertingText(this, ref value);
-        if ( Text.Length + value.Length - SelectionLength > MaxLength )
+        if ( value != null && Text.Length + value.Length - SelectionLength > MaxLength )
           return;
         try
         {
@@ -89,7 +90,7 @@ namespace Ordisoftware.HebrewCommon
           }
           int selectionStart = SelectionStart;
           base.SelectedText = value;
-          SetCaret(selectionStart, value.Length);
+          if ( value != null ) SetCaret(selectionStart, value.Length);
         }
         finally
         {
@@ -119,6 +120,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void AddUndo()
     {
+      if ( Text == null ) return;
       Previous.Set(Text, SelectionStart);
       UndoStack.Push(Previous);
       if ( RedoStack.Count > 0 )
