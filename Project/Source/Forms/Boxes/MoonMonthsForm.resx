@@ -136,7 +136,7 @@
     <value>65, 13</value>
   </data>
   <data name="ActionSwapColors.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>100</value>
   </data>
   <data name="ActionSwapColors.Text" xml:space="preserve">
     <value>Swap colors</value>
@@ -166,7 +166,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>0</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>
@@ -199,7 +199,7 @@
     <value>112, 13</value>
   </data>
   <data name="ActionReloadFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>102</value>
   </data>
   <data name="ActionReloadFiles.Text" xml:space="preserve">
     <value>Reload definitions files</value>
@@ -232,7 +232,7 @@
     <value>96, 13</value>
   </data>
   <data name="ActionEditFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>101</value>
   </data>
   <data name="ActionEditFiles.Text" xml:space="preserve">
     <value>Edit definitions files</value>
@@ -259,7 +259,7 @@
     <value>894, 40</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
     <value>PanelBottom</value>
@@ -389,7 +389,7 @@
     <value>Copy data</value>
   </data>
   <data name="ContextMenuItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 148</value>
+    <value>201, 126</value>
   </data>
   <data name="&gt;&gt;ContextMenuItems.Name" xml:space="preserve">
     <value>ContextMenuItems</value>
@@ -407,7 +407,7 @@
     <value>894, 505</value>
   </data>
   <data name="PanelMonths.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelMonths.Name" xml:space="preserve">
     <value>PanelMonths</value>

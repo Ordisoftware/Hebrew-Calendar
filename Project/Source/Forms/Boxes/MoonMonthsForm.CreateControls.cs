@@ -67,51 +67,53 @@ namespace Ordisoftware.HebrewCalendar
       }
       for ( int index = 1; index < MoonMonths.Names.Length; index++ )
       {
-        Func<int, int, string, Color, Font, bool, bool, LinkLabel> createLabel
-          = (posX, posY, text, color, font, isAlignRight, checkWidth) =>
+        Func<int, int, string, Color, Font, bool, bool, bool, LinkLabel> createLabel
+          = (posX, posY, text, color, font, tabstop, isAlignRight, checkWidth) =>
           {
-            var linklabel = new LinkLabel();
-            PanelMonths.Controls.Add(linklabel);
-            linklabel.Location = new Point(posX, posY);
-            linklabel.AutoSize = true;
-            linklabel.MaximumSize = new Size(maxLabelWidth, 0);
-            linklabel.Font = font;
-            linklabel.Text = text;
-            linklabel.Tag = index;
-            linklabel.LinkBehavior = LinkBehavior.NeverUnderline;
-            linklabel.ActiveLinkColor = colorActiveLink;
-            linklabel.LinkColor = color;
-            linklabel.LinkClicked += Label_LinkClicked;
-            linklabel.ContextMenuStrip = ContextMenuItems;
+            var label = new LinkLabel();
+            PanelMonths.Controls.Add(label);
+            label.Location = new Point(posX, posY);
+            label.AutoSize = true;
+            label.MaximumSize = new Size(maxLabelWidth, 0);
+            label.Font = font;
+            label.Text = text;
+            label.Tag = index;
+            label.LinkBehavior = LinkBehavior.NeverUnderline;
+            label.ActiveLinkColor = colorActiveLink;
+            label.LinkColor = color;
+            label.LinkClicked += Label_LinkClicked;
+            label.ContextMenuStrip = ContextMenuItems;
             if ( isAlignRight )
-              linklabel.Left = x + dx1 - 5 - linklabel.Width;
+              label.Left = x + dx1 - 5 - label.Width;
             if ( checkWidth )
             {
-              int dx = linklabel.Left + linklabel.Width;
+              int dx = label.Left + label.Width;
               if ( xmax < dx ) xmax = dx;
             }
-            return linklabel;
+            label.TabStop = tabstop;
+            if (tabstop) label.TabIndex = index;
+            return label;
           };
         var label1 = createLabel(x, y,
                                  HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]),
                                  colorsMonth[index - 1],
                                  new Font("Hebrew", 14f),
-                                 true, false);
+                                 true, true, false);
         var label2 = createLabel(x + dx1, y + dy1,
                                  MoonMonths.Names[index],
                                  colorsMonth[index - 1],
                                  new Font("Microsoft Sans Serif", 10f),
-                                 false, false);
+                                 false, false, false);
         var label3 = createLabel(x + dx2, y + dy2,
                                  MoonMonths.Meanings[index],
                                  colorLinkTextMeaning,
                                  new Font("Microsoft Sans Serif", 10f),
-                                 false, true);
+                                 false, false, true);
         var label4 = createLabel(x + dx2, label3.Top + label3.Height + dy3,
                                  MoonMonths.Lettriqs[index],
                                  colorLinkTextLettriq,
                                  new Font("Microsoft Sans Serif", 10f),
-                                 false, true);
+                                 false, false, true);
         y = label4.Top + label4.Height + dyline;
       }
       int width = xmax + 20;

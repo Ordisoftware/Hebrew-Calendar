@@ -483,4 +483,7 @@
   <data name="ActionMonthViewThemeDark.Text" xml:space="preserve">
     <value>Utiliser le thème sombre</value>
   </data>
+  <data name="EditDebuggerEnabled.Text" xml:space="preserve">
+    <value>Activer le débogueur</value>
+  </data>
 </root>

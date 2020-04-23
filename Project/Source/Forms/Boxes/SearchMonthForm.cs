@@ -32,6 +32,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      ActiveControl = ListItems;
     }
 
     private void SearchEventForm_Load(object sender, EventArgs e)
@@ -81,10 +82,16 @@ namespace Ordisoftware.HebrewCalendar
           item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
           item.Tag = row;
           if ( (TorahEvent)row.TorahEvents == TorahEvent.NewYearD1 )
+          {
+            item.Focused = true;
             item.Selected = true;
+          }
         }
       if ( ListItems.Items.Count > 0 && ListItems.SelectedItems.Count == 0 )
+      {
+        ListItems.Items[0].Focused = true;
         ListItems.Items[0].Selected = true;
+      }
     }
 
     private void ListItems_SelectedIndexChanged(object sender, EventArgs e)

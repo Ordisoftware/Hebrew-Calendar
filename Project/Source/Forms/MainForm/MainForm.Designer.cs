@@ -113,7 +113,6 @@
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewMoonMonths = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowShabatNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowCelebrationsNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -866,9 +865,8 @@
             this.ActionGenerate,
             this.toolStripSeparator14,
             this.ActionViewMoonMonths,
-            this.toolStripSeparator13,
-            this.ActionShowShabatNotice,
             this.ActionShowCelebrationsNotice,
+            this.ActionShowShabatNotice,
             this.toolStripSeparator8,
             this.ActionCalculateDateDiff,
             this.ActionOpenCalculator,
@@ -893,11 +891,6 @@
       resources.ApplyResources(this.ActionViewMoonMonths, "ActionViewMoonMonths");
       this.ActionViewMoonMonths.Name = "ActionViewMoonMonths";
       this.ActionViewMoonMonths.Click += new System.EventHandler(this.ActionViewMoonMonths_Click);
-      // 
-      // toolStripSeparator13
-      // 
-      this.toolStripSeparator13.Name = "toolStripSeparator13";
-      resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
       // 
       // ActionShowShabatNotice
       // 
@@ -1443,7 +1436,6 @@
     internal System.Windows.Forms.ContextMenuStrip MenuTray;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
     private System.Windows.Forms.ToolStripMenuItem MenuMoonMonths;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
     private System.Windows.Forms.ToolStripMenuItem ActionWebTwitter;

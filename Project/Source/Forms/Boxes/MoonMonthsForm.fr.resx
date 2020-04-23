@@ -145,9 +145,6 @@
   <data name="ActionEditFiles.Text" xml:space="preserve">
     <value>Editer les fichiers des définitions</value>
   </data>
-  <data name="ContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 120</value>
-  </data>
   <data name="ActionSearchOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -170,6 +167,9 @@
   </data>
   <data name="ActionSearchOnline.Text" xml:space="preserve">
     <value>Recherche en ligne</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 6</value>
   </data>
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -253,6 +253,9 @@
   </data>
   <data name="ActionCopyLine.Text" xml:space="preserve">
     <value>Copier les données</value>
+  </data>
+  <data name="ContextMenuItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 126</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Mois lunaires</value>

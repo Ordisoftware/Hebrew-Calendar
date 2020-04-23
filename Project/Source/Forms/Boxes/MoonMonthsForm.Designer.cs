@@ -61,9 +61,9 @@
       // 
       this.ActionSwapColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
+      this.ActionSwapColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionSwapColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionSwapColors.Name = "ActionSwapColors";
-      this.ActionSwapColors.TabStop = true;
       this.ActionSwapColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionSwapColors_LinkClicked);
       // 
       // ActionClose
@@ -77,18 +77,18 @@
       // 
       this.ActionReloadFiles.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionReloadFiles, "ActionReloadFiles");
+      this.ActionReloadFiles.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionReloadFiles.LinkColor = System.Drawing.Color.Navy;
       this.ActionReloadFiles.Name = "ActionReloadFiles";
-      this.ActionReloadFiles.TabStop = true;
       this.ActionReloadFiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionReloadFiles_LinkClicked);
       // 
       // ActionEditFiles
       // 
       this.ActionEditFiles.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
+      this.ActionEditFiles.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionEditFiles.LinkColor = System.Drawing.Color.Navy;
       this.ActionEditFiles.Name = "ActionEditFiles";
-      this.ActionEditFiles.TabStop = true;
       this.ActionEditFiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionEditFiles_LinkClicked);
       // 
       // ContextMenuItems

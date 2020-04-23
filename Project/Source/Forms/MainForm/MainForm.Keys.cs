@@ -55,7 +55,10 @@ namespace Ordisoftware.HebrewCalendar
           ActionNavigate.PerformClick();
           return true;
         case Keys.Control | Keys.A:
-          ActionViewCelebrations.PerformClick();
+          if ( ActiveControl == CalendarText )
+            CalendarText.SelectAll();
+          else
+            ActionViewCelebrations.PerformClick();
           return true;
         case Keys.Control | Keys.P:
           ActionPrint.PerformClick();
