@@ -58,10 +58,11 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionEditFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      SystemHelper.RunShell(Globals.DocumentsFolderPath + "MoonMonthsMeaningsEN.txt");
-      SystemHelper.RunShell(Globals.DocumentsFolderPath + "MoonMonthsMeaningsFR.txt");
-      SystemHelper.RunShell(Globals.DocumentsFolderPath + "MoonMonthsLettriqsEN.txt");
-      SystemHelper.RunShell(Globals.DocumentsFolderPath + "MoonMonthsLettriqsFR.txt");
+      foreach ( string lang in Localizer.AvailableLanguages )
+      {
+        SystemHelper.RunShell(Program.MoonMonthsMeaningsFilename.Replace("%LANG%", lang.ToUpper()));
+        SystemHelper.RunShell(Program.MoonMonthsLettriqsFilename.Replace("%LANG%", lang.ToUpper()));
+      }
     }
 
     private void ActionReloadFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

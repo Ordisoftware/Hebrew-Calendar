@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>807, 8</value>
+    <value>707, 8</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -253,10 +253,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 505</value>
+    <value>0, 528</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>894, 40</value>
+    <value>794, 40</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -276,6 +276,15 @@
   <metadata name="ContextMenuItems.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ContextMenuItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 126</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuItems.Name" xml:space="preserve">
+    <value>ContextMenuItems</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuItems.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="ActionSearchOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -388,15 +397,6 @@
   <data name="ActionCopyLine.Text" xml:space="preserve">
     <value>Copy data</value>
   </data>
-  <data name="ContextMenuItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 126</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuItems.Name" xml:space="preserve">
-    <value>ContextMenuItems</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuItems.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="PanelMonths.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -404,7 +404,7 @@
     <value>0, 0</value>
   </data>
   <data name="PanelMonths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>894, 505</value>
+    <value>794, 528</value>
   </data>
   <data name="PanelMonths.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -428,7 +428,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>894, 545</value>
+    <value>794, 568</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>

@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewCalendar
               continue;
             if ( line.StartsWith(";") )
               continue;
-            var parts = line.Split('=');
+            var parts = line.Split(new char[] { '=' }, 2);
             list[index] = parts[1].Trim();
             if ( ++index >= Names.Length )
               break;

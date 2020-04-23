@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewCalendar
       int dyline = 5;
       int xmax = 0;
       int y = 10;
-      int maxLabelWidth = 600;
+      int maxLabelWidth = 900;
       Color[] colorsMonth = new Color[0];
       Color colorLinkTextMeaning = SystemColors.ControlText;
       Color colorLinkTextLettriq = SystemColors.ControlText;
