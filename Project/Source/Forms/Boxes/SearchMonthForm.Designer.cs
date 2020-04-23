@@ -58,6 +58,7 @@
       // ActionOk
       // 
       resources.ApplyResources(this.ActionOk, "ActionOk");
+      this.ActionOk.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionOk.Name = "ActionOk";
       this.ActionOk.UseVisualStyleBackColor = true;
       this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
@@ -121,6 +122,7 @@
       this.MinimizeBox = false;
       this.Name = "SearchMonthForm";
       this.ShowInTaskbar = false;
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchMonthForm_FormClosing);
       this.Load += new System.EventHandler(this.SearchEventForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);

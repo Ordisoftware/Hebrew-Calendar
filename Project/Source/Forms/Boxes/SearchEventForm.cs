@@ -53,14 +53,10 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionOk_Click(object sender, EventArgs e)
     {
-      DialogResult = DialogResult.OK;
-      Close();
     }
 
     private void ActionCancel_Click(object sender, EventArgs e)
     {
-      if ( CurrentDay != null )
-        MainForm.Instance.GoToDate(SQLiteHelper.GetDate(CurrentDay.Date));
     }
 
     private void EditYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,6 +95,14 @@ namespace Ordisoftware.HebrewCalendar
     {
       ActionOk.PerformClick();
     }
+
+    private void SearchEventForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if (DialogResult == DialogResult.Cancel)
+        if ( CurrentDay != null )
+          MainForm.Instance.GoToDate(SQLiteHelper.GetDate(CurrentDay.Date));
+    }
+
   }
 
 }
