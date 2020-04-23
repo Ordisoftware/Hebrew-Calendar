@@ -110,15 +110,15 @@
       this.ActionDownloadHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionDownloadHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTools = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewMoonMonths = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionShowShabatNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowCelebrationsNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowShabatNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuumDB = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -156,7 +156,6 @@
       this.MenuEnableReminder = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuDisableReminder = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenuView = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuMoonMonths = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
@@ -253,6 +252,7 @@
       resources.ApplyResources(this.CalendarText, "CalendarText");
       this.CalendarText.Name = "CalendarText";
       this.CalendarText.ReadOnly = true;
+      this.CalendarText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CalendarText_KeyDown);
       // 
       // TabPageMonth
       // 
@@ -862,29 +862,18 @@
       // 
       this.MenuTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionGenerate,
-            this.toolStripSeparator14,
             this.ActionViewMoonMonths,
+            this.toolStripSeparator1,
             this.ActionShowCelebrationsNotice,
             this.ActionShowShabatNotice,
             this.toolStripSeparator8,
             this.ActionCalculateDateDiff,
             this.ActionOpenCalculator,
             this.toolStripMenuItem1,
+            this.ActionGenerate,
             this.ActionVacuumDB});
       resources.ApplyResources(this.MenuTools, "MenuTools");
       this.MenuTools.Name = "MenuTools";
-      // 
-      // ActionGenerate
-      // 
-      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
-      this.ActionGenerate.Name = "ActionGenerate";
-      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
-      // 
-      // toolStripSeparator14
-      // 
-      this.toolStripSeparator14.Name = "toolStripSeparator14";
-      resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
       // 
       // ActionViewMoonMonths
       // 
@@ -892,17 +881,22 @@
       this.ActionViewMoonMonths.Name = "ActionViewMoonMonths";
       this.ActionViewMoonMonths.Click += new System.EventHandler(this.ActionViewMoonMonths_Click);
       // 
-      // ActionShowShabatNotice
+      // toolStripSeparator1
       // 
-      resources.ApplyResources(this.ActionShowShabatNotice, "ActionShowShabatNotice");
-      this.ActionShowShabatNotice.Name = "ActionShowShabatNotice";
-      this.ActionShowShabatNotice.Click += new System.EventHandler(this.ActionShowShabatNotice_Click);
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionShowCelebrationsNotice
       // 
       resources.ApplyResources(this.ActionShowCelebrationsNotice, "ActionShowCelebrationsNotice");
       this.ActionShowCelebrationsNotice.Name = "ActionShowCelebrationsNotice";
       this.ActionShowCelebrationsNotice.Click += new System.EventHandler(this.ActionShowCelebrationsNotice_Click);
+      // 
+      // ActionShowShabatNotice
+      // 
+      resources.ApplyResources(this.ActionShowShabatNotice, "ActionShowShabatNotice");
+      this.ActionShowShabatNotice.Name = "ActionShowShabatNotice";
+      this.ActionShowShabatNotice.Click += new System.EventHandler(this.ActionShowShabatNotice_Click);
       // 
       // toolStripSeparator8
       // 
@@ -926,6 +920,12 @@
       // 
       this.toolStripMenuItem1.Name = "toolStripMenuItem1";
       resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      // 
+      // ActionGenerate
+      // 
+      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
+      this.ActionGenerate.Name = "ActionGenerate";
+      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
       // 
       // ActionVacuumDB
       // 
@@ -1149,7 +1149,6 @@
             this.MenuEnableReminder,
             this.MenuDisableReminder,
             this.SeparatorTrayMenuView,
-            this.MenuMoonMonths,
             this.MenuPreferences,
             this.MenuAbout,
             this.toolStripSeparator10,
@@ -1208,12 +1207,6 @@
       // 
       this.SeparatorTrayMenuView.Name = "SeparatorTrayMenuView";
       resources.ApplyResources(this.SeparatorTrayMenuView, "SeparatorTrayMenuView");
-      // 
-      // MenuMoonMonths
-      // 
-      resources.ApplyResources(this.MenuMoonMonths, "MenuMoonMonths");
-      this.MenuMoonMonths.Name = "MenuMoonMonths";
-      this.MenuMoonMonths.Click += new System.EventHandler(this.ActionViewMoonMonths_Click);
       // 
       // MenuPreferences
       // 
@@ -1435,7 +1428,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     internal System.Windows.Forms.ContextMenuStrip MenuTray;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-    private System.Windows.Forms.ToolStripMenuItem MenuMoonMonths;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
     private System.Windows.Forms.ToolStripMenuItem ActionWebTwitter;
@@ -1449,9 +1441,9 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripMenuItem ActionWebQA;
     private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuumDB;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
   }
 }
 

@@ -838,6 +838,15 @@ namespace Ordisoftware.HebrewCalendar
       ClearLists();
     }
 
+    private void CalendarText_KeyDown(object sender, KeyEventArgs e)
+    {
+      if ( e.Control && e.KeyCode == Keys.A )
+      {
+        CalendarText.SelectAll();
+        e.Handled = true;
+      }
+    }
+
     /// <summary>
     /// Event handler. Called by CalendarGrid for cell formatting events.
     /// </summary>

@@ -423,7 +423,7 @@
     <value>233, 17</value>
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
-    <value>Optimiser BD au démarrage chaque semaine</value>
+    <value>Optimiser données au démarrage chaque semaine</value>
   </data>
   <data name="ActionSelectLangFR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

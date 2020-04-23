@@ -29,15 +29,29 @@ namespace Ordisoftware.HebrewCalendar
     {
       switch ( keyData )
       {
+        case Keys.Control | Keys.Shift | Keys.Tab:
+          SetView(Program.Settings.CurrentView.Previous());
+          return true;
         case Keys.Control | Keys.Tab:
-          if ( Program.Settings.CurrentView == ViewMode.Text )
-            SetView(ViewMode.Month);
-          else
-          if ( Program.Settings.CurrentView == ViewMode.Month )
-            SetView(ViewMode.Grid);
-          else
-          if ( Program.Settings.CurrentView == ViewMode.Grid )
-            SetView(ViewMode.Text);
+          SetView(Program.Settings.CurrentView.Next());
+          return true;
+        /*case Keys.F1:
+          SetView(ViewMode.Text);
+          return true;
+        case Keys.F2:
+          SetView(ViewMode.Month);
+          return true;
+        case Keys.F3:
+          SetView(ViewMode.Grid);
+          return true;*/
+        case Keys.F4:
+          ActionViewCelebrations.PerformClick();
+          return true;
+        case Keys.F5:
+          ActionSearchEvent.PerformClick();
+          return true;
+        case Keys.F6:
+          ActionSearchMonth.PerformClick();
           return true;
         case Keys.Control | Keys.T:
           GoToDate(DateTime.Today);
@@ -45,20 +59,8 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Control | Keys.D:
           ActionSearchDay.PerformClick();
           return true;
-        case Keys.Control | Keys.E:
-          ActionSearchEvent.PerformClick();
-          return true;
-        case Keys.Control | Keys.M:
-          ActionSearchMonth.PerformClick();
-          return true;
         case Keys.Control | Keys.N:
           ActionNavigate.PerformClick();
-          return true;
-        case Keys.Control | Keys.A:
-          if ( ActiveControl == CalendarText )
-            CalendarText.SelectAll();
-          else
-            ActionViewCelebrations.PerformClick();
           return true;
         case Keys.Control | Keys.P:
           ActionPrint.PerformClick();
