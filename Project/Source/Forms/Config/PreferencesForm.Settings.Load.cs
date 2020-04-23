@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LoadSettings()
     {
-      editdebug
+      EditDebuggerEnabled.Checked = Program.Settings.DebuggerEnabled;
       EditVacuumAtStartup.Checked = Program.Settings.VacuumAtStartup;
       EditHebrewLettersPath.Text = Program.Settings.HebrewLettersExe;
       EditAutoLockSession.Checked = Program.Settings.AutoLockSession;

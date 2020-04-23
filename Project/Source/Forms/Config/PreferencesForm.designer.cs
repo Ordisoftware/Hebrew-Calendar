@@ -132,7 +132,7 @@
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
-      this.checkBox1 = new System.Windows.Forms.CheckBox();
+      this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
@@ -921,7 +921,7 @@
       this.GroupBoxSystem.Controls.Add(this.EditShowReminderInTaskBar);
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
-      this.GroupBoxSystem.Controls.Add(this.checkBox1);
+      this.GroupBoxSystem.Controls.Add(this.EditDebuggerEnabled);
       this.GroupBoxSystem.Controls.Add(this.EditMonthViewSunToolTips);
       resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
@@ -988,12 +988,12 @@
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
-      // checkBox1
+      // EditDebuggerEnabled
       // 
-      resources.ApplyResources(this.checkBox1, "checkBox1");
-      this.checkBox1.Name = "checkBox1";
-      this.checkBox1.UseVisualStyleBackColor = true;
-      this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+      resources.ApplyResources(this.EditDebuggerEnabled, "EditDebuggerEnabled");
+      this.EditDebuggerEnabled.Name = "EditDebuggerEnabled";
+      this.EditDebuggerEnabled.UseVisualStyleBackColor = true;
+      this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
       // 
       // OpenFileDialog
       // 
@@ -1153,6 +1153,6 @@
     private System.Windows.Forms.Button ActionSelectHebrewLettersPath;
     private System.Windows.Forms.TextBox EditHebrewLettersPath;
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
-    private System.Windows.Forms.CheckBox checkBox1;
+    private System.Windows.Forms.CheckBox EditDebuggerEnabled;
   }
 }
