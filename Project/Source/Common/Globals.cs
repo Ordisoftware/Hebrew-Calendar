@@ -104,7 +104,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the GitHub issues page.
     /// </summary>
     static public string GitHubIssuesURL
-      = GitHubRepositoryURL + "/issues/new";
+      = GitHubRepositoryURL + "/issues/new?assignees=" + AssemblyCompany;
 
     /// <summary>
     /// Indicate the extension of database files.
