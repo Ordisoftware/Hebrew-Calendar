@@ -45,6 +45,8 @@ namespace Ordisoftware.HebrewCommon
       get { return base.Text; }
       set
       {
+        if ( value == null )
+          value = "";
         if ( Text == value )
           return;
         if ( InsertingText != null )
@@ -59,7 +61,7 @@ namespace Ordisoftware.HebrewCommon
             AddUndo();
           }
           base.Text = value;
-          if (value != null)
+          if ( value != null )
             SetCaret(0, value.Length);
           SelectionLength = 0;
         }
@@ -75,6 +77,8 @@ namespace Ordisoftware.HebrewCommon
       get { return base.SelectedText; }
       set
       {
+        if ( value == null )
+          value = "";
         if ( SelectedText == value )
           return;
         if ( InsertingText != null )
@@ -113,9 +117,9 @@ namespace Ordisoftware.HebrewCommon
     {
       ActionUndo.Enabled = UndoStack.Count != 0;
       ActionRedo.Enabled = RedoStack.Count != 0;
-      ActionCopy.Enabled = SelectedText != "";
+      ActionCopy.Enabled = !string.IsNullOrEmpty(SelectedText);
       ActionCut.Enabled = ActionCopy.Enabled;
-      ActionPaste.Enabled = Clipboard.GetText() != "";
+      ActionPaste.Enabled = !string.IsNullOrEmpty(Clipboard.GetText());
     }
 
     private void AddUndo()
@@ -180,6 +184,7 @@ namespace Ordisoftware.HebrewCommon
         if ( action != null ) action();
         return true;
       };
+      ContextMenuEdit_Opened(null, null);
       if ( !check(e.Control, Keys.A, SelectAll) )
         if ( !check(e.Control, Keys.Z, ActionUndo.PerformClick) )
           if ( !check(e.Control, Keys.Y, ActionRedo.PerformClick) )
@@ -192,13 +197,13 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionCopy_Click(object sender, EventArgs e)
     {
-      if ( SelectedText == "" ) return;
+      if ( string.IsNullOrEmpty(SelectedText) ) return;
       Clipboard.SetText(SelectedText);
     }
 
     private void ActionCut_Click(object sender, EventArgs e)
     {
-      if ( SelectedText == "" ) return;
+      if ( string.IsNullOrEmpty(SelectedText) ) return;
       Clipboard.SetText(SelectedText);
       int selectionStart = SelectionStart;
       Text = Text.Remove(selectionStart, SelectionLength);
