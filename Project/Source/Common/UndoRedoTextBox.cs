@@ -55,16 +55,16 @@ namespace Ordisoftware.HebrewCommon
           return;
         try
         {
-          bool first = !( string.IsNullOrEmpty(Text) && UndoStack.Count == 0 );
+          bool first = string.IsNullOrEmpty(Text) && UndoStack.Count == 0;
           if ( !SetTextMutex )
           {
             SetTextMutex = true;
-            if ( first )
+            if ( !first )
               AddUndo();
           }
           base.Text = value;
           if ( value != null )
-            if ( first )
+            if ( !first )
               SetCaret(0, value.Length);
           SelectionLength = 0;
         }
