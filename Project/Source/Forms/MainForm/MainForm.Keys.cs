@@ -35,15 +35,6 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Control | Keys.Tab:
           SetView(Program.Settings.CurrentView.Next());
           return true;
-        /*case Keys.F1:
-          SetView(ViewMode.Text);
-          return true;
-        case Keys.F2:
-          SetView(ViewMode.Month);
-          return true;
-        case Keys.F3:
-          SetView(ViewMode.Grid);
-          return true;*/
         case Keys.F4:
           ActionViewCelebrations.PerformClick();
           return true;
