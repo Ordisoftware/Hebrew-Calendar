@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.Windows.Forms.Label LabelGPSLatitude;
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
       System.Windows.Forms.Label LabelGPSLongitude;
@@ -110,7 +111,9 @@
       this.EditRemindCelebrationEveryMinutes = new System.Windows.Forms.NumericUpDown();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
       this.GroupBoxMonth = new System.Windows.Forms.GroupBox();
+      this.LabelColorNoDay = new System.Windows.Forms.Label();
       this.LabelColorText = new System.Windows.Forms.Label();
+      this.EditCalendarColorNoDay = new System.Windows.Forms.Panel();
       this.EditCalendarColorDefaultText = new System.Windows.Forms.Panel();
       this.LabelColorEmpty = new System.Windows.Forms.Label();
       this.EditCalendarColorEmpty = new System.Windows.Forms.Panel();
@@ -130,7 +133,7 @@
       this.EditCurrentDayForeColor = new System.Windows.Forms.Panel();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
-      this.EditHebrewLettersPath = new System.Windows.Forms.TextBox();
+      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
@@ -139,8 +142,6 @@
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-      this.EditCalendarColorNoDay = new System.Windows.Forms.Panel();
-      this.LabelColorNoDay = new System.Windows.Forms.Label();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -842,10 +843,23 @@
       this.GroupBoxMonth.Name = "GroupBoxMonth";
       this.GroupBoxMonth.TabStop = false;
       // 
+      // LabelColorNoDay
+      // 
+      resources.ApplyResources(this.LabelColorNoDay, "LabelColorNoDay");
+      this.LabelColorNoDay.Name = "LabelColorNoDay";
+      // 
       // LabelColorText
       // 
       resources.ApplyResources(this.LabelColorText, "LabelColorText");
       this.LabelColorText.Name = "LabelColorText";
+      // 
+      // EditCalendarColorNoDay
+      // 
+      this.EditCalendarColorNoDay.BackColor = System.Drawing.Color.Black;
+      this.EditCalendarColorNoDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorNoDay, "EditCalendarColorNoDay");
+      this.EditCalendarColorNoDay.Name = "EditCalendarColorNoDay";
+      this.EditCalendarColorNoDay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditCalendarColorDefaultText_MouseClick);
       // 
       // EditCalendarColorDefaultText
       // 
@@ -994,6 +1008,7 @@
       // 
       // EditHebrewLettersPath
       // 
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.TextBoxCaretAfterPaste.End;
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       // 
@@ -1055,19 +1070,6 @@
       // OpenFileDialog
       // 
       resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
-      // 
-      // EditCalendarColorNoDay
-      // 
-      this.EditCalendarColorNoDay.BackColor = System.Drawing.Color.Black;
-      this.EditCalendarColorNoDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditCalendarColorNoDay, "EditCalendarColorNoDay");
-      this.EditCalendarColorNoDay.Name = "EditCalendarColorNoDay";
-      this.EditCalendarColorNoDay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditCalendarColorDefaultText_MouseClick);
-      // 
-      // LabelColorNoDay
-      // 
-      resources.ApplyResources(this.LabelColorNoDay, "LabelColorNoDay");
-      this.LabelColorNoDay.Name = "LabelColorNoDay";
       // 
       // PreferencesForm
       // 
@@ -1221,7 +1223,7 @@
     private System.Windows.Forms.CheckBox EditAutoOpenExportFolder;
     private System.Windows.Forms.CheckBox EditVacuumAtStartup;
     private System.Windows.Forms.Button ActionSelectHebrewLettersPath;
-    private System.Windows.Forms.TextBox EditHebrewLettersPath;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditHebrewLettersPath;
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
     private System.Windows.Forms.CheckBox EditDebuggerEnabled;
     private System.Windows.Forms.Label LabelColorText;
