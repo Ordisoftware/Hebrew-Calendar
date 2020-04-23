@@ -94,9 +94,9 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - F2 : Month view
 - F3 : Database grid view
 - F4 : Next celebrations window
-- F5 : Search celebration window
-- F6 : Search moon month window
-- F7 : Lunar months list window
+- F5 : Search a celebration window
+- F6 : Search a moon month window
+- F7 : Search a day window
 - Ctrl+Tab : Next view
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today
@@ -114,7 +114,11 @@ The application uses by default moon omer for celebrations. If you use moon omer
 
 ## Changelog
 
-#### 2020.04.__ - Version 4.0
+#### Future improvements
+
+- Add moon months description form in tools menu.
+
+#### 2020.04.24 - Version 4.0
 
 - Exit application at startup if user choose to download a newer version.
 - Add F1/F2/F3 shortcuts to select the view.
@@ -131,7 +135,6 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Improve text report : Ctrl+A select all text.
 - Add month number column in the search moon month form.
 - Add tools menu.
-- Add moon months list form in tools menu.
 - Add celebrations and shabat notices in tools menu.
 - Add calculate number of days between two dates in tools menu.
 - Add link to windows calculator in tools menu.
