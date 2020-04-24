@@ -19,6 +19,18 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
+  public struct UndoRedoItem
+  {
+    public string Text;
+    public int SelectionStart;
+    public UndoRedoItem Set(string text, int selectionStart)
+    {
+      Text = text;
+      SelectionStart = selectionStart;
+      return this;
+    }
+  }
+
   public enum CaretPositionAfterPaste
   {
     Start,
@@ -104,27 +116,37 @@ namespace Ordisoftware.HebrewCommon
     public UndoRedoTextBox()
     {
       InitializeComponent();
-      ActionUndo.Click += ActionUndo_Click;
-      ActionRedo.Click += ActionRedo_Click;
-      ActionCopy.Click += ActionCopy_Click;
-      ActionCut.Click += ActionCut_Click;
-      ActionPaste.Click += ActionPaste_Click;
-      ActionSelectAll.Click += ActionSelectAll_Click;
+      if ( components == null ) components = new System.ComponentModel.Container();
+      if ( ContextMenuEdit == null )
+      {
+        InitializeContextMenu(components);
+        ContextMenuEdit.Opened += ContextMenuEdit_Opened;
+        ActionUndo.Click += ActionUndo_Click;
+        ActionRedo.Click += ActionRedo_Click;
+        ActionCopy.Click += ActionCopy_Click;
+        ActionCut.Click += ActionCut_Click;
+        ActionPaste.Click += ActionPaste_Click;
+        ActionSelectAll.Click += ActionSelectAll_Click;
+      }
+      ContextMenuStrip = ContextMenuEdit;
     }
 
-    private void UpdateMenuItems()
+    private void UpdateMenuItems(UndoRedoTextBox textbox)
     {
-      ActionUndo.Enabled = Enabled && !ReadOnly && UndoStack.Count != 0;
-      ActionRedo.Enabled = Enabled && !ReadOnly && RedoStack.Count != 0;
-      ActionCopy.Enabled = Enabled && !string.IsNullOrEmpty(SelectedText);
-      ActionCut.Enabled = Enabled && !ReadOnly && ActionCopy.Enabled;
-      ActionPaste.Enabled = Enabled && !ReadOnly && !string.IsNullOrEmpty(Clipboard.GetText());
-      ActionSelectAll.Enabled = Enabled && !string.IsNullOrEmpty(base.Text) && SelectionLength != TextLength;
+      bool b1 = textbox.Enabled;
+      bool b2 = textbox.Enabled && !textbox.ReadOnly;
+      bool b3 = !string.IsNullOrEmpty(textbox.SelectedText);
+      ActionUndo.Enabled = b2 && textbox.UndoStack.Count != 0;
+      ActionRedo.Enabled = b2 && textbox.RedoStack.Count != 0;
+      ActionCopy.Enabled = b1 && b3;
+      ActionCut.Enabled = b2 && b3;
+      ActionPaste.Enabled = b2 && !string.IsNullOrEmpty(Clipboard.GetText());
+      ActionSelectAll.Enabled = b1 && !string.IsNullOrEmpty(textbox.Text) && textbox.SelectionLength != textbox.TextLength;
     }
 
     private void ContextMenuEdit_Opened(object sender, EventArgs e)
     {
-      UpdateMenuItems();
+      UpdateMenuItems(GetTextBoxAndFocus(sender));
     }
 
     private void AddUndo()
@@ -182,113 +204,101 @@ namespace Ordisoftware.HebrewCommon
 
     private void KeyDownEvent(object sender, KeyEventArgs e)
     {
-      Func<bool, Keys, Action, bool> check = (condition, key, action) =>
+      Func<bool, Keys, Action<object, EventArgs>, bool> check = (condition, key, action) =>
       {
         if ( !condition || e.KeyCode != key ) return false;
         e.SuppressKeyPress = true;
-        if ( action != null ) action();
+        if ( action != null ) action(this, null);
         return true;
       };
-      UpdateMenuItems();
-      if ( !check(e.Control, Keys.A, ActionSelectAll.PerformClick) )
-        if ( !check(e.Control, Keys.Z, ActionUndo.PerformClick) )
-          if ( !check(e.Control, Keys.Y, ActionRedo.PerformClick) )
-            if ( !check(e.Control, Keys.Insert, ActionCopy.PerformClick) )
-              if ( !check(e.Shift, Keys.Delete, ActionCut.PerformClick) )
-                if ( !check(e.Shift, Keys.Insert, ActionPaste.PerformClick) )
+      UpdateMenuItems(this);
+      if ( !check(e.Control, Keys.A, ActionSelectAll_Click) )
+        if ( !check(e.Control, Keys.Z, ActionUndo_Click) )
+          if ( !check(e.Control, Keys.Y, ActionRedo_Click) )
+            if ( !check(e.Control, Keys.Insert, ActionCopy_Click) )
+              if ( !check(e.Shift, Keys.Delete, ActionCut_Click) )
+                if ( !check(e.Shift, Keys.Insert, ActionPaste_Click) )
                   Previous.Set(Text, SelectionStart);
     }
 
     private void ActionSelectAll_Click(object sender, EventArgs e)
     {
-      if ( !Enabled ) return;
-      if ( sender is ToolStripMenuItem && !Focused ) Focus();
-      SelectAll();
+      var textbox = GetTextBoxAndFocus(sender);
+      if ( !textbox.Enabled ) return;
+      textbox.SelectAll();
     }
 
     private void ActionCopy_Click(object sender, EventArgs e)
     {
-      if ( !Enabled ) return;
-      if ( sender is ToolStripMenuItem && !Focused ) Focus();
-      if ( string.IsNullOrEmpty(SelectedText) ) return;
-      Clipboard.SetText(SelectedText);
+      var textbox = GetTextBoxAndFocus(sender);
+      if ( !textbox.Enabled ) return;
+      if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
+      Clipboard.SetText(textbox.SelectedText);
     }
 
     private void ActionCut_Click(object sender, EventArgs e)
     {
-      if ( !Enabled ) return;
-      if ( sender is ToolStripMenuItem && !Focused ) Focus();
-      if ( string.IsNullOrEmpty(SelectedText) ) return;
-      if ( ReadOnly ) return;
-      Clipboard.SetText(SelectedText);
-      int selectionStart = SelectionStart;
-      Text = Text.Remove(selectionStart, SelectionLength);
-      SelectionStart = selectionStart;
+      var textbox = GetTextBoxAndFocus(sender);
+      if ( !textbox.Enabled ) return;
+      if ( textbox.ReadOnly ) return;
+      if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
+      Clipboard.SetText(textbox.SelectedText);
+      int selectionStart = textbox.SelectionStart;
+      textbox.Text = textbox.Text.Remove(selectionStart, textbox.SelectionLength);
+      textbox.SelectionStart = selectionStart;
     }
 
     private void ActionPaste_Click(object sender, EventArgs e)
     {
-      if ( !Enabled ) return;
-      if ( sender is ToolStripMenuItem && !Focused ) Focus();
+      var textbox = GetTextBoxAndFocus(sender);
+      if ( !textbox.Enabled ) return;
+      if ( textbox.ReadOnly ) return;
       if ( string.IsNullOrEmpty(Clipboard.GetText()) ) return;
-      if ( ReadOnly ) return;
-      SelectedText = Clipboard.GetText();
+      textbox.SelectedText = Clipboard.GetText();
     }
 
     private void ActionUndo_Click(object sender, EventArgs e)
     {
-      if ( !Enabled ) return;
-      if ( sender is ToolStripMenuItem && !Focused ) Focus();
-      if ( ReadOnly ) return;
-      if ( UndoStack.Count == 0 ) return;
+      var textbox = GetTextBoxAndFocus(sender);
+      if ( !textbox.Enabled ) return;
+      if ( textbox.ReadOnly ) return;
+      if ( textbox.UndoStack.Count == 0 ) return;
       try
       {
-        SetTextMutex = true;
-        Previous.Set(Text, SelectionStart);
-        RedoStack.Push(new UndoRedoItem().Set(Text, SelectionStart));
-        var item = UndoStack.Pop();
-        Text = item.Text;
-        SelectionStart = item.SelectionStart;
+        textbox.SetTextMutex = true;
+        textbox.Previous.Set(textbox.Text, textbox.SelectionStart);
+        textbox.RedoStack.Push(new UndoRedoItem().Set(textbox.Text, textbox.SelectionStart));
+        var item = textbox.UndoStack.Pop();
+        textbox.Text = item.Text;
+        textbox.SelectionStart = item.SelectionStart;
       }
       finally
       {
-        SetTextMutex = false;
+        textbox.SetTextMutex = false;
       }
     }
 
     private void ActionRedo_Click(object sender, EventArgs e)
     {
-      if ( !Enabled ) return;
-      if ( sender is ToolStripMenuItem && !Focused ) Focus();
-      if ( ReadOnly ) return;
-      if ( RedoStack.Count == 0 ) return;
+      var textbox = GetTextBoxAndFocus(sender);
+      if ( !textbox.Enabled ) return;
+      if ( textbox.ReadOnly ) return;
+      if ( textbox.RedoStack.Count == 0 ) return;
       try
       {
-        SetTextMutex = true;
-        UndoStack.Push(new UndoRedoItem().Set(Text, SelectionStart));
-        var item = RedoStack.Pop();
+        textbox.SetTextMutex = true;
+        textbox.UndoStack.Push(new UndoRedoItem().Set(textbox.Text, textbox.SelectionStart));
+        var item = textbox.RedoStack.Pop();
         Text = item.Text;
-        SelectionStart = item.SelectionStart;
-        Previous.Set(Text, SelectionStart);
+        textbox.SelectionStart = item.SelectionStart;
+        textbox.Previous.Set(textbox.Text, textbox.SelectionStart);
       }
       finally
       {
-        SetTextMutex = false;
+        textbox.SetTextMutex = false;
       }
     }
 
-  }
-
-  public struct UndoRedoItem
-  {
-    public string Text;
-    public int SelectionStart;
-    public UndoRedoItem Set(string text, int selectionStart)
-    {
-      Text = text;
-      SelectionStart = selectionStart;
-      return this;
-    }
   }
 
 }

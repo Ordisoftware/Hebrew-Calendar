@@ -134,7 +134,7 @@
     <value>116, 22</value>
   </data>
   <data name="ActionUndo.Text" xml:space="preserve">
-    <value>Annuler</value>
+    <value>Undo</value>
   </data>
   <data name="ActionRedo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -152,7 +152,7 @@
     <value>116, 22</value>
   </data>
   <data name="ActionRedo.Text" xml:space="preserve">
-    <value>Refaire</value>
+    <value>Redo</value>
   </data>
   <data name="Separator.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 6</value>
@@ -176,7 +176,7 @@
     <value>116, 22</value>
   </data>
   <data name="ActionCopy.Text" xml:space="preserve">
-    <value>Copier</value>
+    <value>Copy</value>
   </data>
   <data name="ActionCut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -194,7 +194,7 @@
     <value>116, 22</value>
   </data>
   <data name="ActionCut.Text" xml:space="preserve">
-    <value>Couper</value>
+    <value>Cut</value>
   </data>
   <data name="ActionSelectAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -227,12 +227,12 @@
     <value>116, 22</value>
   </data>
   <data name="ActionPaste.Text" xml:space="preserve">
-    <value>Coller</value>
+    <value>Paste</value>
   </data>
   <data name="ContextMenuEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 120</value>
   </data>
   <data name="ActionSelectAll.Text" xml:space="preserve">
-    <value>Tout sélectionner</value>
+    <value>Select all</value>
   </data>
 </root>

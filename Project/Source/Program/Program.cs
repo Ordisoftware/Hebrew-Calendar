@@ -111,6 +111,7 @@ namespace Ordisoftware.HebrewCalendar
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.TimerReminder_Tick(null, null);
+      UndoRedoTextBox.Relocalize();
     }
 
   }

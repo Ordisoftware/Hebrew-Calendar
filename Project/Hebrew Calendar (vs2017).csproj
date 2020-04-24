@@ -154,6 +154,9 @@
     <Compile Include="Source\Common\UndoRedoTextBox.Designer.cs">
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\UndoRedoTextBox.Static.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Source\Program\Translations.BigCalendar.cs" />
     <Compile Include="Source\Common\Globals.Translations.cs" />
     <Compile Include="Source\Common\HTMLBrowserForm.cs">
@@ -431,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UndoRedoTextBox.en.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\UndoRedoTextBox.fr.resx">
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
