@@ -176,7 +176,7 @@ namespace Ordisoftware.HebrewCommon
     public LettersControl()
     {
       InitializeComponent();
-      Input.CaretAfterPaste = TextBoxCaretAfterPaste.Start;
+      Input.CaretAfterPaste = CaretPositionAfterPaste.Start;
       Input.MaxLength = 20;
     }
 
@@ -206,7 +206,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// TextChanging event.
     /// </summary>
-    private void Input_TextChanging(object sender, ref string text)
+    private void Input_TextChanging(object sender, TextInsertingMode mode, ref string text)
     {
       text = HebrewAlphabet.OnlyHebrewFont(text).Replace(" ", "");
     }

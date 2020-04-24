@@ -859,7 +859,7 @@
       this.EditCalendarColorNoDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditCalendarColorNoDay, "EditCalendarColorNoDay");
       this.EditCalendarColorNoDay.Name = "EditCalendarColorNoDay";
-      this.EditCalendarColorNoDay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditCalendarColorDefaultText_MouseClick);
+      this.EditCalendarColorNoDay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditCalendarColorNoDay_MouseClick);
       // 
       // EditCalendarColorDefaultText
       // 
@@ -1008,7 +1008,7 @@
       // 
       // EditHebrewLettersPath
       // 
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.TextBoxCaretAfterPaste.End;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.End;
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       // 

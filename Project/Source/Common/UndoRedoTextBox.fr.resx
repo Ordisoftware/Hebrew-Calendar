@@ -222,4 +222,7 @@
   <data name="ContextMenuEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 120</value>
   </data>
+  <data name="ActionSelectAll.Text" xml:space="preserve">
+    <value>Tout sélectionner</value>
+  </data>
 </root>

@@ -148,6 +148,12 @@
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Common\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\UndoRedoTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\UndoRedoTextBox.Designer.cs">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Program\Translations.BigCalendar.cs" />
     <Compile Include="Source\Common\Globals.Translations.cs" />
     <Compile Include="Source\Common\HTMLBrowserForm.cs">
@@ -167,12 +173,6 @@
     </Compile>
     <Compile Include="Source\Common\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\SystemHelper.cs" />
-    <Compile Include="Source\Common\UndoRedoTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Source\Common\UndoRedoTextBox.Designer.cs">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Entities\SunAndMoonRiseAndSet.cs" />
     <Compile Include="Source\Enums\ReportFieldCSV.cs" />
     <Compile Include="Source\Program\Translations.Notices.cs" />
@@ -431,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UndoRedoTextBox.fr.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\UndoRedoTextBox.resx">
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>

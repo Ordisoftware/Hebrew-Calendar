@@ -519,6 +519,14 @@ namespace Ordisoftware.HebrewCalendar
       MustRefreshMonthView = true;
     }
 
+    private void EditCalendarColorNoDay_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditCalendarColorNoDay.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCalendarColorNoDay.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
       MustRefreshMonthView = EditMonthViewFontSize.Value != Program.Settings.MonthViewFontSize;
@@ -526,8 +534,10 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
     {
-      OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text);
-      OpenFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text);
+      try { OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text); }
+      catch { }
+      try { OpenFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text); }
+      catch { }
       if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
         EditHebrewLettersPath.Text = OpenFileDialog.FileName;
     }

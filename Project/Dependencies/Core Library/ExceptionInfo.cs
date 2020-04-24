@@ -336,7 +336,9 @@ namespace Ordisoftware.Core
             s1 += s2;
           }
         }
-        _StackText = s1;
+        // TODO corriger pb saut de lignes => utiliser list
+        _StackText = s1.Replace(Environment.NewLine + Environment.NewLine + Environment.NewLine, Environment.NewLine + Environment.NewLine)
+                       .TrimEnd(Environment.NewLine.ToCharArray());
       }
     }
 

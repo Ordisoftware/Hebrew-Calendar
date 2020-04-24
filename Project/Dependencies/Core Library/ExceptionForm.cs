@@ -213,7 +213,7 @@ namespace Ordisoftware.Core.Windows.Forms
         inner = inner.InnerInfo;
       }
       query += body;
-      query = query.Replace(" ", "%20").Replace("+", "%2B").Replace("#", "%23").Replace(Environment.NewLine, "%0A");
+      query = query.Replace(" ", "%20").Replace("+", "%2B").Replace("#", "%23").Replace(Environment.NewLine, "%0A").Replace("%0A%0A%0A", "%0A");
       SystemHelper.OpenGitHibIssuesPage(query);
       /*string email = SystemManager.User.UserMail;
       if ( email.IsNullOrEmpty() )
