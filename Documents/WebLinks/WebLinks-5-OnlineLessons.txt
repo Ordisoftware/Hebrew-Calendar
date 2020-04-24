@@ -9,6 +9,9 @@ URL = http://ravbenchetrit.com
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = http://www.torahacademy.fr
 
+Name = (FR) Rav Avraham Ifrah
+URL = https://breslev.fr
+
 Name = (FR/EN) Rav David Pinto
 URL = https://hevratpinto.org
 
