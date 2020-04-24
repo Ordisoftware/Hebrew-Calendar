@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Manage an exception with the debugger.
     /// </summary>
-    /// <param name="exception">The exception to act on.</param>
+    /// <param name="ex">The exception to act on.</param>
     static public void Manage(this Exception ex)
     {
       Debugger.ManageException(null, ex);
@@ -37,7 +37,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Manage an exception with the debugger.
     /// </summary>
-    /// <param name="exception">The exception to act on.</param>
+    /// <param name="ex">The exception to act on.</param>
     /// <param name="show">true to show a message or false to hide it.</param>
     static public void Manage(this Exception ex, bool show)
     {
@@ -47,7 +47,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Manage an exception with the debugger.
     /// </summary>
-    /// <param name="exception">The exception to act on.</param>
+    /// <param name="ex">The exception to act on.</param>
     /// <param name="sender">Source of the event.</param>
     static public void Manage(this Exception ex, object sender)
     {
@@ -57,7 +57,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Manage an exception with the debugger.
     /// </summary>
-    /// <param name="exception">The exception to act on.</param>
+    /// <param name="ex">The exception to act on.</param>
     /// <param name="sender">Source of the event.</param>
     /// <param name="show">true to show a message or false to hide it.</param>
     static public void Manage(this Exception ex, object sender, bool show)

@@ -120,12 +120,6 @@ namespace Ordisoftware.Core
     public string ReadableText { get; private set; }
 
     /// <summary>
-    /// The readable text.
-    /// </summary>
-    // TODO use
-    private string SimpleText = "";
-
-    /// <summary>
     /// Get the stack text.
     /// </summary>
     public string StackText { get; private set; }
@@ -278,7 +272,6 @@ namespace Ordisoftware.Core
                     + "  Method: " + Namespace + "." + ClassName + "." + MethodName + Environment.NewLine
                     + "  Type: " + TypeText;
 
-      SimpleText = "";
     }
 
     /// <summary>

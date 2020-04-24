@@ -245,6 +245,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Check if an update is available online.
     /// </summary>
+    /// <param name="checkAtStartup"></param>
     /// <param name="auto">True if no user interaction else false</param>
     /// <returns>True if application must exist else false.</returns>
     static public bool CheckUpdate(bool checkAtStartup, bool auto)

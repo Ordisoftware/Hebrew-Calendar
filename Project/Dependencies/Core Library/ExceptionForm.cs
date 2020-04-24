@@ -49,7 +49,6 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <summary>
     /// Run the given einfo.
     /// </summary>
-    /// <param name="einfo">The einfo.</param>
     static public void Run(ExceptionInfo einfo, bool isInner = false)
     {
       using ( ExceptionForm form = new ExceptionForm() )
