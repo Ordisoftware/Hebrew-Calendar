@@ -87,9 +87,9 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionClose_Click(object sender, EventArgs e)
     {
+      ActiveControl = WebBrowser;
       Close();
     }
-
   }
 
 }
