@@ -97,6 +97,14 @@ namespace Ordisoftware.HebrewCommon
       return true;
     }
 
+    static public bool CheckColumn(this OdbcConnection connection, string table, string column, string type, string valueDefault, bool valueNotNull)
+    {
+      if ( !string.IsNullOrEmpty(valueDefault) ) valueDefault = " DEFAULT " + valueDefault;
+      if ( valueNotNull ) valueDefault += " NOT NULL";
+      string sql = $"ALTER TABLE %TABLE% ADD COLUMN %COLUMN% " + type + valueDefault;
+      return connection.CheckColumn(table, column, sql);
+    }
+
     static public bool CheckColumn(this OdbcConnection connection, string table, string column, string sql)
     {
       var command = new OdbcCommand("PRAGMA table_info(" + table + ")", connection);
