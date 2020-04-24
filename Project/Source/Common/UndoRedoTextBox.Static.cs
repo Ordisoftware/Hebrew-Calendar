@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewCommon
 
     static private UndoRedoTextBox GetTextBoxAndFocus(object sender)
     {
-      UndoRedoTextBox control;
+      UndoRedoTextBox control = null;
       if ( sender is ToolStripMenuItem )
       {
         control = (UndoRedoTextBox)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).GetCurrentParent() ).SourceControl;
@@ -42,10 +42,11 @@ namespace Ordisoftware.HebrewCommon
       else
       if ( sender is ContextMenuStrip )
       {
-        control = (UndoRedoTextBox)((ContextMenuStrip)sender).SourceControl;
+        control = (UndoRedoTextBox)( (ContextMenuStrip)sender ).SourceControl;
         if ( control.Enabled && !control.Focused ) control.Focus();
       }
       else
+      if ( sender is UndoRedoTextBox )
         control = (UndoRedoTextBox)sender;
       return control;
     }
@@ -77,7 +78,7 @@ namespace Ordisoftware.HebrewCommon
       ActionSelectAll.Name = "ActionSelectAll";
       ActionSelectAll.Text = "Select All";
       Relocalize();
-      ContextMenuEdit.Items.AddRange(new ToolStripItem[] 
+      ContextMenuEdit.Items.AddRange(new ToolStripItem[]
                                      {
                                        ActionUndo,
                                        ActionRedo,

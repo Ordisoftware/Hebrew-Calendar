@@ -133,6 +133,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void UpdateMenuItems(UndoRedoTextBox textbox)
     {
+      if ( textbox == null ) return;
       bool b1 = textbox.Enabled;
       bool b2 = textbox.Enabled && !textbox.ReadOnly;
       bool b3 = !string.IsNullOrEmpty(textbox.SelectedText);
@@ -224,14 +225,14 @@ namespace Ordisoftware.HebrewCommon
     private void ActionSelectAll_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( !textbox.Enabled ) return;
+      if ( textbox == null || !textbox.Enabled ) return;
       textbox.SelectAll();
     }
 
     private void ActionCopy_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( !textbox.Enabled ) return;
+      if ( textbox == null || !textbox.Enabled ) return;
       if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
       Clipboard.SetText(textbox.SelectedText);
     }
@@ -239,7 +240,7 @@ namespace Ordisoftware.HebrewCommon
     private void ActionCut_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( !textbox.Enabled ) return;
+      if ( textbox == null || !textbox.Enabled ) return;
       if ( textbox.ReadOnly ) return;
       if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
       Clipboard.SetText(textbox.SelectedText);
@@ -251,7 +252,7 @@ namespace Ordisoftware.HebrewCommon
     private void ActionPaste_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( !textbox.Enabled ) return;
+      if ( textbox == null || !textbox.Enabled ) return;
       if ( textbox.ReadOnly ) return;
       if ( string.IsNullOrEmpty(Clipboard.GetText()) ) return;
       textbox.SelectedText = Clipboard.GetText();
@@ -260,7 +261,7 @@ namespace Ordisoftware.HebrewCommon
     private void ActionUndo_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( !textbox.Enabled ) return;
+      if ( textbox == null || !textbox.Enabled ) return;
       if ( textbox.ReadOnly ) return;
       if ( textbox.UndoStack.Count == 0 ) return;
       try
@@ -281,7 +282,7 @@ namespace Ordisoftware.HebrewCommon
     private void ActionRedo_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( !textbox.Enabled ) return;
+      if ( textbox == null || !textbox.Enabled ) return;
       if ( textbox.ReadOnly ) return;
       if ( textbox.RedoStack.Count == 0 ) return;
       try
