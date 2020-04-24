@@ -114,12 +114,12 @@ namespace Ordisoftware.HebrewCommon
 
     private void UpdateMenuItems()
     {
-      ActionUndo.Enabled = UndoStack.Count != 0;
-      ActionRedo.Enabled = RedoStack.Count != 0;
-      ActionCopy.Enabled = !string.IsNullOrEmpty(SelectedText);
-      ActionCut.Enabled = ActionCopy.Enabled;
-      ActionPaste.Enabled = !string.IsNullOrEmpty(Clipboard.GetText());
-      ActionSelectAll.Enabled = !string.IsNullOrEmpty(base.Text) && SelectionLength != TextLength;
+      ActionUndo.Enabled = Enabled && !ReadOnly && UndoStack.Count != 0;
+      ActionRedo.Enabled = Enabled && !ReadOnly && RedoStack.Count != 0;
+      ActionCopy.Enabled = Enabled && !string.IsNullOrEmpty(SelectedText);
+      ActionCut.Enabled = Enabled && !ReadOnly && ActionCopy.Enabled;
+      ActionPaste.Enabled = Enabled && !ReadOnly && !string.IsNullOrEmpty(Clipboard.GetText());
+      ActionSelectAll.Enabled = Enabled && !string.IsNullOrEmpty(base.Text) && SelectionLength != TextLength;
     }
 
     private void ContextMenuEdit_Opened(object sender, EventArgs e)
@@ -201,12 +201,14 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionSelectAll_Click(object sender, EventArgs e)
     {
+      if ( !Enabled ) return;
       if ( sender is ToolStripMenuItem && !Focused ) Focus();
       SelectAll();
     }
 
     private void ActionCopy_Click(object sender, EventArgs e)
     {
+      if ( !Enabled ) return;
       if ( sender is ToolStripMenuItem && !Focused ) Focus();
       if ( string.IsNullOrEmpty(SelectedText) ) return;
       Clipboard.SetText(SelectedText);
@@ -214,9 +216,10 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionCut_Click(object sender, EventArgs e)
     {
+      if ( !Enabled ) return;
       if ( sender is ToolStripMenuItem && !Focused ) Focus();
       if ( string.IsNullOrEmpty(SelectedText) ) return;
-      if ( !Enabled || ReadOnly ) return;
+      if ( ReadOnly ) return;
       Clipboard.SetText(SelectedText);
       int selectionStart = SelectionStart;
       Text = Text.Remove(selectionStart, SelectionLength);
@@ -225,16 +228,18 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionPaste_Click(object sender, EventArgs e)
     {
+      if ( !Enabled ) return;
       if ( sender is ToolStripMenuItem && !Focused ) Focus();
       if ( string.IsNullOrEmpty(Clipboard.GetText()) ) return;
-      if ( !Enabled || ReadOnly ) return;
+      if ( ReadOnly ) return;
       SelectedText = Clipboard.GetText();
     }
 
     private void ActionUndo_Click(object sender, EventArgs e)
     {
+      if ( !Enabled ) return;
       if ( sender is ToolStripMenuItem && !Focused ) Focus();
-      if ( !Enabled || ReadOnly ) return;
+      if ( ReadOnly ) return;
       if ( UndoStack.Count == 0 ) return;
       try
       {
@@ -253,8 +258,9 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionRedo_Click(object sender, EventArgs e)
     {
+      if ( !Enabled ) return;
       if ( sender is ToolStripMenuItem && !Focused ) Focus();
-      if ( !Enabled || ReadOnly ) return;
+      if ( ReadOnly ) return;
       if ( RedoStack.Count == 0 ) return;
       try
       {
