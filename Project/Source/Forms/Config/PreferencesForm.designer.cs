@@ -447,6 +447,11 @@
       // 
       this.EditRemindShabatEveryMinutes.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditRemindShabatEveryMinutes, "EditRemindShabatEveryMinutes");
+      this.EditRemindShabatEveryMinutes.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
       this.EditRemindShabatEveryMinutes.Name = "EditRemindShabatEveryMinutes";
       this.EditRemindShabatEveryMinutes.ReadOnly = true;
       // 
@@ -767,6 +772,11 @@
       // 
       this.EditAutoLockSessionTimeOut.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditAutoLockSessionTimeOut, "EditAutoLockSessionTimeOut");
+      this.EditAutoLockSessionTimeOut.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
       this.EditAutoLockSessionTimeOut.Name = "EditAutoLockSessionTimeOut";
       this.EditAutoLockSessionTimeOut.ReadOnly = true;
       // 
@@ -808,6 +818,11 @@
       // 
       this.EditRemindCelebrationEveryMinutes.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditRemindCelebrationEveryMinutes, "EditRemindCelebrationEveryMinutes");
+      this.EditRemindCelebrationEveryMinutes.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
       this.EditRemindCelebrationEveryMinutes.Name = "EditRemindCelebrationEveryMinutes";
       this.EditRemindCelebrationEveryMinutes.ReadOnly = true;
       // 

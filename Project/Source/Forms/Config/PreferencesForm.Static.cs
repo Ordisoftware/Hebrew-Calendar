@@ -26,23 +26,23 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     const int RemindShabatHoursBeforeMin = 1;
-    const int RemindShabatHoursBeforeMax = 12;
+    const int RemindShabatHoursBeforeMax = 24;
     const int RemindShabatHoursBeforeValue = 6;
     const int RemindShabatEveryMinutesMin = 5;
-    const int RemindShabatEveryMinutesMax = 60;
+    const int RemindShabatEveryMinutesMax = 120;
     const int RemindShabatEveryMinutesValue = 15;
     const int RemindCelebrationBeforeMin = 1;
     const int RemindCelebrationBeforeMax = 60;
-    const int RemindCelebrationBeforeValue = 7;
+    const int RemindCelebrationBeforeValue = 14;
     const int RemindCelebrationHoursBeforeMin = 1;
-    const int RemindCelebrationHoursBeforeMax = 24;
-    const int RemindCelebrationHoursBeforeValue = 6;
+    const int RemindCelebrationHoursBeforeMax = 48;
+    const int RemindCelebrationHoursBeforeValue = 24;
     const int RemindCelebrationEveryMinutesMin = 5;
-    const int RemindCelebrationEveryMinutesMax = 60;
+    const int RemindCelebrationEveryMinutesMax = 120;
     const int RemindCelebrationEveryMinutesValue = 15;
-    const int RemindAutoLockTimeOutMin = 5;
-    const int RemindAutoLockTimeOutMax = 60;
-    const int RemindAutoLockTimeOutValue = 30;
+    const int RemindAutoLockTimeOutMin = 10;
+    const int RemindAutoLockTimeOutMax = 300;
+    const int RemindAutoLockTimeOutValue = 60;
 
     static private bool IsCenteredToScreen;
     static private bool LanguageChanged;
