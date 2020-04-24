@@ -34,17 +34,17 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <summary>
     /// The button stack text.
     /// </summary>
-    private string _ButtonStackText;
+    private string ButtonStackText;
 
     /// <summary>
     /// Information describing the error.
     /// </summary>
-    private ExceptionInfo _ErrorInfo;
+    private ExceptionInfo ErrorInfo;
 
     /// <summary>
     /// Message describing the error.
     /// </summary>
-    private List<string> _ErrorMsg = new List<string>();
+    private List<string> ErrorMsg = new List<string>();
 
     /// <summary>
     /// Run the given einfo.
@@ -52,39 +52,38 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <param name="einfo">The einfo.</param>
     static public void Run(ExceptionInfo einfo, bool isInner = false)
     {
-      using ( ExceptionForm f = new ExceptionForm() )
+      using ( ExceptionForm form = new ExceptionForm() )
       {
-        //f.Text = einfo.Emitter + " has caused an error";
-        f.printPreviewDialog.FindForm().WindowState = FormWindowState.Maximized;
-        f.buttonViewLog.Visible = false; // SystemManager.Log.Active;
-        f.buttonViewStack.Enabled = Debugger.UseStack;
-        f.buttonViewInner.Enabled = einfo.InnerInfo != null;
-        f.buttonTerminate.Enabled = Debugger.UserCanTerminate && !isInner;
+        form.printPreviewDialog.FindForm().WindowState = FormWindowState.Maximized;
+        form.buttonViewLog.Visible = false; // SystemManager.Log.Active;
+        form.buttonViewStack.Enabled = Debugger.UseStack;
+        form.buttonViewInner.Enabled = einfo.InnerInfo != null;
+        form.buttonTerminate.Enabled = Debugger.UserCanTerminate && !isInner;
         if ( isInner )
         {
-          f.buttonPrint.Enabled = false;
-          f.buttonSendMail.Enabled = false;
-          f.buttonClose.Text = "Ok";
+          form.buttonPrint.Enabled = false;
+          form.buttonSendMail.Enabled = false;
+          form.buttonClose.Text = "Ok";
         }
-        f.textException.Text = einfo.TypeText;
-        f.textMessage.Text = einfo.Message;
-        f.labelInfo1.Text += einfo.Emitter + " " + Globals.AssemblyVersion;
-        f.textStack.Text = /*"[Thread: " + einfo.ThreadName + "]"
-                         + Environment.NewLine + Environment.NewLine
-                         +*/ einfo.StackText;
-        f._ErrorMsg.Add(f.textException.Text);
-        f._ErrorMsg.Add(Environment.NewLine);
-        f._ErrorMsg.Add(f.textMessage.Text);
-        f._ErrorMsg.Add(Environment.NewLine);
-        f._ErrorMsg.Add(f.textStack.Text);
-        f._OriginalHeight = f.Height;
-        f._ErrorInfo = einfo;
-        f._ButtonStackText = f.buttonViewStack.Text;
-        f.buttonViewStack.Text += " <<";
-        //if ( Diagnostics.Debugger.AutoHideStack ) f.buttonViewStack_Click(f, null);
-        if ( !Diagnostics.Debugger.UseStack ) f.buttonViewStack_Click(f, null);
-        f.BringToFront();
-        f.ShowDialog();
+        form.textException.Text = einfo.TypeText;
+        form.textMessage.Text = einfo.Message;
+        form.labelInfo1.Text += einfo.Emitter + " " + Globals.AssemblyVersion;
+        form.textStack.Text = /*"[Thread: " + einfo.ThreadName + "]"
+                            + Environment.NewLine + Environment.NewLine
+                            +*/ einfo.StackText;
+        form.ErrorMsg.Add(form.textException.Text);
+        form.ErrorMsg.Add(Environment.NewLine);
+        form.ErrorMsg.Add(form.textMessage.Text);
+        form.ErrorMsg.Add(Environment.NewLine);
+        form.ErrorMsg.Add(form.textStack.Text);
+        form.OriginalHeight = form.Height;
+        form.ErrorInfo = einfo;
+        form.ButtonStackText = form.buttonViewStack.Text;
+        form.buttonViewStack.Text += " <<";
+        if ( Debugger.AutoHideStack ) form.buttonViewStack_Click(form, null);
+        if ( !Debugger.UseStack ) form.buttonViewStack_Click(form, null);
+        form.BringToFront();
+        form.ShowDialog();
       }
     }
 
@@ -94,13 +93,13 @@ namespace Ordisoftware.Core.Windows.Forms
     public ExceptionForm()
     {
       InitializeComponent();
-      Icon = HebrewCommon.Globals.MainForm.Icon;
+      Icon = Globals.MainForm.Icon;
     }
 
     /// <summary>
     /// Height of the original.
     /// </summary>
-    private int _OriginalHeight;
+    private int OriginalHeight;
 
     /// <summary>
     /// Event handler. Called by buttonViewStack for click events.
@@ -109,15 +108,15 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <param name="e">Event information.</param>
     private void buttonViewStack_Click(object sender, EventArgs e)
     {
-      if ( Height == _OriginalHeight )
+      if ( Height == OriginalHeight )
       { 
         Height = textStack.Top + 28; 
-        buttonViewStack.Text = _ButtonStackText + " >>";
+        buttonViewStack.Text = ButtonStackText + " >>";
       }
       else
       { 
-        Height = _OriginalHeight;
-        buttonViewStack.Text = _ButtonStackText + " <<";
+        Height = OriginalHeight;
+        buttonViewStack.Text = ButtonStackText + " <<";
       }
     }
 
@@ -128,7 +127,7 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <param name="e">Event information.</param>
     private void buttonViewInner_Click(object sender, EventArgs e)
     {
-      ExceptionForm.Run(_ErrorInfo.InnerInfo, true);
+      Run(ErrorInfo.InnerInfo, true);
     }
 
     /// <summary>
@@ -177,7 +176,7 @@ namespace Ordisoftware.Core.Windows.Forms
       string msg = "Error report for application : " + HebrewCommon.Globals.AssemblyTitle;
       e.Graphics.DrawString(msg, font1, Brushes.Black, x, y);
       y = y + (int)( font1.Height * 3 );
-      foreach ( string s in _ErrorMsg )
+      foreach ( string s in ErrorMsg )
       {
         e.Graphics.DrawString(s, font2, Brushes.Black, x, y);
         y = y + (int)( font2.Height * 1.5 );
@@ -191,30 +190,36 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <param name="e">Event information.</param>
     private void buttonSendMail_Click(object sender, EventArgs e)
     {
-      if ( _ErrorInfo == null ) return;
+      if ( ErrorInfo == null ) return;
       TopMost = false;
-      string query = "&title=" + _ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion
+      string NewLine = Environment.NewLine;
+      string NewLine2 = NewLine + NewLine;
+      string query = "&title=" + ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion
                    + "&labels=type: bug"
                    + "&body=";
-      string body = "## USER COMMENT" + Environment.NewLine + Environment.NewLine
-                  + "Describe here what you did, what you expected and what happened." + Environment.NewLine + Environment.NewLine
-                  + "## ERROR : " + _ErrorInfo.Instance.GetType().Name + Environment.NewLine + Environment.NewLine
-                  + _ErrorInfo.Message + Environment.NewLine + Environment.NewLine
-                  + "#### _STACK_" + Environment.NewLine + Environment.NewLine
-                  + _ErrorInfo.StackText;
-      ExceptionInfo inner = _ErrorInfo.InnerInfo;
+      string body = "## COMMENT" + NewLine2
+                  + Globals.GitHubIssueComment.GetLang() + NewLine2
+                  + "## ERROR : " + ErrorInfo.Instance.GetType().Name + NewLine2
+                  + ErrorInfo.Message + NewLine2
+                  + "#### _STACK_" + NewLine2
+                  + ErrorInfo.StackText;
+      ExceptionInfo inner = ErrorInfo.InnerInfo;
       while ( inner != null )
       {
-        body = body + Environment.NewLine + Environment.NewLine
-             + "## INNER : " + inner.Instance.GetType().Name + Environment.NewLine + Environment.NewLine
-             + inner.Message + Environment.NewLine + Environment.NewLine
-             + "#### _STACK_" + Environment.NewLine + Environment.NewLine
+        body = body + NewLine2
+             + "## INNER : " + inner.Instance.GetType().Name + NewLine2
+             + inner.Message + NewLine2
+             + "#### _STACK_" + NewLine2
              + inner.StackText;
         inner = inner.InnerInfo;
       }
       query += body;
-      query = query.Replace(" ", "%20").Replace("+", "%2B").Replace("#", "%23").Replace(Environment.NewLine, "%0A").Replace("%0A%0A%0A", "%0A");
-      SystemHelper.OpenGitHibIssuesPage(query);
+      query = query.Replace(" ", "%20")
+                   .Replace("+", "%2B")
+                   .Replace("#", "%23")
+                   .Replace(NewLine, "%0A")
+                   .Replace("%0A%0A%0A", "%0A");
+      SystemHelper.CreateGitHubIssue(query);
       /*string email = SystemManager.User.UserMail;
       if ( email.IsNullOrEmpty() )
         if ( DisplayManager.QueryValue("User email", ref email) == InputValueResult.Cancelled)
@@ -238,7 +243,7 @@ namespace Ordisoftware.Core.Windows.Forms
     private void buttonTerminate_Click(object sender, EventArgs e)
     {
       //SystemManager.Abort();
-      Environment.Exit(0);
+      Environment.Exit(-1);
     }
 
   }

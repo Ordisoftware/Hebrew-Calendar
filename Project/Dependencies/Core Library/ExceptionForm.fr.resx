@@ -121,7 +121,7 @@
   <data name="pictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAaESURBVFhHpVZpcFNVGOUP//3ljL8cFVmaArJ0SdOGpXRJ
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAaESURBVFhHpVZpcFNVGOUP//3ljL8cFVmaArJ0SdOGpXRJ
         6UrTUrrQAkXKDoKKio4r44IODO7LyOjoOA7+cJxxBIemG6IUR4vKroA2bbM0KV2TNMnxfG9pmhBsi9/M
         mXd77/nOOfe+vPc6bRI1vSl1tqM5ZRaaiObU2SqMc1SkCRIiMBnQQjSlGxzSq0rceU1vXDzDfv2jN+Fp
         PQnXsU/g/OJj9Hz2PrqPvoWuDw7D/u7r+PvIy/jnjRdw47VncO2lJ/Dna8+iY1c9bKkJdtFQpaZeNH/A
@@ -161,7 +161,7 @@
   <data name="buttonViewLog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAG3SURBVDhPlZNLUsJAEIZzBUs9gUfwIC5ceBY3LryDBaW4
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAG3SURBVDhPlZNLUsJAEIZzBUs9gUfwIC5ceBY3LryDBaW4
         EZVFCInFSqogwFKPYOETMBkIhDwI79+eyeAL8PFVdfXUpPuvf3oyCucqn+9qhoGsbkDN6RQ5GZrImq4j
         ZxhMFC+DN/+GbdvIatqlbPlKVgrU1hU8sg6eG008Pb/g/uFJ7KcvLkS2LItc6hnZ9oEqBR73d9B0Q5yk
         TnFdKKBeb4j980wGjLXEmjshx1nZGqPS2Tm1TQWvXgS73YFlMzSalti/ub0VInMnfCayNUalDY49mIJ5
@@ -179,7 +179,7 @@
     <value>206, 13</value>
   </data>
   <data name="labelInfo1.Text" xml:space="preserve">
-    <value>Un problème non géré s'est produite dans </value>
+    <value>Un problème non géré s'est produit dans </value>
   </data>
   <data name="labelInfo2.Size" type="System.Drawing.Size, System.Drawing">
     <value>343, 13</value>
@@ -190,7 +190,7 @@
   <data name="buttonPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAHLSURBVDhPfZNfS9tgGMXzXfYR9h02R4e78gM4Bq2tQ2/E
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAHLSURBVDhPfZNfS9tgGMXzXfYR9h02R4e78gM4Bq2tQ2/E
         bjaNTddMb8SJoGO7UhlSHQoi/sNVhsJkN3OiomxMr0WUtrIOdGfvL4mwlOgDhzyc8ztpeZNYzdM2uDz/
         5NWiEu6CEoVQZscjC7Hbp7W0pGtJl0b1v4HY8chC7PZ5VFxS3cAbJ1LlOBA7HlmIxc/L3h49LK6qZuCf
         F9KP80DseGQwIR6M67rzjuOo3+h1sV8tXkUNAzcPHhkMLB26Vj6fDwgz6cxzdXV1K5PpVDKVjgiPDOZm

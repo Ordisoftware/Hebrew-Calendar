@@ -32,208 +32,108 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Get the sender.
     /// </summary>
-    public object Sender { get { return _Sender; } }
-
-    /// <summary>
-    /// The sender.
-    /// </summary>
-    private object _Sender;
+    public object Sender { get; private set; }
 
     /// <summary>
     /// Get the emitter.
     /// </summary>
-    public string Emitter { get { return _Emitter; } }
-
-    /// <summary>
-    /// The emitter.
-    /// </summary>
-    private string _Emitter = "";
+    public string Emitter { get; private set; }
 
     /// <summary>
     /// Get the instance.
     /// </summary>
-    public Exception Instance { get { return _Instance; } }
-
-    /// <summary>
-    /// The instance.
-    /// </summary>
-    private Exception _Instance;
+    public Exception Instance { get; private set; }
 
     /// <summary>
     /// Get information describing the inner.
     /// </summary>
-    public ExceptionInfo InnerInfo { get { return _InnerInfo; } }
-
-    /// <summary>
-    /// Information describing the inner.
-    /// </summary>
-    private ExceptionInfo _InnerInfo;
+    public ExceptionInfo InnerInfo { get; private set; }
 
     /// <summary>
     /// Get the type text.
     /// </summary>
-    public string TypeText { get { return _TypeText; } }
-
-    /// <summary>
-    /// The type text.
-    /// </summary>
-    private string _TypeText = "";
+    public string TypeText { get; private set; }
 
     /// <summary>
     /// Get the inherits from.
     /// </summary>
-    public string InheritsFrom { get { return _InheritsFrom; } }
-
-    /// <summary>
-    /// The inherits from.
-    /// </summary>
-    private string _InheritsFrom = "";
+    public string InheritsFrom { get; private set; }
 
     /// <summary>
     /// Get the name of the thread.
     /// </summary>
-    public string ThreadName { get { return _ThreadName; } }
-
-    /// <summary>
-    /// Name of the thread.
-    /// </summary>
-    private string _ThreadName = "";
+    public string ThreadName { get; private set; }
 
     /// <summary>
     /// Get the name of the assembly.
     /// </summary>
-    public string AssemblyName { get { return _AssemblyName; } }
-
-    /// <summary>
-    /// Name of the assembly.
-    /// </summary>
-    private string _AssemblyName = "";
+    public string AssemblyName { get; private set; }
 
     /// <summary>
     /// Get the name of the module.
     /// </summary>
-    public string ModuleName { get { return _ModuleName; } }
-
-    /// <summary>
-    /// Name of the module.
-    /// </summary>
-    private string _ModuleName = "";
+    public string ModuleName { get; private set; }
 
     /// <summary>
     /// Get the namespace.
     /// </summary>
-    public string Namespace { get { return _Namespace; } }
-
-    /// <summary>
-    /// The namespace.
-    /// </summary>
-    private string _Namespace = "";
+    public string Namespace { get; private set; }
 
     /// <summary>
     /// Get the filename of the file.
     /// </summary>
-    public string FileName { get { return _FileName; } }
-
-    /// <summary>
-    /// Filename of the file.
-    /// </summary>
-    private string _FileName = "";
+    public string FileName { get; private set; }
 
     /// <summary>
     /// Get the name of the class.
     /// </summary>
-    public string ClassName { get { return _ClassName; } }
-
-    /// <summary>
-    /// Name of the class.
-    /// </summary>
-    private string _ClassName = "";
+    public string ClassName { get; private set; }
 
     /// <summary>
     /// Get the name of the method.
     /// </summary>
-    public string MethodName { get { return MethodName; } }
-
-    /// <summary>
-    /// Name of the method.
-    /// </summary>
-    private string _MethodName = "";
+    public string MethodName { get; private set; }
 
     /// <summary>
     /// Get the line number.
     /// </summary>
-    public int LineNumber { get { return _LineNumber; } }
-
-    /// <summary>
-    /// The line number.
-    /// </summary>
-    private int _LineNumber = 0;
+    public int LineNumber { get; private set; }
 
     /// <summary>
     /// Get target site.
     /// </summary>
-    public MethodBase TargetSite { get { return _TargetSite; } }
-
-    /// <summary>
-    /// Target site.
-    /// </summary>
-    private MethodBase _TargetSite;
+    public MethodBase TargetSite { get; private set; }
 
     /// <summary>
     /// Get the message.
     /// </summary>
-    public string Message { get { return _Message; } }
-
-    /// <summary>
-    /// The message.
-    /// </summary>
-    private string _Message = "";
+    public string Message { get; private set; }
 
     /// <summary>
     /// Get the full text.
     /// </summary>
-    public string FullText { get { return _FullText; } }
-
-    /// <summary>
-    /// The full text.
-    /// </summary>
-    private string _FullText = "";
+    public string FullText { get; private set; }
 
     /// <summary>
     /// Get the readable text.
     /// </summary>
-    public string ReadableText { get { return _ReadableText; } }
-
-    /// <summary>
-    /// The readable text.
-    /// </summary>
-    private string _ReadableText = "";
+    public string ReadableText { get; private set; }
 
     /// <summary>
     /// The readable text.
     /// </summary>
     // TODO use
-    private string _SimpleText = "";
+    private string SimpleText = "";
 
     /// <summary>
     /// Get the stack text.
     /// </summary>
-    public string StackText { get { return _StackText; } }
-
-    /// <summary>
-    /// The stack text.
-    /// </summary>
-    private string _StackText = "";
+    public string StackText { get; private set; }
 
     /// <summary>
     /// Get a list of stacks.
     /// </summary>
-    public List<string> StackList { get { return _StackList; } }
-
-    /// <summary>
-    /// List of stacks.
-    /// </summary>
-    private List<string> _StackList = new List<string>();
+    public List<string> StackList { get; private set; } = new List<string>();
 
     /// <summary>
     /// Indicate the full namespaces.name of the type of an object.
@@ -270,10 +170,10 @@ namespace Ordisoftware.Core
     {
       try
       {
-        StackFrame sf = new StackFrame(skip, true);
-        System.Reflection.MethodBase m = sf.GetMethod();
-        return GetNameWithFullNamespace(m.DeclaringType) + "." + m.Name +
-               " (" + Path.GetFileName(sf.GetFileName()) + " line " + sf.GetFileLineNumber() + ")";
+        StackFrame frame = new StackFrame(skip, true);
+        MethodBase method = frame.GetMethod();
+        return GetNameWithFullNamespace(method.DeclaringType) + "." + method.Name +
+               " (" + Path.GetFileName(frame.GetFileName()) + " line " + frame.GetFileLineNumber() + ")";
       }
       catch
       { return ""; }
@@ -284,11 +184,12 @@ namespace Ordisoftware.Core
     /// </summary>
     private void ExtractInherits()
     {
-      Type t = _Instance.GetType();
-      _TypeText = t.ToString();
-      t = t.BaseType;
-      _InheritsFrom += t.ToString();
-      while ( ( t = t.BaseType ) != null ) _InheritsFrom += " > " + t.ToString();
+      Type type = Instance.GetType();
+      TypeText = type.ToString();
+      type = type.BaseType;
+      InheritsFrom += type.ToString();
+      while ( ( type = type.BaseType ) != null )
+        InheritsFrom += " > " + type.ToString();
     }
 
     /// <summary>
@@ -296,48 +197,48 @@ namespace Ordisoftware.Core
     /// </summary>
     private void ExtractStack()
     {
+      int line;
+      bool first = false;
       string s1 = "", s2 = "", s3 = "";
-      int ln;
-      bool b = false;
       if ( Diagnostics.Debugger.UseStack )
       {
-        StackTrace stack = new StackTrace(_Instance, true);
-        StackFrame[] sflist = stack.GetFrames();
-        if ( sflist == null ) return;
-        foreach ( StackFrame sf in sflist )
+        StackTrace trace = new StackTrace(Instance, true);
+        StackFrame[] frames = trace.GetFrames();
+        if ( frames == null ) return;
+        foreach ( StackFrame frame in frames )
         {
-          System.Reflection.MethodBase m = sf.GetMethod();
-          s2 = m.DeclaringType.FullName;
-          Type t = Type.GetType(s2);
-          if ( t != typeof(Debugger) && t != typeof(ExceptionInfo) )
+          MethodBase method = frame.GetMethod();
+          s2 = method.DeclaringType.FullName;
+          Type type = Type.GetType(s2);
+          if ( type != typeof(Debugger) && type != typeof(ExceptionInfo) )
           {
-            s3 = Path.GetFileName(sf.GetFileName());
+            s3 = Path.GetFileName(frame.GetFileName());
             //if ( s3 == null && Debugger.StackOnlyProgram ) continue;
-            ln = sf.GetFileLineNumber();
-            if ( !b )
+            line = frame.GetFileLineNumber();
+            if ( !first )
             {
-              b = true;
-              _AssemblyName = m.DeclaringType.Assembly.FullName;
-              _ModuleName = m.DeclaringType.Module.Name;
-              _Namespace = m.DeclaringType.Namespace;
-              _ClassName = m.DeclaringType.Name;
-              _MethodName = m.Name;
-              _FileName = s3;
-              _LineNumber = ln;
+              first = true;
+              AssemblyName = method.DeclaringType.Assembly.FullName;
+              ModuleName = method.DeclaringType.Module.Name;
+              Namespace = method.DeclaringType.Namespace;
+              ClassName = method.DeclaringType.Name;
+              MethodName = method.Name;
+              FileName = s3;
+              LineNumber = line;
             }
-            s2 += "." + m.Name;
-            if ( ln != 0 )
+            s2 += "." + method.Name;
+            if ( line != 0 )
             {
-              s2 = s3 + " line " + ln + ": " + Environment.NewLine + s2 + Environment.NewLine;
+              s2 = s3 + " line " + line + ": " + Environment.NewLine + s2 + Environment.NewLine;
               if ( s1 != "" ) s2 = Environment.NewLine + s2;
             }
-            _StackList.Add(s2);
+            StackList.Add(s2);
             if ( s1 != "" ) s1 += Environment.NewLine;
             s1 += s2;
           }
         }
         // TODO corriger pb saut de lignes => utiliser list
-        _StackText = s1.Replace(Environment.NewLine + Environment.NewLine + Environment.NewLine, Environment.NewLine + Environment.NewLine)
+        StackText = s1.Replace(Environment.NewLine + Environment.NewLine + Environment.NewLine, Environment.NewLine + Environment.NewLine)
                        .TrimEnd(Environment.NewLine.ToCharArray());
       }
     }
@@ -347,55 +248,57 @@ namespace Ordisoftware.Core
     /// </summary>
     private void InitText()
     {
-      if ( Thread.CurrentThread.Name != null ) _ThreadName = Thread.CurrentThread.Name;
-      else _ThreadName = "ID = " + Thread.CurrentThread.ManagedThreadId.ToString();
-      if ( _ModuleName != null && _ModuleName != "" ) _TypeText += " in " + _ModuleName;
-      try { _Message = _Instance.Message; }
-      catch { _Message = "Relayed exception."; }
+      if ( Thread.CurrentThread.Name != null )
+        ThreadName = Thread.CurrentThread.Name;
+      else
+        ThreadName = "ID = " + Thread.CurrentThread.ManagedThreadId.ToString();
+      if ( ModuleName != null && ModuleName != "" )
+        TypeText += " in " + ModuleName;
+      try { Message = Instance.Message; }
+      catch { Message = "Relayed exception."; }
 
-      string nl = Environment.NewLine;
       //int width = SystemSettings.Instance.LogWidth - 15;
       //int indent = SystemSettings.Instance.LogIndent;
 
-      _FullText = "Thread: " + _ThreadName + nl
-                + "Exception Type: " + nl
-                + _TypeText + nl
-                + "Error Message: " + nl
-                + _Message;
+      FullText = "Thread: " + ThreadName + Environment.NewLine
+                + "Exception Type: " + Environment.NewLine
+                + TypeText + Environment.NewLine
+                + "Error Message: " + Environment.NewLine
+                + Message;
 
       if ( Diagnostics.Debugger.UseStack )
-        _FullText = _FullText + nl
-                  + "StackList: " + nl
-                  + _StackText;
+        FullText = FullText + Environment.NewLine
+                  + "StackList: " + Environment.NewLine
+                  + StackText;
 
-      _ReadableText = _Message + nl + nl
-                    + "  Module: " + _ModuleName + nl
-                    + "  File: " + _FileName + nl
-                    + "  Line: " + _LineNumber + nl
-                    + "  Method: " + _Namespace + "." + _ClassName + "." + _MethodName + nl
-                    + "  Type: " + _TypeText;
+      ReadableText = Message + Environment.NewLine + Environment.NewLine
+                    + "  Module: " + ModuleName + Environment.NewLine
+                    + "  File: " + FileName + Environment.NewLine
+                    + "  Line: " + LineNumber + Environment.NewLine
+                    + "  Method: " + Namespace + "." + ClassName + "." + MethodName + Environment.NewLine
+                    + "  Type: " + TypeText;
 
-      _SimpleText = "";
+      SimpleText = "";
     }
 
     /// <summary>
     /// Constructor.
     /// </summary>
     /// <param name="sender">.</param>
-    /// <param name="except">The except.</param>
-    public ExceptionInfo(object sender, Exception except)
+    /// <param name="ex">The except.</param>
+    public ExceptionInfo(object sender, Exception ex)
     {
-      if ( except == null ) return;
-      _Sender = sender;
-      _Instance = except;
-      _TargetSite = except.TargetSite;
+      if ( ex == null ) return;
+      Sender = sender;
+      Instance = ex;
+      TargetSite = ex.TargetSite;
       try
       {
-        _Emitter = _Sender is Windows.Forms.ExceptionForm
-                 ? ( (Windows.Forms.ExceptionForm)_Sender ).Text
+        Emitter = Sender is Windows.Forms.ExceptionForm
+                 ? ( (Windows.Forms.ExceptionForm)Sender ).Text
                  : DisplayManager.MainForm != null
                    ? DisplayManager.MainForm.Text
-                   : except.Source;
+                   : ex.Source;
         ExtractInherits();
         try
         {
@@ -405,8 +308,8 @@ namespace Ordisoftware.Core
         {
           InitText();
         }
-        if ( except.InnerException != null )
-          _InnerInfo = new ExceptionInfo(sender, except.InnerException);
+        if ( ex.InnerException != null )
+          InnerInfo = new ExceptionInfo(sender, ex.InnerException);
       }
       catch
       {

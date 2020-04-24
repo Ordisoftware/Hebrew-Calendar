@@ -124,11 +124,7 @@ namespace Ordisoftware.Core.Diagnostics
     /// <summary>
     /// Indicate if stack in specialized form is hidded by default.
     /// </summary>
-    /*static public bool AutoHideStack
-    {
-      get { return !SystemSettings.Instance.AlwaysShowStack; }
-      set { SystemSettings.Instance.AlwaysShowStack = !value; }
-    }*/
+    static public bool AutoHideStack = false;
 
     /// <summary>
     /// Indicate if exception form show a terminate button.
@@ -138,17 +134,17 @@ namespace Ordisoftware.Core.Diagnostics
     /// <summary>
     /// The enter leave count skip.
     /// </summary>
-    static private int _EnterLeaveCountSkip = 2;
+    static private int EnterLeaveCountSkip = 2;
 
     /// <summary>
     /// Number of enters.
     /// </summary>
-    static private int _EnterCount = 0;
+    static private int EnterCount = 0;
 
     /// <summary>
     /// The stack skip.
     /// </summary>
-    static private int _StackSkip = 1;
+    static private int StackSkip = 1;
 
     /// <summary>
     /// The slocker.
@@ -167,16 +163,16 @@ namespace Ordisoftware.Core.Diagnostics
         if ( value )
         {
           AppDomain.CurrentDomain.UnhandledException += OnAppDomainException;
-          System.Windows.Forms.Application.ThreadException += OnThreadException;
+          Application.ThreadException += OnThreadException;
         }
         else
         {
           AppDomain.CurrentDomain.UnhandledException -= OnAppDomainException;
-          System.Windows.Forms.Application.ThreadException -= OnThreadException;
+          Application.ThreadException -= OnThreadException;
         }
         _Active = value;
-        _EnterCount = 0;
-        _StackSkip = 1;
+        EnterCount = 0;
+        StackSkip = 1;
       }
     }
 
@@ -242,7 +238,7 @@ namespace Ordisoftware.Core.Diagnostics
     {
       if ( !_Active ) return;
       //SystemManager.Log.Write(LogEventType.Enter, ExceptionInfo.GetCallerName(_EnterLeaveCountSkip));
-      lock ( slocker ) _EnterCount++;
+      lock ( slocker ) EnterCount++;
     }
 
     /// <summary>
@@ -250,9 +246,9 @@ namespace Ordisoftware.Core.Diagnostics
     /// </summary>
     static public void Leave()
     {
-      if ( !_Active || _EnterCount == 0 ) return;
+      if ( !_Active || EnterCount == 0 ) return;
       //SystemManager.Log.Write(LogEventType.Leave, ExceptionInfo.GetCallerName(_EnterLeaveCountSkip));
-      lock ( slocker ) _EnterCount--;
+      lock ( slocker ) EnterCount--;
     }
 
     /// <summary>
@@ -260,9 +256,9 @@ namespace Ordisoftware.Core.Diagnostics
     /// </summary>
     static private void LeaveInternal()
     {
-      if ( !_Active || _EnterCount == 0 ) return;
+      if ( !_Active || EnterCount == 0 ) return;
       //SystemManager.Log.Write(LogEventType.Leave, ExceptionInfo.GetCallerName(_EnterLeaveCountSkip + _StackSkip));
-      lock ( slocker ) { _EnterCount--; _StackSkip = 1; }
+      lock ( slocker ) { EnterCount--; StackSkip = 1; }
     }
 
     /// <summary>
@@ -330,7 +326,7 @@ namespace Ordisoftware.Core.Diagnostics
       //if ( SystemManager.Process.IsConsole ) 
         //Console.WriteLine(s);
       //else 
-        System.Windows.Forms.MessageBox.Show(s);
+        MessageBox.Show(s);
     }
 
     /// <summary>
@@ -354,7 +350,7 @@ namespace Ordisoftware.Core.Diagnostics
       if ( except is AbortException ) { LeaveInternal(); return; }
       lock ( slocker )
       {
-        _StackSkip++;
+        StackSkip++;
         ProcessException(sender, except, doshow);
         LeaveInternal();
       }

@@ -101,9 +101,9 @@ namespace Ordisoftware.HebrewCommon
       = $"https://github.com/{AssemblyCompany}/{AssemblyTitle.Replace(" ", "-")}";
 
     /// <summary>
-    /// Indicate the GitHub issues page.
+    /// Indicate the create GitHub issue url.
     /// </summary>
-    static public string GitHubIssuesURL
+    static public string GitHubCreateIssueURL
       = GitHubRepositoryURL + "/issues/new?assignees=" + AssemblyCompany;
 
     /// <summary>

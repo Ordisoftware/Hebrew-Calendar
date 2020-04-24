@@ -40,6 +40,13 @@ namespace Ordisoftware.HebrewCommon
         { "fr", "Notice de la méthode d'analyse lettrique" }
       };
 
+    static public readonly Dictionary<string, string> GitHubIssueComment
+      = new Dictionary<string, string>()
+      {
+        { "en", "> Describe here what you did, what you expected and what happened." },
+        { "fr", "> Décrivez ici ce que vous avez fait, ce que vous attendiez et ce qui c'est passé." }
+      };
+
     static public readonly Dictionary<string, string> AboutBoxTitle
       = new Dictionary<string, string>()
       {

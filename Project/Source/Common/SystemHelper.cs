@@ -227,11 +227,19 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Open the GitHub issues page.
+    /// Open GitHub repository page.
     /// </summary>
-    static public void OpenGitHibIssuesPage(string query = "")
+    static public void OpenGitHupPage()
     {
-      OpenWebLink(Globals.GitHubIssuesURL + query);
+      OpenWebLink(Globals.GitHubRepositoryURL);
+    }
+
+    /// <summary>
+    /// Create a GitHub issue.
+    /// </summary>
+    static public void CreateGitHubIssue(string query = "")
+    {
+      OpenWebLink(Globals.GitHubCreateIssueURL + query);
     }
 
     /// <summary>

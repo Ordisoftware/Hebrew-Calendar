@@ -538,7 +538,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
-      SystemHelper.OpenGitHibIssuesPage();
+      SystemHelper.CreateGitHubIssue();
     }
 
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)

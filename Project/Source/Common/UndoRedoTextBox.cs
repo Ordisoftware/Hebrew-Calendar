@@ -201,17 +201,20 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionSelectAll_Click(object sender, EventArgs e)
     {
+      if ( sender is ToolStripMenuItem && !Focused ) Focus();
       SelectAll();
     }
 
     private void ActionCopy_Click(object sender, EventArgs e)
     {
+      if ( sender is ToolStripMenuItem && !Focused ) Focus();
       if ( string.IsNullOrEmpty(SelectedText) ) return;
       Clipboard.SetText(SelectedText);
     }
 
     private void ActionCut_Click(object sender, EventArgs e)
     {
+      if ( sender is ToolStripMenuItem && !Focused ) Focus();
       if ( string.IsNullOrEmpty(SelectedText) ) return;
       Clipboard.SetText(SelectedText);
       int selectionStart = SelectionStart;
@@ -221,12 +224,14 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionPaste_Click(object sender, EventArgs e)
     {
+      if ( sender is ToolStripMenuItem && !Focused ) Focus();
       if ( string.IsNullOrEmpty(Clipboard.GetText()) ) return;
       SelectedText = Clipboard.GetText();
     }
 
     private void ActionUndo_Click(object sender, EventArgs e)
     {
+      if ( sender is ToolStripMenuItem && !Focused ) Focus();
       if ( UndoStack.Count == 0 ) return;
       try
       {
@@ -245,6 +250,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionRedo_Click(object sender, EventArgs e)
     {
+      if ( sender is ToolStripMenuItem && !Focused ) Focus();
       if ( RedoStack.Count == 0 ) return;
       try
       {
