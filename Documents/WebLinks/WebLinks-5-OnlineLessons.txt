@@ -9,9 +9,6 @@ URL = http://ravbenchetrit.com
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = http://www.torahacademy.fr
 
-Name = (FR) Rav Avraham Ifrah
-URL = https://breslev.fr
-
 Name = (FR/EN) Rav David Pinto
 URL = https://hevratpinto.org
 
@@ -63,17 +60,6 @@ URL = https://fr.chabad.org
 
 Name = (EN) 'Habad Loubavitch
 URL = https://www.chabad.org
-
--
-
-Name = (FR) Breslev
-URL = https://www.breslev.co.il/default.aspx?language=french
-
-Name = (EN) Breslev
-URL = https://www.breslev.co.il/default.aspx?language=english
-
-Name = (IW) Breslev
-URL = https://www.breslev.co.il/default.aspx?language=hebrew
 
 -
 

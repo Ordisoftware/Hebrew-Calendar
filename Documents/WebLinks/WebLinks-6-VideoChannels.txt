@@ -16,9 +16,6 @@ URL = https://www.youtube.com/channel/UC9x_d0qPTAy-K5GmIwwQfAQ
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
 
-Name = (FR) Rav Avraham Ifrah
-URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
-
 Name = (FR) Rav Yves Marciano
 URL = https://www.youtube.com/channel/UCin_W6_4xI0z0kvXoVHxQtQ
 
@@ -66,17 +63,6 @@ URL = https://www.youtube.com/user/laparacha
 
 Name = (FR) Tsarfat
 URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
-
--
-
-Name = (FR) Breslev
-URL = https://www.youtube.com/user/breslevfrancais
-
-Name = (EN) Breslev
-URL = https://www.youtube.com/user/breslevenglish
-
-Name = (IW) Breslev
-URL = https://www.youtube.com/user/breslevisrael
 
 -
 
