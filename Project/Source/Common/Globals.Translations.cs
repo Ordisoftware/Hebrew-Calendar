@@ -105,6 +105,15 @@ namespace Ordisoftware.HebrewCommon
                 "Voulez-vous vérifier les paramètres ?" }
       };
 
+    static public readonly Dictionary<string, string> AskToOptimizeDatabase
+      = new Dictionary<string, string>()
+      {
+        { "en", "Optimization process will close and reopen the database." + NewLine + NewLine +
+                "Do you want to continue?" },
+        { "fr", "Le processus d'optimisation va fermer et réouvrir la base de données." + NewLine + NewLine +
+                "Voulez-vous continuer ?" }
+      };
+
     static public readonly Dictionary<string, string> AskToRestoreWindowPosition
       = new Dictionary<string, string>()
       {
