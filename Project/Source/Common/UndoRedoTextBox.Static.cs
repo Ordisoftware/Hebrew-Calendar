@@ -36,7 +36,8 @@ namespace Ordisoftware.HebrewCommon
       UndoRedoTextBox control = null;
       if ( sender is ToolStripMenuItem )
       {
-        control = (UndoRedoTextBox)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).GetCurrentParent() ).SourceControl;
+        var parent = ( (ToolStripMenuItem)sender ).GetCurrentParent();
+        control = (UndoRedoTextBox)( (ContextMenuStrip)parent ).SourceControl;
         if ( control.Enabled && !control.Focused ) control.Focus();
       }
       else
@@ -93,6 +94,7 @@ namespace Ordisoftware.HebrewCommon
 
     static internal void Relocalize()
     {
+      if ( ContextMenuEdit == null ) return;
       var resources = new System.ComponentModel.ComponentResourceManager(typeof(UndoRedoTextBox));
       resources.ApplyResources(ContextMenuEdit, "ContextMenuEdit");
       resources.ApplyResources(ActionUndo, "ActionUndo");
