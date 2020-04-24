@@ -216,6 +216,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( sender is ToolStripMenuItem && !Focused ) Focus();
       if ( string.IsNullOrEmpty(SelectedText) ) return;
+      if ( !Enabled || ReadOnly ) return;
       Clipboard.SetText(SelectedText);
       int selectionStart = SelectionStart;
       Text = Text.Remove(selectionStart, SelectionLength);
@@ -226,12 +227,14 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( sender is ToolStripMenuItem && !Focused ) Focus();
       if ( string.IsNullOrEmpty(Clipboard.GetText()) ) return;
+      if ( !Enabled || ReadOnly ) return;
       SelectedText = Clipboard.GetText();
     }
 
     private void ActionUndo_Click(object sender, EventArgs e)
     {
       if ( sender is ToolStripMenuItem && !Focused ) Focus();
+      if ( !Enabled || ReadOnly ) return;
       if ( UndoStack.Count == 0 ) return;
       try
       {
@@ -251,6 +254,7 @@ namespace Ordisoftware.HebrewCommon
     private void ActionRedo_Click(object sender, EventArgs e)
     {
       if ( sender is ToolStripMenuItem && !Focused ) Focus();
+      if ( !Enabled || ReadOnly ) return;
       if ( RedoStack.Count == 0 ) return;
       try
       {

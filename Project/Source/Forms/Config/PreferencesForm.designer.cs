@@ -1008,9 +1008,11 @@
       // 
       // EditHebrewLettersPath
       // 
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
       this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.End;
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
       // 
       // EditVacuumAtStartup
       // 
