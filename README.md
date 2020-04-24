@@ -100,7 +100,6 @@ The application uses by default moon omer for celebrations. If you use moon omer
 - Ctrl+Tab : Next view
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today
-- Ctrl+D : Search a day
 - Ctrl+N : Navigation window
 - Ctrl+C : Copy text report to clipboard
 - Ctrl+P : Print month view
