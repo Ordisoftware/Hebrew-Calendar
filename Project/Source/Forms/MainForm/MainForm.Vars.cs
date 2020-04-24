@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -27,34 +27,9 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// Indicate the singleton instance.
-    /// </summary>
-    static public readonly MainForm Instance;
-
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static MainForm()
-    {
-      Instance = new MainForm();
-      foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
-        Instance.LastCelebrationReminded.Add(value, null);
-    }
-
-    /// <summary>
-    /// Indicate if the application is ready for the user.
-    /// </summary>
-    internal bool IsReady { get; private set; }
-
-    /// <summary>
     /// Indicate if generation is in progress.
     /// </summary>
     internal bool IsGenerating;
-
-    /// <summary>
-    /// Indicate if application can be closed.
-    /// </summary>
-    private bool AllowClose;
 
     /// <summary>
     /// Indicate last showned tooltip.

@@ -1,0 +1,69 @@
+Lang/EN = Sacred texts
+Lang/FR = Textes sacrés
+
+Name = (EN) Tanak @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Hebrew_Bible
+
+Name = (FR) Tanak @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Tanakh
+
+-
+
+Name = (EN) Parasha @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Weekly_Torah_portion
+
+Name = (FR) Parasha @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Parasha_de_la_semaine
+-
+
+Name = (EN) Jewish Texts @ sefaria.org
+URL = https://www.sefaria.org/texts
+
+Name = (EN) English Babylonian Talmud @ halakhah.com
+URL = http://halakhah.com
+
+-
+
+Name = (IW) Tanak Hebrew Text @ fourmilab.ch
+URL = http://www.fourmilab.ch/etexts/www/hebrew/Bible/
+
+Name = (IW) Tanak Hebrew MP3 @ mechon-mamre.org
+URL = https://www.mechon-mamre.org/p/pt/ptmp3prq.htm
+
+-
+
+Name = (EN) Interlinear Bible @ studybible.info
+URL = https://studybible.info/IHOT/
+
+Name = (EN) Interlinear Euangélion @ studybible.info
+URL = https://studybible.info/IGNT
+
+-
+
+Name = (EN) Interlinear Bible @ biblehub.com
+URL = https://biblehub.com/interlinear/
+
+-
+
+Name = (FR) La Bible en hébreu @ lexilogos.com
+URL = https://www.lexilogos.com/bible_hebreu.htm
+
+-
+
+Name = (EN) Interlinear Quran @ corpus.quran.com
+URL = http://corpus.quran.com/wordbyword.jsp
+
+Name = (FR) Quran Interlinéaire @ coran-seul.com
+URL = http://coran-seul.com/index.php/home
+
+-
+
+
+Name = (EN) Bhagavad Gita word-for-word (PDF 63 MB)
+URL = http://www.prabhupada-books.de/translations/gita-english/Bhagavad-gita-As-It-Is_McMillan1972.pdf
+
+Name = (FR) Bhagavad Gita mot-à-mot (PDF 42 Mo)
+URL = http://www.prabhupada-books.de/translations/gita-french/La_Bhagavad-gita_telle_quelle_est_Bhaktivedanta_Swami_Prabhupada.pdf
+
+Name = (FR) Yoga Sutra de Patanjali mot-à-mot (PDF 176 Ko)
+URL = http://www.lilashtanga.com/wp-content/uploads/2017/05/Sutra-de-patanjali-texte-.pdf

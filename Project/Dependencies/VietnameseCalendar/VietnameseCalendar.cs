@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using Microsoft.Win32;
 
 /**
- * Copyright 2004 Ho Ngoc Duc [http://come.to/duc]. All Rights Reserved.<p>
+ * Copyright 2004 Ho Ngoc Duc [http://come.to/duc]. All Rights Reserved.
  * Permission to use, copy, modify, and redistribute this software and its
  * documentation for personal, non-commercial use is hereby granted provided that
  * this copyright notice appears in all copies.
@@ -122,7 +122,7 @@ namespace System.Globalization
 		/// </summary>
 		/// <returns>An array of 32-bit signed integers that specify the relevant eras. The return value
 		/// for a VietnameseCalendar object is always an array containing one element equal to
-		/// the <see cref="VietnameseEra/> value.</returns>
+		/// the <see cref="VietnameseEra"/> value.</returns>
 		[ComVisible(false)]
 		public override int[] Eras
 		{
@@ -339,11 +339,13 @@ namespace System.Globalization
 			DateTime date = new DateTime(year, 1, 1, 0, 0, 0);		// New Year's Day
 			return date.AddDays(GetYearCode(year) >> 17);	// offset of Tet (Lunar New Year's Day)
 		}
-		/// <summary>
-		/// Returns number of days in specified month of the year.
-		/// </summary>
-		/// <param name="month">An integer from 1 through 13 that represents the month.</param>
-		private static int GetMonthLength(int year, int month, int leapMonth)
+    /// <summary>
+    /// Returns number of days in specified month of the year.
+    /// </summary>
+    /// <param name="year"></param>
+    /// <param name="month">An integer from 1 through 13 that represents the month.</param>
+    /// <param name="leapMonth"></param>
+    private static int GetMonthLength(int year, int month, int leapMonth)
 		{
 			if (leapMonth > 0)
 			{

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,74 +11,26 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2020-04 </edited>
 using System;
-using System.Xml;
+using System.IO;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
 
   /// <summary>
-  /// Form for viewing the preferences.
+  /// Provide form to edit the preferences.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class PreferencesForm : Form
   {
 
-    const int RemindShabatHoursBeforeMin = 1;
-    const int RemindShabatHoursBeforeMax = 12;
-    const int RemindShabatHoursBeforeValue = 6;
-    const int RemindShabatEveryMinutesMin = 5;
-    const int RemindShabatEveryMinutesMax = 60;
-    const int RemindShabatEveryMinutesValue = 15;
-    const int RemindCelebrationBeforeMin = 1;
-    const int RemindCelebrationBeforeMax = 60;
-    const int RemindCelebrationBeforeValue = 7;
-    const int RemindCelebrationHoursBeforeMin = 1;
-    const int RemindCelebrationHoursBeforeMax = 24;
-    const int RemindCelebrationHoursBeforeValue = 6;
-    const int RemindCelebrationEveryMinutesMin = 5;
-    const int RemindCelebrationEveryMinutesMax = 60;
-    const int RemindCelebrationEveryMinutesValue = 15;
-    const int RemindAutoLockTimeOutMin = 5;
-    const int RemindAutoLockTimeOutMax = 60;
-    const int RemindAutoLockTimeOutValue = 30;
-
-    static private bool LanguageChanged;
-    static private bool DoReset;
-
-    static public bool Run()
-    {
-      MainForm.Instance.TimerReminder.Enabled = false;
-      string lang = Program.Settings.Language;
-      var form = new PreferencesForm();
-      form.ShowDialog();
-      while ( LanguageChanged || DoReset )
-      {
-        NavigationForm.Instance.Close();
-        LanguageChanged = false;
-        DoReset = false;
-        form = new PreferencesForm();
-        form.ShowDialog();
-      }
-      MainForm.Instance.Refresh();
-      MainForm.Instance.TimerReminder.Enabled = true;
-      return form.Reseted
-          || form.OldShabatDay != Program.Settings.ShabatDay
-          || form.OldLatitude != Program.Settings.GPSLatitude
-          || form.OldLongitude != Program.Settings.GPSLongitude
-          || form.OldReminderUseColors != Program.Settings.UseColors
-          || form.OldReminderShabatDayColor != Program.Settings.EventColorShabat
-          || form.OldReminderCurrentDayColor != Program.Settings.EventColorTorah
-          || form.OldUseMoonDays != Program.Settings.TorahEventsCountAsMoon
-          || form.OldTimeZone != Program.Settings.TimeZone
-          || lang != Program.Settings.Language;
-    }
-
+    private bool IsReady;
     public Color OldReminderCurrentDayColor { get; private set; }
     public Color OldReminderShabatDayColor { get; private set; }
     public bool OldReminderUseColors { get; private set; }
@@ -87,7 +39,7 @@ namespace Ordisoftware.HebrewCalendar
     public string OldLongitude { get; private set; }
     public string OldTimeZone { get; private set; }
     public bool OldUseMoonDays { get; private set; }
-    public bool Reseted { get; private set; }
+    public bool MustRefreshMonthView { get; private set; }
 
     /// <summary>
     /// Default constructor.
@@ -95,13 +47,14 @@ namespace Ordisoftware.HebrewCalendar
     private PreferencesForm()
     {
       InitializeComponent();
+      if (IsCenteredToScreen) StartPosition = FormStartPosition.CenterScreen;
       Icon = MainForm.Instance.Icon;
       LoadDays();
       LoadEvents();
       LoadFonts();
-      EditTimerInterval.Minimum = RemindCelebrationBeforeMin;
-      EditTimerInterval.Maximum = RemindCelebrationBeforeMax;
-      EditTimerInterval.Value = RemindCelebrationBeforeValue;
+      EditReminderCelebrationsInterval.Minimum = RemindCelebrationBeforeMin;
+      EditReminderCelebrationsInterval.Maximum = RemindCelebrationBeforeMax;
+      EditReminderCelebrationsInterval.Value = RemindCelebrationBeforeValue;
       EditRemindShabatHoursBefore.Minimum = RemindShabatHoursBeforeMin;
       EditRemindShabatHoursBefore.Maximum = RemindShabatHoursBeforeMax;
       EditRemindShabatHoursBefore.Value = RemindShabatHoursBeforeValue;
@@ -114,9 +67,31 @@ namespace Ordisoftware.HebrewCalendar
       EditRemindCelebrationEveryMinutes.Minimum = RemindCelebrationEveryMinutesMin;
       EditRemindCelebrationEveryMinutes.Maximum = RemindCelebrationEveryMinutesMax;
       EditRemindCelebrationEveryMinutes.Value = RemindCelebrationEveryMinutesValue;
-      EditRemindAutoLockTimeOut.Minimum = RemindAutoLockTimeOutMin;
-      EditRemindAutoLockTimeOut.Maximum = RemindAutoLockTimeOutMax;
-      EditRemindAutoLockTimeOut.Value = RemindAutoLockTimeOutValue;
+      EditAutoLockSessionTimeOut.Minimum = RemindAutoLockTimeOutMin;
+      EditAutoLockSessionTimeOut.Maximum = RemindAutoLockTimeOutMax;
+      EditAutoLockSessionTimeOut.Value = RemindAutoLockTimeOutValue;
+    }
+
+    /// <summary>
+    /// Event handler. Called by PreferencesForm for shown events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PreferencesForm_Shown(object sender, EventArgs e)
+    {
+      TopMost = MainForm.Instance.TopMost;
+      BringToFront();
+      DoFormShown(sender, e);
+    }
+
+    /// <summary>
+    /// Event handler. Called by PreferencesForm for closing events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      DoFormClosing(sender, e);
     }
 
     /// <summary>
@@ -158,7 +133,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Loads the fonts.
     /// <remarks>
-    /// Tips taken from http://stackoverflow.com/questions/224865/how-do-i-get-all-installed-fixed-width-fonts/225027
+    /// From http://stackoverflow.com/questions/224865/how-do-i-get-all-installed-fixed-width-fonts/225027
     /// </remarks>
     /// </summary>
     private void LoadFonts()
@@ -178,190 +153,9 @@ namespace Ordisoftware.HebrewCalendar
           }
     }
 
-    /// <summary>
-    /// Event handler. Called by PreferencesForm for shown events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PreferencesForm_Shown(object sender, EventArgs e)
-    {
-      if ( Program.Settings.FirstLaunch )
-      {
-        Program.Settings.FirstLaunch = false;
-        DisplayManager.ShowAdvert(Translations.OmerMoon.GetLang());
-      }
-      if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
-        ActionGetGPS_LinkClicked(null, null);
-      UpdateLanguagesButtons();
-      foreach ( var item in EditFontName.Items )
-        if ( (string)item == Program.Settings.FontName )
-        {
-          EditFontName.SelectedItem = item;
-          break;
-        }
-      EditRemindAutoLockTimeOut.Value = Program.Settings.AutoLockSessionTimeOut;
-      EditRemindAutoLock.Checked = Program.Settings.AutoLockSession;
-      EditLoomingDelay.Value = Program.Settings.BalloonLoomingDelay;
-      EditGPSLongitude.Text = Program.Settings.GPSLongitude;
-      EditGPSLatitude.Text = Program.Settings.GPSLatitude;
-      EditBalloon.Checked = Program.Settings.BalloonEnabled;
-      EditBalloonAutoHide.Checked = Program.Settings.BalloonAutoHide;
-      EditShowReminderInTaskBar.Checked = Program.Settings.ShowReminderInTaskBar;
-      EditFontSize.Value = Program.Settings.FontSize;
-      EditUseMoonDays.Checked = Program.Settings.TorahEventsCountAsMoon;
-      EditTimerEnabled.Checked = Program.Settings.ReminderCelebrationsEnabled;
-      EditStartupHide.Checked = Program.Settings.StartupHide;
-      EditShowMonthDayToolTip.Checked = Program.Settings.MonthViewSunToolTips;
-      EditCheckUpdateAtStartup.Checked = Program.Settings.CheckUpdateAtStartup;
-      EditRemindShabat.Checked = Program.Settings.ReminderShabatEnabled;
-      EditRemindShabatOnlyLight.Checked = Program.Settings.RemindShabatOnlyLight;
-      EditTimerInterval.Value = Program.Settings.ReminderCelebrationsInterval;
-      EditRemindShabatHoursBefore.Value = Program.Settings.RemindShabatHoursBefore;
-      EditRemindShabatEveryMinutes.Value = Program.Settings.RemindShabatEveryMinutes;
-      EditRemindCelebrationHoursBefore.Value = Program.Settings.RemindCelebrationHoursBefore;
-      EditRemindCelebrationEveryMinutes.Value = Program.Settings.RemindCelebrationEveryMinutes;
-      PanelTopColor.BackColor = Program.Settings.NavigateTopColor;
-      PanelMiddleColor.BackColor = Program.Settings.NavigateMiddleColor;
-      PanelBottomColor.BackColor = Program.Settings.NavigateBottomColor;
-      PanelTextColor.BackColor = Program.Settings.TextColor;
-      PanelBackColor.BackColor = Program.Settings.TextBackground;
-      PanelCurrentDayColor.BackColor = Program.Settings.CurrentDayForeColor;
-      PanelCurrentDayBackColor.BackColor = Program.Settings.CurrentDayBackColor;
-      PanelTorahEventColor.BackColor = Program.Settings.CalendarColorTorahEvent;
-      PanelSeasonEventColor.BackColor = Program.Settings.CalendarColorSeason;
-      PanelMoonEventColor.BackColor = Program.Settings.CalendarColorMoon;
-      PanelFullMoonColor.BackColor = Program.Settings.CalendarColorFullMoon;
-      PanelEventColorTorah.BackColor = Program.Settings.EventColorTorah;
-      PanelEventColorSeason.BackColor = Program.Settings.EventColorSeason;
-      PanelEventColorShabat.BackColor = Program.Settings.EventColorShabat;
-      PanelEventColorNewMonth.BackColor = Program.Settings.EventColorMonth;
-      PanelEventColorNext.BackColor = Program.Settings.EventColorNext;
-      EditReminderUseColors.Checked = Program.Settings.UseColors;
-      OldReminderCurrentDayColor = Program.Settings.EventColorTorah;
-      OldReminderUseColors = Program.Settings.UseColors;
-      OldReminderShabatDayColor = Program.Settings.EventColorShabat;
-      OldShabatDay = Program.Settings.ShabatDay;
-      OldLatitude = Program.Settings.GPSLatitude;
-      OldLongitude = Program.Settings.GPSLongitude;
-      OldTimeZone = Program.Settings.TimeZone;
-      OldUseMoonDays = Program.Settings.TorahEventsCountAsMoon;
-      EditGPSLatitude.Text = OldLatitude.ToString();
-      EditGPSLongitude.Text = OldLongitude.ToString();
-      LabelCountry.Text = Program.Settings.GPSCountry;
-      LabelCity.Text = Program.Settings.GPSCity;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( Program.Settings.TimeZone == item.Id )
-          LabelTimeZone.Text = item.DisplayName;
-      switch ( Program.Settings.TrayIconClickOpen )
-      {
-        case TrayIconClickOpen.MainForm:
-          SelectOpenMainForm.Select();
-          break;
-        case TrayIconClickOpen.NavigationForm:
-          SelectOpenNavigationForm.Select();
-          break;
-      }
-      EditRemindShabat_ValueChanged(null, null);
-      EditTimerEnabled_CheckedChanged(null, null);
-      ActiveControl = EditShabatDay;
-    }
-
-    /// <summary>
-    /// Event handler. Called by PreferencesForm for closing events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      if ( DoReset ) return;
-      NavigationForm.Instance.Hide();
-      try
-      {
-        var v1 = (float)XmlConvert.ToDouble(EditGPSLatitude.Text);
-        var v2 = (float)XmlConvert.ToDouble(EditGPSLongitude.Text);
-      }
-      catch
-      {
-        DisplayManager.ShowError("Invalid GPS coordonates.");
-        e.Cancel = true;
-        return;
-      }
-      if ( SelectOpenMainForm.Checked )
-        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
-      else
-      if ( SelectOpenNavigationForm.Checked )
-        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
-      Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-      Program.Settings.ReminderCelebrationsInterval = (int)EditTimerInterval.Value;
-      for ( int index = 0; index < EditEvents.Items.Count; index++ )
-        try
-        {
-          string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
-          Program.Settings[name] = EditEvents.GetItemChecked(index);
-        }
-        catch
-        {
-        }
-      for ( int index = 0; index < EditEventsDay.Items.Count; index++ )
-        try
-        {
-          string name = "TorahEventRemindDay" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
-          Program.Settings[name] = EditEventsDay.GetItemChecked(index);
-        }
-        catch
-        {
-        }
-      Program.Settings.AutoLockSessionTimeOut = (int)EditRemindAutoLockTimeOut.Value;
-      Program.Settings.AutoLockSession = EditRemindAutoLock.Checked;
-      Program.Settings.BalloonLoomingDelay = (int)EditLoomingDelay.Value;
-      Program.Settings.GPSLatitude = EditGPSLatitude.Text;
-      Program.Settings.GPSLongitude = EditGPSLongitude.Text;
-      Program.Settings.BalloonEnabled = EditBalloon.Checked;
-      Program.Settings.BalloonAutoHide = EditBalloonAutoHide.Checked;
-      Program.Settings.ShowReminderInTaskBar = EditShowReminderInTaskBar.Checked;
-      Program.Settings.FontSize = (int)EditFontSize.Value;
-      Program.Settings.ReminderCelebrationsEnabled = EditTimerEnabled.Checked;
-      Program.Settings.StartupHide = EditStartupHide.Checked;
-      Program.Settings.MonthViewSunToolTips = EditShowMonthDayToolTip.Checked;
-      Program.Settings.CheckUpdateAtStartup = EditCheckUpdateAtStartup.Checked;
-      Program.Settings.TorahEventsCountAsMoon = EditUseMoonDays.Checked;
-      Program.Settings.ReminderShabatEnabled = EditRemindShabat.Checked;
-      Program.Settings.RemindShabatOnlyLight = EditRemindShabatOnlyLight.Checked;
-      Program.Settings.ReminderCelebrationsInterval = EditTimerInterval.Value;
-      Program.Settings.RemindShabatHoursBefore = EditRemindShabatHoursBefore.Value;
-      Program.Settings.RemindShabatEveryMinutes = EditRemindShabatEveryMinutes.Value;
-      Program.Settings.RemindCelebrationHoursBefore = EditRemindCelebrationHoursBefore.Value;
-      Program.Settings.RemindCelebrationEveryMinutes = EditRemindCelebrationEveryMinutes.Value;
-      Program.Settings.NavigateTopColor = PanelTopColor.BackColor;
-      Program.Settings.NavigateMiddleColor = PanelMiddleColor.BackColor;
-      Program.Settings.NavigateBottomColor = PanelBottomColor.BackColor;
-      Program.Settings.TextColor = PanelTextColor.BackColor;
-      Program.Settings.TextBackground = PanelBackColor.BackColor;
-      Program.Settings.CurrentDayForeColor = PanelCurrentDayColor.BackColor;
-      Program.Settings.CurrentDayBackColor = PanelCurrentDayBackColor.BackColor;
-      Program.Settings.CalendarColorTorahEvent = PanelTorahEventColor.BackColor;
-      Program.Settings.CalendarColorSeason = PanelSeasonEventColor.BackColor;
-      Program.Settings.CalendarColorMoon = PanelMoonEventColor.BackColor;
-      Program.Settings.CalendarColorFullMoon = PanelFullMoonColor.BackColor;
-      Program.Settings.EventColorTorah = PanelEventColorTorah.BackColor;
-      Program.Settings.EventColorSeason = PanelEventColorSeason.BackColor;
-      Program.Settings.EventColorShabat = PanelEventColorShabat.BackColor;
-      Program.Settings.EventColorMonth = PanelEventColorNewMonth.BackColor;
-      Program.Settings.EventColorNext = PanelEventColorNext.BackColor;
-      Program.Settings.UseColors = EditReminderUseColors.Checked;
-      Program.Settings.Store();
-      MainForm.Instance.CurrentTimeZoneInfo = null;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Program.Settings.TimeZone )
-        {
-          MainForm.Instance.CurrentTimeZoneInfo = item;
-          break;
-        }
-    }
-
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.ResetPreferences.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Translations.AskToResetPreferences.GetLang()) ) return;
       string country = Program.Settings.GPSCountry;
       string city = Program.Settings.GPSCity;
       string lat = Program.Settings.GPSLatitude;
@@ -370,6 +164,8 @@ namespace Ordisoftware.HebrewCalendar
       int shabat = EditShabatDay.SelectedIndex;
       Program.Settings.Reset();
       Program.Settings.UpgradeResetRequiredV3_6 = false;
+      Program.Settings.FirstLaunchV4 = false;
+      Program.Settings.Store();
       DoReset = true;
       Reseted = true;
       Program.Settings.GPSCountry = country;
@@ -383,13 +179,6 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
-    private void EditBalloon_CheckedChanged(object sender, EventArgs e)
-    {
-      EditBalloonAutoHide.Enabled = EditBalloon.Checked;
-      LabelLoomingDelay.Enabled = EditBalloon.Checked;
-      EditLoomingDelay.Enabled = EditBalloon.Checked;
-    }
-
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       var form = new SelectCityForm();
@@ -401,8 +190,8 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSCountry = form.Country;
       Program.Settings.GPSCity = form.City;
       Program.Settings.Save();
-      LabelCountry.Text = Program.Settings.GPSCountry;
-      LabelCity.Text = Program.Settings.GPSCity;
+      LabelGPSCountry.Text = Program.Settings.GPSCountry;
+      LabelGPSCity.Text = Program.Settings.GPSCity;
       if ( form.EditTimeZone.SelectedItem != null )
       {
         Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
@@ -410,14 +199,10 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    /// <summary>
-    /// Event handler. Called by ActionUsePersonalShabat for click event.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.PersonalShabatNotice.GetLang()) ) return;
+      ShowTextForm.CreateShabatNotice().ShowDialog();
+      if ( !DisplayManager.QueryYesNo(Translations.AskToSetupPersonalShabat.GetLang()) ) return;
       DateTime date = DateTime.Today;
       var formDate = new SelectDayForm();
       formDate.Text = Translations.SelectBirthday.GetLang();
@@ -425,7 +210,7 @@ namespace Ordisoftware.HebrewCalendar
       date = formDate.MonthCalendar.SelectionStart.Date;
       var formTime = new SelectBirthTime();
       if ( formTime.ShowDialog() != DialogResult.OK ) return;
-      var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
+      var ephemeris = date.GetSunMoonEphemeris();
       var time = formTime.EditTime.Value.TimeOfDay;
       if ( time >= new TimeSpan(0, 0, 0) && time < ephemeris.Sunset )
         date = date.AddDays(-1);
@@ -435,282 +220,22 @@ namespace Ordisoftware.HebrewCalendar
           EditShabatDay.SelectedItem = day;
     }
 
-    /// <summary>
-    /// Event handler. Called by EditFontName and editFontSize for changed events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void EitFontName_Changed(object sender, EventArgs e)
+    private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
-      Program.Settings.FontName = EditFontName.Text;
-      MainForm.Instance.UpdateTextCalendar();
+      Program.Settings.Language = "en";
+      Program.UpdateLocalization();
+      UpdateLanguagesButtons();
+      LanguageChanged = true;
+      Close();
     }
 
-    /// <summary>
-    /// Event handler. Called by PanelBackColor for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PanelBackColor_Click(object sender, EventArgs e)
+    private void ActionSelectLangFR_Click(object sender, EventArgs e)
     {
-      DialogColor.Color = PanelBackColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelBackColor.BackColor = DialogColor.Color;
-      MainForm.Instance.CalendarText.BackColor = DialogColor.Color;
-    }
-
-    /// <summary>
-    /// Event handler. Called by PanelTextColor for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PanelTextColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = PanelTextColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelTextColor.BackColor = DialogColor.Color;
-      MainForm.Instance.CalendarText.ForeColor = DialogColor.Color;
-    }
-
-    /// <summary>
-    /// Event handler. Called by PanelTopColor for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PanelTopColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      NavigationForm.Instance.Show();
-      DialogColor.Color = PanelTopColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelTopColor.BackColor = DialogColor.Color;
-      NavigationForm.Instance.PanelTop.BackColor = PanelTopColor.BackColor;
-    }
-
-    /// <summary>
-    /// Event handler. Called by PanelMiddleColor for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PanelMiddleColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      NavigationForm.Instance.Show();
-      DialogColor.Color = PanelMiddleColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelMiddleColor.BackColor = DialogColor.Color;
-      NavigationForm.Instance.PanelMiddle.BackColor = PanelMiddleColor.BackColor;
-    }
-
-    /// <summary>
-    /// Event handler. Called by PanelBottomColor for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PanelBottomColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      NavigationForm.Instance.Show();
-      DialogColor.Color = PanelBottomColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelBottomColor.BackColor = DialogColor.Color;
-      NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
-    }
-
-    private void PanelEventColorShabat_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = PanelEventColorShabat.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelEventColorShabat.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelEventColorNext_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = PanelEventColorNext.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelEventColorNext.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelEventColorNewMonth_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = PanelEventColorNewMonth.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelEventColorNewMonth.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelEventColorSeason_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = PanelEventColorSeason.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelEventColorSeason.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelEventColorTorah_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = PanelEventColorTorah.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelEventColorTorah.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionUseSystemColors for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      if ( NavigationForm.Instance != null )
-        NavigationForm.Instance.Show();
-      PanelTopColor.BackColor = SystemColors.Control;
-      PanelMiddleColor.BackColor = SystemColors.Control;
-      PanelBottomColor.BackColor = SystemColors.Control;
-      NavigationForm.Instance.PanelTop.BackColor = PanelTopColor.BackColor;
-      NavigationForm.Instance.PanelMiddle.BackColor = PanelMiddleColor.BackColor;
-      NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionUseBlackAndWhiteColors for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionUseBlackAndWhiteColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      NavigationForm.Instance.Show();
-      PanelTopColor.BackColor = Color.White;
-      PanelMiddleColor.BackColor = Color.Gainsboro;
-      PanelBottomColor.BackColor = Color.White;
-      NavigationForm.Instance.PanelTop.BackColor = PanelTopColor.BackColor;
-      NavigationForm.Instance.PanelMiddle.BackColor = PanelMiddleColor.BackColor;
-      NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionUseDefaultColors for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionUseDefaultColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      NavigationForm.Instance.Show();
-      PanelTopColor.BackColor = Color.LemonChiffon;
-      PanelMiddleColor.BackColor = Color.AliceBlue;
-      PanelBottomColor.BackColor = Color.Honeydew;
-      NavigationForm.Instance.PanelTop.BackColor = PanelTopColor.BackColor;
-      NavigationForm.Instance.PanelMiddle.BackColor = PanelMiddleColor.BackColor;
-      NavigationForm.Instance.PanelBottom.BackColor = PanelBottomColor.BackColor;
-    }
-
-    private void UpdateCalendarMonth()
-    {
-      PreferencesForm_FormClosing(null, null);
-      MainForm.Instance.IsGenerating = true;
-      Cursor = Cursors.WaitCursor;
-      MainForm.Instance.Cursor = Cursors.WaitCursor;
-      Enabled = false;
-      MainForm.Instance.PanelViewMonth.Parent = null;
-      try
-      {
-        MainForm.Instance.CalendarMonth.CurrentDayForeColor = PanelCurrentDayColor.BackColor;
-        MainForm.Instance.CalendarMonth.CurrentDayBackColor = PanelCurrentDayBackColor.BackColor;
-        MainForm.Instance.CalendarMonth.LoadPresetHolidays = false;
-        MainForm.Instance.FillMonths();
-      }
-      finally
-      {
-        Enabled = true;
-        Cursor = Cursors.Default;
-        MainForm.Instance.Cursor = Cursors.Default;
-        MainForm.Instance.IsGenerating = false;
-        MainForm.Instance.SetView(Program.Settings.CurrentView, true);
-        MainForm.Instance.UpdateButtons();
-      }
-    }
-
-    /// <summary>
-    /// Event handler. Called by PanelCurrentDayColor for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = PanelCurrentDayColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelCurrentDayColor.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelCurrentDayBackColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = PanelCurrentDayBackColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelCurrentDayBackColor.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelTorahEventColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = PanelTorahEventColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelTorahEventColor.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelSeasonEventColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = PanelSeasonEventColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelSeasonEventColor.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelMoonEventColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = PanelMoonEventColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelMoonEventColor.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void PanelFullMoonColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = PanelFullMoonColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      PanelFullMoonColor.BackColor = DialogColor.Color;
-      UpdateCalendarMonth();
-    }
-
-    private void ActionRestoreCalendarColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      PanelCurrentDayColor.BackColor = Color.Red;
-      PanelTorahEventColor.BackColor = Color.DarkRed;
-      PanelSeasonEventColor.BackColor = Color.DarkGreen;
-      PanelMoonEventColor.BackColor = Color.DarkBlue;
-      PanelFullMoonColor.BackColor = Color.FromArgb(150, 100, 0);
-      UpdateCalendarMonth();
-    }
-
-    private void EditRemindShabat_ValueChanged(object sender, EventArgs e)
-    {
-      EditRemindShabatOnlyLight.Enabled = EditRemindShabat.Checked;
-      LabelRemindShabatHoursBefore.Enabled = EditRemindShabat.Checked;
-      EditRemindShabatHoursBefore.Enabled = EditRemindShabat.Checked;
-      LabelRemindShabatEveryMinutes.Enabled = EditRemindShabat.Checked;
-      EditRemindShabatEveryMinutes.Enabled = EditRemindShabat.Checked;
-    }
-
-    private void EditTimerEnabled_CheckedChanged(object sender, EventArgs e)
-    {
-      LabelTimerInterval.Enabled = EditTimerEnabled.Checked;
-      EditTimerInterval.Enabled = EditTimerEnabled.Checked;
-      EditEvents.Enabled = EditTimerEnabled.Checked;
-      EditEventsDay.Enabled = EditTimerEnabled.Checked;
-      LabelRemindCelebrationHoursBefore.Enabled = EditTimerEnabled.Checked;
-      EditRemindCelebrationHoursBefore.Enabled = EditTimerEnabled.Checked;
-      LabelRemindCelebrationEveryMinutes.Enabled = EditTimerEnabled.Checked;
-      EditRemindCelebrationEveryMinutes.Enabled = EditTimerEnabled.Checked;
+      Program.Settings.Language = "fr";
+      Program.UpdateLocalization();
+      UpdateLanguagesButtons();
+      LanguageChanged = true;
+      Close();
     }
 
     private void UpdateLanguagesButtons()
@@ -728,29 +253,295 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    private void ActionSelectLangEN_Click(object sender, EventArgs e)
+    private void EitReportFont_Changed(object sender, EventArgs e)
     {
-      Program.Settings.Language = "en";
-      Program.ApplyCurrentLanguage();
-      UpdateLanguagesButtons();
-      LanguageChanged = true;
-      Close();
+      if ( !IsReady ) return;
+      Program.Settings.FontName = EditFontName.Text;
+      Program.Settings.FontSize = (int)EditFontSize.Value;
+      MainForm.Instance.UpdateTextCalendar();
     }
 
-    private void ActionSelectLangFR_Click(object sender, EventArgs e)
+    private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
     {
-      Program.Settings.Language = "fr";
-      Program.ApplyCurrentLanguage();
-      UpdateLanguagesButtons();
-      LanguageChanged = true;
-      Close();
+      Core.Diagnostics.Debugger.Active = EditDebuggerEnabled.Checked;
     }
 
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)
     {
-      LabelRemindAutoLockTimeOut.Enabled = EditRemindAutoLock.Checked;
-      EditRemindAutoLockTimeOut.Enabled = EditRemindAutoLock.Checked;
+      LabelRemindAutoLockTimeOut.Enabled = EditAutoLockSession.Checked;
+      EditAutoLockSessionTimeOut.Enabled = EditAutoLockSession.Checked;
     }
+
+    private void EditRemindShabat_ValueChanged(object sender, EventArgs e)
+    {
+      EditRemindShabatOnlyLight.Enabled = EditReminderShabatEnabled.Checked;
+      LabelRemindShabatHoursBefore.Enabled = EditReminderShabatEnabled.Checked;
+      EditRemindShabatHoursBefore.Enabled = EditReminderShabatEnabled.Checked;
+      LabelRemindShabatEveryMinutes.Enabled = EditReminderShabatEnabled.Checked;
+      EditRemindShabatEveryMinutes.Enabled = EditReminderShabatEnabled.Checked;
+    }
+
+    private void EditTimerEnabled_CheckedChanged(object sender, EventArgs e)
+    {
+      LabelTimerInterval.Enabled = EditReminderCelebrationsEnabled.Checked;
+      EditReminderCelebrationsInterval.Enabled = EditReminderCelebrationsEnabled.Checked;
+      EditEvents.Enabled = EditReminderCelebrationsEnabled.Checked;
+      EditEventsDay.Enabled = EditReminderCelebrationsEnabled.Checked;
+      LabelRemindCelebrationHoursBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
+      EditRemindCelebrationHoursBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
+      LabelRemindCelebrationEveryMinutes.Enabled = EditReminderCelebrationsEnabled.Checked;
+      EditRemindCelebrationEveryMinutes.Enabled = EditReminderCelebrationsEnabled.Checked;
+    }
+
+    private void EditBalloon_CheckedChanged(object sender, EventArgs e)
+    {
+      EditBalloonAutoHide.Enabled = EditBalloon.Checked;
+      LabelLoomingDelay.Enabled = EditBalloon.Checked;
+      EditBalloonLoomingDelay.Enabled = EditBalloon.Checked;
+    }
+
+    private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      if ( NavigationForm.Instance != null )
+        NavigationForm.Instance.Show();
+      EditNavigateTopColor.BackColor = SystemColors.Control;
+      EditNavigateMiddleColor.BackColor = SystemColors.Control;
+      EditNavigateBottomColor.BackColor = SystemColors.Control;
+      NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
+      NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
+      NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
+    }
+
+    private void ActionUseBlackAndWhiteColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      NavigationForm.Instance.Show();
+      EditNavigateTopColor.BackColor = Color.White;
+      EditNavigateMiddleColor.BackColor = Color.Gainsboro;
+      EditNavigateBottomColor.BackColor = Color.White;
+      NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
+      NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
+      NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
+    }
+
+    private void ActionUseDefaultColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      NavigationForm.Instance.Show();
+      EditNavigateTopColor.BackColor = Color.LemonChiffon;
+      EditNavigateMiddleColor.BackColor = Color.AliceBlue;
+      EditNavigateBottomColor.BackColor = Color.Honeydew;
+      NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
+      NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
+      NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
+    }
+
+    private void ActionMonthViewThemeLight_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      EditCurrentDayForeColor.BackColor = Color.White;
+      EditCurrentDayBackColor.BackColor = Color.FromArgb(200, 0, 0);
+      EditCalendarColorTorahEvent.BackColor = Color.DarkRed;
+      EditCalendarColorSeason.BackColor = Color.DarkGreen;
+      EditCalendarColorMoon.BackColor = Color.DarkBlue;
+      EditCalendarColorFullMoon.BackColor = Color.FromArgb(150, 100, 0);
+      EditEventColorTorah.BackColor = Color.FromArgb(255, 255, 230);
+      EditEventColorSeason.BackColor = Color.FromArgb(245, 255, 240);
+      EditEventColorShabat.BackColor = Color.FromArgb(243, 243, 243);
+      EditEventColorMonth.BackColor = Color.AliceBlue;
+      EditEventColorNext.BackColor = Color.WhiteSmoke;
+      EditCalendarColorEmpty.BackColor = Color.White;
+      EditCalendarColorDefaultText.BackColor = Color.Black;
+      EditCalendarColorNoDay.BackColor = Color.FromArgb(250, 250, 250);
+      MustRefreshMonthView = true;
+    }
+
+    private void ActionMonthViewThemeDark_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      EditCurrentDayForeColor.BackColor = Color.Black;
+      EditCurrentDayBackColor.BackColor = Color.White;
+      EditCalendarColorTorahEvent.BackColor = Color.Red;
+      EditCalendarColorSeason.BackColor = Color.LightGreen;
+      EditCalendarColorMoon.BackColor = Color.LightBlue;
+      EditCalendarColorFullMoon.BackColor = Color.FromArgb(150, 100, 0);
+      EditEventColorTorah.BackColor = Color.Red;
+      EditEventColorSeason.BackColor = Color.LightGreen;
+      EditEventColorShabat.BackColor = Color.LightGray;
+      EditEventColorMonth.BackColor = Color.LightBlue;
+      EditEventColorNext.BackColor = Color.WhiteSmoke;
+      EditCalendarColorEmpty.BackColor = Color.Black;
+      EditCalendarColorDefaultText.BackColor = Color.White;
+      EditCalendarColorNoDay.BackColor = Color.FromArgb(50, 50, 50);
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelTextColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = EditTextColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditTextColor.BackColor = DialogColor.Color;
+      MainForm.Instance.CalendarText.ForeColor = DialogColor.Color;
+    }
+
+    private void PanelBackColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = EditTextBackground.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditTextBackground.BackColor = DialogColor.Color;
+      MainForm.Instance.CalendarText.BackColor = DialogColor.Color;
+    }
+
+    private void PanelTopColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      NavigationForm.Instance.Show();
+      DialogColor.Color = EditNavigateTopColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditNavigateTopColor.BackColor = DialogColor.Color;
+      NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
+    }
+
+    private void PanelMiddleColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      NavigationForm.Instance.Show();
+      DialogColor.Color = EditNavigateMiddleColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditNavigateMiddleColor.BackColor = DialogColor.Color;
+      NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
+    }
+
+    private void PanelBottomColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      NavigationForm.Instance.Show();
+      DialogColor.Color = EditNavigateBottomColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditNavigateBottomColor.BackColor = DialogColor.Color;
+      NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
+    }
+
+    private void PanelEventColorTorah_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditEventColorTorah.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditEventColorTorah.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelEventColorSeason_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditEventColorSeason.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditEventColorSeason.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelEventColorShabat_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditEventColorShabat.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditEventColorShabat.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelEventColorNewMonth_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditEventColorMonth.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditEventColorMonth.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelEventColorNext_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditEventColorNext.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditEventColorNext.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditCurrentDayForeColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCurrentDayForeColor.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelCurrentDayBackColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditCurrentDayBackColor.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCurrentDayBackColor.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelTorahEventColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = EditCalendarColorTorahEvent.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCalendarColorTorahEvent.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelSeasonEventColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = EditCalendarColorSeason.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCalendarColorSeason.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelMoonEventColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = EditCalendarColorMoon.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCalendarColorMoon.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void PanelFullMoonColor_Click(object sender, EventArgs e)
+    {
+      DialogColor.Color = EditCalendarColorFullMoon.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCalendarColorFullMoon.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void EditCalendarColorEmpty_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditCalendarColorEmpty.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCalendarColorEmpty.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void EditCalendarColorDefaultText_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditCalendarColorDefaultText.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCalendarColorDefaultText.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void EditCalendarColorNoDay_MouseClick(object sender, MouseEventArgs e)
+    {
+      DialogColor.Color = EditCalendarColorNoDay.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      EditCalendarColorNoDay.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
+    }
+
+    private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
+    {
+      MustRefreshMonthView = EditMonthViewFontSize.Value != Program.Settings.MonthViewFontSize;
+    }
+
+    private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
+    {
+      try { OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text); }
+      catch { }
+      try { OpenFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text); }
+      catch { }
+      if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
+        EditHebrewLettersPath.Text = OpenFileDialog.FileName;
+    }
+
   }
 
 }

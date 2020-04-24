@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using System.Linq;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -25,14 +26,15 @@ namespace Ordisoftware.HebrewCalendar
     private void CheckShabat()
     {
       var dateNow = DateTime.Now;
-      string strDateNow = SQLiteUtility.GetDate(dateNow);
+      string strDateNow = SQLiteHelper.GetDate(dateNow);
       var row = ( from day in DataSet.LunisolarDays
-                  where SQLiteUtility.GetDate(day.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
-                     && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDateNow)
+                  where SQLiteHelper.GetDate(day.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
+                     && SQLiteHelper.GetDate(day.Date) >= SQLiteHelper.GetDate(strDateNow)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
-      if ( row == null ) return;
-      var dateRow = SQLiteUtility.GetDate(row.Date);
-      var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteUtility.GetDate(dateRow.AddDays(-1)));
+      if ( row == null )
+        return;
+      var dateRow = SQLiteHelper.GetDate(row.Date);
+      var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteHelper.GetDate(dateRow.AddDays(-1)));
       var times = new ReminderTimes();
       var delta3 = Program.Settings.RemindShabatEveryMinutes;
       if ( Program.Settings.RemindShabatOnlyLight )

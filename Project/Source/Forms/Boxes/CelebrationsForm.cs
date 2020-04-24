@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -17,6 +17,7 @@ using System.Data;
 using System.Linq;
 using System.Globalization;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -24,7 +25,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class CelebrationsForm : Form
   {
 
-    static internal CelebrationsForm Instance { get; private set; }
+    static public CelebrationsForm Instance { get; private set; }
 
     static CelebrationsForm()
     {
@@ -33,8 +34,6 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void Run()
     {
-      if ( Instance.Location.X == -1 || Instance.Location.Y == -1 )
-        Instance.CenterToMainForm();
       if ( Instance.Visible )
       {
         Instance.BringToFront();
@@ -44,13 +43,13 @@ namespace Ordisoftware.HebrewCalendar
       var dateStart = DateTime.Today;
       var dateEnd = dateStart.AddYears(1);
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
-                 where SQLiteUtility.GetDate(day.Date) >= dateStart && SQLiteUtility.GetDate(day.Date) <= dateEnd
+                 where SQLiteHelper.GetDate(day.Date) >= dateStart && SQLiteHelper.GetDate(day.Date) <= dateEnd
                  && ( (SeasonChange)day.SeasonChange != SeasonChange.None
                    || (TorahEvent)day.TorahEvents != TorahEvent.None )
                  select day;
       foreach ( var row in rows )
       {
-        var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteUtility.GetDate(row.Date).ToLongDateString());
+        var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteHelper.GetDate(row.Date).ToLongDateString());
         if ( (SeasonChange)row.SeasonChange != SeasonChange.None )
           Instance.ListView.Items.Add(item)
           .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange))
@@ -67,6 +66,13 @@ namespace Ordisoftware.HebrewCalendar
     private CelebrationsForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
+    }
+
+    private void CelebrationsForm_Load(object sender, EventArgs e)
+    {
+      if ( Instance.Location.X == -1 || Instance.Location.Y == -1 )
+        Instance.CenterToMainForm();
     }
 
     private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -87,7 +93,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           if ( !MainForm.Instance.Visible )
             MainForm.Instance.MenuShowHide.PerformClick();
-          MainForm.Instance.GoToDate(SQLiteUtility.GetDate(ListView.SelectedItems[0].SubItems[1].Tag.ToString()));
+          MainForm.Instance.GoToDate(SQLiteHelper.GetDate(ListView.SelectedItems[0].SubItems[1].Tag.ToString()));
           BringToFront();
         }
         catch

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -14,6 +14,7 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Data;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -29,7 +30,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="date">The date.</param>
     internal void GoToDate(DateTime date)
     {
-      if ( !IsReady || IsGenerating || GoToDateMutex ) return;
+      if ( !Globals.IsReady || IsGenerating || GoToDateMutex ) return;
       GoToDateMutex = true;
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;
@@ -50,10 +51,10 @@ namespace Ordisoftware.HebrewCalendar
       }
       try
       {
-        int position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
+        int position = LunisolarDaysBindingSource.Find("Date", SQLiteHelper.GetDate(date));
         if ( position > 0 )
         {
-          LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteUtility.GetDate(date));
+          LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteHelper.GetDate(date));
           CurrentDay = (Data.DataSet.LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
           CalendarGrid.Update();
         }

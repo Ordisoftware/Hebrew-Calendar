@@ -49,7 +49,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\Bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -58,6 +58,7 @@
     <DocumentationFile>..\Bin\Release\Ordisoftware.HebrewCalendar.xml</DocumentationFile>
     <NoWarn>1587, 1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AASharp, Version=1.97.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -126,6 +127,14 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Dependencies\Core Library\Debugger.cs" />
+    <Compile Include="Dependencies\Core Library\ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Core Library\ExceptionForm.designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependencies\Core Library\ExceptionInfo.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.SyncUI.cs" />
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
@@ -138,6 +147,62 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
+    <Compile Include="Source\Common\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\UndoRedoTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\UndoRedoTextBox.Designer.cs">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\UndoRedoTextBox.Static.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Program\Translations.BigCalendar.cs" />
+    <Compile Include="Source\Common\Globals.Translations.cs" />
+    <Compile Include="Source\Common\HTMLBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\HTMLBrowserForm.Designer.cs">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\LettersControl.CreateLetters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\LettersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\LettersControl.Designer.cs">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\OnlineProviderItem.cs" />
+    <Compile Include="Source\Common\SystemHelper.cs" />
+    <Compile Include="Source\Entities\SunAndMoonRiseAndSet.cs" />
+    <Compile Include="Source\Enums\ReportFieldCSV.cs" />
+    <Compile Include="Source\Program\Translations.Notices.cs" />
+    <Compile Include="Source\Program\Translations.Calendar.cs" />
+    <Compile Include="Source\Forms\Boxes\MoonMonthsForm.Colors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\MoonMonthsForm.CreateControls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\ShowTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\ShowTextForm.Designer.cs">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\EnumHelper.cs" />
+    <Compile Include="Source\Common\HebrewAlphabet.cs" />
+    <Compile Include="Source\Entities\MoonMonths.cs" />
+    <Compile Include="Source\Common\OnlineProviders.cs" />
+    <Compile Include="Source\Enums\MoonMonthsListColors.cs" />
+    <Compile Include="Source\Forms\Boxes\MoonMonthsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\MoonMonthsForm.Designer.cs">
+      <DependentUpon>MoonMonthsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\LockSessionForm.MediaStop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,14 +212,14 @@
     <Compile Include="Source\Forms\Boxes\LockSessionForm.Designer.cs">
       <DependentUpon>LockSessionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Enums\DayOfWeekMap.Names.cs" />
-    <Compile Include="Source\Enums\DayOfWeekMap.Positions.cs" />
-    <Compile Include="Source\Items\DayOfWeekItem.cs" />
-    <Compile Include="Source\Items\TorahEventItem.cs" />
-    <Compile Include="Source\Enums\Translations.cs" />
-    <Compile Include="Source\Classes\SQLiteUtility.cs" />
-    <Compile Include="Source\Enums\ReportField.cs" />
-    <Compile Include="Source\Enums\EphemerisType.cs" />
+    <Compile Include="Source\Entities\DayOfWeekMap.Names.cs" />
+    <Compile Include="Source\Entities\DayOfWeekMap.Positions.cs" />
+    <Compile Include="Source\Entities\DayOfWeekItem.cs" />
+    <Compile Include="Source\Entities\TorahEventItem.cs" />
+    <Compile Include="Source\Program\Translations.cs" />
+    <Compile Include="Source\Common\SQLiteHelper.cs" />
+    <Compile Include="Source\Enums\ReportFieldText.cs" />
+    <Compile Include="Source\Enums\Ephemeris.cs" />
     <Compile Include="Source\Forms\Boxes\SearchMonthForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +250,21 @@
     <Compile Include="Source\Forms\Boxes\SelectBirthTime.Designer.cs">
       <DependentUpon>SelectBirthTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.FormClosing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.FormShown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Settings.Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Settings.Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Static.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.DB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +281,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.Shabat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.UpdateUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Vars.cs">
@@ -236,9 +319,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dependencies\Core Library\Core.Diagnostics.cs" />
-    <Compile Include="Source\Classes\Localizer.cs" />
-    <Compile Include="Source\Forms\MainForm\MainForm.Generate.CSV.cs">
+    <Compile Include="Source\Common\Localizer.cs" />
+    <Compile Include="Source\Forms\MainForm\MainForm.ExportCSV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.FillMonths.cs">
@@ -259,7 +341,7 @@
     <Compile Include="Source\Forms\Boxes\SelectDayForm.Designer.cs">
       <DependentUpon>SelectDayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Enums\ViewMode.cs" />
+    <Compile Include="Source\Forms\MainForm\ViewMode.cs" />
     <Compile Include="Source\Forms\Boxes\SelectYearsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,14 +349,12 @@
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Enums\TorahCelebrations.cs" />
-    <Compile Include="Source\Enums\ControlLocation.cs" />
+    <Compile Include="Source\Common\ControlLocation.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.ManageException.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.QueryBox.cs" />
     <Compile Include="Dependencies\Core Library\DisplayManager.Show.cs" />
-    <Compile Include="Dependencies\Core Library\SystemManager.Url.cs" />
     <Compile Include="Source\Enums\MoonRise.cs" />
-    <Compile Include="Properties\Settings.cs" />
-    <Compile Include="Dependencies\MoonPhase\MoonPhase.cs">
+    <Compile Include="Dependencies\MoonPhaseImage\MoonPhaseImage.cs">
     </Compile>
     <Compile Include="Dependencies\Core Library\AbortException.cs" />
     <Compile Include="Source\Forms\Config\AboutBox.cs">
@@ -286,7 +366,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Generate.Data.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Update.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Location.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.cs">
@@ -308,13 +388,13 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Classes\SettingsHelper.cs" />
+    <Compile Include="Source\Program\SettingsHelper.cs" />
     <Compile Include="Source\Enums\TorahEvent.cs" />
-    <Compile Include="Source\Enums\MoonPhaseType.cs" />
+    <Compile Include="Source\Enums\MoonPhase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Items\ReminderTimes.cs" />
-    <Compile Include="Source\Program\Program.Init.cs" />
-    <Compile Include="Source\Program\Program.System.cs" />
+    <Compile Include="Source\Entities\ReminderTimes.cs" />
+    <Compile Include="Source\Program\Program.Tools.cs" />
+    <Compile Include="Source\Common\Globals.cs" />
     <Compile Include="Source\Program\Program.Vars.cs" />
     <EmbeddedResource Include="Dependencies\Calendar.NET\Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>
@@ -340,6 +420,36 @@
     <EmbeddedResource Include="Dependencies\Calendar.NET\TodayButton.resx">
       <DependentUpon>TodayButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dependencies\Core Library\ExceptionForm.fr.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependencies\Core Library\ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\HTMLBrowserForm.fr.resx">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\HTMLBrowserForm.resx">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\LettersControl.resx">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UndoRedoTextBox.en.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UndoRedoTextBox.fr.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UndoRedoTextBox.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\ShowTextForm.fr.resx">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\ShowTextForm.resx">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsForm.fr.resx">
       <DependentUpon>CelebrationsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,6 +466,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\LockSessionForm.resx">
       <DependentUpon>LockSessionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\MoonMonthsForm.fr.resx">
+      <DependentUpon>MoonMonthsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\MoonMonthsForm.resx">
+      <DependentUpon>MoonMonthsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SearchMonthForm.fr.resx">
       <DependentUpon>SearchMonthForm.cs</DependentUpon>
@@ -394,12 +510,6 @@
     <EmbeddedResource Include="Source\Forms\Boxes\SelectBirthTime.resx">
       <DependentUpon>SelectBirthTime.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
-      <DependentUpon>PreferencesForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\ReminderForm.fr.resx">
       <DependentUpon>ReminderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -411,6 +521,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SelectDayForm.resx">
       <DependentUpon>SelectDayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -436,6 +552,9 @@
     <EmbeddedResource Include="Source\Forms\Boxes\NavigationForm.resx">
       <DependentUpon>NavigationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\README.md">
+      <Link>README.md</Link>
+    </None>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -450,7 +569,7 @@
     <None Include="Data\DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="Properties\DataSources\Ordisoftware.HebrewCalendar.Properties.Settings.datasource" />
+    <None Include="License\MPL 2.0.rtf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -460,10 +579,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Source\Classes\AstronomyUtility.cs" />
+    <Compile Include="Source\Program\AstronomyHelper.cs" />
     <Compile Include="Dependencies\Moonr2cs\Moonr2cs.cs" />
     <Compile Include="Source\Program\Program.cs" />
-    <None Include="Resources\MPL 2.0.rtf" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -474,6 +592,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="License\MPL 2.0.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License\MPL 2.0.htm" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

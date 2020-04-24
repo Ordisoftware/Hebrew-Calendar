@@ -80,6 +80,7 @@
       // 
       this.LabelTrademark.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelTrademark, "LabelTrademark");
+      this.LabelTrademark.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.LabelTrademark.LinkColor = System.Drawing.Color.Navy;
       this.LabelTrademark.Name = "LabelTrademark";
       this.LabelTrademark.TabStop = true;
@@ -108,6 +109,7 @@
       // 
       this.linkLabel10.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel10, "linkLabel10");
+      this.linkLabel10.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel10.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel10.Name = "linkLabel10";
       this.linkLabel10.TabStop = true;
@@ -122,6 +124,7 @@
       // 
       this.linkLabel11.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel11, "linkLabel11");
+      this.linkLabel11.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel11.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel11.Name = "linkLabel11";
       this.linkLabel11.TabStop = true;
@@ -131,6 +134,7 @@
       // 
       this.linkProvider3.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkProvider3, "linkProvider3");
+      this.linkProvider3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkProvider3.LinkColor = System.Drawing.Color.Navy;
       this.linkProvider3.Name = "linkProvider3";
       this.linkProvider3.TabStop = true;
@@ -160,6 +164,7 @@
       // 
       this.linkLabel1.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel1, "linkLabel1");
+      this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel1.Name = "linkLabel1";
       this.linkLabel1.TabStop = true;
@@ -168,6 +173,7 @@
       // linkLabel2
       // 
       resources.ApplyResources(this.linkLabel2, "linkLabel2");
+      this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel2.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel2.Name = "linkLabel2";
       this.linkLabel2.TabStop = true;
@@ -188,6 +194,7 @@
       // 
       this.linkLabel4.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel4, "linkLabel4");
+      this.linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel4.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel4.Name = "linkLabel4";
       this.linkLabel4.TabStop = true;
@@ -197,6 +204,7 @@
       // 
       this.linkLabel5.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel5, "linkLabel5");
+      this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel5.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel5.Name = "linkLabel5";
       this.linkLabel5.TabStop = true;
@@ -216,6 +224,7 @@
       // 
       this.linkLabel3.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel3, "linkLabel3");
+      this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel3.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel3.Name = "linkLabel3";
       this.linkLabel3.TabStop = true;
@@ -230,6 +239,7 @@
       // 
       this.linkLabel6.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel6, "linkLabel6");
+      this.linkLabel6.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel6.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel6.Name = "linkLabel6";
       this.linkLabel6.TabStop = true;
@@ -239,6 +249,7 @@
       // 
       this.linkLabel7.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel7, "linkLabel7");
+      this.linkLabel7.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel7.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel7.Name = "linkLabel7";
       this.linkLabel7.TabStop = true;
@@ -258,6 +269,7 @@
       // 
       this.linkLabel8.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.linkLabel8, "linkLabel8");
+      this.linkLabel8.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel8.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel8.Name = "linkLabel8";
       this.linkLabel8.TabStop = true;
@@ -302,7 +314,6 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "AboutBox";
-      this.ShowInTaskbar = false;
       this.Load += new System.EventHandler(this.AboutBox_Load);
       this.Shown += new System.EventHandler(this.AboutBox_Shown);
       this.PanelBottom.ResumeLayout(false);

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,13 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using Ordisoftware.Core;
 using Microsoft.Win32;
+using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -28,9 +29,7 @@ namespace Ordisoftware.HebrewCalendar
     [DllImport("user32.dll", SetLastError = true)]
     static extern bool LockWorkStation();
 
-    static internal LockSessionForm Instance { get; private set; }
-
-    DateTime Start = DateTime.Now;
+    static public LockSessionForm Instance { get; private set; }
 
     static public void Run()
     {
@@ -39,18 +38,20 @@ namespace Ordisoftware.HebrewCalendar
       Instance.Show();
     }
 
+    DateTime Start = DateTime.Now;
+
     private LockSessionForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      ActiveControl = ActionCancel;
     }
 
     private void LockSessionForm_Load(object sender, EventArgs e)
     {
       LabelMessage.Text = string.Format(LabelMessage.Text, Program.Settings.AutoLockSessionTimeOut);
       int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 5;
-      if ( width > Width )
-        Width = width;
+      if ( width > Width ) Width = width;
       ActionHibernate.Left = ActionStandby.Left + ActionStandby.Width + 5;
       ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
       ActionHibernate.Enabled = CanHibernate();
@@ -109,10 +110,10 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionShutdown_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.ShutdownComputer.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Translations.AskToShutdownComputer.GetLang()) ) return;
       Close();
       MediaStop();
-      Program.RunShell("shutdown", "/s /t 0");
+      SystemHelper.RunShell("shutdown", "/s /t 0");
       MainForm.Instance.SessionEnding(null, null);
     }
 

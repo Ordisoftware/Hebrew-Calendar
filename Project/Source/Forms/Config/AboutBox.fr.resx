@@ -120,31 +120,6 @@
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
-        /wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMwAAADMAAAAzAAAAMwAAADMAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhrcP9sbW7/bW1u/2xtbv9oa3D/AAAAAAAA
-        AAAAAAAAAAAAAAAAAAAHBQE1AAAAMwAAADMAAAAzAAAAMwAAADMAAAAzAAAAM2dpbv8AAAAzAAAAMwAA
-        ADMAAAAzAAAAMwAAADMAAAAzypY2/9+sSP/bpkH/26ZA/9umP//fqD//5aw+/+6yP/9bYGj/7rI//+Ws
-        Pv/fqD//26Y//9umQf/cqEb/1KE7/6lxF///////////////////////////////////////U1VZ////
-        /////////////////////////////9unRf+qcRT//////////////////////////////////////1BR
-        Uv/////////////////////////////////apUD/qnEU///////QlTD/0Zg4/9KZOv/RmDj/0ZUv////
-        //9QUVL/////////////////////////////////2qQ//6pyFf//////0po6/9SfRf/VoUj/1Z9F/9Sb
-        Ov//////UlNU///////5+fj/9vb1//b29f/29/f//////9qlP/+qchX//////9KXM//Umzz/1Z0+/9Sc
-        PP/VmTT/+Pv//1RVVv/29fT/7ezr/+vq6f/q6un/6enq///////apT//q3MW///////f4+3/4OXw/+Hm
-        8f/h5fD/4ubu/+nq7v9VV1n/6ejq/+Dg4v/e3uD/3t7g/93d4P//////26dB/612G//27+X/8+rc//Tq
-        2//06tv/9Orb//Xs2//98d7/WFxj//3x3v/169r/8+nZ//Pp2f/y6dn/8uvh/96rSf+weyT/rXYc/6x0
-        GP+sdBj/rHQY/610F/+vdRb/tHgV/11lcv+0eBX/r3UW/610F/+sdBj/rHQY/6pzGv/KlTb/AAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAMwAAADNja3f/AAAAMwAAADMAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAGZsdv9pbXT/am1y/2ltdP9mbHb/AAAAAAAAAAAAAAAAAAAAAAAA
-        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
-        /wD///8A//8AAPwfAAD8HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwf
-        AAD8HwAA//8AAA==
-</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>A propos de </value>
   </data>

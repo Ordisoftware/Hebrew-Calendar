@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -18,6 +18,7 @@ using System.Xml;
 using System.Windows.Forms;
 using System.Linq;
 using System.Data;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 using AASharp;
 
@@ -87,7 +88,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowAndAbort("Generating", ex.Message);
+        ex.Manage();
       }
       finally
       {
@@ -116,9 +117,10 @@ namespace Ordisoftware.HebrewCalendar
           for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
             try
             {
-              if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressCreateDays.GetLang()) ) return;
+              if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressCreateDays.GetLang()) )
+                return;
               var row = DataSet.LunisolarDays.NewLunisolarDaysRow();
-              row.Date = SQLiteUtility.GetDate(year, month, day);
+              row.Date = SQLiteHelper.GetDate(year, month, day);
               row.TorahEvents = 0;
               row.LunarMonth = 0;
               InitializeDay(row);
@@ -140,16 +142,16 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        var date = SQLiteUtility.GetDate(day.Date);
-        var ephemeris = AstronomyUtility.GetSunMoonEphemeris(date);
-        day.LunarDay = AstronomyUtility.LunisolerCalendar.GetDayOfMonth(date);
+        var date = SQLiteHelper.GetDate(day.Date);
+        var ephemeris = date.GetSunMoonEphemeris();
+        day.LunarDay = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(date);
         day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
-        day.MoonPhase = (int)AstronomyUtility.GetMoonPhase(date.Year, date.Month, date.Day);
-        day.IsFullMoon = Convert.ToInt32((MoonPhaseType)day.MoonPhase == MoonPhaseType.Full);
-        day.Sunrise = SQLiteUtility.FormatTime(ephemeris.Sunrise);
-        day.Sunset = SQLiteUtility.FormatTime(ephemeris.Sunset);
-        day.Moonrise = SQLiteUtility.FormatTime(ephemeris.Moonrise);
-        day.Moonset = SQLiteUtility.FormatTime(ephemeris.Moonset);
+        day.MoonPhase = (int)date.GetMoonPhase();
+        day.IsFullMoon = Convert.ToInt32((MoonPhase)day.MoonPhase == MoonPhase.Full);
+        day.Sunrise = SQLiteHelper.FormatTime(ephemeris.Sunrise);
+        day.Sunset = SQLiteHelper.FormatTime(ephemeris.Sunset);
+        day.Moonrise = SQLiteHelper.FormatTime(ephemeris.Moonrise);
+        day.Moonset = SQLiteHelper.FormatTime(ephemeris.Moonset);
         MoonRise moonrisetype;
         if ( ephemeris.Moonrise == null )
           moonrisetype = MoonRise.NextDay;
@@ -185,9 +187,10 @@ namespace Ordisoftware.HebrewCalendar
           date.Set(action(year, true), true);
           date.Get(ref jdYear, ref jdMonth, ref jdDay, ref jdHour, ref jdMinute, ref second);
           var dateJulian = new DateTime((int)jdYear, (int)jdMonth, (int)jdDay, 0, 0, 0);
-          string strDate = SQLiteUtility.GetDate((int)jdYear, (int)jdMonth, (int)jdDay);
+          string strDate = SQLiteHelper.GetDate((int)jdYear, (int)jdMonth, (int)jdDay);
           var day = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == strDate);
-          if ( day == null ) return;
+          if ( day == null )
+            return;
           day.SeasonChange = (int)season;
         }
         var lat = XmlConvert.ToDouble(Program.Settings.GPSLatitude);
@@ -223,12 +226,14 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         try
         {
-          if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressAnalyzeDays.GetLang()) ) return;
-          if ( day.IsNewMoon == 1 ) AnalyzeDay(day, ref month);
+          if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressAnalyzeDays.GetLang()) )
+            return;
+          if ( day.IsNewMoon == 1 )
+            AnalyzeDay(day, ref month);
           day.LunarMonth = month;
-          if ( day.IsNewMoon == 1 ) delta = 0;
-          if ( (MoonRise)day.MoonriseType == MoonRise.NextDay
-            && Program.Settings.TorahEventsCountAsMoon )
+          if ( day.IsNewMoon == 1 )
+            delta = 0;
+          if ( (MoonRise)day.MoonriseType == MoonRise.NextDay && Program.Settings.TorahEventsCountAsMoon )
             delta = 1;
           day.LunarDay -= delta;
         }
@@ -243,14 +248,13 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="day">The day.</param>
     /// <param name="monthMoon">[in,out] The current mooon month.</param>
-    /// <param name="delta">[in,out] The current delta to skip days w/o moonrise.</param>
     private void AnalyzeDay(Data.DataSet.LunisolarDaysRow day, ref int monthMoon)
     {
       DateTime calculate(DateTime thedate, int toadd, TorahEvent type, bool forceSunOmer)
       {
         if ( Program.Settings.TorahEventsCountAsMoon )
         {
-          var rowStart = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(thedate));
+          var rowStart = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteHelper.GetDate(thedate));
           int index = DataSet.LunisolarDays.Rows.IndexOf(rowStart);
           int count = 0;
           if ( forceSunOmer )
@@ -263,18 +267,19 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
           thedate = thedate.AddDays(toadd);
-        var rowEnd = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteUtility.GetDate(thedate));
-        if ( rowEnd != null ) rowEnd.TorahEvents |= (int)type;
+        var rowEnd = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteHelper.GetDate(thedate));
+        if ( rowEnd != null )
+          rowEnd.TorahEvents |= (int)type;
         return thedate;
       }
       try
       {
-        var dateDay = SQLiteUtility.GetDate(day.Date);
+        var dateDay = SQLiteHelper.GetDate(day.Date);
         var equinoxe = ( from d in DataSet.LunisolarDays
-                         where dateDay.Year == SQLiteUtility.GetDate(day.Date).Year
+                         where dateDay.Year == SQLiteHelper.GetDate(day.Date).Year
                             && d.SeasonChange == (int)SeasonChange.SpringEquinox
                          select d ).First();
-        var dateEquinox = SQLiteUtility.GetDate(equinoxe.Date);
+        var dateEquinox = SQLiteHelper.GetDate(equinoxe.Date);
         int deltaNewLambDay = dateEquinox.Day - TorahCelebrations.NewLambDay;
         bool newEquinoxe = ( dateDay.Month == dateEquinox.Month && dateDay.Day >= deltaNewLambDay )
                         || ( dateDay.Month == dateEquinox.Month + 1 );

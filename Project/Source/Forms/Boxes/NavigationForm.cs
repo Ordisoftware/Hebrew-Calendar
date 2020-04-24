@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,14 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-03 </edited>
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 using System.Linq;
 using System.Globalization;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -26,7 +25,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class NavigationForm : Form
   {
 
-    static internal NavigationForm Instance;
+    static public NavigationForm Instance { get; internal set; }
 
     static NavigationForm()
     {
@@ -42,12 +41,12 @@ namespace Ordisoftware.HebrewCalendar
         {
           string strText = value.ToString();
           strText = strText.Remove(strText.Length - 3, 3);
-          string strDate = SQLiteUtility.GetDate(value);
+          string strDate = SQLiteHelper.GetDate(value);
           var row = ( from day in MainForm.Instance.DataSet.LunisolarDays
                       where day.Date == strDate
                       select day ).Single();
           LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(value.ToLongDateString());
-          string strMonth = Translations.BabylonianHebrewMonthText[row.LunarMonth];
+          string strMonth = MoonMonths.Names[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
           LabelLunarDayValue.Text = Translations.NavigationDay.GetLang() + row.LunarDay.ToString();
           if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
@@ -61,11 +60,11 @@ namespace Ordisoftware.HebrewCalendar
           LabelEventTorahValue.Text = Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents);
           if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
-                          where SQLiteUtility.GetDate(day.Date) > value && day.TorahEvents > 0
+                          where SQLiteHelper.GetDate(day.Date) > value && day.TorahEvents > 0
                           select day ).FirstOrDefault();
           if ( rowNext != null )
           {
-            var date = SQLiteUtility.GetDate(rowNext.Date);
+            var date = SQLiteHelper.GetDate(rowNext.Date);
             LabelTorahNextValue.Text = Translations.TorahEvent.GetLang((TorahEvent)rowNext.TorahEvents);
             LabelTorahNextDateValue.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
             LabelTorahNext.Tag = date;
@@ -76,8 +75,8 @@ namespace Ordisoftware.HebrewCalendar
             LabelTorahNextDateValue.Text = "";
             LabelTorahNext.Tag = null;
           }
-          var image = MoonPhase.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
-          PictureMoon.Image = ResizeImage(image, 100, 100);
+          var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
+          PictureMoon.Image = SystemHelper.ResizeImage(image, 100, 100);
           if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           {
             LabelMoonrise.Top = 125;
@@ -115,6 +114,7 @@ namespace Ordisoftware.HebrewCalendar
     internal NavigationForm()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
       Text = Core.DisplayManager.Title;
       PanelTop.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
@@ -170,34 +170,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( LabelTorahNext.Tag == null ) return;
       MainForm.Instance.GoToDate((DateTime)LabelTorahNext.Tag);
-    }
-
-    /// <summary>
-    /// Resize an image.
-    /// </summary>
-    /// <param name="image">The image.</param>
-    /// <param name="width">The width.</param>
-    /// <param name="height">The height.</param>
-    /// <returns>The image resized.</returns>
-    private Bitmap ResizeImage(Image image, int width, int height)
-    {
-      var destRect = new Rectangle(0, 0, width, height);
-      var destImage = new Bitmap(width, height);
-      destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-      using ( var graphics = Graphics.FromImage(destImage) )
-      {
-        graphics.CompositingMode = CompositingMode.SourceCopy;
-        graphics.CompositingQuality = CompositingQuality.HighQuality;
-        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        graphics.SmoothingMode = SmoothingMode.HighQuality;
-        graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-        using ( var wrapMode = new ImageAttributes() )
-        {
-          wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-          graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-        }
-      }
-      return destImage;
     }
 
   }

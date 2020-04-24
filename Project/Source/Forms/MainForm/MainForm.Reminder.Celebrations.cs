@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using System.Linq;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -29,14 +30,14 @@ namespace Ordisoftware.HebrewCalendar
         return TorahEventRemindList.ContainsKey(item) && TorahEventRemindList[item];
       }
       var dateNow = DateTime.Now;
-      string strDateNow = SQLiteUtility.GetDate(dateNow);
+      string strDateNow = SQLiteHelper.GetDate(dateNow);
       var dateLimit = dateNow.AddDays((int)Program.Settings.ReminderCelebrationsInterval);
-      var rows = ( from day in DataSet.LunisolarDays
-                   where !RemindCelebrationDates.Contains(day.Date)
-                      && check((TorahEvent)day.TorahEvents)
-                      && SQLiteUtility.GetDate(day.Date) >= dateNow
-                      && SQLiteUtility.GetDate(day.Date) <= dateLimit
-                   select day );
+      var rows = from day in DataSet.LunisolarDays
+                 where !RemindCelebrationDates.Contains(day.Date)
+                    && check((TorahEvent)day.TorahEvents)
+                    && SQLiteHelper.GetDate(day.Date) >= dateNow
+                    && SQLiteHelper.GetDate(day.Date) <= dateLimit
+                 select day;
       foreach ( Data.DataSet.LunisolarDaysRow row in rows )
       {
         var times = CreateCelebrationTimes(row, Program.Settings.RemindCelebrationEveryMinutes);

@@ -140,6 +140,15 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Show an information box.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    static public void ShowInfo(string text)
+    {
+      Show(Title, text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+
+    /// <summary>
     /// Show an error message.
     /// </summary>
     /// <param name="text">The text.</param>

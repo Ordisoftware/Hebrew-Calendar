@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 2</value>
+    <value>241, 3</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 2</value>
+    <value>160, 3</value>
   </data>
   <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -187,7 +187,7 @@
     <value>10, 330</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 28</value>
+    <value>319, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -202,27 +202,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="EditYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 30</value>
-  </data>
-  <data name="EditYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="EditYear.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditYear.Name" xml:space="preserve">
-    <value>EditYear</value>
-  </data>
-  <data name="&gt;&gt;EditYear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditYear.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;EditYear.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="LabelYear.AutoSize" type="System.Boolean, mscorlib">
@@ -258,18 +237,6 @@
   <data name="ListItems.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Month</value>
-  </data>
-  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>90</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
-    <value>175</value>
-  </data>
   <data name="ListItems.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -277,7 +244,7 @@
     <value>12, 59</value>
   </data>
   <data name="ListItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 257</value>
+    <value>314, 257</value>
   </data>
   <data name="ListItems.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -292,6 +259,45 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ListItems.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
+    <value>180</value>
+  </data>
+  <data name="EditYear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 30</value>
+  </data>
+  <data name="EditYear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 21</value>
+  </data>
+  <data name="EditYear.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditYear.Name" xml:space="preserve">
+    <value>EditYear</value>
+  </data>
+  <data name="&gt;&gt;EditYear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditYear.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EditYear.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -301,7 +307,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>314, 368</value>
+    <value>339, 368</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -311,6 +317,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Search lunar month</value>
+  </data>
+  <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
+    <value>columnHeader3</value>
+  </data>
+  <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
     <value>columnHeader1</value>

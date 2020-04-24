@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Drawing;
 using Calendar.NET;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -58,15 +59,16 @@ namespace Ordisoftware.HebrewCalendar
       bool IsCelebrationWeekEnd = false;
       int progress = 0;
       if ( DataSet.LunisolarDays.Count == 0 ) return;
-      DateFirst = SQLiteUtility.GetDate(DataSet.LunisolarDays.FirstOrDefault().Date);
+      DateFirst = SQLiteHelper.GetDate(DataSet.LunisolarDays.FirstOrDefault().Date);
       YearFirst = DateFirst.Year;
-      DateLast = SQLiteUtility.GetDate(DataSet.LunisolarDays.LastOrDefault().Date);
+      DateLast = SQLiteHelper.GetDate(DataSet.LunisolarDays.LastOrDefault().Date);
       YearLast = DateLast.Year;
       DayColors = new Color[YearLast - YearFirst + 1, 13, 35];
+      string strProgress = Translations.ProgressFillMonths.GetLang();
       foreach ( var row in DataSet.LunisolarDays )
         try
         {
-          if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressFillMonths.GetLang()) ) return;
+          if ( !UpdateProgress(progress++, ProgressCount, strProgress) ) return;
           var ev = (TorahEvent)row.TorahEvents;
           var season = (SeasonChange)row.SeasonChange;
           if ( ev == TorahEvent.PessahD1
@@ -77,7 +79,7 @@ namespace Ordisoftware.HebrewCalendar
                               || ev == TorahEvent.SoukotD8
                               || ev == TorahEvent.Chavouot1;
           var result = IsCelebrationWeekStart || IsCelebrationWeekEnd;
-          var date = SQLiteUtility.GetDate(row.Date);
+          var date = SQLiteHelper.GetDate(row.Date);
           Color? color1 = null;
           Color? color2 = null;
           Color? color3 = null;
@@ -93,7 +95,7 @@ namespace Ordisoftware.HebrewCalendar
           else
           if ( IsCelebrationWeekStart || ev != TorahEvent.None )
             color2 = Program.Settings.EventColorTorah;
-          if ( SQLiteUtility.GetDate(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+          if ( SQLiteHelper.GetDate(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
             color3 = Program.Settings.EventColorShabat;
           if ( color1 != null && color2 != null && color3 != null )
             color1 = MixColor(color1.Value, color2.Value, color3.Value);
@@ -114,7 +116,7 @@ namespace Ordisoftware.HebrewCalendar
             color1 = color3;
           else
           if ( color1 == null )
-            color1 = Color.Transparent;
+            color1 = Program.Settings.MonthViewBackColor;
           DayColors[YearLast - date.Year, date.Month, date.Day] = color1.Value;
           if ( IsCelebrationWeekEnd )
             IsCelebrationWeekStart = false;
@@ -122,9 +124,9 @@ namespace Ordisoftware.HebrewCalendar
           void add(Color color, string text)
           {
             var item = new CustomEvent();
-            item.Date = SQLiteUtility.GetDate(row.Date);
-            item.EventFont = new Font("Calibri", 9f);
-            item.EventColor = Color.White;
+            item.Date = SQLiteHelper.GetDate(row.Date);
+            item.EventFont = new Font("Calibri", Program.Settings.MonthViewFontSize);
+            item.EventColor = Color.OrangeRed;
             item.EventTextColor = color;
             item.EventText = text;
             item.Rank = rank++;
@@ -135,30 +137,30 @@ namespace Ordisoftware.HebrewCalendar
               item.EventColor = GetDayColor(item.Date.Day, item.Date.Month, item.Date.Year);
             CalendarMonth.AddEvent(item);
           }
-          strToolTip = Translations.Ephemeris.GetLang(EphemerisType.Rise) + row.Sunrise + Environment.NewLine
-                     + Translations.Ephemeris.GetLang(EphemerisType.Set) + row.Sunset;
+          strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Environment.NewLine
+                     + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
           Color colorMoon = Color.Black;
-          string strMonth = row.IsNewMoon == 1
-                          ? " " + Translations.BabylonianHebrewMonthText[row.LunarMonth]
-                          : "";
+          //string strMonth = " " + MoonMonths.Names[row.LunarMonth] + " (" + row.LunarMonth + ")";
+          string strMonthDay = $" {MoonMonths.Names[row.LunarMonth]} [{row.LunarMonth}] #{row.LunarDay}";
           colorMoon = row.IsNewMoon == 1
                     ? Program.Settings.CalendarColorTorahEvent
                     : ( row.IsFullMoon == 1
                       ? Program.Settings.CalendarColorFullMoon
                       : Program.Settings.CalendarColorMoon );
+          // TODO use option DefaultTextColor instead of black
           if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           {
             if ( row.Moonset != "" )
-              add(Color.Black, Translations.Ephemeris.GetLang(EphemerisType.Set) + row.Moonset);
+              add(Program.Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
-              add(colorMoon, Translations.Ephemeris.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
+              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + strMonthDay);
           }
           else
           {
             if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
-              add(colorMoon, Translations.Ephemeris.GetLang(EphemerisType.Rise) + row.Moonrise + " #" + row.LunarDay + strMonth);
+              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + strMonthDay);
             if ( row.Moonset != "" )
-              add(Color.Black, Translations.Ephemeris.GetLang(EphemerisType.Set) + row.Moonset);
+              add(Program.Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
           }
           if ( row.SeasonChange != 0 )
             add(Program.Settings.CalendarColorSeason, Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange));

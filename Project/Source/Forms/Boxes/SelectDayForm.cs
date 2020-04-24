@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -14,6 +14,7 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -41,7 +42,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCancel_Click(object sender, EventArgs e)
     {
       if ( LiveGoTo && CurrentDay != null )
-        MainForm.Instance.GoToDate(SQLiteUtility.GetDate(CurrentDay.Date));
+        MainForm.Instance.GoToDate(SQLiteHelper.GetDate(CurrentDay.Date));
     }
 
     private void ActionOk_Click(object sender, EventArgs e)
@@ -52,13 +53,13 @@ namespace Ordisoftware.HebrewCalendar
     private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
     {
       if ( !LiveGoTo ) return;
-      string date = SQLiteUtility.GetDate(MonthCalendar.SelectionStart);
+      string date = SQLiteHelper.GetDate(MonthCalendar.SelectionStart);
       if ( MonthCalendar.SelectionStart < MainForm.Instance.DateFirst )
-        date = SQLiteUtility.GetDate(MainForm.Instance.DateFirst);
+        date = SQLiteHelper.GetDate(MainForm.Instance.DateFirst);
       else
       if ( MonthCalendar.SelectionStart > MainForm.Instance.DateLast )
-        date = SQLiteUtility.GetDate(MainForm.Instance.DateLast);
-      MainForm.Instance.GoToDate(SQLiteUtility.GetDate(date));
+        date = SQLiteHelper.GetDate(MainForm.Instance.DateLast);
+      MainForm.Instance.GoToDate(SQLiteHelper.GetDate(date));
     }
 
   }

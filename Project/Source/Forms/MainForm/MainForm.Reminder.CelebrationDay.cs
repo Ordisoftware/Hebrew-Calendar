@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using System.Linq;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -29,13 +30,18 @@ namespace Ordisoftware.HebrewCalendar
         return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
       }
       var dateNow = DateTime.Now;
-      string strDateNow = SQLiteUtility.GetDate(dateNow);
+      string strDateNow = SQLiteHelper.GetDate(dateNow);
       var row = ( from day in DataSet.LunisolarDays
                   where (TorahEvent)day.TorahEvents != TorahEvent.None
                      && check((TorahEvent)day.TorahEvents)
-                     && SQLiteUtility.GetDate(day.Date) >= SQLiteUtility.GetDate(strDateNow).AddDays(-1)
+                     && SQLiteHelper.GetDate(day.Date) >= SQLiteHelper.GetDate(strDateNow).AddDays(-1)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
+      if ( SQLiteHelper.GetDate(row.Date).Day < dateNow.Day )
+        if ( Program.Settings.TorahEventsCountAsMoon && row.MoonriseType == (int)MoonRise.BeforeSet )
+          return;
+        else
+          return;
       var times = CreateCelebrationTimes(row, Program.Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return;
       var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
@@ -25,7 +26,10 @@ namespace Ordisoftware.HebrewCalendar
     public const int GenerateIntervalPeriod = 120;
     public const int GenerateIntervalDefault = 5;
     public const int GenerateIntervalMin = 2;
-    public const int GenerateIntervalMax = 10;
+    public const int GenerateIntervalMax1 = 10;
+    public const int GenerateIntervalMax2 = 20;
+    public const int GenerateIntervalMax3 = 40;
+    public const int GenerateIntervalMax4 = 80;
 
     private bool Mutex;
     private int Year;
@@ -52,8 +56,8 @@ namespace Ordisoftware.HebrewCalendar
     private void EditYearFirst_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      if ( EditYearFirst.Value < AstronomyUtility.LunisolerCalendar.MinSupportedDateTime.Year + 1 )
-        EditYearFirst.Value = AstronomyUtility.LunisolerCalendar.MinSupportedDateTime.Year + 1;
+      if ( EditYearFirst.Value < AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year + 1 )
+        EditYearFirst.Value = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year + 1;
       if ( EditYearFirst.Value > Year )
         EditYearFirst.Value = Year;
       if ( EditYearLast.Value - EditYearFirst.Value > GenerateIntervalPeriod )
@@ -63,8 +67,8 @@ namespace Ordisoftware.HebrewCalendar
     private void EditYearLast_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      if ( EditYearLast.Value > AstronomyUtility.LunisolerCalendar.MaxSupportedDateTime.Year - 1 )
-        EditYearLast.Value = AstronomyUtility.LunisolerCalendar.MaxSupportedDateTime.Year - 1;
+      if ( EditYearLast.Value > AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year - 1 )
+        EditYearLast.Value = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year - 1;
       if ( EditYearLast.Value < Year + GenerateIntervalMin )
         EditYearLast.Value = Year + GenerateIntervalMin;
       if ( EditYearLast.Value - EditYearFirst.Value > GenerateIntervalPeriod )
@@ -73,12 +77,38 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionOk_Click(object sender, EventArgs e)
     {
-      if ( EditYearLast.Value - EditYearFirst.Value > GenerateIntervalMax )
-        if ( !DisplayManager.QueryYesNo(Translations.BigCalendar.GetLang(GenerateIntervalMax)) )
+      var diff = EditYearLast.Value - EditYearFirst.Value;
+      if ( diff > GenerateIntervalMax4 )
+      {
+        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar4.GetLang(GenerateIntervalMax4, diff)) )
           return;
+      }
+      else
+      if ( diff > GenerateIntervalMax3 )
+      {
+        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar3.GetLang(GenerateIntervalMax3, diff)) )
+          return;
+      }
+      else
+      if ( diff > GenerateIntervalMax2 )
+      {
+        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar2.GetLang(GenerateIntervalMax2, diff)) )
+          return;
+      }
+      else
+      if ( diff > GenerateIntervalMax1 )
+      {
+        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar1.GetLang(GenerateIntervalMax1, diff)) )
+          return;
+      }
       DialogResult = DialogResult.OK;
+      ActionCancel.Enabled = true;
     }
 
+    private void SelectYearsForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if ( !ActionCancel.Enabled ) e.Cancel = true;
+    }
   }
 
 }

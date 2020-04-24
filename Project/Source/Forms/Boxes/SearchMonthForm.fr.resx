@@ -133,6 +133,9 @@
   <data name="LabelYear.Text" xml:space="preserve">
     <value>Année</value>
   </data>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>Numéro</value>
+  </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>Mois</value>
   </data>

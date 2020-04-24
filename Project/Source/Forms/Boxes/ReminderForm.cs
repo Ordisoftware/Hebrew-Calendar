@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,13 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -64,7 +65,7 @@ namespace Ordisoftware.HebrewCalendar
             }
         }
         form = new ReminderForm();
-        var date = SQLiteUtility.GetDate(row.Date);
+        var date = SQLiteHelper.GetDate(row.Date);
         form.LabelTitle.Text = !isShabat
                              ? Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
                              : "Shabat";
@@ -125,6 +126,12 @@ namespace Ordisoftware.HebrewCalendar
         MainForm.Instance.Focus();
         MainForm.Instance.BringToFront();
       }
+      if ( LockSessionForm.Instance?.Visible ?? false)
+      {
+        LockSessionForm.Instance.Focus();
+        LockSessionForm.Instance.BringToFront();
+      }
+
     }
 
     static private void Flash(Form form)

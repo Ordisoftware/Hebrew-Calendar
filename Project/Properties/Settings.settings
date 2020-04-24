@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Ordisoftware.HebrewCalendar.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="MainFormPosition" Type="Ordisoftware.HebrewCalendar.ControlLocation" Scope="User">
+    <Setting Name="MainFormPosition" Type="Ordisoftware.HebrewCommon.ControlLocation" Scope="User">
       <Value Profile="(Default)">Center</Value>
     </Setting>
     <Setting Name="MainFormLeft" Type="System.Int32" Scope="User">
@@ -164,7 +164,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindDayNewYearD10" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindDayPessahD1" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -264,6 +264,42 @@
     </Setting>
     <Setting Name="LockSessionMediaStop" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
+    </Setting>
+    <Setting Name="MoonMonthsFormUseColors" Type="Ordisoftware.HebrewCalendar.MoonMonthsListColors" Scope="User">
+      <Value Profile="(Default)">System</Value>
+    </Setting>
+    <Setting Name="MoonMonthsFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="MonthViewFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+    <Setting Name="AutoOpenExportFolder" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VacuumAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstLaunchV4" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DebuggerEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VacuumLastDone" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2020-01-01</Value>
+    </Setting>
+    <Setting Name="MonthViewBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="MonthViewTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="MonthViewNoDaysBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">250, 250, 250</Value>
     </Setting>
   </Settings>
 </SettingsFile>

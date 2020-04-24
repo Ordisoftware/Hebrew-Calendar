@@ -3,7 +3,7 @@
 
 #define MyAppName "Hebrew Calendar"
 #define MyAppNameNoSpace "HebrewCalendar"
-#define MyAppVersion "3.10"
+#define MyAppVersion "4.0"
 #define MyAppPublisher "Ordisoftware"
 #define MyAppURL "http://www.ordisoftware.com/projects/hebrew-calendar"
 #define MyAppExeName "Ordisoftware.HebrewCalendar.exe"
@@ -16,13 +16,13 @@ AppId={{EA196B80-7F9C-4E31-8337-61CE9A8B4FA9}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppVerName={#MyAppPublisher} {#MyAppName} {#MyAppVersion}
-AppCopyright=Copyright 2019 Olivier Rogier
+AppCopyright=Copyright 2016-2020 Olivier Rogier
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 UninstallFilesDir={app}\Uninstall
-DefaultDirName={pf}\{#MyAppPublisher}\{#MyAppName}
+DefaultDirName={commonpf}\{#MyAppPublisher}\{#MyAppName}
 DefaultGroupName={#MyAppPublisher}
 AllowNoIcons=true
 LicenseFile=..\Project\License\MPL 2.0.rtf
@@ -91,7 +91,8 @@ Source: ..\Bin\Release\*.pdb; DestDir: {app}\Bin; Flags: ignoreversion recursesu
 Source: ..\Bin\Release\*.xml; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Documents\*; DestDir: {app}\Documents; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Help\*; DestDir: {app}\Help; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.bak, *.suo, *.user, obj, .vs, bin
+Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.psess, *.vsp, *.bak, *.suo, *.user, obj, .vs
+Source: ..\Project\Dependencies\Font\Hebrew.ttf; DestDir: {fonts}; FontInstall: Hebrew Normal; Flags: onlyifdoesntexist uninsneveruninstall
 DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite
 
 [Icons]
@@ -143,7 +144,6 @@ var
     key, versionKey: string;
     install, release, serviceCount, versionRelease: cardinal;
     success: boolean;
-var reqNetVer : string;
 begin
     versionKey := version;
     versionRelease := 0;

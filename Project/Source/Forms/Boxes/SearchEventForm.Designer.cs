@@ -32,13 +32,12 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionOk = new System.Windows.Forms.Button();
-      this.EditYear = new System.Windows.Forms.NumericUpDown();
       this.LabelYear = new System.Windows.Forms.Label();
       this.ListItems = new System.Windows.Forms.ListView();
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.EditYear = new System.Windows.Forms.ComboBox();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditYear)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -53,27 +52,13 @@
       resources.ApplyResources(this.ActionCancel, "ActionCancel");
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
-      this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
       // 
       // ActionOk
       // 
       resources.ApplyResources(this.ActionOk, "ActionOk");
+      this.ActionOk.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionOk.Name = "ActionOk";
       this.ActionOk.UseVisualStyleBackColor = true;
-      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
-      // 
-      // EditYear
-      // 
-      this.EditYear.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditYear, "EditYear");
-      this.EditYear.Name = "EditYear";
-      this.EditYear.ReadOnly = true;
-      this.EditYear.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-      this.EditYear.ValueChanged += new System.EventHandler(this.EditYear_ValueChanged);
       // 
       // LabelYear
       // 
@@ -87,6 +72,7 @@
             this.columnHeader1,
             this.columnHeader2});
       this.ListItems.FullRowSelect = true;
+      this.ListItems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListItems.HideSelection = false;
       this.ListItems.MultiSelect = false;
       this.ListItems.Name = "ListItems";
@@ -103,15 +89,23 @@
       // 
       resources.ApplyResources(this.columnHeader2, "columnHeader2");
       // 
+      // EditYear
+      // 
+      this.EditYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditYear.FormattingEnabled = true;
+      resources.ApplyResources(this.EditYear, "EditYear");
+      this.EditYear.Name = "EditYear";
+      this.EditYear.SelectedIndexChanged += new System.EventHandler(this.EditYear_SelectedIndexChanged);
+      // 
       // SearchEventForm
       // 
       this.AcceptButton = this.ActionOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.EditYear);
       this.Controls.Add(this.ListItems);
       this.Controls.Add(this.PanelBottom);
-      this.Controls.Add(this.EditYear);
       this.Controls.Add(this.LabelYear);
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "SearchCelebrationFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -120,9 +114,9 @@
       this.MinimizeBox = false;
       this.Name = "SearchEventForm";
       this.ShowInTaskbar = false;
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchEventForm_FormClosing);
       this.Load += new System.EventHandler(this.SearchEventForm_Load);
       this.PanelBottom.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.EditYear)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -134,9 +128,9 @@
     private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.Label LabelYear;
-    private System.Windows.Forms.NumericUpDown EditYear;
     internal System.Windows.Forms.ListView ListItems;
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader2;
+    private System.Windows.Forms.ComboBox EditYear;
   }
 }

@@ -26,9 +26,9 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Center")]
-        public global::Ordisoftware.HebrewCalendar.ControlLocation MainFormPosition {
+        public global::Ordisoftware.HebrewCommon.ControlLocation MainFormPosition {
             get {
-                return ((global::Ordisoftware.HebrewCalendar.ControlLocation)(this["MainFormPosition"]));
+                return ((global::Ordisoftware.HebrewCommon.ControlLocation)(this["MainFormPosition"]));
             }
             set {
                 this["MainFormPosition"] = value;
@@ -647,7 +647,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool TorahEventRemindDayNewYearD10 {
             get {
                 return ((bool)(this["TorahEventRemindDayNewYearD10"]));
@@ -1050,6 +1050,150 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
             set {
                 this["LockSessionMediaStop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.HebrewLetters.exe")]
+        public string HebrewLettersExe {
+            get {
+                return ((string)(this["HebrewLettersExe"]));
+            }
+            set {
+                this["HebrewLettersExe"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("System")]
+        public global::Ordisoftware.HebrewCalendar.MoonMonthsListColors MoonMonthsFormUseColors {
+            get {
+                return ((global::Ordisoftware.HebrewCalendar.MoonMonthsListColors)(this["MoonMonthsFormUseColors"]));
+            }
+            set {
+                this["MoonMonthsFormUseColors"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point MoonMonthsFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["MoonMonthsFormLocation"]));
+            }
+            set {
+                this["MoonMonthsFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9")]
+        public int MonthViewFontSize {
+            get {
+                return ((int)(this["MonthViewFontSize"]));
+            }
+            set {
+                this["MonthViewFontSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoOpenExportFolder {
+            get {
+                return ((bool)(this["AutoOpenExportFolder"]));
+            }
+            set {
+                this["AutoOpenExportFolder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool VacuumAtStartup {
+            get {
+                return ((bool)(this["VacuumAtStartup"]));
+            }
+            set {
+                this["VacuumAtStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunchV4 {
+            get {
+                return ((bool)(this["FirstLaunchV4"]));
+            }
+            set {
+                this["FirstLaunchV4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DebuggerEnabled {
+            get {
+                return ((bool)(this["DebuggerEnabled"]));
+            }
+            set {
+                this["DebuggerEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2020-01-01")]
+        public global::System.DateTime VacuumLastDone {
+            get {
+                return ((global::System.DateTime)(this["VacuumLastDone"]));
+            }
+            set {
+                this["VacuumLastDone"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color MonthViewBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MonthViewBackColor"]));
+            }
+            set {
+                this["MonthViewBackColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color MonthViewTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MonthViewTextColor"]));
+            }
+            set {
+                this["MonthViewTextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250, 250, 250")]
+        public global::System.Drawing.Color MonthViewNoDaysBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MonthViewNoDaysBackColor"]));
+            }
+            set {
+                this["MonthViewNoDaysBackColor"] = value;
             }
         }
     }

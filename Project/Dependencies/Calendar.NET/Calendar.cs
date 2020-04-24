@@ -5,6 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.HebrewCalendar;
 
 namespace Calendar.NET
@@ -69,7 +70,7 @@ namespace Calendar.NET
     // ORDISOFTWARE MODIF BEGIN
     //private const int MarginSize = 20;
     private const int MarginSize = 10;
-    private Brush RogueBrush = new SolidBrush(Color.FromArgb(255, 250, 250, 250));
+    internal Brush RogueBrush = new SolidBrush(Color.FromArgb(255, 250, 250, 250));
     // ORDISOFTWARE MODIF END
 
     // ORDISOFTWARE MODIF BEGIN
@@ -375,7 +376,7 @@ namespace Calendar.NET
       this._btnToday.ButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
       this._btnToday.ButtonFont = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
       // ORDISOFTWARE MODIF BEGIN
-      this._btnToday.ButtonText = Translations.Today.GetLang();
+      this._btnToday.ButtonText = DesignMode ? "Today" : Translations.Today.GetLang();
       // ORDISOFTWARE MODIF END
       this._btnToday.FocusColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
       this._btnToday.HighlightBorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
@@ -931,7 +932,7 @@ namespace Calendar.NET
       //int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
       int xStart = MarginSize;
       int yStart = MarginSize;
-      DayOfWeek startWeekEnum = DayOfWeekMap.Position[(DayOfWeek)Program.Settings.ShabatDay][(int)new DateTime(_calendarDate.Year, _calendarDate.Month, 1).DayOfWeek];
+      DayOfWeek startWeekEnum = DesignMode ? DayOfWeek.Saturday : DayOfWeekMap.Position[(DayOfWeek)Program.Settings.ShabatDay][(int)new DateTime(_calendarDate.Year, _calendarDate.Month, 1).DayOfWeek];
       int startWeek = ( (int)startWeekEnum ) + 1;
       int rogueDays = startWeek - 1;
       var value = (float)( DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month) + rogueDays ) / 7;

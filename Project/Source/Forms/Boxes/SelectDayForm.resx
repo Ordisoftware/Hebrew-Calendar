@@ -148,7 +148,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>1</value>
   </data>
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -175,7 +175,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionOk.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>0</value>
   </data>
   <data name="ActionOk.Text" xml:space="preserve">
     <value>Ok</value>

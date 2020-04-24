@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -29,33 +29,26 @@ namespace Ordisoftware.HebrewCalendar
     {
       switch ( keyData )
       {
+        case Keys.Control | Keys.Shift | Keys.Tab:
+          SetView(Program.Settings.CurrentView.Previous());
+          return true;
         case Keys.Control | Keys.Tab:
-          if ( Program.Settings.CurrentView == ViewMode.Text )
-            SetView(ViewMode.Month);
-          else
-          if ( Program.Settings.CurrentView == ViewMode.Month )
-            SetView(ViewMode.Grid);
-          else
-          if ( Program.Settings.CurrentView == ViewMode.Grid )
-            SetView(ViewMode.Text);
+          SetView(Program.Settings.CurrentView.Next());
           return true;
-        case Keys.Control | Keys.S:
-          ActionSaveReport.PerformClick();
+        case Keys.F4:
+          ActionViewCelebrations.PerformClick();
           return true;
-        case Keys.Alt | Keys.S:
-          ActionExportCSV.PerformClick();
-          return true;
-        case Keys.Control | Keys.C:
-          ActionCopyReportToClipboard.PerformClick();
-          return true;
-        case Keys.Control | Keys.D:
-          ActionSearchDay.PerformClick();
-          return true;
-        case Keys.Control | Keys.E:
+        case Keys.F5:
           ActionSearchEvent.PerformClick();
           return true;
-        case Keys.Control | Keys.M:
+        case Keys.F6:
           ActionSearchMonth.PerformClick();
+          return true;
+        case Keys.F7:
+          ActionSearchDay.PerformClick();
+          return true;
+        case Keys.Control | Keys.T:
+          GoToDate(DateTime.Today);
           return true;
         case Keys.Control | Keys.N:
           ActionNavigate.PerformClick();
@@ -63,15 +56,17 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Control | Keys.P:
           ActionPrint.PerformClick();
           return true;
-        case Keys.Control | Keys.T:
-          GoToDate(DateTime.Today);
+        case Keys.Alt | Keys.C:
+          ActionOpenCalculator.PerformClick();
           return true;
-        case Keys.Escape:
-          if ( EditESCtoExit.Checked )
-            Close();
+        case Keys.Control | Keys.C:
+          ActionCopyReportToClipboard.PerformClick();
           return true;
-        case Keys.F2:
-          ActionGenerate.PerformClick();
+        case Keys.Control | Keys.S:
+          ActionSaveReport.PerformClick();
+          return true;
+        case Keys.Alt | Keys.S:
+          ActionExportCSV.PerformClick();
           return true;
         case Keys.F8:
           ActionPreferences.PerformClick();
@@ -81,6 +76,10 @@ namespace Ordisoftware.HebrewCalendar
           return true;
         case Keys.F12:
           ActionAbout.PerformClick();
+          return true;
+        case Keys.Escape:
+          if ( EditESCtoExit.Checked )
+            Close();
           return true;
       }
       return base.ProcessCmdKey(ref msg, keyData);

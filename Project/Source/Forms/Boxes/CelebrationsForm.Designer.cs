@@ -46,7 +46,7 @@
       // ActionClose
       // 
       resources.ApplyResources(this.ActionClose, "ActionClose");
-      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionClose.Name = "ActionClose";
       this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
@@ -57,6 +57,7 @@
             this.columnHeader1,
             this.columnHeader2});
       this.ListView.FullRowSelect = true;
+      this.ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListView.HideSelection = false;
       this.ListView.MultiSelect = false;
       this.ListView.Name = "ListView";
@@ -88,6 +89,7 @@
       this.MinimizeBox = false;
       this.Name = "CelebrationsForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CelebrationsForm_FormClosing);
+      this.Load += new System.EventHandler(this.CelebrationsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
 

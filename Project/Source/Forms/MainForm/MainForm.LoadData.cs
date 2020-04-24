@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -17,6 +17,7 @@ using System.Data;
 using System.Data.Odbc;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
@@ -30,7 +31,7 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
-        if ( !IsGenerating ) UpdateProgress(progress++, ProgressCount, Translations.LoadingData.GetLang());
+        if ( !IsGenerating ) UpdateProgress(progress++, ProgressCount, Translations.ProgressLoadingData.GetLang());
       };
       DataSet.LunisolarDays.RowChanged += update;
       Cursor = Cursors.WaitCursor;
@@ -45,7 +46,7 @@ namespace Ordisoftware.HebrewCalendar
         connection.Close();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         ReportTableAdapter.Fill(DataSet.Report);
-        if ( DataSet.LunisolarDays.Count > 0 )
+        if ( DataSet.LunisolarDays.Count > 0 && !Program.Settings.FirstLaunch)
         {
           IsGenerating = true;
           try
@@ -77,14 +78,14 @@ namespace Ordisoftware.HebrewCalendar
           while ( DataSet.LunisolarDays.Count == 0 );
         }
       }
-      catch ( AbortException ex )
+      catch ( AbortException )
       {
         LoadData();
         return;
       }
       catch ( OdbcException ex )
       {
-        DisplayManager.ShowError(ex.Message);
+        ex.Manage();
         Environment.Exit(-1);
       }
       catch ( Exception ex )

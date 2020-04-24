@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2019 Olivier Rogier.
+/// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-04 </edited>
 using System;
 using System.Data;
 using System.Drawing;
@@ -19,6 +19,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using Microsoft.Win32;
+using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
@@ -32,13 +33,39 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
+    /// Indicate the singleton instance.
+    /// </summary>
+    static public MainForm Instance { get; private set; }
+
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
+    static MainForm()
+    {
+      Instance = new MainForm();
+    }
+
+    /// <summary>
     /// Default constructor.
     /// </summary>
     private MainForm()
     {
       InitializeComponent();
-      Text = AboutBox.Instance.AssemblyTitle;
+      Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
+      try { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilename); }
+      catch { }
+      Globals.AllowClose = false;
+      foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
+        LastCelebrationReminded.Add(value, null);
+    }
+
+    /// <summary>
+    /// Create web links menu items.
+    /// </summary>
+    internal void CreateWebLinks()
+    {
+      MenuWebLinks.InitializeFromWebLinks();
     }
 
     /// <summary>
@@ -50,6 +77,24 @@ namespace Ordisoftware.HebrewCalendar
     {
       TrayIcon.Icon = Icon;
       Program.Settings.Retrieve();
+      if ( SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, true) )
+      {
+        Application.Exit();
+        return;
+      }
+      MenuTray.Enabled = false;
+      CalendarText.ForeColor = Program.Settings.TextColor;
+      CalendarText.BackColor = Program.Settings.TextBackground;
+      CalendarMonth.RogueBrush = new SolidBrush(Program.Settings.MonthViewNoDaysBackColor);
+      CalendarMonth.ForeColor = Program.Settings.MonthViewTextColor;
+      CalendarMonth.BackColor = Program.Settings.MonthViewBackColor;
+      CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
+      CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
+      CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1); //10
+      CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold); //10
+      CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
+      CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
+      CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == Program.Settings.TimeZone )
         {
@@ -68,21 +113,17 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
+      if ( Globals.IsExiting ) return;
       InitializeDialogsDirectory();
       UpdateTextCalendar();
-      CalendarText.ForeColor = Program.Settings.TextColor;
-      CalendarText.BackColor = Program.Settings.TextBackground;
-      CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
-      CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
       CalendarMonth.CalendarDateChanged += (date) =>
       {
         GoToDate(date);
       };
+      MenuShowHide.Text = Globals.HideRestore.GetLang(Visible);
+      Globals.IsReady = true;
       UpdateButtons();
-      MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
-      IsReady = true;
       GoToDate(DateTime.Today);
-      Program.CheckUpdate(true);
       CheckRegenerateCalendar();
       if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
         ActionPreferences.PerformClick();
@@ -101,9 +142,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( !IsReady ) return;
-      if ( AllowClose ) return;
+      if ( Globals.IsExiting ) return;
+      if ( Globals.AllowClose ) return;
       e.Cancel = true;
+      if ( !Globals.IsReady ) return;
       MenuShowHide.PerformClick();
     }
 
@@ -120,7 +162,10 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
-      if ( !IsReady ) return;
+      if ( Globals.IsExiting ) return;
+      if ( !Globals.IsReady ) return;
+      if ( !Visible ) return;
+      if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick();
     }
 
@@ -132,16 +177,13 @@ namespace Ordisoftware.HebrewCalendar
     internal void SessionEnding(object sender, SessionEndingEventArgs e)
     {
       ClearLists();
+      Globals.IsExiting = true;
+      Globals.IsSessionEnding = true;
+      Globals.AllowClose = true;
       foreach ( Form form in Application.OpenForms )
         if ( form != this && form.Visible )
-          try
-          {
-            form.Close();
-          }
-          catch
-          {
-          }
-      AllowClose = true;
+          try { form.Close(); }
+          catch { }
       Close();
     }
 
@@ -150,8 +192,8 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     internal void InitializeDialogsDirectory()
     {
-      SaveCSVDialog.InitialDirectory = Program.UserDocumentsFolderPath;
-      SaveFileDialog.InitialDirectory = Program.UserDocumentsFolderPath;
+      SaveCSVDialog.InitialDirectory = Globals.UserDocumentsFolderPath;
+      SaveFileDialog.InitialDirectory = Globals.UserDocumentsFolderPath;
     }
 
     private void CheckRegenerateCalendar()
@@ -165,10 +207,10 @@ namespace Ordisoftware.HebrewCalendar
             diff = SelectYearsForm.GenerateIntervalDefault;
           YearFirst = DateTime.Today.Year - 1;
           YearLast = YearFirst + diff;
-          DoGenerate(null, new EventArgs());
+          DoGenerate(this, new EventArgs());
         }
       }
-      catch ( AbortException ex )
+      catch ( AbortException )
       {
       }
       catch ( Exception ex )
@@ -191,25 +233,45 @@ namespace Ordisoftware.HebrewCalendar
           FormBorderStyle = FormBorderStyle.Sizable;
           Visible = true;
           ShowInTaskbar = true;
-          WindowState = Program.Settings.MainFormState;
-          if ( IsReady )
+          bool temp = Globals.IsReady;
+          try
+          {
+            Globals.IsReady = false;
+            WindowState = Program.Settings.MainFormState;
+          }
+          finally
+          {
+            Globals.IsReady = temp;
+          }
+          if ( Globals.IsReady )
           {
             var old = TopMost;
             TopMost = true;
             BringToFront();
+            Show();
             TopMost = old;
           }
           GoToDate(DateTime.Today);
         }
         else
         {
+          if ( WindowState == FormWindowState.Minimized )
+          {
+            WindowState = FormWindowState.Normal;
+            var old = TopMost;
+            TopMost = true;
+            BringToFront();
+            Show();
+            TopMost = old;
+            return;
+          }
           Program.Settings.MainFormState = WindowState;
           WindowState = FormWindowState.Minimized;
           Visible = false;
           ShowInTaskbar = false;
           FormBorderStyle = FormBorderStyle.SizableToolWindow;
         }
-        MenuShowHide.Text = Translations.HideRestore.GetLang(Visible);
+        MenuShowHide.Text = Globals.HideRestore.GetLang(Visible);
       }
       catch ( Exception ex )
       {
@@ -224,7 +286,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
     {
-      if ( !IsReady ) return;
+      if ( !Globals.IsReady ) return;
+      if ( !MenuTray.Enabled ) return;
       TrayIcon.Text = Program.Settings.BalloonEnabled ? "" : Text;
       if ( !Program.Settings.BalloonEnabled ) return;
       TimerBallon.Start();
@@ -371,7 +434,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Translations.RestoreWinPos.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Globals.AskToRestoreWindowPosition.GetLang()) )
         Program.Settings.RestoreMainForm();
     }
 
@@ -394,20 +457,29 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
+        TimerReminder.Enabled = false;
+        MenuTray.Enabled = false;
         ClearLists();
-        if ( PreferencesForm.Run() )
+        if ( PreferencesForm.Run(sender == MenuPreferences) )
         {
           CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
           CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
+          UpdateCalendarMonth(false);
           ActionGenerate_Click(null, new EventArgs());
         }
         TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-        TimerReminder_Tick(this, null);
       }
       catch ( Exception ex )
       {
         ex.Manage();
+      }
+      finally
+      {
+        MenuTray.Enabled = true;
+        TimerReminder.Enabled = Instance.MenuDisableReminder.Enabled;
+        Refresh();
+        TimerReminder_Tick(null, null);
       }
     }
 
@@ -431,7 +503,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      Program.RunShell(Program.HelpFilename);
+      SystemHelper.RunShell(Globals.HelpFilename);
     }
 
     /// <summary>
@@ -441,7 +513,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionApplicationHome_Click(object sender, EventArgs e)
     {
-      AboutBox.Instance.OpenApplicationHome();
+      SystemHelper.OpenApplicationHome();
     }
 
     /// <summary>
@@ -451,7 +523,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionContact_Click(object sender, EventArgs e)
     {
-      AboutBox.Instance.OpenContactPage();
+      SystemHelper.OpenContactPage();
     }
 
     /// <summary>
@@ -461,18 +533,18 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
-      Program.CheckUpdate(false);
+      SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, false);
     }
 
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
-      SystemManager.OpenWebLink(Program.GitHubRepositoryURL + "/issues");
+      SystemHelper.CreateGitHubIssue();
     }
 
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
       string url = (string)( (ToolStripItem)sender ).Tag;
-      SystemManager.OpenWebLink(url);
+      SystemHelper.OpenWebLink(url);
     }
 
     /// <summary>
@@ -489,14 +561,68 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( IsGenerating )
       {
-        DisplayManager.ShowAdvert(Translations.CantExitApplicationWhileGenerating.GetLang());
+        DisplayManager.ShowAdvert(Translations.CantExitWhileGenerating.GetLang());
         return;
       }
       if ( EditConfirmClosing.Checked )
-        if ( !DisplayManager.QueryYesNo(Translations.ExitApplication.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Globals.AskToExitApplication.GetLang()) )
           return;
-      AllowClose = true;
+      Globals.AllowClose = true;
       Close();
+    }
+
+    private void ActionShowShabatNotice_Click(object sender, EventArgs e)
+    {
+      ShowTextForm.CreateShabatNotice().Show();
+    }
+
+    private void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
+    {
+      ShowTextForm.CreateCelebrationsNotice().Show();
+    }
+
+    private void ActionViewMoonMonths_Click(object sender, EventArgs e)
+    {
+      new MoonMonthsForm().Show();
+    }
+
+    private void ActionOpenCalculator_Click(object sender, EventArgs e)
+    {
+      SystemHelper.RunShell("calc.exe");
+    }
+
+    private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
+    {
+      var formDate = new SelectDayForm();
+      formDate.Text = Translations.FirstDay.GetLang();
+      if ( formDate.ShowDialog() != DialogResult.OK ) return;
+      var date1 = formDate.MonthCalendar.SelectionStart.Date;
+      formDate.Text = Translations.LastDay.GetLang();
+      if ( formDate.ShowDialog() != DialogResult.OK ) return;
+      var date2 = formDate.MonthCalendar.SelectionStart.Date;
+      if ( date1 > date2 )
+      {
+        var temp = date2;
+        date2 = date1;
+        date1 = temp;
+      }
+      int diffSolar = (date2 - date1).Days + 1;
+      int diffMoon = 0;
+      if (date1 >= DateFirst && date2 <= DateLast)
+        for ( DateTime date = date1; date <= date2; date = date.AddDays(1) )
+          if ( DataSet.LunisolarDays.FindByDate(SQLiteHelper.GetDate(date)).Moonrise != "" )
+            diffMoon++;
+      string str = ActionCalculateDateDiff.Text
+                 + Environment.NewLine + Environment.NewLine
+                 + $"{date1.ToShortDateString()} -> {date2.ToShortDateString()}"
+                 + Environment.NewLine + Environment.NewLine
+                 + Translations.DiffDatesSolarCount.GetLang(diffSolar)
+                 + Environment.NewLine + Environment.NewLine;
+      if (diffMoon != 0)
+        str += Translations.DiffDatesMoonCount.GetLang(diffMoon);
+      else
+        str += Translations.DiffDatesMoonOutOfRange.GetLang(DateFirst.Year, DateLast.Year);
+      DisplayManager.Show(str);
     }
 
     /// <summary>
@@ -517,16 +643,6 @@ namespace Ordisoftware.HebrewCalendar
       {
         ex.Manage();
       }
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionStop for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionStop_Click(object sender, EventArgs e)
-    {
-      IsGenerating = false;
     }
 
     /// <summary>
@@ -553,12 +669,20 @@ namespace Ordisoftware.HebrewCalendar
       {
         var bitmap = new Bitmap(CalendarMonth.Width, CalendarMonth.Height);
         CalendarMonth.DrawToBitmap(bitmap, new Rectangle(0, 0, CalendarMonth.Width, CalendarMonth.Height));
+        bitmap = SystemHelper.ResizeImage(bitmap, 1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
         var document = new PrintDocument();
         document.DefaultPageSettings.Landscape = true;
         document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
         PrintDialog.Document = document;
         if ( PrintDialog.ShowDialog() == DialogResult.Cancel ) return;
-        document.Print();
+        try
+        {
+          document.Print();
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
       }
       finally
       {
@@ -574,8 +698,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionSaveReport_Click(object sender, EventArgs e)
     {
-      if ( SaveFileDialog.ShowDialog() == DialogResult.OK )
-        File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
+      if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
+      File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
+      if ( Program.Settings.AutoOpenExportFolder )
+        SystemHelper.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
 
     /// <summary>
@@ -585,7 +711,12 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionExportCSV_Click(object sender, EventArgs e)
     {
-      GenerateCSV();
+      var content = GenerateCSV();
+      if ( content == null ) return;
+      if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
+      File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
+      if ( Program.Settings.AutoOpenExportFolder )
+        SystemHelper.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
     }
 
     /// <summary>
@@ -643,7 +774,7 @@ namespace Ordisoftware.HebrewCalendar
           NavigationForm.Instance.BringToFront();
         }
       }
-      catch ( ObjectDisposedException ex )
+      catch ( ObjectDisposedException )
       {
         NavigationForm.Instance = new NavigationForm();
         goto retry;
@@ -661,13 +792,59 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewCelebrations_Click(object sender, EventArgs e)
     {
-      CelebrationsForm.Run();
+      if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
+        CelebrationsForm.Instance.Close();
+      else
+        CelebrationsForm.Run();
     }
 
     private void MenuRefreshReminder_Click(object sender, EventArgs e)
     {
       ClearLists();
       TimerReminder_Tick(null, null);
+    }
+
+    private void MenuEnableReminder_Click(object sender, EventArgs e)
+    {
+      TrayIcon.Icon = Icon;
+      MenuResetReminder.Enabled = true;
+      ActionResetReminder.Enabled = true;
+      MenuEnableReminder.Visible = false;
+      MenuDisableReminder.Visible = true;
+      MenuEnableReminder.Enabled = false;
+      MenuDisableReminder.Enabled = true;
+      ActionEnableReminder.Visible = false;
+      ActionDisableReminder.Visible = true;
+      ActionEnableReminder.Enabled = false;
+      ActionDisableReminder.Enabled = true;
+      TimerReminder.Enabled = true;
+      TimerReminder_Tick(null, null);
+    }
+
+    private void MenuDisableReminder_Click(object sender, EventArgs e)
+    {
+      TrayIcon.Icon = new Icon(Globals.RootFolderPath + "ApplicationPause.ico");
+      TimerReminder.Enabled = false;
+      MenuResetReminder.Enabled = false;
+      ActionResetReminder.Enabled = false;
+      MenuEnableReminder.Visible = true;
+      MenuDisableReminder.Visible = false;
+      MenuEnableReminder.Enabled = true;
+      MenuDisableReminder.Enabled = false;
+      ActionEnableReminder.Visible = true;
+      ActionDisableReminder.Visible = false;
+      ActionEnableReminder.Enabled = true;
+      ActionDisableReminder.Enabled = false;
+      ClearLists();
+    }
+
+    private void CalendarText_KeyDown(object sender, KeyEventArgs e)
+    {
+      if ( e.Control && e.KeyCode == Keys.A )
+      {
+        CalendarText.SelectAll();
+        e.Handled = true;
+      }
     }
 
     /// <summary>
@@ -685,7 +862,7 @@ namespace Ordisoftware.HebrewCalendar
             e.Value = ( (MoonRise)e.Value ).ToString();
             break;
           case 10:
-            e.Value = Translations.MoonPhase.GetLang((MoonPhaseType)e.Value);
+            e.Value = Translations.MoonPhase.GetLang((MoonPhase)e.Value);
             break;
           case 8:
             e.Value = (int)e.Value == 0 ? "" : "*";
@@ -719,7 +896,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( LunisolarDaysBindingSource.Current == null ) return;
         var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-        GoToDate(SQLiteUtility.GetDate(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
+        GoToDate(SQLiteHelper.GetDate(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
       }
       catch
       {
@@ -728,12 +905,12 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MidnightTimer_Tick(DateTime Time)
     {
-      if ( !IsReady ) return;
+      if ( !Globals.IsReady ) return;
       this.SyncUI(() =>
       {
         System.Threading.Thread.Sleep(1000);
         CalendarMonth.Refresh();
-        if ( SQLiteUtility.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
+        if ( SQLiteHelper.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
       });
     }
@@ -745,15 +922,19 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void TimerReminder_Tick(object sender, EventArgs e)
     {
-      if ( !TimerReminder.Enabled || !IsReady || TimerMutex ) return;
+      if ( !TimerReminder.Enabled || !Globals.IsReady || TimerMutex ) return;
       TimerMutex = true;
       try
       {
         if ( !IsFullScreenOrScreensaver() )
         {
-          if ( Program.Settings.ReminderShabatEnabled ) CheckShabat();
-          if ( Program.Settings.ReminderCelebrationsEnabled ) CheckCelebrationDay();
-          if ( Program.Settings.ReminderCelebrationsEnabled ) CheckEvents();
+          if ( Program.Settings.ReminderShabatEnabled )
+            CheckShabat();
+          if ( Program.Settings.ReminderCelebrationsEnabled )
+          {
+            CheckCelebrationDay();
+            CheckEvents();
+          }
         }
       }
       catch ( Exception ex )
@@ -766,6 +947,60 @@ namespace Ordisoftware.HebrewCalendar
       {
         TimerMutex = false;
       }
+    }
+
+    internal void UpdateCalendarMonth(bool doFill)
+    {
+      IsGenerating = true;
+      Cursor = Cursors.WaitCursor;
+      Enabled = false;
+      PanelViewMonth.Parent = null;
+      try
+      {
+        CalendarMonth.RogueBrush = new SolidBrush(Program.Settings.MonthViewNoDaysBackColor);
+        CalendarMonth.ForeColor = Program.Settings.MonthViewTextColor;
+        CalendarMonth.BackColor = Program.Settings.MonthViewBackColor;
+        CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1); //10
+        CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold); //10
+        CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
+        CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
+        CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
+        CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
+        CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
+        CalendarMonth.LoadPresetHolidays = false;
+        if (doFill) FillMonths();
+      }
+      finally
+      {
+        Enabled = true;
+        Cursor = Cursors.Default;
+        Cursor = Cursors.Default;
+        IsGenerating = false;
+        SetView(Program.Settings.CurrentView, true);
+        UpdateButtons();
+      }
+    }
+
+    private void ActionVacuum_Click(object sender, EventArgs e)
+    {
+      /*Refresh();
+      DataSet.Clear();
+      UpdateButtons();
+      CalendarText.Clear();
+      CalendarMonth.LoadPresetHolidays = false;
+      LunisolarDaysBindingSource.DataSource = null;
+      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
+        try
+        {
+          connection.Open();
+          connection.Vacuum();
+        }
+        finally
+        {
+          connection.Close();
+        }
+        bug month view
+      LoadData();*/
     }
 
   }

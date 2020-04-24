@@ -63,7 +63,6 @@ namespace DandTSoftware.Timers
         /// <summary>
         /// Starts the Timer to fire a certain amount of Minutes AFTER midnight, every night (based on server time).
         /// </summary>
-        /// <param name="MinutesAfterMidnight">How many Minutes after midnight do we start the timer? between 0 and 59</param>
         public void Start()
         {           
             // Subtract the current time, from midnigh (tomorrow).
