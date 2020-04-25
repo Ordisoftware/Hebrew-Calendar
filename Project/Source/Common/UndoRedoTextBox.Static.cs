@@ -38,13 +38,15 @@ namespace Ordisoftware.HebrewCommon
       {
         var parent = ( (ToolStripMenuItem)sender ).GetCurrentParent();
         control = (UndoRedoTextBox)( (ContextMenuStrip)parent ).SourceControl;
-        if ( control.Enabled && !control.Focused ) control.Focus();
+        if ( control != null && control.Enabled && !control.Focused )
+          control.Focus();
       }
       else
       if ( sender is ContextMenuStrip )
       {
         control = (UndoRedoTextBox)( (ContextMenuStrip)sender ).SourceControl;
-        if ( control.Enabled && !control.Focused ) control.Focus();
+        if ( control != null && control.Enabled && !control.Focused )
+          control.Focus();
       }
       else
       if ( sender is UndoRedoTextBox )

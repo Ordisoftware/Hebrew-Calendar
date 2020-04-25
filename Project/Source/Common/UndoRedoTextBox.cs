@@ -256,6 +256,7 @@ namespace Ordisoftware.HebrewCommon
       if ( textbox.ReadOnly ) return;
       if ( string.IsNullOrEmpty(Clipboard.GetText()) ) return;
       textbox.SelectedText = Clipboard.GetText();
+      textbox.ScrollToCaret();
     }
 
     private void ActionUndo_Click(object sender, EventArgs e)
@@ -272,6 +273,7 @@ namespace Ordisoftware.HebrewCommon
         var item = textbox.UndoStack.Pop();
         textbox.Text = item.Text;
         textbox.SelectionStart = item.SelectionStart;
+        textbox.ScrollToCaret();
       }
       finally
       {
@@ -292,6 +294,7 @@ namespace Ordisoftware.HebrewCommon
         var item = textbox.RedoStack.Pop();
         Text = item.Text;
         textbox.SelectionStart = item.SelectionStart;
+        textbox.ScrollToCaret();
         textbox.Previous.Set(textbox.Text, textbox.SelectionStart);
       }
       finally
