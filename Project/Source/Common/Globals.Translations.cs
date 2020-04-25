@@ -197,11 +197,11 @@ namespace Ordisoftware.HebrewCommon
                 "Voulez-vous le télécharger ?" }
       };
 
-    static public readonly Dictionary<string, string> Configure
+    static public readonly Dictionary<string, string> ConfigureProviders
       = new Dictionary<string, string>()
       {
-        { "en", "Configure" },
-        { "fr", "Configurer" }
+        { "en", "Configure providers" },
+        { "fr", "Configurer les fournisseurs" }
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
