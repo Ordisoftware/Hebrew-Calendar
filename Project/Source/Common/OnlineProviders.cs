@@ -30,6 +30,21 @@ namespace Ordisoftware.HebrewCommon
     private string TagURL = "URL = ";
 
     /// <summary>
+    /// Indicate source filename in application documents folder.
+    /// </summary>
+    public string FilenameDefault { get; private set; }
+
+    /// <summary>
+    /// Indicate source filename in user data folder.
+    /// </summary>
+    public string FilenameUser { get; private set; }
+
+    /// <summary>
+    /// Indicate if file not found error must be shown on load.
+    /// </summary>
+    public bool ShowFileNotFound { get; private set; }
+
+    /// <summary>
     /// Indicate items.
     /// </summary>
     public List<OnlineProviderItem> Items { get; private set; }
@@ -42,29 +57,57 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate if a separator must be inserted before the folder
     /// </summary>
-    public readonly bool SeparatorBeforeFolder;
+    public bool SeparatorBeforeFolder { get; private set; }
 
     /// <summary>
     /// Static constructor.
     /// </summary>
     public OnlineProviders(string filename, bool showFileNotFound = true)
     {
-      string name;
       Items = new List<OnlineProviderItem>();
-      if ( !File.Exists(filename) )
-      {
-        if ( showFileNotFound )
-          DisplayManager.ShowError(Globals.FileNotFound.GetLang(filename));
-        return;
-      }
+      ShowFileNotFound = showFileNotFound;
+      FilenameDefault = filename;
+      FilenameUser = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
+      ReLoad();
+    }
+
+    private void CheckFile(bool reset)
+    {
+      if ( reset || !File.Exists(FilenameUser) )
+        if ( !File.Exists(FilenameDefault) )
+        {
+          if ( ShowFileNotFound )
+            DisplayManager.ShowError(Globals.FileNotFound.GetLang(FilenameDefault));
+          return;
+        }
+        else
+        {
+          string folder = Path.GetDirectoryName(FilenameUser);
+          if ( !Directory.Exists(folder) ) Directory.CreateDirectory(folder);
+          try
+          {
+            File.Copy(FilenameDefault, FilenameUser);
+          }
+          catch ( Exception ex )
+          {
+            ex.Manage();
+          }
+        }
+    }
+
+    public void ReLoad(bool reset = false)
+    {
+      CheckFile(reset);
       try
       {
-        var lines = File.ReadAllLines(filename);
+        Title.Clear();
+        Items.Clear();
+        var lines = File.ReadAllLines(FilenameUser);
         for ( int index = 0; index < lines.Length; index++ )
         {
           Action showError = () =>
           {
-            DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index + 1, lines[index]));
+            DisplayManager.ShowError(Globals.ErrorInFile.GetLang(FilenameUser, index + 1, lines[index]));
           };
           string line = lines[index].Trim();
           if ( line == "" ) continue;
@@ -86,7 +129,7 @@ namespace Ordisoftware.HebrewCommon
           else
           if ( line.StartsWith(TagName) )
           {
-            name = line.Substring(TagName.Length);
+            string name = line.Substring(TagName.Length);
             if ( ++index >= lines.Length )
             {
               showError();
