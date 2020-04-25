@@ -20,11 +20,15 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
+  public delegate void ViewLetterDetails(string code);
+
   /// <summary>
   /// Provide Letters input panel Control class.
   /// </summary>
   public partial class LettersControl : UserControl
   {
+
+    public event ViewLetterDetails ViewLetterDetails;
 
     /// <summary>
     /// Indicate max length of the input text.
@@ -195,15 +199,6 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Letter icon click event.
-    /// </summary>
-    private void ButtonLetter_Click(object sender, EventArgs e)
-    {
-      Input.SelectedText = ( (Button)sender ).Text;
-      Input.Focus();
-    }
-
-    /// <summary>
     /// TextChanging event.
     /// </summary>
     private void Input_TextChanging(object sender, TextInsertingMode mode, ref string text)
@@ -233,6 +228,56 @@ namespace Ordisoftware.HebrewCommon
         if ( Input.SelectionStart > 0 )
           Input.SelectionStart--;
       }
+    }
+
+    /// <summary>
+    /// Letter icon click event.
+    /// </summary>
+    private void ButtonLetter_Click(object sender, EventArgs e)
+    {
+      Button button = null;
+      if ( sender is Button )
+        button = (Button)sender;
+      else
+      if ( sender is ToolStripMenuItem )
+        button = (Button)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
+      if ( button != null )
+        Input.SelectedText = button.Text;
+      Input.Focus();
+    }
+
+    private void ActionLetterAddAtBegin_Click(object sender, EventArgs e)
+    {
+      Input.SelectionLength = 0;
+      Input.SelectionStart = Input.Text.Length;
+      ButtonLetter_Click(sender, e);
+    }
+
+    private void ActionLetterAddAtEnd_Click(object sender, EventArgs e)
+    {
+      Input.SelectionLength = 0;
+      Input.SelectionStart = 0;
+      ButtonLetter_Click(sender, e);
+    }
+
+    private void ActionLetterAddAtCaret_Click(object sender, EventArgs e)
+    {
+      ButtonLetter_Click(sender, e);
+    }
+
+    private void ActionLetterViewDetails_Click(object sender, EventArgs e)
+    {
+      if ( ViewLetterDetails == null ) return;
+      var button = (Button)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
+      ViewLetterDetails(button.Text);
+    }
+
+    private void ContextMenuLetter_Opened(object sender, EventArgs e)
+    {
+      ActionLetterViewDetails.Enabled = ViewLetterDetails != null;
+      ActionLetterAddAtBegin.Enabled = Input.Text.Length < Input.MaxLength;
+      ActionLetterAddAtEnd.Enabled = ActionLetterAddAtBegin.Enabled;
+      ActionLetterAddAtCaret.Enabled = ActionLetterAddAtBegin.Enabled;
     }
 
   }

@@ -29,54 +29,92 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LettersControl));
       this.PanelLetters = new System.Windows.Forms.Panel();
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.Input = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.ContextMenuLetter = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionLetterAddAtCaret = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionLetterAddAtBegin = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionLetterAddAtEnd = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionLetterViewDetails = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuLetter.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelLetters
       // 
       this.PanelLetters.BackColor = System.Drawing.SystemColors.Window;
       this.PanelLetters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.PanelLetters.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.PanelLetters.Location = new System.Drawing.Point(0, 0);
+      resources.ApplyResources(this.PanelLetters, "PanelLetters");
       this.PanelLetters.Name = "PanelLetters";
-      this.PanelLetters.Size = new System.Drawing.Size(510, 179);
-      this.PanelLetters.TabIndex = 1;
       // 
       // PanelSeparator
       // 
-      this.PanelSeparator.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.PanelSeparator.Location = new System.Drawing.Point(0, 179);
+      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
       this.PanelSeparator.Name = "PanelSeparator";
-      this.PanelSeparator.Size = new System.Drawing.Size(510, 8);
-      this.PanelSeparator.TabIndex = 3;
       // 
       // Input
       // 
       this.Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.Input.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.End;
-      this.Input.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.Input.Font = new System.Drawing.Font("Hebrew", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.Input.Location = new System.Drawing.Point(0, 187);
+      resources.ApplyResources(this.Input, "Input");
       this.Input.Name = "Input";
-      this.Input.Size = new System.Drawing.Size(510, 53);
-      this.Input.TabIndex = 2;
-      this.Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       this.Input.InsertingText += new Ordisoftware.HebrewCommon.InsertingTextEventHandler(this.Input_TextChanging);
       this.Input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Input_KeyPress);
       this.Input.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_KeyUp);
       // 
+      // ContextMenuLetter
+      // 
+      this.ContextMenuLetter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionLetterAddAtCaret,
+            this.ActionLetterAddAtBegin,
+            this.ActionLetterAddAtEnd,
+            this.toolStripMenuItem1,
+            this.ActionLetterViewDetails});
+      this.ContextMenuLetter.Name = "ContextMenuLetter";
+      resources.ApplyResources(this.ContextMenuLetter, "ContextMenuLetter");
+      this.ContextMenuLetter.Opened += new System.EventHandler(this.ContextMenuLetter_Opened);
+      // 
+      // ActionLetterAddAtCaret
+      // 
+      resources.ApplyResources(this.ActionLetterAddAtCaret, "ActionLetterAddAtCaret");
+      this.ActionLetterAddAtCaret.Name = "ActionLetterAddAtCaret";
+      this.ActionLetterAddAtCaret.Click += new System.EventHandler(this.ActionLetterAddAtCaret_Click);
+      // 
+      // ActionLetterAddAtBegin
+      // 
+      resources.ApplyResources(this.ActionLetterAddAtBegin, "ActionLetterAddAtBegin");
+      this.ActionLetterAddAtBegin.Name = "ActionLetterAddAtBegin";
+      this.ActionLetterAddAtBegin.Click += new System.EventHandler(this.ActionLetterAddAtBegin_Click);
+      // 
+      // ActionLetterAddAtEnd
+      // 
+      resources.ApplyResources(this.ActionLetterAddAtEnd, "ActionLetterAddAtEnd");
+      this.ActionLetterAddAtEnd.Name = "ActionLetterAddAtEnd";
+      this.ActionLetterAddAtEnd.Click += new System.EventHandler(this.ActionLetterAddAtEnd_Click);
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      // 
+      // ActionLetterViewDetails
+      // 
+      resources.ApplyResources(this.ActionLetterViewDetails, "ActionLetterViewDetails");
+      this.ActionLetterViewDetails.Name = "ActionLetterViewDetails";
+      this.ActionLetterViewDetails.Click += new System.EventHandler(this.ActionLetterViewDetails_Click);
+      // 
       // LettersControl
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.PanelLetters);
       this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.Input);
       this.Name = "LettersControl";
-      this.Size = new System.Drawing.Size(510, 240);
       this.Load += new System.EventHandler(this.LettersControl_Load);
+      this.ContextMenuLetter.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -86,5 +124,11 @@
     private System.Windows.Forms.Panel PanelSeparator;
     private System.Windows.Forms.Panel PanelLetters;
     private UndoRedoTextBox Input;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuLetter;
+    private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtBegin;
+    private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtEnd;
+    private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtCaret;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem ActionLetterViewDetails;
   }
 }

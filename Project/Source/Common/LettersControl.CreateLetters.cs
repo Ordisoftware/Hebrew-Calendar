@@ -90,6 +90,7 @@ namespace Ordisoftware.HebrewCommon
           buttonLetter.BackColor = Color.Transparent;
           buttonLetter.TabStop = false;
           buttonLetter.Click += ButtonLetter_Click;
+          buttonLetter.ContextMenuStrip = ContextMenuLetter;
           PanelLetters.Controls.Add(buttonLetter);
           // Loop
           n += 1;
