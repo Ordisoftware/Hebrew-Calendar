@@ -71,6 +71,10 @@ namespace Ordisoftware.HebrewCommon
       ReLoad();
     }
 
+    /// <summary>
+    /// Check if file exists in user data folder.
+    /// </summary>
+    /// <param name="reset">True if must be reseted from application documents folder.</param>
     private void CheckFile(bool reset)
     {
       if ( reset || !File.Exists(FilenameUser) )
@@ -95,6 +99,10 @@ namespace Ordisoftware.HebrewCommon
         }
     }
 
+    /// <summary>
+    /// Load or reload data from disk.
+    /// </summary>
+    /// <param name="reset">True if must be reseted from application documents folder.</param>
     public void ReLoad(bool reset = false)
     {
       CheckFile(reset);
