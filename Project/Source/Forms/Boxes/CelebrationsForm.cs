@@ -71,6 +71,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void CelebrationsForm_Load(object sender, EventArgs e)
     {
+      // TODO check chy "Instance."
       if ( Instance.Location.X == -1 || Instance.Location.Y == -1 )
         Instance.CenterToMainForm();
     }
