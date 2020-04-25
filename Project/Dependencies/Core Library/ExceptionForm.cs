@@ -62,7 +62,7 @@ namespace Ordisoftware.Core.Windows.Forms
         {
           form.buttonPrint.Enabled = false;
           form.buttonSendMail.Enabled = false;
-          form.buttonClose.Text = "Ok";
+          form.buttonClose.Text = "OK";
         }
         form.textException.Text = einfo.TypeText;
         form.textMessage.Text = einfo.Message;
