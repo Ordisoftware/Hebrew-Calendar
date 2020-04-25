@@ -253,11 +253,11 @@ namespace Ordisoftware.HebrewCommon
     //static public void LoadProvidersAndLinks()
     static Globals()
     {
-      OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName);
-      OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName);
+      OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName, true, true);
+      OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName, true, true);
       if ( Directory.Exists(WebLinksFolderPath) )
         foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
-          WebLinksProviders.Add(new OnlineProviders(file));
+          WebLinksProviders.Add(new OnlineProviders(file, false, false));
     }
 
     #region Assembly information

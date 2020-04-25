@@ -67,12 +67,18 @@ namespace Ordisoftware.HebrewCommon
     public bool SeparatorBeforeFolder { get; private set; }
 
     /// <summary>
+    /// Indicate if the list is configurable by using the user data folder.
+    /// </summary>
+    public bool Configurable { get; private set; }
+
+    /// <summary>
     /// Static constructor.
     /// </summary>
-    public OnlineProviders(string filename, bool showFileNotFound = true)
+    public OnlineProviders(string filename, bool configurable, bool showFileNotFound)
     {
       Items = new List<OnlineProviderItem>();
       ShowFileNotFound = showFileNotFound;
+      Configurable = configurable;
       FilenameDefault = filename;
       FilenameUser = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
       ReLoad();
@@ -82,19 +88,21 @@ namespace Ordisoftware.HebrewCommon
     /// Check if file exists in user data folder.
     /// </summary>
     /// <param name="reset">True if must be reseted from application documents folder.</param>
-    private void CheckFile(bool reset)
+    private string CheckFile(bool reset)
     {
+      if ( !Configurable ) return FilenameDefault;
       if ( reset || !File.Exists(FilenameUser) )
         if ( !File.Exists(FilenameDefault) )
         {
           if ( ShowFileNotFound )
             DisplayManager.ShowError(Globals.FileNotFound.GetLang(FilenameDefault));
-          return;
+          return "";
         }
         else
         {
           string folder = Path.GetDirectoryName(FilenameUser);
-          if ( !Directory.Exists(folder) ) Directory.CreateDirectory(folder);
+          if ( !Directory.Exists(folder) )
+            Directory.CreateDirectory(folder);
           try
           {
             File.Copy(FilenameDefault, FilenameUser, true);
@@ -102,8 +110,10 @@ namespace Ordisoftware.HebrewCommon
           catch ( Exception ex )
           {
             ex.Manage();
+            return "";
           }
         }
+      return FilenameUser;
     }
 
     /// <summary>
@@ -112,17 +122,18 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="reset">True if must be reseted from application documents folder.</param>
     public void ReLoad(bool reset = false)
     {
-      CheckFile(reset);
+      string filename = CheckFile(reset);
+      if ( filename == "" ) return;
       try
       {
         Title.Clear();
         Items.Clear();
-        var lines = File.ReadAllLines(FilenameUser);
+        var lines = File.ReadAllLines(filename);
         for ( int index = 0; index < lines.Length; index++ )
         {
           Action showError = () =>
           {
-            DisplayManager.ShowError(Globals.ErrorInFile.GetLang(FilenameUser, index + 1, lines[index]));
+            DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index + 1, lines[index]));
           };
           string line = lines[index].Trim();
           if ( line == "" ) continue;

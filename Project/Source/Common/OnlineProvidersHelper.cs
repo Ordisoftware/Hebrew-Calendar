@@ -59,56 +59,46 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static OnlineProvidersHelper()
     {
-      var bytes = Convert.FromBase64String(ImageEditString);
-      using ( var stream = new MemoryStream(bytes) )
-      {
-        stream.Position = 0;
+      using ( var stream = new MemoryStream(Convert.FromBase64String(ImageEditString)) )
         ImageConfigure = Image.FromStream(stream);
-      }
     }
 
     /// <summary>
     /// Create configure menu item.
     /// </summary>
-    /// <param name="onClick"></param>
-    /// <returns></returns>
-    static ToolStripMenuItem CreateConfigureMenu(EventHandler onClick)
+    static ToolStripMenuItem CreateConfigureMenuItem(EventHandler click)
     {
       var item = new ToolStripMenuItem(Globals.Configure.GetLang(), ImageConfigure);
       item.ImageScaling = ToolStripItemImageScaling.None;
-      item.Click += onClick;
+      item.Click += click;
       return item;
     }
 
     /// <summary>
     /// Crate a list of menu items.
     /// </summary>
-    /// <param name="tsic"></param>
-    /// <param name="items"></param>
-    /// <param name="action"></param>
-    /// <param name="reconstruct"></param>
-    static private void SetItems(ToolStripItemCollection tsic,
+    static private void SetItems(ToolStripItemCollection list,
                                  OnlineProviders items,
-                                 bool allowEdit,
                                  EventHandler action,
                                  Action reconstruct)
     {
       string nameItems = NameOfFromStack(items, 3).Replace("Globals.", "");
-      int index = 0;
-      foreach ( var item in items.Items )
-        tsic.Insert(index++, item.CreateMenuItem(action));
-      if ( !allowEdit ) return;
-      tsic.Insert(index++, new ToolStripSeparator());
-      tsic.Insert(index++, CreateConfigureMenu((sender, e) =>
+      if ( items.Configurable )
       {
-        int countTotal = items.Items.Count;
-        if ( !EditProvidersForm.Run(items, nameItems) ) return;
-        for ( int count = 0; count < countTotal; count++ )
-          tsic.RemoveAt(0);
-        tsic.RemoveAt(0);
-        tsic.RemoveAt(0);
-        reconstruct();
-      }));
+        list.Insert(0, CreateConfigureMenuItem((sender, e) =>
+        {
+          int countTotal = items.Items.Count;
+          if ( !EditProvidersForm.Run(items, nameItems) ) return;
+          for ( int count = 0; count < countTotal; count++ )
+            list.RemoveAt(0);
+          list.RemoveAt(0);
+          list.RemoveAt(0);
+          reconstruct();
+        }));
+        list.Insert(0, new ToolStripSeparator());
+      }
+      for ( int index = items.Items.Count - 1; index >= 0; index-- )
+        list.Insert(0, items.Items[index].CreateMenuItem(action));
     }
 
     /// <summary>
@@ -116,11 +106,9 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void InitializeFromProviders(this ContextMenuStrip menuRoot,
                                                OnlineProviders items,
-                                               bool configurable,
                                                EventHandler action)
     {
-      SetItems(menuRoot.Items, items, configurable, action, 
-               () => InitializeFromProviders(menuRoot, items, configurable, action));
+      SetItems(menuRoot.Items, items, action, () => InitializeFromProviders(menuRoot, items, action));
     }
 
     /// <summary>
@@ -128,17 +116,15 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void InitializeFromProviders(this ToolStripMenuItem menu,
                                                OnlineProviders items,
-                                               bool configurable,
                                                EventHandler action)
     {
-      SetItems(menu.DropDownItems, items, configurable, action, 
-               () => InitializeFromProviders(menu, items, configurable, action));
+      SetItems(menu.DropDownItems, items, action, () => InitializeFromProviders(menu, items, action));
     }
 
     /// <summary>
     /// Create submenu items for web links menu.
     /// </summary>
-    static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot, bool configurable)
+    static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot)
     {
       menuRoot.DropDownItems.Clear();
       foreach ( var items in Globals.WebLinksProviders )
@@ -178,14 +164,6 @@ namespace Ordisoftware.HebrewCommon
               SystemHelper.OpenWebLink(url);
             }));
         }
-      // Edit list
-      if ( !configurable ) return;
-      menuRoot.DropDownItems.Add(new ToolStripSeparator());
-      menuRoot.DropDownItems.Add(CreateConfigureMenu((sender, e) =>
-      {
-        if ( !EditProvidersForm.Run(Globals.WebLinksProviders, nameof(Globals.WebLinksProviders)) ) return;
-        InitializeFromWebLinks(menuRoot, true);
-      }));
     }
 
     /// <summary>
