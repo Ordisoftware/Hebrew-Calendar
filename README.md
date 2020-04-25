@@ -39,11 +39,11 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 ## Screenshots
 
-![Repport Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-raw-en-768x527.png)
+![Repport View](http://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-raw-en-768x565.png)
 
-![Month Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-viewmonth-en-1-768x527.png)
+![Month View](http://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-viewmonth-en-768x565.png)
 
-![Settings Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-preferences-en.png)
+![Settings Window](http://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-preferences-en.png)
 
 ![Celebrations Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-celebrations-en.png)
 
