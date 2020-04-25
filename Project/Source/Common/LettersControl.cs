@@ -274,10 +274,11 @@ namespace Ordisoftware.HebrewCommon
 
     private void ContextMenuLetter_Opened(object sender, EventArgs e)
     {
-      ActionLetterViewDetails.Enabled = ViewLetterDetails != null;
       ActionLetterAddAtBegin.Enabled = Input.Text.Length < Input.MaxLength;
       ActionLetterAddAtEnd.Enabled = ActionLetterAddAtBegin.Enabled;
       ActionLetterAddAtCaret.Enabled = ActionLetterAddAtBegin.Enabled;
+      ActionLetterViewDetails.Enabled = ViewLetterDetails != null;
+      MenuItemSeparator.Enabled = ActionLetterViewDetails.Enabled;
     }
 
   }
