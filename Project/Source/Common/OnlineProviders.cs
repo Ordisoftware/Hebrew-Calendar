@@ -23,7 +23,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide online providers list.
   /// </summary>
-  public partial class OnlineProviders
+  public partial class OnlineProviders : DataFile
   {
 
     /// <summary>
@@ -37,29 +37,16 @@ namespace Ordisoftware.HebrewCommon
     private string TagURL = "URL = ";
 
     /// <summary>
-    /// Indicate source filename in application documents folder.
-    /// </summary>
-    public string FilenameDefault { get; private set; }
-
-    /// <summary>
-    /// Indicate source filename in user data folder.
-    /// </summary>
-    public string FilenameUser { get; private set; }
-
-    /// <summary>
-    /// Indicate if file not found error must be shown on load.
-    /// </summary>
-    public bool ShowFileNotFound { get; private set; }
-
-    /// <summary>
     /// Indicate items.
     /// </summary>
-    public List<OnlineProviderItem> Items { get; private set; }
+    public List<OnlineProviderItem> Items { get; }
+     = new List<OnlineProviderItem>();
 
     /// <summary>
     /// Indicate the multilingual title of the list to create a folder
     /// </summary>
-    public readonly Dictionary<string, string> Title = new Dictionary<string, string>();
+    public Dictionary<string, string> Title { get; }
+      = new Dictionary<string, string>();
 
     /// <summary>
     /// Indicate if a separator must be inserted before the folder
@@ -67,62 +54,19 @@ namespace Ordisoftware.HebrewCommon
     public bool SeparatorBeforeFolder { get; private set; }
 
     /// <summary>
-    /// Indicate if the list is configurable by using the user data folder.
-    /// </summary>
-    public bool Configurable { get; private set; }
-
-    /// <summary>
-    /// Static constructor.
+    /// Constructor.
     /// </summary>
     public OnlineProviders(string filename, bool configurable, bool showFileNotFound)
+      : base(filename, configurable, showFileNotFound)
     {
-      Items = new List<OnlineProviderItem>();
-      ShowFileNotFound = showFileNotFound;
-      Configurable = configurable;
-      FilenameDefault = filename;
-      FilenameUser = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
-      ReLoad();
-    }
-
-    /// <summary>
-    /// Check if file exists in user data folder.
-    /// </summary>
-    /// <param name="reset">True if must be reseted from application documents folder.</param>
-    private string CheckFile(bool reset)
-    {
-      if ( !Configurable ) return FilenameDefault;
-      if ( reset || !File.Exists(FilenameUser) )
-        if ( !File.Exists(FilenameDefault) )
-        {
-          if ( ShowFileNotFound )
-            DisplayManager.ShowError(Globals.FileNotFound.GetLang(FilenameDefault));
-          return "";
-        }
-        else
-        {
-          string folder = Path.GetDirectoryName(FilenameUser);
-          if ( !Directory.Exists(folder) )
-            Directory.CreateDirectory(folder);
-          try
-          {
-            File.Copy(FilenameDefault, FilenameUser, true);
-          }
-          catch ( Exception ex )
-          {
-            ex.Manage();
-            return "";
-          }
-        }
-      return FilenameUser;
     }
 
     /// <summary>
     /// Load or reload data from disk.
     /// </summary>
     /// <param name="reset">True if must be reseted from application documents folder.</param>
-    public void ReLoad(bool reset = false)
+    protected override void DoReLoad(string filename)
     {
-      string filename = CheckFile(reset);
       if ( filename == "" ) return;
       try
       {

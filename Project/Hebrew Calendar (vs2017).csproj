@@ -147,11 +147,12 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
-    <Compile Include="Source\Common\EditProvidersForm.cs">
+    <Compile Include="Source\Common\DataFile.cs" />
+    <Compile Include="Source\Common\EditDataFileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Common\EditProvidersForm.Designer.cs">
-      <DependentUpon>EditProvidersForm.cs</DependentUpon>
+    <Compile Include="Source\Common\EditDataFileForm.designer.cs">
+      <DependentUpon>EditDataFileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\UndoRedoTextBox.cs">
@@ -432,11 +433,11 @@
     <EmbeddedResource Include="Dependencies\Core Library\ExceptionForm.resx">
       <DependentUpon>ExceptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\EditProvidersForm.fr.resx">
-      <DependentUpon>EditProvidersForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Common\EditDataFileForm.fr.resx">
+      <DependentUpon>EditDataFileForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\EditProvidersForm.resx">
-      <DependentUpon>EditProvidersForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Common\EditDataFileForm.resx">
+      <DependentUpon>EditDataFileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\HTMLBrowserForm.fr.resx">
       <DependentUpon>HTMLBrowserForm.cs</DependentUpon>

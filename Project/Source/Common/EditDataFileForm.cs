@@ -22,35 +22,34 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewCommon
 {
 
-  public partial class EditProvidersForm : Form
+  public partial class EditDataFileForm : Form
   {
 
-    static public bool Run(OnlineProviders providers, string nameInstance)
+    static public bool Run(DataFile file, string nameInstance)
     {
-      var form = new EditProvidersForm();
+      var form = new EditDataFileForm();
       form.Text = nameInstance;
-      AddTab(form.TabControl, providers);
+      AddTab(form.TabControl, file);
       bool result = form.ShowDialog() == DialogResult.OK;
-      if ( result ) providers.ReLoad();
+      if ( result ) file.ReLoad();
       return result;
     }
 
-    static public bool Run(List<OnlineProviders> listProviders, string nameInstance)
+    static public bool Run(List<DataFile> files, string nameInstance)
     {
-      var form = new EditProvidersForm();
+      var form = new EditDataFileForm();
       form.Text = nameInstance;
-      foreach ( var item in listProviders )
-        AddTab(form.TabControl, item);
+      foreach ( var item in files ) AddTab(form.TabControl, item);
       bool result = form.ShowDialog() == DialogResult.OK;
-      if (result) foreach ( var item in listProviders ) item.ReLoad();
+      if (result) foreach ( var item in files ) item.ReLoad();
       return result;
     }
 
-    static void AddTab(TabControl tabcontrol, OnlineProviders providers)
+    static void AddTab(TabControl tabcontrol, DataFile file)
     {
-      if ( !File.Exists(providers.FilenameUser) )
+      if ( !File.Exists(file.FilenameUser) )
       {
-        DisplayManager.ShowError(Globals.FileNotFound.GetLang(providers.FilenameUser));
+        DisplayManager.ShowError(Globals.FileNotFound.GetLang(file.FilenameUser));
         return;
       }
       var textbox = new UndoRedoTextBox();
@@ -59,14 +58,14 @@ namespace Ordisoftware.HebrewCommon
       textbox.WordWrap = false;
       textbox.ScrollBars = ScrollBars.Both;
       textbox.Dock = DockStyle.Fill;
-      textbox.Text = File.ReadAllText(providers.FilenameUser);
-      var tabpage = new TabPage(Path.GetFileName(providers.FilenameUser).Replace(".txt", ""));
-      tabpage.Tag = providers;
+      textbox.Text = File.ReadAllText(file.FilenameUser);
+      var tabpage = new TabPage(Path.GetFileName(file.FilenameUser).Replace(".txt", ""));
+      tabpage.Tag = file;
       tabpage.Controls.Add(textbox);
       tabcontrol.TabPages.Add(tabpage);
     }
 
-    public EditProvidersForm()
+    public EditDataFileForm()
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;

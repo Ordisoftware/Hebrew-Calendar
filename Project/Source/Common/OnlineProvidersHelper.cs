@@ -88,7 +88,7 @@ namespace Ordisoftware.HebrewCommon
         list.Insert(0, CreateConfigureMenuItem((sender, e) =>
         {
           int countTotal = items.Items.Count;
-          if ( !EditProvidersForm.Run(items, nameItems) ) return;
+          if ( !EditDataFileForm.Run(items, nameItems) ) return;
           for ( int count = 0; count < countTotal; count++ )
             list.RemoveAt(0);
           list.RemoveAt(0);
