@@ -15,8 +15,8 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Drawing;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -27,12 +27,15 @@ namespace Ordisoftware.HebrewCommon
   // TODO refactor
 
   /// <summary>
-  /// Provide online providers list.
+  /// Provide online providers list helper to create menu items.
   /// </summary>
   static public class OnlineProvidersHelper
   {
 
-    static private string ImageEditString
+    /// <summary>
+    /// Fatcow table_edit.ico for configure menu item.
+    /// </summary>
+    private const string ImageEditString
       = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8"
       + "YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI5SURBVDhPnZNfSFNhGMbPldu6qKCboogguii6CLzoKgqK"
       + "wisvuq27iCKIYhHo1mZqKhmZmRsKShJRhhShO/tX28ByEQVBzm2Ym5IWUZRN+kd/fr3fd+aaiV30wMP7"
@@ -46,36 +49,66 @@ namespace Ordisoftware.HebrewCommon
       + "M3Fu1u8neEOKUxe5fmQrxrmn2L33S5dJ1WkDwTZh5d9sPlZN0+EqxturrdNeTFX3T5SLl4Bh/AZO3qcQ"
       + "BCcQLQAAAABJRU5ErkJggg==";
 
-    static Image ImageEdit;
+    /// <summary>
+    /// Indicate image of the configure menu item.
+    /// </summary>
+    static Image ImageConfigure;
 
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
     static OnlineProvidersHelper()
     {
       var bytes = Convert.FromBase64String(ImageEditString);
       using ( var stream = new MemoryStream(bytes) )
       {
         stream.Position = 0;
-        ImageEdit = Image.FromStream(stream);
+        ImageConfigure = Image.FromStream(stream);
       }
     }
 
-    static public Dictionary<string, string> nameOfAlreadyAcessed = new Dictionary<string, string>();
-    static public string nameOf(object obj, int level = 1)
+    /// <summary>
+    /// Create configure menu item.
+    /// </summary>
+    /// <param name="onClick"></param>
+    /// <returns></returns>
+    static ToolStripMenuItem CreateConfigureMenu(EventHandler onClick)
     {
-      StackFrame stackFrame = new StackTrace(true).GetFrame(level);
-      string fileName = stackFrame.GetFileName();
-      int lineNumber = stackFrame.GetFileLineNumber();
-      string uniqueId = fileName + lineNumber;
-      if ( nameOfAlreadyAcessed.ContainsKey(uniqueId) )
-        return nameOfAlreadyAcessed[uniqueId];
-      else
+      var item = new ToolStripMenuItem(Globals.Configure.GetLang(), ImageConfigure);
+      item.ImageScaling = ToolStripItemImageScaling.None;
+      item.Click += onClick;
+      return item;
+    }
+
+    /// <summary>
+    /// Crate a list of menu items.
+    /// </summary>
+    /// <param name="tsic"></param>
+    /// <param name="items"></param>
+    /// <param name="action"></param>
+    /// <param name="reconstruct"></param>
+    static private void SetItems(ToolStripItemCollection tsic,
+                                 OnlineProviders items,
+                                 bool allowEdit,
+                                 EventHandler action,
+                                 Action reconstruct)
+    {
+      string nameItems = NameOfFromStack(items, 3).Replace("Globals.", "");
+      int index = 0;
+      foreach ( var item in items.Items )
+        tsic.Insert(index++, item.CreateMenuItem(action));
+      if ( !allowEdit ) return;
+      tsic.Insert(index++, new ToolStripSeparator());
+      tsic.Insert(index++, CreateConfigureMenu((sender, e) =>
       {
-        StreamReader file = new StreamReader(fileName);
-        for ( int i = 0; i < lineNumber - 1; i++ )
-          file.ReadLine();
-        string varName = file.ReadLine().Split(new char[] { '(', ')' })[1].TrimEnd(' ', ',');
-        nameOfAlreadyAcessed.Add(uniqueId, varName);
-        return varName;
-      }
+        int countTotal = items.Items.Count;
+        if ( !EditProvidersForm.Run(items, nameItems) ) return;
+        for ( int count = 0; count < countTotal; count++ )
+          tsic.RemoveAt(0);
+        tsic.RemoveAt(0);
+        tsic.RemoveAt(0);
+        reconstruct();
+      }));
     }
 
     /// <summary>
@@ -83,23 +116,11 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void InitializeFromProviders(this ContextMenuStrip menuRoot,
                                                OnlineProviders items,
+                                               bool configurable,
                                                EventHandler action)
     {
-      string nameItems = nameOf(items, 2).Replace("Globals.", "");
-      int index = 0;
-      foreach ( var item in items.Items )
-        menuRoot.Items.Insert(index++, item.CreateMenuItem(action));
-      menuRoot.Items.Insert(index++, new ToolStripSeparator());
-      menuRoot.Items.Insert(index++, CreateEditMenu((sender, e) =>
-      {
-        int countTotal = items.Items.Count;
-        if ( !EditProvidersForm.Run(items, nameItems) ) return;
-        for ( int count = 0; count < countTotal; count++)
-          menuRoot.Items.RemoveAt(0);
-        menuRoot.Items.RemoveAt(0);
-        menuRoot.Items.RemoveAt(0);
-        InitializeFromProviders(menuRoot, items, action);
-      }));
+      SetItems(menuRoot.Items, items, configurable, action, 
+               () => InitializeFromProviders(menuRoot, items, configurable, action));
     }
 
     /// <summary>
@@ -107,42 +128,23 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void InitializeFromProviders(this ToolStripMenuItem menu,
                                                OnlineProviders items,
+                                               bool configurable,
                                                EventHandler action)
     {
-      string nameItems = nameOf(items, 2).Replace("Globals.", "");
-      int index = 0;
-      foreach ( var item in items.Items )
-        menu.DropDownItems.Insert(index++, item.CreateMenuItem(action));
-      menu.DropDownItems.Insert(index++, new ToolStripSeparator());
-      menu.DropDownItems.Insert(index++, CreateEditMenu((sender, e) =>
-      {
-        int countTotal = items.Items.Count;
-        if ( !EditProvidersForm.Run(items, nameItems) ) return;
-        for ( int count = 0; count < countTotal; count++ )
-          menu.DropDownItems.RemoveAt(0);
-        menu.DropDownItems.RemoveAt(0);
-        menu.DropDownItems.RemoveAt(0);
-        InitializeFromProviders(menu, items, action);
-      }));
-    }
-
-    static ToolStripMenuItem CreateEditMenu(EventHandler onClick)
-    {
-      var item = new ToolStripMenuItem("Edit links", ImageEdit);
-      item.ImageScaling = ToolStripItemImageScaling.None;
-      item.Click += onClick;
-      return item;
+      SetItems(menu.DropDownItems, items, configurable, action, 
+               () => InitializeFromProviders(menu, items, configurable, action));
     }
 
     /// <summary>
     /// Create submenu items for web links menu.
     /// </summary>
-    static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot)
+    static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot, bool configurable)
     {
       menuRoot.DropDownItems.Clear();
       foreach ( var items in Globals.WebLinksProviders )
         if ( items.Items.Count > 0 )
         {
+          // Folder
           string title = items.Title.GetLang();
           ToolStripDropDownItem menu;
           if ( title != "" )
@@ -168,6 +170,7 @@ namespace Ordisoftware.HebrewCommon
           }
           else
             menu = menuRoot;
+          // Items
           foreach ( var item in items.Items )
             menu.DropDownItems.Add(item.CreateMenuItem((sender, e) =>
             {
@@ -175,12 +178,45 @@ namespace Ordisoftware.HebrewCommon
               SystemHelper.OpenWebLink(url);
             }));
         }
+      // Edit list
+      if ( !configurable ) return;
       menuRoot.DropDownItems.Add(new ToolStripSeparator());
-      menuRoot.DropDownItems.Add(CreateEditMenu((sender, e) =>
+      menuRoot.DropDownItems.Add(CreateConfigureMenu((sender, e) =>
       {
         if ( !EditProvidersForm.Run(Globals.WebLinksProviders, nameof(Globals.WebLinksProviders)) ) return;
-        InitializeFromWebLinks(menuRoot);
+        InitializeFromWebLinks(menuRoot, true);
       }));
+    }
+
+    /// <summary>
+    /// https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
+    /// </summary>
+    static private Dictionary<string, string> AlreadyAcessedVarNames = new Dictionary<string, string>();
+    static private string NameOfFromStack(this object instance, int level = 1)
+    {
+      try
+      {
+        var frame = new StackTrace(true).GetFrame(level);
+        string filename = frame.GetFileName();
+        int lineNumber = frame.GetFileLineNumber();
+        string id = filename + lineNumber;
+        if ( AlreadyAcessedVarNames.ContainsKey(id) )
+          return AlreadyAcessedVarNames[id];
+        using ( var file = new StreamReader(filename) )
+        {
+          for ( int i = 0; i < lineNumber - 1; i++ )
+            file.ReadLine();
+          string line = file.ReadLine();
+          string name = line.Split(new char[] { '(', ')' })[1].TrimEnd(' ', ',');
+          AlreadyAcessedVarNames.Add(id, name);
+          file.Close();
+          return name;
+        }
+      }
+      catch
+      {
+        return "Error getting instance variable name";
+      }
     }
 
   }

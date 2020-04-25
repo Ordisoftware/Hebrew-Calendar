@@ -132,31 +132,11 @@
   <data name="ActionLetterAddAtCaret.Text" xml:space="preserve">
     <value>Ajouter au curseur ou remplacer la sélection</value>
   </data>
-  <data name="ActionLetterAddAtBegin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAADgSURBVDhPYxgF2MGmzVs2t7R1/odywaC+vu5/fX39BygX
-        P1i3YdP/+sYWuAFVVVX/Hz1+8r+urg7FUJxg9dr1/6tr6sGKKysr/j97/vz/wsVL/9fW1hJnwIrVa/+X
-        VdT8r6mu/v/h46f/q4AGbti0hXgDlq1Y9b+4pPx/TU3N/7fv3v7fuWfv/70HD4H5UCX4weKly//nFxSD
-        FBuDvPDg0eP/5y9eIt6ABUuW/s/OLYQpNgYF4tFjx4kPxAmTpxzKyMxBVmwMjEJQGHyG8gkCFSA2hjDh
-        AMQ3gDCHEWBgAAB24HuN8v1TVwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="ActionLetterAddAtBegin.Size" type="System.Drawing.Size, System.Drawing">
     <value>374, 22</value>
   </data>
   <data name="ActionLetterAddAtBegin.Text" xml:space="preserve">
     <value>Ajouter au début</value>
-  </data>
-  <data name="ActionLetterAddAtEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAADgSURBVDhPYxgF2EF9ff0HIP4P5YJBS1vn/02bt2yGcvGD
-        urq6//fvP/hfVVUFN6S+seX/ug2bUAzFCWpra/8vXLz0/6PHT/5XVlaANVXX1P9fvXY98QZs2LQFrOHt
-        u/f/a6qr/5dV1PxfsXotcQbU1NT833fw0P+de/f9f/X69X8Qv7ik/P+yFauIN+D8xUv/7967D/RCJUiT
-        cX5B8f/FS5cTZwAoEA8cOvS/GhKIxiCx7NzC/wuWLCXOgNLS0oPQaARrBoGMzJz/EyZPOQTlEgQqQAzX
-        DAUgPkh8eAEGBgARQXr+Bic9tQAAAABJRU5ErkJggg==
-</value>
   </data>
   <data name="ActionLetterAddAtEnd.Size" type="System.Drawing.Size, System.Drawing">
     <value>374, 22</value>

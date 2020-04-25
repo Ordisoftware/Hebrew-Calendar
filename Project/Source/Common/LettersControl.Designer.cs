@@ -68,8 +68,8 @@
       // 
       this.ContextMenuLetter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionLetterAddAtCaret,
-            this.ActionLetterAddAtBegin,
             this.ActionLetterAddAtEnd,
+            this.ActionLetterAddAtBegin,
             this.MenuItemSeparator,
             this.ActionLetterViewDetails});
       this.ContextMenuLetter.Name = "ContextMenuLetter";

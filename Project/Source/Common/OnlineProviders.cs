@@ -26,7 +26,14 @@ namespace Ordisoftware.HebrewCommon
   public partial class OnlineProviders
   {
 
+    /// <summary>
+    /// Indicate display name tag.
+    /// </summary>
     private const string TagName = "Name = ";
+
+    /// <summary>
+    /// Indicate url tag.
+    /// </summary>
     private string TagURL = "URL = ";
 
     /// <summary>
@@ -90,7 +97,7 @@ namespace Ordisoftware.HebrewCommon
           if ( !Directory.Exists(folder) ) Directory.CreateDirectory(folder);
           try
           {
-            File.Copy(FilenameDefault, FilenameUser);
+            File.Copy(FilenameDefault, FilenameUser, true);
           }
           catch ( Exception ex )
           {

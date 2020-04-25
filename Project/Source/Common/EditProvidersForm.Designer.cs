@@ -31,6 +31,7 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProvidersForm));
       this.PanelBottomSeparator = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionReset = new System.Windows.Forms.LinkLabel();
       this.ActionOk = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.TabControl = new System.Windows.Forms.TabControl();
@@ -44,10 +45,21 @@
       // 
       // PanelBottom
       // 
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Controls.Add(this.ActionReset);
       this.PanelBottom.Controls.Add(this.ActionOk);
       this.PanelBottom.Controls.Add(this.ActionCancel);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionReset
+      // 
+      this.ActionReset.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionReset, "ActionReset");
+      this.ActionReset.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionReset.LinkColor = System.Drawing.Color.Navy;
+      this.ActionReset.Name = "ActionReset";
+      this.ActionReset.TabStop = true;
+      this.ActionReset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionReset_LinkClicked);
       // 
       // ActionOk
       // 
@@ -68,6 +80,7 @@
       this.TabControl.Multiline = true;
       this.TabControl.Name = "TabControl";
       this.TabControl.SelectedIndex = 0;
+      this.TabControl.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
       // 
       // EditProvidersForm
       // 
@@ -80,7 +93,9 @@
       this.Controls.Add(this.PanelBottom);
       this.Name = "EditProvidersForm";
       this.Load += new System.EventHandler(this.EditProvidersForm_Load);
+      this.Shown += new System.EventHandler(this.EditProvidersForm_Shown);
       this.PanelBottom.ResumeLayout(false);
+      this.PanelBottom.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -92,5 +107,6 @@
     private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.TabControl TabControl;
+    private System.Windows.Forms.LinkLabel ActionReset;
   }
 }

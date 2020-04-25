@@ -120,4 +120,7 @@
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
+  <data name="ActionReset.Text" xml:space="preserve">
+    <value>Restaurer les valeurs par défaut</value>
+  </data>
 </root>

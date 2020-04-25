@@ -13,14 +13,9 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
-using System.IO;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -34,10 +29,9 @@ namespace Ordisoftware.HebrewCommon
     {
       var form = new EditProvidersForm();
       form.Text = nameInstance;
-      AddTab(form.TabControl, providers.FilenameUser);
+      AddTab(form.TabControl, providers);
       bool result = form.ShowDialog() == DialogResult.OK;
-      if ( result )
-        providers.ReLoad();
+      if ( result ) providers.ReLoad();
       return result;
     }
 
@@ -45,31 +39,29 @@ namespace Ordisoftware.HebrewCommon
     {
       var form = new EditProvidersForm();
       form.Text = nameInstance;
-      foreach (var item in listProviders)
-        AddTab(form.TabControl, item.FilenameUser);
+      foreach ( var item in listProviders )
+        AddTab(form.TabControl, item);
       bool result = form.ShowDialog() == DialogResult.OK;
-      if ( result )
-        foreach (var item in listProviders)
-          item.ReLoad();
+      if (result) foreach ( var item in listProviders ) item.ReLoad();
       return result;
     }
 
-    static void AddTab(TabControl tabcontrol, string filename)
+    static void AddTab(TabControl tabcontrol, OnlineProviders providers)
     {
-      if ( !File.Exists(filename) )
+      if ( !File.Exists(providers.FilenameUser) )
       {
-        DisplayManager.ShowError(Globals.FileNotFound.GetLang(filename));
+        DisplayManager.ShowError(Globals.FileNotFound.GetLang(providers.FilenameUser));
         return;
       }
-      var textbox = new TextBox();
-      textbox.Font = new Font("Consolas", 9.75F);
+      var textbox = new UndoRedoTextBox();
+      textbox.Font = new Font("Consolas", 11F);
       textbox.Multiline = true;
       textbox.WordWrap = false;
       textbox.ScrollBars = ScrollBars.Both;
       textbox.Dock = DockStyle.Fill;
-      textbox.Text = File.ReadAllText(filename);
-      var tabpage = new TabPage(Path.GetFileName(filename).Replace(".txt", ""));
-      tabpage.Tag = filename;
+      textbox.Text = File.ReadAllText(providers.FilenameUser);
+      var tabpage = new TabPage(Path.GetFileName(providers.FilenameUser).Replace(".txt", ""));
+      tabpage.Tag = providers;
       tabpage.Controls.Add(textbox);
       tabcontrol.TabPages.Add(tabpage);
     }
@@ -86,18 +78,47 @@ namespace Ordisoftware.HebrewCommon
         this.CenterToMainForm();
     }
 
+    private void EditProvidersForm_Shown(object sender, EventArgs e)
+    {
+      UndoRedoTextBox textbox = (UndoRedoTextBox)TabControl.TabPages[0].Controls[0];
+      textbox.Focus();
+      textbox.SelectionLength = 0;
+    }
+
+    private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      UndoRedoTextBox textbox = (UndoRedoTextBox)TabControl.SelectedTab.Controls[0];
+      textbox.Focus();
+      textbox.SelectionLength = 0;
+    }
+
+    private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      if ( !DisplayManager.QueryYesNo(Globals.AskToLoadInstalledData.GetLang()) ) return;
+      foreach ( TabPage page in TabControl.TabPages )
+        try
+        {
+          ( (TextBox)page.Controls[0] ).Text = File.ReadAllText(( (OnlineProviders)page.Tag ).FilenameDefault);
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
+    }
+
     private void ActionOk_Click(object sender, EventArgs e)
     {
-      foreach (TabPage page in TabControl.TabPages)
-      try
-      {
-        File.WriteAllText((string)page.Tag, ((TextBox)page.Controls[0]).Text);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      foreach ( TabPage page in TabControl.TabPages )
+        try
+        {
+          File.WriteAllText(( (OnlineProviders)page.Tag ).FilenameUser, ( (TextBox)page.Controls[0] ).Text);
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
     }
+
   }
 
 }

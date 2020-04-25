@@ -132,6 +132,17 @@ namespace Ordisoftware.HebrewCommon
                 "Voulez-vous continuer ?" }
       };
 
+    static public readonly Dictionary<string, string> AskToLoadInstalledData
+      = new Dictionary<string, string>()
+      {
+        { "en", "This action will load the data installed with the application." + NewLine + NewLine +
+                "All modifications will be lost." + NewLine + NewLine +
+                "Do you want to continue?" },
+        { "fr", "Cette action va charger les données installées avec l'application."  + NewLine + NewLine +
+                "Toutes les modifications seront perdues." + NewLine + NewLine +
+                "Voulez-vous continuer ?" }
+      };
+
     static public readonly Dictionary<string, string> ErrorInFile
       = new Dictionary<string, string>()
       {
@@ -184,6 +195,13 @@ namespace Ordisoftware.HebrewCommon
         { "fr", "Hebrew Words n'a pas été trouvé." + NewLine +
                 "Vérifiez les préférences." + NewLine + NewLine +
                 "Voulez-vous le télécharger ?" }
+      };
+
+    static public readonly Dictionary<string, string> Configure
+      = new Dictionary<string, string>()
+      {
+        { "en", "Configure" },
+        { "fr", "Configurer" }
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore

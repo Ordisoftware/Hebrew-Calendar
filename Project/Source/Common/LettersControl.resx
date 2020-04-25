@@ -204,7 +204,7 @@
   <data name="ActionLetterAddAtCaret.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAACASURBVDhPYxgFNABZWVnH09LS/icnJ/9PSkoCYxAbJAaS
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAACASURBVDhPYxgFNABZWVnH09LS/icnJ/9PSkoCYxAbJAaS
         gyrDDdLT0//fun3n/5OnL/4/fPQUjEFskBhIDqoMLzBOBtq6b/+B/5u2bgdjEBskBpKDKCEMjEHOXrtu
         PRiD2CAxiBTxwBjkZBC2srKKgYqRDEC2gjAXmDcKaAEYGACOXU1+KQ04tAAAAABJRU5ErkJggg==
 </value>
@@ -215,30 +215,14 @@
   <data name="ActionLetterAddAtCaret.Text" xml:space="preserve">
     <value>Add at the caret or replace selection</value>
   </data>
-  <data name="ActionLetterAddAtBegin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionLetterAddAtEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAADgSURBVDhPYxgF2MGmzVs2t7R1/odywaC+vu5/fX39BygX
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADgSURBVDhPYxgF2MGmzVs2t7R1/odywaC+vu5/fX39BygX
         P1i3YdP/+sYWuAFVVVX/Hz1+8r+urg7FUJxg9dr1/6tr6sGKKysr/j97/vz/wsVL/9fW1hJnwIrVa/+X
         VdT8r6mu/v/h46f/q4AGbti0hXgDlq1Y9b+4pPx/TU3N/7fv3v7fuWfv/70HD4H5UCX4weKly//nFxSD
         FBuDvPDg0eP/5y9eIt6ABUuW/s/OLYQpNgYF4tFjx4kPxAmTpxzKyMxBVmwMjEJQGHyG8gkCFSA2hjDh
         AMQ3gDCHEWBgAAB24HuN8v1TVwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionLetterAddAtBegin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 22</value>
-  </data>
-  <data name="ActionLetterAddAtBegin.Text" xml:space="preserve">
-    <value>Add at the beginning</value>
-  </data>
-  <data name="ActionLetterAddAtEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAADgSURBVDhPYxgF2EF9ff0HIP4P5YJBS1vn/02bt2yGcvGD
-        urq6//fvP/hfVVUFN6S+seX/ug2bUAzFCWpra/8vXLz0/6PHT/5XVlaANVXX1P9fvXY98QZs2LQFrOHt
-        u/f/a6qr/5dV1PxfsXotcQbU1NT833fw0P+de/f9f/X69X8Qv7ik/P+yFauIN+D8xUv/7967D/RCJUiT
-        cX5B8f/FS5cTZwAoEA8cOvS/GhKIxiCx7NzC/wuWLCXOgNLS0oPQaARrBoGMzJz/EyZPOQTlEgQqQAzX
-        DAUgPkh8eAEGBgARQXr+Bic9tQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionLetterAddAtEnd.Size" type="System.Drawing.Size, System.Drawing">
@@ -247,13 +231,29 @@
   <data name="ActionLetterAddAtEnd.Text" xml:space="preserve">
     <value>Add at the ending</value>
   </data>
+  <data name="ActionLetterAddAtBegin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADgSURBVDhPYxgF2EF9ff0HIP4P5YJBS1vn/02bt2yGcvGD
+        urq6//fvP/hfVVUFN6S+seX/ug2bUAzFCWpra/8vXLz0/6PHT/5XVlaANVXX1P9fvXY98QZs2LQFrOHt
+        u/f/a6qr/5dV1PxfsXotcQbU1NT833fw0P+de/f9f/X69X8Qv7ik/P+yFauIN+D8xUv/7967D/RCJUiT
+        cX5B8f/FS5cTZwAoEA8cOvS/GhKIxiCx7NzC/wuWLCXOgNLS0oPQaARrBoGMzJz/EyZPOQTlEgQqQAzX
+        DAUgPkh8eAEGBgARQXr+Bic9tQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionLetterAddAtBegin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="ActionLetterAddAtBegin.Text" xml:space="preserve">
+    <value>Add at the beginning</value>
+  </data>
   <data name="MenuItemSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 6</value>
   </data>
   <data name="ActionLetterViewDetails.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAJzSURBVDhPlZLfS5NRGMdfKJgjCIICR9Af0EW/vIjoopso
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAJzSURBVDhPlZLfS5NRGMdfKJgjCIICR9Af0EW/vIjoopso
         qv+lK7vRIVliUEiIaLXN6cylW+ZW7H3d5kxrm2v+LOfe953th2Nr9mtqK8tV9u05p/lqUBd+4ct5zuF5
         Ps9zDkdgsjrcHZ0OFyz9g5qtjkH0Dbhaj9+UjuxvCpww3PDVbPoQ+WCz72Sl2BX3h6ehZN/h9ZuiZpX2
         o+NTuGpzY3e9FzqjhKp6kSxBT/HeBgnVTb6iYKHO6aUVRGMphGdVzdFYEpnCCiwPHuF/YhAOUNJ5LH9Z
