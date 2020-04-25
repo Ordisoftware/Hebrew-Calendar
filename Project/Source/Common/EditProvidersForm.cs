@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewCommon
         return;
       }
       var textbox = new UndoRedoTextBox();
-      textbox.Font = new Font("Consolas", 11F);
+      textbox.Font = new Font("Consolas", 9.75F);
       textbox.Multiline = true;
       textbox.WordWrap = false;
       textbox.ScrollBars = ScrollBars.Both;
