@@ -131,7 +131,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 ## Changelog
 
-#### Future improvements
+#### 2020.05.__ - Version 4.1
 
 - Add moon months description form in tools menu.
 
