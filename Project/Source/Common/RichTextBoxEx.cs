@@ -8,6 +8,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Represents a standard <see cref="RichTextBox"/> with some
   /// minor added functionality.
+  /// http://geekswithblogs.net/pvidler/archive/2003/10/14/182.aspx
   /// </summary>
   /// <remarks>
   /// AdvRichTextBox provides methods to maintain performance
