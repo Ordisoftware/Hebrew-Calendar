@@ -97,10 +97,9 @@ namespace Ordisoftware.HebrewCalendar
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
         SystemHelper.ApplyResources(resources, form.Controls);
       };
-      update(Globals.MainForm);
       foreach ( Form form in Application.OpenForms )
       {
-        if ( form != Globals.MainForm && form != AboutBox.Instance )
+        if ( form != AboutBox.Instance )
           update(form);
         if ( form is ShowTextForm )
           ( (ShowTextForm)form ).RelocalizeText();
