@@ -120,6 +120,11 @@ namespace Ordisoftware.HebrewCommon
         }
     }
 
+    private void ActionCancel_Click(object sender, EventArgs e)
+    {
+      Close();
+    }
+
   }
 
 }

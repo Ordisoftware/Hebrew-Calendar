@@ -73,6 +73,7 @@
       resources.ApplyResources(this.ActionCancel, "ActionCancel");
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
+      this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
       // 
       // TabControl
       // 
@@ -82,16 +83,15 @@
       this.TabControl.SelectedIndex = 0;
       this.TabControl.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
       // 
-      // EditProvidersForm
+      // EditDataFileForm
       // 
       this.AcceptButton = this.ActionOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ActionCancel;
       this.Controls.Add(this.TabControl);
       this.Controls.Add(this.PanelBottomSeparator);
       this.Controls.Add(this.PanelBottom);
-      this.Name = "EditProvidersForm";
+      this.Name = "EditDataFileForm";
       this.Load += new System.EventHandler(this.EditProvidersForm_Load);
       this.Shown += new System.EventHandler(this.EditProvidersForm_Shown);
       this.PanelBottom.ResumeLayout(false);
