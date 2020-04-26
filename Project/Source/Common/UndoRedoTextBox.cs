@@ -197,6 +197,7 @@ namespace Ordisoftware.HebrewCommon
         var pos = SelectionStart;
         Text = Text.Remove(SelectionStart - 1, 1);
         SelectionStart = pos - 1;
+        if ( Multiline ) ScrollToCaret();
       }
       else
         return;
