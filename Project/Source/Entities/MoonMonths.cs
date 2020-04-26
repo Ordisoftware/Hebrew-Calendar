@@ -16,15 +16,26 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using Ordisoftware.Core;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
+
+  public class MoonMonthItem
+  {
+    public string Name { get; set; }
+    public string Unicode { get; set; }
+    public string Meaning { get; set; }
+    public string Lettriq { get; set; }
+  }
 
   /// <summary>
   /// Moon months names in hebrew unicode and latin phonetic.
   /// </summary>
   static public class MoonMonths
   {
+
+    static public readonly List<MoonMonthItem> Items = new List<MoonMonthItem>();
 
     /// <summary>
     /// Phonetic names.
@@ -74,7 +85,13 @@ namespace Ordisoftware.HebrewCalendar
       {
         try
         {
-          var lines = File.ReadAllLines(filename.Replace("%LANG%", Program.Settings.Language.ToUpper()));
+          filename = filename.Replace("%LANG%", Program.Settings.Language.ToUpper());
+          if ( !File.Exists(filename) )
+          {
+            DisplayManager.ShowError(Globals.FileNotFound.GetLang(filename));
+            return;
+          }
+          var lines = File.ReadAllLines(filename);
           int index = 1;
           foreach ( string line in lines )
           {

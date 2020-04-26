@@ -49,6 +49,22 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly string MoonMonthsLettriqsFilename
       = MoonMonthsFolderPath + "MoonMonthsLettriqs%LANG%.txt";
 
+    /// <summary>
+    /// Indicate filename of the moon months data.
+    /// </summary>
+    static public readonly string MoonMonthsFilename
+      = MoonMonthsFolderPath + "MoonMonths-%LANG%.txt";
+
+    static public MoonMonthsFile MoonMonths { get; private set; }
+
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
+    static Program()
+    {
+      MoonMonths = new MoonMonthsFile(MoonMonthsFilename, true, true);
+    }
+
   }
 
 }

@@ -164,6 +164,8 @@
     <Compile Include="Source\Common\UndoRedoTextBox.Static.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Source\Entities\MoonMonthsFileItem.cs" />
+    <Compile Include="Source\Entities\MoonMonthsFile.cs" />
     <Compile Include="Source\Program\Translations.BigCalendar.cs" />
     <Compile Include="Source\Common\Globals.Translations.cs" />
     <Compile Include="Source\Common\HTMLBrowserForm.cs">
