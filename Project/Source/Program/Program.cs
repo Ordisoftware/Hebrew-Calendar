@@ -98,14 +98,13 @@ namespace Ordisoftware.HebrewCalendar
         SystemHelper.ApplyResources(resources, form.Controls);
       };
       foreach ( Form form in Application.OpenForms )
-      {
         if ( form != AboutBox.Instance )
           update(form);
-        if ( form is ShowTextForm )
-          ( (ShowTextForm)form ).RelocalizeText();
-      }
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+      foreach ( Form form in Application.OpenForms )
+        if ( form is ShowTextForm )
+          ( (ShowTextForm)form ).RelocalizeText();
       MainForm.Instance.CreateWebLinks();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
