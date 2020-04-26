@@ -81,6 +81,7 @@ namespace Ordisoftware.HebrewCommon
     {
       UndoRedoTextBox textbox = (UndoRedoTextBox)TabControl.TabPages[0].Controls[0];
       textbox.Focus();
+      textbox.SelectionStart = 0;
       textbox.SelectionLength = 0;
     }
 
@@ -103,6 +104,7 @@ namespace Ordisoftware.HebrewCommon
         {
           ex.Manage();
         }
+      EditProvidersForm_Shown(this, null);
     }
 
     private void ActionOk_Click(object sender, EventArgs e)
