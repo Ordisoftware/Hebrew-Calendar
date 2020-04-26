@@ -268,7 +268,6 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Static constructor.
     /// </summary>
-    //static public void LoadProvidersAndLinks()
     static Globals()
     {
       OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName, true, true);
