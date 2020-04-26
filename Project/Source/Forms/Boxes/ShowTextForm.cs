@@ -24,12 +24,12 @@ namespace Ordisoftware.HebrewCalendar
 
     static public ShowTextForm CreateShabatNotice()
     {
-      return Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 650, 520);
+      return Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 500, 570);
     }
 
     static public ShowTextForm CreateCelebrationsNotice()
     {
-      return Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 500, 360);
+      return Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 500, 370);
     }
 
     static public ShowTextForm Create(string title, string str, int width, int height)
@@ -46,11 +46,14 @@ namespace Ordisoftware.HebrewCalendar
       return form;
     }
 
-    static public ShowTextForm Create(Dictionary<string, string> localizedTitle, Dictionary<string, string> localizedText, int width, int height)
+    static public ShowTextForm Create(Dictionary<string, string> title, 
+                                      Dictionary<string, string> text,
+                                      int width,
+                                      int height)
     {
-      var form = Create(localizedTitle.GetLang(), localizedText.GetLang(), width, height);
-      form.LocalizedTitle = localizedTitle;
-      form.LocalizedText = localizedText;
+      var form = Create(title.GetLang(), text.GetLang(), width, height);
+      form.LocalizedTitle = title;
+      form.LocalizedText = text;
       return form;
     }
 
