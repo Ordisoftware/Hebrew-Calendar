@@ -45,12 +45,15 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Constructor.
     /// </summary>
-    public DataFile(string filename, bool configurable, bool showFileNotFound)
+    public DataFile(string filename, bool configurable, bool showFileNotFound, bool isUserCommonFolder)
     {
       ShowFileNotFound = showFileNotFound;
       Configurable = configurable;
       FilenameDefault = filename;
-      FilenameUser = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
+      if ( isUserCommonFolder )
+        FilenameUser = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataCommonFolderPath);
+      else
+        FilenameUser = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
       ReLoad();
     }
 

@@ -184,6 +184,24 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Indicate the user documents folder path.
+    /// </summary>
+    static public string UserDocumentsFolderPath
+    {
+      get
+      {
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                    + Path.DirectorySeparatorChar
+                    + AssemblyCompany
+                    + Path.DirectorySeparatorChar
+                    + AssemblyTitle
+                    + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(path);
+        return path;
+      }
+    }
+
+    /// <summary>
     /// Indicate the user data folder in roaming.
     /// </summary>
     static public string UserDataFolderPath
@@ -202,17 +220,17 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Indicate the user documents folder path.
+    /// Indicate the user data folder in roaming.
     /// </summary>
-    static public string UserDocumentsFolderPath
+    static public string UserDataCommonFolderPath
     {
       get
       {
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
                     + Path.DirectorySeparatorChar
                     + AssemblyCompany
                     + Path.DirectorySeparatorChar
-                    + AssemblyTitle
+                    + "Hebrew Common"
                     + Path.DirectorySeparatorChar;
         Directory.CreateDirectory(path);
         return path;
