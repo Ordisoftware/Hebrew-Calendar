@@ -44,7 +44,7 @@ URL = https://www.mechon-mamre.org/p/pt/ptmp3prq.htm
 
 -
 
-Name = (EN) Interlinear Bible @ studybible.info
+Name = (EN) Interlinear Tanak @ studybible.info
 URL = https://studybible.info/IHOT/
 
 Name = (EN) Interlinear Euangélion @ studybible.info
