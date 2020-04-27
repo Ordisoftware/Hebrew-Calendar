@@ -31,5 +31,8 @@ URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2
 
 -
 
+Name = (FR) LEvangile.com
+URL = https://www.levangile.com/Bible-LSGS-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
 Name = (FR) Djep.hd.free.fr
 URL = http://djep.hd.free.fr/LaReferenceBiblique/?Livre=%BOOKDJEP%&Chap=%CHAPTERNUM%&Vers=%VERSENUM%
