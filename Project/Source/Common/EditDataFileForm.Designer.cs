@@ -85,7 +85,6 @@
       // 
       // EditDataFileForm
       // 
-      this.AcceptButton = this.ActionOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.TabControl);
