@@ -56,8 +56,8 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Constructor.
     /// </summary>
-    public OnlineProviders(string filename, bool configurable, bool showFileNotFound)
-      : base(filename, configurable, showFileNotFound, true)
+    public OnlineProviders(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
+      : base(filename, showFileNotFound, configurable, folder)
     {
     }
 

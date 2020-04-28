@@ -13,6 +13,7 @@
 /// <created> 2020-03 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -164,6 +165,15 @@ namespace Ordisoftware.HebrewCommon
               SystemHelper.OpenWebLink(url);
             }));
         }
+      if ( Globals.IsDev )
+      {
+        menuRoot.DropDownItems.Add(new ToolStripSeparator());
+        menuRoot.DropDownItems.Add(CreateConfigureMenuItem((sender, e) =>
+        {
+          if ( !EditDataFileForm.Run(Globals.WebLinksProviders, nameof(Globals.WebLinksProviders)) ) return;
+          InitializeFromWebLinks(menuRoot);
+        }));
+      }
     }
 
     /// <summary>

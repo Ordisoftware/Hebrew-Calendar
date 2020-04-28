@@ -19,6 +19,35 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewCommon
 {
 
+  /// <summary>
+  /// Indicate data file storage folder.
+  /// </summary>
+  public enum DataFileFolder
+  {
+    /// <summary>
+    /// Application documents folder.
+    /// </summary>
+    ApplicationDocuments,
+
+    /// <summary>
+    /// Common program data folder.
+    /// </summary>
+    ProgramData,
+
+    /// <summary>
+    /// User appdata common folder.
+    /// </summary>
+    UserHebrewCommon,
+
+    /// <summary>
+    /// User appdata application folder.
+    /// </summary>
+    UserApplication
+  }
+
+  /// <summary>
+  /// Provide data file management.
+  /// </summary>
   public abstract class DataFile
   {
 
@@ -30,7 +59,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate source filename in user data folder.
     /// </summary>
-    public string FilenameUser { get; private set; }
+    public string Filename { get; private set; }
 
     /// <summary>
     /// Indicate if file not found error must be shown on load.
@@ -43,23 +72,37 @@ namespace Ordisoftware.HebrewCommon
     public bool Configurable { get; private set; }
 
     /// <summary>
+    /// Indicate the folder.
+    /// </summary>
+    public DataFileFolder Folder { get; private set; }
+
+    /// <summary>
     /// Constructor.
     /// </summary>
-    public DataFile(string filename, bool configurable, bool showFileNotFound, bool isUserCommonFolder)
+    public DataFile(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
     {
       ShowFileNotFound = showFileNotFound;
       Configurable = configurable;
       FilenameDefault = filename;
-      if ( isUserCommonFolder )
-        FilenameUser = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataCommonFolderPath);
-      else
-        FilenameUser = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
+      Folder = folder;
+      switch ( folder )
+      {
+        case DataFileFolder.ApplicationDocuments:
+          Filename = FilenameDefault;
+          break;
+        case DataFileFolder.ProgramData:
+          Filename = filename.Replace(Globals.DocumentsFolderPath, Globals.ProgramDataFolderPath);
+          break;
+        case DataFileFolder.UserHebrewCommon:
+          Filename = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataCommonFolderPath);
+          break;
+        case DataFileFolder.UserApplication:
+          Filename = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
+          break;
+        default:
+          throw new NotImplementedException();
+      }
       ReLoad();
-    }
-
-    public void ReLoad(bool reset = false)
-    {
-      DoReLoad(CheckFile(reset));
     }
 
     /// <summary>
@@ -68,14 +111,18 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="reset">True if must be reseted from application documents folder.</param>
     protected abstract void DoReLoad(string filename);
 
+    public void ReLoad(bool reset = false)
+    {
+      DoReLoad(CheckFile(reset));
+    }
+
     /// <summary>
     /// Check if file exists in user data folder.
     /// </summary>
     /// <param name="reset">True if must be reseted from application documents folder.</param>
     protected string CheckFile(bool reset)
     {
-      if ( !Configurable ) return FilenameDefault;
-      if ( reset || !File.Exists(FilenameUser) )
+      if ( reset || !File.Exists(Filename) )
         if ( !File.Exists(FilenameDefault) )
         {
           if ( ShowFileNotFound )
@@ -83,13 +130,14 @@ namespace Ordisoftware.HebrewCommon
           return "";
         }
         else
+        if ( Filename != FilenameDefault )
         {
-          string folder = Path.GetDirectoryName(FilenameUser);
+          string folder = Path.GetDirectoryName(Filename);
           if ( !Directory.Exists(folder) )
             Directory.CreateDirectory(folder);
           try
           {
-            File.Copy(FilenameDefault, FilenameUser, true);
+            File.Copy(FilenameDefault, Filename, true);
           }
           catch ( Exception ex )
           {
@@ -97,7 +145,7 @@ namespace Ordisoftware.HebrewCommon
             return "";
           }
         }
-      return FilenameUser;
+      return Filename;
     }
 
   }

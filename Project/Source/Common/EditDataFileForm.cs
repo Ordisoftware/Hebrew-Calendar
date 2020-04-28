@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewCommon
       return result;
     }
 
-    static public bool Run(List<DataFile> files, string nameInstance)
+    static public bool Run(IEnumerable<DataFile> files, string nameInstance)
     {
       var form = new EditDataFileForm();
       form.Text = nameInstance;
@@ -47,9 +47,9 @@ namespace Ordisoftware.HebrewCommon
 
     static void AddTab(TabControl tabcontrol, DataFile file)
     {
-      if ( !File.Exists(file.FilenameUser) )
+      if ( !File.Exists(file.Filename) )
       {
-        DisplayManager.ShowError(Globals.FileNotFound.GetLang(file.FilenameUser));
+        DisplayManager.ShowError(Globals.FileNotFound.GetLang(file.Filename));
         return;
       }
       var textbox = new UndoRedoTextBox();
@@ -58,8 +58,8 @@ namespace Ordisoftware.HebrewCommon
       textbox.WordWrap = false;
       textbox.ScrollBars = ScrollBars.Both;
       textbox.Dock = DockStyle.Fill;
-      textbox.Text = File.ReadAllText(file.FilenameUser);
-      var tabpage = new TabPage(Path.GetFileName(file.FilenameUser).Replace(".txt", ""));
+      textbox.Text = File.ReadAllText(file.Filename);
+      var tabpage = new TabPage(Path.GetFileName(file.Filename).Replace(".txt", ""));
       tabpage.Tag = file;
       tabpage.Controls.Add(textbox);
       tabcontrol.TabPages.Add(tabpage);
@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewCommon
       foreach ( TabPage page in TabControl.TabPages )
         try
         {
-          File.WriteAllText(( (OnlineProviders)page.Tag ).FilenameUser, ( (TextBox)page.Controls[0] ).Text);
+          File.WriteAllText(( (OnlineProviders)page.Tag ).Filename, ( (TextBox)page.Controls[0] ).Text);
         }
         catch ( Exception ex )
         {
