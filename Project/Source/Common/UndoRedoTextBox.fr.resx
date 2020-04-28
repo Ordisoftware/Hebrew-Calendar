@@ -199,7 +199,7 @@
   <data name="ActionSelectAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVDhPYwCBxsbG/8TQ+IAxkTQmIMZ0EMCnDrfpqAC7
+        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAADsSURBVDhPYwCBxsbG/8TQ+IAxkTQmIMZ0EMCnDrfpqAC7
         OmJdUF9fTyMXgAB6aKPTdXV1/+fMWwDGID42ADMdJw3SfPDIEbyG4AVTp8/8//PXz/+nTp8mz5AJk6f+
         f/nq9f87d+/9P3nyFOmG9E2Y9P/uvQf/z1+4CDTk/v8jx06QZkhP34T/V6/d+H/7zr3/y5av/N/d2/+/
         d8Kk91BpwgCkYeeuPf9nz5n//979B/+Ly8rmAoX1IbJEgPr65n0dXb3/a+oaz966dft/S2v7Y6gU0UAZ
@@ -221,6 +221,20 @@
         oINmsxmaqiIQCJC7kJkRFTNwEgOpygCODHKWHHDmLLRd2wc+0MmaVlZWWPyj1dVVLC8vs292ibaSPS8d
         pXvhKM0gkHhSj9qSNEgdQda0nehjoo9xByFtM5LW9V2QZHYKXTUFkqOPSJDlBOn9p3YS/jJORbf7Nx7l
         g/lNUVK1AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAHXSURBVDhPpZJLTBNRFIavijt3aq1gMSGa+IDESCRCIlBY
+        sRAfbW3VhIgLNm6EUkgg7ogb3eqmS4I8OkNojCvd6FKNG1dY+0CJpoXUUHTaGVI+71wn0SjFGr/ky3/P
+        3HtO7kxG/DdHxhfwjM5TG9E5GJmX6riHbbVtrQ3P0fLgJeLQiM7ngsmHtQ0+rpfJyEysGizmvrKYXa9g
+        gaWVAj2xFMIV1rC56r9E37UQIf9lPi0vs5ROk0mltjaZVD3e6QRi72BMFZZlEQoGMU2LfP4LudwK2S3N
+        kctmVU/H1Dt7wJwqbPw+n0rTMjGKBt8MqUyjWMQolSiaptSiJPdt/hgQCAScVXV0zqYR+5xX8F3sJXgl
+        wIXe86r+nTcTY0zu38GkezdTrp0k79+h/UkecWDo5w0q8fbuOC/ajsLELbg3pPK19ziRm7cRLQ9f0aNl
+        6J5J0mU7/R7vowSd0o6ZFGfjqyzU7YKRkHIz7IdRuR67TvyECyFqas7I/6l5Ox837IGns859HJ7F0Bvr
+        5IAqiJ90Ux7oYqP/HGZfm8ryQDf6qfrqBkQbPdrz9mNYN1rZ7G9VadfRJo/mHPkr9dGmw5re3IB+WirT
+        ru3nP7arwz7867f5p+YKCPEdUpINW7Oqt8YAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionPaste.Size" type="System.Drawing.Size, System.Drawing">

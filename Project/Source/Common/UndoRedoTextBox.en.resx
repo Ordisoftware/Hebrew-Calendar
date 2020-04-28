@@ -223,6 +223,20 @@
         g/lNUVK1AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="ActionDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHXSURBVDhPpZJLTBNRFIavijt3aq1gMSGa+IDESCRCIlBY
+        sRAfbW3VhIgLNm6EUkgg7ogb3eqmS4I8OkNojCvd6FKNG1dY+0CJpoXUUHTaGVI+71wn0SjFGr/ky3/P
+        3HtO7kxG/DdHxhfwjM5TG9E5GJmX6riHbbVtrQ3P0fLgJeLQiM7ngsmHtQ0+rpfJyEysGizmvrKYXa9g
+        gaWVAj2xFMIV1rC56r9E37UQIf9lPi0vs5ROk0mltjaZVD3e6QRi72BMFZZlEQoGMU2LfP4LudwK2S3N
+        kctmVU/H1Dt7wJwqbPw+n0rTMjGKBt8MqUyjWMQolSiaptSiJPdt/hgQCAScVXV0zqYR+5xX8F3sJXgl
+        wIXe86r+nTcTY0zu38GkezdTrp0k79+h/UkecWDo5w0q8fbuOC/ajsLELbg3pPK19ziRm7cRLQ9f0aNl
+        6J5J0mU7/R7vowSd0o6ZFGfjqyzU7YKRkHIz7IdRuR67TvyECyFqas7I/6l5Ox837IGns859HJ7F0Bvr
+        5IAqiJ90Ux7oYqP/HGZfm8ryQDf6qfrqBkQbPdrz9mNYN1rZ7G9VadfRJo/mHPkr9dGmw5re3IB+WirT
+        ru3nP7arwz7867f5p+YKCPEdUpINW7Oqt8YAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="ActionPaste.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 22</value>
   </data>

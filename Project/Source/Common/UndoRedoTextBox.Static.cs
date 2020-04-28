@@ -30,6 +30,7 @@ namespace Ordisoftware.HebrewCommon
     static private ToolStripMenuItem ActionPaste;
     static private ToolStripSeparator Separator2;
     static private ToolStripMenuItem ActionSelectAll;
+    static private ToolStripMenuItem ActionDelete;
 
     static private UndoRedoTextBox GetTextBoxAndFocus(object sender)
     {
@@ -65,6 +66,7 @@ namespace Ordisoftware.HebrewCommon
       ActionPaste = new ToolStripMenuItem();
       Separator2 = new ToolStripSeparator();
       ActionSelectAll = new ToolStripMenuItem();
+      ActionDelete = new ToolStripMenuItem();
       ContextMenuEdit.Name = "ContextMenuEdit";
       Separator1.Name = "Separator1";
       Separator2.Name = "Separator2";
@@ -80,6 +82,8 @@ namespace Ordisoftware.HebrewCommon
       ActionPaste.Text = "Paste";
       ActionSelectAll.Name = "ActionSelectAll";
       ActionSelectAll.Text = "Select All";
+      ActionDelete.Name = "ActionDelete";
+      ActionDelete.Text = "Delete";
       Relocalize();
       ContextMenuEdit.Items.AddRange(new ToolStripItem[]
                                      {
@@ -90,7 +94,8 @@ namespace Ordisoftware.HebrewCommon
                                        ActionCopy,
                                        ActionPaste,
                                        Separator2,
-                                       ActionSelectAll
+                                       ActionSelectAll,
+                                       ActionDelete
                                      });
     }
 
@@ -105,6 +110,7 @@ namespace Ordisoftware.HebrewCommon
       resources.ApplyResources(ActionCopy, "ActionCopy");
       resources.ApplyResources(ActionPaste, "ActionPaste");
       resources.ApplyResources(ActionSelectAll, "ActionSelectAll");
+      resources.ApplyResources(ActionDelete, "ActionDelete");
     }
 
   }
