@@ -64,6 +64,14 @@ URL = https://www.tsarfat.com
 
 -
 
+Name = (EN) The Yeshiva
+URL = https://www.theyeshiva.net
+
+Name = (EN) Torah Anytime
+URL = https://www.torahanytime.com
+
+-
+
 Name = (FR) Hassidout
 URL = http://hassidout.org
 
