@@ -45,9 +45,6 @@ URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
 Name = (FR) Sitré Haïm (Rav Yossef Hay)
 URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
 
-Name = (EN) TheYeshiva
-URL = https://www.youtube.com/user/TheYeshivaNet
-
 -
 
 Name = (FR) Hevrat Pinto (Rav David Pinto)
@@ -78,6 +75,9 @@ URL = https://www.youtube.com/user/laparacha
 
 Name = (FR) Tsarfat
 URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
+
+Name = (EN) TheYeshiva
+URL = https://www.youtube.com/user/TheYeshivaNet
 
 -
 
