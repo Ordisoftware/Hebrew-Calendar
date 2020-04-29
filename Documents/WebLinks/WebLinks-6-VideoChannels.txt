@@ -13,9 +13,6 @@
 Lang/EN = Video Channels
 Lang/FR = Vidéo Chaînes
 
-Name = (FR) Rav Daniel Abdelhak
-URL = https://www.youtube.com/channel/UCez15LaVOMWjfR02aFCjCMA
-
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/channel/UCdAlxrOJveWBAcyOkilTqeQ
 
