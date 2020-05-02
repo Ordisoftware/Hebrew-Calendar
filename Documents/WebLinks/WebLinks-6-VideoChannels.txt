@@ -73,8 +73,13 @@ URL = https://www.youtube.com/user/laparacha
 Name = (FR) Tsarfat
 URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
 
-Name = (EN) TheYeshiva
+-
+
+Name = (EN) The Yeshiva
 URL = https://www.youtube.com/user/TheYeshivaNet
+
+Name = (EN) Torah Anytime
+URL = https://www.youtube.com/user/torahanytime1
 
 -
 

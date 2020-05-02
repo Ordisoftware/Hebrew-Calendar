@@ -67,6 +67,9 @@ URL = https://www.theyeshiva.net
 Name = (EN) Torah Anytime
 URL = https://www.torahanytime.com
 
+Name = (EN) Torah Café
+URL = https://www.torahcafe.com
+
 -
 
 Name = (FR) Hassidout
