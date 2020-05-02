@@ -151,7 +151,7 @@ namespace Ordisoftware.HebrewCommon
                 if ( item.Tag != null )
                 {
                   SystemHelper.OpenWebLink((string)item.Tag);
-                  Thread.Sleep(2000);
+                  Thread.Sleep(1500);
                 }
             };
           }
