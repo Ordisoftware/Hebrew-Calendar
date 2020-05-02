@@ -113,7 +113,7 @@ Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: 
 Filename: {app}\Setup\dotNetFx45_Full_setup.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}
 Filename: {app}\Setup\SQLiteODBCInstaller.exe
 Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
-Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall skipifsilent unchecked
+Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall skipifsilent
 
 [Code]
 function IsDotNetDetected(version: string; service: cardinal): boolean;
