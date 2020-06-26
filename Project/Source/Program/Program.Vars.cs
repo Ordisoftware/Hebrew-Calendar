@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static Program()
     {
-      MoonMonths = new MoonMonthsFile(MoonMonthsFilename, true, true);
+      MoonMonths = new MoonMonthsFile(MoonMonthsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
     }
 
   }

@@ -34,7 +34,8 @@ namespace Ordisoftware.HebrewCalendar
       ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", MoonMonths.Unicode[(int)LastControl.Tag]));
+        string str = MoonMonths.Unicode[(int)LastControl.Tag].Replace(" א", "").Replace(" ב", "");
+        SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", str));
       });
     }
 

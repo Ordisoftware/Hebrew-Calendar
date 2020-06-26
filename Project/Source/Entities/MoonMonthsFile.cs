@@ -26,8 +26,8 @@ namespace Ordisoftware.HebrewCommon
     public List<OnlineProviderItem> Items { get; }
      = new List<OnlineProviderItem>();
 
-    public MoonMonthsFile(string filename, bool configurable, bool showFileNotFound)
-      : base(filename, configurable, showFileNotFound, true)
+    public MoonMonthsFile(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
+      : base(filename, showFileNotFound, configurable, folder)
     {
     }
 
