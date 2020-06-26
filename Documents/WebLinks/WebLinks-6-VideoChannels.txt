@@ -25,6 +25,9 @@ URL = https://www.youtube.com/channel/UC9x_d0qPTAy-K5GmIwwQfAQ
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
 
+Name = (FR) Rav Avraham Ifrah
+URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
+
 Name = (FR) Rav Yves Marciano
 URL = https://www.youtube.com/channel/UCin_W6_4xI0z0kvXoVHxQtQ
 
@@ -63,6 +66,9 @@ URL = https://www.youtube.com/channel/UCcy6coS9yFqYlcxxNYkgWvQ
 
 Name = (FR) Chiourim.com
 URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
+
+Name = (FR) Israël Torah
+URL = https://www.youtube.com/user/SHIMSHONEATTALI
 
 Name = (FR) Torah Box
 URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
