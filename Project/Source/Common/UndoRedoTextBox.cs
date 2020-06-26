@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-05 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -21,31 +21,31 @@ namespace Ordisoftware.HebrewCommon
 
   public struct UndoRedoItem
   {
-    public string Text;
-    public int SelectionStart;
-    //public int SelectionLength;
-    public UndoRedoItem Set(string text, int selectionStart/*, int selectionLength*/)
+    public string Text { get; set; }
+    public int SelectionStart { get; set; }
+    public int SelectionLength { get; set; }
+    public UndoRedoItem Set(string text, int selectionStart, int selectionLength)
     {
       Text = text;
       SelectionStart = selectionStart;
-      //SelectionLength = selectionLength;
+      SelectionLength = selectionLength;
       return this;
     }
   }
 
   public enum CaretPositionAfterPaste
   {
-    Start,
-    End
+    Beginning,
+    Ending
   }
 
-  public enum TextInsertingMode
+  public enum TextUpdating
   {
-    Full,
+    Text,
     Selected
   }
 
-  public delegate void InsertingTextEventHandler(object sender, TextInsertingMode mode, ref string text);
+  public delegate void InsertingTextEventHandler(object sender, TextUpdating mode, ref string text);
 
   public partial class UndoRedoTextBox : TextBox
   {
@@ -56,7 +56,7 @@ namespace Ordisoftware.HebrewCommon
     private Stack<UndoRedoItem> RedoStack = new Stack<UndoRedoItem>();
 
     public CaretPositionAfterPaste CaretAfterPaste { get; set; }
-      = CaretPositionAfterPaste.End;
+      = CaretPositionAfterPaste.Ending;
 
     public event InsertingTextEventHandler InsertingText;
 
@@ -65,9 +65,9 @@ namespace Ordisoftware.HebrewCommon
       get { return base.Text; }
       set
       {
+        InsertingText?.Invoke(this, TextUpdating.Text, ref value);
         if ( value == null ) value = "";
         if ( value == Text ) return;
-        if ( InsertingText != null ) InsertingText(this, TextInsertingMode.Full, ref value);
         if ( value.Length > MaxLength ) return;
         try
         {
@@ -93,9 +93,9 @@ namespace Ordisoftware.HebrewCommon
       get { return base.SelectedText; }
       set
       {
+        InsertingText?.Invoke(this, TextUpdating.Selected, ref value);
         if ( value == null ) value = "";
         if ( value == base.SelectedText ) return;
-        if ( InsertingText != null ) InsertingText(this, TextInsertingMode.Selected, ref value);
         if ( Text.Length + value.Length - SelectionLength > MaxLength ) return;
         try
         {
@@ -145,7 +145,8 @@ namespace Ordisoftware.HebrewCommon
       ActionCopy.Enabled = b1 && b3;
       ActionCut.Enabled = b2 && b3;
       ActionPaste.Enabled = b2 && !string.IsNullOrEmpty(Clipboard.GetText());
-      ActionSelectAll.Enabled = b1 && !string.IsNullOrEmpty(textbox.Text) && textbox.SelectionLength != textbox.TextLength;
+      ActionSelectAll.Enabled = b1 && !string.IsNullOrEmpty(textbox.Text) 
+                                   && textbox.SelectionLength != textbox.TextLength;
       ActionDelete.Enabled = ActionCut.Enabled;
     }
 
@@ -157,7 +158,7 @@ namespace Ordisoftware.HebrewCommon
     private void AddUndo()
     {
       if ( base.Text == null ) return;
-      Previous.Set(base.Text, SelectionStart);
+      Previous.Set(base.Text, SelectionStart, SelectionLength);
       UndoStack.Push(Previous);
       if ( RedoStack.Count > 0 )
         RedoStack.Clear();
@@ -167,10 +168,10 @@ namespace Ordisoftware.HebrewCommon
     {
       switch ( CaretAfterPaste )
       {
-        case CaretPositionAfterPaste.Start:
+        case CaretPositionAfterPaste.Beginning:
           SelectionStart = pos;
           break;
-        case CaretPositionAfterPaste.End:
+        case CaretPositionAfterPaste.Ending:
           SelectionStart = pos + length;
           break;
         default:
@@ -214,115 +215,20 @@ namespace Ordisoftware.HebrewCommon
       {
         if ( !condition || e.KeyCode != key ) return false;
         e.SuppressKeyPress = true;
-        if ( action != null ) action(this, null);
+        action?.Invoke(this, null);
         return true;
       };
       UpdateMenuItems(this);
-      if ( !check(e.Control, Keys.A, ActionSelectAll_Click) )
-        if ( !check(e.Control, Keys.Z, ActionUndo_Click) )
-          if ( !check(e.Control, Keys.Y, ActionRedo_Click) )
-            if ( !check(e.Control, Keys.Insert, ActionCopy_Click) )
-              if ( !check(e.Shift, Keys.Delete, ActionCut_Click) )
-                if ( !check(e.Shift, Keys.Insert, ActionPaste_Click) )
-                  Previous.Set(Text, SelectionStart);
-    }
-
-    private void ActionSelectAll_Click(object sender, EventArgs e)
-    {
-      var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
-      textbox.SelectAll();
-    }
-
-    private void ActionCopy_Click(object sender, EventArgs e)
-    {
-      var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
-      if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
-      Clipboard.SetText(textbox.SelectedText);
-    }
-
-    private void ActionCut_Click(object sender, EventArgs e)
-    {
-      var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
-      if ( textbox.ReadOnly ) return;
-      if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
-      Clipboard.SetText(textbox.SelectedText);
-      int selectionStart = textbox.SelectionStart;
-      textbox.Text = textbox.Text.Remove(selectionStart, textbox.SelectionLength);
-      textbox.SelectionStart = selectionStart;
-      if ( textbox.Multiline ) textbox.ScrollToCaret();
-    }
-
-    private void ActionDelete_Click(object sender, EventArgs e)
-    {
-      var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
-      if ( textbox.ReadOnly ) return;
-      if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
-      int selectionStart = textbox.SelectionStart;
-      textbox.Text = textbox.Text.Remove(selectionStart, textbox.SelectionLength);
-      textbox.SelectionStart = selectionStart;
-      if ( textbox.Multiline ) textbox.ScrollToCaret();
-    }
-
-    private void ActionPaste_Click(object sender, EventArgs e)
-    {
-      var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
-      if ( textbox.ReadOnly ) return;
-      if ( string.IsNullOrEmpty(Clipboard.GetText()) ) return;
-      textbox.SelectedText = Clipboard.GetText();
-      if ( textbox.Multiline ) textbox.ScrollToCaret();
-    }
-
-    private void ActionUndo_Click(object sender, EventArgs e)
-    {
-      var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
-      if ( textbox.ReadOnly ) return;
-      if ( textbox.UndoStack.Count == 0 ) return;
-      try
-      {
-        textbox.SetTextMutex = true;
-        textbox.Previous.Set(textbox.Text, textbox.SelectionStart);
-        textbox.RedoStack.Push(new UndoRedoItem().Set(textbox.Text, textbox.SelectionStart));
-        var item = textbox.UndoStack.Pop();
-        textbox.Text = item.Text;
-        textbox.SelectionStart = item.SelectionStart;
-        if ( textbox.Multiline ) textbox.ScrollToCaret();
-      }
-      finally
-      {
-        textbox.SetTextMutex = false;
-      }
-    }
-
-    private void ActionRedo_Click(object sender, EventArgs e)
-    {
-      var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
-      if ( textbox.ReadOnly ) return;
-      if ( textbox.RedoStack.Count == 0 ) return;
-      try
-      {
-        textbox.SetTextMutex = true;
-        textbox.UndoStack.Push(new UndoRedoItem().Set(textbox.Text, textbox.SelectionStart));
-        var item = textbox.RedoStack.Pop();
-        Text = item.Text;
-        textbox.SelectionStart = item.SelectionStart;
-        if ( textbox.Multiline ) textbox.ScrollToCaret();
-        textbox.Previous.Set(textbox.Text, textbox.SelectionStart);
-      }
-      finally
-      {
-        textbox.SetTextMutex = false;
-      }
+      if ( !check(e.Control, Keys.A, ActionSelectAll_Click)
+        && !check(e.Control, Keys.Z, ActionUndo_Click)
+        && !check(e.Control, Keys.Y, ActionRedo_Click)
+        && !check(e.Control, Keys.Insert, ActionCopy_Click)
+        && !check(e.Shift, Keys.Delete, ActionCut_Click)
+        && !check(e.Shift, Keys.Insert, ActionPaste_Click) )
+        Previous.Set(Text, SelectionStart, SelectionLength);
     }
 
   }
-
 
 }
 

@@ -13,6 +13,7 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCommon
@@ -32,30 +33,7 @@ namespace Ordisoftware.HebrewCommon
     static private ToolStripMenuItem ActionSelectAll;
     static private ToolStripMenuItem ActionDelete;
 
-    static private UndoRedoTextBox GetTextBoxAndFocus(object sender)
-    {
-      UndoRedoTextBox control = null;
-      if ( sender is ToolStripMenuItem )
-      {
-        var parent = ( (ToolStripMenuItem)sender ).GetCurrentParent();
-        control = (UndoRedoTextBox)( (ContextMenuStrip)parent ).SourceControl;
-        if ( control != null && control.Enabled && !control.Focused )
-          control.Focus();
-      }
-      else
-      if ( sender is ContextMenuStrip )
-      {
-        control = (UndoRedoTextBox)( (ContextMenuStrip)sender ).SourceControl;
-        if ( control != null && control.Enabled && !control.Focused )
-          control.Focus();
-      }
-      else
-      if ( sender is UndoRedoTextBox )
-        control = (UndoRedoTextBox)sender;
-      return control;
-    }
-
-    static void InitializeContextMenu(System.ComponentModel.IContainer container)
+    static void InitializeContextMenu(IContainer container)
     {
       ContextMenuEdit = new ContextMenuStrip(container);
       ActionUndo = new ToolStripMenuItem();
@@ -102,7 +80,7 @@ namespace Ordisoftware.HebrewCommon
     static internal void Relocalize()
     {
       if ( ContextMenuEdit == null ) return;
-      var resources = new System.ComponentModel.ComponentResourceManager(typeof(UndoRedoTextBox));
+      var resources = new ComponentResourceManager(typeof(UndoRedoTextBox));
       resources.ApplyResources(ContextMenuEdit, "ContextMenuEdit");
       resources.ApplyResources(ActionUndo, "ActionUndo");
       resources.ApplyResources(ActionRedo, "ActionRedo");

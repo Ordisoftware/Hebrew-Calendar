@@ -57,7 +57,7 @@
       // Input
       // 
       this.Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.Input.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.End;
+      this.Input.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.Input, "Input");
       this.Input.Name = "Input";
       this.Input.InsertingText += new Ordisoftware.HebrewCommon.InsertingTextEventHandler(this.Input_TextChanging);
