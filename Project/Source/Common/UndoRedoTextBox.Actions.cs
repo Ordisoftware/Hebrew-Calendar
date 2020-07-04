@@ -11,15 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-05 </edited>
+/// <edited> 2020-07 </edited>
 using System;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
 {
 
-  public partial class UndoRedoTextBox : TextBox
+  public partial class UndoRedoTextBox
   {
 
     static private UndoRedoTextBox GetTextBoxAndFocus(object sender)
@@ -30,9 +29,6 @@ namespace Ordisoftware.HebrewCommon
         control = (UndoRedoTextBox)( (ContextMenuStrip)sender ).SourceControl;
         if ( control != null && control.Enabled && !control.Focused )
           control.Focus();
-        else
-        if ( Globals.IsDev )
-          DisplayManager.ShowError($"ContextMenuStrip SourceControl is null in {nameof(GetTextBoxAndFocus)}().");
       }
       else
       if ( sender is ToolStripMenuItem )
@@ -41,16 +37,10 @@ namespace Ordisoftware.HebrewCommon
         control = (UndoRedoTextBox)( (ContextMenuStrip)parent ).SourceControl;
         if ( control != null && control.Enabled && !control.Focused )
           control.Focus();
-        else
-        if ( Globals.IsDev )
-          DisplayManager.ShowError($"ToolStripMenuItem SourceControl is null in {nameof(GetTextBoxAndFocus)}().");
       }
       else
       if ( sender is UndoRedoTextBox )
         control = (UndoRedoTextBox)sender;
-      else
-      if ( Globals.IsDev )
-        DisplayManager.ShowError($"control is {sender.GetType().Name} in {nameof(GetTextBoxAndFocus)}().");
       return control;
     }
 
@@ -128,10 +118,30 @@ namespace Ordisoftware.HebrewCommon
 
     static private void ActionUndo_Click(object sender, EventArgs e)
     {
+      //if ( !Enabled ) return;
+      //if ( sender is ToolStripMenuItem && !Focused ) Focus();
+      //if ( ReadOnly ) return;
+      //if ( UndoStack.Count == 0 ) return;
+      //try
+      //{
+      //  SetTextMutex = true;
+      //  Previous.Set(Text, SelectionStart);
+      //  RedoStack.Push(new UndoRedoItem().Set(Text, SelectionStart));
+      //  var item = UndoStack.Pop();
+      //  Text = item.Text;
+      //  SelectionStart = item.SelectionStart;
+      //}
+      //finally
+      //{
+      //  SetTextMutex = false;
+      //}
+
       var textbox = GetTextBoxAndFocus(sender);
       if ( textbox == null || !textbox.Enabled ) return;
       if ( textbox.ReadOnly ) return;
-      if ( textbox.UndoStack.Count == 0 ) return;
+      if ( !textbox.CanUndo ) return;
+      textbox.Undo();
+      /*if ( textbox.UndoStack.Count == 0 ) return;
       try
       {
         textbox.SetTextMutex = true;
@@ -145,12 +155,30 @@ namespace Ordisoftware.HebrewCommon
       finally
       {
         textbox.SetTextMutex = false;
-      }
+      }*/
     }
 
     static private void ActionRedo_Click(object sender, EventArgs e)
     {
-      var textbox = GetTextBoxAndFocus(sender);
+      //if ( !Enabled ) return;
+      //if ( sender is ToolStripMenuItem && !Focused ) Focus();
+      //if ( ReadOnly ) return;
+      //if ( RedoStack.Count == 0 ) return;
+      //try
+      //{
+      //  SetTextMutex = true;
+      //  UndoStack.Push(new UndoRedoItem().Set(Text, SelectionStart));
+      //  var item = RedoStack.Pop();
+      //  Text = item.Text;
+      //  SelectionStart = item.SelectionStart;
+      //  Previous.Set(Text, SelectionStart);
+      //}
+      //finally
+      //{
+      //  SetTextMutex = false;
+      //}
+
+      /*var textbox = GetTextBoxAndFocus(sender);
       if ( textbox == null || !textbox.Enabled ) return;
       if ( textbox.ReadOnly ) return;
       if ( textbox.RedoStack.Count == 0 ) return;
@@ -167,7 +195,7 @@ namespace Ordisoftware.HebrewCommon
       finally
       {
         textbox.SetTextMutex = false;
-      }
+      }*/
     }
 
   }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-07 </edited>
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -19,9 +19,10 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
-  public partial class UndoRedoTextBox : TextBox
+  public partial class UndoRedoTextBox
   {
 
+    static private IContainer Container;
     static private ContextMenuStrip ContextMenuEdit;
     static private ToolStripMenuItem ActionUndo;
     static private ToolStripMenuItem ActionRedo;
@@ -33,9 +34,10 @@ namespace Ordisoftware.HebrewCommon
     static private ToolStripMenuItem ActionSelectAll;
     static private ToolStripMenuItem ActionDelete;
 
-    static void InitializeContextMenu(IContainer container)
+    static void InitializeContextMenu()
     {
-      ContextMenuEdit = new ContextMenuStrip(container);
+      Container = new Container();
+      ContextMenuEdit = new ContextMenuStrip(Container);
       ActionUndo = new ToolStripMenuItem();
       ActionRedo = new ToolStripMenuItem();
       Separator1 = new ToolStripSeparator();
@@ -45,6 +47,14 @@ namespace Ordisoftware.HebrewCommon
       Separator2 = new ToolStripSeparator();
       ActionSelectAll = new ToolStripMenuItem();
       ActionDelete = new ToolStripMenuItem();
+      ContextMenuEdit.Opened += ContextMenuEdit_Opened;
+      ActionUndo.Click += ActionUndo_Click;
+      ActionRedo.Click += ActionRedo_Click;
+      ActionCopy.Click += ActionCopy_Click;
+      ActionCut.Click += ActionCut_Click;
+      ActionPaste.Click += ActionPaste_Click;
+      ActionSelectAll.Click += ActionSelectAll_Click;
+      ActionDelete.Click += ActionDelete_Click;
       ContextMenuEdit.Name = "ContextMenuEdit";
       Separator1.Name = "Separator1";
       Separator2.Name = "Separator2";
@@ -62,7 +72,7 @@ namespace Ordisoftware.HebrewCommon
       ActionSelectAll.Text = "Select All";
       ActionDelete.Name = "ActionDelete";
       ActionDelete.Text = "Delete";
-      Relocalize();
+      RelocalizeContextMenu();
       ContextMenuEdit.Items.AddRange(new ToolStripItem[]
                                      {
                                        ActionUndo,
@@ -77,7 +87,7 @@ namespace Ordisoftware.HebrewCommon
                                      });
     }
 
-    static internal void Relocalize()
+    static internal void RelocalizeContextMenu()
     {
       if ( ContextMenuEdit == null ) return;
       var resources = new ComponentResourceManager(typeof(UndoRedoTextBox));
@@ -89,6 +99,27 @@ namespace Ordisoftware.HebrewCommon
       resources.ApplyResources(ActionPaste, "ActionPaste");
       resources.ApplyResources(ActionSelectAll, "ActionSelectAll");
       resources.ApplyResources(ActionDelete, "ActionDelete");
+    }
+
+    static private void ContextMenuEdit_Opened(object sender, EventArgs e)
+    {
+      UpdateMenuItems(GetTextBoxAndFocus(sender));
+    }
+
+    static private void UpdateMenuItems(UndoRedoTextBox textbox)
+    {
+      if ( textbox == null ) return;
+      bool b1 = textbox.Enabled;
+      bool b2 = textbox.Enabled && !textbox.ReadOnly;
+      bool b3 = !string.IsNullOrEmpty(textbox.SelectedText);
+      ActionUndo.Enabled = b2 && ( textbox.UndoStack.Count != 0 || textbox.CanUndo ); // TODO fix pb
+      ActionRedo.Enabled = b2 && ( textbox.RedoStack.Count != 0 );
+      ActionCopy.Enabled = b1 && b3;
+      ActionCut.Enabled = b2 && b3;
+      ActionPaste.Enabled = b2 && !string.IsNullOrEmpty(Clipboard.GetText());
+      ActionSelectAll.Enabled = b1 && !string.IsNullOrEmpty(textbox.Text)
+                                   && textbox.SelectionLength != textbox.TextLength;
+      ActionDelete.Enabled = ActionCut.Enabled;
     }
 
   }
