@@ -81,6 +81,17 @@ URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
 
 -
 
+Name = (FR) Aish
+URL = https://www.youtube.com/user/AishFr
+
+Name = (EN) Aish
+URL = https://www.youtube.com/user/AishVideo
+
+Name = (IW) Aish
+URL = https://www.youtube.com/user/AishIvrit
+
+-
+
 Name = (EN) The Yeshiva
 URL = https://www.youtube.com/user/TheYeshivaNet
 

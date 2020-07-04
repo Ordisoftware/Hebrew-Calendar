@@ -12,8 +12,8 @@
 
 FOLDER-SEPARATOR
 
-Lang/EN = Online Torah lessons
-Lang/FR = Cours de Torah en ligne
+Lang/EN = Torah lessons
+Lang/FR = Cours de Torah
 
 Name = (FR) Rav Yehia Benchetrit
 URL = http://ravbenchetrit.com
@@ -61,6 +61,17 @@ URL = https://torahtimes.fr
 
 Name = (FR) Tsarfat
 URL = https://www.tsarfat.com
+
+-
+
+Name = (FR) Aish
+URL = https://www.aish.fr
+
+Name = (EN) Aish
+URL = https://www.aish.com
+
+Name = (IW) Aish
+URL = https://www.aish.co.il
 
 -
 
