@@ -136,6 +136,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Add moon months description form in tools menu.
 - Fix first opening preferences latency on Windows 10.
 - Fix Hebrew Letters path text box color on Windows 10.
+- Fix reset preferences generetes data before setup GPS if undefined.
 
 #### 2020.04.24 - Version 4.0
 
