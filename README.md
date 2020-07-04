@@ -131,9 +131,11 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 ## Changelog
 
-#### 2020.05.__ - Version 4.1
+#### 2020.07.__ - Version 4.1
 
 - Add moon months description form in tools menu.
+- Fix first opening preferences latency on Windows 10.
+- Fix Hebrew Letters path text box color on Windows 10.
 
 #### 2020.04.24 - Version 4.0
 
