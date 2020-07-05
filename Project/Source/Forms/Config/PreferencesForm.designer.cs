@@ -278,19 +278,19 @@
       // LabelTimeZone
       // 
       resources.ApplyResources(this.LabelTimeZone, "LabelTimeZone");
-      this.LabelTimeZone.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelTimeZone.ForeColor = System.Drawing.SystemColors.ControlText;
       this.LabelTimeZone.Name = "LabelTimeZone";
       // 
       // LabelGPSCity
       // 
       resources.ApplyResources(this.LabelGPSCity, "LabelGPSCity");
-      this.LabelGPSCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelGPSCity.ForeColor = System.Drawing.SystemColors.ControlText;
       this.LabelGPSCity.Name = "LabelGPSCity";
       // 
       // LabelGPSCountry
       // 
       resources.ApplyResources(this.LabelGPSCountry, "LabelGPSCountry");
-      this.LabelGPSCountry.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+      this.LabelGPSCountry.ForeColor = System.Drawing.SystemColors.ControlText;
       this.LabelGPSCountry.Name = "LabelGPSCountry";
       // 
       // ActionGetGPS
