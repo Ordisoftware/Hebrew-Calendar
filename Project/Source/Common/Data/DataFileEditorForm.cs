@@ -22,12 +22,12 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewCommon
 {
 
-  public partial class EditDataFileForm : Form
+  public partial class DataFileEditorForm : Form
   {
 
     static public bool Run(DataFile file, string nameInstance)
     {
-      var form = new EditDataFileForm();
+      var form = new DataFileEditorForm();
       form.Text = nameInstance;
       AddTab(form.TabControl, file);
       bool result = form.ShowDialog() == DialogResult.OK;
@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewCommon
 
     static public bool Run(IEnumerable<DataFile> files, string nameInstance)
     {
-      var form = new EditDataFileForm();
+      var form = new DataFileEditorForm();
       form.Text = nameInstance;
       foreach ( var item in files ) AddTab(form.TabControl, item);
       bool result = form.ShowDialog() == DialogResult.OK;
@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewCommon
       tabcontrol.TabPages.Add(tabpage);
     }
 
-    public EditDataFileForm()
+    public DataFileEditorForm()
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;

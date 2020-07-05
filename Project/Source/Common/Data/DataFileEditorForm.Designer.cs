@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.HebrewCommon
 {
-  partial class EditDataFileForm
+  partial class DataFileEditorForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditDataFileForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataFileEditorForm));
       this.PanelBottomSeparator = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionReset = new System.Windows.Forms.LinkLabel();
