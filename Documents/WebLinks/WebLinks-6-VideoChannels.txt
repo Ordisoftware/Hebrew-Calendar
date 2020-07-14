@@ -68,7 +68,7 @@ Name = (FR) Chiourim.com
 URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
 
 Name = (FR) Israël Torah
-URL = https://www.youtube.com/user/SHIMSHONEATTALI
+URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
 
 Name = (FR) Torah Box
 URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA

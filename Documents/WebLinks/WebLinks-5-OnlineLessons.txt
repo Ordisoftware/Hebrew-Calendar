@@ -47,6 +47,9 @@ URL = https://www.dvartorah.org
 Name = (FR) Espace Torah
 URL = http://www.espacetorah.com
 
+Name = (FR) Israël Torah
+URL = https://www.israeltorah.com
+
 Name = (FR) Pureté Juive
 URL = https://www.puretejuive.com
 
