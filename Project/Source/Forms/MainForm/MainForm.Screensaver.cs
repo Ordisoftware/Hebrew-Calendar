@@ -59,13 +59,16 @@ namespace Ordisoftware.HebrewCalendar
                  .Contains(screen.Bounds);
     }
 
-    private bool IsFullScreenOrScreensaver()
+    private bool IsScreensaverActive()
     {
       int active = 1;
       SystemParametersInfo(SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
-      if ( active != 0 ) return true;
-      if ( IsForegroundFullScreen() ) return true;
-      return false;
+      return active != 0;
+    }
+
+    private bool IsForegroundFullScreenOrScreensaver()
+    {
+      return IsForegroundFullScreen() || IsScreensaverActive();
     }
 
   }
