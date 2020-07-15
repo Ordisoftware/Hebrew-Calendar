@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
+using Microsoft.Win32;
 using Ordisoftware.Core.Diagnostics;
 using Ordisoftware.HebrewCommon;
 
@@ -190,35 +191,55 @@ namespace Ordisoftware.Core.Windows.Forms
     private void buttonSendMail_Click(object sender, EventArgs e)
     {
       if ( ErrorInfo == null ) return;
-      TopMost = false;
-      string NewLine = Environment.NewLine;
-      string NewLine2 = NewLine + NewLine;
-      string query = "&title=" + ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion
-                   + "&labels=type: bug"
-                   + "&body=";
-      string body = "## COMMENT" + NewLine2
-                  + Globals.GitHubIssueComment.GetLang() + NewLine2
-                  + "## ERROR : " + ErrorInfo.Instance.GetType().Name + NewLine2
-                  + ErrorInfo.Message + NewLine2
-                  + "#### _STACK_" + NewLine2
-                  + ErrorInfo.StackText;
-      ExceptionInfo inner = ErrorInfo.InnerInfo;
-      while ( inner != null )
+      try
       {
-        body = body + NewLine2
-             + "## INNER : " + inner.Instance.GetType().Name + NewLine2
-             + inner.Message + NewLine2
-             + "#### _STACK_" + NewLine2
-             + inner.StackText;
-        inner = inner.InnerInfo;
+        TopMost = false;
+        string NewLine = Environment.NewLine;
+        string NewLine2 = NewLine + NewLine;
+        string query = "&title=" + ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion
+                     + "&labels=type: bug"
+                     + "&body=";
+        string body = "## COMMENT" + NewLine2
+                    + Globals.GitHubIssueComment.GetLang() + NewLine2
+                    + "## ERROR : " + ErrorInfo.Instance.GetType().Name + NewLine2
+                    + ErrorInfo.Message + NewLine2
+                    + "#### _STACK_" + NewLine2
+                    + ErrorInfo.StackText;
+        ExceptionInfo inner = ErrorInfo.InnerInfo;
+        while ( inner != null )
+        {
+          body = body + NewLine2
+               + "## INNER : " + inner.Instance.GetType().Name + NewLine2
+               + inner.Message + NewLine2
+               + "#### _STACK_" + NewLine2
+               + inner.StackText;
+          inner = inner.InnerInfo;
+        }
+        try
+        {
+          var key = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows NT\\CurrentVersion");
+          string pathName = (string)key.GetValue("productName");
+          long memory = (long)new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory;
+          body += NewLine2
+                + "## SYSTEM" + NewLine2
+                + "OS: " + pathName + " " + ( Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits" ) + NewLine
+                + "Available memory: " + memory.FormatBytesSize(); ;
+        }
+        catch
+        {
+        }
+        query += body;
+        query = query.Replace(" ", "%20")
+                     .Replace("+", "%2B")
+                     .Replace("#", "%23")
+                     .Replace(NewLine, "%0A")
+                     .Replace("%0A%0A%0A", "%0A");
+        SystemHelper.CreateGitHubIssue(query);
       }
-      query += body;
-      query = query.Replace(" ", "%20")
-                   .Replace("+", "%2B")
-                   .Replace("#", "%23")
-                   .Replace(NewLine, "%0A")
-                   .Replace("%0A%0A%0A", "%0A");
-      SystemHelper.CreateGitHubIssue(query);
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(ex.Message);
+      }
       /*string email = SystemManager.User.UserMail;
       if ( email.IsNullOrEmpty() )
         if ( DisplayManager.QueryValue("User email", ref email) == InputValueResult.Cancelled)
