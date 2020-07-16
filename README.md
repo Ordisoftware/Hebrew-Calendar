@@ -28,7 +28,7 @@ A tool for Windows written in C# that allows to generate a calendar based on the
 
 _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
-![Note](http://www.ordisoftware.com/uploads/2019/10/softpedia4.5-1.png)
+![Note](https://www.ordisoftware.com/uploads/2019/10/softpedia4.5-1.png)
 
 ## Requirements
 
@@ -39,19 +39,19 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 ## Screenshots
 
-![Month View](http://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-viewmonth-en-768x565.png)
+![Month View](https://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-viewmonth-en-768x565.png)
 
-![Repport View](http://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-raw-en-768x565.png)
+![Repport View](https://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-raw-en-768x565.png)
 
-![Settings Window](http://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-preferences-en.png)
+![Settings Window](https://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-preferences-en.png)
 
-![Celebrations WIndow](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-celebrations-en.png)
+![Celebrations WIndow](https://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-celebrations-en.png)
 
-![Navigation Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-navigation-en.png)
+![Navigation Window](https://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-navigation-en.png)
 
-![Reminder Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-popupreminder-en.png)
+![Reminder Window](https://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-popupreminder-en.png)
 
-![LockSession Window](http://www.ordisoftware.com/uploads/2019/11/hebrew-calendar-locksession-en.png)
+![LockSession Window](https://www.ordisoftware.com/uploads/2019/11/hebrew-calendar-locksession-en.png)
 
 ## Videos
 

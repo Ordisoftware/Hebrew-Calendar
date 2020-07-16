@@ -848,14 +848,14 @@
       // 
       resources.ApplyResources(this.ActionDownloadHebrewLetters, "ActionDownloadHebrewLetters");
       this.ActionDownloadHebrewLetters.Name = "ActionDownloadHebrewLetters";
-      this.ActionDownloadHebrewLetters.Tag = "http://www.ordisoftware.com/projects/hebrew-letters";
+      this.ActionDownloadHebrewLetters.Tag = "https://www.ordisoftware.com/projects/hebrew-letters";
       this.ActionDownloadHebrewLetters.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // ActionDownloadHebrewWords
       // 
       resources.ApplyResources(this.ActionDownloadHebrewWords, "ActionDownloadHebrewWords");
       this.ActionDownloadHebrewWords.Name = "ActionDownloadHebrewWords";
-      this.ActionDownloadHebrewWords.Tag = "http://www.ordisoftware.com/projects/hebrew-words";
+      this.ActionDownloadHebrewWords.Tag = "https://www.ordisoftware.com/projects/hebrew-words";
       this.ActionDownloadHebrewWords.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // MenuTools
