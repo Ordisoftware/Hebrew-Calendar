@@ -137,10 +137,10 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 #### 2020.__.__ - Version 4.1
 
-- Add a different tray icon to indicate if between the start and the end of a celebration, including week days.
-- Improve suspend reminder to allow auto enabling after a delay.
-- Add web links menu duplicated in the tray icon.
-- Fix reset preferences generetes data before setup GPS if undefined.
+>>>>>- Add a different tray icon to indicate if between the start and the end of a celebration, including week days.
+- Add choosing a delay to allow auto enabling when suspending reminder.
+>>>>>- Add web links menu duplicated in the tray icon.
+>>>>>- Fix reset preferences generetes data before setup GPS if undefined.
 - Fix GPS labels for Windows 10.
 - Fix reminder form border for Windows 10
 - Fix Hebrew Letters path text box color for Windows 10.
