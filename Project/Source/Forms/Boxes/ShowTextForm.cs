@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -24,12 +24,12 @@ namespace Ordisoftware.HebrewCalendar
 
     static public ShowTextForm CreateShabatNotice()
     {
-      return Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 500, 570);
+      return Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 550, 570);
     }
 
     static public ShowTextForm CreateCelebrationsNotice()
     {
-      return Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 500, 370);
+      return Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 520, 380);
     }
 
     static public ShowTextForm Create(string title, string str, int width, int height)

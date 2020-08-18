@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Text;
@@ -138,19 +139,24 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private void LoadFonts()
     {
-      EditFontName.Size = new Size(150, EditFontName.Size.Height);
-      foreach ( var item in new InstalledFontCollection().Families )
+      string[] list = { "Bitstream Vera Sans Mono", "Consolas", "Courier New", "Droid Sans Mono", "Lucida Console" };
+      foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
+        if ( list.Contains(item.Name) )
+          EditFontName.Items.Add(item.Name);
+      //EditFontName.Size = new Size(150, EditFontName.Size.Height);
+      // Removed because of long lag on Windows 10 with MeasureText
+      /*foreach ( var item in new InstalledFontCollection().Families )
         if ( item.Name == "Bitstream Vera Sans Mono" || item.Name == "Droid Sans Mono" )
           EditFontName.Items.Add(item.Name);
         else
         if ( item.IsStyleAvailable(FontStyle.Regular) && !item.Name.StartsWith("Webdings") )
           using ( var font = new Font(item, 10) )
           {
-            float delta = TextRenderer.MeasureText("|" + MainForm.Instance.MoonNewText + "ABCDE", font).Width
-                        - TextRenderer.MeasureText("|" + " abcde", font).Width;
+            float delta = 0;// TextRenderer.MeasureText("|" + MainForm.Instance.MoonNewText + "ABCDE", font).Width
+                            //- TextRenderer.MeasureText("|" + " abcde", font).Width;
             if ( Math.Abs(delta) < float.Epsilon * 2 )
               EditFontName.Items.Add(item.Name);
-          }
+          }*/
     }
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

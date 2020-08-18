@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -45,12 +45,14 @@ namespace Ordisoftware.HebrewCalendar
           ActionSearchMonth.PerformClick();
           return true;
         case Keys.F7:
+        case Keys.Control | Keys.D:
           ActionSearchDay.PerformClick();
           return true;
         case Keys.Control | Keys.T:
           GoToDate(DateTime.Today);
           return true;
         case Keys.Control | Keys.N:
+        case Keys.F9:
           ActionNavigate.PerformClick();
           return true;
         case Keys.Control | Keys.P:
