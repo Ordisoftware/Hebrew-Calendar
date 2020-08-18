@@ -167,6 +167,7 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
+      this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1265,6 +1266,10 @@
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
       // 
+      // TimerResumeReminder
+      // 
+      this.TimerResumeReminder.Tick += new System.EventHandler(this.TimerResumeReminder_Tick);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1444,6 +1449,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuumDB;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.Timer TimerResumeReminder;
   }
 }
 

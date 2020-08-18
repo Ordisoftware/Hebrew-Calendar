@@ -806,6 +806,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MenuEnableReminder_Click(object sender, EventArgs e)
     {
+      TimerResumeReminder.Enabled = false;
       TrayIcon.Icon = Icon;
       MenuResetReminder.Enabled = true;
       ActionResetReminder.Enabled = true;
@@ -823,6 +824,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MenuDisableReminder_Click(object sender, EventArgs e)
     {
+      var delay = SuspendReminderDelayForm.Run();
+      if ( delay == null ) return;
       TrayIcon.Icon = new Icon(Globals.RootFolderPath + "ApplicationPause.ico");
       TimerReminder.Enabled = false;
       MenuResetReminder.Enabled = false;
@@ -836,6 +839,11 @@ namespace Ordisoftware.HebrewCalendar
       ActionEnableReminder.Enabled = true;
       ActionDisableReminder.Enabled = false;
       ClearLists();
+      if ( delay > 0 )
+      {
+        TimerResumeReminder.Interval = delay.Value * 60 * 1000;
+        TimerResumeReminder.Start();
+      }
     }
 
     private void CalendarText_KeyDown(object sender, KeyEventArgs e)
@@ -913,6 +921,12 @@ namespace Ordisoftware.HebrewCalendar
         if ( SQLiteHelper.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
       });
+    }
+
+    private void TimerResumeReminder_Tick(object sender, EventArgs e)
+    {
+      TimerResumeReminder.Enabled = false;
+      MenuEnableReminder.PerformClick();
     }
 
     /// <summary>

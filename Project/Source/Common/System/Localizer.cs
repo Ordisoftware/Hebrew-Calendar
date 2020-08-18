@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -102,6 +102,16 @@ namespace Ordisoftware.HebrewCommon
       return values != null && values.ContainsKey(Language)
         ? values[Language] != null && values[Language].ContainsKey(value) ? values[Language][value] : ""
         : "";
+    }
+
+    /// <summary>
+    /// Get the list translation.
+    /// </summary>
+    /// <typeparam name="T">The type.</typeparam>
+    /// <param name="values">The dictionary containing lang>list.</param>
+    static public List<T> GetLang<T>(this Dictionary<string, List<T>> values)
+    {
+      return values != null && values.ContainsKey(Language) ? values[Language] : null;
     }
 
     /// <summary>
