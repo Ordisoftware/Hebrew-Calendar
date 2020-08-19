@@ -136,6 +136,7 @@
       this.EditCurrentDayForeColor = new System.Windows.Forms.Panel();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
@@ -149,7 +150,6 @@
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
       this.EditMoonDayTextFormatMonth = new System.Windows.Forms.TextBox();
       this.EditMoonDayTextFormatDay = new System.Windows.Forms.TextBox();
-      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -300,19 +300,16 @@
       // LabelTimeZone
       // 
       resources.ApplyResources(this.LabelTimeZone, "LabelTimeZone");
-      this.LabelTimeZone.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelTimeZone.Name = "LabelTimeZone";
       // 
       // LabelGPSCity
       // 
       resources.ApplyResources(this.LabelGPSCity, "LabelGPSCity");
-      this.LabelGPSCity.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelGPSCity.Name = "LabelGPSCity";
       // 
       // LabelGPSCountry
       // 
       resources.ApplyResources(this.LabelGPSCountry, "LabelGPSCountry");
-      this.LabelGPSCountry.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelGPSCountry.Name = "LabelGPSCountry";
       // 
       // ActionGetGPS
@@ -1050,6 +1047,14 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // EditHebrewLettersPath
+      // 
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
+      // 
       // EditVacuumAtStartup
       // 
       resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
@@ -1150,14 +1155,6 @@
       this.EditMoonDayTextFormatDay.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditMoonDayTextFormatDay, "EditMoonDayTextFormatDay");
       this.EditMoonDayTextFormatDay.Name = "EditMoonDayTextFormatDay";
-      // 
-      // EditHebrewLettersPath
-      // 
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
-      this.EditHebrewLettersPath.ReadOnly = true;
       // 
       // PreferencesForm
       // 
