@@ -125,7 +125,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Create submenu items for web links menu.
     /// </summary>
-    static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot)
+    static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot, Action reconstruct)
     {
       menuRoot.DropDownItems.Clear();
       foreach ( var items in Globals.WebLinksProviders )
@@ -171,7 +171,7 @@ namespace Ordisoftware.HebrewCommon
         menuRoot.DropDownItems.Add(CreateConfigureMenuItem((sender, e) =>
         {
           if ( !DataFileEditorForm.Run(Globals.WebLinksProviders, nameof(Globals.WebLinksProviders)) ) return;
-          InitializeFromWebLinks(menuRoot);
+          reconstruct();
         }));
       }
     }

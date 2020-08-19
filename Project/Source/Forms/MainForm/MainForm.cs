@@ -21,6 +21,7 @@ using System.Drawing.Printing;
 using Microsoft.Win32;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
+using EventHandlerSupport;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -65,7 +66,17 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     internal void CreateWebLinks()
     {
-      MenuWebLinks.InitializeFromWebLinks();
+      MenuWebLinks.InitializeFromWebLinks(CreateWebLinks);
+      int count = 0;
+      var items = new ToolStripItem[MenuWebLinks.DropDownItems.Count];
+      foreach ( ToolStripItem item in MenuWebLinks.DropDownItems )
+        if ( item is ToolStripMenuItem )
+          items[count++] = ( (ToolStripMenuItem)item ).Clone();
+        else
+        if ( item is ToolStripSeparator )
+          items[count++] = new ToolStripSeparator();
+      MenuWebLinksTray.DropDownItems.Clear();
+      MenuWebLinksTray.DropDownItems.AddRange(items);
     }
 
     /// <summary>

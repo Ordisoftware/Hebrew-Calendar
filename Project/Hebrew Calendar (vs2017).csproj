@@ -141,6 +141,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
+    <Compile Include="Dependencies\EventHandlerSupport\Extensions.cs" />
     <Compile Include="Dependencies\GenericParsing\FieldType.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParser.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParserAdapter.cs" />

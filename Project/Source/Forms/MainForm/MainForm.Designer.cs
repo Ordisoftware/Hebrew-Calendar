@@ -149,6 +149,7 @@
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
+      this.MenuWebLinksTray = new System.Windows.Forms.ToolStripMenuItem();
       this.CalendarMonth = new Calendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -168,6 +169,7 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
+      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1007,6 +1009,8 @@
             this.toolStripSeparator11,
             this.MenuNavigate,
             this.MenuCelebrations,
+            this.toolStripSeparator6,
+            this.MenuWebLinksTray,
             this.toolStripSeparator7,
             this.MenuResetReminder,
             this.MenuEnableReminder,
@@ -1116,6 +1120,11 @@
       // TimerResumeReminder
       // 
       this.TimerResumeReminder.Tick += new System.EventHandler(this.TimerResumeReminder_Tick);
+      // 
+      // MenuWebLinksTray
+      // 
+      resources.ApplyResources(this.MenuWebLinksTray, "MenuWebLinksTray");
+      this.MenuWebLinksTray.Name = "MenuWebLinksTray";
       // 
       // CalendarMonth
       // 
@@ -1269,6 +1278,11 @@
       // ReportTableAdapter
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
+      // 
+      // toolStripSeparator6
+      // 
+      this.toolStripSeparator6.Name = "toolStripSeparator6";
+      resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
       // 
       // MainForm
       // 
@@ -1450,6 +1464,8 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+    private System.Windows.Forms.ToolStripMenuItem MenuWebLinksTray;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
   }
 }
 
