@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -72,6 +72,8 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.TextColor = EditTextColor.BackColor;
       Program.Settings.TorahEventsCountAsMoon = EditTorahEventsCountAsMoon.Checked;
       Program.Settings.UseColors = EditUseColors.Checked;
+      Program.Settings.MoonDayTextFormatMonth = EditMoonDayTextFormatMonth.Text;
+      Program.Settings.MoonDayTextFormatDay = EditMoonDayTextFormatDay.Text;
     }
 
   }

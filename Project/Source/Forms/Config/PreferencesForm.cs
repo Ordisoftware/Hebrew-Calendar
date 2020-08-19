@@ -39,6 +39,8 @@ namespace Ordisoftware.HebrewCalendar
     public string OldLatitude { get; private set; }
     public string OldLongitude { get; private set; }
     public string OldTimeZone { get; private set; }
+    public string OldMoonDayTextFormatMonth { get; private set; }
+    public string OldMoonDayTextFormatDay { get; private set; }
     public bool OldUseMoonDays { get; private set; }
     public bool MustRefreshMonthView { get; private set; }
 
@@ -257,6 +259,17 @@ namespace Ordisoftware.HebrewCalendar
         ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangEN.BackColor = SystemColors.Control;
       }
+    }
+
+    private void ActionMoonDayTextFormatHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.Show(Translations.MoonDayTextFormatNotice.GetLang());
+    }
+
+    private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
+    {
+      EditMoonDayTextFormatMonth.Text = "[%NUM%]";
+      EditMoonDayTextFormatDay.Text = "#%NUM%";
     }
 
     private void EditUseColors_CheckedChanged(object sender, EventArgs e)

@@ -1196,5 +1196,29 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["MonthViewNoDaysBackColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("[%NUM%]")]
+        public string MoonDayTextFormatMonth {
+            get {
+                return ((string)(this["MoonDayTextFormatMonth"]));
+            }
+            set {
+                this["MoonDayTextFormatMonth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#%NUM%")]
+        public string MoonDayTextFormatDay {
+            get {
+                return ((string)(this["MoonDayTextFormatDay"]));
+            }
+            set {
+                this["MoonDayTextFormatDay"] = value;
+            }
+        }
     }
 }

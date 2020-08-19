@@ -301,5 +301,11 @@
     <Setting Name="MonthViewNoDaysBackColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">250, 250, 250</Value>
     </Setting>
+    <Setting Name="MoonDayTextFormatMonth" Type="System.String" Scope="User">
+      <Value Profile="(Default)">[%NUM%]</Value>
+    </Setting>
+    <Setting Name="MoonDayTextFormatDay" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#%NUM%</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

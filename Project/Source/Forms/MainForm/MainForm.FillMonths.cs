@@ -148,14 +148,14 @@ namespace Ordisoftware.HebrewCalendar
           strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Environment.NewLine
                      + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
           Color colorMoon = Color.Black;
-          //string strMonth = " " + MoonMonths.Names[row.LunarMonth] + " (" + row.LunarMonth + ")";
-          string strMonthDay = $" {MoonMonths.Names[row.LunarMonth]} [{row.LunarMonth}] #{row.LunarDay}";
+          string moonMonth = Program.Settings.MoonDayTextFormatMonth.Replace("%NUM%", row.LunarMonth.ToString());
+          string moonDay = Program.Settings.MoonDayTextFormatDay.Replace("%NUM%", row.LunarDay.ToString());
+          string strMonthDay = $" {MoonMonths.Names[row.LunarMonth]} {moonMonth} {moonDay}";
           colorMoon = row.IsNewMoon == 1
                     ? Program.Settings.CalendarColorTorahEvent
                     : ( row.IsFullMoon == 1
                       ? Program.Settings.CalendarColorFullMoon
                       : Program.Settings.CalendarColorMoon );
-          // TODO use option DefaultTextColor instead of black
           if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           {
             if ( row.Moonset != "" )

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -68,6 +68,13 @@ namespace Ordisoftware.HebrewCalendar
                 "L'application utilise par défaut un omer selon la lune pour les célébrations." + NewLine + NewLine +
                 "Si vous utilisez le omer de la lune alors les dates des célébrations seront calculées selon les saisons et il y aura une inversion entre les hémisphères nord et sud. Dans ce cas, un jour est du coucher de la lune au suivant." + NewLine + NewLine +
                 "Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option dans le rappeleur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant." }
+      };
+
+    static public readonly Dictionary<string, string> MoonDayTextFormatNotice
+      = new Dictionary<string, string>()
+      {
+        { "en", "Use the %NUM% tag to replace the value and add the desired characters." },
+        { "fr", "Utiliser le tag %NUM% pour remplacer la valeur et ajoutez les caractères désirés." },
       };
 
   }
