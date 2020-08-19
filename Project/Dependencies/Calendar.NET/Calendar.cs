@@ -982,13 +982,17 @@ namespace Calendar.NET
            && counter == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN
-                string strCounter = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture);
-                SizeF stringSize = g.MeasureString(strCounter, _todayFont);
-                g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
-                g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
-                /*g.DrawString(
+                if ( Program.Settings.UseColors )
+                {
+                  string strCounter = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture);
+                  SizeF stringSize = g.MeasureString(strCounter, _todayFont);
+                  g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
+                  g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
+                }
+                else
+                g.DrawString(
                     _calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture),
-                    _todayFont, Brushes.Black, xStart + 5, yStart + 2);*/
+                    _todayFont, Brushes.Black, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else
@@ -1004,11 +1008,16 @@ namespace Calendar.NET
            && counter == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN
-                //g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
-                string strCounter = counter.ToString(CultureInfo.InvariantCulture);
-                SizeF stringSize = g.MeasureString(strCounter, _todayFont);
-                g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
-                g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
+                if ( Program.Settings.UseColors )
+                {
+
+                  string strCounter = counter.ToString(CultureInfo.InvariantCulture);
+                  SizeF stringSize = g.MeasureString(strCounter, _todayFont);
+                  g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
+                  g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
+                }
+                else
+                  g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else

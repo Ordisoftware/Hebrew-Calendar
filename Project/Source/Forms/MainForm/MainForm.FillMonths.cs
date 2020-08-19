@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -126,8 +126,16 @@ namespace Ordisoftware.HebrewCalendar
             var item = new CustomEvent();
             item.Date = SQLiteHelper.GetDate(row.Date);
             item.EventFont = new Font("Calibri", Program.Settings.MonthViewFontSize);
-            item.EventColor = Color.OrangeRed;
-            item.EventTextColor = color;
+            if ( Program.Settings.UseColors )
+            {
+              item.EventColor = Color.OrangeRed;
+              item.EventTextColor = color;
+            }
+            else
+            {
+              item.EventColor = Color.Transparent;
+              item.EventTextColor = CalendarMonth.ForeColor;
+            }
             item.EventText = text;
             item.Rank = rank++;
             item.TooltipEnabled = true;

@@ -259,6 +259,11 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private void EditUseColors_CheckedChanged(object sender, EventArgs e)
+    {
+      PanelReminderColors.Enabled = EditUseColors.Checked;
+    }
+
     private void EitReportFont_Changed(object sender, EventArgs e)
     {
       if ( !IsReady ) return;

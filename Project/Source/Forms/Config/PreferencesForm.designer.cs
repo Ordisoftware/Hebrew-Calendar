@@ -142,6 +142,7 @@
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+      this.PanelReminderColors = new System.Windows.Forms.Panel();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -164,6 +165,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       this.GroupBoxMonth.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
+      this.PanelReminderColors.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelGPSLatitude
@@ -278,19 +280,19 @@
       // LabelTimeZone
       // 
       resources.ApplyResources(this.LabelTimeZone, "LabelTimeZone");
-      this.LabelTimeZone.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.LabelTimeZone.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelTimeZone.Name = "LabelTimeZone";
       // 
       // LabelGPSCity
       // 
       resources.ApplyResources(this.LabelGPSCity, "LabelGPSCity");
-      this.LabelGPSCity.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.LabelGPSCity.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelGPSCity.Name = "LabelGPSCity";
       // 
       // LabelGPSCountry
       // 
       resources.ApplyResources(this.LabelGPSCountry, "LabelGPSCountry");
-      this.LabelGPSCountry.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.LabelGPSCountry.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelGPSCountry.Name = "LabelGPSCountry";
       // 
       // ActionGetGPS
@@ -628,22 +630,13 @@
       // 
       // GroupBoxReminder
       // 
+      this.GroupBoxReminder.Controls.Add(this.PanelReminderColors);
       this.GroupBoxReminder.Controls.Add(this.EditUseColors);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationHoursBefore);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationEveryMinutes);
-      this.GroupBoxReminder.Controls.Add(this.label5);
-      this.GroupBoxReminder.Controls.Add(this.label4);
-      this.GroupBoxReminder.Controls.Add(this.label2);
-      this.GroupBoxReminder.Controls.Add(this.label3);
-      this.GroupBoxReminder.Controls.Add(this.label1);
       this.GroupBoxReminder.Controls.Add(this.EditEventsDay);
       this.GroupBoxReminder.Controls.Add(this.EditEvents);
-      this.GroupBoxReminder.Controls.Add(this.EditEventColorMonth);
-      this.GroupBoxReminder.Controls.Add(this.EditEventColorNext);
-      this.GroupBoxReminder.Controls.Add(this.EditEventColorSeason);
-      this.GroupBoxReminder.Controls.Add(this.EditEventColorShabat);
-      this.GroupBoxReminder.Controls.Add(this.EditEventColorTorah);
       this.GroupBoxReminder.Controls.Add(this.EditReminderCelebrationsInterval);
       this.GroupBoxReminder.Controls.Add(this.LabelTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.EditAutoLockSessionTimeOut);
@@ -661,6 +654,7 @@
       resources.ApplyResources(this.EditUseColors, "EditUseColors");
       this.EditUseColors.Name = "EditUseColors";
       this.EditUseColors.UseVisualStyleBackColor = true;
+      this.EditUseColors.CheckedChanged += new System.EventHandler(this.EditUseColors_CheckedChanged);
       // 
       // LabelRemindAutoLockTimeOut
       // 
@@ -1088,6 +1082,21 @@
       // 
       resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
       // 
+      // PanelReminderColors
+      // 
+      this.PanelReminderColors.Controls.Add(this.label1);
+      this.PanelReminderColors.Controls.Add(this.EditEventColorTorah);
+      this.PanelReminderColors.Controls.Add(this.EditEventColorShabat);
+      this.PanelReminderColors.Controls.Add(this.EditEventColorSeason);
+      this.PanelReminderColors.Controls.Add(this.EditEventColorNext);
+      this.PanelReminderColors.Controls.Add(this.label5);
+      this.PanelReminderColors.Controls.Add(this.EditEventColorMonth);
+      this.PanelReminderColors.Controls.Add(this.label4);
+      this.PanelReminderColors.Controls.Add(this.label3);
+      this.PanelReminderColors.Controls.Add(this.label2);
+      resources.ApplyResources(this.PanelReminderColors, "PanelReminderColors");
+      this.PanelReminderColors.Name = "PanelReminderColors";
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -1137,6 +1146,8 @@
       this.GroupBoxMonth.PerformLayout();
       this.GroupBoxSystem.ResumeLayout(false);
       this.GroupBoxSystem.PerformLayout();
+      this.PanelReminderColors.ResumeLayout(false);
+      this.PanelReminderColors.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -1250,5 +1261,6 @@
     private System.Windows.Forms.LinkLabel ActionMonthViewThemeDark;
     private System.Windows.Forms.Label LabelColorNoDay;
     internal System.Windows.Forms.Panel EditCalendarColorNoDay;
+    private System.Windows.Forms.Panel PanelReminderColors;
   }
 }
