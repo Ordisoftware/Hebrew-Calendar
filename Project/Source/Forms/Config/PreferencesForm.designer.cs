@@ -36,21 +36,17 @@
       System.Windows.Forms.Label LabelHebrewLettersPath;
       System.Windows.Forms.Label LabelMoonDayTextFormatMonth;
       System.Windows.Forms.Label LabelMoonDayTextFormatDay;
+      System.Windows.Forms.Label LabelTimeZone;
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
       this.LabelShabatDay = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
       this.EditShabatDay = new System.Windows.Forms.ComboBox();
       this.LabelFontName = new System.Windows.Forms.Label();
-      this.EditGPSLatitude = new System.Windows.Forms.TextBox();
-      this.EditGPSLongitude = new System.Windows.Forms.TextBox();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionResetSettings = new System.Windows.Forms.LinkLabel();
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
-      this.LabelTimeZone = new System.Windows.Forms.Label();
-      this.LabelGPSCity = new System.Windows.Forms.Label();
-      this.LabelGPSCountry = new System.Windows.Forms.Label();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
       this.GroupBoxTextReport = new System.Windows.Forms.GroupBox();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
@@ -136,7 +132,6 @@
       this.EditCurrentDayForeColor = new System.Windows.Forms.Panel();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
-      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
@@ -148,14 +143,19 @@
       this.GroupBoxMoonDayTextFormat = new System.Windows.Forms.GroupBox();
       this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
-      this.EditMoonDayTextFormatMonth = new System.Windows.Forms.TextBox();
-      this.EditMoonDayTextFormatDay = new System.Windows.Forms.TextBox();
+      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditMoonDayTextFormatMonth = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditMoonDayTextFormatDay = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelMoonDayTextFormatMonth = new System.Windows.Forms.Label();
       LabelMoonDayTextFormatDay = new System.Windows.Forms.Label();
+      LabelTimeZone = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxGPS.SuspendLayout();
       this.GroupBoxTextReport.SuspendLayout();
@@ -208,6 +208,11 @@
       resources.ApplyResources(LabelMoonDayTextFormatDay, "LabelMoonDayTextFormatDay");
       LabelMoonDayTextFormatDay.Name = "LabelMoonDayTextFormatDay";
       // 
+      // LabelTimeZone
+      // 
+      resources.ApplyResources(LabelTimeZone, "LabelTimeZone");
+      LabelTimeZone.Name = "LabelTimeZone";
+      // 
       // DialogColor
       // 
       this.DialogColor.FullOpen = true;
@@ -242,20 +247,6 @@
       resources.ApplyResources(this.LabelFontName, "LabelFontName");
       this.LabelFontName.Name = "LabelFontName";
       // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      // 
       // PanelButtons
       // 
       this.PanelButtons.Controls.Add(this.ActionResetSettings);
@@ -285,32 +276,16 @@
       // 
       // GroupBoxGPS
       // 
-      this.GroupBoxGPS.Controls.Add(this.LabelTimeZone);
-      this.GroupBoxGPS.Controls.Add(this.LabelGPSCity);
-      this.GroupBoxGPS.Controls.Add(this.LabelGPSCountry);
       this.GroupBoxGPS.Controls.Add(this.ActionGetGPS);
       this.GroupBoxGPS.Controls.Add(this.EditGPSLatitude);
       this.GroupBoxGPS.Controls.Add(LabelGPSLatitude);
+      this.GroupBoxGPS.Controls.Add(this.EditTimeZone);
       this.GroupBoxGPS.Controls.Add(this.EditGPSLongitude);
+      this.GroupBoxGPS.Controls.Add(LabelTimeZone);
       this.GroupBoxGPS.Controls.Add(LabelGPSLongitude);
       resources.ApplyResources(this.GroupBoxGPS, "GroupBoxGPS");
       this.GroupBoxGPS.Name = "GroupBoxGPS";
       this.GroupBoxGPS.TabStop = false;
-      // 
-      // LabelTimeZone
-      // 
-      resources.ApplyResources(this.LabelTimeZone, "LabelTimeZone");
-      this.LabelTimeZone.Name = "LabelTimeZone";
-      // 
-      // LabelGPSCity
-      // 
-      resources.ApplyResources(this.LabelGPSCity, "LabelGPSCity");
-      this.LabelGPSCity.Name = "LabelGPSCity";
-      // 
-      // LabelGPSCountry
-      // 
-      resources.ApplyResources(this.LabelGPSCountry, "LabelGPSCountry");
-      this.LabelGPSCountry.Name = "LabelGPSCountry";
       // 
       // ActionGetGPS
       // 
@@ -751,7 +726,6 @@
       resources.ApplyResources(this.EditUseColors, "EditUseColors");
       this.EditUseColors.Name = "EditUseColors";
       this.EditUseColors.UseVisualStyleBackColor = true;
-      this.EditUseColors.CheckedChanged += new System.EventHandler(this.EditUseColors_CheckedChanged);
       // 
       // LabelRemindAutoLockTimeOut
       // 
@@ -1047,14 +1021,6 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
-      // EditHebrewLettersPath
-      // 
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
-      this.EditHebrewLettersPath.ReadOnly = true;
-      // 
       // EditVacuumAtStartup
       // 
       resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
@@ -1144,17 +1110,48 @@
       this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
       // 
+      // EditHebrewLettersPath
+      // 
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
+      // 
       // EditMoonDayTextFormatMonth
       // 
       this.EditMoonDayTextFormatMonth.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormatMonth.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditMoonDayTextFormatMonth, "EditMoonDayTextFormatMonth");
       this.EditMoonDayTextFormatMonth.Name = "EditMoonDayTextFormatMonth";
       // 
       // EditMoonDayTextFormatDay
       // 
       this.EditMoonDayTextFormatDay.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormatDay.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditMoonDayTextFormatDay, "EditMoonDayTextFormatDay");
       this.EditMoonDayTextFormatDay.Name = "EditMoonDayTextFormatDay";
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
       // 
       // PreferencesForm
       // 
@@ -1222,8 +1219,8 @@
     private System.Windows.Forms.Label LabelFontName;
     private System.Windows.Forms.ComboBox EditFontName;
     private System.Windows.Forms.ComboBox EditShabatDay;
-    private System.Windows.Forms.TextBox EditGPSLatitude;
-    private System.Windows.Forms.TextBox EditGPSLongitude;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditGPSLatitude;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditGPSLongitude;
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.LinkLabel ActionUsePersonalShabat;
     private System.Windows.Forms.GroupBox GroupBoxGPS;
@@ -1302,9 +1299,6 @@
     private System.Windows.Forms.CheckBox EditTorahEventsCountAsMoon;
     private System.Windows.Forms.NumericUpDown EditBalloonLoomingDelay;
     private System.Windows.Forms.Label LabelLoomingDelay;
-    private System.Windows.Forms.Label LabelGPSCountry;
-    private System.Windows.Forms.Label LabelTimeZone;
-    private System.Windows.Forms.Label LabelGPSCity;
     private System.Windows.Forms.Label LabelRemindAutoLockTimeOut;
     private System.Windows.Forms.NumericUpDown EditAutoLockSessionTimeOut;
     private System.Windows.Forms.CheckBox EditAutoLockSession;
@@ -1325,9 +1319,10 @@
     internal System.Windows.Forms.Panel EditCalendarColorNoDay;
     private System.Windows.Forms.Panel PanelReminderColors;
     private System.Windows.Forms.GroupBox GroupBoxMoonDayTextFormat;
-    private System.Windows.Forms.TextBox EditMoonDayTextFormatMonth;
-    private System.Windows.Forms.TextBox EditMoonDayTextFormatDay;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditMoonDayTextFormatMonth;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditMoonDayTextFormatDay;
     private System.Windows.Forms.Button ActionMoonDayTextFormatReset;
     private System.Windows.Forms.Button ActionMoonDayTextFormatHelp;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditTimeZone;
   }
 }

@@ -198,13 +198,16 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSCountry = form.Country;
       Program.Settings.GPSCity = form.City;
       Program.Settings.Save();
-      LabelGPSCountry.Text = Program.Settings.GPSCountry;
-      LabelGPSCity.Text = Program.Settings.GPSCity;
+      string str = Program.Settings.GPSCountry + Environment.NewLine
+                 + Program.Settings.GPSCity
+                 + Environment.NewLine
+                 + Environment.NewLine;
       if ( form.EditTimeZone.SelectedItem != null )
       {
         Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-        LabelTimeZone.Text = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
+        str += ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
       }
+      EditTimeZone.Text = str;
     }
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -270,11 +273,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       EditMoonDayTextFormatMonth.Text = "[%NUM%]";
       EditMoonDayTextFormatDay.Text = "#%NUM%";
-    }
-
-    private void EditUseColors_CheckedChanged(object sender, EventArgs e)
-    {
-      PanelReminderColors.Enabled = EditUseColors.Checked;
     }
 
     private void EitReportFont_Changed(object sender, EventArgs e)

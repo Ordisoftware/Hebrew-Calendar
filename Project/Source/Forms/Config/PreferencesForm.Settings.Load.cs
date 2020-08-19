@@ -73,8 +73,6 @@ namespace Ordisoftware.HebrewCalendar
       EditTorahEventsCountAsMoon.Checked = Program.Settings.TorahEventsCountAsMoon;
       EditUseColors.Checked = Program.Settings.UseColors;
       EditMonthViewFontSize.Value = Program.Settings.MonthViewFontSize;
-      LabelGPSCity.Text = Program.Settings.GPSCity;
-      LabelGPSCountry.Text = Program.Settings.GPSCountry;
       OldLatitude = Program.Settings.GPSLatitude;
       OldLongitude = Program.Settings.GPSLongitude;
       OldReminderCurrentDayColor = Program.Settings.EventColorTorah;

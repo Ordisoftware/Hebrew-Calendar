@@ -48,9 +48,17 @@ namespace Ordisoftware.HebrewCalendar
           break;
         }
       LoadSettings();
+      string str = Program.Settings.GPSCountry + Environment.NewLine
+                 + Program.Settings.GPSCity
+                 + Environment.NewLine
+                 + Environment.NewLine;
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( Program.Settings.TimeZone == item.Id )
-          LabelTimeZone.Text = item.DisplayName;
+        {
+          str += item.DisplayName;
+          break;
+        }
+      EditTimeZone.Text = str;
       switch ( Program.Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
