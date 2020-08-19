@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Data;
 using System.Linq;
@@ -71,9 +71,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void CelebrationsForm_Load(object sender, EventArgs e)
     {
-      // TODO check chy "Instance."
-      if ( Instance.Location.X == -1 || Instance.Location.Y == -1 )
-        Instance.CenterToMainForm();
+      if ( Location.X == -1 || Location.Y == -1 )
+        this.CenterToMainForm();
     }
 
     private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)
