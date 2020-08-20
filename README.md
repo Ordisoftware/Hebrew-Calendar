@@ -114,11 +114,11 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - F4 : Next celebrations window
 - F5 : Search a celebration window
 - F6 : Search a moon month window
-- F7 : Search a day window
+- F7 : Search a day window (also Ctrl+D)
+- F9 : Navigation window (also Ctrl+N)
 - Ctrl+Tab : Next view
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today
-- Ctrl+N : Navigation window
 - Ctrl+C : Copy text report to clipboard
 - Ctrl+P : Print month view
 - Ctrl+S : Save text report to text file
@@ -136,12 +136,12 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 ## Changelog
 
-#### 2020.08.__ - Version 4.1
+#### 2020.08.21 - Version 4.1
 
 - Add choosing a delay to allow auto enabling when suspending reminder.
 - Add option to define moon day text format for calendar month view.
 - Add web links menu duplicated in the tray icon.
->>>>>- Fix reset preferences generetes data before setup GPS if undefined.
+- Fix reset preferences generetes data before setup GPS if undefined.
 - Fix GPS labels for Windows 10.
 - Fix reminder form border for Windows 10
 - Fix Hebrew Letters path text box color for Windows 10.
