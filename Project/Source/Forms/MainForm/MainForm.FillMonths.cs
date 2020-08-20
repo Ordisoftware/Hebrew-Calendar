@@ -148,9 +148,10 @@ namespace Ordisoftware.HebrewCalendar
           strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Environment.NewLine
                      + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
           Color colorMoon = Color.Black;
-          string moonMonth = Program.Settings.MoonDayTextFormatMonth.Replace("%NUM%", row.LunarMonth.ToString());
-          string moonDay = Program.Settings.MoonDayTextFormatDay.Replace("%NUM%", row.LunarDay.ToString());
-          string strMonthDay = $" {MoonMonths.Names[row.LunarMonth]} {moonMonth} {moonDay}";
+          string strMonthDay = Program.Settings.MoonDayTextFormat
+                               .Replace("%MONTHNAME%", MoonMonths.Names[row.LunarMonth])
+                               .Replace("%MONTHNUM%", row.LunarMonth.ToString())
+                               .Replace("%DAYNUM%", row.LunarDay.ToString());
           colorMoon = row.IsNewMoon == 1
                     ? Program.Settings.CalendarColorTorahEvent
                     : ( row.IsFullMoon == 1
@@ -161,12 +162,12 @@ namespace Ordisoftware.HebrewCalendar
             if ( row.Moonset != "" )
               add(Program.Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
-              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + strMonthDay);
+              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
           }
           else
           {
             if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
-              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + strMonthDay);
+              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
             if ( row.Moonset != "" )
               add(Program.Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
           }

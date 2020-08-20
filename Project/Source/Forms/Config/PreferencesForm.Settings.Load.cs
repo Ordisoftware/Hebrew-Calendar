@@ -80,11 +80,8 @@ namespace Ordisoftware.HebrewCalendar
       OldReminderUseColors = Program.Settings.UseColors;
       OldShabatDay = Program.Settings.ShabatDay;
       OldTimeZone = Program.Settings.TimeZone;
-      OldMoonDayTextFormatMonth = Program.Settings.MoonDayTextFormatMonth;
-      OldMoonDayTextFormatDay = Program.Settings.MoonDayTextFormatDay;
       OldUseMoonDays = Program.Settings.TorahEventsCountAsMoon;
-      EditMoonDayTextFormatMonth.Text = Program.Settings.MoonDayTextFormatMonth;
-      EditMoonDayTextFormatDay.Text = Program.Settings.MoonDayTextFormatDay;
+      EditMoonDayTextFormat.Text = Program.Settings.MoonDayTextFormat;
     }
 
   }

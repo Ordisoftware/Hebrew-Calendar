@@ -34,8 +34,6 @@
       System.Windows.Forms.Label LabelGPSLongitude;
       System.Windows.Forms.Label label7;
       System.Windows.Forms.Label LabelHebrewLettersPath;
-      System.Windows.Forms.Label LabelMoonDayTextFormatMonth;
-      System.Windows.Forms.Label LabelMoonDayTextFormatDay;
       System.Windows.Forms.Label LabelTimeZone;
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
@@ -142,10 +140,14 @@
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.GroupBoxMoonDayTextFormat = new System.Windows.Forms.GroupBox();
       this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
+      this.MenuSelectMoonDayTextFormat = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.nissan11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.nissan11ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.nissanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
       this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditMoonDayTextFormatMonth = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditMoonDayTextFormatDay = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditTimeZone = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditGPSLongitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
@@ -153,8 +155,6 @@
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
-      LabelMoonDayTextFormatMonth = new System.Windows.Forms.Label();
-      LabelMoonDayTextFormatDay = new System.Windows.Forms.Label();
       LabelTimeZone = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxGPS.SuspendLayout();
@@ -176,6 +176,7 @@
       this.GroupBoxMonth.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
       this.GroupBoxMoonDayTextFormat.SuspendLayout();
+      this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelGPSLatitude
@@ -197,16 +198,6 @@
       // 
       resources.ApplyResources(LabelHebrewLettersPath, "LabelHebrewLettersPath");
       LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
-      // 
-      // LabelMoonDayTextFormatMonth
-      // 
-      resources.ApplyResources(LabelMoonDayTextFormatMonth, "LabelMoonDayTextFormatMonth");
-      LabelMoonDayTextFormatMonth.Name = "LabelMoonDayTextFormatMonth";
-      // 
-      // LabelMoonDayTextFormatDay
-      // 
-      resources.ApplyResources(LabelMoonDayTextFormatDay, "LabelMoonDayTextFormatDay");
-      LabelMoonDayTextFormatDay.Name = "LabelMoonDayTextFormatDay";
       // 
       // LabelTimeZone
       // 
@@ -1084,10 +1075,7 @@
       // 
       this.GroupBoxMoonDayTextFormat.Controls.Add(this.ActionMoonDayTextFormatReset);
       this.GroupBoxMoonDayTextFormat.Controls.Add(this.ActionMoonDayTextFormatHelp);
-      this.GroupBoxMoonDayTextFormat.Controls.Add(this.EditMoonDayTextFormatMonth);
-      this.GroupBoxMoonDayTextFormat.Controls.Add(LabelMoonDayTextFormatMonth);
-      this.GroupBoxMoonDayTextFormat.Controls.Add(this.EditMoonDayTextFormatDay);
-      this.GroupBoxMoonDayTextFormat.Controls.Add(LabelMoonDayTextFormatDay);
+      this.GroupBoxMoonDayTextFormat.Controls.Add(this.EditMoonDayTextFormat);
       resources.ApplyResources(this.GroupBoxMoonDayTextFormat, "GroupBoxMoonDayTextFormat");
       this.GroupBoxMoonDayTextFormat.Name = "GroupBoxMoonDayTextFormat";
       this.GroupBoxMoonDayTextFormat.TabStop = false;
@@ -1095,11 +1083,51 @@
       // ActionMoonDayTextFormatReset
       // 
       this.ActionMoonDayTextFormatReset.AllowDrop = true;
+      this.ActionMoonDayTextFormatReset.ContextMenuStrip = this.MenuSelectMoonDayTextFormat;
       this.ActionMoonDayTextFormatReset.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionMoonDayTextFormatReset, "ActionMoonDayTextFormatReset");
       this.ActionMoonDayTextFormatReset.Name = "ActionMoonDayTextFormatReset";
       this.ActionMoonDayTextFormatReset.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatReset.Click += new System.EventHandler(this.ActionMoonDayTextFormatReset_Click);
+      // 
+      // MenuSelectMoonDayTextFormat
+      // 
+      this.MenuSelectMoonDayTextFormat.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nissan11ToolStripMenuItem,
+            this.nissan11ToolStripMenuItem1,
+            this.nissanToolStripMenuItem,
+            this.nissan1ToolStripMenuItem});
+      this.MenuSelectMoonDayTextFormat.Name = "MenuSelectMoonDayTextFormat";
+      this.MenuSelectMoonDayTextFormat.ShowImageMargin = false;
+      resources.ApplyResources(this.MenuSelectMoonDayTextFormat, "MenuSelectMoonDayTextFormat");
+      // 
+      // nissan11ToolStripMenuItem
+      // 
+      this.nissan11ToolStripMenuItem.Name = "nissan11ToolStripMenuItem";
+      resources.ApplyResources(this.nissan11ToolStripMenuItem, "nissan11ToolStripMenuItem");
+      this.nissan11ToolStripMenuItem.Tag = "%MONTHNAME% [%MONTHNUM%] #%DAYNUM%";
+      this.nissan11ToolStripMenuItem.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // nissan11ToolStripMenuItem1
+      // 
+      this.nissan11ToolStripMenuItem1.Name = "nissan11ToolStripMenuItem1";
+      resources.ApplyResources(this.nissan11ToolStripMenuItem1, "nissan11ToolStripMenuItem1");
+      this.nissan11ToolStripMenuItem1.Tag = "%MONTHNAME% (%MONTHNUM%) #%DAYNUM%";
+      this.nissan11ToolStripMenuItem1.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // nissanToolStripMenuItem
+      // 
+      this.nissanToolStripMenuItem.Name = "nissanToolStripMenuItem";
+      resources.ApplyResources(this.nissanToolStripMenuItem, "nissanToolStripMenuItem");
+      this.nissanToolStripMenuItem.Tag = "%MONTHNAME% #%DAYNUM%";
+      this.nissanToolStripMenuItem.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // nissan1ToolStripMenuItem
+      // 
+      this.nissan1ToolStripMenuItem.Name = "nissan1ToolStripMenuItem";
+      resources.ApplyResources(this.nissan1ToolStripMenuItem, "nissan1ToolStripMenuItem");
+      this.nissan1ToolStripMenuItem.Tag = "%MONTHNAME% %DAYNUM%";
+      this.nissan1ToolStripMenuItem.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
       // ActionMoonDayTextFormatHelp
       // 
@@ -1118,19 +1146,12 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
-      // EditMoonDayTextFormatMonth
+      // EditMoonDayTextFormat
       // 
-      this.EditMoonDayTextFormatMonth.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormatMonth.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormatMonth, "EditMoonDayTextFormatMonth");
-      this.EditMoonDayTextFormatMonth.Name = "EditMoonDayTextFormatMonth";
-      // 
-      // EditMoonDayTextFormatDay
-      // 
-      this.EditMoonDayTextFormatDay.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormatDay.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormatDay, "EditMoonDayTextFormatDay");
-      this.EditMoonDayTextFormatDay.Name = "EditMoonDayTextFormatDay";
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
       // 
       // EditGPSLatitude
       // 
@@ -1207,6 +1228,7 @@
       this.GroupBoxSystem.PerformLayout();
       this.GroupBoxMoonDayTextFormat.ResumeLayout(false);
       this.GroupBoxMoonDayTextFormat.PerformLayout();
+      this.MenuSelectMoonDayTextFormat.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -1319,10 +1341,14 @@
     internal System.Windows.Forms.Panel EditCalendarColorNoDay;
     private System.Windows.Forms.Panel PanelReminderColors;
     private System.Windows.Forms.GroupBox GroupBoxMoonDayTextFormat;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditMoonDayTextFormatMonth;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditMoonDayTextFormatDay;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditMoonDayTextFormat;
     private System.Windows.Forms.Button ActionMoonDayTextFormatReset;
     private System.Windows.Forms.Button ActionMoonDayTextFormatHelp;
     private Ordisoftware.HebrewCommon.UndoRedoTextBox EditTimeZone;
+    private System.Windows.Forms.ContextMenuStrip MenuSelectMoonDayTextFormat;
+    private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem nissanToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem nissan1ToolStripMenuItem;
   }
 }

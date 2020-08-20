@@ -1199,25 +1199,13 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("[%NUM%]")]
-        public string MoonDayTextFormatMonth {
+        [global::System.Configuration.DefaultSettingValueAttribute("%MONTHNAME% [%MONTHNUM%] #%DAYNUM%")]
+        public string MoonDayTextFormat {
             get {
-                return ((string)(this["MoonDayTextFormatMonth"]));
+                return ((string)(this["MoonDayTextFormat"]));
             }
             set {
-                this["MoonDayTextFormatMonth"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("#%NUM%")]
-        public string MoonDayTextFormatDay {
-            get {
-                return ((string)(this["MoonDayTextFormatDay"]));
-            }
-            set {
-                this["MoonDayTextFormatDay"] = value;
+                this["MoonDayTextFormat"] = value;
             }
         }
         

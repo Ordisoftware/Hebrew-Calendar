@@ -77,8 +77,6 @@ namespace Ordisoftware.HebrewCalendar
                  || form.OldReminderCurrentDayColor != Program.Settings.EventColorTorah
                  || form.OldUseMoonDays != Program.Settings.TorahEventsCountAsMoon
                  || form.OldTimeZone != Program.Settings.TimeZone
-                 || form.OldMoonDayTextFormatMonth != Program.Settings.MoonDayTextFormatMonth
-                 || form.OldMoonDayTextFormatDay != Program.Settings.MoonDayTextFormatDay
                  || lang != Program.Settings.Language;
       if ( !result && form.MustRefreshMonthView )
         MainForm.Instance.UpdateCalendarMonth(true);

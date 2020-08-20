@@ -39,8 +39,6 @@ namespace Ordisoftware.HebrewCalendar
     public string OldLatitude { get; private set; }
     public string OldLongitude { get; private set; }
     public string OldTimeZone { get; private set; }
-    public string OldMoonDayTextFormatMonth { get; private set; }
-    public string OldMoonDayTextFormatDay { get; private set; }
     public bool OldUseMoonDays { get; private set; }
     public bool MustRefreshMonthView { get; private set; }
 
@@ -272,8 +270,13 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
     {
-      EditMoonDayTextFormatMonth.Text = "[%NUM%]";
-      EditMoonDayTextFormatDay.Text = "#%NUM%";
+      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset, new Point(0, ActionMoonDayTextFormatReset.Height));
+    }
+
+    private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
+    {
+      EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem ).Tag;
+      MustRefreshMonthView = true;
     }
 
     private void EitReportFont_Changed(object sender, EventArgs e)

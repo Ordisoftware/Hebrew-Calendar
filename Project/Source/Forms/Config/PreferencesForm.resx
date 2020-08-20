@@ -270,84 +270,6 @@
   <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="LabelMoonDayTextFormatMonth.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelMoonDayTextFormatMonth.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelMoonDayTextFormatMonth.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelMoonDayTextFormatMonth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelMoonDayTextFormatMonth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 27</value>
-  </data>
-  <data name="LabelMoonDayTextFormatMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="LabelMoonDayTextFormatMonth.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
-  </data>
-  <data name="LabelMoonDayTextFormatMonth.Text" xml:space="preserve">
-    <value>Month #</value>
-  </data>
-  <data name="LabelMoonDayTextFormatMonth.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonDayTextFormatMonth.Name" xml:space="preserve">
-    <value>LabelMoonDayTextFormatMonth</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonDayTextFormatMonth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonDayTextFormatMonth.Parent" xml:space="preserve">
-    <value>GroupBoxMoonDayTextFormat</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonDayTextFormatMonth.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="LabelMoonDayTextFormatDay.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelMoonDayTextFormatDay.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelMoonDayTextFormatDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelMoonDayTextFormatDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelMoonDayTextFormatDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 53</value>
-  </data>
-  <data name="LabelMoonDayTextFormatDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 13</value>
-  </data>
-  <data name="LabelMoonDayTextFormatDay.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
-  </data>
-  <data name="LabelMoonDayTextFormatDay.Text" xml:space="preserve">
-    <value>Day #</value>
-  </data>
-  <data name="LabelMoonDayTextFormatDay.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonDayTextFormatDay.Name" xml:space="preserve">
-    <value>LabelMoonDayTextFormatDay</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonDayTextFormatDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonDayTextFormatDay.Parent" xml:space="preserve">
-    <value>GroupBoxMoonDayTextFormat</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonDayTextFormatDay.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <metadata name="LabelTimeZone.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
@@ -598,7 +520,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="ActionUsePersonalShabat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -772,7 +694,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxGPS.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1018,7 +940,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxTextReport.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1225,7 +1147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BroupBoxShabat.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1522,7 +1444,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxNavigation.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="EditBalloonAutoHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1738,7 +1660,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxTrayIcon.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="EditStartupHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2518,7 +2440,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxReminder.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditMonthViewSunToolTips.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3169,7 +3091,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxMonth.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3536,13 +3458,49 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxSystem.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>139, 21</value>
   </metadata>
   <data name="OpenFileDialog.Filter" xml:space="preserve">
     <value>Exe files (*.exe)|*.exe</value>
+  </data>
+  <metadata name="MenuSelectMoonDayTextFormat.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>274, 21</value>
+  </metadata>
+  <data name="nissan11ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissan11ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nissan [1] #10</value>
+  </data>
+  <data name="nissan11ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissan11ToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Nissan (1) #10</value>
+  </data>
+  <data name="nissanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissanToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nissan #10</value>
+  </data>
+  <data name="nissan1ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissan1ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nissan 10</value>
+  </data>
+  <data name="MenuSelectMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 92</value>
+  </data>
+  <data name="&gt;&gt;MenuSelectMoonDayTextFormat.Name" xml:space="preserve">
+    <value>MenuSelectMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;MenuSelectMoonDayTextFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3565,7 +3523,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 48</value>
+    <value>11, 48</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
@@ -3608,7 +3566,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 22</value>
+    <value>41, 48</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
@@ -3628,53 +3586,29 @@
   <data name="&gt;&gt;ActionMoonDayTextFormatHelp.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="EditMoonDayTextFormatMonth.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditMoonDayTextFormatMonth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 24</value>
+  <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 25</value>
   </data>
-  <data name="EditMoonDayTextFormatMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
+  <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 20</value>
   </data>
-  <data name="EditMoonDayTextFormatMonth.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
   </data>
-  <data name="&gt;&gt;EditMoonDayTextFormatMonth.Name" xml:space="preserve">
-    <value>EditMoonDayTextFormatMonth</value>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
+    <value>EditMoonDayTextFormat</value>
   </data>
-  <data name="&gt;&gt;EditMoonDayTextFormatMonth.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;EditMoonDayTextFormatMonth.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>GroupBoxMoonDayTextFormat</value>
   </data>
-  <data name="&gt;&gt;EditMoonDayTextFormatMonth.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="EditMoonDayTextFormatDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditMoonDayTextFormatDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 50</value>
-  </data>
-  <data name="EditMoonDayTextFormatDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="EditMoonDayTextFormatDay.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormatDay.Name" xml:space="preserve">
-    <value>EditMoonDayTextFormatDay</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormatDay.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormatDay.Parent" xml:space="preserve">
-    <value>GroupBoxMoonDayTextFormat</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormatDay.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="GroupBoxMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -3701,7 +3635,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3735,6 +3669,30 @@
   </data>
   <data name="&gt;&gt;OpenFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nissan11ToolStripMenuItem.Name" xml:space="preserve">
+    <value>nissan11ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nissan11ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nissan11ToolStripMenuItem1.Name" xml:space="preserve">
+    <value>nissan11ToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;nissan11ToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nissanToolStripMenuItem.Name" xml:space="preserve">
+    <value>nissanToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nissanToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nissan1ToolStripMenuItem.Name" xml:space="preserve">
+    <value>nissan1ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nissan1ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PreferencesForm</value>

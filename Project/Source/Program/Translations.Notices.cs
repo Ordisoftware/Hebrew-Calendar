@@ -73,8 +73,14 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> MoonDayTextFormatNotice
       = new Dictionary<string, string>()
       {
-        { "en", "Use the %NUM% tag to replace the value and add the desired characters." },
-        { "fr", "Utiliser le tag %NUM% pour remplacer la valeur et ajoutez les caractères désirés." },
+        { "en", "Use the following tags to replace values:" + NewLine + NewLine +
+                "%MONTHNAME% : moon month name" + NewLine +
+                "%MONTHNUM% : moon month number" + NewLine +
+                "%DAYNUM% : moon day number" },
+        { "fr", "Utiliser les tags suivants pour remplacer les valeurs :" + NewLine + NewLine +
+                "%MONTHNAME% : nom du mois lunaire" + NewLine +
+                "%MONTHNUM% : numéro du mois lunaire" + NewLine +
+                "%DAYNUM% : numéro du jour lunaire" },
       };
 
   }
