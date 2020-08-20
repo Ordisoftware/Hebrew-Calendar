@@ -305,7 +305,7 @@
       <Value Profile="(Default)">%MONTHNAME% [%MONTHNUM%] #%DAYNUM%</Value>
     </Setting>
     <Setting Name="LastSuspendDelaySelected" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">60</Value>
     </Setting>
   </Settings>
 </SettingsFile>
