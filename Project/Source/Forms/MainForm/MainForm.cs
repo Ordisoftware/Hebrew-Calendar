@@ -110,6 +110,8 @@ namespace Ordisoftware.HebrewCalendar
       Refresh();
       LoadData();
       ClearLists();
+      ActionViewMoonMonths.Visible = Program.MoonMonths != null;
+      toolStripSeparator1.Visible = Program.MoonMonths != null;
     }
 
     internal void SetCurrentTimeZone()

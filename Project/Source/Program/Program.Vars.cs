@@ -62,8 +62,8 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static Program()
     {
-      // TODO v4.2
-      //MoonMonths = new MoonMonthsFile(MoonMonthsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
+      /* TODO remove for v4.2 */if ( Globals.IsDev )
+      MoonMonths = new MoonMonthsFile(MoonMonthsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
     }
 
   }
