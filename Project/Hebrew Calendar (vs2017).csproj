@@ -523,6 +523,9 @@
     <EmbeddedResource Include="Source\Forms\Boxes\SelectCityForm.resx">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SuspendReminderDelayForm.fr.resx">
+      <DependentUpon>SuspendReminderDelayForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SuspendReminderDelayForm.resx">
       <DependentUpon>SuspendReminderDelayForm.cs</DependentUpon>
     </EmbeddedResource>

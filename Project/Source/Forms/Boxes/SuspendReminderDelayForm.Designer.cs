@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuspendReminderDelayForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionOk = new System.Windows.Forms.Button();
@@ -42,82 +43,51 @@
       // 
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOk);
-      this.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.PanelBottom.Location = new System.Drawing.Point(10, 183);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
-      this.PanelBottom.Size = new System.Drawing.Size(164, 28);
-      this.PanelBottom.TabIndex = 54;
       // 
       // ActionCancel
       // 
-      this.ActionCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ActionCancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.ActionCancel.Location = new System.Drawing.Point(86, 2);
       this.ActionCancel.Name = "ActionCancel";
-      this.ActionCancel.Size = new System.Drawing.Size(75, 24);
-      this.ActionCancel.TabIndex = 1;
-      this.ActionCancel.Text = "Cancel";
       // 
       // ActionOk
       // 
-      this.ActionOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.ActionOk, "ActionOk");
       this.ActionOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ActionOk.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.ActionOk.Location = new System.Drawing.Point(5, 2);
       this.ActionOk.Name = "ActionOk";
-      this.ActionOk.Size = new System.Drawing.Size(75, 24);
-      this.ActionOk.TabIndex = 0;
-      this.ActionOk.Text = "Ok";
       this.ActionOk.UseVisualStyleBackColor = true;
+      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
       // 
       // SelectDelay
       // 
       this.SelectDelay.FormattingEnabled = true;
-      this.SelectDelay.Location = new System.Drawing.Point(13, 13);
+      resources.ApplyResources(this.SelectDelay, "SelectDelay");
       this.SelectDelay.Name = "SelectDelay";
-      this.SelectDelay.Size = new System.Drawing.Size(87, 160);
-      this.SelectDelay.TabIndex = 55;
       this.SelectDelay.SelectedIndexChanged += new System.EventHandler(this.SelectDelay_SelectedIndexChanged);
       // 
       // LabelCustom
       // 
-      this.LabelCustom.AutoSize = true;
-      this.LabelCustom.Location = new System.Drawing.Point(103, 134);
+      resources.ApplyResources(this.LabelCustom, "LabelCustom");
       this.LabelCustom.Name = "LabelCustom";
-      this.LabelCustom.Size = new System.Drawing.Size(44, 13);
-      this.LabelCustom.TabIndex = 56;
-      this.LabelCustom.Text = "Minutes";
       // 
       // EditDelay
       // 
-      this.EditDelay.Location = new System.Drawing.Point(106, 153);
+      resources.ApplyResources(this.EditDelay, "EditDelay");
       this.EditDelay.Maximum = new decimal(new int[] {
             3000,
             0,
             0,
             0});
-      this.EditDelay.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
       this.EditDelay.Name = "EditDelay";
-      this.EditDelay.Size = new System.Drawing.Size(65, 20);
-      this.EditDelay.TabIndex = 57;
-      this.EditDelay.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
       // 
       // SuspendReminderDelayForm
       // 
       this.AcceptButton = this.ActionOk;
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.ClientSize = new System.Drawing.Size(184, 221);
       this.Controls.Add(this.EditDelay);
       this.Controls.Add(this.LabelCustom);
       this.Controls.Add(this.SelectDelay);
@@ -126,10 +96,7 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SuspendReminderDelayForm";
-      this.Padding = new System.Windows.Forms.Padding(10);
       this.ShowInTaskbar = false;
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "Select suspend delay";
       this.PanelBottom.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.EditDelay)).EndInit();
       this.ResumeLayout(false);
