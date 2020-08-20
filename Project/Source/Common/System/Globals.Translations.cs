@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewCommon
       {
         { "en", "Optimization process will close and reopen the database." + NewLine + NewLine +
                 "Do you want to continue?" },
-        { "fr", "Le processus d'optimisation va fermer et réouvrir la base de données." + NewLine + NewLine +
+        { "fr", "Le processus d'optimisation va fermer et rouvrir la base de données." + NewLine + NewLine +
                 "Voulez-vous continuer ?" }
       };
 
@@ -129,6 +129,17 @@ namespace Ordisoftware.HebrewCommon
         { "en", "Preferences will be reseted to their default values." + NewLine + NewLine +
                 "Do you want to continue?" },
         { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine + NewLine +
+                "Voulez-vous continuer ?" }
+      };
+
+    static public readonly Dictionary<string, string> AskToLoadInstalledData
+      = new Dictionary<string, string>()
+      {
+        { "en", "This action will load the data installed with the application." + NewLine + NewLine +
+                "All modifications will be lost." + NewLine + NewLine +
+                "Do you want to continue?" },
+        { "fr", "Cette action va charger les données installées avec l'application."  + NewLine + NewLine +
+                "Toutes les modifications seront perdues." + NewLine + NewLine +
                 "Voulez-vous continuer ?" }
       };
 
@@ -184,6 +195,13 @@ namespace Ordisoftware.HebrewCommon
         { "fr", "Hebrew Words n'a pas été trouvé." + NewLine +
                 "Vérifiez les préférences." + NewLine + NewLine +
                 "Voulez-vous le télécharger ?" }
+      };
+
+    static public readonly Dictionary<string, string> ConfigureProviders
+      = new Dictionary<string, string>()
+      {
+        { "en", "Configure providers" },
+        { "fr", "Configurer les fournisseurs" }
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore

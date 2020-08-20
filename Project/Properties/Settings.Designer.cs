@@ -683,7 +683,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool TorahEventRemindDayChavouotDiet {
             get {
                 return ((bool)(this["TorahEventRemindDayChavouotDiet"]));
@@ -1067,7 +1067,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("System")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Pastel")]
         public global::Ordisoftware.HebrewCalendar.MoonMonthsListColors MoonMonthsFormUseColors {
             get {
                 return ((global::Ordisoftware.HebrewCalendar.MoonMonthsListColors)(this["MoonMonthsFormUseColors"]));
@@ -1194,6 +1194,30 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
             set {
                 this["MonthViewNoDaysBackColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("%MONTHNAME% [%MONTHNUM%] #%DAYNUM%")]
+        public string MoonDayTextFormat {
+            get {
+                return ((string)(this["MoonDayTextFormat"]));
+            }
+            set {
+                this["MoonDayTextFormat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public int LastSuspendDelaySelected {
+            get {
+                return ((int)(this["LastSuspendDelaySelected"]));
+            }
+            set {
+                this["LastSuspendDelaySelected"] = value;
             }
         }
     }

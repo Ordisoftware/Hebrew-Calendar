@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Text;
@@ -138,19 +139,24 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private void LoadFonts()
     {
-      EditFontName.Size = new Size(150, EditFontName.Size.Height);
-      foreach ( var item in new InstalledFontCollection().Families )
+      string[] list = { "Bitstream Vera Sans Mono", "Consolas", "Courier New", "Droid Sans Mono", "Lucida Console" };
+      foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
+        if ( list.Contains(item.Name) )
+          EditFontName.Items.Add(item.Name);
+      //EditFontName.Size = new Size(150, EditFontName.Size.Height);
+      // Removed because of long lag on Windows 10 with MeasureText
+      /*foreach ( var item in new InstalledFontCollection().Families )
         if ( item.Name == "Bitstream Vera Sans Mono" || item.Name == "Droid Sans Mono" )
           EditFontName.Items.Add(item.Name);
         else
         if ( item.IsStyleAvailable(FontStyle.Regular) && !item.Name.StartsWith("Webdings") )
           using ( var font = new Font(item, 10) )
           {
-            float delta = TextRenderer.MeasureText("|" + MainForm.Instance.MoonNewText + "ABCDE", font).Width
-                        - TextRenderer.MeasureText("|" + " abcde", font).Width;
+            float delta = 0;// TextRenderer.MeasureText("|" + MainForm.Instance.MoonNewText + "ABCDE", font).Width
+                            //- TextRenderer.MeasureText("|" + " abcde", font).Width;
             if ( Math.Abs(delta) < float.Epsilon * 2 )
               EditFontName.Items.Add(item.Name);
-          }
+          }*/
     }
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -190,13 +196,17 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSCountry = form.Country;
       Program.Settings.GPSCity = form.City;
       Program.Settings.Save();
-      LabelGPSCountry.Text = Program.Settings.GPSCountry;
-      LabelGPSCity.Text = Program.Settings.GPSCity;
+      string str = Program.Settings.GPSCountry + Environment.NewLine
+                 + Program.Settings.GPSCity
+                 + Environment.NewLine
+                 + Environment.NewLine;
       if ( form.EditTimeZone.SelectedItem != null )
       {
         Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-        LabelTimeZone.Text = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
+        str += ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
       }
+      EditTimeZone.Text = str;
+      MainForm.Instance.SetCurrentTimeZone();
     }
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -251,6 +261,26 @@ namespace Ordisoftware.HebrewCalendar
         ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangEN.BackColor = SystemColors.Control;
       }
+    }
+
+    private void ActionMoonDayTextFormatHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.Show(Translations.MoonDayTextFormatNotice.GetLang());
+    }
+
+    private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
+    {
+      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset, new Point(0, ActionMoonDayTextFormatReset.Height));
+    }
+
+    private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
+    {
+      EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem ).Tag;
+    }
+
+    private void EditMoonDayTextFormat_TextChanged(object sender, EventArgs e)
+    {
+      if ( IsReady ) MustRefreshMonthView = true;
     }
 
     private void EitReportFont_Changed(object sender, EventArgs e)

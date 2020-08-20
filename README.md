@@ -3,7 +3,7 @@
 >This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).
 
 >Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
->[Project Website](http://www.ordisoftware.com/projects/hebrew-calendar)<br/>
+>[Project Website](https://www.ordisoftware.com/projects/hebrew-calendar)<br/>
 >[Twitter](https://twitter.com/ordisoftware)<br/>
 
 A tool for Windows written in C# that allows to generate a calendar based on the lunar cycle in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippour and Sukkot festivities.
@@ -28,7 +28,7 @@ A tool for Windows written in C# that allows to generate a calendar based on the
 
 _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
-![Note](http://www.ordisoftware.com/uploads/2019/10/softpedia4.5-1.png)
+![Note](https://www.ordisoftware.com/uploads/2019/10/softpedia4.5-1.png)
 
 ## Requirements
 
@@ -39,19 +39,19 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 ## Screenshots
 
-![Month View](http://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-viewmonth-en-768x565.png)
+![Month View](https://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-viewmonth-en-768x565.png)
 
-![Repport View](http://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-raw-en-768x565.png)
+![Repport View](https://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-raw-en-768x565.png)
 
-![Settings Window](http://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-preferences-en.png)
+![Settings Window](https://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-preferences-en.png)
 
-![Celebrations Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-celebrations-en.png)
+![Celebrations WIndow](https://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-celebrations-en.png)
 
-![Navigation Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-navigation-en.png)
+![Navigation Window](https://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-navigation-en.png)
 
-![Reminder Window](http://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-popupreminder-en.png)
+![Reminder Window](https://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-popupreminder-en.png)
 
-![LockSession Window](http://www.ordisoftware.com/uploads/2019/11/hebrew-calendar-locksession-en.png)
+![LockSession Window](https://www.ordisoftware.com/uploads/2019/11/hebrew-calendar-locksession-en.png)
 
 ## Videos
 
@@ -114,11 +114,11 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - F4 : Next celebrations window
 - F5 : Search a celebration window
 - F6 : Search a moon month window
-- F7 : Search a day window
+- F7 : Search a day window (also Ctrl+D)
+- F9 : Navigation window (also Ctrl+N)
 - Ctrl+Tab : Next view
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today
-- Ctrl+N : Navigation window
 - Ctrl+C : Copy text report to clipboard
 - Ctrl+P : Print month view
 - Ctrl+S : Save text report to text file
@@ -129,11 +129,28 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - F12 : About
 - Escape : Close window
 
-## Changelog
-
-#### Future improvements
+## Roadmap
 
 - Add moon months description form in tools menu.
+- Add a different tray icon to indicate if a celebration is running, including week days.
+- Improve and reorganize preferences form with a left menu panel.
+
+## Changelog
+
+#### 2020.08.21 - Version 4.1
+
+- Add choosing a delay to allow auto enabling when suspending reminder.
+- Add left, right and up keys support to the navigaation form.
+- Add option to define moon day text format for calendar month view.
+- Add Windows date and time link.
+- Add web links menu duplicated in the tray icon.
+- Add release notes link.
+- Fix reset preferences generetes data before setup GPS if undefined.
+- Fix GPS labels for Windows 10.
+- Fix reminder form border for Windows 10
+- Fix Hebrew Letters path text box color for Windows 10.
+- Fix first opening preferences long latency on Windows 10.
+- Few UI fixes.
 
 #### 2020.04.24 - Version 4.0
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Data;
 using System.Drawing;
@@ -21,6 +21,7 @@ using System.Drawing.Printing;
 using Microsoft.Win32;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
+using EventHandlerSupport;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -65,7 +66,17 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     internal void CreateWebLinks()
     {
-      MenuWebLinks.InitializeFromWebLinks();
+      MenuWebLinks.InitializeFromWebLinks(CreateWebLinks);
+      int count = 0;
+      var items = new ToolStripItem[MenuWebLinks.DropDownItems.Count];
+      foreach ( ToolStripItem item in MenuWebLinks.DropDownItems )
+        if ( item is ToolStripMenuItem )
+          items[count++] = ( (ToolStripMenuItem)item ).Clone();
+        else
+        if ( item is ToolStripSeparator )
+          items[count++] = new ToolStripSeparator();
+      MenuWebLinksTray.DropDownItems.Clear();
+      MenuWebLinksTray.DropDownItems.AddRange(items);
     }
 
     /// <summary>
@@ -95,15 +106,25 @@ namespace Ordisoftware.HebrewCalendar
       CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
       CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
       CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
+      SetCurrentTimeZone();
+      Refresh();
+      LoadData();
+      ClearLists();
+      // TODO remove when implemented
+      ActionViewMoonMonths.Visible = Globals.IsDev;
+      toolStripSeparator1.Visible = Globals.IsDev;
+      //
+    }
+
+    internal void SetCurrentTimeZone()
+    {
+      CurrentTimeZoneInfo = null;
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == Program.Settings.TimeZone )
         {
           CurrentTimeZoneInfo = item;
           break;
         }
-      Refresh();
-      LoadData();
-      ClearLists();
     }
 
     /// <summary>
@@ -517,6 +538,16 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionWebReleaseNotes for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionWebReleaseNotes_Click(object sender, EventArgs e)
+    {
+      SystemHelper.OpenWebLink(Globals.ApplicationHomeURL + "/#ChangeLog" + Globals.AssemblyVersion);
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionContact for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -589,6 +620,11 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionOpenCalculator_Click(object sender, EventArgs e)
     {
       SystemHelper.RunShell("calc.exe");
+    }
+
+    private void ActionOpenSystemDateAndTime_Click(object sender, EventArgs e)
+    {
+      SystemHelper.RunShell("timedate.cpl");
     }
 
     private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
@@ -806,6 +842,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MenuEnableReminder_Click(object sender, EventArgs e)
     {
+      TimerResumeReminder.Enabled = false;
       TrayIcon.Icon = Icon;
       MenuResetReminder.Enabled = true;
       ActionResetReminder.Enabled = true;
@@ -823,6 +860,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MenuDisableReminder_Click(object sender, EventArgs e)
     {
+      var delay = SuspendReminderDelayForm.Run();
+      if ( delay == null ) return;
       TrayIcon.Icon = new Icon(Globals.RootFolderPath + "ApplicationPause.ico");
       TimerReminder.Enabled = false;
       MenuResetReminder.Enabled = false;
@@ -836,6 +875,11 @@ namespace Ordisoftware.HebrewCalendar
       ActionEnableReminder.Enabled = true;
       ActionDisableReminder.Enabled = false;
       ClearLists();
+      if ( delay > 0 )
+      {
+        TimerResumeReminder.Interval = delay.Value * 60 * 1000;
+        TimerResumeReminder.Start();
+      }
     }
 
     private void CalendarText_KeyDown(object sender, KeyEventArgs e)
@@ -915,6 +959,12 @@ namespace Ordisoftware.HebrewCalendar
       });
     }
 
+    private void TimerResumeReminder_Tick(object sender, EventArgs e)
+    {
+      TimerResumeReminder.Enabled = false;
+      MenuEnableReminder.PerformClick();
+    }
+
     /// <summary>
     /// Event handler. Called by Timer for tick events.
     /// </summary>
@@ -926,7 +976,7 @@ namespace Ordisoftware.HebrewCalendar
       TimerMutex = true;
       try
       {
-        if ( !IsFullScreenOrScreensaver() )
+        if ( !IsForegroundFullScreenOrScreensaver() )
         {
           if ( Program.Settings.ReminderShabatEnabled )
             CheckShabat();

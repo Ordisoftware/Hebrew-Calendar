@@ -23,42 +23,55 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide online providers list.
   /// </summary>
-  public partial class OnlineProviders
+  public partial class OnlineProviders : DataFile
   {
 
+    /// <summary>
+    /// Indicate display name tag.
+    /// </summary>
     private const string TagName = "Name = ";
+
+    /// <summary>
+    /// Indicate url tag.
+    /// </summary>
     private string TagURL = "URL = ";
 
     /// <summary>
     /// Indicate items.
     /// </summary>
-    public List<OnlineProviderItem> Items { get; private set; }
+    public List<OnlineProviderItem> Items { get; }
+     = new List<OnlineProviderItem>();
 
     /// <summary>
     /// Indicate the multilingual title of the list to create a folder
     /// </summary>
-    public readonly Dictionary<string, string> Title = new Dictionary<string, string>();
+    public Dictionary<string, string> Title { get; }
+      = new Dictionary<string, string>();
 
     /// <summary>
     /// Indicate if a separator must be inserted before the folder
     /// </summary>
-    public readonly bool SeparatorBeforeFolder;
+    public bool SeparatorBeforeFolder { get; private set; }
 
     /// <summary>
-    /// Static constructor.
+    /// Constructor.
     /// </summary>
-    public OnlineProviders(string filename, bool showFileNotFound = true)
+    public OnlineProviders(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
+      : base(filename, showFileNotFound, configurable, folder)
     {
-      string name;
-      Items = new List<OnlineProviderItem>();
-      if ( !File.Exists(filename) )
-      {
-        if ( showFileNotFound )
-          DisplayManager.ShowError(Globals.FileNotFound.GetLang(filename));
-        return;
-      }
+    }
+
+    /// <summary>
+    /// Load or reload data from disk.
+    /// </summary>
+    /// <param name="reset">True if must be reseted from application documents folder.</param>
+    protected override void DoReLoad(string filename)
+    {
+      if ( filename == "" ) return;
       try
       {
+        Title.Clear();
+        Items.Clear();
         var lines = File.ReadAllLines(filename);
         for ( int index = 0; index < lines.Length; index++ )
         {
@@ -86,7 +99,7 @@ namespace Ordisoftware.HebrewCommon
           else
           if ( line.StartsWith(TagName) )
           {
-            name = line.Substring(TagName.Length);
+            string name = line.Substring(TagName.Length);
             if ( ++index >= lines.Length )
             {
               showError();

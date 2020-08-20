@@ -166,7 +166,7 @@
     <value>0</value>
   </data>
   <data name="ActionOk.Text" xml:space="preserve">
-    <value>Ok</value>
+    <value>OK</value>
   </data>
   <data name="&gt;&gt;ActionOk.Name" xml:space="preserve">
     <value>ActionOk</value>
@@ -237,6 +237,18 @@
   <data name="ListItems.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Celebration</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
+    <value>175</value>
+  </data>
   <data name="ListItems.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -260,18 +272,6 @@
   </data>
   <data name="&gt;&gt;ListItems.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Celebration</value>
-  </data>
-  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>120</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
-    <value>175</value>
   </data>
   <data name="EditYear.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 30</value>

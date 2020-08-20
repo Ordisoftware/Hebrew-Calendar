@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ContextMenuEdit.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionUndo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -131,10 +134,10 @@
 </value>
   </data>
   <data name="ActionUndo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="ActionUndo.Text" xml:space="preserve">
-    <value>Annuler</value>
+    <value>Undo</value>
   </data>
   <data name="ActionRedo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -149,13 +152,31 @@
 </value>
   </data>
   <data name="ActionRedo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="ActionRedo.Text" xml:space="preserve">
-    <value>Refaire</value>
+    <value>Redo</value>
   </data>
-  <data name="Separator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 6</value>
+  <data name="Separator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 6</value>
+  </data>
+  <data name="ActionCut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFjSURBVDhPY8AFtu3Y9QfKJA9cvHj5/+q1619BuYTB1m07
+        LkOZYHDt+s3/Bw4d+g/lEgaXr1z5f/3mrddQLsPFS1f+79q9l3gDJk+eOvf1q9f/r1y99hjEP3X67P+j
+        x08QbwAQSC9ZvvLt69ev/1+8eOny4cNH/h87dpwkA0BAf9as2Tvfv33zf8WWvf8vnDlFsgEgoLRw9vRt
+        sjWX/8d17yTLABBQzOhc/b9v6rz/vrMfkGdI7oTN/wsKCmp1K/dttWg989+q6dgz64ZD123q9uE30LTt
+        gppZ+4X/pk0nQQqFgVjRtGzbXsvafaAo1tZPnNRtW7kVHFNYgUXb+QcaMd2FNvUHkG1Stqza8dS2atd6
+        IFvMvnTDN4gwFmDVArZZwLYaIwB1LQtXbrAv3/DfOnvePqgYJrBpOAjWaF++Cd0AEFAEYmMgVgbzsAGQ
+        zSBbDCKaW6BCJAOQDSAsAubhBQwMAGmKo8BOHbsqAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionCut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 22</value>
+  </data>
+  <data name="ActionCut.Text" xml:space="preserve">
+    <value>Cut</value>
   </data>
   <data name="ActionCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -173,38 +194,10 @@
 </value>
   </data>
   <data name="ActionCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="ActionCopy.Text" xml:space="preserve">
-    <value>Copier</value>
-  </data>
-  <data name="ActionCut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFjSURBVDhPY8AFtu3Y9QfKJA9cvHj5/+q1619BuYTB1m07
-        LkOZYHDt+s3/Bw4d+g/lEgaXr1z5f/3mrddQLsPFS1f+79q9l3gDJk+eOvf1q9f/r1y99hjEP3X67P+j
-        x08QbwAQSC9ZvvLt69ev/1+8eOny4cNH/h87dpwkA0BAf9as2Tvfv33zf8WWvf8vnDlFsgEgoLRw9vRt
-        sjWX/8d17yTLABBQzOhc/b9v6rz/vrMfkGdI7oTN/wsKCmp1K/dttWg989+q6dgz64ZD123q9uE30LTt
-        gppZ+4X/pk0nQQqFgVjRtGzbXsvafaAo1tZPnNRtW7kVHFNYgUXb+QcaMd2FNvUHkG1Stqza8dS2atd6
-        IFvMvnTDN4gwFmDVArZZwLYaIwB1LQtXbrAv3/DfOnvePqgYJrBpOAjWaF++Cd0AEFAEYmMgVgbzsAGQ
-        zSBbDCKaW6BCJAOQDSAsAubhBQwMAGmKo8BOHbsqAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionCut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
-  </data>
-  <data name="ActionCut.Text" xml:space="preserve">
-    <value>Couper</value>
-  </data>
-  <data name="ActionSelectAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVDhPYwCBxsbG/8TQ+IAxkTQmIMZ0EMCnDrfpqAC7
-        OmJdUF9fTyMXgAB6aKPTdXV1/+fMWwDGID42ADMdJw3SfPDIEbyG4AVTp8/8//PXz/+nTp8mz5AJk6f+
-        f/nq9f87d+/9P3nyFOmG9E2Y9P/uvQf/z1+4CDTk/v8jx06QZkhP34T/V6/d+H/7zr3/y5av/N/d2/+/
-        d8Kk91BpwgCkYeeuPf9nz5n//979B/+Ly8rmAoX1IbJEgPr65n0dXb3/a+oaz966dft/S2v7Y6gU0UAZ
-        iEHRqjZpyvT/re3d5EUnFIAMAmIGBgBhhZjkZLo4nQAAAABJRU5ErkJggg==
-</value>
+    <value>Copy</value>
   </data>
   <data name="ActionPaste.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -224,15 +217,97 @@
 </value>
   </data>
   <data name="ActionPaste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="ActionPaste.Text" xml:space="preserve">
-    <value>Coller</value>
+    <value>Paste</value>
   </data>
-  <data name="ContextMenuEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 120</value>
+  <data name="Separator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 6</value>
+  </data>
+  <data name="ActionSelectAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVDhPYwCBxsbG/8TQ+IAxkTQmIMZ0EMCnDrfpqAC7
+        OmJdUF9fTyMXgAB6aKPTdXV1/+fMWwDGID42ADMdJw3SfPDIEbyG4AVTp8/8//PXz/+nTp8mz5AJk6f+
+        f/nq9f87d+/9P3nyFOmG9E2Y9P/uvQf/z1+4CDTk/v8jx06QZkhP34T/V6/d+H/7zr3/y5av/N/d2/+/
+        d8Kk91BpwgCkYeeuPf9nz5n//979B/+Ly8rmAoX1IbJEgPr65n0dXb3/a+oaz966dft/S2v7Y6gU0UAZ
+        iEHRqjZpyvT/re3d5EUnFIAMAmIGBgBhhZjkZLo4nQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 22</value>
   </data>
   <data name="ActionSelectAll.Text" xml:space="preserve">
-    <value>Tout sélectionner</value>
+    <value>SelectAll</value>
+  </data>
+  <data name="ContextMenuEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 148</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuEdit.Name" xml:space="preserve">
+    <value>ContextMenuEdit</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="&gt;&gt;ActionUndo.Name" xml:space="preserve">
+    <value>ActionUndo</value>
+  </data>
+  <data name="&gt;&gt;ActionUndo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionRedo.Name" xml:space="preserve">
+    <value>ActionRedo</value>
+  </data>
+  <data name="&gt;&gt;ActionRedo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Separator1.Name" xml:space="preserve">
+    <value>Separator1</value>
+  </data>
+  <data name="&gt;&gt;Separator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCut.Name" xml:space="preserve">
+    <value>ActionCut</value>
+  </data>
+  <data name="&gt;&gt;ActionCut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCopy.Name" xml:space="preserve">
+    <value>ActionCopy</value>
+  </data>
+  <data name="&gt;&gt;ActionCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionPaste.Name" xml:space="preserve">
+    <value>ActionPaste</value>
+  </data>
+  <data name="&gt;&gt;ActionPaste.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Separator2.Name" xml:space="preserve">
+    <value>Separator2</value>
+  </data>
+  <data name="&gt;&gt;Separator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectAll.Name" xml:space="preserve">
+    <value>ActionSelectAll</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>UndoRedoTextBox</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

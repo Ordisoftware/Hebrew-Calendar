@@ -88,6 +88,27 @@ namespace Ordisoftware.HebrewCommon
       }
     }
 
+    /// <summary>
+    ///  Vacuum the database.
+    /// </summary>
+    /// <param name="connection">The connection.</param>
+    static public void Vacuum(this OdbcConnection connection)
+    {
+      try
+      {
+        using ( var sql = connection.CreateCommand() )
+        {
+          sql.CommandText = "VACUUM;";
+          if ( sql.ExecuteNonQuery() != 0 )
+            DisplayManager.ShowError("SQLite database vacuum failed.");
+        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+    }
+
     static public bool CheckTable(this OdbcConnection connection, string table, string sql)
     {
       var command = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
@@ -125,27 +146,6 @@ namespace Ordisoftware.HebrewCommon
         new OdbcCommand(sql, connection).ExecuteNonQuery();
       }
       return true;
-    }
-
-    /// <summary>
-    ///  Vacuum the database.
-    /// </summary>
-    /// <param name="connection">The connection.</param>
-    static public void Vacuum(this OdbcConnection connection)
-    {
-      try
-      {
-        using ( var sql = connection.CreateCommand() )
-        {
-          sql.CommandText = "VACUUM;";
-          if ( sql.ExecuteNonQuery() != 0 )
-            DisplayManager.ShowError("SQLite database vacuum failed.");
-        }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
     }
 
     /// <summary>

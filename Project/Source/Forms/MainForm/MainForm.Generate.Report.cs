@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewCalendar
         { ReportFieldText.Month, 11 },
         { ReportFieldText.Sun, 23 },
         { ReportFieldText.Moon, 21 },
-        { ReportFieldText.Events, 42 },
+        { ReportFieldText.Events, 40 },
       };
 
     private string GenerateReport()

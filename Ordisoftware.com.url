@@ -1,4 +1,4 @@
 [DEFAULT]
-BASEURL=http://www.ordisoftware.com
+BASEURL=https://www.ordisoftware.com
 [InternetShortcut]
-URL=http://www.ordisoftware.com/?referer=Ordisoftware.HebrewCalendar
+URL=https://www.ordisoftware.com/?referer=Ordisoftware.HebrewCalendar

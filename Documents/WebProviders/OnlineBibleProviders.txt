@@ -1,8 +1,15 @@
 ; --------------------------------------------------------------------------------------------------
-; File format for online providers items to search a bible verse
+; File format for online providers items to search a hebrew word having unicode chars
 ; --------------------------------------------------------------------------------------------------
-; Name = title
-; URL = web link
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+; Use the %WORD% tag in URL to allow the application to replace it by the word to process
 ; --------------------------------------------------------------------------------------------------
 
 Name = (EN) StudyBible.org
@@ -23,6 +30,9 @@ Name = (FR) Mechon-Mamre.org
 URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%
 
 -
+
+Name = (FR) LEvangile.com
+URL = https://www.levangile.com/Bible-LSGS-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
 
 Name = (FR) Djep.hd.free.fr
 URL = http://djep.hd.free.fr/LaReferenceBiblique/?Livre=%BOOKDJEP%&Chap=%CHAPTERNUM%&Vers=%VERSENUM%

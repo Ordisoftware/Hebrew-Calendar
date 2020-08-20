@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -126,8 +126,16 @@ namespace Ordisoftware.HebrewCalendar
             var item = new CustomEvent();
             item.Date = SQLiteHelper.GetDate(row.Date);
             item.EventFont = new Font("Calibri", Program.Settings.MonthViewFontSize);
-            item.EventColor = Color.OrangeRed;
-            item.EventTextColor = color;
+            if ( Program.Settings.UseColors )
+            {
+              item.EventColor = Color.OrangeRed;
+              item.EventTextColor = color;
+            }
+            else
+            {
+              item.EventColor = Color.Transparent;
+              item.EventTextColor = CalendarMonth.ForeColor;
+            }
             item.EventText = text;
             item.Rank = rank++;
             item.TooltipEnabled = true;
@@ -140,25 +148,26 @@ namespace Ordisoftware.HebrewCalendar
           strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Environment.NewLine
                      + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
           Color colorMoon = Color.Black;
-          //string strMonth = " " + MoonMonths.Names[row.LunarMonth] + " (" + row.LunarMonth + ")";
-          string strMonthDay = $" {MoonMonths.Names[row.LunarMonth]} [{row.LunarMonth}] #{row.LunarDay}";
+          string strMonthDay = Program.Settings.MoonDayTextFormat.ToUpper()
+                               .Replace("%MONTHNAME%", Program.MoonMonthsNames[row.LunarMonth])
+                               .Replace("%MONTHNUM%", row.LunarMonth.ToString())
+                               .Replace("%DAYNUM%", row.LunarDay.ToString());
           colorMoon = row.IsNewMoon == 1
                     ? Program.Settings.CalendarColorTorahEvent
                     : ( row.IsFullMoon == 1
                       ? Program.Settings.CalendarColorFullMoon
                       : Program.Settings.CalendarColorMoon );
-          // TODO use option DefaultTextColor instead of black
           if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           {
             if ( row.Moonset != "" )
               add(Program.Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
-              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + strMonthDay);
+              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
           }
           else
           {
             if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
-              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + strMonthDay);
+              add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
             if ( row.Moonset != "" )
               add(Program.Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
           }

@@ -33,7 +33,7 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionSwapColors = new System.Windows.Forms.LinkLabel();
       this.ActionClose = new System.Windows.Forms.Button();
-      this.ActionReloadFiles = new System.Windows.Forms.LinkLabel();
+      this.ActionViewNotice = new System.Windows.Forms.LinkLabel();
       this.ActionEditFiles = new System.Windows.Forms.LinkLabel();
       this.ContextMenuItems = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +52,7 @@
       // 
       this.PanelBottom.Controls.Add(this.ActionSwapColors);
       this.PanelBottom.Controls.Add(this.ActionClose);
-      this.PanelBottom.Controls.Add(this.ActionReloadFiles);
+      this.PanelBottom.Controls.Add(this.ActionViewNotice);
       this.PanelBottom.Controls.Add(this.ActionEditFiles);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
@@ -74,15 +74,15 @@
       this.ActionClose.Name = "ActionClose";
       this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
-      // ActionReloadFiles
+      // ActionViewNotice
       // 
-      this.ActionReloadFiles.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionReloadFiles, "ActionReloadFiles");
-      this.ActionReloadFiles.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.ActionReloadFiles.LinkColor = System.Drawing.Color.Navy;
-      this.ActionReloadFiles.Name = "ActionReloadFiles";
-      this.ActionReloadFiles.TabStop = true;
-      this.ActionReloadFiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionReloadFiles_LinkClicked);
+      this.ActionViewNotice.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
+      this.ActionViewNotice.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionViewNotice.LinkColor = System.Drawing.Color.Navy;
+      this.ActionViewNotice.Name = "ActionViewNotice";
+      this.ActionViewNotice.TabStop = true;
+      this.ActionViewNotice.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionViewNotice_LinkClicked);
       // 
       // ActionEditFiles
       // 
@@ -187,7 +187,7 @@
     private System.Windows.Forms.Panel PanelMonths;
     private System.Windows.Forms.LinkLabel ActionSwapColors;
     private System.Windows.Forms.LinkLabel ActionEditFiles;
-    private System.Windows.Forms.LinkLabel ActionReloadFiles;
+    private System.Windows.Forms.LinkLabel ActionViewNotice;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
   }
 }

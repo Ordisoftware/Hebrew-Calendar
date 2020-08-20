@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -73,8 +73,6 @@ namespace Ordisoftware.HebrewCalendar
       EditTorahEventsCountAsMoon.Checked = Program.Settings.TorahEventsCountAsMoon;
       EditUseColors.Checked = Program.Settings.UseColors;
       EditMonthViewFontSize.Value = Program.Settings.MonthViewFontSize;
-      LabelGPSCity.Text = Program.Settings.GPSCity;
-      LabelGPSCountry.Text = Program.Settings.GPSCountry;
       OldLatitude = Program.Settings.GPSLatitude;
       OldLongitude = Program.Settings.GPSLongitude;
       OldReminderCurrentDayColor = Program.Settings.EventColorTorah;
@@ -83,6 +81,7 @@ namespace Ordisoftware.HebrewCalendar
       OldShabatDay = Program.Settings.ShabatDay;
       OldTimeZone = Program.Settings.TimeZone;
       OldUseMoonDays = Program.Settings.TorahEventsCountAsMoon;
+      EditMoonDayTextFormat.Text = Program.Settings.MoonDayTextFormat;
     }
 
   }

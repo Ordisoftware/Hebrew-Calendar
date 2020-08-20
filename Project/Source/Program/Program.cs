@@ -97,21 +97,19 @@ namespace Ordisoftware.HebrewCalendar
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
         SystemHelper.ApplyResources(resources, form.Controls);
       };
-      update(Globals.MainForm);
       foreach ( Form form in Application.OpenForms )
-      {
-        if ( form != Globals.MainForm && form != AboutBox.Instance )
+        if ( form != AboutBox.Instance )
           update(form);
-        if ( form is ShowTextForm )
-          ( (ShowTextForm)form ).RelocalizeText();
-      }
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+      foreach ( Form form in Application.OpenForms )
+        if ( form is ShowTextForm )
+          ( (ShowTextForm)form ).RelocalizeText();
       MainForm.Instance.CreateWebLinks();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.TimerReminder_Tick(null, null);
-      UndoRedoTextBox.Relocalize();
+      UndoRedoTextBox.RelocalizeContextMenu();
     }
 
   }

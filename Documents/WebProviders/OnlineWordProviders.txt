@@ -1,8 +1,11 @@
 ; --------------------------------------------------------------------------------------------------
 ; File format for online providers items to search a hebrew word having unicode chars
 ; --------------------------------------------------------------------------------------------------
-; Name = title
-; URL = web link
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
 ; --------------------------------------------------------------------------------------------------
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------

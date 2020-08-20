@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -26,7 +26,6 @@ namespace Ordisoftware.HebrewCalendar
     internal void CreateControls()
     {
       PanelMonths.Controls.Clear();
-      MoonMonths.Load();
       int x = 10;
       int dx1 = 80;
       int dx2 = 150;
@@ -65,7 +64,7 @@ namespace Ordisoftware.HebrewCalendar
         default:
           throw new NotImplementedException();
       }
-      for ( int index = 1; index < MoonMonths.Names.Length; index++ )
+      for ( int index = 1; index < Program.MoonMonthsNames.Length; index++ )
       {
         Func<int, int, string, Color, Font, bool, bool, bool, LinkLabel> createLabel
           = (posX, posY, text, color, font, tabstop, isAlignRight, checkWidth) =>
@@ -95,30 +94,30 @@ namespace Ordisoftware.HebrewCalendar
             return label;
           };
         var label1 = createLabel(x, y,
-                                 HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]),
+                                 HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]),
                                  colorsMonth[index - 1],
                                  new Font("Hebrew", 14f),
                                  true, true, false);
         var label2 = createLabel(x + dx1, y + dy1,
-                                 MoonMonths.Names[index],
+                                 Program.MoonMonthsNames[index],
                                  colorsMonth[index - 1],
                                  new Font("Microsoft Sans Serif", 10f),
                                  false, false, false);
         var label3 = createLabel(x + dx2, y + dy2,
-                                 MoonMonths.Meanings[index],
+                                 Program.MoonMonthsMeanings[index],
                                  colorLinkTextMeaning,
                                  new Font("Microsoft Sans Serif", 10f),
                                  false, false, true);
         var label4 = createLabel(x + dx2, label3.Top + label3.Height + dy3,
-                                 MoonMonths.Lettriqs[index],
+                                 Program.MoonMonthsLettriqs[index],
                                  colorLinkTextLettriq,
                                  new Font("Microsoft Sans Serif", 10f),
                                  false, false, true);
         y = label4.Top + label4.Height + dyline;
       }
-      int width = xmax + 20;
+      int width = xmax + 30;
       Width = width < 600 ? 600 : width;
-      Height = y + PanelBottom.Height + 40;
+      Height = y + PanelBottom.Height + 50;
     }
 
   }

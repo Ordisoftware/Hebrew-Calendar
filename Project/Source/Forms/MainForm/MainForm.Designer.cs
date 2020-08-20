@@ -94,6 +94,7 @@
       this.ActionHelp = new System.Windows.Forms.ToolStripButton();
       this.MenuWeb = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWebReleaseNotes = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCreateGitHubIssue = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,6 +118,7 @@
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenSystemDateAndTime = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuumDB = new System.Windows.Forms.ToolStripMenuItem();
@@ -151,6 +153,8 @@
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuNavigate = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuCelebrations = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuWebLinksTray = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuResetReminder = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuEnableReminder = new System.Windows.Forms.ToolStripMenuItem();
@@ -164,6 +168,7 @@
       this.TimerReminder = new System.Windows.Forms.Timer(this.components);
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
+      this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
@@ -731,6 +736,7 @@
       this.MenuWeb.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuWeb.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionAbout,
+            this.ActionWebReleaseNotes,
             this.ActionWebCheckUpdate,
             this.toolStripSeparator9,
             this.ActionCreateGitHubIssue,
@@ -755,6 +761,13 @@
       resources.ApplyResources(this.ActionAbout, "ActionAbout");
       this.ActionAbout.Name = "ActionAbout";
       this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
+      // 
+      // ActionWebReleaseNotes
+      // 
+      this.ActionWebReleaseNotes.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionWebReleaseNotes, "ActionWebReleaseNotes");
+      this.ActionWebReleaseNotes.Name = "ActionWebReleaseNotes";
+      this.ActionWebReleaseNotes.Click += new System.EventHandler(this.ActionWebReleaseNotes_Click);
       // 
       // ActionWebCheckUpdate
       // 
@@ -848,14 +861,14 @@
       // 
       resources.ApplyResources(this.ActionDownloadHebrewLetters, "ActionDownloadHebrewLetters");
       this.ActionDownloadHebrewLetters.Name = "ActionDownloadHebrewLetters";
-      this.ActionDownloadHebrewLetters.Tag = "http://www.ordisoftware.com/projects/hebrew-letters";
+      this.ActionDownloadHebrewLetters.Tag = "https://www.ordisoftware.com/projects/hebrew-letters";
       this.ActionDownloadHebrewLetters.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // ActionDownloadHebrewWords
       // 
       resources.ApplyResources(this.ActionDownloadHebrewWords, "ActionDownloadHebrewWords");
       this.ActionDownloadHebrewWords.Name = "ActionDownloadHebrewWords";
-      this.ActionDownloadHebrewWords.Tag = "http://www.ordisoftware.com/projects/hebrew-words";
+      this.ActionDownloadHebrewWords.Tag = "https://www.ordisoftware.com/projects/hebrew-words";
       this.ActionDownloadHebrewWords.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // MenuTools
@@ -869,6 +882,7 @@
             this.toolStripSeparator8,
             this.ActionCalculateDateDiff,
             this.ActionOpenCalculator,
+            this.ActionOpenSystemDateAndTime,
             this.toolStripMenuItem1,
             this.ActionGenerate,
             this.ActionVacuumDB});
@@ -915,6 +929,13 @@
       resources.ApplyResources(this.ActionOpenCalculator, "ActionOpenCalculator");
       this.ActionOpenCalculator.Name = "ActionOpenCalculator";
       this.ActionOpenCalculator.Click += new System.EventHandler(this.ActionOpenCalculator_Click);
+      // 
+      // ActionOpenSystemDateAndTime
+      // 
+      this.ActionOpenSystemDateAndTime.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionOpenSystemDateAndTime, "ActionOpenSystemDateAndTime");
+      this.ActionOpenSystemDateAndTime.Name = "ActionOpenSystemDateAndTime";
+      this.ActionOpenSystemDateAndTime.Click += new System.EventHandler(this.ActionOpenSystemDateAndTime_Click);
       // 
       // toolStripMenuItem1
       // 
@@ -1144,6 +1165,8 @@
             this.toolStripSeparator11,
             this.MenuNavigate,
             this.MenuCelebrations,
+            this.toolStripSeparator6,
+            this.MenuWebLinksTray,
             this.toolStripSeparator7,
             this.MenuResetReminder,
             this.MenuEnableReminder,
@@ -1179,6 +1202,16 @@
       resources.ApplyResources(this.MenuCelebrations, "MenuCelebrations");
       this.MenuCelebrations.Name = "MenuCelebrations";
       this.MenuCelebrations.Click += new System.EventHandler(this.ActionViewCelebrations_Click);
+      // 
+      // toolStripSeparator6
+      // 
+      this.toolStripSeparator6.Name = "toolStripSeparator6";
+      resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+      // 
+      // MenuWebLinksTray
+      // 
+      resources.ApplyResources(this.MenuWebLinksTray, "MenuWebLinksTray");
+      this.MenuWebLinksTray.Name = "MenuWebLinksTray";
       // 
       // toolStripSeparator7
       // 
@@ -1249,6 +1282,10 @@
       // 
       this.TimerTrayMouseMove.Interval = 10;
       this.TimerTrayMouseMove.Tick += new System.EventHandler(this.TimerTrayMouseMove_Tick);
+      // 
+      // TimerResumeReminder
+      // 
+      this.TimerResumeReminder.Tick += new System.EventHandler(this.TimerResumeReminder_Tick);
       // 
       // LunisolarDaysTableAdapter
       // 
@@ -1378,19 +1415,6 @@
     private System.Windows.Forms.ToolStripMenuItem MenuExit;
     private System.Windows.Forms.TabPage TabPageMonth;
     private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     private System.Windows.Forms.ToolStripButton ActionPrint;
     private System.Windows.Forms.PrintDialog PrintDialog;
     private System.Windows.Forms.ToolStripSeparator Sep1;
@@ -1444,6 +1468,24 @@
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuumDB;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.Timer TimerResumeReminder;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+    private System.Windows.Forms.ToolStripMenuItem MenuWebLinksTray;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenSystemDateAndTime;
+    private System.Windows.Forms.ToolStripMenuItem ActionWebReleaseNotes;
   }
 }
 

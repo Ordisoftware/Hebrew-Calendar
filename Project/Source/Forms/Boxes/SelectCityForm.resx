@@ -136,7 +136,7 @@
     <value>0</value>
   </data>
   <data name="ActionOk.Text" xml:space="preserve">
-    <value>Ok</value>
+    <value>OK</value>
   </data>
   <data name="&gt;&gt;ActionOk.Name" xml:space="preserve">
     <value>ActionOk</value>

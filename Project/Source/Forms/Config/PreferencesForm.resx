@@ -133,7 +133,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 29</value>
+    <value>16, 24</value>
   </data>
   <data name="LabelGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -143,6 +143,9 @@
   </data>
   <data name="LabelGPSLatitude.Text" xml:space="preserve">
     <value>Latitude</value>
+  </data>
+  <data name="LabelGPSLatitude.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
   </data>
   <data name="&gt;&gt;LabelGPSLatitude.Name" xml:space="preserve">
     <value>LabelGPSLatitude</value>
@@ -154,7 +157,7 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;LabelGPSLatitude.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <metadata name="LabelGPSLongitude.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -169,7 +172,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 60</value>
+    <value>16, 48</value>
   </data>
   <data name="LabelGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
@@ -179,6 +182,9 @@
   </data>
   <data name="LabelGPSLongitude.Text" xml:space="preserve">
     <value>Longitude</value>
+  </data>
+  <data name="LabelGPSLongitude.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
   </data>
   <data name="&gt;&gt;LabelGPSLongitude.Name" xml:space="preserve">
     <value>LabelGPSLongitude</value>
@@ -190,7 +196,7 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;LabelGPSLongitude.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <metadata name="label7.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -205,7 +211,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 24</value>
+    <value>17, 24</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 13</value>
@@ -241,7 +247,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 181</value>
+    <value>58, 181</value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -263,6 +269,45 @@
   </data>
   <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <metadata name="LabelTimeZone.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelTimeZone.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelTimeZone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelTimeZone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelTimeZone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="LabelTimeZone.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="LabelTimeZone.Text" xml:space="preserve">
+    <value>Zone</value>
+  </data>
+  <data name="LabelTimeZone.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LabelTimeZone.Name" xml:space="preserve">
+    <value>LabelTimeZone</value>
+  </data>
+  <data name="&gt;&gt;LabelTimeZone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTimeZone.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;LabelTimeZone.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>23, 21</value>
@@ -420,54 +465,6 @@
   <data name="&gt;&gt;LabelFontName.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 26</value>
-  </data>
-  <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 20</value>
-  </data>
-  <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
-    <value>EditGPSLatitude</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
-    <value>GroupBoxGPS</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 57</value>
-  </data>
-  <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 20</value>
-  </data>
-  <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
-    <value>EditGPSLongitude</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
-    <value>GroupBoxGPS</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="ActionResetSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -523,7 +520,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="ActionUsePersonalShabat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -558,84 +555,6 @@
   <data name="&gt;&gt;ActionUsePersonalShabat.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="LabelTimeZone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelTimeZone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 122</value>
-  </data>
-  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 56</value>
-  </data>
-  <data name="LabelTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LabelTimeZone.Name" xml:space="preserve">
-    <value>LabelTimeZone</value>
-  </data>
-  <data name="&gt;&gt;LabelTimeZone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTimeZone.Parent" xml:space="preserve">
-    <value>GroupBoxGPS</value>
-  </data>
-  <data name="&gt;&gt;LabelTimeZone.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LabelGPSCity.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelGPSCity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelGPSCity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 105</value>
-  </data>
-  <data name="LabelGPSCity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 13</value>
-  </data>
-  <data name="LabelGPSCity.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSCity.Name" xml:space="preserve">
-    <value>LabelGPSCity</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSCity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSCity.Parent" xml:space="preserve">
-    <value>GroupBoxGPS</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSCity.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LabelGPSCountry.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelGPSCountry.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 88</value>
-  </data>
-  <data name="LabelGPSCountry.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 13</value>
-  </data>
-  <data name="LabelGPSCountry.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSCountry.Name" xml:space="preserve">
-    <value>LabelGPSCountry</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSCountry.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSCountry.Parent" xml:space="preserve">
-    <value>GroupBoxGPS</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSCountry.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="ActionGetGPS.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -649,7 +568,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 180</value>
+    <value>16, 184</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -670,7 +589,85 @@
     <value>GroupBoxGPS</value>
   </data>
   <data name="&gt;&gt;ActionGetGPS.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 20</value>
+  </data>
+  <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 20</value>
+  </data>
+  <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
+    <value>EditGPSLatitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 90</value>
+  </data>
+  <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditTimeZone.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 86</value>
+  </data>
+  <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
+    <value>EditTimeZone</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 44</value>
+  </data>
+  <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 20</value>
+  </data>
+  <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
+    <value>EditGPSLongitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="GroupBoxGPS.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -697,7 +694,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxGPS.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -943,7 +940,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxTextReport.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1150,7 +1147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BroupBoxShabat.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1162,7 +1159,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 163</value>
+    <value>18, 73</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 13</value>
@@ -1195,7 +1192,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseDefaultColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 203</value>
+    <value>18, 109</value>
   </data>
   <data name="ActionUseDefaultColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -1228,7 +1225,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTopColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 23</value>
+    <value>18, 20</value>
   </data>
   <data name="LabelTopColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
@@ -1261,7 +1258,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseSystemColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 183</value>
+    <value>18, 91</value>
   </data>
   <data name="ActionUseSystemColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
@@ -1288,7 +1285,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditNavigateTopColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 41</value>
+    <value>21, 38</value>
   </data>
   <data name="EditNavigateTopColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -1312,7 +1309,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditNavigateBottomColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 41</value>
+    <value>127, 38</value>
   </data>
   <data name="EditNavigateBottomColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -1336,7 +1333,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditNavigateMiddleColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 41</value>
+    <value>74, 38</value>
   </data>
   <data name="EditNavigateMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -1366,7 +1363,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBottomColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 23</value>
+    <value>124, 20</value>
   </data>
   <data name="LabelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -1399,7 +1396,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMiddleColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 23</value>
+    <value>71, 20</value>
   </data>
   <data name="LabelMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -1429,7 +1426,7 @@
     <value>589, 446</value>
   </data>
   <data name="GroupBoxNavigation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 225</value>
+    <value>187, 130</value>
   </data>
   <data name="GroupBoxNavigation.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1447,7 +1444,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxNavigation.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="EditBalloonAutoHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1525,7 +1522,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenNavigationForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 68</value>
+    <value>19, 68</value>
   </data>
   <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 17</value>
@@ -1558,7 +1555,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenMainForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 45</value>
+    <value>19, 45</value>
   </data>
   <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 17</value>
@@ -1663,7 +1660,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxTrayIcon.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="EditStartupHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1704,11 +1701,320 @@
   <data name="&gt;&gt;EditStartupHide.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Torah</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditEventColorTorah.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditEventColorTorah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 21</value>
+  </data>
+  <data name="EditEventColorTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditEventColorTorah.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorTorah.Name" xml:space="preserve">
+    <value>EditEventColorTorah</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorTorah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorTorah.Parent" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorTorah.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditEventColorShabat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditEventColorShabat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 21</value>
+  </data>
+  <data name="EditEventColorShabat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditEventColorShabat.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorShabat.Name" xml:space="preserve">
+    <value>EditEventColorShabat</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorShabat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorShabat.Parent" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorShabat.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditEventColorSeason.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditEventColorSeason.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 21</value>
+  </data>
+  <data name="EditEventColorSeason.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditEventColorSeason.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorSeason.Name" xml:space="preserve">
+    <value>EditEventColorSeason</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorSeason.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorSeason.Parent" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorSeason.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EditEventColorNext.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditEventColorNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 21</value>
+  </data>
+  <data name="EditEventColorNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditEventColorNext.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorNext.Name" xml:space="preserve">
+    <value>EditEventColorNext</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorNext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorNext.Parent" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorNext.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 3</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="EditEventColorMonth.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditEventColorMonth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 21</value>
+  </data>
+  <data name="EditEventColorMonth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditEventColorMonth.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorMonth.Name" xml:space="preserve">
+    <value>EditEventColorMonth</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorMonth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorMonth.Parent" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;EditEventColorMonth.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 3</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 3</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Season</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 3</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Shabat</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="PanelReminderColors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 361</value>
+  </data>
+  <data name="PanelReminderColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 50</value>
+  </data>
+  <data name="PanelReminderColors.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderColors.Name" xml:space="preserve">
+    <value>PanelReminderColors</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderColors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderColors.Parent" xml:space="preserve">
+    <value>GroupBoxReminder</value>
+  </data>
+  <data name="&gt;&gt;PanelReminderColors.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="EditUseColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="EditUseColors.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditUseColors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="EditUseColors.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 345</value>
@@ -1732,7 +2038,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditUseColors.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1765,7 +2071,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;LabelRemindAutoLockTimeOut.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1798,7 +2104,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1831,172 +2137,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 367</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Month</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 367</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Next</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 367</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Shabat</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 367</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Season</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 367</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Torah</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="EditEventsDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2020,7 +2161,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditEventsDay.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>5</value>
   </data>
   <data name="EditEvents.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2044,127 +2185,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditEvents.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="EditEventColorMonth.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditEventColorMonth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 385</value>
-  </data>
-  <data name="EditEventColorMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="EditEventColorMonth.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorMonth.Name" xml:space="preserve">
-    <value>EditEventColorMonth</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorMonth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorMonth.Parent" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorMonth.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="EditEventColorNext.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditEventColorNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 385</value>
-  </data>
-  <data name="EditEventColorNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="EditEventColorNext.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorNext.Name" xml:space="preserve">
-    <value>EditEventColorNext</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorNext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorNext.Parent" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorNext.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="EditEventColorSeason.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditEventColorSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 385</value>
-  </data>
-  <data name="EditEventColorSeason.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="EditEventColorSeason.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorSeason.Name" xml:space="preserve">
-    <value>EditEventColorSeason</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorSeason.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorSeason.Parent" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorSeason.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="EditEventColorShabat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditEventColorShabat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 385</value>
-  </data>
-  <data name="EditEventColorShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="EditEventColorShabat.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorShabat.Name" xml:space="preserve">
-    <value>EditEventColorShabat</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorShabat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorShabat.Parent" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorShabat.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="EditEventColorTorah.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditEventColorTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 385</value>
-  </data>
-  <data name="EditEventColorTorah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="EditEventColorTorah.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorTorah.Name" xml:space="preserve">
-    <value>EditEventColorTorah</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorTorah.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorTorah.Parent" xml:space="preserve">
-    <value>GroupBoxReminder</value>
-  </data>
-  <data name="&gt;&gt;EditEventColorTorah.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>6</value>
   </data>
   <data name="EditReminderCelebrationsInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2188,7 +2209,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditReminderCelebrationsInterval.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>7</value>
   </data>
   <data name="LabelTimerInterval.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2221,7 +2242,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;LabelTimerInterval.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>8</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2245,7 +2266,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSessionTimeOut.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>9</value>
   </data>
   <data name="EditRemindCelebrationHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2269,7 +2290,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>10</value>
   </data>
   <data name="EditAutoLockSession.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2302,7 +2323,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSession.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>11</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2314,7 +2335,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 25</value>
+    <value>20, 25</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 17</value>
@@ -2335,7 +2356,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditTorahEventsCountAsMoon.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>12</value>
   </data>
   <data name="EditReminderCelebrationsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2368,7 +2389,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditReminderCelebrationsEnabled.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>13</value>
   </data>
   <data name="EditRemindCelebrationEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2392,7 +2413,7 @@
     <value>GroupBoxReminder</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>14</value>
   </data>
   <data name="GroupBoxReminder.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -2419,7 +2440,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxReminder.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditMonthViewSunToolTips.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3070,35 +3091,35 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxMonth.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJASURBVDhPjZHdS1NxHMa9C+quf6Cbgu7CrCDftrayu4jy
-        QrqRuvAiUDEo5WS2CgkWUttxL9WFgTeWjLyoLipBoVIbO3sx0ulebEqrxphrUbaz7ek5x1PrMBc98Nwc
-        fs/n+33Ot+a35u8ey4TcRxF0HUHQYUBguAkBsQF+e9nKt5DLnNEieoVcJjUQ8ZxD2icin3wBFMJAnv65
-        sGk5rEK0iF4BsRHAZ+SWxrA2eRlBtxlB8QBWHrUgNXka8vxZYENSN9Eievlth1UA1h8DPyROXoKceo0v
-        s3ew7OlAdOw4AV4CGrcGSLZ6rhxCISGgEO2FHL+Kwsf7QPoJYYvwWmsJeAO/WKWCZGtgzzkCBlCI9UOO
-        9LH+BeTfn+dG7zTA9L8A/AcbUwRwcvwK5KjAFheRX+gEcjPw3qoj6CUrVAOwG74/Q2HV8hfgEgFdQOa5
-        BngK3+16BFzmpBYrSyIZOQ8B1wgYKAMWu4GUhxUOAt8m6HGe0lC5hWRvBrKjBFzXAeRwD/DpAd5aDxF0
-        E/g6CuWtFitLBazfQ3Hthg5QSlgRfXgCkfFWXmSIW47wP2wB8A8buYEdSA6i+MECOSZAXu4FEoPwDvFC
-        WZFhJy81wgrGSoDPYcrEJ9qQmetEkZcorSrnFAiwcGUDlAF+0aiG/U5TVovptM/dXds/bW2akexGxDyt
-        SL/qQGlFQMBhQnvLrpM9p3af6Wvb26683YxUaie9h65zd+0XpqzNs0GnmRPNysRt9HZ6B/1f+gOjq0ys
-        qfkFIaj3TySvysIAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionSelectHebrewLettersPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>302, 198</value>
+    <value>302, 195</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 19</value>
+    <value>24, 24</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3119,10 +3140,10 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 197</value>
+    <value>61, 197</value>
   </data>
   <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 20</value>
+    <value>234, 20</value>
   </data>
   <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3131,7 +3152,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -3177,18 +3198,18 @@
   </data>
   <data name="ActionSelectLangFR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAI+SURBVDhPpdNdSFNhHMfxZ1pWhETvaRESWVBQkl0IQRB1
-        EVF0GXRh3VQrhaS6iQoxMugiIQm7SrqIaM1FXmREKGsvRbNstelB3ZxN15zNTc/apql8e47niEHeWAc+
-        F+fh+f/+zwuPAP7LvIMLIUTl8xfC3IQ4a0WceYYot+D3uHC7nDgcDp3bjd3vJyj79f5B/ruFVvxSUWnu
-        HJWSPP6chIk06VQKVTX8TCNHodkKra+g7TU4W2dChNb5iTeBqHqPuCRVviMa7EbpUvB36nxKD95IDPLl
-        qguXwPrF0GIzAs5Zuf8hjrjqQVxrR1zxMBYJ0RcM0hvQ9YT6URJjUJAD21fC1nywNM4F3HQOI6rbMdV8
-        lEHtZIYHCYfDhPp1fQMRAmoWimTnXWth5yp4WGcEmK1UvYkibnVgqu1A3PjEVHKIoeh3BiOGoRjfspNQ
-        nAel62DPGqivngsobxlE3PFikkRNB6RGGPkxTCxmiI8QlfXskPsvK5A2wO2LcwFHmwcw3fVJXxG1XhhX
-        UUeTJBKGMZW4dgu7l8L+Qt31U0bAeStltn5y6/2Y7vnkSr7AdIZsOkVKXuWMTAZVC9i7DA5uhEOb4PLx
-        2YAmtllCLHqgkNPQhajzyZnTTE3+YnxiQjc1jTxC2LccjmyGY0VQccAIuGBj9dMweY+C5DYGEA3d2tT5
-        v8Mr4MQWOFkM5lIjoMKmSmgr0c5DnLageJy4HG+x2+06l4s2fxcBWaAVzeoRQpWPQZRIpf+o5K/XtTCI
-        3zwauJ2iBs52AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAj5JREFUOE+l011IU2Ecx/FnWlaERO9pERJZUFCSXQhBEHURUXQZdGHdVCuFpLqJ
+        CjEy6CIhCbtKuohozUVeZEQoay9Fs2y16UHdnE3XnM1Nz9qmqXx7jueIQd5YBz4X5+H5//7PC48A/su8
+        gwshROXzF8LchDhrRZx5hii34Pe4cLucOBwOnduN3e8nKPv1/kH+u4VW/FJRae4clZI8/pyEiTTpVApV
+        NfxMI0eh2Qqtr6DtNThbZ0KE1vmJN4Goeo+4JFW+IxrsRulS8HfqfEoP3kgM8uWqC5fA+sXQYjMCzlm5
+        /yGOuOpBXGtHXPEwFgnRFwzSG9D1hPpREmNQkAPbV8LWfLA0zgXcdA4jqtsx1XyUQe1khgcJh8OE+nV9
+        AxECahaKZOdda2HnKnhYZwSYrVS9iSJudWCq7UDc+MRUcoih6HcGI4ahGN+yk1CcB6XrYM8aqK+eCyhv
+        GUTc8WKSRE0HpEYY+TFMLGaIjxCV9eyQ+y8rkDbA7YtzAUebBzDd9UlfEbVeGFdRR5MkEoYxlbh2C7uX
+        wv5C3fVTRsB5K2W2fnLr/Zju+eRKvsB0hmw6RUpe5YxMBlUL2LsMDm6EQ5vg8vHZgCa2WUIseqCQ09CF
+        qPPJmdNMTf5ifGJCNzWNPELYtxyObIZjRVBxwAi4YGP10zB5j4LkNgYQDd3a1Pm/wyvgxBY4WQzmUiOg
+        wqZKaCvRzkOctqB4nLgcb7Hb7TqXizZ/FwFZoBXN6hFClY9BlEil/6jkr9e1MIjfPBq4naIGznYAAAAA
+        SUVORK5CYII=
 </value>
   </data>
   <data name="ActionSelectLangFR.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -3220,16 +3241,16 @@
   </data>
   <data name="ActionSelectLangEN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHbSURBVDhPpZNNS1RhGIafctleQ1sUGujUqCXkoCuhrQuF
-        /oGLTNsYEliEFbSq/oKI4MpAS3GhO5OBaeNJnanEhR8p7moC++buvs5sClyULS7Oc+7net7zvudwQtJ/
-        cWT4L0Tk7k4fep33Zqm0qjg3oDjbr+X1FW05A2oyeji4zDAb0Tyk715Kc2PSizF9cPn4eaKfZPOTKdRk
-        9HBwmYmWIW+hcVBPphPNvnW7xrs6HZosllXCqPW9oSajh4P7dCZRZG4qznTf1/B4QdH0QFObX6U6S9Wh
-        NZ7W4NqktTN6OJF5qNsTrxT1NxQv11b0zf0t884gr5rEKOshQ01GDwf3h8kXvQtekh71SY2+ZswFc9G0
-        mtypCtRk9HBwPcNsZYGR3orQbFoMA20npE4PAzUZPRxcz6QLFEqJPns7u2bD/HGE9pMpvx8BB5cZZiPO
-        96v6XlFxLa9ne045t7eYvrh21yat2bZ7OLjpjGcjsoOqGt3WwkdLOUtXLB1UnqQO3xtqMno4uFWjO4qs
-        P2NcuqUC8lU3u0KLh37CwIH208xnN9Rk9HBw82SXh71A7k75i1/Gnlne3PC2vGr9dRXevNa2M6Amo4eD
-        +8l0NPSU/TNEq2k7Jnybo/+yv0PxC0/PmXQSJ4tzAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAdtJREFUOE+lk01LVGEYhp9y2V5DWxQa6NSoJeSgK6GtC4X+gYtM2xgSWIQVtKr+
+        gojgykBLcaE7k4Fp40mdqcSFHynuagL75u6+zmwKXJQtLs5z7ud63vO+53BC0n9xZPgvROTuTh96nfdm
+        qbSqODegONuv5fUVbTkDajJ6OLjMMBvRPKTvXkpzY9KLMX1w+fh5op9k85Mp1GT0cHCZiZYhb6FxUE+m
+        E82+dbvGuzodmiyWVcKo9b2hJqOHg/t0JlFkbirOdN/X8HhB0fRAU5tfpTpL1aE1ntbg2qS1M3o4kXmo
+        2xOvFPU3FC/XVvTN/S3zziCvmsQo6yFDTUYPB/eHyRe9C16SHvVJjb5mzAVz0bSa3KkK1GT0cHA9w2xl
+        gZHeitBsWgwDbSekTg8DNRk9HFzPpAsUSok+ezu7ZsP8cYT2kym/HwEHlxlmI873q/peUXEtr2d7Tjm3
+        t5i+uHbXJq3Ztns4uOmMZyOyg6oa3dbCR0s5S1csHVSepA7fG2oyeji4VaM7iqw/Y1y6pQLyVTe7QouH
+        fsLAgfbTzGc31GT0cHDzZJeHvUDuTvmLX8aeWd7c8La8av11Fd681rYzoCajh4P7yXQ09JT9M0SraTsm
+        fJuj/7K/Q/ELT8+ZdBIni3MAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionSelectLangEN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -3437,13 +3458,184 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxSystem.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>139, 21</value>
   </metadata>
   <data name="OpenFileDialog.Filter" xml:space="preserve">
     <value>Exe files (*.exe)|*.exe</value>
+  </data>
+  <metadata name="MenuSelectMoonDayTextFormat.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>274, 21</value>
+  </metadata>
+  <data name="nissan11ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissan11ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nissan [1] #10</value>
+  </data>
+  <data name="nissan11ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissan11ToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Nissan (1) #10</value>
+  </data>
+  <data name="nissanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissanToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nissan #10</value>
+  </data>
+  <data name="nissan1ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissan1ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nissan 10</value>
+  </data>
+  <data name="MenuSelectMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 92</value>
+  </data>
+  <data name="&gt;&gt;MenuSelectMoonDayTextFormat.Name" xml:space="preserve">
+    <value>MenuSelectMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;MenuSelectMoonDayTextFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAchJREFUOE+Nkl9v0lAYh/ksfoDd8KG8UDNjYsIFmQmF4L2OXcxoZKJzWZaYuEwT
+        UWEIWib/t0XnDGaFWda1K5uwMuXxnFJmyDDjSX45p+15znt68vomJXEztpiYjiFH79XkxG/cB6NNX7fc
+        UT57ny7Hlc0TWo+S6CKth2/EJsfEr9+7fBNXPupgLKQwEutuDh6ncDQDDmyWb88nvaUXeXptFuwu9rMs
+        1vMc1pKImPd0k8bcqnuKJ9Oz40+hhBXszi92X3zgZHkDW2ZJxRF30HzwCjORhmOH2NW7rz3lH4qi0O10
+        eZfOkMxk2FvboLNSPJetxQy9l2Xig+pXBpZHKBTi1HHIflTJfcqTVfOkVZXe/hHN+bWBvFpm4daclP0D
+        y0PKZ2e/KRRLFGVKZfKfCxxaFtWVpPj/QeX/yn/6fWqbW2xubbupVGuYpsnb9ykKlSr1hoZsJLF8VI5E
+        IjUEO992z/Pl6w6HnlwsVdlrNAlFlYuy5M7MjNEyDLGowQ9N43u9jmkN5QqakMPh8HjZYyoQCGC32/zU
+        9ZHKk8hD/MFgkK5zyno2J+5im0Zzf2J5iF8IejQaRUZsKJtkYnnIlIiUZEabZCw+31/sTadbuGqyLQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 48</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatReset.Name" xml:space="preserve">
+    <value>ActionMoonDayTextFormatReset</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatReset.Parent" xml:space="preserve">
+    <value>GroupBoxMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatReset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 48</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Name" xml:space="preserve">
+    <value>ActionMoonDayTextFormatHelp</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Parent" xml:space="preserve">
+    <value>GroupBoxMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 25</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 20</value>
+  </data>
+  <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
+    <value>EditMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
+    <value>GroupBoxMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupBoxMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GroupBoxMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>589, 592</value>
+  </data>
+  <data name="GroupBoxMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 79</value>
+  </data>
+  <data name="GroupBoxMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="GroupBoxMoonDayTextFormat.Text" xml:space="preserve">
+    <value>Moon day text format</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMoonDayTextFormat.Name" xml:space="preserve">
+    <value>GroupBoxMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMoonDayTextFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMoonDayTextFormat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxMoonDayTextFormat.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3474,6 +3666,30 @@
   </data>
   <data name="&gt;&gt;OpenFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nissan11ToolStripMenuItem.Name" xml:space="preserve">
+    <value>nissan11ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nissan11ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nissan11ToolStripMenuItem1.Name" xml:space="preserve">
+    <value>nissan11ToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;nissan11ToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nissanToolStripMenuItem.Name" xml:space="preserve">
+    <value>nissanToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nissanToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nissan1ToolStripMenuItem.Name" xml:space="preserve">
+    <value>nissan1ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nissan1ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PreferencesForm</value>

@@ -1,3 +1,15 @@
+; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
 Lang/EN = Video Channels
 Lang/FR = Vidéo Chaînes
 
@@ -52,6 +64,9 @@ URL = https://www.youtube.com/channel/UCcy6coS9yFqYlcxxNYkgWvQ
 Name = (FR) Chiourim.com
 URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
 
+Name = (FR) Israël Torah
+URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
+
 Name = (FR) Torah Box
 URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
 
@@ -60,6 +75,25 @@ URL = https://www.youtube.com/user/laparacha
 
 Name = (FR) Tsarfat
 URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
+
+-
+
+Name = (FR) Aish
+URL = https://www.youtube.com/user/AishFr
+
+Name = (EN) Aish
+URL = https://www.youtube.com/user/AishVideo
+
+Name = (IW) Aish
+URL = https://www.youtube.com/user/AishIvrit
+
+-
+
+Name = (EN) The Yeshiva
+URL = https://www.youtube.com/user/TheYeshivaNet
+
+Name = (EN) Torah Anytime
+URL = https://www.youtube.com/user/torahanytime1
 
 -
 

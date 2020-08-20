@@ -34,22 +34,21 @@
       System.Windows.Forms.Label LabelGPSLongitude;
       System.Windows.Forms.Label label7;
       System.Windows.Forms.Label LabelHebrewLettersPath;
+      System.Windows.Forms.Label LabelTimeZone;
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
       this.LabelShabatDay = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
       this.EditShabatDay = new System.Windows.Forms.ComboBox();
       this.LabelFontName = new System.Windows.Forms.Label();
-      this.EditGPSLatitude = new System.Windows.Forms.TextBox();
-      this.EditGPSLongitude = new System.Windows.Forms.TextBox();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionResetSettings = new System.Windows.Forms.LinkLabel();
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
-      this.LabelTimeZone = new System.Windows.Forms.Label();
-      this.LabelGPSCity = new System.Windows.Forms.Label();
-      this.LabelGPSCountry = new System.Windows.Forms.Label();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
+      this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.GroupBoxTextReport = new System.Windows.Forms.GroupBox();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -85,22 +84,23 @@
       this.LabelLoomingDelay = new System.Windows.Forms.Label();
       this.EditStartupHide = new System.Windows.Forms.CheckBox();
       this.GroupBoxReminder = new System.Windows.Forms.GroupBox();
+      this.PanelReminderColors = new System.Windows.Forms.Panel();
+      this.label1 = new System.Windows.Forms.Label();
+      this.EditEventColorTorah = new System.Windows.Forms.Panel();
+      this.EditEventColorShabat = new System.Windows.Forms.Panel();
+      this.EditEventColorSeason = new System.Windows.Forms.Panel();
+      this.EditEventColorNext = new System.Windows.Forms.Panel();
+      this.label5 = new System.Windows.Forms.Label();
+      this.EditEventColorMonth = new System.Windows.Forms.Panel();
+      this.label4 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
       this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationHoursBefore = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationEveryMinutes = new System.Windows.Forms.Label();
-      this.label5 = new System.Windows.Forms.Label();
-      this.label4 = new System.Windows.Forms.Label();
-      this.label2 = new System.Windows.Forms.Label();
-      this.label3 = new System.Windows.Forms.Label();
-      this.label1 = new System.Windows.Forms.Label();
       this.EditEventsDay = new System.Windows.Forms.CheckedListBox();
       this.EditEvents = new System.Windows.Forms.CheckedListBox();
-      this.EditEventColorMonth = new System.Windows.Forms.Panel();
-      this.EditEventColorNext = new System.Windows.Forms.Panel();
-      this.EditEventColorSeason = new System.Windows.Forms.Panel();
-      this.EditEventColorShabat = new System.Windows.Forms.Panel();
-      this.EditEventColorTorah = new System.Windows.Forms.Panel();
       this.EditReminderCelebrationsInterval = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
       this.EditAutoLockSessionTimeOut = new System.Windows.Forms.NumericUpDown();
@@ -142,10 +142,20 @@
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+      this.GroupBoxMoonDayTextFormat = new System.Windows.Forms.GroupBox();
+      this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
+      this.MenuSelectMoonDayTextFormat = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.nissan11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.nissan11ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.nissanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
+      this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
+      LabelTimeZone = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxGPS.SuspendLayout();
       this.GroupBoxTextReport.SuspendLayout();
@@ -158,12 +168,15 @@
       this.GroupBoxTrayIcon.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).BeginInit();
       this.GroupBoxReminder.SuspendLayout();
+      this.PanelReminderColors.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditReminderCelebrationsInterval)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoLockSessionTimeOut)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       this.GroupBoxMonth.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
+      this.GroupBoxMoonDayTextFormat.SuspendLayout();
+      this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelGPSLatitude
@@ -185,6 +198,11 @@
       // 
       resources.ApplyResources(LabelHebrewLettersPath, "LabelHebrewLettersPath");
       LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
+      // 
+      // LabelTimeZone
+      // 
+      resources.ApplyResources(LabelTimeZone, "LabelTimeZone");
+      LabelTimeZone.Name = "LabelTimeZone";
       // 
       // DialogColor
       // 
@@ -220,20 +238,6 @@
       resources.ApplyResources(this.LabelFontName, "LabelFontName");
       this.LabelFontName.Name = "LabelFontName";
       // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.BackColor = System.Drawing.Color.White;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.BackColor = System.Drawing.Color.White;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      // 
       // PanelButtons
       // 
       this.PanelButtons.Controls.Add(this.ActionResetSettings);
@@ -263,35 +267,16 @@
       // 
       // GroupBoxGPS
       // 
-      this.GroupBoxGPS.Controls.Add(this.LabelTimeZone);
-      this.GroupBoxGPS.Controls.Add(this.LabelGPSCity);
-      this.GroupBoxGPS.Controls.Add(this.LabelGPSCountry);
       this.GroupBoxGPS.Controls.Add(this.ActionGetGPS);
       this.GroupBoxGPS.Controls.Add(this.EditGPSLatitude);
       this.GroupBoxGPS.Controls.Add(LabelGPSLatitude);
+      this.GroupBoxGPS.Controls.Add(this.EditTimeZone);
       this.GroupBoxGPS.Controls.Add(this.EditGPSLongitude);
+      this.GroupBoxGPS.Controls.Add(LabelTimeZone);
       this.GroupBoxGPS.Controls.Add(LabelGPSLongitude);
       resources.ApplyResources(this.GroupBoxGPS, "GroupBoxGPS");
       this.GroupBoxGPS.Name = "GroupBoxGPS";
       this.GroupBoxGPS.TabStop = false;
-      // 
-      // LabelTimeZone
-      // 
-      resources.ApplyResources(this.LabelTimeZone, "LabelTimeZone");
-      this.LabelTimeZone.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-      this.LabelTimeZone.Name = "LabelTimeZone";
-      // 
-      // LabelGPSCity
-      // 
-      resources.ApplyResources(this.LabelGPSCity, "LabelGPSCity");
-      this.LabelGPSCity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-      this.LabelGPSCity.Name = "LabelGPSCity";
-      // 
-      // LabelGPSCountry
-      // 
-      resources.ApplyResources(this.LabelGPSCountry, "LabelGPSCountry");
-      this.LabelGPSCountry.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-      this.LabelGPSCountry.Name = "LabelGPSCountry";
       // 
       // ActionGetGPS
       // 
@@ -302,6 +287,27 @@
       this.ActionGetGPS.Name = "ActionGetGPS";
       this.ActionGetGPS.TabStop = true;
       this.ActionGetGPS.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionGetGPS_LinkClicked);
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
       // 
       // GroupBoxTextReport
       // 
@@ -628,22 +634,13 @@
       // 
       // GroupBoxReminder
       // 
+      this.GroupBoxReminder.Controls.Add(this.PanelReminderColors);
       this.GroupBoxReminder.Controls.Add(this.EditUseColors);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationHoursBefore);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationEveryMinutes);
-      this.GroupBoxReminder.Controls.Add(this.label5);
-      this.GroupBoxReminder.Controls.Add(this.label4);
-      this.GroupBoxReminder.Controls.Add(this.label2);
-      this.GroupBoxReminder.Controls.Add(this.label3);
-      this.GroupBoxReminder.Controls.Add(this.label1);
       this.GroupBoxReminder.Controls.Add(this.EditEventsDay);
       this.GroupBoxReminder.Controls.Add(this.EditEvents);
-      this.GroupBoxReminder.Controls.Add(this.EditEventColorMonth);
-      this.GroupBoxReminder.Controls.Add(this.EditEventColorNext);
-      this.GroupBoxReminder.Controls.Add(this.EditEventColorSeason);
-      this.GroupBoxReminder.Controls.Add(this.EditEventColorShabat);
-      this.GroupBoxReminder.Controls.Add(this.EditEventColorTorah);
       this.GroupBoxReminder.Controls.Add(this.EditReminderCelebrationsInterval);
       this.GroupBoxReminder.Controls.Add(this.LabelTimerInterval);
       this.GroupBoxReminder.Controls.Add(this.EditAutoLockSessionTimeOut);
@@ -655,6 +652,86 @@
       resources.ApplyResources(this.GroupBoxReminder, "GroupBoxReminder");
       this.GroupBoxReminder.Name = "GroupBoxReminder";
       this.GroupBoxReminder.TabStop = false;
+      // 
+      // PanelReminderColors
+      // 
+      this.PanelReminderColors.Controls.Add(this.label1);
+      this.PanelReminderColors.Controls.Add(this.EditEventColorTorah);
+      this.PanelReminderColors.Controls.Add(this.EditEventColorShabat);
+      this.PanelReminderColors.Controls.Add(this.EditEventColorSeason);
+      this.PanelReminderColors.Controls.Add(this.EditEventColorNext);
+      this.PanelReminderColors.Controls.Add(this.label5);
+      this.PanelReminderColors.Controls.Add(this.EditEventColorMonth);
+      this.PanelReminderColors.Controls.Add(this.label4);
+      this.PanelReminderColors.Controls.Add(this.label3);
+      this.PanelReminderColors.Controls.Add(this.label2);
+      resources.ApplyResources(this.PanelReminderColors, "PanelReminderColors");
+      this.PanelReminderColors.Name = "PanelReminderColors";
+      // 
+      // label1
+      // 
+      resources.ApplyResources(this.label1, "label1");
+      this.label1.Name = "label1";
+      // 
+      // EditEventColorTorah
+      // 
+      this.EditEventColorTorah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
+      this.EditEventColorTorah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditEventColorTorah, "EditEventColorTorah");
+      this.EditEventColorTorah.Name = "EditEventColorTorah";
+      this.EditEventColorTorah.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorTorah_MouseClick);
+      // 
+      // EditEventColorShabat
+      // 
+      this.EditEventColorShabat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+      this.EditEventColorShabat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditEventColorShabat, "EditEventColorShabat");
+      this.EditEventColorShabat.Name = "EditEventColorShabat";
+      this.EditEventColorShabat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorShabat_MouseClick);
+      // 
+      // EditEventColorSeason
+      // 
+      this.EditEventColorSeason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
+      this.EditEventColorSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditEventColorSeason, "EditEventColorSeason");
+      this.EditEventColorSeason.Name = "EditEventColorSeason";
+      this.EditEventColorSeason.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorSeason_MouseClick);
+      // 
+      // EditEventColorNext
+      // 
+      this.EditEventColorNext.BackColor = System.Drawing.Color.WhiteSmoke;
+      this.EditEventColorNext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditEventColorNext, "EditEventColorNext");
+      this.EditEventColorNext.Name = "EditEventColorNext";
+      this.EditEventColorNext.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNext_MouseClick);
+      // 
+      // label5
+      // 
+      resources.ApplyResources(this.label5, "label5");
+      this.label5.Name = "label5";
+      // 
+      // EditEventColorMonth
+      // 
+      this.EditEventColorMonth.BackColor = System.Drawing.Color.AliceBlue;
+      this.EditEventColorMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditEventColorMonth, "EditEventColorMonth");
+      this.EditEventColorMonth.Name = "EditEventColorMonth";
+      this.EditEventColorMonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNewMonth_MouseClick);
+      // 
+      // label4
+      // 
+      resources.ApplyResources(this.label4, "label4");
+      this.label4.Name = "label4";
+      // 
+      // label3
+      // 
+      resources.ApplyResources(this.label3, "label3");
+      this.label3.Name = "label3";
+      // 
+      // label2
+      // 
+      resources.ApplyResources(this.label2, "label2");
+      this.label2.Name = "label2";
       // 
       // EditUseColors
       // 
@@ -677,31 +754,6 @@
       resources.ApplyResources(this.LabelRemindCelebrationEveryMinutes, "LabelRemindCelebrationEveryMinutes");
       this.LabelRemindCelebrationEveryMinutes.Name = "LabelRemindCelebrationEveryMinutes";
       // 
-      // label5
-      // 
-      resources.ApplyResources(this.label5, "label5");
-      this.label5.Name = "label5";
-      // 
-      // label4
-      // 
-      resources.ApplyResources(this.label4, "label4");
-      this.label4.Name = "label4";
-      // 
-      // label2
-      // 
-      resources.ApplyResources(this.label2, "label2");
-      this.label2.Name = "label2";
-      // 
-      // label3
-      // 
-      resources.ApplyResources(this.label3, "label3");
-      this.label3.Name = "label3";
-      // 
-      // label1
-      // 
-      resources.ApplyResources(this.label1, "label1");
-      this.label1.Name = "label1";
-      // 
       // EditEventsDay
       // 
       this.EditEventsDay.CheckOnClick = true;
@@ -715,46 +767,6 @@
       resources.ApplyResources(this.EditEvents, "EditEvents");
       this.EditEvents.FormattingEnabled = true;
       this.EditEvents.Name = "EditEvents";
-      // 
-      // EditEventColorMonth
-      // 
-      this.EditEventColorMonth.BackColor = System.Drawing.Color.AliceBlue;
-      this.EditEventColorMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditEventColorMonth, "EditEventColorMonth");
-      this.EditEventColorMonth.Name = "EditEventColorMonth";
-      this.EditEventColorMonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNewMonth_MouseClick);
-      // 
-      // EditEventColorNext
-      // 
-      this.EditEventColorNext.BackColor = System.Drawing.Color.WhiteSmoke;
-      this.EditEventColorNext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditEventColorNext, "EditEventColorNext");
-      this.EditEventColorNext.Name = "EditEventColorNext";
-      this.EditEventColorNext.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorNext_MouseClick);
-      // 
-      // EditEventColorSeason
-      // 
-      this.EditEventColorSeason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
-      this.EditEventColorSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditEventColorSeason, "EditEventColorSeason");
-      this.EditEventColorSeason.Name = "EditEventColorSeason";
-      this.EditEventColorSeason.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorSeason_MouseClick);
-      // 
-      // EditEventColorShabat
-      // 
-      this.EditEventColorShabat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-      this.EditEventColorShabat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditEventColorShabat, "EditEventColorShabat");
-      this.EditEventColorShabat.Name = "EditEventColorShabat";
-      this.EditEventColorShabat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorShabat_MouseClick);
-      // 
-      // EditEventColorTorah
-      // 
-      this.EditEventColorTorah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
-      this.EditEventColorTorah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditEventColorTorah, "EditEventColorTorah");
-      this.EditEventColorTorah.Name = "EditEventColorTorah";
-      this.EditEventColorTorah.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelEventColorTorah_MouseClick);
       // 
       // EditReminderCelebrationsInterval
       // 
@@ -1023,8 +1035,8 @@
       // 
       // EditHebrewLettersPath
       // 
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.End;
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
@@ -1088,6 +1100,81 @@
       // 
       resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
       // 
+      // GroupBoxMoonDayTextFormat
+      // 
+      this.GroupBoxMoonDayTextFormat.Controls.Add(this.ActionMoonDayTextFormatReset);
+      this.GroupBoxMoonDayTextFormat.Controls.Add(this.ActionMoonDayTextFormatHelp);
+      this.GroupBoxMoonDayTextFormat.Controls.Add(this.EditMoonDayTextFormat);
+      resources.ApplyResources(this.GroupBoxMoonDayTextFormat, "GroupBoxMoonDayTextFormat");
+      this.GroupBoxMoonDayTextFormat.Name = "GroupBoxMoonDayTextFormat";
+      this.GroupBoxMoonDayTextFormat.TabStop = false;
+      // 
+      // ActionMoonDayTextFormatReset
+      // 
+      this.ActionMoonDayTextFormatReset.AllowDrop = true;
+      this.ActionMoonDayTextFormatReset.ContextMenuStrip = this.MenuSelectMoonDayTextFormat;
+      this.ActionMoonDayTextFormatReset.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionMoonDayTextFormatReset, "ActionMoonDayTextFormatReset");
+      this.ActionMoonDayTextFormatReset.Name = "ActionMoonDayTextFormatReset";
+      this.ActionMoonDayTextFormatReset.UseVisualStyleBackColor = true;
+      this.ActionMoonDayTextFormatReset.Click += new System.EventHandler(this.ActionMoonDayTextFormatReset_Click);
+      // 
+      // MenuSelectMoonDayTextFormat
+      // 
+      this.MenuSelectMoonDayTextFormat.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nissan11ToolStripMenuItem,
+            this.nissan11ToolStripMenuItem1,
+            this.nissanToolStripMenuItem,
+            this.nissan1ToolStripMenuItem});
+      this.MenuSelectMoonDayTextFormat.Name = "MenuSelectMoonDayTextFormat";
+      this.MenuSelectMoonDayTextFormat.ShowImageMargin = false;
+      resources.ApplyResources(this.MenuSelectMoonDayTextFormat, "MenuSelectMoonDayTextFormat");
+      // 
+      // nissan11ToolStripMenuItem
+      // 
+      this.nissan11ToolStripMenuItem.Name = "nissan11ToolStripMenuItem";
+      resources.ApplyResources(this.nissan11ToolStripMenuItem, "nissan11ToolStripMenuItem");
+      this.nissan11ToolStripMenuItem.Tag = "%MONTHNAME% [%MONTHNUM%] #%DAYNUM%";
+      this.nissan11ToolStripMenuItem.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // nissan11ToolStripMenuItem1
+      // 
+      this.nissan11ToolStripMenuItem1.Name = "nissan11ToolStripMenuItem1";
+      resources.ApplyResources(this.nissan11ToolStripMenuItem1, "nissan11ToolStripMenuItem1");
+      this.nissan11ToolStripMenuItem1.Tag = "%MONTHNAME% (%MONTHNUM%) #%DAYNUM%";
+      this.nissan11ToolStripMenuItem1.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // nissanToolStripMenuItem
+      // 
+      this.nissanToolStripMenuItem.Name = "nissanToolStripMenuItem";
+      resources.ApplyResources(this.nissanToolStripMenuItem, "nissanToolStripMenuItem");
+      this.nissanToolStripMenuItem.Tag = "%MONTHNAME% #%DAYNUM%";
+      this.nissanToolStripMenuItem.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // nissan1ToolStripMenuItem
+      // 
+      this.nissan1ToolStripMenuItem.Name = "nissan1ToolStripMenuItem";
+      resources.ApplyResources(this.nissan1ToolStripMenuItem, "nissan1ToolStripMenuItem");
+      this.nissan1ToolStripMenuItem.Tag = "%MONTHNAME% %DAYNUM%";
+      this.nissan1ToolStripMenuItem.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // ActionMoonDayTextFormatHelp
+      // 
+      this.ActionMoonDayTextFormatHelp.AllowDrop = true;
+      this.ActionMoonDayTextFormatHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionMoonDayTextFormatHelp, "ActionMoonDayTextFormatHelp");
+      this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";
+      this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
+      this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -1099,6 +1186,7 @@
       this.Controls.Add(this.GroupBoxTrayIcon);
       this.Controls.Add(this.GroupBoxTextReport);
       this.Controls.Add(this.GroupBoxMonth);
+      this.Controls.Add(this.GroupBoxMoonDayTextFormat);
       this.Controls.Add(this.GroupBoxNavigation);
       this.Controls.Add(this.BroupBoxShabat);
       this.Controls.Add(this.GroupBoxGPS);
@@ -1129,6 +1217,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).EndInit();
       this.GroupBoxReminder.ResumeLayout(false);
       this.GroupBoxReminder.PerformLayout();
+      this.PanelReminderColors.ResumeLayout(false);
+      this.PanelReminderColors.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditReminderCelebrationsInterval)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditAutoLockSessionTimeOut)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).EndInit();
@@ -1137,6 +1227,9 @@
       this.GroupBoxMonth.PerformLayout();
       this.GroupBoxSystem.ResumeLayout(false);
       this.GroupBoxSystem.PerformLayout();
+      this.GroupBoxMoonDayTextFormat.ResumeLayout(false);
+      this.GroupBoxMoonDayTextFormat.PerformLayout();
+      this.MenuSelectMoonDayTextFormat.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -1149,8 +1242,8 @@
     private System.Windows.Forms.Label LabelFontName;
     private System.Windows.Forms.ComboBox EditFontName;
     private System.Windows.Forms.ComboBox EditShabatDay;
-    private System.Windows.Forms.TextBox EditGPSLatitude;
-    private System.Windows.Forms.TextBox EditGPSLongitude;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditGPSLatitude;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditGPSLongitude;
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.LinkLabel ActionUsePersonalShabat;
     private System.Windows.Forms.GroupBox GroupBoxGPS;
@@ -1229,9 +1322,6 @@
     private System.Windows.Forms.CheckBox EditTorahEventsCountAsMoon;
     private System.Windows.Forms.NumericUpDown EditBalloonLoomingDelay;
     private System.Windows.Forms.Label LabelLoomingDelay;
-    private System.Windows.Forms.Label LabelGPSCountry;
-    private System.Windows.Forms.Label LabelTimeZone;
-    private System.Windows.Forms.Label LabelGPSCity;
     private System.Windows.Forms.Label LabelRemindAutoLockTimeOut;
     private System.Windows.Forms.NumericUpDown EditAutoLockSessionTimeOut;
     private System.Windows.Forms.CheckBox EditAutoLockSession;
@@ -1250,5 +1340,16 @@
     private System.Windows.Forms.LinkLabel ActionMonthViewThemeDark;
     private System.Windows.Forms.Label LabelColorNoDay;
     internal System.Windows.Forms.Panel EditCalendarColorNoDay;
+    private System.Windows.Forms.Panel PanelReminderColors;
+    private System.Windows.Forms.GroupBox GroupBoxMoonDayTextFormat;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditMoonDayTextFormat;
+    private System.Windows.Forms.Button ActionMoonDayTextFormatReset;
+    private System.Windows.Forms.Button ActionMoonDayTextFormatHelp;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditTimeZone;
+    private System.Windows.Forms.ContextMenuStrip MenuSelectMoonDayTextFormat;
+    private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem nissanToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem nissan1ToolStripMenuItem;
   }
 }

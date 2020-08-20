@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.IO;
 using Ordisoftware.HebrewCommon;
@@ -24,6 +24,28 @@ namespace Ordisoftware.HebrewCalendar
   /// </summary>
   static partial class Program
   {
+
+    /// <summary>
+    /// Indicate phonetic moon months names.
+    /// </summary>
+    static public readonly string[] MoonMonthsNames =
+    {
+      "",
+      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
+      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
+      "Adar II"
+    };
+
+    /// <summary>
+    /// Indicate unicode moon months names.
+    /// </summary>
+    static public readonly string[] MoonMonthsUnicode =
+    {
+      "",
+      "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
+      "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
+      "אדר ב"
+    };
 
     /// <summary>
     /// Indicate filename of the GPS database.
@@ -48,6 +70,25 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static public readonly string MoonMonthsLettriqsFilename
       = MoonMonthsFolderPath + "MoonMonthsLettriqs%LANG%.txt";
+
+    /// <summary>
+    /// Indicate the moon months meanings.
+    /// </summary>
+    static public MoonMonthsFile MoonMonthsMeanings { get; private set; }
+
+    /// <summary>
+    /// Indicate the moon months lettriqs.
+    /// </summary>
+    static public MoonMonthsFile MoonMonthsLettriqs { get; private set; }
+
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
+    static Program()
+    {
+      MoonMonthsMeanings = new MoonMonthsFile(MoonMonthsMeaningsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
+      MoonMonthsLettriqs = new MoonMonthsFile(MoonMonthsLettriqsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
+    }
 
   }
 

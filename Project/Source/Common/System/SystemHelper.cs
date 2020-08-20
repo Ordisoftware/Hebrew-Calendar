@@ -121,6 +121,15 @@ namespace Ordisoftware.HebrewCommon
       }
     }
 
+    // https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
+    public static string FormatBytesSize(this long bytes)
+    {
+      var unit = 1024;
+      if ( bytes < unit ) return $"{bytes} B";
+      var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
+      return $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPE" )[exp - 1]}B";
+    }
+
     /// <summary>
     /// Center a form beside the main form.
     /// </summary>

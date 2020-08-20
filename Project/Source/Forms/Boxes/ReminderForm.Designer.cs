@@ -87,7 +87,7 @@
       this.Controls.Add(this.PictureBox);
       this.Controls.Add(this.LabelDate);
       this.Controls.Add(this.LabelTitle);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ReminderForm";

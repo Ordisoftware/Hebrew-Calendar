@@ -112,6 +112,15 @@ namespace Ordisoftware.HebrewCommon
     static public readonly string DBFileExtension
       = ".sqlite";
 
+    static public bool IsDev
+    {
+      get
+      {
+        return Application.ExecutablePath.Contains("\\Bin\\Debug\\")
+            || Application.ExecutablePath.Contains("\\Bin\\Release\\");
+      }
+    }
+
     /// <summary>
     /// Indicate the root folder path of the application.
     /// </summary>
@@ -184,6 +193,24 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Indicate the user documents folder path.
+    /// </summary>
+    static public string UserDocumentsFolderPath
+    {
+      get
+      {
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                    + Path.DirectorySeparatorChar
+                    + AssemblyCompany
+                    + Path.DirectorySeparatorChar
+                    + AssemblyTitle
+                    + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(path);
+        return path;
+      }
+    }
+
+    /// <summary>
     /// Indicate the user data folder in roaming.
     /// </summary>
     static public string UserDataFolderPath
@@ -202,17 +229,35 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Indicate the user documents folder path.
+    /// Indicate the user data folder in roaming.
     /// </summary>
-    static public string UserDocumentsFolderPath
+    static public string UserDataCommonFolderPath
     {
       get
       {
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
                     + Path.DirectorySeparatorChar
                     + AssemblyCompany
                     + Path.DirectorySeparatorChar
-                    + AssemblyTitle
+                    + "Hebrew Common"
+                    + Path.DirectorySeparatorChar;
+        Directory.CreateDirectory(path);
+        return path;
+      }
+    }
+
+    /// <summary>
+    /// Indicate the user data folder in roaming.
+    /// </summary>
+    static public string ProgramDataFolderPath
+    {
+      get
+      {
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)
+                    + Path.DirectorySeparatorChar
+                    + AssemblyCompany
+                    + Path.DirectorySeparatorChar
+                    + "Hebrew Common"
                     + Path.DirectorySeparatorChar;
         Directory.CreateDirectory(path);
         return path;
@@ -250,14 +295,14 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Static constructor.
     /// </summary>
-    //static public void LoadProvidersAndLinks()
     static Globals()
     {
-      OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName);
-      OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName);
+      var folder = DataFileFolder.ApplicationDocuments;
+      OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName, true, IsDev, folder);
+      OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName, true, IsDev, folder);
       if ( Directory.Exists(WebLinksFolderPath) )
         foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
-          WebLinksProviders.Add(new OnlineProviders(file));
+          WebLinksProviders.Add(new OnlineProviders(file, true, IsDev, folder));
     }
 
     #region Assembly information

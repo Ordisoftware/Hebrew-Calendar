@@ -1,3 +1,15 @@
+; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
 Lang/EN = Video Playlists
 Lang/FR = Vidéo Playlists
 
@@ -43,6 +55,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DFccHjtdA5k4KuCAaZdpg9
 
 Name = (FR) Rav Yossef Hay
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-D124Or8KY9XHz4e76McKBT
+
+Name = (FR) Rav Avraham Ifrah
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BtjVoIn7xLBlPJbUsNcc3Z
 
 Name = (FR) Rav David Pinto
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Clbv_vfSf0pNcGcbZjbgDS
