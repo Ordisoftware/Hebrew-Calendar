@@ -59,6 +59,24 @@ namespace Ordisoftware.HebrewCalendar
       Globals.AllowClose = false;
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
+      DuplicateMenu(ActionInformation, MenuInformation);
+    }
+
+    /// <summary>
+    /// Duplicate menu content.
+    /// </summary>
+    private void DuplicateMenu(ToolStripDropDownButton source, ToolStripMenuItem destination)
+    {
+      int count = 0;
+      var items = new ToolStripItem[source.DropDownItems.Count];
+      foreach ( ToolStripItem item in source.DropDownItems )
+        if ( item is ToolStripMenuItem )
+          items[count++] = ( (ToolStripMenuItem)item ).Clone();
+        else
+        if ( item is ToolStripSeparator )
+          items[count++] = new ToolStripSeparator();
+      destination.DropDownItems.Clear();
+      destination.DropDownItems.AddRange(items);
     }
 
     /// <summary>
@@ -66,17 +84,8 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     internal void CreateWebLinks()
     {
-      MenuWebLinks.InitializeFromWebLinks(CreateWebLinks);
-      int count = 0;
-      var items = new ToolStripItem[MenuWebLinks.DropDownItems.Count];
-      foreach ( ToolStripItem item in MenuWebLinks.DropDownItems )
-        if ( item is ToolStripMenuItem )
-          items[count++] = ( (ToolStripMenuItem)item ).Clone();
-        else
-        if ( item is ToolStripSeparator )
-          items[count++] = new ToolStripSeparator();
-      MenuWebLinksTray.DropDownItems.Clear();
-      MenuWebLinksTray.DropDownItems.AddRange(items);
+      ActionWebLinks.InitializeFromWebLinks(CreateWebLinks);
+      DuplicateMenu(ActionWebLinks, MenuWebLinks);
     }
 
     /// <summary>
