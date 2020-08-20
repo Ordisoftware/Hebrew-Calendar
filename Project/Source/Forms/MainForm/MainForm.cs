@@ -860,25 +860,33 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MenuDisableReminder_Click(object sender, EventArgs e)
     {
-      var delay = SuspendReminderDelayForm.Run();
-      if ( delay == null ) return;
-      TrayIcon.Icon = new Icon(Globals.RootFolderPath + "ApplicationPause.ico");
-      TimerReminder.Enabled = false;
-      MenuResetReminder.Enabled = false;
-      ActionResetReminder.Enabled = false;
-      MenuEnableReminder.Visible = true;
-      MenuDisableReminder.Visible = false;
-      MenuEnableReminder.Enabled = true;
-      MenuDisableReminder.Enabled = false;
-      ActionEnableReminder.Visible = true;
-      ActionDisableReminder.Visible = false;
-      ActionEnableReminder.Enabled = true;
-      ActionDisableReminder.Enabled = false;
-      ClearLists();
-      if ( delay > 0 )
+      try
       {
-        TimerResumeReminder.Interval = delay.Value * 60 * 1000;
-        TimerResumeReminder.Start();
+        MenuTray.Enabled = false;
+        var delay = SuspendReminderDelayForm.Run();
+        if ( delay == null ) return;
+        TrayIcon.Icon = new Icon(Globals.RootFolderPath + "ApplicationPause.ico");
+        TimerReminder.Enabled = false;
+        MenuResetReminder.Enabled = false;
+        ActionResetReminder.Enabled = false;
+        MenuEnableReminder.Visible = true;
+        MenuDisableReminder.Visible = false;
+        MenuEnableReminder.Enabled = true;
+        MenuDisableReminder.Enabled = false;
+        ActionEnableReminder.Visible = true;
+        ActionDisableReminder.Visible = false;
+        ActionEnableReminder.Enabled = true;
+        ActionDisableReminder.Enabled = false;
+        ClearLists();
+        if ( delay > 0 )
+        {
+          TimerResumeReminder.Interval = delay.Value * 60 * 1000;
+          TimerResumeReminder.Start();
+        }
+      }
+      finally
+      {
+        MenuTray.Enabled = true;
       }
     }
 

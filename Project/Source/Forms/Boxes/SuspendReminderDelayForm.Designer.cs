@@ -96,7 +96,6 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SuspendReminderDelayForm";
-      this.ShowInTaskbar = false;
       this.PanelBottom.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.EditDelay)).EndInit();
       this.ResumeLayout(false);
