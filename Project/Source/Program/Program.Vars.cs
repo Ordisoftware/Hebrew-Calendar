@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.IO;
 using Ordisoftware.HebrewCommon;
