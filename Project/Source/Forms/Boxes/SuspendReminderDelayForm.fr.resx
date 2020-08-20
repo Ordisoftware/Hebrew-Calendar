@@ -121,6 +121,6 @@
     <value>Annuler</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Délai de suspension</value>
+    <value>Délai de suspension du rappeleur</value>
   </data>
 </root>
