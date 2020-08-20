@@ -106,15 +106,21 @@ namespace Ordisoftware.HebrewCalendar
       CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
       CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
       CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
+      SetCurrentTimeZone();
+      Refresh();
+      LoadData();
+      ClearLists();
+    }
+
+    internal void SetCurrentTimeZone()
+    {
+      CurrentTimeZoneInfo = null;
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == Program.Settings.TimeZone )
         {
           CurrentTimeZoneInfo = item;
           break;
         }
-      Refresh();
-      LoadData();
-      ClearLists();
     }
 
     /// <summary>

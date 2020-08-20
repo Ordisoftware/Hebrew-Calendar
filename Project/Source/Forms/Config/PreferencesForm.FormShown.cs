@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
@@ -29,8 +29,11 @@ namespace Ordisoftware.HebrewCalendar
 
     private void DoFormShown(object sender, EventArgs e)
     {
+      if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
+        ActionGetGPS_LinkClicked(null, null);
       if ( Program.Settings.FirstLaunch )
       {
+        ActionResetSettings.Enabled = false;
         Program.Settings.FirstLaunchV4 = false;
         Program.Settings.FirstLaunch = false;
         Program.Settings.Save();
@@ -38,8 +41,6 @@ namespace Ordisoftware.HebrewCalendar
         Program.Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(Translations.AskToUseMoonOmer.GetLang());
         ActionUsePersonalShabat_LinkClicked(null, null);
       }
-      if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
-        ActionGetGPS_LinkClicked(null, null);
       UpdateLanguagesButtons();
       foreach ( var item in EditFontName.Items )
         if ( (string)item == Program.Settings.FontName )
@@ -53,7 +54,7 @@ namespace Ordisoftware.HebrewCalendar
                  + Environment.NewLine
                  + Environment.NewLine;
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( Program.Settings.TimeZone == item.Id )
+        if ( item.Id == Program.Settings.TimeZone )
         {
           str += item.DisplayName;
           break;

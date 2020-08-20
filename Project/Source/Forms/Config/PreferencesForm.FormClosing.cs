@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Xml;
 using System.Windows.Forms;
@@ -68,13 +68,6 @@ namespace Ordisoftware.HebrewCalendar
         {
         }
       UpdateSettings();
-      MainForm.Instance.CurrentTimeZoneInfo = null;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Program.Settings.TimeZone )
-        {
-          MainForm.Instance.CurrentTimeZoneInfo = item;
-          break;
-        }
       Program.Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       Program.Settings.Store();
     }
