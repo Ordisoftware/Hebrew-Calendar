@@ -141,6 +141,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Add choosing a delay to allow auto enabling when suspending reminder.
 - Add left, right and up keys support to the navigaation form.
 - Add option to define moon day text format for calendar month view.
+- Add Windows date and time link.
 - Add web links menu duplicated in the tray icon.
 - Fix reset preferences generetes data before setup GPS if undefined.
 - Fix GPS labels for Windows 10.
