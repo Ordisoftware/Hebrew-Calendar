@@ -280,7 +280,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void EditMoonDayTextFormat_TextChanged(object sender, EventArgs e)
     {
-      MustRefreshMonthView = true;
+      if ( IsReady ) MustRefreshMonthView = true;
     }
 
     private void EitReportFont_Changed(object sender, EventArgs e)
