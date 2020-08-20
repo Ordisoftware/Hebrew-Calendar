@@ -51,6 +51,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         Items.Clear();
+        Items.Add("");
         var lines = File.ReadAllLines(filename);
         for ( int index = 0; index < lines.Length; index++ )
         {

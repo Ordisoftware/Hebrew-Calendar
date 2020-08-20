@@ -22,9 +22,9 @@ namespace Ordisoftware.HebrewCalendar
   /// </summary>
   public enum MoonMonthsListColors
   {
-    System,
     Pastel,
-    Flashy
+    Flashy,
+    System
   }
 
 }

@@ -30,6 +30,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static public readonly string[] MoonMonthsNames =
     {
+      "",
       "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
       "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
       "Adar II"
@@ -40,6 +41,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static public readonly string[] MoonMonthsUnicode =
     {
+      "",
       "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
       "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
       "אדר ב"
