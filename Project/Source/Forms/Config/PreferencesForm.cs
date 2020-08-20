@@ -276,6 +276,10 @@ namespace Ordisoftware.HebrewCalendar
     private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
     {
       EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem ).Tag;
+    }
+
+    private void EditMoonDayTextFormat_TextChanged(object sender, EventArgs e)
+    {
       MustRefreshMonthView = true;
     }
 
