@@ -132,12 +132,12 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 ## Roadmap
 
 - Add moon months description form in tools menu.
+- Add a different tray icon to indicate if a celebration is running, including week days.
 
 ## Changelog
 
-#### 2020.__.__ - Version 4.1
+#### 2020.08.__ - Version 4.1
 
->>>>>- Add a different tray icon to indicate if between the start and the end of a celebration, including week days.
 - Add choosing a delay to allow auto enabling when suspending reminder.
 - Add option to define moon day text format for calendar month view.
 - Add web links menu duplicated in the tray icon.
