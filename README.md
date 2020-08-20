@@ -142,15 +142,16 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Add choosing a delay to allow auto enabling when suspending reminder.
 - Add left, right and up keys support to the navigation form.
 - Add option to define moon day text format for calendar month view.
-- Add Windows date and time link.
+- Add Windows date and time link in the tools menu.
+- Add release notes link in the information menu.
+- Add information menu duplicated in the tray icon.
 - Add web links menu duplicated in the tray icon.
-- Add release notes link.
-- Fix reset preferences generates data before setup GPS if undefined.
-- Fix GPS labels for Windows 10.
-- Fix reminder form border for Windows 10
-- Fix Hebrew Letters path text box color for Windows 10.
-- Fix first opening preferences long latency on Windows 10.
-- Few UI fixes.
+- Fix reset preferences generates data before setup GPS if undefined that causes an exception.
+- Fix GPS labels appearance for Windows 10.
+- Fix reminder form title bar for Windows 10
+- Fix Hebrew Letters path TextBox color for Windows 10.
+- Fixed long latency when opening preferences for the first time in Windows 10.
+- Few UI fixes and improvements.
 
 #### 2020.04.24 - Version 4.0
 
