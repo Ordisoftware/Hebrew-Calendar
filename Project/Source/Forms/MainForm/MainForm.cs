@@ -872,7 +872,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         MenuTray.Enabled = false;
-        var delay = SuspendReminderDelayForm.Run();
+        var delay = SuspendReminderForm.Run();
         if ( delay == null ) return;
         TrayIcon.Icon = new Icon(Globals.RootFolderPath + "ApplicationPause.ico");
         TimerReminder.Enabled = false;

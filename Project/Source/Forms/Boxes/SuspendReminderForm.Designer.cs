@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.HebrewCalendar
 {
-  partial class SuspendReminderDelayForm
+  partial class SuspendReminderForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuspendReminderDelayForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuspendReminderForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionOk = new System.Windows.Forms.Button();
