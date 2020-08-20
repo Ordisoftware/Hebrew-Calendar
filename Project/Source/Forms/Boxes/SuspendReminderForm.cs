@@ -20,7 +20,7 @@ using Ordisoftware.HebrewCommon;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  public partial class SuspendReminderDelayForm : Form
+  public partial class SuspendReminderForm : Form
   {
 
     public class Delay
@@ -79,7 +79,7 @@ namespace Ordisoftware.HebrewCalendar
 
     static public int? Run()
     {
-      var form = new SuspendReminderDelayForm();
+      var form = new SuspendReminderForm();
       if ( form.ShowDialog() == DialogResult.OK )
       {
         var item = form.SelectDelay.SelectedItem;
@@ -91,7 +91,7 @@ namespace Ordisoftware.HebrewCalendar
         return null;
     }
 
-    private SuspendReminderDelayForm()
+    private SuspendReminderForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
