@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Drawing;
 using System.Linq;
@@ -128,10 +128,22 @@ namespace Ordisoftware.HebrewCalendar
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-      if ( keyData != Keys.Escape )
-        return base.ProcessCmdKey(ref msg, keyData);
-      Hide();
-      return true;
+      switch ( keyData )
+      {
+        case Keys.Escape:
+          Hide();
+          return true;
+        case Keys.Left:
+          ActionPreviousDay.PerformClick();
+          return true;
+        case Keys.Right:
+          ActionNextDay.PerformClick();
+          return true;
+        case Keys.Up:
+          ActionSelectDay.PerformClick();
+          return true;
+      }
+      return base.ProcessCmdKey(ref msg, keyData);
     }
 
     private void ShowDayForm_FormClosing(object sender, FormClosingEventArgs e)
