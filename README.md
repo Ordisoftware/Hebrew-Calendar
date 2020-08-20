@@ -145,7 +145,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Add Windows date and time link.
 - Add web links menu duplicated in the tray icon.
 - Add release notes link.
-- Fix reset preferences generetes data before setup GPS if undefined.
+- Fix reset preferences generates data before setup GPS if undefined.
 - Fix GPS labels for Windows 10.
 - Fix reminder form border for Windows 10
 - Fix Hebrew Letters path text box color for Windows 10.
