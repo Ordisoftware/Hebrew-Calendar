@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 2</value>
+    <value>146, 2</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 2</value>
+    <value>65, 2</value>
   </data>
   <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -184,10 +184,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 198</value>
+    <value>10, 203</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 28</value>
+    <value>224, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
@@ -205,10 +205,10 @@
     <value>3</value>
   </data>
   <data name="SelectDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 13</value>
+    <value>18, 18</value>
   </data>
   <data name="SelectDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 173</value>
+    <value>127, 173</value>
   </data>
   <data name="SelectDelay.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -229,7 +229,7 @@
     <value>True</value>
   </data>
   <data name="LabelCustom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 147</value>
+    <value>158, 152</value>
   </data>
   <data name="LabelCustom.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -253,7 +253,7 @@
     <value>1</value>
   </data>
   <data name="EditDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 166</value>
+    <value>161, 171</value>
   </data>
   <data name="EditDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 20</value>
@@ -280,7 +280,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>214, 236</value>
+    <value>244, 241</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -289,7 +289,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Suspend delay</value>
+    <value>Suspend reminder delay</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SuspendReminderDelayForm</value>
