@@ -133,6 +133,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 - Add moon months description form in tools menu.
 - Add a different tray icon to indicate if a celebration is running, including week days.
+- Improve and reorganize preferences form with a left menu panel.
 
 ## Changelog
 
