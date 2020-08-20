@@ -148,7 +148,7 @@ namespace Ordisoftware.HebrewCalendar
           strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Environment.NewLine
                      + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
           Color colorMoon = Color.Black;
-          string strMonthDay = Program.Settings.MoonDayTextFormat
+          string strMonthDay = Program.Settings.MoonDayTextFormat.ToUpper()
                                .Replace("%MONTHNAME%", Program.MoonMonthsNames[row.LunarMonth])
                                .Replace("%MONTHNUM%", row.LunarMonth.ToString())
                                .Replace("%DAYNUM%", row.LunarDay.ToString());

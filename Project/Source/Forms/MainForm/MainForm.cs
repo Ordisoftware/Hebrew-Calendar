@@ -538,6 +538,16 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionWebReleaseNotes for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionWebReleaseNotes_Click(object sender, EventArgs e)
+    {
+      SystemHelper.OpenWebLink(Globals.ApplicationHomeURL + "/#ChangeLog" + Globals.AssemblyVersion);
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionContact for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
