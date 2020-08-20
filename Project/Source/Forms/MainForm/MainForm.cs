@@ -612,6 +612,11 @@ namespace Ordisoftware.HebrewCalendar
       SystemHelper.RunShell("calc.exe");
     }
 
+    private void ActionOpenSystemDateAndTime_Click(object sender, EventArgs e)
+    {
+      SystemHelper.RunShell("timedate.cpl");
+    }
+
     private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
     {
       var formDate = new SelectDayForm();
