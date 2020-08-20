@@ -26,6 +26,26 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
+    /// Indicate phonetic moon months names.
+    /// </summary>
+    static public readonly string[] MoonMonthsNames =
+    {
+      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
+      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
+      "Adar II"
+    };
+
+    /// <summary>
+    /// Indicate unicode moon months names.
+    /// </summary>
+    static public readonly string[] MoonMonthsUnicode =
+    {
+      "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
+      "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
+      "אדר ב"
+    };
+
+    /// <summary>
     /// Indicate filename of the GPS database.
     /// </summary>
     static public readonly string GPSFilename
@@ -50,20 +70,22 @@ namespace Ordisoftware.HebrewCalendar
       = MoonMonthsFolderPath + "MoonMonthsLettriqs%LANG%.txt";
 
     /// <summary>
-    /// Indicate filename of the moon months data.
+    /// Indicate the moon months meanings.
     /// </summary>
-    static public readonly string MoonMonthsFilename
-      = MoonMonthsFolderPath + "MoonMonths-%LANG%.txt";
+    static public MoonMonthsFile MoonMonthsMeanings { get; private set; }
 
-    static public MoonMonthsFile MoonMonths { get; private set; }
+    /// <summary>
+    /// Indicate the moon months lettriqs.
+    /// </summary>
+    static public MoonMonthsFile MoonMonthsLettriqs { get; private set; }
 
     /// <summary>
     /// Static constructor.
     /// </summary>
     static Program()
     {
-      /* TODO remove for v4.2 */if ( Globals.IsDev )
-      MoonMonths = new MoonMonthsFile(MoonMonthsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
+      MoonMonthsMeanings = new MoonMonthsFile(MoonMonthsMeaningsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
+      MoonMonthsLettriqs = new MoonMonthsFile(MoonMonthsLettriqsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
     }
 
   }

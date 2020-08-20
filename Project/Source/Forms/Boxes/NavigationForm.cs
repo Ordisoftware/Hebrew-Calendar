@@ -46,7 +46,7 @@ namespace Ordisoftware.HebrewCalendar
                       where day.Date == strDate
                       select day ).Single();
           LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(value.ToLongDateString());
-          string strMonth = MoonMonths.Names[row.LunarMonth];
+          string strMonth = Program.MoonMonthsNames[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
           LabelLunarDayValue.Text = Translations.NavigationDay.GetLang() + row.LunarDay.ToString();
           if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )

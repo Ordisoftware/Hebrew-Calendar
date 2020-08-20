@@ -216,7 +216,6 @@
     <Compile Include="Source\Forms\Boxes\ShowTextForm.Designer.cs">
       <DependentUpon>ShowTextForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Entities\MoonMonths.cs" />
     <Compile Include="Source\Enums\MoonMonthsListColors.cs" />
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.cs">
       <SubType>Form</SubType>

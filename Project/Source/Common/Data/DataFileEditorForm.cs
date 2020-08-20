@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -25,20 +25,20 @@ namespace Ordisoftware.HebrewCommon
   public partial class DataFileEditorForm : Form
   {
 
-    static public bool Run(DataFile file, string nameInstance)
+    static public bool Run(string title, DataFile file)
     {
       var form = new DataFileEditorForm();
-      form.Text = nameInstance;
+      form.Text = title;
       AddTab(form.TabControl, file);
       bool result = form.ShowDialog() == DialogResult.OK;
       if ( result ) file.ReLoad();
       return result;
     }
 
-    static public bool Run(IEnumerable<DataFile> files, string nameInstance)
+    static public bool Run(string title, IEnumerable<DataFile> files)
     {
       var form = new DataFileEditorForm();
-      form.Text = nameInstance;
+      form.Text = title;
       foreach ( var item in files ) AddTab(form.TabControl, item);
       bool result = form.ShowDialog() == DialogResult.OK;
       if (result) foreach ( var item in files ) item.ReLoad();
@@ -98,7 +98,7 @@ namespace Ordisoftware.HebrewCommon
       foreach ( TabPage page in TabControl.TabPages )
         try
         {
-          ( (TextBox)page.Controls[0] ).Text = File.ReadAllText(( (OnlineProviders)page.Tag ).FilenameDefault);
+          ( (TextBox)page.Controls[0] ).Text = File.ReadAllText(( (DataFile)page.Tag ).FilenameDefault);
         }
         catch ( Exception ex )
         {
@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewCommon
       foreach ( TabPage page in TabControl.TabPages )
         try
         {
-          File.WriteAllText(( (OnlineProviders)page.Tag ).Filename, ( (TextBox)page.Controls[0] ).Text);
+          File.WriteAllText(( (DataFile)page.Tag ).Filename, ( (TextBox)page.Controls[0] ).Text);
         }
         catch ( Exception ex )
         {

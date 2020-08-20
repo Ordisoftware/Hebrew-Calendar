@@ -149,7 +149,7 @@ namespace Ordisoftware.HebrewCalendar
                      + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
           Color colorMoon = Color.Black;
           string strMonthDay = Program.Settings.MoonDayTextFormat
-                               .Replace("%MONTHNAME%", MoonMonths.Names[row.LunarMonth])
+                               .Replace("%MONTHNAME%", Program.MoonMonthsNames[row.LunarMonth])
                                .Replace("%MONTHNUM%", row.LunarMonth.ToString())
                                .Replace("%DAYNUM%", row.LunarDay.ToString());
           colorMoon = row.IsNewMoon == 1

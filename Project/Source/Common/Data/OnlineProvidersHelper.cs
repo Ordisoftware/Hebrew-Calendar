@@ -13,7 +13,6 @@
 /// <created> 2020-03 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -89,7 +88,7 @@ namespace Ordisoftware.HebrewCommon
         list.Insert(0, CreateConfigureMenuItem((sender, e) =>
         {
           int countTotal = items.Items.Count;
-          if ( !DataFileEditorForm.Run(items, nameItems) ) return;
+          if ( !DataFileEditorForm.Run(nameItems, items) ) return;
           for ( int count = 0; count < countTotal; count++ )
             list.RemoveAt(0);
           list.RemoveAt(0);
@@ -170,7 +169,7 @@ namespace Ordisoftware.HebrewCommon
         menuRoot.DropDownItems.Add(new ToolStripSeparator());
         menuRoot.DropDownItems.Add(CreateConfigureMenuItem((sender, e) =>
         {
-          if ( !DataFileEditorForm.Run(Globals.WebLinksProviders, nameof(Globals.WebLinksProviders)) ) return;
+          if ( !DataFileEditorForm.Run(nameof(Globals.WebLinksProviders), Globals.WebLinksProviders) ) return;
           reconstruct();
         }));
       }

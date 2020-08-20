@@ -11,23 +11,37 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.IO;
 using Ordisoftware.Core;
+using Ordisoftware.HebrewCommon;
 
-namespace Ordisoftware.HebrewCommon
+namespace Ordisoftware.HebrewCalendar
 {
 
   public partial class MoonMonthsFile : DataFile
   {
 
-    public List<OnlineProviderItem> Items { get; }
-     = new List<OnlineProviderItem>();
+    public readonly List<string> Items = new List<string>();
+
+    public string this[int index]
+    {
+      get
+      {
+        if ( index < 0 || index >= Items.Count )
+        {
+          DisplayManager.ShowAdvert("Index out of bounds: " + index);
+          return "";
+        }
+        else
+          return Items[index];
+      }
+    }
 
     public MoonMonthsFile(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
-      : base(filename, showFileNotFound, configurable, folder)
+      : base(filename.Replace("%LANG%", Localizer.Language.ToUpper()), showFileNotFound, configurable, folder)
     {
     }
 
@@ -44,8 +58,15 @@ namespace Ordisoftware.HebrewCommon
           {
             DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index + 1, lines[index]));
           };
-          string line = lines[index].Trim();
-          if ( line == "" ) continue;
+          if ( index >= Program.MoonMonthsNames.Length )
+            break;
+          string line = lines[index];
+          if ( line.Trim() == "" )
+            continue;
+          if ( line.StartsWith(";") )
+            continue;
+          var parts = line.Split(new char[] { '=' }, 2);
+          Items.Add(parts[1].Trim());
         }
       }
       catch ( Exception ex )

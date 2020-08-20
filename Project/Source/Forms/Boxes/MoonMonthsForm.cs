@@ -11,10 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -30,11 +31,11 @@ namespace Ordisoftware.HebrewCalendar
       ActiveControl = ActionClose;
       ActionSwapColors.TabStop = false;
       ActionEditFiles.TabStop = false;
-      ActionReloadFiles.TabStop = false;
+      ActionViewNotice.TabStop = false;
       ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        string str = MoonMonths.Unicode[(int)LastControl.Tag].Replace(" א", "").Replace(" ב", "");
+        string str = Program.MoonMonthsUnicode[(int)LastControl.Tag].Replace(" א", "").Replace(" ב", "");
         SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", str));
       });
     }
@@ -59,16 +60,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionEditFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      foreach ( string lang in Localizer.AvailableLanguages )
-      {
-        SystemHelper.RunShell(Program.MoonMonthsMeaningsFilename.Replace("%LANG%", lang.ToUpper()));
-        SystemHelper.RunShell(Program.MoonMonthsLettriqsFilename.Replace("%LANG%", lang.ToUpper()));
-      }
-    }
-
-    private void ActionReloadFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      CreateControls();
+      DataFile[] list = { Program.MoonMonthsMeanings, Program.MoonMonthsLettriqs };
+      if ( DataFileEditorForm.Run("Moon", list) ) CreateControls();
     }
 
     private Control LastControl;
@@ -85,7 +78,7 @@ namespace Ordisoftware.HebrewCalendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      Program.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]));
+      Program.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]));
     }
 
     private void ActionCopyFontChars_Click(object sender, EventArgs e)
@@ -93,7 +86,7 @@ namespace Ordisoftware.HebrewCalendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      Clipboard.SetText(HebrewAlphabet.ConvertToHebrewFont(MoonMonths.Unicode[index]));
+      Clipboard.SetText(HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]));
     }
 
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
@@ -101,7 +94,7 @@ namespace Ordisoftware.HebrewCalendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      Clipboard.SetText(MoonMonths.Unicode[index]);
+      Clipboard.SetText(Program.MoonMonthsUnicode[index]);
     }
 
     private void ActionCopyLine_Click(object sender, EventArgs e)
@@ -109,11 +102,19 @@ namespace Ordisoftware.HebrewCalendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      string str = MoonMonths.Unicode[index] + " ("
-                 + MoonMonths.Names[index] + ") : "
-                 + MoonMonths.Meanings[index] + " ("
-                 + MoonMonths.Lettriqs[index] + ")";
+      string str = Program.MoonMonthsUnicode[index] + " ("
+                 + Program.MoonMonthsNames[index] + ") : "
+                 + Program.MoonMonthsMeanings[index] + " ("
+                 + Program.MoonMonthsLettriqs[index] + ")";
       Clipboard.SetText(str);
+    }
+
+    private void ActionViewNotice_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      DisplayManager.Show("Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Environment.NewLine +
+                          "Vert = air = action | A" + Environment.NewLine +
+                          "Blanc = eau = expir | C" + Environment.NewLine +
+                          "Jaune = terre = repos | G");
     }
 
   }

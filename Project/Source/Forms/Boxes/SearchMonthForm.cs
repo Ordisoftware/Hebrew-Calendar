@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( row.LunarMonth > 0 )
         {
           var item = ListItems.Items.Add(row.LunarMonth.ToString());
-          item.SubItems.Add(MoonMonths.Names[row.LunarMonth]);
+          item.SubItems.Add(Program.MoonMonthsNames[row.LunarMonth]);
           string str = SQLiteHelper.GetDate(row.Date).ToLongDateString();
           item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
           item.Tag = row;
