@@ -85,15 +85,14 @@
       this.ActionSearchEvent = new System.Windows.Forms.ToolStripButton();
       this.ActionSearchMonth = new System.Windows.Forms.ToolStripButton();
       this.ActionSearchDay = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+      this.sep3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionNavigate = new System.Windows.Forms.ToolStripButton();
       this.ActionViewCelebrations = new System.Windows.Forms.ToolStripButton();
-      this.Sep3 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionHelp = new System.Windows.Forms.ToolStripButton();
+      this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.ActionInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionHelp = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebReleaseNotes = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
@@ -122,10 +121,10 @@
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
-      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+      this.sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionResetReminder = new System.Windows.Forms.ToolStripButton();
       this.ActionDisableReminder = new System.Windows.Forms.ToolStripButton();
-      this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
+      this.Sep5 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.ActionSettings = new System.Windows.Forms.ToolStripDropDownButton();
       this.MenuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,7 +135,7 @@
       this.EditScreenBottomRight = new System.Windows.Forms.ToolStripMenuItem();
       this.EditScreenCenter = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionResetWinSettings = new System.Windows.Forms.ToolStripMenuItem();
-      this.Sep7 = new System.Windows.Forms.ToolStripSeparator();
+      this.Separator0 = new System.Windows.Forms.ToolStripSeparator();
       this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
       this.EditESCtoExit = new System.Windows.Forms.ToolStripMenuItem();
       this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
@@ -171,6 +170,8 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
+      this.sep7 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -570,23 +571,22 @@
             this.ActionSearchEvent,
             this.ActionSearchMonth,
             this.ActionSearchDay,
-            this.toolStripSeparator12,
+            this.sep3,
             this.ActionNavigate,
             this.ActionViewCelebrations,
-            this.Sep3,
-            this.ActionExit,
             this.Sep4,
-            this.ActionHelp,
-            this.ActionInformation,
-            this.ActionTools,
-            this.ActionWebLinks,
-            this.toolStripSeparator4,
+            this.ActionExit,
             this.ActionResetReminder,
             this.ActionDisableReminder,
-            this.Sep6,
-            this.ActionPreferences,
-            this.ActionSettings,
+            this.Sep5,
+            this.ActionTools,
+            this.ActionWebLinks,
+            this.sep6,
             this.ActionView,
+            this.ActionSettings,
+            this.ActionPreferences,
+            this.sep7,
+            this.ActionInformation,
             this.ActionEnableReminder});
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
@@ -671,10 +671,10 @@
       this.ActionSearchDay.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionSearchDay.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // toolStripSeparator12
+      // sep3
       // 
-      this.toolStripSeparator12.Name = "toolStripSeparator12";
-      resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
+      this.sep3.Name = "sep3";
+      resources.ApplyResources(this.sep3, "sep3");
       // 
       // ActionNavigate
       // 
@@ -696,10 +696,10 @@
       this.ActionViewCelebrations.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionViewCelebrations.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // Sep3
+      // Sep4
       // 
-      this.Sep3.Name = "Sep3";
-      resources.ApplyResources(this.Sep3, "Sep3");
+      this.Sep4.Name = "Sep4";
+      resources.ApplyResources(this.Sep4, "Sep4");
       // 
       // ActionExit
       // 
@@ -712,29 +712,13 @@
       this.ActionExit.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionExit.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // Sep4
-      // 
-      this.Sep4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.Sep4.Name = "Sep4";
-      resources.ApplyResources(this.Sep4, "Sep4");
-      // 
-      // ActionHelp
-      // 
-      this.ActionHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.ActionHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionHelp, "ActionHelp");
-      this.ActionHelp.Name = "ActionHelp";
-      this.ActionHelp.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
-      this.ActionHelp.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionHelp.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
       // ActionInformation
       // 
-      this.ActionInformation.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionInformation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionInformation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionAbout,
+            this.ActionHelp,
+            this.toolStripSeparator4,
             this.ActionWebReleaseNotes,
             this.ActionWebCheckUpdate,
             this.toolStripSeparator9,
@@ -760,6 +744,14 @@
       resources.ApplyResources(this.ActionAbout, "ActionAbout");
       this.ActionAbout.Name = "ActionAbout";
       this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
+      // 
+      // ActionHelp
+      // 
+      this.ActionHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionHelp, "ActionHelp");
+      this.ActionHelp.Name = "ActionHelp";
+      this.ActionHelp.Tag = "";
+      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
       // 
       // ActionWebReleaseNotes
       // 
@@ -952,10 +944,10 @@
       resources.ApplyResources(this.ActionWebLinks, "ActionWebLinks");
       this.ActionWebLinks.Name = "ActionWebLinks";
       // 
-      // toolStripSeparator4
+      // sep6
       // 
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
-      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      this.sep6.Name = "sep6";
+      resources.ApplyResources(this.sep6, "sep6");
       // 
       // ActionResetReminder
       // 
@@ -977,15 +969,13 @@
       this.ActionDisableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionDisableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // Sep6
+      // Sep5
       // 
-      this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.Sep6.Name = "Sep6";
-      resources.ApplyResources(this.Sep6, "Sep6");
+      this.Sep5.Name = "Sep5";
+      resources.ApplyResources(this.Sep5, "Sep5");
       // 
       // ActionPreferences
       // 
-      this.ActionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionPreferences, "ActionPreferences");
       this.ActionPreferences.Name = "ActionPreferences";
@@ -996,12 +986,11 @@
       // 
       // ActionSettings
       // 
-      this.ActionSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuitemScreenPosition,
             this.ActionResetWinSettings,
-            this.Sep7,
+            this.Separator0,
             this.EditShowTips,
             this.EditESCtoExit,
             this.EditConfirmClosing});
@@ -1068,10 +1057,10 @@
       this.ActionResetWinSettings.Name = "ActionResetWinSettings";
       this.ActionResetWinSettings.Click += new System.EventHandler(this.ActionResetWinSettings_Click);
       // 
-      // Sep7
+      // Separator0
       // 
-      this.Sep7.Name = "Sep7";
-      resources.ApplyResources(this.Sep7, "Sep7");
+      this.Separator0.Name = "Separator0";
+      resources.ApplyResources(this.Separator0, "Separator0");
       // 
       // EditShowTips
       // 
@@ -1099,7 +1088,6 @@
       // 
       // ActionView
       // 
-      this.ActionView.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewReport,
@@ -1293,6 +1281,16 @@
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
       // 
+      // sep7
+      // 
+      this.sep7.Name = "sep7";
+      resources.ApplyResources(this.sep7, "sep7");
+      // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1337,11 +1335,9 @@
 
     private System.Windows.Forms.ToolStrip ToolStrip;
     private System.Windows.Forms.ToolStripButton ActionExit;
-    private System.Windows.Forms.ToolStripSeparator Sep4;
     private System.Windows.Forms.ToolStripDropDownButton ActionSettings;
     private System.Windows.Forms.ToolStripMenuItem MenuitemScreenPosition;
-    private System.Windows.Forms.ToolStripButton ActionHelp;
-    private System.Windows.Forms.ToolStripSeparator Sep7;
+    private System.Windows.Forms.ToolStripSeparator Separator0;
     internal System.Windows.Forms.ToolStripMenuItem EditScreenNone;
     internal System.Windows.Forms.ToolStripMenuItem EditScreenCenter;
     internal System.Windows.Forms.ToolStripMenuItem EditScreenTopLeft;
@@ -1351,9 +1347,9 @@
     internal System.Windows.Forms.ToolStripMenuItem EditConfirmClosing;
     internal System.Windows.Forms.ToolStripMenuItem EditESCtoExit;
     internal System.Windows.Forms.ToolStripMenuItem EditShowTips;
-    private System.Windows.Forms.ToolStripSeparator Sep3;
+    private System.Windows.Forms.ToolStripSeparator Sep4;
     private System.Windows.Forms.SaveFileDialog SaveFileDialog;
-    private System.Windows.Forms.ToolStripSeparator Sep6;
+    private System.Windows.Forms.ToolStripSeparator Sep5;
     private System.Windows.Forms.ToolStripButton ActionCopyReportToClipboard;
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.Panel PanelSepTop;
@@ -1442,7 +1438,7 @@
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu1;
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu4;
     internal System.Windows.Forms.ContextMenuStrip MenuTray;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+    private System.Windows.Forms.ToolStripSeparator sep3;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
     private System.Windows.Forms.ToolStripMenuItem ActionWebTwitter;
@@ -1452,7 +1448,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionAbout;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     private System.Windows.Forms.ToolStripDropDownButton ActionWebLinks;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+    private System.Windows.Forms.ToolStripSeparator sep6;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripMenuItem ActionWebQA;
     private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
@@ -1476,6 +1472,9 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenSystemDateAndTime;
     private System.Windows.Forms.ToolStripMenuItem ActionWebReleaseNotes;
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu5;
+    private System.Windows.Forms.ToolStripMenuItem ActionHelp;
+    private System.Windows.Forms.ToolStripSeparator sep7;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
   }
 }
 
