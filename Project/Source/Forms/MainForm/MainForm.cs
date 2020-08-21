@@ -59,6 +59,15 @@ namespace Ordisoftware.HebrewCalendar
       Globals.AllowClose = false;
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
+    }
+
+    /// <summary>
+    /// Create web links menu items.
+    /// </summary>
+    internal void CreateWebLinks()
+    {
+      ActionWebLinks.InitializeFromWebLinks(CreateWebLinks);
+      DuplicateMenu(ActionWebLinks, MenuWebLinks);
       DuplicateMenu(ActionInformation, MenuInformation);
     }
 
@@ -77,15 +86,6 @@ namespace Ordisoftware.HebrewCalendar
           items[count++] = new ToolStripSeparator();
       destination.DropDownItems.Clear();
       destination.DropDownItems.AddRange(items);
-    }
-
-    /// <summary>
-    /// Create web links menu items.
-    /// </summary>
-    internal void CreateWebLinks()
-    {
-      ActionWebLinks.InitializeFromWebLinks(CreateWebLinks);
-      DuplicateMenu(ActionWebLinks, MenuWebLinks);
     }
 
     /// <summary>
@@ -115,7 +115,7 @@ namespace Ordisoftware.HebrewCalendar
       CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
       CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
       CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
-      SetCurrentTimeZone();
+      InitializeCurrentTimeZone();
       Refresh();
       LoadData();
       ClearLists();
@@ -123,17 +123,6 @@ namespace Ordisoftware.HebrewCalendar
       ActionViewMoonMonths.Visible = Globals.IsDev;
       toolStripSeparator1.Visible = Globals.IsDev;
       //
-    }
-
-    internal void SetCurrentTimeZone()
-    {
-      CurrentTimeZoneInfo = null;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Program.Settings.TimeZone )
-        {
-          CurrentTimeZoneInfo = item;
-          break;
-        }
     }
 
     /// <summary>
@@ -180,7 +169,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by MainForm_Form for form closed events.
+    /// Event handler. Called by MainForm for form closed events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Form closing event information.</param>
@@ -190,6 +179,11 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.Store();
     }
 
+    /// <summary>
+    /// Event handler. Called by MainForm for windows changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
@@ -200,7 +194,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Session ending.
+    /// Session ending event.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Session ending event information.</param>
@@ -226,6 +220,23 @@ namespace Ordisoftware.HebrewCalendar
       SaveFileDialog.InitialDirectory = Globals.UserDocumentsFolderPath;
     }
 
+    /// <summary>
+    /// Initialize current time zone.
+    /// </summary>
+    internal void InitializeCurrentTimeZone()
+    {
+      CurrentTimeZoneInfo = null;
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        if ( item.Id == Program.Settings.TimeZone )
+        {
+          CurrentTimeZoneInfo = item;
+          break;
+        }
+    }
+
+    /// <summary>
+    /// Check if the calendar must be generated again in it comes near the end.
+    /// </summary>
     private void CheckRegenerateCalendar()
     {
       try
@@ -597,6 +608,11 @@ namespace Ordisoftware.HebrewCalendar
       MenuShowHide.PerformClick();
     }
 
+    /// <summary>
+    /// Event handler. Called by MenuExit for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void MenuExit_Click(object sender, EventArgs e)
     {
       if ( IsGenerating )
@@ -784,12 +800,22 @@ namespace Ordisoftware.HebrewCalendar
       GoToDate(date);
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionSearchEvent for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionSearchEvent_Click(object sender, EventArgs e)
     {
       var form = new SearchEventForm();
       form.ShowDialog();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionSearchMonth for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionSearchMonth_Click(object sender, EventArgs e)
     {
       var form = new SearchMonthForm();
@@ -1046,28 +1072,6 @@ namespace Ordisoftware.HebrewCalendar
         SetView(Program.Settings.CurrentView, true);
         UpdateButtons();
       }
-    }
-
-    private void ActionVacuum_Click(object sender, EventArgs e)
-    {
-      /*Refresh();
-      DataSet.Clear();
-      UpdateButtons();
-      CalendarText.Clear();
-      CalendarMonth.LoadPresetHolidays = false;
-      LunisolarDaysBindingSource.DataSource = null;
-      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
-        try
-        {
-          connection.Open();
-          connection.Vacuum();
-        }
-        finally
-        {
-          connection.Close();
-        }
-        bug month view
-      LoadData();*/
     }
 
   }

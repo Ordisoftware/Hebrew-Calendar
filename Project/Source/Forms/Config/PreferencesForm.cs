@@ -208,7 +208,7 @@ namespace Ordisoftware.HebrewCalendar
         str += ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
       }
       EditTimeZone.Text = str;
-      MainForm.Instance.SetCurrentTimeZone();
+      MainForm.Instance.InitializeCurrentTimeZone();
     }
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
