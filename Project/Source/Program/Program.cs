@@ -11,12 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -47,6 +48,7 @@ namespace Ordisoftware.HebrewCalendar
       CheckSettingsReset();
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
+      UpdateLocalization(true);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       Core.Diagnostics.Debugger.Active = Settings.DebuggerEnabled;
@@ -57,15 +59,17 @@ namespace Ordisoftware.HebrewCalendar
       Application.Run(MainForm.Instance);
     }
 
-    /// <summary>
-    /// Check if settings must be reseted to default values.
-    /// </summary>
     private static void CheckSettingsReset()
     {
-      if ( Settings.UpgradeResetRequiredV3_6 )
+      if ( Settings.UpgradeResetRequiredV3_0
+        || Settings.UpgradeResetRequiredV3_6
+        || Settings.UpgradeResetRequiredV4_1 )
       {
+        DisplayManager.ShowWarning(Globals.UpgradeResetRequired.GetLang());
         Settings.Reset();
+        Settings.UpgradeResetRequiredV3_0 = false;
         Settings.UpgradeResetRequiredV3_6 = false;
+        Settings.UpgradeResetRequiredV4_1 = false;
         Settings.Language = Localizer.Language;
         Settings.Save();
       }
@@ -81,13 +85,14 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Update localization strings to the whole application.
     /// </summary>
-    static internal void UpdateLocalization()
+    static internal void UpdateLocalization(bool initonly = false)
     {
       string lang = "en-US";
       if ( Settings.Language == "fr" ) lang = "fr-FR";
       var culture = new CultureInfo(lang);
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
+      if ( initonly ) return;
       AboutBox.Instance.Hide();
       MainForm.Instance.ClearLists();
       string str = MainForm.Instance.CalendarText.Text;
@@ -97,19 +102,22 @@ namespace Ordisoftware.HebrewCalendar
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
         SystemHelper.ApplyResources(resources, form.Controls);
       };
-      foreach ( Form form in Application.OpenForms )
-        if ( form != AboutBox.Instance )
-          update(form);
+      update(Globals.MainForm);
+      new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       foreach ( Form form in Application.OpenForms )
+      {
+        if ( form != Globals.MainForm && form != AboutBox.Instance )
+          update(form);
         if ( form is ShowTextForm )
           ( (ShowTextForm)form ).RelocalizeText();
+      }
       MainForm.Instance.CreateWebLinks();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.TimerReminder_Tick(null, null);
-      UndoRedoTextBox.RelocalizeContextMenu();
+      UndoRedoTextBox.Relocalize();
     }
 
   }

@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 using Ordisoftware.Core.Diagnostics;
 using Ordisoftware.HebrewCommon;
+using System.Management;
 
 namespace Ordisoftware.Core.Windows.Forms
 {
@@ -219,11 +220,23 @@ namespace Ordisoftware.Core.Windows.Forms
         {
           var key = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows NT\\CurrentVersion");
           string pathName = (string)key.GetValue("productName");
-          long memory = (long)new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory;
           body += NewLine2
                 + "## SYSTEM" + NewLine2
-                + "OS: " + pathName + " " + ( Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits" ) + NewLine
-                + "Available memory: " + memory.FormatBytesSize(); ;
+                + "OS: " + pathName + " " + ( Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits" );
+          ObjectQuery wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
+          ManagementObjectSearcher searcher = new ManagementObjectSearcher(wql);
+          ManagementObjectCollection results = searcher.Get();
+          if ( results.Count > 0 )
+          {
+            var enumerator = results.GetEnumerator();
+            if ( enumerator.MoveNext() )
+            {
+              var instance = enumerator.Current;
+              body += NewLine
+                    + "Total Visible Memory: " + ((ulong)instance["TotalVisibleMemorySize"] * 1024 ).FormatBytesSize() + NewLine
+                    + "Free Physical Memory: " + ((ulong)instance["FreePhysicalMemory"] * 1024 ).FormatBytesSize() + NewLine;
+            }
+          }
         }
         catch
         {

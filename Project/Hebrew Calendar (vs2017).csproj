@@ -65,7 +65,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Dependencies\AASharp\Src\AASharp\bin\Release\net45\AASharp.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -79,6 +78,7 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
@@ -160,6 +160,8 @@
     <Compile Include="Source\Common\Data\OnlineProviders.cs" />
     <Compile Include="Source\Common\Data\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\System\ControlLocation.cs" />
+    <Compile Include="Source\Common\System\NullSafeList.cs" />
+    <Compile Include="Source\Common\System\NullSafeDictionary.cs" />
     <Compile Include="Source\Common\System\EnumHelper.cs" />
     <Compile Include="Source\Common\System\Globals.cs" />
     <Compile Include="Source\Common\System\Globals.Translations.cs" />

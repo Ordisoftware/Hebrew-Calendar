@@ -169,7 +169,9 @@ namespace Ordisoftware.HebrewCalendar
       string timezone = Program.Settings.TimeZone;
       int shabat = EditShabatDay.SelectedIndex;
       Program.Settings.Reset();
+      Program.Settings.UpgradeResetRequiredV3_0 = false;
       Program.Settings.UpgradeResetRequiredV3_6 = false;
+      Program.Settings.UpgradeResetRequiredV4_1 = false;
       Program.Settings.FirstLaunchV4 = false;
       Program.Settings.Store();
       DoReset = true;
@@ -206,7 +208,7 @@ namespace Ordisoftware.HebrewCalendar
         str += ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
       }
       EditTimeZone.Text = str;
-      MainForm.Instance.SetCurrentTimeZone();
+      MainForm.Instance.InitializeCurrentTimeZone();
     }
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

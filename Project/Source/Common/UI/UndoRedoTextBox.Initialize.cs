@@ -72,7 +72,7 @@ namespace Ordisoftware.HebrewCommon
       ActionSelectAll.Text = "Select All";
       ActionDelete.Name = "ActionDelete";
       ActionDelete.Text = "Delete";
-      RelocalizeContextMenu();
+      Relocalize();
       ContextMenuEdit.Items.AddRange(new ToolStripItem[]
                                      {
                                        ActionUndo,
@@ -87,7 +87,7 @@ namespace Ordisoftware.HebrewCommon
                                      });
     }
 
-    static internal void RelocalizeContextMenu()
+    static internal void Relocalize()
     {
       if ( ContextMenuEdit == null ) return;
       var resources = new ComponentResourceManager(typeof(UndoRedoTextBox));

@@ -10,34 +10,35 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <created> 2020-08 </created>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Ordisoftware.HebrewCommon
 {
 
-  // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
-  static public class EnumHelper
+  public class NullSafeList<T> : List<T>
   {
-      public static T Next<T>(this T v) where T : struct
+    public new T this[int index]
+    {
+      get
       {
-        return Enum.GetValues(v.GetType()).Cast<T>().Concat(new[] { default(T) })
-               .SkipWhile(e => !v.Equals(e))
-               .Skip(1)
-               .First();
+        return index >= 0 && index < Count ? base[index] : default(T);
       }
-
-      public static T Previous<T>(this T v) where T : struct
+      set
       {
-        return Enum.GetValues(v.GetType()).Cast<T>().Concat(new[] { default(T) })
-               .Reverse()
-               .SkipWhile(e => !v.Equals(e))
-               .Skip(1)
-               .First();
+        if ( index >= 0 && index < Count )
+          base[index] = value;
+        else
+        {
+          Capacity = index + 1;
+          AddRange(Enumerable.Repeat(default(T), index + 1 - Count));
+          base[index] = value;
+        }
       }
-
+    }
   }
 
 }

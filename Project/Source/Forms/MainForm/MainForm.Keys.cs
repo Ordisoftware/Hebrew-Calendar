@@ -14,6 +14,7 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -73,12 +74,12 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.F8:
           ActionPreferences.PerformClick();
           return true;
-        case Keys.F11:
+        /*case Keys.F11:
           ActionHelp.PerformClick();
           return true;
         case Keys.F12:
           ActionAbout.PerformClick();
-          return true;
+          return true;*/
         case Keys.Escape:
           if ( EditESCtoExit.Checked )
             Close();

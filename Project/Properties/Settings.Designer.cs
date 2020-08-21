@@ -1220,5 +1220,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["LastSuspendDelaySelected"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UpgradeResetRequiredV4_1 {
+            get {
+                return ((bool)(this["UpgradeResetRequiredV4_1"]));
+            }
+            set {
+                this["UpgradeResetRequiredV4_1"] = value;
+            }
+        }
     }
 }
