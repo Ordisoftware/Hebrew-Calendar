@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -48,6 +48,7 @@ namespace Ordisoftware.HebrewCalendar
       CheckSettingsReset();
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
+      UpdateLocalization(true);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       Core.Diagnostics.Debugger.Active = Settings.DebuggerEnabled;
@@ -87,13 +88,15 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Update localization strings to the whole application.
     /// </summary>
-    static internal void UpdateLocalization()
+    static internal void UpdateLocalization(bool initonly = false)
     {
       string lang = "en-US";
       if ( Settings.Language == "fr" ) lang = "fr-FR";
       var culture = new CultureInfo(lang);
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
+      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+      if ( initonly ) return;
       AboutBox.Instance.Hide();
       MainForm.Instance.ClearLists();
       string str = MainForm.Instance.CalendarText.Text;
@@ -103,14 +106,15 @@ namespace Ordisoftware.HebrewCalendar
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
         SystemHelper.ApplyResources(resources, form.Controls);
       };
+      update(Globals.MainForm);
       foreach ( Form form in Application.OpenForms )
-        if ( form != AboutBox.Instance )
+      {
+        if ( form != Globals.MainForm && form != AboutBox.Instance )
           update(form);
-      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-      foreach ( Form form in Application.OpenForms )
         if ( form is ShowTextForm )
           ( (ShowTextForm)form ).RelocalizeText();
+      }
+      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       MainForm.Instance.CreateWebLinks();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
