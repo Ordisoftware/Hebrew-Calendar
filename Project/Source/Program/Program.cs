@@ -59,16 +59,13 @@ namespace Ordisoftware.HebrewCalendar
       Application.Run(MainForm.Instance);
     }
 
-    /// <summary>
-    /// Check if settings must be reseted to default values.
-    /// </summary>
     private static void CheckSettingsReset()
     {
       if ( Settings.UpgradeResetRequiredV3_0
         || Settings.UpgradeResetRequiredV3_6
         || Settings.UpgradeResetRequiredV4_1 )
       {
-        DisplayManager.ShowWarning(Globals.UpgradeRequired.GetLang());
+        DisplayManager.ShowWarning(Globals.UpgradeResetRequired.GetLang());
         Settings.Reset();
         Settings.UpgradeResetRequiredV3_0 = false;
         Settings.UpgradeResetRequiredV3_6 = false;
@@ -95,7 +92,6 @@ namespace Ordisoftware.HebrewCalendar
       var culture = new CultureInfo(lang);
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
-      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       if ( initonly ) return;
       AboutBox.Instance.Hide();
       MainForm.Instance.ClearLists();
@@ -115,6 +111,7 @@ namespace Ordisoftware.HebrewCalendar
           ( (ShowTextForm)form ).RelocalizeText();
       }
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       MainForm.Instance.CreateWebLinks();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;

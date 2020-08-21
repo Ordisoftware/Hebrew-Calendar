@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewCommon
         { "fr", "Pas encore disponible." }
       };
 
-    static public readonly Dictionary<string, string> UpgradeRequired
+    static public readonly Dictionary<string, string> UpgradeResetRequired
       = new Dictionary<string, string>()
       {
         { "en", "An upgrade of the settings is required and they will be reseted to default values." },
