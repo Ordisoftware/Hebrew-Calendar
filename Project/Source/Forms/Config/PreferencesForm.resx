@@ -3507,15 +3507,17 @@
   </data>
   <data name="ActionMoonDayTextFormatReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAchJREFUOE+Nkl9v0lAYh/ksfoDd8KG8UDNjYsIFmQmF4L2OXcxoZKJzWZaYuEwT
-        UWEIWib/t0XnDGaFWda1K5uwMuXxnFJmyDDjSX45p+15znt68vomJXEztpiYjiFH79XkxG/cB6NNX7fc
-        UT57ny7Hlc0TWo+S6CKth2/EJsfEr9+7fBNXPupgLKQwEutuDh6ncDQDDmyWb88nvaUXeXptFuwu9rMs
-        1vMc1pKImPd0k8bcqnuKJ9Oz40+hhBXszi92X3zgZHkDW2ZJxRF30HzwCjORhmOH2NW7rz3lH4qi0O10
-        eZfOkMxk2FvboLNSPJetxQy9l2Xig+pXBpZHKBTi1HHIflTJfcqTVfOkVZXe/hHN+bWBvFpm4daclP0D
-        y0PKZ2e/KRRLFGVKZfKfCxxaFtWVpPj/QeX/yn/6fWqbW2xubbupVGuYpsnb9ykKlSr1hoZsJLF8VI5E
-        IjUEO992z/Pl6w6HnlwsVdlrNAlFlYuy5M7MjNEyDLGowQ9N43u9jmkN5QqakMPh8HjZYyoQCGC32/zU
-        9ZHKk8hD/MFgkK5zyno2J+5im0Zzf2J5iF8IejQaRUZsKJtkYnnIlIiUZEabZCw+31/sTadbuGqyLQAA
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIzSURBVDhPlZLNT9NgHMcbb+5vUA+aePQimmAy1AsH9eTV
+        RD144WAIARJxM6NsXTecYAiyCQnO0NGxTVxMlhCJY3bKgcVFY4gh8Z0ENidsHd3G2/j6PE/LdIn48k0+
+        /e3pvs9nbVfu9vCjvOgNwXkv+Fdoj/a5X0NP/k9o39iqRyBmmmOeV2joT+PkXZ0TxqTQ8/R7Gto3tupx
+        GIJibhmV1SzW81kyM9BWMiitfkMlnyMzBzWXYT3aN7bq2RW4AgncCSXRR3DLCtSCCrucghB6DQeBD8yx
+        Hr+XwBmYgWdCISThGieCtQowsQ+ImIDwfkDmWM86KP9eUNGK2Kxo2CJslDWUSmWslasoEo9KKGhbrDf/
+        dQnzQhxve+O6aFfAP3wGQZohV5JgCAyFYZcU8GMK63Vab+JT9DNmh1JI35pETbC9USaHdfqhjh3CdrXK
+        Oh1d3VhczsLe64ZsiSDVcv+ngPfHIYw9h1PSEQgOsu4JvMSHxe+YbTuA/EIE3eIAIk9iaLN00Vs4XhP8
+        KS9aDwLJRiB0CO+iPWi/YYPZfOaS8Qz0N/G61ID2oBkdwdNkNqF1vBHppSQKwVPAih/Vj8OA14TRa0f1
+        X+Y4ExMIhmBg6iy80+fgm75A5nkMPm3GF3UOI5aLiElW7LwR4b18GO+zm/V/o+gNM8Fe6bzSDMfVJiyI
+        ZrYWfI/rBba+BwkqoVdSTxiibxKe0Rg8/im4yXSNRGHr9yeMrbUcIdB7+ldo3wjH/QCkEJXIkfAZTQAA
         AABJRU5ErkJggg==
 </value>
   </data>
@@ -3645,9 +3647,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>794, 718</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

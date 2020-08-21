@@ -114,6 +114,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       int value = ( (Delay)SelectDelay.SelectedItem ).Minutes;
       EditDelay.Enabled = value == -1;
+      LabelCustom.Enabled = EditDelay.Enabled;
       if ( !EditDelay.Enabled )
         EditDelay.Value = value;
     }
