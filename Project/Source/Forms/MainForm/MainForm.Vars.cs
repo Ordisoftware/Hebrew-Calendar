@@ -15,10 +15,10 @@
 using System;
 using System.Drawing;
 using System.Linq;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using DandTSoftware.Timers;
 using Ordisoftware.Core;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -60,23 +60,23 @@ namespace Ordisoftware.HebrewCalendar
 
     private int ProgressCount;
 
-    private Dictionary<TorahEvent, bool> TorahEventRemindList
-      = new Dictionary<TorahEvent, bool>();
+    private NullSafeDictionary<TorahEvent, bool> TorahEventRemindList
+      = new NullSafeDictionary<TorahEvent, bool>();
 
-    private Dictionary<TorahEvent, bool> TorahEventRemindDayList
-      = new Dictionary<TorahEvent, bool>();
+    private NullSafeDictionary<TorahEvent, bool> TorahEventRemindDayList
+      = new NullSafeDictionary<TorahEvent, bool>();
 
-    internal readonly List<Form> RemindCelebrationForms
-      = new List<Form>();
+    internal readonly NullSafeList<Form> RemindCelebrationForms
+      = new NullSafeList<Form>();
 
-    internal readonly List<string> RemindCelebrationDates
-      = new List<string>();
+    internal readonly NullSafeList<string> RemindCelebrationDates
+      = new NullSafeList<string>();
 
-    internal readonly Dictionary<TorahEvent, DateTime?> LastCelebrationReminded
-      = new Dictionary<TorahEvent, DateTime?>();
+    internal readonly NullSafeDictionary<TorahEvent, DateTime?> LastCelebrationReminded
+      = new NullSafeDictionary<TorahEvent, DateTime?>();
 
-    internal readonly Dictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
-      = new Dictionary<TorahEvent, ReminderForm>();
+    internal readonly NullSafeDictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
+      = new NullSafeDictionary<TorahEvent, ReminderForm>();
 
     internal DateTime? LastShabatReminded;
 
