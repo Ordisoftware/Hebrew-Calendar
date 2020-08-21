@@ -108,7 +108,6 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Load or reload data from disk.
     /// </summary>
-    /// <param name="reset">True if must be reseted from application documents folder.</param>
     protected abstract void DoReLoad(string filename);
 
     public void ReLoad(bool reset = false)

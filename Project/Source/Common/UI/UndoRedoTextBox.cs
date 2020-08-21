@@ -181,13 +181,13 @@ namespace Ordisoftware.HebrewCommon
 
     private void KeyDownEvent(object sender, KeyEventArgs e)
     {
-      Func<bool, Keys, Action<object, EventArgs>, bool> check = (condition, key, action) =>
+      bool check(bool condition, Keys key, Action<object, EventArgs> action)
       {
         if ( !condition || e.KeyCode != key ) return false;
         e.SuppressKeyPress = true;
         action?.Invoke(this, null);
         return true;
-      };
+      }
       UpdateMenuItems(this);
       if ( !check(e.Control, Keys.A, ActionSelectAll_Click)
         && !check(e.Control, Keys.Z, ActionUndo_Click)

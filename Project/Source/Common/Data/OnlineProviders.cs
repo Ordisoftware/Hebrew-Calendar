@@ -64,7 +64,6 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Load or reload data from disk.
     /// </summary>
-    /// <param name="reset">True if must be reseted from application documents folder.</param>
     protected override void DoReLoad(string filename)
     {
       if ( filename == "" ) return;
@@ -75,10 +74,7 @@ namespace Ordisoftware.HebrewCommon
         var lines = File.ReadAllLines(filename);
         for ( int index = 0; index < lines.Length; index++ )
         {
-          Action showError = () =>
-          {
-            DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index + 1, lines[index]));
-          };
+          void showError() => DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index + 1, lines[index]));
           string line = lines[index].Trim();
           if ( line == "" ) continue;
           if ( line.StartsWith(";") ) continue;
