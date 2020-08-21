@@ -170,6 +170,15 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Show an warning message.
     /// </summary>
+    /// <param name="text">The text.</param>
+    static public void ShowWarning(string text)
+    {
+      ShowWarning(Title, text);
+    }
+
+    /// <summary>
+    /// Show an warning message.
+    /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="text">The text.</param>
     static public void ShowWarning(string title, string text)

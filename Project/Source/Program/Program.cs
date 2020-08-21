@@ -17,6 +17,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -62,10 +63,15 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private static void CheckSettingsReset()
     {
-      if ( Settings.UpgradeResetRequiredV3_6 )
+      if ( Settings.UpgradeResetRequiredV3_0
+        || Settings.UpgradeResetRequiredV3_6
+        || Settings.UpgradeResetRequiredV4_1 )
       {
+        DisplayManager.ShowWarning(Globals.UpgradeRequired.GetLang());
         Settings.Reset();
+        Settings.UpgradeResetRequiredV3_0 = false;
         Settings.UpgradeResetRequiredV3_6 = false;
+        Settings.UpgradeResetRequiredV4_1 = false;
         Settings.Language = Localizer.Language;
         Settings.Save();
       }
