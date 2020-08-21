@@ -667,9 +667,9 @@ namespace Ordisoftware.HebrewCalendar
         date2 = date1;
         date1 = temp;
       }
-      int diffSolar = (date2 - date1).Days + 1;
+      int diffSolar = ( date2 - date1 ).Days + 1;
       int diffMoon = 0;
-      if (date1 >= DateFirst && date2 <= DateLast)
+      if ( date1 >= DateFirst && date2 <= DateLast )
         for ( DateTime date = date1; date <= date2; date = date.AddDays(1) )
           if ( DataSet.LunisolarDays.FindByDate(SQLiteHelper.GetDate(date)).Moonrise != "" )
             diffMoon++;
@@ -679,7 +679,7 @@ namespace Ordisoftware.HebrewCalendar
                  + Environment.NewLine + Environment.NewLine
                  + Translations.DiffDatesSolarCount.GetLang(diffSolar)
                  + Environment.NewLine + Environment.NewLine;
-      if (diffMoon != 0)
+      if ( diffMoon != 0 )
         str += Translations.DiffDatesMoonCount.GetLang(diffMoon);
       else
         str += Translations.DiffDatesMoonOutOfRange.GetLang(DateFirst.Year, DateLast.Year);
@@ -840,7 +840,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
         {
-          GoToDate(DateTime.Today); 
+          GoToDate(DateTime.Today);
           NavigationForm.Instance.Show();
           NavigationForm.Instance.BringToFront();
         }
@@ -1061,7 +1061,7 @@ namespace Ordisoftware.HebrewCalendar
         CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
         CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
         CalendarMonth.LoadPresetHolidays = false;
-        if (doFill) FillMonths();
+        if ( doFill ) FillMonths();
       }
       finally
       {
