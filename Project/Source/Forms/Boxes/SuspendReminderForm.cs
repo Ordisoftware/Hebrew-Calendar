@@ -84,7 +84,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         var item = form.SelectDelay.SelectedItem;
         int value = ((Delay)form.SelectDelay.SelectedItem).Minutes;
-        if ( value == 0 ) value = (int)form.EditDelay.Value;
+        if ( value == -1 ) value = (int)form.EditDelay.Value;
         return value;
       }
       else
