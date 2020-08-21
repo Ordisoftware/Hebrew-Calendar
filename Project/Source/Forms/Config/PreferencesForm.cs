@@ -234,6 +234,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
+      if ( Program.Settings.Language == "en" ) return;
       Program.Settings.Language = "en";
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
@@ -243,6 +244,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectLangFR_Click(object sender, EventArgs e)
     {
+      if ( Program.Settings.Language == "fr" ) return;
       Program.Settings.Language = "fr";
       Program.UpdateLocalization();
       UpdateLanguagesButtons();

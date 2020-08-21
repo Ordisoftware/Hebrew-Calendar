@@ -22,7 +22,7 @@ namespace Ordisoftware.HebrewCommon
   public partial class UndoRedoTextBox
   {
 
-    static private IContainer Container;
+    static private IContainer _Container;
     static private ContextMenuStrip ContextMenuEdit;
     static private ToolStripMenuItem ActionUndo;
     static private ToolStripMenuItem ActionRedo;
@@ -36,8 +36,8 @@ namespace Ordisoftware.HebrewCommon
 
     static void InitializeContextMenu()
     {
-      Container = new Container();
-      ContextMenuEdit = new ContextMenuStrip(Container);
+      _Container = new Container();
+      ContextMenuEdit = new ContextMenuStrip(_Container);
       ActionUndo = new ToolStripMenuItem();
       ActionRedo = new ToolStripMenuItem();
       Separator1 = new ToolStripSeparator();

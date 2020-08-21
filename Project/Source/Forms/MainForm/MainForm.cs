@@ -609,6 +609,17 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionExit for mouse up events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionExit_MouseUp(object sender, MouseEventArgs e)
+    {
+      if ( e.Button == MouseButtons.Right )
+        MenuExit_Click(MenuExit, null);
+    }
+
+    /// <summary>
     /// Event handler. Called by MenuExit for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -620,7 +631,7 @@ namespace Ordisoftware.HebrewCalendar
         DisplayManager.ShowAdvert(Translations.CantExitWhileGenerating.GetLang());
         return;
       }
-      if ( EditConfirmClosing.Checked )
+      if ( EditConfirmClosing.Checked || e == null)
         if ( !DisplayManager.QueryYesNo(Globals.AskToExitApplication.GetLang()) )
           return;
       Globals.AllowClose = true;

@@ -284,8 +284,7 @@ namespace Ordisoftware.Core.Diagnostics
     static private string ParseException(this Exception except, Func<ExceptionInfo, string> gettext)
     {
       var einfo = new ExceptionInfo(null, except);
-      List<string> list = new List<string>();
-      list.Add(gettext(einfo));
+      var list = new List<string> { gettext(einfo) };
       einfo = einfo.InnerInfo;
       while ( einfo != null )
       {
