@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -161,6 +161,49 @@ namespace Ordisoftware.HebrewCalendar
       {
         { "en", "Moon days count: out of range ({0} - {1})" },
         { "fr", "Nombre de jours lunaires : hors limites ({0} - {1})" }
+      };
+
+    static public Dictionary<string, List<SuspendDelayItem>> SuspendReminderDelays
+      = new Dictionary<string, List<SuspendDelayItem>>
+      {
+        {
+          "en",
+          new List<SuspendDelayItem>
+          {
+            new SuspendDelayItem("None", 0),
+            new SuspendDelayItem("5 minutes", 5),
+            new SuspendDelayItem("10 minutes", 10),
+            new SuspendDelayItem("15 minutes", 15),
+            new SuspendDelayItem("30 minutes", 30),
+            new SuspendDelayItem("1 hour", 60),
+            new SuspendDelayItem("2 hours", 120),
+            new SuspendDelayItem("3 hours", 180),
+            new SuspendDelayItem("4 hours", 240),
+            new SuspendDelayItem("6 hours", 360),
+            new SuspendDelayItem("12 hours", 720),
+            new SuspendDelayItem("1 day", 1440),
+            new SuspendDelayItem("Custom", -1)
+          }
+        },
+        {
+          "fr",
+          new List<SuspendDelayItem>
+          {
+            new SuspendDelayItem("Aucun", 0),
+            new SuspendDelayItem("5 minutes", 5),
+            new SuspendDelayItem("10 minutes", 10),
+            new SuspendDelayItem("15 minutes", 15),
+            new SuspendDelayItem("30 minutes", 30),
+            new SuspendDelayItem("1 heure", 60),
+            new SuspendDelayItem("2 heures", 120),
+            new SuspendDelayItem("3 heures", 180),
+            new SuspendDelayItem("4 heures", 240),
+            new SuspendDelayItem("6 heures", 360),
+            new SuspendDelayItem("12 heures", 720),
+            new SuspendDelayItem("1 jour", 1440),
+            new SuspendDelayItem("Personnalisé", -1)
+          }
+        }
       };
 
   }

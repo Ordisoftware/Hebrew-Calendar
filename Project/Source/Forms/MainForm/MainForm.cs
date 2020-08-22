@@ -909,7 +909,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         MenuTray.Enabled = false;
-        var delay = SuspendReminderForm.Run();
+        var delay = SelectSuspendDelayForm.Run();
         if ( delay == null ) return;
         TrayIcon.Icon = new Icon(Globals.RootFolderPath + "ApplicationPause.ico");
         TimerReminder.Enabled = false;
