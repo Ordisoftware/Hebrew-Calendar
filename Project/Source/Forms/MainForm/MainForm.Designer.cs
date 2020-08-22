@@ -78,6 +78,7 @@
       this.ActionHelp = new System.Windows.Forms.ToolStripButton();
       this.ActionInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebReleaseNotes = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
@@ -152,7 +153,6 @@
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
-      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.CalendarMonth = new Calendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -420,7 +420,6 @@
       // 
       // ToolStrip
       // 
-      resources.ApplyResources(this.ToolStrip, "ToolStrip");
       this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -451,6 +450,7 @@
             this.ActionSettings,
             this.ActionView,
             this.ActionEnableReminder});
+      resources.ApplyResources(this.ToolStrip, "ToolStrip");
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
       // 
@@ -625,6 +625,11 @@
       resources.ApplyResources(this.ActionAbout, "ActionAbout");
       this.ActionAbout.Name = "ActionAbout";
       this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
+      // 
+      // toolStripSeparator6
+      // 
+      this.toolStripSeparator6.Name = "toolStripSeparator6";
+      resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
       // 
       // ActionWebReleaseNotes
       // 
@@ -1143,11 +1148,6 @@
       // 
       this.TimerResumeReminder.Tick += new System.EventHandler(this.TimerResumeReminder_Tick);
       // 
-      // toolStripSeparator6
-      // 
-      this.toolStripSeparator6.Name = "toolStripSeparator6";
-      resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
-      // 
       // CalendarMonth
       // 
       this.CalendarMonth.AllowEditingEvents = false;
@@ -1338,6 +1338,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
