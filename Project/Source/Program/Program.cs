@@ -17,6 +17,8 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO.Pipes;
 using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
@@ -41,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
     [STAThread]
     static void Main(string[] args)
     {
-      if ( !SystemHelper.CheckApplicationOnlyOneInstance() ) return;
+      if ( !SystemHelper.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
       SystemHelper.CheckSettingsUpgrade(Settings, ref upgrade);
       Settings.UpgradeRequired = upgrade;
@@ -59,6 +61,27 @@ namespace Ordisoftware.HebrewCalendar
       Application.Run(MainForm.Instance);
     }
 
+    /// <summary>
+    /// Bring to front the app in case of duplicate process start.
+    /// </summary>
+    /// <param name="ar"></param>
+    static void IPCRequest(IAsyncResult ar)
+    {
+      var server = ar.AsyncState as NamedPipeServerStream;
+      server.EndWaitForConnection(ar);
+      var command = new BinaryFormatter().Deserialize(server) as string;
+      if ( command == "BringToFront" )
+        if ( MainForm.Instance.Visible )
+          MainForm.Instance.SyncUI(() => MainForm.Instance.BringToFront());
+        else
+          MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide.PerformClick());
+      server.Close();
+      SystemHelper.CreateIPCServer(IPCRequest);
+    }
+
+    /// <summary>
+    /// Check if settings must be reseted.
+    /// </summary>
     private static void CheckSettingsReset()
     {
       if ( Settings.UpgradeResetRequiredV3_0

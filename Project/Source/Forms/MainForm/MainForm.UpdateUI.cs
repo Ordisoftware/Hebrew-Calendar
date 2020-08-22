@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -28,7 +28,21 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
+    /// <summary>
+    /// Loading form instance.
+    /// </summary>
     private LoadingForm LoadingForm;
+
+    /// <summary>
+    /// Bring to front improved.
+    /// </summary>
+    public new void BringToFront()
+    {
+      var temp = TopMost;
+      TopMost = true;
+      base.BringToFront();
+      TopMost = temp;
+    }
 
     /// <summary>
     /// Update progress bar.

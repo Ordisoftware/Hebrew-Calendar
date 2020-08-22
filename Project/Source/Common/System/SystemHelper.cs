@@ -22,6 +22,8 @@ using System.Drawing.Imaging;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO.Pipes;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
@@ -39,14 +41,44 @@ namespace Ordisoftware.HebrewCommon
     static private Mutex ApplicationMutex;
 
     /// <summary>
+    /// IPC server instance.
+    /// </summary>
+    static private NamedPipeServerStream IPCServer;
+
+    /// <summary>
+    /// Create IPC server instance.
+    /// </summary>
+    /// <param name="onDuplicate"></param>
+    static public void CreateIPCServer(AsyncCallback onDuplicate)
+    {
+      IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
+                                            PipeDirection.InOut,
+                                            1,
+                                            PipeTransmissionMode.Message,
+                                            PipeOptions.Asynchronous);
+      IPCServer.BeginWaitForConnection(onDuplicate, IPCServer);
+    }
+
+    /// <summary>
     /// Check if the process is already running.
     /// </summary>
-    static public bool CheckApplicationOnlyOneInstance()
+    static public bool CheckApplicationOnlyOneInstance(AsyncCallback onDuplicate)
     {
       try
       {
         bool created;
         ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out created);
+        if ( created )
+        {
+          CreateIPCServer(onDuplicate);
+        }
+        else
+        {
+          var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut);
+          client.Connect();
+          new BinaryFormatter().Serialize(client, "BringToFront");
+          client.Close();
+        }
         return created;
       }
       catch ( Exception ex )
