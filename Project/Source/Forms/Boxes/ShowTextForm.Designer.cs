@@ -71,7 +71,7 @@
       resources.ApplyResources(this.TextBox, "TextBox");
       this.TextBox.Name = "TextBox";
       this.TextBox.ReadOnly = true;
-      this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Left;
+      this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Justify;
       // 
       // ShowTextForm
       // 
