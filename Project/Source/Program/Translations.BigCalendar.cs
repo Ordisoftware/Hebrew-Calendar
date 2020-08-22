@@ -14,6 +14,7 @@
 /// <edited> 2020-04 </edited>
 using System;
 using System.Collections.Generic;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -24,54 +25,52 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
+    static private readonly string AskToGenerateBigCalendarEN
+      = "Generate a calendar for more than {0} ({1}) years is not recommanded and can cause ";
+
+    static private readonly string AskToGenerateBigCalendarFR
+      = "Générer un calendrier pour plus de {0} ({1}) ans n'est pas recommandé et peut causer ";
+
     static public readonly Dictionary<string, string> AskToGenerateBigCalendar1
       = new Dictionary<string, string>()
       {
-        { "en", "Generate a calendar for more than {0} ({1}) years is not recommanded" + NewLine +
-                "and may cause a slight slowdown." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Générer un calendrier pour plus de {0} ({1}) ans n'est pas recommandé" + NewLine +
-                "et peut causer un léger ralentissement." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
+        { "en", AskToGenerateBigCalendarEN + "a slight slowdown." + NewLine + NewLine +
+                Globals.DoYouWantToContinue["en"] },
+        { "fr", AskToGenerateBigCalendarFR + "un léger ralentissement." + NewLine + NewLine +
+                Globals.DoYouWantToContinue["fr"] },
       };
 
     static public readonly Dictionary<string, string> AskToGenerateBigCalendar2
       = new Dictionary<string, string>()
       {
-        { "en", "Generate a calendar for more than {0} ({1}) years is not recommanded" + NewLine +
-                "and may cause a noticeable slowdown." + NewLine + NewLine +
+        { "en", AskToGenerateBigCalendarEN + "a noticeable slowdown." + NewLine + NewLine +
                 "Do not use this value for a daily usage." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Générer un calendrier pour plus de {0} ({1}) ans n'est pas recommandé" + NewLine +
-                "et peut causer un ralentissement notable." + NewLine + NewLine +
+                Globals.DoYouWantToContinue["en"] },
+        { "fr", AskToGenerateBigCalendarFR + "un ralentissement notable." + NewLine + NewLine +
                 "N'utilisez pas cette valeur pour un usage quotidien." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
+                Globals.DoYouWantToContinue["fr"] },
       };
 
     static public readonly Dictionary<string, string> AskToGenerateBigCalendar3
       = new Dictionary<string, string>()
       {
-        { "en", "Generate a calendar for more than {0} ({1}) years is not recommanded" + NewLine +
-                "and can cause a significant slowdown." + NewLine + NewLine +
+        { "en", AskToGenerateBigCalendarEN + "a significant slowdown." + NewLine + NewLine +
                 "Use this value only for occasional searches." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Générer un calendrier pour plus de {0} ({1}) ans n'est pas recommandé" + NewLine +
-                "et peut causer un important ralentissement." + NewLine + NewLine +
+                Globals.DoYouWantToContinue["en"] },
+        { "fr", AskToGenerateBigCalendarFR + "un important ralentissement." + NewLine + NewLine +
                 "N'utilisez cette valeur que pour des recherches ponctuelles." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
+                Globals.DoYouWantToContinue["fr"] },
       };
 
     static public readonly Dictionary<string, string> AskToGenerateBigCalendar4
       = new Dictionary<string, string>()
       {
-        { "en", "Generate a calendar for more than {0} ({1}) years is not recommanded" + NewLine +
-                "and can cause a considerable slowdown." + NewLine + NewLine +
+        { "en", AskToGenerateBigCalendarEN + "a considerable slowdown." + NewLine + NewLine +
                 "Use this value only with a powerful computer." + NewLine + NewLine +
-                "Do you want to continue?" },
-        { "fr", "Générer un calendrier pour plus de {0} ({1}) ans n'est pas recommandé" + NewLine +
-                "et peut causer ralentissement considérable." + NewLine + NewLine +
+                Globals.DoYouWantToContinue["en"] },
+        { "fr", AskToGenerateBigCalendarFR + "ralentissement considérable." + NewLine + NewLine +
                 "N'utiliser cette valeur qu'avec un ordinateur puissant." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
+                Globals.DoYouWantToContinue["fr"] },
       };
 
   }

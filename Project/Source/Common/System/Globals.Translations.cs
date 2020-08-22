@@ -26,6 +26,13 @@ namespace Ordisoftware.HebrewCommon
 
     static public string NewLine { get { return Environment.NewLine; } }
 
+    static public readonly Dictionary<string, string> DoYouWantToContinue
+      = new Dictionary<string, string>()
+      {
+        { "en", "Do you want to continue?" },
+        { "fr", "Voulez-vous continuer ?" }
+      };
+
     static public readonly Dictionary<string, string> GrammarGuideTitle
       = new Dictionary<string, string>()
       {
@@ -116,27 +123,27 @@ namespace Ordisoftware.HebrewCommon
       = new Dictionary<string, string>()
       {
         { "en", "Optimization process will close and reopen the database." + NewLine + NewLine +
-                "Do you want to continue?" },
+                DoYouWantToContinue["en"] },
         { "fr", "Le processus d'optimisation va fermer et rouvrir la base de données." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
+                DoYouWantToContinue["fr"] }
       };
 
     static public readonly Dictionary<string, string> AskToRestoreWindowPosition
       = new Dictionary<string, string>()
       {
         { "en", "This action will restore the window position." + NewLine + NewLine +
-                "Do you want to continue?" },
+                DoYouWantToContinue["en"] },
         { "fr", "Cette action va restaurer la position de la fenêtre."  + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
+                DoYouWantToContinue["fr"] },
       };
 
     static public readonly Dictionary<string, string> AskToResetPreferences
       = new Dictionary<string, string>()
       {
         { "en", "Preferences will be reseted to their default values." + NewLine + NewLine +
-                "Do you want to continue?" },
+                DoYouWantToContinue["en"] },
         { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
+                DoYouWantToContinue["fr"] },
       };
 
     static public readonly Dictionary<string, string> AskToLoadInstalledData
@@ -144,10 +151,10 @@ namespace Ordisoftware.HebrewCommon
       {
         { "en", "This action will load the data installed with the application." + NewLine + NewLine +
                 "All modifications will be lost." + NewLine + NewLine +
-                "Do you want to continue?" },
+                DoYouWantToContinue["en"] },
         { "fr", "Cette action va charger les données installées avec l'application."  + NewLine + NewLine +
                 "Toutes les modifications seront perdues." + NewLine + NewLine +
-                "Voulez-vous continuer ?" }
+                DoYouWantToContinue["fr"] },
       };
 
     static public readonly Dictionary<string, string> ErrorInFile

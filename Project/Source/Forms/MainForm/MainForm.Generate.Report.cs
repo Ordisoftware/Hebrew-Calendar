@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewCalendar
         { ReportFieldText.Month, 11 },
         { ReportFieldText.Sun, 23 },
         { ReportFieldText.Moon, 21 },
-        { ReportFieldText.Events, 40 },
+        { ReportFieldText.Events, 42 },
       };
 
     private string GenerateReport()
@@ -110,7 +110,13 @@ namespace Ordisoftware.HebrewCalendar
           string s1 = Translations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
           string s2 = Translations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
           strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
-          strDesc += new string(' ', CalendarFieldSize[ReportFieldText.Events] - 2 - strDesc.Length) + ColumnSepRight;
+          int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
+          int length = lengthAvailable - 2 - strDesc.Length;
+          if ( length < 0 )
+            throw new Exception($"Field if too short.{Environment.NewLine}" +
+                                $"    Available chars: {lengthAvailable}{Environment.NewLine}" +
+                                $"    Missing chars: {length}");
+          strDesc += new string(' ', length) + ColumnSepRight;
           content.Append(ColumnSepLeft);
           content.Append(textDate);
           content.Append(ColumnSepInner);
