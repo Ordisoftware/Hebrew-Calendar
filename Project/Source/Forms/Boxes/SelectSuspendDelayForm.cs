@@ -25,15 +25,11 @@ namespace Ordisoftware.HebrewCalendar
     static public int? Run()
     {
       var form = new SelectSuspendDelayForm();
-      if ( form.ShowDialog() == DialogResult.OK )
-      {
-        var item = form.SelectDelay.SelectedItem;
-        int value = ((SuspendDelayItem)form.SelectDelay.SelectedItem).Minutes;
-        if ( value == -1 ) value = (int)form.EditDelay.Value;
-        return value;
-      }
-      else
-        return null;
+      if ( form.ShowDialog() != DialogResult.OK ) return null;
+      var item = form.SelectDelay.SelectedItem;
+      int value = ((SuspendDelayItem)form.SelectDelay.SelectedItem).Minutes;
+      if ( value == -1 ) value = (int)form.EditDelay.Value;
+      return value;
     }
 
     private SelectSuspendDelayForm()
@@ -48,7 +44,7 @@ namespace Ordisoftware.HebrewCalendar
           SelectDelay.SelectedItem = item;
           break;
         }
-      if ( SelectDelay.SelectedItem == null )
+      if ( SelectDelay.SelectedIndex == -1 )
       {
         SelectDelay.SelectedIndex = SelectDelay.Items.Count - 1;
         EditDelay.Value = Program.Settings.LastSuspendDelaySelected;
@@ -66,10 +62,9 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionOk_Click(object sender, EventArgs e)
     {
-      if ( SelectDelay.SelectedIndex == SelectDelay.Items.Count - 1 )
-        Program.Settings.LastSuspendDelaySelected = (int)EditDelay.Value;
-      else
-        Program.Settings.LastSuspendDelaySelected = ( (SuspendDelayItem)SelectDelay.SelectedItem ).Minutes;
+      Program.Settings.LastSuspendDelaySelected = SelectDelay.SelectedIndex == SelectDelay.Items.Count - 1
+                                                ? (int)EditDelay.Value
+                                                : ( (SuspendDelayItem)SelectDelay.SelectedItem ).Minutes;
       Program.Settings.Save();
     }
   }
