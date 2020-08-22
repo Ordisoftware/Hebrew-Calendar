@@ -112,12 +112,26 @@ namespace Ordisoftware.HebrewCommon
     static public readonly string DBFileExtension
       = ".sqlite";
 
+    /// <summary>
+    /// Indicate if the running app is from dev folder else user installed.
+    /// </summary>
     static public bool IsDev
     {
       get
       {
         return Application.ExecutablePath.Contains("\\Bin\\Debug\\")
             || Application.ExecutablePath.Contains("\\Bin\\Release\\");
+      }
+    }
+
+    /// <summary>
+    /// Indicate if the code is executed from the IDE else from a running app.
+    /// </summary>
+    public static bool IsDesignTime
+    {
+      get
+      {
+        return System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
       }
     }
 
@@ -297,6 +311,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static Globals()
     {
+      if ( IsDesignTime ) return;
       var folder = DataFileFolder.ApplicationDocuments;
       OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName, true, IsDev, folder);
       OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName, true, IsDev, folder);
