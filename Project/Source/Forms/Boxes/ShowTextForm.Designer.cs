@@ -66,10 +66,12 @@
       // 
       // TextBox
       // 
+      this.TextBox.BackColor = System.Drawing.SystemColors.Window;
       this.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
       resources.ApplyResources(this.TextBox, "TextBox");
       this.TextBox.Name = "TextBox";
-      this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Justify;
+      this.TextBox.ReadOnly = true;
+      this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Left;
       // 
       // ShowTextForm
       // 
