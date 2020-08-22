@@ -875,7 +875,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionViewCelebrations_Click(object sender, EventArgs e)
     {
       if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
-        CelebrationsForm.Instance.Close();
+        CelebrationsForm.Instance.BringToFront();
       else
         CelebrationsForm.Run();
     }
