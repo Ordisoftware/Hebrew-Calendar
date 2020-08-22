@@ -137,7 +137,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 ## Changelog
 
-#### 2020.08.21 - Version 4.1
+#### 2020.08.23 - Version 4.1
 
 - Add choosing a delay to allow auto enabling when suspending reminder.
 - Add left, right and up keys support to the navigation form.
@@ -150,8 +150,8 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Fix GPS labels appearance for Windows 10.
 - Fix reminder form title bar for Windows 10.
 - Fix Hebrew Letters path TextBox color for Windows 10.
-- Fixed long latency when opening preferences for the first time in Windows 10.
-- Few UI fixes and improvements.
+- Fix long latency when opening preferences for the first time in Windows 10.
+- Some fixes and improvements.
 
 #### 2020.04.24 - Version 4.0
 

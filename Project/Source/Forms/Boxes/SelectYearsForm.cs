@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-04 </edited>
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
@@ -78,25 +79,25 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionOk_Click(object sender, EventArgs e)
     {
       var diff = EditYearLast.Value - EditYearFirst.Value;
-      if ( diff > GenerateIntervalMax4 )
+      if ( diff >= GenerateIntervalMax4 )
       {
         if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar4.GetLang(GenerateIntervalMax4, diff)) )
           return;
       }
       else
-      if ( diff > GenerateIntervalMax3 )
+      if ( diff >= GenerateIntervalMax3 )
       {
         if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar3.GetLang(GenerateIntervalMax3, diff)) )
           return;
       }
       else
-      if ( diff > GenerateIntervalMax2 )
+      if ( diff >= GenerateIntervalMax2 )
       {
         if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar2.GetLang(GenerateIntervalMax2, diff)) )
           return;
       }
       else
-      if ( diff > GenerateIntervalMax1 )
+      if ( diff >= GenerateIntervalMax1 )
       {
         if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar1.GetLang(GenerateIntervalMax1, diff)) )
           return;
