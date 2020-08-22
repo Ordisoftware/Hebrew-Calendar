@@ -141,7 +141,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 ## Changelog
 
-#### 2020.08.23 - Version 4.1
+#### 2020.08.22 - Version 4.1
 
 - Add bring to front app if process is started again.
 - Add choosing a delay to allow auto enabling when suspending reminder.
