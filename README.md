@@ -151,7 +151,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Fix reminder form title bar for Windows 10.
 - Fix Hebrew Letters path TextBox color for Windows 10.
 - Fix long latency when opening preferences for the first time in Windows 10.
-- Few fixes and improvements.
+- Some fixes and improvements.
 
 #### 2020.04.24 - Version 4.0
 
