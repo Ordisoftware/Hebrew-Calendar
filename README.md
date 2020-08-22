@@ -76,6 +76,10 @@ The setup tries to register an ODBC DSN to the registry but in case of problem r
 
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
+#### What to do if the calendar month view is ugly?
+
+Reset the preferences to default: it will restore the corrupted values in case of a problem after install or upgrade.
+
 #### What is Shabat?
 
 The shabat is the "day of rest" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity.
