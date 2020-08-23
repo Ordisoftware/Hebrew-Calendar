@@ -77,6 +77,8 @@ URL = http://www.prabhupada-books.de/translations/gita-english/Bhagavad-gita-As-
 Name = (FR) Bhagavad Gita mot-à-mot (PDF 42 Mio)
 URL = http://www.prabhupada-books.de/translations/gita-french/La_Bhagavad-gita_telle_quelle_est_Bhaktivedanta_Swami_Prabhupada.pdf
 
+-
+
 Name = (EN) Yoga Sutra of Patanjali word-for-word (PDF 363 MiB)
 URL = http://www.arlingtoncenter.org/Sanskrit-English.pdf
 
