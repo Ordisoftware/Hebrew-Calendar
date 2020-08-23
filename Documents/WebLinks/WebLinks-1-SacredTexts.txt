@@ -71,11 +71,14 @@ URL = http://coran-seul.com/index.php/home
 -
 
 
-Name = (EN) Bhagavad Gita word-for-word (PDF 63 MB)
+Name = (EN) Bhagavad Gita word-for-word (PDF 63 MiB)
 URL = http://www.prabhupada-books.de/translations/gita-english/Bhagavad-gita-As-It-Is_McMillan1972.pdf
 
-Name = (FR) Bhagavad Gita mot-à-mot (PDF 42 Mo)
+Name = (FR) Bhagavad Gita mot-à-mot (PDF 42 Mio)
 URL = http://www.prabhupada-books.de/translations/gita-french/La_Bhagavad-gita_telle_quelle_est_Bhaktivedanta_Swami_Prabhupada.pdf
 
-Name = (FR) Yoga Sutra de Patanjali mot-à-mot (PDF 176 Ko)
+Name = (EN) Yoga Sutra of Patanjali word-for-word (PDF 363 MiB)
+URL = http://www.arlingtoncenter.org/Sanskrit-English.pdf
+
+Name = (FR) Yoga Sutra de Patanjali mot-à-mot (PDF 176 Kio)
 URL = http://www.lilashtanga.com/wp-content/uploads/2017/05/Sutra-de-patanjali-texte-.pdf
