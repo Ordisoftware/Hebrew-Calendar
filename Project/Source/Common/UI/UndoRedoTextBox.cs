@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCommon
 
     public event InsertingTextEventHandler InsertingText;
 
-    public override string Text
+    /*public override string Text
     {
       get { return base.Text; }
       set
@@ -86,9 +86,9 @@ namespace Ordisoftware.HebrewCommon
           SetTextMutex = false;
         }
       }
-    }
+    }*/
 
-    public override string SelectedText
+    /*public override string SelectedText
     {
       get { return base.SelectedText; }
       set
@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewCommon
           SetTextMutex = false;
         }
       }
-    }
+    }*/
 
     public UndoRedoTextBox()
     {
@@ -121,6 +121,9 @@ namespace Ordisoftware.HebrewCommon
       if ( ContextMenuEdit == null )
         InitializeContextMenu();
       ContextMenuStrip = ContextMenuEdit;
+      //TextChanged += TextChangedEvent;
+      //KeyDown += KeyDownEvent;
+      //KeyPress += KeyPressEvent;
     }
 
     private void AddUndo()

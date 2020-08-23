@@ -32,9 +32,6 @@
       // 
       // UndoRedoTextBox
       // 
-      this.TextChanged += new System.EventHandler(this.TextChangedEvent);
-      this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDownEvent);
-      this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressEvent);
       this.ResumeLayout(false);
 
     }
