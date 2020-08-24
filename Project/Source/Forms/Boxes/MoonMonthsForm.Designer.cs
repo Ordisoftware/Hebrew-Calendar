@@ -50,17 +50,17 @@
       // 
       // PanelBottom
       // 
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionSwapColors);
       this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionViewNotice);
       this.PanelBottom.Controls.Add(this.ActionEditFiles);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionSwapColors
       // 
-      resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
       this.ActionSwapColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
       this.ActionSwapColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionSwapColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionSwapColors.Name = "ActionSwapColors";
@@ -76,8 +76,8 @@
       // 
       // ActionViewNotice
       // 
-      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
       this.ActionViewNotice.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
       this.ActionViewNotice.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionViewNotice.LinkColor = System.Drawing.Color.Navy;
       this.ActionViewNotice.Name = "ActionViewNotice";
@@ -86,8 +86,8 @@
       // 
       // ActionEditFiles
       // 
-      resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
       this.ActionEditFiles.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
       this.ActionEditFiles.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionEditFiles.LinkColor = System.Drawing.Color.Navy;
       this.ActionEditFiles.Name = "ActionEditFiles";
@@ -96,7 +96,6 @@
       // 
       // ContextMenuItems
       // 
-      resources.ApplyResources(this.ContextMenuItems, "ContextMenuItems");
       this.ContextMenuItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionSearchOnline,
             this.toolStripSeparator1,
@@ -106,6 +105,7 @@
             this.ActionCopyUnicodeChars,
             this.ActionCopyLine});
       this.ContextMenuItems.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuItems, "ContextMenuItems");
       // 
       // ActionSearchOnline
       // 
@@ -114,8 +114,8 @@
       // 
       // toolStripSeparator1
       // 
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionOpenHebrewLetters
       // 
@@ -125,8 +125,8 @@
       // 
       // MenuSeparator2
       // 
-      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       this.MenuSeparator2.Name = "MenuSeparator2";
+      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       // 
       // ActionCopyFontChars
       // 
@@ -153,10 +153,8 @@
       // 
       // MoonMonthsForm
       // 
-      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ActionClose;
       this.Controls.Add(this.PanelMonths);
       this.Controls.Add(this.PanelBottom);
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "MoonMonthsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -165,6 +163,7 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "MoonMonthsForm";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MoonMonthsForm_FormClosing);
       this.Load += new System.EventHandler(this.MoonMonthsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();

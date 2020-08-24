@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-04 </edited>
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
@@ -108,6 +107,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SelectYearsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( e.CloseReason != CloseReason.UserClosing ) return;
       if ( !ActionCancel.Enabled ) e.Cancel = true;
     }
   }

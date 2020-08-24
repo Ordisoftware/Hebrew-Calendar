@@ -66,6 +66,13 @@ namespace Ordisoftware.HebrewCalendar
         CenterToScreen();
     }
 
+    private void MoonMonthsForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if ( e.CloseReason != CloseReason.UserClosing ) return;
+      e.Cancel = true;
+      Hide();
+    }
+
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();

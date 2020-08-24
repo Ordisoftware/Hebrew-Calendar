@@ -54,6 +54,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SearchEventForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( e.CloseReason != CloseReason.UserClosing ) return;
       if ( DialogResult == DialogResult.Cancel )
         if ( CurrentDay != null )
           MainForm.Instance.GoToDate(SQLiteHelper.GetDate(CurrentDay.Date));
