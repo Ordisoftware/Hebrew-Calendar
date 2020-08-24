@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     public MoonMonthsFile(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
-      : base(filename.Replace("%LANG%", Localizer.Language.ToUpper()), showFileNotFound, configurable, folder)
+      : base(filename.Replace("%LANG%", Localizer.Current.ToUpper()), showFileNotFound, configurable, folder)
     {
     }
 

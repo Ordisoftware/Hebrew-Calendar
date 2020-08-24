@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.IO;
 using Ordisoftware.HebrewCommon;
@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Start Hebrew Letters process.
     /// </summary>
-    /// <param name="hebrew">The hebrew font chars of teh word.</param>
+    /// <param name="hebrew">The hebrew font chars of the word.</param>
     static public void OpenHebrewLetters(string hebrew)
     {
       if ( !File.Exists(Settings.HebrewLettersExe) )
@@ -39,10 +39,7 @@ namespace Ordisoftware.HebrewCalendar
         return;
       }
       hebrew = HebrewAlphabet.SetFinal(hebrew, false);
-      if ( hebrew.StartsWith("a ") )
-        hebrew = hebrew.Substring(2, hebrew.Length - 2);
-      else
-      if ( hebrew.StartsWith("b ") )
+      if ( hebrew.StartsWith("a ") || hebrew.StartsWith("b ") )
         hebrew = hebrew.Substring(2, hebrew.Length - 2);
       foreach ( string item in hebrew.Split(' ') )
         SystemHelper.RunShell(Settings.HebrewLettersExe, item);

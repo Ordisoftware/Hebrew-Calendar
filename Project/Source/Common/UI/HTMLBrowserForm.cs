@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( Title != null ) Text = Title.GetLang();
       if ( FilenameTemplate == null ) return;
-      string filename = FilenameTemplate.Replace("%LANG%", Localizer.Language);
+      string filename = FilenameTemplate.Replace("%LANG%", Localizer.Current);
       if ( File.Exists(filename) )
         WebBrowser.Navigate(filename);
       else

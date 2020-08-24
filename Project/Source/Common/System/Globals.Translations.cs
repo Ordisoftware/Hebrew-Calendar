@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -24,198 +24,196 @@ namespace Ordisoftware.HebrewCommon
   static public partial class Globals
   {
 
-    static public string NewLine { get { return Environment.NewLine; } }
-
     static public readonly Dictionary<string, string> DoYouWantToContinue
       = new Dictionary<string, string>()
       {
-        { "en", "Do you want to continue?" },
-        { "fr", "Voulez-vous continuer ?" }
+        { Localizer.EN, "Do you want to continue?" },
+        { Localizer.FR, "Voulez-vous continuer ?" }
       };
 
     static public readonly Dictionary<string, string> GrammarGuideTitle
       = new Dictionary<string, string>()
       {
-        { "en", "Grammar guide" },
-        { "fr", "Guide de grammaire" }
+        { Localizer.EN, "Grammar guide" },
+        { Localizer.FR, "Guide de grammaire" }
       };
 
     static public readonly Dictionary<string, string> MethodNoticeTitle
       = new Dictionary<string, string>()
       {
-        { "en", "Lettriq analysis method notice" },
-        { "fr", "Notice de la méthode d'analyse lettrique" }
+        { Localizer.EN, "Lettriq analysis method notice" },
+        { Localizer.FR, "Notice de la méthode d'analyse lettrique" }
       };
 
     static public readonly Dictionary<string, string> GitHubIssueComment
       = new Dictionary<string, string>()
       {
-        { "en", "> Describe here what you did, what you expected and what happened." },
-        { "fr", "> Décrivez ici ce que vous avez fait, ce que vous attendiez et ce qui c'est passé." }
+        { Localizer.EN, "> Describe here what you did, what you expected and what happened." },
+        { Localizer.FR, "> Décrivez ici ce que vous avez fait, ce que vous attendiez et ce qui c'est passé." }
       };
 
     static public readonly Dictionary<string, string> AboutBoxTitle
       = new Dictionary<string, string>()
       {
-        { "en", "About {0}" },
-        { "fr", "À propos de {0}" }
+        { Localizer.EN, "About {0}" },
+        { Localizer.FR, "À propos de {0}" }
       };
 
     static public readonly Dictionary<string, string> AboutBoxVersion
       = new Dictionary<string, string>()
       {
-        { "en", "Version {0}" },
-        { "fr", "Version {0}" }
+        { Localizer.EN, "Version {0}" },
+        { Localizer.FR, "Version {0}" }
       };
 
     static public readonly Dictionary<string, string> NotYetAvailable
       = new Dictionary<string, string>()
       {
-        { "en", "Not yet available." },
-        { "fr", "Pas encore disponible." }
+        { Localizer.EN, "Not yet available." },
+        { Localizer.FR, "Pas encore disponible." }
       };
 
     static public readonly Dictionary<string, string> UpgradeResetRequired
       = new Dictionary<string, string>()
       {
-        { "en", "An upgrade of the settings is required and they will be reseted to default values." },
-        { "fr", "Une mise à jour des paramètres est requise et ils vont être réinialisés à leurs valeurs par défaut." }
+        { Localizer.EN, "An upgrade of the settings is required and they will be reseted to default values." },
+        { Localizer.FR, "Une mise à jour des paramètres est requise et ils vont être réinialisés à leurs valeurs par défaut." }
       };
 
     static public readonly Dictionary<string, string> AskToExitApplication
       = new Dictionary<string, string>()
       {
-        { "en", "Exit application?" },
-        { "fr", "Quitter l'application ?" }
+        { Localizer.EN, "Exit application?" },
+        { Localizer.FR, "Quitter l'application ?" }
       };
 
     static public readonly Dictionary<string, string> NoNewVersionAvailable
       = new Dictionary<string, string>()
       {
-        { "en", "There is no new version available." },
-        { "fr", "Il n'y a pas de nouvelle version de disponible." }
+        { Localizer.EN, "There is no new version available." },
+        { Localizer.FR, "Il n'y a pas de nouvelle version de disponible." }
       };
 
     static public readonly Dictionary<string, string> NewVersionAvailable
       = new Dictionary<string, string>()
       {
-        { "en", "A newer version is available : {0}" },
-        { "fr", "Une nouvelle version est disponible : {0}" }
+        { Localizer.EN, "A newer version is available : {0}" },
+        { Localizer.FR, "Une nouvelle version est disponible : {0}" }
       };
 
     static public readonly Dictionary<string, string> AskToDownloadNewVersion
       = new Dictionary<string, string>()
       {
-        { "en", "Do you want to open the download page?" },
-        { "fr", "Voulez-vous ouvrir la page de téléchargement ?" }
+        { Localizer.EN, "Do you want to open the download page?" },
+        { Localizer.FR, "Voulez-vous ouvrir la page de téléchargement ?" }
       };
 
     static public readonly Dictionary<string, string> AskToCheckParametersAfterDatabaseUpgraded
       = new Dictionary<string, string>()
       {
-        { "en", "Database upgraded." + NewLine + NewLine +
-                "Do you want check the parameters?" },
-        { "fr", "La base de données a été mise à jour." + NewLine + NewLine +
-                "Voulez-vous vérifier les paramètres ?" }
+        { Localizer.EN, "Database upgraded." + Localizer.NL + Localizer.NL +
+                        "Do you want check the parameters?" },
+        { Localizer.FR, "La base de données a été mise à jour." + Localizer.NL + Localizer.NL +
+                        "Voulez-vous vérifier les paramètres ?" }
       };
 
     static public readonly Dictionary<string, string> AskToOptimizeDatabase
       = new Dictionary<string, string>()
       {
-        { "en", "Optimization process will close and reopen the database." + NewLine + NewLine +
-                DoYouWantToContinue["en"] },
-        { "fr", "Le processus d'optimisation va fermer et rouvrir la base de données." + NewLine + NewLine +
-                DoYouWantToContinue["fr"] }
+        { Localizer.EN, "Optimization process will close and reopen the database." + Localizer.NL + Localizer.NL +
+                        DoYouWantToContinue[Localizer.EN] },
+        { Localizer.FR, "Le processus d'optimisation va fermer et rouvrir la base de données." + Localizer.NL + Localizer.NL +
+                        DoYouWantToContinue[Localizer.FR] }
       };
 
     static public readonly Dictionary<string, string> AskToRestoreWindowPosition
       = new Dictionary<string, string>()
       {
-        { "en", "This action will restore the window position." + NewLine + NewLine +
-                DoYouWantToContinue["en"] },
-        { "fr", "Cette action va restaurer la position de la fenêtre."  + NewLine + NewLine +
-                DoYouWantToContinue["fr"] },
+        { Localizer.EN, "This action will restore the window position." + Localizer.NL + Localizer.NL +
+                        DoYouWantToContinue[Localizer.EN] },
+        { Localizer.FR, "Cette action va restaurer la position de la fenêtre."  + Localizer.NL + Localizer.NL +
+                        DoYouWantToContinue[Localizer.FR] },
       };
 
     static public readonly Dictionary<string, string> AskToResetPreferences
       = new Dictionary<string, string>()
       {
-        { "en", "Preferences will be reseted to their default values." + NewLine + NewLine +
-                DoYouWantToContinue["en"] },
-        { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine + NewLine +
-                DoYouWantToContinue["fr"] },
+        { Localizer.EN, "Preferences will be reseted to their default values." + Localizer.NL + Localizer.NL +
+                        DoYouWantToContinue[Localizer.EN] },
+        { Localizer.FR, "Les préférences vont être réinitialisées à leurs valeurs par défaut." + Localizer.NL + Localizer.NL +
+                        DoYouWantToContinue[Localizer.FR] },
       };
 
     static public readonly Dictionary<string, string> AskToLoadInstalledData
       = new Dictionary<string, string>()
       {
-        { "en", "This action will load the data installed with the application." + NewLine + NewLine +
-                "All modifications will be lost." + NewLine + NewLine +
-                DoYouWantToContinue["en"] },
-        { "fr", "Cette action va charger les données installées avec l'application."  + NewLine + NewLine +
-                "Toutes les modifications seront perdues." + NewLine + NewLine +
-                DoYouWantToContinue["fr"] },
+        { Localizer.EN, "This action will load the data installed with the application." + Localizer.NL + Localizer.NL +
+                        "All modifications will be lost." + Localizer.NL + Localizer.NL +
+                        DoYouWantToContinue[Localizer.EN] },
+        { Localizer.FR, "Cette action va charger les données installées avec l'application."  + Localizer.NL + Localizer.NL +
+                        "Toutes les modifications seront perdues." + Localizer.NL + Localizer.NL +
+                        DoYouWantToContinue[Localizer.FR] },
       };
 
     static public readonly Dictionary<string, string> ErrorInFile
       = new Dictionary<string, string>()
       {
-        { "en", "Error in {0}" + NewLine + NewLine +
-                "Line n° {1]" + NewLine + NewLine +
-                "{2}" },
-        { "fr", "Erreur dans {0}" + NewLine + NewLine +
-                "Ligne n° {1}" + NewLine + NewLine +
-                "{2}" }
+        { Localizer.EN, "Error in {0}" + Localizer.NL + Localizer.NL +
+                        "Line n° {1]" + Localizer.NL + Localizer.NL +
+                        "{2}" },
+        { Localizer.FR, "Erreur dans {0}" + Localizer.NL + Localizer.NL +
+                        "Ligne n° {1}" + Localizer.NL + Localizer.NL +
+                        "{2}" }
       };
 
     static public readonly Dictionary<string, string> FileNotFound
       = new Dictionary<string, string>()
       {
-        { "en", "File not found: " + NewLine + NewLine + "{0}" },
-        { "fr", "Fichier non trouvé :" + NewLine + NewLine + "{0}" }
+        { Localizer.EN, "File not found: " + Localizer.NL + Localizer.NL + "{0}" },
+        { Localizer.FR, "Fichier non trouvé :" + Localizer.NL + Localizer.NL + "{0}" }
       };
 
     static public readonly Dictionary<string, string> TermNotFound
       = new Dictionary<string, string>()
       {
-        { "en", "Term \"{0}\" not found." },
-        { "fr", "Terme \"{0}\" non trouvé." }
+        { Localizer.EN, "Term \"{0}\" not found." },
+        { Localizer.FR, "Terme \"{0}\" non trouvé." }
       };
 
     static public readonly Dictionary<string, string> AskToOpenAllLinks
       = new Dictionary<string, string>()
       {
-        { "en", "Do you want to open all \"{0}\" links?" },
-        { "fr", "Voulez-vous ouvrir tous les liens de \"{0}\" ?" }
+        { Localizer.EN, "Do you want to open all \"{0}\" links?" },
+        { Localizer.FR, "Voulez-vous ouvrir tous les liens de \"{0}\" ?" }
       };
 
     static public readonly Dictionary<string, string> AskToDownloadHebrewLetters
       = new Dictionary<string, string>()
       {
-        { "en", "Hebrew Letters not found." + NewLine +
-                "Check preferences." + NewLine + NewLine +
-                "Do you want to download it?" },
-        { "fr", "Hebrew Letters n'a pas été trouvé." + NewLine +
-                "Vérifiez les préférences." + NewLine + NewLine +
-                "Voulez-vous le télécharger ?" }
+        { Localizer.EN, "Hebrew Letters not found." + Localizer.NL +
+                        "Check preferences." + Localizer.NL + Localizer.NL +
+                        "Do you want to download it?" },
+        { Localizer.FR, "Hebrew Letters n'a pas été trouvé." + Localizer.NL +
+                        "Vérifiez les préférences." + Localizer.NL + Localizer.NL +
+                        "Voulez-vous le télécharger ?" }
       };
 
     static public readonly Dictionary<string, string> AskToDownloadHebrewWOrds
       = new Dictionary<string, string>()
       {
-        { "en", "Hebrew Words not found." + NewLine +
-                "Check preferences." + NewLine + NewLine +
-                "Do you want to download it?" },
-        { "fr", "Hebrew Words n'a pas été trouvé." + NewLine +
-                "Vérifiez les préférences." + NewLine + NewLine +
-                "Voulez-vous le télécharger ?" }
+        { Localizer.EN, "Hebrew Words not found." + Localizer.NL +
+                        "Check preferences." + Localizer.NL + Localizer.NL +
+                        "Do you want to download it?" },
+        { Localizer.FR, "Hebrew Words n'a pas été trouvé." + Localizer.NL +
+                        "Vérifiez les préférences." + Localizer.NL + Localizer.NL +
+                        "Voulez-vous le télécharger ?" }
       };
 
     static public readonly Dictionary<string, string> ConfigureProviders
       = new Dictionary<string, string>()
       {
-        { "en", "Configure providers" },
-        { "fr", "Configurer les fournisseurs" }
+        { Localizer.EN, "Configure providers" },
+        { Localizer.FR, "Configurer les fournisseurs" }
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
@@ -224,15 +222,15 @@ namespace Ordisoftware.HebrewCommon
         {
           true, new Dictionary<string, string>
           {
-            { "en", "Hide" },
-            { "fr", "Cacher" }
+            { Localizer.EN, "Hide" },
+            { Localizer.FR, "Cacher" }
           }
         },
         {
           false, new Dictionary<string, string>
           {
-            { "en", "Restore" },
-            { "fr", "Restaurer" }
+            { Localizer.EN, "Restore" },
+            { Localizer.FR, "Restaurer" }
           }
         }
       };

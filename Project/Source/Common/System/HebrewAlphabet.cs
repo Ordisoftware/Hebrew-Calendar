@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System.Collections.Generic;
 using System.Linq;
 
@@ -222,14 +222,14 @@ namespace Ordisoftware.HebrewCommon
       = new Dictionary<string, string[]>()
       {
         {
-          "en", new string[]
+          Localizer.EN, new string[]
           {
             "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
             "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
           }
         },
         {
-          "fr", new string[]
+          Localizer.FR, new string[]
           {
             "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
             "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"

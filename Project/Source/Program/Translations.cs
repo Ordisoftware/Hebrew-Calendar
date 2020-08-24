@@ -25,143 +25,141 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public string NewLine { get { return Environment.NewLine; } }
-
     static public readonly Dictionary<string, string> ApplicationDescription
       = new Dictionary<string, string>()
       {
-        { "en", "Generate a hebrew lunisolar calendar with shabat and celebrations reminder" },
-        { "fr", "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations" }
+        { Localizer.EN, "Generate a hebrew lunisolar calendar with shabat and celebrations reminder" },
+        { Localizer.FR, "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations" }
       };
 
     static public readonly Dictionary<string, string> AskToResetPreferences
       = new Dictionary<string, string>()
       {
-        { "en", "Preferences will be reseted to their default values." + NewLine + NewLine +
-                "GPS location and shabat day will be keeped." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["en"] },
-        { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine + NewLine +
-                "La position GPS et le jour du shabat seront conservés." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["fr"] },
+        { Localizer.EN, "Preferences will be reseted to their default values." + Localizer.NL + Localizer.NL +
+                        "GPS location and shabat day will be keeped." + Localizer.NL + Localizer.NL +
+                        Globals.DoYouWantToContinue[Localizer.EN] },
+        { Localizer.FR, "Les préférences vont être réinitialisées à leurs valeurs par défaut." + Localizer.NL + Localizer.NL +
+                        "La position GPS et le jour du shabat seront conservés." + Localizer.NL + Localizer.NL +
+                        Globals.DoYouWantToContinue[Localizer.FR] },
       };
 
     static public readonly Dictionary<string, string> AskToShutdownComputer
       = new Dictionary<string, string>()
       {
-        { "en", "Shutdown the computer?" },
-        { "fr", "Arrêter l'ordinateur ?" }
+        { Localizer.EN, "Shutdown the computer?" },
+        { Localizer.FR, "Arrêter l'ordinateur ?" }
       };
 
     static public readonly Dictionary<string, string> LockSessionError
       = new Dictionary<string, string>()
       {
-        { "en", "Lock session error: {0}" },
-        { "fr", "Erreur de vérouillage de la session : {0}" }
+        { Localizer.EN, "Lock session error: {0}" },
+        { Localizer.FR, "Erreur de vérouillage de la session : {0}" }
       };
 
     static public readonly Dictionary<string, string> CantExitWhileGenerating
       = new Dictionary<string, string>()
       {
-        { "en", "Can't exit application while generating data..." },
-        { "fr", "Impossible de quitter l'application durant la génération des données..." }
+        { Localizer.EN, "Can't exit application while generating data..." },
+        { Localizer.FR, "Impossible de quitter l'application durant la génération des données..." }
       };
 
     static public readonly Dictionary<string, string> ProgressLoadingData
       = new Dictionary<string, string>()
       {
-        { "en", "Loading data..." },
-        { "fr", "Chargement des données..." }
+        { Localizer.EN, "Loading data..." },
+        { Localizer.FR, "Chargement des données..." }
       };
 
     static public readonly Dictionary<string, string> ProgressCreateDays
       = new Dictionary<string, string>()
       {
-        { "en", "Populating days..." },
-        { "fr", "Garnissage des jours..." }
+        { Localizer.EN, "Populating days..." },
+        { Localizer.FR, "Garnissage des jours..." }
       };
 
     static public readonly Dictionary<string, string> ProgressAnalyzeDays
       = new Dictionary<string, string>()
       {
-        { "en", "Analyzing days..." },
-        { "fr", "Analyse des jours..." }
+        { Localizer.EN, "Analyzing days..." },
+        { Localizer.FR, "Analyse des jours..." }
       };
 
     static public readonly Dictionary<string, string> ProgressGenerateReport
       = new Dictionary<string, string>()
       {
-        { "en", "Generating report..." },
-        { "fr", "Génération du rapport..." }
+        { Localizer.EN, "Generating report..." },
+        { Localizer.FR, "Génération du rapport..." }
       };
 
     static public readonly Dictionary<string, string> ProgressFillMonths
       = new Dictionary<string, string>()
       {
-        { "en", "Filling months..." },
-        { "fr", "Remplissage des mois..." }
+        { Localizer.EN, "Filling months..." },
+        { Localizer.FR, "Remplissage des mois..." }
       };
 
     static public readonly Dictionary<string, string> AskToUseMoonOmer
       = new Dictionary<string, string>()
       {
-        { "en", "Do you want to use the moon omer, else the sun?" },
-        { "fr", "Voulez-vous utiliser le omer de la lune, sinon du soleil ?" }
+        { Localizer.EN, "Do you want to use the moon omer, else the sun?" },
+        { Localizer.FR, "Voulez-vous utiliser le omer de la lune, sinon du soleil ?" }
       };
 
     static public readonly Dictionary<string, string> AskToSetupPersonalShabat
       = new Dictionary<string, string>()
       {
-        { "en", "Do you want to setup the personal shabat?" },
-        { "fr", "Voulez-vous configurer le shabat personnel ?" }
+        { Localizer.EN, "Do you want to setup the personal shabat?" },
+        { Localizer.FR, "Voulez-vous configurer le shabat personnel ?" }
       };
 
     static public readonly Dictionary<string, string> DateNotFound
       = new Dictionary<string, string>()
       {
-        { "en", "Date not found in the database: {0}" },
-        { "fr", "Date non trouvée dans la base de données : {0}" }
+        { Localizer.EN, "Date not found in the database: {0}" },
+        { Localizer.FR, "Date non trouvée dans la base de données : {0}" }
       };
 
     static public readonly Dictionary<string, string> SelectBirthday
       = new Dictionary<string, string>()
       {
-        { "en", "Birth day" },
-        { "fr", "Date de naissance" }
+        { Localizer.EN, "Birth day" },
+        { Localizer.FR, "Date de naissance" }
       };
 
     static public readonly Dictionary<string, string> FirstDay
       = new Dictionary<string, string>()
       {
-        { "en", "First day" },
-        { "fr", "Premier jour" }
+        { Localizer.EN, "First day" },
+        { Localizer.FR, "Premier jour" }
       };
 
     static public readonly Dictionary<string, string> LastDay
       = new Dictionary<string, string>()
       {
-        { "en", "Last day" },
-        { "fr", "Dernier jour" }
+        { Localizer.EN, "Last day" },
+        { Localizer.FR, "Dernier jour" }
       };
 
     static public readonly Dictionary<string, string> DiffDatesSolarCount
       = new Dictionary<string, string>()
       {
-        { "en", "Solar days count: {0}" },
-        { "fr", "Nombre de jours solaires : {0}" }
+        { Localizer.EN, "Solar days count: {0}" },
+        { Localizer.FR, "Nombre de jours solaires : {0}" }
       };
 
     static public readonly Dictionary<string, string> DiffDatesMoonCount
       = new Dictionary<string, string>()
       {
-        { "en", "Moon days count: {0}" },
-        { "fr", "Nombre de jours lunaires : {0}" }
+        { Localizer.EN, "Moon days count: {0}" },
+        { Localizer.FR, "Nombre de jours lunaires : {0}" }
       };
 
     static public readonly Dictionary<string, string> DiffDatesMoonOutOfRange
       = new Dictionary<string, string>()
       {
-        { "en", "Moon days count: out of range ({0} - {1})" },
-        { "fr", "Nombre de jours lunaires : hors limites ({0} - {1})" }
+        { Localizer.EN, "Moon days count: out of range ({0} - {1})" },
+        { Localizer.FR, "Nombre de jours lunaires : hors limites ({0} - {1})" }
       };
 
   }

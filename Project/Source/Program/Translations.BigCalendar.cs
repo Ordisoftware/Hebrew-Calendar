@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
@@ -34,43 +34,43 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> AskToGenerateBigCalendar1
       = new Dictionary<string, string>()
       {
-        { "en", AskToGenerateBigCalendarEN + "a slight slowdown." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["en"] },
-        { "fr", AskToGenerateBigCalendarFR + "un léger ralentissement." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["fr"] },
+        { Localizer.EN, AskToGenerateBigCalendarEN + "a slight slowdown." + Localizer.NL + Localizer.NL +
+                        Globals.DoYouWantToContinue[Localizer.EN] },
+        { Localizer.FR, AskToGenerateBigCalendarFR + "un léger ralentissement." + Localizer.NL + Localizer.NL +
+                        Globals.DoYouWantToContinue[Localizer.FR] },
       };
 
     static public readonly Dictionary<string, string> AskToGenerateBigCalendar2
       = new Dictionary<string, string>()
       {
-        { "en", AskToGenerateBigCalendarEN + "a noticeable slowdown." + NewLine + NewLine +
-                "Do not use this value for a daily usage." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["en"] },
-        { "fr", AskToGenerateBigCalendarFR + "un ralentissement notable." + NewLine + NewLine +
-                "N'utilisez pas cette valeur pour un usage quotidien." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["fr"] },
+        { Localizer.EN, AskToGenerateBigCalendarEN + "a noticeable slowdown." + Localizer.NL + Localizer.NL +
+                        "Do not use this value for a daily usage." + Localizer.NL + Localizer.NL +
+                        Globals.DoYouWantToContinue[Localizer.EN] },
+        { Localizer.FR, AskToGenerateBigCalendarFR + "un ralentissement notable." + Localizer.NL + Localizer.NL +
+                        "N'utilisez pas cette valeur pour un usage quotidien." + Localizer.NL + Localizer.NL +
+                        Globals.DoYouWantToContinue[Localizer.FR] },
       };
 
     static public readonly Dictionary<string, string> AskToGenerateBigCalendar3
       = new Dictionary<string, string>()
       {
-        { "en", AskToGenerateBigCalendarEN + "a significant slowdown." + NewLine + NewLine +
-                "Use this value only for occasional searches." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["en"] },
-        { "fr", AskToGenerateBigCalendarFR + "un important ralentissement." + NewLine + NewLine +
-                "N'utilisez cette valeur que pour des recherches ponctuelles." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["fr"] },
+        { Localizer.EN, AskToGenerateBigCalendarEN + "a significant slowdown." + Localizer.NL + Localizer.NL +
+                        "Use this value only for occasional searches." + Localizer.NL + Localizer.NL +
+                        Globals.DoYouWantToContinue[Localizer.EN] },
+        { Localizer.FR, AskToGenerateBigCalendarFR + "un important ralentissement." + Localizer.NL + Localizer.NL +
+                        "N'utilisez cette valeur que pour des recherches ponctuelles." + Localizer.NL + Localizer.NL +
+                        Globals.DoYouWantToContinue[Localizer.FR] },
       };
 
     static public readonly Dictionary<string, string> AskToGenerateBigCalendar4
       = new Dictionary<string, string>()
       {
-        { "en", AskToGenerateBigCalendarEN + "a considerable slowdown." + NewLine + NewLine +
-                "Use this value only with a powerful computer." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["en"] },
-        { "fr", AskToGenerateBigCalendarFR + "ralentissement considérable." + NewLine + NewLine +
-                "N'utiliser cette valeur qu'avec un ordinateur puissant." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["fr"] },
+        { Localizer.EN, AskToGenerateBigCalendarEN + "a considerable slowdown." + Localizer.NL + Localizer.NL +
+                        "Use this value only with a powerful computer." + Localizer.NL + Localizer.NL +
+                        Globals.DoYouWantToContinue[Localizer.EN] },
+        { Localizer.FR, AskToGenerateBigCalendarFR + "ralentissement considérable." + Localizer.NL + Localizer.NL +
+                        "N'utiliser cette valeur qu'avec un ordinateur puissant." + Localizer.NL + Localizer.NL +
+                        Globals.DoYouWantToContinue[Localizer.FR] },
       };
 
   }

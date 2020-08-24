@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.ComponentModel;
 using System.Configuration;
@@ -117,10 +117,10 @@ namespace Ordisoftware.HebrewCommon
       {
         CommandLineArguments = args;
         if ( args.Length == 2 && args[0] == "/lang" )
-          if ( args[1] == "en" || args[1] == "fr" )
+          if ( args[1] == Localizer.EN || args[1] == Localizer.FR )
             language = args[1];
         if ( language == "" )
-          language = Localizer.Language;
+          language = Localizer.Current;
       }
       catch ( Exception ex )
       {

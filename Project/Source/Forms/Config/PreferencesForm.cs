@@ -183,7 +183,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.TimeZone = timezone;
       Program.Settings.ShabatDay = shabat;
       Program.Settings.RestoreMainForm();
-      Program.Settings.Language = Localizer.Language;
+      Program.Settings.Language = Localizer.Current;
       Close();
     }
 
@@ -234,8 +234,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
-      if ( Program.Settings.Language == "en" ) return;
-      Program.Settings.Language = "en";
+      if ( Program.Settings.Language == Localizer.EN ) return;
+      Program.Settings.Language = Localizer.EN;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -244,8 +244,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectLangFR_Click(object sender, EventArgs e)
     {
-      if ( Program.Settings.Language == "fr" ) return;
-      Program.Settings.Language = "fr";
+      if ( Program.Settings.Language == Localizer.FR ) return;
+      Program.Settings.Language = Localizer.FR;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -255,12 +255,12 @@ namespace Ordisoftware.HebrewCalendar
     private void UpdateLanguagesButtons()
     {
       MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
-      if ( Program.Settings.Language == "en" )
+      if ( Program.Settings.Language == Localizer.EN )
       {
         ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangFR.BackColor = SystemColors.Control;
       }
-      if ( Program.Settings.Language == "fr" )
+      if ( Program.Settings.Language == Localizer.FR )
       {
         ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangEN.BackColor = SystemColors.Control;

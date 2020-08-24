@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewCalendar
         Settings.UpgradeResetRequiredV3_0 = false;
         Settings.UpgradeResetRequiredV3_6 = false;
         Settings.UpgradeResetRequiredV4_1 = false;
-        Settings.Language = Localizer.Language;
+        Settings.Language = Localizer.Current;
         Settings.Save();
       }
       else

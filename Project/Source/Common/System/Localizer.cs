@@ -12,6 +12,7 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -21,31 +22,60 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
+  /// Supported languages enum.
+  /// </summary>
+  public enum Language
+  {
+    English,
+    French
+  }
+
+  /// <summary>
   /// Provide localization helper.
   /// </summary>
   static public class Localizer
   {
 
     /// <summary>
-    /// Indicate managed languages list.
+    /// Indicate supported languages names.
     /// </summary>
-    static public readonly string[] AvailableLanguages = { "en", "fr" };
+    static public readonly Dictionary<Language, string> LanguageNames
+      = new Dictionary<Language, string>
+      {
+        { Language.English, "en" },
+        { Language.French, "fr" }
+      };
 
     /// <summary>
-    /// Indicate default language.
+    /// Indicate english language code.
     /// </summary>
-    static public readonly string DefaultLanguage = "en";
+    static public readonly string EN = LanguageNames[Language.English];
+
+    /// <summary>
+    /// Indicate french language code.
+    /// </summary>
+    static public readonly string FR = LanguageNames[Language.French];
+
+    /// <summary>
+    /// Indicate new line.
+    /// </summary>
+    static public readonly string NL = Environment.NewLine;
+
+    /// <summary>
+    /// Indicate default language code.
+    /// </summary>
+    static public readonly string Default = EN;
 
     /// <summary>
     /// Indicate current language.
     /// </summary>
-    static public string Language
+    static public string Current
     {
       get
       {
         string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-        if ( !AvailableLanguages.Contains(lang) )
-          lang = DefaultLanguage;
+        if ( !LanguageNames.Values.Contains(lang) )
+          lang = Default;
         return lang;
       }
     }
@@ -56,7 +86,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="values">The dictionary containing lang>translation.</param>
     static public string GetLang(this Dictionary<string, string> values)
     {
-      return values != null && values.ContainsKey(Language) ? values[Language] : "";
+      return values != null && values.ContainsKey(Current) ? values[Current] : "";
     }
 
     /// <summary>
@@ -75,7 +105,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="values">The dictionary containing lang>translations.</param>
     static public string[] GetLang(this Dictionary<string, string[]> values)
     {
-      return values != null && values.ContainsKey(Language) ? values[Language] : new string[0];
+      return values != null && values.ContainsKey(Current) ? values[Current] : new string[0];
     }
 
     /// <summary>
@@ -87,7 +117,7 @@ namespace Ordisoftware.HebrewCommon
     static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
       return values != null && values.ContainsKey(value)
-             ? values[value] != null && values[value].ContainsKey(Language) ? values[value][Language] : ""
+             ? values[value] != null && values[value].ContainsKey(Current) ? values[value][Current] : ""
              : "";
     }
 
@@ -99,8 +129,8 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="value">The value to translate.</param>
     static public string GetLang<T>(this Dictionary<string, Dictionary<T, string>> values, T value)
     {
-      return values != null && values.ContainsKey(Language)
-        ? values[Language] != null && values[Language].ContainsKey(value) ? values[Language][value] : ""
+      return values != null && values.ContainsKey(Current)
+        ? values[Current] != null && values[Current].ContainsKey(value) ? values[Current][value] : ""
         : "";
     }
 
@@ -111,7 +141,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="values">The dictionary containing lang>list.</param>
     static public List<T> GetLang<T>(this Dictionary<string, List<T>> values)
     {
-      return values != null && values.ContainsKey(Language) ? values[Language] : null;
+      return values != null && values.ContainsKey(Current) ? values[Current] : null;
     }
 
     /// <summary>
