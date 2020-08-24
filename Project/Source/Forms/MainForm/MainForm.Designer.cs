@@ -76,6 +76,10 @@
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
+      this.ActionResetReminder = new System.Windows.Forms.ToolStripButton();
+      this.ActionDisableReminder = new System.Windows.Forms.ToolStripButton();
+      this.ActionEnableReminder = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSaveReport = new System.Windows.Forms.ToolStripButton();
       this.ActionExportCSV = new System.Windows.Forms.ToolStripButton();
       this.Sep1 = new System.Windows.Forms.ToolStripSeparator();
@@ -123,9 +127,6 @@
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
-      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionResetReminder = new System.Windows.Forms.ToolStripButton();
-      this.ActionDisableReminder = new System.Windows.Forms.ToolStripButton();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.ActionSettings = new System.Windows.Forms.ToolStripDropDownButton();
@@ -145,24 +146,23 @@
       this.ActionViewReport = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewMonth = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewGrid = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionEnableReminder = new System.Windows.Forms.ToolStripButton();
       this.SaveCSVDialog = new System.Windows.Forms.SaveFileDialog();
       this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
+      this.SeparatorTrayMenu3 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuResetReminder = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuEnableReminder = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuDisableReminder = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenu1 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuNavigate = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuCelebrations = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenu2 = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuResetReminder = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuEnableReminder = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuDisableReminder = new System.Windows.Forms.ToolStripMenuItem();
-      this.SeparatorTrayMenu3 = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuTools = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuWebLinks = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuInformation = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenu5 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
       this.PrintDialog = new System.Windows.Forms.PrintDialog();
       this.TimerReminder = new System.Windows.Forms.Timer(this.components);
@@ -561,10 +561,6 @@
       this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionResetReminder,
-            this.ActionDisableReminder,
-            this.ActionEnableReminder,
-            this.toolStripSeparator4,
             this.ActionSaveReport,
             this.ActionExportCSV,
             this.Sep1,
@@ -582,6 +578,10 @@
             this.Sep4,
             this.ActionHelp,
             this.ActionInformation,
+            this.ActionResetReminder,
+            this.ActionDisableReminder,
+            this.ActionEnableReminder,
+            this.toolStripSeparator4,
             this.ActionTools,
             this.ActionWebLinks,
             this.Sep6,
@@ -591,6 +591,41 @@
       resources.ApplyResources(this.ToolStrip, "ToolStrip");
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
+      // 
+      // ActionResetReminder
+      // 
+      this.ActionResetReminder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionResetReminder, "ActionResetReminder");
+      this.ActionResetReminder.Name = "ActionResetReminder";
+      this.ActionResetReminder.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionResetReminder.Click += new System.EventHandler(this.MenuRefreshReminder_Click);
+      this.ActionResetReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionResetReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionDisableReminder
+      // 
+      this.ActionDisableReminder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionDisableReminder, "ActionDisableReminder");
+      this.ActionDisableReminder.Name = "ActionDisableReminder";
+      this.ActionDisableReminder.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionDisableReminder.Click += new System.EventHandler(this.MenuDisableReminder_Click);
+      this.ActionDisableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionDisableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // ActionEnableReminder
+      // 
+      this.ActionEnableReminder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionEnableReminder, "ActionEnableReminder");
+      this.ActionEnableReminder.Name = "ActionEnableReminder";
+      this.ActionEnableReminder.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionEnableReminder.Click += new System.EventHandler(this.MenuEnableReminder_Click);
+      this.ActionEnableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionEnableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
       // 
       // ActionSaveReport
       // 
@@ -960,31 +995,6 @@
       resources.ApplyResources(this.ActionWebLinks, "ActionWebLinks");
       this.ActionWebLinks.Name = "ActionWebLinks";
       // 
-      // toolStripSeparator4
-      // 
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
-      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-      // 
-      // ActionResetReminder
-      // 
-      this.ActionResetReminder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionResetReminder, "ActionResetReminder");
-      this.ActionResetReminder.Name = "ActionResetReminder";
-      this.ActionResetReminder.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionResetReminder.Click += new System.EventHandler(this.MenuRefreshReminder_Click);
-      this.ActionResetReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionResetReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // ActionDisableReminder
-      // 
-      this.ActionDisableReminder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionDisableReminder, "ActionDisableReminder");
-      this.ActionDisableReminder.Name = "ActionDisableReminder";
-      this.ActionDisableReminder.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionDisableReminder.Click += new System.EventHandler(this.MenuDisableReminder_Click);
-      this.ActionDisableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionDisableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
       // Sep6
       // 
       this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -1136,16 +1146,6 @@
       this.ActionViewGrid.Name = "ActionViewGrid";
       this.ActionViewGrid.Click += new System.EventHandler(this.ActionViewGrid_Click);
       // 
-      // ActionEnableReminder
-      // 
-      this.ActionEnableReminder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionEnableReminder, "ActionEnableReminder");
-      this.ActionEnableReminder.Name = "ActionEnableReminder";
-      this.ActionEnableReminder.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionEnableReminder.Click += new System.EventHandler(this.MenuEnableReminder_Click);
-      this.ActionEnableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionEnableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
       // SaveCSVDialog
       // 
       this.SaveCSVDialog.FileName = "Hebrew Calendar.csv";
@@ -1186,6 +1186,29 @@
       this.MenuShowHide.Name = "MenuShowHide";
       this.MenuShowHide.Click += new System.EventHandler(this.MenuShowHide_Click);
       // 
+      // SeparatorTrayMenu3
+      // 
+      this.SeparatorTrayMenu3.Name = "SeparatorTrayMenu3";
+      resources.ApplyResources(this.SeparatorTrayMenu3, "SeparatorTrayMenu3");
+      // 
+      // MenuResetReminder
+      // 
+      resources.ApplyResources(this.MenuResetReminder, "MenuResetReminder");
+      this.MenuResetReminder.Name = "MenuResetReminder";
+      this.MenuResetReminder.Click += new System.EventHandler(this.MenuRefreshReminder_Click);
+      // 
+      // MenuEnableReminder
+      // 
+      resources.ApplyResources(this.MenuEnableReminder, "MenuEnableReminder");
+      this.MenuEnableReminder.Name = "MenuEnableReminder";
+      this.MenuEnableReminder.Click += new System.EventHandler(this.MenuEnableReminder_Click);
+      // 
+      // MenuDisableReminder
+      // 
+      resources.ApplyResources(this.MenuDisableReminder, "MenuDisableReminder");
+      this.MenuDisableReminder.Name = "MenuDisableReminder";
+      this.MenuDisableReminder.Click += new System.EventHandler(this.MenuDisableReminder_Click);
+      // 
       // SeparatorTrayMenu1
       // 
       this.SeparatorTrayMenu1.Name = "SeparatorTrayMenu1";
@@ -1208,35 +1231,6 @@
       this.SeparatorTrayMenu2.Name = "SeparatorTrayMenu2";
       resources.ApplyResources(this.SeparatorTrayMenu2, "SeparatorTrayMenu2");
       // 
-      // MenuResetReminder
-      // 
-      resources.ApplyResources(this.MenuResetReminder, "MenuResetReminder");
-      this.MenuResetReminder.Name = "MenuResetReminder";
-      this.MenuResetReminder.Click += new System.EventHandler(this.MenuRefreshReminder_Click);
-      // 
-      // MenuEnableReminder
-      // 
-      resources.ApplyResources(this.MenuEnableReminder, "MenuEnableReminder");
-      this.MenuEnableReminder.Name = "MenuEnableReminder";
-      this.MenuEnableReminder.Click += new System.EventHandler(this.MenuEnableReminder_Click);
-      // 
-      // MenuDisableReminder
-      // 
-      resources.ApplyResources(this.MenuDisableReminder, "MenuDisableReminder");
-      this.MenuDisableReminder.Name = "MenuDisableReminder";
-      this.MenuDisableReminder.Click += new System.EventHandler(this.MenuDisableReminder_Click);
-      // 
-      // SeparatorTrayMenu3
-      // 
-      this.SeparatorTrayMenu3.Name = "SeparatorTrayMenu3";
-      resources.ApplyResources(this.SeparatorTrayMenu3, "SeparatorTrayMenu3");
-      // 
-      // MenuPreferences
-      // 
-      resources.ApplyResources(this.MenuPreferences, "MenuPreferences");
-      this.MenuPreferences.Name = "MenuPreferences";
-      this.MenuPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
-      // 
       // MenuTools
       // 
       resources.ApplyResources(this.MenuTools, "MenuTools");
@@ -1256,6 +1250,12 @@
       // 
       this.SeparatorTrayMenu5.Name = "SeparatorTrayMenu5";
       resources.ApplyResources(this.SeparatorTrayMenu5, "SeparatorTrayMenu5");
+      // 
+      // MenuPreferences
+      // 
+      resources.ApplyResources(this.MenuPreferences, "MenuPreferences");
+      this.MenuPreferences.Name = "MenuPreferences";
+      this.MenuPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
       // 
       // MenuExit
       // 
