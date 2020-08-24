@@ -120,6 +120,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - F6 : Search a moon month window
 - F7 : Search a day window (also Ctrl+D)
 - F9 : Navigation window (also Ctrl+N)
+- F10 : Month description window (also Ctrl+M)
 - Ctrl+Tab : Next view
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today
@@ -143,7 +144,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 #### 2020.09.__ - Version 4.2
 
-- Add moon months description form in tools menu.
+- Add moon months description in tools menu (F10).
 - Add tools menu duplicated in the tray icon.
 - Add option to enable/disable the web links menu.
 - Add option to enable/disable suspend reminder menu.
