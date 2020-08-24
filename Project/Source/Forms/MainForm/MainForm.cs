@@ -59,6 +59,8 @@ namespace Ordisoftware.HebrewCalendar
       Globals.AllowClose = false;
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
+      // TODO remove when finished
+      ActionViewMoonMonths.Enabled = Globals.IsDev;
     }
 
     /// <summary>
@@ -73,7 +75,9 @@ namespace Ordisoftware.HebrewCalendar
         ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
         ActionWebLinks.DuplicateTo(MenuWebLinks);
       }
+      ActionViewMoonMonths.ShortcutKeys = Keys.None;
       ActionTools.DuplicateTo(MenuTools);
+      ActionViewMoonMonths.ShortcutKeys = Keys.F10;
       ActionInformation.DuplicateTo(MenuInformation);
       if ( !Program.Settings.AllowSuspendReminder && ActionEnableReminder.Enabled )
         ActionEnableReminder.PerformClick();
