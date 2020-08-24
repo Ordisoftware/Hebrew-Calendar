@@ -42,7 +42,7 @@ namespace Ordisoftware.HebrewCalendar
       Icon = MainForm.Instance.Icon;
       CreateControls();
       ActiveControl = ActionClose;
-      ActionEditFiles.Visible = !Program.MoonMonthsMeanings[Localizer.Current].Configurable;
+      ActionEditFiles.Visible = Program.MoonMonthsMeanings[Localizer.Current].Configurable;
       ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
