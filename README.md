@@ -144,6 +144,8 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 #### 2020.09.__ - Version 4.2
 
 - Add moon months description form in tools menu.
+- Add tools menu duplicated in the tray icon.
+- Add option to enable/disable the web links menu.
 - Add button to disable auto lock in session lock form.
 - Add mute windows volume when stop media playing.
 - Fix stop media playing in session lock form (stop instead of play/pause media).
