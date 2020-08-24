@@ -1,5 +1,6 @@
 ﻿// <copyright file="Extensions.cs" company="Brown University">
 // Copyright (c) 2009 by John Mertus
+// https://www.codeproject.com/Articles/43472/A-Pretty-Good-Menu-Cloner
 // </copyright>
 // <author>John Mertus</author>
 // <date>10/31/2009 9:30:22 AM</date>

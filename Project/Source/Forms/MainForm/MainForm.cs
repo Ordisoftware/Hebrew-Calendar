@@ -67,26 +67,9 @@ namespace Ordisoftware.HebrewCalendar
     internal void CreateWebLinks()
     {
       ActionWebLinks.InitializeFromWebLinks(CreateWebLinks);
-      DuplicateMenu(ActionTools, MenuTools);
-      DuplicateMenu(ActionWebLinks, MenuWebLinks);
-      DuplicateMenu(ActionInformation, MenuInformation);
-    }
-
-    /// <summary>
-    /// Duplicate menu content.
-    /// </summary>
-    private void DuplicateMenu(ToolStripDropDownButton source, ToolStripMenuItem destination)
-    {
-      int count = 0;
-      var items = new ToolStripItem[source.DropDownItems.Count];
-      foreach ( ToolStripItem item in source.DropDownItems )
-        if ( item is ToolStripMenuItem )
-          items[count++] = ( (ToolStripMenuItem)item ).Clone();
-        else
-        if ( item is ToolStripSeparator )
-          items[count++] = new ToolStripSeparator();
-      destination.DropDownItems.Clear();
-      destination.DropDownItems.AddRange(items);
+      ActionTools.DuplicateTo(MenuTools);
+      ActionWebLinks.DuplicateTo(MenuWebLinks);
+      ActionInformation.DuplicateTo(MenuInformation);
     }
 
     /// <summary>

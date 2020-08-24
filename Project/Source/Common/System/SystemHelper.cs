@@ -24,6 +24,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.Pipes;
+using EventHandlerSupport;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
@@ -134,43 +135,44 @@ namespace Ordisoftware.HebrewCommon
     static public string[] CommandLineArguments { get; private set; }
 
     /// <summary>
-    /// Apply localized resources.
+    /// Check if an update is available online.
     /// </summary>
-    static public void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
+    /// <param name="checkAtStartup"></param>
+    /// <param name="auto">True if no user interaction else false</param>
+    /// <returns>True if application must exist else false.</returns>
+    static public bool CheckUpdate(bool checkAtStartup, bool auto)
     {
+      if ( auto && !checkAtStartup ) return false;
       try
       {
-        foreach ( Control control in controls )
+        using ( WebClient client = new WebClient() )
         {
-          if ( control is Label )
-            resources.ApplyResources(control, control.Name);
-          ApplyResources(resources, control.Controls);
+          string[] partsVersion = client.DownloadString(Globals.CheckUpdateURL).Split('.');
+          var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
+          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
+          {
+            if ( !auto )
+              DisplayManager.Show(Globals.NoNewVersionAvailable.GetLang());
+          }
+          else
+          if ( DisplayManager.QueryYesNo(Globals.NewVersionAvailable.GetLang(version) + Environment.NewLine +
+                                         Environment.NewLine +
+                                         Globals.AskToDownloadNewVersion.GetLang()) )
+          {
+            OpenWebLink(Globals.DownloadApplicationURL);
+            if ( auto )
+            {
+              Globals.IsExiting = true;
+              return true;
+            }
+          }
         }
       }
       catch ( Exception ex )
       {
-        ex.Manage();
+        DisplayManager.ShowAdvert(DisplayManager.Title + " Check Update", ex.Message);
       }
-    }
-
-    // https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
-    public static string FormatBytesSize(this ulong bytes)
-    {
-      ulong unit = 1024;
-      if ( bytes < unit ) return $"{bytes} B";
-      var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
-      return $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPE" )[exp - 1]}B";
-    }
-
-    /// <summary>
-    /// Center a form beside the main form.
-    /// </summary>
-    /// <param name="form">The form.</param>
-    static public void CenterToMainForm(this Form form)
-    {
-      if ( Globals.MainForm == null ) return;
-      form.Location = new Point(Globals.MainForm.Left + Globals.MainForm.Width / 2 - form.Width / 2,
-                                Globals.MainForm.Top + Globals.MainForm.Height / 2 - form.Height / 2);
+      return false;
     }
 
     /// <summary>
@@ -197,6 +199,18 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Create a readable string from a size in bytes.
+    /// From: https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
+    /// </summary>
+    public static string FormatBytesSize(this ulong bytes)
+    {
+      ulong unit = 1024;
+      if ( bytes < unit ) return $"{bytes} B";
+      var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
+      return $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPE" )[exp - 1]}B";
+    }
+
+    /// <summary>
     /// Add "http://" to a string if it does not start with http:// or https://.
     /// </summary>
     /// <param name="link">The link.</param>
@@ -209,7 +223,6 @@ namespace Ordisoftware.HebrewCommon
         link = "http://" + link;
       return link;
     }
-
 
     /// <summary>
     /// Open a web link.
@@ -284,44 +297,51 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Check if an update is available online.
+    /// Apply localized resources.
     /// </summary>
-    /// <param name="checkAtStartup"></param>
-    /// <param name="auto">True if no user interaction else false</param>
-    /// <returns>True if application must exist else false.</returns>
-    static public bool CheckUpdate(bool checkAtStartup, bool auto)
+    static public void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
     {
-      if ( auto && !checkAtStartup ) return false;
       try
       {
-        using ( WebClient client = new WebClient() )
+        foreach ( Control control in controls )
         {
-          string[] partsVersion = client.DownloadString(Globals.CheckUpdateURL).Split('.');
-          var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
-          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
-          {
-            if ( !auto )
-              DisplayManager.Show(Globals.NoNewVersionAvailable.GetLang());
-          }
-          else
-          if ( DisplayManager.QueryYesNo(Globals.NewVersionAvailable.GetLang(version) + Environment.NewLine +
-                                         Environment.NewLine +
-                                         Globals.AskToDownloadNewVersion.GetLang()) )
-          {
-            OpenWebLink(Globals.DownloadApplicationURL);
-            if ( auto )
-            {
-              Globals.IsExiting = true;
-              return true;
-            }
-          }
+          if ( control is Label )
+            resources.ApplyResources(control, control.Name);
+          ApplyResources(resources, control.Controls);
         }
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowAdvert(DisplayManager.Title + " Check Update", ex.Message);
+        ex.Manage();
       }
-      return false;
+    }
+
+    /// <summary>
+    /// Center a form beside the main form.
+    /// </summary>
+    /// <param name="form">The form.</param>
+    static public void CenterToMainForm(this Form form)
+    {
+      if ( Globals.MainForm == null ) return;
+      form.Location = new Point(Globals.MainForm.Left + Globals.MainForm.Width / 2 - form.Width / 2,
+                                Globals.MainForm.Top + Globals.MainForm.Height / 2 - form.Height / 2);
+    }
+
+    /// <summary>
+    /// Duplicate menu content.
+    /// </summary>
+    static public void DuplicateTo(this ToolStripDropDownButton source, ToolStripMenuItem destination)
+    {
+      int count = 0;
+      var items = new ToolStripItem[source.DropDownItems.Count];
+      foreach ( ToolStripItem item in source.DropDownItems )
+        if ( item is ToolStripMenuItem )
+          items[count++] = ( (ToolStripMenuItem)item ).Clone();
+        else
+        if ( item is ToolStripSeparator )
+          items[count++] = new ToolStripSeparator();
+      destination.DropDownItems.Clear();
+      destination.DropDownItems.AddRange(items);
     }
 
     /// <summary>

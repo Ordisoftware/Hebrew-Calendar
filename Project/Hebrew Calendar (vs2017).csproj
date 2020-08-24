@@ -141,7 +141,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
-    <Compile Include="Dependencies\EventHandlerSupport\Extensions.cs" />
+    <Compile Include="Source\Common\System\Extensions.cs" />
     <Compile Include="Dependencies\GenericParsing\FieldType.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParser.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParserAdapter.cs" />
@@ -639,6 +639,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="License\MPL 2.0.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dependencies\EventHandlerSupport\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
