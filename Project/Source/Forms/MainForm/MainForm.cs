@@ -640,12 +640,12 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionShowShabatNotice_Click(object sender, EventArgs e)
     {
-      ShowTextForm.CreateShabatNotice().Show();
+      Program.ShabatNoticeForm.Show();
     }
 
     private void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      ShowTextForm.CreateCelebrationsNotice().Show();
+      Program.CelebrationsNoticeForm.Show();
     }
 
     private void ActionViewMoonMonths_Click(object sender, EventArgs e)

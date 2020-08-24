@@ -213,7 +213,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      ShowTextForm.CreateShabatNotice().ShowDialog();
+      Program.ShabatNoticeForm.ShowDialog();
       if ( !DisplayManager.QueryYesNo(Translations.AskToSetupPersonalShabat.GetLang()) ) return;
       DateTime date = DateTime.Today;
       var formDate = new SelectDayForm();

@@ -15,22 +15,11 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.HebrewCommon
 {
   public partial class ShowTextForm : Form
   {
-
-    static public ShowTextForm CreateShabatNotice()
-    {
-      return Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 600, 520);
-    }
-
-    static public ShowTextForm CreateCelebrationsNotice()
-    {
-      return Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 600, 320);
-    }
 
     static public ShowTextForm Create(string title, string str, int width, int height)
     {
@@ -63,7 +52,7 @@ namespace Ordisoftware.HebrewCalendar
     private ShowTextForm()
     {
       InitializeComponent();
-      Icon = MainForm.Instance.Icon;
+      Icon = Globals.MainForm.Icon;
     }
 
     public void RelocalizeText()

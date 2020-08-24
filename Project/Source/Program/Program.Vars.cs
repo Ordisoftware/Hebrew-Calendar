@@ -81,6 +81,22 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static public MoonMonthsFile MoonMonthsLettriqs { get; private set; }
 
+    static public ShowTextForm ShabatNoticeForm
+    {
+      get
+      {
+        return ShowTextForm.Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 600, 520);
+      }
+    }
+
+    static public ShowTextForm CelebrationsNoticeForm
+    {
+      get
+      {
+        return ShowTextForm.Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 600, 320);
+      }
+    }
+
     /// <summary>
     /// Static constructor.
     /// </summary>
