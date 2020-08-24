@@ -159,7 +159,7 @@
       this.MenuDisableReminder = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenu3 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
-      this.SeparatorTrayMenu4 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuTools = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuWebLinks = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuInformation = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenu5 = new System.Windows.Forms.ToolStripSeparator();
@@ -172,7 +172,6 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
-      this.MenuTools = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -562,6 +561,10 @@
       this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionResetReminder,
+            this.ActionDisableReminder,
+            this.ActionEnableReminder,
+            this.toolStripSeparator4,
             this.ActionSaveReport,
             this.ActionExportCSV,
             this.Sep1,
@@ -581,14 +584,10 @@
             this.ActionInformation,
             this.ActionTools,
             this.ActionWebLinks,
-            this.toolStripSeparator4,
-            this.ActionResetReminder,
-            this.ActionDisableReminder,
             this.Sep6,
             this.ActionPreferences,
             this.ActionSettings,
-            this.ActionView,
-            this.ActionEnableReminder});
+            this.ActionView});
       resources.ApplyResources(this.ToolStrip, "ToolStrip");
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
@@ -1163,20 +1162,19 @@
       // 
       this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuShowHide,
+            this.SeparatorTrayMenu3,
+            this.MenuResetReminder,
+            this.MenuEnableReminder,
+            this.MenuDisableReminder,
             this.SeparatorTrayMenu1,
             this.MenuNavigate,
             this.MenuCelebrations,
             this.SeparatorTrayMenu2,
-            this.MenuResetReminder,
-            this.MenuEnableReminder,
-            this.MenuDisableReminder,
-            this.SeparatorTrayMenu3,
-            this.MenuPreferences,
-            this.SeparatorTrayMenu4,
             this.MenuTools,
             this.MenuWebLinks,
             this.MenuInformation,
             this.SeparatorTrayMenu5,
+            this.MenuPreferences,
             this.MenuExit});
       this.MenuTray.Name = "contextMenuStrip";
       resources.ApplyResources(this.MenuTray, "MenuTray");
@@ -1239,10 +1237,10 @@
       this.MenuPreferences.Name = "MenuPreferences";
       this.MenuPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
       // 
-      // SeparatorTrayMenu4
+      // MenuTools
       // 
-      this.SeparatorTrayMenu4.Name = "SeparatorTrayMenu4";
-      resources.ApplyResources(this.SeparatorTrayMenu4, "SeparatorTrayMenu4");
+      resources.ApplyResources(this.MenuTools, "MenuTools");
+      this.MenuTools.Name = "MenuTools";
       // 
       // MenuWebLinks
       // 
@@ -1302,11 +1300,6 @@
       // ReportTableAdapter
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
-      // 
-      // MenuTools
-      // 
-      resources.ApplyResources(this.MenuTools, "MenuTools");
-      this.MenuTools.Name = "MenuTools";
       // 
       // MainForm
       // 
@@ -1456,7 +1449,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewMoonMonths;
     internal System.Windows.Forms.ToolStripMenuItem ActionDownloadHebrewLetters;
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu1;
-    private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu4;
     internal System.Windows.Forms.ContextMenuStrip MenuTray;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
