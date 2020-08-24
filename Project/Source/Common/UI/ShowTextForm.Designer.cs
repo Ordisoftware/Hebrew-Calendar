@@ -82,9 +82,9 @@
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.PanelBottom);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.Name = "ShowTextForm";
+      this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.PanelBottom.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
