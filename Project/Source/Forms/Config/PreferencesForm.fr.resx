@@ -528,4 +528,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
+  <data name="EditAllowSuspendReminder.Text" xml:space="preserve">
+    <value>Autoriser la suspension du rappeleur</value>
+  </data>
 </root>

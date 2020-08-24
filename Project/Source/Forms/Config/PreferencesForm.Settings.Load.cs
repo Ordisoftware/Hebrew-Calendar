@@ -83,6 +83,7 @@ namespace Ordisoftware.HebrewCalendar
       OldUseMoonDays = Program.Settings.TorahEventsCountAsMoon;
       EditMoonDayTextFormat.Text = Program.Settings.MoonDayTextFormat;
       EditWebLinksMenuEnabled.Checked = Program.Settings.WebLinksMenuEnabled;
+      EditAllowSuspendReminder.Checked = Program.Settings.AllowSuspendReminder;
     }
 
   }

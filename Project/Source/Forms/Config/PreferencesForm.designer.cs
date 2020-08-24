@@ -46,9 +46,6 @@
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
-      this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.GroupBoxTextReport = new System.Windows.Forms.GroupBox();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -133,7 +130,6 @@
       this.EditCurrentDayForeColor = new System.Windows.Forms.Panel();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
-      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
@@ -151,7 +147,12 @@
       this.nissanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
+      this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
+      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -288,27 +289,6 @@
       this.ActionGetGPS.Name = "ActionGetGPS";
       this.ActionGetGPS.TabStop = true;
       this.ActionGetGPS.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionGetGPS_LinkClicked);
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
       // 
       // GroupBoxTextReport
       // 
@@ -465,8 +445,6 @@
       // EditReminderShabatEnabled
       // 
       resources.ApplyResources(this.EditReminderShabatEnabled, "EditReminderShabatEnabled");
-      this.EditReminderShabatEnabled.Checked = true;
-      this.EditReminderShabatEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditReminderShabatEnabled.Name = "EditReminderShabatEnabled";
       this.EditReminderShabatEnabled.UseVisualStyleBackColor = true;
       this.EditReminderShabatEnabled.CheckedChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
@@ -803,8 +781,6 @@
       // EditAutoLockSession
       // 
       resources.ApplyResources(this.EditAutoLockSession, "EditAutoLockSession");
-      this.EditAutoLockSession.Checked = true;
-      this.EditAutoLockSession.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditAutoLockSession.Name = "EditAutoLockSession";
       this.EditAutoLockSession.UseVisualStyleBackColor = true;
       this.EditAutoLockSession.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
@@ -812,8 +788,6 @@
       // EditTorahEventsCountAsMoon
       // 
       resources.ApplyResources(this.EditTorahEventsCountAsMoon, "EditTorahEventsCountAsMoon");
-      this.EditTorahEventsCountAsMoon.Checked = true;
-      this.EditTorahEventsCountAsMoon.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditTorahEventsCountAsMoon.Name = "EditTorahEventsCountAsMoon";
       this.EditTorahEventsCountAsMoon.UseVisualStyleBackColor = true;
       this.EditTorahEventsCountAsMoon.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
@@ -821,8 +795,6 @@
       // EditReminderCelebrationsEnabled
       // 
       resources.ApplyResources(this.EditReminderCelebrationsEnabled, "EditReminderCelebrationsEnabled");
-      this.EditReminderCelebrationsEnabled.Checked = true;
-      this.EditReminderCelebrationsEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditReminderCelebrationsEnabled.Name = "EditReminderCelebrationsEnabled";
       this.EditReminderCelebrationsEnabled.UseVisualStyleBackColor = true;
       this.EditReminderCelebrationsEnabled.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
@@ -1021,6 +993,7 @@
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
       this.GroupBoxSystem.Controls.Add(this.EditDebuggerEnabled);
+      this.GroupBoxSystem.Controls.Add(this.EditAllowSuspendReminder);
       this.GroupBoxSystem.Controls.Add(this.EditWebLinksMenuEnabled);
       this.GroupBoxSystem.Controls.Add(this.EditMonthViewSunToolTips);
       resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
@@ -1034,14 +1007,6 @@
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
-      // 
-      // EditHebrewLettersPath
-      // 
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
-      this.EditHebrewLettersPath.ReadOnly = true;
       // 
       // EditVacuumAtStartup
       // 
@@ -1171,6 +1136,20 @@
       this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
       // 
+      // EditAllowSuspendReminder
+      // 
+      resources.ApplyResources(this.EditAllowSuspendReminder, "EditAllowSuspendReminder");
+      this.EditAllowSuspendReminder.Name = "EditAllowSuspendReminder";
+      this.EditAllowSuspendReminder.UseVisualStyleBackColor = true;
+      // 
+      // EditHebrewLettersPath
+      // 
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
+      // 
       // EditMoonDayTextFormat
       // 
       this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
@@ -1178,6 +1157,27 @@
       resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
       this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
       this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
       // 
       // PreferencesForm
       // 
@@ -1355,5 +1355,6 @@
     private System.Windows.Forms.ToolStripMenuItem nissanToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem nissan1ToolStripMenuItem;
     private System.Windows.Forms.CheckBox EditWebLinksMenuEnabled;
+    private System.Windows.Forms.CheckBox EditAllowSuspendReminder;
   }
 }

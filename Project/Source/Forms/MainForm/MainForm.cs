@@ -61,19 +61,23 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Create web links menu items.
+    /// Initialize special menus (web links, tray icon and suspend).
     /// </summary>
-    internal void CreateWebLinks()
+    internal void InitializeSpecialMenus()
     {
       ActionWebLinks.Visible = Program.Settings.WebLinksMenuEnabled;
       MenuWebLinks.Visible = Program.Settings.WebLinksMenuEnabled;
       if ( Program.Settings.WebLinksMenuEnabled )
       {
-        ActionWebLinks.InitializeFromWebLinks(CreateWebLinks);
+        ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
         ActionWebLinks.DuplicateTo(MenuWebLinks);
       }
       ActionTools.DuplicateTo(MenuTools);
       ActionInformation.DuplicateTo(MenuInformation);
+      if ( !Program.Settings.AllowSuspendReminder && ActionEnableReminder.Enabled )
+        ActionEnableReminder.PerformClick();
+      ActionDisableReminder.Enabled = Program.Settings.AllowSuspendReminder;
+      MenuDisableReminder.Enabled = ActionDisableReminder.Enabled;
     }
 
     /// <summary>
@@ -494,7 +498,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
-        CreateWebLinks();
+        InitializeSpecialMenus();
       }
       catch ( Exception ex )
       {
@@ -503,7 +507,7 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         MenuTray.Enabled = true;
-        TimerReminder.Enabled = Instance.MenuDisableReminder.Enabled;
+        TimerReminder.Enabled = !MenuEnableReminder.Enabled;
         Refresh();
         TimerReminder_Tick(null, null);
       }

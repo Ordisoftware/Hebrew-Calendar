@@ -136,7 +136,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( form is ShowTextForm )
           ( (ShowTextForm)form ).RelocalizeText();
       }
-      MainForm.Instance.CreateWebLinks();
+      MainForm.Instance.InitializeSpecialMenus();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.TimerReminder_Tick(null, null);

@@ -1244,5 +1244,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["WebLinksMenuEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AllowSuspendReminder {
+            get {
+                return ((bool)(this["AllowSuspendReminder"]));
+            }
+            set {
+                this["AllowSuspendReminder"] = value;
+            }
+        }
     }
 }
