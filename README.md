@@ -152,6 +152,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Add button to disable auto lock in session lock form.
 - Add mute windows volume when stop media playing.
 - Fix stop media playing in session lock form (stop instead of play/pause media).
+- Fix app not responding on windows logoff or system shutdown.
 
 #### 2020.08.22 - Version 4.1
 
