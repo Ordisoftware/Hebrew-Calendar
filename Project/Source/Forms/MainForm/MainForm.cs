@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -189,6 +190,12 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Session ending event information.</param>
     internal void SessionEnding(object sender, SessionEndingEventArgs e)
     {
+      LockSessionForm.Instance.Timer.Stop();
+      TimerTooltip.Stop();
+      TimerBallon.Stop();
+      TimerTrayMouseMove.Stop();
+      TimerResumeReminder.Stop();
+      TimerReminder.Stop();
       ClearLists();
       Globals.IsExiting = true;
       Globals.IsSessionEnding = true;
