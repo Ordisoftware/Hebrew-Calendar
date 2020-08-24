@@ -13,6 +13,7 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
@@ -23,7 +24,20 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MoonMonthsForm : Form
   {
 
-    public MoonMonthsForm()
+    /// <summary>
+    /// Indicate the singleton instance.
+    /// </summary>
+    static public MoonMonthsForm Instance { get; private set; }
+
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
+    static MoonMonthsForm()
+    {
+      Instance = new MoonMonthsForm();
+    }
+
+    private MoonMonthsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
@@ -38,6 +52,12 @@ namespace Ordisoftware.HebrewCalendar
         string str = Program.MoonMonthsUnicode[(int)LastControl.Tag].Replace(" א", "").Replace(" ב", "");
         SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", str));
       });
+    }
+
+    internal void Relocalize()
+    {
+      if ( !Globals.IsReady ) return;
+      CreateControls();
     }
 
     private void MoonMonthsForm_Load(object sender, EventArgs e)
@@ -60,7 +80,12 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionEditFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      DataFile[] list = { Program.MoonMonthsMeanings, Program.MoonMonthsLettriqs };
+      var list = new List<DataFile>();
+      foreach ( var lang in Localizer.LanguageNames )
+      {
+        list.Add(Program.MoonMonthsMeanings[lang.Value]);
+        list.Add(Program.MoonMonthsLettriqs[lang.Value]);
+      }
       if ( DataFileEditorForm.Run("Moon", list) ) CreateControls();
     }
 
@@ -104,8 +129,8 @@ namespace Ordisoftware.HebrewCalendar
       int index = (int)control.Tag;
       string str = Program.MoonMonthsUnicode[index] + " ("
                  + Program.MoonMonthsNames[index] + ") : "
-                 + Program.MoonMonthsMeanings[index] + " ("
-                 + Program.MoonMonthsLettriqs[index] + ")";
+                 + Program.MoonMonthsMeanings[Localizer.Current][index] + " ("
+                 + Program.MoonMonthsLettriqs[Localizer.Current][index] + ")";
       Clipboard.SetText(str);
     }
 

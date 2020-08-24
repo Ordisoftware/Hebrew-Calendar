@@ -50,17 +50,17 @@
       // 
       // PanelBottom
       // 
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionSwapColors);
       this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionViewNotice);
       this.PanelBottom.Controls.Add(this.ActionEditFiles);
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionSwapColors
       // 
-      this.ActionSwapColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
+      this.ActionSwapColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.ActionSwapColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionSwapColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionSwapColors.Name = "ActionSwapColors";
@@ -76,8 +76,8 @@
       // 
       // ActionViewNotice
       // 
-      this.ActionViewNotice.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
+      this.ActionViewNotice.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.ActionViewNotice.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionViewNotice.LinkColor = System.Drawing.Color.Navy;
       this.ActionViewNotice.Name = "ActionViewNotice";
@@ -86,8 +86,8 @@
       // 
       // ActionEditFiles
       // 
-      this.ActionEditFiles.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
+      this.ActionEditFiles.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       this.ActionEditFiles.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionEditFiles.LinkColor = System.Drawing.Color.Navy;
       this.ActionEditFiles.Name = "ActionEditFiles";
@@ -96,6 +96,7 @@
       // 
       // ContextMenuItems
       // 
+      resources.ApplyResources(this.ContextMenuItems, "ContextMenuItems");
       this.ContextMenuItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionSearchOnline,
             this.toolStripSeparator1,
@@ -105,7 +106,6 @@
             this.ActionCopyUnicodeChars,
             this.ActionCopyLine});
       this.ContextMenuItems.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuItems, "ContextMenuItems");
       // 
       // ActionSearchOnline
       // 
@@ -114,8 +114,8 @@
       // 
       // toolStripSeparator1
       // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
       // 
       // ActionOpenHebrewLetters
       // 
@@ -125,8 +125,8 @@
       // 
       // MenuSeparator2
       // 
-      this.MenuSeparator2.Name = "MenuSeparator2";
       resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
+      this.MenuSeparator2.Name = "MenuSeparator2";
       // 
       // ActionCopyFontChars
       // 

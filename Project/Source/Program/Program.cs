@@ -126,8 +126,9 @@ namespace Ordisoftware.HebrewCalendar
         SystemHelper.ApplyResources(resources, form.Controls);
       };
       update(Globals.MainForm);
-      new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = MoonMonthsForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       foreach ( Form form in Application.OpenForms )
       {
@@ -141,6 +142,7 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.TimerReminder_Tick(null, null);
       UndoRedoTextBox.Relocalize();
+      MoonMonthsForm.Instance.Relocalize();
     }
 
   }

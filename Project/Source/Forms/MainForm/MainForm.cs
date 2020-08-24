@@ -639,7 +639,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionViewMoonMonths_Click(object sender, EventArgs e)
     {
-      new MoonMonthsForm().Show();
+      MoonMonthsForm.Instance.Show();
     }
 
     private void ActionOpenCalculator_Click(object sender, EventArgs e)

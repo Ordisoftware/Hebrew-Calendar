@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Ordisoftware.HebrewCommon;
 
@@ -48,6 +49,18 @@ namespace Ordisoftware.HebrewCalendar
     };
 
     /// <summary>
+    /// Indicate shabat notice form.
+    /// </summary>
+    static public ShowTextForm ShabatNoticeForm
+      => ShowTextForm.Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 600, 520);
+
+    /// <summary>
+    /// Indicate celebrations notice form.
+    /// </summary>
+    static public ShowTextForm CelebrationsNoticeForm
+      => ShowTextForm.Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 600, 320);
+
+    /// <summary>
     /// Indicate filename of the GPS database.
     /// </summary>
     static public readonly string GPSFilename
@@ -74,32 +87,33 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate the moon months meanings.
     /// </summary>
-    static public MoonMonthsFile MoonMonthsMeanings { get; private set; }
+    static public Dictionary<string, MoonMonthsFile> MoonMonthsMeanings { get; private set; }
 
     /// <summary>
     /// Indicate the moon months lettriqs.
     /// </summary>
-    static public MoonMonthsFile MoonMonthsLettriqs { get; private set; }
-
-    /// <summary>
-    /// Indicate shabat notice form.
-    /// </summary>
-    static public ShowTextForm ShabatNoticeForm 
-      => ShowTextForm.Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 600, 520);
-
-    /// <summary>
-    /// Indicate celebrations notice form.
-    /// </summary>
-    static public ShowTextForm CelebrationsNoticeForm 
-      => ShowTextForm.Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 600, 320);
+    static public Dictionary<string, MoonMonthsFile> MoonMonthsLettriqs { get; private set; }
 
     /// <summary>
     /// Static constructor.
     /// </summary>
     static Program()
     {
-      MoonMonthsMeanings = new MoonMonthsFile(MoonMonthsMeaningsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
-      MoonMonthsLettriqs = new MoonMonthsFile(MoonMonthsLettriqsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
+      MoonMonthsMeanings = new Dictionary<string, MoonMonthsFile>();
+      MoonMonthsLettriqs = new Dictionary<string, MoonMonthsFile>();
+      foreach ( var lang in Localizer.LanguageNames )
+      {
+        MoonMonthsMeanings.Add(lang.Value, 
+                               new MoonMonthsFile(MoonMonthsMeaningsFilename.Replace("%LANG%", lang.Value.ToUpper()),
+                               true, 
+                               Globals.IsDev, 
+                               DataFileFolder.ApplicationDocuments));
+        MoonMonthsLettriqs.Add(lang.Value, 
+                               new MoonMonthsFile(MoonMonthsLettriqsFilename.Replace("%LANG%", lang.Value.ToUpper()), 
+                               true, 
+                               Globals.IsDev, 
+                               DataFileFolder.ApplicationDocuments));
+      }
     }
 
   }
