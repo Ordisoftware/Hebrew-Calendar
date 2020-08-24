@@ -92,7 +92,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( e.CloseReason != CloseReason.UserClosing ) return;
+      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
       DoFormClosing(sender, e);
     }
 

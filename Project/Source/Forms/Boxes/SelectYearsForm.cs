@@ -107,7 +107,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SelectYearsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( e.CloseReason != CloseReason.UserClosing ) return;
+      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
       if ( !ActionCancel.Enabled ) e.Cancel = true;
     }
   }
