@@ -149,6 +149,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( e.CloseReason != CloseReason.UserClosing ) return;
       if ( Globals.IsExiting ) return;
       if ( Globals.AllowClose ) return;
       e.Cancel = true;
