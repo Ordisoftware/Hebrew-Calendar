@@ -111,15 +111,15 @@ namespace Ordisoftware.HebrewCalendar
       {
         MoonMonthsMeanings.Add(lang.Value, 
                                new MoonMonthsFile(MoonMonthsMeaningsFilename.Replace("%LANG%", lang.Value.ToUpper()),
-                               true, 
-                               Globals.IsDev, 
-                               DataFileFolder.ApplicationDocuments));
+                                                  true, 
+                                                  Globals.IsDev, 
+                                                  DataFileFolder.ApplicationDocuments));
         MoonMonthsLettriqs.Add(lang.Value, 
                                new MoonMonthsFile(MoonMonthsLettriqsFilename.Replace("%LANG%", lang.Value.ToUpper()), 
-                               true, 
-                               Globals.IsDev, 
-                               DataFileFolder.ApplicationDocuments));
-      }
+                                                  true,   
+                                                  Globals.IsDev, 
+                                                  DataFileFolder.ApplicationDocuments));
+                          }
     }
 
   }

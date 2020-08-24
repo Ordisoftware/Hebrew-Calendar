@@ -63,6 +63,7 @@
       this.ActionSwapColors.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
       this.ActionSwapColors.Name = "ActionSwapColors";
+      this.ActionSwapColors.TabStop = false;
       this.ActionSwapColors.UseVisualStyleBackColor = true;
       this.ActionSwapColors.Click += new System.EventHandler(this.ActionSwapColors_Click);
       // 
@@ -72,6 +73,7 @@
       this.ActionEditFiles.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
       this.ActionEditFiles.Name = "ActionEditFiles";
+      this.ActionEditFiles.TabStop = false;
       this.ActionEditFiles.UseVisualStyleBackColor = true;
       this.ActionEditFiles.Click += new System.EventHandler(this.ActionEditFiles_Click);
       // 
@@ -81,6 +83,7 @@
       this.ActionViewNotice.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
       this.ActionViewNotice.Name = "ActionViewNotice";
+      this.ActionViewNotice.TabStop = false;
       this.ActionViewNotice.UseVisualStyleBackColor = true;
       this.ActionViewNotice.Click += new System.EventHandler(this.ActionViewNotice_Click);
       // 

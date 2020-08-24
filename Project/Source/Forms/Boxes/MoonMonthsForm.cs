@@ -16,7 +16,6 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -43,9 +42,7 @@ namespace Ordisoftware.HebrewCalendar
       Icon = MainForm.Instance.Icon;
       CreateControls();
       ActiveControl = ActionClose;
-      ActionSwapColors.TabStop = false;
-      ActionEditFiles.TabStop = false;
-      ActionViewNotice.TabStop = false;
+      ActionEditFiles.Visible = !Program.MoonMonthsMeanings[Localizer.Current].Configurable;
       ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
