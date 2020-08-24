@@ -13,9 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-10 </edited>
 using System;
-using System.Diagnostics;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
