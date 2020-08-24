@@ -119,10 +119,6 @@ namespace Ordisoftware.HebrewCalendar
       Refresh();
       LoadData();
       ClearLists();
-      // TODO remove when implemented
-      ActionViewMoonMonths.Visible = Globals.IsDev;
-      toolStripSeparator1.Visible = Globals.IsDev;
-      //
     }
 
     /// <summary>
