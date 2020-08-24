@@ -138,6 +138,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
+- Improve check update to allow auto update or direct download or open app web page.
 - Improve and reorganize preferences form with a left menu panel.
 
 ## Changelog
