@@ -135,11 +135,16 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 ## Roadmap
 
-- Add moon months description form in tools menu.
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Improve and reorganize preferences form with a left menu panel.
 
 ## Changelog
+
+#### 2020.09.__ - Version 4.2
+
+- Add moon months description form in tools menu.
+- Add button to disable auto lock in session lock form.
+- Fix stop media playing in session lock form (stop instead of play/pause media).
 
 #### 2020.08.22 - Version 4.1
 
