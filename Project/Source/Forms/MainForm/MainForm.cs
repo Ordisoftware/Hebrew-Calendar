@@ -21,7 +21,6 @@ using System.Drawing.Printing;
 using Microsoft.Win32;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
-using EventHandlerSupport;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -66,9 +65,14 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     internal void CreateWebLinks()
     {
-      ActionWebLinks.InitializeFromWebLinks(CreateWebLinks);
+      ActionWebLinks.Visible = Program.Settings.WebLinksMenuEnabled;
+      MenuWebLinks.Visible = Program.Settings.WebLinksMenuEnabled;
+      if ( Program.Settings.WebLinksMenuEnabled )
+      {
+        ActionWebLinks.InitializeFromWebLinks(CreateWebLinks);
+        ActionWebLinks.DuplicateTo(MenuWebLinks);
+      }
       ActionTools.DuplicateTo(MenuTools);
-      ActionWebLinks.DuplicateTo(MenuWebLinks);
       ActionInformation.DuplicateTo(MenuInformation);
     }
 
@@ -490,6 +494,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
+        CreateWebLinks();
       }
       catch ( Exception ex )
       {

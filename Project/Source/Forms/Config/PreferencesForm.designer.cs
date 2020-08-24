@@ -141,6 +141,7 @@
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
+      this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.GroupBoxMoonDayTextFormat = new System.Windows.Forms.GroupBox();
       this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
@@ -1020,6 +1021,7 @@
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
       this.GroupBoxSystem.Controls.Add(this.EditDebuggerEnabled);
+      this.GroupBoxSystem.Controls.Add(this.EditWebLinksMenuEnabled);
       this.GroupBoxSystem.Controls.Add(this.EditMonthViewSunToolTips);
       resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
@@ -1044,8 +1046,6 @@
       // EditVacuumAtStartup
       // 
       resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
-      this.EditVacuumAtStartup.Checked = true;
-      this.EditVacuumAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
       this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
       // 
@@ -1084,8 +1084,6 @@
       // EditCheckUpdateAtStartup
       // 
       resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
-      this.EditCheckUpdateAtStartup.Checked = true;
-      this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
@@ -1095,6 +1093,12 @@
       this.EditDebuggerEnabled.Name = "EditDebuggerEnabled";
       this.EditDebuggerEnabled.UseVisualStyleBackColor = true;
       this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.EditDebuggerEnabled_CheckedChanged);
+      // 
+      // EditWebLinksMenuEnabled
+      // 
+      resources.ApplyResources(this.EditWebLinksMenuEnabled, "EditWebLinksMenuEnabled");
+      this.EditWebLinksMenuEnabled.Name = "EditWebLinksMenuEnabled";
+      this.EditWebLinksMenuEnabled.UseVisualStyleBackColor = true;
       // 
       // OpenFileDialog
       // 
@@ -1350,5 +1354,6 @@
     private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem nissanToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem nissan1ToolStripMenuItem;
+    private System.Windows.Forms.CheckBox EditWebLinksMenuEnabled;
   }
 }

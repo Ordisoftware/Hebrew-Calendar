@@ -303,8 +303,19 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the web links providers.
     /// </summary>
-    static public readonly List<OnlineProviders> WebLinksProviders
-      = new List<OnlineProviders>();
+    static public List<OnlineProviders> WebLinksProviders
+    {
+      get
+      {
+        if ( _WebLinksProviders == null ) _WebLinksProviders = new List<OnlineProviders>();
+        if ( _WebLinksProviders.Count == 0 )
+          if ( Directory.Exists(WebLinksFolderPath) )
+            foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
+              _WebLinksProviders.Add(new OnlineProviders(file, true, IsDev, DataFileFolder.ApplicationDocuments));
+        return _WebLinksProviders;
+      }
+    }
+    static private List<OnlineProviders> _WebLinksProviders;
 
     /// <summary>
     /// Static constructor.
@@ -315,9 +326,6 @@ namespace Ordisoftware.HebrewCommon
       var folder = DataFileFolder.ApplicationDocuments;
       OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName, true, IsDev, folder);
       OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName, true, IsDev, folder);
-      if ( Directory.Exists(WebLinksFolderPath) )
-        foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
-          WebLinksProviders.Add(new OnlineProviders(file, true, IsDev, folder));
     }
 
     #region Assembly information
