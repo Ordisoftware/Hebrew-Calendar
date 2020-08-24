@@ -270,7 +270,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionMoonDayTextFormatHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show(Translations.MoonDayTextFormatNotice.GetLang());
+      DisplayManager.Show(Translations.NoticeMoonDayTextFormat.GetLang());
     }
 
     private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)

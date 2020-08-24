@@ -77,14 +77,19 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
-    private void ActionSwapColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionSwapColors_Click(object sender, EventArgs e)
     {
       Program.Settings.MoonMonthsFormUseColors = Program.Settings.MoonMonthsFormUseColors.Next();
       Program.Settings.Save();
       CreateControls();
     }
 
-    private void ActionEditFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionViewNotice_Click(object sender, EventArgs e)
+    {
+      Program.MoonMonthsNoticeForm.Show();
+    }
+
+    private void ActionEditFiles_Click(object sender, EventArgs e)
     {
       var list = new List<DataFile>();
       foreach ( var lang in Localizer.LanguageNames )
@@ -138,14 +143,6 @@ namespace Ordisoftware.HebrewCalendar
                  + Program.MoonMonthsMeanings[Localizer.Current][index] + " ("
                  + Program.MoonMonthsLettriqs[Localizer.Current][index] + ")";
       Clipboard.SetText(str);
-    }
-
-    private void ActionViewNotice_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      DisplayManager.Show("Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Environment.NewLine +
-                          "Vert = air = action | A" + Environment.NewLine +
-                          "Blanc = eau = expir | C" + Environment.NewLine +
-                          "Jaune = terre = repos | G");
     }
 
   }

@@ -25,6 +25,19 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
+    static public readonly Dictionary<string, string> NoticeMoonDayTextFormat
+      = new Dictionary<string, string>()
+      {
+        { Localizer.EN, "Use the following tags to replace values:" + Localizer.NL + Localizer.NL +
+                        "%MONTHNAME% : moon month name" + Localizer.NL +
+                        "%MONTHNUM% : moon month number" + Localizer.NL +
+                        "%DAYNUM% : moon day number" },
+        { Localizer.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Localizer.NL + Localizer.NL +
+                        "%MONTHNAME% : nom du mois lunaire" + Localizer.NL +
+                        "%MONTHNUM% : numéro du mois lunaire" + Localizer.NL +
+                        "%DAYNUM% : numéro du jour lunaire" },
+      };
+
     static public readonly Dictionary<string, string> NoticeShabatTitle
       = new Dictionary<string, string>()
       {
@@ -71,17 +84,24 @@ namespace Ordisoftware.HebrewCalendar
                         "Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option dans le rappeleur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant." }
       };
 
-    static public readonly Dictionary<string, string> MoonDayTextFormatNotice
+    static public readonly Dictionary<string, string> NoticeMoonMonthsTitle
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Use the following tags to replace values:" + Localizer.NL + Localizer.NL +
-                        "%MONTHNAME% : moon month name" + Localizer.NL +
-                        "%MONTHNUM% : moon month number" + Localizer.NL +
-                        "%DAYNUM% : moon day number" },
-        { Localizer.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Localizer.NL + Localizer.NL +
-                        "%MONTHNAME% : nom du mois lunaire" + Localizer.NL +
-                        "%MONTHNUM% : numéro du mois lunaire" + Localizer.NL +
-                        "%DAYNUM% : numéro du jour lunaire" },
+        { Localizer.EN, "Moon months notice" },
+        { Localizer.FR, "Notice des mois lunaires" }
+      };
+
+    static public readonly Dictionary<string, string> NoticeMoonMonths
+      = new Dictionary<string, string>()
+      {
+        { Localizer.EN, "Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Localizer.NL +
+                        "Vert = air = action | A" + Localizer.NL +
+                        "Blanc = eau = expir | C" + Localizer.NL +
+                        "Jaune = terre = repos | G" },
+        { Localizer.FR, "Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Localizer.NL +
+                        "Vert = air = action | A" + Localizer.NL +
+                        "Blanc = eau = expir | C" + Localizer.NL +
+                        "Jaune = terre = repos | G" },
       };
 
   }

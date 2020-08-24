@@ -61,6 +61,12 @@ namespace Ordisoftware.HebrewCalendar
       => ShowTextForm.Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 600, 320);
 
     /// <summary>
+    /// Indicate celebrations notice form.
+    /// </summary>
+    static public ShowTextForm MoonMonthsNoticeForm
+      => ShowTextForm.Create(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths, 400, 300, true);
+
+    /// <summary>
     /// Indicate filename of the GPS database.
     /// </summary>
     static public readonly string GPSFilename
