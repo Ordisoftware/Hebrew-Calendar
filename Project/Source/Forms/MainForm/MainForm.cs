@@ -651,6 +651,11 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
     {
       var formDate = new SelectDayForm();
+      if ( !Visible )
+      {
+        formDate.StartPosition = FormStartPosition.CenterScreen;
+        formDate.ShowInTaskbar = true;
+      }
       formDate.Text = Translations.FirstDay.GetLang();
       if ( formDate.ShowDialog() != DialogResult.OK ) return;
       var date1 = formDate.MonthCalendar.SelectionStart.Date;
@@ -689,6 +694,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionGenerate_Click(object sender, EventArgs e)
     {
+      if ( !Visible ) MenuShowHide.PerformClick();
       try
       {
         DoGenerate(sender, e);
