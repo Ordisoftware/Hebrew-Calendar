@@ -56,6 +56,10 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.F9:
           ActionNavigate.PerformClick();
           return true;
+        case Keys.F10:
+        case Keys.Control | Keys.M:
+          ActionViewMoonMonths.PerformClick();
+          return true;
         case Keys.Control | Keys.P:
           ActionPrint.PerformClick();
           return true;
