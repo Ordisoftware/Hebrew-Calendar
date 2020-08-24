@@ -102,11 +102,11 @@ namespace Ordisoftware.HebrewCalendar
       CalendarMonth.BackColor = Program.Settings.MonthViewBackColor;
       CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
       CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
-      CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1); //10
-      CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold); //10
-      CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
-      CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
-      CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
+      CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1);
+      CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold);
+      CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold);
+      CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2);
+      CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold);
       InitializeCurrentTimeZone();
       Refresh();
       LoadData();
