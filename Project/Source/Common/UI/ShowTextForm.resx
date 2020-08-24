@@ -210,26 +210,11 @@
   <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="TextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 186</value>
-  </data>
-  <data name="TextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="TextBox.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;TextBox.Name" xml:space="preserve">
     <value>TextBox</value>
   </data>
   <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCommon.RichTextBoxEx, Ordisoftware.HebrewCalendar, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.HebrewCommon.RichTextBoxEx, Ordisoftware.HebrewCalendar, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -262,6 +247,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 186</value>
+  </data>
+  <data name="TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="TextBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;TextBox.Name" xml:space="preserve">
+    <value>TextBox</value>
+  </data>
+  <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.RichTextBoxEx, Ordisoftware.HebrewCalendar, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;TextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

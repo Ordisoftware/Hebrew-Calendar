@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewCommon
   public partial class ShowTextForm : Form
   {
 
-    static public ShowTextForm Create(string title, string str, int width, int height)
+    static public ShowTextForm Create(string title, string str, int width, int height, bool sizeable = false)
     {
       for ( int index = Application.OpenForms.Count - 1; index >= 0; index-- )
         if ( Application.OpenForms[index] is ShowTextForm )
@@ -32,17 +32,20 @@ namespace Ordisoftware.HebrewCommon
       form.TextBox.Text = str;
       form.Width = width;
       form.Height = height;
+      if ( sizeable ) form.FormBorderStyle = FormBorderStyle.Sizable;
       return form;
     }
 
     static public ShowTextForm Create(Dictionary<string, string> title, 
                                       Dictionary<string, string> text,
                                       int width,
-                                      int height)
+                                      int height, 
+                                      bool sizeable = false)
     {
       var form = Create(title.GetLang(), text.GetLang(), width, height);
       form.LocalizedTitle = title;
       form.LocalizedText = text;
+      if ( sizeable ) form.FormBorderStyle = FormBorderStyle.Sizable;
       return form;
     }
 
