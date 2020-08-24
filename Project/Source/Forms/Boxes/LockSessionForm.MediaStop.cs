@@ -22,6 +22,12 @@ namespace Ordisoftware.HebrewCalendar
   public partial class LockSessionForm : Form
   {
 
+    [DllImport("user32.dll")]
+    public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+
+    private const int APPCOMMAND_VOLUME_MUTE = 0x80000;
+    private const int WM_APPCOMMAND = 0x319;
+
     [DllImport("user32.dll", SetLastError = true)]
     private static extern uint SendInput(uint numberOfInputs, INPUT[] inputs, int sizeOfInputStructure);
 
@@ -74,7 +80,6 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MediaStop()
     {
-      if ( !EditMediaStop.Checked ) return;
       INPUT input = new INPUT
       {
         Type = 1
@@ -89,6 +94,11 @@ namespace Ordisoftware.HebrewCalendar
       };
       INPUT[] inputs = new INPUT[] { input };
       SendInput(1, inputs, Marshal.SizeOf(typeof(INPUT)));
+    }
+
+    private void MuteVolume()
+    {
+      SendMessageW(Handle, WM_APPCOMMAND, Handle, (IntPtr)APPCOMMAND_VOLUME_MUTE);
     }
 
   }

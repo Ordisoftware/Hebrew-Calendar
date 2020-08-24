@@ -407,13 +407,13 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>23, 125</value>
   </data>
   <data name="EditMediaStop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 17</value>
+    <value>243, 17</value>
   </data>
   <data name="EditMediaStop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="EditMediaStop.Text" xml:space="preserve">
-    <value>Stop media playing</value>
+    <value>Stop media playing and mute windows volume</value>
   </data>
   <data name="&gt;&gt;EditMediaStop.Name" xml:space="preserve">
     <value>EditMediaStop</value>

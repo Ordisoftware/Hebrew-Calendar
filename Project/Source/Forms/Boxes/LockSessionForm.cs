@@ -140,7 +140,11 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LockSession()
     {
-      MediaStop();
+      if ( EditMediaStop.Checked )
+      {
+        MediaStop();
+        MuteVolume();
+      }
       Close();
       if ( !LockWorkStation() )
         MessageBox.Show(Translations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
