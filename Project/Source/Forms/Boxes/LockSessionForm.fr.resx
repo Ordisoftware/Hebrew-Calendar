@@ -159,7 +159,7 @@ Appuyez sur Verrouiller pour le faire maintenant ou sur Annuler pour ignorer cet
     <value>149, 17</value>
   </data>
   <data name="EditMediaStop.Text" xml:space="preserve">
-    <value>Arrêtez la lecture multimédia et désactivez le volume de Windows</value>
+    <value>Arrêter la lecture multimédia et couper le volume de Windows</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Verrouillage automatique de la session</value>
