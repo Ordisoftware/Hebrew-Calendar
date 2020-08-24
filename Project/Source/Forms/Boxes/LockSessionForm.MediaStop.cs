@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -26,21 +26,11 @@ namespace Ordisoftware.HebrewCalendar
     private static extern uint SendInput(uint numberOfInputs, INPUT[] inputs, int sizeOfInputStructure);
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct INPUT
+    internal struct HARDWAREINPUT
     {
-      public uint Type;
-      public MOUSEKEYBDHARDWAREINPUT Data;
-    }
-
-    [StructLayout(LayoutKind.Explicit)]
-    internal struct MOUSEKEYBDHARDWAREINPUT
-    {
-      [FieldOffset(0)]
-      public HARDWAREINPUT Hardware;
-      [FieldOffset(0)]
-      public KEYBDINPUT Keyboard;
-      [FieldOffset(0)]
-      public MOUSEINPUT Mouse;
+      public uint Msg;
+      public ushort ParamL;
+      public ushort ParamH;
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -64,12 +54,22 @@ namespace Ordisoftware.HebrewCalendar
       public IntPtr ExtraInfo;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
-    internal struct HARDWAREINPUT
+    [StructLayout(LayoutKind.Explicit)]
+    internal struct MOUSEKEYBDHARDWAREINPUT
     {
-      public uint Msg;
-      public ushort ParamL;
-      public ushort ParamH;
+      [FieldOffset(0)]
+      public HARDWAREINPUT Hardware;
+      [FieldOffset(0)]
+      public KEYBDINPUT Keyboard;
+      [FieldOffset(0)]
+      public MOUSEINPUT Mouse;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct INPUT
+    {
+      public uint Type;
+      public MOUSEKEYBDHARDWAREINPUT Data;
     }
 
     private void MediaStop()
@@ -81,7 +81,7 @@ namespace Ordisoftware.HebrewCalendar
       };
       input.Data.Keyboard = new KEYBDINPUT()
       {
-        Vk = 0xB3,
+        Vk = 0xB2,
         Scan = 0,
         Flags = 0,
         Time = 0,

@@ -33,7 +33,8 @@
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.LabelCountDown = new System.Windows.Forms.Label();
       this.ActionCancel = new System.Windows.Forms.Button();
-      this.ActionOk = new System.Windows.Forms.Button();
+      this.ActionDisable = new System.Windows.Forms.Button();
+      this.ActionOK = new System.Windows.Forms.Button();
       this.ActionShutdown = new System.Windows.Forms.LinkLabel();
       this.ActionHibernate = new System.Windows.Forms.LinkLabel();
       this.ActionStandby = new System.Windows.Forms.LinkLabel();
@@ -47,7 +48,8 @@
       // 
       this.PanelButtons.Controls.Add(this.LabelCountDown);
       this.PanelButtons.Controls.Add(this.ActionCancel);
-      this.PanelButtons.Controls.Add(this.ActionOk);
+      this.PanelButtons.Controls.Add(this.ActionDisable);
+      this.PanelButtons.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
@@ -64,12 +66,20 @@
       this.ActionCancel.Name = "ActionCancel";
       this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
       // 
-      // ActionOk
+      // ActionDisable
       // 
-      resources.ApplyResources(this.ActionOk, "ActionOk");
-      this.ActionOk.Name = "ActionOk";
-      this.ActionOk.UseVisualStyleBackColor = true;
-      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
+      resources.ApplyResources(this.ActionDisable, "ActionDisable");
+      this.ActionDisable.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionDisable.Name = "ActionDisable";
+      this.ActionDisable.UseVisualStyleBackColor = true;
+      this.ActionDisable.Click += new System.EventHandler(this.ActionDisable_Click);
+      // 
+      // ActionOK
+      // 
+      resources.ApplyResources(this.ActionOK, "ActionOK");
+      this.ActionOK.Name = "ActionOK";
+      this.ActionOK.UseVisualStyleBackColor = true;
+      this.ActionOK.Click += new System.EventHandler(this.ActionOk_Click);
       // 
       // ActionShutdown
       // 
@@ -118,7 +128,7 @@
       // 
       // LockSessionForm
       // 
-      this.AcceptButton = this.ActionOk;
+      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
@@ -146,7 +156,7 @@
 
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionCancel;
-    private System.Windows.Forms.Button ActionOk;
+    private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.Label LabelCountDown;
     private System.Windows.Forms.Label LabelMessage;
     private System.Windows.Forms.Timer Timer;
@@ -154,5 +164,6 @@
     private System.Windows.Forms.LinkLabel ActionHibernate;
     private System.Windows.Forms.LinkLabel ActionStandby;
     private System.Windows.Forms.LinkLabel ActionShutdown;
+    private System.Windows.Forms.Button ActionDisable;
   }
 }

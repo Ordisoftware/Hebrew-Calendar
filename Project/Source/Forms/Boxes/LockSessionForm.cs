@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewCalendar
     private void LockSessionForm_Load(object sender, EventArgs e)
     {
       LabelMessage.Text = string.Format(LabelMessage.Text, Program.Settings.AutoLockSessionTimeOut);
-      int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 5;
+      int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 10;
       if ( width > Width ) Width = width;
       ActionHibernate.Left = ActionStandby.Left + ActionStandby.Width + 5;
       ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
@@ -96,6 +96,13 @@ namespace Ordisoftware.HebrewCalendar
       LabelCountDown.Text = remain.ToString();
       if ( remain != 0 ) return;
       LockSession();
+    }
+
+    private void ActionDisable_Click(object sender, EventArgs e)
+    {
+      Program.Settings.AutoLockSession = false;
+      Program.Settings.Save();
+      ActionCancel.PerformClick();
     }
 
     private void ActionCancel_Click(object sender, EventArgs e)
