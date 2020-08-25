@@ -76,6 +76,9 @@ namespace Ordisoftware.HebrewCommon
     static public string ApplicationHomeURL
       = AssemblyProduct;
 
+    static public string ApplicationChangeLogURL
+      = ApplicationHomeURL + "/#ChangeLog" + AssemblyVersion;
+
     /// <summary>
     /// Indicate the author home URL.
     /// </summary>

@@ -1635,14 +1635,14 @@
   <data name="ActionWebYouTube.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVDhPnVNNSwJRFL3jR2i/QZRIf4CFCEILEYNIBF1U
-        pEI/p1a5NKiVtlIiiNYW+hOUIMFpYbjsYzTN+TjNm6tZNGR04XDfu/fcM/fNu4+EGbu7G3o+XzJxpudy
-        pwtRKJwYOztxLg6H92QiFQ4Hzs0tiLAQJrdOpGNt7YDUQOBeBGWXS20tLWkW3G6t5XJ9h4hN84IraiY+
-        3wMNvd5XS1WS7L9mhylX8XgGQuBFbKz29/eBahW4vgbqdeD2Fmg2gZsbjtVqQD7/KTRYXlbmHayuAqMR
-        LDMM9l9tFnt/B0IhG4FEggnjMfteD7i64rUo1jQuFra5aSOQTnNSVdnLMuB2A9Eo0G5zbDJhn83+QaDb
-        BbxeIJUCOh2OzXKZjI1APM7J2RH6faDR4LU4giieHSGZtBHw+wFFYcJvP3E4BFZWvgnMr3FrCyiVgEqF
-        r+ziAri85HW5zLntbav4Zwf/GKSBx6OQFgy2xOZRkiYtp5PHVng7THOyJFmjrPp8d2TEYulnore/PiaL
-        Y3KfiEZGJJLhF0kUNts61ImKJo4XoKhL0pEptk5E9AECuneezTMjhgAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVDhPnVNNSwJRFL2jY2i/QRKpfoBGCEELCYUoBF1k
+        6Aj9nFrl0qBWujNEkNYa9ROUoMBpYbTsYzTT+TjNm6t90JDShcN9795zz9w37z4SZmWzm6ailGycmfn8
+        6UwUCifW3l6ciyORfZVIh8eDsr0FEWbC5jaJTESjB6SHQrciqMqy3l5YMBz4fEZbln9CxCZ5wRU142Dw
+        ngaBwKujKknuX3PDhKv5/X0h8CI2Tvu5HFCtAhcXQLMJXF4C19dAq8Wx83NAUT6F+ouL2lcHy8vAcAjH
+        LIv9d5vGRiNgddVFYGuLCe/v7Hs9oNHgtSg2DC4Wlky6CKRSnNR19qoK+HxALAZ0Ohwbj9lnMnMIdLtA
+        IADs7gJ3dxyb5tJpF4F4nJPTIzw+AldXvBZHEMXTIyQSLgJLS4CmMeGvnzgYAOHwD4Gva9zeBkoloFLh
+        K6vVgHqd1+Uy53Z2nOLfHfxjkPp+v0bGykpbbB4kadz2enlshXfDJKdKkjPKejB4Q9bGRuqZ6G3ex+Rw
+        bO4T0dBaX0/ziySK2G0dmkRFG8czUDQl6cgWWyMi+gDxHXeUhjgo+gAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionWebYouTube.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -2416,7 +2416,7 @@
     <value>F1</value>
   </data>
   <data name="ActionViewReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 38</value>
+    <value>196, 38</value>
   </data>
   <data name="ActionViewReport.Text" xml:space="preserve">
     <value>Report</value>
@@ -2454,7 +2454,7 @@
     <value>F2</value>
   </data>
   <data name="ActionViewMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 38</value>
+    <value>196, 38</value>
   </data>
   <data name="ActionViewMonth.Text" xml:space="preserve">
     <value>Month</value>
@@ -2490,7 +2490,7 @@
     <value>F3</value>
   </data>
   <data name="ActionViewGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 38</value>
+    <value>196, 38</value>
   </data>
   <data name="ActionViewGrid.Text" xml:space="preserve">
     <value>Grid</value>
@@ -2925,6 +2925,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>984, 711</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 750</value>
