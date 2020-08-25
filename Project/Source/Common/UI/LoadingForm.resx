@@ -157,13 +157,10 @@
     <value>22, 23</value>
   </data>
   <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
+    <value>0, 20</value>
   </data>
   <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="LabelTitle.Text" xml:space="preserve">
-    <value>Application name</value>
   </data>
   <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
     <value>LabelTitle</value>
@@ -187,13 +184,10 @@
     <value>23, 48</value>
   </data>
   <data name="LabelOperation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 16</value>
+    <value>0, 16</value>
   </data>
   <data name="LabelOperation.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="LabelOperation.Text" xml:space="preserve">
-    <value>Loading data...</value>
   </data>
   <data name="&gt;&gt;LabelOperation.Name" xml:space="preserve">
     <value>LabelOperation</value>

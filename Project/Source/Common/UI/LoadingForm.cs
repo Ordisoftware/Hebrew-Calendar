@@ -25,11 +25,11 @@ namespace Ordisoftware.HebrewCommon
     {
       InitializeComponent();
       this.CenterToMainForm();
-      LabelTitle.Text = Globals.AssemblyTitle;
     }
 
     public void UpdateProgress(int index, int count, string text)
     {
+      if ( LabelTitle.Text == "" ) LabelTitle.Text = Globals.AssemblyTitle;
       if ( index == 0 ) ProgressBar.Maximum = count;
       ProgressBar.Value = index > count ? count : index;
       ProgressBar.Update();
