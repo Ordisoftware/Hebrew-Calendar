@@ -71,19 +71,7 @@ namespace Ordisoftware.HebrewCalendar
       server.EndWaitForConnection(ar);
       var command = new BinaryFormatter().Deserialize(server) as string;
       if ( command == "BringToFront" )
-        if ( MainForm.Instance.Visible )
-          MainForm.Instance.SyncUI(() =>
-          {
-            if ( MainForm.Instance.WindowState == FormWindowState.Minimized )
-              MainForm.Instance.WindowState = Settings.MainFormState;
-            var old = MainForm.Instance.TopMost;
-            MainForm.Instance.TopMost = true;
-            MainForm.Instance.BringToFront();
-            MainForm.Instance.Show();
-            MainForm.Instance.TopMost = old;
-          });
-        else
-          MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide.PerformClick());
+        MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));
       server.Close();
       SystemHelper.CreateIPCServer(IPCRequest);
     }

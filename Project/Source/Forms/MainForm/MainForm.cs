@@ -208,11 +208,21 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void MenuShowHide_Click(object sender, EventArgs e)
+    internal void MenuShowHide_Click(object sender, EventArgs e)
     {
       try
       {
-        if ( !Visible )
+        if ( Visible && WindowState == FormWindowState.Minimized )
+        {
+          WindowState = Program.Settings.MainFormState;
+          var old = TopMost;
+          TopMost = true;
+          BringToFront();
+          Show();
+          TopMost = old;
+        }
+        else
+        if ( !Visible || e == null)
         {
           FormBorderStyle = FormBorderStyle.Sizable;
           Visible = true;
@@ -239,16 +249,6 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
         {
-          if ( WindowState == FormWindowState.Minimized )
-          {
-            WindowState = Program.Settings.MainFormState;
-            var old = TopMost;
-            TopMost = true;
-            BringToFront();
-            Show();
-            TopMost = old;
-            return;
-          }
           Program.Settings.MainFormState = WindowState;
           WindowState = FormWindowState.Minimized;
           Visible = false;
@@ -663,7 +663,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionGenerate_Click(object sender, EventArgs e)
     {
-      if ( !Visible ) MenuShowHide.PerformClick();
+      MenuShowHide_Click(null, null);
       try
       {
         DoGenerate(sender, e);

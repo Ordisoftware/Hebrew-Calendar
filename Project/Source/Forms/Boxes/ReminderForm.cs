@@ -209,7 +209,7 @@ namespace Ordisoftware.HebrewCalendar
     private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( LabelDate.Tag == null ) return;
-      if ( !MainForm.Instance.Visible ) MainForm.Instance.MenuShowHide.PerformClick();
+      MainForm.Instance.MenuShowHide_Click(null, null); 
       MainForm.Instance.GoToDate((DateTime)LabelDate.Tag);
       Close();
     }
