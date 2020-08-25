@@ -919,9 +919,6 @@ namespace Calendar.NET
 
     private void RenderMonthCalendar(PaintEventArgs e)
     {
-      var chrono = new System.Diagnostics.Stopwatch();
-      chrono.Start();
-
       var brushDayFore = new SolidBrush(CurrentDayForeColor);
       var brushDayBack = new SolidBrush(CurrentDayBackColor);
       _calendarDays.Clear();
@@ -1178,9 +1175,6 @@ namespace Calendar.NET
       g.Dispose();
       e.Graphics.DrawImage(bmp, 0, 0, ClientSize.Width, ClientSize.Height);
       bmp.Dispose();
-
-      chrono.Stop();
-      MainForm.Instance.label2.Text = chrono.ElapsedMilliseconds.ToString();
     }
 
     private bool NeedsRendering(IEvent evnt, DateTime day)
