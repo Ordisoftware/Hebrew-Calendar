@@ -65,16 +65,10 @@ namespace Ordisoftware.HebrewCommon
     static public bool AllowClose = true;
 
     /// <summary>
-    /// Indicate the check update URL.
+    /// Indicate the application code (title without space
     /// </summary>
-    static public string CheckUpdateURL
-      = $"http://{AssemblyTrademark}/files/{AssemblyTitle.Replace(" ", "")}.update";
-
-    /// <summary>
-    /// Indicate the download application URL.
-    /// </summary>
-    static public string DownloadApplicationURL
-      = AssemblyProduct;
+    static public string ApplicationCode
+      = AssemblyTitle.Replace(" ", "");
 
     /// <summary>
     /// Indicate the application home URL.
@@ -95,6 +89,24 @@ namespace Ordisoftware.HebrewCommon
       = AssemblyTrademark + "/contact";
 
     /// <summary>
+    /// Indicate the check update URL.
+    /// </summary>
+    static public string CheckUpdateURL
+      = $"http://{AssemblyTrademark}/files/{ApplicationCode}.update";
+
+    /// <summary>
+    /// Indicate the setup file name.
+    /// </summary>
+    static public string SetupFilename
+      = $"{AssemblyCompany}{ApplicationCode}Setup-%VER%.exe";
+
+    /// <summary>
+    /// Indicate the new version setup file.
+    /// </summary>
+    static public string SetupFileURL
+      = $"http://{AssemblyTrademark}/files/{SetupFilename}";
+
+    /// <summary>
     /// Indicate the GitHub repository.
     /// </summary>
     static public string GitHubRepositoryURL
@@ -109,7 +121,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the extension of database files.
     /// </summary>
-    static public readonly string DBFileExtension
+    static public string DBFileExtension
       = ".sqlite";
 
     /// <summary>
@@ -156,31 +168,31 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the filename of the help.
     /// </summary>
-    static public readonly string HelpFolderPath
+    static public string HelpFolderPath
       = RootFolderPath + "Help" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application documents folder.
     /// </summary>
-    static public readonly string DocumentsFolderPath
+    static public string DocumentsFolderPath
       = RootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web links folder.
     /// </summary>
-    static public readonly string WebLinksFolderPath
+    static public string WebLinksFolderPath
       = DocumentsFolderPath + "WebLinks" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web providers folder.
     /// </summary>
-    static public readonly string WebProvidersFolderPath
+    static public string WebProvidersFolderPath
       = DocumentsFolderPath + "WebProviders" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web links folder.
     /// </summary>
-    static public readonly string GuidesFolderPath
+    static public string GuidesFolderPath
       = DocumentsFolderPath + "Guides" + Path.DirectorySeparatorChar;
 
     /// <summary>
@@ -281,13 +293,13 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the filename of the online search word providers.
     /// </summary>
-    static public readonly string OnlineWordProvidersFileName
+    static public string OnlineWordProvidersFileName
       = WebProvidersFolderPath + "OnlineWordProviders.txt";
 
     /// <summary>
     /// Indicate the filename of the online search word providers.
     /// </summary>
-    static public readonly string OnlineBibleProvidersFileName
+    static public string OnlineBibleProvidersFileName
       = WebProvidersFolderPath + "OnlineBibleProviders.txt";
 
     /// <summary>

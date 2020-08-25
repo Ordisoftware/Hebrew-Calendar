@@ -35,27 +35,47 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="checkAtStartup"></param>
     /// <param name="auto">True if no user interaction else false</param>
     /// <returns>True if application must exist else false.</returns>
-    static public bool CheckUpdate(bool checkAtStartup, bool auto)
+    static public bool CheckUpdate(bool checkAtStartup, bool auto, DownloadProgressChangedEventHandler progress)
     {
       if ( auto && !checkAtStartup ) return false;
       try
       {
+        foreach ( string s in Directory.GetFiles(Path.GetTempPath(), Globals.SetupFilename.Replace("%VER%", "*")) )
+          File.Delete(s);
         using ( WebClient client = new WebClient() )
         {
-          string[] partsVersion = client.DownloadString(Globals.CheckUpdateURL).Split('.');
+          string[] content = client.DownloadString(Globals.CheckUpdateURL).Split(Environment.NewLine.ToCharArray(),
+                                                   StringSplitOptions.RemoveEmptyEntries);
+          string[] partsVersion = content[0].Split('.');
+          string filename = Globals.SetupFileURL.Replace("%VER%", content[0]);
           var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
-          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
+          /*if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
               DisplayManager.Show(Globals.NoNewVersionAvailable.GetLang());
           }
-          else
+          else*/
           if ( DisplayManager.QueryYesNo(Globals.NewVersionAvailable.GetLang(version) + Environment.NewLine +
                                          Environment.NewLine +
                                          Globals.AskToDownloadNewVersion.GetLang()) )
           {
-            OpenWebLink(Globals.DownloadApplicationURL);
-            if ( auto )
+            bool finished = false;
+            string tempfile = Path.GetTempPath() + Globals.SetupFilename.Replace("%VER%", content[0]);
+            client.DownloadProgressChanged += progress;
+            client.DownloadFileCompleted += (sender, e) =>
+            {
+              finished = true;
+            };
+            client.DownloadFileAsync(new Uri(filename), tempfile);
+            while ( !finished )
+            {
+              Thread.Sleep(100);
+              Application.DoEvents();
+            }
+            RunShell(tempfile, "/SP-");
+            //dl OpenWebLink(filename);
+            //page OpenWebLink(Globals.DownloadApplicationURL);
+            //if ( auto )
             {
               Globals.IsExiting = true;
               return true;

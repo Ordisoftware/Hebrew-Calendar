@@ -13,10 +13,10 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Linq;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Net;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using Microsoft.Win32;
@@ -85,6 +85,11 @@ namespace Ordisoftware.HebrewCalendar
       MenuDisableReminder.Enabled = ActionDisableReminder.Enabled;
     }
 
+    private void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+    {
+      UpdateProgress(e.ProgressPercentage, 100, "Downloading...");
+    }
+
     /// <summary>
     /// Event handler. Called by MainForm for load events.
     /// </summary>
@@ -94,7 +99,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       TrayIcon.Icon = Icon;
       Program.Settings.Retrieve();
-      if ( SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, true) )
+      if ( SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, true, DownloadProgressChanged) )
       {
         Application.Exit();
         return;
@@ -585,7 +590,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
-      SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, false);
+      SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, false, DownloadProgressChanged);
     }
 
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
