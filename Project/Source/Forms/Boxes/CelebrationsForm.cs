@@ -59,6 +59,7 @@ namespace Ordisoftware.HebrewCalendar
           .SubItems.Add(Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents))
           .Tag = row.Date;
       }
+      Instance.CelebrationsForm_Load(null, null);
       Instance.Show();
       Instance.BringToFront();
     }
