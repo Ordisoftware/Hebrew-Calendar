@@ -212,6 +212,9 @@
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFileItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFile.cs" />
+    <Compile Include="Source\Forms\MainForm\MainForm.Initialize.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Program\Translations.SuspendDelay.cs" />
     <Compile Include="Source\Program\Translations.BigCalendar.cs" />
     <Compile Include="Source\Entities\SunAndMoonRiseAndSet.cs" />

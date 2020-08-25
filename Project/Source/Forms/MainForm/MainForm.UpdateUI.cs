@@ -86,11 +86,46 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Update the text calendar view aspect.
+    /// Update the text view aspect.
     /// </summary>
     public void UpdateTextCalendar()
     {
       CalendarText.Font = new Font(Program.Settings.FontName, Program.Settings.FontSize);
+    }
+
+    /// <summary>
+    /// Update the month view.
+    /// </summary>
+    internal void UpdateCalendarMonth(bool doFill)
+    {
+      IsGenerating = true;
+      Cursor = Cursors.WaitCursor;
+      Enabled = false;
+      PanelViewMonth.Parent = null;
+      try
+      {
+        CalendarMonth.RogueBrush = new SolidBrush(Program.Settings.MonthViewNoDaysBackColor);
+        CalendarMonth.ForeColor = Program.Settings.MonthViewTextColor;
+        CalendarMonth.BackColor = Program.Settings.MonthViewBackColor;
+        CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1); //10
+        CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold); //10
+        CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
+        CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
+        CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
+        CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
+        CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
+        CalendarMonth.LoadPresetHolidays = false;
+        if ( doFill ) FillMonths();
+      }
+      finally
+      {
+        Enabled = true;
+        Cursor = Cursors.Default;
+        Cursor = Cursors.Default;
+        IsGenerating = false;
+        SetView(Program.Settings.CurrentView, true);
+        UpdateButtons();
+      }
     }
 
   }

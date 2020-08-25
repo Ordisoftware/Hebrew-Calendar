@@ -46,7 +46,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private bool TimerErrorShown;
 
-    private MidnightTimer MidnightTimer = new MidnightTimer();
+    private MidnightTimer TimerMidnight = new MidnightTimer();
 
     internal TimeZoneInfo CurrentTimeZoneInfo;
 
