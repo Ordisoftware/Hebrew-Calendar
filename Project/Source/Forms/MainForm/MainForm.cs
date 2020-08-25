@@ -240,7 +240,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           if ( WindowState == FormWindowState.Minimized )
           {
-            WindowState = FormWindowState.Normal;
+            WindowState = Program.Settings.MainFormState;
             var old = TopMost;
             TopMost = true;
             BringToFront();
@@ -1017,7 +1017,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( TimerMutex ) return;
       if ( !Globals.IsReady ) return;
-      if ( !TimerReminder.Enabled  ) return;
+      if ( !TimerReminder.Enabled ) return;
       TimerMutex = true;
       try
       {
