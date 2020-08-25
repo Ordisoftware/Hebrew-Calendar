@@ -86,7 +86,7 @@ namespace Ordisoftware.HebrewCommon
                 Thread.Sleep(100);
                 Application.DoEvents();
               }
-              Shell.Run(tempfile, "/SP-");
+              Shell.Run(tempfile, "/SP- /SILENT");
               Globals.IsExiting = true;
               Application.Exit();
               return true;
