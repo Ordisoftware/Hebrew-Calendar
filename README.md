@@ -136,16 +136,15 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 ## Roadmap
 
-- Improve check update to allow auto update or direct download or open app web page.
+- Add moon months description in tools menu (F10).
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Improve and reorganize preferences form with a left menu panel.
 
 ## Changelog
 
-#### 2020.09.__ - Version 4.2
+#### 2020.08.__ - Version 4.2
 
-- Add moon months description in tools menu (F10).
 - Add tools menu duplicated in the tray icon.
 - Add option to enable/disable the web links menu.
 - Add option to enable/disable the suspend reminder menu.
@@ -153,6 +152,8 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Add mute windows volume when stop media playing.
 - Fix stop media playing in session lock form (stop instead of play/pause media).
 - Fix app not responding on windows logoff or system shutdown.
+- Improve check update to allow auto update or direct download or open app web page.
+- Some UI/UX improvments.
 
 #### 2020.08.22 - Version 4.1
 
