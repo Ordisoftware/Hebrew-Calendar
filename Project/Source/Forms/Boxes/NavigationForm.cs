@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           string strText = value.ToString();
           strText = strText.Remove(strText.Length - 3, 3);
-          string strDate = SQLiteHelper.GetDate(value);
+          string strDate = SQLite.GetDate(value);
           var row = ( from day in MainForm.Instance.DataSet.LunisolarDays
                       where day.Date == strDate
                       select day ).Single();
@@ -60,11 +60,11 @@ namespace Ordisoftware.HebrewCalendar
           LabelEventTorahValue.Text = Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents);
           if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
-                          where SQLiteHelper.GetDate(day.Date) > value && day.TorahEvents > 0
+                          where SQLite.GetDate(day.Date) > value && day.TorahEvents > 0
                           select day ).FirstOrDefault();
           if ( rowNext != null )
           {
-            var date = SQLiteHelper.GetDate(rowNext.Date);
+            var date = SQLite.GetDate(rowNext.Date);
             LabelTorahNextValue.Text = Translations.TorahEvent.GetLang((TorahEvent)rowNext.TorahEvents);
             LabelTorahNextDateValue.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
             LabelTorahNext.Tag = date;
@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewCalendar
             LabelTorahNext.Tag = null;
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
-          PictureMoon.Image = SystemHelper.ResizeImage(image, 100, 100);
+          PictureMoon.Image = image.Resize(100, 100);
           if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           {
             LabelMoonrise.Top = 125;

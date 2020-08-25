@@ -6,20 +6,18 @@
 // <date>10/31/2009 9:30:22 AM</date>
 // <summary></summary>
 
-namespace EventHandlerSupport
+namespace Ordisoftware.HebrewCommon
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
     using System.Reflection;
-    using System.Text;
     using System.Windows.Forms;
 
     /// <summary>
     /// This is a set of extensions for accessing the Event Handlers as well as cloning menu items
     /// </summary>
-    public static class Extensions
+    public static class ToolStripMenuItemHelper
     {
         //////////////////////////////////////////////////
         // Private static fields

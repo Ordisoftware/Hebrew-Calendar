@@ -20,32 +20,6 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Indicate data file storage folder.
-  /// </summary>
-  public enum DataFileFolder
-  {
-    /// <summary>
-    /// Application documents folder.
-    /// </summary>
-    ApplicationDocuments,
-
-    /// <summary>
-    /// Common program data folder.
-    /// </summary>
-    ProgramData,
-
-    /// <summary>
-    /// User appdata common folder.
-    /// </summary>
-    UserHebrewCommon,
-
-    /// <summary>
-    /// User appdata application folder.
-    /// </summary>
-    UserApplication
-  }
-
-  /// <summary>
   /// Provide data file management.
   /// </summary>
   public abstract class DataFile

@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       TrayIcon.Icon = Icon;
       Program.Settings.Retrieve();
-      if ( SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, true) )
+      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) )
         return;
       MenuTray.Enabled = false;
       CalendarText.ForeColor = Program.Settings.TextColor;
@@ -541,7 +541,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      SystemHelper.RunShell(Globals.HelpFilename);
+      Shell.Run(Globals.HelpFilename);
     }
 
     /// <summary>
@@ -551,7 +551,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionApplicationHome_Click(object sender, EventArgs e)
     {
-      SystemHelper.OpenApplicationHome();
+      Shell.OpenApplicationHome();
     }
 
     /// <summary>
@@ -561,7 +561,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionWebReleaseNotes_Click(object sender, EventArgs e)
     {
-      SystemHelper.OpenWebLink(Globals.ApplicationHomeURL + "/#ChangeLog" + Globals.AssemblyVersion);
+      Shell.OpenWebLink(Globals.ApplicationHomeURL + "/#ChangeLog" + Globals.AssemblyVersion);
     }
 
     /// <summary>
@@ -571,7 +571,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionContact_Click(object sender, EventArgs e)
     {
-      SystemHelper.OpenContactPage();
+      Shell.OpenContactPage();
     }
 
     /// <summary>
@@ -581,7 +581,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
-      if ( SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, false) )
+      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, false) )
       {
         Globals.AllowClose = true;
         Close();
@@ -595,7 +595,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
-      SystemHelper.CreateGitHubIssue();
+      Shell.CreateGitHubIssue();
     }
 
     /// <summary>
@@ -606,7 +606,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
       string url = (string)( (ToolStripItem)sender ).Tag;
-      SystemHelper.OpenWebLink(url);
+      Shell.OpenWebLink(url);
     }
 
     /// <summary>
@@ -666,12 +666,12 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionOpenCalculator_Click(object sender, EventArgs e)
     {
-      SystemHelper.RunShell("calc.exe");
+      Shell.Run("calc.exe");
     }
 
     private void ActionOpenSystemDateAndTime_Click(object sender, EventArgs e)
     {
-      SystemHelper.RunShell("timedate.cpl");
+      Shell.Run("timedate.cpl");
     }
 
     private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
@@ -698,7 +698,7 @@ namespace Ordisoftware.HebrewCalendar
       int diffMoon = 0;
       if ( date1 >= DateFirst && date2 <= DateLast )
         for ( DateTime date = date1; date <= date2; date = date.AddDays(1) )
-          if ( DataSet.LunisolarDays.FindByDate(SQLiteHelper.GetDate(date)).Moonrise != "" )
+          if ( DataSet.LunisolarDays.FindByDate(SQLite.GetDate(date)).Moonrise != "" )
             diffMoon++;
       string str = ActionCalculateDateDiff.Text
                  + Environment.NewLine + Environment.NewLine
@@ -758,7 +758,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         var bitmap = new Bitmap(CalendarMonth.Width, CalendarMonth.Height);
         CalendarMonth.DrawToBitmap(bitmap, new Rectangle(0, 0, CalendarMonth.Width, CalendarMonth.Height));
-        bitmap = SystemHelper.ResizeImage(bitmap, 1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
+        bitmap = bitmap.Resize(1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
         var document = new PrintDocument();
         document.DefaultPageSettings.Landscape = true;
         document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
@@ -790,7 +790,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
       if ( Program.Settings.AutoOpenExportFolder )
-        SystemHelper.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
+        Shell.Run(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
 
     /// <summary>
@@ -805,7 +805,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
       if ( Program.Settings.AutoOpenExportFolder )
-        SystemHelper.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
+        Shell.Run(Path.GetDirectoryName(SaveCSVDialog.FileName));
     }
 
     /// <summary>
@@ -1011,7 +1011,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( LunisolarDaysBindingSource.Current == null ) return;
         var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-        GoToDate(SQLiteHelper.GetDate(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
+        GoToDate(SQLite.GetDate(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
       }
       catch
       {
@@ -1025,7 +1025,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         System.Threading.Thread.Sleep(1000);
         CalendarMonth.Refresh();
-        if ( SQLiteHelper.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
+        if ( SQLite.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
       });
     }

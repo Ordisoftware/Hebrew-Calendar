@@ -42,7 +42,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( hebrew.StartsWith("a ") || hebrew.StartsWith("b ") )
         hebrew = hebrew.Substring(2, hebrew.Length - 2);
       foreach ( string item in hebrew.Split(' ') )
-        SystemHelper.RunShell(Settings.HebrewLettersExe, item);
+        Shell.Run(Settings.HebrewLettersExe, item);
     }
     
   }

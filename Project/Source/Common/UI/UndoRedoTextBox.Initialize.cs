@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewCommon
       bool b1 = textbox.Enabled;
       bool b2 = textbox.Enabled && !textbox.ReadOnly;
       bool b3 = !string.IsNullOrEmpty(textbox.SelectedText);
-      ActionUndo.Enabled = b2 && ( textbox.UndoStack.Count != 0 || textbox.CanUndo ); // TODO fix pb
+      ActionUndo.Enabled = b2 && ( textbox.UndoStack.Count != 0 || textbox.CanUndo ); // TODO rewrite undo/redo
       ActionRedo.Enabled = b2 && ( textbox.RedoStack.Count != 0 );
       ActionCopy.Enabled = b1 && b3;
       ActionCut.Enabled = b2 && b3;

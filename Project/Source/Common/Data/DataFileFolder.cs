@@ -10,34 +10,37 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <created> 2020-04 </created>
+/// <edited> 2020-04 </edited>
 using System;
-
-using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCommon
 {
 
-  public partial class WebUpdateForm : Form
+  /// <summary>
+  /// Indicate data file storage folder.
+  /// </summary>
+  public enum DataFileFolder
   {
+    /// <summary>
+    /// Application documents folder.
+    /// </summary>
+    ApplicationDocuments,
 
-    private WebUpdateForm()
-    {
-      InitializeComponent();
-      Icon = Globals.MainForm.Icon;
-      Text = Text + Globals.AssemblyTitle;
-      if ( Globals.MainForm.Visible )
-        this.CenterToMainForm();
-      else
-        CenterToScreen();
-    }
+    /// <summary>
+    /// Common program data folder.
+    /// </summary>
+    ProgramData,
 
-    public WebUpdateForm(string caption) : this()
-    {
-      LabelNewVersion.Text = caption;
-    }
+    /// <summary>
+    /// User appdata common folder.
+    /// </summary>
+    UserHebrewCommon,
 
+    /// <summary>
+    /// User appdata application folder.
+    /// </summary>
+    UserApplication
   }
 
 }

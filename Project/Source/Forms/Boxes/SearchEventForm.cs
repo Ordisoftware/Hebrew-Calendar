@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
         this.CenterToMainForm();
       Mutex = true;
       CurrentDay = MainForm.Instance.CurrentDay;
-      int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLiteHelper.GetDate(CurrentDay.Date).Year;
+      int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLite.GetDate(CurrentDay.Date).Year;
       for ( int indexYear = MainForm.Instance.YearFirst; indexYear <= MainForm.Instance.YearLast; indexYear++ )
       {
         int index = EditYear.Items.Add(indexYear);
@@ -56,7 +56,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( DialogResult == DialogResult.Cancel )
         if ( CurrentDay != null )
-          MainForm.Instance.GoToDate(SQLiteHelper.GetDate(CurrentDay.Date));
+          MainForm.Instance.GoToDate(SQLite.GetDate(CurrentDay.Date));
     }
 
     private void ListItems_DoubleClick(object sender, EventArgs e)
@@ -70,13 +70,13 @@ namespace Ordisoftware.HebrewCalendar
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where (TorahEvent)day.TorahEvents != TorahEvent.None
-                    && SQLiteHelper.GetDate(day.Date).Year == (int)EditYear.SelectedItem
+                    && SQLite.GetDate(day.Date).Year == (int)EditYear.SelectedItem
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
       {
         var item = ListItems.Items.Add(Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
-        string str = SQLiteHelper.GetDate(row.Date).ToLongDateString();
+        string str = SQLite.GetDate(row.Date).ToLongDateString();
         item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
         item.Tag = row;
         if ( (TorahEvent)row.TorahEvents == TorahEvent.NewYearD1 )
@@ -98,7 +98,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( ListItems.SelectedItems.Count > 0 )
       {
         var row = (Data.DataSet.LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
-        MainForm.Instance.GoToDate(SQLiteHelper.GetDate(row.Date));
+        MainForm.Instance.GoToDate(SQLite.GetDate(row.Date));
       }
     }
 

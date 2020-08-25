@@ -23,9 +23,9 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide system helper.
+  /// Provide web check update.
   /// </summary>
-  static partial class SystemHelper
+  static class WebCheckUpdate
   {
 
     /// <summary>
@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="checkAtStartup"></param>
     /// <param name="auto">True if no user interaction else false</param>
     /// <returns>True if application must exist else false.</returns>
-    static public bool CheckUpdate(bool checkAtStartup, bool auto)
+    static public bool Run(bool checkAtStartup, bool auto)
     {
       if ( auto && !checkAtStartup ) return false;
       try
@@ -57,14 +57,13 @@ namespace Ordisoftware.HebrewCommon
           }
           else
           {
-            var form = new WebUpdateForm();
-            form.LabelNewVersion.Text = Globals.NewVersionAvailable.GetLang(version);
+            var form = new WebUpdateForm(Globals.NewVersionAvailable.GetLang(version));
             if ( form.ShowDialog() != DialogResult.OK ) return false;
             if ( form.SelectDownload.Checked )
-              OpenWebLink(filename);
+              Shell.OpenWebLink(filename);
             else
             if ( form.SelectOpenWebPage.Checked )
-              OpenWebLink(Globals.ApplicationHomeURL);
+              Shell.OpenWebLink(Globals.ApplicationHomeURL);
             else
             if ( form.SelectInstall.Checked )
             {
@@ -87,7 +86,7 @@ namespace Ordisoftware.HebrewCommon
                 Thread.Sleep(100);
                 Application.DoEvents();
               }
-              RunShell(tempfile, "/SP-");
+              Shell.Run(tempfile, "/SP-");
               Globals.IsExiting = true;
               Application.Exit();
               return true;

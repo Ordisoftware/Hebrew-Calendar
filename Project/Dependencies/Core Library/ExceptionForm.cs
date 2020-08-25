@@ -247,7 +247,7 @@ namespace Ordisoftware.Core.Windows.Forms
                      .Replace("#", "%23")
                      .Replace(NewLine, "%0A")
                      .Replace("%0A%0A%0A", "%0A");
-        SystemHelper.CreateGitHubIssue(query);
+        Shell.CreateGitHubIssue(query);
       }
       catch ( Exception ex )
       {

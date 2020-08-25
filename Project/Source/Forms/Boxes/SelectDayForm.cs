@@ -42,7 +42,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCancel_Click(object sender, EventArgs e)
     {
       if ( LiveGoTo && CurrentDay != null )
-        MainForm.Instance.GoToDate(SQLiteHelper.GetDate(CurrentDay.Date));
+        MainForm.Instance.GoToDate(SQLite.GetDate(CurrentDay.Date));
     }
 
     private void ActionOk_Click(object sender, EventArgs e)
@@ -53,13 +53,13 @@ namespace Ordisoftware.HebrewCalendar
     private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
     {
       if ( !LiveGoTo ) return;
-      string date = SQLiteHelper.GetDate(MonthCalendar.SelectionStart);
+      string date = SQLite.GetDate(MonthCalendar.SelectionStart);
       if ( MonthCalendar.SelectionStart < MainForm.Instance.DateFirst )
-        date = SQLiteHelper.GetDate(MainForm.Instance.DateFirst);
+        date = SQLite.GetDate(MainForm.Instance.DateFirst);
       else
       if ( MonthCalendar.SelectionStart > MainForm.Instance.DateLast )
-        date = SQLiteHelper.GetDate(MainForm.Instance.DateLast);
-      MainForm.Instance.GoToDate(SQLiteHelper.GetDate(date));
+        date = SQLite.GetDate(MainForm.Instance.DateLast);
+      MainForm.Instance.GoToDate(SQLite.GetDate(date));
     }
 
   }

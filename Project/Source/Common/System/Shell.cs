@@ -20,9 +20,9 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide system helper.
+  /// Provide shell helper.
   /// </summary>
-  static partial class SystemHelper
+  static class Shell
   {
 
     /// <summary>
@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <param name="filename">The filename.</param>
     /// <param name="arguments">The comamnd line arguments.</param>
-    static public Process RunShell(string filename, string arguments = "")
+    static public Process Run(string filename, string arguments = "")
     {
       var process = new Process();
       try
@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="link">The mail address.</param>
     static public void OpenMailLink(string link)
     {
-      RunShell(MakeMailLink(link));
+      Run(MakeMailLink(link));
     }
 
     /// <summary>
@@ -116,7 +116,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="link">The link.</param>
     static public void OpenWebLink(string link)
     {
-      RunShell(MakeWebLink(link));
+      Run(MakeWebLink(link));
     }
 
     /// <summary>

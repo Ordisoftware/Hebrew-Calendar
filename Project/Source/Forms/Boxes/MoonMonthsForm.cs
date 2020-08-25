@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         var menuitem = (ToolStripMenuItem)sender;
         string str = Program.MoonMonthsUnicode[(int)LastControl.Tag].Replace(" א", "").Replace(" ב", "");
-        SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", str));
+        Shell.Run(( (string)menuitem.Tag ).Replace("%WORD%", str));
       });
     }
 

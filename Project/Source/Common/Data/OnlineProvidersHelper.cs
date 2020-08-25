@@ -24,8 +24,6 @@ using Ordisoftware.Core;
 namespace Ordisoftware.HebrewCommon
 {
 
-  // TODO refactor
-
   /// <summary>
   /// Provide online providers list helper to create menu items.
   /// </summary>
@@ -149,7 +147,7 @@ namespace Ordisoftware.HebrewCommon
               foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
                 if ( item.Tag != null )
                 {
-                  SystemHelper.OpenWebLink((string)item.Tag);
+                  Shell.OpenWebLink((string)item.Tag);
                   Thread.Sleep(1500);
                 }
             };
@@ -161,7 +159,7 @@ namespace Ordisoftware.HebrewCommon
             menu.DropDownItems.Add(item.CreateMenuItem((sender, e) =>
             {
               string url = (string)( (ToolStripItem)sender ).Tag;
-              SystemHelper.OpenWebLink(url);
+              Shell.OpenWebLink(url);
             }));
         }
       if ( Globals.IsDev )

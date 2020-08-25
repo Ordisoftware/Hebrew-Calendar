@@ -78,7 +78,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Link label link clicked event information.</param>
     private void labelIconsProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      SystemHelper.OpenWebLink(((LinkLabel)sender).Text);
+      Shell.OpenWebLink(((LinkLabel)sender).Text);
     }
 
     /// <summary>
@@ -88,7 +88,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Link label link clicked event information.</param>
     private void labelTrademarkName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      SystemHelper.OpenAuthorHome();
+      Shell.OpenAuthorHome();
     }
 
     /// <summary>
@@ -98,7 +98,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Link clicked event information.</param>
     private void editLicense_LinkClicked(object sender, LinkClickedEventArgs e)
     {
-      SystemHelper.OpenWebLink(e.LinkText);
+      Shell.OpenWebLink(e.LinkText);
     }
 
   }

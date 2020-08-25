@@ -65,11 +65,11 @@ namespace Ordisoftware.HebrewCalendar
       int progress = 0;
       int count = DataSet.LunisolarDays.Count;
       if ( count <= 0 ) return "";
-      var lastyear = SQLiteHelper.GetDate(DataSet.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
+      var lastyear = SQLite.GetDate(DataSet.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
       foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         try
         {
-          var dayDate = SQLiteHelper.GetDate(day.Date);
+          var dayDate = SQLite.GetDate(day.Date);
           if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReport.GetLang()) ) return "";
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;

@@ -122,8 +122,8 @@ namespace Ordisoftware.HebrewCommon
         InitializeContextMenu();
       ContextMenuStrip = ContextMenuEdit;
       //TextChanged += TextChangedEvent;
-      //KeyDown += KeyDownEvent;
       //KeyPress += KeyPressEvent;
+      //KeyDown += KeyDownEvent;
     }
 
     private void AddUndo()

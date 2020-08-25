@@ -141,7 +141,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
-    <Compile Include="Source\Common\System\Extensions.cs" />
+    <Compile Include="Source\Common\Data\DataFileFolder.cs" />
+    <Compile Include="Source\Common\UI\ToolStripMenuItemHelper.cs" />
     <Compile Include="Dependencies\GenericParsing\FieldType.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParser.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParserAdapter.cs" />
@@ -150,16 +151,16 @@
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Common\Data\DataFile.cs" />
-    <Compile Include="Source\Common\Data\DataFileEditorForm.cs">
+    <Compile Include="Source\Common\UI\DataFileEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Common\Data\DataFileEditorForm.Designer.cs">
+    <Compile Include="Source\Common\UI\DataFileEditorForm.Designer.cs">
       <DependentUpon>DataFileEditorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\Data\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\Data\OnlineProviders.cs" />
     <Compile Include="Source\Common\Data\OnlineProvidersHelper.cs" />
-    <Compile Include="Source\Common\System\ControlLocation.cs" />
+    <Compile Include="Source\Common\UI\ControlLocation.cs" />
     <Compile Include="Source\Common\System\NullSafeList.cs" />
     <Compile Include="Source\Common\System\NullSafeDictionary.cs" />
     <Compile Include="Source\Common\System\EnumHelper.cs" />
@@ -168,9 +169,9 @@
     <Compile Include="Source\Common\System\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\System\Localizer.cs" />
     <Compile Include="Source\Common\System\SQLiteHelper.cs" />
-    <Compile Include="Source\Common\System\SystemHelper.Forms.cs" />
-    <Compile Include="Source\Common\System\SystemHelper.Shell.cs" />
-    <Compile Include="Source\Common\System\SystemHelper.CheckUpdate.cs" />
+    <Compile Include="Source\Common\UI\FormsHelper.cs" />
+    <Compile Include="Source\Common\System\Shell.cs" />
+    <Compile Include="Source\Common\System\WebCheckUpdate.cs" />
     <Compile Include="Source\Common\System\SystemHelper.cs" />
     <Compile Include="Source\Common\UI\HTMLBrowserForm.cs">
       <SubType>Form</SubType>
@@ -461,10 +462,10 @@
     <EmbeddedResource Include="Dependencies\Core Library\ExceptionForm.resx">
       <DependentUpon>ExceptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Data\DataFileEditorForm.fr.resx">
+    <EmbeddedResource Include="Source\Common\UI\DataFileEditorForm.fr.resx">
       <DependentUpon>DataFileEditorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Data\DataFileEditorForm.resx">
+    <EmbeddedResource Include="Source\Common\UI\DataFileEditorForm.resx">
       <DependentUpon>DataFileEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\UI\HTMLBrowserForm.fr.resx">

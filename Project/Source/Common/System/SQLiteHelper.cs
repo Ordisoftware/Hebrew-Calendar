@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Data.Odbc;
@@ -23,7 +23,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide SQLite helper.
   /// </summary>
-  static public class SQLiteHelper
+  static public class SQLite
   {
 
     static public int DefaultOptimizeDaysInterval = 7;

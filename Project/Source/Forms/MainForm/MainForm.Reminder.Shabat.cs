@@ -26,15 +26,15 @@ namespace Ordisoftware.HebrewCalendar
     private void CheckShabat()
     {
       var dateNow = DateTime.Now;
-      string strDateNow = SQLiteHelper.GetDate(dateNow);
+      string strDateNow = SQLite.GetDate(dateNow);
       var row = ( from day in DataSet.LunisolarDays
-                  where SQLiteHelper.GetDate(day.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
-                     && SQLiteHelper.GetDate(day.Date) >= SQLiteHelper.GetDate(strDateNow)
+                  where SQLite.GetDate(day.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
+                     && SQLite.GetDate(day.Date) >= SQLite.GetDate(strDateNow)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null )
         return;
-      var dateRow = SQLiteHelper.GetDate(row.Date);
-      var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteHelper.GetDate(dateRow.AddDays(-1)));
+      var dateRow = SQLite.GetDate(row.Date);
+      var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLite.GetDate(dateRow.AddDays(-1)));
       var times = new ReminderTimes();
       var delta3 = Program.Settings.RemindShabatEveryMinutes;
       if ( Program.Settings.RemindShabatOnlyLight )

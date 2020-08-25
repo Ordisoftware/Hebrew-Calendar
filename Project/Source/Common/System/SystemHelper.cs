@@ -25,7 +25,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide system helper.
   /// </summary>
-  static partial class SystemHelper
+  static class SystemHelper
   {
 
     /// <summary>
@@ -83,7 +83,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Check is application's settings must be upgraded and apply it if necessary.
     /// </summary>
-    static public void CheckSettingsUpgrade(ApplicationSettingsBase settings, ref bool upgradeRequired)
+    static public void CheckUpgrade(this ApplicationSettingsBase settings, ref bool upgradeRequired)
     {
       try
       {

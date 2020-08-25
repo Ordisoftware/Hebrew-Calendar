@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !SystemHelper.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
-      SystemHelper.CheckSettingsUpgrade(Settings, ref upgrade);
+      Settings.CheckUpgrade(ref upgrade);
       Settings.UpgradeRequired = upgrade;
       CheckSettingsReset();
       Application.EnableVisualStyles();
@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewCalendar
       Globals.MainForm = MainForm.Instance;
       Core.Diagnostics.Debugger.Active = Settings.DebuggerEnabled;
       string lang = Settings.Language;
-      SystemHelper.CheckCommandLineArguments(args, ref lang);
+      Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;
       UpdateLocalization();
       Application.Run(MainForm.Instance);
@@ -123,7 +123,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         new Infralution.Localization.CultureManager().ManagedControl = form;
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
-        SystemHelper.ApplyResources(resources, form.Controls);
+        resources.Apply(form.Controls);
       };
       update(Globals.MainForm);
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;

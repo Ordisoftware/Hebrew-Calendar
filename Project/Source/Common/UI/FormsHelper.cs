@@ -18,22 +18,21 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
-using EventHandlerSupport;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide system helper.
+  /// Provide win forms helper.
   /// </summary>
-  static partial class SystemHelper
+  static class FormsHelper
   {
 
     /// <summary>
     /// Apply localized resources.
     /// </summary>
-    static public void ApplyResources(ComponentResourceManager resources, Control.ControlCollection controls)
+    static public void Apply(this ComponentResourceManager resources, Control.ControlCollection controls)
     {
       try
       {
@@ -41,7 +40,7 @@ namespace Ordisoftware.HebrewCommon
         {
           if ( control is Label )
             resources.ApplyResources(control, control.Name);
-          ApplyResources(resources, control.Controls);
+          Apply(resources, control.Controls);
         }
       }
       catch ( Exception ex )
@@ -85,7 +84,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="width">The width.</param>
     /// <param name="height">The height.</param>
     /// <returns>The image resized.</returns>
-    static public Bitmap ResizeImage(this Image image, int width, int height)
+    static public Bitmap Resize(this Image image, int width, int height)
     {
       var destRect = new Rectangle(0, 0, width, height);
       var destImage = new Bitmap(width, height);
