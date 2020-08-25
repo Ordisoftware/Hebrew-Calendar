@@ -46,6 +46,9 @@
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
+      this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.GroupBoxTextReport = new System.Windows.Forms.GroupBox();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -57,6 +60,7 @@
       this.EditFontName = new System.Windows.Forms.ComboBox();
       this.BroupBoxShabat = new System.Windows.Forms.GroupBox();
       this.LabelRemindShabatHoursBefore = new System.Windows.Forms.Label();
+      this.ActionPersonalShabatHelp = new System.Windows.Forms.Button();
       this.LabelRemindShabatEveryMinutes = new System.Windows.Forms.Label();
       this.EditRemindShabatOnlyLight = new System.Windows.Forms.CheckBox();
       this.EditRemindShabatHoursBefore = new System.Windows.Forms.NumericUpDown();
@@ -130,6 +134,7 @@
       this.EditCurrentDayForeColor = new System.Windows.Forms.Panel();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
@@ -148,12 +153,7 @@
       this.nissanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
-      this.ActionPersonalShabatHelp = new System.Windows.Forms.Button();
-      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -291,6 +291,27 @@
       this.ActionGetGPS.TabStop = true;
       this.ActionGetGPS.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionGetGPS_LinkClicked);
       // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      // 
       // GroupBoxTextReport
       // 
       this.GroupBoxTextReport.Controls.Add(this.EditMonthViewFontSize);
@@ -412,6 +433,15 @@
       // 
       resources.ApplyResources(this.LabelRemindShabatHoursBefore, "LabelRemindShabatHoursBefore");
       this.LabelRemindShabatHoursBefore.Name = "LabelRemindShabatHoursBefore";
+      // 
+      // ActionPersonalShabatHelp
+      // 
+      this.ActionPersonalShabatHelp.AllowDrop = true;
+      this.ActionPersonalShabatHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionPersonalShabatHelp, "ActionPersonalShabatHelp");
+      this.ActionPersonalShabatHelp.Name = "ActionPersonalShabatHelp";
+      this.ActionPersonalShabatHelp.UseVisualStyleBackColor = true;
+      this.ActionPersonalShabatHelp.Click += new System.EventHandler(this.ActionPersonalShabatHelp_Click);
       // 
       // LabelRemindShabatEveryMinutes
       // 
@@ -818,6 +848,7 @@
       resources.ApplyResources(this.EditMonthViewSunToolTips, "EditMonthViewSunToolTips");
       this.EditMonthViewSunToolTips.Name = "EditMonthViewSunToolTips";
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
+      this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
       // 
       // GroupBoxMonth
       // 
@@ -1011,6 +1042,14 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // EditHebrewLettersPath
+      // 
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
+      // 
       // EditVacuumAtStartup
       // 
       resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
@@ -1145,23 +1184,6 @@
       this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
       // 
-      // ActionPersonalShabatHelp
-      // 
-      this.ActionPersonalShabatHelp.AllowDrop = true;
-      this.ActionPersonalShabatHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionPersonalShabatHelp, "ActionPersonalShabatHelp");
-      this.ActionPersonalShabatHelp.Name = "ActionPersonalShabatHelp";
-      this.ActionPersonalShabatHelp.UseVisualStyleBackColor = true;
-      this.ActionPersonalShabatHelp.Click += new System.EventHandler(this.ActionPersonalShabatHelp_Click);
-      // 
-      // EditHebrewLettersPath
-      // 
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
-      this.EditHebrewLettersPath.ReadOnly = true;
-      // 
       // EditMoonDayTextFormat
       // 
       this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
@@ -1169,27 +1191,6 @@
       resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
       this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
       this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
       // 
       // PreferencesForm
       // 

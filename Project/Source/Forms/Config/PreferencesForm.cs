@@ -569,6 +569,11 @@ namespace Ordisoftware.HebrewCalendar
       MustRefreshMonthView = true;
     }
 
+    private void EditMonthViewSunToolTips_CheckedChanged(object sender, EventArgs e)
+    {
+      MustRefreshMonthView = true;
+    }
+
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
       MustRefreshMonthView = EditMonthViewFontSize.Value != Program.Settings.MonthViewFontSize;
