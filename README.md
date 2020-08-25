@@ -120,7 +120,6 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - F6 : Search a moon month window
 - F7 : Search a day window (also Ctrl+D)
 - F9 : Navigation window (also Ctrl+N)
-- F10 : Month description window (also Ctrl+M)
 - Ctrl+Tab : Next view
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today
@@ -136,7 +135,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 ## Roadmap
 
-- Add moon months description in tools menu (F10).
+- Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Improve and reorganize preferences form with a left menu panel.
@@ -146,14 +145,15 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 #### 2020.08.__ - Version 4.2
 
 - Add tools menu duplicated in the tray icon.
-- Add option to enable/disable the web links menu.
-- Add option to enable/disable the suspend reminder menu.
-- Add button to disable auto lock in lock session form.
-- Add mute windows volume when stop media playing.
-- Fix stop media playing in session lock form (stop instead of play/pause media).
+- Add option to enable or disable the web links menu.
+- Add option to enable or disable the suspend reminder functionality.
+- Add button to disable auto lock option in lock session form.
+- Add mute windows volume in addition to stop media playing.
+- Fix stop media playing (stop instead of play/pause media).
 - Fix app not responding on windows logoff or system shutdown.
 - Improve check update to allow auto update or direct download or open app web page.
-- Some UI/UX improvments.
+- Some UI/UX improvements.
+- Some code refactorings.
 
 #### 2020.08.22 - Version 4.1
 
