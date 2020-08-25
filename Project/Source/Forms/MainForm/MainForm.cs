@@ -1015,7 +1015,9 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void TimerReminder_Tick(object sender, EventArgs e)
     {
-      if ( !TimerReminder.Enabled || !Globals.IsReady || TimerMutex ) return;
+      if ( TimerMutex ) return;
+      if ( !Globals.IsReady ) return;
+      if ( !TimerReminder.Enabled  ) return;
       TimerMutex = true;
       try
       {
