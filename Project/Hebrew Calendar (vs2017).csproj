@@ -187,6 +187,12 @@
     <Compile Include="Source\Common\UI\LettersControl.Designer.cs">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\UI\WebUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\UI\WebUpdateForm.Designer.cs">
+      <DependentUpon>WebUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Common\UI\RichTextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -264,10 +270,10 @@
     <Compile Include="Source\Forms\Boxes\SelectCityForm.Designer.cs">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Config\LoadingForm.cs">
+    <Compile Include="Source\Common\UI\LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Config\LoadingForm.designer.cs">
+    <Compile Include="Source\Common\UI\LoadingForm.designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SelectBirthTime.cs">
@@ -473,6 +479,12 @@
     <EmbeddedResource Include="Source\Common\UI\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UI\WebUpdateForm.fr.resx">
+      <DependentUpon>WebUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\UI\WebUpdateForm.resx">
+      <DependentUpon>WebUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\UI\UndoRedoTextBox.en.resx">
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -541,10 +553,10 @@
     <EmbeddedResource Include="Source\Forms\Config\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\LoadingForm.fr.resx">
+    <EmbeddedResource Include="Source\Common\UI\LoadingForm.fr.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\LoadingForm.resx">
+    <EmbeddedResource Include="Source\Common\UI\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>

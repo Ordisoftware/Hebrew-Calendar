@@ -101,11 +101,11 @@ namespace Ordisoftware.HebrewCommon
         { Localizer.FR, "Une nouvelle version est disponible : {0}" }
       };
 
-    static public readonly Dictionary<string, string> AskToDownloadNewVersion
+    static public readonly Dictionary<string, string> DownloadingNewVersion
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Do you want to open the download page?" },
-        { Localizer.FR, "Voulez-vous ouvrir la page de téléchargement ?" }
+        { Localizer.EN, "Downloading new version" },
+        { Localizer.FR, "Téléchargement de la nouvelle version" }
       };
 
     static public readonly Dictionary<string, string> AskToCheckParametersAfterDatabaseUpgraded

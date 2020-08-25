@@ -35,13 +35,14 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="checkAtStartup"></param>
     /// <param name="auto">True if no user interaction else false</param>
     /// <returns>True if application must exist else false.</returns>
-    static public bool CheckUpdate(bool checkAtStartup, bool auto, DownloadProgressChangedEventHandler progress)
+    static public bool CheckUpdate(bool checkAtStartup, bool auto)
     {
       if ( auto && !checkAtStartup ) return false;
       try
       {
         foreach ( string s in Directory.GetFiles(Path.GetTempPath(), Globals.SetupFilename.Replace("%VER%", "*")) )
-          File.Delete(s);
+          try { File.Delete(s); }
+          catch { }
         using ( WebClient client = new WebClient() )
         {
           string[] content = client.DownloadString(Globals.CheckUpdateURL).Split(Environment.NewLine.ToCharArray(),
@@ -49,35 +50,46 @@ namespace Ordisoftware.HebrewCommon
           string[] partsVersion = content[0].Split('.');
           string filename = Globals.SetupFileURL.Replace("%VER%", content[0]);
           var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
-          /*if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
+          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
               DisplayManager.Show(Globals.NoNewVersionAvailable.GetLang());
           }
-          else*/
-          if ( DisplayManager.QueryYesNo(Globals.NewVersionAvailable.GetLang(version) + Environment.NewLine +
-                                         Environment.NewLine +
-                                         Globals.AskToDownloadNewVersion.GetLang()) )
+          else
           {
-            bool finished = false;
-            string tempfile = Path.GetTempPath() + Globals.SetupFilename.Replace("%VER%", content[0]);
-            client.DownloadProgressChanged += progress;
-            client.DownloadFileCompleted += (sender, e) =>
+            var form = new WebUpdateForm();
+            form.LabelNewVersion.Text = Globals.NewVersionAvailable.GetLang(version);
+            if ( form.ShowDialog() != DialogResult.OK ) return false;
+            if ( form.SelectDownload.Checked )
+              OpenWebLink(filename);
+            else
+            if ( form.SelectOpenWebPage.Checked )
+              OpenWebLink(Globals.ApplicationHomeURL);
+            else
+            if ( form.SelectInstall.Checked )
             {
-              finished = true;
-            };
-            client.DownloadFileAsync(new Uri(filename), tempfile);
-            while ( !finished )
-            {
-              Thread.Sleep(100);
-              Application.DoEvents();
-            }
-            RunShell(tempfile, "/SP-");
-            //dl OpenWebLink(filename);
-            //page OpenWebLink(Globals.DownloadApplicationURL);
-            //if ( auto )
-            {
+              bool finished = false;
+              string tempfile = Path.GetTempPath() + Globals.SetupFilename.Replace("%VER%", content[0]);
+              var LoadingForm = new LoadingForm();
+              LoadingForm.Show();
+              client.DownloadProgressChanged += (sender, e) =>
+              {
+                LoadingForm.UpdateProgress(e.ProgressPercentage, 100, Globals.DownloadingNewVersion.GetLang());
+              };
+              client.DownloadFileCompleted += (sender, e) =>
+              {
+                LoadingForm.Hide();
+                finished = true;
+              };
+              client.DownloadFileAsync(new Uri(filename), tempfile);
+              while ( !finished )
+              {
+                Thread.Sleep(100);
+                Application.DoEvents();
+              }
+              RunShell(tempfile, "/SP-");
               Globals.IsExiting = true;
+              Application.Exit();
               return true;
             }
           }

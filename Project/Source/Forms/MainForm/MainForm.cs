@@ -16,7 +16,6 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Net;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using Microsoft.Win32;
@@ -85,11 +84,6 @@ namespace Ordisoftware.HebrewCalendar
       MenuDisableReminder.Enabled = ActionDisableReminder.Enabled;
     }
 
-    private void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-    {
-      UpdateProgress(e.ProgressPercentage, 100, "Downloading...");
-    }
-
     /// <summary>
     /// Event handler. Called by MainForm for load events.
     /// </summary>
@@ -99,11 +93,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       TrayIcon.Icon = Icon;
       Program.Settings.Retrieve();
-      if ( SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, true, DownloadProgressChanged) )
-      {
-        Application.Exit();
+      if ( SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, true) )
         return;
-      }
       MenuTray.Enabled = false;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
@@ -590,14 +581,28 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
-      SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, false, DownloadProgressChanged);
+      if ( SystemHelper.CheckUpdate(Program.Settings.CheckUpdateAtStartup, false) )
+      {
+        Globals.AllowClose = true;
+        Close();
+      }
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionCreateGitHubIssue for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
       SystemHelper.CreateGitHubIssue();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionOpenWebsiteURL for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
       string url = (string)( (ToolStripItem)sender ).Tag;

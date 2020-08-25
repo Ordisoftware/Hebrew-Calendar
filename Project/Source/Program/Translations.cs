@@ -60,43 +60,43 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> CantExitWhileGenerating
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Can't exit application while generating data..." },
-        { Localizer.FR, "Impossible de quitter l'application durant la génération des données..." }
+        { Localizer.EN, "Can't exit application while generating data." },
+        { Localizer.FR, "Impossible de quitter l'application durant la génération des données." }
       };
 
     static public readonly Dictionary<string, string> ProgressLoadingData
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Loading data..." },
-        { Localizer.FR, "Chargement des données..." }
+        { Localizer.EN, "Loading data" },
+        { Localizer.FR, "Chargement des données" }
       };
 
     static public readonly Dictionary<string, string> ProgressCreateDays
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Populating days..." },
-        { Localizer.FR, "Garnissage des jours..." }
+        { Localizer.EN, "Populating days" },
+        { Localizer.FR, "Garnissage des jours" }
       };
 
     static public readonly Dictionary<string, string> ProgressAnalyzeDays
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Analyzing days..." },
-        { Localizer.FR, "Analyse des jours..." }
+        { Localizer.EN, "Analyzing days" },
+        { Localizer.FR, "Analyse des jours" }
       };
 
     static public readonly Dictionary<string, string> ProgressGenerateReport
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Generating report..." },
-        { Localizer.FR, "Génération du rapport..." }
+        { Localizer.EN, "Generating report" },
+        { Localizer.FR, "Génération du rapport" }
       };
 
     static public readonly Dictionary<string, string> ProgressFillMonths
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Filling months..." },
-        { Localizer.FR, "Remplissage des mois..." }
+        { Localizer.EN, "Filling months" },
+        { Localizer.FR, "Remplissage des mois" }
       };
 
     static public readonly Dictionary<string, string> AskToUseMoonOmer
