@@ -49,17 +49,13 @@ namespace Ordisoftware.HebrewCalendar
           break;
         }
       LoadSettings();
-      string str = "• " + Program.Settings.GPSCountry + Environment.NewLine
-                 + "• " + Program.Settings.GPSCity
-                 + Environment.NewLine
-                 + Environment.NewLine;
+      EditTimeZone.Text = GPSToString();
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == Program.Settings.TimeZone )
         {
-          str += item.DisplayName;
+          EditTimeZone.Text += item.DisplayName;
           break;
         }
-      EditTimeZone.Text = str;
       switch ( Program.Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:

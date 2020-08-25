@@ -144,9 +144,8 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
         if ( list.Contains(item.Name) )
           EditFontName.Items.Add(item.Name);
-      //EditFontName.Size = new Size(150, EditFontName.Size.Height);
-      // Removed because of long lag on Windows 10 with MeasureText
-      /*foreach ( var item in new InstalledFontCollection().Families )
+      /*// Removed because MeasureText is very slow on Windows 10
+        foreach ( var item in new InstalledFontCollection().Families )
         if ( item.Name == "Bitstream Vera Sans Mono" || item.Name == "Droid Sans Mono" )
           EditFontName.Items.Add(item.Name);
         else
@@ -188,6 +187,14 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
+    private string GPSToString()
+    {
+      return "• " + Program.Settings.GPSCountry + Environment.NewLine +
+             "• " + Program.Settings.GPSCity +
+             Environment.NewLine +
+             Environment.NewLine;
+    }
+
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       var form = new SelectCityForm();
@@ -199,16 +206,12 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSCountry = form.Country;
       Program.Settings.GPSCity = form.City;
       Program.Settings.Save();
-      string str = "• " + Program.Settings.GPSCountry + Environment.NewLine
-                 + "• " + Program.Settings.GPSCity
-                 + Environment.NewLine
-                 + Environment.NewLine;
+      EditTimeZone.Text = GPSToString();
       if ( form.EditTimeZone.SelectedItem != null )
       {
         Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-        str += ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
+        EditTimeZone.Text += ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
       }
-      EditTimeZone.Text = str;
       MainForm.Instance.InitializeCurrentTimeZone();
     }
 

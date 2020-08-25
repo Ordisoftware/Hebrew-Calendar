@@ -254,6 +254,7 @@
       this.ActionResetSettings.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionResetSettings.LinkColor = System.Drawing.Color.Navy;
       this.ActionResetSettings.Name = "ActionResetSettings";
+      this.ActionResetSettings.TabStop = true;
       this.ActionResetSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionResetSettings_LinkClicked);
       // 
       // ActionUsePersonalShabat
@@ -263,6 +264,7 @@
       this.ActionUsePersonalShabat.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUsePersonalShabat.LinkColor = System.Drawing.Color.Navy;
       this.ActionUsePersonalShabat.Name = "ActionUsePersonalShabat";
+      this.ActionUsePersonalShabat.TabStop = true;
       this.ActionUsePersonalShabat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUsePersonalShabat_LinkClicked);
       // 
       // GroupBoxGPS
@@ -469,6 +471,7 @@
       this.ActionUseBlackAndWhiteColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUseBlackAndWhiteColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseBlackAndWhiteColors.Name = "ActionUseBlackAndWhiteColors";
+      this.ActionUseBlackAndWhiteColors.TabStop = true;
       this.ActionUseBlackAndWhiteColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseBlackAndWhiteColors_LinkClicked);
       // 
       // ActionUseDefaultColors
@@ -478,6 +481,7 @@
       this.ActionUseDefaultColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUseDefaultColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseDefaultColors.Name = "ActionUseDefaultColors";
+      this.ActionUseDefaultColors.TabStop = true;
       this.ActionUseDefaultColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseDefaultColors_LinkClicked);
       // 
       // LabelTopColor
@@ -492,6 +496,7 @@
       this.ActionUseSystemColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUseSystemColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseSystemColors.Name = "ActionUseSystemColors";
+      this.ActionUseSystemColors.TabStop = true;
       this.ActionUseSystemColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseSystemColors_LinkClicked);
       // 
       // EditNavigateTopColor
@@ -884,6 +889,7 @@
       this.ActionMonthViewThemeDark.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionMonthViewThemeDark.LinkColor = System.Drawing.Color.Navy;
       this.ActionMonthViewThemeDark.Name = "ActionMonthViewThemeDark";
+      this.ActionMonthViewThemeDark.TabStop = true;
       this.ActionMonthViewThemeDark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionMonthViewThemeDark_LinkClicked);
       // 
       // ActionMonthViewThemeLight
@@ -893,6 +899,7 @@
       this.ActionMonthViewThemeLight.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionMonthViewThemeLight.LinkColor = System.Drawing.Color.Navy;
       this.ActionMonthViewThemeLight.Name = "ActionMonthViewThemeLight";
+      this.ActionMonthViewThemeLight.TabStop = true;
       this.ActionMonthViewThemeLight.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionMonthViewThemeLight_LinkClicked);
       // 
       // LabelColorFullMoon
@@ -998,6 +1005,7 @@
       this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
+      this.ActionSelectHebrewLettersPath.TabStop = false;
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
