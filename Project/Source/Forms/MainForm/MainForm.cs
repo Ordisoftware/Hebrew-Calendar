@@ -154,6 +154,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( !Globals.IsReady ) return;
       if ( !Visible ) return;
       if ( Globals.IsExiting ) return;
+      Program.Settings.Store();
       if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick();
     }
