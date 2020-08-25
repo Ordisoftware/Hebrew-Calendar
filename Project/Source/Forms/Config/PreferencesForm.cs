@@ -215,10 +215,13 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Instance.InitializeCurrentTimeZone();
     }
 
-    private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
     {
       Program.ShabatNoticeForm.ShowDialog();
-      if ( !DisplayManager.QueryYesNo(Translations.AskToSetupPersonalShabat.GetLang()) ) return;
+    }
+
+    private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
       DateTime date = DateTime.Today;
       var formDate = new SelectDayForm();
       formDate.Text = Translations.SelectBirthday.GetLang();

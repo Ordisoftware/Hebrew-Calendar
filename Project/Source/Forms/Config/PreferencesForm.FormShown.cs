@@ -33,13 +33,14 @@ namespace Ordisoftware.HebrewCalendar
         ActionGetGPS_LinkClicked(null, null);
       if ( Program.Settings.FirstLaunch )
       {
-        ActionResetSettings.Enabled = false;
         Program.Settings.FirstLaunchV4 = false;
         Program.Settings.FirstLaunch = false;
         Program.Settings.Save();
         Program.CelebrationsNoticeForm.ShowDialog();
         Program.Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(Translations.AskToUseMoonOmer.GetLang());
-        ActionUsePersonalShabat_LinkClicked(null, null);
+        Program.ShabatNoticeForm.ShowDialog();
+        if ( DisplayManager.QueryYesNo(Translations.AskToSetupPersonalShabat.GetLang()) )
+          ActionUsePersonalShabat_LinkClicked(null, null);
       }
       UpdateLanguagesButtons();
       foreach ( var item in EditFontName.Items )
