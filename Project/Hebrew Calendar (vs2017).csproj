@@ -168,6 +168,9 @@
     <Compile Include="Source\Common\System\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\System\Localizer.cs" />
     <Compile Include="Source\Common\System\SQLiteHelper.cs" />
+    <Compile Include="Source\Common\System\SystemHelper.Forms.cs" />
+    <Compile Include="Source\Common\System\SystemHelper.Shell.cs" />
+    <Compile Include="Source\Common\System\SystemHelper.CheckUpdate.cs" />
     <Compile Include="Source\Common\System\SystemHelper.cs" />
     <Compile Include="Source\Common\UI\HTMLBrowserForm.cs">
       <SubType>Form</SubType>

@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide SQLite helper methods.
+  /// Provide SQLite helper.
   /// </summary>
   static public class SQLiteHelper
   {
