@@ -25,6 +25,11 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
+    public const int BigCalendar1 = 15;
+    public const int BigCalendar2 = 30;
+    public const int BigCalendar3 = 50;
+    public const int BigCalendar4 = 80;
+
     static private readonly string AskToGenerateBigCalendarEN
       = "Generate a calendar for more than {0} ({1}) years is not recommanded and can cause ";
 
