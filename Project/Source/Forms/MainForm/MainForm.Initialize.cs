@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
@@ -70,6 +71,25 @@ namespace Ordisoftware.HebrewCalendar
         ActionEnableReminder.PerformClick();
       ActionDisableReminder.Enabled = Program.Settings.AllowSuspendReminder;
       MenuDisableReminder.Enabled = ActionDisableReminder.Enabled;
+    }
+
+    /// <summary>
+    /// Initialize the calendar month view aspect.
+    /// </summary>
+    private void InitializeCalendarUI()
+    {
+      int sizeFont = Program.Settings.MonthViewFontSize;
+      CalendarMonth.RogueBrush = new SolidBrush(Program.Settings.MonthViewNoDaysBackColor);
+      CalendarMonth.ForeColor = Program.Settings.MonthViewTextColor;
+      CalendarMonth.BackColor = Program.Settings.MonthViewBackColor;
+      CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
+      CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
+      CalendarMonth.DateHeaderFont = new Font("Calibri", sizeFont + 5, FontStyle.Bold);
+      CalendarMonth.DayOfWeekFont = new Font("Calibri", sizeFont + 1);
+      CalendarMonth.DayViewTimeFont = new Font("Calibri", sizeFont + 1, FontStyle.Bold);
+      CalendarMonth.DaysFont = new Font("Calibri", sizeFont + 2);
+      CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", sizeFont + 2, FontStyle.Bold);
+      CalendarMonth.Events.Clear();
     }
 
     /// <summary>

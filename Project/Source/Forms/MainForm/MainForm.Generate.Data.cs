@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         UpdateButtons();
         CalendarText.Clear();
-        CalendarMonth.LoadPresetHolidays = false;
+        CalendarMonth.Events.Clear();
         LunisolarDaysBindingSource.DataSource = null;
         LunisolarDaysTableAdapter.DeleteAllQuery();
         ReportTableAdapter.DeleteAllQuery();

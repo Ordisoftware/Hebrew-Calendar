@@ -104,17 +104,7 @@ namespace Ordisoftware.HebrewCalendar
       PanelViewMonth.Parent = null;
       try
       {
-        CalendarMonth.RogueBrush = new SolidBrush(Program.Settings.MonthViewNoDaysBackColor);
-        CalendarMonth.ForeColor = Program.Settings.MonthViewTextColor;
-        CalendarMonth.BackColor = Program.Settings.MonthViewBackColor;
-        CalendarMonth.DayOfWeekFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1); //10
-        CalendarMonth.DayViewTimeFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 1, FontStyle.Bold); //10
-        CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", Program.Settings.MonthViewFontSize + 2, FontStyle.Bold); //11
-        CalendarMonth.DaysFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 2); //11
-        CalendarMonth.DateHeaderFont = new Font("Calibri", Program.Settings.MonthViewFontSize + 5, FontStyle.Bold); //14
-        CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
-        CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
-        CalendarMonth.LoadPresetHolidays = false;
+        InitializeCalendarUI();
         if ( doFill ) FillMonths();
       }
       finally

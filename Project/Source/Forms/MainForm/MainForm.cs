@@ -74,19 +74,9 @@ namespace Ordisoftware.HebrewCalendar
       if ( Globals.IsExiting ) return;
       if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) )
         return;
-      int sizeFont = Program.Settings.MonthViewFontSize;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
-      CalendarMonth.RogueBrush = new SolidBrush(Program.Settings.MonthViewNoDaysBackColor);
-      CalendarMonth.ForeColor = Program.Settings.MonthViewTextColor;
-      CalendarMonth.BackColor = Program.Settings.MonthViewBackColor;
-      CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
-      CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
-      CalendarMonth.DateHeaderFont = new Font("Calibri", sizeFont + 5, FontStyle.Bold);
-      CalendarMonth.DayOfWeekFont = new Font("Calibri", sizeFont + 1);
-      CalendarMonth.DayViewTimeFont = new Font("Calibri", sizeFont + 1, FontStyle.Bold);
-      CalendarMonth.DaysFont = new Font("Calibri", sizeFont + 2);
-      CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", sizeFont + 2, FontStyle.Bold);
+      InitializeCalendarUI();
       InitializeCurrentTimeZone();
       InitializeDialogsDirectory();
       Refresh();
@@ -196,7 +186,7 @@ namespace Ordisoftware.HebrewCalendar
         DisplayManager.ShowAdvert(Translations.CantExitWhileGenerating.GetLang());
         return;
       }
-      if ( EditConfirmClosing.Checked || e == null )
+      if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDev ) )
         if ( !DisplayManager.QueryYesNo(Globals.AskToExitApplication.GetLang()) )
           return;
       Globals.AllowClose = true;

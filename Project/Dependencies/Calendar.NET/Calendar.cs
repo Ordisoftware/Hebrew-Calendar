@@ -53,6 +53,10 @@ namespace Calendar.NET
     private CalendarViews _calendarView;
     private readonly ScrollPanel _scrollPanel;
 
+    // ORDISOFTWARE MODIF BEGIN
+    public List<IEvent> Events => _events;
+    // ORDISOFTWARE MODIF END
+
     private readonly List<IEvent> _events;
     private readonly List<Rectangle> _rectangles;
     private readonly Dictionary<int, Point> _calendarDays;
@@ -415,7 +419,7 @@ namespace Calendar.NET
       this._btnRight.FocusColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
       this._btnRight.HighlightBorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
       this._btnRight.HighlightButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
-      this._btnRight.Location = new System.Drawing.Point(138+5, 10);
+      this._btnRight.Location = new System.Drawing.Point(138 + 5, 10);
       this._btnRight.Name = "_btnRight";
       this._btnRight.Size = new System.Drawing.Size(42, 29);
       this._btnRight.TabIndex = 2;
@@ -923,10 +927,8 @@ namespace Calendar.NET
       SizeF thuSize = g.MeasureString("Thu", _dayOfWeekFont);
       SizeF friSize = g.MeasureString("Fri", _dayOfWeekFont);
       SizeF satSize = g.MeasureString("Sat", _dayOfWeekFont);
-      SizeF dateHeaderSize = g.MeasureString(
-          CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
-      int headerSpacing = Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height,
-                    satSize.Height) + 5;
+      SizeF dateHeaderSize = g.MeasureString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
+      int headerSpacing = Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height, satSize.Height) + 5;
       int controlsSpacing = ( ( !_showTodayButton ) && ( !_showDateInHeader ) && ( !_showArrowControls ) ) ? 0 : 30;
       // ORDISOFWTARE MODIF BEGIN
       //int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
@@ -969,8 +971,7 @@ namespace Calendar.NET
             if ( !_calendarDays.ContainsKey(counter) )
               _calendarDays.Add(counter, new Point(xStart, (int)( yStart + 2f + g.MeasureString(counter.ToString(CultureInfo.InvariantCulture), _daysFont).Height )));
 
-            if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month
-             && counter == DateTime.Now.Day && _highlightCurrentDay )
+            if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter == DateTime.Now.Day && _highlightCurrentDay )
             {
               g.FillRectangle(new SolidBrush(Color.FromArgb(234, 234, 234)), xStart, yStart, cellWidth, cellHeight);
             }
@@ -978,8 +979,7 @@ namespace Calendar.NET
             if ( first == false )
             {
               first = true;
-              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month
-           && counter == DateTime.Now.Day )
+              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN
                 if ( Program.Settings.UseColors )
@@ -990,22 +990,17 @@ namespace Calendar.NET
                   g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
                 }
                 else
-                g.DrawString(
-                    _calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture),
-                    _todayFont, Brushes.Black, xStart + 5, yStart + 2);
+                  g.DrawString(_calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else
               {
-                g.DrawString(
-                    CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture),
-                    _daysFont, Brushes.Black, xStart + 5, yStart + 2);
+                g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture), _daysFont, Brushes.Black, xStart + 5, yStart + 2);
               }
             }
             else
             {
-              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month
-           && counter == DateTime.Now.Day )
+              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN
                 if ( Program.Settings.UseColors )
@@ -1029,9 +1024,7 @@ namespace Calendar.NET
           }
           else if ( rogueDays > 0 )
           {
-            int dm =
-                DateTime.DaysInMonth(_calendarDate.AddMonths(-1).Year, _calendarDate.AddMonths(-1).Month) -
-                rogueDays + 1;
+            int dm = DateTime.DaysInMonth(_calendarDate.AddMonths(-1).Year, _calendarDate.AddMonths(-1).Month) - rogueDays + 1;
             // ORDISOFWTARE MODIF BEGIN
             g.FillRectangle(RogueBrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
             // ORDISOFWTARE MODIF END
@@ -1097,10 +1090,7 @@ namespace Calendar.NET
 
       if ( _showDateInHeader )
       {
-        g.DrawString(
-            CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture),
-            _dateHeaderFont, Brushes.Black, ClientSize.Width - MarginSize - dateHeaderSize.Width,
-            MarginSize);
+        g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, Brushes.Black, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
       }
 
       _events.Sort(new EventComparer());
@@ -1148,9 +1138,7 @@ namespace Calendar.NET
 
             var ev = new CalendarEvent
             {
-              EventArea =
-                    new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1,
-                                  (int)sz.Height),
+              EventArea = new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1, (int)sz.Height),
               Event = v,
               Date = dt
             };
@@ -1225,7 +1213,7 @@ namespace Calendar.NET
 
       // ORDISOFTWARE MODIF BEGIN
       while ( date.Date.AddDays(1).DayOfWeek != CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek )
-      //while ( date.Date.AddDays(1).DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
+        //while ( date.Date.AddDays(1).DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
         date = date.AddDays(1);
       //ORDISOFTWARE MODIF END
 
