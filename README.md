@@ -118,11 +118,12 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - F4 : Next celebrations window
 - F5 : Search a celebration window
 - F6 : Search a moon month window
-- F7 : Search a day window (also Ctrl+D)
+- F7 : Search a gregorian month window
 - F9 : Navigation window (also Ctrl+N)
 - Ctrl+Tab : Next view
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today
+- Ctrl+D : Search a day
 - Ctrl+C : Copy text report to clipboard
 - Ctrl+P : Print month view
 - Ctrl+S : Save text report to text file
@@ -144,6 +145,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 #### 2020.08.__ - Version 4.2
 
+- Add search gregorian month form.
 - Add tools menu duplicated in the tray icon.
 - Add option to enable or disable the web links menu.
 - Add option to enable or disable the suspend reminder functionality.
@@ -152,7 +154,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Fix stop media playing (stop instead of play/pause media).
 - Fix app not responding on windows logoff or system shutdown.
 - Improve check update to allow auto update or direct download or open app web page.
-- Optimize month view drawing.
+- Optimize month view drawing speed by a half.
 - Some UI/UX improvements.
 - Some code refactorings.
 
