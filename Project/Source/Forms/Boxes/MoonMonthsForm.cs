@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MoonMonthsForm_Load(object sender, EventArgs e)
     {
-      if ( Location.X == -1 && Location.Y == -1 )
+      if ( Location.X < 0 || Location.Y < 0 )
         CenterToScreen();
     }
 

@@ -56,8 +56,12 @@ namespace Ordisoftware.HebrewCommon
     static public void CenterToMainForm(this Form form)
     {
       if ( Globals.MainForm == null ) return;
-      form.Location = new Point(Globals.MainForm.Left + Globals.MainForm.Width / 2 - form.Width / 2,
-                                Globals.MainForm.Top + Globals.MainForm.Height / 2 - form.Height / 2);
+      if ( Globals.MainForm.Visible )
+        form.Location = new Point(Globals.MainForm.Left + Globals.MainForm.Width / 2 - form.Width / 2,
+                                  Globals.MainForm.Top + Globals.MainForm.Height / 2 - form.Height / 2);
+      else
+        form.Location = new Point(SystemInformation.WorkingArea.Left + SystemInformation.WorkingArea.Width / 2 - form.Width / 2,
+                                  SystemInformation.WorkingArea.Top + SystemInformation.WorkingArea.Height / 2 - form.Height / 2);
     }
 
     /// <summary>
