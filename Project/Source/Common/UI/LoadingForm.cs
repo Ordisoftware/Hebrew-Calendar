@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
 /// Copyright 2012-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -11,12 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.HebrewCommon
 {
 
   public partial class LoadingForm : Form
@@ -26,6 +25,20 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       this.CenterToMainForm();
+      LabelTitle.Text = Globals.AssemblyTitle;
+    }
+
+    public void UpdateProgress(int index, int count, string text)
+    {
+      if ( index == 0 ) ProgressBar.Maximum = count;
+      ProgressBar.Value = index > count ? count : index;
+      ProgressBar.Update();
+      if ( LabelOperation.Text != text )
+      {
+        LabelOperation.Text = text;
+        LabelOperation.Refresh();
+      }
+      Application.DoEvents();
     }
 
   }

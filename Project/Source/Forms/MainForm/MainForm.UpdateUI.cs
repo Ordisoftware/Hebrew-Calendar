@@ -52,20 +52,8 @@ namespace Ordisoftware.HebrewCalendar
       if ( LoadingForm == null )
         LoadingForm = new LoadingForm();
       if ( !LoadingForm.Visible )
-      {
-        LoadingForm.LabelTitle.Text = Globals.AssemblyTitle;
         LoadingForm.Show();
-      }
-      if ( index == 0 )
-        LoadingForm.ProgressBar.Maximum = count;
-      LoadingForm.ProgressBar.Value = index > count ? count : index;
-      LoadingForm.ProgressBar.Update();
-      if ( LoadingForm.LabelOperation.Text != text )
-      {
-        LoadingForm.LabelOperation.Text = text;
-        LoadingForm.LabelOperation.Refresh();
-      }
-      Application.DoEvents();
+      LoadingForm.UpdateProgress(index, count, text);
       return IsGenerating;
     }
 

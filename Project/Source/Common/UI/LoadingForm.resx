@@ -126,10 +126,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ProgressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 69</value>
+    <value>25, 73</value>
   </data>
   <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 12</value>
+    <value>250, 12</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ProgressBar.TabIndex" type="System.Int32, mscorlib">
@@ -151,13 +151,13 @@
     <value>True</value>
   </data>
   <data name="LabelTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 27</value>
+    <value>22, 23</value>
   </data>
   <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 13</value>
+    <value>131, 20</value>
   </data>
   <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -184,7 +184,7 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="LabelOperation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 44</value>
+    <value>23, 48</value>
   </data>
   <data name="LabelOperation.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 16</value>

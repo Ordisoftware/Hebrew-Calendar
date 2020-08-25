@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewCalendar
+﻿namespace Ordisoftware.HebrewCommon
 {
   partial class LoadingForm
   {
