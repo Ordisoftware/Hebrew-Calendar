@@ -137,6 +137,7 @@
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
+      this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.GroupBoxMoonDayTextFormat = new System.Windows.Forms.GroupBox();
@@ -147,7 +148,6 @@
       this.nissanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
-      this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
       this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
@@ -254,7 +254,6 @@
       this.ActionResetSettings.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionResetSettings.LinkColor = System.Drawing.Color.Navy;
       this.ActionResetSettings.Name = "ActionResetSettings";
-      this.ActionResetSettings.TabStop = true;
       this.ActionResetSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionResetSettings_LinkClicked);
       // 
       // ActionUsePersonalShabat
@@ -264,7 +263,6 @@
       this.ActionUsePersonalShabat.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUsePersonalShabat.LinkColor = System.Drawing.Color.Navy;
       this.ActionUsePersonalShabat.Name = "ActionUsePersonalShabat";
-      this.ActionUsePersonalShabat.TabStop = true;
       this.ActionUsePersonalShabat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUsePersonalShabat_LinkClicked);
       // 
       // GroupBoxGPS
@@ -471,7 +469,6 @@
       this.ActionUseBlackAndWhiteColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUseBlackAndWhiteColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseBlackAndWhiteColors.Name = "ActionUseBlackAndWhiteColors";
-      this.ActionUseBlackAndWhiteColors.TabStop = true;
       this.ActionUseBlackAndWhiteColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseBlackAndWhiteColors_LinkClicked);
       // 
       // ActionUseDefaultColors
@@ -481,7 +478,6 @@
       this.ActionUseDefaultColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUseDefaultColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseDefaultColors.Name = "ActionUseDefaultColors";
-      this.ActionUseDefaultColors.TabStop = true;
       this.ActionUseDefaultColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseDefaultColors_LinkClicked);
       // 
       // LabelTopColor
@@ -496,7 +492,6 @@
       this.ActionUseSystemColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionUseSystemColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseSystemColors.Name = "ActionUseSystemColors";
-      this.ActionUseSystemColors.TabStop = true;
       this.ActionUseSystemColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseSystemColors_LinkClicked);
       // 
       // EditNavigateTopColor
@@ -889,7 +884,6 @@
       this.ActionMonthViewThemeDark.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionMonthViewThemeDark.LinkColor = System.Drawing.Color.Navy;
       this.ActionMonthViewThemeDark.Name = "ActionMonthViewThemeDark";
-      this.ActionMonthViewThemeDark.TabStop = true;
       this.ActionMonthViewThemeDark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionMonthViewThemeDark_LinkClicked);
       // 
       // ActionMonthViewThemeLight
@@ -899,7 +893,6 @@
       this.ActionMonthViewThemeLight.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.ActionMonthViewThemeLight.LinkColor = System.Drawing.Color.Navy;
       this.ActionMonthViewThemeLight.Name = "ActionMonthViewThemeLight";
-      this.ActionMonthViewThemeLight.TabStop = true;
       this.ActionMonthViewThemeLight.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionMonthViewThemeLight_LinkClicked);
       // 
       // LabelColorFullMoon
@@ -1059,6 +1052,12 @@
       this.EditDebuggerEnabled.UseVisualStyleBackColor = true;
       this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.EditDebuggerEnabled_CheckedChanged);
       // 
+      // EditAllowSuspendReminder
+      // 
+      resources.ApplyResources(this.EditAllowSuspendReminder, "EditAllowSuspendReminder");
+      this.EditAllowSuspendReminder.Name = "EditAllowSuspendReminder";
+      this.EditAllowSuspendReminder.UseVisualStyleBackColor = true;
+      // 
       // EditWebLinksMenuEnabled
       // 
       resources.ApplyResources(this.EditWebLinksMenuEnabled, "EditWebLinksMenuEnabled");
@@ -1135,12 +1134,6 @@
       this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";
       this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
-      // 
-      // EditAllowSuspendReminder
-      // 
-      resources.ApplyResources(this.EditAllowSuspendReminder, "EditAllowSuspendReminder");
-      this.EditAllowSuspendReminder.Name = "EditAllowSuspendReminder";
-      this.EditAllowSuspendReminder.UseVisualStyleBackColor = true;
       // 
       // EditHebrewLettersPath
       // 

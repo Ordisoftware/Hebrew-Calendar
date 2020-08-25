@@ -508,7 +508,7 @@
     <value>774, 28</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
     <value>PanelButtons</value>
@@ -601,7 +601,7 @@
     <value>95, 20</value>
   </data>
   <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
     <value>EditGPSLatitude</value>
@@ -655,7 +655,7 @@
     <value>95, 20</value>
   </data>
   <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
     <value>EditGPSLongitude</value>
@@ -679,7 +679,7 @@
     <value>187, 195</value>
   </data>
   <data name="GroupBoxGPS.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="GroupBoxGPS.Text" xml:space="preserve">
     <value>GPS coordonates</value>
@@ -925,7 +925,7 @@
     <value>205, 167</value>
   </data>
   <data name="GroupBoxTextReport.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="GroupBoxTextReport.Text" xml:space="preserve">
     <value>Fonts</value>
@@ -1024,7 +1024,7 @@
     <value>98, 17</value>
   </data>
   <data name="EditRemindShabatOnlyLight.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="EditRemindShabatOnlyLight.Text" xml:space="preserve">
     <value>Only when light</value>
@@ -1051,7 +1051,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindShabatHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatHoursBefore.Name" xml:space="preserve">
     <value>EditRemindShabatHoursBefore</value>
@@ -1075,7 +1075,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindShabatEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatEveryMinutes.Name" xml:space="preserve">
     <value>EditRemindShabatEveryMinutes</value>
@@ -1105,7 +1105,7 @@
     <value>71, 17</value>
   </data>
   <data name="EditReminderShabatEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="EditReminderShabatEnabled.Text" xml:space="preserve">
     <value>Reminder</value>
@@ -1165,7 +1165,7 @@
     <value>135, 13</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Text" xml:space="preserve">
     <value>Use black and white colors</value>
@@ -1198,7 +1198,7 @@
     <value>88, 13</value>
   </data>
   <data name="ActionUseDefaultColors.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="ActionUseDefaultColors.Text" xml:space="preserve">
     <value>Use pastel colors</value>
@@ -1264,7 +1264,7 @@
     <value>92, 13</value>
   </data>
   <data name="ActionUseSystemColors.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="ActionUseSystemColors.Text" xml:space="preserve">
     <value>Use system colors</value>
@@ -1429,7 +1429,7 @@
     <value>187, 135</value>
   </data>
   <data name="GroupBoxNavigation.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="GroupBoxNavigation.Text" xml:space="preserve">
     <value>Navigation window</value>
@@ -1681,7 +1681,7 @@
     <value>167, 17</value>
   </data>
   <data name="EditStartupHide.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="EditStartupHide.Text" xml:space="preserve">
     <value>Hide the application at startup</value>
@@ -2023,7 +2023,7 @@
     <value>199, 17</value>
   </data>
   <data name="EditUseColors.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="EditUseColors.Text" xml:space="preserve">
     <value>Use colors for calendar and reminder</value>
@@ -2149,7 +2149,7 @@
     <value>143, 169</value>
   </data>
   <data name="EditEventsDay.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EditEventsDay.Name" xml:space="preserve">
     <value>EditEventsDay</value>
@@ -2254,7 +2254,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSessionTimeOut.Name" xml:space="preserve">
     <value>EditAutoLockSessionTimeOut</value>
@@ -2278,7 +2278,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindCelebrationHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.Name" xml:space="preserve">
     <value>EditRemindCelebrationHoursBefore</value>
@@ -2308,7 +2308,7 @@
     <value>109, 17</value>
   </data>
   <data name="EditAutoLockSession.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="EditAutoLockSession.Text" xml:space="preserve">
     <value>Auto lock session</value>
@@ -2401,7 +2401,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindCelebrationEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.Name" xml:space="preserve">
     <value>EditRemindCelebrationEveryMinutes</value>
@@ -2425,7 +2425,7 @@
     <value>337, 405</value>
   </data>
   <data name="GroupBoxReminder.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="GroupBoxReminder.Text" xml:space="preserve">
     <value>Celebrations</value>
@@ -2461,7 +2461,7 @@
     <value>201, 17</value>
   </data>
   <data name="EditMonthViewSunToolTips.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="EditMonthViewSunToolTips.Text" xml:space="preserve">
     <value>Show sun rise and set in month view </value>
@@ -3076,7 +3076,7 @@
     <value>205, 235</value>
   </data>
   <data name="GroupBoxMonth.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="GroupBoxMonth.Text" xml:space="preserve">
     <value>Month view</value>
@@ -3122,7 +3122,7 @@
     <value>24, 24</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.Name" xml:space="preserve">
     <value>ActionSelectHebrewLettersPath</value>
@@ -3146,7 +3146,7 @@
     <value>234, 20</value>
   </data>
   <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
     <value>EditHebrewLettersPath</value>
@@ -3176,7 +3176,7 @@
     <value>218, 17</value>
   </data>
   <data name="EditVacuumAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimize database at startup every week</value>
@@ -3222,7 +3222,7 @@
     <value>28, 28</value>
   </data>
   <data name="ActionSelectLangFR.TabIndex" type="System.Int32, mscorlib">
-    <value>77</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.Name" xml:space="preserve">
     <value>ActionSelectLangFR</value>
@@ -3263,7 +3263,7 @@
     <value>28, 28</value>
   </data>
   <data name="ActionSelectLangEN.TabIndex" type="System.Int32, mscorlib">
-    <value>76</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangEN.Name" xml:space="preserve">
     <value>ActionSelectLangEN</value>
@@ -3296,7 +3296,7 @@
     <value>179, 17</value>
   </data>
   <data name="EditAutoOpenExportFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
     <value>Open export folder after success</value>
@@ -3335,7 +3335,7 @@
     <value>153, 17</value>
   </data>
   <data name="EditShowReminderInTaskBar.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
     <value>Show reminders in task bar</value>
@@ -3374,7 +3374,7 @@
     <value>140, 17</value>
   </data>
   <data name="EditCheckUpdateAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>Check update at startup</value>
@@ -3413,7 +3413,7 @@
     <value>107, 17</value>
   </data>
   <data name="EditDebuggerEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="EditDebuggerEnabled.Text" xml:space="preserve">
     <value>Enable debugger</value>
@@ -3452,7 +3452,7 @@
     <value>137, 17</value>
   </data>
   <data name="EditAllowSuspendReminder.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="EditAllowSuspendReminder.Text" xml:space="preserve">
     <value>Allow suspend reminder</value>
@@ -3521,7 +3521,7 @@
     <value>337, 235</value>
   </data>
   <data name="GroupBoxSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="GroupBoxSystem.Text" xml:space="preserve">
     <value>Application</value>
@@ -3608,7 +3608,7 @@
     <value>24, 24</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionMoonDayTextFormatReset.Name" xml:space="preserve">
     <value>ActionMoonDayTextFormatReset</value>
@@ -3651,7 +3651,7 @@
     <value>24, 24</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Name" xml:space="preserve">
     <value>ActionMoonDayTextFormatHelp</value>
@@ -3675,7 +3675,7 @@
     <value>165, 20</value>
   </data>
   <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
     <value>EditMoonDayTextFormat</value>
@@ -3699,7 +3699,7 @@
     <value>187, 84</value>
   </data>
   <data name="GroupBoxMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="GroupBoxMoonDayTextFormat.Text" xml:space="preserve">
     <value>Moon day text format</value>
@@ -3724,6 +3724,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>794, 718</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

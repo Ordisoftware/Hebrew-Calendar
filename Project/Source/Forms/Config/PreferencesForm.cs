@@ -199,8 +199,8 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSCountry = form.Country;
       Program.Settings.GPSCity = form.City;
       Program.Settings.Save();
-      string str = Program.Settings.GPSCountry + Environment.NewLine
-                 + Program.Settings.GPSCity
+      string str = "• " + Program.Settings.GPSCountry + Environment.NewLine
+                 + "• " + Program.Settings.GPSCity
                  + Environment.NewLine
                  + Environment.NewLine;
       if ( form.EditTimeZone.SelectedItem != null )
