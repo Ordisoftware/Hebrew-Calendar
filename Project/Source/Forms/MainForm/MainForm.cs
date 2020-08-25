@@ -55,6 +55,8 @@ namespace Ordisoftware.HebrewCalendar
       SystemEvents.SessionEnding += SessionEnding;
       try { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilename); }
       catch { }
+      TrayIcon.Icon = Icon;
+      MenuTray.Enabled = false;
       Globals.AllowClose = false;
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
@@ -69,12 +71,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MainForm_Load(object sender, EventArgs e)
     {
-      if ( Globals.IsExiting ) return;
-      TrayIcon.Icon = Icon;
       Program.Settings.Retrieve();
+      if ( Globals.IsExiting ) return;
       if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) )
         return;
-      MenuTray.Enabled = false;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
       CalendarMonth.RogueBrush = new SolidBrush(Program.Settings.MonthViewNoDaysBackColor);
@@ -103,10 +103,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Globals.IsExiting ) return;
       UpdateTextCalendar();
-      CalendarMonth.CalendarDateChanged += (date) =>
-      {
-        GoToDate(date);
-      };
+      CalendarMonth.CalendarDateChanged += date => GoToDate(date);
       MenuShowHide.Text = Globals.HideRestore.GetLang(Visible);
       Globals.IsReady = true;
       UpdateButtons();
