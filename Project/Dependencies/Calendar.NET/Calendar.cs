@@ -912,9 +912,10 @@ namespace Calendar.NET
       }
     }
 
-    private SolidBrush BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
-    private SolidBrush BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
-    private SolidBrush BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
+    static private SolidBrush BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
+    static private SolidBrush BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
+    static private SolidBrush BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
+    static private Pen PenBrushBlack = new Pen(BrushBlack) { DashStyle = DashStyle.Dash };
 
     private void RenderMonthCalendar(PaintEventArgs e)
     {
@@ -1103,21 +1104,22 @@ namespace Calendar.NET
       //_events.Sort(new EventComparer());
       // ORDISOFTWARE MODIF END
 
-      bool events = Program.Settings.MonthViewSunToolTips;
+      bool generateEvents = Program.Settings.MonthViewSunToolTips;
       for ( int i = 1; i <= DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month); i++ )
       {
         int renderOffsetY = 0;
 
         // ORDISOFTWARE MODIF BEGIN
         //foreach ( IEvent v in _events )
-        foreach ( IEvent v in _events.Where(ev => ev.Date.Year == _calendarDate.Year && ev.Date.Month == _calendarDate.Month) )
+        var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
+        var list = _events.Where(ev => ( ev.Date.Year == _calendarDate.Year && ev.Date.Month == _calendarDate.Month )
+                                    && ( ev.Enabled || _showDisabledEvents ));
+        foreach ( IEvent v in list )
         // ORDISOFTWARE MODIF END
         {
-          var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
           if ( NeedsRendering(v, dt) )
           {
-            int alpha = 255;
-            if ( !v.Enabled && _dimDisabledEvents ) alpha = 64;
+            int alpha = !v.Enabled && _dimDisabledEvents ? alpha = 64 : 255;
             Color alphaColor = Color.FromArgb(alpha, v.EventColor.R, v.EventColor.G, v.EventColor.B);
 
             int offsetY = renderOffsetY;
@@ -1142,16 +1144,13 @@ namespace Calendar.NET
             g.FillRectangle(new SolidBrush(alphaColor), point.X + 1, point.Y + offsetY, cellWidth - 1, sz.Height);
 
             if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
-            {
-              var p = new Pen(BrushBlack) { DashStyle = DashStyle.Dash };
-              g.DrawRectangle(p, point.X + 1, point.Y + offsetY, cellWidth - 2, sz.Height - 1);
-            }
+              g.DrawRectangle(PenBrushBlack, point.X + 1, point.Y + offsetY, cellWidth - 2, sz.Height - 1);
 
             g.DrawString(v.EventText, v.EventFont, new SolidBrush(v.EventTextColor), xx, yy + offsetY);
             g.Clip = r;
 
             // ORDISOFTWARE MODIF BEGIN
-            if ( events )
+            if ( generateEvents )
             {
               var ev = new CalendarEvent
               {
@@ -1168,7 +1167,6 @@ namespace Calendar.NET
         }
       }
       _rectangles.Clear();
-
       g.Dispose();
       e.Graphics.DrawImage(bmp, 0, 0, ClientSize.Width, ClientSize.Height);
       bmp.Dispose();
@@ -1176,48 +1174,45 @@ namespace Calendar.NET
 
     private bool NeedsRendering(IEvent evnt, DateTime day)
     {
-      if ( !evnt.Enabled && !_showDisabledEvents )
-        return false;
+      // ORDISOFTWARE MODIF BEGIN
+      //if ( !evnt.Enabled && !_showDisabledEvents ) return false;
+      // ORDISOFTWARE MODIF END
 
       DayOfWeek dw = evnt.Date.DayOfWeek;
 
       if ( evnt.RecurringFrequency == RecurringFrequencies.Daily )
-      {
         return DayForward(evnt, day);
-      }
+
       if ( evnt.RecurringFrequency == RecurringFrequencies.Weekly && day.DayOfWeek == dw )
-      {
         return DayForward(evnt, day);
-      }
-      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryWeekend && ( day.DayOfWeek == DayOfWeek.Saturday ||
-          day.DayOfWeek == DayOfWeek.Sunday ) )
+
+      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryWeekend && ( day.DayOfWeek == DayOfWeek.Saturday || day.DayOfWeek == DayOfWeek.Sunday ) )
         return DayForward(evnt, day);
-      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryMonWedFri && ( day.DayOfWeek == DayOfWeek.Monday ||
-          day.DayOfWeek == DayOfWeek.Wednesday || day.DayOfWeek == DayOfWeek.Friday ) )
-      {
+
+      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryMonWedFri && ( day.DayOfWeek == DayOfWeek.Monday || day.DayOfWeek == DayOfWeek.Wednesday || day.DayOfWeek == DayOfWeek.Friday ) )
         return DayForward(evnt, day);
-      }
-      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryTueThurs && ( day.DayOfWeek == DayOfWeek.Thursday ||
-          day.DayOfWeek == DayOfWeek.Tuesday ) )
+
+      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryTueThurs && ( day.DayOfWeek == DayOfWeek.Thursday || day.DayOfWeek == DayOfWeek.Tuesday ) )
         return DayForward(evnt, day);
-      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryWeekday && ( day.DayOfWeek != DayOfWeek.Sunday &&
-          day.DayOfWeek != DayOfWeek.Saturday ) )
+
+      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryWeekday && ( day.DayOfWeek != DayOfWeek.Sunday && day.DayOfWeek != DayOfWeek.Saturday ) )
         return DayForward(evnt, day);
-      if ( evnt.RecurringFrequency == RecurringFrequencies.Yearly && evnt.Date.Month == day.Month &&
-          evnt.Date.Day == day.Day )
+
+      if ( evnt.RecurringFrequency == RecurringFrequencies.Yearly && evnt.Date.Month == day.Month && evnt.Date.Day == day.Day )
         return DayForward(evnt, day);
+
       if ( evnt.RecurringFrequency == RecurringFrequencies.Monthly && evnt.Date.Day == day.Day )
         return DayForward(evnt, day);
+
       if ( evnt.RecurringFrequency == RecurringFrequencies.Custom && evnt.CustomRecurringFunction != null )
-      {
         if ( evnt.CustomRecurringFunction(evnt, day) )
           return DayForward(evnt, day);
-        return false;
-      }
+        else
+          return false;
 
-      if ( evnt.RecurringFrequency == RecurringFrequencies.None && evnt.Date.Year == day.Year &&
-          evnt.Date.Month == day.Month && evnt.Date.Day == day.Day )
+      if ( evnt.RecurringFrequency == RecurringFrequencies.None && evnt.Date.Year == day.Year && evnt.Date.Month == day.Month && evnt.Date.Day == day.Day )
         return DayForward(evnt, day);
+
       return false;
     }
 
