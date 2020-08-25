@@ -784,6 +784,16 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionSearchGregorianMonth for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSearchGregorianMonth_Click(object sender, EventArgs e)
+    {
+      new SearchGregorianMonthForm().ShowDialog();
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionNavigate for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

@@ -1256,5 +1256,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["AllowSuspendReminder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point SearchGregorianMonthFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["SearchGregorianMonthFormLocation"]));
+            }
+            set {
+                this["SearchGregorianMonthFormLocation"] = value;
+            }
+        }
     }
 }

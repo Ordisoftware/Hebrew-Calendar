@@ -46,11 +46,13 @@ namespace Ordisoftware.HebrewCalendar
           ActionSearchMonth.PerformClick();
           return true;
         case Keys.F7:
-        case Keys.Control | Keys.D:
-          ActionSearchDay.PerformClick();
+          ActionSearchGregorianMonth.PerformClick();
           return true;
         case Keys.Control | Keys.T:
           GoToDate(DateTime.Today);
+          return true;
+        case Keys.Control | Keys.D:
+          ActionSearchDay.PerformClick();
           return true;
         case Keys.Control | Keys.N:
         case Keys.F9:
