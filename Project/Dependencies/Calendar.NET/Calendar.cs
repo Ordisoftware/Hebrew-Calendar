@@ -919,6 +919,9 @@ namespace Calendar.NET
 
     private void RenderMonthCalendar(PaintEventArgs e)
     {
+      var chrono = new System.Diagnostics.Stopwatch();
+      chrono.Start();
+
       var brushDayFore = new SolidBrush(CurrentDayForeColor);
       var brushDayBack = new SolidBrush(CurrentDayBackColor);
       _calendarDays.Clear();
@@ -1110,14 +1113,18 @@ namespace Calendar.NET
         int renderOffsetY = 0;
 
         // ORDISOFTWARE MODIF BEGIN
-        //foreach ( IEvent v in _events )
-        var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
-        var list = _events.Where(ev => ( ev.Date.Year == _calendarDate.Year && ev.Date.Month == _calendarDate.Month )
-                                    && ( ev.Enabled || _showDisabledEvents ));
+        //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
+        var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 00, 00, 0);
+        var list = _events.Where(ev => ev.Date == dt
+                                    /*&& ( ev.Enabled || _showDisabledEvents )*/);
         foreach ( IEvent v in list )
+        //foreach ( IEvent v in _events )
         // ORDISOFTWARE MODIF END
         {
-          if ( NeedsRendering(v, dt) )
+          // ORDISOFTWARE MODIF BEGIN
+          if ( DayForward(v, dt) )
+          //if ( NeedsRendering(v, dt) )
+          // ORDISOFTWARE MODIF END
           {
             int alpha = !v.Enabled && _dimDisabledEvents ? alpha = 64 : 255;
             Color alphaColor = Color.FromArgb(alpha, v.EventColor.R, v.EventColor.G, v.EventColor.B);
@@ -1166,53 +1173,43 @@ namespace Calendar.NET
           }
         }
       }
+
       _rectangles.Clear();
       g.Dispose();
       e.Graphics.DrawImage(bmp, 0, 0, ClientSize.Width, ClientSize.Height);
       bmp.Dispose();
+
+      chrono.Stop();
+      MainForm.Instance.label2.Text = chrono.ElapsedMilliseconds.ToString();
     }
 
     private bool NeedsRendering(IEvent evnt, DateTime day)
     {
-      // ORDISOFTWARE MODIF BEGIN
-      //if ( !evnt.Enabled && !_showDisabledEvents ) return false;
-      // ORDISOFTWARE MODIF END
-
+      if ( !evnt.Enabled && !_showDisabledEvents ) return false;
       DayOfWeek dw = evnt.Date.DayOfWeek;
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.Daily )
         return DayForward(evnt, day);
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.Weekly && day.DayOfWeek == dw )
         return DayForward(evnt, day);
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.EveryWeekend && ( day.DayOfWeek == DayOfWeek.Saturday || day.DayOfWeek == DayOfWeek.Sunday ) )
         return DayForward(evnt, day);
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.EveryMonWedFri && ( day.DayOfWeek == DayOfWeek.Monday || day.DayOfWeek == DayOfWeek.Wednesday || day.DayOfWeek == DayOfWeek.Friday ) )
         return DayForward(evnt, day);
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.EveryTueThurs && ( day.DayOfWeek == DayOfWeek.Thursday || day.DayOfWeek == DayOfWeek.Tuesday ) )
         return DayForward(evnt, day);
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.EveryWeekday && ( day.DayOfWeek != DayOfWeek.Sunday && day.DayOfWeek != DayOfWeek.Saturday ) )
         return DayForward(evnt, day);
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.Yearly && evnt.Date.Month == day.Month && evnt.Date.Day == day.Day )
         return DayForward(evnt, day);
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.Monthly && evnt.Date.Day == day.Day )
         return DayForward(evnt, day);
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.Custom && evnt.CustomRecurringFunction != null )
         if ( evnt.CustomRecurringFunction(evnt, day) )
           return DayForward(evnt, day);
         else
           return false;
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.None && evnt.Date.Year == day.Year && evnt.Date.Month == day.Month && evnt.Date.Day == day.Day )
         return DayForward(evnt, day);
-
       return false;
     }
 
