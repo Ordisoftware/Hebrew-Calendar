@@ -67,58 +67,64 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the application code (title without space
     /// </summary>
-    static public string ApplicationCode
+    static public readonly string ApplicationCode
       = AssemblyTitle.Replace(" ", "");
+
+    /// <summary>
+    /// Indicate the application code (title without space
+    /// </summary>
+    static public readonly string HebrewCommonDirectoryName
+      = "Hebrew Common";
 
     /// <summary>
     /// Indicate the application home URL.
     /// </summary>
-    static public string ApplicationHomeURL
+    static public readonly string ApplicationHomeURL
       = AssemblyProduct;
 
-    static public string ApplicationChangeLogURL
+    static public readonly string ApplicationChangeLogURL
       = ApplicationHomeURL + "/#ChangeLog" + AssemblyVersion;
 
     /// <summary>
     /// Indicate the author home URL.
     /// </summary>
-    static public string AuthorHomeURL
+    static public readonly string AuthorHomeURL
       = AssemblyTrademark;
 
     /// <summary>
     /// Indicate the contact URL.
     /// </summary>
-    static public string ContactURL
+    static public readonly string ContactURL
       = AssemblyTrademark + "/contact";
 
     /// <summary>
     /// Indicate the check update URL.
     /// </summary>
-    static public string CheckUpdateURL
+    static public readonly string CheckUpdateURL
       = $"http://{AssemblyTrademark}/files/{ApplicationCode}.update";
 
     /// <summary>
     /// Indicate the setup file name.
     /// </summary>
-    static public string SetupFilename
+    static public readonly string SetupFilename
       = $"{AssemblyCompany}{ApplicationCode}Setup-%VER%.exe";
 
     /// <summary>
     /// Indicate the new version setup file.
     /// </summary>
-    static public string SetupFileURL
+    static public readonly string SetupFileURL
       = $"http://{AssemblyTrademark}/files/{SetupFilename}";
 
     /// <summary>
     /// Indicate the GitHub repository.
     /// </summary>
-    static public string GitHubRepositoryURL
+    static public readonly string GitHubRepositoryURL
       = $"https://github.com/{AssemblyCompany}/{AssemblyTitle.Replace(" ", "-")}";
 
     /// <summary>
     /// Indicate the create GitHub issue url.
     /// </summary>
-    static public string GitHubCreateIssueURL
+    static public readonly string GitHubCreateIssueURL
       = GitHubRepositoryURL + "/issues/new?assignees=" + AssemblyCompany;
 
     /// <summary>
@@ -171,44 +177,54 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the filename of the help.
     /// </summary>
-    static public string HelpFolderPath
+    static public readonly string HelpFolderPath
       = RootFolderPath + "Help" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application documents folder.
     /// </summary>
-    static public string DocumentsFolderPath
+    static public readonly string DocumentsFolderPath
       = RootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web links folder.
     /// </summary>
-    static public string WebLinksFolderPath
+    static public readonly string WebLinksFolderPath
       = DocumentsFolderPath + "WebLinks" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web providers folder.
     /// </summary>
-    static public string WebProvidersFolderPath
+    static public readonly string WebProvidersFolderPath
       = DocumentsFolderPath + "WebProviders" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web links folder.
     /// </summary>
-    static public string GuidesFolderPath
+    static public readonly string GuidesFolderPath
       = DocumentsFolderPath + "Guides" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate filename of the grammar guide.
     /// </summary>
     static public string GrammarGuideFilename
-      = GuidesFolderPath + $"grammar-%LANG%.htm";
+    {
+      get
+      {
+        return GuidesFolderPath + $"grammar-%LANG%.htm";
+      }
+    }
 
     /// <summary>
     /// Indicate filename of the method notice.
     /// </summary>
     static public string MethodNoticeFilename
-      = GuidesFolderPath + $"method-%LANG%.htm";
+    {
+      get
+      {
+        return GuidesFolderPath + $"method-%LANG%.htm";
+      }
+    }
 
     /// <summary>
     /// Indicate the filename of the help.
@@ -268,7 +284,7 @@ namespace Ordisoftware.HebrewCommon
                     + Path.DirectorySeparatorChar
                     + AssemblyCompany
                     + Path.DirectorySeparatorChar
-                    + "Hebrew Common"
+                    + HebrewCommonDirectoryName
                     + Path.DirectorySeparatorChar;
         Directory.CreateDirectory(path);
         return path;
@@ -286,7 +302,7 @@ namespace Ordisoftware.HebrewCommon
                     + Path.DirectorySeparatorChar
                     + AssemblyCompany
                     + Path.DirectorySeparatorChar
-                    + "Hebrew Common"
+                    + HebrewCommonDirectoryName
                     + Path.DirectorySeparatorChar;
         Directory.CreateDirectory(path);
         return path;
