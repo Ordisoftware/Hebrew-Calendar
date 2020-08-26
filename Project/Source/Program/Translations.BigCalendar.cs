@@ -44,28 +44,26 @@ namespace Ordisoftware.HebrewCalendar
         new Dictionary<string, string>
         {
           { Localizer.EN, AskToGenerateBigCalendarEN + "a noticeable slowdown." + Localizer.NL + Localizer.NL +
-                          "Do not use this value for a daily usage." + Localizer.NL + Localizer.NL +
                           Globals.DoYouWantToContinue[Localizer.EN] },
           { Localizer.FR, AskToGenerateBigCalendarFR + "un ralentissement notable." + Localizer.NL + Localizer.NL +
-                          "N'utilisez pas cette valeur pour un usage quotidien." + Localizer.NL + Localizer.NL +
                           Globals.DoYouWantToContinue[Localizer.FR] },
         },
         new Dictionary<string, string>
         {
           { Localizer.EN, AskToGenerateBigCalendarEN + "a significant slowdown." + Localizer.NL + Localizer.NL +
-                          "Use this value only for occasional searches." + Localizer.NL + Localizer.NL +
+                          "Do not use this value for a daily usage." + Localizer.NL + Localizer.NL +
                           Globals.DoYouWantToContinue[Localizer.EN] },
-          { Localizer.FR, AskToGenerateBigCalendarFR + "un important ralentissement." + Localizer.NL + Localizer.NL +
-                          "N'utilisez cette valeur que pour des recherches ponctuelles." + Localizer.NL + Localizer.NL +
+          { Localizer.FR, AskToGenerateBigCalendarFR + "un ralentissement important." + Localizer.NL + Localizer.NL +
+                          "N'utilisez pas cette valeur pour un usage quotidien." + Localizer.NL + Localizer.NL +
                           Globals.DoYouWantToContinue[Localizer.FR] },
         },
         new Dictionary<string, string>
         {
           { Localizer.EN, AskToGenerateBigCalendarEN + "a considerable slowdown." + Localizer.NL + Localizer.NL +
-                          "Use this value only with a powerful computer." + Localizer.NL + Localizer.NL +
+                          "Use this value only for occasional searches." + Localizer.NL + Localizer.NL +
                           Globals.DoYouWantToContinue[Localizer.EN] },
           { Localizer.FR, AskToGenerateBigCalendarFR + "ralentissement considérable." + Localizer.NL + Localizer.NL +
-                          "N'utiliser cette valeur qu'avec un ordinateur puissant." + Localizer.NL + Localizer.NL +
+                          "N'utilisez cette valeur que pour des recherches ponctuelles." + Localizer.NL + Localizer.NL +
                           Globals.DoYouWantToContinue[Localizer.FR] },
         },
         new Dictionary<string, string>
@@ -74,7 +72,7 @@ namespace Ordisoftware.HebrewCalendar
                           "Use this value only with a powerful computer." + Localizer.NL + Localizer.NL +
                           Globals.DoYouWantToContinue[Localizer.EN] },
           { Localizer.FR, AskToGenerateBigCalendarFR + "ralentissement sévère." + Localizer.NL + Localizer.NL +
-                          "N'utiliser cette valeur qu'avec un ordinateur très puissant." + Localizer.NL + Localizer.NL +
+                          "N'utiliser cette valeur qu'avec un ordinateur puissant." + Localizer.NL + Localizer.NL +
                           Globals.DoYouWantToContinue[Localizer.FR] },
         }
       };

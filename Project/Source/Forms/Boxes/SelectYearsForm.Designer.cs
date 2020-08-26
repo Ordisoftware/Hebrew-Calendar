@@ -109,6 +109,7 @@
       this.ActionPrefefinedInterval.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionPrefefinedInterval, "ActionPrefefinedInterval");
       this.ActionPrefefinedInterval.Name = "ActionPrefefinedInterval";
+      this.ActionPrefefinedInterval.TabStop = false;
       this.ActionPrefefinedInterval.UseVisualStyleBackColor = true;
       this.ActionPrefefinedInterval.Click += new System.EventHandler(this.ActionPrefefinedInterval_Click);
       // 
