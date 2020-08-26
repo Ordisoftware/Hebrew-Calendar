@@ -323,7 +323,7 @@ namespace Ordisoftware.HebrewCalendar
           switch ( Program.Settings.TrayIconClickOpen )
           {
             case TrayIconClickOpen.MainForm:
-              MenuShowHide.PerformClick();
+              MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? new EventArgs() : null);
               break;
             case TrayIconClickOpen.NavigationForm:
               var form = NavigationForm.Instance;
