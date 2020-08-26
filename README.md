@@ -153,6 +153,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Add mute windows volume in addition to stop media playing.
 - Fix stop media playing (stop instead of play/pause media).
 - Fix app not responding on windows logoff or system shutdown.
+- Improve years to generate box with predefined intervals and change some constants.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve month view drawing speed by a half.
 - Some UI/UX improvements.
