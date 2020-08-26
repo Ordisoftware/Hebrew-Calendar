@@ -155,6 +155,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Fix app not responding on windows logoff or system shutdown.
 - Improve years to generate box with predefined intervals and change some constants.
 - Improve check update to allow auto update or direct download or open app web page.
+- Improve check update to auto check every week while running.
 - Improve month view drawing speed by a half.
 - Some UI/UX improvements.
 - Some code refactorings.
