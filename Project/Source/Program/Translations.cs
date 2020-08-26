@@ -124,7 +124,7 @@ namespace Ordisoftware.HebrewCalendar
       = new Dictionary<string, string>()
       {
         { Localizer.EN, "Birth day" },
-        { Localizer.FR, "Date de naissance" }
+        { Localizer.FR, "Jour de naissance" }
       };
 
     static public readonly Dictionary<string, string> FirstDay
