@@ -102,8 +102,10 @@ namespace Ordisoftware.HebrewCalendar
         if ( DateTime.Today.Year >= YearLast )
         {
           var diff = YearLast - YearFirst;
-          if ( diff < SelectYearsForm.GenerateIntervalDefault )
-            diff = SelectYearsForm.GenerateIntervalDefault;
+          if ( diff < Program.GenerateIntervalMinimum )
+            diff = Program.GenerateIntervalMinimum;
+          if ( diff > Program.GenerateIntervalMaximum )
+            diff = Program.GenerateIntervalMaximum;
           YearFirst = DateTime.Today.Year - 1;
           YearLast = YearFirst + diff;
           DoGenerate(this, new EventArgs());

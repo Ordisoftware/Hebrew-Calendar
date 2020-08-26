@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectYearsForm));
       this.EditYearLast = new System.Windows.Forms.NumericUpDown();
       this.LabelYearLast = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
       this.ActionOk = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
+      this.ActionPrefefinedInterval = new System.Windows.Forms.Button();
+      this.MenuPredefinedYears = new System.Windows.Forms.ContextMenuStrip(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).BeginInit();
       this.PanelBottom.SuspendLayout();
@@ -99,12 +102,29 @@
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
       // 
+      // ActionPrefefinedInterval
+      // 
+      this.ActionPrefefinedInterval.AllowDrop = true;
+      this.ActionPrefefinedInterval.ContextMenuStrip = this.MenuPredefinedYears;
+      this.ActionPrefefinedInterval.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionPrefefinedInterval, "ActionPrefefinedInterval");
+      this.ActionPrefefinedInterval.Name = "ActionPrefefinedInterval";
+      this.ActionPrefefinedInterval.UseVisualStyleBackColor = true;
+      this.ActionPrefefinedInterval.Click += new System.EventHandler(this.ActionPrefefinedInterval_Click);
+      // 
+      // MenuPredefinedYears
+      // 
+      this.MenuPredefinedYears.Name = "MenuSelectMoonDayTextFormat";
+      this.MenuPredefinedYears.ShowImageMargin = false;
+      resources.ApplyResources(this.MenuPredefinedYears, "MenuPredefinedYears");
+      // 
       // SelectYearsForm
       // 
       this.AcceptButton = this.ActionOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.ActionPrefefinedInterval);
       this.Controls.Add(this.PanelBottom);
       this.Controls.Add(this.EditYearLast);
       this.Controls.Add(this.LabelYearLast);
@@ -133,5 +153,7 @@
     internal System.Windows.Forms.NumericUpDown EditYearLast;
     internal System.Windows.Forms.NumericUpDown EditYearFirst;
     internal System.Windows.Forms.Button ActionCancel;
+    private System.Windows.Forms.Button ActionPrefefinedInterval;
+    private System.Windows.Forms.ContextMenuStrip MenuPredefinedYears;
   }
 }

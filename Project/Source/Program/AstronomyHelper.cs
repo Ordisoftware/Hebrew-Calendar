@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// Indicate the japanese calendar instance.
+    /// Indicate the system lunisolar calendar instance.
     /// </summary>
     static public readonly VietnameseCalendar LunisolerCalendar
       = new VietnameseCalendar();

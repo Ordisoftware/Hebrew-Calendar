@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
 using Ordisoftware.Core;
@@ -23,80 +24,84 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectYearsForm : Form
   {
 
-    public const int GenerateIntervalPeriod = 120;
-    public const int GenerateIntervalDefault = 5;
-    public const int GenerateIntervalMin = 2;
-
     private bool Mutex;
-    private int Year;
+    private int CurrentYear;
 
     public SelectYearsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      foreach ( int value in Program.PredefinedYearsIntervals )
+      {
+        var item = new ToolStripMenuItem();
+        item.Text = Translations.PredefinedYearsInterval.GetLang(value);
+        item.Tag = value.ToString();
+        item.Click += PredefinedYearsItem_Click;
+        MenuPredefinedYears.Items.Add(item);
+      }
     }
 
     private void SelectYearsRangeForm_Load(object sender, EventArgs e)
     {
       Mutex = true;
-      Year = DateTime.Today.AddYears(-1).Year;
-      EditYearFirst.Minimum = Year - GenerateIntervalPeriod;
-      EditYearFirst.Maximum = Year + GenerateIntervalPeriod;
-      EditYearLast.Minimum = Year - GenerateIntervalPeriod;
-      EditYearLast.Maximum = Year + GenerateIntervalPeriod;
-      EditYearFirst.Value = Year;
-      EditYearLast.Value = Year + GenerateIntervalDefault - 1;
+      CurrentYear = DateTime.Today.AddYears(-1).Year;
+      if ( CurrentYear < AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year
+        || CurrentYear + Program.GenerateIntervalMinimum - 1 > AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year )
+        throw new Exception("Current year is not supported");
+      var year = MainForm.Instance.YearFirst == 0
+               ? CurrentYear
+               : MainForm.Instance.YearFirst;
+      EditYearFirst.Minimum = CurrentYear + Program.GenerateIntervalMinimum - Program.GenerateIntervalMaximum + 1;
+      EditYearFirst.Maximum = CurrentYear;
+      EditYearLast.Minimum = CurrentYear + Program.GenerateIntervalMinimum;
+      EditYearLast.Maximum = CurrentYear + Program.GenerateIntervalMaximum - 1;
+      if ( EditYearFirst.Minimum < AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year + 1 )
+        EditYearFirst.Minimum = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year + 1;
+      if ( EditYearLast.Maximum > AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year - 1 )
+        EditYearLast.Maximum = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year - 1;
       Mutex = false;
+      EditYearFirst.Value = year;
+      EditYearLast.Value = MainForm.Instance.YearLast == 0
+                         ? year + Program.GenerateIntervalDefault - 1
+                         : MainForm.Instance.YearLast;
+    }
+
+    private void ActionPrefefinedInterval_Click(object sender, EventArgs e)
+    {
+      MenuPredefinedYears.Show(ActionPrefefinedInterval, new Point(0, ActionPrefefinedInterval.Height));
+    }
+
+    private void PredefinedYearsItem_Click(object sender, EventArgs e)
+    {
+      EditYearFirst.Value = CurrentYear;
+      EditYearLast.Value = CurrentYear + int.Parse((string)( sender as ToolStripMenuItem ).Tag) - 1;
     }
 
     private void EditYearFirst_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      if ( EditYearFirst.Value < AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year + 1 )
-        EditYearFirst.Value = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year + 1;
-      if ( EditYearFirst.Value > Year )
-        EditYearFirst.Value = Year;
-      if ( EditYearLast.Value - EditYearFirst.Value > GenerateIntervalPeriod )
-        EditYearLast.Value = EditYearFirst.Value + GenerateIntervalPeriod;
+      if ( EditYearLast.Value - EditYearFirst.Value >= Program.GenerateIntervalMaximum )
+        EditYearLast.Value = EditYearFirst.Value + Program.GenerateIntervalMaximum - 1;
     }
 
     private void EditYearLast_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      if ( EditYearLast.Value > AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year - 1 )
-        EditYearLast.Value = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year - 1;
-      if ( EditYearLast.Value < Year + GenerateIntervalMin )
-        EditYearLast.Value = Year + GenerateIntervalMin;
-      if ( EditYearLast.Value - EditYearFirst.Value > GenerateIntervalPeriod )
-        EditYearFirst.Value = EditYearLast.Value - GenerateIntervalPeriod;
+      if ( EditYearLast.Value - EditYearFirst.Value >= Program.GenerateIntervalMaximum )
+        EditYearFirst.Value = EditYearLast.Value - Program.GenerateIntervalMaximum + 1;
     }
 
     private void ActionOk_Click(object sender, EventArgs e)
     {
-      var diff = EditYearLast.Value - EditYearFirst.Value;
-      if ( diff >= Translations.BigCalendar4 )
-      {
-        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar4.GetLang(Translations.BigCalendar4, diff)) )
-          return;
-      }
-      else
-      if ( diff >= Translations.BigCalendar3 )
-      {
-        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar3.GetLang(Translations.BigCalendar3, diff)) )
-          return;
-      }
-      else
-      if ( diff >= Translations.BigCalendar2 )
-      {
-        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar2.GetLang(Translations.BigCalendar2, diff)) )
-          return;
-      }
-      else
-      if ( diff >= Translations.BigCalendar1 )
-      {
-        if ( !DisplayManager.QueryYesNo(Translations.AskToGenerateBigCalendar1.GetLang(Translations.BigCalendar1, diff)) )
-          return;
-      }
+      var diff = EditYearLast.Value - EditYearFirst.Value + 1;
+      for ( int index = Program.BigCalendar.Length - 1; index >= 0; index-- )
+        if ( diff >= Program.BigCalendar[index] )
+        {
+          string text = Translations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendar[index], diff);
+          if ( !DisplayManager.QueryYesNo(text) )
+            return;
+          break;
+        }
       DialogResult = DialogResult.OK;
       ActionCancel.Enabled = true;
     }
@@ -106,6 +111,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
       if ( !ActionCancel.Enabled ) e.Cancel = true;
     }
+
   }
 
 }

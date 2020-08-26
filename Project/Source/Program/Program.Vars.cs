@@ -26,6 +26,26 @@ namespace Ordisoftware.HebrewCalendar
   static partial class Program
   {
 
+    public const int GenerateIntervalMaximum = 200;
+    public const int GenerateIntervalDefault = 5;
+    public const int GenerateIntervalMinimum = 2;
+
+    static public readonly int[] BigCalendar =
+    {
+      15,
+      30,
+      50,
+      80,
+      120
+    };
+
+    static public readonly int[] PredefinedYearsIntervals =
+    {
+      5,
+      10,
+      20
+    };
+
     /// <summary>
     /// Indicate phonetic moon months names.
     /// </summary>
