@@ -73,7 +73,10 @@ namespace Ordisoftware.HebrewCalendar
     private void CelebrationsForm_Load(object sender, EventArgs e)
     {
       if ( Location.X < 0 || Location.Y < 0 )
-        this.CenterToMainForm();
+        if ( Globals.MainForm.Visible && Globals.MainForm.WindowState != FormWindowState.Minimized )
+          this.CenterToMainForm();
+        else
+          CenterToScreen();
     }
 
     private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)

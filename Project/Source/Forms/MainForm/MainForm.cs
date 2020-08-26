@@ -212,7 +212,7 @@ namespace Ordisoftware.HebrewCalendar
           TopMost = old;
         }
         else
-        if ( !Visible || e == null)
+        if ( !Visible || e == null )
         {
           FormBorderStyle = FormBorderStyle.Sizable;
           Visible = true;
@@ -449,8 +449,12 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
+      bool formEnabled = Globals.MainForm.Enabled;
       try
       {
+        Enabled = false;
+        ActionPreferences.Visible = false;
+        ActionPreferences.Visible = true;
         TimerReminder.Enabled = false;
         MenuTray.Enabled = false;
         ClearLists();
@@ -471,9 +475,9 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
+        Enabled = formEnabled;
         MenuTray.Enabled = true;
         TimerReminder.Enabled = !MenuEnableReminder.Enabled;
-        Refresh();
         TimerReminder_Tick(null, null);
       }
     }
@@ -532,17 +536,26 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionCheckUpdate for click events.
+    /// Event handler. Called by ActionWebCheckUpdate for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionCheckUpdate_Click(object sender, EventArgs e)
+    private void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
-      Program.Settings.CheckUpdateLastDone = DateTime.Now;
-      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, e != null) )
+      bool menuEnabled = MenuTray.Enabled;
+      try
       {
-        Globals.AllowClose = true;
-        Close();
+        MenuTray.Enabled = false;
+        Program.Settings.CheckUpdateLastDone = DateTime.Now;
+        if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, e == null) )
+        {
+          Globals.AllowClose = true;
+          Close();
+        }
+      }
+      finally
+      {
+        MenuTray.Enabled = menuEnabled;
       }
     }
 
@@ -998,8 +1011,8 @@ namespace Ordisoftware.HebrewCalendar
         if ( SQLite.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
         if ( Program.Settings.CheckUpdateEveryWeek )
-          if ( Program.Settings.CheckUpdateLastDone.AddDays(WebCheckUpdate.DefaultCheckDaysInterval) < DateTime.Now )
-            ActionWebCheckUpdate.PerformClick();
+          //if ( Program.Settings.CheckUpdateLastDone.AddDays(WebCheckUpdate.DefaultCheckDaysInterval) < DateTime.Now )
+          ActionWebCheckUpdate_Click(null, null);
       });
     }
 

@@ -42,6 +42,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( auto && !checkAtStartup ) return false;
       if ( Mutex ) return false;
+      bool formEnabled = Globals.MainForm.Enabled;
       try
       {
         Mutex = true;
@@ -106,7 +107,7 @@ namespace Ordisoftware.HebrewCommon
       }
       finally
       {
-        Globals.MainForm.Enabled = true;
+        Globals.MainForm.Enabled = formEnabled;
         Mutex = false;
       }
       return false;

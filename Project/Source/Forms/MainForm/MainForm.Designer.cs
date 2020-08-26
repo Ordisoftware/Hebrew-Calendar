@@ -657,7 +657,7 @@
       this.ActionWebCheckUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionWebCheckUpdate, "ActionWebCheckUpdate");
       this.ActionWebCheckUpdate.Name = "ActionWebCheckUpdate";
-      this.ActionWebCheckUpdate.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
+      this.ActionWebCheckUpdate.Click += new System.EventHandler(this.ActionWebCheckUpdate_Click);
       // 
       // toolStripSeparator9
       // 

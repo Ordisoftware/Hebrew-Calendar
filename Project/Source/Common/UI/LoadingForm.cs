@@ -24,7 +24,10 @@ namespace Ordisoftware.HebrewCommon
     public LoadingForm()
     {
       InitializeComponent();
-      this.CenterToMainForm();
+      if ( Globals.MainForm.Visible && Globals.MainForm.WindowState != FormWindowState.Minimized )
+        this.CenterToMainForm();
+      else
+        CenterToScreen();
     }
 
     public void UpdateProgress(int index, int count, string text)

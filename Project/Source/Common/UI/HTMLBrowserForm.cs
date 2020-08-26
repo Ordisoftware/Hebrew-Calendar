@@ -55,7 +55,10 @@ namespace Ordisoftware.HebrewCommon
     private void HTMLBrowserForm_Load(object sender, EventArgs e)
     {
       if ( Location.X < 0 || Location.Y < 0 )
-        this.CenterToMainForm();
+        if ( Globals.MainForm.Visible && Globals.MainForm.WindowState != FormWindowState.Minimized )
+          this.CenterToMainForm();
+        else
+          CenterToScreen();
     }
 
     internal void HTMLBrowserForm_Shown(object sender, EventArgs e)

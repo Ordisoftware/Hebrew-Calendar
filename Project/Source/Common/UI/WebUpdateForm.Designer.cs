@@ -99,6 +99,7 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "WebUpdateForm";
+      this.TopMost = true;
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
