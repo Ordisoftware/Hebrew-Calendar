@@ -72,8 +72,10 @@ namespace Ordisoftware.HebrewCalendar
     {
       Program.Settings.Retrieve();
       if ( Globals.IsExiting ) return;
-      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) )
-        return;
+      var lastdone = Program.Settings.CheckUpdateLastDone;
+      bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true, ref lastdone);
+      Program.Settings.CheckUpdateLastDone = lastdone;
+      if ( exit ) return;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
       InitializeCalendarUI();
@@ -538,7 +540,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
-      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, false) )
+      var lastdone = Program.Settings.CheckUpdateLastDone;
+      bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, e != null, ref lastdone);
+      Program.Settings.CheckUpdateLastDone = lastdone;
+      if ( exit ) 
       {
         Globals.AllowClose = true;
         Close();
@@ -995,6 +1000,9 @@ namespace Ordisoftware.HebrewCalendar
         CalendarMonth.Refresh();
         if ( SQLite.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
+        if ( Program.Settings.CheckUpdateAtStartup )
+          if ( Program.Settings.CheckUpdateLastDone.AddDays(WebCheckUpdate.DefaultCheckDaysInterval) < DateTime.Now )
+            ActionWebCheckUpdate.PerformClick();
       });
     }
 
@@ -1045,6 +1053,10 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private void button1_Click(object sender, EventArgs e)
+    {
+      TimerMidnight_Tick(DateTime.Now);
+    }
   }
 
 }

@@ -27,6 +27,9 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   static class WebCheckUpdate
   {
+    static public int DefaultCheckDaysInterval = 7;
+
+    static private bool Mutex;
 
     /// <summary>
     /// Check if an update is available online and offer to install, download or open product web page.
@@ -35,11 +38,14 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="checkAtStartup"></param>
     /// <param name="auto">True if no user interaction else false</param>
     /// <returns>True if application must exist else false.</returns>
-    static public bool Run(bool checkAtStartup, bool auto)
+    static public bool Run(bool checkAtStartup, bool auto, ref DateTime lastdone)
     {
       if ( auto && !checkAtStartup ) return false;
+      if ( Mutex ) return false;
       try
       {
+        Mutex = true;
+        lastdone = DateTime.Now;
         foreach ( string s in Directory.GetFiles(Path.GetTempPath(), Globals.SetupFilename.Replace("%VER%", "*")) )
           try { File.Delete(s); }
           catch { }
@@ -97,6 +103,10 @@ namespace Ordisoftware.HebrewCommon
       catch ( Exception ex )
       {
         DisplayManager.ShowAdvert(DisplayManager.Title + " Check Update", ex.Message);
+      }
+      finally
+      {
+        Mutex = false;
       }
       return false;
     }

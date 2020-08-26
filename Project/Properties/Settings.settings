@@ -319,5 +319,8 @@
     <Setting Name="SearchGregorianMonthFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">-1, -1</Value>
     </Setting>
+    <Setting Name="CheckUpdateLastDone" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2020-01-01</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

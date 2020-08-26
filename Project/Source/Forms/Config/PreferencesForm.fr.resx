@@ -163,14 +163,17 @@
   <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
     <value>Utiliser le shabat personnel</value>
   </data>
+  <data name="GroupBoxGPS.Text" xml:space="preserve">
+    <value>Coordonnées GPS</value>
+  </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 13</value>
   </data>
   <data name="ActionGetGPS.Text" xml:space="preserve">
     <value>Ouvrir le découvreur de GPS</value>
   </data>
-  <data name="GroupBoxGPS.Text" xml:space="preserve">
-    <value>Coordonnées GPS</value>
+  <data name="GroupBoxTextReport.Text" xml:space="preserve">
+    <value>Polices de caractères</value>
   </data>
   <data name="LabelBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -190,14 +193,27 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Taille de la police de la vue par mois</value>
   </data>
-  <data name="GroupBoxTextReport.Text" xml:space="preserve">
-    <value>Polices de caractères</value>
-  </data>
   <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.Text" xml:space="preserve">
     <value>Heures avant le rappel</value>
+  </data>
+  <data name="ActionPersonalShabatHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 13</value>
@@ -216,6 +232,9 @@
   </data>
   <data name="EditReminderShabatEnabled.Text" xml:space="preserve">
     <value>Rappeler</value>
+  </data>
+  <data name="GroupBoxNavigation.Text" xml:space="preserve">
+    <value>Fenêtre de navigation </value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
@@ -249,9 +268,6 @@
   </data>
   <data name="LabelMiddleColor.Text" xml:space="preserve">
     <value>Centre</value>
-  </data>
-  <data name="GroupBoxNavigation.Text" xml:space="preserve">
-    <value>Fenêtre de navigation </value>
   </data>
   <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 17</value>
@@ -288,6 +304,9 @@
   </data>
   <data name="EditStartupHide.Text" xml:space="preserve">
     <value>Cacher l'application au démarrage</value>
+  </data>
+  <data name="GroupBoxReminder.Text" xml:space="preserve">
+    <value>Célébrations</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 13</value>
@@ -355,14 +374,14 @@
   <data name="EditReminderCelebrationsEnabled.Text" xml:space="preserve">
     <value>Rappeler</value>
   </data>
-  <data name="GroupBoxReminder.Text" xml:space="preserve">
-    <value>Célébrations</value>
-  </data>
   <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
     <value>264, 17</value>
   </data>
   <data name="EditMonthViewSunToolTips.Text" xml:space="preserve">
     <value>Afficher levers et couchers soleil dans vue du mois</value>
+  </data>
+  <data name="GroupBoxMonth.Text" xml:space="preserve">
+    <value>Vue du mois</value>
   </data>
   <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 13</value>
@@ -405,9 +424,6 @@
   </data>
   <data name="LabelColorToday.Text" xml:space="preserve">
     <value>Aujourd'hui</value>
-  </data>
-  <data name="GroupBoxMonth.Text" xml:space="preserve">
-    <value>Vue du mois</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -474,10 +490,10 @@
     <value>Afficher les rappels dans la barre de tâche</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 17</value>
+    <value>272, 17</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
-    <value>Vérifier mise à jour au démarrage</value>
+    <value>Vérifier mise à jour au démarrage et chaque semaine</value>
   </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
@@ -485,11 +501,20 @@
   <data name="EditDebuggerEnabled.Text" xml:space="preserve">
     <value>Activer le débogueur</value>
   </data>
+  <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 17</value>
+  </data>
+  <data name="EditAllowSuspendReminder.Text" xml:space="preserve">
+    <value>Autoriser la suspension du rappeleur</value>
+  </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 17</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Text" xml:space="preserve">
     <value>Activer le menu des liens web</value>
+  </data>
+  <data name="GroupBoxMoonDayTextFormat.Text" xml:space="preserve">
+    <value>Format texte jour de la lune</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -522,13 +547,7 @@
         kM5gAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="GroupBoxMoonDayTextFormat.Text" xml:space="preserve">
-    <value>Format texte jour de la lune</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="EditAllowSuspendReminder.Text" xml:space="preserve">
-    <value>Autoriser la suspension du rappeleur</value>
   </data>
 </root>

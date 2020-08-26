@@ -174,6 +174,7 @@
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
+      this.button1 = new System.Windows.Forms.Button();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -531,6 +532,7 @@
       // PanelTitle
       // 
       this.PanelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.PanelTitle.Controls.Add(this.button1);
       this.PanelTitle.Controls.Add(this.LabelTitle);
       resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.Name = "PanelTitle";
@@ -1320,6 +1322,13 @@
       // 
       this.ReportTableAdapter.ClearBeforeFill = true;
       // 
+      // button1
+      // 
+      resources.ApplyResources(this.button1, "button1");
+      this.button1.Name = "button1";
+      this.button1.UseVisualStyleBackColor = true;
+      this.button1.Click += new System.EventHandler(this.button1_Click);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1507,6 +1516,7 @@
     private System.Windows.Forms.ToolStripMenuItem MenuTools;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     private System.Windows.Forms.ToolStripButton ActionSearchGregorianMonth;
+    private System.Windows.Forms.Button button1;
   }
 }
 
