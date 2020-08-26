@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static ToolStripMenuItem CreateConfigureMenuItem(EventHandler click)
     {
-      var item = new ToolStripMenuItem(Globals.ConfigureProviders.GetLang(), ImageConfigure);
+      var item = new ToolStripMenuItem(Localizer.ConfigureProviders.GetLang(), ImageConfigure);
       item.ImageScaling = ToolStripItemImageScaling.None;
       item.Click += click;
       return item;
@@ -143,7 +143,7 @@ namespace Ordisoftware.HebrewCommon
             {
               if ( e.Button != MouseButtons.Right ) return;
               ( (ToolStripDropDownButton)menu.OwnerItem ).HideDropDown();
-              if ( !DisplayManager.QueryYesNo(Globals.AskToOpenAllLinks.GetLang(menu.Text)) ) return;
+              if ( !DisplayManager.QueryYesNo(Localizer.AskToOpenAllLinks.GetLang(menu.Text)) ) return;
               foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
                 if ( item.Tag != null )
                 {

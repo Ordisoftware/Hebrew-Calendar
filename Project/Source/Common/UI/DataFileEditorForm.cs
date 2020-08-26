@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( !File.Exists(file.Filename) )
       {
-        DisplayManager.ShowError(Globals.FileNotFound.GetLang(file.Filename));
+        DisplayManager.ShowError(Localizer.FileNotFound.GetLang(file.Filename));
         return;
       }
       var textbox = new UndoRedoTextBox();
@@ -94,7 +94,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Globals.AskToLoadInstalledData.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(Localizer.AskToLoadInstalledData.GetLang()) ) return;
       foreach ( TabPage page in TabControl.TabPages )
         try
         {

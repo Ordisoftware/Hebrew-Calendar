@@ -201,7 +201,7 @@ namespace Ordisoftware.Core.Windows.Forms
                      + "&labels=type: bug"
                      + "&body=";
         string body = "## COMMENT" + NewLine2
-                    + Globals.GitHubIssueComment.GetLang() + NewLine2
+                    + Localizer.GitHubIssueComment.GetLang() + NewLine2
                     + "## ERROR : " + ErrorInfo.Instance.GetType().Name + NewLine2
                     + ErrorInfo.Message + NewLine2
                     + "#### _STACK_" + NewLine2

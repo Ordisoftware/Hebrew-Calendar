@@ -37,24 +37,10 @@ namespace Ordisoftware.HebrewCalendar
       {
         { Localizer.EN, "Preferences will be reseted to their default values." + Localizer.NL + Localizer.NL +
                         "GPS location and shabat day will be keeped." + Localizer.NL + Localizer.NL +
-                        Globals.DoYouWantToContinue[Localizer.EN] },
+                        Localizer.AskToContinue[Localizer.EN] },
         { Localizer.FR, "Les préférences vont être réinitialisées à leurs valeurs par défaut." + Localizer.NL + Localizer.NL +
                         "La position GPS et le jour du shabat seront conservés." + Localizer.NL + Localizer.NL +
-                        Globals.DoYouWantToContinue[Localizer.FR] },
-      };
-
-    static public readonly Dictionary<string, string> AskToShutdownComputer
-      = new Dictionary<string, string>()
-      {
-        { Localizer.EN, "Shutdown the computer?" },
-        { Localizer.FR, "Arrêter l'ordinateur ?" }
-      };
-
-    static public readonly Dictionary<string, string> LockSessionError
-      = new Dictionary<string, string>()
-      {
-        { Localizer.EN, "Lock session error: {0}" },
-        { Localizer.FR, "Erreur de vérouillage de la session : {0}" }
+                        Localizer.AskToContinue[Localizer.FR] },
       };
 
     static public readonly Dictionary<string, string> CantExitWhileGenerating

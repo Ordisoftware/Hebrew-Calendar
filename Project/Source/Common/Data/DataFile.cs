@@ -99,7 +99,7 @@ namespace Ordisoftware.HebrewCommon
         if ( !File.Exists(FilenameDefault) )
         {
           if ( ShowFileNotFound )
-            DisplayManager.ShowError(Globals.FileNotFound.GetLang(FilenameDefault));
+            DisplayManager.ShowError(Localizer.FileNotFound.GetLang(FilenameDefault));
           return "";
         }
         else

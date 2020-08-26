@@ -74,7 +74,7 @@ namespace Ordisoftware.HebrewCommon
         var lines = File.ReadAllLines(filename);
         for ( int index = 0; index < lines.Length; index++ )
         {
-          void showError() => DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index + 1, lines[index]));
+          void showError() => DisplayManager.ShowError(Localizer.ErrorInFile.GetLang(filename, index + 1, lines[index]));
           string line = lines[index].Trim();
           if ( line == "" ) continue;
           if ( line.StartsWith(";") ) continue;

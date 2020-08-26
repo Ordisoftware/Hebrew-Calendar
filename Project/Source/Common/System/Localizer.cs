@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide localization helper.
   /// </summary>
-  static public class Localizer
+  static public partial class Localizer
   {
 
     /// <summary>

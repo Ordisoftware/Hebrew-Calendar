@@ -62,10 +62,10 @@ namespace Ordisoftware.HebrewCalendar
 
     internal void AboutBox_Shown(object sender, EventArgs e)
     {
-      Text = Globals.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
+      Text = Localizer.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
       LabelTitle.Text = Globals.AssemblyTitle;
       LabelDescription.Text = Translations.ApplicationDescription.GetLang();
-      LabelVersion.Text = Globals.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
+      LabelVersion.Text = Localizer.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
       LabelCopyright.Text = Globals.AssemblyCopyright;
       LabelTrademark.Text = Globals.AssemblyTrademark;
       TopMost = MainForm.Instance.TopMost;

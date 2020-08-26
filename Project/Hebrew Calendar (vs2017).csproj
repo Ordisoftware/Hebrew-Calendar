@@ -165,7 +165,7 @@
     <Compile Include="Source\Common\System\NullSafeDictionary.cs" />
     <Compile Include="Source\Common\System\EnumHelper.cs" />
     <Compile Include="Source\Common\System\Globals.cs" />
-    <Compile Include="Source\Common\System\Globals.Translations.cs" />
+    <Compile Include="Source\Common\System\Localizer.Translations.cs" />
     <Compile Include="Source\Common\Data\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\System\Localizer.cs" />
     <Compile Include="Source\Common\Data\SQLiteHelper.cs" />

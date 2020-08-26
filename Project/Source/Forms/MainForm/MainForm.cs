@@ -94,7 +94,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( Globals.IsExiting ) return;
       UpdateTextCalendar();
       CalendarMonth.CalendarDateChanged += date => GoToDate(date);
-      MenuShowHide.Text = Globals.HideRestore.GetLang(Visible);
+      MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);
       Globals.IsReady = true;
       UpdateButtons();
       GoToDate(DateTime.Today);
@@ -187,7 +187,7 @@ namespace Ordisoftware.HebrewCalendar
         return;
       }
       if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDev ) )
-        if ( !DisplayManager.QueryYesNo(Globals.AskToExitApplication.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
           return;
       Globals.AllowClose = true;
       Close();
@@ -245,7 +245,7 @@ namespace Ordisoftware.HebrewCalendar
           ShowInTaskbar = false;
           FormBorderStyle = FormBorderStyle.SizableToolWindow;
         }
-        MenuShowHide.Text = Globals.HideRestore.GetLang(Visible);
+        MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);
       }
       catch ( Exception ex )
       {
@@ -428,7 +428,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Globals.AskToRestoreWindowPosition.GetLang()) )
+      if ( DisplayManager.QueryYesNo(Localizer.AskToRestoreWindowPosition.GetLang()) )
         Program.Settings.RestoreMainForm();
     }
 

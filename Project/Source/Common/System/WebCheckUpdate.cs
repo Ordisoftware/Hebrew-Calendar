@@ -60,11 +60,11 @@ namespace Ordisoftware.HebrewCommon
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
-              DisplayManager.Show(Globals.NoNewVersionAvailable.GetLang());
+              DisplayManager.Show(Localizer.NoNewVersionAvailable.GetLang());
           }
           else
           {
-            var form = new WebUpdateForm(Globals.NewVersionAvailable.GetLang(version));
+            var form = new WebUpdateForm(Localizer.NewVersionAvailable.GetLang(version));
             if ( form.ShowDialog() != DialogResult.OK ) return false;
             if ( form.SelectDownload.Checked )
               Shell.OpenWebLink(filename);
@@ -80,7 +80,7 @@ namespace Ordisoftware.HebrewCommon
               LoadingForm.Show();
               client.DownloadProgressChanged += (sender, e) =>
               {
-                LoadingForm.UpdateProgress(e.ProgressPercentage, 100, Globals.DownloadingNewVersion.GetLang());
+                LoadingForm.UpdateProgress(e.ProgressPercentage, 100, Localizer.DownloadingNewVersion.GetLang());
               };
               client.DownloadFileCompleted += (sender, e) =>
               {

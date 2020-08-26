@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewCommon
       if ( File.Exists(filename) )
         WebBrowser.Navigate(filename);
       else
-        DisplayManager.ShowError(Globals.FileNotFound.GetLang(filename));
+        DisplayManager.ShowError(Localizer.FileNotFound.GetLang(filename));
     }
 
     private void HTMLBrowserForm_FormClosing(object sender, FormClosingEventArgs e)

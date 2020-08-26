@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide global variables.
   /// </summary>
-  static public partial class Globals
+  static public class Globals
   {
 
     /// <summary>
