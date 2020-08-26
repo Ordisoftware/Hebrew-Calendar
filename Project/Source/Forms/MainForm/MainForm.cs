@@ -146,7 +146,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( Globals.IsExiting ) return;
       Program.Settings.Store();
       if ( WindowState != FormWindowState.Normal ) return;
-      EditScreenNone.PerformClick();
+      EditScreenNone.PerformClick(); // TODO don't call if minimized
     }
 
     /// <summary>

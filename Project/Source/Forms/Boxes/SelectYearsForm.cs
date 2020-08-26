@@ -44,9 +44,10 @@ namespace Ordisoftware.HebrewCalendar
     private void SelectYearsRangeForm_Load(object sender, EventArgs e)
     {
       Mutex = true;
+      int yearMin = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year;
+      int yearMax = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year;
       CurrentYear = DateTime.Today.AddYears(-1).Year;
-      if ( CurrentYear < AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year
-        || CurrentYear + Program.GenerateIntervalMinimum - 1 > AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year )
+      if ( CurrentYear < yearMin || CurrentYear + Program.GenerateIntervalMinimum - 1 > yearMax )
         throw new Exception("Current year is not supported");
       var year = MainForm.Instance.YearFirst == 0
                ? CurrentYear
@@ -55,15 +56,19 @@ namespace Ordisoftware.HebrewCalendar
       EditYearFirst.Maximum = CurrentYear;
       EditYearLast.Minimum = CurrentYear + Program.GenerateIntervalMinimum;
       EditYearLast.Maximum = CurrentYear + Program.GenerateIntervalMaximum - 1;
-      if ( EditYearFirst.Minimum < AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year + 1 )
-        EditYearFirst.Minimum = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year + 1;
-      if ( EditYearLast.Maximum > AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year - 1 )
-        EditYearLast.Maximum = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year - 1;
+      if ( EditYearFirst.Minimum < yearMin + 1 ) EditYearFirst.Minimum = yearMin + 1;
+      if ( EditYearLast.Maximum > yearMax - 1 ) EditYearLast.Maximum = yearMax - 1;
       Mutex = false;
       EditYearFirst.Value = year;
       EditYearLast.Value = MainForm.Instance.YearLast == 0
                          ? year + Program.GenerateIntervalDefault - 1
                          : MainForm.Instance.YearLast;
+    }
+
+    private void SelectYearsForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
+      if ( !ActionCancel.Enabled ) e.Cancel = true;
     }
 
     private void ActionPrefefinedInterval_Click(object sender, EventArgs e)
@@ -94,22 +99,16 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionOk_Click(object sender, EventArgs e)
     {
       var diff = EditYearLast.Value - EditYearFirst.Value + 1;
-      for ( int index = Program.BigCalendar.Length - 1; index >= 0; index-- )
-        if ( diff >= Program.BigCalendar[index] )
+      for ( int index = Program.BigCalendarLevels.Length - 1; index >= 0; index-- )
+        if ( diff >= Program.BigCalendarLevels[index] )
         {
-          string text = Translations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendar[index], diff);
+          string text = Translations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendarLevels[index], diff);
           if ( !DisplayManager.QueryYesNo(text) )
             return;
           break;
         }
       DialogResult = DialogResult.OK;
       ActionCancel.Enabled = true;
-    }
-
-    private void SelectYearsForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
-      if ( !ActionCancel.Enabled ) e.Cancel = true;
     }
 
   }

@@ -26,26 +26,6 @@ namespace Ordisoftware.HebrewCalendar
   static partial class Program
   {
 
-    public const int GenerateIntervalMaximum = 200;
-    public const int GenerateIntervalDefault = 5;
-    public const int GenerateIntervalMinimum = 2;
-
-    static public readonly int[] BigCalendar =
-    {
-      15,
-      30,
-      50,
-      80,
-      120
-    };
-
-    static public readonly int[] PredefinedYearsIntervals =
-    {
-      5,
-      10,
-      20
-    };
-
     /// <summary>
     /// Indicate phonetic moon months names.
     /// </summary>
@@ -67,6 +47,34 @@ namespace Ordisoftware.HebrewCalendar
       "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
       "אדר ב"
     };
+
+    /// <summary>
+    /// Indicate maximum gregorian years interval that can be generated.
+    /// </summary>
+    public const int GenerateIntervalMaximum = 200;
+
+    /// <summary>
+    /// Indicate minimum torah years interval that can be generated.
+    /// </summary>
+    /// <remarks>
+    /// Two torah years need three gregorian years with the previous.
+    /// </remarks>
+    public const int GenerateIntervalMinimum = 2;
+
+    /// <summary>
+    /// Indicate default gregorian years interval to be generated.
+    /// </summary>
+    public const int GenerateIntervalDefault = 5;
+
+    /// <summary>
+    /// Indicate big calendar advert levels.
+    /// </summary>
+    static public readonly int[] BigCalendarLevels = { 15, 30, 50, 80, 120 };
+
+    /// <summary>
+    /// Indicate predefined years intervals.
+    /// </summary>
+    static public readonly int[] PredefinedYearsIntervals = { 5, 10, 20 };
 
     /// <summary>
     /// Indicate shabat notice form.
