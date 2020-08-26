@@ -423,7 +423,7 @@
     <value>59, 13</value>
   </data>
   <data name="LabelColorToday.Text" xml:space="preserve">
-    <value>Aujourd'hui</value>
+    <value>Jour</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
