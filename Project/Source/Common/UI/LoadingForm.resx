@@ -117,21 +117,81 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;ProgressBar.Name" xml:space="preserve">
+    <value>ProgressBar</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.Parent" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
+    <value>LabelTitle</value>
+  </data>
+  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTitle.Parent" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="&gt;&gt;LabelTitle.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelOperation.Name" xml:space="preserve">
+    <value>LabelOperation</value>
+  </data>
+  <data name="&gt;&gt;LabelOperation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelOperation.Parent" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="&gt;&gt;LabelOperation.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Panel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Panel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 110</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Panel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Panel.Name" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="&gt;&gt;Panel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Panel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ProgressBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="ProgressBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ProgressBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 73</value>
   </data>
   <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 12</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ProgressBar.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -200,30 +260,6 @@
   </data>
   <data name="&gt;&gt;LabelOperation.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="Panel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="Panel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="Panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 110</value>
-  </data>
-  <data name="Panel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Panel.Name" xml:space="preserve">
-    <value>Panel</value>
-  </data>
-  <data name="&gt;&gt;Panel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Panel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

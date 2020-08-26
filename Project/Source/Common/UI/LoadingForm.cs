@@ -24,13 +24,13 @@ namespace Ordisoftware.HebrewCommon
     public LoadingForm()
     {
       InitializeComponent();
-      this.CenterToMainFormElseScreen();
     }
 
     public void UpdateProgress(int index, int count, string text)
     {
-      if ( LabelTitle.Text == "" ) LabelTitle.Text = Globals.AssemblyTitle;
+      this.CenterToMainFormElseScreen();
       if ( index == 0 ) ProgressBar.Maximum = count;
+      if ( LabelTitle.Text == "" ) LabelTitle.Text = Globals.AssemblyTitle;
       ProgressBar.Value = index > count ? count : index;
       ProgressBar.Update();
       if ( LabelOperation.Text != text )

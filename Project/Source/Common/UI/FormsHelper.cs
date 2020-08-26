@@ -55,16 +55,15 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="form">The form.</param>
     static public void CenterToMainFormElseScreen(this Form form)
     {
-      if ( Globals.MainForm == null ) return;
-      if ( Globals.MainForm.Visible && Globals.MainForm.WindowState != FormWindowState.Minimized )
-        form.Location = new Point(Globals.MainForm.Left + Globals.MainForm.Width / 2 - form.Width / 2,
-                                  Globals.MainForm.Top + Globals.MainForm.Height / 2 - form.Height / 2);
-      else
-      {
-        var area = SystemInformation.WorkingArea;
-        form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2,
-                                  area.Top + area.Height / 2 - form.Height / 2);
-      }
+      if ( form == null ) return;
+      Rectangle area = Globals.MainForm != null
+                    && Globals.MainForm != form
+                    && Globals.MainForm.Visible
+                    && Globals.MainForm.WindowState != FormWindowState.Minimized
+                     ? Globals.MainForm.Bounds
+                     : SystemInformation.WorkingArea;
+      form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2, 
+                                area.Top + area.Height / 2 - form.Height / 2);
     }
 
     /// <summary>
