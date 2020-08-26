@@ -166,9 +166,9 @@
     <Compile Include="Source\Common\System\EnumHelper.cs" />
     <Compile Include="Source\Common\System\Globals.cs" />
     <Compile Include="Source\Common\System\Globals.Translations.cs" />
-    <Compile Include="Source\Common\System\HebrewAlphabet.cs" />
+    <Compile Include="Source\Common\Data\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\System\Localizer.cs" />
-    <Compile Include="Source\Common\System\SQLiteHelper.cs" />
+    <Compile Include="Source\Common\Data\SQLiteHelper.cs" />
     <Compile Include="Source\Common\UI\FormsHelper.cs" />
     <Compile Include="Source\Common\System\Shell.cs" />
     <Compile Include="Source\Common\System\WebCheckUpdate.cs" />
