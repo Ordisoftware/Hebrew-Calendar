@@ -322,5 +322,8 @@
     <Setting Name="CheckUpdateLastDone" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">2020-01-01</Value>
     </Setting>
+    <Setting Name="CheckUpdateEveryWeek" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

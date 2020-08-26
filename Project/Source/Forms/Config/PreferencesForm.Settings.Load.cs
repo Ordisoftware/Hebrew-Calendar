@@ -84,6 +84,7 @@ namespace Ordisoftware.HebrewCalendar
       EditMoonDayTextFormat.Text = Program.Settings.MoonDayTextFormat;
       EditWebLinksMenuEnabled.Checked = Program.Settings.WebLinksMenuEnabled;
       EditAllowSuspendReminder.Checked = Program.Settings.AllowSuspendReminder;
+      EditCheckUpdateEveryWeek.Checked = Program.Settings.CheckUpdateEveryWeek;
     }
 
   }

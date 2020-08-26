@@ -1000,7 +1000,7 @@ namespace Ordisoftware.HebrewCalendar
         CalendarMonth.Refresh();
         if ( SQLite.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
-        if ( Program.Settings.CheckUpdateAtStartup )
+        if ( Program.Settings.CheckUpdateEveryWeek )
           if ( Program.Settings.CheckUpdateLastDone.AddDays(WebCheckUpdate.DefaultCheckDaysInterval) < DateTime.Now )
             ActionWebCheckUpdate.PerformClick();
       });

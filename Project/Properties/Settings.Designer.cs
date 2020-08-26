@@ -1280,5 +1280,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["CheckUpdateLastDone"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckUpdateEveryWeek {
+            get {
+                return ((bool)(this["CheckUpdateEveryWeek"]));
+            }
+            set {
+                this["CheckUpdateEveryWeek"] = value;
+            }
+        }
     }
 }
