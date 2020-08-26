@@ -25,13 +25,6 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public readonly Dictionary<string, string> PredefinedYearsInterval
-      = new Dictionary<string, string>
-      {
-        { Localizer.EN, "{0} years from now" },
-        { Localizer.FR, "{0} années à partir de maintenant" }
-      };
-
     static private readonly string AskToGenerateBigCalendarEN
       = "Generate a calendar for more than {0} ({1}) years is not recommanded and can cause ";
 

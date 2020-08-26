@@ -162,6 +162,13 @@ namespace Ordisoftware.HebrewCalendar
         { Localizer.FR, "Nombre de jours lunaires : hors limites ({0} - {1})" }
       };
 
+    static public readonly Dictionary<string, string> PredefinedYearsInterval
+      = new Dictionary<string, string>
+      {
+        { Localizer.EN, "{0} years from now" },
+        { Localizer.FR, "{0} années à partir de maintenant" }
+      };
+
   }
 
 }
