@@ -51,7 +51,12 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate maximum gregorian years interval that can be generated.
     /// </summary>
-    public const int GenerateIntervalMaximum = 200;
+    public const int GenerateIntervalMaximumHigh = 200;
+
+    /// <summary>
+    /// Indicate minimum gregorian years interval that can be generated.
+    /// </summary>
+    public const int GenerateIntervalMaximumLow = 10;
 
     /// <summary>
     /// Indicate minimum torah years interval that can be generated.
@@ -69,12 +74,12 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate big calendar advert levels.
     /// </summary>
-    static public readonly int[] BigCalendarLevels = { 15, 30, 50, 80, 120 };
+    static public readonly int[] BigCalendarLevels = { 20, 40, 60, 80, 120 };
 
     /// <summary>
     /// Indicate predefined years intervals.
     /// </summary>
-    static public readonly int[] PredefinedYearsIntervals = { 5, 10, 20 };
+    static public readonly int[] PredefinedYearsIntervals = { 5, 10, 20, 30, 40, 50 };
 
     /// <summary>
     /// Indicate shabat notice form.

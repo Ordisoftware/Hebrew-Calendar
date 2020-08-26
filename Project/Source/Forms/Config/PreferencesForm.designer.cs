@@ -156,6 +156,9 @@
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
       this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditMaxYearsInterval = new System.Windows.Forms.NumericUpDown();
+      this.GroupBoxMaxYearsInterval = new System.Windows.Forms.GroupBox();
+      this.LabelYearsIntervalInfo = new System.Windows.Forms.Label();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -182,6 +185,8 @@
       this.GroupBoxSystem.SuspendLayout();
       this.GroupBoxMoonDayTextFormat.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).BeginInit();
+      this.GroupBoxMaxYearsInterval.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelGPSLatitude
@@ -1208,6 +1213,27 @@
       this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
       this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
       // 
+      // EditMaxYearsInterval
+      // 
+      this.EditMaxYearsInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditMaxYearsInterval, "EditMaxYearsInterval");
+      this.EditMaxYearsInterval.Name = "EditMaxYearsInterval";
+      this.EditMaxYearsInterval.ReadOnly = true;
+      // 
+      // GroupBoxMaxYearsInterval
+      // 
+      this.GroupBoxMaxYearsInterval.Controls.Add(this.LabelYearsIntervalInfo);
+      this.GroupBoxMaxYearsInterval.Controls.Add(this.EditMaxYearsInterval);
+      resources.ApplyResources(this.GroupBoxMaxYearsInterval, "GroupBoxMaxYearsInterval");
+      this.GroupBoxMaxYearsInterval.Name = "GroupBoxMaxYearsInterval";
+      this.GroupBoxMaxYearsInterval.TabStop = false;
+      // 
+      // LabelYearsIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelYearsIntervalInfo, "LabelYearsIntervalInfo");
+      this.LabelYearsIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelYearsIntervalInfo.Name = "LabelYearsIntervalInfo";
+      // 
       // PreferencesForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -1219,6 +1245,7 @@
       this.Controls.Add(this.GroupBoxTrayIcon);
       this.Controls.Add(this.GroupBoxTextReport);
       this.Controls.Add(this.GroupBoxMonth);
+      this.Controls.Add(this.GroupBoxMaxYearsInterval);
       this.Controls.Add(this.GroupBoxMoonDayTextFormat);
       this.Controls.Add(this.GroupBoxNavigation);
       this.Controls.Add(this.BroupBoxShabat);
@@ -1263,6 +1290,9 @@
       this.GroupBoxMoonDayTextFormat.ResumeLayout(false);
       this.GroupBoxMoonDayTextFormat.PerformLayout();
       this.MenuSelectMoonDayTextFormat.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).EndInit();
+      this.GroupBoxMaxYearsInterval.ResumeLayout(false);
+      this.GroupBoxMaxYearsInterval.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -1389,5 +1419,8 @@
     private System.Windows.Forms.Button ActionPersonalShabatHelp;
     private System.Windows.Forms.CheckBox EditCheckUpdateEveryWeek;
     private System.Windows.Forms.CheckBox EditAutoRegenerate;
+    private System.Windows.Forms.NumericUpDown EditMaxYearsInterval;
+    private System.Windows.Forms.GroupBox GroupBoxMaxYearsInterval;
+    private System.Windows.Forms.Label LabelYearsIntervalInfo;
   }
 }

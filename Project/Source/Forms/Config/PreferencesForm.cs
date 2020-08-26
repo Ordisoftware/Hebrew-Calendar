@@ -52,6 +52,8 @@ namespace Ordisoftware.HebrewCalendar
       LoadDays();
       LoadEvents();
       LoadFonts();
+      EditMaxYearsInterval.Minimum = Program.GenerateIntervalMaximumLow;
+      EditMaxYearsInterval.Maximum = Program.GenerateIntervalMaximumHigh;
       EditReminderCelebrationsInterval.Minimum = RemindCelebrationBeforeMin;
       EditReminderCelebrationsInterval.Maximum = RemindCelebrationBeforeMax;
       EditReminderCelebrationsInterval.Value = RemindCelebrationBeforeValue;

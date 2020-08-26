@@ -86,6 +86,7 @@ namespace Ordisoftware.HebrewCalendar
       EditAllowSuspendReminder.Checked = Program.Settings.AllowSuspendReminder;
       EditCheckUpdateEveryWeek.Checked = Program.Settings.CheckUpdateEveryWeek;
       EditAutoRegenerate.Checked = Program.Settings.AutoRegenerate;
+      EditMaxYearsInterval.Value = Program.Settings.GenerateIntervalMaximum;
     }
 
   }

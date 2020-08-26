@@ -1304,5 +1304,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["AutoRegenerate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("120")]
+        public int GenerateIntervalMaximum {
+            get {
+                return ((int)(this["GenerateIntervalMaximum"]));
+            }
+            set {
+                this["GenerateIntervalMaximum"] = value;
+            }
+        }
     }
 }
