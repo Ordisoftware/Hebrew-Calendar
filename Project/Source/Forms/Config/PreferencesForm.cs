@@ -48,7 +48,6 @@ namespace Ordisoftware.HebrewCalendar
     private PreferencesForm()
     {
       InitializeComponent();
-      if (IsCenteredToScreen) StartPosition = FormStartPosition.CenterScreen;
       Icon = MainForm.Instance.Icon;
       LoadDays();
       LoadEvents();
@@ -72,6 +71,16 @@ namespace Ordisoftware.HebrewCalendar
       EditAutoLockSessionTimeOut.Maximum = RemindAutoLockTimeOutMax;
       EditAutoLockSessionTimeOut.Value = RemindAutoLockTimeOutValue;
       EditAutoRegenerate.Text = string.Format(EditAutoRegenerate.Text, Program.GenerateIntervalDefault);
+    }
+
+    /// <summary>
+    /// Event handler. Called by PreferencesForm for load events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PreferencesForm_Load(object sender, EventArgs e)
+    {
+      this.CenterToMainFormElseScreen();
     }
 
     /// <summary>

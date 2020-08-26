@@ -56,6 +56,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void AboutBox_Load(object sender, EventArgs e)
     {
+      this.CenterToMainFormElseScreen();
       EditLicense.Rtf = Properties.Resources.MPL_2_0;
     }
 

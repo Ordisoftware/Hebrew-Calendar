@@ -458,7 +458,7 @@ namespace Ordisoftware.HebrewCalendar
         TimerReminder.Enabled = false;
         MenuTray.Enabled = false;
         ClearLists();
-        if ( PreferencesForm.Run(sender == MenuPreferences) )
+        if ( PreferencesForm.Run() )
         {
           CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
           CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;

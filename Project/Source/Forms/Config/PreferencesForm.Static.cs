@@ -44,15 +44,13 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindAutoLockTimeOutMax = 300;
     const int RemindAutoLockTimeOutValue = 60;
 
-    static private bool IsCenteredToScreen;
     static private bool LanguageChanged;
     static private bool DoReset;
     static public bool Reseted { get; private set; }
 
-    static public bool Run(bool isCenteredToScreen = false)
+    static public bool Run()
     {
       Reseted = false;
-      IsCenteredToScreen = isCenteredToScreen;
       string lang = Program.Settings.Language;
       var form = new PreferencesForm();
       if ( !MainForm.Instance.Visible )

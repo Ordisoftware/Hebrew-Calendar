@@ -37,10 +37,7 @@ namespace Ordisoftware.HebrewCalendar
     private void SearchEventForm_Load(object sender, EventArgs e)
     {
       if ( Location.X < 0 || Location.Y < 0 )
-        if ( Globals.MainForm.Visible && Globals.MainForm.WindowState != FormWindowState.Minimized )
-          this.CenterToMainForm();
-        else
-          CenterToScreen();
+        this.CenterToMainFormElseScreen();
       Mutex = true;
       CurrentDay = MainForm.Instance.CurrentDay;
       int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLite.GetDate(CurrentDay.Date).Year;
@@ -76,8 +73,17 @@ namespace Ordisoftware.HebrewCalendar
         string str = new DateTime(2000, month, 1).ToString("MMMM");
         item.SubItems.Add(str.First().ToString().ToUpper() + str.Substring(1));
       }
-      ListItems.Items[0].Focused = true;
-      ListItems.Items[0].Selected = true;
+      if ( e == null )
+      {
+        int index = SQLite.GetDate(CurrentDay.Date).Month - 1;
+        ListItems.Items[index].Focused = true;
+        ListItems.Items[index].Selected = true;
+      }
+      else
+      {
+        ListItems.Items[0].Focused = true;
+        ListItems.Items[0].Selected = true;
+      }
     }
 
     private void ListItems_SelectedIndexChanged(object sender, EventArgs e)

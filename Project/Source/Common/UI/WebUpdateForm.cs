@@ -27,10 +27,7 @@ namespace Ordisoftware.HebrewCommon
       InitializeComponent();
       Icon = Globals.MainForm.Icon;
       Text = Text + Globals.AssemblyTitle;
-      if ( Globals.MainForm.Visible && Globals.MainForm.WindowState != FormWindowState.Minimized )
-        this.CenterToMainForm();
-      else
-        CenterToScreen();
+      this.CenterToMainFormElseScreen();
     }
 
     public WebUpdateForm(string caption) : this()

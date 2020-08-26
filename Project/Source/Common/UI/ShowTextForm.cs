@@ -36,11 +36,7 @@ namespace Ordisoftware.HebrewCommon
       form.TextBox.Text = text;
       form.Width = width;
       form.Height = height;
-      if ( Globals.MainForm.Visible && Globals.MainForm.WindowState != FormWindowState.Minimized )
-      {
-        form.StartPosition = FormStartPosition.Manual;
-        form.CenterToMainForm();
-      }
+      form.CenterToMainFormElseScreen();
       if ( !sizeable ) form.FormBorderStyle = FormBorderStyle.FixedSingle;
       return form;
     }

@@ -1229,6 +1229,7 @@
       this.MinimizeBox = false;
       this.Name = "PreferencesForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
+      this.Load += new System.EventHandler(this.PreferencesForm_Load);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.PanelButtons.PerformLayout();
