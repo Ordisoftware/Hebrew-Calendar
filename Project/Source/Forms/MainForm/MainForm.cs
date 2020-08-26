@@ -997,6 +997,7 @@ namespace Ordisoftware.HebrewCalendar
       this.SyncUI(() =>
       {
         System.Threading.Thread.Sleep(1000);
+        CheckRegenerateCalendar();
         CalendarMonth.Refresh();
         if ( SQLite.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);

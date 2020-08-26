@@ -100,16 +100,14 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         if ( DateTime.Today.Year >= YearLast )
-        {
-          var diff = YearLast - YearFirst;
-          if ( diff < Program.GenerateIntervalMinimum )
-            diff = Program.GenerateIntervalMinimum;
-          if ( diff > Program.GenerateIntervalMaximum )
-            diff = Program.GenerateIntervalMaximum;
-          YearFirst = DateTime.Today.Year - 1;
-          YearLast = YearFirst + diff;
-          DoGenerate(this, new EventArgs());
-        }
+          if ( Program.Settings.AutoRegenerate )
+          {
+            YearFirst = DateTime.Today.Year - 1;
+            YearLast = YearFirst + Program.GenerateIntervalDefault - 1;
+            DoGenerate(null, new EventArgs());
+          }
+          else
+            ActionGenerate.PerformClick();
       }
       catch ( AbortException )
       {

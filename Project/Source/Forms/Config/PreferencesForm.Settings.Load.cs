@@ -85,6 +85,7 @@ namespace Ordisoftware.HebrewCalendar
       EditWebLinksMenuEnabled.Checked = Program.Settings.WebLinksMenuEnabled;
       EditAllowSuspendReminder.Checked = Program.Settings.AllowSuspendReminder;
       EditCheckUpdateEveryWeek.Checked = Program.Settings.CheckUpdateEveryWeek;
+      EditAutoRegenerate.Checked = Program.Settings.AutoRegenerate;
     }
 
   }

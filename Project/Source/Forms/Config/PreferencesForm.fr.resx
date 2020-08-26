@@ -562,4 +562,7 @@
   <data name="LabelColorText.Text" xml:space="preserve">
     <value>Texte</value>
   </data>
+  <data name="EditAutoRegenerate.Text" xml:space="preserve">
+    <value>Auto-générer données pour {0} ans si expirées</value>
+  </data>
 </root>

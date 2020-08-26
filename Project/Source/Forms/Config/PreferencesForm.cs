@@ -71,6 +71,7 @@ namespace Ordisoftware.HebrewCalendar
       EditAutoLockSessionTimeOut.Minimum = RemindAutoLockTimeOutMin;
       EditAutoLockSessionTimeOut.Maximum = RemindAutoLockTimeOutMax;
       EditAutoLockSessionTimeOut.Value = RemindAutoLockTimeOutValue;
+      EditAutoRegenerate.Text = string.Format(EditAutoRegenerate.Text, Program.GenerateIntervalDefault);
     }
 
     /// <summary>

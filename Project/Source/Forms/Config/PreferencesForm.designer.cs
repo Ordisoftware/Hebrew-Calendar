@@ -141,6 +141,7 @@
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
+      this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.GroupBoxMoonDayTextFormat = new System.Windows.Forms.GroupBox();
       this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
@@ -1009,6 +1010,7 @@
       this.GroupBoxSystem.Controls.Add(this.EditDebuggerEnabled);
       this.GroupBoxSystem.Controls.Add(this.EditAllowSuspendReminder);
       this.GroupBoxSystem.Controls.Add(this.EditWebLinksMenuEnabled);
+      this.GroupBoxSystem.Controls.Add(this.EditAutoRegenerate);
       this.GroupBoxSystem.Controls.Add(this.EditMonthViewSunToolTips);
       resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
@@ -1091,6 +1093,13 @@
       resources.ApplyResources(this.EditWebLinksMenuEnabled, "EditWebLinksMenuEnabled");
       this.EditWebLinksMenuEnabled.Name = "EditWebLinksMenuEnabled";
       this.EditWebLinksMenuEnabled.UseVisualStyleBackColor = true;
+      // 
+      // EditAutoRegenerate
+      // 
+      resources.ApplyResources(this.EditAutoRegenerate, "EditAutoRegenerate");
+      this.EditAutoRegenerate.Name = "EditAutoRegenerate";
+      this.EditAutoRegenerate.UseVisualStyleBackColor = true;
+      this.EditAutoRegenerate.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
       // 
       // OpenFileDialog
       // 
@@ -1379,5 +1388,6 @@
     private System.Windows.Forms.CheckBox EditAllowSuspendReminder;
     private System.Windows.Forms.Button ActionPersonalShabatHelp;
     private System.Windows.Forms.CheckBox EditCheckUpdateEveryWeek;
+    private System.Windows.Forms.CheckBox EditAutoRegenerate;
   }
 }
