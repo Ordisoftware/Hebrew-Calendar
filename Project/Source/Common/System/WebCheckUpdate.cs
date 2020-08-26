@@ -38,14 +38,14 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="checkAtStartup"></param>
     /// <param name="auto">True if no user interaction else false</param>
     /// <returns>True if application must exist else false.</returns>
-    static public bool Run(bool checkAtStartup, bool auto, ref DateTime lastdone)
+    static public bool Run(bool checkAtStartup, bool auto)
     {
       if ( auto && !checkAtStartup ) return false;
       if ( Mutex ) return false;
       try
       {
         Mutex = true;
-        lastdone = DateTime.Now;
+        Globals.MainForm.Enabled = false;
         foreach ( string s in Directory.GetFiles(Path.GetTempPath(), Globals.SetupFilename.Replace("%VER%", "*")) )
           try { File.Delete(s); }
           catch { }
@@ -106,6 +106,7 @@ namespace Ordisoftware.HebrewCommon
       }
       finally
       {
+        Globals.MainForm.Enabled = true;
         Mutex = false;
       }
       return false;

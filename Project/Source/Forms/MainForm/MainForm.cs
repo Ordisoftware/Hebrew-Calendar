@@ -70,12 +70,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MainForm_Load(object sender, EventArgs e)
     {
-      Program.Settings.Retrieve();
       if ( Globals.IsExiting ) return;
-      var lastdone = Program.Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true, ref lastdone);
-      Program.Settings.CheckUpdateLastDone = lastdone;
-      if ( exit ) return;
+      Program.Settings.Retrieve();
+      Program.Settings.CheckUpdateLastDone = DateTime.Now;
+      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) ) return;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
       InitializeCalendarUI();
@@ -540,10 +538,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
-      var lastdone = Program.Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, e != null, ref lastdone);
-      Program.Settings.CheckUpdateLastDone = lastdone;
-      if ( exit ) 
+      Program.Settings.CheckUpdateLastDone = DateTime.Now;
+      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, e != null) )
       {
         Globals.AllowClose = true;
         Close();
