@@ -1053,10 +1053,6 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    private void button1_Click(object sender, EventArgs e)
-    {
-      TimerMidnight_Tick(DateTime.Now);
-    }
   }
 
 }

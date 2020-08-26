@@ -136,6 +136,7 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
+      this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
@@ -149,7 +150,6 @@
       this.nissanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
-      this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
@@ -1061,6 +1061,12 @@
       this.EditShowReminderInTaskBar.Name = "EditShowReminderInTaskBar";
       this.EditShowReminderInTaskBar.UseVisualStyleBackColor = true;
       // 
+      // EditCheckUpdateEveryWeek
+      // 
+      resources.ApplyResources(this.EditCheckUpdateEveryWeek, "EditCheckUpdateEveryWeek");
+      this.EditCheckUpdateEveryWeek.Name = "EditCheckUpdateEveryWeek";
+      this.EditCheckUpdateEveryWeek.UseVisualStyleBackColor = true;
+      // 
       // EditCheckUpdateAtStartup
       // 
       resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
@@ -1156,12 +1162,6 @@
       this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";
       this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
-      // 
-      // EditCheckUpdateEveryWeek
-      // 
-      resources.ApplyResources(this.EditCheckUpdateEveryWeek, "EditCheckUpdateEveryWeek");
-      this.EditCheckUpdateEveryWeek.Name = "EditCheckUpdateEveryWeek";
-      this.EditCheckUpdateEveryWeek.UseVisualStyleBackColor = true;
       // 
       // EditHebrewLettersPath
       // 

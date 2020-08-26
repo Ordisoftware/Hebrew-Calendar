@@ -553,4 +553,13 @@
   <data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
     <value>Vérifier mise à jour chaque semaine durant l'exécution</value>
   </data>
+  <data name="LabelColorEmpty.Text" xml:space="preserve">
+    <value>Vide</value>
+  </data>
+  <data name="LabelColorNoDay.Text" xml:space="preserve">
+    <value>Pas de jour</value>
+  </data>
+  <data name="LabelColorText.Text" xml:space="preserve">
+    <value>Texte</value>
+  </data>
 </root>
