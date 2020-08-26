@@ -152,6 +152,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Add button to disable auto lock option in lock session form.
 - Add mute windows volume in addition to stop media playing.
 - Add option to auto generate calendar when expired else show dialog box.
+- Add option to set the maximum years interval allowed to generate the data.
 - Fix stop media playing (stop instead of play/pause media).
 - Fix app not responding on windows logoff or system shutdown.
 - Improve years to generate box with predefined intervals and change some constants.
