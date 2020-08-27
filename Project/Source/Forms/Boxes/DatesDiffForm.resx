@@ -241,7 +241,7 @@
     <value>NoControl</value>
   </data>
   <data name="solarMonthsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 46</value>
+    <value>20, 66</value>
   </data>
   <data name="solarMonthsLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 13</value>
@@ -277,7 +277,7 @@
     <value>NoControl</value>
   </data>
   <data name="solarWeeksLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 66</value>
+    <value>20, 46</value>
   </data>
   <data name="solarWeeksLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -337,10 +337,10 @@
     <value>2</value>
   </data>
   <data name="EditMaxYearsAutoCalculate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 4</value>
+    <value>5, 4</value>
   </data>
   <data name="EditMaxYearsAutoCalculate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
+    <value>45, 20</value>
   </data>
   <data name="EditMaxYearsAutoCalculate.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -364,16 +364,16 @@
     <value>NoControl</value>
   </data>
   <data name="EditAlwaysLiveCalculate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 7</value>
+    <value>62, 7</value>
   </data>
   <data name="EditAlwaysLiveCalculate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 17</value>
+    <value>184, 17</value>
   </data>
   <data name="EditAlwaysLiveCalculate.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="EditAlwaysLiveCalculate.Text" xml:space="preserve">
-    <value>Always live calculate (years interval)</value>
+    <value>Realtime calculate (years interval)</value>
   </data>
   <data name="&gt;&gt;EditAlwaysLiveCalculate.Name" xml:space="preserve">
     <value>EditAlwaysLiveCalculate</value>
@@ -394,7 +394,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 2</value>
+    <value>423, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -427,7 +427,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCalculate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 2</value>
+    <value>342, 2</value>
   </data>
   <data name="ActionCalculate.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -454,10 +454,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 376</value>
+    <value>10, 353</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>489, 28</value>
+    <value>504, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -478,7 +478,7 @@
     <value>NoControl</value>
   </data>
   <data name="MonthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 19</value>
+    <value>15, 19</value>
   </data>
   <data name="MonthCalendar1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -499,7 +499,7 @@
     <value>NoControl</value>
   </data>
   <data name="MonthCalendar2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 19</value>
+    <value>266, 19</value>
   </data>
   <data name="MonthCalendar2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -625,7 +625,7 @@
     <value>NoControl</value>
   </data>
   <data name="solarMonthsLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 46</value>
+    <value>128, 66</value>
   </data>
   <data name="solarMonthsLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -658,7 +658,7 @@
     <value>NoControl</value>
   </data>
   <data name="solarWeeksLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 66</value>
+    <value>128, 46</value>
   </data>
   <data name="solarWeeksLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -724,7 +724,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="GroupBoxSun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 245</value>
+    <value>15, 222</value>
   </data>
   <data name="GroupBoxSun.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 115</value>
@@ -754,10 +754,10 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 245</value>
+    <value>263, 222</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 115</value>
+    <value>230, 115</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
@@ -778,7 +778,7 @@
     <value>2</value>
   </data>
   <data name="DateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 184</value>
+    <value>15, 188</value>
   </data>
   <data name="DateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 20</value>
@@ -799,7 +799,7 @@
     <value>1</value>
   </data>
   <data name="DateTimePicker2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 184</value>
+    <value>266, 188</value>
   </data>
   <data name="DateTimePicker2.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 20</value>
@@ -826,7 +826,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>509, 414</value>
+    <value>524, 391</value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

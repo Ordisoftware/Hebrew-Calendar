@@ -170,6 +170,6 @@
     <value>Calculateur de difference de dates</value>
   </data>
   <data name="EditAlwaysLiveCalculate.Text" xml:space="preserve">
-    <value>Toujours calculer en temps réel (intervale d'années)</value>
+    <value>Calcul en temps réel (intervale d'années)</value>
   </data>
 </root>

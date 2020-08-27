@@ -37,8 +37,6 @@
       System.Windows.Forms.Label solarWeeksLabel;
       System.Windows.Forms.Label solarYearsLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
-      this.EditMaxYearsAutoCalculate = new System.Windows.Forms.NumericUpDown();
-      this.EditAlwaysLiveCalculate = new System.Windows.Forms.CheckBox();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ActionCalculate = new System.Windows.Forms.Button();
       this.MonthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -53,6 +51,8 @@
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
       this.DateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+      this.EditMaxYearsAutoCalculate = new System.Windows.Forms.NumericUpDown();
+      this.EditAlwaysLiveCalculate = new System.Windows.Forms.CheckBox();
       this.datesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
@@ -61,9 +61,9 @@
       solarWeeksLabel = new System.Windows.Forms.Label();
       solarYearsLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsAutoCalculate)).BeginInit();
       this.GroupBoxSun.SuspendLayout();
       this.groupBox1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsAutoCalculate)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.datesDiffItemBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
@@ -105,31 +105,6 @@
       this.PanelBottom.Controls.Add(this.ActionCalculate);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
-      // 
-      // EditMaxYearsAutoCalculate
-      // 
-      this.EditMaxYearsAutoCalculate.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMaxYearsAutoCalculate.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "DatesDiffCalculateMaxYearsAuto", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      resources.ApplyResources(this.EditMaxYearsAutoCalculate, "EditMaxYearsAutoCalculate");
-      this.EditMaxYearsAutoCalculate.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-      this.EditMaxYearsAutoCalculate.Name = "EditMaxYearsAutoCalculate";
-      this.EditMaxYearsAutoCalculate.ReadOnly = true;
-      this.EditMaxYearsAutoCalculate.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.DatesDiffCalculateMaxYearsAuto;
-      this.EditMaxYearsAutoCalculate.ValueChanged += new System.EventHandler(this.EditMaxYearsAutoCalculate_ValueChanged);
-      // 
-      // EditAlwaysLiveCalculate
-      // 
-      resources.ApplyResources(this.EditAlwaysLiveCalculate, "EditAlwaysLiveCalculate");
-      this.EditAlwaysLiveCalculate.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.DatesDiffCalculateRealtime;
-      this.EditAlwaysLiveCalculate.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditAlwaysLiveCalculate.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "DatesDiffCalculateRealtime", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditAlwaysLiveCalculate.Name = "EditAlwaysLiveCalculate";
-      this.EditAlwaysLiveCalculate.UseVisualStyleBackColor = true;
-      this.EditAlwaysLiveCalculate.CheckedChanged += new System.EventHandler(this.EditAlwaysLiveCalculate_CheckedChanged);
       // 
       // ActionClose
       // 
@@ -231,6 +206,31 @@
       this.DateTimePicker2.ShowUpDown = true;
       this.DateTimePicker2.ValueChanged += new System.EventHandler(this.DateTimePicker2_ValueChanged);
       // 
+      // EditMaxYearsAutoCalculate
+      // 
+      this.EditMaxYearsAutoCalculate.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMaxYearsAutoCalculate.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "DatesDiffCalculateMaxYearsAuto", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditMaxYearsAutoCalculate, "EditMaxYearsAutoCalculate");
+      this.EditMaxYearsAutoCalculate.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      this.EditMaxYearsAutoCalculate.Name = "EditMaxYearsAutoCalculate";
+      this.EditMaxYearsAutoCalculate.ReadOnly = true;
+      this.EditMaxYearsAutoCalculate.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.DatesDiffCalculateMaxYearsAuto;
+      this.EditMaxYearsAutoCalculate.ValueChanged += new System.EventHandler(this.EditMaxYearsAutoCalculate_ValueChanged);
+      // 
+      // EditAlwaysLiveCalculate
+      // 
+      resources.ApplyResources(this.EditAlwaysLiveCalculate, "EditAlwaysLiveCalculate");
+      this.EditAlwaysLiveCalculate.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.DatesDiffCalculateRealtime;
+      this.EditAlwaysLiveCalculate.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditAlwaysLiveCalculate.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "DatesDiffCalculateRealtime", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditAlwaysLiveCalculate.Name = "EditAlwaysLiveCalculate";
+      this.EditAlwaysLiveCalculate.UseVisualStyleBackColor = true;
+      this.EditAlwaysLiveCalculate.CheckedChanged += new System.EventHandler(this.EditAlwaysLiveCalculate_CheckedChanged);
+      // 
       // datesDiffItemBindingSource
       // 
       this.datesDiffItemBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.DatesDiffItem);
@@ -255,11 +255,11 @@
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsAutoCalculate)).EndInit();
       this.GroupBoxSun.ResumeLayout(false);
       this.GroupBoxSun.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsAutoCalculate)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.datesDiffItemBindingSource)).EndInit();
       this.ResumeLayout(false);
 
