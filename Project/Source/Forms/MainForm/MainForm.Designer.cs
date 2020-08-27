@@ -115,6 +115,8 @@
       this.ActionDownloadHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionResetReminder = new System.Windows.Forms.ToolStripButton();
       this.ActionDisableReminder = new System.Windows.Forms.ToolStripButton();
+      this.ActionEnableReminder = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewMoonMonths = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -129,8 +131,6 @@
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewStats = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuumAtNextStartup = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionEnableReminder = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
@@ -921,6 +921,21 @@
       this.ActionDisableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionDisableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
+      // ActionEnableReminder
+      // 
+      this.ActionEnableReminder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionEnableReminder, "ActionEnableReminder");
+      this.ActionEnableReminder.Name = "ActionEnableReminder";
+      this.ActionEnableReminder.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionEnableReminder.Click += new System.EventHandler(this.MenuEnableReminder_Click);
+      this.ActionEnableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionEnableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      // 
       // ActionTools
       // 
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1017,21 +1032,6 @@
       resources.ApplyResources(this.ActionVacuumAtNextStartup, "ActionVacuumAtNextStartup");
       this.ActionVacuumAtNextStartup.Name = "ActionVacuumAtNextStartup";
       this.ActionVacuumAtNextStartup.Click += new System.EventHandler(this.ActionVacuumAtNextStartup_Click);
-      // 
-      // ActionEnableReminder
-      // 
-      this.ActionEnableReminder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionEnableReminder, "ActionEnableReminder");
-      this.ActionEnableReminder.Name = "ActionEnableReminder";
-      this.ActionEnableReminder.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionEnableReminder.Click += new System.EventHandler(this.MenuEnableReminder_Click);
-      this.ActionEnableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionEnableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
-      // toolStripSeparator4
-      // 
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
-      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
       // 
       // ActionWebLinks
       // 
