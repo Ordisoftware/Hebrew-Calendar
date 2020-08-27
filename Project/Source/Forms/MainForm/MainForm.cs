@@ -681,6 +681,34 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private DateTime? LastVacuum = null;
+
+    /// <summary>
+    /// Event handler. Called by ActionVacuumAtNextStartup for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionVacuumAtNextStartup_Click(object sender, EventArgs e)
+    {
+      if ( LastVacuum == null )
+        LastVacuum = Program.Settings.VacuumLastDone;
+      if ( ActionVacuumAtNextStartup.Checked )
+        Program.Settings.VacuumLastDone = new DateTime(2020, 1, 1);
+      else
+        Program.Settings.VacuumLastDone = LastVacuum.Value;
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewDbStats for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewDbStats_Click(object sender, EventArgs e)
+    {
+      DatabaseStatisticsForm.Instance.Show();
+      DatabaseStatisticsForm.Instance.BringToFront();
+    }
+
     /// <summary>
     /// Event handler. Called by ActionCopyReportToClipboard for click events.
     /// </summary>
