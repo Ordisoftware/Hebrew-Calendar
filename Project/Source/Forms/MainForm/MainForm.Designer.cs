@@ -129,7 +129,7 @@
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionViewDbStats = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewStats = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuumAtNextStartup = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
@@ -951,7 +951,7 @@
             this.toolStripMenuItem1,
             this.ActionGenerate,
             this.toolStripSeparator10,
-            this.ActionViewDbStats,
+            this.ActionViewStats,
             this.ActionVacuumAtNextStartup});
       resources.ApplyResources(this.ActionTools, "ActionTools");
       this.ActionTools.Name = "ActionTools";
@@ -1022,9 +1022,9 @@
       // 
       // ActionViewDbStats
       // 
-      resources.ApplyResources(this.ActionViewDbStats, "ActionViewDbStats");
-      this.ActionViewDbStats.Name = "ActionViewDbStats";
-      this.ActionViewDbStats.Click += new System.EventHandler(this.ActionViewDbStats_Click);
+      resources.ApplyResources(this.ActionViewStats, "ActionViewDbStats");
+      this.ActionViewStats.Name = "ActionViewDbStats";
+      this.ActionViewStats.Click += new System.EventHandler(this.ActionViewDbStats_Click);
       // 
       // ActionVacuumAtNextStartup
       // 
@@ -1534,7 +1534,7 @@
     private System.Windows.Forms.ToolStripButton ActionSearchGregorianMonth;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuumAtNextStartup;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewDbStats;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewStats;
   }
 }
 

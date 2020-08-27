@@ -42,8 +42,9 @@ namespace Ordisoftware.HebrewCalendar
       DateItem value = new DateItem
       {
         DayOfMonth = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(date),
-        MoonRise = date.GetSunMoonEphemeris().Moonrise,
-        MonthOfYear = AstronomyHelper.LunisolerCalendar.GetMonth(date)
+        Ephemerisis = date.GetSunMoonEphemeris(),
+        MonthOfYear = AstronomyHelper.LunisolerCalendar.GetMonth(date),
+        MoonPhase = (int)date.GetMoonPhase()
       };
       if ( !TorahSeasons.ContainsKey(date.Year) )
         InitializeSeasons(date.Year);

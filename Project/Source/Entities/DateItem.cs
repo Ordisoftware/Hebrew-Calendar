@@ -21,9 +21,10 @@ namespace Ordisoftware.HebrewCalendar
   {
     public int DayOfMonth;
     public int MonthOfYear;
+    public int MoonPhase;
     public SeasonChange TorahSeasonChange;
     public SeasonChange RealSeasonChange;
-    public TimeSpan? MoonRise;
+    public SunAndMoonRiseAndSet Ephemerisis;
   }
 
 }
