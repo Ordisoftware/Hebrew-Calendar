@@ -86,6 +86,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         ex.Manage();
       }
+      if (result ) Dates.Clear();
       return result;
     }
 

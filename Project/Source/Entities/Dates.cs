@@ -27,6 +27,8 @@ namespace Ordisoftware.HebrewCalendar
 
     static public int Count => Items.Keys.Count;
 
+    static public void Clear() => Items.Clear();
+
     static public DateItem Get(DateTime date)
     {
       if ( Items.ContainsKey(date) ) return Items[date];
