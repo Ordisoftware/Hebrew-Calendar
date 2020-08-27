@@ -41,6 +41,7 @@ namespace Ordisoftware.HebrewCalendar
       Instance.UpdateData();
       Instance.Show();
       Instance.BringToFront();
+      Instance.Timer.Start();
     }
 
     public StatisticsForm()
@@ -57,17 +58,9 @@ namespace Ordisoftware.HebrewCalendar
 
     private void DatabaseStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      Timer.Stop();
       e.Cancel = true;
       Hide();
-    }
-
-    private void StatisticsForm_Activated(object sender, EventArgs e)
-    {
-      Timer.Start();
-    }
-    private void StatisticsForm_Deactivate(object sender, EventArgs e)
-    {
-      Timer.Stop();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
@@ -101,21 +94,28 @@ namespace Ordisoftware.HebrewCalendar
       TextBox.Text += Environment.NewLine;
       TextBox.Text += string.Format("Last starting full time: {0}" + Environment.NewLine +
                                    "Last load data time: {1}" + Environment.NewLine +
-                                   "Last fill calendar time: {2}" + Environment.NewLine +
-                                   "Last generate years time: {3}" + Environment.NewLine,
+                                   "Last generate years time: {2}" + Environment.NewLine,
+                                   "Last fill calendar time: {3}" + Environment.NewLine +
                                    FormatMilliseconds(Program.Settings.BenchmarkStartingApp),
                                    FormatMilliseconds(Program.Settings.BenchmarkLoadData),
-                                   FormatMilliseconds(Program.Settings.BenchmarkFillCalendar),
-                                   FormatMilliseconds(Program.Settings.BenchmarkGenerateYears));
+                                   FormatMilliseconds(Program.Settings.BenchmarkGenerateYears),
+                                   FormatMilliseconds(Program.Settings.BenchmarkFillCalendar));
       TextBox.Text += Environment.NewLine;
-      TextBox.Text += "First year: " + MainForm.Instance.YearFirst + Environment.NewLine;
-      TextBox.Text += "Last year: " + MainForm.Instance.YearLast + Environment.NewLine;
-      TextBox.Text += "Records count: " + MainForm.Instance.DataSet.LunisolarDays.Count() + Environment.NewLine;
+      TextBox.Text += "DB First year: " + MainForm.Instance.YearFirst + Environment.NewLine;
+      TextBox.Text += "DB Last year: " + MainForm.Instance.YearLast + Environment.NewLine;
+      TextBox.Text += "DB Records count: " + MainForm.Instance.DataSet.LunisolarDays.Count() + Environment.NewLine;
+      TextBox.Text += "DB Events count: " + MainForm.Instance.DataSet.LunisolarDays.Count(d => d.TorahEvents != 0 || d.SeasonChange != 0) + Environment.NewLine;
+      TextBox.Text += Environment.NewLine;
+      TextBox.Text += "Month calendar items: " + MainForm.Instance.CalendarMonth.Events.Count + Environment.NewLine;
       TextBox.Text += Environment.NewLine;
       //File size
       //Memory
     }
 
+    private void StatisticsForm_Shown(object sender, EventArgs e)
+    {
+      ;
+    }
   }
 
 }
