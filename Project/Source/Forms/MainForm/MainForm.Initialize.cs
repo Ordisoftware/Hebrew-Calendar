@@ -103,7 +103,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( Program.Settings.AutoRegenerate )
           {
             YearFirst = DateTime.Today.Year - 1;
-            YearLast = YearFirst + Program.GenerateIntervalDefault - 1;
+            YearLast = YearFirst + Program.Settings.AutoGenerateYearsInternal - 1;
             DoGenerate(null, new EventArgs());
           }
           else

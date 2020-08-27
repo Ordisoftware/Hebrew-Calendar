@@ -140,6 +140,7 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
+      this.EditAutoGenerateYearsInterval = new System.Windows.Forms.NumericUpDown();
       this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
@@ -183,6 +184,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       this.GroupBoxMonth.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoGenerateYearsInterval)).BeginInit();
       this.GroupBoxMoonDayTextFormat.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).BeginInit();
@@ -1031,6 +1033,7 @@
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangEN);
       this.GroupBoxSystem.Controls.Add(this.EditAutoOpenExportFolder);
       this.GroupBoxSystem.Controls.Add(this.EditShowReminderInTaskBar);
+      this.GroupBoxSystem.Controls.Add(this.EditAutoGenerateYearsInterval);
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateEveryWeek);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
@@ -1097,6 +1100,33 @@
       resources.ApplyResources(this.EditShowReminderInTaskBar, "EditShowReminderInTaskBar");
       this.EditShowReminderInTaskBar.Name = "EditShowReminderInTaskBar";
       this.EditShowReminderInTaskBar.UseVisualStyleBackColor = true;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      this.EditAutoGenerateYearsInterval.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+      this.EditAutoGenerateYearsInterval.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
       // 
       // EditCheckUpdateEveryWeek
       // 
@@ -1288,6 +1318,7 @@
       this.GroupBoxMonth.PerformLayout();
       this.GroupBoxSystem.ResumeLayout(false);
       this.GroupBoxSystem.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoGenerateYearsInterval)).EndInit();
       this.GroupBoxMoonDayTextFormat.ResumeLayout(false);
       this.GroupBoxMoonDayTextFormat.PerformLayout();
       this.MenuSelectMoonDayTextFormat.ResumeLayout(false);
@@ -1423,5 +1454,6 @@
     private System.Windows.Forms.NumericUpDown EditMaxYearsInterval;
     private System.Windows.Forms.GroupBox GroupBoxMaxYearsInterval;
     private System.Windows.Forms.Label LabelYearsIntervalInfo;
+    private System.Windows.Forms.NumericUpDown EditAutoGenerateYearsInterval;
   }
 }

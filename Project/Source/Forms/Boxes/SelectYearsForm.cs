@@ -64,7 +64,7 @@ namespace Ordisoftware.HebrewCalendar
       Mutex = false;
       EditYearFirst.Value = year;
       EditYearLast.Value = MainForm.Instance.YearLast == 0
-                         ? year + Program.GenerateIntervalDefault - 1
+                         ? year + Program.Settings.AutoGenerateYearsInternal - 1
                          : MainForm.Instance.YearLast;
     }
 

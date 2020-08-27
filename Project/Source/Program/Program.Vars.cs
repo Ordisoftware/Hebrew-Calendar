@@ -83,11 +83,6 @@ namespace Ordisoftware.HebrewCalendar
     public const int GenerateIntervalMinimum = 2;
 
     /// <summary>
-    /// Indicate default gregorian years interval to be generated.
-    /// </summary>
-    public const int GenerateIntervalDefault = 5;
-
-    /// <summary>
     /// Indicate big calendar advert levels.
     /// </summary>
     static public readonly int[] BigCalendarLevels = { 20, 40, 60, 80, 120 };

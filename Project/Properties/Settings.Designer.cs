@@ -1387,5 +1387,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["StatisticsFormLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int AutoGenerateYearsInternal {
+            get {
+                return ((int)(this["AutoGenerateYearsInternal"]));
+            }
+            set {
+                this["AutoGenerateYearsInternal"] = value;
+            }
+        }
     }
 }

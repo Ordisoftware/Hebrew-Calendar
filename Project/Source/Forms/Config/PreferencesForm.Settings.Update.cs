@@ -78,6 +78,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.CheckUpdateEveryWeek = EditCheckUpdateEveryWeek.Checked;
       Program.Settings.AutoRegenerate = EditAutoRegenerate.Checked;
       Program.Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
+      Program.Settings.AutoGenerateYearsInternal = (int)EditAutoGenerateYearsInterval.Value;
     }
 
   }
