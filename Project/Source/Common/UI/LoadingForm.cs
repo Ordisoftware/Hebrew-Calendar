@@ -21,23 +21,70 @@ namespace Ordisoftware.HebrewCommon
   public partial class LoadingForm : Form
   {
 
-    public LoadingForm()
+    public const int QuantaTotal = 10;
+
+    static public LoadingForm Instance { get; private set; }
+
+    static LoadingForm()
     {
-      InitializeComponent();
+      Instance = new LoadingForm();
     }
 
-    public void UpdateProgress(int index, int count, string text)
+    private bool UseQuanta;
+    private int QuantaLevel;
+    private int CurrentQuanta;
+
+    private LoadingForm()
+    {
+      InitializeComponent();
+      LabelTitle.Text = Globals.AssemblyTitle;
+    }
+
+    public void Initialize(string text, int count, int minimum, bool quantify = true)
     {
       this.CenterToMainFormElseScreen();
-      if ( index == 0 ) ProgressBar.Maximum = count;
-      if ( LabelTitle.Text == "" ) LabelTitle.Text = Globals.AssemblyTitle;
-      ProgressBar.Value = index > count ? count : index;
-      ProgressBar.Update();
-      if ( LabelOperation.Text != text )
+      if ( minimum > 0 && count > minimum )
       {
-        LabelOperation.Text = text;
-        LabelOperation.Refresh();
+        Show();
+        BringToFront();
       }
+      if ( count <= 0 ) count = 1;
+      UseQuanta = quantify && count > QuantaTotal;
+      QuantaLevel = UseQuanta ? count / QuantaTotal : 1;
+      CurrentQuanta = 0;
+      ProgressBar.Value = 0;
+      ProgressBar.Maximum = UseQuanta ? QuantaTotal - 1 : count - 1;
+      ProgressBar.Refresh();
+      LabelOperation.Text = text;
+      LabelOperation.Refresh();
+      Refresh();
+      Application.DoEvents();
+    }
+
+    public void DoProgress()
+    {
+      bool process = true;
+      if ( UseQuanta )
+      {
+        CurrentQuanta++;
+        if ( CurrentQuanta >= QuantaLevel )
+          CurrentQuanta = 0;
+        else
+          process = false;
+      }
+      if ( process )
+      {
+        ProgressBar.PerformStep();
+        ProgressBar.Refresh();
+        Application.DoEvents();
+        System.Threading.Thread.Sleep(10);
+      }
+    }
+
+    public void DoProgress(int index)
+    {
+      ProgressBar.Value = index > ProgressBar.Maximum ? ProgressBar.Maximum : index;
+      ProgressBar.Refresh();
       Application.DoEvents();
     }
 

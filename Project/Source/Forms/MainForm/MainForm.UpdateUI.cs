@@ -29,11 +29,6 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// Loading form instance.
-    /// </summary>
-    private LoadingForm LoadingForm;
-
-    /// <summary>
     /// Bring to front improved.
     /// </summary>
     public new void BringToFront()
@@ -45,25 +40,13 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Update progress bar.
-    /// </summary>
-    private bool UpdateProgress(int index, int count, string text)
-    {
-      if ( LoadingForm == null )
-        LoadingForm = new LoadingForm();
-      if ( !LoadingForm.Visible )
-        LoadingForm.Show();
-      LoadingForm.UpdateProgress(index, count, text);
-      return IsGenerating;
-    }
-
-    /// <summary>
     /// Update the buttons.
     /// </summary>
     internal void UpdateButtons()
     {
       try
       {
+        if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
         MenuTray.Enabled = Globals.IsReady && !IsGenerating;
         ToolStrip.Enabled = !IsGenerating;
         ActionSaveReport.Enabled = DataSet.LunisolarDays.Count > 0;
@@ -75,8 +58,6 @@ namespace Ordisoftware.HebrewCalendar
         ActionSearchDay.Enabled = ActionSaveReport.Enabled;
         ActionNavigate.Enabled = ActionSaveReport.Enabled;
         ActionViewCelebrations.Enabled = ActionSaveReport.Enabled;
-        if ( LoadingForm != null && LoadingForm.Visible )
-          LoadingForm.Hide();
         Refresh();
       }
       catch ( Exception ex )

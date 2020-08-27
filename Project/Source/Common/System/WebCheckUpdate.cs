@@ -74,17 +74,16 @@ namespace Ordisoftware.HebrewCommon
             else
             if ( form.SelectInstall.Checked )
             {
+              LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
               bool finished = false;
               string tempfile = Path.GetTempPath() + Globals.SetupFilename.Replace("%VER%", content[0]);
-              var LoadingForm = new LoadingForm();
-              LoadingForm.Show();
               client.DownloadProgressChanged += (sender, e) =>
               {
-                LoadingForm.UpdateProgress(e.ProgressPercentage, 100, Localizer.DownloadingNewVersion.GetLang());
+                LoadingForm.Instance.DoProgress(e.ProgressPercentage);
               };
               client.DownloadFileCompleted += (sender, e) =>
               {
-                LoadingForm.Hide();
+                LoadingForm.Instance.Hide();
                 finished = true;
               };
               client.DownloadFileAsync(new Uri(filename), tempfile);

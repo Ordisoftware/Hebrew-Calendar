@@ -49,6 +49,12 @@ namespace Ordisoftware.HebrewCalendar
     };
 
     /// <summary>
+    /// Indicate minimum items for loading form to be shown.
+    /// </summary>
+    public const int LoadingFormMinimumLoad = 10000;
+    public const int LoadingFormMinimumGenerate = 5000;
+
+    /// <summary>
     /// Indicate maximum gregorian years interval that can be generated.
     /// </summary>
     public const int GenerateIntervalMaximumHigh = 200;

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Xml;
@@ -29,6 +29,8 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     private readonly List<string> GenerateErrors = new List<string>();
+
+    private int ProgressCount;
 
     /// <summary>
     /// Create the calendar days items.
@@ -111,14 +113,16 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="yearLast">The last year.</param>
     private void PopulateDays(int yearFirst, int yearLast)
     {
-      for ( int progress = 0, year = yearFirst; year <= yearLast; year++ )
+      LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(),
+                                      ProgressCount,
+                                      Program.LoadingFormMinimumGenerate);
+      for ( int year = yearFirst; year <= yearLast; year++ )
       {
         for ( int month = 1; month <= 12; month++ )
           for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
             try
             {
-              if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressCreateDays.GetLang()) )
-                return;
+              LoadingForm.Instance.DoProgress();
               var row = DataSet.LunisolarDays.NewLunisolarDaysRow();
               row.Date = SQLite.GetDate(year, month, day);
               row.TorahEvents = 0;
@@ -220,14 +224,15 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private void AnalyseDays()
     {
-      int progress = 0;
       int month = 0;
       int delta = 0;
+      LoadingForm.Instance.Initialize(Translations.ProgressAnalyzeDays.GetLang(),
+                                      ProgressCount,
+                                      Program.LoadingFormMinimumGenerate);
       foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         try
         {
-          if ( !UpdateProgress(progress++, ProgressCount, Translations.ProgressAnalyzeDays.GetLang()) )
-            return;
+          LoadingForm.Instance.DoProgress();
           if ( day.IsNewMoon == 1 )
             AnalyzeDay(day, ref month);
           day.LunarMonth = month;

@@ -62,15 +62,16 @@ namespace Ordisoftware.HebrewCalendar
       var content = new StringBuilder();
       content.Append(headerSep + Environment.NewLine);
       content.Append(headerTxt + Environment.NewLine);
-      int progress = 0;
-      int count = DataSet.LunisolarDays.Count;
-      if ( count <= 0 ) return "";
+      if ( DataSet.LunisolarDays.Count <= 0 ) return "";
       var lastyear = SQLite.GetDate(DataSet.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
+      LoadingForm.Instance.Initialize(Translations.ProgressGenerateReport.GetLang(),
+                                      DataSet.LunisolarDays.Count,
+                                      Program.LoadingFormMinimumLoad);
       foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         try
         {
           var dayDate = SQLite.GetDate(day.Date);
-          if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReport.GetLang()) ) return "";
+          LoadingForm.Instance.DoProgress();
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
           if ( day.IsNewMoon == 1 ) content.Append(headerSep + Environment.NewLine);

@@ -57,18 +57,19 @@ namespace Ordisoftware.HebrewCalendar
       string strToolTip = "Error on getting sun rise and set";
       bool IsCelebrationWeekStart = false;
       bool IsCelebrationWeekEnd = false;
-      int progress = 0;
       if ( DataSet.LunisolarDays.Count == 0 ) return;
       DateFirst = SQLite.GetDate(DataSet.LunisolarDays.FirstOrDefault().Date);
       YearFirst = DateFirst.Year;
       DateLast = SQLite.GetDate(DataSet.LunisolarDays.LastOrDefault().Date);
       YearLast = DateLast.Year;
       DayColors = new Color[YearLast - YearFirst + 1, 13, 35];
-      string strProgress = Translations.ProgressFillMonths.GetLang();
+      LoadingForm.Instance.Initialize(Translations.ProgressFillMonths.GetLang(),
+                                      DataSet.LunisolarDays.Count(),
+                                      Program.LoadingFormMinimumLoad);
       foreach ( var row in DataSet.LunisolarDays )
         try
         {
-          if ( !UpdateProgress(progress++, ProgressCount, strProgress) ) return;
+          LoadingForm.Instance.DoProgress();
           var ev = (TorahEvent)row.TorahEvents;
           var season = (SeasonChange)row.SeasonChange;
           if ( ev == TorahEvent.PessahD1

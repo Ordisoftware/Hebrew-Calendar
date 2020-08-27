@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
 using System.Text;
@@ -40,14 +40,15 @@ namespace Ordisoftware.HebrewCalendar
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
         var result = new StringBuilder();
         result.AppendLine(headerTxt);
-        int progress = 0;
-        int count = DataSet.LunisolarDays.Count;
-        if ( count == 0 ) return null;
+        if ( DataSet.LunisolarDays.Count == 0 ) return null;
         var lastyear = SQLite.GetDate(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+        LoadingForm.Instance.Initialize(Translations.ProgressGenerateReport.GetLang(),
+                                        DataSet.LunisolarDays.Count,
+                                        Program.LoadingFormMinimumLoad);
         foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         {
+          LoadingForm.Instance.DoProgress();
           var dayDate = SQLite.GetDate(day.Date);
-          if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReport.GetLang()) ) return null;
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
           result.Append(day.Date + CSVSeparator);

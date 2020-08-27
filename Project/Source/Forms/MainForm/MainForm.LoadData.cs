@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Data;
 using System.Data.Odbc;
@@ -28,25 +28,26 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LoadData()
     {
-      int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
-        if ( !IsGenerating ) UpdateProgress(progress++, ProgressCount, Translations.ProgressLoadingData.GetLang());
+        if ( !IsGenerating ) LoadingForm.Instance.DoProgress();
       };
-      DataSet.LunisolarDays.RowChanged += update;
-      Cursor = Cursors.WaitCursor;
-      Enabled = false;
       try
       {
+        Enabled = false;
+        Cursor = Cursors.WaitCursor;
         CreateDatabaseIfNotExists();
         var connection = new OdbcConnection(Program.Settings.ConnectionString);
         connection.Open();
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
-        ProgressCount = (int)command.ExecuteScalar();
+        LoadingForm.Instance.Initialize(Translations.ProgressLoadingData.GetLang(),
+                                        (int)command.ExecuteScalar() * 2,
+                                        Program.LoadingFormMinimumLoad);
+        DataSet.LunisolarDays.RowChanged += update;
         connection.Close();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         ReportTableAdapter.Fill(DataSet.Report);
-        if ( DataSet.LunisolarDays.Count > 0 && !Program.Settings.FirstLaunch)
+        if ( DataSet.LunisolarDays.Count > 0 && !Program.Settings.FirstLaunch )
         {
           IsGenerating = true;
           try
