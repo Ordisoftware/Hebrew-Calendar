@@ -88,9 +88,10 @@ namespace Ordisoftware.HebrewCalendar
       if ( b2 ) MonthCalendar2.Tag = MonthCalendar2.SelectionStart;
       if ( !force && !b1 && !b2 ) return;
       var diff = Math.Abs((decimal)( MonthCalendar1.SelectionStart - MonthCalendar2.SelectionStart ).TotalDays);
+      var cursor = Cursor;
+      Cursor = Cursors.WaitCursor;
       try
       {
-        Cursor = Cursors.WaitCursor;
         if ( Stats == null )
         {
           Stats = new DatesDiffItem(this, MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
@@ -104,7 +105,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        Cursor = Cursors.Default;
+        Cursor = cursor;
       }
     }
 

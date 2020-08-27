@@ -93,13 +93,13 @@ namespace Ordisoftware.HebrewCalendar
       TextBox.Text = "Running time: " + FormatMilliseconds((long)DateTime.Now.Subtract(Program.Settings.BenchmarkStartDateTime).TotalMilliseconds) + Environment.NewLine;
       TextBox.Text += Environment.NewLine;
       TextBox.Text += string.Format("Last starting full time: {0}" + Environment.NewLine +
-                                   "Last load data time: {1}" + Environment.NewLine +
-                                   "Last generate years time: {2}" + Environment.NewLine,
-                                   "Last fill calendar time: {3}" + Environment.NewLine +
-                                   FormatMilliseconds(Program.Settings.BenchmarkStartingApp),
-                                   FormatMilliseconds(Program.Settings.BenchmarkLoadData),
-                                   FormatMilliseconds(Program.Settings.BenchmarkGenerateYears),
-                                   FormatMilliseconds(Program.Settings.BenchmarkFillCalendar));
+                                    "Last load data time: {1}" + Environment.NewLine +
+                                    "Last generate years time: {2}" + Environment.NewLine,
+                                    "Last fill calendar time: {3}" + Environment.NewLine,
+                                    FormatMilliseconds(Program.Settings.BenchmarkStartingApp),
+                                    FormatMilliseconds(Program.Settings.BenchmarkLoadData),
+                                    FormatMilliseconds(Program.Settings.BenchmarkGenerateYears),
+                                    FormatMilliseconds(Program.Settings.BenchmarkFillCalendar));
       TextBox.Text += Environment.NewLine;
       TextBox.Text += "DB First year: " + MainForm.Instance.YearFirst + Environment.NewLine;
       TextBox.Text += "DB Last year: " + MainForm.Instance.YearLast + Environment.NewLine;

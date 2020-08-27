@@ -31,6 +31,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       IsGenerating = true;
       UpdateButtons();
+      var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       try
       {
@@ -44,7 +45,7 @@ namespace Ordisoftware.HebrewCalendar
         var lastyear = SQLite.GetDate(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
         LoadingForm.Instance.Initialize(Translations.ProgressGenerateReport.GetLang(),
                                         DataSet.LunisolarDays.Count,
-                                        Program.LoadingFormMinimumLoad);
+                                        Program.LoadingFormLoadDB);
         foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         {
           LoadingForm.Instance.DoProgress();
@@ -76,7 +77,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        Cursor = Cursors.Default;
+        Cursor = cursor;
         IsGenerating = false;
         UpdateButtons();
       }

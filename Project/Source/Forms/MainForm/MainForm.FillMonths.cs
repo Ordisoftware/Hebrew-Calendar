@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewCalendar
         DayColors = new Color[YearLast - YearFirst + 1, 13, 35];
         LoadingForm.Instance.Initialize(Translations.ProgressFillMonths.GetLang(),
                                         DataSet.LunisolarDays.Count(),
-                                        Program.LoadingFormMinimumLoad);
+                                        Program.LoadingFormLoadDB);
         foreach ( var row in DataSet.LunisolarDays )
           try
           {

@@ -23,8 +23,6 @@ namespace Ordisoftware.HebrewCalendar
   public class DatesDiffItem
   {
 
-    private const int LoadingFormMin = 20 * 365;
-
     private DateTime Date1;
     private DateTime Date2;
 
@@ -63,9 +61,11 @@ namespace Ordisoftware.HebrewCalendar
       {
         int count = (int)( Date2 - Date1 ).TotalDays;
         int countData = Dates.Count;
-        if ( count - countData >= LoadingFormMin )
+        if ( count - countData >= Program.LoadingFormDiffDates )
         {
-          LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(), count, LoadingFormMin + 1);
+          LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(), 
+                                          count, 
+                                          Program.LoadingFormDiffDates + 1);
           if ( sender != null ) sender.Enabled = false;
         }
         var data = Dates.Get(Date1);

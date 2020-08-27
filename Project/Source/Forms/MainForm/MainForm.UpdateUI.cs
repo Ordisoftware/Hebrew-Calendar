@@ -80,6 +80,7 @@ namespace Ordisoftware.HebrewCalendar
     internal void UpdateCalendarMonth(bool doFill)
     {
       IsGenerating = true;
+      var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       Enabled = false;
       PanelViewMonth.Parent = null;
@@ -91,8 +92,7 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         Enabled = true;
-        Cursor = Cursors.Default;
-        Cursor = Cursors.Default;
+        Cursor = cursor;
         IsGenerating = false;
         SetView(Program.Settings.CurrentView, true);
         UpdateButtons();

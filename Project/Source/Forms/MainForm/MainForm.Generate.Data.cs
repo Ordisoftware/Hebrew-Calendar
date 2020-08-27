@@ -41,6 +41,7 @@ namespace Ordisoftware.HebrewCalendar
       PanelViewText.Parent = null;
       PanelViewMonth.Parent = null;
       PanelViewGrid.Parent = null;
+      var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       try
       {
@@ -94,7 +95,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        Cursor = Cursors.Default;
+        Cursor = cursor;
         IsGenerating = false;
         SetView(Program.Settings.CurrentView, true);
         UpdateButtons();
@@ -115,7 +116,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(),
                                       ProgressCount,
-                                      Program.LoadingFormMinimumGenerate);
+                                      Program.LoadingFormGenerate);
       for ( int year = yearFirst; year <= yearLast; year++ )
       {
         for ( int month = 1; month <= 12; month++ )
@@ -184,7 +185,7 @@ namespace Ordisoftware.HebrewCalendar
       int delta = 0;
       LoadingForm.Instance.Initialize(Translations.ProgressAnalyzeDays.GetLang(),
                                       ProgressCount,
-                                      Program.LoadingFormMinimumGenerate);
+                                      Program.LoadingFormGenerate);
       foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         try
         {

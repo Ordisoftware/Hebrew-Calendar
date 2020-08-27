@@ -32,17 +32,18 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( !IsGenerating ) LoadingForm.Instance.DoProgress();
       };
+      var cursor = Cursor;
+      Cursor = Cursors.WaitCursor;
       try
       {
         Enabled = false;
-        Cursor = Cursors.WaitCursor;
         CreateDatabaseIfNotExists();
         var connection = new OdbcConnection(Program.Settings.ConnectionString);
         connection.Open();
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
         LoadingForm.Instance.Initialize(Translations.ProgressLoadingData.GetLang(),
                                         (int)command.ExecuteScalar() * 2,
-                                        Program.LoadingFormMinimumLoad);
+                                        Program.LoadingFormLoadDB);
         if ( !recurse ) DataSet.LunisolarDays.RowChanged += update;
         connection.Close();
         Program.Chrono.Restart();
@@ -102,7 +103,7 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         Enabled = true;
-        Cursor = Cursors.Default;
+        Cursor = cursor;
         DataSet.LunisolarDays.RowChanged -= update;
         try
         {

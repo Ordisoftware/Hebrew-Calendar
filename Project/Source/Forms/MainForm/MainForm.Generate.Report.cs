@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewCalendar
       var lastyear = SQLite.GetDate(DataSet.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
       LoadingForm.Instance.Initialize(Translations.ProgressGenerateReport.GetLang(),
                                       DataSet.LunisolarDays.Count,
-                                      Program.LoadingFormMinimumLoad);
+                                      Program.LoadingFormLoadDB);
       foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         try
         {
