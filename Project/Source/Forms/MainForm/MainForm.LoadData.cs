@@ -45,8 +45,12 @@ namespace Ordisoftware.HebrewCalendar
                                         Program.LoadingFormMinimumLoad);
         DataSet.LunisolarDays.RowChanged += update;
         connection.Close();
+        Program.Chrono.Restart();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         ReportTableAdapter.Fill(DataSet.Report);
+        Program.Chrono.Stop();
+        Program.Settings.BenchmarkLoadData = Program.Chrono.ElapsedMilliseconds;
+        Program.Settings.Save();
         if ( DataSet.LunisolarDays.Count > 0 && !Program.Settings.FirstLaunch )
         {
           IsGenerating = true;

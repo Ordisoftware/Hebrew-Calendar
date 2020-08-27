@@ -1316,5 +1316,41 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["GenerateIntervalMaximum"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkLoadData {
+            get {
+                return ((long)(this["BenchmarkLoadData"]));
+            }
+            set {
+                this["BenchmarkLoadData"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkFillMonths {
+            get {
+                return ((long)(this["BenchmarkFillMonths"]));
+            }
+            set {
+                this["BenchmarkFillMonths"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkGenerate {
+            get {
+                return ((long)(this["BenchmarkGenerate"]));
+            }
+            set {
+                this["BenchmarkGenerate"] = value;
+            }
+        }
     }
 }

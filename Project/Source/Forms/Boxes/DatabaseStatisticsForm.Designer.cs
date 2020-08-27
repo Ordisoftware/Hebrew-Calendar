@@ -30,6 +30,7 @@
     {
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
+      this.TextBox = new System.Windows.Forms.TextBox();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -45,13 +46,22 @@
       // ActionClose
       // 
       this.ActionClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
       this.ActionClose.Location = new System.Drawing.Point(343, 2);
       this.ActionClose.Name = "ActionClose";
       this.ActionClose.Size = new System.Drawing.Size(75, 24);
       this.ActionClose.TabIndex = 24;
       this.ActionClose.Text = "Close";
+      this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
+      // 
+      // TextBox
+      // 
+      this.TextBox.Location = new System.Drawing.Point(13, 13);
+      this.TextBox.Multiline = true;
+      this.TextBox.Name = "TextBox";
+      this.TextBox.Size = new System.Drawing.Size(419, 300);
+      this.TextBox.TabIndex = 38;
       // 
       // DatabaseStatisticsForm
       // 
@@ -60,6 +70,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.ClientSize = new System.Drawing.Size(445, 363);
+      this.Controls.Add(this.TextBox);
       this.Controls.Add(this.PanelBottom);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Location = new System.Drawing.Point(-1, -1);
@@ -67,11 +78,13 @@
       this.MinimizeBox = false;
       this.Name = "DatabaseStatisticsForm";
       this.Padding = new System.Windows.Forms.Padding(10);
+      this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "Statistics";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DatabaseStatisticsForm_FormClosing);
       this.Load += new System.EventHandler(this.DatabaseStatisticsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
@@ -79,5 +92,6 @@
 
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionClose;
+    private System.Windows.Forms.TextBox TextBox;
   }
 }

@@ -47,6 +47,7 @@ namespace Ordisoftware.HebrewCalendar
       GenerateErrors.Clear();
       try
       {
+        Program.Chrono.Restart();
         UpdateButtons();
         CalendarText.Clear();
         CalendarMonth.Events.Clear();
@@ -79,13 +80,31 @@ namespace Ordisoftware.HebrewCalendar
               if ( (SeasonChange)row.SeasonChange == SeasonChange.SummerSolstice )
                 row.SeasonChange = (int)SeasonChange.WinterSolstice;
             }
-          if ( IsGenerating ) CalendarText.Text = GenerateReport();
-          if ( IsGenerating ) FillMonths();
+          if ( IsGenerating )
+            try
+            {
+              CalendarText.Text = GenerateReport();
+            }
+            catch (Exception ex)
+            {
+              ex.Manage();
+            }
         }
         finally
         {
-          TableAdapterManager.UpdateAll(DataSet);
-          LunisolarDaysBindingSource.DataSource = DataSet.LunisolarDays;
+          Program.Chrono.Stop();
+          Program.Settings.BenchmarkGenerate = Program.Chrono.ElapsedMilliseconds;
+          Program.Settings.Save();
+          if ( IsGenerating )
+            try
+            {
+              FillMonths();
+            }
+            finally
+            {
+              TableAdapterManager.UpdateAll(DataSet);
+              LunisolarDaysBindingSource.DataSource = DataSet.LunisolarDays;
+            }
         }
       }
       catch ( Exception ex )

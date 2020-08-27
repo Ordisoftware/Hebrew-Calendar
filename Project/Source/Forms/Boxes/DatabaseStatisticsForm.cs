@@ -36,6 +36,13 @@ namespace Ordisoftware.HebrewCalendar
       Instance = new DatabaseStatisticsForm();
     }
 
+    static public void Run()
+    {
+      Instance.Initialize();
+      Instance.Show();
+      Instance.BringToFront();
+    }
+
     public DatabaseStatisticsForm()
     {
       InitializeComponent();
@@ -52,6 +59,18 @@ namespace Ordisoftware.HebrewCalendar
     {
       e.Cancel = true;
       Hide();
+    }
+
+    private void ActionClose_Click(object sender, EventArgs e)
+    {
+      Close();
+    }
+
+    private void Initialize()
+    {
+      TextBox.Text = "Last loading time: " + Program.Settings.BenchmarkLoadData + Environment.NewLine
+                   + "Last fill months time: " + Program.Settings.BenchmarkFillMonths + Environment.NewLine
+                   + "Last generate time: " + Program.Settings.BenchmarkGenerate;
     }
 
   }
