@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewCalendar
         finally
         {
           Program.Chrono.Stop();
-          Program.Settings.BenchmarkGenerate = Program.Chrono.ElapsedMilliseconds;
+          Program.Settings.BenchmarkGenerateYears = Program.Chrono.ElapsedMilliseconds;
           Program.Settings.Save();
           if ( IsGenerating )
             try

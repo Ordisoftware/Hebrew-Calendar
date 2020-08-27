@@ -1332,24 +1332,36 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long BenchmarkFillMonths {
+        public long BenchmarkFillCalendar {
             get {
-                return ((long)(this["BenchmarkFillMonths"]));
+                return ((long)(this["BenchmarkFillCalendar"]));
             }
             set {
-                this["BenchmarkFillMonths"] = value;
+                this["BenchmarkFillCalendar"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long BenchmarkGenerate {
+        public long BenchmarkGenerateYears {
             get {
-                return ((long)(this["BenchmarkGenerate"]));
+                return ((long)(this["BenchmarkGenerateYears"]));
             }
             set {
-                this["BenchmarkGenerate"] = value;
+                this["BenchmarkGenerateYears"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkStartingApp {
+            get {
+                return ((long)(this["BenchmarkStartingApp"]));
+            }
+            set {
+                this["BenchmarkStartingApp"] = value;
             }
         }
     }

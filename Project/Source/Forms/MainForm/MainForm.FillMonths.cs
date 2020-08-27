@@ -188,7 +188,7 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         Program.Chrono.Stop();
-        Program.Settings.BenchmarkFillMonths = Program.Chrono.ElapsedMilliseconds;
+        Program.Settings.BenchmarkFillCalendar = Program.Chrono.ElapsedMilliseconds;
         Program.Settings.Save();
       }
     }

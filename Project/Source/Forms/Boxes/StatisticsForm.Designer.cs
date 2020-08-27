@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.HebrewCalendar
 {
-  partial class DatabaseStatisticsForm
+  partial class StatisticsForm
   {
     /// <summary>
     /// Required designer variable.

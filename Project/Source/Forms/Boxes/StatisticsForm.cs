@@ -26,14 +26,14 @@ using Ordisoftware.HebrewCommon;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  public partial class DatabaseStatisticsForm : Form
+  public partial class StatisticsForm : Form
   {
 
-    static public DatabaseStatisticsForm Instance { get; private set; }
+    static public StatisticsForm Instance { get; private set; }
 
-    static DatabaseStatisticsForm()
+    static StatisticsForm()
     {
-      Instance = new DatabaseStatisticsForm();
+      Instance = new StatisticsForm();
     }
 
     static public void Run()
@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
       Instance.BringToFront();
     }
 
-    public DatabaseStatisticsForm()
+    public StatisticsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
@@ -66,11 +66,32 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
+    private string FormatMilliseconds(long ms)
+    {
+      TimeSpan time = TimeSpan.FromMilliseconds(ms);
+      return string.Format("{0:D2}m {1:D2}s {2:D3}ms",
+                            time.Minutes,
+                            time.Seconds,
+                            time.Milliseconds).Replace("00m 00s", "").Replace("00m ", "");
+    }
+
     private void Initialize()
     {
-      TextBox.Text = "Last loading time: " + Program.Settings.BenchmarkLoadData + Environment.NewLine
-                   + "Last fill months time: " + Program.Settings.BenchmarkFillMonths + Environment.NewLine
-                   + "Last generate time: " + Program.Settings.BenchmarkGenerate;
+      TextBox.Text = string.Format("Last starting full time: {0}" + Environment.NewLine +
+                                   "Last load data time: {1}" + Environment.NewLine +
+                                   "Last fill calendar time: {2}" + Environment.NewLine +
+                                   "Last generate years time: {3}",
+                                   FormatMilliseconds(Program.Settings.BenchmarkStartingApp),
+                                   FormatMilliseconds(Program.Settings.BenchmarkLoadData),
+                                   FormatMilliseconds(Program.Settings.BenchmarkFillCalendar),
+                                   FormatMilliseconds(Program.Settings.BenchmarkGenerateYears));
+      TextBox.Text += Environment.NewLine;
+      TextBox.Text += "First year: " + MainForm.Instance.YearFirst + Environment.NewLine;
+      TextBox.Text += "Last year: " + MainForm.Instance.YearLast + Environment.NewLine;
+      TextBox.Text += "Records count: " + MainForm.Instance.DataSet.LunisolarDays.Count() + Environment.NewLine;
+      TextBox.Text += Environment.NewLine;
+      //File size
+      //Memory
     }
 
   }

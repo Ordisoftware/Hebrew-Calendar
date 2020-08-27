@@ -334,10 +334,13 @@
     <Setting Name="BenchmarkLoadData" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="BenchmarkFillMonths" Type="System.Int64" Scope="User">
+    <Setting Name="BenchmarkFillCalendar" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="BenchmarkGenerate" Type="System.Int64" Scope="User">
+    <Setting Name="BenchmarkGenerateYears" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BenchmarkStartingApp" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>

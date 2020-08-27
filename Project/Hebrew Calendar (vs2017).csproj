@@ -212,11 +212,11 @@
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFileItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFile.cs" />
-    <Compile Include="Source\Forms\Boxes\DatabaseStatisticsForm.cs">
+    <Compile Include="Source\Forms\Boxes\StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\DatabaseStatisticsForm.Designer.cs">
-      <DependentUpon>DatabaseStatisticsForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\StatisticsForm.Designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SearchGregorianMonthForm.cs">
       <SubType>Form</SubType>
@@ -530,8 +530,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\DatabaseStatisticsForm.resx">
-      <DependentUpon>DatabaseStatisticsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\LockSessionForm.fr.resx">
       <DependentUpon>LockSessionForm.cs</DependentUpon>

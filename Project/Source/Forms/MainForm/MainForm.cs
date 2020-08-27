@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing.Printing;
@@ -45,11 +46,14 @@ namespace Ordisoftware.HebrewCalendar
       Instance = new MainForm();
     }
 
+    private Stopwatch ChronoStart = new Stopwatch();
+
     /// <summary>
     /// Default constructor.
     /// </summary>
     private MainForm()
     {
+      ChronoStart.Start();
       InitializeComponent();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
@@ -107,6 +111,9 @@ namespace Ordisoftware.HebrewCalendar
       TimerMidnight.TimeReached += TimerMidnight_Tick;
       TimerMidnight.Start();
       TimerReminder_Tick(null, null);
+      ChronoStart.Stop();
+      Program.Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
+      Program.Settings.Save();
     }
 
     /// <summary>
@@ -705,7 +712,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewDbStats_Click(object sender, EventArgs e)
     {
-      DatabaseStatisticsForm.Run();
+      StatisticsForm.Run();
     }
 
     /// <summary>
