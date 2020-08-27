@@ -534,6 +534,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffForm.fr.resx">
+      <DependentUpon>DatesDiffForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffForm.resx">
       <DependentUpon>DatesDiffForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -661,6 +664,7 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="License\MPL 2.0.rtf" />
+    <None Include="Properties\DataSources\DatesDiffItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

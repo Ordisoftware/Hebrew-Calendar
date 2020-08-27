@@ -117,4 +117,691 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="lunationsLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lunationsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lunationsLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lunationsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lunationsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 46</value>
+  </data>
+  <data name="lunationsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lunationsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="lunationsLabel.Text" xml:space="preserve">
+    <value>Lunations:</value>
+  </data>
+  <data name="&gt;&gt;lunationsLabel.Name" xml:space="preserve">
+    <value>lunationsLabel</value>
+  </data>
+  <data name="&gt;&gt;lunationsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lunationsLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;lunationsLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="moonDaysLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="moonDaysLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="moonDaysLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="moonDaysLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="moonDaysLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 26</value>
+  </data>
+  <data name="moonDaysLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="moonDaysLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="moonDaysLabel.Text" xml:space="preserve">
+    <value>Moon days:</value>
+  </data>
+  <data name="&gt;&gt;moonDaysLabel.Name" xml:space="preserve">
+    <value>moonDaysLabel</value>
+  </data>
+  <data name="&gt;&gt;moonDaysLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;moonDaysLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;moonDaysLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="solarDaysLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="solarDaysLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="solarDaysLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="solarDaysLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="solarDaysLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 26</value>
+  </data>
+  <data name="solarDaysLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="solarDaysLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="solarDaysLabel.Text" xml:space="preserve">
+    <value>Solar days:</value>
+  </data>
+  <data name="&gt;&gt;solarDaysLabel.Name" xml:space="preserve">
+    <value>solarDaysLabel</value>
+  </data>
+  <data name="&gt;&gt;solarDaysLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;solarDaysLabel.Parent" xml:space="preserve">
+    <value>GroupBoxSun</value>
+  </data>
+  <data name="&gt;&gt;solarDaysLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="solarMonthsLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="solarMonthsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="solarMonthsLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="solarMonthsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="solarMonthsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 46</value>
+  </data>
+  <data name="solarMonthsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 13</value>
+  </data>
+  <data name="solarMonthsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="solarMonthsLabel.Text" xml:space="preserve">
+    <value>Solar months:</value>
+  </data>
+  <data name="&gt;&gt;solarMonthsLabel.Name" xml:space="preserve">
+    <value>solarMonthsLabel</value>
+  </data>
+  <data name="&gt;&gt;solarMonthsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;solarMonthsLabel.Parent" xml:space="preserve">
+    <value>GroupBoxSun</value>
+  </data>
+  <data name="&gt;&gt;solarMonthsLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="solarWeeksLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="solarWeeksLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="solarWeeksLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="solarWeeksLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="solarWeeksLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 66</value>
+  </data>
+  <data name="solarWeeksLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="solarWeeksLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="solarWeeksLabel.Text" xml:space="preserve">
+    <value>Solar weeks:</value>
+  </data>
+  <data name="&gt;&gt;solarWeeksLabel.Name" xml:space="preserve">
+    <value>solarWeeksLabel</value>
+  </data>
+  <data name="&gt;&gt;solarWeeksLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;solarWeeksLabel.Parent" xml:space="preserve">
+    <value>GroupBoxSun</value>
+  </data>
+  <data name="&gt;&gt;solarWeeksLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="solarYearsLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="solarYearsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="solarYearsLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="solarYearsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="solarYearsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 86</value>
+  </data>
+  <data name="solarYearsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="solarYearsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="solarYearsLabel.Text" xml:space="preserve">
+    <value>Solar years:</value>
+  </data>
+  <data name="&gt;&gt;solarYearsLabel.Name" xml:space="preserve">
+    <value>solarYearsLabel</value>
+  </data>
+  <data name="&gt;&gt;solarYearsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;solarYearsLabel.Parent" xml:space="preserve">
+    <value>GroupBoxSun</value>
+  </data>
+  <data name="&gt;&gt;solarYearsLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditMaxYearsAutoCalculate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="EditMaxYearsAutoCalculate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="EditMaxYearsAutoCalculate.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditMaxYearsAutoCalculate.Name" xml:space="preserve">
+    <value>EditMaxYearsAutoCalculate</value>
+  </data>
+  <data name="&gt;&gt;EditMaxYearsAutoCalculate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditMaxYearsAutoCalculate.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;EditMaxYearsAutoCalculate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditAlwaysLiveCalculate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditAlwaysLiveCalculate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditAlwaysLiveCalculate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 7</value>
+  </data>
+  <data name="EditAlwaysLiveCalculate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 17</value>
+  </data>
+  <data name="EditAlwaysLiveCalculate.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditAlwaysLiveCalculate.Text" xml:space="preserve">
+    <value>Always live calculate (years interval)</value>
+  </data>
+  <data name="&gt;&gt;EditAlwaysLiveCalculate.Name" xml:space="preserve">
+    <value>EditAlwaysLiveCalculate</value>
+  </data>
+  <data name="&gt;&gt;EditAlwaysLiveCalculate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAlwaysLiveCalculate.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;EditAlwaysLiveCalculate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>408, 2</value>
+  </data>
+  <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ActionClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionCalculate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionCalculate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionCalculate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionCalculate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 2</value>
+  </data>
+  <data name="ActionCalculate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="ActionCalculate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ActionCalculate.Text" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="&gt;&gt;ActionCalculate.Name" xml:space="preserve">
+    <value>ActionCalculate</value>
+  </data>
+  <data name="&gt;&gt;ActionCalculate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCalculate.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionCalculate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 328</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>489, 28</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="MonthCalendar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="MonthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 19</value>
+  </data>
+  <data name="MonthCalendar1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar1.Name" xml:space="preserve">
+    <value>MonthCalendar1</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="MonthCalendar2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="MonthCalendar2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 19</value>
+  </data>
+  <data name="MonthCalendar2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar2.Name" xml:space="preserve">
+    <value>MonthCalendar2</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="datesDiffItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="lunationsLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="lunationsLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lunationsLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 46</value>
+  </data>
+  <data name="lunationsLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="lunationsLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="lunationsLabel1.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="lunationsLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;lunationsLabel1.Name" xml:space="preserve">
+    <value>lunationsLabel1</value>
+  </data>
+  <data name="&gt;&gt;lunationsLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lunationsLabel1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;lunationsLabel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="moonDaysLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="moonDaysLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="moonDaysLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 26</value>
+  </data>
+  <data name="moonDaysLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="moonDaysLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="moonDaysLabel1.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="moonDaysLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;moonDaysLabel1.Name" xml:space="preserve">
+    <value>moonDaysLabel1</value>
+  </data>
+  <data name="&gt;&gt;moonDaysLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;moonDaysLabel1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;moonDaysLabel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="solarDaysLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="solarDaysLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="solarDaysLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 26</value>
+  </data>
+  <data name="solarDaysLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="solarDaysLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="solarDaysLabel1.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="solarDaysLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;solarDaysLabel1.Name" xml:space="preserve">
+    <value>solarDaysLabel1</value>
+  </data>
+  <data name="&gt;&gt;solarDaysLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;solarDaysLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxSun</value>
+  </data>
+  <data name="&gt;&gt;solarDaysLabel1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="solarMonthsLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="solarMonthsLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="solarMonthsLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 46</value>
+  </data>
+  <data name="solarMonthsLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="solarMonthsLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="solarMonthsLabel1.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="solarMonthsLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;solarMonthsLabel1.Name" xml:space="preserve">
+    <value>solarMonthsLabel1</value>
+  </data>
+  <data name="&gt;&gt;solarMonthsLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;solarMonthsLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxSun</value>
+  </data>
+  <data name="&gt;&gt;solarMonthsLabel1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="solarWeeksLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="solarWeeksLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="solarWeeksLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 66</value>
+  </data>
+  <data name="solarWeeksLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="solarWeeksLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="solarWeeksLabel1.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="solarWeeksLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;solarWeeksLabel1.Name" xml:space="preserve">
+    <value>solarWeeksLabel1</value>
+  </data>
+  <data name="&gt;&gt;solarWeeksLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;solarWeeksLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxSun</value>
+  </data>
+  <data name="&gt;&gt;solarWeeksLabel1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="solarYearsLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="solarYearsLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="solarYearsLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 86</value>
+  </data>
+  <data name="solarYearsLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="solarYearsLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="solarYearsLabel1.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="solarYearsLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;solarYearsLabel1.Name" xml:space="preserve">
+    <value>solarYearsLabel1</value>
+  </data>
+  <data name="&gt;&gt;solarYearsLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;solarYearsLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxSun</value>
+  </data>
+  <data name="&gt;&gt;solarYearsLabel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupBoxSun.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GroupBoxSun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 197</value>
+  </data>
+  <data name="GroupBoxSun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 115</value>
+  </data>
+  <data name="GroupBoxSun.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="GroupBoxSun.Text" xml:space="preserve">
+    <value>SUN</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSun.Name" xml:space="preserve">
+    <value>GroupBoxSun</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSun.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSun.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 197</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 115</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>MOON</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>509, 366</value>
+  </data>
+  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, -1</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>Manual</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Dates difference calculator</value>
+  </data>
+  <data name="&gt;&gt;datesDiffItemBindingSource.Name" xml:space="preserve">
+    <value>datesDiffItemBindingSource</value>
+  </data>
+  <data name="&gt;&gt;datesDiffItemBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DatesDiffForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

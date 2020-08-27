@@ -10,19 +10,11 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2016-04 </created>
+/// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -30,17 +22,23 @@ namespace Ordisoftware.HebrewCalendar
   public partial class DatesDiffForm : Form
   {
 
-    static public void Run(Tuple<DateTime, DateTime> date = null)
+    static public void Run(Tuple<DateTime, DateTime> dates = null)
     {
       var form = new DatesDiffForm();
-      if ( date != null )
+      if ( dates != null )
       {
-        form.MonthCalendar1.SelectionStart = date.Item1;
-        form.MonthCalendar2.SelectionStart = date.Item2;
-        form.ActionCalculate_Click(null, null);
+        form.MonthCalendar1.SelectionStart = dates.Item1;
+        form.MonthCalendar2.SelectionStart = dates.Item2;
       }
+      form.MonthCalendar1.Tag = form.MonthCalendar1.SelectionStart;
+      form.MonthCalendar2.Tag = form.MonthCalendar2.SelectionStart;
+      form.ActionCalculate_Click(null, null);
       form.ShowDialog();
     }
+
+    private DatesDiffItem Stats;
+
+    private decimal YearsMaxInterval;
 
     private DatesDiffForm()
     {
@@ -52,29 +50,55 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Location.X < 0 || Location.Y < 0 )
         this.CenterToMainFormElseScreen();
+      EditMaxYearsAutoCalculate_ValueChanged(null, null);
+    }
+
+    private void EditMaxYearsAutoCalculate_ValueChanged(object sender, EventArgs e)
+    {
+      YearsMaxInterval = EditMaxYearsAutoCalculate.Value * 365;
+    }
+
+    private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
+    {
+      bool b1 = (DateTime)MonthCalendar1.Tag != MonthCalendar1.SelectionStart;
+      bool b2 = (DateTime)MonthCalendar2.Tag != MonthCalendar2.SelectionStart;
+      if ( b1 ) MonthCalendar1.Tag = MonthCalendar1.SelectionStart;
+      if ( b2 ) MonthCalendar2.Tag = MonthCalendar2.SelectionStart;
+      if ( !b1 && !b2 ) return;
+      ActionCalculate.Enabled = true;
+      //ActionCalculate.Focus();
+      if ( EditAlwaysLiveCalculate.Checked )
+      {
+        var diff = Math.Abs((decimal)( MonthCalendar1.SelectionStart - MonthCalendar2.SelectionStart ).TotalDays);
+        if ( diff <= YearsMaxInterval )
+        ActionCalculate.PerformClick();
+      }
     }
 
     private void ActionCalculate_Click(object sender, EventArgs e)
     {
-      var stats = new DatesDiffItem(MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
       try
       {
         Cursor = Cursors.WaitCursor;
-        textBox1.Text = $"{stats.Dates.Item1.ToShortDateString()} -> {stats.Dates.Item2.ToShortDateString()}"
-                      + Environment.NewLine + Environment.NewLine
-                      + Translations.DiffDatesSolarDaysCount.GetLang(stats.SolarDays) + Environment.NewLine
-                      + Translations.DiffDatesSolarWeeksCount.GetLang(stats.SolarWeeks) + Environment.NewLine
-                      + Translations.DiffDatesSolarMonthsCount.GetLang(stats.SolarMonths) + Environment.NewLine
-                      + Environment.NewLine
-                      + Translations.DiffDatesMoonDaysCount.GetLang(stats.MoonDays) + Environment.NewLine
-                      + Translations.DiffDatesMoonLunationCount.GetLang(stats.Lunations)/* + Environment.NewLine
-                      + Translations.DiffDatesMoonLunationCount.GetLang(stats.MoonYears)*/;
+        var dates = new Tuple<DateTime, DateTime>(MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
+        if ( Stats == null )
+        {
+          Stats = new DatesDiffItem(dates);
+          datesDiffItemBindingSource.DataSource = Stats;
+        }
+        else
+        {
+          Stats.Dates = dates;
+          datesDiffItemBindingSource.ResetBindings(false);
+        }
+        ActionCalculate.Enabled = false;
       }
       finally
       {
         Cursor = Cursors.Default;
       }
     }
+
   }
 
 }
