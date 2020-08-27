@@ -49,10 +49,14 @@
       this.solarYearsLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxSun = new System.Windows.Forms.GroupBox();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.label2 = new System.Windows.Forms.Label();
       this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
       this.DateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-      this.label2 = new System.Windows.Forms.Label();
       this.datesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
+      this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
+      this.button1 = new System.Windows.Forms.Button();
+      this.button2 = new System.Windows.Forms.Button();
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -95,6 +99,11 @@
       // 
       resources.ApplyResources(solarYearsLabel, "solarYearsLabel");
       solarYearsLabel.Name = "solarYearsLabel";
+      // 
+      // moonYearsLabel
+      // 
+      resources.ApplyResources(moonYearsLabel, "moonYearsLabel");
+      moonYearsLabel.Name = "moonYearsLabel";
       // 
       // PanelBottom
       // 
@@ -184,6 +193,12 @@
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.TabStop = false;
       // 
+      // label2
+      // 
+      this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "MoonYears", true));
+      resources.ApplyResources(this.label2, "label2");
+      this.label2.Name = "label2";
+      // 
       // DateTimePicker1
       // 
       resources.ApplyResources(this.DateTimePicker1, "DateTimePicker1");
@@ -198,26 +213,51 @@
       this.DateTimePicker2.ShowUpDown = true;
       this.DateTimePicker2.ValueChanged += new System.EventHandler(this.DateTimePicker2_ValueChanged);
       // 
-      // moonYearsLabel
-      // 
-      resources.ApplyResources(moonYearsLabel, "moonYearsLabel");
-      moonYearsLabel.Name = "moonYearsLabel";
-      // 
-      // label2
-      // 
-      this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "MoonYears", true));
-      resources.ApplyResources(this.label2, "label2");
-      this.label2.Name = "label2";
-      // 
       // datesDiffItemBindingSource
       // 
       this.datesDiffItemBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.DatesDiffItem);
+      // 
+      // ActionMoonDayTextFormatReset
+      // 
+      this.ActionMoonDayTextFormatReset.AllowDrop = true;
+      this.ActionMoonDayTextFormatReset.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionMoonDayTextFormatReset, "ActionMoonDayTextFormatReset");
+      this.ActionMoonDayTextFormatReset.Name = "ActionMoonDayTextFormatReset";
+      this.ActionMoonDayTextFormatReset.UseVisualStyleBackColor = true;
+      // 
+      // ActionMoonDayTextFormatHelp
+      // 
+      this.ActionMoonDayTextFormatHelp.AllowDrop = true;
+      this.ActionMoonDayTextFormatHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionMoonDayTextFormatHelp, "ActionMoonDayTextFormatHelp");
+      this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";
+      this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
+      // 
+      // button1
+      // 
+      this.button1.AllowDrop = true;
+      this.button1.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.button1, "button1");
+      this.button1.Name = "button1";
+      this.button1.UseVisualStyleBackColor = true;
+      // 
+      // button2
+      // 
+      this.button2.AllowDrop = true;
+      this.button2.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.button2, "button2");
+      this.button2.Name = "button2";
+      this.button2.UseVisualStyleBackColor = true;
       // 
       // DatesDiffForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.button2);
+      this.Controls.Add(this.button1);
+      this.Controls.Add(this.ActionMoonDayTextFormatReset);
+      this.Controls.Add(this.ActionMoonDayTextFormatHelp);
       this.Controls.Add(this.DateTimePicker2);
       this.Controls.Add(this.DateTimePicker1);
       this.Controls.Add(this.groupBox1);
@@ -258,5 +298,9 @@
     private System.Windows.Forms.DateTimePicker DateTimePicker1;
     private System.Windows.Forms.DateTimePicker DateTimePicker2;
     private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.Button ActionMoonDayTextFormatReset;
+    private System.Windows.Forms.Button ActionMoonDayTextFormatHelp;
+    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Button button2;
   }
 }

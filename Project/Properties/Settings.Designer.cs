@@ -1399,5 +1399,60 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["AutoGenerateYearsInternal"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark1 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark1"]));
+            }
+            set {
+                this["DateBookmark1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark2 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark2"]));
+            }
+            set {
+                this["DateBookmark2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark3 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark3"]));
+            }
+            set {
+                this["DateBookmark3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark4 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark4"]));
+            }
+            set {
+                this["DateBookmark4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark5 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark5"]));
+            }
+            set {
+                this["DateBookmark5"] = value;
+            }
+        }
     }
 }

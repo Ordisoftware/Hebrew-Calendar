@@ -336,6 +336,42 @@
   <data name="&gt;&gt;solarYearsLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="moonYearsLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="moonYearsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="moonYearsLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="moonYearsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="moonYearsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 66</value>
+  </data>
+  <data name="moonYearsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="moonYearsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="moonYearsLabel.Text" xml:space="preserve">
+    <value>Moon years:</value>
+  </data>
+  <data name="&gt;&gt;moonYearsLabel.Name" xml:space="preserve">
+    <value>moonYearsLabel</value>
+  </data>
+  <data name="&gt;&gt;moonYearsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;moonYearsLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;moonYearsLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -343,7 +379,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>423, 2</value>
+    <value>413, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -370,10 +406,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 361</value>
+    <value>10, 383</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 28</value>
+    <value>494, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -388,13 +424,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="MonthCalendar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="MonthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 19</value>
+    <value>18, 19</value>
   </data>
   <data name="MonthCalendar1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -409,13 +445,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MonthCalendar1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="MonthCalendar2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="MonthCalendar2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 19</value>
+    <value>269, 19</value>
   </data>
   <data name="MonthCalendar2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -430,7 +466,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MonthCalendar2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <metadata name="datesDiffItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -640,7 +676,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="GroupBoxSun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 230</value>
+    <value>18, 252</value>
   </data>
   <data name="GroupBoxSun.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 115</value>
@@ -661,46 +697,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxSun.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
-  </data>
-  <metadata name="moonYearsLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="moonYearsLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="moonYearsLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="moonYearsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="moonYearsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 66</value>
-  </data>
-  <data name="moonYearsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
-  </data>
-  <data name="moonYearsLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
-  </data>
-  <data name="moonYearsLabel.Text" xml:space="preserve">
-    <value>Moon years:</value>
-  </data>
-  <data name="&gt;&gt;moonYearsLabel.Name" xml:space="preserve">
-    <value>moonYearsLabel</value>
-  </data>
-  <data name="&gt;&gt;moonYearsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;moonYearsLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;moonYearsLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -739,10 +739,10 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 222</value>
+    <value>266, 252</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 123</value>
+    <value>230, 115</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
@@ -760,10 +760,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="DateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 188</value>
+    <value>18, 188</value>
   </data>
   <data name="DateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 20</value>
@@ -781,10 +781,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DateTimePicker1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="DateTimePicker2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 188</value>
+    <value>269, 188</value>
   </data>
   <data name="DateTimePicker2.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 20</value>
@@ -802,6 +802,178 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DateTimePicker2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKDSURBVDhPjZJdSFNhGMfPRUTRRVArFLr3pugi6KKrBgmi
+        3YQXUXcGQVBBXtmWfdhFFkUXJSWa7sOooIgwdDfehCFoqX04N6XkuDW36eZ2tnnOzsf273meRngh1Av/
+        vc/2/H7PezjvlLquUKerK4TdN0awq3MEO/8RZphlh11lHxXTGWA86eB/F7PssKvsuTWKr5kKlDuL0owm
+        NEoBEcp8PI9wLIfILw3znHhOGGbZYVcGTKSrUNzt0vR6PPB6vQgEgvD5fFjK6Ojo6KDvAfh9g8Io7ivi
+        yIC9XaMYizvY1tYP06kgtVFBslRFomBTnNpuI65ZSGgmDIvZPnHYVVw05d2PMg70qijbNq5d9SDoD2JV
+        d+CheigwhIDPj3TJgn9gALppCssOuzLgZVRHwzOVHs5G0XaQMx2sl23k6TTOumkjWzahmRaqVQsN/ao4
+        fwbQY/jnSjgaWEZoqUBDHFRokEPhfXP4AGaYZYddusZR9H0povFVAsdfxKkZw+HBGA4NLONgLVzzb9xj
+        hll22JUBPTNFnHq7gpbXCTyfXOEXvWlVKRXZudfyJiEsOzJgP308/FzE2eEUNZIEOoioGSzSvS/SfyKs
+        ZvH95yrCS2nq2cIwyw67MuDeJw3nQmmcHk7CppdVMCrw3OyG+0Qz1VVE4+tYiGVhG2ViUsKy83dA91QR
+        l8eyaAutwdgo00mAu7EZdx/0SK2mNKjJPIySIQyz7MiAutsh3J/WcX2igPYPeTrFEqmp6SQePe6VejVn
+        YC2nw9JNYZhlh13FdenpEy74Trd73+PbbASTM1Gcv3CxVTl2pnVmdgHjU2F8nJqj3rwwzIpDrkKrnnJk
+        i+yoZateLUr9b21P8Yu5uR0IAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 214</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatReset.Name" xml:space="preserve">
+    <value>ActionMoonDayTextFormatReset</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatReset.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatReset.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIYSURBVDhPlZHPaxNRFIWvIBbUtehOcS0IblwrYhciKP4d
+        xprSEmmtBhojUYO0WsFWbTJNWwRtUmPQ2pqguFPRSpapTXSmMckkmTYj+TE5fe/1hYmaLrzwMbw75zsz
+        zNDfo0QXcG9yBrdno0fkSkzg5SL8oQjk8c/56jyHZvcu4ARhKvYGTu8Iflw4BJzeiUZ3F3CSoMQWcdE3
+        Bpwilu0Cd6ROVD6+A/X5CeD5fSiv4zjbcw3JwAisyEPUIuPA3BiUhQTO9FwHwg/QeDEB7kidSDtIKDrO
+        4+c+Qng3YX4vIXuAkNlPSDNURngPIcLQWIZnuSN1opvjQVgAUgUDq6UNZAwTq8ZvrJRMpBjfyybS5Yq4
+        l9INkeWO1Il8/lE02TKtqlCzWeRLJXHtREbVRJY7Uify+u7AajahamvI5fWOYgttLSuy3JE6kcfrQ5Mt
+        f+Vy0IvFjiKnbBjIFwrs+YDHe8sucHu8Yqnr28scLlc2KjArJtzDN+yCIfewKOBPMNbXWYCHtufZXARK
+        aMYuGBxyiwLT3Ao0Go1/pHaW4glEY6/sAtfAVVFQq9VQrVZRr9c7ii2Wk0nxFlIn6nMNigI+lmWJD8pp
+        Hy6qmoaPnz6LPzE9+9Qu6HcNyFjneff+A5beJvBl+RtSqRWxC05N2wWOy71xZ/8VXHL2wdFG6+y/O4qA
+        EsKTgIJHk0E83sKQupjDjGP/yVEiok0CpprW7N7j/wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 214</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Name" xml:space="preserve">
+    <value>ActionMoonDayTextFormatHelp</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIYSURBVDhPlZHPaxNRFIWvIBbUtehOcS0IblwrYhciKP4d
+        xprSEmmtBhojUYO0WsFWbTJNWwRtUmPQ2pqguFPRSpapTXSmMckkmTYj+TE5fe/1hYmaLrzwMbw75zsz
+        zNDfo0QXcG9yBrdno0fkSkzg5SL8oQjk8c/56jyHZvcu4ARhKvYGTu8Iflw4BJzeiUZ3F3CSoMQWcdE3
+        Bpwilu0Cd6ROVD6+A/X5CeD5fSiv4zjbcw3JwAisyEPUIuPA3BiUhQTO9FwHwg/QeDEB7kidSDtIKDrO
+        4+c+Qng3YX4vIXuAkNlPSDNURngPIcLQWIZnuSN1opvjQVgAUgUDq6UNZAwTq8ZvrJRMpBjfyybS5Yq4
+        l9INkeWO1Il8/lE02TKtqlCzWeRLJXHtREbVRJY7Uify+u7AajahamvI5fWOYgttLSuy3JE6kcfrQ5Mt
+        f+Vy0IvFjiKnbBjIFwrs+YDHe8sucHu8Yqnr28scLlc2KjArJtzDN+yCIfewKOBPMNbXWYCHtufZXARK
+        aMYuGBxyiwLT3Ao0Go1/pHaW4glEY6/sAtfAVVFQq9VQrVZRr9c7ii2Wk0nxFlIn6nMNigI+lmWJD8pp
+        Hy6qmoaPnz6LPzE9+9Qu6HcNyFjneff+A5beJvBl+RtSqRWxC05N2wWOy71xZ/8VXHL2wdFG6+y/O4qA
+        EsKTgIJHk0E83sKQupjDjGP/yVEiok0CpprW7N7j/wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 214</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKDSURBVDhPjZJdSFNhGMfPRUTRRVArFLr3pugi6KKrBgmi
+        3YQXUXcGQVBBXtmWfdhFFkUXJSWa7sOooIgwdDfehCFoqX04N6XkuDW36eZ2tnnOzsf273meRngh1Av/
+        vc/2/H7PezjvlLquUKerK4TdN0awq3MEO/8RZphlh11lHxXTGWA86eB/F7PssKvsuTWKr5kKlDuL0owm
+        NEoBEcp8PI9wLIfILw3znHhOGGbZYVcGTKSrUNzt0vR6PPB6vQgEgvD5fFjK6Ojo6KDvAfh9g8Io7ivi
+        yIC9XaMYizvY1tYP06kgtVFBslRFomBTnNpuI65ZSGgmDIvZPnHYVVw05d2PMg70qijbNq5d9SDoD2JV
+        d+CheigwhIDPj3TJgn9gALppCssOuzLgZVRHwzOVHs5G0XaQMx2sl23k6TTOumkjWzahmRaqVQsN/ao4
+        fwbQY/jnSjgaWEZoqUBDHFRokEPhfXP4AGaYZYddusZR9H0povFVAsdfxKkZw+HBGA4NLONgLVzzb9xj
+        hll22JUBPTNFnHq7gpbXCTyfXOEXvWlVKRXZudfyJiEsOzJgP308/FzE2eEUNZIEOoioGSzSvS/SfyKs
+        ZvH95yrCS2nq2cIwyw67MuDeJw3nQmmcHk7CppdVMCrw3OyG+0Qz1VVE4+tYiGVhG2ViUsKy83dA91QR
+        l8eyaAutwdgo00mAu7EZdx/0SK2mNKjJPIySIQyz7MiAutsh3J/WcX2igPYPeTrFEqmp6SQePe6VejVn
+        YC2nw9JNYZhlh13FdenpEy74Trd73+PbbASTM1Gcv3CxVTl2pnVmdgHjU2F8nJqj3rwwzIpDrkKrnnJk
+        i+yoZateLUr9b21P8Yu5uR0IAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 214</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -811,7 +983,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>524, 399</value>
+    <value>514, 421</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>
