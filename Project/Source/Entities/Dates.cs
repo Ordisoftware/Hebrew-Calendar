@@ -22,34 +22,72 @@ namespace Ordisoftware.HebrewCalendar
   static public class Dates
   {
 
-    static private Dictionary<DateTime, DateItem> Items
+    static private Dictionary<int, Dictionary<DateTime, SeasonChange>> TorahSeasons
+      = new Dictionary<int, Dictionary<DateTime, SeasonChange>>();
+
+    static private Dictionary<DateTime, DateItem> DayItems
       = new Dictionary<DateTime, DateItem>();
 
-    static public int Count => Items.Keys.Count;
+    static public int Count => DayItems.Keys.Count;
 
-    static public void Clear() => Items.Clear();
+    static public void Clear()
+    {
+      TorahSeasons.Clear();
+      DayItems.Clear();
+    }
 
     static public DateItem Get(DateTime date)
     {
-      if ( Items.ContainsKey(date) ) return Items[date];
+      if ( DayItems.ContainsKey(date) ) return DayItems[date];
       DateItem value = new DateItem
       {
         DayOfMonth = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(date),
         MoonRise = date.GetSunMoonEphemeris().Moonrise,
         MonthOfYear = AstronomyHelper.LunisolerCalendar.GetMonth(date)
       };
+      if ( !TorahSeasons.ContainsKey(date.Year) )
+        InitializeSeasons(date.Year);
+      if ( TorahSeasons[date.Year].ContainsKey(date) )
+        value.TorahSeasonChange = TorahSeasons[date.Year][date];
+      value.RealSeasonChange = value.TorahSeasonChange;
+
+      if ( value.TorahSeasonChange != SeasonChange.None
+        && MainForm.Instance.CurrentGPSLatitude < 0
+        && !Program.Settings.TorahEventsCountAsMoon )
+        switch ( value.TorahSeasonChange )
+        {
+          case SeasonChange.SpringEquinox:
+            value.RealSeasonChange = SeasonChange.AutumnEquinox;
+            break;
+          case SeasonChange.AutumnEquinox:
+            value.RealSeasonChange = SeasonChange.SpringEquinox;
+            break;
+          case SeasonChange.WinterSolstice:
+            value.RealSeasonChange = SeasonChange.SummerSolstice;
+            break;
+          case SeasonChange.SummerSolstice:
+            value.RealSeasonChange = SeasonChange.WinterSolstice;
+            break;
+        }
+      DayItems.Add(date, value);
+      return value;
+    }
+
+    static private void InitializeSeasons(int year)
+    {
+      if ( !TorahSeasons.ContainsKey(year) )
+        TorahSeasons.Add(year, new Dictionary<DateTime, SeasonChange>());
       var aasdate = new AASDate();
       long jdYear = 0, jdMonth = 0, jdDay = 0, jdHour = 0, jdMinute = 0;
       double second = 0;
       void set(SeasonChange season, Func<long, bool, double> action)
       {
-        aasdate.Set(action(date.Year, true), true);
+        aasdate.Set(action(year, true), true);
         aasdate.Get(ref jdYear, ref jdMonth, ref jdDay, ref jdHour, ref jdMinute, ref second);
         var dateJulian = new DateTime((int)jdYear, (int)jdMonth, (int)jdDay, 0, 0, 0);
-        if ( date.Date == dateJulian.Date ) value.SeasonChange = season;
+        TorahSeasons[year].Add(dateJulian.Date, season);
       }
-      var lat = MainForm.Instance.CurrentGPSLatitude;
-      if ( lat >= 0 || !Program.Settings.TorahEventsCountAsMoon )
+      if ( MainForm.Instance.CurrentGPSLatitude >= 0 || !Program.Settings.TorahEventsCountAsMoon )
       {
         set(SeasonChange.SpringEquinox, AASEquinoxesAndSolstices.NorthwardEquinox);
         set(SeasonChange.SummerSolstice, AASEquinoxesAndSolstices.NorthernSolstice);
@@ -63,22 +101,6 @@ namespace Ordisoftware.HebrewCalendar
         set(SeasonChange.AutumnEquinox, AASEquinoxesAndSolstices.NorthwardEquinox);
         set(SeasonChange.WinterSolstice, AASEquinoxesAndSolstices.NorthernSolstice);
       }
-      if ( lat < 0 && !Program.Settings.TorahEventsCountAsMoon )
-      {
-        if ( value.SeasonChange == SeasonChange.SpringEquinox )
-          value.SeasonChange = SeasonChange.AutumnEquinox;
-        else
-        if ( value.SeasonChange == SeasonChange.AutumnEquinox )
-          value.SeasonChange = SeasonChange.SpringEquinox;
-        else
-        if ( value.SeasonChange == SeasonChange.WinterSolstice )
-          value.SeasonChange = SeasonChange.SummerSolstice;
-        else
-        if ( value.SeasonChange == SeasonChange.SummerSolstice )
-          value.SeasonChange = SeasonChange.WinterSolstice;
-      }
-      Items.Add(date, value);
-      return value;
     }
 
   }

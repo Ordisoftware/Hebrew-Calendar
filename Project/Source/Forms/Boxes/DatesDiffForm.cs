@@ -60,23 +60,23 @@ namespace Ordisoftware.HebrewCalendar
 
     private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
     {
-      MonthCalendar1.SelectionStart = DateTimePicker1.Value;
+      MonthCalendar1.SelectionStart = DateTimePicker1.Value.Date;
     }
 
     private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
     {
-      MonthCalendar2.SelectionStart = DateTimePicker2.Value;
+      MonthCalendar2.SelectionStart = DateTimePicker2.Value.Date;
     }
 
     private void MonthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
     {
-      DateTimePicker1.Value = MonthCalendar1.SelectionStart;
+      DateTimePicker1.Value = MonthCalendar1.SelectionStart.Date;
       DateChanged();
     }
 
     private void MonthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
     {
-      DateTimePicker2.Value = MonthCalendar2.SelectionStart;
+      DateTimePicker2.Value = MonthCalendar2.SelectionStart.Date;
       DateChanged();
     }
 

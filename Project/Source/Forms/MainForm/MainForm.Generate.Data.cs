@@ -56,6 +56,7 @@ namespace Ordisoftware.HebrewCalendar
         TableAdapterManager.UpdateAll(DataSet);
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         ReportTableAdapter.Fill(DataSet.Report);
+        Dates.Clear();
         var d1 = new DateTime(yearFirst, 1, DateTime.DaysInMonth(yearFirst, 1));
         var d2 = new DateTime(yearLast, 12, DateTime.DaysInMonth(yearLast, 12));
         ProgressCount = (int)( d2 - d1 ).TotalDays;

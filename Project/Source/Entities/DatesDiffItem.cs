@@ -23,6 +23,8 @@ namespace Ordisoftware.HebrewCalendar
   public class DatesDiffItem
   {
 
+    private const int LoadingFormMin = 20 * 365;
+
     private DateTime Date1;
     private DateTime Date2;
 
@@ -41,6 +43,8 @@ namespace Ordisoftware.HebrewCalendar
 
     public void SetDates(Form sender, DateTime date1, DateTime date2)
     {
+      date1 = date1.Date;
+      date2 = date2.Date;
       if ( date1 > date2 )
       {
         var temp = date1;
@@ -57,12 +61,11 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        int minimum = 2*365;
         int count = (int)( Date2 - Date1 ).TotalDays;
         int countData = Dates.Count;
-        if ( count - countData >= minimum )
+        if ( count - countData >= LoadingFormMin )
         {
-          LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(), count, minimum + 1);
+          LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(), count, LoadingFormMin + 1);
           if ( sender != null ) sender.Enabled = false;
         }
         var data = Dates.Get(Date1);
@@ -76,7 +79,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( Date1.Day == 1 ) SolarMonths = 0;
         if ( Date1.Month == 1 && Date1.Day == 1 ) SolarYears = 0;
         if ( data.DayOfMonth == 1 && data.MoonRise != null ) MoonMonths = 0;
-        if ( data.SeasonChange == SeasonChange.SpringEquinox ) MoonYears = 0;
+        if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears = 0;
         for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
         {
           if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.DoProgress();
@@ -86,7 +89,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( data.MoonRise == null ) continue;
           MoonDays++;
           if ( data.DayOfMonth == 1 ) MoonMonths++;
-          if ( data.SeasonChange == SeasonChange.SpringEquinox ) MoonYears++;
+          if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears++;
         }
       }
       catch ( Exception ex )
