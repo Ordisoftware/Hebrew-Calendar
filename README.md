@@ -147,7 +147,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 - Add search gregorian month form.
 - Add tools menu duplicated in the tray icon.
-- Add data statistics form in tools menu.
+- Add usage statistics form in tools menu.
 - Add force database optimize at next startup in tools menu
 - Add option to enable or disable the web links menu.
 - Add option to enable or disable the suspend reminder functionality.
@@ -157,6 +157,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Add option to set the maximum years interval allowed to generate the data.
 - Fix stop media playing (stop instead of play/pause media).
 - Fix app not responding on windows logoff or system shutdown.
+- Improve date diff calculator to show more stats in a form.
 - Improve years to generate box with predefined intervals and change some constants.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve month view drawing speed by a half.
