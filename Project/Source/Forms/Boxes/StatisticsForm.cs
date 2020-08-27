@@ -94,7 +94,7 @@ namespace Ordisoftware.HebrewCalendar
       TextBox.Text += Environment.NewLine;
       TextBox.Text += string.Format("Last starting full time: {0}" + Environment.NewLine +
                                     "Last load data time: {1}" + Environment.NewLine +
-                                    "Last generate years time: {2}" + Environment.NewLine,
+                                    "Last generate years time: {2}" + Environment.NewLine +
                                     "Last fill calendar time: {3}" + Environment.NewLine,
                                     FormatMilliseconds(Program.Settings.BenchmarkStartingApp),
                                     FormatMilliseconds(Program.Settings.BenchmarkLoadData),
