@@ -76,8 +76,7 @@ namespace Ordisoftware.HebrewCommon
       {
         ProgressBar.PerformStep();
         ProgressBar.Refresh();
-        Application.DoEvents();
-        System.Threading.Thread.Sleep(10);
+        Refresh();
       }
     }
 
