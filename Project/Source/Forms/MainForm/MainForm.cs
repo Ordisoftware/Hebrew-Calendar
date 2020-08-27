@@ -674,8 +674,6 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
     {
-      //DateDiffForm.Run(new Tuple<DateTime, DateTime>(new DateTime(1973, 7, 3), DateTime.Now));
-      //DateDiffForm.Run(new Tuple<DateTime, DateTime>(new DateTime(2020, 1, 1), DateTime.Now));
       DatesDiffForm.Run();
     }
 

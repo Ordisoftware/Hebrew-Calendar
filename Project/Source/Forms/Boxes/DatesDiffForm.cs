@@ -114,15 +114,14 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         Cursor = Cursors.WaitCursor;
-        var dates = new Tuple<DateTime, DateTime>(MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
         if ( Stats == null )
         {
-          Stats = new DatesDiffItem(dates);
+          Stats = new DatesDiffItem(MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
           datesDiffItemBindingSource.DataSource = Stats;
         }
         else
         {
-          Stats.Dates = dates;
+          Stats.SetDates(MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
           datesDiffItemBindingSource.ResetBindings(false);
         }
         ActionCalculate.Enabled = false;

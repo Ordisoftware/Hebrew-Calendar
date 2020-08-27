@@ -232,19 +232,19 @@ namespace System.Globalization
 					0x20000030/*CAL_RETURN_NUMBER | CAL_ITWODIGITYEARMAX*/, null, 0, ref num);
 				if (ret < 1)
 				{
-					Console.WriteLine(@"Native function Kernel32.GetCalendarInfo() returns 0.
+					/*Console.WriteLine(@"Native function Kernel32.GetCalendarInfo() returns 0.
 						Call GetLastError() to get extended error information.
 						GetLastError() can return one of the following error codes:
 							* ERROR_INSUFFICIENT_BUFFER
 							* ERROR_INVALID_FLAGS
-							* ERROR_INVALID_PARAMETER");
+							* ERROR_INVALID_PARAMETER");*/
 					return -1;
 				}
 				return num;
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("Native function Kernel32.GetCalendarInfo() calling exception: {0}", e);
+				//Console.WriteLine("Native function Kernel32.GetCalendarInfo() calling exception: {0}", e);
 			}
 			return int.MinValue;
 		}
@@ -384,7 +384,7 @@ namespace System.Globalization
 		public override int GetYear(DateTime time)
 		{
 			// DEBUG
-			Console.WriteLine("VietnameseCalendar.GetYear(), >> time = '{0}'", time);
+			//Console.WriteLine("VietnameseCalendar.GetYear(), >> time = '{0}'", time);
 
 			this.CheckTicksRange(time.Ticks);
 			DateTime date = GetLunarNewYear(time.Year);
@@ -400,7 +400,7 @@ namespace System.Globalization
 		public override int GetMonth(DateTime time)
 		{
 			// DEBUG
-			Console.WriteLine("VietnameseCalendar.GetMonth(), >> time = '{0}'", time);
+			//Console.WriteLine("VietnameseCalendar.GetMonth(), >> time = '{0}'", time);
 
 			int year = this.GetYear(time);
 			DateTime date = GetLunarNewYear(year);
@@ -410,7 +410,7 @@ namespace System.Globalization
 			month = (date > time ? month - 1 : month);
 
 			// DEBUG
-			Console.WriteLine("VietnameseCalendar.GetMonth(), << month = {0}", month);
+			//Console.WriteLine("VietnameseCalendar.GetMonth(), << month = {0}", month);
 			return month;
 		}
 
@@ -423,7 +423,7 @@ namespace System.Globalization
 		public override int GetDayOfMonth(DateTime time)
 		{
 			// DEBUG
-			Console.WriteLine("VietnameseCalendar.GetDayOfMonth(), >> time = '{0}'", time);
+			//Console.WriteLine("VietnameseCalendar.GetDayOfMonth(), >> time = '{0}'", time);
 
 			int year = this.GetYear(time);
 			DateTime date = GetLunarNewYear(year), date2 = date;
@@ -460,7 +460,7 @@ namespace System.Globalization
 		public override int GetDayOfYear(DateTime time)
 		{
 			// DEBUG
-			Console.WriteLine("VietnameseCalendar.GetDayOfYear(), >> time = '{0}'", time);
+			//Console.WriteLine("VietnameseCalendar.GetDayOfYear(), >> time = '{0}'", time);
 
 			int year = this.GetYear(time);
 			DateTime date = GetLunarNewYear(year);
@@ -580,7 +580,7 @@ namespace System.Globalization
 		public override DateTime AddMonths(DateTime time, int months)
 		{
 			// DEBUG
-			Console.WriteLine("VietnameseCalendar.AddMonths(), >> time = '{0}', months = {1}", time, months);
+			//Console.WriteLine("VietnameseCalendar.AddMonths(), >> time = '{0}', months = {1}", time, months);
 			return time.AddMonths(months);
 
 			/*
@@ -622,7 +622,7 @@ namespace System.Globalization
 		public override DateTime AddYears(DateTime time, int years)
 		{
 			// DEBUG
-			Console.WriteLine("VietnameseCalendar.AddYears(), >> time = '{0}', years = {1}", time, years);
+			//Console.WriteLine("VietnameseCalendar.AddYears(), >> time = '{0}', years = {1}", time, years);
 			return time.AddYears(years);
 
 			/*
@@ -659,9 +659,9 @@ namespace System.Globalization
 			int second, int millisecond, int era)
 		{
 			// DEBUG
-			Console.WriteLine("VietnameseCalendar.ToDateTime(), >> year = {0}, month = {1}, day = {2}"
+			/*Console.WriteLine("VietnameseCalendar.ToDateTime(), >> year = {0}, month = {1}, day = {2}"
 				+ ", hour = {3}, minute = {4}, second = {5}, millisecond = {6}, era = {7}",
-				year, month, day, hour, minute, second, millisecond, era);
+				year, month, day, hour, minute, second, millisecond, era);*/
 
 			// validate parameters
 			int leapMonth = this.GetLeapMonth(year, era);
@@ -679,7 +679,7 @@ namespace System.Globalization
 			while (--month > 0) days += GetMonthLength(year, month, leapMonth);
 
 			// DEBUG
-			//Console.WriteLine("VietnameseCalendar.ToDateTime(), time.Hour = {0}", time.Hour);
+			////Console.WriteLine("VietnameseCalendar.ToDateTime(), time.Hour = {0}", time.Hour);
 			return time.AddDays(days - 1)	// appends time to the object
 				.AddHours(hour).AddMinutes(minute).AddSeconds(second).AddMilliseconds(millisecond);
 		}

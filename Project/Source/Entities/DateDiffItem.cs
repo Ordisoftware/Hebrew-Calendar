@@ -21,6 +21,9 @@ namespace Ordisoftware.HebrewCalendar
   public class DatesDiffItem
   {
 
+    private DateTime Date1;
+    private DateTime Date2;
+
     public int SolarDays { get; set; }
     public int SolarWeeks { get; set; }
     public int SolarMonths { get; set; }
@@ -28,45 +31,43 @@ namespace Ordisoftware.HebrewCalendar
     public int MoonDays { get; set; }
     public int Lunations { get; set; }
 
-    public Tuple<DateTime, DateTime> Dates
+    public DatesDiffItem(DateTime date1, DateTime date2)
     {
-      get { return _Dates; }
-      set
-      {
-        if ( _Dates == value ) return;
-        _Dates = value.Item1 < value.Item2 
-               ? value 
-               : new Tuple<DateTime, DateTime>(value.Item2, value.Item1);
-        Calculate();
-      }
+      SetDates(date1, date2);
     }
-    private Tuple<DateTime, DateTime> _Dates;
 
-    public DatesDiffItem(Tuple<DateTime, DateTime> dates)
+    public void SetDates(DateTime date1, DateTime date2)
     {
-      Dates = dates;
+      if ( Date1 == date1 && Date2 == date2 ) return;
+      if ( date1 > date2 )
+      {
+        var temp = date1;
+        date1 = date2;
+        date2 = date1;
+      }
+      Date1 = date1;
+      Date2 = date2;
+      Calculate();
     }
 
     private void Calculate()
     {
       try
       {
-        var date1 = _Dates.Item1;
-        var date2 = _Dates.Item2;
-        var ephemeris = date1.GetSunMoonEphemeris();
-        SolarDays = ( date2 - date1 ).Days + 1;
+        var ephemeris = Date1.GetSunMoonEphemeris();
+        SolarDays = ( Date2 - Date1 ).Days + 1;
         SolarWeeks = (int)Math.Ceiling(SolarDays / 7d);
         SolarMonths = 1;
         SolarYears = 1;
         MoonDays = 0;
         Lunations = 1;
-        if ( date1.Day == 1 )
+        if ( Date1.Day == 1 )
           SolarMonths = 0;
-        if ( date1.Month == 1 && date1.Day == 1 )
+        if ( Date1.Month == 1 && Date1.Day == 1 )
           SolarYears = 0;
-        if ( ephemeris.Moonrise != null && AstronomyHelper.LunisolerCalendar.GetDayOfMonth(date1) == 1 )
+        if ( ephemeris.Moonrise != null && AstronomyHelper.LunisolerCalendar.GetDayOfMonth(Date1) == 1 )
           Lunations = 0;
-        for ( DateTime index = date1; index <= date2; index = index.AddDays(1) )
+        for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
         {
           if ( index.Day == 1 ) SolarMonths++;
           if ( index.Month == 1 && index.Day == 1 ) SolarYears++;
