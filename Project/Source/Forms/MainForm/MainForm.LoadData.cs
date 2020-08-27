@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private void LoadData()
+    private void LoadData(bool recurse = false)
     {
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
         LoadingForm.Instance.Initialize(Translations.ProgressLoadingData.GetLang(),
                                         (int)command.ExecuteScalar() * 2,
                                         Program.LoadingFormMinimumLoad);
-        DataSet.LunisolarDays.RowChanged += update;
+        if ( !recurse ) DataSet.LunisolarDays.RowChanged += update;
         connection.Close();
         Program.Chrono.Restart();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( AbortException )
       {
-        LoadData();
+        LoadData(true);
         return;
       }
       catch ( OdbcException ex )

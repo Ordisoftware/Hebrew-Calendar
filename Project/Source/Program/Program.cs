@@ -48,6 +48,7 @@ namespace Ordisoftware.HebrewCalendar
       Settings.CheckUpgrade(ref upgrade);
       Settings.UpgradeRequired = upgrade;
       CheckSettingsReset();
+      Settings.BenchmarkStartDateTime = DateTime.Now;
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       UpdateLocalization(true);

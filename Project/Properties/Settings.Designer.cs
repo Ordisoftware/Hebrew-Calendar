@@ -1364,5 +1364,16 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["BenchmarkStartingApp"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime BenchmarkStartDateTime {
+            get {
+                return ((global::System.DateTime)(this["BenchmarkStartDateTime"]));
+            }
+            set {
+                this["BenchmarkStartDateTime"] = value;
+            }
+        }
     }
 }

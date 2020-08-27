@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void Run()
     {
-      Instance.Initialize();
+      Instance.UpdateData();
       Instance.Show();
       Instance.BringToFront();
     }
@@ -61,26 +61,48 @@ namespace Ordisoftware.HebrewCalendar
       Hide();
     }
 
+    private void StatisticsForm_Activated(object sender, EventArgs e)
+    {
+      Timer.Start();
+    }
+    private void StatisticsForm_Deactivate(object sender, EventArgs e)
+    {
+      Timer.Stop();
+    }
+
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
     }
 
+    private void Timer_Tick(object sender, EventArgs e)
+    {
+      UpdateData();
+    }
+
     private string FormatMilliseconds(long ms)
     {
       TimeSpan time = TimeSpan.FromMilliseconds(ms);
-      return string.Format("{0:D2}m {1:D2}s {2:D3}ms",
-                            time.Minutes,
-                            time.Seconds,
-                            time.Milliseconds).Replace("00m 00s", "").Replace("00m ", "");
+      return string.Format("{0:D2}d {1:D2}h {2:D2}m {3:D2}s {4:D3}ms",
+                           time.Days,
+                           time.Hours,
+                           time.Minutes,
+                           time.Seconds,
+                           time.Milliseconds)
+                   .Replace("00d 00h 00m 00s", "")
+                   .Replace("00d 00h 00m", "")
+                   .Replace("00d 00h", "")
+                   .Replace("00d ", "");
     }
 
-    private void Initialize()
+    private void UpdateData()
     {
-      TextBox.Text = string.Format("Last starting full time: {0}" + Environment.NewLine +
+      TextBox.Text  = "Running time: " + FormatMilliseconds((long)DateTime.Now.Subtract(Program.Settings.BenchmarkStartDateTime).TotalMilliseconds) + Environment.NewLine;
+      TextBox.Text += Environment.NewLine;
+      TextBox.Text += string.Format("Last starting full time: {0}" + Environment.NewLine +
                                    "Last load data time: {1}" + Environment.NewLine +
                                    "Last fill calendar time: {2}" + Environment.NewLine +
-                                   "Last generate years time: {3}",
+                                   "Last generate years time: {3}" + Environment.NewLine,
                                    FormatMilliseconds(Program.Settings.BenchmarkStartingApp),
                                    FormatMilliseconds(Program.Settings.BenchmarkLoadData),
                                    FormatMilliseconds(Program.Settings.BenchmarkFillCalendar),

@@ -28,9 +28,11 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.TextBox = new System.Windows.Forms.TextBox();
+      this.Timer = new System.Windows.Forms.Timer(this.components);
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -63,7 +65,12 @@
       this.TextBox.Size = new System.Drawing.Size(419, 300);
       this.TextBox.TabIndex = 38;
       // 
-      // DatabaseStatisticsForm
+      // Timer
+      // 
+      this.Timer.Interval = 1000;
+      this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+      // 
+      // StatisticsForm
       // 
       this.AcceptButton = this.ActionClose;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -76,10 +83,12 @@
       this.Location = new System.Drawing.Point(-1, -1);
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "DatabaseStatisticsForm";
+      this.Name = "StatisticsForm";
       this.Padding = new System.Windows.Forms.Padding(10);
       this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "Statistics";
+      this.Activated += new System.EventHandler(this.StatisticsForm_Activated);
+      this.Deactivate += new System.EventHandler(this.StatisticsForm_Deactivate);
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DatabaseStatisticsForm_FormClosing);
       this.Load += new System.EventHandler(this.DatabaseStatisticsForm_Load);
       this.PanelBottom.ResumeLayout(false);
@@ -93,5 +102,6 @@
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.TextBox TextBox;
+    private System.Windows.Forms.Timer Timer;
   }
 }
