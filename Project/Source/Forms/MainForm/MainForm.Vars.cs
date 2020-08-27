@@ -50,6 +50,9 @@ namespace Ordisoftware.HebrewCalendar
 
     internal TimeZoneInfo CurrentTimeZoneInfo;
 
+    internal float CurrentGPSLatitude;
+    internal float CurrentGPSLongitude;
+
     internal Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
 
     internal int YearFirst { get; private set; }

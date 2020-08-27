@@ -30,6 +30,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+      MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
       MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
       CurrentDay = MainForm.Instance.CurrentDay;
     }

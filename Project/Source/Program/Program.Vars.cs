@@ -52,7 +52,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate minimum items for loading form to be shown.
     /// </summary>
-    public const int LoadingFormMinimumLoad = 5000;
+    public const int LoadingFormMinimumLoad = 10000;
     public const int LoadingFormMinimumGenerate = 3000;
 
     /// <summary>

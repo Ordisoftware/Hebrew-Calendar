@@ -13,7 +13,9 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Xml;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -75,6 +77,15 @@ namespace Ordisoftware.HebrewCalendar
                  || lang != Program.Settings.Language;
       if ( !result && form.MustRefreshMonthView )
         MainForm.Instance.UpdateCalendarMonth(true);
+      try
+      {
+        MainForm.Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude);
+        MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude);
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
       return result;
     }
 

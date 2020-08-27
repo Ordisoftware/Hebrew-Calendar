@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Xml;
 using System.Data;
 using System.Drawing;
 using System.Diagnostics;
@@ -77,6 +78,15 @@ namespace Ordisoftware.HebrewCalendar
       if ( Globals.IsExiting ) return;
       Program.Settings.Retrieve();
       Program.Settings.CheckUpdateLastDone = DateTime.Now;
+      try
+      {
+        Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude);
+        Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude);
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
       if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) ) return;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
