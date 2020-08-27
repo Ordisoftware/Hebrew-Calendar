@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCommon
     public void Initialize(string text, int count, int minimum, bool quantify = true)
     {
       this.CenterToMainFormElseScreen();
-      if ( minimum > 0 && count > minimum )
+      if ( minimum == 0 || ( minimum > 0 && count > minimum ) )
       {
         Show();
         BringToFront();

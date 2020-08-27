@@ -108,6 +108,13 @@ namespace Ordisoftware.HebrewCommon
         { FR, "Une mise à jour des paramètres est requise et ils vont être réinialisés à leurs valeurs par défaut." }
       };
 
+    static public readonly Dictionary<string, string> WebCheckUpdate
+      = new Dictionary<string, string>()
+      {
+        { EN, "Check update" },
+        { FR, "Vérifier la mise à jour" }
+      };
+
     static public readonly Dictionary<string, string> NoNewVersionAvailable
       = new Dictionary<string, string>()
       {

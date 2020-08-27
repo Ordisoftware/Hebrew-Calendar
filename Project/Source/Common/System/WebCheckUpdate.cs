@@ -47,16 +47,20 @@ namespace Ordisoftware.HebrewCommon
       {
         Mutex = true;
         Globals.MainForm.Enabled = false;
+        LoadingForm.Instance.Initialize(Localizer.WebCheckUpdate.GetLang(), 3, 0, false);
         foreach ( string s in Directory.GetFiles(Path.GetTempPath(), Globals.SetupFilename.Replace("%VER%", "*")) )
           try { File.Delete(s); }
           catch { }
+        LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
           string[] content = client.DownloadString(Globals.CheckUpdateURL).Split(Environment.NewLine.ToCharArray(),
                                                    StringSplitOptions.RemoveEmptyEntries);
+          LoadingForm.Instance.DoProgress();
           string[] partsVersion = content[0].Split('.');
           string filename = Globals.SetupFileURL.Replace("%VER%", content[0]);
           var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
+          LoadingForm.Instance.DoProgress();
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
@@ -83,7 +87,6 @@ namespace Ordisoftware.HebrewCommon
               };
               client.DownloadFileCompleted += (sender, e) =>
               {
-                LoadingForm.Instance.Hide();
                 finished = true;
               };
               client.DownloadFileAsync(new Uri(filename), tempfile);
@@ -107,6 +110,7 @@ namespace Ordisoftware.HebrewCommon
       finally
       {
         Globals.MainForm.Enabled = formEnabled;
+        LoadingForm.Instance.Hide();
         Mutex = false;
       }
       return false;
