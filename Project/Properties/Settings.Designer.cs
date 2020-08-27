@@ -1375,29 +1375,5 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["BenchmarkStartDateTime"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DatesDiffCalculateRealtime {
-            get {
-                return ((bool)(this["DatesDiffCalculateRealtime"]));
-            }
-            set {
-                this["DatesDiffCalculateRealtime"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
-        public decimal DatesDiffCalculateMaxYearsAuto {
-            get {
-                return ((decimal)(this["DatesDiffCalculateMaxYearsAuto"]));
-            }
-            set {
-                this["DatesDiffCalculateMaxYearsAuto"] = value;
-            }
-        }
     }
 }

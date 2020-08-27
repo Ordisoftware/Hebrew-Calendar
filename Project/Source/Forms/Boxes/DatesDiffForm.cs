@@ -32,13 +32,11 @@ namespace Ordisoftware.HebrewCalendar
       }
       form.MonthCalendar1.Tag = form.MonthCalendar1.SelectionStart;
       form.MonthCalendar2.Tag = form.MonthCalendar2.SelectionStart;
-      form.ActionCalculate_Click(null, null);
+      form.DateChanged(true);
       form.ShowDialog();
     }
 
     private DatesDiffItem Stats;
-
-    private decimal YearsMaxInterval;
 
     private DatesDiffForm()
     {
@@ -58,17 +56,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Location.X < 0 || Location.Y < 0 )
         this.CenterToMainFormElseScreen();
-      EditMaxYearsAutoCalculate_ValueChanged(null, null);
-    }
-
-    private void EditAlwaysLiveCalculate_CheckedChanged(object sender, EventArgs e)
-    {
-      if ( EditAlwaysLiveCalculate.Checked ) ActionCalculate.PerformClick();
-    }
-
-    private void EditMaxYearsAutoCalculate_ValueChanged(object sender, EventArgs e)
-    {
-      YearsMaxInterval = EditMaxYearsAutoCalculate.Value * 365;
     }
 
     private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -78,7 +65,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
     {
-      MonthCalendar2.SelectionStart = DateTimePicker1.Value;
+      MonthCalendar2.SelectionStart = DateTimePicker2.Value;
     }
 
     private void MonthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
@@ -93,38 +80,27 @@ namespace Ordisoftware.HebrewCalendar
       DateChanged();
     }
 
-    private void DateChanged()
+    private void DateChanged(bool force = false)
     {
       bool b1 = (DateTime)MonthCalendar1.Tag != MonthCalendar1.SelectionStart;
       bool b2 = (DateTime)MonthCalendar2.Tag != MonthCalendar2.SelectionStart;
       if ( b1 ) MonthCalendar1.Tag = MonthCalendar1.SelectionStart;
       if ( b2 ) MonthCalendar2.Tag = MonthCalendar2.SelectionStart;
-      if ( !b1 && !b2 ) return;
-      ActionCalculate.Enabled = true;
-      if ( EditAlwaysLiveCalculate.Checked )
-      {
-        var diff = Math.Abs((decimal)( MonthCalendar1.SelectionStart - MonthCalendar2.SelectionStart ).TotalDays);
-        if ( diff <= YearsMaxInterval )
-        ActionCalculate.PerformClick();
-      }
-    }
-
-    private void ActionCalculate_Click(object sender, EventArgs e)
-    {
+      if ( !force && !b1 && !b2 ) return;
+      var diff = Math.Abs((decimal)( MonthCalendar1.SelectionStart - MonthCalendar2.SelectionStart ).TotalDays);
       try
       {
         Cursor = Cursors.WaitCursor;
         if ( Stats == null )
         {
-          Stats = new DatesDiffItem(MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
+          Stats = new DatesDiffItem(this, MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
           datesDiffItemBindingSource.DataSource = Stats;
         }
         else
         {
-          Stats.SetDates(MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
+          Stats.SetDates(this, MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
           datesDiffItemBindingSource.ResetBindings(false);
         }
-        ActionCalculate.Enabled = false;
       }
       finally
       {

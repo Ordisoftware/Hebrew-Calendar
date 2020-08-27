@@ -122,7 +122,7 @@
     <value>61, 13</value>
   </data>
   <data name="lunationsLabel.Text" xml:space="preserve">
-    <value>Lunaisons :</value>
+    <value>Mois lunaires :</value>
   </data>
   <data name="moonDaysLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>
@@ -171,5 +171,8 @@
   </data>
   <data name="EditAlwaysLiveCalculate.Text" xml:space="preserve">
     <value>Calcul en temps réel (intervale d'années)</value>
+  </data>
+  <data name="moonYearsLabel.Text" xml:space="preserve">
+    <value>Années lunaires :</value>
   </data>
 </root>

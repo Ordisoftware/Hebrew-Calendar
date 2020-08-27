@@ -36,9 +36,9 @@
       System.Windows.Forms.Label solarMonthsLabel;
       System.Windows.Forms.Label solarWeeksLabel;
       System.Windows.Forms.Label solarYearsLabel;
+      System.Windows.Forms.Label moonYearsLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
-      this.ActionCalculate = new System.Windows.Forms.Button();
       this.MonthCalendar1 = new System.Windows.Forms.MonthCalendar();
       this.MonthCalendar2 = new System.Windows.Forms.MonthCalendar();
       this.lunationsLabel1 = new System.Windows.Forms.Label();
@@ -51,8 +51,7 @@
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
       this.DateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-      this.EditMaxYearsAutoCalculate = new System.Windows.Forms.NumericUpDown();
-      this.EditAlwaysLiveCalculate = new System.Windows.Forms.CheckBox();
+      this.label2 = new System.Windows.Forms.Label();
       this.datesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
@@ -60,10 +59,10 @@
       solarMonthsLabel = new System.Windows.Forms.Label();
       solarWeeksLabel = new System.Windows.Forms.Label();
       solarYearsLabel = new System.Windows.Forms.Label();
+      moonYearsLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       this.GroupBoxSun.SuspendLayout();
       this.groupBox1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsAutoCalculate)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.datesDiffItemBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
@@ -99,10 +98,7 @@
       // 
       // PanelBottom
       // 
-      this.PanelBottom.Controls.Add(this.EditMaxYearsAutoCalculate);
-      this.PanelBottom.Controls.Add(this.EditAlwaysLiveCalculate);
       this.PanelBottom.Controls.Add(this.ActionClose);
-      this.PanelBottom.Controls.Add(this.ActionCalculate);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
@@ -111,12 +107,6 @@
       resources.ApplyResources(this.ActionClose, "ActionClose");
       this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionClose.Name = "ActionClose";
-      // 
-      // ActionCalculate
-      // 
-      resources.ApplyResources(this.ActionCalculate, "ActionCalculate");
-      this.ActionCalculate.Name = "ActionCalculate";
-      this.ActionCalculate.Click += new System.EventHandler(this.ActionCalculate_Click);
       // 
       // MonthCalendar1
       // 
@@ -134,7 +124,7 @@
       // 
       // lunationsLabel1
       // 
-      this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "Lunations", true));
+      this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "MoonMonths", true));
       resources.ApplyResources(this.lunationsLabel1, "lunationsLabel1");
       this.lunationsLabel1.Name = "lunationsLabel1";
       // 
@@ -187,7 +177,9 @@
       resources.ApplyResources(this.groupBox1, "groupBox1");
       this.groupBox1.Controls.Add(moonDaysLabel);
       this.groupBox1.Controls.Add(this.moonDaysLabel1);
+      this.groupBox1.Controls.Add(moonYearsLabel);
       this.groupBox1.Controls.Add(lunationsLabel);
+      this.groupBox1.Controls.Add(this.label2);
       this.groupBox1.Controls.Add(this.lunationsLabel1);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.TabStop = false;
@@ -206,30 +198,16 @@
       this.DateTimePicker2.ShowUpDown = true;
       this.DateTimePicker2.ValueChanged += new System.EventHandler(this.DateTimePicker2_ValueChanged);
       // 
-      // EditMaxYearsAutoCalculate
+      // moonYearsLabel
       // 
-      this.EditMaxYearsAutoCalculate.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMaxYearsAutoCalculate.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "DatesDiffCalculateMaxYearsAuto", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      resources.ApplyResources(this.EditMaxYearsAutoCalculate, "EditMaxYearsAutoCalculate");
-      this.EditMaxYearsAutoCalculate.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-      this.EditMaxYearsAutoCalculate.Name = "EditMaxYearsAutoCalculate";
-      this.EditMaxYearsAutoCalculate.ReadOnly = true;
-      this.EditMaxYearsAutoCalculate.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.DatesDiffCalculateMaxYearsAuto;
-      this.EditMaxYearsAutoCalculate.ValueChanged += new System.EventHandler(this.EditMaxYearsAutoCalculate_ValueChanged);
+      resources.ApplyResources(moonYearsLabel, "moonYearsLabel");
+      moonYearsLabel.Name = "moonYearsLabel";
       // 
-      // EditAlwaysLiveCalculate
+      // label2
       // 
-      resources.ApplyResources(this.EditAlwaysLiveCalculate, "EditAlwaysLiveCalculate");
-      this.EditAlwaysLiveCalculate.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.DatesDiffCalculateRealtime;
-      this.EditAlwaysLiveCalculate.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditAlwaysLiveCalculate.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "DatesDiffCalculateRealtime", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditAlwaysLiveCalculate.Name = "EditAlwaysLiveCalculate";
-      this.EditAlwaysLiveCalculate.UseVisualStyleBackColor = true;
-      this.EditAlwaysLiveCalculate.CheckedChanged += new System.EventHandler(this.EditAlwaysLiveCalculate_CheckedChanged);
+      this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "MoonYears", true));
+      resources.ApplyResources(this.label2, "label2");
+      this.label2.Name = "label2";
       // 
       // datesDiffItemBindingSource
       // 
@@ -237,7 +215,6 @@
       // 
       // DatesDiffForm
       // 
-      this.AcceptButton = this.ActionCalculate;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
@@ -254,12 +231,10 @@
       this.Name = "DatesDiffForm";
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
-      this.PanelBottom.PerformLayout();
       this.GroupBoxSun.ResumeLayout(false);
       this.GroupBoxSun.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsAutoCalculate)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.datesDiffItemBindingSource)).EndInit();
       this.ResumeLayout(false);
 
@@ -269,7 +244,6 @@
 
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionClose;
-    private System.Windows.Forms.Button ActionCalculate;
     private System.Windows.Forms.MonthCalendar MonthCalendar1;
     private System.Windows.Forms.MonthCalendar MonthCalendar2;
     private System.Windows.Forms.BindingSource datesDiffItemBindingSource;
@@ -281,9 +255,8 @@
     private System.Windows.Forms.Label solarYearsLabel1;
     private System.Windows.Forms.GroupBox GroupBoxSun;
     private System.Windows.Forms.GroupBox groupBox1;
-    private System.Windows.Forms.CheckBox EditAlwaysLiveCalculate;
-    private System.Windows.Forms.NumericUpDown EditMaxYearsAutoCalculate;
     private System.Windows.Forms.DateTimePicker DateTimePicker1;
     private System.Windows.Forms.DateTimePicker DateTimePicker2;
+    private System.Windows.Forms.Label label2;
   }
 }
