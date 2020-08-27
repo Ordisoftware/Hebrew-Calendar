@@ -120,6 +120,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - F6 : Search a moon month window
 - F7 : Search a gregorian month window
 - F9 : Navigation window (also Ctrl+N)
+- Ctrl+F1 : Statistics window
 - Ctrl+Tab : Next view
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today
@@ -161,6 +162,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Improve years to generate box with predefined intervals and change some constants.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve month view drawing speed by a half.
+- Impprove data generation speed by a half.
 - Some UI/UX improvements.
 - Some code refactorings.
 
