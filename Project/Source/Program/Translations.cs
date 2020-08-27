@@ -127,25 +127,46 @@ namespace Ordisoftware.HebrewCalendar
         { Localizer.FR, "Dernier jour" }
       };
 
-    static public readonly Dictionary<string, string> DiffDatesSolarCount
+    static public readonly Dictionary<string, string> DiffDatesSolarDaysCount
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Solar days count: {0}" },
-        { Localizer.FR, "Nombre de jours solaires : {0}" }
+        { Localizer.EN, "Solar days: {0}" },
+        { Localizer.FR, "Jours solaires : {0}" }
       };
 
-    static public readonly Dictionary<string, string> DiffDatesMoonCount
+    static public readonly Dictionary<string, string> DiffDatesSolarWeeksCount
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Moon days count: {0}" },
-        { Localizer.FR, "Nombre de jours lunaires : {0}" }
+        { Localizer.EN, "Solar weeks: {0}" },
+        { Localizer.FR, "Semaines solaires : {0}" }
       };
 
-    static public readonly Dictionary<string, string> DiffDatesMoonOutOfRange
+    static public readonly Dictionary<string, string> DiffDatesSolarMonthsCount
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Moon days count: out of range ({0} - {1})" },
-        { Localizer.FR, "Nombre de jours lunaires : hors limites ({0} - {1})" }
+        { Localizer.EN, "Solar months: {0}" },
+        { Localizer.FR, "Mois solaires : {0}" }
+      };
+
+    static public readonly Dictionary<string, string> DiffDatesSolarYearsCount
+      = new Dictionary<string, string>()
+      {
+        { Localizer.EN, "Solar years: {0}" },
+        { Localizer.FR, "Années solaires : {0}" }
+      };
+
+    static public readonly Dictionary<string, string> DiffDatesMoonDaysCount
+      = new Dictionary<string, string>()
+      {
+        { Localizer.EN, "Moon days: {0}" },
+        { Localizer.FR, "Jours lunaires : {0}" }
+      };
+
+    static public readonly Dictionary<string, string> DiffDatesMoonLunationCount
+      = new Dictionary<string, string>()
+      {
+        { Localizer.EN, "Lunations: {0}" },
+        { Localizer.FR, "Lunaisons : {0}" }
       };
 
     static public readonly Dictionary<string, string> PredefinedYearsInterval

@@ -209,9 +209,16 @@
     <Compile Include="Source\Common\UI\UndoRedoTextBox.Initialize.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Source\Entities\DateDiffItem.cs" />
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFileItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFile.cs" />
+    <Compile Include="Source\Forms\Boxes\DatesDiffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\DatesDiffForm.Designer.cs">
+      <DependentUpon>DatesDiffForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,9 +232,6 @@
       <DependentUpon>SearchGregorianMonthForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DateDiff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Program\Translations.SuspendDelay.cs" />
@@ -529,6 +533,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffForm.resx">
+      <DependentUpon>DatesDiffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>

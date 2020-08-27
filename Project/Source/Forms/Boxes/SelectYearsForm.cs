@@ -45,8 +45,8 @@ namespace Ordisoftware.HebrewCalendar
     private void SelectYearsRangeForm_Load(object sender, EventArgs e)
     {
       Mutex = true;
-      int yearMin = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year;
-      int yearMax = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year;
+      int yearMin = AstronomyHelper.LunisolerCalendar.MinCalendarYear;
+      int yearMax = AstronomyHelper.LunisolerCalendar.MaxCalendarYear;
       CurrentYear = DateTime.Today.AddYears(-1).Year;
       if ( CurrentYear < yearMin || CurrentYear + Program.GenerateIntervalMinimum - 1 > yearMax )
         throw new Exception("Current year is not supported");

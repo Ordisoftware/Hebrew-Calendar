@@ -97,7 +97,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void UpdateData()
     {
-      TextBox.Text  = "Running time: " + FormatMilliseconds((long)DateTime.Now.Subtract(Program.Settings.BenchmarkStartDateTime).TotalMilliseconds) + Environment.NewLine;
+      TextBox.Text = "Running time: " + FormatMilliseconds((long)DateTime.Now.Subtract(Program.Settings.BenchmarkStartDateTime).TotalMilliseconds) + Environment.NewLine;
       TextBox.Text += Environment.NewLine;
       TextBox.Text += string.Format("Last starting full time: {0}" + Environment.NewLine +
                                    "Last load data time: {1}" + Environment.NewLine +
