@@ -69,7 +69,7 @@ namespace Ordisoftware.HebrewCalendar
         }
       UpdateSettings();
       Program.Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
-      Program.Settings.Store();
+      Program.Settings.Save();
     }
 
   }
