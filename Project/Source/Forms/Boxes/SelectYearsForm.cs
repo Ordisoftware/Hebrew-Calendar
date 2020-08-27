@@ -101,7 +101,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       var diff = EditYearLast.Value - EditYearFirst.Value + 1;
       for ( int index = Program.BigCalendarLevels.Length - 1; index >= 0; index-- )
-        if ( diff >= Program.BigCalendarLevels[index] )
+        if ( diff > Program.BigCalendarLevels[index] )
         {
           string text = Translations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendarLevels[index], diff);
           if ( !DisplayManager.QueryYesNo(text) )

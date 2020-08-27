@@ -32,9 +32,6 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     private bool IsReady;
-    public Color OldReminderCurrentDayColor { get; private set; }
-    public Color OldReminderShabatDayColor { get; private set; }
-    public bool OldReminderUseColors { get; private set; }
     public int OldShabatDay { get; private set; }
     public string OldLatitude { get; private set; }
     public string OldLongitude { get; private set; }
@@ -586,6 +583,10 @@ namespace Ordisoftware.HebrewCalendar
       MustRefreshMonthView = true;
     }
 
+    private void EditUseColors_CheckedChanged(object sender, EventArgs e)
+    {
+      MustRefreshMonthView = true;
+    }
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
       MustRefreshMonthView = EditMonthViewFontSize.Value != Program.Settings.MonthViewFontSize;

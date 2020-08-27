@@ -83,14 +83,14 @@
       this.TabControl.SelectedIndex = 0;
       this.TabControl.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
       // 
-      // EditDataFileForm
+      // DataFileEditorForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.TabControl);
       this.Controls.Add(this.PanelBottomSeparator);
       this.Controls.Add(this.PanelBottom);
-      this.Name = "EditDataFileForm";
+      this.Name = "DataFileEditorForm";
       this.Load += new System.EventHandler(this.EditProvidersForm_Load);
       this.Shown += new System.EventHandler(this.EditProvidersForm_Shown);
       this.PanelBottom.ResumeLayout(false);

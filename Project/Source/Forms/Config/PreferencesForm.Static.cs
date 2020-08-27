@@ -70,9 +70,6 @@ namespace Ordisoftware.HebrewCalendar
                  || form.OldShabatDay != Program.Settings.ShabatDay
                  || form.OldLatitude != Program.Settings.GPSLatitude
                  || form.OldLongitude != Program.Settings.GPSLongitude
-                 || form.OldReminderUseColors != Program.Settings.UseColors
-                 || form.OldReminderShabatDayColor != Program.Settings.EventColorShabat
-                 || form.OldReminderCurrentDayColor != Program.Settings.EventColorTorah
                  || form.OldUseMoonDays != Program.Settings.TorahEventsCountAsMoon
                  || form.OldTimeZone != Program.Settings.TimeZone
                  || lang != Program.Settings.Language;

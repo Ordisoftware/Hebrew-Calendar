@@ -24,6 +24,13 @@ namespace Ordisoftware.HebrewCommon
   static public partial class Localizer
   {
 
+    static public readonly Dictionary<Language, string> LanguageNames
+      = new Dictionary<Language, string>
+      {
+        { Language.English, "en" },
+        { Language.French, "fr" }
+      };
+
     static public readonly Dictionary<string, string> AskToExitApplication
       = new Dictionary<string, string>()
       {

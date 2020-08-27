@@ -756,6 +756,7 @@
       resources.ApplyResources(this.EditUseColors, "EditUseColors");
       this.EditUseColors.Name = "EditUseColors";
       this.EditUseColors.UseVisualStyleBackColor = true;
+      this.EditUseColors.CheckedChanged += new System.EventHandler(this.EditUseColors_CheckedChanged);
       // 
       // LabelRemindAutoLockTimeOut
       // 

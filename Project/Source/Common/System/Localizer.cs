@@ -37,24 +37,14 @@ namespace Ordisoftware.HebrewCommon
   {
 
     /// <summary>
-    /// Indicate supported languages names.
-    /// </summary>
-    static public readonly Dictionary<Language, string> LanguageNames
-      = new Dictionary<Language, string>
-      {
-        { Language.English, "en" },
-        { Language.French, "fr" }
-      };
-
-    /// <summary>
     /// Indicate english language code.
     /// </summary>
-    static public readonly string EN = LanguageNames[Language.English];
+    static public string EN => LanguageNames[Language.English];
 
     /// <summary>
     /// Indicate french language code.
     /// </summary>
-    static public readonly string FR = LanguageNames[Language.French];
+    static public string FR => LanguageNames[Language.French];
 
     /// <summary>
     /// Indicate new line.

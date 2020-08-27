@@ -58,8 +58,6 @@ namespace Ordisoftware.HebrewCalendar
     internal int YearLast { get; private set; }
     internal DateTime DateLast { get; private set; }
 
-    private int ProgressCount;
-
     private NullSafeDictionary<TorahEvent, bool> TorahEventRemindList
       = new NullSafeDictionary<TorahEvent, bool>();
 

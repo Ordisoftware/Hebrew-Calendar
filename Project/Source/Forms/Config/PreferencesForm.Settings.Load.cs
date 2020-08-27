@@ -75,9 +75,6 @@ namespace Ordisoftware.HebrewCalendar
       EditMonthViewFontSize.Value = Program.Settings.MonthViewFontSize;
       OldLatitude = Program.Settings.GPSLatitude;
       OldLongitude = Program.Settings.GPSLongitude;
-      OldReminderCurrentDayColor = Program.Settings.EventColorTorah;
-      OldReminderShabatDayColor = Program.Settings.EventColorShabat;
-      OldReminderUseColors = Program.Settings.UseColors;
       OldShabatDay = Program.Settings.ShabatDay;
       OldTimeZone = Program.Settings.TimeZone;
       OldUseMoonDays = Program.Settings.TorahEventsCountAsMoon;

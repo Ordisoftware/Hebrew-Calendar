@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PanelBottomSeparator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 518</value>
+    <value>10, 513</value>
   </data>
   <data name="PanelBottomSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>772, 10</value>
+    <value>764, 10</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelBottomSeparator.TabIndex" type="System.Int32, mscorlib">
@@ -184,7 +184,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>613, 2</value>
+    <value>605, 2</value>
   </data>
   <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -214,7 +214,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>694, 2</value>
+    <value>686, 2</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -241,10 +241,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 528</value>
+    <value>10, 523</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>772, 28</value>
+    <value>764, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
@@ -271,7 +271,7 @@
     <value>10, 10</value>
   </data>
   <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>772, 508</value>
+    <value>764, 503</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -295,7 +295,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>792, 566</value>
+    <value>784, 561</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>
@@ -310,7 +310,7 @@
     <value>CenterParent</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>EditDataFileForm</value>
+    <value>DataFileEditorForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
