@@ -13,6 +13,7 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Collections.Generic;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
@@ -20,6 +21,23 @@ namespace Ordisoftware.HebrewCalendar
 
   public class DatesDiffItem
   {
+
+    static private Dictionary<DateTime, Tuple<int, TimeSpan?>> Buffer
+      = new Dictionary<DateTime, Tuple<int, TimeSpan?>>();
+
+    static private Tuple<int, TimeSpan?> GetData(DateTime date)
+    {
+      Tuple<int, TimeSpan?> value = null;
+      if ( !Buffer.ContainsKey(date) )
+      {
+        value = new Tuple<int, TimeSpan?>(AstronomyHelper.LunisolerCalendar.GetDayOfMonth(date),
+                                          date.GetSunMoonEphemeris().Moonrise);
+        Buffer.Add(date, value);
+      }
+      else
+        value = Buffer[date];
+      return value;
+    }
 
     private DateTime Date1;
     private DateTime Date2;
@@ -54,28 +72,24 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        var ephemeris = Date1.GetSunMoonEphemeris();
+        var data = GetData(Date1);
         SolarDays = ( Date2 - Date1 ).Days + 1;
         SolarWeeks = (int)Math.Ceiling(SolarDays / 7d);
         SolarMonths = 1;
         SolarYears = 1;
         MoonDays = 0;
         Lunations = 1;
-        if ( Date1.Day == 1 )
-          SolarMonths = 0;
-        if ( Date1.Month == 1 && Date1.Day == 1 )
-          SolarYears = 0;
-        if ( ephemeris.Moonrise != null && AstronomyHelper.LunisolerCalendar.GetDayOfMonth(Date1) == 1 )
-          Lunations = 0;
+        if ( Date1.Day == 1 ) SolarMonths = 0;
+        if ( Date1.Month == 1 && Date1.Day == 1 ) SolarYears = 0;
+        if ( data.Item1 == 1 && data.Item2 != null ) Lunations = 0;
         for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
         {
+          data = GetData(index);
           if ( index.Day == 1 ) SolarMonths++;
           if ( index.Month == 1 && index.Day == 1 ) SolarYears++;
-          ephemeris = index.GetSunMoonEphemeris();
-          if ( ephemeris.Moonrise == null ) continue;
+          if ( data.Item2 == null ) continue;
           MoonDays++;
-          if ( AstronomyHelper.LunisolerCalendar.GetDayOfMonth(index) == 1 )
-            Lunations++;
+          if ( data.Item1 == 1 ) Lunations++;
         }
       }
       catch (Exception ex)
