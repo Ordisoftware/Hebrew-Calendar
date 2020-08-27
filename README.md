@@ -143,10 +143,12 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 ## Changelog
 
-#### 2020.08.__ - Version 4.2
+#### 2020.08.__ - Version 5.0
 
 - Add search gregorian month form.
 - Add tools menu duplicated in the tray icon.
+- Add data statistics form in tools menu.
+- Add force database optimize at next startup in tools menu
 - Add option to enable or disable the web links menu.
 - Add option to enable or disable the suspend reminder functionality.
 - Add button to disable auto lock option in lock session form.
