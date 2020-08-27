@@ -14,7 +14,6 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
-using System.Xml;
 using System.Windows.Forms;
 using System.Linq;
 using System.Data;
@@ -64,7 +63,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           if ( IsGenerating ) PopulateDays(yearFirst, yearLast);
           if ( IsGenerating ) AnalyseDays();
-          var lat = XmlConvert.ToDouble(Program.Settings.GPSLatitude);
+          var lat = CurrentGPSLatitude;
           if ( lat < 0 && !Program.Settings.TorahEventsCountAsMoon )
             foreach ( var row in DataSet.LunisolarDays )
             {
@@ -216,7 +215,7 @@ namespace Ordisoftware.HebrewCalendar
             return;
           day.SeasonChange = (int)season;
         }
-        var lat = XmlConvert.ToDouble(Program.Settings.GPSLatitude);
+        var lat = CurrentGPSLatitude;
         if ( lat >= 0 || !Program.Settings.TorahEventsCountAsMoon )
         {
           set(SeasonChange.SpringEquinox, AASEquinoxesAndSolstices.NorthwardEquinox);
