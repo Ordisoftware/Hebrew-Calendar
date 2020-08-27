@@ -209,7 +209,7 @@
     <Compile Include="Source\Common\UI\UndoRedoTextBox.Initialize.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Source\Entities\DateDiffItem.cs" />
+    <Compile Include="Source\Entities\DatesDiffItem.cs" />
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFileItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFile.cs" />
