@@ -44,6 +44,14 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      MonthCalendar1.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+      MonthCalendar1.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+      MonthCalendar2.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+      MonthCalendar2.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+      DateTimePicker1.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+      DateTimePicker1.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+      DateTimePicker2.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+      DateTimePicker2.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
     }
 
     private void DateDiffForm_Load(object sender, EventArgs e)
@@ -53,12 +61,39 @@ namespace Ordisoftware.HebrewCalendar
       EditMaxYearsAutoCalculate_ValueChanged(null, null);
     }
 
+    private void EditAlwaysLiveCalculate_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( EditAlwaysLiveCalculate.Checked ) ActionCalculate.PerformClick();
+    }
+
     private void EditMaxYearsAutoCalculate_ValueChanged(object sender, EventArgs e)
     {
       YearsMaxInterval = EditMaxYearsAutoCalculate.Value * 365;
     }
 
-    private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
+    private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+    {
+      MonthCalendar1.SelectionStart = DateTimePicker1.Value;
+    }
+
+    private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
+    {
+      MonthCalendar2.SelectionStart = DateTimePicker1.Value;
+    }
+
+    private void MonthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+    {
+      DateTimePicker1.Value = MonthCalendar1.SelectionStart;
+      DateChanged();
+    }
+
+    private void MonthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
+    {
+      DateTimePicker2.Value = MonthCalendar2.SelectionStart;
+      DateChanged();
+    }
+
+    private void DateChanged()
     {
       bool b1 = (DateTime)MonthCalendar1.Tag != MonthCalendar1.SelectionStart;
       bool b2 = (DateTime)MonthCalendar2.Tag != MonthCalendar2.SelectionStart;
@@ -66,7 +101,6 @@ namespace Ordisoftware.HebrewCalendar
       if ( b2 ) MonthCalendar2.Tag = MonthCalendar2.SelectionStart;
       if ( !b1 && !b2 ) return;
       ActionCalculate.Enabled = true;
-      //ActionCalculate.Focus();
       if ( EditAlwaysLiveCalculate.Checked )
       {
         var diff = Math.Abs((decimal)( MonthCalendar1.SelectionStart - MonthCalendar2.SelectionStart ).TotalDays);
