@@ -143,7 +143,6 @@ namespace Ordisoftware.HebrewCalendar
               row.LunarMonth = 0;
               InitializeDay(row);
               DataSet.LunisolarDays.AddLunisolarDaysRow(row);
-              throw new FormatException();
             }
             catch ( Exception ex )
             {
@@ -184,7 +183,6 @@ namespace Ordisoftware.HebrewCalendar
         day.SeasonChange = (int)data.RealSeasonChange;
         day.LunarMonth = 0;
         day.TorahEvents = 0;
-        throw new NullReferenceException();
       }
       catch ( Exception ex )
       {
@@ -215,7 +213,6 @@ namespace Ordisoftware.HebrewCalendar
           if ( (MoonRise)day.MoonriseType == MoonRise.NextDay && Program.Settings.TorahEventsCountAsMoon )
             delta = 1;
           day.LunarDay -= delta;
-          throw new ArgumentOutOfRangeException();
         }
         catch ( Exception ex )
         {
@@ -255,7 +252,6 @@ namespace Ordisoftware.HebrewCalendar
       }
       try
       {
-        throw new ArgumentException();
         var dateDay = SQLite.GetDate(day.Date);
         bool check(Data.DataSet.LunisolarDaysRow row)
         {
