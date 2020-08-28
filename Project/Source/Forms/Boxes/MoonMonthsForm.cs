@@ -42,7 +42,7 @@ namespace Ordisoftware.HebrewCalendar
       Icon = MainForm.Instance.Icon;
       CreateControls();
       ActiveControl = ActionClose;
-      ActionEditFiles.Visible = Program.MoonMonthsMeanings[Localizer.Current].Configurable;
+      ActionEditFiles.Visible = Program.MoonMonthsMeanings[Languages.Current].Configurable;
       ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
@@ -89,7 +89,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionEditFiles_Click(object sender, EventArgs e)
     {
       var list = new List<DataFile>();
-      foreach ( var lang in Localizer.LanguageNames )
+      foreach ( var lang in Languages.Names )
       {
         list.Add(Program.MoonMonthsMeanings[lang.Value]);
         list.Add(Program.MoonMonthsLettriqs[lang.Value]);
@@ -137,8 +137,8 @@ namespace Ordisoftware.HebrewCalendar
       int index = (int)control.Tag;
       string str = Program.MoonMonthsUnicode[index] + " ("
                  + Program.MoonMonthsNames[index] + ") : "
-                 + Program.MoonMonthsMeanings[Localizer.Current][index] + " ("
-                 + Program.MoonMonthsLettriqs[Localizer.Current][index] + ")";
+                 + Program.MoonMonthsMeanings[Languages.Current][index] + " ("
+                 + Program.MoonMonthsLettriqs[Languages.Current][index] + ")";
       Clipboard.SetText(str);
     }
 

@@ -39,10 +39,10 @@ namespace Ordisoftware.HebrewCommon
       {
         CommandLineArguments = args;
         if ( args.Length == 2 && args[0] == "/lang" )
-          if ( args[1] == Localizer.EN || args[1] == Localizer.FR )
+          if ( args[1] == Languages.EN || args[1] == Languages.FR )
             language = args[1];
         if ( language == "" )
-          language = Localizer.Current;
+          language = Languages.Current;
       }
       catch ( Exception ex )
       {

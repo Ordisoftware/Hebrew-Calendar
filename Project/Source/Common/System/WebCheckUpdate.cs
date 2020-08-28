@@ -38,14 +38,16 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="checkAtStartup"></param>
     /// <param name="auto">True if no user interaction else false</param>
     /// <returns>True if application must exist else false.</returns>
-    static public bool Run(bool checkAtStartup, bool auto)
+    static public bool Run(bool checkAtStartup, ref DateTime lastdone, bool auto)
     {
+      bool formEnabled = false;
       if ( auto && !checkAtStartup ) return false;
       if ( Mutex ) return false;
-      bool formEnabled = Globals.MainForm.Enabled;
+      if ( !auto || lastdone.AddDays(DefaultCheckDaysInterval) < DateTime.Now )
       try
       {
         Mutex = true;
+        formEnabled = Globals.MainForm.Enabled;
         Globals.MainForm.Enabled = false;
         LoadingForm.Instance.Initialize(Localizer.WebCheckUpdate.GetLang(), 3, 0, false);
         foreach ( string s in Directory.GetFiles(Path.GetTempPath(), Globals.SetupFilename.Replace("%VER%", "*")) )
@@ -60,6 +62,7 @@ namespace Ordisoftware.HebrewCommon
           string[] partsVersion = content[0].Split('.');
           string filename = Globals.SetupFileURL.Replace("%VER%", content[0]);
           var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
+          lastdone = DateTime.Now;
           LoadingForm.Instance.DoProgress();
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {

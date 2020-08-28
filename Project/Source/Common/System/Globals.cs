@@ -30,6 +30,11 @@ namespace Ordisoftware.HebrewCommon
   {
 
     /// <summary>
+    /// Indicate new line.
+    /// </summary>
+    static public readonly string NL = Environment.NewLine;
+
+    /// <summary>
     /// Indicate the main form.
     /// </summary>
     static public Form MainForm { get; set; }
@@ -207,35 +212,17 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate filename of the grammar guide.
     /// </summary>
-    static public string GrammarGuideFilename
-    {
-      get
-      {
-        return GuidesFolderPath + $"grammar-%LANG%.htm";
-      }
-    }
+    static public string GrammarGuideFilename => GuidesFolderPath + $"grammar-%LANG%.htm";
 
     /// <summary>
     /// Indicate filename of the method notice.
     /// </summary>
-    static public string MethodNoticeFilename
-    {
-      get
-      {
-        return GuidesFolderPath + $"method-%LANG%.htm";
-      }
-    }
+    static public string MethodNoticeFilename => GuidesFolderPath + $"method-%LANG%.htm";
 
     /// <summary>
     /// Indicate the filename of the help.
     /// </summary>
-    static public string HelpFilename
-    {
-      get
-      {
-        return HelpFolderPath + $"index-{Localizer.Current}.htm";
-      }
-    }
+    static public string HelpFilename => HelpFolderPath + $"index-{Languages.Current}.htm";
 
     /// <summary>
     /// Indicate the user documents folder path.

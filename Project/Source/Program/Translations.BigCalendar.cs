@@ -36,44 +36,44 @@ namespace Ordisoftware.HebrewCalendar
       {
         new Dictionary<string, string>
           {
-            { Localizer.EN, AskToGenerateBigCalendarEN + "a slight slowdown." + Localizer.NL + Localizer.NL +
-                            Localizer.AskToContinue[Localizer.EN] },
-            { Localizer.FR, AskToGenerateBigCalendarFR + "un léger ralentissement." + Localizer.NL + Localizer.NL +
-                            Localizer.AskToContinue[Localizer.FR] },
+            { Languages.EN, AskToGenerateBigCalendarEN + "a slight slowdown." + Globals.NL + Globals.NL +
+                            Localizer.AskToContinue[Languages.EN] },
+            { Languages.FR, AskToGenerateBigCalendarFR + "un léger ralentissement." + Globals.NL + Globals.NL +
+                            Localizer.AskToContinue[Languages.FR] },
         },
         new Dictionary<string, string>
         {
-          { Localizer.EN, AskToGenerateBigCalendarEN + "a noticeable slowdown." + Localizer.NL + Localizer.NL +
-                          Localizer.AskToContinue[Localizer.EN] },
-          { Localizer.FR, AskToGenerateBigCalendarFR + "un ralentissement notable." + Localizer.NL + Localizer.NL +
-                          Localizer.AskToContinue[Localizer.FR] },
+          { Languages.EN, AskToGenerateBigCalendarEN + "a noticeable slowdown." + Globals.NL + Globals.NL +
+                          Localizer.AskToContinue[Languages.EN] },
+          { Languages.FR, AskToGenerateBigCalendarFR + "un ralentissement notable." + Globals.NL + Globals.NL +
+                          Localizer.AskToContinue[Languages.FR] },
         },
         new Dictionary<string, string>
         {
-          { Localizer.EN, AskToGenerateBigCalendarEN + "a significant slowdown." + Localizer.NL + Localizer.NL +
-                          "Do not use this value for a daily usage." + Localizer.NL + Localizer.NL +
-                          Localizer.AskToContinue[Localizer.EN] },
-          { Localizer.FR, AskToGenerateBigCalendarFR + "un ralentissement important." + Localizer.NL + Localizer.NL +
-                          "N'utilisez pas cette valeur pour un usage quotidien." + Localizer.NL + Localizer.NL +
-                          Localizer.AskToContinue[Localizer.FR] },
+          { Languages.EN, AskToGenerateBigCalendarEN + "a significant slowdown." + Globals.NL + Globals.NL +
+                          "Do not use this value for a daily usage." + Globals.NL + Globals.NL +
+                          Localizer.AskToContinue[Languages.EN] },
+          { Languages.FR, AskToGenerateBigCalendarFR + "un ralentissement important." + Globals.NL + Globals.NL +
+                          "N'utilisez pas cette valeur pour un usage quotidien." + Globals.NL + Globals.NL +
+                          Localizer.AskToContinue[Languages.FR] },
         },
         new Dictionary<string, string>
         {
-          { Localizer.EN, AskToGenerateBigCalendarEN + "a considerable slowdown." + Localizer.NL + Localizer.NL +
-                          "Use this value only for occasional searches." + Localizer.NL + Localizer.NL +
-                          Localizer.AskToContinue[Localizer.EN] },
-          { Localizer.FR, AskToGenerateBigCalendarFR + "ralentissement considérable." + Localizer.NL + Localizer.NL +
-                          "N'utilisez cette valeur que pour des recherches ponctuelles." + Localizer.NL + Localizer.NL +
-                          Localizer.AskToContinue[Localizer.FR] },
+          { Languages.EN, AskToGenerateBigCalendarEN + "a considerable slowdown." + Globals.NL + Globals.NL +
+                          "Use this value only for occasional searches." + Globals.NL + Globals.NL +
+                          Localizer.AskToContinue[Languages.EN] },
+          { Languages.FR, AskToGenerateBigCalendarFR + "ralentissement considérable." + Globals.NL + Globals.NL +
+                          "N'utilisez cette valeur que pour des recherches ponctuelles." + Globals.NL + Globals.NL +
+                          Localizer.AskToContinue[Languages.FR] },
         },
         new Dictionary<string, string>
         {
-          { Localizer.EN, AskToGenerateBigCalendarEN + "a serious slowdown." + Localizer.NL + Localizer.NL +
-                          "Use this value only with a powerful computer." + Localizer.NL + Localizer.NL +
-                          Localizer.AskToContinue[Localizer.EN] },
-          { Localizer.FR, AskToGenerateBigCalendarFR + "ralentissement sévère." + Localizer.NL + Localizer.NL +
-                          "N'utiliser cette valeur qu'avec un ordinateur puissant." + Localizer.NL + Localizer.NL +
-                          Localizer.AskToContinue[Localizer.FR] },
+          { Languages.EN, AskToGenerateBigCalendarEN + "a serious slowdown." + Globals.NL + Globals.NL +
+                          "Use this value only with a powerful computer." + Globals.NL + Globals.NL +
+                          Localizer.AskToContinue[Languages.EN] },
+          { Languages.FR, AskToGenerateBigCalendarFR + "ralentissement sévère." + Globals.NL + Globals.NL +
+                          "N'utiliser cette valeur qu'avec un ordinateur puissant." + Globals.NL + Globals.NL +
+                          Localizer.AskToContinue[Languages.FR] },
         }
       };
 

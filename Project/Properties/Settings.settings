@@ -290,7 +290,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="VacuumLastDone" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)">2020-01-01</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="MonthViewBackColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">White</Value>
@@ -320,9 +320,9 @@
       <Value Profile="(Default)">-1, -1</Value>
     </Setting>
     <Setting Name="CheckUpdateLastDone" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)">2020-01-01</Value>
+      <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="CheckUpdateEveryWeek" Type="System.Boolean" Scope="User">
+    <Setting Name="CheckUpdateEveryWeekWhileRunning" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="AutoRegenerate" Type="System.Boolean" Scope="User">

@@ -38,13 +38,11 @@ namespace Ordisoftware.HebrewCommon
     /// <returns>The new date if done else the same.</returns>
     static public DateTime Optimize(this OdbcConnection connection, 
                                     DateTime lastdone, 
-                                    bool force = false, 
-                                    int days = -1)
+                                    bool force = false)
     {
       try
       {
-        if ( days == -1 ) days = DefaultOptimizeDaysInterval;
-        if ( force || lastdone.AddDays(days) < DateTime.Now )
+        if ( force || lastdone.AddDays(DefaultOptimizeDaysInterval) < DateTime.Now )
         {
           connection.CheckIntegrity();
           connection.Vacuum();

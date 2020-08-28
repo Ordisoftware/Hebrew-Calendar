@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewCalendar
       = new Dictionary<string, List<SuspendDelayItem>>
       {
         {
-          Localizer.EN,
+          Languages.EN,
           new List<SuspendDelayItem>
           {
             new SuspendDelayItem("None", 0),
@@ -48,7 +48,7 @@ namespace Ordisoftware.HebrewCalendar
           }
         },
         {
-          Localizer.FR,
+          Languages.FR,
           new List<SuspendDelayItem>
           {
             new SuspendDelayItem("Aucun", 0),

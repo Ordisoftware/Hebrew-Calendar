@@ -517,7 +517,7 @@
     <value>179, 17</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
-    <value>Vérifier mise à jour au démarrage</value>
+    <value>Vérifier mise à jour au démarrage chaque semaine</value>
   </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>

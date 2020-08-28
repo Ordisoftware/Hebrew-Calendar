@@ -142,6 +142,7 @@
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
     <Compile Include="Source\Common\Data\DataFileFolder.cs" />
+    <Compile Include="Source\Common\System\Languages.cs" />
     <Compile Include="Source\Common\UI\ToolStripMenuItemHelper.cs" />
     <Compile Include="Dependencies\GenericParsing\FieldType.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParser.cs" />

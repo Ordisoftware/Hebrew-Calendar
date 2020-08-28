@@ -1151,7 +1151,6 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2020-01-01")]
         public global::System.DateTime VacuumLastDone {
             get {
                 return ((global::System.DateTime)(this["VacuumLastDone"]));
@@ -1271,7 +1270,6 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2020-01-01")]
         public global::System.DateTime CheckUpdateLastDone {
             get {
                 return ((global::System.DateTime)(this["CheckUpdateLastDone"]));
@@ -1284,12 +1282,12 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CheckUpdateEveryWeek {
+        public bool CheckUpdateEveryWeekWhileRunning {
             get {
-                return ((bool)(this["CheckUpdateEveryWeek"]));
+                return ((bool)(this["CheckUpdateEveryWeekWhileRunning"]));
             }
             set {
-                this["CheckUpdateEveryWeek"] = value;
+                this["CheckUpdateEveryWeekWhileRunning"] = value;
             }
         }
         

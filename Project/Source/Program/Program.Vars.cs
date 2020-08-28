@@ -153,7 +153,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       MoonMonthsMeanings = new Dictionary<string, MoonMonthsFile>();
       MoonMonthsLettriqs = new Dictionary<string, MoonMonthsFile>();
-      foreach ( var lang in Localizer.LanguageNames )
+      foreach ( var lang in Languages.Names )
       {
         MoonMonthsMeanings.Add(lang.Value, 
                                new MoonMonthsFile(MoonMonthsMeaningsFilename.Replace("%LANG%", lang.Value.ToUpper()),

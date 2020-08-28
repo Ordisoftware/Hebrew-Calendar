@@ -222,14 +222,14 @@ namespace Ordisoftware.HebrewCommon
       = new Dictionary<string, string[]>()
       {
         {
-          Localizer.EN, new string[]
+          Languages.EN, new string[]
           {
             "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
             "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
           }
         },
         {
-          Localizer.FR, new string[]
+          Languages.FR, new string[]
           {
             "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
             "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"

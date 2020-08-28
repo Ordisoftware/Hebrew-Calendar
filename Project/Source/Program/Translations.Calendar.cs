@@ -28,15 +28,15 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly Dictionary<string, string> Today
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Today" },
-        { Localizer.FR, "Aujourd'hui" }
+        { Languages.EN, "Today" },
+        { Languages.FR, "Aujourd'hui" }
       };
 
     static public readonly Dictionary<string, string> NavigationDay
       = new Dictionary<string, string>()
       {
-        { Localizer.EN, "Day #" },
-        { Localizer.FR, "Jour #" }
+        { Languages.EN, "Day #" },
+        { Languages.FR, "Jour #" }
       };
 
     static public readonly Dictionary<DayOfWeek, Dictionary<string, string>> DayOfWeek
@@ -45,50 +45,50 @@ namespace Ordisoftware.HebrewCalendar
         {
           System.DayOfWeek.Monday, new Dictionary<string, string>
           {
-            { Localizer.EN, "Monday" },
-            { Localizer.FR, "Lundi" }
+            { Languages.EN, "Monday" },
+            { Languages.FR, "Lundi" }
           }
         },
         {
           System.DayOfWeek.Tuesday, new Dictionary<string, string>
           {
-            { Localizer.EN, "Tuesday" },
-            { Localizer.FR, "Mardi" }
+            { Languages.EN, "Tuesday" },
+            { Languages.FR, "Mardi" }
           }
         },
         {
           System.DayOfWeek.Wednesday, new Dictionary<string, string>
           {
-            { Localizer.EN, "Wednesday" },
-            { Localizer.FR, "Mercredi" }
+            { Languages.EN, "Wednesday" },
+            { Languages.FR, "Mercredi" }
           }
         },
         {
           System.DayOfWeek.Thursday, new Dictionary<string, string>
           {
-            { Localizer.EN, "Thursday" },
-            { Localizer.FR, "Jeudi" }
+            { Languages.EN, "Thursday" },
+            { Languages.FR, "Jeudi" }
           }
         },
         {
           System.DayOfWeek.Friday, new Dictionary<string, string>
           {
-            { Localizer.EN, "Friday" },
-            { Localizer.FR, "Vendredi" }
+            { Languages.EN, "Friday" },
+            { Languages.FR, "Vendredi" }
           }
         },
         {
           System.DayOfWeek.Saturday, new Dictionary<string, string>
           {
-            { Localizer.EN, "Saturday" },
-            { Localizer.FR, "Samedi" }
+            { Languages.EN, "Saturday" },
+            { Languages.FR, "Samedi" }
           }
         },
         {
           System.DayOfWeek.Sunday, new Dictionary<string, string>
           {
-            { Localizer.EN, "Sunday" },
-            { Localizer.FR, "Dimanche" }
+            { Languages.EN, "Sunday" },
+            { Languages.FR, "Dimanche" }
           }
         }
       };
@@ -99,57 +99,57 @@ namespace Ordisoftware.HebrewCalendar
         {
           HebrewCalendar.MoonPhase.New, new Dictionary<string, string>
           {
-            { Localizer.EN, "New moon" },
-            { Localizer.FR, "Nouvelle lune" }
+            { Languages.EN, "New moon" },
+            { Languages.FR, "Nouvelle lune" }
           }
         },
         {
           HebrewCalendar.MoonPhase.WaxingCrescent, new Dictionary<string, string>
           {
-            { Localizer.EN, "Waxing crescent" },
-            { Localizer.FR, "Premier croissant" }
+            { Languages.EN, "Waxing crescent" },
+            { Languages.FR, "Premier croissant" }
           }
         },
         {
           HebrewCalendar.MoonPhase.FirstQuarter, new Dictionary<string, string>
           {
-            { Localizer.EN, "First quarter" },
-            { Localizer.FR, "Premier quartier" }
+            { Languages.EN, "First quarter" },
+            { Languages.FR, "Premier quartier" }
           }
         },
         {
           HebrewCalendar.MoonPhase.WaxingGibbous, new Dictionary<string, string>
           {
-            { Localizer.EN, "Waxing gibbous" },
-            { Localizer.FR, "Gibbeuse croissante" }
+            { Languages.EN, "Waxing gibbous" },
+            { Languages.FR, "Gibbeuse croissante" }
           }
         },
         {
           HebrewCalendar.MoonPhase.Full, new Dictionary<string, string>
           {
-            { Localizer.EN, "Full moon" },
-            { Localizer.FR, "Pleine lune" }
+            { Languages.EN, "Full moon" },
+            { Languages.FR, "Pleine lune" }
           }
         },
         {
           HebrewCalendar.MoonPhase.WaningGibbous, new Dictionary<string, string>
           {
-            { Localizer.EN, "Waning gibbous" },
-            { Localizer.FR, "Gibbeuse décroissante" }
+            { Languages.EN, "Waning gibbous" },
+            { Languages.FR, "Gibbeuse décroissante" }
           }
         },
         {
           HebrewCalendar.MoonPhase.LastQuarter, new Dictionary<string, string>
           {
-            { Localizer.EN, "Last quarter" },
-            { Localizer.FR, "Dernier quartier" }
+            { Languages.EN, "Last quarter" },
+            { Languages.FR, "Dernier quartier" }
           }
         },
         {
           HebrewCalendar.MoonPhase.WaningCrescent, new Dictionary<string, string>
           {
-            { Localizer.EN, "Waning crescent" },
-            { Localizer.FR, "Dernier croissant" }
+            { Languages.EN, "Waning crescent" },
+            { Languages.FR, "Dernier croissant" }
           }
         }
       };
@@ -160,29 +160,29 @@ namespace Ordisoftware.HebrewCalendar
         {
           HebrewCalendar.Ephemeris.Rise, new Dictionary<string, string>
           {
-            { Localizer.EN, "R: " },
-            { Localizer.FR, "L: " }
+            { Languages.EN, "R: " },
+            { Languages.FR, "L: " }
           }
         },
         {
           HebrewCalendar.Ephemeris.Set, new Dictionary<string, string>
           {
-            { Localizer.EN, "S: " },
-            { Localizer.FR, "C: " }
+            { Languages.EN, "S: " },
+            { Languages.FR, "C: " }
           }
         },
         {
           HebrewCalendar.Ephemeris.SummerHour, new Dictionary<string, string>
           {
-            { Localizer.EN, "(S)" },
-            { Localizer.FR, "(E)" }
+            { Languages.EN, "(S)" },
+            { Languages.FR, "(E)" }
           }
         },
         {
           HebrewCalendar.Ephemeris.WinterHour, new Dictionary<string, string>
           {
-            { Localizer.EN, "(W)" },
-            { Localizer.FR, "(H)" }
+            { Languages.EN, "(W)" },
+            { Languages.FR, "(H)" }
           }
         }
       };
@@ -193,36 +193,36 @@ namespace Ordisoftware.HebrewCalendar
         {
           ReportFieldText.Date, new Dictionary<string, string>
           {
-            { Localizer.EN, "Date" },
-            { Localizer.FR, "Date" }
+            { Languages.EN, "Date" },
+            { Languages.FR, "Date" }
           }
         },
         {
           ReportFieldText.Month, new Dictionary<string, string>
           {
-            { Localizer.EN, "Month" },
-            { Localizer.FR, "Mois" }
+            { Languages.EN, "Month" },
+            { Languages.FR, "Mois" }
           }
         },
         {
           ReportFieldText.Sun, new Dictionary<string, string>
           {
-            { Localizer.EN, "Sun" },
-            { Localizer.FR, "Soleil" }
+            { Languages.EN, "Sun" },
+            { Languages.FR, "Soleil" }
           }
         },
         {
           ReportFieldText.Moon, new Dictionary<string, string>
           {
-            { Localizer.EN, "Moon" },
-            { Localizer.FR, "Lune" }
+            { Languages.EN, "Moon" },
+            { Languages.FR, "Lune" }
           }
         },
         {
           ReportFieldText.Events, new Dictionary<string, string>
           {
-            { Localizer.EN, "Events" },
-            { Localizer.FR, "Évènements" }
+            { Languages.EN, "Events" },
+            { Languages.FR, "Évènements" }
           }
         }
       };
@@ -233,36 +233,36 @@ namespace Ordisoftware.HebrewCalendar
         {
           SeasonChange.None, new Dictionary<string, string>
           {
-            { Localizer.EN, "" },
-            { Localizer.FR, "" }
+            { Languages.EN, "" },
+            { Languages.FR, "" }
           }
         },
         {
           SeasonChange.SpringEquinox, new Dictionary<string, string>
           {
-            { Localizer.EN, "Spring equinox" },
-            { Localizer.FR, "Equinoxe de printemps" }
+            { Languages.EN, "Spring equinox" },
+            { Languages.FR, "Equinoxe de printemps" }
           }
         },
         {
           SeasonChange.SummerSolstice, new Dictionary<string, string>
           {
-            { Localizer.EN, "Summer solstice" },
-            { Localizer.FR, "Solstice d'été" }
+            { Languages.EN, "Summer solstice" },
+            { Languages.FR, "Solstice d'été" }
           }
         },
         {
           SeasonChange.AutumnEquinox, new Dictionary<string, string>
           {
-            { Localizer.EN, "Autumn equinox" },
-            { Localizer.FR, "Equinoxe d'automne" }
+            { Languages.EN, "Autumn equinox" },
+            { Languages.FR, "Equinoxe d'automne" }
           }
         },
         {
           SeasonChange.WinterSolstice, new Dictionary<string, string>
           {
-            { Localizer.EN, "Winter solstice" },
-            { Localizer.FR, "Solstice d'hiver" }
+            { Languages.EN, "Winter solstice" },
+            { Languages.FR, "Solstice d'hiver" }
           }
         }
       };
@@ -273,85 +273,85 @@ namespace Ordisoftware.HebrewCalendar
         {
           HebrewCalendar.TorahEvent.None, new Dictionary<string, string>
           {
-            { Localizer.EN, "" },
-            { Localizer.FR, "" }
+            { Languages.EN, "" },
+            { Languages.FR, "" }
           }
         },
         {
           HebrewCalendar.TorahEvent.NewYearD1, new Dictionary<string, string>
           {
-            { Localizer.EN, "New year" },
-            { Localizer.FR, "Début de l'année" }
+            { Languages.EN, "New year" },
+            { Languages.FR, "Début de l'année" }
           }
         },
         {
           HebrewCalendar.TorahEvent.NewYearD10, new Dictionary<string, string>
           {
-            { Localizer.EN, "Set aside lamb" },
-            { Localizer.FR, "Réserver agneau" }
+            { Languages.EN, "Set aside lamb" },
+            { Languages.FR, "Réserver agneau" }
           }
         },
         {
           HebrewCalendar.TorahEvent.PessahD1, new Dictionary<string, string>
           {
-            { Localizer.EN, "Pessa'h start" },
-            { Localizer.FR, "Début de Pessah" }
+            { Languages.EN, "Pessa'h start" },
+            { Languages.FR, "Début de Pessah" }
           }
         },
         {
           HebrewCalendar.TorahEvent.PessahD7, new Dictionary<string, string>
           {
-            { Localizer.EN, "Pessa'h end" },
-            { Localizer.FR, "Fin de Pessah" }
+            { Languages.EN, "Pessa'h end" },
+            { Languages.FR, "Fin de Pessah" }
           }
         },
         {
           HebrewCalendar.TorahEvent.ChavouotDiet, new Dictionary<string, string>
           {
-            { Localizer.EN, "Chavouot diet" },
-            { Localizer.FR, "Régime de Chavouot" }
+            { Languages.EN, "Chavouot diet" },
+            { Languages.FR, "Régime de Chavouot" }
           }
         },
         {
           HebrewCalendar.TorahEvent.Chavouot1, new Dictionary<string, string>
           {
-            { Localizer.EN, "Chavouot lamb" },
-            { Localizer.FR, "Agneau de Chavouot" }
+            { Languages.EN, "Chavouot lamb" },
+            { Languages.FR, "Agneau de Chavouot" }
           }
         },
         {
           HebrewCalendar.TorahEvent.Chavouot2, new Dictionary<string, string>
           {
-            { Localizer.EN, "Chavouot end" },
-            { Localizer.FR, "Fin de Chavouot" }
+            { Languages.EN, "Chavouot end" },
+            { Languages.FR, "Fin de Chavouot" }
           }
         },
         {
           HebrewCalendar.TorahEvent.YomTerouah, new Dictionary<string, string>
           {
-            { Localizer.EN, "Yom Terou'ah" },
-            { Localizer.FR, "Yom Terou'ah" }
+            { Languages.EN, "Yom Terou'ah" },
+            { Languages.FR, "Yom Terou'ah" }
           }
         },
         {
           HebrewCalendar.TorahEvent.YomHaKipourim, new Dictionary<string, string>
           {
-            { Localizer.EN, "Yom HaKipourim" },
-            { Localizer.FR, "Yom HaKipourim" }
+            { Languages.EN, "Yom HaKipourim" },
+            { Languages.FR, "Yom HaKipourim" }
           }
         },
         {
           HebrewCalendar.TorahEvent.SoukotD1, new Dictionary<string, string>
           {
-            { Localizer.EN, "Soukot start" },
-            { Localizer.FR, "Début de Soukot" }
+            { Languages.EN, "Soukot start" },
+            { Languages.FR, "Début de Soukot" }
           }
         },
         {
           HebrewCalendar.TorahEvent.SoukotD8, new Dictionary<string, string>
           {
-            { Localizer.EN, "Soukot end" },
-            { Localizer.FR, "Fin de Soukot" }
+            { Languages.EN, "Soukot end" },
+            { Languages.FR, "Fin de Soukot" }
           }
         }
       };

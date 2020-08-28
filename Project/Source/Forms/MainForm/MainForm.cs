@@ -77,7 +77,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Globals.IsExiting ) return;
       Program.Settings.Retrieve();
-      Program.Settings.CheckUpdateLastDone = DateTime.Now;
       try
       {
         Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude);
@@ -87,7 +86,10 @@ namespace Ordisoftware.HebrewCalendar
       {
         ex.Manage();
       }
-      if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, true) ) return;
+      var lastdone = Program.Settings.CheckUpdateLastDone;
+      bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, ref lastdone, true);
+      Program.Settings.CheckUpdateLastDone = lastdone;
+      if ( exit ) return;
       CalendarText.ForeColor = Program.Settings.TextColor;
       CalendarText.BackColor = Program.Settings.TextBackground;
       InitializeCalendarUI();
@@ -563,8 +565,10 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         MenuTray.Enabled = false;
-        Program.Settings.CheckUpdateLastDone = DateTime.Now;
-        if ( WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, e == null) )
+        var lastdone = Program.Settings.CheckUpdateLastDone;
+        bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, ref lastdone, e == null);
+        Program.Settings.CheckUpdateLastDone = lastdone;
+        if ( exit )
         {
           Globals.AllowClose = true;
           Close();
@@ -1054,8 +1058,7 @@ namespace Ordisoftware.HebrewCalendar
         CalendarMonth.Refresh();
         if ( SQLite.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
-        if ( Program.Settings.CheckUpdateEveryWeek )
-          //if ( Program.Settings.CheckUpdateLastDone.AddDays(WebCheckUpdate.DefaultCheckDaysInterval) < DateTime.Now )
+        if ( Program.Settings.CheckUpdateEveryWeekWhileRunning )
           ActionWebCheckUpdate_Click(null, null);
       });
     }

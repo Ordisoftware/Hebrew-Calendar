@@ -22,53 +22,10 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Supported languages enum.
-  /// </summary>
-  public enum Language
-  {
-    English,
-    French
-  }
-
-  /// <summary>
   /// Provide localization helper.
   /// </summary>
   static public partial class Localizer
   {
-
-    /// <summary>
-    /// Indicate english language code.
-    /// </summary>
-    static public string EN => LanguageNames[Language.English];
-
-    /// <summary>
-    /// Indicate french language code.
-    /// </summary>
-    static public string FR => LanguageNames[Language.French];
-
-    /// <summary>
-    /// Indicate new line.
-    /// </summary>
-    static public readonly string NL = Environment.NewLine;
-
-    /// <summary>
-    /// Indicate default language code.
-    /// </summary>
-    static public readonly string Default = EN;
-
-    /// <summary>
-    /// Indicate current language.
-    /// </summary>
-    static public string Current
-    {
-      get
-      {
-        string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-        if ( !LanguageNames.Values.Contains(lang) )
-          lang = Default;
-        return lang;
-      }
-    }
 
     /// <summary>
     /// Get the string translation.
@@ -76,7 +33,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="values">The dictionary containing lang>translation.</param>
     static public string GetLang(this Dictionary<string, string> values)
     {
-      return values != null && values.ContainsKey(Current) ? values[Current] : "";
+      return values != null && values.ContainsKey(Languages.Current) ? values[Languages.Current] : "";
     }
 
     /// <summary>
@@ -95,7 +52,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="values">The dictionary containing lang>translations.</param>
     static public string[] GetLang(this Dictionary<string, string[]> values)
     {
-      return values != null && values.ContainsKey(Current) ? values[Current] : new string[0];
+      return values != null && values.ContainsKey(Languages.Current) ? values[Languages.Current] : new string[0];
     }
 
     /// <summary>
@@ -107,7 +64,7 @@ namespace Ordisoftware.HebrewCommon
     static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
       return values != null && values.ContainsKey(value)
-             ? values[value] != null && values[value].ContainsKey(Current) ? values[value][Current] : ""
+             ? values[value] != null && values[value].ContainsKey(Languages.Current) ? values[value][Languages.Current] : ""
              : "";
     }
 
@@ -119,8 +76,8 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="value">The value to translate.</param>
     static public string GetLang<T>(this Dictionary<string, Dictionary<T, string>> values, T value)
     {
-      return values != null && values.ContainsKey(Current)
-        ? values[Current] != null && values[Current].ContainsKey(value) ? values[Current][value] : ""
+      return values != null && values.ContainsKey(Languages.Current)
+        ? values[Languages.Current] != null && values[Languages.Current].ContainsKey(value) ? values[Languages.Current][value] : ""
         : "";
     }
 
@@ -131,7 +88,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="values">The dictionary containing lang>list.</param>
     static public List<T> GetLang<T>(this Dictionary<string, List<T>> values)
     {
-      return values != null && values.ContainsKey(Current) ? values[Current] : null;
+      return values != null && values.ContainsKey(Languages.Current) ? values[Languages.Current] : null;
     }
 
     /// <summary>
