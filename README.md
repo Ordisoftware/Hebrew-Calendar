@@ -129,6 +129,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Ctrl+S : Save text report to text file
 - Alt+S : Save text report to CSV file
 - Alt+C : Open windows calculator
+- Alt+T : Open windows date and time settings
 - Ctrl+F1 : Statistics window
 - Ctrl+F2 : Generate calendar data
 - Ctrl+F3 : Dates difference calculator
@@ -149,23 +150,25 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 #### 2020.09.__ - Version 5.0
 
 - Add search gregorian month form.
-- Add tools menu duplicated in the tray icon.
 - Add usage statistics form in tools menu.
+- Add tools menu duplicated in the tray icon.
 - Add force database optimize at next startup in tools menu
+- Add option to define the years interval for auto-generation.
 - Add option to enable or disable the web links menu.
 - Add option to enable or disable the suspend reminder functionality.
 - Add button to disable auto lock option in lock session form.
-- Add mute windows volume in addition to stop media playing.
 - Add option to auto generate calendar when expired else show dialog box.
 - Add option to set the maximum years interval allowed to generate the data.
+- - Add mute windows volume in addition to stop media playing.
 - Fix stop media playing (stop instead of play/pause media).
 - Fix app not responding on windows logoff or system shutdown.
-- Improve dates diff calculator to show more stats in a form.
+- Improve dates diff calculator to show more stats in a form having bookmarks.
 - Improve years to generate box with predefined intervals and change some constants.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve month view drawing speed by a half.
 - Improve data generation speed by a half.
 - Improve keyboard shortcuts.
+- Remove the generate years selection box at startup if database is empty.
 - Some UI/UX improvements.
 - Some code refactorings.
 
