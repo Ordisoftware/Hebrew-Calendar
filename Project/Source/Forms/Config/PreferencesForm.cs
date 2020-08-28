@@ -196,14 +196,6 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
-    private string GPSToString()
-    {
-      return "• " + Program.Settings.GPSCountry + Environment.NewLine +
-             "• " + Program.Settings.GPSCity +
-             Environment.NewLine +
-             Environment.NewLine;
-    }
-
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       var form = new SelectCityForm();
@@ -215,12 +207,9 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.GPSCountry = form.Country;
       Program.Settings.GPSCity = form.City;
       Program.Settings.Save();
-      EditTimeZone.Text = GPSToString();
       if ( form.EditTimeZone.SelectedItem != null )
-      {
         Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-        EditTimeZone.Text += ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
-      }
+      EditTimeZone.Text = Program.GPSToString();
       MainForm.Instance.InitializeCurrentTimeZone();
     }
 

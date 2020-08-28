@@ -26,6 +26,19 @@ namespace Ordisoftware.HebrewCalendar
   static partial class Program
   {
 
+    static public string GPSToString()
+    {
+      string result = "• " + Settings.GPSCountry + Environment.NewLine
+                    + "• " + Settings.GPSCity;
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        if ( item.Id == Settings.TimeZone )
+        {
+          result += Environment.NewLine + Environment.NewLine + item.DisplayName;
+          break;
+        }
+      return result;
+    }
+
     /// <summary>
     /// Start Hebrew Letters process.
     /// </summary>

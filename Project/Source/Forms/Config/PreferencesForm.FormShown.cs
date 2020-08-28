@@ -50,13 +50,7 @@ namespace Ordisoftware.HebrewCalendar
           break;
         }
       LoadSettings();
-      EditTimeZone.Text = GPSToString();
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Program.Settings.TimeZone )
-        {
-          EditTimeZone.Text += item.DisplayName;
-          break;
-        }
+      EditTimeZone.Text = Program.GPSToString();
       switch ( Program.Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
