@@ -52,7 +52,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         int position = LunisolarDaysBindingSource.Find("Date", SQLite.GetDate(date));
-        if ( position > 0 )
+        if ( position >= 0 )
         {
           LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLite.GetDate(date));
           CurrentDay = (Data.DataSet.LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;

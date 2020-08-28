@@ -88,6 +88,56 @@ namespace Ordisoftware.HebrewCalendar
           if ( EditESCtoExit.Checked )
             Close();
           return true;
+        case Keys.Home:
+          if ( Program.Settings.CurrentView == ViewMode.Month )
+          {
+            GoToDate(new DateTime(YearFirst, 1, 1));
+            return true;
+          }
+          break;
+        case Keys.End:
+          if ( Program.Settings.CurrentView == ViewMode.Month )
+          {
+            GoToDate(new DateTime(YearLast, 12, 1));
+            return true;
+          }
+          break;
+        case Keys.Right:
+          if ( Program.Settings.CurrentView == ViewMode.Month )
+          {
+            var date = SQLite.GetDate(CurrentDay.Date);
+            date = new DateTime(date.Year, date.Month, 1);
+            GoToDate(date.AddMonths(1));
+            return true;
+          }
+          break;
+        case Keys.Left:
+          if ( Program.Settings.CurrentView == ViewMode.Month )
+          {
+            var date = SQLite.GetDate(CurrentDay.Date);
+            date = new DateTime(date.Year, date.Month, 1);
+            GoToDate(date.AddMonths(-1));
+            return true;
+          }
+          break;
+        case Keys.Up:
+          if ( Program.Settings.CurrentView == ViewMode.Month )
+          {
+            var date = SQLite.GetDate(CurrentDay.Date);
+            date = new DateTime(date.Year, date.Month, 1);
+            GoToDate(date.AddYears(1));
+            return true;
+          }
+          break;
+        case Keys.Down:
+          if ( Program.Settings.CurrentView == ViewMode.Month )
+          {
+            var date = SQLite.GetDate(CurrentDay.Date);
+            date = new DateTime(date.Year, date.Month, 1);
+            GoToDate(date.AddYears(-1));
+            return true;
+          }
+          break;
       }
       return base.ProcessCmdKey(ref msg, keyData);
     }
