@@ -171,6 +171,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !DisplayManager.QueryYesNo(Translations.AskToResetPreferences.GetLang()) ) return;
       MainForm.Instance.MenuShowHide_Click(null, null);
+      MoonMonthsForm.Instance.Hide();
+      SystemStatisticsForm.Instance.Hide();
       string country = Program.Settings.GPSCountry;
       string city = Program.Settings.GPSCity;
       string lat = Program.Settings.GPSLatitude;
