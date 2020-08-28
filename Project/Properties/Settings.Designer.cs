@@ -206,7 +206,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=Hebrew-calendar")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=Hebrew-Calendar")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -1151,6 +1151,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000-01-01")]
         public global::System.DateTime VacuumLastDone {
             get {
                 return ((global::System.DateTime)(this["VacuumLastDone"]));
@@ -1270,6 +1271,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000-01-01")]
         public global::System.DateTime CheckUpdateLastDone {
             get {
                 return ((global::System.DateTime)(this["CheckUpdateLastDone"]));
@@ -1365,6 +1367,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000-01-01")]
         public global::System.DateTime BenchmarkStartDateTime {
             get {
                 return ((global::System.DateTime)(this["BenchmarkStartDateTime"]));
