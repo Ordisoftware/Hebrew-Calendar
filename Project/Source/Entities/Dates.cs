@@ -85,8 +85,8 @@ namespace Ordisoftware.HebrewCalendar
       {
         aasdate.Set(action(year, true), true);
         aasdate.Get(ref jdYear, ref jdMonth, ref jdDay, ref jdHour, ref jdMinute, ref second);
-        var dateJulian = new DateTime((int)jdYear, (int)jdMonth, (int)jdDay, 0, 0, 0);
-        TorahSeasons[year].Add(dateJulian.Date, season);
+        var date = new DateTime((int)jdYear, (int)jdMonth, (int)jdDay, 0, 0, 0);
+        TorahSeasons[year].Add(date.Date, season);
       }
       if ( MainForm.Instance.CurrentGPSLatitude >= 0 || !Program.Settings.TorahEventsCountAsMoon )
       {
