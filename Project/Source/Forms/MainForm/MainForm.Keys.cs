@@ -48,14 +48,11 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.F7:
           ActionSearchGregorianMonth.PerformClick();
           return true;
-        case Keys.Control | Keys.T:
-          GoToDate(DateTime.Today);
+        case Keys.F8:
+          ActionPreferences.PerformClick();
           return true;
-        case Keys.Control | Keys.D:
-          ActionSearchDay.PerformClick();
-          return true;
-        case Keys.Control | Keys.N:
         case Keys.F9:
+        case Keys.Control | Keys.N:
           ActionNavigate.PerformClick();
           return true;
         case Keys.F10:
@@ -63,14 +60,20 @@ namespace Ordisoftware.HebrewCalendar
           if ( !Globals.IsDev ) return false; // TODO remove when finished
           ActionViewMoonMonths.PerformClick();
           return true;
-        case Keys.Control | Keys.F1:
-          ActionViewStats.PerformClick();
+        case Keys.F11:
+          ActionHelp.PerformClick();
+          return true;
+        case Keys.F12:
+          ActionAbout.PerformClick();
+          return true;
+        case Keys.Control | Keys.T:
+          GoToDate(DateTime.Today);
+          return true;
+        case Keys.Control | Keys.D:
+          ActionSearchDay.PerformClick();
           return true;
         case Keys.Control | Keys.P:
           ActionPrint.PerformClick();
-          return true;
-        case Keys.Alt | Keys.C:
-          ActionOpenCalculator.PerformClick();
           return true;
         case Keys.Control | Keys.C:
           ActionCopyReportToClipboard.PerformClick();
@@ -80,15 +83,6 @@ namespace Ordisoftware.HebrewCalendar
           return true;
         case Keys.Alt | Keys.S:
           ActionExportCSV.PerformClick();
-          return true;
-        case Keys.F8:
-          ActionPreferences.PerformClick();
-          return true;
-        case Keys.F11:
-          ActionHelp.PerformClick();
-          return true;
-        case Keys.F12:
-          ActionAbout.PerformClick();
           return true;
         case Keys.Escape:
           if ( EditESCtoExit.Checked )
