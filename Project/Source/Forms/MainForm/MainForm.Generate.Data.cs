@@ -41,15 +41,6 @@ namespace Ordisoftware.HebrewCalendar
       return GenerateErrors.Count >= MaxGenerateErrors + 1;
     }
 
-    private void EmptyDatabase()
-    {
-      LunisolarDaysTableAdapter.DeleteAllQuery();
-      ReportTableAdapter.DeleteAllQuery();
-      TableAdapterManager.UpdateAll(DataSet);
-      LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-      ReportTableAdapter.Fill(DataSet.Report);
-    }
-
     /// <summary>
     /// Create the calendar days items.
     /// </summary>

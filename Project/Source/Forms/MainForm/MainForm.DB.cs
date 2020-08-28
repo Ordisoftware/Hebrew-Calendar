@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Data.Odbc;
 using Ordisoftware.HebrewCommon;
@@ -22,6 +22,19 @@ namespace Ordisoftware.HebrewCalendar
 
   public partial class MainForm
   {
+
+    /// <summary>
+    /// Empty all tables.
+    /// </summary>
+    private void EmptyDatabase()
+    {
+      if ( !DataSet.IsInitialized ) return;
+      LunisolarDaysTableAdapter.DeleteAllQuery();
+      ReportTableAdapter.DeleteAllQuery();
+      TableAdapterManager.UpdateAll(DataSet);
+      LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
+      ReportTableAdapter.Fill(DataSet.Report);
+    }
 
     /// <summary>
     /// Check if tables exists or create them.
