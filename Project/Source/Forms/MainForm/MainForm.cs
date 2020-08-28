@@ -723,7 +723,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewDbStats_Click(object sender, EventArgs e)
     {
-      StatisticsForm.Run();
+      SystemStatisticsForm.Run();
     }
 
     /// <summary>

@@ -125,7 +125,7 @@ namespace Ordisoftware.HebrewCalendar
       };
       update(Globals.MainForm);
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = SystemStatisticsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = MoonMonthsForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;

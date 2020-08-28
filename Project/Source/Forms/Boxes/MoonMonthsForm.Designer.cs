@@ -162,7 +162,6 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.MoonMonthsFormLocation;
       this.MaximizeBox = false;
-      this.MinimizeBox = false;
       this.Name = "MoonMonthsForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MoonMonthsForm_FormClosing);
       this.Load += new System.EventHandler(this.MoonMonthsForm_Load);
