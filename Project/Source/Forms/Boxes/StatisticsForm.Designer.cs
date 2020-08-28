@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisticsForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.TextBox = new System.Windows.Forms.TextBox();
@@ -38,32 +39,21 @@
       // 
       // PanelBottom
       // 
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionClose);
-      this.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.PanelBottom.Location = new System.Drawing.Point(10, 325);
       this.PanelBottom.Name = "PanelBottom";
-      this.PanelBottom.Size = new System.Drawing.Size(425, 28);
-      this.PanelBottom.TabIndex = 37;
       // 
       // ActionClose
       // 
-      this.ActionClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      resources.ApplyResources(this.ActionClose, "ActionClose");
       this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ActionClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.ActionClose.Location = new System.Drawing.Point(343, 2);
       this.ActionClose.Name = "ActionClose";
-      this.ActionClose.Size = new System.Drawing.Size(75, 24);
-      this.ActionClose.TabIndex = 24;
-      this.ActionClose.Text = "Close";
       this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
       // TextBox
       // 
-      this.TextBox.Location = new System.Drawing.Point(13, 13);
-      this.TextBox.Multiline = true;
+      resources.ApplyResources(this.TextBox, "TextBox");
       this.TextBox.Name = "TextBox";
-      this.TextBox.Size = new System.Drawing.Size(419, 300);
-      this.TextBox.TabIndex = 38;
       // 
       // Timer
       // 
@@ -73,10 +63,9 @@
       // StatisticsForm
       // 
       this.AcceptButton = this.ActionClose;
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.ClientSize = new System.Drawing.Size(445, 363);
       this.Controls.Add(this.TextBox);
       this.Controls.Add(this.PanelBottom);
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "StatisticsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -85,9 +74,6 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "StatisticsForm";
-      this.Padding = new System.Windows.Forms.Padding(10);
-      this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-      this.Text = "Statistics";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DatabaseStatisticsForm_FormClosing);
       this.Load += new System.EventHandler(this.DatabaseStatisticsForm_Load);
       this.Shown += new System.EventHandler(this.StatisticsForm_Shown);
