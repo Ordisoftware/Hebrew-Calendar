@@ -33,7 +33,7 @@
       this.Label = new System.Windows.Forms.Label();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
-      this.ActionOk = new System.Windows.Forms.Button();
+      this.ActionOK = new System.Windows.Forms.Button();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -53,7 +53,7 @@
       // PanelButtons
       // 
       this.PanelButtons.Controls.Add(this.ActionCancel);
-      this.PanelButtons.Controls.Add(this.ActionOk);
+      this.PanelButtons.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
@@ -63,16 +63,16 @@
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
       // 
-      // ActionOk
+      // ActionOK
       // 
-      resources.ApplyResources(this.ActionOk, "ActionOk");
-      this.ActionOk.Name = "ActionOk";
-      this.ActionOk.UseVisualStyleBackColor = true;
-      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
+      resources.ApplyResources(this.ActionOK, "ActionOK");
+      this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionOK.Name = "ActionOK";
+      this.ActionOK.UseVisualStyleBackColor = true;
       // 
       // SelectBirthTime
       // 
-      this.AcceptButton = this.ActionOk;
+      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
@@ -93,7 +93,7 @@
     private System.Windows.Forms.Label Label;
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionCancel;
-    private System.Windows.Forms.Button ActionOk;
+    private System.Windows.Forms.Button ActionOK;
     internal System.Windows.Forms.DateTimePicker EditTime;
   }
 }

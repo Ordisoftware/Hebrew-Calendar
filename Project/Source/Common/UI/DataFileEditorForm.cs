@@ -107,7 +107,7 @@ namespace Ordisoftware.HebrewCommon
       EditProvidersForm_Shown(this, null);
     }
 
-    private void ActionOk_Click(object sender, EventArgs e)
+    private void ActionOK_Click(object sender, EventArgs e)
     {
       foreach ( TabPage page in TabControl.TabPages )
         try

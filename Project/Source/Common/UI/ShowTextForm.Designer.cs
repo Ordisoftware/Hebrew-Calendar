@@ -47,7 +47,7 @@
       // ActionClose
       // 
       resources.ApplyResources(this.ActionClose, "ActionClose");
-      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionClose.Name = "ActionClose";
       this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
@@ -72,6 +72,7 @@
       this.TextBox.Name = "TextBox";
       this.TextBox.ReadOnly = true;
       this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Justify;
+      this.TextBox.TabStop = false;
       // 
       // ShowTextForm
       // 

@@ -47,11 +47,6 @@ namespace Ordisoftware.HebrewCalendar
         MainForm.Instance.GoToDate(SQLite.GetDate(CurrentDay.Date));
     }
 
-    private void ActionOk_Click(object sender, EventArgs e)
-    {
-      DialogResult = DialogResult.OK;
-    }
-
     private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
     {
       if ( !LiveGoTo ) return;

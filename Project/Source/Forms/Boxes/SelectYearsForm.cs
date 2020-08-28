@@ -99,7 +99,7 @@ namespace Ordisoftware.HebrewCalendar
         EditYearFirst.Value = EditYearLast.Value - Program.Settings.GenerateIntervalMaximum + 1;
     }
 
-    private void ActionOk_Click(object sender, EventArgs e)
+    private void ActionOK_Click(object sender, EventArgs e)
     {
       var diff = EditYearLast.Value - EditYearFirst.Value + 1;
       for ( int index = Program.BigCalendarLevels.Length - 1; index >= 0; index-- )
@@ -110,7 +110,6 @@ namespace Ordisoftware.HebrewCalendar
             return;
           break;
         }
-      DialogResult = DialogResult.OK;
       ActionCancel.Enabled = true;
     }
 

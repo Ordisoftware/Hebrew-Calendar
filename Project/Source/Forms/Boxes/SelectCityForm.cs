@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    private void ActionOk_Click(object sender, EventArgs e)
+    private void ActionOK_Click(object sender, EventArgs e)
     {
       DialogResult = DialogResult.OK;
     }
@@ -135,7 +135,7 @@ namespace Ordisoftware.HebrewCalendar
       City = ( (CityItem)ListBoxCities.SelectedItem ).Name;
       Latitude = ( (CityItem)ListBoxCities.SelectedItem ).Latitude;
       Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
-      ActionOk.Enabled = EditTimeZone.SelectedItem != null;
+      ActionOK.Enabled = EditTimeZone.SelectedItem != null;
       if ( Mutex ) return;
       EditFilter.Text = ListBoxCountries.SelectedItem.ToString() + ", " + ListBoxCities.SelectedItem.ToString();
       EditFilter.Focus();
@@ -201,7 +201,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        ActionOk.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
+        ActionOK.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
         if ( !IsLoading )
           if ( !foundCountry || !foundCity )
             EditTimeZone.SelectedItem = null;
@@ -231,7 +231,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void EditTimeZone_SelectedIndexChanged(object sender, EventArgs e)
     {
-      ActionOk.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
+      ActionOK.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
     }
 
   }

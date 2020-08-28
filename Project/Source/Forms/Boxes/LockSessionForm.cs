@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
-    private void ActionOk_Click(object sender, EventArgs e)
+    private void ActionOK_Click(object sender, EventArgs e)
     {
       LockSession();
     }

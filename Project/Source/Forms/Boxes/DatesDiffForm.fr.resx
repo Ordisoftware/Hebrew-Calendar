@@ -167,7 +167,7 @@
     <value>LUNE</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Calculateur de difference de dates</value>
+    <value>Calculateur de différence de dates</value>
   </data>
   <data name="EditAlwaysLiveCalculate.Text" xml:space="preserve">
     <value>Calcul en temps réel (intervale d'années)</value>

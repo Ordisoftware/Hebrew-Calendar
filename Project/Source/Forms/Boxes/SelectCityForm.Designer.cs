@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectCityForm));
-      this.ActionOk = new System.Windows.Forms.Button();
+      this.ActionOK = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ListBoxCountries = new System.Windows.Forms.ListBox();
@@ -43,17 +43,18 @@
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
-      // ActionOk
+      // ActionOK
       // 
-      resources.ApplyResources(this.ActionOk, "ActionOk");
-      this.ActionOk.Name = "ActionOk";
-      this.ActionOk.UseVisualStyleBackColor = true;
-      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
+      resources.ApplyResources(this.ActionOK, "ActionOK");
+      this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionOK.Name = "ActionOK";
+      this.ActionOK.UseVisualStyleBackColor = true;
+      this.ActionOK.Click += new System.EventHandler(this.ActionOK_Click);
       // 
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.ActionCancel);
-      this.PanelBottom.Controls.Add(this.ActionOk);
+      this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
@@ -113,7 +114,7 @@
       // 
       // SelectCityForm
       // 
-      this.AcceptButton = this.ActionOk;
+      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
@@ -139,7 +140,7 @@
     }
 
     #endregion
-    private System.Windows.Forms.Button ActionOk;
+    private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.ListBox ListBoxCountries;

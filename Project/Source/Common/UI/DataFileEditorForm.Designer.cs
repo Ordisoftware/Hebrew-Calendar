@@ -32,7 +32,7 @@
       this.PanelBottomSeparator = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionReset = new System.Windows.Forms.LinkLabel();
-      this.ActionOk = new System.Windows.Forms.Button();
+      this.ActionOK = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.PanelBottom.SuspendLayout();
@@ -46,7 +46,7 @@
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.ActionReset);
-      this.PanelBottom.Controls.Add(this.ActionOk);
+      this.PanelBottom.Controls.Add(this.ActionOK);
       this.PanelBottom.Controls.Add(this.ActionCancel);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
@@ -61,12 +61,12 @@
       this.ActionReset.TabStop = true;
       this.ActionReset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionReset_LinkClicked);
       // 
-      // ActionOk
+      // ActionOK
       // 
-      resources.ApplyResources(this.ActionOk, "ActionOk");
-      this.ActionOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ActionOk.Name = "ActionOk";
-      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
+      resources.ApplyResources(this.ActionOK, "ActionOK");
+      this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionOK.Name = "ActionOK";
+      this.ActionOK.Click += new System.EventHandler(this.ActionOK_Click);
       // 
       // ActionCancel
       // 
@@ -87,6 +87,7 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.CancelButton = this.ActionCancel;
       this.Controls.Add(this.TabControl);
       this.Controls.Add(this.PanelBottomSeparator);
       this.Controls.Add(this.PanelBottom);
@@ -104,7 +105,7 @@
     private System.Windows.Forms.Panel PanelBottomSeparator;
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionCancel;
-    private System.Windows.Forms.Button ActionOk;
+    private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.TabControl TabControl;
     private System.Windows.Forms.LinkLabel ActionReset;
   }

@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ListItems_DoubleClick(object sender, EventArgs e)
     {
-      ActionOk.PerformClick();
+      ActionOK.PerformClick();
     }
 
     private void EditYear_SelectedIndexChanged(object sender, EventArgs e)

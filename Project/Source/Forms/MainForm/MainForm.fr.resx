@@ -1117,23 +1117,6 @@
   <data name="ActionOpenCalculator.Text" xml:space="preserve">
     <value>Calculatrice Windows</value>
   </data>
-  <data name="ActionOpenSystemDateAndTime.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAApdJREFUOE+VkV9IU2EYxt8gEqrrqLuiOyMIuom8KywvIiiSHOgwL73I1kAxNGug
-        LVZJaBnqUufxH0HpzKRMm1QGkUYzBHexpebm/p2dHd2p7Wx7+s7XkVl00wsPh/f9nt/zfef76O8Sxibw
-        oGcQd4fGDusjXo4Xk2jud0Jv/yy3+RyyRTuAE4S+8dcwW1vw/cIB4PR2pIvygJMEYXwSl21tQCExbx40
-        RseJ4se2QR21A88eQnjlwlnTDSw4WpBxdiDl7ASG2yBMTOOM6SYw8gjp53ZojI4TBfYTYlXnsbqHMLKT
-        MLqbENxHWNlLWGbyM43sIjiZAsyjeTVGx4lud/YiA8AblbEkbWBFVrAk/4BPUuBl+hZXsBxP8DWvKHOv
-        xug4ka25FVk2XPb74Q8GEZEkzHz8hLAYQzgm8T4kimwthBV/gHs1RseJrLZ7yGSz8AfWEI6IMBgMOJSf
-        j59JFWVGI4xMhpISvJ/5gMBakHs1RseJmqw2ZNkwFA5DjMXg9flQXn6J7QMUFBznXzWTQVyWEYlGed9k
-        vZMLsDRZ+VBkR5akOFIpFcayMj6rqKhAcfFFFljO4cRGAkpCgaXxVi6gwdLIzdoO8vo61HQapaWlfLZZ
-        JewX5mbnsMru4OmwE0L/YC6gvsHCTYqipSeQZgEasLjoQWVlJUwmEwoLT6G9swsd9m5MuaYxNv4yF1Bb
-        d50HpFIpJJNJqKrKe608Hg/cbjcmp1yIsfuJRKKYX1jgp9Bxouraet0OZNhlaReqaWu127vYKwUwO/eZ
-        v8TA0JNcQE1tnW77d719N4OpN9P4Mv8VXq+Pz3r7BnIBVVfNLnPNNVwxV6Nqizb75vutcAj96HYIeNzT
-        i67fknWc10Gmo/+pI0REvwCjpnkeU030hAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="ActionOpenSystemDateAndTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>317, 22</value>
   </data>

@@ -34,7 +34,7 @@
       this.LabelYearLast = new System.Windows.Forms.Label();
       this.EditYearFirst = new System.Windows.Forms.NumericUpDown();
       this.LabelYearFirst = new System.Windows.Forms.Label();
-      this.ActionOk = new System.Windows.Forms.Button();
+      this.ActionOK = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionPrefefinedInterval = new System.Windows.Forms.Button();
@@ -82,17 +82,18 @@
       resources.ApplyResources(this.LabelYearFirst, "LabelYearFirst");
       this.LabelYearFirst.Name = "LabelYearFirst";
       // 
-      // ActionOk
+      // ActionOK
       // 
-      resources.ApplyResources(this.ActionOk, "ActionOk");
-      this.ActionOk.Name = "ActionOk";
-      this.ActionOk.UseVisualStyleBackColor = true;
-      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
+      resources.ApplyResources(this.ActionOK, "ActionOK");
+      this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionOK.Name = "ActionOK";
+      this.ActionOK.UseVisualStyleBackColor = true;
+      this.ActionOK.Click += new System.EventHandler(this.ActionOK_Click);
       // 
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.ActionCancel);
-      this.PanelBottom.Controls.Add(this.ActionOk);
+      this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
@@ -121,7 +122,7 @@
       // 
       // SelectYearsForm
       // 
-      this.AcceptButton = this.ActionOk;
+      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
@@ -149,7 +150,7 @@
     #endregion
     private System.Windows.Forms.Label LabelYearLast;
     private System.Windows.Forms.Label LabelYearFirst;
-    private System.Windows.Forms.Button ActionOk;
+    private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.Panel PanelBottom;
     internal System.Windows.Forms.NumericUpDown EditYearLast;
     internal System.Windows.Forms.NumericUpDown EditYearFirst;

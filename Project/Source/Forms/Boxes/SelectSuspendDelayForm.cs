@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
         EditDelay.Value = value;
     }
 
-    private void ActionOk_Click(object sender, EventArgs e)
+    private void ActionOK_Click(object sender, EventArgs e)
     {
       Program.Settings.LastSuspendDelaySelected = SelectDelay.SelectedIndex == SelectDelay.Items.Count - 1
                                                 ? (int)EditDelay.Value

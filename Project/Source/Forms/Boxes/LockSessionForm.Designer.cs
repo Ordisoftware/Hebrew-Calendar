@@ -34,7 +34,7 @@
       this.LabelCountDown = new System.Windows.Forms.Label();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionDisable = new System.Windows.Forms.Button();
-      this.ActionOK = new System.Windows.Forms.Button();
+      this.ActionLock = new System.Windows.Forms.Button();
       this.ActionShutdown = new System.Windows.Forms.LinkLabel();
       this.ActionHibernate = new System.Windows.Forms.LinkLabel();
       this.ActionStandby = new System.Windows.Forms.LinkLabel();
@@ -49,7 +49,7 @@
       this.PanelButtons.Controls.Add(this.LabelCountDown);
       this.PanelButtons.Controls.Add(this.ActionCancel);
       this.PanelButtons.Controls.Add(this.ActionDisable);
-      this.PanelButtons.Controls.Add(this.ActionOK);
+      this.PanelButtons.Controls.Add(this.ActionLock);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
@@ -69,17 +69,16 @@
       // ActionDisable
       // 
       resources.ApplyResources(this.ActionDisable, "ActionDisable");
-      this.ActionDisable.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionDisable.Name = "ActionDisable";
       this.ActionDisable.UseVisualStyleBackColor = true;
       this.ActionDisable.Click += new System.EventHandler(this.ActionDisable_Click);
       // 
-      // ActionOK
+      // ActionLock
       // 
-      resources.ApplyResources(this.ActionOK, "ActionOK");
-      this.ActionOK.Name = "ActionOK";
-      this.ActionOK.UseVisualStyleBackColor = true;
-      this.ActionOK.Click += new System.EventHandler(this.ActionOk_Click);
+      resources.ApplyResources(this.ActionLock, "ActionLock");
+      this.ActionLock.Name = "ActionLock";
+      this.ActionLock.UseVisualStyleBackColor = true;
+      this.ActionLock.Click += new System.EventHandler(this.ActionOK_Click);
       // 
       // ActionShutdown
       // 
@@ -128,7 +127,7 @@
       // 
       // LockSessionForm
       // 
-      this.AcceptButton = this.ActionOK;
+      this.AcceptButton = this.ActionLock;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
@@ -156,7 +155,7 @@
 
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionCancel;
-    private System.Windows.Forms.Button ActionOK;
+    private System.Windows.Forms.Button ActionLock;
     private System.Windows.Forms.Label LabelCountDown;
     private System.Windows.Forms.Label LabelMessage;
     internal System.Windows.Forms.Timer Timer;

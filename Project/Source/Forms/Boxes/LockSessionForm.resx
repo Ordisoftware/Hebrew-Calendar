@@ -210,34 +210,34 @@
   <data name="&gt;&gt;ActionDisable.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ActionLock.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="ActionOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionLock.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionLock.Location" type="System.Drawing.Point, System.Drawing">
     <value>155, 2</value>
   </data>
-  <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionLock.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
-  <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionLock.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="ActionOK.Text" xml:space="preserve">
+  <data name="ActionLock.Text" xml:space="preserve">
     <value>Lock</value>
   </data>
-  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
-    <value>ActionOK</value>
+  <data name="&gt;&gt;ActionLock.Name" xml:space="preserve">
+    <value>ActionLock</value>
   </data>
-  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionLock.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionLock.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
-  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionLock.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">

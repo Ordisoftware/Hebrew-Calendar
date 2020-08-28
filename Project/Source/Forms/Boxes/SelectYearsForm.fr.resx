@@ -146,7 +146,7 @@
   <data name="LabelYearFirst.Text" xml:space="preserve">
     <value>Année de début</value>
   </data>
-  <data name="ActionOk.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>53, 2</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">

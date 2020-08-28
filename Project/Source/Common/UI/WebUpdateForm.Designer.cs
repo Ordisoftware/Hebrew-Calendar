@@ -32,7 +32,7 @@
       this.LabelNewVersion = new System.Windows.Forms.Label();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
-      this.ActionOk = new System.Windows.Forms.Button();
+      this.ActionOK = new System.Windows.Forms.Button();
       this.SelectInstall = new System.Windows.Forms.RadioButton();
       this.SelectDownload = new System.Windows.Forms.RadioButton();
       this.SelectOpenWebPage = new System.Windows.Forms.RadioButton();
@@ -47,7 +47,7 @@
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.ActionCancel);
-      this.PanelBottom.Controls.Add(this.ActionOk);
+      this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
@@ -57,12 +57,12 @@
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
       // 
-      // ActionOk
+      // ActionOK
       // 
-      resources.ApplyResources(this.ActionOk, "ActionOk");
-      this.ActionOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ActionOk.Name = "ActionOk";
-      this.ActionOk.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionOK, "ActionOK");
+      this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionOK.Name = "ActionOK";
+      this.ActionOK.UseVisualStyleBackColor = true;
       // 
       // SelectInstall
       // 
@@ -86,7 +86,7 @@
       // 
       // WebUpdateForm
       // 
-      this.AcceptButton = this.ActionOk;
+      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
@@ -109,7 +109,7 @@
     #endregion
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionCancel;
-    private System.Windows.Forms.Button ActionOk;
+    private System.Windows.Forms.Button ActionOK;
     internal System.Windows.Forms.RadioButton SelectInstall;
     internal System.Windows.Forms.RadioButton SelectDownload;
     internal System.Windows.Forms.RadioButton SelectOpenWebPage;
