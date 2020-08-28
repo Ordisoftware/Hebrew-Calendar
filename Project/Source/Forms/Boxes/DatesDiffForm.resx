@@ -424,7 +424,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="MonthCalendar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -445,7 +445,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MonthCalendar1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="MonthCalendar2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -466,7 +466,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MonthCalendar2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <metadata name="datesDiffItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -697,7 +697,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxSun.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -760,7 +760,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="DateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 188</value>
@@ -781,7 +781,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DateTimePicker1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="DateTimePicker2.Location" type="System.Drawing.Point, System.Drawing">
     <value>269, 188</value>
@@ -802,179 +802,191 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DateTimePicker2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
-  <data name="ActionMoonDayTextFormatReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <metadata name="MenuBookmarks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>221, 17</value>
+  </metadata>
+  <data name="MenuBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 4</value>
+  </data>
+  <data name="&gt;&gt;MenuBookmarks.Name" xml:space="preserve">
+    <value>MenuBookmarks</value>
+  </data>
+  <data name="&gt;&gt;MenuBookmarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ActionSetBookmarkStart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionMoonDayTextFormatReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionSetBookmarkStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
+        jsR6KDAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionMoonDayTextFormatReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionSetBookmarkStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionMoonDayTextFormatReset.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionSetBookmarkStart.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 214</value>
   </data>
-  <data name="ActionMoonDayTextFormatReset.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionSetBookmarkStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
   </data>
-  <data name="ActionMoonDayTextFormatReset.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionSetBookmarkStart.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
   </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatReset.Name" xml:space="preserve">
-    <value>ActionMoonDayTextFormatReset</value>
+  <data name="&gt;&gt;ActionSetBookmarkStart.Name" xml:space="preserve">
+    <value>ActionSetBookmarkStart</value>
   </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatReset.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionSetBookmarkStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatReset.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionSetBookmarkStart.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatReset.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIYSURBVDhPlZHPaxNRFIWvIBbUtehOcS0IblwrYhciKP4d
-        xprSEmmtBhojUYO0WsFWbTJNWwRtUmPQ2pqguFPRSpapTXSmMckkmTYj+TE5fe/1hYmaLrzwMbw75zsz
-        zNDfo0QXcG9yBrdno0fkSkzg5SL8oQjk8c/56jyHZvcu4ARhKvYGTu8Iflw4BJzeiUZ3F3CSoMQWcdE3
-        Bpwilu0Cd6ROVD6+A/X5CeD5fSiv4zjbcw3JwAisyEPUIuPA3BiUhQTO9FwHwg/QeDEB7kidSDtIKDrO
-        4+c+Qng3YX4vIXuAkNlPSDNURngPIcLQWIZnuSN1opvjQVgAUgUDq6UNZAwTq8ZvrJRMpBjfyybS5Yq4
-        l9INkeWO1Il8/lE02TKtqlCzWeRLJXHtREbVRJY7Uify+u7AajahamvI5fWOYgttLSuy3JE6kcfrQ5Mt
-        f+Vy0IvFjiKnbBjIFwrs+YDHe8sucHu8Yqnr28scLlc2KjArJtzDN+yCIfewKOBPMNbXWYCHtufZXARK
-        aMYuGBxyiwLT3Ao0Go1/pHaW4glEY6/sAtfAVVFQq9VQrVZRr9c7ii2Wk0nxFlIn6nMNigI+lmWJD8pp
-        Hy6qmoaPnz6LPzE9+9Qu6HcNyFjneff+A5beJvBl+RtSqRWxC05N2wWOy71xZ/8VXHL2wdFG6+y/O4qA
-        EsKTgIJHk0E83sKQupjDjGP/yVEiok0CpprW7N7j/wAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 214</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>61</value>
-  </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Name" xml:space="preserve">
-    <value>ActionMoonDayTextFormatHelp</value>
-  </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionSetBookmarkStart.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionUseBookmarkStart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionUseBookmarkStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIYSURBVDhPlZHPaxNRFIWvIBbUtehOcS0IblwrYhciKP4d
-        xprSEmmtBhojUYO0WsFWbTJNWwRtUmPQ2pqguFPRSpapTXSmMckkmTYj+TE5fe/1hYmaLrzwMbw75zsz
-        zNDfo0QXcG9yBrdno0fkSkzg5SL8oQjk8c/56jyHZvcu4ARhKvYGTu8Iflw4BJzeiUZ3F3CSoMQWcdE3
-        Bpwilu0Cd6ROVD6+A/X5CeD5fSiv4zjbcw3JwAisyEPUIuPA3BiUhQTO9FwHwg/QeDEB7kidSDtIKDrO
-        4+c+Qng3YX4vIXuAkNlPSDNURngPIcLQWIZnuSN1opvjQVgAUgUDq6UNZAwTq8ZvrJRMpBjfyybS5Yq4
-        l9INkeWO1Il8/lE02TKtqlCzWeRLJXHtREbVRJY7Uify+u7AajahamvI5fWOYgttLSuy3JE6kcfrQ5Mt
-        f+Vy0IvFjiKnbBjIFwrs+YDHe8sucHu8Yqnr28scLlc2KjArJtzDN+yCIfewKOBPMNbXWYCHtufZXARK
-        aMYuGBxyiwLT3Ao0Go1/pHaW4glEY6/sAtfAVVFQq9VQrVZRr9c7ii2Wk0nxFlIn6nMNigI+lmWJD8pp
-        Hy6qmoaPnz6LPzE9+9Qu6HcNyFjneff+A5beJvBl+RtSqRWxC05N2wWOy71xZ/8VXHL2wdFG6+y/O4qA
-        EsKTgIJHk0E83sKQupjDjGP/yVEiok0CpprW7N7j/wAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAhdJREFUOE+VkU1rE1EUho8gFtS16E5xLQhuXCtiFyIo/g5jDW2JtFYDjZGoQVqt
+        YKs2maYRQZu0NWhtTVDcqWgly9QmOtOY72kzko/J23tvb5io04UHHoZ75n3eGWbo71HmF3BvMozb4bkj
+        ciUm8HIR/lAU8vjnfHWeQ6t7F3CCMBV7A6d3BD8uHAJO70Szuws4SVBii7joGwNOEct2gTtSJ6oc34HG
+        7ATw4j6U13Gc7bmGZGAEZvQh6tFxYGYMykICZ3quA5EHaM5NgDtSJ9IOEkqO8/i5jxDZTZjdS8geIGT2
+        E9IMlRHZQ4gyNJbhWe5InejmeBAmgFRBx2p5AxndwKr+GytlAynG94qBdKUq7qWKushyR+pEPv8oWmyZ
+        VlWo2Szy5bK42pFRNZHljtSJvL47MFstqNoacvmirdhGW8uKLHekTuTx+tBiy1+5HIqlkq3Iqeg68oUC
+        ez7g8d6yCtwer1gWi9vLHC5XN6owqgbcwzesgiH3sCjgT9DX11mAh7bn+UwUSihsFQwOuUWBYWwFms3m
+        P1InS/EE5mOvrALXwFVRUK/XUavV0Gg0bMU2y8mkeAupE/W5BkUBH9M0xQfldA4XVU3Dx0+fxZ+YfvrM
+        Kuh3DciY/bx7/wFLbxP4svwNqdSK2AWnpq0Cx+XeuLP/Ci45++DooH323x1FQAnhSUDBo8kgHm+hS13M
+        Ycax/+QoEdEm+yea1b/fgDkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionUseBookmarkStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 214</value>
+  <data name="ActionUseBookmarkStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 214</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionUseBookmarkStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionUseBookmarkStart.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;ActionUseBookmarkStart.Name" xml:space="preserve">
+    <value>ActionUseBookmarkStart</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionUseBookmarkStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionUseBookmarkStart.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;ActionUseBookmarkStart.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionUseBookmarkEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionUseBookmarkEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
+        Ycax/+QoEdEm+yea1b/fgDkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionUseBookmarkEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 214</value>
+  <data name="ActionUseBookmarkEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 214</value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionUseBookmarkEnd.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
   </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
+  <data name="ActionUseBookmarkEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
   </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
+  <data name="&gt;&gt;ActionUseBookmarkEnd.Name" xml:space="preserve">
+    <value>ActionUseBookmarkEnd</value>
   </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionUseBookmarkEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionUseBookmarkEnd.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;ActionUseBookmarkEnd.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionSetBookmarkEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSetBookmarkEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAoNJREFUOE+Nkz1MU2EUhu9gjMbBRNFI4s6icTBxcLKJJARcDIPRDQddMJEJW/EH
+        B9FoHIQoAaEtGDXRGIOhXVgMhoQq4A+lhSi5tJa20NLettzb+9O+nnNsDAOJ3uTtd9rzPOe7ud+tcuhO
+        sKuuO4i9N8exp2scu/8RZphlh13lABUzGWAy6eB/L2bZYVfZdzuAr5kKlLtL0owmNEoBEcpCPI9wLIfI
+        Lw0LnHhOGGbZYVcGTKWrUFwd0vS43fB4PPD7R+D1erGc0dHZ2Unf/fB5h4VRXFfFkQH7uwOYiDvY0TYI
+        06kgtVlBslRFomBTnNpqI65ZSGgmDIvZAXHYVepoyrsfZRzuV1G2bVy/5saIbwRrugM31aP+Ufi9PqRL
+        FnxDQ9BNU1h22JUBL6M6Gp6pdHM2iraDnOlgo2wjT7txNkwb2bIJzbRQrVpoGFTF+TOAbsM3X8IJ/wqC
+        ywUa4qBCgxwKr1vDGzDDLDvs0jEGMPCliMZXCZx6EadmDMeGYzg6tIIjtXDNv3GPGWbZYVcG9M0Wcfbt
+        KlpeJ/B8epUf9JarSqnIyr2WNwlh2ZEBB+nj0eciLoylqJEk0EFEzWCJzn2J3omwmsX3n2sIL6epZwvD
+        LDvsyoD7nzRcDKZxbiwJmx5WwajAfasHrtPNVFcRjW9gMZaFbZSJSQnLzt8BPaEirkxk0RZch7FZpp0A
+        V2Mz7j3sk1pNaVCTeRglQxhm2ZEB9IfAgxkdN6YK6PiQp10skZqazuBxb7/UazkD6zkdlm4Kwyw77Cp1
+        7U+fcMFnutPzHt/mIpiejeLS5fZW5eT51tm5RUyGwvgYmqfegjDMikOuQlc95fg22VXLdr1alPrfdZfx
+        jsR6KDAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionSetBookmarkEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSetBookmarkEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 214</value>
+  </data>
+  <data name="ActionSetBookmarkEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionSetBookmarkEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;ActionSetBookmarkEnd.Name" xml:space="preserve">
+    <value>ActionSetBookmarkEnd</value>
+  </data>
+  <data name="&gt;&gt;ActionSetBookmarkEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSetBookmarkEnd.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionSetBookmarkEnd.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -984,6 +996,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>514, 421</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>

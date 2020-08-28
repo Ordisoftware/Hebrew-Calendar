@@ -13,8 +13,10 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -56,6 +58,70 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Location.X < 0 || Location.Y < 0 )
         this.CenterToMainFormElseScreen();
+      LoadMenuBookmarks();
+    }
+
+    private void LoadMenuBookmarks()
+    {
+      int index = 1;
+      void add(DateTime date)
+      {
+        string s = date == DateTime.MinValue ? Localizer.EmptySlot.GetLang() : date.ToLongDateString();
+        var menuitem = MenuBookmarks.Items.Add(index + ". " + s);
+        menuitem.MouseUp += Bookmarks_MouseUp;
+        menuitem.Tag = index.ToString();
+        index++;
+      }
+      add(Program.Settings.DateBookmark1);
+      add(Program.Settings.DateBookmark2);
+      add(Program.Settings.DateBookmark3);
+      add(Program.Settings.DateBookmark4);
+      add(Program.Settings.DateBookmark5);
+    }
+
+    private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
+    {
+      var menuitem = sender as ToolStripMenuItem;
+      var control = ( menuitem.Owner as ContextMenuStrip )?.SourceControl;
+      if ( e.Button == MouseButtons.Right )
+        if ( control == ActionSetBookmarkStart || control == ActionSetBookmarkEnd )
+        {
+          if ( !DisplayManager.QueryYesNo(Localizer.AskToDeleteBookmark.GetLang()) ) return;
+          menuitem.Text = menuitem.Tag + ". " + Localizer.EmptySlot.GetLang();
+          Program.Settings["DateBookmark" + menuitem.Tag] = DateTime.MinValue;
+          Program.Settings.Save();
+        }
+      if ( e.Button != MouseButtons.Left ) return;
+      if ( control == ActionSetBookmarkStart )
+      {
+        if ( (DateTime)Program.Settings["DateBookmark" + menuitem.Tag] != DateTime.MinValue )
+          if ( !DisplayManager.QueryYesNo(Localizer.AskToReplaceBookmark.GetLang()) ) return;
+        menuitem.Text = menuitem.Tag + ". " + MonthCalendar1.SelectionStart.Date.ToLongDateString();
+        Program.Settings["DateBookmark" + menuitem.Tag] = MonthCalendar1.SelectionStart.Date;
+        Program.Settings.Save();
+      }
+      else
+      if ( control == ActionSetBookmarkEnd )
+      {
+        if ( (DateTime)Program.Settings["DateBookmark" + menuitem.Tag] != DateTime.MinValue )
+          if ( !DisplayManager.QueryYesNo(Localizer.AskToReplaceBookmark.GetLang()) ) return;
+        menuitem.Text = menuitem.Tag + ". " + MonthCalendar2.SelectionStart.Date.ToLongDateString();
+        Program.Settings["DateBookmark" + menuitem.Tag] = MonthCalendar2.SelectionStart.Date;
+        Program.Settings.Save();
+      }
+      else
+      if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
+        if ( control == ActionUseBookmarkStart )
+          MonthCalendar1.SelectionStart = date;
+        else
+        if ( control == ActionUseBookmarkEnd )
+          MonthCalendar2.SelectionStart = date;
+    }
+
+    private void ActionSetBookmarkStart_Click(object sender, EventArgs e)
+    {
+      var control = sender as Button;
+      MenuBookmarks.Show(control, new Point(0, control.Height));
     }
 
     private void DateTimePicker1_ValueChanged(object sender, EventArgs e)

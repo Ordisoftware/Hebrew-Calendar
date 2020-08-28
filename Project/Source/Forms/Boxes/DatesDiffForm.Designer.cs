@@ -52,11 +52,12 @@
       this.label2 = new System.Windows.Forms.Label();
       this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
       this.DateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+      this.ActionSetBookmarkStart = new System.Windows.Forms.Button();
+      this.ActionUseBookmarkStart = new System.Windows.Forms.Button();
+      this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
+      this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
+      this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.datesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
-      this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
-      this.button1 = new System.Windows.Forms.Button();
-      this.button2 = new System.Windows.Forms.Button();
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -213,51 +214,65 @@
       this.DateTimePicker2.ShowUpDown = true;
       this.DateTimePicker2.ValueChanged += new System.EventHandler(this.DateTimePicker2_ValueChanged);
       // 
+      // ActionSetBookmarkStart
+      // 
+      this.ActionSetBookmarkStart.AllowDrop = true;
+      this.ActionSetBookmarkStart.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionSetBookmarkStart.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSetBookmarkStart, "ActionSetBookmarkStart");
+      this.ActionSetBookmarkStart.Name = "ActionSetBookmarkStart";
+      this.ActionSetBookmarkStart.UseVisualStyleBackColor = true;
+      this.ActionSetBookmarkStart.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
+      // 
+      // ActionUseBookmarkStart
+      // 
+      this.ActionUseBookmarkStart.AllowDrop = true;
+      this.ActionUseBookmarkStart.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionUseBookmarkStart.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionUseBookmarkStart, "ActionUseBookmarkStart");
+      this.ActionUseBookmarkStart.Name = "ActionUseBookmarkStart";
+      this.ActionUseBookmarkStart.UseVisualStyleBackColor = true;
+      this.ActionUseBookmarkStart.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
+      // 
+      // ActionUseBookmarkEnd
+      // 
+      this.ActionUseBookmarkEnd.AllowDrop = true;
+      this.ActionUseBookmarkEnd.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionUseBookmarkEnd.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionUseBookmarkEnd, "ActionUseBookmarkEnd");
+      this.ActionUseBookmarkEnd.Name = "ActionUseBookmarkEnd";
+      this.ActionUseBookmarkEnd.UseVisualStyleBackColor = true;
+      this.ActionUseBookmarkEnd.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
+      // 
+      // ActionSetBookmarkEnd
+      // 
+      this.ActionSetBookmarkEnd.AllowDrop = true;
+      this.ActionSetBookmarkEnd.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionSetBookmarkEnd.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSetBookmarkEnd, "ActionSetBookmarkEnd");
+      this.ActionSetBookmarkEnd.Name = "ActionSetBookmarkEnd";
+      this.ActionSetBookmarkEnd.UseVisualStyleBackColor = true;
+      this.ActionSetBookmarkEnd.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
+      // 
+      // MenuBookmarks
+      // 
+      this.MenuBookmarks.Name = "MenuBookmarks";
+      this.MenuBookmarks.ShowImageMargin = false;
+      resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
+      // 
       // datesDiffItemBindingSource
       // 
       this.datesDiffItemBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.DatesDiffItem);
-      // 
-      // ActionMoonDayTextFormatReset
-      // 
-      this.ActionMoonDayTextFormatReset.AllowDrop = true;
-      this.ActionMoonDayTextFormatReset.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionMoonDayTextFormatReset, "ActionMoonDayTextFormatReset");
-      this.ActionMoonDayTextFormatReset.Name = "ActionMoonDayTextFormatReset";
-      this.ActionMoonDayTextFormatReset.UseVisualStyleBackColor = true;
-      // 
-      // ActionMoonDayTextFormatHelp
-      // 
-      this.ActionMoonDayTextFormatHelp.AllowDrop = true;
-      this.ActionMoonDayTextFormatHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionMoonDayTextFormatHelp, "ActionMoonDayTextFormatHelp");
-      this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";
-      this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
-      // 
-      // button1
-      // 
-      this.button1.AllowDrop = true;
-      this.button1.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.button1, "button1");
-      this.button1.Name = "button1";
-      this.button1.UseVisualStyleBackColor = true;
-      // 
-      // button2
-      // 
-      this.button2.AllowDrop = true;
-      this.button2.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.button2, "button2");
-      this.button2.Name = "button2";
-      this.button2.UseVisualStyleBackColor = true;
       // 
       // DatesDiffForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.button2);
-      this.Controls.Add(this.button1);
-      this.Controls.Add(this.ActionMoonDayTextFormatReset);
-      this.Controls.Add(this.ActionMoonDayTextFormatHelp);
+      this.Controls.Add(this.ActionSetBookmarkEnd);
+      this.Controls.Add(this.ActionUseBookmarkEnd);
+      this.Controls.Add(this.ActionSetBookmarkStart);
+      this.Controls.Add(this.ActionUseBookmarkStart);
       this.Controls.Add(this.DateTimePicker2);
       this.Controls.Add(this.DateTimePicker1);
       this.Controls.Add(this.groupBox1);
@@ -298,9 +313,10 @@
     private System.Windows.Forms.DateTimePicker DateTimePicker1;
     private System.Windows.Forms.DateTimePicker DateTimePicker2;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.Button ActionMoonDayTextFormatReset;
-    private System.Windows.Forms.Button ActionMoonDayTextFormatHelp;
-    private System.Windows.Forms.Button button1;
-    private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.Button ActionSetBookmarkStart;
+    private System.Windows.Forms.Button ActionUseBookmarkStart;
+    private System.Windows.Forms.Button ActionUseBookmarkEnd;
+    private System.Windows.Forms.Button ActionSetBookmarkEnd;
+    private System.Windows.Forms.ContextMenuStrip MenuBookmarks;
   }
 }
