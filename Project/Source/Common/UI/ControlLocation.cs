@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 
 namespace Ordisoftware.HebrewCommon
@@ -52,7 +52,12 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Centered on the screen.
     /// </summary>
-    Center
+    Center,
+
+    /// <summary>
+    /// Fixed or center to parent.
+    /// </summary>
+    Fixed
 
   }
 

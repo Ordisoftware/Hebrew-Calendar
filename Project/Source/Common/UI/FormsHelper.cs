@@ -50,6 +50,44 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Center a form to screen.
+    /// </summary>
+    /// <param name="form">The form.</param>
+    static public void CenterToScreen(this Form form)
+    {
+      SetLocation(form, ControlLocation.Center);
+    }
+
+    /// <summary>
+    /// Set a form location.
+    /// </summary>
+    /// <param name="form">The form.</param>
+    /// <param name="location">The location.</param>
+    static public void SetLocation(this Form form, ControlLocation location)
+    {
+      if ( form == null ) return;
+      Rectangle area = SystemInformation.WorkingArea;
+      if ( location == ControlLocation.TopLeft )
+        form.Location = new Point(area.Left, area.Top);
+      else
+      if ( location == ControlLocation.TopRight )
+        form.Location = new Point(area.Left + area.Width - form.Width, area.Top);
+      else
+      if ( location == ControlLocation.BottomLeft )
+        form.Location = new Point(area.Left, area.Top + area.Height - form.Height);
+      else
+      if ( location == ControlLocation.BottomRight )
+        form.Location = new Point(area.Left + area.Width - form.Width, area.Top + area.Height - form.Height);
+      else
+      if ( location == ControlLocation.Center )
+        form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2,
+                                  area.Top + area.Height / 2 - form.Height / 2);
+      else
+      if ( location == ControlLocation.Fixed )
+        form.CenterToMainFormElseScreen();
+    }
+
+    /// <summary>
     /// Center a form beside the main form if visible and not minimized else center to screen.
     /// </summary>
     /// <param name="form">The form.</param>
@@ -62,7 +100,7 @@ namespace Ordisoftware.HebrewCommon
                     && Globals.MainForm.WindowState != FormWindowState.Minimized
                      ? Globals.MainForm.Bounds
                      : SystemInformation.WorkingArea;
-      form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2, 
+      form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2,
                                 area.Top + area.Height / 2 - form.Height / 2);
     }
 

@@ -119,11 +119,7 @@ namespace Ordisoftware.HebrewCalendar
       PanelTop.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
-      int left = SystemInformation.WorkingArea.Left;
-      int top = SystemInformation.WorkingArea.Top;
-      int width = SystemInformation.WorkingArea.Width;
-      int height = SystemInformation.WorkingArea.Height;
-      Location = new Point(left + width - Width, top + height - Height);
+      this.SetLocation(ControlLocation.BottomRight);
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

@@ -74,14 +74,7 @@ namespace Ordisoftware.HebrewCalendar
     private void CelebrationsForm_Load(object sender, EventArgs e)
     {
       if ( Location.X < 0 || Location.Y < 0 )
-      {
-        int left = SystemInformation.WorkingArea.Left;
-        int top = SystemInformation.WorkingArea.Top;
-        int width = SystemInformation.WorkingArea.Width;
-        int height = SystemInformation.WorkingArea.Height;
-        Location = new Point(left + width - Width, top + height - Height);
-        //this.CenterToMainFormElseScreen();
-      }
+        this.SetLocation(ControlLocation.BottomRight);
     }
 
     private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)

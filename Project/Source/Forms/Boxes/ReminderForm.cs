@@ -76,11 +76,7 @@ namespace Ordisoftware.HebrewCalendar
                                + Translations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " "
                                + times.timeEnd;
         form.LabelDate.Tag = date;
-        int left = SystemInformation.WorkingArea.Left;
-        int top = SystemInformation.WorkingArea.Top;
-        int width = SystemInformation.WorkingArea.Width;
-        int height = SystemInformation.WorkingArea.Height;
-        form.Location = new Point(left + width - form.Width, top + height - form.Height);
+        form.SetLocation(ControlLocation.BottomRight);
         form.Tag = row.Date;
         form.Text = " " + form.LabelTitle.Text;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;

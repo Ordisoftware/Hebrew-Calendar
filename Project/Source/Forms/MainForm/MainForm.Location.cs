@@ -13,8 +13,8 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-04 </edited>
 using System;
-using System.Drawing;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -47,10 +47,6 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         DoScreenPositionMutex = true;
-        int left = SystemInformation.WorkingArea.Left;
-        int top = SystemInformation.WorkingArea.Top;
-        int width = SystemInformation.WorkingArea.Width;
-        int height = SystemInformation.WorkingArea.Height;
         if ( sender != null && sender is ToolStripMenuItem )
         {
           var value = sender as ToolStripMenuItem;
@@ -58,23 +54,8 @@ namespace Ordisoftware.HebrewCalendar
           foreach ( ToolStripMenuItem item in list )
             item.Checked = item == value;
         }
-        if ( EditScreenNone.Checked )
-          return;
-        if ( EditScreenTopLeft.Checked )
-          Location = new Point(left, top);
-        else
-        if ( EditScreenTopRight.Checked )
-          Location = new Point(left + width - Width, top);
-        else
-        if ( EditScreenBottomLeft.Checked )
-          Location = new Point(left, top + height - Height);
-        else
-        if ( EditScreenBottomRight.Checked )
-          Location = new Point(left + width - Width, top + height - Height);
-        else
-        if ( EditScreenCenter.Checked )
-          CenterToScreen();
-        EditScreenNone.Checked = false;
+        if ( Globals.IsReady ) Program.Settings.Store();
+        this.SetLocation(Program.Settings.MainFormPosition);
       }
       finally
       {
