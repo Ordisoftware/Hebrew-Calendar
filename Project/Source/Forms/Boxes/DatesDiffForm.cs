@@ -161,12 +161,12 @@ namespace Ordisoftware.HebrewCalendar
         if ( Stats == null )
         {
           Stats = new DatesDiffItem(this, MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
-          datesDiffItemBindingSource.DataSource = Stats;
+          DatesDiffItemBindingSource.DataSource = Stats;
         }
         else
         {
           Stats.SetDates(this, MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
-          datesDiffItemBindingSource.ResetBindings(false);
+          DatesDiffItemBindingSource.ResetBindings(false);
         }
       }
       finally

@@ -42,7 +42,7 @@
       this.MonthCalendar1 = new System.Windows.Forms.MonthCalendar();
       this.MonthCalendar2 = new System.Windows.Forms.MonthCalendar();
       this.lunationsLabel1 = new System.Windows.Forms.Label();
-      this.datesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DatesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.moonDaysLabel1 = new System.Windows.Forms.Label();
       this.solarDaysLabel1 = new System.Windows.Forms.Label();
       this.solarMonthsLabel1 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
       solarYearsLabel = new System.Windows.Forms.Label();
       moonYearsLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.datesDiffItemBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).BeginInit();
       this.GroupBoxSun.SuspendLayout();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
@@ -134,41 +134,41 @@
       // 
       // lunationsLabel1
       // 
-      this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "MoonMonths", true));
+      this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "MoonMonths", true));
       resources.ApplyResources(this.lunationsLabel1, "lunationsLabel1");
       this.lunationsLabel1.Name = "lunationsLabel1";
       // 
-      // datesDiffItemBindingSource
+      // DatesDiffItemBindingSource
       // 
-      this.datesDiffItemBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.DatesDiffItem);
+      this.DatesDiffItemBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.DatesDiffItem);
       // 
       // moonDaysLabel1
       // 
-      this.moonDaysLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "MoonDays", true));
+      this.moonDaysLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "MoonDays", true));
       resources.ApplyResources(this.moonDaysLabel1, "moonDaysLabel1");
       this.moonDaysLabel1.Name = "moonDaysLabel1";
       // 
       // solarDaysLabel1
       // 
-      this.solarDaysLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "SolarDays", true));
+      this.solarDaysLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "SolarDays", true));
       resources.ApplyResources(this.solarDaysLabel1, "solarDaysLabel1");
       this.solarDaysLabel1.Name = "solarDaysLabel1";
       // 
       // solarMonthsLabel1
       // 
-      this.solarMonthsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "SolarMonths", true));
+      this.solarMonthsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "SolarMonths", true));
       resources.ApplyResources(this.solarMonthsLabel1, "solarMonthsLabel1");
       this.solarMonthsLabel1.Name = "solarMonthsLabel1";
       // 
       // solarWeeksLabel1
       // 
-      this.solarWeeksLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "SolarWeeks", true));
+      this.solarWeeksLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "SolarWeeks", true));
       resources.ApplyResources(this.solarWeeksLabel1, "solarWeeksLabel1");
       this.solarWeeksLabel1.Name = "solarWeeksLabel1";
       // 
       // solarYearsLabel1
       // 
-      this.solarYearsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "SolarYears", true));
+      this.solarYearsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "SolarYears", true));
       resources.ApplyResources(this.solarYearsLabel1, "solarYearsLabel1");
       this.solarYearsLabel1.Name = "solarYearsLabel1";
       // 
@@ -200,7 +200,7 @@
       // 
       // label2
       // 
-      this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "MoonYears", true));
+      this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "MoonYears", true));
       resources.ApplyResources(this.label2, "label2");
       this.label2.Name = "label2";
       // 
@@ -286,7 +286,7 @@
       this.Name = "DatesDiffForm";
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.datesDiffItemBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).EndInit();
       this.GroupBoxSun.ResumeLayout(false);
       this.GroupBoxSun.PerformLayout();
       this.groupBox1.ResumeLayout(false);
@@ -301,7 +301,7 @@
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.MonthCalendar MonthCalendar1;
     private System.Windows.Forms.MonthCalendar MonthCalendar2;
-    private System.Windows.Forms.BindingSource datesDiffItemBindingSource;
+    private System.Windows.Forms.BindingSource DatesDiffItemBindingSource;
     private System.Windows.Forms.Label lunationsLabel1;
     private System.Windows.Forms.Label moonDaysLabel1;
     private System.Windows.Forms.Label solarDaysLabel1;
