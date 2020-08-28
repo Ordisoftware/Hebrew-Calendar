@@ -18,10 +18,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
-using Microsoft.Win32;
 using Ordisoftware.Core.Diagnostics;
 using Ordisoftware.HebrewCommon;
-using System.Management;
 
 namespace Ordisoftware.Core.Windows.Forms
 {
