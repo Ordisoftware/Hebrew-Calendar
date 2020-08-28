@@ -41,6 +41,15 @@ namespace Ordisoftware.HebrewCalendar
       return GenerateErrors.Count >= MaxGenerateErrors + 1;
     }
 
+    private void EmptyDatabase()
+    {
+      LunisolarDaysTableAdapter.DeleteAllQuery();
+      ReportTableAdapter.DeleteAllQuery();
+      TableAdapterManager.UpdateAll(DataSet);
+      LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
+      ReportTableAdapter.Fill(DataSet.Report);
+    }
+
     /// <summary>
     /// Create the calendar days items.
     /// </summary>
@@ -61,11 +70,7 @@ namespace Ordisoftware.HebrewCalendar
         CalendarText.Clear();
         CalendarMonth.Events.Clear();
         LunisolarDaysBindingSource.DataSource = null;
-        LunisolarDaysTableAdapter.DeleteAllQuery();
-        ReportTableAdapter.DeleteAllQuery();
-        TableAdapterManager.UpdateAll(DataSet);
-        LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-        ReportTableAdapter.Fill(DataSet.Report);
+        EmptyDatabase();
         var d1 = new DateTime(yearFirst, 1, DateTime.DaysInMonth(yearFirst, 1));
         var d2 = new DateTime(yearLast, 12, DateTime.DaysInMonth(yearLast, 12));
         ProgressCount = (int)( d2 - d1 ).TotalDays;

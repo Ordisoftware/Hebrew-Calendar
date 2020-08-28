@@ -72,7 +72,11 @@ namespace Ordisoftware.HebrewCalendar
           PreferencesForm.Run();
           string errors = CheckRegenerateCalendar(true);
           if ( errors != null )
+          {
+            try { EmptyDatabase(); }
+            catch { }
             throw new Exception(string.Format(Translations.FatalGenerateError.GetLang(), errors));
+          }
         }
       }
       catch ( OdbcException ex )
