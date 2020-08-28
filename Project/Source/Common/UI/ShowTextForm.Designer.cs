@@ -98,6 +98,6 @@
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Panel PanelSeparator;
     private System.Windows.Forms.Panel panel1;
-    private HebrewCommon.RichTextBoxEx TextBox;
+    internal RichTextBoxEx TextBox;
   }
 }

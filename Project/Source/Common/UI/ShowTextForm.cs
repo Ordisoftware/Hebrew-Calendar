@@ -25,7 +25,8 @@ namespace Ordisoftware.HebrewCommon
                                       string text,
                                       int width = 400, 
                                       int height = 300,
-                                      bool sizeable = true)
+                                      bool sizeable = true,
+                                      bool wrap = true)
     {
       for ( int index = Application.OpenForms.Count - 1; index >= 0; index-- )
         if ( Application.OpenForms[index] is ShowTextForm )
@@ -38,6 +39,7 @@ namespace Ordisoftware.HebrewCommon
       form.Height = height;
       form.CenterToMainFormElseScreen();
       if ( !sizeable ) form.FormBorderStyle = FormBorderStyle.FixedSingle;
+      form.TextBox.WordWrap = wrap;
       return form;
     }
 
@@ -45,9 +47,10 @@ namespace Ordisoftware.HebrewCommon
                                       Dictionary<string, string> text,
                                       int width = 400,
                                       int height = 300,
-                                      bool sizeable = true)
+                                      bool sizeable = true,
+                                      bool wrap = true)
     {
-      var form = Create(title.GetLang(), text.GetLang(), width, height, sizeable);
+      var form = Create(title.GetLang(), text.GetLang(), width, height, sizeable, wrap);
       form.LocalizedTitle = title;
       form.LocalizedText = text;
       return form;

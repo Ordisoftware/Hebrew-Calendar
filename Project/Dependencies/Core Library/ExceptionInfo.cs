@@ -119,6 +119,8 @@ namespace Ordisoftware.Core
     /// </summary>
     public string ReadableText { get; private set; }
 
+    public string SingleLineText { get; private set; }
+
     /// <summary>
     /// Get the stack text.
     /// </summary>
@@ -255,23 +257,26 @@ namespace Ordisoftware.Core
       //int indent = SystemSettings.Instance.LogIndent;
 
       FullText = "Thread: " + ThreadName + Environment.NewLine
-                + "Exception Type: " + Environment.NewLine
-                + TypeText + Environment.NewLine
-                + "Error Message: " + Environment.NewLine
-                + Message;
+               + "Exception Type: " + Environment.NewLine
+               + TypeText + Environment.NewLine
+               + "Error Message: " + Environment.NewLine
+               + Message;
 
       if ( Diagnostics.Debugger.UseStack )
         FullText = FullText + Environment.NewLine
-                  + "StackList: " + Environment.NewLine
-                  + StackText;
+                 + "StackList: " + Environment.NewLine
+                 + StackText;
 
       ReadableText = Message + Environment.NewLine + Environment.NewLine
-                    + "  Module: " + ModuleName + Environment.NewLine
-                    + "  File: " + FileName + Environment.NewLine
-                    + "  Line: " + LineNumber + Environment.NewLine
-                    + "  Method: " + Namespace + "." + ClassName + "." + MethodName + Environment.NewLine
-                    + "  Type: " + TypeText;
+                   + "  Module: " + ModuleName + Environment.NewLine
+                   + "  File: " + FileName + Environment.NewLine
+                   + "  Line: " + LineNumber + Environment.NewLine
+                   + "  Method: " + Namespace + "." + ClassName + "." + MethodName + Environment.NewLine
+                   + "  Type: " + TypeText;
 
+      SingleLineText = ReadableText.Replace(Environment.NewLine + Environment.NewLine, " | ")
+                                   .Replace(Environment.NewLine, " | ")
+                                   .Replace("  ", "");
     }
 
     /// <summary>
@@ -288,10 +293,10 @@ namespace Ordisoftware.Core
       try
       {
         Emitter = Sender is Windows.Forms.ExceptionForm
-                 ? ( (Windows.Forms.ExceptionForm)Sender ).Text
-                 : DisplayManager.MainForm != null
-                   ? DisplayManager.MainForm.Text
-                   : ex.Source;
+                  ? ( (Windows.Forms.ExceptionForm)Sender ).Text
+                  : DisplayManager.MainForm != null
+                    ? DisplayManager.MainForm.Text
+                    : ex.Source;
         ExtractInherits();
         try
         {

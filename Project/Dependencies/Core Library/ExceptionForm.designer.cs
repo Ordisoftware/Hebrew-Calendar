@@ -81,6 +81,7 @@ namespace Ordisoftware.Core.Windows.Forms
       // buttonTerminate
       // 
       resources.ApplyResources(this.buttonTerminate, "buttonTerminate");
+      this.buttonTerminate.DialogResult = System.Windows.Forms.DialogResult.Abort;
       this.buttonTerminate.Name = "buttonTerminate";
       this.buttonTerminate.UseVisualStyleBackColor = true;
       this.buttonTerminate.Click += new System.EventHandler(this.buttonTerminate_Click);
@@ -180,7 +181,6 @@ namespace Ordisoftware.Core.Windows.Forms
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.buttonClose;
       this.Controls.Add(this.buttonViewInner);
       this.Controls.Add(this.buttonSendMail);
       this.Controls.Add(this.buttonPrint);

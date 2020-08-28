@@ -110,12 +110,12 @@ namespace Ordisoftware.Core.Windows.Forms
     private void buttonViewStack_Click(object sender, EventArgs e)
     {
       if ( Height == OriginalHeight )
-      { 
-        Height = textStack.Top + 28; 
+      {
+        Height = textStack.Top + 28;
         buttonViewStack.Text = ButtonStackText + " >>";
       }
       else
-      { 
+      {
         Height = OriginalHeight;
         buttonViewStack.Text = ButtonStackText + " <<";
       }
@@ -201,27 +201,12 @@ namespace Ordisoftware.Core.Windows.Forms
                      + "&labels=type: bug"
                      + "&body=";
         string body = "## COMMENT" + NewLine2
-                    + Localizer.GitHubIssueComment.GetLang() + NewLine2
-                    + "## ERROR : " + ErrorInfo.Instance.GetType().Name + NewLine2
-                    + ErrorInfo.Message + NewLine2
-                    + "#### _STACK_" + NewLine2
-                    + ErrorInfo.StackText;
-        ExceptionInfo inner = ErrorInfo.InnerInfo;
-        while ( inner != null )
-        {
-          body = body + NewLine2
-               + "## INNER : " + inner.Instance.GetType().Name + NewLine2
-               + inner.Message + NewLine2
-               + "#### _STACK_" + NewLine2
-               + inner.StackText;
-          inner = inner.InnerInfo;
-        }
+                    + Localizer.GitHubIssueComment.GetLang() + NewLine2;
         try
         {
           var key = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows NT\\CurrentVersion");
           string nameOS = (string)key.GetValue("productName");
-          body += NewLine2
-                + "## SYSTEM" + NewLine2
+          body += "## SYSTEM" + NewLine2
                 + nameOS + " " + ( Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits" );
           ObjectQuery wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
           ManagementObjectSearcher searcher = new ManagementObjectSearcher(wql);
@@ -233,20 +218,31 @@ namespace Ordisoftware.Core.Windows.Forms
             {
               var instance = enumerator.Current;
               body += NewLine
-                    + "Total Visible Memory: " + ((ulong)instance["TotalVisibleMemorySize"] * 1024 ).FormatBytesSize() + NewLine
-                    + "Free Physical Memory: " + ((ulong)instance["FreePhysicalMemory"] * 1024 ).FormatBytesSize() + NewLine;
+                    + "Total Visible Memory: " + ( (ulong)instance["TotalVisibleMemorySize"] * 1024 ).FormatBytesSize() + NewLine
+                    + "Free Physical Memory: " + ( (ulong)instance["FreePhysicalMemory"] * 1024 ).FormatBytesSize() + NewLine2;
             }
           }
         }
         catch
         {
         }
-        query += body;
-        query = query.Replace(" ", "%20")
-                     .Replace("+", "%2B")
-                     .Replace("#", "%23")
-                     .Replace(NewLine, "%0A")
-                     .Replace("%0A%0A%0A", "%0A");
+        body += "## ERROR : " + ErrorInfo.Instance.GetType().Name + NewLine2
+              + ErrorInfo.Message + NewLine2
+              + "#### _STACK_" + NewLine2
+              + ErrorInfo.StackText;
+        ExceptionInfo inner = ErrorInfo.InnerInfo;
+        while ( inner != null )
+        {
+          body = body + NewLine2
+               + "## INNER : " + inner.Instance.GetType().Name + NewLine2
+               + inner.Message + NewLine2
+               + "#### _STACK_" + NewLine2
+               + inner.StackText;
+          inner = inner.InnerInfo;
+        }
+        query += System.Net.WebUtility.UrlEncode(body);
+        if ( query.Length > 8000 )
+          query = query.Substring(0, 8000);
         Shell.CreateGitHubIssue(query);
       }
       catch ( Exception ex )
