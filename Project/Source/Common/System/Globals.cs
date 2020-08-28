@@ -87,8 +87,8 @@ namespace Ordisoftware.HebrewCommon
     static public readonly string ApplicationHomeURL
       = AssemblyProduct;
 
-    static public readonly string ApplicationChangeLogURL
-      = ApplicationHomeURL + "/#ChangeLog" + AssemblyVersion;
+    static public readonly string ApplicationReleaseNotesURL
+      = $"{ApplicationHomeURL}/#release{{0}}";
 
     /// <summary>
     /// Indicate the author home URL.
@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the setup file name.
     /// </summary>
     static public readonly string SetupFilename
-      = $"{AssemblyCompany}{ApplicationCode}Setup-%VER%.exe";
+      = $"{AssemblyCompany}{ApplicationCode}Setup-{{0}}.exe";
 
     /// <summary>
     /// Indicate the new version setup file.
@@ -202,14 +202,14 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate filename of the grammar guide.
     /// </summary>
-    static public string GrammarGuideFilename 
-      => GuidesFolderPath + $"grammar-%LANG%.htm";
+    static public readonly string GrammarGuideFilename  
+      = GuidesFolderPath + "grammar-{0}.htm";
 
     /// <summary>
     /// Indicate filename of the method notice.
     /// </summary>
-    static public string MethodNoticeFilename 
-      => GuidesFolderPath + $"method-%LANG%.htm";
+    static public readonly string MethodNoticeFilename 
+      = GuidesFolderPath + "method-{0}.htm";
 
     /// <summary>
     /// Indicate the filename of the help.

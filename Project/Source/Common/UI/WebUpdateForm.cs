@@ -30,11 +30,16 @@ namespace Ordisoftware.HebrewCommon
       this.CenterToMainFormElseScreen();
     }
 
-    public WebUpdateForm(string caption) : this()
+    public WebUpdateForm(Version version) : this()
     {
-      LabelNewVersion.Text = caption;
+      LabelNewVersion.Text = Localizer.NewVersionAvailable.GetLang(version);
+      ActionReleaseNotes.Tag = string.Format(Globals.ApplicationReleaseNotesURL, version);
     }
 
+    private void ActionOpenWebPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Shell.OpenWebLink((string)( (LinkLabel)sender ).Tag);
+    }
   }
 
 }

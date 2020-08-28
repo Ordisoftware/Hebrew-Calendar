@@ -35,7 +35,7 @@
       this.ActionOK = new System.Windows.Forms.Button();
       this.SelectInstall = new System.Windows.Forms.RadioButton();
       this.SelectDownload = new System.Windows.Forms.RadioButton();
-      this.SelectOpenWebPage = new System.Windows.Forms.RadioButton();
+      this.ActionReleaseNotes = new System.Windows.Forms.LinkLabel();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -78,11 +78,13 @@
       this.SelectDownload.Name = "SelectDownload";
       this.SelectDownload.UseVisualStyleBackColor = true;
       // 
-      // SelectOpenWebPage
+      // ActionReleaseNotes
       // 
-      resources.ApplyResources(this.SelectOpenWebPage, "SelectOpenWebPage");
-      this.SelectOpenWebPage.Name = "SelectOpenWebPage";
-      this.SelectOpenWebPage.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionReleaseNotes, "ActionReleaseNotes");
+      this.ActionReleaseNotes.LinkColor = System.Drawing.Color.Navy;
+      this.ActionReleaseNotes.Name = "ActionReleaseNotes";
+      this.ActionReleaseNotes.TabStop = true;
+      this.ActionReleaseNotes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionOpenWebPage_LinkClicked);
       // 
       // WebUpdateForm
       // 
@@ -90,7 +92,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.SelectOpenWebPage);
+      this.Controls.Add(this.ActionReleaseNotes);
       this.Controls.Add(this.SelectDownload);
       this.Controls.Add(this.SelectInstall);
       this.Controls.Add(this.PanelBottom);
@@ -112,7 +114,7 @@
     private System.Windows.Forms.Button ActionOK;
     internal System.Windows.Forms.RadioButton SelectInstall;
     internal System.Windows.Forms.RadioButton SelectDownload;
-    internal System.Windows.Forms.RadioButton SelectOpenWebPage;
     internal System.Windows.Forms.Label LabelNewVersion;
+    private System.Windows.Forms.LinkLabel ActionReleaseNotes;
   }
 }

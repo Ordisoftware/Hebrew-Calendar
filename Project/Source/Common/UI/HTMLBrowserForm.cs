@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( Title != null ) Text = Title.GetLang();
       if ( FilenameTemplate == null ) return;
-      string filename = FilenameTemplate.Replace("%LANG%", Languages.Current);
+      string filename = string.Format(FilenameTemplate, Languages.Current);
       if ( File.Exists(filename) )
         WebBrowser.Navigate(filename);
       else

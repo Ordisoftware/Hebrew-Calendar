@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewCommon
         formEnabled = Globals.MainForm.Enabled;
         Globals.MainForm.Enabled = false;
         LoadingForm.Instance.Initialize(Localizer.WebCheckUpdate.GetLang(), 3, 0, false);
-        foreach ( string s in Directory.GetFiles(Path.GetTempPath(), Globals.SetupFilename.Replace("%VER%", "*")) )
+        foreach ( string s in Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFilename, "*")) )
           try { File.Delete(s); }
           catch { }
         LoadingForm.Instance.DoProgress();
@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCommon
                                                    StringSplitOptions.RemoveEmptyEntries);
           LoadingForm.Instance.DoProgress();
           string[] partsVersion = content[0].Split('.');
-          string filename = Globals.SetupFileURL.Replace("%VER%", content[0]);
+          string filename = string.Format(Globals.SetupFileURL, content[0]);
           var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
           lastdone = DateTime.Now;
           LoadingForm.Instance.DoProgress();
@@ -71,19 +71,16 @@ namespace Ordisoftware.HebrewCommon
           }
           else
           {
-            var form = new WebUpdateForm(Localizer.NewVersionAvailable.GetLang(version));
+            var form = new WebUpdateForm(version);
             if ( form.ShowDialog() != DialogResult.OK ) return false;
             if ( form.SelectDownload.Checked )
               Shell.OpenWebLink(filename);
-            else
-            if ( form.SelectOpenWebPage.Checked )
-              Shell.OpenWebLink(Globals.ApplicationHomeURL);
             else
             if ( form.SelectInstall.Checked )
             {
               LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
               bool finished = false;
-              string tempfile = Path.GetTempPath() + Globals.SetupFilename.Replace("%VER%", content[0]);
+              string tempfile = Path.GetTempPath() + string.Format(Globals.SetupFilename, content[0]);
               client.DownloadProgressChanged += (sender, e) =>
               {
                 LoadingForm.Instance.DoProgress(e.ProgressPercentage);

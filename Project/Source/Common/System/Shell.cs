@@ -128,6 +128,14 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Open the application home page.
+    /// </summary>
+    static public void OpenApplicationReleaseNotes()
+    {
+      OpenWebLink(string.Format(Globals.ApplicationReleaseNotesURL, Globals.AssemblyVersion));
+    }
+
+    /// <summary>
     /// Open the author home page.
     /// </summary>
     static public void OpenAuthorHome()

@@ -125,19 +125,19 @@
     <value>61, 17</value>
   </data>
   <data name="SelectInstall.Text" xml:space="preserve">
-    <value>Installer</value>
+    <value>Installer automatiquement</value>
   </data>
   <data name="SelectDownload.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 17</value>
   </data>
   <data name="SelectDownload.Text" xml:space="preserve">
-    <value>Télécharger</value>
+    <value>Uniquement télécharger</value>
   </data>
   <data name="SelectOpenWebPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 17</value>
   </data>
-  <data name="SelectOpenWebPage.Text" xml:space="preserve">
-    <value>Ouvrir la page web</value>
+  <data name="ActionReleaseNotes.Text" xml:space="preserve">
+    <value>Notes de version</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Mise à jour de </value>

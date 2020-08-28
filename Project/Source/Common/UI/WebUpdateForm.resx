@@ -146,7 +146,55 @@
   <data name="&gt;&gt;LabelNewVersion.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
+    <value>ActionCancel</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
+    <value>ActionOK</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 123</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 28</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -207,30 +255,6 @@
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 123</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 28</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="SelectInstall.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -238,13 +262,13 @@
     <value>23, 45</value>
   </data>
   <data name="SelectInstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 17</value>
+    <value>116, 17</value>
   </data>
   <data name="SelectInstall.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
   </data>
   <data name="SelectInstall.Text" xml:space="preserve">
-    <value>Install</value>
+    <value>Install automatically</value>
   </data>
   <data name="&gt;&gt;SelectInstall.Name" xml:space="preserve">
     <value>SelectInstall</value>
@@ -265,13 +289,13 @@
     <value>23, 68</value>
   </data>
   <data name="SelectDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 17</value>
+    <value>95, 17</value>
   </data>
   <data name="SelectDownload.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
   </data>
   <data name="SelectDownload.Text" xml:space="preserve">
-    <value>Download</value>
+    <value>Download only</value>
   </data>
   <data name="&gt;&gt;SelectDownload.Name" xml:space="preserve">
     <value>SelectDownload</value>
@@ -285,31 +309,34 @@
   <data name="&gt;&gt;SelectDownload.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="SelectOpenWebPage.AutoSize" type="System.Boolean, mscorlib">
+  <data name="ActionReleaseNotes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="SelectOpenWebPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 91</value>
+  <data name="ActionReleaseNotes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="SelectOpenWebPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
+  <data name="ActionReleaseNotes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 94</value>
   </data>
-  <data name="SelectOpenWebPage.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
+  <data name="ActionReleaseNotes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
   </data>
-  <data name="SelectOpenWebPage.Text" xml:space="preserve">
-    <value>Open web page</value>
+  <data name="ActionReleaseNotes.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;SelectOpenWebPage.Name" xml:space="preserve">
-    <value>SelectOpenWebPage</value>
+  <data name="ActionReleaseNotes.Text" xml:space="preserve">
+    <value>Release notes</value>
   </data>
-  <data name="&gt;&gt;SelectOpenWebPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ActionReleaseNotes.Name" xml:space="preserve">
+    <value>ActionReleaseNotes</value>
   </data>
-  <data name="&gt;&gt;SelectOpenWebPage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionReleaseNotes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionReleaseNotes.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SelectOpenWebPage.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionReleaseNotes.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
