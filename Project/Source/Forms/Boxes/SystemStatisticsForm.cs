@@ -66,6 +66,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void Timer_Tick(object sender, EventArgs e)
     {
+      Timer.Interval = MainForm.Instance.IsGenerating ? 2000 : 1000;
       StatisticsDataBindingSource.ResetBindings(false);
     }
 

@@ -106,6 +106,8 @@ namespace Ordisoftware.HebrewCalendar
         IsGenerating = false;
         SetView(Program.Settings.CurrentView, true);
         UpdateButtons();
+        if ( Globals.IsReady && !ActionVacuumAtNextStartup.Checked )
+          ActionVacuumAtNextStartup.PerformClick();
       }
       if ( GenerateErrors.Count != 0 )
       {

@@ -27,7 +27,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        Globals.IsReady = false;
+        //Globals.IsReady = false;
+        MenuTray.Enabled = false;
         TimerReminder.Enabled = false;
         try
         {
@@ -51,7 +52,8 @@ namespace Ordisoftware.HebrewCalendar
         }
         finally
         {
-          Globals.IsReady = true;
+          //Globals.IsReady = true;
+          MenuTray.Enabled = true;
           UpdateButtons();
           if ( e != null )
           {
