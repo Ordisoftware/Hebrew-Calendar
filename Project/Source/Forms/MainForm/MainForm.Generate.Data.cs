@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
         Program.Chrono.Restart();
         UpdateButtons();
         CalendarText.Clear();
-        CalendarMonth.Events.Clear();
+        CalendarMonth.TheEvents.Clear();
         LunisolarDaysBindingSource.DataSource = null;
         EmptyDatabase();
         var d1 = new DateTime(yearFirst, 1, DateTime.DaysInMonth(yearFirst, 1));

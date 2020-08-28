@@ -34,7 +34,6 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="connection">The connection.</param>
     /// <param name="lastdone">The last done date.</param>
     /// <param name="force"></param>
-    /// <param name="days">The days interval.</param>
     /// <returns>The new date if done else the same.</returns>
     static public DateTime Optimize(this OdbcConnection connection, 
                                     DateTime lastdone, 

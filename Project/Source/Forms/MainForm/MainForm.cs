@@ -1044,8 +1044,6 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Event handler. Called by TimerMidnight for tick events.
     /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
     private void TimerMidnight_Tick(DateTime Time)
     {
       if ( !Globals.IsReady ) return;

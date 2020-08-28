@@ -89,7 +89,7 @@ namespace Ordisoftware.HebrewCalendar
       CalendarMonth.DayViewTimeFont = new Font("Calibri", sizeFont + 1, FontStyle.Bold);
       CalendarMonth.DaysFont = new Font("Calibri", sizeFont + 2);
       CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", sizeFont + 2, FontStyle.Bold);
-      CalendarMonth.Events.Clear();
+      CalendarMonth.TheEvents.Clear();
     }
 
     /// <summary>

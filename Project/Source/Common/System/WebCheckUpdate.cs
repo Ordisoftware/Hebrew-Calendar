@@ -36,6 +36,7 @@ namespace Ordisoftware.HebrewCommon
     /// App version is "MAJOR.MINOR".
     /// </summary>
     /// <param name="checkAtStartup"></param>
+    /// <param name="lastdone">The last done date.</param>
     /// <param name="auto">True if no user interaction else false</param>
     /// <returns>True if application must exist else false.</returns>
     static public bool Run(bool checkAtStartup, ref DateTime lastdone, bool auto)

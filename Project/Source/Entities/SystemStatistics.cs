@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewCalendar
     public string DBYearsInterval => ( MainForm.Instance.YearLast - MainForm.Instance.YearFirst + 1 ).ToString();
     public string DBRecordsCount => MainForm.Instance.DataSet.LunisolarDays.Count().ToString();
     public string DBEventsCount => MainForm.Instance.DataSet.LunisolarDays.Count(d => d.TorahEvents != 0 || d.SeasonChange != 0).ToString();
-    public string MonthViewEventsCount => MainForm.Instance.CalendarMonth.Events.Count.ToString();
+    public string MonthViewEventsCount => MainForm.Instance.CalendarMonth.TheEvents.Count.ToString();
     public string DBFileSize => SystemHelper.DatabaseFileSize;
     public string DBMemorySize
     {

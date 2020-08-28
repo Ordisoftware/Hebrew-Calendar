@@ -242,7 +242,7 @@ namespace System.Globalization
 				}
 				return num;
 			}
-			catch (Exception e)
+			catch
 			{
 				//Console.WriteLine("Native function Kernel32.GetCalendarInfo() calling exception: {0}", e);
 			}

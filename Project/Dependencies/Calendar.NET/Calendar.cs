@@ -54,7 +54,7 @@ namespace Calendar.NET
     private readonly ScrollPanel _scrollPanel;
 
     // ORDISOFTWARE MODIF BEGIN
-    public List<IEvent> Events => _events;
+    public List<IEvent> TheEvents => _events;
     // ORDISOFTWARE MODIF END
 
     private readonly List<IEvent> _events;
@@ -912,10 +912,10 @@ namespace Calendar.NET
       }
     }
 
-    static private SolidBrush BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
-    static private SolidBrush BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
-    static private SolidBrush BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
-    static private Pen PenBrushBlack = new Pen(BrushBlack) { DashStyle = DashStyle.Dash };
+    static private readonly SolidBrush BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
+    static private readonly SolidBrush BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
+    static private readonly SolidBrush BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
+    static private readonly Pen PenBrushBlack = new Pen(BrushBlack) { DashStyle = DashStyle.Dash };
 
     private void RenderMonthCalendar(PaintEventArgs e)
     {
