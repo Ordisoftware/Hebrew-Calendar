@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Globalization;
@@ -73,7 +74,14 @@ namespace Ordisoftware.HebrewCalendar
     private void CelebrationsForm_Load(object sender, EventArgs e)
     {
       if ( Location.X < 0 || Location.Y < 0 )
-        this.CenterToMainFormElseScreen();
+      {
+        int left = SystemInformation.WorkingArea.Left;
+        int top = SystemInformation.WorkingArea.Top;
+        int width = SystemInformation.WorkingArea.Width;
+        int height = SystemInformation.WorkingArea.Height;
+        Location = new Point(left + width - Width, top + height - Height);
+        //this.CenterToMainFormElseScreen();
+      }
     }
 
     private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)
