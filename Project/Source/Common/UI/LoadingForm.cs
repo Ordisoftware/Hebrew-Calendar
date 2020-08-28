@@ -37,6 +37,7 @@ namespace Ordisoftware.HebrewCommon
     private LoadingForm()
     {
       InitializeComponent();
+      Icon = Globals.MainForm.Icon;
       LabelTitle.Text = Globals.AssemblyTitle;
     }
 
