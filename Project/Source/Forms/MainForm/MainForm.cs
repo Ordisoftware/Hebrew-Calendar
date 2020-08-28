@@ -77,15 +77,16 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Globals.IsExiting ) return;
       Program.Settings.Retrieve();
-      try
-      {
-        Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude);
-        Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      if ( Program.Settings.GPSLatitude != "" && Program.Settings.GPSLongitude != "" )
+        try
+        {
+          Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude);
+          Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude);
+        }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
       var lastdone = Program.Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, ref lastdone, true);
       Program.Settings.CheckUpdateLastDone = lastdone;
