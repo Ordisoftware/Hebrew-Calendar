@@ -30,12 +30,14 @@ namespace Ordisoftware.HebrewCalendar
     {
       switch ( keyData )
       {
+        // Change view
         case Keys.Control | Keys.Shift | Keys.Tab:
           SetView(Program.Settings.CurrentView.Previous());
           return true;
         case Keys.Control | Keys.Tab:
           SetView(Program.Settings.CurrentView.Next());
           return true;
+        // Function keys
         case Keys.F4:
           ActionViewCelebrations.PerformClick();
           return true;
@@ -66,6 +68,11 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.F12:
           ActionAbout.PerformClick();
           return true;
+        //Various actions
+        case Keys.Escape:
+          if ( EditESCtoExit.Checked )
+            Close();
+          return true;
         case Keys.Control | Keys.T:
           GoToDate(DateTime.Today);
           return true;
@@ -84,10 +91,7 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Alt | Keys.S:
           ActionExportCSV.PerformClick();
           return true;
-        case Keys.Escape:
-          if ( EditESCtoExit.Checked )
-            Close();
-          return true;
+        // Month view calendar navigation
         case Keys.Home:
           if ( Program.Settings.CurrentView == ViewMode.Month )
           {
