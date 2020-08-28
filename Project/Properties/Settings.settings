@@ -343,9 +343,6 @@
     <Setting Name="BenchmarkStartingApp" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="BenchmarkStartDateTime" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)">2000-01-01</Value>
-    </Setting>
     <Setting Name="StatisticsFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">-1, -1</Value>
     </Setting>

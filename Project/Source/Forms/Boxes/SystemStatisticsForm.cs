@@ -31,6 +31,7 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void Run()
     {
+      Instance.SystemStatisticsForm_Load(null, null);
       Instance.Show();
       Instance.BringToFront();
       Instance.Timer.Start();

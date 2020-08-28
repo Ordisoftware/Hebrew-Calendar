@@ -24,7 +24,7 @@ namespace Ordisoftware.HebrewCalendar
     public string OperatingSystem => SystemHelper.OperatingSystem;
     public string TotalVisibleMemory => SystemHelper.TotalVisibleMemory;
     public string PhysicalMemoryFree => SystemHelper.PhysicalMemoryFree;
-    public string RunningTime => ( (long)DateTime.Now.Subtract(Program.Settings.BenchmarkStartDateTime).TotalMilliseconds ).FormatSeconds();
+    public string RunningTime => ( (long)DateTime.Now.Subtract(Globals.StartDateTime).TotalMilliseconds ).FormatSeconds();
     public string StartingTime => Program.Settings.BenchmarkStartingApp.FormatMilliseconds();
     public string LoadDataTime => Program.Settings.BenchmarkLoadData.FormatMilliseconds();
     public string GenerateYearsTime => Program.Settings.BenchmarkGenerateYears.FormatMilliseconds();

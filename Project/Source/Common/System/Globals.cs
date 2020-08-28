@@ -45,6 +45,11 @@ namespace Ordisoftware.HebrewCommon
     static public ApplicationSettingsBase Settings { get; set; }
 
     /// <summary>
+    /// Indicate the process start date and time.
+    /// </summary>
+    static public readonly DateTime StartDateTime = DateTime.Now;
+
+    /// <summary>
     /// Indicate if the application is in loading data stage.
     /// </summary>
     static public bool IsLoadingData = false;

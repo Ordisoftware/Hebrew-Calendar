@@ -73,7 +73,10 @@ namespace Ordisoftware.HebrewCalendar
           if ( EditESCtoExit.Checked )
             Close();
           return true;
+        case Keys.NumPad0:
         case Keys.Control | Keys.T:
+          if ( keyData == Keys.NumPad0 && Program.Settings.CurrentView != ViewMode.Month )
+            break;
           GoToDate(DateTime.Today);
           return true;
         case Keys.Control | Keys.D:

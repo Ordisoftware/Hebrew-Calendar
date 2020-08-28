@@ -48,7 +48,6 @@ namespace Ordisoftware.HebrewCalendar
       Settings.CheckUpgrade(ref upgrade);
       Settings.UpgradeRequired = upgrade;
       CheckSettingsReset();
-      Settings.BenchmarkStartDateTime = DateTime.Now;
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       UpdateLocalization(true);
@@ -125,9 +124,9 @@ namespace Ordisoftware.HebrewCalendar
       };
       update(Globals.MainForm);
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = SystemStatisticsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = MoonMonthsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = SystemStatisticsForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       foreach ( Form form in Application.OpenForms )
       {

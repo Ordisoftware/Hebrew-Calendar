@@ -649,7 +649,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewMoonMonths_Click(object sender, EventArgs e)
     {
-      MoonMonthsForm.Instance.Show();
+      MoonMonthsForm.Run();
     }
 
     /// <summary>

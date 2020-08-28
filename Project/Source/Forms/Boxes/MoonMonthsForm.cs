@@ -36,6 +36,12 @@ namespace Ordisoftware.HebrewCalendar
       Instance = new MoonMonthsForm();
     }
 
+    static public void Run()
+    {
+      Instance.MoonMonthsForm_Load(null, null);
+      Instance.Show();
+    }
+
     private MoonMonthsForm()
     {
       InitializeComponent();
@@ -60,7 +66,7 @@ namespace Ordisoftware.HebrewCalendar
     private void MoonMonthsForm_Load(object sender, EventArgs e)
     {
       if ( Location.X < 0 || Location.Y < 0 )
-        CenterToScreen();
+        this.CenterToMainFormElseScreen();
     }
 
     private void MoonMonthsForm_FormClosing(object sender, FormClosingEventArgs e)
