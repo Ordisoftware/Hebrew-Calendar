@@ -31,6 +31,13 @@ namespace Ordisoftware.HebrewCommon
         { Language.French, "fr" }
       };
 
+    static public readonly Dictionary<string, string> EmptySlot
+      = new Dictionary<string, string>()
+      {
+        { EN, "(Not defined)" },
+        { FR, "(Non définit)" }
+      };
+
     static public readonly Dictionary<string, string> AskToExitApplication
       = new Dictionary<string, string>()
       {
@@ -242,6 +249,20 @@ namespace Ordisoftware.HebrewCommon
       {
         { EN, "Configure providers" },
         { FR, "Configurer les fournisseurs" }
+      };
+
+    static public readonly Dictionary<string, string> AskToReplaceBookmark
+      = new Dictionary<string, string>
+      {
+        { EN, "Replace bookmark?" },
+        { FR, "Remplacer le signet ?" }
+      };
+
+    static public readonly Dictionary<string, string> AskToDeleteBookmark
+      = new Dictionary<string, string>
+      {
+        { EN, "Delete bookmark?" },
+        { FR, "Supprimer le signet ?" }
       };
 
     static public readonly Dictionary<bool, Dictionary<string, string>> HideRestore
