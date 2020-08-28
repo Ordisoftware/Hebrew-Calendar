@@ -50,6 +50,7 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.Timer = new System.Windows.Forms.Timer(this.components);
       this.dBEventsCountLabel1 = new System.Windows.Forms.Label();
+      this.StatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.dBFileSizeLabel1 = new System.Windows.Forms.Label();
       this.dBFirstYearLabel1 = new System.Windows.Forms.Label();
       this.dBLastYearLabel1 = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
       this.totalVisibleMemoryLabel1 = new System.Windows.Forms.Label();
       this.dBMemorySizeLabel1 = new System.Windows.Forms.Label();
       this.dBYearsIntervalLabel1 = new System.Windows.Forms.Label();
-      this.StatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       dBEventsCountLabel = new System.Windows.Forms.Label();
       dBFileSizeLabel = new System.Windows.Forms.Label();
       dBFirstYearLabel = new System.Windows.Forms.Label();
@@ -156,6 +156,16 @@
       resources.ApplyResources(totalVisibleMemoryLabel, "totalVisibleMemoryLabel");
       totalVisibleMemoryLabel.Name = "totalVisibleMemoryLabel";
       // 
+      // dBMemorySizeLabel
+      // 
+      resources.ApplyResources(dBMemorySizeLabel, "dBMemorySizeLabel");
+      dBMemorySizeLabel.Name = "dBMemorySizeLabel";
+      // 
+      // dBYearsIntervalLabel
+      // 
+      resources.ApplyResources(dBYearsIntervalLabel, "dBYearsIntervalLabel");
+      dBYearsIntervalLabel.Name = "dBYearsIntervalLabel";
+      // 
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.ActionClose);
@@ -179,6 +189,10 @@
       this.dBEventsCountLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.StatisticsDataBindingSource, "DBEventsCount", true));
       resources.ApplyResources(this.dBEventsCountLabel1, "dBEventsCountLabel1");
       this.dBEventsCountLabel1.Name = "dBEventsCountLabel1";
+      // 
+      // StatisticsDataBindingSource
+      // 
+      this.StatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.SystemStatistics);
       // 
       // dBFileSizeLabel1
       // 
@@ -258,11 +272,6 @@
       resources.ApplyResources(this.totalVisibleMemoryLabel1, "totalVisibleMemoryLabel1");
       this.totalVisibleMemoryLabel1.Name = "totalVisibleMemoryLabel1";
       // 
-      // dBMemorySizeLabel
-      // 
-      resources.ApplyResources(dBMemorySizeLabel, "dBMemorySizeLabel");
-      dBMemorySizeLabel.Name = "dBMemorySizeLabel";
-      // 
       // dBMemorySizeLabel1
       // 
       this.dBMemorySizeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.StatisticsDataBindingSource, "DBMemorySize", true));
@@ -274,15 +283,6 @@
       this.dBYearsIntervalLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.StatisticsDataBindingSource, "DBYearsInterval", true));
       resources.ApplyResources(this.dBYearsIntervalLabel1, "dBYearsIntervalLabel1");
       this.dBYearsIntervalLabel1.Name = "dBYearsIntervalLabel1";
-      // 
-      // dBYearsIntervalLabel
-      // 
-      resources.ApplyResources(dBYearsIntervalLabel, "dBYearsIntervalLabel");
-      dBYearsIntervalLabel.Name = "dBYearsIntervalLabel";
-      // 
-      // StatisticsDataBindingSource
-      // 
-      this.StatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.SystemStatistics);
       // 
       // SystemStatisticsForm
       // 

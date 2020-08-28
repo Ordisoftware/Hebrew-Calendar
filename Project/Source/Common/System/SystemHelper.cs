@@ -13,10 +13,11 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.IO;
+using System.IO.Pipes;
 using System.Configuration;
 using System.Threading;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.IO.Pipes;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
@@ -25,7 +26,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide system helper.
   /// </summary>
-  static class SystemHelper
+  static partial class SystemHelper
   {
 
     /// <summary>
@@ -101,15 +102,22 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Create a readable string from a size in bytes.
-    /// From: https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
+    /// Get the memory size of a serializable object.
     /// </summary>
-    public static string FormatBytesSize(this ulong bytes)
+    static public long SizeOf(this object instance)
     {
-      ulong unit = 1024;
-      if ( bytes < unit ) return $"{bytes} B";
-      var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
-      return $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPE" )[exp - 1]}B";
+      if ( instance == null ) return 0;
+      if ( !instance.GetType().IsSerializable ) return -1;
+      using ( MemoryStream stream = new MemoryStream() )
+        try
+        {
+          new BinaryFormatter().Serialize(stream, instance);
+          return stream.Length;
+        }
+        catch
+        {
+          return -1;
+        }
     }
 
   }

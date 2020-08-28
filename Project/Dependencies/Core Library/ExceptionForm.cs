@@ -201,43 +201,26 @@ namespace Ordisoftware.Core.Windows.Forms
                      + "&labels=type: bug"
                      + "&body=";
         string body = "## COMMENT" + NewLine2
-                    + Localizer.GitHubIssueComment.GetLang() + NewLine2;
-        try
-        {
-          var key = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows NT\\CurrentVersion");
-          string nameOS = (string)key.GetValue("productName");
-          body += "## SYSTEM" + NewLine2
-                + nameOS + " " + ( Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits" );
-          ObjectQuery wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
-          ManagementObjectSearcher searcher = new ManagementObjectSearcher(wql);
-          ManagementObjectCollection results = searcher.Get();
-          if ( results.Count > 0 )
-          {
-            var enumerator = results.GetEnumerator();
-            if ( enumerator.MoveNext() )
-            {
-              var instance = enumerator.Current;
-              body += NewLine
-                    + "Total Visible Memory: " + ( (ulong)instance["TotalVisibleMemorySize"] * 1024 ).FormatBytesSize() + NewLine
-                    + "Free Physical Memory: " + ( (ulong)instance["FreePhysicalMemory"] * 1024 ).FormatBytesSize() + NewLine2;
-            }
-          }
-        }
-        catch
-        {
-        }
-        body += "## ERROR : " + ErrorInfo.Instance.GetType().Name + NewLine2
+                    + Localizer.GitHubIssueComment.GetLang();
+        body += NewLine2
+              + "## SYSTEM" + NewLine2
+              + SystemHelper.OperatingSystem;
+        body += NewLine
+              + "Total Visible Memory: " + SystemHelper.TotalVisibleMemory + NewLine
+              + "Free Physical Memory: " + SystemHelper.PhysicalMemoryFree;
+        body += NewLine2
+              + "## ERROR : " + ErrorInfo.Instance.GetType().Name + NewLine2
               + ErrorInfo.Message + NewLine2
               + "#### _STACK_" + NewLine2
               + ErrorInfo.StackText;
         ExceptionInfo inner = ErrorInfo.InnerInfo;
         while ( inner != null )
         {
-          body = body + NewLine2
-               + "## INNER : " + inner.Instance.GetType().Name + NewLine2
-               + inner.Message + NewLine2
-               + "#### _STACK_" + NewLine2
-               + inner.StackText;
+          body += NewLine2
+                + "## INNER : " + inner.Instance.GetType().Name + NewLine2
+                + inner.Message + NewLine2
+                + "#### _STACK_" + NewLine2
+                + inner.StackText;
           inner = inner.InnerInfo;
         }
         query += System.Net.WebUtility.UrlEncode(body);

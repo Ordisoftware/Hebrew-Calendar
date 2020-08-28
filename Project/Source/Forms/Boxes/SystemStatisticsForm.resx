@@ -624,486 +624,6 @@
   <data name="&gt;&gt;totalVisibleMemoryLabel.ZOrder" xml:space="preserve">
     <value>30</value>
   </data>
-  <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ActionClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 2</value>
-  </data>
-  <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="ActionClose.Text" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
-    <value>ActionClose</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 393</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 28</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>32</value>
-  </data>
-  <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="StatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>99, 17</value>
-  </metadata>
-  <data name="dBEventsCountLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="dBEventsCountLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 256</value>
-  </data>
-  <data name="dBEventsCountLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="dBEventsCountLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="dBEventsCountLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="dBEventsCountLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;dBEventsCountLabel1.Name" xml:space="preserve">
-    <value>dBEventsCountLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBEventsCountLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBEventsCountLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dBEventsCountLabel1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="dBFileSizeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="dBFileSizeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 130</value>
-  </data>
-  <data name="dBFileSizeLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="dBFileSizeLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="dBFileSizeLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="dBFileSizeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;dBFileSizeLabel1.Name" xml:space="preserve">
-    <value>dBFileSizeLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBFileSizeLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBFileSizeLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dBFileSizeLabel1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="dBFirstYearLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="dBFirstYearLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 172</value>
-  </data>
-  <data name="dBFirstYearLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="dBFirstYearLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
-  </data>
-  <data name="dBFirstYearLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="dBFirstYearLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;dBFirstYearLabel1.Name" xml:space="preserve">
-    <value>dBFirstYearLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBFirstYearLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBFirstYearLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dBFirstYearLabel1.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="dBLastYearLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="dBLastYearLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 193</value>
-  </data>
-  <data name="dBLastYearLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="dBLastYearLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
-  </data>
-  <data name="dBLastYearLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="dBLastYearLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;dBLastYearLabel1.Name" xml:space="preserve">
-    <value>dBLastYearLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBLastYearLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBLastYearLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dBLastYearLabel1.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="dBRecordsCountLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="dBRecordsCountLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 235</value>
-  </data>
-  <data name="dBRecordsCountLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="dBRecordsCountLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="dBRecordsCountLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="dBRecordsCountLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;dBRecordsCountLabel1.Name" xml:space="preserve">
-    <value>dBRecordsCountLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBRecordsCountLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBRecordsCountLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dBRecordsCountLabel1.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="fillMonthViewTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="fillMonthViewTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 104</value>
-  </data>
-  <data name="fillMonthViewTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="fillMonthViewTimeLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>49</value>
-  </data>
-  <data name="fillMonthViewTimeLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="fillMonthViewTimeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;fillMonthViewTimeLabel1.Name" xml:space="preserve">
-    <value>fillMonthViewTimeLabel1</value>
-  </data>
-  <data name="&gt;&gt;fillMonthViewTimeLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fillMonthViewTimeLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;fillMonthViewTimeLabel1.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="generateYearsTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="generateYearsTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 83</value>
-  </data>
-  <data name="generateYearsTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="generateYearsTimeLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="generateYearsTimeLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="generateYearsTimeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;generateYearsTimeLabel1.Name" xml:space="preserve">
-    <value>generateYearsTimeLabel1</value>
-  </data>
-  <data name="&gt;&gt;generateYearsTimeLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;generateYearsTimeLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;generateYearsTimeLabel1.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="loadDataTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="loadDataTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 62</value>
-  </data>
-  <data name="loadDataTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="loadDataTimeLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
-  </data>
-  <data name="loadDataTimeLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="loadDataTimeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;loadDataTimeLabel1.Name" xml:space="preserve">
-    <value>loadDataTimeLabel1</value>
-  </data>
-  <data name="&gt;&gt;loadDataTimeLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;loadDataTimeLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;loadDataTimeLabel1.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="monthViewEventsCountLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="monthViewEventsCountLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 277</value>
-  </data>
-  <data name="monthViewEventsCountLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="monthViewEventsCountLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
-  </data>
-  <data name="monthViewEventsCountLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="monthViewEventsCountLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;monthViewEventsCountLabel1.Name" xml:space="preserve">
-    <value>monthViewEventsCountLabel1</value>
-  </data>
-  <data name="&gt;&gt;monthViewEventsCountLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;monthViewEventsCountLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;monthViewEventsCountLabel1.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="operatingSystemLabel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="operatingSystemLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="operatingSystemLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 368</value>
-  </data>
-  <data name="operatingSystemLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
-  </data>
-  <data name="operatingSystemLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
-  </data>
-  <data name="operatingSystemLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;operatingSystemLabel1.Name" xml:space="preserve">
-    <value>operatingSystemLabel1</value>
-  </data>
-  <data name="&gt;&gt;operatingSystemLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;operatingSystemLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;operatingSystemLabel1.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="physicalMemoryFreeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="physicalMemoryFreeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 303</value>
-  </data>
-  <data name="physicalMemoryFreeLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="physicalMemoryFreeLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
-  </data>
-  <data name="physicalMemoryFreeLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="physicalMemoryFreeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;physicalMemoryFreeLabel1.Name" xml:space="preserve">
-    <value>physicalMemoryFreeLabel1</value>
-  </data>
-  <data name="&gt;&gt;physicalMemoryFreeLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;physicalMemoryFreeLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;physicalMemoryFreeLabel1.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
-  <data name="runningTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="runningTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 15</value>
-  </data>
-  <data name="runningTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="runningTimeLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>61</value>
-  </data>
-  <data name="runningTimeLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="runningTimeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;runningTimeLabel1.Name" xml:space="preserve">
-    <value>runningTimeLabel1</value>
-  </data>
-  <data name="&gt;&gt;runningTimeLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;runningTimeLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;runningTimeLabel1.ZOrder" xml:space="preserve">
-    <value>27</value>
-  </data>
-  <data name="startingTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="startingTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 41</value>
-  </data>
-  <data name="startingTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="startingTimeLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
-  </data>
-  <data name="startingTimeLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="startingTimeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;startingTimeLabel1.Name" xml:space="preserve">
-    <value>startingTimeLabel1</value>
-  </data>
-  <data name="&gt;&gt;startingTimeLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startingTimeLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;startingTimeLabel1.ZOrder" xml:space="preserve">
-    <value>29</value>
-  </data>
-  <data name="totalVisibleMemoryLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="totalVisibleMemoryLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 324</value>
-  </data>
-  <data name="totalVisibleMemoryLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="totalVisibleMemoryLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
-  </data>
-  <data name="totalVisibleMemoryLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="totalVisibleMemoryLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;totalVisibleMemoryLabel1.Name" xml:space="preserve">
-    <value>totalVisibleMemoryLabel1</value>
-  </data>
-  <data name="&gt;&gt;totalVisibleMemoryLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;totalVisibleMemoryLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;totalVisibleMemoryLabel1.ZOrder" xml:space="preserve">
-    <value>31</value>
-  </data>
   <metadata name="dBMemorySizeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
@@ -1139,66 +659,6 @@
   </data>
   <data name="&gt;&gt;dBMemorySizeLabel.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="dBMemorySizeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="dBMemorySizeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 151</value>
-  </data>
-  <data name="dBMemorySizeLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="dBMemorySizeLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="dBMemorySizeLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="dBMemorySizeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;dBMemorySizeLabel1.Name" xml:space="preserve">
-    <value>dBMemorySizeLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBMemorySizeLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBMemorySizeLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dBMemorySizeLabel1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="dBYearsIntervalLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="dBYearsIntervalLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 214</value>
-  </data>
-  <data name="dBYearsIntervalLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="dBYearsIntervalLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="dBYearsIntervalLabel1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="dBYearsIntervalLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;dBYearsIntervalLabel1.Name" xml:space="preserve">
-    <value>dBYearsIntervalLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBYearsIntervalLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBYearsIntervalLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dBYearsIntervalLabel1.ZOrder" xml:space="preserve">
-    <value>12</value>
   </data>
   <metadata name="dBYearsIntervalLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -1236,6 +696,546 @@
   <data name="&gt;&gt;dBYearsIntervalLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 2</value>
+  </data>
+  <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="ActionClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 393</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 28</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="StatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>99, 17</value>
+  </metadata>
+  <data name="dBEventsCountLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dBEventsCountLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 256</value>
+  </data>
+  <data name="dBEventsCountLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="dBEventsCountLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="dBEventsCountLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="dBEventsCountLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;dBEventsCountLabel1.Name" xml:space="preserve">
+    <value>dBEventsCountLabel1</value>
+  </data>
+  <data name="&gt;&gt;dBEventsCountLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dBEventsCountLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dBEventsCountLabel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="dBFileSizeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dBFileSizeLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 130</value>
+  </data>
+  <data name="dBFileSizeLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="dBFileSizeLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="dBFileSizeLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="dBFileSizeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;dBFileSizeLabel1.Name" xml:space="preserve">
+    <value>dBFileSizeLabel1</value>
+  </data>
+  <data name="&gt;&gt;dBFileSizeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dBFileSizeLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dBFileSizeLabel1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="dBFirstYearLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dBFirstYearLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 172</value>
+  </data>
+  <data name="dBFirstYearLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="dBFirstYearLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="dBFirstYearLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="dBFirstYearLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;dBFirstYearLabel1.Name" xml:space="preserve">
+    <value>dBFirstYearLabel1</value>
+  </data>
+  <data name="&gt;&gt;dBFirstYearLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dBFirstYearLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dBFirstYearLabel1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="dBLastYearLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dBLastYearLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 193</value>
+  </data>
+  <data name="dBLastYearLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="dBLastYearLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="dBLastYearLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="dBLastYearLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;dBLastYearLabel1.Name" xml:space="preserve">
+    <value>dBLastYearLabel1</value>
+  </data>
+  <data name="&gt;&gt;dBLastYearLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dBLastYearLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dBLastYearLabel1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="dBRecordsCountLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dBRecordsCountLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 235</value>
+  </data>
+  <data name="dBRecordsCountLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="dBRecordsCountLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="dBRecordsCountLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="dBRecordsCountLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;dBRecordsCountLabel1.Name" xml:space="preserve">
+    <value>dBRecordsCountLabel1</value>
+  </data>
+  <data name="&gt;&gt;dBRecordsCountLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dBRecordsCountLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dBRecordsCountLabel1.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="fillMonthViewTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="fillMonthViewTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 104</value>
+  </data>
+  <data name="fillMonthViewTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="fillMonthViewTimeLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="fillMonthViewTimeLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="fillMonthViewTimeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;fillMonthViewTimeLabel1.Name" xml:space="preserve">
+    <value>fillMonthViewTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;fillMonthViewTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fillMonthViewTimeLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fillMonthViewTimeLabel1.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="generateYearsTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="generateYearsTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 83</value>
+  </data>
+  <data name="generateYearsTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="generateYearsTimeLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="generateYearsTimeLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="generateYearsTimeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;generateYearsTimeLabel1.Name" xml:space="preserve">
+    <value>generateYearsTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;generateYearsTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;generateYearsTimeLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;generateYearsTimeLabel1.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="loadDataTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="loadDataTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 62</value>
+  </data>
+  <data name="loadDataTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="loadDataTimeLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="loadDataTimeLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="loadDataTimeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;loadDataTimeLabel1.Name" xml:space="preserve">
+    <value>loadDataTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;loadDataTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loadDataTimeLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;loadDataTimeLabel1.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="monthViewEventsCountLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="monthViewEventsCountLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 277</value>
+  </data>
+  <data name="monthViewEventsCountLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="monthViewEventsCountLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="monthViewEventsCountLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="monthViewEventsCountLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;monthViewEventsCountLabel1.Name" xml:space="preserve">
+    <value>monthViewEventsCountLabel1</value>
+  </data>
+  <data name="&gt;&gt;monthViewEventsCountLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;monthViewEventsCountLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;monthViewEventsCountLabel1.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="operatingSystemLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="operatingSystemLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="operatingSystemLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 368</value>
+  </data>
+  <data name="operatingSystemLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="operatingSystemLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="operatingSystemLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;operatingSystemLabel1.Name" xml:space="preserve">
+    <value>operatingSystemLabel1</value>
+  </data>
+  <data name="&gt;&gt;operatingSystemLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;operatingSystemLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;operatingSystemLabel1.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="physicalMemoryFreeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="physicalMemoryFreeLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 303</value>
+  </data>
+  <data name="physicalMemoryFreeLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="physicalMemoryFreeLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="physicalMemoryFreeLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="physicalMemoryFreeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;physicalMemoryFreeLabel1.Name" xml:space="preserve">
+    <value>physicalMemoryFreeLabel1</value>
+  </data>
+  <data name="&gt;&gt;physicalMemoryFreeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;physicalMemoryFreeLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;physicalMemoryFreeLabel1.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="runningTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="runningTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 15</value>
+  </data>
+  <data name="runningTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="runningTimeLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="runningTimeLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="runningTimeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;runningTimeLabel1.Name" xml:space="preserve">
+    <value>runningTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;runningTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;runningTimeLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;runningTimeLabel1.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="startingTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="startingTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 41</value>
+  </data>
+  <data name="startingTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="startingTimeLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="startingTimeLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="startingTimeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;startingTimeLabel1.Name" xml:space="preserve">
+    <value>startingTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;startingTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startingTimeLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;startingTimeLabel1.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="totalVisibleMemoryLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="totalVisibleMemoryLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 324</value>
+  </data>
+  <data name="totalVisibleMemoryLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="totalVisibleMemoryLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="totalVisibleMemoryLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="totalVisibleMemoryLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;totalVisibleMemoryLabel1.Name" xml:space="preserve">
+    <value>totalVisibleMemoryLabel1</value>
+  </data>
+  <data name="&gt;&gt;totalVisibleMemoryLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;totalVisibleMemoryLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;totalVisibleMemoryLabel1.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="dBMemorySizeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dBMemorySizeLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 151</value>
+  </data>
+  <data name="dBMemorySizeLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="dBMemorySizeLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="dBMemorySizeLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="dBMemorySizeLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;dBMemorySizeLabel1.Name" xml:space="preserve">
+    <value>dBMemorySizeLabel1</value>
+  </data>
+  <data name="&gt;&gt;dBMemorySizeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dBMemorySizeLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dBMemorySizeLabel1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="dBYearsIntervalLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dBYearsIntervalLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 214</value>
+  </data>
+  <data name="dBYearsIntervalLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="dBYearsIntervalLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="dBYearsIntervalLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="dBYearsIntervalLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;dBYearsIntervalLabel1.Name" xml:space="preserve">
+    <value>dBYearsIntervalLabel1</value>
+  </data>
+  <data name="&gt;&gt;dBYearsIntervalLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dBYearsIntervalLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dBYearsIntervalLabel1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1243,7 +1243,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>264, 431</value>
+    <value>284, 431</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
