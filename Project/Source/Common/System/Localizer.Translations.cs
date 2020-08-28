@@ -31,6 +31,20 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "(Non définit)" }
       };
 
+    static public readonly Dictionary<string, string> DatabaseIntegrityError
+      = new Dictionary<string, string>()
+      {
+        { Languages.EN, $"Database integrity error:{Globals.NL}{Globals.NL}{0}" },
+        { Languages.FR, $"Erreur d'intégrité de la base de données :{Globals.NL}{Globals.NL}{0}" }
+      };
+
+    static public readonly Dictionary<string, string> DatabaseVacuumError
+      = new Dictionary<string, string>()
+      {
+        { Languages.EN, "Database vacuum failed." },
+        { Languages.FR, "Echec du vacuum de la base de données." }
+      };
+
     static public readonly Dictionary<string, string> AskToExitApplication
       = new Dictionary<string, string>()
       {
@@ -197,8 +211,8 @@ namespace Ordisoftware.HebrewCommon
     static public readonly Dictionary<string, string> FileNotFound
       = new Dictionary<string, string>()
       {
-        { Languages.EN, "File not found: " + Globals.NL + Globals.NL + "{0}" },
-        { Languages.FR, "Fichier non trouvé :" + Globals.NL + Globals.NL + "{0}" }
+        { Languages.EN, $"File not found:{Globals.NL}{Globals.NL}{0}" },
+        { Languages.FR, $"Fichier non trouvé :{Globals.NL}{Globals.NL}{0}" }
       };
 
     static public readonly Dictionary<string, string> TermNotFound

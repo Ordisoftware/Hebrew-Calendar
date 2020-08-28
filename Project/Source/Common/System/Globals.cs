@@ -141,25 +141,15 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate if the running app is from dev folder else user installed.
     /// </summary>
-    static public bool IsDev
-    {
-      get
-      {
-        return Application.ExecutablePath.Contains("\\Bin\\Debug\\")
-            || Application.ExecutablePath.Contains("\\Bin\\Release\\");
-      }
-    }
+    static public bool IsDev 
+      => Application.ExecutablePath.Contains("\\Bin\\Debug\\") 
+      || Application.ExecutablePath.Contains("\\Bin\\Release\\");
 
     /// <summary>
     /// Indicate if the code is executed from the IDE else from a running app.
     /// </summary>
-    public static bool IsDesignTime
-    {
-      get
-      {
-        return System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
-      }
-    }
+    public static bool IsDesignTime 
+      => System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
 
     /// <summary>
     /// Indicate the root folder path of the application.
@@ -212,17 +202,20 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate filename of the grammar guide.
     /// </summary>
-    static public string GrammarGuideFilename => GuidesFolderPath + $"grammar-%LANG%.htm";
+    static public string GrammarGuideFilename 
+      => GuidesFolderPath + $"grammar-%LANG%.htm";
 
     /// <summary>
     /// Indicate filename of the method notice.
     /// </summary>
-    static public string MethodNoticeFilename => GuidesFolderPath + $"method-%LANG%.htm";
+    static public string MethodNoticeFilename 
+      => GuidesFolderPath + $"method-%LANG%.htm";
 
     /// <summary>
     /// Indicate the filename of the help.
     /// </summary>
-    static public string HelpFilename => HelpFolderPath + $"index-{Languages.Current}.htm";
+    static public string HelpFilename 
+      => HelpFolderPath + $"index-{Languages.Current}.htm";
 
     /// <summary>
     /// Indicate the user documents folder path.

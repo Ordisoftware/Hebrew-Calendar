@@ -62,9 +62,8 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="connection">The connection.</param>
     static public void CheckIntegrity(this OdbcConnection connection)
     {
-      try
-      {
-        using ( var sql = connection.CreateCommand() )
+      using ( var sql = connection.CreateCommand() )
+        try
         {
           sql.CommandText = "SELECT integrity_check FROM pragma_integrity_check()";
           var errors = new List<string>();
@@ -75,15 +74,15 @@ namespace Ordisoftware.HebrewCommon
               if ( str != "ok" ) errors.Add(str);
             }
           if ( errors.Count > 0 )
-            DisplayManager.ShowError("SQLite database has errors:" + Environment.NewLine + 
-                                     Environment.NewLine +
-                                     string.Join(Environment.NewLine, errors));
+          {
+            string msg = Localizer.DatabaseIntegrityError.GetLang(string.Join(Environment.NewLine, errors));
+            DisplayManager.ShowError(msg);
+          }
         }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
     }
 
     /// <summary>
@@ -92,19 +91,17 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="connection">The connection.</param>
     static public void Vacuum(this OdbcConnection connection)
     {
-      try
-      {
-        using ( var sql = connection.CreateCommand() )
+      using ( var sql = connection.CreateCommand() )
+        try
         {
           sql.CommandText = "VACUUM;";
           if ( sql.ExecuteNonQuery() != 0 )
-            DisplayManager.ShowError("SQLite database vacuum failed.");
+            DisplayManager.ShowError(Localizer.DatabaseVacuumError.GetLang());
         }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
     }
 
     static public bool CheckTable(this OdbcConnection connection, string table, string sql)
@@ -112,8 +109,7 @@ namespace Ordisoftware.HebrewCommon
       var command = new OdbcCommand("SELECT count(*) FROM sqlite_master " +
                                     "WHERE type = 'table' AND name = '" + table + "'", connection);
       if ( (int)command.ExecuteScalar() != 0 ) return false;
-      if ( sql != "" )
-        new OdbcCommand(sql, connection).ExecuteNonQuery();
+      if ( sql != "" ) new OdbcCommand(sql, connection).ExecuteNonQuery();
       return true;
     }
 

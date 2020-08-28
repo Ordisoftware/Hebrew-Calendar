@@ -35,6 +35,10 @@ namespace Ordisoftware.HebrewCommon
       {
         // TODO calculate labels and buttons size from font size
         PanelLetters.Controls.Clear();
+        int count = HebrewAlphabet.Codes.Length;
+        var labelsKey = new Label[count];
+        var labelsValue = new Label[count];
+        var buttonsLetter = new Button[count];
         int dy = 45;
         int dx = -dy;
         int x = 500 + dx;
@@ -47,9 +51,10 @@ namespace Ordisoftware.HebrewCommon
         var fontLetter = new Font("Hebrew", _FontSizeLetters, FontStyle.Bold);
         var fontValue = new Font("Microsoft Sans Serif", _FontSizeValues);
         var fontKey = new Font("Microsoft Sans Serif", _FontSizeKeys);
-        var labelValue = new Label();
-        var labelKey = new Label();
-        for ( int index = 0; index < HebrewAlphabet.Codes.Length; index++ )
+        Label labelValue = null;
+        Label labelKey = null;
+        Button buttonLetter = null;
+        for ( int index = 0; index < count; index++ )
         {
           // Label value
           labelValue = new Label();
@@ -62,24 +67,24 @@ namespace Ordisoftware.HebrewCommon
             labelValue.BackColor = Color.Transparent;
             labelValue.Text = HebrewAlphabet.ValuesSimple[index].ToString();
             labelValue.TextAlign = ContentAlignment.MiddleCenter;
-            PanelLetters.Controls.Add(labelValue);
+            labelsValue[index] = labelValue;
           }
           // Label key
           labelKey = new Label();
           if ( _ShowKeys )
           {
-            delta = ( _ShowValues ? labelValue.Height : -2 );
-            labelKey.Location = new Point(x, y + dy + delta + 2);
+            delta = _ShowValues ? labelValue.Height : -2;
+            labelKey.Location = new Point(x, y + dy + delta + 3);
             labelKey.Font = fontKey;
             labelKey.Size = sizeLabelKey;
             labelKey.Text = HebrewAlphabet.Codes[index];
             labelKey.ForeColor = colorLabel;
             labelKey.BackColor = Color.Transparent;
             labelKey.TextAlign = ContentAlignment.MiddleCenter;
-            PanelLetters.Controls.Add(labelKey);
+            labelsKey[index] = labelKey;
           }
           // Button letter
-          var buttonLetter = new Button();
+          buttonLetter = new Button();
           buttonLetter.Location = new Point(x, y);
           buttonLetter.Size = new Size(Math.Abs(dx), dy);
           buttonLetter.FlatStyle = FlatStyle.Flat;
@@ -91,7 +96,7 @@ namespace Ordisoftware.HebrewCommon
           buttonLetter.TabStop = false;
           buttonLetter.Click += ButtonLetter_Click;
           buttonLetter.ContextMenuStrip = ContextMenuLetter;
-          PanelLetters.Controls.Add(buttonLetter);
+          buttonsLetter[index] = buttonLetter;
           // Loop
           n += 1;
           if ( n != 12 )
@@ -108,6 +113,9 @@ namespace Ordisoftware.HebrewCommon
                + PanelSeparator.Height + Input.Height + 2
                + ( _ShowValues ? labelValue.Height : -2 )
                + ( _ShowKeys ? labelKey.Height : -2 );
+        PanelLetters.Controls.AddRange(buttonsLetter);
+        PanelLetters.Controls.AddRange(labelsValue);
+        PanelLetters.Controls.AddRange(labelsKey);
       }
       catch ( Exception ex )
       {

@@ -15,7 +15,6 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Text;
 
 namespace Ordisoftware.HebrewCommon
@@ -64,7 +63,9 @@ namespace Ordisoftware.HebrewCommon
     static public string GetLang<T>(this Dictionary<T, Dictionary<string, string>> values, T value)
     {
       return values != null && values.ContainsKey(value)
-             ? values[value] != null && values[value].ContainsKey(Languages.Current) ? values[value][Languages.Current] : ""
+             ? values[value] != null && values[value].ContainsKey(Languages.Current) 
+               ? values[value][Languages.Current] 
+               : ""
              : "";
     }
 
@@ -77,8 +78,10 @@ namespace Ordisoftware.HebrewCommon
     static public string GetLang<T>(this Dictionary<string, Dictionary<T, string>> values, T value)
     {
       return values != null && values.ContainsKey(Languages.Current)
-        ? values[Languages.Current] != null && values[Languages.Current].ContainsKey(value) ? values[Languages.Current][value] : ""
-        : "";
+             ? values[Languages.Current] != null && values[Languages.Current].ContainsKey(value) 
+               ? values[Languages.Current][value] 
+               : ""
+             : "";
     }
 
     /// <summary>

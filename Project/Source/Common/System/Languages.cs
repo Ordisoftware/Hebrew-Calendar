@@ -44,6 +44,7 @@ namespace Ordisoftware.HebrewCommon
         { Language.English, "en" },
         { Language.French, "fr" }
       };
+
     /// <summary>
     /// Indicate english language code.
     /// </summary>
