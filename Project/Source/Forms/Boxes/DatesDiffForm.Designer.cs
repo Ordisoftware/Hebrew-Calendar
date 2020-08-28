@@ -42,6 +42,7 @@
       this.MonthCalendar1 = new System.Windows.Forms.MonthCalendar();
       this.MonthCalendar2 = new System.Windows.Forms.MonthCalendar();
       this.lunationsLabel1 = new System.Windows.Forms.Label();
+      this.datesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.moonDaysLabel1 = new System.Windows.Forms.Label();
       this.solarDaysLabel1 = new System.Windows.Forms.Label();
       this.solarMonthsLabel1 = new System.Windows.Forms.Label();
@@ -53,11 +54,10 @@
       this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
       this.DateTimePicker2 = new System.Windows.Forms.DateTimePicker();
       this.ActionSetBookmarkStart = new System.Windows.Forms.Button();
+      this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionUseBookmarkStart = new System.Windows.Forms.Button();
       this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
-      this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.datesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -66,9 +66,9 @@
       solarYearsLabel = new System.Windows.Forms.Label();
       moonYearsLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.datesDiffItemBindingSource)).BeginInit();
       this.GroupBoxSun.SuspendLayout();
       this.groupBox1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.datesDiffItemBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // lunationsLabel
@@ -137,6 +137,10 @@
       this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datesDiffItemBindingSource, "MoonMonths", true));
       resources.ApplyResources(this.lunationsLabel1, "lunationsLabel1");
       this.lunationsLabel1.Name = "lunationsLabel1";
+      // 
+      // datesDiffItemBindingSource
+      // 
+      this.datesDiffItemBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.DatesDiffItem);
       // 
       // moonDaysLabel1
       // 
@@ -224,6 +228,12 @@
       this.ActionSetBookmarkStart.UseVisualStyleBackColor = true;
       this.ActionSetBookmarkStart.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
       // 
+      // MenuBookmarks
+      // 
+      this.MenuBookmarks.Name = "MenuBookmarks";
+      this.MenuBookmarks.ShowImageMargin = false;
+      resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
+      // 
       // ActionUseBookmarkStart
       // 
       this.ActionUseBookmarkStart.AllowDrop = true;
@@ -254,16 +264,6 @@
       this.ActionSetBookmarkEnd.UseVisualStyleBackColor = true;
       this.ActionSetBookmarkEnd.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
       // 
-      // MenuBookmarks
-      // 
-      this.MenuBookmarks.Name = "MenuBookmarks";
-      this.MenuBookmarks.ShowImageMargin = false;
-      resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
-      // 
-      // datesDiffItemBindingSource
-      // 
-      this.datesDiffItemBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.DatesDiffItem);
-      // 
       // DatesDiffForm
       // 
       resources.ApplyResources(this, "$this");
@@ -286,11 +286,11 @@
       this.Name = "DatesDiffForm";
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.datesDiffItemBindingSource)).EndInit();
       this.GroupBoxSun.ResumeLayout(false);
       this.GroupBoxSun.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.datesDiffItemBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
