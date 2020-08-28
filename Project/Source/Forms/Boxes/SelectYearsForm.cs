@@ -107,7 +107,10 @@ namespace Ordisoftware.HebrewCalendar
         {
           string text = Translations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendarLevels[index], diff);
           if ( !DisplayManager.QueryYesNo(text) )
+          {
+            DialogResult = DialogResult.None;
             return;
+          }
           break;
         }
       ActionCancel.Enabled = true;
