@@ -122,7 +122,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - F9 : Navigation window (also Ctrl+N)
 - Ctrl+Tab : Next view
 - Shift+Ctrl+Tab : Previous view
-- Ctrl+T : Go to today
+- Ctrl+T : Go to today (also Numpad0)
 - Ctrl+D : Search a day
 - Ctrl+C : Copy text report to clipboard
 - Ctrl+P : Print month view
