@@ -133,6 +133,12 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Ctrl+F1 : Statistics window
 - Ctrl+F2 : Generate calendar data
 - Ctrl+F3 : Dates difference calculator
+- Home : First month available in the database
+- End : Last month available in the database
+- Up : Next year
+- Down : Previous year
+- Right : Next month
+- Left : Previous month
 - F8 : Preferences
 - F11 : Help
 - F12 : About
@@ -149,6 +155,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 #### 2020.09.__ - Version 5.0
 
+- Add keyboard shortcuts to navigate in the calendar month view.
 - Add search gregorian month form.
 - Add usage statistics form in tools menu.
 - Add tools menu duplicated in the tray icon.
@@ -159,7 +166,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Add button to disable auto lock option in lock session form.
 - Add option to auto generate calendar when expired else show dialog box.
 - Add option to set the maximum years interval allowed to generate the data.
-- - Add mute windows volume in addition to stop media playing.
+- Add mute windows volume in addition to stop media playing.
 - Fix stop media playing (stop instead of play/pause media).
 - Fix app not responding on windows logoff or system shutdown.
 - Improve dates diff calculator to show more stats in a form having bookmarks.
