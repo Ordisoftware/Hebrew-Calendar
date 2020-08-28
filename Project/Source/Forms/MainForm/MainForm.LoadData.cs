@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private void LoadData(bool recurse = false)
+    private void LoadData()
     {
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
@@ -44,7 +44,7 @@ namespace Ordisoftware.HebrewCalendar
         LoadingForm.Instance.Initialize(Translations.ProgressLoadingData.GetLang(),
                                         (int)command.ExecuteScalar() * 2,
                                         Program.LoadingFormLoadDB);
-        if ( !recurse ) DataSet.LunisolarDays.RowChanged += update;
+        DataSet.LunisolarDays.RowChanged += update;
         connection.Close();
         Program.Chrono.Restart();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
@@ -55,14 +55,8 @@ namespace Ordisoftware.HebrewCalendar
         if ( DataSet.LunisolarDays.Count > 0 && !Program.Settings.FirstLaunch )
         {
           IsGenerating = true;
-          try
-          {
-            FillMonths();
-          }
-          finally
-          {
-            IsGenerating = false;
-          }
+          try { FillMonths(); }
+          finally { IsGenerating = false; }
           try
           {
             var row = DataSet.Report.FirstOrDefault();
@@ -76,18 +70,10 @@ namespace Ordisoftware.HebrewCalendar
         else
         {
           PreferencesForm.Run();
-          Enabled = true;
-          do
-          {
-            DoGenerate(this, null);
-          }
-          while ( DataSet.LunisolarDays.Count == 0 );
+          string errors = CheckRegenerateCalendar(true);
+          if ( errors != null )
+            throw new Exception(string.Format(Translations.FatalGenerateError.GetLang(), errors));
         }
-      }
-      catch ( AbortException )
-      {
-        LoadData(true);
-        return;
       }
       catch ( OdbcException ex )
       {
@@ -97,8 +83,7 @@ namespace Ordisoftware.HebrewCalendar
       catch ( Exception ex )
       {
         ex.Manage();
-        LoadData();
-        return;
+        Environment.Exit(-1);
       }
       finally
       {

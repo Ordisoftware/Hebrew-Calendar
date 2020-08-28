@@ -26,16 +26,27 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
+    static public int MaxGenerateErrors = 15;
+
     private readonly List<string> GenerateErrors = new List<string>();
 
     private int ProgressCount;
+
+    private bool AddGenerateError(string method, string date, Exception ex)
+    {
+      var einfo = new ExceptionInfo(this, ex);
+      GenerateErrors.Add($"{(GenerateErrors.Count + 1).ToString("00")}) " + 
+                         $"{method.PadRight(13)} {date} : " +
+                         $"{einfo.SingleLineText}");
+      return GenerateErrors.Count >= MaxGenerateErrors + 1;
+    }
 
     /// <summary>
     /// Create the calendar days items.
     /// </summary>
     /// <param name="yearFirst">The first year.</param>
     /// <param name="yearLast">The last year.</param>
-    private void GenerateData(int yearFirst, int yearLast)
+    private string GenerateData(int yearFirst, int yearLast)
     {
       IsGenerating = true;
       PanelViewText.Parent = null;
@@ -55,7 +66,7 @@ namespace Ordisoftware.HebrewCalendar
         TableAdapterManager.UpdateAll(DataSet);
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         ReportTableAdapter.Fill(DataSet.Report);
-         var d1 = new DateTime(yearFirst, 1, DateTime.DaysInMonth(yearFirst, 1));
+        var d1 = new DateTime(yearFirst, 1, DateTime.DaysInMonth(yearFirst, 1));
         var d2 = new DateTime(yearLast, 12, DateTime.DaysInMonth(yearLast, 12));
         ProgressCount = (int)( d2 - d1 ).TotalDays;
         try
@@ -67,7 +78,7 @@ namespace Ordisoftware.HebrewCalendar
             {
               CalendarText.Text = GenerateReport();
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
               ex.Manage();
             }
@@ -102,9 +113,15 @@ namespace Ordisoftware.HebrewCalendar
       }
       if ( GenerateErrors.Count != 0 )
       {
-        DisplayManager.ShowWarning(Text, string.Join(Environment.NewLine, GenerateErrors));
+        string errors = string.Join(Environment.NewLine, GenerateErrors);
+        errors = Program.GPSToString() + Environment.NewLine + Environment.NewLine + errors;
+        var form = ShowTextForm.Create(Text, errors, 600, 400, true, false);
+        form.TextBox.Font = new System.Drawing.Font("Courier new", 8);
+        form.ShowDialog();
         GenerateErrors.Clear();
+        return errors;
       }
+      return null;
     }
 
     /// <summary>
@@ -130,10 +147,12 @@ namespace Ordisoftware.HebrewCalendar
               row.LunarMonth = 0;
               InitializeDay(row);
               DataSet.LunisolarDays.AddLunisolarDaysRow(row);
+              throw new FormatException();
             }
             catch ( Exception ex )
             {
-              GenerateErrors.Add($"{year}-{month}-{day}: [{nameof(PopulateDays)}] { ex.Message}");
+              if ( AddGenerateError(nameof(PopulateDays), $"{year}-{month.ToString("00")}-{day.ToString("00")}", ex) )
+                return;
             }
       }
     }
@@ -169,10 +188,12 @@ namespace Ordisoftware.HebrewCalendar
         day.SeasonChange = (int)data.RealSeasonChange;
         day.LunarMonth = 0;
         day.TorahEvents = 0;
+        throw new NullReferenceException();
       }
       catch ( Exception ex )
       {
-        GenerateErrors.Add($"{day.Date}: [{nameof(InitializeDay)}] { ex.Message}");
+        if ( AddGenerateError(nameof(InitializeDay), day.Date, ex) )
+          return;
       }
     }
 
@@ -198,10 +219,12 @@ namespace Ordisoftware.HebrewCalendar
           if ( (MoonRise)day.MoonriseType == MoonRise.NextDay && Program.Settings.TorahEventsCountAsMoon )
             delta = 1;
           day.LunarDay -= delta;
+          throw new ArgumentOutOfRangeException();
         }
         catch ( Exception ex )
         {
-          GenerateErrors.Add($"{day.Date}: [{nameof(AnalyseDays)}] { ex.Message}");
+          if ( AddGenerateError(nameof(AnalyseDays), day.Date, ex) )
+            return;
         }
     }
 
@@ -236,6 +259,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       try
       {
+        throw new ArgumentException();
         var dateDay = SQLite.GetDate(day.Date);
         bool check(Data.DataSet.LunisolarDaysRow row)
         {
@@ -289,7 +313,8 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception ex )
       {
-        GenerateErrors.Add($"{day.Date}: [{nameof(AnalyzeDay)}] { ex.Message}");
+        if ( AddGenerateError(nameof(AnalyzeDay), day.Date, ex) )
+          return;
       }
     }
 

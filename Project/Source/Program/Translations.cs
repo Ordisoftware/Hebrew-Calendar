@@ -134,6 +134,19 @@ namespace Ordisoftware.HebrewCalendar
         { Languages.FR, "{0} années à partir de maintenant" }
       };
 
+    static public readonly Dictionary<string, string> FatalGenerateError
+      = new Dictionary<string, string>
+      {
+        { Languages.EN, "Fatal error while generating data." + Globals.NL +
+                        "The application must exit." + Globals.NL +
+                        "Contact support, please." + Globals.NL + Globals.NL +
+                        "{0}" },
+        { Languages.FR, "Erreur fatale lors de la génération des données." + Globals.NL +
+                        "L'application doit fermer." + Globals.NL +
+                        "Veuillez contacter le support." + Globals.NL + Globals.NL +
+                        "{0}" }
+      };
+
   }
 
 }

@@ -23,7 +23,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private void DoGenerate(object sender, EventArgs e)
+    private string DoGenerate(object sender, EventArgs e)
     {
       try
       {
@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             var form = new SelectYearsForm();
             if ( e == null ) form.ActionCancel.Enabled = false;
-            if ( form.ShowDialog() == DialogResult.Cancel ) return;
+            if ( form.ShowDialog() == DialogResult.Cancel ) return null;
             yearFirst = (int)form.EditYearFirst.Value;
             yearLast = (int)form.EditYearLast.Value;
           }
@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewCalendar
             yearLast = YearLast;
           }
           ClearLists();
-          GenerateData(yearFirst, yearLast);
+          return GenerateData(yearFirst, yearLast);
         }
         finally
         {
@@ -61,13 +61,10 @@ namespace Ordisoftware.HebrewCalendar
           }
         }
       }
-      catch ( AbortException )
-      {
-        throw;
-      }
       catch ( Exception ex )
       {
         ex.Manage();
+        return null;
       }
     }
 

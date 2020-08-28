@@ -182,7 +182,8 @@ namespace Ordisoftware.HebrewCalendar
           }
           catch ( Exception ex )
           {
-            GenerateErrors.Add($"{row.Date}: [{nameof(FillMonths)}] { ex.Message}");
+            if ( AddGenerateError(nameof(FillMonths), row.Date, ex) )
+              return;
           }
       }
       finally

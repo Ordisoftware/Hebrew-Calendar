@@ -95,27 +95,25 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Check if the calendar must be generated again in it comes near the end.
     /// </summary>
-    private void CheckRegenerateCalendar()
+    private string CheckRegenerateCalendar(bool auto = false)
     {
       try
       {
         if ( DateTime.Today.Year >= YearLast )
-          if ( Program.Settings.AutoRegenerate )
+          if ( auto || Program.Settings.AutoRegenerate )
           {
             YearFirst = DateTime.Today.Year - 1;
             YearLast = YearFirst + Program.Settings.AutoGenerateYearsInternal - 1;
-            DoGenerate(null, new EventArgs());
+            return DoGenerate(null, new EventArgs());
           }
           else
             ActionGenerate.PerformClick();
-      }
-      catch ( AbortException )
-      {
       }
       catch ( Exception ex )
       {
         ex.Manage();
       }
+      return null;
     }
 
   }

@@ -54,7 +54,6 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private MainForm()
     {
-      ChronoStart.Start();
       InitializeComponent();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
@@ -66,6 +65,7 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
       ActionViewMoonMonths.Enabled = Globals.IsDev; // TODO remove when ready
+      ChronoStart.Start();
     }
 
     /// <summary>
@@ -692,9 +692,6 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         DoGenerate(sender, e);
-      }
-      catch ( AbortException )
-      {
       }
       catch ( Exception ex )
       {
