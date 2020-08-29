@@ -106,10 +106,11 @@ namespace Ordisoftware.HebrewCalendar
                         "La semaine solaire est comptée tous les 7 jours depuis la plus petite date." + Globals.NL + Globals.NL +
                         "Le jours lunaire va du coucher de la lune au suivant." + Globals.NL +
                         "Un mois lunaire va de la nouvelle lune à la suivante." + Globals.NL + Globals.NL +
-                        "Exemples :" + Globals.NL + Globals.NL +
-                        "- 2 semaines solaires indiquent qu'il s'est écoulé 8 jours et plus mais 14 ou moins." + Globals.NL +
-                        "- 2 mois solaires indiquent qu'il s'est écoulé 1 mois et qu'on est dans le 2ème." + Globals.NL +
-                        "- 2 mois lunaires indiquent qu'il s'est écoulé 1 lune et qu'on se trouve dans la 2ème." + Globals.NL + Globals.NL +
+                        "Voici quelques exemples." + Globals.NL + Globals.NL +
+                        "Deux semaines solaires indiquent qu'il s'est écoulé 8 jours et plus mais 14 ou moins." + Globals.NL + Globals.NL +
+                        "Deux mois solaires indiquent que la date la plus ancienne se trouve dans un mois calendaire et que l'autre se trouve dans le mois suivant, quel que soient le nombre de jours entre, c'est-à-dire que les dates sélectionnées sont à cheval sur 2 mois." + Globals.NL + Globals.NL +
+                        "Deux mois lunaires indiquent qu'il s'est écoulé 1 lune et qu'on se trouve dans la 2ème." + Globals.NL + Globals.NL +
+                        "Il en est de même pour les années solaires." + Globals.NL + Globals.NL +
                         "Concernant les jours lunaires, la lune saute régulièrement un jour solaire qui se trouve donc être à cheval entre deux jours lunaires, comme par exemple le 10/08/2020 qui n'est pas compté car il n'y a pas de lever de la lune ce jour solaire-là."
           }
       };

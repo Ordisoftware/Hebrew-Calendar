@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewCalendar
     /// Indicate dates diff notice form.
     /// </summary>
     static public ShowTextForm DatesDiffNoticeForm
-      => ShowTextForm.Create(Translations.DatesDiffNoticeTitle, Translations.DatesDiffNotice, 480, 360);
+      => ShowTextForm.Create(Translations.DatesDiffNoticeTitle, Translations.DatesDiffNotice, 500, 440);
 
     /// <summary>
     /// Indicate filename of the GPS database.
