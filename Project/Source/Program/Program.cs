@@ -44,7 +44,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !SystemHelper.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
-      Settings.UpgradeIfRequired(ref upgrade);
+      Settings.CheckUpgradeRequired(ref upgrade);
       Settings.UpgradeRequired = upgrade;
       CheckSettingsReset();
       Application.EnableVisualStyles();

@@ -83,7 +83,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Check is application's settings must be upgraded and apply it if necessary.
     /// </summary>
-    static public void UpgradeIfRequired(this ApplicationSettingsBase settings, ref bool upgradeRequired)
+    static public void CheckUpgradeRequired(this ApplicationSettingsBase settings, ref bool upgradeRequired)
     {
       try
       {
