@@ -220,6 +220,11 @@ namespace Ordisoftware.HebrewCalendar
       Program.ShabatNoticeForm.ShowDialog();
     }
 
+    private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
+    {
+      Program.CelebrationsNoticeForm.ShowDialog();
+    }
+
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       DateTime date = DateTime.Today;
