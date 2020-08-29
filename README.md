@@ -175,8 +175,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Improve month view drawing speed by a half.
 - Improve data generation speed by a half.
 - Improve keyboard shortcuts.
-- Remove the generate years selection box at startup if database is empty.
-- Remove the need to generate data after the application has been upgraded.
+- Remove the generate years selection box at startup if database is empty or new.
 - Some UI/UX improvements.
 - Some code refactorings.
 
