@@ -997,16 +997,16 @@
     <value>NoControl</value>
   </data>
   <data name="cPULoadLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 25</value>
+    <value>15, 25</value>
   </data>
   <data name="cPULoadLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
+    <value>63, 13</value>
   </data>
   <data name="cPULoadLabel.TabIndex" type="System.Int32, mscorlib">
     <value>110</value>
   </data>
   <data name="cPULoadLabel.Text" xml:space="preserve">
-    <value>CPU load:</value>
+    <value>CPU global:</value>
   </data>
   <data name="&gt;&gt;cPULoadLabel.Name" xml:space="preserve">
     <value>cPULoadLabel</value>
@@ -1015,10 +1015,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cPULoadLabel.Parent" xml:space="preserve">
-    <value>GroupBoxRunning</value>
+    <value>GroupBoxSystemLoad</value>
   </data>
   <data name="&gt;&gt;cPULoadLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <metadata name="processPriorityLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -1162,7 +1162,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 2</value>
+    <value>445, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -1189,10 +1189,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 528</value>
+    <value>10, 503</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>535, 28</value>
+    <value>524, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -1207,17 +1207,17 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>525, 17</value>
   </metadata>
-  <data name="dBEventsCountLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <metadata name="ApplicationStatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="dBEventsCountLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="dBEventsCountLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1248,6 +1248,9 @@
   <data name="&gt;&gt;dBEventsCountLabel1.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <metadata name="ApplicationStatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="dBFileSizeLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -1512,12 +1515,12 @@
   <data name="&gt;&gt;monthViewEventsCountLabel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="physicalMemoryFreeLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <metadata name="SystemStatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>282, 17</value>
   </metadata>
+  <data name="physicalMemoryFreeLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="physicalMemoryFreeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1548,6 +1551,9 @@
   <data name="&gt;&gt;physicalMemoryFreeLabel1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="SystemStatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>282, 17</value>
+  </metadata>
   <data name="runningTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1978,7 +1984,7 @@
     <value>NoControl</value>
   </data>
   <data name="cPULoadLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>403, 25</value>
+    <value>138, 25</value>
   </data>
   <data name="cPULoadLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -1999,10 +2005,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cPULoadLabel1.Parent" xml:space="preserve">
-    <value>GroupBoxRunning</value>
+    <value>GroupBoxSystemLoad</value>
   </data>
   <data name="&gt;&gt;cPULoadLabel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="processPriorityLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2074,7 +2080,7 @@
     <value>15, 79</value>
   </data>
   <data name="GroupBoxTimings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 145</value>
+    <value>250, 179</value>
   </data>
   <data name="GroupBoxTimings.TabIndex" type="System.Int32, mscorlib">
     <value>115</value>
@@ -2092,10 +2098,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxTimings.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxDatabase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 260</value>
+    <value>15, 269</value>
   </data>
   <data name="GroupBoxDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 225</value>
@@ -2116,10 +2122,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxDatabase.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="GroupBox3Memoty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 260</value>
+    <value>280, 269</value>
   </data>
   <data name="GroupBox3Memoty.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 225</value>
@@ -2140,7 +2146,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBox3Memoty.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="operatingSystemTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 133</value>
@@ -2209,13 +2215,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxSystem.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="GroupBoxRunning.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 13</value>
   </data>
   <data name="GroupBoxRunning.Size" type="System.Drawing.Size, System.Drawing">
-    <value>516, 55</value>
+    <value>250, 55</value>
   </data>
   <data name="GroupBoxRunning.TabIndex" type="System.Int32, mscorlib">
     <value>119</value>
@@ -2233,6 +2239,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxRunning.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupBoxSystemLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 13</value>
+  </data>
+  <data name="GroupBoxSystemLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 55</value>
+  </data>
+  <data name="GroupBoxSystemLoad.TabIndex" type="System.Int32, mscorlib">
+    <value>119</value>
+  </data>
+  <data name="GroupBoxSystemLoad.Text" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSystemLoad.Name" xml:space="preserve">
+    <value>GroupBoxSystemLoad</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSystemLoad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSystemLoad.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSystemLoad.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2242,10 +2272,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>555, 566</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>544, 541</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -2262,16 +2289,16 @@
   <data name="&gt;&gt;Timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SystemStatisticsDataBindingSource.Name" xml:space="preserve">
-    <value>SystemStatisticsDataBindingSource</value>
-  </data>
-  <data name="&gt;&gt;SystemStatisticsDataBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ApplicationStatisticsDataBindingSource.Name" xml:space="preserve">
     <value>ApplicationStatisticsDataBindingSource</value>
   </data>
   <data name="&gt;&gt;ApplicationStatisticsDataBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SystemStatisticsDataBindingSource.Name" xml:space="preserve">
+    <value>SystemStatisticsDataBindingSource</value>
+  </data>
+  <data name="&gt;&gt;SystemStatisticsDataBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

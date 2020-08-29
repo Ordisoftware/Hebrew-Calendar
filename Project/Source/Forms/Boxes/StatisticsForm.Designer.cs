@@ -63,6 +63,7 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.Timer = new System.Windows.Forms.Timer(this.components);
       this.dBEventsCountLabel1 = new System.Windows.Forms.Label();
+      this.ApplicationStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.dBFileSizeLabel1 = new System.Windows.Forms.Label();
       this.dBFirstYearLabel1 = new System.Windows.Forms.Label();
       this.dBLastYearLabel1 = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
       this.loadDataTimeLabel1 = new System.Windows.Forms.Label();
       this.monthViewEventsCountLabel1 = new System.Windows.Forms.Label();
       this.physicalMemoryFreeLabel1 = new System.Windows.Forms.Label();
+      this.SystemStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.runningTimeLabel1 = new System.Windows.Forms.Label();
       this.startingTimeLabel1 = new System.Windows.Forms.Label();
       this.totalVisibleMemoryLabel1 = new System.Windows.Forms.Label();
@@ -95,8 +97,7 @@
       this.operatingSystemTextBox = new System.Windows.Forms.TextBox();
       this.processorNameTextBox = new System.Windows.Forms.TextBox();
       this.GroupBoxRunning = new System.Windows.Forms.GroupBox();
-      this.SystemStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.ApplicationStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.GroupBoxSystemLoad = new System.Windows.Forms.GroupBox();
       dBEventsCountLabel = new System.Windows.Forms.Label();
       dBFileSizeLabel = new System.Windows.Forms.Label();
       dBFirstYearLabel = new System.Windows.Forms.Label();
@@ -126,13 +127,14 @@
       currentThreadPriorityLabel = new System.Windows.Forms.Label();
       cPUNameLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
       this.GroupBoxTimings.SuspendLayout();
       this.GroupBoxDatabase.SuspendLayout();
       this.GroupBox3Memoty.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
       this.GroupBoxRunning.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
+      this.GroupBoxSystemLoad.SuspendLayout();
       this.SuspendLayout();
       // 
       // dBEventsCountLabel
@@ -310,6 +312,11 @@
       this.dBEventsCountLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBEventsCount", true));
       this.dBEventsCountLabel1.Name = "dBEventsCountLabel1";
       // 
+      // ApplicationStatisticsDataBindingSource
+      // 
+      this.ApplicationStatisticsDataBindingSource.AllowNew = false;
+      this.ApplicationStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.ApplicationStatistics);
+      // 
       // dBFileSizeLabel1
       // 
       resources.ApplyResources(this.dBFileSizeLabel1, "dBFileSizeLabel1");
@@ -364,6 +371,11 @@
       this.physicalMemoryFreeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "PhysicalMemoryFree", true));
       this.physicalMemoryFreeLabel1.Name = "physicalMemoryFreeLabel1";
       // 
+      // SystemStatisticsDataBindingSource
+      // 
+      this.SystemStatisticsDataBindingSource.AllowNew = false;
+      this.SystemStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCommon.SystemStatistics);
+      // 
       // runningTimeLabel1
       // 
       this.runningTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "RunningTime", true));
@@ -397,7 +409,7 @@
       // lastGenerateDateLabel1
       // 
       resources.ApplyResources(this.lastGenerateDateLabel1, "lastGenerateDateLabel1");
-      this.lastGenerateDateLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "LastGenerated", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "g"));
+      this.lastGenerateDateLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "LastGenerated", true));
       this.lastGenerateDateLabel1.Name = "lastGenerateDateLabel1";
       // 
       // memoryPeakWorkingLabel1
@@ -556,27 +568,24 @@
       // 
       this.GroupBoxRunning.Controls.Add(runningTimeLabel);
       this.GroupBoxRunning.Controls.Add(this.runningTimeLabel1);
-      this.GroupBoxRunning.Controls.Add(cPULoadLabel);
-      this.GroupBoxRunning.Controls.Add(this.cPULoadLabel1);
       resources.ApplyResources(this.GroupBoxRunning, "GroupBoxRunning");
       this.GroupBoxRunning.Name = "GroupBoxRunning";
       this.GroupBoxRunning.TabStop = false;
       // 
-      // SystemStatisticsDataBindingSource
+      // GroupBoxSystemLoad
       // 
-      this.SystemStatisticsDataBindingSource.AllowNew = false;
-      this.SystemStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCommon.SystemStatistics);
-      // 
-      // ApplicationStatisticsDataBindingSource
-      // 
-      this.ApplicationStatisticsDataBindingSource.AllowNew = false;
-      this.ApplicationStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.ApplicationStatistics);
+      this.GroupBoxSystemLoad.Controls.Add(cPULoadLabel);
+      this.GroupBoxSystemLoad.Controls.Add(this.cPULoadLabel1);
+      resources.ApplyResources(this.GroupBoxSystemLoad, "GroupBoxSystemLoad");
+      this.GroupBoxSystemLoad.Name = "GroupBoxSystemLoad";
+      this.GroupBoxSystemLoad.TabStop = false;
       // 
       // StatisticsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.GroupBoxSystemLoad);
       this.Controls.Add(this.GroupBoxRunning);
       this.Controls.Add(this.GroupBoxSystem);
       this.Controls.Add(this.GroupBox3Memoty);
@@ -592,6 +601,8 @@
       this.Load += new System.EventHandler(this.SystemStatisticsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).EndInit();
       this.GroupBoxTimings.ResumeLayout(false);
       this.GroupBoxTimings.PerformLayout();
       this.GroupBoxDatabase.ResumeLayout(false);
@@ -602,8 +613,8 @@
       this.GroupBoxSystem.PerformLayout();
       this.GroupBoxRunning.ResumeLayout(false);
       this.GroupBoxRunning.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).EndInit();
+      this.GroupBoxSystemLoad.ResumeLayout(false);
+      this.GroupBoxSystemLoad.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -649,5 +660,6 @@
     private System.Windows.Forms.CheckBox EditAlwaysOnTop;
     private System.Windows.Forms.TextBox operatingSystemTextBox;
     private System.Windows.Forms.TextBox processorNameTextBox;
+    private System.Windows.Forms.GroupBox GroupBoxSystemLoad;
   }
 }

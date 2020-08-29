@@ -27,15 +27,22 @@ namespace Ordisoftware.HebrewCommon
     static public readonly Dictionary<string, string> EmptySlot
       = new Dictionary<string, string>()
       {
-        { Languages.EN, "(Not defined)" },
-        { Languages.FR, "(Non définit)" }
+        { Languages.EN, "Not defined" },
+        { Languages.FR, "Non définit" }
       };
 
-    static public readonly Dictionary<string, string> Initialization
+    static public readonly Dictionary<string, string> Initializing
       = new Dictionary<string, string>()
       {
-        { Languages.EN, "Initialization" },
+        { Languages.EN, "Initializing" },
         { Languages.FR, "Initialisation" }
+      };
+
+    static public readonly Dictionary<string, string> Processing
+      = new Dictionary<string, string>()
+      {
+        { Languages.EN, "Processing" },
+        { Languages.FR, "Traitement" }
       };
 
     static public readonly Dictionary<string, string> DatabaseIntegrityError
