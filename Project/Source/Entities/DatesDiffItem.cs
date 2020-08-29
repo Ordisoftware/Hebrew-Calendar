@@ -60,11 +60,11 @@ namespace Ordisoftware.HebrewCalendar
       {
         int count = (int)( Date2 - Date1 ).TotalDays;
         int countData = Dates.Count;
-        if ( count - countData >= Program.LoadingFormDiffDates )
+        if ( count - countData >= Program.LoadingFormDatesDiff )
         {
           LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(), 
                                           count, 
-                                          Program.LoadingFormDiffDates + 1);
+                                          Program.LoadingFormDatesDiff + 1);
           if ( sender != null ) sender.Enabled = false;
         }
         var data = Dates.Get(Date1);
