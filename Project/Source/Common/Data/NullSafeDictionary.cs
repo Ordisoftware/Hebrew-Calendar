@@ -18,13 +18,19 @@ using System.Collections.Generic;
 namespace Ordisoftware.HebrewCommon
 {
 
-  public class NullSafeDictionary<TKey, TValue> : Dictionary<TKey, TValue>
+  /// <summary>
+  /// Provide null safe dictionary.
+  /// </summary>
+  public class NullSafeDictionary<TKey, TValue> : Dictionary<TKey, TValue> where TValue : new()
   {
     public new TValue this[TKey key]
     {
       get
       {
-        return ContainsKey(key) ? base[key] : default(TValue);
+        if ( ContainsKey(key) ) return base[key];
+        var value = new TValue();
+        Add(key, value);
+        return value;
       }
       set
       {

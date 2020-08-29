@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate url tag.
     /// </summary>
-    private string TagURL = "URL = ";
+    private const string TagURL = "URL = ";
 
     /// <summary>
     /// Indicate items.
@@ -44,8 +44,8 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the multilingual title of the list to create a folder
     /// </summary>
-    public Dictionary<string, string> Title { get; }
-      = new Dictionary<string, string>();
+    public NullSafeStringDictionary Title { get; }
+      = new NullSafeStringDictionary();
 
     /// <summary>
     /// Indicate if a separator must be inserted before the folder
@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     protected override void DoReLoad(string filename)
     {
-      if ( filename == "" ) return;
+      if ( string.IsNullOrEmpty(filename) ) return;
       try
       {
         Title.Clear();

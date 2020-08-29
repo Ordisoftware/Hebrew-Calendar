@@ -13,7 +13,6 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -31,24 +30,24 @@ namespace Ordisoftware.HebrewCalendar
     static private readonly string AskToGenerateBigCalendarFR
       = "Générer un calendrier pour plus de {0} ({1}) ans n'est pas recommandé et peut causer ";
 
-    static public readonly List<Dictionary<string, string>> AskToGenerateBigCalendar
-      = new List<Dictionary<string, string>>
+    static public readonly NullSafeList<NullSafeStringDictionary> AskToGenerateBigCalendar
+      = new NullSafeList<NullSafeStringDictionary>
       {
-        new Dictionary<string, string>
+        new NullSafeStringDictionary
           {
             { Languages.EN, AskToGenerateBigCalendarEN + "a slight slowdown." + Globals.NL + Globals.NL +
                             Localizer.AskToContinue[Languages.EN] },
             { Languages.FR, AskToGenerateBigCalendarFR + "un léger ralentissement." + Globals.NL + Globals.NL +
                             Localizer.AskToContinue[Languages.FR] },
         },
-        new Dictionary<string, string>
+        new NullSafeStringDictionary
         {
           { Languages.EN, AskToGenerateBigCalendarEN + "a noticeable slowdown." + Globals.NL + Globals.NL +
                           Localizer.AskToContinue[Languages.EN] },
           { Languages.FR, AskToGenerateBigCalendarFR + "un ralentissement notable." + Globals.NL + Globals.NL +
                           Localizer.AskToContinue[Languages.FR] },
         },
-        new Dictionary<string, string>
+        new NullSafeStringDictionary
         {
           { Languages.EN, AskToGenerateBigCalendarEN + "a significant slowdown." + Globals.NL + Globals.NL +
                           "Do not use this value for a daily usage." + Globals.NL + Globals.NL +
@@ -57,7 +56,7 @@ namespace Ordisoftware.HebrewCalendar
                           "N'utilisez pas cette valeur pour un usage quotidien." + Globals.NL + Globals.NL +
                           Localizer.AskToContinue[Languages.FR] },
         },
-        new Dictionary<string, string>
+        new NullSafeStringDictionary
         {
           { Languages.EN, AskToGenerateBigCalendarEN + "a considerable slowdown." + Globals.NL + Globals.NL +
                           "Use this value only for occasional searches." + Globals.NL + Globals.NL +
@@ -66,7 +65,7 @@ namespace Ordisoftware.HebrewCalendar
                           "N'utilisez cette valeur que pour des recherches ponctuelles." + Globals.NL + Globals.NL +
                           Localizer.AskToContinue[Languages.FR] },
         },
-        new Dictionary<string, string>
+        new NullSafeStringDictionary
         {
           { Languages.EN, AskToGenerateBigCalendarEN + "a serious slowdown." + Globals.NL + Globals.NL +
                           "Use this value only with a powerful computer." + Globals.NL + Globals.NL +

@@ -19,22 +19,28 @@ using System.Collections.Generic;
 namespace Ordisoftware.HebrewCommon
 {
 
-  public class NullSafeList<T> : List<T>
+  /// <summary>
+  /// Provide null safe safe list.
+  /// </summary>
+  public class NullSafeList<T> : List<T> where T : new()
   {
     public new T this[int index]
     {
       get
       {
-        return index >= 0 && index < Count ? base[index] : default(T);
+        if ( index < Count ) return base[index];
+        var item = new T();
+        this[index] = item;
+        return item;
       }
       set
       {
-        if ( index >= 0 && index < Count )
+        if ( index < Count )
           base[index] = value;
         else
         {
           Capacity = index + 1;
-          AddRange(Enumerable.Repeat(default(T), index + 1 - Count));
+          AddRange(Enumerable.Repeat(new T(), index + 1 - Count));
           base[index] = value;
         }
       }

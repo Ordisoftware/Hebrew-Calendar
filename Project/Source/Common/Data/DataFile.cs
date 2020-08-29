@@ -83,6 +83,9 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     protected abstract void DoReLoad(string filename);
 
+    /// <summary>
+    /// Load or reload data from disk.
+    /// </summary>
     public void ReLoad(bool reset = false)
     {
       DoReLoad(CheckFile(reset));

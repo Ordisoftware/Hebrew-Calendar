@@ -13,7 +13,6 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -25,12 +24,12 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public Dictionary<string, List<SuspendDelayItem>> SuspendReminderDelays
-      = new Dictionary<string, List<SuspendDelayItem>>
+    static public NullSafeDictionary<string, NullSafeList<SuspendDelayItem>> SuspendReminderDelays
+      = new NullSafeDictionary<string, NullSafeList<SuspendDelayItem>>
       {
         {
           Languages.EN,
-          new List<SuspendDelayItem>
+          new NullSafeList<SuspendDelayItem>
           {
             new SuspendDelayItem("None", 0),
             new SuspendDelayItem("5 minutes", 5),
@@ -49,7 +48,7 @@ namespace Ordisoftware.HebrewCalendar
         },
         {
           Languages.FR,
-          new List<SuspendDelayItem>
+          new NullSafeList<SuspendDelayItem>
           {
             new SuspendDelayItem("Aucun", 0),
             new SuspendDelayItem("5 minutes", 5),

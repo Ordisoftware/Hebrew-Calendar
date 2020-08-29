@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate image of the configure menu item.
     /// </summary>
-    static Image ImageConfigure;
+    static private Image ImageConfigure;
 
     /// <summary>
     /// Static constructor.
@@ -175,7 +175,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
     /// </summary>
-    static private Dictionary<string, string> AlreadyAcessedVarNames = new Dictionary<string, string>();
+    static private NullSafeStringDictionary AlreadyAcessedVarNames = new NullSafeStringDictionary();
     static private string NameOfFromStack(this object instance, int level = 1)
     {
       try

@@ -24,7 +24,7 @@ namespace Ordisoftware.HebrewCommon
   public partial class HTMLBrowserForm : Form
   {
 
-    private Dictionary<string, string> Title;
+    private NullSafeStringDictionary Title;
 
     private string FilenameTemplate;
 
@@ -35,7 +35,7 @@ namespace Ordisoftware.HebrewCommon
       ActiveControl = WebBrowser;
     }
 
-    public HTMLBrowserForm(Dictionary<string, string> title,
+    public HTMLBrowserForm(NullSafeStringDictionary title,
                            string filenameTemplate,
                            string locationPropertyName,
                            string clientSizePropertyName)

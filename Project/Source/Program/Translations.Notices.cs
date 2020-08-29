@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -25,8 +24,8 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public readonly Dictionary<string, string> NoticeMoonDayTextFormat
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary NoticeMoonDayTextFormat
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Use the following tags to replace values:" + Globals.NL + Globals.NL +
                         "%MONTHNAME% : moon month name" + Globals.NL +
@@ -38,15 +37,15 @@ namespace Ordisoftware.HebrewCalendar
                         "%DAYNUM% : numéro du jour lunaire" },
       };
 
-    static public readonly Dictionary<string, string> NoticeShabatTitle
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary NoticeShabatTitle
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Shabat notice" },
         { Languages.FR, "Notice du shabat" }
       };
 
-    static public readonly Dictionary<string, string> NoticeShabatText
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary NoticeShabatText
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "The shabat is the \"day of rest\" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity." + Globals.NL + Globals.NL +
                         "The tradition attributes this day to Saturday. We can however think according to Béréshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Béréshit 1.5 and 1.16 as well as from Shémot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately." + Globals.NL + Globals.NL +
@@ -62,15 +61,15 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<string, string> NoticeCelebrationsTitle
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary NoticeCelebrationsTitle
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Celebrations notice" },
         { Languages.FR, "Notice des célébrations" }
       };
 
-    static public readonly Dictionary<string, string> NoticeCelebrationsText
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary NoticeCelebrationsText
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teruah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future." + Globals.NL + Globals.NL +
                         "These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun." + Globals.NL + Globals.NL +
@@ -84,15 +83,15 @@ namespace Ordisoftware.HebrewCalendar
                         "Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option dans le rappeleur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant." }
       };
 
-    static public readonly Dictionary<string, string> NoticeMoonMonthsTitle
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary NoticeMoonMonthsTitle
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Moon months notice" },
         { Languages.FR, "Notice des mois lunaires" }
       };
 
-    static public readonly Dictionary<string, string> NoticeMoonMonths
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary NoticeMoonMonths
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Globals.NL +
                         "Vert = air = action | A" + Globals.NL +

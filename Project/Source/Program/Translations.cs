@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -25,15 +24,15 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public readonly Dictionary<string, string> ApplicationDescription
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ApplicationDescription
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Generate a hebrew lunisolar calendar with shabat and celebrations reminder" },
         { Languages.FR, "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations" }
       };
 
-    static public readonly Dictionary<string, string> AskToResetPreferences
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToResetPreferences
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Preferences will be reseted to their default values." + Globals.NL + Globals.NL +
                         "GPS location and shabat day will be keeped." + Globals.NL + Globals.NL +
@@ -43,99 +42,99 @@ namespace Ordisoftware.HebrewCalendar
                         Localizer.AskToContinue[Languages.FR] },
       };
 
-    static public readonly Dictionary<string, string> CantExitWhileGenerating
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary CantExitWhileGenerating
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Can't exit application while generating data." },
         { Languages.FR, "Impossible de quitter l'application durant la génération des données." }
       };
 
-    static public readonly Dictionary<string, string> ProgressLoadingData
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressLoadingData
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Loading data" },
         { Languages.FR, "Chargement des données" }
       };
 
-    static public readonly Dictionary<string, string> ProgressCreateDays
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressCreateDays
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Populating days" },
         { Languages.FR, "Garnissage des jours" }
       };
 
-    static public readonly Dictionary<string, string> ProgressAnalyzeDays
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressAnalyzeDays
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Analyzing days" },
         { Languages.FR, "Analyse des jours" }
       };
 
-    static public readonly Dictionary<string, string> ProgressGenerateReport
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressGenerateReport
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Generating report" },
         { Languages.FR, "Génération du rapport" }
       };
 
-    static public readonly Dictionary<string, string> ProgressFillMonths
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressFillMonths
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Filling months" },
         { Languages.FR, "Remplissage des mois" }
       };
 
-    static public readonly Dictionary<string, string> AskToUseMoonOmer
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToUseMoonOmer
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Do you want to use the moon omer, else the sun?" },
         { Languages.FR, "Voulez-vous utiliser le omer de la lune, sinon du soleil ?" }
       };
 
-    static public readonly Dictionary<string, string> AskToSetupPersonalShabat
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToSetupPersonalShabat
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Do you want to setup the personal shabat?" },
         { Languages.FR, "Voulez-vous configurer le shabat personnel ?" }
       };
 
-    static public readonly Dictionary<string, string> DateNotFound
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary DateNotFound
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Date not found in the database: {0}" },
         { Languages.FR, "Date non trouvée dans la base de données : {0}" }
       };
 
-    static public readonly Dictionary<string, string> SelectBirthday
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary SelectBirthday
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Birth day" },
         { Languages.FR, "Jour de naissance" }
       };
 
-    static public readonly Dictionary<string, string> FirstDay
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary FirstDay
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "First day" },
         { Languages.FR, "Premier jour" }
       };
 
-    static public readonly Dictionary<string, string> LastDay
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary LastDay
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Last day" },
         { Languages.FR, "Dernier jour" }
       };
 
-    static public readonly Dictionary<string, string> PredefinedYearsInterval
-      = new Dictionary<string, string>
+    static public readonly NullSafeStringDictionary PredefinedYearsInterval
+      = new NullSafeStringDictionary
       {
         { Languages.EN, "{0} years from now" },
         { Languages.FR, "{0} années à partir de maintenant" }
       };
 
-    static public readonly Dictionary<string, string> FatalGenerateError
-      = new Dictionary<string, string>
+    static public readonly NullSafeStringDictionary FatalGenerateError
+      = new NullSafeStringDictionary
       {
         { Languages.EN, "Fatal error while generating data." + Globals.NL +
                         "The application must exit." + Globals.NL +

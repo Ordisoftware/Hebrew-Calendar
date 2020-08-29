@@ -852,7 +852,7 @@ namespace System.Globalization
 			int i = ((leapMonth > 0 && month >= leapMonth) ? -1 : 0);
 			return selestialStems[(year * 12 + month + i + 3) % 10] + " "
 				+ terrestrialBranches[(month + i + 1) % 12]
-				+ ((leapMonth > 0 && month == leapMonth) ? " (nhu\u1EADn)" : string.Empty);
+				+ ((leapMonth > 0 && month == leapMonth) ? " (nhu\u1EADn)" : "");
 		}
 
 		public virtual string GetPropitiousHour(DateTime date)

@@ -51,7 +51,6 @@ namespace Ordisoftware.HebrewCalendar
       if ( TorahSeasons[date.Year].ContainsKey(date) )
         value.TorahSeasonChange = TorahSeasons[date.Year][date];
       value.RealSeasonChange = value.TorahSeasonChange;
-
       if ( value.TorahSeasonChange != SeasonChange.None
         && MainForm.Instance.CurrentGPSLatitude < 0
         && !Program.Settings.TorahEventsCountAsMoon )

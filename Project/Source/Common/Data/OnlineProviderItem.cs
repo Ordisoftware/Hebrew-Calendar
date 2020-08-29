@@ -32,27 +32,27 @@ namespace Ordisoftware.HebrewCommon
 
     static OnlineProviderItem()
     {
-      Func<string, Image> createImage = filename =>
+      Image createImage(string filename)
       {
         try
         {
           return Image.FromFile(Globals.GuidesFolderPath + filename);
         }
-        catch (Exception ex)
+        catch ( Exception ex )
         {
           DisplayManager.ShowError("Error loading:" + Environment.NewLine +
                                    filename + Environment.NewLine + Environment.NewLine +
                                    ex.Message);
           return null;
         }
-      };
+      }
       FolderImage = createImage("folder_vertical_open.png");
       LanguageImages = new Dictionary<string, Image>()
       {
         { "(NONE)", createImage("web_layout.png") },
-        { "(FR)", createImage("flag_france.png") },
-        { "(EN)", createImage("flag_great_britain.png") },
-        { "(IW)", createImage("flag_israel.png") },
+        { "(FR)",   createImage("flag_france.png") },
+        { "(EN)",   createImage("flag_great_britain.png") },
+        { "(IW)",   createImage("flag_israel.png") },
         { "(FR/IW)", createImage("flag_fr_iw.png") },
         { "(FR/EN)", createImage("flag_fr_en.png") }
       };

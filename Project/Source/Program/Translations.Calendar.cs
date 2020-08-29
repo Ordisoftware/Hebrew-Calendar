@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -25,67 +24,67 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public readonly Dictionary<string, string> Today
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary Today
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Today" },
         { Languages.FR, "Aujourd'hui" }
       };
 
-    static public readonly Dictionary<string, string> NavigationDay
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary NavigationDay
+      = new NullSafeStringDictionary()
       {
         { Languages.EN, "Day #" },
         { Languages.FR, "Jour #" }
       };
 
-    static public readonly Dictionary<DayOfWeek, Dictionary<string, string>> DayOfWeek
-      = new Dictionary<DayOfWeek, Dictionary<string, string>>()
+    static public readonly NullSafeDictionary<DayOfWeek, NullSafeStringDictionary> DayOfWeek
+      = new NullSafeDictionary<DayOfWeek, NullSafeStringDictionary>()
       {
         {
-          System.DayOfWeek.Monday, new Dictionary<string, string>
+          System.DayOfWeek.Monday, new NullSafeStringDictionary
           {
             { Languages.EN, "Monday" },
             { Languages.FR, "Lundi" }
           }
         },
         {
-          System.DayOfWeek.Tuesday, new Dictionary<string, string>
+          System.DayOfWeek.Tuesday, new NullSafeStringDictionary
           {
             { Languages.EN, "Tuesday" },
             { Languages.FR, "Mardi" }
           }
         },
         {
-          System.DayOfWeek.Wednesday, new Dictionary<string, string>
+          System.DayOfWeek.Wednesday, new NullSafeStringDictionary
           {
             { Languages.EN, "Wednesday" },
             { Languages.FR, "Mercredi" }
           }
         },
         {
-          System.DayOfWeek.Thursday, new Dictionary<string, string>
+          System.DayOfWeek.Thursday, new NullSafeStringDictionary
           {
             { Languages.EN, "Thursday" },
             { Languages.FR, "Jeudi" }
           }
         },
         {
-          System.DayOfWeek.Friday, new Dictionary<string, string>
+          System.DayOfWeek.Friday, new NullSafeStringDictionary
           {
             { Languages.EN, "Friday" },
             { Languages.FR, "Vendredi" }
           }
         },
         {
-          System.DayOfWeek.Saturday, new Dictionary<string, string>
+          System.DayOfWeek.Saturday, new NullSafeStringDictionary
           {
             { Languages.EN, "Saturday" },
             { Languages.FR, "Samedi" }
           }
         },
         {
-          System.DayOfWeek.Sunday, new Dictionary<string, string>
+          System.DayOfWeek.Sunday, new NullSafeStringDictionary
           {
             { Languages.EN, "Sunday" },
             { Languages.FR, "Dimanche" }
@@ -93,60 +92,60 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<MoonPhase, Dictionary<string, string>> MoonPhase
-      = new Dictionary<MoonPhase, Dictionary<string, string>>()
+    static public readonly NullSafeDictionary<MoonPhase, NullSafeStringDictionary> MoonPhase
+      = new NullSafeDictionary<MoonPhase, NullSafeStringDictionary>()
       {
         {
-          HebrewCalendar.MoonPhase.New, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.New, new NullSafeStringDictionary
           {
             { Languages.EN, "New moon" },
             { Languages.FR, "Nouvelle lune" }
           }
         },
         {
-          HebrewCalendar.MoonPhase.WaxingCrescent, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.WaxingCrescent, new NullSafeStringDictionary
           {
             { Languages.EN, "Waxing crescent" },
             { Languages.FR, "Premier croissant" }
           }
         },
         {
-          HebrewCalendar.MoonPhase.FirstQuarter, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.FirstQuarter, new NullSafeStringDictionary
           {
             { Languages.EN, "First quarter" },
             { Languages.FR, "Premier quartier" }
           }
         },
         {
-          HebrewCalendar.MoonPhase.WaxingGibbous, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.WaxingGibbous, new NullSafeStringDictionary
           {
             { Languages.EN, "Waxing gibbous" },
             { Languages.FR, "Gibbeuse croissante" }
           }
         },
         {
-          HebrewCalendar.MoonPhase.Full, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.Full, new NullSafeStringDictionary
           {
             { Languages.EN, "Full moon" },
             { Languages.FR, "Pleine lune" }
           }
         },
         {
-          HebrewCalendar.MoonPhase.WaningGibbous, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.WaningGibbous, new NullSafeStringDictionary
           {
             { Languages.EN, "Waning gibbous" },
             { Languages.FR, "Gibbeuse décroissante" }
           }
         },
         {
-          HebrewCalendar.MoonPhase.LastQuarter, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.LastQuarter, new NullSafeStringDictionary
           {
             { Languages.EN, "Last quarter" },
             { Languages.FR, "Dernier quartier" }
           }
         },
         {
-          HebrewCalendar.MoonPhase.WaningCrescent, new Dictionary<string, string>
+          HebrewCalendar.MoonPhase.WaningCrescent, new NullSafeStringDictionary
           {
             { Languages.EN, "Waning crescent" },
             { Languages.FR, "Dernier croissant" }
@@ -154,32 +153,32 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<Ephemeris, Dictionary<string, string>> Ephemeris
-      = new Dictionary<Ephemeris, Dictionary<string, string>>()
+    static public readonly NullSafeDictionary<Ephemeris, NullSafeStringDictionary> Ephemeris
+      = new NullSafeDictionary<Ephemeris, NullSafeStringDictionary>()
       {
         {
-          HebrewCalendar.Ephemeris.Rise, new Dictionary<string, string>
+          HebrewCalendar.Ephemeris.Rise, new NullSafeStringDictionary
           {
             { Languages.EN, "R: " },
             { Languages.FR, "L: " }
           }
         },
         {
-          HebrewCalendar.Ephemeris.Set, new Dictionary<string, string>
+          HebrewCalendar.Ephemeris.Set, new NullSafeStringDictionary
           {
             { Languages.EN, "S: " },
             { Languages.FR, "C: " }
           }
         },
         {
-          HebrewCalendar.Ephemeris.SummerHour, new Dictionary<string, string>
+          HebrewCalendar.Ephemeris.SummerHour, new NullSafeStringDictionary
           {
             { Languages.EN, "(S)" },
             { Languages.FR, "(E)" }
           }
         },
         {
-          HebrewCalendar.Ephemeris.WinterHour, new Dictionary<string, string>
+          HebrewCalendar.Ephemeris.WinterHour, new NullSafeStringDictionary
           {
             { Languages.EN, "(W)" },
             { Languages.FR, "(H)" }
@@ -187,39 +186,39 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<ReportFieldText, Dictionary<string, string>> CalendarField
-      = new Dictionary<ReportFieldText, Dictionary<string, string>>()
+    static public readonly NullSafeDictionary<ReportFieldText, NullSafeStringDictionary> CalendarField
+      = new NullSafeDictionary<ReportFieldText, NullSafeStringDictionary>()
       {
         {
-          ReportFieldText.Date, new Dictionary<string, string>
+          ReportFieldText.Date, new NullSafeStringDictionary
           {
             { Languages.EN, "Date" },
             { Languages.FR, "Date" }
           }
         },
         {
-          ReportFieldText.Month, new Dictionary<string, string>
+          ReportFieldText.Month, new NullSafeStringDictionary
           {
             { Languages.EN, "Month" },
             { Languages.FR, "Mois" }
           }
         },
         {
-          ReportFieldText.Sun, new Dictionary<string, string>
+          ReportFieldText.Sun, new NullSafeStringDictionary
           {
             { Languages.EN, "Sun" },
             { Languages.FR, "Soleil" }
           }
         },
         {
-          ReportFieldText.Moon, new Dictionary<string, string>
+          ReportFieldText.Moon, new NullSafeStringDictionary
           {
             { Languages.EN, "Moon" },
             { Languages.FR, "Lune" }
           }
         },
         {
-          ReportFieldText.Events, new Dictionary<string, string>
+          ReportFieldText.Events, new NullSafeStringDictionary
           {
             { Languages.EN, "Events" },
             { Languages.FR, "Évènements" }
@@ -227,39 +226,39 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<SeasonChange, Dictionary<string, string>> SeasonEvent
-      = new Dictionary<SeasonChange, Dictionary<string, string>>()
+    static public readonly NullSafeDictionary<SeasonChange, NullSafeStringDictionary> SeasonEvent
+      = new NullSafeDictionary<SeasonChange, NullSafeStringDictionary>()
       {
         {
-          SeasonChange.None, new Dictionary<string, string>
+          SeasonChange.None, new NullSafeStringDictionary
           {
             { Languages.EN, "" },
             { Languages.FR, "" }
           }
         },
         {
-          SeasonChange.SpringEquinox, new Dictionary<string, string>
+          SeasonChange.SpringEquinox, new NullSafeStringDictionary
           {
             { Languages.EN, "Spring equinox" },
             { Languages.FR, "Equinoxe de printemps" }
           }
         },
         {
-          SeasonChange.SummerSolstice, new Dictionary<string, string>
+          SeasonChange.SummerSolstice, new NullSafeStringDictionary
           {
             { Languages.EN, "Summer solstice" },
             { Languages.FR, "Solstice d'été" }
           }
         },
         {
-          SeasonChange.AutumnEquinox, new Dictionary<string, string>
+          SeasonChange.AutumnEquinox, new NullSafeStringDictionary
           {
             { Languages.EN, "Autumn equinox" },
             { Languages.FR, "Equinoxe d'automne" }
           }
         },
         {
-          SeasonChange.WinterSolstice, new Dictionary<string, string>
+          SeasonChange.WinterSolstice, new NullSafeStringDictionary
           {
             { Languages.EN, "Winter solstice" },
             { Languages.FR, "Solstice d'hiver" }
@@ -267,88 +266,88 @@ namespace Ordisoftware.HebrewCalendar
         }
       };
 
-    static public readonly Dictionary<TorahEvent, Dictionary<string, string>> TorahEvent
-      = new Dictionary<TorahEvent, Dictionary<string, string>>()
+    static public readonly NullSafeDictionary<TorahEvent, NullSafeStringDictionary> TorahEvent
+      = new NullSafeDictionary<TorahEvent, NullSafeStringDictionary>()
       {
         {
-          HebrewCalendar.TorahEvent.None, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.None, new NullSafeStringDictionary
           {
             { Languages.EN, "" },
             { Languages.FR, "" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.NewYearD1, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.NewYearD1, new NullSafeStringDictionary
           {
             { Languages.EN, "New year" },
             { Languages.FR, "Début de l'année" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.NewYearD10, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.NewYearD10, new NullSafeStringDictionary
           {
             { Languages.EN, "Set aside lamb" },
             { Languages.FR, "Réserver agneau" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.PessahD1, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.PessahD1, new NullSafeStringDictionary
           {
             { Languages.EN, "Pessa'h start" },
             { Languages.FR, "Début de Pessah" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.PessahD7, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.PessahD7, new NullSafeStringDictionary
           {
             { Languages.EN, "Pessa'h end" },
             { Languages.FR, "Fin de Pessah" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.ChavouotDiet, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.ChavouotDiet, new NullSafeStringDictionary
           {
             { Languages.EN, "Chavouot diet" },
             { Languages.FR, "Régime de Chavouot" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.Chavouot1, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.Chavouot1, new NullSafeStringDictionary
           {
             { Languages.EN, "Chavouot lamb" },
             { Languages.FR, "Agneau de Chavouot" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.Chavouot2, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.Chavouot2, new NullSafeStringDictionary
           {
             { Languages.EN, "Chavouot end" },
             { Languages.FR, "Fin de Chavouot" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.YomTerouah, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.YomTerouah, new NullSafeStringDictionary
           {
             { Languages.EN, "Yom Terou'ah" },
             { Languages.FR, "Yom Terou'ah" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.YomHaKipourim, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.YomHaKipourim, new NullSafeStringDictionary
           {
             { Languages.EN, "Yom HaKipourim" },
             { Languages.FR, "Yom HaKipourim" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.SoukotD1, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.SoukotD1, new NullSafeStringDictionary
           {
             { Languages.EN, "Soukot start" },
             { Languages.FR, "Début de Soukot" }
           }
         },
         {
-          HebrewCalendar.TorahEvent.SoukotD8, new Dictionary<string, string>
+          HebrewCalendar.TorahEvent.SoukotD8, new NullSafeStringDictionary
           {
             { Languages.EN, "Soukot end" },
             { Languages.FR, "Fin de Soukot" }

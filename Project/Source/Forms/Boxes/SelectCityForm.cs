@@ -11,10 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
 using GenericParsing;
@@ -36,8 +35,8 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    static public readonly SortedDictionary<string, List<CityItem>> GPS 
-      = new SortedDictionary<string, List<CityItem>>();
+    static public readonly NullSafeSortedDictionary<string, NullSafeList<CityItem>> GPS
+      = new NullSafeSortedDictionary<string, NullSafeList<CityItem>>();
 
     static SelectCityForm()
     {
@@ -46,16 +45,14 @@ namespace Ordisoftware.HebrewCalendar
         string filename = Program.GPSFilename;
         var parser = new GenericParser(filename);
         parser.FirstRowHasHeader = true;
+
         while ( parser.Read() )
         {
-          var city = new CityItem();
+          var country = GPS[parser["country"].Trim().RemoveDiacritics()];
+          var city = country[country.Count];
           city.Name = parser["city"].Trim().RemoveDiacritics();
           city.Latitude = parser["lat"];
           city.Longitude = parser["lng"];
-          string country = parser["country"].Trim().RemoveDiacritics(); ;
-          if ( !GPS.ContainsKey(country) )
-            GPS.Add(country, new List<CityItem>());
-          GPS[country].Add(city);
         }
       }
       catch ( Exception ex )

@@ -60,23 +60,23 @@ namespace Ordisoftware.HebrewCalendar
     internal int YearLast { get; private set; }
     internal DateTime DateLast { get; private set; }
 
-    private NullSafeDictionary<TorahEvent, bool> TorahEventRemindList
-      = new NullSafeDictionary<TorahEvent, bool>();
+    private OutOfRangeSafeDictionary<TorahEvent, bool> TorahEventRemindList
+      = new OutOfRangeSafeDictionary<TorahEvent, bool>();
 
-    private NullSafeDictionary<TorahEvent, bool> TorahEventRemindDayList
-      = new NullSafeDictionary<TorahEvent, bool>();
+    private OutOfRangeSafeDictionary<TorahEvent, bool> TorahEventRemindDayList
+      = new OutOfRangeSafeDictionary<TorahEvent, bool>();
 
-    internal readonly NullSafeList<Form> RemindCelebrationForms
-      = new NullSafeList<Form>();
+    internal readonly OutOfRangeSafeList<Form> RemindCelebrationForms
+      = new OutOfRangeSafeList<Form>();
 
-    internal readonly NullSafeList<string> RemindCelebrationDates
-      = new NullSafeList<string>();
+    internal readonly OutOfRangeSafeList<string> RemindCelebrationDates
+      = new OutOfRangeSafeList<string>();
 
-    internal readonly NullSafeDictionary<TorahEvent, DateTime?> LastCelebrationReminded
-      = new NullSafeDictionary<TorahEvent, DateTime?>();
+    internal readonly OutOfRangeSafeDictionary<TorahEvent, DateTime?> LastCelebrationReminded
+      = new OutOfRangeSafeDictionary<TorahEvent, DateTime?>();
 
-    internal readonly NullSafeDictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
-      = new NullSafeDictionary<TorahEvent, ReminderForm>();
+    internal readonly OutOfRangeSafeDictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
+      = new OutOfRangeSafeDictionary<TorahEvent, ReminderForm>();
 
     internal DateTime? LastShabatReminded;
 

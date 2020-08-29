@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2020 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -13,22 +13,29 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Collections.Generic;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.HebrewCommon
 {
 
-  public class SuspendDelayItem
+  /// <summary>
+  /// Provide out of range safe dictionary.
+  /// </summary>
+  public class OutOfRangeSafeDictionary<TKey, TValue> : Dictionary<TKey, TValue>
   {
-    public string Text { get; set; }
-    public int Minutes { get; set; }
-    public override string ToString() => Text;
-    public SuspendDelayItem()
+    public new TValue this[TKey key]
     {
-    }
-    public SuspendDelayItem(string text, int minutes)
-    {
-      Text = text;
-      Minutes = minutes;
+      get
+      {
+        return ContainsKey(key) ? base[key] : default(TValue);
+      }
+      set
+      {
+        if ( ContainsKey(key) )
+          base[key] = value;
+        else
+          Add(key, value);
+      }
     }
   }
 
