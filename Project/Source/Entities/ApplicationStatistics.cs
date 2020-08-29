@@ -125,7 +125,7 @@ namespace Ordisoftware.HebrewCalendar
           UpdateDBMemorySize = false;
           _DBMemorySize = MainForm.Instance.DataSet.SizeOf().FormatBytesSize();
         }
-        return _DBFileSize;
+        return _DBMemorySize;
       }
     }
     static private string _DBMemorySize;
