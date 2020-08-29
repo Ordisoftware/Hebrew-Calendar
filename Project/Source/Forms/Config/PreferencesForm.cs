@@ -178,6 +178,11 @@ namespace Ordisoftware.HebrewCalendar
       string lat = Program.Settings.GPSLatitude;
       string lng = Program.Settings.GPSLongitude;
       string timezone = Program.Settings.TimeZone;
+      var bookmark1 = Program.Settings.DateBookmark1;
+      var bookmark2 = Program.Settings.DateBookmark2;
+      var bookmark3 = Program.Settings.DateBookmark3;
+      var bookmark4 = Program.Settings.DateBookmark4;
+      var bookmark5 = Program.Settings.DateBookmark5;
       int shabat = EditShabatDay.SelectedIndex;
       Program.Settings.Reset();
       Program.Settings.UpgradeResetRequiredV3_0 = false;
@@ -195,6 +200,11 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.ShabatDay = shabat;
       Program.Settings.RestoreMainForm();
       Program.Settings.Language = Languages.Current;
+      Program.Settings.DateBookmark1 = bookmark1;
+      Program.Settings.DateBookmark2 = bookmark2;
+      Program.Settings.DateBookmark3 = bookmark3;
+      Program.Settings.DateBookmark4 = bookmark4;
+      Program.Settings.DateBookmark5 = bookmark5;
       Close();
     }
 
