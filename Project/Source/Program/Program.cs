@@ -19,7 +19,6 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.Pipes;
-using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -53,7 +52,7 @@ namespace Ordisoftware.HebrewCalendar
       UpdateLocalization(true);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
-      Core.Diagnostics.Debugger.Active = Settings.DebuggerEnabled;
+      Debugger.Active = Settings.DebuggerEnabled;
       string lang = Settings.Language;
       Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;

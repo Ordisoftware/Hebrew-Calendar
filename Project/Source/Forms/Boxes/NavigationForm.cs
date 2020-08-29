@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Drawing;
 using System.Linq;
 using System.Globalization;
 using System.Windows.Forms;
@@ -115,7 +114,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      Text = Core.DisplayManager.Title;
+      Text = HebrewCommon.DisplayManager.Title;
       PanelTop.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;

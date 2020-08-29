@@ -19,7 +19,6 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -319,7 +318,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
     {
-      Core.Diagnostics.Debugger.Active = EditDebuggerEnabled.Checked;
+      Debugger.Active = EditDebuggerEnabled.Checked;
     }
 
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)

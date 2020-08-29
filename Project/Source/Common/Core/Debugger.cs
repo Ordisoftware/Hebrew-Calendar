@@ -1,29 +1,26 @@
 /// <license>
-/// This file is part of Ordisoftware Core Library.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Originally developped for Ordisoftware Core Library.
 /// Copyright 2004-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// This program is free software: you can redistribute it and/or modify it under the terms of
-/// the GNU Lesser General Public License (LGPL v3) as published by the Free Software Foundation,
-/// either version 3 of the License, or (at your option) any later version.
-/// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-/// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-/// See the GNU Lesser General Public License for more details.
-/// You should have received a copy of the GNU General Public License along with this program.
-/// If not, see www.gnu.org/licenses website.
+/// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// https://mozilla.org/MPL/2.0/.
+/// If it is not possible or desirable to put the notice in a particular file, 
+/// then You may include the notice in a location(such as a LICENSE file in a 
+/// relevant directory) where a recipient would be likely to look for such a notice.
+/// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2008-05 </edited>
+/// <edited> 2020-08 </edited>
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using Ordisoftware.Core.Windows.Forms;
 
-// TODO trace log proc : write thread name ? no : one log by thread ?
-// TODO singleton & protected fields ?
-
-namespace Ordisoftware.Core.Diagnostics
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
@@ -60,7 +57,7 @@ namespace Ordisoftware.Core.Diagnostics
   /// Provide thread safe debug management. 
   /// </summary>
   /// <remarks>
-  /// Showing/raising blocks all other threads if exception occur in a thread 
+  /// Showing/raising blocks all other threads if Exception occur in a thread 
   /// </remarks>
   /// <remarks> Using enter-Leave system : 
   ///                                                           
@@ -87,22 +84,22 @@ namespace Ordisoftware.Core.Diagnostics
   {
 
     /// <summary>
-    /// Indicate before exception event.
+    /// Indicate before Exception event.
     /// </summary>
     static public event BeforeExceptionEventHandler BeforeException;
 
     /// <summary>
-    /// Indicate after exception event.
+    /// Indicate after Exception event.
     /// </summary>
     static public event AfterExceptionEventHandler AfterException;
 
     /// <summary>
-    /// Indicate on showing exception handler.
+    /// Indicate on showing Exception handler.
     /// </summary>
     static public event OnExceptionEventHandler OnException;
 
     /// <summary>
-    /// Indicate exception show alternative handler.
+    /// Indicate Exception show alternative handler.
     /// </summary>
     static public event ShowExceptionEventHandler DoShowException;
 
@@ -117,7 +114,7 @@ namespace Ordisoftware.Core.Diagnostics
     static public bool StackOnlyProgram = true;
 
     /// <summary>
-    /// Indicate if a specialized form is used to show exception.
+    /// Indicate if a specialized form is used to show Exception.
     /// </summary>
     static public bool UseForm = true;
 
@@ -127,14 +124,9 @@ namespace Ordisoftware.Core.Diagnostics
     static public bool AutoHideStack = false;
 
     /// <summary>
-    /// Indicate if exception form show a terminate button.
+    /// Indicate if Exception form show a terminate button.
     /// </summary>
     static public bool UserCanTerminate = true;
-
-    /// <summary>
-    /// The enter leave count skip.
-    /// </summary>
-    static private int EnterLeaveCountSkip = 2;
 
     /// <summary>
     /// Number of enters.
@@ -149,7 +141,7 @@ namespace Ordisoftware.Core.Diagnostics
     /// <summary>
     /// The slocker.
     /// </summary>
-    static private volatile object slocker = new object();
+    static private readonly object slocker = new object();
 
     /// <summary>
     /// Indicate if debugging is active.
@@ -182,11 +174,11 @@ namespace Ordisoftware.Core.Diagnostics
     static private bool _Active = false;
 
     /// <summary>
-    /// Handles the exception delegate.
+    /// Handles the Exception delegate.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
-    /// <param name="except">The except.</param>
-    private delegate void HandleExceptionDelegate(object sender, Exception except);
+    /// <param name="ex">The ex.</param>
+    private delegate void HandleExceptionDelegate(object sender, Exception ex);
 
     /// <summary>
     /// Start this instance.
@@ -199,7 +191,7 @@ namespace Ordisoftware.Core.Diagnostics
     static public void Stop() { Active = false; }
 
     /// <summary>
-    /// Raises the unhandled exception event.
+    /// Raises the unhandled Exception event.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="args">Event information to send to registered event handlers.</param>
@@ -210,7 +202,7 @@ namespace Ordisoftware.Core.Diagnostics
     }
 
     /// <summary>
-    /// Raises the thread exception event.
+    /// Raises the thread Exception event.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="args">Event information to send to registered event handlers.</param>
@@ -221,14 +213,35 @@ namespace Ordisoftware.Core.Diagnostics
     }
 
     /// <summary>
-    /// Handle a throwned exception.
+    /// Manage an Exception with the debugger.
+    /// </summary>
+    /// <param name="ex">The Exception to act on.</param>
+    /// <param name="show">true to show a message or false to hide it.</param>
+    static public void Manage(this Exception ex, bool show = true)
+    {
+      ManageException(null, ex, show);
+    }
+
+    /// <summary>
+    /// Manage an Exception with the debugger.
+    /// </summary>
+    /// <param name="ex">The Exception to act on.</param>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="show">true to show a message or false to hide it.</param>
+    static public void Manage(this Exception ex, object sender, bool show = true)
+    {
+      ManageException(sender, ex, show);
+    }
+
+    /// <summary>
+    /// Handle a throwned Exception.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
-    /// <param name="except">The except.</param>
-    static public void HandleException(object sender, Exception except)
+    /// <param name="ex">The ex.</param>
+    static public void HandleException(object sender, Exception ex)
     {
-      if ( except is AbortException ) return;
-      ProcessException(sender, except, true);
+      if ( ex is AbortException ) return;
+      ProcessException(sender, ex, true);
     }
 
     /// <summary>
@@ -237,8 +250,8 @@ namespace Ordisoftware.Core.Diagnostics
     static public void Enter()
     {
       if ( !_Active ) return;
-      //SystemManager.Log.Write(LogEventType.Enter, ExceptionInfo.GetCallerName(_EnterLeaveCountSkip));
-      lock ( slocker ) EnterCount++;
+      lock ( slocker )
+        EnterCount++;
     }
 
     /// <summary>
@@ -247,8 +260,8 @@ namespace Ordisoftware.Core.Diagnostics
     static public void Leave()
     {
       if ( !_Active || EnterCount == 0 ) return;
-      //SystemManager.Log.Write(LogEventType.Leave, ExceptionInfo.GetCallerName(_EnterLeaveCountSkip));
-      lock ( slocker ) EnterCount--;
+      lock ( slocker )
+        EnterCount--;
     }
 
     /// <summary>
@@ -257,20 +270,23 @@ namespace Ordisoftware.Core.Diagnostics
     static private void LeaveInternal()
     {
       if ( !_Active || EnterCount == 0 ) return;
-      //SystemManager.Log.Write(LogEventType.Leave, ExceptionInfo.GetCallerName(_EnterLeaveCountSkip + _StackSkip));
-      lock ( slocker ) { EnterCount--; StackSkip = 1; }
+      lock ( slocker )
+      {
+        EnterCount--;
+        StackSkip = 1;
+      }
     }
 
     /// <summary>
     /// Indicate the full formatted text of an exeption.
     /// </summary>
     /// <returns>
-    /// except as a string.
+    /// ex as a string.
     /// </returns>
-    /// <param name="except">The except to act on.</param>
-    static public string ToStringFull(this Exception except)
+    /// <param name="ex">The ex to act on.</param>
+    static public string ToStringFull(this Exception ex)
     {
-      return except.ParseException((einfo) => { return einfo.FullText; });
+      return ex.ParseException(einfo => einfo.FullText);
     }
 
     /// <summary>
@@ -279,11 +295,11 @@ namespace Ordisoftware.Core.Diagnostics
     /// <returns>
     /// A string.
     /// </returns>
-    /// <param name="except">The except to act on.</param>
+    /// <param name="ex">The ex to act on.</param>
     /// <param name="gettext">The gettext.</param>
-    static private string ParseException(this Exception except, Func<ExceptionInfo, string> gettext)
+    static private string ParseException(this Exception ex, Func<ExceptionInfo, string> gettext)
     {
-      var einfo = new ExceptionInfo(null, except);
+      var einfo = new ExceptionInfo(null, ex);
       var list = new List<string> { gettext(einfo) };
       einfo = einfo.InnerInfo;
       while ( einfo != null )
@@ -291,12 +307,12 @@ namespace Ordisoftware.Core.Diagnostics
         list.Add("[Inner] " + gettext(einfo));
         einfo = einfo.InnerInfo;
       }
-      return AsMultipart(list, Environment.NewLine + Environment.NewLine);
+      return AsMultipart(list, Globals.NL2);
     }
 
     static public string AsMultipart(this string list, string separator)
     {
-      return list.Split(new string[] { Environment.NewLine }, StringSplitOptions.None).AsMultipart(separator);
+      return list.Split(new string[] { Globals.NL }, StringSplitOptions.None).AsMultipart(separator);
     }
 
     static public string AsMultipart(this IEnumerable<string> list, string separator)
@@ -309,133 +325,123 @@ namespace Ordisoftware.Core.Diagnostics
       if ( count == 0 ) return "";
       string res = get(0);
       for ( int i = 1; i < count; i++ )
-        res = res + (/*res.EndsWith(separator) ? "test" : */separator ) + get(i);
+        res = res + separator + get(i);
       return res;
     }
 
     /// <summary>
-    /// Show exception information.
+    /// Show Exception information.
     /// </summary>
     /// <param name="e">The Exception to process.</param>
     static public void ShowException(Exception e)
     {
-      string s = e.ToStringFull();
-      //try { SystemManager.Log.Write(LogEventType.Exception, s, true); }
-      //catch { }
-      //if ( SystemManager.Process.IsConsole ) 
-        //Console.WriteLine(s);
-      //else 
-        MessageBox.Show(s);
+      MessageBox.Show(e.ToStringFull());
     }
 
     /// <summary>
-    /// Manage an exception.
+    /// Manage an Exception.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
-    /// <param name="except">The except.</param>
-    static public void ManageException(object sender, Exception except)
-    {
-      ManageException(sender, except, true);
-    }
-
-    /// <summary>
-    /// Manage an exception.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="except">The except.</param>
+    /// <param name="ex">The ex.</param>
     /// <param name="doshow">true to doshow.</param>
-    static public void ManageException(object sender, Exception except, bool doshow)
+    static public void ManageException(object sender, Exception ex, bool doshow = true)
     {
-      if ( except is AbortException ) { LeaveInternal(); return; }
+      if ( ex is AbortException ) { LeaveInternal(); return; }
       lock ( slocker )
       {
         StackSkip++;
-        ProcessException(sender, except, doshow);
+        ProcessException(sender, ex, doshow);
         LeaveInternal();
       }
     }
 
     /// <summary>
-    /// Process the exception.
+    /// Process the Exception.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
-    /// <param name="except">The except.</param>
+    /// <param name="ex">The ex.</param>
     /// <param name="doshow">true to doshow.</param>
-    static private void ProcessException(object sender, Exception except, bool doshow)
+    static private void ProcessException(object sender, Exception ex, bool doshow)
     {
-      string nl = Environment.NewLine;
       lock ( slocker )
         try
         {
           bool b = true;
-          ExceptionInfo einfo = new ExceptionInfo(sender, except);
-          //try { SystemManager.Log.Write(LogEventType.Exception, einfo.FullText, true); }
-          //catch { }
-          if ( !_Active ) { ShowSimpleException(einfo); return; }
+          var einfo = new ExceptionInfo(sender, ex);
+          if ( !_Active )
+          {
+            ShowSimpleException(einfo);
+            return;
+          }
           if ( BeforeException != null )
-            try { BeforeException(sender, einfo, ref b); }
-            catch ( Exception err )
+            try
             {
-              if ( doshow ) 
-                DisplayManager.Show("Error on BeforeException:" + nl + err.Message);
+              BeforeException(sender, einfo, ref b);
             }
-          if ( b && doshow ) ShowException(einfo);
-          if ( AfterException != null )
-            try { AfterException(sender, einfo, b); }
             catch ( Exception err )
             {
-              if ( doshow ) 
-                DisplayManager.Show("Error on AfterException:" + nl + err.Message);
+              if ( doshow )
+                DisplayManager.Show("Error on BeforeException:" + Globals.NL + err.Message);
+            }
+          if ( b && doshow )
+            ShowException(einfo);
+          if ( AfterException != null )
+            try
+            {
+              AfterException(sender, einfo, b);
+            }
+            catch ( Exception err )
+            {
+              if ( doshow )
+                DisplayManager.Show("Error on AfterException:" + Globals.NL + err.Message);
             }
         }
         catch ( Exception err )
         {
           try
           {
-            string s = "Error on processing Exception." + nl + nl;
-            if ( except != null ) s += except.Message + nl + nl;
-            else s += "[null reference]" + nl + nl;
-            s += "(" + err.Message + ")";
+            string s = "Error on processing Exception." + Globals.NL2
+                     + ( ex != null ? ex.Message + Globals.NL2 : "[null reference]" + Globals.NL2 )
+                     + "(" + err.Message + ")";
             DisplayManager.Show(s);
           }
           catch
           {
-            MessageBox.Show(except == null ? "Null exception" : except.ToString());
+            MessageBox.Show(ex == null ? "Null Exception" : ex.ToString());
             //Environment.Exit(0); 
           }
         }
     }
 
     /// <summary>
-    /// Shows the exception.
+    /// Shows the Exception.
     /// </summary>
     /// <param name="einfo">The einfo.</param>
     static private void ShowException(ExceptionInfo einfo)
     {
       if ( einfo.Instance is AbortException ) return;
-      string nl = Environment.NewLine;
       try
       {
         if ( OnException != null )
           try { OnException(einfo.Sender, einfo); }
           catch ( Exception err )
           {
-            DisplayManager.Show("Error in OnException: " + nl + err.Message);
+            DisplayManager.Show("Error in OnException: " + Globals.NL + err.Message);
           }
         if ( DoShowException != null ) DoShowException(einfo.Sender, einfo);
         else
           if ( UseForm )
-            try { ExceptionForm.Run(einfo); }
-            catch { ShowSimpleException(einfo); }
-          else ShowSimpleException(einfo);
+          try { ExceptionForm.Run(einfo); }
+          catch { ShowSimpleException(einfo); }
+        else ShowSimpleException(einfo);
       }
       catch ( Exception err )
       {
         try
         {
-          string s = "Error on displaying Exception:" + nl;
-          if ( einfo != null ) s += einfo.Instance.Message + nl;
-          else s += "[null reference]" + nl;
+          string s = "Error on displaying Exception:" + Globals.NL;
+          if ( einfo != null ) s += einfo.Instance.Message + Globals.NL;
+          else s += "[null reference]" + Globals.NL;
           s += "(" + err.Message + ")";
           DisplayManager.Show(s);
         }
@@ -445,38 +451,36 @@ namespace Ordisoftware.Core.Diagnostics
     }
 
     /// <summary>
-    /// Shows the simple exception.
+    /// Shows the simple Exception.
     /// </summary>
     /// <param name="einfo">The einfo.</param>
     static private void ShowSimpleException(ExceptionInfo einfo)
     {
       if ( einfo.Instance is AbortException ) return;
-      string nl = Environment.NewLine;
       string s;
       try
       {
-        s = "Unhandled exception has occured in " + System.IO.Path.GetFileName(Application.ExecutablePath) + nl + nl +
-            einfo.ReadableText + nl + nl +
+        s = "Unhandled Exception has occured in " + Path.GetFileName(Application.ExecutablePath) + Globals.NL2 +
+            einfo.ReadableText + Globals.NL2 +
             "You can choose OK to continue or Cancel to terminate.";
 
-        MessageBoxButtons but;
-        if ( UserCanTerminate ) but = MessageBoxButtons.OKCancel;
-        else but = MessageBoxButtons.OK;
-        DialogResult result = MessageBox.Show(s, einfo.Emitter, but, MessageBoxIcon.Stop);
-        if ( result == DialogResult.Cancel ) Environment.Exit(0); //SystemManager.Stop();
+        var goal = UserCanTerminate ? MessageBoxButtons.OKCancel : MessageBoxButtons.OK;
+        var result = MessageBox.Show(s, einfo.Emitter, goal, MessageBoxIcon.Stop);
+        if ( result == DialogResult.Cancel ) Environment.Exit(0);
       }
       catch ( Exception err )
       {
         try
         {
-          s = "Error on displaying Exception :" + nl;
-          if ( einfo != null ) s += einfo.Instance.Message + nl;
-          else s += "[null reference]" + nl;
-          s += "(" + err.Message + ")";
+          s = "Error on displaying Exception :" + Globals.NL
+            + ( einfo != null ? einfo.Instance.Message + Globals.NL : "[null reference]" + Globals.NL )
+            + "(" + err.Message + ")";
           DisplayManager.Show(s);
         }
         catch
-        { Environment.Exit(0); }
+        {
+          Environment.Exit(0);
+        }
       }
     }
 

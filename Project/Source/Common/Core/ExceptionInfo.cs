@@ -1,18 +1,18 @@
 /// <license>
-/// This file is part of Ordisoftware Core Library.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Originally developped for Ordisoftware Core Library.
 /// Copyright 2004-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// This program is free software: you can redistribute it and/or modify it under the terms of
-/// the GNU Lesser General Public License (LGPL v3) as published by the Free Software Foundation,
-/// either version 3 of the License, or (at your option) any later version.
-/// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-/// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-/// See the GNU Lesser General Public License for more details.
-/// You should have received a copy of the GNU General Public License along with this program.
-/// If not, see www.gnu.org/licenses website.
+/// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// https://mozilla.org/MPL/2.0/.
+/// If it is not possible or desirable to put the notice in a particular file, 
+/// then You may include the notice in a location(such as a LICENSE file in a 
+/// relevant directory) where a recipient would be likely to look for such a notice.
+/// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2012-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,11 +20,11 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 
-namespace Ordisoftware.Core
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide exception information.
+  /// Provide Exception information.
   /// </summary>
   public class ExceptionInfo
   {
@@ -166,13 +166,15 @@ namespace Ordisoftware.Core
     {
       try
       {
-        StackFrame frame = new StackFrame(skip, true);
-        MethodBase method = frame.GetMethod();
+        var frame = new StackFrame(skip, true);
+        var method = frame.GetMethod();
         return GetNameWithFullNamespace(method.DeclaringType) + "." + method.Name +
                " (" + Path.GetFileName(frame.GetFileName()) + " line " + frame.GetFileLineNumber() + ")";
       }
       catch
-      { return ""; }
+      {
+        return "";
+      }
     }
 
     /// <summary>
@@ -180,7 +182,7 @@ namespace Ordisoftware.Core
     /// </summary>
     private void ExtractInherits()
     {
-      Type type = Instance.GetType();
+      var type = Instance.GetType();
       TypeText = type.ToString();
       type = type.BaseType;
       InheritsFrom += type.ToString();
@@ -193,50 +195,48 @@ namespace Ordisoftware.Core
     /// </summary>
     private void ExtractStack()
     {
-      int line;
+      if ( !Debugger.UseStack ) return;
       bool first = false;
-      string s1 = "", s2 = "", s3 = "";
-      if ( Diagnostics.Debugger.UseStack )
+      string part1 = "";
+      string part2 = "";
+      string part3 = "";
+      var trace = new StackTrace(Instance, true);
+      var frames = trace.GetFrames();
+      if ( frames == null ) return;
+      foreach ( var frame in frames )
       {
-        StackTrace trace = new StackTrace(Instance, true);
-        StackFrame[] frames = trace.GetFrames();
-        if ( frames == null ) return;
-        foreach ( StackFrame frame in frames )
+        var method = frame.GetMethod();
+        part2 = method.DeclaringType.FullName;
+        var type = Type.GetType(part2);
+        if ( type != typeof(Debugger) && type != typeof(ExceptionInfo) )
         {
-          MethodBase method = frame.GetMethod();
-          s2 = method.DeclaringType.FullName;
-          Type type = Type.GetType(s2);
-          if ( type != typeof(Debugger) && type != typeof(ExceptionInfo) )
+          part3 = Path.GetFileName(frame.GetFileName());
+          //if ( part3 == null && Debugger.StackOnlyProgram ) continue;
+          int line = frame.GetFileLineNumber();
+          if ( !first )
           {
-            s3 = Path.GetFileName(frame.GetFileName());
-            //if ( s3 == null && Debugger.StackOnlyProgram ) continue;
-            line = frame.GetFileLineNumber();
-            if ( !first )
-            {
-              first = true;
-              AssemblyName = method.DeclaringType.Assembly.FullName;
-              ModuleName = method.DeclaringType.Module.Name;
-              Namespace = method.DeclaringType.Namespace;
-              ClassName = method.DeclaringType.Name;
-              MethodName = method.Name;
-              FileName = s3;
-              LineNumber = line;
-            }
-            s2 += "." + method.Name;
-            if ( line != 0 )
-            {
-              s2 = s3 + " line " + line + ": " + Environment.NewLine + s2 + Environment.NewLine;
-              if ( s1 != "" ) s2 = Environment.NewLine + s2;
-            }
-            StackList.Add(s2);
-            if ( s1 != "" ) s1 += Environment.NewLine;
-            s1 += s2;
+            first = true;
+            AssemblyName = method.DeclaringType.Assembly.FullName;
+            ModuleName = method.DeclaringType.Module.Name;
+            Namespace = method.DeclaringType.Namespace;
+            ClassName = method.DeclaringType.Name;
+            MethodName = method.Name;
+            FileName = part3;
+            LineNumber = line;
           }
+          part2 += "." + method.Name;
+          if ( line != 0 )
+          {
+            part2 = part3 + " line " + line + ": " + Globals.NL + part2 + Globals.NL;
+            if ( part1 != "" ) part2 = Globals.NL + part2;
+          }
+          StackList.Add(part2);
+          if ( part1 != "" ) part1 += Globals.NL;
+          part1 += part2;
         }
-        // TODO corriger pb saut de lignes => utiliser list
-        StackText = s1.Replace(Environment.NewLine + Environment.NewLine + Environment.NewLine, Environment.NewLine + Environment.NewLine)
-                       .TrimEnd(Environment.NewLine.ToCharArray());
       }
+      // TODO corriger pb saut de lignes => utiliser list
+      StackText = part1.Replace(Globals.NL3, Globals.NL2).TrimEnd(Globals.NL.ToCharArray());
     }
 
     /// <summary>
@@ -248,34 +248,33 @@ namespace Ordisoftware.Core
         ThreadName = Thread.CurrentThread.Name;
       else
         ThreadName = "ID = " + Thread.CurrentThread.ManagedThreadId.ToString();
+
       if ( ModuleName != null && ModuleName != "" )
         TypeText += " in " + ModuleName;
+
       try { Message = Instance.Message; }
-      catch { Message = "Relayed exception."; }
+      catch { Message = "Relayed Exception."; }
 
-      //int width = SystemSettings.Instance.LogWidth - 15;
-      //int indent = SystemSettings.Instance.LogIndent;
-
-      FullText = "Thread: " + ThreadName + Environment.NewLine
-               + "Exception Type: " + Environment.NewLine
-               + TypeText + Environment.NewLine
-               + "Error Message: " + Environment.NewLine
+      FullText = "Thread: " + ThreadName + Globals.NL
+               + "Exception Type: " + Globals.NL
+               + TypeText + Globals.NL
+               + "Error Message: " + Globals.NL
                + Message;
 
-      if ( Diagnostics.Debugger.UseStack )
-        FullText = FullText + Environment.NewLine
-                 + "StackList: " + Environment.NewLine
+      if ( Debugger.UseStack )
+        FullText = FullText + Globals.NL
+                 + "StackList: " + Globals.NL
                  + StackText;
 
-      ReadableText = Message + Environment.NewLine + Environment.NewLine
-                   + "  Module: " + ModuleName + Environment.NewLine
-                   + "  File: " + FileName + Environment.NewLine
-                   + "  Line: " + LineNumber + Environment.NewLine
-                   + "  Method: " + Namespace + "." + ClassName + "." + MethodName + Environment.NewLine
+      ReadableText = Message + Globals.NL2
+                   + "  Module: " + ModuleName + Globals.NL
+                   + "  File: " + FileName + Globals.NL
+                   + "  Line: " + LineNumber + Globals.NL
+                   + "  Method: " + Namespace + "." + ClassName + "." + MethodName + Globals.NL
                    + "  Type: " + TypeText;
 
-      SingleLineText = ReadableText.Replace(Environment.NewLine + Environment.NewLine, " | ")
-                                   .Replace(Environment.NewLine, " | ")
+      SingleLineText = ReadableText.Replace(Globals.NL2, " | ")
+                                   .Replace(Globals.NL, " | ")
                                    .Replace("  ", "");
     }
 
@@ -283,7 +282,7 @@ namespace Ordisoftware.Core
     /// Constructor.
     /// </summary>
     /// <param name="sender">.</param>
-    /// <param name="ex">The except.</param>
+    /// <param name="ex">The ex.</param>
     public ExceptionInfo(object sender, Exception ex)
     {
       if ( ex == null ) return;
@@ -292,10 +291,10 @@ namespace Ordisoftware.Core
       TargetSite = ex.TargetSite;
       try
       {
-        Emitter = Sender is Windows.Forms.ExceptionForm
-                  ? ( (Windows.Forms.ExceptionForm)Sender ).Text
-                  : DisplayManager.MainForm != null
-                    ? DisplayManager.MainForm.Text
+        Emitter = Sender is ExceptionForm
+                  ? ( (ExceptionForm)Sender ).Text
+                  : Globals.MainForm != null
+                    ? Globals.MainForm.Text
                     : ex.Source;
         ExtractInherits();
         try

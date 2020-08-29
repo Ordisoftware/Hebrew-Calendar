@@ -1,8 +1,8 @@
-namespace Ordisoftware.Core.Windows.Forms
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Form for viewing the exception.
+  /// Form for viewing the Exception.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   partial class ExceptionForm
@@ -248,7 +248,7 @@ namespace Ordisoftware.Core.Windows.Forms
     private System.Windows.Forms.Label labelInfo1;
 
     /// <summary>
-    /// The text exception control.
+    /// The text Exception control.
     /// </summary>
     private System.Windows.Forms.TextBox textException;
 

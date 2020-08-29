@@ -17,7 +17,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DandTSoftware.Timers;
-using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar

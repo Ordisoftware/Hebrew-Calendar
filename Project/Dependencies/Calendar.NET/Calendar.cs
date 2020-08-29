@@ -368,75 +368,75 @@ namespace Calendar.NET
       this._btnToday = new TodayButton();
       this._btnLeft = new NavigateLeftButton();
       this._btnRight = new NavigateRightButton();
-      this._contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this._miProperties = new System.Windows.Forms.ToolStripMenuItem();
+      this._contextMenuStrip1 = new ContextMenuStrip(this.components);
+      this._miProperties = new ToolStripMenuItem();
       this._contextMenuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
       // _btnToday
       // 
-      this._btnToday.BackColor = System.Drawing.Color.Transparent;
-      this._btnToday.BorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
-      this._btnToday.ButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
-      this._btnToday.ButtonFont = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+      this._btnToday.BackColor = Color.Transparent;
+      this._btnToday.BorderColor = Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
+      this._btnToday.ButtonColor = Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
+      this._btnToday.ButtonFont = new Font("Arial", 8F, FontStyle.Bold);
       // ORDISOFTWARE MODIF BEGIN
       this._btnToday.ButtonText = DesignMode ? "Today" : Translations.Today.GetLang();
       // ORDISOFTWARE MODIF END
-      this._btnToday.FocusColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
-      this._btnToday.HighlightBorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
-      this._btnToday.HighlightButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
-      this._btnToday.Location = new System.Drawing.Point(19, 20);
+      this._btnToday.FocusColor = Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
+      this._btnToday.HighlightBorderColor = Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
+      this._btnToday.HighlightButtonColor = Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
+      this._btnToday.Location = new Point(19, 20);
       this._btnToday.Name = "_btnToday";
-      //this._btnToday.Size = new System.Drawing.Size(72, 29);
+      //this._btnToday.Size = new Size(72, 29);
       this._btnToday.TabIndex = 0;
-      this._btnToday.TextColor = System.Drawing.Color.Black;
+      this._btnToday.TextColor = Color.Black;
       this._btnToday.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnTodayButtonClicked);
       // 
       // _btnLeft
       // 
-      this._btnLeft.BackColor = System.Drawing.Color.Transparent;
-      this._btnLeft.BorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
-      this._btnLeft.ButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
-      this._btnLeft.ButtonFont = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+      this._btnLeft.BackColor = Color.Transparent;
+      this._btnLeft.BorderColor = Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
+      this._btnLeft.ButtonColor = Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
+      this._btnLeft.ButtonFont = new Font("Arial", 8F, FontStyle.Bold);
       this._btnLeft.ButtonText = "<";
-      this._btnLeft.FocusColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
-      this._btnLeft.HighlightBorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
-      this._btnLeft.HighlightButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
-      this._btnLeft.Location = new System.Drawing.Point(98, 10);
+      this._btnLeft.FocusColor = Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
+      this._btnLeft.HighlightBorderColor = Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
+      this._btnLeft.HighlightButtonColor = Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
+      this._btnLeft.Location = new Point(98, 10);
       this._btnLeft.Name = "_btnLeft";
-      this._btnLeft.Size = new System.Drawing.Size(42, 29);
+      this._btnLeft.Size = new Size(42, 29);
       this._btnLeft.TabIndex = 1;
-      this._btnLeft.TextColor = System.Drawing.Color.Black;
+      this._btnLeft.TextColor = Color.Black;
       this._btnLeft.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnLeftButtonClicked);
       // 
       // _btnRight
       // 
-      this._btnRight.BackColor = System.Drawing.Color.Transparent;
-      this._btnRight.BorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
-      this._btnRight.ButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
-      this._btnRight.ButtonFont = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+      this._btnRight.BackColor = Color.Transparent;
+      this._btnRight.BorderColor = Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
+      this._btnRight.ButtonColor = Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
+      this._btnRight.ButtonFont = new Font("Arial", 8F, FontStyle.Bold);
       this._btnRight.ButtonText = ">";
-      this._btnRight.FocusColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
-      this._btnRight.HighlightBorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
-      this._btnRight.HighlightButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
-      this._btnRight.Location = new System.Drawing.Point(138 + 5, 10);
+      this._btnRight.FocusColor = Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
+      this._btnRight.HighlightBorderColor = Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
+      this._btnRight.HighlightButtonColor = Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
+      this._btnRight.Location = new Point(138 + 5, 10);
       this._btnRight.Name = "_btnRight";
-      this._btnRight.Size = new System.Drawing.Size(42, 29);
+      this._btnRight.Size = new Size(42, 29);
       this._btnRight.TabIndex = 2;
-      this._btnRight.TextColor = System.Drawing.Color.Black;
+      this._btnRight.TextColor = Color.Black;
       this._btnRight.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnRightButtonClicked);
       // 
       // _contextMenuStrip1
       // 
-      this._contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this._contextMenuStrip1.Items.AddRange(new ToolStripItem[] {
             this._miProperties});
       this._contextMenuStrip1.Name = "_contextMenuStrip1";
-      this._contextMenuStrip1.Size = new System.Drawing.Size(137, 26);
+      this._contextMenuStrip1.Size = new Size(137, 26);
       // 
       // _miProperties
       // 
       this._miProperties.Name = "_miProperties";
-      this._miProperties.Size = new System.Drawing.Size(136, 22);
+      this._miProperties.Size = new Size(136, 22);
       this._miProperties.Text = "Properties...";
       this._miProperties.Click += new System.EventHandler(this.MenuItemPropertiesClick);
       // 
@@ -446,11 +446,11 @@ namespace Calendar.NET
       this.Controls.Add(this._btnLeft);
       this.Controls.Add(this._btnToday);
       this.Name = "Calendar";
-      this.Size = new System.Drawing.Size(512, 440);
+      this.Size = new Size(512, 440);
       this.Load += new System.EventHandler(this.CalendarLoad);
-      this.Paint += new System.Windows.Forms.PaintEventHandler(this.CalendarPaint);
-      this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMouseClick);
-      this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CalendarMouseMove);
+      this.Paint += new PaintEventHandler(this.CalendarPaint);
+      this.MouseClick += new MouseEventHandler(this.CalendarMouseClick);
+      this.MouseMove += new MouseEventHandler(this.CalendarMouseMove);
       this.Resize += new System.EventHandler(this.CalendarResize);
       this.DoubleBuffered = true;
       this._contextMenuStrip1.ResumeLayout(false);

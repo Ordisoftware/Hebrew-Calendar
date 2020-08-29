@@ -1,24 +1,24 @@
 /// <license>
-/// This file is part of Ordisoftware Core Library.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Originally developped for Ordisoftware Core Library.
 /// Copyright 2004-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// This program is free software: you can redistribute it and/or modify it under the terms of
-/// the GNU Lesser General Public License (LGPL v3) as published by the Free Software Foundation,
-/// either version 3 of the License, or (at your option) any later version.
-/// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-/// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-/// See the GNU Lesser General Public License for more details.
-/// You should have received a copy of the GNU General Public License along with this program.
-/// If not, see www.gnu.org/licenses website.
+/// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// https://mozilla.org/MPL/2.0/.
+/// If it is not possible or desirable to put the notice in a particular file, 
+/// then You may include the notice in a location(such as a LICENSE file in a 
+/// relevant directory) where a recipient would be likely to look for such a notice.
+/// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2012-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
@@ -47,36 +47,11 @@ namespace Ordisoftware.Core
     /// A DialogResult.
     /// </returns>
     /// <param name="text">The text.</param>
-    static public DialogResult Show(string text)
-    {
-      return Show(Title, text,
-                  MessageBoxButtons.OK, MessageBoxIcon.None);
-    }
-
-    /// <summary>
-    /// Show a message and wait user action.
-    /// </summary>
-    /// <returns>
-    /// A DialogResult.
-    /// </returns>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    static public DialogResult Show(string title, string text)
-    {
-      return Show(title, text,
-                  MessageBoxButtons.OK, MessageBoxIcon.None);
-    }
-
-    /// <summary>
-    /// Show a message and wait user action.
-    /// </summary>
-    /// <returns>
-    /// A DialogResult.
-    /// </returns>
-    /// <param name="text">The text.</param>
     /// <param name="buttons">The buttons.</param>
     /// <param name="icon">The icon.</param>
-    static public DialogResult Show(string text, MessageBoxButtons buttons, MessageBoxIcon icon)
+    static public DialogResult Show(string text,
+                                    MessageBoxButtons buttons = MessageBoxButtons.OK,
+                                    MessageBoxIcon icon = MessageBoxIcon.None)
     {
       return Show(Title, text, buttons, icon);
     }
@@ -91,16 +66,19 @@ namespace Ordisoftware.Core
     /// <param name="text">The text.</param>
     /// <param name="buttons">The buttons.</param>
     /// <param name="icon">The icon.</param>
-    static public DialogResult Show(string title, string text, MessageBoxButtons buttons, MessageBoxIcon icon)
+    static public DialogResult Show(string title, 
+                                    string text,
+                                    MessageBoxButtons buttons = MessageBoxButtons.OK,
+                                    MessageBoxIcon icon = MessageBoxIcon.None)
     {
       DialogResult res = DialogResult.None;
       try
       {
         res = ShowWinForm(title, text, buttons, icon);
       }
-      catch ( Exception except )
+      catch ( Exception ex )
       {
-        except.Manage();
+        ex.Manage();
       }
       return res;
     }
@@ -121,6 +99,25 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Show an information box.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    static public void ShowInfo(string text)
+    {
+      ShowInfo(Title, text);
+    }
+
+    /// <summary>
+    /// Show an information box.
+    /// </summary>
+    /// <param name="title">The title.</param>
+    /// <param name="text">The text.</param>
+    static public void ShowInfo(string title, string text)
+    {
+      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+
+    /// <summary>
     /// Show an advertising box.
     /// </summary>
     /// <param name="text">The text.</param>
@@ -137,15 +134,6 @@ namespace Ordisoftware.Core
     static public void ShowAdvert(string title, string text)
     {
       Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-    }
-
-    /// <summary>
-    /// Show an information box.
-    /// </summary>
-    /// <param name="text">The text.</param>
-    static public void ShowInfo(string text)
-    {
-      Show(Title, text, MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     /// <summary>

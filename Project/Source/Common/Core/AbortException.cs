@@ -1,25 +1,25 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Core Library.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Originally developped for Ordisoftware Core Library.
 /// Copyright 2004-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// This program is free software: you can redistribute it and/or modify it under the terms of
-/// the GNU Lesser General Public License (LGPL v3) as published by the Free Software Foundation,
-/// either version 3 of the License, or (at your option) any later version.
-/// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-/// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-/// See the GNU Lesser General Public License for more details.
-/// You should have received a copy of the GNU General Public License along with this program.
-/// If not, see www.gnu.org/licenses website.
+/// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// https://mozilla.org/MPL/2.0/.
+/// If it is not possible or desirable to put the notice in a particular file, 
+/// then You may include the notice in a location(such as a LICENSE file in a 
+/// relevant directory) where a recipient would be likely to look for such a notice.
+/// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 
-namespace Ordisoftware.Core
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide abort exception.
+  /// Provide abort Exception.
   /// </summary>
   [Serializable]
   public class AbortException : Exception

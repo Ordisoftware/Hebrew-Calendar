@@ -15,7 +15,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Odbc;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
 {

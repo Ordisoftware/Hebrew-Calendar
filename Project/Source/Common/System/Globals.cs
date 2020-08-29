@@ -34,11 +34,26 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate new line.
     /// </summary>
     static public readonly string NL = Environment.NewLine;
+    static public readonly string NL2 = NL + NL;
+    static public readonly string NL3 = NL2 + NL;
+    static public readonly string NL4 = NL3 + NL;
 
     /// <summary>
     /// Indicate the main form.
     /// </summary>
-    static public Form MainForm { get; set; }
+    static public Form MainForm
+    {
+      get
+      {
+        return _MainForm != null ? _MainForm 
+                                 : Application.OpenForms.Count > 0 ? Application.OpenForms[0] : Form.ActiveForm;
+      }
+      set
+      {
+        _MainForm = value;
+      }
+    }
+    static private Form _MainForm;
 
     /// <summary>
     /// Indicate the application settings.

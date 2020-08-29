@@ -1,31 +1,29 @@
 /// <license>
-/// This file is part of Ordisoftware Core Library.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Originally developped for Ordisoftware Core Library.
 /// Copyright 2004-2019 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
-/// This program is free software: you can redistribute it and/or modify it under the terms of
-/// the GNU Lesser General Public License (LGPL v3) as published by the Free Software Foundation,
-/// either version 3 of the License, or (at your option) any later version.
-/// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-/// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-/// See the GNU Lesser General Public License for more details.
-/// You should have received a copy of the GNU General Public License along with this program.
-/// If not, see www.gnu.org/licenses website.
+/// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// https://mozilla.org/MPL/2.0/.
+/// If it is not possible or desirable to put the notice in a particular file, 
+/// then You may include the notice in a location(such as a LICENSE file in a 
+/// relevant directory) where a recipient would be likely to look for such a notice.
+/// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2012-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Printing;
 using System.Windows.Forms;
-using Ordisoftware.Core.Diagnostics;
-using Ordisoftware.HebrewCommon;
+using System.Drawing.Printing;
+//using System.Drawing;
 
-namespace Ordisoftware.Core.Windows.Forms
+namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide exception visualisation.
+  /// Provide Exception visualisation.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   internal partial class ExceptionForm : Form
@@ -51,7 +49,7 @@ namespace Ordisoftware.Core.Windows.Forms
     /// </summary>
     static public void Run(ExceptionInfo einfo, bool isInner = false)
     {
-      using ( ExceptionForm form = new ExceptionForm() )
+      using ( var form = new ExceptionForm() )
       {
         form.printPreviewDialog.FindForm().WindowState = FormWindowState.Maximized;
         form.buttonViewLog.Visible = false; // SystemManager.Log.Active;
@@ -67,13 +65,11 @@ namespace Ordisoftware.Core.Windows.Forms
         form.textException.Text = einfo.TypeText;
         form.textMessage.Text = einfo.Message;
         form.labelInfo1.Text += einfo.Emitter + " " + Globals.AssemblyVersion;
-        form.textStack.Text = /*"[Thread: " + einfo.ThreadName + "]"
-                            + Environment.NewLine + Environment.NewLine
-                            +*/ einfo.StackText;
+        form.textStack.Text = /* "[Thread: " + einfo.ThreadName + "]" + Globals.NL2 + */ einfo.StackText;
         form.ErrorMsg.Add(form.textException.Text);
-        form.ErrorMsg.Add(Environment.NewLine);
+        form.ErrorMsg.Add(Globals.NL);
         form.ErrorMsg.Add(form.textMessage.Text);
-        form.ErrorMsg.Add(Environment.NewLine);
+        form.ErrorMsg.Add(Globals.NL);
         form.ErrorMsg.Add(form.textStack.Text);
         form.OriginalHeight = form.Height;
         form.ErrorInfo = einfo;
@@ -109,7 +105,7 @@ namespace Ordisoftware.Core.Windows.Forms
     {
       if ( Height == OriginalHeight )
       {
-        Height = textStack.Top + 28;
+        Height = textStack.Top + 35;
         buttonViewStack.Text = ButtonStackText + " >>";
       }
       else
@@ -136,8 +132,7 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <param name="e">Event information.</param>
     private void buttonViewLog_Click(object sender, EventArgs e)
     {
-      /*Invoke(new Action<Logger, bool>((log, b) => LogForm.Run(log, b)),
-             new object[] { SystemManager.Log, true });*/
+      //Invoke(new Action<Logger, bool>((log, b) => LogForm.Run(log, b)), new object[] { SystemManager.Log, true });
     }
 
     /// <summary>
@@ -147,19 +142,19 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <param name="e">Event information.</param>
     private void buttonPrint_Click(object sender, EventArgs e)
     {
-      Hide();
+      /*Hide();
       try
       {
         DialogResult res;
-        //if ( SystemManager.Process.IsControlled ) res = printPreviewDialog.ShowDialog();
-        //else res = printDialog.ShowDialog();
+        if ( SystemManager.Process.IsControlled ) res = printPreviewDialog.ShowDialog();
+        else res = printDialog.ShowDialog();
         res = printPreviewDialog.ShowDialog();
         if ( res == DialogResult.OK ) printDocument.Print();
       }
       finally
       {
         Show();
-      }
+      }*/
     }
 
     /// <summary>
@@ -169,17 +164,18 @@ namespace Ordisoftware.Core.Windows.Forms
     /// <param name="e">Print page event information.</param>
     private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
     {
-      Font font1 = new Font("Arial", 12, FontStyle.Bold | FontStyle.Underline);
-      Font font2 = new Font("Arial", 12, FontStyle.Regular);
-      int x = 50, y = 50;
+      /*var font1 = new Font("Arial", 12, FontStyle.Bold | FontStyle.Underline);
+      var font2 = new Font("Arial", 12, FontStyle.Regular);
+      int x = 50;
+      int y = 50;
       string msg = "Error report for application : " + HebrewCommon.Globals.AssemblyTitle;
       e.Graphics.DrawString(msg, font1, Brushes.Black, x, y);
-      y = y + (int)( font1.Height * 3 );
+      y = y + font1.Height * 3;
       foreach ( string s in ErrorMsg )
       {
         e.Graphics.DrawString(s, font2, Brushes.Black, x, y);
         y = y + (int)( font2.Height * 1.5 );
-      }
+      }*/
     }
 
     /// <summary>
@@ -193,31 +189,29 @@ namespace Ordisoftware.Core.Windows.Forms
       try
       {
         TopMost = false;
-        string NewLine = Environment.NewLine;
-        string NewLine2 = NewLine + NewLine;
         string query = "&title=" + ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion
                      + "&labels=type: bug"
                      + "&body=";
-        string body = "## COMMENT" + NewLine2
+        string body = "## COMMENT" + Globals.NL2
                     + Localizer.GitHubIssueComment.GetLang();
-        body += NewLine2
-              + "## SYSTEM" + NewLine2
+        body += Globals.NL2
+              + "## SYSTEM" + Globals.NL2
               + SystemHelper.OperatingSystem;
-        body += NewLine
-              + "Total Visible Memory: " + SystemHelper.TotalVisibleMemory + NewLine
+        body += Globals.NL
+              + "Total Visible Memory: " + SystemHelper.TotalVisibleMemory + Globals.NL
               + "Free Physical Memory: " + SystemHelper.PhysicalMemoryFree;
-        body += NewLine2
-              + "## ERROR : " + ErrorInfo.Instance.GetType().Name + NewLine2
-              + ErrorInfo.Message + NewLine2
-              + "#### _STACK_" + NewLine2
+        body += Globals.NL2
+              + "## ERROR : " + ErrorInfo.Instance.GetType().Name + Globals.NL2
+              + ErrorInfo.Message + Globals.NL2
+              + "#### _STACK_" + Globals.NL2
               + ErrorInfo.StackText;
         ExceptionInfo inner = ErrorInfo.InnerInfo;
         while ( inner != null )
         {
-          body += NewLine2
-                + "## INNER : " + inner.Instance.GetType().Name + NewLine2
-                + inner.Message + NewLine2
-                + "#### _STACK_" + NewLine2
+          body += Globals.NL2
+                + "## INNER : " + inner.Instance.GetType().Name + Globals.NL2
+                + inner.Message + Globals.NL2
+                + "#### _STACK_" + Globals.NL2
                 + inner.StackText;
           inner = inner.InnerInfo;
         }

@@ -18,7 +18,6 @@ using System.IO.Pipes;
 using System.Configuration;
 using System.Threading;
 using System.Runtime.Serialization.Formatters.Binary;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
 {

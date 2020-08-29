@@ -14,7 +14,6 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Diagnostics;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
 {
