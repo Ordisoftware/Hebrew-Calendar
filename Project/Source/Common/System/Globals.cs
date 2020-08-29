@@ -13,9 +13,10 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Configuration;
-using System.IO;
+using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -155,6 +156,24 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     public static bool IsDesignTime 
       => System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
+
+    /// <summary>
+    /// Indicate the application process name.
+    /// </summary>
+    static public readonly string ProcessName
+      = Path.GetFileNameWithoutExtension(Application.ExecutablePath);
+
+    /// <summary>
+    /// Indicate the real application process name.
+    /// </summary>
+    static public ProcessPriorityClass RealProcessPriority
+    {
+      get
+      {
+        var list = Process.GetProcessesByName(ProcessName);
+        return list.Length == 1 ? list[0].PriorityClass : 0;
+      }
+    }
 
     /// <summary>
     /// Indicate the root folder path of the application.

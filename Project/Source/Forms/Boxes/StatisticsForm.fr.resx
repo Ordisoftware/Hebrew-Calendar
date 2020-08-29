@@ -155,10 +155,10 @@
     <value>Remplissage vue par mois :</value>
   </data>
   <data name="generateYearsTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 13</value>
+    <value>90, 13</value>
   </data>
   <data name="generateYearsTimeLabel.Text" xml:space="preserve">
-    <value>Génération des années :</value>
+    <value>Total génération :</value>
   </data>
   <data name="loadDataTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -286,6 +286,18 @@
   <data name="cPUNameLabel.Text" xml:space="preserve">
     <value>CPU :</value>
   </data>
+  <data name="generateAnalyseDaysTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="generateAnalyseDaysTimeLabel.Text" xml:space="preserve">
+    <value>Analyse des jours:</value>
+  </data>
+  <data name="generatePopulateDaysTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 13</value>
+  </data>
+  <data name="generatePopulateDaysTimeLabel.Text" xml:space="preserve">
+    <value>Garnissage des jours:</value>
+  </data>
   <data name="EditAlwaysOnTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 17</value>
   </data>
@@ -313,7 +325,14 @@
   <data name="GroupBoxSystemLoad.Text" xml:space="preserve">
     <value>Charge</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Statistiques</value>
+  </data>
+  <data name="generateTextReportTimeLabel.Text" xml:space="preserve">
+    <value>Rapport texte</value>
   </data>
 </root>

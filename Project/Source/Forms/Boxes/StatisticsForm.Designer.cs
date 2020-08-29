@@ -58,6 +58,9 @@
       System.Windows.Forms.Label processPriorityLabel;
       System.Windows.Forms.Label currentThreadPriorityLabel;
       System.Windows.Forms.Label cPUNameLabel;
+      System.Windows.Forms.Label generateAnalyseDaysTimeLabel;
+      System.Windows.Forms.Label generatePopulateDaysTimeLabel;
+      System.Windows.Forms.Label generateTextReportTimeLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.EditAlwaysOnTop = new System.Windows.Forms.CheckBox();
       this.ActionClose = new System.Windows.Forms.Button();
@@ -91,6 +94,9 @@
       this.processPriorityLabel1 = new System.Windows.Forms.Label();
       this.currentThreadPriorityLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxTimings = new System.Windows.Forms.GroupBox();
+      this.generateTextReportTimeLabel1 = new System.Windows.Forms.Label();
+      this.generatePopulateDaysTimeLabel1 = new System.Windows.Forms.Label();
+      this.generateAnalyseDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxDatabase = new System.Windows.Forms.GroupBox();
       this.GroupBox3Memoty = new System.Windows.Forms.GroupBox();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
@@ -126,6 +132,9 @@
       processPriorityLabel = new System.Windows.Forms.Label();
       currentThreadPriorityLabel = new System.Windows.Forms.Label();
       cPUNameLabel = new System.Windows.Forms.Label();
+      generateAnalyseDaysTimeLabel = new System.Windows.Forms.Label();
+      generatePopulateDaysTimeLabel = new System.Windows.Forms.Label();
+      generateTextReportTimeLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
@@ -276,6 +285,21 @@
       // 
       resources.ApplyResources(cPUNameLabel, "cPUNameLabel");
       cPUNameLabel.Name = "cPUNameLabel";
+      // 
+      // generateAnalyseDaysTimeLabel
+      // 
+      resources.ApplyResources(generateAnalyseDaysTimeLabel, "generateAnalyseDaysTimeLabel");
+      generateAnalyseDaysTimeLabel.Name = "generateAnalyseDaysTimeLabel";
+      // 
+      // generatePopulateDaysTimeLabel
+      // 
+      resources.ApplyResources(generatePopulateDaysTimeLabel, "generatePopulateDaysTimeLabel");
+      generatePopulateDaysTimeLabel.Name = "generatePopulateDaysTimeLabel";
+      // 
+      // generateTextReportTimeLabel
+      // 
+      resources.ApplyResources(generateTextReportTimeLabel, "generateTextReportTimeLabel");
+      generateTextReportTimeLabel.Name = "generateTextReportTimeLabel";
       // 
       // PanelBottom
       // 
@@ -474,6 +498,12 @@
       // 
       // GroupBoxTimings
       // 
+      this.GroupBoxTimings.Controls.Add(generateTextReportTimeLabel);
+      this.GroupBoxTimings.Controls.Add(this.generateTextReportTimeLabel1);
+      this.GroupBoxTimings.Controls.Add(generatePopulateDaysTimeLabel);
+      this.GroupBoxTimings.Controls.Add(this.generatePopulateDaysTimeLabel1);
+      this.GroupBoxTimings.Controls.Add(generateAnalyseDaysTimeLabel);
+      this.GroupBoxTimings.Controls.Add(this.generateAnalyseDaysTimeLabel1);
       this.GroupBoxTimings.Controls.Add(this.startingTimeLabel1);
       this.GroupBoxTimings.Controls.Add(startingTimeLabel);
       this.GroupBoxTimings.Controls.Add(this.loadDataTimeLabel1);
@@ -487,6 +517,24 @@
       resources.ApplyResources(this.GroupBoxTimings, "GroupBoxTimings");
       this.GroupBoxTimings.Name = "GroupBoxTimings";
       this.GroupBoxTimings.TabStop = false;
+      // 
+      // generateTextReportTimeLabel1
+      // 
+      this.generateTextReportTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "GenerateTextReportTime", true));
+      resources.ApplyResources(this.generateTextReportTimeLabel1, "generateTextReportTimeLabel1");
+      this.generateTextReportTimeLabel1.Name = "generateTextReportTimeLabel1";
+      // 
+      // generatePopulateDaysTimeLabel1
+      // 
+      this.generatePopulateDaysTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "GeneratePopulateDaysTime", true));
+      resources.ApplyResources(this.generatePopulateDaysTimeLabel1, "generatePopulateDaysTimeLabel1");
+      this.generatePopulateDaysTimeLabel1.Name = "generatePopulateDaysTimeLabel1";
+      // 
+      // generateAnalyseDaysTimeLabel1
+      // 
+      this.generateAnalyseDaysTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "GenerateAnalyseDaysTime", true));
+      resources.ApplyResources(this.generateAnalyseDaysTimeLabel1, "generateAnalyseDaysTimeLabel1");
+      this.generateAnalyseDaysTimeLabel1.Name = "generateAnalyseDaysTimeLabel1";
       // 
       // GroupBoxDatabase
       // 
@@ -661,5 +709,8 @@
     private System.Windows.Forms.TextBox operatingSystemTextBox;
     private System.Windows.Forms.TextBox processorNameTextBox;
     private System.Windows.Forms.GroupBox GroupBoxSystemLoad;
+    private System.Windows.Forms.Label generatePopulateDaysTimeLabel1;
+    private System.Windows.Forms.Label generateAnalyseDaysTimeLabel1;
+    private System.Windows.Forms.Label generateTextReportTimeLabel1;
   }
 }

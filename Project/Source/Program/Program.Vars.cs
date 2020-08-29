@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
 using Ordisoftware.HebrewCommon;
@@ -91,8 +90,6 @@ namespace Ordisoftware.HebrewCalendar
     /// Indicate predefined years intervals.
     /// </summary>
     static public readonly int[] PredefinedYearsIntervals = { 5, 10, 20, 30, 40, 50 };
-
-    static public Stopwatch Chrono = new Stopwatch();
 
     /// <summary>
     /// Indicate shabat notice form.

@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -50,97 +51,108 @@ namespace Ordisoftware.HebrewCalendar
 
     private string GenerateReport()
     {
-      var headerSep = SeparatorV;
-      var headerTxt = SeparatorV;
-      foreach ( ReportFieldText v in Enum.GetValues(typeof(ReportFieldText)) )
+      var Chrono = new Stopwatch();
+      Chrono.Start();
+      try
       {
-        string str = Translations.CalendarField.GetLang(v);
-        headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
-        headerTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " " + SeparatorV.ToString();
+
+        var headerSep = SeparatorV;
+        var headerTxt = SeparatorV;
+        foreach ( ReportFieldText v in Enum.GetValues(typeof(ReportFieldText)) )
+        {
+          string str = Translations.CalendarField.GetLang(v);
+          headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
+          headerTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " " + SeparatorV.ToString();
+        }
+        headerSep = headerSep.Remove(headerSep.Length - 1) + SeparatorV;
+        var content = new StringBuilder();
+        content.Append(headerSep + Environment.NewLine);
+        content.Append(headerTxt + Environment.NewLine);
+        if ( DataSet.LunisolarDays.Count <= 0 ) return "";
+        var lastyear = SQLite.GetDate(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+        LoadingForm.Instance.Initialize(Translations.ProgressGenerateReport.GetLang(),
+                                        DataSet.LunisolarDays.Count,
+                                        Program.LoadingFormLoadDB);
+        foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
+          try
+          {
+            var dayDate = SQLite.GetDate(day.Date);
+            LoadingForm.Instance.DoProgress();
+            if ( day.LunarMonth == 0 ) continue;
+            if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
+            if ( day.IsNewMoon == 1 ) content.Append(headerSep + Environment.NewLine);
+            string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
+            string strDay = ( (MoonRise)day.MoonriseType == MoonRise.NextDay
+                          ? "  "
+                          : string.Format("{0:00}", day.LunarDay) ) + " " + ( day.IsNewMoon == 1
+                                                                            ? MoonNewText
+                                                                            : day.IsFullMoon == 1
+                                                                              ? MoonFullText
+                                                                              : " " );
+            string strSun = day.Sunrise + " - " + day.Sunset;
+            strSun = ShowWinterSummerHour
+                   ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
+                                                              ? Translations.Ephemeris.GetLang(Ephemeris.SummerHour)
+                                                              : Translations.Ephemeris.GetLang(Ephemeris.WinterHour) )
+                                                                + " " + strSun
+                   : strSun + new string(' ', 3 + 1);
+            strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
+                              ? ShabatText
+                              : "   " );
+            string strMoonrise = day.Moonrise == ""
+                               ? MoonNoText
+                               : Translations.Ephemeris.GetLang(Ephemeris.Rise) + day.Moonrise;
+            string strMoonset = day.Moonset == ""
+                              ? MoonNoText
+                              : Translations.Ephemeris.GetLang(Ephemeris.Set) + day.Moonset;
+            string strMoon = (MoonRise)day.MoonriseType == MoonRise.BeforeSet
+                           ? strMoonrise + ColumnSepInner + strMoonset
+                           : strMoonset + ColumnSepInner + strMoonrise;
+            string textDate = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames[(int)dayDate.DayOfWeek];
+            textDate = textDate.Replace(".", "") + " ";
+            textDate += dayDate.Day.ToString("00") + ".";
+            textDate += dayDate.Month.ToString("00") + ".";
+            textDate += dayDate.Year;
+            string strDesc = "";
+            string s1 = Translations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
+            string s2 = Translations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
+            strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
+            int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
+            int length = lengthAvailable - 2 - strDesc.Length;
+            if ( length < 0 )
+              throw new Exception($"Field if too short.{Environment.NewLine}" +
+                                  $"    Available chars: {lengthAvailable}{Environment.NewLine}" +
+                                  $"    Missing chars: {length}");
+            strDesc += new string(' ', length) + ColumnSepRight;
+            content.Append(ColumnSepLeft);
+            content.Append(textDate);
+            content.Append(ColumnSepInner);
+            content.Append(strMonth);
+            content.Append(ColumnSepInner);
+            content.Append(strDay);
+            content.Append(ColumnSepInner);
+            content.Append(strSun);
+            content.Append(ColumnSepInner);
+            content.Append(strMoon);
+            content.Append(ColumnSepInner);
+            content.Append(strDesc);
+            content.Append(Environment.NewLine);
+          }
+          catch ( Exception ex )
+          {
+            GenerateErrors.Add($"{day.Date}: [{nameof(GenerateReport)}] { ex.Message}");
+          }
+        content.Append(headerSep + Environment.NewLine);
+        var row = DataSet.Report.NewReportRow();
+        row.Content = content.ToString();
+        DataSet.Report.AddReportRow(row);
+        return content.ToString();
       }
-      headerSep = headerSep.Remove(headerSep.Length - 1) + SeparatorV;
-      var content = new StringBuilder();
-      content.Append(headerSep + Environment.NewLine);
-      content.Append(headerTxt + Environment.NewLine);
-      if ( DataSet.LunisolarDays.Count <= 0 ) return "";
-      var lastyear = SQLite.GetDate(DataSet.LunisolarDays.OrderByDescending(p=> p.Date).First().Date).Year;
-      LoadingForm.Instance.Initialize(Translations.ProgressGenerateReport.GetLang(),
-                                      DataSet.LunisolarDays.Count,
-                                      Program.LoadingFormLoadDB);
-      foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
-        try
-        {
-          var dayDate = SQLite.GetDate(day.Date);
-          LoadingForm.Instance.DoProgress();
-          if ( day.LunarMonth == 0 ) continue;
-          if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-          if ( day.IsNewMoon == 1 ) content.Append(headerSep + Environment.NewLine);
-          string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
-          string strDay = ( (MoonRise)day.MoonriseType == MoonRise.NextDay
-                        ? "  "
-                        : string.Format("{0:00}", day.LunarDay) ) + " " + ( day.IsNewMoon == 1
-                                                                          ? MoonNewText
-                                                                          : day.IsFullMoon == 1
-                                                                            ? MoonFullText
-                                                                            : " " );
-          string strSun = day.Sunrise + " - " + day.Sunset;
-          strSun = ShowWinterSummerHour
-                 ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
-                                                            ? Translations.Ephemeris.GetLang(Ephemeris.SummerHour)
-                                                            : Translations.Ephemeris.GetLang(Ephemeris.WinterHour) )
-                                                              + " " + strSun
-                 : strSun + new string(' ', 3 + 1);
-          strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay 
-                            ? ShabatText 
-                            : "   " );
-          string strMoonrise = day.Moonrise == ""
-                             ? MoonNoText
-                             : Translations.Ephemeris.GetLang(Ephemeris.Rise) + day.Moonrise;
-          string strMoonset = day.Moonset == ""
-                            ? MoonNoText
-                            : Translations.Ephemeris.GetLang(Ephemeris.Set) + day.Moonset;
-          string strMoon = (MoonRise)day.MoonriseType == MoonRise.BeforeSet
-                         ? strMoonrise + ColumnSepInner + strMoonset
-                         : strMoonset + ColumnSepInner + strMoonrise;
-          string textDate = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames[(int)dayDate.DayOfWeek];
-          textDate = textDate.Replace(".", "") + " ";
-          textDate += dayDate.Day.ToString("00") + ".";
-          textDate += dayDate.Month.ToString("00") + ".";
-          textDate += dayDate.Year;
-          string strDesc = "";
-          string s1 = Translations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
-          string s2 = Translations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
-          strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
-          int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
-          int length = lengthAvailable - 2 - strDesc.Length;
-          if ( length < 0 )
-            throw new Exception($"Field if too short.{Environment.NewLine}" +
-                                $"    Available chars: {lengthAvailable}{Environment.NewLine}" +
-                                $"    Missing chars: {length}");
-          strDesc += new string(' ', length) + ColumnSepRight;
-          content.Append(ColumnSepLeft);
-          content.Append(textDate);
-          content.Append(ColumnSepInner);
-          content.Append(strMonth);
-          content.Append(ColumnSepInner);
-          content.Append(strDay);
-          content.Append(ColumnSepInner);
-          content.Append(strSun);
-          content.Append(ColumnSepInner);
-          content.Append(strMoon);
-          content.Append(ColumnSepInner);
-          content.Append(strDesc);
-          content.Append(Environment.NewLine);
-        }
-        catch ( Exception ex )
-        {
-          GenerateErrors.Add($"{day.Date}: [{nameof(GenerateReport)}] { ex.Message}");
-        }
-      content.Append(headerSep + Environment.NewLine);
-      var row = DataSet.Report.NewReportRow();
-      row.Content = content.ToString();
-      DataSet.Report.AddReportRow(row);
-      return content.ToString();
+      finally
+      {
+        Chrono.Stop();
+        Program.Settings.BenchmarkGenerateTextReport = Chrono.ElapsedMilliseconds;
+      }
     }
 
   }

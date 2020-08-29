@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace Ordisoftware.HebrewCalendar
     private bool AddGenerateError(string method, string date, Exception ex)
     {
       var einfo = new ExceptionInfo(this, ex);
-      GenerateErrors.Add($"{(GenerateErrors.Count + 1).ToString("00")}) " + 
+      GenerateErrors.Add($"{( GenerateErrors.Count + 1 ).ToString("00")}) " +
                          $"{method.PadRight(13)} {date} : " +
                          $"{einfo.SingleLineText}");
       return GenerateErrors.Count >= MaxGenerateErrors + 1;
@@ -54,9 +55,10 @@ namespace Ordisoftware.HebrewCalendar
       PanelViewGrid.Parent = null;
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
+      var Chrono = new Stopwatch();
+      Chrono.Start();
       try
       {
-        Program.Chrono.Restart();
         UpdateButtons();
         CalendarText.Clear();
         CalendarMonth.TheEvents.Clear();
@@ -76,13 +78,14 @@ namespace Ordisoftware.HebrewCalendar
             }
             catch ( Exception ex )
             {
+              // todo add in errors list instead
               ex.Manage();
             }
         }
         finally
         {
-          Program.Chrono.Stop();
-          Program.Settings.BenchmarkGenerateYears = Program.Chrono.ElapsedMilliseconds;
+          Chrono.Stop();
+          Program.Settings.BenchmarkGenerateYears = Chrono.ElapsedMilliseconds;
           Program.Settings.LastGenerated = DateTime.Now;
           Program.Settings.Save();
           if ( IsGenerating )
@@ -133,25 +136,35 @@ namespace Ordisoftware.HebrewCalendar
       LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(),
                                       ProgressCount,
                                       Program.LoadingFormGenerate);
-      for ( int year = yearFirst; year <= yearLast; year++ )
+      var Chrono = new Stopwatch();
+      Chrono.Start();
+      try
       {
-        for ( int month = 1; month <= 12; month++ )
-          for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
-            try
-            {
-              LoadingForm.Instance.DoProgress();
-              var row = DataSet.LunisolarDays.NewLunisolarDaysRow();
-              row.Date = SQLite.GetDate(year, month, day);
-              row.TorahEvents = 0;
-              row.LunarMonth = 0;
-              InitializeDay(row);
-              DataSet.LunisolarDays.AddLunisolarDaysRow(row);
-            }
-            catch ( Exception ex )
-            {
-              if ( AddGenerateError(nameof(PopulateDays), $"{year}-{month.ToString("00")}-{day.ToString("00")}", ex) )
-                return;
-            }
+        for ( int year = yearFirst; year <= yearLast; year++ )
+        {
+          for ( int month = 1; month <= 12; month++ )
+            for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
+              try
+              {
+                LoadingForm.Instance.DoProgress();
+                var row = DataSet.LunisolarDays.NewLunisolarDaysRow();
+                row.Date = SQLite.GetDate(year, month, day);
+                row.TorahEvents = 0;
+                row.LunarMonth = 0;
+                InitializeDay(row);
+                DataSet.LunisolarDays.AddLunisolarDaysRow(row);
+              }
+              catch ( Exception ex )
+              {
+                if ( AddGenerateError(nameof(PopulateDays), $"{year}-{month.ToString("00")}-{day.ToString("00")}", ex) )
+                  return;
+              }
+        }
+      }
+      finally
+      {
+        Chrono.Stop();
+        Program.Settings.BenchmarkPopulateDays = Chrono.ElapsedMilliseconds;
       }
     }
 
@@ -204,24 +217,34 @@ namespace Ordisoftware.HebrewCalendar
       LoadingForm.Instance.Initialize(Translations.ProgressAnalyzeDays.GetLang(),
                                       ProgressCount,
                                       Program.LoadingFormGenerate);
-      foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
-        try
-        {
-          LoadingForm.Instance.DoProgress();
-          if ( day.IsNewMoon == 1 )
-            AnalyzeDay(day, ref month);
-          day.LunarMonth = month;
-          if ( day.IsNewMoon == 1 )
-            delta = 0;
-          if ( (MoonRise)day.MoonriseType == MoonRise.NextDay && Program.Settings.TorahEventsCountAsMoon )
-            delta = 1;
-          day.LunarDay -= delta;
-        }
-        catch ( Exception ex )
-        {
-          if ( AddGenerateError(nameof(AnalyseDays), day.Date, ex) )
-            return;
-        }
+      var Chrono = new Stopwatch();
+      Chrono.Start();
+      try
+      {
+        foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
+          try
+          {
+            LoadingForm.Instance.DoProgress();
+            if ( day.IsNewMoon == 1 )
+              AnalyzeDay(day, ref month);
+            day.LunarMonth = month;
+            if ( day.IsNewMoon == 1 )
+              delta = 0;
+            if ( (MoonRise)day.MoonriseType == MoonRise.NextDay && Program.Settings.TorahEventsCountAsMoon )
+              delta = 1;
+            day.LunarDay -= delta;
+          }
+          catch ( Exception ex )
+          {
+            if ( AddGenerateError(nameof(AnalyseDays), day.Date, ex) )
+              return;
+          }
+      }
+      finally
+      {
+        Chrono.Stop();
+        Program.Settings.BenchmarkAnalyseDays = Chrono.ElapsedMilliseconds;
+      }
     }
 
     /// <summary>

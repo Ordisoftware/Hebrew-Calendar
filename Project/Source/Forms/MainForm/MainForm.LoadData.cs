@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using System.Data.Odbc;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
@@ -46,11 +47,12 @@ namespace Ordisoftware.HebrewCalendar
                                         Program.LoadingFormLoadDB);
         DataSet.LunisolarDays.RowChanged += update;
         connection.Close();
-        Program.Chrono.Restart();
+        var Chrono = new Stopwatch();
+        Chrono.Start();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         ReportTableAdapter.Fill(DataSet.Report);
-        Program.Chrono.Stop();
-        Program.Settings.BenchmarkLoadData = Program.Chrono.ElapsedMilliseconds;
+        Chrono.Stop();
+        Program.Settings.BenchmarkLoadData = Chrono.ElapsedMilliseconds;
         Program.Settings.Save();
         if ( DataSet.LunisolarDays.Count > 0 && !Program.Settings.FirstLaunch )
         {

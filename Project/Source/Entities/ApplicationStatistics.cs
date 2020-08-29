@@ -26,6 +26,9 @@ namespace Ordisoftware.HebrewCalendar
     public string StartingTime => Program.Settings.BenchmarkStartingApp.FormatMilliseconds();
     public string LoadDataTime => Program.Settings.BenchmarkLoadData.FormatMilliseconds();
     public string GenerateYearsTime => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.BenchmarkGenerateYears.FormatMilliseconds();
+    public string GeneratePopulateDaysTime => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.BenchmarkPopulateDays.FormatMilliseconds();
+    public string GenerateAnalyseDaysTime => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.BenchmarkAnalyseDays.FormatMilliseconds();
+    public string GenerateTextReportTime => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.BenchmarkGenerateTextReport.FormatMilliseconds();
     public string LastGenerated => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.LastGenerated.ToShortDateString() + " " + Program.Settings.LastGenerated.ToShortTimeString();
     public string FillMonthViewTime => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.BenchmarkFillCalendar.FormatMilliseconds();
 

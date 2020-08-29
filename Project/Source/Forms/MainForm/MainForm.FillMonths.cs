@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Drawing;
 using Calendar.NET;
@@ -54,7 +55,8 @@ namespace Ordisoftware.HebrewCalendar
 
     internal void FillMonths()
     {
-      Program.Chrono.Restart();
+      var Chrono = new Stopwatch();
+      Chrono.Start();
       try
       {
         string strToolTip = "Error on getting sun rise and set";
@@ -188,8 +190,8 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        Program.Chrono.Stop();
-        Program.Settings.BenchmarkFillCalendar = Program.Chrono.ElapsedMilliseconds;
+        Chrono.Stop();
+        Program.Settings.BenchmarkFillCalendar = Chrono.ElapsedMilliseconds;
         Program.Settings.Save();
       }
     }

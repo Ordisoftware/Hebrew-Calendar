@@ -30,7 +30,8 @@ namespace Ordisoftware.HebrewCommon
 
     public string ProcessorName => SystemHelper.ProcessorName;
     public string OperatingSystem => SystemHelper.OperatingSystem;
-    public string ProcessPriority => Process.PriorityClass.ToString();
+
+    public string ProcessPriority => Globals.RealProcessPriority.ToString();
     public string CurrentThreadPriority => Thread.CurrentThread.Priority.ToString();
     public string RunningTime => ( (long)DateTime.Now.Subtract(Globals.StartDateTime).TotalMilliseconds ).FormatMilliseconds(true);
 

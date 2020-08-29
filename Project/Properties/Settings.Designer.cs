@@ -1467,5 +1467,41 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["StatisticsFormAlwaysOnTop"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkPopulateDays {
+            get {
+                return ((long)(this["BenchmarkPopulateDays"]));
+            }
+            set {
+                this["BenchmarkPopulateDays"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkAnalyseDays {
+            get {
+                return ((long)(this["BenchmarkAnalyseDays"]));
+            }
+            set {
+                this["BenchmarkAnalyseDays"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkGenerateTextReport {
+            get {
+                return ((long)(this["BenchmarkGenerateTextReport"]));
+            }
+            set {
+                this["BenchmarkGenerateTextReport"] = value;
+            }
+        }
     }
 }
