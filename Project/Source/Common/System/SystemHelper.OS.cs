@@ -45,6 +45,32 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the OS name formatted.
     /// </summary>
+    static public string ProcessorName
+    {
+      get
+      {
+        if ( _CPUName == "" )
+          try
+          {
+            var list = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor").Get();
+            foreach ( var item in list )
+            {
+              _CPUName = (string)item["Name"];
+              break;
+            }
+          }
+          catch
+          {
+            _CPUName = Localizer.EmptySlot.GetLang();
+          }
+        return _CPUName;
+      }
+    }
+    static private string _CPUName = "";
+
+    /// <summary>
+    /// Indicate the OS name formatted.
+    /// </summary>
     static public string OperatingSystem
     {
       get
@@ -53,12 +79,11 @@ namespace Ordisoftware.HebrewCommon
           try
           {
             string name = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "productName", "").ToString();
-            string type = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
-            string version = Environment.OSVersion.Version.ToString();
             string release = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "").ToString();
+            string version = Environment.OSVersion.Version.ToString();
+            string type = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
             string clr = Environment.Version.ToString();
-            _OperatingSystem = $"{name} {type} {version} ({release})" + Environment.NewLine
-                             + $"CLR {clr}";
+            _OperatingSystem = $"{name} {type} {version} ({release}){Environment.NewLine}CLR {clr}";
           }
           catch
           {
@@ -77,8 +102,7 @@ namespace Ordisoftware.HebrewCommon
       get
       {
         object value = GetWin32OperatingSystemValue("FreePhysicalMemory");
-        if ( value == null ) return Localizer.EmptySlot.GetLang();
-        return ( (ulong)value * 1024 ).FormatBytesSize();
+        return value != null ? ( (ulong)value * 1024 ).FormatBytesSize() : Localizer.EmptySlot.GetLang();
       }
     }
 
@@ -109,12 +133,11 @@ namespace Ordisoftware.HebrewCommon
     {
       try
       {
-        ObjectQuery wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
-        ManagementObjectSearcher searcher = new ManagementObjectSearcher(wql);
-        ManagementObjectCollection results = searcher.Get();
-        if ( results.Count > 0 )
+        var wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
+        var list = new ManagementObjectSearcher(wql).Get();
+        if ( list.Count > 0 )
         {
-          var enumerator = results.GetEnumerator();
+          var enumerator = list.GetEnumerator();
           if ( enumerator.MoveNext() )
           {
             var instance = enumerator.Current;

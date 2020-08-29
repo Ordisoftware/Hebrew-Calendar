@@ -164,8 +164,8 @@
     <Compile Include="Source\Common\Data\OnlineProviders.cs" />
     <Compile Include="Source\Common\Data\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\UI\ControlLocation.cs" />
-    <Compile Include="Source\Common\System\NullSafeList.cs" />
-    <Compile Include="Source\Common\System\NullSafeDictionary.cs" />
+    <Compile Include="Source\Common\Data\NullSafeList.cs" />
+    <Compile Include="Source\Common\Data\NullSafeDictionary.cs" />
     <Compile Include="Source\Common\System\EnumHelper.cs" />
     <Compile Include="Source\Common\System\Globals.cs" />
     <Compile Include="Source\Common\System\Localizer.Translations.cs" />

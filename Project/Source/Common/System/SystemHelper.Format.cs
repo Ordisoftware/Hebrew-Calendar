@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewCommon
     static public string FormatMilliseconds(this long ms, bool excludems = false)
     {
       TimeSpan time = TimeSpan.FromMilliseconds(ms);
-      string result = string.Format("{0:D2} d {1:D2} h {2:D2} m {3:D2} s" + ( excludems ? "" : "{4:D3} ms" ),
+      string result = string.Format("{0:D2} d {1:D2} h {2:D2} m {3:D2} s" + ( excludems ? "" : " {4:D3} ms" ),
                                     time.Days,
                                     time.Hours,
                                     time.Minutes,

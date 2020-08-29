@@ -28,6 +28,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       Instance = new StatisticsForm();
       Instance.SystemStatisticsForm_Load(null, null);
+      Instance.EditAlwaysOnTop_CheckedChanged(null, null);
     }
 
     static public void Run()
@@ -58,6 +59,11 @@ namespace Ordisoftware.HebrewCalendar
       Timer.Stop();
       e.Cancel = true;
       Hide();
+    }
+
+    private void EditAlwaysOnTop_CheckedChanged(object sender, EventArgs e)
+    {
+      TopMost = EditAlwaysOnTop.Checked;
     }
 
     private void ActionClose_Click(object sender, EventArgs e)

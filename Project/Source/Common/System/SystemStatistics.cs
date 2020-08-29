@@ -15,6 +15,7 @@
 using System;
 using System.Threading;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCommon
 {
@@ -27,16 +28,14 @@ namespace Ordisoftware.HebrewCommon
     static private PerformanceCounter PerformanceCounter;
     static private Process Process = Process.GetCurrentProcess();
 
-    public int ProcessorCount => Environment.ProcessorCount;
+    public string ProcessorName => SystemHelper.ProcessorName;
     public string OperatingSystem => SystemHelper.OperatingSystem;
-
     public string ProcessPriority => Process.PriorityClass.ToString();
     public string CurrentThreadPriority => Thread.CurrentThread.Priority.ToString();
     public string RunningTime => ( (long)DateTime.Now.Subtract(Globals.StartDateTime).TotalMilliseconds ).FormatMilliseconds(true);
 
     public string TotalVisibleMemory => SystemHelper.TotalVisibleMemory;
     public string PhysicalMemoryFree => SystemHelper.PhysicalMemoryFree;
-
     public string MemoryGC => GC.GetTotalMemory(true).FormatBytesSize();
     public string MemoryPrivate => Process.PrivateMemorySize64.FormatBytesSize();
     public string MemoryWorking => Process.WorkingSet64.FormatBytesSize();
@@ -51,9 +50,15 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if (PerformanceCounter == null)
+        if ( PerformanceCounter == null )
+        {
+          LoadingForm.Instance.Initialize(Localizer.Initialization.GetLang(), 1, 0);
+          LoadingForm.Instance.DoProgress(1);
+          Application.DoEvents();
           PerformanceCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-        return PerformanceCounter.NextValue().ToString("00") + "%";
+          LoadingForm.Instance.Hide();
+        }
+        return (int)PerformanceCounter.NextValue() + "%";
       }
     }
 

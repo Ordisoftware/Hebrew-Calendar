@@ -31,6 +31,13 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "(Non définit)" }
       };
 
+    static public readonly Dictionary<string, string> Initialization
+      = new Dictionary<string, string>()
+      {
+        { Languages.EN, "Initialization" },
+        { Languages.FR, "Initialisation" }
+      };
+
     static public readonly Dictionary<string, string> DatabaseIntegrityError
       = new Dictionary<string, string>()
       {
