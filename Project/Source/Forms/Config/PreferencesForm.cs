@@ -597,6 +597,14 @@ namespace Ordisoftware.HebrewCalendar
         EditHebrewLettersPath.Text = OpenFileDialog.FileName;
     }
 
+    private void SelectOpenNavigationForm_CheckedChanged(object sender, EventArgs e)
+    {
+      EditBalloon.Enabled = !SelectOpenNavigationForm.Checked;
+      EditBalloonAutoHide.Enabled = EditBalloon.Enabled;
+      LabelLoomingDelay.Enabled = EditBalloon.Enabled;
+      EditBalloonLoomingDelay.Enabled = EditBalloon.Enabled;
+    }
+
   }
 
 }

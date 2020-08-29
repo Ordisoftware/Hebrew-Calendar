@@ -59,10 +59,16 @@ namespace Ordisoftware.HebrewCalendar
         case TrayIconClickOpen.NavigationForm:
           SelectOpenNavigationForm.Select();
           break;
+        case TrayIconClickOpen.NextCelebrationForm:
+          SelectOpenNextCelebrationsForm.Select();
+          break;
+        default:
+          throw new NotImplementedException(Program.Settings.TrayIconClickOpen.ToString());
       }
       EditRemindShabat_ValueChanged(null, null);
       EditTimerEnabled_CheckedChanged(null, null);
       EditBalloon_CheckedChanged(null, null);
+      SelectOpenNavigationForm_CheckedChanged(null, null);
       ActiveControl = ActionClose;
       IsReady = true;
     }

@@ -47,6 +47,9 @@ namespace Ordisoftware.HebrewCalendar
       else
       if ( SelectOpenNavigationForm.Checked )
         Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
+      else
+      if ( SelectOpenNextCelebrationsForm.Checked )
+        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NextCelebrationForm;
       Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
       Program.Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsInterval.Value;
       for ( int index = 0; index < EditEvents.Items.Count; index++ )

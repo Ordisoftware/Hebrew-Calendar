@@ -293,7 +293,8 @@ namespace Ordisoftware.HebrewCalendar
       if ( !Globals.IsReady ) return;
       if ( !MenuTray.Enabled ) return;
       TrayIcon.Text = Program.Settings.BalloonEnabled ? "" : Text;
-      if ( !Program.Settings.BalloonEnabled ) return;
+      if ( !Program.Settings.BalloonEnabled || Program.Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
+        return;
       TimerBallon.Start();
       TrayIconMouse = Cursor.Position;
       if ( !TimerTrayMouseMove.Enabled && Program.Settings.BalloonAutoHide )
@@ -345,6 +346,12 @@ namespace Ordisoftware.HebrewCalendar
             case TrayIconClickOpen.MainForm:
               MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? new EventArgs() : null);
               break;
+            case TrayIconClickOpen.NextCelebrationForm:
+              if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
+                CelebrationsForm.Instance.Close();
+              else
+                ActionViewCelebrations.PerformClick();
+              break;
             case TrayIconClickOpen.NavigationForm:
               var form = NavigationForm.Instance;
               if ( form.Visible )
@@ -360,6 +367,8 @@ namespace Ordisoftware.HebrewCalendar
                   ex.Manage();
                 }
               break;
+            default:
+              throw new NotImplementedException(Program.Settings.TrayIconClickOpen.ToString());
           }
         else
         if ( e.Button == MouseButtons.Right )

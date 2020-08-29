@@ -31,7 +31,12 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Open the navigation form.
     /// </summary>
-    NavigationForm
+    NavigationForm,
+
+    /// <summary>
+    /// Open the next celebrations form.
+    /// </summary>
+    NextCelebrationForm,
 
   }
 
