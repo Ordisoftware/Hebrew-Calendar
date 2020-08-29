@@ -97,16 +97,15 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Remove diacritics signs.
     /// </summary>
-    public static string RemoveDiacritics(this string text)
+    public static string RemoveDiacritics(this string str)
     {
-      if ( string.IsNullOrEmpty(text) )
-        return string.Empty;
-      var normalizedString = text.Normalize(NormalizationForm.FormD);
-      var stringBuilder = new StringBuilder();
-      foreach ( var c in normalizedString )
+      if ( string.IsNullOrEmpty(str) ) return string.Empty;
+      var normalized = str.Normalize(NormalizationForm.FormD);
+      var builder = new StringBuilder();
+      foreach ( var c in normalized )
         if ( CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark )
-          stringBuilder.Append(c);
-      return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+          builder.Append(c);
+      return builder.ToString().Normalize(NormalizationForm.FormC);
     }
 
   }

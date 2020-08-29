@@ -37,17 +37,25 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate final letters disabled keyboard codes for hebrew font.
     /// </summary>
-    static private readonly Dictionary<char, char> FinalDisable = new Dictionary<char, char>()
+    static private readonly char[][] FinalDisable =
     {
-      { '!', 'k' }, { ',', 'm' }, { ']', 'n' }, { '[', 'p' }, { '/', 'j' }
+      new char[] { '!', 'k' },
+      new char[] { ',', 'm' },
+      new char[] { ']', 'n' },
+      new char[] { '[', 'p' },
+      new char[] { '/', 'j' }
     };
 
     /// <summary>
     /// Indicate final letters enabled keyboard codes for hebrew font.
     /// </summary>
-    static private Dictionary<char, char> FinalEnable = new Dictionary<char, char>()
+    static private char[][] FinalEnable =
     {
-      { 'k', '!' }, { 'm', ',' }, { 'n', ']' }, { 'p', '[' }, { 'j', '/' }
+      new char[] { 'k', '!' },
+      new char[] { 'm', ',' },
+      new char[] { 'n', ']' },
+      new char[] { 'p', '[' },
+      new char[] { 'j', '/' }
     };
 
     /// <summary>
@@ -77,16 +85,15 @@ namespace Ordisoftware.HebrewCommon
     {
       var array = enable ? FinalEnable : FinalDisable;
       str = str.Trim();
-      if ( str.Length == 0 ) return str;
+      if ( string.IsNullOrEmpty(str) ) return string.Empty;
       char c = str[0];
       foreach ( var v in array )
-        if ( c == v.Key )
+        if ( c == v[0] )
         {
-          c = v.Value;
+          c = v[1];
           break;
         }
-      str = c + str.Remove(0, 1);
-      return str;
+      return c + str.Remove(0, 1);
     }
 
     /// <summary>
@@ -96,8 +103,9 @@ namespace Ordisoftware.HebrewCommon
     /// <returns></returns>
     static public string UnFinalAll(string str)
     {
+      if ( string.IsNullOrEmpty(str) ) return string.Empty;
       foreach ( var v in FinalDisable )
-        str = str.Replace(v.Key, v.Value);
+        str = str.Replace(v[0], v[1]);
       return str;
     }
 
@@ -106,6 +114,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public string OnlyHebrewFont(string str)
     {
+      if ( string.IsNullOrEmpty(str) ) return string.Empty;
       string result = "";
       foreach ( char c in str.RemoveDiacritics() )
         if ( Codes.Contains(c.ToString()) )
@@ -118,6 +127,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public string ConvertToHebrewFont(string str)
     {
+      if ( string.IsNullOrEmpty(str) ) return string.Empty;
       string result = "";
       foreach ( char c in str.RemoveDiacritics() )
         result = ConvertToKey(c) + result;
@@ -129,6 +139,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public string ConvertToUnicode(string str)
     {
+      if ( string.IsNullOrEmpty(str) ) return string.Empty;
       string result = "";
       foreach ( char c in str )
         result = ConvertToUnicode(c) + result;
