@@ -21,26 +21,64 @@ namespace Ordisoftware.HebrewCalendar
 
   public class ApplicationStatistics
   {
-    static public ApplicationStatistics Instance = new ApplicationStatistics();
 
-    public string StartingTime => Program.Settings.BenchmarkStartingApp.FormatMilliseconds();
-    public string LoadDataTime => Program.Settings.BenchmarkLoadData.FormatMilliseconds();
-    public string GenerateYearsTime => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.BenchmarkGenerateYears.FormatMilliseconds();
-    public string GeneratePopulateDaysTime => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.BenchmarkPopulateDays.FormatMilliseconds();
-    public string GenerateAnalyseDaysTime => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.BenchmarkAnalyseDays.FormatMilliseconds();
-    public string GenerateTextReportTime => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.BenchmarkGenerateTextReport.FormatMilliseconds();
-    public string LastGenerated => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.LastGenerated.ToShortDateString() + " " + Program.Settings.LastGenerated.ToShortTimeString();
-    public string FillMonthViewTime => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : Program.Settings.BenchmarkFillCalendar.FormatMilliseconds();
+    static public ApplicationStatistics Instance 
+      = new ApplicationStatistics();
 
-    public string DBFileSize => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : SystemHelper.GetFileSize(Globals.DatabaseFileName).FormatBytesSize();
-    public string DBMemorySize => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : MainForm.Instance.DataSet.SizeOf().FormatBytesSize();
+    private string ProcessData(string data)
+      => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : data;
 
-    public string DBFirstYear => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : MainForm.Instance.YearFirst.ToString();
-    public string DBLastYear => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : MainForm.Instance.YearLast.ToString();
-    public string DBYearsInterval => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : ( MainForm.Instance.YearLast - MainForm.Instance.YearFirst + 1 ).ToString();
-    public string DBRecordsCount => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : MainForm.Instance.DataSet.LunisolarDays.Count().ToString();
-    public string DBEventsCount => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : MainForm.Instance.DataSet.LunisolarDays.Count(d => d.TorahEvents != 0 || d.SeasonChange != 0).ToString();
-    public string MonthViewEventsCount => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : MainForm.Instance.CalendarMonth.TheEvents.Count.ToString();
+    private string ProcessData(int data)
+      => MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : data.ToString();
+
+    public string StartingTime 
+      => Program.Settings.BenchmarkStartingApp.FormatMilliseconds();
+
+    public string LoadDataTime 
+      => Program.Settings.BenchmarkLoadData.FormatMilliseconds();
+
+    public string GenerateYearsTime 
+      => ProcessData(Program.Settings.BenchmarkGenerateYears.FormatMilliseconds());
+
+    public string GeneratePopulateDaysTime 
+      => ProcessData(Program.Settings.BenchmarkPopulateDays.FormatMilliseconds());
+
+    public string GenerateAnalyseDaysTime 
+      => ProcessData(Program.Settings.BenchmarkAnalyseDays.FormatMilliseconds());
+
+    public string GenerateTextReportTime 
+      => ProcessData(Program.Settings.BenchmarkGenerateTextReport.FormatMilliseconds());
+
+    public string LastGenerated 
+      => ProcessData(Program.Settings.LastGenerated.ToString("g"));
+
+    public string FillMonthViewTime 
+      => ProcessData(Program.Settings.BenchmarkFillCalendar.FormatMilliseconds());
+
+    public string DBFileSize 
+      => ProcessData(SystemHelper.GetFileSize(Globals.DatabaseFileName).FormatBytesSize());
+
+    public string DBMemorySize 
+      => ProcessData(MainForm.Instance.DataSet.SizeOf().FormatBytesSize());
+
+    public string DBFirstYear
+      => ProcessData(MainForm.Instance.YearFirst);
+
+    public string DBLastYear 
+      => ProcessData(MainForm.Instance.YearLast);
+
+    public string DBYearsInterval 
+      => ProcessData(MainForm.Instance.YearLast - MainForm.Instance.YearFirst + 1);
+
+    public string DBRecordsCount 
+      => ProcessData(MainForm.Instance.DataSet.LunisolarDays.Count());
+
+    public string DBEventsCount 
+      => ProcessData(MainForm.Instance.DataSet.LunisolarDays.Count(d => d.TorahEvents != 0 || d.SeasonChange != 0));
+
+    public string MonthViewEventsCount 
+      => ProcessData(MainForm.Instance.CalendarMonth.TheEvents.Count);
+
   }
 
 }

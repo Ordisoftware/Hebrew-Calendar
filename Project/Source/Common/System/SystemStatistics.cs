@@ -25,28 +25,60 @@ namespace Ordisoftware.HebrewCommon
 
     static public SystemStatistics Instance = new SystemStatistics();
 
-    static private PerformanceCounter PerformanceCounter;
     static private Process Process = Process.GetCurrentProcess();
 
-    public string ProcessorName => SystemHelper.ProcessorName;
-    public string OperatingSystem => SystemHelper.OperatingSystem;
+    static private PerformanceCounter PerformanceCounter;
 
-    public string ProcessPriority => Globals.RealProcessPriority.ToString();
-    public string CurrentThreadPriority => Thread.CurrentThread.Priority.ToString();
-    public string RunningTime => ( (long)DateTime.Now.Subtract(Globals.StartDateTime).TotalMilliseconds ).FormatMilliseconds(true);
-    public string ExecutableMode => Globals.IsDebugExecutable ? "Debug" : "Release";
+    public string ProcessorName 
+      => SystemHelper.ProcessorName;
 
-    public string TotalVisibleMemory => SystemHelper.TotalVisibleMemory;
-    public string PhysicalMemoryFree => SystemHelper.PhysicalMemoryFree;
-    public string MemoryGC => GC.GetTotalMemory(true).FormatBytesSize();
-    public string MemoryPrivate => Process.PrivateMemorySize64.FormatBytesSize();
-    public string MemoryWorking => Process.WorkingSet64.FormatBytesSize();
-    public string MemoryWorkingPeak => Process.PeakWorkingSet64.FormatBytesSize();
-    public string MemoryPaged => Process.PagedMemorySize64.FormatBytesSize();
-    public string MemoryPagedPeak => Process.PeakPagedMemorySize64.FormatBytesSize();
-    public string MemoryPagedSystem => Process.PagedSystemMemorySize64.FormatBytesSize();
-    public string MemoryVirtual => Process.VirtualMemorySize64.FormatBytesSize();
-    public string MemoryVirtualPeak => Process.PeakVirtualMemorySize64.FormatBytesSize();
+    public string OperatingSystem
+      => SystemHelper.OperatingSystem;
+
+    public string ProcessPriority
+      => Globals.RealProcessPriority.ToString();
+
+    public string CurrentThreadPriority
+      => Thread.CurrentThread.Priority.ToString();
+
+    public string RunningTime
+      => ( (long)(DateTime.Now - Globals.StartDateTime).TotalMilliseconds ).FormatMilliseconds(true);
+
+    public string ExecutableMode
+      => Globals.IsDebugExecutable ? "Debug" : "Release";
+    
+    public string TotalVisibleMemory
+      => SystemHelper.TotalVisibleMemory;
+
+    public string PhysicalMemoryFree
+      => SystemHelper.PhysicalMemoryFree;
+
+    public string MemoryGC
+      => GC.GetTotalMemory(true).FormatBytesSize();
+
+    public string MemoryPrivate
+      => Process.PrivateMemorySize64.FormatBytesSize();
+
+    public string MemoryWorking
+      => Process.WorkingSet64.FormatBytesSize();
+
+    public string MemoryWorkingPeak
+      => Process.PeakWorkingSet64.FormatBytesSize();
+
+    public string MemoryPaged
+      => Process.PagedMemorySize64.FormatBytesSize();
+
+    public string MemoryPagedPeak
+      => Process.PeakPagedMemorySize64.FormatBytesSize();
+
+    public string MemoryPagedSystem
+      => Process.PagedSystemMemorySize64.FormatBytesSize();
+
+    public string MemoryVirtual
+      => Process.VirtualMemorySize64.FormatBytesSize();
+
+    public string MemoryVirtualPeak
+      => Process.PeakVirtualMemorySize64.FormatBytesSize();
 
     public string CPULoad
     {
