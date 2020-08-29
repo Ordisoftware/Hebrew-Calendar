@@ -26,7 +26,8 @@ namespace Ordisoftware.HebrewCommon
                                       int width = 400, 
                                       int height = 300,
                                       bool sizeable = true,
-                                      bool wrap = true)
+                                      bool wrap = true,
+                                      bool justify = true)
     {
       for ( int index = Application.OpenForms.Count - 1; index >= 0; index-- )
         if ( Application.OpenForms[index] is ShowTextForm )
@@ -34,6 +35,7 @@ namespace Ordisoftware.HebrewCommon
             Application.OpenForms[index].Close();
       var form = new ShowTextForm();
       form.Text = title;
+      if ( !justify ) form.TextBox.SelectionAlignment = TextAlign.Left;
       form.TextBox.Text = text;
       form.Width = width;
       form.Height = height;
@@ -48,9 +50,10 @@ namespace Ordisoftware.HebrewCommon
                                       int width = 400,
                                       int height = 300,
                                       bool sizeable = true,
-                                      bool wrap = true)
+                                      bool wrap = true,
+                                      bool justify = true)
     {
-      var form = Create(title.GetLang(), text.GetLang(), width, height, sizeable, wrap);
+      var form = Create(title.GetLang(), text.GetLang(), width, height, sizeable, wrap, justify);
       form.LocalizedTitle = title;
       form.LocalizedText = text;
       return form;
