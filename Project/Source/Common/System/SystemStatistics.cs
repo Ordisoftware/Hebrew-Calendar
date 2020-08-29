@@ -29,11 +29,12 @@ namespace Ordisoftware.HebrewCommon
     static private Process Process = Process.GetCurrentProcess();
 
     public string ProcessorName => SystemHelper.ProcessorName;
-    public string OperatingSystem => SystemHelper.OperatingSystem.Replace(Globals.NL, Globals.NL2);
+    public string OperatingSystem => SystemHelper.OperatingSystem;
 
     public string ProcessPriority => Globals.RealProcessPriority.ToString();
     public string CurrentThreadPriority => Thread.CurrentThread.Priority.ToString();
     public string RunningTime => ( (long)DateTime.Now.Subtract(Globals.StartDateTime).TotalMilliseconds ).FormatMilliseconds(true);
+    public string ExecutableMode => Globals.IsDebugExecutable ? "Debug" : "Release";
 
     public string TotalVisibleMemory => SystemHelper.TotalVisibleMemory;
     public string PhysicalMemoryFree => SystemHelper.PhysicalMemoryFree;

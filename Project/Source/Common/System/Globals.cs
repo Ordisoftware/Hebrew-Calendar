@@ -160,6 +160,25 @@ namespace Ordisoftware.HebrewCommon
       = ".sqlite";
 
     /// <summary>
+    /// Indicate if the executable has been generated in debug mode.
+    /// </summary>
+    static public bool IsDebugExecutable
+    {
+      get
+      {
+        bool isDebug = false;
+        CheckDebugExecutable(ref isDebug);
+        return isDebug;
+      }
+    }
+
+    [Conditional("DEBUG")]
+    static private void CheckDebugExecutable(ref bool isDebug)
+    {
+      isDebug = true;
+    }
+
+    /// <summary>
     /// Indicate if the running app is from dev folder else user installed.
     /// </summary>
     static public bool IsDev 
