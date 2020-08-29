@@ -1621,10 +1621,10 @@
     <value>NoControl</value>
   </data>
   <data name="physicalMemoryFreeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 45</value>
+    <value>163, 45</value>
   </data>
   <data name="physicalMemoryFreeLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="physicalMemoryFreeLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
@@ -1717,10 +1717,10 @@
     <value>NoControl</value>
   </data>
   <data name="totalVisibleMemoryLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 25</value>
+    <value>163, 25</value>
   </data>
   <data name="totalVisibleMemoryLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="totalVisibleMemoryLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>65</value>
@@ -1849,10 +1849,10 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPeakWorkingLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 135</value>
+    <value>163, 135</value>
   </data>
   <data name="memoryPeakWorkingLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="memoryPeakWorkingLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
@@ -1882,10 +1882,10 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPrivateLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 95</value>
+    <value>163, 95</value>
   </data>
   <data name="memoryPrivateLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="memoryPrivateLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>100</value>
@@ -1915,10 +1915,10 @@
     <value>NoControl</value>
   </data>
   <data name="memoryWorkingLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 115</value>
+    <value>163, 115</value>
   </data>
   <data name="memoryWorkingLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="memoryWorkingLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
@@ -1948,10 +1948,10 @@
     <value>NoControl</value>
   </data>
   <data name="memoryGCLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 70</value>
+    <value>163, 70</value>
   </data>
   <data name="memoryGCLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="memoryGCLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>100</value>
@@ -1981,10 +1981,10 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 160</value>
+    <value>163, 160</value>
   </data>
   <data name="memoryPagedLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="memoryPagedLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
@@ -2014,10 +2014,10 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedPeakLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 180</value>
+    <value>163, 180</value>
   </data>
   <data name="memoryPagedPeakLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="memoryPagedPeakLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
@@ -2047,10 +2047,10 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedSystemLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 200</value>
+    <value>163, 200</value>
   </data>
   <data name="memoryPagedSystemLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="memoryPagedSystemLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
