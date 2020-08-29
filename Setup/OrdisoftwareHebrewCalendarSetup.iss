@@ -80,6 +80,8 @@ Name: {app}\Project\*; Type: filesandordirs
 Name: {app}\Setup\*; Type: filesandordirs
 Name: {app}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
 Name: {group}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
+Name: {group}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
+Name: {userappdata}\Ordisoftware\Hebrew Calendar\Hebrew-Calendar.sqlite; Type: files
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
