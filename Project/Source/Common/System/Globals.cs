@@ -140,7 +140,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the extension of database files.
     /// </summary>
-    static public string DBFileExtension
+    static public string DatabaseFileExtension
       = ".sqlite";
 
     /// <summary>
@@ -221,6 +221,18 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public string HelpFilename 
       => HelpFolderPath + $"index-{Languages.Current}.htm";
+
+    /// <summary>
+    /// Indicate the application database folder.
+    /// </summary>
+    static public string DatabaseFolderPath
+      => UserDataFolderPath;
+
+    /// <summary>
+    /// Indicate the filename of the database.
+    /// </summary>
+    static public string DatabaseFileName
+      => DatabaseFolderPath + AssemblyTitle.Replace(" ", "-") + DatabaseFileExtension;
 
     /// <summary>
     /// Indicate the user documents folder path.

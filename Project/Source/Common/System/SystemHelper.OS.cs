@@ -26,61 +26,25 @@ namespace Ordisoftware.HebrewCommon
   static partial class SystemHelper
   {
 
-    static public string PhysicalMemoryFree
+    /// <summary>
+    /// Get file size formatted.
+    /// </summary>
+    static public long GetFileSize(string filename)
     {
-      get
+      try
       {
-        try
-        {
-          ObjectQuery wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
-          ManagementObjectSearcher searcher = new ManagementObjectSearcher(wql);
-          ManagementObjectCollection results = searcher.Get();
-          if ( results.Count > 0 )
-          {
-            var enumerator = results.GetEnumerator();
-            if ( enumerator.MoveNext() )
-            {
-              var instance = enumerator.Current;
-              return ( (ulong)instance["FreePhysicalMemory"] * 1024 ).FormatBytesSize();
-            }
-          }
-        }
-        catch
-        {
-        }
-        return Localizer.EmptySlot.GetLang();
+        if ( File.Exists(filename) )
+          return new FileInfo(filename).Length;
       }
+      catch
+      {
+      }
+      return -1;
     }
 
-    static public string TotalVisibleMemory
-    {
-      get
-      {
-        if ( _TotalVisibleMemory == "" )
-          try
-          {
-            ObjectQuery wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher(wql);
-            ManagementObjectCollection results = searcher.Get();
-            if ( results.Count > 0 )
-            {
-              var enumerator = results.GetEnumerator();
-              if ( enumerator.MoveNext() )
-              {
-                var instance = enumerator.Current;
-                _TotalVisibleMemory = ( (ulong)instance["TotalVisibleMemorySize"] * 1024 ).FormatBytesSize();
-              }
-            }
-          }
-          catch
-          {
-            _TotalVisibleMemory = Localizer.EmptySlot.GetLang();
-          }
-        return _TotalVisibleMemory;
-      }
-    }
-    static private string _TotalVisibleMemory = "";
-
+    /// <summary>
+    /// Indicate the OS name formatted.
+    /// </summary>
     static public string OperatingSystem
     {
       get
@@ -88,9 +52,13 @@ namespace Ordisoftware.HebrewCommon
         if ( _OperatingSystem == "" )
           try
           {
-            var key = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows NT\\CurrentVersion");
-            _OperatingSystem = (string)key.GetValue("productName")
-                             + " " + ( Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits" );
+            string name = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "productName", "").ToString();
+            string type = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
+            string version = Environment.OSVersion.Version.ToString();
+            string release = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "").ToString();
+            string clr = Environment.Version.ToString();
+            _OperatingSystem = $"{name} {type} {version} ({release})" + Environment.NewLine
+                             + $"CLR {clr}";
           }
           catch
           {
@@ -101,22 +69,63 @@ namespace Ordisoftware.HebrewCommon
     }
     static private string _OperatingSystem = "";
 
-    static public string DatabaseFileSize
+    /// <summary>
+    /// Indicate the free physical memory formatted.
+    /// </summary>
+    static public string PhysicalMemoryFree
     {
       get
       {
-        try
-        {
-          string filename = Globals.AssemblyTitle.Replace(" ", "-") + Globals.DBFileExtension;
-          filename = Globals.UserDataFolderPath + filename;
-          if ( File.Exists(filename) )
-            return ( (ulong)new FileInfo(filename).Length ).FormatBytesSize();
-        }
-        catch
-        {
-        }
-        return Localizer.EmptySlot.GetLang();
+        object value = GetWin32OperatingSystemValue("FreePhysicalMemory");
+        if ( value == null ) return Localizer.EmptySlot.GetLang();
+        return ( (ulong)value * 1024 ).FormatBytesSize();
       }
+    }
+
+    /// <summary>
+    /// Indicate the total physical memory formatted.
+    /// </summary>
+    static public string TotalVisibleMemory
+    {
+      get
+      {
+        if ( _TotalVisibleMemory == "" )
+        {
+          object value = GetWin32OperatingSystemValue("TotalVisibleMemorySize");
+          _TotalVisibleMemory = value != null
+                              ? ( (ulong)value * 1024 ).FormatBytesSize()
+                              : Localizer.EmptySlot.GetLang();
+        }
+        return _TotalVisibleMemory;
+      }
+    }
+    static private string _TotalVisibleMemory = "";
+
+
+    /// <summary>
+    /// Get a Windows Management Object value.
+    /// </summary>
+    static public object GetWin32OperatingSystemValue(string name)
+    {
+      try
+      {
+        ObjectQuery wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
+        ManagementObjectSearcher searcher = new ManagementObjectSearcher(wql);
+        ManagementObjectCollection results = searcher.Get();
+        if ( results.Count > 0 )
+        {
+          var enumerator = results.GetEnumerator();
+          if ( enumerator.MoveNext() )
+          {
+            var instance = enumerator.Current;
+            return instance[name];
+          }
+        }
+      }
+      catch
+      {
+      }
+      return null;
     }
 
   }

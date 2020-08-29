@@ -34,6 +34,8 @@ namespace Ordisoftware.HebrewCommon
     private int QuantaLevel;
     private int CurrentQuanta;
 
+    public event Action Progressing;
+
     private LoadingForm()
     {
       InitializeComponent();
@@ -79,6 +81,7 @@ namespace Ordisoftware.HebrewCommon
         ProgressBar.Refresh();
         Refresh();
       }
+      Progressing?.Invoke();
     }
 
     public void DoProgress(int index)

@@ -26,6 +26,14 @@ namespace Ordisoftware.HebrewCommon
 
     /// <summary>
     /// Create a readable string from a size in bytes.
+    /// </summary>
+    static public string FormatBytesSize(this long bytes)
+    {
+      return bytes >= 0 ? FormatBytesSize((ulong)bytes) : Localizer.EmptySlot.GetLang();
+    }
+
+    /// <summary>
+    /// Create a readable string from a size in bytes.
     /// From: https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
     /// </summary>
     static public string FormatBytesSize(this ulong bytes)
@@ -33,43 +41,24 @@ namespace Ordisoftware.HebrewCommon
       ulong unit = 1024;
       if ( bytes < unit ) return $"{bytes} B";
       var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
-      string result = $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPE" )[exp - 1]}B";
+      string result = $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPEZY" )[exp - 1]}iB";
       return result.Replace(Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator + "00", "");
     }
 
-    static public string FormatBytesSize(this long bytes)
-    {
-      long unit = 1024;
-      if ( bytes < unit ) return $"{bytes} B";
-      var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
-      string result = $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPE" )[exp - 1]}B";
-      return result.Replace(Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator + "00", "");
-    }
-
-    static public string FormatMilliseconds(this long ms)
+    /// <summary>
+    /// Create a readable string from a milliseconds value.
+    /// </summary>
+    static public string FormatMilliseconds(this long ms, bool excludems = false)
     {
       TimeSpan time = TimeSpan.FromMilliseconds(ms);
-      return string.Format("{0:D2} d {1:D2} h {2:D2} m {3:D2} s {4:D3} ms",
-                           time.Days,
-                           time.Hours,
-                           time.Minutes,
-                           time.Seconds,
-                           time.Milliseconds)
-                   .Replace("00 d 00 h 00 m 00 s", "")
-                   .Replace("00 d 00 h 00 m", "")
-                   .Replace("00 d 00 h", "")
-                   .Replace("00 d ", "");
-    }
-
-    static public string FormatSeconds(this long ms)
-    {
-      TimeSpan time = TimeSpan.FromMilliseconds(ms);
-      return string.Format("{0:D2} d {1:D2} h {2:D2} m {3:D2} s",
-                           time.Days,
-                           time.Hours,
-                           time.Minutes,
-                           time.Seconds)
-                   .Replace("00 d 00 h 00 m", "")
+      string result = string.Format("{0:D2} d {1:D2} h {2:D2} m {3:D2} s" + ( excludems ? "" : "{4:D3} ms" ),
+                                    time.Days,
+                                    time.Hours,
+                                    time.Minutes,
+                                    time.Seconds,
+                                    time.Milliseconds);
+      if ( !excludems ) result = result.Replace("00 d 00 h 00 m 00 s", "");
+      return result.Replace("00 d 00 h 00 m", "")
                    .Replace("00 d 00 h", "")
                    .Replace("00 d ", "");
     }
