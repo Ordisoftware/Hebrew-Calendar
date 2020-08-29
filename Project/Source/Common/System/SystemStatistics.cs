@@ -33,7 +33,6 @@ namespace Ordisoftware.HebrewCommon
     public string ProcessPriority => Process.PriorityClass.ToString();
     public string CurrentThreadPriority => Thread.CurrentThread.Priority.ToString();
     public string RunningTime => ( (long)DateTime.Now.Subtract(Globals.StartDateTime).TotalMilliseconds ).FormatMilliseconds(true);
-    //public string ProcessorTime => ( (long)Process.TotalProcessorTime.TotalMilliseconds ).FormatMilliseconds(true);
 
     public string TotalVisibleMemory => SystemHelper.TotalVisibleMemory;
     public string PhysicalMemoryFree => SystemHelper.PhysicalMemoryFree;
