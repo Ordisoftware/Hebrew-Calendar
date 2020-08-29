@@ -470,7 +470,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="MonthCalendar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -491,7 +491,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MonthCalendar1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="MonthCalendar2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -512,7 +512,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MonthCalendar2.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <metadata name="DatesDiffItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -743,7 +743,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxSun.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -809,7 +809,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="DateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 213</value>
@@ -830,7 +830,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DateTimePicker1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="DateTimePicker2.Location" type="System.Drawing.Point, System.Drawing">
     <value>269, 213</value>
@@ -851,7 +851,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DateTimePicker2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <metadata name="MenuBookmarks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>221, 17</value>
@@ -907,7 +907,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSetBookmarkStart.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ActionUseBookmarkStart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -949,7 +949,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionUseBookmarkStart.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ActionUseBookmarkEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -991,7 +991,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionUseBookmarkEnd.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ActionSetBookmarkEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1035,6 +1035,43 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSetBookmarkEnd.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionSwapDates.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSwapDates.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAORJREFUOE/tkcsKgkAUhudhWrT33URFHV8lok0RRbQRMkqollHbKLtRkFnWC/zN
+        qbEI7bIN+mDgP/+5DHOG/cmGcxuO40xkyISOOeeQ4XsMw8BytYZt2/cG0kEwB+WklY2u69hstygUS7As
+        615MmjwaTDXSfsY0TcSnM8rVGuqNZmoAeRWRiw5HUK1MPSBzH0VwWx68rv9URLotPNdrYxeG2QMEiq5p
+        mC9WGI7GqQHkTWdB8gTllkmj0KJ6/UFqiR3fT5b4sjlBoS8TN41lzFRV7cpv/NicQIX5m7ySE+fr5p+C
+        sQvfbqEGKpWFVwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSwapDates.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSwapDates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>245, 113</value>
+  </data>
+  <data name="ActionSwapDates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionSwapDates.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapDates.Name" xml:space="preserve">
+    <value>ActionSwapDates</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapDates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapDates.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapDates.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1045,6 +1082,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>514, 421</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>

@@ -128,6 +128,13 @@ namespace Ordisoftware.HebrewCalendar
       Program.DatesDiffNoticeForm.ShowDialog();
     }
 
+    private void ActionSwapDates_Click(object sender, EventArgs e)
+    {
+      var temp = MonthCalendar1.SelectionStart;
+      MonthCalendar1.SelectionStart = MonthCalendar2.SelectionStart;
+      MonthCalendar2.SelectionStart = temp;
+    }
+
     private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
     {
       MonthCalendar1.SelectionStart = DateTimePicker1.Value.Date;

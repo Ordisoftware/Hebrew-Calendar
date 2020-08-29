@@ -38,11 +38,11 @@
       System.Windows.Forms.Label solarYearsLabel;
       System.Windows.Forms.Label moonYearsLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionHelp = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.MonthCalendar1 = new System.Windows.Forms.MonthCalendar();
       this.MonthCalendar2 = new System.Windows.Forms.MonthCalendar();
       this.lunationsLabel1 = new System.Windows.Forms.Label();
-      this.DatesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.moonDaysLabel1 = new System.Windows.Forms.Label();
       this.solarDaysLabel1 = new System.Windows.Forms.Label();
       this.solarMonthsLabel1 = new System.Windows.Forms.Label();
@@ -58,7 +58,8 @@
       this.ActionUseBookmarkStart = new System.Windows.Forms.Button();
       this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
-      this.ActionHelp = new System.Windows.Forms.Button();
+      this.ActionSwapDates = new System.Windows.Forms.Button();
+      this.DatesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -67,9 +68,9 @@
       solarYearsLabel = new System.Windows.Forms.Label();
       moonYearsLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).BeginInit();
       this.GroupBoxSun.SuspendLayout();
       this.groupBox1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // lunationsLabel
@@ -114,6 +115,15 @@
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
+      // ActionHelp
+      // 
+      this.ActionHelp.AllowDrop = true;
+      this.ActionHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionHelp, "ActionHelp");
+      this.ActionHelp.Name = "ActionHelp";
+      this.ActionHelp.UseVisualStyleBackColor = true;
+      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
+      // 
       // ActionClose
       // 
       resources.ApplyResources(this.ActionClose, "ActionClose");
@@ -139,10 +149,6 @@
       this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "MoonMonths", true));
       resources.ApplyResources(this.lunationsLabel1, "lunationsLabel1");
       this.lunationsLabel1.Name = "lunationsLabel1";
-      // 
-      // DatesDiffItemBindingSource
-      // 
-      this.DatesDiffItemBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.DatesDiffItem);
       // 
       // moonDaysLabel1
       // 
@@ -266,20 +272,25 @@
       this.ActionSetBookmarkEnd.UseVisualStyleBackColor = true;
       this.ActionSetBookmarkEnd.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
       // 
-      // ActionHelp
+      // ActionSwapDates
       // 
-      this.ActionHelp.AllowDrop = true;
-      this.ActionHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionHelp, "ActionHelp");
-      this.ActionHelp.Name = "ActionHelp";
-      this.ActionHelp.UseVisualStyleBackColor = true;
-      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
+      this.ActionSwapDates.AllowDrop = true;
+      this.ActionSwapDates.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSwapDates, "ActionSwapDates");
+      this.ActionSwapDates.Name = "ActionSwapDates";
+      this.ActionSwapDates.UseVisualStyleBackColor = true;
+      this.ActionSwapDates.Click += new System.EventHandler(this.ActionSwapDates_Click);
+      // 
+      // DatesDiffItemBindingSource
+      // 
+      this.DatesDiffItemBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.DatesDiffItem);
       // 
       // DatesDiffForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.ActionSwapDates);
       this.Controls.Add(this.ActionSetBookmarkEnd);
       this.Controls.Add(this.ActionUseBookmarkEnd);
       this.Controls.Add(this.ActionSetBookmarkStart);
@@ -297,11 +308,11 @@
       this.Name = "DatesDiffForm";
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).EndInit();
       this.GroupBoxSun.ResumeLayout(false);
       this.GroupBoxSun.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -330,5 +341,6 @@
     private System.Windows.Forms.Button ActionSetBookmarkEnd;
     private System.Windows.Forms.ContextMenuStrip MenuBookmarks;
     private System.Windows.Forms.Button ActionHelp;
+    private System.Windows.Forms.Button ActionSwapDates;
   }
 }
