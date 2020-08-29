@@ -83,6 +83,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           Program.Chrono.Stop();
           Program.Settings.BenchmarkGenerateYears = Program.Chrono.ElapsedMilliseconds;
+          Program.Settings.LastGenerated = DateTime.Now;
           Program.Settings.Save();
           if ( IsGenerating )
             try

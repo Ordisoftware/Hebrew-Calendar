@@ -212,7 +212,8 @@
     <Compile Include="Source\Common\UI\UndoRedoTextBox.Initialize.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Source\Entities\SystemStatistics.cs" />
+    <Compile Include="Source\Entities\ApplicationStatistics.cs" />
+    <Compile Include="Source\Common\System\SystemStatistics.cs" />
     <Compile Include="Source\Entities\DateItem.cs" />
     <Compile Include="Source\Entities\Dates.cs" />
     <Compile Include="Source\Entities\DatesDiffItem.cs" />
@@ -225,11 +226,11 @@
     <Compile Include="Source\Forms\Boxes\DatesDiffForm.Designer.cs">
       <DependentUpon>DatesDiffForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SystemStatisticsForm.cs">
+    <Compile Include="Source\Forms\Boxes\StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SystemStatisticsForm.Designer.cs">
-      <DependentUpon>SystemStatisticsForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\StatisticsForm.Designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SearchGregorianMonthForm.cs">
       <SubType>Form</SubType>
@@ -562,11 +563,11 @@
     <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffForm.resx">
       <DependentUpon>DatesDiffForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SystemStatisticsForm.fr.resx">
-      <DependentUpon>SystemStatisticsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.fr.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SystemStatisticsForm.resx">
-      <DependentUpon>SystemStatisticsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\LockSessionForm.fr.resx">
       <DependentUpon>LockSessionForm.cs</DependentUpon>
@@ -690,8 +691,9 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="License\MPL 2.0.rtf" />
+    <None Include="Properties\DataSources\ApplicationStatistics.datasource" />
     <None Include="Properties\DataSources\DatesDiffItem.datasource" />
-    <None Include="Properties\DataSources\SystemStatistics.datasource" />
+    <None Include="Properties\DataSources\Ordisoftware.HebrewCommon.SystemStatistics.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -19,32 +19,31 @@ using Ordisoftware.HebrewCommon;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  public partial class SystemStatisticsForm : Form
+  public partial class StatisticsForm : Form
   {
 
-    static public SystemStatisticsForm Instance { get; private set; }
+    static public StatisticsForm Instance { get; private set; }
 
-    static SystemStatisticsForm()
+    static StatisticsForm()
     {
-      Instance = new SystemStatisticsForm();
+      Instance = new StatisticsForm();
+      Instance.SystemStatisticsForm_Load(null, null);
     }
 
     static public void Run()
     {
-      Instance.SystemStatisticsForm_Load(null, null);
       Instance.Show();
       Instance.BringToFront();
       Instance.Timer.Start();
+      LoadingForm.Instance.Progressing += FormLoadingProgressing;
     }
 
-    private SystemStatistics Stats;
-
-    public SystemStatisticsForm()
+    private StatisticsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      Stats = new SystemStatistics();
-      StatisticsDataBindingSource.DataSource = Stats;
+      ApplicationStatisticsDataBindingSource.DataSource = ApplicationStatistics.Instance;
+      SystemStatisticsDataBindingSource.DataSource = SystemStatistics.Instance;
     }
 
     private void SystemStatisticsForm_Load(object sender, EventArgs e)
@@ -55,6 +54,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SystemStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      LoadingForm.Instance.Progressing -= FormLoadingProgressing;
       Timer.Stop();
       e.Cancel = true;
       Hide();
@@ -65,10 +65,15 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
-    private void Timer_Tick(object sender, EventArgs e)
+    private static void FormLoadingProgressing()
     {
-      Timer.Interval = MainForm.Instance.IsGenerating ? 2000 : 1000;
-      StatisticsDataBindingSource.ResetBindings(false);
+      Application.DoEvents();
+    }
+
+    internal void Timer_Tick(object sender, EventArgs e)
+    {
+      ApplicationStatisticsDataBindingSource.ResetBindings(false);
+      SystemStatisticsDataBindingSource.ResetBindings(false);
     }
 
   }

@@ -45,7 +45,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !SystemHelper.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
-      Settings.CheckUpgrade(ref upgrade);
+      Settings.UpgradeIfRequired(ref upgrade);
       Settings.UpgradeRequired = upgrade;
       CheckSettingsReset();
       Application.EnableVisualStyles();
@@ -126,7 +126,7 @@ namespace Ordisoftware.HebrewCalendar
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = MoonMonthsForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = SystemStatisticsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       foreach ( Form form in Application.OpenForms )
       {

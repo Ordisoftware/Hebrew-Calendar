@@ -19,32 +19,25 @@ using Ordisoftware.HebrewCommon;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  public class SystemStatistics
+  public class ApplicationStatistics
   {
-    public string OperatingSystem => SystemHelper.OperatingSystem;
-    public string TotalVisibleMemory => SystemHelper.TotalVisibleMemory;
-    public string PhysicalMemoryFree => SystemHelper.PhysicalMemoryFree;
-    public string RunningTime => ( (long)DateTime.Now.Subtract(Globals.StartDateTime).TotalMilliseconds ).FormatSeconds();
+    static public ApplicationStatistics Instance = new ApplicationStatistics();
+
     public string StartingTime => Program.Settings.BenchmarkStartingApp.FormatMilliseconds();
     public string LoadDataTime => Program.Settings.BenchmarkLoadData.FormatMilliseconds();
     public string GenerateYearsTime => Program.Settings.BenchmarkGenerateYears.FormatMilliseconds();
+    public DateTime LastGenerated => Program.Settings.LastGenerated;
     public string FillMonthViewTime => Program.Settings.BenchmarkFillCalendar.FormatMilliseconds();
-    public string DBFirstYear => MainForm.Instance.YearFirst.ToString();
-    public string DBLastYear => MainForm.Instance.YearLast.ToString();
-    public string DBYearsInterval => ( MainForm.Instance.YearLast - MainForm.Instance.YearFirst + 1 ).ToString();
-    public string DBRecordsCount => MainForm.Instance.DataSet.LunisolarDays.Count().ToString();
-    public string DBEventsCount => MainForm.Instance.DataSet.LunisolarDays.Count(d => d.TorahEvents != 0 || d.SeasonChange != 0).ToString();
-    public string MonthViewEventsCount => MainForm.Instance.CalendarMonth.TheEvents.Count.ToString();
-    public string DBFileSize => SystemHelper.DatabaseFileSize;
-    public string DBMemorySize
-    {
-      get
-      {
-        long size = MainForm.Instance.DataSet.SizeOf();
-        return size >= 0 ? size.FormatBytesSize() : Localizer.EmptySlot.GetLang();
-      }
-    }
 
+    public string DBFileSize => SystemHelper.GetFileSize(Globals.DatabaseFileName).FormatBytesSize();
+    public string DBMemorySize => MainForm.Instance.DataSet.SizeOf().FormatBytesSize();
+
+    public int DBFirstYear => MainForm.Instance.YearFirst;
+    public int DBLastYear => MainForm.Instance.YearLast;
+    public int DBYearsInterval => MainForm.Instance.YearLast - MainForm.Instance.YearFirst + 1;
+    public int DBRecordsCount => MainForm.Instance.DataSet.LunisolarDays.Count();
+    public int DBEventsCount => MainForm.Instance.DataSet.LunisolarDays.Count(d => d.TorahEvents != 0 || d.SeasonChange != 0);
+    public int MonthViewEventsCount => MainForm.Instance.CalendarMonth.TheEvents.Count;
   }
 
 }

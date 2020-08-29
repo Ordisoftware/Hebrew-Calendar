@@ -364,5 +364,8 @@
     <Setting Name="DateBookmark5" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="LastGenerated" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2000-01-01</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
