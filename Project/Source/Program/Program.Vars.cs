@@ -59,9 +59,9 @@ namespace Ordisoftware.HebrewCalendar
     public const int LoadingFormGenerate = 4000;
 
     /// <summary>
-    /// Indicate minimum items for calc diff dates to show the loading form.
+    /// Indicate minimum items for calc dates diff to show the loading form.
     /// </summary>
-    public const int LoadingFormDiffDates = 20 * 365;
+    public const int LoadingFormDatesDiff = 20 * 365;
 
     /// <summary>
     /// Indicate maximum gregorian years interval that can be generated.
@@ -95,19 +95,25 @@ namespace Ordisoftware.HebrewCalendar
     /// Indicate shabat notice form.
     /// </summary>
     static public ShowTextForm ShabatNoticeForm
-      => ShowTextForm.Create(Translations.NoticeShabatTitle, Translations.NoticeShabatText, 600, 520);
+      => ShowTextForm.Create(Translations.NoticeShabatTitle, Translations.NoticeShabat, 600, 520);
 
     /// <summary>
     /// Indicate celebrations notice form.
     /// </summary>
     static public ShowTextForm CelebrationsNoticeForm
-      => ShowTextForm.Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrationsText, 600, 320);
+      => ShowTextForm.Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrations, 600, 320);
 
     /// <summary>
-    /// Indicate celebrations notice form.
+    /// Indicate moon months notice form.
     /// </summary>
     static public ShowTextForm MoonMonthsNoticeForm
       => ShowTextForm.Create(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths, 400, 300);
+
+    /// <summary>
+    /// Indicate dates diff notice form.
+    /// </summary>
+    static public ShowTextForm DatesDiffNoticeForm
+      => ShowTextForm.Create(Translations.DatesDiffNoticeTitle, Translations.DatesDiffNotice, 480, 360);
 
     /// <summary>
     /// Indicate filename of the GPS database.

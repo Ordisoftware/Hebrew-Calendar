@@ -375,6 +375,49 @@
   <data name="&gt;&gt;moonYearsLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="ActionHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 2</value>
+  </data>
+  <data name="ActionHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="&gt;&gt;ActionHelp.Name" xml:space="preserve">
+    <value>ActionHelp</value>
+  </data>
+  <data name="&gt;&gt;ActionHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionHelp.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionHelp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -403,7 +446,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>

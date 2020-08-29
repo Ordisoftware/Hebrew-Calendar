@@ -123,6 +123,11 @@ namespace Ordisoftware.HebrewCalendar
       MenuBookmarks.Show(control, new Point(0, control.Height));
     }
 
+    private void ActionHelp_Click(object sender, EventArgs e)
+    {
+      Program.DatesDiffNoticeForm.ShowDialog();
+    }
+
     private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
     {
       MonthCalendar1.SelectionStart = DateTimePicker1.Value.Date;

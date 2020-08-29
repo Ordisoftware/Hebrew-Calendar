@@ -30,11 +30,13 @@ namespace Ordisoftware.HebrewCalendar
         { Languages.EN, "Use the following tags to replace values:" + Globals.NL + Globals.NL +
                         "%MONTHNAME% : moon month name" + Globals.NL +
                         "%MONTHNUM% : moon month number" + Globals.NL +
-                        "%DAYNUM% : moon day number" },
+                        "%DAYNUM% : moon day number"
+        },
         { Languages.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL + Globals.NL +
                         "%MONTHNAME% : nom du mois lunaire" + Globals.NL +
                         "%MONTHNUM% : numéro du mois lunaire" + Globals.NL +
-                        "%DAYNUM% : numéro du jour lunaire" },
+                        "%DAYNUM% : numéro du jour lunaire"
+        },
       };
 
     static public readonly NullSafeStringDictionary NoticeShabatTitle
@@ -44,7 +46,7 @@ namespace Ordisoftware.HebrewCalendar
         { Languages.FR, "Notice du shabat" }
       };
 
-    static public readonly NullSafeStringDictionary NoticeShabatText
+    static public readonly NullSafeStringDictionary NoticeShabat
       = new NullSafeStringDictionary()
       {
         { Languages.EN, "The shabat is the \"day of rest\" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity." + Globals.NL + Globals.NL +
@@ -68,19 +70,48 @@ namespace Ordisoftware.HebrewCalendar
         { Languages.FR, "Notice des célébrations" }
       };
 
-    static public readonly NullSafeStringDictionary NoticeCelebrationsText
+    static public readonly NullSafeStringDictionary NoticeCelebrations
       = new NullSafeStringDictionary()
       {
         { Languages.EN, "The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teruah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future." + Globals.NL + Globals.NL +
                         "These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun." + Globals.NL + Globals.NL +
                         "The application uses by default moon omer for celebrations." + Globals.NL + Globals.NL +
                         "If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set." + Globals.NL + Globals.NL +
-                        "You can use traditionnals sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set." },
+                        "You can use traditionnals sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set."
+        },
         { Languages.FR, "Les temps de célébration de la Torah sont Pessa'h ou Pâques qui est la libération des illusions, Shavouot ou Semaines qui est le don de la connaissance, Terouah ou Sonnerie qui est la joie d'être libéré, Kipourim ou Pénitence qui est les peines des pertes, et Soukot ou Cabanes qui est la construction du futur." + Globals.NL + Globals.NL +
                         "Ce sont les moments importants de l'année lunaire au sein du cycle solaire dont la finalité est de procurer une évolution bienveillante de la conscience par la connaissance des lois de l'univers et de la vie. La Torah indique de compter ces jours selon la lune, par opposition au Shabat qui se compte selon le soleil." + Globals.NL + Globals.NL +
                         "L'application utilise par défaut un omer selon la lune pour les célébrations." + Globals.NL + Globals.NL +
                         "Si vous utilisez le omer de la lune alors les dates des célébrations seront calculées selon les saisons et il y aura une inversion entre les hémisphères nord et sud. Dans ce cas, un jour est du coucher de la lune au suivant." + Globals.NL + Globals.NL +
-                        "Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option dans le rappeleur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant." }
+                        "Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option dans le rappeleur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant."
+        }
+      };
+
+
+    static public readonly NullSafeStringDictionary DatesDiffNoticeTitle
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Dates difference dates notice" },
+        { Languages.FR, "Notice de différence de dates" }
+      };
+
+    static public readonly NullSafeStringDictionary DatesDiffNotice
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, ""
+        },
+        { Languages.FR, "Les valeurs indiquées incluent les périodes en cours." + Globals.NL + Globals.NL +
+                        "La période solaire annuelle commence le 1er janvier." + Globals.NL +
+                        "La période solaire mensuelle est comptée depuis le 1er jour." + Globals.NL +
+                        "La semaine solaire est comptée tous les 7 jours depuis la plus petite date." + Globals.NL + Globals.NL +
+                        "Le jours lunaire va du coucher de la lune au suivant." + Globals.NL +
+                        "Un mois lunaire va de la nouvelle lune à la suivante." + Globals.NL + Globals.NL +
+                        "Exemples :" + Globals.NL + Globals.NL +
+                        "- 2 semaines solaires indiquent qu'il s'est écoulé 8 jours et plus mais 14 ou moins." + Globals.NL +
+                        "- 2 mois solaires indiquent qu'il s'est écoulé 1 mois et qu'on est dans le 2ème." + Globals.NL +
+                        "- 2 mois lunaires indiquent qu'il s'est écoulé 1 lune et qu'on se trouve dans la 2ème." + Globals.NL + Globals.NL +
+                        "Concernant les jours lunaires, la lune saute régulièrement un jour solaire qui se trouve donc être à cheval entre deux jours lunaires, comme par exemple le 10/08/2020 qui n'est pas compté car il n'y a pas de lever de la lune ce jour solaire-là."
+          }
       };
 
     static public readonly NullSafeStringDictionary NoticeMoonMonthsTitle
@@ -96,11 +127,13 @@ namespace Ordisoftware.HebrewCalendar
         { Languages.EN, "Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Globals.NL +
                         "Vert = air = action | A" + Globals.NL +
                         "Blanc = eau = expir | C" + Globals.NL +
-                        "Jaune = terre = repos | G" },
+                        "Jaune = terre = repos | G"
+        },
         { Languages.FR, "Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Globals.NL +
                         "Vert = air = action | A" + Globals.NL +
                         "Blanc = eau = expir | C" + Globals.NL +
-                        "Jaune = terre = repos | G" },
+                        "Jaune = terre = repos | G"
+        },
       };
 
   }

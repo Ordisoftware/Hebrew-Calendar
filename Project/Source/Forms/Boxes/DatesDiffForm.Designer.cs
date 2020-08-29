@@ -58,6 +58,7 @@
       this.ActionUseBookmarkStart = new System.Windows.Forms.Button();
       this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
+      this.ActionHelp = new System.Windows.Forms.Button();
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -108,6 +109,7 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionHelp);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
@@ -264,6 +266,15 @@
       this.ActionSetBookmarkEnd.UseVisualStyleBackColor = true;
       this.ActionSetBookmarkEnd.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
       // 
+      // ActionHelp
+      // 
+      this.ActionHelp.AllowDrop = true;
+      this.ActionHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionHelp, "ActionHelp");
+      this.ActionHelp.Name = "ActionHelp";
+      this.ActionHelp.UseVisualStyleBackColor = true;
+      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
+      // 
       // DatesDiffForm
       // 
       resources.ApplyResources(this, "$this");
@@ -318,5 +329,6 @@
     private System.Windows.Forms.Button ActionUseBookmarkEnd;
     private System.Windows.Forms.Button ActionSetBookmarkEnd;
     private System.Windows.Forms.ContextMenuStrip MenuBookmarks;
+    private System.Windows.Forms.Button ActionHelp;
   }
 }
