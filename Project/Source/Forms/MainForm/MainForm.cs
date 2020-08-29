@@ -1042,7 +1042,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( LunisolarDaysBindingSource.Current == null ) return;
         var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-        GoToDate(SQLite.GetDate(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
+        GoToDate(SQLiteDate.ToDateTime(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
       }
       catch
       {
@@ -1060,7 +1060,7 @@ namespace Ordisoftware.HebrewCalendar
         System.Threading.Thread.Sleep(1000);
         CheckRegenerateCalendar();
         CalendarMonth.Refresh();
-        if ( SQLite.GetDate(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
+        if ( SQLiteDate.ToDateTime(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
         if ( Program.Settings.CheckUpdateEveryWeekWhileRunning )
           ActionWebCheckUpdate_Click(null, null);

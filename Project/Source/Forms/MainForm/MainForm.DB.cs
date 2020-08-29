@@ -41,43 +41,38 @@ namespace Ordisoftware.HebrewCalendar
     public void CreateDatabaseIfNotExists()
     {
       using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
-        try
-        {
-          connection.Open();
-          if ( Program.Settings.VacuumAtStartup )
-            Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone);
-          connection.CheckTable("LunisolarDays",
-                                @"CREATE TABLE LunisolarDays 
-                                  (
-                                    Date TEXT,
-                                    LunarMonth INTEGER,
-                                    LunarDay INTEGER,
-                                    Sunrise TEXT,
-                                    Sunset TEXT,
-                                    Moonrise TEXT,
-                                    Moonset TEXT,
-                                    MoonriseType INTEGER,
-                                    IsNewMoon INTEGER,
-                                    IsFullMoon INTEGER,
-                                    MoonPhase INTEGER,
-                                    SeasonChange INTEGER,
-                                    TorahEvents INTEGER,
-                                    PRIMARY KEY('Date')
-                                  )");
-          connection.CheckTable("Report",
-                                @"CREATE TABLE Report 
-                                  ( 
-                                     Content TEXT 
-                                  );");
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
-        finally
-        {
-          connection.Close();
-        }
+      {
+        connection.Open();
+
+        if ( Program.Settings.VacuumAtStartup )
+          Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone);
+
+        connection.CheckTable(@"LunisolarDays",
+                              @"CREATE TABLE LunisolarDays 
+                                (
+                                  Date TEXT NOT NULL,
+                                  LunarMonth INTEGER,
+                                  LunarDay INTEGER,
+                                  Sunrise TEXT,
+                                  Sunset TEXT,
+                                  Moonrise TEXT,
+                                  Moonset TEXT,
+                                  MoonriseType INTEGER,
+                                  IsNewMoon INTEGER,
+                                  IsFullMoon INTEGER,
+                                  MoonPhase INTEGER,
+                                  SeasonChange INTEGER,
+                                  TorahEvents INTEGER,
+                                  PRIMARY KEY('Date')
+                                )");
+
+        connection.CheckTable(@"Report",
+                              @"CREATE TABLE Report 
+                                ( 
+                                  Content TEXT DEFAULT ''
+                                )");
+      }
+
     }
 
   }

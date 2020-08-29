@@ -28,7 +28,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Create letters buttons.
     /// </summary>
-    private void CreateLetters()
+    private void Prepare()
     {
       try
       {

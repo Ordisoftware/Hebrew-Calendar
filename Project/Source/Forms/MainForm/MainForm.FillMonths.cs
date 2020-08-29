@@ -63,9 +63,9 @@ namespace Ordisoftware.HebrewCalendar
         bool IsCelebrationWeekStart = false;
         bool IsCelebrationWeekEnd = false;
         if ( DataSet.LunisolarDays.Count == 0 ) return;
-        DateFirst = SQLite.GetDate(DataSet.LunisolarDays.FirstOrDefault().Date);
+        DateFirst = SQLiteDate.ToDateTime(DataSet.LunisolarDays.FirstOrDefault().Date);
         YearFirst = DateFirst.Year;
-        DateLast = SQLite.GetDate(DataSet.LunisolarDays.LastOrDefault().Date);
+        DateLast = SQLiteDate.ToDateTime(DataSet.LunisolarDays.LastOrDefault().Date);
         YearLast = DateLast.Year;
         DayColors = new Color[YearLast - YearFirst + 1, 13, 35];
         LoadingForm.Instance.Initialize(Translations.ProgressFillMonths.GetLang(),
@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCalendar
                                 || ev == TorahEvent.SoukotD8
                                 || ev == TorahEvent.Chavouot1;
             var result = IsCelebrationWeekStart || IsCelebrationWeekEnd;
-            var date = SQLite.GetDate(row.Date);
+            var date = SQLiteDate.ToDateTime(row.Date);
             Color? color1 = null;
             Color? color2 = null;
             Color? color3 = null;
@@ -101,7 +101,7 @@ namespace Ordisoftware.HebrewCalendar
             else
             if ( IsCelebrationWeekStart || ev != TorahEvent.None )
               color2 = Program.Settings.EventColorTorah;
-            if ( SQLite.GetDate(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+            if ( SQLiteDate.ToDateTime(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
               color3 = Program.Settings.EventColorShabat;
             if ( color1 != null && color2 != null && color3 != null )
               color1 = MixColor(color1.Value, color2.Value, color3.Value);
@@ -130,7 +130,7 @@ namespace Ordisoftware.HebrewCalendar
             void add(Color color, string text)
             {
               var item = new CustomEvent();
-              item.Date = SQLite.GetDate(row.Date);
+              item.Date = SQLiteDate.ToDateTime(row.Date);
               item.EventFont = new Font("Calibri", Program.Settings.MonthViewFontSize);
               if ( Program.Settings.UseColors )
               {

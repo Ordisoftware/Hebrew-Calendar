@@ -44,19 +44,19 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCancel_Click(object sender, EventArgs e)
     {
       if ( LiveGoTo && CurrentDay != null )
-        MainForm.Instance.GoToDate(SQLite.GetDate(CurrentDay.Date));
+        MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date));
     }
 
     private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
     {
       if ( !LiveGoTo ) return;
-      string date = SQLite.GetDate(MonthCalendar.SelectionStart);
+      string date = SQLiteDate.ToString(MonthCalendar.SelectionStart);
       if ( MonthCalendar.SelectionStart < MainForm.Instance.DateFirst )
-        date = SQLite.GetDate(MainForm.Instance.DateFirst);
+        date = SQLiteDate.ToString(MainForm.Instance.DateFirst);
       else
       if ( MonthCalendar.SelectionStart > MainForm.Instance.DateLast )
-        date = SQLite.GetDate(MainForm.Instance.DateLast);
-      MainForm.Instance.GoToDate(SQLite.GetDate(date));
+        date = SQLiteDate.ToString(MainForm.Instance.DateLast);
+      MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(date));
     }
 
   }

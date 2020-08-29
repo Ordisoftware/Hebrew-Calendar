@@ -129,6 +129,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Source\Common\Core\Debugger.cs" />
+    <Compile Include="Source\Common\Data\SQLiteOdbcHelper.cs" />
     <Compile Include="Source\Common\Forms\ExceptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,7 +172,7 @@
     <Compile Include="Source\Common\System\Localizer.Translations.cs" />
     <Compile Include="Source\Common\Data\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\System\Localizer.cs" />
-    <Compile Include="Source\Common\Data\SQLiteHelper.cs" />
+    <Compile Include="Source\Common\Data\SQLiteDate.cs" />
     <Compile Include="Source\Common\UI\FormsHelper.cs" />
     <Compile Include="Source\Common\System\Shell.cs" />
     <Compile Include="Source\Common\System\WebCheckUpdate.cs" />
@@ -182,7 +183,7 @@
     <Compile Include="Source\Common\Forms\HTMLBrowserForm.Designer.cs">
       <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Controls\LettersControl.CreateLetters.cs">
+    <Compile Include="Source\Common\Controls\LettersControl.Prepare.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Source\Common\Controls\LettersControl.cs">
@@ -410,7 +411,7 @@
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Enums\TorahCelebrations.cs" />
-    <Compile Include="Source\Common\Core\DisplayManager.QueryBox.cs" />
+    <Compile Include="Source\Common\Core\DisplayManager.Query.cs" />
     <Compile Include="Source\Common\Core\DisplayManager.Show.cs" />
     <Compile Include="Source\Enums\MoonRise.cs" />
     <Compile Include="Dependencies\MoonPhaseImage\MoonPhaseImage.cs">

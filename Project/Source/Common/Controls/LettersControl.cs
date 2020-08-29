@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewCommon
       set
       {
         _FontSizeLetters = value;
-        CreateLetters();
+        Prepare();
       }
     }
     private float _FontSizeLetters = 20.25F;
@@ -80,7 +80,7 @@ namespace Ordisoftware.HebrewCommon
       set
       {
         _FontSizeValues = value;
-        CreateLetters();
+        Prepare();
       }
     }
     private float _FontSizeValues = 6.25F;
@@ -94,7 +94,7 @@ namespace Ordisoftware.HebrewCommon
       set
       {
         _FontSizeKeys = value;
-        CreateLetters();
+        Prepare();
       }
     }
     private float _FontSizeKeys = 8.25F;
@@ -108,7 +108,7 @@ namespace Ordisoftware.HebrewCommon
       set
       {
         Input.Font = new Font(Input.Font.FontFamily, value, Input.Font.Style);
-        CreateLetters();
+        Prepare();
       }
     }
 
@@ -122,7 +122,7 @@ namespace Ordisoftware.HebrewCommon
       {
         if ( _ShowValues == value ) return;
         _ShowValues = value;
-        CreateLetters();
+        Prepare();
       }
     }
     private bool _ShowValues = true;
@@ -137,7 +137,7 @@ namespace Ordisoftware.HebrewCommon
       {
         if ( _ShowKeys == value ) return;
         _ShowKeys = value;
-        CreateLetters();
+        Prepare();
       }
     }
     private bool _ShowKeys = true;
@@ -186,7 +186,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void LettersControl_Load(object sender, EventArgs e)
     {
-      CreateLetters();
+      Prepare();
     }
 
     /// <summary>

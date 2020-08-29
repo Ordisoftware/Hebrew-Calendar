@@ -44,14 +44,14 @@ namespace Ordisoftware.HebrewCalendar
     private ReminderTimes CreateCelebrationTimes(Data.DataSet.LunisolarDaysRow row, decimal delta3)
     {
       var times = new ReminderTimes();
-      var dateRow = SQLite.GetDate(row.Date);
-      var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLite.GetDate(dateRow.AddDays(-1)));
-      var rowNext = DataSet.LunisolarDays.FindByDate(SQLite.GetDate(dateRow.AddDays(+1)));
+      var dateRow = SQLiteDate.ToDateTime(row.Date);
+      var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
+      var rowNext = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(+1)));
       if ( rowPrevious == null || rowNext == null )
         return null;
       if ( Program.Settings.TorahEventsCountAsMoon )
       {
-        if ( rowNext.Date == SQLite.GetDate(DateTime.Today) )
+        if ( rowNext.Date == SQLiteDate.ToString(DateTime.Today) )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
         if ( row.Moonset != "" && (MoonRise)row.MoonriseType == MoonRise.AfterSet )

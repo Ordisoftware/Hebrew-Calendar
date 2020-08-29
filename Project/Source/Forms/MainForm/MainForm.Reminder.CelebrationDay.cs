@@ -30,14 +30,14 @@ namespace Ordisoftware.HebrewCalendar
         return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
       }
       var dateNow = DateTime.Now;
-      string strDateNow = SQLite.GetDate(dateNow);
+      string strDateNow = SQLiteDate.ToString(dateNow);
       var row = ( from day in DataSet.LunisolarDays
                   where (TorahEvent)day.TorahEvents != TorahEvent.None
                      && check((TorahEvent)day.TorahEvents)
-                     && SQLite.GetDate(day.Date) >= SQLite.GetDate(strDateNow).AddDays(-1)
+                     && SQLiteDate.ToDateTime(day.Date) >= SQLiteDate.ToDateTime(strDateNow).AddDays(-1)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
-      if ( SQLite.GetDate(row.Date).Day < dateNow.Day )
+      if ( SQLiteDate.ToDateTime(row.Date).Day < dateNow.Day )
         if ( Program.Settings.TorahEventsCountAsMoon && row.MoonriseType == (int)MoonRise.BeforeSet )
           return;
         else

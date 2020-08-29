@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Right:
           if ( Program.Settings.CurrentView == ViewMode.Month )
           {
-            var date = SQLite.GetDate(CurrentDay.Date);
+            var date = SQLiteDate.ToDateTime(CurrentDay.Date);
             date = new DateTime(date.Year, date.Month, 1);
             GoToDate(date.AddMonths(1));
             return true;
@@ -121,7 +121,7 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Left:
           if ( Program.Settings.CurrentView == ViewMode.Month )
           {
-            var date = SQLite.GetDate(CurrentDay.Date);
+            var date = SQLiteDate.ToDateTime(CurrentDay.Date);
             date = new DateTime(date.Year, date.Month, 1);
             GoToDate(date.AddMonths(-1));
             return true;
@@ -130,7 +130,7 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Up:
           if ( Program.Settings.CurrentView == ViewMode.Month )
           {
-            var date = SQLite.GetDate(CurrentDay.Date);
+            var date = SQLiteDate.ToDateTime(CurrentDay.Date);
             date = new DateTime(date.Year, date.Month, 1);
             GoToDate(date.AddYears(1));
             return true;
@@ -139,7 +139,7 @@ namespace Ordisoftware.HebrewCalendar
         case Keys.Down:
           if ( Program.Settings.CurrentView == ViewMode.Month )
           {
-            var date = SQLite.GetDate(CurrentDay.Date);
+            var date = SQLiteDate.ToDateTime(CurrentDay.Date);
             date = new DateTime(date.Year, date.Month, 1);
             GoToDate(date.AddYears(-1));
             return true;

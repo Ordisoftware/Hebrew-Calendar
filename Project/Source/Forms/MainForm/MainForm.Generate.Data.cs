@@ -147,7 +147,7 @@ namespace Ordisoftware.HebrewCalendar
               {
                 LoadingForm.Instance.DoProgress();
                 var row = DataSet.LunisolarDays.NewLunisolarDaysRow();
-                row.Date = SQLite.GetDate(year, month, day);
+                row.Date = SQLiteDate.ToString(year, month, day);
                 row.TorahEvents = 0;
                 row.LunarMonth = 0;
                 InitializeDay(row);
@@ -175,17 +175,17 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        var date = SQLite.GetDate(day.Date);
+        var date = SQLiteDate.ToDateTime(day.Date);
         var data = Dates.Get(date);
         var ephemeris = data.Ephemerisis;
         day.LunarDay = data.DayOfMonth;
         day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
         day.MoonPhase = data.MoonPhase;
         day.IsFullMoon = Convert.ToInt32((MoonPhase)day.MoonPhase == MoonPhase.Full);
-        day.Sunrise = SQLite.FormatTime(ephemeris.Sunrise);
-        day.Sunset = SQLite.FormatTime(ephemeris.Sunset);
-        day.Moonrise = SQLite.FormatTime(ephemeris.Moonrise);
-        day.Moonset = SQLite.FormatTime(ephemeris.Moonset);
+        day.Sunrise = SQLiteDate.ToString(ephemeris.Sunrise);
+        day.Sunset = SQLiteDate.ToString(ephemeris.Sunset);
+        day.Moonrise = SQLiteDate.ToString(ephemeris.Moonrise);
+        day.Moonset = SQLiteDate.ToString(ephemeris.Moonset);
         MoonRise moonrisetype;
         if ( ephemeris.Moonrise == null )
           moonrisetype = MoonRise.NextDay;
@@ -257,7 +257,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( Program.Settings.TorahEventsCountAsMoon )
         {
-          var rowStart = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLite.GetDate(thedate));
+          var rowStart = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteDate.ToString(thedate));
           int index = DataSet.LunisolarDays.Rows.IndexOf(rowStart);
           int count = 0;
           if ( forceSunOmer )
@@ -270,21 +270,21 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
           thedate = thedate.AddDays(toadd);
-        var rowEnd = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLite.GetDate(thedate));
+        var rowEnd = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteDate.ToString(thedate));
         if ( rowEnd != null )
           rowEnd.TorahEvents |= (int)type;
         return thedate;
       }
       try
       {
-        var dateDay = SQLite.GetDate(day.Date);
+        var dateDay = SQLiteDate.ToDateTime(day.Date);
         bool check(Data.DataSet.LunisolarDaysRow row)
         {
-          var dateRow = SQLite.GetDate(row.Date);
+          var dateRow = SQLiteDate.ToDateTime(row.Date);
           return dateRow.Year == dateDay.Year && Dates.Get(dateRow).TorahSeasonChange == SeasonChange.SpringEquinox;
         }
         var equinoxe = DataSet.LunisolarDays.Where(d => check(d)).First();
-        var dateEquinox = SQLite.GetDate(equinoxe.Date);
+        var dateEquinox = SQLiteDate.ToDateTime(equinoxe.Date);
         int deltaNewLambDay = dateEquinox.Day - TorahCelebrations.NewLambDay;
         bool newEquinoxe = ( dateDay.Month == dateEquinox.Month && dateDay.Day >= deltaNewLambDay )
                         || ( dateDay.Month == dateEquinox.Month + 1 );

@@ -69,14 +69,14 @@ namespace Ordisoftware.HebrewCalendar
         content.Append(headerSep + Environment.NewLine);
         content.Append(headerTxt + Environment.NewLine);
         if ( DataSet.LunisolarDays.Count <= 0 ) return "";
-        var lastyear = SQLite.GetDate(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+        var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
         LoadingForm.Instance.Initialize(Translations.ProgressGenerateReport.GetLang(),
                                         DataSet.LunisolarDays.Count,
                                         Program.LoadingFormLoadDB);
         foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
           try
           {
-            var dayDate = SQLite.GetDate(day.Date);
+            var dayDate = SQLiteDate.ToDateTime(day.Date);
             LoadingForm.Instance.DoProgress();
             if ( day.LunarMonth == 0 ) continue;
             if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;

@@ -51,10 +51,10 @@ namespace Ordisoftware.HebrewCalendar
       }
       try
       {
-        int position = LunisolarDaysBindingSource.Find("Date", SQLite.GetDate(date));
+        int position = LunisolarDaysBindingSource.Find("Date", SQLiteDate.ToString(date));
         if ( position >= 0 )
         {
-          LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLite.GetDate(date));
+          LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteDate.ToString(date));
           CurrentDay = (Data.DataSet.LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
           CalendarGrid.Update();
         }

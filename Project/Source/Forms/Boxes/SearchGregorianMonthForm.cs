@@ -40,7 +40,7 @@ namespace Ordisoftware.HebrewCalendar
         this.CenterToMainFormElseScreen();
       Mutex = true;
       CurrentDay = MainForm.Instance.CurrentDay;
-      int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLite.GetDate(CurrentDay.Date).Year;
+      int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;
       for ( int indexYear = MainForm.Instance.YearFirst; indexYear <= MainForm.Instance.YearLast; indexYear++ )
       {
         int index = EditYear.Items.Add(indexYear);
@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( DialogResult == DialogResult.Cancel )
         if ( CurrentDay != null )
-          MainForm.Instance.GoToDate(SQLite.GetDate(CurrentDay.Date));
+          MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date));
     }
 
     private void ListItems_DoubleClick(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       if ( e == null )
       {
-        int index = SQLite.GetDate(CurrentDay.Date).Month - 1;
+        int index = SQLiteDate.ToDateTime(CurrentDay.Date).Month - 1;
         ListItems.Items[index].Focused = true;
         ListItems.Items[index].Selected = true;
       }
