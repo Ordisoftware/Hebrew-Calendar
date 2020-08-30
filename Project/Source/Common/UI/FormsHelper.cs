@@ -87,6 +87,8 @@ namespace Ordisoftware.HebrewCommon
         case ControlLocation.Fixed:
           form.CenterToMainFormElseScreen();
           break;
+        case ControlLocation.Loose:
+          break;
         default:
           throw new NotImplementedException(location.ToString());
       }

@@ -130,9 +130,9 @@
     </Compile>
     <Compile Include="Source\Common\Core\SQLiteException.cs" />
     <Compile Include="Source\Common\Core\Debugger.cs" />
+    <Compile Include="Source\Common\Data\NullSafeStringList.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringDictionary.cs" />
     <Compile Include="Source\Common\Data\NullSafeSortedDictionary.cs" />
-    <Compile Include="Source\Common\Data\OutOfRangeSafeDictionary.cs" />
     <Compile Include="Source\Common\Data\NullSafeList.cs" />
     <Compile Include="Source\Common\Data\SQLiteOdbcHelper.cs" />
     <Compile Include="Source\Common\Forms\ExceptionForm.cs">
@@ -170,7 +170,6 @@
     <Compile Include="Source\Common\Data\OnlineProviders.cs" />
     <Compile Include="Source\Common\Data\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\UI\ControlLocation.cs" />
-    <Compile Include="Source\Common\Data\OutOfRangeSafeList.cs" />
     <Compile Include="Source\Common\Data\NullSafeDictionary.cs" />
     <Compile Include="Source\Common\System\EnumHelper.cs" />
     <Compile Include="Source\Common\System\Globals.cs" />

@@ -27,7 +27,10 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        return ContainsKey(key) ? base[key] : new TValue();
+        if ( ContainsKey(key) ) return base[key];
+        var value = new TValue();
+        Add(key, value);
+        return value;
       }
       set
       {

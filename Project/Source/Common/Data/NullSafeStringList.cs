@@ -13,29 +13,43 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide out of range safe dictionary.
+  /// Provide null safe string list.
   /// </summary>
-  public class OutOfRangeSafeDictionary<TKey, TValue> : Dictionary<TKey, TValue>
+  public class NullSafeStringList : List<string>
   {
-    public new TValue this[TKey key]
+    public new string this[int index]
     {
       get
       {
-        return ContainsKey(key) ? base[key] : default(TValue);
+        CheckIndex(index);
+        return index < Count ? base[index] : "";
       }
       set
       {
-        if ( ContainsKey(key) )
-          base[key] = value;
+        CheckIndex(index);
+        if ( index < Count )
+          base[index] = value;
         else
-          Add(key, value);
+          CreateOutOfRange(index, value);
       }
+    }
+    private void CheckIndex(int index)
+    {
+      if ( index < 0 )
+        throw new IndexOutOfRangeException(Localizer.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
+    }
+    private void CreateOutOfRange(int index, string value)
+    {
+      Capacity = index + 1;
+      AddRange(Enumerable.Repeat("", index + 1 - Count));
+      base[index] = value;
     }
   }
 

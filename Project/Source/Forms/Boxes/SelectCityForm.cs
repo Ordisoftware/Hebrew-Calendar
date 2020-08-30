@@ -42,7 +42,6 @@ namespace Ordisoftware.HebrewCalendar
         string filename = Program.GPSFilename;
         var parser = new GenericParser(filename);
         parser.FirstRowHasHeader = true;
-
         while ( parser.Read() )
         {
           var country = GPS[parser["country"].Trim().RemoveDiacritics()];

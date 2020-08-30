@@ -399,6 +399,24 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "> Décrivez ici ce que vous avez fait, ce que vous attendiez et ce qui c'est passé." }
       };
 
+    static public readonly NullSafeStringDictionary IndexOutOfRange
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, $"Index out of range in {{0}}: {{1}}" + Globals.NL2 +
+                        $"Must be between {{2}} and {{3}}."
+        },
+        { Languages.FR, $"Index en dehors des limites dans {{0}}: {{1}}" + Globals.NL2 +
+                        $"Doit être entre {{2}} et {{3}}."
+        },
+      };
+
+    static public readonly NullSafeStringDictionary IndexCantBeNegative
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, $"Index can''t be negative in {{0}}: {{1}}" },
+        { Languages.FR, $"Index ne peut pas être négatif dans {{0}}: {{1}}" }
+      };
+
     static public readonly NullSafeStringDictionary NullSlot
       = new NullSafeStringDictionary()
       {

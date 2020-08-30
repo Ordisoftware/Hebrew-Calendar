@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-11 </edited>
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -72,23 +73,23 @@ namespace Ordisoftware.HebrewCalendar
 
     public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
 
-    private OutOfRangeSafeDictionary<TorahEvent, bool> TorahEventRemindList
-      = new OutOfRangeSafeDictionary<TorahEvent, bool>();
+    private NullSafeDictionary<TorahEvent, bool> TorahEventRemindList
+      = new NullSafeDictionary<TorahEvent, bool>();
 
-    private OutOfRangeSafeDictionary<TorahEvent, bool> TorahEventRemindDayList
-      = new OutOfRangeSafeDictionary<TorahEvent, bool>();
+    private NullSafeDictionary<TorahEvent, bool> TorahEventRemindDayList
+      = new NullSafeDictionary<TorahEvent, bool>();
 
-    internal readonly OutOfRangeSafeList<Form> RemindCelebrationForms
-      = new OutOfRangeSafeList<Form>();
+    internal readonly NullSafeList<Form> RemindCelebrationForms
+      = new NullSafeList<Form>();
 
-    internal readonly OutOfRangeSafeList<string> RemindCelebrationDates
-      = new OutOfRangeSafeList<string>();
+    internal readonly NullSafeStringList RemindCelebrationDates
+      = new NullSafeStringList();
 
-    internal readonly OutOfRangeSafeDictionary<TorahEvent, DateTime?> LastCelebrationReminded
-      = new OutOfRangeSafeDictionary<TorahEvent, DateTime?>();
+    internal readonly NullSafeDictionary<TorahEvent, DateTime?> LastCelebrationReminded
+      = new NullSafeDictionary<TorahEvent, DateTime?>();
 
-    internal readonly OutOfRangeSafeDictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
-      = new OutOfRangeSafeDictionary<TorahEvent, ReminderForm>();
+    internal readonly Dictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
+      = new Dictionary<TorahEvent, ReminderForm>();
 
     internal DateTime? LastShabatReminded;
 

@@ -20,7 +20,7 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide null safe safe list.
+  /// Provide null safe list.
   /// </summary>
   public class NullSafeList<T> : List<T> where T : new()
   {
@@ -28,20 +28,31 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        return index >= 0 && index < Count ? base[index] : new T();
+        CheckIndex(index);
+        if ( index < Count ) return base[index];
+        var item = new T();
+        CreateOutOfRange(index, item);
+        return item;
       }
       set
       {
-        if ( index < 0 ) return;
+        CheckIndex(index);
         if ( index < Count )
           base[index] = value;
         else
-        {
-          Capacity = index + 1;
-          AddRange(Enumerable.Repeat(new T(), index + 1 - Count));
-          base[index] = value;
-        }
+          CreateOutOfRange(index, new T());
       }
+    }
+    private void CheckIndex(int index)
+    {
+      if ( index < 0 )
+        throw new IndexOutOfRangeException(Localizer.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
+    }
+    private void CreateOutOfRange(int index, T value)
+    {
+      Capacity = index + 1;
+      AddRange(Enumerable.Repeat(new T(), index + 1 - Count));
+      base[index] = value;
     }
   }
 

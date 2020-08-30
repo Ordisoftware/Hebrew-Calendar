@@ -19,7 +19,7 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide null safe dictionary.
+  /// Provide null safe string dictionary.
   /// </summary>
   public class NullSafeStringDictionary : Dictionary<string, string>
   {
@@ -27,7 +27,10 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        return ContainsKey(key) ? base[key] : "";
+        if ( ContainsKey(key) ) return base[key];
+        var value = "";
+        Add(key, value);
+        return value;
       }
       set
       {
