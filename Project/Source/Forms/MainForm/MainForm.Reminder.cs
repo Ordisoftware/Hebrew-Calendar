@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCalendar
       var rowNext = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(+1)));
       if ( rowPrevious == null || rowNext == null )
         return null;
-      if ( Program.Settings.TorahEventsCountAsMoon )
+      if ( Settings.TorahEventsCountAsMoon )
       {
         if ( rowNext.Date == SQLiteDate.ToString(DateTime.Today) )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);

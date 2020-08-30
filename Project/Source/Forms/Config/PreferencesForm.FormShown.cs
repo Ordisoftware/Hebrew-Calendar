@@ -28,30 +28,30 @@ namespace Ordisoftware.HebrewCalendar
 
     private void DoFormShown(object sender, EventArgs e)
     {
-      if ( string.IsNullOrEmpty(Program.Settings.GPSLatitude)
-        || string.IsNullOrEmpty(Program.Settings.GPSLongitude) )
+      if ( string.IsNullOrEmpty(Settings.GPSLatitude)
+        || string.IsNullOrEmpty(Settings.GPSLongitude) )
         ActionGetGPS_LinkClicked(null, null);
-      if ( Program.Settings.FirstLaunch )
+      if ( Settings.FirstLaunch )
       {
-        Program.Settings.FirstLaunchV4 = false;
-        Program.Settings.FirstLaunch = false;
-        Program.Settings.Save();
+        Settings.FirstLaunchV4 = false;
+        Settings.FirstLaunch = false;
+        Settings.Save();
         Program.CelebrationsNoticeForm.ShowDialog();
-        Program.Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(Translations.AskToUseMoonOmer.GetLang());
+        Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(Translations.AskToUseMoonOmer.GetLang());
         Program.ShabatNoticeForm.ShowDialog();
         if ( DisplayManager.QueryYesNo(Translations.AskToSetupPersonalShabat.GetLang()) )
           ActionUsePersonalShabat_LinkClicked(null, null);
       }
       UpdateLanguagesButtons();
       foreach ( var item in EditFontName.Items )
-        if ( (string)item == Program.Settings.FontName )
+        if ( (string)item == Settings.FontName )
         {
           EditFontName.SelectedItem = item;
           break;
         }
       LoadSettings();
       EditTimeZone.Text = Program.GPSText;
-      switch ( Program.Settings.TrayIconClickOpen )
+      switch ( Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
           SelectOpenMainForm.Select();
@@ -63,7 +63,7 @@ namespace Ordisoftware.HebrewCalendar
           SelectOpenNextCelebrationsForm.Select();
           break;
         default:
-          throw new NotImplementedException(Program.Settings.TrayIconClickOpen.ToString());
+          throw new NotImplementedException(Settings.TrayIconClickOpen.ToString());
       }
       EditRemindShabat_ValueChanged(null, null);
       EditTimerEnabled_CheckedChanged(null, null);

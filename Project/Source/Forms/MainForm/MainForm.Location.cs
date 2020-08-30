@@ -54,8 +54,8 @@ namespace Ordisoftware.HebrewCalendar
           foreach ( ToolStripMenuItem item in list )
             item.Checked = item == value;
         }
-        if ( Globals.IsReady ) Program.Settings.Store();
-        this.SetLocation(Program.Settings.MainFormPosition);
+        if ( Globals.IsReady ) Settings.Store();
+        this.SetLocation(Settings.MainFormPosition);
       }
       finally
       {

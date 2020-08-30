@@ -97,7 +97,7 @@ namespace Ordisoftware.HebrewCalendar
                                                               : Translations.Ephemeris.GetLang(Ephemeris.WinterHour) )
                                                                 + " " + strSun
                    : strSun + new string(' ', 3 + 1);
-            strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
+            strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Settings.ShabatDay
                               ? ShabatText
                               : "   " );
             string strMoonrise = day.Moonrise == ""
@@ -157,7 +157,7 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         Chrono.Stop();
-        Program.Settings.BenchmarkGenerateTextReport = Chrono.ElapsedMilliseconds;
+        Settings.BenchmarkGenerateTextReport = Chrono.ElapsedMilliseconds;
       }
     }
 

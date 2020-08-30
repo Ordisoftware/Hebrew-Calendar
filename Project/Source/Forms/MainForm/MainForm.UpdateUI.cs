@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     public void UpdateTextCalendar()
     {
-      CalendarText.Font = new Font(Program.Settings.FontName, Program.Settings.FontSize);
+      CalendarText.Font = new Font(Settings.FontName, Settings.FontSize);
     }
 
     /// <summary>
@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewCalendar
         Enabled = true;
         Cursor = cursor;
         IsGenerating = false;
-        SetView(Program.Settings.CurrentView, true);
+        SetView(Settings.CurrentView, true);
         UpdateButtons();
       }
     }

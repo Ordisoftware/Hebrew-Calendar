@@ -49,6 +49,8 @@ namespace Ordisoftware.HebrewCalendar
     const int AutoGenerateYearsIntervalMax = 20;
     const int AutoGenerateYearsIntervalValue = 10;
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static private bool LanguageChanged;
     static private bool DoReset;
     static public bool Reseted { get; private set; }
@@ -56,7 +58,7 @@ namespace Ordisoftware.HebrewCalendar
     static public bool Run()
     {
       Reseted = false;
-      string lang = Program.Settings.Language;
+      string lang = Settings.Language;
       var form = new PreferencesForm();
       if ( !MainForm.Instance.Visible )
         form.ShowInTaskbar = true;
@@ -72,18 +74,18 @@ namespace Ordisoftware.HebrewCalendar
         form.ShowDialog();
       }
       bool result = Reseted
-                 || form.OldShabatDay != Program.Settings.ShabatDay
-                 || form.OldLatitude != Program.Settings.GPSLatitude
-                 || form.OldLongitude != Program.Settings.GPSLongitude
-                 || form.OldUseMoonDays != Program.Settings.TorahEventsCountAsMoon
-                 || form.OldTimeZone != Program.Settings.TimeZone
-                 || lang != Program.Settings.Language;
+                 || form.OldShabatDay != Settings.ShabatDay
+                 || form.OldLatitude != Settings.GPSLatitude
+                 || form.OldLongitude != Settings.GPSLongitude
+                 || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
+                 || form.OldTimeZone != Settings.TimeZone
+                 || lang != Settings.Language;
       if ( !result && form.MustRefreshMonthView )
         MainForm.Instance.UpdateCalendarMonth(true);
       try
       {
-        MainForm.Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude);
-        MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude);
+        MainForm.Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
+        MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
       }
       catch ( Exception ex )
       {

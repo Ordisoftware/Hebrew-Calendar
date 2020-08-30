@@ -60,6 +60,10 @@
       this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSwapDates = new System.Windows.Forms.Button();
+      this.MenuManageBookmark = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.downToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.upToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -71,6 +75,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).BeginInit();
       this.GroupBoxSun.SuspendLayout();
       this.groupBox1.SuspendLayout();
+      this.MenuManageBookmark.SuspendLayout();
       this.SuspendLayout();
       // 
       // lunationsLabel
@@ -291,6 +296,30 @@
       this.ActionSwapDates.UseVisualStyleBackColor = true;
       this.ActionSwapDates.Click += new System.EventHandler(this.ActionSwapDates_Click);
       // 
+      // MenuManageBookmark
+      // 
+      this.MenuManageBookmark.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.downToolStripMenuItem,
+            this.upToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+      this.MenuManageBookmark.Name = "MenuManageBookmark";
+      resources.ApplyResources(this.MenuManageBookmark, "MenuManageBookmark");
+      // 
+      // downToolStripMenuItem
+      // 
+      this.downToolStripMenuItem.Name = "downToolStripMenuItem";
+      resources.ApplyResources(this.downToolStripMenuItem, "downToolStripMenuItem");
+      // 
+      // upToolStripMenuItem
+      // 
+      this.upToolStripMenuItem.Name = "upToolStripMenuItem";
+      resources.ApplyResources(this.upToolStripMenuItem, "upToolStripMenuItem");
+      // 
+      // deleteToolStripMenuItem
+      // 
+      this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+      resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
+      // 
       // DatesDiffForm
       // 
       resources.ApplyResources(this, "$this");
@@ -319,6 +348,7 @@
       this.GroupBoxSun.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
+      this.MenuManageBookmark.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -348,5 +378,9 @@
     private System.Windows.Forms.ContextMenuStrip MenuBookmarks;
     private System.Windows.Forms.Button ActionHelp;
     private System.Windows.Forms.Button ActionSwapDates;
+    private System.Windows.Forms.ContextMenuStrip MenuManageBookmark;
+    private System.Windows.Forms.ToolStripMenuItem downToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem upToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
   }
 }

@@ -31,7 +31,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
-      var dateLimit = dateNow.AddDays((int)Program.Settings.ReminderCelebrationsInterval);
+      var dateLimit = dateNow.AddDays((int)Settings.ReminderCelebrationsInterval);
       var rows = from day in DataSet.LunisolarDays
                  where !RemindCelebrationDates.Contains(day.Date)
                     && check((TorahEvent)day.TorahEvents)
@@ -40,7 +40,7 @@ namespace Ordisoftware.HebrewCalendar
                  select day;
       foreach ( Data.DataSet.LunisolarDaysRow row in rows )
       {
-        var times = CreateCelebrationTimes(row, Program.Settings.RemindCelebrationEveryMinutes);
+        var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
         if ( times == null ) continue;
         RemindCelebrationDates.Add(row.Date);
         ReminderForm.Run(row, false, TorahEvent.None, times);

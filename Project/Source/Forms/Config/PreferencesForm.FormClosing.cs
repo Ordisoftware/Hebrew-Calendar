@@ -43,20 +43,20 @@ namespace Ordisoftware.HebrewCalendar
         return;
       }
       if ( SelectOpenMainForm.Checked )
-        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
+        Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
       else
       if ( SelectOpenNavigationForm.Checked )
-        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
+        Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
       else
       if ( SelectOpenNextCelebrationsForm.Checked )
-        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NextCelebrationsForm;
-      Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-      Program.Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsInterval.Value;
+        Settings.TrayIconClickOpen = TrayIconClickOpen.NextCelebrationsForm;
+      Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
+      Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsInterval.Value;
       for ( int index = 0; index < EditEvents.Items.Count; index++ )
         try
         {
           string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
-          Program.Settings[name] = EditEvents.GetItemChecked(index);
+          Settings[name] = EditEvents.GetItemChecked(index);
         }
         catch
         {
@@ -65,14 +65,14 @@ namespace Ordisoftware.HebrewCalendar
         try
         {
           string name = "TorahEventRemindDay" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
-          Program.Settings[name] = EditEventsDay.GetItemChecked(index);
+          Settings[name] = EditEventsDay.GetItemChecked(index);
         }
         catch
         {
         }
       UpdateSettings();
-      Program.Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
-      Program.Settings.Save();
+      Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
+      Settings.Save();
     }
 
   }

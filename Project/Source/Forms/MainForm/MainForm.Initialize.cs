@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       CurrentTimeZoneInfo = null;
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Program.Settings.TimeZone )
+        if ( item.Id == Settings.TimeZone )
         {
           CurrentTimeZoneInfo = item;
           break;
@@ -55,9 +55,9 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     internal void InitializeSpecialMenus()
     {
-      ActionWebLinks.Visible = Program.Settings.WebLinksMenuEnabled;
-      MenuWebLinks.Visible = Program.Settings.WebLinksMenuEnabled;
-      if ( Program.Settings.WebLinksMenuEnabled )
+      ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
+      MenuWebLinks.Visible = Settings.WebLinksMenuEnabled;
+      if ( Settings.WebLinksMenuEnabled )
       {
         ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
         ActionWebLinks.DuplicateTo(MenuWebLinks);
@@ -66,9 +66,9 @@ namespace Ordisoftware.HebrewCalendar
       ActionTools.DuplicateTo(MenuTools);
       ActionViewMoonMonths.ShortcutKeys = Keys.F10;
       ActionInformation.DuplicateTo(MenuInformation);
-      if ( !Program.Settings.AllowSuspendReminder && ActionEnableReminder.Enabled )
+      if ( !Settings.AllowSuspendReminder && ActionEnableReminder.Enabled )
         ActionEnableReminder.PerformClick();
-      ActionDisableReminder.Enabled = Program.Settings.AllowSuspendReminder;
+      ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
       MenuDisableReminder.Enabled = ActionDisableReminder.Enabled;
     }
 
@@ -77,12 +77,12 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     private void InitializeCalendarUI()
     {
-      int sizeFont = Program.Settings.MonthViewFontSize;
-      CalendarMonth.RogueBrush = new SolidBrush(Program.Settings.MonthViewNoDaysBackColor);
-      CalendarMonth.ForeColor = Program.Settings.MonthViewTextColor;
-      CalendarMonth.BackColor = Program.Settings.MonthViewBackColor;
-      CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
-      CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
+      int sizeFont = Settings.MonthViewFontSize;
+      CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
+      CalendarMonth.ForeColor = Settings.MonthViewTextColor;
+      CalendarMonth.BackColor = Settings.MonthViewBackColor;
+      CalendarMonth.CurrentDayForeColor = Settings.CurrentDayForeColor;
+      CalendarMonth.CurrentDayBackColor = Settings.CurrentDayBackColor;
       CalendarMonth.DateHeaderFont = new Font("Calibri", sizeFont + 5, FontStyle.Bold);
       CalendarMonth.DayOfWeekFont = new Font("Calibri", sizeFont + 1);
       CalendarMonth.DayViewTimeFont = new Font("Calibri", sizeFont + 1, FontStyle.Bold);
@@ -99,10 +99,10 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         if ( DateTime.Today.Year >= YearLast )
-          if ( auto || Program.Settings.AutoRegenerate )
+          if ( auto || Settings.AutoRegenerate )
           {
             int yearFirst = DateTime.Today.Year - 1;
-            int yearLast = yearFirst + Program.Settings.AutoGenerateYearsInternal - 1;
+            int yearLast = yearFirst + Settings.AutoGenerateYearsInternal - 1;
             return DoGenerate(new Tuple<int, int>(yearFirst, yearLast), EventArgs.Empty);
           }
           else

@@ -115,7 +115,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         var item = new DayOfWeekItem() { Text = Translations.DayOfWeek.GetLang(day), Day = day };
         EditShabatDay.Items.Add(item);
-        if ( (DayOfWeek)Program.Settings.ShabatDay == day )
+        if ( (DayOfWeek)Settings.ShabatDay == day )
           EditShabatDay.SelectedItem = item;
       }
     }
@@ -131,10 +131,10 @@ namespace Ordisoftware.HebrewCalendar
           {
             var item = new TorahEventItem() { Text = Translations.TorahEvent.GetLang(type), Event = type };
             int index = EditEvents.Items.Add(item);
-            if ( (bool)Program.Settings["TorahEventRemind" + type.ToString()] )
+            if ( (bool)Settings["TorahEventRemind" + type.ToString()] )
               EditEvents.SetItemChecked(index, true);
             index = EditEventsDay.Items.Add(item);
-            if ( (bool)Program.Settings["TorahEventRemindDay" + type.ToString()] )
+            if ( (bool)Settings["TorahEventRemindDay" + type.ToString()] )
               EditEventsDay.SetItemChecked(index, true);
           }
           catch
@@ -175,38 +175,38 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Instance.MenuShowHide_Click(null, null);
       MoonMonthsForm.Instance.Hide();
       StatisticsForm.Instance.Hide();
-      string country = Program.Settings.GPSCountry;
-      string city = Program.Settings.GPSCity;
-      string lat = Program.Settings.GPSLatitude;
-      string lng = Program.Settings.GPSLongitude;
-      string timezone = Program.Settings.TimeZone;
-      var bookmark1 = Program.Settings.DateBookmark1;
-      var bookmark2 = Program.Settings.DateBookmark2;
-      var bookmark3 = Program.Settings.DateBookmark3;
-      var bookmark4 = Program.Settings.DateBookmark4;
-      var bookmark5 = Program.Settings.DateBookmark5;
+      string country = Settings.GPSCountry;
+      string city = Settings.GPSCity;
+      string lat = Settings.GPSLatitude;
+      string lng = Settings.GPSLongitude;
+      string timezone = Settings.TimeZone;
+      var bookmark1 = Settings.DateBookmark1;
+      var bookmark2 = Settings.DateBookmark2;
+      var bookmark3 = Settings.DateBookmark3;
+      var bookmark4 = Settings.DateBookmark4;
+      var bookmark5 = Settings.DateBookmark5;
       int shabat = EditShabatDay.SelectedIndex;
-      Program.Settings.Reset();
-      Program.Settings.UpgradeResetRequiredV3_0 = false;
-      Program.Settings.UpgradeResetRequiredV3_6 = false;
-      Program.Settings.UpgradeResetRequiredV4_1 = false;
-      Program.Settings.FirstLaunchV4 = false;
-      Program.Settings.Save();
+      Settings.Reset();
+      Settings.UpgradeResetRequiredV3_0 = false;
+      Settings.UpgradeResetRequiredV3_6 = false;
+      Settings.UpgradeResetRequiredV4_1 = false;
+      Settings.FirstLaunchV4 = false;
+      Settings.Save();
       DoReset = true;
       Reseted = true;
-      Program.Settings.GPSCountry = country;
-      Program.Settings.GPSCity = city;
-      Program.Settings.GPSLatitude = lat;
-      Program.Settings.GPSLongitude = lng;
-      Program.Settings.TimeZone = timezone;
-      Program.Settings.ShabatDay = shabat;
-      Program.Settings.RestoreMainForm();
-      Program.Settings.Language = Languages.Current;
-      Program.Settings.DateBookmark1 = bookmark1;
-      Program.Settings.DateBookmark2 = bookmark2;
-      Program.Settings.DateBookmark3 = bookmark3;
-      Program.Settings.DateBookmark4 = bookmark4;
-      Program.Settings.DateBookmark5 = bookmark5;
+      Settings.GPSCountry = country;
+      Settings.GPSCity = city;
+      Settings.GPSLatitude = lat;
+      Settings.GPSLongitude = lng;
+      Settings.TimeZone = timezone;
+      Settings.ShabatDay = shabat;
+      Settings.RestoreMainForm();
+      Settings.Language = Languages.Current;
+      Settings.DateBookmark1 = bookmark1;
+      Settings.DateBookmark2 = bookmark2;
+      Settings.DateBookmark3 = bookmark3;
+      Settings.DateBookmark4 = bookmark4;
+      Settings.DateBookmark5 = bookmark5;
       Close();
     }
 
@@ -216,13 +216,13 @@ namespace Ordisoftware.HebrewCalendar
       if ( form.ShowDialog() != DialogResult.OK ) return;
       EditGPSLatitude.Text = form.Latitude;
       EditGPSLongitude.Text = form.Longitude;
-      Program.Settings.GPSLatitude = form.Latitude;
-      Program.Settings.GPSLongitude = form.Longitude;
-      Program.Settings.GPSCountry = form.Country;
-      Program.Settings.GPSCity = form.City;
-      Program.Settings.Save();
+      Settings.GPSLatitude = form.Latitude;
+      Settings.GPSLongitude = form.Longitude;
+      Settings.GPSCountry = form.Country;
+      Settings.GPSCity = form.City;
+      Settings.Save();
       if ( form.EditTimeZone.SelectedItem != null )
-        Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
+        Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
       EditTimeZone.Text = Program.GPSText;
       MainForm.Instance.InitializeCurrentTimeZone();
     }
@@ -249,16 +249,16 @@ namespace Ordisoftware.HebrewCalendar
       var time = formTime.EditTime.Value.TimeOfDay;
       if ( time >= new TimeSpan(0, 0, 0) && time < Dates.Get(date).Ephemerisis.Sunset )
         date = date.AddDays(-1);
-      Program.Settings.ShabatDay = (int)date.DayOfWeek;
+      Settings.ShabatDay = (int)date.DayOfWeek;
       foreach ( DayOfWeekItem day in EditShabatDay.Items )
-        if ( (DayOfWeek)Program.Settings.ShabatDay == day.Day )
+        if ( (DayOfWeek)Settings.ShabatDay == day.Day )
           EditShabatDay.SelectedItem = day;
     }
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
-      if ( Program.Settings.Language == Languages.EN ) return;
-      Program.Settings.Language = Languages.EN;
+      if ( Settings.Language == Languages.EN ) return;
+      Settings.Language = Languages.EN;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -267,8 +267,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectLangFR_Click(object sender, EventArgs e)
     {
-      if ( Program.Settings.Language == Languages.FR ) return;
-      Program.Settings.Language = Languages.FR;
+      if ( Settings.Language == Languages.FR ) return;
+      Settings.Language = Languages.FR;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -278,12 +278,12 @@ namespace Ordisoftware.HebrewCalendar
     private void UpdateLanguagesButtons()
     {
       MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
-      if ( Program.Settings.Language == Languages.EN )
+      if ( Settings.Language == Languages.EN )
       {
         ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangFR.BackColor = SystemColors.Control;
       }
-      if ( Program.Settings.Language == Languages.FR )
+      if ( Settings.Language == Languages.FR )
       {
         ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangEN.BackColor = SystemColors.Control;
@@ -313,8 +313,8 @@ namespace Ordisoftware.HebrewCalendar
     private void EitReportFont_Changed(object sender, EventArgs e)
     {
       if ( !IsReady ) return;
-      Program.Settings.FontName = EditFontName.Text;
-      Program.Settings.FontSize = (int)EditFontSize.Value;
+      Settings.FontName = EditFontName.Text;
+      Settings.FontSize = (int)EditFontSize.Value;
       MainForm.Instance.UpdateTextCalendar();
     }
 
@@ -595,7 +595,7 @@ namespace Ordisoftware.HebrewCalendar
     }
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
-      MustRefreshMonthView = EditMonthViewFontSize.Value != Program.Settings.MonthViewFontSize;
+      MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
     }
 
     private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)

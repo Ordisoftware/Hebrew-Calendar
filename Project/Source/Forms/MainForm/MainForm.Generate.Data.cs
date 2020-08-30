@@ -84,9 +84,9 @@ namespace Ordisoftware.HebrewCalendar
         finally
         {
           Chrono.Stop();
-          Program.Settings.BenchmarkGenerateYears = Chrono.ElapsedMilliseconds;
-          Program.Settings.LastGenerated = DateTime.Now;
-          Program.Settings.Save();
+          Settings.BenchmarkGenerateYears = Chrono.ElapsedMilliseconds;
+          Settings.LastGenerated = DateTime.Now;
+          Settings.Save();
           if ( IsGenerating )
             try
             {
@@ -107,7 +107,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         Cursor = cursor;
         IsGenerating = false;
-        SetView(Program.Settings.CurrentView, true);
+        SetView(Settings.CurrentView, true);
         UpdateButtons();
         if ( Globals.IsReady && !ActionVacuumAtNextStartup.Checked )
           ActionVacuumAtNextStartup.PerformClick();
@@ -163,7 +163,7 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         Chrono.Stop();
-        Program.Settings.BenchmarkPopulateDays = Chrono.ElapsedMilliseconds;
+        Settings.BenchmarkPopulateDays = Chrono.ElapsedMilliseconds;
       }
     }
 
@@ -229,7 +229,7 @@ namespace Ordisoftware.HebrewCalendar
             day.LunarMonth = month;
             if ( day.IsNewMoon == 1 )
               delta = 0;
-            if ( (MoonRise)day.MoonriseType == MoonRise.NextDay && Program.Settings.TorahEventsCountAsMoon )
+            if ( (MoonRise)day.MoonriseType == MoonRise.NextDay && Settings.TorahEventsCountAsMoon )
               delta = 1;
             day.LunarDay -= delta;
           }
@@ -242,7 +242,7 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         Chrono.Stop();
-        Program.Settings.BenchmarkAnalyseDays = Chrono.ElapsedMilliseconds;
+        Settings.BenchmarkAnalyseDays = Chrono.ElapsedMilliseconds;
       }
     }
 
@@ -255,7 +255,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       DateTime calculate(DateTime thedate, int toadd, TorahEvent type, bool forceSunOmer)
       {
-        if ( Program.Settings.TorahEventsCountAsMoon )
+        if ( Settings.TorahEventsCountAsMoon )
         {
           var rowStart = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteDate.ToString(thedate));
           int index = DataSet.LunisolarDays.Rows.IndexOf(rowStart);
@@ -295,7 +295,7 @@ namespace Ordisoftware.HebrewCalendar
           monthExuinoxe--;
           dayEquinoxe += 30;
         }
-        int delta = Program.Settings.TorahEventsCountAsMoon ? 0 : 1;
+        int delta = Settings.TorahEventsCountAsMoon ? 0 : 1;
         bool isNewYear = ( dateDay.Month == monthExuinoxe && dateDay.Day >= dayEquinoxe )
                       || ( dateDay.Month == monthExuinoxe + 1 );
         if ( equinoxe != null && ( monthMoon == 0 || monthMoon >= 12 ) && isNewYear )
@@ -306,7 +306,7 @@ namespace Ordisoftware.HebrewCalendar
           dateDay = calculate(dateDay, TorahCelebrations.PessahStartDay - 1 + delta, TorahEvent.PessahD1, false);
           calculate(dateDay, TorahCelebrations.PessahLenght - 1, TorahEvent.PessahD7, false);
           dateDay = calculate(dateDay, TorahCelebrations.ChavouotLenght - 1 - delta, TorahEvent.ChavouotDiet, true);
-          while ( dateDay.DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
+          while ( dateDay.DayOfWeek != (DayOfWeek)Settings.ShabatDay )
             dateDay = dateDay.AddDays(1);
           try
           {

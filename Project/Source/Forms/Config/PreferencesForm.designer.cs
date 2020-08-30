@@ -162,6 +162,7 @@
       this.EditMaxYearsInterval = new System.Windows.Forms.NumericUpDown();
       this.GroupBoxMaxYearsInterval = new System.Windows.Forms.GroupBox();
       this.LabelYearsIntervalInfo = new System.Windows.Forms.Label();
+      this.EditCloseReminderFormOnClick = new System.Windows.Forms.CheckBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -1048,13 +1049,11 @@
       // 
       // GroupBoxSystem
       // 
-      this.GroupBoxSystem.Controls.Add(this.ActionSelectHebrewLettersPath);
-      this.GroupBoxSystem.Controls.Add(LabelHebrewLettersPath);
-      this.GroupBoxSystem.Controls.Add(this.EditHebrewLettersPath);
       this.GroupBoxSystem.Controls.Add(this.EditVacuumAtStartup);
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangFR);
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangEN);
       this.GroupBoxSystem.Controls.Add(this.EditAutoOpenExportFolder);
+      this.GroupBoxSystem.Controls.Add(this.EditCloseReminderFormOnClick);
       this.GroupBoxSystem.Controls.Add(this.EditShowReminderInTaskBar);
       this.GroupBoxSystem.Controls.Add(this.EditAutoGenerateYearsInterval);
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
@@ -1065,6 +1064,9 @@
       this.GroupBoxSystem.Controls.Add(this.EditWebLinksMenuEnabled);
       this.GroupBoxSystem.Controls.Add(this.EditAutoRegenerate);
       this.GroupBoxSystem.Controls.Add(this.EditMonthViewSunToolTips);
+      this.GroupBoxSystem.Controls.Add(this.ActionSelectHebrewLettersPath);
+      this.GroupBoxSystem.Controls.Add(LabelHebrewLettersPath);
+      this.GroupBoxSystem.Controls.Add(this.EditHebrewLettersPath);
       resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
       this.GroupBoxSystem.TabStop = false;
@@ -1290,6 +1292,12 @@
       this.LabelYearsIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelYearsIntervalInfo.Name = "LabelYearsIntervalInfo";
       // 
+      // EditCloseReminderFormOnClick
+      // 
+      resources.ApplyResources(this.EditCloseReminderFormOnClick, "EditCloseReminderFormOnClick");
+      this.EditCloseReminderFormOnClick.Name = "EditCloseReminderFormOnClick";
+      this.EditCloseReminderFormOnClick.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1481,5 +1489,6 @@
     private System.Windows.Forms.NumericUpDown EditAutoGenerateYearsInterval;
     private System.Windows.Forms.Button ActionCountAsMoonHelp;
     private System.Windows.Forms.RadioButton SelectOpenNextCelebrationsForm;
+    private System.Windows.Forms.CheckBox EditCloseReminderFormOnClick;
   }
 }

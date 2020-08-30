@@ -38,13 +38,13 @@ namespace Ordisoftware.HebrewCalendar
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
       if ( SQLiteDate.ToDateTime(row.Date).Day < dateNow.Day )
-        if ( Program.Settings.TorahEventsCountAsMoon && row.MoonriseType == (int)MoonRise.BeforeSet )
+        if ( Settings.TorahEventsCountAsMoon && row.MoonriseType == (int)MoonRise.BeforeSet )
           return;
         else
           return;
-      var times = CreateCelebrationTimes(row, Program.Settings.RemindCelebrationEveryMinutes);
+      var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return;
-      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
+      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
       {
         LastCelebrationReminded[(TorahEvent)row.TorahEvents] = null;
@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewCalendar
           LastCelebrationReminded[(TorahEvent)row.TorahEvents] = dateNow;
         }
         else
-        if ( dateNow < LastCelebrationReminded[(TorahEvent)row.TorahEvents].Value.AddMinutes((double)Program.Settings.RemindCelebrationEveryMinutes) )
+        if ( dateNow < LastCelebrationReminded[(TorahEvent)row.TorahEvents].Value.AddMinutes((double)Settings.RemindCelebrationEveryMinutes) )
           return;
         else
           LastCelebrationReminded[(TorahEvent)row.TorahEvents] = dateNow;

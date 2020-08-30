@@ -62,20 +62,14 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LoadMenuBookmarks()
     {
-      int index = 1;
-      void add(DateTime date)
+      for ( int index = 1; index <= 10; index++ )
       {
+        var date = (DateTime)Program.Settings["DateBookmark" + index];
         string s = date == DateTime.MinValue ? Localizer.EmptySlot.GetLang() : date.ToLongDateString();
-        var menuitem = MenuBookmarks.Items.Add(index + ". " + s);
+        var menuitem = MenuBookmarks.Items.Add(index.ToString("00") + ". " + s);
         menuitem.MouseUp += Bookmarks_MouseUp;
         menuitem.Tag = index.ToString();
-        index++;
       }
-      add(Program.Settings.DateBookmark1);
-      add(Program.Settings.DateBookmark2);
-      add(Program.Settings.DateBookmark3);
-      add(Program.Settings.DateBookmark4);
-      add(Program.Settings.DateBookmark5);
     }
 
     private void Bookmarks_MouseUp(object sender, MouseEventArgs e)

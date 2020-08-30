@@ -75,25 +75,25 @@ namespace Ordisoftware.HebrewCalendar
     private void MainForm_Load(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
-      Program.Settings.Retrieve();
+      Settings.Retrieve();
       StatisticsForm.Run(true);
-      if ( !string.IsNullOrEmpty(Program.Settings.GPSLatitude) 
-        && !string.IsNullOrEmpty(Program.Settings.GPSLongitude) )
+      if ( !string.IsNullOrEmpty(Settings.GPSLatitude) 
+        && !string.IsNullOrEmpty(Settings.GPSLongitude) )
         try
         {
-          Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude);
-          Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude);
+          Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
+          Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
         }
         catch ( Exception ex )
         {
           ex.Manage();
         }
-      var lastdone = Program.Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, ref lastdone, true);
-      Program.Settings.CheckUpdateLastDone = lastdone;
+      var lastdone = Settings.CheckUpdateLastDone;
+      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, ref lastdone, true);
+      Settings.CheckUpdateLastDone = lastdone;
       if ( exit ) return;
-      CalendarText.ForeColor = Program.Settings.TextColor;
-      CalendarText.BackColor = Program.Settings.TextBackground;
+      CalendarText.ForeColor = Settings.TextColor;
+      CalendarText.BackColor = Settings.TextBackground;
       InitializeCalendarUI();
       InitializeCurrentTimeZone();
       InitializeDialogsDirectory();
@@ -117,18 +117,18 @@ namespace Ordisoftware.HebrewCalendar
       UpdateButtons();
       GoToDate(DateTime.Today);
       CheckRegenerateCalendar();
-      if ( string.IsNullOrEmpty(Program.Settings.GPSLatitude)
-        || string.IsNullOrEmpty(Program.Settings.GPSLongitude) )
+      if ( string.IsNullOrEmpty(Settings.GPSLatitude)
+        || string.IsNullOrEmpty(Settings.GPSLongitude) )
         ActionPreferences.PerformClick();
-      if ( Program.Settings.StartupHide )
+      if ( Settings.StartupHide )
         MenuShowHide.PerformClick();
-      TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
+      TimerBallon.Interval = Settings.BalloonLoomingDelay;
       TimerMidnight.TimeReached += TimerMidnight_Tick;
       TimerMidnight.Start();
       TimerReminder_Tick(null, null);
       ChronoStart.Stop();
-      Program.Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
-      Program.Settings.Save();
+      Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
+      Settings.Save();
     }
 
     /// <summary>
@@ -153,7 +153,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
-      Program.Settings.Store();
+      Settings.Store();
     }
 
     /// <summary>
@@ -166,7 +166,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( !Globals.IsReady ) return;
       if ( !Visible ) return;
       if ( Globals.IsExiting ) return;
-      Program.Settings.Store();
+      Settings.Store();
       if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick(); // TODO don't call if minimized
     }
@@ -226,7 +226,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( Visible && WindowState == FormWindowState.Minimized )
         {
-          WindowState = Program.Settings.MainFormState;
+          WindowState = Settings.MainFormState;
           var old = TopMost;
           TopMost = true;
           BringToFront();
@@ -243,7 +243,7 @@ namespace Ordisoftware.HebrewCalendar
           try
           {
             Globals.IsReady = false;
-            WindowState = Program.Settings.MainFormState;
+            WindowState = Settings.MainFormState;
           }
           finally
           {
@@ -261,7 +261,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
         {
-          Program.Settings.MainFormState = WindowState;
+          Settings.MainFormState = WindowState;
           WindowState = FormWindowState.Minimized;
           Visible = false;
           ShowInTaskbar = false;
@@ -294,12 +294,12 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !Globals.IsReady ) return;
       if ( !MenuTray.Enabled ) return;
-      TrayIcon.Text = Program.Settings.BalloonEnabled ? "" : Text;
-      if ( !Program.Settings.BalloonEnabled || Program.Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
+      TrayIcon.Text = Settings.BalloonEnabled ? "" : Text;
+      if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
         return;
       TimerBallon.Start();
       TrayIconMouse = Cursor.Position;
-      if ( !TimerTrayMouseMove.Enabled && Program.Settings.BalloonAutoHide )
+      if ( !TimerTrayMouseMove.Enabled && Settings.BalloonAutoHide )
         TimerTrayMouseMove.Start();
     }
 
@@ -343,7 +343,7 @@ namespace Ordisoftware.HebrewCalendar
         TimerTrayMouseMove.Stop();
         if ( e == null ) return;
         if ( e.Button == MouseButtons.Left )
-          switch ( Program.Settings.TrayIconClickOpen )
+          switch ( Settings.TrayIconClickOpen )
           {
             case TrayIconClickOpen.MainForm:
               MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? new EventArgs() : null);
@@ -370,7 +370,7 @@ namespace Ordisoftware.HebrewCalendar
                 }
               break;
             default:
-              throw new NotImplementedException(Program.Settings.TrayIconClickOpen.ToString());
+              throw new NotImplementedException(Settings.TrayIconClickOpen.ToString());
           }
         else
         if ( e.Button == MouseButtons.Right )
@@ -460,7 +460,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
       if ( DisplayManager.QueryYesNo(Localizer.AskToRestoreWindowPosition.GetLang()) )
-        Program.Settings.RestoreMainForm();
+        Settings.RestoreMainForm();
     }
 
     /// <summary>
@@ -491,13 +491,13 @@ namespace Ordisoftware.HebrewCalendar
         ClearLists();
         if ( PreferencesForm.Run() )
         {
-          CalendarMonth.CurrentDayForeColor = Program.Settings.CurrentDayForeColor;
-          CalendarMonth.CurrentDayBackColor = Program.Settings.CurrentDayBackColor;
+          CalendarMonth.CurrentDayForeColor = Settings.CurrentDayForeColor;
+          CalendarMonth.CurrentDayBackColor = Settings.CurrentDayBackColor;
           UpdateCalendarMonth(false);
           ActionGenerate_Click(null, new EventArgs());
         }
-        TimerBallon.Interval = Program.Settings.BalloonLoomingDelay;
-        CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
+        TimerBallon.Interval = Settings.BalloonLoomingDelay;
+        CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
         InitializeSpecialMenus();
       }
       catch ( Exception ex )
@@ -577,9 +577,9 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         MenuTray.Enabled = false;
-        var lastdone = Program.Settings.CheckUpdateLastDone;
-        bool exit = WebCheckUpdate.Run(Program.Settings.CheckUpdateAtStartup, ref lastdone, e == null);
-        Program.Settings.CheckUpdateLastDone = lastdone;
+        var lastdone = Settings.CheckUpdateLastDone;
+        bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, ref lastdone, e == null);
+        Settings.CheckUpdateLastDone = lastdone;
         if ( exit )
         {
           Globals.AllowClose = true;
@@ -721,11 +721,11 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionVacuumAtNextStartup_Click(object sender, EventArgs e)
     {
       if ( LastVacuum == null )
-        LastVacuum = Program.Settings.VacuumLastDone;
+        LastVacuum = Settings.VacuumLastDone;
       if ( ActionVacuumAtNextStartup.Checked )
-        Program.Settings.VacuumLastDone = new DateTime(2020, 1, 1);
+        Settings.VacuumLastDone = new DateTime(2020, 1, 1);
       else
-        Program.Settings.VacuumLastDone = LastVacuum.Value;
+        Settings.VacuumLastDone = LastVacuum.Value;
     }
 
     /// <summary>
@@ -795,7 +795,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
-      if ( Program.Settings.AutoOpenExportFolder )
+      if ( Settings.AutoOpenExportFolder )
         Shell.Run(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
 
@@ -810,7 +810,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( content == null ) return;
       if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
-      if ( Program.Settings.AutoOpenExportFolder )
+      if ( Settings.AutoOpenExportFolder )
         Shell.Run(Path.GetDirectoryName(SaveCSVDialog.FileName));
     }
 
@@ -1064,7 +1064,7 @@ namespace Ordisoftware.HebrewCalendar
         CalendarMonth.Refresh();
         if ( SQLiteDate.ToDateTime(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
-        if ( Program.Settings.CheckUpdateEveryWeekWhileRunning )
+        if ( Settings.CheckUpdateEveryWeekWhileRunning )
           ActionWebCheckUpdate_Click(null, null);
       });
     }
@@ -1095,9 +1095,9 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( !IsForegroundFullScreenOrScreensaver() )
         {
-          if ( Program.Settings.ReminderShabatEnabled )
+          if ( Settings.ReminderShabatEnabled )
             CheckShabat();
-          if ( Program.Settings.ReminderCelebrationsEnabled )
+          if ( Settings.ReminderCelebrationsEnabled )
           {
             CheckCelebrationDay();
             CheckEvents();

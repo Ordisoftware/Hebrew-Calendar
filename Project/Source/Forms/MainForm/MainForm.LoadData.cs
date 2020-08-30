@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         Enabled = false;
         CreateDatabaseIfNotExists();
-        var connection = new OdbcConnection(Program.Settings.ConnectionString);
+        var connection = new OdbcConnection(Settings.ConnectionString);
         connection.Open();
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
         LoadingForm.Instance.Initialize(Translations.ProgressLoadingData.GetLang(),
@@ -50,9 +50,9 @@ namespace Ordisoftware.HebrewCalendar
         Chrono.Start();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         Chrono.Stop();
-        Program.Settings.BenchmarkLoadData = Chrono.ElapsedMilliseconds;
-        Program.Settings.Save();
-        if ( DataSet.LunisolarDays.Count > 0 && !Program.Settings.FirstLaunch )
+        Settings.BenchmarkLoadData = Chrono.ElapsedMilliseconds;
+        Settings.Save();
+        if ( DataSet.LunisolarDays.Count > 0 && !Settings.FirstLaunch )
         {
           IsGenerating = true;
           try
@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewCalendar
         DataSet.LunisolarDays.RowChanged -= update;
         try
         {
-          SetView(Program.Settings.CurrentView, true);
+          SetView(Settings.CurrentView, true);
           UpdateButtons();
         }
         catch ( Exception ex )
@@ -122,7 +122,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         try
         {
-          CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
+          CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
           TimerReminder.Enabled = true;
           TimerReminder_Tick(null, null);
         }

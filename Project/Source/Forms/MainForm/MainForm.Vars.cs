@@ -26,6 +26,8 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
+    private readonly Properties.Settings Settings = Program.Settings;
+
     /// <summary>
     /// Indicate if generation is in progress.
     /// </summary>
@@ -108,8 +110,8 @@ namespace Ordisoftware.HebrewCalendar
         foreach ( TorahEvent type in Enum.GetValues(typeof(TorahEvent)) )
           if ( type != TorahEvent.None )
           {
-            TorahEventRemindList.Add(type, (bool)Program.Settings["TorahEventRemind" + type.ToString()]);
-            TorahEventRemindDayList.Add(type, (bool)Program.Settings["TorahEventRemindDay" + type.ToString()]);
+            TorahEventRemindList.Add(type, (bool)Settings["TorahEventRemind" + type.ToString()]);
+            TorahEventRemindDayList.Add(type, (bool)Settings["TorahEventRemindDay" + type.ToString()]);
           }
         foreach ( Form form in RemindCelebrationForms.ToList() )
           form.Close();

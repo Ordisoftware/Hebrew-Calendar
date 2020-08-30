@@ -38,12 +38,12 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     public void CreateDatabaseIfNotExists()
     {
-      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
+      using ( var connection = new OdbcConnection(Settings.ConnectionString) )
       {
         connection.Open();
 
-        if ( Program.Settings.VacuumAtStartup )
-          Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone);
+        if ( Settings.VacuumAtStartup )
+          Settings.VacuumLastDone = connection.Optimize(Settings.VacuumLastDone);
 
         connection.DropTableIfExists("Report");
 

@@ -602,4 +602,7 @@
   <data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
     <value>Fenêtre des célébrations</value>
   </data>
+  <data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
+    <value>Fermer la boite de rappel sur un click</value>
+  </data>
 </root>

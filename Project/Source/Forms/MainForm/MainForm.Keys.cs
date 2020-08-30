@@ -32,10 +32,10 @@ namespace Ordisoftware.HebrewCalendar
       {
         // Change view
         case Keys.Control | Keys.Shift | Keys.Tab:
-          SetView(Program.Settings.CurrentView.Previous());
+          SetView(Settings.CurrentView.Previous());
           return true;
         case Keys.Control | Keys.Tab:
-          SetView(Program.Settings.CurrentView.Next());
+          SetView(Settings.CurrentView.Next());
           return true;
         // Function keys
         case Keys.F4:
@@ -75,7 +75,7 @@ namespace Ordisoftware.HebrewCalendar
           return true;
         case Keys.NumPad0:
         case Keys.Control | Keys.T:
-          if ( keyData == Keys.NumPad0 && Program.Settings.CurrentView != ViewMode.Month )
+          if ( keyData == Keys.NumPad0 && Settings.CurrentView != ViewMode.Month )
             break;
           GoToDate(DateTime.Today);
           return true;
@@ -96,21 +96,21 @@ namespace Ordisoftware.HebrewCalendar
           return true;
         // Month view calendar navigation
         case Keys.Home:
-          if ( Program.Settings.CurrentView == ViewMode.Month )
+          if ( Settings.CurrentView == ViewMode.Month )
           {
             GoToDate(new DateTime(YearFirst, 1, 1));
             return true;
           }
           break;
         case Keys.End:
-          if ( Program.Settings.CurrentView == ViewMode.Month )
+          if ( Settings.CurrentView == ViewMode.Month )
           {
             GoToDate(new DateTime(YearLast, 12, 1));
             return true;
           }
           break;
         case Keys.Right:
-          if ( Program.Settings.CurrentView == ViewMode.Month )
+          if ( Settings.CurrentView == ViewMode.Month )
           {
             var date = SQLiteDate.ToDateTime(CurrentDay.Date);
             date = new DateTime(date.Year, date.Month, 1);
@@ -119,7 +119,7 @@ namespace Ordisoftware.HebrewCalendar
           }
           break;
         case Keys.Left:
-          if ( Program.Settings.CurrentView == ViewMode.Month )
+          if ( Settings.CurrentView == ViewMode.Month )
           {
             var date = SQLiteDate.ToDateTime(CurrentDay.Date);
             date = new DateTime(date.Year, date.Month, 1);
@@ -128,7 +128,7 @@ namespace Ordisoftware.HebrewCalendar
           }
           break;
         case Keys.Up:
-          if ( Program.Settings.CurrentView == ViewMode.Month )
+          if ( Settings.CurrentView == ViewMode.Month )
           {
             var date = SQLiteDate.ToDateTime(CurrentDay.Date);
             date = new DateTime(date.Year, date.Month, 1);
@@ -137,7 +137,7 @@ namespace Ordisoftware.HebrewCalendar
           }
           break;
         case Keys.Down:
-          if ( Program.Settings.CurrentView == ViewMode.Month )
+          if ( Settings.CurrentView == ViewMode.Month )
           {
             var date = SQLiteDate.ToDateTime(CurrentDay.Date);
             date = new DateTime(date.Year, date.Month, 1);

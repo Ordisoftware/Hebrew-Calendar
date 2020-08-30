@@ -28,7 +28,7 @@ namespace Ordisoftware.HebrewCalendar
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
       var row = ( from day in DataSet.LunisolarDays
-                  where SQLiteDate.ToDateTime(day.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay
+                  where SQLiteDate.ToDateTime(day.Date).DayOfWeek == (DayOfWeek)Settings.ShabatDay
                      && SQLiteDate.ToDateTime(day.Date) >= SQLiteDate.ToDateTime(strDateNow)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null )
@@ -36,12 +36,12 @@ namespace Ordisoftware.HebrewCalendar
       var dateRow = SQLiteDate.ToDateTime(row.Date);
       var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
       var times = new ReminderTimes();
-      var delta3 = Program.Settings.RemindShabatEveryMinutes;
-      if ( Program.Settings.RemindShabatOnlyLight )
+      var delta3 = Settings.RemindShabatEveryMinutes;
+      if ( Settings.RemindShabatOnlyLight )
         SetTimes(times, dateRow, row.Sunrise, row.Sunset, 0, 0, delta3);
       else
         SetTimes(times, dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
-      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Program.Settings.RemindShabatHoursBefore);
+      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
       {
         LastShabatReminded = null;
@@ -67,7 +67,7 @@ namespace Ordisoftware.HebrewCalendar
           LastShabatReminded = dateNow;
         }
         else
-        if ( dateNow < LastShabatReminded.Value.AddMinutes((double)Program.Settings.RemindShabatEveryMinutes) )
+        if ( dateNow < LastShabatReminded.Value.AddMinutes((double)Settings.RemindShabatEveryMinutes) )
           return;
         else
           LastShabatReminded = dateNow;

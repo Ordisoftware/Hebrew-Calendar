@@ -87,19 +87,19 @@ namespace Ordisoftware.HebrewCalendar
             Color? color2 = null;
             Color? color3 = null;
             if ( season != SeasonChange.None )
-              color1 = Program.Settings.EventColorSeason;
+              color1 = Settings.EventColorSeason;
             if ( row.IsNewMoon == 1 && ev == TorahEvent.None )
-              color2 = Program.Settings.EventColorMonth;
+              color2 = Settings.EventColorMonth;
             else
             if ( row.IsNewMoon == 1 && ev == TorahEvent.NewYearD1 )
-              color2 = MixColor(Program.Settings.EventColorMonth,
-                                Program.Settings.EventColorSeason,
-                                Program.Settings.EventColorNext);
+              color2 = MixColor(Settings.EventColorMonth,
+                                Settings.EventColorSeason,
+                                Settings.EventColorNext);
             else
             if ( IsCelebrationWeekStart || ev != TorahEvent.None )
-              color2 = Program.Settings.EventColorTorah;
-            if ( SQLiteDate.ToDateTime(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
-              color3 = Program.Settings.EventColorShabat;
+              color2 = Settings.EventColorTorah;
+            if ( SQLiteDate.ToDateTime(row.Date).DayOfWeek == (DayOfWeek)Settings.ShabatDay )
+              color3 = Settings.EventColorShabat;
             if ( color1 != null && color2 != null && color3 != null )
               color1 = MixColor(color1.Value, color2.Value, color3.Value);
             else
@@ -119,7 +119,7 @@ namespace Ordisoftware.HebrewCalendar
               color1 = color3;
             else
             if ( color1 == null )
-              color1 = Program.Settings.MonthViewBackColor;
+              color1 = Settings.MonthViewBackColor;
             DayColors[YearLast - date.Year, date.Month, date.Day] = color1.Value;
             if ( IsCelebrationWeekEnd )
               IsCelebrationWeekStart = false;
@@ -128,8 +128,8 @@ namespace Ordisoftware.HebrewCalendar
             {
               var item = new CustomEvent();
               item.Date = SQLiteDate.ToDateTime(row.Date);
-              item.EventFont = new Font("Calibri", Program.Settings.MonthViewFontSize);
-              if ( Program.Settings.UseColors )
+              item.EventFont = new Font("Calibri", Settings.MonthViewFontSize);
+              if ( Settings.UseColors )
               {
                 item.EventColor = Color.OrangeRed;
                 item.EventTextColor = color;
@@ -144,26 +144,26 @@ namespace Ordisoftware.HebrewCalendar
               item.TooltipEnabled = true;
               item.IgnoreTimeComponent = true;
               item.ToolTipText = strToolTip;
-              if ( Program.Settings.UseColors )
+              if ( Settings.UseColors )
                 item.EventColor = GetDayColor(item.Date.Day, item.Date.Month, item.Date.Year);
               CalendarMonth.AddEvent(item);
             }
             strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Globals.NL
                        + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
             Color colorMoon = Color.Black;
-            string strMonthDay = Program.Settings.MoonDayTextFormat.ToUpper()
+            string strMonthDay = Settings.MoonDayTextFormat.ToUpper()
                                  .Replace("%MONTHNAME%", Program.MoonMonthsNames[row.LunarMonth])
                                  .Replace("%MONTHNUM%", row.LunarMonth.ToString())
                                  .Replace("%DAYNUM%", row.LunarDay.ToString());
             colorMoon = row.IsNewMoon == 1
-                      ? Program.Settings.CalendarColorTorahEvent
+                      ? Settings.CalendarColorTorahEvent
                       : ( row.IsFullMoon == 1
-                        ? Program.Settings.CalendarColorFullMoon
-                        : Program.Settings.CalendarColorMoon );
+                        ? Settings.CalendarColorFullMoon
+                        : Settings.CalendarColorMoon );
             if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
             {
               if ( row.Moonset != "" )
-                add(Program.Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
+                add(Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
               if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
                 add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
             }
@@ -172,12 +172,12 @@ namespace Ordisoftware.HebrewCalendar
               if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
                 add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
               if ( row.Moonset != "" )
-                add(Program.Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
+                add(Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             }
             if ( row.SeasonChange != 0 )
-              add(Program.Settings.CalendarColorSeason, Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange));
+              add(Settings.CalendarColorSeason, Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange));
             if ( row.TorahEvents != 0 )
-              add(Program.Settings.CalendarColorTorahEvent, Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
+              add(Settings.CalendarColorTorahEvent, Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
           }
           catch ( Exception ex )
           {
@@ -188,8 +188,8 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         Chrono.Stop();
-        Program.Settings.BenchmarkFillCalendar = Chrono.ElapsedMilliseconds;
-        Program.Settings.Save();
+        Settings.BenchmarkFillCalendar = Chrono.ElapsedMilliseconds;
+        Settings.Save();
       }
     }
 
