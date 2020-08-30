@@ -249,6 +249,13 @@ namespace Ordisoftware.HebrewCommon
         },
       };
 
+    static public readonly NullSafeStringDictionary CallMethodError
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Error in {0}." },
+        { Languages.FR, "Erreur dans {0}." },
+      };
+
     static public readonly NullSafeStringDictionary RunShellError
       = new NullSafeStringDictionary()
       {

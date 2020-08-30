@@ -1,7 +1,7 @@
 /// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
 /// Originally developped for Ordisoftware Core Library.
-/// Copyright 2004-2019 Olivier Rogier.
+/// Copyright 2004-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -34,11 +34,16 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        return FileVersionInfo.GetVersionInfo(Application.ExecutablePath).FileDescription == ""
-               ? Path.GetFileNameWithoutExtension(Path.GetFileName(Application.ExecutablePath))
-               : FileVersionInfo.GetVersionInfo(Application.ExecutablePath).FileDescription;
+        if ( _Title == "" )
+        {
+          _Title = FileVersionInfo.GetVersionInfo(Application.ExecutablePath).FileDescription;
+          if ( _Title == "" )
+            _Title = Path.GetFileNameWithoutExtension(Path.GetFileName(Application.ExecutablePath));
+        }
+        return _Title;
       }
     }
+    static public string _Title = "";
 
     /// <summary>
     /// Show a message and wait user action.
@@ -137,6 +142,25 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Show a warning message.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    static public void ShowWarning(string text)
+    {
+      ShowWarning(Title, text);
+    }
+
+    /// <summary>
+    /// Show a warning message.
+    /// </summary>
+    /// <param name="title">The title.</param>
+    /// <param name="text">The text.</param>
+    static public void ShowWarning(string title, string text)
+    {
+      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+    }
+
+    /// <summary>
     /// Show an error message.
     /// </summary>
     /// <param name="text">The text.</param>
@@ -153,25 +177,6 @@ namespace Ordisoftware.HebrewCommon
     static public void ShowError(string title, string text)
     {
       Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-    }
-
-    /// <summary>
-    /// Show an warning message.
-    /// </summary>
-    /// <param name="text">The text.</param>
-    static public void ShowWarning(string text)
-    {
-      ShowWarning(Title, text);
-    }
-
-    /// <summary>
-    /// Show an warning message.
-    /// </summary>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    static public void ShowWarning(string title, string text)
-    {
-      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
     /// <summary>

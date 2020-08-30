@@ -1,7 +1,7 @@
 /// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
 /// Originally developped for Ordisoftware Core Library.
-/// Copyright 2004-2019 Olivier Rogier.
+/// Copyright 2004-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="wait">true to wait.</param>
     static public void SyncUI(this Control control, Action action, bool wait = true)
     {
-      if ( control == null ) throw new ArgumentNullException("control in " + nameof(SyncUI));
+      if ( control == null ) throw new ArgumentNullException(nameof(control));
       if ( !Thread.CurrentThread.IsAlive ) throw new ThreadStateException();
       Exception exception = null;
       Semaphore semaphore = null;
@@ -89,8 +89,7 @@ namespace Ordisoftware.HebrewCommon
       }
       else
         processAction();
-      if ( exception != null )
-        throw exception;
+      if ( exception != null ) throw exception;
     }
 
   }
