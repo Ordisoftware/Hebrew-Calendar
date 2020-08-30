@@ -140,6 +140,7 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.Instance.TimerReminder_Tick(null, null);
       UndoRedoTextBox.Relocalize();
       MoonMonthsForm.Instance.Relocalize();
+      LoadingForm.Instance.Relocalize();
     }
 
   }

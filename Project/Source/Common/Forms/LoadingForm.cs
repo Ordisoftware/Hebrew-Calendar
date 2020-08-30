@@ -44,6 +44,11 @@ namespace Ordisoftware.HebrewCommon
 
     private void LoadingForm_Load(object sender, EventArgs e)
     {
+      Relocalize();
+    }
+
+    internal void Relocalize()
+    {
       LabelTitle.Text = Globals.AssemblyTitle;
     }
 
