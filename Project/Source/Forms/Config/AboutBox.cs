@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-10 </edited>
 using System;
+using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
 
@@ -58,6 +59,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       this.CenterToMainFormElseScreen();
       EditLicense.Rtf = Properties.Resources.MPL_2_0;
+      Controls.OfType<LinkLabel>().Where(c => c.Name.StartsWith("linkLabel")).ToList().ForEach(c => c.TabStop = false);
     }
 
     internal void AboutBox_Shown(object sender, EventArgs e)

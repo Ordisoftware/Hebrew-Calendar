@@ -194,7 +194,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void Form_Click(object sender, EventArgs e)
     {
-      Close();
+      //Close();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)

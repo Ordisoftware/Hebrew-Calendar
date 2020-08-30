@@ -431,7 +431,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>
@@ -500,7 +500,7 @@
     <value>269, 44</value>
   </data>
   <data name="MonthCalendar2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;MonthCalendar2.Name" xml:space="preserve">
     <value>MonthCalendar2</value>
@@ -818,7 +818,7 @@
     <value>227, 20</value>
   </data>
   <data name="DateTimePicker1.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;DateTimePicker1.Name" xml:space="preserve">
     <value>DateTimePicker1</value>
@@ -839,7 +839,7 @@
     <value>227, 20</value>
   </data>
   <data name="DateTimePicker2.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;DateTimePicker2.Name" xml:space="preserve">
     <value>DateTimePicker2</value>

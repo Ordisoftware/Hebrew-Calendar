@@ -121,6 +121,7 @@
       this.ActionHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionHelp, "ActionHelp");
       this.ActionHelp.Name = "ActionHelp";
+      this.ActionHelp.TabStop = false;
       this.ActionHelp.UseVisualStyleBackColor = true;
       this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
       // 
@@ -237,6 +238,7 @@
       this.ActionSetBookmarkStart.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSetBookmarkStart, "ActionSetBookmarkStart");
       this.ActionSetBookmarkStart.Name = "ActionSetBookmarkStart";
+      this.ActionSetBookmarkStart.TabStop = false;
       this.ActionSetBookmarkStart.UseVisualStyleBackColor = true;
       this.ActionSetBookmarkStart.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
       // 
@@ -253,6 +255,7 @@
       this.ActionUseBookmarkStart.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionUseBookmarkStart, "ActionUseBookmarkStart");
       this.ActionUseBookmarkStart.Name = "ActionUseBookmarkStart";
+      this.ActionUseBookmarkStart.TabStop = false;
       this.ActionUseBookmarkStart.UseVisualStyleBackColor = true;
       this.ActionUseBookmarkStart.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
       // 
@@ -263,6 +266,7 @@
       this.ActionUseBookmarkEnd.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionUseBookmarkEnd, "ActionUseBookmarkEnd");
       this.ActionUseBookmarkEnd.Name = "ActionUseBookmarkEnd";
+      this.ActionUseBookmarkEnd.TabStop = false;
       this.ActionUseBookmarkEnd.UseVisualStyleBackColor = true;
       this.ActionUseBookmarkEnd.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
       // 
@@ -273,6 +277,7 @@
       this.ActionSetBookmarkEnd.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSetBookmarkEnd, "ActionSetBookmarkEnd");
       this.ActionSetBookmarkEnd.Name = "ActionSetBookmarkEnd";
+      this.ActionSetBookmarkEnd.TabStop = false;
       this.ActionSetBookmarkEnd.UseVisualStyleBackColor = true;
       this.ActionSetBookmarkEnd.Click += new System.EventHandler(this.ActionSetBookmarkStart_Click);
       // 
@@ -282,6 +287,7 @@
       this.ActionSwapDates.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSwapDates, "ActionSwapDates");
       this.ActionSwapDates.Name = "ActionSwapDates";
+      this.ActionSwapDates.TabStop = false;
       this.ActionSwapDates.UseVisualStyleBackColor = true;
       this.ActionSwapDates.Click += new System.EventHandler(this.ActionSwapDates_Click);
       // 
