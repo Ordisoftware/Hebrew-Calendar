@@ -59,15 +59,12 @@ namespace Ordisoftware.HebrewCalendar
       Chrono.Start();
       try
       {
+        InitializeYearsInterval();
         string strToolTip = "Error on getting sun rise and set";
         bool IsCelebrationWeekStart = false;
         bool IsCelebrationWeekEnd = false;
         if ( DataSet.LunisolarDays.Count == 0 ) return;
-        DateFirst = SQLiteDate.ToDateTime(DataSet.LunisolarDays.FirstOrDefault().Date);
-        YearFirst = DateFirst.Year;
-        DateLast = SQLiteDate.ToDateTime(DataSet.LunisolarDays.LastOrDefault().Date);
-        YearLast = DateLast.Year;
-        DayColors = new Color[YearLast - YearFirst + 1, 13, 35];
+        DayColors = new Color[YearsInterval, 13, 35];
         LoadingForm.Instance.Initialize(Translations.ProgressFillMonths.GetLang(),
                                         DataSet.LunisolarDays.Count(),
                                         Program.LoadingFormLoadDB);

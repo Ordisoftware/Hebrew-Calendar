@@ -2137,19 +2137,19 @@
   <data name="ActionViewStats.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALeSURBVDhPdZF7TM1hGMfP1spMzimVSkYtt5YTXSg6OkS6
-        OCjKLeVyRGhp/RPD+KeaKQm5pLmU1SZbkbXZcGZuk4RiiRQrl9zKpTi14+P9dX5zwny37/bufZ/vZ+/z
-        PIqB4qy9ylSmKuguUvZQZQ8Xhpktzt0nlT3SGxUqO7n8X/FwAzyYDM9FqHm4sItsZ/PdfV94vBO53CJN
-        epnOO6VCj8EdvlXC+1XQOkbYS/ZY6FgCfeUCMOFPgHZLmfvMbRWEZN7k0L5ETAY1dArIx1RoDzT7UxqY
-        Kum6Pp7WrX4YFENmynGFYlrq6fq4I/eILXxERH49yZnZfKgWX313Br4ehJ5coIKu6uk0hEdiTNDTpg3l
-        tkrl3g9IPnyV8oedlNZ9pKSui2O3PnH0/GWeXQyDN/tF+BxtpVrqg8PpXRoP6/SQlsJ1R6c7/QDtzipi
-        Tz1BV9xMZEkLEWdeElrcTkD2NXg0kfYcHU2acExxSyExEfRrIHUTd30mmWcRlXeD7buP88rNlRdjPMXM
-        JtDio+ap7xQaAmbwVDMHFosBrlguAAmwdjWkbKTOz88M8IzP3tO6YwdMD4GgYBD9ETYXIufB/IUQsxiW
-        /AVI20xj9Lzf23B6oV/LTzE8AoJghgQIlwELBGCRBZCwElavwpi1iwZNsGWdje4eYLgi+kuCQA3Mmg1i
-        4ujmQ3QMxMXBMjGD+Hj6MtLpLMylxtXVArhoPaimd70IV1ViytsHi2IhVGwhQoJIvxBtJK3je242n4vy
-        ee7tRuVg20tyXKFIcXAIrXV0oi9qLn3bMzCeOIqxvIzewwcwFuTTXXqSz3lZvFsexUuPodSobAmytlbL
-        8X4Niray0RmUdsbXPt780E7lS5CaLv9xfFCPpsPLhbfjHGgaocKgtDdG29joRMbKHLXIRtivcIjtXoOd
-        fUedswtNnqN44jGSWidHpLsiW2WOVCPX/lfDhaXv+f9l6U56GyCF4hfPFf9gucBbxQAAAABJRU5ErkJg
+        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
         gg==
 </value>
   </data>
@@ -2651,7 +2651,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 36</value>
+    <value>45, 46</value>
   </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -3029,9 +3029,6 @@
   </metadata>
   <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>199, 14</value>
-  </metadata>
-  <metadata name="ReportTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>555, 18</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3797,12 +3794,6 @@
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
     <value>Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ReportTableAdapter.Name" xml:space="preserve">
-    <value>ReportTableAdapter</value>
-  </data>
-  <data name="&gt;&gt;ReportTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

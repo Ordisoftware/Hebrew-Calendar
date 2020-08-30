@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       try
       {
-        //Globals.IsReady = false;
+        // TODO ? Globals.IsReady = false;
         MenuTray.Enabled = false;
         TimerReminder.Enabled = false;
         try
@@ -34,13 +34,20 @@ namespace Ordisoftware.HebrewCalendar
           int yearFirst;
           int yearLast;
           if ( sender != null )
-          {
-            var form = new SelectYearsForm();
-            if ( e == null ) form.ActionCancel.Enabled = false;
-            if ( form.ShowDialog() == DialogResult.Cancel ) return null;
-            yearFirst = (int)form.EditYearFirst.Value;
-            yearLast = (int)form.EditYearLast.Value;
-          }
+            if ( sender is Tuple<int, int> )
+            {
+              var values = (Tuple<int, int>)sender;
+              yearFirst = values.Item1;
+              yearLast = values.Item2;
+            }
+            else
+            {
+              var form = new SelectYearsForm();
+              if ( e == null ) form.ActionCancel.Enabled = false;
+              if ( form.ShowDialog() == DialogResult.Cancel ) return null;
+              yearFirst = (int)form.EditYearFirst.Value;
+              yearLast = (int)form.EditYearLast.Value;
+            }
           else
           {
             yearFirst = YearFirst;
@@ -51,7 +58,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         finally
         {
-          //Globals.IsReady = true;
+          // TODO ? Globals.IsReady = true;
           MenuTray.Enabled = true;
           UpdateButtons();
           if ( e != null )

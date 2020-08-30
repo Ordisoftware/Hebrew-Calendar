@@ -101,9 +101,9 @@ namespace Ordisoftware.HebrewCalendar
         if ( DateTime.Today.Year >= YearLast )
           if ( auto || Program.Settings.AutoRegenerate )
           {
-            YearFirst = DateTime.Today.Year - 1;
-            YearLast = YearFirst + Program.Settings.AutoGenerateYearsInternal - 1;
-            return DoGenerate(null, new EventArgs());
+            int yearFirst = DateTime.Today.Year - 1;
+            int yearLast = YearFirst + Program.Settings.AutoGenerateYearsInternal - 1;
+            return DoGenerate(new Tuple<int, int>(yearFirst, yearLast), EventArgs.Empty);
           }
           else
             ActionGenerate.PerformClick();

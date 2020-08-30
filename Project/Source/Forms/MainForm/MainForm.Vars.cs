@@ -28,7 +28,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate if generation is in progress.
     /// </summary>
-    internal bool IsGenerating;
+    public bool IsGenerating { get; private set; }
 
     /// <summary>
     /// Indicate last showned tooltip.
@@ -38,7 +38,6 @@ namespace Ordisoftware.HebrewCalendar
     private Point TrayIconMouse;
 
     private bool CanBallon = true;
-
     private bool NavigationTrayBallooned;
 
     private bool TimerMutex;
@@ -47,18 +46,31 @@ namespace Ordisoftware.HebrewCalendar
 
     private MidnightTimer TimerMidnight = new MidnightTimer();
 
-    internal TimeZoneInfo CurrentTimeZoneInfo;
+    public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
+    public float CurrentGPSLatitude { get; internal set; }
+    public float CurrentGPSLongitude { get; internal set; }
 
-    internal float CurrentGPSLatitude;
-    internal float CurrentGPSLongitude;
+    private void InitializeYearsInterval()
+    {
+      DateFirst = SQLiteDate.ToDateTime(DataSet.LunisolarDays.FirstOrDefault()?.Date ?? "");
+      DateLast = SQLiteDate.ToDateTime(DataSet.LunisolarDays.LastOrDefault()?.Date ?? "");
+      if ( DateFirst == DateTime.MinValue || DateLast == DateTime.MinValue || DateFirst >= DateLast )
+        throw new ArgumentOutOfRangeException("DateFirst & DateLast in " + nameof(InitializeYearsInterval));
+      YearFirst = DateFirst.Year;
+      YearLast = DateLast.Year;
+      YearsInterval = DateLast.Year - DateFirst.Year + 1;
+      YearsIntervalArray = Enumerable.Range(DateFirst.Year, YearsInterval).ToArray();
+    }
 
-    internal Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
+    public DateTime DateFirst { get; private set; }
+    public DateTime DateLast { get; private set; }
 
-    internal int YearFirst { get; private set; }
-    internal DateTime DateFirst { get; private set; }
+    public int YearFirst { get; private set; }
+    public int YearLast { get; private set; }
+    public int YearsInterval { get; private set; }
+    internal int[] YearsIntervalArray { get; private set; }
 
-    internal int YearLast { get; private set; }
-    internal DateTime DateLast { get; private set; }
+    public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
 
     private OutOfRangeSafeDictionary<TorahEvent, bool> TorahEventRemindList
       = new OutOfRangeSafeDictionary<TorahEvent, bool>();

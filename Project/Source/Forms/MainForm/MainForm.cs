@@ -126,6 +126,7 @@ namespace Ordisoftware.HebrewCalendar
       ChronoStart.Stop();
       Program.Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
       Program.Settings.Save();
+      StatisticsForm.Run(true);
     }
 
     /// <summary>

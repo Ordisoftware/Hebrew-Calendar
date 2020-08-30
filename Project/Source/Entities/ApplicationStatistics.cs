@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewCalendar
     public string DBYearsInterval
       => MainForm.Instance.IsGenerating
          ? Localizer.Processing.GetLang()
-         : ( MainForm.Instance.YearLast - MainForm.Instance.YearFirst + 1 ).ToString();
+         : MainForm.Instance.YearsInterval.ToString();
 
     public string DBRecordsCount
       => MainForm.Instance.IsGenerating

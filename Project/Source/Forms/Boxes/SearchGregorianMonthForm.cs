@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
       Mutex = true;
       CurrentDay = MainForm.Instance.CurrentDay;
       int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;
-      for ( int indexYear = MainForm.Instance.YearFirst; indexYear <= MainForm.Instance.YearLast; indexYear++ )
+      foreach ( int indexYear in MainForm.Instance.YearsIntervalArray )
       {
         int index = EditYear.Items.Add(indexYear);
         if ( indexYear == yearSelected )
