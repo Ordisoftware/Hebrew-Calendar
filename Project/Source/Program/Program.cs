@@ -84,7 +84,7 @@ namespace Ordisoftware.HebrewCalendar
         || Settings.UpgradeResetRequiredV3_6
         || Settings.UpgradeResetRequiredV4_1 )
       {
-        DisplayManager.ShowWarning(Localizer.UpgradeResetRequired.GetLang());
+        DisplayManager.ShowInformation(Localizer.UpgradeResetRequired.GetLang());
         Settings.Reset();
         Settings.UpgradeResetRequiredV3_0 = false;
         Settings.UpgradeResetRequiredV3_6 = false;

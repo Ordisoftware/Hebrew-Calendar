@@ -85,10 +85,10 @@ namespace Ordisoftware.HebrewCalendar
       {
         IsLoading = false;
         ActiveControl = EditFilter;
-        if ( Program.Settings.GPSCountry != "" )
+        if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) )
         {
           EditFilter.Text = Program.Settings.GPSCountry;
-          if ( Program.Settings.GPSCity != "" )
+          if ( !string.IsNullOrEmpty(Program.Settings.GPSCity) )
             EditFilter.Text += Program.Settings.GPSCity;
         }
         else

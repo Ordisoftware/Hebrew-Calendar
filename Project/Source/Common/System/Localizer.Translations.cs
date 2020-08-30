@@ -280,8 +280,15 @@ namespace Ordisoftware.HebrewCommon
     static public readonly NullSafeStringDictionary LoadFileError
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, $"Error while loading:{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
-        { Languages.FR, $"Erreur de chargement :{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
+        { Languages.EN, $"Error while loading file:{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
+        { Languages.FR, $"Erreur de chargement du fichier :{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
+      };
+
+    static public readonly NullSafeStringDictionary WriteFileError
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, $"Error while writing file:{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
+        { Languages.FR, $"Erreur de sauvegarde du fichier :{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
       };
 
     static public readonly NullSafeStringDictionary ErrorInFile

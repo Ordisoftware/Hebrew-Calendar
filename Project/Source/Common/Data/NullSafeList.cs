@@ -28,13 +28,11 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( index < Count ) return base[index];
-        var item = new T();
-        this[index] = item;
-        return item;
+        return index >= 0 && index < Count ? base[index] : new T();
       }
       set
       {
+        if ( index < 0 ) return;
         if ( index < Count )
           base[index] = value;
         else

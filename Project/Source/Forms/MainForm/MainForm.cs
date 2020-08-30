@@ -76,7 +76,9 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Globals.IsExiting ) return;
       Program.Settings.Retrieve();
-      if ( Program.Settings.GPSLatitude != "" && Program.Settings.GPSLongitude != "" )
+      StatisticsForm.Run(true);
+      if ( !string.IsNullOrEmpty(Program.Settings.GPSLatitude) 
+        && !string.IsNullOrEmpty(Program.Settings.GPSLongitude) )
         try
         {
           Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude);
@@ -115,7 +117,8 @@ namespace Ordisoftware.HebrewCalendar
       UpdateButtons();
       GoToDate(DateTime.Today);
       CheckRegenerateCalendar();
-      if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
+      if ( string.IsNullOrEmpty(Program.Settings.GPSLatitude)
+        || string.IsNullOrEmpty(Program.Settings.GPSLongitude) )
         ActionPreferences.PerformClick();
       if ( Program.Settings.StartupHide )
         MenuShowHide.PerformClick();
@@ -126,7 +129,6 @@ namespace Ordisoftware.HebrewCalendar
       ChronoStart.Stop();
       Program.Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
       Program.Settings.Save();
-      StatisticsForm.Run(true);
     }
 
     /// <summary>
@@ -203,7 +205,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( IsGenerating )
       {
-        DisplayManager.ShowAdvert(Translations.CantExitWhileGenerating.GetLang());
+        DisplayManager.ShowInformation(Translations.CantExitWhileGenerating.GetLang());
         return;
       }
       if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDev ) )

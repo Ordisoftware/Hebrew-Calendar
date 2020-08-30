@@ -40,7 +40,7 @@ namespace Ordisoftware.HebrewCommon
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowError(Localizer.LoadFileError.GetLang(filename, ex.Message));
+          DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(filename, ex.Message));
           return null;
         }
       }

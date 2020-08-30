@@ -28,10 +28,11 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        return index < Count ? base[index] : default(T);
+        return index >= 0 && index < Count ? base[index] : default(T);
       }
       set
       {
+        if ( index < 0 ) return;
         if ( index < Count )
           base[index] = value;
         else

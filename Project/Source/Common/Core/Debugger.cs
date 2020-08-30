@@ -381,7 +381,7 @@ namespace Ordisoftware.HebrewCommon
             catch ( Exception err )
             {
               if ( doshow )
-                DisplayManager.Show("Error on BeforeException:" + Globals.NL + err.Message);
+                DisplayManager.ShowError("Error on BeforeException:" + Globals.NL + err.Message);
             }
           if ( b && doshow )
             ShowException(einfo);
@@ -393,7 +393,7 @@ namespace Ordisoftware.HebrewCommon
             catch ( Exception err )
             {
               if ( doshow )
-                DisplayManager.Show("Error on AfterException:" + Globals.NL + err.Message);
+                DisplayManager.ShowError("Error on AfterException:" + Globals.NL + err.Message);
             }
         }
         catch ( Exception err )
@@ -403,12 +403,12 @@ namespace Ordisoftware.HebrewCommon
             string s = "Error on processing Exception." + Globals.NL2
                      + ( ex != null ? ex.Message + Globals.NL2 : "[null reference]" + Globals.NL2 )
                      + "(" + err.Message + ")";
-            DisplayManager.Show(s);
+            DisplayManager.ShowError(s);
           }
           catch
           {
-            MessageBox.Show(ex == null ? "Null Exception" : ex.ToString());
-            //Environment.Exit(0); 
+            DisplayManager.ShowError(ex == null ? "Null Exception" : ex.ToString());
+            Environment.Exit(-1); 
           }
         }
     }
@@ -426,7 +426,7 @@ namespace Ordisoftware.HebrewCommon
           try { OnException(einfo.Sender, einfo); }
           catch ( Exception err )
           {
-            DisplayManager.Show("Error in OnException: " + Globals.NL + err.Message);
+            DisplayManager.ShowError("Error in OnException: " + Globals.NL + err.Message);
           }
         if ( DoShowException != null ) DoShowException(einfo.Sender, einfo);
         else
@@ -443,10 +443,12 @@ namespace Ordisoftware.HebrewCommon
           if ( einfo != null ) s += einfo.Instance.Message + Globals.NL;
           else s += "[null reference]" + Globals.NL;
           s += "(" + err.Message + ")";
-          DisplayManager.Show(s);
+          DisplayManager.ShowError(s);
         }
         catch
-        { Environment.Exit(0); }
+        {
+          Environment.Exit(-1);
+        }
       }
     }
 
@@ -475,11 +477,11 @@ namespace Ordisoftware.HebrewCommon
           s = "Error on displaying Exception :" + Globals.NL
             + ( einfo != null ? einfo.Instance.Message + Globals.NL : "[null reference]" + Globals.NL )
             + "(" + err.Message + ")";
-          DisplayManager.Show(s);
+          DisplayManager.ShowError(s);
         }
         catch
         {
-          Environment.Exit(0);
+          Environment.Exit(-1);
         }
       }
     }

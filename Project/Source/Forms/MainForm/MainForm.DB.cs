@@ -29,11 +29,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !DataSet.IsInitialized ) return;
       LunisolarDaysTableAdapter.DeleteAllQuery();
-      // TODO delete file instead
-      //ReportTableAdapter.DeleteAllQuery();
       TableAdapterManager.UpdateAll(DataSet);
       LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-      //ReportTableAdapter.Fill(DataSet.Report);
     }
 
     /// <summary>
@@ -47,6 +44,8 @@ namespace Ordisoftware.HebrewCalendar
 
         if ( Program.Settings.VacuumAtStartup )
           Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone);
+
+        connection.DropTableIfExists("Report");
 
         connection.CheckTable(@"LunisolarDays",
                               @"CREATE TABLE LunisolarDays 
@@ -66,14 +65,6 @@ namespace Ordisoftware.HebrewCalendar
                                   TorahEvents INTEGER,
                                   PRIMARY KEY('Date')
                                 )");
-
-        connection.DropTableIfExists("Report");
-
-        //connection.CheckTable(@"Report",
-        //                      @"CREATE TABLE Report 
-        //                        ( 
-        //                          Content TEXT DEFAULT ''
-        //                        )");
       }
 
     }

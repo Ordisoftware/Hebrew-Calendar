@@ -13,7 +13,6 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.IO;
 using System.Management;
 using Microsoft.Win32;
 
@@ -33,7 +32,7 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( _CPUName == "" )
+        if ( string.IsNullOrEmpty(_CPUName) )
           try
           {
             var list = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor").Get();
@@ -50,7 +49,7 @@ namespace Ordisoftware.HebrewCommon
         return _CPUName;
       }
     }
-    static private string _CPUName = "";
+    static private string _CPUName;
 
     /// <summary>
     /// Indicate the operating system name.
@@ -59,7 +58,7 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( _OperatingSystem == "" )
+        if ( string.IsNullOrEmpty(_OperatingSystem) )
           try
           {
             string name = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "productName", "").ToString();
@@ -76,7 +75,7 @@ namespace Ordisoftware.HebrewCommon
         return _OperatingSystem;
       }
     }
-    static private string _OperatingSystem = "";
+    static private string _OperatingSystem;
 
     /// <summary>
     /// Indicate the free physical memory formatted.
@@ -97,7 +96,7 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( _TotalVisibleMemory == "" )
+        if ( string.IsNullOrEmpty(_TotalVisibleMemory) )
         {
           object value = GetWin32OperatingSystemValue("TotalVisibleMemorySize");
           _TotalVisibleMemory = value != null
@@ -107,7 +106,7 @@ namespace Ordisoftware.HebrewCommon
         return _TotalVisibleMemory;
       }
     }
-    static private string _TotalVisibleMemory = "";
+    static private string _TotalVisibleMemory;
 
 
     /// <summary>

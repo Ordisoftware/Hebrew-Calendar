@@ -34,16 +34,16 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( _Title == "" )
+        if ( string.IsNullOrEmpty(_Title) )
         {
           _Title = FileVersionInfo.GetVersionInfo(Application.ExecutablePath).FileDescription;
-          if ( _Title == "" )
+          if ( string.IsNullOrEmpty(_Title) )
             _Title = Path.GetFileNameWithoutExtension(Path.GetFileName(Application.ExecutablePath));
         }
         return _Title;
       }
     }
-    static public string _Title = "";
+    static public string _Title;
 
     /// <summary>
     /// Show a message and wait user action.
@@ -107,9 +107,9 @@ namespace Ordisoftware.HebrewCommon
     /// Show an information box.
     /// </summary>
     /// <param name="text">The text.</param>
-    static public void ShowInfo(string text)
+    static public void ShowInformation(string text)
     {
-      ShowInfo(Title, text);
+      ShowInformation(Title, text);
     }
 
     /// <summary>
@@ -117,28 +117,9 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="text">The text.</param>
-    static public void ShowInfo(string title, string text)
+    static public void ShowInformation(string title, string text)
     {
       Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-    }
-
-    /// <summary>
-    /// Show an advertising box.
-    /// </summary>
-    /// <param name="text">The text.</param>
-    static public void ShowAdvert(string text)
-    {
-      ShowAdvert(Title, text);
-    }
-
-    /// <summary>
-    /// Show an advertising box.
-    /// </summary>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    static public void ShowAdvert(string title, string text)
-    {
-      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
     }
 
     /// <summary>

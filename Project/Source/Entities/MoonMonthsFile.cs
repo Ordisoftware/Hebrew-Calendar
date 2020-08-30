@@ -29,18 +29,7 @@ namespace Ordisoftware.HebrewCalendar
     public readonly List<string> Items = new List<string>();
 
     public string this[int index]
-    {
-      get
-      {
-        if ( index < 0 || index >= Items.Count )
-        {
-          DisplayManager.ShowAdvert("Index out of bounds: " + index);
-          return "";
-        }
-        else
-          return Items[index];
-      }
-    }
+      => index >= 0 && index < Items.Count ? Items[index] : "";
 
     public MoonMonthsFile(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
       : base(filename, showFileNotFound, configurable, folder)
@@ -49,7 +38,7 @@ namespace Ordisoftware.HebrewCalendar
 
     protected override void DoReLoad(string filename)
     {
-      if ( filename == "" ) return;
+      if ( string.IsNullOrEmpty(filename) ) return;
       try
       {
         Items.Clear();

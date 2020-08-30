@@ -72,6 +72,7 @@
       this.Name = "LoadingForm";
       this.ShowInTaskbar = false;
       this.TopMost = true;
+      this.Load += new System.EventHandler(this.LoadingForm_Load);
       this.Panel.ResumeLayout(false);
       this.Panel.PerformLayout();
       this.ResumeLayout(false);

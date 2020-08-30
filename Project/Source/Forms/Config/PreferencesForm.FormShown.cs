@@ -28,7 +28,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void DoFormShown(object sender, EventArgs e)
     {
-      if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
+      if ( string.IsNullOrEmpty(Program.Settings.GPSLatitude)
+        || string.IsNullOrEmpty(Program.Settings.GPSLongitude) )
         ActionGetGPS_LinkClicked(null, null);
       if ( Program.Settings.FirstLaunch )
       {

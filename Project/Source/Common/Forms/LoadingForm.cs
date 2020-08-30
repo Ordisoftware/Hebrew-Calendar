@@ -40,6 +40,10 @@ namespace Ordisoftware.HebrewCommon
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;
+    }
+
+    private void LoadingForm_Load(object sender, EventArgs e)
+    {
       LabelTitle.Text = Globals.AssemblyTitle;
     }
 

@@ -40,7 +40,7 @@ namespace Ordisoftware.HebrewCommon
         if ( args.Length == 2 && args[0] == "/lang" )
           if ( args[1] == Languages.EN || args[1] == Languages.FR )
             language = args[1];
-        if ( language == "" )
+        if ( string.IsNullOrEmpty(language) )
           language = Languages.Current;
       }
       catch ( Exception ex )

@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewCommon
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
           {
             if ( !auto )
-              DisplayManager.Show(Localizer.NoNewVersionAvailable.GetLang());
+              DisplayManager.ShowInformation(Localizer.NoNewVersionAvailable.GetLang());
           }
           else
           {
@@ -108,7 +108,7 @@ namespace Ordisoftware.HebrewCommon
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowAdvert(DisplayManager.Title + " Check Update", ex.Message);
+        DisplayManager.ShowWarning(DisplayManager.Title + " Check Update", ex.Message);
       }
       finally
       {
