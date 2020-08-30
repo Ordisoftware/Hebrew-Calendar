@@ -25,14 +25,18 @@ namespace Ordisoftware.HebrewCalendar
   static partial class Program
   {
 
-    static public string GPSToString()
+    /// <summary>
+    /// Returns a string representing the GPS location.
+    /// </summary>
+    /// <returns></returns>
+    static public string ToStringGPS()
     {
-      string result = "• " + Settings.GPSCountry + Environment.NewLine
+      string result = "• " + Settings.GPSCountry + Globals.NL
                     + "• " + Settings.GPSCity;
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == Settings.TimeZone )
         {
-          result += Environment.NewLine + Environment.NewLine + item.DisplayName;
+          result += Globals.NL2 + item.DisplayName;
           break;
         }
       return result;

@@ -14,6 +14,7 @@
 /// <created> 2007-05 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing.Printing;
@@ -189,36 +190,50 @@ namespace Ordisoftware.HebrewCommon
       try
       {
         TopMost = false;
-        string query = "&title=" + ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion
-                     + "&labels=type: bug"
-                     + "&body=";
-        string body = "## COMMENT" + Globals.NL2
-                    + Localizer.GitHubIssueComment.GetLang();
-        body += Globals.NL2
-              + "## SYSTEM" + Globals.NL2
-              + SystemHelper.OperatingSystem;
-        body += Globals.NL
-              + "Total Visible Memory: " + SystemHelper.TotalVisibleMemory + Globals.NL
-              + "Free Physical Memory: " + SystemHelper.PhysicalMemoryFree;
-        body += Globals.NL2
-              + "## ERROR : " + ErrorInfo.Instance.GetType().Name + Globals.NL2
-              + ErrorInfo.Message + Globals.NL2
-              + "#### _STACK_" + Globals.NL2
-              + ErrorInfo.StackText;
+        var query = new StringBuilder();
+        var body = new StringBuilder();
+        // Query header
+        query.Append("&title=" + ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion);
+        query.Append("&labels=type: bug");
+        query.Append("&body=");
+        // Query body
+        body.AppendLine("## COMMENT");
+        body.AppendLine();
+        body.AppendLine(Localizer.GitHubIssueComment.GetLang());
+        body.AppendLine();
+        body.AppendLine("## SYSTEM");
+        body.AppendLine();
+        body.AppendLine(SystemHelper.OperatingSystem);
+        body.AppendLine("Total Visible Memory: " + SystemHelper.TotalVisibleMemory);
+        body.AppendLine("Free Physical Memory: " + SystemHelper.PhysicalMemoryFree);
+        body.AppendLine();
+        body.AppendLine("## ERROR : " + ErrorInfo.Instance.GetType().Name);
+        body.AppendLine();
+        body.AppendLine(ErrorInfo.Message);
+        body.AppendLine();
+        body.AppendLine("#### _STACK_");
+        body.AppendLine();
+        body.Append(ErrorInfo.StackText);
         ExceptionInfo inner = ErrorInfo.InnerInfo;
         while ( inner != null )
         {
-          body += Globals.NL2
-                + "## INNER : " + inner.Instance.GetType().Name + Globals.NL2
-                + inner.Message + Globals.NL2
-                + "#### _STACK_" + Globals.NL2
-                + inner.StackText;
+          body.AppendLine();
+          body.AppendLine();
+          body.AppendLine("## INNER : " + inner.Instance.GetType().Name);
+          body.AppendLine();
+          body.AppendLine(inner.Message);
+          body.AppendLine();
+          body.AppendLine("#### _STACK_");
+          body.AppendLine();
+          body.Append(inner.StackText);
           inner = inner.InnerInfo;
         }
-        query += System.Net.WebUtility.UrlEncode(body);
+        // Send
+        query.Append(System.Net.WebUtility.UrlEncode(body.ToString()));
         if ( query.Length > 8000 )
-          query = query.Substring(0, 8000);
-        Shell.CreateGitHubIssue(query);
+          Shell.CreateGitHubIssue(query.ToString().Substring(0, 8000));
+        else
+          Shell.CreateGitHubIssue(query.ToString());
       }
       catch ( Exception ex )
       {

@@ -23,39 +23,100 @@ namespace Ordisoftware.HebrewCommon
   static public partial class Localizer
   {
 
-    static public readonly NullSafeStringDictionary EmptySlot
+    static public readonly NullSafeDictionary<bool, NullSafeStringDictionary> HideRestore
+      = new NullSafeDictionary<bool, NullSafeStringDictionary>()
+      {
+        {
+          true, new NullSafeStringDictionary
+          {
+            { Languages.EN, "Hide" },
+            { Languages.FR, "Cacher" }
+          }
+        },
+        {
+          false, new NullSafeStringDictionary
+          {
+            { Languages.EN, "Restore" },
+            { Languages.FR, "Restaurer" }
+          }
+        }
+      };
+
+    static public readonly NullSafeStringDictionary AboutBoxTitle
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Not defined" },
-        { Languages.FR, "Non définit" }
+        { Languages.EN, "About {0}" },
+        { Languages.FR, "À propos de {0}" }
+      };
+
+    static public readonly NullSafeStringDictionary AboutBoxVersion
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Version {0}" },
+        { Languages.FR, "Version {0}" }
+      };
+
+    static public readonly NullSafeStringDictionary GrammarGuideTitle
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Grammar guide" },
+        { Languages.FR, "Guide de grammaire" }
+      };
+
+    static public readonly NullSafeStringDictionary MethodNoticeTitle
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Lettriq analysis method notice" },
+        { Languages.FR, "Notice de la méthode d'analyse lettrique" }
+      };
+
+    static public readonly NullSafeStringDictionary NotYetAvailable
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Not yet available." },
+        { Languages.FR, "Pas encore disponible." }
+      };
+
+    static public readonly NullSafeStringDictionary WebCheckUpdate
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Checking update..." },
+        { Languages.FR, "Vérification de la la mise à jour..." }
       };
 
     static public readonly NullSafeStringDictionary Initializing
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Initializing" },
-        { Languages.FR, "Initialisation" }
+        { Languages.EN, "Initializing..." },
+        { Languages.FR, "Initialisation..." }
       };
 
     static public readonly NullSafeStringDictionary Processing
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Processing" },
-        { Languages.FR, "Traitement" }
+        { Languages.EN, "Processing..." },
+        { Languages.FR, "Traitement..." }
       };
 
-    static public readonly NullSafeStringDictionary DatabaseIntegrityError
+    static public readonly NullSafeStringDictionary ProgressCreatingData
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, $"Database integrity error:{Globals.NL}{Globals.NL}{0}" },
-        { Languages.FR, $"Erreur d'intégrité de la base de données :{Globals.NL}{Globals.NL}{0}" }
+        { Languages.EN, "Creating data..." },
+        { Languages.FR, "Création des données..." }
       };
 
-    static public readonly NullSafeStringDictionary DatabaseVacuumError
+    static public readonly NullSafeStringDictionary AskToContinue
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Database vacuum failed." },
-        { Languages.FR, "Echec du vacuum de la base de données." }
+        { Languages.EN, "Do you want to continue?" },
+        { Languages.FR, "Voulez-vous continuer ?" }
+      };
+
+    static public readonly NullSafeStringDictionary AskToDownload
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Do you want to download it?" },
+        { Languages.FR, "Voulez-vous le télécharger ?" }
       };
 
     static public readonly NullSafeStringDictionary AskToExitApplication
@@ -75,71 +136,19 @@ namespace Ordisoftware.HebrewCommon
     static public readonly NullSafeStringDictionary LockSessionError
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Lock session error: {0}" },
-        { Languages.FR, "Erreur de vérouillage de la session : {0}" }
-      };
-
-    static public readonly NullSafeStringDictionary AskToContinue
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Do you want to continue?" },
-        { Languages.FR, "Voulez-vous continuer ?" }
-      };
-
-    static public readonly NullSafeStringDictionary GrammarGuideTitle
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Grammar guide" },
-        { Languages.FR, "Guide de grammaire" }
-      };
-
-    static public readonly NullSafeStringDictionary MethodNoticeTitle
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Lettriq analysis method notice" },
-        { Languages.FR, "Notice de la méthode d'analyse lettrique" }
-      };
-
-    static public readonly NullSafeStringDictionary GitHubIssueComment
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "> Describe here what you did, what you expected and what happened." },
-        { Languages.FR, "> Décrivez ici ce que vous avez fait, ce que vous attendiez et ce qui c'est passé." }
-      };
-
-    static public readonly NullSafeStringDictionary AboutBoxTitle
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "About {0}" },
-        { Languages.FR, "À propos de {0}" }
-      };
-
-    static public readonly NullSafeStringDictionary AboutBoxVersion
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Version {0}" },
-        { Languages.FR, "Version {0}" }
-      };
-
-    static public readonly NullSafeStringDictionary NotYetAvailable
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Not yet available." },
-        { Languages.FR, "Pas encore disponible." }
+        { Languages.EN, $"Lock session error:{Globals.NL2}{{0}}" },
+        { Languages.FR, $"Erreur de vérouillage de la session :{Globals.NL2}{{0}}" }
       };
 
     static public readonly NullSafeStringDictionary UpgradeResetRequired
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "An upgrade of the settings is required and they will be reseted to default values." },
-        { Languages.FR, "Une mise à jour des paramètres est requise et ils vont être réinialisés à leurs valeurs par défaut." }
-      };
-
-    static public readonly NullSafeStringDictionary WebCheckUpdate
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Check update" },
-        { Languages.FR, "Vérifier la mise à jour" }
+        { Languages.EN, "An upgrade of the settings is required." + Globals.NL + 
+                        "They will be reseted to default values."
+        },
+        { Languages.FR, "Une mise à jour des paramètres est requise." + Globals.NL + 
+                        "Ils vont être réinialisés à leurs valeurs par défaut."
+        }
       };
 
     static public readonly NullSafeStringDictionary NoNewVersionAvailable
@@ -159,73 +168,127 @@ namespace Ordisoftware.HebrewCommon
     static public readonly NullSafeStringDictionary DownloadingNewVersion
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Downloading new version" },
-        { Languages.FR, "Téléchargement de la nouvelle version" }
+        { Languages.EN, "Downloading new version..." },
+        { Languages.FR, "Téléchargement de la nouvelle version..." }
+      };
+
+    static public readonly NullSafeStringDictionary DatabaseIntegrityError
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, $"Database integrity error:{Globals.NL2}{{0}}" },
+        { Languages.FR, $"Erreur d'intégrité de la base de données :{Globals.NL2}{{0}}" }
+      };
+
+    static public readonly NullSafeStringDictionary DatabaseVacuumError
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Database vacuum failed." },
+        { Languages.FR, "Echec du vacuum de la base de données." }
       };
 
     static public readonly NullSafeStringDictionary AskToCheckParametersAfterDatabaseUpgraded
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Database upgraded." + Globals.NL + Globals.NL +
-                        "Do you want check the parameters?" },
-        { Languages.FR, "La base de données a été mise à jour." + Globals.NL + Globals.NL +
-                        "Voulez-vous vérifier les paramètres ?" }
+        { Languages.EN, "Database upgraded." + Globals.NL2 +
+                        "Do you want check the parameters?"
+        },
+        { Languages.FR, "La base de données a été mise à jour." + Globals.NL2 +
+                        "Voulez-vous vérifier les paramètres ?"
+        }
       };
 
     static public readonly NullSafeStringDictionary AskToOptimizeDatabase
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Optimization process will close and reopen the database." + Globals.NL + Globals.NL +
-                        AskToContinue[Languages.EN] },
-        { Languages.FR, "Le processus d'optimisation va fermer et rouvrir la base de données." + Globals.NL + Globals.NL +
-                        AskToContinue[Languages.FR] }
+        { Languages.EN, "Optimization process will close and reopen the database." + Globals.NL2 +
+                         AskToContinue[Languages.EN]
+        },
+        { Languages.FR, "Le processus d'optimisation va fermer et rouvrir la base de données." + Globals.NL2 +
+                         AskToContinue[Languages.FR]
+        },
       };
 
     static public readonly NullSafeStringDictionary AskToRestoreWindowPosition
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "This action will restore the window position." + Globals.NL + Globals.NL +
-                        AskToContinue[Languages.EN] },
-        { Languages.FR, "Cette action va restaurer la position de la fenêtre."  + Globals.NL + Globals.NL +
-                        AskToContinue[Languages.FR] },
+        { Languages.EN, "This action will restore the window position." + Globals.NL2 +
+                         AskToContinue[Languages.EN]
+        },
+        { Languages.FR, "Cette action va restaurer la position de la fenêtre." + Globals.NL2 +
+                         AskToContinue[Languages.FR]
+        },
       };
+
+    static public readonly NullSafeStringDictionary ResetPreferences
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Preferences will be reseted to their default values." },
+        { Languages.FR, "Les préférences vont être réinitialisées à leurs valeurs par défaut." }
+      };
+
 
     static public readonly NullSafeStringDictionary AskToResetPreferences
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Preferences will be reseted to their default values." + Globals.NL + Globals.NL +
-                        AskToContinue[Languages.EN] },
-        { Languages.FR, "Les préférences vont être réinitialisées à leurs valeurs par défaut." + Globals.NL + Globals.NL +
-                        AskToContinue[Languages.FR] },
+        { Languages.EN, ResetPreferences[Languages.EN] + Globals.NL2 + AskToContinue[Languages.EN]
+        },
+        { Languages.FR, ResetPreferences[Languages.FR] + Globals.NL2 + AskToContinue[Languages.FR]
+        },
       };
 
     static public readonly NullSafeStringDictionary AskToLoadInstalledData
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "This action will load the data installed with the application." + Globals.NL + Globals.NL +
-                        "All modifications will be lost." + Globals.NL + Globals.NL +
-                        AskToContinue[Languages.EN] },
-        { Languages.FR, "Cette action va charger les données installées avec l'application."  + Globals.NL + Globals.NL +
-                        "Toutes les modifications seront perdues." + Globals.NL + Globals.NL +
-                        AskToContinue[Languages.FR] },
+        { Languages.EN, "This action will load the data installed with the application." + Globals.NL2 +
+                        "All modifications will be lost." + Globals.NL2 +
+                        AskToContinue[Languages.EN]
+        },
+        { Languages.FR, "Cette action va charger les données installées avec l'application."  + Globals.NL2 +
+                        "Toutes les modifications seront perdues." + Globals.NL2 +
+                        AskToContinue[Languages.FR]
+        },
       };
 
-    static public readonly NullSafeStringDictionary ErrorInFile
+    static public readonly NullSafeStringDictionary RunShellError
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Error in {0}" + Globals.NL + Globals.NL +
-                        "Line n° {1]" + Globals.NL + Globals.NL +
-                        "{2}" },
-        { Languages.FR, "Erreur dans {0}" + Globals.NL + Globals.NL +
-                        "Ligne n° {1}" + Globals.NL + Globals.NL +
-                        "{2}" }
+        { Languages.EN, $"Error on launching :{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
+        { Languages.FR, $"Erreur de lancement :{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
       };
 
     static public readonly NullSafeStringDictionary FileNotFound
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, $"File not found:{Globals.NL}{Globals.NL}{0}" },
-        { Languages.FR, $"Fichier non trouvé :{Globals.NL}{Globals.NL}{0}" }
+        { Languages.EN, $"File not found:{Globals.NL2}{{0}}" },
+        { Languages.FR, $"Fichier non trouvé :{Globals.NL2}{{0}}" }
+      };
+
+    static public readonly NullSafeStringDictionary LoadFileError
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, $"Error while loading:{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
+        { Languages.FR, $"Erreur de chargement :{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
+      };
+
+    static public readonly NullSafeStringDictionary ErrorInFile
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, $"Error in {{0}}{Globals.NL2}Line n° {{1}}{Globals.NL2}{{2}}" },
+        { Languages.FR, $"Erreur dans {{0}}{Globals.NL2}Ligne n° {{1}}{Globals.NL2}{{2}}" }
+      };
+
+    static public readonly NullSafeStringDictionary CreateDBTableError
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, $"Error on create table:{Globals.NL2}{{0}}" },
+        { Languages.FR, $"Error à la création de la table:{Globals.NL2}{{0}}" },
+      };
+
+    static public readonly NullSafeStringDictionary CreateDBColumnError
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, $"Error on create column:{Globals.NL2}{{0}}" },
+        { Languages.FR, $"Error à la création de la colonne:{Globals.NL2}{{0}}" },
       };
 
     static public readonly NullSafeStringDictionary TermNotFound
@@ -242,26 +305,35 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "Voulez-vous ouvrir tous les liens de \"{0}\" ?" }
       };
 
+    static public readonly NullSafeStringDictionary AskToCheckPreferences
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Check preferences." },
+        { Languages.FR, "Vérifiez les préférences."  }
+      };
+
     static public readonly NullSafeStringDictionary AskToDownloadHebrewLetters
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Hebrew Letters not found." + Globals.NL +
-                        "Check preferences." + Globals.NL + Globals.NL +
-                        "Do you want to download it?" },
-        { Languages.FR, "Hebrew Letters n'a pas été trouvé." + Globals.NL +
-                        "Vérifiez les préférences." + Globals.NL + Globals.NL +
-                        "Voulez-vous le télécharger ?" }
+        { Languages.EN, $"Hebrew Letters not found." + Globals.NL +
+                        AskToCheckPreferences[Languages.EN] + Globals.NL2 +
+                        AskToDownload[Languages.EN]
+        },
+        { Languages.FR, $"Hebrew Letters n'a pas été trouvé." + Globals.NL +
+                        AskToCheckPreferences[Languages.FR] + Globals.NL2 +
+                        AskToDownload[Languages.FR]
+        }
       };
 
     static public readonly NullSafeStringDictionary AskToDownloadHebrewWords
       = new NullSafeStringDictionary()
       {
         { Languages.EN, "Hebrew Words not found." + Globals.NL +
-                        "Check preferences." + Globals.NL + Globals.NL +
-                        "Do you want to download it?" },
+                        AskToCheckPreferences[Languages.EN] + Globals.NL2 +
+                        AskToDownload[Languages.EN] },
         { Languages.FR, "Hebrew Words n'a pas été trouvé." + Globals.NL +
-                        "Vérifiez les préférences." + Globals.NL + Globals.NL +
-                        "Voulez-vous le télécharger ?" }
+                        AskToCheckPreferences[Languages.FR] + Globals.NL2 +
+                        AskToDownload[Languages.FR] }
       };
 
     static public readonly NullSafeStringDictionary ConfigureProviders
@@ -271,6 +343,27 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "Configurer les fournisseurs" }
       };
 
+    static public readonly NullSafeStringDictionary AskToEmptyHistory
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Empty history?" },
+        { Languages.FR, "Vider l'historique ?" }
+      };
+
+    static public readonly NullSafeStringDictionary AskToEmptyBookmarks
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Empty bookmarks?" },
+        { Languages.FR, "Vider les signets?" }
+      };
+
+    static public readonly NullSafeStringDictionary AskToDeleteBookmark
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Remove the bookmark?" },
+        { Languages.FR, "Effacer le signet ?" }
+      };
+
     static public readonly NullSafeStringDictionary AskToReplaceBookmark
       = new NullSafeStringDictionary
       {
@@ -278,30 +371,25 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "Remplacer le signet ?" }
       };
 
-    static public readonly NullSafeStringDictionary AskToDeleteBookmark
-      = new NullSafeStringDictionary
+    static public readonly NullSafeStringDictionary GitHubIssueComment
+      = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Delete bookmark?" },
-        { Languages.FR, "Supprimer le signet ?" }
+        { Languages.EN, "> Describe here what you did, what you expected and what happened." },
+        { Languages.FR, "> Décrivez ici ce que vous avez fait, ce que vous attendiez et ce qui c'est passé." }
       };
 
-    static public readonly NullSafeDictionary<bool, NullSafeStringDictionary> HideRestore
-      = new NullSafeDictionary<bool, NullSafeStringDictionary>()
+    static public readonly NullSafeStringDictionary NullSlot
+      = new NullSafeStringDictionary()
       {
-        {
-          true, new NullSafeStringDictionary
-          {
-            { Languages.EN, "Hide" },
-            { Languages.FR, "Cacher" }
-          }
-        },
-        {
-          false, new NullSafeStringDictionary
-          {
-            { Languages.EN, "Restore" },
-            { Languages.FR, "Restaurer" }
-          }
-        }
+        { Languages.EN, "(null)" },
+        { Languages.FR, "(nulll)" }
+      };
+
+    static public readonly NullSafeStringDictionary EmptySlot
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "(not defined)" },
+        { Languages.FR, "(non définit)" }
       };
 
   }

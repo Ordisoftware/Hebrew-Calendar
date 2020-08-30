@@ -41,9 +41,9 @@ namespace Ordisoftware.HebrewCommon
     static public bool Run(bool checkAtStartup, ref DateTime lastdone, bool auto)
     {
       bool formEnabled = false;
-      if ( auto && !checkAtStartup ) return false;
       if ( Mutex ) return false;
-      if ( !auto || lastdone.AddDays(DefaultCheckDaysInterval) < DateTime.Now )
+      if ( auto && !checkAtStartup ) return false;
+      if ( auto && lastdone.AddDays(DefaultCheckDaysInterval) >= DateTime.Now ) return false;
       try
       {
         Mutex = true;
@@ -56,9 +56,11 @@ namespace Ordisoftware.HebrewCommon
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
-          string[] content = client.DownloadString(Globals.CheckUpdateURL).Split(Environment.NewLine.ToCharArray(),
+          string[] content = client.DownloadString(Globals.CheckUpdateURL).Split(Globals.NL.ToCharArray(),
                                                    StringSplitOptions.RemoveEmptyEntries);
           LoadingForm.Instance.DoProgress();
+          if ( content.Length == 0 )
+            throw new Exception("Incorrect file update file: no new version number found.");
           string[] partsVersion = content[0].Split('.');
           string filename = string.Format(Globals.SetupFileURL, content[0]);
           var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));

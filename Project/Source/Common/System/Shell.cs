@@ -66,8 +66,7 @@ namespace Ordisoftware.HebrewCommon
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowError(ex.Message + Environment.NewLine + Environment.NewLine +
-                                 process.StartInfo.FileName);
+        DisplayManager.ShowError(Localizer.RunShellError.GetLang(filename, ex.Message));
         return null;
       }
     }
@@ -81,9 +80,7 @@ namespace Ordisoftware.HebrewCommon
     /// </returns>
     static public string MakeMailLink(string link)
     {
-      if ( !link.StartsWith("mailto:") )
-        link = "mailto:" + link;
-      return link;
+      return !link.StartsWith("mailto:") ? "mailto:" + link : link;
     }
 
     /// <summary>
@@ -104,9 +101,7 @@ namespace Ordisoftware.HebrewCommon
     /// </returns>
     static public string MakeWebLink(string link)
     {
-      if ( !link.StartsWith("http://") && !link.StartsWith("https://") )
-        link = "http://" + link;
-      return link;
+      return !link.StartsWith("http://") && !link.StartsWith("https://") ? link = "http://" + link : link;
     }
 
     /// <summary>

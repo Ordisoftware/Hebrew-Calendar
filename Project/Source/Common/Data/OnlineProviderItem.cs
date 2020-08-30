@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -40,9 +40,7 @@ namespace Ordisoftware.HebrewCommon
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowError("Error loading:" + Environment.NewLine +
-                                   filename + Environment.NewLine + Environment.NewLine +
-                                   ex.Message);
+          DisplayManager.ShowError(Localizer.LoadFileError.GetLang(filename, ex.Message));
           return null;
         }
       }

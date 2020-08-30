@@ -151,7 +151,7 @@ namespace Ordisoftware.HebrewCalendar
                 item.EventColor = GetDayColor(item.Date.Day, item.Date.Month, item.Date.Year);
               CalendarMonth.AddEvent(item);
             }
-            strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Environment.NewLine
+            strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Globals.NL
                        + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
             Color colorMoon = Color.Black;
             string strMonthDay = Program.Settings.MoonDayTextFormat.ToUpper()

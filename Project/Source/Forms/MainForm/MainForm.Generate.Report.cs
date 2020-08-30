@@ -66,8 +66,8 @@ namespace Ordisoftware.HebrewCalendar
         }
         headerSep = headerSep.Remove(headerSep.Length - 1) + SeparatorV;
         var content = new StringBuilder();
-        content.Append(headerSep + Environment.NewLine);
-        content.Append(headerTxt + Environment.NewLine);
+        content.Append(headerSep + Globals.NL);
+        content.Append(headerTxt + Globals.NL);
         if ( DataSet.LunisolarDays.Count <= 0 ) return "";
         var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
         LoadingForm.Instance.Initialize(Translations.ProgressGenerateReport.GetLang(),
@@ -80,7 +80,7 @@ namespace Ordisoftware.HebrewCalendar
             LoadingForm.Instance.DoProgress();
             if ( day.LunarMonth == 0 ) continue;
             if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-            if ( day.IsNewMoon == 1 ) content.Append(headerSep + Environment.NewLine);
+            if ( day.IsNewMoon == 1 ) content.Append(headerSep + Globals.NL);
             string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
             string strDay = ( (MoonRise)day.MoonriseType == MoonRise.NextDay
                           ? "  "
@@ -120,9 +120,9 @@ namespace Ordisoftware.HebrewCalendar
             int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
             int length = lengthAvailable - 2 - strDesc.Length;
             if ( length < 0 )
-              throw new Exception($"Field if too short.{Environment.NewLine}" +
-                                  $"    Available chars: {lengthAvailable}{Environment.NewLine}" +
-                                  $"    Missing chars: {length}");
+              throw new Exception("Field if too short." + Globals.NL +
+                                  "    Available chars: " + lengthAvailable + Globals.NL +
+                                  "    Missing chars: " + length);
             strDesc += new string(' ', length) + ColumnSepRight;
             content.Append(ColumnSepLeft);
             content.Append(textDate);
@@ -136,13 +136,13 @@ namespace Ordisoftware.HebrewCalendar
             content.Append(strMoon);
             content.Append(ColumnSepInner);
             content.Append(strDesc);
-            content.Append(Environment.NewLine);
+            content.Append(Globals.NL);
           }
           catch ( Exception ex )
           {
             GenerateErrors.Add($"{day.Date}: [{nameof(GenerateReport)}] { ex.Message}");
           }
-        content.Append(headerSep + Environment.NewLine);
+        content.Append(headerSep + Globals.NL);
         var row = DataSet.Report.NewReportRow();
         row.Content = content.ToString();
         DataSet.Report.AddReportRow(row);

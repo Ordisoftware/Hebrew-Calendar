@@ -220,7 +220,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.Save();
       if ( form.EditTimeZone.SelectedItem != null )
         Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-      EditTimeZone.Text = Program.GPSToString();
+      EditTimeZone.Text = Program.ToStringGPS();
       MainForm.Instance.InitializeCurrentTimeZone();
     }
 

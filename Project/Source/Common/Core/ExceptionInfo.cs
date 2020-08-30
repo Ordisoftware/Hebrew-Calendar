@@ -227,7 +227,7 @@ namespace Ordisoftware.HebrewCommon
           part2 += "." + method.Name;
           if ( line != 0 )
           {
-            part2 = part3 + " line " + line + ": " + Globals.NL + part2 + Globals.NL;
+            part2 = $"{part3} line {line}: {Globals.NL}{part2}{Globals.NL}";
             if ( part1 != "" ) part2 = Globals.NL + part2;
           }
           StackList.Add(part2);

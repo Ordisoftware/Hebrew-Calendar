@@ -83,7 +83,7 @@ namespace Ordisoftware.HebrewCommon
             string version = Environment.OSVersion.Version.ToString();
             string type = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
             string clr = Environment.Version.ToString();
-            _OperatingSystem = $"{name} {type} {version} ({release}){Environment.NewLine}CLR {clr}";
+            _OperatingSystem = $"{name} {type} {version} ({release}){Globals.NL}CLR {clr}";
           }
           catch
           {

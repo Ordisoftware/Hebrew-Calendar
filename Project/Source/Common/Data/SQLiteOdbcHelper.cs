@@ -34,9 +34,9 @@ namespace Ordisoftware.HebrewCommon
   }
 
   /// <summary>
-  /// Provide SQLite helper.
+  /// Provide OdBc SQLite helper.
   /// </summary>
-  static public class SQLiteOdbcHelper
+  static public class OdbcSQLiteHelper
   {
 
     static public int DefaultOptimizeDaysInterval = 7;
@@ -88,7 +88,7 @@ namespace Ordisoftware.HebrewCommon
           }
         if ( errors.Count > 0 )
         {
-          string msg = Localizer.DatabaseIntegrityError.GetLang(string.Join(Environment.NewLine, errors));
+          string msg = Localizer.DatabaseIntegrityError.GetLang(string.Join(Globals.NL, errors));
           throw new SQLiteException(msg);
         }
       }
@@ -157,7 +157,7 @@ namespace Ordisoftware.HebrewCommon
               }
               catch ( Exception ex )
               {
-                throw new SQLiteException($"Error on create table:{Globals.NL2}{UnformatSQL(sql)}", ex);
+                throw new SQLiteException(Localizer.CreateDBTableError.GetLang(UnformatSQL(sql)), ex);
               }
         }
       }
@@ -202,7 +202,7 @@ namespace Ordisoftware.HebrewCommon
               }
               catch ( Exception ex )
               {
-                throw new SQLiteException($"Error on create column:{Globals.NL2}{UnformatSQL(sql)}", ex);
+                throw new SQLiteException(Localizer.CreateDBColumnError.GetLang(UnformatSQL(sql)), ex);
               }
           }
         }

@@ -34,12 +34,14 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly NullSafeStringDictionary AskToResetPreferences
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Preferences will be reseted to their default values." + Globals.NL + Globals.NL +
-                        "GPS location and shabat day will be keeped." + Globals.NL + Globals.NL +
-                        Localizer.AskToContinue[Languages.EN] },
-        { Languages.FR, "Les préférences vont être réinitialisées à leurs valeurs par défaut." + Globals.NL + Globals.NL +
-                        "La position GPS et le jour du shabat seront conservés." + Globals.NL + Globals.NL +
-                        Localizer.AskToContinue[Languages.FR] },
+        { Languages.EN, Localizer.ResetPreferences[Languages.EN] + Globals.NL2 +
+                        "GPS location and shabat day will be keeped." + Globals.NL2 +
+                        Localizer.AskToContinue[Languages.EN]
+        },
+        { Languages.FR, Localizer.ResetPreferences[Languages.FR] + Globals.NL2 +
+                        "La position GPS et le jour du shabat seront conservés." + Globals.NL2 +
+                        Localizer.AskToContinue[Languages.FR]
+        },
       };
 
     static public readonly NullSafeStringDictionary CantExitWhileGenerating
@@ -52,36 +54,36 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly NullSafeStringDictionary ProgressLoadingData
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Loading data" },
-        { Languages.FR, "Chargement des données" }
+        { Languages.EN, "Loading data..." },
+        { Languages.FR, "Chargement des données..." }
       };
 
     static public readonly NullSafeStringDictionary ProgressCreateDays
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Populating days" },
-        { Languages.FR, "Garnissage des jours" }
+        { Languages.EN, "Populating days..." },
+        { Languages.FR, "Garnissage des jours..." }
       };
 
     static public readonly NullSafeStringDictionary ProgressAnalyzeDays
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Analyzing days" },
-        { Languages.FR, "Analyse des jours" }
+        { Languages.EN, "Analyzing days..." },
+        { Languages.FR, "Analyse des jours..." }
       };
 
     static public readonly NullSafeStringDictionary ProgressGenerateReport
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Generating report" },
-        { Languages.FR, "Génération du rapport" }
+        { Languages.EN, "Generating report..." },
+        { Languages.FR, "Génération du rapport..." }
       };
 
     static public readonly NullSafeStringDictionary ProgressFillMonths
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Filling months" },
-        { Languages.FR, "Remplissage des mois" }
+        { Languages.EN, "Filling months..." },
+        { Languages.FR, "Remplissage des mois..." }
       };
 
     static public readonly NullSafeStringDictionary AskToUseMoonOmer
@@ -138,12 +140,14 @@ namespace Ordisoftware.HebrewCalendar
       {
         { Languages.EN, "Fatal error while generating data." + Globals.NL +
                         "The application must exit." + Globals.NL +
-                        "Contact support, please." + Globals.NL + Globals.NL +
-                        "{0}" },
+                        "Contact support, please." + Globals.NL2 +
+                        "{0}"
+        },
         { Languages.FR, "Erreur fatale lors de la génération des données." + Globals.NL +
                         "L'application doit fermer." + Globals.NL +
-                        "Veuillez contacter le support." + Globals.NL + Globals.NL +
-                        "{0}" }
+                        "Veuillez contacter le support." + Globals.NL2 +
+                        "{0}"
+        }
       };
 
   }
