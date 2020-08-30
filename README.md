@@ -147,6 +147,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 ## Roadmap
 
 - Add moon months description form and menu in tools.
+- Add reminder for solar and lunar anniversary of birth.
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Improve and reorganize preferences form with a left menu panel.
