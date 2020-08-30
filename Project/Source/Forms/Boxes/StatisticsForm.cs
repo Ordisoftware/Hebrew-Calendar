@@ -36,6 +36,8 @@ namespace Ordisoftware.HebrewCalendar
       LoadingForm.Instance.Progressing += FormLoadingProgressing;
       if ( !prepareonly )
       {
+        if ( Instance.WindowState == FormWindowState.Minimized )
+          Instance.WindowState = FormWindowState.Normal;
         Instance.Show();
         Instance.BringToFront();
         Instance.Timer_Tick(null, null);

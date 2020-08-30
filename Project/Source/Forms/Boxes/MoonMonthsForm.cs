@@ -39,7 +39,10 @@ namespace Ordisoftware.HebrewCalendar
     static public void Run()
     {
       Instance.MoonMonthsForm_Load(null, null);
+      if ( Instance.WindowState == FormWindowState.Minimized )
+        Instance.WindowState = FormWindowState.Normal;
       Instance.Show();
+      Instance.BringToFront();
     }
 
     private MoonMonthsForm()
