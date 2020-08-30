@@ -45,8 +45,8 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        return _MainForm != null ? _MainForm 
-                                 : Application.OpenForms.Count > 0 ? Application.OpenForms[0] : Form.ActiveForm;
+        return _MainForm == null ? Application.OpenForms.Count > 0 ? Application.OpenForms[0] : Form.ActiveForm
+                                 : _MainForm;
       }
       set
       {
@@ -114,43 +114,43 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the author home URL.
     /// </summary>
-    static public readonly string AuthorHomeURL
+    static public string AuthorHomeURL
       = AssemblyTrademark;
 
     /// <summary>
     /// Indicate the contact URL.
     /// </summary>
-    static public readonly string ContactURL
+    static public string ContactURL
       = AssemblyTrademark + "/contact";
 
     /// <summary>
     /// Indicate the check update URL.
     /// </summary>
-    static public readonly string CheckUpdateURL
+    static public string CheckUpdateURL
       = $"http://{AssemblyTrademark}/files/{ApplicationCode}.update";
 
     /// <summary>
     /// Indicate the setup file name.
     /// </summary>
-    static public readonly string SetupFilename
+    static public string SetupFilename
       = $"{AssemblyCompany}{ApplicationCode}Setup-{{0}}.exe";
 
     /// <summary>
     /// Indicate the new version setup file.
     /// </summary>
-    static public readonly string SetupFileURL
+    static public string SetupFileURL
       = $"http://{AssemblyTrademark}/files/{SetupFilename}";
 
     /// <summary>
     /// Indicate the GitHub repository.
     /// </summary>
-    static public readonly string GitHubRepositoryURL
+    static public string GitHubRepositoryURL
       = $"https://github.com/{AssemblyCompany}/{AssemblyTitle.Replace(" ", "-")}";
 
     /// <summary>
     /// Indicate the create GitHub issue url.
     /// </summary>
-    static public readonly string GitHubCreateIssueURL
+    static public string GitHubCreateIssueURL
       = GitHubRepositoryURL + "/issues/new?assignees=" + AssemblyCompany;
 
     /// <summary>
@@ -179,11 +179,26 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Indicate generated executable bin directory.
+    /// </summary>
+    static public string BinDirectory = "\\Bin\\";
+
+    /// <summary>
+    /// Indicate generated executable debug directory.
+    /// </summary>
+    static public string DebugDirectory = BinDirectory + "Debug\\";
+
+    /// <summary>
+    /// Indicate generated executable release directory.
+    /// </summary>
+    static public string ReleaseDirectory = BinDirectory + "Release\\";
+
+    /// <summary>
     /// Indicate if the running app is from dev folder else user installed.
     /// </summary>
     static public bool IsDev 
-      => Application.ExecutablePath.Contains("\\Bin\\Debug\\") 
-      || Application.ExecutablePath.Contains("\\Bin\\Release\\");
+      => Application.ExecutablePath.Contains(DebugDirectory) 
+      || Application.ExecutablePath.Contains(ReleaseDirectory);
 
     /// <summary>
     /// Indicate if the code is executed from the IDE else from a running app.
@@ -212,62 +227,62 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the root folder path of the application.
     /// </summary>
-    static public readonly string RootFolderPath
-      = Directory.GetParent
-        (
-          Path.GetDirectoryName(Application.ExecutablePath
-                                .Replace("\\Bin\\Debug\\", "\\Bin\\")
-                                .Replace("\\Bin\\Release\\", "\\Bin\\"))
-        ).FullName
-      + Path.DirectorySeparatorChar;
+    static public string RootFolderPath
+      => Directory.GetParent
+         (
+           Path.GetDirectoryName(Application.ExecutablePath
+                                 .Replace(DebugDirectory, BinDirectory)
+                                 .Replace(ReleaseDirectory, BinDirectory))
+         ).FullName
+       + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the filename of the application's icon.
     /// </summary>
-    static public readonly string ApplicationIconFilename
-      = RootFolderPath + "Application.ico";
+    static public string ApplicationIconFilename
+      => RootFolderPath + "Application.ico";
 
     /// <summary>
     /// Indicate the filename of the help.
     /// </summary>
-    static public readonly string HelpFolderPath
-      = RootFolderPath + "Help" + Path.DirectorySeparatorChar;
+    static public string HelpFolderPath
+      => RootFolderPath + "Help" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application documents folder.
     /// </summary>
-    static public readonly string DocumentsFolderPath
-      = RootFolderPath + "Documents" + Path.DirectorySeparatorChar;
+    static public string DocumentsFolderPath
+      => RootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web links folder.
     /// </summary>
-    static public readonly string WebLinksFolderPath
-      = DocumentsFolderPath + "WebLinks" + Path.DirectorySeparatorChar;
+    static public string WebLinksFolderPath
+      => DocumentsFolderPath + "WebLinks" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web providers folder.
     /// </summary>
-    static public readonly string WebProvidersFolderPath
-      = DocumentsFolderPath + "WebProviders" + Path.DirectorySeparatorChar;
+    static public string WebProvidersFolderPath
+      => DocumentsFolderPath + "WebProviders" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web links folder.
     /// </summary>
-    static public readonly string GuidesFolderPath
-      = DocumentsFolderPath + "Guides" + Path.DirectorySeparatorChar;
+    static public string GuidesFolderPath
+      => DocumentsFolderPath + "Guides" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate filename of the grammar guide.
     /// </summary>
-    static public readonly string GrammarGuideFilename  
-      = GuidesFolderPath + "grammar-{0}.htm";
+    static public string GrammarGuideFilename  
+      => GuidesFolderPath + "grammar-{0}.htm";
 
     /// <summary>
     /// Indicate filename of the method notice.
     /// </summary>
-    static public readonly string MethodNoticeFilename 
-      = GuidesFolderPath + "method-{0}.htm";
+    static public string MethodNoticeFilename 
+      => GuidesFolderPath + "method-{0}.htm";
 
     /// <summary>
     /// Indicate the filename of the help.
@@ -363,13 +378,13 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the filename of the online search word providers.
     /// </summary>
     static public string OnlineWordProvidersFileName
-      = WebProvidersFolderPath + "OnlineWordProviders.txt";
+      => WebProvidersFolderPath + "OnlineWordProviders.txt";
 
     /// <summary>
     /// Indicate the filename of the online search word providers.
     /// </summary>
     static public string OnlineBibleProvidersFileName
-      = WebProvidersFolderPath + "OnlineBibleProviders.txt";
+      => WebProvidersFolderPath + "OnlineBibleProviders.txt";
 
     /// <summary>
     /// Indicate the online search a word providers.

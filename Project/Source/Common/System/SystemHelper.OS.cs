@@ -27,23 +27,7 @@ namespace Ordisoftware.HebrewCommon
   {
 
     /// <summary>
-    /// Get file size formatted.
-    /// </summary>
-    static public long GetFileSize(string filename)
-    {
-      try
-      {
-        if ( File.Exists(filename) )
-          return new FileInfo(filename).Length;
-      }
-      catch
-      {
-      }
-      return -1;
-    }
-
-    /// <summary>
-    /// Indicate the OS name formatted.
+    /// Indicate the processor name.
     /// </summary>
     static public string ProcessorName
     {
@@ -69,9 +53,9 @@ namespace Ordisoftware.HebrewCommon
     static private string _CPUName = "";
 
     /// <summary>
-    /// Indicate the OS name formatted.
+    /// Indicate the operating system name.
     /// </summary>
-    static public string OperatingSystem
+    static public string OperatingSystemName
     {
       get
       {

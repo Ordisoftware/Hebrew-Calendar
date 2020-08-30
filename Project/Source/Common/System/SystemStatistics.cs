@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewCommon
       => SystemHelper.ProcessorName;
 
     public string OperatingSystem
-      => SystemHelper.OperatingSystem;
+      => SystemHelper.OperatingSystemName;
 
     public string ProcessPriority
       => Globals.RealProcessPriority.ToString();

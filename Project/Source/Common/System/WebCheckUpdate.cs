@@ -50,18 +50,19 @@ namespace Ordisoftware.HebrewCommon
         formEnabled = Globals.MainForm.Enabled;
         Globals.MainForm.Enabled = false;
         LoadingForm.Instance.Initialize(Localizer.WebCheckUpdate.GetLang(), 3, 0, false);
-        foreach ( string s in Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFilename, "*")) )
+        var list = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFilename, "*"));
+        foreach ( string s in list )
           try { File.Delete(s); }
           catch { }
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
-          string[] content = client.DownloadString(Globals.CheckUpdateURL).Split(Globals.NL.ToCharArray(),
-                                                   StringSplitOptions.RemoveEmptyEntries);
+          string[] content = client.DownloadString(Globals.CheckUpdateURL)
+                                   .Split(Globals.NL.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
           LoadingForm.Instance.DoProgress();
-          if ( content.Length == 0 )
-            throw new Exception("Incorrect file update file: no new version number found.");
+          if ( content.Length == 0 ) throw new Exception(Localizer.CheckUpdateFileError.GetLang());
           string[] partsVersion = content[0].Split('.');
+          if ( partsVersion.Length != 2 ) throw new Exception(Localizer.CheckUpdateFileError.GetLang());
           string filename = string.Format(Globals.SetupFileURL, content[0]);
           var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
           lastdone = DateTime.Now;

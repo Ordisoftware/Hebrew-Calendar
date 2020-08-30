@@ -26,13 +26,15 @@ namespace Ordisoftware.HebrewCommon
   static public partial class Localizer
   {
 
+    private const string ERR = "-";
+
     /// <summary>
     /// Get the string translation.
     /// </summary>
     /// <param name="values">The dictionary containing lang>translation.</param>
     static public string GetLang(this NullSafeStringDictionary values)
     {
-      return values != null ? values[Languages.Current] : "";
+      return values?[Languages.Current] ?? ERR;
     }
 
     /// <summary>
@@ -42,7 +44,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="parameters">Parameters for the translated string.</param>
     static public string GetLang(this NullSafeStringDictionary values, params object[] parameters)
     {
-      return values != null ? string.Format(values.GetLang(), parameters) : "";
+      return string.Format(values?.GetLang(), parameters) ?? ERR;
     }
 
     /// <summary>
@@ -53,7 +55,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="value">The value to translate.</param>
     static public string GetLang<T>(this NullSafeDictionary<T, NullSafeStringDictionary> values, T value)
     {
-      return values != null ? values[value][Languages.Current] : "";
+      return values?[value]?[Languages.Current] ?? ERR;
     }
 
     /// <summary>
@@ -61,9 +63,9 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing lang>list.</param>
-    static public List<T> GetLang<T>(this NullSafeDictionary<string, NullSafeList<T>> values) where T : new()
+    static public NullSafeList<T> GetLang<T>(this NullSafeDictionary<string, NullSafeList<T>> values) where T : new()
     {
-      return values != null && values.ContainsKey(Languages.Current) ? values[Languages.Current] : null;
+      return values?[Languages.Current] ?? new NullSafeList<T>();
     }
 
     /// <summary>
@@ -72,7 +74,9 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="values">The dictionary containing lang>translations.</param>
     static public string[] GetLang(this Dictionary<string, string[]> values)
     {
-      return values != null && values.ContainsKey(Languages.Current) ? values[Languages.Current] : new string[0];
+      return values != null && values.ContainsKey(Languages.Current) 
+           ? values[Languages.Current] 
+           : new string[0];
     }
 
     /// <summary>
@@ -83,9 +87,9 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="value">The value to translate.</param>
     static public string GetLang<T>(this NullSafeDictionary<string, Dictionary<T, string>> values, T value)
     {
-      return values != null && values[Languages.Current].ContainsKey(value)
-             ? values[Languages.Current][value]
-             : "";
+      return values != null && values[Languages.Current] != null && values[Languages.Current].ContainsKey(value)
+           ? values[Languages.Current][value]
+           : ERR;
     }
 
     /// <summary>
@@ -93,7 +97,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     public static string RemoveDiacritics(this string str)
     {
-      if ( string.IsNullOrEmpty(str) ) return "";
+      if ( string.IsNullOrEmpty(str) ) return ERR;
       var normalized = str.Normalize(NormalizationForm.FormD);
       var builder = new StringBuilder();
       foreach ( var c in normalized )

@@ -77,6 +77,13 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "Pas encore disponible." }
       };
 
+    static public readonly NullSafeStringDictionary CheckUpdateFileError
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Error in check update file: no version number found or bad format." },
+        { Languages.FR, "Erreur dans le fichier de mise à jour : pas de numéro de version trouvé ou format incorrect." }
+      };
+
     static public readonly NullSafeStringDictionary WebCheckUpdate
       = new NullSafeStringDictionary()
       {

@@ -119,6 +119,22 @@ namespace Ordisoftware.HebrewCommon
         }
     }
 
+    /// <summary>
+    /// Get a file size.
+    /// </summary>
+    static public long GetFileSize(string filename)
+    {
+      try
+      {
+        if ( File.Exists(filename) )
+          return new FileInfo(filename).Length;
+      }
+      catch
+      {
+      }
+      return -1;
+    }
+
   }
 
 }
