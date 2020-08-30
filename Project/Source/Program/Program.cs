@@ -57,11 +57,6 @@ namespace Ordisoftware.HebrewCalendar
       Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;
       UpdateLocalization();
-
-      var list = new NullSafeList<int>();
-      list[1] = 10;
-      list[-1] = 0;
-
       Application.Run(MainForm.Instance);
     }
 
