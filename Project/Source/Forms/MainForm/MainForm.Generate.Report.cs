@@ -143,9 +143,10 @@ namespace Ordisoftware.HebrewCalendar
             GenerateErrors.Add($"{day.Date}: [{nameof(GenerateReport)}] { ex.Message}");
           }
         content.Append(headerSep + Globals.NL);
-        var row = DataSet.Report.NewReportRow();
-        row.Content = content.ToString();
-        DataSet.Report.AddReportRow(row);
+        // TODO save to file instead
+        //var row = DataSet,.NewReportRow();
+        //row.Content = content.ToString();
+        //DataSet.Report.AddReportRow(row);
         return content.ToString();
       }
       finally

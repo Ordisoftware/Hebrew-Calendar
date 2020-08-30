@@ -176,7 +176,6 @@
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
-      this.ReportTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.ReportTableAdapter();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1338,12 +1337,7 @@
       // 
       this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
-      this.TableAdapterManager.ReportTableAdapter = this.ReportTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-      // 
-      // ReportTableAdapter
-      // 
-      this.ReportTableAdapter.ClearBeforeFill = true;
       // 
       // MainForm
       // 
@@ -1447,7 +1441,6 @@
     private System.Windows.Forms.ToolStripButton ActionExportCSV;
     private System.Windows.Forms.ToolStripSeparator Sep2;
     private System.Windows.Forms.SaveFileDialog SaveCSVDialog;
-    private Data.DataSetTableAdapters.ReportTableAdapter ReportTableAdapter;
     private System.Windows.Forms.ToolStripButton ActionNavigate;
     private System.Windows.Forms.ToolStripButton ActionViewCelebrations;
     private System.Windows.Forms.NotifyIcon TrayIcon;

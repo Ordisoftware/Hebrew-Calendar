@@ -29,10 +29,11 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !DataSet.IsInitialized ) return;
       LunisolarDaysTableAdapter.DeleteAllQuery();
-      ReportTableAdapter.DeleteAllQuery();
+      // TODO delete file instead
+      //ReportTableAdapter.DeleteAllQuery();
       TableAdapterManager.UpdateAll(DataSet);
       LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-      ReportTableAdapter.Fill(DataSet.Report);
+      //ReportTableAdapter.Fill(DataSet.Report);
     }
 
     /// <summary>
@@ -66,11 +67,13 @@ namespace Ordisoftware.HebrewCalendar
                                   PRIMARY KEY('Date')
                                 )");
 
-        connection.CheckTable(@"Report",
-                              @"CREATE TABLE Report 
-                                ( 
-                                  Content TEXT DEFAULT ''
-                                )");
+        connection.DropTableIfExists("Report");
+
+        //connection.CheckTable(@"Report",
+        //                      @"CREATE TABLE Report 
+        //                        ( 
+        //                          Content TEXT DEFAULT ''
+        //                        )");
       }
 
     }

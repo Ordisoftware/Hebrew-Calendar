@@ -16,7 +16,6 @@ using System;
 using System.Data;
 using System.Data.Odbc;
 using System.Diagnostics;
-using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
 
@@ -49,7 +48,7 @@ namespace Ordisoftware.HebrewCalendar
         var Chrono = new Stopwatch();
         Chrono.Start();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-        ReportTableAdapter.Fill(DataSet.Report);
+        //ReportTableAdapter.Fill(DataSet.Report);
         Chrono.Stop();
         Program.Settings.BenchmarkLoadData = Chrono.ElapsedMilliseconds;
         Program.Settings.Save();
@@ -60,8 +59,9 @@ namespace Ordisoftware.HebrewCalendar
           finally { IsGenerating = false; }
           try
           {
-            var row = DataSet.Report.FirstOrDefault();
-            CalendarText.Text = row == null ? "" : row.Content;
+            // TODO load file instead
+            //var row = DataSet.Report.FirstOrDefault();
+            //CalendarText.Text = row == null ? "" : row.Content;
             GoToDate(DateTime.Today);
           }
           catch
