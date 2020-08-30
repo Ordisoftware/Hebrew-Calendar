@@ -36,6 +36,10 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+    }
+
+    private void SelectSuspendDelayForm_Load(object sender, EventArgs e)
+    {
       SelectDelay.Items.AddRange(Translations.SuspendReminderDelays.GetLang().ToArray());
       SelectDelay.SelectedIndex = -1;
       foreach ( SuspendDelayItem item in SelectDelay.Items )
@@ -67,6 +71,7 @@ namespace Ordisoftware.HebrewCalendar
                                                 : ( (SuspendDelayItem)SelectDelay.SelectedItem ).Minutes;
       Program.Settings.Save();
     }
+
   }
 
 }

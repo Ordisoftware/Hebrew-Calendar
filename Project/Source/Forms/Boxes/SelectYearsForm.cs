@@ -24,6 +24,7 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     private bool Mutex;
+
     private int CurrentYear;
 
     public SelectYearsForm()
@@ -50,7 +51,7 @@ namespace Ordisoftware.HebrewCalendar
       int max = Program.Settings.GenerateIntervalMaximum;
       CurrentYear = DateTime.Today.AddYears(-1).Year;
       if ( CurrentYear < yearMin || CurrentYear + min - 1 > yearMax )
-        throw new Exception("Current year is not supported");
+        throw new ArgumentOutOfRangeException(Translations.NotSupportedYear.GetLang(CurrentYear));
       var year = MainForm.Instance.YearFirst == 0
                ? CurrentYear
                : MainForm.Instance.YearFirst;

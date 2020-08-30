@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
@@ -22,9 +22,9 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectDayForm : Form
   {
 
-    private Data.DataSet.LunisolarDaysRow CurrentDay;
+    private bool LiveGoTo;
 
-    public bool LiveGoTo { get; set; }
+    private Data.DataSet.LunisolarDaysRow CurrentDay;
 
     public SelectDayForm()
     {
@@ -34,6 +34,11 @@ namespace Ordisoftware.HebrewCalendar
       MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
       MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
       CurrentDay = MainForm.Instance.CurrentDay;
+    }
+
+    public SelectDayForm(bool livegoto) : this()
+    {
+      LiveGoTo = livegoto;
     }
 
     private void SelectDayForm_Shown(object sender, EventArgs e)

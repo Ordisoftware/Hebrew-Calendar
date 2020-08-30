@@ -128,6 +128,13 @@ namespace Ordisoftware.HebrewCalendar
         { Languages.FR, "Dernier jour" }
       };
 
+    static public readonly NullSafeStringDictionary NotSupportedYear
+      = new NullSafeStringDictionary
+      {
+        { Languages.EN, "Year is not supported: {0}" },
+        { Languages.FR, "L'année n'est pas supportée : {0}" }
+      };
+
     static public readonly NullSafeStringDictionary PredefinedYearsInterval
       = new NullSafeStringDictionary
       {

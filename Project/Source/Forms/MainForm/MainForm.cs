@@ -823,8 +823,7 @@ namespace Ordisoftware.HebrewCalendar
         date = DateTime.Today;
       else
       {
-        var form = new SelectDayForm();
-        form.LiveGoTo = true;
+        var form = new SelectDayForm(true);
         if ( form.ShowDialog() != DialogResult.OK ) return;
         date = form.MonthCalendar.SelectionStart;
       }
@@ -848,7 +847,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionSearchMonth_Click(object sender, EventArgs e)
     {
-      new SearchMonthForm().ShowDialog();
+      new SearchLunarMonthForm().ShowDialog();
     }
 
     /// <summary>

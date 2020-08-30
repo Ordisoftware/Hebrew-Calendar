@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2004-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -24,9 +24,9 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SearchEventForm : Form
   {
 
-    private Data.DataSet.LunisolarDaysRow CurrentDay;
-
     private bool Mutex;
+
+    private Data.DataSet.LunisolarDaysRow CurrentDay;
 
     public SearchEventForm()
     {

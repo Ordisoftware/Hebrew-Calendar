@@ -23,9 +23,9 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SearchGregorianMonthForm : Form
   {
 
-    private Data.DataSet.LunisolarDaysRow CurrentDay;
-
     private bool Mutex;
+
+    private Data.DataSet.LunisolarDaysRow CurrentDay;
 
     public SearchGregorianMonthForm()
     {
