@@ -67,11 +67,12 @@ namespace Ordisoftware.HebrewCommon
       if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
       try
       {
-        Clipboard.SetText(textbox.SelectedText);
+        textbox.Cut();
+        /*Clipboard.SetText(textbox.SelectedText);
         int selectionStart = textbox.SelectionStart;
         textbox.Text = textbox.Text.Remove(selectionStart, textbox.SelectionLength);
         textbox.SelectionStart = selectionStart;
-        if ( textbox.Multiline ) textbox.ScrollToCaret();
+        if ( textbox.Multiline ) textbox.ScrollToCaret();*/
       }
       finally
       {
@@ -87,10 +88,11 @@ namespace Ordisoftware.HebrewCommon
       if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
       try
       {
-        int selectionStart = textbox.SelectionStart;
-        textbox.Text = textbox.Text.Remove(selectionStart, textbox.SelectionLength);
+        SendKeys.Send("{DELETE}");
+        /*int selectionStart = textbox.SelectionStart;
+        textbox.SelectedText = textbox.Text.Remove(selectionStart, textbox.SelectionLength);
         textbox.SelectionStart = selectionStart;
-        if ( textbox.Multiline ) textbox.ScrollToCaret();
+        if ( textbox.Multiline ) textbox.ScrollToCaret();*/
       }
       finally
       {
@@ -106,9 +108,10 @@ namespace Ordisoftware.HebrewCommon
       if ( string.IsNullOrEmpty(Clipboard.GetText()) ) return;
       try
       {
-        textbox.SetTextMutex = true;
+        textbox.Paste();
+        /*textbox.SetTextMutex = true;
         textbox.SelectedText = Clipboard.GetText();
-        if ( textbox.Multiline ) textbox.ScrollToCaret();
+        if ( textbox.Multiline ) textbox.ScrollToCaret();*/
       }
       finally
       {
@@ -139,23 +142,22 @@ namespace Ordisoftware.HebrewCommon
       var textbox = GetTextBoxAndFocus(sender);
       if ( textbox == null || !textbox.Enabled ) return;
       if ( textbox.ReadOnly ) return;
-      if ( !textbox.CanUndo ) return;
-      textbox.Undo();
-      /*if ( textbox.UndoStack.Count == 0 ) return;
+      //if ( textbox.UndoStack.Count == 0 ) return;
       try
       {
-        textbox.SetTextMutex = true;
+        if ( textbox.CanUndo ) textbox.Undo();
+        /*textbox.SetTextMutex = true;
         textbox.Previous.Set(textbox.Text, textbox.SelectionStart, textbox.SelectionLength);
         textbox.RedoStack.Push(new UndoRedoItem().Set(textbox.Text, textbox.SelectionStart, textbox.SelectionLength));
         var item = textbox.UndoStack.Pop();
         textbox.Text = item.Text;
         textbox.SelectionStart = item.SelectionStart;
-        if ( textbox.Multiline ) textbox.ScrollToCaret();
+        if ( textbox.Multiline ) textbox.ScrollToCaret();*/
       }
       finally
       {
         textbox.SetTextMutex = false;
-      }*/
+      }
     }
 
     static private void ActionRedo_Click(object sender, EventArgs e)
