@@ -1,6 +1,7 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2020 Olivier Rogier.
+/// Originally developped for Ordisoftware Core Library.
+/// Copyright 2004-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -13,32 +14,22 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Windows.Forms;
+using System.Data.Common;
+using System.Runtime.Serialization;
 
 namespace Ordisoftware.HebrewCommon
 {
 
-  public partial class WebUpdateForm : Form
+  /// <summary>
+  /// Provide SQLite exception.
+  /// </summary>
+  [Serializable]
+  public class SQLiteException : DbException
   {
-
-    private WebUpdateForm()
-    {
-      InitializeComponent();
-      Icon = Globals.MainForm.Icon;
-      Text = Text + Globals.AssemblyTitle;
-      this.CenterToMainFormElseScreen();
-    }
-
-    public WebUpdateForm(Version version) : this()
-    {
-      LabelNewVersion.Text = Localizer.NewVersionAvailable.GetLang(version);
-      ActionReleaseNotes.Tag = string.Format(Globals.ApplicationReleaseNotesURL, version);
-    }
-
-    private void ActionOpenWebPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      Shell.OpenWebLink((string)( (LinkLabel)sender ).Tag);
-    }
+    public SQLiteException() : base() { }
+    public SQLiteException(string message) : base(message) { }
+    public SQLiteException(string message, Exception innerException) : base(message, innerException) { }
+    public SQLiteException(SerializationInfo info, StreamingContext context) : base(info, context) { }
   }
 
 }

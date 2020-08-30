@@ -65,25 +65,31 @@ namespace Ordisoftware.HebrewCommon
     static public void SetLocation(this Form form, ControlLocation location)
     {
       if ( form == null ) return;
-      Rectangle area = SystemInformation.WorkingArea;
-      if ( location == ControlLocation.TopLeft )
-        form.Location = new Point(area.Left, area.Top);
-      else
-      if ( location == ControlLocation.TopRight )
-        form.Location = new Point(area.Left + area.Width - form.Width, area.Top);
-      else
-      if ( location == ControlLocation.BottomLeft )
-        form.Location = new Point(area.Left, area.Top + area.Height - form.Height);
-      else
-      if ( location == ControlLocation.BottomRight )
-        form.Location = new Point(area.Left + area.Width - form.Width, area.Top + area.Height - form.Height);
-      else
-      if ( location == ControlLocation.Center )
-        form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2,
-                                  area.Top + area.Height / 2 - form.Height / 2);
-      else
-      if ( location == ControlLocation.Fixed )
-        form.CenterToMainFormElseScreen();
+      var area = SystemInformation.WorkingArea;
+      switch ( location )
+      {
+        case ControlLocation.TopLeft:
+          form.Location = new Point(area.Left, area.Top);
+          break;
+        case ControlLocation.TopRight:
+          form.Location = new Point(area.Left + area.Width - form.Width, area.Top);
+          break;
+        case ControlLocation.BottomLeft:
+          form.Location = new Point(area.Left, area.Top + area.Height - form.Height);
+          break;
+        case ControlLocation.BottomRight:
+          form.Location = new Point(area.Left + area.Width - form.Width, area.Top + area.Height - form.Height);
+          break;
+        case ControlLocation.Center:
+          form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2,
+                                    area.Top + area.Height / 2 - form.Height / 2);
+          break;
+        case ControlLocation.Fixed:
+          form.CenterToMainFormElseScreen();
+          break;
+        default:
+          throw new NotImplementedException(location.ToString());
+      }
     }
 
     /// <summary>
@@ -93,12 +99,12 @@ namespace Ordisoftware.HebrewCommon
     static public void CenterToMainFormElseScreen(this Form form)
     {
       if ( form == null ) return;
-      Rectangle area = Globals.MainForm != null
-                    && Globals.MainForm != form
-                    && Globals.MainForm.Visible
-                    && Globals.MainForm.WindowState != FormWindowState.Minimized
-                     ? Globals.MainForm.Bounds
-                     : SystemInformation.WorkingArea;
+      var area = Globals.MainForm != null
+              && Globals.MainForm != form
+              && Globals.MainForm.Visible
+              && Globals.MainForm.WindowState != FormWindowState.Minimized
+                ? Globals.MainForm.Bounds
+                : SystemInformation.WorkingArea;
       form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2,
                                 area.Top + area.Height / 2 - form.Height / 2);
     }

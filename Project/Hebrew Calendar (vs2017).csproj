@@ -128,6 +128,7 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Common\Core\SQLiteException.cs" />
     <Compile Include="Source\Common\Core\Debugger.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringDictionary.cs" />
     <Compile Include="Source\Common\Data\NullSafeSortedDictionary.cs" />

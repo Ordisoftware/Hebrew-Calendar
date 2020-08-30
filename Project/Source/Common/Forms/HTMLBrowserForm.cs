@@ -74,6 +74,12 @@ namespace Ordisoftware.HebrewCommon
       Hide();
     }
 
+    private void ActionClose_Click(object sender, EventArgs e)
+    {
+      ActiveControl = WebBrowser;
+      Close();
+    }
+
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
       if ( keyData == Keys.Escape)
@@ -84,11 +90,6 @@ namespace Ordisoftware.HebrewCommon
       return base.ProcessCmdKey(ref msg, keyData);
     }
 
-    private void ActionClose_Click(object sender, EventArgs e)
-    {
-      ActiveControl = WebBrowser;
-      Close();
-    }
   }
 
 }

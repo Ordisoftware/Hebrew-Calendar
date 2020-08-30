@@ -15,23 +15,10 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Data.Odbc;
-using System.Runtime.Serialization;
 
 namespace Ordisoftware.HebrewCommon
 {
-
-  /// <summary>
-  /// Provide SQLite exception.
-  /// </summary>
-  public class SQLiteException : DbException
-  {
-    public SQLiteException() : base() { }
-    public SQLiteException(string message) : base(message) { }
-    public SQLiteException(string message, Exception innerException) : base(message, innerException) { }
-    public SQLiteException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-  }
 
   /// <summary>
   /// Provide OdBc SQLite helper.

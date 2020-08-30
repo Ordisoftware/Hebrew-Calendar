@@ -13,7 +13,6 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCommon
