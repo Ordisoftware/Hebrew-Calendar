@@ -35,8 +35,8 @@
       this.Input = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.ContextMenuLetter = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionLetterAddAtCaret = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionLetterAddAtBegin = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLetterAddAtEnd = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionLetterAddAtBegin = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuItemSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ActionLetterViewDetails = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuLetter.SuspendLayout();
@@ -44,7 +44,6 @@
       // 
       // PanelLetters
       // 
-      this.PanelLetters.BackColor = System.Drawing.SystemColors.Window;
       this.PanelLetters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.PanelLetters, "PanelLetters");
       this.PanelLetters.Name = "PanelLetters";
@@ -56,8 +55,7 @@
       // 
       // Input
       // 
-      this.Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.Input.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.Input.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Beginning;
       resources.ApplyResources(this.Input, "Input");
       this.Input.Name = "Input";
       this.Input.InsertingText += new Ordisoftware.HebrewCommon.InsertingTextEventHandler(this.Input_TextChanging);
@@ -82,17 +80,17 @@
       this.ActionLetterAddAtCaret.Name = "ActionLetterAddAtCaret";
       this.ActionLetterAddAtCaret.Click += new System.EventHandler(this.ActionLetterAddAtCaret_Click);
       // 
-      // ActionLetterAddAtBegin
-      // 
-      resources.ApplyResources(this.ActionLetterAddAtBegin, "ActionLetterAddAtBegin");
-      this.ActionLetterAddAtBegin.Name = "ActionLetterAddAtBegin";
-      this.ActionLetterAddAtBegin.Click += new System.EventHandler(this.ActionLetterAddAtBegin_Click);
-      // 
       // ActionLetterAddAtEnd
       // 
       resources.ApplyResources(this.ActionLetterAddAtEnd, "ActionLetterAddAtEnd");
       this.ActionLetterAddAtEnd.Name = "ActionLetterAddAtEnd";
       this.ActionLetterAddAtEnd.Click += new System.EventHandler(this.ActionLetterAddAtEnd_Click);
+      // 
+      // ActionLetterAddAtBegin
+      // 
+      resources.ApplyResources(this.ActionLetterAddAtBegin, "ActionLetterAddAtBegin");
+      this.ActionLetterAddAtBegin.Name = "ActionLetterAddAtBegin";
+      this.ActionLetterAddAtBegin.Click += new System.EventHandler(this.ActionLetterAddAtBegin_Click);
       // 
       // MenuItemSeparator
       // 
@@ -109,6 +107,7 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.BackColor = System.Drawing.Color.Transparent;
       this.Controls.Add(this.PanelLetters);
       this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.Input);

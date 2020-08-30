@@ -11,15 +11,20 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace Ordisoftware.HebrewCommon
 {
 
+  /// <summary>
+  /// Provide view letter details delegate.
+  /// </summary>
+  /// <param name="code"></param>
   public delegate void ViewLetterDetails(string code);
 
   /// <summary>
@@ -28,11 +33,32 @@ namespace Ordisoftware.HebrewCommon
   public partial class LettersControl : UserControl
   {
 
+    public const KnownColor DefaultInputBackColor = KnownColor.AliceBlue;
+    public const KnownColor DefaultPanelLettersBackColor = KnownColor.LightYellow;
+    public const float DefaultFontSizeLetters = 20.25F;
+    public const float DefaultFontSizeValues = 6.25F;
+    public const float DefaultFontSizeKeys = 8.25F;
+    public const float DefaultFontSizeInput = 24F;
+    public const int DefaultInputMaxLength = 20;
+
+    /// <summary>
+    /// Provide view letter details event.
+    /// </summary>
     public event ViewLetterDetails ViewLetterDetails;
+
+    /// <summary>
+    /// Input Text changed event.
+    /// </summary>
+    public event EventHandler InputTextChanged
+    {
+      add { Input.TextChanged += value; }
+      remove { Input.TextChanged -= value; }
+    }
 
     /// <summary>
     /// Indicate max length of the input text.
     /// </summary>
+    [DefaultValue(DefaultInputMaxLength)]
     public int MaxLengthInput
     {
       get { return Input.MaxLength; }
@@ -42,6 +68,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the background color of letters panel.
     /// </summary>
+    [DefaultValue(typeof(Color), "LightYellow")]
     public Color BackColorLetters
     {
       get { return PanelLetters.BackColor; }
@@ -51,6 +78,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the background color of input textbox.
     /// </summary>
+    [DefaultValue(typeof(Color), "AliceBlue")]
     public Color BackColorInput
     {
       get { return Input.BackColor; }
@@ -60,61 +88,66 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate hebrew letters font size
     /// </summary>
+    [DefaultValue(DefaultFontSizeLetters)]
     public float FontSizeLetters
     {
       get { return _FontSizeLetters; }
       set
       {
         _FontSizeLetters = value;
-        Prepare();
+        Redraw();
       }
     }
-    private float _FontSizeLetters = 20.25F;
+    private float _FontSizeLetters = DefaultFontSizeLetters;
 
     /// <summary>
     /// Indicate values font size.
     /// </summary>
+    [DefaultValue(DefaultFontSizeValues)]
     public float FontSizeValues
     {
       get { return _FontSizeValues; }
       set
       {
         _FontSizeValues = value;
-        Prepare();
+        Redraw();
       }
     }
-    private float _FontSizeValues = 6.25F;
+    private float _FontSizeValues = DefaultFontSizeValues;
 
     /// <summary>
     /// Indicate keys font size.
     /// </summary>
+    [DefaultValue(DefaultFontSizeKeys)]
     public float FontSizeKeys
     {
       get { return _FontSizeKeys; }
       set
       {
         _FontSizeKeys = value;
-        Prepare();
+        Redraw();
       }
     }
-    private float _FontSizeKeys = 8.25F;
+    private float _FontSizeKeys = DefaultFontSizeKeys;
 
     /// <summary>
     /// Indicate Input font size.
     /// </summary>
+    [DefaultValue(DefaultFontSizeInput)]
     public float FontSizeInput
     {
       get { return Input.Font.Size; }
       set
       {
         Input.Font = new Font(Input.Font.FontFamily, value, Input.Font.Style);
-        Prepare();
+        Redraw();
       }
     }
 
     /// <summary>
     /// Indicate if letters values must be shown.
     /// </summary>
+    [DefaultValue(true)]
     public bool ShowValues
     {
       get { return _ShowValues; }
@@ -122,7 +155,7 @@ namespace Ordisoftware.HebrewCommon
       {
         if ( _ShowValues == value ) return;
         _ShowValues = value;
-        Prepare();
+        Redraw();
       }
     }
     private bool _ShowValues = true;
@@ -130,6 +163,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate if keys codes must be shown.
     /// </summary>
+    [DefaultValue(true)]
     public bool ShowKeys
     {
       get { return _ShowKeys; }
@@ -137,7 +171,7 @@ namespace Ordisoftware.HebrewCommon
       {
         if ( _ShowKeys == value ) return;
         _ShowKeys = value;
-        Prepare();
+        Redraw();
       }
     }
     private bool _ShowKeys = true;
@@ -161,32 +195,34 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Input Text changed event.
-    /// </summary>
-    public event EventHandler InputTextChanged
-    {
-      add { Input.TextChanged += value; }
-      remove { Input.TextChanged -= value; }
-    }
-
-    /// <summary>
     /// Indicate if an input key is processed.
     /// </summary>
     private bool KeyProcessed;
 
     /// <summary>
-    /// Constructor
+    /// Constructor.
     /// </summary>
     public LettersControl()
     {
       InitializeComponent();
+      Input.MaxLength = DefaultInputMaxLength;
+      Input.Font = new Font(Input.Font.FontFamily, DefaultFontSizeInput, Input.Font.Style);
       Input.CaretAfterPaste = CaretPositionAfterPaste.Beginning;
-      Input.MaxLength = 20;
+      Input.BackColor = Color.FromKnownColor(DefaultInputBackColor);
+      PanelLetters.BackColor = Color.FromKnownColor(DefaultPanelLettersBackColor);
+      _ShowKeys = true;
+      _ShowValues = true;
     }
 
+
+    /// <summary>
+    /// Control load event.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void LettersControl_Load(object sender, EventArgs e)
     {
-      Prepare();
+      Redraw();
     }
 
     /// <summary>
@@ -199,7 +235,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// TextChanging event.
+    /// Input TextChanging event.
     /// </summary>
     private void Input_TextChanging(object sender, TextUpdating mode, ref string text)
     {
@@ -207,7 +243,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// KeyPress event.
+    /// Input KeyPress event.
     /// </summary>
     private void Input_KeyPress(object sender, KeyPressEventArgs e)
     {
@@ -218,7 +254,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// KeyUp event.
+    /// Input KeyUp event.
     /// </summary>
     private void Input_KeyUp(object sender, KeyEventArgs e)
     {
@@ -231,7 +267,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Letter icon click event.
+    /// Button letter icon click event.
     /// </summary>
     private void ButtonLetter_Click(object sender, EventArgs e)
     {

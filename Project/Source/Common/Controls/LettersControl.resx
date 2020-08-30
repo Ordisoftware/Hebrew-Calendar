@@ -201,12 +201,21 @@
   <metadata name="ContextMenuLetter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ContextMenuLetter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 98</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuLetter.Name" xml:space="preserve">
+    <value>ContextMenuLetter</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuLetter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="ActionLetterAddAtCaret.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAACASURBVDhPYxgFNABZWVnH09LS/icnJ/9PSkoCYxAbJAaS
-        gyrDDdLT0//fun3n/5OnL/4/fPQUjEFskBhIDqoMLzBOBtq6b/+B/5u2bgdjEBskBpKDKCEMjEHOXrtu
-        PRiD2CAxiBTxwBjkZBC2srKKgYqRDEC2gjAXmDcKaAEYGACOXU1+KQ04tAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vQAADr0BR/uQrQAAAIBJREFUOE9jGAU0AFlZWcfT0tL+Jycn/09KSgJjEBskBpKDKsMN0tPT/9+6fef/
+        k6cv/j989BSMQWyQGEgOqgwvME4G2rpv/4H/m7ZuB2MQGyQGkoMoIQyMQc5eu249GIPYIDGIFPHAGORk
+        ELaysoqBipEMQLaCMBeYNwpoARgYAI5dTX4pDTi0AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionLetterAddAtCaret.Size" type="System.Drawing.Size, System.Drawing">
@@ -217,12 +226,12 @@
   </data>
   <data name="ActionLetterAddAtEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADgSURBVDhPYxgF2MGmzVs2t7R1/odywaC+vu5/fX39BygX
-        P1i3YdP/+sYWuAFVVVX/Hz1+8r+urg7FUJxg9dr1/6tr6sGKKysr/j97/vz/wsVL/9fW1hJnwIrVa/+X
-        VdT8r6mu/v/h46f/q4AGbti0hXgDlq1Y9b+4pPx/TU3N/7fv3v7fuWfv/70HD4H5UCX4weKly//nFxSD
-        FBuDvPDg0eP/5y9eIt6ABUuW/s/OLYQpNgYF4tFjx4kPxAmTpxzKyMxBVmwMjEJQGHyG8gkCFSA2hjDh
-        AMQ3gDCHEWBgAAB24HuN8v1TVwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAOBJREFUOE9jGAXYwabNWza3tHX+h3LBoL6+7n99ff0HKBc/WLdh0//6xha4AVVV
+        Vf8fPX7yv66uDsVQnGD12vX/q2vqwYorKyv+P3v+/P/CxUv/19bWEmfAitVr/5dV1Pyvqa7+/+Hjp/+r
+        gAZu2LSFeAOWrVj1v7ik/H9NTc3/t+/e/t+5Z+//vQcPgflQJfjB4qXL/+cXFIMUG4O88ODR4//nL14i
+        3oAFS5b+z84thCk2BgXi0WPHiQ/ECZOnHMrIzEFWbAyMQlAYfIbyCQIVIDaGMOEAxDeAMIcRYGAAAHbg
+        e43y/VNXAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionLetterAddAtEnd.Size" type="System.Drawing.Size, System.Drawing">
@@ -233,12 +242,12 @@
   </data>
   <data name="ActionLetterAddAtBegin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADgSURBVDhPYxgF2EF9ff0HIP4P5YJBS1vn/02bt2yGcvGD
-        urq6//fvP/hfVVUFN6S+seX/ug2bUAzFCWpra/8vXLz0/6PHT/5XVlaANVXX1P9fvXY98QZs2LQFrOHt
-        u/f/a6qr/5dV1PxfsXotcQbU1NT833fw0P+de/f9f/X69X8Qv7ik/P+yFauIN+D8xUv/7967D/RCJUiT
-        cX5B8f/FS5cTZwAoEA8cOvS/GhKIxiCx7NzC/wuWLCXOgNLS0oPQaARrBoGMzJz/EyZPOQTlEgQqQAzX
-        DAUgPkh8eAEGBgARQXr+Bic9tQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAOBJREFUOE9jGAXYQX19/Qcg/g/lgkFLW+f/TZu3bIZy8YO6urr/9+8/+F9VVQU3
+        pL6x5f+6DZtQDMUJamtr/y9cvPT/o8dP/ldWVoA1VdfU/1+9dj3xBmzYtAWs4e279/9rqqv/l1XU/F+x
+        ei1xBtTU1Pzfd/DQ/5179/1/9fr1fxC/uKT8/7IVq4g34PzFS//v3rsP9EIlSJNxfkHx/8VLlxNnACgQ
+        Dxw69L8aEojGILHs3ML/C5YsJc6A0tLSg9BoBGsGgYzMnP8TJk85BOUSBCpADNcMBSA+SHx4AQYGABFB
+        ev4GJz21AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionLetterAddAtBegin.Size" type="System.Drawing.Size, System.Drawing">
@@ -252,19 +261,19 @@
   </data>
   <data name="ActionLetterViewDetails.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAJzSURBVDhPlZLfS5NRGMdfKJgjCIICR9Af0EW/vIjoopso
-        qv+lK7vRIVliUEiIaLXN6cylW+ZW7H3d5kxrm2v+LOfe953th2Nr9mtqK8tV9u05p/lqUBd+4ct5zuF5
-        Ps9zDkdgsjrcHZ0OFyz9g5qtjkH0Dbhaj9+UjuxvCpww3PDVbPoQ+WCz72Sl2BX3h6ehZN/h9ZuiZpX2
-        o+NTuGpzY3e9FzqjhKp6kSxBT/HeBgnVTb6iYKHO6aUVRGMphGdVzdFYEpnCCiwPHuF/YhAOUNJ5LH9Z
-        R6m8geJaGaX1DdqXoWQKuGN3AdELQOQ8GsQcMH4OCJ3lAL1RhGB1uiGNRTD24hUmY2nI6beYkbMITs3D
-        F5yAiSa45s3hurSI5qE0GsUMjE9SfwB0JcH68DG8z6J4PhnDdDwDdfE9Xqo5hGdk+EOTMNmdSP8AMt+B
-        W6KC1DqgrvF6eg8PhC4CsE4h6sg6J7IfMLeQR2RWQSA8BbPdgcIGUCDI7SEZeQJlvm0DmHqdKYfHi+BE
-        DHOJPJK5ZcSTSwjSRHa3CNOAhDb/Atq8Ctr9KloJ0uKJbwFIh1s674fM/S6Yex1ot/WhvacPFvoHw5Fp
-        3B1WUKLkT+QOv4LVX8DHn7xeAwi7Ll2+KNRJ/JBNx0xXBU0Ly0iCx8wmgn2l9TNBmDTAvlrbKV2dyA9N
-        fpkSZZjJ1hEFtlGVr5txZ0DGPd88z9UAB2q7TlfVefghvRfYhGxl6n6qVKKtuDIAWI0G0BPtX+oZkSvR
-        3zETq+GA6iu2M+xb7lT8K1e0x9AorrIDRtXRaMxsRHZPvm6LWQ7LNTQOlSr1XEfJNTuzcOw3vNTgoglY
-        GUsAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vQAADr0BR/uQrQAAAnNJREFUOE+Vkt9Lk1EYx18omCMIggJH0B/QRb+8iOiimyiq/6Uru9EhWWJQSIho
+        tc3pzKVb5lbsfd3mTGuba/4s5973ne2HY2v2a2ory1X27Tmn+WpQF37hy3nO4Xk+z3MOR2CyOtwdnQ4X
+        LP2Dmq2OQfQNuFqP35SO7G8KnDDc8NVs+hD5YLPvZKXYFfeHp6Fk3+H1m6Jmlfaj41O4anNjd70XOqOE
+        qnqRLEFP8d4GCdVNvqJgoc7ppRVEYymEZ1XN0VgSmcIKLA8e4X9iEA5Q0nksf1lHqbyB4loZpfUN2peh
+        ZAq4Y3cB0QtA5DwaxBwwfg4IneUAvVGEYHW6IY1FMPbiFSZjacjpt5iRswhOzcMXnICJJrjmzeG6tIjm
+        oTQaxQyMT1J/AHQlwfrwMbzPong+GcN0PAN18T1eqjmEZ2T4Q5Mw2Z1I/wAy34FbooLUOqCu8Xp6Dw+E
+        LgKwTiHqyDonsh8wt5BHZFZBIDwFs92BwgZQIMjtIRl5AmW+bQOYep0ph8eL4EQMc4k8krllxJNLCNJE
+        drcI04CENv8C2rwK2v0qWgnS4olvAUiHWzrvh8z9Lph7HWi39aG9pw8W+gfDkWncHVZQouRP5A6/gtVf
+        wMefvF4DCLsuXb4o1En8kE3HTFcFTQvLSILHzCaCfaX1M0GYNMC+WtspXZ3ID01+mRJlmMnWEQW2UZWv
+        m3FnQMY93zzP1QAHartOV9V5+CG9F9iEbGXqfqpUoq24MgBYjQbQE+1f6hmRK9HfMROr4YDqK7Yz7Fvu
+        VPwrV7TH0CiusgNG1dFozGxEdk++botZDss1NA6VKvVcR8k1O7Nw7De81OCiCVgZSwAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="ActionLetterViewDetails.Size" type="System.Drawing.Size, System.Drawing">
@@ -272,15 +281,6 @@
   </data>
   <data name="ActionLetterViewDetails.Text" xml:space="preserve">
     <value>View parameters</value>
-  </data>
-  <data name="ContextMenuLetter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 120</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuLetter.Name" xml:space="preserve">
-    <value>ContextMenuLetter</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuLetter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -297,16 +297,16 @@
   <data name="&gt;&gt;ActionLetterAddAtCaret.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionLetterAddAtBegin.Name" xml:space="preserve">
-    <value>ActionLetterAddAtBegin</value>
-  </data>
-  <data name="&gt;&gt;ActionLetterAddAtBegin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionLetterAddAtEnd.Name" xml:space="preserve">
     <value>ActionLetterAddAtEnd</value>
   </data>
   <data name="&gt;&gt;ActionLetterAddAtEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionLetterAddAtBegin.Name" xml:space="preserve">
+    <value>ActionLetterAddAtBegin</value>
+  </data>
+  <data name="&gt;&gt;ActionLetterAddAtBegin.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuItemSeparator.Name" xml:space="preserve">

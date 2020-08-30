@@ -188,7 +188,7 @@
     <Compile Include="Source\Common\Forms\HTMLBrowserForm.Designer.cs">
       <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Controls\LettersControl.Prepare.cs">
+    <Compile Include="Source\Common\Controls\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Source\Common\Controls\LettersControl.cs">
