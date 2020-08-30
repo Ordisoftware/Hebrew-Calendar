@@ -58,7 +58,7 @@ namespace Ordisoftware.HebrewCalendar
         case TrayIconClickOpen.NavigationForm:
           SelectOpenNavigationForm.Select();
           break;
-        case TrayIconClickOpen.NextCelebrationForm:
+        case TrayIconClickOpen.NextCelebrationsForm:
           SelectOpenNextCelebrationsForm.Select();
           break;
         default:

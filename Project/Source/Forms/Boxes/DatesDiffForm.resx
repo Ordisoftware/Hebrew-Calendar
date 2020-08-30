@@ -1083,9 +1083,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>514, 421</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>
   </data>

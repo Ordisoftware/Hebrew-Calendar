@@ -20,6 +20,9 @@ using Ordisoftware.HebrewCommon;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide Moon months file.
+  /// </summary>
   public partial class MoonMonthsFile : DataFile
   {
 

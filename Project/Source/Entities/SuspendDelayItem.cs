@@ -17,6 +17,9 @@ using System;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide suspend reminder delay item.
+  /// </summary>
   public class SuspendDelayItem
   {
     public string Text { get; set; }

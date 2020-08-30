@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Return a <see cref="T:System.String" /> that represents the day.
     /// </summary>
-    public override string ToString() { return Text; }
+    public override string ToString() => Text;
 
   }
 

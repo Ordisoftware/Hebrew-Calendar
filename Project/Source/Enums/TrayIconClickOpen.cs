@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 
 namespace Ordisoftware.HebrewCalendar
@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Open the next celebrations form.
     /// </summary>
-    NextCelebrationForm,
+    NextCelebrationsForm,
 
   }
 

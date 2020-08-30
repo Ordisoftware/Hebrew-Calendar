@@ -29,10 +29,7 @@ namespace Ordisoftware.HebrewCalendar
       public string Name;
       public string Latitude;
       public string Longitude;
-      public override string ToString()
-      {
-        return Name;
-      }
+      public override string ToString() => Name;
     }
 
     static public readonly NullSafeSortedDictionary<string, NullSafeList<CityItem>> GPS

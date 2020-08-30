@@ -224,7 +224,6 @@
     <Compile Include="Source\Entities\Dates.cs" />
     <Compile Include="Source\Entities\DatesDiffItem.cs" />
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
-    <Compile Include="Source\Entities\MoonMonthsFileItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFile.cs" />
     <Compile Include="Source\Forms\Boxes\DatesDiffForm.cs">
       <SubType>Form</SubType>

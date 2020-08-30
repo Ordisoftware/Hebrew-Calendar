@@ -13,18 +13,23 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide date item.
+  /// </summary>
   public class DateItem
   {
-    public int DayOfMonth;
-    public int MonthOfYear;
-    public int MoonPhase;
-    public SeasonChange TorahSeasonChange;
-    public SeasonChange RealSeasonChange;
-    public SunAndMoonRiseAndSet Ephemerisis;
+    public DateTime Date { get; set; }
+    public int MoonDay { get; set; }
+    public int MoonPhase { get; set; }
+    public SeasonChange TorahSeasonChange { get; set; }
+    public SeasonChange RealSeasonChange { get; set; }
+    public SunAndMoonRiseAndSet Ephemerisis { get; set; }
+    public override string ToString() => SQLiteDate.ToString(Date);
   }
 
 }

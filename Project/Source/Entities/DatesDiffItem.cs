@@ -19,6 +19,9 @@ using Ordisoftware.HebrewCommon;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide dates difefrence data.
+  /// </summary>
   public class DatesDiffItem
   {
 
@@ -77,7 +80,7 @@ namespace Ordisoftware.HebrewCalendar
         MoonYears = 1;
         if ( Date1.Day == 1 ) SolarMonths = 0;
         if ( Date1.Month == 1 && Date1.Day == 1 ) SolarYears = 0;
-        if ( data.DayOfMonth == 1 && data.Ephemerisis.Moonrise != null ) MoonMonths = 0;
+        if ( data.MoonDay == 1 && data.Ephemerisis.Moonrise != null ) MoonMonths = 0;
         if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears = 0;
         for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
         {
@@ -87,7 +90,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( index.Month == 1 && index.Day == 1 ) SolarYears++;
           if ( data.Ephemerisis.Moonrise == null ) continue;
           MoonDays++;
-          if ( data.DayOfMonth == 1 ) MoonMonths++;
+          if ( data.MoonDay == 1 ) MoonMonths++;
           if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears++;
         }
       }

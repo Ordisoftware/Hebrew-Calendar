@@ -345,7 +345,7 @@ namespace Ordisoftware.HebrewCalendar
             case TrayIconClickOpen.MainForm:
               MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? new EventArgs() : null);
               break;
-            case TrayIconClickOpen.NextCelebrationForm:
+            case TrayIconClickOpen.NextCelebrationsForm:
               if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
                 CelebrationsForm.Instance.Close();
               else

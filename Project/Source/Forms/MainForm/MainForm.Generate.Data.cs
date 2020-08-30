@@ -178,7 +178,7 @@ namespace Ordisoftware.HebrewCalendar
         var date = SQLiteDate.ToDateTime(day.Date);
         var data = Dates.Get(date);
         var ephemeris = data.Ephemerisis;
-        day.LunarDay = data.DayOfMonth;
+        day.LunarDay = data.MoonDay;
         day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
         day.MoonPhase = data.MoonPhase;
         day.IsFullMoon = Convert.ToInt32((MoonPhase)day.MoonPhase == MoonPhase.Full);

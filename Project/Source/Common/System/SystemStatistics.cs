@@ -20,6 +20,9 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
+  /// <summary>
+  /// provide system statistics.
+  /// </summary>
   public class SystemStatistics
   {
 

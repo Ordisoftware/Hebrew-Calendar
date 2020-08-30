@@ -19,32 +19,39 @@ using AASharp;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide dates collection.
+  /// </summary>
   static public class Dates
   {
 
-    static private Dictionary<int, Dictionary<DateTime, SeasonChange>> TorahSeasons
+    static private readonly Dictionary<int, Dictionary<DateTime, SeasonChange>> TorahSeasons
       = new Dictionary<int, Dictionary<DateTime, SeasonChange>>();
 
-    static private Dictionary<DateTime, DateItem> DayItems
+    static private readonly Dictionary<DateTime, DateItem> _Items
       = new Dictionary<DateTime, DateItem>();
 
-    static public int Count => DayItems.Keys.Count;
+    static public int Count
+      => _Items.Keys.Count;
+
+    static public IEnumerable<KeyValuePair<DateTime, DateItem>> Items
+      => _Items;
 
     static public void Clear()
     {
       TorahSeasons.Clear();
-      DayItems.Clear();
+      _Items.Clear();
     }
 
     static public DateItem Get(DateTime date)
     {
-      if ( DayItems.ContainsKey(date) ) return DayItems[date];
+      if ( _Items.ContainsKey(date) ) return _Items[date];
       DateItem value = new DateItem
       {
-        DayOfMonth = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(date),
-        Ephemerisis = date.GetSunMoonEphemeris(),
-        MonthOfYear = AstronomyHelper.LunisolerCalendar.GetMonth(date),
-        MoonPhase = (int)date.GetMoonPhase()
+        Date = date,
+        MoonDay = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(date),
+        MoonPhase = (int)date.GetMoonPhase(),
+        Ephemerisis = date.GetSunMoonEphemeris()
       };
       if ( !TorahSeasons.ContainsKey(date.Year) )
         InitializeSeasons(date.Year);
@@ -69,7 +76,7 @@ namespace Ordisoftware.HebrewCalendar
             value.RealSeasonChange = SeasonChange.WinterSolstice;
             break;
         }
-      DayItems.Add(date, value);
+      _Items.Add(date, value);
       return value;
     }
 

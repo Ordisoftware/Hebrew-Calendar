@@ -19,6 +19,9 @@ using Ordisoftware.HebrewCommon;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// provide application statistics.
+  /// </summary>
   public class ApplicationStatistics
   {
 
@@ -97,19 +100,19 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( MainForm.Instance.IsGenerating )
         {
-          UpdateDBFileSize = true;
+          UpdateDBFileSizeRequired = true;
           return Localizer.Processing.GetLang();
         }
-        if ( UpdateDBFileSize )
+        if ( UpdateDBFileSizeRequired )
         {
-          UpdateDBFileSize = false;
+          UpdateDBFileSizeRequired = false;
           _DBFileSize = SystemHelper.GetFileSize(Globals.DatabaseFileName).FormatBytesSize().ToString();
         }
         return _DBFileSize;
       }
     }
     static private string _DBFileSize;
-    static private bool UpdateDBFileSize = true;
+    static private bool UpdateDBFileSizeRequired = true;
 
     public string DBMemorySize
     {
@@ -117,19 +120,19 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( MainForm.Instance.IsGenerating )
         {
-          UpdateDBMemorySize = true;
+          UpdateDBMemorySizeRequired = true;
           return Localizer.Processing.GetLang();
         }
-        if ( UpdateDBMemorySize )
+        if ( UpdateDBMemorySizeRequired )
         {
-          UpdateDBMemorySize = false;
+          UpdateDBMemorySizeRequired = false;
           _DBMemorySize = MainForm.Instance.DataSet.SizeOf().FormatBytesSize();
         }
         return _DBMemorySize;
       }
     }
     static private string _DBMemorySize;
-    static private bool UpdateDBMemorySize = true;
+    static private bool UpdateDBMemorySizeRequired = true;
 
   }
 
