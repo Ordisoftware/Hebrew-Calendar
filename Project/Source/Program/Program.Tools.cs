@@ -29,17 +29,20 @@ namespace Ordisoftware.HebrewCalendar
     /// Returns a string representing the GPS location.
     /// </summary>
     /// <returns></returns>
-    static public string ToStringGPS()
+    static public string GPSText
     {
-      string result = "• " + Settings.GPSCountry + Globals.NL
-                    + "• " + Settings.GPSCity;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Settings.TimeZone )
-        {
-          result += Globals.NL2 + item.DisplayName;
-          break;
-        }
-      return result;
+      get
+      {
+        string result = "• " + Settings.GPSCountry + Globals.NL
+                      + "• " + Settings.GPSCity;
+        foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+          if ( item.Id == Settings.TimeZone )
+          {
+            result += Globals.NL2 + item.DisplayName;
+            break;
+          }
+        return result;
+      }
     }
 
     /// <summary>

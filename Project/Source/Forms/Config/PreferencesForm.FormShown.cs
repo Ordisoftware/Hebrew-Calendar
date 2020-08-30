@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCalendar
           break;
         }
       LoadSettings();
-      EditTimeZone.Text = Program.ToStringGPS();
+      EditTimeZone.Text = Program.GPSText;
       switch ( Program.Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:

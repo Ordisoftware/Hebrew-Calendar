@@ -118,26 +118,26 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate filename of the GPS database.
     /// </summary>
-    static public readonly string GPSFilename
-      = Globals.DocumentsFolderPath + "WorldCities.csv";
+    static public string GPSFilename
+      => Globals.DocumentsFolderPath + "WorldCities.csv";
 
     /// <summary>
     /// Indicate the moon months documents folder.
     /// </summary>
-    static public readonly string MoonMonthsFolderPath
-      = Globals.DocumentsFolderPath + "MoonMonths" + Path.DirectorySeparatorChar;
+    static public string MoonMonthsFolderPath
+      => Globals.DocumentsFolderPath + "MoonMonths" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate filename of the moon months meanings.
     /// </summary>
-    static public readonly string MoonMonthsMeaningsFilename
-      = MoonMonthsFolderPath + "MoonMonthsMeanings%LANG%.txt";
+    static public string MoonMonthsMeaningsFilename
+      = MoonMonthsFolderPath + "MoonMonthsMeanings{0}.txt";
 
     /// <summary>
     /// Indicate filename of the moon months lettriqs.
     /// </summary>
-    static public readonly string MoonMonthsLettriqsFilename
-      = MoonMonthsFolderPath + "MoonMonthsLettriqs%LANG%.txt";
+    static public string MoonMonthsLettriqsFilename
+      => MoonMonthsFolderPath + "MoonMonthsLettriqs{0}.txt";
 
     /// <summary>
     /// Indicate the moon months meanings.
@@ -158,17 +158,17 @@ namespace Ordisoftware.HebrewCalendar
       MoonMonthsLettriqs = new Dictionary<string, MoonMonthsFile>();
       foreach ( var lang in Languages.Names )
       {
-        MoonMonthsMeanings.Add(lang.Value, 
-                               new MoonMonthsFile(MoonMonthsMeaningsFilename.Replace("%LANG%", lang.Value.ToUpper()),
-                                                  true, 
-                                                  Globals.IsDev, 
+        MoonMonthsMeanings.Add(lang.Value,
+                               new MoonMonthsFile(string.Format(MoonMonthsMeaningsFilename, lang.Value.ToUpper()),
+                                                  true,
+                                                  Globals.IsDev,
                                                   DataFileFolder.ApplicationDocuments));
-        MoonMonthsLettriqs.Add(lang.Value, 
-                               new MoonMonthsFile(MoonMonthsLettriqsFilename.Replace("%LANG%", lang.Value.ToUpper()), 
-                                                  true,   
-                                                  Globals.IsDev, 
+        MoonMonthsLettriqs.Add(lang.Value,
+                               new MoonMonthsFile(string.Format(MoonMonthsLettriqsFilename, lang.Value.ToUpper()),
+                                                  true,
+                                                  Globals.IsDev,
                                                   DataFileFolder.ApplicationDocuments));
-                          }
+      }
     }
 
   }

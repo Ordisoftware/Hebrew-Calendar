@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using AASharp;
 
@@ -35,7 +36,7 @@ namespace Ordisoftware.HebrewCalendar
       => _Items.Keys.Count;
 
     static public IEnumerable<KeyValuePair<DateTime, DateItem>> Items
-      => _Items;
+      => _Items.OrderBy(d => d.Key);
 
     static public void Clear()
     {

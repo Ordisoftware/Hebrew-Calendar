@@ -220,7 +220,7 @@ namespace Ordisoftware.HebrewCalendar
       Program.Settings.Save();
       if ( form.EditTimeZone.SelectedItem != null )
         Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-      EditTimeZone.Text = Program.ToStringGPS();
+      EditTimeZone.Text = Program.GPSText;
       MainForm.Instance.InitializeCurrentTimeZone();
     }
 
@@ -243,9 +243,8 @@ namespace Ordisoftware.HebrewCalendar
       date = formDate.MonthCalendar.SelectionStart.Date;
       var formTime = new SelectBirthTime();
       if ( formTime.ShowDialog() != DialogResult.OK ) return;
-      var ephemeris = date.GetSunMoonEphemeris();
       var time = formTime.EditTime.Value.TimeOfDay;
-      if ( time >= new TimeSpan(0, 0, 0) && time < ephemeris.Sunset )
+      if ( time >= new TimeSpan(0, 0, 0) && time < Dates.Get(date).Ephemerisis.Sunset )
         date = date.AddDays(-1);
       Program.Settings.ShabatDay = (int)date.DayOfWeek;
       foreach ( DayOfWeekItem day in EditShabatDay.Items )
