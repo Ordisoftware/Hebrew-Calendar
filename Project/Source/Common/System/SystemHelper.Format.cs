@@ -51,16 +51,16 @@ namespace Ordisoftware.HebrewCommon
     static public string FormatMilliseconds(this long ms, bool excludems = false)
     {
       TimeSpan time = TimeSpan.FromMilliseconds(ms);
-      string result = string.Format("{0:D2} d {1:D2} h {2:D2} m {3:D2} s" + ( excludems ? "" : " {4:D3} ms" ),
+      string result = string.Format("{0} d {1} h {2} m {3} s" + ( excludems ? "" : " {4} ms" ),
                                     time.Days,
                                     time.Hours,
                                     time.Minutes,
                                     time.Seconds,
                                     time.Milliseconds);
-      if ( !excludems ) result = result.Replace("00 d 00 h 00 m 00 s", "");
-      return result.Replace("00 d 00 h 00 m", "")
-                   .Replace("00 d 00 h", "")
-                   .Replace("00 d ", "");
+      if ( !excludems ) result = result.Replace("0 d 0 h 0 m 0 s", "");
+      return result.Replace("0 d 0 h 0 m", "")
+                   .Replace("0 d 0 h", "")
+                   .Replace("0 d ", "");
     }
 
   }
