@@ -421,7 +421,7 @@ namespace Ordisoftware.HebrewCommon
       = new NullSafeStringDictionary()
       {
         { Languages.EN, "(null)" },
-        { Languages.FR, "(nulll)" }
+        { Languages.FR, "(null)" }
       };
 
     static public readonly NullSafeStringDictionary EmptySlot
@@ -429,6 +429,13 @@ namespace Ordisoftware.HebrewCommon
       {
         { Languages.EN, "(not defined)" },
         { Languages.FR, "(non définit)" }
+      };
+
+    static public readonly NullSafeStringDictionary ErrorSlot
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "(error)" },
+        { Languages.FR, "(erreur)" }
       };
 
   }

@@ -28,6 +28,9 @@ namespace Ordisoftware.HebrewCommon
 
     static public int DefaultOptimizeDaysInterval = 7;
 
+    static public string EngineVersion { get; private set; }
+    static public string ADONETAccess { get; private set; }
+
     /// <summary>
     /// Get a single line of a string.
     /// </summary>
@@ -48,6 +51,7 @@ namespace Ordisoftware.HebrewCommon
     /// <returns>The new date if done else lastdone.</returns>
     static public DateTime Optimize(this OdbcConnection connection, DateTime lastdone, bool force = false)
     {
+      InitializeVersion(connection);
       if ( force || lastdone.AddDays(DefaultOptimizeDaysInterval) < DateTime.Now )
       {
         connection.CheckIntegrity();
@@ -58,7 +62,25 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    ///  Vacuum the database.
+    /// Get the version of the engine.
+    /// </summary>
+    /// <param name="connection">The connection.</param>
+    static public void InitializeVersion(this OdbcConnection connection)
+    {
+      ADONETAccess = connection?.GetType().Name ?? Localizer.ErrorSlot.GetLang();
+      try
+      {
+        using ( var command = new OdbcCommand("SELECT SQLITE_VERSION()", connection) )
+          EngineVersion = "SQLite " + command.ExecuteScalar().ToString();
+      }
+      catch
+      {
+        EngineVersion = Localizer.ErrorSlot.GetLang();
+      }
+    }
+
+    /// <summary>
+    /// Vacuum the database.
     /// </summary>
     /// <param name="connection">The connection.</param>
     static public void CheckIntegrity(this OdbcConnection connection)

@@ -63,6 +63,8 @@
       System.Windows.Forms.Label generateTextReportTimeLabel;
       System.Windows.Forms.Label executableModeLabel;
       System.Windows.Forms.Label memoryMaxGCUsageLabel;
+      System.Windows.Forms.Label dBEngineversionLabel;
+      System.Windows.Forms.Label dBADONETAccessLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.EditAlwaysOnTop = new System.Windows.Forms.CheckBox();
       this.ActionClose = new System.Windows.Forms.Button();
@@ -99,13 +101,15 @@
       this.generateAnalyseDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxDatabase = new System.Windows.Forms.GroupBox();
       this.GroupBox3Memoty = new System.Windows.Forms.GroupBox();
+      this.memoryMaxGCUsageLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.executableModeLabel1 = new System.Windows.Forms.Label();
       this.operatingSystemTextBox = new System.Windows.Forms.TextBox();
       this.processorNameTextBox = new System.Windows.Forms.TextBox();
       this.GroupBoxRunning = new System.Windows.Forms.GroupBox();
       this.GroupBoxSystemLoad = new System.Windows.Forms.GroupBox();
-      this.memoryMaxGCUsageLabel1 = new System.Windows.Forms.Label();
+      this.dBEngineversionLabel1 = new System.Windows.Forms.Label();
+      this.dBADONETAccessLabel1 = new System.Windows.Forms.Label();
       this.SystemStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ApplicationStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       dBEventsCountLabel = new System.Windows.Forms.Label();
@@ -141,6 +145,8 @@
       generateTextReportTimeLabel = new System.Windows.Forms.Label();
       executableModeLabel = new System.Windows.Forms.Label();
       memoryMaxGCUsageLabel = new System.Windows.Forms.Label();
+      dBEngineversionLabel = new System.Windows.Forms.Label();
+      dBADONETAccessLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       this.GroupBoxTimings.SuspendLayout();
       this.GroupBoxDatabase.SuspendLayout();
@@ -311,6 +317,11 @@
       // 
       resources.ApplyResources(executableModeLabel, "executableModeLabel");
       executableModeLabel.Name = "executableModeLabel";
+      // 
+      // memoryMaxGCUsageLabel
+      // 
+      resources.ApplyResources(memoryMaxGCUsageLabel, "memoryMaxGCUsageLabel");
+      memoryMaxGCUsageLabel.Name = "memoryMaxGCUsageLabel";
       // 
       // PanelBottom
       // 
@@ -539,6 +550,8 @@
       // 
       // GroupBoxDatabase
       // 
+      this.GroupBoxDatabase.Controls.Add(dBADONETAccessLabel);
+      this.GroupBoxDatabase.Controls.Add(dBEngineversionLabel);
       this.GroupBoxDatabase.Controls.Add(dBFileSizeLabel);
       this.GroupBoxDatabase.Controls.Add(this.monthViewEventsCountLabel1);
       this.GroupBoxDatabase.Controls.Add(monthViewEventsCountLabel);
@@ -547,7 +560,9 @@
       this.GroupBoxDatabase.Controls.Add(dBRecordsCountLabel);
       this.GroupBoxDatabase.Controls.Add(this.dBLastYearLabel1);
       this.GroupBoxDatabase.Controls.Add(dBLastYearLabel);
+      this.GroupBoxDatabase.Controls.Add(this.dBADONETAccessLabel1);
       this.GroupBoxDatabase.Controls.Add(this.dBFirstYearLabel1);
+      this.GroupBoxDatabase.Controls.Add(this.dBEngineversionLabel1);
       this.GroupBoxDatabase.Controls.Add(dBFirstYearLabel);
       this.GroupBoxDatabase.Controls.Add(this.dBFileSizeLabel1);
       this.GroupBoxDatabase.Controls.Add(this.dBMemorySizeLabel1);
@@ -584,6 +599,12 @@
       resources.ApplyResources(this.GroupBox3Memoty, "GroupBox3Memoty");
       this.GroupBox3Memoty.Name = "GroupBox3Memoty";
       this.GroupBox3Memoty.TabStop = false;
+      // 
+      // memoryMaxGCUsageLabel1
+      // 
+      resources.ApplyResources(this.memoryMaxGCUsageLabel1, "memoryMaxGCUsageLabel1");
+      this.memoryMaxGCUsageLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "MaxGCUsage", true));
+      this.memoryMaxGCUsageLabel1.Name = "memoryMaxGCUsageLabel1";
       // 
       // GroupBoxSystem
       // 
@@ -639,16 +660,27 @@
       this.GroupBoxSystemLoad.Name = "GroupBoxSystemLoad";
       this.GroupBoxSystemLoad.TabStop = false;
       // 
-      // memoryMaxGCUsageLabel
+      // dBEngineversionLabel1
       // 
-      resources.ApplyResources(memoryMaxGCUsageLabel, "memoryMaxGCUsageLabel");
-      memoryMaxGCUsageLabel.Name = "memoryMaxGCUsageLabel";
+      resources.ApplyResources(this.dBEngineversionLabel1, "dBEngineversionLabel1");
+      this.dBEngineversionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBEngineVersion", true));
+      this.dBEngineversionLabel1.Name = "dBEngineversionLabel1";
       // 
-      // memoryMaxGCUsageLabel1
+      // dBEngineversionLabel
       // 
-      resources.ApplyResources(this.memoryMaxGCUsageLabel1, "memoryMaxGCUsageLabel1");
-      this.memoryMaxGCUsageLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "MaxGCUsage", true));
-      this.memoryMaxGCUsageLabel1.Name = "memoryMaxGCUsageLabel1";
+      resources.ApplyResources(dBEngineversionLabel, "dBEngineversionLabel");
+      dBEngineversionLabel.Name = "dBEngineversionLabel";
+      // 
+      // dBADONETAccessLabel1
+      // 
+      resources.ApplyResources(this.dBADONETAccessLabel1, "dBADONETAccessLabel1");
+      this.dBADONETAccessLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBADONETAccess", true));
+      this.dBADONETAccessLabel1.Name = "dBADONETAccessLabel1";
+      // 
+      // dBADONETAccessLabel
+      // 
+      resources.ApplyResources(dBADONETAccessLabel, "dBADONETAccessLabel");
+      dBADONETAccessLabel.Name = "dBADONETAccessLabel";
       // 
       // SystemStatisticsDataBindingSource
       // 
@@ -746,5 +778,7 @@
     private System.Windows.Forms.Label generateTextReportTimeLabel1;
     private System.Windows.Forms.Label executableModeLabel1;
     private System.Windows.Forms.Label memoryMaxGCUsageLabel1;
+    private System.Windows.Forms.Label dBEngineversionLabel1;
+    private System.Windows.Forms.Label dBADONETAccessLabel1;
   }
 }
