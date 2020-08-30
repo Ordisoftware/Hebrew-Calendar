@@ -31,12 +31,16 @@ namespace Ordisoftware.HebrewCalendar
       Instance.EditAlwaysOnTop_CheckedChanged(null, null);
     }
 
-    static public void Run()
+    static public void Run(bool prepareonly = false)
     {
-      Instance.Show();
-      Instance.BringToFront();
-      Instance.Timer.Start();
       LoadingForm.Instance.Progressing += FormLoadingProgressing;
+      if ( !prepareonly )
+      {
+        Instance.Show();
+        Instance.BringToFront();
+        Instance.Timer.Interval = 1000;
+      }
+      Instance.Timer.Start();
     }
 
     private StatisticsForm()
@@ -56,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
     private void SystemStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       LoadingForm.Instance.Progressing -= FormLoadingProgressing;
-      Timer.Stop();
+      Timer.Interval = 3000;
       e.Cancel = true;
       Hide();
     }
@@ -78,8 +82,15 @@ namespace Ordisoftware.HebrewCalendar
 
     internal void Timer_Tick(object sender, EventArgs e)
     {
-      ApplicationStatisticsDataBindingSource.ResetBindings(false);
-      SystemStatisticsDataBindingSource.ResetBindings(false);
+      if ( Visible )
+      {
+        ApplicationStatisticsDataBindingSource.ResetBindings(false);
+        SystemStatisticsDataBindingSource.ResetBindings(false);
+      }
+      else
+      {
+        string dummy = SystemStatistics.Instance.MemoryGC;
+      }
     }
 
   }

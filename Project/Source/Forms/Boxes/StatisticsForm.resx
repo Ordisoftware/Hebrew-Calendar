@@ -745,7 +745,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPeakWorkingLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 135</value>
+    <value>15, 155</value>
   </data>
   <data name="memoryPeakWorkingLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -766,7 +766,7 @@
     <value>GroupBox3Memoty</value>
   </data>
   <data name="&gt;&gt;memoryPeakWorkingLabel.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <metadata name="memoryPrivateLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -781,7 +781,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPrivateLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 95</value>
+    <value>15, 115</value>
   </data>
   <data name="memoryPrivateLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -802,7 +802,7 @@
     <value>GroupBox3Memoty</value>
   </data>
   <data name="&gt;&gt;memoryPrivateLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <metadata name="memoryWorkingLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -817,7 +817,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryWorkingLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 115</value>
+    <value>15, 135</value>
   </data>
   <data name="memoryWorkingLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -874,7 +874,7 @@
     <value>GroupBox3Memoty</value>
   </data>
   <data name="&gt;&gt;memoryGCLabel.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <metadata name="memoryPagedLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -889,7 +889,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 160</value>
+    <value>15, 180</value>
   </data>
   <data name="memoryPagedLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 13</value>
@@ -910,7 +910,7 @@
     <value>GroupBox3Memoty</value>
   </data>
   <data name="&gt;&gt;memoryPagedLabel.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <metadata name="memoryPagedPeakLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -925,7 +925,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedPeakLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 180</value>
+    <value>15, 200</value>
   </data>
   <data name="memoryPagedPeakLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 13</value>
@@ -946,7 +946,7 @@
     <value>GroupBox3Memoty</value>
   </data>
   <data name="&gt;&gt;memoryPagedPeakLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <metadata name="memoryPagedSystemLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -961,7 +961,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedSystemLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 200</value>
+    <value>15, 220</value>
   </data>
   <data name="memoryPagedSystemLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 13</value>
@@ -982,7 +982,7 @@
     <value>GroupBox3Memoty</value>
   </data>
   <data name="&gt;&gt;memoryPagedSystemLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <metadata name="cPULoadLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -1224,6 +1224,39 @@
   <data name="&gt;&gt;generateTextReportTimeLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="executableModeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="executableModeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="executableModeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="executableModeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 25</value>
+  </data>
+  <data name="executableModeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="executableModeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>119</value>
+  </data>
+  <data name="executableModeLabel.Text" xml:space="preserve">
+    <value>Executable mode:</value>
+  </data>
+  <data name="&gt;&gt;executableModeLabel.Name" xml:space="preserve">
+    <value>executableModeLabel</value>
+  </data>
+  <data name="&gt;&gt;executableModeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;executableModeLabel.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;executableModeLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="EditAlwaysOnTop.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1261,7 +1294,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>451, 2</value>
+    <value>445, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -1288,10 +1321,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 540</value>
+    <value>10, 553</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>530, 28</value>
+    <value>524, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -1849,7 +1882,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPeakWorkingLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 135</value>
+    <value>163, 155</value>
   </data>
   <data name="memoryPeakWorkingLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -1873,7 +1906,7 @@
     <value>GroupBox3Memoty</value>
   </data>
   <data name="&gt;&gt;memoryPeakWorkingLabel1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="memoryPrivateLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1882,7 +1915,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPrivateLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 95</value>
+    <value>163, 115</value>
   </data>
   <data name="memoryPrivateLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -1915,7 +1948,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryWorkingLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 115</value>
+    <value>163, 135</value>
   </data>
   <data name="memoryWorkingLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -1972,7 +2005,7 @@
     <value>GroupBox3Memoty</value>
   </data>
   <data name="&gt;&gt;memoryGCLabel1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="memoryPagedLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1981,7 +2014,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 160</value>
+    <value>163, 180</value>
   </data>
   <data name="memoryPagedLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2014,7 +2047,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedPeakLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 180</value>
+    <value>163, 200</value>
   </data>
   <data name="memoryPagedPeakLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2038,7 +2071,7 @@
     <value>GroupBox3Memoty</value>
   </data>
   <data name="&gt;&gt;memoryPagedPeakLabel2.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="memoryPagedSystemLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2047,7 +2080,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedSystemLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 200</value>
+    <value>163, 220</value>
   </data>
   <data name="memoryPagedSystemLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2071,7 +2104,7 @@
     <value>GroupBox3Memoty</value>
   </data>
   <data name="&gt;&gt;memoryPagedSystemLabel1.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="cPULoadLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2287,7 +2320,7 @@
     <value>15, 295</value>
   </data>
   <data name="GroupBoxDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 225</value>
+    <value>250, 245</value>
   </data>
   <data name="GroupBoxDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>116</value>
@@ -2307,11 +2340,80 @@
   <data name="&gt;&gt;GroupBoxDatabase.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="memoryMaxGCUsageLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 90</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel1.Name" xml:space="preserve">
+    <value>memoryMaxGCUsageLabel1</value>
+  </data>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel1.Parent" xml:space="preserve">
+    <value>GroupBox3Memoty</value>
+  </data>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <metadata name="memoryMaxGCUsageLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="memoryMaxGCUsageLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 90</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 13</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>107</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel.Text" xml:space="preserve">
+    <value>GC memory usage peak:</value>
+  </data>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel.Name" xml:space="preserve">
+    <value>memoryMaxGCUsageLabel</value>
+  </data>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel.Parent" xml:space="preserve">
+    <value>GroupBox3Memoty</value>
+  </data>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
   <data name="GroupBox3Memoty.Location" type="System.Drawing.Point, System.Drawing">
     <value>280, 295</value>
   </data>
   <data name="GroupBox3Memoty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 225</value>
+    <value>250, 245</value>
   </data>
   <data name="GroupBox3Memoty.TabIndex" type="System.Int32, mscorlib">
     <value>117</value>
@@ -2330,39 +2432,6 @@
   </data>
   <data name="&gt;&gt;GroupBox3Memoty.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <metadata name="executableModeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="executableModeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="executableModeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="executableModeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
-  </data>
-  <data name="executableModeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 13</value>
-  </data>
-  <data name="executableModeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>119</value>
-  </data>
-  <data name="executableModeLabel.Text" xml:space="preserve">
-    <value>Executable mode:</value>
-  </data>
-  <data name="&gt;&gt;executableModeLabel.Name" xml:space="preserve">
-    <value>executableModeLabel</value>
-  </data>
-  <data name="&gt;&gt;executableModeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;executableModeLabel.Parent" xml:space="preserve">
-    <value>GroupBoxSystem</value>
-  </data>
-  <data name="&gt;&gt;executableModeLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="executableModeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2524,7 +2593,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>550, 578</value>
+    <value>544, 591</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

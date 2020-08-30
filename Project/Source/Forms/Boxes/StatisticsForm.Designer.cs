@@ -62,6 +62,7 @@
       System.Windows.Forms.Label generatePopulateDaysTimeLabel;
       System.Windows.Forms.Label generateTextReportTimeLabel;
       System.Windows.Forms.Label executableModeLabel;
+      System.Windows.Forms.Label memoryMaxGCUsageLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.EditAlwaysOnTop = new System.Windows.Forms.CheckBox();
       this.ActionClose = new System.Windows.Forms.Button();
@@ -99,11 +100,12 @@
       this.GroupBoxDatabase = new System.Windows.Forms.GroupBox();
       this.GroupBox3Memoty = new System.Windows.Forms.GroupBox();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
+      this.executableModeLabel1 = new System.Windows.Forms.Label();
       this.operatingSystemTextBox = new System.Windows.Forms.TextBox();
       this.processorNameTextBox = new System.Windows.Forms.TextBox();
       this.GroupBoxRunning = new System.Windows.Forms.GroupBox();
       this.GroupBoxSystemLoad = new System.Windows.Forms.GroupBox();
-      this.executableModeLabel1 = new System.Windows.Forms.Label();
+      this.memoryMaxGCUsageLabel1 = new System.Windows.Forms.Label();
       this.SystemStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ApplicationStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       dBEventsCountLabel = new System.Windows.Forms.Label();
@@ -138,6 +140,7 @@
       generatePopulateDaysTimeLabel = new System.Windows.Forms.Label();
       generateTextReportTimeLabel = new System.Windows.Forms.Label();
       executableModeLabel = new System.Windows.Forms.Label();
+      memoryMaxGCUsageLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       this.GroupBoxTimings.SuspendLayout();
       this.GroupBoxDatabase.SuspendLayout();
@@ -303,6 +306,11 @@
       // 
       resources.ApplyResources(generateTextReportTimeLabel, "generateTextReportTimeLabel");
       generateTextReportTimeLabel.Name = "generateTextReportTimeLabel";
+      // 
+      // executableModeLabel
+      // 
+      resources.ApplyResources(executableModeLabel, "executableModeLabel");
+      executableModeLabel.Name = "executableModeLabel";
       // 
       // PanelBottom
       // 
@@ -561,6 +569,7 @@
       this.GroupBox3Memoty.Controls.Add(memoryWorkingLabel);
       this.GroupBox3Memoty.Controls.Add(this.memoryPagedLabel1);
       this.GroupBox3Memoty.Controls.Add(this.memoryPrivateLabel1);
+      this.GroupBox3Memoty.Controls.Add(this.memoryMaxGCUsageLabel1);
       this.GroupBox3Memoty.Controls.Add(this.memoryGCLabel1);
       this.GroupBox3Memoty.Controls.Add(memoryPrivateLabel);
       this.GroupBox3Memoty.Controls.Add(this.memoryPeakWorkingLabel1);
@@ -570,6 +579,7 @@
       this.GroupBox3Memoty.Controls.Add(this.memoryPagedSystemLabel1);
       this.GroupBox3Memoty.Controls.Add(memoryPagedLabel);
       this.GroupBox3Memoty.Controls.Add(memoryPeakWorkingLabel);
+      this.GroupBox3Memoty.Controls.Add(memoryMaxGCUsageLabel);
       this.GroupBox3Memoty.Controls.Add(memoryGCLabel);
       resources.ApplyResources(this.GroupBox3Memoty, "GroupBox3Memoty");
       this.GroupBox3Memoty.Name = "GroupBox3Memoty";
@@ -590,6 +600,12 @@
       resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
       this.GroupBoxSystem.TabStop = false;
+      // 
+      // executableModeLabel1
+      // 
+      this.executableModeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "ExecutableMode", true));
+      resources.ApplyResources(this.executableModeLabel1, "executableModeLabel1");
+      this.executableModeLabel1.Name = "executableModeLabel1";
       // 
       // operatingSystemTextBox
       // 
@@ -623,16 +639,16 @@
       this.GroupBoxSystemLoad.Name = "GroupBoxSystemLoad";
       this.GroupBoxSystemLoad.TabStop = false;
       // 
-      // executableModeLabel
+      // memoryMaxGCUsageLabel
       // 
-      resources.ApplyResources(executableModeLabel, "executableModeLabel");
-      executableModeLabel.Name = "executableModeLabel";
+      resources.ApplyResources(memoryMaxGCUsageLabel, "memoryMaxGCUsageLabel");
+      memoryMaxGCUsageLabel.Name = "memoryMaxGCUsageLabel";
       // 
-      // executableModeLabel1
+      // memoryMaxGCUsageLabel1
       // 
-      this.executableModeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "ExecutableMode", true));
-      resources.ApplyResources(this.executableModeLabel1, "executableModeLabel1");
-      this.executableModeLabel1.Name = "executableModeLabel1";
+      resources.ApplyResources(this.memoryMaxGCUsageLabel1, "memoryMaxGCUsageLabel1");
+      this.memoryMaxGCUsageLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "MaxGCUsage", true));
+      this.memoryMaxGCUsageLabel1.Name = "memoryMaxGCUsageLabel1";
       // 
       // SystemStatisticsDataBindingSource
       // 
@@ -729,5 +745,6 @@
     private System.Windows.Forms.Label generateAnalyseDaysTimeLabel1;
     private System.Windows.Forms.Label generateTextReportTimeLabel1;
     private System.Windows.Forms.Label executableModeLabel1;
+    private System.Windows.Forms.Label memoryMaxGCUsageLabel1;
   }
 }
