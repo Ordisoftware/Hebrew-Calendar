@@ -38,6 +38,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         Instance.Show();
         Instance.BringToFront();
+        Instance.Timer_Tick(null, null);
         Instance.Timer.Interval = 1000;
       }
       Instance.Timer.Start();

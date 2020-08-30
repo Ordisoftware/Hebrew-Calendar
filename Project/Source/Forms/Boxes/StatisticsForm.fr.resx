@@ -338,4 +338,7 @@
   <data name="executableModeLabel.Text" xml:space="preserve">
     <value>Type d'exécutable</value>
   </data>
+  <data name="memoryMaxGCUsageLabel.Text" xml:space="preserve">
+    <value>Pic d'utilisation mémoire GC :</value>
+  </data>
 </root>
