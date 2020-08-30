@@ -36,33 +36,27 @@ namespace Ordisoftware.HebrewCommon
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExceptionForm));
-      this.textMessage = new System.Windows.Forms.TextBox();
+      this.TextMessage = new System.Windows.Forms.TextBox();
       this.pictureBox = new System.Windows.Forms.PictureBox();
-      this.buttonClose = new System.Windows.Forms.Button();
-      this.buttonTerminate = new System.Windows.Forms.Button();
-      this.buttonViewLog = new System.Windows.Forms.Button();
-      this.buttonViewStack = new System.Windows.Forms.Button();
-      this.textStack = new System.Windows.Forms.TextBox();
-      this.labelInfo1 = new System.Windows.Forms.Label();
-      this.textException = new System.Windows.Forms.TextBox();
-      this.labelInfo2 = new System.Windows.Forms.Label();
-      this.buttonPrint = new System.Windows.Forms.Button();
-      this.buttonSendMail = new System.Windows.Forms.Button();
-      this.printDialog = new System.Windows.Forms.PrintDialog();
-      this.printDocument = new System.Drawing.Printing.PrintDocument();
-      this.pageSetupDialog = new System.Windows.Forms.PageSetupDialog();
-      this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
-      this.buttonViewInner = new System.Windows.Forms.Button();
+      this.ActionClose = new System.Windows.Forms.Button();
+      this.ActionTerminate = new System.Windows.Forms.Button();
+      this.ActionViewStack = new System.Windows.Forms.Button();
+      this.TextStack = new System.Windows.Forms.TextBox();
+      this.LabelInfo1 = new System.Windows.Forms.Label();
+      this.TextException = new System.Windows.Forms.TextBox();
+      this.LabelInfo2 = new System.Windows.Forms.Label();
+      this.ActionSend = new System.Windows.Forms.Button();
+      this.ActionViewInner = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
       this.SuspendLayout();
       // 
-      // textMessage
+      // TextMessage
       // 
-      resources.ApplyResources(this.textMessage, "textMessage");
-      this.textMessage.BackColor = System.Drawing.SystemColors.Info;
-      this.textMessage.Name = "textMessage";
-      this.textMessage.ReadOnly = true;
-      this.textMessage.TabStop = false;
+      resources.ApplyResources(this.TextMessage, "TextMessage");
+      this.TextMessage.BackColor = System.Drawing.SystemColors.Info;
+      this.TextMessage.Name = "TextMessage";
+      this.TextMessage.ReadOnly = true;
+      this.TextMessage.TabStop = false;
       // 
       // pictureBox
       // 
@@ -71,129 +65,86 @@ namespace Ordisoftware.HebrewCommon
       this.pictureBox.Name = "pictureBox";
       this.pictureBox.TabStop = false;
       // 
-      // buttonClose
+      // ActionClose
       // 
-      resources.ApplyResources(this.buttonClose, "buttonClose");
-      this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.buttonClose.Name = "buttonClose";
-      this.buttonClose.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.Tag = "";
+      this.ActionClose.UseVisualStyleBackColor = true;
       // 
-      // buttonTerminate
+      // ActionTerminate
       // 
-      resources.ApplyResources(this.buttonTerminate, "buttonTerminate");
-      this.buttonTerminate.DialogResult = System.Windows.Forms.DialogResult.Abort;
-      this.buttonTerminate.Name = "buttonTerminate";
-      this.buttonTerminate.UseVisualStyleBackColor = true;
-      this.buttonTerminate.Click += new System.EventHandler(this.buttonTerminate_Click);
+      resources.ApplyResources(this.ActionTerminate, "ActionTerminate");
+      this.ActionTerminate.DialogResult = System.Windows.Forms.DialogResult.Abort;
+      this.ActionTerminate.Name = "ActionTerminate";
+      this.ActionTerminate.UseVisualStyleBackColor = true;
+      this.ActionTerminate.Click += new System.EventHandler(this.ActionTerminate_Click);
       // 
-      // buttonViewLog
+      // ActionViewStack
       // 
-      resources.ApplyResources(this.buttonViewLog, "buttonViewLog");
-      this.buttonViewLog.FlatAppearance.BorderSize = 0;
-      this.buttonViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.buttonViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.buttonViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.buttonViewLog.Name = "buttonViewLog";
-      this.buttonViewLog.UseVisualStyleBackColor = true;
-      this.buttonViewLog.Click += new System.EventHandler(this.buttonViewLog_Click);
+      resources.ApplyResources(this.ActionViewStack, "ActionViewStack");
+      this.ActionViewStack.Name = "ActionViewStack";
+      this.ActionViewStack.UseVisualStyleBackColor = true;
+      this.ActionViewStack.Click += new System.EventHandler(this.ActionViewStack_Click);
       // 
-      // buttonViewStack
+      // TextStack
       // 
-      resources.ApplyResources(this.buttonViewStack, "buttonViewStack");
-      this.buttonViewStack.Name = "buttonViewStack";
-      this.buttonViewStack.UseVisualStyleBackColor = true;
-      this.buttonViewStack.Click += new System.EventHandler(this.buttonViewStack_Click);
+      resources.ApplyResources(this.TextStack, "TextStack");
+      this.TextStack.BackColor = System.Drawing.SystemColors.Info;
+      this.TextStack.Name = "TextStack";
+      this.TextStack.ReadOnly = true;
+      this.TextStack.TabStop = false;
       // 
-      // textStack
+      // LabelInfo1
       // 
-      resources.ApplyResources(this.textStack, "textStack");
-      this.textStack.BackColor = System.Drawing.SystemColors.Info;
-      this.textStack.Name = "textStack";
-      this.textStack.ReadOnly = true;
-      this.textStack.TabStop = false;
+      resources.ApplyResources(this.LabelInfo1, "LabelInfo1");
+      this.LabelInfo1.Name = "LabelInfo1";
       // 
-      // labelInfo1
+      // TextException
       // 
-      resources.ApplyResources(this.labelInfo1, "labelInfo1");
-      this.labelInfo1.Name = "labelInfo1";
+      resources.ApplyResources(this.TextException, "TextException");
+      this.TextException.BackColor = System.Drawing.SystemColors.Info;
+      this.TextException.Name = "TextException";
+      this.TextException.ReadOnly = true;
+      this.TextException.TabStop = false;
       // 
-      // textException
+      // LabelInfo2
       // 
-      resources.ApplyResources(this.textException, "textException");
-      this.textException.BackColor = System.Drawing.SystemColors.Info;
-      this.textException.Name = "textException";
-      this.textException.ReadOnly = true;
-      this.textException.TabStop = false;
+      resources.ApplyResources(this.LabelInfo2, "LabelInfo2");
+      this.LabelInfo2.Name = "LabelInfo2";
       // 
-      // labelInfo2
+      // ActionSend
       // 
-      resources.ApplyResources(this.labelInfo2, "labelInfo2");
-      this.labelInfo2.Name = "labelInfo2";
+      resources.ApplyResources(this.ActionSend, "ActionSend");
+      this.ActionSend.FlatAppearance.BorderSize = 0;
+      this.ActionSend.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.ActionSend.Name = "ActionSend";
+      this.ActionSend.UseVisualStyleBackColor = true;
+      this.ActionSend.Click += new System.EventHandler(this.ActionSend_Click);
       // 
-      // buttonPrint
+      // ActionViewInner
       // 
-      resources.ApplyResources(this.buttonPrint, "buttonPrint");
-      this.buttonPrint.FlatAppearance.BorderSize = 0;
-      this.buttonPrint.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.buttonPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.buttonPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.buttonPrint.Name = "buttonPrint";
-      this.buttonPrint.UseVisualStyleBackColor = true;
-      this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
-      // 
-      // buttonSendMail
-      // 
-      resources.ApplyResources(this.buttonSendMail, "buttonSendMail");
-      this.buttonSendMail.FlatAppearance.BorderSize = 0;
-      this.buttonSendMail.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.buttonSendMail.Name = "buttonSendMail";
-      this.buttonSendMail.UseVisualStyleBackColor = true;
-      this.buttonSendMail.Click += new System.EventHandler(this.buttonSendMail_Click);
-      // 
-      // printDialog
-      // 
-      this.printDialog.Document = this.printDocument;
-      this.printDialog.UseEXDialog = true;
-      // 
-      // printDocument
-      // 
-      this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
-      // 
-      // pageSetupDialog
-      // 
-      this.pageSetupDialog.Document = this.printDocument;
-      // 
-      // printPreviewDialog
-      // 
-      resources.ApplyResources(this.printPreviewDialog, "printPreviewDialog");
-      this.printPreviewDialog.Document = this.printDocument;
-      this.printPreviewDialog.Name = "printPreviewDialog";
-      this.printPreviewDialog.UseAntiAlias = true;
-      // 
-      // buttonViewInner
-      // 
-      resources.ApplyResources(this.buttonViewInner, "buttonViewInner");
-      this.buttonViewInner.Name = "buttonViewInner";
-      this.buttonViewInner.UseVisualStyleBackColor = true;
-      this.buttonViewInner.Click += new System.EventHandler(this.buttonViewInner_Click);
+      resources.ApplyResources(this.ActionViewInner, "ActionViewInner");
+      this.ActionViewInner.Name = "ActionViewInner";
+      this.ActionViewInner.UseVisualStyleBackColor = true;
+      this.ActionViewInner.Click += new System.EventHandler(this.ActionViewInner_Click);
       // 
       // ExceptionForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.buttonViewInner);
-      this.Controls.Add(this.buttonSendMail);
-      this.Controls.Add(this.buttonPrint);
-      this.Controls.Add(this.textException);
-      this.Controls.Add(this.labelInfo2);
-      this.Controls.Add(this.labelInfo1);
-      this.Controls.Add(this.textStack);
-      this.Controls.Add(this.buttonViewLog);
-      this.Controls.Add(this.buttonTerminate);
-      this.Controls.Add(this.buttonClose);
+      this.Controls.Add(this.ActionViewInner);
+      this.Controls.Add(this.ActionSend);
+      this.Controls.Add(this.TextException);
+      this.Controls.Add(this.LabelInfo2);
+      this.Controls.Add(this.LabelInfo1);
+      this.Controls.Add(this.TextStack);
+      this.Controls.Add(this.ActionTerminate);
+      this.Controls.Add(this.ActionClose);
       this.Controls.Add(this.pictureBox);
-      this.Controls.Add(this.textMessage);
-      this.Controls.Add(this.buttonViewStack);
+      this.Controls.Add(this.TextMessage);
+      this.Controls.Add(this.ActionViewStack);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
@@ -210,7 +161,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Message describing the text.
     /// </summary>
-    private System.Windows.Forms.TextBox textMessage;
+    private System.Windows.Forms.TextBox TextMessage;
 
     /// <summary>
     /// The picture box control.
@@ -220,77 +171,47 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// The button close control.
     /// </summary>
-    private System.Windows.Forms.Button buttonClose;
+    private System.Windows.Forms.Button ActionClose;
 
     /// <summary>
     /// The button terminate control.
     /// </summary>
-    private System.Windows.Forms.Button buttonTerminate;
-
-    /// <summary>
-    /// The button view log control.
-    /// </summary>
-    private System.Windows.Forms.Button buttonViewLog;
+    private System.Windows.Forms.Button ActionTerminate;
 
     /// <summary>
     /// Stack of button views.
     /// </summary>
-    private System.Windows.Forms.Button buttonViewStack;
+    private System.Windows.Forms.Button ActionViewStack;
 
     /// <summary>
     /// Stack of texts.
     /// </summary>
-    private System.Windows.Forms.TextBox textStack;
+    private System.Windows.Forms.TextBox TextStack;
 
     /// <summary>
     /// The label information 1 control.
     /// </summary>
-    private System.Windows.Forms.Label labelInfo1;
+    private System.Windows.Forms.Label LabelInfo1;
 
     /// <summary>
     /// The text Exception control.
     /// </summary>
-    private System.Windows.Forms.TextBox textException;
+    private System.Windows.Forms.TextBox TextException;
 
     /// <summary>
     /// The label information 2 control.
     /// </summary>
-    private System.Windows.Forms.Label labelInfo2;
-
-    /// <summary>
-    /// The button print control.
-    /// </summary>
-    private System.Windows.Forms.Button buttonPrint;
+    private System.Windows.Forms.Label LabelInfo2;
 
     /// <summary>
     /// The button send mail control.
     /// </summary>
-    private System.Windows.Forms.Button buttonSendMail;
-
-    /// <summary>
-    /// The print dialog.
-    /// </summary>
-    private System.Windows.Forms.PrintDialog printDialog;
-
-    /// <summary>
-    /// The print document.
-    /// </summary>
-    private System.Drawing.Printing.PrintDocument printDocument;
-
-    /// <summary>
-    /// The page setup dialog.
-    /// </summary>
-    private System.Windows.Forms.PageSetupDialog pageSetupDialog;
-
-    /// <summary>
-    /// The print preview dialog.
-    /// </summary>
-    private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+    private System.Windows.Forms.Button ActionSend;
 
     /// <summary>
     /// The button view inner control.
     /// </summary>
-    private System.Windows.Forms.Button buttonViewInner;
+    private System.Windows.Forms.Button ActionViewInner;
 
   }
 

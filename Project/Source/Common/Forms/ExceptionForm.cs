@@ -17,67 +17,73 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using System.Drawing.Printing;
-//using System.Drawing;
 
 namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide Exception visualisation.
+  /// Provide exception form.
   /// </summary>
-  /// <seealso cref="T:System.Windows.Forms.Form"/>
   internal partial class ExceptionForm : Form
   {
 
     /// <summary>
-    /// The button stack text.
+    /// Indicate the button stack text.
     /// </summary>
-    private string ButtonStackText;
+    private string StackText;
 
     /// <summary>
-    /// Information describing the error.
+    /// Indicate the error information.
     /// </summary>
     private ExceptionInfo ErrorInfo;
 
     /// <summary>
-    /// Message describing the error.
+    /// Indicates error messages.
     /// </summary>
-    private List<string> ErrorMsg = new List<string>();
+    private List<string> ErrorMessages = new List<string>();
 
     /// <summary>
-    /// Run the given einfo.
+    /// Indicate the original form height.
+    /// </summary>
+    private int OriginalHeight;
+
+    static public readonly NullSafeStringDictionary NextException
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Next" },
+        { Languages.FR, "Suivante" }
+      };
+
+    /// <summary>
+    /// Run the form.
     /// </summary>
     static public void Run(ExceptionInfo einfo, bool isInner = false)
     {
       using ( var form = new ExceptionForm() )
       {
-        form.printPreviewDialog.FindForm().WindowState = FormWindowState.Maximized;
-        form.buttonViewLog.Visible = false; // SystemManager.Log.Active;
-        form.buttonViewStack.Enabled = Debugger.UseStack;
-        form.buttonViewInner.Enabled = einfo.InnerInfo != null;
-        form.buttonTerminate.Enabled = Debugger.UserCanTerminate && !isInner;
+        form.ActionViewStack.Enabled = Debugger.UseStack;
+        form.ActionViewInner.Enabled = einfo.InnerInfo != null;
+        form.ActionTerminate.Enabled = Debugger.UserCanTerminate && !isInner;
         if ( isInner )
         {
-          form.buttonPrint.Enabled = false;
-          form.buttonSendMail.Enabled = false;
-          form.buttonClose.Text = "OK";
+          form.ActionSend.Enabled = false;
+          form.ActionClose.Text = NextException.GetLang();
         }
-        form.textException.Text = einfo.TypeText;
-        form.textMessage.Text = einfo.Message;
-        form.labelInfo1.Text += einfo.Emitter + " " + Globals.AssemblyVersion;
-        form.textStack.Text = /* "[Thread: " + einfo.ThreadName + "]" + Globals.NL2 + */ einfo.StackText;
-        form.ErrorMsg.Add(form.textException.Text);
-        form.ErrorMsg.Add(Globals.NL);
-        form.ErrorMsg.Add(form.textMessage.Text);
-        form.ErrorMsg.Add(Globals.NL);
-        form.ErrorMsg.Add(form.textStack.Text);
+        form.TextException.Text = einfo.TypeText;
+        form.TextMessage.Text = einfo.Message;
+        form.LabelInfo1.Text += einfo.Emitter + " " + Globals.AssemblyVersion;
+        form.TextStack.Text = einfo.StackText;
+        form.ErrorMessages.Add(form.TextException.Text);
+        form.ErrorMessages.Add(Globals.NL);
+        form.ErrorMessages.Add(form.TextMessage.Text);
+        form.ErrorMessages.Add(Globals.NL);
+        form.ErrorMessages.Add(form.TextStack.Text);
         form.OriginalHeight = form.Height;
         form.ErrorInfo = einfo;
-        form.ButtonStackText = form.buttonViewStack.Text;
-        form.buttonViewStack.Text += " <<";
-        if ( Debugger.AutoHideStack ) form.buttonViewStack_Click(form, null);
-        if ( !Debugger.UseStack ) form.buttonViewStack_Click(form, null);
+        form.StackText = form.ActionViewStack.Text;
+        form.ActionViewStack.Text += " <<";
+        if ( Debugger.AutoHideStack ) form.ActionViewStack_Click(form, null);
+        if ( !Debugger.UseStack ) form.ActionViewStack_Click(form, null);
         form.BringToFront();
         form.ShowDialog();
       }
@@ -93,98 +99,50 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Height of the original.
-    /// </summary>
-    private int OriginalHeight;
-
-    /// <summary>
-    /// Event handler. Called by buttonViewStack for click events.
+    /// Event handler. Called by ActionTerminate for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void buttonViewStack_Click(object sender, EventArgs e)
+    private void ActionTerminate_Click(object sender, EventArgs e)
     {
-      if ( Height == OriginalHeight )
-      {
-        Height = textStack.Top + 35;
-        buttonViewStack.Text = ButtonStackText + " >>";
-      }
-      else
-      {
-        Height = OriginalHeight;
-        buttonViewStack.Text = ButtonStackText + " <<";
-      }
+      Environment.Exit(-1);
     }
 
     /// <summary>
-    /// Event handler. Called by buttonViewInner for click events.
+    /// Event handler. Called by ActionViewInner for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void buttonViewInner_Click(object sender, EventArgs e)
+    private void ActionViewInner_Click(object sender, EventArgs e)
     {
       Run(ErrorInfo.InnerInfo, true);
     }
 
     /// <summary>
-    /// Event handler. Called by buttonViewLog for click events.
+    /// Event handler. Called by ActionViewStack for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void buttonViewLog_Click(object sender, EventArgs e)
+    private void ActionViewStack_Click(object sender, EventArgs e)
     {
-      //Invoke(new Action<Logger, bool>((log, b) => LogForm.Run(log, b)), new object[] { SystemManager.Log, true });
-    }
-
-    /// <summary>
-    /// Event handler. Called by buttonPrint for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void buttonPrint_Click(object sender, EventArgs e)
-    {
-      /*Hide();
-      try
+      if ( Height == OriginalHeight )
       {
-        DialogResult res;
-        if ( SystemManager.Process.IsControlled ) res = printPreviewDialog.ShowDialog();
-        else res = printDialog.ShowDialog();
-        res = printPreviewDialog.ShowDialog();
-        if ( res == DialogResult.OK ) printDocument.Print();
+        Height = TextStack.Top + 35;
+        ActionViewStack.Text = StackText + " >>";
       }
-      finally
+      else
       {
-        Show();
-      }*/
+        Height = OriginalHeight;
+        ActionViewStack.Text = StackText + " <<";
+      }
     }
 
     /// <summary>
-    /// Event handler. Called by printDocument for print page events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Print page event information.</param>
-    private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
-    {
-      /*var font1 = new Font("Arial", 12, FontStyle.Bold | FontStyle.Underline);
-      var font2 = new Font("Arial", 12, FontStyle.Regular);
-      int x = 50;
-      int y = 50;
-      string msg = "Error report for application : " + HebrewCommon.Globals.AssemblyTitle;
-      e.Graphics.DrawString(msg, font1, Brushes.Black, x, y);
-      y = y + font1.Height * 3;
-      foreach ( string s in ErrorMsg )
-      {
-        e.Graphics.DrawString(s, font2, Brushes.Black, x, y);
-        y = y + (int)( font2.Height * 1.5 );
-      }*/
-    }
-
-    /// <summary>
-    /// Event handler. Called by buttonSendMail for click events.
+    /// Event handler. Called by ActionSend for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void buttonSendMail_Click(object sender, EventArgs e)
+    private void ActionSend_Click(object sender, EventArgs e)
     {
       if ( ErrorInfo == null ) return;
       try
@@ -239,30 +197,6 @@ namespace Ordisoftware.HebrewCommon
       {
         DisplayManager.ShowError(ex.Message);
       }
-      /*string email = SystemManager.User.UserMail;
-      if ( email.IsNullOrEmpty() )
-        if ( DisplayManager.QueryValue("User email", ref email) == InputValueResult.Cancelled)
-          return;
-      var files = FileTool.Exists(SystemManager.Log.Filename)
-                  ? new string[] { SystemManager.Log.Filename }
-                  : null;
-      if ( Net.NetUtility.SendMail(email,
-                                   SystemManager.Assembly.HelpMail,
-                                   SystemManager.Assembly.MailSubject, 
-                                   StringUtility.AsMultiline(_ErrorMsg), 
-                                   false, files) )
-        DisplayManager.Show("Message has been sent.");*/
-    }
-
-    /// <summary>
-    /// Event handler. Called by buttonTerminate for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void buttonTerminate_Click(object sender, EventArgs e)
-    {
-      //SystemManager.Abort();
-      Environment.Exit(-1);
     }
 
   }
