@@ -2137,19 +2137,19 @@
   <data name="ActionViewStats.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
         gg==
 </value>
   </data>
@@ -2166,7 +2166,7 @@
     <value>260, 22</value>
   </data>
   <data name="ActionViewStats.Text" xml:space="preserve">
-    <value>View database statistics</value>
+    <value>Usage statistics</value>
   </data>
   <data name="ActionVacuumAtNextStartup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2651,7 +2651,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 46</value>
+    <value>45, 36</value>
   </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>

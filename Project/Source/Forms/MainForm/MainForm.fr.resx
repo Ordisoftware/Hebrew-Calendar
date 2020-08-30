@@ -1172,7 +1172,7 @@
     <value>317, 22</value>
   </data>
   <data name="ActionViewStats.Text" xml:space="preserve">
-    <value>Voir les statistiques de la base de données</value>
+    <value>Statistiques d'utilisation</value>
   </data>
   <data name="ActionVacuumAtNextStartup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
