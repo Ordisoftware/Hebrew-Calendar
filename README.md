@@ -177,6 +177,7 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - Improve data generation speed by a half.
 - Improve keyboard shortcuts.
 - Remove the generate years selection box at startup if database is empty or new.
+- Change default years interval generation to 10.
 - Change text report that is no more stored in the database but in a file.
 - Some UI/UX improvements.
 - Some code refactorings.
