@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate minimum items for load data to show the loading form.
     /// </summary>
-    public const int LoadingFormLoadDB = 7500 * 2;
+    public const int LoadingFormLoadDB = 15000 * 2;
 
     /// <summary>
     /// Indicate minimum items for generate data to show the loading form.
@@ -114,6 +114,12 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static public ShowTextForm DatesDiffNoticeForm
       => ShowTextForm.Create(Translations.DatesDiffNoticeTitle, Translations.DatesDiffNotice, 500, 440);
+
+    /// <summary>
+    /// Indicate filename of the text report.
+    /// </summary>
+    static public string TextReportFilename
+      => Globals.UserDataFolderPath + "Calendar.txt";
 
     /// <summary>
     /// Indicate filename of the GPS database.

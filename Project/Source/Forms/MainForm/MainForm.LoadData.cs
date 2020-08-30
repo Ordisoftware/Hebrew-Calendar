@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.IO;
 using System.Data;
 using System.Data.Odbc;
 using System.Diagnostics;
@@ -48,20 +49,35 @@ namespace Ordisoftware.HebrewCalendar
         var Chrono = new Stopwatch();
         Chrono.Start();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-        //ReportTableAdapter.Fill(DataSet.Report);
         Chrono.Stop();
         Program.Settings.BenchmarkLoadData = Chrono.ElapsedMilliseconds;
         Program.Settings.Save();
         if ( DataSet.LunisolarDays.Count > 0 && !Program.Settings.FirstLaunch )
         {
           IsGenerating = true;
-          try { FillMonths(); }
-          finally { IsGenerating = false; }
           try
           {
-            // TODO load file instead
-            //var row = DataSet.Report.FirstOrDefault();
-            //CalendarText.Text = row == null ? "" : row.Content;
+            FillMonths();
+          }
+          finally
+          {
+            IsGenerating = false;
+          }
+          try
+          {
+            bool isTextReportLoaded = false;
+            if ( File.Exists(Program.TextReportFilename) )
+              try
+              {
+                CalendarText.Text = File.ReadAllText(Program.TextReportFilename);
+                isTextReportLoaded = true;
+              }
+              catch ( Exception ex )
+              {
+                DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(Program.TextReportFilename, ex.Message));
+              }
+            if ( !isTextReportLoaded )
+              CalendarText.Text = GenerateReport();
             GoToDate(DateTime.Today);
           }
           catch

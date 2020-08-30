@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.IO;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Globalization;
@@ -143,10 +144,14 @@ namespace Ordisoftware.HebrewCalendar
             GenerateErrors.Add($"{day.Date}: [{nameof(GenerateReport)}] { ex.Message}");
           }
         content.Append(headerSep + Globals.NL);
-        // TODO save to file instead
-        //var row = DataSet,.NewReportRow();
-        //row.Content = content.ToString();
-        //DataSet.Report.AddReportRow(row);
+        try
+        {
+          File.WriteAllText(Program.TextReportFilename, content.ToString());
+        }
+        catch ( Exception ex )
+        {
+          DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(Program.TextReportFilename, ex.Message));
+        }
         return content.ToString();
       }
       finally
