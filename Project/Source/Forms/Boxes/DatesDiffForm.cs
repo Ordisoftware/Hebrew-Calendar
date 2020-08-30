@@ -86,22 +86,10 @@ namespace Ordisoftware.HebrewCalendar
         }
       if ( e.Button != MouseButtons.Left ) return;
       if ( control == ActionSetBookmarkStart )
-      {
-        if ( (DateTime)Program.Settings["DateBookmark" + menuitem.Tag] != DateTime.MinValue )
-          if ( !DisplayManager.QueryYesNo(Localizer.AskToReplaceBookmark.GetLang()) ) return;
-        menuitem.Text = menuitem.Tag + ". " + MonthCalendar1.SelectionStart.Date.ToLongDateString();
-        Program.Settings["DateBookmark" + menuitem.Tag] = MonthCalendar1.SelectionStart.Date;
-        Program.Settings.Save();
-      }
+        setBookmark(MonthCalendar1);
       else
       if ( control == ActionSetBookmarkEnd )
-      {
-        if ( (DateTime)Program.Settings["DateBookmark" + menuitem.Tag] != DateTime.MinValue )
-          if ( !DisplayManager.QueryYesNo(Localizer.AskToReplaceBookmark.GetLang()) ) return;
-        menuitem.Text = menuitem.Tag + ". " + MonthCalendar2.SelectionStart.Date.ToLongDateString();
-        Program.Settings["DateBookmark" + menuitem.Tag] = MonthCalendar2.SelectionStart.Date;
-        Program.Settings.Save();
-      }
+        setBookmark(MonthCalendar2);
       else
       if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
         if ( control == ActionUseBookmarkStart )
@@ -109,6 +97,14 @@ namespace Ordisoftware.HebrewCalendar
         else
         if ( control == ActionUseBookmarkEnd )
           MonthCalendar2.SelectionStart = date;
+      void setBookmark(MonthCalendar calendar)
+      {
+        if ( (DateTime)Program.Settings["DateBookmark" + menuitem.Tag] != DateTime.MinValue )
+          if ( !DisplayManager.QueryYesNo(Localizer.AskToReplaceBookmark.GetLang()) ) return;
+        menuitem.Text = menuitem.Tag + ". " + calendar.SelectionStart.Date.ToLongDateString();
+        Program.Settings["DateBookmark" + menuitem.Tag] = calendar.SelectionStart.Date;
+        Program.Settings.Save();
+      }
     }
 
     private void ActionSetBookmarkStart_Click(object sender, EventArgs e)
