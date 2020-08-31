@@ -14,6 +14,7 @@ namespace SQLiteODBCInstaller
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
+      // Removed to force upgrade on new version
       /*try
       {
         using ( RegistryKey key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\ODBC\\ODBC.INI\\SQLite3 Datasource") )

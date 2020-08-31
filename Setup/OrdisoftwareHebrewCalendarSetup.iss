@@ -42,6 +42,7 @@ InternalCompressLevel=normal
 ArchitecturesAllowed=x86 x64 ia64
 ArchitecturesInstallIn64BitMode=x64 ia64
 DisableStartupPrompt=false
+MinVersion=0,6.1sp1
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
