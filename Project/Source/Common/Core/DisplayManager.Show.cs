@@ -22,13 +22,15 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide messages output and messages box.
+  /// Provide messages and questions with waiting user communication feedback.
   /// </summary>
   static public partial class DisplayManager
   {
 
+    static public bool IconInformationAsNone = false;
+
     /// <summary>
-    /// Indicates application title from file version info or executable path.
+    /// Indicates application title initialized from file version info or executable path.
     /// </summary>
     static public string Title
     {
@@ -42,11 +44,15 @@ namespace Ordisoftware.HebrewCommon
         }
         return _Title;
       }
+      set
+      {
+        _Title = value;
+      }
     }
     static public string _Title;
 
     /// <summary>
-    /// Show a message and wait user action.
+    /// Show a message.
     /// </summary>
     /// <returns>
     /// A DialogResult.
@@ -62,7 +68,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show a message and wait user action.
+    /// Show a message.
     /// </summary>
     /// <returns>
     /// A DialogResult.
@@ -89,22 +95,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show a message box and wait user action.
-    /// </summary>
-    /// <returns>
-    /// A DialogResult.
-    /// </returns>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    /// <param name="buttons">The buttons.</param>
-    /// <param name="icon">The icon.</param>
-    static private DialogResult ShowWinForm(string title, string text, MessageBoxButtons buttons, MessageBoxIcon icon)
-    {
-      return MessageBox.Show(text, title, buttons, icon);
-    }
-
-    /// <summary>
-    /// Show an information box.
+    /// Show an information message.
     /// </summary>
     /// <param name="text">The text.</param>
     static public void ShowInformation(string text)
@@ -113,13 +104,14 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show an information box.
+    /// Show an information message.
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="text">The text.</param>
     static public void ShowInformation(string title, string text)
     {
-      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+      var icon = IconInformationAsNone ? MessageBoxIcon.None : MessageBoxIcon.Information;
+      Show(title, text, MessageBoxButtons.OK, icon);
     }
 
     /// <summary>
@@ -181,7 +173,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show an error message and terminate process.
+    /// Show an error message and terminate the process.
     /// </summary>
     /// <param name="text">The text.</param>
     static public void ShowAndTerminate(string text)
@@ -190,7 +182,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show an error message and terminate process.
+    /// Show an error message and terminate the process.
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="text">The text.</param>
@@ -198,6 +190,21 @@ namespace Ordisoftware.HebrewCommon
     {
       ShowError(title, text);
       Application.Exit();
+    }
+
+    /// <summary>
+    /// Show a windows forms message box.
+    /// </summary>
+    /// <returns>
+    /// A DialogResult.
+    /// </returns>
+    /// <param name="title">The title.</param>
+    /// <param name="text">The text.</param>
+    /// <param name="buttons">The buttons.</param>
+    /// <param name="icon">The icon.</param>
+    static private DialogResult ShowWinForm(string title, string text, MessageBoxButtons buttons, MessageBoxIcon icon)
+    {
+      return MessageBox.Show(text, title, buttons, icon);
     }
 
   }

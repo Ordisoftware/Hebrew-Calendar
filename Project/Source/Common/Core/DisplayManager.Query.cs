@@ -20,13 +20,13 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide multithreaded messages output and messages box.
+  /// Provide messages and questions with waiting user communication feedback.
   /// </summary>
   static public partial class DisplayManager
   {
 
     /// <summary>
-    /// Show a question message box and return true if Yes.
+    /// Show a question and return true if Yes.
     /// </summary>
     /// <returns>
     /// true if it succeeds, false if it fails.
@@ -40,7 +40,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show a question message box and return true if Yes.
+    /// Show a question and return true if Yes.
     /// </summary>
     /// <returns>
     /// true if it succeeds, false if it fails.
@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show a question message box.
+    /// Show a question.
     /// </summary>
     /// <param name="caption">The caption.</param>
     /// <param name="onYes">The on Yes button selected action.</param>
@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show a question message box.
+    /// Show a question.
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="caption">The caption.</param>
@@ -105,7 +105,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show a question message box and return true if Ok.
+    /// Show a question and return true if Ok.
     /// </summary>
     /// <returns>
     /// true if it succeeds, false if it fails.
@@ -119,7 +119,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show a question message box and return true if Ok.
+    /// Show a question and return true if Ok.
     /// </summary>
     /// <returns>
     /// true if it succeeds, false if it fails.
@@ -144,7 +144,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show a question message box and return true if Ok.
+    /// Show a question and return true if Retry.
     /// </summary>
     /// <returns>
     /// true if it succeeds, false if it fails.
@@ -158,7 +158,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show a question message box and return true if Ok.
+    /// Show a question and return true if Retry.
     /// </summary>
     /// <returns>
     /// true if it succeeds, false if it fails.
@@ -182,8 +182,8 @@ namespace Ordisoftware.HebrewCommon
       }
     }
 
-/// <summary>
-    /// Show a question message box.
+    /// <summary>
+    /// Show a question.
     /// </summary>
     /// <param name="caption">The caption.</param>
     /// <param name="onRetry">The on Retry button selected action.</param>
@@ -195,7 +195,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Show a question message box.
+    /// Show a question.
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="caption">The caption.</param>
