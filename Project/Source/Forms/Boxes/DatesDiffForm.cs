@@ -48,9 +48,9 @@ namespace Ordisoftware.HebrewCalendar
       MonthCalendar2.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
       MonthCalendar2.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
       DateTimePicker1.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-      DateTimePicker1.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+      DateTimePicker1.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
       DateTimePicker2.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-      DateTimePicker2.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+      DateTimePicker2.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
     }
 
     private void DateDiffForm_Load(object sender, EventArgs e)
