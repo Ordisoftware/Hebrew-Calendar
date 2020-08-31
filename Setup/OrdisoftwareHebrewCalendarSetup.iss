@@ -62,8 +62,8 @@ english.SourceCode_msg=Source code of %1
 french.SourceCode_msg=Code source de %1
 english.StartWithWindows_msg=Start with Windows
 french.StartWithWindows_msg=Démarrer avec Windows
-english.OpenSQLiteODBC_msg=Install SQLite ODBC Driver if not present
-french.OpenSQLiteODBC_msg=Installer SQLite ODBC Driver si non présent
+english.OpenSQLiteODBC_msg=Install or update SQLite ODBC Driver
+french.OpenSQLiteODBC_msg=Installer ou mettre à jour SQLite ODBC Driver
 
 [Tasks]
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
@@ -79,7 +79,6 @@ Name: {app}\Help\*; Type: filesandordirs
 Name: {app}\Project\*; Type: filesandordirs
 Name: {app}\Setup\*; Type: filesandordirs
 Name: {app}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
-Name: {group}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
 Name: {group}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
 Name: {userappdata}\Ordisoftware\Hebrew Calendar\Hebrew-Calendar.sqlite; Type: files
 
@@ -113,9 +112,9 @@ Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: 
 [Run]
 ;Parameters: /passive /norestart;
 Filename: {app}\Setup\dotNetFx45_Full_setup.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}
-Filename: {app}\Setup\SQLiteODBCInstaller.exe
+Filename: {app}\Setup\SQLiteODBCInstaller\SQLiteODBCInstaller.exe
 Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
-Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall; Tasks: ; Languages: 
+Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall
 
 [Code]
 function IsDotNetDetected(version: string; service: cardinal): boolean;

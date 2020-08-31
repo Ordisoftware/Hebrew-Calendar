@@ -14,7 +14,7 @@ namespace SQLiteODBCInstaller
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      try
+      /*try
       {
         using ( RegistryKey key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\ODBC\\ODBC.INI\\SQLite3 Datasource") )
           if ( key != null )
@@ -28,14 +28,14 @@ namespace SQLiteODBCInstaller
       catch ( Exception ex )
       {
         MessageBox.Show(ex.Message);
-      }
+      }*/
       if ( IntPtr.Size > 4 )
-        RunShell("sqliteodbc_w64.exe", "/S");
+        RunShell("..\\SQLiteODBC\\sqliteodbc_w64.exe", "/S");
       else
-        RunShell("sqliteodbc.exe", "/S");
+        RunShell("..\\SQLiteODBC\\sqliteodbc.exe", "/S");
     }
 
-    static public void RunShell(string filename, string arguments)
+    static public void RunShell(string filename, string arguments = "")
     {
       using ( var process = new Process() )
         try
