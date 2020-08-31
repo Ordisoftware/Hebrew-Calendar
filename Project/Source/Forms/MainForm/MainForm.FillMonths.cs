@@ -53,6 +53,18 @@ namespace Ordisoftware.HebrewCalendar
       return Color.FromArgb(Convert.ToByte(_r), Convert.ToByte(_g), Convert.ToByte(_b));
     }
 
+    private void InitializeYearsInterval()
+    {
+      DateFirst = SQLiteDate.ToDateTime(DataSet.LunisolarDays.FirstOrDefault()?.Date ?? "");
+      DateLast = SQLiteDate.ToDateTime(DataSet.LunisolarDays.LastOrDefault()?.Date ?? "");
+      if ( DateFirst == DateTime.MinValue || DateLast == DateTime.MinValue || DateFirst >= DateLast )
+        throw new ArgumentOutOfRangeException("DateFirst & DateLast in " + nameof(InitializeYearsInterval));
+      YearFirst = DateFirst.Year;
+      YearLast = DateLast.Year;
+      YearsInterval = DateLast.Year - DateFirst.Year + 1;
+      YearsIntervalArray = Enumerable.Range(DateFirst.Year, YearsInterval).ToArray();
+    }
+
     internal void FillMonths()
     {
       var Chrono = new Stopwatch();
