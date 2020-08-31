@@ -48,10 +48,10 @@ Name: english; MessagesFile: compiler:Default.isl
 Name: french; MessagesFile: compiler:Languages\French.isl
 
 [CustomMessages]
-english.DotNetRequired_msg=Install .NET Framework 4.5
-french.DotNetRequired_msg=Installer .NET Framework 4.5
-english.DotNetInstalling_msg=Microsoft Framework 4.5 is being installed. Please wait...
-french.DotNetInstalling_msg=Microsoft Framework 4.5 est en cours d'installation. Veuillez patienter...
+english.DotNetRequired_msg=Install .NET Framework 4.7.2
+french.DotNetRequired_msg=Installer .NET Framework 4.7.2
+english.DotNetInstalling_msg=Microsoft Framework 4.7.2 is being installed. Please wait...
+french.DotNetInstalling_msg=Microsoft Framework 4.7.2 est en cours d'installation. Veuillez patienter...
 english.RunSettings_msg=Modify application settings
 french.RunSettings_msg=Modifier les paramètres de l'application
 english.HelpFile_msg=Documentation of %1
@@ -110,8 +110,7 @@ Name: {group}\{#MyAppName}\Register {#MyAppName} ODBC Datasource; Filename: {app
 Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: startwithwindows
 
 [Run]
-;Parameters: /passive /norestart;
-Filename: {app}\Setup\dotNetFx45_Full_setup.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}
+Filename: {app}\Setup\.NET\NDP472-KB4054531-Web.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}; Parameters: /q /norestart
 Filename: {app}\Setup\SQLiteODBCInstaller\SQLiteODBCInstaller.exe
 Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
 Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall
@@ -201,7 +200,7 @@ end;
 
 function CheckForFramework(): Boolean;
 begin
-    result := not IsDotNetDetected('v4.5', 0);
+    result := not IsDotNetDetected('v4.7.2', 0);
 end;
 
 function UpdateReadyMemo(Space, NewLine, MemoUserInfoInfo, MemoDirInfo, MemoTypeInfo, MemoComponentsInfo, MemoGroupInfo, MemoTasksInfo: String): String;
