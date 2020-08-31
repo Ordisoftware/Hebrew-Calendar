@@ -63,7 +63,7 @@ namespace Ordisoftware.HebrewCalendar
     private void SystemStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       LoadingForm.Instance.Progressing -= FormLoadingProgressing;
-      Timer.Interval = 3000;
+      Timer.Interval = 5000;
       e.Cancel = true;
       Hide();
     }
