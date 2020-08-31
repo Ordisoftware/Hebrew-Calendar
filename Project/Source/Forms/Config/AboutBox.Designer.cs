@@ -46,6 +46,7 @@
       this.linkLabel1 = new System.Windows.Forms.LinkLabel();
       this.linkLabel2 = new System.Windows.Forms.LinkLabel();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionPrivacyNotice = new System.Windows.Forms.Button();
       this.label6 = new System.Windows.Forms.Label();
       this.linkLabel4 = new System.Windows.Forms.LinkLabel();
       this.linkLabel5 = new System.Windows.Forms.LinkLabel();
@@ -84,7 +85,7 @@
       this.LabelTrademark.LinkColor = System.Drawing.Color.Navy;
       this.LabelTrademark.Name = "LabelTrademark";
       this.LabelTrademark.TabStop = true;
-      this.LabelTrademark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelTrademarkName_LinkClicked);
+      this.LabelTrademark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelTrademarkName_LinkClicked);
       // 
       // ActionClose
       // 
@@ -98,7 +99,7 @@
       this.EditLicense.BackColor = System.Drawing.SystemColors.Window;
       this.EditLicense.Name = "EditLicense";
       this.EditLicense.ReadOnly = true;
-      this.EditLicense.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.editLicense_LinkClicked);
+      this.EditLicense.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.EditLicense_LinkClicked);
       // 
       // label10
       // 
@@ -181,9 +182,20 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionPrivacyNotice);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionPrivacyNotice
+      // 
+      this.ActionPrivacyNotice.AllowDrop = true;
+      this.ActionPrivacyNotice.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionPrivacyNotice, "ActionPrivacyNotice");
+      this.ActionPrivacyNotice.Name = "ActionPrivacyNotice";
+      this.ActionPrivacyNotice.TabStop = false;
+      this.ActionPrivacyNotice.UseVisualStyleBackColor = true;
+      this.ActionPrivacyNotice.Click += new System.EventHandler(this.ActionPrivacyNotice_Click);
       // 
       // label6
       // 
@@ -353,5 +365,6 @@
     private System.Windows.Forms.Label label9;
     private System.Windows.Forms.Label label11;
     private System.Windows.Forms.LinkLabel linkLabel8;
+    private System.Windows.Forms.Button ActionPrivacyNotice;
   }
 }

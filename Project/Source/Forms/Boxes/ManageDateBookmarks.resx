@@ -117,66 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Manage date bookmarks</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionUp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ActionDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAABJhJREFUWEfdl9lPG1cUh5FQ5ymPqH1o/4Y8V0rTl/4tCPUBoSZSVamhkVIwJC1h
-        CWAKTdlMWQ0OAdF4wTZgDNjGxmzGmCXG431sAzYEcPvruWOMAnKwaU0feqRPoDsz5zv3nnuHoeD/FoUd
-        pfWtPWVNYHSW1rewsdSl24/Cl18/HxKWtoCzpMgRH0bft22ga1zqltsLrru0EWfHJwiPGLAnHYOnZQw8
-        /cTJKSZ+HrrVIkR5Mn4EQTEL38s38LWr4OsgflPC1zqBv+LHGP9p8FaK4LrYzKNxRF4ZRbG/S3OZDjX8
-        VFQylsDYs/68FsGNPe3Dn5FDREcXEOzUICjTZqZrEsF2NZLCIdgz7NlUin8e3OvqXpwFYwh1ahGS6RH6
-        fep6unUItWtwFoiBPctypFLdPLhRCcn5CCKyKQi90xD6Zq6H7gl363Hij0CQz8A7v4HhZ7I2ynXjI8o1
-        tkqRdAuI9s4g0m9AZGD2eugeoWca70gekhuoFVqcrnkw/LiLrcKdVNrcgpNKpfDzfvgHDTgYmENsKAuD
-        RsR6DTjxncu7dIj1GZB0+CB/3MkKKEqlzh5cc3Mz+LdeTKg0+ENNm2pkDodyM/aHTZmREwPzl+TRASMS
-        Civ42XW0fdcwTHlzKoBramrC1vYO1Fo9NDo91LopqPV6hEfNiI9YcKC4AhsbMok9D1HPL+SjNgg0Lvvm
-        RYDy3iWytoBrbGyEa2sb+ukZTM0YLtAbCBoLji/imGaVeGVFnEG/x+WWzHJase4HUrb0nxMfE9duQu5F
-        QwOcWy4YjHMZmSF080Z4VIt493oJCQYVceKPZpTLUvIviE+Jj5jkQ8HV19fDuenC/IL5WuYIg9kEr2oJ
-        Jwo7TqnnwXN5jORHl+X3ic9Yfib5UHB1dXVwODdhXrTBbLFmxUQYzWac0etWkBvpragV5ce0Ipt07GQP
-        byCvra2FY8MJm30Z1iV7TrAiBCGCOcsifLQS+3T0jmnmLpL3PGzJXf68pkaUr66tY3llNTvLK7Da7BAi
-        JF8wwThvgtWxhv3ZDWz/qkPvg19yl9eQfN3hFJd+zbGRlVWCHU0hImDORHuB5PbVNezsuWHXWlHxVJKz
-        vLC8/Ps2C/Wb533ixsuK04XdnV1adgEqjZbkZiyT/K17DzbNAiqrKnOWs7jz45Mn8AYC8Hi94qyy4fZ4
-        EKGeqye14klIy5VKFSRVuc88HUUVFRUIhsLw+vzYdbuvhff6xZ6rrshVSjWqqqpuLGdRVFZWNsQ2np9W
-        gffy8PCZCQSDKblmMm9yFux9fLeyspI2oQNhWlp/IAifP3CJMPWbbbh8y1mw9/EnxD3WCufmJmL7+6Iw
-        FA6LRKOx8w13LqfVYvI3SuW/lqeDPcgS3GdFbO/sIHF0JBZycHj4Xs8tWCG528NDqVLlTZ6OiyIk1A6F
-        QiEWEU8koKO/elbbMpyuLToFu+jvH0B1dXVe5elIF3GvpKRkrPzRI0gkEnGm1dVVYPvkh/JyFBcXj7N7
-        zu/NmzwdLCHbE+yD4UviqyuwMXaN3ZN3eTrYxmSng30ysQ+H92Fj7Np/9k/nLUZBwd9bEPty5pKc3gAA
-        AABJRU5ErkJggg==
-</value>
+  <data name="ActionDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 42</value>
   </data>
-  <data name="ActionUp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAnhJREFUWEftlFtIk2EYx3dR311QF3XVXdcR3Rh00J2izBKLpEYnKYkoqKAu6qo2
-        D8uZDWdamYrUwg6uUFyb01ZOdnDNHE5Xa0hSbN82S2SleVH8e96PBWKwDs7RxfeHH7y8H7zP7+V73kci
-        RowYMQsMR6xIwdZZDScv7waD1huI1WyPfchGOKnaigZ76KuhZ3RWqrEyic1EViQ4qcaC5r430yUPQiht
-        D6O2e2RGprZkRYJuboHR+Xa64LYfe1oC2Hc3CFVbGDX28DeZ+imT2EIsioRQ/P5gBNtv+FDY5Mfe1gBU
-        xiAOtIVwuP0dahwRLJaEUNw0FIGizoOCWz4UNftRnBI4SAJHHo3h2JP30DmiGZcQincMx5Crd2Lb9QEU
-        Ng5i9zyBEhIofTyOE50RVHumILtszogEl0fdbgnGsanaAUWtC/kN3vQCHR9wyhJD1UBywRJC8d7XceRo
-        7ZBe68fWOjd2/ImAOYqztglovV8g/UcJLpeKvwglsE5jw8aq55Dp+6E0uJFf78UuEmA9wJpwf6oJWQ/M
-        FThjjeP8s0lUeGchvdT1dxIyGiw9QR5rLpqxVm1DTqVd+AV51ANKg4dewUvsbBxCUcswiu+MQnUvhEMP
-        x3DUNI7jJHCSBE5bEzjX+wkXHEno/N+hoNlBR7OJycZ2+rDJ1hdOwBaMwTLCozPAw+Tn6QlGYfRF0eqN
-        osnD46YninoXD4MrBr0rgauuCeicH3HFNQmtewoVniTKvTOofEUCZYKAnFglFEkXucbcxSRYD8yF7f1E
-        Rjf6BXp+85ET7PbKMvNnOno9sVwo8pssIZYRKwlmnClY8aWEGDFixPwvkUh+AOfm9xM7TYzMAAAAAElF
-        TkSuQmCC
-</value>
+  <data name="&gt;&gt;ListBox.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="ActionDown.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAn9JREFUWEftlFtIU3Ecx/dQvQX1UE+99RzRi0IX3cUos8QiqdFNSkISKqiHfKrN
-        y3JWw5lWpiK1sIsrFNfmtJWTXTzNHE5Xa0hS7OIskZXmQ/Ltd+bObBFTc0rE+cD35ZzD+X7O+f/+fwEP
-        Dw/Pv8ZKyhrK+iRmHWU1ZQVlTtjyLRnFuq8SuR5i2XOI/hS693uEckMs6bL4sNfEcl3bTEViWGOxpFiP
-        sjfTKGEmUWoPQ2Ebx1XrGJSWz7hmHYXKGoLaGkS1NYDbdj/q7AE0Mn5oHH487PVD6wyg1RWAfiAAozuI
-        Lm8oIjFTkZi1lFT265XOaVwyh3Gh8wvOGkI4o/PjdMsnnNQO49jjIUgfeJB7bxA5Df3YW9uH3bdeI0Nt
-        R7rKgm0VZqSUmbBJZsTGIh063AH6S/MTWEXZQNkhvNyGUmYKF1+M4ZxhBIUkUEAC+U+HceLJEI40eXBY
-        48bBRhdy6p3YV9uLzGqGJGwQqbqxtfwlNsuNeOUJIY2WIfrueTErcUUHBfMN542jcQJ5JHCUBKQkkEsC
-        +0kgmwT21DDYWWWD8EY3UhQmdL4dicxA9J0LIiYhIonynjAK9cE5BTJJQFJpjSyB3v335RxxEhX2cRS0
-        +hIK7LrZgzSagZb+IIQy/aLKOWYlaPspzX6cevYxMgO/CrAzkHXHAUmVHdo+X9LKOeIkrpt9ON78ITKE
-        rAA7hNl1TtoFDtqCyS/niJcweX9Im7w4dN+NAw0uZN11QmN5P7FU5RycxHYRFVW2D0zmN3uR98iD+q53
-        E0I6O6LPLCkxCfZkU3cMTtWYPN+Fi5z2hcJJpIpL2sEmem1ZYQvZY5vNspfz8PD8TwgEPwGoL/cTLwVL
-        ZQAAAABJRU5ErkJggg==
-</value>
+  <data name="ActionUp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 108</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionSort.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ActionDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 156</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ManageDateBookmarksForm</value>
+  </data>
+  <data name="&gt;&gt;ActionSort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSort.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="ActionSort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -204,4 +182,283 @@
         wPsGdT38dkMdzAJGPTz+BReV0JXewhJzAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="ActionSort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 42</value>
+  </data>
+  <data name="&gt;&gt;ActionDown.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 28</value>
+  </data>
+  <data name="&gt;&gt;ActionDelete.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionSort.Name" xml:space="preserve">
+    <value>ActionSort</value>
+  </data>
+  <data name="ListBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="&gt;&gt;ListBox.Name" xml:space="preserve">
+    <value>ListBox</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;ActionUp.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionDown.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;ActionUp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
+    <value>ActionOK</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="ActionDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAABJhJREFUWEfdl9lPG1cUh5FQ5ymPqH1o/4Y8V0rTl/4tCPUBoSZSVamhkVIwJC1h
+        CWAKTdlMWQ0OAdF4wTZgDNjGxmzGmCXG431sAzYEcPvruWOMAnKwaU0feqRPoDsz5zv3nnuHoeD/FoUd
+        pfWtPWVNYHSW1rewsdSl24/Cl18/HxKWtoCzpMgRH0bft22ga1zqltsLrru0EWfHJwiPGLAnHYOnZQw8
+        /cTJKSZ+HrrVIkR5Mn4EQTEL38s38LWr4OsgflPC1zqBv+LHGP9p8FaK4LrYzKNxRF4ZRbG/S3OZDjX8
+        VFQylsDYs/68FsGNPe3Dn5FDREcXEOzUICjTZqZrEsF2NZLCIdgz7NlUin8e3OvqXpwFYwh1ahGS6RH6
+        fep6unUItWtwFoiBPctypFLdPLhRCcn5CCKyKQi90xD6Zq6H7gl363Hij0CQz8A7v4HhZ7I2ynXjI8o1
+        tkqRdAuI9s4g0m9AZGD2eugeoWca70gekhuoFVqcrnkw/LiLrcKdVNrcgpNKpfDzfvgHDTgYmENsKAuD
+        RsR6DTjxncu7dIj1GZB0+CB/3MkKKEqlzh5cc3Mz+LdeTKg0+ENNm2pkDodyM/aHTZmREwPzl+TRASMS
+        Civ42XW0fdcwTHlzKoBramrC1vYO1Fo9NDo91LopqPV6hEfNiI9YcKC4AhsbMok9D1HPL+SjNgg0Lvvm
+        RYDy3iWytoBrbGyEa2sb+ukZTM0YLtAbCBoLji/imGaVeGVFnEG/x+WWzHJase4HUrb0nxMfE9duQu5F
+        QwOcWy4YjHMZmSF080Z4VIt493oJCQYVceKPZpTLUvIviE+Jj5jkQ8HV19fDuenC/IL5WuYIg9kEr2oJ
+        Jwo7TqnnwXN5jORHl+X3ic9Yfib5UHB1dXVwODdhXrTBbLFmxUQYzWac0etWkBvpragV5ce0Ipt07GQP
+        byCvra2FY8MJm30Z1iV7TrAiBCGCOcsifLQS+3T0jmnmLpL3PGzJXf68pkaUr66tY3llNTvLK7Da7BAi
+        JF8wwThvgtWxhv3ZDWz/qkPvg19yl9eQfN3hFJd+zbGRlVWCHU0hImDORHuB5PbVNezsuWHXWlHxVJKz
+        vLC8/Ps2C/Wb533ixsuK04XdnV1adgEqjZbkZiyT/K17DzbNAiqrKnOWs7jz45Mn8AYC8Hi94qyy4fZ4
+        EKGeqye14klIy5VKFSRVuc88HUUVFRUIhsLw+vzYdbuvhff6xZ6rrshVSjWqqqpuLGdRVFZWNsQ2np9W
+        gffy8PCZCQSDKblmMm9yFux9fLeyspI2oQNhWlp/IAifP3CJMPWbbbh8y1mw9/EnxD3WCufmJmL7+6Iw
+        FA6LRKOx8w13LqfVYvI3SuW/lqeDPcgS3GdFbO/sIHF0JBZycHj4Xs8tWCG528NDqVLlTZ6OiyIk1A6F
+        QiEWEU8koKO/elbbMpyuLToFu+jvH0B1dXVe5elIF3GvpKRkrPzRI0gkEnGm1dVVYPvkh/JyFBcXj7N7
+        zu/NmzwdLCHbE+yD4UviqyuwMXaN3ZN3eTrYxmSng30ysQ+H92Fj7Np/9k/nLUZBwd9bEPty5pKc3gAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionUp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 42</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ActionDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ActionDelete.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 2</value>
+  </data>
+  <data name="&gt;&gt;ActionSort.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="ActionDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ActionUp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 208</value>
+  </data>
+  <data name="ListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="ActionCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>Manual</value>
+  </data>
+  <data name="ActionDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ListBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="ActionDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 42</value>
+  </data>
+  <data name="ListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 184</value>
+  </data>
+  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionSort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 12</value>
+  </data>
+  <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionDown.Name" xml:space="preserve">
+    <value>ActionDown</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionUp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAnhJREFUWEftlFtIk2EYx3dR311QF3XVXdcR3Rh00J2izBKLpEYnKYkoqKAu6qo2
+        D8uZDWdamYrUwg6uUFyb01ZOdnDNHE5Xa0hSbN82S2SleVH8e96PBWKwDs7RxfeHH7y8H7zP7+V73kci
+        RowYMQsMR6xIwdZZDScv7waD1huI1WyPfchGOKnaigZ76KuhZ3RWqrEyic1EViQ4qcaC5r430yUPQiht
+        D6O2e2RGprZkRYJuboHR+Xa64LYfe1oC2Hc3CFVbGDX28DeZ+imT2EIsioRQ/P5gBNtv+FDY5Mfe1gBU
+        xiAOtIVwuP0dahwRLJaEUNw0FIGizoOCWz4UNftRnBI4SAJHHo3h2JP30DmiGZcQincMx5Crd2Lb9QEU
+        Ng5i9zyBEhIofTyOE50RVHumILtszogEl0fdbgnGsanaAUWtC/kN3vQCHR9wyhJD1UBywRJC8d7XceRo
+        7ZBe68fWOjd2/ImAOYqztglovV8g/UcJLpeKvwglsE5jw8aq55Dp+6E0uJFf78UuEmA9wJpwf6oJWQ/M
+        FThjjeP8s0lUeGchvdT1dxIyGiw9QR5rLpqxVm1DTqVd+AV51ANKg4dewUvsbBxCUcswiu+MQnUvhEMP
+        x3DUNI7jJHCSBE5bEzjX+wkXHEno/N+hoNlBR7OJycZ2+rDJ1hdOwBaMwTLCozPAw+Tn6QlGYfRF0eqN
+        osnD46YninoXD4MrBr0rgauuCeicH3HFNQmtewoVniTKvTOofEUCZYKAnFglFEkXucbcxSRYD8yF7f1E
+        Rjf6BXp+85ET7PbKMvNnOno9sVwo8pssIZYRKwlmnClY8aWEGDFixPwvkUh+AOfm9xM7TYzMAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionDown.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionDown.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;ActionDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ActionSort.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionDown.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="ActionUp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 60</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="ActionDelete.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ActionDelete.Name" xml:space="preserve">
+    <value>ActionDelete</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
+    <value>ActionCancel</value>
+  </data>
+  <data name="&gt;&gt;ActionDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 2</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="&gt;&gt;ActionDelete.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="ActionOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ActionUp.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>232, 246</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ActionDown.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAn9JREFUWEftlFtIU3Ecx/dQvQX1UE+99RzRi0IX3cUos8QiqdFNSkISKqiHfKrN
+        y3JWw5lWpiK1sIsrFNfmtJWTXTzNHE5Xa0hS7OIskZXmQ/Ltd+bObBFTc0rE+cD35ZzD+X7O+f/+fwEP
+        Dw/Pv8ZKyhrK+iRmHWU1ZQVlTtjyLRnFuq8SuR5i2XOI/hS693uEckMs6bL4sNfEcl3bTEViWGOxpFiP
+        sjfTKGEmUWoPQ2Ebx1XrGJSWz7hmHYXKGoLaGkS1NYDbdj/q7AE0Mn5oHH487PVD6wyg1RWAfiAAozuI
+        Lm8oIjFTkZi1lFT265XOaVwyh3Gh8wvOGkI4o/PjdMsnnNQO49jjIUgfeJB7bxA5Df3YW9uH3bdeI0Nt
+        R7rKgm0VZqSUmbBJZsTGIh063AH6S/MTWEXZQNkhvNyGUmYKF1+M4ZxhBIUkUEAC+U+HceLJEI40eXBY
+        48bBRhdy6p3YV9uLzGqGJGwQqbqxtfwlNsuNeOUJIY2WIfrueTErcUUHBfMN542jcQJ5JHCUBKQkkEsC
+        +0kgmwT21DDYWWWD8EY3UhQmdL4dicxA9J0LIiYhIonynjAK9cE5BTJJQFJpjSyB3v335RxxEhX2cRS0
+        +hIK7LrZgzSagZb+IIQy/aLKOWYlaPspzX6cevYxMgO/CrAzkHXHAUmVHdo+X9LKOeIkrpt9ON78ITKE
+        rAA7hNl1TtoFDtqCyS/niJcweX9Im7w4dN+NAw0uZN11QmN5P7FU5RycxHYRFVW2D0zmN3uR98iD+q53
+        E0I6O6LPLCkxCfZkU3cMTtWYPN+Fi5z2hcJJpIpL2sEmem1ZYQvZY5vNspfz8PD8TwgEPwGoL/cTLwVL
+        ZQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionUp.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionUp.Name" xml:space="preserve">
+    <value>ActionUp</value>
+  </data>
+  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;ListBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

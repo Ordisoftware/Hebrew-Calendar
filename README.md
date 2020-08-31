@@ -151,6 +151,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add reminder for solar and lunar anniversary of birth.
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
+- Improve date bookmarks to use an entity instead of the application settings.
 - Improve and reorganize preferences form with a left menu panel.
 
 ## Changelog

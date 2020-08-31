@@ -40,6 +40,7 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionHelp = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
+      this.ActionManageBookmarks = new System.Windows.Forms.Button();
       this.MonthCalendar1 = new System.Windows.Forms.MonthCalendar();
       this.MonthCalendar2 = new System.Windows.Forms.MonthCalendar();
       this.lunationsLabel1 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
       this.downToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.upToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionManageBookmarks = new System.Windows.Forms.Button();
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -137,6 +137,16 @@
       resources.ApplyResources(this.ActionClose, "ActionClose");
       this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionClose.Name = "ActionClose";
+      // 
+      // ActionManageBookmarks
+      // 
+      this.ActionManageBookmarks.AllowDrop = true;
+      this.ActionManageBookmarks.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionManageBookmarks, "ActionManageBookmarks");
+      this.ActionManageBookmarks.Name = "ActionManageBookmarks";
+      this.ActionManageBookmarks.TabStop = false;
+      this.ActionManageBookmarks.UseVisualStyleBackColor = true;
+      this.ActionManageBookmarks.Click += new System.EventHandler(this.ActionManageBookmarks_Click);
       // 
       // MonthCalendar1
       // 
@@ -321,16 +331,6 @@
       // 
       this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
       resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
-      // 
-      // ActionManageBookmarks
-      // 
-      this.ActionManageBookmarks.AllowDrop = true;
-      this.ActionManageBookmarks.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionManageBookmarks, "ActionManageBookmarks");
-      this.ActionManageBookmarks.Name = "ActionManageBookmarks";
-      this.ActionManageBookmarks.TabStop = false;
-      this.ActionManageBookmarks.UseVisualStyleBackColor = true;
-      this.ActionManageBookmarks.Click += new System.EventHandler(this.ActionManageBookmarks_Click);
       // 
       // DatesDiffForm
       // 

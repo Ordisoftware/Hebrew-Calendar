@@ -100,6 +100,11 @@ namespace Ordisoftware.HebrewCalendar
           MonthCalendar2.SelectionStart = date;
       void setBookmark(MonthCalendar calendar)
       {
+        for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
+        {
+          var date = (DateTime)Program.Settings["DateBookmark" + index];
+          if ( calendar.SelectionStart.Date == date ) return;
+        }
         if ( (DateTime)Program.Settings["DateBookmark" + menuitem.Tag] != DateTime.MinValue )
           if ( !DisplayManager.QueryYesNo(Localizer.AskToReplaceBookmark.GetLang()) ) return;
         menuitem.Text = menuitem.Tag + ". " + calendar.SelectionStart.Date.ToLongDateString();

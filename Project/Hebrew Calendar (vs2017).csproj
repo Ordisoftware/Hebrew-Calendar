@@ -573,6 +573,9 @@
     <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffForm.resx">
       <DependentUpon>DatesDiffForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarks.fr.resx">
+      <DependentUpon>ManageDateBookmarks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarks.resx">
       <DependentUpon>ManageDateBookmarks.cs</DependentUpon>
     </EmbeddedResource>

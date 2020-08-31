@@ -398,10 +398,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 2</value>
+    <value>35, 1</value>
   </data>
   <data name="ActionHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionHelp.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
@@ -425,7 +425,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>413, 2</value>
+    <value>423, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -471,10 +471,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionManageBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 2</value>
+    <value>3, 1</value>
   </data>
   <data name="ActionManageBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionManageBookmarks.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -498,7 +498,7 @@
     <value>10, 383</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>494, 28</value>
+    <value>504, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -519,7 +519,7 @@
     <value>NoControl</value>
   </data>
   <data name="MonthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 44</value>
+    <value>19, 44</value>
   </data>
   <data name="MonthCalendar1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -540,7 +540,7 @@
     <value>NoControl</value>
   </data>
   <data name="MonthCalendar2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 44</value>
+    <value>278, 44</value>
   </data>
   <data name="MonthCalendar2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -762,10 +762,10 @@
     <value>Bottom, Left</value>
   </data>
   <data name="GroupBoxSun.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="GroupBoxSun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 252</value>
+    <value>19, 252</value>
   </data>
   <data name="GroupBoxSun.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 115</value>
@@ -828,10 +828,10 @@
     <value>4</value>
   </data>
   <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 252</value>
+    <value>275, 252</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 115</value>
@@ -855,7 +855,7 @@
     <value>9</value>
   </data>
   <data name="DateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 213</value>
+    <value>19, 213</value>
   </data>
   <data name="DateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 20</value>
@@ -876,7 +876,7 @@
     <value>8</value>
   </data>
   <data name="DateTimePicker2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 213</value>
+    <value>278, 213</value>
   </data>
   <data name="DateTimePicker2.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 20</value>
@@ -932,10 +932,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSetBookmarkStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 13</value>
+    <value>53, 13</value>
   </data>
   <data name="ActionSetBookmarkStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionSetBookmarkStart.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -974,10 +974,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseBookmarkStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 13</value>
+    <value>21, 13</value>
   </data>
   <data name="ActionUseBookmarkStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionUseBookmarkStart.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
@@ -1016,10 +1016,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseBookmarkEnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 13</value>
+    <value>280, 13</value>
   </data>
   <data name="ActionUseBookmarkEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionUseBookmarkEnd.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
@@ -1060,10 +1060,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSetBookmarkEnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 13</value>
+    <value>312, 13</value>
   </data>
   <data name="ActionSetBookmarkEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionSetBookmarkEnd.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -1097,10 +1097,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSwapDates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 113</value>
+    <value>249, 113</value>
   </data>
   <data name="ActionSwapDates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionSwapDates.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
@@ -1154,7 +1154,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>514, 421</value>
+    <value>524, 421</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>

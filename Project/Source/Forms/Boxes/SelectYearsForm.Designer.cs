@@ -47,15 +47,10 @@
       // 
       // EditYearLast
       // 
-      resources.ApplyResources(this.EditYearLast, "EditYearLast");
       this.EditYearLast.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditYearLast, "EditYearLast");
       this.EditYearLast.Name = "EditYearLast";
       this.EditYearLast.ReadOnly = true;
-      this.EditYearLast.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
       this.EditYearLast.ValueChanged += new System.EventHandler(this.EditYearLast_ValueChanged);
       this.EditYearLast.Leave += new System.EventHandler(this.EditYearLast_ValueChanged);
       // 
@@ -66,15 +61,10 @@
       // 
       // EditYearFirst
       // 
-      resources.ApplyResources(this.EditYearFirst, "EditYearFirst");
       this.EditYearFirst.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditYearFirst, "EditYearFirst");
       this.EditYearFirst.Name = "EditYearFirst";
       this.EditYearFirst.ReadOnly = true;
-      this.EditYearFirst.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
       this.EditYearFirst.ValueChanged += new System.EventHandler(this.EditYearFirst_ValueChanged);
       this.EditYearFirst.Enter += new System.EventHandler(this.EditYearFirst_ValueChanged);
       // 
@@ -93,9 +83,9 @@
       // 
       // PanelBottom
       // 
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOK);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionCancel
@@ -106,10 +96,10 @@
       // 
       // ActionPrefefinedInterval
       // 
-      resources.ApplyResources(this.ActionPrefefinedInterval, "ActionPrefefinedInterval");
       this.ActionPrefefinedInterval.AllowDrop = true;
       this.ActionPrefefinedInterval.ContextMenuStrip = this.MenuPredefinedYears;
       this.ActionPrefefinedInterval.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionPrefefinedInterval, "ActionPrefefinedInterval");
       this.ActionPrefefinedInterval.Name = "ActionPrefefinedInterval";
       this.ActionPrefefinedInterval.TabStop = false;
       this.ActionPrefefinedInterval.UseVisualStyleBackColor = true;
@@ -117,15 +107,15 @@
       // 
       // MenuPredefinedYears
       // 
-      resources.ApplyResources(this.MenuPredefinedYears, "MenuPredefinedYears");
       this.MenuPredefinedYears.Name = "MenuSelectMoonDayTextFormat";
       this.MenuPredefinedYears.ShowImageMargin = false;
+      resources.ApplyResources(this.MenuPredefinedYears, "MenuPredefinedYears");
       // 
       // ActionDefaultInterval
       // 
-      resources.ApplyResources(this.ActionDefaultInterval, "ActionDefaultInterval");
       this.ActionDefaultInterval.AllowDrop = true;
       this.ActionDefaultInterval.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionDefaultInterval, "ActionDefaultInterval");
       this.ActionDefaultInterval.Name = "ActionDefaultInterval";
       this.ActionDefaultInterval.TabStop = false;
       this.ActionDefaultInterval.UseVisualStyleBackColor = true;
