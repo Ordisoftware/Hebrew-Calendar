@@ -68,9 +68,7 @@ namespace Ordisoftware.HebrewCalendar
       EditAutoLockSessionTimeOut.Minimum = RemindAutoLockTimeOutMin;
       EditAutoLockSessionTimeOut.Maximum = RemindAutoLockTimeOutMax;
       EditAutoLockSessionTimeOut.Value = RemindAutoLockTimeOutValue;
-      EditAutoGenerateYearsInterval.Minimum = AutoGenerateYearsIntervalMin;
-      EditAutoGenerateYearsInterval.Maximum = AutoGenerateYearsIntervalMax;
-      EditAutoGenerateYearsInterval.Value = AutoGenerateYearsIntervalValue;
+      YearsIntervalItem.InitializeMenu(MenuPredefinedYears, AutoGenerateYearsIntervalMax, PredefinedYearsItem_Click);
     }
 
     /// <summary>
@@ -603,6 +601,21 @@ namespace Ordisoftware.HebrewCalendar
       EditBalloonAutoHide.Enabled = EditBalloon.Enabled;
       LabelLoomingDelay.Enabled = EditBalloon.Enabled;
       EditBalloonLoomingDelay.Enabled = EditBalloon.Enabled;
+    }
+
+    private void ActionAutoGenerateHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(Translations.AutoGenerateIntervalNotice.GetLang());
+    }
+
+    private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)
+    {
+      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval, new Point(0, SelectAutoGenerateYearsInterval.Height));
+    }
+
+    private void PredefinedYearsItem_Click(object sender, EventArgs e)
+    {
+      EditAutoGenerateYearsInterval.Text = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue.ToString();
     }
 
   }

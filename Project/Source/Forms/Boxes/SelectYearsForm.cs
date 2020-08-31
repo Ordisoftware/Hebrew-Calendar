@@ -31,15 +31,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      foreach ( int value in Program.PredefinedYearsIntervals )
-        if ( value <= Program.Settings.GenerateIntervalMaximum )
-        {
-          var item = new ToolStripMenuItem();
-          item.Text = Translations.PredefinedYearsInterval.GetLang(value);
-          item.Tag = value.ToString();
-          item.Click += PredefinedYearsItem_Click;
-          MenuPredefinedYears.Items.Add(item);
-        }
+      YearsIntervalItem.InitializeMenu(MenuPredefinedYears, Program.Settings.GenerateIntervalMaximum, PredefinedYearsItem_Click);
     }
 
     private void SelectYearsRangeForm_Load(object sender, EventArgs e)
@@ -52,9 +44,6 @@ namespace Ordisoftware.HebrewCalendar
       CurrentYear = DateTime.Today.AddYears(-1).Year;
       if ( CurrentYear < yearMin || CurrentYear + min - 1 > yearMax )
         throw new ArgumentOutOfRangeException(Translations.NotSupportedYear.GetLang(CurrentYear));
-      var year = MainForm.Instance.YearFirst == 0
-               ? CurrentYear
-               : MainForm.Instance.YearFirst;
       EditYearFirst.Minimum = CurrentYear + min - max + 1;
       EditYearFirst.Maximum = CurrentYear;
       EditYearLast.Minimum = CurrentYear + min;
@@ -62,10 +51,13 @@ namespace Ordisoftware.HebrewCalendar
       if ( EditYearFirst.Minimum < yearMin + 1 ) EditYearFirst.Minimum = yearMin + 1;
       if ( EditYearLast.Maximum > yearMax - 1 ) EditYearLast.Maximum = yearMax - 1;
       Mutex = false;
-      EditYearFirst.Value = year;
-      EditYearLast.Value = MainForm.Instance.YearLast == 0
-                         ? year + Program.Settings.AutoGenerateYearsInternal - 1
-                         : MainForm.Instance.YearLast;
+      if ( MainForm.Instance.YearFirst != 0 && MainForm.Instance.YearLast != 0 )
+      {
+        EditYearFirst.Value = MainForm.Instance.YearFirst;
+        EditYearLast.Value = MainForm.Instance.YearLast;
+      }
+      else
+        ActionDefaultInterval.PerformClick();
     }
 
     private void SelectYearsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -79,10 +71,18 @@ namespace Ordisoftware.HebrewCalendar
       MenuPredefinedYears.Show(ActionPrefefinedInterval, new Point(0, ActionPrefefinedInterval.Height));
     }
 
+    private void ActionDefaultInterval_Click(object sender, EventArgs e)
+    {
+      var interval = new YearsIntervalItem(Program.Settings.AutoGenerateYearsInternal);
+      EditYearFirst.Value = CurrentYear - interval.YearsBefore;
+      EditYearLast.Value = CurrentYear + interval.YearsAfter - 1;
+    }
+
     private void PredefinedYearsItem_Click(object sender, EventArgs e)
     {
-      EditYearFirst.Value = CurrentYear;
-      EditYearLast.Value = CurrentYear + int.Parse((string)( sender as ToolStripMenuItem ).Tag) - 1;
+      var interval = (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag;
+      EditYearFirst.Value = CurrentYear - interval.YearsBefore;
+      EditYearLast.Value = CurrentYear + interval.YearsAfter - 1;
     }
 
     private void EditYearFirst_ValueChanged(object sender, EventArgs e)

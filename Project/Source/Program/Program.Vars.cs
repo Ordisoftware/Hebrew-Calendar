@@ -94,7 +94,11 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate predefined years intervals.
     /// </summary>
-    static public readonly int[] PredefinedYearsIntervals = { 5, 10, 20, 30, 40, 50 };
+    static public readonly int[] PredefinedYearsIntervals = 
+    {
+      5, 10, 20, 30, 40, 50,
+      -5, -10, -15, -20, -25
+    };
 
     /// <summary>
     /// Indicate shabat notice form.

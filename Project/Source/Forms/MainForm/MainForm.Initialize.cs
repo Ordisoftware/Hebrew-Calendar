@@ -101,12 +101,14 @@ namespace Ordisoftware.HebrewCalendar
         if ( DateTime.Today.Year >= YearLast )
           if ( auto || Settings.AutoRegenerate )
           {
-            int yearFirst = DateTime.Today.Year - 1;
-            int yearLast = yearFirst + Settings.AutoGenerateYearsInternal - 1;
+            var interval = new YearsIntervalItem(Program.Settings.AutoGenerateYearsInternal);
+            int year = DateTime.Today.Year - 1;
+            int yearFirst = year - interval.YearsBefore;
+            int yearLast = year + interval.YearsAfter - 1;
             return DoGenerate(new Tuple<int, int>(yearFirst, yearLast), EventArgs.Empty);
           }
           else
-            ActionGenerate.PerformClick();
+            ActionGenerate_Click(ActionGenerate, null);
       }
       catch ( Exception ex )
       {
