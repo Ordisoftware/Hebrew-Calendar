@@ -155,7 +155,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.09.__ - Version 5.0
+#### 2020.09.05 - Version 5.0
 
 - Add keyboard shortcuts to navigate in the calendar month view.
 - Add search gregorian month form.
