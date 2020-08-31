@@ -30,7 +30,7 @@ InfoBeforeFile=
 OutputDir=.\
 OutputBaseFilename={#MyAppPublisher}{#MyAppNameNoSpace}Setup-{#MyAppVersion}
 SetupIconFile=
-Compression=lzma
+Compression=lzma2/max
 SolidCompression=true
 ChangesAssociations=true
 ShowTasksTreeLines=true
@@ -39,10 +39,11 @@ VersionInfoCompany={#MyAppPublisher}
 VersionInfoDescription={#MyAppPublisher} {#MyAppName}
 PrivilegesRequired=admin
 InternalCompressLevel=normal
-ArchitecturesAllowed=x86 x64 ia64
-ArchitecturesInstallIn64BitMode=x64 ia64
 DisableStartupPrompt=false
 MinVersion=0,6.1sp1
+ArchitecturesAllowed=x86 x64 ia64
+ArchitecturesInstallIn64BitMode=x64 ia64
+WizardStyle=Modern
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
