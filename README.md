@@ -182,6 +182,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Change text report that is no more stored in the database but in a file.
 - Some UI/UX improvements.
 - Some code refactorings.
+- Update setup to install SQLite 3.32.3 ODBC Driver.
 
 #### 2020.08.22 - Version 4.1
 
