@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Drawing;
 using System.Linq;
 using System.Globalization;
 using System.Windows.Forms;
@@ -41,7 +40,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           string strText = value.ToString();
           strText = strText.Remove(strText.Length - 3, 3);
-          string strDate = SQLiteHelper.GetDate(value);
+          string strDate = SQLiteDate.ToString(value);
           var row = ( from day in MainForm.Instance.DataSet.LunisolarDays
                       where day.Date == strDate
                       select day ).Single();
@@ -60,11 +59,11 @@ namespace Ordisoftware.HebrewCalendar
           LabelEventTorahValue.Text = Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents);
           if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
-                          where SQLiteHelper.GetDate(day.Date) > value && day.TorahEvents > 0
+                          where SQLiteDate.ToDateTime(day.Date) > value && day.TorahEvents > 0
                           select day ).FirstOrDefault();
           if ( rowNext != null )
           {
-            var date = SQLiteHelper.GetDate(rowNext.Date);
+            var date = SQLiteDate.ToDateTime(rowNext.Date);
             LabelTorahNextValue.Text = Translations.TorahEvent.GetLang((TorahEvent)rowNext.TorahEvents);
             LabelTorahNextDateValue.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
             LabelTorahNext.Tag = date;
@@ -76,7 +75,7 @@ namespace Ordisoftware.HebrewCalendar
             LabelTorahNext.Tag = null;
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
-          PictureMoon.Image = SystemHelper.ResizeImage(image, 100, 100);
+          PictureMoon.Image = image.Resize(100, 100);
           if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
           {
             LabelMoonrise.Top = 125;
@@ -115,15 +114,11 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      Text = Core.DisplayManager.Title;
+      Text = HebrewCommon.DisplayManager.Title;
       PanelTop.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
-      int left = SystemInformation.WorkingArea.Left;
-      int top = SystemInformation.WorkingArea.Top;
-      int width = SystemInformation.WorkingArea.Width;
-      int height = SystemInformation.WorkingArea.Height;
-      Location = new Point(left + width - Width, top + height - Height);
+      this.SetLocation(ControlLocation.BottomRight);
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

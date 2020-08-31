@@ -15,7 +15,6 @@
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -29,38 +28,30 @@ namespace Ordisoftware.HebrewCalendar
 
     private void DoFormShown(object sender, EventArgs e)
     {
-      if ( Program.Settings.GPSLatitude == "" || Program.Settings.GPSLongitude == "" )
+      if ( string.IsNullOrEmpty(Settings.GPSLatitude)
+        || string.IsNullOrEmpty(Settings.GPSLongitude) )
         ActionGetGPS_LinkClicked(null, null);
-      if ( Program.Settings.FirstLaunch )
+      if ( Settings.FirstLaunch )
       {
-        ActionResetSettings.Enabled = false;
-        Program.Settings.FirstLaunchV4 = false;
-        Program.Settings.FirstLaunch = false;
-        Program.Settings.Save();
-        ShowTextForm.CreateCelebrationsNotice().ShowDialog();
-        Program.Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(Translations.AskToUseMoonOmer.GetLang());
-        ActionUsePersonalShabat_LinkClicked(null, null);
+        Settings.FirstLaunchV4 = false;
+        Settings.FirstLaunch = false;
+        Settings.Save();
+        Program.CelebrationsNoticeForm.ShowDialog();
+        Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(Translations.AskToUseMoonOmer.GetLang());
+        Program.ShabatNoticeForm.ShowDialog();
+        if ( DisplayManager.QueryYesNo(Translations.AskToSetupPersonalShabat.GetLang()) )
+          ActionUsePersonalShabat_LinkClicked(null, null);
       }
       UpdateLanguagesButtons();
       foreach ( var item in EditFontName.Items )
-        if ( (string)item == Program.Settings.FontName )
+        if ( (string)item == Settings.FontName )
         {
           EditFontName.SelectedItem = item;
           break;
         }
       LoadSettings();
-      string str = Program.Settings.GPSCountry + Environment.NewLine
-                 + Program.Settings.GPSCity
-                 + Environment.NewLine
-                 + Environment.NewLine;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Program.Settings.TimeZone )
-        {
-          str += item.DisplayName;
-          break;
-        }
-      EditTimeZone.Text = str;
-      switch ( Program.Settings.TrayIconClickOpen )
+      EditTimeZone.Text = Program.GPSText;
+      switch ( Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
           SelectOpenMainForm.Select();
@@ -68,10 +59,16 @@ namespace Ordisoftware.HebrewCalendar
         case TrayIconClickOpen.NavigationForm:
           SelectOpenNavigationForm.Select();
           break;
+        case TrayIconClickOpen.NextCelebrationsForm:
+          SelectOpenNextCelebrationsForm.Select();
+          break;
+        default:
+          throw new NotImplementedException(Settings.TrayIconClickOpen.ToString());
       }
       EditRemindShabat_ValueChanged(null, null);
       EditTimerEnabled_CheckedChanged(null, null);
       EditBalloon_CheckedChanged(null, null);
+      SelectOpenNavigationForm_CheckedChanged(null, null);
       ActiveControl = ActionClose;
       IsReady = true;
     }

@@ -130,18 +130,6 @@
   <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
     <value>Chemin de Hebrew Letters</value>
   </data>
-  <data name="LabelMoonDayTextFormatMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
-  </data>
-  <data name="LabelMoonDayTextFormatMonth.Text" xml:space="preserve">
-    <value>N° mois</value>
-  </data>
-  <data name="LabelMoonDayTextFormatDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="LabelMoonDayTextFormatDay.Text" xml:space="preserve">
-    <value>N° jour</value>
-  </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
@@ -210,6 +198,22 @@
   </data>
   <data name="LabelRemindShabatHoursBefore.Text" xml:space="preserve">
     <value>Heures avant le rappel</value>
+  </data>
+  <data name="ActionPersonalShabatHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 13</value>
@@ -322,6 +326,22 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Saison</value>
   </data>
+  <data name="ActionCountAsMoonHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 17</value>
   </data>
@@ -359,10 +379,10 @@
     <value>Vérouillage auto. session</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 17</value>
+    <value>120, 17</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Text" xml:space="preserve">
-    <value>Utiliser les jours de la lune</value>
+    <value>Utiliser jours de lune</value>
   </data>
   <data name="EditReminderCelebrationsEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 17</value>
@@ -378,6 +398,24 @@
   </data>
   <data name="GroupBoxMonth.Text" xml:space="preserve">
     <value>Vue du mois</value>
+  </data>
+  <data name="LabelColorNoDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="LabelColorNoDay.Text" xml:space="preserve">
+    <value>Pas de jour</value>
+  </data>
+  <data name="LabelColorText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="LabelColorText.Text" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="LabelColorEmpty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelColorEmpty.Text" xml:space="preserve">
+    <value>Vide</value>
   </data>
   <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 13</value>
@@ -416,10 +454,10 @@
     <value>Fond</value>
   </data>
   <data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>27, 13</value>
   </data>
   <data name="LabelColorToday.Text" xml:space="preserve">
-    <value>Aujourd'hui</value>
+    <value>Jour</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -485,11 +523,17 @@
   <data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
     <value>Afficher les rappels dans la barre de tâche</value>
   </data>
+  <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 17</value>
+  </data>
+  <data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
+    <value>Vérifier mise à jour chaque semaine durant l'exécution</value>
+  </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 17</value>
+    <value>260, 17</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
-    <value>Vérifier mise à jour au démarrage</value>
+    <value>Vérifier mise à jour au démarrage chaque semaine</value>
   </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
@@ -497,8 +541,41 @@
   <data name="EditDebuggerEnabled.Text" xml:space="preserve">
     <value>Activer le débogueur</value>
   </data>
+  <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 17</value>
+  </data>
+  <data name="EditAllowSuspendReminder.Text" xml:space="preserve">
+    <value>Autoriser la suspension du rappeleur</value>
+  </data>
+  <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 17</value>
+  </data>
+  <data name="EditWebLinksMenuEnabled.Text" xml:space="preserve">
+    <value>Activer le menu des liens web</value>
+  </data>
+  <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 17</value>
+  </data>
+  <data name="EditAutoRegenerate.Text" xml:space="preserve">
+    <value>Auto-générer données pour ces ans si expiré</value>
+  </data>
   <data name="GroupBoxMoonDayTextFormat.Text" xml:space="preserve">
     <value>Format texte jour de la lune</value>
+  </data>
+  <data name="ActionMoonDayTextFormatReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAjNJREFUOE+Vks1P02Acxxtv7m9QD5p49CKaYDLUCwf15NVEPXjhYAgBEnEzo2xd
+        N5xgCLIJCc7Q0bFNXEyWEIljdsqBxUVjiCHxnQQ2J2wd3cbb+Po8T8t0ifjyTT797em+z2dtV+728KO8
+        6A3BeS/4V2iP9rlfQ0/+T2jf2KpHIGaaY55XaOhP4+RdnRPGpNDz9Hsa2je26nEYgmJuGZXVLNbzWTIz
+        0FYyKK1+QyWfIzMHNZdhPdo3turZFbgCCdwJJdFHcMsK1IIKu5yCEHoNB4EPzLEev5fAGZiBZ0IhJOEa
+        J4K1CjCxD4iYgPB+QOZYzzoo/15Q0YrYrGjYImyUNZRKZayVqygSj0ooaFusN/91CfNCHG9747poV8A/
+        fAZBmiFXkmAIDIVhlxTwYwrrdVpv4lP0M2aHUkjfmkRNsL1RJod1+qGOHcJ2tco6HV3dWFzOwt7rhmyJ
+        INVy/6eA98chjD2HU9IRCA6y7gm8xIfF75htO4D8QgTd4gAiT2Jos3TRWzheE/wpL1oPAslGIHQI76I9
+        aL9hg9l85pLxDPQ38brUgPagGR3B02Q2oXW8EemlJArBU8CKH9WPw4DXhNFrR/Vf5jgTEwiGYGDqLLzT
+        5+CbvkDmeQw+bcYXdQ4jlouISVbsvBHhvXwY77Ob9X+j6A0zwV7pvNIMx9UmLIhmthZ8j+sFtr4HCSqh
+        V1JPGKJvEp7RGDz+KbjJdI1EYev3J4yttRwh0Hv6V2jfCMf9AKQQlciR8BlNAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -516,7 +593,16 @@
         kM5gAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="GroupBoxMaxYearsInterval.Text" xml:space="preserve">
+    <value>Intervalle d'années maximum</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
+    <value>Fenêtre des célébrations</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
+    <value>Fermer la boite de rappel sur un click</value>
   </data>
 </root>

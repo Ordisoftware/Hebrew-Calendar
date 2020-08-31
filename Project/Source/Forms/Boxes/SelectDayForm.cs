@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
@@ -22,16 +22,23 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectDayForm : Form
   {
 
-    private Data.DataSet.LunisolarDaysRow CurrentDay;
+    private bool LiveGoTo;
 
-    public bool LiveGoTo { get; set; }
+    private Data.DataSet.LunisolarDaysRow CurrentDay;
 
     public SelectDayForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+      MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
       MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
       CurrentDay = MainForm.Instance.CurrentDay;
+    }
+
+    public SelectDayForm(bool livegoto) : this()
+    {
+      LiveGoTo = livegoto;
     }
 
     private void SelectDayForm_Shown(object sender, EventArgs e)
@@ -42,24 +49,19 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCancel_Click(object sender, EventArgs e)
     {
       if ( LiveGoTo && CurrentDay != null )
-        MainForm.Instance.GoToDate(SQLiteHelper.GetDate(CurrentDay.Date));
-    }
-
-    private void ActionOk_Click(object sender, EventArgs e)
-    {
-      DialogResult = DialogResult.OK;
+        MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date));
     }
 
     private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
     {
       if ( !LiveGoTo ) return;
-      string date = SQLiteHelper.GetDate(MonthCalendar.SelectionStart);
+      string date = SQLiteDate.ToString(MonthCalendar.SelectionStart);
       if ( MonthCalendar.SelectionStart < MainForm.Instance.DateFirst )
-        date = SQLiteHelper.GetDate(MainForm.Instance.DateFirst);
+        date = SQLiteDate.ToString(MainForm.Instance.DateFirst);
       else
       if ( MonthCalendar.SelectionStart > MainForm.Instance.DateLast )
-        date = SQLiteHelper.GetDate(MainForm.Instance.DateLast);
-      MainForm.Instance.GoToDate(SQLiteHelper.GetDate(date));
+        date = SQLiteDate.ToString(MainForm.Instance.DateLast);
+      MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(date));
     }
 
   }

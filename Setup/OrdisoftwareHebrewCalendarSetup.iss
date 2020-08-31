@@ -3,7 +3,7 @@
 
 #define MyAppName "Hebrew Calendar"
 #define MyAppNameNoSpace "HebrewCalendar"
-#define MyAppVersion "4.1"
+#define MyAppVersion "5.0"
 #define MyAppPublisher "Ordisoftware"
 #define MyAppURL "https://www.ordisoftware.com/projects/hebrew-calendar"
 #define MyAppExeName "Ordisoftware.HebrewCalendar.exe"
@@ -62,8 +62,8 @@ english.SourceCode_msg=Source code of %1
 french.SourceCode_msg=Code source de %1
 english.StartWithWindows_msg=Start with Windows
 french.StartWithWindows_msg=Démarrer avec Windows
-english.OpenSQLiteODBC_msg=Install SQLite ODBC Driver if not present
-french.OpenSQLiteODBC_msg=Installer SQLite ODBC Driver si non présent
+english.OpenSQLiteODBC_msg=Install or update SQLite ODBC Driver
+french.OpenSQLiteODBC_msg=Installer ou mettre à jour SQLite ODBC Driver
 
 [Tasks]
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
@@ -80,6 +80,7 @@ Name: {app}\Project\*; Type: filesandordirs
 Name: {app}\Setup\*; Type: filesandordirs
 Name: {app}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
 Name: {group}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
+Name: {userappdata}\Ordisoftware\Hebrew Calendar\Hebrew-Calendar.sqlite; Type: files
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
@@ -93,7 +94,7 @@ Source: ..\Documents\*; DestDir: {app}\Documents; Flags: ignoreversion recursesu
 Source: ..\Help\*; DestDir: {app}\Help; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.psess, *.vsp, *.bak, *.suo, *.user, obj, .vs
 Source: ..\Project\Dependencies\Font\Hebrew.ttf; DestDir: {fonts}; FontInstall: Hebrew Normal; Flags: onlyifdoesntexist uninsneveruninstall
-DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite
+; DestDir: {userappdata}\Ordisoftware\Hebrew Calendar; Source: Hebrew-calendar.sqlite
 
 [Icons]
 Name: {commondesktop}\{#MyAppPublisher} {#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: desktopicon; IconFilename: {app}\Application.ico
@@ -111,9 +112,9 @@ Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: 
 [Run]
 ;Parameters: /passive /norestart;
 Filename: {app}\Setup\dotNetFx45_Full_setup.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}
-Filename: {app}\Setup\SQLiteODBCInstaller.exe
+Filename: {app}\Setup\SQLiteODBCInstaller\SQLiteODBCInstaller.exe
 Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
-Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall skipifsilent
+Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall
 
 [Code]
 function IsDotNetDetected(version: string; service: cardinal): boolean;

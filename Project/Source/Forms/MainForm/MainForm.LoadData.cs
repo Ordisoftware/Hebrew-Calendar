@@ -11,14 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2020-08 </edited>
 using System;
+using System.IO;
 using System.Data;
 using System.Data.Odbc;
-using System.Linq;
+using System.Diagnostics;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -28,25 +28,31 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LoadData()
     {
-      int progress = 0;
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
-        if ( !IsGenerating ) UpdateProgress(progress++, ProgressCount, Translations.ProgressLoadingData.GetLang());
+        if ( !IsGenerating ) LoadingForm.Instance.DoProgress();
       };
-      DataSet.LunisolarDays.RowChanged += update;
+      var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
-      Enabled = false;
       try
       {
+        Enabled = false;
         CreateDatabaseIfNotExists();
-        var connection = new OdbcConnection(Program.Settings.ConnectionString);
+        var connection = new OdbcConnection(Settings.ConnectionString);
         connection.Open();
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
-        ProgressCount = (int)command.ExecuteScalar();
+        LoadingForm.Instance.Initialize(Translations.ProgressLoadingData.GetLang(),
+                                        (int)command.ExecuteScalar() * 2,
+                                        Program.LoadingFormLoadDB);
+        DataSet.LunisolarDays.RowChanged += update;
         connection.Close();
+        var Chrono = new Stopwatch();
+        Chrono.Start();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-        ReportTableAdapter.Fill(DataSet.Report);
-        if ( DataSet.LunisolarDays.Count > 0 && !Program.Settings.FirstLaunch)
+        Chrono.Stop();
+        Settings.BenchmarkLoadData = Chrono.ElapsedMilliseconds;
+        Settings.Save();
+        if ( DataSet.LunisolarDays.Count > 0 && !Settings.FirstLaunch )
         {
           IsGenerating = true;
           try
@@ -59,8 +65,19 @@ namespace Ordisoftware.HebrewCalendar
           }
           try
           {
-            var row = DataSet.Report.FirstOrDefault();
-            CalendarText.Text = row == null ? "" : row.Content;
+            bool isTextReportLoaded = false;
+            if ( File.Exists(Program.TextReportFilename) )
+              try
+              {
+                CalendarText.Text = File.ReadAllText(Program.TextReportFilename);
+                isTextReportLoaded = true;
+              }
+              catch ( Exception ex )
+              {
+                DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(Program.TextReportFilename, ex.Message));
+              }
+            if ( !isTextReportLoaded )
+              CalendarText.Text = GenerateReport();
             GoToDate(DateTime.Today);
           }
           catch
@@ -70,18 +87,14 @@ namespace Ordisoftware.HebrewCalendar
         else
         {
           PreferencesForm.Run();
-          Enabled = true;
-          do
+          string errors = CheckRegenerateCalendar(true);
+          if ( errors != null )
           {
-            DoGenerate(this, null);
+            try { EmptyDatabase(); }
+            catch { }
+            throw new Exception(string.Format(Translations.FatalGenerateError.GetLang(), errors));
           }
-          while ( DataSet.LunisolarDays.Count == 0 );
         }
-      }
-      catch ( AbortException )
-      {
-        LoadData();
-        return;
       }
       catch ( OdbcException ex )
       {
@@ -91,17 +104,16 @@ namespace Ordisoftware.HebrewCalendar
       catch ( Exception ex )
       {
         ex.Manage();
-        LoadData();
-        return;
+        Environment.Exit(-1);
       }
       finally
       {
         Enabled = true;
-        Cursor = Cursors.Default;
+        Cursor = cursor;
         DataSet.LunisolarDays.RowChanged -= update;
         try
         {
-          SetView(Program.Settings.CurrentView, true);
+          SetView(Settings.CurrentView, true);
           UpdateButtons();
         }
         catch ( Exception ex )
@@ -110,7 +122,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         try
         {
-          CalendarMonth.ShowEventTooltips = Program.Settings.MonthViewSunToolTips;
+          CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
           TimerReminder.Enabled = true;
           TimerReminder_Tick(null, null);
         }

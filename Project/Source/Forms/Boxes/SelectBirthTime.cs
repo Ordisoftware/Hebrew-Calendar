@@ -26,11 +26,6 @@ namespace Ordisoftware.HebrewCalendar
       InitializeComponent();
     }
 
-    private void ActionOk_Click(object sender, EventArgs e)
-    {
-      DialogResult = DialogResult.OK;
-    }
-
   }
 
 }

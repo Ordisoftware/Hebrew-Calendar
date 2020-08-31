@@ -46,7 +46,7 @@
       // ActionClose
       // 
       resources.ApplyResources(this.ActionClose, "ActionClose");
-      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionClose.Name = "ActionClose";
       this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
@@ -76,7 +76,6 @@
       // 
       // CelebrationsForm
       // 
-      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;

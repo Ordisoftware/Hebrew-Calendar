@@ -1,4 +1,6 @@
-﻿[Bb]in/
+﻿/Setup/**/*.exe
+
+[Bb]in/
 Project/.vs/
 Project/[Oo]bj/
 Project/[Pp]ackages/
@@ -273,4 +275,3 @@ paket-files/
 __pycache__/
 *.pyc
 
-/Setup/*.exe

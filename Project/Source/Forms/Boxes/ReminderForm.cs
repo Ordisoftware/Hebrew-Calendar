@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewCalendar
             }
         }
         form = new ReminderForm();
-        var date = SQLiteHelper.GetDate(row.Date);
+        var date = SQLiteDate.ToDateTime(row.Date);
         form.LabelTitle.Text = !isShabat
                              ? Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
                              : "Shabat";
@@ -76,11 +76,7 @@ namespace Ordisoftware.HebrewCalendar
                                + Translations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " "
                                + times.timeEnd;
         form.LabelDate.Tag = date;
-        int left = SystemInformation.WorkingArea.Left;
-        int top = SystemInformation.WorkingArea.Top;
-        int width = SystemInformation.WorkingArea.Width;
-        int height = SystemInformation.WorkingArea.Height;
-        form.Location = new Point(left + width - form.Width, top + height - form.Height);
+        form.SetLocation(ControlLocation.BottomRight);
         form.Tag = row.Date;
         form.Text = " " + form.LabelTitle.Text;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
@@ -122,10 +118,7 @@ namespace Ordisoftware.HebrewCalendar
     static private void BringMainForm()
     {
       if ( MainForm.Instance.Visible )
-      {
-        MainForm.Instance.Focus();
-        MainForm.Instance.BringToFront();
-      }
+        MainForm.Instance.MenuShowHide_Click(null, null);
       if ( LockSessionForm.Instance?.Visible ?? false)
       {
         LockSessionForm.Instance.Focus();
@@ -198,7 +191,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void Form_Click(object sender, EventArgs e)
     {
-      Close();
+      if (Program.Settings.ReminderFormCloseOnClick)
+        Close();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
@@ -209,9 +203,9 @@ namespace Ordisoftware.HebrewCalendar
     private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( LabelDate.Tag == null ) return;
-      if ( !MainForm.Instance.Visible ) MainForm.Instance.MenuShowHide.PerformClick();
+      MainForm.Instance.MenuShowHide_Click(null, null); 
       MainForm.Instance.GoToDate((DateTime)LabelDate.Tag);
-      Close();
+      Form_Click(null, null);
     }
 
   }

@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -25,143 +24,137 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public string NewLine { get { return Environment.NewLine; } }
-
-    static public readonly Dictionary<string, string> ApplicationDescription
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ApplicationDescription
+      = new NullSafeStringDictionary()
       {
-        { "en", "Generate a hebrew lunisolar calendar with shabat and celebrations reminder" },
-        { "fr", "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations" }
+        { Languages.EN, "Generate a hebrew lunisolar calendar with shabat and celebrations reminder" },
+        { Languages.FR, "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations" }
       };
 
-    static public readonly Dictionary<string, string> AskToResetPreferences
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToResetPreferences
+      = new NullSafeStringDictionary()
       {
-        { "en", "Preferences will be reseted to their default values." + NewLine + NewLine +
-                "GPS location and shabat day will be keeped." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["en"] },
-        { "fr", "Les préférences vont être réinitialisées à leurs valeurs par défaut." + NewLine + NewLine +
-                "La position GPS et le jour du shabat seront conservés." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["fr"] },
+        { Languages.EN, Localizer.ResetPreferences[Languages.EN] + Globals.NL2 +
+                        "GPS location and shabat day will be keeped." + Globals.NL2 +
+                        Localizer.AskToContinue[Languages.EN]
+        },
+        { Languages.FR, Localizer.ResetPreferences[Languages.FR] + Globals.NL2 +
+                        "La position GPS et le jour du shabat seront conservés." + Globals.NL2 +
+                        Localizer.AskToContinue[Languages.FR]
+        },
       };
 
-    static public readonly Dictionary<string, string> AskToShutdownComputer
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary CantExitWhileGenerating
+      = new NullSafeStringDictionary()
       {
-        { "en", "Shutdown the computer?" },
-        { "fr", "Arrêter l'ordinateur ?" }
+        { Languages.EN, "Can't exit application while generating data." },
+        { Languages.FR, "Impossible de quitter l'application durant la génération des données." }
       };
 
-    static public readonly Dictionary<string, string> LockSessionError
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressLoadingData
+      = new NullSafeStringDictionary()
       {
-        { "en", "Lock session error: {0}" },
-        { "fr", "Erreur de vérouillage de la session : {0}" }
+        { Languages.EN, "Loading data..." },
+        { Languages.FR, "Chargement des données..." }
       };
 
-    static public readonly Dictionary<string, string> CantExitWhileGenerating
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressCreateDays
+      = new NullSafeStringDictionary()
       {
-        { "en", "Can't exit application while generating data..." },
-        { "fr", "Impossible de quitter l'application durant la génération des données..." }
+        { Languages.EN, "Populating days..." },
+        { Languages.FR, "Garnissage des jours..." }
       };
 
-    static public readonly Dictionary<string, string> ProgressLoadingData
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressAnalyzeDays
+      = new NullSafeStringDictionary()
       {
-        { "en", "Loading data..." },
-        { "fr", "Chargement des données..." }
+        { Languages.EN, "Analyzing days..." },
+        { Languages.FR, "Analyse des jours..." }
       };
 
-    static public readonly Dictionary<string, string> ProgressCreateDays
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressGenerateReport
+      = new NullSafeStringDictionary()
       {
-        { "en", "Populating days..." },
-        { "fr", "Garnissage des jours..." }
+        { Languages.EN, "Generating report..." },
+        { Languages.FR, "Génération du rapport..." }
       };
 
-    static public readonly Dictionary<string, string> ProgressAnalyzeDays
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary ProgressFillMonths
+      = new NullSafeStringDictionary()
       {
-        { "en", "Analyzing days..." },
-        { "fr", "Analyse des jours..." }
+        { Languages.EN, "Filling months..." },
+        { Languages.FR, "Remplissage des mois..." }
       };
 
-    static public readonly Dictionary<string, string> ProgressGenerateReport
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToUseMoonOmer
+      = new NullSafeStringDictionary()
       {
-        { "en", "Generating report..." },
-        { "fr", "Génération du rapport..." }
+        { Languages.EN, "Do you want to use the moon omer, else the sun?" },
+        { Languages.FR, "Voulez-vous utiliser le omer de la lune, sinon du soleil ?" }
       };
 
-    static public readonly Dictionary<string, string> ProgressFillMonths
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary AskToSetupPersonalShabat
+      = new NullSafeStringDictionary()
       {
-        { "en", "Filling months..." },
-        { "fr", "Remplissage des mois..." }
+        { Languages.EN, "Do you want to setup the personal shabat?" },
+        { Languages.FR, "Voulez-vous configurer le shabat personnel ?" }
       };
 
-    static public readonly Dictionary<string, string> AskToUseMoonOmer
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary DateNotFound
+      = new NullSafeStringDictionary()
       {
-        { "en", "Do you want to use the moon omer, else the sun?" },
-        { "fr", "Voulez-vous utiliser le omer de la lune, sinon du soleil ?" }
+        { Languages.EN, "Date not found in the database: {0}" },
+        { Languages.FR, "Date non trouvée dans la base de données : {0}" }
       };
 
-    static public readonly Dictionary<string, string> AskToSetupPersonalShabat
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary SelectBirthday
+      = new NullSafeStringDictionary()
       {
-        { "en", "Do you want to setup the personal shabat?" },
-        { "fr", "Voulez-vous configurer le shabat personnel ?" }
+        { Languages.EN, "Birth day" },
+        { Languages.FR, "Jour de naissance" }
       };
 
-    static public readonly Dictionary<string, string> DateNotFound
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary FirstDay
+      = new NullSafeStringDictionary()
       {
-        { "en", "Date not found in the database: {0}" },
-        { "fr", "Date non trouvée dans la base de données : {0}" }
+        { Languages.EN, "First day" },
+        { Languages.FR, "Premier jour" }
       };
 
-    static public readonly Dictionary<string, string> SelectBirthday
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary LastDay
+      = new NullSafeStringDictionary()
       {
-        { "en", "Birth day" },
-        { "fr", "Date de naissance" }
+        { Languages.EN, "Last day" },
+        { Languages.FR, "Dernier jour" }
       };
 
-    static public readonly Dictionary<string, string> FirstDay
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary NotSupportedYear
+      = new NullSafeStringDictionary
       {
-        { "en", "First day" },
-        { "fr", "Premier jour" }
+        { Languages.EN, "Year is not supported: {0}" },
+        { Languages.FR, "L'année n'est pas supportée : {0}" }
       };
 
-    static public readonly Dictionary<string, string> LastDay
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary PredefinedYearsInterval
+      = new NullSafeStringDictionary
       {
-        { "en", "Last day" },
-        { "fr", "Dernier jour" }
+        { Languages.EN, "{0} years from now" },
+        { Languages.FR, "{0} années à partir de maintenant" }
       };
 
-    static public readonly Dictionary<string, string> DiffDatesSolarCount
-      = new Dictionary<string, string>()
+    static public readonly NullSafeStringDictionary FatalGenerateError
+      = new NullSafeStringDictionary
       {
-        { "en", "Solar days count: {0}" },
-        { "fr", "Nombre de jours solaires : {0}" }
-      };
-
-    static public readonly Dictionary<string, string> DiffDatesMoonCount
-      = new Dictionary<string, string>()
-      {
-        { "en", "Moon days count: {0}" },
-        { "fr", "Nombre de jours lunaires : {0}" }
-      };
-
-    static public readonly Dictionary<string, string> DiffDatesMoonOutOfRange
-      = new Dictionary<string, string>()
-      {
-        { "en", "Moon days count: out of range ({0} - {1})" },
-        { "fr", "Nombre de jours lunaires : hors limites ({0} - {1})" }
+        { Languages.EN, "Fatal error while generating data." + Globals.NL +
+                        "The application must exit." + Globals.NL +
+                        "Contact support, please." + Globals.NL2 +
+                        "{0}"
+        },
+        { Languages.FR, "Erreur fatale lors de la génération des données." + Globals.NL +
+                        "L'application doit fermer." + Globals.NL +
+                        "Veuillez contacter le support." + Globals.NL2 +
+                        "{0}"
+        }
       };
 
   }

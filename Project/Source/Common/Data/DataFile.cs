@@ -14,36 +14,9 @@
 /// <edited> 2020-04 </edited>
 using System;
 using System.IO;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
 {
-
-  /// <summary>
-  /// Indicate data file storage folder.
-  /// </summary>
-  public enum DataFileFolder
-  {
-    /// <summary>
-    /// Application documents folder.
-    /// </summary>
-    ApplicationDocuments,
-
-    /// <summary>
-    /// Common program data folder.
-    /// </summary>
-    ProgramData,
-
-    /// <summary>
-    /// User appdata common folder.
-    /// </summary>
-    UserHebrewCommon,
-
-    /// <summary>
-    /// User appdata application folder.
-    /// </summary>
-    UserApplication
-  }
 
   /// <summary>
   /// Provide data file management.
@@ -110,6 +83,9 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     protected abstract void DoReLoad(string filename);
 
+    /// <summary>
+    /// Load or reload data from disk.
+    /// </summary>
     public void ReLoad(bool reset = false)
     {
       DoReLoad(CheckFile(reset));
@@ -125,7 +101,7 @@ namespace Ordisoftware.HebrewCommon
         if ( !File.Exists(FilenameDefault) )
         {
           if ( ShowFileNotFound )
-            DisplayManager.ShowError(Globals.FileNotFound.GetLang(FilenameDefault));
+            DisplayManager.ShowError(Localizer.FileNotFound.GetLang(FilenameDefault));
           return "";
         }
         else

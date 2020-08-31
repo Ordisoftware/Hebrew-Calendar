@@ -31,7 +31,7 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectSuspendDelayForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
-      this.ActionOk = new System.Windows.Forms.Button();
+      this.ActionOK = new System.Windows.Forms.Button();
       this.SelectDelay = new System.Windows.Forms.ListBox();
       this.LabelCustom = new System.Windows.Forms.Label();
       this.EditDelay = new System.Windows.Forms.NumericUpDown();
@@ -42,7 +42,7 @@
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.ActionCancel);
-      this.PanelBottom.Controls.Add(this.ActionOk);
+      this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
@@ -52,13 +52,13 @@
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
       // 
-      // ActionOk
+      // ActionOK
       // 
-      resources.ApplyResources(this.ActionOk, "ActionOk");
-      this.ActionOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ActionOk.Name = "ActionOk";
-      this.ActionOk.UseVisualStyleBackColor = true;
-      this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
+      resources.ApplyResources(this.ActionOK, "ActionOK");
+      this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionOK.Name = "ActionOK";
+      this.ActionOK.UseVisualStyleBackColor = true;
+      this.ActionOK.Click += new System.EventHandler(this.ActionOK_Click);
       // 
       // SelectDelay
       // 
@@ -82,9 +82,9 @@
             0});
       this.EditDelay.Name = "EditDelay";
       // 
-      // SuspendReminderDelayForm
+      // SelectSuspendDelayForm
       // 
-      this.AcceptButton = this.ActionOk;
+      this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
@@ -95,7 +95,8 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "SuspendReminderDelayForm";
+      this.Name = "SelectSuspendDelayForm";
+      this.Load += new System.EventHandler(this.SelectSuspendDelayForm_Load);
       this.PanelBottom.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.EditDelay)).EndInit();
       this.ResumeLayout(false);
@@ -107,7 +108,7 @@
 
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionCancel;
-    private System.Windows.Forms.Button ActionOk;
+    private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.ListBox SelectDelay;
     private System.Windows.Forms.Label LabelCustom;
     private System.Windows.Forms.NumericUpDown EditDelay;

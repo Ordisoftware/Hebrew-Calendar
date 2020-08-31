@@ -15,7 +15,7 @@
 using System;
 using System.Xml;
 using System.Windows.Forms;
-using Ordisoftware.Core;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -43,17 +43,20 @@ namespace Ordisoftware.HebrewCalendar
         return;
       }
       if ( SelectOpenMainForm.Checked )
-        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
+        Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
       else
       if ( SelectOpenNavigationForm.Checked )
-        Program.Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
-      Program.Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-      Program.Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsInterval.Value;
+        Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
+      else
+      if ( SelectOpenNextCelebrationsForm.Checked )
+        Settings.TrayIconClickOpen = TrayIconClickOpen.NextCelebrationsForm;
+      Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
+      Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsInterval.Value;
       for ( int index = 0; index < EditEvents.Items.Count; index++ )
         try
         {
           string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
-          Program.Settings[name] = EditEvents.GetItemChecked(index);
+          Settings[name] = EditEvents.GetItemChecked(index);
         }
         catch
         {
@@ -62,14 +65,14 @@ namespace Ordisoftware.HebrewCalendar
         try
         {
           string name = "TorahEventRemindDay" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
-          Program.Settings[name] = EditEventsDay.GetItemChecked(index);
+          Settings[name] = EditEventsDay.GetItemChecked(index);
         }
         catch
         {
         }
       UpdateSettings();
-      Program.Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
-      Program.Settings.Store();
+      Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
+      Settings.Save();
     }
 
   }

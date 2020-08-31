@@ -13,9 +13,8 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-10 </edited>
 using System;
-using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -58,15 +57,17 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void AboutBox_Load(object sender, EventArgs e)
     {
+      this.CenterToMainFormElseScreen();
       EditLicense.Rtf = Properties.Resources.MPL_2_0;
+      Controls.OfType<LinkLabel>().Where(c => c.Name.StartsWith("linkLabel")).ToList().ForEach(c => c.TabStop = false);
     }
 
     internal void AboutBox_Shown(object sender, EventArgs e)
     {
-      Text = Globals.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
+      Text = Localizer.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
       LabelTitle.Text = Globals.AssemblyTitle;
       LabelDescription.Text = Translations.ApplicationDescription.GetLang();
-      LabelVersion.Text = Globals.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
+      LabelVersion.Text = Localizer.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
       LabelCopyright.Text = Globals.AssemblyCopyright;
       LabelTrademark.Text = Globals.AssemblyTrademark;
       TopMost = MainForm.Instance.TopMost;
@@ -80,7 +81,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Link label link clicked event information.</param>
     private void labelIconsProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      SystemHelper.OpenWebLink(((LinkLabel)sender).Text);
+      Shell.OpenWebLink(((LinkLabel)sender).Text);
     }
 
     /// <summary>
@@ -90,7 +91,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Link label link clicked event information.</param>
     private void labelTrademarkName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      SystemHelper.OpenAuthorHome();
+      Shell.OpenAuthorHome();
     }
 
     /// <summary>
@@ -100,7 +101,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Link clicked event information.</param>
     private void editLicense_LinkClicked(object sender, LinkClickedEventArgs e)
     {
-      SystemHelper.OpenWebLink(e.LinkText);
+      Shell.OpenWebLink(e.LinkText);
     }
 
   }

@@ -19,7 +19,6 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -32,9 +31,6 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     private bool IsReady;
-    public Color OldReminderCurrentDayColor { get; private set; }
-    public Color OldReminderShabatDayColor { get; private set; }
-    public bool OldReminderUseColors { get; private set; }
     public int OldShabatDay { get; private set; }
     public string OldLatitude { get; private set; }
     public string OldLongitude { get; private set; }
@@ -48,11 +44,12 @@ namespace Ordisoftware.HebrewCalendar
     private PreferencesForm()
     {
       InitializeComponent();
-      if (IsCenteredToScreen) StartPosition = FormStartPosition.CenterScreen;
       Icon = MainForm.Instance.Icon;
       LoadDays();
       LoadEvents();
       LoadFonts();
+      EditMaxYearsInterval.Minimum = Program.GenerateIntervalMaximumLow;
+      EditMaxYearsInterval.Maximum = Program.GenerateIntervalMaximumHigh;
       EditReminderCelebrationsInterval.Minimum = RemindCelebrationBeforeMin;
       EditReminderCelebrationsInterval.Maximum = RemindCelebrationBeforeMax;
       EditReminderCelebrationsInterval.Value = RemindCelebrationBeforeValue;
@@ -71,6 +68,19 @@ namespace Ordisoftware.HebrewCalendar
       EditAutoLockSessionTimeOut.Minimum = RemindAutoLockTimeOutMin;
       EditAutoLockSessionTimeOut.Maximum = RemindAutoLockTimeOutMax;
       EditAutoLockSessionTimeOut.Value = RemindAutoLockTimeOutValue;
+      EditAutoGenerateYearsInterval.Minimum = AutoGenerateYearsIntervalMin;
+      EditAutoGenerateYearsInterval.Maximum = AutoGenerateYearsIntervalMax;
+      EditAutoGenerateYearsInterval.Value = AutoGenerateYearsIntervalValue;
+    }
+
+    /// <summary>
+    /// Event handler. Called by PreferencesForm for load events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PreferencesForm_Load(object sender, EventArgs e)
+    {
+      this.CenterToMainFormElseScreen();
     }
 
     /// <summary>
@@ -92,6 +102,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
       DoFormClosing(sender, e);
     }
 
@@ -104,7 +115,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         var item = new DayOfWeekItem() { Text = Translations.DayOfWeek.GetLang(day), Day = day };
         EditShabatDay.Items.Add(item);
-        if ( (DayOfWeek)Program.Settings.ShabatDay == day )
+        if ( (DayOfWeek)Settings.ShabatDay == day )
           EditShabatDay.SelectedItem = item;
       }
     }
@@ -120,10 +131,10 @@ namespace Ordisoftware.HebrewCalendar
           {
             var item = new TorahEventItem() { Text = Translations.TorahEvent.GetLang(type), Event = type };
             int index = EditEvents.Items.Add(item);
-            if ( (bool)Program.Settings["TorahEventRemind" + type.ToString()] )
+            if ( (bool)Settings["TorahEventRemind" + type.ToString()] )
               EditEvents.SetItemChecked(index, true);
             index = EditEventsDay.Items.Add(item);
-            if ( (bool)Program.Settings["TorahEventRemindDay" + type.ToString()] )
+            if ( (bool)Settings["TorahEventRemindDay" + type.ToString()] )
               EditEventsDay.SetItemChecked(index, true);
           }
           catch
@@ -131,59 +142,60 @@ namespace Ordisoftware.HebrewCalendar
           }
     }
 
+    static private readonly string[] list =
+    {
+      "andalé mono", "bitstream vera sans mono", "cascadia code", "consolas", "courier new", "courier",
+      "cutive mono", "dejavu sans mono", "droid sans mono", "droid sans mono", "everson mono", "fixed",
+      "fixedsys", "freemono", "go mono", "inconsolata", "iosevka", "jetbrains mono", "letter gothic",
+      "liberation mono", "lucida console", "menlo", "monaco", "monofur", "monospace", "nimbus mono l",
+      "noto mono", "overpass mono", "oxygen mono", "pragmatapro", "prestige elite", "pro font",
+      "roboto mono", "san francisco mono", "source code pro", "terminal", "terminus",
+      "tex gyre cursor", "ubuntu mono", "um typewriter"
+    };
+
     /// <summary>
-    /// Loads the fonts.
-    /// <remarks>
-    /// From http://stackoverflow.com/questions/224865/how-do-i-get-all-installed-fixed-width-fonts/225027
-    /// </remarks>
+    /// Loads the windows fonts names.
     /// </summary>
     private void LoadFonts()
     {
-      string[] list = { "Bitstream Vera Sans Mono", "Consolas", "Courier New", "Droid Sans Mono", "Lucida Console" };
       foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
-        if ( list.Contains(item.Name) )
+        if ( list.Contains(item.Name.ToLower()) )
           EditFontName.Items.Add(item.Name);
-      //EditFontName.Size = new Size(150, EditFontName.Size.Height);
-      // Removed because of long lag on Windows 10 with MeasureText
-      /*foreach ( var item in new InstalledFontCollection().Families )
-        if ( item.Name == "Bitstream Vera Sans Mono" || item.Name == "Droid Sans Mono" )
-          EditFontName.Items.Add(item.Name);
-        else
-        if ( item.IsStyleAvailable(FontStyle.Regular) && !item.Name.StartsWith("Webdings") )
-          using ( var font = new Font(item, 10) )
-          {
-            float delta = 0;// TextRenderer.MeasureText("|" + MainForm.Instance.MoonNewText + "ABCDE", font).Width
-                            //- TextRenderer.MeasureText("|" + " abcde", font).Width;
-            if ( Math.Abs(delta) < float.Epsilon * 2 )
-              EditFontName.Items.Add(item.Name);
-          }*/
     }
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(Translations.AskToResetPreferences.GetLang()) ) return;
-      string country = Program.Settings.GPSCountry;
-      string city = Program.Settings.GPSCity;
-      string lat = Program.Settings.GPSLatitude;
-      string lng = Program.Settings.GPSLongitude;
-      string timezone = Program.Settings.TimeZone;
+      MainForm.Instance.MenuShowHide_Click(null, null);
+      MoonMonthsForm.Instance.Hide();
+      StatisticsForm.Instance.Hide();
+      string country = Settings.GPSCountry;
+      string city = Settings.GPSCity;
+      string lat = Settings.GPSLatitude;
+      string lng = Settings.GPSLongitude;
+      string timezone = Settings.TimeZone;
+      var bookmarks = new DateTime[Program.DatesBookmarksCount];
+      for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
+        bookmarks[index - 1] = (DateTime)Program.Settings["DateBookmark" + index];
       int shabat = EditShabatDay.SelectedIndex;
-      Program.Settings.Reset();
-      Program.Settings.UpgradeResetRequiredV3_0 = false;
-      Program.Settings.UpgradeResetRequiredV3_6 = false;
-      Program.Settings.UpgradeResetRequiredV4_1 = false;
-      Program.Settings.FirstLaunchV4 = false;
-      Program.Settings.Store();
+      Settings.Reset();
+      Settings.UpgradeResetRequiredV3_0 = false;
+      Settings.UpgradeResetRequiredV3_6 = false;
+      Settings.UpgradeResetRequiredV4_1 = false;
+      Settings.FirstLaunchV4 = false;
+      Settings.Save();
       DoReset = true;
       Reseted = true;
-      Program.Settings.GPSCountry = country;
-      Program.Settings.GPSCity = city;
-      Program.Settings.GPSLatitude = lat;
-      Program.Settings.GPSLongitude = lng;
-      Program.Settings.TimeZone = timezone;
-      Program.Settings.ShabatDay = shabat;
-      Program.Settings.RestoreMainForm();
-      Program.Settings.Language = Localizer.Language;
+      Settings.GPSCountry = country;
+      Settings.GPSCity = city;
+      Settings.GPSLatitude = lat;
+      Settings.GPSLongitude = lng;
+      Settings.TimeZone = timezone;
+      Settings.ShabatDay = shabat;
+      Settings.RestoreMainForm();
+      Settings.Language = Languages.Current;
+      for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
+        Program.Settings["DateBookmark" + index] = bookmarks[index - 1];
       Close();
     }
 
@@ -193,28 +205,29 @@ namespace Ordisoftware.HebrewCalendar
       if ( form.ShowDialog() != DialogResult.OK ) return;
       EditGPSLatitude.Text = form.Latitude;
       EditGPSLongitude.Text = form.Longitude;
-      Program.Settings.GPSLatitude = form.Latitude;
-      Program.Settings.GPSLongitude = form.Longitude;
-      Program.Settings.GPSCountry = form.Country;
-      Program.Settings.GPSCity = form.City;
-      Program.Settings.Save();
-      string str = Program.Settings.GPSCountry + Environment.NewLine
-                 + Program.Settings.GPSCity
-                 + Environment.NewLine
-                 + Environment.NewLine;
+      Settings.GPSLatitude = form.Latitude;
+      Settings.GPSLongitude = form.Longitude;
+      Settings.GPSCountry = form.Country;
+      Settings.GPSCity = form.City;
+      Settings.Save();
       if ( form.EditTimeZone.SelectedItem != null )
-      {
-        Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-        str += ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).DisplayName;
-      }
-      EditTimeZone.Text = str;
+        Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
+      EditTimeZone.Text = Program.GPSText;
       MainForm.Instance.InitializeCurrentTimeZone();
+    }
+
+    private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
+    {
+      Program.ShabatNoticeForm.ShowDialog();
+    }
+
+    private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
+    {
+      Program.CelebrationsNoticeForm.ShowDialog();
     }
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      ShowTextForm.CreateShabatNotice().ShowDialog();
-      if ( !DisplayManager.QueryYesNo(Translations.AskToSetupPersonalShabat.GetLang()) ) return;
       DateTime date = DateTime.Today;
       var formDate = new SelectDayForm();
       formDate.Text = Translations.SelectBirthday.GetLang();
@@ -222,20 +235,19 @@ namespace Ordisoftware.HebrewCalendar
       date = formDate.MonthCalendar.SelectionStart.Date;
       var formTime = new SelectBirthTime();
       if ( formTime.ShowDialog() != DialogResult.OK ) return;
-      var ephemeris = date.GetSunMoonEphemeris();
       var time = formTime.EditTime.Value.TimeOfDay;
-      if ( time >= new TimeSpan(0, 0, 0) && time < ephemeris.Sunset )
+      if ( time >= new TimeSpan(0, 0, 0) && time < Dates.Get(date).Ephemerisis.Sunset )
         date = date.AddDays(-1);
-      Program.Settings.ShabatDay = (int)date.DayOfWeek;
+      Settings.ShabatDay = (int)date.DayOfWeek;
       foreach ( DayOfWeekItem day in EditShabatDay.Items )
-        if ( (DayOfWeek)Program.Settings.ShabatDay == day.Day )
+        if ( (DayOfWeek)Settings.ShabatDay == day.Day )
           EditShabatDay.SelectedItem = day;
     }
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
-      if ( Program.Settings.Language == "en" ) return;
-      Program.Settings.Language = "en";
+      if ( Settings.Language == Languages.EN ) return;
+      Settings.Language = Languages.EN;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -244,8 +256,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectLangFR_Click(object sender, EventArgs e)
     {
-      if ( Program.Settings.Language == "fr" ) return;
-      Program.Settings.Language = "fr";
+      if ( Settings.Language == Languages.FR ) return;
+      Settings.Language = Languages.FR;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -255,12 +267,12 @@ namespace Ordisoftware.HebrewCalendar
     private void UpdateLanguagesButtons()
     {
       MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
-      if ( Program.Settings.Language == "en" )
+      if ( Settings.Language == Languages.EN )
       {
         ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangFR.BackColor = SystemColors.Control;
       }
-      if ( Program.Settings.Language == "fr" )
+      if ( Settings.Language == Languages.FR )
       {
         ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangEN.BackColor = SystemColors.Control;
@@ -269,7 +281,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionMoonDayTextFormatHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show(Translations.MoonDayTextFormatNotice.GetLang());
+      DisplayManager.ShowInformation(Translations.NoticeMoonDayTextFormat.GetLang());
     }
 
     private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
@@ -290,14 +302,14 @@ namespace Ordisoftware.HebrewCalendar
     private void EitReportFont_Changed(object sender, EventArgs e)
     {
       if ( !IsReady ) return;
-      Program.Settings.FontName = EditFontName.Text;
-      Program.Settings.FontSize = (int)EditFontSize.Value;
+      Settings.FontName = EditFontName.Text;
+      Settings.FontSize = (int)EditFontSize.Value;
       MainForm.Instance.UpdateTextCalendar();
     }
 
     private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
     {
-      Core.Diagnostics.Debugger.Active = EditDebuggerEnabled.Checked;
+      Debugger.Active = EditDebuggerEnabled.Checked;
     }
 
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)
@@ -561,9 +573,18 @@ namespace Ordisoftware.HebrewCalendar
       MustRefreshMonthView = true;
     }
 
+    private void EditMonthViewSunToolTips_CheckedChanged(object sender, EventArgs e)
+    {
+      MustRefreshMonthView = true;
+    }
+
+    private void EditUseColors_CheckedChanged(object sender, EventArgs e)
+    {
+      MustRefreshMonthView = true;
+    }
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
-      MustRefreshMonthView = EditMonthViewFontSize.Value != Program.Settings.MonthViewFontSize;
+      MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
     }
 
     private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
@@ -574,6 +595,14 @@ namespace Ordisoftware.HebrewCalendar
       catch { }
       if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
         EditHebrewLettersPath.Text = OpenFileDialog.FileName;
+    }
+
+    private void SelectOpenNavigationForm_CheckedChanged(object sender, EventArgs e)
+    {
+      EditBalloon.Enabled = !SelectOpenNavigationForm.Checked;
+      EditBalloonAutoHide.Enabled = EditBalloon.Enabled;
+      LabelLoomingDelay.Enabled = EditBalloon.Enabled;
+      EditBalloonLoomingDelay.Enabled = EditBalloon.Enabled;
     }
 
   }

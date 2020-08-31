@@ -60,6 +60,7 @@
       this.EditFontName = new System.Windows.Forms.ComboBox();
       this.BroupBoxShabat = new System.Windows.Forms.GroupBox();
       this.LabelRemindShabatHoursBefore = new System.Windows.Forms.Label();
+      this.ActionPersonalShabatHelp = new System.Windows.Forms.Button();
       this.LabelRemindShabatEveryMinutes = new System.Windows.Forms.Label();
       this.EditRemindShabatOnlyLight = new System.Windows.Forms.CheckBox();
       this.EditRemindShabatHoursBefore = new System.Windows.Forms.NumericUpDown();
@@ -78,6 +79,7 @@
       this.GroupBoxTrayIcon = new System.Windows.Forms.GroupBox();
       this.EditBalloonAutoHide = new System.Windows.Forms.CheckBox();
       this.EditBalloon = new System.Windows.Forms.CheckBox();
+      this.SelectOpenNextCelebrationsForm = new System.Windows.Forms.RadioButton();
       this.SelectOpenNavigationForm = new System.Windows.Forms.RadioButton();
       this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
       this.EditBalloonLoomingDelay = new System.Windows.Forms.NumericUpDown();
@@ -95,6 +97,7 @@
       this.label4 = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
+      this.ActionCountAsMoonHelp = new System.Windows.Forms.Button();
       this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationHoursBefore = new System.Windows.Forms.Label();
@@ -139,8 +142,13 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
+      this.EditAutoGenerateYearsInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
+      this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
+      this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
+      this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.GroupBoxMoonDayTextFormat = new System.Windows.Forms.GroupBox();
       this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
@@ -151,6 +159,10 @@
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
       this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditMaxYearsInterval = new System.Windows.Forms.NumericUpDown();
+      this.GroupBoxMaxYearsInterval = new System.Windows.Forms.GroupBox();
+      this.LabelYearsIntervalInfo = new System.Windows.Forms.Label();
+      this.EditCloseReminderFormOnClick = new System.Windows.Forms.CheckBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -175,8 +187,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       this.GroupBoxMonth.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoGenerateYearsInterval)).BeginInit();
       this.GroupBoxMoonDayTextFormat.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).BeginInit();
+      this.GroupBoxMaxYearsInterval.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelGPSLatitude
@@ -413,6 +428,7 @@
       // BroupBoxShabat
       // 
       this.BroupBoxShabat.Controls.Add(this.LabelRemindShabatHoursBefore);
+      this.BroupBoxShabat.Controls.Add(this.ActionPersonalShabatHelp);
       this.BroupBoxShabat.Controls.Add(this.LabelRemindShabatEveryMinutes);
       this.BroupBoxShabat.Controls.Add(this.EditRemindShabatOnlyLight);
       this.BroupBoxShabat.Controls.Add(this.EditShabatDay);
@@ -429,6 +445,16 @@
       // 
       resources.ApplyResources(this.LabelRemindShabatHoursBefore, "LabelRemindShabatHoursBefore");
       this.LabelRemindShabatHoursBefore.Name = "LabelRemindShabatHoursBefore";
+      // 
+      // ActionPersonalShabatHelp
+      // 
+      this.ActionPersonalShabatHelp.AllowDrop = true;
+      this.ActionPersonalShabatHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionPersonalShabatHelp, "ActionPersonalShabatHelp");
+      this.ActionPersonalShabatHelp.Name = "ActionPersonalShabatHelp";
+      this.ActionPersonalShabatHelp.TabStop = false;
+      this.ActionPersonalShabatHelp.UseVisualStyleBackColor = true;
+      this.ActionPersonalShabatHelp.Click += new System.EventHandler(this.ActionPersonalShabatHelp_Click);
       // 
       // LabelRemindShabatEveryMinutes
       // 
@@ -464,8 +490,6 @@
       // EditReminderShabatEnabled
       // 
       resources.ApplyResources(this.EditReminderShabatEnabled, "EditReminderShabatEnabled");
-      this.EditReminderShabatEnabled.Checked = true;
-      this.EditReminderShabatEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditReminderShabatEnabled.Name = "EditReminderShabatEnabled";
       this.EditReminderShabatEnabled.UseVisualStyleBackColor = true;
       this.EditReminderShabatEnabled.CheckedChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
@@ -558,6 +582,7 @@
       // 
       this.GroupBoxTrayIcon.Controls.Add(this.EditBalloonAutoHide);
       this.GroupBoxTrayIcon.Controls.Add(this.EditBalloon);
+      this.GroupBoxTrayIcon.Controls.Add(this.SelectOpenNextCelebrationsForm);
       this.GroupBoxTrayIcon.Controls.Add(this.SelectOpenNavigationForm);
       this.GroupBoxTrayIcon.Controls.Add(this.SelectOpenMainForm);
       this.GroupBoxTrayIcon.Controls.Add(this.EditBalloonLoomingDelay);
@@ -580,12 +605,20 @@
       this.EditBalloon.UseVisualStyleBackColor = true;
       this.EditBalloon.CheckedChanged += new System.EventHandler(this.EditBalloon_CheckedChanged);
       // 
+      // SelectOpenNextCelebrationsForm
+      // 
+      resources.ApplyResources(this.SelectOpenNextCelebrationsForm, "SelectOpenNextCelebrationsForm");
+      this.SelectOpenNextCelebrationsForm.Name = "SelectOpenNextCelebrationsForm";
+      this.SelectOpenNextCelebrationsForm.TabStop = true;
+      this.SelectOpenNextCelebrationsForm.UseVisualStyleBackColor = true;
+      // 
       // SelectOpenNavigationForm
       // 
       resources.ApplyResources(this.SelectOpenNavigationForm, "SelectOpenNavigationForm");
       this.SelectOpenNavigationForm.Name = "SelectOpenNavigationForm";
       this.SelectOpenNavigationForm.TabStop = true;
       this.SelectOpenNavigationForm.UseVisualStyleBackColor = true;
+      this.SelectOpenNavigationForm.CheckedChanged += new System.EventHandler(this.SelectOpenNavigationForm_CheckedChanged);
       // 
       // SelectOpenMainForm
       // 
@@ -635,6 +668,7 @@
       // GroupBoxReminder
       // 
       this.GroupBoxReminder.Controls.Add(this.PanelReminderColors);
+      this.GroupBoxReminder.Controls.Add(this.ActionCountAsMoonHelp);
       this.GroupBoxReminder.Controls.Add(this.EditUseColors);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.GroupBoxReminder.Controls.Add(this.LabelRemindCelebrationHoursBefore);
@@ -733,11 +767,22 @@
       resources.ApplyResources(this.label2, "label2");
       this.label2.Name = "label2";
       // 
+      // ActionCountAsMoonHelp
+      // 
+      this.ActionCountAsMoonHelp.AllowDrop = true;
+      this.ActionCountAsMoonHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionCountAsMoonHelp, "ActionCountAsMoonHelp");
+      this.ActionCountAsMoonHelp.Name = "ActionCountAsMoonHelp";
+      this.ActionCountAsMoonHelp.TabStop = false;
+      this.ActionCountAsMoonHelp.UseVisualStyleBackColor = true;
+      this.ActionCountAsMoonHelp.Click += new System.EventHandler(this.ActionCountAsMoonHelp_Click);
+      // 
       // EditUseColors
       // 
       resources.ApplyResources(this.EditUseColors, "EditUseColors");
       this.EditUseColors.Name = "EditUseColors";
       this.EditUseColors.UseVisualStyleBackColor = true;
+      this.EditUseColors.CheckedChanged += new System.EventHandler(this.EditUseColors_CheckedChanged);
       // 
       // LabelRemindAutoLockTimeOut
       // 
@@ -802,8 +847,6 @@
       // EditAutoLockSession
       // 
       resources.ApplyResources(this.EditAutoLockSession, "EditAutoLockSession");
-      this.EditAutoLockSession.Checked = true;
-      this.EditAutoLockSession.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditAutoLockSession.Name = "EditAutoLockSession";
       this.EditAutoLockSession.UseVisualStyleBackColor = true;
       this.EditAutoLockSession.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
@@ -811,8 +854,6 @@
       // EditTorahEventsCountAsMoon
       // 
       resources.ApplyResources(this.EditTorahEventsCountAsMoon, "EditTorahEventsCountAsMoon");
-      this.EditTorahEventsCountAsMoon.Checked = true;
-      this.EditTorahEventsCountAsMoon.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditTorahEventsCountAsMoon.Name = "EditTorahEventsCountAsMoon";
       this.EditTorahEventsCountAsMoon.UseVisualStyleBackColor = true;
       this.EditTorahEventsCountAsMoon.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
@@ -820,8 +861,6 @@
       // EditReminderCelebrationsEnabled
       // 
       resources.ApplyResources(this.EditReminderCelebrationsEnabled, "EditReminderCelebrationsEnabled");
-      this.EditReminderCelebrationsEnabled.Checked = true;
-      this.EditReminderCelebrationsEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditReminderCelebrationsEnabled.Name = "EditReminderCelebrationsEnabled";
       this.EditReminderCelebrationsEnabled.UseVisualStyleBackColor = true;
       this.EditReminderCelebrationsEnabled.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
@@ -843,6 +882,7 @@
       resources.ApplyResources(this.EditMonthViewSunToolTips, "EditMonthViewSunToolTips");
       this.EditMonthViewSunToolTips.Name = "EditMonthViewSunToolTips";
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
+      this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
       // 
       // GroupBoxMonth
       // 
@@ -1009,18 +1049,24 @@
       // 
       // GroupBoxSystem
       // 
-      this.GroupBoxSystem.Controls.Add(this.ActionSelectHebrewLettersPath);
-      this.GroupBoxSystem.Controls.Add(LabelHebrewLettersPath);
-      this.GroupBoxSystem.Controls.Add(this.EditHebrewLettersPath);
       this.GroupBoxSystem.Controls.Add(this.EditVacuumAtStartup);
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangFR);
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangEN);
       this.GroupBoxSystem.Controls.Add(this.EditAutoOpenExportFolder);
+      this.GroupBoxSystem.Controls.Add(this.EditCloseReminderFormOnClick);
       this.GroupBoxSystem.Controls.Add(this.EditShowReminderInTaskBar);
+      this.GroupBoxSystem.Controls.Add(this.EditAutoGenerateYearsInterval);
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
+      this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateEveryWeek);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
       this.GroupBoxSystem.Controls.Add(this.EditDebuggerEnabled);
+      this.GroupBoxSystem.Controls.Add(this.EditAllowSuspendReminder);
+      this.GroupBoxSystem.Controls.Add(this.EditWebLinksMenuEnabled);
+      this.GroupBoxSystem.Controls.Add(this.EditAutoRegenerate);
       this.GroupBoxSystem.Controls.Add(this.EditMonthViewSunToolTips);
+      this.GroupBoxSystem.Controls.Add(this.ActionSelectHebrewLettersPath);
+      this.GroupBoxSystem.Controls.Add(LabelHebrewLettersPath);
+      this.GroupBoxSystem.Controls.Add(this.EditHebrewLettersPath);
       resources.ApplyResources(this.GroupBoxSystem, "GroupBoxSystem");
       this.GroupBoxSystem.Name = "GroupBoxSystem";
       this.GroupBoxSystem.TabStop = false;
@@ -1030,6 +1076,7 @@
       this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
+      this.ActionSelectHebrewLettersPath.TabStop = false;
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
@@ -1044,8 +1091,6 @@
       // EditVacuumAtStartup
       // 
       resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
-      this.EditVacuumAtStartup.Checked = true;
-      this.EditVacuumAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
       this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
       // 
@@ -1081,11 +1126,42 @@
       this.EditShowReminderInTaskBar.Name = "EditShowReminderInTaskBar";
       this.EditShowReminderInTaskBar.UseVisualStyleBackColor = true;
       // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      this.EditAutoGenerateYearsInterval.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+      this.EditAutoGenerateYearsInterval.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      // 
+      // EditCheckUpdateEveryWeek
+      // 
+      resources.ApplyResources(this.EditCheckUpdateEveryWeek, "EditCheckUpdateEveryWeek");
+      this.EditCheckUpdateEveryWeek.Name = "EditCheckUpdateEveryWeek";
+      this.EditCheckUpdateEveryWeek.UseVisualStyleBackColor = true;
+      // 
       // EditCheckUpdateAtStartup
       // 
       resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
-      this.EditCheckUpdateAtStartup.Checked = true;
-      this.EditCheckUpdateAtStartup.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
       // 
@@ -1095,6 +1171,24 @@
       this.EditDebuggerEnabled.Name = "EditDebuggerEnabled";
       this.EditDebuggerEnabled.UseVisualStyleBackColor = true;
       this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.EditDebuggerEnabled_CheckedChanged);
+      // 
+      // EditAllowSuspendReminder
+      // 
+      resources.ApplyResources(this.EditAllowSuspendReminder, "EditAllowSuspendReminder");
+      this.EditAllowSuspendReminder.Name = "EditAllowSuspendReminder";
+      this.EditAllowSuspendReminder.UseVisualStyleBackColor = true;
+      // 
+      // EditWebLinksMenuEnabled
+      // 
+      resources.ApplyResources(this.EditWebLinksMenuEnabled, "EditWebLinksMenuEnabled");
+      this.EditWebLinksMenuEnabled.Name = "EditWebLinksMenuEnabled";
+      this.EditWebLinksMenuEnabled.UseVisualStyleBackColor = true;
+      // 
+      // EditAutoRegenerate
+      // 
+      resources.ApplyResources(this.EditAutoRegenerate, "EditAutoRegenerate");
+      this.EditAutoRegenerate.Name = "EditAutoRegenerate";
+      this.EditAutoRegenerate.UseVisualStyleBackColor = true;
       // 
       // OpenFileDialog
       // 
@@ -1116,6 +1210,7 @@
       this.ActionMoonDayTextFormatReset.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionMoonDayTextFormatReset, "ActionMoonDayTextFormatReset");
       this.ActionMoonDayTextFormatReset.Name = "ActionMoonDayTextFormatReset";
+      this.ActionMoonDayTextFormatReset.TabStop = false;
       this.ActionMoonDayTextFormatReset.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatReset.Click += new System.EventHandler(this.ActionMoonDayTextFormatReset_Click);
       // 
@@ -1164,6 +1259,7 @@
       this.ActionMoonDayTextFormatHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionMoonDayTextFormatHelp, "ActionMoonDayTextFormatHelp");
       this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";
+      this.ActionMoonDayTextFormatHelp.TabStop = false;
       this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
       // 
@@ -1175,9 +1271,35 @@
       this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
       this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
       // 
+      // EditMaxYearsInterval
+      // 
+      this.EditMaxYearsInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditMaxYearsInterval, "EditMaxYearsInterval");
+      this.EditMaxYearsInterval.Name = "EditMaxYearsInterval";
+      this.EditMaxYearsInterval.ReadOnly = true;
+      // 
+      // GroupBoxMaxYearsInterval
+      // 
+      this.GroupBoxMaxYearsInterval.Controls.Add(this.LabelYearsIntervalInfo);
+      this.GroupBoxMaxYearsInterval.Controls.Add(this.EditMaxYearsInterval);
+      resources.ApplyResources(this.GroupBoxMaxYearsInterval, "GroupBoxMaxYearsInterval");
+      this.GroupBoxMaxYearsInterval.Name = "GroupBoxMaxYearsInterval";
+      this.GroupBoxMaxYearsInterval.TabStop = false;
+      // 
+      // LabelYearsIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelYearsIntervalInfo, "LabelYearsIntervalInfo");
+      this.LabelYearsIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelYearsIntervalInfo.Name = "LabelYearsIntervalInfo";
+      // 
+      // EditCloseReminderFormOnClick
+      // 
+      resources.ApplyResources(this.EditCloseReminderFormOnClick, "EditCloseReminderFormOnClick");
+      this.EditCloseReminderFormOnClick.Name = "EditCloseReminderFormOnClick";
+      this.EditCloseReminderFormOnClick.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
-      this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
@@ -1186,6 +1308,7 @@
       this.Controls.Add(this.GroupBoxTrayIcon);
       this.Controls.Add(this.GroupBoxTextReport);
       this.Controls.Add(this.GroupBoxMonth);
+      this.Controls.Add(this.GroupBoxMaxYearsInterval);
       this.Controls.Add(this.GroupBoxMoonDayTextFormat);
       this.Controls.Add(this.GroupBoxNavigation);
       this.Controls.Add(this.BroupBoxShabat);
@@ -1196,6 +1319,7 @@
       this.MinimizeBox = false;
       this.Name = "PreferencesForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
+      this.Load += new System.EventHandler(this.PreferencesForm_Load);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.PanelButtons.PerformLayout();
@@ -1226,9 +1350,13 @@
       this.GroupBoxMonth.PerformLayout();
       this.GroupBoxSystem.ResumeLayout(false);
       this.GroupBoxSystem.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoGenerateYearsInterval)).EndInit();
       this.GroupBoxMoonDayTextFormat.ResumeLayout(false);
       this.GroupBoxMoonDayTextFormat.PerformLayout();
       this.MenuSelectMoonDayTextFormat.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).EndInit();
+      this.GroupBoxMaxYearsInterval.ResumeLayout(false);
+      this.GroupBoxMaxYearsInterval.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -1350,5 +1478,17 @@
     private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem nissanToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem nissan1ToolStripMenuItem;
+    private System.Windows.Forms.CheckBox EditWebLinksMenuEnabled;
+    private System.Windows.Forms.CheckBox EditAllowSuspendReminder;
+    private System.Windows.Forms.Button ActionPersonalShabatHelp;
+    private System.Windows.Forms.CheckBox EditCheckUpdateEveryWeek;
+    private System.Windows.Forms.CheckBox EditAutoRegenerate;
+    private System.Windows.Forms.NumericUpDown EditMaxYearsInterval;
+    private System.Windows.Forms.GroupBox GroupBoxMaxYearsInterval;
+    private System.Windows.Forms.Label LabelYearsIntervalInfo;
+    private System.Windows.Forms.NumericUpDown EditAutoGenerateYearsInterval;
+    private System.Windows.Forms.Button ActionCountAsMoonHelp;
+    private System.Windows.Forms.RadioButton SelectOpenNextCelebrationsForm;
+    private System.Windows.Forms.CheckBox EditCloseReminderFormOnClick;
   }
 }

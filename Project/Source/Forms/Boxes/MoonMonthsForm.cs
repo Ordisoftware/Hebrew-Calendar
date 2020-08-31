@@ -13,9 +13,9 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -23,27 +23,59 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MoonMonthsForm : Form
   {
 
-    public MoonMonthsForm()
+    /// <summary>
+    /// Indicate the singleton instance.
+    /// </summary>
+    static public MoonMonthsForm Instance { get; private set; }
+
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
+    static MoonMonthsForm()
+    {
+      Instance = new MoonMonthsForm();
+    }
+
+    static public void Run()
+    {
+      Instance.MoonMonthsForm_Load(null, null);
+      if ( Instance.WindowState == FormWindowState.Minimized )
+        Instance.WindowState = FormWindowState.Normal;
+      Instance.Show();
+      Instance.BringToFront();
+    }
+
+    private MoonMonthsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       CreateControls();
       ActiveControl = ActionClose;
-      ActionSwapColors.TabStop = false;
-      ActionEditFiles.TabStop = false;
-      ActionViewNotice.TabStop = false;
+      ActionEditFiles.Visible = Program.MoonMonthsMeanings[Languages.Current].Configurable;
       ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         string str = Program.MoonMonthsUnicode[(int)LastControl.Tag].Replace(" א", "").Replace(" ב", "");
-        SystemHelper.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", str));
+        Shell.Run(( (string)menuitem.Tag ).Replace("%WORD%", str));
       });
+    }
+
+    internal void Relocalize()
+    {
+      if ( !Globals.IsReady ) return;
+      CreateControls();
     }
 
     private void MoonMonthsForm_Load(object sender, EventArgs e)
     {
-      if ( Location.X == -1 && Location.Y == -1 )
-        CenterToScreen();
+      if ( Location.X < 0 || Location.Y < 0 )
+        this.CenterToMainFormElseScreen();
+    }
+
+    private void MoonMonthsForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      e.Cancel = true;
+      Hide();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
@@ -51,16 +83,26 @@ namespace Ordisoftware.HebrewCalendar
       Close();
     }
 
-    private void ActionSwapColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionSwapColors_Click(object sender, EventArgs e)
     {
       Program.Settings.MoonMonthsFormUseColors = Program.Settings.MoonMonthsFormUseColors.Next();
       Program.Settings.Save();
       CreateControls();
     }
 
-    private void ActionEditFiles_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionViewNotice_Click(object sender, EventArgs e)
     {
-      DataFile[] list = { Program.MoonMonthsMeanings, Program.MoonMonthsLettriqs };
+      Program.MoonMonthsNoticeForm.Show();
+    }
+
+    private void ActionEditFiles_Click(object sender, EventArgs e)
+    {
+      var list = new List<DataFile>();
+      foreach ( var lang in Languages.Names )
+      {
+        list.Add(Program.MoonMonthsMeanings[lang.Value]);
+        list.Add(Program.MoonMonthsLettriqs[lang.Value]);
+      }
       if ( DataFileEditorForm.Run("Moon", list) ) CreateControls();
     }
 
@@ -104,17 +146,9 @@ namespace Ordisoftware.HebrewCalendar
       int index = (int)control.Tag;
       string str = Program.MoonMonthsUnicode[index] + " ("
                  + Program.MoonMonthsNames[index] + ") : "
-                 + Program.MoonMonthsMeanings[index] + " ("
-                 + Program.MoonMonthsLettriqs[index] + ")";
+                 + Program.MoonMonthsMeanings[Languages.Current][index] + " ("
+                 + Program.MoonMonthsLettriqs[Languages.Current][index] + ")";
       Clipboard.SetText(str);
-    }
-
-    private void ActionViewNotice_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      DisplayManager.Show("Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Environment.NewLine +
-                          "Vert = air = action | A" + Environment.NewLine +
-                          "Blanc = eau = expir | C" + Environment.NewLine +
-                          "Jaune = terre = repos | G");
     }
 
   }

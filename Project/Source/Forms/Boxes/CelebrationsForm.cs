@@ -43,13 +43,13 @@ namespace Ordisoftware.HebrewCalendar
       var dateStart = DateTime.Today;
       var dateEnd = dateStart.AddYears(1);
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
-                 where SQLiteHelper.GetDate(day.Date) >= dateStart && SQLiteHelper.GetDate(day.Date) <= dateEnd
+                 where SQLiteDate.ToDateTime(day.Date) >= dateStart && SQLiteDate.ToDateTime(day.Date) <= dateEnd
                  && ( (SeasonChange)day.SeasonChange != SeasonChange.None
                    || (TorahEvent)day.TorahEvents != TorahEvent.None )
                  select day;
       foreach ( var row in rows )
       {
-        var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteHelper.GetDate(row.Date).ToLongDateString());
+        var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteDate.ToDateTime(row.Date).ToLongDateString());
         if ( (SeasonChange)row.SeasonChange != SeasonChange.None )
           Instance.ListView.Items.Add(item)
           .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange))
@@ -59,6 +59,7 @@ namespace Ordisoftware.HebrewCalendar
           .SubItems.Add(Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents))
           .Tag = row.Date;
       }
+      Instance.CelebrationsForm_Load(null, null);
       Instance.Show();
       Instance.BringToFront();
     }
@@ -71,8 +72,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void CelebrationsForm_Load(object sender, EventArgs e)
     {
-      if ( Location.X == -1 || Location.Y == -1 )
-        this.CenterToMainForm();
+      if ( Location.X < 0 || Location.Y < 0 )
+        this.CenterToMainFormElseScreen();
     }
 
     private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -91,9 +92,8 @@ namespace Ordisoftware.HebrewCalendar
       if ( ListView.SelectedItems.Count > 0 )
         try
         {
-          if ( !MainForm.Instance.Visible )
-            MainForm.Instance.MenuShowHide.PerformClick();
-          MainForm.Instance.GoToDate(SQLiteHelper.GetDate(ListView.SelectedItems[0].SubItems[1].Tag.ToString()));
+          MainForm.Instance.MenuShowHide_Click(null, null);
+          MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(ListView.SelectedItems[0].SubItems[1].Tag.ToString()));
           BringToFront();
         }
         catch

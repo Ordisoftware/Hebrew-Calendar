@@ -13,11 +13,11 @@
 /// <created> 2019-01 </created>
 /// <edited> 2019-11 </edited>
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DandTSoftware.Timers;
-using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -26,10 +26,12 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
+    private readonly Properties.Settings Settings = Program.Settings;
+
     /// <summary>
     /// Indicate if generation is in progress.
     /// </summary>
-    internal bool IsGenerating;
+    public bool IsGenerating { get; private set; }
 
     /// <summary>
     /// Indicate last showned tooltip.
@@ -39,26 +41,39 @@ namespace Ordisoftware.HebrewCalendar
     private Point TrayIconMouse;
 
     private bool CanBallon = true;
-
     private bool NavigationTrayBallooned;
 
     private bool TimerMutex;
 
     private bool TimerErrorShown;
 
-    private MidnightTimer MidnightTimer = new MidnightTimer();
+    private MidnightTimer TimerMidnight = new MidnightTimer();
 
-    internal TimeZoneInfo CurrentTimeZoneInfo;
+    public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
+    public float CurrentGPSLatitude { get; internal set; }
+    public float CurrentGPSLongitude { get; internal set; }
 
-    internal Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
+    private void InitializeYearsInterval()
+    {
+      DateFirst = SQLiteDate.ToDateTime(DataSet.LunisolarDays.FirstOrDefault()?.Date ?? "");
+      DateLast = SQLiteDate.ToDateTime(DataSet.LunisolarDays.LastOrDefault()?.Date ?? "");
+      if ( DateFirst == DateTime.MinValue || DateLast == DateTime.MinValue || DateFirst >= DateLast )
+        throw new ArgumentOutOfRangeException("DateFirst & DateLast in " + nameof(InitializeYearsInterval));
+      YearFirst = DateFirst.Year;
+      YearLast = DateLast.Year;
+      YearsInterval = DateLast.Year - DateFirst.Year + 1;
+      YearsIntervalArray = Enumerable.Range(DateFirst.Year, YearsInterval).ToArray();
+    }
 
-    internal int YearFirst { get; private set; }
-    internal DateTime DateFirst { get; private set; }
+    public DateTime DateFirst { get; private set; }
+    public DateTime DateLast { get; private set; }
 
-    internal int YearLast { get; private set; }
-    internal DateTime DateLast { get; private set; }
+    public int YearFirst { get; private set; }
+    public int YearLast { get; private set; }
+    public int YearsInterval { get; private set; }
+    internal int[] YearsIntervalArray { get; private set; }
 
-    private int ProgressCount;
+    public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
 
     private NullSafeDictionary<TorahEvent, bool> TorahEventRemindList
       = new NullSafeDictionary<TorahEvent, bool>();
@@ -69,14 +84,14 @@ namespace Ordisoftware.HebrewCalendar
     internal readonly NullSafeList<Form> RemindCelebrationForms
       = new NullSafeList<Form>();
 
-    internal readonly NullSafeList<string> RemindCelebrationDates
-      = new NullSafeList<string>();
+    internal readonly NullSafeStringList RemindCelebrationDates
+      = new NullSafeStringList();
 
     internal readonly NullSafeDictionary<TorahEvent, DateTime?> LastCelebrationReminded
       = new NullSafeDictionary<TorahEvent, DateTime?>();
 
-    internal readonly NullSafeDictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
-      = new NullSafeDictionary<TorahEvent, ReminderForm>();
+    internal readonly Dictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
+      = new Dictionary<TorahEvent, ReminderForm>();
 
     internal DateTime? LastShabatReminded;
 
@@ -95,8 +110,8 @@ namespace Ordisoftware.HebrewCalendar
         foreach ( TorahEvent type in Enum.GetValues(typeof(TorahEvent)) )
           if ( type != TorahEvent.None )
           {
-            TorahEventRemindList.Add(type, (bool)Program.Settings["TorahEventRemind" + type.ToString()]);
-            TorahEventRemindDayList.Add(type, (bool)Program.Settings["TorahEventRemindDay" + type.ToString()]);
+            TorahEventRemindList.Add(type, (bool)Settings["TorahEventRemind" + type.ToString()]);
+            TorahEventRemindDayList.Add(type, (bool)Settings["TorahEventRemindDay" + type.ToString()]);
           }
         foreach ( Form form in RemindCelebrationForms.ToList() )
           form.Close();

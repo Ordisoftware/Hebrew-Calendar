@@ -206,7 +206,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=Hebrew-calendar")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=Hebrew-Calendar")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -1151,7 +1151,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2020-01-01")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000-01-01")]
         public global::System.DateTime VacuumLastDone {
             get {
                 return ((global::System.DateTime)(this["VacuumLastDone"]));
@@ -1230,6 +1230,355 @@ namespace Ordisoftware.HebrewCalendar.Properties {
             }
             set {
                 this["UpgradeResetRequiredV4_1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WebLinksMenuEnabled {
+            get {
+                return ((bool)(this["WebLinksMenuEnabled"]));
+            }
+            set {
+                this["WebLinksMenuEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AllowSuspendReminder {
+            get {
+                return ((bool)(this["AllowSuspendReminder"]));
+            }
+            set {
+                this["AllowSuspendReminder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point SearchGregorianMonthFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["SearchGregorianMonthFormLocation"]));
+            }
+            set {
+                this["SearchGregorianMonthFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000-01-01")]
+        public global::System.DateTime CheckUpdateLastDone {
+            get {
+                return ((global::System.DateTime)(this["CheckUpdateLastDone"]));
+            }
+            set {
+                this["CheckUpdateLastDone"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckUpdateEveryWeekWhileRunning {
+            get {
+                return ((bool)(this["CheckUpdateEveryWeekWhileRunning"]));
+            }
+            set {
+                this["CheckUpdateEveryWeekWhileRunning"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoRegenerate {
+            get {
+                return ((bool)(this["AutoRegenerate"]));
+            }
+            set {
+                this["AutoRegenerate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("120")]
+        public int GenerateIntervalMaximum {
+            get {
+                return ((int)(this["GenerateIntervalMaximum"]));
+            }
+            set {
+                this["GenerateIntervalMaximum"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkLoadData {
+            get {
+                return ((long)(this["BenchmarkLoadData"]));
+            }
+            set {
+                this["BenchmarkLoadData"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkFillCalendar {
+            get {
+                return ((long)(this["BenchmarkFillCalendar"]));
+            }
+            set {
+                this["BenchmarkFillCalendar"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkGenerateYears {
+            get {
+                return ((long)(this["BenchmarkGenerateYears"]));
+            }
+            set {
+                this["BenchmarkGenerateYears"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkStartingApp {
+            get {
+                return ((long)(this["BenchmarkStartingApp"]));
+            }
+            set {
+                this["BenchmarkStartingApp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point StatisticsFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["StatisticsFormLocation"]));
+            }
+            set {
+                this["StatisticsFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int AutoGenerateYearsInternal {
+            get {
+                return ((int)(this["AutoGenerateYearsInternal"]));
+            }
+            set {
+                this["AutoGenerateYearsInternal"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark1 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark1"]));
+            }
+            set {
+                this["DateBookmark1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark2 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark2"]));
+            }
+            set {
+                this["DateBookmark2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark3 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark3"]));
+            }
+            set {
+                this["DateBookmark3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark4 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark4"]));
+            }
+            set {
+                this["DateBookmark4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark5 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark5"]));
+            }
+            set {
+                this["DateBookmark5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000-01-01")]
+        public global::System.DateTime LastGenerated {
+            get {
+                return ((global::System.DateTime)(this["LastGenerated"]));
+            }
+            set {
+                this["LastGenerated"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool StatisticsFormAlwaysOnTop {
+            get {
+                return ((bool)(this["StatisticsFormAlwaysOnTop"]));
+            }
+            set {
+                this["StatisticsFormAlwaysOnTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkPopulateDays {
+            get {
+                return ((long)(this["BenchmarkPopulateDays"]));
+            }
+            set {
+                this["BenchmarkPopulateDays"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkAnalyseDays {
+            get {
+                return ((long)(this["BenchmarkAnalyseDays"]));
+            }
+            set {
+                this["BenchmarkAnalyseDays"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long BenchmarkGenerateTextReport {
+            get {
+                return ((long)(this["BenchmarkGenerateTextReport"]));
+            }
+            set {
+                this["BenchmarkGenerateTextReport"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReminderFormCloseOnClick {
+            get {
+                return ((bool)(this["ReminderFormCloseOnClick"]));
+            }
+            set {
+                this["ReminderFormCloseOnClick"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark6 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark6"]));
+            }
+            set {
+                this["DateBookmark6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark7 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark7"]));
+            }
+            set {
+                this["DateBookmark7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark8 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark8"]));
+            }
+            set {
+                this["DateBookmark8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark9 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark9"]));
+            }
+            set {
+                this["DateBookmark9"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateBookmark10 {
+            get {
+                return ((global::System.DateTime)(this["DateBookmark10"]));
+            }
+            set {
+                this["DateBookmark10"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime Paramètre {
+            get {
+                return ((global::System.DateTime)(this["Paramètre"]));
+            }
+            set {
+                this["Paramètre"] = value;
             }
         }
     }

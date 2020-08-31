@@ -10,10 +10,10 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2016-08 </created>
+/// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -24,12 +24,12 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public Dictionary<string, List<SuspendDelayItem>> SuspendReminderDelays
-      = new Dictionary<string, List<SuspendDelayItem>>
+    static public NullSafeDictionary<string, NullSafeList<SuspendDelayItem>> SuspendReminderDelays
+      = new NullSafeDictionary<string, NullSafeList<SuspendDelayItem>>
       {
         {
-          "en",
-          new List<SuspendDelayItem>
+          Languages.EN,
+          new NullSafeList<SuspendDelayItem>
           {
             new SuspendDelayItem("None", 0),
             new SuspendDelayItem("5 minutes", 5),
@@ -47,8 +47,8 @@ namespace Ordisoftware.HebrewCalendar
           }
         },
         {
-          "fr",
-          new List<SuspendDelayItem>
+          Languages.FR,
+          new NullSafeList<SuspendDelayItem>
           {
             new SuspendDelayItem("Aucun", 0),
             new SuspendDelayItem("5 minutes", 5),

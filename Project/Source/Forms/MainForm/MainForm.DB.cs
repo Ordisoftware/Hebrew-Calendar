@@ -11,11 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Data.Odbc;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -24,48 +23,50 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
+    /// Empty all tables.
+    /// </summary>
+    private void EmptyDatabase()
+    {
+      if ( !DataSet.IsInitialized ) return;
+      LunisolarDaysTableAdapter.DeleteAllQuery();
+      TableAdapterManager.UpdateAll(DataSet);
+      LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
+    }
+
+    /// <summary>
     /// Check if tables exists or create them.
     /// </summary>
     public void CreateDatabaseIfNotExists()
     {
-      using ( var connection = new OdbcConnection(Program.Settings.ConnectionString) )
-        try
-        {
-          connection.Open();
-          if ( Program.Settings.VacuumAtStartup )
-            Program.Settings.VacuumLastDone = connection.Optimize(Program.Settings.VacuumLastDone);
-          connection.CheckTable("LunisolarDays",
-                                @"CREATE TABLE LunisolarDays 
-                                  (
-                                    Date TEXT,
-                                    LunarMonth INTEGER,
-                                    LunarDay INTEGER,
-                                    Sunrise TEXT,
-                                    Sunset TEXT,
-                                    Moonrise TEXT,
-                                    Moonset TEXT,
-                                    MoonriseType INTEGER,
-                                    IsNewMoon INTEGER,
-                                    IsFullMoon INTEGER,
-                                    MoonPhase INTEGER,
-                                    SeasonChange INTEGER,
-                                    TorahEvents INTEGER,
-                                    PRIMARY KEY('Date')
-                                  )");
-          connection.CheckTable("Report",
-                                @"CREATE TABLE Report 
-                                  ( 
-                                     Content TEXT 
-                                  );");
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
-        finally
-        {
-          connection.Close();
-        }
+      using ( var connection = new OdbcConnection(Settings.ConnectionString) )
+      {
+        connection.Open();
+
+        if ( Settings.VacuumAtStartup )
+          Settings.VacuumLastDone = connection.Optimize(Settings.VacuumLastDone);
+
+        connection.DropTableIfExists("Report");
+
+        connection.CheckTable(@"LunisolarDays",
+                              @"CREATE TABLE LunisolarDays 
+                                (
+                                  Date TEXT NOT NULL,
+                                  LunarMonth INTEGER,
+                                  LunarDay INTEGER,
+                                  Sunrise TEXT,
+                                  Sunset TEXT,
+                                  Moonrise TEXT,
+                                  Moonset TEXT,
+                                  MoonriseType INTEGER,
+                                  IsNewMoon INTEGER,
+                                  IsFullMoon INTEGER,
+                                  MoonPhase INTEGER,
+                                  SeasonChange INTEGER,
+                                  TorahEvents INTEGER,
+                                  PRIMARY KEY('Date')
+                                )");
+      }
+
     }
 
   }

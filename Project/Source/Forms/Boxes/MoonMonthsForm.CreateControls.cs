@@ -104,12 +104,12 @@ namespace Ordisoftware.HebrewCalendar
                                  new Font("Microsoft Sans Serif", 10f),
                                  false, false, false);
         var label3 = createLabel(x + dx2, y + dy2,
-                                 Program.MoonMonthsMeanings[index],
+                                 Program.MoonMonthsMeanings[Languages.Current][index],
                                  colorLinkTextMeaning,
                                  new Font("Microsoft Sans Serif", 10f),
                                  false, false, true);
         var label4 = createLabel(x + dx2, label3.Top + label3.Height + dy3,
-                                 Program.MoonMonthsLettriqs[index],
+                                 Program.MoonMonthsLettriqs[Languages.Current][index],
                                  colorLinkTextLettriq,
                                  new Font("Microsoft Sans Serif", 10f),
                                  false, false, true);

@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2019-10 </edited>
 using System;
-using System.Xml;
 using System.Globalization;
 using Keith_Burnett_moonr2cs;
 
@@ -27,7 +26,7 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
-    /// Indicate the japanese calendar instance.
+    /// Indicate the system lunisolar calendar instance.
     /// </summary>
     static public readonly VietnameseCalendar LunisolerCalendar
       = new VietnameseCalendar();
@@ -92,9 +91,9 @@ namespace Ordisoftware.HebrewCalendar
         throw new InvalidTimeZoneException();
       int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours
                    + ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date.AddDays(1)) ? 1 : 0 );
-      var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,
-                                 (float)XmlConvert.ToDouble(Program.Settings.GPSLatitude),
-                                 (float)XmlConvert.ToDouble(Program.Settings.GPSLongitude),
+      var strEphem = SunMoon.Get(date.Year, date.Month, date.Day, 
+                                 MainForm.Instance.CurrentGPSLatitude,
+                                 MainForm.Instance.CurrentGPSLongitude,
                                  timezone,
                                  1);
       return new SunAndMoonRiseAndSet()

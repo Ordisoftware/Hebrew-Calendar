@@ -53,6 +53,10 @@ namespace Calendar.NET
     private CalendarViews _calendarView;
     private readonly ScrollPanel _scrollPanel;
 
+    // ORDISOFTWARE MODIF BEGIN
+    public List<IEvent> TheEvents => _events;
+    // ORDISOFTWARE MODIF END
+
     private readonly List<IEvent> _events;
     private readonly List<Rectangle> _rectangles;
     private readonly Dictionary<int, Point> _calendarDays;
@@ -364,75 +368,75 @@ namespace Calendar.NET
       this._btnToday = new TodayButton();
       this._btnLeft = new NavigateLeftButton();
       this._btnRight = new NavigateRightButton();
-      this._contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this._miProperties = new System.Windows.Forms.ToolStripMenuItem();
+      this._contextMenuStrip1 = new ContextMenuStrip(this.components);
+      this._miProperties = new ToolStripMenuItem();
       this._contextMenuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
       // _btnToday
       // 
-      this._btnToday.BackColor = System.Drawing.Color.Transparent;
-      this._btnToday.BorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
-      this._btnToday.ButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
-      this._btnToday.ButtonFont = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+      this._btnToday.BackColor = Color.Transparent;
+      this._btnToday.BorderColor = Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
+      this._btnToday.ButtonColor = Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
+      this._btnToday.ButtonFont = new Font("Arial", 8F, FontStyle.Bold);
       // ORDISOFTWARE MODIF BEGIN
       this._btnToday.ButtonText = DesignMode ? "Today" : Translations.Today.GetLang();
       // ORDISOFTWARE MODIF END
-      this._btnToday.FocusColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
-      this._btnToday.HighlightBorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
-      this._btnToday.HighlightButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
-      this._btnToday.Location = new System.Drawing.Point(19, 20);
+      this._btnToday.FocusColor = Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
+      this._btnToday.HighlightBorderColor = Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
+      this._btnToday.HighlightButtonColor = Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
+      this._btnToday.Location = new Point(19, 20);
       this._btnToday.Name = "_btnToday";
-      //this._btnToday.Size = new System.Drawing.Size(72, 29);
+      //this._btnToday.Size = new Size(72, 29);
       this._btnToday.TabIndex = 0;
-      this._btnToday.TextColor = System.Drawing.Color.Black;
+      this._btnToday.TextColor = Color.Black;
       this._btnToday.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnTodayButtonClicked);
       // 
       // _btnLeft
       // 
-      this._btnLeft.BackColor = System.Drawing.Color.Transparent;
-      this._btnLeft.BorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
-      this._btnLeft.ButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
-      this._btnLeft.ButtonFont = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+      this._btnLeft.BackColor = Color.Transparent;
+      this._btnLeft.BorderColor = Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
+      this._btnLeft.ButtonColor = Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
+      this._btnLeft.ButtonFont = new Font("Arial", 8F, FontStyle.Bold);
       this._btnLeft.ButtonText = "<";
-      this._btnLeft.FocusColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
-      this._btnLeft.HighlightBorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
-      this._btnLeft.HighlightButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
-      this._btnLeft.Location = new System.Drawing.Point(98, 10);
+      this._btnLeft.FocusColor = Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
+      this._btnLeft.HighlightBorderColor = Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
+      this._btnLeft.HighlightButtonColor = Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
+      this._btnLeft.Location = new Point(98, 10);
       this._btnLeft.Name = "_btnLeft";
-      this._btnLeft.Size = new System.Drawing.Size(42, 29);
+      this._btnLeft.Size = new Size(42, 29);
       this._btnLeft.TabIndex = 1;
-      this._btnLeft.TextColor = System.Drawing.Color.Black;
+      this._btnLeft.TextColor = Color.Black;
       this._btnLeft.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnLeftButtonClicked);
       // 
       // _btnRight
       // 
-      this._btnRight.BackColor = System.Drawing.Color.Transparent;
-      this._btnRight.BorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
-      this._btnRight.ButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
-      this._btnRight.ButtonFont = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+      this._btnRight.BackColor = Color.Transparent;
+      this._btnRight.BorderColor = Color.FromArgb(( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ), ( (int)( ( (byte)( 220 ) ) ) ));
+      this._btnRight.ButtonColor = Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
+      this._btnRight.ButtonFont = new Font("Arial", 8F, FontStyle.Bold);
       this._btnRight.ButtonText = ">";
-      this._btnRight.FocusColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
-      this._btnRight.HighlightBorderColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
-      this._btnRight.HighlightButtonColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
-      this._btnRight.Location = new System.Drawing.Point(138+5, 10);
+      this._btnRight.FocusColor = Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
+      this._btnRight.HighlightBorderColor = Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
+      this._btnRight.HighlightButtonColor = Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
+      this._btnRight.Location = new Point(138 + 5, 10);
       this._btnRight.Name = "_btnRight";
-      this._btnRight.Size = new System.Drawing.Size(42, 29);
+      this._btnRight.Size = new Size(42, 29);
       this._btnRight.TabIndex = 2;
-      this._btnRight.TextColor = System.Drawing.Color.Black;
+      this._btnRight.TextColor = Color.Black;
       this._btnRight.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnRightButtonClicked);
       // 
       // _contextMenuStrip1
       // 
-      this._contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this._contextMenuStrip1.Items.AddRange(new ToolStripItem[] {
             this._miProperties});
       this._contextMenuStrip1.Name = "_contextMenuStrip1";
-      this._contextMenuStrip1.Size = new System.Drawing.Size(137, 26);
+      this._contextMenuStrip1.Size = new Size(137, 26);
       // 
       // _miProperties
       // 
       this._miProperties.Name = "_miProperties";
-      this._miProperties.Size = new System.Drawing.Size(136, 22);
+      this._miProperties.Size = new Size(136, 22);
       this._miProperties.Text = "Properties...";
       this._miProperties.Click += new System.EventHandler(this.MenuItemPropertiesClick);
       // 
@@ -442,11 +446,11 @@ namespace Calendar.NET
       this.Controls.Add(this._btnLeft);
       this.Controls.Add(this._btnToday);
       this.Name = "Calendar";
-      this.Size = new System.Drawing.Size(512, 440);
+      this.Size = new Size(512, 440);
       this.Load += new System.EventHandler(this.CalendarLoad);
-      this.Paint += new System.Windows.Forms.PaintEventHandler(this.CalendarPaint);
-      this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMouseClick);
-      this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CalendarMouseMove);
+      this.Paint += new PaintEventHandler(this.CalendarPaint);
+      this.MouseClick += new MouseEventHandler(this.CalendarMouseClick);
+      this.MouseMove += new MouseEventHandler(this.CalendarMouseMove);
       this.Resize += new System.EventHandler(this.CalendarResize);
       this.DoubleBuffered = true;
       this._contextMenuStrip1.ResumeLayout(false);
@@ -908,8 +912,15 @@ namespace Calendar.NET
       }
     }
 
+    static private readonly SolidBrush BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
+    static private readonly SolidBrush BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
+    static private readonly SolidBrush BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
+    static private readonly Pen PenBrushBlack = new Pen(BrushBlack) { DashStyle = DashStyle.Dash };
+
     private void RenderMonthCalendar(PaintEventArgs e)
     {
+      var brushDayFore = new SolidBrush(CurrentDayForeColor);
+      var brushDayBack = new SolidBrush(CurrentDayBackColor);
       _calendarDays.Clear();
       _calendarEvents.Clear();
       var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
@@ -917,16 +928,16 @@ namespace Calendar.NET
       e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       SizeF sunSize = g.MeasureString("Sun", _dayOfWeekFont);
-      SizeF monSize = g.MeasureString("Mon", _dayOfWeekFont);
-      SizeF tueSize = g.MeasureString("Tue", _dayOfWeekFont);
-      SizeF wedSize = g.MeasureString("Wed", _dayOfWeekFont);
-      SizeF thuSize = g.MeasureString("Thu", _dayOfWeekFont);
-      SizeF friSize = g.MeasureString("Fri", _dayOfWeekFont);
-      SizeF satSize = g.MeasureString("Sat", _dayOfWeekFont);
-      SizeF dateHeaderSize = g.MeasureString(
-          CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
-      int headerSpacing = Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height,
-                    satSize.Height) + 5;
+      // ORDISOFWTARE MODIF BEGIN
+      SizeF monSize = sunSize;// g.MeasureString("Mon", _dayOfWeekFont);
+      SizeF tueSize = sunSize;// g.MeasureString("Tue", _dayOfWeekFont);
+      SizeF wedSize = sunSize;// g.MeasureString("Wed", _dayOfWeekFont);
+      SizeF thuSize = sunSize;// g.MeasureString("Thu", _dayOfWeekFont);
+      SizeF friSize = sunSize;// g.MeasureString("Fri", _dayOfWeekFont);
+      SizeF satSize = sunSize;// g.MeasureString("Sat", _dayOfWeekFont);
+      // ORDISOFWTARE MODIF END
+      SizeF dateHeaderSize = g.MeasureString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
+      int headerSpacing = Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height, satSize.Height) + 5;
       int controlsSpacing = ( ( !_showTodayButton ) && ( !_showDateInHeader ) && ( !_showArrowControls ) ) ? 0 : 30;
       // ORDISOFWTARE MODIF BEGIN
       //int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
@@ -963,49 +974,41 @@ namespace Calendar.NET
               {
                 var color = MainForm.Instance.GetDayColor(counter, _calendarDate.Month, _calendarDate.Year);
                 if ( color != Color.Transparent )
-                  g.FillRectangle(new SolidBrush(Color.FromArgb(255, color.R, color.G, color.B)), xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
+                  g.FillRectangle(new SolidBrush(color), xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
               }
             // ORDISOFTWARE MODIF END
+
             if ( !_calendarDays.ContainsKey(counter) )
               _calendarDays.Add(counter, new Point(xStart, (int)( yStart + 2f + g.MeasureString(counter.ToString(CultureInfo.InvariantCulture), _daysFont).Height )));
 
-            if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month
-             && counter == DateTime.Now.Day && _highlightCurrentDay )
-            {
-              g.FillRectangle(new SolidBrush(Color.FromArgb(234, 234, 234)), xStart, yStart, cellWidth, cellHeight);
-            }
+            if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter == DateTime.Now.Day && _highlightCurrentDay )
+              g.FillRectangle(BrushGrayLight, xStart, yStart, cellWidth, cellHeight);
 
             if ( first == false )
             {
               first = true;
-              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month
-           && counter == DateTime.Now.Day )
+              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN
                 if ( Program.Settings.UseColors )
                 {
                   string strCounter = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture);
                   SizeF stringSize = g.MeasureString(strCounter, _todayFont);
-                  g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
-                  g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
+                  g.FillRectangle(brushDayBack, xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
+                  g.DrawString(strCounter, _todayFont, brushDayFore, xStart + 5, yStart + 2);
                 }
                 else
-                g.DrawString(
-                    _calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture),
-                    _todayFont, Brushes.Black, xStart + 5, yStart + 2);
+                  g.DrawString(_calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else
               {
-                g.DrawString(
-                    CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture),
-                    _daysFont, Brushes.Black, xStart + 5, yStart + 2);
+                g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture), _daysFont, Brushes.Black, xStart + 5, yStart + 2);
               }
             }
             else
             {
-              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month
-           && counter == DateTime.Now.Day )
+              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN
                 if ( Program.Settings.UseColors )
@@ -1013,8 +1016,8 @@ namespace Calendar.NET
 
                   string strCounter = counter.ToString(CultureInfo.InvariantCulture);
                   SizeF stringSize = g.MeasureString(strCounter, _todayFont);
-                  g.FillRectangle(new SolidBrush(CurrentDayBackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
-                  g.DrawString(strCounter, _todayFont, new SolidBrush(CurrentDayForeColor), xStart + 5, yStart + 2);
+                  g.FillRectangle(brushDayBack, xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
+                  g.DrawString(strCounter, _todayFont, brushDayFore, xStart + 5, yStart + 2);
                 }
                 else
                   g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
@@ -1029,17 +1032,16 @@ namespace Calendar.NET
           }
           else if ( rogueDays > 0 )
           {
-            int dm =
-                DateTime.DaysInMonth(_calendarDate.AddMonths(-1).Year, _calendarDate.AddMonths(-1).Month) -
-                rogueDays + 1;
+            int dm = DateTime.DaysInMonth(_calendarDate.AddMonths(-1).Year, _calendarDate.AddMonths(-1).Month) - rogueDays + 1;
             // ORDISOFWTARE MODIF BEGIN
             g.FillRectangle(RogueBrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
             // ORDISOFWTARE MODIF END
-            g.DrawString(dm.ToString(CultureInfo.InvariantCulture), _daysFont, new SolidBrush(Color.FromArgb(170, 170, 170)), xStart + 5, yStart + 2);
+            g.DrawString(dm.ToString(CultureInfo.InvariantCulture), _daysFont, BrushGrayMedium, xStart + 5, yStart + 2);
             rogueDays--;
           }
 
           g.DrawRectangle(Pens.DarkGray, xStart, yStart, cellWidth, cellHeight);
+
           if ( rogueDays == 0 && counter > DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month) )
           {
             if ( first2 == false )
@@ -1051,16 +1053,14 @@ namespace Calendar.NET
                 // ORDISOFWTARE MODIF BEGIN
                 g.FillRectangle(RogueBrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
                 // ORDISOFWTARE MODIF END
-                g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.AddMonths(1).ToString("MMMM")) + " " + counter2.ToString(CultureInfo.InvariantCulture), _daysFont,
-                             new SolidBrush(Color.FromArgb(170, 170, 170)), xStart + 5, yStart + 2);
+                g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.AddMonths(1).ToString("MMMM")) + " " + counter2.ToString(CultureInfo.InvariantCulture), _daysFont, BrushGrayMedium, xStart + 5, yStart + 2);
               }
               else
               {
                 // ORDISOFWTARE MODIF BEGIN
                 g.FillRectangle(RogueBrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
                 // ORDISOFWTARE MODIF END
-                g.DrawString(counter2.ToString(CultureInfo.InvariantCulture), _daysFont,
-                             new SolidBrush(Color.FromArgb(170, 170, 170)), xStart + 5, yStart + 2);
+                g.DrawString(counter2.ToString(CultureInfo.InvariantCulture), _daysFont, BrushGrayMedium, xStart + 5, yStart + 2);
               }
               counter2++;
             }
@@ -1097,26 +1097,33 @@ namespace Calendar.NET
 
       if ( _showDateInHeader )
       {
-        g.DrawString(
-            CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture),
-            _dateHeaderFont, Brushes.Black, ClientSize.Width - MarginSize - dateHeaderSize.Width,
-            MarginSize);
+        g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, Brushes.Black, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
       }
 
-      _events.Sort(new EventComparer());
+      // ORDISOFTWARE MODIF BEGIN
+      //_events.Sort(new EventComparer());
+      // ORDISOFTWARE MODIF END
 
+      bool generateEvents = Program.Settings.MonthViewSunToolTips;
       for ( int i = 1; i <= DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month); i++ )
       {
         int renderOffsetY = 0;
 
-        foreach ( IEvent v in _events )
+        // ORDISOFTWARE MODIF BEGIN
+        //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
+        var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 00, 00, 0);
+        var list = _events.Where(ev => ev.Date == dt
+                                    /*&& ( ev.Enabled || _showDisabledEvents )*/);
+        foreach ( IEvent v in list )
+        //foreach ( IEvent v in _events )
+        // ORDISOFTWARE MODIF END
         {
-          var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
-          if ( NeedsRendering(v, dt) )
+          // ORDISOFTWARE MODIF BEGIN
+          if ( DayForward(v, dt) )
+          //if ( NeedsRendering(v, dt) )
+          // ORDISOFTWARE MODIF END
           {
-            int alpha = 255;
-            if ( !v.Enabled && _dimDisabledEvents )
-              alpha = 64;
+            int alpha = !v.Enabled && _dimDisabledEvents ? alpha = 64 : 255;
             Color alphaColor = Color.FromArgb(alpha, v.EventColor.R, v.EventColor.G, v.EventColor.B);
 
             int offsetY = renderOffsetY;
@@ -1124,44 +1131,47 @@ namespace Calendar.NET
             // ORDISOFTWARE MODIF BEGIN
             if ( i > _calendarDays.Count ) continue;
             // ORDISOFTWARE MODIF END
+
             Point point = _calendarDays[i];
             SizeF sz = g.MeasureString(v.EventText, v.EventFont);
             int yy = point.Y - 1;
+
             // ORDISOFTWARE MODIF BEGIN
             //int xx = ( ( cellWidth - (int)sz.Width ) / 2 ) + point.X;
             int xx = point.X + 5;
+            if ( sz.Width > cellWidth ) xx = point.X;
             // ORDISOFTWARE MODIF END
 
-            if ( sz.Width > cellWidth )
-              xx = point.X;
-            if ( renderOffsetY + sz.Height > cellHeight - 10 )
-              continue;
+            if ( renderOffsetY + sz.Height > cellHeight - 10 ) continue;
+
             g.Clip = new Region(new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1, (int)sz.Height));
             g.FillRectangle(new SolidBrush(alphaColor), point.X + 1, point.Y + offsetY, cellWidth - 1, sz.Height);
+
             if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
-            {
-              var p = new Pen(new SolidBrush(Color.FromArgb(255, 0, 0, 0))) { DashStyle = DashStyle.Dash };
-              g.DrawRectangle(p, point.X + 1, point.Y + offsetY, cellWidth - 2, sz.Height - 1);
-            }
+              g.DrawRectangle(PenBrushBlack, point.X + 1, point.Y + offsetY, cellWidth - 2, sz.Height - 1);
+
             g.DrawString(v.EventText, v.EventFont, new SolidBrush(v.EventTextColor), xx, yy + offsetY);
             g.Clip = r;
 
-            var ev = new CalendarEvent
+            // ORDISOFTWARE MODIF BEGIN
+            if ( generateEvents )
             {
-              EventArea =
-                    new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1,
-                                  (int)sz.Height),
-              Event = v,
-              Date = dt
-            };
+              var ev = new CalendarEvent
+              {
+                EventArea = new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1, (int)sz.Height),
+                Event = v,
+                Date = dt
+              };
+              _calendarEvents.Add(ev);
+            }
+            // ORDISOFTWARE MODIF END
 
-            _calendarEvents.Add(ev);
             renderOffsetY += (int)sz.Height + 1;
           }
         }
       }
-      _rectangles.Clear();
 
+      _rectangles.Clear();
       g.Dispose();
       e.Graphics.DrawImage(bmp, 0, 0, ClientSize.Width, ClientSize.Height);
       bmp.Dispose();
@@ -1169,47 +1179,30 @@ namespace Calendar.NET
 
     private bool NeedsRendering(IEvent evnt, DateTime day)
     {
-      if ( !evnt.Enabled && !_showDisabledEvents )
-        return false;
-
+      if ( !evnt.Enabled && !_showDisabledEvents ) return false;
       DayOfWeek dw = evnt.Date.DayOfWeek;
-
       if ( evnt.RecurringFrequency == RecurringFrequencies.Daily )
-      {
         return DayForward(evnt, day);
-      }
       if ( evnt.RecurringFrequency == RecurringFrequencies.Weekly && day.DayOfWeek == dw )
-      {
         return DayForward(evnt, day);
-      }
-      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryWeekend && ( day.DayOfWeek == DayOfWeek.Saturday ||
-          day.DayOfWeek == DayOfWeek.Sunday ) )
+      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryWeekend && ( day.DayOfWeek == DayOfWeek.Saturday || day.DayOfWeek == DayOfWeek.Sunday ) )
         return DayForward(evnt, day);
-      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryMonWedFri && ( day.DayOfWeek == DayOfWeek.Monday ||
-          day.DayOfWeek == DayOfWeek.Wednesday || day.DayOfWeek == DayOfWeek.Friday ) )
-      {
+      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryMonWedFri && ( day.DayOfWeek == DayOfWeek.Monday || day.DayOfWeek == DayOfWeek.Wednesday || day.DayOfWeek == DayOfWeek.Friday ) )
         return DayForward(evnt, day);
-      }
-      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryTueThurs && ( day.DayOfWeek == DayOfWeek.Thursday ||
-          day.DayOfWeek == DayOfWeek.Tuesday ) )
+      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryTueThurs && ( day.DayOfWeek == DayOfWeek.Thursday || day.DayOfWeek == DayOfWeek.Tuesday ) )
         return DayForward(evnt, day);
-      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryWeekday && ( day.DayOfWeek != DayOfWeek.Sunday &&
-          day.DayOfWeek != DayOfWeek.Saturday ) )
+      if ( evnt.RecurringFrequency == RecurringFrequencies.EveryWeekday && ( day.DayOfWeek != DayOfWeek.Sunday && day.DayOfWeek != DayOfWeek.Saturday ) )
         return DayForward(evnt, day);
-      if ( evnt.RecurringFrequency == RecurringFrequencies.Yearly && evnt.Date.Month == day.Month &&
-          evnt.Date.Day == day.Day )
+      if ( evnt.RecurringFrequency == RecurringFrequencies.Yearly && evnt.Date.Month == day.Month && evnt.Date.Day == day.Day )
         return DayForward(evnt, day);
       if ( evnt.RecurringFrequency == RecurringFrequencies.Monthly && evnt.Date.Day == day.Day )
         return DayForward(evnt, day);
       if ( evnt.RecurringFrequency == RecurringFrequencies.Custom && evnt.CustomRecurringFunction != null )
-      {
         if ( evnt.CustomRecurringFunction(evnt, day) )
           return DayForward(evnt, day);
-        return false;
-      }
-
-      if ( evnt.RecurringFrequency == RecurringFrequencies.None && evnt.Date.Year == day.Year &&
-          evnt.Date.Month == day.Month && evnt.Date.Day == day.Day )
+        else
+          return false;
+      if ( evnt.RecurringFrequency == RecurringFrequencies.None && evnt.Date.Year == day.Year && evnt.Date.Month == day.Month && evnt.Date.Day == day.Day )
         return DayForward(evnt, day);
       return false;
     }
@@ -1225,7 +1218,7 @@ namespace Calendar.NET
 
       // ORDISOFTWARE MODIF BEGIN
       while ( date.Date.AddDays(1).DayOfWeek != CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek )
-      //while ( date.Date.AddDays(1).DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
+        //while ( date.Date.AddDays(1).DayOfWeek != (DayOfWeek)Program.Settings.ShabatDay )
         date = date.AddDays(1);
       //ORDISOFTWARE MODIF END
 

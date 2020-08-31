@@ -30,21 +30,21 @@ namespace Ordisoftware.HebrewCalendar
         return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
       }
       var dateNow = DateTime.Now;
-      string strDateNow = SQLiteHelper.GetDate(dateNow);
+      string strDateNow = SQLiteDate.ToString(dateNow);
       var row = ( from day in DataSet.LunisolarDays
                   where (TorahEvent)day.TorahEvents != TorahEvent.None
                      && check((TorahEvent)day.TorahEvents)
-                     && SQLiteHelper.GetDate(day.Date) >= SQLiteHelper.GetDate(strDateNow).AddDays(-1)
+                     && SQLiteDate.ToDateTime(day.Date) >= SQLiteDate.ToDateTime(strDateNow).AddDays(-1)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
-      if ( SQLiteHelper.GetDate(row.Date).Day < dateNow.Day )
-        if ( Program.Settings.TorahEventsCountAsMoon && row.MoonriseType == (int)MoonRise.BeforeSet )
+      if ( SQLiteDate.ToDateTime(row.Date).Day < dateNow.Day )
+        if ( Settings.TorahEventsCountAsMoon && row.MoonriseType == (int)MoonRise.BeforeSet )
           return;
         else
           return;
-      var times = CreateCelebrationTimes(row, Program.Settings.RemindCelebrationEveryMinutes);
+      var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return;
-      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Program.Settings.RemindCelebrationHoursBefore);
+      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
       {
         LastCelebrationReminded[(TorahEvent)row.TorahEvents] = null;
@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewCalendar
           LastCelebrationReminded[(TorahEvent)row.TorahEvents] = dateNow;
         }
         else
-        if ( dateNow < LastCelebrationReminded[(TorahEvent)row.TorahEvents].Value.AddMinutes((double)Program.Settings.RemindCelebrationEveryMinutes) )
+        if ( dateNow < LastCelebrationReminded[(TorahEvent)row.TorahEvents].Value.AddMinutes((double)Settings.RemindCelebrationEveryMinutes) )
           return;
         else
           LastCelebrationReminded[(TorahEvent)row.TorahEvents] = dateNow;

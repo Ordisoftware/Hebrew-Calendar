@@ -11,11 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -23,35 +22,44 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    private void DoGenerate(object sender, EventArgs e)
+    private string DoGenerate(object sender, EventArgs e)
     {
       try
       {
-        Globals.IsReady = false;
+        // TODO ? Globals.IsReady = false;
+        MenuTray.Enabled = false;
         TimerReminder.Enabled = false;
         try
         {
           int yearFirst;
           int yearLast;
           if ( sender != null )
-          {
-            var form = new SelectYearsForm();
-            if ( e == null ) form.ActionCancel.Enabled = false;
-            if ( form.ShowDialog() == DialogResult.Cancel ) return;
-            yearFirst = (int)form.EditYearFirst.Value;
-            yearLast = (int)form.EditYearLast.Value;
-          }
+            if ( sender is Tuple<int, int> )
+            {
+              var values = (Tuple<int, int>)sender;
+              yearFirst = values.Item1;
+              yearLast = values.Item2;
+            }
+            else
+            {
+              var form = new SelectYearsForm();
+              if ( e == null ) form.ActionCancel.Enabled = false;
+              if ( form.ShowDialog() == DialogResult.Cancel ) return null;
+              yearFirst = (int)form.EditYearFirst.Value;
+              yearLast = (int)form.EditYearLast.Value;
+            }
           else
           {
             yearFirst = YearFirst;
             yearLast = YearLast;
           }
           ClearLists();
-          GenerateData(yearFirst, yearLast);
+          return GenerateData(yearFirst, yearLast);
         }
         finally
         {
-          Globals.IsReady = true;
+          // TODO ? Globals.IsReady = true;
+          MenuTray.Enabled = true;
           UpdateButtons();
           if ( e != null )
           {
@@ -61,13 +69,10 @@ namespace Ordisoftware.HebrewCalendar
           }
         }
       }
-      catch ( AbortException )
-      {
-        throw;
-      }
       catch ( Exception ex )
       {
         ex.Manage();
+        return null;
       }
     }
 

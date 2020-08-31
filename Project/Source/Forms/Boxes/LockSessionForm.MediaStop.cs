@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -22,25 +22,21 @@ namespace Ordisoftware.HebrewCalendar
   public partial class LockSessionForm : Form
   {
 
+    [DllImport("user32.dll")]
+    public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+
+    private const int APPCOMMAND_VOLUME_MUTE = 0x80000;
+    private const int WM_APPCOMMAND = 0x319;
+
     [DllImport("user32.dll", SetLastError = true)]
     private static extern uint SendInput(uint numberOfInputs, INPUT[] inputs, int sizeOfInputStructure);
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct INPUT
+    internal struct HARDWAREINPUT
     {
-      public uint Type;
-      public MOUSEKEYBDHARDWAREINPUT Data;
-    }
-
-    [StructLayout(LayoutKind.Explicit)]
-    internal struct MOUSEKEYBDHARDWAREINPUT
-    {
-      [FieldOffset(0)]
-      public HARDWAREINPUT Hardware;
-      [FieldOffset(0)]
-      public KEYBDINPUT Keyboard;
-      [FieldOffset(0)]
-      public MOUSEINPUT Mouse;
+      public uint Msg;
+      public ushort ParamL;
+      public ushort ParamH;
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -64,24 +60,33 @@ namespace Ordisoftware.HebrewCalendar
       public IntPtr ExtraInfo;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
-    internal struct HARDWAREINPUT
+    [StructLayout(LayoutKind.Explicit)]
+    internal struct MOUSEKEYBDHARDWAREINPUT
     {
-      public uint Msg;
-      public ushort ParamL;
-      public ushort ParamH;
+      [FieldOffset(0)]
+      public HARDWAREINPUT Hardware;
+      [FieldOffset(0)]
+      public KEYBDINPUT Keyboard;
+      [FieldOffset(0)]
+      public MOUSEINPUT Mouse;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct INPUT
+    {
+      public uint Type;
+      public MOUSEKEYBDHARDWAREINPUT Data;
     }
 
     private void MediaStop()
     {
-      if ( !EditMediaStop.Checked ) return;
       INPUT input = new INPUT
       {
         Type = 1
       };
       input.Data.Keyboard = new KEYBDINPUT()
       {
-        Vk = 0xB3,
+        Vk = 0xB2,
         Scan = 0,
         Flags = 0,
         Time = 0,
@@ -89,6 +94,11 @@ namespace Ordisoftware.HebrewCalendar
       };
       INPUT[] inputs = new INPUT[] { input };
       SendInput(1, inputs, Marshal.SizeOf(typeof(INPUT)));
+    }
+
+    private void MuteVolume()
+    {
+      SendMessageW(Handle, WM_APPCOMMAND, Handle, (IntPtr)APPCOMMAND_VOLUME_MUTE);
     }
 
   }

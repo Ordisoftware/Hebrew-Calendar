@@ -13,7 +13,9 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Xml;
 using System.Windows.Forms;
+using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -43,17 +45,20 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindAutoLockTimeOutMin = 10;
     const int RemindAutoLockTimeOutMax = 300;
     const int RemindAutoLockTimeOutValue = 60;
+    const int AutoGenerateYearsIntervalMin = 5;
+    const int AutoGenerateYearsIntervalMax = 20;
+    const int AutoGenerateYearsIntervalValue = 10;
 
-    static private bool IsCenteredToScreen;
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static private bool LanguageChanged;
     static private bool DoReset;
     static public bool Reseted { get; private set; }
 
-    static public bool Run(bool isCenteredToScreen = false)
+    static public bool Run()
     {
       Reseted = false;
-      IsCenteredToScreen = isCenteredToScreen;
-      string lang = Program.Settings.Language;
+      string lang = Settings.Language;
       var form = new PreferencesForm();
       if ( !MainForm.Instance.Visible )
         form.ShowInTaskbar = true;
@@ -69,17 +74,24 @@ namespace Ordisoftware.HebrewCalendar
         form.ShowDialog();
       }
       bool result = Reseted
-                 || form.OldShabatDay != Program.Settings.ShabatDay
-                 || form.OldLatitude != Program.Settings.GPSLatitude
-                 || form.OldLongitude != Program.Settings.GPSLongitude
-                 || form.OldReminderUseColors != Program.Settings.UseColors
-                 || form.OldReminderShabatDayColor != Program.Settings.EventColorShabat
-                 || form.OldReminderCurrentDayColor != Program.Settings.EventColorTorah
-                 || form.OldUseMoonDays != Program.Settings.TorahEventsCountAsMoon
-                 || form.OldTimeZone != Program.Settings.TimeZone
-                 || lang != Program.Settings.Language;
+                 || form.OldShabatDay != Settings.ShabatDay
+                 || form.OldLatitude != Settings.GPSLatitude
+                 || form.OldLongitude != Settings.GPSLongitude
+                 || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
+                 || form.OldTimeZone != Settings.TimeZone
+                 || lang != Settings.Language;
       if ( !result && form.MustRefreshMonthView )
         MainForm.Instance.UpdateCalendarMonth(true);
+      try
+      {
+        MainForm.Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
+        MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+      if (result ) Dates.Clear();
       return result;
     }
 

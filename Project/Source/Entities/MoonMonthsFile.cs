@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -15,39 +15,30 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
 {
 
+  /// <summary>
+  /// Provide Moon months file.
+  /// </summary>
   public partial class MoonMonthsFile : DataFile
   {
 
     public readonly List<string> Items = new List<string>();
 
     public string this[int index]
-    {
-      get
-      {
-        if ( index < 0 || index >= Items.Count )
-        {
-          DisplayManager.ShowAdvert("Index out of bounds: " + index);
-          return "";
-        }
-        else
-          return Items[index];
-      }
-    }
+      => index >= 0 && index < Items.Count ? Items[index] : "";
 
     public MoonMonthsFile(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
-      : base(filename.Replace("%LANG%", Localizer.Language.ToUpper()), showFileNotFound, configurable, folder)
+      : base(filename, showFileNotFound, configurable, folder)
     {
     }
 
     protected override void DoReLoad(string filename)
     {
-      if ( filename == "" ) return;
+      if ( string.IsNullOrEmpty(filename) ) return;
       try
       {
         Items.Clear();
@@ -57,7 +48,7 @@ namespace Ordisoftware.HebrewCalendar
         {
           Action showError = () =>
           {
-            DisplayManager.ShowError(Globals.ErrorInFile.GetLang(filename, index + 1, lines[index]));
+            DisplayManager.ShowError(Localizer.ErrorInFile.GetLang(filename, index + 1, lines[index]));
           };
           if ( index >= Program.MoonMonthsNames.Length )
             break;

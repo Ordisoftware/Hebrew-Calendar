@@ -11,11 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Configuration;
-using System.IO;
+using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -26,18 +27,43 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide global variables.
   /// </summary>
-  static public partial class Globals
+  static public class Globals
   {
+
+    /// <summary>
+    /// Indicate new line.
+    /// </summary>
+    static public readonly string NL = Environment.NewLine;
+    static public readonly string NL2 = NL + NL;
+    static public readonly string NL3 = NL2 + NL;
+    static public readonly string NL4 = NL3 + NL;
 
     /// <summary>
     /// Indicate the main form.
     /// </summary>
-    static public Form MainForm { get; set; }
+    static public Form MainForm
+    {
+      get
+      {
+        return _MainForm == null ? Application.OpenForms.Count > 0 ? Application.OpenForms[0] : Form.ActiveForm
+                                 : _MainForm;
+      }
+      set
+      {
+        _MainForm = value;
+      }
+    }
+    static private Form _MainForm;
 
     /// <summary>
     /// Indicate the application settings.
     /// </summary>
     static public ApplicationSettingsBase Settings { get; set; }
+
+    /// <summary>
+    /// Indicate the process start date and time.
+    /// </summary>
+    static public readonly DateTime StartDateTime = DateTime.Now;
 
     /// <summary>
     /// Indicate if the application is in loading data stage.
@@ -65,22 +91,25 @@ namespace Ordisoftware.HebrewCommon
     static public bool AllowClose = true;
 
     /// <summary>
-    /// Indicate the check update URL.
+    /// Indicate the application code (title without space
     /// </summary>
-    static public string CheckUpdateURL
-      = $"http://{AssemblyTrademark}/files/{AssemblyTitle.Replace(" ", "")}.update";
+    static public readonly string ApplicationCode
+      = AssemblyTitle.Replace(" ", "");
 
     /// <summary>
-    /// Indicate the download application URL.
+    /// Indicate the application code (title without space
     /// </summary>
-    static public string DownloadApplicationURL
-      = AssemblyProduct;
+    static public readonly string HebrewCommonDirectoryName
+      = "Hebrew Common";
 
     /// <summary>
     /// Indicate the application home URL.
     /// </summary>
-    static public string ApplicationHomeURL
+    static public readonly string ApplicationHomeURL
       = AssemblyProduct;
+
+    static public readonly string ApplicationReleaseNotesURL
+      = $"{ApplicationHomeURL}/#release{{0}}";
 
     /// <summary>
     /// Indicate the author home URL.
@@ -93,6 +122,24 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public string ContactURL
       = AssemblyTrademark + "/contact";
+
+    /// <summary>
+    /// Indicate the check update URL.
+    /// </summary>
+    static public string CheckUpdateURL
+      = $"http://{AssemblyTrademark}/files/{ApplicationCode}.update";
+
+    /// <summary>
+    /// Indicate the setup file name.
+    /// </summary>
+    static public string SetupFilename
+      = $"{AssemblyCompany}{ApplicationCode}Setup-{{0}}.exe";
+
+    /// <summary>
+    /// Indicate the new version setup file.
+    /// </summary>
+    static public string SetupFileURL
+      = $"http://{AssemblyTrademark}/files/{SetupFilename}";
 
     /// <summary>
     /// Indicate the GitHub repository.
@@ -109,102 +156,151 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the extension of database files.
     /// </summary>
-    static public readonly string DBFileExtension
+    static public string DatabaseFileExtension
       = ".sqlite";
+
+    /// <summary>
+    /// Indicate if the executable has been generated in debug mode.
+    /// </summary>
+    static public bool IsDebugExecutable
+    {
+      get
+      {
+        bool isDebug = false;
+        CheckDebugExecutable(ref isDebug);
+        return isDebug;
+      }
+    }
+
+    [Conditional("DEBUG")]
+    static private void CheckDebugExecutable(ref bool isDebug)
+    {
+      isDebug = true;
+    }
+
+    /// <summary>
+    /// Indicate generated executable bin directory.
+    /// </summary>
+    static public string BinDirectory = "\\Bin\\";
+
+    /// <summary>
+    /// Indicate generated executable debug directory.
+    /// </summary>
+    static public string DebugDirectory = BinDirectory + "Debug\\";
+
+    /// <summary>
+    /// Indicate generated executable release directory.
+    /// </summary>
+    static public string ReleaseDirectory = BinDirectory + "Release\\";
 
     /// <summary>
     /// Indicate if the running app is from dev folder else user installed.
     /// </summary>
-    static public bool IsDev
-    {
-      get
-      {
-        return Application.ExecutablePath.Contains("\\Bin\\Debug\\")
-            || Application.ExecutablePath.Contains("\\Bin\\Release\\");
-      }
-    }
+    static public bool IsDev 
+      => Application.ExecutablePath.Contains(DebugDirectory) 
+      || Application.ExecutablePath.Contains(ReleaseDirectory);
 
     /// <summary>
     /// Indicate if the code is executed from the IDE else from a running app.
     /// </summary>
-    public static bool IsDesignTime
+    public static bool IsDesignTime 
+      => System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
+
+    /// <summary>
+    /// Indicate the application process name.
+    /// </summary>
+    static public readonly string ProcessName
+      = Path.GetFileNameWithoutExtension(Application.ExecutablePath);
+
+    /// <summary>
+    /// Indicate the real application process name.
+    /// </summary>
+    static public ProcessPriorityClass RealProcessPriority
     {
       get
       {
-        return System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
+        var list = Process.GetProcessesByName(ProcessName);
+        return list.Length == 1 ? list[0].PriorityClass : 0;
       }
     }
 
     /// <summary>
     /// Indicate the root folder path of the application.
     /// </summary>
-    static public readonly string RootFolderPath
-      = Directory.GetParent
-        (
-          Path.GetDirectoryName(Application.ExecutablePath
-                                .Replace("\\Bin\\Debug\\", "\\Bin\\")
-                                .Replace("\\Bin\\Release\\", "\\Bin\\"))
-        ).FullName
-      + Path.DirectorySeparatorChar;
+    static public string RootFolderPath
+      => Directory.GetParent
+         (
+           Path.GetDirectoryName(Application.ExecutablePath
+                                 .Replace(DebugDirectory, BinDirectory)
+                                 .Replace(ReleaseDirectory, BinDirectory))
+         ).FullName
+       + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the filename of the application's icon.
     /// </summary>
-    static public readonly string ApplicationIconFilename
-      = RootFolderPath + "Application.ico";
+    static public string ApplicationIconFilename
+      => RootFolderPath + "Application.ico";
 
     /// <summary>
     /// Indicate the filename of the help.
     /// </summary>
-    static public readonly string HelpFolderPath
-      = RootFolderPath + "Help" + Path.DirectorySeparatorChar;
+    static public string HelpFolderPath
+      => RootFolderPath + "Help" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application documents folder.
     /// </summary>
-    static public readonly string DocumentsFolderPath
-      = RootFolderPath + "Documents" + Path.DirectorySeparatorChar;
+    static public string DocumentsFolderPath
+      => RootFolderPath + "Documents" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web links folder.
     /// </summary>
-    static public readonly string WebLinksFolderPath
-      = DocumentsFolderPath + "WebLinks" + Path.DirectorySeparatorChar;
+    static public string WebLinksFolderPath
+      => DocumentsFolderPath + "WebLinks" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web providers folder.
     /// </summary>
-    static public readonly string WebProvidersFolderPath
-      = DocumentsFolderPath + "WebProviders" + Path.DirectorySeparatorChar;
+    static public string WebProvidersFolderPath
+      => DocumentsFolderPath + "WebProviders" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate the application web links folder.
     /// </summary>
-    static public readonly string GuidesFolderPath
-      = DocumentsFolderPath + "Guides" + Path.DirectorySeparatorChar;
+    static public string GuidesFolderPath
+      => DocumentsFolderPath + "Guides" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate filename of the grammar guide.
     /// </summary>
-    static public string GrammarGuideFilename
-      = GuidesFolderPath + $"grammar-%LANG%.htm";
+    static public string GrammarGuideFilename  
+      => GuidesFolderPath + "grammar-{0}.htm";
 
     /// <summary>
     /// Indicate filename of the method notice.
     /// </summary>
-    static public string MethodNoticeFilename
-      = GuidesFolderPath + $"method-%LANG%.htm";
+    static public string MethodNoticeFilename 
+      => GuidesFolderPath + "method-{0}.htm";
 
     /// <summary>
     /// Indicate the filename of the help.
     /// </summary>
-    static public string HelpFilename
-    {
-      get
-      {
-        return HelpFolderPath + $"index-{Localizer.Language}.htm";
-      }
-    }
+    static public string HelpFilename 
+      => HelpFolderPath + $"index-{Languages.Current}.htm";
+
+    /// <summary>
+    /// Indicate the application database folder.
+    /// </summary>
+    static public string DatabaseFolderPath
+      => UserDataFolderPath;
+
+    /// <summary>
+    /// Indicate the filename of the database.
+    /// </summary>
+    static public string DatabaseFileName
+      => DatabaseFolderPath + AssemblyTitle.Replace(" ", "-") + DatabaseFileExtension;
 
     /// <summary>
     /// Indicate the user documents folder path.
@@ -253,7 +349,7 @@ namespace Ordisoftware.HebrewCommon
                     + Path.DirectorySeparatorChar
                     + AssemblyCompany
                     + Path.DirectorySeparatorChar
-                    + "Hebrew Common"
+                    + HebrewCommonDirectoryName
                     + Path.DirectorySeparatorChar;
         Directory.CreateDirectory(path);
         return path;
@@ -271,7 +367,7 @@ namespace Ordisoftware.HebrewCommon
                     + Path.DirectorySeparatorChar
                     + AssemblyCompany
                     + Path.DirectorySeparatorChar
-                    + "Hebrew Common"
+                    + HebrewCommonDirectoryName
                     + Path.DirectorySeparatorChar;
         Directory.CreateDirectory(path);
         return path;
@@ -281,14 +377,14 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the filename of the online search word providers.
     /// </summary>
-    static public readonly string OnlineWordProvidersFileName
-      = WebProvidersFolderPath + "OnlineWordProviders.txt";
+    static public string OnlineWordProvidersFileName
+      => WebProvidersFolderPath + "OnlineWordProviders.txt";
 
     /// <summary>
     /// Indicate the filename of the online search word providers.
     /// </summary>
-    static public readonly string OnlineBibleProvidersFileName
-      = WebProvidersFolderPath + "OnlineBibleProviders.txt";
+    static public string OnlineBibleProvidersFileName
+      => WebProvidersFolderPath + "OnlineBibleProviders.txt";
 
     /// <summary>
     /// Indicate the online search a word providers.
@@ -303,8 +399,19 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the web links providers.
     /// </summary>
-    static public readonly List<OnlineProviders> WebLinksProviders
-      = new List<OnlineProviders>();
+    static public List<OnlineProviders> WebLinksProviders
+    {
+      get
+      {
+        if ( _WebLinksProviders == null ) _WebLinksProviders = new List<OnlineProviders>();
+        if ( _WebLinksProviders.Count == 0 )
+          if ( Directory.Exists(WebLinksFolderPath) )
+            foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
+              _WebLinksProviders.Add(new OnlineProviders(file, true, IsDev, DataFileFolder.ApplicationDocuments));
+        return _WebLinksProviders;
+      }
+    }
+    static private List<OnlineProviders> _WebLinksProviders;
 
     /// <summary>
     /// Static constructor.
@@ -315,9 +422,6 @@ namespace Ordisoftware.HebrewCommon
       var folder = DataFileFolder.ApplicationDocuments;
       OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName, true, IsDev, folder);
       OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName, true, IsDev, folder);
-      if ( Directory.Exists(WebLinksFolderPath) )
-        foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
-          WebLinksProviders.Add(new OnlineProviders(file, true, IsDev, folder));
     }
 
     #region Assembly information

@@ -80,6 +80,18 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 Reset the preferences to default: it will restore the corrupted values in case of a problem after install or upgrade.
 
+#### What are the times of celebration?
+
+The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teruah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
+
+These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.
+
+The application uses by default moon omer for celebrations.
+
+If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set.
+
+You can use traditionnals sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.
+
 #### What is Shabat?
 
 The shabat is the "day of rest" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity.
@@ -98,17 +110,6 @@ The day before, either the man keeps without going out and strengthens the coupl
 
 If you prefer to use the traditional group shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.
 
-#### What are the times of celebration?
-
-The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teruah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
-
-These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.
-
-The application uses by default moon omer for celebrations.
-
-If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set.
-
-You can use traditionnals sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.
 
 #### Keyboard shortcuts
 
@@ -118,16 +119,27 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 - F4 : Next celebrations window
 - F5 : Search a celebration window
 - F6 : Search a moon month window
-- F7 : Search a day window (also Ctrl+D)
+- F7 : Search a gregorian month window
 - F9 : Navigation window (also Ctrl+N)
 - Ctrl+Tab : Next view
 - Shift+Ctrl+Tab : Previous view
-- Ctrl+T : Go to today
+- Ctrl+T : Go to today (also Numpad0)
+- Ctrl+D : Search a day
 - Ctrl+C : Copy text report to clipboard
 - Ctrl+P : Print month view
 - Ctrl+S : Save text report to text file
 - Alt+S : Save text report to CSV file
 - Alt+C : Open windows calculator
+- Alt+T : Open windows date and time settings
+- Ctrl+F1 : Statistics window
+- Ctrl+F2 : Generate calendar data
+- Ctrl+F3 : Dates difference calculator
+- Home : First month available in the database
+- End : Last month available in the database
+- Up : Previous year
+- Down : Next year
+- Left : Previous month
+- Right : Next month
 - F8 : Preferences
 - F11 : Help
 - F12 : About
@@ -135,11 +147,42 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 ## Roadmap
 
-- Add moon months description form in tools menu.
+- Add moon months description form and menu in tools.
+- Add reminder for solar and lunar anniversary of birth.
 - Add a different tray icon to indicate if a celebration is running, including week days.
+- Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Improve and reorganize preferences form with a left menu panel.
 
 ## Changelog
+
+#### 2020.09.04 - Version 5.0
+
+- Add keyboard shortcuts to navigate in the calendar month view.
+- Add search gregorian month form.
+- Add usage statistics form in tools menu.
+- Add tools menu duplicated in the tray icon.
+- Add force database optimize at next startup in tools menu
+- Add option to define the years interval for auto-generation.
+- Add option to enable or disable the web links menu.
+- Add option to enable or disable the suspend reminder functionality.
+- Add button to disable auto lock option in lock session form.
+- Add option to auto generate calendar when expired else show dialog box.
+- Add option to set the maximum years interval allowed to generate the data.
+- Add mute windows volume in addition to stop media playing.
+- Fix stop media playing (stop instead of play/pause media).
+- Fix app not responding on windows logoff or system shutdown.
+- Improve dates diff calculator to show more stats in a form having bookmarks.
+- Improve years to generate box with predefined intervals and change some constants.
+- Improve check update to allow auto update or direct download or open app web page.
+- Improve month view drawing speed by a half.
+- Improve data generation speed by a half.
+- Improve keyboard shortcuts.
+- Remove the generate years selection box at startup if database is empty or new.
+- Change default years interval generation to 10.
+- Change text report that is no more stored in the database but in a file.
+- Some UI/UX improvements.
+- Some code refactorings.
+- Update to SQLite 3.32.3 ODBC Driver.
 
 #### 2020.08.22 - Version 4.1
 

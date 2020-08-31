@@ -31,6 +31,14 @@ URL = http://www.calendrier-lunaire.net
 
 -
 
+Name = (EN) Gregorian calendar with moon phases @ timeanddate.com
+URL = https://www.timeanddate.com/calendar/
+
+Name = (FR) Calendrier grégorien avec phases de la lune @ kalender-365.de
+URL = https://kalender-365.de/calendrier-lunaire.php
+
+-
+
 Name = (EN) Hebrew calendar @ en.wikipédia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_calendar
 

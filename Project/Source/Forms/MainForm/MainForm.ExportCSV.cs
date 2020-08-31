@@ -11,13 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -31,6 +30,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       IsGenerating = true;
       UpdateButtons();
+      var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       try
       {
@@ -40,14 +40,15 @@ namespace Ordisoftware.HebrewCalendar
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
         var result = new StringBuilder();
         result.AppendLine(headerTxt);
-        int progress = 0;
-        int count = DataSet.LunisolarDays.Count;
-        if ( count == 0 ) return null;
-        var lastyear = SQLiteHelper.GetDate(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+        if ( DataSet.LunisolarDays.Count == 0 ) return null;
+        var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+        LoadingForm.Instance.Initialize(Translations.ProgressGenerateReport.GetLang(),
+                                        DataSet.LunisolarDays.Count,
+                                        Program.LoadingFormLoadDB);
         foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
         {
-          var dayDate = SQLiteHelper.GetDate(day.Date);
-          if ( !UpdateProgress(progress++, count, Translations.ProgressGenerateReport.GetLang()) ) return null;
+          LoadingForm.Instance.DoProgress();
+          var dayDate = SQLiteDate.ToDateTime(day.Date);
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
           result.Append(day.Date + CSVSeparator);
@@ -75,7 +76,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        Cursor = Cursors.Default;
+        Cursor = cursor;
         IsGenerating = false;
         UpdateButtons();
       }

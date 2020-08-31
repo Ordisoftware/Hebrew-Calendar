@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Ordisoftware.HebrewCommon;
 
@@ -48,46 +49,137 @@ namespace Ordisoftware.HebrewCalendar
     };
 
     /// <summary>
+    /// Indicate minimum items for load data to show the loading form.
+    /// </summary>
+    public const int DatesBookmarksCount = 10;
+
+    /// <summary>
+    /// Indicate minimum items for load data to show the loading form.
+    /// </summary>
+    public const int LoadingFormLoadDB = 15000 * 2;
+
+    /// <summary>
+    /// Indicate minimum items for generate data to show the loading form.
+    /// </summary>
+    public const int LoadingFormGenerate = 4000;
+
+    /// <summary>
+    /// Indicate minimum items for calc dates diff to show the loading form.
+    /// </summary>
+    public const int LoadingFormDatesDiff = 20 * 365;
+
+    /// <summary>
+    /// Indicate maximum gregorian years interval that can be generated.
+    /// </summary>
+    public const int GenerateIntervalMaximumHigh = 200;
+
+    /// <summary>
+    /// Indicate minimum gregorian years interval that can be generated.
+    /// </summary>
+    public const int GenerateIntervalMaximumLow = 10;
+
+    /// <summary>
+    /// Indicate minimum torah years interval that can be generated.
+    /// </summary>
+    /// <remarks>
+    /// Two torah years need three gregorian years with the previous.
+    /// </remarks>
+    public const int GenerateIntervalMinimum = 2;
+
+    /// <summary>
+    /// Indicate big calendar advert levels.
+    /// </summary>
+    static public readonly int[] BigCalendarLevels = { 20, 40, 60, 80, 120 };
+
+    /// <summary>
+    /// Indicate predefined years intervals.
+    /// </summary>
+    static public readonly int[] PredefinedYearsIntervals = { 5, 10, 20, 30, 40, 50 };
+
+    /// <summary>
+    /// Indicate shabat notice form.
+    /// </summary>
+    static public ShowTextForm ShabatNoticeForm
+      => ShowTextForm.Create(Translations.NoticeShabatTitle, Translations.NoticeShabat, 600, 520);
+
+    /// <summary>
+    /// Indicate celebrations notice form.
+    /// </summary>
+    static public ShowTextForm CelebrationsNoticeForm
+      => ShowTextForm.Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrations, 600, 320);
+
+    /// <summary>
+    /// Indicate moon months notice form.
+    /// </summary>
+    static public ShowTextForm MoonMonthsNoticeForm
+      => ShowTextForm.Create(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths, 400, 300);
+
+    /// <summary>
+    /// Indicate dates diff notice form.
+    /// </summary>
+    static public ShowTextForm DatesDiffNoticeForm
+      => ShowTextForm.Create(Translations.DatesDiffNoticeTitle, Translations.DatesDiffNotice, 500, 440);
+
+    /// <summary>
+    /// Indicate filename of the text report.
+    /// </summary>
+    static public string TextReportFilename
+      => Path.ChangeExtension(Globals.DatabaseFileName, ".txt");
+
+    /// <summary>
     /// Indicate filename of the GPS database.
     /// </summary>
-    static public readonly string GPSFilename
-      = Globals.DocumentsFolderPath + "WorldCities.csv";
+    static public string GPSFilename
+      => Globals.DocumentsFolderPath + "WorldCities.csv";
 
     /// <summary>
     /// Indicate the moon months documents folder.
     /// </summary>
-    static public readonly string MoonMonthsFolderPath
-      = Globals.DocumentsFolderPath + "MoonMonths" + Path.DirectorySeparatorChar;
+    static public string MoonMonthsFolderPath
+      => Globals.DocumentsFolderPath + "MoonMonths" + Path.DirectorySeparatorChar;
 
     /// <summary>
     /// Indicate filename of the moon months meanings.
     /// </summary>
-    static public readonly string MoonMonthsMeaningsFilename
-      = MoonMonthsFolderPath + "MoonMonthsMeanings%LANG%.txt";
+    static public string MoonMonthsMeaningsFilename
+      = MoonMonthsFolderPath + "MoonMonthsMeanings{0}.txt";
 
     /// <summary>
     /// Indicate filename of the moon months lettriqs.
     /// </summary>
-    static public readonly string MoonMonthsLettriqsFilename
-      = MoonMonthsFolderPath + "MoonMonthsLettriqs%LANG%.txt";
+    static public string MoonMonthsLettriqsFilename
+      => MoonMonthsFolderPath + "MoonMonthsLettriqs{0}.txt";
 
     /// <summary>
     /// Indicate the moon months meanings.
     /// </summary>
-    static public MoonMonthsFile MoonMonthsMeanings { get; private set; }
+    static public Dictionary<string, MoonMonthsFile> MoonMonthsMeanings { get; private set; }
 
     /// <summary>
     /// Indicate the moon months lettriqs.
     /// </summary>
-    static public MoonMonthsFile MoonMonthsLettriqs { get; private set; }
+    static public Dictionary<string, MoonMonthsFile> MoonMonthsLettriqs { get; private set; }
 
     /// <summary>
     /// Static constructor.
     /// </summary>
     static Program()
     {
-      MoonMonthsMeanings = new MoonMonthsFile(MoonMonthsMeaningsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
-      MoonMonthsLettriqs = new MoonMonthsFile(MoonMonthsLettriqsFilename, true, Globals.IsDev, DataFileFolder.ApplicationDocuments);
+      MoonMonthsMeanings = new Dictionary<string, MoonMonthsFile>();
+      MoonMonthsLettriqs = new Dictionary<string, MoonMonthsFile>();
+      foreach ( var lang in Languages.Names )
+      {
+        MoonMonthsMeanings.Add(lang.Value,
+                               new MoonMonthsFile(string.Format(MoonMonthsMeaningsFilename, lang.Value.ToUpper()),
+                                                  true,
+                                                  Globals.IsDev,
+                                                  DataFileFolder.ApplicationDocuments));
+        MoonMonthsLettriqs.Add(lang.Value,
+                               new MoonMonthsFile(string.Format(MoonMonthsLettriqsFilename, lang.Value.ToUpper()),
+                                                  true,
+                                                  Globals.IsDev,
+                                                  DataFileFolder.ApplicationDocuments));
+      }
     }
 
   }

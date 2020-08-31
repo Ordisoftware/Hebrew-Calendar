@@ -11,9 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -31,46 +30,60 @@ namespace Ordisoftware.HebrewCalendar
     static private readonly string AskToGenerateBigCalendarFR
       = "Générer un calendrier pour plus de {0} ({1}) ans n'est pas recommandé et peut causer ";
 
-    static public readonly Dictionary<string, string> AskToGenerateBigCalendar1
-      = new Dictionary<string, string>()
+    static public readonly NullSafeList<NullSafeStringDictionary> AskToGenerateBigCalendar
+      = new NullSafeList<NullSafeStringDictionary>
       {
-        { "en", AskToGenerateBigCalendarEN + "a slight slowdown." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["en"] },
-        { "fr", AskToGenerateBigCalendarFR + "un léger ralentissement." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["fr"] },
-      };
-
-    static public readonly Dictionary<string, string> AskToGenerateBigCalendar2
-      = new Dictionary<string, string>()
-      {
-        { "en", AskToGenerateBigCalendarEN + "a noticeable slowdown." + NewLine + NewLine +
-                "Do not use this value for a daily usage." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["en"] },
-        { "fr", AskToGenerateBigCalendarFR + "un ralentissement notable." + NewLine + NewLine +
-                "N'utilisez pas cette valeur pour un usage quotidien." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["fr"] },
-      };
-
-    static public readonly Dictionary<string, string> AskToGenerateBigCalendar3
-      = new Dictionary<string, string>()
-      {
-        { "en", AskToGenerateBigCalendarEN + "a significant slowdown." + NewLine + NewLine +
-                "Use this value only for occasional searches." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["en"] },
-        { "fr", AskToGenerateBigCalendarFR + "un important ralentissement." + NewLine + NewLine +
-                "N'utilisez cette valeur que pour des recherches ponctuelles." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["fr"] },
-      };
-
-    static public readonly Dictionary<string, string> AskToGenerateBigCalendar4
-      = new Dictionary<string, string>()
-      {
-        { "en", AskToGenerateBigCalendarEN + "a considerable slowdown." + NewLine + NewLine +
-                "Use this value only with a powerful computer." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["en"] },
-        { "fr", AskToGenerateBigCalendarFR + "ralentissement considérable." + NewLine + NewLine +
-                "N'utiliser cette valeur qu'avec un ordinateur puissant." + NewLine + NewLine +
-                Globals.DoYouWantToContinue["fr"] },
+        new NullSafeStringDictionary
+          {
+            { Languages.EN, AskToGenerateBigCalendarEN + "a slight slowdown." + Globals.NL2 +
+                            Localizer.AskToContinue[Languages.EN]
+          },
+            { Languages.FR, AskToGenerateBigCalendarFR + "un léger ralentissement." + Globals.NL2 +
+                            Localizer.AskToContinue[Languages.FR]
+          },
+        },
+        new NullSafeStringDictionary
+        {
+          { Languages.EN, AskToGenerateBigCalendarEN + "a noticeable slowdown." + Globals.NL2 +
+                          Localizer.AskToContinue[Languages.EN]
+          },
+          { Languages.FR, AskToGenerateBigCalendarFR + "un ralentissement notable." + Globals.NL2 +
+                          Localizer.AskToContinue[Languages.FR]
+          },
+        },
+        new NullSafeStringDictionary
+        {
+          { Languages.EN, AskToGenerateBigCalendarEN + "a significant slowdown." + Globals.NL2 +
+                          "Do not use this value for a daily usage." + Globals.NL2 +
+                          Localizer.AskToContinue[Languages.EN]
+          },
+          { Languages.FR, AskToGenerateBigCalendarFR + "un ralentissement important." + Globals.NL2 +
+                          "N'utilisez pas cette valeur pour un usage quotidien." + Globals.NL2 +
+                          Localizer.AskToContinue[Languages.FR]
+          },
+        },
+        new NullSafeStringDictionary
+        {
+          { Languages.EN, AskToGenerateBigCalendarEN + "a considerable slowdown." + Globals.NL2 +
+                          "Use this value only for occasional searches." + Globals.NL2 +
+                          Localizer.AskToContinue[Languages.EN]
+          },
+          { Languages.FR, AskToGenerateBigCalendarFR + "ralentissement considérable." + Globals.NL2 +
+                          "N'utilisez cette valeur que pour des recherches ponctuelles." + Globals.NL2 +
+                          Localizer.AskToContinue[Languages.FR]
+          },
+        },
+        new NullSafeStringDictionary
+        {
+          { Languages.EN, AskToGenerateBigCalendarEN + "a serious slowdown." + Globals.NL2 +
+                          "Use this value only with a powerful computer." + Globals.NL2 +
+                          Localizer.AskToContinue[Languages.EN]
+          },
+          { Languages.FR, AskToGenerateBigCalendarFR + "ralentissement sévère." + Globals.NL2 +
+                          "N'utiliser cette valeur qu'avec un ordinateur puissant." + Globals.NL2 +
+                          Localizer.AskToContinue[Languages.FR]
+          },
+        }
       };
 
   }

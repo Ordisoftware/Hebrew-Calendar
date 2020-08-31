@@ -2292,7 +2292,7 @@ namespace GenericParsing
             }
             else
             {
-                this.m_lstData.Add(string.Empty);
+                this.m_lstData.Add("");
             }
 
             // If we're extending beyond the supplied column headings, add a new column.

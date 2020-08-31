@@ -16,7 +16,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -27,11 +26,6 @@ namespace Ordisoftware.HebrewCalendar
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class MainForm
   {
-
-    /// <summary>
-    /// Loading form instance.
-    /// </summary>
-    private LoadingForm LoadingForm;
 
     /// <summary>
     /// Bring to front improved.
@@ -45,37 +39,13 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Update progress bar.
-    /// </summary>
-    private bool UpdateProgress(int index, int count, string text)
-    {
-      if ( LoadingForm == null )
-        LoadingForm = new LoadingForm();
-      if ( !LoadingForm.Visible )
-      {
-        LoadingForm.LabelTitle.Text = Globals.AssemblyTitle;
-        LoadingForm.Show();
-      }
-      if ( index == 0 )
-        LoadingForm.ProgressBar.Maximum = count;
-      LoadingForm.ProgressBar.Value = index > count ? count : index;
-      LoadingForm.ProgressBar.Update();
-      if ( LoadingForm.LabelOperation.Text != text )
-      {
-        LoadingForm.LabelOperation.Text = text;
-        LoadingForm.LabelOperation.Refresh();
-      }
-      Application.DoEvents();
-      return IsGenerating;
-    }
-
-    /// <summary>
     /// Update the buttons.
     /// </summary>
     internal void UpdateButtons()
     {
       try
       {
+        if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
         MenuTray.Enabled = Globals.IsReady && !IsGenerating;
         ToolStrip.Enabled = !IsGenerating;
         ActionSaveReport.Enabled = DataSet.LunisolarDays.Count > 0;
@@ -87,8 +57,6 @@ namespace Ordisoftware.HebrewCalendar
         ActionSearchDay.Enabled = ActionSaveReport.Enabled;
         ActionNavigate.Enabled = ActionSaveReport.Enabled;
         ActionViewCelebrations.Enabled = ActionSaveReport.Enabled;
-        if ( LoadingForm != null && LoadingForm.Visible )
-          LoadingForm.Hide();
         Refresh();
       }
       catch ( Exception ex )
@@ -98,11 +66,36 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Update the text calendar view aspect.
+    /// Update the text view aspect.
     /// </summary>
     public void UpdateTextCalendar()
     {
-      CalendarText.Font = new Font(Program.Settings.FontName, Program.Settings.FontSize);
+      CalendarText.Font = new Font(Settings.FontName, Settings.FontSize);
+    }
+
+    /// <summary>
+    /// Update the month view.
+    /// </summary>
+    internal void UpdateCalendarMonth(bool doFill)
+    {
+      IsGenerating = true;
+      var cursor = Cursor;
+      Cursor = Cursors.WaitCursor;
+      Enabled = false;
+      PanelViewMonth.Parent = null;
+      try
+      {
+        InitializeCalendarUI();
+        if ( doFill ) FillMonths();
+      }
+      finally
+      {
+        Enabled = true;
+        Cursor = cursor;
+        IsGenerating = false;
+        SetView(Settings.CurrentView, true);
+        UpdateButtons();
+      }
     }
 
   }

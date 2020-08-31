@@ -11,11 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.IO;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCalendar
 {
@@ -27,25 +26,42 @@ namespace Ordisoftware.HebrewCalendar
   {
 
     /// <summary>
+    /// Returns a string representing the GPS location.
+    /// </summary>
+    /// <returns></returns>
+    static public string GPSText
+    {
+      get
+      {
+        string result = "• " + Settings.GPSCountry + Globals.NL
+                      + "• " + Settings.GPSCity;
+        foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+          if ( item.Id == Settings.TimeZone )
+          {
+            result += Globals.NL2 + item.DisplayName;
+            break;
+          }
+        return result;
+      }
+    }
+
+    /// <summary>
     /// Start Hebrew Letters process.
     /// </summary>
-    /// <param name="hebrew">The hebrew font chars of teh word.</param>
+    /// <param name="hebrew">The hebrew font chars of the word.</param>
     static public void OpenHebrewLetters(string hebrew)
     {
       if ( !File.Exists(Settings.HebrewLettersExe) )
       {
-        if ( DisplayManager.QueryYesNo(Globals.AskToDownloadHebrewLetters.GetLang()) )
+        if ( DisplayManager.QueryYesNo(Localizer.AskToDownloadHebrewLetters.GetLang()) )
           MainForm.Instance.ActionDownloadHebrewLetters.PerformClick();
         return;
       }
       hebrew = HebrewAlphabet.SetFinal(hebrew, false);
-      if ( hebrew.StartsWith("a ") )
-        hebrew = hebrew.Substring(2, hebrew.Length - 2);
-      else
-      if ( hebrew.StartsWith("b ") )
+      if ( hebrew.StartsWith("a ") || hebrew.StartsWith("b ") )
         hebrew = hebrew.Substring(2, hebrew.Length - 2);
       foreach ( string item in hebrew.Split(' ') )
-        SystemHelper.RunShell(Settings.HebrewLettersExe, item);
+        Shell.Run(Settings.HebrewLettersExe, item);
     }
     
   }

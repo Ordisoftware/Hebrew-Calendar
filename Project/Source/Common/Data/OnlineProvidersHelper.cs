@@ -13,18 +13,14 @@
 /// <created> 2020-03 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.HebrewCommon
 {
-
-  // TODO refactor
 
   /// <summary>
   /// Provide online providers list helper to create menu items.
@@ -52,7 +48,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate image of the configure menu item.
     /// </summary>
-    static Image ImageConfigure;
+    static private Image ImageConfigure;
 
     /// <summary>
     /// Static constructor.
@@ -68,7 +64,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static ToolStripMenuItem CreateConfigureMenuItem(EventHandler click)
     {
-      var item = new ToolStripMenuItem(Globals.ConfigureProviders.GetLang(), ImageConfigure);
+      var item = new ToolStripMenuItem(Localizer.ConfigureProviders.GetLang(), ImageConfigure);
       item.ImageScaling = ToolStripItemImageScaling.None;
       item.Click += click;
       return item;
@@ -145,11 +141,11 @@ namespace Ordisoftware.HebrewCommon
             {
               if ( e.Button != MouseButtons.Right ) return;
               ( (ToolStripDropDownButton)menu.OwnerItem ).HideDropDown();
-              if ( !DisplayManager.QueryYesNo(Globals.AskToOpenAllLinks.GetLang(menu.Text)) ) return;
+              if ( !DisplayManager.QueryYesNo(Localizer.AskToOpenAllLinks.GetLang(menu.Text)) ) return;
               foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
                 if ( item.Tag != null )
                 {
-                  SystemHelper.OpenWebLink((string)item.Tag);
+                  Shell.OpenWebLink((string)item.Tag);
                   Thread.Sleep(1500);
                 }
             };
@@ -161,7 +157,7 @@ namespace Ordisoftware.HebrewCommon
             menu.DropDownItems.Add(item.CreateMenuItem((sender, e) =>
             {
               string url = (string)( (ToolStripItem)sender ).Tag;
-              SystemHelper.OpenWebLink(url);
+              Shell.OpenWebLink(url);
             }));
         }
       if ( Globals.IsDev )
@@ -178,7 +174,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
     /// </summary>
-    static private Dictionary<string, string> AlreadyAcessedVarNames = new Dictionary<string, string>();
+    static private NullSafeStringDictionary AlreadyAcessedVarNames = new NullSafeStringDictionary();
     static private string NameOfFromStack(this object instance, int level = 1)
     {
       try

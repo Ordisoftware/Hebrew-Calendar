@@ -19,7 +19,6 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.Pipes;
-using Ordisoftware.Core;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -45,7 +44,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !SystemHelper.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
-      SystemHelper.CheckSettingsUpgrade(Settings, ref upgrade);
+      Settings.CheckUpgradeRequired(ref upgrade);
       Settings.UpgradeRequired = upgrade;
       CheckSettingsReset();
       Application.EnableVisualStyles();
@@ -53,9 +52,9 @@ namespace Ordisoftware.HebrewCalendar
       UpdateLocalization(true);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
-      Core.Diagnostics.Debugger.Active = Settings.DebuggerEnabled;
+      Debugger.Active = Settings.DebuggerEnabled;
       string lang = Settings.Language;
-      SystemHelper.CheckCommandLineArguments(args, ref lang);
+      Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;
       UpdateLocalization();
       Application.Run(MainForm.Instance);
@@ -71,10 +70,7 @@ namespace Ordisoftware.HebrewCalendar
       server.EndWaitForConnection(ar);
       var command = new BinaryFormatter().Deserialize(server) as string;
       if ( command == "BringToFront" )
-        if ( MainForm.Instance.Visible )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.BringToFront());
-        else
-          MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide.PerformClick());
+        MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));
       server.Close();
       SystemHelper.CreateIPCServer(IPCRequest);
     }
@@ -88,12 +84,12 @@ namespace Ordisoftware.HebrewCalendar
         || Settings.UpgradeResetRequiredV3_6
         || Settings.UpgradeResetRequiredV4_1 )
       {
-        DisplayManager.ShowWarning(Globals.UpgradeResetRequired.GetLang());
+        DisplayManager.ShowInformation(Localizer.UpgradeResetRequired.GetLang());
         Settings.Reset();
         Settings.UpgradeResetRequiredV3_0 = false;
         Settings.UpgradeResetRequiredV3_6 = false;
         Settings.UpgradeResetRequiredV4_1 = false;
-        Settings.Language = Localizer.Language;
+        Settings.Language = Languages.Current;
         Settings.Save();
       }
       else
@@ -123,11 +119,13 @@ namespace Ordisoftware.HebrewCalendar
       {
         new Infralution.Localization.CultureManager().ManagedControl = form;
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
-        SystemHelper.ApplyResources(resources, form.Controls);
+        resources.Apply(form.Controls);
       };
       update(Globals.MainForm);
-      new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = MoonMonthsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       foreach ( Form form in Application.OpenForms )
       {
@@ -136,11 +134,13 @@ namespace Ordisoftware.HebrewCalendar
         if ( form is ShowTextForm )
           ( (ShowTextForm)form ).RelocalizeText();
       }
-      MainForm.Instance.CreateWebLinks();
+      MainForm.Instance.InitializeSpecialMenus();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.TimerReminder_Tick(null, null);
       UndoRedoTextBox.Relocalize();
+      MoonMonthsForm.Instance.Relocalize();
+      LoadingForm.Instance.Relocalize();
     }
 
   }

@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewCalendar
     private const int SC_SCREENSAVE = 0xF140;
     private const int SPI_GETSCREENSAVERRUNNING = 0x0072;
 
-    [DllImport("user32.dll", SetLastError = true)]
+    [DllImport("user32.dll")]
     static extern bool SystemParametersInfo(int action, int param, ref int retval, int updini);
 
     [StructLayout(LayoutKind.Sequential)]

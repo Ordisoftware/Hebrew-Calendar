@@ -192,8 +192,7 @@ namespace Ordisoftware.HebrewCommon
   }
 
   /// <summary>
-  /// Specifies how text in a <see cref="AdvRichTextBox"/> is
-  /// horizontally aligned.
+  /// Specifies how text in a AdvRichTextBox is horizontally aligned.
   /// </summary>
   public enum TextAlign
   {

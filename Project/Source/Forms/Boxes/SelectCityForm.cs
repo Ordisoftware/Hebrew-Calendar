@@ -11,13 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
-using Ordisoftware.Core;
 using GenericParsing;
 
 namespace Ordisoftware.HebrewCalendar
@@ -31,14 +29,11 @@ namespace Ordisoftware.HebrewCalendar
       public string Name;
       public string Latitude;
       public string Longitude;
-      public override string ToString()
-      {
-        return Name;
-      }
+      public override string ToString() => Name;
     }
 
-    static public readonly SortedDictionary<string, List<CityItem>> GPS 
-      = new SortedDictionary<string, List<CityItem>>();
+    static public readonly NullSafeSortedDictionary<string, NullSafeList<CityItem>> GPS
+      = new NullSafeSortedDictionary<string, NullSafeList<CityItem>>();
 
     static SelectCityForm()
     {
@@ -49,14 +44,11 @@ namespace Ordisoftware.HebrewCalendar
         parser.FirstRowHasHeader = true;
         while ( parser.Read() )
         {
-          var city = new CityItem();
+          var country = GPS[parser["country"].Trim().RemoveDiacritics()];
+          var city = country[country.Count];
           city.Name = parser["city"].Trim().RemoveDiacritics();
           city.Latitude = parser["lat"];
           city.Longitude = parser["lng"];
-          string country = parser["country"].Trim().RemoveDiacritics(); ;
-          if ( !GPS.ContainsKey(country) )
-            GPS.Add(country, new List<CityItem>());
-          GPS[country].Add(city);
         }
       }
       catch ( Exception ex )
@@ -92,10 +84,10 @@ namespace Ordisoftware.HebrewCalendar
       {
         IsLoading = false;
         ActiveControl = EditFilter;
-        if ( Program.Settings.GPSCountry != "" )
+        if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) )
         {
           EditFilter.Text = Program.Settings.GPSCountry;
-          if ( Program.Settings.GPSCity != "" )
+          if ( !string.IsNullOrEmpty(Program.Settings.GPSCity) )
             EditFilter.Text += Program.Settings.GPSCity;
         }
         else
@@ -110,7 +102,7 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    private void ActionOk_Click(object sender, EventArgs e)
+    private void ActionOK_Click(object sender, EventArgs e)
     {
       DialogResult = DialogResult.OK;
     }
@@ -135,7 +127,7 @@ namespace Ordisoftware.HebrewCalendar
       City = ( (CityItem)ListBoxCities.SelectedItem ).Name;
       Latitude = ( (CityItem)ListBoxCities.SelectedItem ).Latitude;
       Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
-      ActionOk.Enabled = EditTimeZone.SelectedItem != null;
+      ActionOK.Enabled = EditTimeZone.SelectedItem != null;
       if ( Mutex ) return;
       EditFilter.Text = ListBoxCountries.SelectedItem.ToString() + ", " + ListBoxCities.SelectedItem.ToString();
       EditFilter.Focus();
@@ -201,7 +193,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       finally
       {
-        ActionOk.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
+        ActionOK.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
         if ( !IsLoading )
           if ( !foundCountry || !foundCity )
             EditTimeZone.SelectedItem = null;
@@ -231,8 +223,9 @@ namespace Ordisoftware.HebrewCalendar
 
     private void EditTimeZone_SelectedIndexChanged(object sender, EventArgs e)
     {
-      ActionOk.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
+      ActionOK.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
     }
+
   }
 
 }
