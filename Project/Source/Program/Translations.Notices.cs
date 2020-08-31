@@ -102,14 +102,25 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly NullSafeStringDictionary DatesDiffNoticeTitle
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Dates difference dates notice" },
+        { Languages.EN, "Dates difference notice" },
         { Languages.FR, "Notice de différence de dates" }
       };
 
     static public readonly NullSafeStringDictionary DatesDiffNotice
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, ""
+        { Languages.EN, "The values shown include the current periods." + Globals.NL2 +
+                        "The annual solar period begins on January 1." + Globals.NL +
+                        "The monthly solar period is counted from the 1st day." + Globals.NL +
+                        "The solar week is counted every 7 days from the smallest date." + Globals.NL2 +
+                        "The lunar day goes from the setting of the moon to the next." + Globals.NL +
+                        "A lunar month goes from the new moon to the next." + Globals.NL2 +
+                        "Here are some examples." + Globals.NL2 +
+                        "Two solar weeks indicate that 8 days or more but 14 or less have passed." + Globals.NL2 +
+                        "Two solar months indicate that the oldest date is in a calendar month and the other is in the following month, regardless of the number of days between, i.e. the selected dates are at horse over two months." + Globals.NL2 +
+                        "Two lunar months indicate that one moon has elapsed and that we are in the second." + Globals.NL2 +
+                        "It is the same for the solar years." + Globals.NL2 +
+                        "Regarding lunar days, the moon regularly jumps on a solar day which therefore happens to be straddling two lunar days, such as 08/10/2020 which is not counted because there is no sunrise. moon on that solar day."
         },
         { Languages.FR, "Les valeurs indiquées incluent les périodes en cours." + Globals.NL2 +
                         "La période solaire annuelle commence le 1er janvier." + Globals.NL +
@@ -118,9 +129,9 @@ namespace Ordisoftware.HebrewCalendar
                         "Le jours lunaire va du coucher de la lune au suivant." + Globals.NL +
                         "Un mois lunaire va de la nouvelle lune à la suivante." + Globals.NL2 +
                         "Voici quelques exemples." + Globals.NL2 +
-                        "Deux semaines solaires indiquent qu'il s'est écoulé 8 jours et plus mais 14 ou moins." + Globals.NL2 +
-                        "Deux mois solaires indiquent que la date la plus ancienne se trouve dans un mois calendaire et que l'autre se trouve dans le mois suivant, quel que soient le nombre de jours entre, c'est-à-dire que les dates sélectionnées sont à cheval sur 2 mois." + Globals.NL2 +
-                        "Deux mois lunaires indiquent qu'il s'est écoulé 1 lune et qu'on se trouve dans la 2ème." + Globals.NL2 +
+                        "Deux semaines solaires indiquent qu'il s'est écoulé 8 jours ou plus mais 14 ou moins." + Globals.NL2 +
+                        "Deux mois solaires indiquent que la date la plus ancienne se trouve dans un mois calendaire et que l'autre se trouve dans le mois suivant, quel que soient le nombre de jours entre, c'est-à-dire que les dates sélectionnées sont à cheval sur deux mois." + Globals.NL2 +
+                        "Deux mois lunaires indiquent qu'il s'est écoulé une lune et qu'on se trouve dans la deuxième." + Globals.NL2 +
                         "Il en est de même pour les années solaires." + Globals.NL2 +
                         "Concernant les jours lunaires, la lune saute régulièrement un jour solaire qui se trouve donc être à cheval entre deux jours lunaires, comme par exemple le 10/08/2020 qui n'est pas compté car il n'y a pas de lever de la lune ce jour solaire-là."
         }
