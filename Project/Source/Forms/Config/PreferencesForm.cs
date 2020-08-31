@@ -68,7 +68,6 @@ namespace Ordisoftware.HebrewCalendar
       EditAutoLockSessionTimeOut.Minimum = RemindAutoLockTimeOutMin;
       EditAutoLockSessionTimeOut.Maximum = RemindAutoLockTimeOutMax;
       EditAutoLockSessionTimeOut.Value = RemindAutoLockTimeOutValue;
-      YearsIntervalItem.InitializeMenu(MenuPredefinedYears, AutoGenerateYearsIntervalMax, PredefinedYearsItem_Click);
     }
 
     /// <summary>
@@ -290,6 +289,14 @@ namespace Ordisoftware.HebrewCalendar
     private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
     {
       EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem ).Tag;
+    }
+
+    private void EditMaxYearsInterval_ValueChanged(object sender, EventArgs e)
+    {
+      if ( Created ) Program.Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
+      YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
+                                       Program.AutoGenerateYearsIntervalMax,
+                                       PredefinedYearsItem_Click);
     }
 
     private void EditMoonDayTextFormat_TextChanged(object sender, EventArgs e)

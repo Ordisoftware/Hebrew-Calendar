@@ -1241,8 +1241,14 @@
       // 
       this.EditMaxYearsInterval.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditMaxYearsInterval, "EditMaxYearsInterval");
+      this.EditMaxYearsInterval.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
       this.EditMaxYearsInterval.Name = "EditMaxYearsInterval";
       this.EditMaxYearsInterval.ReadOnly = true;
+      this.EditMaxYearsInterval.ValueChanged += new System.EventHandler(this.EditMaxYearsInterval_ValueChanged);
       // 
       // GroupBoxMaxYearsInterval
       // 

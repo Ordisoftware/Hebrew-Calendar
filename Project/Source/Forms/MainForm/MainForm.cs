@@ -826,7 +826,7 @@ namespace Ordisoftware.HebrewCalendar
         date = DateTime.Today;
       else
       {
-        var form = new SelectDayForm(true);
+        var form = new SelectDayForm(true, true);
         if ( form.ShowDialog() != DialogResult.OK ) return;
         date = form.MonthCalendar.SelectionStart;
       }

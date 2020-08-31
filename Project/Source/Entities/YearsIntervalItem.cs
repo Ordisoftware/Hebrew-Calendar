@@ -50,10 +50,11 @@ namespace Ordisoftware.HebrewCalendar
 
     static public void InitializeMenu(ContextMenuStrip menu, int max, EventHandler handler)
     {
+      menu.Items.Clear();
       foreach ( int value in Program.PredefinedYearsIntervals )
       {
         var interval = new YearsIntervalItem(value);
-        if ( interval.Length <= max )
+        if ( interval.Length <= max && interval.Length <= Program.Settings.GenerateIntervalMaximum )
         {
           var item = new ToolStripMenuItem();
           item.Text = value >= 0
