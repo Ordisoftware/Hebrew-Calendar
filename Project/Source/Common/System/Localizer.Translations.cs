@@ -63,6 +63,13 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "Guide de grammaire" }
       };
 
+    static public readonly NullSafeStringDictionary PrivacyNoticeNoData
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "This software doesn't collect any personal information about you, your computer and your network, unless it is specified by its features." },
+        { Languages.FR, "Ce logiciel ne collecte aucune information personnelle concernant vous-même, votre ordinateur et votre réseau, à moins que cela ne soit indiqué par ses fonctionnalités." }
+      };
+
     static public readonly NullSafeStringDictionary MethodNoticeTitle
       = new NullSafeStringDictionary()
       {

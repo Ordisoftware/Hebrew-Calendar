@@ -289,7 +289,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="EditLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -621,11 +621,54 @@
   <data name="&gt;&gt;linkLabel2.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="ActionPrivacyNotice.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionPrivacyNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJASURBVDhPjZJdSJNhFMfPhcwQFhSEFhGLoOgqoouIgmgt
+        RzT6uGzRzQi864sgUOnG1Enb0rW5XhsRssW6qJYYFUUsa83cS/NjTZzFwsIINDUyb4J/5+x9QseM+sOB
+        533O+f3PeZ7npeV05CpZat30y9ZKkJC17Kn0v2VroR/xrAuFnwEUFgK4/84Fm5vmVbpchzwUr23jbi2E
+        fZcJpyMWpKZcCH4gaPcI/Z9duHh3K/Zyzso1PBGEUTiRneGxhUZkv9djeK4BQzONiI7XoDNP6Ool3E6u
+        gT5zHulvddA5cvMXiiYK55H5nJm5Mwi9IYR0wvW3HMPcfZTjMSH4hOBhoz9KTZ/Efp5E4YbBwOwpaK/Z
+        oJ/hNINsog3x9zOCjw2Wqm/qWKnBATZIzh5HKEG49oLgf8VdeZogG/melsIezvdNHy2+jsJ5gmaajOV3
+        o+vlYvGV54Q2NlwqD+fDGUJsbA9sTTSpcCLrJXrUmtiIbt2kSsvlTRoTxd5Xw53YBGEUTrT9BB12aibE
+        P21G+8PSriJvimG+kxt8sb1ftsGpVUIYhRdVZW+mrx36OkSzZrTHF028AwwP8nOOcPePNfCn10NqhTFQ
+        Jcsusjt83GW0Gt0jK9DZQwjw04UY1HKESGEVwrm1cHgJUquwEpl21lGDmHQMmhHJV+EmP194nBCdMMOf
+        WVmEpUZqDaRcq7c4yGnnv+xsTwVuTVQW49yDCsie5KTGKP275Gw7rPV05yD/4hKylj2V+29t4BBIQtbL
+        iOg3kHSmuHbCaLMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionPrivacyNotice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionPrivacyNotice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 1</value>
+  </data>
+  <data name="ActionPrivacyNotice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionPrivacyNotice.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.Name" xml:space="preserve">
+    <value>ActionPrivacyNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 530</value>
+    <value>10, 528</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>599, 28</value>
@@ -991,7 +1034,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>619, 568</value>
+    <value>619, 566</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

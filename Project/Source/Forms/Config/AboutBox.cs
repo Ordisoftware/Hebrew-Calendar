@@ -85,25 +85,34 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by labelTrademarkName for link clicked events.
+    /// Event handler. Called by LabelTrademarkName for link clicked events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Link label link clicked event information.</param>
-    private void labelTrademarkName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void LabelTrademarkName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Shell.OpenAuthorHome();
     }
 
     /// <summary>
-    /// Event handler. Called by editLicense for link clicked events.
+    /// Event handler. Called by EditLicense for link clicked events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Link clicked event information.</param>
-    private void editLicense_LinkClicked(object sender, LinkClickedEventArgs e)
+    private void EditLicense_LinkClicked(object sender, LinkClickedEventArgs e)
     {
       Shell.OpenWebLink(e.LinkText);
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionPrivacyNotice for link clicked events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Link clicked event information.</param>
+    private void ActionPrivacyNotice_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(Localizer.PrivacyNoticeNoData.GetLang());
+    }
   }
 
 }
