@@ -51,6 +51,11 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate minimum items for load data to show the loading form.
     /// </summary>
+    public const int DatesBookmarksCount = 10;
+
+    /// <summary>
+    /// Indicate minimum items for load data to show the loading form.
+    /// </summary>
     public const int LoadingFormLoadDB = 15000 * 2;
 
     /// <summary>

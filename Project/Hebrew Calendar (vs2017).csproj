@@ -230,6 +230,12 @@
     <Compile Include="Source\Forms\Boxes\DatesDiffForm.Designer.cs">
       <DependentUpon>DatesDiffForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Boxes\ManageDateBookmarks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\ManageDateBookmarks.Designer.cs">
+      <DependentUpon>ManageDateBookmarks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -565,6 +571,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffForm.resx">
       <DependentUpon>DatesDiffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarks.resx">
+      <DependentUpon>ManageDateBookmarks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.fr.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>

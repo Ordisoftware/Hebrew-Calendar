@@ -64,6 +64,7 @@
       this.downToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.upToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionManageBookmarks = new System.Windows.Forms.Button();
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -117,6 +118,7 @@
       // 
       this.PanelBottom.Controls.Add(this.ActionHelp);
       this.PanelBottom.Controls.Add(this.ActionClose);
+      this.PanelBottom.Controls.Add(this.ActionManageBookmarks);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
@@ -320,6 +322,16 @@
       this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
       resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
       // 
+      // ActionManageBookmarks
+      // 
+      this.ActionManageBookmarks.AllowDrop = true;
+      this.ActionManageBookmarks.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionManageBookmarks, "ActionManageBookmarks");
+      this.ActionManageBookmarks.Name = "ActionManageBookmarks";
+      this.ActionManageBookmarks.TabStop = false;
+      this.ActionManageBookmarks.UseVisualStyleBackColor = true;
+      this.ActionManageBookmarks.Click += new System.EventHandler(this.ActionManageBookmarks_Click);
+      // 
       // DatesDiffForm
       // 
       resources.ApplyResources(this, "$this");
@@ -382,5 +394,6 @@
     private System.Windows.Forms.ToolStripMenuItem downToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem upToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+    private System.Windows.Forms.Button ActionManageBookmarks;
   }
 }

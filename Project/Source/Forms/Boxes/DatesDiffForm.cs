@@ -62,7 +62,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void LoadMenuBookmarks()
     {
-      for ( int index = 1; index <= 10; index++ )
+      MenuBookmarks.Items.Clear();
+      for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
       {
         var date = (DateTime)Program.Settings["DateBookmark" + index];
         string s = date == DateTime.MinValue ? Localizer.EmptySlot.GetLang() : date.ToLongDateString();
@@ -111,6 +112,12 @@ namespace Ordisoftware.HebrewCalendar
     {
       var control = sender as Button;
       MenuBookmarks.Show(control, new Point(0, control.Height));
+    }
+
+    private void ActionManageBookmarks_Click(object sender, EventArgs e)
+    {
+      if ( new ManageDateBookmarksForm().ShowDialog() == DialogResult.OK )
+        LoadMenuBookmarks();
     }
 
     private void ActionHelp_Click(object sender, EventArgs e)
