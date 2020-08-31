@@ -681,6 +681,84 @@
   <data name="&gt;&gt;ActionGetGPS.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 20</value>
+  </data>
+  <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 20</value>
+  </data>
+  <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
+    <value>EditGPSLatitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 90</value>
+  </data>
+  <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditTimeZone.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 80</value>
+  </data>
+  <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
+    <value>EditTimeZone</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 44</value>
+  </data>
+  <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 20</value>
+  </data>
+  <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
+    <value>EditGPSLongitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
+    <value>GroupBoxGPS</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;EditMonthViewFontSize.Name" xml:space="preserve">
     <value>EditMonthViewFontSize</value>
   </data>
@@ -4600,13 +4678,13 @@
     <value>56, 140</value>
   </data>
   <data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 17</value>
+    <value>185, 17</value>
   </data>
   <data name="EditBigCalendarWarning.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="EditBigCalendarWarning.Text" xml:space="preserve">
-    <value>Show warning for big calendar</value>
+    <value>Display an alert for a large interval</value>
   </data>
   <data name="EditBigCalendarWarning.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
@@ -5030,6 +5108,30 @@
   <data name="&gt;&gt;ActionMoonDayTextFormatHelp.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 22</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>309, 20</value>
+  </data>
+  <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
+    <value>EditMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
+    <value>GroupBoxMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="EditMaxYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -5138,108 +5240,6 @@
   <data name="&gt;&gt;MenuPredefinedYears.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 22</value>
-  </data>
-  <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>309, 20</value>
-  </data>
-  <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
-    <value>EditMoonDayTextFormat</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
-    <value>GroupBoxMoonDayTextFormat</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 20</value>
-  </data>
-  <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 20</value>
-  </data>
-  <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
-    <value>EditGPSLatitude</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
-    <value>GroupBoxGPS</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 90</value>
-  </data>
-  <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditTimeZone.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 80</value>
-  </data>
-  <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
-    <value>EditTimeZone</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
-    <value>GroupBoxGPS</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 44</value>
-  </data>
-  <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 20</value>
-  </data>
-  <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
-    <value>EditGPSLongitude</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
-    <value>GroupBoxGPS</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -5248,9 +5248,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>769, 711</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

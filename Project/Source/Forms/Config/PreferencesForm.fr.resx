@@ -606,6 +606,6 @@
     <value>Fermer la boite de rappel sur un click</value>
   </data>
   <data name="EditBigCalendarWarning.Text" xml:space="preserve">
-    <value>Afficher alerte pour gros calendriers</value>
+    <value>Afficher une alerte pour un grand intervalle</value>
   </data>
 </root>
