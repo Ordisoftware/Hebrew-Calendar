@@ -176,26 +176,22 @@
   <data name="ActionPrefefinedInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 17</value>
   </data>
-  <data name="nissan11ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
+  <data name="ActionDefaultInterval.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAchJREFUOE+Nkl9v0lAYh/ksfoDd8KG8UDNjYsIFmQmF4L2OXcxoZKJzWZaYuEwT
+        UWEIWib/t0XnDGaFWda1K5uwMuXxnFJmyDDjSX45p+15znt68vomJXEztpiYjiFH79XkxG/cB6NNX7fc
+        UT57ny7Hlc0TWo+S6CKth2/EJsfEr9+7fBNXPupgLKQwEutuDh6ncDQDDmyWb88nvaUXeXptFuwu9rMs
+        1vMc1pKImPd0k8bcqnuKJ9Oz40+hhBXszi92X3zgZHkDW2ZJxRF30HzwCjORhmOH2NW7rz3lH4qi0O10
+        eZfOkMxk2FvboLNSPJetxQy9l2Xig+pXBpZHKBTi1HHIflTJfcqTVfOkVZXe/hHN+bWBvFpm4daclP0D
+        y0PKZ2e/KRRLFGVKZfKfCxxaFtWVpPj/QeX/yn/6fWqbW2xubbupVGuYpsnb9ykKlSr1hoZsJLF8VI5E
+        IjUEO992z/Pl6w6HnlwsVdlrNAlFlYuy5M7MjNEyDLGowQ9N43u9jmkN5QqakMPh8HjZYyoQCGC32/zU
+        9ZHKk8hD/MFgkK5zyno2J+5im0Zzf2J5iF8IejQaRUZsKJtkYnnIlIiUZEabZCw+31/sTadbuGqyLQAA
+        AABJRU5ErkJggg==
+</value>
   </data>
-  <data name="IntervalItem5.Text" xml:space="preserve">
-    <value>5 années à partir de maintenant</value>
-  </data>
-  <data name="nissan11ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
-  <data name="IntervalItem10.Text" xml:space="preserve">
-    <value>10 années à partir de maintenant</value>
-  </data>
-  <data name="nissanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
-  <data name="IntervalItem20.Text" xml:space="preserve">
-    <value>20 années à partir de maintenant</value>
-  </data>
-  <data name="MenuPredefinedYears.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 70</value>
+  <data name="ActionDefaultInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 42</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>232, 116</value>

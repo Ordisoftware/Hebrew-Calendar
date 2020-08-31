@@ -46,9 +46,6 @@
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.GroupBoxGPS = new System.Windows.Forms.GroupBox();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
-      this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.GroupBoxTextReport = new System.Windows.Forms.GroupBox();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -135,20 +132,21 @@
       this.EditCurrentDayBackColor = new System.Windows.Forms.Panel();
       this.EditCurrentDayForeColor = new System.Windows.Forms.Panel();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
-      this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
-      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.SelectAutoGenerateYearsInterval = new System.Windows.Forms.Button();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
+      this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
+      this.EditCloseReminderFormOnClick = new System.Windows.Forms.CheckBox();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
-      this.EditAutoGenerateYearsInterval = new System.Windows.Forms.NumericUpDown();
       this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
+      this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.GroupBoxMoonDayTextFormat = new System.Windows.Forms.GroupBox();
       this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
@@ -158,11 +156,16 @@
       this.nissanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
-      this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditMaxYearsInterval = new System.Windows.Forms.NumericUpDown();
       this.GroupBoxMaxYearsInterval = new System.Windows.Forms.GroupBox();
       this.LabelYearsIntervalInfo = new System.Windows.Forms.Label();
-      this.EditCloseReminderFormOnClick = new System.Windows.Forms.CheckBox();
+      this.MenuPredefinedYears = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -187,7 +190,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       this.GroupBoxMonth.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditAutoGenerateYearsInterval)).BeginInit();
       this.GroupBoxMoonDayTextFormat.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).BeginInit();
@@ -302,27 +304,6 @@
       this.ActionGetGPS.Name = "ActionGetGPS";
       this.ActionGetGPS.TabStop = true;
       this.ActionGetGPS.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionGetGPS_LinkClicked);
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
       // 
       // GroupBoxTextReport
       // 
@@ -1049,13 +1030,15 @@
       // 
       // GroupBoxSystem
       // 
+      this.GroupBoxSystem.Controls.Add(this.SelectAutoGenerateYearsInterval);
+      this.GroupBoxSystem.Controls.Add(this.EditAutoGenerateYearsInterval);
       this.GroupBoxSystem.Controls.Add(this.EditVacuumAtStartup);
+      this.GroupBoxSystem.Controls.Add(this.ActionAutoGenerateHelp);
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangFR);
       this.GroupBoxSystem.Controls.Add(this.ActionSelectLangEN);
       this.GroupBoxSystem.Controls.Add(this.EditAutoOpenExportFolder);
       this.GroupBoxSystem.Controls.Add(this.EditCloseReminderFormOnClick);
       this.GroupBoxSystem.Controls.Add(this.EditShowReminderInTaskBar);
-      this.GroupBoxSystem.Controls.Add(this.EditAutoGenerateYearsInterval);
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateEveryWeek);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
@@ -1071,28 +1054,31 @@
       this.GroupBoxSystem.Name = "GroupBoxSystem";
       this.GroupBoxSystem.TabStop = false;
       // 
-      // ActionSelectHebrewLettersPath
+      // SelectAutoGenerateYearsInterval
       // 
-      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
-      this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
-      this.ActionSelectHebrewLettersPath.TabStop = false;
-      this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
-      this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
-      // 
-      // EditHebrewLettersPath
-      // 
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
-      this.EditHebrewLettersPath.ReadOnly = true;
+      this.SelectAutoGenerateYearsInterval.AllowDrop = true;
+      this.SelectAutoGenerateYearsInterval.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.SelectAutoGenerateYearsInterval, "SelectAutoGenerateYearsInterval");
+      this.SelectAutoGenerateYearsInterval.Name = "SelectAutoGenerateYearsInterval";
+      this.SelectAutoGenerateYearsInterval.TabStop = false;
+      this.SelectAutoGenerateYearsInterval.UseVisualStyleBackColor = true;
+      this.SelectAutoGenerateYearsInterval.Click += new System.EventHandler(this.SelectAutoGenerateYearsInterval_Click);
       // 
       // EditVacuumAtStartup
       // 
       resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
       this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
       this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
+      // 
+      // ActionAutoGenerateHelp
+      // 
+      this.ActionAutoGenerateHelp.AllowDrop = true;
+      this.ActionAutoGenerateHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionAutoGenerateHelp, "ActionAutoGenerateHelp");
+      this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
+      this.ActionAutoGenerateHelp.TabStop = false;
+      this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
+      this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
       // 
       // ActionSelectLangFR
       // 
@@ -1120,38 +1106,17 @@
       this.EditAutoOpenExportFolder.Name = "EditAutoOpenExportFolder";
       this.EditAutoOpenExportFolder.UseVisualStyleBackColor = true;
       // 
+      // EditCloseReminderFormOnClick
+      // 
+      resources.ApplyResources(this.EditCloseReminderFormOnClick, "EditCloseReminderFormOnClick");
+      this.EditCloseReminderFormOnClick.Name = "EditCloseReminderFormOnClick";
+      this.EditCloseReminderFormOnClick.UseVisualStyleBackColor = true;
+      // 
       // EditShowReminderInTaskBar
       // 
       resources.ApplyResources(this.EditShowReminderInTaskBar, "EditShowReminderInTaskBar");
       this.EditShowReminderInTaskBar.Name = "EditShowReminderInTaskBar";
       this.EditShowReminderInTaskBar.UseVisualStyleBackColor = true;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-      this.EditAutoGenerateYearsInterval.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-      this.EditAutoGenerateYearsInterval.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
       // 
       // EditCheckUpdateEveryWeek
       // 
@@ -1189,6 +1154,15 @@
       resources.ApplyResources(this.EditAutoRegenerate, "EditAutoRegenerate");
       this.EditAutoRegenerate.Name = "EditAutoRegenerate";
       this.EditAutoRegenerate.UseVisualStyleBackColor = true;
+      // 
+      // ActionSelectHebrewLettersPath
+      // 
+      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
+      this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
+      this.ActionSelectHebrewLettersPath.TabStop = false;
+      this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
+      this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
       // OpenFileDialog
       // 
@@ -1263,20 +1237,18 @@
       this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
       // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // EditMaxYearsInterval
       // 
       this.EditMaxYearsInterval.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditMaxYearsInterval, "EditMaxYearsInterval");
+      this.EditMaxYearsInterval.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
       this.EditMaxYearsInterval.Name = "EditMaxYearsInterval";
       this.EditMaxYearsInterval.ReadOnly = true;
+      this.EditMaxYearsInterval.ValueChanged += new System.EventHandler(this.EditMaxYearsInterval_ValueChanged);
       // 
       // GroupBoxMaxYearsInterval
       // 
@@ -1292,11 +1264,55 @@
       this.LabelYearsIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelYearsIntervalInfo.Name = "LabelYearsIntervalInfo";
       // 
-      // EditCloseReminderFormOnClick
+      // MenuPredefinedYears
       // 
-      resources.ApplyResources(this.EditCloseReminderFormOnClick, "EditCloseReminderFormOnClick");
-      this.EditCloseReminderFormOnClick.Name = "EditCloseReminderFormOnClick";
-      this.EditCloseReminderFormOnClick.UseVisualStyleBackColor = true;
+      this.MenuPredefinedYears.Name = "MenuSelectMoonDayTextFormat";
+      this.MenuPredefinedYears.ShowImageMargin = false;
+      resources.ApplyResources(this.MenuPredefinedYears, "MenuPredefinedYears");
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      // 
+      // EditHebrewLettersPath
+      // 
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
       // 
       // PreferencesForm
       // 
@@ -1350,7 +1366,6 @@
       this.GroupBoxMonth.PerformLayout();
       this.GroupBoxSystem.ResumeLayout(false);
       this.GroupBoxSystem.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditAutoGenerateYearsInterval)).EndInit();
       this.GroupBoxMoonDayTextFormat.ResumeLayout(false);
       this.GroupBoxMoonDayTextFormat.PerformLayout();
       this.MenuSelectMoonDayTextFormat.ResumeLayout(false);
@@ -1486,9 +1501,12 @@
     private System.Windows.Forms.NumericUpDown EditMaxYearsInterval;
     private System.Windows.Forms.GroupBox GroupBoxMaxYearsInterval;
     private System.Windows.Forms.Label LabelYearsIntervalInfo;
-    private System.Windows.Forms.NumericUpDown EditAutoGenerateYearsInterval;
     private System.Windows.Forms.Button ActionCountAsMoonHelp;
     private System.Windows.Forms.RadioButton SelectOpenNextCelebrationsForm;
     private System.Windows.Forms.CheckBox EditCloseReminderFormOnClick;
+    private System.Windows.Forms.Button ActionAutoGenerateHelp;
+    private System.Windows.Forms.Button SelectAutoGenerateYearsInterval;
+    private System.Windows.Forms.ContextMenuStrip MenuPredefinedYears;
+    private HebrewCommon.UndoRedoTextBox EditAutoGenerateYearsInterval;
   }
 }

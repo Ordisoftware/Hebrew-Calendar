@@ -22,23 +22,27 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectDayForm : Form
   {
 
-    private bool LiveGoTo;
+    private bool IsGotoRealtime;
 
     private Data.DataSet.LunisolarDaysRow CurrentDay;
 
-    public SelectDayForm()
+    public SelectDayForm(bool isOnlyGeneratedCalendar = false, bool isGotoRealtime = false)
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-      MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+      if ( isOnlyGeneratedCalendar )
+      {
+        MonthCalendar.MinDate = MainForm.Instance.DateFirst;
+        MonthCalendar.MaxDate = MainForm.Instance.DateLast;
+      }
+      else
+      {
+        MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+        MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+      }
       MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
       CurrentDay = MainForm.Instance.CurrentDay;
-    }
-
-    public SelectDayForm(bool livegoto) : this()
-    {
-      LiveGoTo = livegoto;
+      IsGotoRealtime = isGotoRealtime;
     }
 
     private void SelectDayForm_Shown(object sender, EventArgs e)
@@ -48,13 +52,13 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionCancel_Click(object sender, EventArgs e)
     {
-      if ( LiveGoTo && CurrentDay != null )
+      if ( IsGotoRealtime && CurrentDay != null )
         MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date));
     }
 
     private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
     {
-      if ( !LiveGoTo ) return;
+      if ( !IsGotoRealtime ) return;
       string date = SQLiteDate.ToString(MonthCalendar.SelectionStart);
       if ( MonthCalendar.SelectionStart < MainForm.Instance.DateFirst )
         date = SQLiteDate.ToString(MainForm.Instance.DateFirst);

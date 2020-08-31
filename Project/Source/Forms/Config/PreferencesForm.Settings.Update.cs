@@ -78,7 +78,7 @@ namespace Ordisoftware.HebrewCalendar
       Settings.CheckUpdateEveryWeekWhileRunning = EditCheckUpdateEveryWeek.Checked;
       Settings.AutoRegenerate = EditAutoRegenerate.Checked;
       Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
-      Settings.AutoGenerateYearsInternal = (int)EditAutoGenerateYearsInterval.Value;
+      Settings.AutoGenerateYearsInternal = int.Parse(EditAutoGenerateYearsInterval.Text);
       Settings.ReminderFormCloseOnClick = EditCloseReminderFormOnClick.Checked;
     }
 

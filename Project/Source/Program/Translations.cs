@@ -135,11 +135,18 @@ namespace Ordisoftware.HebrewCalendar
         { Languages.FR, "L'année n'est pas supportée : {0}" }
       };
 
-    static public readonly NullSafeStringDictionary PredefinedYearsInterval
+    static public readonly NullSafeStringDictionary PredefinedYearsIntervalAfter
       = new NullSafeStringDictionary
       {
         { Languages.EN, "{0} years from now" },
         { Languages.FR, "{0} années à partir de maintenant" }
+      };
+
+    static public readonly NullSafeStringDictionary PredefinedYearsIntervalBeforeAndAfter
+      = new NullSafeStringDictionary
+      {
+        { Languages.EN, "{0} years before and after from now" },
+        { Languages.FR, "{0} années avant et après maintenant" }
       };
 
     static public readonly NullSafeStringDictionary FatalGenerateError

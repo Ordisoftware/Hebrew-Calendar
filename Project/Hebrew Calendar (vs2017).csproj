@@ -219,6 +219,7 @@
     </Compile>
     <Compile Include="Source\Entities\ApplicationStatistics.cs" />
     <Compile Include="Source\Common\System\SystemStatistics.cs" />
+    <Compile Include="Source\Entities\YearsIntervalItem.cs" />
     <Compile Include="Source\Entities\DateItem.cs" />
     <Compile Include="Source\Entities\Dates.cs" />
     <Compile Include="Source\Entities\DatesDiffItem.cs" />

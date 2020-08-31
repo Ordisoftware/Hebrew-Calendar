@@ -45,9 +45,6 @@ namespace Ordisoftware.HebrewCalendar
     const int RemindAutoLockTimeOutMin = 10;
     const int RemindAutoLockTimeOutMax = 300;
     const int RemindAutoLockTimeOutValue = 60;
-    const int AutoGenerateYearsIntervalMin = 5;
-    const int AutoGenerateYearsIntervalMax = 20;
-    const int AutoGenerateYearsIntervalValue = 10;
 
     static private readonly Properties.Settings Settings = Program.Settings;
 

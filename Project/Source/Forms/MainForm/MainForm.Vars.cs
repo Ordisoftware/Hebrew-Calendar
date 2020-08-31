@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -53,24 +53,13 @@ namespace Ordisoftware.HebrewCalendar
     public float CurrentGPSLatitude { get; internal set; }
     public float CurrentGPSLongitude { get; internal set; }
 
-    private void InitializeYearsInterval()
-    {
-      DateFirst = SQLiteDate.ToDateTime(DataSet.LunisolarDays.FirstOrDefault()?.Date ?? "");
-      DateLast = SQLiteDate.ToDateTime(DataSet.LunisolarDays.LastOrDefault()?.Date ?? "");
-      if ( DateFirst == DateTime.MinValue || DateLast == DateTime.MinValue || DateFirst >= DateLast )
-        throw new ArgumentOutOfRangeException("DateFirst & DateLast in " + nameof(InitializeYearsInterval));
-      YearFirst = DateFirst.Year;
-      YearLast = DateLast.Year;
-      YearsInterval = DateLast.Year - DateFirst.Year + 1;
-      YearsIntervalArray = Enumerable.Range(DateFirst.Year, YearsInterval).ToArray();
-    }
-
     public DateTime DateFirst { get; private set; }
     public DateTime DateLast { get; private set; }
 
     public int YearFirst { get; private set; }
     public int YearLast { get; private set; }
     public int YearsInterval { get; private set; }
+
     internal int[] YearsIntervalArray { get; private set; }
 
     public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }

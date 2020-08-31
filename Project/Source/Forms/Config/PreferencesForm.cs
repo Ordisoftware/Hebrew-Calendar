@@ -68,9 +68,6 @@ namespace Ordisoftware.HebrewCalendar
       EditAutoLockSessionTimeOut.Minimum = RemindAutoLockTimeOutMin;
       EditAutoLockSessionTimeOut.Maximum = RemindAutoLockTimeOutMax;
       EditAutoLockSessionTimeOut.Value = RemindAutoLockTimeOutValue;
-      EditAutoGenerateYearsInterval.Minimum = AutoGenerateYearsIntervalMin;
-      EditAutoGenerateYearsInterval.Maximum = AutoGenerateYearsIntervalMax;
-      EditAutoGenerateYearsInterval.Value = AutoGenerateYearsIntervalValue;
     }
 
     /// <summary>
@@ -201,7 +198,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      var form = new SelectCityForm();
+      var form = new SelectCityForm(e != null);
       if ( form.ShowDialog() != DialogResult.OK ) return;
       EditGPSLatitude.Text = form.Latitude;
       EditGPSLongitude.Text = form.Longitude;
@@ -292,6 +289,14 @@ namespace Ordisoftware.HebrewCalendar
     private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
     {
       EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem ).Tag;
+    }
+
+    private void EditMaxYearsInterval_ValueChanged(object sender, EventArgs e)
+    {
+      if ( Created ) Program.Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
+      YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
+                                       Program.AutoGenerateYearsIntervalMax,
+                                       PredefinedYearsItem_Click);
     }
 
     private void EditMoonDayTextFormat_TextChanged(object sender, EventArgs e)
@@ -603,6 +608,21 @@ namespace Ordisoftware.HebrewCalendar
       EditBalloonAutoHide.Enabled = EditBalloon.Enabled;
       LabelLoomingDelay.Enabled = EditBalloon.Enabled;
       EditBalloonLoomingDelay.Enabled = EditBalloon.Enabled;
+    }
+
+    private void ActionAutoGenerateHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(Translations.AutoGenerateIntervalNotice.GetLang());
+    }
+
+    private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)
+    {
+      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval, new Point(0, SelectAutoGenerateYearsInterval.Height));
+    }
+
+    private void PredefinedYearsItem_Click(object sender, EventArgs e)
+    {
+      EditAutoGenerateYearsInterval.Text = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue.ToString();
     }
 
   }

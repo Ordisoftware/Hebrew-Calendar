@@ -67,10 +67,15 @@ namespace Ordisoftware.HebrewCalendar
     private bool IsLoading;
     private bool IsReady;
 
-    public SelectCityForm()
+    private SelectCityForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+    }
+
+    public SelectCityForm(bool canCancel) : this()
+    {
+      ActionCancel.Enabled = canCancel;
     }
 
     private void SelectCityForm_Load(object sender, EventArgs e)
@@ -134,15 +139,15 @@ namespace Ordisoftware.HebrewCalendar
       EditFilter.SelectionStart = EditFilter.Text.Length;
     }
 
-    bool foundCountry = false;
-    bool foundCity = false;
+    private bool FoundCountry = false;
+    private bool FoundCity = false;
 
     private void EditFilter_TextChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
       Mutex = true;
-      foundCountry = false;
-      foundCity = false;
+      FoundCountry = false;
+      FoundCity = false;
       ListBoxCountries.SelectedIndex = -1;
       ListBoxCities.SelectedIndex = -1;
       try
@@ -159,11 +164,11 @@ namespace Ordisoftware.HebrewCalendar
                             select country;
         if ( resultCountry.Count() == 0 ) return;
         string strCountry = resultCountry.ElementAt(0).Key;
-        foundCountry = resultCountry.Count() == 1;
-        if ( !foundCountry )
+        FoundCountry = resultCountry.Count() == 1;
+        if ( !FoundCountry )
           if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key != null )
-            foundCountry = true;
-        if ( foundCountry && !EditFilter.Text.Contains(",") )
+            FoundCountry = true;
+        if ( FoundCountry && !EditFilter.Text.Contains(",") )
           tempo(EditFilter.Text = strCountry + ", ");
         int index = ListBoxCountries.FindString(strCountry);
         if ( ListBoxCountries.SelectedIndex != index )
@@ -181,21 +186,26 @@ namespace Ordisoftware.HebrewCalendar
                          select city;
         if ( resultCity.Count() == 0 ) return;
         string strCity = resultCity.ElementAt(0).Name;
-        foundCity = resultCity.Count() == 1;
-        if ( !foundCity )
+        FoundCity = resultCity.Count() == 1;
+        if ( !FoundCity )
           if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[1]).Key != null )
-            foundCity = true;
-        if ( foundCity )
+            FoundCity = true;
+        if ( FoundCity )
           tempo(EditFilter.Text = strCountry + ", " + strCity);
         index = ListBoxCities.FindString(strCity);
         if ( ListBoxCities.SelectedIndex != index )
           ListBoxCities.SelectedIndex = index;
+        if ( FoundCountry && FoundCity )
+          for ( index = 0; index < EditTimeZone.Items.Count; index++ )
+            if ( EditTimeZone.Items[index].ToString().Contains(strCountry)
+              || EditTimeZone.Items[index].ToString().Contains(strCity) )
+              EditTimeZone.SelectedIndex = index;
       }
       finally
       {
-        ActionOK.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
+        ActionOK.Enabled = FoundCountry && FoundCity && EditTimeZone.SelectedItem != null;
         if ( !IsLoading )
-          if ( !foundCountry || !foundCity )
+          if ( !FoundCountry || !FoundCity )
             EditTimeZone.SelectedItem = null;
         Mutex = false;
       }
@@ -223,7 +233,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void EditTimeZone_SelectedIndexChanged(object sender, EventArgs e)
     {
-      ActionOK.Enabled = foundCountry && foundCity && EditTimeZone.SelectedItem != null;
+      ActionOK.Enabled = FoundCountry && FoundCity && EditTimeZone.SelectedItem != null;
     }
 
   }

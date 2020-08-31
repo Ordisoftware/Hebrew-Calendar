@@ -271,7 +271,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <metadata name="LabelTimeZone.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -523,7 +523,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="ActionUsePersonalShabat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -697,7 +697,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxGPS.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -943,7 +943,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxTextReport.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1193,7 +1193,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BroupBoxShabat.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1490,7 +1490,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxNavigation.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="EditBalloonAutoHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1739,7 +1739,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxTrayIcon.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="EditStartupHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1778,7 +1778,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditStartupHide.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2562,7 +2562,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxReminder.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="EditMonthViewSunToolTips.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2601,7 +2601,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditMonthViewSunToolTips.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="LabelColorNoDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3213,7 +3213,76 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxMonth.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <data name="SelectAutoGenerateYearsInterval.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="SelectAutoGenerateYearsInterval.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAjNJREFUOE+Vks1P02Acxxtv7m9QD5p49CKaYDLUCwf15NVEPXjhYAgBEnEzo2xd
+        N5xgCLIJCc7Q0bFNXEyWEIljdsqBxUVjiCHxnQQ2J2wd3cbb+Po8T8t0ifjyTT797em+z2dtV+728KO8
+        6A3BeS/4V2iP9rlfQ0/+T2jf2KpHIGaaY55XaOhP4+RdnRPGpNDz9Hsa2je26nEYgmJuGZXVLNbzWTIz
+        0FYyKK1+QyWfIzMHNZdhPdo3turZFbgCCdwJJdFHcMsK1IIKu5yCEHoNB4EPzLEev5fAGZiBZ0IhJOEa
+        J4K1CjCxD4iYgPB+QOZYzzoo/15Q0YrYrGjYImyUNZRKZayVqygSj0ooaFusN/91CfNCHG9747poV8A/
+        fAZBmiFXkmAIDIVhlxTwYwrrdVpv4lP0M2aHUkjfmkRNsL1RJod1+qGOHcJ2tco6HV3dWFzOwt7rhmyJ
+        INVy/6eA98chjD2HU9IRCA6y7gm8xIfF75htO4D8QgTd4gAiT2Jos3TRWzheE/wpL1oPAslGIHQI76I9
+        aL9hg9l85pLxDPQ38brUgPagGR3B02Q2oXW8EemlJArBU8CKH9WPw4DXhNFrR/Vf5jgTEwiGYGDqLLzT
+        5+CbvkDmeQw+bcYXdQ4jlouISVbsvBHhvXwY77Ob9X+j6A0zwV7pvNIMx9UmLIhmthZ8j+sFtr4HCSqh
+        V1JPGKJvEp7RGDz+KbjJdI1EYev3J4yttRwh0Hv6V2jfCMf9AKQQlciR8BlNAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="SelectAutoGenerateYearsInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 149</value>
+  </data>
+  <data name="SelectAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="SelectAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SelectAutoGenerateYearsInterval.Name" xml:space="preserve">
+    <value>SelectAutoGenerateYearsInterval</value>
+  </data>
+  <data name="&gt;&gt;SelectAutoGenerateYearsInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectAutoGenerateYearsInterval.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;SelectAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 126</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 20</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Name" xml:space="preserve">
+    <value>EditAutoGenerateYearsInterval</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="EditVacuumAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3246,7 +3315,50 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditVacuumAtStartup.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
+  </data>
+  <data name="ActionAutoGenerateHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionAutoGenerateHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionAutoGenerateHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionAutoGenerateHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 176</value>
+  </data>
+  <data name="ActionAutoGenerateHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionAutoGenerateHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionAutoGenerateHelp.Name" xml:space="preserve">
+    <value>ActionAutoGenerateHelp</value>
+  </data>
+  <data name="&gt;&gt;ActionAutoGenerateHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionAutoGenerateHelp.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;ActionAutoGenerateHelp.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3289,7 +3401,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="ActionSelectLangEN.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3330,7 +3442,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="EditAutoOpenExportFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3369,7 +3481,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="EditCloseReminderFormOnClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3408,7 +3520,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditCloseReminderFormOnClick.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="EditShowReminderInTaskBar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3447,31 +3559,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 126</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 20</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Name" xml:space="preserve">
-    <value>EditAutoGenerateYearsInterval</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
-    <value>GroupBoxSystem</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3510,7 +3598,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateEveryWeek.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="EditCheckUpdateAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3549,7 +3637,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3588,7 +3676,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="EditAllowSuspendReminder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3627,7 +3715,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAllowSuspendReminder.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3666,7 +3754,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="EditAutoRegenerate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3705,7 +3793,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAutoRegenerate.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3751,7 +3839,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="EditHebrewLettersPath.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -3778,7 +3866,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="GroupBoxSystem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -3805,7 +3893,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxSystem.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>139, 21</value>
@@ -3983,7 +4071,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="EditMaxYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -4067,7 +4155,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxMaxYearsInterval.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <metadata name="MenuPredefinedYears.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>504, 21</value>
+  </metadata>
+  <data name="MenuPredefinedYears.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 4</value>
+  </data>
+  <data name="&gt;&gt;MenuPredefinedYears.Name" xml:space="preserve">
+    <value>MenuPredefinedYears</value>
+  </data>
+  <data name="&gt;&gt;MenuPredefinedYears.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

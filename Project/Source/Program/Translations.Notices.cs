@@ -24,6 +24,17 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
+    static public readonly NullSafeStringDictionary AutoGenerateIntervalNotice
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Une valeur positive permet de générer les prochaines années." + Globals.NL +
+                        "Une valeur négative permet de générer les années avant et après maintenant."
+        },
+        { Languages.FR, "Une valeur positive permet de générer les prochaines années." + Globals.NL +
+                        "Une valeur négative permet de générer les années avant et après maintenant."
+        }
+      };
+
     static public readonly NullSafeStringDictionary NoticeMoonDayTextFormat
       = new NullSafeStringDictionary()
       {

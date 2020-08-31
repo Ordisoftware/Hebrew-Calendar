@@ -117,8 +117,8 @@ namespace Ordisoftware.HebrewCalendar
 
     static private void BringMainForm()
     {
-      if ( MainForm.Instance.Visible )
-        MainForm.Instance.MenuShowHide_Click(null, null);
+      //if ( MainForm.Instance.Visible )
+        //MainForm.Instance.MenuShowHide_Click(null, null);
       if ( LockSessionForm.Instance?.Visible ?? false)
       {
         LockSessionForm.Instance.Focus();
