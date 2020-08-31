@@ -103,7 +103,7 @@
       this.EditYear.Name = "EditYear";
       this.EditYear.SelectedIndexChanged += new System.EventHandler(this.EditYear_SelectedIndexChanged);
       // 
-      // SearchMonthForm
+      // SearchLunarMonthForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
@@ -118,7 +118,7 @@
       this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.SearchLunarMonthFormLocation;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "SearchMonthForm";
+      this.Name = "SearchLunarMonthForm";
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchMonthForm_FormClosing);
       this.Load += new System.EventHandler(this.SearchEventForm_Load);

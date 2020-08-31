@@ -90,6 +90,7 @@ namespace Ordisoftware.HebrewCalendar
         ListItems.Items[0].Focused = true;
         ListItems.Items[0].Selected = true;
       }
+      ListItems.Columns[ListItems.Columns.Count - 1].Width = -2;
     }
 
     private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
