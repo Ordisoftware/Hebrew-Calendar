@@ -171,6 +171,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add mute windows volume in addition to stop media playing.
 - Fix stop media playing (stop instead of play/pause media).
 - Fix app not responding on windows logoff or system shutdown.
+- Fix day selection to allow only generated years interval.
 - Improve dates diff calculator to show more stats in a form having bookmarks.
 - Improve years to generate box with predefined intervals and change some constants.
 - Improve check update to allow auto update or direct download or open app web page.
