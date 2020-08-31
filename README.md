@@ -136,10 +136,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Ctrl+F3 : Dates difference calculator
 - Home : First month available in the database
 - End : Last month available in the database
-- Up : Next year
-- Down : Previous year
-- Right : Next month
+- Up : Previous year
+- Down : Next year
 - Left : Previous month
+- Right : Next month
 - F8 : Preferences
 - F11 : Help
 - F12 : About
@@ -182,7 +182,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Change text report that is no more stored in the database but in a file.
 - Some UI/UX improvements.
 - Some code refactorings.
-- Update setup to install SQLite 3.32.3 ODBC Driver.
+- Update to SQLite 3.32.3 ODBC Driver.
 
 #### 2020.08.22 - Version 4.1
 
