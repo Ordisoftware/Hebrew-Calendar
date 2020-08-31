@@ -104,8 +104,8 @@
       this.memoryMaxGCUsageLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.executableModeLabel1 = new System.Windows.Forms.Label();
-      this.operatingSystemTextBox = new System.Windows.Forms.TextBox();
-      this.processorNameTextBox = new System.Windows.Forms.TextBox();
+      this.operatingSystemTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.processorNameTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.GroupBoxRunning = new System.Windows.Forms.GroupBox();
       this.GroupBoxSystemLoad = new System.Windows.Forms.GroupBox();
       this.dBEngineversionLabel1 = new System.Windows.Forms.Label();
@@ -770,8 +770,8 @@
     private System.Windows.Forms.GroupBox GroupBoxSystem;
     private System.Windows.Forms.GroupBox GroupBoxRunning;
     private System.Windows.Forms.CheckBox EditAlwaysOnTop;
-    private System.Windows.Forms.TextBox operatingSystemTextBox;
-    private System.Windows.Forms.TextBox processorNameTextBox;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox operatingSystemTextBox;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox processorNameTextBox;
     private System.Windows.Forms.GroupBox GroupBoxSystemLoad;
     private System.Windows.Forms.Label generatePopulateDaysTimeLabel1;
     private System.Windows.Forms.Label generateAnalyseDaysTimeLabel1;

@@ -199,7 +199,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      var form = new SelectCityForm();
+      var form = new SelectCityForm(e != null);
       if ( form.ShowDialog() != DialogResult.OK ) return;
       EditGPSLatitude.Text = form.Latitude;
       EditGPSLongitude.Text = form.Longitude;

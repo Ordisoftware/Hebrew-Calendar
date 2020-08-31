@@ -177,6 +177,30 @@
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="DummyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 2</value>
+  </data>
+  <data name="DummyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="DummyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="DummyButton.Text" xml:space="preserve">
+    <value>dummy</value>
+  </data>
+  <data name="&gt;&gt;DummyButton.Name" xml:space="preserve">
+    <value>DummyButton</value>
+  </data>
+  <data name="&gt;&gt;DummyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DummyButton.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;DummyButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>

@@ -36,10 +36,11 @@
       this.ListBoxCities = new System.Windows.Forms.ListBox();
       this.LabelCountry = new System.Windows.Forms.Label();
       this.LabelCity = new System.Windows.Forms.Label();
-      this.EditFilter = new System.Windows.Forms.TextBox();
+      this.EditFilter = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.LabelFilter = new System.Windows.Forms.Label();
       this.LabelTimeZone = new System.Windows.Forms.Label();
       this.EditTimeZone = new System.Windows.Forms.ComboBox();
+      this.DummyButton = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -55,6 +56,7 @@
       // 
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOK);
+      this.PanelBottom.Controls.Add(this.DummyButton);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
@@ -112,6 +114,12 @@
       this.EditTimeZone.Name = "EditTimeZone";
       this.EditTimeZone.SelectedIndexChanged += new System.EventHandler(this.EditTimeZone_SelectedIndexChanged);
       // 
+      // DummyButton
+      // 
+      resources.ApplyResources(this.DummyButton, "DummyButton");
+      this.DummyButton.Name = "DummyButton";
+      this.DummyButton.UseVisualStyleBackColor = true;
+      // 
       // SelectCityForm
       // 
       this.AcceptButton = this.ActionOK;
@@ -147,9 +155,10 @@
     private System.Windows.Forms.ListBox ListBoxCities;
     private System.Windows.Forms.Label LabelCountry;
     private System.Windows.Forms.Label LabelCity;
-    private System.Windows.Forms.TextBox EditFilter;
+    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditFilter;
     private System.Windows.Forms.Label LabelFilter;
     private System.Windows.Forms.Label LabelTimeZone;
     internal System.Windows.Forms.ComboBox EditTimeZone;
+    private System.Windows.Forms.Button DummyButton;
   }
 }
