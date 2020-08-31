@@ -21,17 +21,18 @@ namespace SQLiteODBCInstaller
 
     static public void RunShell(string filename, string arguments = "")
     {
-      using ( var process = new Process() )
-        try
-        {
-          process.StartInfo.FileName = filename;
-          process.StartInfo.Arguments = arguments;
-          process.Start();
-        }
-        catch ( Exception ex )
-        {
-          MessageBox.Show(ex.Message + Environment.NewLine + process.StartInfo.FileName);
-        }
+      var process = new Process();
+      try
+      {
+        process.StartInfo.FileName = filename;
+        process.StartInfo.Arguments = arguments;
+        process.Start();
+        process.WaitForExit();
+      }
+      catch ( Exception ex )
+      {
+        MessageBox.Show(ex.Message + Environment.NewLine + filename);
+      }
     }
 
   }
