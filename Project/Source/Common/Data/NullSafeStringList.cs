@@ -24,6 +24,19 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   public class NullSafeStringList : List<string>
   {
+
+    public NullSafeStringList()
+    {
+    }
+
+    public NullSafeStringList(int capacity) : base(capacity)
+    {
+    }
+
+    public NullSafeStringList(IEnumerable<string> collection) : base(collection)
+    {
+    }
+
     public new string this[int index]
     {
       get
@@ -40,17 +53,20 @@ namespace Ordisoftware.HebrewCommon
           CreateOutOfRange(index, value);
       }
     }
+
     private void CheckIndex(int index)
     {
       if ( index < 0 )
         throw new IndexOutOfRangeException(Localizer.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
     }
+
     private void CreateOutOfRange(int index, string value)
     {
       Capacity = index + 1;
       AddRange(Enumerable.Repeat("", index + 1 - Count));
       base[index] = value;
     }
+
   }
 
 }

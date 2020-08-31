@@ -61,7 +61,6 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Get the list translation.
     /// </summary>
-    /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing lang>list.</param>
     static public NullSafeStringList GetLang(this NullSafeDictionary<string, NullSafeStringList> values)
     {
