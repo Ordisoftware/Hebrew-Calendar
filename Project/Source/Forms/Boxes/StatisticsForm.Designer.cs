@@ -70,6 +70,7 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.Timer = new System.Windows.Forms.Timer(this.components);
       this.dBEventsCountLabel1 = new System.Windows.Forms.Label();
+      this.ApplicationStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.dBFileSizeLabel1 = new System.Windows.Forms.Label();
       this.dBFirstYearLabel1 = new System.Windows.Forms.Label();
       this.dBLastYearLabel1 = new System.Windows.Forms.Label();
@@ -79,6 +80,7 @@
       this.loadDataTimeLabel1 = new System.Windows.Forms.Label();
       this.monthViewEventsCountLabel1 = new System.Windows.Forms.Label();
       this.physicalMemoryFreeLabel1 = new System.Windows.Forms.Label();
+      this.SystemStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.runningTimeLabel1 = new System.Windows.Forms.Label();
       this.startingTimeLabel1 = new System.Windows.Forms.Label();
       this.totalVisibleMemoryLabel1 = new System.Windows.Forms.Label();
@@ -100,6 +102,8 @@
       this.generatePopulateDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.generateAnalyseDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxDatabase = new System.Windows.Forms.GroupBox();
+      this.dBADONETAccessLabel1 = new System.Windows.Forms.Label();
+      this.dBEngineversionLabel1 = new System.Windows.Forms.Label();
       this.GroupBox3Memoty = new System.Windows.Forms.GroupBox();
       this.memoryMaxGCUsageLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
@@ -108,10 +112,6 @@
       this.processorNameTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.GroupBoxRunning = new System.Windows.Forms.GroupBox();
       this.GroupBoxSystemLoad = new System.Windows.Forms.GroupBox();
-      this.dBEngineversionLabel1 = new System.Windows.Forms.Label();
-      this.dBADONETAccessLabel1 = new System.Windows.Forms.Label();
-      this.SystemStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.ApplicationStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       dBEventsCountLabel = new System.Windows.Forms.Label();
       dBFileSizeLabel = new System.Windows.Forms.Label();
       dBFirstYearLabel = new System.Windows.Forms.Label();
@@ -148,14 +148,14 @@
       dBEngineversionLabel = new System.Windows.Forms.Label();
       dBADONETAccessLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
       this.GroupBoxTimings.SuspendLayout();
       this.GroupBoxDatabase.SuspendLayout();
       this.GroupBox3Memoty.SuspendLayout();
       this.GroupBoxSystem.SuspendLayout();
       this.GroupBoxRunning.SuspendLayout();
       this.GroupBoxSystemLoad.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // dBEventsCountLabel
@@ -323,6 +323,16 @@
       resources.ApplyResources(memoryMaxGCUsageLabel, "memoryMaxGCUsageLabel");
       memoryMaxGCUsageLabel.Name = "memoryMaxGCUsageLabel";
       // 
+      // dBEngineversionLabel
+      // 
+      resources.ApplyResources(dBEngineversionLabel, "dBEngineversionLabel");
+      dBEngineversionLabel.Name = "dBEngineversionLabel";
+      // 
+      // dBADONETAccessLabel
+      // 
+      resources.ApplyResources(dBADONETAccessLabel, "dBADONETAccessLabel");
+      dBADONETAccessLabel.Name = "dBADONETAccessLabel";
+      // 
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.EditAlwaysOnTop);
@@ -357,6 +367,11 @@
       resources.ApplyResources(this.dBEventsCountLabel1, "dBEventsCountLabel1");
       this.dBEventsCountLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBEventsCount", true));
       this.dBEventsCountLabel1.Name = "dBEventsCountLabel1";
+      // 
+      // ApplicationStatisticsDataBindingSource
+      // 
+      this.ApplicationStatisticsDataBindingSource.AllowNew = false;
+      this.ApplicationStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.ApplicationStatistics);
       // 
       // dBFileSizeLabel1
       // 
@@ -411,6 +426,11 @@
       resources.ApplyResources(this.physicalMemoryFreeLabel1, "physicalMemoryFreeLabel1");
       this.physicalMemoryFreeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "PhysicalMemoryFree", true));
       this.physicalMemoryFreeLabel1.Name = "physicalMemoryFreeLabel1";
+      // 
+      // SystemStatisticsDataBindingSource
+      // 
+      this.SystemStatisticsDataBindingSource.AllowNew = false;
+      this.SystemStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCommon.SystemStatistics);
       // 
       // runningTimeLabel1
       // 
@@ -574,6 +594,18 @@
       this.GroupBoxDatabase.Name = "GroupBoxDatabase";
       this.GroupBoxDatabase.TabStop = false;
       // 
+      // dBADONETAccessLabel1
+      // 
+      resources.ApplyResources(this.dBADONETAccessLabel1, "dBADONETAccessLabel1");
+      this.dBADONETAccessLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBADONETAccess", true));
+      this.dBADONETAccessLabel1.Name = "dBADONETAccessLabel1";
+      // 
+      // dBEngineversionLabel1
+      // 
+      resources.ApplyResources(this.dBEngineversionLabel1, "dBEngineversionLabel1");
+      this.dBEngineversionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBEngineVersion", true));
+      this.dBEngineversionLabel1.Name = "dBEngineversionLabel1";
+      // 
       // GroupBox3Memoty
       // 
       this.GroupBox3Memoty.Controls.Add(physicalMemoryFreeLabel);
@@ -630,6 +662,7 @@
       // 
       // operatingSystemTextBox
       // 
+      this.operatingSystemTextBox.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       this.operatingSystemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "OperatingSystem", true));
       resources.ApplyResources(this.operatingSystemTextBox, "operatingSystemTextBox");
       this.operatingSystemTextBox.Name = "operatingSystemTextBox";
@@ -638,6 +671,7 @@
       // 
       // processorNameTextBox
       // 
+      this.processorNameTextBox.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
       this.processorNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "ProcessorName", true));
       resources.ApplyResources(this.processorNameTextBox, "processorNameTextBox");
       this.processorNameTextBox.Name = "processorNameTextBox";
@@ -660,38 +694,6 @@
       this.GroupBoxSystemLoad.Name = "GroupBoxSystemLoad";
       this.GroupBoxSystemLoad.TabStop = false;
       // 
-      // dBEngineversionLabel1
-      // 
-      resources.ApplyResources(this.dBEngineversionLabel1, "dBEngineversionLabel1");
-      this.dBEngineversionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBEngineVersion", true));
-      this.dBEngineversionLabel1.Name = "dBEngineversionLabel1";
-      // 
-      // dBEngineversionLabel
-      // 
-      resources.ApplyResources(dBEngineversionLabel, "dBEngineversionLabel");
-      dBEngineversionLabel.Name = "dBEngineversionLabel";
-      // 
-      // dBADONETAccessLabel1
-      // 
-      resources.ApplyResources(this.dBADONETAccessLabel1, "dBADONETAccessLabel1");
-      this.dBADONETAccessLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBADONETAccess", true));
-      this.dBADONETAccessLabel1.Name = "dBADONETAccessLabel1";
-      // 
-      // dBADONETAccessLabel
-      // 
-      resources.ApplyResources(dBADONETAccessLabel, "dBADONETAccessLabel");
-      dBADONETAccessLabel.Name = "dBADONETAccessLabel";
-      // 
-      // SystemStatisticsDataBindingSource
-      // 
-      this.SystemStatisticsDataBindingSource.AllowNew = false;
-      this.SystemStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCommon.SystemStatistics);
-      // 
-      // ApplicationStatisticsDataBindingSource
-      // 
-      this.ApplicationStatisticsDataBindingSource.AllowNew = false;
-      this.ApplicationStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.ApplicationStatistics);
-      // 
       // StatisticsForm
       // 
       resources.ApplyResources(this, "$this");
@@ -713,6 +715,8 @@
       this.Load += new System.EventHandler(this.SystemStatisticsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).EndInit();
       this.GroupBoxTimings.ResumeLayout(false);
       this.GroupBoxTimings.PerformLayout();
       this.GroupBoxDatabase.ResumeLayout(false);
@@ -725,8 +729,6 @@
       this.GroupBoxRunning.PerformLayout();
       this.GroupBoxSystemLoad.ResumeLayout(false);
       this.GroupBoxSystemLoad.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }

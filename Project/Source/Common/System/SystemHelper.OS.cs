@@ -13,6 +13,9 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Versioning;
 using System.Management;
 using Microsoft.Win32;
 
@@ -59,20 +62,29 @@ namespace Ordisoftware.HebrewCommon
       get
       {
         if ( string.IsNullOrEmpty(_OperatingSystem) )
-          try
+        {
+          string osName = get(() => Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "productName", "").ToString());
+          string osRelease = get(() => Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "").ToString());
+          if ( !string.IsNullOrEmpty(osRelease) ) osRelease = $" ({ osRelease})";
+          string osVersion = Environment.OSVersion.Version.ToString();
+          string osType = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
+          string clr = Environment.Version.ToString();
+          string dotnet = get(() =>
           {
-            string name = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "productName", "").ToString();
-            string release = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "").ToString();
-            string version = Environment.OSVersion.Version.ToString();
-            string type = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
-            string clr = Environment.Version.ToString();
-            _OperatingSystem = $"{name} {type} {version} ({release}){Globals.NL}CLR {clr}";
-          }
-          catch
-          {
-            _OperatingSystem = Localizer.EmptySlot.GetLang();
-          }
+            var attributes = Assembly.GetExecutingAssembly().CustomAttributes;
+            var result = attributes.FirstOrDefault(a => a.AttributeType == typeof(TargetFrameworkAttribute));
+            return result == null
+                   ? ".NET Framework " + Localizer.EmptySlot.GetLang()
+                   : result.NamedArguments[0].TypedValue.Value.ToString();
+          });
+          _OperatingSystem = $"{osName} {osType} {osVersion}{osRelease}{Globals.NL}{dotnet}{Globals.NL}CLR {clr}";
+        }
         return _OperatingSystem;
+        string get(Func<string> func)
+        {
+          try { return func(); }
+          catch { return Localizer.EmptySlot.GetLang(); }
+        }
       }
     }
     static private string _OperatingSystem;
