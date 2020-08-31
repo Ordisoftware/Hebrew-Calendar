@@ -51,17 +51,51 @@ namespace Ordisoftware.HebrewCommon
     static public string FormatMilliseconds(this long ms, bool excludems = false)
     {
       TimeSpan time = TimeSpan.FromMilliseconds(ms);
-      string result = string.Format("{0} d {1} h {2} m {3} s" + ( excludems ? "" : " {4} ms" ),
-                                    time.Days,
-                                    time.Hours,
-                                    time.Minutes,
-                                    time.Seconds,
-                                    time.Milliseconds);
-      if ( !excludems ) result = result.Replace("0 d 0 h 0 m 0 s", "");
-      return result.Replace("0 d 0 h 0 m", "")
-                   .Replace("0 d 0 h", "")
-                   .Replace("0 d ", "");
+      var list = MillisecondsFormatTemplates.GetLang();
+      int index = time.Days == 0 && time.Hours == 0 && time.Minutes == 0 && time.Seconds == 0
+                ? 0
+                : time.Days == 0 && time.Hours == 0 && time.Minutes == 0
+                  ? 1
+                  : time.Days == 0 && time.Hours == 0
+                    ? 2
+                    : time.Days == 0
+                      ? 3
+                      : 4;
+      string result = list[index];
+      if ( index > 0 && !excludems ) result += " " + list[0];
+      if ( index == 0 && excludems ) result = list[1];
+      return string.Format(result, time.Days, time.Hours, time.Minutes, time.Seconds, time.Milliseconds);
     }
+
+    /// <summary>
+    /// Indicate the templates to format milliseconds.
+    /// </summary>
+    static public NullSafeDictionary<string, NullSafeStringList> MillisecondsFormatTemplates
+      = new NullSafeDictionary<string, NullSafeStringList>
+      {
+        {
+          Languages.EN,
+          new NullSafeStringList
+          {
+            "{4} ms",
+            "{3} s",
+            "{2} m {3} s",
+            "{1} h {2} m {3} s",
+            "{0} d {1} h {2} m {3} s",
+          }
+        },
+        {
+          Languages.FR,
+          new NullSafeStringList
+          {
+            "{4} ms",
+            "{3} s",
+            "{2} m {3} s",
+            "{1} h {2} m {3} s",
+            "{0} j {1} h {2} m {3} s",
+          }
+        }
+      };
 
   }
 
