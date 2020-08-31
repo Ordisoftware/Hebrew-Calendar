@@ -142,31 +142,25 @@ namespace Ordisoftware.HebrewCalendar
           }
     }
 
+    static private readonly string[] list =
+    {
+      "andalé mono", "bitstream vera sans mono", "cascadia code", "consolas", "courier new", "courier",
+      "cutive mono", "dejavu sans mono", "droid sans mono", "droid sans mono", "everson mono", "fixed",
+      "fixedsys", "freemono", "go mono", "inconsolata", "iosevka", "jetbrains mono", "letter gothic",
+      "liberation mono", "lucida console", "menlo", "monaco", "monofur", "monospace", "nimbus mono l",
+      "noto mono", "overpass mono", "oxygen mono", "pragmatapro", "prestige elite", "pro font",
+      "roboto mono", "san francisco mono", "source code pro", "terminal", "terminus",
+      "tex gyre cursor", "ubuntu mono", "um typewriter"
+    };
+
     /// <summary>
-    /// Loads the fonts.
-    /// <remarks>
-    /// From http://stackoverflow.com/questions/224865/how-do-i-get-all-installed-fixed-width-fonts/225027
-    /// </remarks>
+    /// Loads the windows fonts names.
     /// </summary>
     private void LoadFonts()
     {
-      string[] list = { "Bitstream Vera Sans Mono", "Consolas", "Courier New", "Droid Sans Mono", "Lucida Console" };
       foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
-        if ( list.Contains(item.Name) )
+        if ( list.Contains(item.Name.ToLower()) )
           EditFontName.Items.Add(item.Name);
-      /*// Removed because MeasureText is very slow on Windows 10
-        foreach ( var item in new InstalledFontCollection().Families )
-        if ( item.Name == "Bitstream Vera Sans Mono" || item.Name == "Droid Sans Mono" )
-          EditFontName.Items.Add(item.Name);
-        else
-        if ( item.IsStyleAvailable(FontStyle.Regular) && !item.Name.StartsWith("Webdings") )
-          using ( var font = new Font(item, 10) )
-          {
-            float delta = 0;// TextRenderer.MeasureText("|" + MainForm.Instance.MoonNewText + "ABCDE", font).Width
-                            //- TextRenderer.MeasureText("|" + " abcde", font).Width;
-            if ( Math.Abs(delta) < float.Epsilon * 2 )
-              EditFontName.Items.Add(item.Name);
-          }*/
     }
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -180,11 +174,9 @@ namespace Ordisoftware.HebrewCalendar
       string lat = Settings.GPSLatitude;
       string lng = Settings.GPSLongitude;
       string timezone = Settings.TimeZone;
-      var bookmark1 = Settings.DateBookmark1;
-      var bookmark2 = Settings.DateBookmark2;
-      var bookmark3 = Settings.DateBookmark3;
-      var bookmark4 = Settings.DateBookmark4;
-      var bookmark5 = Settings.DateBookmark5;
+      var bookmarks = new DateTime[Program.DatesBookmarksCount];
+      for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
+        bookmarks[index - 1] = (DateTime)Program.Settings["DateBookmark" + index];
       int shabat = EditShabatDay.SelectedIndex;
       Settings.Reset();
       Settings.UpgradeResetRequiredV3_0 = false;
@@ -202,11 +194,8 @@ namespace Ordisoftware.HebrewCalendar
       Settings.ShabatDay = shabat;
       Settings.RestoreMainForm();
       Settings.Language = Languages.Current;
-      Settings.DateBookmark1 = bookmark1;
-      Settings.DateBookmark2 = bookmark2;
-      Settings.DateBookmark3 = bookmark3;
-      Settings.DateBookmark4 = bookmark4;
-      Settings.DateBookmark5 = bookmark5;
+      for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
+        Program.Settings["DateBookmark" + index] = bookmarks[index - 1];
       Close();
     }
 
