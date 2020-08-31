@@ -32,16 +32,16 @@ namespace Ordisoftware.HebrewCommon
 
     static private PerformanceCounter PerformanceCounter;
 
-    public string ProcessorName
-      => SystemHelper.ProcessorName;
+    public string Processor
+      => SystemHelper.Processor;
 
-    public string OperatingSystem
-      => SystemHelper.OperatingSystemName;
+    public string Platform
+      => SystemHelper.Platform;
 
     public string ProcessPriority
       => Globals.RealProcessPriority.ToString();
 
-    public string CurrentThreadPriority
+    public string ThreadPriority
       => Thread.CurrentThread.Priority.ToString();
 
     public string RunningTime
@@ -80,19 +80,19 @@ namespace Ordisoftware.HebrewCommon
     public string MemoryVirtualPeak
       => Process.PeakVirtualMemorySize64.FormatBytesSize();
 
-    public string MaxGCUsage
-      => _MaxGCUsage.FormatBytesSize();
+    public string MemoryGCPeak
+      => _MemoryGCPeak.FormatBytesSize();
 
     public string MemoryGC
     {
       get
       {
         long value = GC.GetTotalMemory(true);
-        if ( value > _MaxGCUsage ) _MaxGCUsage = value;
+        if ( value > _MemoryGCPeak ) _MemoryGCPeak = value;
         return value.FormatBytesSize();
       }
     }
-    static private long _MaxGCUsage;
+    static private long _MemoryGCPeak;
 
     public string CPULoad
     {
