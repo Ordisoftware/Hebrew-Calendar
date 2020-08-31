@@ -102,17 +102,18 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionOK_Click(object sender, EventArgs e)
     {
       var diff = EditYearLast.Value - EditYearFirst.Value + 1;
-      for ( int index = Program.BigCalendarLevels.Length - 1; index >= 0; index-- )
-        if ( diff > Program.BigCalendarLevels[index] )
-        {
-          string text = Translations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendarLevels[index], diff);
-          if ( !DisplayManager.QueryYesNo(text) )
+      if ( Program.Settings.BigCalendarWarningEnabled )
+        for ( int index = Program.BigCalendarLevels.Length - 1; index >= 0; index-- )
+          if ( diff > Program.BigCalendarLevels[index] )
           {
-            DialogResult = DialogResult.None;
-            return;
+            string text = Translations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendarLevels[index], diff);
+            if ( !DisplayManager.QueryYesNo(text) )
+            {
+              DialogResult = DialogResult.None;
+              return;
+            }
+            break;
           }
-          break;
-        }
       ActionCancel.Enabled = true;
     }
 

@@ -605,4 +605,7 @@
   <data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
     <value>Fermer la boite de rappel sur un click</value>
   </data>
+  <data name="EditBigCalendarWarning.Text" xml:space="preserve">
+    <value>Afficher alerte pour gros calendriers</value>
+  </data>
 </root>
