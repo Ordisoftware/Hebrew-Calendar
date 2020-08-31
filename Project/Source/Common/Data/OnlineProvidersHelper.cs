@@ -192,7 +192,6 @@ namespace Ordisoftware.HebrewCommon
           string line = file.ReadLine();
           string name = line.Split(new char[] { '(', ')' })[1].TrimEnd(' ', ',');
           AlreadyAcessedVarNames.Add(id, name);
-          file.Close();
           return name;
         }
       }

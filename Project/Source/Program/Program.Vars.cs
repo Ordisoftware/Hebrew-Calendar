@@ -56,17 +56,17 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate minimum items for load data to show the loading form.
     /// </summary>
-    public const int LoadingFormLoadDB = 15000 * 2;
+    public const int LoadingFormLoadDB = 10000 * 2;
 
     /// <summary>
     /// Indicate minimum items for generate data to show the loading form.
     /// </summary>
-    public const int LoadingFormGenerate = 4000;
+    public const int LoadingFormGenerate = 3000;
 
     /// <summary>
     /// Indicate minimum items for calc dates diff to show the loading form.
     /// </summary>
-    public const int LoadingFormDatesDiff = 20 * 365;
+    public const int LoadingFormDatesDiff = 15 * 365;
 
     /// <summary>
     /// Indicate maximum gregorian years interval that can be generated.

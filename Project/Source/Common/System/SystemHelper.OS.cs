@@ -13,6 +13,9 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Versioning;
 using System.Management;
 using Microsoft.Win32;
 
@@ -25,57 +28,68 @@ namespace Ordisoftware.HebrewCommon
   static partial class SystemHelper
   {
 
+    private const string HKLMWinNTCurrent = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion";
+
     /// <summary>
     /// Indicate the processor name.
     /// </summary>
-    static public string ProcessorName
+    static public string Processor
     {
       get
       {
-        if ( string.IsNullOrEmpty(_CPUName) )
+        if ( string.IsNullOrEmpty(_Processor) )
           try
           {
             var list = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor").Get();
             foreach ( var item in list )
             {
-              _CPUName = (string)item["Name"];
+              _Processor = (string)item["Name"];
               break;
             }
           }
           catch
           {
-            _CPUName = Localizer.EmptySlot.GetLang();
+            _Processor = Localizer.EmptySlot.GetLang();
           }
-        return _CPUName;
+        return _Processor;
       }
     }
-    static private string _CPUName;
+    static private string _Processor;
 
     /// <summary>
-    /// Indicate the operating system name.
+    /// Indicate the operating system, framework and CLR names and versions.
     /// </summary>
-    static public string OperatingSystemName
+    static public string Platform
     {
       get
       {
-        if ( string.IsNullOrEmpty(_OperatingSystem) )
-          try
+        if ( string.IsNullOrEmpty(_Platform) )
+        {
+          string osName = get(() => Registry.GetValue(HKLMWinNTCurrent, "productName", "").ToString());
+          string osRelease = get(() => Registry.GetValue(HKLMWinNTCurrent, "ReleaseId", "").ToString());
+          if ( !string.IsNullOrEmpty(osRelease) ) osRelease = $" ({ osRelease})";
+          string osVersion = Environment.OSVersion.Version.ToString();
+          string osType = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
+          string clr = Environment.Version.ToString();
+          string dotnet = get(() =>
           {
-            string name = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "productName", "").ToString();
-            string release = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "").ToString();
-            string version = Environment.OSVersion.Version.ToString();
-            string type = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
-            string clr = Environment.Version.ToString();
-            _OperatingSystem = $"{name} {type} {version} ({release}){Globals.NL}CLR {clr}";
-          }
-          catch
-          {
-            _OperatingSystem = Localizer.EmptySlot.GetLang();
-          }
-        return _OperatingSystem;
+            var attributes = Assembly.GetExecutingAssembly().CustomAttributes;
+            var result = attributes.FirstOrDefault(a => a.AttributeType == typeof(TargetFrameworkAttribute));
+            return result == null
+                   ? ".NET Framework " + Localizer.EmptySlot.GetLang()
+                   : result.NamedArguments[0].TypedValue.Value.ToString();
+          });
+          _Platform = $"{osName} {osType} {osVersion}{osRelease}{Globals.NL}{dotnet}{Globals.NL}CLR {clr}";
+        }
+        return _Platform;
+        string get(Func<string> func)
+        {
+          try { return func(); }
+          catch { return Localizer.EmptySlot.GetLang(); }
+        }
       }
     }
-    static private string _OperatingSystem;
+    static private string _Platform;
 
     /// <summary>
     /// Indicate the free physical memory formatted.

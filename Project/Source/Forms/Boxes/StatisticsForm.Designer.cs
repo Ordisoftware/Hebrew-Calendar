@@ -100,17 +100,17 @@
       this.generatePopulateDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.generateAnalyseDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxDatabase = new System.Windows.Forms.GroupBox();
+      this.dBADONETAccessLabel1 = new System.Windows.Forms.Label();
+      this.dBEngineversionLabel1 = new System.Windows.Forms.Label();
       this.GroupBox3Memoty = new System.Windows.Forms.GroupBox();
       this.memoryMaxGCUsageLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.executableModeLabel1 = new System.Windows.Forms.Label();
-      this.operatingSystemTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.processorNameTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.GroupBoxRunning = new System.Windows.Forms.GroupBox();
       this.GroupBoxSystemLoad = new System.Windows.Forms.GroupBox();
-      this.dBEngineversionLabel1 = new System.Windows.Forms.Label();
-      this.dBADONETAccessLabel1 = new System.Windows.Forms.Label();
       this.SystemStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.operatingSystemTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.processorNameTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.ApplicationStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       dBEventsCountLabel = new System.Windows.Forms.Label();
       dBFileSizeLabel = new System.Windows.Forms.Label();
@@ -323,6 +323,16 @@
       resources.ApplyResources(memoryMaxGCUsageLabel, "memoryMaxGCUsageLabel");
       memoryMaxGCUsageLabel.Name = "memoryMaxGCUsageLabel";
       // 
+      // dBEngineversionLabel
+      // 
+      resources.ApplyResources(dBEngineversionLabel, "dBEngineversionLabel");
+      dBEngineversionLabel.Name = "dBEngineversionLabel";
+      // 
+      // dBADONETAccessLabel
+      // 
+      resources.ApplyResources(dBADONETAccessLabel, "dBADONETAccessLabel");
+      dBADONETAccessLabel.Name = "dBADONETAccessLabel";
+      // 
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.EditAlwaysOnTop);
@@ -505,7 +515,7 @@
       // currentThreadPriorityLabel1
       // 
       resources.ApplyResources(this.currentThreadPriorityLabel1, "currentThreadPriorityLabel1");
-      this.currentThreadPriorityLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "CurrentThreadPriority", true));
+      this.currentThreadPriorityLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "ThreadPriority", true));
       this.currentThreadPriorityLabel1.Name = "currentThreadPriorityLabel1";
       // 
       // GroupBoxTimings
@@ -574,6 +584,18 @@
       this.GroupBoxDatabase.Name = "GroupBoxDatabase";
       this.GroupBoxDatabase.TabStop = false;
       // 
+      // dBADONETAccessLabel1
+      // 
+      resources.ApplyResources(this.dBADONETAccessLabel1, "dBADONETAccessLabel1");
+      this.dBADONETAccessLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBADONETAccess", true));
+      this.dBADONETAccessLabel1.Name = "dBADONETAccessLabel1";
+      // 
+      // dBEngineversionLabel1
+      // 
+      resources.ApplyResources(this.dBEngineversionLabel1, "dBEngineversionLabel1");
+      this.dBEngineversionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBEngineVersion", true));
+      this.dBEngineversionLabel1.Name = "dBEngineversionLabel1";
+      // 
       // GroupBox3Memoty
       // 
       this.GroupBox3Memoty.Controls.Add(physicalMemoryFreeLabel);
@@ -603,7 +625,7 @@
       // memoryMaxGCUsageLabel1
       // 
       resources.ApplyResources(this.memoryMaxGCUsageLabel1, "memoryMaxGCUsageLabel1");
-      this.memoryMaxGCUsageLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "MaxGCUsage", true));
+      this.memoryMaxGCUsageLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "MemoryGCPeak", true));
       this.memoryMaxGCUsageLabel1.Name = "memoryMaxGCUsageLabel1";
       // 
       // GroupBoxSystem
@@ -628,22 +650,6 @@
       resources.ApplyResources(this.executableModeLabel1, "executableModeLabel1");
       this.executableModeLabel1.Name = "executableModeLabel1";
       // 
-      // operatingSystemTextBox
-      // 
-      this.operatingSystemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "OperatingSystem", true));
-      resources.ApplyResources(this.operatingSystemTextBox, "operatingSystemTextBox");
-      this.operatingSystemTextBox.Name = "operatingSystemTextBox";
-      this.operatingSystemTextBox.ReadOnly = true;
-      this.operatingSystemTextBox.TabStop = false;
-      // 
-      // processorNameTextBox
-      // 
-      this.processorNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "ProcessorName", true));
-      resources.ApplyResources(this.processorNameTextBox, "processorNameTextBox");
-      this.processorNameTextBox.Name = "processorNameTextBox";
-      this.processorNameTextBox.ReadOnly = true;
-      this.processorNameTextBox.TabStop = false;
-      // 
       // GroupBoxRunning
       // 
       this.GroupBoxRunning.Controls.Add(runningTimeLabel);
@@ -660,32 +666,28 @@
       this.GroupBoxSystemLoad.Name = "GroupBoxSystemLoad";
       this.GroupBoxSystemLoad.TabStop = false;
       // 
-      // dBEngineversionLabel1
-      // 
-      resources.ApplyResources(this.dBEngineversionLabel1, "dBEngineversionLabel1");
-      this.dBEngineversionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBEngineVersion", true));
-      this.dBEngineversionLabel1.Name = "dBEngineversionLabel1";
-      // 
-      // dBEngineversionLabel
-      // 
-      resources.ApplyResources(dBEngineversionLabel, "dBEngineversionLabel");
-      dBEngineversionLabel.Name = "dBEngineversionLabel";
-      // 
-      // dBADONETAccessLabel1
-      // 
-      resources.ApplyResources(this.dBADONETAccessLabel1, "dBADONETAccessLabel1");
-      this.dBADONETAccessLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBADONETAccess", true));
-      this.dBADONETAccessLabel1.Name = "dBADONETAccessLabel1";
-      // 
-      // dBADONETAccessLabel
-      // 
-      resources.ApplyResources(dBADONETAccessLabel, "dBADONETAccessLabel");
-      dBADONETAccessLabel.Name = "dBADONETAccessLabel";
-      // 
       // SystemStatisticsDataBindingSource
       // 
       this.SystemStatisticsDataBindingSource.AllowNew = false;
       this.SystemStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCommon.SystemStatistics);
+      // 
+      // operatingSystemTextBox
+      // 
+      this.operatingSystemTextBox.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.operatingSystemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "Platform", true));
+      resources.ApplyResources(this.operatingSystemTextBox, "operatingSystemTextBox");
+      this.operatingSystemTextBox.Name = "operatingSystemTextBox";
+      this.operatingSystemTextBox.ReadOnly = true;
+      this.operatingSystemTextBox.TabStop = false;
+      // 
+      // processorNameTextBox
+      // 
+      this.processorNameTextBox.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.processorNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "Processor", true));
+      resources.ApplyResources(this.processorNameTextBox, "processorNameTextBox");
+      this.processorNameTextBox.Name = "processorNameTextBox";
+      this.processorNameTextBox.ReadOnly = true;
+      this.processorNameTextBox.TabStop = false;
       // 
       // ApplicationStatisticsDataBindingSource
       // 

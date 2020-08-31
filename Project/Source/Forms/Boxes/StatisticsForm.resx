@@ -457,7 +457,7 @@
     <value>NoControl</value>
   </data>
   <data name="operatingSystemLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 143</value>
+    <value>15, 142</value>
   </data>
   <data name="operatingSystemLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 13</value>
@@ -1293,6 +1293,126 @@
   <data name="&gt;&gt;memoryMaxGCUsageLabel.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <metadata name="dBEngineversionLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="dBEngineversionLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="dBEngineversionLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="dBEngineversionLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dBEngineversionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 25</value>
+  </data>
+  <data name="dBEngineversionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="dBEngineversionLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="dBEngineversionLabel.Text" xml:space="preserve">
+    <value>Engine</value>
+  </data>
+  <data name="&gt;&gt;dBEngineversionLabel.Name" xml:space="preserve">
+    <value>dBEngineversionLabel</value>
+  </data>
+  <data name="&gt;&gt;dBEngineversionLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dBEngineversionLabel.Parent" xml:space="preserve">
+    <value>GroupBoxDatabase</value>
+  </data>
+  <data name="&gt;&gt;dBEngineversionLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="dBADONETAccessLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="dBADONETAccessLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="dBADONETAccessLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="dBADONETAccessLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dBADONETAccessLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 45</value>
+  </data>
+  <data name="dBADONETAccessLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="dBADONETAccessLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="dBADONETAccessLabel.Text" xml:space="preserve">
+    <value>ADO.NET</value>
+  </data>
+  <data name="&gt;&gt;dBADONETAccessLabel.Name" xml:space="preserve">
+    <value>dBADONETAccessLabel</value>
+  </data>
+  <data name="&gt;&gt;dBADONETAccessLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dBADONETAccessLabel.Parent" xml:space="preserve">
+    <value>GroupBoxDatabase</value>
+  </data>
+  <data name="&gt;&gt;dBADONETAccessLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditAlwaysOnTop.Name" xml:space="preserve">
+    <value>EditAlwaysOnTop</value>
+  </data>
+  <data name="&gt;&gt;EditAlwaysOnTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAlwaysOnTop.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;EditAlwaysOnTop.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 573</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 28</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="EditAlwaysOnTop.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1353,39 +1473,15 @@
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 558</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 28</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>525, 17</value>
+  </metadata>
+  <metadata name="ApplicationStatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <data name="dBEventsCountLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <metadata name="ApplicationStatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="dBEventsCountLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1680,12 +1776,12 @@
   <data name="&gt;&gt;monthViewEventsCountLabel1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="physicalMemoryFreeLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <metadata name="SystemStatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>282, 17</value>
   </metadata>
+  <data name="physicalMemoryFreeLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="physicalMemoryFreeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2208,6 +2304,9 @@
   <data name="currentThreadPriorityLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <metadata name="SystemStatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>282, 17</value>
+  </metadata>
   <data name="currentThreadPriorityLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2237,6 +2336,66 @@
   </data>
   <data name="&gt;&gt;currentThreadPriorityLabel1.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="&gt;&gt;generateTextReportTimeLabel1.Name" xml:space="preserve">
+    <value>generateTextReportTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;generateTextReportTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;generateTextReportTimeLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxTimings</value>
+  </data>
+  <data name="&gt;&gt;generateTextReportTimeLabel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;generatePopulateDaysTimeLabel1.Name" xml:space="preserve">
+    <value>generatePopulateDaysTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;generatePopulateDaysTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;generatePopulateDaysTimeLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxTimings</value>
+  </data>
+  <data name="&gt;&gt;generatePopulateDaysTimeLabel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;generateAnalyseDaysTimeLabel1.Name" xml:space="preserve">
+    <value>generateAnalyseDaysTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;generateAnalyseDaysTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;generateAnalyseDaysTimeLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxTimings</value>
+  </data>
+  <data name="&gt;&gt;generateAnalyseDaysTimeLabel1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="GroupBoxTimings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 79</value>
+  </data>
+  <data name="GroupBoxTimings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 221</value>
+  </data>
+  <data name="GroupBoxTimings.TabIndex" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="GroupBoxTimings.Text" xml:space="preserve">
+    <value>Timings</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTimings.Name" xml:space="preserve">
+    <value>GroupBoxTimings</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTimings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTimings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTimings.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="generateTextReportTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2328,101 +2487,53 @@
   <data name="&gt;&gt;generateAnalyseDaysTimeLabel1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="GroupBoxTimings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 79</value>
+  <data name="&gt;&gt;dBADONETAccessLabel1.Name" xml:space="preserve">
+    <value>dBADONETAccessLabel1</value>
   </data>
-  <data name="GroupBoxTimings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 205</value>
+  <data name="&gt;&gt;dBADONETAccessLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="GroupBoxTimings.TabIndex" type="System.Int32, mscorlib">
-    <value>115</value>
+  <data name="&gt;&gt;dBADONETAccessLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxDatabase</value>
   </data>
-  <data name="GroupBoxTimings.Text" xml:space="preserve">
-    <value>Timings</value>
+  <data name="&gt;&gt;dBADONETAccessLabel1.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTimings.Name" xml:space="preserve">
-    <value>GroupBoxTimings</value>
+  <data name="&gt;&gt;dBEngineversionLabel1.Name" xml:space="preserve">
+    <value>dBEngineversionLabel1</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTimings.Type" xml:space="preserve">
+  <data name="&gt;&gt;dBEngineversionLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dBEngineversionLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxDatabase</value>
+  </data>
+  <data name="&gt;&gt;dBEngineversionLabel1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="GroupBoxDatabase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 311</value>
+  </data>
+  <data name="GroupBoxDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 250</value>
+  </data>
+  <data name="GroupBoxDatabase.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="GroupBoxDatabase.Text" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxDatabase.Name" xml:space="preserve">
+    <value>GroupBoxDatabase</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxDatabase.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTimings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupBoxDatabase.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GroupBoxTimings.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="dBADONETAccessLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="dBADONETAccessLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="dBADONETAccessLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="dBADONETAccessLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="dBADONETAccessLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 45</value>
-  </data>
-  <data name="dBADONETAccessLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
-  </data>
-  <data name="dBADONETAccessLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="dBADONETAccessLabel.Text" xml:space="preserve">
-    <value>ADO.NET</value>
-  </data>
-  <data name="&gt;&gt;dBADONETAccessLabel.Name" xml:space="preserve">
-    <value>dBADONETAccessLabel</value>
-  </data>
-  <data name="&gt;&gt;dBADONETAccessLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBADONETAccessLabel.Parent" xml:space="preserve">
-    <value>GroupBoxDatabase</value>
-  </data>
-  <data name="&gt;&gt;dBADONETAccessLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="dBEngineversionLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="dBEngineversionLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="dBEngineversionLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="dBEngineversionLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="dBEngineversionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
-  </data>
-  <data name="dBEngineversionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="dBEngineversionLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="dBEngineversionLabel.Text" xml:space="preserve">
-    <value>Engine</value>
-  </data>
-  <data name="&gt;&gt;dBEngineversionLabel.Name" xml:space="preserve">
-    <value>dBEngineversionLabel</value>
-  </data>
-  <data name="&gt;&gt;dBEngineversionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBEngineversionLabel.Parent" xml:space="preserve">
-    <value>GroupBoxDatabase</value>
-  </data>
-  <data name="&gt;&gt;dBEngineversionLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;GroupBoxDatabase.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="dBADONETAccessLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2490,29 +2601,41 @@
   <data name="&gt;&gt;dBEngineversionLabel1.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="GroupBoxDatabase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 295</value>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel1.Name" xml:space="preserve">
+    <value>memoryMaxGCUsageLabel1</value>
   </data>
-  <data name="GroupBoxDatabase.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="&gt;&gt;memoryMaxGCUsageLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel1.Parent" xml:space="preserve">
+    <value>GroupBox3Memoty</value>
+  </data>
+  <data name="&gt;&gt;memoryMaxGCUsageLabel1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="GroupBox3Memoty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 311</value>
+  </data>
+  <data name="GroupBox3Memoty.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 250</value>
   </data>
-  <data name="GroupBoxDatabase.TabIndex" type="System.Int32, mscorlib">
-    <value>116</value>
+  <data name="GroupBox3Memoty.TabIndex" type="System.Int32, mscorlib">
+    <value>117</value>
   </data>
-  <data name="GroupBoxDatabase.Text" xml:space="preserve">
-    <value>Database</value>
+  <data name="GroupBox3Memoty.Text" xml:space="preserve">
+    <value>Memory</value>
   </data>
-  <data name="&gt;&gt;GroupBoxDatabase.Name" xml:space="preserve">
-    <value>GroupBoxDatabase</value>
+  <data name="&gt;&gt;GroupBox3Memoty.Name" xml:space="preserve">
+    <value>GroupBox3Memoty</value>
   </data>
-  <data name="&gt;&gt;GroupBoxDatabase.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupBox3Memoty.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBoxDatabase.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupBox3Memoty.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GroupBoxDatabase.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;GroupBox3Memoty.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="memoryMaxGCUsageLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2547,30 +2670,6 @@
   <data name="&gt;&gt;memoryMaxGCUsageLabel1.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="GroupBox3Memoty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 295</value>
-  </data>
-  <data name="GroupBox3Memoty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 250</value>
-  </data>
-  <data name="GroupBox3Memoty.TabIndex" type="System.Int32, mscorlib">
-    <value>117</value>
-  </data>
-  <data name="GroupBox3Memoty.Text" xml:space="preserve">
-    <value>Memory</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3Memoty.Name" xml:space="preserve">
-    <value>GroupBox3Memoty</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3Memoty.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3Memoty.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3Memoty.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="executableModeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2602,13 +2701,13 @@
     <value>1</value>
   </data>
   <data name="operatingSystemTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 161</value>
+    <value>18, 160</value>
   </data>
   <data name="operatingSystemTextBox.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="operatingSystemTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 35</value>
+    <value>220, 48</value>
   </data>
   <data name="operatingSystemTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>116</value>
@@ -2620,7 +2719,7 @@
     <value>operatingSystemTextBox</value>
   </data>
   <data name="&gt;&gt;operatingSystemTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;operatingSystemTextBox.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -2644,7 +2743,7 @@
     <value>processorNameTextBox</value>
   </data>
   <data name="&gt;&gt;processorNameTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ordisoftware.HebrewCommon.UndoRedoTextBox, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;processorNameTextBox.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -2656,7 +2755,7 @@
     <value>280, 79</value>
   </data>
   <data name="GroupBoxSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 205</value>
+    <value>250, 221</value>
   </data>
   <data name="GroupBoxSystem.TabIndex" type="System.Int32, mscorlib">
     <value>118</value>
@@ -2724,6 +2823,9 @@
   <data name="&gt;&gt;GroupBoxSystemLoad.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="ApplicationStatisticsDataBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2731,7 +2833,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>544, 596</value>
+    <value>544, 611</value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

@@ -24,8 +24,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide view letter details delegate.
   /// </summary>
-  /// <param name="code"></param>
-  public delegate void ViewLetterDetails(string code);
+  public delegate void ViewLetterDetails(LettersControl sender, string code);
 
   /// <summary>
   /// Provide Letters input panel Control class.
@@ -305,7 +304,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( ViewLetterDetails == null ) return;
       var button = (Button)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
-      ViewLetterDetails(button.Text);
+      ViewLetterDetails(this, button.Text);
     }
 
     private void ContextMenuLetter_Opened(object sender, EventArgs e)

@@ -14,6 +14,7 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace Ordisoftware.HebrewCommon
 {
@@ -21,8 +22,37 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide null safe string dictionary.
   /// </summary>
+  [Serializable]
   public class NullSafeStringDictionary : Dictionary<string, string>
   {
+    public NullSafeStringDictionary()
+    {
+    }
+
+    public NullSafeStringDictionary(int capacity) : base(capacity)
+    {
+    }
+
+    public NullSafeStringDictionary(IEqualityComparer<string> comparer) : base(comparer)
+    {
+    }
+
+    public NullSafeStringDictionary(IDictionary<string, string> dictionary) : base(dictionary)
+    {
+    }
+
+    public NullSafeStringDictionary(int capacity, IEqualityComparer<string> comparer) : base(capacity, comparer)
+    {
+    }
+
+    public NullSafeStringDictionary(IDictionary<string, string> dictionary, IEqualityComparer<string> comparer) : base(dictionary, comparer)
+    {
+    }
+
+    protected NullSafeStringDictionary(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
+
     public new string this[string key]
     {
       get

@@ -1581,5 +1581,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["Paramètre"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BigCalendarWarningEnabled {
+            get {
+                return ((bool)(this["BigCalendarWarningEnabled"]));
+            }
+            set {
+                this["BigCalendarWarningEnabled"] = value;
+            }
+        }
     }
 }

@@ -247,7 +247,7 @@
     <value>Month</value>
   </data>
   <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>110</value>
+    <value>120</value>
   </data>
   <data name="ListItems.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>

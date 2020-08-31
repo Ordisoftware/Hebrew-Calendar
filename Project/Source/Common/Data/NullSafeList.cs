@@ -22,8 +22,22 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide null safe list.
   /// </summary>
+  [Serializable]
   public class NullSafeList<T> : List<T> where T : new()
   {
+
+    public NullSafeList()
+    {
+    }
+
+    public NullSafeList(int capacity) : base(capacity)
+    {
+    }
+
+    public NullSafeList(IEnumerable<T> collection) : base(collection)
+    {
+    }
+
     public new T this[int index]
     {
       get
@@ -54,6 +68,7 @@ namespace Ordisoftware.HebrewCommon
       AddRange(Enumerable.Repeat(new T(), index + 1 - Count));
       base[index] = value;
     }
+
   }
 
 }

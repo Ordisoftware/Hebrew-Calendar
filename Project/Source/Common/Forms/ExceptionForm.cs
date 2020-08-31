@@ -161,7 +161,7 @@ namespace Ordisoftware.HebrewCommon
         body.AppendLine();
         body.AppendLine("## SYSTEM");
         body.AppendLine();
-        body.AppendLine(SystemHelper.OperatingSystemName);
+        body.AppendLine(SystemHelper.Platform);
         body.AppendLine("Total Visible Memory: " + SystemHelper.TotalVisibleMemory);
         body.AppendLine("Free Physical Memory: " + SystemHelper.PhysicalMemoryFree);
         body.AppendLine();
