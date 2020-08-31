@@ -109,15 +109,6 @@ namespace Ordisoftware.HebrewCalendar
             return true;
           }
           break;
-        case Keys.Right:
-          if ( Settings.CurrentView == ViewMode.Month )
-          {
-            var date = SQLiteDate.ToDateTime(CurrentDay.Date);
-            date = new DateTime(date.Year, date.Month, 1);
-            GoToDate(date.AddMonths(1));
-            return true;
-          }
-          break;
         case Keys.Left:
           if ( Settings.CurrentView == ViewMode.Month )
           {
@@ -127,12 +118,21 @@ namespace Ordisoftware.HebrewCalendar
             return true;
           }
           break;
+        case Keys.Right:
+          if ( Settings.CurrentView == ViewMode.Month )
+          {
+            var date = SQLiteDate.ToDateTime(CurrentDay.Date);
+            date = new DateTime(date.Year, date.Month, 1);
+            GoToDate(date.AddMonths(1));
+            return true;
+          }
+          break;
         case Keys.Up:
           if ( Settings.CurrentView == ViewMode.Month )
           {
             var date = SQLiteDate.ToDateTime(CurrentDay.Date);
             date = new DateTime(date.Year, date.Month, 1);
-            GoToDate(date.AddYears(1));
+            GoToDate(date.AddYears(-1));
             return true;
           }
           break;
@@ -141,7 +141,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             var date = SQLiteDate.ToDateTime(CurrentDay.Date);
             date = new DateTime(date.Year, date.Month, 1);
-            GoToDate(date.AddYears(-1));
+            GoToDate(date.AddYears(1));
             return true;
           }
           break;
