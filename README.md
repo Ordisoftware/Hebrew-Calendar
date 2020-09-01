@@ -154,7 +154,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Add keyboard shortcuts to navigate in the calendar month view.
 - Add search gregorian month form.
-- Add usage statistics form in tools menu.
 - Add tools menu duplicated in the tray icon.
 - Add force database optimize at next startup in tools menu
 - Add option to define the years interval for auto-generation.
@@ -165,11 +164,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set the maximum years interval allowed to generate the data.
 - Add mute windows volume in addition to stop media playing.
 - Fix stop media playing (stop instead of play/pause media).
-- Fix app not responding on windows logoff or system shutdown.
 - Fix day selection to allow only generated years interval.
 - Improve dates diff calculator to show more stats in a form having bookmarks.
 - Improve years to generate box with predefined intervals and change some constants.
-- Improve check update to allow auto update or direct download or open app web page.
 - Improve GPS finder to try to auto-select time zone based on country or city.
 - Improve month view drawing speed by a half.
 - Improve data generation speed by a half.
@@ -177,10 +174,15 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Remove the generate years selection box at startup if database is empty or new.
 - Change default years interval generation to 10.
 - Change text report that is no more stored in the database but in a file.
+- Add usage statistics form in tools menu.
+- Improve check update to allow auto update or direct download or open app web page.
+- Fix app not responding on windows logoff or system shutdown.
 - Some UI/UX improvements.
 - Some code refactorings.
+- Update help.
 - Update to SQLite 3.32.3 ODBC Driver.
 - Update Framework .NET version to 4.7.2 for only Windows 7 SP1 or higher.
+- Improve setup.
 
 #### 2020.08.22 - Version 4.1
 
