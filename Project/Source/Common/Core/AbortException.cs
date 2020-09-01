@@ -14,12 +14,13 @@
 /// <created> 2007-05 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Runtime.Serialization;
 
 namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide abort Exception.
+  /// Provide abort exception.
   /// </summary>
   [Serializable]
   public class AbortException : Exception
@@ -57,11 +58,15 @@ namespace Ordisoftware.HebrewCommon
     /// Constructor.
     /// </summary>
     /// <param name="message">The message.</param>
-    /// <param name="inner">The inner.</param>
-    public AbortException(string message, Exception inner)
-      : base(msgcode, inner)
+    /// <param name="innerException">The inner exception.</param>
+    public AbortException(string message, Exception innerException)
+      : base(msgcode, innerException)
     {
       Data.Add(argname, message);
+    }
+
+    protected AbortException(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
     }
 
   }

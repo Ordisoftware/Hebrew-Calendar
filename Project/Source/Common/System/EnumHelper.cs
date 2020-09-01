@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
 
@@ -21,22 +21,27 @@ namespace Ordisoftware.HebrewCommon
   // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
   static public class EnumHelper
   {
-      public static T Next<T>(this T v) where T : struct
-      {
-        return Enum.GetValues(v.GetType()).Cast<T>().Concat(new[] { default(T) })
-                   .SkipWhile(e => !v.Equals(e))
-                   .Skip(1)
-                   .First();
-      }
+    static public T Next<T>(this T value) where T : struct
+    {
+      return Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
+                 .SkipWhile(e => !value.Equals(e))
+                 .Skip(1)
+                 .First();
+    }
 
-      public static T Previous<T>(this T v) where T : struct
-      {
-        return Enum.GetValues(v.GetType()).Cast<T>().Concat(new[] { default(T) })
-                   .Reverse()
-                   .SkipWhile(e => !v.Equals(e))
-                   .Skip(1)
-                   .First();
-      }
+    static public T Previous<T>(this T value) where T : struct
+    {
+      return Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
+                 .Reverse()
+                 .SkipWhile(e => !value.Equals(e))
+                 .Skip(1)
+                 .First();
+    }
+
+    static public string GetFullname<T>(this T value) where T : struct
+    {
+      return value.GetType().Name + "." + value.ToString();
+    }
 
   }
 

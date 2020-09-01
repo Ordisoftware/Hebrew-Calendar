@@ -101,7 +101,7 @@ namespace Ordisoftware.HebrewCommon
         if ( PerformanceCounter == null )
         {
           LoadingForm.Instance.Initialize(Localizer.Initializing.GetLang(), 1, 0);
-          LoadingForm.Instance.DoProgress(1);
+          LoadingForm.Instance.SetProgress(1);
           Application.DoEvents();
           PerformanceCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
           LoadingForm.Instance.Hide();

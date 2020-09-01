@@ -68,7 +68,6 @@ namespace Ordisoftware.HebrewCommon
       ProgressBar.Maximum = UseQuanta ? QuantaTotal - 1 : count - 1;
       ProgressBar.Refresh();
       LabelOperation.Text = text;
-      LabelOperation.Refresh();
       Refresh();
       Application.DoEvents();
     }
@@ -93,11 +92,10 @@ namespace Ordisoftware.HebrewCommon
       Progressing?.Invoke();
     }
 
-    public void DoProgress(int index)
+    public void SetProgress(int index)
     {
       ProgressBar.Value = index > ProgressBar.Maximum ? ProgressBar.Maximum : index;
       ProgressBar.Refresh();
-      Application.DoEvents();
     }
 
   }

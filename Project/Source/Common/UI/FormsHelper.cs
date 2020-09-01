@@ -90,7 +90,7 @@ namespace Ordisoftware.HebrewCommon
         case ControlLocation.Loose:
           break;
         default:
-          throw new NotImplementedException(location.ToString());
+          throw new NotImplementedExceptionEx(location.ToString());
       }
     }
 

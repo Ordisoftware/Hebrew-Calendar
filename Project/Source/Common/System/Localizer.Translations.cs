@@ -172,13 +172,6 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "Il n'y a pas de nouvelle version de disponible." }
       };
 
-    static public readonly NullSafeStringDictionary NewVersionAvailable
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "A newer version is available : {0}" },
-        { Languages.FR, "Une nouvelle version est disponible : {0}" }
-      };
-
     static public readonly NullSafeStringDictionary DownloadingNewVersion
       = new NullSafeStringDictionary()
       {
@@ -261,6 +254,13 @@ namespace Ordisoftware.HebrewCommon
                         "Toutes les modifications seront perdues." + Globals.NL2 +
                         AskToContinue[Languages.FR]
         },
+      };
+
+    static public readonly NullSafeStringDictionary NotImplemented
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Not implemented: {0}" },
+        { Languages.FR, "Non implémenté : {0}" },
       };
 
     static public readonly NullSafeStringDictionary CallMethodError
@@ -395,8 +395,15 @@ namespace Ordisoftware.HebrewCommon
     static public readonly NullSafeStringDictionary AskToDeleteBookmark
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Remove the bookmark?" },
+        { Languages.EN, "Erase the bookmark?" },
         { Languages.FR, "Effacer le signet ?" }
+      };
+
+    static public readonly NullSafeStringDictionary AskToDeleteBookmarkAll
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Erase all bookmarks?" },
+        { Languages.FR, "Effacer tous les signets ?" }
       };
 
     static public readonly NullSafeStringDictionary AskToReplaceBookmark

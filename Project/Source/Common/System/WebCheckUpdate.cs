@@ -74,34 +74,36 @@ namespace Ordisoftware.HebrewCommon
           }
           else
           {
-            var form = new WebUpdateForm(version);
-            if ( form.ShowDialog() != DialogResult.OK ) return false;
-            if ( form.SelectDownload.Checked )
-              Shell.OpenWebLink(filename);
-            else
-            if ( form.SelectInstall.Checked )
+            var result = WebUpdateForm.Run(version);
+            switch ( result )
             {
-              LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
-              bool finished = false;
-              string tempfile = Path.GetTempPath() + string.Format(Globals.SetupFilename, content[0]);
-              client.DownloadProgressChanged += (sender, e) =>
-              {
-                LoadingForm.Instance.DoProgress(e.ProgressPercentage);
-              };
-              client.DownloadFileCompleted += (sender, e) =>
-              {
-                finished = true;
-              };
-              client.DownloadFileAsync(new Uri(filename), tempfile);
-              while ( !finished )
-              {
-                Thread.Sleep(100);
-                Application.DoEvents();
-              }
-              Shell.Run(tempfile, "/SP- /SILENT");
-              Globals.IsExiting = true;
-              Application.Exit();
-              return true;
+              case WebUpdateSelection.Download:
+                Shell.OpenWebLink(filename);
+                break;
+              case WebUpdateSelection.Install:
+                LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
+                bool finished = false;
+                string tempfile = Path.GetTempPath() + string.Format(Globals.SetupFilename, content[0]);
+                client.DownloadProgressChanged += (sender, e) =>
+                {
+                  LoadingForm.Instance.SetProgress(e.ProgressPercentage);
+                };
+                client.DownloadFileCompleted += (sender, e) =>
+                {
+                  finished = true;
+                };
+                client.DownloadFileAsync(new Uri(filename), tempfile);
+                while ( !finished )
+                {
+                  Thread.Sleep(100);
+                  Application.DoEvents();
+                }
+                Shell.Run(tempfile, "/SP- /SILENT");
+                Globals.IsExiting = true;
+                Application.Exit();
+                return true;
+              default:
+                throw new NotImplementedExceptionEx(result.GetFullname());
             }
           }
         }

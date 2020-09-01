@@ -142,4 +142,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Mise à jour de </value>
   </data>
+  <data name="LabelNewVersion.Text" xml:space="preserve">
+    <value>Une nouvelle version est disponible : </value>
+  </data>
 </root>
