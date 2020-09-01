@@ -14,8 +14,9 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Data.Odbc;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace Ordisoftware.HebrewCommon
 {
@@ -31,6 +32,28 @@ namespace Ordisoftware.HebrewCommon
     static public string EngineVersion { get; private set; }
     static public string ADONETAccess { get; private set; }
 
+    [DllImport("ODBCCP32.dll")]
+    static public extern bool SQLConfigDataSource(IntPtr parent, int request, string driver, string attributes);
+
+    [DllImport("ODBCCP32.dll")]
+    static public extern int SQLGetPrivateProfileString(string lpszSection, string lpszEntry, string lpszDefault, string @RetBuffer, int cbRetBuffer, string lpszFilename);
+
+    private const short ODBC_ADD_DSN = 1;
+    private const short ODBC_CONFIG_DSN = 2;
+    private const short ODBC_REMOVE_DSN = 3;
+    private const short ODBC_ADD_SYS_DSN = 4;
+    private const short ODBC_CONFIG_SYS_DSN = 5;
+    private const short ODBC_REMOVE_SYS_DSN = 6;
+    private const int vbAPINull = 0;
+
+    static public int CheckForDSN(string strDSNName)
+    {
+      int iData;
+      string strRetBuff = "";
+      iData = SQLGetPrivateProfileString("ODBC Data Sources", strDSNName, "", strRetBuff, 200, "odbc.ini");
+      return iData;
+    }
+
     /// <summary>
     /// Get a single line of a string.
     /// </summary>
@@ -40,6 +63,15 @@ namespace Ordisoftware.HebrewCommon
     {
       var lines = sql.Split(Globals.NL.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
       return string.Join(" ", lines.Select(line => line.Trim()));
+    }
+
+    /// <summary>
+    /// Check if the DSN exists and create it if not.
+    /// </summary>
+    static public void CreateDSNIfNotExists()
+    {
+      if ( CheckForDSN(Globals.OdbcDSN) == 0 )
+        Shell.Run("regedit.exe", $"/s \"{Globals.RegisterOdbcFilename}\"").WaitForExit();
     }
 
     /// <summary>
@@ -245,6 +277,40 @@ namespace Ordisoftware.HebrewCommon
       string sql = $"ALTER TABLE %TABLE% ADD COLUMN %COLUMN% {type} {valueDefault}";
       return connection.CheckColumn(table, column, sql);
     }
+
+    //https://stackoverflow.com/questions/9256368/check-for-system-dsn-and-create-system-dsn-if-not-existing-iseries-access-odbc
+    /*static public void CreateDSN(string strDSNName)
+    {
+      string strDriver;
+      string strAttributes;
+      try
+      {
+        string strDSN = "";
+        string _server = "localhost";
+        string _user = "";
+        string _pass = "";
+        string _description = "";
+        strDriver = "C:\\Windows\\system32\\sqlite3odbc.dll";
+        //strAttributes = "DSN=" + strDSNName + "\0";
+        //strAttributes += "SYSTEM=" + _server + "\0";
+        //strAttributes += "UID=" + _user + "\0";
+        strAttributes = "Database=%USERPROFILE%\\AppData\\Roaming\\Ordisoftware\\Hebrew Calendar\\Hebrew-Calendar.sqlite\0";
+        //strAttributes += "PWD=" + _pass + "\0";
+        //strDSN = strDSN + "System = " + _server + "\n";
+        //strDSN = strDSN + "Description = " + _description + "\n";
+        if ( SQLConfigDataSource((IntPtr)vbAPINull, ODBC_ADD_SYS_DSN, strDriver, strAttributes) )
+          Console.WriteLine("DSN was created successfully");
+        else
+          Console.WriteLine("DSN creation failed...");
+      }
+      catch ( Exception ex )
+      {
+        if ( ex.InnerException != null )
+          Console.WriteLine(ex.InnerException.ToString());
+        else
+          Console.WriteLine(ex.Message.ToString());
+      }
+    }*/
 
   }
 
