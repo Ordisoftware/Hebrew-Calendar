@@ -297,10 +297,22 @@ namespace Ordisoftware.HebrewCommon
       => UserDataFolderPath;
 
     /// <summary>
+    /// Indicate the Odbc DSN of the database.
+    /// </summary>
+    static public string OdbcDSN
+      => AssemblyTitle.Replace(" ", "-");
+
+    /// <summary>
     /// Indicate the filename of the database.
     /// </summary>
     static public string DatabaseFileName
-      => DatabaseFolderPath + AssemblyTitle.Replace(" ", "-") + DatabaseFileExtension;
+      => DatabaseFolderPath + OdbcDSN + DatabaseFileExtension;
+
+    /// <summary>
+    /// Indicate the filename of the database.
+    /// </summary>
+    static public string RegisterOdbcFilename
+      => Directory.GetParent(RootFolderPath) + "\\Register ODBC.reg";
 
     /// <summary>
     /// Indicate the user documents folder path.

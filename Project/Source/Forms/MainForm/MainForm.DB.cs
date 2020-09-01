@@ -38,15 +38,13 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     public void CreateDatabaseIfNotExists()
     {
+      OdbcSQLiteHelper.CreateDSNIfNotExists();
       using ( var connection = new OdbcConnection(Settings.ConnectionString) )
       {
         connection.Open();
-
         if ( Settings.VacuumAtStartup )
           Settings.VacuumLastDone = connection.Optimize(Settings.VacuumLastDone);
-
         connection.DropTableIfExists("Report");
-
         connection.CheckTable(@"LunisolarDays",
                               @"CREATE TABLE LunisolarDays 
                                 (

@@ -44,6 +44,7 @@ MinVersion=0,6.1sp1
 ArchitecturesAllowed=x86 x64 ia64
 ArchitecturesInstallIn64BitMode=x64 ia64
 WizardStyle=Modern
+AppMutex=39d572b4-36da-4964-ba85-51bc5909c69b
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
@@ -66,6 +67,8 @@ english.StartWithWindows_msg=Start with Windows
 french.StartWithWindows_msg=Démarrer avec Windows
 english.OpenSQLiteODBC_msg=Install or update SQLite ODBC Driver
 french.OpenSQLiteODBC_msg=Installer ou mettre à jour SQLite ODBC Driver
+english.SQLiteODBCInstalling_msg=SQLite ODBC Driver is being installed. Please wait...
+french.SQLiteODBCInstalling_msg=SQLite ODBC Driver est en cours d'installation. Veuillez patienter...
 
 [Tasks]
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
@@ -82,7 +85,7 @@ Name: {app}\Project\*; Type: filesandordirs
 Name: {app}\Setup\*; Type: filesandordirs
 Name: {app}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
 Name: {group}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
-Name: {userappdata}\Ordisoftware\Hebrew Calendar\Hebrew-Calendar.sqlite; Type: files
+;Name: {userappdata}\Ordisoftware\Hebrew Calendar\Hebrew-Calendar.sqlite; Type: files
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
@@ -100,7 +103,6 @@ Source: ..\Project\Dependencies\Font\Hebrew.ttf; DestDir: {fonts}; FontInstall: 
 
 [Icons]
 Name: {commondesktop}\{#MyAppPublisher} {#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: desktopicon; IconFilename: {app}\Application.ico
-;Name: {app}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
 Name: {group}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
 Name: {group}\{cm:ProgramOnTheWeb,{#MyAppPublisher}}; Filename: {app}\Ordisoftware.com.url; IconFilename: {app}\Project\Dependencies\Fatcow\house.ico
 Name: {group}\{#MyAppName}\{cm:SourceCode_msg,{#MyAppName}}; Filename: {app}\Project; IconFilename: {app}\Project\Dependencies\Fatcow\page_white_csharp.ico; WorkingDir: {app}\Project
@@ -113,7 +115,7 @@ Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: 
 
 [Run]
 Filename: {app}\Setup\.NET\NDP472-KB4054531-Web.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}; Parameters: /q /norestart
-Filename: {app}\Setup\SQLiteODBCInstaller\SQLiteODBCInstaller.exe
+Filename: {app}\Setup\SQLiteODBCInstaller\SQLiteODBCInstaller.exe; StatusMsg: {cm:SQLiteODBCInstalling_msg}; Parameters: 
 Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
 Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall
 

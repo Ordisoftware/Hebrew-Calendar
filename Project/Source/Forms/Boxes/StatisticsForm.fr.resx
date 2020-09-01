@@ -176,7 +176,7 @@
     <value>117, 13</value>
   </data>
   <data name="operatingSystemLabel.Text" xml:space="preserve">
-    <value>Système d'exploitation :</value>
+    <value>Plateforme :</value>
   </data>
   <data name="physicalMemoryFreeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 13</value>
