@@ -1,23 +1,55 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
-namespace SQLiteODBCInstaller
+namespace Ordisoftware.SQLiteODBCInstaller
 {
 
   static class Program
   {
 
+    private const string SQLiteODBCSetupPath = "..\\SQLiteODBC\\";
+
+    private const string SQLiteODBCSetupFileame32 = SQLiteODBCSetupPath + "sqliteodbc.exe";
+    private const string SQLiteODBCSetupFilename64 = SQLiteODBCSetupPath + "sqliteodbc_w64.exe";
+
+    private const string NamespaceName = nameof(Ordisoftware) + ".";
+
+    static public readonly Dictionary<string, string> CloseApplicationText
+      = new Dictionary<string, string>
+      {
+        { "en", $"Close these applications, please:{Environment.NewLine}{Environment.NewLine}{{0}}" },
+        { "fr", $"Veuillez fermer ces applications :{Environment.NewLine}{Environment.NewLine}{{0}}" }
+      };
+
     [STAThread]
     static void Main(string[] args)
     {
-      string arguments = string.Join(" ", args);
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      if ( IntPtr.Size > 4 )
-        RunShell("..\\SQLiteODBC\\sqliteodbc_w64.exe", arguments);
-      else
-        RunShell("..\\SQLiteODBC\\sqliteodbc.exe", arguments);
+      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+      if ( !CloseApplicationText.Keys.Contains(lang) ) lang = "en";
+      DialogResult result = DialogResult.None;
+      List<Process> processes = GetOrdisoftwareHebrewProcesses();
+      while ( processes.Count() != 0 && result != DialogResult.Cancel )
+      {
+        var applications = string.Join(Environment.NewLine, processes.Select(p => p.ProcessName.Replace(NamespaceName, "")));
+        string msg = string.Format(CloseApplicationText[lang], applications);
+        result = MessageBox.Show(msg, AssemblyTitle, MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
+        processes = GetOrdisoftwareHebrewProcesses();
+      }
+      if ( processes.Count() != 0 || result == DialogResult.Cancel ) return;
+      RunShell(IntPtr.Size > 4 ? SQLiteODBCSetupFilename64 : SQLiteODBCSetupFileame32, string.Join(" ", args));
+    }
+
+    static private List<Process> GetOrdisoftwareHebrewProcesses()
+    {
+      return Process.GetProcesses().Where(p => p.ProcessName.Contains("Ordisoftware.Hebrew")).ToList();
     }
 
     static public void RunShell(string filename, string arguments = "")
@@ -33,6 +65,22 @@ namespace SQLiteODBCInstaller
       catch ( Exception ex )
       {
         MessageBox.Show(ex.Message + Environment.NewLine + filename);
+      }
+    }
+
+    static public string AssemblyTitle
+    {
+      get
+      {
+        var assembly = Assembly.GetExecutingAssembly();
+        var attributes = assembly.GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+        if ( attributes.Length > 0 )
+        {
+          AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
+          if ( titleAttribute.Title != "" )
+            return titleAttribute.Title;
+        }
+        return Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
       }
     }
 

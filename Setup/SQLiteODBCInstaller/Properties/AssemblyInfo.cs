@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("SQLiteODBCInstaller")]
+[assembly: AssemblyTitle("SQLite ODBC Installer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Organization")]
-[assembly: AssemblyProduct("SQLiteODBCInstaller")]
-[assembly: AssemblyCopyright("Copyright © Organization 2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("Ordisoftware")]
+[assembly: AssemblyProduct("www.ordisoftware.com/projects/hebrew-calendar")]
+[assembly: AssemblyCopyright("Copyright 2020 Olivier Rogier")]
+[assembly: AssemblyTrademark("www.ordisoftware.com")]
 [assembly: AssemblyCulture("")]
 
 // L'affectation de la valeur false à ComVisible rend les types invisibles dans cet assembly
