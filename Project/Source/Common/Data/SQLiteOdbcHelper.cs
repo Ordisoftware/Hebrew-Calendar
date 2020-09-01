@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.IO;
 using System.Linq;
 using System.Data.Odbc;
 using System.Collections.Generic;
@@ -70,6 +71,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void CreateDSNIfNotExists()
     {
+      Directory.CreateDirectory(Globals.DatabaseFolderPath);
       if ( CheckForDSN(Globals.OdbcDSN) == 0 )
         Shell.Run("regedit.exe", $"/s \"{Globals.RegisterOdbcFilename}\"").WaitForExit();
     }
