@@ -74,7 +74,9 @@ namespace Ordisoftware.HebrewCalendar
               }
               catch ( Exception ex )
               {
+                ChronoStart.Stop();
                 DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(Program.TextReportFilename, ex.Message));
+                ChronoStart.Start();
               }
             if ( !isTextReportLoaded )
               CalendarText.Text = GenerateReport();
@@ -86,7 +88,9 @@ namespace Ordisoftware.HebrewCalendar
         }
         else
         {
+          ChronoStart.Stop();
           PreferencesForm.Run();
+          ChronoStart.Start();
           string errors = CheckRegenerateCalendar(true);
           if ( errors != null )
           {
@@ -98,6 +102,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception ex )
       {
+        ChronoStart.Stop();
         DisplayManager.ShowError(Localizer.ApplicationMustExit[Languages.FR] + Globals.NL2 +
                                  Localizer.ContactSupport[Languages.FR]);
         ex.Manage();
@@ -115,7 +120,9 @@ namespace Ordisoftware.HebrewCalendar
         }
         catch ( Exception ex )
         {
+          ChronoStart.Stop();
           ex.Manage();
+          ChronoStart.Start();
         }
         try
         {
@@ -125,7 +132,9 @@ namespace Ordisoftware.HebrewCalendar
         }
         catch ( Exception ex )
         {
+          ChronoStart.Stop();
           ex.Manage();
+          ChronoStart.Start();
         }
       }
     }
