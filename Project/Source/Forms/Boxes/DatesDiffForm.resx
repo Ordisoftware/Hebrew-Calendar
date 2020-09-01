@@ -513,7 +513,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="MonthCalendar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -534,7 +534,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MonthCalendar1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="MonthCalendar2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -555,7 +555,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MonthCalendar2.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <metadata name="DatesDiffItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -786,7 +786,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBoxSun.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -852,7 +852,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="DateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 213</value>
@@ -873,7 +873,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DateTimePicker1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="DateTimePicker2.Location" type="System.Drawing.Point, System.Drawing">
     <value>278, 213</value>
@@ -894,7 +894,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DateTimePicker2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <metadata name="MenuBookmarks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>221, 17</value>
@@ -950,7 +950,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSetBookmarkStart.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="ActionUseBookmarkStart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -992,7 +992,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionUseBookmarkStart.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="ActionUseBookmarkEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1034,7 +1034,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionUseBookmarkEnd.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="ActionSetBookmarkEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1078,7 +1078,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSetBookmarkEnd.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="ActionSwapDates.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1115,37 +1115,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSwapDates.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="MenuManageBookmark.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>364, 17</value>
-  </metadata>
-  <data name="downToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="downToolStripMenuItem.Text" xml:space="preserve">
-    <value>Down</value>
-  </data>
-  <data name="upToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="upToolStripMenuItem.Text" xml:space="preserve">
-    <value>Up</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="MenuManageBookmark.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 70</value>
-  </data>
-  <data name="&gt;&gt;MenuManageBookmark.Name" xml:space="preserve">
-    <value>MenuManageBookmark</value>
-  </data>
-  <data name="&gt;&gt;MenuManageBookmark.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1173,24 +1143,6 @@
   </data>
   <data name="&gt;&gt;DatesDiffItemBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downToolStripMenuItem.Name" xml:space="preserve">
-    <value>downToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;downToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;upToolStripMenuItem.Name" xml:space="preserve">
-    <value>upToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;upToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deleteToolStripMenuItem.Name" xml:space="preserve">
-    <value>deleteToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;deleteToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>DatesDiffForm</value>

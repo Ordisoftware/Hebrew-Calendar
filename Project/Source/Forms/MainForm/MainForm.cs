@@ -258,7 +258,8 @@ namespace Ordisoftware.HebrewCalendar
             Show();
             TopMost = old;
           }
-          GoToDate(DateTime.Today);
+          if ( !NavigationForm.Instance.Visible )
+            GoToDate(DateTime.Today);
         }
         else
         {
