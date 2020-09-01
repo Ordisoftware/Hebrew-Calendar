@@ -55,10 +55,12 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 #### How to install SQlite ODBC Driver?
 
-The setup tries to install the driver:
+The setup installs:
 
 - [sqliteodbc.exe](http://www.ch-werner.de/sqliteodbc/sqliteodbc.exe) on Windows 32-bit.
 - [sqliteodbc_w64.exe](http://www.ch-werner.de/sqliteodbc/sqliteodbc_w64.exe) on Windows 64-bit.
+
+In the event that an error message indicates that a DLL file could not be copied, it is usually due to the fact that an application using this driver already installed is running and is blocking the file. You can ignore this error or close the application in question and restart the installation to obtain a driver update.
 
 #### What to do in case of ODBC datasource connection error?
 
