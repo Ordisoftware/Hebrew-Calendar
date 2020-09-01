@@ -63,7 +63,8 @@ namespace Ordisoftware.HebrewCalendar
       Globals.AllowClose = false;
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
-      ActionViewMoonMonths.Enabled = Globals.IsDev; // TODO remove when ready
+      ActionViewMoonMonths.Visible = Globals.IsDev; // TODO remove when ready
+      ActionViewMoonMonthsSeparator.Visible = Globals.IsDev; // TODO remove when ready
       ChronoStart.Start();
     }
 
@@ -77,7 +78,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
       StatisticsForm.Run(true);
-      if ( !string.IsNullOrEmpty(Settings.GPSLatitude) 
+      if ( !string.IsNullOrEmpty(Settings.GPSLatitude)
         && !string.IsNullOrEmpty(Settings.GPSLongitude) )
         try
         {
@@ -98,8 +99,8 @@ namespace Ordisoftware.HebrewCalendar
       InitializeCurrentTimeZone();
       InitializeDialogsDirectory();
       Refresh();
-      LoadData();
       ClearLists();
+      LoadData();
     }
 
     /// <summary>
@@ -372,7 +373,7 @@ namespace Ordisoftware.HebrewCalendar
                 }
               break;
             default:
-              throw new NotImplementedException(Settings.TrayIconClickOpen.ToString());
+              throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.GetFullname());
           }
         else
         if ( e.Button == MouseButtons.Right )

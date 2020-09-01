@@ -153,13 +153,13 @@ namespace Ordisoftware.HebrewCalendar
       = new NullSafeStringDictionary
       {
         { Languages.EN, "Fatal error while generating data." + Globals.NL +
-                        "The application must exit." + Globals.NL +
-                        "Contact support, please." + Globals.NL2 +
+                        Localizer.ApplicationMustExit[Languages.EN] + Globals.NL +
+                        Localizer.ContactSupport[Languages.EN] + Globals.NL2 +
                         "{0}"
         },
         { Languages.FR, "Erreur fatale lors de la génération des données." + Globals.NL +
-                        "L'application doit fermer." + Globals.NL +
-                        "Veuillez contacter le support." + Globals.NL2 +
+                        Localizer.ApplicationMustExit[Languages.FR] + Globals.NL +
+                        Localizer.ContactSupport[Languages.FR] + Globals.NL2 +
                         "{0}"
         }
       };

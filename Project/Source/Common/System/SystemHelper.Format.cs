@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewCommon
     static public string FormatMilliseconds(this long ms, bool excludems = false)
     {
       TimeSpan time = TimeSpan.FromMilliseconds(ms);
-      var list = MillisecondsFormatTemplates.GetLang();
+      var list = Localizer.MillisecondsFormatTemplates.GetLang();
       int index = time.Days == 0 && time.Hours == 0 && time.Minutes == 0 && time.Seconds == 0
                 ? 0
                 : time.Days == 0 && time.Hours == 0 && time.Minutes == 0
@@ -66,36 +66,6 @@ namespace Ordisoftware.HebrewCommon
       if ( index == 0 && excludems ) result = list[1];
       return string.Format(result, time.Days, time.Hours, time.Minutes, time.Seconds, time.Milliseconds);
     }
-
-    /// <summary>
-    /// Indicate the templates to format milliseconds.
-    /// </summary>
-    static public NullSafeDictionary<string, NullSafeStringList> MillisecondsFormatTemplates
-      = new NullSafeDictionary<string, NullSafeStringList>
-      {
-        {
-          Languages.EN,
-          new NullSafeStringList
-          {
-            "{4} ms",
-            "{3} s",
-            "{2} m {3} s",
-            "{1} h {2} m {3} s",
-            "{0} d {1} h {2} m {3} s",
-          }
-        },
-        {
-          Languages.FR,
-          new NullSafeStringList
-          {
-            "{4} ms",
-            "{3} s",
-            "{2} m {3} s",
-            "{1} h {2} m {3} s",
-            "{0} j {1} h {2} m {3} s",
-          }
-        }
-      };
 
   }
 

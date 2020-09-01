@@ -96,13 +96,10 @@ namespace Ordisoftware.HebrewCalendar
           }
         }
       }
-      catch ( OdbcException ex )
-      {
-        ex.Manage();
-        Environment.Exit(-1);
-      }
       catch ( Exception ex )
       {
+        DisplayManager.ShowError(Localizer.ApplicationMustExit[Languages.FR] + Globals.NL2 +
+                                 Localizer.ContactSupport[Languages.FR]);
         ex.Manage();
         Environment.Exit(-1);
       }

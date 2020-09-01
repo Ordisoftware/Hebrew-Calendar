@@ -17,7 +17,7 @@ using System.IO;
 using System.Linq;
 using System.Data.Odbc;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using Microsoft.Win32;
 
 namespace Ordisoftware.HebrewCommon
 {
@@ -52,27 +52,26 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Check if an ODBC DSN entry exists.
-    /// </summary>
-    /// <param name="name"></param>
-    /// <returns></returns>
-    static public int CheckForDSN(string name)
-    {
-      return SQLGetPrivateProfileString("ODBC Data Sources", name, "", "", 200, "odbc.ini");
-    }
-    [DllImport("ODBCCP32.dll")]
-    static private extern int SQLGetPrivateProfileString(string lpszSection, string lpszEntry, string lpszDefault,
-                                                         string @RetBuffer, int cbRetBuffer, string lpszFilename);
-
-    /// <summary>
-    /// Check if the DSN exists and create it if not.
+    /// Create or update the ODBC DSN.
     /// </summary>
     static public void CreateDSNIfNotExists()
     {
-      Directory.CreateDirectory(Globals.DatabaseFolderPath);
-      // TODO create registry entreies instead
-      if ( CheckForDSN(Globals.OdbcDSN) == 0 )
-        Shell.Run("regedit.exe", $"/s \"{Globals.RegisterOdbcFilename}\"").WaitForExit();
+      try
+      {
+        Directory.CreateDirectory(Globals.DatabaseFolderPath);
+        var key = Registry.CurrentUser.OpenSubKey(@"Software\ODBC\ODBC.INI\ODBC Data Sources", true);
+        key.SetValue(Globals.OdbcDSN, "SQLite3 ODBC Driver");
+        key = Registry.CurrentUser.OpenSubKey(@"Software\ODBC\ODBC.INI", true);
+        key = key.CreateSubKey(Globals.OdbcDSN);
+        key.SetValue("Driver", "C:\\Windows\\system32\\sqlite3odbc.dll");
+        key.SetValue("Database", Globals.DatabaseFileName);
+        key.SetValue("FKSupport", "1");
+        key.SetValue("Timeout", "0");
+      }
+      catch ( Exception ex )
+      {
+        throw new SQLiteException(Localizer.DatabaseSetDSNError.GetLang(), ex);
+      }
     }
 
     /// <summary>

@@ -1967,7 +1967,7 @@
   <data name="ActionViewMoonMonths.Text" xml:space="preserve">
     <value>Lunar months description</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SeperatorMoonMonths.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 6</value>
   </data>
   <data name="ActionShowCelebrationsNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -2137,20 +2137,19 @@
   <data name="ActionViewStats.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALeSURBVDhPdZF7TM1hGMfP1qqZnFMqFUatkOWEhOjUSS5d
-        nAiVSwqdEFqaf7Bq/KNmVEIuuZfVJltRa7PhzNwmhGLkUkwu5VJEnNrx8f46vznJfLfv9u59n+9n7/M8
-        ir7ijIPKVKYq7Dyi7KLKAc4PNlucO48pu6Q3KlT2cvm/4sFauD8BXojQ8yHCrrJdzHf3JsKjLORyizSb
-        ynQ+qRV6DO7wrRI+rIBmL+GxskdBaxz0lAuA998A7cYy95CtFQTvuM7+vERMBjW0C8inNGiZavbndDBV
-        0nF1DM1b/DAoBobIcYViWtqp+tiDd4kpekh4QT0pO3L4WCO+2nYaOvdBVy5QQUfNdBrCIjAm6HmtDeWm
-        SuXeC0g5cJnyB+2U1n2ipK6Dwzc+c+jcRZ5Vz4Z3e0T4LK9LtdQHhtG9OB6S9ZCeylUn51u9AG1WFTEn
-        n6Arfk5ESRPhp18RWtyCf84VeDiOlt06GjVhmGIXQ2Ii6FdB2npu+443zyIy/xoZ24/wZpgbL708xcy8
-        afJV83TiZBr8g3iqmQWLxACXLRWABEhaCanrqPPzMwM843N2NmdmwvRgCAgE0R+z50DEXIiaDwsWQVw/
-        QPoGHkfP/bMN55f6JH6J4eEfAEESIEwGzBOAhRZAwnJYuQJj9jYaNIGWdT529wDDJdHfapiqgRkzQUwc
-        XRREL4DYWFgiZhAfT8/mTbQX5VLr5mYBVFvb1navEeGqSkz5ebAwBkLFFsIliPQL0cbqZH7k5vDlaAEv
-        fIZROcDughxXKFIdHUPvODnTEzmHnozNGI8fwlheRveBvRgLC/heeoIv+dm0LY3klccgalV2BFhbq+V4
-        r2yjrWx0BqW98a2vDz+1U/gaoKZj0mg+qkfSOtaV96MdaRyqwqB0MEbb2OhExsoctchG2K9ooN0ug71D
-        a52LK42eI3jiMZw7zk5Id0ftlLulGrn2vxoiLH1vUj9Ld9JbHykUvwGzi/9Z2g2IhAAAAABJRU5ErkJg
-        gg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALdSURBVDhPdZF7TM1hGMfPZmUm55SKwqhFtJzoQtGpQ6SL
+        E0W5pcRxCS2tf2Ix/lEzkpBLNZdqtclWZDYbzsxtklAsucXkUlIJcWrHx/vr/OaE+W7f7d37Pt/P3ud5
+        FAPFGTuVqVyV312o7KHaDs4PN1ucu4uUPdIblSpbufxf8XADPJgKL0To+QhhJ9kjzXf3veHxDuRyizTp
+        5TrPlEo9Bhf4WgUfV0HzeGEP2ROgdQn0VQjApD8B2i3lLrO2VRK8+yaH9ydiMqihU0A+pUKLv9kdaWCq
+        ouv6RJq3+mBQDJ0lxxWKGamn6+OO3iO24BHhefUk786m/aL4alspfDkEPTlAJV0XZ9IQFoExQc8bbQi3
+        VSqXfkDykatUPOykrO4TJXVdHL/VwbFzl3l2IRTeHxDhs7wp01IfGEbv0nhYq4e0FK47ON7pB2h3VBN7
+        6gm64udElLwkvPQ1IcUt+GVfg0eTadmno0kThiluKSQmgn41pG7irtcU8ywic2+QuauQt6OdeTXeTcxs
+        Ei+91Dz1nkaDXxBPNXNhsRjgiuUCkABrkiBlI3U+PmaAW3z2nubt22FmMAQEguiP0HkQMR+iFkLMYljy
+        FyBtM43R839vw/GVfg0/xfDwC4AgCRAmAxYIwCILIGElJK3CmLWTBk2gZZ2NLq5guCL6Wwf+Gpg9B8TE
+        0UVBdAzExcEyMYP4ePoy0uksyKHG2dkCuGA1uKZ3vQhXV2HK3Q+LYiFEbCFcgki/EG2sW8v3nGw+F+Xx
+        wnM0VUNsLslxhSLF3j6k1sGRvsh59GVmYDxxDGNFOb1HDmLMz+Nb2Uk+52bRtjyS167DqFHZEGBlpZbj
+        /RocPchaZ1DaGt95efJDO53uADVdvu60q8fR6uHEB3d7mkapMCjtjNHW1jqRGWSOWmQt7FMw1Gavwdau
+        tW6kE01uY3niOoZaRwekuyIb5T6pRq79r0YIS9/z/cvSnfQ2QArFL6fD/1aapL3rAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionViewStats.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3459,10 +3458,10 @@
   <data name="&gt;&gt;ActionViewMoonMonths.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
+  <data name="&gt;&gt;SeperatorMoonMonths.Name" xml:space="preserve">
+    <value>SeperatorMoonMonths</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+  <data name="&gt;&gt;SeperatorMoonMonths.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionShowCelebrationsNotice.Name" xml:space="preserve">

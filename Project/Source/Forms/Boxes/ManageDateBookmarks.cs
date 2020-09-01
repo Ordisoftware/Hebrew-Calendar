@@ -40,6 +40,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ManageDateBookmarks_Load(object sender, EventArgs e)
     {
       this.CenterToMainFormElseScreen();
+      ListBox.Items.Clear();
       for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
         ListBox.Items.Add(new DateItem { Date = (DateTime)Program.Settings["DateBookmark" + index] });
       ListBox.SelectedIndex = 0;
@@ -51,14 +52,22 @@ namespace Ordisoftware.HebrewCalendar
       if ( DialogResult != DialogResult.OK ) return;
       for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
         Program.Settings["DateBookmark" + index] = ( (DateItem)ListBox.Items[index - 1] ).Date;
+      Program.Settings.Save();
     }
 
     private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
     {
       ActionUp.Enabled = ListBox.SelectedIndex != 0;
       ActionDown.Enabled = ListBox.SelectedIndex != ListBox.Items.Count - 1;
-      ActionDelete.Enabled = ListBox.SelectedIndex >=0
+      ActionDelete.Enabled = ListBox.SelectedIndex >= 0
                          && ( (DateItem)ListBox.Items[ListBox.SelectedIndex] ).Date != DateTime.MinValue;
+    }
+
+    private void ActionClear_Click(object sender, EventArgs e)
+    {
+      if ( !DisplayManager.QueryYesNo(Localizer.AskToDeleteBookmarkAll.GetLang()) ) return;
+      for ( int index = 0; index < ListBox.Items.Count; index++ )
+        ListBox.Items[index] = new DateItem { Date = DateTime.MinValue };
     }
 
     private void ActionDelete_Click(object sender, EventArgs e)

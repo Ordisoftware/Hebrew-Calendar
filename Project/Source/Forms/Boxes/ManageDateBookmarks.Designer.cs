@@ -37,14 +37,16 @@
       this.ActionUp = new System.Windows.Forms.Button();
       this.ActionDown = new System.Windows.Forms.Button();
       this.ActionSort = new System.Windows.Forms.Button();
+      this.ActionClear = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
       // 
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
+      this.PanelBottom.Controls.Add(this.ActionClear);
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOK);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionCancel
@@ -93,11 +95,21 @@
       // 
       // ActionSort
       // 
-      resources.ApplyResources(this.ActionSort, "ActionSort");
       this.ActionSort.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSort, "ActionSort");
       this.ActionSort.Name = "ActionSort";
       this.ActionSort.UseVisualStyleBackColor = true;
       this.ActionSort.Click += new System.EventHandler(this.ActionSort_Click);
+      // 
+      // ActionClear
+      // 
+      this.ActionClear.AllowDrop = true;
+      this.ActionClear.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionClear, "ActionClear");
+      this.ActionClear.Name = "ActionClear";
+      this.ActionClear.TabStop = false;
+      this.ActionClear.UseVisualStyleBackColor = true;
+      this.ActionClear.Click += new System.EventHandler(this.ActionClear_Click);
       // 
       // ManageDateBookmarksForm
       // 
@@ -131,5 +143,6 @@
     private System.Windows.Forms.Button ActionDelete;
     private System.Windows.Forms.Button ActionUp;
     private System.Windows.Forms.Button ActionDown;
+    private System.Windows.Forms.Button ActionClear;
   }
 }

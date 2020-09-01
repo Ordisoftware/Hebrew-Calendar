@@ -179,6 +179,27 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "Téléchargement de la nouvelle version..." }
       };
 
+    static public readonly NullSafeStringDictionary ApplicationMustExit
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "The application must exit." },
+        { Languages.FR, "L'application doit se fermer." }
+      };
+
+    static public readonly NullSafeStringDictionary ContactSupport
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Please contact support." },
+        { Languages.FR, "Veuillez contacter le support." }
+      };
+
+    static public readonly NullSafeStringDictionary DatabaseSetDSNError
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Error creating or updating SQLite ODBC DSN." },
+        { Languages.FR, "Erreur de création ou de mise à jour du DSN ODBC SQLite." }
+      };
+
     static public readonly NullSafeStringDictionary DatabaseIntegrityError
       = new NullSafeStringDictionary()
       {
@@ -457,6 +478,36 @@ namespace Ordisoftware.HebrewCommon
       {
         { Languages.EN, "(error)" },
         { Languages.FR, "(erreur)" }
+      };
+
+    /// <summary>
+    /// Indicate the templates to format milliseconds.
+    /// </summary>
+    static public NullSafeDictionary<string, NullSafeStringList> MillisecondsFormatTemplates
+      = new NullSafeDictionary<string, NullSafeStringList>
+      {
+        {
+          Languages.EN,
+          new NullSafeStringList
+          {
+            "{4} ms",
+            "{3} s",
+            "{2} m {3} s",
+            "{1} h {2} m {3} s",
+            "{0} d {1} h {2} m {3} s",
+          }
+        },
+        {
+          Languages.FR,
+          new NullSafeStringList
+          {
+            "{4} ms",
+            "{3} s",
+            "{2} m {3} s",
+            "{1} h {2} m {3} s",
+            "{0} j {1} h {2} m {3} s",
+          }
+        }
       };
 
   }
