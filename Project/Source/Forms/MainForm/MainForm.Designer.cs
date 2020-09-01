@@ -119,7 +119,7 @@
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewMoonMonths = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewMoonMonthsSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowCelebrationsNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowShabatNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -940,7 +940,7 @@
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewMoonMonths,
-            this.toolStripSeparator1,
+            this.ActionViewMoonMonthsSeparator,
             this.ActionShowCelebrationsNotice,
             this.ActionShowShabatNotice,
             this.toolStripSeparator8,
@@ -961,10 +961,10 @@
       this.ActionViewMoonMonths.Name = "ActionViewMoonMonths";
       this.ActionViewMoonMonths.Click += new System.EventHandler(this.ActionViewMoonMonths_Click);
       // 
-      // toolStripSeparator1
+      // SeperatorMoonMonths
       // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      this.ActionViewMoonMonthsSeparator.Name = "SeperatorMoonMonths";
+      resources.ApplyResources(this.ActionViewMoonMonthsSeparator, "SeperatorMoonMonths");
       // 
       // ActionShowCelebrationsNotice
       // 
@@ -1502,7 +1502,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionWebQA;
     private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.ToolStripSeparator ActionViewMoonMonthsSeparator;
     private System.Windows.Forms.Timer TimerResumeReminder;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

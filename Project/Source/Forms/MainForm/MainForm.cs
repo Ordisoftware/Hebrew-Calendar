@@ -63,7 +63,8 @@ namespace Ordisoftware.HebrewCalendar
       Globals.AllowClose = false;
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
-      ActionViewMoonMonths.Enabled = Globals.IsDev; // TODO remove when ready
+      ActionViewMoonMonths.Visible = Globals.IsDev; // TODO remove when ready
+      ActionViewMoonMonthsSeparator.Visible = Globals.IsDev; // TODO remove when ready
       ChronoStart.Start();
     }
 
