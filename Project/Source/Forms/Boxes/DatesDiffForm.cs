@@ -69,7 +69,7 @@ namespace Ordisoftware.HebrewCalendar
         string s = date == DateTime.MinValue ? Localizer.EmptySlot.GetLang() : date.ToLongDateString();
         var menuitem = MenuBookmarks.Items.Add(index.ToString("00") + ". " + s);
         menuitem.MouseUp += Bookmarks_MouseUp;
-        menuitem.Tag = index.ToString();
+        menuitem.Tag = index;
       }
     }
 
@@ -79,12 +79,13 @@ namespace Ordisoftware.HebrewCalendar
       var control = CurrentBookmark;
       if ( e.Button == MouseButtons.Right )
         if ( control == ActionSetBookmarkStart || control == ActionSetBookmarkEnd )
-        {
-          if ( !DisplayManager.QueryYesNo(Localizer.AskToDeleteBookmark.GetLang()) ) return;
-          menuitem.Text = menuitem.Tag + ". " + Localizer.EmptySlot.GetLang();
-          Program.Settings["DateBookmark" + menuitem.Tag] = DateTime.MinValue;
-          Program.Settings.Save();
-        }
+          if ( !menuitem.Text.EndsWith(")") )
+          {
+            if ( !DisplayManager.QueryYesNo(Localizer.AskToDeleteBookmark.GetLang()) ) return;
+            menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + Localizer.EmptySlot.GetLang();
+            Program.Settings["DateBookmark" + menuitem.Tag] = DateTime.MinValue;
+            Program.Settings.Save();
+          }
       if ( e.Button != MouseButtons.Left ) return;
       if ( control == ActionSetBookmarkStart )
         setBookmark(MonthCalendar1);
@@ -107,7 +108,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         if ( (DateTime)Program.Settings["DateBookmark" + menuitem.Tag] != DateTime.MinValue )
           if ( !DisplayManager.QueryYesNo(Localizer.AskToReplaceBookmark.GetLang()) ) return;
-        menuitem.Text = menuitem.Tag + ". " + calendar.SelectionStart.Date.ToLongDateString();
+        menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + calendar.SelectionStart.Date.ToLongDateString();
         Program.Settings["DateBookmark" + menuitem.Tag] = calendar.SelectionStart.Date;
         Program.Settings.Save();
       }
@@ -115,7 +116,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private Button CurrentBookmark;
 
-    private void ActionSetBookmark_Click(object sender, EventArgs e)
+    private void ActionBookmarksButton_Click(object sender, EventArgs e)
     {
       var control = sender as Button;
       CurrentBookmark = control;

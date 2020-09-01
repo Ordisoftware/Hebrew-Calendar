@@ -252,7 +252,7 @@
       this.ActionSetBookmarkStart.Name = "ActionSetBookmarkStart";
       this.ActionSetBookmarkStart.TabStop = false;
       this.ActionSetBookmarkStart.UseVisualStyleBackColor = true;
-      this.ActionSetBookmarkStart.Click += new System.EventHandler(this.ActionSetBookmark_Click);
+      this.ActionSetBookmarkStart.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
       // 
       // MenuBookmarks
       // 
@@ -269,7 +269,7 @@
       this.ActionUseBookmarkStart.Name = "ActionUseBookmarkStart";
       this.ActionUseBookmarkStart.TabStop = false;
       this.ActionUseBookmarkStart.UseVisualStyleBackColor = true;
-      this.ActionUseBookmarkStart.Click += new System.EventHandler(this.ActionSetBookmark_Click);
+      this.ActionUseBookmarkStart.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
       // 
       // ActionUseBookmarkEnd
       // 
@@ -280,7 +280,7 @@
       this.ActionUseBookmarkEnd.Name = "ActionUseBookmarkEnd";
       this.ActionUseBookmarkEnd.TabStop = false;
       this.ActionUseBookmarkEnd.UseVisualStyleBackColor = true;
-      this.ActionUseBookmarkEnd.Click += new System.EventHandler(this.ActionSetBookmark_Click);
+      this.ActionUseBookmarkEnd.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
       // 
       // ActionSetBookmarkEnd
       // 
@@ -291,7 +291,7 @@
       this.ActionSetBookmarkEnd.Name = "ActionSetBookmarkEnd";
       this.ActionSetBookmarkEnd.TabStop = false;
       this.ActionSetBookmarkEnd.UseVisualStyleBackColor = true;
-      this.ActionSetBookmarkEnd.Click += new System.EventHandler(this.ActionSetBookmark_Click);
+      this.ActionSetBookmarkEnd.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
       // 
       // ActionSwapDates
       // 

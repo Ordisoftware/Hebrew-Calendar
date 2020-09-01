@@ -63,7 +63,7 @@ namespace Ordisoftware.HebrewCalendar
           SelectOpenNextCelebrationsForm.Select();
           break;
         default:
-          throw new NotImplementedException(Settings.TrayIconClickOpen.ToString());
+          throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.ToString());
       }
       EditRemindShabat_ValueChanged(null, null);
       EditTimerEnabled_CheckedChanged(null, null);
