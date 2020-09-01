@@ -75,8 +75,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
     {
-      var menuitem = sender as ToolStripMenuItem;
-      var control = ( menuitem.Owner as ContextMenuStrip )?.SourceControl;
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = CurrentBookmark;
       if ( e.Button == MouseButtons.Right )
         if ( control == ActionSetBookmarkStart || control == ActionSetBookmarkEnd )
         {
@@ -113,9 +113,12 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    private void ActionSetBookmarkStart_Click(object sender, EventArgs e)
+    private Button CurrentBookmark;
+
+    private void ActionSetBookmark_Click(object sender, EventArgs e)
     {
       var control = sender as Button;
+      CurrentBookmark = control;
       MenuBookmarks.Show(control, new Point(0, control.Height));
     }
 

@@ -50,12 +50,25 @@ namespace Ordisoftware.HebrewCalendar
           city.Latitude = parser["lat"];
           city.Longitude = parser["lng"];
         }
+        if ( GPS.Keys.Count == 0 )
+          throw new NullReferenceException($"{nameof(SelectCityForm)}.{nameof(GPS)} = {Localizer.EmptySlot.GetLang()}");
       }
       catch ( Exception ex )
       {
+        Enable = false;
         ex.Manage();
+        if ( !Globals.IsReady )
+        {
+          DisplayManager.Show("Error on loading the cities: the application must exit.");
+          Environment.Exit(-1);
+        }
       }
     }
+
+    /// <summary>
+    /// Indicate if the cities are loaded and ready, else there is an error.
+    /// </summary>
+    public static bool Enable = true;
 
     public string Country { get; private set; }
     public string City { get; private set; }

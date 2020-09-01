@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewCalendar
             }
             catch ( Exception ex )
             {
-              // todo add in errors list instead
+              // TODO add in errors list instead
               ex.Manage();
             }
         }

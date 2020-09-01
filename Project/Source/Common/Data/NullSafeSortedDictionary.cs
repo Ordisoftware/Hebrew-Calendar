@@ -14,7 +14,6 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 
 namespace Ordisoftware.HebrewCommon
 {

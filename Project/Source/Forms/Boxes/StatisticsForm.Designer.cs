@@ -597,13 +597,13 @@
       // dBADONETAccessLabel1
       // 
       resources.ApplyResources(this.dBADONETAccessLabel1, "dBADONETAccessLabel1");
-      this.dBADONETAccessLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBADONETAccess", true));
+      this.dBADONETAccessLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBADOdotNETProvider", true));
       this.dBADONETAccessLabel1.Name = "dBADONETAccessLabel1";
       // 
       // dBEngineversionLabel1
       // 
       resources.ApplyResources(this.dBEngineversionLabel1, "dBEngineversionLabel1");
-      this.dBEngineversionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBEngineVersion", true));
+      this.dBEngineversionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBEngine", true));
       this.dBEngineversionLabel1.Name = "dBEngineversionLabel1";
       // 
       // GroupBox3Memoty

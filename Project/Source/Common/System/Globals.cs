@@ -418,8 +418,16 @@ namespace Ordisoftware.HebrewCommon
         if ( _WebLinksProviders == null ) _WebLinksProviders = new List<OnlineProviders>();
         if ( _WebLinksProviders.Count == 0 )
           if ( Directory.Exists(WebLinksFolderPath) )
-            foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
-              _WebLinksProviders.Add(new OnlineProviders(file, true, IsDev, DataFileFolder.ApplicationDocuments));
+            try
+            {
+              foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
+                _WebLinksProviders.Add(new OnlineProviders(file, true, IsDev, DataFileFolder.ApplicationDocuments));
+            }
+            catch ( Exception ex )
+            {
+              string msg = Localizer.LoadFileError.GetLang(WebLinksFolderPath + "WebLinks*.txt", ex.Message);
+              DisplayManager.ShowError(msg);
+            }
         return _WebLinksProviders;
       }
     }

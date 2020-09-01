@@ -110,13 +110,18 @@ namespace Ordisoftware.HebrewCommon
           string folder = Path.GetDirectoryName(Filename);
           if ( !Directory.Exists(folder) )
             Directory.CreateDirectory(folder);
+          string filename1 = Localizer.EmptySlot.GetLang();
+          string filename2 = Localizer.EmptySlot.GetLang();
           try
           {
-            File.Copy(FilenameDefault, Filename, true);
+            filename1 = FilenameDefault;
+            filename2 = Filename;
+            File.Copy(filename1, filename2, true);
           }
           catch ( Exception ex )
           {
-            ex.Manage();
+            string msg = Localizer.LoadFileError.GetLang(filename1, filename2, ex.Message);
+            DisplayManager.ShowError(msg);
             return "";
           }
         }
