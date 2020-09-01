@@ -33,6 +33,11 @@ namespace Ordisoftware.SQLiteODBCInstaller
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+      if ( args.Length > 0 )
+        if ( args[0] == "english" ) lang = "en"; 
+        else
+        if ( args[0] == "french" ) lang = "fr";
+      string arguments = string.Join(" ", args.Skip(1));
       if ( !CloseApplicationText.Keys.Contains(lang) ) lang = "en";
       DialogResult result = DialogResult.None;
       List<Process> processes = GetOrdisoftwareHebrewProcesses();
@@ -44,7 +49,7 @@ namespace Ordisoftware.SQLiteODBCInstaller
         processes = GetOrdisoftwareHebrewProcesses();
       }
       if ( processes.Count() != 0 || result == DialogResult.Cancel ) return;
-      RunShell(IntPtr.Size > 4 ? SQLiteODBCSetupFilename64 : SQLiteODBCSetupFileame32, string.Join(" ", args));
+      RunShell(IntPtr.Size > 4 ? SQLiteODBCSetupFilename64 : SQLiteODBCSetupFileame32, arguments);
     }
 
     static private List<Process> GetOrdisoftwareHebrewProcesses()

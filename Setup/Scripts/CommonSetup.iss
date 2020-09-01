@@ -21,6 +21,7 @@ ShowTasksTreeLines=true
 VersionInfoVersion={#MyAppVersion}
 VersionInfoCompany={#MyAppPublisher}
 VersionInfoDescription={#MyAppPublisher} {#MyAppName}
+ShowLanguageDialog=yes
 PrivilegesRequired=admin
 InternalCompressLevel=normal
 DisableStartupPrompt=false
