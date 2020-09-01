@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewCommon
   public delegate void AfterExceptionEventHandler(object sender, ExceptionInfo einfo, bool processed);
 
   /// <summary>
-  /// Provide thread safe debug management. 
+  /// Provide debugger.
   /// </summary>
   /// <remarks>
   /// Showing/raising blocks all other threads if Exception occur in a thread 
@@ -76,10 +76,6 @@ namespace Ordisoftware.HebrewCommon
   /// }                                                          
   /// 
   /// </remarks>
-
-  /// <summary>
-  /// Provide debugger.
-  /// </summary>
   static public class Debugger
   {
 

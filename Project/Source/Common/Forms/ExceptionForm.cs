@@ -24,7 +24,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide exception form.
   /// </summary>
-  internal partial class ExceptionForm : Form
+  public partial class ExceptionForm : Form
   {
 
     /// <summary>
@@ -40,7 +40,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicates error messages.
     /// </summary>
-    private List<string> ErrorMessages = new List<string>();
+    private readonly List<string> ErrorMessages = new List<string>();
 
     /// <summary>
     /// Indicate the original form height.
@@ -92,7 +92,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Default constructor.
     /// </summary>
-    public ExceptionForm()
+    private ExceptionForm()
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;

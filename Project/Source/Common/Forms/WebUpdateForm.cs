@@ -18,8 +18,28 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
+  public enum WebUpdateSelection
+  {
+    None,
+    Install,
+    Download,
+  }
+
   public partial class WebUpdateForm : Form
   {
+
+    static public WebUpdateSelection Run (Version version)
+    {
+      using ( var form = new WebUpdateForm() )
+      {
+        form.LabelNewVersion.Text += version;
+        form.ActionReleaseNotes.Tag = string.Format(Globals.ApplicationReleaseNotesURL, version);
+        if ( form.ShowDialog() != DialogResult.OK ) return WebUpdateSelection.None;
+        if ( form.SelectInstall.Checked ) return WebUpdateSelection.Install;
+        if ( form.SelectDownload.Checked ) return WebUpdateSelection.Download;
+        throw new NotImplementedExceptionEx($"User action in {form.GetType().Name}.{nameof(Run)}");
+      }
+    }
 
     private WebUpdateForm()
     {
@@ -27,12 +47,6 @@ namespace Ordisoftware.HebrewCommon
       Icon = Globals.MainForm.Icon;
       Text = Text + Globals.AssemblyTitle;
       this.CenterToMainFormElseScreen();
-    }
-
-    public WebUpdateForm(Version version) : this()
-    {
-      LabelNewVersion.Text = Localizer.NewVersionAvailable.GetLang(version);
-      ActionReleaseNotes.Tag = string.Format(Globals.ApplicationReleaseNotesURL, version);
     }
 
     private void ActionOpenWebPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
