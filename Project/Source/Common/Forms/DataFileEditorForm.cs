@@ -94,28 +94,34 @@ namespace Ordisoftware.HebrewCommon
     private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(Localizer.AskToLoadInstalledData.GetLang()) ) return;
+      string filename = Localizer.EmptySlot.GetLang();
       foreach ( TabPage page in TabControl.TabPages )
         try
         {
-          ( (TextBox)page.Controls[0] ).Text = File.ReadAllText(( (DataFile)page.Tag ).FilenameDefault);
+          filename = ( (DataFile)page.Tag ).FilenameDefault;
+          ( (TextBox)page.Controls[0] ).Text = File.ReadAllText(filename);
         }
         catch ( Exception ex )
         {
-          ex.Manage();
+          string msg = Localizer.LoadFileError.GetLang(filename, ex.Message);
+          DisplayManager.ShowError(msg);
         }
       EditProvidersForm_Shown(this, null);
     }
 
     private void ActionOK_Click(object sender, EventArgs e)
     {
+      string filename = Localizer.EmptySlot.GetLang();
       foreach ( TabPage page in TabControl.TabPages )
         try
         {
-          File.WriteAllText(( (DataFile)page.Tag ).Filename, ( (TextBox)page.Controls[0] ).Text);
+          filename = ( (DataFile)page.Tag ).Filename;
+          File.WriteAllText(filename, ( (TextBox)page.Controls[0] ).Text);
         }
         catch ( Exception ex )
         {
-          ex.Manage();
+          string msg = Localizer.WriteFileError.GetLang(filename, ex.Message);
+          DisplayManager.ShowError(msg);
         }
     }
 

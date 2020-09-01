@@ -298,6 +298,13 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, $"Erreur de sauvegarde du fichier :{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },
       };
 
+    static public readonly NullSafeStringDictionary CopyFileError
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, $"Error while copying file:{Globals.NL2}{{0}} -> {{1}}{Globals.NL2}{{2}}" },
+        { Languages.FR, $"Erreur de copie du fichier :{Globals.NL2}{{0}} -> {{1}}{Globals.NL2}{{2}}" },
+      };
+
     static public readonly NullSafeStringDictionary ErrorInFile
       = new NullSafeStringDictionary()
       {

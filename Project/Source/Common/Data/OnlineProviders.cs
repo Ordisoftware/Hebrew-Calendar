@@ -112,7 +112,8 @@ namespace Ordisoftware.HebrewCommon
       }
       catch ( Exception ex )
       {
-        ex.Manage();
+        string msg = Localizer.LoadFileError.GetLang(filename, ex.Message);
+        DisplayManager.ShowError(msg);
       }
     }
 
