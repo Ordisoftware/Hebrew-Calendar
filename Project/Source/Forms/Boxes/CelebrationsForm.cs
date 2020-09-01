@@ -93,9 +93,9 @@ namespace Ordisoftware.HebrewCalendar
       if ( ListView.SelectedItems.Count > 0 )
         try
         {
-          MainForm.Instance.MenuShowHide_Click(null, null);
           MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(ListView.SelectedItems[0].SubItems[1].Tag.ToString()));
-          BringToFront();
+          if ( !MainForm.Instance.Visible || MainForm.Instance.WindowState == FormWindowState.Minimized )
+            MainForm.Instance.MenuShowHide_Click(null, null);
         }
         catch
         {
