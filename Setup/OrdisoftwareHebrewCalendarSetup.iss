@@ -44,6 +44,7 @@ MinVersion=0,6.1sp1
 ArchitecturesAllowed=x86 x64 ia64
 ArchitecturesInstallIn64BitMode=x64 ia64
 WizardStyle=Modern
+AppMutex=39d572b4-36da-4964-ba85-51bc5909c69b
 
 [Languages]
 Name: english; MessagesFile: compiler:Default.isl
@@ -102,7 +103,6 @@ Source: ..\Project\Dependencies\Font\Hebrew.ttf; DestDir: {fonts}; FontInstall: 
 
 [Icons]
 Name: {commondesktop}\{#MyAppPublisher} {#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: desktopicon; IconFilename: {app}\Application.ico
-;Name: {app}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
 Name: {group}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico
 Name: {group}\{cm:ProgramOnTheWeb,{#MyAppPublisher}}; Filename: {app}\Ordisoftware.com.url; IconFilename: {app}\Project\Dependencies\Fatcow\house.ico
 Name: {group}\{#MyAppName}\{cm:SourceCode_msg,{#MyAppName}}; Filename: {app}\Project; IconFilename: {app}\Project\Dependencies\Fatcow\page_white_csharp.ico; WorkingDir: {app}\Project
@@ -115,7 +115,7 @@ Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: 
 
 [Run]
 Filename: {app}\Setup\.NET\NDP472-KB4054531-Web.exe; Check: CheckForFramework; StatusMsg: {cm:DotNetInstalling_msg}; Parameters: /q /norestart
-Filename: {app}\Setup\SQLiteODBCInstaller\SQLiteODBCInstaller.exe; StatusMsg: {cm:SQLiteODBCInstalling_msg}
+Filename: {app}\Setup\SQLiteODBCInstaller\SQLiteODBCInstaller.exe; StatusMsg: {cm:SQLiteODBCInstalling_msg}; Parameters: 
 Filename: c:\Windows\regedit.exe; Parameters: "/s ""{app}\Register ODBC.reg"""
 Filename: {app}\Bin\{#MyAppExeName}; Description: {cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}; Flags: nowait postinstall
 

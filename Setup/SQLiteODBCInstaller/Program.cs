@@ -9,14 +9,15 @@ namespace SQLiteODBCInstaller
   {
 
     [STAThread]
-    static void Main()
+    static void Main(string[] args)
     {
+      string arguments = string.Join(" ", args);
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       if ( IntPtr.Size > 4 )
-        RunShell("..\\SQLiteODBC\\sqliteodbc_w64.exe", "/S");
+        RunShell("..\\SQLiteODBC\\sqliteodbc_w64.exe", arguments);
       else
-        RunShell("..\\SQLiteODBC\\sqliteodbc.exe", "/S");
+        RunShell("..\\SQLiteODBC\\sqliteodbc.exe", arguments);
     }
 
     static public void RunShell(string filename, string arguments = "")
