@@ -13,7 +13,6 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Data.Odbc;
 using System.Linq;
 using Ordisoftware.HebrewCommon;
 
@@ -95,11 +94,11 @@ namespace Ordisoftware.HebrewCalendar
          ? Localizer.Processing.GetLang()
          : MainForm.Instance.CalendarMonth.TheEvents.Count.ToString();
 
-    public string DBEngineVersion
-      => OdbcSQLiteHelper.EngineVersion;
+    public string DBEngine
+      => OdbcSQLiteHelper.Engine;
 
-    public string DBADONETAccess
-      => OdbcSQLiteHelper.ADONETAccess;
+    public string DBADOdotNETProvider
+      => OdbcSQLiteHelper.ADOdotNETProvider;
 
     public string DBFileSize
     {

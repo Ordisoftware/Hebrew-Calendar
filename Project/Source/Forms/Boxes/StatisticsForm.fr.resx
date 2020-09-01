@@ -341,7 +341,7 @@
   <data name="memoryMaxGCUsageLabel.Text" xml:space="preserve">
     <value>Pic d'utilisation mémoire GC :</value>
   </data>
-  <data name="dBEngineversionLabel1.Text" xml:space="preserve">
+  <data name="dBEngineversionLabel.Text" xml:space="preserve">
     <value>Moteur</value>
   </data>
 </root>
