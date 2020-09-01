@@ -34,7 +34,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 - Windows 7 SP1 x32/x64 or higher
 - Screen 1024x768 or higher
-- Framework .NET 4.5
+- Framework .NET 4.7.2
 - SQLite ODBC Driver
 
 ## Screenshots
@@ -178,6 +178,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Some UI/UX improvements.
 - Some code refactorings.
 - Update to SQLite 3.32.3 ODBC Driver.
+- Update Framework .NET version to 4.7.2 for only Windows 7 SP1 or higher.
 
 #### 2020.08.22 - Version 4.1
 
