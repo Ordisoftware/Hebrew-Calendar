@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
       StatisticsForm.Run(true);
-      if ( !string.IsNullOrEmpty(Settings.GPSLatitude) 
+      if ( !string.IsNullOrEmpty(Settings.GPSLatitude)
         && !string.IsNullOrEmpty(Settings.GPSLongitude) )
         try
         {
@@ -98,8 +98,8 @@ namespace Ordisoftware.HebrewCalendar
       InitializeCurrentTimeZone();
       InitializeDialogsDirectory();
       Refresh();
-      LoadData();
       ClearLists();
+      LoadData();
     }
 
     /// <summary>
