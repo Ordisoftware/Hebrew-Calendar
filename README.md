@@ -125,9 +125,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Alt+S : Save text report to CSV file
 - Alt+C : Open windows calculator
 - Alt+T : Open windows date and time settings
-- Ctrl+F1 : Statistics window
+- Ctrl+F1 : Dates difference calculator
 - Ctrl+F2 : Generate calendar data
-- Ctrl+F3 : Dates difference calculator
+- Ctrl+F11 : Current log window
+- Ctrl+F12 : Statistics window
 - Home : First month available in the database
 - End : Last month available in the database
 - Up : Previous year
