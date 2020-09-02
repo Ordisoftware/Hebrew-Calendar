@@ -60,9 +60,15 @@ namespace Ordisoftware.HebrewCommon
   ///                                                           
   /// void Function()                                          
   /// {                                                        
-  ///   DebugManager.Enter();                                     
-  ///   DoSomething();                                                  
-  ///   DebugManager.Leave();                                     
+  ///   try                                                    
+  ///   {                                                      
+  ///     DebugManager.Enter();                                     
+  ///     DoSomething();                                                  
+  ///   }                                                      
+  ///   finally (Exception e)                                    
+  ///   {                                                      
+  ///     DebugManager.Leave();                                     
+  ///   }                                                      
   /// }                                                          
   /// 
   /// void Function()                                          
@@ -133,12 +139,12 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate if debugging is active.
     /// </summary>
-    static public bool Active
+    static public bool Enabled
     {
-      get { return _Active; }
+      get { return _Enabled; }
       set
       {
-        if ( _Active == value ) return;
+        if ( _Enabled == value ) return;
         if ( value )
         {
           AppDomain.CurrentDomain.UnhandledException += OnAppDomainException;
@@ -153,7 +159,7 @@ namespace Ordisoftware.HebrewCommon
         }
         if ( value )
         {
-          _Active = true;
+          _Enabled = true;
           TraceListener = new RollOverTextWriterTraceListener(Globals.TraceFolderPath,
                                                               Globals.TraceFileCode,
                                                               Globals.TraceFileExtension,
@@ -170,7 +176,7 @@ namespace Ordisoftware.HebrewCommon
           Trace.Listeners.Remove(TraceListener);
           TraceListener.Dispose();
           TraceListener = null;
-          _Active = false;
+          _Enabled = false;
         }
       }
     }
@@ -178,14 +184,14 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// The active.
     /// </summary>
-    static private bool _Active = false;
+    static private bool _Enabled = false;
 
     /// <summary>
     /// Start this instance.
     /// </summary>
     static public void Start(object sender = null, EventArgs e = null)
     {
-      Active = true;
+      Enabled = true;
     }
 
     /// <summary>
@@ -193,7 +199,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void Stop(object sender = null, EventArgs e = null)
     {
-      Active = false;
+      Enabled = false;
     }
 
     /// <summary>
@@ -318,7 +324,7 @@ namespace Ordisoftware.HebrewCommon
       {
         bool b = true;
         var einfo = new ExceptionInfo(sender, ex);
-        if ( !_Active )
+        if ( !_Enabled )
         {
           ShowSimple(einfo);
           return;

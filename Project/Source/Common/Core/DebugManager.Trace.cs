@@ -22,22 +22,22 @@ namespace Ordisoftware.HebrewCommon
   static public partial class DebugManager
   {
 
-    static public ShowTextForm TraceContent
+    static public ShowTextForm TraceContentForm
     {
       get
       {
-        if ( _TraceContent == null )
+        if ( _TraceContentForm == null )
         {
-          _TraceContent = ShowTextForm.Create("Log", "", 800, 600, true, false, false);
-          _TraceContent.TextBox.Font = new System.Drawing.Font("Courier New", 8);
-          _TraceContent.MaximumSize = new System.Drawing.Size(0, 0);
-          _TraceContent.MinimizeBox = true;
-          _TraceContent.MaximizeBox = true;
+          _TraceContentForm = ShowTextForm.Create("Log", "", 800, 600, true, false, false, true);
+          _TraceContentForm.TextBox.Font = new System.Drawing.Font("Courier New", 8);
+          _TraceContentForm.MaximumSize = new System.Drawing.Size(0, 0);
+          _TraceContentForm.MinimizeBox = true;
+          _TraceContentForm.MaximizeBox = true;
         }
-        return _TraceContent;
+        return _TraceContentForm;
       }
     }
-    static private ShowTextForm _TraceContent;
+    static private ShowTextForm _TraceContentForm;
 
     private const int MarginSize = 4;
     private const int EnterCountSkip = 2;
@@ -50,27 +50,27 @@ namespace Ordisoftware.HebrewCommon
 
     static private void ChangingTraceFile(RollOverTextWriterTraceListener sender, string filename)
     {
-      TraceContent.Text = Path.GetFileNameWithoutExtension(filename);
-      TraceContent.TextBox.Text = File.ReadAllText(filename);
+      TraceContentForm.Text = Path.GetFileNameWithoutExtension(filename);
+      TraceContentForm.AppendText(File.ReadAllText(filename), true);
     }
 
     static public void Enter()
     {
-      if ( !_Active ) return;
+      if ( !_Enabled ) return;
       EnterCount++;
       Log(LogEvent.Enter, ExceptionInfo.GetCallerName(EnterCountSkip));
     }
 
     static public void Leave()
     {
-      if ( !_Active || EnterCount == 0 ) return;
+      if ( !_Enabled || EnterCount == 0 ) return;
       EnterCount--;
       Log(LogEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip));
     }
 
     static private void LeaveInternal()
     {
-      if ( !_Active || EnterCount == 0 ) return;
+      if ( !_Enabled || EnterCount == 0 ) return;
       Log(LogEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip + StackSkip));
       EnterCount--;
       StackSkip = 1;
@@ -78,7 +78,7 @@ namespace Ordisoftware.HebrewCommon
 
     static public void Log(LogEvent logevent, string text = "")
     {
-      if ( !Active ) return;
+      if ( !Enabled ) return;
       try
       {
         string s = "";
@@ -92,7 +92,7 @@ namespace Ordisoftware.HebrewCommon
         s = s + new string(' ', CurrentMargin) + text;
         s = s.Indent(0, CurrentMargin + s.Length);
         s += Globals.NL;
-        TraceContent.TextBox.AppendText(s);
+        SystemHelper.TryCatch(() => TraceContentForm.AppendText(s, true));
         System.Diagnostics.Trace.Write(s);
         if ( logevent == LogEvent.Enter ) CurrentMargin += MarginSize;
       }
@@ -103,7 +103,7 @@ namespace Ordisoftware.HebrewCommon
 
     static private void WriteHeader()
     {
-      if ( !_Active ) return;
+      if ( !_Enabled ) return;
       Log(LogEvent.System, Separator);
       Log(LogEvent.System, "# " + "START  : " + DateTime.Now.ToString());
       Log(LogEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
@@ -116,13 +116,35 @@ namespace Ordisoftware.HebrewCommon
 
     static private void WriteFooter()
     {
-      if ( !_Active ) return;
+      if ( !_Enabled ) return;
       Log(LogEvent.System);
       Log(LogEvent.System, "# " + "UNLEFT : " + EnterCount.ToString());
       Log(LogEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
       Log(LogEvent.System, "# " + "STOP   : " + DateTime.Now.ToString());
       Log(LogEvent.System, Separator);
       Log(LogEvent.System);
+    }
+
+    public static void ClearLogs()
+    {
+      if ( !_Enabled ) return;
+      try
+      {
+        string path = TraceListener.FilePath;
+        string code = TraceListener.FileCode;
+        string extension = TraceListener.FileExtension;
+        Stop();
+        foreach ( string filename in Directory.GetFiles(path, code + "*" + extension) )
+        {
+          string date = Path.GetFileNameWithoutExtension(filename).Replace(code, "").Trim();
+          SystemHelper.TryCatch(() => File.Delete(filename));
+        }
+        TraceContentForm.TextBox.Clear();
+      }
+      finally
+      {
+        Start();
+      }
     }
 
   }

@@ -124,11 +124,12 @@
       this.ActionShowShabatNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenSystemDateAndTime = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewLog = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewStats = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuumAtNextStartup = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
@@ -945,11 +946,12 @@
             this.ActionShowShabatNotice,
             this.toolStripSeparator8,
             this.ActionCalculateDateDiff,
+            this.ActionGenerate,
+            this.toolStripSeparator1,
             this.ActionOpenCalculator,
             this.ActionOpenSystemDateAndTime,
-            this.toolStripMenuItem1,
-            this.ActionGenerate,
             this.toolStripSeparator10,
+            this.ActionViewLog,
             this.ActionViewStats,
             this.ActionVacuumAtNextStartup});
       resources.ApplyResources(this.ActionTools, "ActionTools");
@@ -961,10 +963,10 @@
       this.ActionViewMoonMonths.Name = "ActionViewMoonMonths";
       this.ActionViewMoonMonths.Click += new System.EventHandler(this.ActionViewMoonMonths_Click);
       // 
-      // SeperatorMoonMonths
+      // ActionViewMoonMonthsSeparator
       // 
-      this.ActionViewMoonMonthsSeparator.Name = "SeperatorMoonMonths";
-      resources.ApplyResources(this.ActionViewMoonMonthsSeparator, "SeperatorMoonMonths");
+      this.ActionViewMoonMonthsSeparator.Name = "ActionViewMoonMonthsSeparator";
+      resources.ApplyResources(this.ActionViewMoonMonthsSeparator, "ActionViewMoonMonthsSeparator");
       // 
       // ActionShowCelebrationsNotice
       // 
@@ -989,6 +991,17 @@
       this.ActionCalculateDateDiff.Name = "ActionCalculateDateDiff";
       this.ActionCalculateDateDiff.Click += new System.EventHandler(this.ActionCalculateDateDiff_Click);
       // 
+      // ActionGenerate
+      // 
+      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
+      this.ActionGenerate.Name = "ActionGenerate";
+      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
       // ActionOpenCalculator
       // 
       this.ActionOpenCalculator.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -1003,27 +1016,22 @@
       this.ActionOpenSystemDateAndTime.Name = "ActionOpenSystemDateAndTime";
       this.ActionOpenSystemDateAndTime.Click += new System.EventHandler(this.ActionOpenSystemDateAndTime_Click);
       // 
-      // toolStripMenuItem1
-      // 
-      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-      // 
-      // ActionGenerate
-      // 
-      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
-      this.ActionGenerate.Name = "ActionGenerate";
-      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
-      // 
       // toolStripSeparator10
       // 
       this.toolStripSeparator10.Name = "toolStripSeparator10";
       resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
+      // ActionViewLog
+      // 
+      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
+      this.ActionViewLog.Name = "ActionViewLog";
+      this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click);
+      // 
       // ActionViewStats
       // 
       resources.ApplyResources(this.ActionViewStats, "ActionViewStats");
       this.ActionViewStats.Name = "ActionViewStats";
-      this.ActionViewStats.Click += new System.EventHandler(this.ActionViewDbStats_Click);
+      this.ActionViewStats.Click += new System.EventHandler(this.ActionViewStats_Click);
       // 
       // ActionVacuumAtNextStartup
       // 
@@ -1501,7 +1509,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripMenuItem ActionWebQA;
     private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
-    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripSeparator ActionViewMoonMonthsSeparator;
     private System.Windows.Forms.Timer TimerResumeReminder;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -1528,6 +1535,8 @@
     private System.Windows.Forms.ToolStripMenuItem ActionVacuumAtNextStartup;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     private System.Windows.Forms.ToolStripMenuItem ActionViewStats;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewLog;
   }
 }
 

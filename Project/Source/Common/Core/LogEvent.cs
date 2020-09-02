@@ -35,6 +35,11 @@ namespace Ordisoftware.HebrewCommon
     Message,
 
     /// <summary>
+    /// Data event. 
+    /// </summary>
+    Data,
+
+    /// <summary>
     /// Error event. 
     /// </summary>
     Error,

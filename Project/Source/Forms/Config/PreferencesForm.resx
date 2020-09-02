@@ -271,7 +271,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <metadata name="LabelTimeZone.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -1778,7 +1778,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditStartupHide.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2601,7 +2601,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditMonthViewSunToolTips.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="LabelColorNoDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3215,6 +3215,49 @@
   <data name="&gt;&gt;GroupBoxMonth.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="ActionClearLogs.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionClearLogs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAlNJREFUOE+FU19IU1EcPhkNFCooo0LxLSKJEJSg5wqCngqqh17qISLyJaiHlvbS
+        c/VQam3rxZqjtbt7r0vZ1MTWdGUODBaptdl2N93m7mbbXG1jfZ1zulq5VR98/P5/53fgHCI7HGlBkmCz
+        2/HsDwrcCqIIuyQlSBUAIIQ1/A/xeJwd0KfNrYGWCGEnM8x/DkEJhxGJKIgoCkKhEM8/Npu5jS0uwiaK
+        Fm2Wg6YJYWsyRKML6JYm8LD/NaUXXfZxnn9i6UOxVOI+24Rex6bNawKCoBVjSKtLyCyrnCr1GSZ9Pipi
+        Qa+2Cd2CTv0EDX8JqMkkemQvDM/fwDDwFt2DPp5fD2u/o7pAOp1GLpvBt3wOX4sFFL3DUPbWQz12AMnp
+        SSxl87zPMjRSXSBLh9kGxsEpGJ0+GCQPpus2IXWrAx9PHcFyNsv7njpdiDUQtUIgv7KCEj35Owt6b9PL
+        j6Covwg/7UucOw1Vf4n3zbU1wltfY60QKBYK6BmYgkkeh8k2BqPnE/U9eOSewcSO7Vg4cRiJg43wt+1h
+        V2iqECiXy0AqBty9Bty7DtzXA103eK0QnMUH2h/YTODpvMoEOGiJCmjvgOGBSYRBeAXj6HsYX87AKLjh
+        6uhE7spZBBtqEWjdj7mdOihNut1rAuwf/BVOK/L6C4gcakb05HGect3UI7iV8C1oSIgoyxn2H9iTZhRE
+        aiWZ2y9H9yHRfh7vagjsQ8MQXozCPOaevbOBXA7s0qW4AEULZWs1hrcR+Os2op2QM7/lmym3ULasCvwL
+        q0O1PFoHAOQHnKiCbB3Dx9kAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionClearLogs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionClearLogs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 10</value>
+  </data>
+  <data name="ActionClearLogs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionClearLogs.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="&gt;&gt;ActionClearLogs.Name" xml:space="preserve">
+    <value>ActionClearLogs</value>
+  </data>
+  <data name="&gt;&gt;ActionClearLogs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClearLogs.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;ActionClearLogs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ActionViewLog.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -3235,7 +3278,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionViewLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 10</value>
+    <value>310, 10</value>
   </data>
   <data name="ActionViewLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3253,7 +3296,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;ActionViewLog.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3277,7 +3320,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 149</value>
+    <value>306, 150</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3295,13 +3338,13 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;SelectAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 126</value>
+    <value>304, 120</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 20</value>
@@ -3322,7 +3365,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="EditVacuumAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3355,7 +3398,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditVacuumAtStartup.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ActionAutoGenerateHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3380,7 +3423,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionAutoGenerateHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 172</value>
+    <value>306, 180</value>
   </data>
   <data name="ActionAutoGenerateHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3398,7 +3441,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;ActionAutoGenerateHelp.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3441,7 +3484,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="ActionSelectLangEN.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3482,7 +3525,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="EditAutoOpenExportFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3521,7 +3564,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="EditCloseReminderFormOnClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3560,7 +3603,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditCloseReminderFormOnClick.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="EditShowReminderInTaskBar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3599,7 +3642,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3638,7 +3681,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateEveryWeek.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="EditCheckUpdateAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3677,7 +3720,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3716,7 +3759,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="EditBigCalendarWarning.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3755,7 +3798,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditBigCalendarWarning.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="EditAllowSuspendReminder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3794,7 +3837,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAllowSuspendReminder.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3833,7 +3876,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="EditAutoRegenerate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3872,7 +3915,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAutoRegenerate.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3918,7 +3961,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="EditHebrewLettersPath.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -3945,7 +3988,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="GroupBoxSystem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -4081,7 +4124,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>359, 19</value>
+    <value>364, 19</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -4256,6 +4299,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>769, 711</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

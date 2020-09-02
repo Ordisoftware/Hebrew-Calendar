@@ -86,6 +86,7 @@
       this.MaximizeBox = false;
       this.Name = "ShowTextForm";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowTextForm_FormClosing);
       this.PanelBottom.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);

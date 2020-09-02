@@ -96,6 +96,23 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
+    private void ActionViewLog_Click(object sender, EventArgs e)
+    {
+      DebugManager.TraceContentForm.Show();
+      DebugManager.TraceContentForm.BringToFront();
+    }
+
+    private void ActionClearLogs_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo(Translations.AskToClearLogs.GetLang()) )
+        DebugManager.ClearLogs();
+    }
+
+    private void StatisticsForm_Activated(object sender, EventArgs e)
+    {
+      ActionViewLog.Enabled = DebugManager.Enabled;
+      ActionClearLogs.Enabled = DebugManager.Enabled;
+    }
   }
 
 }

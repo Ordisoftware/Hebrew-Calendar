@@ -26,16 +26,19 @@ namespace Ordisoftware.HebrewCommon
   // https://web.archive.org/web/20040628122447/http://weblogs.asp.net/DaveBost/archive/2004/04/30/124224.aspx
   public class RollOverTextWriterTraceListener : TraceListener
   {
-    private int KeepCount;
-    private DateTime Date;
-    private StreamWriter Writer;
-
-    private string FilePath;
-    private string FileCode;
-    private string FileExtension;
-    private string DateFormat;
+    public DateTime Date { get; private set; }
+    
+    public string FilePath { get; }
+    public string FileCode { get; }
+    public string FileExtension { get; }
 
     public string Filename { get; private set; }
+
+    public int KeepCount { get; set; }
+
+    private StreamWriter Writer;
+    private string DateFormat;
+
 
     public bool AutoFlush
     {
@@ -106,8 +109,7 @@ namespace Ordisoftware.HebrewCommon
             string date = Path.GetFileNameWithoutExtension(filename).Replace(FileCode, "").Trim();
             if ( DateTime.TryParse(date, out DateTime thedate) )
               if ( thedate <= limit )
-                try { File.Delete(filename); }
-                catch { }
+                SystemHelper.TryCatch(() => File.Delete(filename));
           }
         }
         catch

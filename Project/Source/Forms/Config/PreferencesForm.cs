@@ -314,7 +314,9 @@ namespace Ordisoftware.HebrewCalendar
 
     private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
     {
-      DebugManager.Active = EditDebuggerEnabled.Checked;
+      DebugManager.Enabled = EditDebuggerEnabled.Checked;
+      ActionViewLog.Enabled = DebugManager.Enabled;
+      ActionClearLogs.Enabled = DebugManager.Enabled;
     }
 
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)
@@ -627,7 +629,14 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
-      DebugManager.TraceContent.Show();
+      DebugManager.TraceContentForm.Show();
+      DebugManager.TraceContentForm.BringToFront();
+    }
+
+    private void ActionClearLogs_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo(Translations.AskToClearLogs.GetLang()) )
+        DebugManager.ClearLogs();
     }
 
   }

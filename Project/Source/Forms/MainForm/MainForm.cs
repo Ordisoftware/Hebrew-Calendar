@@ -110,27 +110,35 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
-      if ( Globals.IsExiting ) return;
-      UpdateTextCalendar();
-      CalendarMonth.CalendarDateChanged += date => GoToDate(date);
-      MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);
-      Globals.IsReady = true;
-      UpdateButtons();
-      GoToDate(DateTime.Today);
-      CheckRegenerateCalendar();
-      if ( string.IsNullOrEmpty(Settings.GPSLatitude)
-        || string.IsNullOrEmpty(Settings.GPSLongitude) )
-        ActionPreferences.PerformClick();
-      if ( Settings.StartupHide )
-        MenuShowHide.PerformClick();
-      TimerBallon.Interval = Settings.BalloonLoomingDelay;
-      TimerMidnight.TimeReached += TimerMidnight_Tick;
-      TimerMidnight.Start();
-      TimerReminder_Tick(null, null);
-      ChronoStart.Stop();
-      Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
-      Settings.Save();
-      BringToFront();
+      DebugManager.Enter();
+      try
+      {
+        if ( Globals.IsExiting ) return;
+        UpdateTextCalendar();
+        CalendarMonth.CalendarDateChanged += date => GoToDate(date);
+        MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);
+        Globals.IsReady = true;
+        UpdateButtons();
+        GoToDate(DateTime.Today);
+        CheckRegenerateCalendar();
+        if ( string.IsNullOrEmpty(Settings.GPSLatitude)
+          || string.IsNullOrEmpty(Settings.GPSLongitude) )
+          ActionPreferences.PerformClick();
+        if ( Settings.StartupHide )
+          MenuShowHide.PerformClick();
+        TimerBallon.Interval = Settings.BalloonLoomingDelay;
+        TimerMidnight.TimeReached += TimerMidnight_Tick;
+        TimerMidnight.Start();
+        TimerReminder_Tick(null, null);
+        ChronoStart.Stop();
+        Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
+        Settings.Save();
+        BringToFront();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
 
     /// <summary>
@@ -141,13 +149,20 @@ namespace Ordisoftware.HebrewCalendar
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       DebugManager.Enter();
-      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
-      if ( !Globals.IsReady ) return;
-      if ( Globals.IsExiting ) return;
-      if ( Globals.AllowClose ) return;
-      e.Cancel = true;
-      MenuShowHide.PerformClick();
-      DebugManager.Leave();
+      DebugManager.Log(LogEvent.Data, e.CloseReason.ToStringFull());
+      try
+      {
+        if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
+        if ( !Globals.IsReady ) return;
+        if ( Globals.IsExiting ) return;
+        if ( Globals.AllowClose ) return;
+        e.Cancel = true;
+        MenuShowHide.PerformClick();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
 
     /// <summary>
@@ -157,7 +172,58 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
-      Settings.Store();
+      DebugManager.Enter();
+      DebugManager.Log(LogEvent.Data, e.CloseReason.ToStringFull());
+      try
+      {
+        Settings.Store();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
+    }
+
+    /// <summary>
+    /// Session ending event.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Session ending event information.</param>
+    internal void SessionEnding(object sender, SessionEndingEventArgs e)
+    {
+      DebugManager.Enter();
+      DebugManager.Log(LogEvent.Data, e.Reason.ToStringFull());
+      try
+      {
+        if ( Globals.IsSessionEnding ) return;
+        Globals.IsExiting = true;
+        Globals.IsSessionEnding = true;
+        Globals.AllowClose = true;
+        LockSessionForm.Instance.Timer.Stop();
+        TimerTooltip.Stop();
+        TimerBallon.Stop();
+        TimerTrayMouseMove.Stop();
+        TimerResumeReminder.Stop();
+        TimerMidnight.Stop();
+        TimerReminder.Stop();
+        try { ClearLists(); }
+        catch { }
+        try
+        {
+          foreach ( Form form in Application.OpenForms )
+            if ( form != this && form.Visible )
+              try { form.Close(); }
+              catch { }
+        }
+        catch
+        {
+        }
+        Close();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
 
     /// <summary>
@@ -176,57 +242,30 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Session ending event.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Session ending event information.</param>
-    internal void SessionEnding(object sender, SessionEndingEventArgs e)
-    {
-      DebugManager.Enter();
-      if ( Globals.IsSessionEnding ) return;
-      Globals.IsExiting = true;
-      Globals.IsSessionEnding = true;
-      Globals.AllowClose = true;
-      LockSessionForm.Instance.Timer.Stop();
-      TimerTooltip.Stop();
-      TimerBallon.Stop();
-      TimerTrayMouseMove.Stop();
-      TimerResumeReminder.Stop();
-      TimerMidnight.Stop();
-      TimerReminder.Stop();
-      try { ClearLists(); }
-      catch { }
-      try
-      {
-        foreach ( Form form in Application.OpenForms )
-          if ( form != this && form.Visible )
-            try { form.Close(); }
-            catch { }
-      }
-      catch
-      {
-      }
-      Close();
-      DebugManager.Leave();
-    }
-
-    /// <summary>
     /// Event handler. Called by MenuExit for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
     private void MenuExit_Click(object sender, EventArgs e)
     {
-      if ( IsGenerating )
+      DebugManager.Enter();
+      try
       {
-        DisplayManager.ShowInformation(Translations.CantExitWhileGenerating.GetLang());
-        return;
-      }
-      if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDev ) )
-        if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
+        if ( IsGenerating )
+        {
+          DisplayManager.ShowInformation(Translations.CantExitWhileGenerating.GetLang());
           return;
-      Globals.AllowClose = true;
-      Close();
+        }
+        if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDev ) )
+          if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
+            return;
+        Globals.AllowClose = true;
+        Close();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
 
     /// <summary>
@@ -236,6 +275,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void MenuShowHide_Click(object sender, EventArgs e)
     {
+      DebugManager.Enter();
       try
       {
         if ( Visible && WindowState == FormWindowState.Minimized )
@@ -287,6 +327,10 @@ namespace Ordisoftware.HebrewCalendar
       catch ( Exception ex )
       {
         ex.Manage();
+      }
+      finally
+      {
+        DebugManager.Leave();
       }
     }
 
@@ -744,13 +788,24 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionViewDbStats for click events.
+    /// Event handler. Called by ActionViewStats for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionViewDbStats_Click(object sender, EventArgs e)
+    private void ActionViewStats_Click(object sender, EventArgs e)
     {
       StatisticsForm.Run();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewLog for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewLog_Click(object sender, EventArgs e)
+    {
+      DebugManager.TraceContentForm.Show();
+      DebugManager.TraceContentForm.BringToFront();
     }
 
     /// <summary>

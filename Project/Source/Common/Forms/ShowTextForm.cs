@@ -26,7 +26,8 @@ namespace Ordisoftware.HebrewCommon
                                       int height = 300,
                                       bool sizeable = true,
                                       bool wrap = true,
-                                      bool justify = true)
+                                      bool justify = true,
+                                      bool hideOnClose = false)
     {
       for ( int index = Application.OpenForms.Count - 1; index >= 0; index-- )
         if ( Application.OpenForms[index] is ShowTextForm )
@@ -41,6 +42,7 @@ namespace Ordisoftware.HebrewCommon
       form.CenterToMainFormElseScreen();
       if ( !sizeable ) form.FormBorderStyle = FormBorderStyle.FixedSingle;
       form.TextBox.WordWrap = wrap;
+      form.HideOnClose = hideOnClose;
       return form;
     }
 
@@ -50,14 +52,16 @@ namespace Ordisoftware.HebrewCommon
                                       int height = 300,
                                       bool sizeable = true,
                                       bool wrap = true,
-                                      bool justify = true)
+                                      bool justify = true,
+                                      bool hideOnClose = false)
     {
-      var form = Create(title.GetLang(), text.GetLang(), width, height, sizeable, wrap, justify);
+      var form = Create(title.GetLang(), text.GetLang(), width, height, sizeable, wrap, justify, hideOnClose);
       form.LocalizedTitle = title;
       form.LocalizedText = text;
       return form;
     }
 
+    private bool HideOnClose;
     private NullSafeStringDictionary LocalizedTitle;
     private NullSafeStringDictionary LocalizedText;
 
@@ -76,6 +80,24 @@ namespace Ordisoftware.HebrewCommon
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
+    }
+
+    private void ShowTextForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if ( !HideOnClose ) return;
+      e.Cancel = true;
+      Hide();
+    }
+
+    public void AppendText(string text, bool scrollBottom = false)
+    {
+      TextBox.AppendText(text);
+      if ( scrollBottom )
+      {
+        TextBox.SelectionStart = TextBox.Text.Length - 1;
+        TextBox.ScrollToCaret();
+      }
+
     }
 
   }
