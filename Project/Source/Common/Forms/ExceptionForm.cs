@@ -140,9 +140,15 @@ namespace Ordisoftware.HebrewCommon
       }
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionViewLog for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
       DebugManager.TraceForm.Show();
+      DebugManager.TraceForm.BringToFront();
     }
 
     /// <summary>

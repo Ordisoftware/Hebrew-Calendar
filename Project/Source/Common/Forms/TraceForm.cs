@@ -67,8 +67,10 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionClearLogs_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Localizer.AskToClearLogs.GetLang()) )
-        DebugManager.ClearTraces();
+      if ( !DisplayManager.QueryYesNo(Localizer.AskToClearLogs.GetLang()) ) return;
+      DebugManager.ClearTraces();
+      Show();
+      BringToFront();
     }
 
     private void LogForm_Activated(object sender, EventArgs e)
