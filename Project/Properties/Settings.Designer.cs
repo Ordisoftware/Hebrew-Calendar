@@ -1593,5 +1593,29 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["BigCalendarWarningEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point TraceFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["TraceFormLocation"]));
+            }
+            set {
+                this["TraceFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("784, 561")]
+        public global::System.Drawing.Size TraceFormSize {
+            get {
+                return ((global::System.Drawing.Size)(this["TraceFormSize"]));
+            }
+            set {
+                this["TraceFormSize"] = value;
+            }
+        }
     }
 }

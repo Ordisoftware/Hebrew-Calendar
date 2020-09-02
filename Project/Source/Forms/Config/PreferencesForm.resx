@@ -3237,7 +3237,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 149</value>
+    <value>306, 150</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3261,7 +3261,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 126</value>
+    <value>304, 120</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 20</value>
@@ -3340,7 +3340,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionAutoGenerateHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 172</value>
+    <value>306, 180</value>
   </data>
   <data name="ActionAutoGenerateHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -4041,7 +4041,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>359, 19</value>
+    <value>364, 19</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>

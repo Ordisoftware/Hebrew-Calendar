@@ -140,7 +140,7 @@
     <value>91, 13</value>
   </data>
   <data name="dBLastYearLabel.Text" xml:space="preserve">
-    <value>Dernière années :</value>
+    <value>Dernière année :</value>
   </data>
   <data name="dBRecordsCountLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>

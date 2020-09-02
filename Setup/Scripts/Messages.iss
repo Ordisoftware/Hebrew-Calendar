@@ -1,8 +1,3 @@
-[Languages]
-Name: english; MessagesFile: compiler:Default.isl
-Name: french; MessagesFile: compiler:Languages\French.isl
-
-[CustomMessages]
 english.DotNetRequired_msg=Install .NET Framework 4.7.2
 french.DotNetRequired_msg=Installer .NET Framework 4.7.2
 english.DotNetInstalling_msg=Microsoft Framework 4.7.2 is being installed. Please wait...

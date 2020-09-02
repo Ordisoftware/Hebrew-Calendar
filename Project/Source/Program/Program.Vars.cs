@@ -135,25 +135,25 @@ namespace Ordisoftware.HebrewCalendar
     /// Indicate filename of the GPS database.
     /// </summary>
     static public string GPSFilename
-      => Globals.DocumentsFolderPath + "WorldCities.csv";
+      => Path.Combine(Globals.DocumentsFolderPath, "WorldCities.csv");
 
     /// <summary>
     /// Indicate the moon months documents folder.
     /// </summary>
     static public string MoonMonthsFolderPath
-      => Globals.DocumentsFolderPath + "MoonMonths" + Path.DirectorySeparatorChar;
+      => Path.Combine(Globals.DocumentsFolderPath, "MoonMonths");
 
     /// <summary>
     /// Indicate filename of the moon months meanings.
     /// </summary>
     static public string MoonMonthsMeaningsFilename
-      = MoonMonthsFolderPath + "MoonMonthsMeanings{0}.txt";
+      = Path.Combine(MoonMonthsFolderPath, "MoonMonthsMeanings{0}.txt");
 
     /// <summary>
     /// Indicate filename of the moon months lettriqs.
     /// </summary>
     static public string MoonMonthsLettriqsFilename
-      => MoonMonthsFolderPath + "MoonMonthsLettriqs{0}.txt";
+      => Path.Combine(MoonMonthsFolderPath, "MoonMonthsLettriqs{0}.txt");
 
     /// <summary>
     /// Indicate the moon months meanings.

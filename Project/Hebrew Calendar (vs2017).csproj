@@ -130,9 +130,12 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Common\Core\DebugManager.Trace.cs" />
     <Compile Include="Source\Common\Core\NotImplementedExceptionEx.cs" />
+    <Compile Include="Source\Common\Core\RollOverTextWriterTraceListener.cs" />
     <Compile Include="Source\Common\Core\SQLiteException.cs" />
-    <Compile Include="Source\Common\Core\Debugger.cs" />
+    <Compile Include="Source\Common\Core\DebugManager.cs" />
+    <Compile Include="Source\Common\Core\TraceEvent.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringList.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringDictionary.cs" />
     <Compile Include="Source\Common\Data\NullSafeSortedDictionary.cs" />
@@ -151,6 +154,13 @@
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
     <Compile Include="Source\Common\Data\DataFileFolder.cs" />
+    <Compile Include="Source\Common\Forms\TraceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Forms\TraceForm.Designer.cs">
+      <DependentUpon>TraceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\System\Globals.Assembly.cs" />
     <Compile Include="Source\Common\System\Languages.cs" />
     <Compile Include="Source\Common\System\SystemHelper.OS.cs" />
     <Compile Include="Source\Common\System\SystemHelper.Format.cs" />
@@ -537,6 +547,12 @@
     <EmbeddedResource Include="Source\Common\Controls\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\TraceForm.fr.resx">
+      <DependentUpon>TraceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\TraceForm.resx">
+      <DependentUpon>TraceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Forms\WebUpdateForm.fr.resx">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>

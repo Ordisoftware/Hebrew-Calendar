@@ -13,6 +13,8 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.IO;
 using System.IO.Pipes;
 using System.Configuration;
@@ -101,6 +103,23 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Call an action without raising exceptions.
+    /// </summary>
+    /// <param name="action"></param>
+    static public bool TryCatch(Action action)
+    {
+      try
+      {
+        action();
+        return true;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+
+    /// <summary>
     /// Get the memory size of a serializable object.
     /// </summary>
     static public long SizeOf(this object instance)
@@ -133,6 +152,30 @@ namespace Ordisoftware.HebrewCommon
       {
       }
       return -1;
+    }
+
+    static public string Indent(this string str, int first, int corpus)
+    {
+      return new string(' ', first) + str.Replace(Globals.NL, Globals.NL + new string(' ', corpus));
+    }
+
+    static public string[] Split(this string str, StringSplitOptions stringSplitOptions = StringSplitOptions.None, string separator = "\r\n")
+    {
+      return str.Split(new string[] { separator }, StringSplitOptions.None);
+    }
+
+    static public string AsMultipart(this IEnumerable<string> list, string separator)
+    {
+      return AsMultipart(separator, list.Count(), i => list.ElementAt(i));
+    }
+
+    static private string AsMultipart(string separator, int count, Func<int, string> get)
+    {
+      if ( count == 0 ) return "";
+      string res = get(0);
+      for ( int i = 1; i < count; i++ )
+        res = res + separator + get(i);
+      return res;
     }
 
   }

@@ -47,8 +47,7 @@ namespace Ordisoftware.HebrewCommon
     /// <returns></returns>
     static public string UnformatSQL(string sql)
     {
-      var lines = sql.Split(Globals.NL.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-      return string.Join(" ", lines.Select(line => line.Trim()));
+      return string.Join(" ", sql.Split(StringSplitOptions.RemoveEmptyEntries).Select(line => line.Trim()));
     }
 
     /// <summary>
@@ -59,7 +58,10 @@ namespace Ordisoftware.HebrewCommon
       try
       {
         Directory.CreateDirectory(Globals.DatabaseFolderPath);
-        var key = Registry.CurrentUser.OpenSubKey(@"Software\ODBC\ODBC.INI\ODBC Data Sources", true);
+        var key = Registry.CurrentUser.OpenSubKey(@"Software", true);
+        key = key.CreateSubKey("ODBC", true);
+        key = key.CreateSubKey("ODBC.INI", true);
+        key = key.CreateSubKey("ODBC Data Sources", true);
         key.SetValue(Globals.OdbcDSN, "SQLite3 ODBC Driver");
         key = Registry.CurrentUser.OpenSubKey(@"Software\ODBC\ODBC.INI", true);
         key = key.CreateSubKey(Globals.OdbcDSN);

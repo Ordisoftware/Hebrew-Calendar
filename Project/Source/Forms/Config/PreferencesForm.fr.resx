@@ -539,7 +539,7 @@
     <value>124, 17</value>
   </data>
   <data name="EditDebuggerEnabled.Text" xml:space="preserve">
-    <value>Activer le débogueur</value>
+    <value>Activer le debogueur</value>
   </data>
   <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 17</value>

@@ -148,7 +148,7 @@ namespace Ordisoftware.HebrewCommon
           SelectionStart = pos + length;
           break;
         default:
-          throw new NotImplementedExceptionEx(CaretAfterPaste.GetFullname());
+          throw new NotImplementedExceptionEx(CaretAfterPaste.ToStringFull());
       }
     }
 

@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewCommon
                  .First();
     }
 
-    static public string GetFullname<T>(this T value) where T : struct
+    static public string ToStringFull<T>(this T value) where T : struct
     {
       return value.GetType().Name + "." + value.ToString();
     }

@@ -451,7 +451,6 @@
       // 
       // ActionPersonalShabatHelp
       // 
-      this.ActionPersonalShabatHelp.AllowDrop = true;
       this.ActionPersonalShabatHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionPersonalShabatHelp, "ActionPersonalShabatHelp");
       this.ActionPersonalShabatHelp.Name = "ActionPersonalShabatHelp";
@@ -772,7 +771,6 @@
       // 
       // ActionCountAsMoonHelp
       // 
-      this.ActionCountAsMoonHelp.AllowDrop = true;
       this.ActionCountAsMoonHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionCountAsMoonHelp, "ActionCountAsMoonHelp");
       this.ActionCountAsMoonHelp.Name = "ActionCountAsMoonHelp";
@@ -1079,7 +1077,6 @@
       // 
       // SelectAutoGenerateYearsInterval
       // 
-      this.SelectAutoGenerateYearsInterval.AllowDrop = true;
       this.SelectAutoGenerateYearsInterval.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.SelectAutoGenerateYearsInterval, "SelectAutoGenerateYearsInterval");
       this.SelectAutoGenerateYearsInterval.Name = "SelectAutoGenerateYearsInterval";
@@ -1102,7 +1099,6 @@
       // 
       // ActionAutoGenerateHelp
       // 
-      this.ActionAutoGenerateHelp.AllowDrop = true;
       this.ActionAutoGenerateHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionAutoGenerateHelp, "ActionAutoGenerateHelp");
       this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
@@ -1112,7 +1108,6 @@
       // 
       // ActionSelectLangFR
       // 
-      this.ActionSelectLangFR.AllowDrop = true;
       this.ActionSelectLangFR.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
       resources.ApplyResources(this.ActionSelectLangFR, "ActionSelectLangFR");
       this.ActionSelectLangFR.Name = "ActionSelectLangFR";
@@ -1122,7 +1117,6 @@
       // 
       // ActionSelectLangEN
       // 
-      this.ActionSelectLangEN.AllowDrop = true;
       this.ActionSelectLangEN.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
       resources.ApplyResources(this.ActionSelectLangEN, "ActionSelectLangEN");
       this.ActionSelectLangEN.Name = "ActionSelectLangEN";
@@ -1223,7 +1217,6 @@
       // 
       // ActionMoonDayTextFormatReset
       // 
-      this.ActionMoonDayTextFormatReset.AllowDrop = true;
       this.ActionMoonDayTextFormatReset.ContextMenuStrip = this.MenuSelectMoonDayTextFormat;
       this.ActionMoonDayTextFormatReset.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionMoonDayTextFormatReset, "ActionMoonDayTextFormatReset");
@@ -1273,7 +1266,6 @@
       // 
       // ActionMoonDayTextFormatHelp
       // 
-      this.ActionMoonDayTextFormatHelp.AllowDrop = true;
       this.ActionMoonDayTextFormatHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionMoonDayTextFormatHelp, "ActionMoonDayTextFormatHelp");
       this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";

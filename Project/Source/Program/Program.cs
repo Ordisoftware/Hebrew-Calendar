@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewCalendar
       UpdateLocalization(true);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
-      Debugger.Active = Settings.DebuggerEnabled;
+      DebugManager.Enabled = Settings.DebuggerEnabled;
       string lang = Settings.Language;
       Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;

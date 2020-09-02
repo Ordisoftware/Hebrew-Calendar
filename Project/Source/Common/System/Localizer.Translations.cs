@@ -87,8 +87,8 @@ namespace Ordisoftware.HebrewCommon
     static public readonly NullSafeStringDictionary CheckUpdateFileError
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Error in check update file: no version number found or bad format." },
-        { Languages.FR, "Erreur dans le fichier de mise à jour : pas de numéro de version trouvé ou format incorrect." }
+        { Languages.EN, $"Error in check update file: no version number found or bad format.{Globals.NL2}{{0}}" },
+        { Languages.FR, $"Erreur dans le fichier de mise à jour : pas de numéro de version trouvé ou format incorrect.{Globals.NL2}{{0}}" }
       };
 
     static public readonly NullSafeStringDictionary WebCheckUpdate
@@ -432,6 +432,13 @@ namespace Ordisoftware.HebrewCommon
       {
         { Languages.EN, "Replace bookmark?" },
         { Languages.FR, "Remplacer le signet ?" }
+      };
+
+    static public readonly NullSafeStringDictionary AskToClearLogs
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Do you want to delete all log files?" },
+        { Languages.FR, "Voulez-vous effacer tous les fichiers de log ?" }
       };
 
     static public readonly NullSafeStringDictionary GitHubIssueComment

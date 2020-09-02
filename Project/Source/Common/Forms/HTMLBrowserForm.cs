@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewCommon
 
     private string FilenameTemplate;
 
-    public HTMLBrowserForm()
+    private HTMLBrowserForm()
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;
