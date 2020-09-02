@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.HebrewCommon
 {
-  partial class ShowTextForm
+  partial class LogForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,8 +28,9 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowTextForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionClearLogs = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.panel1 = new System.Windows.Forms.Panel();
@@ -40,9 +41,22 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionClearLogs);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionClearLogs
+      // 
+      this.ActionClearLogs.FlatAppearance.BorderSize = 0;
+      this.ActionClearLogs.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.ActionClearLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.ActionClearLogs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      resources.ApplyResources(this.ActionClearLogs, "ActionClearLogs");
+      this.ActionClearLogs.Name = "ActionClearLogs";
+      this.ActionClearLogs.TabStop = false;
+      this.ActionClearLogs.UseVisualStyleBackColor = true;
+      this.ActionClearLogs.Click += new System.EventHandler(this.ActionClearLogs_Click);
       // 
       // ActionClose
       // 
@@ -71,10 +85,9 @@
       resources.ApplyResources(this.TextBox, "TextBox");
       this.TextBox.Name = "TextBox";
       this.TextBox.ReadOnly = true;
-      this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Justify;
-      this.TextBox.TabStop = false;
+      this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Left;
       // 
-      // ShowTextForm
+      // LogForm
       // 
       this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
@@ -83,10 +96,11 @@
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.PanelBottom);
-      this.MaximizeBox = false;
-      this.Name = "ShowTextForm";
+      this.Name = "LogForm";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+      this.Activated += new System.EventHandler(this.LogForm_Activated);
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowTextForm_FormClosing);
+      this.Load += new System.EventHandler(this.LogForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
@@ -98,6 +112,7 @@
     private System.Windows.Forms.Panel PanelSeparator;
     private System.Windows.Forms.Panel panel1;
     internal RichTextBoxEx TextBox;
-    private System.Windows.Forms.Panel PanelBottom;
+    public System.Windows.Forms.Panel PanelBottom;
+    private System.Windows.Forms.Button ActionClearLogs;
   }
 }

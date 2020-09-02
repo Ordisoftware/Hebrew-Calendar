@@ -93,6 +93,7 @@ namespace Ordisoftware.HebrewCalendar
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, ref lastdone, true);
       Settings.CheckUpdateLastDone = lastdone;
       if ( exit ) return;
+      ActionViewLog.Enabled = DebugManager.Enabled;
       CalendarText.ForeColor = Settings.TextColor;
       CalendarText.BackColor = Settings.TextBackground;
       InitializeCalendarUI();
@@ -804,8 +805,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
-      DebugManager.TraceContentForm.Show();
-      DebugManager.TraceContentForm.BringToFront();
+      DebugManager.LogForm.Show();
+      DebugManager.LogForm.BringToFront();
     }
 
     /// <summary>

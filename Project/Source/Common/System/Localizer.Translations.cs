@@ -434,6 +434,13 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "Remplacer le signet ?" }
       };
 
+    static public readonly NullSafeStringDictionary AskToClearLogs
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Do you want to delete all log files?" },
+        { Languages.FR, "Voulez-vous effacer tous les fichiers de log ?" }
+      };
+
     static public readonly NullSafeStringDictionary GitHubIssueComment
       = new NullSafeStringDictionary()
       {

@@ -36,6 +36,7 @@ namespace Ordisoftware.HebrewCommon
     static public readonly string NL3 = NL2 + NL;
     static public readonly string NL4 = NL3 + NL;
 
+    /// <summary>
     /// Indicate the process start date and time.
     /// </summary>
     static public readonly DateTime StartDateTime = DateTime.Now;
@@ -45,7 +46,6 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public ApplicationSettingsBase Settings { get; internal set; }
 
-    /// <summary>
     /// <summary>
     /// Indicate if the application is in loading data stage.
     /// </summary>
@@ -90,7 +90,6 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// <summary>
     /// Indicate the main form.
     /// </summary>
     static public Form MainForm
@@ -100,6 +99,7 @@ namespace Ordisoftware.HebrewCommon
     }
     static private Form _MainForm;
 
+    /// <summary>
     /// Indicate the application code (title without space
     /// </summary>
     static public readonly string ApplicationCode

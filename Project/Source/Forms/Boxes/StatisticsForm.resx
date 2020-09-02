@@ -1365,89 +1365,6 @@
   <data name="&gt;&gt;dBADONETAccessLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ActionClearLogs.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionClearLogs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAlNJREFUOE+FU19IU1EcPhkNFCooo0LxLSKJEJSg5wqCngqqh17qISLyJaiHlvbS
-        c/VQam3rxZqjtbt7r0vZ1MTWdGUODBaptdl2N93m7mbbXG1jfZ1zulq5VR98/P5/53fgHCI7HGlBkmCz
-        2/HsDwrcCqIIuyQlSBUAIIQ1/A/xeJwd0KfNrYGWCGEnM8x/DkEJhxGJKIgoCkKhEM8/Npu5jS0uwiaK
-        Fm2Wg6YJYWsyRKML6JYm8LD/NaUXXfZxnn9i6UOxVOI+24Rex6bNawKCoBVjSKtLyCyrnCr1GSZ9Pipi
-        Qa+2Cd2CTv0EDX8JqMkkemQvDM/fwDDwFt2DPp5fD2u/o7pAOp1GLpvBt3wOX4sFFL3DUPbWQz12AMnp
-        SSxl87zPMjRSXSBLh9kGxsEpGJ0+GCQPpus2IXWrAx9PHcFyNsv7njpdiDUQtUIgv7KCEj35Owt6b9PL
-        j6Covwg/7UucOw1Vf4n3zbU1wltfY60QKBYK6BmYgkkeh8k2BqPnE/U9eOSewcSO7Vg4cRiJg43wt+1h
-        V2iqECiXy0AqBty9Bty7DtzXA103eK0QnMUH2h/YTODpvMoEOGiJCmjvgOGBSYRBeAXj6HsYX87AKLjh
-        6uhE7spZBBtqEWjdj7mdOihNut1rAuwf/BVOK/L6C4gcakb05HGect3UI7iV8C1oSIgoyxn2H9iTZhRE
-        aiWZ2y9H9yHRfh7vagjsQ8MQXozCPOaevbOBXA7s0qW4AEULZWs1hrcR+Os2op2QM7/lmym3ULasCvwL
-        q0O1PFoHAOQHnKiCbB3Dx9kAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionClearLogs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionClearLogs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>381, 1</value>
-  </data>
-  <data name="ActionClearLogs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionClearLogs.TabIndex" type="System.Int32, mscorlib">
-    <value>83</value>
-  </data>
-  <data name="&gt;&gt;ActionClearLogs.Name" xml:space="preserve">
-    <value>ActionClearLogs</value>
-  </data>
-  <data name="&gt;&gt;ActionClearLogs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionClearLogs.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionClearLogs.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActionViewLog.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionViewLog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAbdJREFUOE+Vk0tSwkAQhnMFSz2BR/AgLlx4FjcuvIMFpbgRlUUIicVKqiDAUo9g
-        4RMwGQiEPAjv357J4Avw8VV19dSk+69/ejIK5yqf72qGgaxuQM3pFDkZmsiariNnGEwUL4M3/4Zt28hq
-        2qVs+UpWCtTWFTyyDp4bTTw9v+D+4Unspy8uRLYsi1zqGdn2gSoFHvd30HRDnKROcV0ooF5viP3zTAaM
-        tcSaOyHHWdkao9LZObVNBa9eBLvdgWUzNJqW2L+5vRUicyd8JrI1RqUNjj2YgnkhmOOAtVqwGYMfBOLb
-        Z/hgZWvMu4MNBU40Qafno+v24HRdOJ0uhYs2ZdZ2RJ2qad8E5AzqB7voTYDjVAqmaaJUKsH3AySTSRSL
-        RbgkyFkUkA7u6BY8EgiiCEEYCvsehR/Gued5om6JQDyDkCKYUiaBsN8XIgHl+Xo+jx8dDCmPJlOMRiMM
-        h0OMKfPg68FgIOpWzoAd7oEM4CiRRKVSwWwGJBIJVKtVlMsmxmM6H7EgMP8T79YUkVcx44rEwjX+5S18
-        htfL1pizdLocv0b5Esni0pAvk9fL1ne2KLb/EbyeUJQ3lC+ZmgDmmQcAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionViewLog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionViewLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>413, 1</value>
-  </data>
-  <data name="ActionViewLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionViewLog.TabIndex" type="System.Int32, mscorlib">
-    <value>84</value>
-  </data>
-  <data name="&gt;&gt;ActionViewLog.Name" xml:space="preserve">
-    <value>ActionViewLog</value>
-  </data>
-  <data name="&gt;&gt;ActionViewLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionViewLog.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionViewLog.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="EditAlwaysOnTop.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1476,7 +1393,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;EditAlwaysOnTop.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -1506,7 +1423,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>

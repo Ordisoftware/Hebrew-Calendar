@@ -22,22 +22,7 @@ namespace Ordisoftware.HebrewCommon
   static public partial class DebugManager
   {
 
-    static public ShowTextForm TraceContentForm
-    {
-      get
-      {
-        if ( _TraceContentForm == null )
-        {
-          _TraceContentForm = ShowTextForm.Create("Log", "", 800, 600, true, false, false, true);
-          _TraceContentForm.TextBox.Font = new System.Drawing.Font("Courier New", 8);
-          _TraceContentForm.MaximumSize = new System.Drawing.Size(0, 0);
-          _TraceContentForm.MinimizeBox = true;
-          _TraceContentForm.MaximizeBox = true;
-        }
-        return _TraceContentForm;
-      }
-    }
-    static private ShowTextForm _TraceContentForm;
+    static public readonly LogForm LogForm = new LogForm("LogFormLocation", "LogFormSize");
 
     private const int MarginSize = 4;
     private const int EnterCountSkip = 2;
@@ -50,8 +35,8 @@ namespace Ordisoftware.HebrewCommon
 
     static private void ChangingTraceFile(RollOverTextWriterTraceListener sender, string filename)
     {
-      TraceContentForm.Text = Path.GetFileNameWithoutExtension(filename);
-      TraceContentForm.AppendText(File.ReadAllText(filename), true);
+      LogForm.Text = Path.GetFileNameWithoutExtension(filename);
+      LogForm.AppendText(File.ReadAllText(filename), true);
     }
 
     static public void Enter()
@@ -92,7 +77,7 @@ namespace Ordisoftware.HebrewCommon
         s = s + new string(' ', CurrentMargin) + text;
         s = s.Indent(0, CurrentMargin + s.Length);
         s += Globals.NL;
-        SystemHelper.TryCatch(() => TraceContentForm.AppendText(s, true));
+        SystemHelper.TryCatch(() => LogForm.AppendText(s, true));
         System.Diagnostics.Trace.Write(s);
         if ( logevent == LogEvent.Enter ) CurrentMargin += MarginSize;
       }
@@ -139,7 +124,7 @@ namespace Ordisoftware.HebrewCommon
           string date = Path.GetFileNameWithoutExtension(filename).Replace(code, "").Trim();
           SystemHelper.TryCatch(() => File.Delete(filename));
         }
-        TraceContentForm.TextBox.Clear();
+        LogForm.TextBox.Clear();
       }
       finally
       {

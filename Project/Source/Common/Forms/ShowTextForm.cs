@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewCommon
     private NullSafeStringDictionary LocalizedTitle;
     private NullSafeStringDictionary LocalizedText;
 
-    private ShowTextForm()
+    protected ShowTextForm()
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;
@@ -77,11 +77,6 @@ namespace Ordisoftware.HebrewCommon
       if ( LocalizedText != null ) TextBox.Text = LocalizedText.GetLang();
     }
 
-    private void ActionClose_Click(object sender, EventArgs e)
-    {
-      Close();
-    }
-
     private void ShowTextForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( !HideOnClose ) return;
@@ -89,15 +84,9 @@ namespace Ordisoftware.HebrewCommon
       Hide();
     }
 
-    public void AppendText(string text, bool scrollBottom = false)
+    private void ActionClose_Click(object sender, EventArgs e)
     {
-      TextBox.AppendText(text);
-      if ( scrollBottom )
-      {
-        TextBox.SelectionStart = TextBox.Text.Length - 1;
-        TextBox.ScrollToCaret();
-      }
-
+      Close();
     }
 
   }

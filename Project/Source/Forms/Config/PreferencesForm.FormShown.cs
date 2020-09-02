@@ -69,7 +69,6 @@ namespace Ordisoftware.HebrewCalendar
       EditTimerEnabled_CheckedChanged(null, null);
       EditBalloon_CheckedChanged(null, null);
       SelectOpenNavigationForm_CheckedChanged(null, null);
-      EditDebuggerEnabled_CheckedChanged(null, null);
       ActiveControl = ActionClose;
       IsReady = true;
     }

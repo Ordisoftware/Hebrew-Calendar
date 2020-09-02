@@ -1536,7 +1536,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     private System.Windows.Forms.ToolStripMenuItem ActionViewStats;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewLog;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewLog;
   }
 }
 

@@ -177,6 +177,8 @@ namespace Ordisoftware.HebrewCommon
           TraceListener.Dispose();
           TraceListener = null;
           _Enabled = false;
+          LogForm.TextBox.Clear();
+          LogForm.Hide();
         }
       }
     }

@@ -31,13 +31,6 @@ namespace Ordisoftware.HebrewCalendar
         { Languages.FR, "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations" }
       };
 
-    static public readonly NullSafeStringDictionary AskToClearLogs
-      = new NullSafeStringDictionary()
-      {
-        { Languages.EN, "Do you want to delete all log files?" },
-        { Languages.FR, "Voulez-vous effacer tous les fichiers de log ?" }
-      };
-
     static public readonly NullSafeStringDictionary AskToResetPreferences
       = new NullSafeStringDictionary()
       {

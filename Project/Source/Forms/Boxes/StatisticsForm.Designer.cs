@@ -66,8 +66,6 @@
       System.Windows.Forms.Label dBEngineversionLabel;
       System.Windows.Forms.Label dBADONETAccessLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
-      this.ActionClearLogs = new System.Windows.Forms.Button();
-      this.ActionViewLog = new System.Windows.Forms.Button();
       this.EditAlwaysOnTop = new System.Windows.Forms.CheckBox();
       this.ActionClose = new System.Windows.Forms.Button();
       this.Timer = new System.Windows.Forms.Timer(this.components);
@@ -337,36 +335,10 @@
       // 
       // PanelBottom
       // 
-      this.PanelBottom.Controls.Add(this.ActionClearLogs);
-      this.PanelBottom.Controls.Add(this.ActionViewLog);
       this.PanelBottom.Controls.Add(this.EditAlwaysOnTop);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
-      // 
-      // ActionClearLogs
-      // 
-      this.ActionClearLogs.FlatAppearance.BorderSize = 0;
-      this.ActionClearLogs.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.ActionClearLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.ActionClearLogs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      resources.ApplyResources(this.ActionClearLogs, "ActionClearLogs");
-      this.ActionClearLogs.Name = "ActionClearLogs";
-      this.ActionClearLogs.TabStop = false;
-      this.ActionClearLogs.UseVisualStyleBackColor = true;
-      this.ActionClearLogs.Click += new System.EventHandler(this.ActionClearLogs_Click);
-      // 
-      // ActionViewLog
-      // 
-      this.ActionViewLog.FlatAppearance.BorderSize = 0;
-      this.ActionViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.ActionViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.ActionViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
-      this.ActionViewLog.Name = "ActionViewLog";
-      this.ActionViewLog.TabStop = false;
-      this.ActionViewLog.UseVisualStyleBackColor = true;
-      this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click);
       // 
       // EditAlwaysOnTop
       // 
@@ -739,7 +711,6 @@
       this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.StatisticsFormLocation;
       this.MaximizeBox = false;
       this.Name = "StatisticsForm";
-      this.Activated += new System.EventHandler(this.StatisticsForm_Activated);
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SystemStatisticsForm_FormClosing);
       this.Load += new System.EventHandler(this.SystemStatisticsForm_Load);
       this.PanelBottom.ResumeLayout(false);
@@ -811,7 +782,5 @@
     private System.Windows.Forms.Label memoryMaxGCUsageLabel1;
     private System.Windows.Forms.Label dBEngineversionLabel1;
     private System.Windows.Forms.Label dBADONETAccessLabel1;
-    private System.Windows.Forms.Button ActionClearLogs;
-    private System.Windows.Forms.Button ActionViewLog;
   }
 }
