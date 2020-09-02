@@ -140,12 +140,20 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
-      if ( !Globals.IsReady ) return;
-      if ( Globals.IsExiting ) return;
-      if ( Globals.AllowClose ) return;
-      e.Cancel = true;
-      MenuShowHide.PerformClick();
+      DebugManager.Enter();
+      try
+      {
+        if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
+        if ( !Globals.IsReady ) return;
+        if ( Globals.IsExiting ) return;
+        if ( Globals.AllowClose ) return;
+        e.Cancel = true;
+        MenuShowHide.PerformClick();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
 
     /// <summary>
@@ -180,22 +188,38 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Session ending event information.</param>
     internal void SessionEnding(object sender, SessionEndingEventArgs e)
     {
-      LockSessionForm.Instance.Timer.Stop();
-      TimerTooltip.Stop();
-      TimerBallon.Stop();
-      TimerTrayMouseMove.Stop();
-      TimerResumeReminder.Stop();
-      TimerMidnight.Stop();
-      TimerReminder.Stop();
-      ClearLists();
-      Globals.IsExiting = true;
-      Globals.IsSessionEnding = true;
-      Globals.AllowClose = true;
-      foreach ( Form form in Application.OpenForms )
-        if ( form != this && form.Visible )
-          try { form.Close(); }
-          catch { }
-      Close();
+      DebugManager.Enter();
+      try
+      {
+        if ( Globals.IsSessionEnding ) return;
+        Globals.IsExiting = true;
+        Globals.IsSessionEnding = true;
+        Globals.AllowClose = true;
+        LockSessionForm.Instance.Timer.Stop();
+        TimerTooltip.Stop();
+        TimerBallon.Stop();
+        TimerTrayMouseMove.Stop();
+        TimerResumeReminder.Stop();
+        TimerMidnight.Stop();
+        TimerReminder.Stop();
+        try { ClearLists(); }
+        catch { }
+        try
+        {
+          foreach ( Form form in Application.OpenForms )
+            if ( form != this && form.Visible )
+              try { form.Close(); }
+              catch { }
+        }
+        catch
+        {
+        }
+        Close();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
 
     /// <summary>
@@ -205,16 +229,24 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MenuExit_Click(object sender, EventArgs e)
     {
-      if ( IsGenerating )
+      DebugManager.Enter();
+      try
       {
-        DisplayManager.ShowInformation(Translations.CantExitWhileGenerating.GetLang());
-        return;
-      }
-      if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDev ) )
-        if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
+        if ( IsGenerating )
+        {
+          DisplayManager.ShowInformation(Translations.CantExitWhileGenerating.GetLang());
           return;
-      Globals.AllowClose = true;
-      Close();
+        }
+        if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDev ) )
+          if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
+            return;
+        Globals.AllowClose = true;
+        Close();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
 
     /// <summary>
@@ -224,57 +256,65 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void MenuShowHide_Click(object sender, EventArgs e)
     {
+      DebugManager.Enter();
       try
       {
-        if ( Visible && WindowState == FormWindowState.Minimized )
+        try
         {
-          WindowState = Settings.MainFormState;
-          var old = TopMost;
-          TopMost = true;
-          BringToFront();
-          Show();
-          TopMost = old;
-        }
-        else
-        if ( !Visible || e == null )
-        {
-          FormBorderStyle = FormBorderStyle.Sizable;
-          Visible = true;
-          ShowInTaskbar = true;
-          bool temp = Globals.IsReady;
-          try
+          if ( Visible && WindowState == FormWindowState.Minimized )
           {
-            Globals.IsReady = false;
             WindowState = Settings.MainFormState;
-          }
-          finally
-          {
-            Globals.IsReady = temp;
-          }
-          if ( Globals.IsReady )
-          {
             var old = TopMost;
             TopMost = true;
             BringToFront();
             Show();
             TopMost = old;
           }
-          if ( !NavigationForm.Instance.Visible )
-            GoToDate(DateTime.Today);
+          else
+          if ( !Visible || e == null )
+          {
+            FormBorderStyle = FormBorderStyle.Sizable;
+            Visible = true;
+            ShowInTaskbar = true;
+            bool temp = Globals.IsReady;
+            try
+            {
+              Globals.IsReady = false;
+              WindowState = Settings.MainFormState;
+            }
+            finally
+            {
+              Globals.IsReady = temp;
+            }
+            if ( Globals.IsReady )
+            {
+              var old = TopMost;
+              TopMost = true;
+              BringToFront();
+              Show();
+              TopMost = old;
+            }
+            if ( !NavigationForm.Instance.Visible )
+              GoToDate(DateTime.Today);
+          }
+          else
+          {
+            Settings.MainFormState = WindowState;
+            WindowState = FormWindowState.Minimized;
+            Visible = false;
+            ShowInTaskbar = false;
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+          }
+          MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);
         }
-        else
+        catch ( Exception ex )
         {
-          Settings.MainFormState = WindowState;
-          WindowState = FormWindowState.Minimized;
-          Visible = false;
-          ShowInTaskbar = false;
-          FormBorderStyle = FormBorderStyle.SizableToolWindow;
+          ex.Manage();
         }
-        MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);
       }
-      catch ( Exception ex )
+      finally
       {
-        ex.Manage();
+        DebugManager.Leave();
       }
     }
 

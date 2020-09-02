@@ -196,14 +196,14 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate if the running app is from dev folder else user installed.
     /// </summary>
-    static public bool IsDev 
-      => Application.ExecutablePath.Contains(DebugDirectory) 
+    static public bool IsDev
+      => Application.ExecutablePath.Contains(DebugDirectory)
       || Application.ExecutablePath.Contains(ReleaseDirectory);
 
     /// <summary>
     /// Indicate if the code is executed from the IDE else from a running app.
     /// </summary>
-    public static bool IsDesignTime 
+    public static bool IsDesignTime
       => System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
 
     /// <summary>
@@ -275,20 +275,50 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate filename of the grammar guide.
     /// </summary>
-    static public string GrammarGuideFilename  
+    static public string GrammarGuideFilename
       => GuidesFolderPath + "grammar-{0}.htm";
 
     /// <summary>
     /// Indicate filename of the method notice.
     /// </summary>
-    static public string MethodNoticeFilename 
+    static public string MethodNoticeFilename
       => GuidesFolderPath + "method-{0}.htm";
 
     /// <summary>
     /// Indicate the filename of the help.
     /// </summary>
-    static public string HelpFilename 
+    static public string HelpFilename
       => HelpFolderPath + $"index-{Languages.Current}.htm";
+
+    /// <summary>
+    /// Indicate the trace filename.
+    /// </summary>
+    static public string TraceFolderPath
+      => UserDataFolderPath + "Logs\\";
+
+    /// <summary>
+    /// Indicate the trace file code.
+    /// </summary>
+    static public string TraceFileCode
+      = "Trace";
+
+    /// <summary>
+    /// Indicate the trace file extension.
+    /// </summary>
+    static public string TraceFileExtension
+      = ".log";
+
+    /// <summary>
+    /// Indicate the trace file extension.
+    /// </summary>
+    static public string TraceFileRollFormat
+     = "yyyy-MM-dd";
+
+    /// <summary>
+    /// Indicate the trace file extension.
+    /// </summary>
+    static public int TraceFileKeepCount
+     = 7;
 
     /// <summary>
     /// Indicate the application database folder.

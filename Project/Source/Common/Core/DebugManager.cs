@@ -14,21 +14,14 @@
 /// <created> 2007-05 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCommon
 {
-
-  /// <summary>
-  /// Delegate for handling ShowException events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="einfo">The einfo.</param>
-  public delegate void ShowExceptionEventHandler(object sender, ExceptionInfo einfo);
 
   /// <summary>
   /// Delegate for handling BeforeException events.
@@ -54,29 +47,46 @@ namespace Ordisoftware.HebrewCommon
   public delegate void AfterExceptionEventHandler(object sender, ExceptionInfo einfo, bool processed);
 
   /// <summary>
-  /// Provide exception management.
+  /// Delegate for handling ShowException events.
   /// </summary>
-  /// <remarks>
-  /// Showing/raising blocks all other threads if Exception occur in a thread 
-  /// </remarks>
-  /// <remarks> Using enter-Leave system : 
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="einfo">The einfo.</param>
+  public delegate void ShowExceptionEventHandler(object sender, ExceptionInfo einfo);
+
+  /// <summary>
+  /// Provide exception helper.
+  /// </summary>
+  /// <remarks> Using enter-Leave system :
   ///                                                           
   /// void Function()                                          
   /// {                                                        
-  /// try                                                    
-  /// {                                                      
-  ///   Debugger.Enter();                                     
-  ///   DoSomething();                                                  
-  ///   Debugger.Leave();                                     
-  /// }                                                      
-  /// catch (Exception e)                                    
-  /// {                                                      
-  ///   e.Manage(this, e, false);
-  /// }                                                      
+  ///   try                                                    
+  ///   {                                                      
+  ///     DebugManager.Enter();                                     
+  ///     DoSomething();                                                  
+  ///   }                                                      
+  ///   finally
+  ///   {                                                      
+  ///     DebugManager.Leave();                                     
+  ///   }                                                      
+  /// }                                                          
+  /// 
+  /// void Function()                                          
+  /// {                                                        
+  ///   try                                                    
+  ///   {                                                      
+  ///     DebugManager.Enter();                                     
+  ///     DoSomething();                                                  
+  ///     DebugManager.Leave();                                     
+  ///   }                                                      
+  ///   catch (Exception e)                                    
+  ///   {                                                      
+  ///     e.Manage(this, e, false); // The Leave() will be automatically called
+  ///   }                                                      
   /// }                                                          
   /// 
   /// </remarks>
-  static public class ExceptionManager
+  static public partial class DebugManager
   {
 
     /// <summary>
@@ -85,61 +95,46 @@ namespace Ordisoftware.HebrewCommon
     static public event BeforeExceptionEventHandler BeforeException;
 
     /// <summary>
-    /// Indicate after Exception event.
-    /// </summary>
-    static public event AfterExceptionEventHandler AfterException;
-
-    /// <summary>
     /// Indicate on showing Exception handler.
     /// </summary>
     static public event OnExceptionEventHandler OnException;
+
+    /// <summary>
+    /// Indicate after Exception event.
+    /// </summary>
+    static public event AfterExceptionEventHandler AfterException;
 
     /// <summary>
     /// Indicate Exception show alternative handler.
     /// </summary>
     static public event ShowExceptionEventHandler DoShowException;
 
-    // TODO properties with lock
-
     /// <summary>
     /// Indicate if stack infos are used.
     /// </summary>
-    static public bool UseStack = true;
+    static public bool UseStack { get; set; } = true;
 
     /// <summary>
     /// Indicate if only the program stack is used.
     /// </summary>
-    static public bool StackOnlyProgram = true;
-
-    /// <summary>
-    /// Indicate if a specialized form is used to show Exception.
-    /// </summary>
-    static public bool UseForm = true;
+    static public bool StackOnlyProgram { get; set; } = true;
 
     /// <summary>
     /// Indicate if stack in specialized form is hidded by default.
     /// </summary>
-    static public bool AutoHideStack = false;
+    static public bool AutoHideStack { get; set; } = false;
+
+    /// <summary>
+    /// Indicate if a specialized form is used to show Exception.
+    /// </summary>
+    static public bool UseForm { get; set; } = true;
 
     /// <summary>
     /// Indicate if Exception form show a terminate button.
     /// </summary>
-    static public bool UserCanTerminate = true;
+    static public bool UserCanTerminate { get; set; } = true;
 
-    /// <summary>
-    /// Number of enters.
-    /// </summary>
-    static private int EnterCount = 0;
-
-    /// <summary>
-    /// The stack skip.
-    /// </summary>
-    static private int StackSkip = 1;
-
-    /// <summary>
-    /// The slocker.
-    /// </summary>
-    static private readonly object slocker = new object();
+    static public RollOverTextWriterTraceListener TraceListener { get; private set; }
 
     /// <summary>
     /// Indicate if debugging is active.
@@ -154,15 +149,35 @@ namespace Ordisoftware.HebrewCommon
         {
           AppDomain.CurrentDomain.UnhandledException += OnAppDomainException;
           Application.ThreadException += OnThreadException;
+          Application.ApplicationExit += Stop;
         }
         else
         {
           AppDomain.CurrentDomain.UnhandledException -= OnAppDomainException;
           Application.ThreadException -= OnThreadException;
+          Application.ApplicationExit -= Stop;
         }
-        _Active = value;
-        EnterCount = 0;
-        StackSkip = 1;
+        if ( value )
+        {
+          _Active = true;
+          TraceListener = new RollOverTextWriterTraceListener(Globals.TraceFolderPath,
+                                                              Globals.TraceFileCode,
+                                                              Globals.TraceFileExtension,
+                                                              Globals.TraceFileRollFormat,
+                                                              ChangingTraceFile);
+          Trace.Listeners.Add(TraceListener);
+          Trace.AutoFlush = true;
+          TraceListener.AutoFlush = true;
+          WriteHeader();
+        }
+        else
+        {
+          WriteFooter();
+          Trace.Listeners.Remove(TraceListener);
+          TraceListener.Dispose();
+          TraceListener = null;
+          _Active = false;
+        }
       }
     }
 
@@ -172,21 +187,20 @@ namespace Ordisoftware.HebrewCommon
     static private bool _Active = false;
 
     /// <summary>
-    /// Handles the Exception delegate.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="ex">The ex.</param>
-    private delegate void HandleExceptionDelegate(object sender, Exception ex);
-
-    /// <summary>
     /// Start this instance.
     /// </summary>
-    static public void Start() { Active = true; }
+    static public void Start(object sender = null, EventArgs e = null)
+    {
+      Active = true;
+    }
 
     /// <summary>
     /// Stops this instance.
     /// </summary>
-    static public void Stop() { Active = false; }
+    static public void Stop(object sender = null, EventArgs e = null)
+    {
+      Active = false;
+    }
 
     /// <summary>
     /// Raises the unhandled Exception event.
@@ -243,39 +257,6 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Define an enter function event.
-    /// </summary>
-    static public void Enter()
-    {
-      if ( !_Active ) return;
-      lock ( slocker )
-        EnterCount++;
-    }
-
-    /// <summary>
-    /// Define a leave function event.
-    /// </summary>
-    static public void Leave()
-    {
-      if ( !_Active || EnterCount == 0 ) return;
-      lock ( slocker )
-        EnterCount--;
-    }
-
-    /// <summary>
-    /// Leave internal.
-    /// </summary>
-    static private void LeaveInternal()
-    {
-      if ( !_Active || EnterCount == 0 ) return;
-      lock ( slocker )
-      {
-        EnterCount--;
-        StackSkip = 1;
-      }
-    }
-
-    /// <summary>
     /// Indicate the full formatted text of an exeption.
     /// </summary>
     /// <returns>
@@ -305,26 +286,7 @@ namespace Ordisoftware.HebrewCommon
         list.Add("[Inner] " + gettext(einfo));
         einfo = einfo.InnerInfo;
       }
-      return AsMultipart(list, Globals.NL2);
-    }
-
-    static public string AsMultipart(this string list, string separator)
-    {
-      return list.Split(new string[] { Globals.NL }, StringSplitOptions.None).AsMultipart(separator);
-    }
-
-    static public string AsMultipart(this IEnumerable<string> list, string separator)
-    {
-      return AsMultipart(separator, list.Count(), i => list.ElementAt(i));
-    }
-
-    static private string AsMultipart(string separator, int count, Func<int, string> get)
-    {
-      if ( count == 0 ) return "";
-      string res = get(0);
-      for ( int i = 1; i < count; i++ )
-        res = res + separator + get(i);
-      return res;
+      return list.AsMultipart(Globals.NL2);
     }
 
     /// <summary>
@@ -345,12 +307,9 @@ namespace Ordisoftware.HebrewCommon
     static public void Manage(object sender, Exception ex, bool doshow = true)
     {
       if ( ex is AbortException ) { LeaveInternal(); return; }
-      lock ( slocker )
-      {
-        StackSkip++;
-        Process(sender, ex, doshow);
-        LeaveInternal();
-      }
+      StackSkip++;
+      Process(sender, ex, doshow);
+      LeaveInternal();
     }
 
     /// <summary>
@@ -361,56 +320,54 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="doshow">true to doshow.</param>
     static private void Process(object sender, Exception ex, bool doshow)
     {
-      lock ( slocker )
-        try
+      try
+      {
+        bool b = true;
+        var einfo = new ExceptionInfo(sender, ex);
+        if ( !_Active )
         {
-          bool b = true;
-          var einfo = new ExceptionInfo(sender, ex);
-          if ( !_Active )
-          {
-            ShowSimple(einfo);
-            return;
-          }
-          if ( BeforeException != null )
-            try
-            {
-              BeforeException(sender, einfo, ref b);
-            }
-            catch ( Exception err )
-            {
-              if ( doshow )
-                DisplayManager.ShowError("Error on BeforeException:" + Globals.NL + err.Message);
-            }
-          if ( b && doshow )
-            Show(einfo);
-          if ( AfterException != null )
-            try
-            {
-              AfterException(sender, einfo, b);
-            }
-            catch ( Exception err )
-            {
-              if ( doshow )
-                DisplayManager.ShowError("Error on AfterException:" + Globals.NL + err.Message);
-            }
+          ShowSimple(einfo);
+          return;
         }
-        catch ( Exception err )
-        {
+        if ( BeforeException != null )
           try
           {
-            string s = "Error on processing Exception." + Globals.NL2
-                     + ( ex != null ? ex.Message + Globals.NL2 : "[null reference]" + Globals.NL2 )
-                     + "(" + err.Message + ")";
-            DisplayManager.ShowError(s);
+            BeforeException(sender, einfo, ref b);
           }
-          catch
+          catch ( Exception err )
           {
-            DisplayManager.ShowError(ex == null ? "Null Exception" : ex.ToString());
-            Environment.Exit(-1); 
+            if ( doshow )
+              DisplayManager.ShowError("Error on BeforeException:" + Globals.NL + err.Message);
           }
+        if ( b && doshow )
+          Show(einfo);
+        if ( AfterException != null )
+          try
+          {
+            AfterException(sender, einfo, b);
+          }
+          catch ( Exception err )
+          {
+            if ( doshow )
+              DisplayManager.ShowError("Error on AfterException:" + Globals.NL + err.Message);
+          }
+      }
+      catch ( Exception err )
+      {
+        try
+        {
+          string s = "Error on processing Exception." + Globals.NL2
+                   + ( ex != null ? ex.Message + Globals.NL2 : "[null reference]" + Globals.NL2 )
+                   + "(" + err.Message + ")";
+          DisplayManager.ShowError(s);
         }
+        catch
+        {
+          DisplayManager.ShowError(ex == null ? "Null Exception" : ex.ToString());
+          Environment.Exit(-1);
+        }
+      }
     }
-
     /// <summary>
     /// Shows the Exception.
     /// </summary>
@@ -428,7 +385,7 @@ namespace Ordisoftware.HebrewCommon
           }
         if ( DoShowException != null ) DoShowException(einfo.Sender, einfo);
         else
-          if ( UseForm )
+        if ( UseForm )
           try { ExceptionForm.Run(einfo); }
           catch { ShowSimple(einfo); }
         else ShowSimple(einfo);

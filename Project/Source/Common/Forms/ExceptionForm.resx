@@ -133,7 +133,7 @@
     <value>Vertical</value>
   </data>
   <data name="TextMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 110</value>
+    <value>419, 110</value>
   </data>
   <data name="TextMessage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TextMessage.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="pictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -203,16 +203,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>362, 205</value>
+    <value>361, 205</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
+    <value>70, 26</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -230,16 +230,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="ActionTerminate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="ActionTerminate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 205</value>
+    <value>286, 205</value>
   </data>
   <data name="ActionTerminate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
+    <value>70, 26</value>
   </data>
   <data name="ActionTerminate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -257,7 +257,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionTerminate.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="ActionViewStack.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 205</value>
@@ -266,10 +266,10 @@
     <value>No</value>
   </data>
   <data name="ActionViewStack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
+    <value>70, 26</value>
   </data>
   <data name="ActionViewStack.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="ActionViewStack.Text" xml:space="preserve">
     <value>Stack</value>
@@ -284,7 +284,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionViewStack.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="TextStack.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -299,7 +299,7 @@
     <value>Both</value>
   </data>
   <data name="TextStack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 137</value>
+    <value>419, 135</value>
   </data>
   <data name="TextStack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -317,7 +317,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TextStack.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="LabelInfo1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -344,7 +344,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelInfo1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="TextException.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -353,7 +353,7 @@
     <value>12, 55</value>
   </data>
   <data name="TextException.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 20</value>
+    <value>419, 20</value>
   </data>
   <data name="TextException.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -368,7 +368,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TextException.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="LabelInfo2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -395,34 +395,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelInfo2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ActionSend.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ActionSend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 205</value>
-  </data>
-  <data name="ActionSend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 23</value>
-  </data>
-  <data name="ActionSend.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ActionSend.Text" xml:space="preserve">
-    <value>Send to GitHub</value>
-  </data>
-  <data name="&gt;&gt;ActionSend.Name" xml:space="preserve">
-    <value>ActionSend</value>
-  </data>
-  <data name="&gt;&gt;ActionSend.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSend.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ActionSend.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="ActionViewInner.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 205</value>
@@ -431,10 +404,10 @@
     <value>No</value>
   </data>
   <data name="ActionViewInner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
+    <value>70, 26</value>
   </data>
   <data name="ActionViewInner.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="ActionViewInner.Text" xml:space="preserve">
     <value>Previous</value>
@@ -449,7 +422,112 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionViewInner.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ActionSendMail.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAW5JREFUOE/Fk9tKAmEUheeRgt6lB0jqIt8ihLyP6M6O90WhkFAQacEo1KUnLFFE
+        HUUqDx1d7W/MSaILqYt+WMyevb6155+T8+cV3sseLm1nFYq5WpxRsGTC+9m0Q/Eu6ck0nFGwZMg6oS1X
+        vZEUPaur2peOKqY76diO06KHBwNLhqzDdu7fpHhlpNVEWd1X6bQ+lnG+Jud4MLBkyPoD2macN6SD/EBr
+        ybJebHtXTenyU9T08GBgyQQDWuamAVtSLOMpkigaLl13x2LRw4OBJRMMaNiJ60mZtmS3pvWLmqLJ0jhp
+        i5oeHgwsma8Bz9KNXalvj3Y1XlSuZ6GTkhY2Ur6o6eHBwJIJBjTtfnhAkURBm6mqco9S3lSwEKKmhwcD
+        SyYY0LG97bh1pWtD3Q6kkoWKFpgWPTwYWDL+gGX7GOzVqmPyrOnZFlum5jfRw4OBbduRrLOym3mgYNpE
+        P32+aJohQ5bfYc40/0uR/dflOB9Fi5eHGlkP3AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSendMail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>209, 205</value>
+  </data>
+  <data name="ActionSendMail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionSendMail.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;ActionSendMail.Name" xml:space="preserve">
+    <value>ActionSendMail</value>
+  </data>
+  <data name="&gt;&gt;ActionSendMail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSendMail.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionSendMail.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ActionSendToGitHub.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAnlJREFUOE+NU01rE1EUfVbzMZOZdmbefKaKBhdC0Vh/QQSFUkkjKAG3Rdy6dxUK
+        ih+/wJ0LwY36BwQXXRSX7gQFKVgUiUstaJp0POfmTZxiBS/czJ1zzz1z3303qmRzxlWr1WqfXVp6dL7d
+        3rqwvLxNZ0yMOXJgM37ZCiBqWNaTwPNH2g9yPA+4wUbkkDst+SN2lD+VSuVcEsWfmmmWp3EyRvwT/gvx
+        iM6YGHPkkMsaUTAaqq7UiTiKd0DKQ623QdrNEPOdz3LMHDl8Zw1rRYTme/4LSYTRbq1WOw3oZLDgP/U8
+        7/mC696lMybGHDnksoa1IgLwMoB9fClPwvg7oEwSSh0xz7IVWBNCP1jDWmooH1+hMsE4inZA0lOuOgbn
+        2fksxzRNrhHKqaEiHXImcn7Hce4YYlFwmEmOXDOznBoKAW9kQuVqtboq1OIWDjfJkWtOMqEGhTifMdUt
+        y7ou1P8QItd0xFXZVxjaEIGcFbdzX6i4A/i/hs2cAvfBbLZh9E1p339FIJ0CQ9zAKRJhf60/TDBwWuUG
+        qKFs217PkjTXgd6KdfQBhM9o+xr4IbzKQmOM03q9foPDNd3s8XjQuCmEKIzehUi6rruaxMl78xcYIlfs
+        lLKwO8C+ZHFaDHiPYmGg3yKNBYeh1YssRosv3ap7JvC8xxC9LcnpXGReoa/fsBhd83844UlQe4k5mtwC
+        CtePNxfzIAieodUr2JOOZKciMht0/pofhMB4MWty724Rh81uuQhWHMv+6rnzecO2Nw1GERGyLXtz3nHz
+        hmV/xOsKMdjBVen3+wJ0u1376traBlxWYTAYzNEZ93q9h/B7nU7H4XtRo5RSvwHMtL1zL7rfMAAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSendToGitHub.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 205</value>
+  </data>
+  <data name="ActionSendToGitHub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionSendToGitHub.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionSendToGitHub.Name" xml:space="preserve">
+    <value>ActionSendToGitHub</value>
+  </data>
+  <data name="&gt;&gt;ActionSendToGitHub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSendToGitHub.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionSendToGitHub.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionViewLog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAbdJREFUOE+Vk0tSwkAQhnMFSz2BR/AgLlx4FjcuvIMFpbgRlUUIicVKqiDAUo9g
+        4RMwGQiEPAjv357J4Avw8VV19dSk+69/ejIK5yqf72qGgaxuQM3pFDkZmsiariNnGEwUL4M3/4Zt28hq
+        2qVs+UpWCtTWFTyyDp4bTTw9v+D+4Unspy8uRLYsi1zqGdn2gSoFHvd30HRDnKROcV0ooF5viP3zTAaM
+        tcSaOyHHWdkao9LZObVNBa9eBLvdgWUzNJqW2L+5vRUicyd8JrI1RqUNjj2YgnkhmOOAtVqwGYMfBOLb
+        Z/hgZWvMu4MNBU40Qafno+v24HRdOJ0uhYs2ZdZ2RJ2qad8E5AzqB7voTYDjVAqmaaJUKsH3AySTSRSL
+        RbgkyFkUkA7u6BY8EgiiCEEYCvsehR/Gued5om6JQDyDkCKYUiaBsN8XIgHl+Xo+jx8dDCmPJlOMRiMM
+        h0OMKfPg68FgIOpWzoAd7oEM4CiRRKVSwWwGJBIJVKtVlMsmxmM6H7EgMP8T79YUkVcx44rEwjX+5S18
+        htfL1pizdLocv0b5Esni0pAvk9fL1ne2KLb/EbyeUJQ3lC+ZmgDmmQcAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionViewLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 205</value>
+  </data>
+  <data name="ActionViewLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionViewLog.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLog.Name" xml:space="preserve">
+    <value>ActionViewLog</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLog.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLog.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -458,7 +536,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>444, 388</value>
+    <value>444, 386</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>450, 270</value>

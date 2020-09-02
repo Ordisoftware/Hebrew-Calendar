@@ -19,7 +19,6 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.Pipes;
-using System.Diagnostics;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -43,10 +42,6 @@ namespace Ordisoftware.HebrewCalendar
     [STAThread]
     static void Main(string[] args)
     {
-      Trace.Listeners.Add(new TextWriterTraceListener(@"d:\log.txt"));
-      Trace.AutoFlush = true;
-      Trace.WriteLine("test");
-
       DisplayManager.IconInformationAsNone = true;
       if ( !SystemHelper.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
@@ -58,7 +53,7 @@ namespace Ordisoftware.HebrewCalendar
       UpdateLocalization(true);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
-      ExceptionManager.Active = Settings.DebuggerEnabled;
+      DebugManager.Active = Settings.DebuggerEnabled;
       string lang = Settings.Language;
       Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;

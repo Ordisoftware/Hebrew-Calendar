@@ -14,6 +14,9 @@
 /// <created> 2007-05 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -61,12 +64,12 @@ namespace Ordisoftware.HebrewCommon
     {
       using ( var form = new ExceptionForm() )
       {
-        form.ActionViewStack.Enabled = ExceptionManager.UseStack;
+        form.ActionViewStack.Enabled = DebugManager.UseStack;
         form.ActionViewInner.Enabled = einfo.InnerInfo != null;
-        form.ActionTerminate.Enabled = ExceptionManager.UserCanTerminate && !isInner;
+        form.ActionTerminate.Enabled = DebugManager.UserCanTerminate && !isInner;
         if ( isInner )
         {
-          form.ActionSend.Enabled = false;
+          form.ActionSendToGitHub.Enabled = false;
           form.ActionClose.Text = NextException.GetLang();
         }
         form.TextException.Text = einfo.TypeText;
@@ -82,8 +85,8 @@ namespace Ordisoftware.HebrewCommon
         form.ErrorInfo = einfo;
         form.StackText = form.ActionViewStack.Text;
         form.ActionViewStack.Text += " <<";
-        if ( ExceptionManager.AutoHideStack ) form.ActionViewStack_Click(form, null);
-        if ( !ExceptionManager.UseStack ) form.ActionViewStack_Click(form, null);
+        if ( DebugManager.AutoHideStack ) form.ActionViewStack_Click(form, null);
+        if ( !DebugManager.UseStack ) form.ActionViewStack_Click(form, null);
         form.BringToFront();
         form.ShowDialog();
       }
@@ -137,59 +140,28 @@ namespace Ordisoftware.HebrewCommon
       }
     }
 
+    private void ActionViewLog_Click(object sender, EventArgs e)
+    {
+      DebugManager.TraceContent.Show();
+    }
+
     /// <summary>
     /// Event handler. Called by ActionSend for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionSend_Click(object sender, EventArgs e)
+    private void ActionSendToGitHub_Click(object sender, EventArgs e)
     {
       if ( ErrorInfo == null ) return;
       try
       {
-        TopMost = false;
         var query = new StringBuilder();
-        var body = new StringBuilder();
-        // Query header
         query.Append("&title=" + ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion);
         query.Append("&labels=type: bug");
         query.Append("&body=");
-        // Query body
-        body.AppendLine("## COMMENT");
-        body.AppendLine();
-        body.AppendLine(Localizer.GitHubIssueComment.GetLang());
-        body.AppendLine();
-        body.AppendLine("## SYSTEM");
-        body.AppendLine();
-        body.AppendLine(SystemHelper.Platform);
-        body.AppendLine("Total Visible Memory: " + SystemHelper.TotalVisibleMemory);
-        body.AppendLine("Free Physical Memory: " + SystemHelper.PhysicalMemoryFree);
-        body.AppendLine();
-        body.AppendLine("## ERROR : " + ErrorInfo.Instance.GetType().Name);
-        body.AppendLine();
-        body.AppendLine(ErrorInfo.Message);
-        body.AppendLine();
-        body.AppendLine("#### _STACK_");
-        body.AppendLine();
-        body.Append(ErrorInfo.StackText);
-        ExceptionInfo inner = ErrorInfo.InnerInfo;
-        while ( inner != null )
-        {
-          body.AppendLine();
-          body.AppendLine();
-          body.AppendLine("## INNER : " + inner.Instance.GetType().Name);
-          body.AppendLine();
-          body.AppendLine(inner.Message);
-          body.AppendLine();
-          body.AppendLine("#### _STACK_");
-          body.AppendLine();
-          body.Append(inner.StackText);
-          inner = inner.InnerInfo;
-        }
-        // Send
-        query.Append(System.Net.WebUtility.UrlEncode(body.ToString()));
+        query.Append(WebUtility.UrlEncode(CreateBody().ToString()));
         if ( query.Length > 8000 )
-          Shell.CreateGitHubIssue(query.ToString().Substring(0, 8000));
+          Shell.CreateGitHubIssue(query.ToString().Substring(0, 8000).TrimEnd('%'));
         else
           Shell.CreateGitHubIssue(query.ToString());
       }
@@ -197,6 +169,103 @@ namespace Ordisoftware.HebrewCommon
       {
         DisplayManager.ShowError(ex.Message);
       }
+    }
+
+    private void ActionSendMail_Click(object sender, EventArgs e)
+    {
+      DebugManager.Stop();
+      System.Threading.Thread.Sleep(500);
+      try
+      {
+        var message = new MailMessage();
+        message.Subject = $"[{Globals.AssemblyTitleWithVersion}] {ErrorInfo.Instance.GetType().Name}";
+        message.CC.Add("support@ordisoftware.com");
+        string body = CreateBody().ToString();
+        if ( body.Length > 2000 )
+          message.Body = body.ToString().Substring(0, 2000);
+        else
+          message.Body = body.ToString();
+        string query = message.ToUrl();
+        Shell.Run(query.ToString());
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(ex.Message);
+      }
+      finally
+      {
+        DebugManager.Start();
+      }
+    }
+
+    private StringBuilder CreateBody()
+    {
+      var body = new StringBuilder();
+      body.AppendLine("## COMMENT");
+      body.AppendLine();
+      body.AppendLine(Localizer.GitHubIssueComment.GetLang());
+      body.AppendLine();
+      body.AppendLine("## SYSTEM");
+      body.AppendLine();
+      body.AppendLine(SystemHelper.Platform);
+      body.AppendLine("Total Visible Memory: " + SystemHelper.TotalVisibleMemory);
+      body.AppendLine("Free Physical Memory: " + SystemHelper.PhysicalMemoryFree);
+      body.AppendLine();
+      body.AppendLine("## ERROR : " + ErrorInfo.Instance.GetType().Name);
+      body.AppendLine();
+      body.AppendLine(ErrorInfo.Message);
+      body.AppendLine();
+      body.AppendLine("#### _STACK_");
+      body.AppendLine();
+      body.Append(ErrorInfo.StackText);
+      ExceptionInfo inner = ErrorInfo.InnerInfo;
+      while ( inner != null )
+      {
+        body.AppendLine();
+        body.AppendLine();
+        body.AppendLine("## INNER : " + inner.Instance.GetType().Name);
+        body.AppendLine();
+        body.AppendLine(inner.Message);
+        body.AppendLine();
+        body.AppendLine("#### _STACK_");
+        body.AppendLine();
+        body.Append(inner.StackText);
+        inner = inner.InnerInfo;
+      }
+      body.AppendLine();
+      body.AppendLine();
+      body.AppendLine("## LOG");
+      body.AppendLine();
+      var lines = DebugManager.TraceContent.TextBox.Text.Split(Globals.NL.ToCharArray());
+      lines = lines.Where(l => !l.StartsWith("# ") && !l.StartsWith("--") && l.Trim() != "").ToArray();
+      body.Append(string.Join(Globals.NL, lines));
+      return body;
+    }
+
+  }
+
+  // https://codereview.stackexchange.com/questions/129594/c-helper-class-mailto#129600
+  public static class MailHelper
+  {
+
+    public static string ToUrl(this MailMessage message)
+      => "mailto:?" + string.Join("&", Parameters(message));
+
+    static string Recipients(MailAddressCollection addresses)
+      => string.Join(",", from r in addresses select Uri.EscapeDataString(r.Address));
+
+    static IEnumerable<string> Parameters(MailMessage message)
+    {
+      if ( message.To.Any() )
+        yield return "to=" + Recipients(message.To);
+      if ( message.CC.Any() )
+        yield return "cc=" + Recipients(message.CC);
+      if ( message.Bcc.Any() )
+        yield return "bcc=" + Recipients(message.Bcc);
+      if ( !string.IsNullOrWhiteSpace(message.Subject) )
+        yield return "subject=" + Uri.EscapeDataString(message.Subject);
+      if ( !string.IsNullOrWhiteSpace(message.Body) )
+        yield return "body=" + Uri.EscapeDataString(message.Body);
     }
 
   }

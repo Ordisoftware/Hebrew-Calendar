@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class MainForm
   {
 
-    static public int MaxGenerateErrors = 15;
+    public const int MaxGenerateErrors = 10;
 
     private readonly List<string> GenerateErrors = new List<string>();
 

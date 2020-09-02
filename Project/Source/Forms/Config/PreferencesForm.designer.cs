@@ -135,6 +135,7 @@
       this.EditCurrentDayBackColor = new System.Windows.Forms.Panel();
       this.EditCurrentDayForeColor = new System.Windows.Forms.Panel();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
+      this.ActionViewLog = new System.Windows.Forms.Button();
       this.SelectAutoGenerateYearsInterval = new System.Windows.Forms.Button();
       this.EditAutoGenerateYearsInterval = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
@@ -451,7 +452,6 @@
       // 
       // ActionPersonalShabatHelp
       // 
-      this.ActionPersonalShabatHelp.AllowDrop = true;
       this.ActionPersonalShabatHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionPersonalShabatHelp, "ActionPersonalShabatHelp");
       this.ActionPersonalShabatHelp.Name = "ActionPersonalShabatHelp";
@@ -772,7 +772,6 @@
       // 
       // ActionCountAsMoonHelp
       // 
-      this.ActionCountAsMoonHelp.AllowDrop = true;
       this.ActionCountAsMoonHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionCountAsMoonHelp, "ActionCountAsMoonHelp");
       this.ActionCountAsMoonHelp.Name = "ActionCountAsMoonHelp";
@@ -1052,6 +1051,7 @@
       // 
       // GroupBoxSystem
       // 
+      this.GroupBoxSystem.Controls.Add(this.ActionViewLog);
       this.GroupBoxSystem.Controls.Add(this.SelectAutoGenerateYearsInterval);
       this.GroupBoxSystem.Controls.Add(this.EditAutoGenerateYearsInterval);
       this.GroupBoxSystem.Controls.Add(this.EditVacuumAtStartup);
@@ -1077,9 +1077,20 @@
       this.GroupBoxSystem.Name = "GroupBoxSystem";
       this.GroupBoxSystem.TabStop = false;
       // 
+      // ActionViewLog
+      // 
+      this.ActionViewLog.FlatAppearance.BorderSize = 0;
+      this.ActionViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.ActionViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.ActionViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
+      this.ActionViewLog.Name = "ActionViewLog";
+      this.ActionViewLog.TabStop = false;
+      this.ActionViewLog.UseVisualStyleBackColor = true;
+      this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click);
+      // 
       // SelectAutoGenerateYearsInterval
       // 
-      this.SelectAutoGenerateYearsInterval.AllowDrop = true;
       this.SelectAutoGenerateYearsInterval.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.SelectAutoGenerateYearsInterval, "SelectAutoGenerateYearsInterval");
       this.SelectAutoGenerateYearsInterval.Name = "SelectAutoGenerateYearsInterval";
@@ -1102,7 +1113,6 @@
       // 
       // ActionAutoGenerateHelp
       // 
-      this.ActionAutoGenerateHelp.AllowDrop = true;
       this.ActionAutoGenerateHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionAutoGenerateHelp, "ActionAutoGenerateHelp");
       this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
@@ -1112,7 +1122,6 @@
       // 
       // ActionSelectLangFR
       // 
-      this.ActionSelectLangFR.AllowDrop = true;
       this.ActionSelectLangFR.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
       resources.ApplyResources(this.ActionSelectLangFR, "ActionSelectLangFR");
       this.ActionSelectLangFR.Name = "ActionSelectLangFR";
@@ -1122,7 +1131,6 @@
       // 
       // ActionSelectLangEN
       // 
-      this.ActionSelectLangEN.AllowDrop = true;
       this.ActionSelectLangEN.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
       resources.ApplyResources(this.ActionSelectLangEN, "ActionSelectLangEN");
       this.ActionSelectLangEN.Name = "ActionSelectLangEN";
@@ -1223,7 +1231,6 @@
       // 
       // ActionMoonDayTextFormatReset
       // 
-      this.ActionMoonDayTextFormatReset.AllowDrop = true;
       this.ActionMoonDayTextFormatReset.ContextMenuStrip = this.MenuSelectMoonDayTextFormat;
       this.ActionMoonDayTextFormatReset.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionMoonDayTextFormatReset, "ActionMoonDayTextFormatReset");
@@ -1273,7 +1280,6 @@
       // 
       // ActionMoonDayTextFormatHelp
       // 
-      this.ActionMoonDayTextFormatHelp.AllowDrop = true;
       this.ActionMoonDayTextFormatHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionMoonDayTextFormatHelp, "ActionMoonDayTextFormatHelp");
       this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";
@@ -1517,5 +1523,6 @@
     private System.Windows.Forms.ContextMenuStrip MenuPredefinedYears;
     private HebrewCommon.UndoRedoTextBox EditAutoGenerateYearsInterval;
     private System.Windows.Forms.CheckBox EditBigCalendarWarning;
+    private System.Windows.Forms.Button ActionViewLog;
   }
 }

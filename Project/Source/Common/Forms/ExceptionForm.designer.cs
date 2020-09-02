@@ -45,8 +45,10 @@ namespace Ordisoftware.HebrewCommon
       this.LabelInfo1 = new System.Windows.Forms.Label();
       this.TextException = new System.Windows.Forms.TextBox();
       this.LabelInfo2 = new System.Windows.Forms.Label();
-      this.ActionSend = new System.Windows.Forms.Button();
       this.ActionViewInner = new System.Windows.Forms.Button();
+      this.ActionSendMail = new System.Windows.Forms.Button();
+      this.ActionSendToGitHub = new System.Windows.Forms.Button();
+      this.ActionViewLog = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
       this.SuspendLayout();
       // 
@@ -114,15 +116,6 @@ namespace Ordisoftware.HebrewCommon
       resources.ApplyResources(this.LabelInfo2, "LabelInfo2");
       this.LabelInfo2.Name = "LabelInfo2";
       // 
-      // ActionSend
-      // 
-      resources.ApplyResources(this.ActionSend, "ActionSend");
-      this.ActionSend.FlatAppearance.BorderSize = 0;
-      this.ActionSend.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.ActionSend.Name = "ActionSend";
-      this.ActionSend.UseVisualStyleBackColor = true;
-      this.ActionSend.Click += new System.EventHandler(this.ActionSend_Click);
-      // 
       // ActionViewInner
       // 
       resources.ApplyResources(this.ActionViewInner, "ActionViewInner");
@@ -130,12 +123,45 @@ namespace Ordisoftware.HebrewCommon
       this.ActionViewInner.UseVisualStyleBackColor = true;
       this.ActionViewInner.Click += new System.EventHandler(this.ActionViewInner_Click);
       // 
+      // ActionSendMail
+      // 
+      this.ActionSendMail.FlatAppearance.BorderSize = 0;
+      this.ActionSendMail.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      resources.ApplyResources(this.ActionSendMail, "ActionSendMail");
+      this.ActionSendMail.Name = "ActionSendMail";
+      this.ActionSendMail.UseVisualStyleBackColor = true;
+      this.ActionSendMail.Click += new System.EventHandler(this.ActionSendMail_Click);
+      // 
+      // ActionSendToGitHub
+      // 
+      this.ActionSendToGitHub.FlatAppearance.BorderSize = 0;
+      this.ActionSendToGitHub.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.ActionSendToGitHub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.ActionSendToGitHub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      resources.ApplyResources(this.ActionSendToGitHub, "ActionSendToGitHub");
+      this.ActionSendToGitHub.Name = "ActionSendToGitHub";
+      this.ActionSendToGitHub.UseVisualStyleBackColor = true;
+      this.ActionSendToGitHub.Click += new System.EventHandler(this.ActionSendToGitHub_Click);
+      // 
+      // ActionViewLog
+      // 
+      this.ActionViewLog.FlatAppearance.BorderSize = 0;
+      this.ActionViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.ActionViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.ActionViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
+      this.ActionViewLog.Name = "ActionViewLog";
+      this.ActionViewLog.UseVisualStyleBackColor = true;
+      this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click);
+      // 
       // ExceptionForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.ActionSendMail);
+      this.Controls.Add(this.ActionSendToGitHub);
+      this.Controls.Add(this.ActionViewLog);
       this.Controls.Add(this.ActionViewInner);
-      this.Controls.Add(this.ActionSend);
       this.Controls.Add(this.TextException);
       this.Controls.Add(this.LabelInfo2);
       this.Controls.Add(this.LabelInfo1);
@@ -203,15 +229,12 @@ namespace Ordisoftware.HebrewCommon
     private System.Windows.Forms.Label LabelInfo2;
 
     /// <summary>
-    /// The button send mail control.
-    /// </summary>
-    private System.Windows.Forms.Button ActionSend;
-
-    /// <summary>
     /// The button view inner control.
     /// </summary>
     private System.Windows.Forms.Button ActionViewInner;
-
+    private System.Windows.Forms.Button ActionSendMail;
+    private System.Windows.Forms.Button ActionSendToGitHub;
+    private System.Windows.Forms.Button ActionViewLog;
   }
 
 }

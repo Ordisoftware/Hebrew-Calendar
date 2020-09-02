@@ -130,9 +130,12 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Common\Core\DebugManager.Trace.cs" />
     <Compile Include="Source\Common\Core\NotImplementedExceptionEx.cs" />
+    <Compile Include="Source\Common\Core\RollOverTextWriterTraceListener.cs" />
     <Compile Include="Source\Common\Core\SQLiteException.cs" />
-    <Compile Include="Source\Common\Core\ExceptionManager.cs" />
+    <Compile Include="Source\Common\Core\DebugManager.cs" />
+    <Compile Include="Source\Common\Core\LogEvent.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringList.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringDictionary.cs" />
     <Compile Include="Source\Common\Data\NullSafeSortedDictionary.cs" />
