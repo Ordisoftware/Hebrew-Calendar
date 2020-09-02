@@ -9,28 +9,32 @@
 AppId={{EA196B80-7F9C-4E31-8337-61CE9A8B4FA9}
 AppMutex=39d572b4-36da-4964-ba85-51bc5909c69b
 AppCopyright=Copyright 2016-2020 Olivier Rogier
-#include "Scripts\CommonSetup.iss"
+#include "Scripts\Setup.iss"
 
-#include "Scripts\CommonMessages.iss"
+[Languages]
+#include "Scripts\Languages.iss"
+
+[CustomMessages]
+#include "Scripts\Messages.iss"
 
 [Tasks]
-#include "Scripts\CommonTasks.iss"
+#include "Scripts\Tasks.iss"
 Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription: Windows
 
 [Dirs]
 
 [InstallDelete]
-#include "Scripts\CommonInstallDelete.iss"
+#include "Scripts\InstallDelete.iss"
 
 [Files]
-#include "Scripts\CommonFiles.iss"
+#include "Scripts\Files.iss"
 
 [Icons]
-#include "Scripts\CommonIcons.iss"
+#include "Scripts\Icons.iss"
 Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: startwithwindows
 
 [Run]
-#include "Scripts\CommonRun.iss"
+#include "Scripts\Run.iss"
 
 [Code]
 #include "Scripts\CheckDotNetFramework.iss"
