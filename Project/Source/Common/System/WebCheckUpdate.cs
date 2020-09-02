@@ -40,33 +40,28 @@ namespace Ordisoftware.HebrewCommon
     /// <returns>True if application must exist else false.</returns>
     static public bool Run(bool checkAtStartup, ref DateTime lastdone, bool auto)
     {
-      bool formEnabled = false;
       if ( Mutex ) return false;
       if ( auto && !checkAtStartup ) return false;
       if ( auto && lastdone.AddDays(DefaultCheckDaysInterval) >= DateTime.Now ) return false;
+      bool formEnabled = Globals.MainForm?.Enabled ?? false;
       try
       {
         Mutex = true;
-        formEnabled = Globals.MainForm.Enabled;
-        Globals.MainForm.Enabled = false;
+        if ( Globals.MainForm != null ) Globals.MainForm.Enabled = false;
         LoadingForm.Instance.Initialize(Localizer.WebCheckUpdate.GetLang(), 3, 0, false);
-        var list = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFilename, "*"));
-        foreach ( string s in list )
-          try { File.Delete(s); }
-          catch { }
+        var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFilename, "*"));
+        foreach ( string s in files ) SystemHelper.TryCatch(() => File.Delete(s));
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
           var version = GetVersion(client);
           lastdone = DateTime.Now;
           LoadingForm.Instance.DoProgress();
-          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
-          {
-            if ( !auto )
-              DisplayManager.ShowInformation(Localizer.NoNewVersionAvailable.GetLang());
-          }
-          else
+          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
             return ProcessDownload(client, version);
+          else
+            if ( !auto )
+            DisplayManager.ShowInformation(Localizer.NoNewVersionAvailable.GetLang());
         }
       }
       catch ( Exception ex )
@@ -75,19 +70,22 @@ namespace Ordisoftware.HebrewCommon
       }
       finally
       {
-        Globals.MainForm.Enabled = formEnabled;
         LoadingForm.Instance.Hide();
+        if ( Globals.MainForm != null ) Globals.MainForm.Enabled = formEnabled;
         Mutex = false;
       }
       return false;
     }
 
+    /// <summary>
+    /// Get the version available online.
+    /// </summary>
     static private Version GetVersion(WebClient client)
     {
       string content = client.DownloadString(Globals.CheckUpdateURL);
       string[] lines = content.Split(StringSplitOptions.RemoveEmptyEntries);
       LoadingForm.Instance.DoProgress();
-      if ( lines.Length == 0 ) throw new Exception(Localizer.CheckUpdateFileError.GetLang());
+      if ( lines.Length == 0 ) throw new WebException(Localizer.CheckUpdateFileError.GetLang());
       string[] partsVersion = lines[0].Split('.');
       Version version;
       try
@@ -101,16 +99,22 @@ namespace Ordisoftware.HebrewCommon
             version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]), Convert.ToInt32(partsVersion[2]));
             break;
           default:
-            throw new Exception(Localizer.CheckUpdateFileError.GetLang(content));
+            throw new ArgumentException(Localizer.CheckUpdateFileError.GetLang(content));
         }
       }
       catch ( Exception ex )
       {
-        throw new Exception(Localizer.CheckUpdateFileError.GetLang(lines[0]) + Globals.NL2 + ex.Message);
+        throw new WebException(Localizer.CheckUpdateFileError.GetLang(lines[0]) + Globals.NL2 + ex.Message);
       }
       return version;
     }
 
+    /// <summary>
+    /// Process the manual download.
+    /// </summary>
+    /// <param name="client"></param>
+    /// <param name="version"></param>
+    /// <returns></returns>
     static private bool ProcessDownload(WebClient client, Version version)
     {
       string filename = string.Format(Globals.SetupFileURL, version.ToString());
@@ -130,6 +134,9 @@ namespace Ordisoftware.HebrewCommon
       return false;
     }
 
+    /// <summary>
+    /// Process the automatic download and installation.
+    /// </summary>
     static private bool ProcessAutoInstall(WebClient client, Version version, string filename)
     {
       LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
@@ -157,18 +164,18 @@ namespace Ordisoftware.HebrewCommon
       {
         finished = true;
         if ( e.Error == null ) return;
-        HttpStatusCode err = 0;
+        HttpStatusCode code = 0;
         WebExceptionStatus status = 0;
         if ( e.Error is WebException we )
         {
           status = we.Status;
-          if ( we.Response is HttpWebResponse we2)
-            err = we2.StatusCode;
+          if ( we.Response is HttpWebResponse response )
+            code = response.StatusCode;
         }
         ex = new WebException(e.Error.Message + Globals.NL2 +
                               filename + Globals.NL2 +
                               status.ToStringFull() + Globals.NL +
-                              err.ToStringFull());
+                              code.ToStringFull());
       }
     }
 

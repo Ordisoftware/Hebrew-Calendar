@@ -341,36 +341,36 @@ namespace Ordisoftware.HebrewCommon
       => Path.Combine(Directory.GetParent(RootFolderPath).FullName, "Register ODBC.reg");
 
     /// <summary>
+    /// Indicate a path for in a special folder.
+    /// </summary>
+    static private string CreateSpecialFolderPath(Environment.SpecialFolder folder, string directory)
+      => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(folder),
+                                                AssemblyCompany,
+                                                directory)).FullName;
+
+    /// <summary>
     /// Indicate the user documents folder path.
     /// </summary>
     static public string UserDocumentsFolderPath
-      => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-                                                AssemblyCompany,
-                                                AssemblyTitle, "")).FullName;
+      => CreateSpecialFolderPath(Environment.SpecialFolder.MyDocuments, AssemblyTitle);
 
     /// <summary>
     /// Indicate the user data folder in roaming.
     /// </summary>
     static public string UserDataFolderPath
-      => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                                                AssemblyCompany,
-                                                AssemblyTitle, "")).FullName;
+      => CreateSpecialFolderPath(Environment.SpecialFolder.ApplicationData, AssemblyTitle);
 
     /// <summary>
     /// Indicate the hebrew common data folder in roaming.
     /// </summary>
     static public string UserDataCommonFolderPath
-      => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                                                AssemblyCompany,
-                                                HebrewCommonDirectoryName, "")).FullName;
+      => CreateSpecialFolderPath(Environment.SpecialFolder.ApplicationData, HebrewCommonDirectoryName);
 
     /// <summary>
     /// Indicate the hebrew common data folder in program data.
     /// </summary>
     static public string ProgramDataFolderPath
-      => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
-                                                AssemblyCompany,
-                                                HebrewCommonDirectoryName, "")).FullName;
+      => CreateSpecialFolderPath(Environment.SpecialFolder.CommonApplicationData, HebrewCommonDirectoryName);
 
     /// <summary>
     /// Indicate the filename of the online search word providers.
@@ -429,6 +429,13 @@ namespace Ordisoftware.HebrewCommon
       try
       {
         OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName, true, IsDev, folder);
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+      try
+      {
         OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName, true, IsDev, folder);
       }
       catch ( Exception ex )

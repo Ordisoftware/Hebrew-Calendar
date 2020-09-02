@@ -103,6 +103,21 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Call an action without raising exceptions.
+    /// </summary>
+    /// <param name="action"></param>
+    static public void TryCatch(Action action)
+    {
+      try
+      {
+        action();
+      }
+      catch
+      {
+      }
+    }
+
+    /// <summary>
     /// Get the memory size of a serializable object.
     /// </summary>
     static public long SizeOf(this object instance)
