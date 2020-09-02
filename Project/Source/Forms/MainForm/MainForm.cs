@@ -385,7 +385,7 @@ namespace Ordisoftware.HebrewCalendar
                 }
               break;
             default:
-              throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.GetFullname());
+              throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.ToStringFull());
           }
         else
         if ( e.Button == MouseButtons.Right )

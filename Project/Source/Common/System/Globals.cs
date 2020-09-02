@@ -136,7 +136,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the check update URL.
     /// </summary>
     static public string CheckUpdateURL { get; set; }
-      = $"http://{AssemblyTrademark}/files/{ApplicationCode}.update";
+      = $"https://{AssemblyTrademark}/files/{ApplicationCode}.update";
 
     /// <summary>
     /// Indicate the setup file name.
@@ -148,7 +148,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the new version setup file.
     /// </summary>
     static public string SetupFileURL { get; set; }
-      = $"http://{AssemblyTrademark}/files/{SetupFilename}";
+      = $"https://{AssemblyTrademark}/files/{SetupFilename}";
 
     /// <summary>
     /// Indicate the GitHub repository.

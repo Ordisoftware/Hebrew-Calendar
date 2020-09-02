@@ -73,7 +73,7 @@ namespace Ordisoftware.HebrewCommon
           Filename = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
           break;
         default:
-          throw new NotImplementedExceptionEx(folder.GetFullname());
+          throw new NotImplementedExceptionEx(folder.ToStringFull());
       }
       ReLoad();
     }

@@ -57,13 +57,7 @@ namespace Ordisoftware.HebrewCommon
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
-          string[] content = client.DownloadString(Globals.CheckUpdateURL).Split(StringSplitOptions.RemoveEmptyEntries);
-          LoadingForm.Instance.DoProgress();
-          if ( content.Length == 0 ) throw new Exception(Localizer.CheckUpdateFileError.GetLang());
-          string[] partsVersion = content[0].Split('.');
-          if ( partsVersion.Length != 2 ) throw new Exception(Localizer.CheckUpdateFileError.GetLang());
-          string filename = string.Format(Globals.SetupFileURL, content[0]);
-          var version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
+          var version = GetVersion(client);
           lastdone = DateTime.Now;
           LoadingForm.Instance.DoProgress();
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) <= 0 )
@@ -72,39 +66,7 @@ namespace Ordisoftware.HebrewCommon
               DisplayManager.ShowInformation(Localizer.NoNewVersionAvailable.GetLang());
           }
           else
-          {
-            var result = WebUpdateForm.Run(version);
-            switch ( result )
-            {
-              case WebUpdateSelection.Download:
-                Shell.OpenWebLink(filename);
-                break;
-              case WebUpdateSelection.Install:
-                LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
-                bool finished = false;
-                string tempfile = Path.GetTempPath() + string.Format(Globals.SetupFilename, content[0]);
-                client.DownloadProgressChanged += (sender, e) =>
-                {
-                  LoadingForm.Instance.SetProgress(e.ProgressPercentage);
-                };
-                client.DownloadFileCompleted += (sender, e) =>
-                {
-                  finished = true;
-                };
-                client.DownloadFileAsync(new Uri(filename), tempfile);
-                while ( !finished )
-                {
-                  Thread.Sleep(100);
-                  Application.DoEvents();
-                }
-                Shell.Run(tempfile, "/SP- /SILENT");
-                Globals.IsExiting = true;
-                Application.Exit();
-                return true;
-              default:
-                throw new NotImplementedExceptionEx(result.GetFullname());
-            }
-          }
+            return ProcessDownload(client, version);
         }
       }
       catch ( Exception ex )
@@ -118,6 +80,96 @@ namespace Ordisoftware.HebrewCommon
         Mutex = false;
       }
       return false;
+    }
+
+    static private Version GetVersion(WebClient client)
+    {
+      string content = client.DownloadString(Globals.CheckUpdateURL);
+      string[] lines = content.Split(StringSplitOptions.RemoveEmptyEntries);
+      LoadingForm.Instance.DoProgress();
+      if ( lines.Length == 0 ) throw new Exception(Localizer.CheckUpdateFileError.GetLang());
+      string[] partsVersion = lines[0].Split('.');
+      Version version;
+      try
+      {
+        switch ( partsVersion.Length )
+        {
+          case 2:
+            version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
+            break;
+          case 3:
+            version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]), Convert.ToInt32(partsVersion[2]));
+            break;
+          default:
+            throw new Exception(Localizer.CheckUpdateFileError.GetLang(content));
+        }
+      }
+      catch ( Exception ex )
+      {
+        throw new Exception(Localizer.CheckUpdateFileError.GetLang(lines[0]) + Globals.NL2 + ex.Message);
+      }
+      return version;
+    }
+
+    static private bool ProcessDownload(WebClient client, Version version)
+    {
+      string filename = string.Format(Globals.SetupFileURL, version.ToString());
+      var result = WebUpdateForm.Run(version);
+      switch ( result )
+      {
+        case WebUpdateSelection.None:
+          break;
+        case WebUpdateSelection.Download:
+          Shell.OpenWebLink(filename);
+          break;
+        case WebUpdateSelection.Install:
+          return ProcessAutoInstall(client, version, filename);
+        default:
+          throw new NotImplementedExceptionEx(result.ToStringFull());
+      }
+      return false;
+    }
+
+    static private bool ProcessAutoInstall(WebClient client, Version version, string filename)
+    {
+      LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
+      bool finished = false;
+      Exception ex = null;
+      string tempfile = Path.GetTempPath() + string.Format(Globals.SetupFilename, version.ToString());
+      client.DownloadProgressChanged += downloadProgressChanged;
+      client.DownloadFileCompleted += downloadFileCompleted;
+      client.DownloadFileAsync(new Uri(filename), tempfile);
+      while ( !finished )
+      {
+        Thread.Sleep(100);
+        Application.DoEvents();
+      }
+      if ( ex != null ) throw ex;
+      Shell.Run(tempfile, "/SP- /SILENT");
+      Globals.IsExiting = true;
+      Application.Exit();
+      return true;
+      void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+      {
+        LoadingForm.Instance.SetProgress(e.ProgressPercentage);
+      }
+      void downloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+      {
+        finished = true;
+        if ( e.Error == null ) return;
+        HttpStatusCode err = 0;
+        WebExceptionStatus status = 0;
+        if ( e.Error is WebException we )
+        {
+          status = we.Status;
+          if ( we.Response is HttpWebResponse we2)
+            err = we2.StatusCode;
+        }
+        ex = new WebException(e.Error.Message + Globals.NL2 +
+                              filename + Globals.NL2 +
+                              status.ToStringFull() + Globals.NL +
+                              err.ToStringFull());
+      }
     }
 
   }
