@@ -470,8 +470,15 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( IsDesignTime ) return;
       var folder = DataFileFolder.ApplicationDocuments;
-      OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName, true, IsDev, folder);
-      OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName, true, IsDev, folder);
+      try
+      {
+        OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName, true, IsDev, folder);
+        OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName, true, IsDev, folder);
+      }
+      catch (Exception ex)
+      {
+        ex.Manage();
+      }
     }
 
     #region Assembly information

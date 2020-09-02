@@ -437,13 +437,16 @@
 </value>
   </data>
   <data name="ActionSendMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 205</value>
+    <value>406, 8</value>
   </data>
   <data name="ActionSendMail.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
   <data name="ActionSendMail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="ActionSendMail.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;ActionSendMail.Name" xml:space="preserve">
     <value>ActionSendMail</value>
@@ -475,7 +478,7 @@
 </value>
   </data>
   <data name="ActionSendToGitHub.Location" type="System.Drawing.Point, System.Drawing">
-    <value>241, 205</value>
+    <value>196, 205</value>
   </data>
   <data name="ActionSendToGitHub.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -509,7 +512,7 @@
 </value>
   </data>
   <data name="ActionViewLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 205</value>
+    <value>164, 205</value>
   </data>
   <data name="ActionViewLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>

@@ -178,8 +178,8 @@ namespace Ordisoftware.HebrewCommon
       try
       {
         var message = new MailMessage();
+        message.To.Add("");
         message.Subject = $"[{Globals.AssemblyTitleWithVersion}] {ErrorInfo.Instance.GetType().Name}";
-        message.CC.Add("support@ordisoftware.com");
         string body = CreateBody().ToString();
         if ( body.Length > 2000 )
           message.Body = body.ToString().Substring(0, 2000);
@@ -236,9 +236,11 @@ namespace Ordisoftware.HebrewCommon
       body.AppendLine();
       body.AppendLine("## LOG");
       body.AppendLine();
-      var lines = DebugManager.TraceContent.TextBox.Text.Split(Globals.NL.ToCharArray());
-      lines = lines.Where(l => !l.StartsWith("# ") && !l.StartsWith("--") && l.Trim() != "").ToArray();
-      body.Append(string.Join(Globals.NL, lines));
+      string text = DebugManager.TraceContent.TextBox.Text;
+      if (text == "") ;
+      var lines1 = text.Split();
+      var lines2 = lines1.Where(l => { l = l.Trim(); return l != "" && !l.StartsWith("# ") && !l.StartsWith("--"); });
+      body.Append(string.Join(Globals.NL, lines2.ToArray()));
       return body;
     }
 

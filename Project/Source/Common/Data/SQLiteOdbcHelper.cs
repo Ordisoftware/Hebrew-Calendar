@@ -47,8 +47,7 @@ namespace Ordisoftware.HebrewCommon
     /// <returns></returns>
     static public string UnformatSQL(string sql)
     {
-      var lines = sql.Split(Globals.NL.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-      return string.Join(" ", lines.Select(line => line.Trim()));
+      return string.Join(" ", sql.Split(StringSplitOptions.RemoveEmptyEntries).Select(line => line.Trim()));
     }
 
     /// <summary>

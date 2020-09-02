@@ -28,7 +28,7 @@ namespace Ordisoftware.HebrewCommon
       {
         if ( _TraceContent == null )
         {
-          _TraceContent = ShowTextForm.Create("Log", "", 600, 600, true, false, false);
+          _TraceContent = ShowTextForm.Create("Log", "", 800, 600, true, false, false);
           _TraceContent.TextBox.Font = new System.Drawing.Font("Courier New", 8);
           _TraceContent.MaximumSize = new System.Drawing.Size(0, 0);
           _TraceContent.MinimizeBox = true;
@@ -109,7 +109,7 @@ namespace Ordisoftware.HebrewCommon
       Log(LogEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
       Log(LogEvent.System, "# " + "PATH   : " + Globals.RootFolderPath);
       string platformStr = SystemStatistics.Instance.Platform;
-      var platformLines = platformStr.Split(Globals.NL.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+      var platformLines = platformStr.Split(StringSplitOptions.RemoveEmptyEntries);
       Log(LogEvent.System, "# " + "SYSTEM : " + string.Join(" | ", platformLines));
       Log(LogEvent.System);
     }

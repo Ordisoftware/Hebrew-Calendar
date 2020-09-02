@@ -142,9 +142,9 @@ namespace Ordisoftware.HebrewCommon
       return new string(' ', first) + str.Replace(Globals.NL, Globals.NL + new string(' ', corpus));
     }
 
-    static public string AsMultipart(this string list, string separator)
+    static public string[] Split(this string str, StringSplitOptions stringSplitOptions = StringSplitOptions.None, string separator = "\r\n")
     {
-      return list.Split(new string[] { Globals.NL }, StringSplitOptions.None).AsMultipart(separator);
+      return str.Split(new string[] { separator }, StringSplitOptions.None);
     }
 
     static public string AsMultipart(this IEnumerable<string> list, string separator)

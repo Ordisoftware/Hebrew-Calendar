@@ -57,8 +57,7 @@ namespace Ordisoftware.HebrewCommon
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
-          string[] content = client.DownloadString(Globals.CheckUpdateURL)
-                                   .Split(Globals.NL.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+          string[] content = client.DownloadString(Globals.CheckUpdateURL).Split(StringSplitOptions.RemoveEmptyEntries);
           LoadingForm.Instance.DoProgress();
           if ( content.Length == 0 ) throw new Exception(Localizer.CheckUpdateFileError.GetLang());
           string[] partsVersion = content[0].Split('.');

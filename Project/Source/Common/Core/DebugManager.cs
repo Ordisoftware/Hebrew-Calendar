@@ -60,15 +60,9 @@ namespace Ordisoftware.HebrewCommon
   ///                                                           
   /// void Function()                                          
   /// {                                                        
-  ///   try                                                    
-  ///   {                                                      
-  ///     DebugManager.Enter();                                     
-  ///     DoSomething();                                                  
-  ///   }                                                      
-  ///   finally
-  ///   {                                                      
-  ///     DebugManager.Leave();                                     
-  ///   }                                                      
+  ///   DebugManager.Enter();                                     
+  ///   DoSomething();                                                  
+  ///   DebugManager.Leave();                                     
   /// }                                                          
   /// 
   /// void Function()                                          
