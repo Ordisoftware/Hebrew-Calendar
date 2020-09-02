@@ -18,16 +18,16 @@ using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCommon
 {
-  public partial class LogForm : Form
+  public partial class TraceForm : Form
   {
 
-    private LogForm()
+    private TraceForm()
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;
     }
 
-    public LogForm(string locationPropertyName, string clientSizePropertyName)
+    public TraceForm(string locationPropertyName, string clientSizePropertyName)
       : this()
     {
       Location = (Point)Globals.Settings[locationPropertyName];
@@ -68,7 +68,7 @@ namespace Ordisoftware.HebrewCommon
     private void ActionClearLogs_Click(object sender, EventArgs e)
     {
       if ( DisplayManager.QueryYesNo(Localizer.AskToClearLogs.GetLang()) )
-        DebugManager.ClearLogs();
+        DebugManager.ClearTraces();
     }
 
     private void LogForm_Activated(object sender, EventArgs e)

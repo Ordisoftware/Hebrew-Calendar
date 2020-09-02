@@ -142,7 +142,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
-      DebugManager.LogForm.Show();
+      DebugManager.TraceForm.Show();
     }
 
     /// <summary>
@@ -236,7 +236,7 @@ namespace Ordisoftware.HebrewCommon
       body.AppendLine();
       body.AppendLine("## LOG");
       body.AppendLine();
-      string text = DebugManager.LogForm.TextBox.Text;
+      string text = DebugManager.TraceForm.TextBox.Text;
       if (text == "") ;
       var lines1 = text.Split();
       var lines2 = lines1.Where(l => { l = l.Trim(); return l != "" && !l.StartsWith("# ") && !l.StartsWith("--"); });

@@ -281,7 +281,13 @@ namespace Ordisoftware.HebrewCommon
       => Path.Combine(HelpFolderPath, $"index-{Languages.Current}.htm");
 
     /// <summary>
-    /// Indicate the trace file extension.
+    /// Indicate the trace file mode.
+    /// </summary>
+    static public TraceRollOverMode TraceFileMode { get; set; }
+     = TraceRollOverMode.Daily;
+
+    /// <summary>
+    /// Indicate the trace file keep count.
     /// </summary>
     static public int TraceFileKeepCount { get; set; }
      = 7;
@@ -297,12 +303,6 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public string TraceFileExtension { get; set; }
       = ".log";
-
-    /// <summary>
-    /// Indicate the trace file extension.
-    /// </summary>
-    static public string TraceFileRollFormat { get; set; }
-     = "yyyy-MM-dd";
 
     /// <summary>
     /// Indicate the trace filename.
@@ -417,6 +417,7 @@ namespace Ordisoftware.HebrewCommon
         return _WebLinksProviders;
       }
     }
+
     static private List<OnlineProviders> _WebLinksProviders;
 
     /// <summary>

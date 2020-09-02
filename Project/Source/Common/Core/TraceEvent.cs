@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide log event enum.
   /// </summary>
-  public enum LogEvent
+  public enum TraceEvent
   {
 
     /// <summary>

@@ -1597,24 +1597,24 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point LogFormLocation {
+        public global::System.Drawing.Point TraceFormLocation {
             get {
-                return ((global::System.Drawing.Point)(this["LogFormLocation"]));
+                return ((global::System.Drawing.Point)(this["TraceFormLocation"]));
             }
             set {
-                this["LogFormLocation"] = value;
+                this["TraceFormLocation"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("784, 561")]
-        public global::System.Drawing.Size LogFormSize {
+        public global::System.Drawing.Size TraceFormSize {
             get {
-                return ((global::System.Drawing.Size)(this["LogFormSize"]));
+                return ((global::System.Drawing.Size)(this["TraceFormSize"]));
             }
             set {
-                this["LogFormSize"] = value;
+                this["TraceFormSize"] = value;
             }
         }
     }

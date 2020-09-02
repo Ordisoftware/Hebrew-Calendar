@@ -106,14 +106,16 @@ namespace Ordisoftware.HebrewCommon
     /// Call an action without raising exceptions.
     /// </summary>
     /// <param name="action"></param>
-    static public void TryCatch(Action action)
+    static public bool TryCatch(Action action)
     {
       try
       {
         action();
+        return true;
       }
       catch
       {
+        return false;
       }
     }
 

@@ -22,7 +22,7 @@ namespace Ordisoftware.HebrewCommon
   static public partial class DebugManager
   {
 
-    static public readonly LogForm LogForm = new LogForm("LogFormLocation", "LogFormSize");
+    static public readonly TraceForm TraceForm = new TraceForm("TraceFormLocation", "TraceFormSize");
 
     private const int MarginSize = 4;
     private const int EnterCountSkip = 2;
@@ -35,51 +35,51 @@ namespace Ordisoftware.HebrewCommon
 
     static private void ChangingTraceFile(RollOverTextWriterTraceListener sender, string filename)
     {
-      LogForm.Text = Path.GetFileNameWithoutExtension(filename);
-      LogForm.AppendText(File.ReadAllText(filename), true);
+      TraceForm.Text = Path.GetFileNameWithoutExtension(filename);
+      TraceForm.AppendText(File.ReadAllText(filename), true);
     }
 
     static public void Enter()
     {
       if ( !_Enabled ) return;
       EnterCount++;
-      Log(LogEvent.Enter, ExceptionInfo.GetCallerName(EnterCountSkip));
+      Trace(TraceEvent.Enter, ExceptionInfo.GetCallerName(EnterCountSkip));
     }
 
     static public void Leave()
     {
       if ( !_Enabled || EnterCount == 0 ) return;
       EnterCount--;
-      Log(LogEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip));
+      Trace(TraceEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip));
     }
 
     static private void LeaveInternal()
     {
       if ( !_Enabled || EnterCount == 0 ) return;
-      Log(LogEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip + StackSkip));
+      Trace(TraceEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip + StackSkip));
       EnterCount--;
       StackSkip = 1;
     }
 
-    static public void Log(LogEvent logevent, string text = "")
+    static public void Trace(TraceEvent logevent, string text = "")
     {
       if ( !Enabled ) return;
       try
       {
         string s = "";
-        if ( logevent != LogEvent.System )
+        if ( logevent != TraceEvent.System )
         {
           string str = logevent.ToString().ToUpper();
           if ( str.Length < 9 ) str += new string(' ', 9 - str.Length);
           s += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " [ " + str + " ] ";
         }
-        if ( logevent == LogEvent.Leave ) CurrentMargin -= MarginSize;
+        if ( logevent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
         s = s + new string(' ', CurrentMargin) + text;
         s = s.Indent(0, CurrentMargin + s.Length);
         s += Globals.NL;
-        SystemHelper.TryCatch(() => LogForm.AppendText(s, true));
+        SystemHelper.TryCatch(() => TraceForm.AppendText(s, true));
         System.Diagnostics.Trace.Write(s);
-        if ( logevent == LogEvent.Enter ) CurrentMargin += MarginSize;
+        if ( logevent == TraceEvent.Enter ) CurrentMargin += MarginSize;
       }
       catch
       {
@@ -89,28 +89,28 @@ namespace Ordisoftware.HebrewCommon
     static private void WriteHeader()
     {
       if ( !_Enabled ) return;
-      Log(LogEvent.System, Separator);
-      Log(LogEvent.System, "# " + "START  : " + DateTime.Now.ToString());
-      Log(LogEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
-      Log(LogEvent.System, "# " + "PATH   : " + Globals.RootFolderPath);
+      Trace(TraceEvent.System, Separator);
+      Trace(TraceEvent.System, "# " + "START  : " + DateTime.Now.ToString());
+      Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
+      Trace(TraceEvent.System, "# " + "PATH   : " + Globals.RootFolderPath);
       string platformStr = SystemStatistics.Instance.Platform;
       var platformLines = platformStr.Split(StringSplitOptions.RemoveEmptyEntries);
-      Log(LogEvent.System, "# " + "SYSTEM : " + string.Join(" | ", platformLines));
-      Log(LogEvent.System);
+      Trace(TraceEvent.System, "# " + "SYSTEM : " + string.Join(" | ", platformLines));
+      Trace(TraceEvent.System);
     }
 
     static private void WriteFooter()
     {
       if ( !_Enabled ) return;
-      Log(LogEvent.System);
-      Log(LogEvent.System, "# " + "UNLEFT : " + EnterCount.ToString());
-      Log(LogEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
-      Log(LogEvent.System, "# " + "STOP   : " + DateTime.Now.ToString());
-      Log(LogEvent.System, Separator);
-      Log(LogEvent.System);
+      Trace(TraceEvent.System);
+      Trace(TraceEvent.System, "# " + "UNLEFT : " + EnterCount.ToString());
+      Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
+      Trace(TraceEvent.System, "# " + "STOP   : " + DateTime.Now.ToString());
+      Trace(TraceEvent.System, Separator);
+      Trace(TraceEvent.System);
     }
 
-    public static void ClearLogs()
+    public static void ClearTraces()
     {
       if ( !_Enabled ) return;
       try
@@ -124,7 +124,7 @@ namespace Ordisoftware.HebrewCommon
           string date = Path.GetFileNameWithoutExtension(filename).Replace(code, "").Trim();
           SystemHelper.TryCatch(() => File.Delete(filename));
         }
-        LogForm.TextBox.Clear();
+        TraceForm.TextBox.Clear();
       }
       finally
       {

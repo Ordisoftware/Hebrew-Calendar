@@ -163,22 +163,23 @@ namespace Ordisoftware.HebrewCommon
           TraceListener = new RollOverTextWriterTraceListener(Globals.TraceFolderPath,
                                                               Globals.TraceFileCode,
                                                               Globals.TraceFileExtension,
-                                                              Globals.TraceFileRollFormat,
+                                                              Globals.TraceFileMode,
+                                                              Globals.TraceFileKeepCount,
                                                               ChangingTraceFile);
-          Trace.Listeners.Add(TraceListener);
-          Trace.AutoFlush = true;
+          System.Diagnostics.Trace.Listeners.Add(TraceListener);
+          System.Diagnostics.Trace.AutoFlush = true;
           TraceListener.AutoFlush = true;
           WriteHeader();
         }
         else
         {
           WriteFooter();
-          Trace.Listeners.Remove(TraceListener);
+          System.Diagnostics.Trace.Listeners.Remove(TraceListener);
           TraceListener.Dispose();
           TraceListener = null;
           _Enabled = false;
-          LogForm.TextBox.Clear();
-          LogForm.Hide();
+          TraceForm.TextBox.Clear();
+          TraceForm.Hide();
         }
       }
     }

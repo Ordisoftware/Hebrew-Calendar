@@ -135,7 +135,7 @@
     <Compile Include="Source\Common\Core\RollOverTextWriterTraceListener.cs" />
     <Compile Include="Source\Common\Core\SQLiteException.cs" />
     <Compile Include="Source\Common\Core\DebugManager.cs" />
-    <Compile Include="Source\Common\Core\LogEvent.cs" />
+    <Compile Include="Source\Common\Core\TraceEvent.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringList.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringDictionary.cs" />
     <Compile Include="Source\Common\Data\NullSafeSortedDictionary.cs" />
@@ -154,11 +154,11 @@
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
     <Compile Include="Source\Common\Data\DataFileFolder.cs" />
-    <Compile Include="Source\Common\Forms\LogForm.cs">
+    <Compile Include="Source\Common\Forms\TraceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Common\Forms\LogForm.Designer.cs">
-      <DependentUpon>LogForm.cs</DependentUpon>
+    <Compile Include="Source\Common\Forms\TraceForm.Designer.cs">
+      <DependentUpon>TraceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\System\Globals.Assembly.cs" />
     <Compile Include="Source\Common\System\Languages.cs" />
@@ -548,11 +548,11 @@
       <DependentUpon>LettersControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\LogForm.fr.resx">
-      <DependentUpon>LogForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Common\Forms\TraceForm.fr.resx">
+      <DependentUpon>TraceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\LogForm.resx">
-      <DependentUpon>LogForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Common\Forms\TraceForm.resx">
+      <DependentUpon>TraceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Forms\WebUpdateForm.fr.resx">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>

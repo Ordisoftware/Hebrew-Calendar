@@ -150,7 +150,7 @@ namespace Ordisoftware.HebrewCalendar
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       DebugManager.Enter();
-      DebugManager.Log(LogEvent.Data, e.CloseReason.ToStringFull());
+      DebugManager.Trace(TraceEvent.Data, e.CloseReason.ToStringFull());
       try
       {
         if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
@@ -174,7 +174,7 @@ namespace Ordisoftware.HebrewCalendar
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       DebugManager.Enter();
-      DebugManager.Log(LogEvent.Data, e.CloseReason.ToStringFull());
+      DebugManager.Trace(TraceEvent.Data, e.CloseReason.ToStringFull());
       try
       {
         Settings.Store();
@@ -193,7 +193,7 @@ namespace Ordisoftware.HebrewCalendar
     internal void SessionEnding(object sender, SessionEndingEventArgs e)
     {
       DebugManager.Enter();
-      DebugManager.Log(LogEvent.Data, e.Reason.ToStringFull());
+      DebugManager.Trace(TraceEvent.Data, e.Reason.ToStringFull());
       try
       {
         if ( Globals.IsSessionEnding ) return;
@@ -805,8 +805,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
-      DebugManager.LogForm.Show();
-      DebugManager.LogForm.BringToFront();
+      DebugManager.TraceForm.Show();
+      DebugManager.TraceForm.BringToFront();
     }
 
     /// <summary>

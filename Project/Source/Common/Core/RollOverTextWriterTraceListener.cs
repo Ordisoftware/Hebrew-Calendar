@@ -15,10 +15,17 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.IO;
+using System.Linq;
 using System.Diagnostics;
 
 namespace Ordisoftware.HebrewCommon
 {
+
+  public enum TraceRollOverMode
+  {
+    Daily,
+    Monthly
+  }
 
   public delegate void RollOverTextWriterTraceListenerChangingFile(RollOverTextWriterTraceListener sender, string filename);
 
@@ -26,19 +33,6 @@ namespace Ordisoftware.HebrewCommon
   // https://web.archive.org/web/20040628122447/http://weblogs.asp.net/DaveBost/archive/2004/04/30/124224.aspx
   public class RollOverTextWriterTraceListener : TraceListener
   {
-    public DateTime Date { get; private set; }
-    
-    public string FilePath { get; }
-    public string FileCode { get; }
-    public string FileExtension { get; }
-
-    public string Filename { get; private set; }
-
-    public int KeepCount { get; set; }
-
-    private StreamWriter Writer;
-    private string DateFormat;
-
 
     public bool AutoFlush
     {
@@ -46,19 +40,31 @@ namespace Ordisoftware.HebrewCommon
       set => Writer.AutoFlush = value;
     }
 
+    public string FilePath { get; }
+    public string FileCode { get; }
+    public string FileExtension { get; }
+
+    public TraceRollOverMode Mode { get; private set; }
+    public DateTime Date { get; private set; }
+    public string Filename { get; private set; }
+
+    public int KeepCount { get; set; }
+
+    private StreamWriter Writer;
+
     public event RollOverTextWriterTraceListenerChangingFile ChangingFile;
 
     public RollOverTextWriterTraceListener(string filePath,
                                            string fileCode,
                                            string fileExtension,
-                                           string dateFormat,
-                                           RollOverTextWriterTraceListenerChangingFile changingFile = null,
-                                           int keepCount = 7)
+                                           TraceRollOverMode mode,
+                                           int keepCount,
+                                           RollOverTextWriterTraceListenerChangingFile changingFile = null)
     {
       Directory.CreateDirectory(filePath);
       ChangingFile = changingFile;
       KeepCount = keepCount;
-      DateFormat = dateFormat;
+      Mode = mode;
       FileExtension = fileExtension;
       FileCode = fileCode;
       FilePath = filePath;
@@ -67,10 +73,7 @@ namespace Ordisoftware.HebrewCommon
 
     protected override void Dispose(bool disposing)
     {
-      if ( disposing )
-      {
-        Writer.Close();
-      }
+      if ( disposing ) Writer.Close();
     }
 
     public override void Write(string value)
@@ -98,28 +101,53 @@ namespace Ordisoftware.HebrewCommon
       }
     }
 
+    private class FileItem
+    {
+      public string Filename;
+      public DateTime Date;
+    }
+
     private string GenerateFilename()
     {
-      if ( KeepCount != 0 )
-        try
-        {
-          var limit = DateTime.Now.Date.AddDays(-KeepCount);
-          foreach ( string filename in Directory.GetFiles(FilePath, FileCode + "*" + FileExtension) )
-          {
-            string date = Path.GetFileNameWithoutExtension(filename).Replace(FileCode, "").Trim();
-            if ( DateTime.TryParse(date, out DateTime thedate) )
-              if ( thedate <= limit )
-                SystemHelper.TryCatch(() => File.Delete(filename));
-          }
-        }
-        catch
-        {
-        }
+      Purge();
       Date = DateTime.Today;
-      Filename = Path.Combine(FilePath, $"{FileCode} {Date.ToString(DateFormat)}{FileExtension}");
+      Filename = Path.Combine(FilePath, $"{FileCode} {SQLiteDate.ToString(Date)}{FileExtension}");
       try { ChangingFile?.Invoke(this, Filename); }
       catch { }
       return Filename;
+    }
+
+    private void Purge()
+    {
+      if ( KeepCount == 0 ) return;
+      try
+      {
+        var list = Directory.GetFiles(FilePath, FileCode + "*" + FileExtension)
+                            .Select(filename => new FileItem { Filename = filename })
+                            .Where(item => ResolveDate(item));
+        bool ResolveDate(FileItem item)
+        {
+          string dateCode = Path.GetFileNameWithoutExtension(item.Filename).Replace(FileCode, "");
+          return SystemHelper.TryCatch(() => { item.Date = SQLiteDate.ToDateTime(dateCode.Trim()); });
+        }
+        DateTime limit;
+        switch ( Mode )
+        {
+          case TraceRollOverMode.Daily:
+            limit = DateTime.Now.Date.AddDays(-KeepCount);
+            break;
+          case TraceRollOverMode.Monthly:
+            limit = DateTime.Now.Date.AddMonths(-KeepCount);
+            break;
+          default:
+            throw new NotImplementedExceptionEx(Mode.ToStringFull());
+        }
+        foreach ( var file in list.Where(f => f.Date <= limit) )
+          SystemHelper.TryCatch(() => File.Delete(file.Filename));
+      }
+      catch
+      {
+      }
     }
 
   }

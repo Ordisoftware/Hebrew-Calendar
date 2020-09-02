@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.HebrewCommon
 {
-  partial class LogForm
+  partial class TraceForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraceForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClearLogs = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
