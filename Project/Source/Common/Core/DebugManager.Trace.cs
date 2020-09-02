@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewCommon
       Trace(TraceEvent.System);
     }
 
-    public static void ClearTraces()
+    public static void ClearTraces(bool norestart = false)
     {
       if ( !_Enabled ) return;
       try
@@ -128,7 +128,7 @@ namespace Ordisoftware.HebrewCommon
       }
       finally
       {
-        Start();
+        if ( !norestart ) Start();
       }
     }
 

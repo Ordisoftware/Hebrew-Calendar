@@ -73,7 +73,6 @@
       // panel1
       // 
       this.panel1.BackColor = System.Drawing.SystemColors.Window;
-      this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.panel1.Controls.Add(this.TextBox);
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
@@ -81,13 +80,13 @@
       // TextBox
       // 
       this.TextBox.BackColor = System.Drawing.SystemColors.Window;
-      this.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.TextBox, "TextBox");
       this.TextBox.Name = "TextBox";
       this.TextBox.ReadOnly = true;
       this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Left;
       // 
-      // LogForm
+      // TraceForm
       // 
       this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
@@ -96,7 +95,7 @@
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.PanelBottom);
-      this.Name = "LogForm";
+      this.Name = "TraceForm";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.Activated += new System.EventHandler(this.LogForm_Activated);
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowTextForm_FormClosing);
