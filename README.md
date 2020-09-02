@@ -150,7 +150,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.09.04 - Version 5.0
+#### 2020.09.06 - Version 5.0
 
 - Add keyboard shortcuts to navigate in the calendar month view.
 - Add search gregorian month form.
@@ -176,6 +176,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Change text report that is no more stored in the database but in a file.
 - Add usage statistics form in tools menu.
 - Improve check update to allow auto update or direct download or open app web page.
+- Improve debugger to support logging.
+- Improve exception form to view log and send mail in addition to create a GitHub issue.
 - Fix app not responding on windows logoff or system shutdown.
 - Some UI/UX improvements.
 - Some code refactorings.
