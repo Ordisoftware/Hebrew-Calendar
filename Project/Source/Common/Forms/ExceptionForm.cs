@@ -61,9 +61,9 @@ namespace Ordisoftware.HebrewCommon
     {
       using ( var form = new ExceptionForm() )
       {
-        form.ActionViewStack.Enabled = Debugger.UseStack;
+        form.ActionViewStack.Enabled = ExceptionManager.UseStack;
         form.ActionViewInner.Enabled = einfo.InnerInfo != null;
-        form.ActionTerminate.Enabled = Debugger.UserCanTerminate && !isInner;
+        form.ActionTerminate.Enabled = ExceptionManager.UserCanTerminate && !isInner;
         if ( isInner )
         {
           form.ActionSend.Enabled = false;
@@ -82,8 +82,8 @@ namespace Ordisoftware.HebrewCommon
         form.ErrorInfo = einfo;
         form.StackText = form.ActionViewStack.Text;
         form.ActionViewStack.Text += " <<";
-        if ( Debugger.AutoHideStack ) form.ActionViewStack_Click(form, null);
-        if ( !Debugger.UseStack ) form.ActionViewStack_Click(form, null);
+        if ( ExceptionManager.AutoHideStack ) form.ActionViewStack_Click(form, null);
+        if ( !ExceptionManager.UseStack ) form.ActionViewStack_Click(form, null);
         form.BringToFront();
         form.ShowDialog();
       }

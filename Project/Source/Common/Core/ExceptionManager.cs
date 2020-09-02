@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewCommon
   public delegate void AfterExceptionEventHandler(object sender, ExceptionInfo einfo, bool processed);
 
   /// <summary>
-  /// Provide debugger.
+  /// Provide exception management.
   /// </summary>
   /// <remarks>
   /// Showing/raising blocks all other threads if Exception occur in a thread 
@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewCommon
   /// }                                                          
   /// 
   /// </remarks>
-  static public class Debugger
+  static public class ExceptionManager
   {
 
     /// <summary>
@@ -98,6 +98,8 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate Exception show alternative handler.
     /// </summary>
     static public event ShowExceptionEventHandler DoShowException;
+
+    // TODO properties with lock
 
     /// <summary>
     /// Indicate if stack infos are used.
@@ -194,7 +196,7 @@ namespace Ordisoftware.HebrewCommon
     static private void OnAppDomainException(object sender, UnhandledExceptionEventArgs args)
     {
       if ( args.ExceptionObject == null ) return;
-      HandleException(sender, (Exception)args.ExceptionObject);
+      Handle(sender, (Exception)args.ExceptionObject);
     }
 
     /// <summary>
@@ -205,7 +207,7 @@ namespace Ordisoftware.HebrewCommon
     static private void OnThreadException(object sender, ThreadExceptionEventArgs args)
     {
       if ( args.Exception == null ) return;
-      HandleException(sender, args.Exception);
+      Handle(sender, args.Exception);
     }
 
     /// <summary>
@@ -215,7 +217,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="show">true to show a message or false to hide it.</param>
     static public void Manage(this Exception ex, bool show = true)
     {
-      ManageException(null, ex, show);
+      Manage((object)null, ex, show);
     }
 
     /// <summary>
@@ -226,7 +228,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="show">true to show a message or false to hide it.</param>
     static public void Manage(this Exception ex, object sender, bool show = true)
     {
-      ManageException(sender, ex, show);
+      Manage(sender, ex, show);
     }
 
     /// <summary>
@@ -234,10 +236,10 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
-    static public void HandleException(object sender, Exception ex)
+    static public void Handle(object sender, Exception ex)
     {
       if ( ex is AbortException ) return;
-      ProcessException(sender, ex, true);
+      Process(sender, ex, true);
     }
 
     /// <summary>
@@ -282,7 +284,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="ex">The ex to act on.</param>
     static public string ToStringFull(this Exception ex)
     {
-      return ex.ParseException(einfo => einfo.FullText);
+      return ex.Parse(einfo => einfo.FullText);
     }
 
     /// <summary>
@@ -293,7 +295,7 @@ namespace Ordisoftware.HebrewCommon
     /// </returns>
     /// <param name="ex">The ex to act on.</param>
     /// <param name="gettext">The gettext.</param>
-    static private string ParseException(this Exception ex, Func<ExceptionInfo, string> gettext)
+    static private string Parse(this Exception ex, Func<ExceptionInfo, string> gettext)
     {
       var einfo = new ExceptionInfo(null, ex);
       var list = new List<string> { gettext(einfo) };
@@ -329,7 +331,7 @@ namespace Ordisoftware.HebrewCommon
     /// Show Exception information.
     /// </summary>
     /// <param name="e">The Exception to process.</param>
-    static public void ShowException(Exception e)
+    static public void Show(Exception e)
     {
       MessageBox.Show(e.ToStringFull());
     }
@@ -340,13 +342,13 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
     /// <param name="doshow">true to doshow.</param>
-    static public void ManageException(object sender, Exception ex, bool doshow = true)
+    static public void Manage(object sender, Exception ex, bool doshow = true)
     {
       if ( ex is AbortException ) { LeaveInternal(); return; }
       lock ( slocker )
       {
         StackSkip++;
-        ProcessException(sender, ex, doshow);
+        Process(sender, ex, doshow);
         LeaveInternal();
       }
     }
@@ -357,7 +359,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
     /// <param name="doshow">true to doshow.</param>
-    static private void ProcessException(object sender, Exception ex, bool doshow)
+    static private void Process(object sender, Exception ex, bool doshow)
     {
       lock ( slocker )
         try
@@ -366,7 +368,7 @@ namespace Ordisoftware.HebrewCommon
           var einfo = new ExceptionInfo(sender, ex);
           if ( !_Active )
           {
-            ShowSimpleException(einfo);
+            ShowSimple(einfo);
             return;
           }
           if ( BeforeException != null )
@@ -380,7 +382,7 @@ namespace Ordisoftware.HebrewCommon
                 DisplayManager.ShowError("Error on BeforeException:" + Globals.NL + err.Message);
             }
           if ( b && doshow )
-            ShowException(einfo);
+            Show(einfo);
           if ( AfterException != null )
             try
             {
@@ -413,7 +415,7 @@ namespace Ordisoftware.HebrewCommon
     /// Shows the Exception.
     /// </summary>
     /// <param name="einfo">The einfo.</param>
-    static private void ShowException(ExceptionInfo einfo)
+    static private void Show(ExceptionInfo einfo)
     {
       if ( einfo.Instance is AbortException ) return;
       try
@@ -428,8 +430,8 @@ namespace Ordisoftware.HebrewCommon
         else
           if ( UseForm )
           try { ExceptionForm.Run(einfo); }
-          catch { ShowSimpleException(einfo); }
-        else ShowSimpleException(einfo);
+          catch { ShowSimple(einfo); }
+        else ShowSimple(einfo);
       }
       catch ( Exception err )
       {
@@ -452,7 +454,7 @@ namespace Ordisoftware.HebrewCommon
     /// Shows the simple Exception.
     /// </summary>
     /// <param name="einfo">The einfo.</param>
-    static private void ShowSimpleException(ExceptionInfo einfo)
+    static private void ShowSimple(ExceptionInfo einfo)
     {
       if ( einfo.Instance is AbortException ) return;
       string s;

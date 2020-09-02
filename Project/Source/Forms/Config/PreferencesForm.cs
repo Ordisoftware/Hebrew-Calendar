@@ -314,7 +314,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
     {
-      Debugger.Active = EditDebuggerEnabled.Checked;
+      ExceptionManager.Active = EditDebuggerEnabled.Checked;
     }
 
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)

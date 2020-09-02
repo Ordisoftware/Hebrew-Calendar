@@ -195,7 +195,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     private void ExtractStack()
     {
-      if ( !Debugger.UseStack ) return;
+      if ( !ExceptionManager.UseStack ) return;
       bool first = false;
       string part1 = "";
       string part2 = "";
@@ -208,7 +208,7 @@ namespace Ordisoftware.HebrewCommon
         var method = frame.GetMethod();
         part2 = method.DeclaringType.FullName;
         var type = Type.GetType(part2);
-        if ( type != typeof(Debugger) && type != typeof(ExceptionInfo) )
+        if ( type != typeof(ExceptionManager) && type != typeof(ExceptionInfo) )
         {
           part3 = Path.GetFileName(frame.GetFileName());
           //if ( part3 == null && Debugger.StackOnlyProgram ) continue;
@@ -261,7 +261,7 @@ namespace Ordisoftware.HebrewCommon
                + "Error Message: " + Globals.NL
                + Message;
 
-      if ( Debugger.UseStack )
+      if ( ExceptionManager.UseStack )
         FullText = FullText + Globals.NL
                  + "StackList: " + Globals.NL
                  + StackText;
