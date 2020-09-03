@@ -47,6 +47,7 @@
     <DocumentationFile>..\Bin\Debug\Ordisoftware.HebrewCalendar.xml</DocumentationFile>
     <NoWarn>1587, 1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>portable</DebugType>
@@ -60,7 +61,7 @@
     <NoWarn>1587, 1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
     <DebugSymbols>true</DebugSymbols>
-    <LangVersion>default</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AASharp, Version=1.97.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -130,12 +131,12 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Common\Core\DebugManager.Trace.cs" />
-    <Compile Include="Source\Common\Core\NotImplementedExceptionEx.cs" />
-    <Compile Include="Source\Common\Core\RollOverTextWriterTraceListener.cs" />
+    <Compile Include="Source\Common\Managers\DebugManager.Trace.cs" />
+    <Compile Include="Source\Common\Managers\NotImplementedExceptionEx.cs" />
+    <Compile Include="Source\Common\Managers\RollOverTextWriterTraceListener.cs" />
     <Compile Include="Source\Common\Data\SQLiteException.cs" />
-    <Compile Include="Source\Common\Core\DebugManager.cs" />
-    <Compile Include="Source\Common\Core\TraceEvent.cs" />
+    <Compile Include="Source\Common\Managers\DebugManager.cs" />
+    <Compile Include="Source\Common\Managers\TraceEvent.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringList.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringDictionary.cs" />
     <Compile Include="Source\Common\Data\NullSafeSortedDictionary.cs" />
@@ -147,8 +148,8 @@
     <Compile Include="Source\Common\Forms\ExceptionForm.designer.cs">
       <DependentUpon>ExceptionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Core\ExceptionInfo.cs" />
-    <Compile Include="Source\Common\Core\DisplayManager.cs" />
+    <Compile Include="Source\Common\Managers\ExceptionInfo.cs" />
+    <Compile Include="Source\Common\Managers\DisplayManager.cs" />
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -165,7 +166,7 @@
     <Compile Include="Source\Common\System\StringHelper.cs" />
     <Compile Include="Source\Common\System\SystemHelper.OS.cs" />
     <Compile Include="Source\Common\System\SystemHelper.Format.cs" />
-    <Compile Include="Source\Common\UI\ToolStripMenuItemHelper.cs" />
+    <Compile Include="Source\Common\Controls\ToolStripMenuItemHelper.cs" />
     <Compile Include="Dependencies\GenericParsing\FieldType.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParser.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParserAdapter.cs" />
@@ -183,7 +184,7 @@
     <Compile Include="Source\Common\Data\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\Data\OnlineProviders.cs" />
     <Compile Include="Source\Common\Data\OnlineProvidersHelper.cs" />
-    <Compile Include="Source\Common\UI\ControlLocation.cs" />
+    <Compile Include="Source\Common\Controls\ControlLocation.cs" />
     <Compile Include="Source\Common\Data\NullSafeDictionary.cs" />
     <Compile Include="Source\Common\System\EnumHelper.cs" />
     <Compile Include="Source\Common\System\Globals.cs" />
@@ -191,7 +192,7 @@
     <Compile Include="Source\Common\Data\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\System\Localizer.cs" />
     <Compile Include="Source\Common\Data\SQLiteDate.cs" />
-    <Compile Include="Source\Common\UI\FormsHelper.cs" />
+    <Compile Include="Source\Common\Controls\FormsHelper.cs" />
     <Compile Include="Source\Common\System\Shell.cs" />
     <Compile Include="Source\Common\System\WebCheckUpdate.cs" />
     <Compile Include="Source\Common\System\SystemHelper.cs" />
@@ -216,7 +217,7 @@
     <Compile Include="Source\Common\Forms\WebUpdateForm.Designer.cs">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\UI\RichTextBoxEx.cs">
+    <Compile Include="Source\Common\Controls\RichTextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Common\Controls\UndoRedoTextBox.Actions.cs">
@@ -435,12 +436,12 @@
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Enums\TorahCelebrations.cs" />
-    <Compile Include="Source\Common\Core\DisplayManager.Query.cs" />
-    <Compile Include="Source\Common\Core\DisplayManager.Show.cs" />
+    <Compile Include="Source\Common\Managers\DisplayManager.Query.cs" />
+    <Compile Include="Source\Common\Managers\DisplayManager.Show.cs" />
     <Compile Include="Source\Enums\MoonRise.cs" />
     <Compile Include="Dependencies\MoonPhaseImage\MoonPhaseImage.cs">
     </Compile>
-    <Compile Include="Source\Common\Core\AbortException.cs" />
+    <Compile Include="Source\Common\Managers\AbortException.cs" />
     <Compile Include="Source\Forms\Config\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>

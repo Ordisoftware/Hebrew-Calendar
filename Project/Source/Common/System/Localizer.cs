@@ -83,8 +83,8 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="values">The dictionary containing lang>translations.</param>
     static public string[] GetLang(this Dictionary<string, string[]> values)
     {
-      return values != null && values.ContainsKey(Languages.Current) 
-           ? values[Languages.Current] 
+      return values != null && values.ContainsKey(Languages.Current)
+           ? values[Languages.Current]
            : new string[0];
     }
 

@@ -157,10 +157,10 @@ namespace Ordisoftware.HebrewCommon
     static public readonly NullSafeStringDictionary UpgradeResetRequired
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "An upgrade of the settings is required." + Globals.NL + 
+        { Languages.EN, "An upgrade of the settings is required." + Globals.NL +
                         "They will be reseted to default values."
         },
-        { Languages.FR, "Une mise à jour des paramètres est requise." + Globals.NL + 
+        { Languages.FR, "Une mise à jour des paramètres est requise." + Globals.NL +
                         "Ils vont être réinialisés à leurs valeurs par défaut."
         }
       };
@@ -466,7 +466,7 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "Index ne peut pas être négatif dans {0}: {1}" }
       };
 
-    static public readonly NullSafeStringDictionary UnhandledException 
+    static public readonly NullSafeStringDictionary UnhandledException
       = new NullSafeStringDictionary()
       {
         { Languages.EN, "Unhandled Exception has occured in {0}" + Globals.NL  +

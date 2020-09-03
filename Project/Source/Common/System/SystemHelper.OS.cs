@@ -41,11 +41,16 @@ namespace Ordisoftware.HebrewCommon
           try
           {
             var list = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor").Get();
-            foreach ( var item in list )
-            {
-              _Processor = (string)item["Name"];
-              break;
-            }
+            var enumerator = list.GetEnumerator();
+            bool newline = false;
+            if ( enumerator.MoveNext() )
+              do
+              {
+                _Processor = (string)enumerator.Current["Name"];
+                newline = enumerator.MoveNext();
+                if ( newline ) _Processor += Globals.NL;
+              }
+              while ( newline );
           }
           catch
           {
