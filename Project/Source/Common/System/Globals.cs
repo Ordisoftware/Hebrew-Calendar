@@ -398,27 +398,26 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the web links providers.
     /// </summary>
-    static public List<OnlineProviders> WebLinksProviders
+    static public List<OnlineProviders> WebLinksProviders { get; private set; }
+
+    /// <summary>
+    /// Create an online OnlineProviders instance.
+    /// </summary>
+    /// <param name="folder"></param>
+    /// <param name="filename"></param>
+    /// <returns></returns>
+    static private OnlineProviders CreateOnlineProviders(DataFileFolder folder, string filename)
     {
-      get
+      try
       {
-        if ( _WebLinksProviders == null ) _WebLinksProviders = new List<OnlineProviders>();
-        if ( _WebLinksProviders.Count == 0 )
-          if ( Directory.Exists(WebLinksFolderPath) )
-            try
-            {
-              foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
-                _WebLinksProviders.Add(new OnlineProviders(file, true, IsDev, DataFileFolder.ApplicationDocuments));
-            }
-            catch ( Exception ex )
-            {
-              string msg = Localizer.LoadFileError.GetLang(Path.Combine(WebLinksFolderPath, "WebLinks*.txt"), ex.Message);
-              DisplayManager.ShowError(msg);
-            }
-        return _WebLinksProviders;
+        return new OnlineProviders(filename, true, IsDev, folder);
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(Localizer.LoadFileError.GetLang(filename, ex.Message));
+        return null;
       }
     }
-    static private List<OnlineProviders> _WebLinksProviders;
 
     /// <summary>
     /// Static constructor.
@@ -427,9 +426,18 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( IsDesignTime ) return;
       var folder = DataFileFolder.ApplicationDocuments;
-      OnlineProviders create(string filename) => new OnlineProviders(filename, true, IsDev, folder);
-      SystemManager.TryCatchManage(() => OnlineWordProviders = create(OnlineWordProvidersFileName));
-      SystemManager.TryCatchManage(() => OnlineBibleProviders = create(OnlineBibleProvidersFileName));
+      OnlineWordProviders = CreateOnlineProviders(folder, OnlineWordProvidersFileName);
+      OnlineBibleProviders = CreateOnlineProviders(folder, OnlineBibleProvidersFileName);
+      WebLinksProviders = new List<OnlineProviders>();
+      if ( Directory.Exists(WebLinksFolderPath) )
+        SystemManager.TryCatch(() =>
+        {
+          foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
+          {
+            var item = CreateOnlineProviders(DataFileFolder.ApplicationDocuments, file);
+            if ( item != null ) WebLinksProviders.Add(item);
+          }
+        });
     }
 
   }
