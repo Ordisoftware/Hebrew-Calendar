@@ -79,7 +79,7 @@ namespace Ordisoftware.HebrewCommon
           message += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " [ " + str + " ] ";
         }
         if ( logevent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
-        message += text.Indent(0, CurrentMargin + message.Length) + Globals.NL;
+        message += text.Indent(CurrentMargin, CurrentMargin) + Globals.NL;
         SystemManager.TryCatch(() => TraceForm.AppendText(message));
         System.Diagnostics.Trace.Write(message);
         if ( logevent == TraceEvent.Enter ) CurrentMargin += MarginSize;
