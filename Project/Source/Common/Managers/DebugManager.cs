@@ -21,36 +21,6 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
-  public enum ShowExceptionMode
-  {
-    None,
-    Simple,
-    Advanced
-  }
-
-  /// <summary>
-  /// Delegate for handling before show exception events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="einfo">The einfo.</param>
-  /// <param name="process">[in,out] The process.</param>
-  public delegate void BeforeShowExceptionEventHandler(object sender, ExceptionInfo einfo, ref bool process);
-
-  /// <summary>
-  /// Delegate for handling after show exception events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="einfo">The einfo.</param>
-  /// <param name="processed">true if processed.</param>
-  public delegate void AfterShowExceptionEventHandler(object sender, ExceptionInfo einfo, bool processed);
-
-  /// <summary>
-  /// Delegate for handling SubstitureShowException events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="einfo">The einfo.</param>
-  public delegate void SubstitureShowExceptionEventHandler(object sender, ExceptionInfo einfo);
-
   /// <summary>
   /// Provide exception helper.
   /// </summary>
@@ -131,7 +101,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the trace listener.
     /// </summary>
-    static public RollverTextWriterTraceListener TraceListener { get; private set; }
+    static public Listener TraceListener { get; private set; }
 
     /// <summary>
     /// Indicate if the debug manager is enabled or not.
@@ -157,7 +127,7 @@ namespace Ordisoftware.HebrewCommon
         if ( value )
         {
           _Enabled = true;
-          TraceListener = new RollverTextWriterTraceListener(
+          TraceListener = new Listener(
             Globals.TraceFolderPath,
             Globals.TraceFileCode,
             Globals.TraceFileExtension,
@@ -349,7 +319,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Show an exception with the exception form else a message box.
     /// </summary>
-    /// <param name="einfo">The einfo.</param>
+    /// <param name="einfo">The exception information.</param>
     static private void ShowAdvanced(ExceptionInfo einfo)
     {
       if ( einfo.Instance is AbortException ) return;
@@ -358,7 +328,7 @@ namespace Ordisoftware.HebrewCommon
         if ( SubstituteShowException != null )
           SubstituteShowException(einfo.Sender, einfo);
         else
-        if ( !SystemHelper.TryCatch(() => ExceptionForm.Run(einfo)) )
+        if ( !SystemManager.TryCatch(() => ExceptionForm.Run(einfo)) )
           ShowSimple(einfo);
       }
       catch ( Exception ex )
@@ -370,7 +340,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Show an sxception with a message box.
     /// </summary>
-    /// <param name="einfo">The einfo.</param>
+    /// <param name="einfo">The exception information.</param>
     static private void ShowSimple(ExceptionInfo einfo)
     {
       if ( einfo.Instance is AbortException ) return;
@@ -384,7 +354,7 @@ namespace Ordisoftware.HebrewCommon
           message += Globals.NL2 + Localizer.AskToContinueOrTerminate.GetLang();
         var goal = UserCanTerminate ? MessageBoxButtons.YesNo : MessageBoxButtons.OK;
         if ( DisplayManager.Show(message, goal, MessageBoxIcon.Error) == DialogResult.No )
-          SystemHelper.Terminate();
+          SystemManager.Terminate();
       }
       catch ( Exception ex )
       {
@@ -392,6 +362,11 @@ namespace Ordisoftware.HebrewCommon
       }
     }
 
+    /// <summary>
+    /// Show a message when an error occurs on showing an exception.
+    /// </summary>
+    /// <param name="ex">The exception.</param>
+    /// <param name="einfo">The exception information.</param>
     static private void ShowCrash(Exception ex, ExceptionInfo einfo)
     {
       try
@@ -404,7 +379,7 @@ namespace Ordisoftware.HebrewCommon
       catch ( Exception err )
       {
         MessageBox.Show("DebugManager crash :" + Globals.NL2 + err.Message);
-        SystemHelper.Terminate();
+        SystemManager.Terminate();
       }
     }
 

@@ -146,7 +146,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( !DebugManager.UseStack ) return "";
       string result = "";
-      SystemHelper.TryCatch(() =>
+      SystemManager.TryCatch(() =>
       {
         var frame = new StackFrame(skip, true);
         var method = frame.GetMethod();
@@ -229,7 +229,7 @@ namespace Ordisoftware.HebrewCommon
                    : "ID = " + Thread.CurrentThread.ManagedThreadId.ToString()
                  : Thread.CurrentThread.Name;
 
-      if ( !SystemHelper.TryCatch(() => { Message = Instance.Message; }) )
+      if ( !SystemManager.TryCatch(() => { Message = Instance.Message; }) )
         Message = "Relayed Exception.";
 
       FullText = "Exception: " + TypeText + Globals.NL +
@@ -271,7 +271,7 @@ namespace Ordisoftware.HebrewCommon
       Sender = sender;
       Instance = ex;
       TargetSite = ex.TargetSite;
-      SystemHelper.TryCatch(() =>
+      SystemManager.TryCatch(() =>
       {
         Emitter = Sender is ExceptionForm
           ? ( (ExceptionForm)Sender ).Text

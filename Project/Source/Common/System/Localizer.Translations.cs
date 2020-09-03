@@ -291,7 +291,7 @@ namespace Ordisoftware.HebrewCommon
         { Languages.FR, "Erreur dans {0}." },
       };
 
-    static public readonly NullSafeStringDictionary RunShellError
+    static public readonly NullSafeStringDictionary RunSystemManagerError
       = new NullSafeStringDictionary()
       {
         { Languages.EN, $"Error on launching :{Globals.NL2}{{0}}{Globals.NL2}{{1}}" },

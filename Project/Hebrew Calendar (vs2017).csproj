@@ -131,42 +131,10 @@
     <Compile Include="Dependencies\Calendar.NET\TodayButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Common\Managers\DebugManager.Trace.cs" />
-    <Compile Include="Source\Common\Managers\NotImplementedExceptionEx.cs" />
-    <Compile Include="Source\Common\Managers\RollOverTextWriterTraceListener.cs" />
-    <Compile Include="Source\Common\Data\SQLiteException.cs" />
-    <Compile Include="Source\Common\Managers\DebugManager.cs" />
-    <Compile Include="Source\Common\Managers\TraceEvent.cs" />
-    <Compile Include="Source\Common\Data\NullSafeStringList.cs" />
-    <Compile Include="Source\Common\Data\NullSafeStringDictionary.cs" />
-    <Compile Include="Source\Common\Data\NullSafeSortedDictionary.cs" />
-    <Compile Include="Source\Common\Data\NullSafeList.cs" />
-    <Compile Include="Source\Common\Data\SQLiteOdbcHelper.cs" />
-    <Compile Include="Source\Common\Forms\ExceptionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Forms\ExceptionForm.designer.cs">
-      <DependentUpon>ExceptionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\Managers\ExceptionInfo.cs" />
-    <Compile Include="Source\Common\Managers\DisplayManager.cs" />
     <Compile Include="Dependencies\CultureManager\CultureManager.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
-    <Compile Include="Source\Common\Data\DataFileFolder.cs" />
-    <Compile Include="Source\Common\Forms\TraceForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Forms\TraceForm.Designer.cs">
-      <DependentUpon>TraceForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\System\Globals.Assembly.cs" />
-    <Compile Include="Source\Common\System\Languages.cs" />
-    <Compile Include="Source\Common\System\StringHelper.cs" />
-    <Compile Include="Source\Common\System\SystemHelper.OS.cs" />
-    <Compile Include="Source\Common\System\SystemHelper.Format.cs" />
-    <Compile Include="Source\Common\Controls\ToolStripMenuItemHelper.cs" />
     <Compile Include="Dependencies\GenericParsing\FieldType.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParser.cs" />
     <Compile Include="Dependencies\GenericParsing\GenericParserAdapter.cs" />
@@ -174,52 +142,21 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
-    <Compile Include="Source\Common\Data\DataFile.cs" />
-    <Compile Include="Source\Common\Forms\DataFileEditorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Forms\DataFileEditorForm.Designer.cs">
-      <DependentUpon>DataFileEditorForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\Data\OnlineProviderItem.cs" />
-    <Compile Include="Source\Common\Data\OnlineProviders.cs" />
-    <Compile Include="Source\Common\Data\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\Controls\ControlLocation.cs" />
-    <Compile Include="Source\Common\Data\NullSafeDictionary.cs" />
-    <Compile Include="Source\Common\System\EnumHelper.cs" />
-    <Compile Include="Source\Common\System\Globals.cs" />
-    <Compile Include="Source\Common\System\Localizer.Translations.cs" />
-    <Compile Include="Source\Common\Data\HebrewAlphabet.cs" />
-    <Compile Include="Source\Common\System\Localizer.cs" />
-    <Compile Include="Source\Common\Data\SQLiteDate.cs" />
     <Compile Include="Source\Common\Controls\FormsHelper.cs" />
-    <Compile Include="Source\Common\System\Shell.cs" />
-    <Compile Include="Source\Common\System\WebCheckUpdate.cs" />
-    <Compile Include="Source\Common\System\SystemHelper.cs" />
-    <Compile Include="Source\Common\Forms\HTMLBrowserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Forms\HTMLBrowserForm.Designer.cs">
-      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\Controls\LettersControl.Redraw.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Source\Common\Controls\LettersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Source\Common\Controls\LettersControl.Designer.cs">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Forms\WebUpdateForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Forms\WebUpdateForm.Designer.cs">
-      <DependentUpon>WebUpdateForm.cs</DependentUpon>
+    <Compile Include="Source\Common\Controls\LettersControl.Redraw.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Source\Common\Controls\RichTextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Source\Common\Controls\ToolStripMenuItemHelper.cs" />
     <Compile Include="Source\Common\Controls\UndoRedoTextBox.Actions.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -232,8 +169,87 @@
     <Compile Include="Source\Common\Controls\UndoRedoTextBox.Initialize.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Source\Entities\ApplicationStatistics.cs" />
+    <Compile Include="Source\Common\Data\DataFile.cs" />
+    <Compile Include="Source\Common\Data\DataFileFolder.cs" />
+    <Compile Include="Source\Common\Data\HebrewAlphabet.cs" />
+    <Compile Include="Source\Common\Data\NullSafeDictionary.cs" />
+    <Compile Include="Source\Common\Data\NullSafeList.cs" />
+    <Compile Include="Source\Common\Data\NullSafeSortedDictionary.cs" />
+    <Compile Include="Source\Common\Data\NullSafeStringDictionary.cs" />
+    <Compile Include="Source\Common\Data\NullSafeStringList.cs" />
+    <Compile Include="Source\Common\Data\OnlineProviderItem.cs" />
+    <Compile Include="Source\Common\Data\OnlineProviders.cs" />
+    <Compile Include="Source\Common\Data\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\Data\SQLiteDate.cs" />
+    <Compile Include="Source\Common\Data\SQLiteOdbcHelper.cs" />
+    <Compile Include="Source\Common\Exceptions\AbortException.cs" />
+    <Compile Include="Source\Common\Exceptions\ExceptionInfo.cs" />
+    <Compile Include="Source\Common\Exceptions\NotImplementedExceptionEx.cs" />
+    <Compile Include="Source\Common\Exceptions\SQLiteException.cs" />
+    <Compile Include="Source\Common\Forms\DataFileEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Forms\DataFileEditorForm.Designer.cs">
+      <DependentUpon>DataFileEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Forms\ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Forms\ExceptionForm.designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Forms\HTMLBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Forms\HTMLBrowserForm.Designer.cs">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Forms\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Forms\LoadingForm.designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Forms\ShowTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Forms\ShowTextForm.Designer.cs">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Forms\TraceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Forms\TraceForm.Designer.cs">
+      <DependentUpon>TraceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Forms\WebUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Forms\WebUpdateForm.Designer.cs">
+      <DependentUpon>WebUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Managers\Chronometer.cs" />
+    <Compile Include="Source\Common\Managers\DebugManager.cs" />
+    <Compile Include="Source\Common\Managers\DebugManager.Delegates.cs" />
+    <Compile Include="Source\Common\Managers\DebugManager.Enums.cs" />
+    <Compile Include="Source\Common\Managers\DebugManager.Listener.cs" />
+    <Compile Include="Source\Common\Managers\DebugManager.Trace.cs" />
+    <Compile Include="Source\Common\Managers\DisplayManager.cs" />
+    <Compile Include="Source\Common\Managers\DisplayManager.Query.cs" />
+    <Compile Include="Source\Common\Managers\DisplayManager.Show.cs" />
+    <Compile Include="Source\Common\Managers\SystemManager.cs" />
+    <Compile Include="Source\Common\Managers\SystemManager.Shell.cs" />
+    <Compile Include="Source\Common\System\EnumHelper.cs" />
+    <Compile Include="Source\Common\System\Globals.Assembly.cs" />
+    <Compile Include="Source\Common\System\Globals.cs" />
+    <Compile Include="Source\Common\System\Languages.cs" />
+    <Compile Include="Source\Common\System\Localizer.cs" />
+    <Compile Include="Source\Common\System\Localizer.Translations.cs" />
+    <Compile Include="Source\Common\System\StringHelper.cs" />
+    <Compile Include="Source\Common\System\StringHelper.Format.cs" />
     <Compile Include="Source\Common\System\SystemStatistics.cs" />
+    <Compile Include="Source\Common\System\WebCheckUpdate.cs" />
+    <Compile Include="Source\Entities\ApplicationStatistics.cs" />
     <Compile Include="Source\Entities\YearsIntervalItem.cs" />
     <Compile Include="Source\Entities\DateItem.cs" />
     <Compile Include="Source\Entities\Dates.cs" />
@@ -279,12 +295,6 @@
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.CreateControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Common\Forms\ShowTextForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Forms\ShowTextForm.Designer.cs">
-      <DependentUpon>ShowTextForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Enums\MoonMonthsListColors.cs" />
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.cs">
       <SubType>Form</SubType>
@@ -325,12 +335,6 @@
     </Compile>
     <Compile Include="Source\Forms\Boxes\SelectCityForm.Designer.cs">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\Forms\LoadingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Forms\LoadingForm.designer.cs">
-      <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SelectBirthTime.cs">
       <SubType>Form</SubType>
@@ -436,12 +440,9 @@
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Enums\TorahCelebrations.cs" />
-    <Compile Include="Source\Common\Managers\DisplayManager.Query.cs" />
-    <Compile Include="Source\Common\Managers\DisplayManager.Show.cs" />
     <Compile Include="Source\Enums\MoonRise.cs" />
     <Compile Include="Dependencies\MoonPhaseImage\MoonPhaseImage.cs">
     </Compile>
-    <Compile Include="Source\Common\Managers\AbortException.cs" />
     <Compile Include="Source\Forms\Config\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,37 +519,50 @@
       <DependentUpon>TodayButton.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\ExceptionForm.fr.resx">
-      <DependentUpon>ExceptionForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\ExceptionForm.resx">
-      <DependentUpon>ExceptionForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\DataFileEditorForm.fr.resx">
-      <DependentUpon>DataFileEditorForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\DataFileEditorForm.resx">
-      <DependentUpon>DataFileEditorForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\HTMLBrowserForm.fr.resx">
-      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\HTMLBrowserForm.resx">
-      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Controls\LettersControl.fr.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Controls\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Controls\UndoRedoTextBox.en.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Controls\UndoRedoTextBox.fr.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Controls\UndoRedoTextBox.resx">
+      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\DataFileEditorForm.fr.resx">
+      <DependentUpon>DataFileEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\DataFileEditorForm.resx">
+      <DependentUpon>DataFileEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\ExceptionForm.fr.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\HTMLBrowserForm.fr.resx">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\HTMLBrowserForm.resx">
+      <DependentUpon>HTMLBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\LoadingForm.fr.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\ShowTextForm.fr.resx">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\ShowTextForm.resx">
+      <DependentUpon>ShowTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Forms\TraceForm.fr.resx">
       <DependentUpon>TraceForm.cs</DependentUpon>
@@ -561,21 +575,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Forms\WebUpdateForm.resx">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Controls\UndoRedoTextBox.en.resx">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Controls\UndoRedoTextBox.fr.resx">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Controls\UndoRedoTextBox.resx">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\ShowTextForm.fr.resx">
-      <DependentUpon>ShowTextForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\ShowTextForm.resx">
-      <DependentUpon>ShowTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsForm.fr.resx">
       <DependentUpon>CelebrationsForm.cs</DependentUpon>
@@ -653,14 +652,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\LoadingForm.fr.resx">
-      <DependentUpon>LoadingForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Forms\LoadingForm.resx">
-      <DependentUpon>LoadingForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\SelectBirthTime.fr.resx">
       <DependentUpon>SelectBirthTime.cs</DependentUpon>

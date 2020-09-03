@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide system helper.
   /// </summary>
-  static partial class SystemHelper
+  static partial class StringHelper
   {
 
     /// <summary>

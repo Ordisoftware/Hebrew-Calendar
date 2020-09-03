@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
     static void Main(string[] args)
     {
       DisplayManager.IconInformationAsNone = true;
-      if ( !SystemHelper.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
+      if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
       Settings.CheckUpgradeRequired(ref upgrade);
       Settings.UpgradeRequired = upgrade;
@@ -56,7 +56,7 @@ namespace Ordisoftware.HebrewCalendar
       DebugManager.Enabled = Settings.DebuggerEnabled;
       DebugManager.DeaultShowExceptionMode = ShowExceptionMode.Advanced;
       string lang = Settings.Language;
-      Shell.CheckCommandLineArguments(args, ref lang);
+      SystemManager.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;
       UpdateLocalization();
       Application.Run(MainForm.Instance);
@@ -74,7 +74,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( command == "BringToFront" )
         MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));
       server.Close();
-      SystemHelper.CreateIPCServer(IPCRequest);
+      SystemManager.CreateIPCServer(IPCRequest);
     }
 
     /// <summary>

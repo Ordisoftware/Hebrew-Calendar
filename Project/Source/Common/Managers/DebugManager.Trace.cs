@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewCommon
 
     static private string Separator = new string('-', 120);
 
-    static private void TraceFileChanged(RollverTextWriterTraceListener sender, string filename)
+    static private void TraceFileChanged(Listener sender, string filename)
     {
       TraceForm.Text = Path.GetFileNameWithoutExtension(filename);
       TraceForm.AppendText(File.ReadAllText(filename), true);
@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewCommon
     static public void Trace(TraceEvent logevent, string text = "")
     {
       if ( !Enabled ) return;
-      SystemHelper.TryCatch(() =>
+      SystemManager.TryCatch(() =>
       {
         string message = "";
         if ( logevent != TraceEvent.System )
@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewCommon
         }
         if ( logevent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
         message += text.Indent(0, CurrentMargin + message.Length) + Globals.NL;
-        SystemHelper.TryCatch(() => TraceForm.AppendText(message, true));
+        SystemManager.TryCatch(() => TraceForm.AppendText(message, true));
         System.Diagnostics.Trace.Write(message);
         if ( logevent == TraceEvent.Enter ) CurrentMargin += MarginSize;
       });
@@ -120,7 +120,7 @@ namespace Ordisoftware.HebrewCommon
         foreach ( string filename in Directory.GetFiles(path, code + "*" + extension) )
         {
           string date = Path.GetFileNameWithoutExtension(filename).Replace(code, "").Trim();
-          SystemHelper.TryCatch(() => File.Delete(filename));
+          SystemManager.TryCatch(() => File.Delete(filename));
         }
         TraceForm.TextBox.Clear();
       }

@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewCommon
         if ( Globals.MainForm != null ) Globals.MainForm.Enabled = false;
         LoadingForm.Instance.Initialize(Localizer.WebCheckUpdate.GetLang(), 3, 0, false);
         var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFilename, "*"));
-        foreach ( string s in files ) SystemHelper.TryCatch(() => File.Delete(s));
+        foreach ( string s in files ) SystemManager.TryCatch(() => File.Delete(s));
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
@@ -124,7 +124,7 @@ namespace Ordisoftware.HebrewCommon
         case WebUpdateSelection.None:
           break;
         case WebUpdateSelection.Download:
-          Shell.OpenWebLink(filename);
+          SystemManager.OpenWebLink(filename);
           break;
         case WebUpdateSelection.Install:
           return ProcessAutoInstall(client, version, filename);
@@ -152,9 +152,9 @@ namespace Ordisoftware.HebrewCommon
         Application.DoEvents();
       }
       if ( ex != null ) throw ex;
-      Shell.Run(tempfile, "/SP- /SILENT");
+      SystemManager.Run(tempfile, "/SP- /SILENT");
       Globals.IsExiting = true;
-      SystemHelper.Exit();
+      SystemManager.Exit();
       return true;
       void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
       {
