@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCommon
       MessageBoxIcon icon = MessageBoxIcon.None)
     {
       DialogResult res = DialogResult.None;
-      SystemHelper.TryCatchManage(() => { res = ShowWinForm(title, text, buttons, icon); });
+      SystemManager.TryCatchManage(() => { res = ShowWinForm(title, text, buttons, icon); });
       return res;
     }
 
@@ -184,7 +184,7 @@ namespace Ordisoftware.HebrewCommon
     static public void ShowAndExit(string title, string text)
     {
       ShowError(title, text);
-      SystemHelper.Exit();
+      SystemManager.Exit();
     }
 
     /// <summary>
@@ -204,7 +204,7 @@ namespace Ordisoftware.HebrewCommon
     static public void ShowAndTerminate(string title, string text)
     {
       ShowError(title, text);
-      SystemHelper.Terminate();
+      SystemManager.Terminate();
     }
 
     /// <summary>

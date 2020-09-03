@@ -19,6 +19,25 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
+  /// Indicate show exception mode.
+  /// </summary>
+  public enum ShowExceptionMode
+  {
+    None,
+    Simple,
+    Advanced
+  }
+
+  /// <summary>
+  /// INdicate trace file roll over mode.
+  /// </summary>
+  public enum TraceFileRollOverMode
+  {
+    Daily,
+    Monthly
+  }
+
+  /// <summary>
   /// Provide log event enum.
   /// </summary>
   public enum TraceEvent

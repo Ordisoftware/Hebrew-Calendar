@@ -33,10 +33,10 @@ namespace Ordisoftware.HebrewCommon
     static private PerformanceCounter PerformanceCounter;
 
     public string Processor
-      => SystemHelper.Processor;
+      => SystemManager.Processor;
 
     public string Platform
-      => SystemHelper.Platform;
+      => SystemManager.Platform;
 
     public string ProcessPriority
       => Globals.RealProcessPriority.ToString();
@@ -51,10 +51,10 @@ namespace Ordisoftware.HebrewCommon
       => Globals.IsDebugExecutable ? "Debug" : "Release";
 
     public string TotalVisibleMemory
-      => SystemHelper.TotalVisibleMemory;
+      => SystemManager.TotalVisibleMemory;
 
     public string PhysicalMemoryFree
-      => SystemHelper.PhysicalMemoryFree;
+      => SystemManager.PhysicalMemoryFree;
 
     public string MemoryPrivate
       => Process.PrivateMemorySize64.FormatBytesSize();

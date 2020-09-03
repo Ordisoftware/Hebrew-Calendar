@@ -145,7 +145,7 @@ namespace Ordisoftware.HebrewCommon
               foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
                 if ( item.Tag != null )
                 {
-                  Shell.OpenWebLink((string)item.Tag);
+                  SystemManager.OpenWebLink((string)item.Tag);
                   Thread.Sleep(1500);
                 }
             };
@@ -157,7 +157,7 @@ namespace Ordisoftware.HebrewCommon
             menu.DropDownItems.Add(item.CreateMenuItem((sender, e) =>
             {
               string url = (string)( (ToolStripItem)sender ).Tag;
-              Shell.OpenWebLink(url);
+              SystemManager.OpenWebLink(url);
             }));
         }
       if ( Globals.IsDev )

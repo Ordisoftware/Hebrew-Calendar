@@ -282,8 +282,8 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the trace file mode.
     /// </summary>
-    static public TraceRollOverMode TraceFileMode { get; set; }
-     = TraceRollOverMode.Daily;
+    static public TraceFileRollOverMode TraceFileMode { get; set; }
+     = TraceFileRollOverMode.Daily;
 
     /// <summary>
     /// Indicate the trace file keep count.
@@ -428,8 +428,8 @@ namespace Ordisoftware.HebrewCommon
       if ( IsDesignTime ) return;
       var folder = DataFileFolder.ApplicationDocuments;
       OnlineProviders create(string filename) => new OnlineProviders(filename, true, IsDev, folder);
-      SystemHelper.TryCatchManage(() => OnlineWordProviders = create(OnlineWordProvidersFileName));
-      SystemHelper.TryCatchManage(() => OnlineBibleProviders = create(OnlineBibleProvidersFileName));
+      SystemManager.TryCatchManage(() => OnlineWordProviders = create(OnlineWordProvidersFileName));
+      SystemManager.TryCatchManage(() => OnlineBibleProviders = create(OnlineBibleProvidersFileName));
     }
 
   }

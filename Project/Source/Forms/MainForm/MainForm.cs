@@ -207,12 +207,12 @@ namespace Ordisoftware.HebrewCalendar
         TimerResumeReminder.Stop();
         TimerMidnight.Stop();
         TimerReminder.Stop();
-        SystemHelper.TryCatch(() => ClearLists());
-        SystemHelper.TryCatch(() =>
+        SystemManager.TryCatch(() => ClearLists());
+        SystemManager.TryCatch(() =>
         {
           foreach ( Form form in Application.OpenForms )
             if ( form != this && form.Visible )
-              SystemHelper.TryCatch(() => form.Close());
+              SystemManager.TryCatch(() => form.Close());
         });
         Close();
       }
@@ -588,7 +588,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      Shell.Run(Globals.HelpFilename);
+      SystemManager.Run(Globals.HelpFilename);
     }
 
     /// <summary>
@@ -598,7 +598,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionApplicationHome_Click(object sender, EventArgs e)
     {
-      Shell.OpenApplicationHome();
+      SystemManager.OpenApplicationHome();
     }
 
     /// <summary>
@@ -608,7 +608,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionWebReleaseNotes_Click(object sender, EventArgs e)
     {
-      Shell.OpenApplicationReleaseNotes();
+      SystemManager.OpenApplicationReleaseNotes();
     }
 
     /// <summary>
@@ -618,7 +618,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionContact_Click(object sender, EventArgs e)
     {
-      Shell.OpenContactPage();
+      SystemManager.OpenContactPage();
     }
 
     /// <summary>
@@ -654,7 +654,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
     {
-      Shell.CreateGitHubIssue();
+      SystemManager.CreateGitHubIssue();
     }
 
     /// <summary>
@@ -664,7 +664,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
-      Shell.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
+      SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
     }
 
     /// <summary>
@@ -725,7 +725,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionOpenCalculator_Click(object sender, EventArgs e)
     {
-      Shell.Run("calc.exe");
+      SystemManager.Run("calc.exe");
     }
 
     /// <summary>
@@ -735,7 +735,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionOpenSystemDateAndTime_Click(object sender, EventArgs e)
     {
-      Shell.Run("timedate.cpl");
+      SystemManager.Run("timedate.cpl");
     }
 
     /// <summary>
@@ -862,7 +862,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
       if ( Settings.AutoOpenExportFolder )
-        Shell.Run(Path.GetDirectoryName(SaveFileDialog.FileName));
+        SystemManager.Run(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
 
     /// <summary>
@@ -877,7 +877,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
       if ( Settings.AutoOpenExportFolder )
-        Shell.Run(Path.GetDirectoryName(SaveCSVDialog.FileName));
+        SystemManager.Run(Path.GetDirectoryName(SaveCSVDialog.FileName));
     }
 
     /// <summary>

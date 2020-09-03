@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionOpenWebPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      Shell.OpenWebLink((string)( (LinkLabel)sender ).Tag);
+      SystemManager.OpenWebLink((string)( (LinkLabel)sender ).Tag);
     }
   }
 

@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( !Globals.IsReady )
         {
           DisplayManager.Show("Error on loading the cities: the application must exit.");
-          SystemHelper.Terminate();
+          SystemManager.Terminate();
         }
       }
     }

@@ -19,9 +19,9 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide shell helper.
+  /// Provide SystemManager helper.
   /// </summary>
-  static class Shell
+  static partial class SystemManager
   {
 
     /// <summary>
@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewCommon
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowError(Localizer.RunShellError.GetLang(filename, ex.Message));
+        DisplayManager.ShowError(Localizer.RunSystemManagerError.GetLang(filename, ex.Message));
         return null;
       }
     }

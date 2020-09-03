@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( UpdateDBFileSizeRequired )
         {
           UpdateDBFileSizeRequired = false;
-          _DBFileSize = SystemHelper.GetFileSize(Globals.DatabaseFileName).FormatBytesSize().ToString();
+          _DBFileSize = SystemManager.GetFileSize(Globals.DatabaseFileName).FormatBytesSize().ToString();
         }
         return _DBFileSize;
       }

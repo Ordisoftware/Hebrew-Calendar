@@ -108,7 +108,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="e">Event information.</param>
     private void ActionTerminate_Click(object sender, EventArgs e)
     {
-      SystemHelper.Terminate();
+      SystemManager.Terminate();
     }
 
     /// <summary>
@@ -167,9 +167,9 @@ namespace Ordisoftware.HebrewCommon
         query.Append("&body=");
         query.Append(WebUtility.UrlEncode(CreateBody().ToString()));
         if ( query.Length > 8000 )
-          Shell.CreateGitHubIssue(query.ToString().Substring(0, 8000).TrimEnd('%'));
+          SystemManager.CreateGitHubIssue(query.ToString().Substring(0, 8000).TrimEnd('%'));
         else
-          Shell.CreateGitHubIssue(query.ToString());
+          SystemManager.CreateGitHubIssue(query.ToString());
       }
       catch ( Exception ex )
       {
@@ -192,7 +192,7 @@ namespace Ordisoftware.HebrewCommon
         else
           message.Body = body.ToString();
         string query = message.ToUrl();
-        Shell.Run(query.ToString());
+        SystemManager.Run(query.ToString());
       }
       catch ( Exception ex )
       {
@@ -213,9 +213,9 @@ namespace Ordisoftware.HebrewCommon
       body.AppendLine();
       body.AppendLine("## SYSTEM");
       body.AppendLine();
-      body.AppendLine(SystemHelper.Platform);
-      body.AppendLine("Total Visible Memory: " + SystemHelper.TotalVisibleMemory);
-      body.AppendLine("Free Physical Memory: " + SystemHelper.PhysicalMemoryFree);
+      body.AppendLine(SystemManager.Platform);
+      body.AppendLine("Total Visible Memory: " + SystemManager.TotalVisibleMemory);
+      body.AppendLine("Free Physical Memory: " + SystemManager.PhysicalMemoryFree);
       body.AppendLine();
       body.AppendLine("## ERROR : " + ErrorInfo.Instance.GetType().Name);
       body.AppendLine();
