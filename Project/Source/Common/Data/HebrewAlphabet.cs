@@ -228,8 +228,8 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate phonetic letters names.
     /// </summary>
-    static public readonly Dictionary<string, string[]> Names
-      = new Dictionary<string, string[]>()
+    static public readonly Dictionary<Language, string[]> Names
+      = new Dictionary<Language, string[]>()
       {
         [Languages.EN] = new string[]
         {

@@ -26,13 +26,13 @@ namespace Ordisoftware.HebrewCommon
   static public partial class Localizer
   {
 
-    private const string ERR = "-";
+    private const string ERR = "<Not translated>"; // get variable name ?
 
     /// <summary>
     /// Get the string translation.
     /// </summary>
     /// <param name="values">The dictionary containing lang>translation.</param>
-    static public string GetLang(this NullSafeStringDictionary values)
+    static public string GetLang(this NullSafeOfStringDictionary<Language> values)
     {
       return values?[Languages.Current] ?? ERR;
     }
@@ -42,9 +42,9 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <param name="values">The dictionary containing lang>translation.</param>
     /// <param name="parameters">Parameters for the translated string.</param>
-    static public string GetLang(this NullSafeStringDictionary values, params object[] parameters)
+    static public string GetLang(this NullSafeOfStringDictionary<Language> values, params object[] parameters)
     {
-      return string.Format(values?.GetLang(), parameters) ?? ERR;
+      return string.Format(values?.GetLang(), parameters) ?? ERR + " " + string.Join(",", parameters);
     }
 
     /// <summary>
@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewCommon
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing value>lang>translation.</param>
     /// <param name="value">The value to translate.</param>
-    static public string GetLang<T>(this NullSafeDictionary<T, NullSafeStringDictionary> values, T value)
+    static public string GetLang<T>(this NullSafeDictionary<T, NullSafeOfStringDictionary<Language>> values, T value)
     {
       return values?[value]?[Languages.Current] ?? ERR;
     }
@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewCommon
     /// Get the list translation.
     /// </summary>
     /// <param name="values">The dictionary containing lang>list.</param>
-    static public NullSafeStringList GetLang(this NullSafeDictionary<string, NullSafeStringList> values)
+    static public NullSafeStringList GetLang(this NullSafeDictionary<Language, NullSafeStringList> values)
     {
       return values?[Languages.Current] ?? new NullSafeStringList();
     }
@@ -72,7 +72,8 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing lang>list.</param>
-    static public NullSafeList<T> GetLang<T>(this NullSafeDictionary<string, NullSafeList<T>> values) where T : new()
+    static public NullSafeList<T> GetLang<T>(this NullSafeDictionary<Language, NullSafeList<T>> values)
+      where T : class
     {
       return values?[Languages.Current] ?? new NullSafeList<T>();
     }
@@ -81,11 +82,9 @@ namespace Ordisoftware.HebrewCommon
     /// Get the string list translation.
     /// </summary>
     /// <param name="values">The dictionary containing lang>translations.</param>
-    static public string[] GetLang(this Dictionary<string, string[]> values)
+    static public string[] GetLang(this Dictionary<Language, string[]> values)
     {
-      return values != null && values.ContainsKey(Languages.Current)
-             ? values[Languages.Current]
-             : new string[0];
+      return values?[Languages.Current] ?? new string[1] { ERR };
     }
 
     /// <summary>
@@ -94,12 +93,10 @@ namespace Ordisoftware.HebrewCommon
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing lang>value>translation.</param>
     /// <param name="value">The value to translate.</param>
-    static public string GetLang<T>(this NullSafeDictionary<string, Dictionary<T, string>> values, T value)
+    static public string GetLang<T>(this NullSafeDictionary<Language, NullSafeOfStringDictionary<T>> values, T value)
       where T : Enum
     {
-      return values != null && values[Languages.Current] != null && values[Languages.Current].ContainsKey(value)
-             ? values[Languages.Current][value]
-             : ERR;
+      return values?[Languages.Current]?[value] ?? ERR;
     }
 
     /// <summary>

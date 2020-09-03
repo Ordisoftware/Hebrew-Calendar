@@ -98,10 +98,10 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionEditFiles_Click(object sender, EventArgs e)
     {
       var list = new List<DataFile>();
-      foreach ( var lang in Languages.Names )
+      foreach ( var lang in Languages.Managed )
       {
-        list.Add(Program.MoonMonthsMeanings[lang.Value]);
-        list.Add(Program.MoonMonthsLettriqs[lang.Value]);
+        list.Add(Program.MoonMonthsMeanings[lang]);
+        list.Add(Program.MoonMonthsLettriqs[lang]);
       }
       if ( DataFileEditorForm.Run("Moon", list) ) CreateControls();
     }

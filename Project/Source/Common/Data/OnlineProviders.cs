@@ -44,8 +44,8 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the multilingual title of the list to create a folder
     /// </summary>
-    public NullSafeStringDictionary Title { get; }
-      = new NullSafeStringDictionary();
+    public NullSafeOfStringDictionary<Language> Title { get; }
+      = new NullSafeOfStringDictionary<Language>();
 
     /// <summary>
     /// Indicate if a separator must be inserted before the folder
@@ -87,7 +87,7 @@ namespace Ordisoftware.HebrewCommon
           {
             var parts = line.Split('/', '=');
             if ( parts.Length == 3 )
-              Title.Add(parts[1].Trim().ToLower(), parts[2].Trim());
+              Title.Add(Languages.Convert(parts[1].Trim().ToLower()), parts[2].Trim());
             else
               showError();
           }

@@ -22,7 +22,8 @@ namespace Ordisoftware.HebrewCommon
   /// Provide null safe sorted dictionary.
   /// </summary>
   [Serializable]
-  public class NullSafeSortedDictionary<TKey, TValue> : SortedDictionary<TKey, TValue> where TValue : new()
+  public class NullSafeSortedDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
+    where TValue : class
   {
 
     public NullSafeSortedDictionary()
@@ -45,10 +46,7 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( ContainsKey(key) ) return base[key];
-        var value = new TValue();
-        Add(key, value);
-        return value;
+        return ContainsKey(key) ? base[key] : null;
       }
       set
       {

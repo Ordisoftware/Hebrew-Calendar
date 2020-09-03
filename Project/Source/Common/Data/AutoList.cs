@@ -13,28 +13,28 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide null safe list.
+  /// Provide auto list.
   /// </summary>
   [Serializable]
-  public class NullSafeList<T> : List<T> 
-    where T : class
+  public class AutoList<T> : List<T> where T : new()
   {
 
-    public NullSafeList()
+    public AutoList()
     {
     }
 
-    public NullSafeList(int capacity) : base(capacity)
+    public AutoList(int capacity) : base(capacity)
     {
     }
 
-    public NullSafeList(IEnumerable<T> collection) : base(collection)
+    public AutoList(IEnumerable<T> collection) : base(collection)
     {
     }
 
@@ -43,7 +43,10 @@ namespace Ordisoftware.HebrewCommon
       get
       {
         CheckIndex(index);
-        return index < Count ? base[index] : null;
+        if ( index < Count ) return base[index];
+        var item = new T();
+        CreateOutOfRange(index, item);
+        return item;
       }
       set
       {
@@ -54,11 +57,10 @@ namespace Ordisoftware.HebrewCommon
           CreateOutOfRange(index, value);
       }
     }
-
     private void CheckIndex(int index)
     {
-      if ( index >= 0 ) return;
-      throw new IndexOutOfRangeException(Localizer.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
+      if ( index < 0 )
+        throw new IndexOutOfRangeException(Localizer.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
     }
 
     private void CreateOutOfRange(int index, T value)
@@ -66,7 +68,7 @@ namespace Ordisoftware.HebrewCommon
       Capacity = index + 1;
       int count = index + 1 - Count;
       for ( int i = 0; i < count; i++ )
-        Add(null);
+        Add(new T());
       base[index] = value;
     }
 

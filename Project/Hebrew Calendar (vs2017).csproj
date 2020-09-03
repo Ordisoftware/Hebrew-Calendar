@@ -173,9 +173,11 @@
     <Compile Include="Source\Common\Data\DataFileFolder.cs" />
     <Compile Include="Source\Common\Data\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Data\NullSafeDictionary.cs" />
+    <Compile Include="Source\Common\Data\AutoList.cs" />
+    <Compile Include="Source\Common\Data\NullSafeOfStringDictionary.cs" />
     <Compile Include="Source\Common\Data\NullSafeList.cs" />
+    <Compile Include="Source\Common\Data\SortedAutoDictionary.cs" />
     <Compile Include="Source\Common\Data\NullSafeSortedDictionary.cs" />
-    <Compile Include="Source\Common\Data\NullSafeStringDictionary.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringList.cs" />
     <Compile Include="Source\Common\Data\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\Data\OnlineProviders.cs" />

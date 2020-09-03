@@ -158,29 +158,29 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate the moon months meanings.
     /// </summary>
-    static public Dictionary<string, MoonMonthsFile> MoonMonthsMeanings { get; private set; }
+    static public NullSafeDictionary<Language, MoonMonthsFile> MoonMonthsMeanings { get; private set; }
 
     /// <summary>
     /// Indicate the moon months lettriqs.
     /// </summary>
-    static public Dictionary<string, MoonMonthsFile> MoonMonthsLettriqs { get; private set; }
+    static public NullSafeDictionary<Language, MoonMonthsFile> MoonMonthsLettriqs { get; private set; }
 
     /// <summary>
     /// Static constructor.
     /// </summary>
     static Program()
     {
-      MoonMonthsMeanings = new Dictionary<string, MoonMonthsFile>();
-      MoonMonthsLettriqs = new Dictionary<string, MoonMonthsFile>();
-      foreach ( var lang in Languages.Names )
+      MoonMonthsMeanings = new NullSafeDictionary<Language, MoonMonthsFile>();
+      MoonMonthsLettriqs = new NullSafeDictionary<Language, MoonMonthsFile>();
+      foreach ( Language lang in Languages.Managed )
       {
-        MoonMonthsMeanings.Add(lang.Value,
-                               new MoonMonthsFile(string.Format(MoonMonthsMeaningsFilename, lang.Value.ToUpper()),
+        MoonMonthsMeanings.Add(lang,
+                               new MoonMonthsFile(string.Format(MoonMonthsMeaningsFilename, Languages.Names[lang].ToUpper()),
                                                   true,
                                                   Globals.IsDev,
                                                   DataFileFolder.ApplicationDocuments));
-        MoonMonthsLettriqs.Add(lang.Value,
-                               new MoonMonthsFile(string.Format(MoonMonthsLettriqsFilename, lang.Value.ToUpper()),
+        MoonMonthsLettriqs.Add(lang,
+                               new MoonMonthsFile(string.Format(MoonMonthsLettriqsFilename, Languages.Names[lang].ToUpper()),
                                                   true,
                                                   Globals.IsDev,
                                                   DataFileFolder.ApplicationDocuments));

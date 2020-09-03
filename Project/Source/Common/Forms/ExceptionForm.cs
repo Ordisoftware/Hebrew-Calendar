@@ -51,8 +51,8 @@ namespace Ordisoftware.HebrewCommon
     private readonly List<string> ErrorMessages 
       = new List<string>();
 
-    static public readonly NullSafeStringDictionary NextException
-      = new NullSafeStringDictionary()
+    static public readonly NullSafeOfStringDictionary<Language>NextException
+      = new NullSafeOfStringDictionary<Language>
       {
         [Languages.EN] = "Next",
         [Languages.FR] = "Suivante"

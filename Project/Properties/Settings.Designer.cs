@@ -599,13 +599,13 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Language {
+        [global::System.Configuration.DefaultSettingValueAttribute("NotDefined")]
+        public global::Ordisoftware.HebrewCommon.Language LanguageEnum {
             get {
-                return ((string)(this["Language"]));
+                return ((global::Ordisoftware.HebrewCommon.Language)(this["LanguageEnum"]));
             }
             set {
-                this["Language"] = value;
+                this["LanguageEnum"] = value;
             }
         }
         

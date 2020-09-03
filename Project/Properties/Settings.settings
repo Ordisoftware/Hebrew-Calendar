@@ -151,8 +151,8 @@
     <Setting Name="CheckUpdateAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="LanguageEnum" Type="Ordisoftware.HebrewCommon.Language" Scope="User">
+      <Value Profile="(Default)">NotDefined</Value>
     </Setting>
     <Setting Name="RemindCelebrationHoursBefore" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">12</Value>
