@@ -108,7 +108,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="e">Event information.</param>
     private void ActionTerminate_Click(object sender, EventArgs e)
     {
-      Environment.Exit(-1);
+      SystemHelper.Terminate();
     }
 
     /// <summary>
@@ -246,7 +246,7 @@ namespace Ordisoftware.HebrewCommon
       if (text == "") ;
       var lines1 = text.Split();
       var lines2 = lines1.Where(l => { l = l.Trim(); return l != "" && !l.StartsWith("# ") && !l.StartsWith("--"); });
-      body.Append(string.Join(Globals.NL, lines2.ToArray()));
+      body.Append(lines2.AsMultispace());
       return body;
     }
 
@@ -257,10 +257,10 @@ namespace Ordisoftware.HebrewCommon
   {
 
     public static string ToUrl(this MailMessage message)
-      => "mailto:?" + string.Join("&", Parameters(message));
+      => "mailto:?" + Parameters(message).Join("&");
 
     static string Recipients(MailAddressCollection addresses)
-      => string.Join(",", from r in addresses select Uri.EscapeDataString(r.Address));
+      => (from r in addresses select Uri.EscapeDataString(r.Address)).Join(",");
 
     static IEnumerable<string> Parameters(MailMessage message)
     {

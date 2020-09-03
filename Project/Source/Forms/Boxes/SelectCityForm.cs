@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewCalendar
           city.Longitude = parser["lng"];
         }
         if ( GPS.Keys.Count == 0 )
-          throw new NullReferenceException($"{nameof(SelectCityForm)}.{nameof(GPS)} = {Localizer.EmptySlot.GetLang()}");
+          throw new NullReferenceException($"{nameof(SelectCityForm)}.{nameof(GPS)} = {Localizer.UndefinedSlot.GetLang()}");
       }
       catch ( Exception ex )
       {
@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( !Globals.IsReady )
         {
           DisplayManager.Show("Error on loading the cities: the application must exit.");
-          Environment.Exit(-1);
+          SystemHelper.Terminate();
         }
       }
     }

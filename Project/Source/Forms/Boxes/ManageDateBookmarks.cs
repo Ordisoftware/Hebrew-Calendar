@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewCalendar
       public DateTime Date { get; set; }
       public override string ToString()
       {
-        return Date == DateTime.MinValue ? Localizer.EmptySlot.GetLang() : Date.ToLongDateString();
+        return Date == DateTime.MinValue ? Localizer.UndefinedSlot.GetLang() : Date.ToLongDateString();
       }
     }
 

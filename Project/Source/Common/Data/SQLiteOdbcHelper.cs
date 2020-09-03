@@ -47,7 +47,7 @@ namespace Ordisoftware.HebrewCommon
     /// <returns></returns>
     static public string UnformatSQL(string sql)
     {
-      return string.Join(" ", sql.Split(StringSplitOptions.RemoveEmptyEntries).Select(line => line.Trim()));
+      return sql.SplitNoEmptyLines().Select(line => line.Trim()).AsMultispace();
     }
 
     /// <summary>
@@ -131,7 +131,7 @@ namespace Ordisoftware.HebrewCommon
           }
         if ( errors.Count > 0 )
         {
-          string msg = Localizer.DatabaseIntegrityError.GetLang(string.Join(Globals.NL, errors));
+          string msg = Localizer.DatabaseIntegrityError.GetLang(errors.AsMultiline());
           throw new SQLiteException(msg);
         }
       }

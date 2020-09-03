@@ -451,40 +451,65 @@ namespace Ordisoftware.HebrewCommon
     static public readonly NullSafeStringDictionary IndexOutOfRange
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, $"Index out of range in {{0}}: {{1}}" + Globals.NL2 +
-                        $"Must be between {{2}} and {{3}}."
+        { Languages.EN, "Index out of range in {0}: {1}" + Globals.NL2 +
+                        "Must be between {2}} and {3}}."
         },
-        { Languages.FR, $"Index en dehors des limites dans {{0}}: {{1}}" + Globals.NL2 +
-                        $"Doit être entre {{2}} et {{3}}."
+        { Languages.FR, "Index en dehors des limites dans {0}: {1}" + Globals.NL2 +
+                        "Doit être entre {2} et {3}."
         },
       };
 
     static public readonly NullSafeStringDictionary IndexCantBeNegative
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, $"Index can''t be negative in {{0}}: {{1}}" },
-        { Languages.FR, $"Index ne peut pas être négatif dans {{0}}: {{1}}" }
+        { Languages.EN, "Index can''t be negative in {0}: {1}" },
+        { Languages.FR, "Index ne peut pas être négatif dans {0}: {1}" }
+      };
+
+    static public readonly NullSafeStringDictionary UnhandledException 
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "Unhandled Exception has occured in {0}" + Globals.NL  +
+                        "<{1}>" + Globals.NL2 +
+                        "{2}" },
+        { Languages.FR, "Exception non gérée dans {0}" + Globals.NL  +
+                        "<{1}>" + Globals.NL2 +
+                        "{2}" }
+      };
+
+    static public readonly NullSafeStringDictionary AskToContinueOrTerminate
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "You can choose Yes to continue or No to terminate." },
+        { Languages.FR, "You can choose Yes to continue or No to terminate." }
       };
 
     static public readonly NullSafeStringDictionary NullSlot
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "(null)" },
-        { Languages.FR, "(null)" }
+        { Languages.EN, "<null>" },
+        { Languages.FR, "<null>" }
       };
 
-    static public readonly NullSafeStringDictionary EmptySlot
+    static public readonly NullSafeStringDictionary UndefinedSlot
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "(not defined)" },
-        { Languages.FR, "(non définit)" }
+        { Languages.EN, "<not defined>" },
+        { Languages.FR, "<non définit>" }
+      };
+
+    static public readonly NullSafeStringDictionary EmptySLot
+      = new NullSafeStringDictionary()
+      {
+        { Languages.EN, "<empty>" },
+        { Languages.FR, "<empty>" }
       };
 
     static public readonly NullSafeStringDictionary ErrorSlot
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "(error)" },
-        { Languages.FR, "(erreur)" }
+        { Languages.EN, "<error>" },
+        { Languages.FR, "<erreur>" }
       };
 
     /// <summary>

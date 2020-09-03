@@ -54,6 +54,7 @@ namespace Ordisoftware.HebrewCalendar
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       DebugManager.Enabled = Settings.DebuggerEnabled;
+      DebugManager.UseExceptionForm = true;
       string lang = Settings.Language;
       Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;
@@ -136,7 +137,15 @@ namespace Ordisoftware.HebrewCalendar
         if ( form is ShowTextForm )
           ( (ShowTextForm)form ).RelocalizeText();
       }
-      MainForm.Instance.InitializeSpecialMenus();
+      try
+
+      {
+        MainForm.Instance.InitializeSpecialMenus();
+      }
+      catch ( Exception ex )
+      {
+        throw new Exception("error 2", ex);
+      }
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.TimerReminder_Tick(null, null);

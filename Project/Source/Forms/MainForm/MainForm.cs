@@ -207,18 +207,13 @@ namespace Ordisoftware.HebrewCalendar
         TimerResumeReminder.Stop();
         TimerMidnight.Stop();
         TimerReminder.Stop();
-        try { ClearLists(); }
-        catch { }
-        try
+        SystemHelper.TryCatch(() => ClearLists());
+        SystemHelper.TryCatch(() =>
         {
           foreach ( Form form in Application.OpenForms )
             if ( form != this && form.Visible )
-              try { form.Close(); }
-              catch { }
-        }
-        catch
-        {
-        }
+              SystemHelper.TryCatch(() => form.Close());
+        });
         Close();
       }
       finally

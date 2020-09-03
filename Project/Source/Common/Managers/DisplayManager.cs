@@ -32,13 +32,13 @@ namespace Ordisoftware.HebrewCommon
     static public Thread MainThread { get; private set; }
 
     /// <summary>
-    /// Initialize the manager.
+    /// Static constructor.
     /// </summary>
-    static internal void Initialize()
+    static DisplayManager()
     {
       MainThread = Thread.CurrentThread;
     }
-    
+
     /// <summary>
     /// Run an action synchronized in the main form thread and wait for completion.
     /// </summary>

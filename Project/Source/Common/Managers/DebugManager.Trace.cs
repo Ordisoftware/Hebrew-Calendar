@@ -22,7 +22,8 @@ namespace Ordisoftware.HebrewCommon
   static public partial class DebugManager
   {
 
-    static public readonly TraceForm TraceForm = new TraceForm("TraceFormLocation", "TraceFormSize");
+    static public readonly TraceForm TraceForm
+      = new TraceForm("TraceFormLocation", "TraceFormSize");
 
     private const int MarginSize = 4;
     private const int EnterCountSkip = 2;
@@ -33,7 +34,7 @@ namespace Ordisoftware.HebrewCommon
 
     static private string Separator = new string('-', 120);
 
-    static private void ChangingTraceFile(RollOverTextWriterTraceListener sender, string filename)
+    static private void TraceFileChanged(RollverTextWriterTraceListener sender, string filename)
     {
       TraceForm.Text = Path.GetFileNameWithoutExtension(filename);
       TraceForm.AppendText(File.ReadAllText(filename), true);
@@ -64,26 +65,21 @@ namespace Ordisoftware.HebrewCommon
     static public void Trace(TraceEvent logevent, string text = "")
     {
       if ( !Enabled ) return;
-      try
+      SystemHelper.TryCatch(() =>
       {
-        string s = "";
+        string message = "";
         if ( logevent != TraceEvent.System )
         {
           string str = logevent.ToString().ToUpper();
           if ( str.Length < 9 ) str += new string(' ', 9 - str.Length);
-          s += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " [ " + str + " ] ";
+          message += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " [ " + str + " ] ";
         }
         if ( logevent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
-        s = s + new string(' ', CurrentMargin) + text;
-        s = s.Indent(0, CurrentMargin + s.Length);
-        s += Globals.NL;
-        SystemHelper.TryCatch(() => TraceForm.AppendText(s, true));
-        System.Diagnostics.Trace.Write(s);
+        message += text.Indent(0, CurrentMargin + message.Length) + Globals.NL;
+        SystemHelper.TryCatch(() => TraceForm.AppendText(message, true));
+        System.Diagnostics.Trace.Write(message);
         if ( logevent == TraceEvent.Enter ) CurrentMargin += MarginSize;
-      }
-      catch
-      {
-      }
+      });
     }
 
     static private void WriteHeader()
@@ -94,8 +90,9 @@ namespace Ordisoftware.HebrewCommon
       Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
       Trace(TraceEvent.System, "# " + "PATH   : " + Globals.RootFolderPath);
       string platformStr = SystemStatistics.Instance.Platform;
-      var platformLines = platformStr.Split(StringSplitOptions.RemoveEmptyEntries);
-      Trace(TraceEvent.System, "# " + "SYSTEM : " + string.Join(" | ", platformLines));
+      var platformLines = platformStr.SplitNoEmptyLines();
+      Trace(TraceEvent.System, "# " + "SYSTEM : " + platformLines.Join(" | "));
+      Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System);
     }
 
@@ -103,6 +100,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( !_Enabled ) return;
       Trace(TraceEvent.System);
+      Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System, "# " + "UNLEFT : " + EnterCount.ToString());
       Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
       Trace(TraceEvent.System, "# " + "STOP   : " + DateTime.Now.ToString());
@@ -115,9 +113,9 @@ namespace Ordisoftware.HebrewCommon
       if ( !_Enabled ) return;
       try
       {
-        string path = TraceListener.FilePath;
-        string code = TraceListener.FileCode;
-        string extension = TraceListener.FileExtension;
+        string path = TraceListener.Path;
+        string code = TraceListener.Code;
+        string extension = TraceListener.Extension;
         Stop();
         foreach ( string filename in Directory.GetFiles(path, code + "*" + extension) )
         {

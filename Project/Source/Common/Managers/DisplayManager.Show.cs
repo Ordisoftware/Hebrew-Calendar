@@ -60,9 +60,10 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="text">The text.</param>
     /// <param name="buttons">The buttons.</param>
     /// <param name="icon">The icon.</param>
-    static public DialogResult Show(string text,
-                                    MessageBoxButtons buttons = MessageBoxButtons.OK,
-                                    MessageBoxIcon icon = MessageBoxIcon.None)
+    static public DialogResult Show(
+      string text,
+      MessageBoxButtons buttons = MessageBoxButtons.OK,
+      MessageBoxIcon icon = MessageBoxIcon.None)
     {
       return Show(Title, text, buttons, icon);
     }
@@ -77,20 +78,14 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="text">The text.</param>
     /// <param name="buttons">The buttons.</param>
     /// <param name="icon">The icon.</param>
-    static public DialogResult Show(string title, 
-                                    string text,
-                                    MessageBoxButtons buttons = MessageBoxButtons.OK,
-                                    MessageBoxIcon icon = MessageBoxIcon.None)
+    static public DialogResult Show(
+      string title,
+      string text,
+      MessageBoxButtons buttons = MessageBoxButtons.OK,
+      MessageBoxIcon icon = MessageBoxIcon.None)
     {
       DialogResult res = DialogResult.None;
-      try
-      {
-        res = ShowWinForm(title, text, buttons, icon);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      SystemHelper.TryCatchManage(() => { res = ShowWinForm(title, text, buttons, icon); });
       return res;
     }
 
@@ -173,6 +168,26 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Show an error message and exit the process.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    static public void ShowAndExit(string text)
+    {
+      ShowAndExit(Title, text);
+    }
+
+    /// <summary>
+    /// Show an error message and exit the process.
+    /// </summary>
+    /// <param name="title">The title.</param>
+    /// <param name="text">The text.</param>
+    static public void ShowAndExit(string title, string text)
+    {
+      ShowError(title, text);
+      SystemHelper.Exit();
+    }
+
+    /// <summary>
     /// Show an error message and terminate the process.
     /// </summary>
     /// <param name="text">The text.</param>
@@ -189,7 +204,7 @@ namespace Ordisoftware.HebrewCommon
     static public void ShowAndTerminate(string title, string text)
     {
       ShowError(title, text);
-      Application.Exit();
+      SystemHelper.Terminate();
     }
 
     /// <summary>
@@ -202,7 +217,11 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="text">The text.</param>
     /// <param name="buttons">The buttons.</param>
     /// <param name="icon">The icon.</param>
-    static private DialogResult ShowWinForm(string title, string text, MessageBoxButtons buttons, MessageBoxIcon icon)
+    static private DialogResult ShowWinForm(
+      string title,
+      string text,
+      MessageBoxButtons buttons,
+      MessageBoxIcon icon)
     {
       return MessageBox.Show(text, title, buttons, icon);
     }

@@ -190,7 +190,7 @@ namespace Ordisoftware.HebrewCommon
           for ( int i = 0; i < lineNumber - 1; i++ )
             file.ReadLine();
           string line = file.ReadLine();
-          string name = line.Split(new char[] { '(', ')' })[1].TrimEnd(' ', ',');
+          string name = line.Split('(', ')')[1].TrimEnd(' ', ',');
           AlreadyAcessedVarNames.Add(id, name);
           return name;
         }
