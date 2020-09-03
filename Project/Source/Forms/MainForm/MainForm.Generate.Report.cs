@@ -61,7 +61,7 @@ namespace Ordisoftware.HebrewCalendar
         var headerTxt = SeparatorV;
         foreach ( ReportFieldText v in Enum.GetValues(typeof(ReportFieldText)) )
         {
-          string str = Translations.CalendarField.GetLang(v);
+          string str = Translations.ReportFieldText.GetLang(v);
           headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
           headerTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " " + SeparatorV.ToString();
         }

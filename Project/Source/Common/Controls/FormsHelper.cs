@@ -105,8 +105,8 @@ namespace Ordisoftware.HebrewCommon
               && Globals.MainForm != form
               && Globals.MainForm.Visible
               && Globals.MainForm.WindowState != FormWindowState.Minimized
-                ? Globals.MainForm.Bounds
-                : SystemInformation.WorkingArea;
+                 ? Globals.MainForm.Bounds
+                 : SystemInformation.WorkingArea;
       form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2,
                                 area.Top + area.Height / 2 - form.Height / 2);
     }

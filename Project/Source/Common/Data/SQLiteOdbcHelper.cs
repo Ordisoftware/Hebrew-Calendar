@@ -256,13 +256,12 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="valueDefault">The default value.</param>
     /// <param name="valueNotNull">Indicate if not null.</param>
     /// <returns>True if the column does not exist else false.</returns>
-    static public bool CheckColumn(
-      this OdbcConnection connection,
-      string table,
-      string column,
-      string type,
-      string valueDefault,
-      bool valueNotNull)
+    static public bool CheckColumn(this OdbcConnection connection,
+                                   string table, 
+                                   string column, 
+                                   string type, 
+                                   string valueDefault, 
+                                   bool valueNotNull)
     {
       if ( !string.IsNullOrEmpty(valueDefault) ) valueDefault = " DEFAULT " + valueDefault;
       if ( valueNotNull ) valueDefault += " NOT NULL";

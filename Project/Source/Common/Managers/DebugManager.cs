@@ -277,16 +277,15 @@ namespace Ordisoftware.HebrewCommon
         ShowSimple(einfo);
         return;
       }
-      if ( BeforeShowException != null )
-        try
-        {
-          BeforeShowException(sender, einfo, ref process);
-        }
-        catch ( Exception err )
-        {
-          if ( show != ShowExceptionMode.None )
-            DisplayManager.ShowError("Error on BeforeShowException :" + Globals.NL2 + err.Message);
-        }
+      try
+      {
+        BeforeShowException?.Invoke(sender, einfo, ref process);
+      }
+      catch ( Exception err )
+      {
+        if ( show != ShowExceptionMode.None )
+          DisplayManager.ShowError("Error on BeforeShowException :" + Globals.NL2 + err.Message);
+      }
       if ( process )
       {
         Trace(TraceEvent.Exception, einfo.FullText);
@@ -304,16 +303,15 @@ namespace Ordisoftware.HebrewCommon
             throw new NotImplementedExceptionEx(show.ToStringFull());
         }
       }
-      if ( AfterShowException != null )
-        try
-        {
-          AfterShowException(sender, einfo, process);
-        }
-        catch ( Exception err )
-        {
-          if ( show != ShowExceptionMode.None )
-            DisplayManager.ShowError("Error on AfterShowException :" + Globals.NL2 + err.Message);
-        }
+      try
+      {
+        AfterShowException?.Invoke(sender, einfo, process);
+      }
+      catch ( Exception err )
+      {
+        if ( show != ShowExceptionMode.None )
+          DisplayManager.ShowError("Error on AfterShowException :" + Globals.NL2 + err.Message);
+      }
     }
 
     /// <summary>
@@ -326,7 +324,7 @@ namespace Ordisoftware.HebrewCommon
       try
       {
         if ( SubstituteShowException != null )
-          SubstituteShowException(einfo.Sender, einfo);
+          SubstituteShowException.Invoke(einfo.Sender, einfo);
         else
         if ( !SystemManager.TryCatch(() => ExceptionForm.Run(einfo)) )
           ShowSimple(einfo);

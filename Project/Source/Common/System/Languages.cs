@@ -40,8 +40,8 @@ namespace Ordisoftware.HebrewCommon
     static public readonly Dictionary<Language, string> Names
       = new Dictionary<Language, string>
       {
-        { Language.English, "en" },
-        { Language.French, "fr" }
+        [Language.English] = "en",
+        [Language.French] = "fr"
       };
 
     /// <summary>

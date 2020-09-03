@@ -50,9 +50,9 @@ namespace Ordisoftware.HebrewCalendar
       CheckSettingsReset();
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      UpdateLocalization(true);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
+      UpdateLocalization(true);
       DebugManager.Enabled = Settings.DebuggerEnabled;
       DebugManager.DeaultShowExceptionMode = ShowExceptionMode.Advanced;
       string lang = Settings.Language;
@@ -125,10 +125,13 @@ namespace Ordisoftware.HebrewCalendar
         resources.Apply(form.Controls);
       };
       update(Globals.MainForm);
+      string tempLogTitle = DebugManager.TraceForm.Text;
+      string tempLogContent = DebugManager.TraceForm.TextBox.Text;
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = MoonMonthsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       foreach ( Form form in Application.OpenForms )
       {
@@ -144,6 +147,8 @@ namespace Ordisoftware.HebrewCalendar
       UndoRedoTextBox.Relocalize();
       MoonMonthsForm.Instance.Relocalize();
       LoadingForm.Instance.Relocalize();
+      DebugManager.TraceForm.Text = tempLogTitle;
+      DebugManager.TraceForm.AppendText(tempLogContent);
     }
 
   }

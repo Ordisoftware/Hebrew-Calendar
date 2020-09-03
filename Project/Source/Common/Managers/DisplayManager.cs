@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCommon
       {
         if ( wait ) semaphore = new Semaphore(0, 1);
         control.BeginInvoke(wait ? processActionWait : processAction);
-        if ( semaphore != null ) semaphore.WaitOne();
+        semaphore?.WaitOne();
       }
       else
         processAction();

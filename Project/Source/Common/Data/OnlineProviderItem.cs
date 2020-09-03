@@ -47,12 +47,12 @@ namespace Ordisoftware.HebrewCommon
       FolderImage = createImage("folder_vertical_open.png");
       LanguageImages = new Dictionary<string, Image>()
       {
-        { "(NONE)", createImage("web_layout.png") },
-        { "(FR)",   createImage("flag_france.png") },
-        { "(EN)",   createImage("flag_great_britain.png") },
-        { "(IW)",   createImage("flag_israel.png") },
-        { "(FR/IW)", createImage("flag_fr_iw.png") },
-        { "(FR/EN)", createImage("flag_fr_en.png") }
+        ["(NONE)"] = createImage("web_layout.png"),
+        ["(FR)"] = createImage("flag_france.png"),
+        ["(EN)"] = createImage("flag_great_britain.png"),
+        ["(IW)"] = createImage("flag_israel.png"),
+        ["(FR/IW)"] = createImage("flag_fr_iw.png"),
+        ["(FR/EN)"] = createImage("flag_fr_en.png")
       };
     }
 

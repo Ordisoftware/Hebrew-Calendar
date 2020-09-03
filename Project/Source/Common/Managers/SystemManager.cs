@@ -49,12 +49,11 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void CreateIPCServer(AsyncCallback duplicated)
     {
-      IPCServer = new NamedPipeServerStream(
-        Globals.AssemblyGUID,
-        PipeDirection.InOut,
-        1,
-        PipeTransmissionMode.Message,
-        PipeOptions.Asynchronous);
+      IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
+                                            PipeDirection.InOut,
+                                            1,
+                                            PipeTransmissionMode.Message,
+                                            PipeOptions.Asynchronous);
       IPCServer.BeginWaitForConnection(duplicated, IPCServer);
     }
 

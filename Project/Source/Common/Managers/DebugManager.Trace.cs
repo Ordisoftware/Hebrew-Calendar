@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewCommon
     static private void TraceFileChanged(Listener sender, string filename)
     {
       TraceForm.Text = Path.GetFileNameWithoutExtension(filename);
-      TraceForm.AppendText(File.ReadAllText(filename), true);
+      TraceForm.AppendText(File.ReadAllText(filename));
     }
 
     static public void Enter()
@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewCommon
         }
         if ( logevent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
         message += text.Indent(0, CurrentMargin + message.Length) + Globals.NL;
-        SystemManager.TryCatch(() => TraceForm.AppendText(message, true));
+        SystemManager.TryCatch(() => TraceForm.AppendText(message));
         System.Diagnostics.Trace.Write(message);
         if ( logevent == TraceEvent.Enter ) CurrentMargin += MarginSize;
       });
@@ -126,7 +126,11 @@ namespace Ordisoftware.HebrewCommon
       }
       finally
       {
-        if ( !norestart ) Start();
+        if ( !norestart )
+        {
+          Start();
+          Trace(TraceEvent.Message, nameof(ClearTraces));
+        }
       }
     }
 

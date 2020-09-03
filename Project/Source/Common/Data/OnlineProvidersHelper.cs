@@ -73,11 +73,10 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Crate a list of menu items.
     /// </summary>
-    static private void SetItems(
-      ToolStripItemCollection list,
-      OnlineProviders items,
-      EventHandler action,
-      Action reconstruct)
+    static private void SetItems(ToolStripItemCollection list,
+                                 OnlineProviders items,
+                                 EventHandler action,
+                                 Action reconstruct)
     {
       string nameItems = NameOfFromStack(items, 3).Replace("Globals.", "");
       if ( items.Configurable )
@@ -101,10 +100,9 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Create submenu items for providers menu.
     /// </summary>
-    static public void InitializeFromProviders(
-      this ContextMenuStrip menuRoot,
-      OnlineProviders items,
-      EventHandler action)
+    static public void InitializeFromProviders(this ContextMenuStrip menuRoot,
+                                               OnlineProviders items,
+                                               EventHandler action)
     {
       SetItems(menuRoot.Items, items, action, () => InitializeFromProviders(menuRoot, items, action));
     }
@@ -112,10 +110,9 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Create submenu items for providers menu.
     /// </summary>
-    static public void InitializeFromProviders(
-      this ToolStripMenuItem menu,
-      OnlineProviders items,
-      EventHandler action)
+    static public void InitializeFromProviders(this ToolStripMenuItem menu,
+                                               OnlineProviders items,
+                                               EventHandler action)
     {
       SetItems(menu.DropDownItems, items, action, () => InitializeFromProviders(menu, items, action));
     }
