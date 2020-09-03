@@ -600,12 +600,12 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("NotDefined")]
-        public global::Ordisoftware.HebrewCommon.Language LanguageEnum {
+        public global::Ordisoftware.HebrewCommon.Language LanguageSelected {
             get {
-                return ((global::Ordisoftware.HebrewCommon.Language)(this["LanguageEnum"]));
+                return ((global::Ordisoftware.HebrewCommon.Language)(this["LanguageSelected"]));
             }
             set {
-                this["LanguageEnum"] = value;
+                this["LanguageSelected"] = value;
             }
         }
         

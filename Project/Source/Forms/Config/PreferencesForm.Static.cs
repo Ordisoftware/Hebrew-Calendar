@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewCalendar
     static public bool Run()
     {
       Reseted = false;
-      Language lang = Settings.LanguageEnum;
+      Language lang = Settings.LanguageSelected;
       var form = new PreferencesForm();
       if ( !MainForm.Instance.Visible )
         form.ShowInTaskbar = true;
@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewCalendar
                  || form.OldLongitude != Settings.GPSLongitude
                  || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
                  || form.OldTimeZone != Settings.TimeZone
-                 || lang != Settings.LanguageEnum;
+                 || lang != Settings.LanguageSelected;
       if ( !result && form.MustRefreshMonthView )
         MainForm.Instance.UpdateCalendarMonth(true);
       try

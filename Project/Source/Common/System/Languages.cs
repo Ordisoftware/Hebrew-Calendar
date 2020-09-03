@@ -73,6 +73,12 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate current language.
     /// </summary>
+    static public string CurrentCode
+      => Names[Current];
+
+    /// <summary>
+    /// Indicate current language.
+    /// </summary>
     static public Language Current
     {
       get
