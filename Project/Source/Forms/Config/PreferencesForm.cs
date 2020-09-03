@@ -355,8 +355,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( NavigationForm.Instance != null )
-        NavigationForm.Instance.Show();
+      NavigationForm.Instance.Show();
       EditNavigateTopColor.BackColor = SystemColors.Control;
       EditNavigateMiddleColor.BackColor = SystemColors.Control;
       EditNavigateBottomColor.BackColor = SystemColors.Control;

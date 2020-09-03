@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewCalendar
       form.ShowDialog();
       while ( LanguageChanged || DoReset )
       {
-        NavigationForm.Instance.Close();
+        NavigationForm.Instance.Hide();
         LanguageChanged = false;
         DoReset = false;
         form = new PreferencesForm();
