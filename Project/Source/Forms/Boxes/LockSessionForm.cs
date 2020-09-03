@@ -119,7 +119,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( !DisplayManager.QueryYesNo(Localizer.AskToShutdownComputer.GetLang()) ) return;
       Close();
       MediaStop();
-      SystemManager.Run("shutdown", "/s /t 0");
+      SystemManager.RunShell("shutdown", "/s /t 0");
       MainForm.Instance.SessionEnding(null, null);
     }
 

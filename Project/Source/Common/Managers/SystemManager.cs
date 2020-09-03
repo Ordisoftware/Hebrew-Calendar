@@ -68,9 +68,7 @@ namespace Ordisoftware.HebrewCommon
         bool created;
         ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out created);
         if ( created )
-        {
           CreateIPCServer(duplicated);
-        }
         else
         {
           var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut);
@@ -275,8 +273,8 @@ namespace Ordisoftware.HebrewCommon
         {
           object value = GetWin32OperatingSystemValue("TotalVisibleMemorySize");
           _TotalVisibleMemory = value != null
-                              ? ( (ulong)value * 1024 ).FormatBytesSize()
-                              : Localizer.UndefinedSlot.GetLang();
+                                ? ( (ulong)value * 1024 ).FormatBytesSize()
+                                : Localizer.UndefinedSlot.GetLang();
         }
         return _TotalVisibleMemory;
       }

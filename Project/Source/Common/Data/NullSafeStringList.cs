@@ -42,7 +42,10 @@ namespace Ordisoftware.HebrewCommon
       get
       {
         CheckIndex(index);
-        return index < Count ? base[index] : "";
+        if ( index < Count ) return base[index];
+        var item = "";
+        CreateOutOfRange(index, item);
+        return item;
       }
       set
       {

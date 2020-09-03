@@ -112,6 +112,11 @@ namespace Ordisoftware.HebrewCommon
       = "Hebrew Common";
 
     /// <summary>
+    /// Indicate the support email.
+    /// </summary>
+    static public string SupportEMail { get; set; }
+
+    /// <summary>
     /// Indicate the application home URL.
     /// </summary>
     static public string ApplicationHomeURL { get; set; }

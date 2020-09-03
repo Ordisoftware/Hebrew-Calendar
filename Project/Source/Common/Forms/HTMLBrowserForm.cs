@@ -34,11 +34,11 @@ namespace Ordisoftware.HebrewCommon
       ActiveControl = WebBrowser;
     }
 
-    public HTMLBrowserForm(NullSafeStringDictionary title,
-                           string filenameTemplate,
-                           string locationPropertyName,
-                           string clientSizePropertyName)
-      : this()
+    public HTMLBrowserForm(
+      NullSafeStringDictionary title,
+      string filenameTemplate,
+      string locationPropertyName,
+      string clientSizePropertyName) : this()
     {
       Title = title;
       FilenameTemplate = filenameTemplate;

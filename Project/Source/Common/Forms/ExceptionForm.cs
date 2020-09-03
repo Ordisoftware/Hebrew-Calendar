@@ -41,14 +41,15 @@ namespace Ordisoftware.HebrewCommon
     private ExceptionInfo ErrorInfo;
 
     /// <summary>
-    /// Indicates error messages.
-    /// </summary>
-    private readonly List<string> ErrorMessages = new List<string>();
-
-    /// <summary>
     /// Indicate the original form height.
     /// </summary>
     private int OriginalHeight;
+
+    /// <summary>
+    /// Indicates error messages.
+    /// </summary>
+    private readonly List<string> ErrorMessages 
+      = new List<string>();
 
     static public readonly NullSafeStringDictionary NextException
       = new NullSafeStringDictionary()
@@ -159,7 +160,7 @@ namespace Ordisoftware.HebrewCommon
     private void ActionSendToGitHub_Click(object sender, EventArgs e)
     {
       if ( ErrorInfo == null ) return;
-      try
+      SystemManager.TryCatchManage(() =>
       {
         var query = new StringBuilder();
         query.Append("&title=" + ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion);
@@ -170,21 +171,16 @@ namespace Ordisoftware.HebrewCommon
           SystemManager.CreateGitHubIssue(query.ToString().Substring(0, 8000).TrimEnd('%'));
         else
           SystemManager.CreateGitHubIssue(query.ToString());
-      }
-      catch ( Exception ex )
-      {
-        DisplayManager.ShowError(ex.Message);
-      }
+      });
     }
 
     private void ActionSendMail_Click(object sender, EventArgs e)
     {
-      DebugManager.Stop();
-      System.Threading.Thread.Sleep(500);
-      try
+      if ( ErrorInfo == null ) return;
+      SystemManager.TryCatchManage(() =>
       {
         var message = new MailMessage();
-        message.To.Add("");
+        message.To.Add(Globals.SupportEMail);
         message.Subject = $"[{Globals.AssemblyTitleWithVersion}] {ErrorInfo.Instance.GetType().Name}";
         string body = CreateBody().ToString();
         if ( body.Length > 2000 )
@@ -192,16 +188,8 @@ namespace Ordisoftware.HebrewCommon
         else
           message.Body = body.ToString();
         string query = message.ToUrl();
-        SystemManager.Run(query.ToString());
-      }
-      catch ( Exception ex )
-      {
-        DisplayManager.ShowError(ex.Message);
-      }
-      finally
-      {
-        DebugManager.Start();
-      }
+        SystemManager.RunShell(query.ToString());
+      });
     }
 
     private StringBuilder CreateBody()

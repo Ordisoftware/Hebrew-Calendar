@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCommon
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
             return ProcessDownload(client, version);
           else
-            if ( !auto )
+          if ( !auto )
             DisplayManager.ShowInformation(Localizer.NoNewVersionAvailable.GetLang());
         }
       }
@@ -93,10 +93,15 @@ namespace Ordisoftware.HebrewCommon
         switch ( partsVersion.Length )
         {
           case 2:
-            version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]));
+            version = new Version(
+              Convert.ToInt32(partsVersion[0]),
+              Convert.ToInt32(partsVersion[1]));
             break;
           case 3:
-            version = new Version(Convert.ToInt32(partsVersion[0]), Convert.ToInt32(partsVersion[1]), Convert.ToInt32(partsVersion[2]));
+            version = new Version(
+              Convert.ToInt32(partsVersion[0]),
+              Convert.ToInt32(partsVersion[1]),
+              Convert.ToInt32(partsVersion[2]));
             break;
           default:
             throw new ArgumentException(Localizer.CheckUpdateFileError.GetLang(content));
@@ -152,7 +157,7 @@ namespace Ordisoftware.HebrewCommon
         Application.DoEvents();
       }
       if ( ex != null ) throw ex;
-      SystemManager.Run(tempfile, "/SP- /SILENT");
+      SystemManager.RunShell(tempfile, "/SP- /SILENT");
       Globals.IsExiting = true;
       SystemManager.Exit();
       return true;
@@ -172,10 +177,11 @@ namespace Ordisoftware.HebrewCommon
           if ( we.Response is HttpWebResponse response )
             code = response.StatusCode;
         }
-        ex = new WebException(e.Error.Message + Globals.NL2 +
-                              filename + Globals.NL2 +
-                              status.ToStringFull() + Globals.NL +
-                              code.ToStringFull());
+        ex = new WebException(
+          e.Error.Message + Globals.NL2 +
+          filename + Globals.NL2 +
+          status.ToStringFull() + Globals.NL +
+          code.ToStringFull());
       }
     }
 

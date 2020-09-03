@@ -119,7 +119,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="connection">The connection.</param>
     static public void CheckIntegrity(this OdbcConnection connection)
     {
-      try
+      SystemManager.TryCatchManage(() =>
       {
         var errors = new List<string>();
         using ( var command = new OdbcCommand("SELECT integrity_check FROM pragma_integrity_check()", connection) )
@@ -134,11 +134,7 @@ namespace Ordisoftware.HebrewCommon
           string msg = Localizer.DatabaseIntegrityError.GetLang(errors.AsMultiline());
           throw new SQLiteException(msg);
         }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      });
     }
 
     /// <summary>
@@ -147,16 +143,12 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="connection">The connection.</param>
     static public void Vacuum(this OdbcConnection connection)
     {
-      try
+      SystemManager.TryCatchManage(() =>
       {
         using ( var command = new OdbcCommand("VACUUM", connection) )
           if ( command.ExecuteNonQuery() != 0 )
             throw new SQLiteException(Localizer.DatabaseVacuumError.GetLang());
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      });
     }
 
     /// <summary>
@@ -166,15 +158,11 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="table"></param>
     static public void DropTableIfExists(this OdbcConnection connection, string table)
     {
-      try
+      SystemManager.TryCatchManage(() =>
       {
         using ( var command = new OdbcCommand($"DROP TABLE IF EXISTS {table}", connection) )
           command.ExecuteNonQuery();
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      });
     }
 
     /// <summary>
@@ -268,12 +256,13 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="valueDefault">The default value.</param>
     /// <param name="valueNotNull">Indicate if not null.</param>
     /// <returns>True if the column does not exist else false.</returns>
-    static public bool CheckColumn(this OdbcConnection connection,
-                                   string table,
-                                   string column,
-                                   string type,
-                                   string valueDefault,
-                                   bool valueNotNull)
+    static public bool CheckColumn(
+      this OdbcConnection connection,
+      string table,
+      string column,
+      string type,
+      string valueDefault,
+      bool valueNotNull)
     {
       if ( !string.IsNullOrEmpty(valueDefault) ) valueDefault = " DEFAULT " + valueDefault;
       if ( valueNotNull ) valueDefault += " NOT NULL";
