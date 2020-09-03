@@ -47,7 +47,6 @@ namespace Ordisoftware.HebrewCalendar
       = new TranslationsDictionary
       {
         [Languages.EN] = "Can't exit application while generating data.",
-
         [Languages.FR] = "Impossible de quitter l'application durant la génération des données."
       };
 
