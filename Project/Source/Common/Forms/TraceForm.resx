@@ -117,11 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelLinesCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelLinesCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelLinesCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
+  </data>
+  <data name="LabelLinesCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="LabelLinesCount.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="LabelLinesCount.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;LabelLinesCount.Name" xml:space="preserve">
+    <value>LabelLinesCount</value>
+  </data>
+  <data name="&gt;&gt;LabelLinesCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLinesCount.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;LabelLinesCount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionClearLogs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="ActionClearLogs.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionClearLogs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -142,12 +176,11 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClearLogs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 1</value>
+    <value>649, 1</value>
   </data>
   <data name="ActionClearLogs.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClearLogs.TabIndex" type="System.Int32, mscorlib">
     <value>83</value>
   </data>
@@ -161,7 +194,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClearLogs.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -191,7 +224,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -241,27 +274,6 @@
   <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="TextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 503</value>
-  </data>
-  <data name="TextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="TextBox.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="TextBox.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;TextBox.Name" xml:space="preserve">
     <value>TextBox</value>
   </data>
@@ -298,6 +310,39 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="TextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>764, 503</value>
+  </data>
+  <data name="TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="TextBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TextBox.Name" xml:space="preserve">
+    <value>TextBox</value>
+  </data>
+  <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
+    <value>Ordisoftware.HebrewCommon.RichTextBoxEx, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;TextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -306,6 +351,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>784, 561</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>

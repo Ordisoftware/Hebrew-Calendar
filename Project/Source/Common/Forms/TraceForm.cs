@@ -78,6 +78,11 @@ namespace Ordisoftware.HebrewCommon
       ActionClearLogs.Enabled = DebugManager.Enabled;
     }
 
+    private void TextBox_TextChanged(object sender, EventArgs e)
+    {
+      LabelLinesCount.Text = TextBox.Lines.Length.ToString() + Localizer.TraceLinesCount.GetLang(); ;
+    }
+
   }
 
 }

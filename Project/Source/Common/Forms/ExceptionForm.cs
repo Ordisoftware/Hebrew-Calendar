@@ -51,13 +51,6 @@ namespace Ordisoftware.HebrewCommon
     private readonly List<string> ErrorMessages 
       = new List<string>();
 
-    static public readonly NullSafeOfStringDictionary<Language>NextException
-      = new NullSafeOfStringDictionary<Language>
-      {
-        [Languages.EN] = "Next",
-        [Languages.FR] = "Suivante"
-      };
-
     /// <summary>
     /// Run the form.
     /// </summary>
@@ -71,7 +64,7 @@ namespace Ordisoftware.HebrewCommon
         if ( isInner )
         {
           form.ActionSendToGitHub.Enabled = false;
-          form.ActionClose.Text = NextException.GetLang();
+          form.ActionClose.Text = Localizer.NextException.GetLang();
         }
         form.TextException.Text = einfo.TypeText;
         form.TextMessage.Text = einfo.Message;

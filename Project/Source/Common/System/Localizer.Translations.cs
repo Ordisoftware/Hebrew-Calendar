@@ -501,6 +501,21 @@ namespace Ordisoftware.HebrewCommon
         [Languages.FR] = "<erreur>"
       };
 
+
+    static public readonly NullSafeOfStringDictionary<Language> TraceLinesCount
+      = new NullSafeOfStringDictionary<Language>
+      {
+        [Languages.EN] = "Lines",
+        [Languages.FR] = "Lignes"
+      };
+
+    static public readonly NullSafeOfStringDictionary<Language> NextException
+      = new NullSafeOfStringDictionary<Language>
+      {
+        [Languages.EN] = "Next",
+        [Languages.FR] = "Suivante"
+      };
+
     /// <summary>
     /// Indicate the templates to format milliseconds.
     /// </summary>
