@@ -137,8 +137,8 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( form != Globals.MainForm && form != AboutBox.Instance )
           update(form);
-        if ( form is ShowTextForm )
-          ( (ShowTextForm)form ).RelocalizeText();
+        if ( form is ShowTextForm formShowText )
+          formShowText.RelocalizeText();
       }
       MainForm.Instance.InitializeSpecialMenus();
       AboutBox.Instance.AboutBox_Shown(null, null);

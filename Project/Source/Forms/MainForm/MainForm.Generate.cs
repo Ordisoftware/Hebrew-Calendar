@@ -34,9 +34,8 @@ namespace Ordisoftware.HebrewCalendar
           int yearFirst;
           int yearLast;
           if ( sender != null )
-            if ( sender is Tuple<int, int> )
+            if ( sender is Tuple<int, int> values )
             {
-              var values = (Tuple<int, int>)sender;
               yearFirst = values.Item1;
               yearLast = values.Item2;
             }

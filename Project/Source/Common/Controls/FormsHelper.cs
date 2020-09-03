@@ -119,8 +119,8 @@ namespace Ordisoftware.HebrewCommon
       int count = 0;
       var items = new ToolStripItem[source.DropDownItems.Count];
       foreach ( ToolStripItem item in source.DropDownItems )
-        if ( item is ToolStripMenuItem )
-          items[count++] = ( (ToolStripMenuItem)item ).Clone();
+        if ( item is ToolStripMenuItem menuItem )
+          items[count++] = menuItem.Clone();
         else
         if ( item is ToolStripSeparator )
           items[count++] = new ToolStripSeparator();

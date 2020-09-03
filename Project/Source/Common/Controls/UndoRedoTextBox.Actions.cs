@@ -24,23 +24,23 @@ namespace Ordisoftware.HebrewCommon
     static private UndoRedoTextBox GetTextBoxAndFocus(object sender)
     {
       UndoRedoTextBox control = null;
-      if ( sender is ContextMenuStrip )
+      if ( sender is ContextMenuStrip menuContext )
       {
-        control = (UndoRedoTextBox)( (ContextMenuStrip)sender ).SourceControl;
+        control = (UndoRedoTextBox)menuContext.SourceControl;
         if ( control != null && control.Enabled && !control.Focused )
           control.Focus();
       }
       else
-      if ( sender is ToolStripMenuItem )
+      if ( sender is ToolStripMenuItem menuItem )
       {
-        var parent = ( (ToolStripMenuItem)sender ).GetCurrentParent();
-        control = (UndoRedoTextBox)( (ContextMenuStrip)parent ).SourceControl;
+        var parent = (ContextMenuStrip)menuItem.GetCurrentParent();
+        control = (UndoRedoTextBox)parent.SourceControl;
         if ( control != null && control.Enabled && !control.Focused )
           control.Focus();
       }
       else
-      if ( sender is UndoRedoTextBox )
-        control = (UndoRedoTextBox)sender;
+      if ( sender is UndoRedoTextBox textbox )
+        control = textbox;
       return control;
     }
 
