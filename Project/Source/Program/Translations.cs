@@ -24,15 +24,15 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public readonly NullSafeOfStringDictionary<Language> ApplicationDescription
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary ApplicationDescription
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Generate a hebrew lunisolar calendar with shabat and celebrations reminder",
         [Languages.FR] = "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> AskToResetPreferences
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary AskToResetPreferences
+      = new TranslationsDictionary
       {
         [Languages.EN] = Localizer.ResetPreferences[Languages.EN] + Globals.NL2 +
                          "GPS location and shabat day will be keeped." + Globals.NL2 +
@@ -43,16 +43,16 @@ namespace Ordisoftware.HebrewCalendar
                          Localizer.AskToContinue[Languages.FR]
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> CantExitWhileGenerating
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary CantExitWhileGenerating
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Can't exit application while generating data.",
 
         [Languages.FR] = "Impossible de quitter l'application durant la génération des données."
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> LoadingCitiesError
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary LoadingCitiesError
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Error on loading the cities' GPS coordonates." + Globals.NL +
                          Localizer.ApplicationMustExit[Languages.EN],
@@ -61,106 +61,106 @@ namespace Ordisoftware.HebrewCalendar
                          Localizer.ApplicationMustExit[Languages.EN]
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> ProgressLoadingData
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary ProgressLoadingData
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Loading data...",
         [Languages.FR] = "Chargement des données..."
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> ProgressCreateDays
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary ProgressCreateDays
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Populating days...",
         [Languages.FR] = "Garnissage des jours..."
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> ProgressAnalyzeDays
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary ProgressAnalyzeDays
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Analyzing days...",
         [Languages.FR] = "Analyse des jours..."
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> ProgressGenerateReport
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary ProgressGenerateReport
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Generating report...",
         [Languages.FR] = "Génération du rapport..."
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> ProgressFillMonths
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary ProgressFillMonths
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Filling months...",
         [Languages.FR] = "Remplissage des mois..."
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> AskToUseMoonOmer
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary AskToUseMoonOmer
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Do you want to use the moon omer, else the sun?",
         [Languages.FR] = "Voulez-vous utiliser le omer de la lune, sinon du soleil ?"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> AskToSetupPersonalShabat
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary AskToSetupPersonalShabat
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Do you want to setup the personal shabat?",
         [Languages.FR] = "Voulez-vous configurer le shabat personnel ?"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> DateNotFound
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary DateNotFound
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Date not found in the database: {0}",
         [Languages.FR] = "Date non trouvée dans la base de données : {0}"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> SelectBirthday
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary SelectBirthday
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Birth day",
         [Languages.FR] = "Jour de naissance"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> FirstDay
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary FirstDay
+      = new TranslationsDictionary
       {
         [Languages.EN] = "First day",
         [Languages.FR] = "Premier jour"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> LastDay
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary LastDay
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Last day",
         [Languages.FR] = "Dernier jour"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> NotSupportedYear
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary NotSupportedYear
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Year is not supported: {0}",
         [Languages.FR] = "L'année n'est pas supportée : {0}"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> PredefinedYearsIntervalAfter
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary PredefinedYearsIntervalAfter
+      = new TranslationsDictionary
       {
         [Languages.EN] = "{0} years from now",
         [Languages.FR] = "{0} années à partir de maintenant"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> PredefinedYearsIntervalBeforeAndAfter
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary PredefinedYearsIntervalBeforeAndAfter
+      = new TranslationsDictionary
       {
         [Languages.EN] = "{0} years before and after from now",
         [Languages.FR] = "{0} années avant et après maintenant"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> FatalGenerateError
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary FatalGenerateError
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Fatal error while generating data." + Globals.NL +
                          Localizer.ApplicationMustExit[Languages.EN] + Globals.NL +

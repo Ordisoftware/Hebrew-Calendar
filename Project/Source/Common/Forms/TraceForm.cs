@@ -80,7 +80,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void TextBox_TextChanged(object sender, EventArgs e)
     {
-      LabelLinesCount.Text = TextBox.Lines.Length.ToString() + Localizer.TraceLinesCount.GetLang(); ;
+      LabelLinesCount.Text = Localizer.TraceLinesCount.GetLang(TextBox.Lines.Length); ;
     }
 
   }

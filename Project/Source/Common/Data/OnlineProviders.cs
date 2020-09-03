@@ -44,8 +44,8 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate the multilingual title of the list to create a folder
     /// </summary>
-    public NullSafeOfStringDictionary<Language> Title { get; }
-      = new NullSafeOfStringDictionary<Language>();
+    public TranslationsDictionary Title { get; }
+      = new TranslationsDictionary();
 
     /// <summary>
     /// Indicate if a separator must be inserted before the folder

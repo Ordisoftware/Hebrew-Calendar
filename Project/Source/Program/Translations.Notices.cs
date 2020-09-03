@@ -24,8 +24,8 @@ namespace Ordisoftware.HebrewCalendar
   static public partial class Translations
   {
 
-    static public readonly NullSafeOfStringDictionary<Language> AutoGenerateIntervalNotice
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary AutoGenerateIntervalNotice
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Une valeur positive permet de générer les prochaines années." + Globals.NL +
                          "Une valeur négative permet de générer les années avant et après maintenant.",
@@ -34,8 +34,8 @@ namespace Ordisoftware.HebrewCalendar
                          "Une valeur négative permet de générer les années avant et après maintenant."
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> NoticeMoonDayTextFormat
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary NoticeMoonDayTextFormat
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Use the following tags to replace values:" + Globals.NL2 +
                          "%MONTHNAME% : moon month name" + Globals.NL +
@@ -48,15 +48,15 @@ namespace Ordisoftware.HebrewCalendar
                          "%DAYNUM% : numéro du jour lunaire"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> NoticeShabatTitle
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary NoticeShabatTitle
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Shabat notice",
         [Languages.FR] = "Notice du shabat"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> NoticeShabat
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary NoticeShabat
+      = new TranslationsDictionary
       {
         [Languages.EN] = "The shabat is the \"day of rest\" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity." + Globals.NL2 +
                          "The tradition attributes this day to Saturday. We can however think according to Béréshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Béréshit 1.5 and 1.16 as well as from Shémot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately." + Globals.NL2 +
@@ -71,15 +71,15 @@ namespace Ordisoftware.HebrewCalendar
                          "Si vous préférez utiliser le shabat de groupe traditionnel, sélectionnez par exemple le samedi pour le Judaïsme, le dimanche pour le Christianisme ou le vendredi pour l'Islam."
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> NoticeCelebrationsTitle
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary NoticeCelebrationsTitle
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Celebrations notice",
         [Languages.FR] = "Notice des célébrations"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> NoticeCelebrations
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary NoticeCelebrations
+      = new TranslationsDictionary
       {
         [Languages.EN] = "The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teruah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future." + Globals.NL2 +
                          "These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun." + Globals.NL2 +
@@ -95,15 +95,15 @@ namespace Ordisoftware.HebrewCalendar
       };
 
 
-    static public readonly NullSafeOfStringDictionary<Language> DatesDiffNoticeTitle
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary DatesDiffNoticeTitle
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Dates difference notice",
         [Languages.FR] = "Notice de différence de dates"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> DatesDiffNotice
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary DatesDiffNotice
+      = new TranslationsDictionary
       {
         [Languages.EN] = "The values shown include the current periods." + Globals.NL2 +
                          "The annual solar period begins on January 1." + Globals.NL +
@@ -132,15 +132,15 @@ namespace Ordisoftware.HebrewCalendar
                          "Concernant les jours lunaires, la lune saute régulièrement un jour solaire qui se trouve donc être à cheval entre deux jours lunaires, comme par exemple le 10/08/2020 qui n'est pas compté car il n'y a pas de lever de la lune ce jour solaire-là."
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> NoticeMoonMonthsTitle
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary NoticeMoonMonthsTitle
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Moon months notice",
         [Languages.FR] = "Notice des mois lunaires"
       };
 
-    static public readonly NullSafeOfStringDictionary<Language> NoticeMoonMonths
-      = new NullSafeOfStringDictionary<Language>
+    static public readonly TranslationsDictionary NoticeMoonMonths
+      = new TranslationsDictionary
       {
         [Languages.EN] = "Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Globals.NL +
                          "Vert = air = action | A" + Globals.NL +

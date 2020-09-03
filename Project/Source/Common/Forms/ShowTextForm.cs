@@ -46,8 +46,8 @@ namespace Ordisoftware.HebrewCommon
       return form;
     }
 
-    static public ShowTextForm Create(NullSafeOfStringDictionary<Language>title,
-                                      NullSafeOfStringDictionary<Language>text,
+    static public ShowTextForm Create(TranslationsDictionary title,
+                                      TranslationsDictionary text,
                                       int width = 400,
                                       int height = 300,
                                       bool sizeable = true,
@@ -62,8 +62,8 @@ namespace Ordisoftware.HebrewCommon
     }
 
     private bool HideOnClose;
-    private NullSafeOfStringDictionary<Language>LocalizedTitle;
-    private NullSafeOfStringDictionary<Language>LocalizedText;
+    private TranslationsDictionary LocalizedTitle;
+    private TranslationsDictionary LocalizedText;
 
     protected ShowTextForm()
     {

@@ -32,7 +32,7 @@ namespace Ordisoftware.HebrewCommon
     /// Get the string translation.
     /// </summary>
     /// <param name="values">The dictionary containing lang>translation.</param>
-    static public string GetLang(this NullSafeOfStringDictionary<Language> values)
+    static public string GetLang(this TranslationsDictionary values)
     {
       return values?[Languages.Current] ?? ERR;
     }
@@ -42,7 +42,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <param name="values">The dictionary containing lang>translation.</param>
     /// <param name="parameters">Parameters for the translated string.</param>
-    static public string GetLang(this NullSafeOfStringDictionary<Language> values, params object[] parameters)
+    static public string GetLang(this TranslationsDictionary values, params object[] parameters)
     {
       return string.Format(values?.GetLang(), parameters) ?? ERR + " " + string.Join(",", parameters);
     }
@@ -53,7 +53,7 @@ namespace Ordisoftware.HebrewCommon
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing value>lang>translation.</param>
     /// <param name="value">The value to translate.</param>
-    static public string GetLang<T>(this NullSafeDictionary<T, NullSafeOfStringDictionary<Language>> values, T value)
+    static public string GetLang<T>(this NullSafeDictionary<T, TranslationsDictionary> values, T value)
     {
       return values?[value]?[Languages.Current] ?? ERR;
     }

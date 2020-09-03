@@ -30,10 +30,10 @@ namespace Ordisoftware.HebrewCalendar
     static private readonly string AskToGenerateBigCalendarFR
       = "Générer un calendrier pour plus de {0} ({1}) ans n'est pas recommandé et peut causer ";
 
-    static public readonly NullSafeList<NullSafeOfStringDictionary<Language>> AskToGenerateBigCalendar
-      = new NullSafeList<NullSafeOfStringDictionary<Language>>
+    static public readonly NullSafeList<TranslationsDictionary> AskToGenerateBigCalendar
+      = new NullSafeList<TranslationsDictionary>
       {
-        new NullSafeOfStringDictionary<Language>
+        new TranslationsDictionary
         {
           [Languages.EN] = AskToGenerateBigCalendarEN + "a slight slowdown." + Globals.NL2 +
                            Localizer.AskToContinue[Languages.EN],
@@ -41,7 +41,7 @@ namespace Ordisoftware.HebrewCalendar
           [Languages.FR] = AskToGenerateBigCalendarFR + "un léger ralentissement." + Globals.NL2 +
                            Localizer.AskToContinue[Languages.FR]
         },
-        new NullSafeOfStringDictionary<Language>
+        new TranslationsDictionary
         {
           [Languages.EN] = AskToGenerateBigCalendarEN + "a noticeable slowdown." + Globals.NL2 +
                            Localizer.AskToContinue[Languages.EN],
@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCalendar
           [Languages.FR] = AskToGenerateBigCalendarFR + "un ralentissement notable." + Globals.NL2 +
                            Localizer.AskToContinue[Languages.FR]
         },
-        new NullSafeOfStringDictionary<Language>
+        new TranslationsDictionary
         {
           [Languages.EN] = AskToGenerateBigCalendarEN + "a significant slowdown." + Globals.NL2 +
                            "Do not use this value for a daily usage." + Globals.NL2 +
@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
                            "N'utilisez pas cette valeur pour un usage quotidien." + Globals.NL2 +
                            Localizer.AskToContinue[Languages.FR]
         },
-        new NullSafeOfStringDictionary<Language>
+        new TranslationsDictionary
         {
           [Languages.EN] = AskToGenerateBigCalendarEN + "a considerable slowdown." + Globals.NL2 +
                            "Use this value only for occasional searches." + Globals.NL2 +
@@ -69,7 +69,7 @@ namespace Ordisoftware.HebrewCalendar
                            "N'utilisez cette valeur que pour des recherches ponctuelles." + Globals.NL2 +
                            Localizer.AskToContinue[Languages.FR]
         },
-        new NullSafeOfStringDictionary<Language>
+        new TranslationsDictionary
         {
           [Languages.EN] = AskToGenerateBigCalendarEN + "a serious slowdown." + Globals.NL2 +
                            "Use this value only with a powerful computer." + Globals.NL2 +
