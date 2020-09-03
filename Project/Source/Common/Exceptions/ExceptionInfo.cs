@@ -150,9 +150,9 @@ namespace Ordisoftware.HebrewCommon
       {
         var frame = new StackFrame(skip, true);
         var method = frame.GetMethod();
-        result = $"{method.DeclaringType.FullName}.{method.Name}" +
-                 $" ({Path.GetFileName(frame.GetFileName())}" +
-                 $" line {frame.GetFileLineNumber()})";
+        result = $"{method.DeclaringType.FullName}.{method.Name}"
+               + $" ({Path.GetFileName(frame.GetFileName())}"
+               + $" line {frame.GetFileLineNumber()})";
       });
       return result.ToString(); ;
     }
@@ -224,35 +224,35 @@ namespace Ordisoftware.HebrewCommon
     private void InitializeTexts()
     {
       ThreadName = Thread.CurrentThread.Name.IsNullOrEmpty()
-                 ? Thread.CurrentThread.ManagedThreadId == 1
-                   ? "Main"
-                   : "ID = " + Thread.CurrentThread.ManagedThreadId.ToString()
-                 : Thread.CurrentThread.Name;
+                   ? Thread.CurrentThread.ManagedThreadId == 1
+                     ? "Main"
+                     : "ID = " + Thread.CurrentThread.ManagedThreadId.ToString()
+                   : Thread.CurrentThread.Name;
 
       if ( !SystemManager.TryCatch(() => { Message = Instance.Message; }) )
         Message = "Relayed Exception.";
 
-      FullText = "Exception: " + TypeText + Globals.NL +
-                 "Module: " + ModuleName + Globals.NL +
-                 "Thread: " + ThreadName + Globals.NL +
-                 "Message: " + Globals.NL +
-                 Message;
+      FullText = "Exception: " + TypeText + Globals.NL
+               + "Module: " + ModuleName + Globals.NL
+               + "Thread: " + ThreadName + Globals.NL
+               + "Message: " + Globals.NL
+               + Message;
 
       if ( DebugManager.UseStack )
-        FullText += Globals.NL +
-                    FullText + Globals.NL +
-                    "StackList: " + Globals.NL +
-                    StackList.AsMultiline();
+        FullText += Globals.NL
+                  + FullText + Globals.NL
+                  + "StackList: " + Globals.NL
+                  + StackList.AsMultiline();
 
-      ReadableText = Message + Globals.NL2 +
-                     "  Type: " + TypeText + Globals.NL +
-                     "  Module: " + ModuleName + Globals.NL +
-                     "  Thread: " + ThreadName;
+      ReadableText = Message + Globals.NL2
+                   + "  Type: " + TypeText + Globals.NL
+                   + "  Module: " + ModuleName + Globals.NL
+                   + "  Thread: " + ThreadName;
       if ( DebugManager.UseStack )
-        ReadableText += Globals.NL +
-                        "  File: " + FileName + Globals.NL +
-                        "  Method: " + Namespace + "." + ClassName + "." + MethodName + Globals.NL +
-                        "  Line: " + LineNumber;
+        ReadableText += Globals.NL
+                      + "  File: " + FileName + Globals.NL
+                      + "  Method: " + Namespace + "." + ClassName + "." + MethodName + Globals.NL
+                      + "  Line: " + LineNumber;
 
       SingleLineText = ReadableText
         .Replace(Globals.NL2, " | ")
@@ -274,10 +274,10 @@ namespace Ordisoftware.HebrewCommon
       SystemManager.TryCatch(() =>
       {
         Emitter = Sender is ExceptionForm
-          ? ( (ExceptionForm)Sender ).Text
-          : Globals.MainForm != null
-            ? Globals.MainForm.Text
-            : ex.Source;
+                  ? ( (ExceptionForm)Sender ).Text
+                  : Globals.MainForm != null
+                    ? Globals.MainForm.Text
+                    : ex.Source;
         ExtractInherits();
         try
         {

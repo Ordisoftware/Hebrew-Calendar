@@ -84,8 +84,8 @@ namespace Ordisoftware.HebrewCommon
     static public string[] GetLang(this Dictionary<string, string[]> values)
     {
       return values != null && values.ContainsKey(Languages.Current)
-           ? values[Languages.Current]
-           : new string[0];
+             ? values[Languages.Current]
+             : new string[0];
     }
 
     /// <summary>
@@ -97,8 +97,8 @@ namespace Ordisoftware.HebrewCommon
     static public string GetLang<T>(this NullSafeDictionary<string, Dictionary<T, string>> values, T value)
     {
       return values != null && values[Languages.Current] != null && values[Languages.Current].ContainsKey(value)
-           ? values[Languages.Current][value]
-           : ERR;
+             ? values[Languages.Current][value]
+             : ERR;
     }
 
     /// <summary>
