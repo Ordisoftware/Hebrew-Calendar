@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewCalendar
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       DebugManager.Enabled = Settings.DebuggerEnabled;
-      DebugManager.UseExceptionForm = true;
+      DebugManager.DeaultShowExceptionMode = ShowExceptionMode.Advanced;
       string lang = Settings.Language;
       Shell.CheckCommandLineArguments(args, ref lang);
       Settings.Language = lang;

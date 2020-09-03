@@ -21,6 +21,13 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
+  public enum ShowExceptionMode
+  {
+    None,
+    Simple,
+    Advanced
+  }
+
   /// <summary>
   /// Delegate for handling before show exception events.
   /// </summary>
@@ -111,14 +118,15 @@ namespace Ordisoftware.HebrewCommon
     static public bool AutoHideStack { get; set; } = false;
 
     /// <summary>
-    /// Indicate if a specialized form is used to show Exception.
-    /// </summary>
-    static public bool UseExceptionForm { get; set; } = true;
-
-    /// <summary>
     /// Indicate if Exception form show a terminate button.
     /// </summary>
     static public bool UserCanTerminate { get; set; } = true;
+
+    /// <summary>
+    /// Indicate if a specialized form is used to show Exception.
+    /// </summary>
+    static public ShowExceptionMode DeaultShowExceptionMode { get; set; }
+      = ShowExceptionMode.Advanced;
 
     /// <summary>
     /// Indicate the trace listener.
@@ -225,15 +233,24 @@ namespace Ordisoftware.HebrewCommon
     static private void Handle(object sender, Exception ex)
     {
       if ( ex is AbortException ) return;
-      Process(sender, ex, true);
+      Process(sender, ex);
     }
 
     /// <summary>
     /// Manage an axception.
     /// </summary>
     /// <param name="ex">The Exception to act on.</param>
-    /// <param name="show">true to show a message or false to hide it.</param>
-    static public void Manage(this Exception ex, bool show = true)
+    static public void Manage(this Exception ex)
+    {
+      Manage(ex, null, DeaultShowExceptionMode);
+    }
+
+    /// <summary>
+    /// Manage an axception.
+    /// </summary>
+    /// <param name="ex">The Exception to act on.</param>
+    /// <param name="show">The show mode.</param>
+    static public void Manage(this Exception ex, ShowExceptionMode show)
     {
       Manage(ex, null, show);
     }
@@ -243,8 +260,18 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <param name="ex">The Exception to act on.</param>
     /// <param name="sender">Source of the event.</param>
-    /// <param name="show">true to show a message or false to hide it.</param>
-    static public void Manage(this Exception ex, object sender, bool show = true)
+    static public void Manage(this Exception ex, object sender)
+    {
+      Manage(ex, sender, DeaultShowExceptionMode);
+    }
+
+    /// <summary>
+    /// Manage an axception.
+    /// </summary>
+    /// <param name="ex">The Exception to act on.</param>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="show">The show mode.</param>
+    static public void Manage(this Exception ex, object sender, ShowExceptionMode show)
     {
       if ( !( ex is AbortException ) )
       {
@@ -260,8 +287,18 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
-    /// <param name="show">true to doshow.</param>
-    static private void Process(object sender, Exception ex, bool show)
+    static private void Process(object sender, Exception ex)
+    {
+      Process(sender, ex, DeaultShowExceptionMode);
+    }
+
+    /// <summary>
+    /// Process an exception.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="ex">The ex.</param>
+    /// <param name="show">The show mode.</param>
+    static private void Process(object sender, Exception ex, ShowExceptionMode show)
     {
       bool process = true;
       var einfo = new ExceptionInfo(sender, ex);
@@ -277,13 +314,25 @@ namespace Ordisoftware.HebrewCommon
         }
         catch ( Exception err )
         {
-          if ( show )
+          if ( show != ShowExceptionMode.None )
             DisplayManager.ShowError("Error on BeforeShowException :" + Globals.NL2 + err.Message);
         }
       if ( process )
       {
         Trace(TraceEvent.Exception, einfo.FullText);
-        if ( show ) ShowAdvanced(einfo);
+        switch ( show )
+        {
+          case ShowExceptionMode.None:
+            break;
+          case ShowExceptionMode.Simple:
+            ShowSimple(einfo);
+            break;
+          case ShowExceptionMode.Advanced:
+            ShowAdvanced(einfo);
+            break;
+          default:
+            throw new NotImplementedExceptionEx(show.ToStringFull());
+        }
       }
       if ( AfterShowException != null )
         try
@@ -292,7 +341,7 @@ namespace Ordisoftware.HebrewCommon
         }
         catch ( Exception err )
         {
-          if ( show )
+          if ( show != ShowExceptionMode.None )
             DisplayManager.ShowError("Error on AfterShowException :" + Globals.NL2 + err.Message);
         }
     }
@@ -309,7 +358,7 @@ namespace Ordisoftware.HebrewCommon
         if ( SubstituteShowException != null )
           SubstituteShowException(einfo.Sender, einfo);
         else
-        if ( !UseExceptionForm || !SystemHelper.TryCatch(() => ExceptionForm.Run(einfo)) )
+        if ( !SystemHelper.TryCatch(() => ExceptionForm.Run(einfo)) )
           ShowSimple(einfo);
       }
       catch ( Exception ex )

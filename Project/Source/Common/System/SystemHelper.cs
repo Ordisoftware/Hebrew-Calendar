@@ -44,11 +44,12 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void CreateIPCServer(AsyncCallback duplicated)
     {
-      IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
-                                            PipeDirection.InOut,
-                                            1,
-                                            PipeTransmissionMode.Message,
-                                            PipeOptions.Asynchronous);
+      IPCServer = new NamedPipeServerStream(
+        Globals.AssemblyGUID,
+        PipeDirection.InOut,
+        1,
+        PipeTransmissionMode.Message,
+        PipeOptions.Asynchronous);
       IPCServer.BeginWaitForConnection(duplicated, IPCServer);
     }
 
@@ -174,8 +175,7 @@ namespace Ordisoftware.HebrewCommon
     static public long GetFileSize(string filename)
     {
       long result = -1;
-      if ( !TryCatch(() => { if ( File.Exists(filename) ) result = new FileInfo(filename).Length; }) )
-        result = -1;
+      TryCatch(() => { if ( File.Exists(filename) ) result = new FileInfo(filename).Length; });
       return result;
     }
 

@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Start a process
+    /// Start a process.
     /// </summary>
     /// <param name="filename">The filename.</param>
     /// <param name="arguments">The comamnd line arguments.</param>

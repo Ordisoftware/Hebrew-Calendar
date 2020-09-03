@@ -171,7 +171,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate generated executable bin directory.
     /// </summary>
-    static public string BinDirectory { get; set; } 
+    static public string BinDirectory { get; set; }
       = "Bin";
 
     /// <summary>
@@ -219,12 +219,11 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the root folder path of the application.
     /// </summary>
     static public string RootFolderPath
-      => Directory.GetParent
-         (
-           Path.GetDirectoryName(Application.ExecutablePath
-                                 .Replace(DebugDirectory, BinDirectory)
-                                 .Replace(ReleaseDirectory, BinDirectory))
-         ).FullName;
+      => Directory.GetParent(
+           Path.GetDirectoryName(
+             Application.ExecutablePath
+             .Replace(DebugDirectory, BinDirectory)
+             .Replace(ReleaseDirectory, BinDirectory))).FullName;
 
     /// <summary>
     /// Indicate the filename of the application's icon.
@@ -344,9 +343,11 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate a path for in a special folder.
     /// </summary>
     static private string CreateSpecialFolderPath(Environment.SpecialFolder folder, string directory)
-      => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(folder),
-                                                AssemblyCompany,
-                                                directory)).FullName;
+      => Directory.CreateDirectory(
+         Path.Combine(
+           Environment.GetFolderPath(folder),
+           AssemblyCompany,
+           directory)).FullName;
 
     /// <summary>
     /// Indicate the user documents folder path.
@@ -417,7 +418,6 @@ namespace Ordisoftware.HebrewCommon
         return _WebLinksProviders;
       }
     }
-
     static private List<OnlineProviders> _WebLinksProviders;
 
     /// <summary>
@@ -427,23 +427,11 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( IsDesignTime ) return;
       var folder = DataFileFolder.ApplicationDocuments;
-      try
-      {
-        OnlineWordProviders = new OnlineProviders(OnlineWordProvidersFileName, true, IsDev, folder);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      try
-      {
-        OnlineBibleProviders = new OnlineProviders(OnlineBibleProvidersFileName, true, IsDev, folder);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      OnlineProviders create(string filename) => new OnlineProviders(filename, true, IsDev, folder);
+      SystemHelper.TryCatchManage(() => OnlineWordProviders = create(OnlineWordProvidersFileName));
+      SystemHelper.TryCatchManage(() => OnlineBibleProviders = create(OnlineBibleProvidersFileName));
     }
+
   }
 
 }
