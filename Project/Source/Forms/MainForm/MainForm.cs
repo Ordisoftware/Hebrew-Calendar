@@ -588,7 +588,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      SystemManager.Run(Globals.HelpFilename);
+      SystemManager.RunShell(Globals.HelpFilename);
     }
 
     /// <summary>
@@ -725,7 +725,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionOpenCalculator_Click(object sender, EventArgs e)
     {
-      SystemManager.Run("calc.exe");
+      SystemManager.RunShell("calc.exe");
     }
 
     /// <summary>
@@ -735,7 +735,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionOpenSystemDateAndTime_Click(object sender, EventArgs e)
     {
-      SystemManager.Run("timedate.cpl");
+      SystemManager.RunShell("timedate.cpl");
     }
 
     /// <summary>
@@ -862,7 +862,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
       if ( Settings.AutoOpenExportFolder )
-        SystemManager.Run(Path.GetDirectoryName(SaveFileDialog.FileName));
+        SystemManager.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
 
     /// <summary>
@@ -877,7 +877,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
       if ( Settings.AutoOpenExportFolder )
-        SystemManager.Run(Path.GetDirectoryName(SaveCSVDialog.FileName));
+        SystemManager.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
     }
 
     /// <summary>

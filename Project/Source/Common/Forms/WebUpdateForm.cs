@@ -37,7 +37,7 @@ namespace Ordisoftware.HebrewCommon
         if ( form.ShowDialog() != DialogResult.OK ) return WebUpdateSelection.None;
         if ( form.SelectInstall.Checked ) return WebUpdateSelection.Install;
         if ( form.SelectDownload.Checked ) return WebUpdateSelection.Download;
-        throw new NotImplementedExceptionEx($"User action in {form.GetType().Name}.{nameof(Run)}");
+        throw new NotImplementedExceptionEx($"User selection in {form.GetType().Name}.{nameof(Run)}");
       }
     }
 

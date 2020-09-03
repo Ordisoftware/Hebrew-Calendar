@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     /// <param name="filename">The filename.</param>
     /// <param name="arguments">The comamnd line arguments.</param>
-    static public Process Run(string filename, string arguments = "")
+    static public Process RunShell(string filename, string arguments = "")
     {
       var process = new Process();
       try
@@ -89,7 +89,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="link">The mail address.</param>
     static public void OpenMailLink(string link)
     {
-      Run(MakeMailLink(link));
+      RunShell(MakeMailLink(link));
     }
 
     /// <summary>
@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="link">The link.</param>
     static public void OpenWebLink(string link)
     {
-      Run(MakeWebLink(link));
+      RunShell(MakeWebLink(link));
     }
 
     /// <summary>
