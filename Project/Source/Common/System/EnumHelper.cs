@@ -21,7 +21,7 @@ namespace Ordisoftware.HebrewCommon
   // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
   static public class EnumHelper
   {
-    static public T Next<T>(this T value) where T : struct
+    static public T Next<T>(this T value) where T : Enum
     {
       return Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
                  .SkipWhile(e => !value.Equals(e))
@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewCommon
                  .First();
     }
 
-    static public T Previous<T>(this T value) where T : struct
+    static public T Previous<T>(this T value) where T : Enum
     {
       return Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
                  .Reverse()
@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewCommon
                  .First();
     }
 
-    static public string ToStringFull<T>(this T value) where T : struct
+    static public string ToStringFull<T>(this T value) where T : Enum
     {
       return value.GetType().Name + "." + value.ToString();
     }

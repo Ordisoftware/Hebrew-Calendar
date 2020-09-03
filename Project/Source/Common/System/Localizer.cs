@@ -95,6 +95,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="values">The dictionary containing lang>value>translation.</param>
     /// <param name="value">The value to translate.</param>
     static public string GetLang<T>(this NullSafeDictionary<string, Dictionary<T, string>> values, T value)
+      where T : Enum
     {
       return values != null && values[Languages.Current] != null && values[Languages.Current].ContainsKey(value)
              ? values[Languages.Current][value]
