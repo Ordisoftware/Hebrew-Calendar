@@ -26,11 +26,13 @@ namespace Ordisoftware.HebrewCommon
   public class SystemStatistics
   {
 
-    static public SystemStatistics Instance = new SystemStatistics();
-
-    static private Process Process = Process.GetCurrentProcess();
-
     static private PerformanceCounter PerformanceCounter;
+
+    static private Process Process
+      = Process.GetCurrentProcess();
+
+    static public SystemStatistics Instance
+      = new SystemStatistics();
 
     public string Processor
       => SystemManager.Processor;

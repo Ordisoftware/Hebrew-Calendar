@@ -228,7 +228,7 @@
     <Compile Include="Source\Common\Forms\WebUpdateForm.Designer.cs">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Managers\Chronometer.cs" />
+    <Compile Include="Source\Common\System\Chronometer.cs" />
     <Compile Include="Source\Common\Managers\DebugManager.cs" />
     <Compile Include="Source\Common\Managers\DebugManager.Delegates.cs" />
     <Compile Include="Source\Common\Managers\DebugManager.Enums.cs" />

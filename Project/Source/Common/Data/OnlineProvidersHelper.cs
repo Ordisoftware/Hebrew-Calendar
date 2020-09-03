@@ -160,7 +160,7 @@ namespace Ordisoftware.HebrewCommon
               SystemManager.OpenWebLink(url);
             }));
         }
-      if ( Globals.IsDev )
+      if ( menuRoot.DropDownItems.Count > 0 && Globals.WebLinksProviders[0].Configurable )
       {
         menuRoot.DropDownItems.Add(new ToolStripSeparator());
         menuRoot.DropDownItems.Add(CreateConfigureMenuItem((sender, e) =>

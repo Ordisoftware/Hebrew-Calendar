@@ -16,7 +16,6 @@
 using System;
 using System.Linq;
 using System.Diagnostics;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Ordisoftware.HebrewCommon
