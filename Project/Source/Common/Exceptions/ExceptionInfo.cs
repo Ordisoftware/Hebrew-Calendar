@@ -146,14 +146,17 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( !DebugManager.UseStack ) return "";
       string result = "";
-      SystemManager.TryCatch(() =>
+      try
       {
         var frame = new StackFrame(skip, true);
         var method = frame.GetMethod();
         result = $"{method.DeclaringType.FullName}.{method.Name}"
                + $" ({Path.GetFileName(frame.GetFileName())}"
                + $" line {frame.GetFileLineNumber()})";
-      });
+      }
+      catch
+      {
+      }
       return result.ToString(); ;
     }
 
@@ -271,7 +274,7 @@ namespace Ordisoftware.HebrewCommon
       Sender = sender;
       Instance = ex;
       TargetSite = ex.TargetSite;
-      SystemManager.TryCatch(() =>
+      try
       {
         Emitter = Sender is ExceptionForm
                   ? ( (ExceptionForm)Sender ).Text
@@ -289,7 +292,10 @@ namespace Ordisoftware.HebrewCommon
         }
         if ( ex.InnerException != null )
           InnerInfo = new ExceptionInfo(sender, ex.InnerException);
-      });
+      }
+      catch
+      {
+      }
     }
 
   }
