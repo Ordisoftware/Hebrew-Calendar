@@ -47,13 +47,12 @@ namespace Ordisoftware.HebrewCommon
 
       private StreamWriter Writer;
 
-      public Listener(
-        string filePath,
-        string fileCode,
-        string fileExtension,
-        TraceFileRollOverMode mode,
-        int keepCount,
-        TraceFileChanged fileChanged = null)
+      public Listener(string filePath,
+                      string fileCode,
+                      string fileExtension,
+                      TraceFileRollOverMode mode,
+                      int keepCount,
+                      TraceFileChanged fileChanged = null)
       {
         Directory.CreateDirectory(filePath);
         Path = filePath;

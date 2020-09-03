@@ -54,8 +54,8 @@ namespace Ordisoftware.HebrewCommon
     static public readonly NullSafeStringDictionary NextException
       = new NullSafeStringDictionary()
       {
-        { Languages.EN, "Next" },
-        { Languages.FR, "Suivante" }
+        [Languages.EN] = "Next",
+        [Languages.FR] = "Suivante"
       };
 
     /// <summary>

@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewCommon
       Close();
     }
 
-    public void AppendText(string text, bool scrollBottom = false)
+    public void AppendText(string text, bool scrollBottom = true)
     {
       TextBox.AppendText(text);
       if ( scrollBottom )

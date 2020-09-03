@@ -53,14 +53,14 @@ namespace Ordisoftware.HebrewCommon
       TimeSpan time = TimeSpan.FromMilliseconds(ms);
       var list = Localizer.MillisecondsFormatTemplates.GetLang();
       int index = time.Days == 0 && time.Hours == 0 && time.Minutes == 0 && time.Seconds == 0
-                ? 0
-                : time.Days == 0 && time.Hours == 0 && time.Minutes == 0
-                  ? 1
-                  : time.Days == 0 && time.Hours == 0
-                    ? 2
-                    : time.Days == 0
-                      ? 3
-                      : 4;
+                  ? 0
+                  : time.Days == 0 && time.Hours == 0 && time.Minutes == 0
+                    ? 1
+                    : time.Days == 0 && time.Hours == 0
+                      ? 2
+                      : time.Days == 0
+                        ? 3
+                        : 4;
       string result = list[index];
       if ( index > 0 && !excludems ) result += " " + list[0];
       if ( index == 0 && excludems ) result = list[1];

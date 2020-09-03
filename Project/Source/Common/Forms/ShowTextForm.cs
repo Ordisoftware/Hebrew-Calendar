@@ -20,15 +20,14 @@ namespace Ordisoftware.HebrewCommon
   public partial class ShowTextForm : Form
   {
 
-    static public ShowTextForm Create(
-      string title, 
-      string text,
-      int width = 400, 
-      int height = 300,
-      bool sizeable = true,
-      bool wrap = true,
-      bool justify = true,
-      bool hideOnClose = false)
+    static public ShowTextForm Create(string title,
+                                      string text,
+                                      int width = 400,
+                                      int height = 300,
+                                      bool sizeable = true,
+                                      bool wrap = true,
+                                      bool justify = true,
+                                      bool hideOnClose = false)
     {
       for ( int index = Application.OpenForms.Count - 1; index >= 0; index-- )
         if ( Application.OpenForms[index] is ShowTextForm )
@@ -47,15 +46,14 @@ namespace Ordisoftware.HebrewCommon
       return form;
     }
 
-    static public ShowTextForm Create(
-      NullSafeStringDictionary title, 
-      NullSafeStringDictionary text,
-      int width = 400,
-      int height = 300,
-      bool sizeable = true,
-      bool wrap = true,
-      bool justify = true,
-      bool hideOnClose = false)
+    static public ShowTextForm Create(NullSafeStringDictionary title,
+                                      NullSafeStringDictionary text,
+                                      int width = 400,
+                                      int height = 300,
+                                      bool sizeable = true,
+                                      bool wrap = true,
+                                      bool justify = true,
+                                      bool hideOnClose = false)
     {
       var form = Create(title.GetLang(), text.GetLang(), width, height, sizeable, wrap, justify, hideOnClose);
       form.LocalizedTitle = title;

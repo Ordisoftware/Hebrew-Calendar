@@ -93,15 +93,13 @@ namespace Ordisoftware.HebrewCommon
         switch ( partsVersion.Length )
         {
           case 2:
-            version = new Version(
-              Convert.ToInt32(partsVersion[0]),
-              Convert.ToInt32(partsVersion[1]));
+            version = new Version(Convert.ToInt32(partsVersion[0]),
+                                  Convert.ToInt32(partsVersion[1]));
             break;
           case 3:
-            version = new Version(
-              Convert.ToInt32(partsVersion[0]),
-              Convert.ToInt32(partsVersion[1]),
-              Convert.ToInt32(partsVersion[2]));
+            version = new Version(Convert.ToInt32(partsVersion[0]),
+                                  Convert.ToInt32(partsVersion[1]),
+                                  Convert.ToInt32(partsVersion[2]));
             break;
           default:
             throw new ArgumentException(Localizer.CheckUpdateFileError.GetLang(content));

@@ -60,10 +60,9 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="text">The text.</param>
     /// <param name="buttons">The buttons.</param>
     /// <param name="icon">The icon.</param>
-    static public DialogResult Show(
-      string text,
-      MessageBoxButtons buttons = MessageBoxButtons.OK,
-      MessageBoxIcon icon = MessageBoxIcon.None)
+    static public DialogResult Show(string text,
+                                    MessageBoxButtons buttons = MessageBoxButtons.OK,
+                                    MessageBoxIcon icon = MessageBoxIcon.None)
     {
       return Show(Title, text, buttons, icon);
     }
@@ -78,11 +77,10 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="text">The text.</param>
     /// <param name="buttons">The buttons.</param>
     /// <param name="icon">The icon.</param>
-    static public DialogResult Show(
-      string title,
-      string text,
-      MessageBoxButtons buttons = MessageBoxButtons.OK,
-      MessageBoxIcon icon = MessageBoxIcon.None)
+    static public DialogResult Show(string title,
+                                    string text,
+                                    MessageBoxButtons buttons = MessageBoxButtons.OK,
+                                    MessageBoxIcon icon = MessageBoxIcon.None)
     {
       DialogResult res = DialogResult.None;
       SystemManager.TryCatchManage(() => { res = ShowWinForm(title, text, buttons, icon); });
@@ -217,11 +215,10 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="text">The text.</param>
     /// <param name="buttons">The buttons.</param>
     /// <param name="icon">The icon.</param>
-    static private DialogResult ShowWinForm(
-      string title,
-      string text,
-      MessageBoxButtons buttons,
-      MessageBoxIcon icon)
+    static private DialogResult ShowWinForm(string title,
+                                            string text,
+                                            MessageBoxButtons buttons,
+                                            MessageBoxIcon icon)
     {
       return MessageBox.Show(text, title, buttons, icon);
     }

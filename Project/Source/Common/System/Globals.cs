@@ -224,11 +224,9 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the root folder path of the application.
     /// </summary>
     static public string RootFolderPath
-      => Directory.GetParent(
-           Path.GetDirectoryName(
-             Application.ExecutablePath
-             .Replace(DebugDirectory, BinDirectory)
-             .Replace(ReleaseDirectory, BinDirectory))).FullName;
+      => Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath
+                                                              .Replace(DebugDirectory, BinDirectory)
+                                                              .Replace(ReleaseDirectory, BinDirectory))).FullName;
 
     /// <summary>
     /// Indicate the filename of the application's icon.
@@ -348,11 +346,9 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate a path for in a special folder.
     /// </summary>
     static private string CreateSpecialFolderPath(Environment.SpecialFolder folder, string directory)
-      => Directory.CreateDirectory(
-         Path.Combine(
-           Environment.GetFolderPath(folder),
-           AssemblyCompany,
-           directory)).FullName;
+      => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(folder),
+                                                AssemblyCompany,
+                                                directory)).FullName;
 
     /// <summary>
     /// Indicate the user documents folder path.
