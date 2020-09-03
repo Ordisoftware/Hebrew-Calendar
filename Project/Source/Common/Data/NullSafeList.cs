@@ -54,7 +54,7 @@ namespace Ordisoftware.HebrewCommon
         if ( index < Count )
           base[index] = value;
         else
-          CreateOutOfRange(index, new T());
+          CreateOutOfRange(index, value);
       }
     }
     private void CheckIndex(int index)
@@ -62,6 +62,7 @@ namespace Ordisoftware.HebrewCommon
       if ( index < 0 )
         throw new IndexOutOfRangeException(Localizer.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
     }
+
     private void CreateOutOfRange(int index, T value)
     {
       Capacity = index + 1;

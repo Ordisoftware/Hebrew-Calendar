@@ -35,6 +35,24 @@ namespace Ordisoftware.HebrewCommon
     };
 
     /// <summary>
+    /// Indicate letters simple values.
+    /// </summary>
+    static public readonly int[] ValuesSimple =
+    {
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20,
+      30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400
+    };
+
+    /// <summary>
+    /// Indicate letters full values.
+    /// </summary>
+    static public readonly int[] ValuesFull =
+    {
+      111, 412, 83, 434, 6, 12, 67, 418, 419, 20, 100,
+      74, 90, 106, 120, 130, 81, 104, 186, 510, 360, 406
+    };
+
+    /// <summary>
     /// Indicate final letters disabled keyboard codes for hebrew font.
     /// </summary>
     static private readonly char[][] FinalDisable =
@@ -56,24 +74,6 @@ namespace Ordisoftware.HebrewCommon
       new char[] { 'n', ']' },
       new char[] { 'p', '[' },
       new char[] { 'j', '/' }
-    };
-
-    /// <summary>
-    /// Indicate letters simple values.
-    /// </summary>
-    static public readonly int[] ValuesSimple =
-    {
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20,
-      30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400
-    };
-
-    /// <summary>
-    /// Indicate letters full values.
-    /// </summary>
-    static public readonly int[] ValuesFull =
-    {
-      111, 412, 83, 434, 6, 12, 67, 418, 419, 20, 100,
-      74, 90, 106, 120, 130, 81, 104, 186, 510, 360, 406
     };
 
     /// <summary>
@@ -100,7 +100,6 @@ namespace Ordisoftware.HebrewCommon
     /// Convert all final letters to non final.
     /// </summary>
     /// <param name="str">The sentence having some words.</param>
-    /// <returns></returns>
     static public string UnFinalAll(string str)
     {
       if ( string.IsNullOrEmpty(str) ) return "";
