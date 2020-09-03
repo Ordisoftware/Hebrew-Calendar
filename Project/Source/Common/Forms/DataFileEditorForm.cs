@@ -94,7 +94,7 @@ namespace Ordisoftware.HebrewCommon
     private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(Localizer.AskToLoadInstalledData.GetLang()) ) return;
-      string filename = Localizer.EmptySlot.GetLang();
+      string filename = Localizer.UndefinedSlot.GetLang();
       foreach ( TabPage page in TabControl.TabPages )
         try
         {
@@ -111,7 +111,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void ActionOK_Click(object sender, EventArgs e)
     {
-      string filename = Localizer.EmptySlot.GetLang();
+      string filename = Localizer.UndefinedSlot.GetLang();
       foreach ( TabPage page in TabControl.TabPages )
         try
         {

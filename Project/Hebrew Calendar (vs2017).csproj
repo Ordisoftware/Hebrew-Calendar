@@ -133,7 +133,7 @@
     <Compile Include="Source\Common\Core\DebugManager.Trace.cs" />
     <Compile Include="Source\Common\Core\NotImplementedExceptionEx.cs" />
     <Compile Include="Source\Common\Core\RollOverTextWriterTraceListener.cs" />
-    <Compile Include="Source\Common\Core\SQLiteException.cs" />
+    <Compile Include="Source\Common\Data\SQLiteException.cs" />
     <Compile Include="Source\Common\Core\DebugManager.cs" />
     <Compile Include="Source\Common\Core\TraceEvent.cs" />
     <Compile Include="Source\Common\Data\NullSafeStringList.cs" />
@@ -162,6 +162,7 @@
     </Compile>
     <Compile Include="Source\Common\System\Globals.Assembly.cs" />
     <Compile Include="Source\Common\System\Languages.cs" />
+    <Compile Include="Source\Common\System\StringHelper.cs" />
     <Compile Include="Source\Common\System\SystemHelper.OS.cs" />
     <Compile Include="Source\Common\System\SystemHelper.Format.cs" />
     <Compile Include="Source\Common\UI\ToolStripMenuItemHelper.cs" />

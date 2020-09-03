@@ -83,7 +83,7 @@ namespace Ordisoftware.HebrewCommon
     static private Version GetVersion(WebClient client)
     {
       string content = client.DownloadString(Globals.CheckUpdateURL);
-      string[] lines = content.Split(StringSplitOptions.RemoveEmptyEntries);
+      string[] lines = content.SplitNoEmptyLines();
       LoadingForm.Instance.DoProgress();
       if ( lines.Length == 0 ) throw new WebException(Localizer.CheckUpdateFileError.GetLang());
       string[] partsVersion = lines[0].Split('.');
@@ -154,7 +154,7 @@ namespace Ordisoftware.HebrewCommon
       if ( ex != null ) throw ex;
       Shell.Run(tempfile, "/SP- /SILENT");
       Globals.IsExiting = true;
-      Application.Exit();
+      SystemHelper.Exit();
       return true;
       void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
       {

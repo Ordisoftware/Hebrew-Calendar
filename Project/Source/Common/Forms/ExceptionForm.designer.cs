@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewCommon
       // TextMessage
       // 
       resources.ApplyResources(this.TextMessage, "TextMessage");
-      this.TextMessage.BackColor = System.Drawing.SystemColors.Info;
+      this.TextMessage.BackColor = System.Drawing.SystemColors.Window;
       this.TextMessage.Name = "TextMessage";
       this.TextMessage.ReadOnly = true;
       this.TextMessage.TabStop = false;
@@ -93,7 +93,7 @@ namespace Ordisoftware.HebrewCommon
       // TextStack
       // 
       resources.ApplyResources(this.TextStack, "TextStack");
-      this.TextStack.BackColor = System.Drawing.SystemColors.Info;
+      this.TextStack.BackColor = System.Drawing.SystemColors.Window;
       this.TextStack.Name = "TextStack";
       this.TextStack.ReadOnly = true;
       this.TextStack.TabStop = false;
@@ -106,7 +106,7 @@ namespace Ordisoftware.HebrewCommon
       // TextException
       // 
       resources.ApplyResources(this.TextException, "TextException");
-      this.TextException.BackColor = System.Drawing.SystemColors.Info;
+      this.TextException.BackColor = System.Drawing.SystemColors.Window;
       this.TextException.Name = "TextException";
       this.TextException.ReadOnly = true;
       this.TextException.TabStop = false;

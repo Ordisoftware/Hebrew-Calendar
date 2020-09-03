@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public string FormatBytesSize(this long bytes)
     {
-      return bytes >= 0 ? FormatBytesSize((ulong)bytes) : Localizer.EmptySlot.GetLang();
+      return bytes >= 0 ? FormatBytesSize((ulong)bytes) : Localizer.UndefinedSlot.GetLang();
     }
 
     /// <summary>

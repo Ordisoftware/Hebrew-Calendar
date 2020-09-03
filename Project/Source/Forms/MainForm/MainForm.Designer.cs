@@ -177,6 +177,7 @@
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
+      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -953,6 +954,7 @@
             this.toolStripSeparator10,
             this.ActionViewLog,
             this.ActionViewStats,
+            this.toolStripSeparator11,
             this.ActionVacuumAtNextStartup});
       resources.ApplyResources(this.ActionTools, "ActionTools");
       this.ActionTools.Name = "ActionTools";
@@ -1347,6 +1349,11 @@
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
+      // toolStripSeparator11
+      // 
+      this.toolStripSeparator11.Name = "toolStripSeparator11";
+      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1537,6 +1544,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewStats;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewLog;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
   }
 }
 

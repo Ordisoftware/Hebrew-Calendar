@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewCommon
     System,
 
     /// <summary>
-    /// General message event. 
+    /// Message event. 
     /// </summary>
     Message,
 
@@ -50,12 +50,12 @@ namespace Ordisoftware.HebrewCommon
     Exception,
 
     /// <summary>
-    /// Enter function event. 
+    /// Enter method event. 
     /// </summary>
     Enter,
 
     /// <summary>
-    /// Leave function event. 
+    /// Leave method event. 
     /// </summary>
     Leave
 

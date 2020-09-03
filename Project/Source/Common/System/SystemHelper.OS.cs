@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCommon
           }
           catch
           {
-            _Processor = Localizer.EmptySlot.GetLang();
+            _Processor = Localizer.UndefinedSlot.GetLang();
           }
         return _Processor;
       }
@@ -76,7 +76,7 @@ namespace Ordisoftware.HebrewCommon
             var attributes = Assembly.GetExecutingAssembly().CustomAttributes;
             var result = attributes.FirstOrDefault(a => a.AttributeType == typeof(TargetFrameworkAttribute));
             return result == null
-                   ? ".NET Framework " + Localizer.EmptySlot.GetLang()
+                   ? ".NET Framework " + Localizer.UndefinedSlot.GetLang()
                    : result.NamedArguments[0].TypedValue.Value.ToString();
           });
           _Platform = $"{osName} {osType} {osVersion}{osRelease}{Globals.NL}{dotnet}{Globals.NL}CLR {clr}";
@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCommon
         string get(Func<string> func)
         {
           try { return func(); }
-          catch { return Localizer.EmptySlot.GetLang(); }
+          catch { return Localizer.UndefinedSlot.GetLang(); }
         }
       }
     }
@@ -99,7 +99,7 @@ namespace Ordisoftware.HebrewCommon
       get
       {
         object value = GetWin32OperatingSystemValue("FreePhysicalMemory");
-        return value != null ? ( (ulong)value * 1024 ).FormatBytesSize() : Localizer.EmptySlot.GetLang();
+        return value != null ? ( (ulong)value * 1024 ).FormatBytesSize() : Localizer.UndefinedSlot.GetLang();
       }
     }
 
@@ -115,7 +115,7 @@ namespace Ordisoftware.HebrewCommon
           object value = GetWin32OperatingSystemValue("TotalVisibleMemorySize");
           _TotalVisibleMemory = value != null
                               ? ( (ulong)value * 1024 ).FormatBytesSize()
-                              : Localizer.EmptySlot.GetLang();
+                              : Localizer.UndefinedSlot.GetLang();
         }
         return _TotalVisibleMemory;
       }

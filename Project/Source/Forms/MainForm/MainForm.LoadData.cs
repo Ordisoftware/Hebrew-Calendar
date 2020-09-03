@@ -106,7 +106,7 @@ namespace Ordisoftware.HebrewCalendar
         DisplayManager.ShowError(Localizer.ApplicationMustExit[Languages.FR] + Globals.NL2 +
                                  Localizer.ContactSupport[Languages.FR]);
         ex.Manage();
-        Environment.Exit(-1);
+        SystemHelper.Terminate();
       }
       finally
       {

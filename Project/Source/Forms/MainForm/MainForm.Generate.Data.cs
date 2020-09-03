@@ -114,7 +114,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       if ( GenerateErrors.Count != 0 )
       {
-        string errors = string.Join(Globals.NL, GenerateErrors);
+        string errors = GenerateErrors.AsMultiline();
         errors = Program.GPSText + Globals.NL2 + errors;
         var form = ShowTextForm.Create(Text, errors, 600, 400, true, false);
         form.TextBox.Font = new System.Drawing.Font("Courier new", 8);

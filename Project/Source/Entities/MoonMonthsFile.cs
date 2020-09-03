@@ -58,6 +58,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( line.StartsWith(";") )
             continue;
           var parts = line.Split(new char[] { '=' }, 2);
+          // TODO check length
           Items.Add(parts[1].Trim());
         }
       }

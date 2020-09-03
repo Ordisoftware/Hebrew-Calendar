@@ -66,7 +66,7 @@ namespace Ordisoftware.HebrewCalendar
       for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
       {
         var date = (DateTime)Program.Settings["DateBookmark" + index];
-        string s = date == DateTime.MinValue ? Localizer.EmptySlot.GetLang() : date.ToLongDateString();
+        string s = date == DateTime.MinValue ? Localizer.UndefinedSlot.GetLang() : date.ToLongDateString();
         var menuitem = MenuBookmarks.Items.Add(index.ToString("00") + ". " + s);
         menuitem.MouseUp += Bookmarks_MouseUp;
         menuitem.Tag = index;
@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( !menuitem.Text.EndsWith(")") )
           {
             if ( !DisplayManager.QueryYesNo(Localizer.AskToDeleteBookmark.GetLang()) ) return;
-            menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + Localizer.EmptySlot.GetLang();
+            menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + Localizer.UndefinedSlot.GetLang();
             Program.Settings["DateBookmark" + menuitem.Tag] = DateTime.MinValue;
             Program.Settings.Save();
           }

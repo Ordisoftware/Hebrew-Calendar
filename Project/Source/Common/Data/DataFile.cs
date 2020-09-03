@@ -110,8 +110,8 @@ namespace Ordisoftware.HebrewCommon
           string folder = Path.GetDirectoryName(Filename);
           if ( !Directory.Exists(folder) )
             Directory.CreateDirectory(folder);
-          string filename1 = Localizer.EmptySlot.GetLang();
-          string filename2 = Localizer.EmptySlot.GetLang();
+          string filename1 = Localizer.UndefinedSlot.GetLang();
+          string filename2 = Localizer.UndefinedSlot.GetLang();
           try
           {
             filename1 = FilenameDefault;
