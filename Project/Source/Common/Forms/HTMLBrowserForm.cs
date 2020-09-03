@@ -23,7 +23,7 @@ namespace Ordisoftware.HebrewCommon
   public partial class HTMLBrowserForm : Form
   {
 
-    private NullSafeStringDictionary Title;
+    private TranslationsDictionary Title;
 
     private string FilenameTemplate;
 
@@ -34,11 +34,10 @@ namespace Ordisoftware.HebrewCommon
       ActiveControl = WebBrowser;
     }
 
-    public HTMLBrowserForm(
-      NullSafeStringDictionary title,
-      string filenameTemplate,
-      string locationPropertyName,
-      string clientSizePropertyName) : this()
+    public HTMLBrowserForm(TranslationsDictionary title,
+                           string filenameTemplate,
+                           string locationPropertyName,
+                           string clientSizePropertyName) : this()
     {
       Title = title;
       FilenameTemplate = filenameTemplate;
@@ -60,7 +59,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( Title != null ) Text = Title.GetLang();
       if ( FilenameTemplate == null ) return;
-      string filename = string.Format(FilenameTemplate, Languages.Current);
+      string filename = string.Format(FilenameTemplate, Languages.CurrentCode);
       if ( File.Exists(filename) )
         WebBrowser.Navigate(filename);
       else

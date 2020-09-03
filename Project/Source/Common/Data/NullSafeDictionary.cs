@@ -23,7 +23,8 @@ namespace Ordisoftware.HebrewCommon
   /// Provide null safe dictionary.
   /// </summary>
   [Serializable]
-  public class NullSafeDictionary<TKey, TValue> : Dictionary<TKey, TValue> where TValue : new()
+  public class NullSafeDictionary<TKey, TValue> : Dictionary<TKey, TValue>
+    where TValue : class
   {
 
     public NullSafeDictionary()
@@ -58,10 +59,7 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( ContainsKey(key) ) return base[key];
-        var value = new TValue();
-        Add(key, value);
-        return value;
+        return ContainsKey(key) ? base[key] : null;
       }
       set
       {

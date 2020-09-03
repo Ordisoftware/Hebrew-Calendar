@@ -19,55 +19,45 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide null safe list.
+  /// Provide sorted auto dictionary.
   /// </summary>
   [Serializable]
-  public class NullSafeList<T> : List<T> 
-    where T : class
+  public class SortedAutoDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
+    where TValue : new()
   {
 
-    public NullSafeList()
+    public SortedAutoDictionary()
     {
     }
 
-    public NullSafeList(int capacity) : base(capacity)
+    public SortedAutoDictionary(IDictionary<TKey, TValue> dictionary) : base(dictionary)
     {
     }
 
-    public NullSafeList(IEnumerable<T> collection) : base(collection)
+    public SortedAutoDictionary(IComparer<TKey> comparer) : base(comparer)
     {
     }
 
-    public new T this[int index]
+    public SortedAutoDictionary(IDictionary<TKey, TValue> dictionary, IComparer<TKey> comparer) : base(dictionary, comparer)
+    {
+    }
+
+    public new TValue this[TKey key]
     {
       get
       {
-        CheckIndex(index);
-        return index < Count ? base[index] : null;
+        if ( ContainsKey(key) ) return base[key];
+        var value = new TValue();
+        Add(key, value);
+        return value;
       }
       set
       {
-        CheckIndex(index);
-        if ( index < Count )
-          base[index] = value;
+        if ( ContainsKey(key) )
+          base[key] = value;
         else
-          CreateOutOfRange(index, value);
+          Add(key, value);
       }
-    }
-
-    private void CheckIndex(int index)
-    {
-      if ( index >= 0 ) return;
-      throw new IndexOutOfRangeException(Localizer.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
-    }
-
-    private void CreateOutOfRange(int index, T value)
-    {
-      Capacity = index + 1;
-      int count = index + 1 - Count;
-      for ( int i = 0; i < count; i++ )
-        Add(null);
-      base[index] = value;
     }
 
   }

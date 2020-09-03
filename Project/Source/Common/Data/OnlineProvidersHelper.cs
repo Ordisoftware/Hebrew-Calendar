@@ -13,6 +13,7 @@
 /// <created> 2020-03 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -174,7 +175,9 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
     /// </summary>
-    static private NullSafeStringDictionary AlreadyAcessedVarNames = new NullSafeStringDictionary();
+    static private Dictionary<string, string> AlreadyAcessedVarNames 
+      = new Dictionary<string, string>();
+
     static private string NameOfFromStack(this object instance, int level = 1)
     {
       try

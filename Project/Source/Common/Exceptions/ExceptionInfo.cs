@@ -276,7 +276,7 @@ namespace Ordisoftware.HebrewCommon
       TargetSite = ex.TargetSite;
       try
       {
-        Emitter = Sender is ExceptionForm ? ( (ExceptionForm)Sender ).Text : Globals.MainForm?.Text ?? ex.Source;
+        Emitter = Sender is ExceptionForm form ? form.Text : Globals.MainForm?.Text ?? ex.Source;
         ExtractInherits();
         try
         {

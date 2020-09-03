@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   public enum Language
   {
+    NotDefined,
     English,
     French
   }
@@ -40,36 +42,51 @@ namespace Ordisoftware.HebrewCommon
     static public readonly Dictionary<Language, string> Names
       = new Dictionary<Language, string>
       {
+        [Language.NotDefined] = "--",
         [Language.English] = "en",
         [Language.French] = "fr"
       };
 
+    static public readonly Language[] Managed
+      = ( (Language[])Enum.GetValues(typeof(Language)) ).Skip(1).ToArray();
+
     /// <summary>
     /// Indicate english language code.
     /// </summary>
-    static public readonly string EN = Names[Language.English];
+    static public readonly Language EN = Language.English;
 
     /// <summary>
     /// Indicate french language code.
     /// </summary>
-    static public readonly string FR = Names[Language.French];
+    static public readonly Language FR = Language.French;
 
     /// <summary>
     /// Indicate default language code.
     /// </summary>
-    static public readonly string Default = EN;
+    static public readonly Language Default = EN;
+
+    static public Language Convert(string lang)
+    {
+      return Names.FirstOrDefault(n => n.Value == lang).Key;
+    }
 
     /// <summary>
     /// Indicate current language.
     /// </summary>
-    static public string Current
+    static public string CurrentCode
+      => Names[Current];
+
+    /// <summary>
+    /// Indicate current language.
+    /// </summary>
+    static public Language Current
     {
       get
       {
         string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-        if ( !Names.Values.Contains(lang) )
-          lang = Default;
-        return lang;
+        var result = Convert(lang);
+        if ( result == Language.NotDefined ) result = Default;
+        return result;
       }
     }
 

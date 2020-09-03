@@ -190,7 +190,7 @@ namespace Ordisoftware.HebrewCalendar
       Settings.TimeZone = timezone;
       Settings.ShabatDay = shabat;
       Settings.RestoreMainForm();
-      Settings.Language = Languages.Current;
+      Settings.LanguageSelected = Languages.Current;
       for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
         Program.Settings["DateBookmark" + index] = bookmarks[index - 1];
       Close();
@@ -243,8 +243,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
-      if ( Settings.Language == Languages.EN ) return;
-      Settings.Language = Languages.EN;
+      if ( Settings.LanguageSelected == Languages.EN ) return;
+      Settings.LanguageSelected = Languages.EN;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -253,8 +253,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectLangFR_Click(object sender, EventArgs e)
     {
-      if ( Settings.Language == Languages.FR ) return;
-      Settings.Language = Languages.FR;
+      if ( Settings.LanguageSelected == Languages.FR ) return;
+      Settings.LanguageSelected = Languages.FR;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -264,12 +264,12 @@ namespace Ordisoftware.HebrewCalendar
     private void UpdateLanguagesButtons()
     {
       MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
-      if ( Settings.Language == Languages.EN )
+      if ( Settings.LanguageSelected == Languages.EN )
       {
         ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangFR.BackColor = SystemColors.Control;
       }
-      if ( Settings.Language == Languages.FR )
+      if ( Settings.LanguageSelected == Languages.FR )
       {
         ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangEN.BackColor = SystemColors.Control;
@@ -355,8 +355,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( NavigationForm.Instance != null )
-        NavigationForm.Instance.Show();
+      NavigationForm.Instance.Show();
       EditNavigateTopColor.BackColor = SystemColors.Control;
       EditNavigateMiddleColor.BackColor = SystemColors.Control;
       EditNavigateBottomColor.BackColor = SystemColors.Control;

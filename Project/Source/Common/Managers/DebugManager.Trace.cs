@@ -22,8 +22,12 @@ namespace Ordisoftware.HebrewCommon
   static public partial class DebugManager
   {
 
-    static public readonly TraceForm TraceForm
-      = new TraceForm("TraceFormLocation", "TraceFormSize");
+    static DebugManager()
+    {
+      TraceForm = new TraceForm("TraceFormLocation", "TraceFormSize");
+    }
+
+    static public readonly TraceForm TraceForm;
 
     private const int MarginSize = 4;
     private const int EnterCountSkip = 2;

@@ -280,7 +280,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the filename of the help.
     /// </summary>
     static public string HelpFilename
-      => Path.Combine(HelpFolderPath, $"index-{Languages.Current}.htm");
+      => Path.Combine(HelpFolderPath, $"index-{Languages.CurrentCode}.htm");
 
     /// <summary>
     /// Indicate the trace file mode.

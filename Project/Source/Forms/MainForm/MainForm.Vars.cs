@@ -64,11 +64,11 @@ namespace Ordisoftware.HebrewCalendar
 
     public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
 
-    private NullSafeDictionary<TorahEvent, bool> TorahEventRemindList
-      = new NullSafeDictionary<TorahEvent, bool>();
+    private Dictionary<TorahEvent, bool> TorahEventRemindList
+      = new Dictionary<TorahEvent, bool>();
 
-    private NullSafeDictionary<TorahEvent, bool> TorahEventRemindDayList
-      = new NullSafeDictionary<TorahEvent, bool>();
+    private Dictionary<TorahEvent, bool> TorahEventRemindDayList
+      = new Dictionary<TorahEvent, bool>();
 
     internal readonly NullSafeList<Form> RemindCelebrationForms
       = new NullSafeList<Form>();
@@ -76,8 +76,8 @@ namespace Ordisoftware.HebrewCalendar
     internal readonly NullSafeStringList RemindCelebrationDates
       = new NullSafeStringList();
 
-    internal readonly NullSafeDictionary<TorahEvent, DateTime?> LastCelebrationReminded
-      = new NullSafeDictionary<TorahEvent, DateTime?>();
+    internal readonly Dictionary<TorahEvent, DateTime?> LastCelebrationReminded
+      = new Dictionary<TorahEvent, DateTime?>();
 
     internal readonly Dictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
       = new Dictionary<TorahEvent, ReminderForm>();

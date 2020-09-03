@@ -114,7 +114,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      Text = HebrewCommon.DisplayManager.Title;
+      Text = DisplayManager.Title;
       PanelTop.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;

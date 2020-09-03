@@ -30,33 +30,23 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraceForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
-      this.ActionClearLogs = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.panel1 = new System.Windows.Forms.Panel();
+      this.LabelLinesCount = new System.Windows.Forms.Label();
       this.TextBox = new Ordisoftware.HebrewCommon.RichTextBoxEx();
+      this.ActionClearLogs = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.LabelLinesCount);
       this.PanelBottom.Controls.Add(this.ActionClearLogs);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
-      // 
-      // ActionClearLogs
-      // 
-      this.ActionClearLogs.FlatAppearance.BorderSize = 0;
-      this.ActionClearLogs.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.ActionClearLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.ActionClearLogs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      resources.ApplyResources(this.ActionClearLogs, "ActionClearLogs");
-      this.ActionClearLogs.Name = "ActionClearLogs";
-      this.ActionClearLogs.TabStop = false;
-      this.ActionClearLogs.UseVisualStyleBackColor = true;
-      this.ActionClearLogs.Click += new System.EventHandler(this.ActionClearLogs_Click);
       // 
       // ActionClose
       // 
@@ -77,6 +67,11 @@
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
+      // LabelLinesCount
+      // 
+      resources.ApplyResources(this.LabelLinesCount, "LabelLinesCount");
+      this.LabelLinesCount.Name = "LabelLinesCount";
+      // 
       // TextBox
       // 
       this.TextBox.BackColor = System.Drawing.SystemColors.Window;
@@ -85,6 +80,19 @@
       this.TextBox.Name = "TextBox";
       this.TextBox.ReadOnly = true;
       this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Left;
+      this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+      // 
+      // ActionClearLogs
+      // 
+      resources.ApplyResources(this.ActionClearLogs, "ActionClearLogs");
+      this.ActionClearLogs.FlatAppearance.BorderSize = 0;
+      this.ActionClearLogs.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.ActionClearLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.ActionClearLogs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.ActionClearLogs.Name = "ActionClearLogs";
+      this.ActionClearLogs.TabStop = false;
+      this.ActionClearLogs.UseVisualStyleBackColor = true;
+      this.ActionClearLogs.Click += new System.EventHandler(this.ActionClearLogs_Click);
       // 
       // TraceForm
       // 
@@ -101,6 +109,7 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowTextForm_FormClosing);
       this.Load += new System.EventHandler(this.LogForm_Load);
       this.PanelBottom.ResumeLayout(false);
+      this.PanelBottom.PerformLayout();
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 
@@ -112,6 +121,7 @@
     private System.Windows.Forms.Panel panel1;
     internal RichTextBoxEx TextBox;
     public System.Windows.Forms.Panel PanelBottom;
+    private System.Windows.Forms.Label LabelLinesCount;
     private System.Windows.Forms.Button ActionClearLogs;
   }
 }

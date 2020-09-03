@@ -271,11 +271,11 @@ namespace Ordisoftware.HebrewCommon
     private void ButtonLetter_Click(object sender, EventArgs e)
     {
       Button button = null;
-      if ( sender is Button )
-        button = (Button)sender;
+      if ( sender is Button buttonSender )
+        button = buttonSender;
       else
-      if ( sender is ToolStripMenuItem )
-        button = (Button)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
+      if ( sender is ToolStripMenuItem menuItem )
+        button = (Button)( (ContextMenuStrip)menuItem.Owner ).SourceControl;
       if ( button != null )
         Input.SelectedText = button.Text;
       Input.Focus();

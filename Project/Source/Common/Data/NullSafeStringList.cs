@@ -13,7 +13,6 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace Ordisoftware.HebrewCommon
@@ -22,6 +21,7 @@ namespace Ordisoftware.HebrewCommon
   /// <summary>
   /// Provide null safe string list.
   /// </summary>
+  [Serializable]
   public class NullSafeStringList : List<string>
   {
 
@@ -42,10 +42,7 @@ namespace Ordisoftware.HebrewCommon
       get
       {
         CheckIndex(index);
-        if ( index < Count ) return base[index];
-        var item = "";
-        CreateOutOfRange(index, item);
-        return item;
+        return index < Count ? base[index] : null;
       }
       set
       {
@@ -59,14 +56,16 @@ namespace Ordisoftware.HebrewCommon
 
     private void CheckIndex(int index)
     {
-      if ( index < 0 )
-        throw new IndexOutOfRangeException(Localizer.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
+      if ( index >= 0 ) return;
+      throw new IndexOutOfRangeException(Localizer.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
     }
 
     private void CreateOutOfRange(int index, string value)
     {
       Capacity = index + 1;
-      AddRange(Enumerable.Repeat("", index + 1 - Count));
+      int count = index + 1 - Count;
+      for ( int i = 0; i < count; i++ )
+        Add(null);
       base[index] = value;
     }
 

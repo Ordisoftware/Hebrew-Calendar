@@ -32,15 +32,18 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Check command line arguments and apply them.
     /// </summary>
-    static public void CheckCommandLineArguments(string[] args, ref string language)
+    static public void CheckCommandLineArguments(string[] args, ref Language language)
     {
       try
       {
         CommandLineArguments = args;
         if ( args.Length == 2 && args[0] == "/lang" )
-          if ( args[1] == Languages.EN || args[1] == Languages.FR )
-            language = args[1];
-        if ( string.IsNullOrEmpty(language) )
+          if ( args[1] == Languages.Names[Language.English] )
+            language = Language.English;
+          else
+          if ( args[1] == Languages.Names[Language.French] )
+            language = Language.French;
+        if ( language == Language.NotDefined )
           language = Languages.Current;
       }
       catch ( Exception ex )

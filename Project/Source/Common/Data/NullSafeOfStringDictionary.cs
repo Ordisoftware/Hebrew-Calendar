@@ -20,47 +20,45 @@ namespace Ordisoftware.HebrewCommon
 {
 
   /// <summary>
-  /// Provide null safe string dictionary.
+  /// Provide null safe of string dictionary.
   /// </summary>
   [Serializable]
-  public class NullSafeStringDictionary : Dictionary<string, string>
+  public class NullSafeOfStringDictionary<T> : Dictionary<T, string>
   {
-    public NullSafeStringDictionary()
+
+    public NullSafeOfStringDictionary()
     {
     }
 
-    public NullSafeStringDictionary(int capacity) : base(capacity)
+    public NullSafeOfStringDictionary(int capacity) : base(capacity)
     {
     }
 
-    public NullSafeStringDictionary(IEqualityComparer<string> comparer) : base(comparer)
+    public NullSafeOfStringDictionary(IEqualityComparer<T> comparer) : base(comparer)
     {
     }
 
-    public NullSafeStringDictionary(IDictionary<string, string> dictionary) : base(dictionary)
+    public NullSafeOfStringDictionary(IDictionary<T, string> dictionary) : base(dictionary)
     {
     }
 
-    public NullSafeStringDictionary(int capacity, IEqualityComparer<string> comparer) : base(capacity, comparer)
+    public NullSafeOfStringDictionary(int capacity, IEqualityComparer<T> comparer) : base(capacity, comparer)
     {
     }
 
-    public NullSafeStringDictionary(IDictionary<string, string> dictionary, IEqualityComparer<string> comparer) : base(dictionary, comparer)
+    public NullSafeOfStringDictionary(IDictionary<T, string> dictionary, IEqualityComparer<T> comparer) : base(dictionary, comparer)
     {
     }
 
-    protected NullSafeStringDictionary(SerializationInfo info, StreamingContext context) : base(info, context)
+    protected NullSafeOfStringDictionary(SerializationInfo info, StreamingContext context) : base(info, context)
     {
     }
 
-    public new string this[string key]
+    public new string this[T key]
     {
       get
       {
-        if ( ContainsKey(key) ) return base[key];
-        var value = "";
-        Add(key, value);
-        return value;
+        return ContainsKey(key) ? base[key] : null;
       }
       set
       {

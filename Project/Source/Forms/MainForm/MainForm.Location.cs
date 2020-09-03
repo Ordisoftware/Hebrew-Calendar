@@ -47,12 +47,11 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         DoScreenPositionMutex = true;
-        if ( sender != null && sender is ToolStripMenuItem )
+        if ( sender != null && sender is ToolStripMenuItem menuItem )
         {
-          var value = sender as ToolStripMenuItem;
-          var list = ( (ToolStripMenuItem)value.OwnerItem ).DropDownItems;
+          var list = ( (ToolStripMenuItem)menuItem.OwnerItem ).DropDownItems;
           foreach ( ToolStripMenuItem item in list )
-            item.Checked = item == value;
+            item.Checked = item == menuItem;
         }
         if ( Globals.IsReady ) Settings.Store();
         this.SetLocation(Settings.MainFormPosition);

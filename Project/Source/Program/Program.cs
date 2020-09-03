@@ -55,9 +55,9 @@ namespace Ordisoftware.HebrewCalendar
       UpdateLocalization(true);
       DebugManager.Enabled = Settings.DebuggerEnabled;
       DebugManager.DeaultShowExceptionMode = ShowExceptionMode.Advanced;
-      string lang = Settings.Language;
+      Language lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments(args, ref lang);
-      Settings.Language = lang;
+      Settings.LanguageSelected = lang;
       UpdateLocalization();
       Application.Run(MainForm.Instance);
     }
@@ -92,7 +92,7 @@ namespace Ordisoftware.HebrewCalendar
         Settings.UpgradeResetRequiredV3_0 = false;
         Settings.UpgradeResetRequiredV3_6 = false;
         Settings.UpgradeResetRequiredV4_1 = false;
-        Settings.Language = Languages.Current;
+        Settings.LanguageSelected = Languages.Current;
         Settings.Save();
       }
       else
@@ -110,7 +110,7 @@ namespace Ordisoftware.HebrewCalendar
     static internal void UpdateLocalization(bool initonly = false)
     {
       string lang = "en-US";
-      if ( Settings.Language == "fr" ) lang = "fr-FR";
+      if ( Settings.LanguageSelected == Language.French ) lang = "fr-FR";
       var culture = new CultureInfo(lang);
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
@@ -137,8 +137,8 @@ namespace Ordisoftware.HebrewCalendar
       {
         if ( form != Globals.MainForm && form != AboutBox.Instance )
           update(form);
-        if ( form is ShowTextForm )
-          ( (ShowTextForm)form ).RelocalizeText();
+        if ( form is ShowTextForm formShowText )
+          formShowText.RelocalizeText();
       }
       MainForm.Instance.InitializeSpecialMenus();
       AboutBox.Instance.AboutBox_Shown(null, null);
