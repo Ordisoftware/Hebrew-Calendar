@@ -37,8 +37,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SearchEventForm_Load(object sender, EventArgs e)
     {
-      if ( Location.X < 0 || Location.Y < 0 )
-        this.CenterToMainFormElseScreen();
+      this.CheckLocationOrCenterToMainFormElseScreen();
       Mutex = true;
       CurrentDay = MainForm.Instance.CurrentDay;
       int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;

@@ -60,7 +60,7 @@ namespace Ordisoftware.HebrewCalendar
       ActionUp.Enabled = ListBox.SelectedIndex != 0;
       ActionDown.Enabled = ListBox.SelectedIndex != ListBox.Items.Count - 1;
       ActionDelete.Enabled = ListBox.SelectedIndex >= 0
-                         && ( (DateItem)ListBox.Items[ListBox.SelectedIndex] ).Date != DateTime.MinValue;
+                          && ( (DateItem)ListBox.Items[ListBox.SelectedIndex] ).Date != DateTime.MinValue;
     }
 
     private void ActionClear_Click(object sender, EventArgs e)

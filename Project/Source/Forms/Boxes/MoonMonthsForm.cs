@@ -68,8 +68,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void MoonMonthsForm_Load(object sender, EventArgs e)
     {
-      if ( Location.X < 0 || Location.Y < 0 )
-        this.CenterToMainFormElseScreen();
+      this.CheckLocationOrCenterToMainFormElseScreen();
     }
 
     private void MoonMonthsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -144,10 +143,10 @@ namespace Ordisoftware.HebrewCalendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      string str = Program.MoonMonthsUnicode[index] + " ("
-                 + Program.MoonMonthsNames[index] + ") : "
-                 + Program.MoonMonthsMeanings[Languages.Current][index] + " ("
-                 + Program.MoonMonthsLettriqs[Languages.Current][index] + ")";
+      string str = Program.MoonMonthsUnicode[index] + " (" +
+                   Program.MoonMonthsNames[index] + ") : " +
+                   Program.MoonMonthsMeanings[Languages.Current][index] + " (" +
+                   Program.MoonMonthsLettriqs[Languages.Current][index] + ")";
       Clipboard.SetText(str);
     }
 

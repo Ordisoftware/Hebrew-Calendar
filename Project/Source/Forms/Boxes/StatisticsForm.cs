@@ -13,9 +13,7 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Drawing;
 using System.Windows.Forms;
-using System.Media;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -33,15 +31,12 @@ namespace Ordisoftware.HebrewCalendar
       Instance.EditAlwaysOnTop_CheckedChanged(null, null);
     }
 
-    static public void Run(bool prepareonly = false)
+    static public void Run(bool isPrepare = false)
     {
       LoadingForm.Instance.Progressing += FormLoadingProgressing;
-      if ( !prepareonly )
+      if ( !isPrepare )
       {
-        if ( Instance.WindowState == FormWindowState.Minimized )
-          Instance.WindowState = FormWindowState.Normal;
-        Instance.Show();
-        Instance.BringToFront();
+        Instance.Popup();
         Instance.Timer_Tick(null, null);
         Instance.Timer.Interval = 1000;
       }
@@ -58,8 +53,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SystemStatisticsForm_Load(object sender, EventArgs e)
     {
-      if ( Location.X < 0 || Location.Y < 0 )
-        this.CenterToMainFormElseScreen();
+      this.CheckLocationOrCenterToMainFormElseScreen();
     }
 
     private void SystemStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -95,21 +89,18 @@ namespace Ordisoftware.HebrewCalendar
       }
       else
       {
-        string dummy = SystemStatistics.Instance.MemoryGC;
+        string dummyUpdate = SystemStatistics.Instance.MemoryGC;
       }
     }
 
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
-      DebugManager.TraceForm.Show();
-      DebugManager.TraceForm.BringToFront();
+      DebugManager.TraceForm.Popup();
     }
 
     private void ActionScreenshot_Click(object sender, EventArgs e)
     {
-      var bitmap = new Bitmap(PanelMain.Width, PanelMain.Height);
-      PanelMain.DrawToBitmap(bitmap, new Rectangle(0, 0, PanelMain.Width, PanelMain.Height));
-      Clipboard.SetImage(bitmap);
+      Clipboard.SetImage(PanelMain.GetBitmap());
       DisplayManager.ShowInformation(Localizer.ScreenshotDone.GetLang());
     }
 

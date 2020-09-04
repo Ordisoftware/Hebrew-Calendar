@@ -44,20 +44,20 @@ namespace Ordisoftware.HebrewCalendar
       var dateEnd = dateStart.AddYears(1);
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where SQLiteDate.ToDateTime(day.Date) >= dateStart && SQLiteDate.ToDateTime(day.Date) <= dateEnd
-                 && ( (SeasonChange)day.SeasonChange != SeasonChange.None
-                   || (TorahEvent)day.TorahEvents != TorahEvent.None )
+                    && ( (SeasonChange)day.SeasonChange != SeasonChange.None
+                    || (TorahEvent)day.TorahEvents != TorahEvent.None )
                  select day;
       foreach ( var row in rows )
       {
         var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteDate.ToDateTime(row.Date).ToLongDateString());
         if ( (SeasonChange)row.SeasonChange != SeasonChange.None )
           Instance.ListView.Items.Add(item)
-          .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange))
-          .Tag = row.Date;
+                                 .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange))
+                                 .Tag = row.Date;
         if ( (TorahEvent)row.TorahEvents != TorahEvent.None )
           Instance.ListView.Items.Add(item)
-          .SubItems.Add(Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents))
-          .Tag = row.Date;
+                                 .SubItems.Add(Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents))
+                                 .Tag = row.Date;
       }
       Instance.ListView.Columns[Instance.ListView.Columns.Count - 1].Width = -2;
       Instance.CelebrationsForm_Load(null, null);
@@ -73,8 +73,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void CelebrationsForm_Load(object sender, EventArgs e)
     {
-      if ( Location.X < 0 || Location.Y < 0 )
-        this.CenterToMainFormElseScreen();
+      this.CheckLocationOrCenterToMainFormElseScreen();
     }
 
     private void CelebrationsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -91,15 +90,12 @@ namespace Ordisoftware.HebrewCalendar
     private void ListView_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( ListView.SelectedItems.Count > 0 )
-        try
+        SystemManager.TryCatch(() =>
         {
           MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(ListView.SelectedItems[0].SubItems[1].Tag.ToString()));
           if ( !MainForm.Instance.Visible || MainForm.Instance.WindowState == FormWindowState.Minimized )
             MainForm.Instance.MenuShowHide_Click(null, null);
-        }
-        catch
-        {
-        }
+        });
     }
 
     private void ListView_DoubleClick(object sender, EventArgs e)

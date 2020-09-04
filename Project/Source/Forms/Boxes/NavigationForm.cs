@@ -97,13 +97,7 @@ namespace Ordisoftware.HebrewCalendar
         }
         finally
         {
-          try
-          {
-            ActiveControl = LabelDate;
-          }
-          catch
-          {
-          }
+          SystemManager.TryCatch(() => { ActiveControl = LabelDate; });
         }
       }
     }
@@ -154,13 +148,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( form.ShowDialog() == DialogResult.OK )
         MainForm.Instance.GoToDate(form.MonthCalendar.SelectionStart);
       else
-        try
-        {
-          ActiveControl = LabelDate;
-        }
-        catch
-        {
-        }
+        SystemManager.TryCatch(() => { ActiveControl = LabelDate; });
     }
 
     private void ActionPreviousDay_Click(object sender, EventArgs e)

@@ -77,6 +77,9 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
+      ShabatNoticeForm = new ShowTextForm(Translations.NoticeShabatTitle, Translations.NoticeShabat, true, true, 600, 520);
+      CelebrationsNoticeForm = new ShowTextForm(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrations, true, true, 600, 320);
+      MoonMonthsNoticeForm = new ShowTextForm(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths, true, true, 400, 300);
       StatisticsForm.Run(true);
       if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
         try
@@ -101,9 +104,6 @@ namespace Ordisoftware.HebrewCalendar
       Refresh();
       ClearLists();
       LoadData();
-      ShabatNoticeForm = new ShowTextForm(Translations.NoticeShabatTitle, Translations.NoticeShabat, true, true, 600, 520);
-      CelebrationsNoticeForm = new ShowTextForm(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrations, true, true, 600, 320);
-      MoonMonthsNoticeForm = new ShowTextForm(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths, true, true, 400, 300);
     }
 
     /// <summary>
@@ -828,9 +828,7 @@ namespace Ordisoftware.HebrewCalendar
       CalendarMonth.ShowArrowControls = false;
       try
       {
-        var bitmap = new Bitmap(CalendarMonth.Width, CalendarMonth.Height);
-        CalendarMonth.DrawToBitmap(bitmap, new Rectangle(0, 0, CalendarMonth.Width, CalendarMonth.Height));
-        bitmap = bitmap.Resize(1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
+        var bitmap = CalendarMonth.GetBitmap().Resize(1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
         using ( var document = new PrintDocument() )
         {
           document.DefaultPageSettings.Landscape = true;

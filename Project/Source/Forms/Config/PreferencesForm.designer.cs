@@ -146,6 +146,7 @@
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
+      this.EditStartWithWindows = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditBigCalendarWarning = new System.Windows.Forms.CheckBox();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
@@ -1062,6 +1063,7 @@
       this.GroupBoxSystem.Controls.Add(this.EditStartupHide);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateEveryWeek);
       this.GroupBoxSystem.Controls.Add(this.EditCheckUpdateAtStartup);
+      this.GroupBoxSystem.Controls.Add(this.EditStartWithWindows);
       this.GroupBoxSystem.Controls.Add(this.EditDebuggerEnabled);
       this.GroupBoxSystem.Controls.Add(this.EditBigCalendarWarning);
       this.GroupBoxSystem.Controls.Add(this.EditAllowSuspendReminder);
@@ -1153,6 +1155,13 @@
       resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
+      // 
+      // EditStartWithWindows
+      // 
+      resources.ApplyResources(this.EditStartWithWindows, "EditStartWithWindows");
+      this.EditStartWithWindows.Name = "EditStartWithWindows";
+      this.EditStartWithWindows.UseVisualStyleBackColor = true;
+      this.EditStartWithWindows.CheckedChanged += new System.EventHandler(this.EditDebuggerEnabled_CheckedChanged);
       // 
       // EditDebuggerEnabled
       // 
@@ -1509,5 +1518,6 @@
     private System.Windows.Forms.ContextMenuStrip MenuPredefinedYears;
     private HebrewCommon.UndoRedoTextBox EditAutoGenerateYearsInterval;
     private System.Windows.Forms.CheckBox EditBigCalendarWarning;
+    private System.Windows.Forms.CheckBox EditStartWithWindows;
   }
 }

@@ -247,7 +247,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 199</value>
+    <value>22, 198</value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -271,7 +271,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <metadata name="LabelTimeZone.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -1754,7 +1754,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditStartupHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 88</value>
+    <value>56, 83</value>
   </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 17</value>
@@ -2577,7 +2577,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMonthViewSunToolTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 207</value>
+    <value>56, 195</value>
   </data>
   <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 17</value>
@@ -2601,7 +2601,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditMonthViewSunToolTips.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="LabelColorNoDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3237,7 +3237,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 150</value>
+    <value>306, 158</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3261,7 +3261,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 120</value>
+    <value>304, 129</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 20</value>
@@ -3294,7 +3294,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVacuumAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 37</value>
+    <value>56, 35</value>
   </data>
   <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 17</value>
@@ -3340,7 +3340,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionAutoGenerateHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 180</value>
+    <value>306, 188</value>
   </data>
   <data name="ActionAutoGenerateHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3383,7 +3383,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectLangFR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 61</value>
+    <value>15, 60</value>
   </data>
   <data name="ActionSelectLangFR.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 28</value>
@@ -3424,7 +3424,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectLangEN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 22</value>
+    <value>15, 21</value>
   </data>
   <data name="ActionSelectLangEN.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 28</value>
@@ -3457,7 +3457,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoOpenExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 224</value>
+    <value>56, 211</value>
   </data>
   <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>
@@ -3496,7 +3496,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 190</value>
+    <value>56, 179</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 17</value>
@@ -3535,7 +3535,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditShowReminderInTaskBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 173</value>
+    <value>56, 163</value>
   </data>
   <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 17</value>
@@ -3574,7 +3574,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 71</value>
+    <value>56, 67</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 17</value>
@@ -3613,7 +3613,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 54</value>
+    <value>56, 51</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 17</value>
@@ -3639,6 +3639,48 @@
   <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="EditStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditStartWithWindows.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="EditStartWithWindows.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditStartWithWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 12</value>
+  </data>
+  <data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 17</value>
+  </data>
+  <data name="EditStartWithWindows.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditStartWithWindows.Text" xml:space="preserve">
+    <value>Start with Windows</value>
+  </data>
+  <data name="EditStartWithWindows.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="EditStartWithWindows.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;EditStartWithWindows.Name" xml:space="preserve">
+    <value>EditStartWithWindows</value>
+  </data>
+  <data name="&gt;&gt;EditStartWithWindows.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditStartWithWindows.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;EditStartWithWindows.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3652,7 +3694,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditDebuggerEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 20</value>
+    <value>56, 19</value>
   </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 17</value>
@@ -3676,7 +3718,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="EditBigCalendarWarning.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3691,7 +3733,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBigCalendarWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 140</value>
+    <value>56, 131</value>
   </data>
   <data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
@@ -3715,7 +3757,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditBigCalendarWarning.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="EditAllowSuspendReminder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3730,7 +3772,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAllowSuspendReminder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 156</value>
+    <value>56, 147</value>
   </data>
   <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
@@ -3754,7 +3796,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAllowSuspendReminder.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3769,7 +3811,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 105</value>
+    <value>56, 99</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
@@ -3793,7 +3835,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="EditAutoRegenerate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3808,7 +3850,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoRegenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 122</value>
+    <value>56, 115</value>
   </data>
   <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 17</value>
@@ -3832,7 +3874,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAutoRegenerate.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3857,7 +3899,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 212</value>
+    <value>278, 211</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3878,13 +3920,13 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="EditHebrewLettersPath.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 215</value>
+    <value>24, 214</value>
   </data>
   <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -3905,7 +3947,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="GroupBoxSystem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -3914,7 +3956,7 @@
     <value>10, 419</value>
   </data>
   <data name="GroupBoxSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 245</value>
+    <value>340, 248</value>
   </data>
   <data name="GroupBoxSystem.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>

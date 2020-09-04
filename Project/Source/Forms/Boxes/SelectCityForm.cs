@@ -51,16 +51,17 @@ namespace Ordisoftware.HebrewCalendar
           city.Longitude = parser["lng"];
         }
         if ( GPS.Keys.Count == 0 )
-          throw new NullReferenceException($"{nameof(SelectCityForm)}.{nameof(GPS)} = {Localizer.UndefinedSlot.GetLang()}");
+        {
+          string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {Localizer.UndefinedSlot.GetLang()}";
+          throw new NullReferenceException(msg);
+        }
       }
       catch ( Exception ex )
       {
         Enable = false;
         ex.Manage();
         if ( !Globals.IsReady )
-        {
           DisplayManager.ShowAndTerminate(Translations.LoadingCitiesError.GetLang());
-        }
       }
     }
 
@@ -168,8 +169,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( list.Length == 0 ) return;
         // Country
         list[0] = list[0].Trim().RemoveDiacritics().ToLower();
-        if ( list[0].Length < 3 )
-          return;
+        if ( list[0].Length < 3 ) return;
         var resultCountry = from country in GPS
                             where country.Key.ToLower().StartsWith(list[0])
                             orderby country.Key
@@ -185,8 +185,7 @@ namespace Ordisoftware.HebrewCalendar
         int index = ListBoxCountries.FindString(strCountry);
         if ( ListBoxCountries.SelectedIndex != index )
           ListBoxCountries.SelectedIndex = index;
-        if ( list.Length == 1 )
-          return;
+        if ( list.Length == 1 ) return;
         // City
         list[1] = list[1].Trim().RemoveDiacritics().ToLower();
         if ( list[1].Length < 3 ) return;
