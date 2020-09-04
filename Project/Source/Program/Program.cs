@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
@@ -95,13 +96,23 @@ namespace Ordisoftware.HebrewCalendar
         Settings.LanguageSelected = Languages.Current;
         Settings.Save();
       }
-      else
       if ( Settings.FirstLaunchV4 )
       {
         Settings.FirstLaunchV4 = false;
         Settings.FirstLaunch = true;
         Settings.Save();
       }
+      if ( !Languages.Managed.Contains(Settings.LanguageSelected) )
+      {
+        string langCode = Settings.Language;
+        var langValue = Languages.Values[langCode];
+        if ( langValue != Language.None )
+          Settings.LanguageSelected = langValue;
+        else
+          Settings.LanguageSelected = Languages.Current;
+      }
+      else
+        Settings.LanguageSelected = Languages.Current;
     }
 
     /// <summary>
