@@ -142,8 +142,8 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( form == null ) return;
       if ( form.Location.X < 0 || form.Location.Y < 0
-        || form.Left + form.Width > SystemInformation.WorkingArea.Width
-        || form.Top + form.Height > SystemInformation.WorkingArea.Height )
+        || form.Left > SystemInformation.WorkingArea.Width - form.Width / 2
+        || form.Top > SystemInformation.WorkingArea.Height - form.Height / 2 )
         form.CenterToMainFormElseScreen();
     }
 

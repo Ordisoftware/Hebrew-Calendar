@@ -173,8 +173,8 @@
   <data name="LabelInfo2.Text" xml:space="preserve">
     <value>Vous pouvez choisir de Continuer l'exécution ou Terminer le programme</value>
   </data>
-  <data name="ActionSend.Text" xml:space="preserve">
-    <value>Envoyer à GitHub</value>
+  <data name="ActionSendToGitHub.Text" xml:space="preserve">
+    <value>Créer une Issue GitHub</value>
   </data>
   <data name="ActionViewInner.Text" xml:space="preserve">
     <value>Précédente</value>

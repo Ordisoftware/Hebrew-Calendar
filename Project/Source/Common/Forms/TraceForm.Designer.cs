@@ -30,57 +30,41 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraceForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.TrackBarFontSize = new System.Windows.Forms.TrackBar();
+      this.LabelLinesCount = new System.Windows.Forms.Label();
+      this.ActionClearLogs = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparator = new System.Windows.Forms.Panel();
-      this.panel1 = new System.Windows.Forms.Panel();
-      this.LabelLinesCount = new System.Windows.Forms.Label();
+      this.PanelTextBox = new System.Windows.Forms.Panel();
       this.TextBox = new Ordisoftware.HebrewCommon.RichTextBoxEx();
-      this.ActionClearLogs = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
-      this.panel1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).BeginInit();
+      this.PanelTextBox.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.TrackBarFontSize);
       this.PanelBottom.Controls.Add(this.LabelLinesCount);
       this.PanelBottom.Controls.Add(this.ActionClearLogs);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
-      // ActionClose
+      // TrackBarFontSize
       // 
-      resources.ApplyResources(this.ActionClose, "ActionClose");
-      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ActionClose.Name = "ActionClose";
-      this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
-      // 
-      // PanelSeparator
-      // 
-      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
-      this.PanelSeparator.Name = "PanelSeparator";
-      // 
-      // panel1
-      // 
-      this.panel1.BackColor = System.Drawing.SystemColors.Window;
-      this.panel1.Controls.Add(this.TextBox);
-      resources.ApplyResources(this.panel1, "panel1");
-      this.panel1.Name = "panel1";
+      resources.ApplyResources(this.TrackBarFontSize, "TrackBarFontSize");
+      this.TrackBarFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "TraceFormTextBoxFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.TrackBarFontSize.Maximum = 12;
+      this.TrackBarFontSize.Minimum = 7;
+      this.TrackBarFontSize.Name = "TrackBarFontSize";
+      this.TrackBarFontSize.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.TraceFormTextBoxFontSize;
+      this.TrackBarFontSize.ValueChanged += new System.EventHandler(this.TrackBarFontSize_ValueChanged);
       // 
       // LabelLinesCount
       // 
       resources.ApplyResources(this.LabelLinesCount, "LabelLinesCount");
       this.LabelLinesCount.Name = "LabelLinesCount";
-      // 
-      // TextBox
-      // 
-      this.TextBox.BackColor = System.Drawing.SystemColors.Window;
-      this.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.TextBox, "TextBox");
-      this.TextBox.Name = "TextBox";
-      this.TextBox.ReadOnly = true;
-      this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Left;
-      this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
       // 
       // ActionClearLogs
       // 
@@ -94,23 +78,54 @@
       this.ActionClearLogs.UseVisualStyleBackColor = true;
       this.ActionClearLogs.Click += new System.EventHandler(this.ActionClearLogs_Click);
       // 
+      // ActionClose
+      // 
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
+      // 
+      // PanelSeparator
+      // 
+      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
+      this.PanelSeparator.Name = "PanelSeparator";
+      // 
+      // PanelTextBox
+      // 
+      this.PanelTextBox.BackColor = System.Drawing.SystemColors.Window;
+      this.PanelTextBox.Controls.Add(this.TextBox);
+      resources.ApplyResources(this.PanelTextBox, "PanelTextBox");
+      this.PanelTextBox.Name = "PanelTextBox";
+      // 
+      // TextBox
+      // 
+      this.TextBox.BackColor = System.Drawing.SystemColors.Window;
+      this.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.TextBox, "TextBox");
+      this.TextBox.Name = "TextBox";
+      this.TextBox.ReadOnly = true;
+      this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Left;
+      this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+      // 
       // TraceForm
       // 
       this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.panel1);
+      this.Controls.Add(this.PanelTextBox);
       this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.PanelBottom);
       this.Name = "TraceForm";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.Activated += new System.EventHandler(this.LogForm_Activated);
+      this.Deactivate += new System.EventHandler(this.TraceForm_Deactivate);
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowTextForm_FormClosing);
       this.Load += new System.EventHandler(this.LogForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      this.panel1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).EndInit();
+      this.PanelTextBox.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -118,10 +133,11 @@
     #endregion
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Panel PanelSeparator;
-    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel PanelTextBox;
     internal RichTextBoxEx TextBox;
     public System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Label LabelLinesCount;
     private System.Windows.Forms.Button ActionClearLogs;
+    private System.Windows.Forms.TrackBar TrackBarFontSize;
   }
 }

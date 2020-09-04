@@ -98,7 +98,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static public readonly int[] PredefinedYearsIntervals =
     {
-      5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 120, 200, -5, -10, -15, -20, -25, -30, -40, -50, -75, -100
+      5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 120, -5, -10, -15, -20, -25, -30, -40, -50, -75, -100
     };
 
     /// <summary>

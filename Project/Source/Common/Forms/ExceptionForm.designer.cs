@@ -134,22 +134,22 @@ namespace Ordisoftware.HebrewCommon
       // 
       // ActionSendToGitHub
       // 
+      resources.ApplyResources(this.ActionSendToGitHub, "ActionSendToGitHub");
       this.ActionSendToGitHub.FlatAppearance.BorderSize = 0;
       this.ActionSendToGitHub.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       this.ActionSendToGitHub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.ActionSendToGitHub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      resources.ApplyResources(this.ActionSendToGitHub, "ActionSendToGitHub");
       this.ActionSendToGitHub.Name = "ActionSendToGitHub";
       this.ActionSendToGitHub.UseVisualStyleBackColor = true;
       this.ActionSendToGitHub.Click += new System.EventHandler(this.ActionSendToGitHub_Click);
       // 
       // ActionViewLog
       // 
+      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
       this.ActionViewLog.FlatAppearance.BorderSize = 0;
       this.ActionViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       this.ActionViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.ActionViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
       this.ActionViewLog.Name = "ActionViewLog";
       this.ActionViewLog.UseVisualStyleBackColor = true;
       this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click);

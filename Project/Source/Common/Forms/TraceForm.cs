@@ -42,12 +42,18 @@ namespace Ordisoftware.HebrewCommon
     private void LogForm_Load(object sender, EventArgs e)
     {
       this.CheckLocationOrCenterToMainFormElseScreen();
+      TrackBarFontSize_ValueChanged(null, null);
+    }
+
+    private void TraceForm_Deactivate(object sender, EventArgs e)
+    {
+      Globals.Settings[LocationPropertyName] = Location;
+      Globals.Settings[ClientSizePropertyName] = ClientSize;
+      Globals.Settings.Save();
     }
 
     private void ShowTextForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      Globals.Settings[LocationPropertyName] = Location;
-      Globals.Settings[ClientSizePropertyName] = ClientSize;
       e.Cancel = true;
       Hide();
     }
@@ -55,6 +61,11 @@ namespace Ordisoftware.HebrewCommon
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
+    }
+
+    private void TrackBarFontSize_ValueChanged(object sender, EventArgs e)
+    {
+      TextBox.Font = new Font("Courier New", TrackBarFontSize.Value);
     }
 
     public void AppendText(string text, bool scrollBottom = true)

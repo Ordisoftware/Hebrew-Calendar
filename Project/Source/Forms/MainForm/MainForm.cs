@@ -145,21 +145,16 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      DebugManager.Enter();
-      DebugManager.Trace(TraceEvent.Data, e.CloseReason.ToStringFull());
-      try
+      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
       {
-        if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
-        if ( !Globals.IsReady ) return;
-        if ( Globals.IsExiting ) return;
-        if ( Globals.AllowClose ) return;
-        e.Cancel = true;
-        MenuShowHide.PerformClick();
+        DebugManager.Trace(TraceEvent.Data, e.CloseReason.ToStringFull());
+        return;
       }
-      finally
-      {
-        DebugManager.Leave();
-      }
+      if ( !Globals.IsReady ) return;
+      if ( Globals.IsExiting ) return;
+      if ( Globals.AllowClose ) return;
+      e.Cancel = true;
+      MenuShowHide.PerformClick();
     }
 
     /// <summary>
@@ -240,24 +235,16 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MenuExit_Click(object sender, EventArgs e)
     {
-      DebugManager.Enter();
-      try
+      if ( IsGenerating )
       {
-        if ( IsGenerating )
-        {
-          DisplayManager.ShowInformation(Translations.CantExitWhileGenerating.GetLang());
+        DisplayManager.ShowInformation(Translations.CantExitWhileGenerating.GetLang());
+        return;
+      }
+      if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDev ) )
+        if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
           return;
-        }
-        if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDev ) )
-          if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
-            return;
-        Globals.AllowClose = true;
-        Close();
-      }
-      finally
-      {
-        DebugManager.Leave();
-      }
+      Globals.AllowClose = true;
+      Close();
     }
 
     /// <summary>
@@ -267,8 +254,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void MenuShowHide_Click(object sender, EventArgs e)
     {
-      DebugManager.Enter();
-      try
+      SystemManager.TryCatchManage(() =>
       {
         if ( Visible && WindowState == FormWindowState.Minimized )
           this.Restore();
@@ -308,15 +294,7 @@ namespace Ordisoftware.HebrewCalendar
           FormBorderStyle = FormBorderStyle.SizableToolWindow;
         }
         MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      finally
-      {
-        DebugManager.Leave();
-      }
+      });
     }
 
     /// <summary>
