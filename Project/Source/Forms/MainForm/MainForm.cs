@@ -78,8 +78,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
       StatisticsForm.Run(true);
-      if ( !string.IsNullOrEmpty(Settings.GPSLatitude)
-        && !string.IsNullOrEmpty(Settings.GPSLongitude) )
+      if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
         try
         {
           Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
@@ -122,8 +121,7 @@ namespace Ordisoftware.HebrewCalendar
         UpdateButtons();
         GoToDate(DateTime.Today);
         CheckRegenerateCalendar();
-        if ( string.IsNullOrEmpty(Settings.GPSLatitude)
-          || string.IsNullOrEmpty(Settings.GPSLongitude) )
+        if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
         if ( Settings.StartupHide )
           MenuShowHide.PerformClick();
@@ -778,7 +776,9 @@ namespace Ordisoftware.HebrewCalendar
       if ( LastVacuum == null )
         LastVacuum = Settings.VacuumLastDone;
       if ( ActionVacuumAtNextStartup.Checked )
-        Settings.VacuumLastDone = new DateTime(2020, 1, 1);
+      {
+        Settings.VacuumLastDone = DateTime.MinValue;
+      }
       else
         Settings.VacuumLastDone = LastVacuum.Value;
     }

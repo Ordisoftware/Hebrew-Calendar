@@ -71,7 +71,7 @@ namespace Ordisoftware.HebrewCommon
         if ( value.Length > MaxLength ) return;
         try
         {
-          bool first = string.IsNullOrEmpty(Text) && UndoStack.Count == 0;
+          bool first = Text.IsNullOrEmpty() && UndoStack.Count == 0;
           if ( !SetTextMutex )
           {
             SetTextMutex = true;

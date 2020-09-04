@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewCommon
                 menuItem.ImageIndex = sourceToolStripMenuItem.ImageIndex;
             }
 
-            if (!string.IsNullOrEmpty(sourceToolStripMenuItem.ImageKey))
+            if (!sourceToolStripMenuItem.ImageKey.IsNullOrEmpty() )
             {
                 menuItem.ImageKey = sourceToolStripMenuItem.ImageKey;
             }

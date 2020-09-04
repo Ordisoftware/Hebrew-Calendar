@@ -27,15 +27,15 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly TranslationsDictionary Today
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Today",
-        [Languages.FR] = "Aujourd'hui"
+        [Language.EN] = "Today",
+        [Language.FR] = "Aujourd'hui"
       };
 
     static public readonly TranslationsDictionary NavigationDay
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Day #",
-        [Languages.FR] = "Jour #"
+        [Language.EN] = "Day #",
+        [Language.FR] = "Jour #"
       };
 
     static public readonly NullSafeDictionary<DayOfWeek, TranslationsDictionary> DayOfWeek
@@ -43,38 +43,38 @@ namespace Ordisoftware.HebrewCalendar
       {
         [System.DayOfWeek.Monday] = new TranslationsDictionary
         {
-          [Languages.EN] = "Monday",
-          [Languages.FR] = "Lundi"
+          [Language.EN] = "Monday",
+          [Language.FR] = "Lundi"
         },
         [System.DayOfWeek.Tuesday] = new TranslationsDictionary
         {
-          [Languages.EN] = "Tuesday",
-          [Languages.FR] = "Mardi"
+          [Language.EN] = "Tuesday",
+          [Language.FR] = "Mardi"
         },
         [System.DayOfWeek.Wednesday] = new TranslationsDictionary
         {
-          [Languages.EN] = "Wednesday",
-          [Languages.FR] = "Mercredi"
+          [Language.EN] = "Wednesday",
+          [Language.FR] = "Mercredi"
         },
         [System.DayOfWeek.Thursday] = new TranslationsDictionary
         {
-          [Languages.EN] = "Thursday",
-          [Languages.FR] = "Jeudi"
+          [Language.EN] = "Thursday",
+          [Language.FR] = "Jeudi"
         },
         [System.DayOfWeek.Friday] = new TranslationsDictionary
         {
-          [Languages.EN] = "Friday",
-          [Languages.FR] = "Vendredi"
+          [Language.EN] = "Friday",
+          [Language.FR] = "Vendredi"
         },
         [System.DayOfWeek.Saturday] = new TranslationsDictionary
         {
-          [Languages.EN] = "Saturday",
-          [Languages.FR] = "Samedi"
+          [Language.EN] = "Saturday",
+          [Language.FR] = "Samedi"
         },
         [System.DayOfWeek.Sunday] = new TranslationsDictionary
         {
-          [Languages.EN] = "Sunday",
-          [Languages.FR] = "Dimanche"
+          [Language.EN] = "Sunday",
+          [Language.FR] = "Dimanche"
         }
       };
 
@@ -83,43 +83,43 @@ namespace Ordisoftware.HebrewCalendar
       {
         [HebrewCalendar.MoonPhase.New] = new TranslationsDictionary
         {
-          [Languages.EN] = "New moon",
-          [Languages.FR] = "Nouvelle lune"
+          [Language.EN] = "New moon",
+          [Language.FR] = "Nouvelle lune"
         },
         [HebrewCalendar.MoonPhase.WaxingCrescent] = new TranslationsDictionary
         {
-          [Languages.EN] = "Waxing crescent",
-          [Languages.FR] = "Premier croissant"
+          [Language.EN] = "Waxing crescent",
+          [Language.FR] = "Premier croissant"
         },
         [HebrewCalendar.MoonPhase.FirstQuarter] = new TranslationsDictionary
         {
-          [Languages.EN] = "First quarter",
-          [Languages.FR] = "Premier quartier"
+          [Language.EN] = "First quarter",
+          [Language.FR] = "Premier quartier"
         },
         [HebrewCalendar.MoonPhase.WaxingGibbous] = new TranslationsDictionary
         {
-          [Languages.EN] = "Waxing gibbous",
-          [Languages.FR] = "Gibbeuse croissante"
+          [Language.EN] = "Waxing gibbous",
+          [Language.FR] = "Gibbeuse croissante"
         },
         [HebrewCalendar.MoonPhase.Full] = new TranslationsDictionary
         {
-          [Languages.EN] = "Full moon",
-          [Languages.FR] = "Pleine lune"
+          [Language.EN] = "Full moon",
+          [Language.FR] = "Pleine lune"
         },
         [HebrewCalendar.MoonPhase.WaningGibbous] = new TranslationsDictionary
         {
-          [Languages.EN] = "Waning gibbous",
-          [Languages.FR] = "Gibbeuse décroissante"
+          [Language.EN] = "Waning gibbous",
+          [Language.FR] = "Gibbeuse décroissante"
         },
         [HebrewCalendar.MoonPhase.LastQuarter] = new TranslationsDictionary
         {
-          [Languages.EN] = "Last quarter",
-          [Languages.FR] = "Dernier quartier"
+          [Language.EN] = "Last quarter",
+          [Language.FR] = "Dernier quartier"
         },
         [HebrewCalendar.MoonPhase.WaningCrescent] = new TranslationsDictionary
         {
-          [Languages.EN] = "Waning crescent",
-          [Languages.FR] = "Dernier croissant"
+          [Language.EN] = "Waning crescent",
+          [Language.FR] = "Dernier croissant"
         }
       };
 
@@ -128,23 +128,23 @@ namespace Ordisoftware.HebrewCalendar
       {
         [HebrewCalendar.Ephemeris.Rise] = new TranslationsDictionary
         {
-          [Languages.EN] = "R: ",
-          [Languages.FR] = "L: "
+          [Language.EN] = "R: ",
+          [Language.FR] = "L: "
         },
         [HebrewCalendar.Ephemeris.Set] = new TranslationsDictionary
         {
-          [Languages.EN] = "S: ",
-          [Languages.FR] = "C: "
+          [Language.EN] = "S: ",
+          [Language.FR] = "C: "
         },
         [HebrewCalendar.Ephemeris.SummerHour] = new TranslationsDictionary
         {
-          [Languages.EN] = "(S)",
-          [Languages.FR] = "(E)"
+          [Language.EN] = "(S)",
+          [Language.FR] = "(E)"
         },
         [HebrewCalendar.Ephemeris.WinterHour] = new TranslationsDictionary
         {
-          [Languages.EN] = "(W)",
-          [Languages.FR] = "(H)"
+          [Language.EN] = "(W)",
+          [Language.FR] = "(H)"
         }
       };
 
@@ -153,28 +153,28 @@ namespace Ordisoftware.HebrewCalendar
       {
         [HebrewCalendar.ReportFieldText.Date] = new TranslationsDictionary
         {
-          [Languages.EN] = "Date",
-          [Languages.FR] = "Date"
+          [Language.EN] = "Date",
+          [Language.FR] = "Date"
         },
         [HebrewCalendar.ReportFieldText.Month] = new TranslationsDictionary
         {
-          [Languages.EN] = "Month",
-          [Languages.FR] = "Mois"
+          [Language.EN] = "Month",
+          [Language.FR] = "Mois"
         },
         [HebrewCalendar.ReportFieldText.Sun] = new TranslationsDictionary
         {
-          [Languages.EN] = "Sun",
-          [Languages.FR] = "Soleil"
+          [Language.EN] = "Sun",
+          [Language.FR] = "Soleil"
         },
         [HebrewCalendar.ReportFieldText.Moon] = new TranslationsDictionary
         {
-          [Languages.EN] = "Moon",
-          [Languages.FR] = "Lune"
+          [Language.EN] = "Moon",
+          [Language.FR] = "Lune"
         },
         [HebrewCalendar.ReportFieldText.Events] = new TranslationsDictionary
         {
-          [Languages.EN] = "Events",
-          [Languages.FR] = "Évènements"
+          [Language.EN] = "Events",
+          [Language.FR] = "Évènements"
         }
       };
 
@@ -183,28 +183,28 @@ namespace Ordisoftware.HebrewCalendar
       {
         [SeasonChange.None] = new TranslationsDictionary
         {
-          [Languages.EN] = "",
-          [Languages.FR] = ""
+          [Language.EN] = "",
+          [Language.FR] = ""
         },
         [SeasonChange.SpringEquinox] = new TranslationsDictionary
         {
-          [Languages.EN] = "Spring equinox",
-          [Languages.FR] = "Equinoxe de printemps"
+          [Language.EN] = "Spring equinox",
+          [Language.FR] = "Equinoxe de printemps"
         },
         [SeasonChange.SummerSolstice] = new TranslationsDictionary
         {
-          [Languages.EN] = "Summer solstice",
-          [Languages.FR] = "Solstice d'été"
+          [Language.EN] = "Summer solstice",
+          [Language.FR] = "Solstice d'été"
         },
         [SeasonChange.AutumnEquinox] = new TranslationsDictionary
         {
-          [Languages.EN] = "Autumn equinox",
-          [Languages.FR] = "Equinoxe d'automne"
+          [Language.EN] = "Autumn equinox",
+          [Language.FR] = "Equinoxe d'automne"
         },
         [SeasonChange.WinterSolstice] = new TranslationsDictionary
         {
-          [Languages.EN] = "Winter solstice",
-          [Languages.FR] = "Solstice d'hiver"
+          [Language.EN] = "Winter solstice",
+          [Language.FR] = "Solstice d'hiver"
         }
       };
 
@@ -213,63 +213,63 @@ namespace Ordisoftware.HebrewCalendar
       {
         [HebrewCalendar.TorahEvent.None] = new TranslationsDictionary
         {
-          [Languages.EN] = "",
-          [Languages.FR] = ""
+          [Language.EN] = "",
+          [Language.FR] = ""
         },
         [HebrewCalendar.TorahEvent.NewYearD1] = new TranslationsDictionary
         {
-          [Languages.EN] = "New year",
-          [Languages.FR] = "Début de l'année"
+          [Language.EN] = "New year",
+          [Language.FR] = "Début de l'année"
         },
         [HebrewCalendar.TorahEvent.NewYearD10] = new TranslationsDictionary
         {
-          [Languages.EN] = "Set aside lamb",
-          [Languages.FR] = "Réserver agneau"
+          [Language.EN] = "Set aside lamb",
+          [Language.FR] = "Réserver agneau"
         },
         [HebrewCalendar.TorahEvent.PessahD1] = new TranslationsDictionary
         {
-          [Languages.EN] = "Pessa'h start",
-          [Languages.FR] = "Début de Pessah"
+          [Language.EN] = "Pessa'h start",
+          [Language.FR] = "Début de Pessah"
         },
         [HebrewCalendar.TorahEvent.PessahD7] = new TranslationsDictionary
         {
-          [Languages.EN] = "Pessa'h end",
-          [Languages.FR] = "Fin de Pessah"
+          [Language.EN] = "Pessa'h end",
+          [Language.FR] = "Fin de Pessah"
         },
         [HebrewCalendar.TorahEvent.ChavouotDiet] = new TranslationsDictionary
         {
-          [Languages.EN] = "Chavouot diet",
-          [Languages.FR] = "Régime de Chavouot"
+          [Language.EN] = "Chavouot diet",
+          [Language.FR] = "Régime de Chavouot"
         },
         [HebrewCalendar.TorahEvent.Chavouot1] = new TranslationsDictionary
         {
-          [Languages.EN] = "Chavouot lamb",
-          [Languages.FR] = "Agneau de Chavouot"
+          [Language.EN] = "Chavouot lamb",
+          [Language.FR] = "Agneau de Chavouot"
         },
         [HebrewCalendar.TorahEvent.Chavouot2] = new TranslationsDictionary
         {
-          [Languages.EN] = "Chavouot end",
-          [Languages.FR] = "Fin de Chavouot"
+          [Language.EN] = "Chavouot end",
+          [Language.FR] = "Fin de Chavouot"
         },
         [HebrewCalendar.TorahEvent.YomTerouah] = new TranslationsDictionary
         {
-          [Languages.EN] = "Yom Terou'ah",
-          [Languages.FR] = "Yom Terou'ah"
+          [Language.EN] = "Yom Terou'ah",
+          [Language.FR] = "Yom Terou'ah"
         },
         [HebrewCalendar.TorahEvent.YomHaKipourim] = new TranslationsDictionary
         {
-          [Languages.EN] = "Yom HaKipourim",
-          [Languages.FR] = "Yom HaKipourim"
+          [Language.EN] = "Yom HaKipourim",
+          [Language.FR] = "Yom HaKipourim"
         },
         [HebrewCalendar.TorahEvent.SoukotD1] = new TranslationsDictionary
         {
-          [Languages.EN] = "Soukot start",
-          [Languages.FR] = "Début de Soukot"
+          [Language.EN] = "Soukot start",
+          [Language.FR] = "Début de Soukot"
         },
         [HebrewCalendar.TorahEvent.SoukotD8] = new TranslationsDictionary
         {
-          [Languages.EN] = "Soukot end",
-          [Languages.FR] = "Fin de Soukot"
+          [Language.EN] = "Soukot end",
+          [Language.FR] = "Fin de Soukot"
         }
       };
 

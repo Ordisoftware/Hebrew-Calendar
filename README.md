@@ -179,7 +179,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve debugger to support logging.
 - Improve exception form to view log and send mail in addition to create a GitHub issue.
-- Fix app not responding on windows logoff or system shutdown.
 - Some UI/UX improvements.
 - Some code refactorings.
 - Update help.

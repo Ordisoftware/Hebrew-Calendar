@@ -26,7 +26,7 @@ namespace Ordisoftware.HebrewCommon
   static public partial class Localizer
   {
 
-    private const string ERR = "<Not translated>"; // get variable name ?
+    private const string ERR = "<Not translated>";
 
     /// <summary>
     /// Get the string translation.
@@ -104,7 +104,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     public static string RemoveDiacritics(this string str)
     {
-      if ( string.IsNullOrEmpty(str) ) return ERR;
+      if ( str.IsNullOrEmpty() ) return ERR;
       var normalized = str.Normalize(NormalizationForm.FormD);
       var builder = new StringBuilder();
       foreach ( var c in normalized )

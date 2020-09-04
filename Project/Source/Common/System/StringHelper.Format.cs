@@ -51,7 +51,7 @@ namespace Ordisoftware.HebrewCommon
     static public string FormatMilliseconds(this long ms, bool excludems = false)
     {
       TimeSpan time = TimeSpan.FromMilliseconds(ms);
-      var list = Localizer.MillisecondsFormatTemplates.GetLang();
+      var list = Localizer.MillisecondsFormat.GetLang();
       int index = time.Days == 0 && time.Hours == 0 && time.Minutes == 0 && time.Seconds == 0
                   ? 0
                   : time.Days == 0 && time.Hours == 0 && time.Minutes == 0

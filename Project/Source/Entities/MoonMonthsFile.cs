@@ -38,7 +38,7 @@ namespace Ordisoftware.HebrewCalendar
 
     protected override void DoReLoad(string filename)
     {
-      if ( string.IsNullOrEmpty(filename) ) return;
+      if ( filename.IsNullOrEmpty() ) return;
       try
       {
         Items.Clear();

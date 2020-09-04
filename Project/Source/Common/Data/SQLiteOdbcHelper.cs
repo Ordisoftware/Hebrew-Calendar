@@ -102,15 +102,12 @@ namespace Ordisoftware.HebrewCommon
     static public void InitializeVersion(this OdbcConnection connection)
     {
       ADOdotNETProvider = connection?.GetType().Name ?? Localizer.ErrorSlot.GetLang();
-      try
-      {
-        using ( var command = new OdbcCommand("SELECT SQLITE_VERSION()", connection) )
-          Engine = "SQLite " + command.ExecuteScalar().ToString();
-      }
-      catch
-      {
+      if ( !SystemManager.TryCatch(() =>
+       {
+         using ( var command = new OdbcCommand("SELECT SQLITE_VERSION()", connection) )
+           Engine = "SQLite " + command.ExecuteScalar().ToString();
+       }) )
         Engine = Localizer.ErrorSlot.GetLang();
-      }
     }
 
     /// <summary>
@@ -181,7 +178,7 @@ namespace Ordisoftware.HebrewCommon
           commandCheck.CommandText = $"SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?";
           commandCheck.Parameters.Add("@table", OdbcType.Text).Value = table;
           if ( (int)commandCheck.ExecuteScalar() != 0 ) return false;
-          if ( !string.IsNullOrEmpty(sql) )
+          if ( !sql.IsNullOrEmpty() )
             using ( var commandCreate = new OdbcCommand(sql, connection) )
               try
               {
@@ -224,7 +221,7 @@ namespace Ordisoftware.HebrewCommon
               break;
             }
           if ( found ) return false;
-          if ( !string.IsNullOrEmpty(sql) )
+          if ( !sql.IsNullOrEmpty() )
           {
             sql = sql.Replace("%TABLE%", table).Replace("%COLUMN%", column);
             using ( var commandCreate = new OdbcCommand(sql, connection) )
@@ -263,7 +260,7 @@ namespace Ordisoftware.HebrewCommon
                                    string valueDefault, 
                                    bool valueNotNull)
     {
-      if ( !string.IsNullOrEmpty(valueDefault) ) valueDefault = " DEFAULT " + valueDefault;
+      if ( !valueDefault.IsNullOrEmpty() ) valueDefault = " DEFAULT " + valueDefault;
       if ( valueNotNull ) valueDefault += " NOT NULL";
       string sql = $"ALTER TABLE %TABLE% ADD COLUMN %COLUMN% {type} {valueDefault}";
       return connection.CheckColumn(table, column, sql);

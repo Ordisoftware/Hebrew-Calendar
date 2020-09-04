@@ -77,7 +77,7 @@ namespace Ordisoftware.HebrewCommon
       Action processActionWait = () =>
       {
         processAction();
-        if ( semaphore != null ) semaphore.Release();
+        semaphore?.Release();
       };
       if ( control != null
         && control.InvokeRequired
@@ -89,7 +89,8 @@ namespace Ordisoftware.HebrewCommon
       }
       else
         processAction();
-      if ( exception != null ) throw exception;
+      if ( exception != null )
+        throw exception;
     }
 
   }

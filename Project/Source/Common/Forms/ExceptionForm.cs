@@ -223,11 +223,14 @@ namespace Ordisoftware.HebrewCommon
       body.AppendLine();
       body.AppendLine("## LOG");
       body.AppendLine();
-      string text = DebugManager.TraceForm.TextBox.Text;
-      if (text == "") ;
-      var lines1 = text.Split();
-      var lines2 = lines1.Where(l => { l = l.Trim(); return l != "" && !l.StartsWith("# ") && !l.StartsWith("--"); });
-      body.Append(lines2.AsMultispace());
+      if ( DebugManager.TraceForm.TextBox.Text == "") ;
+      var lines = DebugManager.TraceForm
+                               .TextBox
+                               .Lines
+                               .ToList()
+                               .Select(l => (l.StartsWith("# ") ? l.Remove(0,2) : l).TrimStart())
+                               .Where(l => !l.StartsWith("--"));
+      body.Append(lines.AsMultiline());
       return body;
     }
 

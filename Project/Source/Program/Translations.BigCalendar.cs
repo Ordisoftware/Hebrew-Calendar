@@ -35,49 +35,49 @@ namespace Ordisoftware.HebrewCalendar
       {
         new TranslationsDictionary
         {
-          [Languages.EN] = AskToGenerateBigCalendarEN + "a slight slowdown." + Globals.NL2 +
-                           Localizer.AskToContinue[Languages.EN],
+          [Language.EN] = AskToGenerateBigCalendarEN + "a slight slowdown." + Globals.NL2 +
+                          Localizer.AskToContinue[Language.EN],
 
-          [Languages.FR] = AskToGenerateBigCalendarFR + "un léger ralentissement." + Globals.NL2 +
-                           Localizer.AskToContinue[Languages.FR]
+          [Language.FR] = AskToGenerateBigCalendarFR + "un léger ralentissement." + Globals.NL2 +
+                          Localizer.AskToContinue[Language.FR]
         },
         new TranslationsDictionary
         {
-          [Languages.EN] = AskToGenerateBigCalendarEN + "a noticeable slowdown." + Globals.NL2 +
-                           Localizer.AskToContinue[Languages.EN],
+          [Language.EN] = AskToGenerateBigCalendarEN + "a noticeable slowdown." + Globals.NL2 +
+                          Localizer.AskToContinue[Language.EN],
 
-          [Languages.FR] = AskToGenerateBigCalendarFR + "un ralentissement notable." + Globals.NL2 +
-                           Localizer.AskToContinue[Languages.FR]
+          [Language.FR] = AskToGenerateBigCalendarFR + "un ralentissement notable." + Globals.NL2 +
+                          Localizer.AskToContinue[Language.FR]
         },
         new TranslationsDictionary
         {
-          [Languages.EN] = AskToGenerateBigCalendarEN + "a significant slowdown." + Globals.NL2 +
-                           "Do not use this value for a daily usage." + Globals.NL2 +
-                           Localizer.AskToContinue[Languages.EN],
+          [Language.EN] = AskToGenerateBigCalendarEN + "a significant slowdown." + Globals.NL2 +
+                          "Do not use this value for a daily usage." + Globals.NL2 +
+                          Localizer.AskToContinue[Language.EN],
 
-          [Languages.FR] = AskToGenerateBigCalendarFR + "un ralentissement important." + Globals.NL2 +
-                           "N'utilisez pas cette valeur pour un usage quotidien." + Globals.NL2 +
-                           Localizer.AskToContinue[Languages.FR]
+          [Language.FR] = AskToGenerateBigCalendarFR + "un ralentissement important." + Globals.NL2 +
+                          "N'utilisez pas cette valeur pour un usage quotidien." + Globals.NL2 +
+                          Localizer.AskToContinue[Language.FR]
         },
         new TranslationsDictionary
         {
-          [Languages.EN] = AskToGenerateBigCalendarEN + "a considerable slowdown." + Globals.NL2 +
-                           "Use this value only for occasional searches." + Globals.NL2 +
-                           Localizer.AskToContinue[Languages.EN],
+          [Language.EN] = AskToGenerateBigCalendarEN + "a considerable slowdown." + Globals.NL2 +
+                          "Use this value only for occasional searches." + Globals.NL2 +
+                          Localizer.AskToContinue[Language.EN],
 
-          [Languages.FR] = AskToGenerateBigCalendarFR + "ralentissement considérable." + Globals.NL2 +
-                           "N'utilisez cette valeur que pour des recherches ponctuelles." + Globals.NL2 +
-                           Localizer.AskToContinue[Languages.FR]
+          [Language.FR] = AskToGenerateBigCalendarFR + "ralentissement considérable." + Globals.NL2 +
+                          "N'utilisez cette valeur que pour des recherches ponctuelles." + Globals.NL2 +
+                          Localizer.AskToContinue[Language.FR]
         },
         new TranslationsDictionary
         {
-          [Languages.EN] = AskToGenerateBigCalendarEN + "a serious slowdown." + Globals.NL2 +
-                           "Use this value only with a powerful computer." + Globals.NL2 +
-                           Localizer.AskToContinue[Languages.EN],
+          [Language.EN] = AskToGenerateBigCalendarEN + "a serious slowdown." + Globals.NL2 +
+                          "Use this value only with a powerful computer." + Globals.NL2 +
+                          Localizer.AskToContinue[Language.EN],
 
-          [Languages.FR] = AskToGenerateBigCalendarFR + "ralentissement sévère." + Globals.NL2 +
-                           "N'utiliser cette valeur qu'avec un ordinateur puissant." + Globals.NL2 +
-                           Localizer.AskToContinue[Languages.FR]
+          [Language.FR] = AskToGenerateBigCalendarFR + "ralentissement sévère." + Globals.NL2 +
+                          "N'utiliser cette valeur qu'avec un ordinateur puissant." + Globals.NL2 +
+                          Localizer.AskToContinue[Language.FR]
         }
       };
 

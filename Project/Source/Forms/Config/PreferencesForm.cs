@@ -243,8 +243,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
-      if ( Settings.LanguageSelected == Languages.EN ) return;
-      Settings.LanguageSelected = Languages.EN;
+      if ( Settings.LanguageSelected == Language.EN ) return;
+      Settings.LanguageSelected = Language.EN;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -253,8 +253,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectLangFR_Click(object sender, EventArgs e)
     {
-      if ( Settings.LanguageSelected == Languages.FR ) return;
-      Settings.LanguageSelected = Languages.FR;
+      if ( Settings.LanguageSelected == Language.FR ) return;
+      Settings.LanguageSelected = Language.FR;
       Program.UpdateLocalization();
       UpdateLanguagesButtons();
       LanguageChanged = true;
@@ -264,12 +264,12 @@ namespace Ordisoftware.HebrewCalendar
     private void UpdateLanguagesButtons()
     {
       MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
-      if ( Settings.LanguageSelected == Languages.EN )
+      if ( Settings.LanguageSelected == Language.EN )
       {
         ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangFR.BackColor = SystemColors.Control;
       }
-      if ( Settings.LanguageSelected == Languages.FR )
+      if ( Settings.LanguageSelected == Language.FR )
       {
         ActionSelectLangFR.BackColor = SystemColors.ControlLightLight;
         ActionSelectLangEN.BackColor = SystemColors.Control;

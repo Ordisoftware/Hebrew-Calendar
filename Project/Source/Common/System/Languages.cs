@@ -14,9 +14,7 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 
 namespace Ordisoftware.HebrewCommon
 {
@@ -26,9 +24,9 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   public enum Language
   {
-    NotDefined,
-    English,
-    French
+    None,
+    EN,
+    FR
   }
 
   /// <summary>
@@ -36,45 +34,31 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   static public class Languages
   {
-    /// <summary>
-    /// Indicate language names.
-    /// </summary>
-    static public readonly Dictionary<Language, string> Names
-      = new Dictionary<Language, string>
-      {
-        [Language.NotDefined] = "--",
-        [Language.English] = "en",
-        [Language.French] = "fr"
-      };
-
-    static public readonly Language[] Managed
-      = ( (Language[])Enum.GetValues(typeof(Language)) ).Skip(1).ToArray();
 
     /// <summary>
-    /// Indicate english language code.
+    /// Indicate language codes.
     /// </summary>
-    static public readonly Language EN = Language.English;
+    static public readonly NullSafeOfEnumDictionary<string, Language> Values;
 
     /// <summary>
-    /// Indicate french language code.
+    /// Indicate language codes.
     /// </summary>
-    static public readonly Language FR = Language.French;
+    static public readonly NullSafeOfStringDictionary<Language> Codes;
 
     /// <summary>
-    /// Indicate default language code.
+    /// Indicate managed languages.
     /// </summary>
-    static public readonly Language Default = EN;
-
-    static public Language Convert(string lang)
-    {
-      return Names.FirstOrDefault(n => n.Value == lang).Key;
-    }
+    static public readonly Language[] Managed;
 
     /// <summary>
-    /// Indicate current language.
+    /// Indicate default language.
     /// </summary>
-    static public string CurrentCode
-      => Names[Current];
+    static public readonly Language Default = Language.EN;
+
+    /// <summary>
+    /// Indicate current language code.
+    /// </summary>
+    static public string CurrentCode => Codes[Current];
 
     /// <summary>
     /// Indicate current language.
@@ -84,9 +68,30 @@ namespace Ordisoftware.HebrewCommon
       get
       {
         string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-        var result = Convert(lang);
-        if ( result == Language.NotDefined ) result = Default;
+        var result = Values[lang];
+        if ( !Managed.Contains(result) ) result = Default;
         return result;
+      }
+    }
+
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
+    static Languages()
+    {
+      try
+      {
+        Managed = ( (Language[])Enum.GetValues(typeof(Language)) ).Skip(1).ToArray();
+        Codes = new NullSafeOfStringDictionary<Language>(Managed.ToDictionary(v => v, v => v.ToString().ToLower()));
+        Values = new NullSafeOfEnumDictionary<string, Language>(Codes.ToDictionary(v => v.Value, v => v.Key));
+      }
+      catch ( Exception ex )
+      {
+        string str = "Exception in Language static class constructor." + Globals.NL2 +
+                     "Please contact support.";
+        var einfo = new ExceptionInfo(null, ex);
+        if ( !einfo.ReadableText.IsNullOrEmpty() ) str += Globals.NL2 + einfo.ReadableText;
+        DisplayManager.ShowAndTerminate(str);
       }
     }
 

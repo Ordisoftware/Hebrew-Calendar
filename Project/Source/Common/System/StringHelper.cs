@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="str">The str to act on.</param>
     static public bool IsNullOrEmpty(this string str)
     {
-      return str == null || str == string.Empty;
+      return str == null || str.Length == 0;
     }
 
     /// <summary>
@@ -123,11 +123,14 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="str">The str to act on.</param>
     /// <param name="first">First line indentation.</param>
     /// <param name="corpus">Other lines indentation.</param>
-    /// <param name="spacechar">Space charactor.</param>
-    /// <param name="newline">New line string sequence.</param>
     static public string Indent(this string str, int first, int corpus)
     {
       return new string(' ', first) + str.Replace(Globals.NL, Globals.NL + new string(' ', corpus));
+    }
+
+    static public string Indent(this string str, int margin)
+    {
+      return str.Indent(margin, margin);
     }
 
   }

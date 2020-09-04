@@ -127,13 +127,12 @@ namespace Ordisoftware.HebrewCommon
         if ( value )
         {
           _Enabled = true;
-          TraceListener = new Listener(
-            Globals.TraceFolderPath,
-            Globals.TraceFileCode,
-            Globals.TraceFileExtension,
-            Globals.TraceFileMode,
-            Globals.TraceFileKeepCount,
-            TraceFileChanged);
+          TraceListener = new Listener(Globals.TraceFolderPath,
+                                       Globals.TraceFileCode,
+                                       Globals.TraceFileExtension,
+                                       Globals.TraceFileMode,
+                                       Globals.TraceFileKeepCount,
+                                       TraceFileChanged);
           System.Diagnostics.Trace.Listeners.Add(TraceListener);
           System.Diagnostics.Trace.AutoFlush = true;
           TraceListener.AutoFlush = true;
@@ -347,7 +346,7 @@ namespace Ordisoftware.HebrewCommon
         string message = Localizer.UnhandledException.GetLang(
           einfo.Emitter,
           einfo.ModuleName,
-          einfo.Instance.ToStringReadableFull());
+          einfo.Instance.ToStringReadableWithInners());
         if ( UserCanTerminate )
           message += Globals.NL2 + Localizer.AskToContinueOrTerminate.GetLang();
         var goal = UserCanTerminate ? MessageBoxButtons.YesNo : MessageBoxButtons.OK;
@@ -384,11 +383,9 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Get a full formatted text of an exeption including inners.
     /// </summary>
-    /// <returns>
-    /// ex as a string.
-    /// </returns>
     /// <param name="ex">The exception to act on.</param>
-    static public string ToStringFull(this Exception ex, object sender = null)
+    /// <param name="sender">The sender object</param>
+    static public string ToStringWithInners(this Exception ex, object sender = null)
     {
       return ex.Parse(sender, einfo => einfo.FullText);
     }
@@ -396,11 +393,9 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Get a readable formatted text of an exeption including inners.
     /// </summary>
-    /// <returns>
-    /// ex as a string.
-    /// </returns>
     /// <param name="ex">The exception to act on.</param>
-    static public string ToStringReadableFull(this Exception ex, object sender = null)
+    /// <param name="sender">The sender object</param>
+    static public string ToStringReadableWithInners(this Exception ex, object sender = null)
     {
       return ex.Parse(sender, einfo => einfo.ReadableText);
     }
@@ -408,10 +403,8 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Parse an exception and all inners.
     /// </summary>
-    /// <returns>
-    /// A string.
-    /// </returns>
     /// <param name="ex">The exception to act on.</param>
+    /// <param name="sender">The sender object</param>
     /// <param name="getText">The gettext iteration.</param>
     static private string Parse(this Exception ex, object sender, Func<ExceptionInfo, string> getText)
     {

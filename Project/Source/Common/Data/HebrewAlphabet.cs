@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCommon
     {
       var array = enable ? FinalEnable : FinalDisable;
       str = str.Trim();
-      if ( string.IsNullOrEmpty(str) ) return "";
+      if ( str.IsNullOrEmpty() ) return "";
       char c = str[0];
       foreach ( var v in array )
         if ( c == v[0] )
@@ -102,7 +102,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="str">The sentence having some words.</param>
     static public string UnFinalAll(string str)
     {
-      if ( string.IsNullOrEmpty(str) ) return "";
+      if ( str.IsNullOrEmpty() ) return "";
       foreach ( var v in FinalDisable )
         str = str.Replace(v[0], v[1]);
       return str;
@@ -113,7 +113,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public string OnlyHebrewFont(string str)
     {
-      if ( string.IsNullOrEmpty(str) ) return "";
+      if ( str.IsNullOrEmpty() ) return "";
       string result = "";
       foreach ( char c in str.RemoveDiacritics() )
         if ( Codes.Contains(c.ToString()) )
@@ -126,7 +126,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public string ConvertToHebrewFont(string str)
     {
-      if ( string.IsNullOrEmpty(str) ) return "";
+      if ( str.IsNullOrEmpty() ) return "";
       string result = "";
       foreach ( char c in str.RemoveDiacritics() )
         result = ConvertToKey(c) + result;
@@ -138,7 +138,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public string ConvertToUnicode(string str)
     {
-      if ( string.IsNullOrEmpty(str) ) return "";
+      if ( str.IsNullOrEmpty() ) return "";
       string result = "";
       foreach ( char c in str )
         result = ConvertToUnicode(c) + result;
@@ -231,12 +231,12 @@ namespace Ordisoftware.HebrewCommon
     static public readonly Dictionary<Language, string[]> Names
       = new Dictionary<Language, string[]>()
       {
-        [Languages.EN] = new string[]
+        [Language.EN] = new string[]
         {
           "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
           "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
         },
-        [Languages.FR] = new string[]
+        [Language.FR] = new string[]
         {
           "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
           "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"

@@ -200,7 +200,7 @@ namespace Ordisoftware.HebrewCommon
       }
       catch
       {
-        return "Error getting instance variable name";
+        return Localizer.ErrorSlot.GetLang();
       }
     }
 

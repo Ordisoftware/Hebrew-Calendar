@@ -89,7 +89,7 @@ namespace Ordisoftware.HebrewCommon
         ProgressBar.Refresh();
         Refresh();
       }
-      Progressing?.Invoke();
+      SystemManager.TryCatchManage(() => Progressing?.Invoke());
     }
 
     public void SetProgress(int index)

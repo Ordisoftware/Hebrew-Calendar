@@ -126,14 +126,29 @@ namespace Ordisoftware.HebrewCommon
     public string SingleLineText { get; private set; }
 
     /// <summary>
-    /// Indicate the stack text.
+    /// Indicate the exception stack text.
+    /// </summary>
+    public string ExceptionStackText { get; private set; }
+
+    /// <summary>
+    /// Indicate the thread stack text.
+    /// </summary>
+    public string ThreadStackText { get; private set; }
+
+    /// <summary>
+    /// Indicate the full stack text.
     /// </summary>
     public string StackText { get; private set; }
 
     /// <summary>
-    /// Indicate a list of stacks.
+    /// Indicate the exception stack list.
     /// </summary>
-    public List<string> StackList { get; private set; } = new List<string>();
+    public List<string> ExceptionStackList { get; private set; } = new List<string>();
+
+    /// <summary>
+    /// Indicate the thread stack list.
+    /// </summary>
+    public List<string> ThreadStackList { get; private set; } = new List<string>();
 
     /// <summary>
     /// Indicate caller name.
@@ -165,60 +180,78 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     private void ExtractInherits()
     {
-      var type = Instance.GetType();
-      TypeText = type.ToString();
-      type = type.BaseType;
-      InheritsFrom += type.ToString();
-      while ( ( type = type.BaseType ) != null )
-        InheritsFrom += " > " + type.ToString();
+      try
+      {
+        var type = Instance.GetType();
+        TypeText = type.ToString();
+        type = type.BaseType;
+        InheritsFrom += type.ToString();
+        while ( ( type = type.BaseType ) != null )
+          InheritsFrom += " > " + type.ToString();
+      }
+      catch
+      {
+      }
     }
 
     /// <summary>
     /// Extract the stack.
     /// </summary>
-    private void ExtractStack()
+    private void ExtractStack(bool full)
     {
-      if ( !DebugManager.UseStack ) return;
-      var frames = new StackTrace(Instance, true).GetFrames();
-      if ( frames == null ) return;
-      string result = "";
-      string partMethod = "";
-      string partFilename = "";
-      bool first = true;
-      foreach ( var frame in frames )
+      try
       {
-        var method = frame.GetMethod();
-        partMethod = method.DeclaringType.FullName;
-        var type = Type.GetType(partMethod);
-        Type[] list = { typeof(DebugManager), typeof(ExceptionInfo) };
-        if ( list.Contains(method.DeclaringType) )
-          continue;
-        partFilename = Path.GetFileName(frame.GetFileName());
-        if ( partFilename.IsNullOrEmpty() && DebugManager.StackOnlyProgram )
-          continue;
-        int line = frame.GetFileLineNumber();
-        if ( first )
+        if ( !DebugManager.UseStack ) return;
+        var frames = full ? new StackTrace(true).GetFrames() : new StackTrace(Instance, true).GetFrames();
+        if ( frames == null ) return;
+        string result = "";
+        string partMethod = "";
+        string partFilename = "";
+        bool first = true;
+        foreach ( var frame in frames )
         {
-          first = false;
-          AssemblyName = method.DeclaringType.Assembly.FullName;
-          ModuleName = method.DeclaringType.Module.Name;
-          Namespace = method.DeclaringType.Namespace;
-          ClassName = method.DeclaringType.Name;
-          MethodName = method.Name;
-          FileName = partFilename;
-          LineNumber = line;
+          var method = frame.GetMethod();
+          partMethod = method.DeclaringType.FullName;
+          var type = Type.GetType(partMethod);
+          Type[] list = { typeof(DebugManager), typeof(ExceptionInfo) };
+          if ( list.Contains(method.DeclaringType) )
+            continue;
+          string[] list2 = { nameof(SystemManager.TryCatchManage), nameof(SystemManager.TryCatch) };
+          if ( method.DeclaringType == typeof(SystemManager) && list2.Contains(method.Name) )
+            continue;
+          partFilename = Path.GetFileName(frame.GetFileName());
+          if ( partFilename.IsNullOrEmpty() && DebugManager.StackOnlyProgram )
+            continue;
+          int line = frame.GetFileLineNumber();
+          if ( first )
+          {
+            first = false;
+            AssemblyName = method.DeclaringType.Assembly.FullName;
+            ModuleName = method.DeclaringType.Module.Name;
+            Namespace = method.DeclaringType.Namespace;
+            ClassName = method.DeclaringType.Name;
+            MethodName = method.Name;
+            FileName = partFilename;
+            LineNumber = line;
+          }
+          partMethod += "." + method.Name;
+          if ( line != 0 )
+          {
+            partMethod = $"{partFilename} line {line}:{Globals.NL}{partMethod}{Globals.NL}";
+            if ( result != "" ) partMethod = Globals.NL + partMethod;
+          }
+          if ( result != "" ) result += Globals.NL;
+          result += partMethod;
+          ( full ? ThreadStackList : ExceptionStackList ).Add(partMethod.SplitNoEmptyLines().AsMultispace());
         }
-        partMethod += "." + method.Name;
-        if ( line != 0 )
-        {
-          partMethod = $"{partFilename} line {line}:{Globals.NL}{partMethod}{Globals.NL}";
-          if ( result != "" ) partMethod = Globals.NL + partMethod;
-        }
-        StackList.Add(partMethod.SplitNoEmptyLines().AsMultispace());
-        if ( result != "" ) result += Globals.NL;
-        result += partMethod;
+        if ( full )
+          ThreadStackText += result.Replace(Globals.NL3, Globals.NL2).TrimEnd(Globals.NL.ToCharArray());
+        else
+          ExceptionStackText += result.Replace(Globals.NL3, Globals.NL2).TrimEnd(Globals.NL.ToCharArray());
       }
-      StackText = result.Replace(Globals.NL3, Globals.NL2).TrimEnd(Globals.NL.ToCharArray());
+      catch
+      {
+      }
     }
 
     /// <summary>
@@ -226,41 +259,54 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     private void InitializeTexts()
     {
-      ThreadName = Thread.CurrentThread.Name.IsNullOrEmpty()
-                   ? Thread.CurrentThread.ManagedThreadId == 1
-                     ? "Main"
-                     : "ID = " + Thread.CurrentThread.ManagedThreadId.ToString()
-                   : Thread.CurrentThread.Name;
+      try
+      {
+        ThreadName = Thread.CurrentThread.Name.IsNullOrEmpty()
+                     ? Thread.CurrentThread.ManagedThreadId == 1
+                       ? "Main"
+                       : "ID = " + Thread.CurrentThread.ManagedThreadId.ToString()
+                     : Thread.CurrentThread.Name;
 
-      if ( !SystemManager.TryCatch(() => { Message = Instance.Message; }) )
-        Message = "Relayed Exception.";
+        if ( !SystemManager.TryCatch(() => { Message = Instance.Message; }) )
+          Message = "Relayed Exception.";
 
-      FullText = "Exception: " + TypeText + Globals.NL +
-                 "Module: " + ModuleName + Globals.NL +
-                 "Thread: " + ThreadName + Globals.NL +
-                 "Message: " + Globals.NL +
-                 Message;
+        FullText = "Exception: " + TypeText + Globals.NL +
+                   "Module: " + ModuleName + Globals.NL +
+                   "Thread: " + ThreadName + Globals.NL +
+                   "Message: " + Globals.NL +
+                   Message.Indent(DebugManager.MarginSize);
 
-      if ( DebugManager.UseStack )
-        FullText += Globals.NL +
-                    FullText + Globals.NL +
-                    "StackList: " + Globals.NL +
-                    StackList.AsMultiline();
+        try
+        {
+          if ( DebugManager.UseStack )
+            FullText += Globals.NL +
+                        "Stack Excpetion: " + Globals.NL +
+                        ExceptionStackList.AsMultiline().Indent(DebugManager.MarginSize) + Globals.NL +
+                        "Stack Thread: " + Globals.NL +
+                        ThreadStackList.AsMultiline().Indent(DebugManager.MarginSize);
+        }
+        catch
+        {
+        }
 
-      ReadableText = Message + Globals.NL2 +
-                     "  Type: " + TypeText + Globals.NL +
-                     "  Module: " + ModuleName + Globals.NL +
-                     "  Thread: " + ThreadName;
+        ReadableText = Message + Globals.NL2 +
+                       "Type: " + TypeText + Globals.NL +
+                       "Module: " + ModuleName + Globals.NL +
+                       "Thread: " + ThreadName;
 
-      if ( DebugManager.UseStack )
-        ReadableText += Globals.NL +
-                        "  File: " + FileName + Globals.NL +
-                        "  Method: " + Namespace + "." + ClassName + "." + MethodName + Globals.NL +
-                        "  Line: " + LineNumber;
+        if ( DebugManager.UseStack )
+          ReadableText += Globals.NL +
+                          "File: " + FileName + Globals.NL +
+                          "Method: " + Namespace + "." + ClassName + "." + MethodName + Globals.NL +
+                          "Line: " + LineNumber;
 
-      SingleLineText = ReadableText.Replace(Globals.NL2, " | ")
-                                   .Replace(Globals.NL, " | ")
-                                   .Replace("  ", "");
+        SingleLineText = ReadableText.Replace(Globals.NL2, " | ")
+                                     .Replace(Globals.NL, " | ")
+                                     .Replace("  ", "");
+      }
+      catch
+      {
+      }
     }
 
     /// <summary>
@@ -280,7 +326,12 @@ namespace Ordisoftware.HebrewCommon
         ExtractInherits();
         try
         {
-          ExtractStack();
+          ExtractStack(false);
+          ExtractStack(true);
+          StackText = "---------- EXCEPTION STACK ----------" + Globals.NL2 +
+                      ExceptionStackText + Globals.NL2 +
+                      "---------- THREAD STACK -------------" + Globals.NL2 +
+                      ThreadStackText;
         }
         finally
         {

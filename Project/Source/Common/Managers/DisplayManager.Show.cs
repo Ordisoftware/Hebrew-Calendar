@@ -36,10 +36,10 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( string.IsNullOrEmpty(_Title) )
+        if ( _Title.IsNullOrEmpty() )
         {
           _Title = FileVersionInfo.GetVersionInfo(Application.ExecutablePath).FileDescription;
-          if ( string.IsNullOrEmpty(_Title) )
+          if ( _Title.IsNullOrEmpty() )
             _Title = Path.GetFileNameWithoutExtension(Path.GetFileName(Application.ExecutablePath));
         }
         return _Title;
