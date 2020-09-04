@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
@@ -95,13 +96,23 @@ namespace Ordisoftware.HebrewCalendar
         Settings.LanguageSelected = Languages.Current;
         Settings.Save();
       }
-      else
       if ( Settings.FirstLaunchV4 )
       {
         Settings.FirstLaunchV4 = false;
         Settings.FirstLaunch = true;
         Settings.Save();
       }
+      if ( !Languages.Managed.Contains(Settings.LanguageSelected) )
+      {
+        string langCode = Settings.Language;
+        var langValue = Languages.Values[langCode];
+        if ( langValue != Language.None )
+          Settings.LanguageSelected = langValue;
+        else
+          Settings.LanguageSelected = Languages.Current;
+      }
+      else
+        Settings.LanguageSelected = Languages.Current;
     }
 
     /// <summary>
@@ -118,12 +129,12 @@ namespace Ordisoftware.HebrewCalendar
       AboutBox.Instance.Hide();
       MainForm.Instance.ClearLists();
       string str = MainForm.Instance.CalendarText.Text;
-      Action<Form> update = form =>
+      void update(Form form)
       {
         new Infralution.Localization.CultureManager().ManagedControl = form;
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
         resources.Apply(form.Controls);
-      };
+      }
       update(Globals.MainForm);
       string tempLogTitle = DebugManager.TraceForm.Text;
       string tempLogContent = DebugManager.TraceForm.TextBox.Text;

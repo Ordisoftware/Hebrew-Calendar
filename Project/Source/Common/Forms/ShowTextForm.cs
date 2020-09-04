@@ -20,55 +20,49 @@ namespace Ordisoftware.HebrewCommon
   public partial class ShowTextForm : Form
   {
 
-    static public ShowTextForm Create(string title,
-                                      string text,
-                                      int width = 400,
-                                      int height = 300,
-                                      bool sizeable = true,
-                                      bool wrap = true,
-                                      bool justify = true,
-                                      bool hideOnClose = false)
-    {
-      for ( int index = Application.OpenForms.Count - 1; index >= 0; index-- )
-        if ( Application.OpenForms[index] is ShowTextForm )
-          if ( Application.OpenForms[index].Text == title )
-            Application.OpenForms[index].Close();
-      var form = new ShowTextForm();
-      form.Text = title;
-      if ( !justify ) form.TextBox.SelectionAlignment = TextAlign.Left;
-      form.TextBox.Text = text;
-      form.Width = width;
-      form.Height = height;
-      form.CenterToMainFormElseScreen();
-      if ( !sizeable ) form.FormBorderStyle = FormBorderStyle.FixedSingle;
-      form.TextBox.WordWrap = wrap;
-      form.HideOnClose = hideOnClose;
-      return form;
-    }
-
-    static public ShowTextForm Create(TranslationsDictionary title,
-                                      TranslationsDictionary text,
-                                      int width = 400,
-                                      int height = 300,
-                                      bool sizeable = true,
-                                      bool wrap = true,
-                                      bool justify = true,
-                                      bool hideOnClose = false)
-    {
-      var form = Create(title.GetLang(), text.GetLang(), width, height, sizeable, wrap, justify, hideOnClose);
-      form.LocalizedTitle = title;
-      form.LocalizedText = text;
-      return form;
-    }
-
     private bool HideOnClose;
     private TranslationsDictionary LocalizedTitle;
     private TranslationsDictionary LocalizedText;
 
-    protected ShowTextForm()
+    public ShowTextForm()
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;
+    }
+
+    public ShowTextForm(string title,
+                        string text,
+                        bool hideOnClose = false,
+                        bool sizeable = true,
+                        int width = 400,
+                        int height = 300,
+                        bool wrap = true,
+                        bool justify = true)
+      : this()
+    {
+      Text = title;
+      if ( !justify ) TextBox.SelectionAlignment = TextAlign.Left;
+      TextBox.Text = text;
+      Width = width;
+      Height = height;
+      this.CenterToMainFormElseScreen();
+      if ( !sizeable ) FormBorderStyle = FormBorderStyle.FixedSingle;
+      TextBox.WordWrap = wrap;
+      HideOnClose = hideOnClose;
+    }
+
+    public ShowTextForm(TranslationsDictionary title,
+                        TranslationsDictionary text,
+                        bool hideOnClose = false,
+                        bool sizeable = true,
+                        int width = 400,
+                        int height = 300,
+                        bool wrap = true,
+                        bool justify = true)
+      : this(title.GetLang(), text.GetLang(), hideOnClose, sizeable, width, height, wrap, justify)
+    {
+      LocalizedTitle = title;
+      LocalizedText = text;
     }
 
     public void RelocalizeText()

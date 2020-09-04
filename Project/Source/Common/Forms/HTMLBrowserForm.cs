@@ -23,6 +23,9 @@ namespace Ordisoftware.HebrewCommon
   public partial class HTMLBrowserForm : Form
   {
 
+    private string LocationPropertyName;
+    private string ClientSizePropertyName;
+
     private TranslationsDictionary Title;
 
     private string FilenameTemplate;
@@ -41,12 +44,10 @@ namespace Ordisoftware.HebrewCommon
     {
       Title = title;
       FilenameTemplate = filenameTemplate;
+      LocationPropertyName = locationPropertyName;
+      ClientSizePropertyName = clientSizePropertyName;
       Location = (Point)Globals.Settings[locationPropertyName];
       ClientSize = (Size)Globals.Settings[clientSizePropertyName];
-      DataBindings.Add(new Binding("Location", Globals.Settings, locationPropertyName, true, 
-                                   DataSourceUpdateMode.OnPropertyChanged));
-      DataBindings.Add(new Binding("ClientSize", Globals.Settings, clientSizePropertyName, true, 
-                                   DataSourceUpdateMode.OnPropertyChanged));
     }
 
     private void HTMLBrowserForm_Load(object sender, EventArgs e)
@@ -68,6 +69,8 @@ namespace Ordisoftware.HebrewCommon
 
     private void HTMLBrowserForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      Globals.Settings[LocationPropertyName] = Location;
+      Globals.Settings[ClientSizePropertyName] = ClientSize;
       e.Cancel = true;
       Hide();
     }

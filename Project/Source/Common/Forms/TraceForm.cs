@@ -21,6 +21,9 @@ namespace Ordisoftware.HebrewCommon
   public partial class TraceForm : Form
   {
 
+    private string LocationPropertyName;
+    private string ClientSizePropertyName;
+
     private TraceForm()
     {
       InitializeComponent();
@@ -30,12 +33,10 @@ namespace Ordisoftware.HebrewCommon
     public TraceForm(string locationPropertyName, string clientSizePropertyName)
       : this()
     {
+      LocationPropertyName = locationPropertyName;
+      ClientSizePropertyName = clientSizePropertyName;
       Location = (Point)Globals.Settings[locationPropertyName];
       ClientSize = (Size)Globals.Settings[clientSizePropertyName];
-      DataBindings.Add(new Binding("Location", Globals.Settings, locationPropertyName, true,
-                                   DataSourceUpdateMode.OnPropertyChanged));
-      DataBindings.Add(new Binding("ClientSize", Globals.Settings, clientSizePropertyName, true,
-                                   DataSourceUpdateMode.OnPropertyChanged));
     }
 
     private void LogForm_Load(object sender, EventArgs e)
@@ -46,6 +47,8 @@ namespace Ordisoftware.HebrewCommon
 
     private void ShowTextForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      Globals.Settings[LocationPropertyName] = Location;
+      Globals.Settings[ClientSizePropertyName] = ClientSize;
       e.Cancel = true;
       Hide();
     }

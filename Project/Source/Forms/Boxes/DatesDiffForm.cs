@@ -131,7 +131,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      Program.DatesDiffNoticeForm.ShowDialog();
+      new ShowTextForm(Translations.DatesDiffNoticeTitle, Translations.DatesDiffNotice, false, true, 500, 450).ShowDialog();
     }
 
     private void ActionSwapDates_Click(object sender, EventArgs e)

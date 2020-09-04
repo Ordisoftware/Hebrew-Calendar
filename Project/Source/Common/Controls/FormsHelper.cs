@@ -18,6 +18,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Ordisoftware.HebrewCommon
 {
@@ -81,8 +82,7 @@ namespace Ordisoftware.HebrewCommon
           form.Location = new Point(area.Left + area.Width - form.Width, area.Top + area.Height - form.Height);
           break;
         case ControlLocation.Center:
-          form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2,
-                                    area.Top + area.Height / 2 - form.Height / 2);
+          form.Center(area);
           break;
         case ControlLocation.Fixed:
           form.CenterToMainFormElseScreen();
@@ -107,8 +107,71 @@ namespace Ordisoftware.HebrewCommon
               && Globals.MainForm.WindowState != FormWindowState.Minimized
                  ? Globals.MainForm.Bounds
                  : SystemInformation.WorkingArea;
+      form.Center(area);
+    }
+
+    /// <summary>
+    /// Center a form beside a form or the main form if visible and not minimized else center to screen.
+    /// </summary>
+    /// <param name="form">The form.</param>
+    /// <param name="source">The source form.</param>
+    static public void CenterToFormElseMainFormElseScreen(this Form form, Form source)
+    {
+      if ( form == null ) return;
+      if ( source != null
+        && source.Visible
+        && source.WindowState != FormWindowState.Minimized )
+        form.Center(source.Bounds);
+      else
+        form.CenterToMainFormElseScreen();
+    }
+
+    static public void Center(this Form form, Rectangle area)
+    {
+      if ( form == null ) return;
       form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2,
                                 area.Top + area.Height / 2 - form.Height / 2);
+    }
+
+    [DllImport("user32.dll")]
+    private static extern int ShowWindow(IntPtr hWnd, uint Msg);
+    private const uint SW_RESTORE = 0x09;
+    public static void Restore(this Form form)
+    {
+      if ( form.WindowState == FormWindowState.Minimized ) ShowWindow(form.Handle, SW_RESTORE);
+    }
+
+    /// <summary>
+    /// Popup a form not visible, visible in background or minimized to be visible on top.
+    /// </summary>
+    /// <param name="form">The form.</param>
+    /// <param name="sender">The form to center on.</param>
+    /// <param name="dialog">True if show dialog.</param>
+    static public void Popup(this Form form, Form sender = null, bool dialog = false)
+    {
+      if ( form.Visible )
+        if ( !dialog )
+        {
+          if ( form.WindowState == FormWindowState.Minimized )
+            form.Restore();
+          if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
+          form.Activate();
+          form.BringToFront();
+        }
+        else
+        {
+          form.Visible = false;
+          if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
+          form.ShowDialog();
+        }
+      else
+      if ( dialog )
+        form.ShowDialog();
+      else
+      {
+        if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
+        form.Show();
+      }
     }
 
     /// <summary>
