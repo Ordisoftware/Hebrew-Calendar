@@ -210,6 +210,7 @@ namespace Ordisoftware.HebrewCalendar
         SystemManager.TryCatch(() => ClearLists());
         SystemManager.TryCatch(() =>
         {
+          throw new Exception("test try catch");
           foreach ( Form form in Application.OpenForms )
             if ( form != this && form.Visible )
               SystemManager.TryCatch(() => form.Close());
@@ -778,7 +779,9 @@ namespace Ordisoftware.HebrewCalendar
       if ( LastVacuum == null )
         LastVacuum = Settings.VacuumLastDone;
       if ( ActionVacuumAtNextStartup.Checked )
-        Settings.VacuumLastDone = new DateTime(2020, 1, 1);
+      {
+        Settings.VacuumLastDone = DateTime.MinValue;
+      }
       else
         Settings.VacuumLastDone = LastVacuum.Value;
     }
