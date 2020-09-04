@@ -127,13 +127,12 @@ namespace Ordisoftware.HebrewCommon
         if ( value )
         {
           _Enabled = true;
-          TraceListener = new Listener(
-            Globals.TraceFolderPath,
-            Globals.TraceFileCode,
-            Globals.TraceFileExtension,
-            Globals.TraceFileMode,
-            Globals.TraceFileKeepCount,
-            TraceFileChanged);
+          TraceListener = new Listener(Globals.TraceFolderPath,
+                                       Globals.TraceFileCode,
+                                       Globals.TraceFileExtension,
+                                       Globals.TraceFileMode,
+                                       Globals.TraceFileKeepCount,
+                                       TraceFileChanged);
           System.Diagnostics.Trace.Listeners.Add(TraceListener);
           System.Diagnostics.Trace.AutoFlush = true;
           TraceListener.AutoFlush = true;

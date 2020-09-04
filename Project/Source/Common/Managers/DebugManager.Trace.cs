@@ -29,7 +29,7 @@ namespace Ordisoftware.HebrewCommon
 
     static public readonly TraceForm TraceForm;
 
-    private const int MarginSize = 4;
+    public const int MarginSize = 4;
     private const int EnterCountSkip = 2;
 
     static private int StackSkip = 1;
@@ -41,6 +41,7 @@ namespace Ordisoftware.HebrewCommon
     static private void TraceFileChanged(Listener sender, string filename)
     {
       TraceForm.Text = Path.GetFileNameWithoutExtension(filename);
+      TraceForm.TextBox.Clear();
       TraceForm.AppendText(File.ReadAllText(filename));
     }
 
@@ -79,7 +80,7 @@ namespace Ordisoftware.HebrewCommon
           message += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " [ " + str + " ] ";
         }
         if ( logevent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
-        message += text.Indent(CurrentMargin, CurrentMargin) + Globals.NL;
+        message += text.Indent(CurrentMargin, CurrentMargin + message.Length) + Globals.NL;
         SystemManager.TryCatch(() => TraceForm.AppendText(message));
         System.Diagnostics.Trace.Write(message);
         if ( logevent == TraceEvent.Enter ) CurrentMargin += MarginSize;
@@ -90,9 +91,8 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( !_Enabled ) return;
       Trace(TraceEvent.System, Separator);
-      Trace(TraceEvent.System, "# " + "START  : " + DateTime.Now.ToString());
       Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
-      Trace(TraceEvent.System, "# " + "PATH   : " + Globals.RootFolderPath);
+      Trace(TraceEvent.System, "# " + "START  : " + DateTime.Now.ToString());
       string platformStr = SystemStatistics.Instance.Platform;
       var platformLines = platformStr.SplitNoEmptyLines();
       Trace(TraceEvent.System, "# " + "SYSTEM : " + platformLines.Join(" | "));
@@ -105,9 +105,9 @@ namespace Ordisoftware.HebrewCommon
       if ( !_Enabled ) return;
       Trace(TraceEvent.System);
       Trace(TraceEvent.System, Separator);
-      Trace(TraceEvent.System, "# " + "UNLEFT : " + EnterCount.ToString());
       Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
       Trace(TraceEvent.System, "# " + "STOP   : " + DateTime.Now.ToString());
+      Trace(TraceEvent.System, "# " + "UNLEFT : " + EnterCount.ToString());
       Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System);
     }

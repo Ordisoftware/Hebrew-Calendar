@@ -289,6 +289,9 @@
   <data name="TextStack.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="TextStack.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
   <data name="TextStack.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 239</value>
   </data>

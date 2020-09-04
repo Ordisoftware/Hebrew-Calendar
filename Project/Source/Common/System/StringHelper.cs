@@ -130,6 +130,11 @@ namespace Ordisoftware.HebrewCommon
       return new string(' ', first) + str.Replace(Globals.NL, Globals.NL + new string(' ', corpus));
     }
 
+    static public string Indent(this string str, int margin)
+    {
+      return str.Indent(margin, margin);
+    }
+
   }
 
 }
