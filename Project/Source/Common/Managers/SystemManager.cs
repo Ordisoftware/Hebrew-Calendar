@@ -64,8 +64,7 @@ namespace Ordisoftware.HebrewCommon
     {
       try
       {
-        bool created;
-        ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out created);
+        ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out bool created);
         if ( created )
           CreateIPCServer(duplicated);
         else
@@ -125,7 +124,6 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Call an action without raising exceptions.
     /// </summary>
-    /// <param name="action"></param>
     static public bool TryCatch(Action action)
     {
       try
@@ -142,7 +140,6 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Call an action without raising exceptions.
     /// </summary>
-    /// <param name="action"></param>
     static public bool TryCatchManage(Action action)
     {
       try
@@ -158,16 +155,32 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Call an action without raising exceptions.
+    /// </summary>
+    static public bool TryCatchManage(ShowExceptionMode mode, Action action)
+    {
+      try
+      {
+        action();
+        return true;
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage(mode);
+        return false;
+      }
+    }
+
+    /// <summary>
     /// Get the memory size of a serializable object.
     /// </summary>
     static public long SizeOf(this object instance)
     {
-      if ( instance == null ) return 0;
-      if ( !instance.GetType().IsSerializable ) return -1;
       long result = -1;
-      using ( MemoryStream stream = new MemoryStream() )
-        if ( !TryCatch(() => { new BinaryFormatter().Serialize(stream, instance); result = stream.Length; }) )
-          result = -1;
+      if ( instance == null ) return 0;
+      if ( instance.GetType().IsSerializable )
+        using ( var stream = new MemoryStream() )
+          TryCatch(() => { new BinaryFormatter().Serialize(stream, instance); result = stream.Length; });
       return result;
     }
 

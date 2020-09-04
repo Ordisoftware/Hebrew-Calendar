@@ -231,12 +231,12 @@ namespace Ordisoftware.HebrewCommon
     static public readonly Dictionary<Language, string[]> Names
       = new Dictionary<Language, string[]>()
       {
-        [Languages.EN] = new string[]
+        [Language.EN] = new string[]
         {
           "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
           "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
         },
-        [Languages.FR] = new string[]
+        [Language.FR] = new string[]
         {
           "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
           "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"

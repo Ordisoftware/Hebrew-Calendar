@@ -27,149 +27,149 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly TranslationsDictionary ApplicationDescription
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Generate a hebrew lunisolar calendar with shabat and celebrations reminder",
-        [Languages.FR] = "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations"
+        [Language.EN] = "Generate a hebrew lunisolar calendar with shabat and celebrations reminder",
+        [Language.FR] = "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations"
       };
 
     static public readonly TranslationsDictionary AskToResetPreferences
       = new TranslationsDictionary
       {
-        [Languages.EN] = Localizer.ResetPreferences[Languages.EN] + Globals.NL2 +
-                         "GPS location and shabat day will be keeped." + Globals.NL2 +
-                         Localizer.AskToContinue[Languages.EN],
+        [Language.EN] = Localizer.ResetPreferences[Language.EN] + Globals.NL2 +
+                        "GPS location and shabat day will be keeped." + Globals.NL2 +
+                        Localizer.AskToContinue[Language.EN],
 
-        [Languages.FR] = Localizer.ResetPreferences[Languages.FR] + Globals.NL2 +
-                         "La position GPS et le jour du shabat seront conservés." + Globals.NL2 +
-                         Localizer.AskToContinue[Languages.FR]
+        [Language.FR] = Localizer.ResetPreferences[Language.FR] + Globals.NL2 +
+                        "La position GPS et le jour du shabat seront conservés." + Globals.NL2 +
+                        Localizer.AskToContinue[Language.FR]
       };
 
     static public readonly TranslationsDictionary CantExitWhileGenerating
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Can't exit application while generating data.",
-        [Languages.FR] = "Impossible de quitter l'application durant la génération des données."
+        [Language.EN] = "Can't exit application while generating data.",
+        [Language.FR] = "Impossible de quitter l'application durant la génération des données."
       };
 
     static public readonly TranslationsDictionary LoadingCitiesError
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Error on loading the cities' GPS coordonates." + Globals.NL +
-                         Localizer.ApplicationMustExit[Languages.EN],
+        [Language.EN] = "Error on loading the cities' GPS coordonates." + Globals.NL +
+                        Localizer.ApplicationMustExit[Language.EN],
 
-        [Languages.FR] = "Impossible de charger les coordonnées GPS des villes." + Globals.NL +
-                         Localizer.ApplicationMustExit[Languages.EN]
+        [Language.FR] = "Impossible de charger les coordonnées GPS des villes." + Globals.NL +
+                        Localizer.ApplicationMustExit[Language.EN]
       };
 
     static public readonly TranslationsDictionary ProgressLoadingData
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Loading data...",
-        [Languages.FR] = "Chargement des données..."
+        [Language.EN] = "Loading data...",
+        [Language.FR] = "Chargement des données..."
       };
 
     static public readonly TranslationsDictionary ProgressCreateDays
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Populating days...",
-        [Languages.FR] = "Garnissage des jours..."
+        [Language.EN] = "Populating days...",
+        [Language.FR] = "Garnissage des jours..."
       };
 
     static public readonly TranslationsDictionary ProgressAnalyzeDays
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Analyzing days...",
-        [Languages.FR] = "Analyse des jours..."
+        [Language.EN] = "Analyzing days...",
+        [Language.FR] = "Analyse des jours..."
       };
 
     static public readonly TranslationsDictionary ProgressGenerateReport
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Generating report...",
-        [Languages.FR] = "Génération du rapport..."
+        [Language.EN] = "Generating report...",
+        [Language.FR] = "Génération du rapport..."
       };
 
     static public readonly TranslationsDictionary ProgressFillMonths
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Filling months...",
-        [Languages.FR] = "Remplissage des mois..."
+        [Language.EN] = "Filling months...",
+        [Language.FR] = "Remplissage des mois..."
       };
 
     static public readonly TranslationsDictionary AskToUseMoonOmer
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Do you want to use the moon omer, else the sun?",
-        [Languages.FR] = "Voulez-vous utiliser le omer de la lune, sinon du soleil ?"
+        [Language.EN] = "Do you want to use the moon omer, else the sun?",
+        [Language.FR] = "Voulez-vous utiliser le omer de la lune, sinon du soleil ?"
       };
 
     static public readonly TranslationsDictionary AskToSetupPersonalShabat
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Do you want to setup the personal shabat?",
-        [Languages.FR] = "Voulez-vous configurer le shabat personnel ?"
+        [Language.EN] = "Do you want to setup the personal shabat?",
+        [Language.FR] = "Voulez-vous configurer le shabat personnel ?"
       };
 
     static public readonly TranslationsDictionary DateNotFound
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Date not found in the database: {0}",
-        [Languages.FR] = "Date non trouvée dans la base de données : {0}"
+        [Language.EN] = "Date not found in the database: {0}",
+        [Language.FR] = "Date non trouvée dans la base de données : {0}"
       };
 
     static public readonly TranslationsDictionary SelectBirthday
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Birth day",
-        [Languages.FR] = "Jour de naissance"
+        [Language.EN] = "Birth day",
+        [Language.FR] = "Jour de naissance"
       };
 
     static public readonly TranslationsDictionary FirstDay
       = new TranslationsDictionary
       {
-        [Languages.EN] = "First day",
-        [Languages.FR] = "Premier jour"
+        [Language.EN] = "First day",
+        [Language.FR] = "Premier jour"
       };
 
     static public readonly TranslationsDictionary LastDay
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Last day",
-        [Languages.FR] = "Dernier jour"
+        [Language.EN] = "Last day",
+        [Language.FR] = "Dernier jour"
       };
 
     static public readonly TranslationsDictionary NotSupportedYear
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Year is not supported: {0}",
-        [Languages.FR] = "L'année n'est pas supportée : {0}"
+        [Language.EN] = "Year is not supported: {0}",
+        [Language.FR] = "L'année n'est pas supportée : {0}"
       };
 
     static public readonly TranslationsDictionary PredefinedYearsIntervalAfter
       = new TranslationsDictionary
       {
-        [Languages.EN] = "{0} years from now",
-        [Languages.FR] = "{0} années à partir de maintenant"
+        [Language.EN] = "{0} years from now",
+        [Language.FR] = "{0} années à partir de maintenant"
       };
 
     static public readonly TranslationsDictionary PredefinedYearsIntervalBeforeAndAfter
       = new TranslationsDictionary
       {
-        [Languages.EN] = "{0} years before and after from now",
-        [Languages.FR] = "{0} années avant et après maintenant"
+        [Language.EN] = "{0} years before and after from now",
+        [Language.FR] = "{0} années avant et après maintenant"
       };
 
     static public readonly TranslationsDictionary FatalGenerateError
       = new TranslationsDictionary
       {
-        [Languages.EN] = "Fatal error while generating data." + Globals.NL +
-                         Localizer.ApplicationMustExit[Languages.EN] + Globals.NL +
-                         Localizer.ContactSupport[Languages.EN] + Globals.NL2 +
-                         "{0}",
+        [Language.EN] = "Fatal error while generating data." + Globals.NL +
+                        Localizer.ApplicationMustExit[Language.EN] + Globals.NL +
+                        Localizer.ContactSupport[Language.EN] + Globals.NL2 +
+                        "{0}",
 
-        [Languages.FR] = "Erreur fatale lors de la génération des données." + Globals.NL +
-                         Localizer.ApplicationMustExit[Languages.FR] + Globals.NL +
-                         Localizer.ContactSupport[Languages.FR] + Globals.NL2 +
-                         "{0}"
+        [Language.FR] = "Erreur fatale lors de la génération des données." + Globals.NL +
+                        Localizer.ApplicationMustExit[Language.FR] + Globals.NL +
+                        Localizer.ContactSupport[Language.FR] + Globals.NL2 +
+                        "{0}"
       };
 
   }

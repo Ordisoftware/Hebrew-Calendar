@@ -32,8 +32,8 @@ namespace Ordisoftware.HebrewCalendar
       public override string ToString() => Name;
     }
 
-    static public readonly SortedAutoDictionary<string, AutoList<CityItem>> GPS
-      = new SortedAutoDictionary<string, AutoList<CityItem>>();
+    static public readonly SortedAutoDictionary<string, AutoResizedList<CityItem>> GPS
+      = new SortedAutoDictionary<string, AutoResizedList<CityItem>>();
 
     static SelectCityForm()
     {

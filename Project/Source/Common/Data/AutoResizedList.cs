@@ -13,7 +13,6 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace Ordisoftware.HebrewCommon
@@ -23,18 +22,19 @@ namespace Ordisoftware.HebrewCommon
   /// Provide auto list.
   /// </summary>
   [Serializable]
-  public class AutoList<T> : List<T> where T : new()
+  public class AutoResizedList<T> : List<T>
+    where T : new()
   {
 
-    public AutoList()
+    public AutoResizedList()
     {
     }
 
-    public AutoList(int capacity) : base(capacity)
+    public AutoResizedList(int capacity) : base(capacity)
     {
     }
 
-    public AutoList(IEnumerable<T> collection) : base(collection)
+    public AutoResizedList(IEnumerable<T> collection) : base(collection)
     {
     }
 

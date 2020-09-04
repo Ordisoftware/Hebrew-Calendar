@@ -23,6 +23,8 @@ namespace Ordisoftware.HebrewCommon
   static public class SQLiteDate
   {
 
+    // TODO Manage errors
+
     /// <summary>
     /// Get a date like "Year.Month.Day".
     /// </summary>

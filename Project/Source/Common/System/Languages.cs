@@ -14,9 +14,7 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 
 namespace Ordisoftware.HebrewCommon
 {
@@ -26,9 +24,9 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   public enum Language
   {
-    NotDefined,
-    English,
-    French
+    None,
+    EN,
+    FR
   }
 
   /// <summary>
@@ -40,17 +38,12 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate language codes.
     /// </summary>
-    static public readonly NullSafeOfStringDictionary<Language> Codes
-      = new NullSafeOfStringDictionary<Language>
-      {
-        [Language.English] = "en",
-        [Language.French] = "fr"
-      };
+    static public readonly NullSafeOfEnumDictionary<string, Language> Values;
 
     /// <summary>
     /// Indicate language codes.
     /// </summary>
-    static public readonly NullSafeOfEnumDictionary<string, Language> Values;
+    static public readonly NullSafeOfStringDictionary<Language> Codes;
 
     /// <summary>
     /// Indicate managed languages.
@@ -58,19 +51,9 @@ namespace Ordisoftware.HebrewCommon
     static public readonly Language[] Managed;
 
     /// <summary>
-    /// Indicate english language.
-    /// </summary>
-    static public readonly Language EN = Language.English;
-
-    /// <summary>
-    /// Indicate french language.
-    /// </summary>
-    static public readonly Language FR = Language.French;
-
-    /// <summary>
     /// Indicate default language.
     /// </summary>
-    static public readonly Language Default = EN;
+    static public readonly Language Default = Language.EN;
 
     /// <summary>
     /// Indicate current language code.
@@ -99,11 +82,12 @@ namespace Ordisoftware.HebrewCommon
       try
       {
         Managed = ( (Language[])Enum.GetValues(typeof(Language)) ).Skip(1).ToArray();
-        Values = new NullSafeOfEnumDictionary<string, Language>(Codes.ToDictionary(x => x.Value, x => x.Key));
+        Codes = new NullSafeOfStringDictionary<Language>(Managed.ToDictionary(v => v, v => v.ToString().ToLower()));
+        Values = new NullSafeOfEnumDictionary<string, Language>(Codes.ToDictionary(v => v.Value, v => v.Key));
       }
       catch ( Exception ex )
       {
-        string str = "Language exception" + Globals.NL2 +
+        string str = "Exception in Language static class constructor." + Globals.NL2 +
                      "Please contact support.";
         var einfo = new ExceptionInfo(null, ex);
         if ( !einfo.ReadableText.IsNullOrEmpty() ) str += Globals.NL2 + einfo.ReadableText;

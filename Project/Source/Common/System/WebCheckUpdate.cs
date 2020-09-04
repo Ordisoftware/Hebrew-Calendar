@@ -175,11 +175,10 @@ namespace Ordisoftware.HebrewCommon
           if ( we.Response is HttpWebResponse response )
             code = response.StatusCode;
         }
-        ex = new WebException(
-          e.Error.Message + Globals.NL2 +
-          filename + Globals.NL2 +
-          status.ToStringFull() + Globals.NL +
-          code.ToStringFull());
+        ex = new WebException(e.Error.Message + Globals.NL2 +
+                              filename + Globals.NL2 +
+                              status.ToStringFull() + Globals.NL +
+                              code.ToStringFull());
       }
     }
 

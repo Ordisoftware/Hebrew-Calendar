@@ -90,12 +90,12 @@ namespace Ordisoftware.HebrewCommon
     static private void WriteHeader()
     {
       if ( !_Enabled ) return;
+      string platform = "Undefined";
+      SystemManager.TryCatch(() => { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join(" | "); });
       Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
-      Trace(TraceEvent.System, "# " + "START  : " + DateTime.Now.ToString());
-      string platformStr = SystemStatistics.Instance.Platform;
-      var platformLines = platformStr.SplitNoEmptyLines();
-      Trace(TraceEvent.System, "# " + "SYSTEM : " + platformLines.Join(" | "));
+      Trace(TraceEvent.System, "# " + "START  : " + DateTime.Now);
+      Trace(TraceEvent.System, "# " + "SYSTEM : " + platform);
       Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System);
     }
@@ -106,8 +106,8 @@ namespace Ordisoftware.HebrewCommon
       Trace(TraceEvent.System);
       Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
-      Trace(TraceEvent.System, "# " + "STOP   : " + DateTime.Now.ToString());
-      Trace(TraceEvent.System, "# " + "UNLEFT : " + EnterCount.ToString());
+      Trace(TraceEvent.System, "# " + "STOP   : " + DateTime.Now);
+      Trace(TraceEvent.System, "# " + "UNLEFT : " + EnterCount);
       Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System);
     }

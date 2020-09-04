@@ -104,8 +104,8 @@ namespace Ordisoftware.HebrewCalendar
       {
         ChronoStart.Stop();
         ex.Manage();
-        DisplayManager.ShowAndTerminate(Localizer.ApplicationMustExit[Languages.FR] + Globals.NL2 +
-                                        Localizer.ContactSupport[Languages.FR]);
+        DisplayManager.ShowAndTerminate(Localizer.ApplicationMustExit[Language.FR] + Globals.NL2 +
+                                        Localizer.ContactSupport[Language.FR]);
       }
       finally
       {

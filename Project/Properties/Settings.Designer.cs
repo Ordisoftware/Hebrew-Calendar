@@ -599,7 +599,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("NotDefined")]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
         public global::Ordisoftware.HebrewCommon.Language LanguageSelected {
             get {
                 return ((global::Ordisoftware.HebrewCommon.Language)(this["LanguageSelected"]));

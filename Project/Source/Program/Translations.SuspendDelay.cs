@@ -27,7 +27,7 @@ namespace Ordisoftware.HebrewCalendar
     static public NullSafeDictionary<Language, NullSafeList<SuspendDelayItem>> SuspendReminderDelays
       = new NullSafeDictionary<Language, NullSafeList<SuspendDelayItem>>
       {
-        [Languages.EN] = new NullSafeList<SuspendDelayItem>
+        [Language.EN] = new NullSafeList<SuspendDelayItem>
         {
           new SuspendDelayItem("None", 0),
           new SuspendDelayItem("5 minutes", 5),
@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
           new SuspendDelayItem("1 day", 1440),
           new SuspendDelayItem("Custom", -1)
         },
-        [Languages.FR] = new NullSafeList<SuspendDelayItem>
+        [Language.FR] = new NullSafeList<SuspendDelayItem>
         {
           new SuspendDelayItem("Aucun", 0),
           new SuspendDelayItem("5 minutes", 5),

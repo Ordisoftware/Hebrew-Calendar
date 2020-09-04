@@ -102,15 +102,12 @@ namespace Ordisoftware.HebrewCommon
     static public void InitializeVersion(this OdbcConnection connection)
     {
       ADOdotNETProvider = connection?.GetType().Name ?? Localizer.ErrorSlot.GetLang();
-      try
-      {
-        using ( var command = new OdbcCommand("SELECT SQLITE_VERSION()", connection) )
-          Engine = "SQLite " + command.ExecuteScalar().ToString();
-      }
-      catch
-      {
+      if ( !SystemManager.TryCatch(() =>
+       {
+         using ( var command = new OdbcCommand("SELECT SQLITE_VERSION()", connection) )
+           Engine = "SQLite " + command.ExecuteScalar().ToString();
+       }) )
         Engine = Localizer.ErrorSlot.GetLang();
-      }
     }
 
     /// <summary>

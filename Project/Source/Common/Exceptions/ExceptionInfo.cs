@@ -332,7 +332,6 @@ namespace Ordisoftware.HebrewCommon
                       ExceptionStackText + Globals.NL2 +
                       "---------- THREAD STACK -------------" + Globals.NL2 +
                       ThreadStackText;
-
         }
         finally
         {

@@ -208,7 +208,6 @@ namespace Ordisoftware.HebrewCalendar
         SystemManager.TryCatch(() => ClearLists());
         SystemManager.TryCatch(() =>
         {
-          throw new Exception("test try catch");
           foreach ( Form form in Application.OpenForms )
             if ( form != this && form.Visible )
               SystemManager.TryCatch(() => form.Close());
