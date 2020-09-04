@@ -38,10 +38,10 @@ namespace Ordisoftware.HebrewCommon
       {
         CommandLineArguments = args;
         if ( args.Length == 2 && args[0] == "/lang" )
-          if ( args[1] == Languages.Names[Language.English] )
+          if ( args[1] == Languages.Codes[Language.English] )
             language = Language.English;
           else
-          if ( args[1] == Languages.Names[Language.French] )
+          if ( args[1] == Languages.Codes[Language.French] )
             language = Language.French;
         if ( language == Language.NotDefined )
           language = Languages.Current;

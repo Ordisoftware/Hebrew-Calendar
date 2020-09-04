@@ -109,7 +109,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void Exit()
     {
-      DebugManager.Stop();
+      TryCatch(() => DebugManager.Stop());
       Application.Exit();
     }
 
@@ -118,7 +118,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void Terminate()
     {
-      DebugManager.Stop();
+      TryCatch(() => DebugManager.Stop());
       Environment.Exit(-1);
     }
 
@@ -190,7 +190,7 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( string.IsNullOrEmpty(_Processor) )
+        if ( _Processor.IsNullOrEmpty() )
           try
           {
             var list = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor").Get();
@@ -221,11 +221,11 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( string.IsNullOrEmpty(_Platform) )
+        if ( _Platform.IsNullOrEmpty() )
         {
           string osName = get(() => Registry.GetValue(HKLMWinNTCurrent, "productName", "").ToString());
           string osRelease = get(() => Registry.GetValue(HKLMWinNTCurrent, "ReleaseId", "").ToString());
-          if ( !string.IsNullOrEmpty(osRelease) ) osRelease = $" ({ osRelease})";
+          if ( !osRelease.IsNullOrEmpty() ) osRelease = $" ({ osRelease})";
           string osVersion = Environment.OSVersion.Version.ToString();
           string osType = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
           string clr = Environment.Version.ToString();
@@ -268,7 +268,7 @@ namespace Ordisoftware.HebrewCommon
     {
       get
       {
-        if ( string.IsNullOrEmpty(_TotalVisibleMemory) )
+        if ( _TotalVisibleMemory.IsNullOrEmpty() )
         {
           object value = GetWin32OperatingSystemValue("TotalVisibleMemorySize");
           _TotalVisibleMemory = value != null

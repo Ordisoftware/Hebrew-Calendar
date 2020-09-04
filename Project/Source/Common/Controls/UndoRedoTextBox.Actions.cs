@@ -55,7 +55,7 @@ namespace Ordisoftware.HebrewCommon
     {
       var textbox = GetTextBoxAndFocus(sender);
       if ( textbox == null || !textbox.Enabled ) return;
-      if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
+      if ( textbox.SelectedText.IsNullOrEmpty() ) return;
       Clipboard.SetText(textbox.SelectedText);
     }
 
@@ -64,7 +64,7 @@ namespace Ordisoftware.HebrewCommon
       var textbox = GetTextBoxAndFocus(sender);
       if ( textbox == null || !textbox.Enabled ) return;
       if ( textbox.ReadOnly ) return;
-      if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
+      if ( textbox.SelectedText.IsNullOrEmpty() ) return;
       try
       {
         textbox.Cut();
@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCommon
       var textbox = GetTextBoxAndFocus(sender);
       if ( textbox == null || !textbox.Enabled ) return;
       if ( textbox.ReadOnly ) return;
-      if ( string.IsNullOrEmpty(textbox.SelectedText) ) return;
+      if ( textbox.SelectedText.IsNullOrEmpty() ) return;
       try
       {
         SendKeys.Send("{DELETE}");
@@ -105,7 +105,7 @@ namespace Ordisoftware.HebrewCommon
       var textbox = GetTextBoxAndFocus(sender);
       if ( textbox == null || !textbox.Enabled ) return;
       if ( textbox.ReadOnly ) return;
-      if ( string.IsNullOrEmpty(Clipboard.GetText()) ) return;
+      if ( Clipboard.GetText().IsNullOrEmpty() ) return;
       try
       {
         textbox.Paste();

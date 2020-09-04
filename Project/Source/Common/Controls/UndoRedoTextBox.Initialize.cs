@@ -111,13 +111,13 @@ namespace Ordisoftware.HebrewCommon
       if ( textbox == null ) return;
       bool b1 = textbox.Enabled;
       bool b2 = textbox.Enabled && !textbox.ReadOnly;
-      bool b3 = !string.IsNullOrEmpty(textbox.SelectedText);
+      bool b3 = !textbox.SelectedText.IsNullOrEmpty();
       ActionUndo.Enabled = b2 && ( textbox.UndoStack.Count != 0 || textbox.CanUndo ); // TODO rewrite undo/redo
       ActionRedo.Enabled = b2 && ( textbox.RedoStack.Count != 0 );
       ActionCopy.Enabled = b1 && b3;
       ActionCut.Enabled = b2 && b3;
-      ActionPaste.Enabled = b2 && !string.IsNullOrEmpty(Clipboard.GetText());
-      ActionSelectAll.Enabled = b1 && !string.IsNullOrEmpty(textbox.Text)
+      ActionPaste.Enabled = b2 && !Clipboard.GetText().IsNullOrEmpty();
+      ActionSelectAll.Enabled = b1 && !textbox.Text.IsNullOrEmpty()
                                    && textbox.SelectionLength != textbox.TextLength;
       ActionDelete.Enabled = ActionCut.Enabled;
     }

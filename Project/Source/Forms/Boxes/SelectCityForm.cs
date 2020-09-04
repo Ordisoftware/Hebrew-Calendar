@@ -59,8 +59,7 @@ namespace Ordisoftware.HebrewCalendar
         ex.Manage();
         if ( !Globals.IsReady )
         {
-          DisplayManager.Show(Translations.LoadingCitiesError.GetLang());
-          SystemManager.Terminate();
+          DisplayManager.ShowAndTerminate(Translations.LoadingCitiesError.GetLang());
         }
       }
     }
@@ -102,10 +101,10 @@ namespace Ordisoftware.HebrewCalendar
       {
         IsLoading = false;
         ActiveControl = EditFilter;
-        if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) )
+        if ( !Program.Settings.GPSCountry.IsNullOrEmpty() )
         {
           EditFilter.Text = Program.Settings.GPSCountry;
-          if ( !string.IsNullOrEmpty(Program.Settings.GPSCity) )
+          if ( !Program.Settings.GPSCity.IsNullOrEmpty() )
             EditFilter.Text += Program.Settings.GPSCity;
         }
         else

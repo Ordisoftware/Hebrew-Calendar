@@ -103,10 +103,9 @@ namespace Ordisoftware.HebrewCalendar
       catch ( Exception ex )
       {
         ChronoStart.Stop();
-        DisplayManager.ShowError(Localizer.ApplicationMustExit[Languages.FR] + Globals.NL2 +
-                                 Localizer.ContactSupport[Languages.FR]);
         ex.Manage();
-        SystemManager.Terminate();
+        DisplayManager.ShowAndTerminate(Localizer.ApplicationMustExit[Languages.FR] + Globals.NL2 +
+                                        Localizer.ContactSupport[Languages.FR]);
       }
       finally
       {

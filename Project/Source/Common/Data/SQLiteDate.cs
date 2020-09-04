@@ -50,7 +50,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="date">The date.</param>
     static public DateTime ToDateTime(string date)
     {
-      if ( string.IsNullOrEmpty(date) ) return DateTime.MinValue;
+      if ( date.IsNullOrEmpty() ) return DateTime.MinValue;
       string[] items = date.Split('-');
       return new DateTime(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]), Convert.ToInt32(items[2]));
     }

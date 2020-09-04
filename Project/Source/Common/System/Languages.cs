@@ -36,45 +36,46 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   static public class Languages
   {
+
     /// <summary>
-    /// Indicate language names.
+    /// Indicate language codes.
     /// </summary>
-    static public readonly Dictionary<Language, string> Names
-      = new Dictionary<Language, string>
+    static public readonly NullSafeOfStringDictionary<Language> Codes
+      = new NullSafeOfStringDictionary<Language>
       {
-        [Language.NotDefined] = "--",
         [Language.English] = "en",
         [Language.French] = "fr"
       };
 
-    static public readonly Language[] Managed
-      = ( (Language[])Enum.GetValues(typeof(Language)) ).Skip(1).ToArray();
+    /// <summary>
+    /// Indicate language codes.
+    /// </summary>
+    static public readonly NullSafeOfEnumDictionary<string, Language> Values;
 
     /// <summary>
-    /// Indicate english language code.
+    /// Indicate managed languages.
+    /// </summary>
+    static public readonly Language[] Managed;
+
+    /// <summary>
+    /// Indicate english language.
     /// </summary>
     static public readonly Language EN = Language.English;
 
     /// <summary>
-    /// Indicate french language code.
+    /// Indicate french language.
     /// </summary>
     static public readonly Language FR = Language.French;
 
     /// <summary>
-    /// Indicate default language code.
+    /// Indicate default language.
     /// </summary>
     static public readonly Language Default = EN;
 
-    static public Language Convert(string lang)
-    {
-      return Names.FirstOrDefault(n => n.Value == lang).Key;
-    }
-
     /// <summary>
-    /// Indicate current language.
+    /// Indicate current language code.
     /// </summary>
-    static public string CurrentCode
-      => Names[Current];
+    static public string CurrentCode => Codes[Current];
 
     /// <summary>
     /// Indicate current language.
@@ -84,9 +85,29 @@ namespace Ordisoftware.HebrewCommon
       get
       {
         string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-        var result = Convert(lang);
-        if ( result == Language.NotDefined ) result = Default;
+        var result = Values[lang];
+        if ( !Managed.Contains(result) ) result = Default;
         return result;
+      }
+    }
+
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
+    static Languages()
+    {
+      try
+      {
+        Managed = ( (Language[])Enum.GetValues(typeof(Language)) ).Skip(1).ToArray();
+        Values = new NullSafeOfEnumDictionary<string, Language>(Codes.ToDictionary(x => x.Value, x => x.Key));
+      }
+      catch ( Exception ex )
+      {
+        string str = "Language exception" + Globals.NL2 +
+                     "Please contact support.";
+        var einfo = new ExceptionInfo(null, ex);
+        if ( !einfo.ReadableText.IsNullOrEmpty() ) str += Globals.NL2 + einfo.ReadableText;
+        DisplayManager.ShowAndTerminate(str);
       }
     }
 

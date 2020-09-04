@@ -65,7 +65,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     protected override void DoReLoad(string filename)
     {
-      if ( string.IsNullOrEmpty(filename) ) return;
+      if ( filename.IsNullOrEmpty() ) return;
       try
       {
         Title.Clear();
@@ -87,7 +87,7 @@ namespace Ordisoftware.HebrewCommon
           {
             var parts = line.Split('/', '=');
             if ( parts.Length == 3 )
-              Title.Add(Languages.Convert(parts[1].Trim().ToLower()), parts[2].Trim());
+              Title.Add(Languages.Values[parts[1].Trim().ToLower()], parts[2].Trim());
             else
               showError();
           }

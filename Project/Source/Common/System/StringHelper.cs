@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="str">The str to act on.</param>
     static public bool IsNullOrEmpty(this string str)
     {
-      return str == null || str == string.Empty;
+      return str == null || str.Length == 0;
     }
 
     /// <summary>

@@ -175,12 +175,12 @@ namespace Ordisoftware.HebrewCalendar
       foreach ( Language lang in Languages.Managed )
       {
         MoonMonthsMeanings.Add(lang,
-                               new MoonMonthsFile(string.Format(MoonMonthsMeaningsFilename, Languages.Names[lang].ToUpper()),
+                               new MoonMonthsFile(string.Format(MoonMonthsMeaningsFilename, Languages.Codes[lang].ToUpper()),
                                                   true,
                                                   Globals.IsDev,
                                                   DataFileFolder.ApplicationDocuments));
         MoonMonthsLettriqs.Add(lang,
-                               new MoonMonthsFile(string.Format(MoonMonthsLettriqsFilename, Languages.Names[lang].ToUpper()),
+                               new MoonMonthsFile(string.Format(MoonMonthsLettriqsFilename, Languages.Codes[lang].ToUpper()),
                                                   true,
                                                   Globals.IsDev,
                                                   DataFileFolder.ApplicationDocuments));
