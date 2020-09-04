@@ -101,6 +101,9 @@ namespace Ordisoftware.HebrewCalendar
       Refresh();
       ClearLists();
       LoadData();
+      ShabatNoticeForm = new ShowTextForm(Translations.NoticeShabatTitle, Translations.NoticeShabat, true, true, 600, 520);
+      CelebrationsNoticeForm = new ShowTextForm(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrations, true, true, 600, 320);
+      MoonMonthsNoticeForm = new ShowTextForm(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths, true, true, 400, 300);
     }
 
     /// <summary>
@@ -693,7 +696,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionShowShabatNotice_Click(object sender, EventArgs e)
     {
-      Program.ShabatNoticeForm.Show();
+      ShabatNoticeForm.Popup(this);
     }
 
     /// <summary>
@@ -703,7 +706,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      Program.CelebrationsNoticeForm.Show();
+      CelebrationsNoticeForm.Popup(this);
     }
 
     /// <summary>
@@ -800,8 +803,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
-      DebugManager.TraceForm.Show();
-      DebugManager.TraceForm.BringToFront();
+      DebugManager.TraceForm.Popup();
     }
 
     /// <summary>

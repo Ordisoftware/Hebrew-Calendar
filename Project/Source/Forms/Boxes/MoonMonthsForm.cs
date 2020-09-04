@@ -92,7 +92,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionViewNotice_Click(object sender, EventArgs e)
     {
-      Program.MoonMonthsNoticeForm.Show();
+      MainForm.Instance.MoonMonthsNoticeForm.Popup(this);
     }
 
     private void ActionEditFiles_Click(object sender, EventArgs e)

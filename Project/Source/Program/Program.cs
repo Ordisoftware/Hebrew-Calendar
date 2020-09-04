@@ -129,12 +129,12 @@ namespace Ordisoftware.HebrewCalendar
       AboutBox.Instance.Hide();
       MainForm.Instance.ClearLists();
       string str = MainForm.Instance.CalendarText.Text;
-      Action<Form> update = form =>
+      void update(Form form)
       {
         new Infralution.Localization.CultureManager().ManagedControl = form;
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
         resources.Apply(form.Controls);
-      };
+      }
       update(Globals.MainForm);
       string tempLogTitle = DebugManager.TraceForm.Text;
       string tempLogContent = DebugManager.TraceForm.TextBox.Text;

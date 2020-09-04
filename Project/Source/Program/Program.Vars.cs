@@ -96,34 +96,10 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Indicate predefined years intervals.
     /// </summary>
-    static public readonly int[] PredefinedYearsIntervals = 
+    static public readonly int[] PredefinedYearsIntervals =
     {
       5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 120, 200, -5, -10, -15, -20, -25, -30, -40, -50, -75, -100
     };
-
-    /// <summary>
-    /// Indicate shabat notice form.
-    /// </summary>
-    static public ShowTextForm ShabatNoticeForm
-      => ShowTextForm.Create(Translations.NoticeShabatTitle, Translations.NoticeShabat, 600, 520);
-
-    /// <summary>
-    /// Indicate celebrations notice form.
-    /// </summary>
-    static public ShowTextForm CelebrationsNoticeForm
-      => ShowTextForm.Create(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrations, 600, 320);
-
-    /// <summary>
-    /// Indicate moon months notice form.
-    /// </summary>
-    static public ShowTextForm MoonMonthsNoticeForm
-      => ShowTextForm.Create(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths, 400, 300);
-
-    /// <summary>
-    /// Indicate dates diff notice form.
-    /// </summary>
-    static public ShowTextForm DatesDiffNoticeForm
-      => ShowTextForm.Create(Translations.DatesDiffNoticeTitle, Translations.DatesDiffNotice, 500, 450);
 
     /// <summary>
     /// Indicate filename of the text report.

@@ -46,10 +46,10 @@ namespace Ordisoftware.HebrewCalendar
         var lines = File.ReadAllLines(filename);
         for ( int index = 0; index < lines.Length; index++ )
         {
-          Action showError = () =>
+          void showError()
           {
             DisplayManager.ShowError(Localizer.ErrorInFile.GetLang(filename, index + 1, lines[index]));
-          };
+          }
           if ( index >= Program.MoonMonthsNames.Length )
             break;
           string line = lines[index];
