@@ -24,93 +24,94 @@ namespace Ordisoftware.HebrewCalendar
     /// <summary>
     /// Provide mapping table for Calendar.NET positions.
     /// </summary>
-    static public Dictionary<DayOfWeek, DayOfWeek[]> Position = new Dictionary<DayOfWeek, DayOfWeek[]>()
-    {
-      { DayOfWeek.Monday,
-        new DayOfWeek[]
-        {
-          DayOfWeek.Friday,
-          DayOfWeek.Saturday,
-          DayOfWeek.Sunday,
-          DayOfWeek.Monday,
-          DayOfWeek.Tuesday,
-          DayOfWeek.Wednesday,
-          DayOfWeek.Thursday,
-        }
-      },
-      { DayOfWeek.Tuesday,
-        new DayOfWeek[]
-        {
-          DayOfWeek.Thursday,
-          DayOfWeek.Friday,
-          DayOfWeek.Saturday,
-          DayOfWeek.Sunday,
-          DayOfWeek.Monday,
-          DayOfWeek.Tuesday,
-          DayOfWeek.Wednesday,
-        }
-      },
-      { DayOfWeek.Wednesday,
-        new DayOfWeek[]
-        {
-          DayOfWeek.Wednesday,
-          DayOfWeek.Thursday,
-          DayOfWeek.Friday,
-          DayOfWeek.Saturday,
-          DayOfWeek.Sunday,
-          DayOfWeek.Monday,
-          DayOfWeek.Tuesday,
-        }
-      },
-      { DayOfWeek.Thursday,
-        new DayOfWeek[]
-        {
-          DayOfWeek.Tuesday,
-          DayOfWeek.Wednesday,
-          DayOfWeek.Thursday,
-          DayOfWeek.Friday,
-          DayOfWeek.Saturday,
-          DayOfWeek.Sunday,
-          DayOfWeek.Monday,
-        }
-      },
-      { DayOfWeek.Friday,
-        new DayOfWeek[]
-        {
-          DayOfWeek.Monday,
-          DayOfWeek.Tuesday,
-          DayOfWeek.Wednesday,
-          DayOfWeek.Thursday,
-          DayOfWeek.Friday,
-          DayOfWeek.Saturday,
-          DayOfWeek.Sunday,
-        }
-      },
-      { DayOfWeek.Saturday,
-        new DayOfWeek[]
-        {
-          DayOfWeek.Sunday,
-          DayOfWeek.Monday,
-          DayOfWeek.Tuesday,
-          DayOfWeek.Wednesday,
-          DayOfWeek.Thursday,
-          DayOfWeek.Friday,
-          DayOfWeek.Saturday,
-        }
-      },
-      { DayOfWeek.Sunday,
-        new DayOfWeek[]
-        {
-          DayOfWeek.Saturday,
-          DayOfWeek.Sunday,
-          DayOfWeek.Monday,
-          DayOfWeek.Tuesday,
-          DayOfWeek.Wednesday,
-          DayOfWeek.Thursday,
-          DayOfWeek.Friday,
-        }
-      },
-    };
+    static public Dictionary<DayOfWeek, DayOfWeek[]> Position
+      = new Dictionary<DayOfWeek, DayOfWeek[]>()
+      {
+        { DayOfWeek.Monday,
+          new DayOfWeek[]
+          {
+            DayOfWeek.Friday,
+            DayOfWeek.Saturday,
+            DayOfWeek.Sunday,
+            DayOfWeek.Monday,
+            DayOfWeek.Tuesday,
+            DayOfWeek.Wednesday,
+            DayOfWeek.Thursday,
+          }
+        },
+        { DayOfWeek.Tuesday,
+          new DayOfWeek[]
+          {
+            DayOfWeek.Thursday,
+            DayOfWeek.Friday,
+            DayOfWeek.Saturday,
+            DayOfWeek.Sunday,
+            DayOfWeek.Monday,
+            DayOfWeek.Tuesday,
+            DayOfWeek.Wednesday,
+          }
+        },
+        { DayOfWeek.Wednesday,
+          new DayOfWeek[]
+          {
+            DayOfWeek.Wednesday,
+            DayOfWeek.Thursday,
+            DayOfWeek.Friday,
+            DayOfWeek.Saturday,
+            DayOfWeek.Sunday,
+            DayOfWeek.Monday,
+            DayOfWeek.Tuesday,
+          }
+        },
+        { DayOfWeek.Thursday,
+          new DayOfWeek[]
+          {
+            DayOfWeek.Tuesday,
+            DayOfWeek.Wednesday,
+            DayOfWeek.Thursday,
+            DayOfWeek.Friday,
+            DayOfWeek.Saturday,
+            DayOfWeek.Sunday,
+            DayOfWeek.Monday,
+          }
+        },
+        { DayOfWeek.Friday,
+          new DayOfWeek[]
+          {
+            DayOfWeek.Monday,
+            DayOfWeek.Tuesday,
+            DayOfWeek.Wednesday,
+            DayOfWeek.Thursday,
+            DayOfWeek.Friday,
+            DayOfWeek.Saturday,
+            DayOfWeek.Sunday,
+          }
+        },
+        { DayOfWeek.Saturday,
+          new DayOfWeek[]
+          {
+            DayOfWeek.Sunday,
+            DayOfWeek.Monday,
+            DayOfWeek.Tuesday,
+            DayOfWeek.Wednesday,
+            DayOfWeek.Thursday,
+            DayOfWeek.Friday,
+            DayOfWeek.Saturday,
+          }
+        },
+        { DayOfWeek.Sunday,
+          new DayOfWeek[]
+          {
+            DayOfWeek.Saturday,
+            DayOfWeek.Sunday,
+            DayOfWeek.Monday,
+            DayOfWeek.Tuesday,
+            DayOfWeek.Wednesday,
+            DayOfWeek.Thursday,
+            DayOfWeek.Friday,
+          }
+        },
+      };
 
   }
 

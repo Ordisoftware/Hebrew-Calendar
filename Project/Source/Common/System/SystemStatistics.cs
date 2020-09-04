@@ -49,6 +49,9 @@ namespace Ordisoftware.HebrewCommon
     public string RunningTime
       => ( (long)( DateTime.Now - Globals.StartDateTime ).TotalMilliseconds ).FormatMilliseconds(true);
 
+    public string ProcessorTime
+      => ( (long)Process.TotalProcessorTime.TotalMilliseconds ).FormatMilliseconds(true);
+
     public string ExecutableMode
       => Globals.IsDebugExecutable ? "Debug" : "Release";
 

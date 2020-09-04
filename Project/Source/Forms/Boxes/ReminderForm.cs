@@ -67,14 +67,14 @@ namespace Ordisoftware.HebrewCalendar
         form = new ReminderForm();
         var date = SQLiteDate.ToDateTime(row.Date);
         form.LabelTitle.Text = !isShabat
-                             ? Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
-                             : "Shabat";
+                               ? Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
+                               : "Shabat";
         form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
         if ( times.dateStart != null && times.dateEnd != null )
-          form.LabelHours.Text = Translations.DayOfWeek.GetLang(times.dateStart.Value.DayOfWeek) + " "
-                               + times.timeStart + " ➜ "
-                               + Translations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " "
-                               + times.timeEnd;
+          form.LabelHours.Text = Translations.DayOfWeek.GetLang(times.dateStart.Value.DayOfWeek) + " " +
+                                 times.timeStart + " ➜ " +
+                                 Translations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " " +
+                                 times.timeEnd;
         form.LabelDate.Tag = date;
         form.SetLocation(ControlLocation.BottomRight);
         form.Tag = row.Date;
@@ -83,10 +83,7 @@ namespace Ordisoftware.HebrewCalendar
         form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
         form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
         if ( Program.Settings.UseColors )
-          if ( doLockSession )
-            form.BackColor = Program.Settings.EventColorTorah;
-          else
-            form.BackColor = Program.Settings.EventColorNext;
+          form.BackColor = doLockSession ? Program.Settings.EventColorTorah : Program.Settings.EventColorNext;
         form.IsShabat = isShabat;
         if ( isShabat )
           MainForm.Instance.ShabatForm = form;
@@ -154,13 +151,7 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    protected override bool ShowWithoutActivation
-    {
-      get
-      {
-        return true;
-      }
-    }
+    protected override bool ShowWithoutActivation => true;
 
     private bool IsShabat;
 

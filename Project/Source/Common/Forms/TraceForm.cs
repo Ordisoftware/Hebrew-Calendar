@@ -41,8 +41,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void LogForm_Load(object sender, EventArgs e)
     {
-      if ( Location.X < 0 || Location.Y < 0 )
-        this.CenterToMainFormElseScreen();
+      this.CheckLocationOrCenterToMainFormElseScreen();
     }
 
     private void ShowTextForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -52,8 +52,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void HTMLBrowserForm_Load(object sender, EventArgs e)
     {
-      if ( Location.X < 0 || Location.Y < 0 )
-        this.CenterToMainFormElseScreen();
+      this.CheckLocationOrCenterToMainFormElseScreen();
     }
 
     internal void HTMLBrowserForm_Shown(object sender, EventArgs e)

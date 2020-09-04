@@ -31,7 +31,9 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      YearsIntervalItem.InitializeMenu(MenuPredefinedYears, Program.Settings.GenerateIntervalMaximum, PredefinedYearsItem_Click);
+      YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
+                                       Program.Settings.GenerateIntervalMaximum,
+                                       PredefinedYearsItem_Click);
     }
 
     private void SelectYearsRangeForm_Load(object sender, EventArgs e)

@@ -77,20 +77,19 @@ namespace Ordisoftware.HebrewCalendar
         if ( str == "2400" ) str = "0000";
         try
         {
-          if ( str != "----" && str != "****" && str != "...." )
-            return new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0);
-          else
-            return new Nullable<TimeSpan>();
+          return str != "----" && str != "****" && str != "...."
+                 ? new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0)
+                 : new TimeSpan?();
         }
         catch
         {
-          return new Nullable<TimeSpan>();
+          return new TimeSpan?();
         }
       }
       if ( MainForm.Instance.CurrentTimeZoneInfo == null )
         throw new InvalidTimeZoneException();
-      int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours
-                   + ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date.AddDays(1)) ? 1 : 0 );
+      int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours +
+                     ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date.AddDays(1)) ? 1 : 0 );
       var strEphem = SunMoon.Get(date.Year, date.Month, date.Day, 
                                  MainForm.Instance.CurrentGPSLatitude,
                                  MainForm.Instance.CurrentGPSLongitude,

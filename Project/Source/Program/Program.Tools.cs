@@ -33,8 +33,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       get
       {
-        string result = "• " + Settings.GPSCountry + Globals.NL
-                      + "• " + Settings.GPSCity;
+        string result = "• " + Settings.GPSCountry + Globals.NL +
+                        "• " + Settings.GPSCity;
         foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
           if ( item.Id == Settings.TimeZone )
           {

@@ -55,8 +55,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void DateDiffForm_Load(object sender, EventArgs e)
     {
-      if ( Location.X < 0 || Location.Y < 0 )
-        this.CenterToMainFormElseScreen();
+      this.CheckLocationOrCenterToMainFormElseScreen();
       LoadMenuBookmarks();
     }
 

@@ -133,10 +133,17 @@ namespace Ordisoftware.HebrewCommon
                                 area.Top + area.Height / 2 - form.Height / 2);
     }
 
+    static public void CheckLocationOrCenterToMainFormElseScreen(this Form form)
+    {
+      if ( form == null ) return;
+      if ( form.Location.X < 0 || form.Location.Y < 0 )
+        form.CenterToMainFormElseScreen();
+    }
+
     [DllImport("user32.dll")]
     private static extern int ShowWindow(IntPtr hWnd, uint Msg);
     private const uint SW_RESTORE = 0x09;
-    public static void Restore(this Form form)
+    static public void Restore(this Form form)
     {
       if ( form.WindowState == FormWindowState.Minimized ) ShowWindow(form.Handle, SW_RESTORE);
     }
@@ -189,6 +196,19 @@ namespace Ordisoftware.HebrewCommon
           items[count++] = new ToolStripSeparator();
       destination.DropDownItems.Clear();
       destination.DropDownItems.AddRange(items);
+    }
+
+    /// <summary>
+    /// Get a bitmap of a control.
+    /// </summary>
+    /// <param name="control">The control</param>
+    /// <returns>The bitmap.</returns>
+    static public Bitmap GetBitmap(this Control control)
+    {
+      if ( control == null ) return null;
+      var bitmap = new Bitmap(control.Width, control.Height);
+      control.DrawToBitmap(bitmap, new Rectangle(0, 0, control.Width, control.Height));
+      return bitmap;
     }
 
     /// <summary>

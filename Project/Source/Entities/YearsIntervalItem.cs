@@ -58,8 +58,8 @@ namespace Ordisoftware.HebrewCalendar
         {
           var item = new ToolStripMenuItem();
           item.Text = value >= 0
-                    ? Translations.PredefinedYearsIntervalAfter.GetLang(value)
-                    : Translations.PredefinedYearsIntervalBeforeAndAfter.GetLang(-value);
+                      ? Translations.PredefinedYearsIntervalAfter.GetLang(value)
+                      : Translations.PredefinedYearsIntervalBeforeAndAfter.GetLang(-value);
           item.Tag = interval;
           item.Click += handler;
           menu.Items.Add(item);
