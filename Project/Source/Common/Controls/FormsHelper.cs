@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public void Apply(this ComponentResourceManager resources, Control.ControlCollection controls)
     {
-      try
+      SystemManager.TryCatchManage(() =>
       {
         foreach ( Control control in controls )
         {
@@ -42,11 +42,7 @@ namespace Ordisoftware.HebrewCommon
             resources.ApplyResources(control, control.Name);
           Apply(resources, control.Controls);
         }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      });
     }
 
     /// <summary>
@@ -126,6 +122,11 @@ namespace Ordisoftware.HebrewCommon
         form.CenterToMainFormElseScreen();
     }
 
+    /// <summary>
+    /// Center a form in an area.
+    /// </summary>
+    /// <param name="form">The form.</param>
+    /// <param name="area">The area.</param>
     static public void Center(this Form form, Rectangle area)
     {
       if ( form == null ) return;
@@ -133,19 +134,31 @@ namespace Ordisoftware.HebrewCommon
                                 area.Top + area.Height / 2 - form.Height / 2);
     }
 
+    /// <summary>
+    /// Check if location is in the screen else center to main form else to screen.
+    /// </summary>
+    /// <param name="form">The form.</param>
     static public void CheckLocationOrCenterToMainFormElseScreen(this Form form)
     {
       if ( form == null ) return;
-      if ( form.Location.X < 0 || form.Location.Y < 0 )
+      if ( form.Location.X < 0 || form.Location.Y < 0
+        || form.Left + form.Width > SystemInformation.WorkingArea.Width
+        || form.Top + form.Height > SystemInformation.WorkingArea.Height )
         form.CenterToMainFormElseScreen();
     }
 
     [DllImport("user32.dll")]
     private static extern int ShowWindow(IntPtr hWnd, uint Msg);
     private const uint SW_RESTORE = 0x09;
+
+    /// <summary>
+    /// Restore a minimized form.
+    /// </summary>
+    /// <param name="form">The form.</param>
     static public void Restore(this Form form)
     {
-      if ( form.WindowState == FormWindowState.Minimized ) ShowWindow(form.Handle, SW_RESTORE);
+      if ( form.Visible && form.WindowState == FormWindowState.Minimized )
+        ShowWindow(form.Handle, SW_RESTORE);
     }
 
     /// <summary>
@@ -159,8 +172,7 @@ namespace Ordisoftware.HebrewCommon
       if ( form.Visible )
         if ( !dialog )
         {
-          if ( form.WindowState == FormWindowState.Minimized )
-            form.Restore();
+          form.Restore();
           if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
           form.Activate();
           form.BringToFront();

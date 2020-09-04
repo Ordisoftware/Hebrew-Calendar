@@ -34,22 +34,16 @@ namespace Ordisoftware.HebrewCalendar
       GoToDateMutex = true;
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;
-      try
+      SystemManager.TryCatch(() =>
       {
         if ( NavigationForm.Instance != null )
           NavigationForm.Instance.Date = date;
-      }
-      catch
-      {
-      }
-      try
+      });
+      SystemManager.TryCatch(() =>
       {
         CalendarMonth.CalendarDate = date;
-      }
-      catch
-      {
-      }
-      try
+      });
+      SystemManager.TryCatch(() =>
       {
         int position = LunisolarDaysBindingSource.Find("Date", SQLiteDate.ToString(date));
         if ( position >= 0 )
@@ -58,11 +52,8 @@ namespace Ordisoftware.HebrewCalendar
           CurrentDay = (Data.DataSet.LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
           CalendarGrid.Update();
         }
-      }
-      catch
-      {
-      }
-      try
+      });
+      SystemManager.TryCatch(() =>
       {
         string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");
         int pos = CalendarText.Find(strDate);
@@ -74,10 +65,7 @@ namespace Ordisoftware.HebrewCalendar
           CalendarText.SelectionStart = pos - 6;
           CalendarText.SelectionLength = 118;
         }
-      }
-      catch
-      {
-      }
+      });
       GoToDateMutex = false;
     }
 

@@ -56,8 +56,7 @@ namespace Ordisoftware.HebrewCalendar
       InitializeComponent();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      try { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilename); }
-      catch { }
+      SystemManager.TryCatch(() => { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilename); });
       TrayIcon.Icon = Icon;
       MenuTray.Enabled = false;
       Globals.AllowClose = false;
@@ -82,15 +81,11 @@ namespace Ordisoftware.HebrewCalendar
       MoonMonthsNoticeForm = new ShowTextForm(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths, true, true, 400, 300);
       StatisticsForm.Run(true);
       if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
-        try
+        SystemManager.TryCatchManage(() =>
         {
           Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
           Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
-        }
-        catch ( Exception ex )
-        {
-          ex.Manage();
-        }
+        });
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, ref lastdone, true);
       Settings.CheckUpdateLastDone = lastdone;
@@ -276,14 +271,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         if ( Visible && WindowState == FormWindowState.Minimized )
-        {
-          WindowState = Settings.MainFormState;
-          var old = TopMost;
-          TopMost = true;
-          BringToFront();
-          Show();
-          TopMost = old;
-        }
+          this.Restore();
         else
         if ( !Visible || e == null )
         {
@@ -393,50 +381,44 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Mouse event information.</param>
     private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
     {
-      try
+      SystemManager.TryCatchManage(() =>
       {
         TimerBallon.Stop();
         TimerTrayMouseMove.Stop();
-        if ( e == null ) return;
-        if ( e.Button == MouseButtons.Left )
-          switch ( Settings.TrayIconClickOpen )
-          {
-            case TrayIconClickOpen.MainForm:
-              MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? new EventArgs() : null);
-              break;
-            case TrayIconClickOpen.NextCelebrationsForm:
-              if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
-                CelebrationsForm.Instance.Close();
-              else
-                ActionViewCelebrations.PerformClick();
-              break;
-            case TrayIconClickOpen.NavigationForm:
-              var form = NavigationForm.Instance;
-              if ( form.Visible )
-                form.Visible = false;
-              else
-                try
-                {
-                  form.Date = DateTime.Today;
-                  form.Visible = true;
-                }
-                catch ( Exception ex )
-                {
-                  ex.Manage();
-                }
-              break;
-            default:
-              throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.ToStringFull());
-          }
-        else
+        if ( e != null )
+        {
+          if ( e.Button == MouseButtons.Left )
+            switch ( Settings.TrayIconClickOpen )
+            {
+              case TrayIconClickOpen.MainForm:
+                MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? new EventArgs() : null);
+                break;
+              case TrayIconClickOpen.NextCelebrationsForm:
+                if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
+                  CelebrationsForm.Instance.Close();
+                else
+                  ActionViewCelebrations.PerformClick();
+                break;
+              case TrayIconClickOpen.NavigationForm:
+                var form = NavigationForm.Instance;
+                if ( form.Visible )
+                  form.Visible = false;
+                else
+                  SystemManager.TryCatchManage(() =>
+                  {
+                    form.Date = DateTime.Today;
+                    form.Visible = true;
+                  });
+                break;
+              default:
+                throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.ToStringFull());
+            }
+          else
         if ( e.Button == MouseButtons.Right )
-          if ( NavigationForm.Instance.Visible )
-            ActionNavigate.PerformClick();
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+            if ( NavigationForm.Instance.Visible )
+              ActionNavigate.PerformClick();
+        }
+      });
     }
 
     /// <summary>
@@ -757,14 +739,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionGenerate_Click(object sender, EventArgs e)
     {
       MenuShowHide_Click(null, null);
-      try
-      {
-        DoGenerate(sender, e);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      SystemManager.TryCatchManage(() => DoGenerate(sender, e));
     }
 
     private DateTime? LastVacuum = null;
@@ -835,14 +810,7 @@ namespace Ordisoftware.HebrewCalendar
           document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
           PrintDialog.Document = document;
           if ( PrintDialog.ShowDialog() == DialogResult.Cancel ) return;
-          try
-          {
-            document.Print();
-          }
-          catch ( Exception ex )
-          {
-            ex.Manage();
-          }
+          SystemManager.TryCatchManage(() => document.Print());
         }
       }
       finally
@@ -1068,7 +1036,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void CalendarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
-      try
+      SystemManager.TryCatch(() =>
       {
         switch ( e.ColumnIndex )
         {
@@ -1093,10 +1061,7 @@ namespace Ordisoftware.HebrewCalendar
             e.Value = torah == TorahEvent.None ? "" : Translations.TorahEvent.GetLang(torah);
             break;
         }
-      }
-      catch
-      {
-      }
+      });
     }
 
     /// <summary>
@@ -1106,15 +1071,14 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void LunisolarDaysBindingSource_CurrentItemChanged(object sender, EventArgs e)
     {
-      try
+      SystemManager.TryCatch(() =>
       {
-        if ( LunisolarDaysBindingSource.Current == null ) return;
-        var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-        GoToDate(SQLiteDate.ToDateTime(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
-      }
-      catch
-      {
-      }
+        if ( LunisolarDaysBindingSource.Current != null )
+        {
+          var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
+          GoToDate(SQLiteDate.ToDateTime(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
+        }
+      });
     }
 
     /// <summary>

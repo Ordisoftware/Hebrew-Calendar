@@ -53,23 +53,17 @@ namespace Ordisoftware.HebrewCalendar
       Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
       Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsInterval.Value;
       for ( int index = 0; index < EditEvents.Items.Count; index++ )
-        try
+        SystemManager.TryCatch(() =>
         {
           string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
           Settings[name] = EditEvents.GetItemChecked(index);
-        }
-        catch
-        {
-        }
+        });
       for ( int index = 0; index < EditEventsDay.Items.Count; index++ )
-        try
+        SystemManager.TryCatch(() =>
         {
           string name = "TorahEventRemindDay" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
           Settings[name] = EditEventsDay.GetItemChecked(index);
-        }
-        catch
-        {
-        }
+        });
       UpdateSettings();
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       Settings.Save();

@@ -39,7 +39,7 @@ namespace Ordisoftware.HebrewCalendar
     protected override void DoReLoad(string filename)
     {
       if ( filename.IsNullOrEmpty() ) return;
-      try
+      SystemManager.TryCatch(() =>
       {
         Items.Clear();
         Items.Add("");
@@ -60,11 +60,7 @@ namespace Ordisoftware.HebrewCalendar
           var parts = line.Split(new char[] { '=' }, 2);
           Items.Add(parts[1].Trim());
         }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      });
     }
 
   }

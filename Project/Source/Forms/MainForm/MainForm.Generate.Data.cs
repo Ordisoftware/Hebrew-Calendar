@@ -32,7 +32,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private int ProgressCount;
 
-    private bool AddGenerateError(string method, string date, Exception ex)
+    private bool AddGenerateErrorAndCheckIfTooMany(string method, string date, Exception ex)
     {
       var einfo = new ExceptionInfo(this, ex);
       GenerateErrors.Add($"{( GenerateErrors.Count + 1 ).ToString("00")}) " +
@@ -155,7 +155,7 @@ namespace Ordisoftware.HebrewCalendar
               }
               catch ( Exception ex )
               {
-                if ( AddGenerateError(nameof(PopulateDays), $"{year}-{month.ToString("00")}-{day.ToString("00")}", ex) )
+                if ( AddGenerateErrorAndCheckIfTooMany(nameof(PopulateDays), $"{year}-{month.ToString("00")}-{day.ToString("00")}", ex) )
                   return;
               }
         }
@@ -201,7 +201,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception ex )
       {
-        if ( AddGenerateError(nameof(InitializeDay), day.Date, ex) )
+        if ( AddGenerateErrorAndCheckIfTooMany(nameof(InitializeDay), day.Date, ex) )
           return;
       }
     }
@@ -235,7 +235,7 @@ namespace Ordisoftware.HebrewCalendar
           }
           catch ( Exception ex )
           {
-            if ( AddGenerateError(nameof(AnalyseDays), day.Date, ex) )
+            if ( AddGenerateErrorAndCheckIfTooMany(nameof(AnalyseDays), day.Date, ex) )
               return;
           }
       }
@@ -308,14 +308,11 @@ namespace Ordisoftware.HebrewCalendar
           dateDay = calculate(dateDay, TorahCelebrations.ChavouotLenght - 1 - delta, TorahEvent.ChavouotDiet, true);
           while ( dateDay.DayOfWeek != (DayOfWeek)Settings.ShabatDay )
             dateDay = dateDay.AddDays(1);
-          try
+          SystemManager.TryCatch(() =>
           {
             calculate(dateDay, 1, TorahEvent.Chavouot1, true);
             calculate(dateDay, 1 + TorahCelebrations.ChavouotLenght - 1, TorahEvent.Chavouot2, false);
-          }
-          catch
-          {
-          }
+          });
         }
         else
         if ( monthMoon > 0 )
@@ -330,7 +327,7 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception ex )
       {
-        if ( AddGenerateError(nameof(AnalyzeDay), day.Date, ex) )
+        if ( AddGenerateErrorAndCheckIfTooMany(nameof(AnalyzeDay), day.Date, ex) )
           return;
       }
     }
