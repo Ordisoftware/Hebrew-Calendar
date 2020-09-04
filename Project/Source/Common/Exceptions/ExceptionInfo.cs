@@ -223,7 +223,7 @@ namespace Ordisoftware.HebrewCommon
           if ( partFilename.IsNullOrEmpty() && DebugManager.StackOnlyProgram )
             continue;
           int line = frame.GetFileLineNumber();
-          if ( first )
+          if ( first && !full )
           {
             first = false;
             AssemblyName = method.DeclaringType.Assembly.FullName;
@@ -280,7 +280,7 @@ namespace Ordisoftware.HebrewCommon
         {
           if ( DebugManager.UseStack )
             FullText += Globals.NL +
-                        "Stack Excpetion: " + Globals.NL +
+                        "Stack Exception: " + Globals.NL +
                         ExceptionStackList.AsMultiline().Indent(DebugManager.MarginSize) + Globals.NL +
                         "Stack Thread: " + Globals.NL +
                         ThreadStackList.AsMultiline().Indent(DebugManager.MarginSize);

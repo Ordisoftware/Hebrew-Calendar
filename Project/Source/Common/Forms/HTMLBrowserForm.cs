@@ -66,10 +66,14 @@ namespace Ordisoftware.HebrewCommon
         DisplayManager.ShowError(Localizer.FileNotFound.GetLang(filename));
     }
 
-    private void HTMLBrowserForm_FormClosing(object sender, FormClosingEventArgs e)
+    private void HTMLBrowserForm_Deactivate(object sender, EventArgs e)
     {
       Globals.Settings[LocationPropertyName] = Location;
       Globals.Settings[ClientSizePropertyName] = ClientSize;
+    }
+
+    private void HTMLBrowserForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
       e.Cancel = true;
       Hide();
     }

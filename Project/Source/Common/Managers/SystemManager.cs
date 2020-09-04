@@ -131,8 +131,9 @@ namespace Ordisoftware.HebrewCommon
         action();
         return true;
       }
-      catch
+      catch (Exception ex)
       {
+        ex.Manage(ShowExceptionMode.None);
         return false;
       }
     }

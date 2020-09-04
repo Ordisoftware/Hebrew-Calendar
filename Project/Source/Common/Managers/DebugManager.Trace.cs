@@ -30,7 +30,7 @@ namespace Ordisoftware.HebrewCommon
     static public readonly TraceForm TraceForm;
 
     public const int MarginSize = 4;
-    private const int EnterCountSkip = 2;
+    public const int EnterCountSkip = 2;
 
     static private int StackSkip = 1;
     static private int EnterCount = 0;
@@ -40,6 +40,9 @@ namespace Ordisoftware.HebrewCommon
 
     static private void TraceFileChanged(Listener sender, string filename)
     {
+      if ( TraceForm == null ) return;
+      if ( TraceForm.IsDisposed ) return;
+      if ( !File.Exists(filename) ) return;
       TraceForm.Text = Path.GetFileNameWithoutExtension(filename);
       TraceForm.TextBox.Clear();
       TraceForm.AppendText(File.ReadAllText(filename));
@@ -81,7 +84,7 @@ namespace Ordisoftware.HebrewCommon
         }
         if ( logevent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
         message += text.Indent(CurrentMargin, CurrentMargin + message.Length) + Globals.NL;
-        SystemManager.TryCatch(() => TraceForm.AppendText(message));
+        SystemManager.TryCatch(() => { if ( !TraceForm.IsDisposed ) TraceForm.AppendText(message); });
         System.Diagnostics.Trace.Write(message);
         if ( logevent == TraceEvent.Enter ) CurrentMargin += MarginSize;
       });

@@ -23,22 +23,29 @@ using Ordisoftware.HebrewCommon;
 namespace Ordisoftware.HebrewCalendar
 {
 
+  public class TooManyErrorsException : Exception
+  {
+    public TooManyErrorsException(string message) : base(message)
+    {
+    }
+  }
+
   public partial class MainForm
   {
 
-    public const int MaxGenerateErrors = 10;
+    public const int MaxGenerateErrors = 20;
 
     private readonly List<string> GenerateErrors = new List<string>();
 
     private int ProgressCount;
 
-    private bool AddGenerateError(string method, string date, Exception ex)
+    private bool AddGenerateErrorAndCheckIfTooMany(string method, string date, Exception ex)
     {
       var einfo = new ExceptionInfo(this, ex);
       GenerateErrors.Add($"{( GenerateErrors.Count + 1 ).ToString("00")}) " +
                          $"{method.PadRight(13)} {date} : " +
                          $"{einfo.SingleLineText}");
-      return GenerateErrors.Count >= MaxGenerateErrors + 1;
+      return GenerateErrors.Count >= MaxGenerateErrors;
     }
 
     /// <summary>
@@ -68,18 +75,20 @@ namespace Ordisoftware.HebrewCalendar
         ProgressCount = (int)( d2 - d1 ).TotalDays;
         try
         {
-          if ( IsGenerating ) PopulateDays(yearFirst, yearLast);
-          if ( IsGenerating ) AnalyseDays();
           if ( IsGenerating )
-            try
-            {
-              CalendarText.Text = GenerateReport();
-            }
-            catch ( Exception ex )
-            {
-              // TODO add in errors list instead
-              ex.Manage();
-            }
+            if ( PopulateDays(yearFirst, yearLast) )
+              if ( IsGenerating )
+                if ( AnalyseDays() )
+                  if ( IsGenerating )
+                    try
+                    {
+                      CalendarText.Text = GenerateReport();
+                    }
+                    catch ( Exception ex )
+                    {
+                      // TODO add in errors list instead
+                      ex.Manage();
+                    }
         }
         finally
         {
@@ -115,11 +124,14 @@ namespace Ordisoftware.HebrewCalendar
       if ( GenerateErrors.Count != 0 )
       {
         string errors = GenerateErrors.AsMultiline();
+        GenerateErrors.Clear();
         errors = Program.GPSText + Globals.NL2 + errors;
-        var form = new ShowTextForm(Text, errors, false, true, 600, 400, true, false);
+        DebugManager.Trace(TraceEvent.Data, errors);
+        var form = new ShowTextForm(Text, errors, false, true, 600, 400, false, false);
         form.TextBox.Font = new System.Drawing.Font("Courier new", 8);
         form.ShowDialog();
-        GenerateErrors.Clear();
+        if ( DisplayManager.QueryYesNo(Localizer.ContactSupport.GetLang()) )
+          ExceptionForm.Run(new ExceptionInfo(this, new TooManyErrorsException(errors)));
         return errors;
       }
       return null;
@@ -130,7 +142,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="yearFirst">The first year.</param>
     /// <param name="yearLast">The last year.</param>
-    private void PopulateDays(int yearFirst, int yearLast)
+    private bool PopulateDays(int yearFirst, int yearLast)
     {
       LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(),
                                       ProgressCount,
@@ -150,13 +162,13 @@ namespace Ordisoftware.HebrewCalendar
                 row.Date = SQLiteDate.ToString(year, month, day);
                 row.TorahEvents = 0;
                 row.LunarMonth = 0;
-                InitializeDay(row);
+                if ( !InitializeDay(row) ) break;
                 DataSet.LunisolarDays.AddLunisolarDaysRow(row);
               }
               catch ( Exception ex )
               {
-                if ( AddGenerateError(nameof(PopulateDays), $"{year}-{month.ToString("00")}-{day.ToString("00")}", ex) )
-                  return;
+                if ( AddGenerateErrorAndCheckIfTooMany(nameof(PopulateDays), $"{year}-{month.ToString("00")}-{day.ToString("00")}", ex) )
+                  return false;
               }
         }
       }
@@ -165,13 +177,14 @@ namespace Ordisoftware.HebrewCalendar
         Chrono.Stop();
         Settings.BenchmarkPopulateDays = Chrono.ElapsedMilliseconds;
       }
+      return true;
     }
 
     /// <summary>
     /// Initialize a day.
     /// </summary>
     /// <param name="day">The day.</param>
-    private void InitializeDay(Data.DataSet.LunisolarDaysRow day)
+    private bool InitializeDay(Data.DataSet.LunisolarDaysRow day)
     {
       try
       {
@@ -201,15 +214,16 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception ex )
       {
-        if ( AddGenerateError(nameof(InitializeDay), day.Date, ex) )
-          return;
+        if ( AddGenerateErrorAndCheckIfTooMany(nameof(InitializeDay), day.Date, ex) )
+          return false;
       }
+      return true;
     }
 
     /// <summary>
     /// Create the calendar items.
     /// </summary>
-    private void AnalyseDays()
+    private bool AnalyseDays()
     {
       int month = 0;
       int delta = 0;
@@ -225,7 +239,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             LoadingForm.Instance.DoProgress();
             if ( day.IsNewMoon == 1 )
-              AnalyzeDay(day, ref month);
+              if ( !AnalyzeDay(day, ref month) ) break;
             day.LunarMonth = month;
             if ( day.IsNewMoon == 1 )
               delta = 0;
@@ -235,8 +249,8 @@ namespace Ordisoftware.HebrewCalendar
           }
           catch ( Exception ex )
           {
-            if ( AddGenerateError(nameof(AnalyseDays), day.Date, ex) )
-              return;
+            if ( AddGenerateErrorAndCheckIfTooMany(nameof(AnalyseDays), day.Date, ex) )
+              return false;
           }
       }
       finally
@@ -244,6 +258,7 @@ namespace Ordisoftware.HebrewCalendar
         Chrono.Stop();
         Settings.BenchmarkAnalyseDays = Chrono.ElapsedMilliseconds;
       }
+      return true;
     }
 
     /// <summary>
@@ -251,7 +266,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="day">The day.</param>
     /// <param name="monthMoon">[in,out] The current mooon month.</param>
-    private void AnalyzeDay(Data.DataSet.LunisolarDaysRow day, ref int monthMoon)
+    private bool AnalyzeDay(Data.DataSet.LunisolarDaysRow day, ref int monthMoon)
     {
       DateTime calculate(DateTime thedate, int toadd, TorahEvent type, bool forceSunOmer)
       {
@@ -308,14 +323,11 @@ namespace Ordisoftware.HebrewCalendar
           dateDay = calculate(dateDay, TorahCelebrations.ChavouotLenght - 1 - delta, TorahEvent.ChavouotDiet, true);
           while ( dateDay.DayOfWeek != (DayOfWeek)Settings.ShabatDay )
             dateDay = dateDay.AddDays(1);
-          try
+          SystemManager.TryCatch(() =>
           {
             calculate(dateDay, 1, TorahEvent.Chavouot1, true);
             calculate(dateDay, 1 + TorahCelebrations.ChavouotLenght - 1, TorahEvent.Chavouot2, false);
-          }
-          catch
-          {
-          }
+          });
         }
         else
         if ( monthMoon > 0 )
@@ -330,9 +342,10 @@ namespace Ordisoftware.HebrewCalendar
       }
       catch ( Exception ex )
       {
-        if ( AddGenerateError(nameof(AnalyzeDay), day.Date, ex) )
-          return;
+        if ( AddGenerateErrorAndCheckIfTooMany(nameof(AnalyzeDay), day.Date, ex) )
+          return false;
       }
+      return true;
     }
 
   }

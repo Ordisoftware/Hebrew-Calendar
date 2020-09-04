@@ -124,7 +124,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       foreach ( TorahEvent type in Enum.GetValues(typeof(TorahEvent)) )
         if ( type != TorahEvent.None )
-          try
+          SystemManager.TryCatch(() =>
           {
             var item = new TorahEventItem() { Text = Translations.TorahEvent.GetLang(type), Event = type };
             int index = EditEvents.Items.Add(item);
@@ -133,10 +133,7 @@ namespace Ordisoftware.HebrewCalendar
             index = EditEventsDay.Items.Add(item);
             if ( (bool)Settings["TorahEventRemindDay" + type.ToString()] )
               EditEventsDay.SetItemChecked(index, true);
-          }
-          catch
-          {
-          }
+          });
     }
 
     static private readonly string[] list =
@@ -595,10 +592,14 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
     {
-      try { OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text); }
-      catch { }
-      try { OpenFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text); }
-      catch { }
+      SystemManager.TryCatch(() => 
+      {
+        OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text);
+      });
+      SystemManager.TryCatch(() =>
+      {
+        OpenFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text);
+      });
       if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
         EditHebrewLettersPath.Text = OpenFileDialog.FileName;
     }

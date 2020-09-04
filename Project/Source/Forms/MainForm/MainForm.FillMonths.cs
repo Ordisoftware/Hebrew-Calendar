@@ -193,7 +193,7 @@ namespace Ordisoftware.HebrewCalendar
           }
           catch ( Exception ex )
           {
-            if ( AddGenerateError(nameof(FillMonths), row.Date, ex) )
+            if ( AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.Date, ex) )
               return;
           }
       }

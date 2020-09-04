@@ -58,7 +58,7 @@ namespace Ordisoftware.HebrewCommon
     {
       using ( var form = new ExceptionForm() )
       {
-        form.ActionViewStack.Enabled = DebugManager.UseStack;
+        //form.ActionViewStack.Enabled = DebugManager.UseStack;
         form.ActionViewInner.Enabled = einfo.InnerInfo != null;
         form.ActionTerminate.Enabled = DebugManager.UserCanTerminate && !isInner;
         if ( isInner )
@@ -79,7 +79,7 @@ namespace Ordisoftware.HebrewCommon
         form.ErrorInfo = einfo;
         form.StackText = form.ActionViewStack.Text;
         form.ActionViewStack.Text += " <<";
-        if ( DebugManager.AutoHideStack ) form.ActionViewStack_Click(form, null);
+        //if ( DebugManager.AutoHideStack ) form.ActionViewStack_Click(form, null);
         if ( !DebugManager.UseStack ) form.ActionViewStack_Click(form, null);
         form.BringToFront();
         form.ShowDialog();
@@ -124,7 +124,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( Height == OriginalHeight )
       {
-        Height = TextStack.Top + 35;
+        Height = TextStack.Top + 40;
         ActionViewStack.Text = StackText + " >>";
       }
       else
@@ -141,8 +141,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="e">Event information.</param>
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
-      DebugManager.TraceForm.Show();
-      DebugManager.TraceForm.BringToFront();
+      DebugManager.TraceForm.Popup();
     }
 
     /// <summary>

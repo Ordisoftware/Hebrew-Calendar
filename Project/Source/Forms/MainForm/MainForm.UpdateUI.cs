@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     internal void UpdateButtons()
     {
-      try
+      SystemManager.TryCatchManage(() =>
       {
         if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
         MenuTray.Enabled = Globals.IsReady && !IsGenerating;
@@ -58,11 +58,7 @@ namespace Ordisoftware.HebrewCalendar
         ActionNavigate.Enabled = ActionSaveReport.Enabled;
         ActionViewCelebrations.Enabled = ActionSaveReport.Enabled;
         Refresh();
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      });
     }
 
     /// <summary>

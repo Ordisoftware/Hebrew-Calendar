@@ -79,15 +79,11 @@ namespace Ordisoftware.HebrewCalendar
                  || lang != Settings.LanguageSelected;
       if ( !result && form.MustRefreshMonthView )
         MainForm.Instance.UpdateCalendarMonth(true);
-      try
+      SystemManager.TryCatch(() =>
       {
         MainForm.Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
         MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      });
       if (result ) Program.Dates.Clear();
       return result;
     }

@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TextMessage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TextMessage.Location" type="System.Drawing.Point, System.Drawing">
@@ -130,13 +130,16 @@
     <value>True</value>
   </data>
   <data name="TextMessage.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
+    <value>Both</value>
   </data>
   <data name="TextMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>419, 110</value>
+    <value>419, 142</value>
   </data>
   <data name="TextMessage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="TextMessage.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;TextMessage.Name" xml:space="preserve">
     <value>TextMessage</value>
@@ -206,10 +209,10 @@
     <value>10</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 205</value>
+    <value>361, 235</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 26</value>
@@ -233,10 +236,10 @@
     <value>9</value>
   </data>
   <data name="ActionTerminate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="ActionTerminate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>286, 205</value>
+    <value>286, 235</value>
   </data>
   <data name="ActionTerminate.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 26</value>
@@ -260,7 +263,7 @@
     <value>8</value>
   </data>
   <data name="ActionViewStack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 205</value>
+    <value>330, 2</value>
   </data>
   <data name="ActionViewStack.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -273,6 +276,9 @@
   </data>
   <data name="ActionViewStack.Text" xml:space="preserve">
     <value>Stack</value>
+  </data>
+  <data name="ActionViewStack.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;ActionViewStack.Name" xml:space="preserve">
     <value>ActionViewStack</value>
@@ -287,13 +293,13 @@
     <value>12</value>
   </data>
   <data name="TextStack.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="TextStack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
   </data>
   <data name="TextStack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 239</value>
+    <value>12, 269</value>
   </data>
   <data name="TextStack.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -400,8 +406,11 @@
   <data name="&gt;&gt;LabelInfo2.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="ActionViewInner.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
   <data name="ActionViewInner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 205</value>
+    <value>12, 235</value>
   </data>
   <data name="ActionViewInner.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -463,31 +472,20 @@
   <data name="&gt;&gt;ActionSendMail.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ActionSendToGitHub.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAnlJREFUOE+NU01rE1EUfVbzMZOZdmbefKaKBhdC0Vh/QQSFUkkjKAG3Rdy6dxUK
-        ih+/wJ0LwY36BwQXXRSX7gQFKVgUiUstaJp0POfmTZxiBS/czJ1zzz1z3303qmRzxlWr1WqfXVp6dL7d
-        3rqwvLxNZ0yMOXJgM37ZCiBqWNaTwPNH2g9yPA+4wUbkkDst+SN2lD+VSuVcEsWfmmmWp3EyRvwT/gvx
-        iM6YGHPkkMsaUTAaqq7UiTiKd0DKQ623QdrNEPOdz3LMHDl8Zw1rRYTme/4LSYTRbq1WOw3oZLDgP/U8
-        7/mC696lMybGHDnksoa1IgLwMoB9fClPwvg7oEwSSh0xz7IVWBNCP1jDWmooH1+hMsE4inZA0lOuOgbn
-        2fksxzRNrhHKqaEiHXImcn7Hce4YYlFwmEmOXDOznBoKAW9kQuVqtboq1OIWDjfJkWtOMqEGhTifMdUt
-        y7ou1P8QItd0xFXZVxjaEIGcFbdzX6i4A/i/hs2cAvfBbLZh9E1p339FIJ0CQ9zAKRJhf60/TDBwWuUG
-        qKFs217PkjTXgd6KdfQBhM9o+xr4IbzKQmOM03q9foPDNd3s8XjQuCmEKIzehUi6rruaxMl78xcYIlfs
-        lLKwO8C+ZHFaDHiPYmGg3yKNBYeh1YssRosv3ap7JvC8xxC9LcnpXGReoa/fsBhd83844UlQe4k5mtwC
-        CtePNxfzIAieodUr2JOOZKciMht0/pofhMB4MWty724Rh81uuQhWHMv+6rnzecO2Nw1GERGyLXtz3nHz
-        hmV/xOsKMdjBVen3+wJ0u1376traBlxWYTAYzNEZ93q9h/B7nU7H4XtRo5RSvwHMtL1zL7rfMAAAAABJ
-        RU5ErkJggg==
-</value>
+  <data name="ActionSendToGitHub.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="ActionSendToGitHub.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 205</value>
+    <value>147, 235</value>
   </data>
   <data name="ActionSendToGitHub.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
+    <value>133, 26</value>
   </data>
   <data name="ActionSendToGitHub.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="ActionSendToGitHub.Text" xml:space="preserve">
+    <value>Create a GitHub Issue</value>
   </data>
   <data name="&gt;&gt;ActionSendToGitHub.Name" xml:space="preserve">
     <value>ActionSendToGitHub</value>
@@ -500,6 +498,9 @@
   </data>
   <data name="&gt;&gt;ActionSendToGitHub.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="ActionViewLog.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="ActionViewLog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -515,7 +516,7 @@
 </value>
   </data>
   <data name="ActionViewLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 205</value>
+    <value>88, 235</value>
   </data>
   <data name="ActionViewLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -542,7 +543,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>444, 386</value>
+    <value>444, 416</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>450, 270</value>

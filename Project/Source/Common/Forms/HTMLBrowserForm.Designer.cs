@@ -82,6 +82,7 @@
       this.Controls.Add(this.PanelBottom);
       this.MaximizeBox = false;
       this.Name = "HTMLBrowserForm";
+      this.Deactivate += new System.EventHandler(this.HTMLBrowserForm_Deactivate);
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HTMLBrowserForm_FormClosing);
       this.Load += new System.EventHandler(this.HTMLBrowserForm_Load);
       this.Shown += new System.EventHandler(this.HTMLBrowserForm_Shown);

@@ -63,7 +63,7 @@ namespace Ordisoftware.HebrewCalendar
           {
             IsGenerating = false;
           }
-          try
+          SystemManager.TryCatch(() =>
           {
             bool isTextReportLoaded = false;
             if ( File.Exists(Program.TextReportFilename) )
@@ -81,10 +81,7 @@ namespace Ordisoftware.HebrewCalendar
             if ( !isTextReportLoaded )
               CalendarText.Text = GenerateReport();
             GoToDate(DateTime.Today);
-          }
-          catch
-          {
-          }
+          });
         }
         else
         {
@@ -94,8 +91,7 @@ namespace Ordisoftware.HebrewCalendar
           string errors = CheckRegenerateCalendar(true);
           if ( errors != null )
           {
-            try { EmptyDatabase(); }
-            catch { }
+            SystemManager.TryCatch(() => EmptyDatabase());
             throw new Exception(string.Format(Translations.FatalGenerateError.GetLang(), errors));
           }
         }

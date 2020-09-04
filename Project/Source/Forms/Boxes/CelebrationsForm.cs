@@ -93,8 +93,10 @@ namespace Ordisoftware.HebrewCalendar
         SystemManager.TryCatch(() =>
         {
           MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(ListView.SelectedItems[0].SubItems[1].Tag.ToString()));
-          if ( !MainForm.Instance.Visible || MainForm.Instance.WindowState == FormWindowState.Minimized )
+          if ( !MainForm.Instance.Visible )
             MainForm.Instance.MenuShowHide_Click(null, null);
+          else
+            MainForm.Instance.Restore();
         });
     }
 

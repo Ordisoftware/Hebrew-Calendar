@@ -103,11 +103,11 @@ namespace Ordisoftware.HebrewCalendar
 
     internal void ClearLists()
     {
-      try
+      SystemManager.TryCatchManage(() =>
       {
         LockSessionForm.Instance?.Close();
-        CelebrationsForm.Instance.Hide();
-        NavigationForm.Instance.Hide();
+        CelebrationsForm.Instance?.Hide();
+        NavigationForm.Instance?.Hide();
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();
         RemindCelebrationDates.Clear();
@@ -129,11 +129,7 @@ namespace Ordisoftware.HebrewCalendar
         for ( int index = min; index <= max; index++ )
           if ( LastCelebrationReminded.ContainsKey((TorahEvent)index) )
             LastCelebrationReminded[(TorahEvent)index] = null;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      });
     }
 
   }

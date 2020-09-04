@@ -83,8 +83,14 @@ namespace Ordisoftware.HebrewCalendar
     private void PredefinedYearsItem_Click(object sender, EventArgs e)
     {
       var interval = (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag;
-      EditYearFirst.Value = CurrentYear - interval.YearsBefore;
-      EditYearLast.Value = CurrentYear + interval.YearsAfter - 1;
+      decimal first = CurrentYear - interval.YearsBefore;
+      if ( first < EditYearFirst.Minimum ) first = EditYearFirst.Minimum;
+      if ( first > EditYearFirst.Maximum ) first = EditYearFirst.Maximum;
+      EditYearFirst.Value = first;
+      decimal last = CurrentYear + interval.YearsAfter - 1;
+      if ( last < EditYearLast.Minimum ) last = EditYearLast.Minimum;
+      if ( last > EditYearLast.Maximum ) last = EditYearLast.Maximum;
+      EditYearLast.Value = last;
     }
 
     private void EditYearFirst_ValueChanged(object sender, EventArgs e)
