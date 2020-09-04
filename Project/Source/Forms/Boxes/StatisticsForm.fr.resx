@@ -313,7 +313,7 @@
   <data name="GroupBoxDatabase.Text" xml:space="preserve">
     <value>Base de données</value>
   </data>
-  <data name="GroupBox3Memoty.Text" xml:space="preserve">
+  <data name="GroupBoxMemory.Text" xml:space="preserve">
     <value>Mémoire</value>
   </data>
   <data name="GroupBoxSystem.Text" xml:space="preserve">
@@ -343,5 +343,11 @@
   </data>
   <data name="dBEngineversionLabel.Text" xml:space="preserve">
     <value>Moteur</value>
+  </data>
+  <data name="processorTimeLabel.Text" xml:space="preserve">
+    <value>Temps processeur :</value>
+  </data>
+  <data name="LabelApplication.Text" xml:space="preserve">
+    <value>Application :</value>
   </data>
 </root>

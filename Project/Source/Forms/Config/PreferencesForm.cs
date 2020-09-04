@@ -233,7 +233,7 @@ namespace Ordisoftware.HebrewCalendar
       var formTime = new SelectBirthTime();
       if ( formTime.ShowDialog() != DialogResult.OK ) return;
       var time = formTime.EditTime.Value.TimeOfDay;
-      if ( time >= new TimeSpan(0, 0, 0) && time < Dates.Get(date).Ephemerisis.Sunset )
+      if ( time >= new TimeSpan(0, 0, 0) && time < Program.Dates[date].Ephemerisis.Sunset )
         date = date.AddDays(-1);
       Settings.ShabatDay = (int)date.DayOfWeek;
       foreach ( DayOfWeekItem day in EditShabatDay.Items )

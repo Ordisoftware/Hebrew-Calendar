@@ -25,9 +25,6 @@ namespace Ordisoftware.HebrewCalendar
     public string Text { get; set; }
     public int Minutes { get; set; }
     public override string ToString() => Text;
-    public SuspendDelayItem()
-    {
-    }
     public SuspendDelayItem(string text, int minutes)
     {
       Text = text;

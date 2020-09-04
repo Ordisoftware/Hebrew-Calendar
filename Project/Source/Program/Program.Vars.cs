@@ -131,6 +131,9 @@ namespace Ordisoftware.HebrewCalendar
     static public string MoonMonthsLettriqsFilename
       => Path.Combine(MoonMonthsFolderPath, "MoonMonthsLettriqs{0}.txt");
 
+    static public readonly DateItemAutoDictionary Dates
+      = new DateItemAutoDictionary();
+
     /// <summary>
     /// Indicate the moon months meanings.
     /// </summary>

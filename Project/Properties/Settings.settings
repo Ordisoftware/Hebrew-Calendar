@@ -368,7 +368,7 @@
       <Value Profile="(Default)">2000-01-01</Value>
     </Setting>
     <Setting Name="StatisticsFormAlwaysOnTop" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="BenchmarkPopulateDays" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>

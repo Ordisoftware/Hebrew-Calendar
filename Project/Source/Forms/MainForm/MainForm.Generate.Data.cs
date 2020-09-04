@@ -176,7 +176,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         var date = SQLiteDate.ToDateTime(day.Date);
-        var data = Dates.Get(date);
+        var data = Program.Dates[date];
         var ephemeris = data.Ephemerisis;
         day.LunarDay = data.MoonDay;
         day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
@@ -281,7 +281,7 @@ namespace Ordisoftware.HebrewCalendar
         bool check(Data.DataSet.LunisolarDaysRow row)
         {
           var dateRow = SQLiteDate.ToDateTime(row.Date);
-          return dateRow.Year == dateDay.Year && Dates.Get(dateRow).TorahSeasonChange == SeasonChange.SpringEquinox;
+          return dateRow.Year == dateDay.Year && Program.Dates[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
         }
         var equinoxe = DataSet.LunisolarDays.Where(d => check(d)).First();
         var dateEquinox = SQLiteDate.ToDateTime(equinoxe.Date);

@@ -13,7 +13,9 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using System.Media;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -87,6 +89,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Visible )
       {
+        LabelApplication1.Text = Globals.AssemblyTitleWithVersion;
         ApplicationStatisticsDataBindingSource.ResetBindings(false);
         SystemStatisticsDataBindingSource.ResetBindings(false);
       }
@@ -100,6 +103,14 @@ namespace Ordisoftware.HebrewCalendar
     {
       DebugManager.TraceForm.Show();
       DebugManager.TraceForm.BringToFront();
+    }
+
+    private void ActionScreenshot_Click(object sender, EventArgs e)
+    {
+      var bitmap = new Bitmap(PanelMain.Width, PanelMain.Height);
+      PanelMain.DrawToBitmap(bitmap, new Rectangle(0, 0, PanelMain.Width, PanelMain.Height));
+      Clipboard.SetImage(bitmap);
+      DisplayManager.ShowInformation(Localizer.ScreenshotDone.GetLang());
     }
 
   }

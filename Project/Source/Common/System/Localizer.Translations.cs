@@ -361,6 +361,13 @@ namespace Ordisoftware.HebrewCommon
         [Language.FR] = "Vérifiez les préférences."
       };
 
+    static public readonly TranslationsDictionary ScreenshotDone
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "The window has been copied to the clipboard.",
+        [Language.FR] = "La fenêtre a été copié dans le presse-papier."
+      };
+
     static public readonly TranslationsDictionary AskToDownloadHebrewLetters
       = new TranslationsDictionary
       {

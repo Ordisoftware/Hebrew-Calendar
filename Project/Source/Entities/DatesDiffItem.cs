@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewCalendar
       try
       {
         int count = (int)( Date2 - Date1 ).TotalDays;
-        int countData = Dates.Count;
+        int countData = Program.Dates.Count;
         if ( count - countData >= Program.LoadingFormDatesDiff )
         {
           LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(), 
@@ -70,7 +70,7 @@ namespace Ordisoftware.HebrewCalendar
                                           Program.LoadingFormDatesDiff + 1);
           if ( sender != null ) sender.Enabled = false;
         }
-        var data = Dates.Get(Date1);
+        var data = Program.Dates[Date1];
         SolarDays = ( Date2 - Date1 ).Days + 1;
         SolarWeeks = (int)Math.Ceiling(SolarDays / 7d);
         SolarMonths = 1;
@@ -85,7 +85,7 @@ namespace Ordisoftware.HebrewCalendar
         for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
         {
           if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.DoProgress();
-          data = Dates.Get(index);
+          data = Program.Dates[index];
           if ( index.Day == 1 ) SolarMonths++;
           if ( index.Month == 1 && index.Day == 1 ) SolarYears++;
           if ( data.Ephemerisis.Moonrise == null ) continue;
