@@ -117,15 +117,60 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionOpenLogsFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ActionOpenLogsFolder.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionOpenLogsFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgxJREFUOE/F0t9LU2EYB/DzF/ivNCh1/drWHHUV3XVVlheWOsVKrSCDkHlTy8rp
+        Vqxd2IUXSdCFF5pl3Rk159lpv2drIA1rILq1uZ2z9e37njNaBBJB0Asf9nLG8zzv87yv9P+X8tD+XJ46
+        irXJQzqxl73HlMbff14iALV1YDdhUNNYnWhF6MHBn0mbDusFwj57vBEuSeIjdqOohs+jInehnp8Hykmg
+        kjJU00zKAoJGyEKetkDxH9/fTFB+h2q0l/rJqe9V0uJ9UCM92FnpREF4exaVjXn9FCv3rL2NBEeA4hto
+        qcvQ0sOopUcM61ehpoYQeezAe3c7tSHobkXw7gGE7pv1JIqvI88EnMG3RQYPoRB0orjaj2JIGGDwCXx5
+        cdpopRynGEX1llmFSSzgEC3A9hxiAVGprelOO74un4GWHIQa62NbPahGLtIF1DJjKGefYsllXpTkaRtK
+        8dtIzDiA+kcOi9V4E1AzbGOYW9HKCHEvJK8AmzPIvR5FYNDUKYW9dmwuO5F7NQAUllDPsP/MNbqO2qcb
+        dPMXo6hnb/HEz/AhcBIcYQsfUgeSs6dQSk0AW0/w/fMYuQy58d+4gLwXpYQbL8fNC/otKI8cHIaVdzzH
+        2/ADO5Pk2VtlFhsL3fBfMp3TE8g+R0GcQp6y8aVZENJZ97Tm4a/Hts3QFj0Bl4nEq/ob++hfLEn6ARk1
+        G0tPEW/pAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionOpenLogsFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOpenLogsFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>749, 1</value>
+  </data>
+  <data name="ActionOpenLogsFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionOpenLogsFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>118</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenLogsFolder.Name" xml:space="preserve">
+    <value>ActionOpenLogsFolder</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenLogsFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenLogsFolder.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenLogsFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="TrackBarFontSize.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TrackBarFontSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TrackBarFontSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 4</value>
   </data>
@@ -145,7 +190,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;TrackBarFontSize.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="LabelLinesCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -175,7 +220,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;LabelLinesCount.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionClearLogs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -203,7 +248,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClearLogs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>749, 1</value>
+    <value>712, 1</value>
   </data>
   <data name="ActionClearLogs.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -221,7 +266,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClearLogs.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -251,7 +296,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>

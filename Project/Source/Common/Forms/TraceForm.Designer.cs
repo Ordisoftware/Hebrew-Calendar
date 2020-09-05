@@ -36,6 +36,7 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.PanelTextBox = new System.Windows.Forms.Panel();
+      this.ActionOpenLogsFolder = new System.Windows.Forms.Button();
       this.TextBox = new Ordisoftware.HebrewCommon.RichTextBoxEx();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).BeginInit();
@@ -44,6 +45,7 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionOpenLogsFolder);
       this.PanelBottom.Controls.Add(this.TrackBarFontSize);
       this.PanelBottom.Controls.Add(this.LabelLinesCount);
       this.PanelBottom.Controls.Add(this.ActionClearLogs);
@@ -57,6 +59,7 @@
       this.TrackBarFontSize.Maximum = 12;
       this.TrackBarFontSize.Minimum = 7;
       this.TrackBarFontSize.Name = "TrackBarFontSize";
+      this.TrackBarFontSize.Value = 7;
       this.TrackBarFontSize.ValueChanged += new System.EventHandler(this.TrackBarFontSize_ValueChanged);
       // 
       // LabelLinesCount
@@ -68,9 +71,6 @@
       // 
       resources.ApplyResources(this.ActionClearLogs, "ActionClearLogs");
       this.ActionClearLogs.FlatAppearance.BorderSize = 0;
-      this.ActionClearLogs.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.ActionClearLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.ActionClearLogs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.ActionClearLogs.Name = "ActionClearLogs";
       this.ActionClearLogs.TabStop = false;
       this.ActionClearLogs.UseVisualStyleBackColor = true;
@@ -94,6 +94,15 @@
       this.PanelTextBox.Controls.Add(this.TextBox);
       resources.ApplyResources(this.PanelTextBox, "PanelTextBox");
       this.PanelTextBox.Name = "PanelTextBox";
+      // 
+      // ActionOpenLogsFolder
+      // 
+      resources.ApplyResources(this.ActionOpenLogsFolder, "ActionOpenLogsFolder");
+      this.ActionOpenLogsFolder.FlatAppearance.BorderSize = 0;
+      this.ActionOpenLogsFolder.Name = "ActionOpenLogsFolder";
+      this.ActionOpenLogsFolder.TabStop = false;
+      this.ActionOpenLogsFolder.UseVisualStyleBackColor = true;
+      this.ActionOpenLogsFolder.Click += new System.EventHandler(this.ActionOpenLogsFolder_Click);
       // 
       // TextBox
       // 
@@ -137,5 +146,6 @@
     private System.Windows.Forms.Label LabelLinesCount;
     private System.Windows.Forms.Button ActionClearLogs;
     private System.Windows.Forms.TrackBar TrackBarFontSize;
+    private System.Windows.Forms.Button ActionOpenLogsFolder;
   }
 }

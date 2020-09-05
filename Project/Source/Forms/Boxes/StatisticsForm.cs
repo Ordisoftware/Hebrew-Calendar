@@ -54,6 +54,9 @@ namespace Ordisoftware.HebrewCalendar
     private void SystemStatisticsForm_Load(object sender, EventArgs e)
     {
       this.CheckLocationOrCenterToMainFormElseScreen();
+      EditFolderApplication.Text = Globals.RootFolderPath;
+      EditFolderUserData.Text = Globals.UserDataFolderPath;
+      EditOpenFolderUserLocalData.Text = Globals.UserLocalDataFolderPath;
     }
 
     private void SystemStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -102,6 +105,21 @@ namespace Ordisoftware.HebrewCalendar
     {
       Clipboard.SetImage(PanelMain.GetBitmap());
       DisplayManager.ShowInformation(Localizer.ScreenshotDone.GetLang());
+    }
+
+    private void ActionOpenFolderApplication_Click(object sender, EventArgs e)
+    {
+      SystemManager.RunShell(EditFolderApplication.Text);
+    }
+
+    private void ActionOpenFolderUserData_Click(object sender, EventArgs e)
+    {
+      SystemManager.RunShell(EditFolderUserData.Text);
+    }
+
+    private void ActionOpenFolderUserLocalData_Click(object sender, EventArgs e)
+    {
+      SystemManager.RunShell(EditOpenFolderUserLocalData.Text);
     }
 
   }
