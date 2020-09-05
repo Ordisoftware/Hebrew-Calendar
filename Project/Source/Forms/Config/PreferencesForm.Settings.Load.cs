@@ -87,6 +87,7 @@ namespace Ordisoftware.HebrewCalendar
       EditAutoGenerateYearsInterval.Text = Settings.AutoGenerateYearsInternal.ToString();
       EditCloseReminderFormOnClick.Checked = Settings.ReminderFormCloseOnClick;
       EditBigCalendarWarning.Checked = Settings.BigCalendarWarningEnabled;
+      EditLogEnabled.Checked = Settings.TraceEnabled;
     }
 
   }

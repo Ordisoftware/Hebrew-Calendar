@@ -608,4 +608,7 @@
   <data name="EditBigCalendarWarning.Text" xml:space="preserve">
     <value>Afficher une alerte pour un grand intervalle</value>
   </data>
+  <data name="EditLogEnabled.Text" xml:space="preserve">
+    <value>Activer le fichier log</value>
+  </data>
 </root>

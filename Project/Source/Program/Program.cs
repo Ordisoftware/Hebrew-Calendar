@@ -54,6 +54,7 @@ namespace Ordisoftware.HebrewCalendar
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       UpdateLocalization(true);
+      DebugManager.TraceEnabled = Settings.TraceEnabled;
       DebugManager.Enabled = Settings.DebuggerEnabled;
       DebugManager.DeaultShowExceptionMode = ShowExceptionMode.Advanced;
       Language lang = Settings.LanguageSelected;

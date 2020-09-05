@@ -33,7 +33,7 @@ namespace Ordisoftware.HebrewCalendar
 
     public DateTime Date
     {
-      get { return _Date; }
+      get => _Date;
       set
       {
         try

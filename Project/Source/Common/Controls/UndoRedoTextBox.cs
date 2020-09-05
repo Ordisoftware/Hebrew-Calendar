@@ -62,7 +62,7 @@ namespace Ordisoftware.HebrewCommon
 
     /*public override string Text
     {
-      get { return base.Text; }
+      get => base.Text;
       set
       {
         InsertingText?.Invoke(this, TextUpdating.Text, ref value);
@@ -90,7 +90,7 @@ namespace Ordisoftware.HebrewCommon
 
     /*public override string SelectedText
     {
-      get { return base.SelectedText; }
+      get => base.SelectedText;
       set
       {
         InsertingText?.Invoke(this, TextUpdating.Selected, ref value);
