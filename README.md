@@ -163,27 +163,27 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add button to disable auto lock option in lock session form.
 - Add option to auto generate calendar when expired else show dialog box.
 - Add option to set the maximum years interval allowed to generate the data.
-- Add mute windows volume in addition to stop media playing.
-- Fix stop media playing (stop instead of play/pause media).
+- Add mute windows volume in addition to stop media playing in auto lock form.
+- Fix "stop media playing" to stop instead of play/pause media.
 - Fix day selection to allow only generated years interval.
 - Improve dates diff calculator to show more stats in a form having bookmarks.
-- Improve years to generate box with predefined intervals and change some constants.
-- Improve GPS finder to try to auto-select time zone based on country or city.
+- Improve generate years box with predefined intervals and change some constants.
+- Improve GPS finder to try to auto-select time zone based on country or city names.
 - Improve month view drawing speed by a half.
 - Improve data generation speed by a half.
 - Improve keyboard shortcuts.
 - Remove the generate years selection box at startup if database is empty or new.
 - Change default years interval generation to 10.
-- Change text report that is no more stored in the database but in a file.
+- Change text report that is no more stored in the database but in a file to avoid problems when using hudge interval.
 - Add usage statistics form in tools menu.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve debugger to support logging.
-- Improve exception form to view log and send mail in addition to create a GitHub issue.
+- Improve exception form to view log.
 - Some UI/UX improvements.
-- Some code refactorings.
+- Massive code refactoring.
 - Update help.
 - Update to SQLite 3.32.3 ODBC Driver.
-- Update Framework .NET version to 4.7.2 for only Windows 7 SP1 or higher.
+- Update Framework .NET version to 4.7.2 and supported Windows only 7 SP1 or higher.
 - Improve setup.
 
 #### 2020.08.22 - Version 4.1
