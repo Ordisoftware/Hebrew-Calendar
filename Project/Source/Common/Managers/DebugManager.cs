@@ -239,7 +239,7 @@ namespace Ordisoftware.HebrewCommon
     static private void Handle(object sender, Exception ex)
     {
       if ( ex is AbortException ) return;
-      Process(sender, ex);
+      ManageInternal(sender, ex);
     }
 
     /// <summary>
@@ -282,29 +282,29 @@ namespace Ordisoftware.HebrewCommon
       if ( !( ex is AbortException ) )
       {
         StackSkip++;
-        Process(sender, ex, show);
+        ManageInternal(sender, ex, show);
         LeaveInternal();
       }
       LeaveInternal();
     }
 
     /// <summary>
-    /// Process an exception.
+    /// Manage an exception.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
-    static private void Process(object sender, Exception ex)
+    static private void ManageInternal(object sender, Exception ex)
     {
-      Process(sender, ex, DeaultShowExceptionMode);
+      ManageInternal(sender, ex, DeaultShowExceptionMode);
     }
 
     /// <summary>
-    /// Process an exception.
+    /// Manage an exception.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
     /// <param name="show">The show mode.</param>
-    static private void Process(object sender, Exception ex, ShowExceptionMode show)
+    static private void ManageInternal(object sender, Exception ex, ShowExceptionMode show)
     {
       bool process = true;
       var einfo = new ExceptionInfo(sender, ex);
