@@ -259,7 +259,14 @@ namespace Ordisoftware.HebrewCalendar
       SystemManager.TryCatchManage(() =>
       {
         if ( Visible && WindowState == FormWindowState.Minimized )
-          this.Restore();
+        {
+          WindowState = Settings.MainFormState;
+          var old = TopMost;
+          TopMost = true;
+          BringToFront();
+          Show();
+          TopMost = old;
+        }
         else
         if ( !Visible || e == null )
         {
