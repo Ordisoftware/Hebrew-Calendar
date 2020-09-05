@@ -70,6 +70,7 @@ namespace Ordisoftware.HebrewCommon
     static private void CheckDebugExecutable(ref bool isDebug)
       => isDebug = true;
 
+    /// <summary>
     /// Indicate if the running app is from dev folder else user installed.
     /// </summary>
     static public bool IsDevExecutable
