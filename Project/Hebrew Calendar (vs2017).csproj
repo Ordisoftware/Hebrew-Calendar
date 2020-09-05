@@ -243,6 +243,10 @@
     <Compile Include="Source\Common\Managers\SystemManager.cs" />
     <Compile Include="Source\Common\Managers\SystemManager.Shell.cs" />
     <Compile Include="Source\Common\System\EnumHelper.cs" />
+    <Compile Include="Source\Common\System\Globals.State.cs" />
+    <Compile Include="Source\Common\System\Globals.Trace.cs" />
+    <Compile Include="Source\Common\System\Globals.Files.cs" />
+    <Compile Include="Source\Common\System\Globals.Folders.cs" />
     <Compile Include="Source\Common\System\Globals.Assembly.cs" />
     <Compile Include="Source\Common\System\Globals.cs" />
     <Compile Include="Source\Common\System\Languages.cs" />

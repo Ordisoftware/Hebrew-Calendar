@@ -156,12 +156,12 @@ namespace Ordisoftware.HebrewCalendar
         MoonMonthsMeanings.Add(lang,
                                new MoonMonthsFile(string.Format(MoonMonthsMeaningsFilename, Languages.Codes[lang].ToUpper()),
                                                   true,
-                                                  Globals.IsDev,
+                                                  Globals.IsDevExecutable,
                                                   DataFileFolder.ApplicationDocuments));
         MoonMonthsLettriqs.Add(lang,
                                new MoonMonthsFile(string.Format(MoonMonthsLettriqsFilename, Languages.Codes[lang].ToUpper()),
                                                   true,
-                                                  Globals.IsDev,
+                                                  Globals.IsDevExecutable,
                                                   DataFileFolder.ApplicationDocuments));
       }
     }

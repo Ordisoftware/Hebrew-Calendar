@@ -25,9 +25,8 @@ namespace Ordisoftware.HebrewCommon
 
     static DebugManager()
     {
-      TraceForm = new TraceForm("TraceFormLocation", "TraceFormSize");
+      TraceForm = new TraceForm("TraceFormLocation", "TraceFormSize", "TraceFormTextBoxFontSize");
       TraceEventMaxLength = Enum.GetNames(typeof(TraceEvent)).Max(v => v.Length);
-
     }
 
     static public readonly TraceForm TraceForm;

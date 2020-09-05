@@ -59,7 +59,7 @@ namespace Ordisoftware.HebrewCalendar
           return true;
         case Keys.F10:
         case Keys.Control | Keys.M:
-          if ( !Globals.IsDev ) return false; // TODO remove when finished
+          if ( !Globals.IsDevExecutable ) return false; // TODO remove when finished
           ActionViewMoonMonths.PerformClick();
           return true;
         case Keys.F11:
