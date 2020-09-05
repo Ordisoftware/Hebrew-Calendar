@@ -13,6 +13,7 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.IO;
 using System.Threading;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -28,6 +29,15 @@ namespace Ordisoftware.HebrewCommon
 
     static private PerformanceCounter PerformanceCounter;
 
+    static public ProcessPriorityClass RealProcessPriority
+    {
+      get
+      {
+        var list = Process.GetProcessesByName(Globals.ProcessName);
+        return list.Length == 1 ? list[0].PriorityClass : 0;
+      }
+    }
+
     static private Process Process
       = Process.GetCurrentProcess();
 
@@ -41,7 +51,7 @@ namespace Ordisoftware.HebrewCommon
       => SystemManager.Platform;
 
     public string ProcessPriority
-      => Globals.RealProcessPriority.ToString();
+      => RealProcessPriority.ToString();
 
     public string ThreadPriority
       => Thread.CurrentThread.Priority.ToString();

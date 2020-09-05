@@ -54,11 +54,9 @@
       // TrackBarFontSize
       // 
       resources.ApplyResources(this.TrackBarFontSize, "TrackBarFontSize");
-      this.TrackBarFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "TraceFormTextBoxFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.TrackBarFontSize.Maximum = 12;
       this.TrackBarFontSize.Minimum = 7;
       this.TrackBarFontSize.Name = "TrackBarFontSize";
-      this.TrackBarFontSize.Value = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.TraceFormTextBoxFontSize;
       this.TrackBarFontSize.ValueChanged += new System.EventHandler(this.TrackBarFontSize_ValueChanged);
       // 
       // LabelLinesCount

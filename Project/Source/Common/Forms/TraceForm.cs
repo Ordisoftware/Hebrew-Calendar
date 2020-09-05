@@ -23,6 +23,7 @@ namespace Ordisoftware.HebrewCommon
 
     private string LocationPropertyName;
     private string ClientSizePropertyName;
+    private string FontSizepropertyName;
 
     private TraceForm()
     {
@@ -30,13 +31,15 @@ namespace Ordisoftware.HebrewCommon
       Icon = Globals.MainForm.Icon;
     }
 
-    public TraceForm(string locationPropertyName, string clientSizePropertyName)
+    public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizepropertyName)
       : this()
     {
       LocationPropertyName = locationPropertyName;
       ClientSizePropertyName = clientSizePropertyName;
+      FontSizepropertyName = fontSizepropertyName;
       Location = (Point)Globals.Settings[locationPropertyName];
       ClientSize = (Size)Globals.Settings[clientSizePropertyName];
+      TrackBarFontSize.Value = (int)Globals.Settings[fontSizepropertyName];
     }
 
     private void LogForm_Load(object sender, EventArgs e)
@@ -49,6 +52,7 @@ namespace Ordisoftware.HebrewCommon
     {
       Globals.Settings[LocationPropertyName] = Location;
       Globals.Settings[ClientSizePropertyName] = ClientSize;
+      Globals.Settings[FontSizepropertyName] = TrackBarFontSize.Value;
       Globals.Settings.Save();
     }
 

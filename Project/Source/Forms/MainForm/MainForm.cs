@@ -62,8 +62,8 @@ namespace Ordisoftware.HebrewCalendar
       Globals.AllowClose = false;
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
-      ActionViewMoonMonths.Visible = Globals.IsDev; // TODO remove when ready
-      ActionViewMoonMonthsSeparator.Visible = Globals.IsDev; // TODO remove when ready
+      ActionViewMoonMonths.Visible = Globals.IsDevExecutable; // TODO remove when ready
+      ActionViewMoonMonthsSeparator.Visible = Globals.IsDevExecutable; // TODO remove when ready
       ChronoStart.Start();
     }
 
@@ -242,7 +242,7 @@ namespace Ordisoftware.HebrewCalendar
         DisplayManager.ShowInformation(Translations.CantExitWhileGenerating.GetLang());
         return;
       }
-      if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDev ) )
+      if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDevExecutable ) )
         if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
           return;
       Globals.AllowClose = true;
