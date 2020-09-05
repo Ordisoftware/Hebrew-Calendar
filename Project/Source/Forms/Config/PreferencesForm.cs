@@ -314,6 +314,12 @@ namespace Ordisoftware.HebrewCalendar
       if ( !EditDebuggerEnabled.Checked ) DebugManager.ClearTraces(true);
       DebugManager.Enabled = EditDebuggerEnabled.Checked;
       MainForm.Instance.ActionViewLog.Enabled = DebugManager.Enabled;
+      EditLogEnabled.Enabled = DebugManager.Enabled;
+    }
+
+    private void EditLogEnabled_CheckedChanged(object sender, EventArgs e)
+    {
+      DebugManager.TraceEnabled = EditLogEnabled.Checked;
     }
 
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)

@@ -14,6 +14,7 @@
 /// <created> 2007-05 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.IO;
 
 namespace Ordisoftware.HebrewCommon
@@ -25,6 +26,8 @@ namespace Ordisoftware.HebrewCommon
     static DebugManager()
     {
       TraceForm = new TraceForm("TraceFormLocation", "TraceFormSize");
+      TraceEventMaxLength = Enum.GetNames(typeof(TraceEvent)).Max(v => v.Length);
+
     }
 
     static public readonly TraceForm TraceForm;
@@ -32,6 +35,7 @@ namespace Ordisoftware.HebrewCommon
     public const int MarginSize = 4;
     public const int EnterCountSkip = 2;
 
+    static private int TraceEventMaxLength;
     static private int StackSkip = 1;
     static private int EnterCount = 0;
     static private int CurrentMargin = 0;
@@ -70,23 +74,28 @@ namespace Ordisoftware.HebrewCommon
       StackSkip = 1;
     }
 
-    static public void Trace(TraceEvent logevent, string text = "")
+    static public void Trace(TraceEvent traceEvent, string text = "")
     {
       if ( !Enabled ) return;
       SystemManager.TryCatch(() =>
       {
         string message = "";
-        if ( logevent != TraceEvent.System )
+        if ( traceEvent != TraceEvent.System )
         {
-          string str = logevent.ToString().ToUpper();
-          if ( str.Length < 9 ) str += new string(' ', 9 - str.Length);
-          message += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " [ " + str + " ] ";
+          string traceEventName = traceEvent.ToString().ToUpper().PadRight(TraceEventMaxLength);
+          message += $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")} [ {traceEventName} ] ";
         }
-        if ( logevent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
-        message += text.Indent(CurrentMargin, CurrentMargin + message.Length) + Globals.NL;
-        SystemManager.TryCatch(() => { if ( !TraceForm.IsDisposed ) TraceForm.AppendText(message); });
-        System.Diagnostics.Trace.Write(message);
-        if ( logevent == TraceEvent.Enter ) CurrentMargin += MarginSize;
+        try
+        {
+          if ( traceEvent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
+          message += text.Indent(CurrentMargin, CurrentMargin + message.Length) + Globals.NL;
+          SystemManager.TryCatch(() => { if ( !TraceForm.IsDisposed ) TraceForm?.AppendText(message); });
+          System.Diagnostics.Trace.Write(message);
+        }
+        finally
+        {
+          if ( traceEvent == TraceEvent.Enter ) CurrentMargin += MarginSize;
+        }
       });
     }
 
@@ -118,27 +127,31 @@ namespace Ordisoftware.HebrewCommon
     public static void ClearTraces(bool norestart = false)
     {
       if ( !_Enabled ) return;
-      try
+      if ( _Enabled && !_TraceEnabled ) return;
+      SystemManager.TryCatchManage(() =>
       {
-        string path = TraceListener.Path;
-        string code = TraceListener.Code;
-        string extension = TraceListener.Extension;
-        Stop();
-        foreach ( string filename in Directory.GetFiles(path, code + "*" + extension) )
+        try
         {
-          string date = Path.GetFileNameWithoutExtension(filename).Replace(code, "").Trim();
-          SystemManager.TryCatch(() => File.Delete(filename));
+          string path = TraceListener.Path;
+          string code = TraceListener.Code;
+          string extension = TraceListener.Extension;
+          Stop();
+          foreach ( string filename in Directory.GetFiles(path, code + "*" + extension) )
+          {
+            string date = Path.GetFileNameWithoutExtension(filename).Replace(code, "").Trim();
+            SystemManager.TryCatch(() => File.Delete(filename));
+          }
+          TraceForm?.TextBox.Clear();
         }
-        TraceForm.TextBox.Clear();
-      }
-      finally
-      {
-        if ( !norestart )
+        finally
         {
-          Start();
-          Trace(TraceEvent.Message, nameof(ClearTraces));
+          if ( !norestart )
+          {
+            Start();
+            Trace(TraceEvent.Message, $"{nameof(DebugManager)}.{nameof(ClearTraces)}");
+          }
         }
-      }
+      });
     }
 
   }

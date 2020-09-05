@@ -1754,7 +1754,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditStartupHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 83</value>
+    <value>56, 99</value>
   </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 17</value>
@@ -2577,7 +2577,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMonthViewSunToolTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 195</value>
+    <value>56, 211</value>
   </data>
   <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 17</value>
@@ -3294,7 +3294,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVacuumAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 35</value>
+    <value>56, 51</value>
   </data>
   <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 17</value>
@@ -3457,7 +3457,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoOpenExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 211</value>
+    <value>56, 227</value>
   </data>
   <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>
@@ -3496,7 +3496,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 179</value>
+    <value>56, 195</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 17</value>
@@ -3535,7 +3535,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditShowReminderInTaskBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 163</value>
+    <value>56, 179</value>
   </data>
   <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 17</value>
@@ -3574,7 +3574,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 67</value>
+    <value>56, 83</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 17</value>
@@ -3613,7 +3613,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 51</value>
+    <value>56, 67</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 17</value>
@@ -3639,46 +3639,43 @@
   <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="EditStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditLogEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditStartWithWindows.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="EditLogEnabled.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
   </data>
-  <data name="EditStartWithWindows.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditLogEnabled.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditStartWithWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditLogEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 12</value>
+  <data name="EditLogEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 35</value>
   </data>
-  <data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 17</value>
+  <data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 17</value>
   </data>
-  <data name="EditStartWithWindows.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditLogEnabled.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="EditStartWithWindows.Text" xml:space="preserve">
-    <value>Start with Windows</value>
+  <data name="EditLogEnabled.Text" xml:space="preserve">
+    <value>Enable log file</value>
   </data>
-  <data name="EditStartWithWindows.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="EditLogEnabled.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
   </data>
-  <data name="EditStartWithWindows.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;EditLogEnabled.Name" xml:space="preserve">
+    <value>EditLogEnabled</value>
   </data>
-  <data name="&gt;&gt;EditStartWithWindows.Name" xml:space="preserve">
-    <value>EditStartWithWindows</value>
-  </data>
-  <data name="&gt;&gt;EditStartWithWindows.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditLogEnabled.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditStartWithWindows.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditLogEnabled.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
   </data>
-  <data name="&gt;&gt;EditStartWithWindows.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
@@ -3733,7 +3730,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBigCalendarWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 131</value>
+    <value>56, 147</value>
   </data>
   <data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
@@ -3772,7 +3769,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAllowSuspendReminder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 147</value>
+    <value>56, 163</value>
   </data>
   <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
@@ -3811,7 +3808,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 99</value>
+    <value>56, 115</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
@@ -3850,7 +3847,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoRegenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 115</value>
+    <value>56, 131</value>
   </data>
   <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 17</value>

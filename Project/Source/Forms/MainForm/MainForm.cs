@@ -108,10 +108,12 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
+      if ( Globals.IsExiting ) return;
       DebugManager.Enter();
       try
       {
-        if ( Globals.IsExiting ) return;
+        ActionViewLog.Enabled = DebugManager.TraceEnabled;
+        DebugManager.TraceEnabledChanged += value => ActionViewLog.Enabled = value;
         UpdateTextCalendar();
         CalendarMonth.CalendarDateChanged += date => GoToDate(date);
         MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);

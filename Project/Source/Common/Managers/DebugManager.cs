@@ -21,6 +21,8 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
+  public delegate void DebugManagerHandler(bool value);
+
   /// <summary>
   /// Provide exception helper.
   /// </summary>
@@ -57,6 +59,9 @@ namespace Ordisoftware.HebrewCommon
   static public partial class DebugManager
   {
 
+    static public event DebugManagerHandler EnabledChanged;
+    static public event DebugManagerHandler TraceEnabledChanged;
+
     /// <summary>
     /// Indicate before Exception event.
     /// </summary>
@@ -85,7 +90,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Indicate if stack in specialized form is hidded by default.
     /// </summary>
-    static public bool AutoHideStack { get; set; } = false;
+    //static public bool AutoHideStack { get; set; } = false;
 
     /// <summary>
     /// Indicate if Exception form show a terminate button.
@@ -103,12 +108,37 @@ namespace Ordisoftware.HebrewCommon
     /// </summary>
     static public Listener TraceListener { get; private set; }
 
+    static public bool TraceEnabled
+    {
+      get => _TraceEnabled;
+      set
+      {
+        if ( _TraceEnabled == value ) return;
+        var temp = _Enabled;
+        if ( value )
+        {
+          Enabled = false;
+          _TraceEnabled = value;
+          Enabled = temp;
+          Trace(TraceEvent.Data, $"{nameof(DebugManager)}.{nameof(TraceEnabled)} = {value}");
+        }
+        else
+        {
+          ClearTraces(true);
+          _TraceEnabled = value;
+          Enabled = temp;
+        }
+        TraceEnabledChanged?.Invoke(value);
+      }
+    }
+    static public bool _TraceEnabled = true;
+
     /// <summary>
     /// Indicate if the debug manager is enabled or not.
     /// </summary>
     static public bool Enabled
     {
-      get { return _Enabled; }
+      get => _Enabled;
       set
       {
         if ( _Enabled == value ) return;
@@ -127,27 +157,34 @@ namespace Ordisoftware.HebrewCommon
         if ( value )
         {
           _Enabled = true;
-          TraceListener = new Listener(Globals.TraceFolderPath,
-                                       Globals.TraceFileCode,
-                                       Globals.TraceFileExtension,
-                                       Globals.TraceFileMode,
-                                       Globals.TraceFileKeepCount,
-                                       TraceFileChanged);
-          System.Diagnostics.Trace.Listeners.Add(TraceListener);
-          System.Diagnostics.Trace.AutoFlush = true;
-          TraceListener.AutoFlush = true;
+          if ( _TraceEnabled )
+          {
+            TraceListener = new Listener(Globals.TraceFolderPath,
+                                         Globals.TraceFileCode,
+                                         Globals.TraceFileExtension,
+                                         Globals.TraceFileMode,
+                                         Globals.TraceFileKeepCount,
+                                         TraceFileChanged);
+            System.Diagnostics.Trace.Listeners.Add(TraceListener);
+            System.Diagnostics.Trace.AutoFlush = true;
+            TraceListener.AutoFlush = true;
+          }
           WriteHeader();
         }
         else
         {
           WriteFooter();
-          System.Diagnostics.Trace.Listeners.Remove(TraceListener);
-          TraceListener.Dispose();
-          TraceListener = null;
+          if ( _TraceEnabled )
+          {
+            System.Diagnostics.Trace.Listeners.Remove(TraceListener);
+            TraceListener.Dispose();
+            TraceListener = null;
+          }
           _Enabled = false;
           TraceForm.Hide();
           TraceForm.TextBox.Clear();
         }
+        EnabledChanged?.Invoke(value);
       }
     }
 

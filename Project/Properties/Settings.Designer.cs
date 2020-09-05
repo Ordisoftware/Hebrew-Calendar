@@ -1641,5 +1641,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["TraceFormTextBoxFontSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TraceEnabled {
+            get {
+                return ((bool)(this["TraceEnabled"]));
+            }
+            set {
+                this["TraceEnabled"] = value;
+            }
+        }
     }
 }
