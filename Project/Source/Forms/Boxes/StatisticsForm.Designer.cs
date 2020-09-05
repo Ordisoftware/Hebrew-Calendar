@@ -67,13 +67,15 @@
       System.Windows.Forms.Label dBADONETAccessLabel;
       System.Windows.Forms.Label processorTimeLabel;
       System.Windows.Forms.Label LabelApplication;
+      System.Windows.Forms.Label label1;
+      System.Windows.Forms.Label label2;
+      System.Windows.Forms.Label EditFolderUserLocalData;
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionScreenshot = new System.Windows.Forms.Button();
       this.EditAlwaysOnTop = new System.Windows.Forms.CheckBox();
       this.ActionClose = new System.Windows.Forms.Button();
       this.Timer = new System.Windows.Forms.Timer(this.components);
       this.dBEventsCountLabel1 = new System.Windows.Forms.Label();
-      this.ApplicationStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.dBFileSizeLabel1 = new System.Windows.Forms.Label();
       this.dBFirstYearLabel1 = new System.Windows.Forms.Label();
       this.dBLastYearLabel1 = new System.Windows.Forms.Label();
@@ -83,7 +85,6 @@
       this.loadDataTimeLabel1 = new System.Windows.Forms.Label();
       this.monthViewEventsCountLabel1 = new System.Windows.Forms.Label();
       this.physicalMemoryFreeLabel1 = new System.Windows.Forms.Label();
-      this.SystemStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.runningTimeLabel1 = new System.Windows.Forms.Label();
       this.startingTimeLabel1 = new System.Windows.Forms.Label();
       this.totalVisibleMemoryLabel1 = new System.Windows.Forms.Label();
@@ -111,14 +112,23 @@
       this.memoryMaxGCUsageLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.executableModeLabel1 = new System.Windows.Forms.Label();
-      this.operatingSystemTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.processorNameTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.GroupBoxRunning = new System.Windows.Forms.GroupBox();
       this.LabelApplication1 = new System.Windows.Forms.Label();
       this.GroupBoxSystemLoad = new System.Windows.Forms.GroupBox();
       this.processorTime1 = new System.Windows.Forms.Label();
       this.PanelMain = new System.Windows.Forms.Panel();
+      this.GroupBoxFolders = new System.Windows.Forms.GroupBox();
+      this.ActionOpenFolderUserLocalData = new System.Windows.Forms.Button();
+      this.ActionOpenFolderUserData = new System.Windows.Forms.Button();
+      this.ActionOpenFolderApplication = new System.Windows.Forms.Button();
       this.PanelBottomOuter = new System.Windows.Forms.Panel();
+      this.EditOpenFolderUserLocalData = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditFolderUserData = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditFolderApplication = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.ApplicationStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.SystemStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.operatingSystemTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.processorNameTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       dBEventsCountLabel = new System.Windows.Forms.Label();
       dBFileSizeLabel = new System.Windows.Forms.Label();
       dBFirstYearLabel = new System.Windows.Forms.Label();
@@ -156,9 +166,10 @@
       dBADONETAccessLabel = new System.Windows.Forms.Label();
       processorTimeLabel = new System.Windows.Forms.Label();
       LabelApplication = new System.Windows.Forms.Label();
+      label1 = new System.Windows.Forms.Label();
+      label2 = new System.Windows.Forms.Label();
+      EditFolderUserLocalData = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
       this.GroupBoxTimings.SuspendLayout();
       this.GroupBoxDatabase.SuspendLayout();
       this.GroupBoxMemory.SuspendLayout();
@@ -166,7 +177,10 @@
       this.GroupBoxRunning.SuspendLayout();
       this.GroupBoxSystemLoad.SuspendLayout();
       this.PanelMain.SuspendLayout();
+      this.GroupBoxFolders.SuspendLayout();
       this.PanelBottomOuter.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // dBEventsCountLabel
@@ -354,6 +368,21 @@
       resources.ApplyResources(LabelApplication, "LabelApplication");
       LabelApplication.Name = "LabelApplication";
       // 
+      // label1
+      // 
+      resources.ApplyResources(label1, "label1");
+      label1.Name = "label1";
+      // 
+      // label2
+      // 
+      resources.ApplyResources(label2, "label2");
+      label2.Name = "label2";
+      // 
+      // EditFolderUserLocalData
+      // 
+      resources.ApplyResources(EditFolderUserLocalData, "EditFolderUserLocalData");
+      EditFolderUserLocalData.Name = "EditFolderUserLocalData";
+      // 
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.ActionScreenshot);
@@ -398,11 +427,6 @@
       resources.ApplyResources(this.dBEventsCountLabel1, "dBEventsCountLabel1");
       this.dBEventsCountLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBEventsCount", true));
       this.dBEventsCountLabel1.Name = "dBEventsCountLabel1";
-      // 
-      // ApplicationStatisticsDataBindingSource
-      // 
-      this.ApplicationStatisticsDataBindingSource.AllowNew = false;
-      this.ApplicationStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.ApplicationStatistics);
       // 
       // dBFileSizeLabel1
       // 
@@ -457,11 +481,6 @@
       resources.ApplyResources(this.physicalMemoryFreeLabel1, "physicalMemoryFreeLabel1");
       this.physicalMemoryFreeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "PhysicalMemoryFree", true));
       this.physicalMemoryFreeLabel1.Name = "physicalMemoryFreeLabel1";
-      // 
-      // SystemStatisticsDataBindingSource
-      // 
-      this.SystemStatisticsDataBindingSource.AllowNew = false;
-      this.SystemStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCommon.SystemStatistics);
       // 
       // runningTimeLabel1
       // 
@@ -691,24 +710,6 @@
       resources.ApplyResources(this.executableModeLabel1, "executableModeLabel1");
       this.executableModeLabel1.Name = "executableModeLabel1";
       // 
-      // operatingSystemTextBox
-      // 
-      this.operatingSystemTextBox.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      this.operatingSystemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "Platform", true));
-      resources.ApplyResources(this.operatingSystemTextBox, "operatingSystemTextBox");
-      this.operatingSystemTextBox.Name = "operatingSystemTextBox";
-      this.operatingSystemTextBox.ReadOnly = true;
-      this.operatingSystemTextBox.TabStop = false;
-      // 
-      // processorNameTextBox
-      // 
-      this.processorNameTextBox.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      this.processorNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "Processor", true));
-      resources.ApplyResources(this.processorNameTextBox, "processorNameTextBox");
-      this.processorNameTextBox.Name = "processorNameTextBox";
-      this.processorNameTextBox.ReadOnly = true;
-      this.processorNameTextBox.TabStop = false;
-      // 
       // GroupBoxRunning
       // 
       this.GroupBoxRunning.Controls.Add(LabelApplication);
@@ -742,6 +743,7 @@
       // 
       // PanelMain
       // 
+      this.PanelMain.Controls.Add(this.GroupBoxFolders);
       this.PanelMain.Controls.Add(this.GroupBoxTimings);
       this.PanelMain.Controls.Add(this.GroupBoxDatabase);
       this.PanelMain.Controls.Add(this.GroupBoxMemory);
@@ -751,11 +753,105 @@
       resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
+      // GroupBoxFolders
+      // 
+      this.GroupBoxFolders.Controls.Add(this.ActionOpenFolderUserLocalData);
+      this.GroupBoxFolders.Controls.Add(this.ActionOpenFolderUserData);
+      this.GroupBoxFolders.Controls.Add(this.ActionOpenFolderApplication);
+      this.GroupBoxFolders.Controls.Add(EditFolderUserLocalData);
+      this.GroupBoxFolders.Controls.Add(this.EditOpenFolderUserLocalData);
+      this.GroupBoxFolders.Controls.Add(label2);
+      this.GroupBoxFolders.Controls.Add(this.EditFolderUserData);
+      this.GroupBoxFolders.Controls.Add(label1);
+      this.GroupBoxFolders.Controls.Add(this.EditFolderApplication);
+      resources.ApplyResources(this.GroupBoxFolders, "GroupBoxFolders");
+      this.GroupBoxFolders.Name = "GroupBoxFolders";
+      this.GroupBoxFolders.TabStop = false;
+      // 
+      // ActionOpenFolderUserLocalData
+      // 
+      this.ActionOpenFolderUserLocalData.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOpenFolderUserLocalData, "ActionOpenFolderUserLocalData");
+      this.ActionOpenFolderUserLocalData.Name = "ActionOpenFolderUserLocalData";
+      this.ActionOpenFolderUserLocalData.TabStop = false;
+      this.ActionOpenFolderUserLocalData.UseVisualStyleBackColor = true;
+      this.ActionOpenFolderUserLocalData.Click += new System.EventHandler(this.ActionOpenFolderUserLocalData_Click);
+      // 
+      // ActionOpenFolderUserData
+      // 
+      this.ActionOpenFolderUserData.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOpenFolderUserData, "ActionOpenFolderUserData");
+      this.ActionOpenFolderUserData.Name = "ActionOpenFolderUserData";
+      this.ActionOpenFolderUserData.TabStop = false;
+      this.ActionOpenFolderUserData.UseVisualStyleBackColor = true;
+      this.ActionOpenFolderUserData.Click += new System.EventHandler(this.ActionOpenFolderUserData_Click);
+      // 
+      // ActionOpenFolderApplication
+      // 
+      this.ActionOpenFolderApplication.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOpenFolderApplication, "ActionOpenFolderApplication");
+      this.ActionOpenFolderApplication.Name = "ActionOpenFolderApplication";
+      this.ActionOpenFolderApplication.TabStop = false;
+      this.ActionOpenFolderApplication.UseVisualStyleBackColor = true;
+      this.ActionOpenFolderApplication.Click += new System.EventHandler(this.ActionOpenFolderApplication_Click);
+      // 
       // PanelBottomOuter
       // 
       this.PanelBottomOuter.Controls.Add(this.PanelBottom);
       resources.ApplyResources(this.PanelBottomOuter, "PanelBottomOuter");
       this.PanelBottomOuter.Name = "PanelBottomOuter";
+      // 
+      // EditOpenFolderUserLocalData
+      // 
+      this.EditOpenFolderUserLocalData.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditOpenFolderUserLocalData, "EditOpenFolderUserLocalData");
+      this.EditOpenFolderUserLocalData.Name = "EditOpenFolderUserLocalData";
+      this.EditOpenFolderUserLocalData.ReadOnly = true;
+      this.EditOpenFolderUserLocalData.TabStop = false;
+      // 
+      // EditFolderUserData
+      // 
+      this.EditFolderUserData.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditFolderUserData, "EditFolderUserData");
+      this.EditFolderUserData.Name = "EditFolderUserData";
+      this.EditFolderUserData.ReadOnly = true;
+      this.EditFolderUserData.TabStop = false;
+      // 
+      // EditFolderApplication
+      // 
+      this.EditFolderApplication.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditFolderApplication, "EditFolderApplication");
+      this.EditFolderApplication.Name = "EditFolderApplication";
+      this.EditFolderApplication.ReadOnly = true;
+      this.EditFolderApplication.TabStop = false;
+      // 
+      // ApplicationStatisticsDataBindingSource
+      // 
+      this.ApplicationStatisticsDataBindingSource.AllowNew = false;
+      this.ApplicationStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.ApplicationStatistics);
+      // 
+      // SystemStatisticsDataBindingSource
+      // 
+      this.SystemStatisticsDataBindingSource.AllowNew = false;
+      this.SystemStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCommon.SystemStatistics);
+      // 
+      // operatingSystemTextBox
+      // 
+      this.operatingSystemTextBox.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.operatingSystemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "Platform", true));
+      resources.ApplyResources(this.operatingSystemTextBox, "operatingSystemTextBox");
+      this.operatingSystemTextBox.Name = "operatingSystemTextBox";
+      this.operatingSystemTextBox.ReadOnly = true;
+      this.operatingSystemTextBox.TabStop = false;
+      // 
+      // processorNameTextBox
+      // 
+      this.processorNameTextBox.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.processorNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "Processor", true));
+      resources.ApplyResources(this.processorNameTextBox, "processorNameTextBox");
+      this.processorNameTextBox.Name = "processorNameTextBox";
+      this.processorNameTextBox.ReadOnly = true;
+      this.processorNameTextBox.TabStop = false;
       // 
       // StatisticsForm
       // 
@@ -773,8 +869,6 @@
       this.Load += new System.EventHandler(this.SystemStatisticsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).EndInit();
       this.GroupBoxTimings.ResumeLayout(false);
       this.GroupBoxTimings.PerformLayout();
       this.GroupBoxDatabase.ResumeLayout(false);
@@ -788,7 +882,11 @@
       this.GroupBoxSystemLoad.ResumeLayout(false);
       this.GroupBoxSystemLoad.PerformLayout();
       this.PanelMain.ResumeLayout(false);
+      this.GroupBoxFolders.ResumeLayout(false);
+      this.GroupBoxFolders.PerformLayout();
       this.PanelBottomOuter.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -847,5 +945,12 @@
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.Panel PanelBottomOuter;
     private System.Windows.Forms.Label LabelApplication1;
+    private System.Windows.Forms.GroupBox GroupBoxFolders;
+    private HebrewCommon.UndoRedoTextBox EditFolderApplication;
+    private System.Windows.Forms.Button ActionOpenFolderUserLocalData;
+    private System.Windows.Forms.Button ActionOpenFolderUserData;
+    private System.Windows.Forms.Button ActionOpenFolderApplication;
+    private HebrewCommon.UndoRedoTextBox EditOpenFolderUserLocalData;
+    private HebrewCommon.UndoRedoTextBox EditFolderUserData;
   }
 }

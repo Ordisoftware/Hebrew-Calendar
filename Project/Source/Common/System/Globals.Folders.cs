@@ -109,7 +109,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the user data folder in local.
     /// </summary>
     static public string UserLocalDataFolderPath
-      => CreateSpecialFolderPath(Environment.SpecialFolder.LocalApplicationData, AssemblyTitle);
+      => CreateSpecialFolderPath(Environment.SpecialFolder.LocalApplicationData, "");
 
     /// <summary>
     /// Indicate the user data folder in roaming.

@@ -137,7 +137,7 @@
     <value>Première année :</value>
   </data>
   <data name="dBLastYearLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 13</value>
+    <value>86, 13</value>
   </data>
   <data name="dBLastYearLabel.Text" xml:space="preserve">
     <value>Dernière année :</value>
@@ -173,7 +173,7 @@
     <value>Items de la vue par mois :</value>
   </data>
   <data name="operatingSystemLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 13</value>
+    <value>63, 13</value>
   </data>
   <data name="operatingSystemLabel.Text" xml:space="preserve">
     <value>Plateforme :</value>
@@ -298,6 +298,57 @@
   <data name="generatePopulateDaysTimeLabel.Text" xml:space="preserve">
     <value>Garnissage des jours:</value>
   </data>
+  <data name="generateTextReportTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 13</value>
+  </data>
+  <data name="generateTextReportTimeLabel.Text" xml:space="preserve">
+    <value>Rapport texte</value>
+  </data>
+  <data name="executableModeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 13</value>
+  </data>
+  <data name="executableModeLabel.Text" xml:space="preserve">
+    <value>Type d'exécutable</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 13</value>
+  </data>
+  <data name="memoryMaxGCUsageLabel.Text" xml:space="preserve">
+    <value>Pic d'utilisation mémoire GC :</value>
+  </data>
+  <data name="dBEngineversionLabel.Text" xml:space="preserve">
+    <value>Moteur</value>
+  </data>
+  <data name="processorTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="processorTimeLabel.Text" xml:space="preserve">
+    <value>Temps processeur :</value>
+  </data>
+  <data name="LabelApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="LabelApplication.Text" xml:space="preserve">
+    <value>Application :</value>
+  </data>
+  <data name="ActionScreenshot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAArNJREFUOE+dk9lPE1EUxkffQKPEiOCb8cX4pImP/hEm/gMuCI2IJmpJo5SmZevG
+        0pZCWQoFgtDiA9NSuiCUTUzUsElZuoBsMQhTwlIjWODz3tuC8c14kl++OXfO983JZIajdbnQs55W4MYl
+        iiJOqsKVgF7/4SLVAg/SCr3rCbP7bY4zAPNEBOZxAfWE2jEBNaMbMJ0goJpQRTCMbUI/uQORM4z0Ak8H
+        RxPtwV1w4hGcUnxCqnYS143TuN0Ywh3bIrKcazgtscM6vQVO4kDzbBTCjStoD/3EBYUH3HlZNwaW9nDX
+        toD7nUsQda0gx7UKcc83vPZ9R9GQAEnfGnJ74zzvW8czXwTjwhHOyVzgkqXd+N+iXi4pLx4QDAYQDIUQ
+        CocJ85hfWICx2gRtmY4p7ek5nQkGAsxDvVxSYgOed0BXWQ39MUYTZmbnEBEEprSn93WGKvCdDuah3pMA
+        Q6WR6dERcHh4CL/fD95uh51A1T/lRyx2gNivGMrLdWw2EeBizb0HGRBLXqFIqUavr58YHXC7uuF1O5ny
+        PA+314vobhRabTnzsIDk/HhARmYWWtus0JRVwGJpxoeRYTw0TULUusr0/fAQamrrIEQiUKm0zPNXwKNM
+        EfJkcpRW6FFLBgMzU5B27aB+cJ/p3PQXGAxGLK+sokSpYh66PXdG5mZNZpYIbe02FlChr8Ty4jxybRuQ
+        vdlmuvQ1DA1ZfZq80OLieAB9OJei8AIHUWQ/zoY0sUFLaxssTc3Y3tzA3o8tphZLExosLfj4eRRqpRLY
+        30aKnHyJ6fn8xNmifrx4+gRWawcL6PUNot7cCHlBMeSKIqZ15gZ43/XD5xtAhVqJZEUf0gu92/R/uka4
+        JRW/7FGp1OwlqjRaQmkcbUIJSjU5V2tQIsvroR7CTRpwXFcJ9PBfoLOkOO43327AKRyZZp8AAAAASUVO
+        RK5CYII=
+</value>
+  </data>
   <data name="EditAlwaysOnTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 17</value>
   </data>
@@ -325,29 +376,59 @@
   <data name="GroupBoxSystemLoad.Text" xml:space="preserve">
     <value>Charge</value>
   </data>
+  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Statistiques</value>
-  </data>
-  <data name="generateTextReportTimeLabel.Text" xml:space="preserve">
-    <value>Rapport texte</value>
-  </data>
-  <data name="executableModeLabel.Text" xml:space="preserve">
-    <value>Type d'exécutable</value>
-  </data>
-  <data name="memoryMaxGCUsageLabel.Text" xml:space="preserve">
-    <value>Pic d'utilisation mémoire GC :</value>
-  </data>
-  <data name="dBEngineversionLabel.Text" xml:space="preserve">
-    <value>Moteur</value>
-  </data>
-  <data name="processorTimeLabel.Text" xml:space="preserve">
-    <value>Temps processeur :</value>
-  </data>
-  <data name="LabelApplication.Text" xml:space="preserve">
-    <value>Application :</value>
   </data>
 </root>

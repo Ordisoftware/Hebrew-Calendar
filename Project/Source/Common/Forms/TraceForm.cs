@@ -48,6 +48,11 @@ namespace Ordisoftware.HebrewCommon
       TrackBarFontSize_ValueChanged(null, null);
     }
 
+    private void LogForm_Activated(object sender, EventArgs e)
+    {
+      ActionClearLogs.Enabled = DebugManager.Enabled;
+    }
+
     private void TraceForm_Deactivate(object sender, EventArgs e)
     {
       Globals.Settings[LocationPropertyName] = Location;
@@ -72,15 +77,9 @@ namespace Ordisoftware.HebrewCommon
       TextBox.Font = new Font("Courier New", TrackBarFontSize.Value);
     }
 
-    public void AppendText(string text, bool scrollBottom = true)
+    private void ActionOpenLogsFolder_Click(object sender, EventArgs e)
     {
-      TextBox.AppendText(text);
-      if ( text == "" ) return;
-      if ( scrollBottom )
-      {
-        TextBox.SelectionStart = TextBox.Text.Length - 1;
-        TextBox.ScrollToCaret();
-      }
+      SystemManager.RunShell(Globals.TraceFolderPath);
     }
 
     private void ActionClearLogs_Click(object sender, EventArgs e)
@@ -91,14 +90,20 @@ namespace Ordisoftware.HebrewCommon
       BringToFront();
     }
 
-    private void LogForm_Activated(object sender, EventArgs e)
-    {
-      ActionClearLogs.Enabled = DebugManager.Enabled;
-    }
-
     private void TextBox_TextChanged(object sender, EventArgs e)
     {
       LabelLinesCount.Text = Localizer.TraceLinesCount.GetLang(TextBox.Lines.Length); ;
+    }
+
+    public void AppendText(string text, bool scrollBottom = true)
+    {
+      TextBox.AppendText(text);
+      if ( text == "" ) return;
+      if ( scrollBottom )
+      {
+        TextBox.SelectionStart = TextBox.Text.Length - 1;
+        TextBox.ScrollToCaret();
+      }
     }
 
   }
