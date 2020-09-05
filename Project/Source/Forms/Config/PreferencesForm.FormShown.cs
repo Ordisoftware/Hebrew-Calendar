@@ -70,6 +70,7 @@ namespace Ordisoftware.HebrewCalendar
       SelectOpenNavigationForm_CheckedChanged(null, null);
       EditLogEnabled.Enabled = DebugManager.Enabled;
       ActiveControl = ActionClose;
+      ActionResetSettings.TabStop = false;
       IsReady = true;
     }
 
