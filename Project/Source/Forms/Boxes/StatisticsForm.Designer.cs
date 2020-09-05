@@ -122,13 +122,14 @@
       this.ActionOpenFolderUserData = new System.Windows.Forms.Button();
       this.ActionOpenFolderApplication = new System.Windows.Forms.Button();
       this.PanelBottomOuter = new System.Windows.Forms.Panel();
-      this.EditOpenFolderUserLocalData = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditFolderUserData = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditFolderApplication = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.PanelFolders = new System.Windows.Forms.Panel();
       this.ApplicationStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SystemStatisticsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.operatingSystemTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       this.processorNameTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditOpenFolderUserLocalData = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditFolderUserData = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditFolderApplication = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
       dBEventsCountLabel = new System.Windows.Forms.Label();
       dBFileSizeLabel = new System.Windows.Forms.Label();
       dBFirstYearLabel = new System.Windows.Forms.Label();
@@ -179,6 +180,7 @@
       this.PanelMain.SuspendLayout();
       this.GroupBoxFolders.SuspendLayout();
       this.PanelBottomOuter.SuspendLayout();
+      this.PanelFolders.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
       this.SuspendLayout();
@@ -743,7 +745,6 @@
       // 
       // PanelMain
       // 
-      this.PanelMain.Controls.Add(this.GroupBoxFolders);
       this.PanelMain.Controls.Add(this.GroupBoxTimings);
       this.PanelMain.Controls.Add(this.GroupBoxDatabase);
       this.PanelMain.Controls.Add(this.GroupBoxMemory);
@@ -801,29 +802,11 @@
       resources.ApplyResources(this.PanelBottomOuter, "PanelBottomOuter");
       this.PanelBottomOuter.Name = "PanelBottomOuter";
       // 
-      // EditOpenFolderUserLocalData
+      // PanelFolders
       // 
-      this.EditOpenFolderUserLocalData.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditOpenFolderUserLocalData, "EditOpenFolderUserLocalData");
-      this.EditOpenFolderUserLocalData.Name = "EditOpenFolderUserLocalData";
-      this.EditOpenFolderUserLocalData.ReadOnly = true;
-      this.EditOpenFolderUserLocalData.TabStop = false;
-      // 
-      // EditFolderUserData
-      // 
-      this.EditFolderUserData.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditFolderUserData, "EditFolderUserData");
-      this.EditFolderUserData.Name = "EditFolderUserData";
-      this.EditFolderUserData.ReadOnly = true;
-      this.EditFolderUserData.TabStop = false;
-      // 
-      // EditFolderApplication
-      // 
-      this.EditFolderApplication.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditFolderApplication, "EditFolderApplication");
-      this.EditFolderApplication.Name = "EditFolderApplication";
-      this.EditFolderApplication.ReadOnly = true;
-      this.EditFolderApplication.TabStop = false;
+      this.PanelFolders.Controls.Add(this.GroupBoxFolders);
+      resources.ApplyResources(this.PanelFolders, "PanelFolders");
+      this.PanelFolders.Name = "PanelFolders";
       // 
       // ApplicationStatisticsDataBindingSource
       // 
@@ -853,12 +836,37 @@
       this.processorNameTextBox.ReadOnly = true;
       this.processorNameTextBox.TabStop = false;
       // 
+      // EditOpenFolderUserLocalData
+      // 
+      this.EditOpenFolderUserLocalData.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditOpenFolderUserLocalData, "EditOpenFolderUserLocalData");
+      this.EditOpenFolderUserLocalData.Name = "EditOpenFolderUserLocalData";
+      this.EditOpenFolderUserLocalData.ReadOnly = true;
+      this.EditOpenFolderUserLocalData.TabStop = false;
+      // 
+      // EditFolderUserData
+      // 
+      this.EditFolderUserData.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditFolderUserData, "EditFolderUserData");
+      this.EditFolderUserData.Name = "EditFolderUserData";
+      this.EditFolderUserData.ReadOnly = true;
+      this.EditFolderUserData.TabStop = false;
+      // 
+      // EditFolderApplication
+      // 
+      this.EditFolderApplication.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditFolderApplication, "EditFolderApplication");
+      this.EditFolderApplication.Name = "EditFolderApplication";
+      this.EditFolderApplication.ReadOnly = true;
+      this.EditFolderApplication.TabStop = false;
+      // 
       // StatisticsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.PanelMain);
+      this.Controls.Add(this.PanelFolders);
       this.Controls.Add(this.PanelBottomOuter);
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "StatisticsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -885,6 +893,7 @@
       this.GroupBoxFolders.ResumeLayout(false);
       this.GroupBoxFolders.PerformLayout();
       this.PanelBottomOuter.ResumeLayout(false);
+      this.PanelFolders.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).EndInit();
       this.ResumeLayout(false);
@@ -952,5 +961,6 @@
     private System.Windows.Forms.Button ActionOpenFolderApplication;
     private HebrewCommon.UndoRedoTextBox EditOpenFolderUserLocalData;
     private HebrewCommon.UndoRedoTextBox EditFolderUserData;
+    private System.Windows.Forms.Panel PanelFolders;
   }
 }

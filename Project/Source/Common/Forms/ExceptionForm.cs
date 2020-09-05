@@ -59,6 +59,7 @@ namespace Ordisoftware.HebrewCommon
       using ( var form = new ExceptionForm() )
       {
         //form.ActionViewStack.Enabled = DebugManager.UseStack;
+        form.ActionViewLog.Enabled = DebugManager.TraceEnabled;
         form.ActionViewInner.Enabled = einfo.InnerInfo != null;
         form.ActionTerminate.Enabled = DebugManager.UserCanTerminate && !isInner;
         if ( isInner )
