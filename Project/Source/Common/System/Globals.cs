@@ -77,7 +77,6 @@ namespace Ordisoftware.HebrewCommon
       => Application.ExecutablePath.Contains(DebugDirectory) || Application.ExecutablePath.Contains(ReleaseDirectory);
 
     /// <summary>
-    /// <summary>
     /// Indicate if the code is executed from the IDE else from a running app.
     /// </summary>
     public static bool IsDesignTime

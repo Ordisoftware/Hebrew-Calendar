@@ -255,7 +255,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       SystemManager.TryCatchManage(() =>
       {
-        if ( Visible && WindowState == FormWindowState.Minimized )
+        if ( Visible && ( WindowState == FormWindowState.Minimized ) )
         {
           WindowState = Settings.MainFormState;
           var old = TopMost;
@@ -518,6 +518,7 @@ namespace Ordisoftware.HebrewCalendar
           UpdateCalendarMonth(false);
           ActionGenerate_Click(null, EventArgs.Empty);
         }
+        EnableReminder();
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
         InitializeSpecialMenus();
