@@ -41,12 +41,12 @@ namespace Ordisoftware.HebrewCommon
     public const int DefaultInputMaxLength = 20;
 
     /// <summary>
-    /// Provide view letter details event.
+    /// Indicate view letter details event.
     /// </summary>
     public event ViewLetterDetails ViewLetterDetails;
 
     /// <summary>
-    /// Input Text changed event.
+    /// Indicate Input TextChanged event.
     /// </summary>
     public event EventHandler InputTextChanged
     {
@@ -55,33 +55,51 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Indicate max length of the input text.
+    /// Indicate Input Text property.
+    /// </summary>
+    public string InputText
+    {
+      get => Input.Text;
+      set => Input.Text = value;
+    }
+
+    /// <summary>
+    /// Indicate Input SelectionStart property.
+    /// </summary>
+    public int InputSelectionStart
+    {
+      get => Input.SelectionStart;
+      set => Input.SelectionStart = value;
+    }
+
+    /// <summary>
+    /// Indicate Input MaxLength property.
     /// </summary>
     [DefaultValue(DefaultInputMaxLength)]
-    public int MaxLengthInput
+    public int InputMaxLength
     {
-      get { return Input.MaxLength; }
-      set { Input.MaxLength = value; }
+      get => Input.MaxLength;
+      set => Input.MaxLength = value;
     }
 
     /// <summary>
     /// Indicate the background color of letters panel.
     /// </summary>
     [DefaultValue(typeof(Color), "LightYellow")]
-    public Color BackColorLetters
+    public Color LettersBackColor
     {
-      get { return PanelLetters.BackColor; }
-      set { PanelLetters.BackColor = value; }
+      get => PanelLetters.BackColor;
+      set => PanelLetters.BackColor = value;
     }
 
     /// <summary>
     /// Indicate the background color of input textbox.
     /// </summary>
     [DefaultValue(typeof(Color), "AliceBlue")]
-    public Color BackColorInput
+    public Color InputBackColor
     {
-      get { return Input.BackColor; }
-      set { Input.BackColor = value; }
+      get => Input.BackColor;
+      set => Input.BackColor = value;
     }
 
     /// <summary>
@@ -90,9 +108,10 @@ namespace Ordisoftware.HebrewCommon
     [DefaultValue(DefaultFontSizeLetters)]
     public float FontSizeLetters
     {
-      get { return _FontSizeLetters; }
+      get => _FontSizeLetters;
       set
       {
+        if ( _FontSizeLetters == value ) return;
         _FontSizeLetters = value;
         Redraw();
       }
@@ -105,9 +124,10 @@ namespace Ordisoftware.HebrewCommon
     [DefaultValue(DefaultFontSizeValues)]
     public float FontSizeValues
     {
-      get { return _FontSizeValues; }
+      get => _FontSizeValues;
       set
       {
+        if ( _FontSizeValues == value ) return;
         _FontSizeValues = value;
         Redraw();
       }
@@ -120,9 +140,10 @@ namespace Ordisoftware.HebrewCommon
     [DefaultValue(DefaultFontSizeKeys)]
     public float FontSizeKeys
     {
-      get { return _FontSizeKeys; }
+      get => _FontSizeKeys;
       set
       {
+        if ( _FontSizeKeys == value ) return;
         _FontSizeKeys = value;
         Redraw();
       }
@@ -135,9 +156,10 @@ namespace Ordisoftware.HebrewCommon
     [DefaultValue(DefaultFontSizeInput)]
     public float FontSizeInput
     {
-      get { return Input.Font.Size; }
+      get => Input.Font.Size;
       set
       {
+        if ( Input.Font.Size == value ) return;
         Input.Font = new Font(Input.Font.FontFamily, value, Input.Font.Style);
         Redraw();
       }
@@ -149,7 +171,7 @@ namespace Ordisoftware.HebrewCommon
     [DefaultValue(true)]
     public bool ShowValues
     {
-      get { return _ShowValues; }
+      get => _ShowValues;
       set
       {
         if ( _ShowValues == value ) return;
@@ -165,7 +187,7 @@ namespace Ordisoftware.HebrewCommon
     [DefaultValue(true)]
     public bool ShowKeys
     {
-      get { return _ShowKeys; }
+      get => _ShowKeys;
       set
       {
         if ( _ShowKeys == value ) return;
@@ -174,24 +196,6 @@ namespace Ordisoftware.HebrewCommon
       }
     }
     private bool _ShowKeys = true;
-
-    /// <summary>
-    /// Input Text property.
-    /// </summary>
-    public string TextInput
-    {
-      get { return Input.Text; }
-      set { Input.Text = value; }
-    }
-
-    /// <summary>
-    /// Input Text property.
-    /// </summary>
-    public int SelectionStartInput
-    {
-      get { return Input.SelectionStart; }
-      set { Input.SelectionStart = value; }
-    }
 
     /// <summary>
     /// Indicate if an input key is processed.
