@@ -23,15 +23,15 @@ using Ordisoftware.HebrewCommon;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  public class TooManyErrorsException : Exception
-  {
-    public TooManyErrorsException(string message) : base(message)
-    {
-    }
-  }
-
   public partial class MainForm
   {
+
+    public class TooManyErrorsException : Exception
+    {
+      public TooManyErrorsException(string message) : base(message)
+      {
+      }
+    }
 
     public const int MaxGenerateErrors = 20;
 
