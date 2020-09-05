@@ -36,10 +36,16 @@ namespace Ordisoftware.HebrewCommon
     static public readonly string NL4 = NL3 + NL;
 
     /// <summary>
-    /// Indicate the application code (title without space
+    /// Indicate the application code (title without space).
     /// </summary>
     static public string ApplicationCode
       => AssemblyTitle.Replace(" ", "");
+
+    /// <summary>
+    /// Indicate the application GitHub code (title with '-' instead of space.
+    /// </summary>
+    static public string ApplicationGitHubCode
+      => AssemblyTitle.Replace(" ", "-");
 
     /// <summary>
     /// Indicate the application process name.

@@ -45,25 +45,6 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    /// <summary>
-    /// Start Hebrew Letters process.
-    /// </summary>
-    /// <param name="hebrew">The hebrew font chars of the word.</param>
-    static public void OpenHebrewLetters(string hebrew)
-    {
-      if ( !File.Exists(Settings.HebrewLettersExe) )
-      {
-        if ( DisplayManager.QueryYesNo(Localizer.AskToDownloadHebrewLetters.GetLang()) )
-          MainForm.Instance.ActionDownloadHebrewLetters.PerformClick();
-        return;
-      }
-      hebrew = HebrewAlphabet.SetFinal(hebrew, false);
-      if ( hebrew.StartsWith("a ") || hebrew.StartsWith("b ") )
-        hebrew = hebrew.Substring(2, hebrew.Length - 2);
-      foreach ( string item in hebrew.Split(' ') )
-        SystemManager.RunShell(Settings.HebrewLettersExe, item);
-    }
-    
   }
 
 }

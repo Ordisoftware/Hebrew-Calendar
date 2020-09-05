@@ -144,6 +144,12 @@
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Common\Controls\ControlLocation.cs" />
     <Compile Include="Source\Common\Controls\FormsHelper.cs" />
+    <Compile Include="Source\Common\Controls\CommonMenusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Controls\CommonMenusControl.Designer.cs">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Common\Controls\LettersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -456,9 +462,7 @@
     <Compile Include="Source\Forms\Config\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Generate.Data.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Generate.Data.cs" />
     <Compile Include="Source\Forms\MainForm\MainForm.Location.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -525,6 +529,12 @@
     <EmbeddedResource Include="Dependencies\Calendar.NET\TodayButton.resx">
       <DependentUpon>TodayButton.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Controls\CommonMenusControl.fr.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Controls\CommonMenusControl.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Controls\LettersControl.fr.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>

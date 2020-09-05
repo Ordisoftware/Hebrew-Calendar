@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.IO;
 using System.Diagnostics;
 
 namespace Ordisoftware.HebrewCommon
@@ -162,6 +163,26 @@ namespace Ordisoftware.HebrewCommon
     static public void CreateGitHubIssue(string query = "")
     {
       OpenWebLink(Globals.GitHubCreateIssueURL + query);
+    }
+
+    /// <summary>
+    /// Start Hebrew Letters process.
+    /// </summary>
+    /// <param name="hebrew">The hebrew font chars of the word.</param>
+    /// <param name="path">Path of the application.</param>
+    static public void OpenHebrewLetters(string hebrew, string path)
+    {
+      if ( !File.Exists(path) )
+      {
+        if ( DisplayManager.QueryYesNo(Localizer.AskToDownloadHebrewLetters.GetLang()) )
+          RunShell("https://www.ordisoftware.com/projects/hebrew-letters");
+        return;
+      }
+      hebrew = HebrewAlphabet.SetFinal(hebrew, false);
+      if ( hebrew.StartsWith("a ") || hebrew.StartsWith("b ") )
+        hebrew = hebrew.Substring(2, hebrew.Length - 2);
+      foreach ( string item in hebrew.Split(' ') )
+        RunShell(path, item);
     }
 
   }

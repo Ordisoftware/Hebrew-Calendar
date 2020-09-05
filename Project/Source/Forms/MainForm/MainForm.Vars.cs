@@ -14,6 +14,7 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -63,6 +64,10 @@ namespace Ordisoftware.HebrewCalendar
     private bool TimerErrorShown;
 
     private MidnightTimer TimerMidnight = new MidnightTimer();
+
+    private DateTime? LastVacuum = null;
+
+    private Stopwatch ChronoStart = new Stopwatch();
 
     public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
     public float CurrentGPSLatitude { get; internal set; }

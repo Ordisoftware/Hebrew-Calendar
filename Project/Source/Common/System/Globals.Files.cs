@@ -72,7 +72,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the GitHub repository.
     /// </summary>
     static public string GitHubRepositoryURL { get; set; }
-      = $"https://github.com/{AssemblyCompany}/{AssemblyTitle.Replace(" ", "-")}";
+      = $"https://github.com/{AssemblyCompany}/{ApplicationGitHubCode}";
 
     /// <summary>
     /// Indicate the create GitHub issue url.
@@ -108,7 +108,7 @@ namespace Ordisoftware.HebrewCommon
     /// Indicate the Odbc DSN of the database.
     /// </summary>
     static public string OdbcDSN
-      => AssemblyTitle.Replace(" ", "-");
+      => ApplicationGitHubCode;
 
     /// <summary>
     /// Indicate the filename of the database.
