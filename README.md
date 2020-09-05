@@ -151,7 +151,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.09.06 - Version 5.0
+#### 2020.09.08 - Version 5.0
 
 - Add keyboard shortcuts to navigate in the calendar month view.
 - Add search gregorian month form.
@@ -185,6 +185,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Update to SQLite 3.32.3 ODBC Driver.
 - Update Framework .NET version to 4.7.2 and supported Windows only 7 SP1 or higher.
 - Improve setup.
+- The application now automatically creates the ODBC DSN in the Windows registry.
 
 #### 2020.08.22 - Version 4.1
 
