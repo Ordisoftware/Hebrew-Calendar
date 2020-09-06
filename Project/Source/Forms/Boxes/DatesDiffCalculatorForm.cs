@@ -23,7 +23,7 @@ namespace Ordisoftware.HebrewCalendar
   public partial class DatesDiffCalculatorForm : Form
   {
 
-    static private readonly DatesDiffCalculatorForm Instance;
+    static internal readonly DatesDiffCalculatorForm Instance;
 
     static DatesDiffCalculatorForm()
     {
@@ -44,6 +44,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     private DatesDiffItem Stats;
+    private Button CurrentBookmark;
 
     private DatesDiffCalculatorForm()
     {
@@ -76,6 +77,16 @@ namespace Ordisoftware.HebrewCalendar
         menuitem.MouseUp += Bookmarks_MouseUp;
         menuitem.Tag = index;
       }
+    }
+
+    internal void Relocalize()
+    {
+      Instance.DateChanged(true);
+    }
+
+    private void ActionClose_Click(object sender, EventArgs e)
+    {
+      Close();
     }
 
     private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
@@ -118,8 +129,6 @@ namespace Ordisoftware.HebrewCalendar
         Program.Settings.Save();
       }
     }
-
-    private Button CurrentBookmark;
 
     private void ActionBookmarksButton_Click(object sender, EventArgs e)
     {
@@ -171,6 +180,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void DateChanged(bool force = false)
     {
+      if ( MonthCalendar1.Tag == null ) return;
       bool b1 = (DateTime)MonthCalendar1.Tag != MonthCalendar1.SelectionStart;
       bool b2 = (DateTime)MonthCalendar2.Tag != MonthCalendar2.SelectionStart;
       if ( b1 ) MonthCalendar1.Tag = MonthCalendar1.SelectionStart;

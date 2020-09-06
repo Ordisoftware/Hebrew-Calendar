@@ -104,7 +104,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private DateTime _Date;
 
-    internal NavigationForm()
+    private NavigationForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
@@ -113,6 +113,11 @@ namespace Ordisoftware.HebrewCalendar
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
       this.SetLocation(ControlLocation.BottomRight);
+    }
+
+    public void Relocalize()
+    {
+      Date = Date;
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

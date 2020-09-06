@@ -13,6 +13,8 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Media;
 using System.Drawing;
 using System.Windows.Forms;
@@ -26,8 +28,17 @@ namespace Ordisoftware.HebrewCommon
     public const int DefaultMediumWidth = 500;
     public const int DefaultLargeWidth = 600;
 
+    static public readonly List<MessageBoxEx> Instances = new List<MessageBoxEx>();
+
+    static internal void CloseAll()
+    {
+      Instances.ToList().ForEach(f => f.ForceClose());
+    }
+
     private TranslationsDictionary LocalizedTitle;
     private TranslationsDictionary LocalizedText;
+    private int LabelMaxWidth;
+    private bool AllowClose;
 
     private MessageBoxEx()
     {
@@ -42,12 +53,11 @@ namespace Ordisoftware.HebrewCommon
                         MessageBoxIcon icon = MessageBoxIcon.None)
       : this()
     {
-      int labelInitiamTop = Label.Top;
-      int labelInitiamHeight = Label.Height;
       Text = title;
-      bool haveImage = icon != MessageBoxIcon.None;
-      int labelMaxWidth = width - 55;
-      if ( haveImage )
+      int labelInitialTop = Label.Top;
+      int labelInitialHeight = Label.Height;
+      LabelMaxWidth = width - 55;
+      if ( icon != MessageBoxIcon.None )
       {
         switch ( icon )
         {
@@ -71,17 +81,17 @@ namespace Ordisoftware.HebrewCommon
         Label.Top = Label.Top + (PictureBox.Height - Label.Height) / 2;
         PictureBox.Visible = true;
         width += PictureBox.Width;
-        labelMaxWidth -= PictureBox.Width + PictureBox.Width / 2;
+        LabelMaxWidth -= PictureBox.Width + PictureBox.Width / 2;
       }
       else
         Width = width;
       MaximumSize = new Size(width, MaximumSize.Height);
-      Label.MaximumSize = new Size(labelMaxWidth, Label.MaximumSize.Height);
-      Label.SetTextJustified(text, labelMaxWidth);
-      if ( Label.Height > labelInitiamHeight )
+      Label.MaximumSize = new Size(LabelMaxWidth, Label.MaximumSize.Height);
+      Label.SetTextJustified(text, LabelMaxWidth);
+      if ( Label.Height > labelInitialHeight )
       {
-        Label.Top = labelInitiamTop;
-        Height -= Label.Top - labelInitiamTop;
+        Label.Top = labelInitialTop;
+        Height -= Label.Top - labelInitialTop;
       }
       switch ( buttons )
       {
@@ -130,6 +140,7 @@ namespace Ordisoftware.HebrewCommon
           break;
       }
       this.CenterToFormElseMainFormElseScreen(ActiveForm);
+      Instances.Add(this);
     }
 
     public MessageBoxEx(TranslationsDictionary title,
@@ -145,19 +156,42 @@ namespace Ordisoftware.HebrewCommon
     public void RelocalizeText()
     {
       if ( LocalizedTitle != null ) Text = LocalizedTitle.GetLang();
-      if ( LocalizedText != null ) Label.Text = LocalizedText.GetLang();
+      if ( LocalizedText != null )
+      {
+        AutoSize = false;
+        Label.AutoSize = false;
+        Label.Text = "";
+        Label.SetTextJustified(LocalizedText.GetLang(), LabelMaxWidth);
+        AutoSize = true;
+        Label.AutoSize = true;
+      }
+    }
+
+    internal void ForceClose()
+    {
+      AllowClose = true;
+      Close();
     }
 
     private void MessageBoxEx_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( Modal ) return;
+      if ( Modal || AllowClose ) return;
       e.Cancel = true;
       Hide();
+    }
+
+    private void MessageBoxEx_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Instances.Remove(this);
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
+    }
+
+    private void UpdateLabelText(string text)
+    {
     }
 
   }

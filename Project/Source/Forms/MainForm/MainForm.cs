@@ -195,6 +195,7 @@ namespace Ordisoftware.HebrewCalendar
         TimerResumeReminder.Stop();
         TimerMidnight.Stop();
         TimerReminder.Stop();
+        MessageBoxEx.CloseAll();
         SystemManager.TryCatch(() => ClearLists());
         SystemManager.TryCatch(() =>
         {
@@ -601,15 +602,17 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void ActionShowShabatNotice_Click(object sender, EventArgs e)
     {
-      var form = Application.OpenForms.ToList().FirstOrDefault(f => f.Text == Translations.NoticeShabatTitle.GetLang());
+      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == Translations.NoticeShabatTitle.GetLang());
       if ( form != null )
         form.Popup();
       else
+      {
         form = new MessageBoxEx(Translations.NoticeShabatTitle,
                                 Translations.NoticeShabat,
                                 MessageBoxEx.DefaultLargeWidth);
-      form.Popup();
-      form.ShowInTaskbar = true;
+        form.ShowInTaskbar = true;
+        form.Show();
+      }
     }
 
     /// <summary>
@@ -619,15 +622,17 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      var form = Application.OpenForms.ToList().FirstOrDefault(f => f.Text == Translations.NoticeCelebrationsTitle.GetLang());
+      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == Translations.NoticeCelebrationsTitle.GetLang());
       if ( form != null )
         form.Popup();
       else
+      {
         form = new MessageBoxEx(Translations.NoticeCelebrationsTitle,
                                 Translations.NoticeCelebrations,
                                 MessageBoxEx.DefaultMediumWidth);
-      form.Popup();
-      form.ShowInTaskbar = true;
+        form.ShowInTaskbar = true;
+        form.Show();
+      }
     }
 
     /// <summary>
@@ -832,8 +837,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
-      retry:
-      try
+      //retry:
+      SystemManager.TryCatchManage(() =>
       {
         TimerBallon.Stop();
         NavigationTrayBallooned = sender == null;
@@ -847,16 +852,16 @@ namespace Ordisoftware.HebrewCalendar
           NavigationForm.Instance.Show();
           NavigationForm.Instance.BringToFront();
         }
-      }
-      catch ( ObjectDisposedException )
+      });
+      /*catch ( ObjectDisposedException )
       {
         NavigationForm.Instance = new NavigationForm();
         goto retry;
-      }
-      catch ( Exception ex )
+      }*/
+      /*catch ( Exception ex )
       {
         ex.Manage();
-      }
+      }*/
     }
 
     /// <summary>

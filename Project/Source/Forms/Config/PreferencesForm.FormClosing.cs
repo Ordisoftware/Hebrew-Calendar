@@ -30,7 +30,6 @@ namespace Ordisoftware.HebrewCalendar
     private void DoFormClosing(object sender, FormClosingEventArgs e)
     {
       if ( DoReset ) return;
-      NavigationForm.Instance.Hide();
       try
       {
         var v1 = (float)XmlConvert.ToDouble(EditGPSLatitude.Text);

@@ -138,6 +138,7 @@
       this.ShowInTaskbar = false;
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MessageBoxEx_FormClosing);
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MessageBoxEx_FormClosed);
       this.PanelMain.ResumeLayout(false);
       this.PanelMain.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();

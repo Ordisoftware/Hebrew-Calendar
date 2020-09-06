@@ -90,8 +90,6 @@ namespace Ordisoftware.HebrewCalendar
       SystemManager.TryCatchManage(() =>
       {
         LockSessionForm.Instance?.Close();
-        CelebrationsForm.Instance?.Hide();
-        NavigationForm.Instance?.Hide();
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();
         RemindCelebrationDates.Clear();
