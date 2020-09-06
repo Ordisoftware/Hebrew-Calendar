@@ -22,27 +22,42 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectDayForm : Form
   {
 
+    static public bool Run(string title, out DateTime date, bool topmost = false, bool isOnlyAvailable = false, bool isGotoRealtime = false)
+    {
+      using ( var form = new SelectDayForm() )
+      {
+        if ( isOnlyAvailable )
+        {
+          form.MonthCalendar.MinDate = MainForm.Instance.DateFirst;
+          form.MonthCalendar.MaxDate = MainForm.Instance.DateLast;
+        }
+        else
+        {
+          form.MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+          form.MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+        }
+        form.MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
+        form.CurrentDay = MainForm.Instance.CurrentDay;
+        if ( !title.IsNullOrEmpty() )
+          form.Text = title;
+        else
+          form.MonthCalendar.SelectionStart = SQLiteDate.ToDateTime(form.CurrentDay.Date);
+        form.IsGotoRealtime = isGotoRealtime;
+        form.TopMost = topmost;
+        bool result = form.ShowDialog() == DialogResult.OK;
+        date = result ? form.MonthCalendar.SelectionStart : DateTime.MinValue;
+        return result;
+      }
+    }
+
     private bool IsGotoRealtime;
 
     private Data.DataSet.LunisolarDaysRow CurrentDay;
 
-    public SelectDayForm(bool isOnlyGeneratedCalendar = false, bool isGotoRealtime = false)
+    private SelectDayForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      if ( isOnlyGeneratedCalendar )
-      {
-        MonthCalendar.MinDate = MainForm.Instance.DateFirst;
-        MonthCalendar.MaxDate = MainForm.Instance.DateLast;
-      }
-      else
-      {
-        MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-        MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-      }
-      MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
-      CurrentDay = MainForm.Instance.CurrentDay;
-      IsGotoRealtime = isGotoRealtime;
     }
 
     private void SelectDayForm_Shown(object sender, EventArgs e)

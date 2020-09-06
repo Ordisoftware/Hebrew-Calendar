@@ -195,18 +195,10 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      var form = new SelectCityForm(e != null);
-      if ( form.ShowDialog() != DialogResult.OK ) return;
-      EditGPSLatitude.Text = form.Latitude;
-      EditGPSLongitude.Text = form.Longitude;
-      Settings.GPSLatitude = form.Latitude;
-      Settings.GPSLongitude = form.Longitude;
-      Settings.GPSCountry = form.Country;
-      Settings.GPSCity = form.City;
-      Settings.Save();
-      if ( form.EditTimeZone.SelectedItem != null )
-        Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-      EditTimeZone.Text = Program.GPSText;
+      if ( !SelectCityForm.Run(e != null) ) return;
+      EditGPSLatitude.Text = Settings.GPSLatitude;
+      EditGPSLongitude.Text = Settings.GPSLongitude;
+      EditTimeZone.Text = Settings.GetGPSText();
       MainForm.Instance.InitializeCurrentTimeZone();
     }
 
@@ -222,14 +214,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      DateTime date = DateTime.Today;
-      var formDate = new SelectDayForm();
-      formDate.Text = Translations.SelectBirthday.GetLang();
-      if ( formDate.ShowDialog() != DialogResult.OK ) return;
-      date = formDate.MonthCalendar.SelectionStart.Date;
-      var formTime = new SelectBirthTime();
-      if ( formTime.ShowDialog() != DialogResult.OK ) return;
-      var time = formTime.EditTime.Value.TimeOfDay;
+      if ( !SelectDayForm.Run(Translations.SelectBirthday.GetLang(), out var date) ) return;
+      if ( !SelectBirthTime.Run(out var time) ) return;
       if ( time >= new TimeSpan(0, 0, 0) && time < Program.Dates[date].Ephemerisis.Sunset )
         date = date.AddDays(-1);
       Settings.ShabatDay = (int)date.DayOfWeek;

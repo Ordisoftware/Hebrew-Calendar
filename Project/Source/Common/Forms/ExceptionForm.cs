@@ -58,7 +58,7 @@ namespace Ordisoftware.HebrewCommon
     {
       using ( var form = new ExceptionForm() )
       {
-        //form.ActionViewStack.Enabled = DebugManager.UseStack;
+        form.PictureBox.Image = SystemIcons.Error;
         form.ActionViewLog.Enabled = DebugManager.TraceEnabled;
         form.ActionViewInner.Enabled = einfo.InnerInfo != null;
         form.ActionTerminate.Enabled = DebugManager.UserCanTerminate && !isInner;
@@ -67,21 +67,20 @@ namespace Ordisoftware.HebrewCommon
           form.ActionSendToGitHub.Enabled = false;
           form.ActionClose.Text = Localizer.NextException.GetLang();
         }
-        form.TextException.Text = einfo.TypeText;
-        form.TextMessage.Text = einfo.Message;
+        form.EditType.Text = einfo.TypeText;
+        form.EditMessage.Text = einfo.Message;
         form.LabelInfo1.Text += einfo.Emitter + " " + Globals.AssemblyVersion;
-        form.TextStack.Text = einfo.StackText;
-        form.ErrorMessages.Add(form.TextException.Text);
+        form.EditStack.Text = einfo.StackText;
+        form.ErrorMessages.Add(form.EditType.Text);
         form.ErrorMessages.Add(Globals.NL);
-        form.ErrorMessages.Add(form.TextMessage.Text);
+        form.ErrorMessages.Add(form.EditMessage.Text);
         form.ErrorMessages.Add(Globals.NL);
-        form.ErrorMessages.Add(form.TextStack.Text);
+        form.ErrorMessages.Add(form.EditStack.Text);
         form.OriginalHeight = form.Height;
         form.ErrorInfo = einfo;
         form.StackText = form.ActionViewStack.Text;
         form.ActionViewStack.Text += " <<";
-        //if ( DebugManager.AutoHideStack ) form.ActionViewStack_Click(form, null);
-        if ( !DebugManager.UseStack ) form.ActionViewStack_Click(form, null);
+        if ( !DebugManager.UseStack ) form.ActionViewStack_Click(null, null);
         form.BringToFront();
         form.ShowDialog();
       }
@@ -125,7 +124,7 @@ namespace Ordisoftware.HebrewCommon
     {
       if ( Height == OriginalHeight )
       {
-        Height = TextStack.Top + 40;
+        Height = EditStack.Top + 40;
         ActionViewStack.Text = StackText + " >>";
       }
       else
@@ -146,7 +145,7 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
-    /// Event handler. Called by ActionSend for click events.
+    /// Event handler. Called by ActionSendToGitHub for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -167,6 +166,11 @@ namespace Ordisoftware.HebrewCommon
       });
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionSendMail for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
     private void ActionSendMail_Click(object sender, EventArgs e)
     {
       if ( ErrorInfo == null ) return;
@@ -185,6 +189,9 @@ namespace Ordisoftware.HebrewCommon
       });
     }
 
+    /// <summary>
+    /// Create the body for send by mail or to GitHub.
+    /// </summary>
     private StringBuilder CreateBody()
     {
       var body = new StringBuilder();
@@ -223,13 +230,12 @@ namespace Ordisoftware.HebrewCommon
       body.AppendLine();
       body.AppendLine("## LOG");
       body.AppendLine();
-      if ( DebugManager.TraceForm.TextBox.Text == "") ;
       var lines = DebugManager.TraceForm
-                               .TextBox
-                               .Lines
-                               .ToList()
-                               .Select(l => (l.StartsWith("# ") ? l.Remove(0,2) : l).TrimStart())
-                               .Where(l => !l.StartsWith("--"));
+                              .TextBox
+                              .Lines
+                              .ToList()
+                              .Select(l => (l.StartsWith("# ") ? l.Remove(0,2) : l).TrimStart())
+                              .Where(l => !l.StartsWith("--"));
       body.Append(lines.AsMultiline());
       return body;
     }

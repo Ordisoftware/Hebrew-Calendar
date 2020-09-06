@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.Xml;
 using System.Data;
 using System.Drawing;
@@ -126,7 +127,7 @@ namespace Ordisoftware.HebrewCalendar
         ChronoStart.Stop();
         Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
         Settings.Save();
-        BringToFront();
+        this.Popup();
       }
       finally
       {
@@ -255,11 +256,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( Visible && ( WindowState == FormWindowState.Minimized ) )
         {
           WindowState = Settings.MainFormState;
-          var old = TopMost;
-          TopMost = true;
-          BringToFront();
-          Show();
-          TopMost = old;
+          this.Popup();
         }
         else
         if ( !Visible || e == null )
@@ -278,13 +275,7 @@ namespace Ordisoftware.HebrewCalendar
             Globals.IsReady = temp;
           }
           if ( Globals.IsReady )
-          {
-            var old = TopMost;
-            TopMost = true;
-            BringToFront();
-            Show();
-            TopMost = old;
-          }
+            this.Popup();
           if ( !NavigationForm.Instance.Visible )
             GoToDate(DateTime.Today);
         }
@@ -515,7 +506,6 @@ namespace Ordisoftware.HebrewCalendar
           UpdateCalendarMonth(false);
           ActionGenerate_Click(null, EventArgs.Empty);
         }
-        EnableReminder();
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
         InitializeSpecialMenus();
@@ -528,6 +518,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         Enabled = formEnabled;
         MenuTray.Enabled = true;
+        EnableReminder();
         TimerReminder.Enabled = !MenuEnableReminder.Enabled;
         TimerReminder_Tick(null, null);
       }
@@ -610,9 +601,15 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void ActionShowShabatNotice_Click(object sender, EventArgs e)
     {
-      new MessageBoxEx(Translations.NoticeShabatTitle,
-                       Translations.NoticeShabat,
-                       MessageBoxEx.DefaultLargeWidth).ShowDialog();
+      var form = Application.OpenForms.ToList().FirstOrDefault(f => f.Text == Translations.NoticeShabatTitle.GetLang());
+      if ( form != null )
+        form.Popup();
+      else
+        form = new MessageBoxEx(Translations.NoticeShabatTitle,
+                                Translations.NoticeShabat,
+                                MessageBoxEx.DefaultLargeWidth);
+      form.Popup();
+      form.ShowInTaskbar = true;
     }
 
     /// <summary>
@@ -622,9 +619,15 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     internal void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      new MessageBoxEx(Translations.NoticeCelebrationsTitle,
-                       Translations.NoticeCelebrations,
-                       MessageBoxEx.DefaultMediumWidth).ShowDialog();
+      var form = Application.OpenForms.ToList().FirstOrDefault(f => f.Text == Translations.NoticeCelebrationsTitle.GetLang());
+      if ( form != null )
+        form.Popup();
+      else
+        form = new MessageBoxEx(Translations.NoticeCelebrationsTitle,
+                                Translations.NoticeCelebrations,
+                                MessageBoxEx.DefaultMediumWidth);
+      form.Popup();
+      form.ShowInTaskbar = true;
     }
 
     /// <summary>
@@ -664,7 +667,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
     {
-      DatesDiffForm.Run();
+      DatesDiffCalculatorForm.Run();
     }
 
     /// <summary>
@@ -788,11 +791,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( sender == null )
         date = DateTime.Today;
       else
-      {
-        var form = new SelectDayForm(true, true);
-        if ( form.ShowDialog() != DialogResult.OK ) return;
-        date = form.MonthCalendar.SelectionStart;
-      }
+        if ( !SelectDayForm.Run(null, out date, false, true, true) ) return;
       GoToDate(date);
     }
 

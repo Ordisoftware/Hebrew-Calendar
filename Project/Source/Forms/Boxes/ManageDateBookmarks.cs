@@ -31,7 +31,13 @@ namespace Ordisoftware.HebrewCalendar
       }
     }
 
-    public ManageDateBookmarksForm()
+    static public bool Run()
+    {
+      using ( var form = new ManageDateBookmarksForm() )
+        return form.ShowDialog() == DialogResult.OK;
+    }
+
+    private ManageDateBookmarksForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

@@ -80,15 +80,27 @@ namespace Ordisoftware.HebrewCalendar
     private bool IsLoading;
     private bool IsReady;
 
+    static public bool Run(bool canCancel)
+    {
+      using ( var form = new SelectCityForm() )
+      {
+        form.ActionCancel.Enabled = canCancel;
+        if ( form.ShowDialog() != DialogResult.OK ) return false;
+        if ( form.EditTimeZone.SelectedItem != null )
+          Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
+        Program.Settings.GPSLatitude = form.Latitude;
+        Program.Settings.GPSLongitude = form.Longitude;
+        Program.Settings.GPSCountry = form.Country;
+        Program.Settings.GPSCity = form.City;
+        Program.Settings.Save();
+        return true;
+      }
+    }
+
     private SelectCityForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-    }
-
-    public SelectCityForm(bool canCancel) : this()
-    {
-      ActionCancel.Enabled = canCancel;
     }
 
     private void SelectCityForm_Load(object sender, EventArgs e)

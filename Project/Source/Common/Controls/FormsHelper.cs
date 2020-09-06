@@ -13,6 +13,8 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -28,6 +30,12 @@ namespace Ordisoftware.HebrewCommon
   /// </summary>
   static class FormsHelper
   {
+
+    static public IEnumerable<Form> ToList(this FormCollection forms)
+    {
+      foreach ( Form form in forms )
+        yield return form;
+    }
 
     /// <summary>
     /// Apply localized resources.
@@ -256,6 +264,76 @@ namespace Ordisoftware.HebrewCommon
         }
       }
       return destImage;
+    }
+
+    /// <summary>
+    /// Apply "justify" to the text of a control.
+    /// </summary>
+    static public void SetTextJustified(this Control control, string text, int width)
+    {
+      control.Text = JustifyParagraph(text, width, control.Font);
+    }
+    // https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
+    static public string JustifyParagraph(string text, int width, Font font)
+    {
+      string result = string.Empty;
+      List<string> ParagraphsList = new List<string>();
+      ParagraphsList.AddRange(text.Split(new[] { "\r\n" }, StringSplitOptions.None).ToList());
+
+      foreach ( string Paragraph in ParagraphsList )
+      {
+        string line = string.Empty;
+        int ParagraphWidth = TextRenderer.MeasureText(Paragraph, font).Width;
+        if ( ParagraphWidth > width )
+        {
+          string[] Words = Paragraph.Split(' ');
+          line = Words[0] + (char)32;
+          for ( int x = 1; x < Words.Length; x++ )
+          {
+            string tmpLine = line + ( Words[x] + (char)32 );
+            if ( TextRenderer.MeasureText(tmpLine, font).Width > width )
+            {
+              result += Justify(line.TrimEnd()) + "\r\n";
+              line = string.Empty;
+              --x;
+            }
+            else
+              line += ( Words[x] + (char)32 );
+          }
+          if ( line.Length > 0 ) result += line + "\r\n";
+        }
+        else
+          result += Paragraph + "\r\n";
+      }
+      return result.TrimEnd(new[] { '\r', '\n' });
+      string Justify(string str)
+      {
+        char SpaceChar = (char)0x200A;
+        List<string> WordsList = str.Split((char)32).ToList();
+        if ( WordsList.Capacity < 2 ) return str;
+        int NumberOfWords = WordsList.Capacity - 1;
+        int WordsWidth = TextRenderer.MeasureText(str.Replace(" ", ""), font).Width;
+        int SpaceCharWidth = TextRenderer.MeasureText(WordsList[0] + SpaceChar, font).Width
+                           - TextRenderer.MeasureText(WordsList[0], font).Width;
+        int AverageSpace = ( ( width - WordsWidth ) / NumberOfWords ) / SpaceCharWidth;
+        float AdjustSpace = ( width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) ) );
+        return ( (Func<string>)( () => {
+          string Spaces = "";
+          string AdjustedWords = "";
+          for ( int h = 0; h < AverageSpace; h++ )
+            Spaces += SpaceChar;
+          foreach ( string Word in WordsList )
+          {
+            AdjustedWords += Word + Spaces;
+            if ( AdjustSpace > 0 )
+            {
+              AdjustedWords += SpaceChar;
+              AdjustSpace -= SpaceCharWidth;
+            }
+          }
+          return AdjustedWords.TrimEnd();
+        } ) )();
+      }
     }
 
   }

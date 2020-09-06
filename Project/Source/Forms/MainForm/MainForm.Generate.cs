@@ -41,11 +41,8 @@ namespace Ordisoftware.HebrewCalendar
             }
             else
             {
-              var form = new SelectYearsForm();
-              if ( e == null ) form.ActionCancel.Enabled = false;
-              if ( form.ShowDialog() == DialogResult.Cancel ) return null;
-              yearFirst = (int)form.EditYearFirst.Value;
-              yearLast = (int)form.EditYearLast.Value;
+              if ( !SelectYearsForm.Run(e != null, out yearFirst, out yearLast) )
+                return null;
             }
           else
           {

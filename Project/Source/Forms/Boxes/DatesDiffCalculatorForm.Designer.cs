@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.HebrewCalendar
 {
-  partial class DatesDiffForm
+  partial class DatesDiffCalculatorForm
   {
     /// <summary>
     /// Required designer variable.
@@ -30,7 +30,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.Windows.Forms.Label lunationsLabel;
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatesDiffForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatesDiffCalculatorForm));
       System.Windows.Forms.Label moonDaysLabel;
       System.Windows.Forms.Label solarDaysLabel;
       System.Windows.Forms.Label solarMonthsLabel;

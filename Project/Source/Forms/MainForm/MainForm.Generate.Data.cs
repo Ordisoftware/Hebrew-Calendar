@@ -125,7 +125,7 @@ namespace Ordisoftware.HebrewCalendar
       {
         string errors = GenerateErrors.AsMultiline();
         GenerateErrors.Clear();
-        errors = Program.GPSText + Globals.NL2 + errors;
+        errors = Settings.GetGPSText() + Globals.NL2 + errors;
         DebugManager.Trace(TraceEvent.Data, errors);
         var form = new ShowTextForm(Text, errors, false, true, 600, 400, false, false);
         form.TextBox.Font = new System.Drawing.Font("Courier new", 8);

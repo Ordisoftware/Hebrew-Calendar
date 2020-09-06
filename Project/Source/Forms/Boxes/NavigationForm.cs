@@ -143,10 +143,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectDay_Click(object sender, EventArgs e)
     {
-      var form = new SelectDayForm(true);
-      form.TopMost = true;
-      if ( form.ShowDialog() == DialogResult.OK )
-        MainForm.Instance.GoToDate(form.MonthCalendar.SelectionStart);
+      if ( SelectDayForm.Run(null, out var date, true, true) )
+        MainForm.Instance.GoToDate(date);
       else
         SystemManager.TryCatch(() => { ActiveControl = LabelDate; });
     }

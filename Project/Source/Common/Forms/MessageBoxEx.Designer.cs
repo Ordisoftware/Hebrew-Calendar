@@ -133,11 +133,11 @@
       this.Controls.Add(this.PanelBottom);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "MessageBoxEx";
+      this.ShowInTaskbar = false;
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-      this.TopMost = true;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MessageBoxEx_FormClosing);
-      this.Shown += new System.EventHandler(this.MessageBoxEx_Shown);
       this.PanelMain.ResumeLayout(false);
       this.PanelMain.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();

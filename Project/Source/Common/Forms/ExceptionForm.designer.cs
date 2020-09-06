@@ -36,36 +36,36 @@ namespace Ordisoftware.HebrewCommon
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExceptionForm));
-      this.TextMessage = new System.Windows.Forms.TextBox();
-      this.pictureBox = new System.Windows.Forms.PictureBox();
+      this.EditMessage = new System.Windows.Forms.TextBox();
+      this.PictureBox = new System.Windows.Forms.PictureBox();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ActionTerminate = new System.Windows.Forms.Button();
       this.ActionViewStack = new System.Windows.Forms.Button();
-      this.TextStack = new System.Windows.Forms.TextBox();
+      this.EditStack = new System.Windows.Forms.TextBox();
       this.LabelInfo1 = new System.Windows.Forms.Label();
-      this.TextException = new System.Windows.Forms.TextBox();
+      this.EditType = new System.Windows.Forms.TextBox();
       this.LabelInfo2 = new System.Windows.Forms.Label();
       this.ActionViewInner = new System.Windows.Forms.Button();
       this.ActionSendMail = new System.Windows.Forms.Button();
       this.ActionSendToGitHub = new System.Windows.Forms.Button();
       this.ActionViewLog = new System.Windows.Forms.Button();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.SuspendLayout();
       // 
-      // TextMessage
+      // EditMessage
       // 
-      resources.ApplyResources(this.TextMessage, "TextMessage");
-      this.TextMessage.BackColor = System.Drawing.SystemColors.Window;
-      this.TextMessage.Name = "TextMessage";
-      this.TextMessage.ReadOnly = true;
-      this.TextMessage.TabStop = false;
+      resources.ApplyResources(this.EditMessage, "EditMessage");
+      this.EditMessage.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMessage.Name = "EditMessage";
+      this.EditMessage.ReadOnly = true;
+      this.EditMessage.TabStop = false;
       // 
-      // pictureBox
+      // PictureBox
       // 
-      this.pictureBox.BackColor = System.Drawing.Color.Transparent;
-      resources.ApplyResources(this.pictureBox, "pictureBox");
-      this.pictureBox.Name = "pictureBox";
-      this.pictureBox.TabStop = false;
+      this.PictureBox.BackColor = System.Drawing.Color.Transparent;
+      resources.ApplyResources(this.PictureBox, "PictureBox");
+      this.PictureBox.Name = "PictureBox";
+      this.PictureBox.TabStop = false;
       // 
       // ActionClose
       // 
@@ -90,26 +90,26 @@ namespace Ordisoftware.HebrewCommon
       this.ActionViewStack.UseVisualStyleBackColor = true;
       this.ActionViewStack.Click += new System.EventHandler(this.ActionViewStack_Click);
       // 
-      // TextStack
+      // EditStack
       // 
-      resources.ApplyResources(this.TextStack, "TextStack");
-      this.TextStack.BackColor = System.Drawing.SystemColors.Window;
-      this.TextStack.Name = "TextStack";
-      this.TextStack.ReadOnly = true;
-      this.TextStack.TabStop = false;
+      resources.ApplyResources(this.EditStack, "EditStack");
+      this.EditStack.BackColor = System.Drawing.SystemColors.Window;
+      this.EditStack.Name = "EditStack";
+      this.EditStack.ReadOnly = true;
+      this.EditStack.TabStop = false;
       // 
       // LabelInfo1
       // 
       resources.ApplyResources(this.LabelInfo1, "LabelInfo1");
       this.LabelInfo1.Name = "LabelInfo1";
       // 
-      // TextException
+      // EditType
       // 
-      resources.ApplyResources(this.TextException, "TextException");
-      this.TextException.BackColor = System.Drawing.SystemColors.Window;
-      this.TextException.Name = "TextException";
-      this.TextException.ReadOnly = true;
-      this.TextException.TabStop = false;
+      resources.ApplyResources(this.EditType, "EditType");
+      this.EditType.BackColor = System.Drawing.SystemColors.Window;
+      this.EditType.Name = "EditType";
+      this.EditType.ReadOnly = true;
+      this.EditType.TabStop = false;
       // 
       // LabelInfo2
       // 
@@ -162,20 +162,20 @@ namespace Ordisoftware.HebrewCommon
       this.Controls.Add(this.ActionSendToGitHub);
       this.Controls.Add(this.ActionViewLog);
       this.Controls.Add(this.ActionViewInner);
-      this.Controls.Add(this.TextException);
+      this.Controls.Add(this.EditType);
       this.Controls.Add(this.LabelInfo2);
       this.Controls.Add(this.LabelInfo1);
-      this.Controls.Add(this.TextStack);
+      this.Controls.Add(this.EditStack);
       this.Controls.Add(this.ActionTerminate);
       this.Controls.Add(this.ActionClose);
-      this.Controls.Add(this.pictureBox);
-      this.Controls.Add(this.TextMessage);
+      this.Controls.Add(this.PictureBox);
+      this.Controls.Add(this.EditMessage);
       this.Controls.Add(this.ActionViewStack);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ExceptionForm";
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -186,12 +186,12 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Message describing the text.
     /// </summary>
-    private System.Windows.Forms.TextBox TextMessage;
+    private System.Windows.Forms.TextBox EditMessage;
 
     /// <summary>
     /// The picture box control.
     /// </summary>
-    private System.Windows.Forms.PictureBox pictureBox;
+    private System.Windows.Forms.PictureBox PictureBox;
 
     /// <summary>
     /// The button close control.
@@ -211,7 +211,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// Stack of texts.
     /// </summary>
-    private System.Windows.Forms.TextBox TextStack;
+    private System.Windows.Forms.TextBox EditStack;
 
     /// <summary>
     /// The label information 1 control.
@@ -221,7 +221,7 @@ namespace Ordisoftware.HebrewCommon
     /// <summary>
     /// The text Exception control.
     /// </summary>
-    private System.Windows.Forms.TextBox TextException;
+    private System.Windows.Forms.TextBox EditType;
 
     /// <summary>
     /// The label information 2 control.

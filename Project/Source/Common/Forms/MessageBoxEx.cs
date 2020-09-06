@@ -14,8 +14,6 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Media;
-using System.Linq;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -31,7 +29,7 @@ namespace Ordisoftware.HebrewCommon
     private TranslationsDictionary LocalizedTitle;
     private TranslationsDictionary LocalizedText;
 
-    public MessageBoxEx()
+    private MessageBoxEx()
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;
@@ -54,19 +52,19 @@ namespace Ordisoftware.HebrewCommon
         switch ( icon )
         {
           case MessageBoxIcon.Information:
-            PictureBox.Image = SystemIcons.Information.ToBitmap();
+            PictureBox.Image = SystemIcons.Information;
             break;
           case MessageBoxIcon.Question:
-            PictureBox.Image = SystemIcons.Question.ToBitmap();
+            PictureBox.Image = SystemIcons.Question;
             SystemSounds.Question.Play();
             break;
           case MessageBoxIcon.Warning:
-            PictureBox.Image = SystemIcons.Warning.ToBitmap();
+            PictureBox.Image = SystemIcons.Warning;
             SystemSounds.Exclamation.Play();
             break;
           case MessageBoxIcon.Error:
+            PictureBox.Image = SystemIcons.Error;
             SystemSounds.Exclamation.Play();
-            PictureBox.Image = SystemIcons.Error.ToBitmap();
             break;
         }
         Label.Left = Label.Left + Label.Left / 2 + PictureBox.Width;
@@ -79,7 +77,7 @@ namespace Ordisoftware.HebrewCommon
         Width = width;
       MaximumSize = new Size(width, MaximumSize.Height);
       Label.MaximumSize = new Size(labelMaxWidth, Label.MaximumSize.Height);
-      Label.Text = JustifyParagraph(text, Label.Font, labelMaxWidth);
+      Label.SetTextJustified(text, labelMaxWidth);
       if ( Label.Height > labelInitiamHeight )
       {
         Label.Top = labelInitiamTop;
@@ -150,11 +148,6 @@ namespace Ordisoftware.HebrewCommon
       if ( LocalizedText != null ) Label.Text = LocalizedText.GetLang();
     }
 
-    private void MessageBoxEx_Shown(object sender, EventArgs e)
-    {
-      TopMost = Modal;
-    }
-
     private void MessageBoxEx_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( Modal ) return;
@@ -165,89 +158,6 @@ namespace Ordisoftware.HebrewCommon
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
-    }
-
-    // https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
-    public string JustifyParagraph(string text, Font font, int ControlWidth)
-    {
-      string result = string.Empty;
-      List<string> ParagraphsList = new List<string>();
-      ParagraphsList.AddRange(text.Split(new[] { "\r\n" }, StringSplitOptions.None).ToList());
-
-      foreach ( string Paragraph in ParagraphsList )
-      {
-        string line = string.Empty;
-        int ParagraphWidth = TextRenderer.MeasureText(Paragraph, font).Width;
-
-        if ( ParagraphWidth > ControlWidth )
-        {
-          //Get all paragraph words, add a normal space and calculate when their sum exceeds the constraints
-          string[] Words = Paragraph.Split(' ');
-          line = Words[0] + (char)32;
-          for ( int x = 1; x < Words.Length; x++ )
-          {
-            string tmpLine = line + ( Words[x] + (char)32 );
-            if ( TextRenderer.MeasureText(tmpLine, font).Width > ControlWidth )
-            {
-              //Max lenght reached. Justify the line and step back
-              result += Justify(line.TrimEnd(), font, ControlWidth) + "\r\n";
-              line = string.Empty;
-              --x;
-            }
-            else
-            {
-              //Some capacity still left
-              line += ( Words[x] + (char)32 );
-            }
-          }
-          //Adds the remainder if any
-          if ( line.Length > 0 )
-            result += line + "\r\n";
-        }
-        else
-        {
-          result += Paragraph + "\r\n";
-        }
-      }
-      return result.TrimEnd(new[] { '\r', '\n' });
-    }
-
-    private string Justify(string text, Font font, int width)
-    {
-      char SpaceChar = (char)0x200A;
-      List<string> WordsList = text.Split((char)32).ToList();
-      if ( WordsList.Capacity < 2 )
-        return text;
-
-      int NumberOfWords = WordsList.Capacity - 1;
-      int WordsWidth = TextRenderer.MeasureText(text.Replace(" ", ""), font).Width;
-      int SpaceCharWidth = TextRenderer.MeasureText(WordsList[0] + SpaceChar, font).Width
-                         - TextRenderer.MeasureText(WordsList[0], font).Width;
-
-      //Calculate the average spacing between each word minus the last one 
-      int AverageSpace = ( ( width - WordsWidth ) / NumberOfWords ) / SpaceCharWidth;
-      float AdjustSpace = ( width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) ) );
-
-      //Add spaces to all words
-      return ( (Func<string>)( () => {
-        string Spaces = "";
-        string AdjustedWords = "";
-
-        for ( int h = 0; h < AverageSpace; h++ )
-          Spaces += SpaceChar;
-
-        foreach ( string Word in WordsList )
-        {
-          AdjustedWords += Word + Spaces;
-          //Adjust the spacing if there's a reminder
-          if ( AdjustSpace > 0 )
-          {
-            AdjustedWords += SpaceChar;
-            AdjustSpace -= SpaceCharWidth;
-          }
-        }
-        return AdjustedWords.TrimEnd();
-      } ) )();
     }
 
   }

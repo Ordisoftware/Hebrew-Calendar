@@ -36,7 +36,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Instance.Visible )
       {
-        Instance.BringToFront();
+        Instance.Popup();
         return;
       }
       Instance.ListView.Items.Clear();
@@ -96,6 +96,7 @@ namespace Ordisoftware.HebrewCalendar
           if ( !MainForm.Instance.Visible )
             MainForm.Instance.MenuShowHide_Click(null, null);
           else
+          if ( MainForm.Instance.WindowState == FormWindowState.Minimized )
             MainForm.Instance.Restore();
         });
     }

@@ -23,11 +23,25 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectYearsForm : Form
   {
 
+    static public bool Run(bool canCancel, out int first, out int last)
+    {
+      using ( var form = new SelectYearsForm() )
+      {
+        first = 0;
+        last = 0;
+        if ( !canCancel ) form.ActionCancel.Enabled = false;
+        if ( form.ShowDialog() == DialogResult.Cancel ) return false;
+        first = (int)form.EditYearFirst.Value;
+        last = (int)form.EditYearLast.Value;
+        return true;
+      }
+    }
+
     private bool Mutex;
 
     private int CurrentYear;
 
-    public SelectYearsForm()
+    private SelectYearsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

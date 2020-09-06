@@ -118,6 +118,23 @@ namespace Ordisoftware.HebrewCalendar
       settings.Save();
     }
 
+    /// <summary>
+    /// Returns a string representing the GPS location.
+    /// </summary>
+    /// <returns></returns>
+    static public string GetGPSText(this Settings settings)
+    {
+      string result = "• " + settings.GPSCountry + Globals.NL +
+                      "• " + settings.GPSCity;
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        if ( item.Id == settings.TimeZone )
+        {
+          result += Globals.NL2 + item.DisplayName;
+          break;
+        }
+      return result;
+    }
+
   }
 
 }

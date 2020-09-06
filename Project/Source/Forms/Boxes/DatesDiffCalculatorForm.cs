@@ -20,26 +20,32 @@ using Ordisoftware.HebrewCommon;
 namespace Ordisoftware.HebrewCalendar
 {
 
-  public partial class DatesDiffForm : Form
+  public partial class DatesDiffCalculatorForm : Form
   {
+
+    static private readonly DatesDiffCalculatorForm Instance;
+
+    static DatesDiffCalculatorForm()
+    {
+      Instance = new DatesDiffCalculatorForm();
+    }
 
     static public void Run(Tuple<DateTime, DateTime> dates = null)
     {
-      var form = new DatesDiffForm();
       if ( dates != null )
       {
-        form.MonthCalendar1.SelectionStart = dates.Item1;
-        form.MonthCalendar2.SelectionStart = dates.Item2;
+        Instance.MonthCalendar1.SelectionStart = dates.Item1;
+        Instance.MonthCalendar2.SelectionStart = dates.Item2;
       }
-      form.MonthCalendar1.Tag = form.MonthCalendar1.SelectionStart;
-      form.MonthCalendar2.Tag = form.MonthCalendar2.SelectionStart;
-      form.DateChanged(true);
-      form.ShowDialog();
+      Instance.MonthCalendar1.Tag = Instance.MonthCalendar1.SelectionStart;
+      Instance.MonthCalendar2.Tag = Instance.MonthCalendar2.SelectionStart;
+      Instance.DateChanged(true);
+      Instance.Popup();
     }
 
     private DatesDiffItem Stats;
 
-    private DatesDiffForm()
+    private DatesDiffCalculatorForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
@@ -124,8 +130,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionManageBookmarks_Click(object sender, EventArgs e)
     {
-      if ( new ManageDateBookmarksForm().ShowDialog() == DialogResult.OK )
-        LoadMenuBookmarks();
+      if ( ManageDateBookmarksForm.Run() ) LoadMenuBookmarks();
     }
 
     private void ActionHelp_Click(object sender, EventArgs e)
