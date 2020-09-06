@@ -29,29 +29,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private readonly Properties.Settings Settings = Program.Settings;
 
-    /// <summary>
-    /// Indicate shabat notice form.
-    /// </summary>
-    public ShowTextForm ShabatNoticeForm;
-
-    /// <summary>
-    /// Indicate celebrations notice form.
-    /// </summary>
-    public ShowTextForm CelebrationsNoticeForm;
-
-    /// <summary>
-    /// Indicate moon months notice form.
-    /// </summary>
-    public ShowTextForm MoonMonthsNoticeForm;
-
-    /// <summary>
-    /// Indicate if generation is in progress.
-    /// </summary>
     public bool IsGenerating { get; private set; }
 
-    /// <summary>
-    /// Indicate last showned tooltip.
-    /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
     private Point TrayIconMouse;

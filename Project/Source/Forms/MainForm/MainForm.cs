@@ -73,9 +73,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
-      ShabatNoticeForm = new ShowTextForm(Translations.NoticeShabatTitle, Translations.NoticeShabat, true, true, 600, 520);
-      CelebrationsNoticeForm = new ShowTextForm(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrations, true, true, 600, 320);
-      MoonMonthsNoticeForm = new ShowTextForm(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths, true, true, 400, 300);
       StatisticsForm.Run(true);
       if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
         SystemManager.TryCatchManage(() =>
@@ -611,9 +608,11 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionShowShabatNotice_Click(object sender, EventArgs e)
+    internal void ActionShowShabatNotice_Click(object sender, EventArgs e)
     {
-      ShabatNoticeForm.Popup(this);
+      new MessageBoxEx(Translations.NoticeShabatTitle,
+                       Translations.NoticeShabat,
+                       MessageBoxEx.DefaultLargeWidth).ShowDialog();
     }
 
     /// <summary>
@@ -621,9 +620,11 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
+    internal void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      CelebrationsNoticeForm.Popup(this);
+      new MessageBoxEx(Translations.NoticeCelebrationsTitle,
+                       Translations.NoticeCelebrations,
+                       MessageBoxEx.DefaultMediumWidth).ShowDialog();
     }
 
     /// <summary>

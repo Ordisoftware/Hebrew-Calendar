@@ -101,7 +101,6 @@
       this.ActionPrefefinedInterval.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionPrefefinedInterval, "ActionPrefefinedInterval");
       this.ActionPrefefinedInterval.Name = "ActionPrefefinedInterval";
-      this.ActionPrefefinedInterval.TabStop = false;
       this.ActionPrefefinedInterval.UseVisualStyleBackColor = true;
       this.ActionPrefefinedInterval.Click += new System.EventHandler(this.ActionPrefefinedInterval_Click);
       // 
@@ -117,7 +116,6 @@
       this.ActionDefaultInterval.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionDefaultInterval, "ActionDefaultInterval");
       this.ActionDefaultInterval.Name = "ActionDefaultInterval";
-      this.ActionDefaultInterval.TabStop = false;
       this.ActionDefaultInterval.UseVisualStyleBackColor = true;
       this.ActionDefaultInterval.Click += new System.EventHandler(this.ActionDefaultInterval_Click);
       // 

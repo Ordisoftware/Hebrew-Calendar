@@ -24,6 +24,7 @@ namespace Ordisoftware.HebrewCalendar
     public SelectBirthTime()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
     }
 
   }

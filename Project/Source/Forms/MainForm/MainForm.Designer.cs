@@ -1330,8 +1330,6 @@
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu1;
     internal System.Windows.Forms.ContextMenuStrip MenuTray;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-    internal System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
-    internal System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
     private System.Windows.Forms.ToolStripDropDownButton ActionWebLinks;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
@@ -1361,6 +1359,8 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewLog;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+    private System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
+    private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
   }
 }
 

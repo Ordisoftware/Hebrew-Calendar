@@ -21,6 +21,12 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
+  public enum MessageBoxStyle
+  {
+    System,
+    Advanced
+  }
+
   /// <summary>
   /// Provide messages and questions with waiting user communication feedback.
   /// </summary>
@@ -28,6 +34,8 @@ namespace Ordisoftware.HebrewCommon
   {
 
     static public bool IconInformationAsNone = false;
+
+    static public MessageBoxStyle MessageBoxStyle = MessageBoxStyle.Advanced;
 
     /// <summary>
     /// Indicates application title initialized from file version info or executable path.
@@ -83,7 +91,18 @@ namespace Ordisoftware.HebrewCommon
                                     MessageBoxIcon icon = MessageBoxIcon.None)
     {
       DialogResult res = DialogResult.None;
-      SystemManager.TryCatchManage(() => { res = ShowWinForm(title, text, buttons, icon); });
+      SystemManager.TryCatchManage(() => 
+      {
+        switch (MessageBoxStyle)
+        {
+          case MessageBoxStyle.System:
+            res = ShowWinForm(title, text, buttons, icon);
+            break;
+          case MessageBoxStyle.Advanced:
+            res = ShowAdvancedForm(title, text, buttons, icon);
+            break;
+        }
+      });
       return res;
     }
 
@@ -221,6 +240,14 @@ namespace Ordisoftware.HebrewCommon
                                             MessageBoxIcon icon)
     {
       return MessageBox.Show(text, title, buttons, icon);
+    }
+
+    static private DialogResult ShowAdvancedForm(string title,
+                                                 string text,
+                                                 MessageBoxButtons buttons,
+                                                 MessageBoxIcon icon)
+    {
+      return new MessageBoxEx(title, text, MessageBoxEx.DefaultSmallWidth, buttons, icon).ShowDialog();
     }
 
   }

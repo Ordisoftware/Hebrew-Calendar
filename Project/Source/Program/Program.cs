@@ -152,6 +152,8 @@ namespace Ordisoftware.HebrewCalendar
           update(form);
         if ( form is ShowTextForm formShowText )
           formShowText.RelocalizeText();
+        if ( form is MessageBoxEx formMessageBoxEx )
+          formMessageBoxEx.RelocalizeText();
       }
       // Menu information
       var control = new CommonMenusControl();

@@ -1570,7 +1570,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionScreenshot.TabIndex" type="System.Int32, mscorlib">
-    <value>84</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionScreenshot.Name" xml:space="preserve">
     <value>ActionScreenshot</value>
@@ -1597,7 +1597,7 @@
     <value>92, 17</value>
   </data>
   <data name="EditAlwaysOnTop.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>2</value>
   </data>
   <data name="EditAlwaysOnTop.Text" xml:space="preserve">
     <value>Always on top</value>
@@ -1627,7 +1627,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>0</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>

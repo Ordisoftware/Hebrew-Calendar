@@ -212,12 +212,12 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.ShabatNoticeForm.Popup(this, true);
+      MainForm.Instance.ActionShowShabatNotice_Click(null, null);
     }
 
     private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.CelebrationsNoticeForm.Popup(this, true);
+      MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
     }
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
