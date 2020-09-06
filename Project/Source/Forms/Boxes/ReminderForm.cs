@@ -131,6 +131,7 @@ namespace Ordisoftware.HebrewCalendar
       form.Show();
       form.BringToFront();
       BringMainForm();
+      DisplayManager.DoSound(MessageBoxIcon.Exclamation);
     }
 
     static private void SetFormsLocation()
@@ -178,6 +179,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ReminderForm_Shown(object sender, EventArgs e)
     {
       SetFormsLocation();
+      DisplayManager.DoSound(MessageBoxIcon.Exclamation);
     }
 
     private void Form_Click(object sender, EventArgs e)
