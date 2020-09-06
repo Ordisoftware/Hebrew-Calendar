@@ -155,10 +155,14 @@ namespace Ordisoftware.HebrewCommon
         Application.DoEvents();
       }
       if ( ex != null ) throw ex;
-      SystemManager.RunShell(tempfile, "/SP- /SILENT");
-      Globals.IsExiting = true;
-      SystemManager.Exit();
-      return true;
+      if ( SystemManager.RunShell(tempfile, "/SP- /SILENT") != null )
+      {
+        Globals.IsExiting = true;
+        SystemManager.Exit();
+        return true;
+      }
+      else
+        return false;
       void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
       {
         LoadingForm.Instance.SetProgress(e.ProgressPercentage);

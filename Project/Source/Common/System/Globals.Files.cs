@@ -57,16 +57,16 @@ namespace Ordisoftware.HebrewCommon
       = $"https://{AssemblyTrademark}/files/{ApplicationCode}.update";
 
     /// <summary>
-    /// Indicate the new version setup file.
-    /// </summary>
-    static public string SetupFileURL { get; set; }
-      = $"https://{AssemblyTrademark}/files/{SetupFilename}";
-
-    /// <summary>
     /// Indicate the setup file name.
     /// </summary>
     static public string SetupFilename { get; set; }
       = $"{AssemblyCompany}{ApplicationCode}Setup-{{0}}.exe";
+
+    /// <summary>
+    /// Indicate the new version setup file.
+    /// </summary>
+    static public string SetupFileURL { get; set; }
+      = $"https://{AssemblyTrademark}/files/{SetupFilename}";
 
     /// <summary>
     /// Indicate the GitHub repository.
