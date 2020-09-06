@@ -109,7 +109,7 @@ namespace Ordisoftware.HebrewCalendar
             string strMoon = (MoonRise)day.MoonriseType == MoonRise.BeforeSet
                            ? strMoonrise + ColumnSepInner + strMoonset
                            : strMoonset + ColumnSepInner + strMoonrise;
-            string textDate = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames[(int)dayDate.DayOfWeek];
+            string textDate = Translations.DayOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);
             textDate = textDate.Replace(".", "") + " ";
             textDate += dayDate.Day.ToString("00") + ".";
             textDate += dayDate.Month.ToString("00") + ".";
