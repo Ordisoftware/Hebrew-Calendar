@@ -37,6 +37,7 @@ namespace Ordisoftware.HebrewCommon
 
     private TranslationsDictionary LocalizedTitle;
     private TranslationsDictionary LocalizedText;
+    private MessageBoxIcon IconStyle;
     private int LabelMaxWidth;
     private bool AllowClose;
 
@@ -68,7 +69,6 @@ namespace Ordisoftware.HebrewCommon
         SetIcon(icon);
         Label.Left = Label.Left + Label.Left / 2 + PictureBox.Width;
         Label.Top = Label.Top + (PictureBox.Height - Label.Height) / 2;
-        PictureBox.Visible = true;
         width += PictureBox.Width;
         LabelMaxWidth -= PictureBox.Width + PictureBox.Width / 2;
       }
@@ -84,6 +84,7 @@ namespace Ordisoftware.HebrewCommon
       }
       this.CenterToFormElseMainFormElseScreen(ActiveForm);
       Instances.Add(this);
+      IconStyle = icon;
     }
 
     public MessageBoxEx(TranslationsDictionary title,
@@ -120,6 +121,7 @@ namespace Ordisoftware.HebrewCommon
     private void MessageBoxEx_Shown(object sender, EventArgs e)
     {
       TopMost = LoadingForm.Instance.Visible;
+      DisplayManager.DoSound(IconStyle);
     }
 
     private void MessageBoxEx_FormClosing(object sender, FormClosingEventArgs e)
@@ -145,21 +147,20 @@ namespace Ordisoftware.HebrewCommon
       {
         case MessageBoxIcon.Information:
           PictureBox.Image = SystemIcons.Information;
-          if ( DisplayManager.AdvancedFormUseSounds ) SystemSounds.Beep.Play();
           break;
         case MessageBoxIcon.Question:
           PictureBox.Image = SystemIcons.Question;
-          if ( DisplayManager.AdvancedFormUseSounds ) SystemSounds.Hand.Play();
           break;
         case MessageBoxIcon.Warning:
           PictureBox.Image = SystemIcons.Warning;
-          if ( DisplayManager.AdvancedFormUseSounds ) SystemSounds.Exclamation.Play();
           break;
         case MessageBoxIcon.Error:
           PictureBox.Image = SystemIcons.Error;
-          if ( DisplayManager.AdvancedFormUseSounds ) SystemSounds.Hand.Play();
           break;
+        default:
+          return;
       }
+      PictureBox.Visible = true;
     }
 
     private void SetButtons(MessageBoxButtons buttons)

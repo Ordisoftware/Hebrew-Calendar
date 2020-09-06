@@ -56,8 +56,7 @@ namespace Ordisoftware.HebrewCommon
 
     private void WebUpdateForm_Shown(object sender, EventArgs e)
     {
-      if ( DisplayManager.AdvancedFormUseSounds )
-        System.Media.SystemSounds.Hand.Play();
+      DisplayManager.DoSound(MessageBoxIcon.Question);
     }
   }
 

@@ -102,8 +102,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="e">Event information.</param>
     private void ExceptionForm_Shown(object sender, EventArgs e)
     {
-      if (DisplayManager.AdvancedFormUseSounds)
-        System.Media.SystemSounds.Hand.Play();
+      DisplayManager.DoSound(MessageBoxIcon.Error);
     }
 
     /// <summary>

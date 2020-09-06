@@ -434,22 +434,25 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by EditApplicationSounds for click events.
+    /// Event handler. Called by EditDialogBoxesSettings for checked changed events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void EditApplicationSounds_Click(object sender, EventArgs e)
+    internal void EditDialogBoxesSettings_CheckedChanged(object sender, EventArgs e)
     {
-      DisplayManager.AdvancedFormUseSounds = EditApplicationSounds.Checked;
+      DisplayManager.AdvancedFormUseSounds = EditSoundsEnabled.Checked;
+      DisplayManager.FormStyle = EditUseAdvancedDialogBoxes.Checked
+                                 ? MessageBoxFormStyle.Advanced
+                                 : MessageBoxFormStyle.System;
       switch ( DisplayManager.FormStyle )
       {
-        case MessageBoxFormStyle.Advanced:
-          DisplayManager.IconStyle = MessageBoxIconStyle.ForceInformation;
-          break;
         case MessageBoxFormStyle.System:
-          DisplayManager.IconStyle = EditApplicationSounds.Checked
+          DisplayManager.IconStyle = EditSoundsEnabled.Checked
                                      ? MessageBoxIconStyle.ForceInformation
                                      : MessageBoxIconStyle.ForceNone;
+          break;
+        case MessageBoxFormStyle.Advanced:
+          DisplayManager.IconStyle = MessageBoxIconStyle.ForceInformation;
           break;
       }
     }

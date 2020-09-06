@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2016-04 </edited>
+/// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.HebrewCommon;
@@ -50,7 +50,8 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.EditConfirmClosing.Checked = true;
       MainForm.EditShowTips.Checked = true;
       MainForm.EditESCtoExit.Checked = true;
-      MainForm.EditApplicationSounds.Checked = true;
+      MainForm.EditSoundsEnabled.Checked = true;
+      MainForm.EditUseAdvancedDialogBoxes.Checked = true;
       MainForm.SetView(ViewMode.Month);
       settings.Store();
     }
@@ -86,10 +87,13 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.EditScreenCenter.Checked = settings.MainFormPosition == ControlLocation.Center;
       MainForm.EditScreenPosition_Click(null, null);
       MainForm.WindowState = settings.MainFormState;
+      //
       MainForm.EditConfirmClosing.Checked = settings.ConfirmClosing;
       MainForm.EditShowTips.Checked = settings.ShowTips;
       MainForm.EditESCtoExit.Checked = settings.ESCtoExit;
-      MainForm.EditApplicationSounds.Checked = settings.SoundsEnabled;
+      MainForm.EditSoundsEnabled.Checked = settings.SoundsEnabled;
+      MainForm.EditUseAdvancedDialogBoxes.Checked = settings.AdvancedDialogBoxes;
+      MainForm.EditDialogBoxesSettings_CheckedChanged(null, null);
     }
 
     /// <summary>
@@ -114,10 +118,12 @@ namespace Ordisoftware.HebrewCalendar
       if ( MainForm.EditScreenBottomLeft.Checked ) settings.MainFormPosition = ControlLocation.BottomLeft;
       if ( MainForm.EditScreenBottomRight.Checked ) settings.MainFormPosition = ControlLocation.BottomRight;
       if ( MainForm.EditScreenCenter.Checked ) settings.MainFormPosition = ControlLocation.Center;
+      //
       settings.ConfirmClosing = MainForm.EditConfirmClosing.Checked;
       settings.ShowTips = MainForm.EditShowTips.Checked;
       settings.ESCtoExit = MainForm.EditESCtoExit.Checked;
-      settings.SoundsEnabled = MainForm.EditApplicationSounds.Checked;
+      settings.SoundsEnabled = MainForm.EditSoundsEnabled.Checked;
+      settings.AdvancedDialogBoxes = MainForm.EditUseAdvancedDialogBoxes.Checked;
       settings.Save();
     }
 

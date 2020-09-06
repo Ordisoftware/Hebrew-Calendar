@@ -1883,7 +1883,10 @@
   <data name="ActionViewLog.Text" xml:space="preserve">
     <value>Voir le log en cours</value>
   </data>
-  <data name="EditApplicationSounds.Text" xml:space="preserve">
+  <data name="EditSoundsEnabled.Text" xml:space="preserve">
     <value>Activer les sons</value>
+  </data>
+  <data name="EditUseAdvancedDialogBoxes.Text" xml:space="preserve">
+    <value>Boites de dialogues avancées</value>
   </data>
 </root>

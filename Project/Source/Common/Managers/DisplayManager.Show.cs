@@ -14,6 +14,7 @@
 /// <created> 2007-05 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Media;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -56,7 +57,7 @@ namespace Ordisoftware.HebrewCommon
     ForceNone,
 
     /// <summary>
-    /// Force information icon as none.
+    /// Force information and question icon as none.
     /// </summary>
     ForceInformation,
 
@@ -95,6 +96,30 @@ namespace Ordisoftware.HebrewCommon
     static public string _Title;
 
     /// <summary>
+    /// Play the sound associated to a message box icon.
+    /// </summary>
+    /// <param name="icon"></param>
+    static public void DoSound(MessageBoxIcon icon)
+    {
+      if ( !AdvancedFormUseSounds ) return;
+      switch ( icon )
+      {
+        case MessageBoxIcon.Information:
+          SystemSounds.Beep.Play();
+          break;
+        case MessageBoxIcon.Question:
+          SystemSounds.Hand.Play();
+          break;
+        case MessageBoxIcon.Warning:
+          SystemSounds.Exclamation.Play();
+          break;
+        case MessageBoxIcon.Error:
+          SystemSounds.Hand.Play();
+          break;
+      }
+    }
+
+    /// <summary>
     /// Show a message.
     /// </summary>
     /// <returns>
@@ -125,8 +150,13 @@ namespace Ordisoftware.HebrewCommon
                                     MessageBoxButtons buttons = MessageBoxButtons.OK,
                                     MessageBoxIcon icon = MessageBoxIcon.None)
     {
-      if ( icon == MessageBoxIcon.None && IconStyle == MessageBoxIconStyle.ForceInformation )
+      if ( icon == MessageBoxIcon.None 
+        && IconStyle == MessageBoxIconStyle.ForceInformation )
         icon = MessageBoxIcon.Information;
+      else
+      if ( ( icon == MessageBoxIcon.Information || icon == MessageBoxIcon.Question )
+        && IconStyle == MessageBoxIconStyle.ForceNone )
+        icon = MessageBoxIcon.None;
       DialogResult res = DialogResult.None;
       SystemManager.TryCatchManage(() => 
       {
@@ -159,10 +189,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="text">The text.</param>
     static public void ShowInformation(string title, string text)
     {
-      var icon = IconStyle == MessageBoxIconStyle.ForceNone 
-                 ? MessageBoxIcon.None
-                 : MessageBoxIcon.Information;
-      Show(title, text, MessageBoxButtons.OK, icon);
+      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     /// <summary>

@@ -1665,5 +1665,17 @@ namespace Ordisoftware.HebrewCalendar.Properties {
                 this["SoundsEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AdvancedDialogBoxes {
+            get {
+                return ((bool)(this["AdvancedDialogBoxes"]));
+            }
+            set {
+                this["AdvancedDialogBoxes"] = value;
+            }
+        }
     }
 }
