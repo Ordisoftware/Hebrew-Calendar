@@ -544,8 +544,6 @@ namespace Ordisoftware.HebrewCalendar
         Enabled = formEnabled;
         MenuTray.Enabled = true;
         EnableReminder();
-        TimerReminder.Enabled = !MenuEnableReminder.Enabled;
-        TimerReminder_Tick(null, null);
       }
     }
 

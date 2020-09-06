@@ -23,14 +23,14 @@ namespace Ordisoftware.HebrewCalendar
   public partial class DatesDiffCalculatorForm : Form
   {
 
-    static internal readonly DatesDiffCalculatorForm Instance;
+    static internal DatesDiffCalculatorForm Instance { get; private set; }
 
     static DatesDiffCalculatorForm()
     {
       Instance = new DatesDiffCalculatorForm();
     }
 
-    static public void Run(Tuple<DateTime, DateTime> dates = null)
+    static public void Run(Tuple<DateTime, DateTime> dates = null, bool initonly = false)
     {
       if ( dates != null )
       {
@@ -40,7 +40,7 @@ namespace Ordisoftware.HebrewCalendar
       Instance.MonthCalendar1.Tag = Instance.MonthCalendar1.SelectionStart;
       Instance.MonthCalendar2.Tag = Instance.MonthCalendar2.SelectionStart;
       Instance.DateChanged(true);
-      Instance.Popup();
+      if ( !initonly ) Instance.Popup();
     }
 
     private DatesDiffItem Stats;
@@ -81,11 +81,24 @@ namespace Ordisoftware.HebrewCalendar
 
     internal void Relocalize()
     {
+      if ( !Globals.IsReady ) return;
+      var date1 = MonthCalendar1.SelectionStart;
+      var date2 = MonthCalendar2.SelectionStart;
+      bool isVisible = Instance.Visible;
+      Instance = new DatesDiffCalculatorForm();
+      Run(new Tuple<DateTime, DateTime>(date1, date2), true);
+      Instance.MonthCalendar1.Tag = date1;
+      Instance.MonthCalendar2.Tag = date2;
       Instance.DateChanged(true);
+      AllowClose = true;
+      Close();
     }
+
+    private bool AllowClose;
 
     private void DatesDiffCalculatorForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if ( AllowClose ) return;
       e.Cancel = true;
       Hide();
     }
