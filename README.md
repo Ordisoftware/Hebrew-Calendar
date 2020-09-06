@@ -11,10 +11,11 @@ A tool for Windows written in C# that allows to generate a calendar based on the
 ## Functionalities
 
 - Generate a calendar with sun and moon rises and sets.
-- Tabular text report, month or grid view.
+- Tabular text report, visual month or grid view.
 - Event reminder for shabat and celebrations.
 - Search for a day in the database.
 - Window listing annual celebrations.
+- Calculate the difference between two dates.
 - Print the month view.
 - Copy the report to the clipboard.
 - Save the report to a text file.
@@ -39,17 +40,18 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 ## Screenshots
 
-[![Month View](https://i2.wp.com/www.ordisoftware.com/uploads/2020/04/hebrew-calendar-viewmonth-en.png?resize=300%2C221&ssl=1)](https://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-viewmonth-en-768x565.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Report View](https://i1.wp.com/www.ordisoftware.com/uploads/2020/04/hebrew-calendar-raw-en.png?resize=300%2C221&ssl=1)](https://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-raw-en-768x565.png)
+[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-viewmonth-en-300x222.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-viewmonth-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-raw-en-300x222.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-raw-en.png)
 
-[![Celebrations WIndow](https://i0.wp.com/www.ordisoftware.com/uploads/2019/10/hebrew-calendar-celebrations-en.png?resize=300%2C285&ssl=1)](https://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-celebrations-en.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Settings Window](https://i0.wp.com/www.ordisoftware.com/uploads/2020/04/hebrew-calendar-preferences-en.png?resize=304%2C285&ssl=1)](https://www.ordisoftware.com/uploads/2020/04/hebrew-calendar-preferences-en.png)
+&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-navigation-en-275x300.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-navigation-en.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-celebrations-en-282x300.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-celebrations-en.png)
 
-[![LockSession Window](https://i1.wp.com/www.ordisoftware.com/uploads/2019/11/hebrew-calendar-locksession-en.png?resize=300%2C224&ssl=1)](https://www.ordisoftware.com/uploads/2019/11/hebrew-calendar-locksession-en.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Navigation Window](https://i0.wp.com/www.ordisoftware.com/uploads/2019/10/hebrew-calendar-navigation-en.png?resize=208%2C224&ssl=1)](https://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-navigation-en.png)
+[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-reminderpopup-en-300x126.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-preferences-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-locksession-en-300x201.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-preferences-en.png)
 
-[![Reminder Window](https://i2.wp.com/www.ordisoftware.com/uploads/2019/10/hebrew-calendar-popupreminder-en.png?resize=300%2C117)](https://www.ordisoftware.com/uploads/2019/10/hebrew-calendar-popupreminder-en.png)
+[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-diffdates-en-300x258.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-diffdates-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-preferences-en-300x289.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-preferences-en.png)
 
 ## Videos
 
-[![Month view showing video](https://img.youtube.com/vi/EJni1fiXpMk/mqdefault.jpg)](https://www.youtube.com/watch?v=EJni1fiXpMk)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/mqdefault.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
+[![Month view showing video](https://img.youtube.com/vi/EJni1fiXpMk/mqdefault.jpg)](https://www.youtube.com/watch?v=EJni1fiXpMk)
+[![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/mqdefault.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
 
 ## Frequently asked questions
 
