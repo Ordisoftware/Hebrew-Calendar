@@ -57,6 +57,10 @@ namespace Ordisoftware.HebrewCommon
       int labelInitialTop = Label.Top;
       int labelInitialHeight = Label.Height;
       LabelMaxWidth = width - 55;
+      if ( icon == MessageBoxIcon.None && DisplayManager.IconInformationAsNone )
+        icon = MessageBoxIcon.Information;
+      if ( icon == MessageBoxIcon.Information && DisplayManager.IconInformationAsNone )
+        icon = MessageBoxIcon.Information;
       if ( icon != MessageBoxIcon.None )
       {
         switch ( icon )
@@ -146,8 +150,9 @@ namespace Ordisoftware.HebrewCommon
     public MessageBoxEx(TranslationsDictionary title,
                         TranslationsDictionary text,
                         int width = DefaultSmallWidth,
-                        MessageBoxButtons buttons = MessageBoxButtons.OK)
-      : this(title.GetLang(), text.GetLang(), width, buttons)
+                        MessageBoxButtons buttons = MessageBoxButtons.OK,
+                        MessageBoxIcon icon = MessageBoxIcon.None)
+      : this(title.GetLang(), text.GetLang(), width, buttons, icon)
     {
       LocalizedTitle = title;
       LocalizedText = text;
@@ -173,6 +178,11 @@ namespace Ordisoftware.HebrewCommon
       Close();
     }
 
+    private void MessageBoxEx_Shown(object sender, EventArgs e)
+    {
+      TopMost = LoadingForm.Instance.Visible;
+    }
+
     private void MessageBoxEx_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( Modal || AllowClose ) return;
@@ -188,10 +198,6 @@ namespace Ordisoftware.HebrewCommon
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
-    }
-
-    private void UpdateLabelText(string text)
-    {
     }
 
   }

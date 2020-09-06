@@ -34,6 +34,7 @@ namespace Ordisoftware.HebrewCommon
   {
 
     static public bool IconInformationAsNone = false;
+    static public bool IconNoneAsInformation = true;
 
     static public MessageBoxStyle MessageBoxStyle = MessageBoxStyle.Advanced;
 
@@ -90,6 +91,8 @@ namespace Ordisoftware.HebrewCommon
                                     MessageBoxButtons buttons = MessageBoxButtons.OK,
                                     MessageBoxIcon icon = MessageBoxIcon.None)
     {
+      if ( icon == MessageBoxIcon.None && IconInformationAsNone )
+        icon = MessageBoxIcon.Information;
       DialogResult res = DialogResult.None;
       SystemManager.TryCatchManage(() => 
       {
