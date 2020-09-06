@@ -628,14 +628,14 @@ namespace Ordisoftware.HebrewCalendar
     {
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == Translations.NoticeShabatTitle.GetLang());
       if ( form != null )
-        form.Popup();
+        form.Popup(null, sender == null);
       else
       {
         form = new MessageBoxEx(Translations.NoticeShabatTitle,
                                 Translations.NoticeShabat,
                                 MessageBoxEx.DefaultLargeWidth);
         form.ShowInTaskbar = true;
-        form.Show();
+        form.Popup(null, sender == null);
       }
     }
 
@@ -648,14 +648,14 @@ namespace Ordisoftware.HebrewCalendar
     {
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == Translations.NoticeCelebrationsTitle.GetLang());
       if ( form != null )
-        form.Popup();
+        form.Popup(null, sender == null);
       else
       {
         form = new MessageBoxEx(Translations.NoticeCelebrationsTitle,
                                 Translations.NoticeCelebrations,
                                 MessageBoxEx.DefaultMediumWidth);
         form.ShowInTaskbar = true;
-        form.Show();
+        form.Popup(null, sender == null);
       }
     }
 
