@@ -325,6 +325,7 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "DatesDiffCalculatorForm";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DatesDiffCalculatorForm_FormClosing);
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).EndInit();

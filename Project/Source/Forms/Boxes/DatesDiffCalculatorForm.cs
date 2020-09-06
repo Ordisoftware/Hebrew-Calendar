@@ -84,6 +84,12 @@ namespace Ordisoftware.HebrewCalendar
       Instance.DateChanged(true);
     }
 
+    private void DatesDiffCalculatorForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      e.Cancel = true;
+      Hide();
+    }
+
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
