@@ -85,12 +85,13 @@ namespace Ordisoftware.HebrewCalendar
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, ref lastdone, true);
       Settings.CheckUpdateLastDone = lastdone;
       if ( exit ) return;
-      ActionViewLog.Enabled = DebugManager.Enabled;
       CalendarText.ForeColor = Settings.TextColor;
       CalendarText.BackColor = Settings.TextBackground;
       InitializeCalendarUI();
       InitializeCurrentTimeZone();
       InitializeDialogsDirectory();
+      ActionViewLog.Enabled = DebugManager.TraceEnabled;
+      DebugManager.TraceEnabledChanged += value => ActionViewLog.Enabled = value;
       Refresh();
       ClearLists();
       LoadData();
@@ -107,8 +108,6 @@ namespace Ordisoftware.HebrewCalendar
       DebugManager.Enter();
       try
       {
-        ActionViewLog.Enabled = DebugManager.TraceEnabled;
-        DebugManager.TraceEnabledChanged += value => ActionViewLog.Enabled = value;
         UpdateTextCalendar();
         CalendarMonth.CalendarDateChanged += date => GoToDate(date);
         MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);
