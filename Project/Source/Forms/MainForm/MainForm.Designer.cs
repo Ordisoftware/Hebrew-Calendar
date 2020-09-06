@@ -159,6 +159,7 @@
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
       this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
+      this.EditApplicationSounds = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -913,6 +914,7 @@
             this.MenuitemScreenPosition,
             this.ActionResetWinSettings,
             this.Sep7,
+            this.EditApplicationSounds,
             this.EditShowTips,
             this.EditESCtoExit,
             this.EditConfirmClosing});
@@ -1189,6 +1191,15 @@
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
+      // EditApplicationSounds
+      // 
+      this.EditApplicationSounds.Checked = true;
+      this.EditApplicationSounds.CheckOnClick = true;
+      this.EditApplicationSounds.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditApplicationSounds, "EditApplicationSounds");
+      this.EditApplicationSounds.Name = "EditApplicationSounds";
+      this.EditApplicationSounds.Click += new System.EventHandler(this.EditApplicationSounds_Click);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1361,6 +1372,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
     private System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
     private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
+    internal System.Windows.Forms.ToolStripMenuItem EditApplicationSounds;
   }
 }
 

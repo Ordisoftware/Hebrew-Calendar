@@ -50,6 +50,7 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.EditConfirmClosing.Checked = true;
       MainForm.EditShowTips.Checked = true;
       MainForm.EditESCtoExit.Checked = true;
+      MainForm.EditApplicationSounds.Checked = true;
       MainForm.SetView(ViewMode.Month);
       settings.Store();
     }
@@ -88,6 +89,7 @@ namespace Ordisoftware.HebrewCalendar
       MainForm.EditConfirmClosing.Checked = settings.ConfirmClosing;
       MainForm.EditShowTips.Checked = settings.ShowTips;
       MainForm.EditESCtoExit.Checked = settings.ESCtoExit;
+      MainForm.EditApplicationSounds.Checked = settings.SoundsEnabled;
     }
 
     /// <summary>
@@ -115,6 +117,7 @@ namespace Ordisoftware.HebrewCalendar
       settings.ConfirmClosing = MainForm.EditConfirmClosing.Checked;
       settings.ShowTips = MainForm.EditShowTips.Checked;
       settings.ESCtoExit = MainForm.EditESCtoExit.Checked;
+      settings.SoundsEnabled = MainForm.EditApplicationSounds.Checked;
       settings.Save();
     }
 

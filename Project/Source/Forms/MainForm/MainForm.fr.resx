@@ -1883,4 +1883,7 @@
   <data name="ActionViewLog.Text" xml:space="preserve">
     <value>Voir le log en cours</value>
   </data>
+  <data name="EditApplicationSounds.Text" xml:space="preserve">
+    <value>Activer les sons</value>
+  </data>
 </root>

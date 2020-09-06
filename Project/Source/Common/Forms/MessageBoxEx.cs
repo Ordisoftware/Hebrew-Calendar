@@ -54,33 +54,18 @@ namespace Ordisoftware.HebrewCommon
       : this()
     {
       Text = title;
+      SetButtons(buttons);
       int labelInitialTop = Label.Top;
       int labelInitialHeight = Label.Height;
       LabelMaxWidth = width - 55;
-      if ( icon == MessageBoxIcon.None && DisplayManager.IconInformationAsNone )
+      if ( icon == MessageBoxIcon.None && DisplayManager.IconStyle == MessageBoxIconStyle.ForceInformation )
         icon = MessageBoxIcon.Information;
-      if ( icon == MessageBoxIcon.Information && DisplayManager.IconInformationAsNone )
+      else
+      if ( icon == MessageBoxIcon.Information && DisplayManager.IconStyle == MessageBoxIconStyle.ForceNone )
         icon = MessageBoxIcon.Information;
       if ( icon != MessageBoxIcon.None )
       {
-        switch ( icon )
-        {
-          case MessageBoxIcon.Information:
-            PictureBox.Image = SystemIcons.Information;
-            break;
-          case MessageBoxIcon.Question:
-            PictureBox.Image = SystemIcons.Question;
-            SystemSounds.Question.Play();
-            break;
-          case MessageBoxIcon.Warning:
-            PictureBox.Image = SystemIcons.Warning;
-            SystemSounds.Exclamation.Play();
-            break;
-          case MessageBoxIcon.Error:
-            PictureBox.Image = SystemIcons.Error;
-            SystemSounds.Exclamation.Play();
-            break;
-        }
+        SetIcon(icon);
         Label.Left = Label.Left + Label.Left / 2 + PictureBox.Width;
         Label.Top = Label.Top + (PictureBox.Height - Label.Height) / 2;
         PictureBox.Visible = true;
@@ -96,52 +81,6 @@ namespace Ordisoftware.HebrewCommon
       {
         Label.Top = labelInitialTop;
         Height -= Label.Top - labelInitialTop;
-      }
-      switch ( buttons )
-      {
-        case MessageBoxButtons.OK:
-          ActionOK.Visible = true;
-          ActiveControl = ActionOK;
-          AcceptButton = ActionOK;
-          CancelButton = ActionOK;
-          break;
-        case MessageBoxButtons.OKCancel:
-          ActionCancel.Visible = true;
-          ActionOK.Visible = true;
-          ActiveControl = ActionOK;
-          AcceptButton = ActionOK;
-          CancelButton = ActionCancel;
-          break;
-        case MessageBoxButtons.YesNo:
-          ActionNo.Visible = true;
-          ActionYes.Visible = true;
-          ActiveControl = ActionYes;
-          AcceptButton = ActionYes;
-          CancelButton = ActionNo;
-          break;
-        case MessageBoxButtons.YesNoCancel:
-          ActionCancel.Visible = true;
-          ActionNo.Visible = true;
-          ActionYes.Visible = true;
-          ActiveControl = ActionYes;
-          AcceptButton = ActionYes;
-          CancelButton = ActionCancel;
-          break;
-        case MessageBoxButtons.RetryCancel:
-          ActionCancel.Visible = true;
-          ActionRetry.Visible = true;
-          ActiveControl = ActionRetry;
-          AcceptButton = ActionRetry;
-          CancelButton = ActionCancel;
-          break;
-        case MessageBoxButtons.AbortRetryIgnore:
-          ActionIgnore.Visible = true;
-          ActionRetry.Visible = true;
-          ActionAbort.Visible = true;
-          ActiveControl = ActionRetry;
-          AcceptButton = ActionRetry;
-          CancelButton = ActionIgnore;
-          break;
       }
       this.CenterToFormElseMainFormElseScreen(ActiveForm);
       Instances.Add(this);
@@ -198,6 +137,79 @@ namespace Ordisoftware.HebrewCommon
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
+    }
+
+    private void SetIcon(MessageBoxIcon icon)
+    {
+      switch ( icon )
+      {
+        case MessageBoxIcon.Information:
+          PictureBox.Image = SystemIcons.Information;
+          if ( DisplayManager.AdvancedFormUseSounds ) SystemSounds.Beep.Play();
+          break;
+        case MessageBoxIcon.Question:
+          PictureBox.Image = SystemIcons.Question;
+          if ( DisplayManager.AdvancedFormUseSounds ) SystemSounds.Hand.Play();
+          break;
+        case MessageBoxIcon.Warning:
+          PictureBox.Image = SystemIcons.Warning;
+          if ( DisplayManager.AdvancedFormUseSounds ) SystemSounds.Exclamation.Play();
+          break;
+        case MessageBoxIcon.Error:
+          PictureBox.Image = SystemIcons.Error;
+          if ( DisplayManager.AdvancedFormUseSounds ) SystemSounds.Hand.Play();
+          break;
+      }
+    }
+
+    private void SetButtons(MessageBoxButtons buttons)
+    {
+      switch ( buttons )
+      {
+        case MessageBoxButtons.OK:
+          ActionOK.Visible = true;
+          ActiveControl = ActionOK;
+          AcceptButton = ActionOK;
+          CancelButton = ActionOK;
+          break;
+        case MessageBoxButtons.OKCancel:
+          ActionCancel.Visible = true;
+          ActionOK.Visible = true;
+          ActiveControl = ActionOK;
+          AcceptButton = ActionOK;
+          CancelButton = ActionCancel;
+          break;
+        case MessageBoxButtons.YesNo:
+          ActionNo.Visible = true;
+          ActionYes.Visible = true;
+          ActiveControl = ActionYes;
+          AcceptButton = ActionYes;
+          CancelButton = ActionNo;
+          break;
+        case MessageBoxButtons.YesNoCancel:
+          ActionCancel.Visible = true;
+          ActionNo.Visible = true;
+          ActionYes.Visible = true;
+          ActiveControl = ActionYes;
+          AcceptButton = ActionYes;
+          CancelButton = ActionCancel;
+          break;
+        case MessageBoxButtons.RetryCancel:
+          ActionCancel.Visible = true;
+          ActionRetry.Visible = true;
+          ActiveControl = ActionRetry;
+          AcceptButton = ActionRetry;
+          CancelButton = ActionCancel;
+          break;
+        case MessageBoxButtons.AbortRetryIgnore:
+          ActionIgnore.Visible = true;
+          ActionRetry.Visible = true;
+          ActionAbort.Visible = true;
+          ActiveControl = ActionRetry;
+          AcceptButton = ActionRetry;
+          CancelButton = ActionIgnore;
+          break;
+      }
     }
 
   }

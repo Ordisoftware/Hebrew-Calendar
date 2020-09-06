@@ -434,6 +434,27 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
+    /// Event handler. Called by EditApplicationSounds for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void EditApplicationSounds_Click(object sender, EventArgs e)
+    {
+      DisplayManager.AdvancedFormUseSounds = EditApplicationSounds.Checked;
+      switch ( DisplayManager.FormStyle )
+      {
+        case MessageBoxFormStyle.Advanced:
+          DisplayManager.IconStyle = MessageBoxIconStyle.ForceInformation;
+          break;
+        case MessageBoxFormStyle.System:
+          DisplayManager.IconStyle = EditApplicationSounds.Checked
+                                     ? MessageBoxIconStyle.ForceInformation
+                                     : MessageBoxIconStyle.ForceNone;
+          break;
+      }
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionViewReport for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

@@ -21,10 +21,45 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
-  public enum MessageBoxStyle
+  /// <summary>
+  /// Provide MessageBoxForm style enum.
+  /// </summary>
+  public enum MessageBoxFormStyle
   {
+
+    /// <summary>
+    /// Use standard Windows MessageBox class.
+    /// </summary>
     System,
+
+    /// <summary>
+    /// Use custom form.
+    /// </summary>
     Advanced
+
+  }
+
+  /// <summary>
+  /// Provide MessageBoxForm icon enum.
+  /// </summary>
+  public enum MessageBoxIconStyle
+  {
+
+    /// <summary>
+    /// Use system settings.
+    /// </summary>
+    System,
+
+    /// <summary>
+    /// Force none icon as information.
+    /// </summary>
+    ForceNone,
+
+    /// <summary>
+    /// Force information icon as none.
+    /// </summary>
+    ForceInformation,
+
   }
 
   /// <summary>
@@ -33,10 +68,9 @@ namespace Ordisoftware.HebrewCommon
   static public partial class DisplayManager
   {
 
-    static public bool IconInformationAsNone = false;
-    static public bool IconNoneAsInformation = true;
-
-    static public MessageBoxStyle MessageBoxStyle = MessageBoxStyle.Advanced;
+    static public bool AdvancedFormUseSounds = true;
+    static public MessageBoxFormStyle FormStyle = MessageBoxFormStyle.Advanced;
+    static public MessageBoxIconStyle IconStyle = MessageBoxIconStyle.ForceInformation;
 
     /// <summary>
     /// Indicates application title initialized from file version info or executable path.
@@ -91,17 +125,17 @@ namespace Ordisoftware.HebrewCommon
                                     MessageBoxButtons buttons = MessageBoxButtons.OK,
                                     MessageBoxIcon icon = MessageBoxIcon.None)
     {
-      if ( icon == MessageBoxIcon.None && IconInformationAsNone )
+      if ( icon == MessageBoxIcon.None && IconStyle == MessageBoxIconStyle.ForceInformation )
         icon = MessageBoxIcon.Information;
       DialogResult res = DialogResult.None;
       SystemManager.TryCatchManage(() => 
       {
-        switch (MessageBoxStyle)
+        switch ( FormStyle )
         {
-          case MessageBoxStyle.System:
+          case MessageBoxFormStyle.System:
             res = ShowWinForm(title, text, buttons, icon);
             break;
-          case MessageBoxStyle.Advanced:
+          case MessageBoxFormStyle.Advanced:
             res = ShowAdvancedForm(title, text, buttons, icon);
             break;
         }
@@ -125,7 +159,9 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="text">The text.</param>
     static public void ShowInformation(string title, string text)
     {
-      var icon = IconInformationAsNone ? MessageBoxIcon.None : MessageBoxIcon.Information;
+      var icon = IconStyle == MessageBoxIconStyle.ForceNone 
+                 ? MessageBoxIcon.None
+                 : MessageBoxIcon.Information;
       Show(title, text, MessageBoxButtons.OK, icon);
     }
 

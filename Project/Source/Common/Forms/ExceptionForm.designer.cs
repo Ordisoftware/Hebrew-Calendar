@@ -175,6 +175,7 @@ namespace Ordisoftware.HebrewCommon
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ExceptionForm";
+      this.Shown += new System.EventHandler(this.ExceptionForm_Shown);
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
