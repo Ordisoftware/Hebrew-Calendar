@@ -14,6 +14,7 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -28,29 +29,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private readonly Properties.Settings Settings = Program.Settings;
 
-    /// <summary>
-    /// Indicate shabat notice form.
-    /// </summary>
-    public ShowTextForm ShabatNoticeForm;
-
-    /// <summary>
-    /// Indicate celebrations notice form.
-    /// </summary>
-    public ShowTextForm CelebrationsNoticeForm;
-
-    /// <summary>
-    /// Indicate moon months notice form.
-    /// </summary>
-    public ShowTextForm MoonMonthsNoticeForm;
-
-    /// <summary>
-    /// Indicate if generation is in progress.
-    /// </summary>
     public bool IsGenerating { get; private set; }
 
-    /// <summary>
-    /// Indicate last showned tooltip.
-    /// </summary>
     private ToolTip LastToolTip = new ToolTip();
 
     private Point TrayIconMouse;
@@ -63,6 +43,10 @@ namespace Ordisoftware.HebrewCalendar
     private bool TimerErrorShown;
 
     private MidnightTimer TimerMidnight = new MidnightTimer();
+
+    private DateTime? LastVacuum = null;
+
+    private Stopwatch ChronoStart = new Stopwatch();
 
     public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
     public float CurrentGPSLatitude { get; internal set; }
@@ -106,8 +90,6 @@ namespace Ordisoftware.HebrewCalendar
       SystemManager.TryCatchManage(() =>
       {
         LockSessionForm.Instance?.Close();
-        CelebrationsForm.Instance?.Hide();
-        NavigationForm.Instance?.Hide();
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();
         RemindCelebrationDates.Clear();

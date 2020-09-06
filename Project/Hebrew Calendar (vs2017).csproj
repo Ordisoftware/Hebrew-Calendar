@@ -144,6 +144,12 @@
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Common\Controls\ControlLocation.cs" />
     <Compile Include="Source\Common\Controls\FormsHelper.cs" />
+    <Compile Include="Source\Common\Controls\CommonMenusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Controls\CommonMenusControl.Designer.cs">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Common\Controls\LettersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +162,7 @@
     <Compile Include="Source\Common\Controls\RichTextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Source\Common\Controls\SystemIcons.cs" />
     <Compile Include="Source\Common\Controls\ToolStripMenuItemHelper.cs" />
     <Compile Include="Source\Common\Controls\UndoRedoTextBox.Actions.cs">
       <SubType>Component</SubType>
@@ -213,6 +220,12 @@
     <Compile Include="Source\Common\Forms\LoadingForm.designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\Forms\MessageBoxEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Forms\MessageBoxEx.Designer.cs">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Common\Forms\ShowTextForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,11 +276,11 @@
     <Compile Include="Source\Entities\DatesDiffItem.cs" />
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFile.cs" />
-    <Compile Include="Source\Forms\Boxes\DatesDiffForm.cs">
+    <Compile Include="Source\Forms\Boxes\DatesDiffCalculatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\DatesDiffForm.Designer.cs">
-      <DependentUpon>DatesDiffForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\DatesDiffCalculatorForm.Designer.cs">
+      <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Boxes\ManageDateBookmarks.cs">
       <SubType>Form</SubType>
@@ -286,6 +299,9 @@
     </Compile>
     <Compile Include="Source\Forms\Boxes\SearchGregorianMonthForm.Designer.cs">
       <DependentUpon>SearchGregorianMonthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Generate.Data.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.cs">
       <SubType>Form</SubType>
@@ -456,9 +472,6 @@
     <Compile Include="Source\Forms\Config\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Generate.Data.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Location.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -486,7 +499,6 @@
     <Compile Include="Source\Enums\MoonPhase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Entities\ReminderTimes.cs" />
-    <Compile Include="Source\Program\Program.Tools.cs" />
     <Compile Include="Source\Program\Program.Vars.cs" />
     <Compile Include="Source\Forms\Boxes\SelectSuspendDelayForm.cs">
       <SubType>Form</SubType>
@@ -525,6 +537,12 @@
     <EmbeddedResource Include="Dependencies\Calendar.NET\TodayButton.resx">
       <DependentUpon>TodayButton.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Controls\CommonMenusControl.fr.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Controls\CommonMenusControl.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Controls\LettersControl.fr.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
@@ -565,11 +583,19 @@
     <EmbeddedResource Include="Source\Common\Forms\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\MessageBoxEx.fr.resx">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Forms\MessageBoxEx.resx">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Forms\ShowTextForm.fr.resx">
       <DependentUpon>ShowTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Forms\ShowTextForm.resx">
       <DependentUpon>ShowTextForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Forms\TraceForm.fr.resx">
       <DependentUpon>TraceForm.cs</DependentUpon>
@@ -594,11 +620,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffForm.fr.resx">
-      <DependentUpon>DatesDiffForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffCalculatorForm.fr.resx">
+      <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffForm.resx">
-      <DependentUpon>DatesDiffForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffCalculatorForm.resx">
+      <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarks.fr.resx">
       <DependentUpon>ManageDateBookmarks.cs</DependentUpon>

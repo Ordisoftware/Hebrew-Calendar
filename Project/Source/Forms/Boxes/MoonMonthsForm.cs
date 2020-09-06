@@ -90,7 +90,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionViewNotice_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.MoonMonthsNoticeForm.Popup(this);
+      new MessageBoxEx(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths).ShowDialog();
     }
 
     private void ActionEditFiles_Click(object sender, EventArgs e)
@@ -118,7 +118,8 @@ namespace Ordisoftware.HebrewCalendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      Program.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]));
+      SystemManager.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]),
+                                      Program.Settings.HebrewLettersExe);
     }
 
     private void ActionCopyFontChars_Click(object sender, EventArgs e)

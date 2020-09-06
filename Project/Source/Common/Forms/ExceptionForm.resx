@@ -118,42 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TextMessage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="EditMessage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="TextMessage.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditMessage.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 86</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TextMessage.Multiline" type="System.Boolean, mscorlib">
+  <data name="EditMessage.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="TextMessage.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+  <data name="EditMessage.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Both</value>
   </data>
-  <data name="TextMessage.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 142</value>
   </data>
-  <data name="TextMessage.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditMessage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="TextMessage.WordWrap" type="System.Boolean, mscorlib">
+  <data name="EditMessage.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;TextMessage.Name" xml:space="preserve">
-    <value>TextMessage</value>
+  <data name="&gt;&gt;EditMessage.Name" xml:space="preserve">
+    <value>EditMessage</value>
   </data>
-  <data name="&gt;&gt;TextMessage.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditMessage.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TextMessage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditMessage.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;TextMessage.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditMessage.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="pictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAABoRJREFUWEelVmlwU1UY5Q///eWMvxwVWZoCsnRJ04aldEnpStNSutACRcoOgoqK
@@ -187,25 +187,25 @@
         /wI5C1oNg0UI6wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PictureBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 12</value>
   </data>
-  <data name="pictureBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 32</value>
   </data>
-  <data name="pictureBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="PictureBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;pictureBox.Name" xml:space="preserve">
-    <value>pictureBox</value>
+  <data name="&gt;&gt;PictureBox.Name" xml:space="preserve">
+    <value>PictureBox</value>
   </data>
-  <data name="&gt;&gt;pictureBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;PictureBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pictureBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PictureBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;pictureBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PictureBox.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -292,40 +292,40 @@
   <data name="&gt;&gt;ActionViewStack.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="TextStack.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="EditStack.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
-  <data name="TextStack.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditStack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
   </data>
-  <data name="TextStack.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditStack.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 269</value>
   </data>
-  <data name="TextStack.Multiline" type="System.Boolean, mscorlib">
+  <data name="EditStack.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="TextStack.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+  <data name="EditStack.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Both</value>
   </data>
-  <data name="TextStack.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditStack.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 135</value>
   </data>
-  <data name="TextStack.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditStack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="TextStack.WordWrap" type="System.Boolean, mscorlib">
+  <data name="EditStack.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;TextStack.Name" xml:space="preserve">
-    <value>TextStack</value>
+  <data name="&gt;&gt;EditStack.Name" xml:space="preserve">
+    <value>EditStack</value>
   </data>
-  <data name="&gt;&gt;TextStack.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditStack.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TextStack.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditStack.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;TextStack.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditStack.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="LabelInfo1.AutoSize" type="System.Boolean, mscorlib">
@@ -355,28 +355,28 @@
   <data name="&gt;&gt;LabelInfo1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="TextException.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="EditType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="TextException.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditType.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 55</value>
   </data>
-  <data name="TextException.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditType.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 20</value>
   </data>
-  <data name="TextException.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditType.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;TextException.Name" xml:space="preserve">
-    <value>TextException</value>
+  <data name="&gt;&gt;EditType.Name" xml:space="preserve">
+    <value>EditType</value>
   </data>
-  <data name="&gt;&gt;TextException.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditType.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TextException.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditType.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;TextException.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditType.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="LabelInfo2.AutoSize" type="System.Boolean, mscorlib">

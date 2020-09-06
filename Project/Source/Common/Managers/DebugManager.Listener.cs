@@ -81,15 +81,30 @@ namespace Ordisoftware.HebrewCommon
         Writer.WriteLine(value);
       }
 
+      private bool TraceMutex;
+
       private void CheckRollOver()
       {
+        if ( TraceMutex ) return;
         if ( Date.Date == DateTime.Today ) return;
-        SystemManager.TryCatch(() =>
+        TraceMutex = true;
+        try
         {
-          Writer.Close();
-          Writer = null;
-          Writer = new StreamWriter(GenerateFilename(), true);
-        });
+          SystemManager.TryCatch(() =>
+          {
+            Trace(HebrewCommon.TraceEvent.Data, $"{nameof(DebugManager)}.{nameof(TraceListener)}.{nameof(CheckRollOver)} = TRUE");
+            WriteFooter();
+            Writer.Close();
+            Writer = null;
+            Writer = new StreamWriter(GenerateFilename(), true);
+            WriteHeader();
+            Trace(HebrewCommon.TraceEvent.Data, $"{nameof(DebugManager)}.{nameof(TraceListener)}.{nameof(CheckRollOver)} = TRUE");
+          });
+        }
+        finally
+        {
+          TraceMutex = false;
+        }
       }
 
       private class FileItem

@@ -1285,6 +1285,7 @@
       resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
       this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
       this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
       // 
       // EditHebrewLettersPath
       // 
@@ -1308,6 +1309,7 @@
       resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
       this.EditGPSLatitude.Name = "EditGPSLatitude";
       this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
       // 
       // EditTimeZone
       // 
@@ -1315,6 +1317,7 @@
       resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
       this.EditTimeZone.Name = "EditTimeZone";
       this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
       // 
       // EditGPSLongitude
       // 
@@ -1322,6 +1325,7 @@
       resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
       this.EditGPSLongitude.Name = "EditGPSLongitude";
       this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
       // 
       // PreferencesForm
       // 

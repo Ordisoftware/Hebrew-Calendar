@@ -35,9 +35,9 @@ namespace Ordisoftware.HebrewCalendar
         Settings.FirstLaunchV4 = false;
         Settings.FirstLaunch = false;
         Settings.Save();
-        MainForm.Instance.CelebrationsNoticeForm.Popup(this, true);
+        MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
         Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(Translations.AskToUseMoonOmer.GetLang());
-        MainForm.Instance.ShabatNoticeForm.Popup(this, true);
+        MainForm.Instance.ActionShowShabatNotice_Click(null, null);
         if ( DisplayManager.QueryYesNo(Translations.AskToSetupPersonalShabat.GetLang()) )
           ActionUsePersonalShabat_LinkClicked(null, null);
       }
@@ -49,7 +49,7 @@ namespace Ordisoftware.HebrewCalendar
           break;
         }
       LoadSettings();
-      EditTimeZone.Text = Program.GPSText;
+      EditTimeZone.Text = Settings.GetGPSText();
       switch ( Settings.TrayIconClickOpen )
       {
         case TrayIconClickOpen.MainForm:
@@ -70,6 +70,7 @@ namespace Ordisoftware.HebrewCalendar
       SelectOpenNavigationForm_CheckedChanged(null, null);
       EditLogEnabled.Enabled = DebugManager.Enabled;
       ActiveControl = ActionClose;
+      ActionResetSettings.TabStop = false;
       IsReady = true;
     }
 

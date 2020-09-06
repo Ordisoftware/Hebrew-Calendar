@@ -14,6 +14,8 @@
 /// <edited> 2019-10 </edited>
 using System;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using Ordisoftware.HebrewCommon;
 
 namespace Ordisoftware.HebrewCalendar
@@ -21,6 +23,102 @@ namespace Ordisoftware.HebrewCalendar
 
   public partial class MainForm
   {
+
+    private void EnableReminder()
+    {
+      TimerResumeReminder.Enabled = false;
+      TrayIcon.Icon = Icon;
+      ActionResetReminder.Enabled = true;
+      ActionEnableReminder.Visible = false;
+      ActionDisableReminder.Visible = true;
+      ActionEnableReminder.Enabled = false;
+      ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
+      MenuResetReminder.Enabled = true;
+      MenuEnableReminder.Visible = false;
+      MenuDisableReminder.Visible = true;
+      MenuEnableReminder.Enabled = false;
+      MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
+      TimerReminder.Enabled = true;
+      TimerReminder_Tick(null, null);
+    }
+
+    private void DisableReminder()
+    {
+      try
+      {
+        MenuTray.Enabled = false;
+        var delay = SelectSuspendDelayForm.Run();
+        if ( delay == null ) return;
+        TrayIcon.Icon = new Icon(Path.Combine(Globals.RootFolderPath, "ApplicationPause.ico"));
+        TimerReminder.Enabled = false;
+        ActionResetReminder.Enabled = false;
+        ActionEnableReminder.Visible = true;
+        ActionDisableReminder.Visible = false;
+        ActionEnableReminder.Enabled = true;
+        ActionDisableReminder.Enabled = false;
+        MenuResetReminder.Enabled = false;
+        MenuEnableReminder.Visible = true;
+        MenuDisableReminder.Visible = false;
+        MenuEnableReminder.Enabled = true;
+        MenuDisableReminder.Enabled = false;
+        ClearLists();
+        if ( delay > 0 )
+        {
+          TimerResumeReminder.Interval = delay.Value * 60 * 1000;
+          TimerResumeReminder.Start();
+        }
+      }
+      finally
+      {
+        MenuTray.Enabled = true;
+      }
+    }
+
+    internal void DoTimerReminder()
+    {
+      if ( TimerMutex ) return;
+      if ( !Globals.IsReady ) return;
+      if ( !TimerReminder.Enabled ) return;
+      TimerMutex = true;
+      try
+      {
+        if ( !IsForegroundFullScreenOrScreensaver() )
+        {
+          if ( Settings.ReminderShabatEnabled )
+            CheckShabat();
+          if ( Settings.ReminderCelebrationsEnabled )
+          {
+            CheckCelebrationDay();
+            CheckEvents();
+          }
+        }
+      }
+      catch ( Exception ex )
+      {
+        if ( TimerErrorShown ) return;
+        TimerErrorShown = true;
+        ex.Manage();
+      }
+      finally
+      {
+        TimerMutex = false;
+      }
+    }
+
+    private void DoTimerMidnight()
+    {
+      if ( !Globals.IsReady ) return;
+      this.SyncUI(() =>
+      {
+        System.Threading.Thread.Sleep(1000);
+        CheckRegenerateCalendar();
+        CalendarMonth.Refresh();
+        if ( SQLiteDate.ToDateTime(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
+          GoToDate(DateTime.Today);
+        if ( Settings.CheckUpdateEveryWeekWhileRunning )
+          ActionWebCheckUpdate_Click(null, null);
+      });
+    }
 
     private void SetTimes(ReminderTimes times, 
                           DateTime date, 

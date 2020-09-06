@@ -21,9 +21,20 @@ namespace Ordisoftware.HebrewCalendar
   public partial class SelectBirthTime : Form
   {
 
-    public SelectBirthTime()
+    static public bool Run(out TimeSpan time)
+    {
+      using ( var form = new SelectBirthTime() )
+      {
+        bool result = form.ShowDialog() == DialogResult.OK;
+        time = result ? form.EditTime.Value.TimeOfDay : TimeSpan.MinValue;
+        return result;
+      }
+    }
+
+    private SelectBirthTime()
     {
       InitializeComponent();
+      Icon = MainForm.Instance.Icon;
     }
 
   }

@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.HebrewCalendar
 {
-  partial class DatesDiffForm
+  partial class DatesDiffCalculatorForm
   {
     /// <summary>
     /// Required designer variable.
@@ -30,7 +30,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.Windows.Forms.Label lunationsLabel;
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatesDiffForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatesDiffCalculatorForm));
       System.Windows.Forms.Label moonDaysLabel;
       System.Windows.Forms.Label solarDaysLabel;
       System.Windows.Forms.Label solarMonthsLabel;
@@ -132,6 +132,7 @@
       resources.ApplyResources(this.ActionClose, "ActionClose");
       this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionClose.Name = "ActionClose";
+      this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
       // ActionManageBookmarks
       // 
@@ -303,7 +304,7 @@
       this.ActionSwapDates.UseVisualStyleBackColor = true;
       this.ActionSwapDates.Click += new System.EventHandler(this.ActionSwapDates_Click);
       // 
-      // DatesDiffForm
+      // DatesDiffCalculatorForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -323,7 +324,7 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "DatesDiffForm";
+      this.Name = "DatesDiffCalculatorForm";
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).EndInit();

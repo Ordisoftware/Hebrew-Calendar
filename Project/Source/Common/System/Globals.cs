@@ -36,10 +36,16 @@ namespace Ordisoftware.HebrewCommon
     static public readonly string NL4 = NL3 + NL;
 
     /// <summary>
-    /// Indicate the application code (title without space
+    /// Indicate the application code (title without space).
     /// </summary>
     static public string ApplicationCode
       => AssemblyTitle.Replace(" ", "");
+
+    /// <summary>
+    /// Indicate the application GitHub code (title with '-' instead of space.
+    /// </summary>
+    static public string ApplicationGitHubCode
+      => AssemblyTitle.Replace(" ", "-");
 
     /// <summary>
     /// Indicate the application process name.
@@ -64,12 +70,12 @@ namespace Ordisoftware.HebrewCommon
     static private void CheckDebugExecutable(ref bool isDebug)
       => isDebug = true;
 
+    /// <summary>
     /// Indicate if the running app is from dev folder else user installed.
     /// </summary>
     static public bool IsDevExecutable
       => Application.ExecutablePath.Contains(DebugDirectory) || Application.ExecutablePath.Contains(ReleaseDirectory);
 
-    /// <summary>
     /// <summary>
     /// Indicate if the code is executed from the IDE else from a running app.
     /// </summary>

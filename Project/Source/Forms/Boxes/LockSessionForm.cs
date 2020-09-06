@@ -34,7 +34,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Instance == null )
         Instance = new LockSessionForm();
-      Instance.Show();
+      Instance.Popup();
     }
 
     DateTime Start = DateTime.Now;

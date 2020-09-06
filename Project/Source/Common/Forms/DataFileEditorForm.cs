@@ -26,12 +26,14 @@ namespace Ordisoftware.HebrewCommon
 
     static public bool Run(string title, DataFile file)
     {
-      var form = new DataFileEditorForm();
-      form.Text = title;
-      AddTab(form.TabControl, file);
-      bool result = form.ShowDialog() == DialogResult.OK;
-      if ( result ) file.ReLoad();
-      return result;
+      using ( var form = new DataFileEditorForm() )
+      {
+        form.Text = title;
+        AddTab(form.TabControl, file);
+        bool result = form.ShowDialog() == DialogResult.OK;
+        if ( result ) file.ReLoad();
+        return result;
+      }
     }
 
     static public bool Run(string title, IEnumerable<DataFile> files)
@@ -64,7 +66,7 @@ namespace Ordisoftware.HebrewCommon
       tabcontrol.TabPages.Add(tabpage);
     }
 
-    public DataFileEditorForm()
+    private DataFileEditorForm()
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;

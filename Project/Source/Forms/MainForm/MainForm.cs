@@ -13,10 +13,10 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Linq;
 using System.Xml;
 using System.Data;
 using System.Drawing;
-using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing.Printing;
@@ -46,8 +46,6 @@ namespace Ordisoftware.HebrewCalendar
       Instance = new MainForm();
     }
 
-    private Stopwatch ChronoStart = new Stopwatch();
-
     /// <summary>
     /// Default constructor.
     /// </summary>
@@ -76,9 +74,6 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
-      ShabatNoticeForm = new ShowTextForm(Translations.NoticeShabatTitle, Translations.NoticeShabat, true, true, 600, 520);
-      CelebrationsNoticeForm = new ShowTextForm(Translations.NoticeCelebrationsTitle, Translations.NoticeCelebrations, true, true, 600, 320);
-      MoonMonthsNoticeForm = new ShowTextForm(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths, true, true, 400, 300);
       StatisticsForm.Run(true);
       if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
         SystemManager.TryCatchManage(() =>
@@ -132,7 +127,7 @@ namespace Ordisoftware.HebrewCalendar
         ChronoStart.Stop();
         Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
         Settings.Save();
-        BringToFront();
+        this.Popup();
       }
       finally
       {
@@ -200,6 +195,7 @@ namespace Ordisoftware.HebrewCalendar
         TimerResumeReminder.Stop();
         TimerMidnight.Stop();
         TimerReminder.Stop();
+        MessageBoxEx.CloseAll();
         SystemManager.TryCatch(() => ClearLists());
         SystemManager.TryCatch(() =>
         {
@@ -258,14 +254,10 @@ namespace Ordisoftware.HebrewCalendar
     {
       SystemManager.TryCatchManage(() =>
       {
-        if ( Visible && WindowState == FormWindowState.Minimized )
+        if ( Visible && ( WindowState == FormWindowState.Minimized ) )
         {
           WindowState = Settings.MainFormState;
-          var old = TopMost;
-          TopMost = true;
-          BringToFront();
-          Show();
-          TopMost = old;
+          this.Popup();
         }
         else
         if ( !Visible || e == null )
@@ -284,13 +276,7 @@ namespace Ordisoftware.HebrewCalendar
             Globals.IsReady = temp;
           }
           if ( Globals.IsReady )
-          {
-            var old = TopMost;
-            TopMost = true;
-            BringToFront();
-            Show();
-            TopMost = old;
-          }
+            this.Popup();
           if ( !NavigationForm.Instance.Visible )
             GoToDate(DateTime.Today);
         }
@@ -378,7 +364,7 @@ namespace Ordisoftware.HebrewCalendar
             switch ( Settings.TrayIconClickOpen )
             {
               case TrayIconClickOpen.MainForm:
-                MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? new EventArgs() : null);
+                MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? EventArgs.Empty : null);
                 break;
               case TrayIconClickOpen.NextCelebrationsForm:
                 if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
@@ -519,7 +505,7 @@ namespace Ordisoftware.HebrewCalendar
           CalendarMonth.CurrentDayForeColor = Settings.CurrentDayForeColor;
           CalendarMonth.CurrentDayBackColor = Settings.CurrentDayBackColor;
           UpdateCalendarMonth(false);
-          ActionGenerate_Click(null, new EventArgs());
+          ActionGenerate_Click(null, EventArgs.Empty);
         }
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
@@ -533,22 +519,10 @@ namespace Ordisoftware.HebrewCalendar
       {
         Enabled = formEnabled;
         MenuTray.Enabled = true;
+        EnableReminder();
         TimerReminder.Enabled = !MenuEnableReminder.Enabled;
         TimerReminder_Tick(null, null);
       }
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionAbout for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionAbout_Click(object sender, EventArgs e)
-    {
-      if ( AboutBox.Instance.Visible )
-        AboutBox.Instance.BringToFront();
-      else
-        AboutBox.Instance.ShowDialog();
     }
 
     /// <summary>
@@ -562,33 +536,16 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionApplicationHome for click events.
+    /// Event handler. Called by ActionAbout for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionApplicationHome_Click(object sender, EventArgs e)
+    internal void ActionAbout_Click(object sender, EventArgs e)
     {
-      SystemManager.OpenApplicationHome();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionWebReleaseNotes for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionWebReleaseNotes_Click(object sender, EventArgs e)
-    {
-      SystemManager.OpenApplicationReleaseNotes();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionContact for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionContact_Click(object sender, EventArgs e)
-    {
-      SystemManager.OpenContactPage();
+      if ( AboutBox.Instance.Visible )
+        AboutBox.Instance.BringToFront();
+      else
+        AboutBox.Instance.ShowDialog();
     }
 
     /// <summary>
@@ -596,7 +553,7 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionWebCheckUpdate_Click(object sender, EventArgs e)
+    internal void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
       bool menuEnabled = MenuTray.Enabled;
       try
@@ -615,26 +572,6 @@ namespace Ordisoftware.HebrewCalendar
       {
         MenuTray.Enabled = menuEnabled;
       }
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionCreateGitHubIssue for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
-    {
-      SystemManager.CreateGitHubIssue();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionOpenWebsiteURL for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
-    {
-      SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
     }
 
     /// <summary>
@@ -663,9 +600,19 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionShowShabatNotice_Click(object sender, EventArgs e)
+    internal void ActionShowShabatNotice_Click(object sender, EventArgs e)
     {
-      ShabatNoticeForm.Popup(this);
+      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == Translations.NoticeShabatTitle.GetLang());
+      if ( form != null )
+        form.Popup();
+      else
+      {
+        form = new MessageBoxEx(Translations.NoticeShabatTitle,
+                                Translations.NoticeShabat,
+                                MessageBoxEx.DefaultLargeWidth);
+        form.ShowInTaskbar = true;
+        form.Show();
+      }
     }
 
     /// <summary>
@@ -673,9 +620,19 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
+    internal void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      CelebrationsNoticeForm.Popup(this);
+      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == Translations.NoticeCelebrationsTitle.GetLang());
+      if ( form != null )
+        form.Popup();
+      else
+      {
+        form = new MessageBoxEx(Translations.NoticeCelebrationsTitle,
+                                Translations.NoticeCelebrations,
+                                MessageBoxEx.DefaultMediumWidth);
+        form.ShowInTaskbar = true;
+        form.Show();
+      }
     }
 
     /// <summary>
@@ -715,7 +672,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
     {
-      DatesDiffForm.Run();
+      DatesDiffCalculatorForm.Run();
     }
 
     /// <summary>
@@ -729,8 +686,6 @@ namespace Ordisoftware.HebrewCalendar
       SystemManager.TryCatchManage(() => DoGenerate(sender, e));
     }
 
-    private DateTime? LastVacuum = null;
-
     /// <summary>
     /// Event handler. Called by ActionVacuumAtNextStartup for click events.
     /// </summary>
@@ -738,14 +693,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionVacuumAtNextStartup_Click(object sender, EventArgs e)
     {
-      if ( LastVacuum == null )
-        LastVacuum = Settings.VacuumLastDone;
-      if ( ActionVacuumAtNextStartup.Checked )
-      {
-        Settings.VacuumLastDone = DateTime.MinValue;
-      }
-      else
-        Settings.VacuumLastDone = LastVacuum.Value;
+      if ( LastVacuum == null ) LastVacuum = Settings.VacuumLastDone;
+      Settings.VacuumLastDone = ActionVacuumAtNextStartup.Checked ? DateTime.MinValue : LastVacuum.Value;
     }
 
     /// <summary>
@@ -776,6 +725,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCopyReportToClipboard_Click(object sender, EventArgs e)
     {
       Clipboard.SetText(CalendarText.Text);
+      DisplayManager.Show(Translations.TextReportCopiedToClipboard.GetLang());
     }
 
     /// <summary>
@@ -846,11 +796,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( sender == null )
         date = DateTime.Today;
       else
-      {
-        var form = new SelectDayForm(true, true);
-        if ( form.ShowDialog() != DialogResult.OK ) return;
-        date = form.MonthCalendar.SelectionStart;
-      }
+        if ( !SelectDayForm.Run(null, out date, false, true, true) ) return;
       GoToDate(date);
     }
 
@@ -891,8 +837,8 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
-      retry:
-      try
+      //retry:
+      SystemManager.TryCatchManage(() =>
       {
         TimerBallon.Stop();
         NavigationTrayBallooned = sender == null;
@@ -906,16 +852,16 @@ namespace Ordisoftware.HebrewCalendar
           NavigationForm.Instance.Show();
           NavigationForm.Instance.BringToFront();
         }
-      }
-      catch ( ObjectDisposedException )
+      });
+      /*catch ( ObjectDisposedException )
       {
         NavigationForm.Instance = new NavigationForm();
         goto retry;
-      }
-      catch ( Exception ex )
+      }*/
+      /*catch ( Exception ex )
       {
         ex.Manage();
-      }
+      }*/
     }
 
     /// <summary>
@@ -949,20 +895,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MenuEnableReminder_Click(object sender, EventArgs e)
     {
-      TimerResumeReminder.Enabled = false;
-      TrayIcon.Icon = Icon;
-      MenuResetReminder.Enabled = true;
-      ActionResetReminder.Enabled = true;
-      MenuEnableReminder.Visible = false;
-      MenuDisableReminder.Visible = true;
-      MenuEnableReminder.Enabled = false;
-      MenuDisableReminder.Enabled = true;
-      ActionEnableReminder.Visible = false;
-      ActionDisableReminder.Visible = true;
-      ActionEnableReminder.Enabled = false;
-      ActionDisableReminder.Enabled = true;
-      TimerReminder.Enabled = true;
-      TimerReminder_Tick(null, null);
+      EnableReminder();
     }
 
     /// <summary>
@@ -972,34 +905,7 @@ namespace Ordisoftware.HebrewCalendar
     /// <param name="e">Event information.</param>
     private void MenuDisableReminder_Click(object sender, EventArgs e)
     {
-      try
-      {
-        MenuTray.Enabled = false;
-        var delay = SelectSuspendDelayForm.Run();
-        if ( delay == null ) return;
-        TrayIcon.Icon = new Icon(Path.Combine(Globals.RootFolderPath, "ApplicationPause.ico"));
-        TimerReminder.Enabled = false;
-        MenuResetReminder.Enabled = false;
-        ActionResetReminder.Enabled = false;
-        MenuEnableReminder.Visible = true;
-        MenuDisableReminder.Visible = false;
-        MenuEnableReminder.Enabled = true;
-        MenuDisableReminder.Enabled = false;
-        ActionEnableReminder.Visible = true;
-        ActionDisableReminder.Visible = false;
-        ActionEnableReminder.Enabled = true;
-        ActionDisableReminder.Enabled = false;
-        ClearLists();
-        if ( delay > 0 )
-        {
-          TimerResumeReminder.Interval = delay.Value * 60 * 1000;
-          TimerResumeReminder.Start();
-        }
-      }
-      finally
-      {
-        MenuTray.Enabled = true;
-      }
+      DisableReminder();
     }
 
     /// <summary>
@@ -1069,21 +975,13 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by TimerMidnight for tick events.
+    /// Event handler. Called by TimerReminder for tick events.
     /// </summary>
-    private void TimerMidnight_Tick(DateTime Time)
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void TimerReminder_Tick(object sender, EventArgs e)
     {
-      if ( !Globals.IsReady ) return;
-      this.SyncUI(() =>
-      {
-        System.Threading.Thread.Sleep(1000);
-        CheckRegenerateCalendar();
-        CalendarMonth.Refresh();
-        if ( SQLiteDate.ToDateTime(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
-          GoToDate(DateTime.Today);
-        if ( Settings.CheckUpdateEveryWeekWhileRunning )
-          ActionWebCheckUpdate_Click(null, null);
-      });
+      DoTimerReminder();
     }
 
     /// <summary>
@@ -1098,39 +996,11 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by TimerReminder for tick events.
+    /// Event handler. Called by TimerMidnight for tick events.
     /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    internal void TimerReminder_Tick(object sender, EventArgs e)
+    private void TimerMidnight_Tick(DateTime Time)
     {
-      if ( TimerMutex ) return;
-      if ( !Globals.IsReady ) return;
-      if ( !TimerReminder.Enabled ) return;
-      TimerMutex = true;
-      try
-      {
-        if ( !IsForegroundFullScreenOrScreensaver() )
-        {
-          if ( Settings.ReminderShabatEnabled )
-            CheckShabat();
-          if ( Settings.ReminderCelebrationsEnabled )
-          {
-            CheckCelebrationDay();
-            CheckEvents();
-          }
-        }
-      }
-      catch ( Exception ex )
-      {
-        if ( TimerErrorShown ) return;
-        TimerErrorShown = true;
-        ex.Manage();
-      }
-      finally
-      {
-        TimerMutex = false;
-      }
+      DoTimerMidnight();
     }
 
   }

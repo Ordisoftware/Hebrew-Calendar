@@ -149,7 +149,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClear.TabIndex" type="System.Int32, mscorlib">
-    <value>61</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ActionClear.Name" xml:space="preserve">
     <value>ActionClear</value>

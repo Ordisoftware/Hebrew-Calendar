@@ -24,12 +24,14 @@ namespace Ordisoftware.HebrewCalendar
 
     static public int? Run()
     {
-      var form = new SelectSuspendDelayForm();
-      if ( form.ShowDialog() != DialogResult.OK ) return null;
-      var item = form.SelectDelay.SelectedItem;
-      int value = ((SuspendDelayItem)form.SelectDelay.SelectedItem).Minutes;
-      if ( value == -1 ) value = (int)form.EditDelay.Value;
-      return value;
+      using ( var form = new SelectSuspendDelayForm() )
+      {
+        if ( form.ShowDialog() != DialogResult.OK ) return null;
+        var item = form.SelectDelay.SelectedItem;
+        int value = ( (SuspendDelayItem)form.SelectDelay.SelectedItem ).Minutes;
+        if ( value == -1 ) value = (int)form.EditDelay.Value;
+        return value;
+      }
     }
 
     private SelectSuspendDelayForm()
@@ -40,6 +42,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private void SelectSuspendDelayForm_Load(object sender, EventArgs e)
     {
+      this.CenterToMainFormElseScreen();
       SelectDelay.Items.AddRange(Translations.SuspendReminderDelays.GetLang().ToArray());
       SelectDelay.SelectedIndex = -1;
       foreach ( SuspendDelayItem item in SelectDelay.Items )

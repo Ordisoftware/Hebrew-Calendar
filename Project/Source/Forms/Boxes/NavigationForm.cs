@@ -104,7 +104,7 @@ namespace Ordisoftware.HebrewCalendar
 
     private DateTime _Date;
 
-    internal NavigationForm()
+    private NavigationForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
@@ -113,6 +113,11 @@ namespace Ordisoftware.HebrewCalendar
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
       this.SetLocation(ControlLocation.BottomRight);
+    }
+
+    public void Relocalize()
+    {
+      Date = Date;
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -143,10 +148,8 @@ namespace Ordisoftware.HebrewCalendar
 
     private void ActionSelectDay_Click(object sender, EventArgs e)
     {
-      var form = new SelectDayForm(true);
-      form.TopMost = true;
-      if ( form.ShowDialog() == DialogResult.OK )
-        MainForm.Instance.GoToDate(form.MonthCalendar.SelectionStart);
+      if ( SelectDayForm.Run(null, out var date, true, true) )
+        MainForm.Instance.GoToDate(date);
       else
         SystemManager.TryCatch(() => { ActiveControl = LabelDate; });
     }

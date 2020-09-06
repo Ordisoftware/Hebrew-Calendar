@@ -24,7 +24,7 @@ namespace Ordisoftware.HebrewCommon
     private TranslationsDictionary LocalizedTitle;
     private TranslationsDictionary LocalizedText;
 
-    public ShowTextForm()
+    private ShowTextForm()
     {
       InitializeComponent();
       Icon = Globals.MainForm.Icon;

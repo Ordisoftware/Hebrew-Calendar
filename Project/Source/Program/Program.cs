@@ -14,6 +14,7 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
@@ -112,8 +113,8 @@ namespace Ordisoftware.HebrewCalendar
         else
           Settings.LanguageSelected = Languages.Current;
       }
-      else
-        Settings.LanguageSelected = Languages.Current;
+      //else
+        //Languages.Current = Settings.LanguageSelected;
     }
 
     /// <summary>
@@ -129,6 +130,7 @@ namespace Ordisoftware.HebrewCalendar
       if ( initonly ) return;
       AboutBox.Instance.Hide();
       MainForm.Instance.ClearLists();
+      MessageBoxEx.CloseAll();
       string str = MainForm.Instance.CalendarText.Text;
       void update(Form form)
       {
@@ -142,6 +144,7 @@ namespace Ordisoftware.HebrewCalendar
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = MoonMonthsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
@@ -152,12 +155,25 @@ namespace Ordisoftware.HebrewCalendar
         if ( form is ShowTextForm formShowText )
           formShowText.RelocalizeText();
       }
+      // Menu information
+      var control = new CommonMenusControl();
+      var menu = control.MenuInformation;
+      var list = new List<ToolStripItem>();
+      foreach ( ToolStripItem item in menu.DropDownItems ) list.Add(item);
+      menu.DropDownItems.Clear();
+      MainForm.Instance.ActionInformation.DropDownItems.Clear();
+      MainForm.Instance.ActionInformation.DropDownItems.AddRange(list.ToArray());
+      control.AboutBoxHandler += MainForm.Instance.ActionAbout_Click;
+      control.WebCheckUpdateHandler += MainForm.Instance.ActionWebCheckUpdate_Click;
       MainForm.Instance.InitializeSpecialMenus();
+      // Various updates
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
-      MainForm.Instance.TimerReminder_Tick(null, null);
+      MainForm.Instance.DoTimerReminder();
       UndoRedoTextBox.Relocalize();
       MoonMonthsForm.Instance.Relocalize();
+      NavigationForm.Instance.Relocalize();
+      DatesDiffCalculatorForm.Instance.Relocalize();
       LoadingForm.Instance.Relocalize();
       DebugManager.TraceForm.Text = tempLogTitle;
       DebugManager.TraceForm.AppendText(tempLogContent);

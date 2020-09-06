@@ -30,6 +30,7 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageDateBookmarksForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionClear = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionOK = new System.Windows.Forms.Button();
       this.ListBox = new System.Windows.Forms.ListBox();
@@ -37,7 +38,6 @@
       this.ActionUp = new System.Windows.Forms.Button();
       this.ActionDown = new System.Windows.Forms.Button();
       this.ActionSort = new System.Windows.Forms.Button();
-      this.ActionClear = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -48,6 +48,15 @@
       this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionClear
+      // 
+      this.ActionClear.AllowDrop = true;
+      this.ActionClear.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionClear, "ActionClear");
+      this.ActionClear.Name = "ActionClear";
+      this.ActionClear.UseVisualStyleBackColor = true;
+      this.ActionClear.Click += new System.EventHandler(this.ActionClear_Click);
       // 
       // ActionCancel
       // 
@@ -100,16 +109,6 @@
       this.ActionSort.Name = "ActionSort";
       this.ActionSort.UseVisualStyleBackColor = true;
       this.ActionSort.Click += new System.EventHandler(this.ActionSort_Click);
-      // 
-      // ActionClear
-      // 
-      this.ActionClear.AllowDrop = true;
-      this.ActionClear.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionClear, "ActionClear");
-      this.ActionClear.Name = "ActionClear";
-      this.ActionClear.TabStop = false;
-      this.ActionClear.UseVisualStyleBackColor = true;
-      this.ActionClear.Click += new System.EventHandler(this.ActionClear_Click);
       // 
       // ManageDateBookmarksForm
       // 
