@@ -54,11 +54,12 @@ namespace Ordisoftware.HebrewCommon
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
-          var version = GetVersion(client);
+          var version = new Version(5, 1);//GetVersion(client);
           lastdone = DateTime.Now;
           LoadingForm.Instance.DoProgress();
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
-            return ProcessDownload(client, version);
+            //return ProcessDownload(client, version);
+            return ProcessDownload(client, new Version(4, 1));
           else
           if ( !auto )
             DisplayManager.ShowInformation(Localizer.NoNewVersionAvailable.GetLang());
@@ -155,10 +156,14 @@ namespace Ordisoftware.HebrewCommon
         Application.DoEvents();
       }
       if ( ex != null ) throw ex;
-      SystemManager.RunShell(tempfile, "/SP- /SILENT");
-      Globals.IsExiting = true;
-      SystemManager.Exit();
-      return true;
+      if ( SystemManager.RunShell(tempfile, "/SP- /SILENT") != null )
+      {
+        Globals.IsExiting = true;
+        SystemManager.Exit();
+        return true;
+      }
+      else
+        return false;
       void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
       {
         LoadingForm.Instance.SetProgress(e.ProgressPercentage);
