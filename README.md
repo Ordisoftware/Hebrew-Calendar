@@ -151,7 +151,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.09.08 - Version 5.0
+#### 2020.09.06 - Version 5.0
 
 - Add keyboard shortcuts to navigate in the calendar month view.
 - Add search gregorian month form.
@@ -176,6 +176,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Change default years interval generation to 10.
 - Change text report that is no more stored in the database but in a file to avoid problems when using hudge interval.
 - Add usage statistics form in tools menu.
+- Add option to enable or disable message boxes sounds.
+- Improve message boxes.
 - Improve check update to allow auto update or direct download or open app web page.
 - Improve debugger to support logging.
 - Improve exception form to view log.

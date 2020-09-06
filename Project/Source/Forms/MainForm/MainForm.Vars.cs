@@ -69,8 +69,8 @@ namespace Ordisoftware.HebrewCalendar
     private Dictionary<TorahEvent, bool> TorahEventRemindDayList
       = new Dictionary<TorahEvent, bool>();
 
-    internal readonly NullSafeList<Form> RemindCelebrationForms
-      = new NullSafeList<Form>();
+    internal readonly NullSafeList<ReminderForm> RemindCelebrationForms
+      = new NullSafeList<ReminderForm>();
 
     internal readonly NullSafeStringList RemindCelebrationDates
       = new NullSafeStringList();

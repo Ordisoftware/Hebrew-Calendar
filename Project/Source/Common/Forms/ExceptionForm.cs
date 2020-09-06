@@ -96,6 +96,16 @@ namespace Ordisoftware.HebrewCommon
     }
 
     /// <summary>
+    /// Event handler. Called by ExceptionForm for shown events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ExceptionForm_Shown(object sender, EventArgs e)
+    {
+      DisplayManager.DoSound(MessageBoxIcon.Error);
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionTerminate for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

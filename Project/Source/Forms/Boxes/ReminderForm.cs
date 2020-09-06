@@ -124,12 +124,13 @@ namespace Ordisoftware.HebrewCalendar
 
     }
 
-    static private void Flash(Form form)
+    static private void Flash(ReminderForm form)
     {
       form.Hide();
       System.Threading.Thread.Sleep(500);
       form.Show();
       form.BringToFront();
+      form.DoSound();
       BringMainForm();
     }
 
@@ -178,6 +179,14 @@ namespace Ordisoftware.HebrewCalendar
     private void ReminderForm_Shown(object sender, EventArgs e)
     {
       SetFormsLocation();
+      DoSound();
+    }
+
+    private void DoSound()
+    {
+      DisplayManager.DoSound(MessageBoxIcon.Warning);
+      Application.DoEvents();
+      System.Threading.Thread.Sleep(250);
     }
 
     private void Form_Click(object sender, EventArgs e)

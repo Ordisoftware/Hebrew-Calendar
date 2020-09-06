@@ -14,6 +14,7 @@
 /// <created> 2007-05 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Media;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -21,10 +22,45 @@ using System.Windows.Forms;
 namespace Ordisoftware.HebrewCommon
 {
 
-  public enum MessageBoxStyle
+  /// <summary>
+  /// Provide MessageBoxForm style enum.
+  /// </summary>
+  public enum MessageBoxFormStyle
   {
+
+    /// <summary>
+    /// Use standard Windows MessageBox class.
+    /// </summary>
     System,
+
+    /// <summary>
+    /// Use custom form.
+    /// </summary>
     Advanced
+
+  }
+
+  /// <summary>
+  /// Provide MessageBoxForm icon enum.
+  /// </summary>
+  public enum MessageBoxIconStyle
+  {
+
+    /// <summary>
+    /// Use system settings.
+    /// </summary>
+    System,
+
+    /// <summary>
+    /// Force none icon as information.
+    /// </summary>
+    ForceNone,
+
+    /// <summary>
+    /// Force information and question icon as none.
+    /// </summary>
+    ForceInformation,
+
   }
 
   /// <summary>
@@ -33,10 +69,9 @@ namespace Ordisoftware.HebrewCommon
   static public partial class DisplayManager
   {
 
-    static public bool IconInformationAsNone = false;
-    static public bool IconNoneAsInformation = true;
-
-    static public MessageBoxStyle MessageBoxStyle = MessageBoxStyle.Advanced;
+    static public bool AdvancedFormUseSounds = true;
+    static public MessageBoxFormStyle FormStyle = MessageBoxFormStyle.Advanced;
+    static public MessageBoxIconStyle IconStyle = MessageBoxIconStyle.ForceInformation;
 
     /// <summary>
     /// Indicates application title initialized from file version info or executable path.
@@ -59,6 +94,30 @@ namespace Ordisoftware.HebrewCommon
       }
     }
     static public string _Title;
+
+    /// <summary>
+    /// Play the sound associated to a message box icon.
+    /// </summary>
+    /// <param name="icon"></param>
+    static public void DoSound(MessageBoxIcon icon)
+    {
+      if ( !AdvancedFormUseSounds ) return;
+      switch ( icon )
+      {
+        case MessageBoxIcon.Information:
+          SystemSounds.Beep.Play();
+          break;
+        case MessageBoxIcon.Question:
+          SystemSounds.Hand.Play();
+          break;
+        case MessageBoxIcon.Warning:
+          SystemSounds.Exclamation.Play();
+          break;
+        case MessageBoxIcon.Error:
+          SystemSounds.Hand.Play();
+          break;
+      }
+    }
 
     /// <summary>
     /// Show a message.
@@ -91,17 +150,22 @@ namespace Ordisoftware.HebrewCommon
                                     MessageBoxButtons buttons = MessageBoxButtons.OK,
                                     MessageBoxIcon icon = MessageBoxIcon.None)
     {
-      if ( icon == MessageBoxIcon.None && IconInformationAsNone )
+      if ( icon == MessageBoxIcon.None 
+        && IconStyle == MessageBoxIconStyle.ForceInformation )
         icon = MessageBoxIcon.Information;
+      else
+      if ( ( icon == MessageBoxIcon.Information || icon == MessageBoxIcon.Question )
+        && IconStyle == MessageBoxIconStyle.ForceNone )
+        icon = MessageBoxIcon.None;
       DialogResult res = DialogResult.None;
       SystemManager.TryCatchManage(() => 
       {
-        switch (MessageBoxStyle)
+        switch ( FormStyle )
         {
-          case MessageBoxStyle.System:
+          case MessageBoxFormStyle.System:
             res = ShowWinForm(title, text, buttons, icon);
             break;
-          case MessageBoxStyle.Advanced:
+          case MessageBoxFormStyle.Advanced:
             res = ShowAdvancedForm(title, text, buttons, icon);
             break;
         }
@@ -125,8 +189,7 @@ namespace Ordisoftware.HebrewCommon
     /// <param name="text">The text.</param>
     static public void ShowInformation(string title, string text)
     {
-      var icon = IconInformationAsNone ? MessageBoxIcon.None : MessageBoxIcon.Information;
-      Show(title, text, MessageBoxButtons.OK, icon);
+      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     /// <summary>

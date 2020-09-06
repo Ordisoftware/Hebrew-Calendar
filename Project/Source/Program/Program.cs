@@ -44,7 +44,6 @@ namespace Ordisoftware.HebrewCalendar
     [STAThread]
     static void Main(string[] args)
     {
-      DisplayManager.IconInformationAsNone = true;
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
       Settings.CheckUpgradeRequired(ref upgrade);

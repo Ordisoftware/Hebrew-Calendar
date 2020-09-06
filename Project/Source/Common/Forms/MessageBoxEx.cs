@@ -37,6 +37,7 @@ namespace Ordisoftware.HebrewCommon
 
     private TranslationsDictionary LocalizedTitle;
     private TranslationsDictionary LocalizedText;
+    private MessageBoxIcon IconStyle;
     private int LabelMaxWidth;
     private bool AllowClose;
 
@@ -54,36 +55,20 @@ namespace Ordisoftware.HebrewCommon
       : this()
     {
       Text = title;
+      SetButtons(buttons);
       int labelInitialTop = Label.Top;
       int labelInitialHeight = Label.Height;
       LabelMaxWidth = width - 55;
-      if ( icon == MessageBoxIcon.None && DisplayManager.IconInformationAsNone )
+      if ( icon == MessageBoxIcon.None && DisplayManager.IconStyle == MessageBoxIconStyle.ForceInformation )
         icon = MessageBoxIcon.Information;
-      if ( icon == MessageBoxIcon.Information && DisplayManager.IconInformationAsNone )
+      else
+      if ( icon == MessageBoxIcon.Information && DisplayManager.IconStyle == MessageBoxIconStyle.ForceNone )
         icon = MessageBoxIcon.Information;
       if ( icon != MessageBoxIcon.None )
       {
-        switch ( icon )
-        {
-          case MessageBoxIcon.Information:
-            PictureBox.Image = SystemIcons.Information;
-            break;
-          case MessageBoxIcon.Question:
-            PictureBox.Image = SystemIcons.Question;
-            SystemSounds.Question.Play();
-            break;
-          case MessageBoxIcon.Warning:
-            PictureBox.Image = SystemIcons.Warning;
-            SystemSounds.Exclamation.Play();
-            break;
-          case MessageBoxIcon.Error:
-            PictureBox.Image = SystemIcons.Error;
-            SystemSounds.Exclamation.Play();
-            break;
-        }
+        SetIcon(icon);
         Label.Left = Label.Left + Label.Left / 2 + PictureBox.Width;
         Label.Top = Label.Top + (PictureBox.Height - Label.Height) / 2;
-        PictureBox.Visible = true;
         width += PictureBox.Width;
         LabelMaxWidth -= PictureBox.Width + PictureBox.Width / 2;
       }
@@ -97,6 +82,89 @@ namespace Ordisoftware.HebrewCommon
         Label.Top = labelInitialTop;
         Height -= Label.Top - labelInitialTop;
       }
+      this.CenterToFormElseMainFormElseScreen(ActiveForm);
+      Instances.Add(this);
+      IconStyle = icon;
+    }
+
+    public MessageBoxEx(TranslationsDictionary title,
+                        TranslationsDictionary text,
+                        int width = DefaultSmallWidth,
+                        MessageBoxButtons buttons = MessageBoxButtons.OK,
+                        MessageBoxIcon icon = MessageBoxIcon.None)
+      : this(title.GetLang(), text.GetLang(), width, buttons, icon)
+    {
+      LocalizedTitle = title;
+      LocalizedText = text;
+    }
+
+    public void RelocalizeText()
+    {
+      if ( LocalizedTitle != null ) Text = LocalizedTitle.GetLang();
+      if ( LocalizedText != null )
+      {
+        AutoSize = false;
+        Label.AutoSize = false;
+        Label.Text = "";
+        Label.SetTextJustified(LocalizedText.GetLang(), LabelMaxWidth);
+        AutoSize = true;
+        Label.AutoSize = true;
+      }
+    }
+
+    internal void ForceClose()
+    {
+      AllowClose = true;
+      Close();
+    }
+
+    private void MessageBoxEx_Shown(object sender, EventArgs e)
+    {
+      TopMost = LoadingForm.Instance.Visible;
+      DisplayManager.DoSound(IconStyle);
+    }
+
+    private void MessageBoxEx_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if ( Modal || AllowClose ) return;
+      e.Cancel = true;
+      Hide();
+    }
+
+    private void MessageBoxEx_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Instances.Remove(this);
+    }
+
+    private void ActionClose_Click(object sender, EventArgs e)
+    {
+      Close();
+    }
+
+    private void SetIcon(MessageBoxIcon icon)
+    {
+      switch ( icon )
+      {
+        case MessageBoxIcon.Information:
+          PictureBox.Image = SystemIcons.Information;
+          break;
+        case MessageBoxIcon.Question:
+          PictureBox.Image = SystemIcons.Question;
+          break;
+        case MessageBoxIcon.Warning:
+          PictureBox.Image = SystemIcons.Warning;
+          break;
+        case MessageBoxIcon.Error:
+          PictureBox.Image = SystemIcons.Error;
+          break;
+        default:
+          return;
+      }
+      PictureBox.Visible = true;
+    }
+
+    private void SetButtons(MessageBoxButtons buttons)
+    {
       switch ( buttons )
       {
         case MessageBoxButtons.OK:
@@ -143,61 +211,6 @@ namespace Ordisoftware.HebrewCommon
           CancelButton = ActionIgnore;
           break;
       }
-      this.CenterToFormElseMainFormElseScreen(ActiveForm);
-      Instances.Add(this);
-    }
-
-    public MessageBoxEx(TranslationsDictionary title,
-                        TranslationsDictionary text,
-                        int width = DefaultSmallWidth,
-                        MessageBoxButtons buttons = MessageBoxButtons.OK,
-                        MessageBoxIcon icon = MessageBoxIcon.None)
-      : this(title.GetLang(), text.GetLang(), width, buttons, icon)
-    {
-      LocalizedTitle = title;
-      LocalizedText = text;
-    }
-
-    public void RelocalizeText()
-    {
-      if ( LocalizedTitle != null ) Text = LocalizedTitle.GetLang();
-      if ( LocalizedText != null )
-      {
-        AutoSize = false;
-        Label.AutoSize = false;
-        Label.Text = "";
-        Label.SetTextJustified(LocalizedText.GetLang(), LabelMaxWidth);
-        AutoSize = true;
-        Label.AutoSize = true;
-      }
-    }
-
-    internal void ForceClose()
-    {
-      AllowClose = true;
-      Close();
-    }
-
-    private void MessageBoxEx_Shown(object sender, EventArgs e)
-    {
-      TopMost = LoadingForm.Instance.Visible;
-    }
-
-    private void MessageBoxEx_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      if ( Modal || AllowClose ) return;
-      e.Cancel = true;
-      Hide();
-    }
-
-    private void MessageBoxEx_FormClosed(object sender, FormClosedEventArgs e)
-    {
-      Instances.Remove(this);
-    }
-
-    private void ActionClose_Click(object sender, EventArgs e)
-    {
-      Close();
     }
 
   }
