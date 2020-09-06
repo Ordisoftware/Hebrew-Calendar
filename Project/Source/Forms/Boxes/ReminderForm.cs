@@ -184,7 +184,9 @@ namespace Ordisoftware.HebrewCalendar
 
     private void DoSound()
     {
-      DisplayManager.DoSound(MessageBoxIcon.Information);
+      DisplayManager.DoSound(MessageBoxIcon.Warning);
+      Application.DoEvents();
+      System.Threading.Thread.Sleep(250);
     }
 
     private void Form_Click(object sender, EventArgs e)
