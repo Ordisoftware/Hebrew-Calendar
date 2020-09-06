@@ -588,6 +588,9 @@ namespace Ordisoftware.HebrewCalendar
           Globals.AllowClose = true;
           Close();
         }
+        else
+        if ( Visible )
+          BringToFront();
       }
       finally
       {
