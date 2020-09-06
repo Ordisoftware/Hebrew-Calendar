@@ -54,12 +54,11 @@ namespace Ordisoftware.HebrewCommon
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
-          var version = new Version(5, 1);//GetVersion(client);
+          var version = GetVersion(client);
           lastdone = DateTime.Now;
           LoadingForm.Instance.DoProgress();
           if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
-            //return ProcessDownload(client, version);
-            return ProcessDownload(client, new Version(4, 1));
+            return ProcessDownload(client, version);
           else
           if ( !auto )
             DisplayManager.ShowInformation(Localizer.NoNewVersionAvailable.GetLang());
