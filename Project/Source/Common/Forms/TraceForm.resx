@@ -353,7 +353,7 @@
     <value>Courier New, 8.25pt</value>
   </data>
   <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>10, 10</value>
   </data>
   <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>864, 603</value>
@@ -374,33 +374,9 @@
     <value>Ordisoftware.HebrewCommon.RichTextBoxEx, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
-    <value>PanelTextBox</value>
-  </data>
-  <data name="&gt;&gt;TextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PanelTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="PanelTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="PanelTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 603</value>
-  </data>
-  <data name="PanelTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="&gt;&gt;PanelTextBox.Name" xml:space="preserve">
-    <value>PanelTextBox</value>
-  </data>
-  <data name="&gt;&gt;PanelTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelTextBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PanelTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -109,6 +109,13 @@ namespace Ordisoftware.HebrewCalendar
         [Language.FR] = "Voulez-vous configurer le shabat personnel ?"
       };
 
+    static public readonly TranslationsDictionary TextReportCopiedToClipboard
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Text report has been copied to the clipboard.",
+        [Language.FR] = "Le rapport textuel a été copié dans le presse-papier."
+      };
+
     static public readonly TranslationsDictionary DateNotFound
       = new TranslationsDictionary
       {

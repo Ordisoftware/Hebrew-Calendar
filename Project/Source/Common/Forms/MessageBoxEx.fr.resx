@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ActionClose.Text" xml:space="preserve">
-    <value>Fermer</value>
+  <data name="ActionNo.Text" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="ActionRetry.Text" xml:space="preserve">
+    <value>Réessayer</value>
+  </data>
+  <data name="ActionIgnore.Text" xml:space="preserve">
+    <value>Ignorer</value>
+  </data>
+  <data name="ActionCancel.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="ActionYes.Text" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="ActionAbort.Text" xml:space="preserve">
+    <value>Abandonner</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Boite de dialogue</value>
   </data>
 </root>

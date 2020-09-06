@@ -131,8 +131,7 @@ namespace Ordisoftware.HebrewCommon
           CancelButton = ActionIgnore;
           break;
       }
-      var form = ActiveForm;
-      this.CenterToFormElseMainFormElseScreen(form);
+      this.CenterToFormElseMainFormElseScreen(ActiveForm);
     }
 
     public MessageBoxEx(TranslationsDictionary title,

@@ -32,6 +32,7 @@
       this.ActionNo = new System.Windows.Forms.Button();
       this.Label = new System.Windows.Forms.Label();
       this.PanelMain = new System.Windows.Forms.Panel();
+      this.PictureBox = new System.Windows.Forms.PictureBox();
       this.ActionRetry = new System.Windows.Forms.Button();
       this.ActionIgnore = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
@@ -39,10 +40,9 @@
       this.ActionYes = new System.Windows.Forms.Button();
       this.ActionAbort = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.FlowLayoutPanel();
-      this.PictureBox = new System.Windows.Forms.PictureBox();
       this.PanelMain.SuspendLayout();
-      this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+      this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
       // ActionNo
@@ -64,6 +64,12 @@
       this.PanelMain.Controls.Add(this.Label);
       this.PanelMain.Controls.Add(this.PictureBox);
       this.PanelMain.Name = "PanelMain";
+      // 
+      // PictureBox
+      // 
+      resources.ApplyResources(this.PictureBox, "PictureBox");
+      this.PictureBox.Name = "PictureBox";
+      this.PictureBox.TabStop = false;
       // 
       // ActionRetry
       // 
@@ -119,12 +125,6 @@
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
-      // PictureBox
-      // 
-      resources.ApplyResources(this.PictureBox, "PictureBox");
-      this.PictureBox.Name = "PictureBox";
-      this.PictureBox.TabStop = false;
-      // 
       // MessageBoxEx
       // 
       resources.ApplyResources(this, "$this");
@@ -140,8 +140,8 @@
       this.Shown += new System.EventHandler(this.MessageBoxEx_Shown);
       this.PanelMain.ResumeLayout(false);
       this.PanelMain.PerformLayout();
-      this.PanelBottom.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+      this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 

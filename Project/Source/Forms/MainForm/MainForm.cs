@@ -717,6 +717,7 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionCopyReportToClipboard_Click(object sender, EventArgs e)
     {
       Clipboard.SetText(CalendarText.Text);
+      DisplayManager.Show(Translations.TextReportCopiedToClipboard.GetLang());
     }
 
     /// <summary>

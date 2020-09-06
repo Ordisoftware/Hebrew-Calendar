@@ -32,10 +32,8 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparator = new System.Windows.Forms.Panel();
-      this.PanelTextBox = new System.Windows.Forms.Panel();
       this.TextBox = new Ordisoftware.HebrewCommon.RichTextBoxEx();
       this.PanelBottom.SuspendLayout();
-      this.PanelTextBox.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -56,18 +54,10 @@
       resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
       this.PanelSeparator.Name = "PanelSeparator";
       // 
-      // PanelTextBox
-      // 
-      this.PanelTextBox.BackColor = System.Drawing.SystemColors.Window;
-      this.PanelTextBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-      this.PanelTextBox.Controls.Add(this.TextBox);
-      resources.ApplyResources(this.PanelTextBox, "PanelTextBox");
-      this.PanelTextBox.Name = "PanelTextBox";
-      // 
       // TextBox
       // 
       this.TextBox.BackColor = System.Drawing.SystemColors.Window;
-      this.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.TextBox, "TextBox");
       this.TextBox.Name = "TextBox";
       this.TextBox.ReadOnly = true;
@@ -80,7 +70,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.PanelTextBox);
+      this.Controls.Add(this.TextBox);
       this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.PanelBottom);
       this.MaximizeBox = false;
@@ -88,7 +78,6 @@
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowTextForm_FormClosing);
       this.PanelBottom.ResumeLayout(false);
-      this.PanelTextBox.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -96,7 +85,6 @@
     #endregion
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Panel PanelSeparator;
-    private System.Windows.Forms.Panel PanelTextBox;
     internal RichTextBoxEx TextBox;
     private System.Windows.Forms.Panel PanelBottom;
   }

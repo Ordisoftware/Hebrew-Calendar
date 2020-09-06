@@ -174,8 +174,7 @@ namespace Ordisoftware.HebrewCommon
         {
           form.Restore();
           if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
-          form.Activate();
-          form.BringToFront();
+          form.ForceBringToFront();
         }
         else
         {
@@ -191,6 +190,14 @@ namespace Ordisoftware.HebrewCommon
         if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
         form.Show();
       }
+    }
+
+    static public void ForceBringToFront(this Form form)
+    {
+      var temp = form.TopMost;
+      form.TopMost = true;
+      form.BringToFront();
+      form.TopMost = temp;
     }
 
     /// <summary>
