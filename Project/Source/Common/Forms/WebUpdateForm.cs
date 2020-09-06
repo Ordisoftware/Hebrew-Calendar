@@ -53,6 +53,12 @@ namespace Ordisoftware.HebrewCommon
     {
       SystemManager.OpenWebLink((string)( (LinkLabel)sender ).Tag);
     }
+
+    private void WebUpdateForm_Shown(object sender, EventArgs e)
+    {
+      if ( DisplayManager.AdvancedFormUseSounds )
+        System.Media.SystemSounds.Hand.Play();
+    }
   }
 
 }
