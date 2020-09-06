@@ -61,7 +61,7 @@ namespace Ordisoftware.HebrewCommon
       Globals.Settings.Save();
     }
 
-    private void ShowTextForm_FormClosing(object sender, FormClosingEventArgs e)
+    private void TraceForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       e.Cancel = true;
       Hide();

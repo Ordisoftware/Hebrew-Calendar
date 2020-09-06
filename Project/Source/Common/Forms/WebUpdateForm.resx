@@ -241,7 +241,7 @@
     <value>116, 17</value>
   </data>
   <data name="SelectInstall.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
+    <value>0</value>
   </data>
   <data name="SelectInstall.Text" xml:space="preserve">
     <value>Install automatically</value>
@@ -268,7 +268,7 @@
     <value>95, 17</value>
   </data>
   <data name="SelectDownload.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
+    <value>1</value>
   </data>
   <data name="SelectDownload.Text" xml:space="preserve">
     <value>Download only</value>
@@ -298,7 +298,7 @@
     <value>75, 13</value>
   </data>
   <data name="ActionReleaseNotes.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="ActionReleaseNotes.Text" xml:space="preserve">
     <value>Release notes</value>

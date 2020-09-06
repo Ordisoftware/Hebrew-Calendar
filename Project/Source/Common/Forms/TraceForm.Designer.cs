@@ -30,13 +30,13 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraceForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionOpenLogsFolder = new System.Windows.Forms.Button();
       this.TrackBarFontSize = new System.Windows.Forms.TrackBar();
       this.LabelLinesCount = new System.Windows.Forms.Label();
       this.ActionClearLogs = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.PanelTextBox = new System.Windows.Forms.Panel();
-      this.ActionOpenLogsFolder = new System.Windows.Forms.Button();
       this.TextBox = new Ordisoftware.HebrewCommon.RichTextBoxEx();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).BeginInit();
@@ -52,6 +52,14 @@
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionOpenLogsFolder
+      // 
+      resources.ApplyResources(this.ActionOpenLogsFolder, "ActionOpenLogsFolder");
+      this.ActionOpenLogsFolder.FlatAppearance.BorderSize = 0;
+      this.ActionOpenLogsFolder.Name = "ActionOpenLogsFolder";
+      this.ActionOpenLogsFolder.UseVisualStyleBackColor = true;
+      this.ActionOpenLogsFolder.Click += new System.EventHandler(this.ActionOpenLogsFolder_Click);
       // 
       // TrackBarFontSize
       // 
@@ -72,7 +80,6 @@
       resources.ApplyResources(this.ActionClearLogs, "ActionClearLogs");
       this.ActionClearLogs.FlatAppearance.BorderSize = 0;
       this.ActionClearLogs.Name = "ActionClearLogs";
-      this.ActionClearLogs.TabStop = false;
       this.ActionClearLogs.UseVisualStyleBackColor = true;
       this.ActionClearLogs.Click += new System.EventHandler(this.ActionClearLogs_Click);
       // 
@@ -95,15 +102,6 @@
       resources.ApplyResources(this.PanelTextBox, "PanelTextBox");
       this.PanelTextBox.Name = "PanelTextBox";
       // 
-      // ActionOpenLogsFolder
-      // 
-      resources.ApplyResources(this.ActionOpenLogsFolder, "ActionOpenLogsFolder");
-      this.ActionOpenLogsFolder.FlatAppearance.BorderSize = 0;
-      this.ActionOpenLogsFolder.Name = "ActionOpenLogsFolder";
-      this.ActionOpenLogsFolder.TabStop = false;
-      this.ActionOpenLogsFolder.UseVisualStyleBackColor = true;
-      this.ActionOpenLogsFolder.Click += new System.EventHandler(this.ActionOpenLogsFolder_Click);
-      // 
       // TextBox
       // 
       this.TextBox.BackColor = System.Drawing.SystemColors.Window;
@@ -112,6 +110,7 @@
       this.TextBox.Name = "TextBox";
       this.TextBox.ReadOnly = true;
       this.TextBox.SelectionAlignment = Ordisoftware.HebrewCommon.TextAlign.Left;
+      this.TextBox.TabStop = false;
       this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
       // 
       // TraceForm
@@ -127,7 +126,7 @@
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.Activated += new System.EventHandler(this.LogForm_Activated);
       this.Deactivate += new System.EventHandler(this.TraceForm_Deactivate);
-      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowTextForm_FormClosing);
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TraceForm_FormClosing);
       this.Load += new System.EventHandler(this.LogForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
@@ -141,11 +140,11 @@
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Panel PanelSeparator;
     private System.Windows.Forms.Panel PanelTextBox;
-    internal RichTextBoxEx TextBox;
     public System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Label LabelLinesCount;
     private System.Windows.Forms.Button ActionClearLogs;
     private System.Windows.Forms.TrackBar TrackBarFontSize;
     private System.Windows.Forms.Button ActionOpenLogsFolder;
+    internal RichTextBoxEx TextBox;
   }
 }

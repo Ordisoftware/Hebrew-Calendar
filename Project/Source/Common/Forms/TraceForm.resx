@@ -151,7 +151,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionOpenLogsFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>118</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionOpenLogsFolder.Name" xml:space="preserve">
     <value>ActionOpenLogsFolder</value>
@@ -178,7 +178,7 @@
     <value>80, 20</value>
   </data>
   <data name="TrackBarFontSize.TabIndex" type="System.Int32, mscorlib">
-    <value>85</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;TrackBarFontSize.Name" xml:space="preserve">
     <value>TrackBarFontSize</value>
@@ -254,7 +254,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionClearLogs.TabIndex" type="System.Int32, mscorlib">
-    <value>83</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ActionClearLogs.Name" xml:space="preserve">
     <value>ActionClearLogs</value>
@@ -281,7 +281,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>0</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>
@@ -359,7 +359,7 @@
     <value>864, 603</value>
   </data>
   <data name="TextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
+    <value>0</value>
   </data>
   <data name="TextBox.Text" xml:space="preserve">
     <value />
