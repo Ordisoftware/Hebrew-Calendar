@@ -16,7 +16,7 @@ using System;
 using System.Globalization;
 using Keith_Burnett_moonr2cs;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>

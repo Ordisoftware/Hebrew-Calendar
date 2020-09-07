@@ -6,7 +6,7 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="SystemStatistics" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>Ordisoftware.HebrewCommon.SystemStatistics, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>Ordisoftware.Core.SystemStatistics, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
    <TypeUISetting>
       <PropertyUISettings>
          <PropertyUISetting Name="MemoryPaged">

@@ -1,8 +1,8 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Ordisoftware.HebrewCalendar.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Ordisoftware.Hebrew.Calendar.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="MainFormPosition" Type="Ordisoftware.HebrewCommon.ControlLocation" Scope="User">
+    <Setting Name="MainFormPosition" Type="Ordisoftware.Core.ControlLocation" Scope="User">
       <Value Profile="(Default)">Center</Value>
     </Setting>
     <Setting Name="MainFormLeft" Type="System.Int32" Scope="User">
@@ -38,7 +38,7 @@
     <Setting Name="ShabatDay" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">6</Value>
     </Setting>
-    <Setting Name="CurrentView" Type="Ordisoftware.HebrewCalendar.ViewMode" Scope="User">
+    <Setting Name="CurrentView" Type="Ordisoftware.Hebrew.Calendar.ViewMode" Scope="User">
       <Value Profile="(Default)">Month</Value>
     </Setting>
     <Setting Name="GPSLatitude" Type="System.String" Scope="User">
@@ -70,7 +70,7 @@
     <Setting Name="NavigateBottomColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Honeydew</Value>
     </Setting>
-    <Setting Name="TrayIconClickOpen" Type="Ordisoftware.HebrewCalendar.TrayIconClickOpen" Scope="User">
+    <Setting Name="TrayIconClickOpen" Type="Ordisoftware.Hebrew.Calendar.TrayIconClickOpen" Scope="User">
       <Value Profile="(Default)">MainForm</Value>
     </Setting>
     <Setting Name="StartupHide" Type="System.Boolean" Scope="User">
@@ -151,7 +151,7 @@
     <Setting Name="CheckUpdateAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="LanguageSelected" Type="Ordisoftware.HebrewCommon.Language" Scope="User">
+    <Setting Name="LanguageSelected" Type="Ordisoftware.Core.Language" Scope="User">
       <Value Profile="(Default)">None</Value>
     </Setting>
     <Setting Name="RemindCelebrationHoursBefore" Type="System.Decimal" Scope="User">
@@ -268,7 +268,7 @@
     <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
       <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
     </Setting>
-    <Setting Name="MoonMonthsFormUseColors" Type="Ordisoftware.HebrewCalendar.MoonMonthsListColors" Scope="User">
+    <Setting Name="MoonMonthsFormUseColors" Type="Ordisoftware.Hebrew.Calendar.MoonMonthsListColors" Scope="User">
       <Value Profile="(Default)">Pastel</Value>
     </Setting>
     <Setting Name="MoonMonthsFormLocation" Type="System.Drawing.Point" Scope="User">

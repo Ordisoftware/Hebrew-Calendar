@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewCalendar
+﻿namespace Ordisoftware.Hebrew.Calendar
 {
   partial class MainForm
   {
@@ -144,7 +144,7 @@
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
-      this.CalendarMonth = new Calendar.NET.Calendar();
+      this.CalendarMonth = new global::Calendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -159,9 +159,9 @@
       this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.HebrewCalendar.Data.DataSet();
-      this.LunisolarDaysTableAdapter = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
-      this.TableAdapterManager = new Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager();
+      this.DataSet = new Ordisoftware.Hebrew.Calendar.Data.DataSet();
+      this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
+      this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1075,7 +1075,7 @@
       this.CalendarMonth.AllowEditingEvents = false;
       this.CalendarMonth.BackColor = System.Drawing.Color.White;
       this.CalendarMonth.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
-      this.CalendarMonth.CalendarView = Calendar.NET.CalendarViews.Month;
+      this.CalendarMonth.CalendarView = global::Calendar.NET.CalendarViews.Month;
       this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1216,7 +1216,7 @@
       // 
       this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
-      this.TableAdapterManager.UpdateOrder = Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+      this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
       // MainForm
       // 
@@ -1334,7 +1334,7 @@
     private System.Windows.Forms.ToolStripButton ActionPrint;
     private System.Windows.Forms.PrintDialog PrintDialog;
     private System.Windows.Forms.ToolStripSeparator Sep1;
-    internal Calendar.NET.Calendar CalendarMonth;
+    internal global::Calendar.NET.Calendar CalendarMonth;
     internal System.Windows.Forms.Panel PanelViewMonth;
     private System.Windows.Forms.Timer TimerBallon;
     private System.Windows.Forms.Timer TimerTrayMouseMove;

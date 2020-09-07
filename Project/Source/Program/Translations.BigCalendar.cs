@@ -13,9 +13,9 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>

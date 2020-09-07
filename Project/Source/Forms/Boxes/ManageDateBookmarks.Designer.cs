@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewCalendar
+﻿namespace Ordisoftware.Hebrew.Calendar
 {
   partial class ManageDateBookmarksForm
   {

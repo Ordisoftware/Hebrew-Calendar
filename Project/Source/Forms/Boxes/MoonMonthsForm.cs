@@ -15,9 +15,10 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
+using Ordisoftware.Hebrew;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   public partial class MoonMonthsForm : Form
@@ -51,7 +52,7 @@ namespace Ordisoftware.HebrewCalendar
       CreateControls();
       ActiveControl = ActionClose;
       ActionEditFiles.Visible = Program.MoonMonthsMeanings[Languages.Current].Configurable;
-      ActionSearchOnline.InitializeFromProviders(Globals.OnlineWordProviders, (sender, e) =>
+      ActionSearchOnline.InitializeFromProviders(ProvidersCollection.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         string str = Program.MoonMonthsUnicode[(int)LastControl.Tag].Replace(" א", "").Replace(" ב", "");
@@ -118,8 +119,8 @@ namespace Ordisoftware.HebrewCalendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      SystemManager.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]),
-                                      Program.Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]),
+                                    Program.Settings.HebrewLettersExe);
     }
 
     private void ActionCopyFontChars_Click(object sender, EventArgs e)

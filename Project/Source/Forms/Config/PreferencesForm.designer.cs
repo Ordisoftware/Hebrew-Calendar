@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewCalendar
+﻿namespace Ordisoftware.Hebrew.Calendar
 {
   partial class PreferencesForm
   {
@@ -162,12 +162,12 @@
       this.GroupBoxMaxYearsInterval = new System.Windows.Forms.GroupBox();
       this.LabelYearsIntervalInfo = new System.Windows.Forms.Label();
       this.MenuPredefinedYears = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditHebrewLettersPath = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditGPSLatitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -1281,7 +1281,7 @@
       // 
       // EditAutoGenerateYearsInterval
       // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
       this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
       this.EditAutoGenerateYearsInterval.ReadOnly = true;
@@ -1290,7 +1290,7 @@
       // EditHebrewLettersPath
       // 
       this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
@@ -1298,14 +1298,14 @@
       // EditMoonDayTextFormat
       // 
       this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
       this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
       this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
       // 
       // EditGPSLatitude
       // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
       this.EditGPSLatitude.Name = "EditGPSLatitude";
       this.EditGPSLatitude.ReadOnly = true;
@@ -1313,7 +1313,7 @@
       // 
       // EditTimeZone
       // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
       this.EditTimeZone.Name = "EditTimeZone";
       this.EditTimeZone.ReadOnly = true;
@@ -1321,7 +1321,7 @@
       // 
       // EditGPSLongitude
       // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
       this.EditGPSLongitude.Name = "EditGPSLongitude";
       this.EditGPSLongitude.ReadOnly = true;
@@ -1397,8 +1397,8 @@
     private System.Windows.Forms.Label LabelFontName;
     private System.Windows.Forms.ComboBox EditFontName;
     private System.Windows.Forms.ComboBox EditShabatDay;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditGPSLatitude;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditGPSLongitude;
+    private Ordisoftware.Core.UndoRedoTextBox EditGPSLatitude;
+    private Ordisoftware.Core.UndoRedoTextBox EditGPSLongitude;
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.LinkLabel ActionUsePersonalShabat;
     private System.Windows.Forms.GroupBox GroupBoxGPS;
@@ -1485,7 +1485,7 @@
     private System.Windows.Forms.CheckBox EditAutoOpenExportFolder;
     private System.Windows.Forms.CheckBox EditVacuumAtStartup;
     private System.Windows.Forms.Button ActionSelectHebrewLettersPath;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditHebrewLettersPath;
+    private Ordisoftware.Core.UndoRedoTextBox EditHebrewLettersPath;
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
     private System.Windows.Forms.CheckBox EditDebuggerEnabled;
     private System.Windows.Forms.Label LabelColorText;
@@ -1497,10 +1497,10 @@
     internal System.Windows.Forms.Panel EditCalendarColorNoDay;
     private System.Windows.Forms.Panel PanelReminderColors;
     private System.Windows.Forms.GroupBox GroupBoxMoonDayTextFormat;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditMoonDayTextFormat;
+    private Ordisoftware.Core.UndoRedoTextBox EditMoonDayTextFormat;
     private System.Windows.Forms.Button ActionMoonDayTextFormatReset;
     private System.Windows.Forms.Button ActionMoonDayTextFormatHelp;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditTimeZone;
+    private Ordisoftware.Core.UndoRedoTextBox EditTimeZone;
     private System.Windows.Forms.ContextMenuStrip MenuSelectMoonDayTextFormat;
     private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem1;
@@ -1520,7 +1520,7 @@
     private System.Windows.Forms.Button ActionAutoGenerateHelp;
     private System.Windows.Forms.Button SelectAutoGenerateYearsInterval;
     private System.Windows.Forms.ContextMenuStrip MenuPredefinedYears;
-    private HebrewCommon.UndoRedoTextBox EditAutoGenerateYearsInterval;
+    private Ordisoftware.Core.UndoRedoTextBox EditAutoGenerateYearsInterval;
     private System.Windows.Forms.CheckBox EditBigCalendarWarning;
     private System.Windows.Forms.CheckBox EditLogEnabled;
   }

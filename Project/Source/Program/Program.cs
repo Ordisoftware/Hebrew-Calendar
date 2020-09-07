@@ -21,9 +21,10 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.Pipes;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
+using Ordisoftware.Hebrew;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
@@ -54,8 +55,8 @@ namespace Ordisoftware.HebrewCalendar
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       UpdateLocalization(true);
-      DebugManager.TraceEnabled = Settings.TraceEnabled;
       DebugManager.Enabled = Settings.DebuggerEnabled;
+      DebugManager.TraceEnabled = Settings.TraceEnabled;
       DebugManager.DeaultShowExceptionMode = ShowExceptionMode.Advanced;
       Language lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments(args, ref lang);

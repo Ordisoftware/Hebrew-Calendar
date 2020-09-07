@@ -1,7 +1,7 @@
-#define MyAppVersion "5.0"
+#define MyAppVersion "5.1"
 #define MyAppName "Hebrew Calendar"
 #define MyAppNameNoSpace "HebrewCalendar"
-#define MyAppExeName "Ordisoftware.HebrewCalendar.exe"
+#define MyAppExeName "Ordisoftware.Hebrew.Calendar.exe"
 #define MyAppPublisher "Ordisoftware"
 #define MyAppURL "https://www.ordisoftware.com/projects/hebrew-calendar"
 

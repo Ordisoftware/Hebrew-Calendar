@@ -14,7 +14,7 @@
 /// <edited> 2020-08 </edited>
 using System;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>

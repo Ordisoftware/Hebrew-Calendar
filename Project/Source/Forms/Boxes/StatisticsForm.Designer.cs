@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewCalendar
+﻿namespace Ordisoftware.Hebrew.Calendar
 {
   partial class StatisticsForm
   {
@@ -114,8 +114,8 @@
       this.memoryMaxGCUsageLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxSystem = new System.Windows.Forms.GroupBox();
       this.executableModeLabel1 = new System.Windows.Forms.Label();
-      this.operatingSystemTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.processorNameTextBox = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.operatingSystemTextBox = new Ordisoftware.Core.UndoRedoTextBox();
+      this.processorNameTextBox = new Ordisoftware.Core.UndoRedoTextBox();
       this.GroupBoxRunning = new System.Windows.Forms.GroupBox();
       this.LabelApplication1 = new System.Windows.Forms.Label();
       this.GroupBoxSystemLoad = new System.Windows.Forms.GroupBox();
@@ -125,9 +125,9 @@
       this.ActionOpenFolderUserLocalData = new System.Windows.Forms.Button();
       this.ActionOpenFolderUserData = new System.Windows.Forms.Button();
       this.ActionOpenFolderApplication = new System.Windows.Forms.Button();
-      this.EditOpenFolderUserLocalData = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditFolderUserData = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
-      this.EditFolderApplication = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditOpenFolderUserLocalData = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditFolderUserData = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditFolderApplication = new Ordisoftware.Core.UndoRedoTextBox();
       this.PanelBottomOuter = new System.Windows.Forms.Panel();
       this.PanelFolders = new System.Windows.Forms.Panel();
       dBEventsCountLabel = new System.Windows.Forms.Label();
@@ -404,9 +404,9 @@
       // EditAlwaysOnTop
       // 
       resources.ApplyResources(this.EditAlwaysOnTop, "EditAlwaysOnTop");
-      this.EditAlwaysOnTop.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.StatisticsFormAlwaysOnTop;
+      this.EditAlwaysOnTop.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.StatisticsFormAlwaysOnTop;
       this.EditAlwaysOnTop.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditAlwaysOnTop.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "StatisticsFormAlwaysOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditAlwaysOnTop.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "StatisticsFormAlwaysOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditAlwaysOnTop.Name = "EditAlwaysOnTop";
       this.EditAlwaysOnTop.UseVisualStyleBackColor = true;
       this.EditAlwaysOnTop.CheckedChanged += new System.EventHandler(this.EditAlwaysOnTop_CheckedChanged);
@@ -432,7 +432,7 @@
       // ApplicationStatisticsDataBindingSource
       // 
       this.ApplicationStatisticsDataBindingSource.AllowNew = false;
-      this.ApplicationStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.ApplicationStatistics);
+      this.ApplicationStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.ApplicationStatistics);
       // 
       // dBFileSizeLabel1
       // 
@@ -491,7 +491,7 @@
       // SystemStatisticsDataBindingSource
       // 
       this.SystemStatisticsDataBindingSource.AllowNew = false;
-      this.SystemStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.HebrewCommon.SystemStatistics);
+      this.SystemStatisticsDataBindingSource.DataSource = typeof(Ordisoftware.Core.SystemStatistics);
       // 
       // runningTimeLabel1
       // 
@@ -723,7 +723,7 @@
       // 
       // operatingSystemTextBox
       // 
-      this.operatingSystemTextBox.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.operatingSystemTextBox.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.operatingSystemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "Platform", true));
       resources.ApplyResources(this.operatingSystemTextBox, "operatingSystemTextBox");
       this.operatingSystemTextBox.Name = "operatingSystemTextBox";
@@ -732,7 +732,7 @@
       // 
       // processorNameTextBox
       // 
-      this.processorNameTextBox.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.processorNameTextBox.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       this.processorNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "Processor", true));
       resources.ApplyResources(this.processorNameTextBox, "processorNameTextBox");
       this.processorNameTextBox.Name = "processorNameTextBox";
@@ -825,7 +825,7 @@
       // 
       // EditOpenFolderUserLocalData
       // 
-      this.EditOpenFolderUserLocalData.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditOpenFolderUserLocalData.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditOpenFolderUserLocalData, "EditOpenFolderUserLocalData");
       this.EditOpenFolderUserLocalData.Name = "EditOpenFolderUserLocalData";
       this.EditOpenFolderUserLocalData.ReadOnly = true;
@@ -833,7 +833,7 @@
       // 
       // EditFolderUserData
       // 
-      this.EditFolderUserData.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditFolderUserData.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditFolderUserData, "EditFolderUserData");
       this.EditFolderUserData.Name = "EditFolderUserData";
       this.EditFolderUserData.ReadOnly = true;
@@ -841,7 +841,7 @@
       // 
       // EditFolderApplication
       // 
-      this.EditFolderApplication.CaretAfterPaste = Ordisoftware.HebrewCommon.CaretPositionAfterPaste.Ending;
+      this.EditFolderApplication.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditFolderApplication, "EditFolderApplication");
       this.EditFolderApplication.Name = "EditFolderApplication";
       this.EditFolderApplication.ReadOnly = true;
@@ -867,9 +867,9 @@
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.PanelFolders);
       this.Controls.Add(this.PanelBottomOuter);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "StatisticsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "StatisticsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.StatisticsFormLocation;
+      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.StatisticsFormLocation;
       this.MaximizeBox = false;
       this.Name = "StatisticsForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SystemStatisticsForm_FormClosing);
@@ -938,8 +938,8 @@
     private System.Windows.Forms.GroupBox GroupBoxSystem;
     private System.Windows.Forms.GroupBox GroupBoxRunning;
     private System.Windows.Forms.CheckBox EditAlwaysOnTop;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox operatingSystemTextBox;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox processorNameTextBox;
+    private Ordisoftware.Core.UndoRedoTextBox operatingSystemTextBox;
+    private Ordisoftware.Core.UndoRedoTextBox processorNameTextBox;
     private System.Windows.Forms.GroupBox GroupBoxSystemLoad;
     private System.Windows.Forms.Label generatePopulateDaysTimeLabel1;
     private System.Windows.Forms.Label generateAnalyseDaysTimeLabel1;
@@ -954,12 +954,12 @@
     private System.Windows.Forms.Panel PanelBottomOuter;
     private System.Windows.Forms.Label LabelApplication1;
     private System.Windows.Forms.GroupBox GroupBoxFolders;
-    private HebrewCommon.UndoRedoTextBox EditFolderApplication;
+    private Ordisoftware.Core.UndoRedoTextBox EditFolderApplication;
     private System.Windows.Forms.Button ActionOpenFolderUserLocalData;
     private System.Windows.Forms.Button ActionOpenFolderUserData;
     private System.Windows.Forms.Button ActionOpenFolderApplication;
-    private HebrewCommon.UndoRedoTextBox EditOpenFolderUserLocalData;
-    private HebrewCommon.UndoRedoTextBox EditFolderUserData;
+    private Ordisoftware.Core.UndoRedoTextBox EditOpenFolderUserLocalData;
+    private Ordisoftware.Core.UndoRedoTextBox EditFolderUserData;
     private System.Windows.Forms.Panel PanelFolders;
   }
 }

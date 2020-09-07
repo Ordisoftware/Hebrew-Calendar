@@ -14,10 +14,10 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
-using Ordisoftware.HebrewCalendar.Properties;
+using Ordisoftware.Core;
+using Ordisoftware.Hebrew.Calendar.Properties;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>

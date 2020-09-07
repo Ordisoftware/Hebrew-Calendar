@@ -16,9 +16,9 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   public partial class MainForm

@@ -21,9 +21,9 @@ using System.IO;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using Microsoft.Win32;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
@@ -148,7 +148,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
       {
-        DebugManager.Trace(TraceEvent.Data, e.CloseReason.ToStringFull());
+        DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
         return;
       }
       if ( !Globals.IsReady ) return;
@@ -166,7 +166,7 @@ namespace Ordisoftware.HebrewCalendar
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       DebugManager.Enter();
-      DebugManager.Trace(TraceEvent.Data, e.CloseReason.ToStringFull());
+      DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
       try
       {
         Settings.Store();
@@ -185,7 +185,7 @@ namespace Ordisoftware.HebrewCalendar
     internal void SessionEnding(object sender, SessionEndingEventArgs e)
     {
       DebugManager.Enter();
-      DebugManager.Trace(TraceEvent.Data, e.Reason.ToStringFull());
+      DebugManager.Trace(LogTraceEvent.Data, e.Reason.ToStringFull());
       try
       {
         if ( Globals.IsSessionEnding ) return;

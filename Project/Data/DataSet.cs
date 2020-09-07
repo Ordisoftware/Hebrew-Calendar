@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Ordisoftware.HebrewCalendar.Data
+namespace Ordisoftware.Hebrew.Calendar.Data
 {
 
   partial class DataSet

@@ -18,9 +18,9 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
 using System.Data;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   public partial class MainForm
@@ -126,7 +126,7 @@ namespace Ordisoftware.HebrewCalendar
         string errors = GenerateErrors.AsMultiline();
         GenerateErrors.Clear();
         errors = Settings.GetGPSText() + Globals.NL2 + errors;
-        DebugManager.Trace(TraceEvent.Data, errors);
+        DebugManager.Trace(LogTraceEvent.Data, errors);
         var form = new ShowTextForm(Text, errors, false, true, 600, 400, false, false);
         form.TextBox.Font = new System.Drawing.Font("Courier new", 8);
         form.ShowDialog();
