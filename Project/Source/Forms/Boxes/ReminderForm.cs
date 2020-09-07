@@ -116,12 +116,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( MainForm.Instance.Visible && MainForm.Instance.WindowState != FormWindowState.Minimized )
         MainForm.Instance.MenuShowHide_Click(null, null);
-      if ( LockSessionForm.Instance?.Visible ?? false)
-      {
-        LockSessionForm.Instance.Focus();
-        LockSessionForm.Instance.BringToFront();
-      }
-
+      Application.DoEvents();
     }
 
     static private void Flash(ReminderForm form)

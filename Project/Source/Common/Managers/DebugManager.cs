@@ -335,7 +335,8 @@ namespace Ordisoftware.HebrewCommon
             ShowAdvanced(einfo);
             break;
           default:
-            throw new NotImplementedExceptionEx(show.ToStringFull());
+            ShowSimple(einfo);
+            break;
         }
       }
       try

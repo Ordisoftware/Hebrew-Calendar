@@ -102,6 +102,11 @@ namespace Ordisoftware.HebrewCalendar
       finally
       {
         TimerMutex = false;
+        SystemManager.TryCatch(() =>
+        {
+          if ( LockSessionForm.Instance?.Visible ?? false )
+            LockSessionForm.Instance.Popup();
+        });
       }
     }
 

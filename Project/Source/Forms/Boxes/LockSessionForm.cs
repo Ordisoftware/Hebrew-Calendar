@@ -43,7 +43,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      ActiveControl = ActionCancel;
+      ActiveControl = ActionLock;
     }
 
     private void LockSessionForm_Load(object sender, EventArgs e)
