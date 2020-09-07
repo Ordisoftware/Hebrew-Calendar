@@ -325,9 +325,7 @@
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.Designer.cs">
       <DependentUpon>MoonMonthsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\LockSessionForm.MediaStop.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Source\Common\Managers\SystemManager.Media.cs" />
     <Compile Include="Source\Forms\Boxes\LockSessionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -404,9 +402,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Vars.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Screensaver.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Source\Common\Managers\DisplayManager.Screensaver.cs" />
     <Compile Include="Source\Forms\MainForm\MainForm.LoadData.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -13,7 +13,6 @@ LicenseFile=..\Project\License\MPL 2.0.rtf
 InfoBeforeFile=
 OutputDir=.\
 OutputBaseFilename={#MyAppPublisher}{#MyAppNameNoSpace}Setup-{#MyAppVersion}
-SetupIconFile=
 Compression=lzma2/max
 SolidCompression=true
 ChangesAssociations=true

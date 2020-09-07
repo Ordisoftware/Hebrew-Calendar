@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2020 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Copyright 2012-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -13,26 +13,21 @@
 /// <created> 2019-11 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.HebrewCommon
 {
 
-  public partial class LockSessionForm : Form
+  /// <summary>
+  /// Provide system manager.
+  /// </summary>
+  static public partial class SystemManager
   {
-
-    [DllImport("user32.dll")]
-    public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
-
     private const int APPCOMMAND_VOLUME_MUTE = 0x80000;
     private const int WM_APPCOMMAND = 0x319;
 
-    [DllImport("user32.dll", SetLastError = true)]
-    private static extern uint SendInput(uint numberOfInputs, INPUT[] inputs, int sizeOfInputStructure);
-
     [StructLayout(LayoutKind.Sequential)]
-    internal struct HARDWAREINPUT
+    private struct HARDWAREINPUT
     {
       public uint Msg;
       public ushort ParamL;
@@ -40,7 +35,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct KEYBDINPUT
+    private struct KEYBDINPUT
     {
       public ushort Vk;
       public ushort Scan;
@@ -50,7 +45,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct MOUSEINPUT
+    private struct MOUSEINPUT
     {
       public int X;
       public int Y;
@@ -61,7 +56,7 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     [StructLayout(LayoutKind.Explicit)]
-    internal struct MOUSEKEYBDHARDWAREINPUT
+    private struct MOUSEKEYBDHARDWAREINPUT
     {
       [FieldOffset(0)]
       public HARDWAREINPUT Hardware;
@@ -72,33 +67,38 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct INPUT
+    private struct INPUT
     {
       public uint Type;
       public MOUSEKEYBDHARDWAREINPUT Data;
     }
 
-    private void MediaStop()
+    [DllImport("user32.dll")]
+    static public extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern uint SendInput(uint numberOfInputs, INPUT[] inputs, int sizeOfInputStructure);
+
+    static public void MuteVolume(IntPtr? handle = null)
     {
-      INPUT input = new INPUT
-      {
-        Type = 1
-      };
-      input.Data.Keyboard = new KEYBDINPUT()
+      if ( !handle.HasValue ) handle = Globals.MainForm.Handle;
+      if ( !handle.HasValue ) return;
+      SendMessageW(handle.Value, WM_APPCOMMAND, handle.Value, (IntPtr)APPCOMMAND_VOLUME_MUTE);
+    }
+
+    static public void MediaStop()
+    {
+      INPUT input = new INPUT { Type = 1 };
+      input.Data.Keyboard = new KEYBDINPUT
       {
         Vk = 0xB2,
         Scan = 0,
         Flags = 0,
         Time = 0,
-        ExtraInfo = IntPtr.Zero,
+        ExtraInfo = IntPtr.Zero
       };
       INPUT[] inputs = new INPUT[] { input };
       SendInput(1, inputs, Marshal.SizeOf(typeof(INPUT)));
-    }
-
-    private void MuteVolume()
-    {
-      SendMessageW(Handle, WM_APPCOMMAND, Handle, (IntPtr)APPCOMMAND_VOLUME_MUTE);
     }
 
   }
