@@ -112,8 +112,6 @@ namespace Ordisoftware.HebrewCalendar
         else
           Settings.LanguageSelected = Languages.Current;
       }
-      //else
-        //Languages.Current = Settings.LanguageSelected;
     }
 
     /// <summary>
@@ -121,22 +119,22 @@ namespace Ordisoftware.HebrewCalendar
     /// </summary>
     static internal void UpdateLocalization(bool initonly = false)
     {
-      string lang = "en-US";
-      if ( Settings.LanguageSelected == Language.FR ) lang = "fr-FR";
-      var culture = new CultureInfo(lang);
-      Thread.CurrentThread.CurrentCulture = culture;
-      Thread.CurrentThread.CurrentUICulture = culture;
-      if ( initonly ) return;
-      AboutBox.Instance.Hide();
-      MainForm.Instance.ClearLists();
-      MessageBoxEx.CloseAll();
-      string str = MainForm.Instance.CalendarText.Text;
       void update(Form form)
       {
         new Infralution.Localization.CultureManager().ManagedControl = form;
         ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
         resources.Apply(form.Controls);
       }
+      string lang = "en-US";
+      if ( Settings.LanguageSelected == Language.FR ) lang = "fr-FR";
+      var culture = new CultureInfo(lang);
+      Thread.CurrentThread.CurrentCulture = culture;
+      Thread.CurrentThread.CurrentUICulture = culture;
+      if ( initonly ) return;
+      MessageBoxEx.CloseAll();
+      AboutBox.Instance.Hide();
+      MainForm.Instance.ClearLists();
+      string str = MainForm.Instance.CalendarText.Text;
       update(Globals.MainForm);
       string tempLogTitle = DebugManager.TraceForm.Text;
       string tempLogContent = DebugManager.TraceForm.TextBox.Text;
@@ -166,16 +164,16 @@ namespace Ordisoftware.HebrewCalendar
       control.WebCheckUpdateHandler += MainForm.Instance.ActionWebCheckUpdate_Click;
       MainForm.Instance.InitializeSpecialMenus();
       // Various updates
+      DebugManager.TraceForm.Text = tempLogTitle;
+      DebugManager.TraceForm.AppendText(tempLogContent);
+      LoadingForm.Instance.Relocalize();
+      UndoRedoTextBox.Relocalize();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.DoTimerReminder();
-      UndoRedoTextBox.Relocalize();
       MoonMonthsForm.Instance.Relocalize();
       NavigationForm.Instance.Relocalize();
       DatesDiffCalculatorForm.Instance.Relocalize();
-      LoadingForm.Instance.Relocalize();
-      DebugManager.TraceForm.Text = tempLogTitle;
-      DebugManager.TraceForm.AppendText(tempLogContent);
     }
 
   }

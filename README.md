@@ -11,7 +11,7 @@ A tool for Windows written in C# that allows to generate a calendar based on the
 ## Functionalities
 
 - Generate a calendar with sun and moon rises and sets.
-- Tabular text report, visual month or grid view.
+- Tabular text report, visual month or data grid view.
 - Event reminder for shabat and celebrations.
 - Search for a day in the database.
 - Window listing annual celebrations.
