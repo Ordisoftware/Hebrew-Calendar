@@ -27,8 +27,9 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         // TODO ? Globals.IsReady = false;
-        MenuTray.Enabled = false;
+        bool isTimerEnabled = TimerReminder.Enabled;
         TimerReminder.Enabled = false;
+        MenuTray.Enabled = false;
         try
         {
           int yearFirst;
@@ -60,8 +61,9 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( e != null )
           {
             GoToDate(DateTime.Today);
-            TimerReminder.Enabled = MenuDisableReminder.Enabled;
-            TimerReminder_Tick(null, null);
+            TimerReminder.Enabled = isTimerEnabled;
+            if ( TimerReminder.Enabled )
+              TimerReminder_Tick(null, null);
           }
         }
       }
