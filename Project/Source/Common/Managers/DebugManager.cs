@@ -361,8 +361,14 @@ namespace Ordisoftware.HebrewCommon
         if ( SubstituteShowException != null )
           SubstituteShowException.Invoke(einfo.Sender, einfo);
         else
-        if ( !SystemManager.TryCatch(() => ExceptionForm.Run(einfo)) )
-          ShowSimple(einfo);
+          try
+          {
+            ExceptionForm.Run(einfo);
+          }
+          catch
+          {
+            ShowSimple(einfo);
+          }
       }
       catch ( Exception ex )
       {

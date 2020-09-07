@@ -76,32 +76,45 @@ namespace Ordisoftware.HebrewCommon
     static public void Trace(TraceEvent traceEvent, string text = "")
     {
       if ( !_Enabled || !_TraceEnabled ) return;
-      SystemManager.TryCatch(() =>
+      try
       {
+        string message = "";
+        if ( traceEvent != TraceEvent.System )
+        {
+          string traceEventName = traceEvent.ToString().ToUpper().PadRight(TraceEventMaxLength);
+          message += $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")} [ {traceEventName} ] ";
+        }
+        if ( traceEvent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
+        message += text.Indent(CurrentMargin, CurrentMargin + message.Length) + Globals.NL;
         try
         {
-          string message = "";
-          if ( traceEvent != TraceEvent.System )
-          {
-            string traceEventName = traceEvent.ToString().ToUpper().PadRight(TraceEventMaxLength);
-            message += $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")} [ {traceEventName} ] ";
-          }
-          if ( traceEvent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
-          message += text.Indent(CurrentMargin, CurrentMargin + message.Length) + Globals.NL;
-          SystemManager.TryCatch(() => { if ( !TraceForm.IsDisposed ) TraceForm?.AppendText(message); });
-          System.Diagnostics.Trace.Write(message);
+          if ( !TraceForm.IsDisposed )
+            TraceForm?.AppendText(message);
         }
-        finally
+        catch
         {
-          if ( traceEvent == TraceEvent.Enter ) CurrentMargin += MarginSize;
         }
-      });
+        System.Diagnostics.Trace.Write(message);
+      }
+      catch
+      {
+      }
+      finally
+      {
+        if ( traceEvent == TraceEvent.Enter ) CurrentMargin += MarginSize;
+      }
     }
 
     static private void WriteHeader()
     {
       string platform = "Undefined";
-      SystemManager.TryCatch(() => { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join(" | "); });
+      try
+      {
+        platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join(" | ");
+      }
+      catch
+      {
+      }
       Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
       Trace(TraceEvent.System, "# " + "START  : " + DateTime.Now);
