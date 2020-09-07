@@ -283,7 +283,6 @@ namespace Ordisoftware.HebrewCommon
       {
         StackSkip++;
         ManageInternal(sender, ex, show);
-        LeaveInternal();
       }
       LeaveInternal();
     }
