@@ -82,7 +82,7 @@ namespace Ordisoftware.HebrewCalendar
       TimerMutex = true;
       try
       {
-        if ( !IsForegroundFullScreenOrScreensaver() )
+        if ( !DisplayManager.IsForegroundFullScreenOrScreensaver() )
         {
           if ( Settings.ReminderShabatEnabled )
             CheckShabat();
