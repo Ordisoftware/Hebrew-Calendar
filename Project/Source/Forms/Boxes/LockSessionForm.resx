@@ -133,7 +133,7 @@
     <value>13, 13</value>
   </data>
   <data name="LabelCountDown.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LabelCountDown.Text" xml:space="preserve">
     <value>0</value>
@@ -193,7 +193,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionDisable.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionDisable.Text" xml:space="preserve">
     <value>Disable</value>
@@ -274,7 +274,7 @@
     <value>55, 13</value>
   </data>
   <data name="ActionShutdown.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="ActionShutdown.Text" xml:space="preserve">
     <value>Shutdown</value>
@@ -307,7 +307,7 @@
     <value>53, 13</value>
   </data>
   <data name="ActionHibernate.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="ActionHibernate.Text" xml:space="preserve">
     <value>Hibernate</value>
@@ -340,7 +340,7 @@
     <value>46, 13</value>
   </data>
   <data name="ActionStandby.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="ActionStandby.Text" xml:space="preserve">
     <value>Standby</value>

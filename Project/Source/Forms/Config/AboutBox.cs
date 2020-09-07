@@ -75,11 +75,11 @@ namespace Ordisoftware.HebrewCalendar
     }
 
     /// <summary>
-    /// Event handler. Called by labelIconsProvider for link clicked events.
+    /// Event handler. Called by LabelProvider for link clicked events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Link label link clicked event information.</param>
-    private void labelIconsProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void LabelProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       SystemManager.OpenWebLink(((LinkLabel)sender).Text);
     }

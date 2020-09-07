@@ -118,7 +118,7 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( !DisplayManager.QueryYesNo(Localizer.AskToShutdownComputer.GetLang()) ) return;
       Close();
-      MediaStop();
+      SystemManager.MediaStop();
       SystemManager.RunShell("shutdown", "/s /t 0");
       MainForm.Instance.SessionEnding(null, null);
     }
@@ -126,14 +126,14 @@ namespace Ordisoftware.HebrewCalendar
     private void ActionHibernate_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
-      MediaStop();
+      SystemManager.MediaStop();
       Application.SetSuspendState(PowerState.Hibernate, false, false);
     }
 
     private void ActionStandby_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
-      MediaStop();
+      SystemManager.MediaStop();
       Application.SetSuspendState(PowerState.Suspend, false, false);
     }
 
@@ -141,8 +141,8 @@ namespace Ordisoftware.HebrewCalendar
     {
       if ( EditMediaStop.Checked )
       {
-        MediaStop();
-        MuteVolume();
+        SystemManager.MediaStop();
+        SystemManager.MuteVolume();
       }
       Close();
       if ( !LockWorkStation() )
