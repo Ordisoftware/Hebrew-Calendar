@@ -153,6 +153,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### 2020.09.07 - Version 5.0
+
+- Fix that sometimes the application is in the system tray icon but does not start.
+- More refactorings.
+
 #### 2020.09.06 - Version 5.0
 
 - Add keyboard shortcuts to navigate in the calendar month view.
