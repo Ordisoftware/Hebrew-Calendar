@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ordisoftware.HebrewCalendar.Properties {
+namespace Ordisoftware.Hebrew.Calendar.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ordisoftware.HebrewCalendar.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ordisoftware.Hebrew.Calendar.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

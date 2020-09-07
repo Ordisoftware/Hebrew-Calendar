@@ -15,9 +15,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
@@ -105,7 +105,7 @@ namespace Ordisoftware.HebrewCalendar
     /// Indicate filename of the text report.
     /// </summary>
     static public string TextReportFilename
-      => Path.ChangeExtension(Globals.DatabaseFileName, ".txt");
+      => Path.ChangeExtension(Globals.DatabaseFilename, ".txt");
 
     /// <summary>
     /// Indicate filename of the GPS database.

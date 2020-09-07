@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewCalendar
+﻿namespace Ordisoftware.Hebrew.Calendar
 {
   partial class LockSessionForm
   {
@@ -109,8 +109,8 @@
       // EditMediaStop
       // 
       resources.ApplyResources(this.EditMediaStop, "EditMediaStop");
-      this.EditMediaStop.Checked = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.LockSessionMediaStop;
-      this.EditMediaStop.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "LockSessionMediaStop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditMediaStop.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.LockSessionMediaStop;
+      this.EditMediaStop.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "LockSessionMediaStop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditMediaStop.Name = "EditMediaStop";
       this.EditMediaStop.UseVisualStyleBackColor = true;
       // 

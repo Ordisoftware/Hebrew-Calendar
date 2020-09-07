@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewCalendar
+﻿namespace Ordisoftware.Hebrew.Calendar
 {
   partial class SearchEventForm
   {
@@ -107,9 +107,9 @@
       this.Controls.Add(this.ListItems);
       this.Controls.Add(this.PanelBottom);
       this.Controls.Add(this.LabelYear);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "SearchCelebrationFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "SearchCelebrationFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.SearchCelebrationFormLocation;
+      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.SearchCelebrationFormLocation;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SearchEventForm";

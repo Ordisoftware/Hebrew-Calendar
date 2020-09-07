@@ -15,9 +15,9 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewCalendar
+﻿namespace Ordisoftware.Hebrew.Calendar
 {
   partial class DatesDiffCalculatorForm
   {
@@ -166,7 +166,7 @@
       // 
       // DatesDiffItemBindingSource
       // 
-      this.DatesDiffItemBindingSource.DataSource = typeof(Ordisoftware.HebrewCalendar.DatesDiffItem);
+      this.DatesDiffItemBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DatesDiffItem);
       // 
       // moonDaysLabel1
       // 

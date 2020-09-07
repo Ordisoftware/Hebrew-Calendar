@@ -14,9 +14,9 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Linq;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
@@ -112,7 +112,7 @@ namespace Ordisoftware.HebrewCalendar
         if ( UpdateDBFileSizeRequired )
         {
           UpdateDBFileSizeRequired = false;
-          _DBFileSize = SystemManager.GetFileSize(Globals.DatabaseFileName).FormatBytesSize().ToString();
+          _DBFileSize = SystemManager.GetFileSize(Globals.DatabaseFilename).FormatBytesSize().ToString();
         }
         return _DBFileSize;
       }

@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   static public partial class DayOfWeekMap

@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewCalendar
+﻿namespace Ordisoftware.Hebrew.Calendar
 {
   partial class SelectCityForm
   {
@@ -36,7 +36,7 @@
       this.ListBoxCities = new System.Windows.Forms.ListBox();
       this.LabelCountry = new System.Windows.Forms.Label();
       this.LabelCity = new System.Windows.Forms.Label();
-      this.EditFilter = new Ordisoftware.HebrewCommon.UndoRedoTextBox();
+      this.EditFilter = new Ordisoftware.Core.UndoRedoTextBox();
       this.LabelFilter = new System.Windows.Forms.Label();
       this.LabelTimeZone = new System.Windows.Forms.Label();
       this.EditTimeZone = new System.Windows.Forms.ComboBox();
@@ -155,7 +155,7 @@
     private System.Windows.Forms.ListBox ListBoxCities;
     private System.Windows.Forms.Label LabelCountry;
     private System.Windows.Forms.Label LabelCity;
-    private Ordisoftware.HebrewCommon.UndoRedoTextBox EditFilter;
+    private Ordisoftware.Core.UndoRedoTextBox EditFilter;
     private System.Windows.Forms.Label LabelFilter;
     private System.Windows.Forms.Label LabelTimeZone;
     internal System.Windows.Forms.ComboBox EditTimeZone;

@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using AASharp;
 using System.Collections;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>

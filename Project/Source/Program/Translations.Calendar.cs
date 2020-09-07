@@ -13,9 +13,9 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
@@ -81,42 +81,42 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly NullSafeDictionary<MoonPhase, TranslationsDictionary> MoonPhase
       = new NullSafeDictionary<MoonPhase, TranslationsDictionary>()
       {
-        [HebrewCalendar.MoonPhase.New] = new TranslationsDictionary
+        [Calendar.MoonPhase.New] = new TranslationsDictionary
         {
           [Language.EN] = "New moon",
           [Language.FR] = "Nouvelle lune"
         },
-        [HebrewCalendar.MoonPhase.WaxingCrescent] = new TranslationsDictionary
+        [Calendar.MoonPhase.WaxingCrescent] = new TranslationsDictionary
         {
           [Language.EN] = "Waxing crescent",
           [Language.FR] = "Premier croissant"
         },
-        [HebrewCalendar.MoonPhase.FirstQuarter] = new TranslationsDictionary
+        [Calendar.MoonPhase.FirstQuarter] = new TranslationsDictionary
         {
           [Language.EN] = "First quarter",
           [Language.FR] = "Premier quartier"
         },
-        [HebrewCalendar.MoonPhase.WaxingGibbous] = new TranslationsDictionary
+        [Calendar.MoonPhase.WaxingGibbous] = new TranslationsDictionary
         {
           [Language.EN] = "Waxing gibbous",
           [Language.FR] = "Gibbeuse croissante"
         },
-        [HebrewCalendar.MoonPhase.Full] = new TranslationsDictionary
+        [Calendar.MoonPhase.Full] = new TranslationsDictionary
         {
           [Language.EN] = "Full moon",
           [Language.FR] = "Pleine lune"
         },
-        [HebrewCalendar.MoonPhase.WaningGibbous] = new TranslationsDictionary
+        [Calendar.MoonPhase.WaningGibbous] = new TranslationsDictionary
         {
           [Language.EN] = "Waning gibbous",
           [Language.FR] = "Gibbeuse décroissante"
         },
-        [HebrewCalendar.MoonPhase.LastQuarter] = new TranslationsDictionary
+        [Calendar.MoonPhase.LastQuarter] = new TranslationsDictionary
         {
           [Language.EN] = "Last quarter",
           [Language.FR] = "Dernier quartier"
         },
-        [HebrewCalendar.MoonPhase.WaningCrescent] = new TranslationsDictionary
+        [Calendar.MoonPhase.WaningCrescent] = new TranslationsDictionary
         {
           [Language.EN] = "Waning crescent",
           [Language.FR] = "Dernier croissant"
@@ -126,22 +126,22 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly NullSafeDictionary<Ephemeris, TranslationsDictionary> Ephemeris
       = new NullSafeDictionary<Ephemeris, TranslationsDictionary>()
       {
-        [HebrewCalendar.Ephemeris.Rise] = new TranslationsDictionary
+        [Calendar.Ephemeris.Rise] = new TranslationsDictionary
         {
           [Language.EN] = "R: ",
           [Language.FR] = "L: "
         },
-        [HebrewCalendar.Ephemeris.Set] = new TranslationsDictionary
+        [Calendar.Ephemeris.Set] = new TranslationsDictionary
         {
           [Language.EN] = "S: ",
           [Language.FR] = "C: "
         },
-        [HebrewCalendar.Ephemeris.SummerHour] = new TranslationsDictionary
+        [Calendar.Ephemeris.SummerHour] = new TranslationsDictionary
         {
           [Language.EN] = "(S)",
           [Language.FR] = "(E)"
         },
-        [HebrewCalendar.Ephemeris.WinterHour] = new TranslationsDictionary
+        [Calendar.Ephemeris.WinterHour] = new TranslationsDictionary
         {
           [Language.EN] = "(W)",
           [Language.FR] = "(H)"
@@ -151,27 +151,27 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly NullSafeDictionary<ReportFieldText, TranslationsDictionary> ReportFieldText
       = new NullSafeDictionary<ReportFieldText, TranslationsDictionary>()
       {
-        [HebrewCalendar.ReportFieldText.Date] = new TranslationsDictionary
+        [Calendar.ReportFieldText.Date] = new TranslationsDictionary
         {
           [Language.EN] = "Date",
           [Language.FR] = "Date"
         },
-        [HebrewCalendar.ReportFieldText.Month] = new TranslationsDictionary
+        [Calendar.ReportFieldText.Month] = new TranslationsDictionary
         {
           [Language.EN] = "Month",
           [Language.FR] = "Mois"
         },
-        [HebrewCalendar.ReportFieldText.Sun] = new TranslationsDictionary
+        [Calendar.ReportFieldText.Sun] = new TranslationsDictionary
         {
           [Language.EN] = "Sun",
           [Language.FR] = "Soleil"
         },
-        [HebrewCalendar.ReportFieldText.Moon] = new TranslationsDictionary
+        [Calendar.ReportFieldText.Moon] = new TranslationsDictionary
         {
           [Language.EN] = "Moon",
           [Language.FR] = "Lune"
         },
-        [HebrewCalendar.ReportFieldText.Events] = new TranslationsDictionary
+        [Calendar.ReportFieldText.Events] = new TranslationsDictionary
         {
           [Language.EN] = "Events",
           [Language.FR] = "Évènements"
@@ -211,62 +211,62 @@ namespace Ordisoftware.HebrewCalendar
     static public readonly NullSafeDictionary<TorahEvent, TranslationsDictionary> TorahEvent
       = new NullSafeDictionary<TorahEvent, TranslationsDictionary>()
       {
-        [HebrewCalendar.TorahEvent.None] = new TranslationsDictionary
+        [Calendar.TorahEvent.None] = new TranslationsDictionary
         {
           [Language.EN] = "",
           [Language.FR] = ""
         },
-        [HebrewCalendar.TorahEvent.NewYearD1] = new TranslationsDictionary
+        [Calendar.TorahEvent.NewYearD1] = new TranslationsDictionary
         {
           [Language.EN] = "New year",
           [Language.FR] = "Début de l'année"
         },
-        [HebrewCalendar.TorahEvent.NewYearD10] = new TranslationsDictionary
+        [Calendar.TorahEvent.NewYearD10] = new TranslationsDictionary
         {
           [Language.EN] = "Set aside lamb",
           [Language.FR] = "Réserver agneau"
         },
-        [HebrewCalendar.TorahEvent.PessahD1] = new TranslationsDictionary
+        [Calendar.TorahEvent.PessahD1] = new TranslationsDictionary
         {
           [Language.EN] = "Pessa'h start",
           [Language.FR] = "Début de Pessah"
         },
-        [HebrewCalendar.TorahEvent.PessahD7] = new TranslationsDictionary
+        [Calendar.TorahEvent.PessahD7] = new TranslationsDictionary
         {
           [Language.EN] = "Pessa'h end",
           [Language.FR] = "Fin de Pessah"
         },
-        [HebrewCalendar.TorahEvent.ChavouotDiet] = new TranslationsDictionary
+        [Calendar.TorahEvent.ChavouotDiet] = new TranslationsDictionary
         {
           [Language.EN] = "Chavouot diet",
           [Language.FR] = "Régime de Chavouot"
         },
-        [HebrewCalendar.TorahEvent.Chavouot1] = new TranslationsDictionary
+        [Calendar.TorahEvent.Chavouot1] = new TranslationsDictionary
         {
           [Language.EN] = "Chavouot lamb",
           [Language.FR] = "Agneau de Chavouot"
         },
-        [HebrewCalendar.TorahEvent.Chavouot2] = new TranslationsDictionary
+        [Calendar.TorahEvent.Chavouot2] = new TranslationsDictionary
         {
           [Language.EN] = "Chavouot end",
           [Language.FR] = "Fin de Chavouot"
         },
-        [HebrewCalendar.TorahEvent.YomTerouah] = new TranslationsDictionary
+        [Calendar.TorahEvent.YomTerouah] = new TranslationsDictionary
         {
           [Language.EN] = "Yom Terou'ah",
           [Language.FR] = "Yom Terou'ah"
         },
-        [HebrewCalendar.TorahEvent.YomHaKipourim] = new TranslationsDictionary
+        [Calendar.TorahEvent.YomHaKipourim] = new TranslationsDictionary
         {
           [Language.EN] = "Yom HaKipourim",
           [Language.FR] = "Yom HaKipourim"
         },
-        [HebrewCalendar.TorahEvent.SoukotD1] = new TranslationsDictionary
+        [Calendar.TorahEvent.SoukotD1] = new TranslationsDictionary
         {
           [Language.EN] = "Soukot start",
           [Language.FR] = "Début de Soukot"
         },
-        [HebrewCalendar.TorahEvent.SoukotD8] = new TranslationsDictionary
+        [Calendar.TorahEvent.SoukotD8] = new TranslationsDictionary
         {
           [Language.EN] = "Soukot end",
           [Language.FR] = "Fin de Soukot"

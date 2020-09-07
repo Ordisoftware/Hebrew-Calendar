@@ -6,7 +6,7 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="ApplicationStatistics" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>Ordisoftware.HebrewCalendar.ApplicationStatistics, Ordisoftware.HebrewCalendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>Ordisoftware.Hebrew.Calendar.ApplicationStatistics, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
    <TypeUISetting>
       <PropertyUISettings>
          <PropertyUISetting Name="GenerateAnalyseDaysTime">

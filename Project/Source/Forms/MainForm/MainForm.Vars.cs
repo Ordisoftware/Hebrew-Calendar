@@ -19,9 +19,9 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DandTSoftware.Timers;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   public partial class MainForm

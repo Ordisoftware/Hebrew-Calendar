@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Ordisoftware.HebrewCalendar.Data {
+namespace Ordisoftware.Hebrew.Calendar.Data {
     
     
     /// <summary>
@@ -1103,7 +1103,7 @@ namespace Ordisoftware.HebrewCalendar.Data {
         }
     }
 }
-namespace Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters {
+namespace Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters {
     
     
     /// <summary>
@@ -1337,7 +1337,7 @@ namespace Ordisoftware.HebrewCalendar.Data.DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.Odbc.OdbcConnection();
-            this._connection.ConnectionString = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.ConnectionString;
+            this._connection.ConnectionString = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

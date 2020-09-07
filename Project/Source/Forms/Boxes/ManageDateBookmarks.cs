@@ -14,9 +14,9 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Windows.Forms;
-using Ordisoftware.HebrewCommon;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.HebrewCalendar
+namespace Ordisoftware.Hebrew.Calendar
 {
 
   public partial class ManageDateBookmarksForm : Form

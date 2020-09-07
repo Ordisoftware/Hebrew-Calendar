@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ordisoftware.HebrewCalendar.Properties {
+namespace Ordisoftware.Hebrew.Calendar.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,9 +26,9 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Center")]
-        public global::Ordisoftware.HebrewCommon.ControlLocation MainFormPosition {
+        public global::Ordisoftware.Core.ControlLocation MainFormPosition {
             get {
-                return ((global::Ordisoftware.HebrewCommon.ControlLocation)(this["MainFormPosition"]));
+                return ((global::Ordisoftware.Core.ControlLocation)(this["MainFormPosition"]));
             }
             set {
                 this["MainFormPosition"] = value;
@@ -170,9 +170,9 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Month")]
-        public global::Ordisoftware.HebrewCalendar.ViewMode CurrentView {
+        public global::Ordisoftware.Hebrew.Calendar.ViewMode CurrentView {
             get {
-                return ((global::Ordisoftware.HebrewCalendar.ViewMode)(this["CurrentView"]));
+                return ((global::Ordisoftware.Hebrew.Calendar.ViewMode)(this["CurrentView"]));
             }
             set {
                 this["CurrentView"] = value;
@@ -276,9 +276,9 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("MainForm")]
-        public global::Ordisoftware.HebrewCalendar.TrayIconClickOpen TrayIconClickOpen {
+        public global::Ordisoftware.Hebrew.Calendar.TrayIconClickOpen TrayIconClickOpen {
             get {
-                return ((global::Ordisoftware.HebrewCalendar.TrayIconClickOpen)(this["TrayIconClickOpen"]));
+                return ((global::Ordisoftware.Hebrew.Calendar.TrayIconClickOpen)(this["TrayIconClickOpen"]));
             }
             set {
                 this["TrayIconClickOpen"] = value;
@@ -600,9 +600,9 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("None")]
-        public global::Ordisoftware.HebrewCommon.Language LanguageSelected {
+        public global::Ordisoftware.Core.Language LanguageSelected {
             get {
-                return ((global::Ordisoftware.HebrewCommon.Language)(this["LanguageSelected"]));
+                return ((global::Ordisoftware.Core.Language)(this["LanguageSelected"]));
             }
             set {
                 this["LanguageSelected"] = value;
@@ -1068,9 +1068,9 @@ namespace Ordisoftware.HebrewCalendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Pastel")]
-        public global::Ordisoftware.HebrewCalendar.MoonMonthsListColors MoonMonthsFormUseColors {
+        public global::Ordisoftware.Hebrew.Calendar.MoonMonthsListColors MoonMonthsFormUseColors {
             get {
-                return ((global::Ordisoftware.HebrewCalendar.MoonMonthsListColors)(this["MoonMonthsFormUseColors"]));
+                return ((global::Ordisoftware.Hebrew.Calendar.MoonMonthsListColors)(this["MoonMonthsFormUseColors"]));
             }
             set {
                 this["MoonMonthsFormUseColors"] = value;

@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.HebrewCalendar
+﻿namespace Ordisoftware.Hebrew.Calendar
 {
   partial class MoonMonthsForm
   {
@@ -158,9 +158,9 @@
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.PanelMonths);
       this.Controls.Add(this.PanelBottom);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.HebrewCalendar.Properties.Settings.Default, "MoonMonthsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "MoonMonthsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.Location = global::Ordisoftware.HebrewCalendar.Properties.Settings.Default.MoonMonthsFormLocation;
+      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.MoonMonthsFormLocation;
       this.MaximizeBox = false;
       this.Name = "MoonMonthsForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MoonMonthsForm_FormClosing);
