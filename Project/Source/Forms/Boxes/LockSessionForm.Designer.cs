@@ -30,7 +30,6 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LockSessionForm));
-      this.PanelButtons = new System.Windows.Forms.Panel();
       this.LabelCountDown = new System.Windows.Forms.Label();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionDisable = new System.Windows.Forms.Button();
@@ -41,17 +40,7 @@
       this.LabelMessage = new System.Windows.Forms.Label();
       this.Timer = new System.Windows.Forms.Timer(this.components);
       this.EditMediaStop = new System.Windows.Forms.CheckBox();
-      this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // PanelButtons
-      // 
-      this.PanelButtons.Controls.Add(this.LabelCountDown);
-      this.PanelButtons.Controls.Add(this.ActionCancel);
-      this.PanelButtons.Controls.Add(this.ActionDisable);
-      this.PanelButtons.Controls.Add(this.ActionLock);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
-      this.PanelButtons.Name = "PanelButtons";
       // 
       // LabelCountDown
       // 
@@ -130,13 +119,15 @@
       this.AcceptButton = this.ActionLock;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.LabelCountDown);
       this.Controls.Add(this.ActionShutdown);
+      this.Controls.Add(this.ActionCancel);
       this.Controls.Add(this.EditMediaStop);
+      this.Controls.Add(this.ActionDisable);
       this.Controls.Add(this.ActionHibernate);
+      this.Controls.Add(this.ActionLock);
       this.Controls.Add(this.ActionStandby);
       this.Controls.Add(this.LabelMessage);
-      this.Controls.Add(this.PanelButtons);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
@@ -144,16 +135,12 @@
       this.TopMost = true;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LockSessionForm_FormClosed);
       this.Load += new System.EventHandler(this.LockSessionForm_Load);
-      this.PanelButtons.ResumeLayout(false);
-      this.PanelButtons.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
     }
 
     #endregion
-
-    private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.Button ActionLock;
     private System.Windows.Forms.Label LabelCountDown;

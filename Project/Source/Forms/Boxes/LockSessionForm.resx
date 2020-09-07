@@ -127,7 +127,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelCountDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 8</value>
+    <value>20, 162</value>
   </data>
   <data name="LabelCountDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -145,7 +145,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelCountDown.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelCountDown.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -157,13 +157,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 2</value>
+    <value>246, 156</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
   <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -175,10 +175,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionDisable.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -187,13 +187,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDisable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 2</value>
+    <value>84, 156</value>
   </data>
   <data name="ActionDisable.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
   <data name="ActionDisable.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="ActionDisable.Text" xml:space="preserve">
     <value>Disable</value>
@@ -205,10 +205,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionDisable.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionDisable.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="ActionLock.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -217,13 +217,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionLock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 2</value>
+    <value>165, 156</value>
   </data>
   <data name="ActionLock.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
   <data name="ActionLock.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="ActionLock.Text" xml:space="preserve">
     <value>Lock</value>
@@ -235,34 +235,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionLock.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionLock.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 155</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 28</value>
-  </data>
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;ActionLock.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="ActionShutdown.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -274,7 +250,7 @@
     <value>55, 13</value>
   </data>
   <data name="ActionShutdown.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ActionShutdown.Text" xml:space="preserve">
     <value>Shutdown</value>
@@ -292,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionShutdown.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionHibernate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -307,7 +283,7 @@
     <value>53, 13</value>
   </data>
   <data name="ActionHibernate.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionHibernate.Text" xml:space="preserve">
     <value>Hibernate</value>
@@ -325,7 +301,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionHibernate.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="ActionStandby.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -340,7 +316,7 @@
     <value>46, 13</value>
   </data>
   <data name="ActionStandby.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionStandby.Text" xml:space="preserve">
     <value>Standby</value>
@@ -358,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionStandby.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="LabelMessage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -392,7 +368,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelMessage.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -410,7 +386,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>243, 17</value>
   </data>
   <data name="EditMediaStop.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="EditMediaStop.Text" xml:space="preserve">
     <value>Stop media playing and mute windows volume</value>
@@ -425,7 +401,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditMediaStop.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
