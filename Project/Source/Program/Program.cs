@@ -22,7 +22,6 @@ using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.Pipes;
 using Ordisoftware.Core;
-using Ordisoftware.Hebrew;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -85,6 +84,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private static void CheckSettingsReset()
     {
+      if ( Settings.FirstLaunch )
+        Settings.LanguageSelected = Languages.Current;
       if ( Settings.UpgradeResetRequiredV3_0
         || Settings.UpgradeResetRequiredV3_6
         || Settings.UpgradeResetRequiredV4_1 )
@@ -92,17 +93,15 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !Settings.FirstLaunch )
           DisplayManager.ShowInformation(Localizer.UpgradeResetRequired.GetLang());
         Settings.Reset();
+        Settings.LanguageSelected = Languages.Current;
         Settings.UpgradeResetRequiredV3_0 = false;
         Settings.UpgradeResetRequiredV3_6 = false;
         Settings.UpgradeResetRequiredV4_1 = false;
-        Settings.LanguageSelected = Languages.Current;
-        Settings.Save();
       }
       if ( Settings.FirstLaunchV4 )
       {
         Settings.FirstLaunchV4 = false;
         Settings.FirstLaunch = true;
-        Settings.Save();
       }
       if ( !Languages.Managed.Contains(Settings.LanguageSelected) )
       {
@@ -113,6 +112,7 @@ namespace Ordisoftware.Hebrew.Calendar
         else
           Settings.LanguageSelected = Languages.Current;
       }
+      Settings.Save();
     }
 
     /// <summary>

@@ -229,8 +229,8 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Indicate phonetic letters names.
     /// </summary>
-    static public readonly Dictionary<Language, string[]> Names
-      = new Dictionary<Language, string[]>()
+    static public readonly NullSafeDictionary<Language, string[]> Names
+      = new NullSafeDictionary<Language, string[]>()
       {
         [Language.EN] = new string[]
         {
