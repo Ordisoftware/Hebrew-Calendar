@@ -114,19 +114,19 @@ namespace Ordisoftware.HebrewCommon
       set
       {
         if ( _TraceEnabled == value ) return;
-        var temp = _Enabled;
+        var isEnabled = _Enabled;
         if ( value )
         {
           Enabled = false;
           _TraceEnabled = value;
-          Enabled = temp;
+          Enabled = isEnabled;
           Trace(TraceEvent.Data, $"{nameof(DebugManager)}.{nameof(TraceEnabled)} = {value}");
         }
         else
         {
           ClearTraces(true);
           _TraceEnabled = value;
-          Enabled = temp;
+          Enabled = isEnabled;
         }
         TraceEnabledChanged?.Invoke(value);
       }
@@ -361,8 +361,14 @@ namespace Ordisoftware.HebrewCommon
         if ( SubstituteShowException != null )
           SubstituteShowException.Invoke(einfo.Sender, einfo);
         else
-        if ( !SystemManager.TryCatch(() => ExceptionForm.Run(einfo)) )
-          ShowSimple(einfo);
+          try
+          {
+            ExceptionForm.Run(einfo);
+          }
+          catch
+          {
+            ShowSimple(einfo);
+          }
       }
       catch ( Exception ex )
       {

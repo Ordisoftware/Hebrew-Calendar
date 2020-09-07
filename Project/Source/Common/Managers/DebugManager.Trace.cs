@@ -68,15 +68,15 @@ namespace Ordisoftware.HebrewCommon
     static private void LeaveInternal()
     {
       if ( !_Enabled || EnterCount == 0 ) return;
-      Trace(TraceEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip + StackSkip));
       EnterCount--;
       StackSkip = 1;
+      Trace(TraceEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip + StackSkip));
     }
 
     static public void Trace(TraceEvent traceEvent, string text = "")
     {
-      if ( !Enabled ) return;
-      SystemManager.TryCatch(() =>
+      if ( !_Enabled || !_TraceEnabled ) return;
+      try
       {
         string message = "";
         if ( traceEvent != TraceEvent.System )
@@ -84,25 +84,37 @@ namespace Ordisoftware.HebrewCommon
           string traceEventName = traceEvent.ToString().ToUpper().PadRight(TraceEventMaxLength);
           message += $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")} [ {traceEventName} ] ";
         }
+        if ( traceEvent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
+        message += text.Indent(CurrentMargin, CurrentMargin + message.Length) + Globals.NL;
         try
         {
-          if ( traceEvent == TraceEvent.Leave ) CurrentMargin -= MarginSize;
-          message += text.Indent(CurrentMargin, CurrentMargin + message.Length) + Globals.NL;
-          SystemManager.TryCatch(() => { if ( !TraceForm.IsDisposed ) TraceForm?.AppendText(message); });
-          System.Diagnostics.Trace.Write(message);
+          if ( !TraceForm.IsDisposed )
+            TraceForm?.AppendText(message);
         }
-        finally
+        catch
         {
-          if ( traceEvent == TraceEvent.Enter ) CurrentMargin += MarginSize;
         }
-      });
+        System.Diagnostics.Trace.Write(message);
+      }
+      catch
+      {
+      }
+      finally
+      {
+        if ( traceEvent == TraceEvent.Enter ) CurrentMargin += MarginSize;
+      }
     }
 
     static private void WriteHeader()
     {
-      if ( !_Enabled ) return;
       string platform = "Undefined";
-      SystemManager.TryCatch(() => { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join(" | "); });
+      try
+      {
+        platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join(" | ");
+      }
+      catch
+      {
+      }
       Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
       Trace(TraceEvent.System, "# " + "START  : " + DateTime.Now);
@@ -113,22 +125,20 @@ namespace Ordisoftware.HebrewCommon
 
     static private void WriteFooter()
     {
-      if ( !_Enabled ) return;
       Trace(TraceEvent.System);
       Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
       Trace(TraceEvent.System, "# " + "STOP   : " + DateTime.Now);
-      Trace(TraceEvent.System, "# " + "UNLEFT : " + EnterCount);
+      Trace(TraceEvent.System, "# " + "UNLEFT : " + EnterCount + ( TraceListener.IsRollOver ? " (RollOver)" : "" ));
       Trace(TraceEvent.System, Separator);
       Trace(TraceEvent.System);
     }
 
     public static void ClearTraces(bool norestart = false)
     {
-      if ( !_Enabled ) return;
-      if ( _Enabled && !_TraceEnabled ) return;
       SystemManager.TryCatchManage(() =>
       {
+        bool isEnabled = _Enabled;
         try
         {
           string path = TraceListener.Path;
@@ -144,7 +154,7 @@ namespace Ordisoftware.HebrewCommon
         }
         finally
         {
-          if ( !norestart )
+          if ( !norestart && isEnabled )
           {
             Start();
             Trace(TraceEvent.Message, $"{nameof(DebugManager)}.{nameof(ClearTraces)}");
