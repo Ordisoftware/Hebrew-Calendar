@@ -82,6 +82,7 @@ namespace Ordisoftware.HebrewCommon
       }
 
       private bool TraceMutex;
+      internal bool IsRollOver { get; private set; }
 
       private void CheckRollOver()
       {
@@ -90,6 +91,7 @@ namespace Ordisoftware.HebrewCommon
         TraceMutex = true;
         try
         {
+          IsRollOver = true;
           SystemManager.TryCatch(() =>
           {
             Trace(HebrewCommon.TraceEvent.Data, $"{nameof(DebugManager)}.{nameof(TraceListener)}.{nameof(CheckRollOver)} = TRUE");
@@ -103,6 +105,7 @@ namespace Ordisoftware.HebrewCommon
         }
         finally
         {
+          IsRollOver = false;
           TraceMutex = false;
         }
       }
