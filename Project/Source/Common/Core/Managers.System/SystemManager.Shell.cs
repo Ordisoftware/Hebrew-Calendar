@@ -13,6 +13,8 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.IO;
+using System.Text;
 using System.Diagnostics;
 
 namespace Ordisoftware.Core
@@ -47,6 +49,24 @@ namespace Ordisoftware.Core
       catch ( Exception ex )
       {
         ex.Manage();
+      }
+    }
+
+    /// <summary>
+    /// Check if a file is an executable.
+    /// </summary>
+    static public bool CheckIfFileIsExecutable(string filename)
+    {
+      try
+      {
+        var firstTwoBytes = new byte[2];
+        using ( var fileStream = File.Open(filename, FileMode.Open) )
+          fileStream.Read(firstTwoBytes, 0, 2);
+        return Encoding.UTF8.GetString(firstTwoBytes) == "MZ";
+      }
+      catch ( Exception ex )
+      {
+        throw new IOException(Localizer.FileAccessError.GetLang(filename, ex.Message));
       }
     }
 
