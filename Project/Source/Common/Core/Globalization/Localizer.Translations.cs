@@ -56,25 +56,11 @@ namespace Ordisoftware.Core
         [Language.FR] = "Version {0}"
       };
 
-    static public readonly TranslationsDictionary GrammarGuideTitle
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Grammar guide",
-        [Language.FR] = "Guide de grammaire"
-      };
-
     static public readonly TranslationsDictionary PrivacyNoticeNoData
       = new TranslationsDictionary
       {
         [Language.EN] = "This software doesn't collect any personal information about you, your computer and your network, unless it is specified by its features.",
         [Language.FR] = "Ce logiciel ne collecte aucune information personnelle concernant vous-même, votre ordinateur et votre réseau, à moins que cela ne soit indiqué par ses fonctionnalités."
-      };
-
-    static public readonly TranslationsDictionary MethodNoticeTitle
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Lettriq analysis method notice",
-        [Language.FR] = "Notice de la méthode d'analyse lettrique"
       };
 
     static public readonly TranslationsDictionary NotYetAvailable
@@ -380,37 +366,6 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "The window has been copied to the clipboard.",
         [Language.FR] = "La fenêtre a été copié dans le presse-papier."
-      };
-
-    static public readonly TranslationsDictionary AskToDownloadHebrewLetters
-      = new TranslationsDictionary
-      {
-        [Language.EN] = $"Hebrew Letters not found." + Globals.NL +
-                        AskToCheckPreferences[Language.EN] + Globals.NL2 +
-                        AskToDownload[Language.EN],
-
-        [Language.FR] = $"Hebrew Letters n'a pas été trouvé." + Globals.NL +
-                        AskToCheckPreferences[Language.FR] + Globals.NL2 +
-                        AskToDownload[Language.FR]
-      };
-
-    static public readonly TranslationsDictionary AskToDownloadHebrewWords
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Hebrew Words not found." + Globals.NL +
-                        AskToCheckPreferences[Language.EN] + Globals.NL2 +
-                        AskToDownload[Language.EN],
-
-        [Language.FR] = "Hebrew Words n'a pas été trouvé." + Globals.NL +
-                        AskToCheckPreferences[Language.FR] + Globals.NL2 +
-                        AskToDownload[Language.FR]
-      };
-
-    static public readonly TranslationsDictionary ConfigureProviders
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Configure providers",
-        [Language.FR] = "Configurer les fournisseurs"
       };
 
     static public readonly TranslationsDictionary AskToEmptyHistory

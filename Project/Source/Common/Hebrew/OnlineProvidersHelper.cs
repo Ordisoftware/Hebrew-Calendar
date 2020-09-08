@@ -66,7 +66,7 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static ToolStripMenuItem CreateConfigureMenuItem(EventHandler click)
     {
-      var item = new ToolStripMenuItem(Localizer.ConfigureProviders.GetLang(), ImageConfigure);
+      var item = new ToolStripMenuItem(HebrewTranslations.ConfigureProviders.GetLang(), ImageConfigure);
       item.ImageScaling = ToolStripItemImageScaling.None;
       item.Click += click;
       return item;

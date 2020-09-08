@@ -34,7 +34,7 @@ namespace Ordisoftware.Hebrew
     {
       if ( !File.Exists(path) )
       {
-        if ( DisplayManager.QueryYesNo(Localizer.AskToDownloadHebrewLetters.GetLang()) )
+        if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewLetters.GetLang()) )
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
         return;
       }
