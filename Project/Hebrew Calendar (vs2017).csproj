@@ -150,6 +150,7 @@
     <Compile Include="Source\Common\Hebrew\CommonMenusControl.Designer.cs">
       <DependentUpon>CommonMenusControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\Hebrew\HebrewTools.cs" />
     <Compile Include="Source\Common\Hebrew\ProvidersCollection.cs" />
     <Compile Include="Source\Common\Hebrew\LettersControl.cs">
       <SubType>UserControl</SubType>
@@ -246,7 +247,6 @@
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\Core\Globalization\Localizer.Translations.cs" />
-    <Compile Include="Source\Common\Hebrew\Tools.cs" />
     <Compile Include="Source\Common\Core\Classes\Chronometer.cs" />
     <Compile Include="Source\Common\Core\Managers.Debug\DebugManager.cs" />
     <Compile Include="Source\Common\Core\Managers.Debug\DebugManager.Delegates.cs" />
