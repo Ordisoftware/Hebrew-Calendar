@@ -18,8 +18,6 @@ namespace Ordisoftware.SQLiteODBCInstaller
     private const string SQLiteODBCSetupFileame32 = SQLiteODBCSetupPath + "sqliteodbc.exe";
     private const string SQLiteODBCSetupFilename64 = SQLiteODBCSetupPath + "sqliteodbc_w64.exe";
 
-    private const string NamespaceName = nameof(Ordisoftware) + ".";
-
     static public readonly Dictionary<string, string> CloseApplicationText
       = new Dictionary<string, string>
       {
@@ -43,7 +41,7 @@ namespace Ordisoftware.SQLiteODBCInstaller
       List<Process> processes = GetOrdisoftwareHebrewProcesses();
       while ( processes.Count() != 0 && result != DialogResult.Cancel )
       {
-        var applications = string.Join(Environment.NewLine, processes.Select(p => p.ProcessName.Replace(NamespaceName, "")));
+        var applications = string.Join(Environment.NewLine, processes.Select(p => p.ProcessName));
         string msg = string.Format(CloseApplicationText[lang], applications);
         result = MessageBox.Show(msg, AssemblyTitle, MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
         processes = GetOrdisoftwareHebrewProcesses();

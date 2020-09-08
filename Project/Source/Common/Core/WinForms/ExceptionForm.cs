@@ -245,7 +245,7 @@ namespace Ordisoftware.Core
                               .ToList()
                               .Select(l => (l.StartsWith("# ") ? l.Remove(0,2) : l).TrimStart())
                               .Where(l => !l.StartsWith("--"));
-      body.Append(lines.AsMultiline());
+      body.Append(lines.AsMultiLine());
       return body;
     }
 

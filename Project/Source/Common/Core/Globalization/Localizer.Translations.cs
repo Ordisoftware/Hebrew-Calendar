@@ -298,6 +298,20 @@ namespace Ordisoftware.Core
         [Language.FR] = $"Fichier non trouvé :{Globals.NL2}{{0}}"
       };
 
+    static public readonly TranslationsDictionary FileAccessError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Error with file:{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
+        [Language.FR] = $"Erreur avec le fichier :{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
+      };
+
+    static public readonly TranslationsDictionary NotAnExecutableFile
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Not an executable file:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Le fichier n'est pas un exécutable :{Globals.NL2}{{0}}",
+      };
+
     static public readonly TranslationsDictionary LoadFileError
       = new TranslationsDictionary
       {

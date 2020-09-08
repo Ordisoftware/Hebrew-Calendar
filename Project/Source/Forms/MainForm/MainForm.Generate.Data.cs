@@ -123,7 +123,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       if ( GenerateErrors.Count != 0 )
       {
-        string errors = GenerateErrors.AsMultiline();
+        string errors = GenerateErrors.AsMultiLine();
         GenerateErrors.Clear();
         errors = Settings.GetGPSText() + Globals.NL2 + errors;
         DebugManager.Trace(LogTraceEvent.Data, errors);

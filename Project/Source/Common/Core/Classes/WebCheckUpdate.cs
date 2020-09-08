@@ -140,7 +140,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Process the automatic download and installation.
     /// </summary>
-    static private bool ProcessAutoInstall(WebClient client, Version version, string filename)
+    static private bool ProcessAutoInstall(WebClient client, Version version, string filename/*, long size*/)
     {
       LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
       bool finished = false;
@@ -155,6 +155,11 @@ namespace Ordisoftware.Core
         Application.DoEvents();
       }
       if ( ex != null ) throw ex;
+      // TODO check size
+      //if ( SystemManager.GetFileSize(tempfile) != size )
+        //throw new IOException(Localizer.WrongFileSIze.GetLang(tempfile));
+      if ( !SystemManager.CheckIfFileIsExecutable(tempfile) )
+        throw new IOException(Localizer.NotAnExecutableFile.GetLang(tempfile));
       if ( SystemManager.RunShell(tempfile, "/SP- /SILENT") != null )
       {
         Globals.IsExiting = true;

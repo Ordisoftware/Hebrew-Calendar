@@ -95,8 +95,7 @@ namespace Ordisoftware.Core
     /// A string.
     /// </returns>
     /// <param name="list">The enumeration to act on.</param>
-    // TODO rename to FromMultiline or From List
-    static public string AsMultispace(this IEnumerable<string> list)
+    static public string AsMultiSpace(this IEnumerable<string> list)
     {
       return string.Join(" ", list);
     }
@@ -108,8 +107,7 @@ namespace Ordisoftware.Core
     /// A string.
     /// </returns>
     /// <param name="list">The enumeration to act on.</param>
-    // TODO rename to FromMultiline or From List
-    static public string AsMultiline(this IEnumerable<string> list)
+    static public string AsMultiLine(this IEnumerable<string> list)
     {
       return string.Join(Globals.NL, list);
     }

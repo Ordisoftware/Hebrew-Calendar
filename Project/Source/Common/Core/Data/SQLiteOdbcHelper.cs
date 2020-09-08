@@ -47,7 +47,7 @@ namespace Ordisoftware.Core
     /// <returns></returns>
     static public string UnformatSQL(string sql)
     {
-      return sql.SplitNoEmptyLines().Select(line => line.Trim()).AsMultispace();
+      return sql.SplitNoEmptyLines().Select(line => line.Trim()).AsMultiSpace();
     }
 
     /// <summary>
@@ -136,7 +136,7 @@ namespace Ordisoftware.Core
           }
         if ( errors.Count > 0 )
         {
-          string msg = Localizer.DatabaseIntegrityError.GetLang(errors.AsMultiline());
+          string msg = Localizer.DatabaseIntegrityError.GetLang(errors.AsMultiLine());
           throw new SQLiteException(msg);
         }
       });

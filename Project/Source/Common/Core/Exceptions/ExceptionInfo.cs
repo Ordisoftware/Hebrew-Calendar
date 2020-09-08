@@ -241,7 +241,7 @@ namespace Ordisoftware.Core
           }
           if ( result != "" ) result += Globals.NL;
           result += partMethod;
-          ( full ? ThreadStackList : ExceptionStackList ).Add(partMethod.SplitNoEmptyLines().AsMultispace());
+          ( full ? ThreadStackList : ExceptionStackList ).Add(partMethod.SplitNoEmptyLines().AsMultiSpace());
         }
         if ( full )
           ThreadStackText += result.Replace(Globals.NL3, Globals.NL2).TrimEnd(Globals.NL.ToCharArray());
@@ -286,9 +286,9 @@ namespace Ordisoftware.Core
           if ( DebugManager.UseStack )
             FullText += Globals.NL +
                         "Stack Exception: " + Globals.NL +
-                        ExceptionStackList.AsMultiline().Indent(DebugManager.MarginSize) + Globals.NL +
+                        ExceptionStackList.AsMultiLine().Indent(DebugManager.MarginSize) + Globals.NL +
                         "Stack Thread: " + Globals.NL +
-                        ThreadStackList.AsMultiline().Indent(DebugManager.MarginSize);
+                        ThreadStackList.AsMultiLine().Indent(DebugManager.MarginSize);
         }
         catch
         {
