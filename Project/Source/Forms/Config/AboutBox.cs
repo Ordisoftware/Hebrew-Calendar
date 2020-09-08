@@ -113,6 +113,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       DisplayManager.ShowInformation(Localizer.PrivacyNoticeNoData.GetLang());
     }
+
   }
 
 }
