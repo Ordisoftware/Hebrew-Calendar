@@ -110,15 +110,6 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.FirstLaunchV4 = false;
         Settings.FirstLaunch = true;
       }
-      if ( !Languages.Managed.Contains(Settings.LanguageSelected) )
-      {
-        string langCode = Settings.Language;
-        var langValue = Languages.Values[langCode];
-        if ( langValue != Language.None )
-          Settings.LanguageSelected = langValue;
-        else
-          Settings.LanguageSelected = Languages.Current;
-      }
       Settings.Save();
     }
 
