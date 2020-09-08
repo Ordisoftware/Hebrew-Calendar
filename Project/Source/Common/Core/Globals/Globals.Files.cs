@@ -72,7 +72,7 @@ namespace Ordisoftware.Core
     /// Indicate the new version setup file.
     /// </summary>
     static public string SetupFileURL { get; set; }
-      = $"https://{AssemblyTrademark}/files/{SetupFilename}";
+      = $"https://{AssemblyTrademark}/download/{SetupFilename}";
 
     /// <summary>
     /// Indicate the GitHub repository.
