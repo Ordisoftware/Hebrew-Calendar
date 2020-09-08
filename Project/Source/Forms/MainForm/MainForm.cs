@@ -117,7 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
         CheckRegenerateCalendar();
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
-        if ( Settings.StartupHide )
+        if ( Settings.StartupHide || Program.ForceStartupHide )
           MenuShowHide.PerformClick();
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         TimerMidnight.TimeReached += TimerMidnight_Tick;

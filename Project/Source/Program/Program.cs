@@ -61,8 +61,14 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.CheckCommandLineArguments(args, ref lang);
       Settings.LanguageSelected = lang;
       UpdateLocalization();
-      Application.Run(MainForm.Instance);
+      if ( SystemManager.CommandLineArguments != null )
+        if ( SystemManager.CommandLineArguments.Length == 1 )
+          if ( SystemManager.CommandLineArguments[0] == "/hide" )
+            ForceStartupHide = true;
+        Application.Run(MainForm.Instance);
     }
+
+    static internal bool ForceStartupHide;
 
     /// <summary>
     /// Bring to front the app in case of duplicate process start.
