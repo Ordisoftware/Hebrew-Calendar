@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -104,41 +104,31 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       get
       {
-        if ( MainForm.Instance.IsGenerating )
-        {
-          UpdateDBFileSizeRequired = true;
-          return Localizer.Processing.GetLang();
-        }
         if ( UpdateDBFileSizeRequired )
         {
           UpdateDBFileSizeRequired = false;
           _DBFileSize = SystemManager.GetFileSize(Globals.DatabaseFilename).FormatBytesSize().ToString();
         }
-        return _DBFileSize;
+        return MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : _DBFileSize;
       }
     }
     static private string _DBFileSize;
-    static private bool UpdateDBFileSizeRequired = true;
+    static internal bool UpdateDBFileSizeRequired = true;
 
     public string DBMemorySize
     {
       get
       {
-        if ( MainForm.Instance.IsGenerating )
-        {
-          UpdateDBMemorySizeRequired = true;
-          return Localizer.Processing.GetLang();
-        }
         if ( UpdateDBMemorySizeRequired )
         {
           UpdateDBMemorySizeRequired = false;
           _DBMemorySize = MainForm.Instance.DataSet.SizeOf().FormatBytesSize();
         }
-        return _DBMemorySize;
+        return MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : _DBMemorySize;
       }
     }
     static private string _DBMemorySize;
-    static private bool UpdateDBMemorySizeRequired = true;
+    static internal bool UpdateDBMemorySizeRequired = true;
 
   }
 

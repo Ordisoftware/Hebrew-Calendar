@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
@@ -116,6 +116,8 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Cursor = cursor;
         IsGenerating = false;
+        ApplicationStatistics.UpdateDBFileSizeRequired = true;
+        ApplicationStatistics.UpdateDBMemorySizeRequired = true;
         SetView(Settings.CurrentView, true);
         UpdateButtons();
         if ( Globals.IsReady && !ActionVacuumAtNextStartup.Checked )
