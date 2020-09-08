@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -69,6 +68,9 @@ namespace Ordisoftware.Hebrew.Calendar
         Application.Run(MainForm.Instance);
     }
 
+    /// <summary>
+    /// Indicate if the application must go to tray icon at startup.
+    /// </summary>
     static internal bool ForceStartupHide;
 
     /// <summary>
