@@ -753,7 +753,7 @@
     <None Include="License\MPL 2.0.rtf" />
     <None Include="Properties\DataSources\ApplicationStatistics.datasource" />
     <None Include="Properties\DataSources\DatesDiffItem.datasource" />
-    <None Include="Properties\DataSources\Ordisoftware.HebrewCommon.SystemStatistics.datasource" />
+    <None Include="Properties\DataSources\Ordisoftware.Core.SystemStatistics.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
