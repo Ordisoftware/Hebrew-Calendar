@@ -144,23 +144,6 @@
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\ControlLocation.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\FormsHelper.cs" />
-    <Compile Include="Source\Common\Hebrew\CommonMenusControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Hebrew\CommonMenusControl.Designer.cs">
-      <DependentUpon>CommonMenusControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\Hebrew\HebrewTools.cs" />
-    <Compile Include="Source\Common\Hebrew\ProvidersCollection.cs" />
-    <Compile Include="Source\Common\Hebrew\LettersControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Hebrew\LettersControl.Designer.cs">
-      <DependentUpon>LettersControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\Hebrew\LettersControl.Redraw.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Source\Common\Core\WinForms.Controls\RichTextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -180,7 +163,6 @@
     </Compile>
     <Compile Include="Source\Common\Core\Data\DataFile.cs" />
     <Compile Include="Source\Common\Core\Data\DataFileFolder.cs" />
-    <Compile Include="Source\Common\Hebrew\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeDictionary.cs" />
     <Compile Include="Source\Common\Core\Collections\AutoResizedList.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeOfEnumDictionary.cs" />
@@ -189,9 +171,6 @@
     <Compile Include="Source\Common\Core\Collections\SortedAutoDictionary.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeSortedDictionary.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeStringList.cs" />
-    <Compile Include="Source\Common\Hebrew\OnlineProviderItem.cs" />
-    <Compile Include="Source\Common\Hebrew\OnlineProviders.cs" />
-    <Compile Include="Source\Common\Hebrew\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\Core\Data\SQLiteDate.cs" />
     <Compile Include="Source\Common\Core\Data\SQLiteOdbcHelper.cs" />
     <Compile Include="Source\Common\Core\Exceptions\AbortException.cs" />
@@ -271,6 +250,28 @@
     <Compile Include="Source\Common\Core\Classes\StringHelper.Format.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemStatistics.cs" />
     <Compile Include="Source\Common\Core\Classes\WebCheckUpdate.cs" />
+    <Compile Include="Source\Common\Hebrew\CommonMenusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\CommonMenusControl.Designer.cs">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\HebrewAlphabet.cs" />
+    <Compile Include="Source\Common\Hebrew\HebrewTools.cs" />
+    <Compile Include="Source\Common\Hebrew\HebrewTranslations.cs" />
+    <Compile Include="Source\Common\Hebrew\LettersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\LettersControl.Designer.cs">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\LettersControl.Redraw.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\OnlineProviderItem.cs" />
+    <Compile Include="Source\Common\Hebrew\OnlineProviders.cs" />
+    <Compile Include="Source\Common\Hebrew\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\Hebrew\ProvidersCollection.cs" />
     <Compile Include="Source\Entities\ApplicationStatistics.cs" />
     <Compile Include="Source\Entities\YearsIntervalItem.cs" />
     <Compile Include="Source\Entities\DateItem.cs" />
@@ -536,18 +537,6 @@
       <DependentUpon>TodayButton.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\CommonMenusControl.fr.resx">
-      <DependentUpon>CommonMenusControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\CommonMenusControl.resx">
-      <DependentUpon>CommonMenusControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\LettersControl.fr.resx">
-      <DependentUpon>LettersControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\LettersControl.resx">
-      <DependentUpon>LettersControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.en.resx">
       <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -606,6 +595,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms\WebUpdateForm.resx">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\CommonMenusControl.fr.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\CommonMenusControl.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\LettersControl.fr.resx">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\LettersControl.resx">
+      <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsForm.fr.resx">
       <DependentUpon>CelebrationsForm.cs</DependentUpon>
