@@ -409,9 +409,6 @@
     <Setting Name="TraceFormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">884, 661</Value>
     </Setting>
-    <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">en</Value>
-    </Setting>
     <Setting Name="TraceFormTextBoxFontSize" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">8</Value>
     </Setting>
