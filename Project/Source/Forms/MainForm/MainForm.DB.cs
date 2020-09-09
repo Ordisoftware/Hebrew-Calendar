@@ -22,17 +22,6 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    /// <summary>
-    /// Empty all tables.
-    /// </summary>
-    private void EmptyDatabase()
-    {
-      if ( !DataSet.IsInitialized ) return;
-      LunisolarDaysTableAdapter.DeleteAllQuery();
-      TableAdapterManager.UpdateAll(DataSet);
-      LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-    }
-
     private OdbcConnection LockFileConnection;
 
     /// <summary>
@@ -66,6 +55,17 @@ namespace Ordisoftware.Hebrew.Calendar
                                           PRIMARY KEY('Date')
                                         )");
       });
+    }
+
+    /// <summary>
+    /// Empty all tables.
+    /// </summary>
+    private void EmptyDatabase()
+    {
+      if ( !DataSet.IsInitialized ) return;
+      LunisolarDaysTableAdapter.DeleteAllQuery();
+      TableAdapterManager.UpdateAll(DataSet);
+      LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
     }
 
   }
