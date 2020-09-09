@@ -153,6 +153,12 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### 2020.09.__ - Version 5.2
+
+- Add permanent database file locking while running.
+- Improve web check update to check if the downloaded file is an executable having the good checksum.
+- Fix justify text in advanced message boxes.
+
 #### 2020.09.08 - Version 5.1
 
 - Fix that sometimes the application is in the system Tray Icon but does not start and freeze.
