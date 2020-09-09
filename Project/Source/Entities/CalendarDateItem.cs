@@ -19,16 +19,16 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide date item.
+  /// Provide calendar date item.
   /// </summary>
-  public class DateItem
+  public class CalendarDateItem
   {
-    public DateTime Date { get; set; }
-    public int MoonDay { get; set; }
-    public int MoonPhase { get; set; }
-    public SeasonChange TorahSeasonChange { get; set; }
-    public SeasonChange RealSeasonChange { get; set; }
-    public SunAndMoonRiseAndSet Ephemerisis { get; set; }
+    public DateTime Date { get; internal set; }
+    public int MoonDay { get; internal set; }
+    public int MoonPhase { get; internal set; }
+    public SeasonChange TorahSeasonChange { get; internal set; }
+    public SeasonChange RealSeasonChange { get; internal set; }
+    public SunAndMoonRiseAndSet Ephemerisis { get; internal set; }
     public override string ToString() => SQLiteDate.ToString(Date);
   }
 

@@ -83,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MainForm.Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
         MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
       });
-      if (result ) Program.Dates.Clear();
+      if (result ) CalendarDates.Instance.Clear();
       return result;
     }
 

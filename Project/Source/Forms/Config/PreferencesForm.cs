@@ -216,7 +216,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !SelectDayForm.Run(Translations.SelectBirthday.GetLang(), out var date) ) return;
       if ( !SelectBirthTime.Run(out var time) ) return;
-      if ( time >= new TimeSpan(0, 0, 0) && time < Program.Dates[date].Ephemerisis.Sunset )
+      if ( time >= new TimeSpan(0, 0, 0) && time < CalendarDates.Instance[date].Ephemerisis.Sunset )
         date = date.AddDays(-1);
       Settings.ShabatDay = (int)date.DayOfWeek;
       foreach ( DayOfWeekItem day in EditShabatDay.Items )

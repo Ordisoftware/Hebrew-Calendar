@@ -13,9 +13,9 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using AASharp;
-using System.Collections;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -23,14 +23,16 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide date item read only dictionary wher items are initialized each time a date is not present.
   /// </summary>
-  public class DateItemAutoDictionary : IReadOnlyDictionary<DateTime, DateItem>
+  public class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
   {
+
+    static public readonly CalendarDates Instance = new CalendarDates();
 
     static private readonly Dictionary<int, SortedDictionary<DateTime, SeasonChange>> TorahSeasons
       = new Dictionary<int, SortedDictionary<DateTime, SeasonChange>>();
 
-    static private readonly SortedDictionary<DateTime, DateItem> Items
-      = new SortedDictionary<DateTime, DateItem>();
+    static private readonly SortedDictionary<DateTime, CalendarDateItem> Items
+      = new SortedDictionary<DateTime, CalendarDateItem>();
 
     public int Count
       => Items.Keys.Count;
@@ -38,7 +40,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public IEnumerable<DateTime> Keys
       => Items.Keys;
 
-    public IEnumerable<DateItem> Values
+    public IEnumerable<CalendarDateItem> Values
       => Items.Values;
 
     public bool ContainsKey(DateTime key)
@@ -46,7 +48,7 @@ namespace Ordisoftware.Hebrew.Calendar
       return Items.ContainsKey(key);
     }
 
-    public IEnumerator<KeyValuePair<DateTime, DateItem>> GetEnumerator()
+    public IEnumerator<KeyValuePair<DateTime, CalendarDateItem>> GetEnumerator()
     {
       return Items.GetEnumerator();
     }
@@ -56,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
       return Items.GetEnumerator();
     }
 
-    public bool TryGetValue(DateTime key, out DateItem value)
+    public bool TryGetValue(DateTime key, out CalendarDateItem value)
     {
       return Items.TryGetValue(key, out value);
     }
@@ -67,12 +69,12 @@ namespace Ordisoftware.Hebrew.Calendar
       Items.Clear();
     }
 
-    public DateItem this[DateTime key]
+    public CalendarDateItem this[DateTime key]
     {
       get
       {
         if ( Items.ContainsKey(key) ) return Items[key];
-        DateItem value = new DateItem
+        CalendarDateItem value = new CalendarDateItem
         {
           Date = key,
           MoonDay = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(key),
@@ -137,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    public DateItemAutoDictionary()
+    private CalendarDates()
     {
     }
 
