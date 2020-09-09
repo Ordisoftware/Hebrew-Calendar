@@ -86,7 +86,7 @@ namespace Ordisoftware.Core
         key.SetValue(Globals.DatabaseOdbcDSN, "SQLite3 ODBC Driver");
         key = Registry.CurrentUser.OpenSubKey(@"Software\ODBC\ODBC.INI", true);
         key = key.CreateSubKey(dsnName);
-        key.SetValue("Driver", "C:\\Windows\\system32\\sqlite3odbc.dll");
+        key.SetValue("Driver", Globals.SQLiteSystemDLLFilePath);
         key.SetValue("Database", filePath);
         key.SetValue("FKSupport", "1");
         key.SetValue("Timeout", timeout.ToString());

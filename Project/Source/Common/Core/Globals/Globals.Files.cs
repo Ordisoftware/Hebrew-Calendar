@@ -105,6 +105,12 @@ namespace Ordisoftware.Core
       => Path.Combine(HelpFolderPath, $"index-{Languages.CurrentCode}.htm");
 
     /// <summary>
+    /// Indicate the SQLite system DLL file path.
+    /// </summary>
+    static public string SQLiteSystemDLLFilePath
+      => "%WinDIR%\\system32\\sqlite3odbc.dll";
+
+    /// <summary>
     /// Indicate the Odbc DSN of the database.
     /// </summary>
     static public string DatabaseOdbcDSN
