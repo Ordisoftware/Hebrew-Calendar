@@ -87,21 +87,21 @@ namespace Ordisoftware.Core
       = GitHubRepositoryURL + "/issues/new?assignees=" + AssemblyCompany;
 
     /// <summary>
-    /// Indicate the filename of the application's icon.
+    /// Indicate the file path of the application's icon.
     /// </summary>
-    static public string ApplicationIconFilename
+    static public string ApplicationIconFilePath
       => Path.Combine(RootFolderPath, "Application.ico");
 
     /// <summary>
-    /// Indicate the filename of the help.
+    /// Indicate the file path of the help.
     /// </summary>
-    static public string HelpFilename
+    static public string HelpFilePath
       => Path.Combine(HelpFolderPath, $"index-{Languages.CurrentCode}.htm");
 
     /// <summary>
     /// Indicate the Odbc DSN of the database.
     /// </summary>
-    static public string OdbcDSN
+    static public string DatabaseOdbcDSN
       => ApplicationGitHubCode;
 
     /// <summary>
@@ -111,10 +111,16 @@ namespace Ordisoftware.Core
       = ".sqlite";
 
     /// <summary>
-    /// Indicate the filename of the database.
+    /// Indicate the file name of the database.
     /// </summary>
-    static public string DatabaseFilename
-      => Path.Combine(DatabaseFolderPath, OdbcDSN + DatabaseFileExtension);
+    static public string DatabaseFileName
+      => DatabaseOdbcDSN + DatabaseFileExtension;
+
+    /// <summary>
+    /// Indicate the file path of the database.
+    /// </summary>
+    static public string DatabaseFilePath
+      => Path.Combine(DatabaseFolderPath, DatabaseFileName);
 
   }
 

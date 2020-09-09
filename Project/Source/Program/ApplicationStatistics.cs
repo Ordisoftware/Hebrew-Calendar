@@ -95,10 +95,10 @@ namespace Ordisoftware.Hebrew.Calendar
          : MainForm.Instance.CalendarMonth.TheEvents.Count.ToString();
 
     public string DBEngine
-      => OdbcSQLiteHelper.Engine;
+      => SQLiteOdbcHelper.EngineNameAndVersion;
 
     public string DBADOdotNETProvider
-      => OdbcSQLiteHelper.ADOdotNETProvider;
+      => SQLiteOdbcHelper.ADOdotNETProviderName;
 
     public string DBFileSize
     {
@@ -107,7 +107,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( UpdateDBFileSizeRequired )
         {
           UpdateDBFileSizeRequired = false;
-          _DBFileSize = SystemManager.GetFileSize(Globals.DatabaseFilename).FormatBytesSize().ToString();
+          _DBFileSize = SystemManager.GetFileSize(Globals.DatabaseFilePath).FormatBytesSize().ToString();
         }
         return MainForm.Instance.IsGenerating ? Localizer.Processing.GetLang() : _DBFileSize;
       }

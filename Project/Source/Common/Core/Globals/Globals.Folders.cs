@@ -38,15 +38,15 @@ namespace Ordisoftware.Core
       = "Bin";
 
     /// <summary>
-    /// Indicate generated executable debug directory.
+    /// Indicate generated executable bin\debug directory combination.
     /// </summary>
-    static public string DebugDirectory { get; set; }
+    static public string DebugDirectoryCombination { get; set; }
       = Path.Combine(BinDirectoryName, "Debug");
 
     /// <summary>
-    /// Indicate generated executable release directory.
+    /// Indicate generated executable bin\release directory combination.
     /// </summary>
-    static public string ReleaseDirectory { get; set; }
+    static public string ReleaseDirectoryCombination { get; set; }
       = Path.Combine(BinDirectoryName, "Release");
 
     /// <summary>
@@ -54,8 +54,8 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string RootFolderPath
       => Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath
-                                                              .Replace(DebugDirectory, BinDirectoryName)
-                                                              .Replace(ReleaseDirectory, BinDirectoryName))).FullName;
+                                                              .Replace(DebugDirectoryCombination, BinDirectoryName)
+                                                              .Replace(ReleaseDirectoryCombination, BinDirectoryName))).FullName;
 
     /// <summary>
     /// Indicate the application help folder.
@@ -114,7 +114,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate a path for in a special folder.
     /// </summary>
-    static private string CreateSpecialFolderPath(Environment.SpecialFolder folder, string directory)
+    static public string CreateSpecialFolderPath(Environment.SpecialFolder folder, string directory)
       => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(folder),
                                                 AssemblyCompany,
                                                 directory)).FullName;

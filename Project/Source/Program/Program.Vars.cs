@@ -105,7 +105,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Indicate filename of the text report.
     /// </summary>
     static public string TextReportFilename
-      => Path.ChangeExtension(Globals.DatabaseFilename, ".txt");
+      => Path.ChangeExtension(Globals.DatabaseFilePath, ".txt");
 
     /// <summary>
     /// Indicate filename of the GPS database.

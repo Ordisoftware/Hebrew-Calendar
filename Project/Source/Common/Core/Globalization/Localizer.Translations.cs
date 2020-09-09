@@ -326,14 +326,21 @@ namespace Ordisoftware.Core
         [Language.FR] = $"Erreur dans {{0}}{Globals.NL2}Ligne n° {{1}}{Globals.NL2}{{2}}"
       };
 
-    static public readonly TranslationsDictionary CreateDBTableError
+    static public readonly TranslationsDictionary DBDropTableError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Error on drop table:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Error à la suppression de la table:{Globals.NL2}{{0}}",
+      };
+
+    static public readonly TranslationsDictionary DBCreateTableError
       = new TranslationsDictionary
       {
         [Language.EN] = $"Error on create table:{Globals.NL2}{{0}}",
         [Language.FR] = $"Error à la création de la table:{Globals.NL2}{{0}}",
       };
 
-    static public readonly TranslationsDictionary CreateDBColumnError
+    static public readonly TranslationsDictionary DBCreateColumnError
       = new TranslationsDictionary
       {
         [Language.EN] = $"Error on create column:{Globals.NL2}{{0}}",

@@ -54,7 +54,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
-      SystemManager.TryCatch(() => { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilename); });
+      SystemManager.TryCatch(() => { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilePath); });
       TrayIcon.Icon = Icon;
       MenuTray.Enabled = false;
       Globals.AllowClose = false;
@@ -558,7 +558,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      SystemManager.RunShell(Globals.HelpFilename);
+      SystemManager.RunShell(Globals.HelpFilePath);
     }
 
     /// <summary>

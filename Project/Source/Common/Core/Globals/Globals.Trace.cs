@@ -30,10 +30,16 @@ namespace Ordisoftware.Core
      = TraceFileRollOverMode.Daily;
 
     /// <summary>
-    /// Indicate the trace file keep count.
+    /// Indicate the trace files keep count.
     /// </summary>
-    static public int TraceFileKeepCount { get; set; }
+    static public int TraceFilesKeepCount { get; set; }
      = 7;
+
+    /// <summary>
+    /// Indicate the trace filename.
+    /// </summary>
+    static public string TraceDirectoryName { get; set; }
+      = "Logs";
 
     /// <summary>
     /// Indicate the trace file code.
@@ -46,12 +52,6 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string TraceFileExtension { get; set; }
       = ".log";
-
-    /// <summary>
-    /// Indicate the trace filename.
-    /// </summary>
-    static public string TraceDirectoryName { get; set; }
-      = "Logs";
 
   }
 

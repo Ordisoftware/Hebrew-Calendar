@@ -272,7 +272,7 @@
     <Compile Include="Source\Common\Hebrew\OnlineProviders.cs" />
     <Compile Include="Source\Common\Hebrew\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\Hebrew\ProvidersCollection.cs" />
-    <Compile Include="Source\Entities\ApplicationStatistics.cs" />
+    <Compile Include="Source\Program\ApplicationStatistics.cs" />
     <Compile Include="Source\Entities\YearsIntervalItem.cs" />
     <Compile Include="Source\Entities\DateItem.cs" />
     <Compile Include="Source\Entities\DateItemAutoDictionary.cs" />

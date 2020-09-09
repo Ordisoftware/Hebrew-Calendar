@@ -162,7 +162,7 @@ namespace Ordisoftware.Core
                                          Globals.TraceFileCode,
                                          Globals.TraceFileExtension,
                                          Globals.TraceFileMode,
-                                         Globals.TraceFileKeepCount,
+                                         Globals.TraceFilesKeepCount,
                                          TraceFileChanged);
             System.Diagnostics.Trace.Listeners.Add(TraceListener);
             System.Diagnostics.Trace.AutoFlush = true;

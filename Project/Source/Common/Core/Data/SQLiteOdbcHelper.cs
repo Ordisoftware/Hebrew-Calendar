@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -23,28 +23,27 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide OdBc SQLite helper.
+  /// Provide SQLite ODBC helper.
   /// </summary>
-  static public class OdbcSQLiteHelper
+  static public class SQLiteOdbcHelper
   {
 
     static public int DefaultOptimizeDaysInterval = 7;
 
     /// <summary>
-    /// Indicate the database engine name and version
+    /// Indicate the database engine name and version.
     /// </summary>
-    static public string Engine { get; private set; }
+    static public string EngineNameAndVersion { get; private set; }
 
     /// <summary>
-    /// Indicate the ADO.NET provider.
+    /// Indicate the ADO.NET provider name.
     /// </summary>
-    static public string ADOdotNETProvider { get; private set; }
+    static public string ADOdotNETProviderName { get; private set; }
 
     /// <summary>
     /// Get a single line of a string.
     /// </summary>
     /// <param name="sql"></param>
-    /// <returns></returns>
     static public string UnformatSQL(string sql)
     {
       return sql.SplitNoEmptyLines().Select(line => line.Trim()).AsMultiSpace();
@@ -53,15 +52,15 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Create or update the ODBC DSN.
     /// </summary>
-    static public void CreateDSNIfNotExists()
+    static public void CreateOrUpdateDSN()
     {
-      CreateDSNIfNotExists(Globals.OdbcDSN, Globals.DatabaseFilename);
+      CreateOrUpdateDSN(Globals.DatabaseOdbcDSN, Globals.DatabaseFilePath, 0);
     }
 
     /// <summary>
     /// Create or update the ODBC DSN.
     /// </summary>
-    static public void CreateDSNIfNotExists(string dsnName, string filePath)
+    static public void CreateOrUpdateDSN(string dsnName, string filePath, int timeout)
     {
       try
       {
@@ -70,18 +69,28 @@ namespace Ordisoftware.Core
         key = key.CreateSubKey("ODBC", true);
         key = key.CreateSubKey("ODBC.INI", true);
         key = key.CreateSubKey("ODBC Data Sources", true);
-        key.SetValue(Globals.OdbcDSN, "SQLite3 ODBC Driver");
+        key.SetValue(Globals.DatabaseOdbcDSN, "SQLite3 ODBC Driver");
         key = Registry.CurrentUser.OpenSubKey(@"Software\ODBC\ODBC.INI", true);
         key = key.CreateSubKey(dsnName);
         key.SetValue("Driver", "C:\\Windows\\system32\\sqlite3odbc.dll");
         key.SetValue("Database", filePath);
         key.SetValue("FKSupport", "1");
-        key.SetValue("Timeout", "0");
+        key.SetValue("Timeout", timeout.ToString());
       }
       catch ( Exception ex )
       {
         throw new SQLiteException(Localizer.DatabaseSetDSNError.GetLang(), ex);
       }
+    }
+
+    /// <summary>
+    /// Get the version of the engine.
+    /// </summary>
+    /// <param name="connection">The connection.</param>
+    static public void InitializeVersion(this OdbcConnection connection)
+    {
+      ADOdotNETProviderName = connection?.GetType().Name ?? Localizer.ErrorSlot.GetLang();
+      EngineNameAndVersion = ( "SQLite " + connection?.ServerVersion ) ?? Localizer.ErrorSlot.GetLang();
     }
 
     /// <summary>
@@ -101,21 +110,6 @@ namespace Ordisoftware.Core
         lastdone = DateTime.Now;
       }
       return lastdone;
-    }
-
-    /// <summary>
-    /// Get the version of the engine.
-    /// </summary>
-    /// <param name="connection">The connection.</param>
-    static public void InitializeVersion(this OdbcConnection connection)
-    {
-      ADOdotNETProvider = connection?.GetType().Name ?? Localizer.ErrorSlot.GetLang();
-      if ( !SystemManager.TryCatch(() =>
-       {
-         using ( var command = new OdbcCommand("SELECT SQLITE_VERSION()", connection) )
-           Engine = "SQLite " + command.ExecuteScalar().ToString();
-       }) )
-        Engine = Localizer.ErrorSlot.GetLang();
     }
 
     /// <summary>
@@ -166,7 +160,14 @@ namespace Ordisoftware.Core
       SystemManager.TryCatchManage(() =>
       {
         using ( var command = new OdbcCommand($"DROP TABLE IF EXISTS {table}", connection) )
-          command.ExecuteNonQuery();
+          try
+          {
+            command.ExecuteNonQuery();
+          }
+          catch ( Exception ex )
+          {
+            throw new SQLiteException(Localizer.DBDropTableError.GetLang(table), ex);
+          }
       });
     }
 
@@ -176,7 +177,7 @@ namespace Ordisoftware.Core
     /// <param name="connection">The connection.</param>
     /// <param name="table">The table name.</param>
     /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
-    /// <returns>True if the table does not exist else false.</returns>
+    /// <returns>True if the table exists else false.</returns>
     static public bool CheckTable(this OdbcConnection connection, string table, string sql)
     {
       try
@@ -194,7 +195,7 @@ namespace Ordisoftware.Core
               }
               catch ( Exception ex )
               {
-                throw new SQLiteException(Localizer.CreateDBTableError.GetLang(UnformatSQL(sql)), ex);
+                throw new SQLiteException(Localizer.DBCreateTableError.GetLang(UnformatSQL(sql)), ex);
               }
         }
       }
@@ -212,7 +213,7 @@ namespace Ordisoftware.Core
     /// <param name="table">The table name.</param>
     /// <param name="column">The column name.</param>
     /// <param name="sql">The sql query to create the column, can be empty to only check</param>
-    /// <returns>True if the column does not exist else false.</returns>
+    /// <returns>True if the column exists else false.</returns>
     static public bool CheckColumn(this OdbcConnection connection, string table, string column, string sql)
     {
       try
@@ -220,15 +221,10 @@ namespace Ordisoftware.Core
         using ( var commandCheck = new OdbcCommand($"PRAGMA table_info({table})", connection) )
         using ( var readerCheck = commandCheck.ExecuteReader() )
         {
-          bool found = false;
           int nameIndex = readerCheck.GetOrdinal("Name");
           while ( readerCheck.Read() )
             if ( readerCheck.GetString(nameIndex).Equals(column) )
-            {
-              found = true;
-              break;
-            }
-          if ( found ) return false;
+              return false;
           if ( !sql.IsNullOrEmpty() )
           {
             sql = sql.Replace("%TABLE%", table).Replace("%COLUMN%", column);
@@ -239,7 +235,7 @@ namespace Ordisoftware.Core
               }
               catch ( Exception ex )
               {
-                throw new SQLiteException(Localizer.CreateDBColumnError.GetLang(UnformatSQL(sql)), ex);
+                throw new SQLiteException(Localizer.DBCreateColumnError.GetLang(UnformatSQL(sql)), ex);
               }
           }
         }
@@ -260,7 +256,7 @@ namespace Ordisoftware.Core
     /// <param name="type">The type of the column.</param>
     /// <param name="valueDefault">The default value.</param>
     /// <param name="valueNotNull">Indicate if not null.</param>
-    /// <returns>True if the column does not exist else false.</returns>
+    /// <returns>True if the column exists else false.</returns>
     static public bool CheckColumn(this OdbcConnection connection,
                                    string table, 
                                    string column, 
