@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.IO;
 using System.Text;
@@ -32,6 +32,12 @@ namespace Ordisoftware.Core
     static public string[] CommandLineArguments { get; private set; }
 
     /// <summary>
+    /// Indicate command line commands.
+    /// </summary>
+    static public readonly NullSafeDictionary<string, NullSafeStringList> CommandLineOptions
+      = new NullSafeDictionary<string, NullSafeStringList>();
+
+    /// <summary>
     /// Check command line arguments and apply them.
     /// </summary>
     static public void CheckCommandLineArguments(string[] args, ref Language language)
@@ -39,16 +45,24 @@ namespace Ordisoftware.Core
       try
       {
         CommandLineArguments = args;
-        if ( args.Length == 2 && args[0] == "/lang" )
-          if ( args[1] == Languages.Codes[Language.EN] )
-            language = Language.EN;
-          else
-          if ( args[1] == Languages.Codes[Language.FR] )
-            language = Language.FR;
+        var parts = args.AsMultiSpace().SplitNoEmptyLines("/");
+        foreach ( string arg in parts )
+        {
+          var items = arg.Trim().SplitNoEmptyLines(" ");
+          if ( items.Length == 0 ) continue;
+          var values = new NullSafeStringList();
+          for ( int index = 1; index < items.Length; index++ )
+            values.Add(items[index]);
+          CommandLineOptions[items[0].ToLower()] = values;
+        }
+        if ( CommandLineOptions.ContainsKey("lang"))
+          foreach (var lang in Languages.Values )
+            if ( CommandLineOptions["lang"][0].ToLower() == lang.Key)
+              language = lang.Value;
       }
       catch ( Exception ex )
       {
-        ex.Manage();
+        ex.Manage(ShowExceptionMode.None);
       }
     }
 

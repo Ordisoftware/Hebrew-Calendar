@@ -45,20 +45,44 @@ namespace Ordisoftware.Core
     /// <param name="str">The str to act on.</param>
     static public string[] SplitNoEmptyLines(this string str)
     {
-      return str.Split(StringSplitOptions.RemoveEmptyEntries, Globals.NL);
+      return str.Split(Globals.NL, StringSplitOptions.RemoveEmptyEntries);
     }
 
     /// <summary>
-    /// Split a string by new line.
+    /// Split a string and remove empty lines.
+    /// </summary>
+    /// <returns>
+    /// A string[].
+    /// </returns>
+    /// <param name="str">The str to act on.</param>
+    static public string[] SplitNoEmptyLines(this string str, string separator)
+    {
+      return str.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+    }
+
+    /// <summary>
+    /// Split a string by new line and keep empty lines.
     /// </summary>
     /// <returns>
     /// A string[].
     /// </returns>
     /// <param name="str">The string to act on.</param>
     /// <param name="stringSplitOptions">Options for controlling the operation.</param>
-    static public string[] Split(this string str, StringSplitOptions stringSplitOptions = StringSplitOptions.None)
+    static public string[] SplitKeepEmptyLines(this string str)
     {
-      return str.Split(stringSplitOptions, Globals.NL);
+      return str.Split(Globals.NL, StringSplitOptions.None);
+    }
+
+    /// <summary>
+    /// Split a string and remove empty lines.
+    /// </summary>
+    /// <returns>
+    /// A string[].
+    /// </returns>
+    /// <param name="str">The str to act on.</param>
+    static public string[] SplitKeepEmptyLines(this string str, string separator)
+    {
+      return str.Split(separator, StringSplitOptions.None);
     }
 
     /// <summary>
@@ -70,7 +94,7 @@ namespace Ordisoftware.Core
     /// <param name="str">The str to act on.</param>
     /// <param name="stringSplitOptions">Options for controlling the operation.</param>
     /// <param name="separator">The separator.</param>
-    static public string[] Split(this string str, StringSplitOptions stringSplitOptions, string separator)
+    static public string[] Split(this string str, string separator, StringSplitOptions stringSplitOptions)
     {
       return str.Split(new string[] { separator }, stringSplitOptions);
     }

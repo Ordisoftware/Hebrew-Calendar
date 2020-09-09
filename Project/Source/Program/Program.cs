@@ -58,12 +58,10 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.CheckCommandLineArguments(args, ref lang);
       Settings.LanguageSelected = lang;
       UpdateLocalization();
-      if (!Settings.FirstLaunch)
-        if ( SystemManager.CommandLineArguments != null )
-          if ( SystemManager.CommandLineArguments.Length == 1 )
-            if ( SystemManager.CommandLineArguments[0] == "/hide" )
-              ForceStartupHide = true;
-        Application.Run(MainForm.Instance);
+      if ( !Settings.FirstLaunch )
+        if ( SystemManager.CommandLineOptions.ContainsKey("hide") )
+          ForceStartupHide = true;
+      Application.Run(MainForm.Instance);
     }
 
     /// <summary>
