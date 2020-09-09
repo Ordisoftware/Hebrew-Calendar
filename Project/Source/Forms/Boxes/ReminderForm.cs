@@ -26,6 +26,20 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class ReminderForm : Form
   {
 
+    static private Image Image;
+
+    static ReminderForm()
+    {
+      try
+      {
+        Image = Image.FromFile(Program.ReminderBoxImageFilePath);
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(Program.ReminderBoxImageFilePath, ex.Message));
+      }
+    }
+
     static public void Run(Data.DataSet.LunisolarDaysRow row,
                            bool isShabat, 
                            TorahEvent torahevent,
@@ -156,6 +170,8 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       ShowInTaskbar = Program.Settings.ShowReminderInTaskBar;
+      if ( Image != null )
+        PictureBox.Image = Image;
     }
 
     private void ReminderForm_FormClosed(object sender, FormClosedEventArgs e)
