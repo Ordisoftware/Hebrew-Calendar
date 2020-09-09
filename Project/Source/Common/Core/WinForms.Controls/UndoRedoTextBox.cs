@@ -45,7 +45,11 @@ namespace Ordisoftware.Core
     Selected
   }
 
+  
+
   public delegate void InsertingTextEventHandler(object sender, TextUpdating mode, ref string text);
+
+  //public delegate void ShowingContextMenuEventHandler(object sender, TextUpdating mode, ref string text);
 
   public partial class UndoRedoTextBox : TextBox
   {
@@ -59,6 +63,24 @@ namespace Ordisoftware.Core
       = CaretPositionAfterPaste.Ending;
 
     public event InsertingTextEventHandler InsertingText;
+
+    public event System.ComponentModel.CancelEventHandler ContextMenuEditOpening
+    {
+      add { ContextMenuEdit.Opening += value; }
+      remove { ContextMenuEdit.Opening -= value; }
+    }
+
+    public event EventHandler ContextMenuEditOpened
+    {
+      add { ContextMenuEdit.Opened += value; }
+      remove { ContextMenuEdit.Opened -= value; }
+    }
+
+    public event ToolStripDropDownClosedEventHandler ContextMenuEditClosed
+    {
+      add { ContextMenuEdit.Closed += value; }
+      remove { ContextMenuEdit.Closed -= value; }
+    }
 
     /*public override string Text
     {
