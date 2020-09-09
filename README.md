@@ -157,10 +157,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.09.__ - Version 5.2
+#### 2020.09.11 - Version 5.2
 
 - Add permanent database file locking while running.
-- Improve web check update to check if the downloaded file is an executable having the good checksum.
+- Improve check update to check the SSL certificate of the website and the checksum of the setup.
 - Fix justify text in advanced message boxes.
 
 #### 2020.09.08 - Version 5.1
@@ -196,7 +196,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to enable or disable message boxes sounds.
 - Improve message boxes.
 - Improve check update to allow auto update or direct download or open app web page.
-- Improve check update to check the SSL certificate of the website and the checksum of the setup.
 - Improve debugger to support logging.
 - Improve exception form to view log.
 - Some UI/UX improvements.
