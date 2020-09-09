@@ -36,9 +36,9 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.FirstLaunch = false;
         Settings.Save();
         MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
-        Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(Translations.AskToUseMoonOmer.GetLang());
+        Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(AppTranslations.AskToUseMoonOmer.GetLang());
         MainForm.Instance.ActionShowShabatNotice_Click(null, null);
-        if ( DisplayManager.QueryYesNo(Translations.AskToSetupPersonalShabat.GetLang()) )
+        if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
           ActionUsePersonalShabat_LinkClicked(null, null);
       }
       UpdateLanguagesButtons();

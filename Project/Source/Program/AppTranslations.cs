@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Localization strings.
   /// </summary>
-  static public partial class Translations
+  static public partial class AppTranslations
   {
 
     static public readonly TranslationsDictionary ApplicationDescription
@@ -34,13 +34,13 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary AskToResetPreferences
       = new TranslationsDictionary
       {
-        [Language.EN] = Localizer.ResetPreferences[Language.EN] + Globals.NL2 +
+        [Language.EN] = SysTranslations.ResetPreferences[Language.EN] + Globals.NL2 +
                         "GPS location and shabat day will be keeped." + Globals.NL2 +
-                        Localizer.AskToContinue[Language.EN],
+                        SysTranslations.AskToContinue[Language.EN],
 
-        [Language.FR] = Localizer.ResetPreferences[Language.FR] + Globals.NL2 +
+        [Language.FR] = SysTranslations.ResetPreferences[Language.FR] + Globals.NL2 +
                         "La position GPS et le jour du shabat seront conservés." + Globals.NL2 +
-                        Localizer.AskToContinue[Language.FR]
+                        SysTranslations.AskToContinue[Language.FR]
       };
 
     static public readonly TranslationsDictionary CantExitWhileGenerating
@@ -54,10 +54,10 @@ namespace Ordisoftware.Hebrew.Calendar
       = new TranslationsDictionary
       {
         [Language.EN] = "Error on loading the cities' GPS coordonates." + Globals.NL +
-                        Localizer.ApplicationMustExit[Language.EN],
+                        SysTranslations.ApplicationMustExit[Language.EN],
 
         [Language.FR] = "Impossible de charger les coordonnées GPS des villes." + Globals.NL +
-                        Localizer.ApplicationMustExit[Language.EN]
+                        SysTranslations.ApplicationMustExit[Language.EN]
       };
 
     static public readonly TranslationsDictionary ProgressLoadingData
@@ -169,13 +169,13 @@ namespace Ordisoftware.Hebrew.Calendar
       = new TranslationsDictionary
       {
         [Language.EN] = "Fatal error while generating data." + Globals.NL +
-                        Localizer.ApplicationMustExit[Language.EN] + Globals.NL +
-                        Localizer.ContactSupport[Language.EN] + Globals.NL2 +
+                        SysTranslations.ApplicationMustExit[Language.EN] + Globals.NL +
+                        SysTranslations.ContactSupport[Language.EN] + Globals.NL2 +
                         "{0}",
 
         [Language.FR] = "Erreur fatale lors de la génération des données." + Globals.NL +
-                        Localizer.ApplicationMustExit[Language.FR] + Globals.NL +
-                        Localizer.ContactSupport[Language.FR] + Globals.NL2 +
+                        SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL +
+                        SysTranslations.ContactSupport[Language.FR] + Globals.NL2 +
                         "{0}"
       };
 

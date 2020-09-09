@@ -101,7 +101,7 @@ namespace Ordisoftware.Core
         if ( !File.Exists(FilePathDefault) )
         {
           if ( ShowFileNotFound )
-            DisplayManager.ShowError(Localizer.FileNotFound.GetLang(FilePathDefault));
+            DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(FilePathDefault));
           return "";
         }
         else
@@ -110,8 +110,8 @@ namespace Ordisoftware.Core
           string folder = Path.GetDirectoryName(FilePath);
           if ( !Directory.Exists(folder) )
             Directory.CreateDirectory(folder);
-          string filePath1 = Localizer.UndefinedSlot.GetLang();
-          string filePath2 = Localizer.UndefinedSlot.GetLang();
+          string filePath1 = SysTranslations.UndefinedSlot.GetLang();
+          string filePath2 = SysTranslations.UndefinedSlot.GetLang();
           try
           {
             filePath1 = FilePathDefault;
@@ -120,7 +120,7 @@ namespace Ordisoftware.Core
           }
           catch ( Exception ex )
           {
-            string msg = Localizer.LoadFileError.GetLang(filePath1, filePath2, ex.Message);
+            string msg = SysTranslations.LoadFileError.GetLang(filePath1, filePath2, ex.Message);
             DisplayManager.ShowError(msg);
             return "";
           }

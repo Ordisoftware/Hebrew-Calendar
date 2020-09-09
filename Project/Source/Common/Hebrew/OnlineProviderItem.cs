@@ -41,7 +41,7 @@ namespace Ordisoftware.Hebrew
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(filePath, ex.Message));
+          DisplayManager.ShowWarning(SysTranslations.LoadFileError.GetLang(filePath, ex.Message));
           return null;
         }
       }

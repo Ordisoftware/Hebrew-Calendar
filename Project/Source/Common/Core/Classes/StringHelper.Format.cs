@@ -29,7 +29,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string FormatBytesSize(this long bytes)
     {
-      return bytes >= 0 ? FormatBytesSize((ulong)bytes) : Localizer.UndefinedSlot.GetLang();
+      return bytes >= 0 ? FormatBytesSize((ulong)bytes) : SysTranslations.UndefinedSlot.GetLang();
     }
 
     /// <summary>
@@ -51,7 +51,7 @@ namespace Ordisoftware.Core
     static public string FormatMilliseconds(this long ms, bool excludems = false)
     {
       TimeSpan time = TimeSpan.FromMilliseconds(ms);
-      var list = Localizer.MillisecondsFormat.GetLang();
+      var list = SysTranslations.MillisecondsFormat.GetLang();
       int index = time.Days == 0 && time.Hours == 0 && time.Minutes == 0 && time.Seconds == 0
                   ? 0
                   : time.Days == 0 && time.Hours == 0 && time.Minutes == 0

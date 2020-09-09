@@ -79,7 +79,7 @@ namespace Ordisoftware.Core
       }
       catch ( Exception ex )
       {
-        throw new SQLiteException(Localizer.DatabaseSetDSNError.GetLang(), ex);
+        throw new SQLiteException(SysTranslations.DatabaseSetDSNError.GetLang(), ex);
       }
     }
 
@@ -89,8 +89,8 @@ namespace Ordisoftware.Core
     /// <param name="connection">The connection.</param>
     static public void InitializeVersion(this OdbcConnection connection)
     {
-      ADOdotNETProviderName = connection?.GetType().Name ?? Localizer.ErrorSlot.GetLang();
-      EngineNameAndVersion = ( "SQLite " + connection?.ServerVersion ) ?? Localizer.ErrorSlot.GetLang();
+      ADOdotNETProviderName = connection?.GetType().Name ?? SysTranslations.ErrorSlot.GetLang();
+      EngineNameAndVersion = ( "SQLite " + connection?.ServerVersion ) ?? SysTranslations.ErrorSlot.GetLang();
     }
 
     /// <summary>
@@ -130,7 +130,7 @@ namespace Ordisoftware.Core
           }
         if ( errors.Count > 0 )
         {
-          string msg = Localizer.DatabaseIntegrityError.GetLang(errors.AsMultiLine());
+          string msg = SysTranslations.DatabaseIntegrityError.GetLang(errors.AsMultiLine());
           throw new SQLiteException(msg);
         }
       });
@@ -146,7 +146,7 @@ namespace Ordisoftware.Core
       {
         using ( var command = new OdbcCommand("VACUUM", connection) )
           if ( command.ExecuteNonQuery() != 0 )
-            throw new SQLiteException(Localizer.DatabaseVacuumError.GetLang());
+            throw new SQLiteException(SysTranslations.DatabaseVacuumError.GetLang());
       });
     }
 
@@ -166,7 +166,7 @@ namespace Ordisoftware.Core
           }
           catch ( Exception ex )
           {
-            throw new SQLiteException(Localizer.DBDropTableError.GetLang(table), ex);
+            throw new SQLiteException(SysTranslations.DBDropTableError.GetLang(table), ex);
           }
       });
     }
@@ -195,7 +195,7 @@ namespace Ordisoftware.Core
               }
               catch ( Exception ex )
               {
-                throw new SQLiteException(Localizer.DBCreateTableError.GetLang(UnformatSQL(sql)), ex);
+                throw new SQLiteException(SysTranslations.DBCreateTableError.GetLang(UnformatSQL(sql)), ex);
               }
         }
       }
@@ -235,7 +235,7 @@ namespace Ordisoftware.Core
               }
               catch ( Exception ex )
               {
-                throw new SQLiteException(Localizer.DBCreateColumnError.GetLang(UnformatSQL(sql)), ex);
+                throw new SQLiteException(SysTranslations.DBCreateColumnError.GetLang(UnformatSQL(sql)), ex);
               }
           }
         }

@@ -143,7 +143,7 @@ namespace Ordisoftware.Hebrew
             {
               if ( e.Button != MouseButtons.Right ) return;
               ( (ToolStripDropDownButton)menu.OwnerItem ).HideDropDown();
-              if ( !DisplayManager.QueryYesNo(Localizer.AskToOpenAllLinks.GetLang(menu.Text)) ) return;
+              if ( !DisplayManager.QueryYesNo(SysTranslations.AskToOpenAllLinks.GetLang(menu.Text)) ) return;
               foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
                 if ( item.Tag != null )
                 {
@@ -201,7 +201,7 @@ namespace Ordisoftware.Hebrew
       }
       catch
       {
-        return Localizer.ErrorSlot.GetLang();
+        return SysTranslations.ErrorSlot.GetLang();
       }
     }
 

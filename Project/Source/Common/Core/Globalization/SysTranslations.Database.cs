@@ -1,0 +1,102 @@
+﻿/// <license>
+/// This file is part of Ordisoftware Core Library.
+/// Copyright 2004-2020 Olivier Rogier.
+/// See www.ordisoftware.com for more information.
+/// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// https://mozilla.org/MPL/2.0/.
+/// If it is not possible or desirable to put the notice in a particular file, 
+/// then You may include the notice in a location(such as a LICENSE file in a 
+/// relevant directory) where a recipient would be likely to look for such a notice.
+/// You may add additional accurate notices of copyright ownership.
+/// </license>
+/// <created> 2016-04 </created>
+/// <edited> 2020-09 </edited>
+using System;
+
+namespace Ordisoftware.Core
+{
+
+  /// <summary>
+  /// Provide localization helper.
+  /// </summary>
+  static public partial class SysTranslations
+  {
+
+    static public readonly TranslationsDictionary DatabaseSetDSNError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Error creating or updating SQLite ODBC DSN.",
+        [Language.FR] = "Erreur de création ou de mise à jour du DSN ODBC SQLite."
+      };
+
+    static public readonly TranslationsDictionary DatabaseIntegrityError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Database integrity error:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Erreur d'intégrité de la base de données :{Globals.NL2}{{0}}"
+      };
+
+    static public readonly TranslationsDictionary DatabaseVacuumError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Database vacuum failed.",
+        [Language.FR] = "Echec du vacuum de la base de données."
+      };
+
+    static public readonly TranslationsDictionary AskToCheckParametersAfterDatabaseUpgraded
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Database upgraded." + Globals.NL2 +
+                        "Do you want check the parameters?",
+
+        [Language.FR] = "La base de données a été mise à jour." + Globals.NL2 +
+                        "Voulez-vous vérifier les paramètres ?"
+      };
+
+    static public readonly TranslationsDictionary AskToOptimizeDatabase
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Optimization process will close and reopen the database." + Globals.NL2 +
+                         AskToContinue[Language.EN],
+
+        [Language.FR] = "Le processus d'optimisation va fermer et rouvrir la base de données." + Globals.NL2 +
+                         AskToContinue[Language.FR]
+      };
+
+    static public readonly TranslationsDictionary AskToLoadInstalledData
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "This action will load the data installed with the application." + Globals.NL2 +
+                        "All modifications will be lost." + Globals.NL2 +
+                        AskToContinue[Language.EN],
+
+        [Language.FR] = "Cette action va charger les données installées avec l'application." + Globals.NL2 +
+                        "Toutes les modifications seront perdues." + Globals.NL2 +
+                        AskToContinue[Language.FR]
+      };
+
+    static public readonly TranslationsDictionary DBDropTableError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Error on drop table:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Erreur à la suppression de la table :{Globals.NL2}{{0}}",
+      };
+
+    static public readonly TranslationsDictionary DBCreateTableError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Error on create table:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Erreur à la création de la table :{Globals.NL2}{{0}}",
+      };
+
+    static public readonly TranslationsDictionary DBCreateColumnError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Error on create column:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Erreur à la création de la colonne :{Globals.NL2}{{0}}",
+      };
+
+  }
+
+}

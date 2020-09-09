@@ -110,7 +110,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         UpdateTextCalendar();
         CalendarMonth.CalendarDateChanged += date => GoToDate(date);
-        MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);
+        MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
         Globals.IsReady = true;
         UpdateButtons();
         GoToDate(DateTime.Today);
@@ -239,11 +239,11 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( IsGenerating )
       {
-        DisplayManager.ShowInformation(Translations.CantExitWhileGenerating.GetLang());
+        DisplayManager.ShowInformation(AppTranslations.CantExitWhileGenerating.GetLang());
         return;
       }
       if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDevExecutable ) )
-        if ( !DisplayManager.QueryYesNo(Localizer.AskToExitApplication.GetLang()) )
+        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
           return;
       Globals.AllowClose = true;
       Close();
@@ -292,7 +292,7 @@ namespace Ordisoftware.Hebrew.Calendar
           ShowInTaskbar = false;
           FormBorderStyle = FormBorderStyle.SizableToolWindow;
         }
-        MenuShowHide.Text = Localizer.HideRestore.GetLang(Visible);
+        MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
       });
     }
 
@@ -498,7 +498,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionResetWinSettings_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(Localizer.AskToRestoreWindowPosition.GetLang()) )
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToRestoreWindowPosition.GetLang()) )
         Settings.RestoreMainForm();
     }
 
@@ -631,13 +631,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     internal void ActionShowShabatNotice_Click(object sender, EventArgs e)
     {
-      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == Translations.NoticeShabatTitle.GetLang());
+      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == AppTranslations.NoticeShabatTitle.GetLang());
       if ( form != null )
         form.Popup(null, sender == null);
       else
       {
-        form = new MessageBoxEx(Translations.NoticeShabatTitle,
-                                Translations.NoticeShabat,
+        form = new MessageBoxEx(AppTranslations.NoticeShabatTitle,
+                                AppTranslations.NoticeShabat,
                                 MessageBoxEx.DefaultLargeWidth);
         form.ShowInTaskbar = true;
         form.Popup(null, sender == null);
@@ -651,13 +651,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     internal void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == Translations.NoticeCelebrationsTitle.GetLang());
+      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == AppTranslations.NoticeCelebrationsTitle.GetLang());
       if ( form != null )
         form.Popup(null, sender == null);
       else
       {
-        form = new MessageBoxEx(Translations.NoticeCelebrationsTitle,
-                                Translations.NoticeCelebrations,
+        form = new MessageBoxEx(AppTranslations.NoticeCelebrationsTitle,
+                                AppTranslations.NoticeCelebrations,
                                 MessageBoxEx.DefaultMediumWidth);
         form.ShowInTaskbar = true;
         form.Popup(null, sender == null);
@@ -754,7 +754,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionCopyReportToClipboard_Click(object sender, EventArgs e)
     {
       Clipboard.SetText(CalendarText.Text);
-      DisplayManager.Show(Translations.TextReportCopiedToClipboard.GetLang());
+      DisplayManager.Show(AppTranslations.TextReportCopiedToClipboard.GetLang());
     }
 
     /// <summary>
@@ -966,7 +966,7 @@ namespace Ordisoftware.Hebrew.Calendar
             e.Value = ( (MoonRise)e.Value ).ToString();
             break;
           case 10:
-            e.Value = Translations.MoonPhase.GetLang((MoonPhase)e.Value);
+            e.Value = AppTranslations.MoonPhase.GetLang((MoonPhase)e.Value);
             break;
           case 8:
             e.Value = (int)e.Value == 0 ? "" : "*";
@@ -976,11 +976,11 @@ namespace Ordisoftware.Hebrew.Calendar
             break;
           case 11:
             var season = (SeasonChange)e.Value;
-            e.Value = season == SeasonChange.None ? "" : Translations.SeasonEvent.GetLang(season);
+            e.Value = season == SeasonChange.None ? "" : AppTranslations.SeasonEvent.GetLang(season);
             break;
           case 12:
             var torah = (TorahEvent)e.Value;
-            e.Value = torah == TorahEvent.None ? "" : Translations.TorahEvent.GetLang(torah);
+            e.Value = torah == TorahEvent.None ? "" : AppTranslations.TorahEvent.GetLang(torah);
             break;
         }
       });

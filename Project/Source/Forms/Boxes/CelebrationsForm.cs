@@ -52,11 +52,11 @@ namespace Ordisoftware.Hebrew.Calendar
         var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteDate.ToDateTime(row.Date).ToLongDateString());
         if ( (SeasonChange)row.SeasonChange != SeasonChange.None )
           Instance.ListView.Items.Add(item)
-                                 .SubItems.Add(Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange))
+                                 .SubItems.Add(AppTranslations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange))
                                  .Tag = row.Date;
         if ( (TorahEvent)row.TorahEvents != TorahEvent.None )
           Instance.ListView.Items.Add(item)
-                                 .SubItems.Add(Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents))
+                                 .SubItems.Add(AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents))
                                  .Tag = row.Date;
       }
       Instance.ListView.Columns[Instance.ListView.Columns.Count - 1].Width = -2;

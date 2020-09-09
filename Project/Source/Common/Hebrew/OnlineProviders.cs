@@ -74,7 +74,7 @@ namespace Ordisoftware.Hebrew
         var lines = File.ReadAllLines(filePath);
         for ( int index = 0; index < lines.Length; index++ )
         {
-          void showError() => DisplayManager.ShowError(Localizer.ErrorInFile.GetLang(filePath, index + 1, lines[index]));
+          void showError() => DisplayManager.ShowError(SysTranslations.ErrorInFile.GetLang(filePath, index + 1, lines[index]));
           string line = lines[index].Trim();
           if ( line == "" ) continue;
           if ( line.StartsWith(";") ) continue;
@@ -113,7 +113,7 @@ namespace Ordisoftware.Hebrew
       }
       catch ( Exception ex )
       {
-        string msg = Localizer.LoadFileError.GetLang(filePath, ex.Message);
+        string msg = SysTranslations.LoadFileError.GetLang(filePath, ex.Message);
         DisplayManager.ShowError(msg);
       }
     }

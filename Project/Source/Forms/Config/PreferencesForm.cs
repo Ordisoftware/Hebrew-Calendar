@@ -110,7 +110,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       foreach ( DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)) )
       {
-        var item = new DayOfWeekItem() { Text = Translations.DayOfWeek.GetLang(day), Day = day };
+        var item = new DayOfWeekItem() { Text = AppTranslations.DayOfWeek.GetLang(day), Day = day };
         EditShabatDay.Items.Add(item);
         if ( (DayOfWeek)Settings.ShabatDay == day )
           EditShabatDay.SelectedItem = item;
@@ -126,7 +126,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( type != TorahEvent.None )
           SystemManager.TryCatch(() =>
           {
-            var item = new TorahEventItem() { Text = Translations.TorahEvent.GetLang(type), Event = type };
+            var item = new TorahEventItem() { Text = AppTranslations.TorahEvent.GetLang(type), Event = type };
             int index = EditEvents.Items.Add(item);
             if ( (bool)Settings["TorahEventRemind" + type.ToString()] )
               EditEvents.SetItemChecked(index, true);
@@ -159,7 +159,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Translations.AskToResetPreferences.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetPreferences.GetLang()) ) return;
       MainForm.Instance.MenuShowHide_Click(null, null);
       MoonMonthsForm.Instance.Hide();
       StatisticsForm.Instance.Hide();
@@ -214,7 +214,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !SelectDayForm.Run(Translations.SelectBirthday.GetLang(), out var date) ) return;
+      if ( !SelectDayForm.Run(AppTranslations.SelectBirthday.GetLang(), out var date) ) return;
       if ( !SelectBirthTime.Run(out var time) ) return;
       if ( time >= new TimeSpan(0, 0, 0) && time < CalendarDates.Instance[date].Ephemerisis.Sunset )
         date = date.AddDays(-1);
@@ -260,7 +260,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionMoonDayTextFormatHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowInformation(Translations.NoticeMoonDayTextFormat.GetLang());
+      DisplayManager.ShowInformation(AppTranslations.NoticeMoonDayTextFormat.GetLang());
     }
 
     private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
@@ -605,7 +605,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionAutoGenerateHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowInformation(Translations.AutoGenerateIntervalNotice.GetLang());
+      DisplayManager.ShowInformation(AppTranslations.AutoGenerateIntervalNotice.GetLang());
     }
 
     private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)

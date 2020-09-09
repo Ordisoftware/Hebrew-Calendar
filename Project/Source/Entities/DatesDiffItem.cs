@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Calendar
         int countData = CalendarDates.Instance.Count;
         if ( count - countData >= Program.LoadingFormDatesDiff )
         {
-          LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(), 
+          LoadingForm.Instance.Initialize(AppTranslations.ProgressCreateDays.GetLang(), 
                                           count, 
                                           Program.LoadingFormDatesDiff + 1);
           if ( sender != null ) sender.Enabled = false;

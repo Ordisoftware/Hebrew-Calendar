@@ -66,7 +66,7 @@ namespace Ordisoftware.Core
       }
       catch ( Exception ex )
       {
-        throw new IOException(Localizer.FileAccessError.GetLang(filePath, ex.Message));
+        throw new IOException(SysTranslations.FileAccessError.GetLang(filePath, ex.Message));
       }
     }
 
@@ -87,7 +87,7 @@ namespace Ordisoftware.Core
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowError(Localizer.RunSystemManagerError.GetLang(filePath, ex.Message));
+        DisplayManager.ShowError(SysTranslations.RunSystemManagerError.GetLang(filePath, ex.Message));
         return null;
       }
     }

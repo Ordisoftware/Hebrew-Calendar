@@ -48,7 +48,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           void showError()
           {
-            DisplayManager.ShowError(Localizer.ErrorInFile.GetLang(filePath, index + 1, lines[index]));
+            DisplayManager.ShowError(SysTranslations.ErrorInFile.GetLang(filePath, index + 1, lines[index]));
           }
           if ( index >= Program.MoonMonthsNames.Length )
             break;

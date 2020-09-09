@@ -64,10 +64,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     internal void AboutBox_Shown(object sender, EventArgs e)
     {
-      Text = Localizer.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
+      Text = SysTranslations.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
       LabelTitle.Text = Globals.AssemblyTitle;
-      LabelDescription.Text = Translations.ApplicationDescription.GetLang();
-      LabelVersion.Text = Localizer.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
+      LabelDescription.Text = AppTranslations.ApplicationDescription.GetLang();
+      LabelVersion.Text = SysTranslations.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
       LabelCopyright.Text = Globals.AssemblyCopyright;
       LabelTrademark.Text = Globals.AssemblyTrademark;
       TopMost = MainForm.Instance.TopMost;
@@ -111,7 +111,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Link clicked event information.</param>
     private void ActionPrivacyNotice_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowInformation(Localizer.PrivacyNoticeNoData.GetLang());
+      DisplayManager.ShowInformation(SysTranslations.PrivacyNoticeNoData.GetLang());
     }
 
   }

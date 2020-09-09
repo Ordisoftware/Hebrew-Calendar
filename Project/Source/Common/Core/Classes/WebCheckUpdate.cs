@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.IO;
 using System.Net;
@@ -48,7 +48,7 @@ namespace Ordisoftware.Core
       {
         Mutex = true;
         if ( Globals.MainForm != null ) Globals.MainForm.Enabled = false;
-        LoadingForm.Instance.Initialize(Localizer.WebCheckUpdate.GetLang(), 3, 0, false);
+        LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
         var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFilename, "*"));
         foreach ( string s in files ) SystemManager.TryCatch(() => File.Delete(s));
         LoadingForm.Instance.DoProgress();
@@ -61,7 +61,7 @@ namespace Ordisoftware.Core
             return ProcessDownload(client, version);
           else
           if ( !auto )
-            DisplayManager.ShowInformation(Localizer.NoNewVersionAvailable.GetLang());
+            DisplayManager.ShowInformation(SysTranslations.NoNewVersionAvailable.GetLang());
         }
       }
       catch ( Exception ex )
@@ -85,7 +85,7 @@ namespace Ordisoftware.Core
       string content = client.DownloadString(Globals.CheckUpdateURL);
       string[] lines = content.SplitNoEmptyLines();
       LoadingForm.Instance.DoProgress();
-      if ( lines.Length == 0 ) throw new WebException(Localizer.CheckUpdateFileError.GetLang());
+      if ( lines.Length == 0 ) throw new WebException(SysTranslations.CheckUpdateFileError.GetLang());
       string[] partsVersion = lines[0].Split('.');
       Version version;
       try
@@ -102,12 +102,12 @@ namespace Ordisoftware.Core
                                   Convert.ToInt32(partsVersion[2]));
             break;
           default:
-            throw new ArgumentException(Localizer.CheckUpdateFileError.GetLang(content));
+            throw new ArgumentException(SysTranslations.CheckUpdateFileError.GetLang(content));
         }
       }
       catch ( Exception ex )
       {
-        throw new WebException(Localizer.CheckUpdateFileError.GetLang(lines[0]) + Globals.NL2 + ex.Message);
+        throw new WebException(SysTranslations.CheckUpdateFileError.GetLang(lines[0]) + Globals.NL2 + ex.Message);
       }
       return version;
     }
@@ -142,7 +142,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static private bool ProcessAutoInstall(WebClient client, Version version, string fileURL/*, long size*/)
     {
-      LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
+      LoadingForm.Instance.Initialize(SysTranslations.DownloadingNewVersion.GetLang(), 100, 0, false);
       bool finished = false;
       Exception ex = null;
       string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFilename, version.ToString());
@@ -159,7 +159,7 @@ namespace Ordisoftware.Core
       //if ( SystemManager.GetFileSize(tempfile) != size )
         //throw new IOException(Localizer.WrongFileSIze.GetLang(tempfile));
       if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
-        throw new IOException(Localizer.NotAnExecutableFile.GetLang(filePathTemp));
+        throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));
       if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") != null )
       {
         Globals.IsExiting = true;

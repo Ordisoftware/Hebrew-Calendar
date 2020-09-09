@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,7 +96,7 @@ namespace Ordisoftware.Hebrew.Calendar
         || Settings.UpgradeResetRequiredV4_1 )
       {
         if ( !Settings.FirstLaunch )
-          DisplayManager.ShowInformation(Localizer.UpgradeResetRequired.GetLang());
+          DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
         Settings.Reset();
         Settings.LanguageSelected = Languages.Current;
         Settings.UpgradeResetRequiredV3_0 = false;
@@ -168,7 +168,7 @@ namespace Ordisoftware.Hebrew.Calendar
       UndoRedoTextBox.Relocalize();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
-      MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
+      MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
       MainForm.Instance.DoTimerReminder();
       MoonMonthsForm.Instance.Relocalize();
       NavigationForm.Instance.Relocalize();

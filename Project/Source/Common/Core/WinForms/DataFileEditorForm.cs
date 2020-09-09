@@ -50,7 +50,7 @@ namespace Ordisoftware.Core
     {
       if ( !File.Exists(file.FilePath) )
       {
-        DisplayManager.ShowError(Localizer.FileNotFound.GetLang(file.FilePath));
+        DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(file.FilePath));
         return;
       }
       var textbox = new UndoRedoTextBox();
@@ -94,8 +94,8 @@ namespace Ordisoftware.Core
 
     private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Localizer.AskToLoadInstalledData.GetLang()) ) return;
-      string filePath = Localizer.UndefinedSlot.GetLang();
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToLoadInstalledData.GetLang()) ) return;
+      string filePath = SysTranslations.UndefinedSlot.GetLang();
       foreach ( TabPage page in TabControl.TabPages )
         try
         {
@@ -104,7 +104,7 @@ namespace Ordisoftware.Core
         }
         catch ( Exception ex )
         {
-          string msg = Localizer.LoadFileError.GetLang(filePath, ex.Message);
+          string msg = SysTranslations.LoadFileError.GetLang(filePath, ex.Message);
           DisplayManager.ShowError(msg);
         }
       EditProvidersForm_Shown(this, null);
@@ -112,7 +112,7 @@ namespace Ordisoftware.Core
 
     private void ActionOK_Click(object sender, EventArgs e)
     {
-      string filePath = Localizer.UndefinedSlot.GetLang();
+      string filePath = SysTranslations.UndefinedSlot.GetLang();
       foreach ( TabPage page in TabControl.TabPages )
         try
         {
@@ -121,7 +121,7 @@ namespace Ordisoftware.Core
         }
         catch ( Exception ex )
         {
-          string msg = Localizer.WriteFileError.GetLang(filePath, ex.Message);
+          string msg = SysTranslations.WriteFileError.GetLang(filePath, ex.Message);
           DisplayManager.ShowError(msg);
         }
     }

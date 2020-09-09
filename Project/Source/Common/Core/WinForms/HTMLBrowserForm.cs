@@ -63,7 +63,7 @@ namespace Ordisoftware.Core
       if ( File.Exists(filePath) )
         WebBrowser.Navigate(filePath);
       else
-        DisplayManager.ShowError(Localizer.FileNotFound.GetLang(filePath));
+        DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(filePath));
     }
 
     private void HTMLBrowserForm_Deactivate(object sender, EventArgs e)

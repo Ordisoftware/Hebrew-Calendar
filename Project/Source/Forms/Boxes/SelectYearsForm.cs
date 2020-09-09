@@ -59,7 +59,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int max = Program.Settings.GenerateIntervalMaximum;
       CurrentYear = DateTime.Today.AddYears(-1).Year;
       if ( CurrentYear < yearMin || CurrentYear + min - 1 > yearMax )
-        throw new ArgumentOutOfRangeException(Translations.NotSupportedYear.GetLang(CurrentYear));
+        throw new ArgumentOutOfRangeException(AppTranslations.NotSupportedYear.GetLang(CurrentYear));
       EditYearFirst.Minimum = CurrentYear + min - max + 1;
       EditYearFirst.Maximum = CurrentYear;
       EditYearLast.Minimum = CurrentYear + min;
@@ -128,7 +128,7 @@ namespace Ordisoftware.Hebrew.Calendar
         for ( int index = Program.BigCalendarLevels.Length - 1; index >= 0; index-- )
           if ( diff > Program.BigCalendarLevels[index] )
           {
-            string text = Translations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendarLevels[index], diff);
+            string text = AppTranslations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendarLevels[index], diff);
             if ( !DisplayManager.QueryYesNo(text) )
             {
               DialogResult = DialogResult.None;

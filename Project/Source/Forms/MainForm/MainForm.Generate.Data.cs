@@ -132,7 +132,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var form = new ShowTextForm(Text, errors, false, true, 600, 400, false, false);
         form.TextBox.Font = new System.Drawing.Font("Courier new", 8);
         form.ShowDialog();
-        if ( DisplayManager.QueryYesNo(Localizer.ContactSupport.GetLang()) )
+        if ( DisplayManager.QueryYesNo(SysTranslations.ContactSupport.GetLang()) )
           ExceptionForm.Run(new ExceptionInfo(this, new TooManyErrorsException(errors)));
         return errors;
       }
@@ -146,7 +146,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="yearLast">The last year.</param>
     private bool PopulateDays(int yearFirst, int yearLast)
     {
-      LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(),
+      LoadingForm.Instance.Initialize(AppTranslations.ProgressCreateDays.GetLang(),
                                       ProgressCount,
                                       Program.LoadingFormGenerate);
       var Chrono = new Stopwatch();
@@ -229,7 +229,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       int month = 0;
       int delta = 0;
-      LoadingForm.Instance.Initialize(Translations.ProgressAnalyzeDays.GetLang(),
+      LoadingForm.Instance.Initialize(AppTranslations.ProgressAnalyzeDays.GetLang(),
                                       ProgressCount,
                                       Program.LoadingFormGenerate);
       var Chrono = new Stopwatch();

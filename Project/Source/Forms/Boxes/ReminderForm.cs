@@ -67,13 +67,13 @@ namespace Ordisoftware.Hebrew.Calendar
         form = new ReminderForm();
         var date = SQLiteDate.ToDateTime(row.Date);
         form.LabelTitle.Text = !isShabat
-                               ? Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
+                               ? AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
                                : "Shabat";
         form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
         if ( times.dateStart != null && times.dateEnd != null )
-          form.LabelHours.Text = Translations.DayOfWeek.GetLang(times.dateStart.Value.DayOfWeek) + " " +
+          form.LabelHours.Text = AppTranslations.DayOfWeek.GetLang(times.dateStart.Value.DayOfWeek) + " " +
                                  times.timeStart + " ➜ " +
-                                 Translations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " " +
+                                 AppTranslations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " " +
                                  times.timeEnd;
         form.LabelDate.Tag = date;
         form.SetLocation(ControlLocation.BottomRight);

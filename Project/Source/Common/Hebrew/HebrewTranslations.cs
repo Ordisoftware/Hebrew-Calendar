@@ -42,24 +42,24 @@ namespace Ordisoftware.Hebrew
       = new TranslationsDictionary
       {
         [Language.EN] = $"Hebrew Letters not found." + Globals.NL +
-                        Localizer.AskToCheckPreferences[Language.EN] + Globals.NL2 +
-                        Localizer.AskToDownload[Language.EN],
+                        SysTranslations.AskToCheckPreferences[Language.EN] + Globals.NL2 +
+                        SysTranslations.AskToDownload[Language.EN],
 
         [Language.FR] = $"Hebrew Letters n'a pas été trouvé." + Globals.NL +
-                        Localizer.AskToCheckPreferences[Language.FR] + Globals.NL2 +
-                        Localizer.AskToDownload[Language.FR]
+                        SysTranslations.AskToCheckPreferences[Language.FR] + Globals.NL2 +
+                        SysTranslations.AskToDownload[Language.FR]
       };
 
     static public readonly TranslationsDictionary AskToDownloadHebrewWords
       = new TranslationsDictionary
       {
         [Language.EN] = "Hebrew Words not found." + Globals.NL +
-                        Localizer.AskToCheckPreferences[Language.EN] + Globals.NL2 +
-                        Localizer.AskToDownload[Language.EN],
+                        SysTranslations.AskToCheckPreferences[Language.EN] + Globals.NL2 +
+                        SysTranslations.AskToDownload[Language.EN],
 
         [Language.FR] = "Hebrew Words n'a pas été trouvé." + Globals.NL +
-                        Localizer.AskToCheckPreferences[Language.FR] + Globals.NL2 +
-                        Localizer.AskToDownload[Language.FR]
+                        SysTranslations.AskToCheckPreferences[Language.FR] + Globals.NL2 +
+                        SysTranslations.AskToDownload[Language.FR]
       };
 
     static public readonly TranslationsDictionary ConfigureProviders

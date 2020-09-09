@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         if ( GPS.Keys.Count == 0 )
         {
-          string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {Localizer.UndefinedSlot.GetLang()}";
+          string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {SysTranslations.UndefinedSlot.GetLang()}";
           throw new NullReferenceException(msg);
         }
       }
@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Enable = false;
         ex.Manage();
         if ( !Globals.IsReady )
-          DisplayManager.ShowAndTerminate(Translations.LoadingCitiesError.GetLang());
+          DisplayManager.ShowAndTerminate(AppTranslations.LoadingCitiesError.GetLang());
       }
     }
 

@@ -116,7 +116,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionShutdown_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Localizer.AskToShutdownComputer.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToShutdownComputer.GetLang()) ) return;
       Close();
       SystemManager.MediaStop();
       SystemManager.RunShell("shutdown", "/s /t 0");
@@ -146,7 +146,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       Close();
       if ( !LockWorkStation() )
-        MessageBox.Show(Localizer.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
+        MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
     }
 
   }

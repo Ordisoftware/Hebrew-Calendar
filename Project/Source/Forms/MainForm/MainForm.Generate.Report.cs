@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var headerTxt = SeparatorV;
         foreach ( ReportFieldText v in Enum.GetValues(typeof(ReportFieldText)) )
         {
-          string str = Translations.ReportFieldText.GetLang(v);
+          string str = AppTranslations.ReportFieldText.GetLang(v);
           headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
           headerTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " " + SeparatorV.ToString();
         }
@@ -71,7 +71,7 @@ namespace Ordisoftware.Hebrew.Calendar
         content.Append(headerTxt + Globals.NL);
         if ( DataSet.LunisolarDays.Count <= 0 ) return "";
         var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
-        LoadingForm.Instance.Initialize(Translations.ProgressGenerateReport.GetLang(),
+        LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                         DataSet.LunisolarDays.Count,
                                         Program.LoadingFormLoadDB);
         foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
@@ -93,8 +93,8 @@ namespace Ordisoftware.Hebrew.Calendar
             string strSun = day.Sunrise + " - " + day.Sunset;
             strSun = ShowWinterSummerHour
                    ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
-                                                              ? Translations.Ephemeris.GetLang(Ephemeris.SummerHour)
-                                                              : Translations.Ephemeris.GetLang(Ephemeris.WinterHour) )
+                                                              ? AppTranslations.Ephemeris.GetLang(Ephemeris.SummerHour)
+                                                              : AppTranslations.Ephemeris.GetLang(Ephemeris.WinterHour) )
                                                                 + " " + strSun
                    : strSun + new string(' ', 3 + 1);
             strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Settings.ShabatDay
@@ -102,21 +102,21 @@ namespace Ordisoftware.Hebrew.Calendar
                               : "   " );
             string strMoonrise = day.Moonrise == ""
                                ? MoonNoText
-                               : Translations.Ephemeris.GetLang(Ephemeris.Rise) + day.Moonrise;
+                               : AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + day.Moonrise;
             string strMoonset = day.Moonset == ""
                               ? MoonNoText
-                              : Translations.Ephemeris.GetLang(Ephemeris.Set) + day.Moonset;
+                              : AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + day.Moonset;
             string strMoon = (MoonRise)day.MoonriseType == MoonRise.BeforeSet
                            ? strMoonrise + ColumnSepInner + strMoonset
                            : strMoonset + ColumnSepInner + strMoonrise;
-            string textDate = Translations.DayOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);
+            string textDate = AppTranslations.DayOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);
             textDate = textDate.Replace(".", "") + " ";
             textDate += dayDate.Day.ToString("00") + ".";
             textDate += dayDate.Month.ToString("00") + ".";
             textDate += dayDate.Year;
             string strDesc = "";
-            string s1 = Translations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
-            string s2 = Translations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
+            string s1 = AppTranslations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
+            string s2 = AppTranslations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
             strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
             int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
             int length = lengthAvailable - 2 - strDesc.Length;
@@ -150,7 +150,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message));
+          DisplayManager.ShowWarning(SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message));
         }
         return content.ToString();
       }

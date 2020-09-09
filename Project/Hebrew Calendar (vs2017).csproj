@@ -142,6 +142,13 @@
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.Errors.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.IO.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.Processing.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.WebUpdate.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.Settings.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.Database.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.Application.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\ControlLocation.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\FormsHelper.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\RichTextBoxEx.cs">
@@ -225,7 +232,7 @@
     <Compile Include="Source\Common\Core\WinForms\WebUpdateForm.Designer.cs">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Core\Globalization\Localizer.Translations.cs" />
+    <Compile Include="Source\Common\Core\Globalization\SysTranslations.cs" />
     <Compile Include="Source\Common\Core\Classes\Chronometer.cs" />
     <Compile Include="Source\Common\Core\Managers.Debug\DebugManager.cs" />
     <Compile Include="Source\Common\Core\Managers.Debug\DebugManager.Delegates.cs" />
@@ -309,12 +316,12 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Program\Translations.SuspendDelay.cs" />
-    <Compile Include="Source\Program\Translations.BigCalendar.cs" />
+    <Compile Include="Source\Program\AppTranslations.SuspendDelay.cs" />
+    <Compile Include="Source\Program\AppTranslations.BigCalendar.cs" />
     <Compile Include="Source\Entities\SunAndMoonRiseAndSet.cs" />
     <Compile Include="Source\Enums\ReportFieldCSV.cs" />
-    <Compile Include="Source\Program\Translations.Notices.cs" />
-    <Compile Include="Source\Program\Translations.Calendar.cs" />
+    <Compile Include="Source\Program\AppTranslations.Notices.cs" />
+    <Compile Include="Source\Program\AppTranslations.Calendar.cs" />
     <Compile Include="Source\Forms\Boxes\MoonMonthsForm.Colors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,7 +346,7 @@
     <Compile Include="Source\Entities\DayOfWeekMap.Positions.cs" />
     <Compile Include="Source\Entities\DayOfWeekItem.cs" />
     <Compile Include="Source\Entities\TorahEventItem.cs" />
-    <Compile Include="Source\Program\Translations.cs" />
+    <Compile Include="Source\Program\AppTranslations.cs" />
     <Compile Include="Source\Enums\ReportFieldText.cs" />
     <Compile Include="Source\Enums\Ephemeris.cs" />
     <Compile Include="Source\Forms\Boxes\SearchLunarMonthForm.cs">

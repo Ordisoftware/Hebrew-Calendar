@@ -47,16 +47,16 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(value.ToLongDateString());
           string strMonth = Program.MoonMonthsNames[row.LunarMonth];
           LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
-          LabelLunarDayValue.Text = Translations.NavigationDay.GetLang() + row.LunarDay.ToString();
+          LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang() + row.LunarDay.ToString();
           if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
             LabelLunarDayValue.Text += " (Shabat)";
           LabelSunriseValue.Text = row.Sunrise.ToString();
           LabelSunsetValue.Text = row.Sunset.ToString();
           LabelMoonriseValue.Text = row.Moonrise.ToString();
           LabelMoonsetValue.Text = row.Moonset.ToString();
-          LabelEventSeasonValue.Text = Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange);
+          LabelEventSeasonValue.Text = AppTranslations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange);
           if ( LabelEventSeasonValue.Text == "" ) LabelEventSeasonValue.Text = "-";
-          LabelEventTorahValue.Text = Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents);
+          LabelEventTorahValue.Text = AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents);
           if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
                           where SQLiteDate.ToDateTime(day.Date) > value && day.TorahEvents > 0
@@ -64,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( rowNext != null )
           {
             var date = SQLiteDate.ToDateTime(rowNext.Date);
-            LabelTorahNextValue.Text = Translations.TorahEvent.GetLang((TorahEvent)rowNext.TorahEvents);
+            LabelTorahNextValue.Text = AppTranslations.TorahEvent.GetLang((TorahEvent)rowNext.TorahEvents);
             LabelTorahNextDateValue.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
             LabelTorahNext.Tag = date;
           }

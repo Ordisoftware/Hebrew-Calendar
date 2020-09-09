@@ -91,7 +91,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionViewNotice_Click(object sender, EventArgs e)
     {
-      new MessageBoxEx(Translations.NoticeMoonMonthsTitle, Translations.NoticeMoonMonths).ShowDialog();
+      new MessageBoxEx(AppTranslations.NoticeMoonMonthsTitle, AppTranslations.NoticeMoonMonths).ShowDialog();
     }
 
     private void ActionEditFiles_Click(object sender, EventArgs e)

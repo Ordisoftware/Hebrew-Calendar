@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
       public DateTime Date { get; set; }
       public override string ToString()
       {
-        return Date == DateTime.MinValue ? Localizer.UndefinedSlot.GetLang() : Date.ToLongDateString();
+        return Date == DateTime.MinValue ? SysTranslations.UndefinedSlot.GetLang() : Date.ToLongDateString();
       }
     }
 
@@ -71,7 +71,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionClear_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Localizer.AskToDeleteBookmarkAll.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmarkAll.GetLang()) ) return;
       for ( int index = 0; index < ListBox.Items.Count; index++ )
         ListBox.Items[index] = new DateItem { Date = DateTime.MinValue };
     }
