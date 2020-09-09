@@ -155,7 +155,7 @@ namespace Ordisoftware.Core
         Application.DoEvents();
       }
       if ( ex != null ) throw ex;
-      // TODO check size
+      // TODO check size or checksum
       //if ( SystemManager.GetFileSize(tempfile) != size )
         //throw new IOException(Localizer.WrongFileSIze.GetLang(tempfile));
       if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
