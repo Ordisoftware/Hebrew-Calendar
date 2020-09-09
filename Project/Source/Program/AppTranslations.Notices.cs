@@ -27,10 +27,10 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary AutoGenerateIntervalNotice
       = new TranslationsDictionary
       {
-        [Language.EN] = "Une valeur positive permet de générer les prochaines années." + Globals.NL +
+        [Language.EN] = "Une valeur positive permet de générer les prochaines années." + Globals.NL2 +
                         "Une valeur négative permet de générer les années avant et après maintenant.",
 
-        [Language.FR] = "Une valeur positive permet de générer les prochaines années." + Globals.NL +
+        [Language.FR] = "Une valeur positive permet de générer les prochaines années." + Globals.NL2 +
                         "Une valeur négative permet de générer les années avant et après maintenant."
       };
 
