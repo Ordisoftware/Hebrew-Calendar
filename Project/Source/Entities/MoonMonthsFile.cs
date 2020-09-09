@@ -31,24 +31,24 @@ namespace Ordisoftware.Hebrew.Calendar
     public string this[int index]
       => index >= 0 && index < Items.Count ? Items[index] : "";
 
-    public MoonMonthsFile(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
-      : base(filename, showFileNotFound, configurable, folder)
+    public MoonMonthsFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
+      : base(filePath, showFileNotFound, configurable, folder)
     {
     }
 
-    protected override void DoReLoad(string filename)
+    protected override void DoReLoad(string filePath)
     {
-      if ( filename.IsNullOrEmpty() ) return;
+      if ( filePath.IsNullOrEmpty() ) return;
       SystemManager.TryCatch(() =>
       {
         Items.Clear();
         Items.Add("");
-        var lines = File.ReadAllLines(filename);
+        var lines = File.ReadAllLines(filePath);
         for ( int index = 0; index < lines.Length; index++ )
         {
           void showError()
           {
-            DisplayManager.ShowError(Localizer.ErrorInFile.GetLang(filename, index + 1, lines[index]));
+            DisplayManager.ShowError(Localizer.ErrorInFile.GetLang(filePath, index + 1, lines[index]));
           }
           if ( index >= Program.MoonMonthsNames.Length )
             break;

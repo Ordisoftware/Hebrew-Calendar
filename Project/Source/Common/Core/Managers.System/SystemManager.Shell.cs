@@ -55,39 +55,39 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Check if a file is an executable.
     /// </summary>
-    static public bool CheckIfFileIsExecutable(string filename)
+    static public bool CheckIfFileIsExecutable(string filePath)
     {
       try
       {
         var firstTwoBytes = new byte[2];
-        using ( var fileStream = File.Open(filename, FileMode.Open) )
+        using ( var fileStream = File.Open(filePath, FileMode.Open) )
           fileStream.Read(firstTwoBytes, 0, 2);
         return Encoding.UTF8.GetString(firstTwoBytes) == "MZ";
       }
       catch ( Exception ex )
       {
-        throw new IOException(Localizer.FileAccessError.GetLang(filename, ex.Message));
+        throw new IOException(Localizer.FileAccessError.GetLang(filePath, ex.Message));
       }
     }
 
     /// <summary>
     /// Start a process.
     /// </summary>
-    /// <param name="filename">The filename.</param>
+    /// <param name="filePath">The file path.</param>
     /// <param name="arguments">The comamnd line arguments.</param>
-    static public Process RunShell(string filename, string arguments = "")
+    static public Process RunShell(string filePath, string arguments = "")
     {
       var process = new Process();
       try
       {
-        process.StartInfo.FileName = filename;
+        process.StartInfo.FileName = filePath;
         process.StartInfo.Arguments = arguments;
         process.Start();
         return process;
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowError(Localizer.RunSystemManagerError.GetLang(filename, ex.Message));
+        DisplayManager.ShowError(Localizer.RunSystemManagerError.GetLang(filePath, ex.Message));
         return null;
       }
     }

@@ -25,14 +25,14 @@ namespace Ordisoftware.Core
   {
 
     /// <summary>
-    /// Indicate source filename in application documents folder.
+    /// Indicate source file path in application documents folder.
     /// </summary>
-    public string FilenameDefault { get; private set; }
+    public string FilePathDefault { get; private set; }
 
     /// <summary>
-    /// Indicate source filename in user data folder.
+    /// Indicate source file path in user data folder.
     /// </summary>
-    public string Filename { get; private set; }
+    public string FilePath { get; private set; }
 
     /// <summary>
     /// Indicate if file not found error must be shown on load.
@@ -52,25 +52,25 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Constructor.
     /// </summary>
-    public DataFile(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
+    public DataFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
     {
       ShowFileNotFound = showFileNotFound;
       Configurable = configurable;
-      FilenameDefault = filename;
+      FilePathDefault = filePath;
       Folder = folder;
       switch ( folder )
       {
         case DataFileFolder.ApplicationDocuments:
-          Filename = FilenameDefault;
+          FilePath = FilePathDefault;
           break;
         case DataFileFolder.ProgramData:
-          Filename = filename.Replace(Globals.DocumentsFolderPath, Globals.ProgramDataFolderPath);
+          FilePath = filePath.Replace(Globals.DocumentsFolderPath, Globals.ProgramDataFolderPath);
           break;
         case DataFileFolder.UserHebrewCommon:
-          Filename = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataCommonFolderPath);
+          FilePath = filePath.Replace(Globals.DocumentsFolderPath, Globals.UserDataCommonFolderPath);
           break;
         case DataFileFolder.UserApplication:
-          Filename = filename.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
+          FilePath = filePath.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
           break;
         default:
           throw new NotImplementedExceptionEx(folder.ToStringFull());
@@ -81,7 +81,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Load or reload data from disk.
     /// </summary>
-    protected abstract void DoReLoad(string filename);
+    protected abstract void DoReLoad(string filePath);
 
     /// <summary>
     /// Load or reload data from disk.
@@ -97,35 +97,35 @@ namespace Ordisoftware.Core
     /// <param name="reset">True if must be reseted from application documents folder.</param>
     protected string CheckFile(bool reset)
     {
-      if ( reset || !File.Exists(Filename) )
-        if ( !File.Exists(FilenameDefault) )
+      if ( reset || !File.Exists(FilePath) )
+        if ( !File.Exists(FilePathDefault) )
         {
           if ( ShowFileNotFound )
-            DisplayManager.ShowError(Localizer.FileNotFound.GetLang(FilenameDefault));
+            DisplayManager.ShowError(Localizer.FileNotFound.GetLang(FilePathDefault));
           return "";
         }
         else
-        if ( Filename != FilenameDefault )
+        if ( FilePath != FilePathDefault )
         {
-          string folder = Path.GetDirectoryName(Filename);
+          string folder = Path.GetDirectoryName(FilePath);
           if ( !Directory.Exists(folder) )
             Directory.CreateDirectory(folder);
-          string filename1 = Localizer.UndefinedSlot.GetLang();
-          string filename2 = Localizer.UndefinedSlot.GetLang();
+          string filePath1 = Localizer.UndefinedSlot.GetLang();
+          string filePath2 = Localizer.UndefinedSlot.GetLang();
           try
           {
-            filename1 = FilenameDefault;
-            filename2 = Filename;
-            File.Copy(filename1, filename2, true);
+            filePath1 = FilePathDefault;
+            filePath2 = FilePath;
+            File.Copy(filePath1, filePath2, true);
           }
           catch ( Exception ex )
           {
-            string msg = Localizer.LoadFileError.GetLang(filename1, filename2, ex.Message);
+            string msg = Localizer.LoadFileError.GetLang(filePath1, filePath2, ex.Message);
             DisplayManager.ShowError(msg);
             return "";
           }
         }
-      return Filename;
+      return FilePath;
     }
 
   }

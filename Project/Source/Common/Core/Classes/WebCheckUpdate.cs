@@ -120,17 +120,17 @@ namespace Ordisoftware.Core
     /// <returns></returns>
     static private bool ProcessDownload(WebClient client, Version version)
     {
-      string filename = string.Format(Globals.SetupFileURL, version.ToString());
+      string fileURL = string.Format(Globals.SetupFileURL, version.ToString());
       var result = WebUpdateForm.Run(version);
       switch ( result )
       {
         case WebUpdateSelection.None:
           break;
         case WebUpdateSelection.Download:
-          SystemManager.OpenWebLink(filename);
+          SystemManager.OpenWebLink(fileURL);
           break;
         case WebUpdateSelection.Install:
-          return ProcessAutoInstall(client, version, filename);
+          return ProcessAutoInstall(client, version, fileURL);
         default:
           throw new NotImplementedExceptionEx(result.ToStringFull());
       }
@@ -140,15 +140,15 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Process the automatic download and installation.
     /// </summary>
-    static private bool ProcessAutoInstall(WebClient client, Version version, string filename/*, long size*/)
+    static private bool ProcessAutoInstall(WebClient client, Version version, string fileURL/*, long size*/)
     {
       LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
       bool finished = false;
       Exception ex = null;
-      string tempfile = Path.GetTempPath() + string.Format(Globals.SetupFilename, version.ToString());
+      string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFilename, version.ToString());
       client.DownloadProgressChanged += downloadProgressChanged;
       client.DownloadFileCompleted += downloadFileCompleted;
-      client.DownloadFileAsync(new Uri(filename), tempfile);
+      client.DownloadFileAsync(new Uri(fileURL), filePathTemp);
       while ( !finished )
       {
         Thread.Sleep(100);
@@ -158,9 +158,9 @@ namespace Ordisoftware.Core
       // TODO check size
       //if ( SystemManager.GetFileSize(tempfile) != size )
         //throw new IOException(Localizer.WrongFileSIze.GetLang(tempfile));
-      if ( !SystemManager.CheckIfFileIsExecutable(tempfile) )
-        throw new IOException(Localizer.NotAnExecutableFile.GetLang(tempfile));
-      if ( SystemManager.RunShell(tempfile, "/SP- /SILENT") != null )
+      if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
+        throw new IOException(Localizer.NotAnExecutableFile.GetLang(filePathTemp));
+      if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") != null )
       {
         Globals.IsExiting = true;
         SystemManager.Exit();
@@ -185,7 +185,7 @@ namespace Ordisoftware.Core
             code = response.StatusCode;
         }
         ex = new WebException(e.Error.Message + Globals.NL2 +
-                              filename + Globals.NL2 +
+                              fileURL + Globals.NL2 +
                               status.ToStringFull() + Globals.NL +
                               code.ToStringFull());
       }

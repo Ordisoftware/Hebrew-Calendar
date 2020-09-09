@@ -36,7 +36,7 @@ namespace Ordisoftware.Core
      = 7;
 
     /// <summary>
-    /// Indicate the trace filename.
+    /// Indicate the log/trace directory name.
     /// </summary>
     static public string TraceDirectoryName { get; set; }
       = "Logs";

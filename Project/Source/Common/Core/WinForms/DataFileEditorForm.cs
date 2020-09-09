@@ -48,9 +48,9 @@ namespace Ordisoftware.Core
 
     private static void AddTab(TabControl tabcontrol, DataFile file)
     {
-      if ( !File.Exists(file.Filename) )
+      if ( !File.Exists(file.FilePath) )
       {
-        DisplayManager.ShowError(Localizer.FileNotFound.GetLang(file.Filename));
+        DisplayManager.ShowError(Localizer.FileNotFound.GetLang(file.FilePath));
         return;
       }
       var textbox = new UndoRedoTextBox();
@@ -59,8 +59,8 @@ namespace Ordisoftware.Core
       textbox.WordWrap = false;
       textbox.ScrollBars = ScrollBars.Both;
       textbox.Dock = DockStyle.Fill;
-      textbox.Text = File.ReadAllText(file.Filename);
-      var tabpage = new TabPage(Path.GetFileName(file.Filename).Replace(".txt", ""));
+      textbox.Text = File.ReadAllText(file.FilePath);
+      var tabpage = new TabPage(Path.GetFileName(file.FilePath).Replace(".txt", ""));
       tabpage.Tag = file;
       tabpage.Controls.Add(textbox);
       tabcontrol.TabPages.Add(tabpage);
@@ -95,16 +95,16 @@ namespace Ordisoftware.Core
     private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(Localizer.AskToLoadInstalledData.GetLang()) ) return;
-      string filename = Localizer.UndefinedSlot.GetLang();
+      string filePath = Localizer.UndefinedSlot.GetLang();
       foreach ( TabPage page in TabControl.TabPages )
         try
         {
-          filename = ( (DataFile)page.Tag ).FilenameDefault;
-          ( (TextBox)page.Controls[0] ).Text = File.ReadAllText(filename);
+          filePath = ( (DataFile)page.Tag ).FilePathDefault;
+          ( (TextBox)page.Controls[0] ).Text = File.ReadAllText(filePath);
         }
         catch ( Exception ex )
         {
-          string msg = Localizer.LoadFileError.GetLang(filename, ex.Message);
+          string msg = Localizer.LoadFileError.GetLang(filePath, ex.Message);
           DisplayManager.ShowError(msg);
         }
       EditProvidersForm_Shown(this, null);
@@ -112,16 +112,16 @@ namespace Ordisoftware.Core
 
     private void ActionOK_Click(object sender, EventArgs e)
     {
-      string filename = Localizer.UndefinedSlot.GetLang();
+      string filePath = Localizer.UndefinedSlot.GetLang();
       foreach ( TabPage page in TabControl.TabPages )
         try
         {
-          filename = ( (DataFile)page.Tag ).Filename;
-          File.WriteAllText(filename, ( (TextBox)page.Controls[0] ).Text);
+          filePath = ( (DataFile)page.Tag ).FilePath;
+          File.WriteAllText(filePath, ( (TextBox)page.Controls[0] ).Text);
         }
         catch ( Exception ex )
         {
-          string msg = Localizer.WriteFileError.GetLang(filename, ex.Message);
+          string msg = Localizer.WriteFileError.GetLang(filePath, ex.Message);
           DisplayManager.ShowError(msg);
         }
     }

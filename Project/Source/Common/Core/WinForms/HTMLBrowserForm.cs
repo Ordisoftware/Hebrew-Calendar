@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
 
     private TranslationsDictionary Title;
 
-    private string FilenameTemplate;
+    private string FilePathTemplate;
 
     private HTMLBrowserForm()
     {
@@ -38,12 +38,12 @@ namespace Ordisoftware.Core
     }
 
     public HTMLBrowserForm(TranslationsDictionary title,
-                           string filenameTemplate,
+                           string filePathTemplate,
                            string locationPropertyName,
                            string clientSizePropertyName) : this()
     {
       Title = title;
-      FilenameTemplate = filenameTemplate;
+      FilePathTemplate = filePathTemplate;
       LocationPropertyName = locationPropertyName;
       ClientSizePropertyName = clientSizePropertyName;
       Location = (Point)Globals.Settings[locationPropertyName];
@@ -58,12 +58,12 @@ namespace Ordisoftware.Core
     internal void HTMLBrowserForm_Shown(object sender, EventArgs e)
     {
       if ( Title != null ) Text = Title.GetLang();
-      if ( FilenameTemplate == null ) return;
-      string filename = string.Format(FilenameTemplate, Languages.CurrentCode);
-      if ( File.Exists(filename) )
-        WebBrowser.Navigate(filename);
+      if ( FilePathTemplate == null ) return;
+      string filePath = string.Format(FilePathTemplate, Languages.CurrentCode);
+      if ( File.Exists(filePath) )
+        WebBrowser.Navigate(filePath);
       else
-        DisplayManager.ShowError(Localizer.FileNotFound.GetLang(filename));
+        DisplayManager.ShowError(Localizer.FileNotFound.GetLang(filePath));
     }
 
     private void HTMLBrowserForm_Deactivate(object sender, EventArgs e)

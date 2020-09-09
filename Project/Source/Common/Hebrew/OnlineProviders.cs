@@ -56,25 +56,25 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Constructor.
     /// </summary>
-    public OnlineProviders(string filename, bool showFileNotFound, bool configurable, DataFileFolder folder)
-      : base(filename, showFileNotFound, configurable, folder)
+    public OnlineProviders(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
+      : base(filePath, showFileNotFound, configurable, folder)
     {
     }
 
     /// <summary>
     /// Load or reload data from disk.
     /// </summary>
-    protected override void DoReLoad(string filename)
+    protected override void DoReLoad(string filePath)
     {
-      if ( filename.IsNullOrEmpty() ) return;
+      if ( filePath.IsNullOrEmpty() ) return;
       try
       {
         Title.Clear();
         Items.Clear();
-        var lines = File.ReadAllLines(filename);
+        var lines = File.ReadAllLines(filePath);
         for ( int index = 0; index < lines.Length; index++ )
         {
-          void showError() => DisplayManager.ShowError(Localizer.ErrorInFile.GetLang(filename, index + 1, lines[index]));
+          void showError() => DisplayManager.ShowError(Localizer.ErrorInFile.GetLang(filePath, index + 1, lines[index]));
           string line = lines[index].Trim();
           if ( line == "" ) continue;
           if ( line.StartsWith(";") ) continue;
@@ -113,7 +113,7 @@ namespace Ordisoftware.Hebrew
       }
       catch ( Exception ex )
       {
-        string msg = Localizer.LoadFileError.GetLang(filename, ex.Message);
+        string msg = Localizer.LoadFileError.GetLang(filePath, ex.Message);
         DisplayManager.ShowError(msg);
       }
     }

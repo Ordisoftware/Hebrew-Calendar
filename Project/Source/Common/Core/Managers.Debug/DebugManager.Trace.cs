@@ -40,14 +40,14 @@ namespace Ordisoftware.Core
 
     static private string Separator = new string('-', 120);
 
-    static private void TraceFileChanged(Listener sender, string filename)
+    static private void TraceFileChanged(Listener sender, string filePath)
     {
       if ( TraceForm == null ) return;
       if ( TraceForm.IsDisposed ) return;
-      if ( !File.Exists(filename) ) return;
-      TraceForm.Text = Path.GetFileNameWithoutExtension(filename);
+      if ( !File.Exists(filePath) ) return;
+      TraceForm.Text = Path.GetFileNameWithoutExtension(filePath);
       TraceForm.TextBox.Clear();
-      TraceForm.AppendText(File.ReadAllText(filename));
+      TraceForm.AppendText(File.ReadAllText(filePath));
     }
 
     static public void Enter()
@@ -142,14 +142,14 @@ namespace Ordisoftware.Core
         bool isEnabled = _Enabled;
         try
         {
-          string path = TraceListener.Path;
+          string folder = TraceListener.Folder;
           string code = TraceListener.Code;
           string extension = TraceListener.Extension;
           Stop();
-          foreach ( string filename in Directory.GetFiles(path, code + "*" + extension) )
+          foreach ( string path in Directory.GetFiles(folder, code + "*" + extension) )
             try
             {
-              File.Delete(filename);
+              File.Delete(path);
             }
             catch
             {

@@ -184,12 +184,12 @@ namespace Ordisoftware.Hebrew
       try
       {
         var frame = new StackTrace(true).GetFrame(level);
-        string filename = frame.GetFileName();
+        string filePath = frame.GetFileName();
         int lineNumber = frame.GetFileLineNumber();
-        string id = filename + lineNumber;
+        string id = filePath + lineNumber;
         if ( AlreadyAcessedVarNames.ContainsKey(id) )
           return AlreadyAcessedVarNames[id];
-        using ( var file = new StreamReader(filename) )
+        using ( var file = new StreamReader(filePath) )
         {
           for ( int i = 0; i < lineNumber - 1; i++ )
             file.ReadLine();

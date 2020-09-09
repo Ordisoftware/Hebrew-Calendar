@@ -39,8 +39,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
-        string filename = Program.GPSFilename;
-        var parser = new GenericParser(filename);
+        string filePath = Program.GPSFilePath;
+        var parser = new GenericParser(filePath);
         parser.FirstRowHasHeader = true;
         while ( parser.Read() )
         {

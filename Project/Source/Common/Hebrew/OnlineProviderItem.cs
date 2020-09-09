@@ -33,15 +33,15 @@ namespace Ordisoftware.Hebrew
 
     static OnlineProviderItem()
     {
-      Image createImage(string filename)
+      Image createImage(string filePath)
       {
         try
         {
-          return Image.FromFile(System.IO.Path.Combine(ProvidersCollection.GuidesFolderPath, filename));
+          return Image.FromFile(System.IO.Path.Combine(ProvidersCollection.GuidesFolderPath, filePath));
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(filename, ex.Message));
+          DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(filePath, ex.Message));
           return null;
         }
       }

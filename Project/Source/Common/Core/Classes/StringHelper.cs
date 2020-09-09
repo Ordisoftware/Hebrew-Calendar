@@ -25,7 +25,7 @@ namespace Ordisoftware.Core
   {
 
     /// <summary>
-    /// Indicate if a string is null, DBNull or empty.
+    /// Indicate if a string is null or empty.
     /// </summary>
     /// <returns>
     /// true if a null or is empty, false if not.
@@ -33,7 +33,7 @@ namespace Ordisoftware.Core
     /// <param name="str">The str to act on.</param>
     static public bool IsNullOrEmpty(this string str)
     {
-      return str == null || str.Length == 0;
+      return ReferenceEquals(str, null) || str.Length == 0;
     }
 
     /// <summary>
@@ -56,7 +56,7 @@ namespace Ordisoftware.Core
     /// </returns>
     /// <param name="str">The string to act on.</param>
     /// <param name="stringSplitOptions">Options for controlling the operation.</param>
-    static public string[] SplitNoEmptyLines(this string str, StringSplitOptions stringSplitOptions = StringSplitOptions.None)
+    static public string[] Split(this string str, StringSplitOptions stringSplitOptions = StringSplitOptions.None)
     {
       return str.Split(stringSplitOptions, Globals.NL);
     }
@@ -76,7 +76,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create a multiline string from a string enumeration.
+    /// Create a string from a string enumeration.
     /// </summary>
     /// <returns>
     /// A string.
@@ -89,7 +89,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create a multiline string from a string enumeration.
+    /// Create a multi-spaced string from a string enumeration.
     /// </summary>
     /// <returns>
     /// A string.
@@ -101,7 +101,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create a multiline string from a string enumeration.
+    /// Create a multi-newlined string from a string enumeration.
     /// </summary>
     /// <returns>
     /// A string.
@@ -119,16 +119,24 @@ namespace Ordisoftware.Core
     /// A string.
     /// </returns>
     /// <param name="str">The str to act on.</param>
+    /// <param name="margin">Margin.</param>
+    static public string Indent(this string str, int margin)
+    {
+      return str.Indent(margin, margin);
+    }
+
+    /// <summary>
+    /// Left indent a text.
+    /// </summary>
+    /// <returns>
+    /// A string.
+    /// </returns>
+    /// <param name="str">The str to act on.</param>
     /// <param name="first">First line indentation.</param>
     /// <param name="corpus">Other lines indentation.</param>
     static public string Indent(this string str, int first, int corpus)
     {
       return new string(' ', first) + str.Replace(Globals.NL, Globals.NL + new string(' ', corpus));
-    }
-
-    static public string Indent(this string str, int margin)
-    {
-      return str.Indent(margin, margin);
     }
 
   }

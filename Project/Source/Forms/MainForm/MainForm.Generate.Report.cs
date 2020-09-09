@@ -146,11 +146,11 @@ namespace Ordisoftware.Hebrew.Calendar
         content.Append(headerSep + Globals.NL);
         try
         {
-          File.WriteAllText(Program.TextReportFilename, content.ToString());
+          File.WriteAllText(Program.TextReportFilePath, content.ToString());
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(Program.TextReportFilename, ex.Message));
+          DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message));
         }
         return content.ToString();
       }

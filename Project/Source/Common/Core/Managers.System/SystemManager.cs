@@ -188,10 +188,10 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Get a file size.
     /// </summary>
-    static public long GetFileSize(string filename)
+    static public long GetFileSize(string filePath)
     {
       long result = -1;
-      TryCatch(() => { if ( File.Exists(filename) ) result = new FileInfo(filename).Length; });
+      TryCatch(() => { if ( File.Exists(filePath) ) result = new FileInfo(filePath).Length; });
       return result;
     }
 

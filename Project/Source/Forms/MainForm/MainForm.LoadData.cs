@@ -66,16 +66,16 @@ namespace Ordisoftware.Hebrew.Calendar
           SystemManager.TryCatch(() =>
           {
             bool isTextReportLoaded = false;
-            if ( File.Exists(Program.TextReportFilename) )
+            if ( File.Exists(Program.TextReportFilePath) )
               try
               {
-                CalendarText.Text = File.ReadAllText(Program.TextReportFilename);
+                CalendarText.Text = File.ReadAllText(Program.TextReportFilePath);
                 isTextReportLoaded = true;
               }
               catch ( Exception ex )
               {
                 ChronoStart.Stop();
-                DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(Program.TextReportFilename, ex.Message));
+                DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message));
                 ChronoStart.Start();
               }
             if ( !isTextReportLoaded )

@@ -37,30 +37,30 @@ namespace Ordisoftware.Core
       public TraceFileRollOverMode Mode { get; set; }
       public int KeepCount { get; set; }
 
-      public string Path { get; }
+      public string Folder { get; }
       public string Code { get; }
       public string Extension { get; }
 
       public DateTime Date { get; private set; }
-      public string Filename { get; private set; }
+      public string FilePath { get; private set; }
 
       private StreamWriter Writer;
 
-      public Listener(string filePath,
+      public Listener(string fileFolder,
                       string fileCode,
                       string fileExtension,
                       TraceFileRollOverMode mode,
                       int keepCount,
                       TraceFileChanged fileChanged = null)
       {
-        Directory.CreateDirectory(filePath);
-        Path = filePath;
+        Directory.CreateDirectory(fileFolder);
+        Folder = fileFolder;
         Code = fileCode;
         Extension = fileExtension;
         Changed = fileChanged;
         Mode = mode;
         KeepCount = keepCount;
-        Writer = new StreamWriter(GenerateFilename(), true);
+        Writer = new StreamWriter(GenerateFilePath(), true);
       }
 
       protected override void Dispose(bool disposing)
@@ -97,7 +97,7 @@ namespace Ordisoftware.Core
             WriteFooter();
             Writer.Close();
             Writer = null;
-            Writer = new StreamWriter(GenerateFilename(), true);
+            Writer = new StreamWriter(GenerateFilePath(), true);
             WriteHeader();
             Trace(LogTraceEvent.Data, $"{nameof(DebugManager)}.{nameof(TraceListener)}.{nameof(CheckRollOver)} = TRUE");
           }
@@ -114,17 +114,17 @@ namespace Ordisoftware.Core
 
       private class FileItem
       {
-        public string Filename;
+        public string FilePath;
         public DateTime Date;
       }
 
-      private string GenerateFilename()
+      private string GenerateFilePath()
       {
         Purge();
         Date = DateTime.Today;
-        Filename = System.IO.Path.Combine(Path, $"{Code} {SQLiteDate.ToString(Date)}{Extension}");
-        SystemManager.TryCatchManage(() => { Changed?.Invoke(this, Filename); });
-        return Filename;
+        FilePath = Path.Combine(Folder, $"{Code} {SQLiteDate.ToString(Date)}{Extension}");
+        SystemManager.TryCatchManage(() => { Changed?.Invoke(this, FilePath); });
+        return FilePath;
       }
 
       private void Purge()
@@ -134,7 +134,7 @@ namespace Ordisoftware.Core
         {
           bool ResolveDate(FileItem item)
           {
-            string dateCode = System.IO.Path.GetFileNameWithoutExtension(item.Filename).Replace(Code, "");
+            string dateCode = Path.GetFileNameWithoutExtension(item.FilePath).Replace(Code, "");
             try
             {
               item.Date = SQLiteDate.ToDateTime(dateCode.Trim());
@@ -145,8 +145,8 @@ namespace Ordisoftware.Core
               return false;
             }
           }
-          var list = Directory.GetFiles(Path, Code + "*" + Extension)
-                              .Select(filename => new FileItem { Filename = filename })
+          var list = Directory.GetFiles(Folder, Code + "*" + Extension)
+                              .Select(path => new FileItem { FilePath = path })
                               .Where(item => ResolveDate(item));
           DateTime limit;
           switch ( Mode )
@@ -163,7 +163,7 @@ namespace Ordisoftware.Core
           foreach ( var file in list.Where(f => f.Date <= limit) )
             try
             {
-              File.Delete(file.Filename);
+              File.Delete(file.FilePath);
             }
             catch
             {

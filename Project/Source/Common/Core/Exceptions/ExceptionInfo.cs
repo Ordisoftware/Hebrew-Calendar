@@ -95,7 +95,7 @@ namespace Ordisoftware.Core
     public int LineNumber { get; private set; }
 
     /// <summary>
-    /// Indicate the code filename.
+    /// Indicate the code file name.
     /// </summary>
     public string FileName { get; private set; }
 
@@ -205,7 +205,7 @@ namespace Ordisoftware.Core
         if ( frames == null ) return;
         string result = "";
         string partMethod = "";
-        string partFilename = "";
+        string partFileName = "";
         bool first = true;
         foreach ( var frame in frames )
         {
@@ -218,8 +218,8 @@ namespace Ordisoftware.Core
           string[] list2 = { nameof(SystemManager.TryCatchManage), nameof(SystemManager.TryCatch) };
           if ( method.DeclaringType == typeof(SystemManager) && list2.Contains(method.Name) )
             continue;
-          partFilename = Path.GetFileName(frame.GetFileName());
-          if ( partFilename.IsNullOrEmpty() && DebugManager.StackOnlyProgram )
+          partFileName = Path.GetFileName(frame.GetFileName());
+          if ( partFileName.IsNullOrEmpty() && DebugManager.StackOnlyProgram )
             continue;
           int line = frame.GetFileLineNumber();
           if ( first && !full )
@@ -230,13 +230,13 @@ namespace Ordisoftware.Core
             Namespace = method.DeclaringType.Namespace;
             ClassName = method.DeclaringType.Name;
             MethodName = method.Name;
-            FileName = partFilename;
+            FileName = partFileName;
             LineNumber = line;
           }
           partMethod += "." + method.Name;
           if ( line != 0 )
           {
-            partMethod = $"{partFilename} line {line}:{Globals.NL}{partMethod}{Globals.NL}";
+            partMethod = $"{partFileName} line {line}:{Globals.NL}{partMethod}{Globals.NL}";
             if ( result != "" ) partMethod = Globals.NL + partMethod;
           }
           if ( result != "" ) result += Globals.NL;

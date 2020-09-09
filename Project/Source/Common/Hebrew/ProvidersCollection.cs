@@ -45,27 +45,27 @@ namespace Ordisoftware.Hebrew
       => Path.Combine(Globals.DocumentsFolderPath, "WebProviders");
 
     /// <summary>
-    /// Indicate filename of the hebrew grammar guide.
+    /// Indicate file path of the hebrew grammar guide.
     /// </summary>
-    static public string HebrewGrammarGuideFilename
+    static public string HebrewGrammarGuideFilePath
       => Path.Combine(GuidesFolderPath, "grammar-{0}.htm");
 
     /// <summary>
-    /// Indicate filename of the lettriq method notice.
+    /// Indicate file path of the lettriq method notice.
     /// </summary>
-    static public string LettriqMethodNoticeFilename
+    static public string LettriqMethodNoticeFilePath
       => Path.Combine(GuidesFolderPath, "method-{0}.htm");
 
     /// <summary>
-    /// Indicate the filename of the online search word providers.
+    /// Indicate the file path of the online search word providers.
     /// </summary>
-    static public string OnlineWordProvidersFileName
+    static public string OnlineWordProvidersFilePath
       => Path.Combine(WebProvidersFolderPath, "OnlineWordProviders.txt");
 
     /// <summary>
-    /// Indicate the filename of the online search word providers.
+    /// Indicate the file path of the online search word providers.
     /// </summary>
-    static public string OnlineBibleProvidersFileName
+    static public string OnlineBibleProvidersFilePath
       => Path.Combine(WebProvidersFolderPath, "OnlineBibleProviders.txt");
 
     /// <summary>
@@ -86,18 +86,15 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Create an online OnlineProviders instance.
     /// </summary>
-    /// <param name="folder"></param>
-    /// <param name="filename"></param>
-    /// <returns></returns>
-    static private OnlineProviders CreateOnlineProviders(DataFileFolder folder, string filename)
+    static private OnlineProviders CreateOnlineProviders(DataFileFolder folder, string filePath)
     {
       try
       {
-        return new OnlineProviders(filename, true, Globals.IsDevExecutable, folder);
+        return new OnlineProviders(filePath, true, Globals.IsDevExecutable, folder);
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowError(Localizer.LoadFileError.GetLang(filename, ex.Message));
+        DisplayManager.ShowError(Localizer.LoadFileError.GetLang(filePath, ex.Message));
         return null;
       }
     }
@@ -109,8 +106,8 @@ namespace Ordisoftware.Hebrew
     {
       if ( Globals.IsDesignTime ) return;
       var folder = DataFileFolder.ApplicationDocuments;
-      OnlineWordProviders = CreateOnlineProviders(folder, OnlineWordProvidersFileName);
-      OnlineBibleProviders = CreateOnlineProviders(folder, OnlineBibleProvidersFileName);
+      OnlineWordProviders = CreateOnlineProviders(folder, OnlineWordProvidersFilePath);
+      OnlineBibleProviders = CreateOnlineProviders(folder, OnlineBibleProvidersFilePath);
       WebLinksProviders = new List<OnlineProviders>();
       if ( Directory.Exists(WebLinksFolderPath) )
         SystemManager.TryCatch(() =>
