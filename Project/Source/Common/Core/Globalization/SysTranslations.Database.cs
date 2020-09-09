@@ -44,6 +44,13 @@ namespace Ordisoftware.Core
         [Language.FR] = "Echec du vacuum de la base de données."
       };
 
+    static public readonly TranslationsDictionary DatabaseNoProcessConcurrency
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Database can't be modified while multiple instance of the application are running.",
+        [Language.FR] = "La base de données ne peut pas être modifiée lorsque plusieurs instances de l'application sont en cours d'éxécution."
+      };
+
     static public readonly TranslationsDictionary AskToCheckParametersAfterDatabaseUpgraded
       = new TranslationsDictionary
       {

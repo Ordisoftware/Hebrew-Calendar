@@ -50,6 +50,20 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Return true if only one instance of the process is running else false.
+    /// </summary>
+    /// <param name="silent">True if no message is shown else shown.</param>
+    /// <returns></returns>
+    static public bool CheckProcessConcurency(bool silent = false)
+    {
+      var list = System.Diagnostics.Process.GetProcessesByName(Globals.ProcessName);
+      bool valid = list.Length == 1;
+      if ( !valid && !silent )
+        DisplayManager.ShowWarning(SysTranslations.DatabaseNoProcessConcurrency.GetLang());
+      return valid;
+    }
+
+    /// <summary>
     /// Create or update the ODBC DSN.
     /// </summary>
     static public void CreateOrUpdateDSN()
