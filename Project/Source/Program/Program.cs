@@ -52,10 +52,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Application.SetCompatibleTextRenderingDefault(false);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
-      UpdateLocalization(true);
       DebugManager.Enabled = Settings.DebuggerEnabled;
       DebugManager.TraceEnabled = Settings.TraceEnabled;
-      DebugManager.DeaultShowExceptionMode = ShowExceptionMode.Advanced;
       Language lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments(args, ref lang);
       Settings.LanguageSelected = lang;
@@ -93,8 +91,6 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private static void CheckSettingsReset()
     {
-      if ( Settings.FirstLaunch )
-        Settings.LanguageSelected = Languages.Current;
       if ( Settings.UpgradeResetRequiredV3_0
         || Settings.UpgradeResetRequiredV3_6
         || Settings.UpgradeResetRequiredV4_1 )
@@ -112,13 +108,15 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.FirstLaunchV4 = false;
         Settings.FirstLaunch = true;
       }
+      if ( Settings.LanguageSelected == Language.None )
+        Settings.LanguageSelected = Languages.Current;
       Settings.Save();
     }
 
     /// <summary>
     /// Update localization strings to the whole application.
     /// </summary>
-    static internal void UpdateLocalization(bool initonly = false)
+    static internal void UpdateLocalization()
     {
       void update(Form form)
       {
@@ -131,7 +129,6 @@ namespace Ordisoftware.Hebrew.Calendar
       var culture = new CultureInfo(lang);
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
-      if ( initonly ) return;
       MessageBoxEx.CloseAll();
       AboutBox.Instance.Hide();
       MainForm.Instance.ClearLists();
@@ -171,6 +168,7 @@ namespace Ordisoftware.Hebrew.Calendar
       UndoRedoTextBox.Relocalize();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
+      MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
       MainForm.Instance.DoTimerReminder();
       MoonMonthsForm.Instance.Relocalize();
       NavigationForm.Instance.Relocalize();

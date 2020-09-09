@@ -177,8 +177,8 @@ namespace Ordisoftware.Core
     /// <param name="connection">The connection.</param>
     /// <param name="table">The table name.</param>
     /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
-    /// <returns>True if the table exists else false.</returns>
-    static public bool CheckTable(this OdbcConnection connection, string table, string sql)
+    /// <returns>True if the table exists else false even if created.</returns>
+    static public bool CheckTable(this OdbcConnection connection, string table, string sql = "")
     {
       try
       {
@@ -186,7 +186,7 @@ namespace Ordisoftware.Core
         {
           commandCheck.CommandText = $"SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?";
           commandCheck.Parameters.Add("@table", OdbcType.Text).Value = table;
-          if ( (int)commandCheck.ExecuteScalar() != 0 ) return false;
+          if ( (int)commandCheck.ExecuteScalar() != 0 ) return true;
           if ( !sql.IsNullOrEmpty() )
             using ( var commandCreate = new OdbcCommand(sql, connection) )
               try
@@ -203,7 +203,7 @@ namespace Ordisoftware.Core
       {
         throw new SQLiteException($"Error in {nameof(CheckTable)}", ex);
       }
-      return true;
+      return false;
     }
 
     /// <summary>
@@ -213,8 +213,8 @@ namespace Ordisoftware.Core
     /// <param name="table">The table name.</param>
     /// <param name="column">The column name.</param>
     /// <param name="sql">The sql query to create the column, can be empty to only check</param>
-    /// <returns>True if the column exists else false.</returns>
-    static public bool CheckColumn(this OdbcConnection connection, string table, string column, string sql)
+    /// <returns>True if the column exists else false even if created.</returns>
+    static public bool CheckColumn(this OdbcConnection connection, string table, string column, string sql = "")
     {
       try
       {
@@ -224,7 +224,7 @@ namespace Ordisoftware.Core
           int nameIndex = readerCheck.GetOrdinal("Name");
           while ( readerCheck.Read() )
             if ( readerCheck.GetString(nameIndex).Equals(column) )
-              return false;
+              return true;
           if ( !sql.IsNullOrEmpty() )
           {
             sql = sql.Replace("%TABLE%", table).Replace("%COLUMN%", column);
@@ -244,7 +244,7 @@ namespace Ordisoftware.Core
       {
         throw new SQLiteException($"Error in {nameof(CheckColumn)}", ex);
       }
-      return true;
+      return false;
     }
 
     /// <summary>
@@ -256,7 +256,7 @@ namespace Ordisoftware.Core
     /// <param name="type">The type of the column.</param>
     /// <param name="valueDefault">The default value.</param>
     /// <param name="valueNotNull">Indicate if not null.</param>
-    /// <returns>True if the column exists else false.</returns>
+    /// <returns>True if the column exists else false even if created.</returns>
     static public bool CheckColumn(this OdbcConnection connection,
                                    string table, 
                                    string column, 

@@ -246,7 +246,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void UpdateLanguagesButtons()
     {
-      MainForm.Instance.CalendarMonth._btnToday.ButtonText = Translations.Today.GetLang();
       if ( Settings.LanguageSelected == Language.EN )
       {
         ActionSelectLangEN.BackColor = SystemColors.ControlLightLight;

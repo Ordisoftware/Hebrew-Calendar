@@ -212,9 +212,9 @@ namespace Ordisoftware.Core
           var method = frame.GetMethod();
           partMethod = method.DeclaringType.FullName;
           var type = Type.GetType(partMethod);
-          //Type[] list = { typeof(DebugManager), typeof(ExceptionInfo) };
-          //if ( list.Contains(method.DeclaringType) )
-            //continue;
+          Type[] list = { typeof(DebugManager), typeof(ExceptionInfo) };
+          if ( list.Contains(method.DeclaringType) )
+            continue;
           string[] list2 = { nameof(SystemManager.TryCatchManage), nameof(SystemManager.TryCatch) };
           if ( method.DeclaringType == typeof(SystemManager) && list2.Contains(method.Name) )
             continue;
