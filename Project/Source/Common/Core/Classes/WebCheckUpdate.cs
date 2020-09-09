@@ -94,8 +94,7 @@ namespace Ordisoftware.Core
       }
       catch ( Exception ex )
       {
-        throw new WebException("Can't read data from the server:" + Globals.NL2 +
-                               ex.Message);
+        throw new WebException(SysTranslations.CheckUpdateReadError.GetLang(ex.Message));
       }
       var list = new NullSafeOfStringDictionary<string>();
       foreach ( string line in lines )

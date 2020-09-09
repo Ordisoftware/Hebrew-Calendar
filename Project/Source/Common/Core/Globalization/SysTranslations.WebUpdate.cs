@@ -23,6 +23,13 @@ namespace Ordisoftware.Core
   static public partial class SysTranslations
   {
 
+    static public readonly TranslationsDictionary CheckUpdateReadError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Error on reading data from server:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Erreur lors de la lecture des données depuis le serveur :{Globals.NL2}{{0}}",
+      };
+
     static public readonly TranslationsDictionary CheckUpdateFileError
       = new TranslationsDictionary
       {
