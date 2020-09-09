@@ -72,6 +72,10 @@ The software tries to register an ODBC DSN to the registry but in case of proble
 
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
+#### What to do if the check update tells that the SSL certificate is wrong or expired?
+
+This software verifies the validity of the author's website certificate in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. If the application has not been updated within this period, you can manually check the latest version available online.
+
 #### What to do if the calendar month view is ugly?
 
 Reset the preferences to default: it will restore the corrupted values in case of a problem after install or upgrade.
@@ -192,6 +196,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to enable or disable message boxes sounds.
 - Improve message boxes.
 - Improve check update to allow auto update or direct download or open app web page.
+- Improve check update to check the SSL certificate of the website and the checksum of the setup.
 - Improve debugger to support logging.
 - Improve exception form to view log.
 - Some UI/UX improvements.
@@ -199,8 +204,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Update help.
 - Update to SQLite 3.32.3 ODBC Driver.
 - Update Framework .NET version to 4.7.2 and supported Windows only 7 SP1 or higher.
-- Improve setup.
 - The application now automatically creates the ODBC DSN in the Windows registry.
+- Improve setup.
 
 #### 2020.08.22 - Version 4.1
 
