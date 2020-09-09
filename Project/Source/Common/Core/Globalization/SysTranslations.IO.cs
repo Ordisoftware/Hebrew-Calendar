@@ -80,6 +80,13 @@ namespace Ordisoftware.Core
         [Language.FR] = $"Erreur dans {{0}}{Globals.NL2}Ligne n° {{1}}{Globals.NL2}{{2}}"
       };
 
+    static public readonly TranslationsDictionary WrongFileChecksum
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Wrong checksum for file:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Mauvaise somme de contrôle pour le fichier :{Globals.NL2}{{0}}"
+      };    
+
   }
 
 }

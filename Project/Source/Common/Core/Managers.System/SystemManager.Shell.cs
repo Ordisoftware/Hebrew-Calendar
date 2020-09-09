@@ -16,6 +16,7 @@ using System;
 using System.IO;
 using System.Text;
 using System.Diagnostics;
+using System.Security.Cryptography;
 
 namespace Ordisoftware.Core
 {
@@ -194,6 +195,23 @@ namespace Ordisoftware.Core
     static public void CreateGitHubIssue(string query = "")
     {
       OpenWebLink(Globals.GitHubCreateIssueURL + query);
+    }
+
+    /// <summary>
+    ///  Get the SHA-512 checksum of a file.
+    /// </summary>
+    static public string GetChecksum512(string filePath)
+    {
+      try
+      {
+        using ( var stream = File.OpenRead(filePath) )
+        using ( var sha = SHA512.Create() )
+          return BitConverter.ToString(sha.ComputeHash(stream)).Replace("-", "").ToLower();
+      }
+      catch ( Exception ex )
+      {
+        throw new IOException(SysTranslations.FileAccessError.GetLang(filePath), ex);
+      }
     }
 
   }

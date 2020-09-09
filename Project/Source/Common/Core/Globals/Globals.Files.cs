@@ -60,7 +60,7 @@ namespace Ordisoftware.Core
     /// Indicate the check update URL.
     /// </summary>
     static public string CheckUpdateURL { get; set; }
-      = $"https://{AssemblyTrademark}/files/{ApplicationCode}.update";
+      = $"https://{AssemblyTrademark}/files/{ApplicationCode}.sha-update";
 
     /// <summary>
     /// Indicate the setup file name.
