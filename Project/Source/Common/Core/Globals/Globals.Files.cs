@@ -57,6 +57,12 @@ namespace Ordisoftware.Core
       = $"{ApplicationHomeURL}/#release{{0}}";
 
     /// <summary>
+    /// Indicate the application website SSL certificate information.
+    /// </summary>
+    static public string ApplicationHomeSSLFilePath { get; set; }
+      = Path.Combine(RootFolderPath, "Setup\\SSL", AssemblyTrademark + ".ssl");
+
+    /// <summary>
     /// Indicate the check update URL.
     /// </summary>
     static public string CheckUpdateURL { get; set; }
@@ -65,14 +71,14 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the setup file name.
     /// </summary>
-    static public string SetupFilename { get; set; }
+    static public string SetupFileName { get; set; }
       = $"{AssemblyCompany}{ApplicationCode}Setup-{{0}}.exe";
 
     /// <summary>
     /// Indicate the new version setup file.
     /// </summary>
     static public string SetupFileURL { get; set; }
-      = $"https://{AssemblyTrademark}/download/{SetupFilename}";
+      = $"https://{AssemblyTrademark}/download/{SetupFileName}";
 
     /// <summary>
     /// Indicate the GitHub repository.

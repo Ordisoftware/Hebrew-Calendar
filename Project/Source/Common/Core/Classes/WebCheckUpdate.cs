@@ -52,7 +52,7 @@ namespace Ordisoftware.Core
         Mutex = true;
         if ( Globals.MainForm != null ) Globals.MainForm.Enabled = false;
         LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
-        var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFilename, "*"));
+        var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFileName, "*"));
         foreach ( string s in files ) SystemManager.TryCatch(() => File.Delete(s));
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
@@ -88,6 +88,7 @@ namespace Ordisoftware.Core
       List<string> lines = null;
       try
       {
+        SystemManager.CheckServerCertificate(Globals.CheckUpdateURL);
         lines = client.DownloadString(Globals.CheckUpdateURL).SplitNoEmptyLines().Take(2).ToList();
         LoadingForm.Instance.DoProgress();
       }
@@ -146,6 +147,7 @@ namespace Ordisoftware.Core
         case WebUpdateSelection.None:
           break;
         case WebUpdateSelection.Download:
+          SystemManager.CheckServerCertificate(fileURL);
           SystemManager.OpenWebLink(fileURL);
           break;
         case WebUpdateSelection.Install:
@@ -164,9 +166,10 @@ namespace Ordisoftware.Core
                                            string fileURL)
     {
       LoadingForm.Instance.Initialize(SysTranslations.DownloadingNewVersion.GetLang(), 100, 0, false);
+      SystemManager.CheckServerCertificate(fileURL);
       Exception ex = null;
       bool finished = false;
-      string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFilename, fileInfo.version.ToString());
+      string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFileName, fileInfo.version.ToString());
       client.DownloadProgressChanged += downloadProgressChanged;
       client.DownloadFileCompleted += downloadFileCompleted;
       client.DownloadFileAsync(new Uri(fileURL), filePathTemp);

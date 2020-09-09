@@ -28,26 +28,26 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate Hebrew Common directory name.
     /// </summary>
-    static public readonly string HebrewCommonDirectoryName
-      = "Hebrew Common";
+    static public string HebrewCommonDirectoryName
+      => "Hebrew Common";
 
     /// <summary>
     /// Indicate generated executable bin directory name.
     /// </summary>
-    static public string BinDirectoryName { get; set; }
-      = "Bin";
+    static public string BinDirectoryName
+      => "Bin";
 
     /// <summary>
     /// Indicate generated executable bin\debug directory combination.
     /// </summary>
-    static public string DebugDirectoryCombination { get; set; }
-      = Path.Combine(BinDirectoryName, "Debug");
+    static public string DebugDirectoryCombination
+      => Path.Combine(BinDirectoryName, "Debug");
 
     /// <summary>
     /// Indicate generated executable bin\release directory combination.
     /// </summary>
-    static public string ReleaseDirectoryCombination { get; set; }
-      = Path.Combine(BinDirectoryName, "Release");
+    static public string ReleaseDirectoryCombination
+      => Path.Combine(BinDirectoryName, "Release");
 
     /// <summary>
     /// Indicate the root folder path of the application.

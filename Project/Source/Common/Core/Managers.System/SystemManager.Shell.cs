@@ -14,9 +14,11 @@
 /// <edited> 2020-09 </edited>
 using System;
 using System.IO;
+using System.Net;
 using System.Text;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace Ordisoftware.Core
 {
@@ -211,6 +213,59 @@ namespace Ordisoftware.Core
       catch ( Exception ex )
       {
         throw new IOException(SysTranslations.FileAccessError.GetLang(filePath), ex);
+      }
+    }
+
+    /// <summary>
+    /// Check the validity of the remote website SSL certificate.
+    /// </summary>
+    static public void CheckServerCertificate(string url)
+    {
+      Uri uri = new Uri(url);
+      ServicePoint sp = ServicePointManager.FindServicePoint(uri);
+      string groupName = Guid.NewGuid().ToString();
+      HttpWebRequest req = WebRequest.Create(uri) as HttpWebRequest;
+      req.ConnectionGroupName = groupName;
+      using ( WebResponse resp = req.GetResponse() ) { }
+      sp.CloseConnectionGroup(groupName);
+      var certificate = sp.Certificate;
+      if ( Certificate["Issuer"] != certificate.GetIssuerName()
+        || Certificate["Name"] != certificate.GetName()
+        || Certificate["Subject"] != certificate.Subject
+        || Certificate["Serial"] != certificate.GetSerialNumberString()
+        || Certificate["PublicKey"] != certificate.GetPublicKeyString() )
+        throw new UnauthorizedAccessException(SysTranslations.WrongSSLCertificate.GetLang(uri.Host));
+      if ( DateTime.Now < Convert.ToDateTime(certificate.GetEffectiveDateString())
+        || DateTime.Now > Convert.ToDateTime(certificate.GetExpirationDateString()) )
+        throw new UnauthorizedAccessException(SysTranslations.ExpiredSSLCertificate.GetLang(uri.Host));
+    }
+
+    /// <summary>
+    /// Indicate the application website SSL certificate information.
+    /// </summary>
+    static private NullSafeOfStringDictionary<string> Certificate
+      = new NullSafeOfStringDictionary<string>();
+
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
+    static SystemManager()
+    {
+      try
+      {
+        foreach ( string line in File.ReadAllLines(Globals.ApplicationHomeSSLFilePath) )
+        {
+          var parts = line.Split('|');
+          if ( parts.Length == 2 )
+            Certificate.Add(parts[0], parts[1]);
+        }
+      }
+      catch ( Exception ex )
+      {
+        MessageBox.Show(SysTranslations.LoadFileError.GetLang(Globals.ApplicationHomeSSLFilePath, ex.Message), 
+                        Globals.AssemblyTitle, 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Warning);
       }
     }
 

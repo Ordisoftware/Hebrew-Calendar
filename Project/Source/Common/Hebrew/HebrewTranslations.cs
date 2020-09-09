@@ -38,16 +38,23 @@ namespace Ordisoftware.Hebrew
         [Language.FR] = "Notice de la méthode d'analyse lettrique"
       };
 
+    static public readonly TranslationsDictionary AskToDownload
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Do you want to download it?",
+        [Language.FR] = "Voulez-vous le télécharger ?"
+      };
+
     static public readonly TranslationsDictionary AskToDownloadHebrewLetters
       = new TranslationsDictionary
       {
         [Language.EN] = $"Hebrew Letters not found." + Globals.NL +
                         SysTranslations.AskToCheckPreferences[Language.EN] + Globals.NL2 +
-                        SysTranslations.AskToDownload[Language.EN],
+                        AskToDownload[Language.EN],
 
         [Language.FR] = $"Hebrew Letters n'a pas été trouvé." + Globals.NL +
                         SysTranslations.AskToCheckPreferences[Language.FR] + Globals.NL2 +
-                        SysTranslations.AskToDownload[Language.FR]
+                        AskToDownload[Language.FR]
       };
 
     static public readonly TranslationsDictionary AskToDownloadHebrewWords
@@ -55,11 +62,11 @@ namespace Ordisoftware.Hebrew
       {
         [Language.EN] = "Hebrew Words not found." + Globals.NL +
                         SysTranslations.AskToCheckPreferences[Language.EN] + Globals.NL2 +
-                        SysTranslations.AskToDownload[Language.EN],
+                        AskToDownload[Language.EN],
 
         [Language.FR] = "Hebrew Words n'a pas été trouvé." + Globals.NL +
                         SysTranslations.AskToCheckPreferences[Language.FR] + Globals.NL2 +
-                        SysTranslations.AskToDownload[Language.FR]
+                        AskToDownload[Language.FR]
       };
 
     static public readonly TranslationsDictionary ConfigureProviders

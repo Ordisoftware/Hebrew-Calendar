@@ -17,7 +17,6 @@ using System;
 namespace Ordisoftware.Core
 {
 
-
   /// <summary>
   /// Provide localization helper.
   /// </summary>
@@ -80,12 +79,26 @@ namespace Ordisoftware.Core
         [Language.FR] = $"Erreur dans {{0}}{Globals.NL2}Ligne n° {{1}}{Globals.NL2}{{2}}"
       };
 
+    static public readonly TranslationsDictionary WrongSSLCertificate
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Wrong SSL certificate for:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Mauvais certificat SSL pour :{Globals.NL2}{{0}}"
+      };
+
+    static public readonly TranslationsDictionary ExpiredSSLCertificate
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Expired SSL certificate for:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Certificat SSL expiré pour :{Globals.NL2}{{0}}"
+      };
+
     static public readonly TranslationsDictionary WrongFileChecksum
       = new TranslationsDictionary
       {
         [Language.EN] = $"Wrong checksum for file:{Globals.NL2}{{0}}",
         [Language.FR] = $"Mauvaise somme de contrôle pour le fichier :{Globals.NL2}{{0}}"
-      };    
+      };
 
   }
 
