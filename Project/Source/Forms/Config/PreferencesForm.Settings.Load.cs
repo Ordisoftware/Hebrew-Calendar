@@ -88,6 +88,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditCloseReminderFormOnClick.Checked = Settings.ReminderFormCloseOnClick;
       EditBigCalendarWarning.Checked = Settings.BigCalendarWarningEnabled;
       EditLogEnabled.Checked = Settings.TraceEnabled;
+      EditLogEnabled_CheckedChanged(null, null);
     }
 
   }
