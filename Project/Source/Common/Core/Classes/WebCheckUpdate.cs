@@ -53,14 +53,12 @@ namespace Ordisoftware.Core
         Mutex = true;
         if ( Globals.MainForm != null ) Globals.MainForm.Enabled = false;
         LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
-        var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFileName, "*"));
-        foreach ( string s in files ) SystemManager.TryCatch(() => File.Delete(s));
+        CleanTemp();
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
           var fileInfo = GetVersionAndChecksum(client);
           lastdone = DateTime.Now;
-          LoadingForm.Instance.DoProgress();
           if ( fileInfo.Item1.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
             return GetUserChoice(client, fileInfo);
           else
@@ -85,6 +83,18 @@ namespace Ordisoftware.Core
         if ( Globals.MainForm != null ) Globals.MainForm.Enabled = formEnabled;
       }
       return false;
+    }
+
+    /// <summary>
+    /// Delete temp files.
+    /// </summary>
+    private static void CleanTemp()
+    {
+      SystemManager.TryCatch(() =>
+      {
+        var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFileName, "*"));
+        foreach ( string s in files ) SystemManager.TryCatch(() => File.Delete(s));
+      });
     }
 
     /// <summary>
@@ -138,6 +148,7 @@ namespace Ordisoftware.Core
         throw new WebException(SysTranslations.CheckUpdateFileError.GetLang(lines.AsMultiLine()) + Globals.NL2 +
                                ex.Message);
       }
+      LoadingForm.Instance.DoProgress();
       return (version, fileChecksum);
     }
 
@@ -171,31 +182,38 @@ namespace Ordisoftware.Core
                                            (Version version, string checksum) fileInfo,
                                            string fileURL)
     {
-      LoadingForm.Instance.Initialize(SysTranslations.DownloadingNewVersion.GetLang(), 100, 0, false);
-      SystemManager.CheckServerCertificate(fileURL);
       Exception ex = null;
       bool finished = false;
-      string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFileName, fileInfo.version.ToString());
-      client.DownloadProgressChanged += progress;
-      client.DownloadFileCompleted += completed;
-      client.DownloadFileAsync(new Uri(fileURL), filePathTemp);
-      while ( !finished )
+      try
       {
-        Thread.Sleep(100);
-        Application.DoEvents();
+        LoadingForm.Instance.Initialize(SysTranslations.DownloadingNewVersion.GetLang(), 100, 0, false);
+        SystemManager.CheckServerCertificate(fileURL);
+        string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFileName, fileInfo.version.ToString());
+        client.DownloadProgressChanged += progress;
+        client.DownloadFileCompleted += completed;
+        client.DownloadFileAsync(new Uri(fileURL), filePathTemp);
+        while ( !finished )
+        {
+          Thread.Sleep(100);
+          Application.DoEvents();
+        }
+        if ( ex != null ) throw ex;
+        if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
+          throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));
+        if ( SystemManager.GetChecksum512(filePathTemp) != fileInfo.checksum )
+          throw new IOException(SysTranslations.WrongFileChecksum.GetLang(filePathTemp));
+        if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") != null )
+        {
+          Globals.IsExiting = true;
+          SystemManager.Exit();
+          return true;
+        }
+        return false;
       }
-      if ( ex != null ) throw ex;
-      if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
-        throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));
-      if ( SystemManager.GetChecksum512(filePathTemp) != fileInfo.checksum )
-        throw new IOException(SysTranslations.WrongFileChecksum.GetLang(filePathTemp));
-      if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") != null )
+      finally
       {
-        Globals.IsExiting = true;
-        SystemManager.Exit();
-        return true;
+        CleanTemp();
       }
-      return false;
       // Do progress
       void progress(object sender, DownloadProgressChangedEventArgs e)
       {
