@@ -163,8 +163,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add sound selection for the reminder box.
 - Add permanent database file locking while running.
 - Fix justify text in advanced message boxes.
-- Update help
 - More refactorings.
+- Update help
 
 #### 2020.09.08 - Version 5.1
 
