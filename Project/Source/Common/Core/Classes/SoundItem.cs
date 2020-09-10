@@ -47,10 +47,17 @@ namespace Ordisoftware.Core
 
     public override string ToString() => Path.GetFileNameWithoutExtension(FilePath);
 
-    public SoundItem(string path) => FilePath = path;
+    public SoundItem(string path, bool isWindows = false)
+    {
+      if (isWindows)
+        FilePath = Path.Combine(Globals.WindowsMediaFolderPath, path + ".wav");
+      else
+        FilePath = path;
+    }
 
     public void Play()
     {
+      if ( !File.Exists(FilePath) ) return;
       SoundPlayer.SoundLocation = FilePath;
       SoundPlayer.Load();
       SoundPlayer.Play();
