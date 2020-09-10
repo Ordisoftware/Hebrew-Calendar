@@ -24,6 +24,8 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class SelectSoundForm : Form
   {
 
+    static public int DefaultReminderSoundMaxDuration = 3000;
+
     static public void Run(bool topmost = false)
     {
       using ( var form = new SelectSoundForm() )
@@ -136,8 +138,15 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { OpenFileDialog.FileName = Path.GetFileName(EditFilePath.Text); });
       if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
       {
-        EditFilePath.Text = OpenFileDialog.FileName;
-        new SoundItem(EditFilePath.Text).Play();
+        var sound = new SoundItem(OpenFileDialog.FileName);
+        if ( sound.DurationMS > DefaultReminderSoundMaxDuration )
+          DisplayManager.ShowWarning($"Duration must be less than {DefaultReminderSoundMaxDuration/1000} seconds: " +
+                                     ((long)sound.DurationMS).FormatMilliseconds());
+        else
+        {
+          sound.Play();
+          EditFilePath.Text = OpenFileDialog.FileName;
+        }
       }
     }
 
