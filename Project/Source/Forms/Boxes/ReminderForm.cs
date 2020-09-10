@@ -195,7 +195,18 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoSound()
     {
-      DisplayManager.DoSound(MessageBoxIcon.Warning);
+      switch ( Program.Settings.ReminderBoxSoundType )
+      {
+        case SoundSource.Dialog:
+          DisplayManager.DoSound(Program.Settings.ReminderBoxSoundDialog);
+          break;
+        case SoundSource.Custom:
+          new SoundItem(Program.Settings.ReminderBoxSoundPath).Play();
+          break;
+        case SoundSource.Windows:
+          new SoundItem(Program.Settings.ReminderBoxSoundWinows, true).Play();
+          break;
+      }
       Application.DoEvents();
       System.Threading.Thread.Sleep(250);
     }
@@ -219,6 +230,10 @@ namespace Ordisoftware.Hebrew.Calendar
       Form_Click(null, null);
     }
 
+    private void ActionSetup_Click(object sender, EventArgs e)
+    {
+      SelectSoundForm.Run(true);
+    }
   }
 
 }

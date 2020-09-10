@@ -503,6 +503,16 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionSelectReminderBoxSound for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSelectReminderBoxSound_Click(object sender, EventArgs e)
+    {
+      SelectSoundForm.Run();
+    }
+
+    /// <summary>
     /// Event handler. Called by EditScreenPosition for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

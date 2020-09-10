@@ -148,8 +148,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Roadmap
 
-- Add moon months description form and menu in tools.
 - Add reminder for solar and lunar anniversary of birth.
+- Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Improve date bookmarks to use an entity instead of the application settings.
@@ -157,10 +157,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.09.11 - Version 5.2
+#### 2020.09.12 - Version 5.2
 
-- Add permanent database file locking while running.
 - Improve check update to check the SSL certificate of the website and the checksum of the setup file.
+- Add sound selection for the reminder box.
+- Add permanent database file locking while running.
 - Fix justify text in advanced message boxes.
 
 #### 2020.09.08 - Version 5.1

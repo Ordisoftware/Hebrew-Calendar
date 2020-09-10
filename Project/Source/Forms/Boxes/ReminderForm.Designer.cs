@@ -34,6 +34,7 @@
       this.PictureBox = new System.Windows.Forms.PictureBox();
       this.ActionClose = new System.Windows.Forms.Button();
       this.LabelHours = new System.Windows.Forms.Label();
+      this.ActionSetup = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.SuspendLayout();
       // 
@@ -76,6 +77,15 @@
       this.LabelHours.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelHours.Name = "LabelHours";
       // 
+      // ActionSetup
+      // 
+      resources.ApplyResources(this.ActionSetup, "ActionSetup");
+      this.ActionSetup.FlatAppearance.BorderSize = 0;
+      this.ActionSetup.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.ActionSetup.Name = "ActionSetup";
+      this.ActionSetup.UseVisualStyleBackColor = true;
+      this.ActionSetup.Click += new System.EventHandler(this.ActionSetup_Click);
+      // 
       // ReminderForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -83,6 +93,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.LabelHours);
+      this.Controls.Add(this.ActionSetup);
       this.Controls.Add(this.ActionClose);
       this.Controls.Add(this.PictureBox);
       this.Controls.Add(this.LabelDate);
@@ -107,5 +118,6 @@
     private System.Windows.Forms.PictureBox PictureBox;
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Label LabelHours;
+    private System.Windows.Forms.Button ActionSetup;
   }
 }

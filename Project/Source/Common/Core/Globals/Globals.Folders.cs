@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -80,6 +80,12 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string DatabaseFolderPath
       => UserDataFolderPath;
+
+    /// <summary>
+    /// Indicate the Windows media folder.
+    /// </summary>
+    static public string WindowsMediaFolderPath
+      => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "Media");
 
     /// <summary>
     /// Indicate the user documents folder path.
