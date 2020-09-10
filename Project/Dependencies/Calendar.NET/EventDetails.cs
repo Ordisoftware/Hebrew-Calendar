@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Forms;
 
-namespace Calendar.NET
+namespace CodeProjectCalendar.NET
 {
     internal partial class EventDetails : Form
     {

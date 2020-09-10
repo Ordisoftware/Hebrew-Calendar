@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Calendar.NET
+namespace CodeProjectCalendar.NET
 {
     internal partial class ScrollPanel : UserControl
     {

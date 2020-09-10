@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace Calendar.NET
+namespace CodeProjectCalendar.NET
 {
   /// <summary>
   /// An enumeration of built-in recurring event frequencies

@@ -16,7 +16,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Drawing;
-using Calendar.NET;
+using CodeProjectCalendar.NET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar

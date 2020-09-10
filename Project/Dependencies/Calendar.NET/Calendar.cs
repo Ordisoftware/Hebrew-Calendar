@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Calendar;
 
-namespace Calendar.NET
+namespace CodeProjectCalendar.NET
 {
   /// <summary>
   /// An enumeration describing various ways to view the calendar

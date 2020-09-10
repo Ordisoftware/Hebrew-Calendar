@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Calendar.NET
+namespace CodeProjectCalendar.NET
 {
     internal class EventComparer : IComparer<IEvent>
     {

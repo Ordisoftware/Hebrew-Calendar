@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 
-namespace Calendar.NET
+namespace CodeProjectCalendar.NET
 {
     public class RectangleComparer : IComparer<Rectangle>
     {

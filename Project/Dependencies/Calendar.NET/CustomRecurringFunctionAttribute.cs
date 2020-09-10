@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Calendar.NET
+namespace CodeProjectCalendar.NET
 {
     /// <summary>
     /// An attribute to mark Custom Recurring Functions
