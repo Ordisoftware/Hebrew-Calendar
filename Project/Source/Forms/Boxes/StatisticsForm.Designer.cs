@@ -872,6 +872,7 @@
       this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.StatisticsFormLocation;
       this.MaximizeBox = false;
       this.Name = "StatisticsForm";
+      this.Activated += new System.EventHandler(this.StatisticsForm_Activated);
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SystemStatisticsForm_FormClosing);
       this.Load += new System.EventHandler(this.SystemStatisticsForm_Load);
       this.PanelBottom.ResumeLayout(false);
