@@ -16,6 +16,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Media;
+using System.Text;
+using System.Runtime.InteropServices;
 
 namespace Ordisoftware.Core
 {
@@ -27,6 +29,27 @@ namespace Ordisoftware.Core
   {
 
     static private SoundPlayer SoundPlayer = new SoundPlayer();
+
+    [DllImport("winmm.dll")]
+    static private extern uint mciSendString(string command, StringBuilder returnValue, int returnLength, IntPtr winHandle);
+
+    static public int GetSoundLengthMS(string fileName)
+    {
+      try
+      {
+        StringBuilder lengthBuf = new StringBuilder(32);
+        mciSendString(string.Format("open \"{0}\" type waveaudio alias wave", fileName), null, 0, IntPtr.Zero);
+        mciSendString("status wave length", lengthBuf, lengthBuf.Capacity, IntPtr.Zero);
+        mciSendString("close wave", null, 0, IntPtr.Zero);
+        int length = 0;
+        if (int.TryParse(lengthBuf.ToString(), out length))
+          return length;
+      }
+      catch
+      {
+      }
+      return -1;
+    }
 
     static public List<SoundItem> GetWindowsSounds()
     {
@@ -43,16 +66,19 @@ namespace Ordisoftware.Core
       return result;
     }
 
-    public string FilePath { get; set; }
+    public string FilePath { get; }
+
+    public int DurationMS { get; }
 
     public override string ToString() => Path.GetFileNameWithoutExtension(FilePath);
 
     public SoundItem(string path, bool isWindows = false)
     {
-      if (isWindows)
+      if ( isWindows )
         FilePath = Path.Combine(Globals.WindowsMediaFolderPath, path + ".wav");
       else
         FilePath = path;
+      DurationMS = GetSoundLengthMS(FilePath);
     }
 
     public void Play()
