@@ -82,15 +82,15 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary WrongSSLCertificate
       = new TranslationsDictionary
       {
-        [Language.EN] = $"Wrong SSL certificate for:{Globals.NL2}{{0}}",
-        [Language.FR] = $"Mauvais certificat SSL pour :{Globals.NL2}{{0}}"
+        [Language.EN] = $"Wrong SSL certificate for {{0}}:{Globals.NL2}Required:{Globals.NL2}{{1}}{Globals.NL2}Found:{Globals.NL2}{{2}}",
+        [Language.FR] = $"Mauvais certificat SSL pour  {{0}} :{Globals.NL2}Requis :{Globals.NL2}{{1}}{Globals.NL2}Trouvé :{Globals.NL2}{{2}}"
       };
 
     static public readonly TranslationsDictionary ExpiredSSLCertificate
       = new TranslationsDictionary
       {
-        [Language.EN] = $"Expired SSL certificate for:{Globals.NL2}{{0}}",
-        [Language.FR] = $"Certificat SSL expiré pour :{Globals.NL2}{{0}}"
+        [Language.EN] = $"Expired SSL certificate for {{0}}:{Globals.NL2}Effective = {{1}}{Globals.NL2}Expiration = {{2}}",
+        [Language.FR] = $"Certificat SSL expiré pour {{0}} :{Globals.NL2}Effective = {{1}}{Globals.NL2}Expiration = {{2}}"
       };
 
     static public readonly TranslationsDictionary WrongFileChecksum

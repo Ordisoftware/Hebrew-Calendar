@@ -51,6 +51,13 @@ namespace Ordisoftware.Core
         [Language.FR] = "Téléchargement de la nouvelle version..."
       };
 
+    static public readonly TranslationsDictionary AskToOpenGitHubPage
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Do you want to open the project's GitHub repository?.",
+        [Language.FR] = "Voulez-vous ouvrir le dépôt GitHub du projet ?"
+      };
+
   }
 
 }

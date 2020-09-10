@@ -18,6 +18,7 @@ using System.IO;
 using System.Net;
 using System.Threading;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -67,15 +68,21 @@ namespace Ordisoftware.Core
             DisplayManager.ShowInformation(SysTranslations.NoNewVersionAvailable.GetLang());
         }
       }
+      catch ( UnauthorizedAccessException ex )
+      {
+        DisplayManager.ShowWarning(DisplayManager.Title + " Check Update", ex.Message);
+        if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
+          SystemManager.OpenGitHupPage();
+      }
       catch ( Exception ex )
       {
         DisplayManager.ShowWarning(DisplayManager.Title + " Check Update", ex.Message);
       }
       finally
       {
+        Mutex = false;
         LoadingForm.Instance.Hide();
         if ( Globals.MainForm != null ) Globals.MainForm.Enabled = formEnabled;
-        Mutex = false;
       }
       return false;
     }
@@ -83,19 +90,19 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Get the version available online with the file checksum.
     /// </summary>
-    static private (Version version, string checksum) GetVersionAndChecksum(WebClient client)
+    static private (Version, string) GetVersionAndChecksum(WebClient client)
     {
       List<string> lines = null;
+      SystemManager.CheckServerCertificate(Globals.CheckUpdateURL);
       try
       {
-        SystemManager.CheckServerCertificate(Globals.CheckUpdateURL);
         lines = client.DownloadString(Globals.CheckUpdateURL).SplitNoEmptyLines().Take(2).ToList();
-        LoadingForm.Instance.DoProgress();
       }
       catch ( Exception ex )
       {
         throw new WebException(SysTranslations.CheckUpdateReadError.GetLang(ex.Message));
       }
+      LoadingForm.Instance.DoProgress();
       var list = new NullSafeOfStringDictionary<string>();
       foreach ( string line in lines )
       {
@@ -169,8 +176,8 @@ namespace Ordisoftware.Core
       Exception ex = null;
       bool finished = false;
       string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFileName, fileInfo.version.ToString());
-      client.DownloadProgressChanged += downloadProgressChanged;
-      client.DownloadFileCompleted += downloadFileCompleted;
+      client.DownloadProgressChanged += progress;
+      client.DownloadFileCompleted += completed;
       client.DownloadFileAsync(new Uri(fileURL), filePathTemp);
       while ( !finished )
       {
@@ -188,13 +195,14 @@ namespace Ordisoftware.Core
         SystemManager.Exit();
         return true;
       }
-      else
-        return false;
-      void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+      return false;
+      // Do progress
+      void progress(object sender, DownloadProgressChangedEventArgs e)
       {
         LoadingForm.Instance.SetProgress(e.ProgressPercentage);
       }
-      void downloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+      // Download completed
+      void completed(object sender, AsyncCompletedEventArgs e)
       {
         finished = true;
         if ( e.Error == null ) return;
