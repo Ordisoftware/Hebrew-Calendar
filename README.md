@@ -160,7 +160,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 #### 2020.09.11 - Version 5.2
 
 - Add permanent database file locking while running.
-- Improve check update to check the SSL certificate of the website and the checksum of the setup.
+- Improve check update to check the SSL certificate of the website and the checksum of the setup file.
 - Fix justify text in advanced message boxes.
 
 #### 2020.09.08 - Version 5.1
