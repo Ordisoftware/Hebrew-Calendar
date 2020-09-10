@@ -195,7 +195,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoSound()
     {
-      switch ( Program.Settings.ReminderBoxSoundType )
+      switch ( Program.Settings.ReminderBoxSoundSource )
       {
         case SoundSource.Dialog:
           DisplayManager.DoSound(Program.Settings.ReminderBoxSoundDialog);

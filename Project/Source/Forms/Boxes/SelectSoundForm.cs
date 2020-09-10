@@ -33,19 +33,19 @@ namespace Ordisoftware.Hebrew.Calendar
         form.TopMost = topmost;
         if ( form.ShowDialog() != DialogResult.OK ) return;
         if ( form.SelectNone.Checked )
-          Program.Settings.ReminderBoxSoundType = SoundSource.None;
+          Program.Settings.ReminderBoxSoundSource = SoundSource.None;
         else
         if ( form.SelectDialog.Checked )
-          Program.Settings.ReminderBoxSoundType = SoundSource.Dialog;
-        else
-        if ( form.SelectCustom.Checked )
-          Program.Settings.ReminderBoxSoundType = SoundSource.Custom;
+          Program.Settings.ReminderBoxSoundSource = SoundSource.Dialog;
         else
         if ( form.SelectWindows.Checked ) 
-          Program.Settings.ReminderBoxSoundType = SoundSource.Windows;
+          Program.Settings.ReminderBoxSoundSource = SoundSource.Windows;
+        else
+        if ( form.SelectCustom.Checked )
+          Program.Settings.ReminderBoxSoundSource = SoundSource.Custom;
         Program.Settings.ReminderBoxSoundDialog = (MessageBoxIcon)form.SelectDialogSound.SelectedItem;
-        Program.Settings.ReminderBoxSoundPath = form.EditFilePath.Text;
         Program.Settings.ReminderBoxSoundWinows = ( (SoundItem)form.SelectWindowsSound.SelectedItem ).ToString();
+        Program.Settings.ReminderBoxSoundPath = form.EditFilePath.Text;
         Program.Settings.Save();
       }
     }
@@ -56,6 +56,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Icon = MainForm.Instance.Icon;
       SelectWindowsSound.Items.AddRange(SoundItem.GetWindowsSounds().ToArray());
       SelectDialogSound.Items.Add(MessageBoxIcon.Information);
+      SelectDialogSound.Items.Add(MessageBoxIcon.Question);
+      SelectDialogSound.Items.Add(MessageBoxIcon.Exclamation);
       SelectDialogSound.Items.Add(MessageBoxIcon.Hand);
       EditFilePath.Text = Program.Settings.ReminderBoxSoundPath;
       SelectDialogSound.SelectedIndex = SelectDialogSound.Items.IndexOf(Program.Settings.ReminderBoxSoundDialog);
@@ -65,7 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if (item != null) SelectWindowsSound.SelectedItem = item;
       if ( SelectDialogSound.Items.Count > 0 && SelectDialogSound.SelectedIndex == -1 ) SelectDialogSound.SelectedIndex = 0;
       if ( SelectWindowsSound.Items.Count > 0 && SelectWindowsSound.SelectedIndex == -1 ) SelectWindowsSound.SelectedIndex = 0;
-      switch ( Program.Settings.ReminderBoxSoundType )
+      switch ( Program.Settings.ReminderBoxSoundSource )
       {
         case SoundSource.None:
           SelectNone.Checked = true;
@@ -73,14 +75,14 @@ namespace Ordisoftware.Hebrew.Calendar
         case SoundSource.Dialog:
           SelectDialog.Checked = true;
           break;
-        case SoundSource.Custom:
-          SelectCustom.Checked = true;
-          break;
         case SoundSource.Windows:
           SelectWindows.Checked = true;
           break;
+        case SoundSource.Custom:
+          SelectCustom.Checked = true;
+          break;
         default:
-          throw new NotImplementedExceptionEx(Program.Settings.ReminderBoxSoundType.ToStringFull());
+          throw new NotImplementedExceptionEx(Program.Settings.ReminderBoxSoundSource.ToStringFull());
       }
     }
 
@@ -102,15 +104,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SelectWindowsSound.Enabled = false;
     }
 
-    private void SelectCustom_CheckedChanged(object sender, EventArgs e)
-    {
-      ActionPlay.Enabled = true;
-      SelectDialogSound.Enabled = false;
-      EditFilePath.Enabled = true;
-      ActionSelectFilePath.Enabled = true;
-      SelectWindowsSound.Enabled = false;
-    }
-
     private void SelectWindows_CheckedChanged(object sender, EventArgs e)
     {
       ActionPlay.Enabled = true;
@@ -118,6 +111,15 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionSelectFilePath.Enabled = false;
       SelectDialogSound.Enabled = false;
       SelectWindowsSound.Enabled = true;
+    }
+
+    private void SelectCustom_CheckedChanged(object sender, EventArgs e)
+    {
+      ActionPlay.Enabled = true;
+      SelectDialogSound.Enabled = false;
+      EditFilePath.Enabled = true;
+      ActionSelectFilePath.Enabled = true;
+      SelectWindowsSound.Enabled = false;
     }
 
     private void SelectDialogSound_SelectedIndexChanged(object sender, EventArgs e)
@@ -136,17 +138,15 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SystemManager.TryCatch(() => { OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditFilePath.Text); });
       SystemManager.TryCatch(() => { OpenFileDialog.FileName = Path.GetFileName(EditFilePath.Text); });
-      if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
+      if ( OpenFileDialog.ShowDialog() != DialogResult.OK ) return;
+      var sound = new SoundItem(OpenFileDialog.FileName);
+      if ( sound.DurationMS > DefaultReminderSoundMaxDuration )
+        DisplayManager.ShowWarning($"Duration must be less than {DefaultReminderSoundMaxDuration / 1000} seconds: " +
+                                   ( (long)sound.DurationMS ).FormatMilliseconds());
+      else
       {
-        var sound = new SoundItem(OpenFileDialog.FileName);
-        if ( sound.DurationMS > DefaultReminderSoundMaxDuration )
-          DisplayManager.ShowWarning($"Duration must be less than {DefaultReminderSoundMaxDuration/1000} seconds: " +
-                                     ((long)sound.DurationMS).FormatMilliseconds());
-        else
-        {
-          sound.Play();
-          EditFilePath.Text = OpenFileDialog.FileName;
-        }
+        sound.Play();
+        EditFilePath.Text = OpenFileDialog.FileName;
       }
     }
 

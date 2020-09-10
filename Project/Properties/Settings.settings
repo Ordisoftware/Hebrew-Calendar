@@ -424,8 +424,8 @@
     <Setting Name="ReminderBoxSoundPath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ReminderBoxSoundType" Type="Ordisoftware.Core.SoundSource" Scope="User">
-      <Value Profile="(Default)">Dialog</Value>
+    <Setting Name="ReminderBoxSoundSource" Type="Ordisoftware.Core.SoundSource" Scope="User">
+      <Value Profile="(Default)">Windows</Value>
     </Setting>
     <Setting Name="ReminderBoxSoundDialog" Type="System.Windows.Forms.MessageBoxIcon" Scope="User">
       <Value Profile="(Default)">Hand</Value>
