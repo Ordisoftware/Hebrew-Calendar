@@ -159,7 +159,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.09.12 - Version 5.2
 
-- Improve check update to check the SSL certificate of the website and the checksum of the setup file.
+- Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Add sound selection for the reminder box.
 - Add permanent database file locking while running.
 - Fix justify text in advanced message boxes.
