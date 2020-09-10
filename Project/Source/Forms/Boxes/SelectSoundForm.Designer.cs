@@ -48,16 +48,16 @@
       // 
       // PanelButtons
       // 
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ActionPlay);
       this.PanelButtons.Controls.Add(this.ActionCancel);
       this.PanelButtons.Controls.Add(this.ActionOK);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionPlay
       // 
-      this.ActionPlay.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionPlay, "ActionPlay");
+      this.ActionPlay.FlatAppearance.BorderSize = 0;
       this.ActionPlay.Name = "ActionPlay";
       this.ActionPlay.TabStop = false;
       this.ActionPlay.UseVisualStyleBackColor = true;
@@ -102,8 +102,8 @@
       // 
       // ActionSelectFilePath
       // 
-      this.ActionSelectFilePath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectFilePath, "ActionSelectFilePath");
+      this.ActionSelectFilePath.FlatAppearance.BorderSize = 0;
       this.ActionSelectFilePath.Name = "ActionSelectFilePath";
       this.ActionSelectFilePath.TabStop = false;
       this.ActionSelectFilePath.UseVisualStyleBackColor = true;
@@ -111,8 +111,8 @@
       // 
       // SelectWindowsSound
       // 
-      this.SelectWindowsSound.FormattingEnabled = true;
       resources.ApplyResources(this.SelectWindowsSound, "SelectWindowsSound");
+      this.SelectWindowsSound.FormattingEnabled = true;
       this.SelectWindowsSound.Name = "SelectWindowsSound";
       this.SelectWindowsSound.SelectedIndexChanged += new System.EventHandler(this.SelectWindowsSound_SelectedIndexChanged);
       // 
@@ -130,17 +130,17 @@
       // 
       // SelectDialogSound
       // 
+      resources.ApplyResources(this.SelectDialogSound, "SelectDialogSound");
       this.SelectDialogSound.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.SelectDialogSound.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectDialogSound, "SelectDialogSound");
       this.SelectDialogSound.Name = "SelectDialogSound";
       this.SelectDialogSound.SelectedIndexChanged += new System.EventHandler(this.SelectDialogSound_SelectedIndexChanged);
       // 
       // EditFilePath
       // 
+      resources.ApplyResources(this.EditFilePath, "EditFilePath");
       this.EditFilePath.BackColor = System.Drawing.SystemColors.Control;
       this.EditFilePath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditFilePath, "EditFilePath");
       this.EditFilePath.Name = "EditFilePath";
       this.EditFilePath.ReadOnly = true;
       // 
