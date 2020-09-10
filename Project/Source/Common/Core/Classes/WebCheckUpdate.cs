@@ -35,6 +35,18 @@ namespace Ordisoftware.Core
     static private bool Mutex;
 
     /// <summary>
+    /// Delete temp files.
+    /// </summary>
+    static public void CleanTemp()
+    {
+      SystemManager.TryCatch(() =>
+      {
+        var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFileName, "*"));
+        foreach ( string s in files ) SystemManager.TryCatch(() => File.Delete(s));
+      });
+    }
+
+    /// <summary>
     /// Check if an update is available online and offer to install, download or open product web page.
     /// App version is "MAJOR.MINOR".
     /// </summary>
@@ -44,6 +56,7 @@ namespace Ordisoftware.Core
     /// <returns>True if application must exist else false.</returns>
     static public bool Run(bool checkAtStartup, ref DateTime lastdone, bool auto)
     {
+      CleanTemp();
       if ( Mutex ) return false;
       if ( auto && !checkAtStartup ) return false;
       if ( auto && lastdone.AddDays(DefaultCheckDaysInterval) >= DateTime.Now ) return false;
@@ -53,14 +66,11 @@ namespace Ordisoftware.Core
         Mutex = true;
         if ( Globals.MainForm != null ) Globals.MainForm.Enabled = false;
         LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
-        var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFileName, "*"));
-        foreach ( string s in files ) SystemManager.TryCatch(() => File.Delete(s));
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
           var fileInfo = GetVersionAndChecksum(client);
           lastdone = DateTime.Now;
-          LoadingForm.Instance.DoProgress();
           if ( fileInfo.Item1.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
             return GetUserChoice(client, fileInfo);
           else
@@ -138,6 +148,7 @@ namespace Ordisoftware.Core
         throw new WebException(SysTranslations.CheckUpdateFileError.GetLang(lines.AsMultiLine()) + Globals.NL2 +
                                ex.Message);
       }
+      LoadingForm.Instance.DoProgress();
       return (version, fileChecksum);
     }
 
@@ -171,10 +182,10 @@ namespace Ordisoftware.Core
                                            (Version version, string checksum) fileInfo,
                                            string fileURL)
     {
-      LoadingForm.Instance.Initialize(SysTranslations.DownloadingNewVersion.GetLang(), 100, 0, false);
-      SystemManager.CheckServerCertificate(fileURL);
       Exception ex = null;
       bool finished = false;
+      LoadingForm.Instance.Initialize(SysTranslations.DownloadingNewVersion.GetLang(), 100, 0, false);
+      SystemManager.CheckServerCertificate(fileURL);
       string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFileName, fileInfo.version.ToString());
       client.DownloadProgressChanged += progress;
       client.DownloadFileCompleted += completed;

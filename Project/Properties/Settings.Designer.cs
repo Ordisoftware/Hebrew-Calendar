@@ -1680,13 +1680,13 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Dialog")]
-        public global::Ordisoftware.Core.SoundSource ReminderBoxSoundType {
+        [global::System.Configuration.DefaultSettingValueAttribute("Windows")]
+        public global::Ordisoftware.Core.SoundSource ReminderBoxSoundSource {
             get {
-                return ((global::Ordisoftware.Core.SoundSource)(this["ReminderBoxSoundType"]));
+                return ((global::Ordisoftware.Core.SoundSource)(this["ReminderBoxSoundSource"]));
             }
             set {
-                this["ReminderBoxSoundType"] = value;
+                this["ReminderBoxSoundSource"] = value;
             }
         }
         

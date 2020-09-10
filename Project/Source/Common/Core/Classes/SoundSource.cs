@@ -29,6 +29,11 @@ namespace Ordisoftware.Core
     None,
 
     /// <summary>
+    /// Custom path.
+    /// </summary>
+    Custom,
+
+    /// <summary>
     /// Windows dialog sound.
     /// </summary>
     Dialog,
@@ -41,12 +46,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Application media folder.
     /// </summary>
-    Application,
-
-    /// <summary>
-    /// Custom path.
-    /// </summary>
-    Custom
+    Application
 
   }
 

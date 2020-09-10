@@ -51,9 +51,12 @@ namespace Ordisoftware.Core
       return -1;
     }
 
+    static private List<SoundItem> WindowsSounds;
+
     static public List<SoundItem> GetWindowsSounds()
     {
-      return GetSounds(Globals.WindowsMediaFolderPath);
+      if ( WindowsSounds == null) WindowsSounds = GetSounds(Globals.WindowsMediaFolderPath);
+      return WindowsSounds;
     }
 
     static public List<SoundItem> GetSounds(string path, string filter = "*.wav")
