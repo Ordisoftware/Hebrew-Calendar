@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -36,109 +36,99 @@ namespace Ordisoftware.Hebrew.Calendar
 
     public string GenerateYearsTime
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : Program.Settings.BenchmarkGenerateYears.FormatMilliseconds();
 
     public string GeneratePopulateDaysTime
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : Program.Settings.BenchmarkPopulateDays.FormatMilliseconds();
 
     public string GenerateAnalyseDaysTime
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : Program.Settings.BenchmarkAnalyseDays.FormatMilliseconds();
 
     public string GenerateTextReportTime
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : Program.Settings.BenchmarkGenerateTextReport.FormatMilliseconds();
 
     public string LastGenerated
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : Program.Settings.LastGenerated.ToString("g");
 
     public string FillMonthViewTime
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : Program.Settings.BenchmarkFillCalendar.FormatMilliseconds();
 
     public string DBFirstYear
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : MainForm.Instance.YearFirst.ToString();
 
     public string DBLastYear
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : MainForm.Instance.YearLast.ToString();
 
     public string DBYearsInterval
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : MainForm.Instance.YearsInterval.ToString();
 
     public string DBRecordsCount
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : MainForm.Instance.DataSet.LunisolarDays.Count().ToString();
 
     public string DBEventsCount
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : MainForm.Instance.DataSet.LunisolarDays.Count(d => d.TorahEvents != 0 || d.SeasonChange != 0).ToString();
 
     public string MonthViewEventsCount
       => MainForm.Instance.IsGenerating
-         ? Localizer.Processing.GetLang()
+         ? SysTranslations.Processing.GetLang()
          : MainForm.Instance.CalendarMonth.TheEvents.Count.ToString();
 
     public string DBEngine
-      => OdbcSQLiteHelper.Engine;
+      => SQLiteOdbcHelper.EngineNameAndVersion;
 
     public string DBADOdotNETProvider
-      => OdbcSQLiteHelper.ADOdotNETProvider;
+      => SQLiteOdbcHelper.ADOdotNETProviderName;
 
     public string DBFileSize
     {
       get
       {
-        if ( MainForm.Instance.IsGenerating )
-        {
-          UpdateDBFileSizeRequired = true;
-          return Localizer.Processing.GetLang();
-        }
         if ( UpdateDBFileSizeRequired )
         {
           UpdateDBFileSizeRequired = false;
-          _DBFileSize = SystemManager.GetFileSize(Globals.DatabaseFilename).FormatBytesSize().ToString();
+          _DBFileSize = SystemManager.GetFileSize(Globals.DatabaseFilePath).FormatBytesSize().ToString();
         }
-        return _DBFileSize;
+        return MainForm.Instance.IsGenerating ? SysTranslations.Processing.GetLang() : _DBFileSize;
       }
     }
     static private string _DBFileSize;
-    static private bool UpdateDBFileSizeRequired = true;
+    static internal bool UpdateDBFileSizeRequired = true;
 
     public string DBMemorySize
     {
       get
       {
-        if ( MainForm.Instance.IsGenerating )
-        {
-          UpdateDBMemorySizeRequired = true;
-          return Localizer.Processing.GetLang();
-        }
         if ( UpdateDBMemorySizeRequired )
         {
           UpdateDBMemorySizeRequired = false;
           _DBMemorySize = MainForm.Instance.DataSet.SizeOf().FormatBytesSize();
         }
-        return _DBMemorySize;
+        return MainForm.Instance.IsGenerating ? SysTranslations.Processing.GetLang() : _DBMemorySize;
       }
     }
     static private string _DBMemorySize;
-    static private bool UpdateDBMemorySizeRequired = true;
+    static internal bool UpdateDBMemorySizeRequired = true;
 
   }
 

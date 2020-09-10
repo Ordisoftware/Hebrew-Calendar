@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Collections.Generic;
 using System.IO;
 using Ordisoftware.Core;
 
@@ -102,15 +101,21 @@ namespace Ordisoftware.Hebrew.Calendar
     };
 
     /// <summary>
-    /// Indicate filename of the text report.
+    /// Indicate file path of reminder box image.
     /// </summary>
-    static public string TextReportFilename
-      => Path.ChangeExtension(Globals.DatabaseFilename, ".txt");
+    static public string ReminderBoxImageFilePath
+      => Path.Combine(Globals.RootFolderPath, @"Project\Icons", "hebrew-calendar-65x65.png");
 
     /// <summary>
-    /// Indicate filename of the GPS database.
+    /// Indicate file path of the text report.
     /// </summary>
-    static public string GPSFilename
+    static public string TextReportFilePath
+      => Path.ChangeExtension(Globals.DatabaseFilePath, ".txt");
+
+    /// <summary>
+    /// Indicate file path of the GPS database.
+    /// </summary>
+    static public string GPSFilePath
       => Path.Combine(Globals.DocumentsFolderPath, "WorldCities.csv");
 
     /// <summary>
@@ -120,19 +125,16 @@ namespace Ordisoftware.Hebrew.Calendar
       => Path.Combine(Globals.DocumentsFolderPath, "MoonMonths");
 
     /// <summary>
-    /// Indicate filename of the moon months meanings.
+    /// Indicate file path of the moon months meanings.
     /// </summary>
-    static public string MoonMonthsMeaningsFilename
+    static public string MoonMonthsMeaningsFilePath
       = Path.Combine(MoonMonthsFolderPath, "MoonMonthsMeanings{0}.txt");
 
     /// <summary>
-    /// Indicate filename of the moon months lettriqs.
+    /// Indicate file path of the moon months lettriqs.
     /// </summary>
-    static public string MoonMonthsLettriqsFilename
+    static public string MoonMonthsLettriqsFilePath
       => Path.Combine(MoonMonthsFolderPath, "MoonMonthsLettriqs{0}.txt");
-
-    static public readonly DateItemAutoDictionary Dates
-      = new DateItemAutoDictionary();
 
     /// <summary>
     /// Indicate the moon months meanings.
@@ -154,12 +156,12 @@ namespace Ordisoftware.Hebrew.Calendar
       foreach ( Language lang in Languages.Managed )
       {
         MoonMonthsMeanings.Add(lang,
-                               new MoonMonthsFile(string.Format(MoonMonthsMeaningsFilename, Languages.Codes[lang].ToUpper()),
+                               new MoonMonthsFile(string.Format(MoonMonthsMeaningsFilePath, Languages.Codes[lang].ToUpper()),
                                                   true,
                                                   Globals.IsDevExecutable,
                                                   DataFileFolder.ApplicationDocuments));
         MoonMonthsLettriqs.Add(lang,
-                               new MoonMonthsFile(string.Format(MoonMonthsLettriqsFilename, Languages.Codes[lang].ToUpper()),
+                               new MoonMonthsFile(string.Format(MoonMonthsLettriqsFilePath, Languages.Codes[lang].ToUpper()),
                                                   true,
                                                   Globals.IsDevExecutable,
                                                   DataFileFolder.ApplicationDocuments));

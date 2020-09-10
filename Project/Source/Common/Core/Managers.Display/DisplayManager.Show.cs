@@ -227,6 +227,7 @@ namespace Ordisoftware.Core
     static public void ShowError(string title, string text)
     {
       Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+      DebugManager.Trace(LogTraceEvent.Error, text);
     }
 
     /// <summary>

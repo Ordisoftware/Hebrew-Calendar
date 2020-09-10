@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
@@ -116,6 +116,8 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Cursor = cursor;
         IsGenerating = false;
+        ApplicationStatistics.UpdateDBFileSizeRequired = true;
+        ApplicationStatistics.UpdateDBMemorySizeRequired = true;
         SetView(Settings.CurrentView, true);
         UpdateButtons();
         if ( Globals.IsReady && !ActionVacuumAtNextStartup.Checked )
@@ -130,7 +132,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var form = new ShowTextForm(Text, errors, false, true, 600, 400, false, false);
         form.TextBox.Font = new System.Drawing.Font("Courier new", 8);
         form.ShowDialog();
-        if ( DisplayManager.QueryYesNo(Localizer.ContactSupport.GetLang()) )
+        if ( DisplayManager.QueryYesNo(SysTranslations.ContactSupport.GetLang()) )
           ExceptionForm.Run(new ExceptionInfo(this, new TooManyErrorsException(errors)));
         return errors;
       }
@@ -144,7 +146,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="yearLast">The last year.</param>
     private bool PopulateDays(int yearFirst, int yearLast)
     {
-      LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(),
+      LoadingForm.Instance.Initialize(AppTranslations.ProgressCreateDays.GetLang(),
                                       ProgressCount,
                                       Program.LoadingFormGenerate);
       var Chrono = new Stopwatch();
@@ -189,7 +191,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         var date = SQLiteDate.ToDateTime(day.Date);
-        var data = Program.Dates[date];
+        var data = CalendarDates.Instance[date];
         var ephemeris = data.Ephemerisis;
         day.LunarDay = data.MoonDay;
         day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
@@ -227,7 +229,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       int month = 0;
       int delta = 0;
-      LoadingForm.Instance.Initialize(Translations.ProgressAnalyzeDays.GetLang(),
+      LoadingForm.Instance.Initialize(AppTranslations.ProgressAnalyzeDays.GetLang(),
                                       ProgressCount,
                                       Program.LoadingFormGenerate);
       var Chrono = new Stopwatch();
@@ -296,7 +298,7 @@ namespace Ordisoftware.Hebrew.Calendar
         bool check(Data.DataSet.LunisolarDaysRow row)
         {
           var dateRow = SQLiteDate.ToDateTime(row.Date);
-          return dateRow.Year == dateDay.Year && Program.Dates[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
+          return dateRow.Year == dateDay.Year && CalendarDates.Instance[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
         }
         var equinoxe = DataSet.LunisolarDays.Where(d => check(d)).First();
         var dateEquinox = SQLiteDate.ToDateTime(equinoxe.Date);

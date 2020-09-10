@@ -26,6 +26,20 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class ReminderForm : Form
   {
 
+    static private Image Image;
+
+    static ReminderForm()
+    {
+      try
+      {
+        Image = Image.FromFile(Program.ReminderBoxImageFilePath);
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(Program.ReminderBoxImageFilePath, ex.Message));
+      }
+    }
+
     static public void Run(Data.DataSet.LunisolarDaysRow row,
                            bool isShabat, 
                            TorahEvent torahevent,
@@ -67,13 +81,13 @@ namespace Ordisoftware.Hebrew.Calendar
         form = new ReminderForm();
         var date = SQLiteDate.ToDateTime(row.Date);
         form.LabelTitle.Text = !isShabat
-                               ? Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
+                               ? AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
                                : "Shabat";
         form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
         if ( times.dateStart != null && times.dateEnd != null )
-          form.LabelHours.Text = Translations.DayOfWeek.GetLang(times.dateStart.Value.DayOfWeek) + " " +
+          form.LabelHours.Text = AppTranslations.DayOfWeek.GetLang(times.dateStart.Value.DayOfWeek) + " " +
                                  times.timeStart + " ➜ " +
-                                 Translations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " " +
+                                 AppTranslations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " " +
                                  times.timeEnd;
         form.LabelDate.Tag = date;
         form.SetLocation(ControlLocation.BottomRight);
@@ -156,6 +170,8 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       ShowInTaskbar = Program.Settings.ShowReminderInTaskBar;
+      if ( Image != null )
+        PictureBox.Image = Image;
     }
 
     private void ReminderForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -179,7 +195,18 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoSound()
     {
-      DisplayManager.DoSound(MessageBoxIcon.Warning);
+      switch ( Program.Settings.ReminderBoxSoundType )
+      {
+        case SoundSource.Dialog:
+          DisplayManager.DoSound(Program.Settings.ReminderBoxSoundDialog);
+          break;
+        case SoundSource.Custom:
+          new SoundItem(Program.Settings.ReminderBoxSoundPath).Play();
+          break;
+        case SoundSource.Windows:
+          new SoundItem(Program.Settings.ReminderBoxSoundWinows, true).Play();
+          break;
+      }
       Application.DoEvents();
       System.Threading.Thread.Sleep(250);
     }
@@ -203,6 +230,10 @@ namespace Ordisoftware.Hebrew.Calendar
       Form_Click(null, null);
     }
 
+    private void ActionSetup_Click(object sender, EventArgs e)
+    {
+      SelectSoundForm.Run(true);
+    }
   }
 
 }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -28,34 +28,34 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate Hebrew Common directory name.
     /// </summary>
-    static public readonly string HebrewCommonDirectoryName
-      = "Hebrew Common";
+    static public string HebrewCommonDirectoryName
+      => "Hebrew Common";
 
     /// <summary>
     /// Indicate generated executable bin directory name.
     /// </summary>
-    static public string BinDirectoryName { get; set; }
-      = "Bin";
+    static public string BinDirectoryName
+      => "Bin";
 
     /// <summary>
-    /// Indicate generated executable debug directory.
+    /// Indicate generated executable bin\debug directory combination.
     /// </summary>
-    static public string DebugDirectory { get; set; }
-      = Path.Combine(BinDirectoryName, "Debug");
+    static public string DebugDirectoryCombination
+      => Path.Combine(BinDirectoryName, "Debug");
 
     /// <summary>
-    /// Indicate generated executable release directory.
+    /// Indicate generated executable bin\release directory combination.
     /// </summary>
-    static public string ReleaseDirectory { get; set; }
-      = Path.Combine(BinDirectoryName, "Release");
+    static public string ReleaseDirectoryCombination
+      => Path.Combine(BinDirectoryName, "Release");
 
     /// <summary>
     /// Indicate the root folder path of the application.
     /// </summary>
     static public string RootFolderPath
       => Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath
-                                                              .Replace(DebugDirectory, BinDirectoryName)
-                                                              .Replace(ReleaseDirectory, BinDirectoryName))).FullName;
+                                                              .Replace(DebugDirectoryCombination, BinDirectoryName)
+                                                              .Replace(ReleaseDirectoryCombination, BinDirectoryName))).FullName;
 
     /// <summary>
     /// Indicate the application help folder.
@@ -80,6 +80,12 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string DatabaseFolderPath
       => UserDataFolderPath;
+
+    /// <summary>
+    /// Indicate the Windows media folder.
+    /// </summary>
+    static public string WindowsMediaFolderPath
+      => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "Media");
 
     /// <summary>
     /// Indicate the user documents folder path.
@@ -114,7 +120,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate a path for in a special folder.
     /// </summary>
-    static private string CreateSpecialFolderPath(Environment.SpecialFolder folder, string directory)
+    static public string CreateSpecialFolderPath(Environment.SpecialFolder folder, string directory)
       => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(folder),
                                                 AssemblyCompany,
                                                 directory)).FullName;

@@ -60,7 +60,7 @@ namespace Ordisoftware.Core
     private void CheckIndex(int index)
     {
       if ( index < 0 )
-        throw new IndexOutOfRangeException(Localizer.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
+        throw new IndexOutOfRangeException(SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
     }
 
     private void CreateOutOfRange(int index, T value)

@@ -18,6 +18,10 @@ using System.Configuration;
 namespace Ordisoftware.Core
 {
 
+  public enum ApplicationState
+  {
+  }
+
   /// <summary>
   /// Provide global variables.
   /// </summary>

@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectSuspendDelayForm_Load(object sender, EventArgs e)
     {
       this.CenterToMainFormElseScreen();
-      SelectDelay.Items.AddRange(Translations.SuspendReminderDelays.GetLang().ToArray());
+      SelectDelay.Items.AddRange(AppTranslations.SuspendReminderDelays.GetLang().ToArray());
       SelectDelay.SelectedIndex = -1;
       foreach ( SuspendDelayItem item in SelectDelay.Items )
         if ( Program.Settings.LastSuspendDelaySelected == item.Minutes )

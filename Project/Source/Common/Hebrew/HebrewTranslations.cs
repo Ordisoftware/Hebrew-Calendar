@@ -38,28 +38,35 @@ namespace Ordisoftware.Hebrew
         [Language.FR] = "Notice de la méthode d'analyse lettrique"
       };
 
+    static public readonly TranslationsDictionary AskToDownload
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Do you want to download it?",
+        [Language.FR] = "Voulez-vous le télécharger ?"
+      };
+
     static public readonly TranslationsDictionary AskToDownloadHebrewLetters
       = new TranslationsDictionary
       {
         [Language.EN] = $"Hebrew Letters not found." + Globals.NL +
-                        Localizer.AskToCheckPreferences[Language.EN] + Globals.NL2 +
-                        Localizer.AskToDownload[Language.EN],
+                        SysTranslations.AskToCheckPreferences[Language.EN] + Globals.NL2 +
+                        AskToDownload[Language.EN],
 
         [Language.FR] = $"Hebrew Letters n'a pas été trouvé." + Globals.NL +
-                        Localizer.AskToCheckPreferences[Language.FR] + Globals.NL2 +
-                        Localizer.AskToDownload[Language.FR]
+                        SysTranslations.AskToCheckPreferences[Language.FR] + Globals.NL2 +
+                        AskToDownload[Language.FR]
       };
 
     static public readonly TranslationsDictionary AskToDownloadHebrewWords
       = new TranslationsDictionary
       {
         [Language.EN] = "Hebrew Words not found." + Globals.NL +
-                        Localizer.AskToCheckPreferences[Language.EN] + Globals.NL2 +
-                        Localizer.AskToDownload[Language.EN],
+                        SysTranslations.AskToCheckPreferences[Language.EN] + Globals.NL2 +
+                        AskToDownload[Language.EN],
 
         [Language.FR] = "Hebrew Words n'a pas été trouvé." + Globals.NL +
-                        Localizer.AskToCheckPreferences[Language.FR] + Globals.NL2 +
-                        Localizer.AskToDownload[Language.FR]
+                        SysTranslations.AskToCheckPreferences[Language.FR] + Globals.NL2 +
+                        AskToDownload[Language.FR]
       };
 
     static public readonly TranslationsDictionary ConfigureProviders

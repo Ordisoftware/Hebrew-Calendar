@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace Calendar.NET
+namespace CodeProjectCalendar.NET
 {
   /// <summary>
   /// An event that defines a holiday

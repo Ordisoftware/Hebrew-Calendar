@@ -11,12 +11,16 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
+using System.Linq;
 using System.IO;
 using System.Net;
 using System.Threading;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Core
 {
@@ -48,21 +52,27 @@ namespace Ordisoftware.Core
       {
         Mutex = true;
         if ( Globals.MainForm != null ) Globals.MainForm.Enabled = false;
-        LoadingForm.Instance.Initialize(Localizer.WebCheckUpdate.GetLang(), 3, 0, false);
-        var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFilename, "*"));
+        LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
+        var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFileName, "*"));
         foreach ( string s in files ) SystemManager.TryCatch(() => File.Delete(s));
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
-          var version = GetVersion(client);
+          var fileInfo = GetVersionAndChecksum(client);
           lastdone = DateTime.Now;
           LoadingForm.Instance.DoProgress();
-          if ( version.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
-            return ProcessDownload(client, version);
+          if ( fileInfo.Item1.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
+            return GetUserChoice(client, fileInfo);
           else
           if ( !auto )
-            DisplayManager.ShowInformation(Localizer.NoNewVersionAvailable.GetLang());
+            DisplayManager.ShowInformation(SysTranslations.NoNewVersionAvailable.GetLang());
         }
+      }
+      catch ( UnauthorizedAccessException ex )
+      {
+        DisplayManager.ShowWarning(DisplayManager.Title + " Check Update", ex.Message);
+        if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
+          SystemManager.OpenGitHupPage();
       }
       catch ( Exception ex )
       {
@@ -70,23 +80,41 @@ namespace Ordisoftware.Core
       }
       finally
       {
+        Mutex = false;
         LoadingForm.Instance.Hide();
         if ( Globals.MainForm != null ) Globals.MainForm.Enabled = formEnabled;
-        Mutex = false;
       }
       return false;
     }
 
     /// <summary>
-    /// Get the version available online.
+    /// Get the version available online with the file checksum.
     /// </summary>
-    static private Version GetVersion(WebClient client)
+    static private (Version, string) GetVersionAndChecksum(WebClient client)
     {
-      string content = client.DownloadString(Globals.CheckUpdateURL);
-      string[] lines = content.SplitNoEmptyLines();
+      List<string> lines = null;
+      SystemManager.CheckServerCertificate(Globals.CheckUpdateURL);
+      try
+      {
+        lines = client.DownloadString(Globals.CheckUpdateURL).SplitNoEmptyLines().Take(2).ToList();
+      }
+      catch ( Exception ex )
+      {
+        throw new WebException(SysTranslations.CheckUpdateReadError.GetLang(ex.Message));
+      }
       LoadingForm.Instance.DoProgress();
-      if ( lines.Length == 0 ) throw new WebException(Localizer.CheckUpdateFileError.GetLang());
-      string[] partsVersion = lines[0].Split('.');
+      var list = new NullSafeOfStringDictionary<string>();
+      foreach ( string line in lines )
+      {
+        var parts = line.Split(':');
+        if ( parts.Length != 2 ) continue;
+        list.Add(parts[0], parts[1]);
+      }
+      string fileVersion = list["Version"];
+      string fileChecksum = list["Checksum"];
+      if ( fileVersion.IsNullOrEmpty() || fileChecksum.IsNullOrEmpty() )
+        throw new WebException(SysTranslations.CheckUpdateFileError.GetLang(lines.AsMultiLine()));
+      string[] partsVersion = fileVersion.Split('.');
       Version version;
       try
       {
@@ -102,35 +130,34 @@ namespace Ordisoftware.Core
                                   Convert.ToInt32(partsVersion[2]));
             break;
           default:
-            throw new ArgumentException(Localizer.CheckUpdateFileError.GetLang(content));
+            throw new ArgumentException(SysTranslations.CheckUpdateFileError.GetLang(lines.AsMultiLine()));
         }
       }
       catch ( Exception ex )
       {
-        throw new WebException(Localizer.CheckUpdateFileError.GetLang(lines[0]) + Globals.NL2 + ex.Message);
+        throw new WebException(SysTranslations.CheckUpdateFileError.GetLang(lines.AsMultiLine()) + Globals.NL2 +
+                               ex.Message);
       }
-      return version;
+      return (version, fileChecksum);
     }
 
     /// <summary>
-    /// Process the manual download.
+    /// Ask to the user what to do.
     /// </summary>
-    /// <param name="client"></param>
-    /// <param name="version"></param>
-    /// <returns></returns>
-    static private bool ProcessDownload(WebClient client, Version version)
+    static private bool GetUserChoice(WebClient client, (Version version, string checksum) fileInfo)
     {
-      string filename = string.Format(Globals.SetupFileURL, version.ToString());
-      var result = WebUpdateForm.Run(version);
+      string fileURL = string.Format(Globals.SetupFileURL, fileInfo.version.ToString());
+      var result = WebUpdateForm.Run(fileInfo.version);
       switch ( result )
       {
         case WebUpdateSelection.None:
           break;
         case WebUpdateSelection.Download:
-          SystemManager.OpenWebLink(filename);
+          SystemManager.CheckServerCertificate(fileURL);
+          SystemManager.OpenWebLink(fileURL);
           break;
         case WebUpdateSelection.Install:
-          return ProcessAutoInstall(client, version, filename);
+          return ProcessAutoInstall(client, fileInfo, fileURL);
         default:
           throw new NotImplementedExceptionEx(result.ToStringFull());
       }
@@ -140,39 +167,42 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Process the automatic download and installation.
     /// </summary>
-    static private bool ProcessAutoInstall(WebClient client, Version version, string filename/*, long size*/)
+    static private bool ProcessAutoInstall(WebClient client,
+                                           (Version version, string checksum) fileInfo,
+                                           string fileURL)
     {
-      LoadingForm.Instance.Initialize(Localizer.DownloadingNewVersion.GetLang(), 100, 0, false);
-      bool finished = false;
+      LoadingForm.Instance.Initialize(SysTranslations.DownloadingNewVersion.GetLang(), 100, 0, false);
+      SystemManager.CheckServerCertificate(fileURL);
       Exception ex = null;
-      string tempfile = Path.GetTempPath() + string.Format(Globals.SetupFilename, version.ToString());
-      client.DownloadProgressChanged += downloadProgressChanged;
-      client.DownloadFileCompleted += downloadFileCompleted;
-      client.DownloadFileAsync(new Uri(filename), tempfile);
+      bool finished = false;
+      string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFileName, fileInfo.version.ToString());
+      client.DownloadProgressChanged += progress;
+      client.DownloadFileCompleted += completed;
+      client.DownloadFileAsync(new Uri(fileURL), filePathTemp);
       while ( !finished )
       {
         Thread.Sleep(100);
         Application.DoEvents();
       }
       if ( ex != null ) throw ex;
-      // TODO check size
-      //if ( SystemManager.GetFileSize(tempfile) != size )
-        //throw new IOException(Localizer.WrongFileSIze.GetLang(tempfile));
-      if ( !SystemManager.CheckIfFileIsExecutable(tempfile) )
-        throw new IOException(Localizer.NotAnExecutableFile.GetLang(tempfile));
-      if ( SystemManager.RunShell(tempfile, "/SP- /SILENT") != null )
+      if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
+        throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));
+      if ( SystemManager.GetChecksum512(filePathTemp) != fileInfo.checksum )
+        throw new IOException(SysTranslations.WrongFileChecksum.GetLang(filePathTemp));
+      if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") != null )
       {
         Globals.IsExiting = true;
         SystemManager.Exit();
         return true;
       }
-      else
-        return false;
-      void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+      return false;
+      // Do progress
+      void progress(object sender, DownloadProgressChangedEventArgs e)
       {
         LoadingForm.Instance.SetProgress(e.ProgressPercentage);
       }
-      void downloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+      // Download completed
+      void completed(object sender, AsyncCompletedEventArgs e)
       {
         finished = true;
         if ( e.Error == null ) return;
@@ -185,7 +215,7 @@ namespace Ordisoftware.Core
             code = response.StatusCode;
         }
         ex = new WebException(e.Error.Message + Globals.NL2 +
-                              filename + Globals.NL2 +
+                              fileURL + Globals.NL2 +
                               status.ToStringFull() + Globals.NL +
                               code.ToStringFull());
       }

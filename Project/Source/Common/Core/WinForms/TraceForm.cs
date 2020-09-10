@@ -84,7 +84,7 @@ namespace Ordisoftware.Core
 
     private void ActionClearLogs_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(Localizer.AskToClearLogs.GetLang()) ) return;
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToClearLogs.GetLang()) ) return;
       DebugManager.ClearTraces();
       Show();
       BringToFront();
@@ -92,7 +92,7 @@ namespace Ordisoftware.Core
 
     private void TextBox_TextChanged(object sender, EventArgs e)
     {
-      LabelLinesCount.Text = Localizer.TraceLinesCount.GetLang(TextBox.Lines.Length); ;
+      LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBox.Lines.Length); ;
     }
 
     public void AppendText(string text, bool scrollBottom = true)

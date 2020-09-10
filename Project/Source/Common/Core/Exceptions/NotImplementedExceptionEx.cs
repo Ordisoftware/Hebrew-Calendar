@@ -25,7 +25,7 @@ namespace Ordisoftware.Core
   public class NotImplementedExceptionEx : NotImplementedException
   {
 
-    public override string Message => Localizer.NotImplemented.GetLang(base.Message);
+    public override string Message => SysTranslations.NotImplemented.GetLang(base.Message);
 
     public NotImplementedExceptionEx()
       : base()

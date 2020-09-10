@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide dates difefrence data.
+  /// Provide dates difference item.
   /// </summary>
   public class DatesDiffItem
   {
@@ -62,15 +62,15 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         int count = (int)( Date2 - Date1 ).TotalDays;
-        int countData = Program.Dates.Count;
+        int countData = CalendarDates.Instance.Count;
         if ( count - countData >= Program.LoadingFormDatesDiff )
         {
-          LoadingForm.Instance.Initialize(Translations.ProgressCreateDays.GetLang(), 
+          LoadingForm.Instance.Initialize(AppTranslations.ProgressCreateDays.GetLang(), 
                                           count, 
                                           Program.LoadingFormDatesDiff + 1);
           if ( sender != null ) sender.Enabled = false;
         }
-        var data = Program.Dates[Date1];
+        var data = CalendarDates.Instance[Date1];
         SolarDays = ( Date2 - Date1 ).Days + 1;
         SolarWeeks = (int)Math.Ceiling(SolarDays / 7d);
         SolarMonths = 1;
@@ -85,7 +85,7 @@ namespace Ordisoftware.Hebrew.Calendar
         for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
         {
           if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.DoProgress();
-          data = Program.Dates[index];
+          data = CalendarDates.Instance[index];
           if ( index.Day == 1 ) SolarMonths++;
           if ( index.Month == 1 && index.Day == 1 ) SolarYears++;
           if ( data.Ephemerisis.Moonrise == null ) continue;

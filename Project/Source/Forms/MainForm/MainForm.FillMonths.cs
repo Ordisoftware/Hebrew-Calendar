@@ -16,7 +16,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Drawing;
-using Calendar.NET;
+using CodeProjectCalendar.NET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -77,7 +77,7 @@ namespace Ordisoftware.Hebrew.Calendar
         bool IsCelebrationWeekEnd = false;
         if ( DataSet.LunisolarDays.Count == 0 ) return;
         DayColors = new Color[YearsInterval, 13, 35];
-        LoadingForm.Instance.Initialize(Translations.ProgressFillMonths.GetLang(),
+        LoadingForm.Instance.Initialize(AppTranslations.ProgressFillMonths.GetLang(),
                                         DataSet.LunisolarDays.Count(),
                                         Program.LoadingFormLoadDB);
         foreach ( var row in DataSet.LunisolarDays )
@@ -160,8 +160,8 @@ namespace Ordisoftware.Hebrew.Calendar
                 item.EventColor = GetDayColor(item.Date.Day, item.Date.Month, item.Date.Year);
               CalendarMonth.AddEvent(item);
             }
-            strToolTip = Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Globals.NL
-                       + Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
+            strToolTip = AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Globals.NL
+                       + AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
             Color colorMoon = Color.Black;
             string strMonthDay = Settings.MoonDayTextFormat.ToUpper()
                                  .Replace("%MONTHNAME%", Program.MoonMonthsNames[row.LunarMonth])
@@ -175,21 +175,21 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
             {
               if ( row.Moonset != "" )
-                add(Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
+                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
               if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
-                add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
+                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
             }
             else
             {
               if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
-                add(colorMoon, Translations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
+                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
               if ( row.Moonset != "" )
-                add(Settings.MonthViewTextColor, Translations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
+                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             }
             if ( row.SeasonChange != 0 )
-              add(Settings.CalendarColorSeason, Translations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange));
+              add(Settings.CalendarColorSeason, AppTranslations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange));
             if ( row.TorahEvents != 0 )
-              add(Settings.CalendarColorTorahEvent, Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
+              add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
           }
           catch ( Exception ex )
           {

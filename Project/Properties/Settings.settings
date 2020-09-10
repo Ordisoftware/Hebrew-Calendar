@@ -421,5 +421,17 @@
     <Setting Name="AdvancedDialogBoxes" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="ReminderBoxSoundPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ReminderBoxSoundType" Type="Ordisoftware.Core.SoundSource" Scope="User">
+      <Value Profile="(Default)">Dialog</Value>
+    </Setting>
+    <Setting Name="ReminderBoxSoundDialog" Type="System.Windows.Forms.MessageBoxIcon" Scope="User">
+      <Value Profile="(Default)">Hand</Value>
+    </Setting>
+    <Setting Name="ReminderBoxSoundWinows" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Windows User Account Control</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

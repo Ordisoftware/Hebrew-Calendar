@@ -64,7 +64,7 @@ namespace Ordisoftware.Core
         if ( isInner )
         {
           form.ActionSendToGitHub.Enabled = false;
-          form.ActionClose.Text = Localizer.NextException.GetLang();
+          form.ActionClose.Text = SysTranslations.NextException.GetLang();
         }
         form.EditType.Text = einfo.TypeText;
         form.EditMessage.Text = einfo.Message;
@@ -206,7 +206,7 @@ namespace Ordisoftware.Core
       var body = new StringBuilder();
       body.AppendLine("## COMMENT");
       body.AppendLine();
-      body.AppendLine(Localizer.GitHubIssueComment.GetLang());
+      body.AppendLine(SysTranslations.GitHubIssueComment.GetLang());
       body.AppendLine();
       body.AppendLine("## SYSTEM");
       body.AppendLine();

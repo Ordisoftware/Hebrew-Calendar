@@ -41,7 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var connection = new OdbcConnection(Settings.ConnectionString);
         connection.Open();
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
-        LoadingForm.Instance.Initialize(Translations.ProgressLoadingData.GetLang(),
+        LoadingForm.Instance.Initialize(AppTranslations.ProgressLoadingData.GetLang(),
                                         (int)command.ExecuteScalar() * 2,
                                         Program.LoadingFormLoadDB);
         DataSet.LunisolarDays.RowChanged += update;
@@ -66,16 +66,16 @@ namespace Ordisoftware.Hebrew.Calendar
           SystemManager.TryCatch(() =>
           {
             bool isTextReportLoaded = false;
-            if ( File.Exists(Program.TextReportFilename) )
+            if ( File.Exists(Program.TextReportFilePath) )
               try
               {
-                CalendarText.Text = File.ReadAllText(Program.TextReportFilename);
+                CalendarText.Text = File.ReadAllText(Program.TextReportFilePath);
                 isTextReportLoaded = true;
               }
               catch ( Exception ex )
               {
                 ChronoStart.Stop();
-                DisplayManager.ShowWarning(Localizer.LoadFileError.GetLang(Program.TextReportFilename, ex.Message));
+                DisplayManager.ShowWarning(SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message));
                 ChronoStart.Start();
               }
             if ( !isTextReportLoaded )
@@ -92,7 +92,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( errors != null )
           {
             SystemManager.TryCatch(() => EmptyDatabase());
-            throw new Exception(string.Format(Translations.FatalGenerateError.GetLang(), errors));
+            throw new Exception(string.Format(AppTranslations.FatalGenerateError.GetLang(), errors));
           }
         }
       }
@@ -100,8 +100,8 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         ChronoStart.Stop();
         ex.Manage();
-        DisplayManager.ShowAndTerminate(Localizer.ApplicationMustExit[Language.FR] + Globals.NL2 +
-                                        Localizer.ContactSupport[Language.FR]);
+        DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL2 +
+                                        SysTranslations.ContactSupport[Language.FR]);
       }
       finally
       {

@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2020 Olivier Rogier.
+/// This file is part of Ordisoftware Core Library.
+/// Copyright 2004-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -10,26 +10,44 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <created> 2020-09 </created>
+/// <edited> 2020-09 </edited>
 using System;
-using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide date item.
+  /// Sound source enum.
   /// </summary>
-  public class DateItem
+  public enum SoundSource
   {
-    public DateTime Date { get; set; }
-    public int MoonDay { get; set; }
-    public int MoonPhase { get; set; }
-    public SeasonChange TorahSeasonChange { get; set; }
-    public SeasonChange RealSeasonChange { get; set; }
-    public SunAndMoonRiseAndSet Ephemerisis { get; set; }
-    public override string ToString() => SQLiteDate.ToString(Date);
+
+    /// <summary>
+    /// No sound.
+    /// </summary>
+    None,
+
+    /// <summary>
+    /// Windows dialog sound.
+    /// </summary>
+    Dialog,
+
+    /// <summary>
+    /// Windows media folder.
+    /// </summary>
+    Windows,
+
+    /// <summary>
+    /// Application media folder.
+    /// </summary>
+    Application,
+
+    /// <summary>
+    /// Custom path.
+    /// </summary>
+    Custom
+
   }
 
 }

@@ -73,7 +73,8 @@ namespace Ordisoftware.Core
     /// Indicate if the running app is from dev folder else user installed.
     /// </summary>
     static public bool IsDevExecutable
-      => Application.ExecutablePath.Contains(DebugDirectory) || Application.ExecutablePath.Contains(ReleaseDirectory);
+      => Application.ExecutablePath.Contains(DebugDirectoryCombination)
+      || Application.ExecutablePath.Contains(ReleaseDirectoryCombination);
 
     /// <summary>
     /// Indicate if the code is executed from the IDE else from a running app.

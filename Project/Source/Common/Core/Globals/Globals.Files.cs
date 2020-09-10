@@ -57,22 +57,28 @@ namespace Ordisoftware.Core
       = $"{ApplicationHomeURL}/#release{{0}}";
 
     /// <summary>
+    /// Indicate the application website SSL certificate information.
+    /// </summary>
+    static public string ApplicationHomeSSLFilePath { get; set; }
+      = Path.Combine(RootFolderPath, "Setup\\SSL", AssemblyTrademark + ".ssl");
+
+    /// <summary>
     /// Indicate the check update URL.
     /// </summary>
     static public string CheckUpdateURL { get; set; }
-      = $"https://{AssemblyTrademark}/files/{ApplicationCode}.update";
+      = $"https://{AssemblyTrademark}/files/{ApplicationCode}.sha-update";
 
     /// <summary>
     /// Indicate the setup file name.
     /// </summary>
-    static public string SetupFilename { get; set; }
+    static public string SetupFileName { get; set; }
       = $"{AssemblyCompany}{ApplicationCode}Setup-{{0}}.exe";
 
     /// <summary>
     /// Indicate the new version setup file.
     /// </summary>
     static public string SetupFileURL { get; set; }
-      = $"https://{AssemblyTrademark}/download/{SetupFilename}";
+      = $"https://{AssemblyTrademark}/download/{SetupFileName}";
 
     /// <summary>
     /// Indicate the GitHub repository.
@@ -87,21 +93,27 @@ namespace Ordisoftware.Core
       = GitHubRepositoryURL + "/issues/new?assignees=" + AssemblyCompany;
 
     /// <summary>
-    /// Indicate the filename of the application's icon.
+    /// Indicate the file path of the application's icon.
     /// </summary>
-    static public string ApplicationIconFilename
+    static public string ApplicationIconFilePath
       => Path.Combine(RootFolderPath, "Application.ico");
 
     /// <summary>
-    /// Indicate the filename of the help.
+    /// Indicate the file path of the help.
     /// </summary>
-    static public string HelpFilename
+    static public string HelpFilePath
       => Path.Combine(HelpFolderPath, $"index-{Languages.CurrentCode}.htm");
+
+    /// <summary>
+    /// Indicate the SQLite system DLL file path.
+    /// </summary>
+    static public string SQLiteSystemDLLFilePath
+      => "%WinDIR%\\system32\\sqlite3odbc.dll";
 
     /// <summary>
     /// Indicate the Odbc DSN of the database.
     /// </summary>
-    static public string OdbcDSN
+    static public string DatabaseOdbcDSN
       => ApplicationGitHubCode;
 
     /// <summary>
@@ -111,10 +123,16 @@ namespace Ordisoftware.Core
       = ".sqlite";
 
     /// <summary>
-    /// Indicate the filename of the database.
+    /// Indicate the file name of the database.
     /// </summary>
-    static public string DatabaseFilename
-      => Path.Combine(DatabaseFolderPath, OdbcDSN + DatabaseFileExtension);
+    static public string DatabaseFileName
+      => DatabaseOdbcDSN + DatabaseFileExtension;
+
+    /// <summary>
+    /// Indicate the file path of the database.
+    /// </summary>
+    static public string DatabaseFilePath
+      => Path.Combine(DatabaseFolderPath, DatabaseFileName);
 
   }
 

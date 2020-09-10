@@ -279,7 +279,7 @@ namespace Ordisoftware.Core
       string result = string.Empty;
       List<string> ParagraphsList = new List<string>();
       ParagraphsList.AddRange(text.Split(new[] { "\r\n" }, StringSplitOptions.None).ToList());
-
+      int checkoverflow = 0;
       foreach ( string Paragraph in ParagraphsList )
       {
         string line = string.Empty;
@@ -293,6 +293,12 @@ namespace Ordisoftware.Core
             string tmpLine = line + ( Words[x] + (char)32 );
             if ( TextRenderer.MeasureText(tmpLine, font).Width > width )
             {
+              // TODO solve bug when word has no space => freeze
+              if ( checkoverflow++ > 50 )
+              {
+                DebugManager.Trace(LogTraceEvent.Error, $"Stack Overflow in {nameof(JustifyParagraph)}:{Globals.NL2}{text}");
+                return text;
+              }
               result += Justify(line.TrimEnd()) + "\r\n";
               line = string.Empty;
               --x;

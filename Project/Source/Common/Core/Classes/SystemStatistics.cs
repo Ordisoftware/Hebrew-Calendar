@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Threading;
 using System.Diagnostics;
@@ -114,7 +114,7 @@ namespace Ordisoftware.Core
       {
         if ( PerformanceCounter == null )
         {
-          LoadingForm.Instance.Initialize(Localizer.Initializing.GetLang(), 1, 0);
+          LoadingForm.Instance.Initialize(SysTranslations.Initializing.GetLang(), 1, 0);
           LoadingForm.Instance.SetProgress(1);
           Application.DoEvents();
           PerformanceCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");

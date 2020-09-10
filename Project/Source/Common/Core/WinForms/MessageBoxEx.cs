@@ -24,6 +24,8 @@ namespace Ordisoftware.Core
   public partial class MessageBoxEx : Form
   {
 
+    public const bool DefaultJustifyEnabled = true;
+
     public const int DefaultSmallWidth = 400;
     public const int DefaultMediumWidth = 500;
     public const int DefaultLargeWidth = 600;
@@ -39,6 +41,7 @@ namespace Ordisoftware.Core
     private TranslationsDictionary LocalizedText;
     private MessageBoxIcon IconStyle;
     private int LabelMaxWidth;
+    private bool Justify;
     private bool AllowClose;
 
     private MessageBoxEx()
@@ -51,7 +54,8 @@ namespace Ordisoftware.Core
                         string text,
                         int width = DefaultSmallWidth,
                         MessageBoxButtons buttons = MessageBoxButtons.OK,
-                        MessageBoxIcon icon = MessageBoxIcon.None)
+                        MessageBoxIcon icon = MessageBoxIcon.None,
+                        bool justify = DefaultJustifyEnabled)
       : this()
     {
       Text = title;
@@ -76,7 +80,11 @@ namespace Ordisoftware.Core
         Width = width;
       MaximumSize = new Size(width, MaximumSize.Height);
       Label.MaximumSize = new Size(LabelMaxWidth, Label.MaximumSize.Height);
-      Label.SetTextJustified(text, LabelMaxWidth);
+      Justify = justify;
+      if ( justify )
+        Label.SetTextJustified(text, LabelMaxWidth);
+      else
+        Label.Text = text;
       if ( Label.Height > labelInitialHeight )
       {
         Label.Top = labelInitialTop;
@@ -91,12 +99,14 @@ namespace Ordisoftware.Core
                         TranslationsDictionary text,
                         int width = DefaultSmallWidth,
                         MessageBoxButtons buttons = MessageBoxButtons.OK,
-                        MessageBoxIcon icon = MessageBoxIcon.None)
-      : this(title.GetLang(), text.GetLang(), width, buttons, icon)
+                        MessageBoxIcon icon = MessageBoxIcon.None,
+                        bool justify = DefaultJustifyEnabled)
+      : this(title.GetLang(), text.GetLang(), width, buttons, icon, justify)
     {
       LocalizedTitle = title;
       LocalizedText = text;
     }
+
 
     public void RelocalizeText()
     {
@@ -106,7 +116,10 @@ namespace Ordisoftware.Core
         AutoSize = false;
         Label.AutoSize = false;
         Label.Text = "";
-        Label.SetTextJustified(LocalizedText.GetLang(), LabelMaxWidth);
+        if ( Justify )
+          Label.SetTextJustified(LocalizedText.GetLang(), LabelMaxWidth);
+        else
+          Label.Text = LocalizedText.GetLang();
         AutoSize = true;
         Label.AutoSize = true;
       }

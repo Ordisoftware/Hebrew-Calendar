@@ -22,6 +22,41 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
+    private OdbcConnection LockFileConnection;
+
+    /// <summary>
+    /// Check if tables exists or create them.
+    /// </summary>
+    public void CreateDatabaseIfNotExists()
+    {
+      SystemManager.TryCatchManage(() =>
+      {
+        SQLiteOdbcHelper.CreateOrUpdateDSN();
+        LockFileConnection = new OdbcConnection(Settings.ConnectionString);
+        LockFileConnection.Open();
+        if ( Settings.VacuumAtStartup ) Settings.VacuumLastDone = LockFileConnection.Optimize(Settings.VacuumLastDone);
+        LockFileConnection.DropTableIfExists("Report");
+        LockFileConnection.CheckTable(@"LunisolarDays",
+                                      @"CREATE TABLE LunisolarDays 
+                                        (
+                                          Date TEXT NOT NULL,
+                                          LunarMonth INTEGER,
+                                          LunarDay INTEGER,
+                                          Sunrise TEXT,
+                                          Sunset TEXT,
+                                          Moonrise TEXT,
+                                          Moonset TEXT,
+                                          MoonriseType INTEGER,
+                                          IsNewMoon INTEGER,
+                                          IsFullMoon INTEGER,
+                                          MoonPhase INTEGER,
+                                          SeasonChange INTEGER,
+                                          TorahEvents INTEGER,
+                                          PRIMARY KEY('Date')
+                                        )");
+      });
+    }
+
     /// <summary>
     /// Empty all tables.
     /// </summary>
@@ -31,38 +66,6 @@ namespace Ordisoftware.Hebrew.Calendar
       LunisolarDaysTableAdapter.DeleteAllQuery();
       TableAdapterManager.UpdateAll(DataSet);
       LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-    }
-
-    /// <summary>
-    /// Check if tables exists or create them.
-    /// </summary>
-    public void CreateDatabaseIfNotExists()
-    {
-      OdbcSQLiteHelper.CreateDSNIfNotExists();
-      using ( var connection = new OdbcConnection(Settings.ConnectionString) )
-      {
-        connection.Open();
-        if ( Settings.VacuumAtStartup ) Settings.VacuumLastDone = connection.Optimize(Settings.VacuumLastDone);
-        connection.DropTableIfExists("Report");
-        connection.CheckTable(@"LunisolarDays",
-                              @"CREATE TABLE LunisolarDays 
-                                (
-                                  Date TEXT NOT NULL,
-                                  LunarMonth INTEGER,
-                                  LunarDay INTEGER,
-                                  Sunrise TEXT,
-                                  Sunset TEXT,
-                                  Moonrise TEXT,
-                                  Moonset TEXT,
-                                  MoonriseType INTEGER,
-                                  IsNewMoon INTEGER,
-                                  IsFullMoon INTEGER,
-                                  MoonPhase INTEGER,
-                                  SeasonChange INTEGER,
-                                  TorahEvents INTEGER,
-                                  PRIMARY KEY('Date')
-                                )");
-      }
     }
 
   }

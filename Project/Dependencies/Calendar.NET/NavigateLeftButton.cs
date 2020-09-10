@@ -1,4 +1,4 @@
-﻿namespace Calendar.NET
+﻿namespace CodeProjectCalendar.NET
 {
     internal class NavigateLeftButton : CoolButton
     {

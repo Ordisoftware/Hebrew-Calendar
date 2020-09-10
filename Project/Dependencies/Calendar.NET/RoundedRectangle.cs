@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace Calendar.NET
+namespace CodeProjectCalendar.NET
 {
     internal abstract class RoundedRectangle
     {

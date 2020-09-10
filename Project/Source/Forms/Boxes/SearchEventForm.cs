@@ -74,7 +74,7 @@ namespace Ordisoftware.Hebrew.Calendar
                  select day;
       foreach ( var row in rows )
       {
-        var item = ListItems.Items.Add(Translations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
+        var item = ListItems.Items.Add(AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
         string str = SQLiteDate.ToDateTime(row.Date).ToLongDateString();
         item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
         item.Tag = row;

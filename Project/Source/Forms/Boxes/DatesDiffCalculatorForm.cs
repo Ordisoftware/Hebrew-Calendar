@@ -72,7 +72,7 @@ namespace Ordisoftware.Hebrew.Calendar
       for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
       {
         var date = (DateTime)Program.Settings["DateBookmark" + index];
-        string s = date == DateTime.MinValue ? Localizer.UndefinedSlot.GetLang() : date.ToLongDateString();
+        string s = date == DateTime.MinValue ? SysTranslations.UndefinedSlot.GetLang() : date.ToLongDateString();
         var menuitem = MenuBookmarks.Items.Add(index.ToString("00") + ". " + s);
         menuitem.MouseUp += Bookmarks_MouseUp;
         menuitem.Tag = index;
@@ -116,8 +116,8 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( control == ActionSetBookmarkStart || control == ActionSetBookmarkEnd )
           if ( !menuitem.Text.EndsWith(")") )
           {
-            if ( !DisplayManager.QueryYesNo(Localizer.AskToDeleteBookmark.GetLang()) ) return;
-            menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + Localizer.UndefinedSlot.GetLang();
+            if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang()) ) return;
+            menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + SysTranslations.UndefinedSlot.GetLang();
             Program.Settings["DateBookmark" + menuitem.Tag] = DateTime.MinValue;
             Program.Settings.Save();
           }
@@ -142,7 +142,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( calendar.SelectionStart.Date == date ) return;
         }
         if ( (DateTime)Program.Settings["DateBookmark" + menuitem.Tag] != DateTime.MinValue )
-          if ( !DisplayManager.QueryYesNo(Localizer.AskToReplaceBookmark.GetLang()) ) return;
+          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang()) ) return;
         menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + calendar.SelectionStart.Date.ToLongDateString();
         Program.Settings["DateBookmark" + menuitem.Tag] = calendar.SelectionStart.Date;
         Program.Settings.Save();
@@ -163,8 +163,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      new MessageBoxEx(Translations.DatesDiffNoticeTitle,
-                       Translations.DatesDiffNotice,
+      new MessageBoxEx(AppTranslations.DatesDiffNoticeTitle,
+                       AppTranslations.DatesDiffNotice,
                        MessageBoxEx.DefaultMediumWidth).ShowDialog();
     }
 

@@ -1665,5 +1665,53 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["AdvancedDialogBoxes"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ReminderBoxSoundPath {
+            get {
+                return ((string)(this["ReminderBoxSoundPath"]));
+            }
+            set {
+                this["ReminderBoxSoundPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dialog")]
+        public global::Ordisoftware.Core.SoundSource ReminderBoxSoundType {
+            get {
+                return ((global::Ordisoftware.Core.SoundSource)(this["ReminderBoxSoundType"]));
+            }
+            set {
+                this["ReminderBoxSoundType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Hand")]
+        public global::System.Windows.Forms.MessageBoxIcon ReminderBoxSoundDialog {
+            get {
+                return ((global::System.Windows.Forms.MessageBoxIcon)(this["ReminderBoxSoundDialog"]));
+            }
+            set {
+                this["ReminderBoxSoundDialog"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Windows User Account Control")]
+        public string ReminderBoxSoundWinows {
+            get {
+                return ((string)(this["ReminderBoxSoundWinows"]));
+            }
+            set {
+                this["ReminderBoxSoundWinows"] = value;
+            }
+        }
     }
 }

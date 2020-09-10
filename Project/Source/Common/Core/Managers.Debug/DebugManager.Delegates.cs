@@ -21,8 +21,8 @@ namespace Ordisoftware.Core
   /// Delegate for trace file changed events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
-  /// <param name="filename">The new filename.</param>
-  public delegate void TraceFileChanged(DebugManager.Listener sender, string filename);
+  /// <param name="filePath">The new file path.</param>
+  public delegate void TraceFileChanged(DebugManager.Listener sender, string filePath);
 
   /// <summary>
   /// Delegate for handling before show exception events.

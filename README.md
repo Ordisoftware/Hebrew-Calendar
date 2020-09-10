@@ -72,6 +72,10 @@ The software tries to register an ODBC DSN to the registry but in case of proble
 
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
+#### What to do if the check update tells that the SSL certificate is wrong or expired?
+
+This software verifies the validity of the author's website certificate in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. If the application has not been updated within this period, you can manually check the latest version available online.
+
 #### What to do if the calendar month view is ugly?
 
 Reset the preferences to default: it will restore the corrupted values in case of a problem after install or upgrade.
@@ -144,14 +148,21 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Roadmap
 
-- Add moon months description form and menu in tools.
 - Add reminder for solar and lunar anniversary of birth.
+- Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Improve date bookmarks to use an entity instead of the application settings.
 - Improve and reorganize preferences form with a left menu panel.
 
 ## Changelog
+
+#### 2020.09.12 - Version 5.2
+
+- Improve check update to check the SSL certificate of the website and the checksum of the setup file.
+- Add sound selection for the reminder box.
+- Add permanent database file locking while running.
+- Fix justify text in advanced message boxes.
 
 #### 2020.09.08 - Version 5.1
 
@@ -193,8 +204,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Update help.
 - Update to SQLite 3.32.3 ODBC Driver.
 - Update Framework .NET version to 4.7.2 and supported Windows only 7 SP1 or higher.
-- Improve setup.
 - The application now automatically creates the ODBC DSN in the Windows registry.
+- Improve setup.
 
 #### 2020.08.22 - Version 4.1
 

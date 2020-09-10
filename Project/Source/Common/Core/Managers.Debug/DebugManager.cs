@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Threading;
 using System.Collections.Generic;
@@ -162,7 +162,7 @@ namespace Ordisoftware.Core
                                          Globals.TraceFileCode,
                                          Globals.TraceFileExtension,
                                          Globals.TraceFileMode,
-                                         Globals.TraceFileKeepCount,
+                                         Globals.TraceFilesKeepCount,
                                          TraceFileChanged);
             System.Diagnostics.Trace.Listeners.Add(TraceListener);
             System.Diagnostics.Trace.AutoFlush = true;
@@ -385,12 +385,12 @@ namespace Ordisoftware.Core
       if ( einfo.Instance is AbortException ) return;
       try
       {
-        string message = Localizer.UnhandledException.GetLang(
+        string message = SysTranslations.UnhandledException.GetLang(
           einfo.Emitter,
           einfo.ModuleName,
           einfo.Instance.ToStringReadableWithInners());
         if ( UserCanTerminate )
-          message += Globals.NL2 + Localizer.AskToContinueOrTerminate.GetLang();
+          message += Globals.NL2 + SysTranslations.AskToContinueOrTerminate.GetLang();
         var goal = UserCanTerminate ? MessageBoxButtons.YesNo : MessageBoxButtons.OK;
         if ( DisplayManager.Show(message, goal, MessageBoxIcon.Error) == DialogResult.No )
           SystemManager.Terminate();

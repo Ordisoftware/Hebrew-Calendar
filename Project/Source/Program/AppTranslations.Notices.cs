@@ -21,16 +21,16 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Localization strings.
   /// </summary>
-  static public partial class Translations
+  static public partial class AppTranslations
   {
 
     static public readonly TranslationsDictionary AutoGenerateIntervalNotice
       = new TranslationsDictionary
       {
-        [Language.EN] = "Une valeur positive permet de générer les prochaines années." + Globals.NL +
-                        "Une valeur négative permet de générer les années avant et après maintenant.",
+        [Language.EN] = "A positive value generates the next years." + Globals.NL2 +
+                        "A negative value generates the years before and after now.",
 
-        [Language.FR] = "Une valeur positive permet de générer les prochaines années." + Globals.NL +
+        [Language.FR] = "Une valeur positive permet de générer les prochaines années." + Globals.NL2 +
                         "Une valeur négative permet de générer les années avant et après maintenant."
       };
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,20 +52,16 @@ namespace Ordisoftware.Hebrew.Calendar
       Application.SetCompatibleTextRenderingDefault(false);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
-      UpdateLocalization(true);
       DebugManager.Enabled = Settings.DebuggerEnabled;
       DebugManager.TraceEnabled = Settings.TraceEnabled;
-      DebugManager.DeaultShowExceptionMode = ShowExceptionMode.Advanced;
       Language lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments(args, ref lang);
       Settings.LanguageSelected = lang;
       UpdateLocalization();
-      if (!Settings.FirstLaunch)
-        if ( SystemManager.CommandLineArguments != null )
-          if ( SystemManager.CommandLineArguments.Length == 1 )
-            if ( SystemManager.CommandLineArguments[0] == "/hide" )
-              ForceStartupHide = true;
-        Application.Run(MainForm.Instance);
+      if ( !Settings.FirstLaunch )
+        if ( SystemManager.CommandLineOptions.ContainsKey("hide") )
+          ForceStartupHide = true;
+      Application.Run(MainForm.Instance);
     }
 
     /// <summary>
@@ -93,14 +89,12 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private static void CheckSettingsReset()
     {
-      if ( Settings.FirstLaunch )
-        Settings.LanguageSelected = Languages.Current;
       if ( Settings.UpgradeResetRequiredV3_0
         || Settings.UpgradeResetRequiredV3_6
         || Settings.UpgradeResetRequiredV4_1 )
       {
         if ( !Settings.FirstLaunch )
-          DisplayManager.ShowInformation(Localizer.UpgradeResetRequired.GetLang());
+          DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
         Settings.Reset();
         Settings.LanguageSelected = Languages.Current;
         Settings.UpgradeResetRequiredV3_0 = false;
@@ -112,13 +106,15 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.FirstLaunchV4 = false;
         Settings.FirstLaunch = true;
       }
+      if ( Settings.LanguageSelected == Language.None )
+        Settings.LanguageSelected = Languages.Current;
       Settings.Save();
     }
 
     /// <summary>
     /// Update localization strings to the whole application.
     /// </summary>
-    static internal void UpdateLocalization(bool initonly = false)
+    static internal void UpdateLocalization()
     {
       void update(Form form)
       {
@@ -131,7 +127,6 @@ namespace Ordisoftware.Hebrew.Calendar
       var culture = new CultureInfo(lang);
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
-      if ( initonly ) return;
       MessageBoxEx.CloseAll();
       AboutBox.Instance.Hide();
       MainForm.Instance.ClearLists();
@@ -171,6 +166,7 @@ namespace Ordisoftware.Hebrew.Calendar
       UndoRedoTextBox.Relocalize();
       AboutBox.Instance.AboutBox_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
+      MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
       MainForm.Instance.DoTimerReminder();
       MoonMonthsForm.Instance.Relocalize();
       NavigationForm.Instance.Relocalize();

@@ -44,19 +44,25 @@ namespace Ordisoftware.Core
     static public long Measure(int count, Action action, Control control = null)
     {
       Cursor temp = null;
+      var times = new long[count];
       if ( control != null )
       {
         temp = control.Cursor;
         control.Cursor = Cursors.WaitCursor;
         control.SuspendLayout();
       }
-      var times = new long[count];
-      for ( int index = 0; index < count; index++ )
-        times[index] = Measure(action).ElapsedMilliseconds;
-      if ( control != null )
+      try
       {
-        control.ResumeLayout();
-        control.Cursor = temp;
+        for ( int index = 0; index < count; index++ )
+          times[index] = Measure(action).ElapsedMilliseconds;
+      }
+      finally
+      {
+        if ( control != null )
+        {
+          control.ResumeLayout();
+          control.Cursor = temp;
+        }
       }
       return (long)times.Average();
     }

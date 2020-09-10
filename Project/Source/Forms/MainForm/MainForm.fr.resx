@@ -1884,9 +1884,12 @@
     <value>Voir le log en cours</value>
   </data>
   <data name="EditSoundsEnabled.Text" xml:space="preserve">
-    <value>Activer les sons</value>
+    <value>Activer les sons des boites de dialogue</value>
   </data>
   <data name="EditUseAdvancedDialogBoxes.Text" xml:space="preserve">
     <value>Boites de dialogues avancées</value>
+  </data>
+  <data name="ActionSelectReminderBoxSound.Text" xml:space="preserve">
+    <value>Sélectionner le son des boites de rappel</value>
   </data>
 </root>

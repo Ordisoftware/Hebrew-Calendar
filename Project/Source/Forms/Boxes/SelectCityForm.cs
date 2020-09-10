@@ -39,8 +39,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
-        string filename = Program.GPSFilename;
-        var parser = new GenericParser(filename);
+        string filePath = Program.GPSFilePath;
+        var parser = new GenericParser(filePath);
         parser.FirstRowHasHeader = true;
         while ( parser.Read() )
         {
@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         if ( GPS.Keys.Count == 0 )
         {
-          string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {Localizer.UndefinedSlot.GetLang()}";
+          string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {SysTranslations.UndefinedSlot.GetLang()}";
           throw new NullReferenceException(msg);
         }
       }
@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Enable = false;
         ex.Manage();
         if ( !Globals.IsReady )
-          DisplayManager.ShowAndTerminate(Translations.LoadingCitiesError.GetLang());
+          DisplayManager.ShowAndTerminate(AppTranslations.LoadingCitiesError.GetLang());
       }
     }
 
