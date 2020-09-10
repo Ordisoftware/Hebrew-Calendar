@@ -279,6 +279,14 @@
     <Compile Include="Source\Common\Hebrew\OnlineProviders.cs" />
     <Compile Include="Source\Common\Hebrew\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\Hebrew\ProvidersCollection.cs" />
+    <Compile Include="Source\Common\Core\Classes\SoundItem.cs" />
+    <Compile Include="Source\Common\Core\Classes\SoundSource.cs" />
+    <Compile Include="Source\Forms\Boxes\SelectSoundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectSoundForm.Designer.cs">
+      <DependentUpon>SelectSoundForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Program\ApplicationStatistics.cs" />
     <Compile Include="Source\Entities\YearsIntervalItem.cs" />
     <Compile Include="Source\Entities\CalendarDateItem.cs" />
@@ -637,6 +645,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarks.resx">
       <DependentUpon>ManageDateBookmarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectSoundForm.fr.resx">
+      <DependentUpon>SelectSoundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectSoundForm.resx">
+      <DependentUpon>SelectSoundForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.fr.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
