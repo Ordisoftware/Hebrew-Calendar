@@ -1584,6 +1584,50 @@
   <data name="&gt;&gt;ActionScreenshot.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ActionViewLog.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ActionViewLog.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionViewLog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG3SURBVDhPlZNLUsJAEIZzBUs9gUfwIC5ceBY3LryDBaW4
+        EZVFCInFSqogwFKPYOETMBkIhDwI79+eyeAL8PFVdfXUpPuvf3oyCucqn+9qhoGsbkDN6RQ5GZrImq4j
+        ZxhMFC+DN/+GbdvIatqlbPlKVgrU1hU8sg6eG008Pb/g/uFJ7KcvLkS2LItc6hnZ9oEqBR73d9B0Q5yk
+        TnFdKKBeb4j980wGjLXEmjshx1nZGqPS2Tm1TQWvXgS73YFlMzSalti/ub0VInMnfCayNUalDY49mIJ5
+        IZjjgLVasBmDHwTi22f4YGVrzLuDDQVONEGn56Pr9uB0XTidLoWLNmXWdkSdqmnfBOQM6ge76E2A41QK
+        pmmiVCrB9wMkk0kUi0W4JMhZFJAO7ugWPBIIoghBGAr7HoUfxrnneaJuiUA8g5AimFImgbDfFyIB5fl6
+        Po8fHQwpjyZTjEYjDIdDjCnz4OvBYCDqVs6AHe6BDOAokUSlUsFsBiQSCVSrVZTLJsZjOh+xIDD/E+/W
+        FJFXMeOKxMI1/uUtfIbXy9aYs3S6HL9G+RLJ4tKQL5PXy9Z3tii2/xG8nlCUN5QvmZoA5pkHAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="ActionViewLog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionViewLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>372, 1</value>
+  </data>
+  <data name="ActionViewLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionViewLog.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLog.Name" xml:space="preserve">
+    <value>ActionViewLog</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLog.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLog.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="EditAlwaysOnTop.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1612,7 +1656,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;EditAlwaysOnTop.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -1642,7 +1686,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>

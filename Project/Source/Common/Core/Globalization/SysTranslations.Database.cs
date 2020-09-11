@@ -30,6 +30,20 @@ namespace Ordisoftware.Core
         [Language.FR] = "Erreur de création ou de mise à jour du DSN ODBC SQLite."
       };
 
+    static public readonly TranslationsDictionary FatalGenerateError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Fatal error while generating data." + Globals.NL +
+                        ApplicationMustExit[Language.EN] + Globals.NL +
+                        ContactSupport[Language.EN] + Globals.NL2 +
+                        "{0}",
+
+        [Language.FR] = "Erreur fatale lors de la génération des données." + Globals.NL +
+                        ApplicationMustExit[Language.FR] + Globals.NL +
+                        ContactSupport[Language.FR] + Globals.NL2 +
+                        "{0}"
+      };
+
     static public readonly TranslationsDictionary DatabaseIntegrityError
       = new TranslationsDictionary
       {

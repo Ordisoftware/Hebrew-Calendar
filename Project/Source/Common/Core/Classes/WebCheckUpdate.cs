@@ -203,7 +203,6 @@ namespace Ordisoftware.Core
       if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") != null )
       {
         Globals.IsExiting = true;
-        SystemManager.Exit();
         return true;
       }
       return false;

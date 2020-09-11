@@ -31,7 +31,7 @@ namespace Ordisoftware.Core
     {
       get
       {
-        if ( _AskToContinue == null)
+        if ( _AskToContinue == null )
           _AskToContinue = new TranslationsDictionary
           {
             [Language.EN] = "Do you want to continue?",
@@ -40,7 +40,7 @@ namespace Ordisoftware.Core
         return _AskToContinue;
       }
     }
-    static public TranslationsDictionary _AskToContinue;
+    static private TranslationsDictionary _AskToContinue;
 
     static public readonly TranslationsDictionary NotImplemented
       = new TranslationsDictionary

@@ -37,6 +37,13 @@ namespace Ordisoftware.Core
         [Language.FR] = $"Erreur dans le fichier de mise à jour : pas de numéro de version trouvé ou format incorrect.{Globals.NL2}{{0}}"
       };
 
+    static public readonly TranslationsDictionary WebCheckUpdate
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Checking update server...",
+        [Language.FR] = "Vérification du serveur de mise à jour..."
+      };
+
     static public readonly TranslationsDictionary NoNewVersionAvailable
       = new TranslationsDictionary
       {

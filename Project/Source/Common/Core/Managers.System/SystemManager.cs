@@ -108,6 +108,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public void Exit()
     {
+      Globals.IsExiting = true;
       TryCatch(() => DebugManager.Stop());
       Application.Exit();
     }
@@ -117,6 +118,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public void Terminate()
     {
+      Globals.IsExiting = true;
       TryCatch(() => DebugManager.Stop());
       Environment.Exit(-1);
     }
