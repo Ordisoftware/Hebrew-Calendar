@@ -23,13 +23,6 @@ namespace Ordisoftware.Core
   static public partial class SysTranslations
   {
 
-    static public readonly TranslationsDictionary WebCheckUpdate
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Checking update...",
-        [Language.FR] = "Vérification de la la mise à jour..."
-      };
-
     static public readonly TranslationsDictionary Initializing
       = new TranslationsDictionary
       {
@@ -42,6 +35,13 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "Processing...",
         [Language.FR] = "Traitement..."
+      };
+
+    static public readonly TranslationsDictionary ProgressLoadingData
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Loading data...",
+        [Language.FR] = "Chargement des données..."
       };
 
     static public readonly TranslationsDictionary ProgressCreatingData

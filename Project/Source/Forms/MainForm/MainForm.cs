@@ -62,7 +62,6 @@ namespace Ordisoftware.Hebrew.Calendar
         LastCelebrationReminded.Add(value, null);
       ActionViewMoonMonths.Visible = Globals.IsDevExecutable; // TODO remove when ready
       ActionViewMoonMonthsSeparator.Visible = Globals.IsDevExecutable; // TODO remove when ready
-      ChronoStart.Start();
     }
 
     /// <summary>
@@ -84,7 +83,12 @@ namespace Ordisoftware.Hebrew.Calendar
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, ref lastdone, true);
       Settings.CheckUpdateLastDone = lastdone;
-      if ( exit ) return;
+      if ( exit )
+      {
+        SystemManager.Exit();
+        return;
+      }
+      ChronoStart.Start();
       CalendarText.ForeColor = Settings.TextColor;
       CalendarText.BackColor = Settings.TextBackground;
       InitializeCalendarUI();
@@ -239,7 +243,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( IsGenerating )
       {
-        DisplayManager.ShowInformation(AppTranslations.CantExitWhileGenerating.GetLang());
+        DisplayManager.ShowInformation(SysTranslations.CantExitWhileGenerating.GetLang());
         return;
       }
       if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDevExecutable ) )

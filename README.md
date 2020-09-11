@@ -157,7 +157,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.09.12 - Version 5.2
+#### 2020.09.11 - Version 5.2
 
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
 - Add sound selection for the reminder box.

@@ -130,6 +130,7 @@
       this.EditFolderApplication = new Ordisoftware.Core.UndoRedoTextBox();
       this.PanelBottomOuter = new System.Windows.Forms.Panel();
       this.PanelFolders = new System.Windows.Forms.Panel();
+      this.ActionViewLog = new System.Windows.Forms.Button();
       dBEventsCountLabel = new System.Windows.Forms.Label();
       dBFileSizeLabel = new System.Windows.Forms.Label();
       dBFirstYearLabel = new System.Windows.Forms.Label();
@@ -388,6 +389,7 @@
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.ActionScreenshot);
+      this.PanelBottom.Controls.Add(this.ActionViewLog);
       this.PanelBottom.Controls.Add(this.EditAlwaysOnTop);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
@@ -859,6 +861,14 @@
       resources.ApplyResources(this.PanelFolders, "PanelFolders");
       this.PanelFolders.Name = "PanelFolders";
       // 
+      // ActionViewLog
+      // 
+      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
+      this.ActionViewLog.FlatAppearance.BorderSize = 0;
+      this.ActionViewLog.Name = "ActionViewLog";
+      this.ActionViewLog.UseVisualStyleBackColor = true;
+      this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click_1);
+      // 
       // StatisticsForm
       // 
       resources.ApplyResources(this, "$this");
@@ -962,5 +972,6 @@
     private Ordisoftware.Core.UndoRedoTextBox EditOpenFolderUserLocalData;
     private Ordisoftware.Core.UndoRedoTextBox EditFolderUserData;
     private System.Windows.Forms.Panel PanelFolders;
+    private System.Windows.Forms.Button ActionViewLog;
   }
 }

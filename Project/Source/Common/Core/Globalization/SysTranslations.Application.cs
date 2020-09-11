@@ -23,6 +23,21 @@ namespace Ordisoftware.Core
   static public partial class SysTranslations
   {
 
+    static public TranslationsDictionary ApplicationMustExit
+    {
+      get
+      {
+        if ( _ApplicationMustExit == null )
+          _ApplicationMustExit = new TranslationsDictionary
+          {
+            [Language.EN] = "The application must exit.",
+            [Language.FR] = "L'application doit se fermer."
+          };
+        return _ApplicationMustExit;
+      }
+    }
+    static private TranslationsDictionary _ApplicationMustExit;
+
     static public readonly TranslationsDictionary AboutBoxTitle
       = new TranslationsDictionary
       {
@@ -44,18 +59,18 @@ namespace Ordisoftware.Core
         [Language.FR] = "Ce logiciel ne collecte aucune information personnelle concernant vous-même, votre ordinateur et votre réseau, à moins que cela ne soit indiqué par ses fonctionnalités."
       };
 
-    static public readonly TranslationsDictionary ApplicationMustExit
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "The application must exit.",
-        [Language.FR] = "L'application doit se fermer."
-      };
-
     static public readonly TranslationsDictionary AskToExitApplication
       = new TranslationsDictionary
       {
         [Language.EN] = "Exit application?",
         [Language.FR] = "Quitter l'application ?"
+      };
+
+    static public readonly TranslationsDictionary CantExitWhileGenerating
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Can't exit application while generating data.",
+        [Language.FR] = "Impossible de quitter l'application durant la génération des données."
       };
 
     static public readonly TranslationsDictionary AskToShutdownComputer

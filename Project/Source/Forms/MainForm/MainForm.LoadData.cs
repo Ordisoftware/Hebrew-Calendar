@@ -41,7 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var connection = new OdbcConnection(Settings.ConnectionString);
         connection.Open();
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
-        LoadingForm.Instance.Initialize(AppTranslations.ProgressLoadingData.GetLang(),
+        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(),
                                         (int)command.ExecuteScalar() * 2,
                                         Program.LoadingFormLoadDB);
         DataSet.LunisolarDays.RowChanged += update;
@@ -92,7 +92,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( errors != null )
           {
             SystemManager.TryCatch(() => EmptyDatabase());
-            throw new Exception(string.Format(AppTranslations.FatalGenerateError.GetLang(), errors));
+            throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));
           }
         }
       }

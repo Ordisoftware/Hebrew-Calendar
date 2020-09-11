@@ -43,13 +43,6 @@ namespace Ordisoftware.Hebrew.Calendar
                         SysTranslations.AskToContinue[Language.FR]
       };
 
-    static public readonly TranslationsDictionary CantExitWhileGenerating
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Can't exit application while generating data.",
-        [Language.FR] = "Impossible de quitter l'application durant la génération des données."
-      };
-
     static public readonly TranslationsDictionary LoadingCitiesError
       = new TranslationsDictionary
       {
@@ -58,13 +51,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
         [Language.FR] = "Impossible de charger les coordonnées GPS des villes." + Globals.NL +
                         SysTranslations.ApplicationMustExit[Language.EN]
-      };
-
-    static public readonly TranslationsDictionary ProgressLoadingData
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Loading data...",
-        [Language.FR] = "Chargement des données..."
       };
 
     static public readonly TranslationsDictionary ProgressCreateDays
@@ -163,20 +149,6 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [Language.EN] = "{0} years before and after from now",
         [Language.FR] = "{0} années avant et après maintenant"
-      };
-
-    static public readonly TranslationsDictionary FatalGenerateError
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Fatal error while generating data." + Globals.NL +
-                        SysTranslations.ApplicationMustExit[Language.EN] + Globals.NL +
-                        SysTranslations.ContactSupport[Language.EN] + Globals.NL2 +
-                        "{0}",
-
-        [Language.FR] = "Erreur fatale lors de la génération des données." + Globals.NL +
-                        SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL +
-                        SysTranslations.ContactSupport[Language.FR] + Globals.NL2 +
-                        "{0}"
       };
 
   }

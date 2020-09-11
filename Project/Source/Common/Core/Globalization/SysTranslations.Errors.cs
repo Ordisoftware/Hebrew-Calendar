@@ -23,6 +23,21 @@ namespace Ordisoftware.Core
   static public partial class SysTranslations
   {
 
+    static public TranslationsDictionary ContactSupport
+    {
+      get
+      {
+        if ( _ContactSupport == null )
+          _ContactSupport = new TranslationsDictionary
+          {
+            [Language.EN] = "Please contact support.",
+            [Language.FR] = "Veuillez contacter le support."
+          };
+        return _ContactSupport;
+      }
+    }
+    static private TranslationsDictionary _ContactSupport;
+
     static public readonly TranslationsDictionary AskToClearLogs
       = new TranslationsDictionary
       {
@@ -35,13 +50,6 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "{0} lines",
         [Language.FR] = "{0} lignes"
-      };
-
-    static public readonly TranslationsDictionary ContactSupport
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Please contact support.",
-        [Language.FR] = "Veuillez contacter le support."
       };
 
     static public readonly TranslationsDictionary GitHubIssueComment

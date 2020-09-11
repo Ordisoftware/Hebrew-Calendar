@@ -126,6 +126,11 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.RunShell(EditOpenFolderUserLocalData.Text);
     }
 
+    private void ActionViewLog_Click_1(object sender, EventArgs e)
+    {
+      DebugManager.TraceForm.Popup();
+    }
+
   }
 
 }
