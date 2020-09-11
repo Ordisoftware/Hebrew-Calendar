@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
-using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -21,6 +20,32 @@ namespace Ordisoftware.Hebrew.Calendar
 
   public partial class MainForm
   {
+
+    /// <summary>
+    /// Check if the calendar must be generated again in it comes near the end.
+    /// </summary>
+    private string CheckRegenerateCalendar(bool auto = false)
+    {
+      try
+      {
+        if ( DateTime.Today.Year >= YearLast )
+          if ( auto || Settings.AutoRegenerate )
+          {
+            var interval = new YearsIntervalItem(Program.Settings.AutoGenerateYearsInternal);
+            int year = DateTime.Today.Year - 1;
+            int yearFirst = year - interval.YearsBefore;
+            int yearLast = year + interval.YearsAfter - 1;
+            return DoGenerate(new Tuple<int, int>(yearFirst, yearLast), EventArgs.Empty);
+          }
+          else
+            ActionGenerate_Click(ActionGenerate, null);
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+      return null;
+    }
 
     private string DoGenerate(object sender, EventArgs e)
     {
@@ -50,7 +75,7 @@ namespace Ordisoftware.Hebrew.Calendar
             yearLast = YearLast;
           }
           ClearLists();
-          return GenerateData(yearFirst, yearLast);
+          return CreateData(yearFirst, yearLast);
         }
         finally
         {

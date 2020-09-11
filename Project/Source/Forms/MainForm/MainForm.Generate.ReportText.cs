@@ -16,7 +16,6 @@ using System;
 using System.IO;
 using System.Diagnostics;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Text;
 using System.Linq;
 using Ordisoftware.Core;
@@ -50,7 +49,7 @@ namespace Ordisoftware.Hebrew.Calendar
         { ReportFieldText.Events, 42 },
       };
 
-    private string GenerateReport()
+    private string GenerateReportText()
     {
       var Chrono = new Stopwatch();
       Chrono.Start();
@@ -141,7 +140,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           catch ( Exception ex )
           {
-            GenerateErrors.Add($"{day.Date}: [{nameof(GenerateReport)}] { ex.Message}");
+            GenerateErrors.Add($"{day.Date}: [{nameof(GenerateReportText)}] { ex.Message}");
           }
         content.Append(headerSep + Globals.NL);
         try

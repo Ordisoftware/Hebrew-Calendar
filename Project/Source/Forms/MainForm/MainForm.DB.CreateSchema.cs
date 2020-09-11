@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Check if tables exists or create them.
     /// </summary>
-    public void CreateDatabaseIfNotExists()
+    public void CreateSchemaIfNotExists()
     {
       SystemManager.TryCatchManage(() =>
       {
