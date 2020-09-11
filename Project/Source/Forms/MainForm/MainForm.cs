@@ -820,7 +820,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionExportCSV_Click(object sender, EventArgs e)
     {
-      var content = GenerateCSV();
+      var content = GenerateReportCSV();
       if ( content == null ) return;
       if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveCSVDialog.FileName, content.ToString());

@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         Enabled = false;
-        CreateDatabaseIfNotExists();
+        CreateSchemaIfNotExists();
         var connection = new OdbcConnection(Settings.ConnectionString);
         connection.Open();
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
@@ -79,7 +79,7 @@ namespace Ordisoftware.Hebrew.Calendar
                 ChronoStart.Start();
               }
             if ( !isTextReportLoaded )
-              CalendarText.Text = GenerateReport();
+              CalendarText.Text = GenerateReportText();
             GoToDate(DateTime.Today);
           });
         }

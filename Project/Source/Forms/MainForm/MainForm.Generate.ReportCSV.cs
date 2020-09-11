@@ -26,7 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private const string CSVSeparator = ",";
 
-    private StringBuilder GenerateCSV()
+    private StringBuilder GenerateReportCSV()
     {
       IsGenerating = true;
       UpdateButtons();

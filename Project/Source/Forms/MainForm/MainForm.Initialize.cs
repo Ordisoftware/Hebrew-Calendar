@@ -16,7 +16,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using Ordisoftware.Hebrew;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -90,32 +89,6 @@ namespace Ordisoftware.Hebrew.Calendar
       CalendarMonth.DaysFont = new Font("Calibri", sizeFont + 2);
       CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", sizeFont + 2, FontStyle.Bold);
       CalendarMonth.TheEvents.Clear();
-    }
-
-    /// <summary>
-    /// Check if the calendar must be generated again in it comes near the end.
-    /// </summary>
-    private string CheckRegenerateCalendar(bool auto = false)
-    {
-      try
-      {
-        if ( DateTime.Today.Year >= YearLast )
-          if ( auto || Settings.AutoRegenerate )
-          {
-            var interval = new YearsIntervalItem(Program.Settings.AutoGenerateYearsInternal);
-            int year = DateTime.Today.Year - 1;
-            int yearFirst = year - interval.YearsBefore;
-            int yearLast = year + interval.YearsAfter - 1;
-            return DoGenerate(new Tuple<int, int>(yearFirst, yearLast), EventArgs.Empty);
-          }
-          else
-            ActionGenerate_Click(ActionGenerate, null);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      return null;
     }
 
   }

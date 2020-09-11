@@ -27,6 +27,8 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
+    private bool DoScreenPositionMutex;
+
     /// <summary>
     /// Bring to front improved.
     /// </summary>
@@ -36,6 +38,40 @@ namespace Ordisoftware.Hebrew.Calendar
       TopMost = true;
       base.BringToFront();
       TopMost = temp;
+    }
+
+    /// <summary>
+    /// Center the form to the screen.
+    /// </summary>
+    protected internal new void CenterToScreen()
+    {
+      base.CenterToScreen();
+    }
+
+    /// <summary>
+    /// Execute the screen location operation.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    protected void DoScreenPosition(object sender, EventArgs e)
+    {
+      if ( DoScreenPositionMutex ) return;
+      try
+      {
+        DoScreenPositionMutex = true;
+        if ( sender != null && sender is ToolStripMenuItem menuItem )
+        {
+          var list = ( (ToolStripMenuItem)menuItem.OwnerItem ).DropDownItems;
+          foreach ( ToolStripMenuItem item in list )
+            item.Checked = item == menuItem;
+        }
+        if ( Globals.IsReady ) Settings.Store();
+        this.SetLocation(Settings.MainFormPosition);
+      }
+      finally
+      {
+        DoScreenPositionMutex = false;
+      }
     }
 
     /// <summary>

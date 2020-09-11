@@ -53,7 +53,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="yearFirst">The first year.</param>
     /// <param name="yearLast">The last year.</param>
-    private string GenerateData(int yearFirst, int yearLast)
+    private string CreateData(int yearFirst, int yearLast)
     {
       IsGenerating = true;
       PanelViewText.Parent = null;
@@ -82,7 +82,7 @@ namespace Ordisoftware.Hebrew.Calendar
                   if ( IsGenerating )
                     try
                     {
-                      CalendarText.Text = GenerateReport();
+                      CalendarText.Text = GenerateReportText();
                     }
                     catch ( Exception ex )
                     {
