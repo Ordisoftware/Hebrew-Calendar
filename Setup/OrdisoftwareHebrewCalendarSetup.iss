@@ -31,7 +31,7 @@ Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription
 
 [Icons]
 #include "Scripts\Icons.iss"
-Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; Tasks: startwithwindows; Parameters: /hide
+Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico; Tasks: startwithwindows; Parameters: /hide
 
 [Run]
 #include "Scripts\Run.iss"
