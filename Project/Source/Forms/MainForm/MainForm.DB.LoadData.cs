@@ -37,17 +37,14 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         Enabled = false;
+        var Chrono = new Stopwatch();
+        Chrono.Start();
         CreateSchemaIfNotExists();
-        var connection = new OdbcConnection(Settings.ConnectionString);
-        connection.Open();
-        var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", connection);
+        var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", LockFileConnection);
         LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(),
                                         (int)command.ExecuteScalar() * 2,
                                         Program.LoadingFormLoadDB);
         DataSet.LunisolarDays.RowChanged += update;
-        connection.Close();
-        var Chrono = new Stopwatch();
-        Chrono.Start();
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         Chrono.Stop();
         Settings.BenchmarkLoadData = Chrono.ElapsedMilliseconds;
@@ -102,6 +99,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ex.Manage();
         DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL2 +
                                         SysTranslations.ContactSupport[Language.FR]);
+        ChronoStart.Start();
       }
       finally
       {
