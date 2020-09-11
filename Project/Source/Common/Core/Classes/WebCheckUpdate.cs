@@ -119,7 +119,7 @@ namespace Ordisoftware.Core
       {
         var parts = line.Split(':');
         if ( parts.Length != 2 ) continue;
-        list.Add(parts[0], parts[1]);
+        list.Add(parts[0].Trim(), parts[1].Trim());
       }
       string fileVersion = list["Version"];
       string fileChecksum = list["Checksum"];
