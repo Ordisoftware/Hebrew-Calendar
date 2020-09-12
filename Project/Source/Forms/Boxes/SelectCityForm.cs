@@ -132,6 +132,12 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
+    private void SelectCityForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if ( DialogResult == DialogResult.OK ) return;
+      if ( !ActionCancel.Enabled ) e.Cancel = true;
+    }
+
     private void ActionOK_Click(object sender, EventArgs e)
     {
       DialogResult = DialogResult.OK;

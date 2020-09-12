@@ -28,10 +28,12 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectCityForm));
       this.ActionOK = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
+      this.DummyButton = new System.Windows.Forms.Button();
       this.ListBoxCountries = new System.Windows.Forms.ListBox();
       this.ListBoxCities = new System.Windows.Forms.ListBox();
       this.LabelCountry = new System.Windows.Forms.Label();
@@ -40,7 +42,6 @@
       this.LabelFilter = new System.Windows.Forms.Label();
       this.LabelTimeZone = new System.Windows.Forms.Label();
       this.EditTimeZone = new System.Windows.Forms.ComboBox();
-      this.DummyButton = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -65,6 +66,12 @@
       resources.ApplyResources(this.ActionCancel, "ActionCancel");
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
+      // 
+      // DummyButton
+      // 
+      resources.ApplyResources(this.DummyButton, "DummyButton");
+      this.DummyButton.Name = "DummyButton";
+      this.DummyButton.UseVisualStyleBackColor = true;
       // 
       // ListBoxCountries
       // 
@@ -92,6 +99,7 @@
       // 
       // EditFilter
       // 
+      this.EditFilter.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditFilter, "EditFilter");
       this.EditFilter.Name = "EditFilter";
       this.EditFilter.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
@@ -114,12 +122,6 @@
       this.EditTimeZone.Name = "EditTimeZone";
       this.EditTimeZone.SelectedIndexChanged += new System.EventHandler(this.EditTimeZone_SelectedIndexChanged);
       // 
-      // DummyButton
-      // 
-      resources.ApplyResources(this.DummyButton, "DummyButton");
-      this.DummyButton.Name = "DummyButton";
-      this.DummyButton.UseVisualStyleBackColor = true;
-      // 
       // SelectCityForm
       // 
       this.AcceptButton = this.ActionOK;
@@ -140,6 +142,7 @@
       this.MinimizeBox = false;
       this.Name = "SelectCityForm";
       this.ShowInTaskbar = false;
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectCityForm_FormClosing);
       this.Load += new System.EventHandler(this.SelectCityForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
