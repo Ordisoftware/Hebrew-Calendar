@@ -1,5 +1,4 @@
 ﻿/Setup/**/*.exe
-*.ssl
 *.sha512
 
 [Bb]in/
