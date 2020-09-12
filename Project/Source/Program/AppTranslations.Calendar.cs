@@ -228,47 +228,47 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [Calendar.TorahEvent.PessahD1] = new TranslationsDictionary
         {
-          [Language.EN] = "Pessa'h start",
-          [Language.FR] = "Début de Pessah"
+          [Language.EN] = "Pesa'h start",
+          [Language.FR] = "Début de Pessa'h"
         },
         [Calendar.TorahEvent.PessahD7] = new TranslationsDictionary
         {
-          [Language.EN] = "Pessa'h end",
-          [Language.FR] = "Fin de Pessah"
+          [Language.EN] = "Pesa'h end",
+          [Language.FR] = "Fin de Pessa'h"
         },
         [Calendar.TorahEvent.ChavouotDiet] = new TranslationsDictionary
         {
-          [Language.EN] = "Chavouot diet",
-          [Language.FR] = "Régime de Chavouot"
+          [Language.EN] = "Shavuot diet",
+          [Language.FR] = "Régime de Shavouot"
         },
         [Calendar.TorahEvent.Chavouot1] = new TranslationsDictionary
         {
-          [Language.EN] = "Chavouot lamb",
-          [Language.FR] = "Agneau de Chavouot"
+          [Language.EN] = "Shavuot lamb",
+          [Language.FR] = "Agneau de Shavouot"
         },
         [Calendar.TorahEvent.Chavouot2] = new TranslationsDictionary
         {
-          [Language.EN] = "Chavouot end",
-          [Language.FR] = "Fin de Chavouot"
+          [Language.EN] = "Shavuot end",
+          [Language.FR] = "Fin de Shavouot"
         },
         [Calendar.TorahEvent.YomTerouah] = new TranslationsDictionary
         {
-          [Language.EN] = "Yom Terou'ah",
+          [Language.EN] = "Yom Teru'ah",
           [Language.FR] = "Yom Terou'ah"
         },
         [Calendar.TorahEvent.YomHaKipourim] = new TranslationsDictionary
         {
-          [Language.EN] = "Yom HaKipourim",
+          [Language.EN] = "Yom HaKipurim",
           [Language.FR] = "Yom HaKipourim"
         },
         [Calendar.TorahEvent.SoukotD1] = new TranslationsDictionary
         {
-          [Language.EN] = "Soukot start",
+          [Language.EN] = "Sukot start",
           [Language.FR] = "Début de Soukot"
         },
         [Calendar.TorahEvent.SoukotD8] = new TranslationsDictionary
         {
-          [Language.EN] = "Soukot end",
+          [Language.EN] = "Sukot end",
           [Language.FR] = "Fin de Soukot"
         }
       };
