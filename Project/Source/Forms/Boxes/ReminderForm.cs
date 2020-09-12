@@ -208,7 +208,8 @@ namespace Ordisoftware.Hebrew.Calendar
           break;
       }
       Application.DoEvents();
-      System.Threading.Thread.Sleep(250);
+      if ( Program.Settings.ReminderBoxSoundSource != SoundSource.None )
+        System.Threading.Thread.Sleep(400);
     }
 
     private void Form_Click(object sender, EventArgs e)
