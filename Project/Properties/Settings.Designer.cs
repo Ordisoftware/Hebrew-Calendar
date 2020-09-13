@@ -1680,7 +1680,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Windows")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dialog")]
         public global::Ordisoftware.Core.SoundSource ReminderBoxSoundSource {
             get {
                 return ((global::Ordisoftware.Core.SoundSource)(this["ReminderBoxSoundSource"]));
@@ -1692,7 +1692,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Hand")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Asterisk")]
         public global::System.Windows.Forms.MessageBoxIcon ReminderBoxSoundDialog {
             get {
                 return ((global::System.Windows.Forms.MessageBoxIcon)(this["ReminderBoxSoundDialog"]));
@@ -1704,7 +1704,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Windows User Account Control")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Windows Foreground")]
         public string ReminderBoxSoundWinows {
             get {
                 return ((string)(this["ReminderBoxSoundWinows"]));
