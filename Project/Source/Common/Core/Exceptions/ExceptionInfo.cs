@@ -171,7 +171,7 @@ namespace Ordisoftware.Core
       catch
       {
       }
-      return result.ToString(); ;
+      return result;
     }
 
     /// <summary>

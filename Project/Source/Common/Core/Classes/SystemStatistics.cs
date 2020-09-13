@@ -21,12 +21,13 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// provide system statistics.
+  /// Provide system statistics.
   /// </summary>
   public class SystemStatistics
   {
 
-    static private PerformanceCounter PerformanceCounter;
+    static private PerformanceCounter PerformanceCounterCPULoad;
+    static private PerformanceCounter PerformanceCounterCPUProcessLoad;
 
     static public ProcessPriorityClass RealProcessPriority
     {
@@ -108,19 +109,41 @@ namespace Ordisoftware.Core
     }
     static private long _MemoryGCPeak;
 
-    public string CPULoad
+    public string CPUProcessLoadMax
+      => _CPUProcessLoadMax + "%";
+
+    public string CPUProcessLoad
     {
       get
       {
-        if ( PerformanceCounter == null )
+        if ( PerformanceCounterCPUProcessLoad == null )
         {
           LoadingForm.Instance.Initialize(SysTranslations.Initializing.GetLang(), 1, 0);
           LoadingForm.Instance.SetProgress(1);
           Application.DoEvents();
-          PerformanceCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+          PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", Globals.ApplicationExeFileName);
           LoadingForm.Instance.Hide();
         }
-        return (int)PerformanceCounter.NextValue() + "%";
+        int value = (int)PerformanceCounterCPUProcessLoad.NextValue();
+        if ( value > _CPUProcessLoadMax ) _CPUProcessLoadMax = value;
+        return value + "%";
+      }
+    }
+    private int _CPUProcessLoadMax;
+
+    public string CPULoad
+    {
+      get
+      {
+        if ( PerformanceCounterCPULoad == null )
+        {
+          LoadingForm.Instance.Initialize(SysTranslations.Initializing.GetLang(), 1, 0);
+          LoadingForm.Instance.SetProgress(1);
+          Application.DoEvents();
+          PerformanceCounterCPULoad = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+          LoadingForm.Instance.Hide();
+        }
+        return (int)PerformanceCounterCPULoad.NextValue() + "%";
       }
     }
 
