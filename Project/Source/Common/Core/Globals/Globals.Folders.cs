@@ -64,6 +64,12 @@ namespace Ordisoftware.Core
                                                               .Replace(ReleaseDirectoryCombination, BinDirectoryName))).FullName;
 
     /// <summary>
+    /// Indicate the application executable path.
+    /// </summary>
+    static public string ApplicationExePath
+      => Application.StartupPath;
+
+    /// <summary>
     /// Indicate the application help folder.
     /// </summary>
     static public string HelpFolderPath
