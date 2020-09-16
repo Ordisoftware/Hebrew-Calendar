@@ -1,4 +1,4 @@
-#define MyAppVersion "5.2"
+#define MyAppVersion "5.3"
 #define MyAppName "Hebrew Calendar"
 #define MyAppNameNoSpace "HebrewCalendar"
 #define MyAppExeName "Ordisoftware.Hebrew.Calendar.exe"
@@ -13,6 +13,8 @@ AppCopyright=Copyright 2016-2020 Olivier Rogier
 
 [Languages]
 #include "Scripts\Languages.iss"
+english.StartAndReset_msg=Start %1 and reset preferences: 
+french.StartAndReset_msg=Démarrer %1 et réinitialiser les préférences: 
 
 [CustomMessages]
 #include "Scripts\Messages.iss"
@@ -31,6 +33,7 @@ Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription
 
 [Icons]
 #include "Scripts\Icons.iss"
+Name: {group}\{#MyAppName}\{cm:StartAndReset_msg,{#MyAppName}}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico; Parameters: /reset
 Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico; Tasks: startwithwindows; Parameters: /hide
 
 [Run]
