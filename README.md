@@ -157,6 +157,12 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### 2020.09.__ - Version 5.3
+
+- Maintenance release.
+- Add "Start and reset preferences" link in Windows Start menu.
+- Fix the inconsequential error: "The given key was missing from the dictionary in CheckCelebrationDay()".
+
 #### 2020.09.11 - Version 5.2
 
 - Improve check update to verify the SSL certificate of the website and the checksum of the setup file.
