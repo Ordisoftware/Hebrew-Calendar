@@ -104,7 +104,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Indicate file path of reminder box image.
     /// </summary>
     static public string ReminderBoxImageFilePath
-      => Path.Combine(Globals.RootFolderPath, @"Project\Icons", "hebrew-calendar-65x65.png");
+      => Path.Combine(Globals.RootFolderPath, @"Project\Icons", "hebrew-calendar-64.png");
 
     /// <summary>
     /// Indicate file path of the text report.

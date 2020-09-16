@@ -55,13 +55,13 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( dateNow >= dateTrigger && dateNow < times.dateStartCheck )
       {
-        if ( LastCelebrationReminded.ContainsKey((TorahEvent)row.TorahEvents) && LastCelebrationReminded[(TorahEvent)row.TorahEvents].HasValue )
+        if ( LastCelebrationReminded[(TorahEvent)row.TorahEvents].HasValue )
           return;
         else
           LastCelebrationReminded[(TorahEvent)row.TorahEvents] = dateNow;
       }
       else
-      if ( LastCelebrationReminded.ContainsKey((TorahEvent)row.TorahEvents) && LastCelebrationReminded[(TorahEvent)row.TorahEvents].HasValue )
+      if ( LastCelebrationReminded[(TorahEvent)row.TorahEvents].HasValue )
       {
         if ( dateNow > times.dateStart && LastCelebrationReminded[(TorahEvent)row.TorahEvents].Value < times.dateStart )
         {
