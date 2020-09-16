@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Data;
 using System.Linq;
@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         if ( dateNow > times.dateStart && LastCelebrationReminded[(TorahEvent)row.TorahEvents].Value < times.dateStart )
         {
-          if ( RemindCelebrationDayForms[(TorahEvent)row.TorahEvents] != null )
+          if ( RemindCelebrationDayForms.ContainsKey((TorahEvent)row.TorahEvents) )
             RemindCelebrationDayForms[(TorahEvent)row.TorahEvents].Close();
           LastCelebrationReminded[(TorahEvent)row.TorahEvents] = dateNow;
         }
