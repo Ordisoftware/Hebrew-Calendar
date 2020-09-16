@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -163,6 +163,38 @@ namespace Ordisoftware.Core
       return new string(' ', first) + str.Replace(Globals.NL, Globals.NL + new string(' ', corpus));
     }
 
+    /// <summary>
+    /// Wrap a string.
+    /// </summary>
+    /// <param name="str">The text.</param>
+    /// <param name="width">The width.</param>
+    static public string Wrap(this string str, int width)
+    {
+      char spacechar = ' ';
+      string newline = Environment.NewLine;
+      if ( width <= 0 || str.Length <= width ) return str;
+      string result = str;
+      int index = 0, pos;
+      while ( index < result.Length - width )
+      {
+        pos = result.LastIndexOf(newline, index + width, width);
+        if ( pos != -1 )
+          index = pos + newline.Length;
+        else
+        {
+          pos = result.LastIndexOf(spacechar, index + width, width);
+          if ( pos == -1 )
+          {
+            pos = result.IndexOf(spacechar, index + width);
+            break;
+          }
+          result = result.Remove(pos, 1);
+          result = result.Insert(pos, newline);
+          index = pos + newline.Length;
+        }
+      }
+      return result;
+    }
   }
 
 }
