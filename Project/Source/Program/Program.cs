@@ -59,8 +59,15 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.LanguageSelected = lang;
       UpdateLocalization();
       if ( !Settings.FirstLaunch )
+      {
         if ( SystemManager.CommandLineOptions.ContainsKey("hide") )
           ForceStartupHide = true;
+        if ( SystemManager.CommandLineOptions.ContainsKey("reset") )
+        {
+          Settings.UpgradeResetRequiredV4_1 = true;
+          CheckSettingsReset();
+        }
+      }
       Application.Run(MainForm.Instance);
     }
 
