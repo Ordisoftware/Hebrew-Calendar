@@ -133,7 +133,7 @@ namespace Ordisoftware.Core
 
     private void MessageBoxEx_Shown(object sender, EventArgs e)
     {
-      TopMost = LoadingForm.Instance.Visible;
+      TopMost = LoadingForm.Instance.Visible || Application.OpenForms.ToList().Any(f => f.TopMost);
       DisplayManager.DoSound(IconStyle);
     }
 

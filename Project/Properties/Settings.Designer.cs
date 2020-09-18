@@ -1391,61 +1391,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateBookmark1 {
-            get {
-                return ((global::System.DateTime)(this["DateBookmark1"]));
-            }
-            set {
-                this["DateBookmark1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateBookmark2 {
-            get {
-                return ((global::System.DateTime)(this["DateBookmark2"]));
-            }
-            set {
-                this["DateBookmark2"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateBookmark3 {
-            get {
-                return ((global::System.DateTime)(this["DateBookmark3"]));
-            }
-            set {
-                this["DateBookmark3"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateBookmark4 {
-            get {
-                return ((global::System.DateTime)(this["DateBookmark4"]));
-            }
-            set {
-                this["DateBookmark4"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateBookmark5 {
-            get {
-                return ((global::System.DateTime)(this["DateBookmark5"]));
-            }
-            set {
-                this["DateBookmark5"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2000-01-01")]
         public global::System.DateTime LastGenerated {
             get {
@@ -1513,72 +1458,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["ReminderFormCloseOnClick"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateBookmark6 {
-            get {
-                return ((global::System.DateTime)(this["DateBookmark6"]));
-            }
-            set {
-                this["DateBookmark6"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateBookmark7 {
-            get {
-                return ((global::System.DateTime)(this["DateBookmark7"]));
-            }
-            set {
-                this["DateBookmark7"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateBookmark8 {
-            get {
-                return ((global::System.DateTime)(this["DateBookmark8"]));
-            }
-            set {
-                this["DateBookmark8"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateBookmark9 {
-            get {
-                return ((global::System.DateTime)(this["DateBookmark9"]));
-            }
-            set {
-                this["DateBookmark9"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateBookmark10 {
-            get {
-                return ((global::System.DateTime)(this["DateBookmark10"]));
-            }
-            set {
-                this["DateBookmark10"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime Paramètre {
-            get {
-                return ((global::System.DateTime)(this["Paramètre"]));
-            }
-            set {
-                this["Paramètre"] = value;
             }
         }
         

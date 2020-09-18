@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.IO;
 using Ordisoftware.Core;
@@ -101,10 +101,21 @@ namespace Ordisoftware.Hebrew.Calendar
     };
 
     /// <summary>
+    /// Indicate file path of date bookmarks.
+    /// </summary>
+    static public string DateBookmarksFilePath
+      => Path.Combine(Globals.UserDataFolderPath, "DateBookmarks.txt");
+
+    /// <summary>
+    /// Indicate date bookmarks.
+    /// </summary>
+    static public readonly DateBookmarks DateBookmarks = new DateBookmarks(DateBookmarksFilePath);
+
+    /// <summary>
     /// Indicate file path of reminder box image.
     /// </summary>
     static public string ReminderBoxImageFilePath
-      => Path.Combine(Globals.RootFolderPath, @"Project\Icons", "hebrew-calendar-65x65.png");
+      => Path.Combine(Globals.RootFolderPath, @"Project\Icons", "hebrew-calendar-64.png");
 
     /// <summary>
     /// Indicate file path of the text report.

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -69,9 +69,9 @@ namespace Ordisoftware.Hebrew.Calendar
     private void LoadMenuBookmarks()
     {
       MenuBookmarks.Items.Clear();
-      for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
+      for ( int index = 0; index < Program.DatesBookmarksCount; index++ )
       {
-        var date = (DateTime)Program.Settings["DateBookmark" + index];
+        var date = Program.DateBookmarks[index];
         string s = date == DateTime.MinValue ? SysTranslations.UndefinedSlot.GetLang() : date.ToLongDateString();
         var menuitem = MenuBookmarks.Items.Add(index.ToString("00") + ". " + s);
         menuitem.MouseUp += Bookmarks_MouseUp;
@@ -118,7 +118,7 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang()) ) return;
             menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + SysTranslations.UndefinedSlot.GetLang();
-            Program.Settings["DateBookmark" + menuitem.Tag] = DateTime.MinValue;
+            Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
             Program.Settings.Save();
           }
       if ( e.Button != MouseButtons.Left ) return;
@@ -136,15 +136,15 @@ namespace Ordisoftware.Hebrew.Calendar
           MonthCalendar2.SelectionStart = date;
       void setBookmark(MonthCalendar calendar)
       {
-        for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
+        for ( int index = 0; index < Program.DatesBookmarksCount; index++ )
         {
-          var date = (DateTime)Program.Settings["DateBookmark" + index];
+          var date = Program.DateBookmarks[index];
           if ( calendar.SelectionStart.Date == date ) return;
         }
-        if ( (DateTime)Program.Settings["DateBookmark" + menuitem.Tag] != DateTime.MinValue )
+        if ( Program.DateBookmarks[(int)menuitem.Tag] != DateTime.MinValue )
           if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang()) ) return;
         menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + calendar.SelectionStart.Date.ToLongDateString();
-        Program.Settings["DateBookmark" + menuitem.Tag] = calendar.SelectionStart.Date;
+        Program.DateBookmarks[(int)menuitem.Tag] = calendar.SelectionStart.Date;
         Program.Settings.Save();
       }
     }

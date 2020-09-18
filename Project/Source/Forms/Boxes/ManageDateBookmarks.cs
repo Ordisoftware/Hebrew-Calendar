@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -47,8 +47,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       this.CenterToMainFormElseScreen();
       ListBox.Items.Clear();
-      for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
-        ListBox.Items.Add(new DateItem { Date = (DateTime)Program.Settings["DateBookmark" + index] });
+      for ( int index = 0; index < Program.DatesBookmarksCount; index++ )
+        ListBox.Items.Add(new DateItem { Date = Program.DateBookmarks[index] });
       ListBox.SelectedIndex = 0;
       ActiveControl = ListBox;
     }
@@ -56,8 +56,8 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ManageDateBookmarks_FormClosed(object sender, FormClosedEventArgs e)
     {
       if ( DialogResult != DialogResult.OK ) return;
-      for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
-        Program.Settings["DateBookmark" + index] = ( (DateItem)ListBox.Items[index - 1] ).Date;
+      for ( int index = 0; index < Program.DatesBookmarksCount; index++ )
+        Program.DateBookmarks[index] = ( (DateItem)ListBox.Items[index] ).Date;
       Program.Settings.Save();
     }
 
