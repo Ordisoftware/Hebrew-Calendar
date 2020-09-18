@@ -1,0 +1,75 @@
+﻿/// <license>
+/// This file is part of Ordisoftware Hebrew Calendar.
+/// Copyright 2016-2020 Olivier Rogier.
+/// See www.ordisoftware.com for more information.
+/// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// https://mozilla.org/MPL/2.0/.
+/// If it is not possible or desirable to put the notice in a particular file, 
+/// then You may include the notice in a location(such as a LICENSE file in a 
+/// relevant directory) where a recipient would be likely to look for such a notice.
+/// You may add additional accurate notices of copyright ownership.
+/// </license>
+/// <created> 2020-09 </created>
+/// <edited> 2020-09 </edited>
+using System;
+using System.IO;
+using System.Collections.Generic;
+using Ordisoftware.Core;
+
+namespace Ordisoftware.Hebrew.Calendar
+{
+
+  public class DateBookmarks
+  {
+
+    private string FilePath;
+
+    private readonly DateTime[] Items 
+      = new DateTime[Program.DatesBookmarksCount];
+
+    public DateTime this[int index]
+    {
+      get { return Items[index]; }
+      set { Items[index] = value; Save(); } 
+    }
+
+    private void Load()
+    {
+      SystemManager.TryCatchManage(() =>
+      {
+        if ( !File.Exists(FilePath) ) return;
+        var list = File.ReadAllLines(FilePath);
+        int index = 0;
+        foreach ( string item in list )
+        {
+          if ( item == "" )
+            continue;
+          if ( DateTime.TryParse(item, out var date) )
+            Items[index] = date;
+          if ( ++index >= Program.DatesBookmarksCount )
+            break;
+        }
+      });
+    }
+
+    private void Save()
+    {
+      SystemManager.TryCatchManage(() =>
+      {
+        var items = new List<string>();
+        foreach ( var item in Items )
+          items.Add(item.ToShortDateString());
+        File.WriteAllLines(FilePath, items);
+      });
+    }
+
+    public DateBookmarks(string filePath)
+    {
+      FilePath = filePath;
+      Load();
+    }
+
+  }
+  
+}

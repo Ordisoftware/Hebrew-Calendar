@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.IO;
 using Ordisoftware.Core;
@@ -99,6 +99,17 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 120, -5, -10, -15, -20, -25, -30, -40, -50, -75, -100
     };
+
+    /// <summary>
+    /// Indicate file path of date bookmarks.
+    /// </summary>
+    static public string DateBookmarksFilePath
+      => Path.Combine(Globals.UserDataFolderPath, "DateBookmarks.txt");
+
+    /// <summary>
+    /// Indicate date bookmarks.
+    /// </summary>
+    static public readonly DateBookmarks DateBookmarks = new DateBookmarks(DateBookmarksFilePath);
 
     /// <summary>
     /// Indicate file path of reminder box image.

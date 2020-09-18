@@ -349,21 +349,6 @@
     <Setting Name="AutoGenerateYearsInternal" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10</Value>
     </Setting>
-    <Setting Name="DateBookmark1" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DateBookmark2" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DateBookmark3" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DateBookmark4" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DateBookmark5" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="LastGenerated" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">2000-01-01</Value>
     </Setting>
@@ -381,24 +366,6 @@
     </Setting>
     <Setting Name="ReminderFormCloseOnClick" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="DateBookmark6" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DateBookmark7" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DateBookmark8" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DateBookmark9" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DateBookmark10" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="Paramètre" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="BigCalendarWarningEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
