@@ -110,7 +110,6 @@ The day before, either the man keeps without going out and strengthens the coupl
 
 If you prefer to use the traditional group shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.
 
-
 #### Keyboard shortcuts
 
 - F1 : Text report view
@@ -148,20 +147,21 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Roadmap
 
+- Add option to enable or disable start with Windows from the software.
 - Add reminder for solar and lunar anniversary of birth.
 - Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
-- Improve date bookmarks to use an entity instead of the application settings.
 - Improve and reorganize preferences form with a left menu panel.
 
 ## Changelog
 
-#### 2020.09.__ - Version 5.3
+#### 2020.09.18 - Version 5.3
 
-- Maintenance release.
 - Add "Start and reset preferences" link in Windows Start menu.
+- Improve date bookmarks to be saved to a file in user roaming folder instead of using application settings.
 - Fix the inconsequential error: "The given key was missing from the dictionary in CheckCelebrationDay()".
+- Rename 32x32 icon files.
 
 #### 2020.09.11 - Version 5.2
 
