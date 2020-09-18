@@ -13,11 +13,11 @@ AppCopyright=Copyright 2016-2020 Olivier Rogier
 
 [Languages]
 #include "Scripts\Languages.iss"
-english.StartAndReset_msg=Start %1 and reset preferences: 
-french.StartAndReset_msg=Démarrer %1 et réinitialiser les préférences: 
 
 [CustomMessages]
 #include "Scripts\Messages.iss"
+english.StartAndReset_msg=Start %1 and reset preferences
+french.StartAndReset_msg=Démarrer %1 et réinitialiser les préférences
 
 [Tasks]
 #include "Scripts\Tasks.iss"
