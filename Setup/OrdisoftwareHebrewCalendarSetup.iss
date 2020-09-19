@@ -16,8 +16,6 @@ AppCopyright=Copyright 2016-2020 Olivier Rogier
 
 [CustomMessages]
 #include "Scripts\Messages.iss"
-english.StartAndReset_msg=Start %1 and reset preferences
-french.StartAndReset_msg=Démarrer %1 et réinitialiser les préférences
 
 [Tasks]
 #include "Scripts\Tasks.iss"
@@ -33,8 +31,8 @@ Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription
 
 [Icons]
 #include "Scripts\Icons.iss"
-Name: {group}\{#MyAppName}\{cm:StartAndReset_msg,{#MyAppName}}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico; Parameters: /reset
 Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico; Tasks: startwithwindows; Parameters: /hide
+Name: {group}\{#MyAppName}\{cm:StartAndReset_msg,{#MyAppName}}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico; Parameters: /reset
 
 [Run]
 #include "Scripts\Run.iss"
