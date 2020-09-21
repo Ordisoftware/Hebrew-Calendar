@@ -223,8 +223,6 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Power mode changed events handler.
     /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
     private void PowerModeChanged(object s, PowerModeChangedEventArgs e)
     {
       if ( e.Mode == PowerModes.Resume )
