@@ -147,7 +147,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Roadmap
 
-- Add reminder for solar and lunar anniversary of birth.
 - Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
@@ -157,6 +156,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.09.__ - Version 5.4
 
+- Add reminder for solar and lunar anniversary of birth.
 - Add option to enable or disable start with Windows from the software.
 - Add on power resume event handler to do web check update if needed and check passed midnight.
 
