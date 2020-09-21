@@ -82,23 +82,22 @@ namespace Ordisoftware.Hebrew.Calendar
       = new Dictionary<TorahEvent, ReminderForm>();
 
     internal DateTime? LastShabatReminded;
-
     internal ReminderForm ShabatForm;
 
     internal void ClearLists()
     {
       SystemManager.TryCatchManage(() =>
       {
-        LockSessionForm.Instance?.Close();
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();
         RemindCelebrationDates.Clear();
         LastShabatReminded = null;
-        if ( ShabatForm != null ) ShabatForm.Close();
+        ShabatForm?.Close();
+        LockSessionForm.Instance?.Close();
         foreach ( Form form in RemindCelebrationForms.ToList() ) form.Close();
         foreach ( Form form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
         foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
-          if ( value != TorahEvent.None )
+          if ( value != TorahEvent.None && value < TorahEvent.HanoukaD1 ) // TODO change when manage others
           {
             TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value.ToString()]);
             TorahEventRemindDayList.Add(value, (bool)Settings["TorahEventRemindDay" + value.ToString()]);

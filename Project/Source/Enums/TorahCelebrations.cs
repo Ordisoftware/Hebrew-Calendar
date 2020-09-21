@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -22,6 +22,11 @@ namespace Ordisoftware.Hebrew.Calendar
   /// </summary>
   static public class TorahCelebrations
   {
+
+    /// <summary>
+    /// The pessah month.
+    /// </summary>
+    static public readonly int PessahMonth = 1;
 
     /// <summary>
     /// The spring lamb day.
@@ -44,6 +49,11 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly int ChavouotLenght = 50;
 
     /// <summary>
+    /// The Yoms month.
+    /// </summary>
+    static public readonly int YomsMonth = 7;
+
+    /// <summary>
     /// The hakipourim day.
     /// </summary>
     static public readonly int YomHaKipourimDay = 10;
@@ -57,6 +67,31 @@ namespace Ordisoftware.Hebrew.Calendar
     /// The soukot length.
     /// </summary>
     static public readonly int SoukotLenght = 7 + 1;
+
+    /// <summary>
+    /// The 'hanouka month.
+    /// </summary>
+    static public readonly int HanoukaMonth = 9;
+
+    /// <summary>
+    /// The 'hanouka day.
+    /// </summary>
+    static public readonly int HanoukaStartDay = 25;
+
+    /// <summary>
+    /// The 'hanouka length.
+    /// </summary>
+    static public readonly int HanoukaLenght = 7 + 1;
+
+    /// <summary>
+    /// The pourim month.
+    /// </summary>
+    static public readonly int PourimMonth = 12;
+
+    /// <summary>
+    /// The pourim day.
+    /// </summary>
+    static public readonly int PourimDay = 14;
 
   }
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -67,6 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
         }
         else
+        if ( !isShabat )
         {
           foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
             if ( (string)item.Value.Tag == row.Date )
@@ -81,7 +82,9 @@ namespace Ordisoftware.Hebrew.Calendar
         form = new ReminderForm();
         var date = SQLiteDate.ToDateTime(row.Date);
         form.LabelTitle.Text = !isShabat
-                               ? AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents)
+                               ? AppTranslations.TorahEvent.GetLang(torahevent == TorahEvent.None 
+                                                                    ? (TorahEvent)row.TorahEvents 
+                                                                    : torahevent)
                                : "Shabat";
         form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
         if ( times.dateStart != null && times.dateEnd != null )

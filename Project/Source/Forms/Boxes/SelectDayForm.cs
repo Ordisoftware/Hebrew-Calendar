@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class SelectDayForm : Form
   {
 
-    static public bool Run(string title, out DateTime date, bool topmost = false, bool isOnlyAvailable = false, bool isGotoRealtime = false)
+    static public bool Run(string title, ref DateTime date, bool topmost = false, bool isOnlyAvailable = false, bool isGotoRealtime = false)
     {
       using ( var form = new SelectDayForm() )
       {
@@ -36,6 +36,9 @@ namespace Ordisoftware.Hebrew.Calendar
           form.MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
           form.MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
         }
+        if ( date < form.MonthCalendar.MinDate ) date = form.MonthCalendar.MinDate;
+        if ( date > form.MonthCalendar.MaxDate ) date = form.MonthCalendar.MaxDate;
+        form.MonthCalendar.SelectionStart = date;
         form.MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
         form.CurrentDay = MainForm.Instance.CurrentDay;
         if ( !title.IsNullOrEmpty() )

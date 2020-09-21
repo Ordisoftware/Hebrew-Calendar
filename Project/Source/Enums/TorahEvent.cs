@@ -81,7 +81,32 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// The soukot last day.
     /// </summary>
-    SoukotD8
+    SoukotD8,
+
+    /// <summary>
+    /// The 'hanouka first day.
+    /// </summary>
+    HanoukaD1,
+
+    /// <summary>
+    /// The 'hanouka last day.
+    /// </summary>
+    HanoukaD8,
+
+    /// <summary>
+    /// The pouril day.
+    /// </summary>
+    Pourim,
+
+    /// <summary>
+    /// The sun aniversary.
+    /// </summary>
+    AnniversarySun,
+
+    /// <summary>
+    /// The moon aniversary.
+    /// </summary>
+    AnniversaryMoon
 
   }
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Data;
 using System.Drawing;
@@ -84,6 +84,11 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         if ( !DisplayManager.IsForegroundFullScreenOrScreensaver() )
         {
+          //if ( Settings.ReminderAnniversarySunEnabled )
+          {
+            CheckAnniversarySunDay();
+            CheckAnniversarySun();
+          }
           if ( Settings.ReminderShabatEnabled )
             CheckShabat();
           if ( Settings.ReminderCelebrationsEnabled )

@@ -848,11 +848,10 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionSearchDay_Click(object sender, EventArgs e)
     {
-      DateTime date;
-      if ( sender == null )
-        date = DateTime.Today;
-      else
-        if ( !SelectDayForm.Run(null, out date, false, true, true) ) return;
+      DateTime date = DateTime.Today;
+      if ( sender != null )
+        if ( !SelectDayForm.Run(null, ref date, false, true, true) )
+          return;
       GoToDate(date);
     }
 
