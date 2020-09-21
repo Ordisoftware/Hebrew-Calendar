@@ -229,15 +229,13 @@ namespace Ordisoftware.Core
       request.ConnectionGroupName = id;
       using ( var response = request.GetResponse() ) { }
       point.CloseConnectionGroup(id);
-      if ( AuthorWebsiteSSLCertificate["Issuer"] != point.Certificate.GetIssuerName()
-        || AuthorWebsiteSSLCertificate["Name"] != point.Certificate.GetName()
+      if ( AuthorWebsiteSSLCertificate["Issuer"] != point.Certificate.Issuer
         || AuthorWebsiteSSLCertificate["Subject"] != point.Certificate.Subject
         || AuthorWebsiteSSLCertificate["Serial"] != point.Certificate.GetSerialNumberString()
         || AuthorWebsiteSSLCertificate["PublicKey"] != point.Certificate.GetPublicKeyString() )
       {
         string str1 = AuthorWebsiteSSLCertificate.Select(item => item.Key + " = " + item.Value).AsMultiLine();
-        string str2 = "Issuer = " + point.Certificate.GetIssuerName() + Globals.NL +
-                      "Name = " + point.Certificate.GetName() + Globals.NL +
+        string str2 = "Issuer = " + point.Certificate.Issuer + Globals.NL +
                       "Subject = " + point.Certificate.Subject + Globals.NL +
                       "Serial = " + point.Certificate.GetSerialNumberString() + Globals.NL +
                       "PublicKey = " + point.Certificate.GetPublicKeyString();
