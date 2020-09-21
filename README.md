@@ -159,6 +159,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add reminder for solar and lunar anniversary of birth.
 - Add option to enable or disable start with Windows from the software.
 - Add on power resume event handler to do web check update if needed and check passed midnight.
+- Fix bookmarks numbering introduced in the previous version.
 
 #### 2020.09.18 - Version 5.3
 
