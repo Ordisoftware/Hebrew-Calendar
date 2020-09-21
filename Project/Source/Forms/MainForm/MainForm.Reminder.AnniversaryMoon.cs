@@ -36,8 +36,8 @@ namespace Ordisoftware.Hebrew.Calendar
       var row = ( from day in DataSet.LunisolarDays
                    where !RemindCelebrationDates.Contains(day.Date)
                       && SQLiteDate.ToDateTime(day.Date) >= dateNow
-                      //&& day.LunarMonth == moonDateBirth.MoonMonth
-                      && day.LunarDay == moonDateBirth.MoonDay
+                      && day.LunarMonth == MoonMonthBirth
+                      && day.LunarDay == MoonDayBirth
                       && SQLiteDate.ToDateTime(day.Date) <= dateLimit
                   select day ).FirstOrDefault();
       if ( row == null ) return;

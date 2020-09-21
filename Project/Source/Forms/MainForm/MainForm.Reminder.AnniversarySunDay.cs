@@ -24,6 +24,8 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     DateTime BirthDate = new DateTime(1973, 9, 22);
+    int MoonMonthBirth = 1;
+    int MoonDayBirth = 1;
 
     private void CheckAnniversarySunDay()
     {
