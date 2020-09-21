@@ -147,7 +147,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Roadmap
 
-- Add option to enable or disable start with Windows from the software.
 - Add reminder for solar and lunar anniversary of birth.
 - Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if a celebration is running, including week days.
@@ -155,6 +154,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve and reorganize preferences form with a left menu panel.
 
 ## Changelog
+
+#### 2020.09.__ - Version 5.4
+
+- Add option to enable or disable start with Windows from the software.
+- Add on power resume event handler to do web check update if needed and check passed midnight.
 
 #### 2020.09.18 - Version 5.3
 
