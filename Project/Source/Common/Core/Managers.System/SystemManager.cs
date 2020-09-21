@@ -103,6 +103,25 @@ namespace Ordisoftware.Core
       }
     }
 
+    static public bool StartWithWindowsUserRegistry
+    {
+      get
+      {
+        var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+        return (string)key.GetValue(Globals.ApplicationFullFileName) == Application.ExecutablePath;
+      }
+      set
+      {
+        var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+        if ( value )
+          key.SetValue(Globals.ApplicationFullFileName, Application.ExecutablePath);
+        else
+        {
+          key.DeleteValue(Globals.ApplicationFullFileName);
+        }
+      }
+    }
+
     /// <summary>
     /// Exit the application process.
     /// </summary>

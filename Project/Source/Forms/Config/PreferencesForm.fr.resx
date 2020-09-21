@@ -611,4 +611,7 @@
   <data name="EditLogEnabled.Text" xml:space="preserve">
     <value>Activer le fichier log</value>
   </data>
+  <data name="EditStartWithWindows.Text" xml:space="preserve">
+    <value>Démarrer avec Windows</value>
+  </data>
 </root>

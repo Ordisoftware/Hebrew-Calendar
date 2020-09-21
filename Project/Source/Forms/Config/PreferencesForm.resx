@@ -271,7 +271,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <metadata name="LabelTimeZone.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -571,7 +571,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 177</value>
+    <value>8, 180</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -610,7 +610,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>GroupBoxGPS</value>
@@ -640,7 +640,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>GroupBoxGPS</value>
@@ -664,7 +664,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>GroupBoxGPS</value>
@@ -679,7 +679,7 @@
     <value>574, 10</value>
   </data>
   <data name="GroupBoxGPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 200</value>
+    <value>185, 205</value>
   </data>
   <data name="GroupBoxGPS.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -922,10 +922,10 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="GroupBoxTextReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 246</value>
+    <value>10, 241</value>
   </data>
   <data name="GroupBoxTextReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 162</value>
+    <value>205, 167</value>
   </data>
   <data name="GroupBoxTextReport.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1469,7 +1469,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="GroupBoxNavigation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>574, 419</value>
+    <value>574, 414</value>
   </data>
   <data name="GroupBoxNavigation.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 132</value>
@@ -1754,7 +1754,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditStartupHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 99</value>
+    <value>56, 109</value>
   </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 17</value>
@@ -2577,7 +2577,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMonthViewSunToolTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 211</value>
+    <value>56, 214</value>
   </data>
   <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 17</value>
@@ -2601,7 +2601,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditMonthViewSunToolTips.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="LabelColorNoDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3192,10 +3192,10 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="GroupBoxMonth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 419</value>
+    <value>361, 414</value>
   </data>
   <data name="GroupBoxMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 190</value>
+    <value>202, 195</value>
   </data>
   <data name="GroupBoxMonth.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3276,7 +3276,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -3294,7 +3294,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVacuumAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 51</value>
+    <value>56, 64</value>
   </data>
   <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 17</value>
@@ -3457,7 +3457,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoOpenExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 227</value>
+    <value>56, 229</value>
   </data>
   <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>
@@ -3496,7 +3496,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 195</value>
+    <value>56, 199</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 17</value>
@@ -3535,7 +3535,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditShowReminderInTaskBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 179</value>
+    <value>56, 184</value>
   </data>
   <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 17</value>
@@ -3574,7 +3574,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 83</value>
+    <value>56, 94</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 17</value>
@@ -3613,7 +3613,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 67</value>
+    <value>56, 79</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 17</value>
@@ -3652,7 +3652,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditLogEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 35</value>
+    <value>56, 49</value>
   </data>
   <data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 17</value>
@@ -3678,6 +3678,45 @@
   <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="EditStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditStartWithWindows.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="EditStartWithWindows.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditStartWithWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 19</value>
+  </data>
+  <data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 17</value>
+  </data>
+  <data name="EditStartWithWindows.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditStartWithWindows.Text" xml:space="preserve">
+    <value>Start with Windows</value>
+  </data>
+  <data name="EditStartWithWindows.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;EditStartWithWindows.Name" xml:space="preserve">
+    <value>EditStartWithWindows</value>
+  </data>
+  <data name="&gt;&gt;EditStartWithWindows.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditStartWithWindows.Parent" xml:space="preserve">
+    <value>GroupBoxSystem</value>
+  </data>
+  <data name="&gt;&gt;EditStartWithWindows.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3691,7 +3730,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditDebuggerEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 19</value>
+    <value>56, 34</value>
   </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 17</value>
@@ -3715,7 +3754,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="EditBigCalendarWarning.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3730,7 +3769,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBigCalendarWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 147</value>
+    <value>56, 154</value>
   </data>
   <data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
@@ -3754,7 +3793,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditBigCalendarWarning.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="EditAllowSuspendReminder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3769,7 +3808,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAllowSuspendReminder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 163</value>
+    <value>56, 169</value>
   </data>
   <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
@@ -3793,7 +3832,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAllowSuspendReminder.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3808,7 +3847,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 115</value>
+    <value>56, 124</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
@@ -3832,7 +3871,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="EditAutoRegenerate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3847,7 +3886,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoRegenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 131</value>
+    <value>56, 139</value>
   </data>
   <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 17</value>
@@ -3871,7 +3910,7 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditAutoRegenerate.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3917,13 +3956,13 @@
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="EditHebrewLettersPath.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 214</value>
+    <value>24, 216</value>
   </data>
   <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -3938,22 +3977,22 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="GroupBoxSystem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="GroupBoxSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 419</value>
+    <value>10, 414</value>
   </data>
   <data name="GroupBoxSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 248</value>
+    <value>340, 253</value>
   </data>
   <data name="GroupBoxSystem.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -4116,7 +4155,7 @@
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>GroupBoxMoonDayTextFormat</value>
@@ -4155,7 +4194,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditMaxYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 19</value>
+    <value>18, 24</value>
   </data>
   <data name="EditMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -4185,7 +4224,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelYearsIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 23</value>
+    <value>76, 28</value>
   </data>
   <data name="LabelYearsIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 12</value>
@@ -4212,10 +4251,10 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="GroupBoxMaxYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>574, 562</value>
+    <value>574, 552</value>
   </data>
   <data name="GroupBoxMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 47</value>
+    <value>185, 57</value>
   </data>
   <data name="GroupBoxMaxYearsInterval.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>

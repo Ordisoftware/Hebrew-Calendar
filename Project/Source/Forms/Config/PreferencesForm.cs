@@ -622,6 +622,10 @@ namespace Ordisoftware.Hebrew.Calendar
       EditAutoGenerateYearsInterval.Text = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue.ToString();
     }
 
+    private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)
+    {
+      SystemManager.StartWithWindowsUserRegistry = EditStartWithWindows.Checked;
+    }
   }
 
 }

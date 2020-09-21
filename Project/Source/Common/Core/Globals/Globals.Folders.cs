@@ -56,6 +56,12 @@ namespace Ordisoftware.Core
       => Path.GetFileNameWithoutExtension(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
 
     /// <summary>
+    /// Indicate the application full file name.
+    /// </summary>
+    static public string ApplicationFullFileName
+      => ApplicationExeFileName.Replace(".", " ");
+
+    /// <summary>
     /// Indicate the root folder path of the application.
     /// </summary>
     static public string RootFolderPath
