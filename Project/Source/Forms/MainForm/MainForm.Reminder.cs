@@ -87,7 +87,9 @@ namespace Ordisoftware.Hebrew.Calendar
           //if ( Settings.ReminderAnniversarySunEnabled )
           {
             CheckAnniversarySunDay();
+            CheckAnniversaryMoonDay();
             CheckAnniversarySun();
+            CheckAnniversaryMoon();
           }
           if ( Settings.ReminderShabatEnabled )
             CheckShabat();
