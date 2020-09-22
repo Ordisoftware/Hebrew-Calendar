@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    DateTime BirthDate = new DateTime(1973, 9, 22);
+    DateTime BirthDate = new DateTime(2000, 9, 25);
     int MoonMonthBirth = 1;
     int MoonDayBirth = 1;
 
@@ -43,6 +43,8 @@ namespace Ordisoftware.Hebrew.Calendar
       var delta3 = Settings.RemindShabatEveryMinutes;
       SetTimes(times, dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
       var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
+
+      // TODO use anniversarysunform & date like shabat
       var torahevent = TorahEvent.AnniversarySun;
       if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
       {

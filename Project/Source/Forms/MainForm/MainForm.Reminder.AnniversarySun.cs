@@ -25,9 +25,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CheckAnniversarySun()
     {
+      // TODO use anniversary form like shabat ?
       if ( RemindCelebrationDayForms.ContainsKey(TorahEvent.AnniversarySun) )
         if ( RemindCelebrationDayForms[TorahEvent.AnniversarySun] != null )
           return;
+
       var dateBirth = new DateTime(DateTime.Today.Year, BirthDate.Month, BirthDate.Day);
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
@@ -41,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( row == null ) return;
       var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return;
-      RemindCelebrationDates.Add(row.Date);
+      RemindCelebrationDates.Add(row.Date); // TODO use anniversary date like shabat ?
       ReminderForm.Run(row, false, TorahEvent.AnniversarySun, times);
     }
 

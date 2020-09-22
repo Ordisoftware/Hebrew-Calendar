@@ -24,6 +24,64 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
+    internal void DoTimerReminder()
+    {
+      if ( TimerMutex ) return;
+      if ( !Globals.IsReady ) return;
+      if ( !TimerReminder.Enabled ) return;
+      TimerMutex = true;
+      try
+      {
+        if ( !DisplayManager.IsForegroundFullScreenOrScreensaver() )
+        {
+          //if ( Settings.ReminderAnniversarySunEnabled )
+          /*{
+            CheckAnniversarySunDay();
+            CheckAnniversaryMoonDay();
+            CheckAnniversarySun();
+            CheckAnniversaryMoon();
+          }*/
+          if ( Settings.ReminderShabatEnabled )
+            CheckShabat();
+          if ( Settings.ReminderCelebrationsEnabled )
+          {
+            CheckCelebrationDay();
+            CheckEvents();
+          }
+        }
+      }
+      catch ( Exception ex )
+      {
+        if ( TimerErrorShown ) return;
+        TimerErrorShown = true;
+        ex.Manage();
+      }
+      finally
+      {
+        TimerMutex = false;
+        SystemManager.TryCatch(() =>
+        {
+          if ( LockSessionForm.Instance?.Visible ?? false )
+            LockSessionForm.Instance.Popup();
+        });
+      }
+    }
+
+    private void DoTimerMidnight()
+    {
+      if ( !Globals.IsReady ) return;
+      this.SyncUI(() =>
+      {
+        System.Threading.Thread.Sleep(1000);
+        CheckRegenerateCalendar();
+        CalendarMonth.Refresh();
+        if ( SQLiteDate.ToDateTime(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
+          GoToDate(DateTime.Today);
+        if ( Settings.CheckUpdateEveryWeekWhileRunning )
+          ActionWebCheckUpdate_Click(null, null);
+      });
+    }
+
     private void EnableReminder()
     {
       TimerResumeReminder.Enabled = false;
@@ -74,71 +132,13 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    internal void DoTimerReminder()
-    {
-      if ( TimerMutex ) return;
-      if ( !Globals.IsReady ) return;
-      if ( !TimerReminder.Enabled ) return;
-      TimerMutex = true;
-      try
-      {
-        if ( !DisplayManager.IsForegroundFullScreenOrScreensaver() )
-        {
-          //if ( Settings.ReminderAnniversarySunEnabled )
-          {
-            CheckAnniversarySunDay();
-            CheckAnniversaryMoonDay();
-            CheckAnniversarySun();
-            CheckAnniversaryMoon();
-          }
-          if ( Settings.ReminderShabatEnabled )
-            CheckShabat();
-          if ( Settings.ReminderCelebrationsEnabled )
-          {
-            CheckCelebrationDay();
-            CheckEvents();
-          }
-        }
-      }
-      catch ( Exception ex )
-      {
-        if ( TimerErrorShown ) return;
-        TimerErrorShown = true;
-        ex.Manage();
-      }
-      finally
-      {
-        TimerMutex = false;
-        SystemManager.TryCatch(() =>
-        {
-          if ( LockSessionForm.Instance?.Visible ?? false )
-            LockSessionForm.Instance.Popup();
-        });
-      }
-    }
-
-    private void DoTimerMidnight()
-    {
-      if ( !Globals.IsReady ) return;
-      this.SyncUI(() =>
-      {
-        System.Threading.Thread.Sleep(1000);
-        CheckRegenerateCalendar();
-        CalendarMonth.Refresh();
-        if ( SQLiteDate.ToDateTime(CurrentDay.Date) == DateTime.Today.AddDays(-1) )
-          GoToDate(DateTime.Today);
-        if ( Settings.CheckUpdateEveryWeekWhileRunning )
-          ActionWebCheckUpdate_Click(null, null);
-      });
-    }
-
-    private void SetTimes(ReminderTimes times, 
-                          DateTime date, 
-                          string timeStart, 
-                          string timeEnd, 
-                          int delta1, 
-                          int delta2, 
-                          decimal delta3)
+    private void SetTimes(ReminderTimes times,
+                              DateTime date,
+                              string timeStart,
+                              string timeEnd,
+                              int delta1,
+                              int delta2,
+                              decimal delta3)
     {
       string[] timesStart = timeStart.Split(':');
       string[] timesEnd = timeEnd.Split(':');

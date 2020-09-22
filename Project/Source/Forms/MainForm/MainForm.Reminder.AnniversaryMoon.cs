@@ -25,9 +25,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CheckAnniversaryMoon()
     {
+      // TODO use anniversary form like shabat ?
       if ( RemindCelebrationDayForms.ContainsKey(TorahEvent.AnniversaryMoon) )
         if ( RemindCelebrationDayForms[TorahEvent.AnniversaryMoon] != null )
           return;
+
       var dateBirth = new DateTime(DateTime.Today.Year, BirthDate.Month, BirthDate.Day);
       var moonDateBirth = CalendarDates.Instance[dateBirth];
       var dateNow = DateTime.Now;
@@ -43,7 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( row == null ) return;
       var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return;
-      RemindCelebrationDates.Add(row.Date);
+      RemindCelebrationDates.Add(row.Date); // TODO use anniversary date like shabat ?
       ReminderForm.Run(row, false, TorahEvent.AnniversaryMoon, times);
     }
 
