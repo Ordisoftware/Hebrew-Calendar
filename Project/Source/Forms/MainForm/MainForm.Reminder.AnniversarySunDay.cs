@@ -10,7 +10,7 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2019-01 </created>
+/// <created> 2020-09 </created>
 /// <edited> 2020-09 </edited>
 using System;
 using System.Data;
@@ -23,29 +23,29 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private void CheckCelebrationDay()
+    DateTime BirthDate = new DateTime(2000, 9, 25);
+    int MoonMonthBirth = 1;
+    int MoonDayBirth = 1;
+
+    private void CheckAnniversarySunDay()
     {
-      bool check(TorahEvent item)
-      {
-        return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
-      }
+      var dateBirth = new DateTime(DateTime.Today.Year, BirthDate.Month, BirthDate.Day);
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
       var row = ( from day in DataSet.LunisolarDays
-                  where (TorahEvent)day.TorahEvents != TorahEvent.None
-                     && check((TorahEvent)day.TorahEvents)
-                     && SQLiteDate.ToDateTime(day.Date) >= SQLiteDate.ToDateTime(strDateNow).AddDays(-1)
+                  where SQLiteDate.ToDateTime(day.Date) == dateBirth
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
-      if ( row == null ) return;
-      if ( SQLiteDate.ToDateTime(row.Date).Day < dateNow.Day )
-        if ( Settings.TorahEventsCountAsMoon && row.MoonriseType == (int)MoonRise.BeforeSet )
-          return;
-        else
-          return;
-      var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
-      if ( times == null ) return;
-      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
-      var torahevent = (TorahEvent)row.TorahEvents;
+      if ( row == null )
+        return;
+      var dateRow = SQLiteDate.ToDateTime(row.Date);
+      var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
+      var times = new ReminderTimes();
+      var delta3 = Settings.RemindShabatEveryMinutes;
+      SetTimes(times, dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
+      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
+
+      // TODO use anniversarysunform & date like shabat
+      var torahevent = TorahEvent.AnniversarySun;
       if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
       {
         LastCelebrationReminded[torahevent] = null;

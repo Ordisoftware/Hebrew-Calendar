@@ -54,6 +54,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
+      SystemEvents.PowerModeChanged += PowerModeChanged;
       SystemManager.TryCatch(() => { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilePath); });
       TrayIcon.Icon = Icon;
       MenuTray.Enabled = false;
@@ -182,7 +183,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Session ending event.
+    /// Session ending events handler.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Session ending event information.</param>
@@ -216,6 +217,18 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         DebugManager.Leave();
+      }
+    }
+
+    /// <summary>
+    /// Power mode changed events handler.
+    /// </summary>
+    private void PowerModeChanged(object s, PowerModeChangedEventArgs e)
+    {
+      if ( e.Mode == PowerModes.Resume )
+      {
+        System.Threading.Thread.Sleep(5000);
+        DoTimerMidnight();
       }
     }
 
@@ -835,11 +848,10 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionSearchDay_Click(object sender, EventArgs e)
     {
-      DateTime date;
-      if ( sender == null )
-        date = DateTime.Today;
-      else
-        if ( !SelectDayForm.Run(null, out date, false, true, true) ) return;
+      DateTime date = DateTime.Today;
+      if ( sender != null )
+        if ( !SelectDayForm.Run(null, ref date, false, true, true) )
+          return;
       GoToDate(date);
     }
 

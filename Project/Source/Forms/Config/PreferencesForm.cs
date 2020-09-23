@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -122,16 +122,16 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadEvents()
     {
-      foreach ( TorahEvent type in Enum.GetValues(typeof(TorahEvent)) )
-        if ( type != TorahEvent.None )
+      foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
+        if ( value != TorahEvent.None && value < TorahEvent.HanoukaD1 ) // TODO change when manage others
           SystemManager.TryCatch(() =>
           {
-            var item = new TorahEventItem() { Text = AppTranslations.TorahEvent.GetLang(type), Event = type };
+            var item = new TorahEventItem() { Text = AppTranslations.TorahEvent.GetLang(value), Event = value };
             int index = EditEvents.Items.Add(item);
-            if ( (bool)Settings["TorahEventRemind" + type.ToString()] )
+            if ( (bool)Settings["TorahEventRemind" + value.ToString()] )
               EditEvents.SetItemChecked(index, true);
             index = EditEventsDay.Items.Add(item);
-            if ( (bool)Settings["TorahEventRemindDay" + type.ToString()] )
+            if ( (bool)Settings["TorahEventRemindDay" + value.ToString()] )
               EditEventsDay.SetItemChecked(index, true);
           });
     }
@@ -218,7 +218,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( !SelectDayForm.Run(AppTranslations.SelectBirthday.GetLang(), out var date) ) return;
+      var date = DateTime.Today; // TODO use saved birthday
+      if ( !SelectDayForm.Run(AppTranslations.SelectBirthday.GetLang(), ref date) ) return;
       if ( !SelectBirthTime.Run(out var time) ) return;
       if ( time >= new TimeSpan(0, 0, 0) && time < CalendarDates.Instance[date].Ephemerisis.Sunset )
         date = date.AddDays(-1);
@@ -622,6 +623,10 @@ namespace Ordisoftware.Hebrew.Calendar
       EditAutoGenerateYearsInterval.Text = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue.ToString();
     }
 
+    private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)
+    {
+      SystemManager.StartWithWindowsUserRegistry = EditStartWithWindows.Checked;
+    }
   }
 
 }

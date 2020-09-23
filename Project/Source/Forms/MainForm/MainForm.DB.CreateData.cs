@@ -334,7 +334,7 @@ namespace Ordisoftware.Hebrew.Calendar
         else
         if ( monthMoon > 0 )
           monthMoon++;
-        if ( monthMoon == 7 )
+        if ( monthMoon == TorahCelebrations.YomsMonth )
         {
           dateDay = calculate(dateDay, 0, TorahEvent.YomTerouah, false);
           calculate(dateDay, TorahCelebrations.YomHaKipourimDay - 1, TorahEvent.YomHaKipourim, false);

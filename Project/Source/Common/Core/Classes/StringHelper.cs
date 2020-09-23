@@ -55,6 +55,7 @@ namespace Ordisoftware.Core
     /// A string[].
     /// </returns>
     /// <param name="str">The str to act on.</param>
+    /// <param name="separator">The separator.</param>
     static public string[] SplitNoEmptyLines(this string str, string separator)
     {
       return str.Split(separator, StringSplitOptions.RemoveEmptyEntries);
@@ -67,7 +68,6 @@ namespace Ordisoftware.Core
     /// A string[].
     /// </returns>
     /// <param name="str">The string to act on.</param>
-    /// <param name="stringSplitOptions">Options for controlling the operation.</param>
     static public string[] SplitKeepEmptyLines(this string str)
     {
       return str.Split(Globals.NL, StringSplitOptions.None);
@@ -80,6 +80,7 @@ namespace Ordisoftware.Core
     /// A string[].
     /// </returns>
     /// <param name="str">The str to act on.</param>
+    /// <param name="separator">The separator.</param>
     static public string[] SplitKeepEmptyLines(this string str, string separator)
     {
       return str.Split(separator, StringSplitOptions.None);
@@ -92,8 +93,8 @@ namespace Ordisoftware.Core
     /// A string[].
     /// </returns>
     /// <param name="str">The str to act on.</param>
-    /// <param name="stringSplitOptions">Options for controlling the operation.</param>
     /// <param name="separator">The separator.</param>
+    /// <param name="stringSplitOptions">Options for controlling the operation.</param>
     static public string[] Split(this string str, string separator, StringSplitOptions stringSplitOptions)
     {
       return str.Split(new string[] { separator }, stringSplitOptions);

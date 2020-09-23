@@ -147,14 +147,19 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Roadmap
 
-- Add option to enable or disable start with Windows from the software.
-- Add reminder for solar and lunar anniversary of birth.
 - Add moon months description form and menu in tools.
+- Add reminder for solar and lunar anniversary of birth.
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Improve and reorganize preferences form with a left menu panel.
 
 ## Changelog
+
+#### 2020.09.25 - Version 5.4
+
+- Add option to enable or disable start with Windows from the software that now runs from the registry.
+- Improve weekly check update while running to manage on power resume event.
+- Fix bookmarks numbering from 0 instead of 1 introduced in the previous version.
 
 #### 2020.09.18 - Version 5.3
 

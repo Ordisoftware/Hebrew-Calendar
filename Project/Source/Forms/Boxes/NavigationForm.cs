@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -148,7 +148,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionSelectDay_Click(object sender, EventArgs e)
     {
-      if ( SelectDayForm.Run(null, out var date, true, true) )
+      var date = DateTime.Today;
+      if ( SelectDayForm.Run(null, ref date, true, true) )
         MainForm.Instance.GoToDate(date);
       else
         SystemManager.TryCatch(() => { ActiveControl = LabelDate; });

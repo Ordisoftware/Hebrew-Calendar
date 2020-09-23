@@ -69,6 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditBalloon_CheckedChanged(null, null);
       SelectOpenNavigationForm_CheckedChanged(null, null);
       EditLogEnabled.Enabled = DebugManager.Enabled;
+      EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
       ActiveControl = ActionClose;
       ActionResetSettings.TabStop = false;
       IsReady = true;

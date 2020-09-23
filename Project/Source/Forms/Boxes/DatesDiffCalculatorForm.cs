@@ -73,7 +73,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var date = Program.DateBookmarks[index];
         string s = date == DateTime.MinValue ? SysTranslations.UndefinedSlot.GetLang() : date.ToLongDateString();
-        var menuitem = MenuBookmarks.Items.Add(index.ToString("00") + ". " + s);
+        var menuitem = MenuBookmarks.Items.Add(( index + 1 ).ToString("00") + ". " + s);
         menuitem.MouseUp += Bookmarks_MouseUp;
         menuitem.Tag = index;
       }
@@ -117,7 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( !menuitem.Text.EndsWith(")") )
           {
             if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang()) ) return;
-            menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + SysTranslations.UndefinedSlot.GetLang();
+            menuitem.Text = ( (int)menuitem.Tag + 1 ).ToString("00") + ". " + SysTranslations.UndefinedSlot.GetLang();
             Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
             Program.Settings.Save();
           }
@@ -143,7 +143,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         if ( Program.DateBookmarks[(int)menuitem.Tag] != DateTime.MinValue )
           if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang()) ) return;
-        menuitem.Text = ( (int)menuitem.Tag ).ToString("00") + ". " + calendar.SelectionStart.Date.ToLongDateString();
+        menuitem.Text = ( (int)menuitem.Tag + 1 ).ToString("00") + ". " + calendar.SelectionStart.Date.ToLongDateString();
         Program.DateBookmarks[(int)menuitem.Tag] = calendar.SelectionStart.Date;
         Program.Settings.Save();
       }

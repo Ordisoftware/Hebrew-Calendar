@@ -270,6 +270,31 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           [Language.EN] = "Sukot end",
           [Language.FR] = "Fin de Soukot"
+        },
+        [Calendar.TorahEvent.HanoukaD1] = new TranslationsDictionary
+        {
+          [Language.EN] = "'Hanouka start",
+          [Language.FR] = "Début de 'Hanouka"
+        },
+        [Calendar.TorahEvent.HanoukaD8] = new TranslationsDictionary
+        {
+          [Language.EN] = "'Hanouka end",
+          [Language.FR] = "'Fin de Hanouka"
+        },
+        [Calendar.TorahEvent.Pourim] = new TranslationsDictionary
+        {
+          [Language.EN] = "Pourim",
+          [Language.FR] = "Pourim"
+        },
+        [Calendar.TorahEvent.AnniversarySun] = new TranslationsDictionary
+        {
+          [Language.EN] = "Solar anniversary",
+          [Language.FR] = "Anniversaire solaire"
+        },
+        [Calendar.TorahEvent.AnniversaryMoon] = new TranslationsDictionary
+        {
+          [Language.EN] = "Lunar anniversary",
+          [Language.FR] = "Anniversaire lunaire"
         }
       };
 
