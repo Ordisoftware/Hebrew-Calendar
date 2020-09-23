@@ -155,7 +155,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.09.__ - Version 5.4
+#### 2020.09.25 - Version 5.4
 
 - Add option to enable or disable start with Windows from the software that now runs from the registry.
 - Improve weekly check update while running to manage on power resume event.
