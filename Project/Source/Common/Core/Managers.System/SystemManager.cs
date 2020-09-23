@@ -108,13 +108,13 @@ namespace Ordisoftware.Core
       get
       {
         var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-        return (string)key.GetValue(Globals.ApplicationFullFileName) == Application.ExecutablePath;
+        return (string)key.GetValue(Globals.ApplicationFullFileName) == Globals.ApplicationStartupRegistryValue;
       }
       set
       {
         var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
         if ( value )
-          key.SetValue(Globals.ApplicationFullFileName, Application.ExecutablePath);
+          key.SetValue(Globals.ApplicationFullFileName, Globals.ApplicationStartupRegistryValue);
         else
         {
           key.DeleteValue(Globals.ApplicationFullFileName);
