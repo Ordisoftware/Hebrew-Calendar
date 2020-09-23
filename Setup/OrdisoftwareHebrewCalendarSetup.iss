@@ -25,14 +25,17 @@ Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription
 
 [InstallDelete]
 #include "Scripts\InstallDelete.iss"
+Name: {commonstartup}\{#MyAppName}.*; Type: files
 
 [Files]
 #include "Scripts\Files.iss"
 
 [Icons]
 #include "Scripts\Icons.iss"
-Name: {commonstartup}\{#MyAppName}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico; Tasks: startwithwindows; Parameters: /hide
 Name: {group}\{#MyAppName}\{cm:StartAndReset_msg,{#MyAppName}}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico; Parameters: /reset
+
+[Registry]
+Root: HKCU; Subkey: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run; ValueType: string; ValueName: {#MyAppName}; ValueData: """{app}\Bin\{#MyAppExeName}"" /hide"; Flags: uninsdeletevalue deletevalue
 
 [Run]
 #include "Scripts\Run.iss"
