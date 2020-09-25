@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
         if ( times == null ) continue;
         RemindCelebrationDates.Add(row.Date);
-        ReminderForm.Run(row, false, TorahEvent.None, times);
+        ReminderForm.Run(row, TorahEvent.None, times);
       }
     }
 

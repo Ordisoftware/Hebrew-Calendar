@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       else
         LastCelebrationReminded[torahevent] = dateNow;
-      ReminderForm.Run(row, false, torahevent, times);
+      ReminderForm.Run(row, torahevent, times);
     }
 
   }

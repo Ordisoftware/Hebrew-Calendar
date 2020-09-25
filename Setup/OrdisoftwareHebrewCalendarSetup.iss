@@ -35,7 +35,7 @@ Name: {commonstartup}\{#MyAppName}.*; Type: files
 Name: {group}\{#MyAppName}\{cm:StartAndReset_msg,{#MyAppName}}; Filename: {app}\Bin\{#MyAppExeName}; IconFilename: {app}\Application.ico; Parameters: /reset
 
 [Registry]
-Root: HKCU; Subkey: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run; ValueType: string; ValueName: {#MyAppName}; ValueData: """{app}\Bin\{#MyAppExeName}"" /hide"; Flags: uninsdeletevalue deletevalue
+Root: HKCU; Subkey: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run; ValueType: string; ValueName: {#MyAppPublisher} {#MyAppName}; ValueData: """{app}\Bin\{#MyAppExeName}"" /hide"; Flags: uninsdeletevalue deletevalue
 
 [Run]
 #include "Scripts\Run.iss"
