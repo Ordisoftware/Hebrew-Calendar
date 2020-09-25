@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -94,9 +94,14 @@ namespace Ordisoftware.Hebrew.Calendar
     HanoukaD8,
 
     /// <summary>
-    /// The pouril day.
+    /// The pourim day.
     /// </summary>
     Pourim,
+
+    /// <summary>
+    /// The shabat day.
+    /// </summary>
+    Shabat,
 
     /// <summary>
     /// The sun aniversary.

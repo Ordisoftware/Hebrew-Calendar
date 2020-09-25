@@ -44,7 +44,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return;
       RemindCelebrationDates.Add(row.Date); // TODO use anniversary date like shabat ?
-      ReminderForm.Run(row, false, TorahEvent.AnniversarySun, times);
+      ReminderForm.Run(row, TorahEvent.AnniversarySun, times);
     }
 
   }
