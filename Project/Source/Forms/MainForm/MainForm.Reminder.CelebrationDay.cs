@@ -40,8 +40,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( SQLiteDate.ToDateTime(row.Date).Day < dateNow.Day )
         if ( Settings.TorahEventsCountAsMoon && row.MoonriseType == (int)MoonRise.BeforeSet )
           return;
-        else
-          return;
+        //else
+          //return;
       var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return;
       var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
