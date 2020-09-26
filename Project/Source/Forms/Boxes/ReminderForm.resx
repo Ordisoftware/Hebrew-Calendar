@@ -284,17 +284,17 @@
   </data>
   <data name="ActionSetup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAICSURBVDhPtZLLalNRGIUzyLQKVZ9CUfAFhM59CRFx4oNI
-        RWmobdoYtWltbG4nNzuKlNiUgCbGVKxRamJMYrRiLo1QZ8v97XMsOnDoDwt+1vrWzu7u8f2v8aczuWw6
-        m5eV2fHc6N/jTznZfMrJfDP7dDzp6OjopxU7HhkMLIU/x78RS2y+qFS1+/qNohtxFYsldXqfrdjxyGBg
-        6bhVd6Zi8eSg9qqu4XCkwWCgyeSHavVdK3Y8MhhYOm7VnRNGF1cfRVWt1bXfbOnZ9o6STlpOJmd3PDIY
-        WK9jxx9ZXc9F1qIqFLb0sf1J26WyAR8rGFy2Yscjg4E1On6Lqcjaug7NNYejkfbeNuSks1oKhTUzM3Md
-        sccTjvYaDcOMLUuHLgeceRhZVbfb04dmU+/e78u8tlaMZ7JTiB2PDAaWDl17wMLiUvHe/RX79zZbbT03
-        Lx0KP+CxrNjxyGBg6fw+gGucu3L12o3FYMj8QkvtdkeVak2JlKNoNKbKy5r1yGBg6Xhd+xCng8vh76Wd
-        svr9A/NYHfV6fXU9seORwcDS8bp2Ts4F7m4VCk8tMBeYV/7Jpr58PbBKmX8nHhkMLB236g5XOT97+045
-        ML8wNvtlCuPDiRU7HhkMrNc5Hq7CgxDwkVy4OXurRBGx43kZDOxfnzKDwal8YdNGZ40ueWLHI4Pxyj7f
-        Lz/L1+sQ2G03AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgJJREFUOE+1kstqU1EYhTPItApVn0JR8AWEzn0JEXHig0hFaaht2hi1aW1sbic3
+        O4qU2JSAJsZUrFFqYkxitGIujVBny/3tcyw6cOgPC37W+tbO7u7x/a/xpzO5bDqbl5XZ8dzo3+NPOdl8
+        ysl8M/t0POno6OinFTseGQwshT/HvxFLbL6oVLX7+o2iG3EViyV1ep+t2PHIYGDpuFV3pmLx5KD2qq7h
+        cKTBYKDJ5Idq9V0rdjwyGFg6btWdE0YXVx9FVa3Vtd9s6dn2jpJOWk4mZ3c8MhhYr2PHH1ldz0XWoioU
+        tvSx/UnbpbIBHysYXLZixyODgTU6foupyNq6Ds01h6OR9t425KSzWgqFNTMzcx2xxxOO9hoNw4wtS4cu
+        B5x5GFlVt9vTh2ZT797vy7y2VoxnslOIHY8MBpYOXXvAwuJS8d79Ffv3NlttPTcvHQo/4LGs2PHIYGDp
+        /D6Aa5y7cvXajcVgyPxCS+12R5VqTYmUo2g0psrLmvXIYGDpeF37EKeDy+HvpZ2y+v0D81gd9Xp9dT2x
+        45HBwNLxunZOzgXubhUKTy0wF5hX/smmvnw9sEqZfyceGQwsHbfqDlc5P3v7TjkwvzA2+2UK48OJFTse
+        GQys1zkersKDEPCRXLg5e6tEEbHjeRkM7F+fMoPBqXxh00ZnjS55Yscjg/HKPt8vP8vX6xDYbTcAAAAA
+        SUVORK5CYII=
 </value>
   </data>
   <data name="ActionSetup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
