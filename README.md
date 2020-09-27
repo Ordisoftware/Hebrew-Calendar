@@ -155,9 +155,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.09.__ - Version 5.5
+#### 2020.09.29 - Version 5.5
 
 - Fix celebration reminder when passing midnight.
+- Remove title bar icon from rmeinder boxes.
 
 #### 2020.09.25 - Version 5.4
 
