@@ -171,10 +171,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private ReminderForm()
     {
       InitializeComponent();
-      Icon = MainForm.Instance.Icon;
       ShowInTaskbar = Program.Settings.ShowReminderInTaskBar;
       if ( Image != null )
         PictureBox.Image = Image;
+      else
+        Icon = MainForm.Instance.Icon;
     }
 
     private void ReminderForm_FormClosed(object sender, FormClosedEventArgs e)

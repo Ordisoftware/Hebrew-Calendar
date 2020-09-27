@@ -155,6 +155,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### 2020.09.29 - Version 5.5
+
+- Fix celebration reminder when passing midnight introduced (condition error introduced in v4.0).
+- Remove title bar icon from rmeinder boxes.
+
 #### 2020.09.25 - Version 5.4
 
 - Add option to enable or disable start with Windows from the software that now runs from the registry.

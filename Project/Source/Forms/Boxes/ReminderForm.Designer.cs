@@ -102,6 +102,7 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ReminderForm";
+      this.ShowIcon = false;
       this.TopMost = true;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReminderForm_FormClosed);
       this.Shown += new System.EventHandler(this.ReminderForm_Shown);
