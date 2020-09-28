@@ -157,9 +157,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.09.29 - Version 5.5
 
-- Fix celebration reminder closed when passing midnight (test condition error introduced in v4.0).
-- Fix bookmarks not found exception when reseting parameters (application settings usage not removed in v5.4).
-- Remove title bar icon from reminder boxes.
+- Fix current celebration reminder box closed when passing midnight (wrong test condition error introduced in v4.0).
+- Fix "bookmarks not found exception" when reseting parameters (clearing application settings items not removed in v5.4).
+- Remove title bar icon from reminder boxes to improve UI.
 
 #### 2020.09.25 - Version 5.4
 
