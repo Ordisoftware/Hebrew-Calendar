@@ -170,9 +170,6 @@ namespace Ordisoftware.Hebrew.Calendar
       string timezone = Settings.TimeZone;
       long starttime = Program.Settings.BenchmarkStartingApp;
       long loadtime = Program.Settings.BenchmarkLoadData;
-      var bookmarks = new DateTime[Program.DatesBookmarksCount];
-      for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
-        bookmarks[index - 1] = (DateTime)Program.Settings["DateBookmark" + index];
       int shabat = EditShabatDay.SelectedIndex;
       Settings.Reset();
       Settings.UpgradeResetRequiredV3_0 = false;
@@ -190,8 +187,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ShabatDay = shabat;
       Settings.RestoreMainForm();
       Settings.LanguageSelected = Languages.Current;
-      for ( int index = 1; index <= Program.DatesBookmarksCount; index++ )
-        Program.Settings["DateBookmark" + index] = bookmarks[index - 1];
       Program.Settings.BenchmarkStartingApp = starttime;
       Program.Settings.BenchmarkLoadData = loadtime;
       Close();
