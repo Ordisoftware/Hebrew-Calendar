@@ -147,13 +147,16 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Roadmap
 
+## Changelog
+
+#### 2021.__.__ - Version 6.0
+
 - Add moon months description form and menu in tools.
 - Add reminder for solar and lunar anniversary of birth.
-- Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
+- Add a different tray icon to indicate if a celebration is running, including week days.
+- Improve navigation form to show celebration week days.
 - Improve and reorganize preferences form with a left menu panel.
-
-## Changelog
 
 #### 2020.09.29 - Version 5.5
 
