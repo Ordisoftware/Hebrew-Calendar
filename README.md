@@ -157,6 +157,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Improve navigation form to show celebration week days.
 - Improve and reorganize preferences form with a left menu panel.
+- Update web links.
 
 #### 2020.09.29 - Version 5.5
 
