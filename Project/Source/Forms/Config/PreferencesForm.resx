@@ -211,7 +211,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>350, 70</value>
+    <value>350, 65</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 13</value>
@@ -244,7 +244,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 285</value>
+    <value>20, 280</value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -316,7 +316,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 340</value>
+    <value>20, 335</value>
   </data>
   <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 13</value>
@@ -595,7 +595,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 200</value>
+    <value>20, 202</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -1340,7 +1340,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloonAutoHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 205</value>
+    <value>353, 200</value>
   </data>
   <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 17</value>
@@ -1373,7 +1373,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 180</value>
+    <value>353, 175</value>
   </data>
   <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 17</value>
@@ -1406,7 +1406,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 134</value>
+    <value>353, 130</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 17</value>
@@ -1439,7 +1439,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenNavigationForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 112</value>
+    <value>353, 108</value>
   </data>
   <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 17</value>
@@ -1472,7 +1472,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenMainForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 90</value>
+    <value>353, 86</value>
   </data>
   <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 17</value>
@@ -1499,7 +1499,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditBalloonLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 249</value>
+    <value>371, 244</value>
   </data>
   <data name="EditBalloonLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1529,7 +1529,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>350, 230</value>
+    <value>368, 225</value>
   </data>
   <data name="LabelLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 13</value>
@@ -1559,7 +1559,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditStartupHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 90</value>
+    <value>23, 85</value>
   </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 17</value>
@@ -1953,16 +1953,16 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 115</value>
+    <value>39, 115</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 13</value>
+    <value>143, 13</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Text" xml:space="preserve">
-    <value>Auto lock timeout seconds</value>
+    <value>Auto lock timeout in seconds</value>
   </data>
   <data name="&gt;&gt;LabelRemindAutoLockTimeOut.Name" xml:space="preserve">
     <value>LabelRemindAutoLockTimeOut</value>
@@ -2151,7 +2151,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 134</value>
+    <value>42, 134</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -2964,7 +2964,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 343</value>
+    <value>98, 336</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -2991,7 +2991,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVacuumAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 115</value>
+    <value>23, 110</value>
   </data>
   <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 17</value>
@@ -3037,7 +3037,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionAutoGenerateHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 343</value>
+    <value>130, 336</value>
   </data>
   <data name="ActionAutoGenerateHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3148,7 +3148,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoOpenExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 245</value>
+    <value>23, 240</value>
   </data>
   <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>
@@ -3256,7 +3256,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 155</value>
+    <value>23, 150</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 17</value>
@@ -3286,7 +3286,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 135</value>
+    <value>23, 130</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 17</value>
@@ -3316,7 +3316,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditLogEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 200</value>
+    <value>23, 195</value>
   </data>
   <data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 17</value>
@@ -3346,7 +3346,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 70</value>
+    <value>23, 65</value>
   </data>
   <data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 17</value>
@@ -3376,7 +3376,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditDebuggerEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 180</value>
+    <value>23, 175</value>
   </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 17</value>
@@ -3484,7 +3484,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 225</value>
+    <value>23, 220</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
@@ -3520,16 +3520,16 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoRegenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 320</value>
+    <value>23, 313</value>
   </data>
   <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 17</value>
+    <value>271, 17</value>
   </data>
   <data name="EditAutoRegenerate.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="EditAutoRegenerate.Text" xml:space="preserve">
-    <value>Auto-generate data for these years if expired</value>
+    <value>Auto-generate data for these years interval if expired</value>
   </data>
   <data name="EditAutoRegenerate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
@@ -3572,7 +3572,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 301</value>
+    <value>546, 296</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3788,14 +3788,14 @@
   <data name="&gt;&gt;MenuPredefinedYears.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tabControl1.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
+  <data name="TabControl.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
   </data>
   <data name="EditCalculatorPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="EditCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 359</value>
+    <value>23, 354</value>
   </data>
   <data name="EditCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>517, 20</value>
@@ -3819,7 +3819,7 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 304</value>
+    <value>23, 299</value>
   </data>
   <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>517, 20</value>
@@ -3865,7 +3865,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 356</value>
+    <value>546, 351</value>
   </data>
   <data name="ActionSelectCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3907,7 +3907,7 @@
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageApplication.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+    <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPageApplication.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -3973,7 +3973,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 38</value>
+    <value>23, 39</value>
   </data>
   <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3982,7 +3982,7 @@
     <value>Vertical</value>
   </data>
   <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>538, 60</value>
+    <value>537, 60</value>
   </data>
   <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4027,7 +4027,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 346</value>
+    <value>42, 339</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 20</value>
@@ -4072,7 +4072,7 @@
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageGeneration.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+    <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPageGeneration.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -4099,7 +4099,7 @@
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageReminder.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+    <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPageReminder.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -4126,7 +4126,7 @@
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageShabat.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+    <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPageShabat.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -4153,7 +4153,7 @@
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageCelebrations.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+    <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPageCelebrations.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -4165,7 +4165,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 20</value>
+    <value>139, 20</value>
   </data>
   <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 13</value>
@@ -4195,7 +4195,7 @@
     <value>23, 122</value>
   </data>
   <data name="PanelCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 268</value>
+    <value>553, 268</value>
   </data>
   <data name="PanelCalendarColors.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
@@ -4216,10 +4216,10 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 39</value>
+    <value>142, 39</value>
   </data>
   <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 20</value>
+    <value>362, 20</value>
   </data>
   <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4258,7 +4258,7 @@
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageMonthView.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+    <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPageMonthView.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -4285,7 +4285,7 @@
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageTextReport.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+    <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPageTextReport.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -4312,33 +4312,36 @@
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPageNavigationWindow.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+    <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPageNavigationWindow.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="TabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TabControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="TabControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 10</value>
   </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>595, 427</value>
   </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
+    <value>TabControl</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+  <data name="&gt;&gt;TabControl.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TabControl.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="PanelBottomSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -4373,6 +4376,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>615, 485</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
