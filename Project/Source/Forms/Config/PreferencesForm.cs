@@ -627,6 +627,10 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.StartWithWindowsUserRegistry = EditStartWithWindows.Checked;
     }
 
+    private void TabPageNavigationWindow_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 
 }

@@ -709,4 +709,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
+  <data name="TabPageReminder.Text" xml:space="preserve">
+    <value>Rappeleur</value>
+  </data>
 </root>

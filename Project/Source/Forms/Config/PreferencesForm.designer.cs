@@ -155,23 +155,25 @@
       this.MenuPredefinedYears = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
-      this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.TabPageGeneration = new System.Windows.Forms.TabPage();
       this.LabelMaxYearsInterval = new System.Windows.Forms.Label();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageShabat = new System.Windows.Forms.TabPage();
       this.TabPageCelebrations = new System.Windows.Forms.TabPage();
       this.TabPageMonthView = new System.Windows.Forms.TabPage();
       this.LabelMoonDayTextFormat = new System.Windows.Forms.Label();
       this.PanelCalendarColors = new System.Windows.Forms.Panel();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.TabPageNavigationWindow = new System.Windows.Forms.TabPage();
+      this.TabPageReminder = new System.Windows.Forms.TabPage();
+      this.PanelBottomSeparator = new System.Windows.Forms.Panel();
+      this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
       label7 = new System.Windows.Forms.Label();
@@ -199,6 +201,7 @@
       this.PanelCalendarColors.SuspendLayout();
       this.TabPageTextReport.SuspendLayout();
       this.TabPageNavigationWindow.SuspendLayout();
+      this.TabPageReminder.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelGPSLatitude
@@ -1116,6 +1119,7 @@
       resources.ApplyResources(this.tabControl1, "tabControl1");
       this.tabControl1.Controls.Add(this.TabPageApplication);
       this.tabControl1.Controls.Add(this.TabPageGeneration);
+      this.tabControl1.Controls.Add(this.TabPageReminder);
       this.tabControl1.Controls.Add(this.TabPageShabat);
       this.tabControl1.Controls.Add(this.TabPageCelebrations);
       this.tabControl1.Controls.Add(this.TabPageMonthView);
@@ -1129,13 +1133,10 @@
       // 
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPageApplication.Controls.Add(this.EditBalloonAutoHide);
-      this.TabPageApplication.Controls.Add(this.EditAllowSuspendReminder);
       this.TabPageApplication.Controls.Add(label7);
       this.TabPageApplication.Controls.Add(this.LabelLoomingDelay);
-      this.TabPageApplication.Controls.Add(this.EditCloseReminderFormOnClick);
       this.TabPageApplication.Controls.Add(this.EditBalloon);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
-      this.TabPageApplication.Controls.Add(this.EditShowReminderInTaskBar);
       this.TabPageApplication.Controls.Add(this.EditCalculatorPath);
       this.TabPageApplication.Controls.Add(this.EditHebrewLettersPath);
       this.TabPageApplication.Controls.Add(this.SelectOpenNextCelebrationsForm);
@@ -1159,22 +1160,6 @@
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
       this.TabPageApplication.UseVisualStyleBackColor = true;
-      // 
-      // EditCalculatorPath
-      // 
-      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
-      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditCalculatorPath.Name = "EditCalculatorPath";
-      this.EditCalculatorPath.ReadOnly = true;
-      // 
-      // EditHebrewLettersPath
-      // 
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
-      this.EditHebrewLettersPath.ReadOnly = true;
       // 
       // ActionSelectCalculatorPath
       // 
@@ -1211,38 +1196,6 @@
       resources.ApplyResources(this.LabelMaxYearsInterval, "LabelMaxYearsInterval");
       this.LabelMaxYearsInterval.Name = "LabelMaxYearsInterval";
       // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
-      // 
       // TabPageShabat
       // 
       this.TabPageShabat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1265,16 +1218,13 @@
       this.TabPageCelebrations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPageCelebrations.Controls.Add(this.ActionCountAsMoonHelp);
       this.TabPageCelebrations.Controls.Add(this.EditTorahEventsCountAsMoon);
-      this.TabPageCelebrations.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.TabPageCelebrations.Controls.Add(this.EditRemindCelebrationEveryMinutes);
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationHoursBefore);
       this.TabPageCelebrations.Controls.Add(this.EditReminderCelebrationsEnabled);
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationEveryMinutes);
-      this.TabPageCelebrations.Controls.Add(this.EditAutoLockSession);
       this.TabPageCelebrations.Controls.Add(this.EditEventsDay);
       this.TabPageCelebrations.Controls.Add(this.EditRemindCelebrationHoursBefore);
       this.TabPageCelebrations.Controls.Add(this.EditEvents);
-      this.TabPageCelebrations.Controls.Add(this.EditAutoLockSessionTimeOut);
       this.TabPageCelebrations.Controls.Add(this.EditReminderCelebrationsInterval);
       this.TabPageCelebrations.Controls.Add(this.LabelTimerInterval);
       resources.ApplyResources(this.TabPageCelebrations, "TabPageCelebrations");
@@ -1337,14 +1287,6 @@
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorTorahEvent);
       this.PanelCalendarColors.Name = "PanelCalendarColors";
       // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // TabPageTextReport
       // 
       this.TabPageTextReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1375,6 +1317,81 @@
       resources.ApplyResources(this.TabPageNavigationWindow, "TabPageNavigationWindow");
       this.TabPageNavigationWindow.Name = "TabPageNavigationWindow";
       this.TabPageNavigationWindow.UseVisualStyleBackColor = true;
+      this.TabPageNavigationWindow.Click += new System.EventHandler(this.TabPageNavigationWindow_Click);
+      // 
+      // TabPageReminder
+      // 
+      this.TabPageReminder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageReminder.Controls.Add(this.EditAllowSuspendReminder);
+      this.TabPageReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
+      this.TabPageReminder.Controls.Add(this.EditAutoLockSession);
+      this.TabPageReminder.Controls.Add(this.EditAutoLockSessionTimeOut);
+      this.TabPageReminder.Controls.Add(this.EditCloseReminderFormOnClick);
+      this.TabPageReminder.Controls.Add(this.EditShowReminderInTaskBar);
+      resources.ApplyResources(this.TabPageReminder, "TabPageReminder");
+      this.TabPageReminder.Name = "TabPageReminder";
+      this.TabPageReminder.UseVisualStyleBackColor = true;
+      // 
+      // PanelBottomSeparator
+      // 
+      resources.ApplyResources(this.PanelBottomSeparator, "PanelBottomSeparator");
+      this.PanelBottomSeparator.Name = "PanelBottomSeparator";
+      // 
+      // EditCalculatorPath
+      // 
+      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
+      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditCalculatorPath.Name = "EditCalculatorPath";
+      this.EditCalculatorPath.ReadOnly = true;
+      // 
+      // EditHebrewLettersPath
+      // 
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
       // 
       // PreferencesForm
       // 
@@ -1382,6 +1399,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.tabControl1);
+      this.Controls.Add(this.PanelBottomSeparator);
       this.Controls.Add(this.PanelButtons);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
@@ -1420,6 +1438,8 @@
       this.TabPageTextReport.PerformLayout();
       this.TabPageNavigationWindow.ResumeLayout(false);
       this.TabPageNavigationWindow.PerformLayout();
+      this.TabPageReminder.ResumeLayout(false);
+      this.TabPageReminder.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -1561,5 +1581,7 @@
     private System.Windows.Forms.Label LabelMoonDayTextFormat;
     private System.Windows.Forms.Panel PanelCalendarColors;
     private System.Windows.Forms.Label LabelMaxYearsInterval;
+    private System.Windows.Forms.TabPage TabPageReminder;
+    private System.Windows.Forms.Panel PanelBottomSeparator;
   }
 }
