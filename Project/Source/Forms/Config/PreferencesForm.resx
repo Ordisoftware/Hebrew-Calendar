@@ -157,7 +157,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;LabelGPSLatitude.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <metadata name="LabelGPSLongitude.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -196,7 +196,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;LabelGPSLongitude.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>8</value>
   </data>
   <metadata name="label7.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -244,7 +244,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 265</value>
+    <value>20, 270</value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -307,7 +307,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;LabelTimeZone.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>6</value>
   </data>
   <metadata name="LabelCalculatorPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -319,7 +319,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 320</value>
+    <value>20, 325</value>
   </data>
   <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 13</value>
@@ -517,7 +517,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 523</value>
+    <value>10, 513</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>674, 28</value>
@@ -547,7 +547,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionResetSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
+    <value>3, 8</value>
   </data>
   <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 13</value>
@@ -639,90 +639,6 @@
   <data name="&gt;&gt;ActionGetGPS.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 125</value>
-  </data>
-  <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
-    <value>EditGPSLatitude</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 38</value>
-  </data>
-  <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditTimeZone.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 60</value>
-  </data>
-  <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="EditTimeZone.Text" xml:space="preserve">
-    <value>sdvsdv
-sdvsdv
-
-sdvsdvdsvs</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
-    <value>EditTimeZone</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 172</value>
-  </data>
-  <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
-    <value>EditGPSLongitude</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -745,7 +661,7 @@ sdvsdvdsvs</value>
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="EditFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -916,7 +832,7 @@ sdvsdvdsvs</value>
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;LabelMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="EditFontName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2460,7 +2376,7 @@ sdvsdvdsvs</value>
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMonthViewSunToolTips.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="LabelColorNoDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3089,33 +3005,6 @@ sdvsdvdsvs</value>
   <data name="&gt;&gt;SelectAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 346</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Name" xml:space="preserve">
-    <value>EditAutoGenerateYearsInterval</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="EditVacuumAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3123,7 +3012,7 @@ sdvsdvdsvs</value>
     <value>NoControl</value>
   </data>
   <data name="EditVacuumAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 105</value>
+    <value>24, 110</value>
   </data>
   <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 17</value>
@@ -3187,7 +3076,7 @@ sdvsdvdsvs</value>
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;ActionAutoGenerateHelp.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>10</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3280,7 +3169,7 @@ sdvsdvdsvs</value>
     <value>NoControl</value>
   </data>
   <data name="EditAutoOpenExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 235</value>
+    <value>24, 240</value>
   </data>
   <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>
@@ -3388,7 +3277,7 @@ sdvsdvdsvs</value>
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 145</value>
+    <value>24, 150</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 17</value>
@@ -3418,7 +3307,7 @@ sdvsdvdsvs</value>
     <value>NoControl</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 125</value>
+    <value>24, 130</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 17</value>
@@ -3448,7 +3337,7 @@ sdvsdvdsvs</value>
     <value>NoControl</value>
   </data>
   <data name="EditLogEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 190</value>
+    <value>24, 195</value>
   </data>
   <data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 17</value>
@@ -3508,7 +3397,7 @@ sdvsdvdsvs</value>
     <value>NoControl</value>
   </data>
   <data name="EditDebuggerEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 170</value>
+    <value>24, 175</value>
   </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 17</value>
@@ -3568,7 +3457,7 @@ sdvsdvdsvs</value>
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditBigCalendarWarning.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>7</value>
   </data>
   <data name="EditAllowSuspendReminder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3616,7 +3505,7 @@ sdvsdvdsvs</value>
     <value>NoControl</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 215</value>
+    <value>24, 220</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
@@ -3676,7 +3565,7 @@ sdvsdvdsvs</value>
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditAutoRegenerate.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>9</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3701,7 +3590,7 @@ sdvsdvdsvs</value>
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>534, 281</value>
+    <value>534, 286</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3723,30 +3612,6 @@ sdvsdvdsvs</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 284</value>
-  </data>
-  <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 20</value>
-  </data>
-  <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="EditHebrewLettersPath.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
-    <value>EditHebrewLettersPath</value>
-  </data>
-  <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
-  </data>
-  <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>139, 21</value>
@@ -3875,30 +3740,6 @@ sdvsdvdsvs</value>
   <data name="&gt;&gt;ActionMoonDayTextFormatHelp.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 89</value>
-  </data>
-  <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 20</value>
-  </data>
-  <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
-    <value>EditMoonDayTextFormat</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="EditMaxYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -3971,6 +3812,18 @@ sdvsdvdsvs</value>
   <data name="tabControl1.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
   </data>
+  <data name="EditCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 344</value>
+  </data>
+  <data name="EditCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 20</value>
+  </data>
+  <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="EditCalculatorPath.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;EditCalculatorPath.Name" xml:space="preserve">
     <value>EditCalculatorPath</value>
   </data>
@@ -3982,6 +3835,64 @@ sdvsdvdsvs</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 289</value>
+  </data>
+  <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 20</value>
+  </data>
+  <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="EditHebrewLettersPath.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
+    <value>EditHebrewLettersPath</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>534, 341</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;ActionSelectCalculatorPath.Name" xml:space="preserve">
     <value>ActionSelectCalculatorPath</value>
@@ -4002,7 +3913,7 @@ sdvsdvdsvs</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>657, 471</value>
+    <value>666, 471</value>
   </data>
   <data name="TabPageApplication.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4154,6 +4065,18 @@ sdvsdvdsvs</value>
   <data name="&gt;&gt;PanelCalendarColors.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
+    <value>EditMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="TabPageMonthView.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
   </data>
@@ -4235,21 +4158,6 @@ sdvsdvdsvs</value>
   <data name="&gt;&gt;TabPageCelebrations.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="LabelMaxYearsInterval.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelMaxYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 235</value>
-  </data>
-  <data name="LabelMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 13</value>
-  </data>
-  <data name="LabelMaxYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="LabelMaxYearsInterval.Text" xml:space="preserve">
-    <value>Max years interval</value>
-  </data>
   <data name="&gt;&gt;LabelMaxYearsInterval.Name" xml:space="preserve">
     <value>LabelMaxYearsInterval</value>
   </data>
@@ -4262,6 +4170,54 @@ sdvsdvdsvs</value>
   <data name="&gt;&gt;LabelMaxYearsInterval.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
+    <value>EditGPSLatitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
+    <value>EditTimeZone</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
+    <value>EditGPSLongitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Name" xml:space="preserve">
+    <value>EditAutoGenerateYearsInterval</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
   <data name="TabPageGeneration.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
   </data>
@@ -4269,7 +4225,7 @@ sdvsdvdsvs</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageGeneration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>657, 471</value>
+    <value>666, 471</value>
   </data>
   <data name="TabPageGeneration.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -4290,10 +4246,10 @@ sdvsdvdsvs</value>
     <value>8</value>
   </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 15</value>
+    <value>10, 10</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>665, 500</value>
+    <value>674, 500</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -4310,78 +4266,11 @@ sdvsdvdsvs</value>
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="EditCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 339</value>
-  </data>
-  <data name="EditCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 20</value>
-  </data>
-  <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="EditCalculatorPath.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;EditCalculatorPath.Name" xml:space="preserve">
-    <value>EditCalculatorPath</value>
-  </data>
-  <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
-  </data>
-  <data name="&gt;&gt;EditCalculatorPath.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
-        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
-        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
-        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
-        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
-        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
-        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
-        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
-        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
-        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>534, 336</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectCalculatorPath.Name" xml:space="preserve">
-    <value>ActionSelectCalculatorPath</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectCalculatorPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectCalculatorPath.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectCalculatorPath.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="LabelMoonDayTextFormat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="LabelMoonDayTextFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="LabelMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 70</value>
@@ -4428,6 +4317,171 @@ sdvsdvdsvs</value>
   <data name="&gt;&gt;PanelCalendarColors.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="LabelMaxYearsInterval.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelMaxYearsInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelMaxYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 235</value>
+  </data>
+  <data name="LabelMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="LabelMaxYearsInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="LabelMaxYearsInterval.Text" xml:space="preserve">
+    <value>Max years interval</value>
+  </data>
+  <data name="&gt;&gt;LabelMaxYearsInterval.Name" xml:space="preserve">
+    <value>LabelMaxYearsInterval</value>
+  </data>
+  <data name="&gt;&gt;LabelMaxYearsInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMaxYearsInterval.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;LabelMaxYearsInterval.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 89</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 20</value>
+  </data>
+  <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
+    <value>EditMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 125</value>
+  </data>
+  <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
+    <value>EditGPSLatitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 38</value>
+  </data>
+  <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditTimeZone.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 60</value>
+  </data>
+  <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditTimeZone.Text" xml:space="preserve">
+    <value>sdvsdv
+sdvsdv
+
+sdvsdvdsvs</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
+    <value>EditTimeZone</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 172</value>
+  </data>
+  <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
+    <value>EditGPSLongitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 346</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Name" xml:space="preserve">
+    <value>EditAutoGenerateYearsInterval</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -4435,7 +4489,10 @@ sdvsdvdsvs</value>
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>694, 561</value>
+    <value>694, 551</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

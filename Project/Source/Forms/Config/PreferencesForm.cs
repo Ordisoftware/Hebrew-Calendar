@@ -627,10 +627,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.StartWithWindowsUserRegistry = EditStartWithWindows.Checked;
     }
 
-    private void EditHebrewLettersPath_TextChanged(object sender, EventArgs e)
-    {
-
-    }
   }
 
 }
