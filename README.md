@@ -158,6 +158,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 #### 2020.11.__ - Version 5.6
 
 - Rework preferences form design with tab pages.
+- Fix preferences colors when disabled.
 
 #### 2020.09.29 - Version 5.5
 
