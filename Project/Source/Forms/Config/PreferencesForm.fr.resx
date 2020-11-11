@@ -370,10 +370,10 @@
     <value>Délai avant le vérrouillage automatique en secondes</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 13</value>
+    <value>152, 13</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Text" xml:space="preserve">
-    <value>Heures avant le rappel</value>
+    <value>Heures avant le second rappel</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 13</value>
@@ -382,10 +382,10 @@
     <value>Rappeler toutes les minutes</value>
   </data>
   <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 13</value>
+    <value>142, 13</value>
   </data>
   <data name="LabelTimerInterval.Text" xml:space="preserve">
-    <value>Nombre de jours avant</value>
+    <value>Jours avant le premier rappel</value>
   </data>
   <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 17</value>
@@ -611,7 +611,7 @@
     <value>Activer le menu des liens web</value>
   </data>
   <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 17</value>
+    <value>305, 17</value>
   </data>
   <data name="EditAutoRegenerate.Text" xml:space="preserve">
     <value>Auto-générer données pour cet intervalle d'années si expiré</value>
@@ -688,6 +688,9 @@
   <data name="LabelMaxYearsInterval.Text" xml:space="preserve">
     <value>Intervalle d'années maximum</value>
   </data>
+  <data name="TabPageReminder.Text" xml:space="preserve">
+    <value>Rappeleur</value>
+  </data>
   <data name="TabPageCelebrations.Text" xml:space="preserve">
     <value>Célébrations</value>
   </data>
@@ -708,8 +711,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="TabPageReminder.Text" xml:space="preserve">
-    <value>Rappeleur</value>
   </data>
 </root>

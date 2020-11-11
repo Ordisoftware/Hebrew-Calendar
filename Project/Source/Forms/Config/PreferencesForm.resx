@@ -133,7 +133,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 106</value>
+    <value>20, 111</value>
   </data>
   <data name="LabelGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -157,7 +157,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;LabelGPSLatitude.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <metadata name="LabelGPSLongitude.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -172,7 +172,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 153</value>
+    <value>107, 111</value>
   </data>
   <data name="LabelGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
@@ -196,7 +196,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;LabelGPSLongitude.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <metadata name="label7.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -304,7 +304,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;LabelTimeZone.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <metadata name="LabelCalculatorPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -349,7 +349,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 3</value>
+    <value>526, 3</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -532,10 +532,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 447</value>
+    <value>10, 448</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>595, 28</value>
+    <value>604, 28</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -595,7 +595,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 202</value>
+    <value>20, 162</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -616,7 +616,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;ActionGetGPS.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1890,7 +1890,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCountAsMoonHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 335</value>
+    <value>17, 354</value>
   </data>
   <data name="ActionCountAsMoonHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -1905,10 +1905,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCountAsMoonHelp.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
+    <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;ActionCountAsMoonHelp.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="EditUseColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1986,16 +1986,16 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 52</value>
+    <value>185, 50</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
+    <value>140, 13</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Text" xml:space="preserve">
-    <value>Hours before remind</value>
+    <value>Hours before second remind</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.Name" xml:space="preserve">
     <value>LabelRemindCelebrationHoursBefore</value>
@@ -2007,7 +2007,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2019,7 +2019,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 102</value>
+    <value>185, 100</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 13</value>
@@ -2040,13 +2040,13 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="EditEventsDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventsDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 155</value>
+    <value>188, 158</value>
   </data>
   <data name="EditEventsDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 169</value>
@@ -2064,13 +2064,13 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditEventsDay.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="EditEvents.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEvents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 155</value>
+    <value>23, 158</value>
   </data>
   <data name="EditEvents.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 169</value>
@@ -2088,13 +2088,13 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditEvents.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="EditReminderCelebrationsInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditReminderCelebrationsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 121</value>
+    <value>23, 69</value>
   </data>
   <data name="EditReminderCelebrationsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -2112,7 +2112,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditReminderCelebrationsInterval.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="LabelTimerInterval.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2124,16 +2124,16 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTimerInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 102</value>
+    <value>20, 50</value>
   </data>
   <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 13</value>
+    <value>117, 13</value>
   </data>
   <data name="LabelTimerInterval.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="LabelTimerInterval.Text" xml:space="preserve">
-    <value>Before days count</value>
+    <value>Days before first remind</value>
   </data>
   <data name="&gt;&gt;LabelTimerInterval.Name" xml:space="preserve">
     <value>LabelTimerInterval</value>
@@ -2145,7 +2145,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelTimerInterval.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2175,7 +2175,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditRemindCelebrationHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 71</value>
+    <value>188, 69</value>
   </data>
   <data name="EditRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -2193,7 +2193,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="EditAutoLockSession.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2238,7 +2238,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 20</value>
+    <value>23, 335</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 17</value>
@@ -2256,10 +2256,10 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditTorahEventsCountAsMoon.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
+    <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditTorahEventsCountAsMoon.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="EditReminderCelebrationsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2271,7 +2271,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditReminderCelebrationsEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 50</value>
+    <value>23, 20</value>
   </data>
   <data name="EditReminderCelebrationsEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 17</value>
@@ -2292,13 +2292,13 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditReminderCelebrationsEnabled.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="EditRemindCelebrationEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditRemindCelebrationEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 121</value>
+    <value>188, 119</value>
   </data>
   <data name="EditRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -2316,7 +2316,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="EditMonthViewSunToolTips.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2964,7 +2964,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 336</value>
+    <value>98, 296</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -2982,7 +2982,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;SelectAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="EditVacuumAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3037,7 +3037,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionAutoGenerateHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 336</value>
+    <value>130, 296</value>
   </data>
   <data name="ActionAutoGenerateHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3055,7 +3055,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;ActionAutoGenerateHelp.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3412,7 +3412,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBigCalendarWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 285</value>
+    <value>23, 245</value>
   </data>
   <data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
@@ -3436,7 +3436,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditBigCalendarWarning.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="EditAllowSuspendReminder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3520,7 +3520,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoRegenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 313</value>
+    <value>23, 273</value>
   </data>
   <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 17</value>
@@ -3544,7 +3544,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditAutoRegenerate.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -3572,7 +3572,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 296</value>
+    <value>544, 296</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3723,7 +3723,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditMaxYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 254</value>
+    <value>23, 214</value>
   </data>
   <data name="EditMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -3741,7 +3741,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditMaxYearsInterval.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LabelYearsIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3753,7 +3753,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelYearsIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 258</value>
+    <value>81, 218</value>
   </data>
   <data name="LabelYearsIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -3798,7 +3798,7 @@
     <value>23, 354</value>
   </data>
   <data name="EditCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>517, 20</value>
+    <value>515, 20</value>
   </data>
   <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -3822,7 +3822,7 @@
     <value>23, 299</value>
   </data>
   <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>517, 20</value>
+    <value>515, 20</value>
   </data>
   <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -3865,7 +3865,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 351</value>
+    <value>544, 351</value>
   </data>
   <data name="ActionSelectCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3919,7 +3919,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMaxYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 235</value>
+    <value>20, 195</value>
   </data>
   <data name="LabelMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
@@ -3946,7 +3946,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 125</value>
+    <value>23, 130</value>
   </data>
   <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>
@@ -3964,7 +3964,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="EditTimeZone.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -3982,7 +3982,7 @@
     <value>Vertical</value>
   </data>
   <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>537, 60</value>
+    <value>535, 60</value>
   </data>
   <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3997,13 +3997,13 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 172</value>
+    <value>110, 130</value>
   </data>
   <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>
@@ -4021,13 +4021,13 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 339</value>
+    <value>42, 299</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 20</value>
@@ -4048,7 +4048,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="TabPageGeneration.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -4195,7 +4195,7 @@
     <value>23, 122</value>
   </data>
   <data name="PanelCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>553, 268</value>
+    <value>551, 266</value>
   </data>
   <data name="PanelCalendarColors.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
@@ -4297,7 +4297,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageNavigationWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>587, 398</value>
+    <value>596, 399</value>
   </data>
   <data name="TabPageNavigationWindow.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -4327,7 +4327,7 @@
     <value>10, 10</value>
   </data>
   <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>595, 427</value>
+    <value>604, 428</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -4348,10 +4348,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottomSeparator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 437</value>
+    <value>10, 438</value>
   </data>
   <data name="PanelBottomSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>595, 10</value>
+    <value>604, 10</value>
   </data>
   <data name="PanelBottomSeparator.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
@@ -4375,7 +4375,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>615, 485</value>
+    <value>624, 486</value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
