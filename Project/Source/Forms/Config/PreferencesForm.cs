@@ -332,6 +332,9 @@ namespace Ordisoftware.Hebrew.Calendar
       EditRemindCelebrationHoursBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
       LabelRemindCelebrationEveryMinutes.Enabled = EditReminderCelebrationsEnabled.Checked;
       EditRemindCelebrationEveryMinutes.Enabled = EditReminderCelebrationsEnabled.Checked;
+      EditAutoLockSession.Enabled = EditReminderCelebrationsEnabled.Checked;
+      LabelRemindAutoLockTimeOut.Enabled = EditReminderCelebrationsEnabled.Checked;
+      EditAutoLockSessionTimeOut.Enabled = EditReminderCelebrationsEnabled.Checked;
     }
 
     private void EditBalloon_CheckedChanged(object sender, EventArgs e)
@@ -575,6 +578,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EditUseColors_CheckedChanged(object sender, EventArgs e)
     {
       MustRefreshMonthView = true;
+      PanelCalendarColors.Enabled = EditUseColors.Checked;
     }
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
@@ -621,6 +625,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)
     {
       SystemManager.StartWithWindowsUserRegistry = EditStartWithWindows.Checked;
+    }
+
+    private void EditHebrewLettersPath_TextChanged(object sender, EventArgs e)
+    {
+
     }
   }
 
