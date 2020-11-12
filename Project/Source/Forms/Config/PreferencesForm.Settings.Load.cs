@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -33,6 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditDebuggerEnabled.Checked = Settings.DebuggerEnabled;
       EditVacuumAtStartup.Checked = Settings.VacuumAtStartup;
       EditHebrewLettersPath.Text = Settings.HebrewLettersExe;
+      EditCalculatorPath.Text = Settings.CalculatorExe;
       EditAutoLockSession.Checked = Settings.AutoLockSession;
       EditAutoLockSessionTimeOut.Value = Settings.AutoLockSessionTimeOut;
       EditAutoOpenExportFolder.Checked = Settings.AutoOpenExportFolder;

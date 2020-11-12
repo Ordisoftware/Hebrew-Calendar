@@ -602,6 +602,20 @@ namespace Ordisoftware.Hebrew.Calendar
       MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
     }
 
+    private void ActionSelectCalculatorPath_Click(object sender, EventArgs e)
+    {
+      SystemManager.TryCatch(() =>
+      {
+        OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditCalculatorPath.Text);
+      });
+      SystemManager.TryCatch(() =>
+      {
+        OpenFileDialog.FileName = Path.GetFileName(EditCalculatorPath.Text);
+      });
+      if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
+        EditCalculatorPath.Text = OpenFileDialog.FileName;
+    }
+
     private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
     {
       SystemManager.TryCatch(() => 
@@ -631,7 +645,15 @@ namespace Ordisoftware.Hebrew.Calendar
       EditAutoGenerateYearsInterval.Text = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue.ToString();
     }
 
+    private void EditResetCalculatorPath_Click(object sender, EventArgs e)
+    {
+      EditCalculatorPath.Text = (string)Settings.Properties["CalculatorExe"].DefaultValue;
+    }
 
+    private void EditResetHebrewLettersPath_Click(object sender, EventArgs e)
+    {
+      EditHebrewLettersPath.Text = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
+    }
   }
 
 }

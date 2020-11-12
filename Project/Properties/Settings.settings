@@ -403,5 +403,8 @@
     <Setting Name="PreferencesFormSelectedTabIndex" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="CalculatorExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">calc.exe</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

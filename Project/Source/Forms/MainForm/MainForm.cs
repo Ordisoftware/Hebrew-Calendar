@@ -708,7 +708,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionOpenCalculator_Click(object sender, EventArgs e)
     {
-      SystemManager.RunShell("calc.exe");
+      SystemManager.RunShell(Settings.CalculatorExe);
     }
 
     /// <summary>

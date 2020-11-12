@@ -1604,5 +1604,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["PreferencesFormSelectedTabIndex"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("calc.exe")]
+        public string CalculatorExe {
+            get {
+                return ((string)(this["CalculatorExe"]));
+            }
+            set {
+                this["CalculatorExe"] = value;
+            }
+        }
     }
 }

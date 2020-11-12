@@ -471,10 +471,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="EditCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 354</value>
+    <value>23, 299</value>
   </data>
   <data name="EditCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 20</value>
+    <value>492, 20</value>
   </data>
   <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -495,10 +495,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 299</value>
+    <value>23, 354</value>
   </data>
   <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 20</value>
+    <value>492, 20</value>
   </data>
   <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -558,7 +558,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 335</value>
+    <value>20, 280</value>
   </data>
   <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 13</value>
@@ -635,6 +635,92 @@
   <data name="&gt;&gt;EditBalloonLoomingDelay.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="EditResetHebrewLettersPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="EditResetHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditResetHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
+        Wmp+hAvbOWebNoxdKBKlMSkXk9pJrVEu9PW858rFe+HkqU/P+37P+3yf5307DMC/EIpWEIpWEIpWYPJc
+        inkIdyjJ2mZ1h6RoMVdA/XAGVDj9BM+ES9HQMqPH3LNJmyeUMus4jAT+IdqsaJtdC8dY0gtQ796QeSwT
+        hkm2aODw5hWBw1u0z6dBjdZ4U9OAOmI5+4ye1QukHwxEL0uYOipiKHKNwY0LeNdy8K6fY5AY37pCJP+C
+        AVrTxDumgdOfQMH4glZ4x8h+Ed2Re8iLOUj+RLXRFw7Z5eG+unZfP88OX3hOCmqfvSunoGuADGTTIP5Y
+        RV/sCd7dZ3Su5NE0EcswxuqJGsL2C75vcE1u61TMDcCaFRVnpW+MJssYSxuIFyroUA4OPPSofEQRFLXS
+        9N4JnflirUG1IpFJi5IgKAc18IcVFf6Gws6n4Qs+qkPA30L0c1hBKFpBKFpBKP4dsB8ReHHdeAdE8gAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="EditResetHebrewLettersPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditResetHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 351</value>
+  </data>
+  <data name="EditResetHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="EditResetHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;EditResetHebrewLettersPath.Name" xml:space="preserve">
+    <value>EditResetHebrewLettersPath</value>
+  </data>
+  <data name="&gt;&gt;EditResetHebrewLettersPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditResetHebrewLettersPath.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditResetHebrewLettersPath.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="EditResetCalculatorPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="EditResetCalculatorPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditResetCalculatorPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
+        Wmp+hAvbOWebNoxdKBKlMSkXk9pJrVEu9PW858rFe+HkqU/P+37P+3yf5307DMC/EIpWEIpWEIpWYPJc
+        inkIdyjJ2mZ1h6RoMVdA/XAGVDj9BM+ES9HQMqPH3LNJmyeUMus4jAT+IdqsaJtdC8dY0gtQ796QeSwT
+        hkm2aODw5hWBw1u0z6dBjdZ4U9OAOmI5+4ye1QukHwxEL0uYOipiKHKNwY0LeNdy8K6fY5AY37pCJP+C
+        AVrTxDumgdOfQMH4glZ4x8h+Ed2Re8iLOUj+RLXRFw7Z5eG+unZfP88OX3hOCmqfvSunoGuADGTTIP5Y
+        RV/sCd7dZ3Su5NE0EcswxuqJGsL2C75vcE1u61TMDcCaFRVnpW+MJssYSxuIFyroUA4OPPSofEQRFLXS
+        9N4JnflirUG1IpFJi5IgKAc18IcVFf6Gws6n4Qs+qkPA30L0c1hBKFpBKFpBKP4dsB8ReHHdeAdE8gAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="EditResetCalculatorPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditResetCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 296</value>
+  </data>
+  <data name="EditResetCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="EditResetCalculatorPath.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;EditResetCalculatorPath.Name" xml:space="preserve">
+    <value>EditResetCalculatorPath</value>
+  </data>
+  <data name="&gt;&gt;EditResetCalculatorPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditResetCalculatorPath.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditResetCalculatorPath.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="ActionSelectCalculatorPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -661,7 +747,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 351</value>
+    <value>526, 296</value>
   </data>
   <data name="ActionSelectCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -679,7 +765,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectCalculatorPath.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="SelectOpenMainForm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -712,7 +798,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;SelectOpenMainForm.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <metadata name="LabelHebrewLettersPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -724,7 +810,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 280</value>
+    <value>20, 335</value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -745,7 +831,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="SelectOpenNavigationForm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -778,7 +864,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;SelectOpenNavigationForm.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -806,7 +892,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>968, 296</value>
+    <value>526, 351</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -824,7 +910,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -867,7 +953,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="EditAutoOpenExportFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -897,7 +983,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -927,7 +1013,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
   <data name="EditStartupHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -957,7 +1043,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditStartupHide.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>21</value>
   </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -987,7 +1073,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>22</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1017,7 +1103,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateEveryWeek.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>23</value>
   </data>
   <data name="EditStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1047,7 +1133,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditStartWithWindows.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>24</value>
   </data>
   <data name="EditCheckUpdateAtStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1077,7 +1163,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditCheckUpdateAtStartup.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>25</value>
   </data>
   <data name="EditLogEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1107,7 +1193,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>26</value>
   </data>
   <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -1146,7 +1232,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelYearsIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 218</value>
+    <value>81, 98</value>
   </data>
   <data name="LabelYearsIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -1176,7 +1262,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMaxYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 195</value>
+    <value>20, 75</value>
   </data>
   <data name="LabelMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
@@ -1222,7 +1308,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCountAsMoonHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 354</value>
+    <value>17, 38</value>
   </data>
   <data name="ActionCountAsMoonHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -1246,7 +1332,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditMaxYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 214</value>
+    <value>23, 94</value>
   </data>
   <data name="EditMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1276,7 +1362,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 335</value>
+    <value>23, 20</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 17</value>
@@ -1309,7 +1395,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 162</value>
+    <value>20, 355</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -1354,7 +1440,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 296</value>
+    <value>88, 173</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -1387,7 +1473,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 111</value>
+    <value>20, 300</value>
   </data>
   <data name="LabelGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -1426,7 +1512,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
+    <value>20, 210</value>
   </data>
   <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -1465,7 +1551,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBigCalendarWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 245</value>
+    <value>23, 125</value>
   </data>
   <data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
@@ -1504,7 +1590,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 111</value>
+    <value>107, 300</value>
   </data>
   <data name="LabelGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
@@ -1543,7 +1629,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoRegenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 273</value>
+    <value>23, 150</value>
   </data>
   <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 17</value>
@@ -1592,7 +1678,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionAutoGenerateHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 296</value>
+    <value>120, 173</value>
   </data>
   <data name="ActionAutoGenerateHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -1616,7 +1702,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 130</value>
+    <value>23, 319</value>
   </data>
   <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>
@@ -1643,7 +1729,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 39</value>
+    <value>23, 229</value>
   </data>
   <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1673,7 +1759,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 130</value>
+    <value>110, 319</value>
   </data>
   <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>
@@ -1697,7 +1783,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 299</value>
+    <value>42, 176</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -1727,7 +1813,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageGeneration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>606, 399</value>
+    <value>606, 404</value>
   </data>
   <data name="TabPageGeneration.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1961,7 +2047,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>606, 399</value>
+    <value>606, 404</value>
   </data>
   <data name="TabPageReminder.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2070,7 +2156,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionPersonalShabatHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 36</value>
+    <value>184, 36</value>
   </data>
   <data name="ActionPersonalShabatHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -2301,7 +2387,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>606, 399</value>
+    <value>606, 404</value>
   </data>
   <data name="TabPageShabat.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2580,7 +2666,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>606, 399</value>
+    <value>606, 404</value>
   </data>
   <data name="TabPageCelebrations.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3769,7 +3855,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageMonthView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>606, 399</value>
+    <value>606, 404</value>
   </data>
   <data name="TabPageMonthView.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4024,7 +4110,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageTextReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>606, 399</value>
+    <value>606, 404</value>
   </data>
   <data name="TabPageTextReport.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4321,7 +4407,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageNavigationWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>606, 399</value>
+    <value>606, 404</value>
   </data>
   <data name="TabPageNavigationWindow.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -4366,7 +4452,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -4376,9 +4462,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>634, 486</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
