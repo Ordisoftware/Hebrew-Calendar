@@ -554,7 +554,7 @@
     <value>274, 17</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
-    <value>Fermer la boite de rappel sur en cliquant n'importe où</value>
+    <value>Fermer la boite de rappel en cliquant n'importe où</value>
   </data>
   <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 17</value>
