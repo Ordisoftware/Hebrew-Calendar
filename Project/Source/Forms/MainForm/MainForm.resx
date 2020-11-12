@@ -1653,6 +1653,27 @@
   <data name="ActionShowShabatNotice.Text" xml:space="preserve">
     <value>Shabat notice</value>
   </data>
+  <data name="ActionShowKeyboardNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFgSURBVDhPtZL9SgJREMX3XeoBgh6w/tJiLSq/QzfT1coC
+        LUiCPlBZLZWtLE0SLHqE/FhNiNM9NyUQpSwa+O1cZuacWS5X+Zdw+LcxOE4Xqj90TPGiw2UMStOF6gtx
+        87xgVhZ+EsueraTdHYTNGZgKaqhV7K4gai/PqDw1JNVvGM5RQ61Ct3K9Dj2ZQuzwBFFB7GhCFnAukkhJ
+        DbXSwKw+oN+1wAt87/ewshkem9l/szqoPTZQqlQHBq4ASnf3WA3oWNdi2AjtTGRNi0L1h9FuvuLqtvxl
+        kDdvpHO/14UnvCe3eSIjWdT5l1a7hU6rCaN0DWrlJRpFE149Dl/0AH6BPOv7Y7M3EhemcRgF8/MS+cnk
+        C2K7heBuQv4Jt4yjJ3qc4Sw10mDJoyGbK+Iieyk5z+Rxls7hdATW2BvOUUOtYndrTR74MCTC1TYB9oZz
+        1CyozjQf45yAz/c3zAj+EoryAcSSBOPwye6PAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionShowKeyboardNotice.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionShowKeyboardNotice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 22</value>
+  </data>
+  <data name="ActionShowKeyboardNotice.Text" xml:space="preserve">
+    <value>Keyboard shortcuts notice</value>
+  </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 6</value>
   </data>
@@ -2242,7 +2263,7 @@
     <value>F1</value>
   </data>
   <data name="ActionViewReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 38</value>
+    <value>145, 38</value>
   </data>
   <data name="ActionViewReport.Text" xml:space="preserve">
     <value>Report</value>
@@ -2283,7 +2304,7 @@
     <value>F2</value>
   </data>
   <data name="ActionViewMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 38</value>
+    <value>145, 38</value>
   </data>
   <data name="ActionViewMonth.Text" xml:space="preserve">
     <value>Month</value>
@@ -2322,7 +2343,7 @@
     <value>F3</value>
   </data>
   <data name="ActionViewGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 38</value>
+    <value>145, 38</value>
   </data>
   <data name="ActionViewGrid.Text" xml:space="preserve">
     <value>Grid</value>
@@ -2364,7 +2385,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 46</value>
+    <value>45, 36</value>
   </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -3074,6 +3095,12 @@
     <value>ActionShowShabatNotice</value>
   </data>
   <data name="&gt;&gt;ActionShowShabatNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowKeyboardNotice.Name" xml:space="preserve">
+    <value>ActionShowKeyboardNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionShowKeyboardNotice.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">

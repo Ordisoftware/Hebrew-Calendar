@@ -651,24 +651,12 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuExit_Click(MenuExit, null);
     }
 
-    /// <summary>
-    /// Event handler. Called by ActionShowShabatNotice for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    internal void ActionShowShabatNotice_Click(object sender, EventArgs e)
+    private void ShowNotice(object sender, TranslationsDictionary title, TranslationsDictionary text, int width)
     {
-      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == AppTranslations.NoticeShabatTitle.GetLang());
-      if ( form != null )
-        form.Popup(null, sender == null);
-      else
-      {
-        form = new MessageBoxEx(AppTranslations.NoticeShabatTitle,
-                                AppTranslations.NoticeShabat,
-                                MessageBoxEx.DefaultLargeWidth);
-        form.ShowInTaskbar = true;
-        form.Popup(null, sender == null);
-      }
+      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title.GetLang());
+      if ( form == null )
+        form = new MessageBoxEx(title, text, width); form.ShowInTaskbar = true;
+      form.Popup(null, sender == null);
     }
 
     /// <summary>
@@ -678,17 +666,37 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     internal void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == AppTranslations.NoticeCelebrationsTitle.GetLang());
-      if ( form != null )
-        form.Popup(null, sender == null);
-      else
-      {
-        form = new MessageBoxEx(AppTranslations.NoticeCelebrationsTitle,
-                                AppTranslations.NoticeCelebrations,
-                                MessageBoxEx.DefaultMediumWidth);
-        form.ShowInTaskbar = true;
-        form.Popup(null, sender == null);
-      }
+      ShowNotice(sender, 
+                 AppTranslations.NoticeCelebrationsTitle, 
+                 AppTranslations.NoticeCelebrations, 
+                 MessageBoxEx.DefaultMediumWidth);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionShowShabatNotice for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    internal void ActionShowShabatNotice_Click(object sender, EventArgs e)
+    {
+      ShowNotice(sender,
+                 AppTranslations.NoticeShabatTitle,
+                 AppTranslations.NoticeShabat,
+                 MessageBoxEx.DefaultLargeWidth);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionShowKeyboardNotice for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionShowKeyboardNotice_Click(object sender, EventArgs e)
+    {
+      var form = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+                                  AppTranslations.NoticeKeyboardShortcuts,
+                                  false, false, 500, 670, false, false);
+      form.TextBox.Font = new Font("Courier new", 8);
+      form.ShowDialog();
     }
 
     /// <summary>

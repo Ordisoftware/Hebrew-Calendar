@@ -103,6 +103,7 @@
       this.ActionViewMoonMonthsSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowCelebrationsNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowShabatNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowKeyboardNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
@@ -785,6 +786,7 @@
             this.ActionViewMoonMonthsSeparator,
             this.ActionShowCelebrationsNotice,
             this.ActionShowShabatNotice,
+            this.ActionShowKeyboardNotice,
             this.toolStripSeparator8,
             this.ActionCalculateDateDiff,
             this.ActionGenerate,
@@ -821,6 +823,12 @@
       resources.ApplyResources(this.ActionShowShabatNotice, "ActionShowShabatNotice");
       this.ActionShowShabatNotice.Name = "ActionShowShabatNotice";
       this.ActionShowShabatNotice.Click += new System.EventHandler(this.ActionShowShabatNotice_Click);
+      // 
+      // ActionShowKeyboardNotice
+      // 
+      resources.ApplyResources(this.ActionShowKeyboardNotice, "ActionShowKeyboardNotice");
+      this.ActionShowKeyboardNotice.Name = "ActionShowKeyboardNotice";
+      this.ActionShowKeyboardNotice.Click += new System.EventHandler(this.ActionShowKeyboardNotice_Click);
       // 
       // toolStripSeparator8
       // 
@@ -1411,6 +1419,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.ToolStripMenuItem ActionSelectReminderBoxSound;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+    private System.Windows.Forms.ToolStripMenuItem ActionShowKeyboardNotice;
   }
 }
 
