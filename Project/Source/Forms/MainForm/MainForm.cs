@@ -802,8 +802,15 @@ namespace Ordisoftware.Hebrew.Calendar
           document.DefaultPageSettings.Landscape = true;
           document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
           PrintDialog.Document = document;
-          if ( PrintDialog.ShowDialog() == DialogResult.Cancel ) return;
-          SystemManager.TryCatchManage(() => document.Print());
+          var timer = new Timer();
+          timer.Interval = 250;
+          timer.Tick += (_s, _e) =>
+          {
+            timer.Stop();
+            if ( PrintDialog.ShowDialog(this) == DialogResult.OK )
+              SystemManager.TryCatchManage(() => document.Print());
+          };
+          timer.Start();
         }
       }
       finally
