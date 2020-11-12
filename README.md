@@ -157,6 +157,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.11.__ - Version 5.6
 
+- Add keyboard shortcuts notice in tools menu.
 - Add option to set the Calculator application path.
 - Add option to set the Hebrew Letters application path.
 - Improve date diff calculator to set second date to current day when (re)opened.
