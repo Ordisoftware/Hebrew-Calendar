@@ -33,7 +33,7 @@ namespace Ordisoftware.Core
     /// <param name="values">The dictionary containing lang>translation.</param>
     static public string GetLang(this TranslationsDictionary values)
     {
-      return values?[Languages.Current] ?? ERR;
+      return values?[Languages.Current] ?? values?[Languages.Default] ?? ERR;
     }
 
     /// <summary>
