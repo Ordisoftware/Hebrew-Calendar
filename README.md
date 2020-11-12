@@ -157,8 +157,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.11.__ - Version 5.6
 
+- Improve date diff calculator to set second date to current day when (re)opened.
 - Rework preferences form design with tab pages.
-- Fix preferences colors when disabled.
+- Fix some preferences controls to be disabled when related options are disabled.
 
 #### 2020.09.29 - Version 5.5
 
