@@ -349,7 +349,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>526, 3</value>
+    <value>536, 3</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -495,6 +495,42 @@
   <data name="&gt;&gt;LabelFontName.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;ActionResetSettings.Name" xml:space="preserve">
+    <value>ActionResetSettings</value>
+  </data>
+  <data name="&gt;&gt;ActionResetSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionResetSettings.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionResetSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 448</value>
+  </data>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>614, 28</value>
+  </data>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="ActionResetSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -527,30 +563,6 @@
   </data>
   <data name="&gt;&gt;ActionResetSettings.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 448</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>604, 28</value>
-  </data>
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="ActionUsePersonalShabat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1781,13 +1793,13 @@
     <value>416, 170</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 13</value>
+    <value>94, 13</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Next event back</value>
+    <value>Future event back</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -2964,7 +2976,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 296</value>
+    <value>88, 296</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3037,7 +3049,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionAutoGenerateHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 296</value>
+    <value>120, 296</value>
   </data>
   <data name="ActionAutoGenerateHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3572,7 +3584,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 296</value>
+    <value>554, 296</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3601,30 +3613,6 @@
   <metadata name="MenuSelectMoonDayTextFormat.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>274, 21</value>
   </metadata>
-  <data name="nissan11ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="nissan11ToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nissan [1] #10</value>
-  </data>
-  <data name="nissan11ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="nissan11ToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Nissan (1) #10</value>
-  </data>
-  <data name="nissanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="nissanToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nissan #10</value>
-  </data>
-  <data name="nissan1ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="nissan1ToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nissan 10</value>
-  </data>
   <data name="MenuSelectMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 92</value>
   </data>
@@ -3675,6 +3663,30 @@
   </data>
   <data name="&gt;&gt;ActionMoonDayTextFormatReset.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="nissan11ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissan11ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nissan [1] #10</value>
+  </data>
+  <data name="nissan11ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissan11ToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Nissan (1) #10</value>
+  </data>
+  <data name="nissanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissanToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nissan #10</value>
+  </data>
+  <data name="nissan1ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="nissan1ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nissan 10</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3791,18 +3803,6 @@
   <data name="TabControl.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
   </data>
-  <data name="EditCalculatorPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="EditCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 354</value>
-  </data>
-  <data name="EditCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>515, 20</value>
-  </data>
-  <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
   <data name="&gt;&gt;EditCalculatorPath.Name" xml:space="preserve">
     <value>EditCalculatorPath</value>
   </data>
@@ -3815,18 +3815,6 @@
   <data name="&gt;&gt;EditCalculatorPath.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="EditHebrewLettersPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 299</value>
-  </data>
-  <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>515, 20</value>
-  </data>
-  <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
     <value>EditHebrewLettersPath</value>
   </data>
@@ -3838,40 +3826,6 @@
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
-        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
-        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
-        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
-        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
-        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
-        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
-        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
-        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
-        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 351</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionSelectCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
   </data>
   <data name="&gt;&gt;ActionSelectCalculatorPath.Name" xml:space="preserve">
     <value>ActionSelectCalculatorPath</value>
@@ -3892,7 +3846,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>587, 398</value>
+    <value>606, 399</value>
   </data>
   <data name="TabPageApplication.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3982,7 +3936,7 @@
     <value>Vertical</value>
   </data>
   <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>535, 60</value>
+    <value>545, 60</value>
   </data>
   <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4030,7 +3984,7 @@
     <value>42, 299</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 20</value>
+    <value>35, 20</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4057,7 +4011,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageGeneration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>587, 398</value>
+    <value>606, 399</value>
   </data>
   <data name="TabPageGeneration.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -4084,7 +4038,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>587, 398</value>
+    <value>606, 399</value>
   </data>
   <data name="TabPageReminder.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -4111,7 +4065,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>587, 398</value>
+    <value>606, 399</value>
   </data>
   <data name="TabPageShabat.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -4138,7 +4092,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>587, 398</value>
+    <value>606, 399</value>
   </data>
   <data name="TabPageCelebrations.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -4195,7 +4149,7 @@
     <value>23, 122</value>
   </data>
   <data name="PanelCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>551, 266</value>
+    <value>561, 266</value>
   </data>
   <data name="PanelCalendarColors.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
@@ -4243,7 +4197,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageMonthView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>587, 398</value>
+    <value>606, 399</value>
   </data>
   <data name="TabPageMonthView.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4270,7 +4224,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageTextReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>587, 398</value>
+    <value>606, 399</value>
   </data>
   <data name="TabPageTextReport.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4297,7 +4251,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageNavigationWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>596, 399</value>
+    <value>606, 399</value>
   </data>
   <data name="TabPageNavigationWindow.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -4327,7 +4281,7 @@
     <value>10, 10</value>
   </data>
   <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>604, 428</value>
+    <value>614, 428</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -4344,6 +4298,52 @@
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="ActionSelectCalculatorPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>554, 351</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionSelectCalculatorPath.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectCalculatorPath.Name" xml:space="preserve">
+    <value>ActionSelectCalculatorPath</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectCalculatorPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectCalculatorPath.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;ActionSelectCalculatorPath.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <data name="PanelBottomSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -4351,7 +4351,7 @@
     <value>10, 438</value>
   </data>
   <data name="PanelBottomSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>604, 10</value>
+    <value>614, 10</value>
   </data>
   <data name="PanelBottomSeparator.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
@@ -4368,6 +4368,54 @@
   <data name="&gt;&gt;PanelBottomSeparator.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="EditCalculatorPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="EditCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 354</value>
+  </data>
+  <data name="EditCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>525, 20</value>
+  </data>
+  <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;EditCalculatorPath.Name" xml:space="preserve">
+    <value>EditCalculatorPath</value>
+  </data>
+  <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditCalculatorPath.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="EditHebrewLettersPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 299</value>
+  </data>
+  <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>525, 20</value>
+  </data>
+  <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
+    <value>EditHebrewLettersPath</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -4375,10 +4423,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>624, 486</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>634, 486</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
