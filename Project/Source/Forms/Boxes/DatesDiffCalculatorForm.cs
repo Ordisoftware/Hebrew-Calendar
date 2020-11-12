@@ -37,6 +37,8 @@ namespace Ordisoftware.Hebrew.Calendar
         Instance.MonthCalendar1.SelectionStart = dates.Item1;
         Instance.MonthCalendar2.SelectionStart = dates.Item2;
       }
+      else
+        Instance.MonthCalendar2.SelectionStart = DateTime.Today;
       Instance.MonthCalendar1.Tag = Instance.MonthCalendar1.SelectionStart;
       Instance.MonthCalendar2.Tag = Instance.MonthCalendar2.SelectionStart;
       Instance.DateChanged(true);
