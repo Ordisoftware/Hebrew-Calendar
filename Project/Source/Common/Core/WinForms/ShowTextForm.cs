@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -43,6 +43,7 @@ namespace Ordisoftware.Core
     {
       Text = title;
       if ( !justify ) TextBox.SelectionAlignment = TextAlign.Left;
+      if ( !sizeable ) MaximumSize = new System.Drawing.Size(0, 0);
       TextBox.Text = text;
       Width = width;
       Height = height;
