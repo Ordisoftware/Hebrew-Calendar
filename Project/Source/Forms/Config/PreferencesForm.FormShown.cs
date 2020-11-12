@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -64,12 +64,14 @@ namespace Ordisoftware.Hebrew.Calendar
         default:
           throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.ToStringFull());
       }
+      EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
+      EditLogEnabled.Enabled = DebugManager.Enabled;
+      EditBalloon_CheckedChanged(null, null);
+      EditAutoRegenerate_CheckedChanged(null, null);
+      EditRemindAutoLock_CheckedChanged(null, null);
       EditRemindShabat_ValueChanged(null, null);
       EditTimerEnabled_CheckedChanged(null, null);
-      EditBalloon_CheckedChanged(null, null);
-      SelectOpenNavigationForm_CheckedChanged(null, null);
-      EditLogEnabled.Enabled = DebugManager.Enabled;
-      EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
+      EditUseColors_CheckedChanged(null, null);
       ActiveControl = ActionClose;
       ActionResetSettings.TabStop = false;
       IsReady = true;
