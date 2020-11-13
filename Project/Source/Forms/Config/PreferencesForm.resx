@@ -139,7 +139,7 @@
     <value>112, 13</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
+    <value>11</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Tray Icon click opens:</value>
@@ -172,7 +172,7 @@
     <value>78, 13</value>
   </data>
   <data name="LabelCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>81</value>
+    <value>19</value>
   </data>
   <data name="LabelCalculatorPath.Text" xml:space="preserve">
     <value>Calculator path</value>
@@ -205,7 +205,7 @@
     <value>103, 13</value>
   </data>
   <data name="LabelHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>81</value>
+    <value>23</value>
   </data>
   <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
     <value>Hebrew Letters path</value>
@@ -241,7 +241,7 @@
     <value>45, 13</value>
   </data>
   <data name="LabelGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
+    <value>12</value>
   </data>
   <data name="LabelGPSLatitude.Text" xml:space="preserve">
     <value>Latitude</value>
@@ -280,7 +280,7 @@
     <value>56, 13</value>
   </data>
   <data name="LabelTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
+    <value>10</value>
   </data>
   <data name="LabelTimeZone.Text" xml:space="preserve">
     <value>Time zone</value>
@@ -319,7 +319,7 @@
     <value>54, 13</value>
   </data>
   <data name="LabelGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
+    <value>14</value>
   </data>
   <data name="LabelGPSLongitude.Text" xml:space="preserve">
     <value>Longitude</value>
@@ -526,7 +526,7 @@
     <value>108, 17</value>
   </data>
   <data name="EditBalloonAutoHide.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>16</value>
   </data>
   <data name="EditBalloonAutoHide.Text" xml:space="preserve">
     <value>Auto hide balloon</value>
@@ -559,7 +559,7 @@
     <value>128, 13</value>
   </data>
   <data name="LabelLoomingDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>17</value>
   </data>
   <data name="LabelLoomingDelay.Text" xml:space="preserve">
     <value>Delay before looming (ms)</value>
@@ -592,7 +592,7 @@
     <value>82, 17</value>
   </data>
   <data name="EditBalloon.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>15</value>
   </data>
   <data name="EditBalloon.Text" xml:space="preserve">
     <value>Use balloon</value>
@@ -660,7 +660,7 @@
     <value>492, 20</value>
   </data>
   <data name="EditCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Name" xml:space="preserve">
     <value>EditCalculatorPath</value>
@@ -684,7 +684,7 @@
     <value>492, 20</value>
   </data>
   <data name="EditHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>24</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Name" xml:space="preserve">
     <value>EditHebrewLettersPath</value>
@@ -714,7 +714,7 @@
     <value>125, 17</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>14</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
     <value>Celebrations Window</value>
@@ -744,7 +744,7 @@
     <value>218, 17</value>
   </data>
   <data name="EditVacuumAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimize database at startup every week</value>
@@ -771,7 +771,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditBalloonLoomingDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;EditBalloonLoomingDelay.Name" xml:space="preserve">
     <value>EditBalloonLoomingDelay</value>
@@ -814,7 +814,7 @@
     <value>26, 26</value>
   </data>
   <data name="EditResetHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>26</value>
   </data>
   <data name="&gt;&gt;EditResetHebrewLettersPath.Name" xml:space="preserve">
     <value>EditResetHebrewLettersPath</value>
@@ -857,7 +857,7 @@
     <value>26, 26</value>
   </data>
   <data name="EditResetCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>22</value>
   </data>
   <data name="&gt;&gt;EditResetCalculatorPath.Name" xml:space="preserve">
     <value>EditResetCalculatorPath</value>
@@ -903,7 +903,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionSelectCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>21</value>
   </data>
   <data name="&gt;&gt;ActionSelectCalculatorPath.Name" xml:space="preserve">
     <value>ActionSelectCalculatorPath</value>
@@ -933,7 +933,7 @@
     <value>116, 17</value>
   </data>
   <data name="SelectOpenMainForm.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>12</value>
   </data>
   <data name="SelectOpenMainForm.Text" xml:space="preserve">
     <value>Application window</value>
@@ -966,7 +966,7 @@
     <value>118, 17</value>
   </data>
   <data name="SelectOpenNavigationForm.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>13</value>
   </data>
   <data name="SelectOpenNavigationForm.Text" xml:space="preserve">
     <value>Navigation Window</value>
@@ -1015,7 +1015,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>25</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.Name" xml:space="preserve">
     <value>ActionSelectHebrewLettersPath</value>
@@ -1085,7 +1085,7 @@
     <value>179, 17</value>
   </data>
   <data name="EditAutoOpenExportFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>10</value>
   </data>
   <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
     <value>Open export folder after success</value>
@@ -1115,7 +1115,7 @@
     <value>135, 17</value>
   </data>
   <data name="EditWebLinksMenuEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Text" xml:space="preserve">
     <value>Enable web links menu</value>
@@ -1145,7 +1145,7 @@
     <value>95, 17</value>
   </data>
   <data name="EditStartupHide.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="EditStartupHide.Text" xml:space="preserve">
     <value>Hide at startup</value>
@@ -1175,7 +1175,7 @@
     <value>107, 17</value>
   </data>
   <data name="EditDebuggerEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>7</value>
   </data>
   <data name="EditDebuggerEnabled.Text" xml:space="preserve">
     <value>Enable debugger</value>
@@ -1205,7 +1205,7 @@
     <value>216, 17</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
     <value>Check update every week while running</value>
@@ -1235,7 +1235,7 @@
     <value>117, 17</value>
   </data>
   <data name="EditStartWithWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="EditStartWithWindows.Text" xml:space="preserve">
     <value>Start with Windows</value>
@@ -1265,7 +1265,7 @@
     <value>198, 17</value>
   </data>
   <data name="EditCheckUpdateAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>Check update at startup every week</value>
@@ -1295,7 +1295,7 @@
     <value>92, 17</value>
   </data>
   <data name="EditLogEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="EditLogEnabled.Text" xml:space="preserve">
     <value>Enable log file</value>
@@ -1355,7 +1355,7 @@
     <value>46, 13</value>
   </data>
   <data name="LabelYearsIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="LabelYearsIntervalInfo.Text" xml:space="preserve">
     <value>10 - 200</value>
@@ -1385,7 +1385,7 @@
     <value>92, 13</value>
   </data>
   <data name="LabelMaxYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
+    <value>2</value>
   </data>
   <data name="LabelMaxYearsInterval.Text" xml:space="preserve">
     <value>Max years interval</value>
@@ -1431,7 +1431,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionCountAsMoonHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionCountAsMoonHelp.Name" xml:space="preserve">
     <value>ActionCountAsMoonHelp</value>
@@ -1455,7 +1455,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditMaxYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditMaxYearsInterval.Name" xml:space="preserve">
     <value>EditMaxYearsInterval</value>
@@ -1518,7 +1518,7 @@
     <value>87, 13</value>
   </data>
   <data name="ActionGetGPS.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>16</value>
   </data>
   <data name="ActionGetGPS.Text" xml:space="preserve">
     <value>Open GPS finder</value>
@@ -1563,7 +1563,7 @@
     <value>26, 26</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;SelectAutoGenerateYearsInterval.Name" xml:space="preserve">
     <value>SelectAutoGenerateYearsInterval</value>
@@ -1596,7 +1596,7 @@
     <value>185, 17</value>
   </data>
   <data name="EditBigCalendarWarning.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="EditBigCalendarWarning.Text" xml:space="preserve">
     <value>Display an alert for a large interval</value>
@@ -1635,7 +1635,7 @@
     <value>271, 17</value>
   </data>
   <data name="EditAutoRegenerate.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="EditAutoRegenerate.Text" xml:space="preserve">
     <value>Auto-generate data for these years interval if expired</value>
@@ -1684,7 +1684,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionAutoGenerateHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;ActionAutoGenerateHelp.Name" xml:space="preserve">
     <value>ActionAutoGenerateHelp</value>
@@ -1708,7 +1708,7 @@
     <value>75, 20</value>
   </data>
   <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
     <value>EditGPSLatitude</value>
@@ -1741,7 +1741,7 @@
     <value>545, 60</value>
   </data>
   <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
     <value>EditTimeZone</value>
@@ -1765,7 +1765,7 @@
     <value>75, 20</value>
   </data>
   <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
     <value>EditGPSLongitude</value>
@@ -1789,7 +1789,7 @@
     <value>35, 20</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>7</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -1852,7 +1852,7 @@
     <value>137, 17</value>
   </data>
   <data name="EditAllowSuspendReminder.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>0</value>
   </data>
   <data name="EditAllowSuspendReminder.Text" xml:space="preserve">
     <value>Allow suspend reminder</value>
@@ -1888,7 +1888,7 @@
     <value>143, 13</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Text" xml:space="preserve">
     <value>Auto lock timeout in seconds</value>
@@ -1921,7 +1921,7 @@
     <value>109, 17</value>
   </data>
   <data name="EditAutoLockSession.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="EditAutoLockSession.Text" xml:space="preserve">
     <value>Auto lock session</value>
@@ -1948,7 +1948,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSessionTimeOut.Name" xml:space="preserve">
     <value>EditAutoLockSessionTimeOut</value>
@@ -1981,7 +1981,7 @@
     <value>213, 17</value>
   </data>
   <data name="EditCloseReminderFormOnClick.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>2</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
     <value>Close reminder box on click everywhere</value>
@@ -2020,7 +2020,7 @@
     <value>179, 17</value>
   </data>
   <data name="EditShowReminderInTaskBar.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>1</value>
   </data>
   <data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
     <value>Show reminder boxes in task bar</value>
@@ -2083,7 +2083,7 @@
     <value>105, 13</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.Text" xml:space="preserve">
     <value>Hours before remind </value>
@@ -2116,7 +2116,7 @@
     <value>26, 13</value>
   </data>
   <data name="LabelShabatDay.TabIndex" type="System.Int32, mscorlib">
-    <value>48</value>
+    <value>0</value>
   </data>
   <data name="LabelShabatDay.Text" xml:space="preserve">
     <value>Day</value>
@@ -2192,7 +2192,7 @@
     <value>62, 17</value>
   </data>
   <data name="EditReminderShabatEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="EditReminderShabatEnabled.Text" xml:space="preserve">
     <value>Remind</value>
@@ -2225,7 +2225,7 @@
     <value>111, 13</value>
   </data>
   <data name="LabelRemindShabatEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="LabelRemindShabatEveryMinutes.Text" xml:space="preserve">
     <value>Remind every minutes</value>
@@ -2252,7 +2252,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindShabatEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatEveryMinutes.Name" xml:space="preserve">
     <value>EditRemindShabatEveryMinutes</value>
@@ -2282,7 +2282,7 @@
     <value>98, 17</value>
   </data>
   <data name="EditRemindShabatOnlyLight.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="EditRemindShabatOnlyLight.Text" xml:space="preserve">
     <value>Only when light</value>
@@ -2315,7 +2315,7 @@
     <value>104, 13</value>
   </data>
   <data name="ActionUsePersonalShabat.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
     <value>Use personal shabat</value>
@@ -2342,7 +2342,7 @@
     <value>150, 21</value>
   </data>
   <data name="EditShabatDay.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;EditShabatDay.Name" xml:space="preserve">
     <value>EditShabatDay</value>
@@ -2366,7 +2366,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindShabatHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatHoursBefore.Name" xml:space="preserve">
     <value>EditRemindShabatHoursBefore</value>
@@ -2417,7 +2417,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindCelebrationEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.Name" xml:space="preserve">
     <value>EditRemindCelebrationEveryMinutes</value>
@@ -2447,7 +2447,7 @@
     <value>140, 13</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Text" xml:space="preserve">
     <value>Hours before second remind</value>
@@ -2480,7 +2480,7 @@
     <value>62, 17</value>
   </data>
   <data name="EditReminderCelebrationsEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="EditReminderCelebrationsEnabled.Text" xml:space="preserve">
     <value>Remind</value>
@@ -2513,7 +2513,7 @@
     <value>111, 13</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.Text" xml:space="preserve">
     <value>Remind every minutes</value>
@@ -2540,7 +2540,7 @@
     <value>143, 169</value>
   </data>
   <data name="EditEventsDay.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;EditEventsDay.Name" xml:space="preserve">
     <value>EditEventsDay</value>
@@ -2564,7 +2564,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindCelebrationHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.Name" xml:space="preserve">
     <value>EditRemindCelebrationHoursBefore</value>
@@ -2588,7 +2588,7 @@
     <value>143, 169</value>
   </data>
   <data name="EditEvents.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditEvents.Name" xml:space="preserve">
     <value>EditEvents</value>
@@ -2699,7 +2699,7 @@
     <value>106, 13</value>
   </data>
   <data name="LabelMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
+    <value>2</value>
   </data>
   <data name="LabelMoonDayTextFormat.Text" xml:space="preserve">
     <value>Moon day text format</value>
@@ -2744,7 +2744,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;ActionMoonDayTextFormatReset.Name" xml:space="preserve">
     <value>ActionMoonDayTextFormatReset</value>
@@ -3668,7 +3668,7 @@
     <value>230, 17</value>
   </data>
   <data name="EditUseColors.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="EditUseColors.Text" xml:space="preserve">
     <value>Use colors for calendar and reminder boxes</value>
@@ -3714,7 +3714,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Name" xml:space="preserve">
     <value>ActionMoonDayTextFormatHelp</value>
@@ -3738,7 +3738,7 @@
     <value>37, 20</value>
   </data>
   <data name="EditMonthViewFontSize.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;EditMonthViewFontSize.Name" xml:space="preserve">
     <value>EditMonthViewFontSize</value>
@@ -3768,7 +3768,7 @@
     <value>49, 13</value>
   </data>
   <data name="LabelMonthViewFontSize.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
+    <value>0</value>
   </data>
   <data name="LabelMonthViewFontSize.Text" xml:space="preserve">
     <value>Font size</value>
@@ -3804,7 +3804,7 @@
     <value>161, 17</value>
   </data>
   <data name="EditMonthViewSunToolTips.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>6</value>
   </data>
   <data name="EditMonthViewSunToolTips.Text" xml:space="preserve">
     <value>Show sun rise and set tooltip</value>
@@ -3834,7 +3834,7 @@
     <value>362, 20</value>
   </data>
   <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
     <value>EditMoonDayTextFormat</value>
@@ -3891,7 +3891,7 @@
     <value>57, 13</value>
   </data>
   <data name="LabelFontName.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+    <value>0</value>
   </data>
   <data name="LabelFontName.Text" xml:space="preserve">
     <value>Font name</value>
@@ -3918,7 +3918,7 @@
     <value>37, 20</value>
   </data>
   <data name="EditFontSize.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditFontSize.Name" xml:space="preserve">
     <value>EditFontSize</value>
@@ -3948,7 +3948,7 @@
     <value>49, 13</value>
   </data>
   <data name="LabelFontSize.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
+    <value>2</value>
   </data>
   <data name="LabelFontSize.Text" xml:space="preserve">
     <value>Font size</value>
@@ -3975,7 +3975,7 @@
     <value>171, 21</value>
   </data>
   <data name="EditFontName.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;EditFontName.Name" xml:space="preserve">
     <value>EditFontName</value>
@@ -4005,7 +4005,7 @@
     <value>32, 13</value>
   </data>
   <data name="LabelBackColor.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
+    <value>6</value>
   </data>
   <data name="LabelBackColor.Text" xml:space="preserve">
     <value>Back</value>
@@ -4032,7 +4032,7 @@
     <value>25, 25</value>
   </data>
   <data name="EditTextColor.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;EditTextColor.Name" xml:space="preserve">
     <value>EditTextColor</value>
@@ -4056,7 +4056,7 @@
     <value>25, 25</value>
   </data>
   <data name="EditTextBackground.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;EditTextBackground.Name" xml:space="preserve">
     <value>EditTextBackground</value>
@@ -4086,7 +4086,7 @@
     <value>28, 13</value>
   </data>
   <data name="LabelTextColor.TabIndex" type="System.Int32, mscorlib">
-    <value>49</value>
+    <value>4</value>
   </data>
   <data name="LabelTextColor.Text" xml:space="preserve">
     <value>Text</value>
@@ -4440,7 +4440,7 @@
     <value>614, 433</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
     <value>TabControl</value>
