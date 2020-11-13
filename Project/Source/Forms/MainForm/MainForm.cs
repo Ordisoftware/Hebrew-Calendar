@@ -137,6 +137,10 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( LockSessionForm.Instance?.Visible ?? false )
             LockSessionForm.Instance.Popup();
         });
+        NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+                                                       AppTranslations.NoticeKeyboardShortcuts,
+                                                       true, false, 500, 670, false, false);
+        NoticeKeyboardShortcutsForm.TextBox.Font = new Font("Courier new", 8);
       }
       finally
       {
@@ -692,11 +696,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionShowKeyboardNotice_Click(object sender, EventArgs e)
     {
-      var form = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
-                                  AppTranslations.NoticeKeyboardShortcuts,
-                                  false, false, 500, 670, false, false);
-      form.TextBox.Font = new Font("Courier new", 8);
-      form.ShowDialog();
+      NoticeKeyboardShortcutsForm.Popup();
     }
 
     /// <summary>

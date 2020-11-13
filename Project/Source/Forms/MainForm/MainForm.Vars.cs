@@ -48,6 +48,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private Stopwatch ChronoStart = new Stopwatch();
 
+    private ShowTextForm NoticeKeyboardShortcutsForm;
+
     public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
     public float CurrentGPSLatitude { get; internal set; }
     public float CurrentGPSLongitude { get; internal set; }
