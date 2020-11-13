@@ -1212,12 +1212,12 @@
       this.EditMonthViewFontSize.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditMonthViewFontSize, "EditMonthViewFontSize");
       this.EditMonthViewFontSize.Maximum = new decimal(new int[] {
-            20,
+            30,
             0,
             0,
             0});
       this.EditMonthViewFontSize.Minimum = new decimal(new int[] {
-            8,
+            6,
             0,
             0,
             0});
@@ -1275,7 +1275,7 @@
       this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.Maximum = new decimal(new int[] {
-            20,
+            30,
             0,
             0,
             0});
