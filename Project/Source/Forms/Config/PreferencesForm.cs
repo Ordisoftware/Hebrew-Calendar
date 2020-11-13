@@ -594,12 +594,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditUseColors_CheckedChanged(object sender, EventArgs e)
     {
-      MustRefreshMonthView = true;
+      if ( IsReady ) MustRefreshMonthView = true;
       PanelCalendarColors.Enabled = EditUseColors.Checked;
     }
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
-      MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
+      if ( IsReady ) MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
     }
 
     private void ActionSelectCalculatorPath_Click(object sender, EventArgs e)
