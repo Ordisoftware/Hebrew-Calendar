@@ -406,5 +406,8 @@
     <Setting Name="CalculatorExe" Type="System.String" Scope="User">
       <Value Profile="(Default)">calc.exe</Value>
     </Setting>
+    <Setting Name="DatesDiffCalculatorFormAutoSetRightToToday" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

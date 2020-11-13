@@ -1616,5 +1616,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CalculatorExe"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DatesDiffCalculatorFormAutoSetRightToToday {
+            get {
+                return ((bool)(this["DatesDiffCalculatorFormAutoSetRightToToday"]));
+            }
+            set {
+                this["DatesDiffCalculatorFormAutoSetRightToToday"] = value;
+            }
+        }
     }
 }
