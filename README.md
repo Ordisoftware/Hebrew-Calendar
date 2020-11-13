@@ -160,7 +160,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add keyboard shortcuts notice in tools menu.
 - Add option to set the Calculator application path.
 - Add option to set the Hebrew Letters application path.
-- Improve date diff calculator to set second date to current day when (re)opened.
+- Add option for date diff calculator form to set right date to today when opened.
 - Rework of the preferences form design to have a Tab Control with pages.
 - Fix some preferences controls to be disabled when related options are disabled.
 - Fix print dialog does not have the focus when opened.
