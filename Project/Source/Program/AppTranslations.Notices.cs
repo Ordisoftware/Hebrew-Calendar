@@ -210,7 +210,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F4 : Fenêtre des prochaines célébrations" + Globals.NL +
                         "F5 : Fenêtre de recherche de célébration" + Globals.NL +
                         "F6 : Fenêtre de recherche de mois lunaire" + Globals.NL +
-                        "F7 : Search a gregorian month window" + Globals.NL +
+                        "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
                         "F9 : Fenêtre de navigation(également Ctrl+N)" + Globals.NL +
                         Globals.NL +
                         "Ctrl+Tab : Vue suivante" + Globals.NL +
