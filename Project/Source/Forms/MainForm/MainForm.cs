@@ -141,6 +141,8 @@ namespace Ordisoftware.Hebrew.Calendar
                                                        AppTranslations.NoticeKeyboardShortcuts,
                                                        true, false, 500, 670, false, false);
         NoticeKeyboardShortcutsForm.TextBox.Font = new Font("Courier new", 8);
+        NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+        NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
       }
       finally
       {
