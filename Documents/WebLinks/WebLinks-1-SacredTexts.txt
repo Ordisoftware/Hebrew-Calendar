@@ -31,7 +31,7 @@ URL = https://fr.wikipedia.org/wiki/Parasha_de_la_semaine
 Name = (EN) Jewish Texts @ sefaria.org
 URL = https://www.sefaria.org/texts
 
-Name = (EN) English Babylonian Talmud @ halakhah.com
+Name = (EN) Babylonian Talmud @ halakhah.com
 URL = http://halakhah.com
 
 -
@@ -67,6 +67,9 @@ URL = http://corpus.quran.com/wordbyword.jsp
 
 Name = (FR) Quran Interlinéaire @ coran-seul.com
 URL = http://coran-seul.com/index.php/home
+
+Name = (FR/EN) Quran arabic lecture @ quranwow.com
+URL = https://www.quranwow.com
 
 -
 
