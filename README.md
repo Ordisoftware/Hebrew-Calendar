@@ -165,6 +165,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Fix some preferences controls to be disabled when related options are disabled.
 - Fix print dialog does not have the focus when opened.
 - Improve UI and add some icons.
+- Update web links with quran arabic lecture link.
+- Fix french help shortcuts.
 
 #### 2020.09.29 - Version 5.5
 
