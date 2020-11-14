@@ -164,6 +164,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Rework of the preferences form design to have a Tab Control with pages.
 - Fix some preferences controls to be disabled when related options are disabled.
 - Fix print dialog does not have the focus when opened.
+- Improve UI and add some icons.
 
 #### 2020.09.29 - Version 5.5
 
