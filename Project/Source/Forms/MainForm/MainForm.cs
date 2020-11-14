@@ -139,10 +139,9 @@ namespace Ordisoftware.Hebrew.Calendar
         });
         NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                        AppTranslations.NoticeKeyboardShortcuts,
-                                                       true, false, 500, 670, false, false);
-        NoticeKeyboardShortcutsForm.TextBox.Font = new Font("Courier new", 8);
-        NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+                                                       true, false, 350, 660, false, false);
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
+        NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
       }
       finally
       {
