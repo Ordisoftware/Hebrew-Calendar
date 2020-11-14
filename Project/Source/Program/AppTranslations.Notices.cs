@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -151,6 +151,103 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Vert = air = action | A" + Globals.NL +
                         "Blanc = eau = expir | C" + Globals.NL +
                         "Jaune = terre = repos | G"
+      };
+
+    static public readonly TranslationsDictionary NoticeKeyboardShortcutsTitle
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Keyboard shortcuts notice",
+        [Language.FR] = "Notice des raccourcis clavier"
+      };
+
+    static public readonly TranslationsDictionary NoticeKeyboardShortcuts
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "F1 : Text report view" + Globals.NL +
+                        "F2 : Month view" + Globals.NL +
+                        "F3 : Database grid view" + Globals.NL +
+                        Globals.NL +
+                        "F4 : Next celebrations window" + Globals.NL +
+                        "F5 : Search a celebration window" + Globals.NL +
+                        "F6 : Search a moon month window" + Globals.NL +
+                        "F7 : Search a gregorian month window" + Globals.NL +
+                        "F9 : Navigation window (also Ctrl+N)" + Globals.NL +
+                        Globals.NL +
+                        "Ctrl+Tab : Next view" + Globals.NL +
+                        "Shift+Ctrl+Tab : Previous view" + Globals.NL +
+                        Globals.NL +
+                        "Ctrl+T : Go to today (also Numpad0)" + Globals.NL +
+                        "Ctrl+D : Search a day" + Globals.NL +
+                        Globals.NL +
+                        "Ctrl+C : Copy text report to clipboard" + Globals.NL +
+                        "Ctrl+P : Print month view" + Globals.NL +
+                        "Ctrl+S : Save text report to text file" + Globals.NL +
+                        "Alt+S : Save text report to CSV file" + Globals.NL +
+                        Globals.NL +
+                        "Alt+C : Open windows calculator" + Globals.NL +
+                        "Alt+T : Open windows date and time settings" + Globals.NL +
+                        Globals.NL +
+                        "Ctrl+F1 : Dates difference calculator" + Globals.NL +
+                        "Ctrl+F2 : Generate calendar data" + Globals.NL +
+                        Globals.NL +
+                        "Ctrl+F11 : Current log window" + Globals.NL +
+                        "Ctrl+F12 : Statistics window" + Globals.NL +
+                        Globals.NL +
+                        "Home : First month available in the database" + Globals.NL +
+                        "End : Last month available in the database" + Globals.NL +
+                        Globals.NL +
+                        "Up : Previous year" + Globals.NL +
+                        "Down : Next year" + Globals.NL +
+                        "Left : Previous month" + Globals.NL +
+                        "Right : Next month" + Globals.NL +
+                        Globals.NL +
+                        "F8 : Preferences" + Globals.NL +
+                        "F11 : Help" + Globals.NL +
+                        "F12 : About" + Globals.NL +
+                        "Escape : Close window",
+
+        [Language.FR] = "F1 : Vue du rapport textuel" + Globals.NL +
+                        "F2 : Vue du mois" + Globals.NL +
+                        "F3 : Vue de la grille de données" + Globals.NL +
+                        Globals.NL +
+                        "F4 : Fenêtre des prochaines célébrations" + Globals.NL +
+                        "F5 : Fenêtre de recherche de célébration" + Globals.NL +
+                        "F6 : Fenêtre de recherche de mois lunaire" + Globals.NL +
+                        "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
+                        "F9 : Fenêtre de navigation (également Ctrl+N)" + Globals.NL +
+                        Globals.NL +
+                        "Ctrl+Tab : Vue suivante" + Globals.NL +
+                        "Maj+Ctrl+Tab : Vue précédente" + Globals.NL +
+                        Globals.NL +
+                        "Ctrl+T : Aller à aujourd'hui (également Numpad0)" + Globals.NL +
+                        "Ctrl+D : Chercher un jour" + Globals.NL +
+                        Globals.NL +
+                        "Ctrl+C : Copie le rapport dans le presse-papier" + Globals.NL +
+                        "Ctrl+P : Imprime la vue par mois" + Globals.NL +
+                        "Ctrl+S : Sauvegarde le rapport dans un fichier texte" + Globals.NL +
+                        "Alt+S : Sauvegarde le rapport dans un fichier CSV" + Globals.NL +
+                        Globals.NL +
+                        "Alt+C : Ouvre la calculatrice Windows" + Globals.NL +
+                        "Alt+T : Ouvre les paramètres de date et heure de Windows" + Globals.NL +
+                        Globals.NL +
+                        "Ctrl+F1 : Calculateur de différence de dates" + Globals.NL +
+                        "Ctrl+F2 : Génère les données du calendrier" + Globals.NL +
+                        Globals.NL +
+                        "Ctrl+F11 : Fenêtre du log en cours" + Globals.NL +
+                        "Ctrl+F12 : Fenêtre des statistiques" + Globals.NL +
+                        Globals.NL +
+                        "Début : Premier mois disponible dans la base de données" + Globals.NL +
+                        "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
+                        Globals.NL +
+                        "Haut : Année précédente" + Globals.NL +
+                        "Bas : Année suivante" + Globals.NL +
+                        "Gauche : Mois précédent" + Globals.NL +
+                        "Droite : Mois suivant" + Globals.NL +
+                        Globals.NL +
+                        "F8 : Préférences" + Globals.NL +
+                        "F11 : Aide" + Globals.NL +
+                        "F12 : A propos" + Globals.NL +
+                        "Echap : Ferme la fenêtre"
       };
 
   }

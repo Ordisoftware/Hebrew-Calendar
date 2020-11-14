@@ -77,18 +77,29 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void InitializeCalendarUI()
     {
+      CalendarMonth.TheEvents.Clear();
       int sizeFont = Settings.MonthViewFontSize;
-      CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
-      CalendarMonth.ForeColor = Settings.MonthViewTextColor;
-      CalendarMonth.BackColor = Settings.MonthViewBackColor;
-      CalendarMonth.CurrentDayForeColor = Settings.CurrentDayForeColor;
-      CalendarMonth.CurrentDayBackColor = Settings.CurrentDayBackColor;
+      if ( Settings.UseColors )
+      {
+        CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
+        CalendarMonth.ForeColor = Settings.MonthViewTextColor;
+        CalendarMonth.BackColor = Settings.MonthViewBackColor;
+        CalendarMonth.CurrentDayForeColor = Settings.CurrentDayForeColor;
+        CalendarMonth.CurrentDayBackColor = Settings.CurrentDayBackColor;
+      }
+      else
+      {
+        CalendarMonth.RogueBrush = new SolidBrush(Color.WhiteSmoke);
+        CalendarMonth.ForeColor = Color.Black;
+        CalendarMonth.BackColor = Color.White;
+        CalendarMonth.CurrentDayForeColor = Color.White;
+        CalendarMonth.CurrentDayBackColor = Color.Black;
+      }
       CalendarMonth.DateHeaderFont = new Font("Calibri", sizeFont + 5, FontStyle.Bold);
       CalendarMonth.DayOfWeekFont = new Font("Calibri", sizeFont + 1);
       CalendarMonth.DayViewTimeFont = new Font("Calibri", sizeFont + 1, FontStyle.Bold);
       CalendarMonth.DaysFont = new Font("Calibri", sizeFont + 2);
       CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", sizeFont + 2, FontStyle.Bold);
-      CalendarMonth.TheEvents.Clear();
     }
 
   }

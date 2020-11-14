@@ -149,11 +149,25 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Add moon months description form and menu in tools.
 - Add reminder for solar and lunar anniversary of birth.
-- Add a different tray icon to indicate if a celebration is running, including week days.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
-- Improve and reorganize preferences form with a left menu panel.
+- Add a different tray icon to indicate if a celebration is running, including week days.
+- Improve navigation form to show celebration week days.
 
 ## Changelog
+
+#### 2020.11.17 - Version 5.6
+
+- Rework of the preferences form design to have a Tab Control with pages.
+- Add keyboard shortcuts notice in windows settings menu.
+- Add option to set the Calculator application path.
+- Add option to set the Hebrew Letters application path.
+- Add option for date diff calculator form to set right date to today when opened.
+- Fix some preferences controls to be disabled when related options are disabled.
+- Fix use no colors option.
+- Fix print dialog does not have the focus when opened.
+- Fix french help.
+- Improve UI.
+- Update web links with Quran arabic lecture link.
 
 #### 2020.09.29 - Version 5.5
 

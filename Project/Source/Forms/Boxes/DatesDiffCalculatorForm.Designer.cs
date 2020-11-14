@@ -61,6 +61,7 @@
       this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSwapDates = new System.Windows.Forms.Button();
+      this.EditAutoSetRightToToday = new System.Windows.Forms.CheckBox();
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -111,6 +112,7 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.EditAutoSetRightToToday);
       this.PanelBottom.Controls.Add(this.ActionHelp);
       this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionManageBookmarks);
@@ -304,6 +306,15 @@
       this.ActionSwapDates.UseVisualStyleBackColor = true;
       this.ActionSwapDates.Click += new System.EventHandler(this.ActionSwapDates_Click);
       // 
+      // EditAutoSetRightToToday
+      // 
+      resources.ApplyResources(this.EditAutoSetRightToToday, "EditAutoSetRightToToday");
+      this.EditAutoSetRightToToday.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.DatesDiffCalculatorFormAutoSetRightToToday;
+      this.EditAutoSetRightToToday.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditAutoSetRightToToday.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "DatesDiffCalculatorFormAutoSetRightToToday", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditAutoSetRightToToday.Name = "EditAutoSetRightToToday";
+      this.EditAutoSetRightToToday.UseVisualStyleBackColor = true;
+      // 
       // DatesDiffCalculatorForm
       // 
       resources.ApplyResources(this, "$this");
@@ -328,6 +339,7 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DatesDiffCalculatorForm_FormClosing);
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
+      this.PanelBottom.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).EndInit();
       this.GroupBoxSun.ResumeLayout(false);
       this.GroupBoxSun.PerformLayout();
@@ -363,5 +375,6 @@
     private System.Windows.Forms.Button ActionHelp;
     private System.Windows.Forms.Button ActionSwapDates;
     private System.Windows.Forms.Button ActionManageBookmarks;
+    private System.Windows.Forms.CheckBox EditAutoSetRightToToday;
   }
 }

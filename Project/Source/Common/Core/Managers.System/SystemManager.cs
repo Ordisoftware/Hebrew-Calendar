@@ -11,12 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-10 </edited>
 using System;
 using System.Linq;
 using System.IO;
 using System.IO.Pipes;
 using System.Configuration;
+using System.Diagnostics;
 using System.Threading;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -58,12 +59,24 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Indicate if the several instances of the application can run at same time.
+    /// </summary>
+    static public bool AllowApplicationMultipleInstances { get; private set; } = true;
+
+    /// <summary>
+    /// Indicate the number of application running processes count.
+    /// </summary>
+    static public int ApplicationInstancesCount
+      => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length;
+
+    /// <summary>
     /// Check if the process is already running.
     /// </summary>
     static public bool CheckApplicationOnlyOneInstance(AsyncCallback duplicated)
     {
       try
       {
+        AllowApplicationMultipleInstances = false;
         ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out bool created);
         if ( created )
           CreateIPCServer(duplicated);

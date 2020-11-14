@@ -175,4 +175,7 @@
   <data name="moonYearsLabel.Text" xml:space="preserve">
     <value>Années lunaires :</value>
   </data>
+  <data name="EditAutoSetRightToToday.Text" xml:space="preserve">
+    <value>Assigner aujourd'hui à droite à l'ouverture</value>
+  </data>
 </root>

@@ -119,16 +119,28 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
+    <value>136, 13</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Click ouvre :</value>
+    <value>Clic sur la Tray Icon ouvre :</value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 13</value>
   </data>
   <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
     <value>Chemin de Hebrew Letters</value>
+  </data>
+  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <data name="LabelTimeZone.Text" xml:space="preserve">
+    <value>Fuseau horaire</value>
+  </data>
+  <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="LabelCalculatorPath.Text" xml:space="preserve">
+    <value>Chemin de la calculatrice</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
@@ -140,16 +152,16 @@
     <value>Jour</value>
   </data>
   <data name="LabelFontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
+    <value>89, 13</value>
   </data>
   <data name="LabelFontSize.Text" xml:space="preserve">
-    <value>Taille</value>
+    <value>Taille de la police</value>
   </data>
   <data name="LabelFontName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 13</value>
+    <value>86, 13</value>
   </data>
   <data name="LabelFontName.Text" xml:space="preserve">
-    <value>Nom de la police du rapport</value>
+    <value>Nom de la police</value>
   </data>
   <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 13</value>
@@ -163,17 +175,11 @@
   <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
     <value>Utiliser le shabat personnel</value>
   </data>
-  <data name="GroupBoxGPS.Text" xml:space="preserve">
-    <value>Coordonnées GPS</value>
-  </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 13</value>
   </data>
   <data name="ActionGetGPS.Text" xml:space="preserve">
     <value>Ouvrir le découvreur de GPS</value>
-  </data>
-  <data name="GroupBoxTextReport.Text" xml:space="preserve">
-    <value>Polices de caractères</value>
   </data>
   <data name="LabelBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -187,11 +193,11 @@
   <data name="LabelTextColor.Text" xml:space="preserve">
     <value>Texte</value>
   </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 13</value>
+  <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Taille de la police de la vue par mois</value>
+  <data name="LabelMonthViewFontSize.Text" xml:space="preserve">
+    <value>Taille de la police</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -233,9 +239,6 @@
   <data name="EditReminderShabatEnabled.Text" xml:space="preserve">
     <value>Rappeler</value>
   </data>
-  <data name="GroupBoxNavigation.Text" xml:space="preserve">
-    <value>Fenêtre de navigation </value>
-  </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
   </data>
@@ -270,16 +273,22 @@
     <value>Centre</value>
   </data>
   <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 17</value>
+    <value>186, 17</value>
   </data>
   <data name="EditBalloonAutoHide.Text" xml:space="preserve">
-    <value>Cacher auto. le ballon</value>
+    <value>Cacher automatiquement le ballon</value>
   </data>
   <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 17</value>
   </data>
   <data name="EditBalloon.Text" xml:space="preserve">
     <value>Utiliser le ballon</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
+    <value>Fenêtre des célébrations</value>
   </data>
   <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 17</value>
@@ -300,31 +309,37 @@
     <value>Délai avant le surgissement (ms)</value>
   </data>
   <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 17</value>
+    <value>128, 17</value>
   </data>
   <data name="EditStartupHide.Text" xml:space="preserve">
-    <value>Cacher l'application au démarrage</value>
+    <value>Cacher au démarrage</value>
   </data>
-  <data name="GroupBoxReminder.Text" xml:space="preserve">
-    <value>Célébrations</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Fond Torah</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
+    <value>85, 13</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Mois</value>
+    <value>Fond nouv. mois</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+    <value>126, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Suivant</value>
+    <value>Fond évènements à venir</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
+    <value>64, 13</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Saison</value>
+    <value>Fond saison</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Fond shabat</value>
   </data>
   <data name="ActionCountAsMoonHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -343,22 +358,22 @@
 </value>
   </data>
   <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 17</value>
+    <value>306, 17</value>
   </data>
   <data name="EditUseColors.Text" xml:space="preserve">
-    <value>Utiliser les couleurs pour le calendrier et le rappeleur</value>
+    <value>Utiliser les couleurs pour le calendrier et les boites de rappel</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 13</value>
+    <value>254, 13</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Text" xml:space="preserve">
-    <value>Vérrouillage auto. timeout secs.</value>
+    <value>Délai avant le vérrouillage automatique en secondes</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 13</value>
+    <value>152, 13</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Text" xml:space="preserve">
-    <value>Heures avant le rappel</value>
+    <value>Heures avant le second rappel</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 13</value>
@@ -367,22 +382,22 @@
     <value>Rappeler toutes les minutes</value>
   </data>
   <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 13</value>
+    <value>142, 13</value>
   </data>
   <data name="LabelTimerInterval.Text" xml:space="preserve">
-    <value>Nombre de jours avant</value>
+    <value>Jours avant le premier rappel</value>
   </data>
   <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 17</value>
+    <value>203, 17</value>
   </data>
   <data name="EditAutoLockSession.Text" xml:space="preserve">
-    <value>Vérouillage auto. session</value>
+    <value>Vérouillage automatique de la session</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
+    <value>222, 17</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Text" xml:space="preserve">
-    <value>Utiliser jours de lune</value>
+    <value>Utiliser les jours de la lune au lieu du soleil</value>
   </data>
   <data name="EditReminderCelebrationsEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 17</value>
@@ -391,31 +406,28 @@
     <value>Rappeler</value>
   </data>
   <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 17</value>
+    <value>301, 17</value>
   </data>
   <data name="EditMonthViewSunToolTips.Text" xml:space="preserve">
-    <value>Afficher levers et couchers soleil dans vue du mois</value>
-  </data>
-  <data name="GroupBoxMonth.Text" xml:space="preserve">
-    <value>Vue du mois</value>
+    <value>Afficher les levers et couchers du soleil dans une info-bulle</value>
   </data>
   <data name="LabelColorNoDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>101, 13</value>
   </data>
   <data name="LabelColorNoDay.Text" xml:space="preserve">
-    <value>Pas de jour</value>
+    <value>Fond de pas de jour</value>
   </data>
   <data name="LabelColorText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
+    <value>85, 13</value>
   </data>
   <data name="LabelColorText.Text" xml:space="preserve">
-    <value>Texte</value>
+    <value>Texte par défaut</value>
   </data>
   <data name="LabelColorEmpty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 13</value>
+    <value>54, 13</value>
   </data>
   <data name="LabelColorEmpty.Text" xml:space="preserve">
-    <value>Vide</value>
+    <value>Fond vide</value>
   </data>
   <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 13</value>
@@ -436,10 +448,10 @@
     <value>Pleine lune</value>
   </data>
   <data name="LabelColorMoon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
+    <value>83, 13</value>
   </data>
   <data name="LabelColorMoon.Text" xml:space="preserve">
-    <value>Lune</value>
+    <value>Lever de la lune</value>
   </data>
   <data name="LabelColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -447,32 +459,37 @@
   <data name="LabelColorSeason.Text" xml:space="preserve">
     <value>Saison</value>
   </data>
+  <data name="LabelColorTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="LabelColorTorah.Text" xml:space="preserve">
+    <value>Évènement Torah</value>
+  </data>
   <data name="LabelColorTodayBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
+    <value>66, 13</value>
   </data>
   <data name="LabelColorTodayBack.Text" xml:space="preserve">
-    <value>Fond</value>
+    <value>Fond du jour</value>
   </data>
   <data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 13</value>
+    <value>69, 13</value>
   </data>
   <data name="LabelColorToday.Text" xml:space="preserve">
-    <value>Jour</value>
+    <value>Texte du jour</value>
   </data>
-  <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="SelectAutoGenerateYearsInterval.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
-        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
-        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
-        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
-        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
-        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
-        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
-        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
-        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
-        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
-        AABJRU5ErkJggg==
+        wwAADsMBx2+oZAAAAjNJREFUOE+Vks1P02Acxxtv7m9QD5p49CKaYDLUCwf15NVEPXjhYAgBEnEzo2xd
+        N5xgCLIJCc7Q0bFNXEyWEIljdsqBxUVjiCHxnQQ2J2wd3cbb+Po8T8t0ifjyTT797em+z2dtV+728KO8
+        6A3BeS/4V2iP9rlfQ0/+T2jf2KpHIGaaY55XaOhP4+RdnRPGpNDz9Hsa2je26nEYgmJuGZXVLNbzWTIz
+        0FYyKK1+QyWfIzMHNZdhPdo3turZFbgCCdwJJdFHcMsK1IIKu5yCEHoNB4EPzLEev5fAGZiBZ0IhJOEa
+        J4K1CjCxD4iYgPB+QOZYzzoo/15Q0YrYrGjYImyUNZRKZayVqygSj0ooaFusN/91CfNCHG9747poV8A/
+        fAZBmiFXkmAIDIVhlxTwYwrrdVpv4lP0M2aHUkjfmkRNsL1RJod1+qGOHcJ2tco6HV3dWFzOwt7rhmyJ
+        INVy/6eA98chjD2HU9IRCA6y7gm8xIfF75htO4D8QgTd4gAiT2Jos3TRWzheE/wpL1oPAslGIHQI76I9
+        aL9hg9l85pLxDPQ38brUgPagGR3B02Q2oXW8EemlJArBU8CKH9WPw4DXhNFrR/Vf5jgTEwiGYGDqLLzT
+        5+CbvkDmeQw+bcYXdQ4jlouISVbsvBHhvXwY77Ob9X+j6A0zwV7pvNIMx9UmLIhmthZ8j+sFtr4HCSqh
+        V1JPGKJvEp7RGDz+KbjJdI1EYev3J4yttRwh0Hv6V2jfCMf9AKQQlciR8BlNAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
@@ -480,6 +497,22 @@
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimiser données au démarrage chaque semaine</value>
+  </data>
+  <data name="ActionAutoGenerateHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="ActionSelectLangFR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -517,11 +550,17 @@
   <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
     <value>Ouvrir le dossier d'export en cas de succès</value>
   </data>
+  <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 17</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
+    <value>Fermer la boite de rappel en cliquant n'importe où</value>
+  </data>
   <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 17</value>
+    <value>265, 17</value>
   </data>
   <data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
-    <value>Afficher les rappels dans la barre de tâche</value>
+    <value>Afficher les boites de rappel dans la barre de tâche</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>278, 17</value>
@@ -535,11 +574,29 @@
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>Vérifier mise à jour au démarrage chaque semaine</value>
   </data>
+  <data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="EditLogEnabled.Text" xml:space="preserve">
+    <value>Activer le fichier log</value>
+  </data>
+  <data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 17</value>
+  </data>
+  <data name="EditStartWithWindows.Text" xml:space="preserve">
+    <value>Démarrer avec Windows</value>
+  </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
   </data>
   <data name="EditDebuggerEnabled.Text" xml:space="preserve">
     <value>Activer le debogueur</value>
+  </data>
+  <data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 17</value>
+  </data>
+  <data name="EditBigCalendarWarning.Text" xml:space="preserve">
+    <value>Afficher une alerte pour un grand intervalle</value>
   </data>
   <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 17</value>
@@ -554,13 +611,26 @@
     <value>Activer le menu des liens web</value>
   </data>
   <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 17</value>
+    <value>305, 17</value>
   </data>
   <data name="EditAutoRegenerate.Text" xml:space="preserve">
-    <value>Auto-générer données pour ces ans si expiré</value>
+    <value>Auto-générer données pour cet intervalle d'années si expiré</value>
   </data>
-  <data name="GroupBoxMoonDayTextFormat.Text" xml:space="preserve">
-    <value>Format texte jour de la lune</value>
+  <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
+</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -593,25 +663,53 @@
         kM5gAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="GroupBoxMaxYearsInterval.Text" xml:space="preserve">
+  <data name="ActionSelectCalculatorPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="TabPageGeneration.Text" xml:space="preserve">
+    <value>Génération</value>
+  </data>
+  <data name="LabelMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 13</value>
+  </data>
+  <data name="LabelMaxYearsInterval.Text" xml:space="preserve">
     <value>Intervalle d'années maximum</value>
+  </data>
+  <data name="TabPageReminder.Text" xml:space="preserve">
+    <value>Rappeleur</value>
+  </data>
+  <data name="TabPageCelebrations.Text" xml:space="preserve">
+    <value>Célébrations</value>
+  </data>
+  <data name="TabPageMonthView.Text" xml:space="preserve">
+    <value>Vue par mois</value>
+  </data>
+  <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 13</value>
+  </data>
+  <data name="LabelMoonDayTextFormat.Text" xml:space="preserve">
+    <value>Format du texte du jour de la lune</value>
+  </data>
+  <data name="TabPageTextReport.Text" xml:space="preserve">
+    <value>Rapport texte</value>
+  </data>
+  <data name="TabPageNavigationWindow.Text" xml:space="preserve">
+    <value>Fenêtre de navigation</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
-    <value>Fenêtre des célébrations</value>
-  </data>
-  <data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
-    <value>Fermer la boite de rappel sur un click</value>
-  </data>
-  <data name="EditBigCalendarWarning.Text" xml:space="preserve">
-    <value>Afficher une alerte pour un grand intervalle</value>
-  </data>
-  <data name="EditLogEnabled.Text" xml:space="preserve">
-    <value>Activer le fichier log</value>
-  </data>
-  <data name="EditStartWithWindows.Text" xml:space="preserve">
-    <value>Démarrer avec Windows</value>
   </data>
 </root>

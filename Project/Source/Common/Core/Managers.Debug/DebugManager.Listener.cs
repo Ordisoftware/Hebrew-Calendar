@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-10 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -122,7 +122,10 @@ namespace Ordisoftware.Core
       {
         Purge();
         Date = DateTime.Today;
-        FilePath = Path.Combine(Folder, $"{Code} {SQLiteDate.ToString(Date)}{Extension}");
+        string ProcessName = SystemManager.AllowApplicationMultipleInstances
+                           ? $" ({Process.GetCurrentProcess().Id})"
+                           : "";
+        FilePath = Path.Combine(Folder, $"{Code} {SQLiteDate.ToString(Date)}{ProcessName}{Extension}");
         SystemManager.TryCatchManage(() => { Changed?.Invoke(this, FilePath); });
         return FilePath;
       }
@@ -135,6 +138,7 @@ namespace Ordisoftware.Core
           bool ResolveDate(FileItem item)
           {
             string dateCode = Path.GetFileNameWithoutExtension(item.FilePath).Replace(Code, "");
+            dateCode = dateCode.SplitNoEmptyLines(" (")[0];
             try
             {
               item.Date = SQLiteDate.ToDateTime(dateCode.Trim());

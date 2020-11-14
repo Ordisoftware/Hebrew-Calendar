@@ -33,7 +33,7 @@ namespace Ordisoftware.Core
     /// <param name="values">The dictionary containing lang>translation.</param>
     static public string GetLang(this TranslationsDictionary values)
     {
-      return values?[Languages.Current] ?? ERR;
+      return values?[Languages.Current] ?? values?[Languages.Default] ?? ERR;
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ namespace Ordisoftware.Core
     /// <param name="value">The value to translate.</param>
     static public string GetLang<T>(this NullSafeDictionary<T, TranslationsDictionary> values, T value)
     {
-      return values?[value]?[Languages.Current] ?? ERR;
+      return values?[value]?[Languages.Current] ?? values?[value]?[Languages.Default] ?? ERR;
     }
 
     /// <summary>
@@ -63,7 +63,7 @@ namespace Ordisoftware.Core
     /// <param name="values">The dictionary containing lang>list.</param>
     static public NullSafeStringList GetLang(this NullSafeDictionary<Language, NullSafeStringList> values)
     {
-      return values?[Languages.Current] ?? new NullSafeStringList();
+      return values?[Languages.Current] ?? values?[Languages.Default] ?? new NullSafeStringList();
     }
 
     /// <summary>
@@ -74,7 +74,7 @@ namespace Ordisoftware.Core
     static public NullSafeList<T> GetLang<T>(this NullSafeDictionary<Language, NullSafeList<T>> values)
       where T : class
     {
-      return values?[Languages.Current] ?? new NullSafeList<T>();
+      return values?[Languages.Current] ?? values?[Languages.Default] ?? new NullSafeList<T>();
     }
 
     /// <summary>
@@ -83,7 +83,7 @@ namespace Ordisoftware.Core
     /// <param name="values">The dictionary containing lang>translations.</param>
     static public string[] GetLang(this NullSafeDictionary<Language, string[]> values)
     {
-      return values?[Languages.Current] ?? new string[1] { ERR };
+      return values?[Languages.Current] ?? values?[Languages.Default] ?? new string[1] { ERR };
     }
 
     /// <summary>
@@ -95,7 +95,7 @@ namespace Ordisoftware.Core
     static public string GetLang<T>(this NullSafeDictionary<Language, NullSafeOfStringDictionary<T>> values, T value)
       where T : Enum
     {
-      return values?[Languages.Current]?[value] ?? ERR;
+      return values?[Languages.Current]?[value] ?? values?[Languages.Default]?[value] ?? ERR;
     }
 
     /// <summary>

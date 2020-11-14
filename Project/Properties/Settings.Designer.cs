@@ -1592,5 +1592,41 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ReminderBoxSoundWinows"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int PreferencesFormSelectedTabIndex {
+            get {
+                return ((int)(this["PreferencesFormSelectedTabIndex"]));
+            }
+            set {
+                this["PreferencesFormSelectedTabIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("calc.exe")]
+        public string CalculatorExe {
+            get {
+                return ((string)(this["CalculatorExe"]));
+            }
+            set {
+                this["CalculatorExe"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DatesDiffCalculatorFormAutoSetRightToToday {
+            get {
+                return ((bool)(this["DatesDiffCalculatorFormAutoSetRightToToday"]));
+            }
+            set {
+                this["DatesDiffCalculatorFormAutoSetRightToToday"] = value;
+            }
+        }
     }
 }

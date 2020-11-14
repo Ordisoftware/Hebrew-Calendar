@@ -1892,4 +1892,7 @@
   <data name="ActionSelectReminderBoxSound.Text" xml:space="preserve">
     <value>Sélectionner le son des boites de rappel</value>
   </data>
+  <data name="ActionShowKeyboardNotice.Text" xml:space="preserve">
+    <value>Notice des raccourcis clavier</value>
+  </data>
 </root>

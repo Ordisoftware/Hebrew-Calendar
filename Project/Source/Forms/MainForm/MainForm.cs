@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Linq;
 using System.Xml;
@@ -110,39 +110,37 @@ namespace Ordisoftware.Hebrew.Calendar
     private void MainForm_Shown(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
-      DebugManager.Enter();
-      try
+      UpdateTextCalendar();
+      CalendarMonth.CalendarDateChanged += date => GoToDate(date);
+      MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
+      Globals.IsReady = true;
+      UpdateButtons();
+      GoToDate(DateTime.Today);
+      CheckRegenerateCalendar();
+      if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
+        ActionPreferences.PerformClick();
+      if ( Settings.StartupHide || Program.ForceStartupHide )
+        MenuShowHide.PerformClick();
+      TimerBallon.Interval = Settings.BalloonLoomingDelay;
+      TimerMidnight.TimeReached += TimerMidnight_Tick;
+      TimerMidnight.Start();
+      TimerReminder_Tick(null, null);
+      ChronoStart.Stop();
+      Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
+      Settings.Save();
+      this.Popup();
+      SystemManager.TryCatch(() =>
       {
-        UpdateTextCalendar();
-        CalendarMonth.CalendarDateChanged += date => GoToDate(date);
-        MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
-        Globals.IsReady = true;
-        UpdateButtons();
-        GoToDate(DateTime.Today);
-        CheckRegenerateCalendar();
-        if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
-          ActionPreferences.PerformClick();
-        if ( Settings.StartupHide || Program.ForceStartupHide )
-          MenuShowHide.PerformClick();
-        TimerBallon.Interval = Settings.BalloonLoomingDelay;
-        TimerMidnight.TimeReached += TimerMidnight_Tick;
-        TimerMidnight.Start();
-        TimerReminder_Tick(null, null);
-        ChronoStart.Stop();
-        Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
-        Settings.Save();
-        this.Popup();
-        SystemManager.TryCatch(() =>
-        {
-          if ( LockSessionForm.Instance?.Visible ?? false )
-            LockSessionForm.Instance.Popup();
-        });
-      }
-      finally
-      {
-        DebugManager.Leave();
-      }
+        if ( LockSessionForm.Instance?.Visible ?? false )
+          LockSessionForm.Instance.Popup();
+      });
+      NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+                                                     AppTranslations.NoticeKeyboardShortcuts,
+                                                     true, false, 350, 660, false, false);
+      NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
+      NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
     }
+  
 
     /// <summary>
     /// Event handler. Called by MainForm for form closing events.
@@ -151,11 +149,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
-      {
-        DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
-        return;
-      }
+      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
       if ( !Globals.IsReady ) return;
       if ( Globals.IsExiting ) return;
       if ( Globals.AllowClose ) return;
@@ -170,16 +164,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
-      DebugManager.Enter();
-      DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
-      try
-      {
-        Settings.Store();
-      }
-      finally
-      {
-        DebugManager.Leave();
-      }
+      Settings.Store();
     }
 
     /// <summary>
@@ -189,35 +174,26 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Session ending event information.</param>
     internal void SessionEnding(object sender, SessionEndingEventArgs e)
     {
-      DebugManager.Enter();
-      DebugManager.Trace(LogTraceEvent.Data, e.Reason.ToStringFull());
-      try
+      if ( Globals.IsSessionEnding ) return;
+      Globals.IsExiting = true;
+      Globals.IsSessionEnding = true;
+      Globals.AllowClose = true;
+      LockSessionForm.Instance.Timer.Stop();
+      TimerTooltip.Stop();
+      TimerBallon.Stop();
+      TimerTrayMouseMove.Stop();
+      TimerResumeReminder.Stop();
+      TimerMidnight.Stop();
+      TimerReminder.Stop();
+      MessageBoxEx.CloseAll();
+      SystemManager.TryCatch(() => ClearLists());
+      SystemManager.TryCatch(() =>
       {
-        if ( Globals.IsSessionEnding ) return;
-        Globals.IsExiting = true;
-        Globals.IsSessionEnding = true;
-        Globals.AllowClose = true;
-        LockSessionForm.Instance.Timer.Stop();
-        TimerTooltip.Stop();
-        TimerBallon.Stop();
-        TimerTrayMouseMove.Stop();
-        TimerResumeReminder.Stop();
-        TimerMidnight.Stop();
-        TimerReminder.Stop();
-        MessageBoxEx.CloseAll();
-        SystemManager.TryCatch(() => ClearLists());
-        SystemManager.TryCatch(() =>
-        {
-          foreach ( Form form in Application.OpenForms )
-            if ( form != this && form.Visible )
-              SystemManager.TryCatch(() => form.Close());
-        });
-        Close();
-      }
-      finally
-      {
-        DebugManager.Leave();
-      }
+        foreach ( Form form in Application.OpenForms )
+          if ( form != this && form.Visible )
+            SystemManager.TryCatch(() => form.Close());
+      });
+      Close();
     }
 
     /// <summary>
@@ -651,24 +627,12 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuExit_Click(MenuExit, null);
     }
 
-    /// <summary>
-    /// Event handler. Called by ActionShowShabatNotice for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    internal void ActionShowShabatNotice_Click(object sender, EventArgs e)
+    private void ShowNotice(object sender, TranslationsDictionary title, TranslationsDictionary text, int width)
     {
-      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == AppTranslations.NoticeShabatTitle.GetLang());
-      if ( form != null )
-        form.Popup(null, sender == null);
-      else
-      {
-        form = new MessageBoxEx(AppTranslations.NoticeShabatTitle,
-                                AppTranslations.NoticeShabat,
-                                MessageBoxEx.DefaultLargeWidth);
-        form.ShowInTaskbar = true;
-        form.Popup(null, sender == null);
-      }
+      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title.GetLang());
+      if ( form == null )
+        form = new MessageBoxEx(title, text, width); form.ShowInTaskbar = true;
+      form.Popup(null, sender == null);
     }
 
     /// <summary>
@@ -678,17 +642,33 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     internal void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == AppTranslations.NoticeCelebrationsTitle.GetLang());
-      if ( form != null )
-        form.Popup(null, sender == null);
-      else
-      {
-        form = new MessageBoxEx(AppTranslations.NoticeCelebrationsTitle,
-                                AppTranslations.NoticeCelebrations,
-                                MessageBoxEx.DefaultMediumWidth);
-        form.ShowInTaskbar = true;
-        form.Popup(null, sender == null);
-      }
+      ShowNotice(sender, 
+                 AppTranslations.NoticeCelebrationsTitle, 
+                 AppTranslations.NoticeCelebrations, 
+                 MessageBoxEx.DefaultMediumWidth);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionShowShabatNotice for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    internal void ActionShowShabatNotice_Click(object sender, EventArgs e)
+    {
+      ShowNotice(sender,
+                 AppTranslations.NoticeShabatTitle,
+                 AppTranslations.NoticeShabat,
+                 MessageBoxEx.DefaultLargeWidth);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionShowKeyboardNotice for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionShowKeyboardNotice_Click(object sender, EventArgs e)
+    {
+      NoticeKeyboardShortcutsForm.Popup();
     }
 
     /// <summary>
@@ -708,7 +688,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionOpenCalculator_Click(object sender, EventArgs e)
     {
-      SystemManager.RunShell("calc.exe");
+      SystemManager.RunShell(Settings.CalculatorExe);
     }
 
     /// <summary>
@@ -802,8 +782,15 @@ namespace Ordisoftware.Hebrew.Calendar
           document.DefaultPageSettings.Landscape = true;
           document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
           PrintDialog.Document = document;
-          if ( PrintDialog.ShowDialog() == DialogResult.Cancel ) return;
-          SystemManager.TryCatchManage(() => document.Print());
+          var timer = new Timer();
+          timer.Interval = 250;
+          timer.Tick += (_s, _e) =>
+          {
+            timer.Stop();
+            if ( PrintDialog.ShowDialog(this) == DialogResult.OK )
+              SystemManager.TryCatchManage(() => document.Print());
+          };
+          timer.Start();
         }
       }
       finally

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -37,6 +37,9 @@ namespace Ordisoftware.Hebrew.Calendar
         Instance.MonthCalendar1.SelectionStart = dates.Item1;
         Instance.MonthCalendar2.SelectionStart = dates.Item2;
       }
+      else
+        if ( Instance.EditAutoSetRightToToday.Checked )
+        Instance.MonthCalendar2.SelectionStart = DateTime.Today;
       Instance.MonthCalendar1.Tag = Instance.MonthCalendar1.SelectionStart;
       Instance.MonthCalendar2.Tag = Instance.MonthCalendar2.SelectionStart;
       Instance.DateChanged(true);

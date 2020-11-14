@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -136,6 +136,9 @@ namespace Ordisoftware.Hebrew.Calendar
           });
     }
 
+    /// <summary>
+    /// Mono spaced font list.
+    /// </summary>
     static private readonly string[] list =
     {
       "andalé mono", "bitstream vera sans mono", "cascadia code", "consolas", "courier new", "courier",
@@ -286,12 +289,17 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( IsReady ) MustRefreshMonthView = true;
     }
 
-    private void EitReportFont_Changed(object sender, EventArgs e)
+    private void EditReportFont_Changed(object sender, EventArgs e)
     {
       if ( !IsReady ) return;
       Settings.FontName = EditFontName.Text;
       Settings.FontSize = (int)EditFontSize.Value;
       MainForm.Instance.UpdateTextCalendar();
+    }
+
+    private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)
+    {
+      SystemManager.StartWithWindowsUserRegistry = EditStartWithWindows.Checked;
     }
 
     private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
@@ -307,10 +315,29 @@ namespace Ordisoftware.Hebrew.Calendar
       DebugManager.TraceEnabled = EditLogEnabled.Checked;
     }
 
+    private void EditBalloon_CheckedChanged(object sender, EventArgs e)
+    {
+      EditBalloonAutoHide.Enabled = EditBalloon.Checked;
+      EditBalloonAutoHide_CheckedChanged(null, null);
+    }
+
+    private void EditBalloonAutoHide_CheckedChanged(object sender, EventArgs e)
+    {
+      LabelLoomingDelay.Enabled = EditBalloon.Checked && EditBalloonAutoHide.Checked;
+      EditBalloonLoomingDelay.Enabled = LabelLoomingDelay.Enabled;
+    }
+
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)
     {
       LabelRemindAutoLockTimeOut.Enabled = EditAutoLockSession.Checked;
       EditAutoLockSessionTimeOut.Enabled = EditAutoLockSession.Checked;
+    }
+
+    private void EditAutoRegenerate_CheckedChanged(object sender, EventArgs e)
+    {
+      EditAutoGenerateYearsInterval.Enabled = EditAutoRegenerate.Checked;
+      SelectAutoGenerateYearsInterval.Enabled = EditAutoRegenerate.Checked;
+      ActionAutoGenerateHelp.Enabled = EditAutoRegenerate.Checked;
     }
 
     private void EditRemindShabat_ValueChanged(object sender, EventArgs e)
@@ -332,13 +359,6 @@ namespace Ordisoftware.Hebrew.Calendar
       EditRemindCelebrationHoursBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
       LabelRemindCelebrationEveryMinutes.Enabled = EditReminderCelebrationsEnabled.Checked;
       EditRemindCelebrationEveryMinutes.Enabled = EditReminderCelebrationsEnabled.Checked;
-    }
-
-    private void EditBalloon_CheckedChanged(object sender, EventArgs e)
-    {
-      EditBalloonAutoHide.Enabled = EditBalloon.Checked;
-      LabelLoomingDelay.Enabled = EditBalloon.Checked;
-      EditBalloonLoomingDelay.Enabled = EditBalloon.Checked;
     }
 
     private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -574,11 +594,26 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditUseColors_CheckedChanged(object sender, EventArgs e)
     {
-      MustRefreshMonthView = true;
+      if ( IsReady ) MustRefreshMonthView = true;
+      PanelCalendarColors.Enabled = EditUseColors.Checked;
     }
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
-      MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
+      if ( IsReady ) MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
+    }
+
+    private void ActionSelectCalculatorPath_Click(object sender, EventArgs e)
+    {
+      SystemManager.TryCatch(() =>
+      {
+        OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditCalculatorPath.Text);
+      });
+      SystemManager.TryCatch(() =>
+      {
+        OpenFileDialog.FileName = Path.GetFileName(EditCalculatorPath.Text);
+      });
+      if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
+        EditCalculatorPath.Text = OpenFileDialog.FileName;
     }
 
     private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
@@ -593,14 +628,6 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
         EditHebrewLettersPath.Text = OpenFileDialog.FileName;
-    }
-
-    private void SelectOpenNavigationForm_CheckedChanged(object sender, EventArgs e)
-    {
-      EditBalloon.Enabled = !SelectOpenNavigationForm.Checked;
-      EditBalloonAutoHide.Enabled = EditBalloon.Enabled;
-      LabelLoomingDelay.Enabled = EditBalloon.Enabled;
-      EditBalloonLoomingDelay.Enabled = EditBalloon.Enabled;
     }
 
     private void ActionAutoGenerateHelp_Click(object sender, EventArgs e)
@@ -618,9 +645,14 @@ namespace Ordisoftware.Hebrew.Calendar
       EditAutoGenerateYearsInterval.Text = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue.ToString();
     }
 
-    private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)
+    private void EditResetCalculatorPath_Click(object sender, EventArgs e)
     {
-      SystemManager.StartWithWindowsUserRegistry = EditStartWithWindows.Checked;
+      EditCalculatorPath.Text = (string)Settings.Properties["CalculatorExe"].DefaultValue;
+    }
+
+    private void EditResetHebrewLettersPath_Click(object sender, EventArgs e)
+    {
+      EditHebrewLettersPath.Text = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
     }
   }
 
