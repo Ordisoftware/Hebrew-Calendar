@@ -166,16 +166,17 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.EN] = "F1 : Text report view" + Globals.NL +
                         "F2 : Month view" + Globals.NL +
                         "F3 : Database grid view" + Globals.NL +
+                        Globals.NL +
                         "F4 : Next celebrations window" + Globals.NL +
                         "F5 : Search a celebration window" + Globals.NL +
                         "F6 : Search a moon month window" + Globals.NL +
                         "F7 : Search a gregorian month window" + Globals.NL +
-                        "F9 : Navigation window(also Ctrl+N)" + Globals.NL +
+                        "F9 : Navigation window (also Ctrl+N)" + Globals.NL +
                         Globals.NL +
                         "Ctrl+Tab : Next view" + Globals.NL +
                         "Shift+Ctrl+Tab : Previous view" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+T : Go to today(also Numpad0)" + Globals.NL +
+                        "Ctrl+T : Go to today (also Numpad0)" + Globals.NL +
                         "Ctrl+D : Search a day" + Globals.NL +
                         Globals.NL +
                         "Ctrl+C : Copy text report to clipboard" + Globals.NL +
@@ -194,6 +195,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         Globals.NL +
                         "Home : First month available in the database" + Globals.NL +
                         "End : Last month available in the database" + Globals.NL +
+                        Globals.NL +
                         "Up : Previous year" + Globals.NL +
                         "Down : Next year" + Globals.NL +
                         "Left : Previous month" + Globals.NL +
@@ -207,11 +209,12 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "F1 : Vue du rapport textuel" + Globals.NL +
                         "F2 : Vue du mois" + Globals.NL +
                         "F3 : Vue de la grille de données" + Globals.NL +
+                        Globals.NL +
                         "F4 : Fenêtre des prochaines célébrations" + Globals.NL +
                         "F5 : Fenêtre de recherche de célébration" + Globals.NL +
                         "F6 : Fenêtre de recherche de mois lunaire" + Globals.NL +
                         "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
-                        "F9 : Fenêtre de navigation(également Ctrl+N)" + Globals.NL +
+                        "F9 : Fenêtre de navigation (également Ctrl+N)" + Globals.NL +
                         Globals.NL +
                         "Ctrl+Tab : Vue suivante" + Globals.NL +
                         "Maj+Ctrl+Tab : Vue précédente" + Globals.NL +
@@ -235,6 +238,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         Globals.NL +
                         "Début : Premier mois disponible dans la base de données" + Globals.NL +
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
+                        Globals.NL +
                         "Haut : Année précédente" + Globals.NL +
                         "Bat : Année suivante" + Globals.NL +
                         "Gauche : Mois précédent" + Globals.NL +
