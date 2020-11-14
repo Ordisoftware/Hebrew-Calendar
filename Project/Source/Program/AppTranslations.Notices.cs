@@ -240,7 +240,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
                         Globals.NL +
                         "Haut : Année précédente" + Globals.NL +
-                        "Bat : Année suivante" + Globals.NL +
+                        "Bas : Année suivante" + Globals.NL +
                         "Gauche : Mois précédent" + Globals.NL +
                         "Droite : Mois suivant" + Globals.NL +
                         Globals.NL +
