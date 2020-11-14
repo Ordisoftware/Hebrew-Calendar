@@ -155,18 +155,19 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.11.__ - Version 5.6
+#### 2020.11.17 - Version 5.6
 
-- Add keyboard shortcuts notice in tools menu.
+- Rework of the preferences form design to have a Tab Control with pages.
+- Add keyboard shortcuts notice in windows settings menu.
 - Add option to set the Calculator application path.
 - Add option to set the Hebrew Letters application path.
 - Add option for date diff calculator form to set right date to today when opened.
-- Rework of the preferences form design to have a Tab Control with pages.
 - Fix some preferences controls to be disabled when related options are disabled.
+- Fix use no colors option.
 - Fix print dialog does not have the focus when opened.
-- Improve UI and add some icons.
-- Update web links with quran arabic lecture link.
-- Fix french help shortcuts.
+- Fix french help.
+- Improve UI.
+- Update web links with Quran arabic lecture link.
 
 #### 2020.09.29 - Version 5.5
 
