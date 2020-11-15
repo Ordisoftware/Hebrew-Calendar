@@ -520,7 +520,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloonAutoHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 200</value>
+    <value>353, 195</value>
   </data>
   <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 17</value>
@@ -553,7 +553,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 225</value>
+    <value>368, 215</value>
   </data>
   <data name="LabelLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 13</value>
@@ -765,7 +765,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditBalloonLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>371, 244</value>
+    <value>371, 234</value>
   </data>
   <data name="EditBalloonLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
