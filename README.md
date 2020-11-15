@@ -155,7 +155,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.11.17 - Version 5.6
+#### 2020.11.15 - Version 5.6
 
 - Rework of the preferences form design to have a Tab Control with pages.
 - Add keyboard shortcuts notice in windows settings menu.
