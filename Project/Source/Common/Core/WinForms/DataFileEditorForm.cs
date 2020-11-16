@@ -79,7 +79,7 @@ namespace Ordisoftware.Core
 
     private void EditProvidersForm_Shown(object sender, EventArgs e)
     {
-      UndoRedoTextBox textbox = (UndoRedoTextBox)TabControl.TabPages[0].Controls[0];
+      var textbox = (TextBox)TabControl.TabPages[0].Controls[0];
       textbox.Focus();
       textbox.SelectionStart = 0;
       textbox.SelectionLength = 0;
@@ -87,7 +87,7 @@ namespace Ordisoftware.Core
 
     private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
     {
-      UndoRedoTextBox textbox = (UndoRedoTextBox)TabControl.SelectedTab.Controls[0];
+      var textbox = (TextBox)TabControl.SelectedTab.Controls[0];
       textbox.Focus();
       textbox.SelectionLength = 0;
     }
