@@ -11,12 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using Ordisoftware.Hebrew;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -123,44 +122,43 @@ namespace Ordisoftware.Hebrew.Calendar
                                     Program.Settings.HebrewLettersExe);
     }
 
-    private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
+    private void ActionCopyMonthName(object sender, EventArgs e, Func<int, string> process)
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      Clipboard.SetText(HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]));
+      Clipboard.SetText(process(index));
+    }
+
+    private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
+    {
+      ActionCopyMonthName(sender, e, index => HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]));
     }
 
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
     {
+      ActionCopyMonthName(sender, e, index => Program.MoonMonthsUnicode[index]);
+    }
+
+    private void ActionCopyLine(object sender, EventArgs e, Func<int, string> process)
+    {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      Clipboard.SetText(Program.MoonMonthsUnicode[index]);
+      string name = Program.MoonMonthsNames[index];
+      string meaning = Program.MoonMonthsMeanings[Languages.Current][index];
+      string lettriq = Program.MoonMonthsLettriqs[Languages.Current][index];
+      Clipboard.SetText(process(index) + " (" + name + ") : " +  meaning + " (" + lettriq + ")");
     }
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
     {
-      var menuitem = (ToolStripMenuItem)sender;
-      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      int index = (int)control.Tag;
-      string str = HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]) + " (" +
-                   Program.MoonMonthsNames[index] + ") : " +
-                   Program.MoonMonthsMeanings[Languages.Current][index] + " (" +
-                   Program.MoonMonthsLettriqs[Languages.Current][index] + ")";
-      Clipboard.SetText(str);
+      ActionCopyLine(sender, e, index => HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]));
     }
 
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
-      var menuitem = (ToolStripMenuItem)sender;
-      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      int index = (int)control.Tag;
-      string str = Program.MoonMonthsUnicode[index] + " (" +
-                   Program.MoonMonthsNames[index] + ") : " +
-                   Program.MoonMonthsMeanings[Languages.Current][index] + " (" +
-                   Program.MoonMonthsLettriqs[Languages.Current][index] + ")";
-      Clipboard.SetText(str);
+      ActionCopyLine(sender, e, index => Program.MoonMonthsUnicode[index]);
     }
 
   }
