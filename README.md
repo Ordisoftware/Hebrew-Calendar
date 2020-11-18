@@ -147,6 +147,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Roadmap
 
+- Add moon months description form and menu in tools.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Add a different tray icon to indicate if a celebration is running, including week days.
@@ -154,9 +155,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 202_.__.__ - Version 6.0
+#### 2020.11.18 - Version 5.7
 
-- Add moon months description form and menu in tools.
+- Fix start menu icons lost since the v5.3 setup.
 
 #### 2020.11.15 - Version 5.6
 
