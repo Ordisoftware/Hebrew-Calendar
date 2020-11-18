@@ -40,9 +40,11 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCopyFontChars = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyHebrewChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionCopyLine = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCopyLineHebrew = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCopyLineUnicode = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMonths = new System.Windows.Forms.Panel();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuItems.SuspendLayout();
@@ -50,18 +52,18 @@
       // 
       // PanelBottom
       // 
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionSwapColors);
       this.PanelBottom.Controls.Add(this.ActionEditFiles);
       this.PanelBottom.Controls.Add(this.ActionViewNotice);
       this.PanelBottom.Controls.Add(this.ActionClose);
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionSwapColors
       // 
+      resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
       this.ActionSwapColors.AllowDrop = true;
       this.ActionSwapColors.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
       this.ActionSwapColors.Name = "ActionSwapColors";
       this.ActionSwapColors.TabStop = false;
       this.ActionSwapColors.UseVisualStyleBackColor = true;
@@ -69,9 +71,9 @@
       // 
       // ActionEditFiles
       // 
+      resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
       this.ActionEditFiles.AllowDrop = true;
       this.ActionEditFiles.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
       this.ActionEditFiles.Name = "ActionEditFiles";
       this.ActionEditFiles.TabStop = false;
       this.ActionEditFiles.UseVisualStyleBackColor = true;
@@ -79,9 +81,9 @@
       // 
       // ActionViewNotice
       // 
+      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
       this.ActionViewNotice.AllowDrop = true;
       this.ActionViewNotice.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
       this.ActionViewNotice.Name = "ActionViewNotice";
       this.ActionViewNotice.TabStop = false;
       this.ActionViewNotice.UseVisualStyleBackColor = true;
@@ -96,16 +98,18 @@
       // 
       // ContextMenuItems
       // 
+      resources.ApplyResources(this.ContextMenuItems, "ContextMenuItems");
       this.ContextMenuItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionSearchOnline,
             this.toolStripSeparator1,
             this.ActionOpenHebrewLetters,
             this.MenuSeparator2,
-            this.ActionCopyFontChars,
+            this.ActionCopyHebrewChars,
             this.ActionCopyUnicodeChars,
-            this.ActionCopyLine});
+            this.toolStripSeparator2,
+            this.ActionCopyLineHebrew,
+            this.ActionCopyLineUnicode});
       this.ContextMenuItems.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuItems, "ContextMenuItems");
       // 
       // ActionSearchOnline
       // 
@@ -114,8 +118,8 @@
       // 
       // toolStripSeparator1
       // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
       // 
       // ActionOpenHebrewLetters
       // 
@@ -125,14 +129,14 @@
       // 
       // MenuSeparator2
       // 
-      this.MenuSeparator2.Name = "MenuSeparator2";
       resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
+      this.MenuSeparator2.Name = "MenuSeparator2";
       // 
-      // ActionCopyFontChars
+      // ActionCopyHebrewChars
       // 
-      resources.ApplyResources(this.ActionCopyFontChars, "ActionCopyFontChars");
-      this.ActionCopyFontChars.Name = "ActionCopyFontChars";
-      this.ActionCopyFontChars.Click += new System.EventHandler(this.ActionCopyFontChars_Click);
+      resources.ApplyResources(this.ActionCopyHebrewChars, "ActionCopyHebrewChars");
+      this.ActionCopyHebrewChars.Name = "ActionCopyHebrewChars";
+      this.ActionCopyHebrewChars.Click += new System.EventHandler(this.ActionCopyHebrewChars_Click);
       // 
       // ActionCopyUnicodeChars
       // 
@@ -140,11 +144,22 @@
       this.ActionCopyUnicodeChars.Name = "ActionCopyUnicodeChars";
       this.ActionCopyUnicodeChars.Click += new System.EventHandler(this.ActionCopyUnicodeChars_Click);
       // 
-      // ActionCopyLine
+      // toolStripSeparator2
       // 
-      resources.ApplyResources(this.ActionCopyLine, "ActionCopyLine");
-      this.ActionCopyLine.Name = "ActionCopyLine";
-      this.ActionCopyLine.Click += new System.EventHandler(this.ActionCopyLine_Click);
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      // 
+      // ActionCopyLineHebrew
+      // 
+      resources.ApplyResources(this.ActionCopyLineHebrew, "ActionCopyLineHebrew");
+      this.ActionCopyLineHebrew.Name = "ActionCopyLineHebrew";
+      this.ActionCopyLineHebrew.Click += new System.EventHandler(this.ActionCopyLineHebrew_Click);
+      // 
+      // ActionCopyLineUnicode
+      // 
+      resources.ApplyResources(this.ActionCopyLineUnicode, "ActionCopyLineUnicode");
+      this.ActionCopyLineUnicode.Name = "ActionCopyLineUnicode";
+      this.ActionCopyLineUnicode.Click += new System.EventHandler(this.ActionCopyLineUnicode_Click);
       // 
       // PanelMonths
       // 
@@ -179,13 +194,15 @@
     private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
-    private System.Windows.Forms.ToolStripMenuItem ActionCopyFontChars;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyHebrewChars;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyUnicodeChars;
-    private System.Windows.Forms.ToolStripMenuItem ActionCopyLine;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyLineHebrew;
     private System.Windows.Forms.Panel PanelMonths;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.Button ActionSwapColors;
     private System.Windows.Forms.Button ActionEditFiles;
     private System.Windows.Forms.Button ActionViewNotice;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyLineUnicode;
   }
 }

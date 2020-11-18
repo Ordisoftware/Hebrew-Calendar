@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -231,7 +231,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( LabelDate.Tag == null ) return;
       MainForm.Instance.MenuShowHide_Click(null, null); 
       MainForm.Instance.GoToDate((DateTime)LabelDate.Tag);
-      Form_Click(null, null);
+      //Form_Click(null, null);
     }
 
     private void ActionSetup_Click(object sender, EventArgs e)
