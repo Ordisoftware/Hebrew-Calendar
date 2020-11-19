@@ -6,7 +6,7 @@
 >[Project Website](https://www.ordisoftware.com/projects/hebrew-calendar)<br/>
 >[Twitter](https://twitter.com/ordisoftware)<br/>
 
-A tool for Windows written in C# that allows to generate a calendar based on the lunar cycle in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippour and Sukkot festivities.
+A tool for Windows written in C# that allows to generate a calendar based on the solar and lunar cycles in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippour and Sukkot festivities.
 
 ## Functionalities
 
@@ -147,13 +147,17 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Roadmap
 
-- Add moon months description form and menu in tools.
-- Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Add a different tray icon to indicate if a celebration is running, including week days.
 - Improve navigation form to show celebration week days.
 
 ## Changelog
+
+#### 202_.__.__ - Version 6.0
+
+- Add moon months description form and menu in tools.
+- Add reminder for solar and lunar anniversary of birth.
+- Fix log icon not disabled in stats form when log is disabled.
 
 #### 2020.11.18 - Version 5.7
 
