@@ -160,6 +160,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add change tab page using function keys.
 - Fix view log menu item not disabled when app started when log is disabled.
 - Fix view log icon not disabled in stats form when log is disabled.
+- Improve UI.
 - Update web links with the calendar of Torah-box.
 
 #### 2020.11.18 - Version 5.7
