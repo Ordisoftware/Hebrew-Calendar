@@ -41,6 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Instance.Timer.Interval = 1000;
       }
       Instance.Timer.Start();
+      Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
     }
 
     private StatisticsForm()

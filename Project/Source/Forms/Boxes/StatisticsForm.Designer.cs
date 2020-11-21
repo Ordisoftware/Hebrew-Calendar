@@ -1004,7 +1004,7 @@
     private Ordisoftware.Core.UndoRedoTextBox EditOpenFolderUserLocalData;
     private Ordisoftware.Core.UndoRedoTextBox EditFolderUserData;
     private System.Windows.Forms.Panel PanelFolders;
-    private System.Windows.Forms.Button ActionViewLog;
+    internal System.Windows.Forms.Button ActionViewLog;
     private System.Windows.Forms.Label cPUProcessLoadLabel1;
     private System.Windows.Forms.Label cPUProcessLoadMaxLabel1;
   }
