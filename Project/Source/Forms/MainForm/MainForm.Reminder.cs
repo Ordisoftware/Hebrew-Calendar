@@ -11,11 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -85,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EnableReminder()
     {
       TimerResumeReminder.Enabled = false;
-      TrayIcon.Icon = Icon;
+      TrayIcon.Icon = TrayIconDefault;
       ActionResetReminder.Enabled = true;
       ActionEnableReminder.Visible = false;
       ActionDisableReminder.Visible = true;
@@ -107,7 +105,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuTray.Enabled = false;
         var delay = SelectSuspendDelayForm.Run();
         if ( delay == null ) return;
-        TrayIcon.Icon = new Icon(Path.Combine(Globals.RootFolderPath, "ApplicationPause.ico"));
+        TrayIcon.Icon = TrayIconPause;
         TimerReminder.Enabled = false;
         ActionResetReminder.Enabled = false;
         ActionEnableReminder.Visible = true;

@@ -55,8 +55,12 @@ namespace Ordisoftware.Hebrew.Calendar
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
       SystemEvents.PowerModeChanged += PowerModeChanged;
-      SystemManager.TryCatch(() => { Icon = Icon.ExtractAssociatedIcon(Globals.ApplicationIconFilePath); });
-      TrayIcon.Icon = Icon;
+      string pathIcon = Globals.ApplicationIconFilePath;
+      SystemManager.TryCatch(() => { Icon = new Icon(pathIcon); });
+      TrayIconPause = new Icon(pathIcon.Replace("Application", "ApplicationPause")).GetBySize(16, 16);
+      TrayIconEvent = new Icon(pathIcon.Replace("Application", "ApplicationEvent")).GetBySize(16, 16);
+      TrayIconDefault = Icon.GetBySize(16, 16);
+      TrayIcon.Icon = TrayIconDefault;
       MenuTray.Enabled = false;
       Globals.AllowClose = false;
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
