@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -53,8 +53,8 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectYearsRangeForm_Load(object sender, EventArgs e)
     {
       Mutex = true;
-      int yearMin = AstronomyHelper.LunisolerCalendar.MinCalendarYear;
-      int yearMax = AstronomyHelper.LunisolerCalendar.MaxCalendarYear;
+      int yearMin = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year;
+      int yearMax = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year;
       int min = Program.GenerateIntervalMinimum;
       int max = Program.Settings.GenerateIntervalMaximum;
       CurrentYear = DateTime.Today.AddYears(-1).Year;

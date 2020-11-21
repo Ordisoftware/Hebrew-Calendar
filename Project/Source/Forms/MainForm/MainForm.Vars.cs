@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -33,13 +33,16 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private ToolTip LastToolTip = new ToolTip();
 
+    private Icon TrayIconPause;
+    private Icon TrayIconDefault;
+    private Icon TrayIconEvent;
+
     private Point TrayIconMouse;
 
     private bool CanBallon = true;
     private bool NavigationTrayBallooned;
 
     private bool TimerMutex;
-
     private bool TimerErrorShown;
 
     private MidnightTimer TimerMidnight = new MidnightTimer();

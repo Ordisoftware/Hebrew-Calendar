@@ -122,7 +122,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "La période solaire annuelle commence le 1er janvier." + Globals.NL +
                         "La période solaire mensuelle est comptée depuis le 1er jour." + Globals.NL +
                         "La semaine solaire est comptée tous les 7 jours depuis la plus petite date." + Globals.NL2 +
-                        "Le jours lunaire va du coucher de la lune au suivant." + Globals.NL +
+                        "Le jour lunaire va du coucher de la lune au suivant." + Globals.NL +
                         "Un mois lunaire va de la nouvelle lune à la suivante." + Globals.NL2 +
                         "Voici quelques exemples." + Globals.NL2 +
                         "Deux semaines solaires indiquent qu'il s'est écoulé 8 jours ou plus mais 14 ou moins." + Globals.NL2 +

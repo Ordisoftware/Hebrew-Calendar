@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
+using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -223,6 +224,21 @@ namespace Ordisoftware.Core
           items[count++] = new ToolStripSeparator();
       destination.DropDownItems.Clear();
       destination.DropDownItems.AddRange(items);
+    }
+
+    static public Icon GetBySize(this Icon icon, int width, int height)
+    {
+      return icon.GetBySize(new Size(width, height));
+    }
+
+    static public Icon GetBySize(this Icon icon, Size size)
+    {
+      using ( var stream = new MemoryStream() )
+      {
+        icon.Save(stream);
+        stream.Position = 0;
+        return new Icon(stream, size);
+      }
     }
 
     /// <summary>

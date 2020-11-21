@@ -63,3 +63,7 @@ URL = http://www.calj.net
 
 Name = (FR) Calendrier hébraïque @ chiourim.com
 URL = http://www.chiourim.com/cal/calendrier_hebraique.php
+
+Name = (FR) Calendrier hébraïque @ torah-box.com
+URL = https://www.torah-box.com/calendrier
+

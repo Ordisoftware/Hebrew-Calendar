@@ -304,15 +304,17 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
     {
-      if ( !EditDebuggerEnabled.Checked ) DebugManager.ClearTraces(true);
+      if ( !EditDebuggerEnabled.Checked )
+        EditLogEnabled.Checked = false;
       DebugManager.Enabled = EditDebuggerEnabled.Checked;
-      MainForm.Instance.ActionViewLog.Enabled = DebugManager.Enabled;
       EditLogEnabled.Enabled = DebugManager.Enabled;
     }
 
     private void EditLogEnabled_CheckedChanged(object sender, EventArgs e)
     {
       DebugManager.TraceEnabled = EditLogEnabled.Checked;
+      MainForm.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
+      StatisticsForm.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
     }
 
     private void EditBalloon_CheckedChanged(object sender, EventArgs e)

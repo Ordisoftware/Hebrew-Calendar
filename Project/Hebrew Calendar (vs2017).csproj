@@ -289,6 +289,9 @@
     <Compile Include="Source\Forms\Boxes\SelectSoundForm.Designer.cs">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoon.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -38,6 +38,7 @@
       System.Windows.Forms.Label solarYearsLabel;
       System.Windows.Forms.Label moonYearsLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.EditAutoSetRightToToday = new System.Windows.Forms.CheckBox();
       this.ActionHelp = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
       this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSwapDates = new System.Windows.Forms.Button();
-      this.EditAutoSetRightToToday = new System.Windows.Forms.CheckBox();
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -118,6 +118,15 @@
       this.PanelBottom.Controls.Add(this.ActionManageBookmarks);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // EditAutoSetRightToToday
+      // 
+      resources.ApplyResources(this.EditAutoSetRightToToday, "EditAutoSetRightToToday");
+      this.EditAutoSetRightToToday.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.DatesDiffCalculatorFormAutoSetRightToToday;
+      this.EditAutoSetRightToToday.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditAutoSetRightToToday.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "DatesDiffCalculatorFormAutoSetRightToToday", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditAutoSetRightToToday.Name = "EditAutoSetRightToToday";
+      this.EditAutoSetRightToToday.UseVisualStyleBackColor = true;
       // 
       // ActionHelp
       // 
@@ -305,15 +314,6 @@
       this.ActionSwapDates.TabStop = false;
       this.ActionSwapDates.UseVisualStyleBackColor = true;
       this.ActionSwapDates.Click += new System.EventHandler(this.ActionSwapDates_Click);
-      // 
-      // EditAutoSetRightToToday
-      // 
-      resources.ApplyResources(this.EditAutoSetRightToToday, "EditAutoSetRightToToday");
-      this.EditAutoSetRightToToday.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.DatesDiffCalculatorFormAutoSetRightToToday;
-      this.EditAutoSetRightToToday.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditAutoSetRightToToday.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "DatesDiffCalculatorFormAutoSetRightToToday", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditAutoSetRightToToday.Name = "EditAutoSetRightToToday";
-      this.EditAutoSetRightToToday.UseVisualStyleBackColor = true;
       // 
       // DatesDiffCalculatorForm
       // 

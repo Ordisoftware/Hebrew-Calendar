@@ -150,10 +150,19 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add moon months description form and menu in tools.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
-- Add a different tray icon to indicate if a celebration is running, including week days.
-- Improve navigation form to show celebration week days.
+- Add a different tray icon to indicate if shabat or a celebration is running, including week days.
+- Improve month view to show celebration week days with number as text like first and last.
+- Improve navigation form to show celebration week day number.
 
 ## Changelog
+
+#### 2021.11.25 - Version 5.8
+
+- Add change tab page using function keys.
+- Fix view log menu item not disabled when app started when log is disabled.
+- Fix view log icon not disabled in stats form when log is disabled.
+- Fix tray icon images little default.
+- Update web links to add the calendar of Torah-box.
 
 #### 2020.11.18 - Version 5.7
 
