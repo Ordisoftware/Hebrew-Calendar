@@ -145,4 +145,7 @@
   <data name="LabelNewVersion.Text" xml:space="preserve">
     <value>Une nouvelle version est disponible : </value>
   </data>
+  <data name="LabelCurrentversion.Text" xml:space="preserve">
+    <value>Version actuelle : </value>
+  </data>
 </root>

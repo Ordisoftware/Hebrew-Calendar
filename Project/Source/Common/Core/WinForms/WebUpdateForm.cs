@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -32,6 +32,7 @@ namespace Ordisoftware.Core
     {
       using ( var form = new WebUpdateForm() )
       {
+        form.LabelCurrentversion.Text += Globals.AssemblyVersion;
         form.LabelNewVersion.Text += version;
         form.ActionReleaseNotes.Tag = string.Format(Globals.ApplicationReleaseNotesURL, version);
         if ( form.ShowDialog() != DialogResult.OK ) return WebUpdateSelection.None;

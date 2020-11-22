@@ -36,6 +36,7 @@
       this.SelectInstall = new System.Windows.Forms.RadioButton();
       this.SelectDownload = new System.Windows.Forms.RadioButton();
       this.ActionReleaseNotes = new System.Windows.Forms.LinkLabel();
+      this.LabelCurrentversion = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -86,6 +87,11 @@
       this.ActionReleaseNotes.TabStop = true;
       this.ActionReleaseNotes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionOpenWebPage_LinkClicked);
       // 
+      // LabelCurrentversion
+      // 
+      resources.ApplyResources(this.LabelCurrentversion, "LabelCurrentversion");
+      this.LabelCurrentversion.Name = "LabelCurrentversion";
+      // 
       // WebUpdateForm
       // 
       this.AcceptButton = this.ActionOK;
@@ -96,6 +102,7 @@
       this.Controls.Add(this.SelectDownload);
       this.Controls.Add(this.SelectInstall);
       this.Controls.Add(this.PanelBottom);
+      this.Controls.Add(this.LabelCurrentversion);
       this.Controls.Add(this.LabelNewVersion);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
@@ -117,5 +124,6 @@
     internal System.Windows.Forms.RadioButton SelectDownload;
     internal System.Windows.Forms.Label LabelNewVersion;
     private System.Windows.Forms.LinkLabel ActionReleaseNotes;
+    internal System.Windows.Forms.Label LabelCurrentversion;
   }
 }
