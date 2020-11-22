@@ -159,6 +159,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 #### 2021.11.25 - Version 5.8
 
 - Add change tab page using function keys in preferences form.
+- Improve new version available form to show current version.
 - Fix view log menu item not disabled when app started when log is disabled.
 - Fix view log icon not disabled in stats form when log is disabled.
 - Fix small defect with tray icon images.
