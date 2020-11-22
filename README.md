@@ -162,7 +162,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Fix view log menu item not disabled when app started when log is disabled.
 - Fix view log icon not disabled in stats form when log is disabled.
 - Fix small defect with tray icon images.
-- Update web links to improve playlists and add the calendar of Torah-box.
+- Update web links to improve playlists, set PDF links to ordisoftware.com, and add the calendar of Torah-box.
 
 #### 2020.11.18 - Version 5.7
 
