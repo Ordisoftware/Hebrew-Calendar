@@ -89,8 +89,8 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BEAk_k9s5tCMG5ZPwK6KVz
 
 -
 
-Name = (EN) CoSM
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DuAK0HENOpYe4B1Zo6pJ_s
-
 Name = (FR) Documentaires sujets de société
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DfPB3GAU-e6hLSzJIjVc18
+
+Name = (EN) CoSM
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DuAK0HENOpYe4B1Zo6pJ_s
