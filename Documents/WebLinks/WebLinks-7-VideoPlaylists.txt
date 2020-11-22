@@ -21,7 +21,7 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Avg_Mab89AAsBVDF0uTHcp
 
 -
 
-Name = (FR) Cours de Torah
+Name = (FR/EN) Torah && Religion
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dkv3zE0tAo494c64BBGTwz
 
 Name = (FR) Cours de Talmud
@@ -41,7 +41,7 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BY91zgIakb6tHdc5AxqRyu
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-B8WqPCwLWyBC0gDQAoA2OZ
 
-Name = (FR) Rav Shlomoh Amar
+Name = (FR/EN) Rav Shlomoh Amar
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DP-nvpbjUq-Bjlug7TjxgU
 
 Name = (FR) Rav Yehia Benchetrit
@@ -61,6 +61,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BtjVoIn7xLBlPJbUsNcc3Z
 
 Name = (FR) Rav David Pinto
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Clbv_vfSf0pNcGcbZjbgDS
+
+Name = (FR/EN) Rav Menachem Mendel Schneerson
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-A4y254NHmPIg4Eca-Dei2I
 
 -
 
