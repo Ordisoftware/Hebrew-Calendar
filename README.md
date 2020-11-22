@@ -156,6 +156,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### 2021.__.__ - Version 5.9
+
+- Add option to set automatic web check update frequency.
+- Improve automatic web check update to not run it when shabat and special celebration days but the next day.
+
 #### 2021.11.22 - Version 5.8
 
 - Add change tab page using function keys in preferences form.
