@@ -283,10 +283,10 @@
     <Compile Include="Source\Common\Core\Classes\SoundItem.cs" />
     <Compile Include="Source\Common\Core\Classes\SoundSource.cs" />
     <Compile Include="Source\Entities\DateBookmarks.cs" />
-    <Compile Include="Source\Forms\Boxes\SelectSoundForm.cs">
+    <Compile Include="Source\Forms\Config\SelectSoundForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectSoundForm.Designer.cs">
+    <Compile Include="Source\Forms\Config\SelectSoundForm.Designer.cs">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
@@ -323,10 +323,10 @@
     <Compile Include="Source\Forms\Boxes\ManageDateBookmarks.Designer.cs">
       <DependentUpon>ManageDateBookmarks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\StatisticsForm.cs">
+    <Compile Include="Source\Forms\Config\StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\StatisticsForm.Designer.cs">
+    <Compile Include="Source\Forms\Config\StatisticsForm.Designer.cs">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Boxes\SearchGregorianMonthForm.cs">
@@ -660,16 +660,16 @@
     <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarks.resx">
       <DependentUpon>ManageDateBookmarks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectSoundForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Config\SelectSoundForm.fr.resx">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectSoundForm.resx">
+    <EmbeddedResource Include="Source\Forms\Config\SelectSoundForm.resx">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.fr.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\StatisticsForm.resx">
+    <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\LockSessionForm.fr.resx">
