@@ -1055,7 +1055,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.HebrewLetters.exe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.HebrewLetters.exe")]
         public string HebrewLettersExe {
             get {
                 return ((string)(this["HebrewLettersExe"]));
@@ -1278,18 +1278,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["CheckUpdateLastDone"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CheckUpdateEveryWeekWhileRunning {
-            get {
-                return ((bool)(this["CheckUpdateEveryWeekWhileRunning"]));
-            }
-            set {
-                this["CheckUpdateEveryWeekWhileRunning"] = value;
             }
         }
         
@@ -1626,6 +1614,54 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["DatesDiffCalculatorFormAutoSetRightToToday"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public int VacuumAtStartupDaysInterval {
+            get {
+                return ((int)(this["VacuumAtStartupDaysInterval"]));
+            }
+            set {
+                this["VacuumAtStartupDaysInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public int CheckUpdateAtStartupDaysInterval {
+            get {
+                return ((int)(this["CheckUpdateAtStartupDaysInterval"]));
+            }
+            set {
+                this["CheckUpdateAtStartupDaysInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckUpdateEveryWeekWhileRunning {
+            get {
+                return ((bool)(this["CheckUpdateEveryWeekWhileRunning"]));
+            }
+            set {
+                this["CheckUpdateEveryWeekWhileRunning"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("%USER_APP_DOCUMENTS%")]
+        public string ExportFolder {
+            get {
+                return ((string)(this["ExportFolder"]));
+            }
+            set {
+                this["ExportFolder"] = value;
             }
         }
     }

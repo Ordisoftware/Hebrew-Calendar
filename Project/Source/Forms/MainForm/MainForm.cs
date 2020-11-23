@@ -86,7 +86,10 @@ namespace Ordisoftware.Hebrew.Calendar
           Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
         });
       var lastdone = Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, ref lastdone, true);
+      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, 
+                                     ref lastdone, 
+                                     Settings.CheckUpdateAtStartupDaysInterval, 
+                                     true);
       Settings.CheckUpdateLastDone = lastdone;
       if ( exit )
       {
@@ -593,7 +596,10 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         MenuTray.Enabled = false;
         var lastdone = Settings.CheckUpdateLastDone;
-        bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, ref lastdone, e == null);
+        bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, 
+                                       ref lastdone, 
+                                       Settings.CheckUpdateAtStartupDaysInterval, 
+                                       e == null);
         Settings.CheckUpdateLastDone = lastdone;
         if ( exit )
         {
