@@ -156,10 +156,13 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2021.__.__ - Version 5.9
+#### 2021.11.29 - Version 5.9
 
-- Add option to set automatic web check update frequency.
-- Improve automatic web check update to not run it when shabat and special celebration days but the next day.
+- Add option to set automatic vacuum and web check update frequencies.
+- Add option to set the export folder.
+- Improve preferences form.
+- Improve information menu.
+>>>>- Improve automatic web check update to not run it when shabat and special celebration days but the next day.
 
 #### 2021.11.22 - Version 5.8
 
