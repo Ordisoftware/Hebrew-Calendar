@@ -32,14 +32,15 @@
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.MenuInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionWebReleaseNotes = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionReleaseNotes = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCreateGitHubIssue = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionWebQA = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebHome = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionGitHubRepo = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionWebQA = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCreateGitHubIssue = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebContact = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebTwitter = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,14 +71,15 @@
       this.MenuInformation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuInformation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionAbout,
-            this.toolStripSeparator6,
-            this.ActionWebReleaseNotes,
+            this.toolStripSeparator1,
+            this.ActionReleaseNotes,
             this.ActionWebCheckUpdate,
             this.toolStripSeparator9,
-            this.ActionCreateGitHubIssue,
-            this.ActionWebQA,
-            this.toolStripSeparator3,
             this.ActionWebHome,
+            this.ActionGitHubRepo,
+            this.toolStripSeparator3,
+            this.ActionWebQA,
+            this.ActionCreateGitHubIssue,
             this.ActionWebContact,
             this.toolStripSeparator2,
             this.ActionWebTwitter,
@@ -99,17 +101,17 @@
       this.ActionAbout.Name = "ActionAbout";
       this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
       // 
-      // toolStripSeparator6
+      // toolStripSeparator1
       // 
-      this.toolStripSeparator6.Name = "toolStripSeparator6";
-      resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
-      // ActionWebReleaseNotes
+      // ActionReleaseNotes
       // 
-      this.ActionWebReleaseNotes.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebReleaseNotes, "ActionWebReleaseNotes");
-      this.ActionWebReleaseNotes.Name = "ActionWebReleaseNotes";
-      this.ActionWebReleaseNotes.Click += new System.EventHandler(this.ActionWebReleaseNotes_Click);
+      this.ActionReleaseNotes.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionReleaseNotes, "ActionReleaseNotes");
+      this.ActionReleaseNotes.Name = "ActionReleaseNotes";
+      this.ActionReleaseNotes.Click += new System.EventHandler(this.ActionReleaseNotes_Click);
       // 
       // ActionWebCheckUpdate
       // 
@@ -123,13 +125,25 @@
       this.toolStripSeparator9.Name = "toolStripSeparator9";
       resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
       // 
-      // ActionCreateGitHubIssue
+      // ActionWebHome
       // 
-      this.ActionCreateGitHubIssue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionCreateGitHubIssue, "ActionCreateGitHubIssue");
-      this.ActionCreateGitHubIssue.Name = "ActionCreateGitHubIssue";
-      this.ActionCreateGitHubIssue.Tag = "";
-      this.ActionCreateGitHubIssue.Click += new System.EventHandler(this.ActionCreateGitHubIssue_Click);
+      this.ActionWebHome.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionWebHome, "ActionWebHome");
+      this.ActionWebHome.Name = "ActionWebHome";
+      this.ActionWebHome.Click += new System.EventHandler(this.ActionWebHome_Click);
+      // 
+      // ActionGitHubRepo
+      // 
+      this.ActionGitHubRepo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionGitHubRepo, "ActionGitHubRepo");
+      this.ActionGitHubRepo.Name = "ActionGitHubRepo";
+      this.ActionGitHubRepo.Tag = "";
+      this.ActionGitHubRepo.Click += new System.EventHandler(this.ActionGitHubRepo_Click);
+      // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // ActionWebQA
       // 
@@ -138,17 +152,13 @@
       this.ActionWebQA.Tag = "http://asherhaimhalevi.free-bb.fr/";
       this.ActionWebQA.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
-      // toolStripSeparator3
+      // ActionCreateGitHubIssue
       // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
-      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
-      // 
-      // ActionWebHome
-      // 
-      this.ActionWebHome.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionWebHome, "ActionWebHome");
-      this.ActionWebHome.Name = "ActionWebHome";
-      this.ActionWebHome.Click += new System.EventHandler(this.ActionWebHome_Click);
+      this.ActionCreateGitHubIssue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionCreateGitHubIssue, "ActionCreateGitHubIssue");
+      this.ActionCreateGitHubIssue.Name = "ActionCreateGitHubIssue";
+      this.ActionCreateGitHubIssue.Tag = "";
+      this.ActionCreateGitHubIssue.Click += new System.EventHandler(this.ActionCreateGitHubIssue_Click);
       // 
       // ActionWebContact
       // 
@@ -241,7 +251,6 @@
     #endregion
 
     private System.Windows.Forms.ToolStrip ToolStrip;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
@@ -249,7 +258,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     public System.Windows.Forms.ToolStripDropDownButton MenuInformation;
     public System.Windows.Forms.ToolStripMenuItem ActionAbout;
-    public System.Windows.Forms.ToolStripMenuItem ActionWebReleaseNotes;
+    public System.Windows.Forms.ToolStripMenuItem ActionReleaseNotes;
     public System.Windows.Forms.ToolStripMenuItem ActionWebCheckUpdate;
     public System.Windows.Forms.ToolStripMenuItem ActionCreateGitHubIssue;
     public System.Windows.Forms.ToolStripMenuItem ActionWebQA;
@@ -262,5 +271,7 @@
     public System.Windows.Forms.ToolStripMenuItem ActionDownloadHebrewLetters;
     public System.Windows.Forms.ToolStripMenuItem ActionDownloadHebrewWords;
     public System.Windows.Forms.ToolStripMenuItem ActionDownloadHebrewCalendar;
+    public System.Windows.Forms.ToolStripMenuItem ActionGitHubRepo;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
   }
 }

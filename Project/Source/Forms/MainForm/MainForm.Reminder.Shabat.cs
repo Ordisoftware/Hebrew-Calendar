@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private void CheckShabat()
+    private void CheckShabat(bool process = true)
     {
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);

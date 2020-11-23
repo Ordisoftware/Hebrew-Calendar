@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.IO;
 using System.Text;
@@ -182,9 +182,9 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Open GitHub repository page.
+    /// Open GitHub repository repository.
     /// </summary>
-    static public void OpenGitHupPage()
+    static public void OpenGitHupRepo()
     {
       OpenWebLink(Globals.GitHubRepositoryURL);
     }

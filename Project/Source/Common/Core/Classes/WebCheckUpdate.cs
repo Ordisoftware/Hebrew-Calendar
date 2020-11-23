@@ -83,7 +83,7 @@ namespace Ordisoftware.Core
         CleanTemp();
         DisplayManager.ShowWarning(DisplayManager.Title + " Check Update", ex.Message);
         if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
-          SystemManager.OpenGitHupPage();
+          SystemManager.OpenGitHupRepo();
       }
       catch ( Exception ex )
       {
