@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -114,10 +114,11 @@ namespace Ordisoftware.Core
     /// <param name="lastdone">The last done date.</param>
     /// <param name="force"></param>
     /// <returns>The new date if done else lastdone.</returns>
-    static public DateTime Optimize(this OdbcConnection connection, DateTime lastdone, bool force = false)
+    static public DateTime Optimize(this OdbcConnection connection, DateTime lastdone, int interval = -1, bool force = false)
     {
+      if ( interval == -1 ) interval = DefaultOptimizeDaysInterval;
       InitializeVersion(connection);
-      if ( force || lastdone.AddDays(DefaultOptimizeDaysInterval) < DateTime.Now )
+      if ( force || lastdone.AddDays(interval) < DateTime.Now )
       {
         connection.CheckIntegrity();
         connection.Vacuum();

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -54,12 +54,13 @@ namespace Ordisoftware.Core
     /// <param name="lastdone">The last done date.</param>
     /// <param name="auto">True if no user interaction else false</param>
     /// <returns>True if application must exist else false.</returns>
-    static public bool Run(bool checkAtStartup, ref DateTime lastdone, bool auto)
+    static public bool Run(bool checkAtStartup, ref DateTime lastdone, int interval, bool auto)
     {
+      if ( interval == -1 ) interval = DefaultCheckDaysInterval;
       CleanTemp();
       if ( Mutex ) return false;
       if ( auto && !checkAtStartup ) return false;
-      if ( auto && lastdone.AddDays(DefaultCheckDaysInterval) >= DateTime.Now ) return false;
+      if ( auto && lastdone.AddDays(interval) >= DateTime.Now ) return false;
       bool formEnabled = Globals.MainForm?.Enabled ?? false;
       try
       {
