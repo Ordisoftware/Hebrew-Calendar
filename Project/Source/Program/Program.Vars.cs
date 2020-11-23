@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.IO;
 using Ordisoftware.Core;
@@ -76,6 +76,16 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Indicate minimum gregorian years interval that can be generated.
     /// </summary>
     public const int GenerateIntervalMaximumLow = 10;
+
+    /// <summary>
+    /// Indicate default gregorian years interval that can be generated.
+    /// </summary>
+    public const int GenerateIntervalMaximumDefault = 120;
+
+    /// <summary>
+    /// Indicate increment for gregorian years interval that can be generated.
+    /// </summary>
+    public const int GenerateIntervalMaximumIncrement = 5;
 
     /// <summary>
     /// Indicate minimum torah years interval that can be generated.

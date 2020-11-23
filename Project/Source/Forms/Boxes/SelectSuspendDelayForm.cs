@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -42,7 +42,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectSuspendDelayForm_Load(object sender, EventArgs e)
     {
-      this.CenterToMainFormElseScreen();
+      if ( MainForm.Instance.Visible )
+        this.CenterToMainFormElseScreen();
+      else
+        this.SetLocation(ControlLocation.BottomRight);
       SelectDelay.Items.AddRange(AppTranslations.SuspendReminderDelays.GetLang().ToArray());
       SelectDelay.SelectedIndex = -1;
       foreach ( SuspendDelayItem item in SelectDelay.Items )

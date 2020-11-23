@@ -66,6 +66,8 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
       EditLogEnabled.Enabled = DebugManager.Enabled;
+      EditVacuumAtStartup_CheckedChanged(null, null);
+      EditCheckUpdateAtStartup_CheckedChanged(null, null);
       EditBalloon_CheckedChanged(null, null);
       EditAutoRegenerate_CheckedChanged(null, null);
       EditRemindAutoLock_CheckedChanged(null, null);

@@ -96,6 +96,7 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SelectSuspendDelayForm";
+      this.TopMost = true;
       this.Load += new System.EventHandler(this.SelectSuspendDelayForm_Load);
       this.PanelBottom.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.EditDelay)).EndInit();

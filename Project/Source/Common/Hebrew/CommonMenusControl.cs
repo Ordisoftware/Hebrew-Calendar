@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -48,7 +48,7 @@ namespace Ordisoftware.Hebrew
       WebCheckUpdateHandler?.Invoke(this, EventArgs.Empty);
     }
 
-    private void ActionWebReleaseNotes_Click(object sender, EventArgs e)
+    private void ActionReleaseNotes_Click(object sender, EventArgs e)
     {
       SystemManager.OpenApplicationReleaseNotes();
     }
@@ -61,6 +61,11 @@ namespace Ordisoftware.Hebrew
     private void ActionWebContact_Click(object sender, EventArgs e)
     {
       SystemManager.OpenContactPage();
+    }
+
+    private void ActionGitHubRepo_Click(object sender, EventArgs e)
+    {
+      SystemManager.OpenGitHupRepo();
     }
 
     private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)

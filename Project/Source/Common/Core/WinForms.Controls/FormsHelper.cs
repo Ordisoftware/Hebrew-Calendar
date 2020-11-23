@@ -178,6 +178,7 @@ namespace Ordisoftware.Core
     /// <param name="dialog">True if show dialog.</param>
     static public void Popup(this Form form, Form sender = null, bool dialog = false)
     {
+      if ( form == null || form.IsDisposed ) return;
       if ( form.Visible )
         if ( !dialog )
         {

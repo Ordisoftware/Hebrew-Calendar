@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Data.Odbc;
 using Ordisoftware.Core;
@@ -34,7 +34,9 @@ namespace Ordisoftware.Hebrew.Calendar
         SQLiteOdbcHelper.CreateOrUpdateDSN();
         LockFileConnection = new OdbcConnection(Settings.ConnectionString);
         LockFileConnection.Open();
-        if ( Settings.VacuumAtStartup ) Settings.VacuumLastDone = LockFileConnection.Optimize(Settings.VacuumLastDone);
+        if ( Settings.VacuumAtStartup )
+          Settings.VacuumLastDone = LockFileConnection.Optimize(Settings.VacuumLastDone, 
+                                                                Settings.VacuumAtStartupDaysInterval);
         LockFileConnection.DropTableIfExists("Report");
         LockFileConnection.CheckTable(@"LunisolarDays",
                                       @"CREATE TABLE LunisolarDays 

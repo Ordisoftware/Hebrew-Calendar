@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Xml;
 using System.Windows.Forms;
@@ -27,24 +27,30 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class PreferencesForm : Form
   {
 
+    const int CheckUpdateMin = 1;
+    const int CheckUpdateMax = 30;
+    const int CheckUpdateDefault = 7;
+    const int LoomingDelayMin = 500;
+    const int LoomingDelayMax = 5000;
+    const int LoomingDelayDefault = 1000;
     const int RemindShabatHoursBeforeMin = 1;
     const int RemindShabatHoursBeforeMax = 24;
-    const int RemindShabatHoursBeforeValue = 6;
+    const int RemindShabatHoursBeforeDefault = 6;
     const int RemindShabatEveryMinutesMin = 5;
     const int RemindShabatEveryMinutesMax = 120;
-    const int RemindShabatEveryMinutesValue = 15;
-    const int RemindCelebrationBeforeMin = 1;
-    const int RemindCelebrationBeforeMax = 60;
-    const int RemindCelebrationBeforeValue = 14;
+    const int RemindShabatEveryMinutesDefault = 15;
+    const int RemindCelebrationDaysBeforeMin = 1;
+    const int RemindCelebrationDaysBeforeMax = 60;
+    const int RemindCelebrationDaysBeforeDefault = 14;
     const int RemindCelebrationHoursBeforeMin = 1;
     const int RemindCelebrationHoursBeforeMax = 48;
-    const int RemindCelebrationHoursBeforeValue = 24;
+    const int RemindCelebrationHoursBeforeDefault = 24;
     const int RemindCelebrationEveryMinutesMin = 5;
     const int RemindCelebrationEveryMinutesMax = 120;
-    const int RemindCelebrationEveryMinutesValue = 15;
+    const int RemindCelebrationEveryMinutesDefault = 15;
     const int RemindAutoLockTimeOutMin = 10;
     const int RemindAutoLockTimeOutMax = 300;
-    const int RemindAutoLockTimeOutValue = 60;
+    const int RemindAutoLockTimeOutDefault = 60;
 
     static private readonly Properties.Settings Settings = Program.Settings;
 
@@ -69,6 +75,7 @@ namespace Ordisoftware.Hebrew.Calendar
           form.ShowInTaskbar = true;
         form.ShowDialog();
       }
+      MainForm.Instance.InitializeDialogsDirectory();
       bool result = Reseted
                  || form.OldShabatDay != Settings.ShabatDay
                  || form.OldLatitude != Settings.GPSLatitude

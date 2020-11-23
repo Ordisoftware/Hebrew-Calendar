@@ -266,7 +266,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
-      <Value Profile="(Default)">c:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
+      <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
     </Setting>
     <Setting Name="MoonMonthsFormUseColors" Type="Ordisoftware.Hebrew.Calendar.MoonMonthsListColors" Scope="User">
       <Value Profile="(Default)">Pastel</Value>
@@ -321,9 +321,6 @@
     </Setting>
     <Setting Name="CheckUpdateLastDone" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">2000-01-01</Value>
-    </Setting>
-    <Setting Name="CheckUpdateEveryWeekWhileRunning" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="AutoRegenerate" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -408,6 +405,18 @@
     </Setting>
     <Setting Name="DatesDiffCalculatorFormAutoSetRightToToday" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VacuumAtStartupDaysInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="CheckUpdateAtStartupDaysInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="CheckUpdateEveryWeekWhileRunning" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ExportFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%USER_APP_DOCUMENTS%</Value>
     </Setting>
   </Settings>
 </SettingsFile>

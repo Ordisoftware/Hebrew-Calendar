@@ -29,13 +29,14 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.Windows.Forms.Label label7;
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
-      System.Windows.Forms.Label LabelCalculatorPath;
-      System.Windows.Forms.Label LabelHebrewLettersPath;
+      System.Windows.Forms.Label label7;
       System.Windows.Forms.Label LabelGPSLatitude;
       System.Windows.Forms.Label LabelTimeZone;
       System.Windows.Forms.Label LabelGPSLongitude;
+      System.Windows.Forms.Label label9;
+      System.Windows.Forms.Label LabelCalculatorPath;
+      System.Windows.Forms.Label LabelHebrewLettersPath;
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
@@ -48,34 +49,34 @@
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuPredefinedYears = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.PanelBottomSeparator = new System.Windows.Forms.Panel();
+      this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
-      this.EditBalloonAutoHide = new System.Windows.Forms.CheckBox();
-      this.LabelLoomingDelay = new System.Windows.Forms.Label();
-      this.EditBalloon = new System.Windows.Forms.CheckBox();
+      this.LabelCheckUpdateAtStartupInfo = new System.Windows.Forms.Label();
+      this.LabelOptimizeDatabaseIntervalInfo = new System.Windows.Forms.Label();
+      this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
-      this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.SelectOpenNextCelebrationsForm = new System.Windows.Forms.RadioButton();
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditBalloonLoomingDelay = new System.Windows.Forms.NumericUpDown();
-      this.EditResetHebrewLettersPath = new System.Windows.Forms.Button();
-      this.EditResetCalculatorPath = new System.Windows.Forms.Button();
-      this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
-      this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
-      this.SelectOpenNavigationForm = new System.Windows.Forms.RadioButton();
-      this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditCheckUpdateAtStartupInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditVacuumAtStartupInterval = new System.Windows.Forms.NumericUpDown();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditStartupHide = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
-      this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.EditStartWithWindows = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditLogEnabled = new System.Windows.Forms.CheckBox();
+      this.TabPageTrayIcon = new System.Windows.Forms.TabPage();
+      this.LabelLoomingDelayIntervalInfo = new System.Windows.Forms.Label();
+      this.EditBalloonLoomingDelay = new System.Windows.Forms.NumericUpDown();
+      this.SelectOpenNextCelebrationsForm = new System.Windows.Forms.RadioButton();
+      this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
+      this.EditBalloonAutoHide = new System.Windows.Forms.CheckBox();
+      this.SelectOpenNavigationForm = new System.Windows.Forms.RadioButton();
+      this.EditBalloon = new System.Windows.Forms.CheckBox();
       this.TabPageGeneration = new System.Windows.Forms.TabPage();
-      this.LabelYearsIntervalInfo = new System.Windows.Forms.Label();
+      this.LabelMaxYearsIntervalInfo = new System.Windows.Forms.Label();
       this.LabelMaxYearsInterval = new System.Windows.Forms.Label();
       this.ActionCountAsMoonHelp = new System.Windows.Forms.Button();
       this.EditMaxYearsInterval = new System.Windows.Forms.NumericUpDown();
@@ -85,11 +86,8 @@
       this.EditBigCalendarWarning = new System.Windows.Forms.CheckBox();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
+      this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
       this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       this.EditAutoLockSession = new System.Windows.Forms.CheckBox();
@@ -97,6 +95,8 @@
       this.EditCloseReminderFormOnClick = new System.Windows.Forms.CheckBox();
       this.EditShowReminderInTaskBar = new System.Windows.Forms.CheckBox();
       this.TabPageShabat = new System.Windows.Forms.TabPage();
+      this.LabelRemindShabatEveryMinutesIntervalInfo = new System.Windows.Forms.Label();
+      this.LabelRemindShabatHoursBeforeIntervalInfo = new System.Windows.Forms.Label();
       this.LabelRemindShabatHoursBefore = new System.Windows.Forms.Label();
       this.LabelShabatDay = new System.Windows.Forms.Label();
       this.ActionPersonalShabatHelp = new System.Windows.Forms.Button();
@@ -108,6 +108,9 @@
       this.EditShabatDay = new System.Windows.Forms.ComboBox();
       this.EditRemindShabatHoursBefore = new System.Windows.Forms.NumericUpDown();
       this.TabPageCelebrations = new System.Windows.Forms.TabPage();
+      this.LabelRemindCelebrationEveryMinutesIntervalInfo = new System.Windows.Forms.Label();
+      this.LabelReminderCelebrationsIntervalInfo = new System.Windows.Forms.Label();
+      this.LabelRemindCelebrationHoursBeforeIntervalInfo = new System.Windows.Forms.Label();
       this.EditRemindCelebrationEveryMinutes = new System.Windows.Forms.NumericUpDown();
       this.LabelRemindCelebrationHoursBefore = new System.Windows.Forms.Label();
       this.EditReminderCelebrationsEnabled = new System.Windows.Forms.CheckBox();
@@ -115,7 +118,7 @@
       this.EditEventsDay = new System.Windows.Forms.CheckedListBox();
       this.EditRemindCelebrationHoursBefore = new System.Windows.Forms.NumericUpDown();
       this.EditEvents = new System.Windows.Forms.CheckedListBox();
-      this.EditReminderCelebrationsInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditReminderCelebrationsDaysBefore = new System.Windows.Forms.NumericUpDown();
       this.LabelTimerInterval = new System.Windows.Forms.Label();
       this.TabPageMonthView = new System.Windows.Forms.TabPage();
       this.LabelMoonDayTextFormat = new System.Windows.Forms.Label();
@@ -156,7 +159,6 @@
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -176,16 +178,35 @@
       this.EditNavigateMiddleColor = new System.Windows.Forms.Panel();
       this.EditNavigateTopColor = new System.Windows.Forms.Panel();
       this.EditNavigateBottomColor = new System.Windows.Forms.Panel();
+      this.TabPageTrayPaths = new System.Windows.Forms.TabPage();
+      this.ActionResetExportFolder = new System.Windows.Forms.Button();
+      this.button2 = new System.Windows.Forms.Button();
+      this.ActionResetHebrewLettersPath = new System.Windows.Forms.Button();
+      this.ActionResetCalculatorPath = new System.Windows.Forms.Button();
+      this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
+      this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
       label7 = new System.Windows.Forms.Label();
-      LabelCalculatorPath = new System.Windows.Forms.Label();
-      LabelHebrewLettersPath = new System.Windows.Forms.Label();
       LabelGPSLatitude = new System.Windows.Forms.Label();
       LabelTimeZone = new System.Windows.Forms.Label();
       LabelGPSLongitude = new System.Windows.Forms.Label();
+      label9 = new System.Windows.Forms.Label();
+      LabelCalculatorPath = new System.Windows.Forms.Label();
+      LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
+      this.TabPageTrayIcon.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).BeginInit();
       this.TabPageGeneration.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).BeginInit();
@@ -197,44 +218,15 @@
       this.TabPageCelebrations.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditReminderCelebrationsInterval)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditReminderCelebrationsDaysBefore)).BeginInit();
       this.TabPageMonthView.SuspendLayout();
       this.PanelCalendarColors.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).BeginInit();
       this.TabPageTextReport.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.TabPageNavigationWindow.SuspendLayout();
+      this.TabPageTrayPaths.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // label7
-      // 
-      resources.ApplyResources(label7, "label7");
-      label7.Name = "label7";
-      // 
-      // LabelCalculatorPath
-      // 
-      resources.ApplyResources(LabelCalculatorPath, "LabelCalculatorPath");
-      LabelCalculatorPath.Name = "LabelCalculatorPath";
-      // 
-      // LabelHebrewLettersPath
-      // 
-      resources.ApplyResources(LabelHebrewLettersPath, "LabelHebrewLettersPath");
-      LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
-      // 
-      // LabelGPSLatitude
-      // 
-      resources.ApplyResources(LabelGPSLatitude, "LabelGPSLatitude");
-      LabelGPSLatitude.Name = "LabelGPSLatitude";
-      // 
-      // LabelTimeZone
-      // 
-      resources.ApplyResources(LabelTimeZone, "LabelTimeZone");
-      LabelTimeZone.Name = "LabelTimeZone";
-      // 
-      // LabelGPSLongitude
-      // 
-      resources.ApplyResources(LabelGPSLongitude, "LabelGPSLongitude");
-      LabelGPSLongitude.Name = "LabelGPSLongitude";
       // 
       // DialogColor
       // 
@@ -322,6 +314,7 @@
       // 
       resources.ApplyResources(this.TabControl, "TabControl");
       this.TabControl.Controls.Add(this.TabPageApplication);
+      this.TabControl.Controls.Add(this.TabPageTrayIcon);
       this.TabControl.Controls.Add(this.TabPageGeneration);
       this.TabControl.Controls.Add(this.TabPageReminder);
       this.TabControl.Controls.Add(this.TabPageShabat);
@@ -329,6 +322,7 @@
       this.TabControl.Controls.Add(this.TabPageMonthView);
       this.TabControl.Controls.Add(this.TabPageTextReport);
       this.TabControl.Controls.Add(this.TabPageNavigationWindow);
+      this.TabControl.Controls.Add(this.TabPageTrayPaths);
       this.TabControl.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "PreferencesFormSelectedTabIndex", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.TabControl.Multiline = true;
       this.TabControl.Name = "TabControl";
@@ -338,54 +332,42 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageApplication.Controls.Add(this.EditBalloonAutoHide);
-      this.TabPageApplication.Controls.Add(label7);
-      this.TabPageApplication.Controls.Add(this.LabelLoomingDelay);
-      this.TabPageApplication.Controls.Add(this.EditBalloon);
+      this.TabPageApplication.Controls.Add(this.LabelCheckUpdateAtStartupInfo);
+      this.TabPageApplication.Controls.Add(this.LabelOptimizeDatabaseIntervalInfo);
+      this.TabPageApplication.Controls.Add(this.EditCheckUpdateEveryWeek);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
-      this.TabPageApplication.Controls.Add(this.EditCalculatorPath);
-      this.TabPageApplication.Controls.Add(this.EditHebrewLettersPath);
-      this.TabPageApplication.Controls.Add(this.SelectOpenNextCelebrationsForm);
-      this.TabPageApplication.Controls.Add(LabelCalculatorPath);
       this.TabPageApplication.Controls.Add(this.EditVacuumAtStartup);
-      this.TabPageApplication.Controls.Add(this.EditBalloonLoomingDelay);
-      this.TabPageApplication.Controls.Add(this.EditResetHebrewLettersPath);
-      this.TabPageApplication.Controls.Add(this.EditResetCalculatorPath);
-      this.TabPageApplication.Controls.Add(this.ActionSelectCalculatorPath);
-      this.TabPageApplication.Controls.Add(this.SelectOpenMainForm);
-      this.TabPageApplication.Controls.Add(LabelHebrewLettersPath);
-      this.TabPageApplication.Controls.Add(this.SelectOpenNavigationForm);
-      this.TabPageApplication.Controls.Add(this.ActionSelectHebrewLettersPath);
+      this.TabPageApplication.Controls.Add(this.EditCheckUpdateAtStartupInterval);
+      this.TabPageApplication.Controls.Add(this.EditVacuumAtStartupInterval);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportFolder);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditStartupHide);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
-      this.TabPageApplication.Controls.Add(this.EditCheckUpdateEveryWeek);
       this.TabPageApplication.Controls.Add(this.EditStartWithWindows);
       this.TabPageApplication.Controls.Add(this.EditCheckUpdateAtStartup);
       this.TabPageApplication.Controls.Add(this.EditLogEnabled);
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
       // 
-      // EditBalloonAutoHide
+      // LabelCheckUpdateAtStartupInfo
       // 
-      resources.ApplyResources(this.EditBalloonAutoHide, "EditBalloonAutoHide");
-      this.EditBalloonAutoHide.Name = "EditBalloonAutoHide";
-      this.EditBalloonAutoHide.UseVisualStyleBackColor = true;
-      this.EditBalloonAutoHide.CheckedChanged += new System.EventHandler(this.EditBalloonAutoHide_CheckedChanged);
+      resources.ApplyResources(this.LabelCheckUpdateAtStartupInfo, "LabelCheckUpdateAtStartupInfo");
+      this.LabelCheckUpdateAtStartupInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelCheckUpdateAtStartupInfo.Name = "LabelCheckUpdateAtStartupInfo";
       // 
-      // LabelLoomingDelay
+      // LabelOptimizeDatabaseIntervalInfo
       // 
-      resources.ApplyResources(this.LabelLoomingDelay, "LabelLoomingDelay");
-      this.LabelLoomingDelay.Name = "LabelLoomingDelay";
+      resources.ApplyResources(this.LabelOptimizeDatabaseIntervalInfo, "LabelOptimizeDatabaseIntervalInfo");
+      this.LabelOptimizeDatabaseIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelOptimizeDatabaseIntervalInfo.Name = "LabelOptimizeDatabaseIntervalInfo";
       // 
-      // EditBalloon
+      // EditCheckUpdateEveryWeek
       // 
-      resources.ApplyResources(this.EditBalloon, "EditBalloon");
-      this.EditBalloon.Name = "EditBalloon";
-      this.EditBalloon.UseVisualStyleBackColor = true;
-      this.EditBalloon.CheckedChanged += new System.EventHandler(this.EditBalloon_CheckedChanged);
+      resources.ApplyResources(this.EditCheckUpdateEveryWeek, "EditCheckUpdateEveryWeek");
+      this.EditCheckUpdateEveryWeek.Name = "EditCheckUpdateEveryWeek";
+      this.EditCheckUpdateEveryWeek.UseVisualStyleBackColor = true;
+      this.EditCheckUpdateEveryWeek.CheckedChanged += new System.EventHandler(this.EditCheckUpdateAtStartup_CheckedChanged);
       // 
       // ActionSelectLangEN
       // 
@@ -396,110 +378,56 @@
       this.ActionSelectLangEN.UseVisualStyleBackColor = true;
       this.ActionSelectLangEN.Click += new System.EventHandler(this.ActionSelectLangEN_Click);
       // 
-      // EditCalculatorPath
-      // 
-      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
-      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditCalculatorPath.Name = "EditCalculatorPath";
-      this.EditCalculatorPath.ReadOnly = true;
-      // 
-      // EditHebrewLettersPath
-      // 
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
-      this.EditHebrewLettersPath.ReadOnly = true;
-      // 
-      // SelectOpenNextCelebrationsForm
-      // 
-      resources.ApplyResources(this.SelectOpenNextCelebrationsForm, "SelectOpenNextCelebrationsForm");
-      this.SelectOpenNextCelebrationsForm.Name = "SelectOpenNextCelebrationsForm";
-      this.SelectOpenNextCelebrationsForm.UseVisualStyleBackColor = true;
-      // 
       // EditVacuumAtStartup
       // 
       resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
       this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
       this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
+      this.EditVacuumAtStartup.CheckedChanged += new System.EventHandler(this.EditVacuumAtStartup_CheckedChanged);
       // 
-      // EditBalloonLoomingDelay
+      // EditCheckUpdateAtStartupInterval
       // 
-      this.EditBalloonLoomingDelay.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditBalloonLoomingDelay, "EditBalloonLoomingDelay");
-      this.EditBalloonLoomingDelay.Increment = new decimal(new int[] {
-            250,
+      this.EditCheckUpdateAtStartupInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditCheckUpdateAtStartupInterval, "EditCheckUpdateAtStartupInterval");
+      this.EditCheckUpdateAtStartupInterval.Maximum = new decimal(new int[] {
+            30,
             0,
             0,
             0});
-      this.EditBalloonLoomingDelay.Maximum = new decimal(new int[] {
-            5000,
+      this.EditCheckUpdateAtStartupInterval.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-      this.EditBalloonLoomingDelay.Minimum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-      this.EditBalloonLoomingDelay.Name = "EditBalloonLoomingDelay";
-      this.EditBalloonLoomingDelay.ReadOnly = true;
-      this.EditBalloonLoomingDelay.Value = new decimal(new int[] {
-            1000,
+      this.EditCheckUpdateAtStartupInterval.Name = "EditCheckUpdateAtStartupInterval";
+      this.EditCheckUpdateAtStartupInterval.ReadOnly = true;
+      this.EditCheckUpdateAtStartupInterval.Value = new decimal(new int[] {
+            7,
             0,
             0,
             0});
       // 
-      // EditResetHebrewLettersPath
+      // EditVacuumAtStartupInterval
       // 
-      resources.ApplyResources(this.EditResetHebrewLettersPath, "EditResetHebrewLettersPath");
-      this.EditResetHebrewLettersPath.FlatAppearance.BorderSize = 0;
-      this.EditResetHebrewLettersPath.Name = "EditResetHebrewLettersPath";
-      this.EditResetHebrewLettersPath.TabStop = false;
-      this.EditResetHebrewLettersPath.UseVisualStyleBackColor = true;
-      this.EditResetHebrewLettersPath.Click += new System.EventHandler(this.EditResetHebrewLettersPath_Click);
-      // 
-      // EditResetCalculatorPath
-      // 
-      resources.ApplyResources(this.EditResetCalculatorPath, "EditResetCalculatorPath");
-      this.EditResetCalculatorPath.FlatAppearance.BorderSize = 0;
-      this.EditResetCalculatorPath.Name = "EditResetCalculatorPath";
-      this.EditResetCalculatorPath.TabStop = false;
-      this.EditResetCalculatorPath.UseVisualStyleBackColor = true;
-      this.EditResetCalculatorPath.Click += new System.EventHandler(this.EditResetCalculatorPath_Click);
-      // 
-      // ActionSelectCalculatorPath
-      // 
-      resources.ApplyResources(this.ActionSelectCalculatorPath, "ActionSelectCalculatorPath");
-      this.ActionSelectCalculatorPath.FlatAppearance.BorderSize = 0;
-      this.ActionSelectCalculatorPath.Name = "ActionSelectCalculatorPath";
-      this.ActionSelectCalculatorPath.TabStop = false;
-      this.ActionSelectCalculatorPath.UseVisualStyleBackColor = true;
-      this.ActionSelectCalculatorPath.Click += new System.EventHandler(this.ActionSelectCalculatorPath_Click);
-      // 
-      // SelectOpenMainForm
-      // 
-      resources.ApplyResources(this.SelectOpenMainForm, "SelectOpenMainForm");
-      this.SelectOpenMainForm.Checked = true;
-      this.SelectOpenMainForm.Name = "SelectOpenMainForm";
-      this.SelectOpenMainForm.TabStop = true;
-      this.SelectOpenMainForm.UseVisualStyleBackColor = true;
-      // 
-      // SelectOpenNavigationForm
-      // 
-      resources.ApplyResources(this.SelectOpenNavigationForm, "SelectOpenNavigationForm");
-      this.SelectOpenNavigationForm.Name = "SelectOpenNavigationForm";
-      this.SelectOpenNavigationForm.UseVisualStyleBackColor = true;
-      // 
-      // ActionSelectHebrewLettersPath
-      // 
-      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
-      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
-      this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
-      this.ActionSelectHebrewLettersPath.TabStop = false;
-      this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
-      this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
+      this.EditVacuumAtStartupInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditVacuumAtStartupInterval, "EditVacuumAtStartupInterval");
+      this.EditVacuumAtStartupInterval.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+      this.EditVacuumAtStartupInterval.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.EditVacuumAtStartupInterval.Name = "EditVacuumAtStartupInterval";
+      this.EditVacuumAtStartupInterval.ReadOnly = true;
+      this.EditVacuumAtStartupInterval.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
       // 
       // ActionSelectLangFR
       // 
@@ -535,12 +463,6 @@
       this.EditDebuggerEnabled.UseVisualStyleBackColor = true;
       this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.EditDebuggerEnabled_CheckedChanged);
       // 
-      // EditCheckUpdateEveryWeek
-      // 
-      resources.ApplyResources(this.EditCheckUpdateEveryWeek, "EditCheckUpdateEveryWeek");
-      this.EditCheckUpdateEveryWeek.Name = "EditCheckUpdateEveryWeek";
-      this.EditCheckUpdateEveryWeek.UseVisualStyleBackColor = true;
-      // 
       // EditStartWithWindows
       // 
       resources.ApplyResources(this.EditStartWithWindows, "EditStartWithWindows");
@@ -553,6 +475,7 @@
       resources.ApplyResources(this.EditCheckUpdateAtStartup, "EditCheckUpdateAtStartup");
       this.EditCheckUpdateAtStartup.Name = "EditCheckUpdateAtStartup";
       this.EditCheckUpdateAtStartup.UseVisualStyleBackColor = true;
+      this.EditCheckUpdateAtStartup.CheckedChanged += new System.EventHandler(this.EditCheckUpdateAtStartup_CheckedChanged);
       // 
       // EditLogEnabled
       // 
@@ -561,11 +484,96 @@
       this.EditLogEnabled.UseVisualStyleBackColor = true;
       this.EditLogEnabled.CheckedChanged += new System.EventHandler(this.EditLogEnabled_CheckedChanged);
       // 
+      // TabPageTrayIcon
+      // 
+      this.TabPageTrayIcon.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageTrayIcon.Controls.Add(this.LabelLoomingDelayIntervalInfo);
+      this.TabPageTrayIcon.Controls.Add(label7);
+      this.TabPageTrayIcon.Controls.Add(this.EditBalloonLoomingDelay);
+      this.TabPageTrayIcon.Controls.Add(this.SelectOpenNextCelebrationsForm);
+      this.TabPageTrayIcon.Controls.Add(this.SelectOpenMainForm);
+      this.TabPageTrayIcon.Controls.Add(this.EditBalloonAutoHide);
+      this.TabPageTrayIcon.Controls.Add(this.SelectOpenNavigationForm);
+      this.TabPageTrayIcon.Controls.Add(this.EditBalloon);
+      resources.ApplyResources(this.TabPageTrayIcon, "TabPageTrayIcon");
+      this.TabPageTrayIcon.Name = "TabPageTrayIcon";
+      // 
+      // LabelLoomingDelayIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelLoomingDelayIntervalInfo, "LabelLoomingDelayIntervalInfo");
+      this.LabelLoomingDelayIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelLoomingDelayIntervalInfo.Name = "LabelLoomingDelayIntervalInfo";
+      // 
+      // label7
+      // 
+      resources.ApplyResources(label7, "label7");
+      label7.Name = "label7";
+      // 
+      // EditBalloonLoomingDelay
+      // 
+      this.EditBalloonLoomingDelay.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditBalloonLoomingDelay, "EditBalloonLoomingDelay");
+      this.EditBalloonLoomingDelay.Increment = new decimal(new int[] {
+            250,
+            0,
+            0,
+            0});
+      this.EditBalloonLoomingDelay.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+      this.EditBalloonLoomingDelay.Minimum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+      this.EditBalloonLoomingDelay.Name = "EditBalloonLoomingDelay";
+      this.EditBalloonLoomingDelay.ReadOnly = true;
+      this.EditBalloonLoomingDelay.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+      // 
+      // SelectOpenNextCelebrationsForm
+      // 
+      resources.ApplyResources(this.SelectOpenNextCelebrationsForm, "SelectOpenNextCelebrationsForm");
+      this.SelectOpenNextCelebrationsForm.Name = "SelectOpenNextCelebrationsForm";
+      this.SelectOpenNextCelebrationsForm.UseVisualStyleBackColor = true;
+      // 
+      // SelectOpenMainForm
+      // 
+      resources.ApplyResources(this.SelectOpenMainForm, "SelectOpenMainForm");
+      this.SelectOpenMainForm.Checked = true;
+      this.SelectOpenMainForm.Name = "SelectOpenMainForm";
+      this.SelectOpenMainForm.TabStop = true;
+      this.SelectOpenMainForm.UseVisualStyleBackColor = true;
+      // 
+      // EditBalloonAutoHide
+      // 
+      resources.ApplyResources(this.EditBalloonAutoHide, "EditBalloonAutoHide");
+      this.EditBalloonAutoHide.Name = "EditBalloonAutoHide";
+      this.EditBalloonAutoHide.UseVisualStyleBackColor = true;
+      // 
+      // SelectOpenNavigationForm
+      // 
+      resources.ApplyResources(this.SelectOpenNavigationForm, "SelectOpenNavigationForm");
+      this.SelectOpenNavigationForm.Name = "SelectOpenNavigationForm";
+      this.SelectOpenNavigationForm.UseVisualStyleBackColor = true;
+      // 
+      // EditBalloon
+      // 
+      resources.ApplyResources(this.EditBalloon, "EditBalloon");
+      this.EditBalloon.Name = "EditBalloon";
+      this.EditBalloon.UseVisualStyleBackColor = true;
+      this.EditBalloon.CheckedChanged += new System.EventHandler(this.EditBalloon_CheckedChanged);
+      // 
       // TabPageGeneration
       // 
       this.TabPageGeneration.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageGeneration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageGeneration.Controls.Add(this.LabelYearsIntervalInfo);
+      this.TabPageGeneration.Controls.Add(this.LabelMaxYearsIntervalInfo);
       this.TabPageGeneration.Controls.Add(this.LabelMaxYearsInterval);
       this.TabPageGeneration.Controls.Add(this.ActionCountAsMoonHelp);
       this.TabPageGeneration.Controls.Add(this.EditMaxYearsInterval);
@@ -585,11 +593,11 @@
       resources.ApplyResources(this.TabPageGeneration, "TabPageGeneration");
       this.TabPageGeneration.Name = "TabPageGeneration";
       // 
-      // LabelYearsIntervalInfo
+      // LabelMaxYearsIntervalInfo
       // 
-      resources.ApplyResources(this.LabelYearsIntervalInfo, "LabelYearsIntervalInfo");
-      this.LabelYearsIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.LabelYearsIntervalInfo.Name = "LabelYearsIntervalInfo";
+      resources.ApplyResources(this.LabelMaxYearsIntervalInfo, "LabelMaxYearsIntervalInfo");
+      this.LabelMaxYearsIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelMaxYearsIntervalInfo.Name = "LabelMaxYearsIntervalInfo";
       // 
       // LabelMaxYearsInterval
       // 
@@ -601,7 +609,6 @@
       this.ActionCountAsMoonHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionCountAsMoonHelp, "ActionCountAsMoonHelp");
       this.ActionCountAsMoonHelp.Name = "ActionCountAsMoonHelp";
-      this.ActionCountAsMoonHelp.TabStop = false;
       this.ActionCountAsMoonHelp.UseVisualStyleBackColor = true;
       this.ActionCountAsMoonHelp.Click += new System.EventHandler(this.ActionCountAsMoonHelp_Click);
       // 
@@ -616,6 +623,11 @@
             0});
       this.EditMaxYearsInterval.Name = "EditMaxYearsInterval";
       this.EditMaxYearsInterval.ReadOnly = true;
+      this.EditMaxYearsInterval.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
       this.EditMaxYearsInterval.ValueChanged += new System.EventHandler(this.EditMaxYearsInterval_ValueChanged);
       // 
       // EditTorahEventsCountAsMoon
@@ -640,15 +652,29 @@
       this.SelectAutoGenerateYearsInterval.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.SelectAutoGenerateYearsInterval, "SelectAutoGenerateYearsInterval");
       this.SelectAutoGenerateYearsInterval.Name = "SelectAutoGenerateYearsInterval";
-      this.SelectAutoGenerateYearsInterval.TabStop = false;
       this.SelectAutoGenerateYearsInterval.UseVisualStyleBackColor = true;
       this.SelectAutoGenerateYearsInterval.Click += new System.EventHandler(this.SelectAutoGenerateYearsInterval_Click);
+      // 
+      // LabelGPSLatitude
+      // 
+      resources.ApplyResources(LabelGPSLatitude, "LabelGPSLatitude");
+      LabelGPSLatitude.Name = "LabelGPSLatitude";
+      // 
+      // LabelTimeZone
+      // 
+      resources.ApplyResources(LabelTimeZone, "LabelTimeZone");
+      LabelTimeZone.Name = "LabelTimeZone";
       // 
       // EditBigCalendarWarning
       // 
       resources.ApplyResources(this.EditBigCalendarWarning, "EditBigCalendarWarning");
       this.EditBigCalendarWarning.Name = "EditBigCalendarWarning";
       this.EditBigCalendarWarning.UseVisualStyleBackColor = true;
+      // 
+      // LabelGPSLongitude
+      // 
+      resources.ApplyResources(LabelGPSLongitude, "LabelGPSLongitude");
+      LabelGPSLongitude.Name = "LabelGPSLongitude";
       // 
       // EditAutoRegenerate
       // 
@@ -662,46 +688,14 @@
       this.ActionAutoGenerateHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionAutoGenerateHelp, "ActionAutoGenerateHelp");
       this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
-      this.ActionAutoGenerateHelp.TabStop = false;
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
       // 
       // TabPageReminder
       // 
       this.TabPageReminder.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageReminder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageReminder.Controls.Add(this.LabelAutoLockSessionTimeOutIntervalInfo);
       this.TabPageReminder.Controls.Add(this.EditAllowSuspendReminder);
       this.TabPageReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.TabPageReminder.Controls.Add(this.EditAutoLockSession);
@@ -710,6 +704,12 @@
       this.TabPageReminder.Controls.Add(this.EditShowReminderInTaskBar);
       resources.ApplyResources(this.TabPageReminder, "TabPageReminder");
       this.TabPageReminder.Name = "TabPageReminder";
+      // 
+      // LabelAutoLockSessionTimeOutIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelAutoLockSessionTimeOutIntervalInfo, "LabelAutoLockSessionTimeOutIntervalInfo");
+      this.LabelAutoLockSessionTimeOutIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelAutoLockSessionTimeOutIntervalInfo.Name = "LabelAutoLockSessionTimeOutIntervalInfo";
       // 
       // EditAllowSuspendReminder
       // 
@@ -757,6 +757,8 @@
       // 
       this.TabPageShabat.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageShabat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageShabat.Controls.Add(this.LabelRemindShabatEveryMinutesIntervalInfo);
+      this.TabPageShabat.Controls.Add(this.LabelRemindShabatHoursBeforeIntervalInfo);
       this.TabPageShabat.Controls.Add(this.LabelRemindShabatHoursBefore);
       this.TabPageShabat.Controls.Add(this.LabelShabatDay);
       this.TabPageShabat.Controls.Add(this.ActionPersonalShabatHelp);
@@ -769,6 +771,18 @@
       this.TabPageShabat.Controls.Add(this.EditRemindShabatHoursBefore);
       resources.ApplyResources(this.TabPageShabat, "TabPageShabat");
       this.TabPageShabat.Name = "TabPageShabat";
+      // 
+      // LabelRemindShabatEveryMinutesIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelRemindShabatEveryMinutesIntervalInfo, "LabelRemindShabatEveryMinutesIntervalInfo");
+      this.LabelRemindShabatEveryMinutesIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelRemindShabatEveryMinutesIntervalInfo.Name = "LabelRemindShabatEveryMinutesIntervalInfo";
+      // 
+      // LabelRemindShabatHoursBeforeIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelRemindShabatHoursBeforeIntervalInfo, "LabelRemindShabatHoursBeforeIntervalInfo");
+      this.LabelRemindShabatHoursBeforeIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelRemindShabatHoursBeforeIntervalInfo.Name = "LabelRemindShabatHoursBeforeIntervalInfo";
       // 
       // LabelRemindShabatHoursBefore
       // 
@@ -785,7 +799,6 @@
       this.ActionPersonalShabatHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionPersonalShabatHelp, "ActionPersonalShabatHelp");
       this.ActionPersonalShabatHelp.Name = "ActionPersonalShabatHelp";
-      this.ActionPersonalShabatHelp.TabStop = false;
       this.ActionPersonalShabatHelp.UseVisualStyleBackColor = true;
       this.ActionPersonalShabatHelp.Click += new System.EventHandler(this.ActionPersonalShabatHelp_Click);
       // 
@@ -849,6 +862,9 @@
       // 
       this.TabPageCelebrations.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageCelebrations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationEveryMinutesIntervalInfo);
+      this.TabPageCelebrations.Controls.Add(this.LabelReminderCelebrationsIntervalInfo);
+      this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationHoursBeforeIntervalInfo);
       this.TabPageCelebrations.Controls.Add(this.EditRemindCelebrationEveryMinutes);
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationHoursBefore);
       this.TabPageCelebrations.Controls.Add(this.EditReminderCelebrationsEnabled);
@@ -856,10 +872,28 @@
       this.TabPageCelebrations.Controls.Add(this.EditEventsDay);
       this.TabPageCelebrations.Controls.Add(this.EditRemindCelebrationHoursBefore);
       this.TabPageCelebrations.Controls.Add(this.EditEvents);
-      this.TabPageCelebrations.Controls.Add(this.EditReminderCelebrationsInterval);
+      this.TabPageCelebrations.Controls.Add(this.EditReminderCelebrationsDaysBefore);
       this.TabPageCelebrations.Controls.Add(this.LabelTimerInterval);
       resources.ApplyResources(this.TabPageCelebrations, "TabPageCelebrations");
       this.TabPageCelebrations.Name = "TabPageCelebrations";
+      // 
+      // LabelRemindCelebrationEveryMinutesIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelRemindCelebrationEveryMinutesIntervalInfo, "LabelRemindCelebrationEveryMinutesIntervalInfo");
+      this.LabelRemindCelebrationEveryMinutesIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelRemindCelebrationEveryMinutesIntervalInfo.Name = "LabelRemindCelebrationEveryMinutesIntervalInfo";
+      // 
+      // LabelReminderCelebrationsIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelReminderCelebrationsIntervalInfo, "LabelReminderCelebrationsIntervalInfo");
+      this.LabelReminderCelebrationsIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelReminderCelebrationsIntervalInfo.Name = "LabelReminderCelebrationsIntervalInfo";
+      // 
+      // LabelRemindCelebrationHoursBeforeIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelRemindCelebrationHoursBeforeIntervalInfo, "LabelRemindCelebrationHoursBeforeIntervalInfo");
+      this.LabelRemindCelebrationHoursBeforeIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelRemindCelebrationHoursBeforeIntervalInfo.Name = "LabelRemindCelebrationHoursBeforeIntervalInfo";
       // 
       // EditRemindCelebrationEveryMinutes
       // 
@@ -911,12 +945,12 @@
       this.EditEvents.FormattingEnabled = true;
       this.EditEvents.Name = "EditEvents";
       // 
-      // EditReminderCelebrationsInterval
+      // EditReminderCelebrationsDaysBefore
       // 
-      this.EditReminderCelebrationsInterval.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditReminderCelebrationsInterval, "EditReminderCelebrationsInterval");
-      this.EditReminderCelebrationsInterval.Name = "EditReminderCelebrationsInterval";
-      this.EditReminderCelebrationsInterval.ReadOnly = true;
+      this.EditReminderCelebrationsDaysBefore.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditReminderCelebrationsDaysBefore, "EditReminderCelebrationsDaysBefore");
+      this.EditReminderCelebrationsDaysBefore.Name = "EditReminderCelebrationsDaysBefore";
+      this.EditReminderCelebrationsDaysBefore.ReadOnly = true;
       // 
       // LabelTimerInterval
       // 
@@ -950,7 +984,6 @@
       this.ActionMoonDayTextFormatReset.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionMoonDayTextFormatReset, "ActionMoonDayTextFormatReset");
       this.ActionMoonDayTextFormatReset.Name = "ActionMoonDayTextFormatReset";
-      this.ActionMoonDayTextFormatReset.TabStop = false;
       this.ActionMoonDayTextFormatReset.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatReset.Click += new System.EventHandler(this.ActionMoonDayTextFormatReset_Click);
       // 
@@ -1203,7 +1236,6 @@
       this.ActionMoonDayTextFormatHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionMoonDayTextFormatHelp, "ActionMoonDayTextFormatHelp");
       this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";
-      this.ActionMoonDayTextFormatHelp.TabStop = false;
       this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
       // 
@@ -1241,14 +1273,6 @@
       this.EditMonthViewSunToolTips.Name = "EditMonthViewSunToolTips";
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
-      // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
       // 
       // TabPageTextReport
       // 
@@ -1417,6 +1441,151 @@
       this.EditNavigateBottomColor.Name = "EditNavigateBottomColor";
       this.EditNavigateBottomColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelBottomColor_MouseClick);
       // 
+      // TabPageTrayPaths
+      // 
+      this.TabPageTrayPaths.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageTrayPaths.Controls.Add(label9);
+      this.TabPageTrayPaths.Controls.Add(this.ActionResetExportFolder);
+      this.TabPageTrayPaths.Controls.Add(this.button2);
+      this.TabPageTrayPaths.Controls.Add(LabelCalculatorPath);
+      this.TabPageTrayPaths.Controls.Add(this.ActionResetHebrewLettersPath);
+      this.TabPageTrayPaths.Controls.Add(this.ActionResetCalculatorPath);
+      this.TabPageTrayPaths.Controls.Add(this.ActionSelectCalculatorPath);
+      this.TabPageTrayPaths.Controls.Add(LabelHebrewLettersPath);
+      this.TabPageTrayPaths.Controls.Add(this.ActionSelectHebrewLettersPath);
+      this.TabPageTrayPaths.Controls.Add(this.EditExportFolder);
+      this.TabPageTrayPaths.Controls.Add(this.EditCalculatorPath);
+      this.TabPageTrayPaths.Controls.Add(this.EditHebrewLettersPath);
+      resources.ApplyResources(this.TabPageTrayPaths, "TabPageTrayPaths");
+      this.TabPageTrayPaths.Name = "TabPageTrayPaths";
+      // 
+      // label9
+      // 
+      resources.ApplyResources(label9, "label9");
+      label9.Name = "label9";
+      // 
+      // ActionResetExportFolder
+      // 
+      resources.ApplyResources(this.ActionResetExportFolder, "ActionResetExportFolder");
+      this.ActionResetExportFolder.FlatAppearance.BorderSize = 0;
+      this.ActionResetExportFolder.Name = "ActionResetExportFolder";
+      this.ActionResetExportFolder.UseVisualStyleBackColor = true;
+      this.ActionResetExportFolder.Click += new System.EventHandler(this.ActionResetExportFolder_Click);
+      // 
+      // button2
+      // 
+      resources.ApplyResources(this.button2, "button2");
+      this.button2.FlatAppearance.BorderSize = 0;
+      this.button2.Name = "button2";
+      this.button2.UseVisualStyleBackColor = true;
+      this.button2.Click += new System.EventHandler(this.button2_Click);
+      // 
+      // LabelCalculatorPath
+      // 
+      resources.ApplyResources(LabelCalculatorPath, "LabelCalculatorPath");
+      LabelCalculatorPath.Name = "LabelCalculatorPath";
+      // 
+      // ActionResetHebrewLettersPath
+      // 
+      resources.ApplyResources(this.ActionResetHebrewLettersPath, "ActionResetHebrewLettersPath");
+      this.ActionResetHebrewLettersPath.FlatAppearance.BorderSize = 0;
+      this.ActionResetHebrewLettersPath.Name = "ActionResetHebrewLettersPath";
+      this.ActionResetHebrewLettersPath.UseVisualStyleBackColor = true;
+      this.ActionResetHebrewLettersPath.Click += new System.EventHandler(this.ActionResetHebrewLettersPath_Click);
+      // 
+      // ActionResetCalculatorPath
+      // 
+      resources.ApplyResources(this.ActionResetCalculatorPath, "ActionResetCalculatorPath");
+      this.ActionResetCalculatorPath.FlatAppearance.BorderSize = 0;
+      this.ActionResetCalculatorPath.Name = "ActionResetCalculatorPath";
+      this.ActionResetCalculatorPath.UseVisualStyleBackColor = true;
+      this.ActionResetCalculatorPath.Click += new System.EventHandler(this.ActionResetCalculatorPath_Click);
+      // 
+      // ActionSelectCalculatorPath
+      // 
+      resources.ApplyResources(this.ActionSelectCalculatorPath, "ActionSelectCalculatorPath");
+      this.ActionSelectCalculatorPath.FlatAppearance.BorderSize = 0;
+      this.ActionSelectCalculatorPath.Name = "ActionSelectCalculatorPath";
+      this.ActionSelectCalculatorPath.UseVisualStyleBackColor = true;
+      this.ActionSelectCalculatorPath.Click += new System.EventHandler(this.ActionSelectCalculatorPath_Click);
+      // 
+      // LabelHebrewLettersPath
+      // 
+      resources.ApplyResources(LabelHebrewLettersPath, "LabelHebrewLettersPath");
+      LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
+      // 
+      // ActionSelectHebrewLettersPath
+      // 
+      resources.ApplyResources(this.ActionSelectHebrewLettersPath, "ActionSelectHebrewLettersPath");
+      this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
+      this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
+      this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
+      this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
+      // EditExportFolder
+      // 
+      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
+      this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
+      this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditExportFolder.Name = "EditExportFolder";
+      this.EditExportFolder.ReadOnly = true;
+      // 
+      // EditCalculatorPath
+      // 
+      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
+      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditCalculatorPath.Name = "EditCalculatorPath";
+      this.EditCalculatorPath.ReadOnly = true;
+      // 
+      // EditHebrewLettersPath
+      // 
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1438,6 +1607,10 @@
       this.TabControl.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
+      this.TabPageTrayIcon.ResumeLayout(false);
+      this.TabPageTrayIcon.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).EndInit();
       this.TabPageGeneration.ResumeLayout(false);
       this.TabPageGeneration.PerformLayout();
@@ -1453,7 +1626,7 @@
       this.TabPageCelebrations.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditReminderCelebrationsInterval)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditReminderCelebrationsDaysBefore)).EndInit();
       this.TabPageMonthView.ResumeLayout(false);
       this.TabPageMonthView.PerformLayout();
       this.PanelCalendarColors.ResumeLayout(false);
@@ -1464,6 +1637,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       this.TabPageNavigationWindow.ResumeLayout(false);
       this.TabPageNavigationWindow.PerformLayout();
+      this.TabPageTrayPaths.ResumeLayout(false);
+      this.TabPageTrayPaths.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -1491,7 +1666,7 @@
     private System.Windows.Forms.RadioButton SelectOpenNavigationForm;
     private System.Windows.Forms.RadioButton SelectOpenMainForm;
     private System.Windows.Forms.CheckBox EditStartupHide;
-    private System.Windows.Forms.NumericUpDown EditReminderCelebrationsInterval;
+    private System.Windows.Forms.NumericUpDown EditReminderCelebrationsDaysBefore;
     private System.Windows.Forms.Label LabelTimerInterval;
     private System.Windows.Forms.CheckBox EditReminderCelebrationsEnabled;
     private System.Windows.Forms.CheckedListBox EditEvents;
@@ -1547,7 +1722,6 @@
     internal System.Windows.Forms.Panel EditEventColorMonth;
     private System.Windows.Forms.CheckBox EditTorahEventsCountAsMoon;
     private System.Windows.Forms.NumericUpDown EditBalloonLoomingDelay;
-    private System.Windows.Forms.Label LabelLoomingDelay;
     private System.Windows.Forms.Label LabelRemindAutoLockTimeOut;
     private System.Windows.Forms.NumericUpDown EditAutoLockSessionTimeOut;
     private System.Windows.Forms.CheckBox EditAutoLockSession;
@@ -1581,7 +1755,7 @@
     private System.Windows.Forms.CheckBox EditCheckUpdateEveryWeek;
     private System.Windows.Forms.CheckBox EditAutoRegenerate;
     private System.Windows.Forms.NumericUpDown EditMaxYearsInterval;
-    private System.Windows.Forms.Label LabelYearsIntervalInfo;
+    private System.Windows.Forms.Label LabelMaxYearsIntervalInfo;
     private System.Windows.Forms.Button ActionCountAsMoonHelp;
     private System.Windows.Forms.RadioButton SelectOpenNextCelebrationsForm;
     private System.Windows.Forms.CheckBox EditCloseReminderFormOnClick;
@@ -1607,7 +1781,24 @@
     private System.Windows.Forms.Label LabelMaxYearsInterval;
     private System.Windows.Forms.TabPage TabPageReminder;
     private System.Windows.Forms.Panel PanelBottomSeparator;
-    private System.Windows.Forms.Button EditResetHebrewLettersPath;
-    private System.Windows.Forms.Button EditResetCalculatorPath;
+    private System.Windows.Forms.Button ActionResetHebrewLettersPath;
+    private System.Windows.Forms.Button ActionResetCalculatorPath;
+    private System.Windows.Forms.NumericUpDown EditVacuumAtStartupInterval;
+    private System.Windows.Forms.TabPage TabPageTrayPaths;
+    private System.Windows.Forms.NumericUpDown EditCheckUpdateAtStartupInterval;
+    private System.Windows.Forms.Button ActionResetExportFolder;
+    private System.Windows.Forms.Button button2;
+    private Core.UndoRedoTextBox EditExportFolder;
+    private System.Windows.Forms.TabPage TabPageTrayIcon;
+    private System.Windows.Forms.Label LabelLoomingDelayIntervalInfo;
+    private System.Windows.Forms.Label LabelCheckUpdateAtStartupInfo;
+    private System.Windows.Forms.Label LabelOptimizeDatabaseIntervalInfo;
+    private System.Windows.Forms.Label LabelAutoLockSessionTimeOutIntervalInfo;
+    private System.Windows.Forms.Label LabelRemindShabatEveryMinutesIntervalInfo;
+    private System.Windows.Forms.Label LabelRemindShabatHoursBeforeIntervalInfo;
+    private System.Windows.Forms.Label LabelRemindCelebrationEveryMinutesIntervalInfo;
+    private System.Windows.Forms.Label LabelReminderCelebrationsIntervalInfo;
+    private System.Windows.Forms.Label LabelRemindCelebrationHoursBeforeIntervalInfo;
+    private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
   }
 }

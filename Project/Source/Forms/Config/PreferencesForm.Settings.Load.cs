@@ -32,6 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditCalendarColorDefaultText.BackColor = Settings.MonthViewTextColor;
       EditDebuggerEnabled.Checked = Settings.DebuggerEnabled;
       EditVacuumAtStartup.Checked = Settings.VacuumAtStartup;
+      EditVacuumAtStartupInterval.Value = (int)Settings.VacuumAtStartupDaysInterval;
       EditHebrewLettersPath.Text = Settings.HebrewLettersExe;
       EditCalculatorPath.Text = Settings.CalculatorExe;
       EditAutoLockSession.Checked = Settings.AutoLockSession;
@@ -62,7 +63,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditRemindCelebrationEveryMinutes.Value = Settings.RemindCelebrationEveryMinutes;
       EditRemindCelebrationHoursBefore.Value = Settings.RemindCelebrationHoursBefore;
       EditReminderCelebrationsEnabled.Checked = Settings.ReminderCelebrationsEnabled;
-      EditReminderCelebrationsInterval.Value = Settings.ReminderCelebrationsInterval;
+      EditReminderCelebrationsDaysBefore.Value = Settings.ReminderCelebrationsInterval;
       EditReminderShabatEnabled.Checked = Settings.ReminderShabatEnabled;
       EditRemindShabatEveryMinutes.Value = Settings.RemindShabatEveryMinutes;
       EditRemindShabatHoursBefore.Value = Settings.RemindShabatHoursBefore;
@@ -83,12 +84,14 @@ namespace Ordisoftware.Hebrew.Calendar
       EditWebLinksMenuEnabled.Checked = Settings.WebLinksMenuEnabled;
       EditAllowSuspendReminder.Checked = Settings.AllowSuspendReminder;
       EditCheckUpdateEveryWeek.Checked = Settings.CheckUpdateEveryWeekWhileRunning;
+      EditCheckUpdateAtStartupInterval.Value = Settings.CheckUpdateAtStartupDaysInterval;
       EditAutoRegenerate.Checked = Settings.AutoRegenerate;
       EditMaxYearsInterval.Value = Settings.GenerateIntervalMaximum;
       EditAutoGenerateYearsInterval.Text = Settings.AutoGenerateYearsInternal.ToString();
       EditCloseReminderFormOnClick.Checked = Settings.ReminderFormCloseOnClick;
       EditBigCalendarWarning.Checked = Settings.BigCalendarWarningEnabled;
       EditLogEnabled.Checked = Settings.TraceEnabled;
+      EditExportFolder.Text = Settings.ExportFolder;
       EditLogEnabled_CheckedChanged(null, null);
     }
 

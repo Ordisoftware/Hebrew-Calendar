@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -32,8 +32,11 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     internal void InitializeDialogsDirectory()
     {
-      SaveCSVDialog.InitialDirectory = Globals.UserDocumentsFolderPath;
-      SaveFileDialog.InitialDirectory = Globals.UserDocumentsFolderPath;
+      string directory = Settings.ExportFolder;
+      if ( directory == "%USER_APP_DOCUMENTS%" )
+        directory = Globals.UserDocumentsFolderPath;
+      SaveCSVDialog.InitialDirectory = directory;
+      SaveFileDialog.InitialDirectory = directory;
     }
 
     /// <summary>

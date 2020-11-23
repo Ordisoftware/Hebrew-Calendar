@@ -153,8 +153,17 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add a different tray icon to indicate if shabat or a celebration is running, including week days.
 - Improve month view to show celebration week days with number as text like first and last.
 - Improve navigation form to show celebration week day number.
+- Improve automatic web check update to not run when shabat and special celebration days but the next day.
 
 ## Changelog
+
+#### 2021.11.29 - Version 5.9
+
+- Add option to set automatic vacuum and web check update frequencies.
+- Add option to set the export folder.
+- Improve preferences form.
+- Improve information menu.
+- Improve UI/UX.
 
 #### 2021.11.22 - Version 5.8
 

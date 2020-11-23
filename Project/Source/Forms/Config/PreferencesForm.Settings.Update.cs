@@ -32,6 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.MonthViewTextColor = EditCalendarColorDefaultText.BackColor;
       Settings.DebuggerEnabled = EditDebuggerEnabled.Checked;
       Settings.VacuumAtStartup = EditVacuumAtStartup.Checked;
+      Settings.VacuumAtStartupDaysInterval = (int)EditVacuumAtStartupInterval.Value;
       Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
       Settings.CalculatorExe = EditCalculatorPath.Text;
       Settings.AutoLockSession = EditAutoLockSession.Checked;
@@ -62,7 +63,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.RemindCelebrationEveryMinutes = EditRemindCelebrationEveryMinutes.Value;
       Settings.RemindCelebrationHoursBefore = EditRemindCelebrationHoursBefore.Value;
       Settings.ReminderCelebrationsEnabled = EditReminderCelebrationsEnabled.Checked;
-      Settings.ReminderCelebrationsInterval = EditReminderCelebrationsInterval.Value;
+      Settings.ReminderCelebrationsInterval = EditReminderCelebrationsDaysBefore.Value;
       Settings.ReminderShabatEnabled = EditReminderShabatEnabled.Checked;
       Settings.RemindShabatEveryMinutes = EditRemindShabatEveryMinutes.Value;
       Settings.RemindShabatHoursBefore = EditRemindShabatHoursBefore.Value;
@@ -77,12 +78,14 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.WebLinksMenuEnabled = EditWebLinksMenuEnabled.Checked;
       Settings.AllowSuspendReminder = EditAllowSuspendReminder.Checked;
       Settings.CheckUpdateEveryWeekWhileRunning = EditCheckUpdateEveryWeek.Checked;
+      Settings.CheckUpdateAtStartupDaysInterval = (int)EditCheckUpdateAtStartupInterval.Value;
       Settings.AutoRegenerate = EditAutoRegenerate.Checked;
       Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
       Settings.AutoGenerateYearsInternal = int.Parse(EditAutoGenerateYearsInterval.Text);
       Settings.ReminderFormCloseOnClick = EditCloseReminderFormOnClick.Checked;
       Settings.BigCalendarWarningEnabled = EditBigCalendarWarning.Checked;
       Settings.TraceEnabled = EditLogEnabled.Checked;
+      Settings.ExportFolder = EditExportFolder.Text;
     }
 
   }
