@@ -42,7 +42,9 @@
       this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.SelectDialog = new System.Windows.Forms.RadioButton();
       this.SelectDialogSound = new System.Windows.Forms.ComboBox();
+      this.SelectApplication = new System.Windows.Forms.RadioButton();
       this.EditFilePath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.SelectApplicationSound = new System.Windows.Forms.ListBox();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -136,6 +138,14 @@
       this.SelectDialogSound.Name = "SelectDialogSound";
       this.SelectDialogSound.SelectedIndexChanged += new System.EventHandler(this.SelectDialogSound_SelectedIndexChanged);
       // 
+      // SelectApplication
+      // 
+      resources.ApplyResources(this.SelectApplication, "SelectApplication");
+      this.SelectApplication.Name = "SelectApplication";
+      this.SelectApplication.TabStop = true;
+      this.SelectApplication.UseVisualStyleBackColor = true;
+      this.SelectApplication.CheckedChanged += new System.EventHandler(this.SelectApplication_CheckedChanged);
+      // 
       // EditFilePath
       // 
       this.EditFilePath.BackColor = System.Drawing.SystemColors.Control;
@@ -144,18 +154,27 @@
       this.EditFilePath.Name = "EditFilePath";
       this.EditFilePath.ReadOnly = true;
       // 
+      // SelectApplicationSound
+      // 
+      this.SelectApplicationSound.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectApplicationSound, "SelectApplicationSound");
+      this.SelectApplicationSound.Name = "SelectApplicationSound";
+      this.SelectApplicationSound.SelectedIndexChanged += new System.EventHandler(this.SelectApplicationSound_SelectedIndexChanged);
+      // 
       // SelectSoundForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.SelectApplicationSound);
       this.Controls.Add(this.SelectDialogSound);
       this.Controls.Add(this.SelectWindowsSound);
       this.Controls.Add(this.ActionSelectFilePath);
       this.Controls.Add(this.EditFilePath);
       this.Controls.Add(this.SelectWindows);
       this.Controls.Add(this.SelectCustom);
+      this.Controls.Add(this.SelectApplication);
       this.Controls.Add(this.SelectDialog);
       this.Controls.Add(this.SelectNone);
       this.Controls.Add(this.PanelButtons);
@@ -163,6 +182,7 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SelectSoundForm";
+      this.Shown += new System.EventHandler(this.SelectSoundForm_Shown);
       this.PanelButtons.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -183,5 +203,7 @@
     private System.Windows.Forms.RadioButton SelectDialog;
     private System.Windows.Forms.ComboBox SelectDialogSound;
     private System.Windows.Forms.Button ActionPlay;
+    private System.Windows.Forms.RadioButton SelectApplication;
+    private System.Windows.Forms.ListBox SelectApplicationSound;
   }
 }

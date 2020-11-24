@@ -117,72 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;ActionPlay.Name" xml:space="preserve">
-    <value>ActionPlay</value>
-  </data>
-  <data name="&gt;&gt;ActionPlay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionPlay.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionPlay.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
-    <value>ActionCancel</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
-    <value>ActionOK</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 323</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 28</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="ActionPlay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionPlay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -204,11 +143,12 @@
     <value>NoControl</value>
   </data>
   <data name="ActionPlay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 1</value>
+    <value>5, 1</value>
   </data>
   <data name="ActionPlay.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionPlay.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
   </data>
@@ -231,7 +171,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 2</value>
+    <value>186, 2</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -261,7 +201,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 2</value>
+    <value>105, 2</value>
   </data>
   <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -283,6 +223,30 @@
   </data>
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 438</value>
+  </data>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 28</value>
+  </data>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="SelectNone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -312,7 +276,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectNone.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="SelectCustom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -321,7 +285,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectCustom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 266</value>
+    <value>15, 379</value>
   </data>
   <data name="SelectCustom.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 17</value>
@@ -342,7 +306,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectCustom.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="SelectWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -351,7 +315,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 98</value>
+    <value>15, 237</value>
   </data>
   <data name="SelectWindows.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 17</value>
@@ -372,7 +336,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectWindows.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ActionSelectFilePath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -397,7 +361,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 285</value>
+    <value>247, 399</value>
   </data>
   <data name="ActionSelectFilePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -415,13 +379,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSelectFilePath.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="SelectWindowsSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 121</value>
+    <value>34, 260</value>
   </data>
   <data name="SelectWindowsSound.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 134</value>
+    <value>207, 108</value>
   </data>
   <data name="SelectWindowsSound.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -436,7 +400,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectWindowsSound.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -451,7 +415,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 43</value>
+    <value>15, 40</value>
   </data>
   <data name="SelectDialog.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 17</value>
@@ -472,13 +436,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectDialog.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="SelectDialogSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 66</value>
+    <value>34, 63</value>
   </data>
   <data name="SelectDialogSound.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 21</value>
+    <value>207, 21</value>
   </data>
   <data name="SelectDialogSound.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
@@ -493,16 +457,46 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectDialogSound.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="SelectApplication.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectApplication.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectApplication.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 95</value>
+  </data>
+  <data name="SelectApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 17</value>
+  </data>
+  <data name="SelectApplication.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="SelectApplication.Text" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="&gt;&gt;SelectApplication.Name" xml:space="preserve">
+    <value>SelectApplication</value>
+  </data>
+  <data name="&gt;&gt;SelectApplication.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectApplication.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SelectApplication.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="EditFilePath.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 289</value>
+    <value>34, 402</value>
   </data>
   <data name="EditFilePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 20</value>
+    <value>207, 20</value>
   </data>
   <data name="EditFilePath.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -511,13 +505,34 @@
     <value>EditFilePath</value>
   </data>
   <data name="&gt;&gt;EditFilePath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilePath.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditFilePath.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="SelectApplicationSound.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 118</value>
+  </data>
+  <data name="SelectApplicationSound.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 108</value>
+  </data>
+  <data name="SelectApplicationSound.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="&gt;&gt;SelectApplicationSound.Name" xml:space="preserve">
+    <value>SelectApplicationSound</value>
+  </data>
+  <data name="&gt;&gt;SelectApplicationSound.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectApplicationSound.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SelectApplicationSound.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -526,7 +541,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>279, 361</value>
+    <value>284, 476</value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

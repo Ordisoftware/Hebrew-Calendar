@@ -159,8 +159,12 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2021.11.29 - Version 5.9
 
-- Add option to set automatic vacuum and web check update frequencies.
-- Add option to set the export folder.
+- Add option to set automatic vacuum frequency.
+- Add option to set automatic web check update frequency.
+- Add option to set export folder.
+- Add option to enable/disable success dialogs.
+- Add sounds to clipboard actions.
+- Improve reminder sound selection box with more choices.
 - Improve preferences form.
 - Improve information menu.
 - Improve UI/UX.

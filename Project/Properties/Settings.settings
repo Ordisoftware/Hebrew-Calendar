@@ -395,7 +395,7 @@
       <Value Profile="(Default)">Asterisk</Value>
     </Setting>
     <Setting Name="ReminderBoxSoundWinows" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Windows Foreground</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="PreferencesFormSelectedTabIndex" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -417,6 +417,12 @@
     </Setting>
     <Setting Name="ExportFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)">%USER_APP_DOCUMENTS%</Value>
+    </Setting>
+    <Setting Name="ShowSuccessDialogs" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ReminderBoxSoundApplication" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

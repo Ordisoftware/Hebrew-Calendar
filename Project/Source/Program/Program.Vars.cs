@@ -111,6 +111,12 @@ namespace Ordisoftware.Hebrew.Calendar
     };
 
     /// <summary>
+    /// Indicate the application sounds folder.
+    /// </summary>
+    static public string ApplicationSoundsFolderPath
+      => Path.Combine(Globals.RootFolderPath, "Sounds");
+
+    /// <summary>
     /// Indicate file path of date bookmarks.
     /// </summary>
     static public string DateBookmarksFilePath
@@ -125,7 +131,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Indicate file path of reminder box image.
     /// </summary>
     static public string ReminderBoxImageFilePath
-      => Path.Combine(Globals.RootFolderPath, @"Project\Icons", "hebrew-calendar-64.png");
+      => Path.Combine(Globals.ProjectIconsFolderPath, "hebrew-calendar-64.png");
 
     /// <summary>
     /// Indicate file path of the text report.

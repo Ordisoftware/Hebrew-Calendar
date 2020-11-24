@@ -111,8 +111,8 @@
       this.EditScreenCenter = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionResetWinSettings = new System.Windows.Forms.ToolStripMenuItem();
       this.Sep7 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionSelectReminderBoxSound = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowKeyboardNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSelectReminderBoxSound = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.EditUseAdvancedDialogBoxes = new System.Windows.Forms.ToolStripMenuItem();
       this.EditSoundsEnabled = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,6 +147,7 @@
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
+      this.EditShowSuccessDialogs = new System.Windows.Forms.ToolStripMenuItem();
       this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -786,6 +787,7 @@
             this.toolStripSeparator3,
             this.EditUseAdvancedDialogBoxes,
             this.EditSoundsEnabled,
+            this.EditShowSuccessDialogs,
             this.EditShowTips,
             this.toolStripSeparator2,
             this.EditESCtoExit,
@@ -858,17 +860,17 @@
       this.Sep7.Name = "Sep7";
       resources.ApplyResources(this.Sep7, "Sep7");
       // 
-      // ActionSelectReminderBoxSound
-      // 
-      resources.ApplyResources(this.ActionSelectReminderBoxSound, "ActionSelectReminderBoxSound");
-      this.ActionSelectReminderBoxSound.Name = "ActionSelectReminderBoxSound";
-      this.ActionSelectReminderBoxSound.Click += new System.EventHandler(this.ActionSelectReminderBoxSound_Click);
-      // 
       // ActionShowKeyboardNotice
       // 
       resources.ApplyResources(this.ActionShowKeyboardNotice, "ActionShowKeyboardNotice");
       this.ActionShowKeyboardNotice.Name = "ActionShowKeyboardNotice";
       this.ActionShowKeyboardNotice.Click += new System.EventHandler(this.ActionShowKeyboardNotice_Click);
+      // 
+      // ActionSelectReminderBoxSound
+      // 
+      resources.ApplyResources(this.ActionSelectReminderBoxSound, "ActionSelectReminderBoxSound");
+      this.ActionSelectReminderBoxSound.Name = "ActionSelectReminderBoxSound";
+      this.ActionSelectReminderBoxSound.Click += new System.EventHandler(this.ActionSelectReminderBoxSound_Click);
       // 
       // toolStripSeparator3
       // 
@@ -1093,6 +1095,15 @@
       // TimerResumeReminder
       // 
       this.TimerResumeReminder.Tick += new System.EventHandler(this.TimerResumeReminder_Tick);
+      // 
+      // EditShowSuccessDialogs
+      // 
+      this.EditShowSuccessDialogs.Checked = true;
+      this.EditShowSuccessDialogs.CheckOnClick = true;
+      this.EditShowSuccessDialogs.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditShowSuccessDialogs, "EditShowSuccessDialogs");
+      this.EditShowSuccessDialogs.Name = "EditShowSuccessDialogs";
+      this.EditShowSuccessDialogs.CheckedChanged += new System.EventHandler(this.EditShowSuccessDialogs_CheckedChanged);
       // 
       // CalendarMonth
       // 
@@ -1420,6 +1431,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionSelectReminderBoxSound;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripMenuItem ActionShowKeyboardNotice;
+    internal System.Windows.Forms.ToolStripMenuItem EditShowSuccessDialogs;
   }
 }
 

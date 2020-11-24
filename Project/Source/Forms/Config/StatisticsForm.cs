@@ -109,7 +109,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionScreenshot_Click(object sender, EventArgs e)
     {
       Clipboard.SetImage(PanelMain.GetBitmap());
-      DisplayManager.ShowInformation(SysTranslations.ScreenshotDone.GetLang());
+      if ( DisplayManager.ShowSuccessDialogs )
+        DisplayManager.ShowInformation(SysTranslations.ScreenshotDone.GetLang());
+      else
+      if ( Program.Settings.SoundsEnabled )
+        DisplayManager.DoSound(Globals.SnapshotSoundFilePath);
     }
 
     private void ActionOpenFolderApplication_Click(object sender, EventArgs e)

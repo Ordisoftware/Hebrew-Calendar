@@ -203,11 +203,14 @@ namespace Ordisoftware.Hebrew.Calendar
         case SoundSource.Dialog:
           DisplayManager.DoSound(Program.Settings.ReminderBoxSoundDialog);
           break;
-        case SoundSource.Custom:
-          new SoundItem(Program.Settings.ReminderBoxSoundPath).Play();
+        case SoundSource.Application:
+          new SoundItem(Program.Settings.ReminderBoxSoundApplication).Play();
           break;
         case SoundSource.Windows:
-          new SoundItem(Program.Settings.ReminderBoxSoundWinows, true).Play();
+          new SoundItem(Program.Settings.ReminderBoxSoundWinows).Play();
+          break;
+        case SoundSource.Custom:
+          new SoundItem(Program.Settings.ReminderBoxSoundPath).Play();
           break;
       }
       Application.DoEvents();
@@ -231,7 +234,6 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( LabelDate.Tag == null ) return;
       MainForm.Instance.MenuShowHide_Click(null, null); 
       MainForm.Instance.GoToDate((DateTime)LabelDate.Tag);
-      //Form_Click(null, null);
     }
 
     private void ActionSetup_Click(object sender, EventArgs e)

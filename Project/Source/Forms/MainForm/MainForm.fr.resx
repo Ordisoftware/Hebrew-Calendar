@@ -1884,7 +1884,7 @@
     <value>Voir le log en cours</value>
   </data>
   <data name="EditSoundsEnabled.Text" xml:space="preserve">
-    <value>Activer les sons des boites de dialogue</value>
+    <value>Boites de dialogue avec sons</value>
   </data>
   <data name="EditUseAdvancedDialogBoxes.Text" xml:space="preserve">
     <value>Boites de dialogues avancées</value>
@@ -1894,5 +1894,8 @@
   </data>
   <data name="ActionShowKeyboardNotice.Text" xml:space="preserve">
     <value>Notice des raccourcis clavier</value>
+  </data>
+  <data name="EditShowSuccessDialogs.Text" xml:space="preserve">
+    <value>Afficher les boîtes de dialogue de réussite</value>
   </data>
 </root>
