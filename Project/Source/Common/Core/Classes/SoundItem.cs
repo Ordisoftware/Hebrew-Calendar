@@ -89,12 +89,21 @@ namespace Ordisoftware.Core
       DurationMS = GetSoundLengthMS(path);
     }
 
-    public void Play()
+    public bool Play()
     {
-      if ( !File.Exists(FilePath) ) return;
+      if ( !File.Exists(FilePath) ) return false;
       SoundPlayer.SoundLocation = FilePath;
-      SoundPlayer.Load();
-      SoundPlayer.Play();
+      try
+      {
+        SoundPlayer.Load();
+        SoundPlayer.Play();
+        return true;
+      }
+      catch (Exception ex)
+      {
+        DisplayManager.ShowError(ex.Message);
+        return false;
+      }
     }
 
   }
