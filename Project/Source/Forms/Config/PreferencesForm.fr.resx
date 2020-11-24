@@ -118,11 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 13</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
+  <data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
     <value>Clic sur la Tray Icon ouvre :</value>
+  </data>
+  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <data name="LabelTimeZone.Text" xml:space="preserve">
+    <value>Fuseau horaire</value>
+  </data>
+  <data name="LabelExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="LabelExportFolder.Text" xml:space="preserve">
+    <value>Dossier d'exportation</value>
   </data>
   <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 13</value>
@@ -136,12 +148,6 @@
   <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
     <value>Chemin de Hebrew Letters</value>
   </data>
-  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 13</value>
-  </data>
-  <data name="LabelTimeZone.Text" xml:space="preserve">
-    <value>Fuseau horaire</value>
-  </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
@@ -151,11 +157,8 @@
   <data name="ActionResetSettings.Text" xml:space="preserve">
     <value>Restaurer les valeurs par défaut</value>
   </data>
-  <data name="TabPageApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 404</value>
-  </data>
   <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 17</value>
+    <value>197, 17</value>
   </data>
   <data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
     <value>Vérifier mise à jour durant l'exécution</value>
@@ -175,7 +178,7 @@
 </value>
   </data>
   <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 17</value>
+    <value>313, 17</value>
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimiser données au démarrage chaque ce nombre de jours</value>
@@ -227,7 +230,7 @@
     <value>Démarrer avec Windows</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 17</value>
+    <value>311, 17</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>Vérifier mise à jour au démarrage chaque ce nombre de jours</value>
@@ -263,13 +266,10 @@
     <value>Fenêtre de navigation</value>
   </data>
   <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 17</value>
+    <value>340, 17</value>
   </data>
   <data name="EditBalloon.Text" xml:space="preserve">
     <value>Utiliser le ballon avec ce délai avant surgissement en millisecondes</value>
-  </data>
-  <data name="TabPageGeneration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 404</value>
   </data>
   <data name="TabPageGeneration.Text" xml:space="preserve">
     <value>Génération</value>
@@ -351,9 +351,6 @@
         kM5gAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="TabPageReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 404</value>
-  </data>
   <data name="TabPageReminder.Text" xml:space="preserve">
     <value>Rappeleur</value>
   </data>
@@ -386,9 +383,6 @@
   </data>
   <data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
     <value>Afficher les boites de rappel dans la barre de tâche</value>
-  </data>
-  <data name="TabPageShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 404</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -442,9 +436,6 @@
   <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
     <value>Utiliser le shabat personnel</value>
   </data>
-  <data name="TabPageCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 404</value>
-  </data>
   <data name="TabPageCelebrations.Text" xml:space="preserve">
     <value>Célébrations</value>
   </data>
@@ -471,9 +462,6 @@
   </data>
   <data name="LabelTimerInterval.Text" xml:space="preserve">
     <value>Jours avant le premier rappel</value>
-  </data>
-  <data name="TabPageMonthView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 404</value>
   </data>
   <data name="TabPageMonthView.Text" xml:space="preserve">
     <value>Vue par mois</value>
@@ -518,7 +506,7 @@
     <value>127, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Fond évènements à venir</value>
+    <value>Fond évèn. à venir</value>
   </data>
   <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 13</value>
@@ -626,9 +614,6 @@
   <data name="EditMonthViewSunToolTips.Text" xml:space="preserve">
     <value>Afficher les levers et couchers du soleil dans une info-bulle</value>
   </data>
-  <data name="TabPageTextReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 404</value>
-  </data>
   <data name="TabPageTextReport.Text" xml:space="preserve">
     <value>Rapport texte</value>
   </data>
@@ -655,9 +640,6 @@
   </data>
   <data name="LabelTextColor.Text" xml:space="preserve">
     <value>Texte</value>
-  </data>
-  <data name="TabPageNavigationWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 404</value>
   </data>
   <data name="TabPageNavigationWindow.Text" xml:space="preserve">
     <value>Fenêtre de navigation</value>
@@ -695,13 +677,7 @@
   <data name="ActionUseSystemColors.Text" xml:space="preserve">
     <value>Utiliser couleurs système</value>
   </data>
-  <data name="TabPageTrayPaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 404</value>
-  </data>
-  <data name="TabPageTrayPaths.Text" xml:space="preserve">
-    <value>Chemins</value>
-  </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionResetExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
@@ -730,7 +706,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="EditResetHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionResetHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
@@ -743,7 +719,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="EditResetCalculatorPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionResetCalculatorPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
@@ -787,10 +763,6 @@
         kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
         AABJRU5ErkJggg==
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
