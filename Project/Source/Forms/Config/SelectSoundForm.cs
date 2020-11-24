@@ -187,8 +187,11 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( OpenFileDialog.ShowDialog() != DialogResult.OK ) return;
       var sound = new SoundItem(OpenFileDialog.FileName);
       if ( sound.DurationMS > DefaultReminderSoundMaxDuration )
-        DisplayManager.ShowWarning($"Duration must be less than {DefaultReminderSoundMaxDuration / 1000} seconds: " +
-                                   ( (long)sound.DurationMS ).FormatMilliseconds());
+      {
+        string msg = AppTranslations.SoundTooLong.GetLang(DefaultReminderSoundMaxDuration / 1000,
+                                                          ( (long)sound.DurationMS ).FormatMilliseconds());
+        DisplayManager.ShowWarning(msg);
+      }
       else
       {
         sound.Play();

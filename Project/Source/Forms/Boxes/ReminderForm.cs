@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-11 </edited>
 using System;
-using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;

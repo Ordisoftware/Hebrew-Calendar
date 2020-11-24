@@ -172,6 +172,13 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "{0} années avant et après maintenant"
       };
 
+    static public readonly TranslationsDictionary SoundTooLong
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Duration must be less than {0} seconds: {1}.",
+        [Language.FR] = "La durée doit être inférieure à {0} secondes: {1}."
+      };
+
   }
 
 }
