@@ -1887,7 +1887,7 @@
     <value>Boites de dialogue avec sons</value>
   </data>
   <data name="EditUseAdvancedDialogBoxes.Text" xml:space="preserve">
-    <value>Boites de dialogues avancées</value>
+    <value>Boites de dialogue avancées</value>
   </data>
   <data name="ActionSelectReminderBoxSound.Text" xml:space="preserve">
     <value>Sélectionner le son des boites de rappel</value>
@@ -1896,6 +1896,6 @@
     <value>Notice des raccourcis clavier</value>
   </data>
   <data name="EditShowSuccessDialogs.Text" xml:space="preserve">
-    <value>Afficher les boîtes de dialogue de réussite</value>
+    <value>Boîtes de dialogue de réussite à la place des sons</value>
   </data>
 </root>

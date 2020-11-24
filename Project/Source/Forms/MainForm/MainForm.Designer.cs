@@ -116,6 +116,7 @@
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.EditUseAdvancedDialogBoxes = new System.Windows.Forms.ToolStripMenuItem();
       this.EditSoundsEnabled = new System.Windows.Forms.ToolStripMenuItem();
+      this.EditShowSuccessDialogs = new System.Windows.Forms.ToolStripMenuItem();
       this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.EditESCtoExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,7 +148,6 @@
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
-      this.EditShowSuccessDialogs = new System.Windows.Forms.ToolStripMenuItem();
       this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -785,10 +785,10 @@
             this.ActionShowKeyboardNotice,
             this.ActionSelectReminderBoxSound,
             this.toolStripSeparator3,
+            this.EditShowTips,
             this.EditUseAdvancedDialogBoxes,
             this.EditSoundsEnabled,
             this.EditShowSuccessDialogs,
-            this.EditShowTips,
             this.toolStripSeparator2,
             this.EditESCtoExit,
             this.EditConfirmClosing});
@@ -894,6 +894,15 @@
       resources.ApplyResources(this.EditSoundsEnabled, "EditSoundsEnabled");
       this.EditSoundsEnabled.Name = "EditSoundsEnabled";
       this.EditSoundsEnabled.CheckedChanged += new System.EventHandler(this.EditDialogBoxesSettings_CheckedChanged);
+      // 
+      // EditShowSuccessDialogs
+      // 
+      this.EditShowSuccessDialogs.Checked = true;
+      this.EditShowSuccessDialogs.CheckOnClick = true;
+      this.EditShowSuccessDialogs.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditShowSuccessDialogs, "EditShowSuccessDialogs");
+      this.EditShowSuccessDialogs.Name = "EditShowSuccessDialogs";
+      this.EditShowSuccessDialogs.CheckedChanged += new System.EventHandler(this.EditShowSuccessDialogs_CheckedChanged);
       // 
       // EditShowTips
       // 
@@ -1095,15 +1104,6 @@
       // TimerResumeReminder
       // 
       this.TimerResumeReminder.Tick += new System.EventHandler(this.TimerResumeReminder_Tick);
-      // 
-      // EditShowSuccessDialogs
-      // 
-      this.EditShowSuccessDialogs.Checked = true;
-      this.EditShowSuccessDialogs.CheckOnClick = true;
-      this.EditShowSuccessDialogs.CheckState = System.Windows.Forms.CheckState.Checked;
-      resources.ApplyResources(this.EditShowSuccessDialogs, "EditShowSuccessDialogs");
-      this.EditShowSuccessDialogs.Name = "EditShowSuccessDialogs";
-      this.EditShowSuccessDialogs.CheckedChanged += new System.EventHandler(this.EditShowSuccessDialogs_CheckedChanged);
       // 
       // CalendarMonth
       // 

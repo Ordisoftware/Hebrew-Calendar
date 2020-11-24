@@ -787,7 +787,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( DisplayManager.ShowSuccessDialogs )
         DisplayManager.Show(AppTranslations.TextReportSavedToTXTFile.GetLang(SaveFileDialog.FileName));
       else
-        DisplayManager.DoSound(MessageBoxIcon.Information);
+      if ( Program.Settings.SoundsEnabled )
+        DisplayManager.DoSound(Globals.KeyboardSoundFilePath);
       if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
@@ -806,7 +807,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( DisplayManager.ShowSuccessDialogs )
         DisplayManager.Show(AppTranslations.TextReportSavedToCSVFile.GetLang(SaveCSVDialog.FileName));
       else
-        DisplayManager.DoSound(MessageBoxIcon.Information);
+      if ( Program.Settings.SoundsEnabled )
+        DisplayManager.DoSound(Globals.KeyboardSoundFilePath);
       if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
     }
@@ -861,9 +863,10 @@ namespace Ordisoftware.Hebrew.Calendar
                 if ( DisplayManager.ShowSuccessDialogs )
                   DisplayManager.Show(AppTranslations.MonthViewPrinted.GetLang());
                 else
-                  DisplayManager.DoSound(MessageBoxIcon.Information);
-                finished = true;
+                if ( Program.Settings.SoundsEnabled )
+                  DisplayManager.DoSound(Globals.PrinterSoundFilePath);
               });
+            finished = true;
           };
           finished = false;
           timer.Start();

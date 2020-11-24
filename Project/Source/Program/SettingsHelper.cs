@@ -51,11 +51,11 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.EditShowTips.Checked = true;
       MainForm.EditESCtoExit.Checked = true;
       MainForm.EditSoundsEnabled.Checked = true;
-      MainForm.EditUseAdvancedDialogBoxes.Checked = true;
-      MainForm.EditShowSuccessDialogs.Checked = true;
-      DisplayManager.ShowSuccessDialogs = true;
       DisplayManager.AdvancedFormUseSounds = true;
+      MainForm.EditUseAdvancedDialogBoxes.Checked = true;
       DisplayManager.FormStyle = MessageBoxFormStyle.Advanced;
+      MainForm.EditShowSuccessDialogs.Checked = false;
+      DisplayManager.ShowSuccessDialogs = false;
       settings.ReminderBoxSoundSource = SoundSource.Dialog;
       settings.ReminderBoxSoundDialog = MessageBoxIcon.Asterisk;
       MainForm.SetView(ViewMode.Month);
