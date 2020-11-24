@@ -68,9 +68,14 @@ namespace Ordisoftware.Hebrew
       SystemManager.OpenGitHupRepo();
     }
 
-    private void ActionCreateGitHubIssue_Click(object sender, EventArgs e)
+    private void ActionCreateGitHubIssueBug_Click(object sender, EventArgs e)
     {
-      SystemManager.CreateGitHubIssue();
+      SystemManager.CreateGitHubIssue("&labels=type: bug");
+    }
+
+    private void ActionCreateGitHubIssueFeature_Click(object sender, EventArgs e)
+    {
+      SystemManager.CreateGitHubIssue("&labels=type: feature");
     }
 
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)

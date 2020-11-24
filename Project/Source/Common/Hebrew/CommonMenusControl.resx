@@ -266,7 +266,7 @@
     <value>351, 22</value>
   </data>
   <data name="ActionGitHubRepo.Text" xml:space="preserve">
-    <value>GitHub Repository</value>
+    <value>GitHub repository</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>348, 6</value>
@@ -294,9 +294,38 @@
     <value>351, 22</value>
   </data>
   <data name="ActionWebQA.Text" xml:space="preserve">
-    <value>Forum Questions &amp;&amp; Réponses</value>
+    <value>Questions &amp;&amp; Answers forum</value>
   </data>
-  <data name="ActionCreateGitHubIssue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionCreateGitHubIssueBug.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ4SURBVDhPhVFdSJNhGH2IpBpl2k3eCHm3RCXRJlTqNtcy
+        LTX51GZL/EmFlcuFgctASMxNV2QUVBLYL0KKvxcpRBjVhdFWEUVlQuvK/kQvtIg4Pc+3L2UldOBw3ud5
+        znm/930/Wg7Z+cqAOcuKbdszkLo1DQlJyV3aaHnUuRqgLVWY9h7Apeu9aPacR9HBWsTFG8Lmf/upvLJm
+        seEzU1NrJk17Mwgt6YRmVq+Jpn0WatIsYX4VBUoJ8gpt8Brp9VWFMF4fAb97pcoA84ErAtKXufjEr0VD
+        SEpJa3Qb1+CxOwbBC3pMderx/pwek0xRqYMX9TzfCLdxNcSvRRcR3c5H/T5ox/y9OswNKpjtzVmk1PNj
+        tayVOJtF8vXoUIxhrzhUtb/yCDx838lqwsv6KASvFOLzgBMzI8whJz5c3oeAKwYPi/ga/CEb+yWnbuBw
+        ulBS4Rhq20H4dOco8LYb/hMJmKiPxTjf+8XxWDzlGsEevLvmhJd9peyXnLoBI4W5qY1PMNWZi59+H/yt
+        Fg7cxN08UvVJiwW/Au2YOJ0LD59A/FpuCfzCeN6ox7eRMtx3xOHHowb055CqYzVxmBm2Y9ShR7tJ3eBf
+        nDHT3Gg5378rFcO2SHzp3YOeXYSvrH3FkfjI/VtKlDzinBZZgilrd2mxMXGWN8GrlvXoU3T8kAbc2Ekc
+        NOB2vg7Pmtehg+fFpsRZ8WvREPIKFGQX2BG7ltJ9Vlrw8a/yn1yFbishwNrBdZuZFmQuPvFr0RDsZRWI
+        32Kw8XIFM7kqhZpOZdIbj4UgWs219GUuPvHzegmHncekoQtVKjYwNzPlpUWl/gOd5g9D+C/5PzQ/0W9U
+        TFjAg6tiPgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionCreateGitHubIssueBug.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionCreateGitHubIssueBug.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionCreateGitHubIssueBug.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 22</value>
+  </data>
+  <data name="ActionCreateGitHubIssueBug.Text" xml:space="preserve">
+    <value>Submit a problem</value>
+  </data>
+  <data name="ActionCreateGitHubIssueFeature.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH7SURBVDhPnZFdSFNhHMZ31XXXXnmxmxioJF5044ShzY/Q
@@ -311,32 +340,32 @@
         sToAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionCreateGitHubIssue.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionCreateGitHubIssueFeature.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionCreateGitHubIssue.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ActionCreateGitHubIssueFeature.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="ActionCreateGitHubIssue.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionCreateGitHubIssueFeature.Size" type="System.Drawing.Size, System.Drawing">
     <value>351, 22</value>
   </data>
-  <data name="ActionCreateGitHubIssue.Text" xml:space="preserve">
-    <value>Submit a problem or a feature</value>
+  <data name="ActionCreateGitHubIssueFeature.Text" xml:space="preserve">
+    <value>Submit a feature</value>
   </data>
   <data name="ActionWebContact.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJuSURBVDhPpZNLSJRRFMdnV9QmaFtUtIiyaNGigoRoFxRF
-        iJT2UEcHsZdGoi3UHExHghCkQqRRmyRMwx7olJURqdWMYlkjzoyYTuPkMx/57OGvc2YU3BRCB37fd797
-        z/9/7j13xvDfcdrW/CChtBmj1UHcEtFc1STZmj0GHfwGZoTpJaK5qlGtwVjiYGIOLPUBfJPwqEfohsfy
-        XozO6ZpvSnJffmVCDIwlTjGQ7Yz9gpqeOcy1XYz8hBeBEOIZZOF7VPLMdd3U9MGYGMTd1h2IwZCIXslk
-        tXuKvLoufsjim35omkfHOpdf7+OhH9yZdjxZdk5UtIUMBmS1URMHwOocJKfWK+nQOhJCI1cq33FNk5F5
-        iZ7qz7wrfIsrvTJk0CcGjkFwDoG0g8LXfix1nSGlRH69n+stU2RkZNPb14/5ah5P0ux8iC+cN5iF91Jp
-        UlprrvHSIR2yPO0k8kYTkUUt5DZM0Jq6lnHvfbLyCrA/e07yhbPEVraHDPqlB9q8nFoPNxu+0PFdzikm
-        Hrkvt+zAkbpRzrcX7q3HVZVJ0plkxmU+wdYaMhiWfZc5AjT6p+mSa/KqWN5umW9K2SCPfVAZBkWrKD65
-        jvL2WUbFIF5/ByZ5yPUzLAyKYECOERDkymk8twYawqXyZihezS3jpmDeN0HahWoNiaWOMR3oTpRYq5No
-        6ydmqnZCrwU+ZgUrl5m2EFPhw2hrC1ZWjWr177A9PCb91J7olOPK7qPnj209EHe4PPsI9rsidl2j1BTG
-        tojkiF1RF6MW8lSjWjXQWCmsWMSyy4kHuWLaj6fgEPK9Q1i+aF1RzT9DRQv8JQyGP/1GmxsAnsf2AAAA
+        iJT2UEeHsJdGki3UHExHghCkQqRRMwnTsAc6ZWVEajWjWNaIMyOm0zj5zEc+e/jrnPkU3BRCB37fd797
+        z/9/7j13xvTfcaq06UFCcRNmu5O4RaK5qkkscXlNOvgNTAtTi0RzVaNak7nIyfgs2OqC+CfgUbfQBY/l
+        vRCd0zX/pOS+/Mq4GJiLXGIg2xn9BdXds1hrOhn+CS+CBuIZYv57RPKstV1U98KoGMTd1h2IwaCIXslk
+        lWeSnNpOfsjimz5onEPHOpdb5+dhADzpDrwZDo6VtxoG/bLaoIn9YHcNkFXjk3RoGTbQyJbKd9xTpKVf
+        orvqM+/y3+JOrTAMesXAOQCuQZB2kP86gK22w1BK5NYFuN48SVpaJj29fViv5vDkooMP8flzBjPwXipN
+        SGut1T7apUO2px1E3mgksqCZ7PpxWlJWM+a7T0ZOHo5nz0k6f4bYijbDoE96oM3LqvFys/4L7d/lnGLi
+        lfvyyA6cKevlfLvh3lrclekknk5iTOYTSlsMgyHZd4kzSENgik65Jp+K5e2R+cbkdfLYAxVhULCCwuNr
+        KGubYUQM4vV3YJGHXD9DwoAI+uUYQUGunIazq6A+XCpvhMKV3DJvCOV9E6RdqNZksTtHdaA7UWLtLqLt
+        n5iu3A49NviYEapcYtlETLkfc2lrqLJqVKt/h63hMakndkUnH1V2Hj53ZPO+uINlmYdw3BWx+xrFljC2
+        RCRF7Ii6EDWfpxrVqoHGcmHZApZcPrmfK5a9ePMOIN/bhKUL1hXV/DNUNM9fwmT6A+twmxDxQH90AAAA
         AElFTkSuQmCC
 </value>
   </data>
@@ -678,10 +707,16 @@
   <data name="&gt;&gt;ActionWebQA.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionCreateGitHubIssue.Name" xml:space="preserve">
-    <value>ActionCreateGitHubIssue</value>
+  <data name="&gt;&gt;ActionCreateGitHubIssueBug.Name" xml:space="preserve">
+    <value>ActionCreateGitHubIssueBug</value>
   </data>
-  <data name="&gt;&gt;ActionCreateGitHubIssue.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionCreateGitHubIssueBug.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCreateGitHubIssueFeature.Name" xml:space="preserve">
+    <value>ActionCreateGitHubIssueFeature</value>
+  </data>
+  <data name="&gt;&gt;ActionCreateGitHubIssueFeature.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionWebContact.Name" xml:space="preserve">

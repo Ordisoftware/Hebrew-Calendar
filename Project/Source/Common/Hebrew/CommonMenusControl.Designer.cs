@@ -40,7 +40,8 @@
       this.ActionGitHubRepo = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebQA = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionCreateGitHubIssue = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCreateGitHubIssueBug = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCreateGitHubIssueFeature = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebContact = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWebTwitter = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,7 +80,8 @@
             this.ActionGitHubRepo,
             this.toolStripSeparator3,
             this.ActionWebQA,
-            this.ActionCreateGitHubIssue,
+            this.ActionCreateGitHubIssueBug,
+            this.ActionCreateGitHubIssueFeature,
             this.ActionWebContact,
             this.toolStripSeparator2,
             this.ActionWebTwitter,
@@ -152,13 +154,21 @@
       this.ActionWebQA.Tag = "http://asherhaimhalevi.free-bb.fr/";
       this.ActionWebQA.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
-      // ActionCreateGitHubIssue
+      // ActionCreateGitHubIssueBug
       // 
-      this.ActionCreateGitHubIssue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionCreateGitHubIssue, "ActionCreateGitHubIssue");
-      this.ActionCreateGitHubIssue.Name = "ActionCreateGitHubIssue";
-      this.ActionCreateGitHubIssue.Tag = "";
-      this.ActionCreateGitHubIssue.Click += new System.EventHandler(this.ActionCreateGitHubIssue_Click);
+      this.ActionCreateGitHubIssueBug.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionCreateGitHubIssueBug, "ActionCreateGitHubIssueBug");
+      this.ActionCreateGitHubIssueBug.Name = "ActionCreateGitHubIssueBug";
+      this.ActionCreateGitHubIssueBug.Tag = "";
+      this.ActionCreateGitHubIssueBug.Click += new System.EventHandler(this.ActionCreateGitHubIssueBug_Click);
+      // 
+      // ActionCreateGitHubIssueFeature
+      // 
+      this.ActionCreateGitHubIssueFeature.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionCreateGitHubIssueFeature, "ActionCreateGitHubIssueFeature");
+      this.ActionCreateGitHubIssueFeature.Name = "ActionCreateGitHubIssueFeature";
+      this.ActionCreateGitHubIssueFeature.Tag = "";
+      this.ActionCreateGitHubIssueFeature.Click += new System.EventHandler(this.ActionCreateGitHubIssueFeature_Click);
       // 
       // ActionWebContact
       // 
@@ -260,7 +270,7 @@
     public System.Windows.Forms.ToolStripMenuItem ActionAbout;
     public System.Windows.Forms.ToolStripMenuItem ActionReleaseNotes;
     public System.Windows.Forms.ToolStripMenuItem ActionWebCheckUpdate;
-    public System.Windows.Forms.ToolStripMenuItem ActionCreateGitHubIssue;
+    public System.Windows.Forms.ToolStripMenuItem ActionCreateGitHubIssueBug;
     public System.Windows.Forms.ToolStripMenuItem ActionWebQA;
     public System.Windows.Forms.ToolStripMenuItem ActionWebHome;
     public System.Windows.Forms.ToolStripMenuItem ActionWebContact;
@@ -273,5 +283,6 @@
     public System.Windows.Forms.ToolStripMenuItem ActionDownloadHebrewCalendar;
     public System.Windows.Forms.ToolStripMenuItem ActionGitHubRepo;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    public System.Windows.Forms.ToolStripMenuItem ActionCreateGitHubIssueFeature;
   }
 }

@@ -818,9 +818,6 @@
   <ItemGroup>
     <Content Include="License\MPL 2.0.htm" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dependencies\EventHandlerSupport\" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
