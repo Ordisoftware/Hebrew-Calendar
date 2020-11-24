@@ -1664,5 +1664,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ExportFolder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowSuccessDialogs {
+            get {
+                return ((bool)(this["ShowSuccessDialogs"]));
+            }
+            set {
+                this["ShowSuccessDialogs"] = value;
+            }
+        }
     }
 }

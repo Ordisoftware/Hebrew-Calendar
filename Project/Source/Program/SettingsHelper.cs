@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -52,6 +52,8 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.EditESCtoExit.Checked = true;
       MainForm.EditSoundsEnabled.Checked = true;
       MainForm.EditUseAdvancedDialogBoxes.Checked = true;
+      MainForm.EditShowSuccessDialogs.Checked = true;
+      DisplayManager.ShowSuccessDialogs = true;
       MainForm.SetView(ViewMode.Month);
       settings.Store();
     }
@@ -93,6 +95,8 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.EditESCtoExit.Checked = settings.ESCtoExit;
       MainForm.EditSoundsEnabled.Checked = settings.SoundsEnabled;
       MainForm.EditUseAdvancedDialogBoxes.Checked = settings.AdvancedDialogBoxes;
+      MainForm.EditShowSuccessDialogs.Checked = settings.ShowSuccessDialogs;
+      DisplayManager.ShowSuccessDialogs = settings.ShowSuccessDialogs;
       MainForm.EditDialogBoxesSettings_CheckedChanged(null, null);
     }
 
@@ -124,6 +128,7 @@ namespace Ordisoftware.Hebrew.Calendar
       settings.ESCtoExit = MainForm.EditESCtoExit.Checked;
       settings.SoundsEnabled = MainForm.EditSoundsEnabled.Checked;
       settings.AdvancedDialogBoxes = MainForm.EditUseAdvancedDialogBoxes.Checked;
+      settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
       settings.Save();
     }
 

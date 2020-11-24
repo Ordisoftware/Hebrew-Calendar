@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -95,11 +95,32 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Voulez-vous configurer le shabat personnel ?"
       };
 
+    static public readonly TranslationsDictionary TextReportSavedToTXTFile
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Text report has been saved to TXT file:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Le rapport textuel a été sauvé dans le fichier TXT :{Globals.NL2}{{0}}",
+      };
+
+    static public readonly TranslationsDictionary TextReportSavedToCSVFile
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Text report has been saved to CSV file:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Le rapport textuel a été sauvé dans le fichier CSV :{Globals.NL2}{{0}}",
+      };
+
     static public readonly TranslationsDictionary TextReportCopiedToClipboard
       = new TranslationsDictionary
       {
         [Language.EN] = "Text report has been copied to the clipboard.",
         [Language.FR] = "Le rapport textuel a été copié dans le presse-papier."
+      };
+
+    static public readonly TranslationsDictionary MonthViewPrinted
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "The month view has been printed.",
+        [Language.FR] = "La vue par mois a été imprimée."
       };
 
     static public readonly TranslationsDictionary DateNotFound

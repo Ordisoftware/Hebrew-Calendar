@@ -462,6 +462,17 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by EditShowSuccessDialogs for checked changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void EditShowSuccessDialogs_CheckedChanged(object sender, EventArgs e)
+    {
+      Settings.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
+      DisplayManager.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionViewReport for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -764,53 +775,6 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionCopyReportToClipboard for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionCopyReportToClipboard_Click(object sender, EventArgs e)
-    {
-      Clipboard.SetText(CalendarText.Text);
-      DisplayManager.Show(AppTranslations.TextReportCopiedToClipboard.GetLang());
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionPrint for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionPrint_Click(object sender, EventArgs e)
-    {
-      SetView(ViewMode.Month);
-      CalendarMonth.ShowTodayButton = false;
-      CalendarMonth.ShowArrowControls = false;
-      try
-      {
-        var bitmap = CalendarMonth.GetBitmap().Resize(1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
-        using ( var document = new PrintDocument() )
-        {
-          document.DefaultPageSettings.Landscape = true;
-          document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
-          PrintDialog.Document = document;
-          var timer = new Timer();
-          timer.Interval = 250;
-          timer.Tick += (_s, _e) =>
-          {
-            timer.Stop();
-            if ( PrintDialog.ShowDialog(this) == DialogResult.OK )
-              SystemManager.TryCatchManage(() => document.Print());
-          };
-          timer.Start();
-        }
-      }
-      finally
-      {
-        CalendarMonth.ShowTodayButton = true;
-        CalendarMonth.ShowArrowControls = true;
-      }
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionSaveReport for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -819,6 +783,10 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
+      if ( DisplayManager.ShowSuccessDialogs )
+        DisplayManager.Show(AppTranslations.TextReportSavedToTXTFile.GetLang(SaveFileDialog.FileName));
+      else
+        DisplayManager.DoSound(MessageBoxIcon.Information);
       if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
@@ -834,8 +802,82 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( content == null ) return;
       if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
+      if ( DisplayManager.ShowSuccessDialogs )
+        DisplayManager.Show(AppTranslations.TextReportSavedToCSVFile.GetLang(SaveCSVDialog.FileName));
+      else
+        DisplayManager.DoSound(MessageBoxIcon.Information);
       if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionCopyReportToClipboard for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionCopyReportToClipboard_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText(CalendarText.Text);
+      if ( DisplayManager.ShowSuccessDialogs )
+        DisplayManager.Show(AppTranslations.TextReportCopiedToClipboard.GetLang());
+      else
+        DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionPrint for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionPrint_Click(object sender, EventArgs e)
+    {
+      SetView(ViewMode.Month);
+      CalendarMonth.ShowTodayButton = false;
+      CalendarMonth.ShowArrowControls = false;
+      bool finished = true;
+      try
+      {
+        ActionPrint.Visible = false;
+        ActionPrint.Visible = true;
+        ToolStrip.Enabled = false;
+        MenuTray.Enabled = false;
+        var bitmap = CalendarMonth.GetBitmap().Resize(1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
+        using ( var document = new PrintDocument() )
+        {
+          document.DefaultPageSettings.Landscape = true;
+          document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
+          PrintDialog.Document = document;
+          var timer = new Timer();
+          timer.Interval = 250;
+          timer.Tick += (_s, _e) =>
+          {
+            timer.Stop();
+            if ( PrintDialog.ShowDialog(this) == DialogResult.OK )
+              SystemManager.TryCatchManage(() =>
+              {
+                document.Print();
+                if ( DisplayManager.ShowSuccessDialogs )
+                  DisplayManager.Show(AppTranslations.MonthViewPrinted.GetLang());
+                else
+                  DisplayManager.DoSound(MessageBoxIcon.Information);
+                finished = true;
+              });
+          };
+          finished = false;
+          timer.Start();
+          while ( !finished )
+          {
+            Application.DoEvents();
+          }
+        }
+      }
+      finally
+      {
+        ToolStrip.Enabled = true;
+        MenuTray.Enabled = true;
+        CalendarMonth.ShowTodayButton = true;
+        CalendarMonth.ShowArrowControls = true;
+      }
     }
 
     /// <summary>
