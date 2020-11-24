@@ -32,15 +32,16 @@ namespace Ordisoftware.Core
       return mute;
     }
 
-    public static void SetApplicationVolume(int pid, float level)
+    public static bool SetApplicationVolume(int pid, float level)
     {
       ISimpleAudioVolume volume = GetVolumeObject(pid);
       if ( volume == null )
-        return;
+        return false;
 
       Guid guid = Guid.Empty;
       volume.SetMasterVolume(level / 100, ref guid);
       Marshal.ReleaseComObject(volume);
+      return true;
     }
 
     public static void SetApplicationMute(int pid, bool mute)
