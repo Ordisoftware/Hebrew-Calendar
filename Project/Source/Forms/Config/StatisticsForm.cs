@@ -112,6 +112,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( DisplayManager.ShowSuccessDialogs )
         DisplayManager.ShowInformation(SysTranslations.ScreenshotDone.GetLang());
       else
+      if ( Program.Settings.SoundsEnabled )
         DisplayManager.DoSound(Globals.SnapshotSoundFilePath);
     }
 

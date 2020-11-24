@@ -444,6 +444,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     internal void EditDialogBoxesSettings_CheckedChanged(object sender, EventArgs e)
     {
+      Settings.SoundsEnabled = EditSoundsEnabled.Checked;
       DisplayManager.AdvancedFormUseSounds = EditSoundsEnabled.Checked;
       DisplayManager.FormStyle = EditUseAdvancedDialogBoxes.Checked
                                  ? MessageBoxFormStyle.Advanced
@@ -821,6 +822,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( DisplayManager.ShowSuccessDialogs )
         DisplayManager.Show(AppTranslations.TextReportCopiedToClipboard.GetLang());
       else
+      if ( Program.Settings.SoundsEnabled )
         DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
     }
 
