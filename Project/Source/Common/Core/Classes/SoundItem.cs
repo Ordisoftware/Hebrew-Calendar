@@ -71,7 +71,7 @@ namespace Ordisoftware.Core
     {
       var result = new List<SoundItem>();
       if ( !Directory.Exists(path) ) return result;
-      var files = Directory.GetFiles(path, filter);
+      var files = Directory.GetFiles(path, filter, SearchOption.AllDirectories);
       foreach ( string file in files )
         result.Add(new SoundItem(file));
       return result;
@@ -83,13 +83,10 @@ namespace Ordisoftware.Core
 
     public override string ToString() => Path.GetFileNameWithoutExtension(FilePath);
 
-    public SoundItem(string path, bool isWindows = false)
+    public SoundItem(string path)
     {
-      if ( isWindows )
-        FilePath = Path.Combine(Globals.WindowsMediaFolderPath, path + ".wav");
-      else
-        FilePath = path;
-      DurationMS = GetSoundLengthMS(FilePath);
+      FilePath = path;
+      DurationMS = GetSoundLengthMS(path);
     }
 
     public void Play()
