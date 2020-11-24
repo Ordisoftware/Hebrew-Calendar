@@ -145,8 +145,8 @@
   <data name="ActionCreateGitHubIssue.Size" type="System.Drawing.Size, System.Drawing">
     <value>372, 22</value>
   </data>
-  <data name="ActionCreateGitHubIssue.Text" xml:space="preserve">
-    <value>Soumettre un problème ou une fonctionnalité</value>
+  <data name="ActionCreateGitHubIssueBug.Text" xml:space="preserve">
+    <value>Soumettre un problème</value>
   </data>
   <data name="ActionWebQA.Size" type="System.Drawing.Size, System.Drawing">
     <value>372, 22</value>
@@ -204,5 +204,11 @@
   </data>
   <data name="ActionGitHubRepo.Text" xml:space="preserve">
     <value>Dépôt GitHub</value>
+  </data>
+  <data name="ActionCreateGitHubIssueFeature.Text" xml:space="preserve">
+    <value>Soumettre une fonctionnalité</value>
+  </data>
+  <data name="ActionWebQA.Text" xml:space="preserve">
+    <value>Forum Questions &amp;&amp; Réponses</value>
   </data>
 </root>
