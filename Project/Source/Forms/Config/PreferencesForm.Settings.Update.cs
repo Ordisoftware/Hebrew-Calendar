@@ -86,6 +86,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.BigCalendarWarningEnabled = EditBigCalendarWarning.Checked;
       Settings.TraceEnabled = EditLogEnabled.Checked;
       Settings.ExportFolder = EditExportFolder.Text;
+      Settings.ApplicationVolume = EditVolume.Value;
     }
 
   }

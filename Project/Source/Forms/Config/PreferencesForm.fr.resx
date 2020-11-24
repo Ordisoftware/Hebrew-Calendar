@@ -468,7 +468,6 @@
   </data>
   <data name="EditRemindShabatOnlyLight.Text" xml:space="preserve">
     <value>Seulement lors de la lumière solaire</value>
-    <comment> </comment>
   </data>
   <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 13</value>
@@ -779,5 +778,8 @@
   </data>
   <data name="EditCheckUpdateAutoInstall.Text" xml:space="preserve">
     <value>Installer automatiquement lorsque disponible</value>
+  </data>
+  <data name="LabelVolume.Text" xml:space="preserve">
+    <value>Volume des sons .wav (non applicable aux sons système des boites de dialogue)</value>
   </data>
 </root>
