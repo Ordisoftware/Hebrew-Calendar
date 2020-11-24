@@ -164,7 +164,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set export folder.
 - Add option to enable/disable success dialogs.
 - Add sounds to export, clipboard and print actions.
-- Add option to set application's volume.
+- Add option to set ths application's volume.
 - Improve reminder sound selection box with more choices.
 - Improve preferences form.
 - Improve information menu.
