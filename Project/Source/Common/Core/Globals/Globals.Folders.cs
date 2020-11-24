@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -92,6 +92,24 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string DocumentsFolderPath
       => Path.Combine(RootFolderPath, "Documents");
+
+    /// <summary>
+    /// Indicate the application project folder.
+    /// </summary>
+    static public string ProjectFolderPath
+      => Path.Combine(RootFolderPath, "Project");
+
+    /// <summary>
+    /// Indicate the application icons folder.
+    /// </summary>
+    static public string ProjectIconsFolderPath
+      => Path.Combine(ProjectFolderPath, "Icons");
+
+    /// <summary>
+    /// Indicate the application sounds folder.
+    /// </summary>
+    static public string ProjectSoundsFolderPath
+      => Path.Combine(ProjectFolderPath, "Sounds");
 
     /// <summary>
     /// Indicate the user applicationtrace folder.

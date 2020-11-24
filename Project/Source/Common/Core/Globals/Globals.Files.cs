@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.IO;
 
@@ -103,6 +103,18 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string HelpFilePath
       => Path.Combine(HelpFolderPath, $"index-{Languages.CurrentCode}.htm");
+
+    /// <summary>
+    /// Indicate the file path of the snapshot sound.
+    /// </summary>
+    static public string SnapshotSoundFilePath
+      => Path.Combine(ProjectSoundsFolderPath, "Snapshot.wav");
+
+    /// <summary>
+    /// Indicate the file path of the clipboard sound.
+    /// </summary>
+    static public string ClipboardSoundFilePath
+      => Path.Combine(ProjectSoundsFolderPath, "Clipboard.wav");
 
     /// <summary>
     /// Indicate the SQLite system DLL file path.

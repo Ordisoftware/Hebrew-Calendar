@@ -69,6 +69,7 @@ namespace Ordisoftware.Core
   {
 
     static public bool AdvancedFormUseSounds = true;
+    static public bool ShowSuccessDialogs = true;
     static public MessageBoxFormStyle FormStyle = MessageBoxFormStyle.Advanced;
     static public MessageBoxIconStyle IconStyle = MessageBoxIconStyle.ForceInformation;
 
@@ -119,6 +120,15 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Play the sound associated to a file.
+    /// </summary>
+    /// <param name="icon"></param>
+    static public void DoSound(string filePath)
+    {
+      new SoundPlayer(filePath).Play();
+    }
+
+    /// <summary>
     /// Show a message.
     /// </summary>
     /// <returns>
@@ -128,8 +138,8 @@ namespace Ordisoftware.Core
     /// <param name="buttons">The buttons.</param>
     /// <param name="icon">The icon.</param>
     static public DialogResult Show(string text,
-                                    MessageBoxButtons buttons = MessageBoxButtons.OK,
-                                    MessageBoxIcon icon = MessageBoxIcon.None)
+                                  MessageBoxButtons buttons = MessageBoxButtons.OK,
+                                  MessageBoxIcon icon = MessageBoxIcon.None)
     {
       return Show(Title, text, buttons, icon);
     }
@@ -149,7 +159,7 @@ namespace Ordisoftware.Core
                                     MessageBoxButtons buttons = MessageBoxButtons.OK,
                                     MessageBoxIcon icon = MessageBoxIcon.None)
     {
-      if ( icon == MessageBoxIcon.None 
+      if ( icon == MessageBoxIcon.None
         && IconStyle == MessageBoxIconStyle.ForceInformation )
         icon = MessageBoxIcon.Information;
       else
@@ -157,7 +167,7 @@ namespace Ordisoftware.Core
         && IconStyle == MessageBoxIconStyle.ForceNone )
         icon = MessageBoxIcon.None;
       DialogResult res = DialogResult.None;
-      SystemManager.TryCatchManage(() => 
+      SystemManager.TryCatchManage(() =>
       {
         switch ( FormStyle )
         {
