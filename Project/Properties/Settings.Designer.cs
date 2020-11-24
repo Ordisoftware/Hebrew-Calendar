@@ -1571,7 +1571,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Windows Foreground")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string ReminderBoxSoundWinows {
             get {
                 return ((string)(this["ReminderBoxSoundWinows"]));

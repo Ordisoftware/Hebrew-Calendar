@@ -13,6 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-11 </edited>
 using System;
+using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
@@ -204,7 +205,7 @@ namespace Ordisoftware.Hebrew.Calendar
           DisplayManager.DoSound(Program.Settings.ReminderBoxSoundDialog);
           break;
         case SoundSource.Application:
-          DisplayManager.DoSound(Program.Settings.ReminderBoxSoundApplication);
+          new SoundItem(Program.Settings.ReminderBoxSoundApplication).Play();
           break;
         case SoundSource.Windows:
           new SoundItem(Program.Settings.ReminderBoxSoundWinows, true).Play();

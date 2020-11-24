@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -51,7 +51,15 @@ namespace Ordisoftware.Core
       return -1;
     }
 
+    static private List<SoundItem> ApplicationSounds;
+
     static private List<SoundItem> WindowsSounds;
+
+    static public List<SoundItem> GetApplicationSounds(string path)
+    {
+      if ( ApplicationSounds == null ) ApplicationSounds = GetSounds(path);
+      return ApplicationSounds;
+    }
 
     static public List<SoundItem> GetWindowsSounds()
     {
@@ -63,7 +71,7 @@ namespace Ordisoftware.Core
     {
       var result = new List<SoundItem>();
       if ( !Directory.Exists(path) ) return result;
-      var files = Directory.GetFiles(Globals.WindowsMediaFolderPath, filter);
+      var files = Directory.GetFiles(path, filter);
       foreach ( string file in files )
         result.Add(new SoundItem(file));
       return result;

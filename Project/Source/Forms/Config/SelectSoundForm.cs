@@ -48,8 +48,8 @@ namespace Ordisoftware.Hebrew.Calendar
           Program.Settings.ReminderBoxSoundSource = SoundSource.Custom;
         if ( form.SelectDialogSound.SelectedItem != null )
           Program.Settings.ReminderBoxSoundDialog = (MessageBoxIcon)form.SelectDialogSound.SelectedItem;
-        Program.Settings.ReminderBoxSoundApplication = form.SelectApplicationSound.SelectedItem?.ToString();
-        Program.Settings.ReminderBoxSoundWinows = ( form.SelectWindowsSound.SelectedItem as SoundItem )?.ToString();
+        Program.Settings.ReminderBoxSoundApplication = ( form.SelectApplicationSound.SelectedItem as SoundItem )?.FilePath;
+        Program.Settings.ReminderBoxSoundWinows = ( form.SelectWindowsSound.SelectedItem as SoundItem )?.FilePath;
         Program.Settings.ReminderBoxSoundPath = form.EditFilePath.Text;
         Program.Settings.Save();
       }
@@ -59,6 +59,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      SelectApplicationSound.Items.AddRange(SoundItem.GetApplicationSounds(Program.ApplicationSoundsFolderPath).ToArray());
       SelectWindowsSound.Items.AddRange(SoundItem.GetWindowsSounds().ToArray());
       SelectDialogSound.Items.Add(MessageBoxIcon.Information);
       SelectDialogSound.Items.Add(MessageBoxIcon.Question);
@@ -67,16 +68,19 @@ namespace Ordisoftware.Hebrew.Calendar
       EditFilePath.Text = Program.Settings.ReminderBoxSoundPath;
       SelectDialogSound.SelectedIndex = SelectDialogSound.Items.IndexOf(Program.Settings.ReminderBoxSoundDialog);
       var item = ( from SoundItem sound in SelectApplicationSound.Items
-                   where sound.ToString() == Program.Settings.ReminderBoxSoundApplication
+                   where sound.FilePath == Program.Settings.ReminderBoxSoundApplication
                    select sound ).FirstOrDefault();
       if ( item != null ) SelectApplicationSound.SelectedItem = item;
       item = ( from SoundItem sound in SelectWindowsSound.Items
-               where sound.ToString() == Program.Settings.ReminderBoxSoundWinows
+               where sound.FilePath == Program.Settings.ReminderBoxSoundWinows
                select sound ).FirstOrDefault();
       if ( item != null ) SelectWindowsSound.SelectedItem = item;
-
-      if ( SelectDialogSound.Items.Count > 0 && SelectDialogSound.SelectedIndex == -1 ) SelectDialogSound.SelectedIndex = 0;
-      if ( SelectWindowsSound.Items.Count > 0 && SelectWindowsSound.SelectedIndex == -1 ) SelectWindowsSound.SelectedIndex = 0;
+      if ( SelectDialogSound.Items.Count > 0 && SelectDialogSound.SelectedIndex == -1 )
+        SelectDialogSound.SelectedIndex = 0;
+      if ( SelectApplicationSound.Items.Count > 0 && SelectApplicationSound.SelectedIndex == -1 )
+        SelectApplicationSound.SelectedIndex = 0;
+      if ( SelectWindowsSound.Items.Count > 0 && SelectWindowsSound.SelectedIndex == -1 )
+        SelectWindowsSound.SelectedIndex = 0;
       switch ( Program.Settings.ReminderBoxSoundSource )
       {
         case SoundSource.None:
@@ -167,7 +171,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectApplicationSound_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( !Created ) return;
-      DisplayManager.DoSound(Path.Combine(Globals.ProjectSoundsFolderPath, (string)SelectDialogSound.SelectedItem));
+      ( (SoundItem)SelectApplicationSound.SelectedItem ).Play();
     }
 
     private void SelectWindowsSound_SelectedIndexChanged(object sender, EventArgs e)
@@ -197,11 +201,14 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( SelectDialog.Checked )
         SelectDialogSound_SelectedIndexChanged(null, null);
       else
-      if ( SelectCustom.Checked )
-        new SoundItem(EditFilePath.Text).Play();
+      if ( SelectApplication.Checked )
+        SelectApplicationSound_SelectedIndexChanged(null, null);
       else
       if ( SelectWindows.Checked )
         SelectWindowsSound_SelectedIndexChanged(null, null);
+      else
+      if ( SelectCustom.Checked )
+        new SoundItem(EditFilePath.Text).Play();
     }
   }
 
