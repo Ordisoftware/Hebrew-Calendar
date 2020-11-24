@@ -208,7 +208,7 @@ namespace Ordisoftware.Hebrew.Calendar
           new SoundItem(Program.Settings.ReminderBoxSoundApplication).Play();
           break;
         case SoundSource.Windows:
-          new SoundItem(Program.Settings.ReminderBoxSoundWinows, true).Play();
+          new SoundItem(Program.Settings.ReminderBoxSoundWinows).Play();
           break;
         case SoundSource.Custom:
           new SoundItem(Program.Settings.ReminderBoxSoundPath).Play();

@@ -171,13 +171,13 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectApplicationSound_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( !Created ) return;
-      ( (SoundItem)SelectApplicationSound.SelectedItem ).Play();
+      ( SelectApplicationSound.SelectedItem as SoundItem )?.Play();
     }
 
     private void SelectWindowsSound_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( !Created ) return;
-      ( (SoundItem)SelectWindowsSound.SelectedItem ).Play();
+      ( SelectWindowsSound.SelectedItem as SoundItem )?.Play();
     }
 
     private void SelectFilePath_Click(object sender, EventArgs e)

@@ -228,7 +228,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 378</value>
+    <value>10, 438</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>264, 28</value>
@@ -285,7 +285,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectCustom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 318</value>
+    <value>15, 379</value>
   </data>
   <data name="SelectCustom.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 17</value>
@@ -315,7 +315,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 150</value>
+    <value>15, 237</value>
   </data>
   <data name="SelectWindows.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 17</value>
@@ -361,7 +361,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 338</value>
+    <value>247, 399</value>
   </data>
   <data name="ActionSelectFilePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -382,10 +382,10 @@
     <value>3</value>
   </data>
   <data name="SelectWindowsSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 173</value>
+    <value>34, 260</value>
   </data>
   <data name="SelectWindowsSound.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 134</value>
+    <value>207, 108</value>
   </data>
   <data name="SelectWindowsSound.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -489,32 +489,11 @@
   <data name="&gt;&gt;SelectApplication.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="SelectApplicationSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 118</value>
-  </data>
-  <data name="SelectApplicationSound.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 21</value>
-  </data>
-  <data name="SelectApplicationSound.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
-  </data>
-  <data name="&gt;&gt;SelectApplicationSound.Name" xml:space="preserve">
-    <value>SelectApplicationSound</value>
-  </data>
-  <data name="&gt;&gt;SelectApplicationSound.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectApplicationSound.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SelectApplicationSound.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="EditFilePath.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 341</value>
+    <value>34, 402</value>
   </data>
   <data name="EditFilePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 20</value>
@@ -534,6 +513,27 @@
   <data name="&gt;&gt;EditFilePath.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="SelectApplicationSound.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 118</value>
+  </data>
+  <data name="SelectApplicationSound.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 108</value>
+  </data>
+  <data name="SelectApplicationSound.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="&gt;&gt;SelectApplicationSound.Name" xml:space="preserve">
+    <value>SelectApplicationSound</value>
+  </data>
+  <data name="&gt;&gt;SelectApplicationSound.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectApplicationSound.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SelectApplicationSound.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -541,7 +541,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 416</value>
+    <value>284, 476</value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

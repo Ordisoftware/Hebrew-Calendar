@@ -43,8 +43,8 @@
       this.SelectDialog = new System.Windows.Forms.RadioButton();
       this.SelectDialogSound = new System.Windows.Forms.ComboBox();
       this.SelectApplication = new System.Windows.Forms.RadioButton();
-      this.SelectApplicationSound = new System.Windows.Forms.ComboBox();
       this.EditFilePath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.SelectApplicationSound = new System.Windows.Forms.ListBox();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -146,14 +146,6 @@
       this.SelectApplication.UseVisualStyleBackColor = true;
       this.SelectApplication.CheckedChanged += new System.EventHandler(this.SelectApplication_CheckedChanged);
       // 
-      // SelectApplicationSound
-      // 
-      this.SelectApplicationSound.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectApplicationSound.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectApplicationSound, "SelectApplicationSound");
-      this.SelectApplicationSound.Name = "SelectApplicationSound";
-      this.SelectApplicationSound.SelectedIndexChanged += new System.EventHandler(this.SelectApplicationSound_SelectedIndexChanged);
-      // 
       // EditFilePath
       // 
       this.EditFilePath.BackColor = System.Drawing.SystemColors.Control;
@@ -161,6 +153,13 @@
       resources.ApplyResources(this.EditFilePath, "EditFilePath");
       this.EditFilePath.Name = "EditFilePath";
       this.EditFilePath.ReadOnly = true;
+      // 
+      // SelectApplicationSound
+      // 
+      this.SelectApplicationSound.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectApplicationSound, "SelectApplicationSound");
+      this.SelectApplicationSound.Name = "SelectApplicationSound";
+      this.SelectApplicationSound.SelectedIndexChanged += new System.EventHandler(this.SelectApplicationSound_SelectedIndexChanged);
       // 
       // SelectSoundForm
       // 
@@ -205,6 +204,6 @@
     private System.Windows.Forms.ComboBox SelectDialogSound;
     private System.Windows.Forms.Button ActionPlay;
     private System.Windows.Forms.RadioButton SelectApplication;
-    private System.Windows.Forms.ComboBox SelectApplicationSound;
+    private System.Windows.Forms.ListBox SelectApplicationSound;
   }
 }
