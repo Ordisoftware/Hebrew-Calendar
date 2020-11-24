@@ -784,10 +784,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
-      if ( DisplayManager.ShowSuccessDialogs )
-        DisplayManager.Show(AppTranslations.TextReportSavedToTXTFile.GetLang(SaveFileDialog.FileName));
-      else
-        DisplayManager.DoSound(MessageBoxIcon.Information);
+      DisplayManager.ShowSuccessOrSound(AppTranslations.TextReportSavedToTXTFile.GetLang(SaveFileDialog.FileName),
+                                        Globals.KeyboardSoundFilePath);
       if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
     }
@@ -803,10 +801,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( content == null ) return;
       if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
       File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
-      if ( DisplayManager.ShowSuccessDialogs )
-        DisplayManager.Show(AppTranslations.TextReportSavedToCSVFile.GetLang(SaveCSVDialog.FileName));
-      else
-        DisplayManager.DoSound(MessageBoxIcon.Information);
+      DisplayManager.ShowSuccessOrSound(AppTranslations.TextReportSavedToCSVFile.GetLang(SaveCSVDialog.FileName),
+                                        Globals.KeyboardSoundFilePath);
       if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
     }
@@ -819,11 +815,8 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionCopyReportToClipboard_Click(object sender, EventArgs e)
     {
       Clipboard.SetText(CalendarText.Text);
-      if ( DisplayManager.ShowSuccessDialogs )
-        DisplayManager.Show(AppTranslations.TextReportCopiedToClipboard.GetLang());
-      else
-      if ( Program.Settings.SoundsEnabled )
-        DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
+      DisplayManager.ShowSuccessOrSound(AppTranslations.TextReportCopiedToClipboard.GetLang(),
+                                        Globals.ClipboardSoundFilePath);
     }
 
     /// <summary>
@@ -858,12 +851,10 @@ namespace Ordisoftware.Hebrew.Calendar
               SystemManager.TryCatchManage(() =>
               {
                 document.Print();
-                if ( DisplayManager.ShowSuccessDialogs )
-                  DisplayManager.Show(AppTranslations.MonthViewPrinted.GetLang());
-                else
-                  DisplayManager.DoSound(MessageBoxIcon.Information);
-                finished = true;
+                DisplayManager.ShowSuccessOrSound(AppTranslations.MonthViewPrinted.GetLang(),
+                                                  Globals.PrinterSoundFilePath);
               });
+            finished = true;
           };
           finished = false;
           timer.Start();

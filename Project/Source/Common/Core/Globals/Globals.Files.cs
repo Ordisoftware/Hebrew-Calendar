@@ -117,6 +117,18 @@ namespace Ordisoftware.Core
       => Path.Combine(ProjectSoundsFolderPath, "Clipboard.wav");
 
     /// <summary>
+    /// Indicate the file path of the keyboard sound.
+    /// </summary>
+    static public string KeyboardSoundFilePath
+      => Path.Combine(ProjectSoundsFolderPath, "Keyboard.wav");
+
+    /// <summary>
+    /// Indicate the file path of the printer sound.
+    /// </summary>
+    static public string PrinterSoundFilePath
+      => Path.Combine(ProjectSoundsFolderPath, "Printer.wav");
+
+    /// <summary>
     /// Indicate the SQLite system DLL file path.
     /// </summary>
     static public string SQLiteSystemDLLFilePath

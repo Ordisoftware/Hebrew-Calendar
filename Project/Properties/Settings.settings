@@ -419,7 +419,7 @@
       <Value Profile="(Default)">%USER_APP_DOCUMENTS%</Value>
     </Setting>
     <Setting Name="ShowSuccessDialogs" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ReminderBoxSoundApplication" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

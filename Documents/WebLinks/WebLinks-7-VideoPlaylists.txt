@@ -67,9 +67,6 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-A4y254NHmPIg4Eca-Dei2I
 
 -
 
-Name = (FR) Islam
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-ApOvBTwQQT4bP_WuBFMP9u
-
 Name = (FR) Georges Lahy
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Cjlu1jQW7_xO1R03bCaKhs
 
