@@ -162,6 +162,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set automatic vacuum frequency.
 - Add option to set automatic web check update frequency.
 - Add option to set export folder.
+- Add option to enable/disable success dialogs.
+- Add sounds to clipboard actions.
 - Improve preferences form.
 - Improve information menu.
 - Improve UI/UX.
