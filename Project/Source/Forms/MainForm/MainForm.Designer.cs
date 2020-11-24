@@ -114,10 +114,10 @@
       this.ActionShowKeyboardNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSelectReminderBoxSound = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+      this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
       this.EditUseAdvancedDialogBoxes = new System.Windows.Forms.ToolStripMenuItem();
       this.EditSoundsEnabled = new System.Windows.Forms.ToolStripMenuItem();
       this.EditShowSuccessDialogs = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditShowTips = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.EditESCtoExit = new System.Windows.Forms.ToolStripMenuItem();
       this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
@@ -877,6 +877,14 @@
       this.toolStripSeparator3.Name = "toolStripSeparator3";
       resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
+      // EditShowTips
+      // 
+      this.EditShowTips.Checked = true;
+      this.EditShowTips.CheckOnClick = true;
+      this.EditShowTips.CheckState = System.Windows.Forms.CheckState.Checked;
+      resources.ApplyResources(this.EditShowTips, "EditShowTips");
+      this.EditShowTips.Name = "EditShowTips";
+      // 
       // EditUseAdvancedDialogBoxes
       // 
       this.EditUseAdvancedDialogBoxes.Checked = true;
@@ -903,14 +911,6 @@
       resources.ApplyResources(this.EditShowSuccessDialogs, "EditShowSuccessDialogs");
       this.EditShowSuccessDialogs.Name = "EditShowSuccessDialogs";
       this.EditShowSuccessDialogs.CheckedChanged += new System.EventHandler(this.EditShowSuccessDialogs_CheckedChanged);
-      // 
-      // EditShowTips
-      // 
-      this.EditShowTips.Checked = true;
-      this.EditShowTips.CheckOnClick = true;
-      this.EditShowTips.CheckState = System.Windows.Forms.CheckState.Checked;
-      resources.ApplyResources(this.EditShowTips, "EditShowTips");
-      this.EditShowTips.Name = "EditShowTips";
       // 
       // toolStripSeparator2
       // 

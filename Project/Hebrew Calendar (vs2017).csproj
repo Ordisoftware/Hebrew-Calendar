@@ -149,6 +149,7 @@
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Settings.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Database.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Application.cs" />
+    <Compile Include="Source\Common\Core\Classes\VolumeMixer.cs" />
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.SSL.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\ControlLocation.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\FormsHelper.cs" />

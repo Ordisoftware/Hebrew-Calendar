@@ -1688,5 +1688,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ReminderBoxSoundApplication"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int ApplicationVolume {
+            get {
+                return ((int)(this["ApplicationVolume"]));
+            }
+            set {
+                this["ApplicationVolume"] = value;
+            }
+        }
     }
 }
