@@ -37,6 +37,7 @@
       System.Windows.Forms.Label LabelExportFolder;
       System.Windows.Forms.Label LabelCalculatorPath;
       System.Windows.Forms.Label LabelHebrewLettersPath;
+      System.Windows.Forms.Label LabelCheckUpdateFrequency;
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
@@ -67,6 +68,7 @@
       this.EditStartWithWindows = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditLogEnabled = new System.Windows.Forms.CheckBox();
+      this.TabPageCheckUpdate = new System.Windows.Forms.TabPage();
       this.TabPageTrayIcon = new System.Windows.Forms.TabPage();
       this.LabelLoomingDelayIntervalInfo = new System.Windows.Forms.Label();
       this.EditBalloonLoomingDelay = new System.Windows.Forms.NumericUpDown();
@@ -75,6 +77,16 @@
       this.EditBalloonAutoHide = new System.Windows.Forms.CheckBox();
       this.SelectOpenNavigationForm = new System.Windows.Forms.RadioButton();
       this.EditBalloon = new System.Windows.Forms.CheckBox();
+      this.TabPageNavigationWindow = new System.Windows.Forms.TabPage();
+      this.ActionUseBlackAndWhiteColors = new System.Windows.Forms.LinkLabel();
+      this.LabelTopColor = new System.Windows.Forms.Label();
+      this.ActionUseDefaultColors = new System.Windows.Forms.LinkLabel();
+      this.LabelMiddleColor = new System.Windows.Forms.Label();
+      this.LabelBottomColor = new System.Windows.Forms.Label();
+      this.ActionUseSystemColors = new System.Windows.Forms.LinkLabel();
+      this.EditNavigateMiddleColor = new System.Windows.Forms.Panel();
+      this.EditNavigateTopColor = new System.Windows.Forms.Panel();
+      this.EditNavigateBottomColor = new System.Windows.Forms.Panel();
       this.TabPageGeneration = new System.Windows.Forms.TabPage();
       this.LabelMaxYearsIntervalInfo = new System.Windows.Forms.Label();
       this.LabelMaxYearsInterval = new System.Windows.Forms.Label();
@@ -86,10 +98,6 @@
       this.EditBigCalendarWarning = new System.Windows.Forms.CheckBox();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
@@ -163,7 +171,6 @@
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -173,23 +180,18 @@
       this.EditTextColor = new System.Windows.Forms.Panel();
       this.EditTextBackground = new System.Windows.Forms.Panel();
       this.LabelTextColor = new System.Windows.Forms.Label();
-      this.TabPageNavigationWindow = new System.Windows.Forms.TabPage();
-      this.ActionUseBlackAndWhiteColors = new System.Windows.Forms.LinkLabel();
-      this.LabelTopColor = new System.Windows.Forms.Label();
-      this.ActionUseDefaultColors = new System.Windows.Forms.LinkLabel();
-      this.LabelMiddleColor = new System.Windows.Forms.Label();
-      this.LabelBottomColor = new System.Windows.Forms.Label();
-      this.ActionUseSystemColors = new System.Windows.Forms.LinkLabel();
-      this.EditNavigateMiddleColor = new System.Windows.Forms.Panel();
-      this.EditNavigateTopColor = new System.Windows.Forms.Panel();
-      this.EditNavigateBottomColor = new System.Windows.Forms.Panel();
-      this.TabPageTrayPaths = new System.Windows.Forms.TabPage();
+      this.TabPagePaths = new System.Windows.Forms.TabPage();
       this.ActionResetExportFolder = new System.Windows.Forms.Button();
       this.button2 = new System.Windows.Forms.Button();
       this.ActionResetHebrewLettersPath = new System.Windows.Forms.Button();
       this.ActionResetCalculatorPath = new System.Windows.Forms.Button();
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
@@ -200,14 +202,17 @@
       LabelExportFolder = new System.Windows.Forms.Label();
       LabelCalculatorPath = new System.Windows.Forms.Label();
       LabelHebrewLettersPath = new System.Windows.Forms.Label();
+      LabelCheckUpdateFrequency = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
+      this.TabPageCheckUpdate.SuspendLayout();
       this.TabPageTrayIcon.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).BeginInit();
+      this.TabPageNavigationWindow.SuspendLayout();
       this.TabPageGeneration.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).BeginInit();
       this.TabPageReminder.SuspendLayout();
@@ -224,8 +229,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).BeginInit();
       this.TabPageTextReport.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
-      this.TabPageNavigationWindow.SuspendLayout();
-      this.TabPageTrayPaths.SuspendLayout();
+      this.TabPagePaths.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelTrayIconClickOpen
@@ -349,15 +353,16 @@
       // 
       resources.ApplyResources(this.TabControl, "TabControl");
       this.TabControl.Controls.Add(this.TabPageApplication);
+      this.TabControl.Controls.Add(this.TabPageCheckUpdate);
       this.TabControl.Controls.Add(this.TabPageTrayIcon);
+      this.TabControl.Controls.Add(this.TabPageNavigationWindow);
       this.TabControl.Controls.Add(this.TabPageGeneration);
       this.TabControl.Controls.Add(this.TabPageReminder);
       this.TabControl.Controls.Add(this.TabPageShabat);
       this.TabControl.Controls.Add(this.TabPageCelebrations);
       this.TabControl.Controls.Add(this.TabPageMonthView);
       this.TabControl.Controls.Add(this.TabPageTextReport);
-      this.TabControl.Controls.Add(this.TabPageNavigationWindow);
-      this.TabControl.Controls.Add(this.TabPageTrayPaths);
+      this.TabControl.Controls.Add(this.TabPagePaths);
       this.TabControl.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "PreferencesFormSelectedTabIndex", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.TabControl.Multiline = true;
       this.TabControl.Name = "TabControl";
@@ -367,12 +372,9 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageApplication.Controls.Add(this.LabelCheckUpdateAtStartupInfo);
       this.TabPageApplication.Controls.Add(this.LabelOptimizeDatabaseIntervalInfo);
-      this.TabPageApplication.Controls.Add(this.EditCheckUpdateEveryWeek);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.EditVacuumAtStartup);
-      this.TabPageApplication.Controls.Add(this.EditCheckUpdateAtStartupInterval);
       this.TabPageApplication.Controls.Add(this.EditVacuumAtStartupInterval);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportFolder);
@@ -380,7 +382,6 @@
       this.TabPageApplication.Controls.Add(this.EditStartupHide);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditStartWithWindows);
-      this.TabPageApplication.Controls.Add(this.EditCheckUpdateAtStartup);
       this.TabPageApplication.Controls.Add(this.EditLogEnabled);
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
@@ -519,6 +520,18 @@
       this.EditLogEnabled.UseVisualStyleBackColor = true;
       this.EditLogEnabled.CheckedChanged += new System.EventHandler(this.EditLogEnabled_CheckedChanged);
       // 
+      // TabPageCheckUpdate
+      // 
+      this.TabPageCheckUpdate.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageCheckUpdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageCheckUpdate.Controls.Add(LabelCheckUpdateFrequency);
+      this.TabPageCheckUpdate.Controls.Add(this.LabelCheckUpdateAtStartupInfo);
+      this.TabPageCheckUpdate.Controls.Add(this.EditCheckUpdateAtStartup);
+      this.TabPageCheckUpdate.Controls.Add(this.EditCheckUpdateEveryWeek);
+      this.TabPageCheckUpdate.Controls.Add(this.EditCheckUpdateAtStartupInterval);
+      resources.ApplyResources(this.TabPageCheckUpdate, "TabPageCheckUpdate");
+      this.TabPageCheckUpdate.Name = "TabPageCheckUpdate";
+      // 
       // TabPageTrayIcon
       // 
       this.TabPageTrayIcon.BackColor = System.Drawing.SystemColors.Window;
@@ -599,6 +612,91 @@
       this.EditBalloon.Name = "EditBalloon";
       this.EditBalloon.UseVisualStyleBackColor = true;
       this.EditBalloon.CheckedChanged += new System.EventHandler(this.EditBalloon_CheckedChanged);
+      // 
+      // TabPageNavigationWindow
+      // 
+      this.TabPageNavigationWindow.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageNavigationWindow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageNavigationWindow.Controls.Add(this.ActionUseBlackAndWhiteColors);
+      this.TabPageNavigationWindow.Controls.Add(this.LabelTopColor);
+      this.TabPageNavigationWindow.Controls.Add(this.ActionUseDefaultColors);
+      this.TabPageNavigationWindow.Controls.Add(this.LabelMiddleColor);
+      this.TabPageNavigationWindow.Controls.Add(this.LabelBottomColor);
+      this.TabPageNavigationWindow.Controls.Add(this.ActionUseSystemColors);
+      this.TabPageNavigationWindow.Controls.Add(this.EditNavigateMiddleColor);
+      this.TabPageNavigationWindow.Controls.Add(this.EditNavigateTopColor);
+      this.TabPageNavigationWindow.Controls.Add(this.EditNavigateBottomColor);
+      resources.ApplyResources(this.TabPageNavigationWindow, "TabPageNavigationWindow");
+      this.TabPageNavigationWindow.Name = "TabPageNavigationWindow";
+      // 
+      // ActionUseBlackAndWhiteColors
+      // 
+      this.ActionUseBlackAndWhiteColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionUseBlackAndWhiteColors, "ActionUseBlackAndWhiteColors");
+      this.ActionUseBlackAndWhiteColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionUseBlackAndWhiteColors.LinkColor = System.Drawing.Color.Navy;
+      this.ActionUseBlackAndWhiteColors.Name = "ActionUseBlackAndWhiteColors";
+      this.ActionUseBlackAndWhiteColors.TabStop = true;
+      this.ActionUseBlackAndWhiteColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseBlackAndWhiteColors_LinkClicked);
+      // 
+      // LabelTopColor
+      // 
+      resources.ApplyResources(this.LabelTopColor, "LabelTopColor");
+      this.LabelTopColor.Name = "LabelTopColor";
+      // 
+      // ActionUseDefaultColors
+      // 
+      this.ActionUseDefaultColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionUseDefaultColors, "ActionUseDefaultColors");
+      this.ActionUseDefaultColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionUseDefaultColors.LinkColor = System.Drawing.Color.Navy;
+      this.ActionUseDefaultColors.Name = "ActionUseDefaultColors";
+      this.ActionUseDefaultColors.TabStop = true;
+      this.ActionUseDefaultColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseDefaultColors_LinkClicked);
+      // 
+      // LabelMiddleColor
+      // 
+      resources.ApplyResources(this.LabelMiddleColor, "LabelMiddleColor");
+      this.LabelMiddleColor.Name = "LabelMiddleColor";
+      // 
+      // LabelBottomColor
+      // 
+      resources.ApplyResources(this.LabelBottomColor, "LabelBottomColor");
+      this.LabelBottomColor.Name = "LabelBottomColor";
+      // 
+      // ActionUseSystemColors
+      // 
+      this.ActionUseSystemColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionUseSystemColors, "ActionUseSystemColors");
+      this.ActionUseSystemColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionUseSystemColors.LinkColor = System.Drawing.Color.Navy;
+      this.ActionUseSystemColors.Name = "ActionUseSystemColors";
+      this.ActionUseSystemColors.TabStop = true;
+      this.ActionUseSystemColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseSystemColors_LinkClicked);
+      // 
+      // EditNavigateMiddleColor
+      // 
+      this.EditNavigateMiddleColor.BackColor = System.Drawing.Color.AliceBlue;
+      this.EditNavigateMiddleColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditNavigateMiddleColor, "EditNavigateMiddleColor");
+      this.EditNavigateMiddleColor.Name = "EditNavigateMiddleColor";
+      this.EditNavigateMiddleColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelMiddleColor_MouseClick);
+      // 
+      // EditNavigateTopColor
+      // 
+      this.EditNavigateTopColor.BackColor = System.Drawing.Color.LemonChiffon;
+      this.EditNavigateTopColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditNavigateTopColor, "EditNavigateTopColor");
+      this.EditNavigateTopColor.Name = "EditNavigateTopColor";
+      this.EditNavigateTopColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelTopColor_MouseClick);
+      // 
+      // EditNavigateBottomColor
+      // 
+      this.EditNavigateBottomColor.BackColor = System.Drawing.Color.Honeydew;
+      this.EditNavigateBottomColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditNavigateBottomColor, "EditNavigateBottomColor");
+      this.EditNavigateBottomColor.Name = "EditNavigateBottomColor";
+      this.EditNavigateBottomColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelBottomColor_MouseClick);
       // 
       // TabPageGeneration
       // 
@@ -706,38 +804,6 @@
       this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
       // 
       // TabPageReminder
       // 
@@ -1322,14 +1388,6 @@
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
       // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // TabPageTextReport
       // 
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
@@ -1412,109 +1470,24 @@
       resources.ApplyResources(this.LabelTextColor, "LabelTextColor");
       this.LabelTextColor.Name = "LabelTextColor";
       // 
-      // TabPageNavigationWindow
+      // TabPagePaths
       // 
-      this.TabPageNavigationWindow.BackColor = System.Drawing.SystemColors.Window;
-      this.TabPageNavigationWindow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageNavigationWindow.Controls.Add(this.ActionUseBlackAndWhiteColors);
-      this.TabPageNavigationWindow.Controls.Add(this.LabelTopColor);
-      this.TabPageNavigationWindow.Controls.Add(this.ActionUseDefaultColors);
-      this.TabPageNavigationWindow.Controls.Add(this.LabelMiddleColor);
-      this.TabPageNavigationWindow.Controls.Add(this.LabelBottomColor);
-      this.TabPageNavigationWindow.Controls.Add(this.ActionUseSystemColors);
-      this.TabPageNavigationWindow.Controls.Add(this.EditNavigateMiddleColor);
-      this.TabPageNavigationWindow.Controls.Add(this.EditNavigateTopColor);
-      this.TabPageNavigationWindow.Controls.Add(this.EditNavigateBottomColor);
-      resources.ApplyResources(this.TabPageNavigationWindow, "TabPageNavigationWindow");
-      this.TabPageNavigationWindow.Name = "TabPageNavigationWindow";
-      // 
-      // ActionUseBlackAndWhiteColors
-      // 
-      this.ActionUseBlackAndWhiteColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionUseBlackAndWhiteColors, "ActionUseBlackAndWhiteColors");
-      this.ActionUseBlackAndWhiteColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.ActionUseBlackAndWhiteColors.LinkColor = System.Drawing.Color.Navy;
-      this.ActionUseBlackAndWhiteColors.Name = "ActionUseBlackAndWhiteColors";
-      this.ActionUseBlackAndWhiteColors.TabStop = true;
-      this.ActionUseBlackAndWhiteColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseBlackAndWhiteColors_LinkClicked);
-      // 
-      // LabelTopColor
-      // 
-      resources.ApplyResources(this.LabelTopColor, "LabelTopColor");
-      this.LabelTopColor.Name = "LabelTopColor";
-      // 
-      // ActionUseDefaultColors
-      // 
-      this.ActionUseDefaultColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionUseDefaultColors, "ActionUseDefaultColors");
-      this.ActionUseDefaultColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.ActionUseDefaultColors.LinkColor = System.Drawing.Color.Navy;
-      this.ActionUseDefaultColors.Name = "ActionUseDefaultColors";
-      this.ActionUseDefaultColors.TabStop = true;
-      this.ActionUseDefaultColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseDefaultColors_LinkClicked);
-      // 
-      // LabelMiddleColor
-      // 
-      resources.ApplyResources(this.LabelMiddleColor, "LabelMiddleColor");
-      this.LabelMiddleColor.Name = "LabelMiddleColor";
-      // 
-      // LabelBottomColor
-      // 
-      resources.ApplyResources(this.LabelBottomColor, "LabelBottomColor");
-      this.LabelBottomColor.Name = "LabelBottomColor";
-      // 
-      // ActionUseSystemColors
-      // 
-      this.ActionUseSystemColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionUseSystemColors, "ActionUseSystemColors");
-      this.ActionUseSystemColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.ActionUseSystemColors.LinkColor = System.Drawing.Color.Navy;
-      this.ActionUseSystemColors.Name = "ActionUseSystemColors";
-      this.ActionUseSystemColors.TabStop = true;
-      this.ActionUseSystemColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseSystemColors_LinkClicked);
-      // 
-      // EditNavigateMiddleColor
-      // 
-      this.EditNavigateMiddleColor.BackColor = System.Drawing.Color.AliceBlue;
-      this.EditNavigateMiddleColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditNavigateMiddleColor, "EditNavigateMiddleColor");
-      this.EditNavigateMiddleColor.Name = "EditNavigateMiddleColor";
-      this.EditNavigateMiddleColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelMiddleColor_MouseClick);
-      // 
-      // EditNavigateTopColor
-      // 
-      this.EditNavigateTopColor.BackColor = System.Drawing.Color.LemonChiffon;
-      this.EditNavigateTopColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditNavigateTopColor, "EditNavigateTopColor");
-      this.EditNavigateTopColor.Name = "EditNavigateTopColor";
-      this.EditNavigateTopColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelTopColor_MouseClick);
-      // 
-      // EditNavigateBottomColor
-      // 
-      this.EditNavigateBottomColor.BackColor = System.Drawing.Color.Honeydew;
-      this.EditNavigateBottomColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditNavigateBottomColor, "EditNavigateBottomColor");
-      this.EditNavigateBottomColor.Name = "EditNavigateBottomColor";
-      this.EditNavigateBottomColor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelBottomColor_MouseClick);
-      // 
-      // TabPageTrayPaths
-      // 
-      this.TabPageTrayPaths.BackColor = System.Drawing.SystemColors.Window;
-      this.TabPageTrayPaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageTrayPaths.Controls.Add(LabelExportFolder);
-      this.TabPageTrayPaths.Controls.Add(this.ActionResetExportFolder);
-      this.TabPageTrayPaths.Controls.Add(this.button2);
-      this.TabPageTrayPaths.Controls.Add(LabelCalculatorPath);
-      this.TabPageTrayPaths.Controls.Add(this.ActionResetHebrewLettersPath);
-      this.TabPageTrayPaths.Controls.Add(this.ActionResetCalculatorPath);
-      this.TabPageTrayPaths.Controls.Add(this.ActionSelectCalculatorPath);
-      this.TabPageTrayPaths.Controls.Add(LabelHebrewLettersPath);
-      this.TabPageTrayPaths.Controls.Add(this.ActionSelectHebrewLettersPath);
-      this.TabPageTrayPaths.Controls.Add(this.EditExportFolder);
-      this.TabPageTrayPaths.Controls.Add(this.EditCalculatorPath);
-      this.TabPageTrayPaths.Controls.Add(this.EditHebrewLettersPath);
-      resources.ApplyResources(this.TabPageTrayPaths, "TabPageTrayPaths");
-      this.TabPageTrayPaths.Name = "TabPageTrayPaths";
+      this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePaths.Controls.Add(LabelExportFolder);
+      this.TabPagePaths.Controls.Add(this.ActionResetExportFolder);
+      this.TabPagePaths.Controls.Add(this.button2);
+      this.TabPagePaths.Controls.Add(LabelCalculatorPath);
+      this.TabPagePaths.Controls.Add(this.ActionResetHebrewLettersPath);
+      this.TabPagePaths.Controls.Add(this.ActionResetCalculatorPath);
+      this.TabPagePaths.Controls.Add(this.ActionSelectCalculatorPath);
+      this.TabPagePaths.Controls.Add(LabelHebrewLettersPath);
+      this.TabPagePaths.Controls.Add(this.ActionSelectHebrewLettersPath);
+      this.TabPagePaths.Controls.Add(this.EditExportFolder);
+      this.TabPagePaths.Controls.Add(this.EditCalculatorPath);
+      this.TabPagePaths.Controls.Add(this.EditHebrewLettersPath);
+      resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
+      this.TabPagePaths.Name = "TabPagePaths";
       // 
       // ActionResetExportFolder
       // 
@@ -1564,6 +1537,51 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // LabelCheckUpdateFrequency
+      // 
+      resources.ApplyResources(LabelCheckUpdateFrequency, "LabelCheckUpdateFrequency");
+      LabelCheckUpdateFrequency.Name = "LabelCheckUpdateFrequency";
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
       // EditExportFolder
       // 
       this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
@@ -1611,9 +1629,13 @@
       this.TabPageApplication.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
+      this.TabPageCheckUpdate.ResumeLayout(false);
+      this.TabPageCheckUpdate.PerformLayout();
       this.TabPageTrayIcon.ResumeLayout(false);
       this.TabPageTrayIcon.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).EndInit();
+      this.TabPageNavigationWindow.ResumeLayout(false);
+      this.TabPageNavigationWindow.PerformLayout();
       this.TabPageGeneration.ResumeLayout(false);
       this.TabPageGeneration.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).EndInit();
@@ -1637,10 +1659,8 @@
       this.TabPageTextReport.ResumeLayout(false);
       this.TabPageTextReport.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
-      this.TabPageNavigationWindow.ResumeLayout(false);
-      this.TabPageNavigationWindow.PerformLayout();
-      this.TabPageTrayPaths.ResumeLayout(false);
-      this.TabPageTrayPaths.PerformLayout();
+      this.TabPagePaths.ResumeLayout(false);
+      this.TabPagePaths.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -1786,7 +1806,7 @@
     private System.Windows.Forms.Button ActionResetHebrewLettersPath;
     private System.Windows.Forms.Button ActionResetCalculatorPath;
     private System.Windows.Forms.NumericUpDown EditVacuumAtStartupInterval;
-    private System.Windows.Forms.TabPage TabPageTrayPaths;
+    private System.Windows.Forms.TabPage TabPagePaths;
     private System.Windows.Forms.NumericUpDown EditCheckUpdateAtStartupInterval;
     private System.Windows.Forms.Button ActionResetExportFolder;
     private System.Windows.Forms.Button button2;
@@ -1802,5 +1822,6 @@
     private System.Windows.Forms.Label LabelReminderCelebrationsIntervalInfo;
     private System.Windows.Forms.Label LabelRemindCelebrationHoursBeforeIntervalInfo;
     private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
+    private System.Windows.Forms.TabPage TabPageCheckUpdate;
   }
 }
