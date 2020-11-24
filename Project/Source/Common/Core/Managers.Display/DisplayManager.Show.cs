@@ -138,8 +138,8 @@ namespace Ordisoftware.Core
     /// <param name="buttons">The buttons.</param>
     /// <param name="icon">The icon.</param>
     static public DialogResult Show(string text,
-                                  MessageBoxButtons buttons = MessageBoxButtons.OK,
-                                  MessageBoxIcon icon = MessageBoxIcon.None)
+                                    MessageBoxButtons buttons = MessageBoxButtons.OK,
+                                    MessageBoxIcon icon = MessageBoxIcon.None)
     {
       return Show(Title, text, buttons, icon);
     }
