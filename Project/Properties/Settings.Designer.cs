@@ -1676,5 +1676,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ShowSuccessDialogs"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ReminderBoxSoundApplication {
+            get {
+                return ((string)(this["ReminderBoxSoundApplication"]));
+            }
+            set {
+                this["ReminderBoxSoundApplication"] = value;
+            }
+        }
     }
 }
