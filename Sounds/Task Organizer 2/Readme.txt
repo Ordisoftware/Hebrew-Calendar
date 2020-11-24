@@ -1,0 +1,2 @@
+Old sounds, libre if I remember, taken from my old alarm reminder project "Task Organizer" written in Delphi between 2000 and 2002, that I replaced by "1st Clock Pro" from Green Parrots Software. 
+Please contact me in case of copyright issue.
