@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Media;
 using System.Diagnostics;
@@ -98,7 +98,6 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Play the sound associated to a message box icon.
     /// </summary>
-    /// <param name="icon"></param>
     static public void DoSound(MessageBoxIcon icon)
     {
       if ( !AdvancedFormUseSounds ) return;
@@ -122,10 +121,21 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Play the sound associated to a file.
     /// </summary>
-    /// <param name="icon"></param>
-    static public void DoSound(string filePath)
+    static public void DoSound(string pathSound)
     {
-      new SoundPlayer(filePath).Play();
+      new SoundPlayer(pathSound).Play();
+    }
+
+    /// <summary>
+    /// Show a success message or play a sound else do nothing.
+    /// </summary>
+    static public void ShowSuccessOrSound(string text, string pathSound)
+    {
+      if ( ShowSuccessDialogs )
+        Show(text);
+      else
+      if ( AdvancedFormUseSounds )
+        DoSound(pathSound);
     }
 
     /// <summary>
