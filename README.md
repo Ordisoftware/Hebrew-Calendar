@@ -159,8 +159,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2021.11.29 - Version 5.9
 
-- Add option to set automatic vacuum and web check update frequencies.
-- Add option to set the export folder.
+- Add option to set automatic vacuum frequency.
+- Add option to set automatic web check update frequency.
+- Add option to set export folder.
 - Improve preferences form.
 - Improve information menu.
 - Improve UI/UX.
