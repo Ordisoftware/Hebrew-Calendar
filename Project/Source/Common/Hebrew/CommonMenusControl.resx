@@ -233,6 +233,119 @@
   <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
     <value>348, 6</value>
   </data>
+  <data name="ActionWebQA.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAmtJREFUOE+tk1FIU3EUxs8aYg8igyKSclNrW61pIpVUkBmEpWAMygehMHuRXgoJ
+        ooconbo5jTbDENQoAq0HrUQKvXd3TpfTYUPNCqOHHgIJQogeopfW764LRRFEdODj/+ec833/c767yX+L
+        wo4J2RWcNBW0hrNsXjXX2qzk57WoG+xt4YyNV8blWN+s0flLbG0Ly45AxGTzKoVWr+KDHIH4LM+rJjkT
+        5IfI1+W3qJbcZkVKg1MG04jtfs3Ma3UQnyM2iFht8bXo7uLOaFFR58TBbX7tIlPFERlB0K6LlHdPG2wC
+        oofCkqs9UnvizlzG/hsxSaVS6VrT2LLIuYeyryuWwyp3meZBQauaffz2nMkdiMiB7qdpAdXp17wiDVLd
+        n0gTfw5dbA9j7+2KWZmEldQK1itHbOempnERXn+FgTVbWsMG5feovzcvZ4cWM5hiFPJp1jgPEvji0CcY
+        cfq0YIf2Zk1l74xB+RHxt6uCJ1IamnIyfpL+MjwLIJDiHhIUy5hiAQ8aD/fEszBOztyfT5NPDSTl0dKK
+        CeddvP4YQj+v6kYu6AIYG5fpd6tMoVRQfIHILdyvYSUP51G+yEmm6+blReo9rGmDFIL89fsEyrDugaC6
+        nsQk98/696c5CmJgDMJ1zkOI2LnfpO+LTgbv6a8S84VRodBAQmO3RpKb7b6whdOJsBtyGfXL1F+C9Mtg
+        hVy9q10zSwkG0bhO/wlX9s4Ka+imZSLgQXCQ5tfgI/gAPoEU+QGHT8v845fDMGF3E8IW4AAlwMU0RyAP
+        I7LMvTrnKr+Dv42qvhmBrP931jKdW18x+9ITo/rPIfINsBdH+397GBYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionWebQA.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionWebQA.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 22</value>
+  </data>
+  <data name="ActionWebQA.Text" xml:space="preserve">
+    <value>Forum Q&amp;&amp;A</value>
+  </data>
+  <data name="ActionCreateGitHubIssueBug.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ1SURBVDhPhVFdSJNhGH2IpBpl2k3eDNrdEpNEm1DpdC4z
+        LTX5zGZL/EmFlcuFgctgkNimrsgoqCSwX4Qm+XeRQoRRXRhtFVFUJrSu+hW90CLi9DzfvpSV0IHDeZ/n
+        Oef93vf9aDHkFSn9lpxcbN6SibRN6UhKTunWRoujwdUEbakie9c+XLgagMd3FqX762FINEXN//ZTZXXd
+        fMNvoZY2M31szyS0ZhA8rF6u/VZq0SxRfhXFShkKS2xoz6JXlxXCWGMMgu6lKkPM+64YSF/m4hO/Fo0g
+        OTW92Z21Ao/cCQifM2Kyy4h3Z4yYYIpKHT5v5PlauLOWQ/xadB7xHXzU7wN2zN5twMyAgulA/jylnh2t
+        Z63G6RySr8dHYgx71YGavdWH4OP7TtQSXjTGIXypBJ/7nZgaZg468f7iboRcCXhQytfgD9nYLzl1A4fT
+        hbIqx6B3K+HTrcPAmx4EjyVhvFGPMb7386N6POEa4V68veJEO/vK2S85dQNGKnOdl08w2VWAn0E/gm1W
+        DlzHnUJS9XGrFb9CHRg/WQAfn0D8Wm4B/MJ41mzEt+EK3HMY8ONhE27nk6qjdQZMDdkx4jCiI1vd4F+c
+        stDMSCXfvzsNQ7ZYfAnsRO92wlfWvj2x+MD9G0qcPOKMFllAds6OcsW8YZo3wcvW1ehTdPyQJlzbRhw0
+        4WaRDk89q9DJc/GJX4tGUFisIK/YDv1KyvDn0pyff1Xw+DL05BJCrJ1cey00J3PxiV+LRmCvqELiRpON
+        l0uYKTWp1HLCTK99VoJoLdfSl7n4xM/rBRx0HpGGLlKpWMNcz5SXFpX6D3SaPwrRv+T/0PxEvwE+qVi1
+        RmSRngAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionCreateGitHubIssueBug.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionCreateGitHubIssueBug.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionCreateGitHubIssueBug.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 22</value>
+  </data>
+  <data name="ActionCreateGitHubIssueBug.Text" xml:space="preserve">
+    <value>Submit a problem</value>
+  </data>
+  <data name="ActionCreateGitHubIssueFeature.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH7SURBVDhPnZFdSFNhHMZ31XXXXnmxmxioJF5044ShzY/Q
+        zsw55zFnjnTSmNoUp+UE3WmSLpyFW5oXiRRq5AftIsdUUPyKClREYyYMFS/8qAS7ejr/d8cQ2zR84Afv
+        +T/P+7zn5ZWdlVardYngFC7JulgULtTlwlWpgrc2FY/upUKnzf3/EjqxxZSCD4IKvlYNvGYVKjgl+xMp
+        El08b7BTUDAm4XWtEoEuIxbeWNBh1bACvZ63S9HISldngAiO23C07MbOrID1jw0Ye1bA5oQUjSzFNYXn
+        enwCloarsTvvRND/GF/fV6HviR4cxyFOofBI0aiKEUkM9BgXv0/YT14A+XduB+Ry+S3JP18Arr7rbW6Z
+        G6qBz1OCzrqb6HJam0XrSjhxjpScqTiZK/+SwpVjZXIU7bYmmPs/X8CnXpky25Sg0lk2rIIXxVUOUMHA
+        qJ8FQr+A7aPIkEcZWVq++aC1exCCpx/qAgsrKM27y8yNH8Dz6W1siRv8oTC0phl5rEBjtOHpq0E8dLjx
+        oLENWUXVUOeUMPPbITC8+hOuwCb2jsGgNc3IYwXZBivq216izCbgfp2DwZXWhAvEU/Z/A96ZEPsmaE0z
+        8lhBJl8JU4PzH8gMivd8MbWJNTF8GpqRxwpupBeN0L3Pwgtv/54aDYPbN0IvGCuSeDlksX8AUL7EHO/w
+        sToAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionCreateGitHubIssueFeature.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionCreateGitHubIssueFeature.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionCreateGitHubIssueFeature.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 22</value>
+  </data>
+  <data name="ActionCreateGitHubIssueFeature.Text" xml:space="preserve">
+    <value>Submit a feature</value>
+  </data>
+  <data name="ActionWebContact.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJvSURBVDhPpZNLSJRRFMdnV9QmaFtUtIiyaNGigoRoFxRF
+        iJT2UEeHsJdGkS3UHExHghCkQqxRMwnTsAc6ZWVEajWjWNaIMyOm0zj5zEc+e/jrnPkU3BRCB37fd797
+        z/9/7j13xvTfcaKk8UFCUSNmu5O4BaK5qkksdnlNOvgNTAmTC0RzVaNak7nQydgM2GqD+MfhUZfQCY/l
+        PR+d0zX/hOS+/MqYGJgLXWIg2xn5BVVdM1irOxj6CS+CBuIZYu57WPKsNZ1U9cCIGMTd1h2IwYCIXslk
+        pWeC7JoOfsjim15omEXHOpdT6+dhADxpDrzpDo6UtRgGfbJar4l9YHf1k1ntk3RoHjLQyJLKd9yTpKZd
+        pKvyM+/y3uJOKTcMesTA2Q+uAZB2kPc6gK2m3VBK5NQGuNY0QWpqBt09vVivZPPkgoMP8XmzBtPwXiqN
+        S2utVT7apEO2p+1EXm8gMr+JrLoxms+vZNR3n/TsXBzPnpN09hSx5a2GQa/0QJuXWe3lRt0X2r7LOcXE
+        K/flkR04z6+V8+2Ee6txV6SReDKJUZlPKGk2DAZl38XOIPWBSTrkmnwqlrdH5huS18hjF5SHQf4yCo6u
+        orR1mmExiNffgUUecv0MCv0i6JNjBAW5cupPr4C6cKm8HgqWc8u8LpT3TZB2oVpT/E3niA50J0qs3UW0
+        /RNTFVuh2wYf00OViy0biCnzYy5pCVVWjWr177A5PCbl2I7o5MPK9oNnDm3cE7e/NOMAjrsidl+lyBLG
+        poikiG1R56Lm8lSjWjXQWCosmceiS8f3ctmyG2/uPuR7i7B43rqimn+Giub4S5hMfwDkTJsIYsS/twAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionWebContact.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionWebContact.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionWebContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 22</value>
+  </data>
+  <data name="ActionWebContact.Text" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>348, 6</value>
+  </data>
   <data name="ActionWebHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -287,122 +400,9 @@
     <value>351, 22</value>
   </data>
   <data name="ActionGitHubRepo.Text" xml:space="preserve">
-    <value>GitHub repository</value>
+    <value>GitHub</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 6</value>
-  </data>
-  <data name="ActionWebQA.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAmtJREFUOE+tk1FIU3EUxs8aYg8igyKSclNrW61pIpVUkBmEpWAMygehMHuRXgoJ
-        ooconbo5jTbDENQoAq0HrUQKvXd3TpfTYUPNCqOHHgIJQogeopfW764LRRFEdODj/+ec833/c767yX+L
-        wo4J2RWcNBW0hrNsXjXX2qzk57WoG+xt4YyNV8blWN+s0flLbG0Ly45AxGTzKoVWr+KDHIH4LM+rJjkT
-        5IfI1+W3qJbcZkVKg1MG04jtfs3Ma3UQnyM2iFht8bXo7uLOaFFR58TBbX7tIlPFERlB0K6LlHdPG2wC
-        oofCkqs9UnvizlzG/hsxSaVS6VrT2LLIuYeyryuWwyp3meZBQauaffz2nMkdiMiB7qdpAdXp17wiDVLd
-        n0gTfw5dbA9j7+2KWZmEldQK1itHbOempnERXn+FgTVbWsMG5feovzcvZ4cWM5hiFPJp1jgPEvji0CcY
-        cfq0YIf2Zk1l74xB+RHxt6uCJ1IamnIyfpL+MjwLIJDiHhIUy5hiAQ8aD/fEszBOztyfT5NPDSTl0dKK
-        CeddvP4YQj+v6kYu6AIYG5fpd6tMoVRQfIHILdyvYSUP51G+yEmm6+blReo9rGmDFIL89fsEyrDugaC6
-        nsQk98/696c5CmJgDMJ1zkOI2LnfpO+LTgbv6a8S84VRodBAQmO3RpKb7b6whdOJsBtyGfXL1F+C9Mtg
-        hVy9q10zSwkG0bhO/wlX9s4Ka+imZSLgQXCQ5tfgI/gAPoEU+QGHT8v845fDMGF3E8IW4AAlwMU0RyAP
-        I7LMvTrnKr+Dv42qvhmBrP931jKdW18x+9ITo/rPIfINsBdH+397GBYAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionWebQA.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionWebQA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 22</value>
-  </data>
-  <data name="ActionWebQA.Text" xml:space="preserve">
-    <value>Questions &amp;&amp; Answers forum</value>
-  </data>
-  <data name="ActionCreateGitHubIssueBug.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ4SURBVDhPhVFbSFRRFN1EUg1l2k/+CPk3iUqijVDpPJzM
-        tNTkTjY2iY9UmHKaCQMnAyExR50io6CSwJ4IKfn6SCHCqD6MZiqiqExo+rKX6IcWEau979yUKaEFi3X2
-        3mude865tBRyC5V+S3YOtmzNQvrmDCSlpHZpo6VR56mHtlRh3r0fF6/1osl3DrYDtUhINETM//ZTeWXN
-        QsNvocYWI021ZRGaMwlNrD4TTfmt1KhZIvwqipQSFBTb0Wai11cUwpg7CgHvcpVB5gNPFKQvc/GJX4uG
-        kZKW0eA1rcJjbxxC5/WY7NTj/Vk9JpiiUocu6Hm+Hl7TSohfiy4gtp2P+n3Agbl7dZgdUDDTm7dAqedG
-        a1krcSab5Oux4RjDUXGwal/lYfj4vhPVhJfuGIQuF+NzvwvTw8xBFz5c2oOgJw4PbXwN/pCd/ZJTN3C6
-        PCipcA62biN8un0EeNuNwPEkjLvjMcb3fnEsHk+5RqgH76660Ma+UvZLTt2Akcbc0MonmOzMx8+AH4EW
-        Kwdu4G4Bqfqk2YpfwXaMn8qHj08gfi23CH5hPG/Q49twGe47E/DjUT3u5JGqozUJmB5yYMSpR7tZ3eBf
-        nLbQ7Eg5378rHUP2aHzp3YWeHYSvrH17o/GR+zeVGHnEWS2yCHP2zlKbMXmGN8Gr5rXoU3T8kAZc304c
-        NOBWoQ7Pmtagg+c2U/KM+LVoGAVFCnKLHIhfTZn+HJr3868KnFiB7hxCkLWD61YLzctcfOLXomE4yiqQ
-        uMlg5+UyZmpVGjWeNNIbn5UgWs219GUuPvHzehGHXEeloQtXKtYxNzLlpUWl/gOd5o9A5C/5PzQ/0W9I
-        3Vi6RMOG9QAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionCreateGitHubIssueBug.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionCreateGitHubIssueBug.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionCreateGitHubIssueBug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 22</value>
-  </data>
-  <data name="ActionCreateGitHubIssueBug.Text" xml:space="preserve">
-    <value>Submit a problem</value>
-  </data>
-  <data name="ActionCreateGitHubIssueFeature.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH7SURBVDhPnZFdSFNhHMZ31XXXXnmxmxioJF5044ShzY/Q
-        zsw55zFnjnTSmNoUp+UE3WmSLpyFW5oXiRRq5AftIsdUUPyKClREYyYMFS/8qAS7ejr/d8cQ2zR84Afv
-        +T/P+7zn5ZWdlVardYngFC7JulgULtTlwlWpgrc2FY/upUKnzf3/EjqxxZSCD4IKvlYNvGYVKjgl+xMp
-        El08b7BTUDAm4XWtEoEuIxbeWNBh1bACvZ63S9HISldngAiO23C07MbOrID1jw0Ye1bA5oQUjSzFNYXn
-        enwCloarsTvvRND/GF/fV6HviR4cxyFOofBI0aiKEUkM9BgXv0/YT14A+XduB+Ry+S3JP18Arr7rbW6Z
-        G6qBz1OCzrqb6HJam0XrSjhxjpScqTiZK/+SwpVjZXIU7bYmmPs/X8CnXpky25Sg0lk2rIIXxVUOUMHA
-        qJ8FQr+A7aPIkEcZWVq++aC1exCCpx/qAgsrKM27y8yNH8Dz6W1siRv8oTC0phl5rEBjtOHpq0E8dLjx
-        oLENWUXVUOeUMPPbITC8+hOuwCb2jsGgNc3IYwXZBivq216izCbgfp2DwZXWhAvEU/Z/A96ZEPsmaE0z
-        8lhBJl8JU4PzH8gMivd8MbWJNTF8GpqRxwpupBeN0L3Pwgtv/54aDYPbN0IvGCuSeDlksX8AUL7EHO/w
-        sToAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionCreateGitHubIssueFeature.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionCreateGitHubIssueFeature.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionCreateGitHubIssueFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 22</value>
-  </data>
-  <data name="ActionCreateGitHubIssueFeature.Text" xml:space="preserve">
-    <value>Submit a feature</value>
-  </data>
-  <data name="ActionWebContact.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJuSURBVDhPpZNLSJRRFMdnV9QmaFtUtIiyaNGigoRoFxRF
-        iJT2UEeHsJdGkS3UHExHghCkQsRRMwnTsAc6ZWVEajWjWNaIMyOm0zj5zEc+e/jrnPkU3BRCB37fd797
-        z/9/7j13xvTfcaq06UFCcRNmu5O4RaK5qkkscXlNOvgNTAtTi0RzVaNak7nIyfgs2OqC+CfgUbfQBY/l
-        vRCd0zX/pOS+/Mq4GJiLXGIg2xn9BdXds1hrOhn+CS+CBuIZYv57RPKstV1U98KoGMTd1h2IwaCIXslk
-        lWeS7NpOfsjimz5onEPHOpdT5+dhADxpDrzpDo6VtxoG/bLaoIn9YHcNkFnjk3RoGTbQyJLKd9xTpKZd
-        prvqM+/y3uJOqTAMesXAOQCuQZB2kPc6gK22w1BK5NQFuNE8SWpqBj29fVivZfPkkoMP8XlzBjPwXipN
-        SGut1T7apUO2px1E3mwkMr+ZrPpxWi6uZsx3n/TsXBzPnpN0/gyxFW2GQZ/0QJuXWePlVv0X2r/LOcXE
-        K/flkR04L66X8+2Ge2txV6aReDqJMZlPKG0xDIZk3yXOIA2BKTrlmnwqlrdH5huT18ljD1SEQf4KCo6v
-        oaxthhExiNffgUUecv0MCQMi6JdjBAW5chrOroL6cKm8EQpWUmjeEMr7Jki7UK0podA5qgPdiRJrdxFt
-        /8R05XboscHH9FDlEssmYsr9mEtbQ5VVo1r9O2wNj0k5sSs6+aiy8/C5I5v3xR0syziE466I3dcptoSx
-        JSIpYkfUhaj5PNWoVg00lgvLFrDkysn9XLXsxZt7APneJixdsK6o5p+honn+EibTH+femwxzKFb1AAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionWebContact.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionWebContact.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionWebContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 22</value>
-  </data>
-  <data name="ActionWebContact.Text" xml:space="preserve">
-    <value>Contact</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>348, 6</value>
   </data>
   <data name="ActionWebTwitter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -686,6 +686,12 @@
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ActionViewReadmeMD.Name" xml:space="preserve">
+    <value>ActionViewReadmeMD</value>
+  </data>
+  <data name="&gt;&gt;ActionViewReadmeMD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionReleaseNotes.Name" xml:space="preserve">
     <value>ActionReleaseNotes</value>
   </data>
@@ -804,12 +810,6 @@
     <value>ActionDownloadHebrewWords</value>
   </data>
   <data name="&gt;&gt;ActionDownloadHebrewWords.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionViewReadmeMD.Name" xml:space="preserve">
-    <value>ActionViewReadmeMD</value>
-  </data>
-  <data name="&gt;&gt;ActionViewReadmeMD.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -33,6 +33,7 @@
       this.MenuInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewReadmeMD = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionReleaseNotes = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
@@ -53,7 +54,6 @@
       this.ActionDownloadHebrewCalendar = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionDownloadHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionDownloadHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewReadmeMD = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStrip.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -78,14 +78,14 @@
             this.ActionReleaseNotes,
             this.ActionWebCheckUpdate,
             this.toolStripSeparator9,
-            this.ActionWebHome,
-            this.ActionGitHubRepo,
-            this.toolStripSeparator3,
             this.ActionWebQA,
             this.ActionCreateGitHubIssueBug,
             this.ActionCreateGitHubIssueFeature,
             this.ActionWebContact,
             this.toolStripSeparator2,
+            this.ActionWebHome,
+            this.ActionGitHubRepo,
+            this.toolStripSeparator3,
             this.ActionWebTwitter,
             this.ActionWebYouTube,
             this.toolStripSeparator7,
@@ -109,6 +109,13 @@
       // 
       this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
+      // ActionViewReadmeMD
+      // 
+      this.ActionViewReadmeMD.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionViewReadmeMD, "ActionViewReadmeMD");
+      this.ActionViewReadmeMD.Name = "ActionViewReadmeMD";
+      this.ActionViewReadmeMD.Click += new System.EventHandler(this.ActionViewReadmeMD_Click);
       // 
       // ActionReleaseNotes
       // 
@@ -246,13 +253,6 @@
       this.ActionDownloadHebrewWords.Name = "ActionDownloadHebrewWords";
       this.ActionDownloadHebrewWords.Tag = "https://www.ordisoftware.com/projects/hebrew-words";
       this.ActionDownloadHebrewWords.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
-      // 
-      // ActionViewReadmeMD
-      // 
-      this.ActionViewReadmeMD.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionViewReadmeMD, "ActionViewReadmeMD");
-      this.ActionViewReadmeMD.Name = "ActionViewReadmeMD";
-      this.ActionViewReadmeMD.Click += new System.EventHandler(this.ActionViewReadmeMD_Click);
       // 
       // CommonMenusControl
       // 

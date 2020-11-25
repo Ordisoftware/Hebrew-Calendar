@@ -202,13 +202,13 @@
   <data name="ActionDownloadHebrewWords.Text" xml:space="preserve">
     <value>Hebrew Words : traducteur littéral mot-à-mot de la Bible</value>
   </data>
-  <data name="ActionGitHubRepo.Text" xml:space="preserve">
-    <value>Dépôt GitHub</value>
-  </data>
   <data name="ActionCreateGitHubIssueFeature.Text" xml:space="preserve">
     <value>Soumettre une fonctionnalité</value>
   </data>
   <data name="ActionWebQA.Text" xml:space="preserve">
-    <value>Forum Questions &amp;&amp; Réponses</value>
+    <value>Forum Q&amp;&amp;R</value>
+  </data>
+  <data name="ActionGitHubRepo.Text" xml:space="preserve">
+    <value>GitHub</value>
   </data>
 </root>
