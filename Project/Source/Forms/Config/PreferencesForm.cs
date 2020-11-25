@@ -704,6 +704,12 @@ namespace Ordisoftware.Hebrew.Calendar
       VolumeMixer.SetApplicationVolume(System.Diagnostics.Process.GetCurrentProcess().Id, EditVolume.Value);
       LabelVolumeValue.Text = EditVolume.Value + "%";
     }
+
+    private void LabelSelectReminderSound_Click(object sender, EventArgs e)
+    {
+      SelectSoundForm.Run();
+    }
+
   }
 
 }

@@ -782,4 +782,7 @@
   <data name="LabelVolume.Text" xml:space="preserve">
     <value>Volume des sons .wav (non applicable aux sons système des boites de dialogue)</value>
   </data>
+  <data name="LabelSelectReminderSound.Text" xml:space="preserve">
+    <value>Sélectionner le son des boites de rappel</value>
+  </data>
 </root>

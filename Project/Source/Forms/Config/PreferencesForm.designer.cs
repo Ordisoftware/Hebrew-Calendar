@@ -29,8 +29,8 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
       System.Windows.Forms.Label LabelVolume;
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
       System.Windows.Forms.Label LabelCheckUpdateFrequency;
       System.Windows.Forms.Label LabelTrayIconClickOpen;
       System.Windows.Forms.Label LabelGPSLatitude;
@@ -190,6 +190,7 @@
       this.ActionResetCalculatorPath = new System.Windows.Forms.Button();
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.LabelSelectReminderSound = new System.Windows.Forms.LinkLabel();
       this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
@@ -236,6 +237,51 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.TabPagePaths.SuspendLayout();
       this.SuspendLayout();
+      // 
+      // LabelVolume
+      // 
+      resources.ApplyResources(LabelVolume, "LabelVolume");
+      LabelVolume.Name = "LabelVolume";
+      // 
+      // LabelCheckUpdateFrequency
+      // 
+      resources.ApplyResources(LabelCheckUpdateFrequency, "LabelCheckUpdateFrequency");
+      LabelCheckUpdateFrequency.Name = "LabelCheckUpdateFrequency";
+      // 
+      // LabelTrayIconClickOpen
+      // 
+      resources.ApplyResources(LabelTrayIconClickOpen, "LabelTrayIconClickOpen");
+      LabelTrayIconClickOpen.Name = "LabelTrayIconClickOpen";
+      // 
+      // LabelGPSLatitude
+      // 
+      resources.ApplyResources(LabelGPSLatitude, "LabelGPSLatitude");
+      LabelGPSLatitude.Name = "LabelGPSLatitude";
+      // 
+      // LabelTimeZone
+      // 
+      resources.ApplyResources(LabelTimeZone, "LabelTimeZone");
+      LabelTimeZone.Name = "LabelTimeZone";
+      // 
+      // LabelGPSLongitude
+      // 
+      resources.ApplyResources(LabelGPSLongitude, "LabelGPSLongitude");
+      LabelGPSLongitude.Name = "LabelGPSLongitude";
+      // 
+      // LabelExportFolder
+      // 
+      resources.ApplyResources(LabelExportFolder, "LabelExportFolder");
+      LabelExportFolder.Name = "LabelExportFolder";
+      // 
+      // LabelCalculatorPath
+      // 
+      resources.ApplyResources(LabelCalculatorPath, "LabelCalculatorPath");
+      LabelCalculatorPath.Name = "LabelCalculatorPath";
+      // 
+      // LabelHebrewLettersPath
+      // 
+      resources.ApplyResources(LabelHebrewLettersPath, "LabelHebrewLettersPath");
+      LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
       // 
       // DialogColor
       // 
@@ -368,11 +414,6 @@
       this.EditVolume.Value = 100;
       this.EditVolume.ValueChanged += new System.EventHandler(this.EditVolume_ValueChanged);
       // 
-      // LabelVolume
-      // 
-      resources.ApplyResources(LabelVolume, "LabelVolume");
-      LabelVolume.Name = "LabelVolume";
-      // 
       // LabelVolumeValue
       // 
       resources.ApplyResources(this.LabelVolumeValue, "LabelVolumeValue");
@@ -483,11 +524,6 @@
       resources.ApplyResources(this.TabPageCheckUpdate, "TabPageCheckUpdate");
       this.TabPageCheckUpdate.Name = "TabPageCheckUpdate";
       // 
-      // LabelCheckUpdateFrequency
-      // 
-      resources.ApplyResources(LabelCheckUpdateFrequency, "LabelCheckUpdateFrequency");
-      LabelCheckUpdateFrequency.Name = "LabelCheckUpdateFrequency";
-      // 
       // LabelCheckUpdateAtStartupInfo
       // 
       resources.ApplyResources(this.LabelCheckUpdateAtStartupInfo, "LabelCheckUpdateAtStartupInfo");
@@ -550,11 +586,6 @@
       resources.ApplyResources(this.LabelLoomingDelayIntervalInfo, "LabelLoomingDelayIntervalInfo");
       this.LabelLoomingDelayIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelLoomingDelayIntervalInfo.Name = "LabelLoomingDelayIntervalInfo";
-      // 
-      // LabelTrayIconClickOpen
-      // 
-      resources.ApplyResources(LabelTrayIconClickOpen, "LabelTrayIconClickOpen");
-      LabelTrayIconClickOpen.Name = "LabelTrayIconClickOpen";
       // 
       // EditBalloonLoomingDelay
       // 
@@ -787,26 +818,11 @@
       this.SelectAutoGenerateYearsInterval.UseVisualStyleBackColor = true;
       this.SelectAutoGenerateYearsInterval.Click += new System.EventHandler(this.SelectAutoGenerateYearsInterval_Click);
       // 
-      // LabelGPSLatitude
-      // 
-      resources.ApplyResources(LabelGPSLatitude, "LabelGPSLatitude");
-      LabelGPSLatitude.Name = "LabelGPSLatitude";
-      // 
-      // LabelTimeZone
-      // 
-      resources.ApplyResources(LabelTimeZone, "LabelTimeZone");
-      LabelTimeZone.Name = "LabelTimeZone";
-      // 
       // EditBigCalendarWarning
       // 
       resources.ApplyResources(this.EditBigCalendarWarning, "EditBigCalendarWarning");
       this.EditBigCalendarWarning.Name = "EditBigCalendarWarning";
       this.EditBigCalendarWarning.UseVisualStyleBackColor = true;
-      // 
-      // LabelGPSLongitude
-      // 
-      resources.ApplyResources(LabelGPSLongitude, "LabelGPSLongitude");
-      LabelGPSLongitude.Name = "LabelGPSLongitude";
       // 
       // EditAutoRegenerate
       // 
@@ -827,6 +843,7 @@
       // 
       this.TabPageReminder.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageReminder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageReminder.Controls.Add(this.LabelSelectReminderSound);
       this.TabPageReminder.Controls.Add(this.LabelAutoLockSessionTimeOutIntervalInfo);
       this.TabPageReminder.Controls.Add(this.EditAllowSuspendReminder);
       this.TabPageReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
@@ -1507,11 +1524,6 @@
       resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
       this.TabPagePaths.Name = "TabPagePaths";
       // 
-      // LabelExportFolder
-      // 
-      resources.ApplyResources(LabelExportFolder, "LabelExportFolder");
-      LabelExportFolder.Name = "LabelExportFolder";
-      // 
       // ActionResetExportFolder
       // 
       this.ActionResetExportFolder.FlatAppearance.BorderSize = 0;
@@ -1527,11 +1539,6 @@
       this.button2.Name = "button2";
       this.button2.UseVisualStyleBackColor = true;
       this.button2.Click += new System.EventHandler(this.button2_Click);
-      // 
-      // LabelCalculatorPath
-      // 
-      resources.ApplyResources(LabelCalculatorPath, "LabelCalculatorPath");
-      LabelCalculatorPath.Name = "LabelCalculatorPath";
       // 
       // ActionResetHebrewLettersPath
       // 
@@ -1557,11 +1564,6 @@
       this.ActionSelectCalculatorPath.UseVisualStyleBackColor = true;
       this.ActionSelectCalculatorPath.Click += new System.EventHandler(this.ActionSelectCalculatorPath_Click);
       // 
-      // LabelHebrewLettersPath
-      // 
-      resources.ApplyResources(LabelHebrewLettersPath, "LabelHebrewLettersPath");
-      LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
-      // 
       // ActionSelectHebrewLettersPath
       // 
       this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
@@ -1569,6 +1571,16 @@
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
+      // 
+      // LabelSelectReminderSound
+      // 
+      this.LabelSelectReminderSound.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.LabelSelectReminderSound, "LabelSelectReminderSound");
+      this.LabelSelectReminderSound.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.LabelSelectReminderSound.LinkColor = System.Drawing.Color.Navy;
+      this.LabelSelectReminderSound.Name = "LabelSelectReminderSound";
+      this.LabelSelectReminderSound.TabStop = true;
+      this.LabelSelectReminderSound.Click += new System.EventHandler(this.LabelSelectReminderSound_Click);
       // 
       // EditGPSLatitude
       // 
@@ -1854,5 +1866,6 @@
     private System.Windows.Forms.TabPage TabPageCheckUpdate;
     private System.Windows.Forms.TrackBar EditVolume;
     private System.Windows.Forms.Label LabelVolumeValue;
+    private System.Windows.Forms.LinkLabel LabelSelectReminderSound;
   }
 }

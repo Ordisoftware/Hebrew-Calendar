@@ -117,24 +117,348 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="LabelVolume.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelVolume.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelVolume.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelVolume.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelVolume.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 278</value>
+  </data>
+  <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 13</value>
+  </data>
+  <data name="LabelVolume.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="LabelVolume.Text" xml:space="preserve">
+    <value>Volume for .wav sounds (not applicable to system dialog sounds)</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.Name" xml:space="preserve">
+    <value>LabelVolume</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;LabelVolume.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="LabelCheckUpdateFrequency.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelCheckUpdateFrequency.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 70</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 13</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
+    <value>Check frequency in number of days:</value>
+  </data>
+  <data name="&gt;&gt;LabelCheckUpdateFrequency.Name" xml:space="preserve">
+    <value>LabelCheckUpdateFrequency</value>
+  </data>
+  <data name="&gt;&gt;LabelCheckUpdateFrequency.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCheckUpdateFrequency.Parent" xml:space="preserve">
+    <value>TabPageCheckUpdate</value>
+  </data>
+  <data name="&gt;&gt;LabelCheckUpdateFrequency.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="LabelTrayIconClickOpen.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelTrayIconClickOpen.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 13</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
+    <value>Tray Icon click opens:</value>
+  </data>
+  <data name="&gt;&gt;LabelTrayIconClickOpen.Name" xml:space="preserve">
+    <value>LabelTrayIconClickOpen</value>
+  </data>
+  <data name="&gt;&gt;LabelTrayIconClickOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTrayIconClickOpen.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;LabelTrayIconClickOpen.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="LabelGPSLatitude.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelGPSLatitude.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelGPSLatitude.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 300</value>
+  </data>
+  <data name="LabelGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="LabelGPSLatitude.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LabelGPSLatitude.Text" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="LabelGPSLatitude.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LabelGPSLatitude.Name" xml:space="preserve">
+    <value>LabelGPSLatitude</value>
+  </data>
+  <data name="&gt;&gt;LabelGPSLatitude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelGPSLatitude.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;LabelGPSLatitude.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="LabelTimeZone.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelTimeZone.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelTimeZone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelTimeZone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelTimeZone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 210</value>
+  </data>
+  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="LabelTimeZone.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="LabelTimeZone.Text" xml:space="preserve">
+    <value>Time zone</value>
+  </data>
+  <data name="LabelTimeZone.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LabelTimeZone.Name" xml:space="preserve">
+    <value>LabelTimeZone</value>
+  </data>
+  <data name="&gt;&gt;LabelTimeZone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTimeZone.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;LabelTimeZone.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <metadata name="LabelGPSLongitude.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelGPSLongitude.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelGPSLongitude.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 300</value>
+  </data>
+  <data name="LabelGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="LabelGPSLongitude.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="LabelGPSLongitude.Text" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="LabelGPSLongitude.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LabelGPSLongitude.Name" xml:space="preserve">
+    <value>LabelGPSLongitude</value>
+  </data>
+  <data name="&gt;&gt;LabelGPSLongitude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelGPSLongitude.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;LabelGPSLongitude.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <metadata name="LabelExportFolder.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelExportFolder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelExportFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelExportFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="LabelExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="LabelExportFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="LabelExportFolder.Text" xml:space="preserve">
+    <value>Export folder</value>
+  </data>
+  <data name="&gt;&gt;LabelExportFolder.Name" xml:space="preserve">
+    <value>LabelExportFolder</value>
+  </data>
+  <data name="&gt;&gt;LabelExportFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelExportFolder.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;LabelExportFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="LabelCalculatorPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelCalculatorPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCalculatorPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 80</value>
+  </data>
+  <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 13</value>
+  </data>
+  <data name="LabelCalculatorPath.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="LabelCalculatorPath.Text" xml:space="preserve">
+    <value>System calculator path</value>
+  </data>
+  <data name="&gt;&gt;LabelCalculatorPath.Name" xml:space="preserve">
+    <value>LabelCalculatorPath</value>
+  </data>
+  <data name="&gt;&gt;LabelCalculatorPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCalculatorPath.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;LabelCalculatorPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="LabelHebrewLettersPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelHebrewLettersPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelHebrewLettersPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 140</value>
+  </data>
+  <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 13</value>
+  </data>
+  <data name="LabelHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
+    <value>Hebrew Letters path</value>
+  </data>
+  <data name="&gt;&gt;LabelHebrewLettersPath.Name" xml:space="preserve">
+    <value>LabelHebrewLettersPath</value>
+  </data>
+  <data name="&gt;&gt;LabelHebrewLettersPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelHebrewLettersPath.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>716, 22</value>
   </metadata>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="ActionClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
     <value>501, 3</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -301,7 +625,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 294</value>
+    <value>18, 299</value>
   </data>
   <data name="EditVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 20</value>
@@ -321,42 +645,6 @@
   <data name="&gt;&gt;EditVolume.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="LabelVolume.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelVolume.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelVolume.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelVolume.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 273</value>
-  </data>
-  <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
-    <value>310, 13</value>
-  </data>
-  <data name="LabelVolume.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="LabelVolume.Text" xml:space="preserve">
-    <value>Volume for .wav sounds (not applicable to system dialog sounds)</value>
-  </data>
-  <data name="&gt;&gt;LabelVolume.Name" xml:space="preserve">
-    <value>LabelVolume</value>
-  </data>
-  <data name="&gt;&gt;LabelVolume.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelVolume.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
-  </data>
-  <data name="&gt;&gt;LabelVolume.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="LabelVolumeValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -367,7 +655,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolumeValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 295</value>
+    <value>274, 300</value>
   </data>
   <data name="LabelVolumeValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -768,42 +1056,6 @@
   <data name="&gt;&gt;TabPageApplication.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="LabelCheckUpdateFrequency.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelCheckUpdateFrequency.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCheckUpdateFrequency.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelCheckUpdateFrequency.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCheckUpdateFrequency.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 70</value>
-  </data>
-  <data name="LabelCheckUpdateFrequency.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 13</value>
-  </data>
-  <data name="LabelCheckUpdateFrequency.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
-    <value>Check frequency in number of days:</value>
-  </data>
-  <data name="&gt;&gt;LabelCheckUpdateFrequency.Name" xml:space="preserve">
-    <value>LabelCheckUpdateFrequency</value>
-  </data>
-  <data name="&gt;&gt;LabelCheckUpdateFrequency.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCheckUpdateFrequency.Parent" xml:space="preserve">
-    <value>TabPageCheckUpdate</value>
-  </data>
-  <data name="&gt;&gt;LabelCheckUpdateFrequency.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="LabelCheckUpdateAtStartupInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -980,42 +1232,6 @@
   </data>
   <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <metadata name="LabelTrayIconClickOpen.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelTrayIconClickOpen.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
-    <value>Tray Icon click opens:</value>
-  </data>
-  <data name="&gt;&gt;LabelTrayIconClickOpen.Name" xml:space="preserve">
-    <value>LabelTrayIconClickOpen</value>
-  </data>
-  <data name="&gt;&gt;LabelTrayIconClickOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTrayIconClickOpen.Parent" xml:space="preserve">
-    <value>TabPageTrayIcon</value>
-  </data>
-  <data name="&gt;&gt;LabelTrayIconClickOpen.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="EditBalloonLoomingDelay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1768,84 +1984,6 @@
   <data name="&gt;&gt;SelectAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <metadata name="LabelGPSLatitude.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelGPSLatitude.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelGPSLatitude.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 300</value>
-  </data>
-  <data name="LabelGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
-  </data>
-  <data name="LabelGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="LabelGPSLatitude.Text" xml:space="preserve">
-    <value>Latitude</value>
-  </data>
-  <data name="LabelGPSLatitude.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSLatitude.Name" xml:space="preserve">
-    <value>LabelGPSLatitude</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSLatitude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSLatitude.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSLatitude.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <metadata name="LabelTimeZone.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelTimeZone.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelTimeZone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelTimeZone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 210</value>
-  </data>
-  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="LabelTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="LabelTimeZone.Text" xml:space="preserve">
-    <value>Time zone</value>
-  </data>
-  <data name="LabelTimeZone.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;LabelTimeZone.Name" xml:space="preserve">
-    <value>LabelTimeZone</value>
-  </data>
-  <data name="&gt;&gt;LabelTimeZone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTimeZone.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;LabelTimeZone.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="EditBigCalendarWarning.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1881,45 +2019,6 @@
   </data>
   <data name="&gt;&gt;EditBigCalendarWarning.ZOrder" xml:space="preserve">
     <value>9</value>
-  </data>
-  <metadata name="LabelGPSLongitude.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelGPSLongitude.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelGPSLongitude.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 300</value>
-  </data>
-  <data name="LabelGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
-  </data>
-  <data name="LabelGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="LabelGPSLongitude.Text" xml:space="preserve">
-    <value>Longitude</value>
-  </data>
-  <data name="LabelGPSLongitude.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSLongitude.Name" xml:space="preserve">
-    <value>LabelGPSLongitude</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSLongitude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSLongitude.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;LabelGPSLongitude.ZOrder" xml:space="preserve">
-    <value>10</value>
   </data>
   <data name="EditAutoRegenerate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2132,6 +2231,39 @@
   <data name="&gt;&gt;TabPageGeneration.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="LabelSelectReminderSound.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSelectReminderSound.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelSelectReminderSound.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelSelectReminderSound.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 175</value>
+  </data>
+  <data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 13</value>
+  </data>
+  <data name="LabelSelectReminderSound.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelSelectReminderSound.Text" xml:space="preserve">
+    <value>Select the sound of the reminder boxes</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectReminderSound.Name" xml:space="preserve">
+    <value>LabelSelectReminderSound</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectReminderSound.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectReminderSound.Parent" xml:space="preserve">
+    <value>TabPageReminder</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectReminderSound.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="LabelAutoLockSessionTimeOutIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2142,7 +2274,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelAutoLockSessionTimeOutIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 143</value>
+    <value>98, 138</value>
   </data>
   <data name="LabelAutoLockSessionTimeOutIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -2163,7 +2295,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;LabelAutoLockSessionTimeOutIntervalInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="EditAllowSuspendReminder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2199,7 +2331,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAllowSuspendReminder.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2211,7 +2343,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 120</value>
+    <value>39, 115</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 13</value>
@@ -2232,7 +2364,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;LabelRemindAutoLockTimeOut.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="EditAutoLockSession.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2247,7 +2379,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoLockSession.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 95</value>
+    <value>23, 90</value>
   </data>
   <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
@@ -2268,13 +2400,13 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSession.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 139</value>
+    <value>42, 134</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -2292,7 +2424,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSessionTimeOut.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="EditCloseReminderFormOnClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2328,7 +2460,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditCloseReminderFormOnClick.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="EditShowReminderInTaskBar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2364,7 +2496,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="TabPageReminder.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -4621,39 +4753,6 @@
   <data name="&gt;&gt;TabPageTextReport.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <metadata name="LabelExportFolder.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelExportFolder.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelExportFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="LabelExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
-  </data>
-  <data name="LabelExportFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="LabelExportFolder.Text" xml:space="preserve">
-    <value>Export folder</value>
-  </data>
-  <data name="&gt;&gt;LabelExportFolder.Name" xml:space="preserve">
-    <value>LabelExportFolder</value>
-  </data>
-  <data name="&gt;&gt;LabelExportFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelExportFolder.Parent" xml:space="preserve">
-    <value>TabPagePaths</value>
-  </data>
-  <data name="&gt;&gt;LabelExportFolder.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="ActionResetExportFolder.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -4736,39 +4835,6 @@
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <metadata name="LabelCalculatorPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelCalculatorPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCalculatorPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 80</value>
-  </data>
-  <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 13</value>
-  </data>
-  <data name="LabelCalculatorPath.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="LabelCalculatorPath.Text" xml:space="preserve">
-    <value>System calculator path</value>
-  </data>
-  <data name="&gt;&gt;LabelCalculatorPath.Name" xml:space="preserve">
-    <value>LabelCalculatorPath</value>
-  </data>
-  <data name="&gt;&gt;LabelCalculatorPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCalculatorPath.Parent" xml:space="preserve">
-    <value>TabPagePaths</value>
-  </data>
-  <data name="&gt;&gt;LabelCalculatorPath.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="ActionResetHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -4892,39 +4958,6 @@
   </data>
   <data name="&gt;&gt;ActionSelectCalculatorPath.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <metadata name="LabelHebrewLettersPath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelHebrewLettersPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelHebrewLettersPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 140</value>
-  </data>
-  <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 13</value>
-  </data>
-  <data name="LabelHebrewLettersPath.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
-    <value>Hebrew Letters path</value>
-  </data>
-  <data name="&gt;&gt;LabelHebrewLettersPath.Name" xml:space="preserve">
-    <value>LabelHebrewLettersPath</value>
-  </data>
-  <data name="&gt;&gt;LabelHebrewLettersPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelHebrewLettersPath.Parent" xml:space="preserve">
-    <value>TabPagePaths</value>
-  </data>
-  <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
