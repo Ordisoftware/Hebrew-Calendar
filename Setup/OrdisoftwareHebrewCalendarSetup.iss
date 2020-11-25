@@ -30,7 +30,7 @@ Name: {commonstartup}\{#MyAppName}.*; Type: files
 
 [Files]
 #include "Scripts\Files.iss"
-Source: ..\Sounds\*; DestDir: {app}\Help; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: ..\Sounds\*; DestDir: {app}\Sounds; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 
 [Icons]
 #include "Scripts\Icons.iss"
