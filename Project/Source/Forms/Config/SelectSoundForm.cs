@@ -105,6 +105,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectSoundForm_Shown(object sender, EventArgs e)
     {
+      EditVolume.Value = Program.Settings.ApplicationVolume;
       ActionPlay.PerformClick();
     }
 
@@ -213,6 +214,15 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( SelectCustom.Checked )
         new SoundItem(EditFilePath.Text).Play();
     }
+
+    private void EditVolume_ValueChanged(object sender, EventArgs e)
+    {
+      VolumeMixer.SetApplicationVolume(System.Diagnostics.Process.GetCurrentProcess().Id, EditVolume.Value);
+      LabelVolumeValue.Text = EditVolume.Value + "%";
+      Program.Settings.ApplicationVolume = EditVolume.Value;
+      Program.Settings.Save();
+    }
+
   }
 
 }

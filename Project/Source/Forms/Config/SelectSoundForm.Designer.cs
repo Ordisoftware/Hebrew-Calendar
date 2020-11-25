@@ -45,7 +45,10 @@
       this.SelectApplication = new System.Windows.Forms.RadioButton();
       this.EditFilePath = new Ordisoftware.Core.UndoRedoTextBox();
       this.SelectApplicationSound = new System.Windows.Forms.ListBox();
+      this.EditVolume = new System.Windows.Forms.TrackBar();
+      this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelButtons
@@ -161,12 +164,30 @@
       this.SelectApplicationSound.Name = "SelectApplicationSound";
       this.SelectApplicationSound.SelectedIndexChanged += new System.EventHandler(this.SelectApplicationSound_SelectedIndexChanged);
       // 
+      // EditVolume
+      // 
+      resources.ApplyResources(this.EditVolume, "EditVolume");
+      this.EditVolume.Maximum = 100;
+      this.EditVolume.Name = "EditVolume";
+      this.EditVolume.TickFrequency = 10;
+      this.EditVolume.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+      this.EditVolume.Value = 100;
+      this.EditVolume.ValueChanged += new System.EventHandler(this.EditVolume_ValueChanged);
+      // 
+      // LabelVolumeValue
+      // 
+      resources.ApplyResources(this.LabelVolumeValue, "LabelVolumeValue");
+      this.LabelVolumeValue.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelVolumeValue.Name = "LabelVolumeValue";
+      // 
       // SelectSoundForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.EditVolume);
+      this.Controls.Add(this.LabelVolumeValue);
       this.Controls.Add(this.SelectApplicationSound);
       this.Controls.Add(this.SelectDialogSound);
       this.Controls.Add(this.SelectWindowsSound);
@@ -184,6 +205,7 @@
       this.Name = "SelectSoundForm";
       this.Shown += new System.EventHandler(this.SelectSoundForm_Shown);
       this.PanelButtons.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -205,5 +227,7 @@
     private System.Windows.Forms.Button ActionPlay;
     private System.Windows.Forms.RadioButton SelectApplication;
     private System.Windows.Forms.ListBox SelectApplicationSound;
+    private System.Windows.Forms.TrackBar EditVolume;
+    private System.Windows.Forms.Label LabelVolumeValue;
   }
 }
