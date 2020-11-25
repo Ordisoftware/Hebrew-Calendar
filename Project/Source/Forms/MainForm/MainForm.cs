@@ -320,11 +320,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
     {
       if ( !Globals.IsReady ) return;
-      if ( !MenuTray.Enabled )
-      {
-        Application.OpenForms.ToList().FirstOrDefault()?.Popup();
-        return;
-      }
+      if ( !MenuTray.Enabled ) return;
       TrayIcon.Text = Settings.BalloonEnabled ? "" : Text;
       if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
         return;
