@@ -1700,5 +1700,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ApplicationVolume"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BalloonOnlyIfMainFormIsHidden {
+            get {
+                return ((bool)(this["BalloonOnlyIfMainFormIsHidden"]));
+            }
+            set {
+                this["BalloonOnlyIfMainFormIsHidden"] = value;
+            }
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     const int CheckUpdateMin = 1;
-    const int CheckUpdateMax = 30;
+    const int CheckUpdateMax = 28;
     const int CheckUpdateDefault = 7;
     const int LoomingDelayMin = 500;
     const int LoomingDelayMax = 5000;

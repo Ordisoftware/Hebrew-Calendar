@@ -343,6 +343,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       EditBalloonLoomingDelay.Enabled = EditBalloon.Checked;
       EditBalloonAutoHide.Enabled = EditBalloon.Checked;
+      EditBalloonOnlyIfMainFormIsHidden.Enabled = EditBalloon.Checked;
     }
 
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)
