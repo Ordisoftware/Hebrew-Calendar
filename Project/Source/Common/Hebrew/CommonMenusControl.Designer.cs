@@ -53,6 +53,7 @@
       this.ActionDownloadHebrewCalendar = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionDownloadHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionDownloadHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewReadmeMD = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStrip.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -73,6 +74,7 @@
       this.MenuInformation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionAbout,
             this.toolStripSeparator1,
+            this.ActionViewReadmeMD,
             this.ActionReleaseNotes,
             this.ActionWebCheckUpdate,
             this.toolStripSeparator9,
@@ -245,6 +247,13 @@
       this.ActionDownloadHebrewWords.Tag = "https://www.ordisoftware.com/projects/hebrew-words";
       this.ActionDownloadHebrewWords.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
+      // ActionViewReadmeMD
+      // 
+      this.ActionViewReadmeMD.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionViewReadmeMD, "ActionViewReadmeMD");
+      this.ActionViewReadmeMD.Name = "ActionViewReadmeMD";
+      this.ActionViewReadmeMD.Click += new System.EventHandler(this.ActionViewReadmeMD_Click);
+      // 
       // CommonMenusControl
       // 
       resources.ApplyResources(this, "$this");
@@ -284,5 +293,6 @@
     public System.Windows.Forms.ToolStripMenuItem ActionGitHubRepo;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     public System.Windows.Forms.ToolStripMenuItem ActionCreateGitHubIssueFeature;
+    public System.Windows.Forms.ToolStripMenuItem ActionViewReadmeMD;
   }
 }

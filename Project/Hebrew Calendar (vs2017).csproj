@@ -141,6 +141,7 @@
     <Compile Include="Dependencies\GenericParsing\Legacy Support\StringArray.cs" />
     <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
     <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
+    <Compile Include="Dependencies\Markdownsharp\Markdown.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Errors.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.IO.cs" />

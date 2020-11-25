@@ -13,8 +13,10 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-11 </edited>
 using System;
+using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using MarkdownSharp;
 
 namespace Ordisoftware.Hebrew
 {
@@ -81,6 +83,24 @@ namespace Ordisoftware.Hebrew
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
       SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
+    }
+
+    private void ActionViewReadmeMD_Click(object sender, EventArgs e)
+    {
+      var md = new Markdown();
+      var lines = File.ReadAllText(Globals.ApplicationReadmeMDPath);
+      string htmlLines = md.Transform(lines);
+      string htmlFilePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
+      File.WriteAllText(htmlFilePath, htmlLines);
+      SystemManager.RunShell(htmlFilePath);
+      var timer = new Timer();
+      timer.Interval = 5000;
+      timer.Tick += (_s, _e) =>
+      {
+        timer.Stop();
+        File.Delete(htmlFilePath);
+      };
+      timer.Start();
     }
 
   }
