@@ -86,8 +86,16 @@ namespace Ordisoftware.Core
         if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
           SystemManager.OpenGitHupRepo();
       }
+      catch ( IOException ex )
+      {
+        CleanTemp();
+        DisplayManager.ShowWarning(DisplayManager.Title + " Check Update", ex.Message);
+        if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
+          SystemManager.OpenGitHupRepo();
+      }
       catch ( Exception ex )
       {
+        CleanTemp();
         DisplayManager.ShowWarning(DisplayManager.Title + " Check Update", ex.Message);
       }
       finally
