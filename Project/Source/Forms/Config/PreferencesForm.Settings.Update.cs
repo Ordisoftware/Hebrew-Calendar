@@ -38,8 +38,9 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.AutoLockSession = EditAutoLockSession.Checked;
       Settings.AutoLockSessionTimeOut = (int)EditAutoLockSessionTimeOut.Value;
       Settings.AutoOpenExportFolder = EditAutoOpenExportFolder.Checked;
-      Settings.BalloonAutoHide = EditBalloonAutoHide.Checked;
       Settings.BalloonEnabled = EditBalloon.Checked;
+      Settings.BalloonOnlyIfMainFormIsHidden = EditBalloonOnlyIfMainFormIsHidden.Checked;
+      Settings.BalloonAutoHide = EditBalloonAutoHide.Checked;
       Settings.BalloonLoomingDelay = (int)EditBalloonLoomingDelay.Value;
       Settings.CalendarColorFullMoon = EditCalendarColorFullMoon.BackColor;
       Settings.CalendarColorMoon = EditCalendarColorMoon.BackColor;

@@ -785,4 +785,7 @@
   <data name="LabelSelectReminderSound.Text" xml:space="preserve">
     <value>Sélectionner le son des boites de rappel</value>
   </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
+    <value>Montrer le ballon seulement si la fenêtre principale est cachée</value>
+  </data>
 </root>

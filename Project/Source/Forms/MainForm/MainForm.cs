@@ -282,7 +282,11 @@ namespace Ordisoftware.Hebrew.Calendar
             Globals.IsReady = temp;
           }
           if ( Globals.IsReady )
+          {
+            if ( NavigationTrayBallooned )
+              NavigationForm.Instance.Hide();
             this.Popup();
+          }
           if ( !NavigationForm.Instance.Visible )
             GoToDate(DateTime.Today);
         }
@@ -316,7 +320,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
     {
       if ( !Globals.IsReady ) return;
-      if ( !MenuTray.Enabled ) return;
+      if ( !MenuTray.Enabled )
+      {
+        Application.OpenForms.ToList().FirstOrDefault()?.Popup();
+        return;
+      }
       TrayIcon.Text = Settings.BalloonEnabled ? "" : Text;
       if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
         return;
@@ -350,7 +358,8 @@ namespace Ordisoftware.Hebrew.Calendar
       TimerBallon.Stop();
       if ( !CanBallon ) return;
       if ( !NavigationForm.Instance.Visible )
-        ActionNavigate_Click(null, null);
+        if ( !Visible || !Settings.BalloonOnlyIfMainFormIsHidden )
+          ActionNavigate_Click(null, null);
     }
 
     /// <summary>
@@ -926,7 +935,6 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionNavigate_Click(object sender, EventArgs e)
     {
-      //retry:
       SystemManager.TryCatchManage(() =>
       {
         TimerBallon.Stop();
@@ -942,15 +950,6 @@ namespace Ordisoftware.Hebrew.Calendar
           NavigationForm.Instance.BringToFront();
         }
       });
-      /*catch ( ObjectDisposedException )
-      {
-        NavigationForm.Instance = new NavigationForm();
-        goto retry;
-      }*/
-      /*catch ( Exception ex )
-      {
-        ex.Manage();
-      }*/
     }
 
     /// <summary>
