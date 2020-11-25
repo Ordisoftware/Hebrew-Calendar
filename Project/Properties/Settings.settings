@@ -155,7 +155,7 @@
       <Value Profile="(Default)">None</Value>
     </Setting>
     <Setting Name="RemindCelebrationHoursBefore" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">12</Value>
+      <Value Profile="(Default)">24</Value>
     </Setting>
     <Setting Name="RemindCelebrationEveryMinutes" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">15</Value>

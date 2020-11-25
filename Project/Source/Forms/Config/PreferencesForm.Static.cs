@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
     const int RemindCelebrationEveryMinutesDefault = 15;
     const int RemindAutoLockTimeOutMin = 10;
     const int RemindAutoLockTimeOutMax = 300;
-    const int RemindAutoLockTimeOutDefault = 60;
+    const int RemindAutoLockTimeOutDefault = 30;
 
     static private readonly Properties.Settings Settings = Program.Settings;
 
