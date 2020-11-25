@@ -99,6 +99,12 @@ namespace Ordisoftware.Core
       => Path.Combine(RootFolderPath, "Application.ico");
 
     /// <summary>
+    /// Indicate the file path of the application's readme markdown file.
+    /// </summary>
+    static public string ApplicationReadmeMDPath
+      => Path.Combine(RootFolderPath, "README.md");
+
+    /// <summary>
     /// Indicate the file path of the help.
     /// </summary>
     static public string HelpFilePath

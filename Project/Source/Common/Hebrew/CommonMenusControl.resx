@@ -154,6 +154,27 @@
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>348, 6</value>
   </data>
+  <data name="ActionViewReadmeMD.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACXSURBVDhPYxgeYAcQ/ycTbwNirBLI+C8WMWSMYEDBAiAG
+        8UE0DKCrgfHBYuiSXEC8CkrDALoaGB8shi6JDaCrgfHBYuiSyVA6BUqDwGUg5oAwwQDEBolhNeA7EKcB
+        8Q8wDwJA8hMhTDCYCsRwfegGwPggzAjEzEh8TyD2R+KDMAqHEH4BxG/QxMCJAVmAFLwZiIc2YGAAAGxI
+        btpR6iGVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionViewReadmeMD.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionViewReadmeMD.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionViewReadmeMD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 22</value>
+  </data>
+  <data name="ActionViewReadmeMD.Text" xml:space="preserve">
+    <value>Readme</value>
+  </data>
   <data name="ActionReleaseNotes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -299,18 +320,18 @@
   <data name="ActionCreateGitHubIssueBug.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ4SURBVDhPhVFdSJNhGH2IpBpl2k3eCHm3RCXRJlTqNtcy
-        LTX51GZL/EmFlcuFgctASMxNV2QUVBLYL0KKvxcpRBjVhdFWEUVlQuvK/kQvtIg4Pc+3L2UldOBw3ud5
-        znm/930/Wg7Z+cqAOcuKbdszkLo1DQlJyV3aaHnUuRqgLVWY9h7Apeu9aPacR9HBWsTFG8Lmf/upvLJm
-        seEzU1NrJk17Mwgt6YRmVq+Jpn0WatIsYX4VBUoJ8gpt8Brp9VWFMF4fAb97pcoA84ErAtKXufjEr0VD
-        SEpJa3Qb1+CxOwbBC3pMderx/pwek0xRqYMX9TzfCLdxNcSvRRcR3c5H/T5ox/y9OswNKpjtzVmk1PNj
-        tayVOJtF8vXoUIxhrzhUtb/yCDx838lqwsv6KASvFOLzgBMzI8whJz5c3oeAKwYPi/ga/CEb+yWnbuBw
-        ulBS4Rhq20H4dOco8LYb/hMJmKiPxTjf+8XxWDzlGsEevLvmhJd9peyXnLoBI4W5qY1PMNWZi59+H/yt
-        Fg7cxN08UvVJiwW/Au2YOJ0LD59A/FpuCfzCeN6ox7eRMtx3xOHHowb055CqYzVxmBm2Y9ShR7tJ3eBf
-        nDHT3Gg5378rFcO2SHzp3YOeXYSvrH3FkfjI/VtKlDzinBZZgilrd2mxMXGWN8GrlvXoU3T8kAbc2Ekc
-        NOB2vg7Pmtehg+fFpsRZ8WvREPIKFGQX2BG7ltJ9Vlrw8a/yn1yFbishwNrBdZuZFmQuPvFr0RDsZRWI
-        32Kw8XIFM7kqhZpOZdIbj4UgWs219GUuPvHzegmHncekoQtVKjYwNzPlpUWl/gOd5g9D+C/5PzQ/0W9U
-        TFjAg6tiPgAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ4SURBVDhPhVFbSFRRFN1EUg1l2k/+CPk3iUqijVDpPJzM
+        tNTkTjY2iY9UmHKaCQMnAyExR50io6CSwJ4IKfn6SCHCqD6MZiqiqExo+rKX6IcWEau979yUKaEFi3X2
+        3mude865tBRyC5V+S3YOtmzNQvrmDCSlpHZpo6VR56mHtlRh3r0fF6/1osl3DrYDtUhINETM//ZTeWXN
+        QsNvocYWI021ZRGaMwlNrD4TTfmt1KhZIvwqipQSFBTb0Wai11cUwpg7CgHvcpVB5gNPFKQvc/GJX4uG
+        kZKW0eA1rcJjbxxC5/WY7NTj/Vk9JpiiUocu6Hm+Hl7TSohfiy4gtp2P+n3Agbl7dZgdUDDTm7dAqedG
+        a1krcSab5Oux4RjDUXGwal/lYfj4vhPVhJfuGIQuF+NzvwvTw8xBFz5c2oOgJw4PbXwN/pCd/ZJTN3C6
+        PCipcA62biN8un0EeNuNwPEkjLvjMcb3fnEsHk+5RqgH76660Ma+UvZLTt2Akcbc0MonmOzMx8+AH4EW
+        Kwdu4G4Bqfqk2YpfwXaMn8qHj08gfi23CH5hPG/Q49twGe47E/DjUT3u5JGqozUJmB5yYMSpR7tZ3eBf
+        nLbQ7Eg5378rHUP2aHzp3YWeHYSvrH17o/GR+zeVGHnEWS2yCHP2zlKbMXmGN8Gr5rXoU3T8kAZc304c
+        NOBWoQ7Pmtagg+c2U/KM+LVoGAVFCnKLHIhfTZn+HJr3868KnFiB7hxCkLWD61YLzctcfOLXomE4yiqQ
+        uMlg5+UyZmpVGjWeNNIbn5UgWs219GUuPvHzehGHXEeloQtXKtYxNzLlpUWl/gOd5o9A5C/5PzQ/0W9I
+        3Vi6RMOG9QAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionCreateGitHubIssueBug.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -356,16 +377,16 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJuSURBVDhPpZNLSJRRFMdnV9QmaFtUtIiyaNGigoRoFxRF
-        iJT2UEeHsJdGki3UHExHghCkQqRRMwnTsAc6ZWVEajWjWNaIMyOm0zj5zEc+e/jrnPkU3BRCB37fd797
+        iJT2UEeHsJdGkS3UHExHghCkQsRRMwnTsAc6ZWVEajWjWNaIMyOm0zj5zEc+e/jrnPkU3BRCB37fd797
         z/9/7j13xvTfcaq06UFCcRNmu5O4RaK5qkkscXlNOvgNTAtTi0RzVaNak7nIyfgs2OqC+CfgUbfQBY/l
         vRCd0zX/pOS+/Mq4GJiLXGIg2xn9BdXds1hrOhn+CS+CBuIZYv57RPKstV1U98KoGMTd1h2IwaCIXslk
-        lWeSnNpOfsjimz5onEPHOpdb5+dhADzpDrwZDo6VtxoG/bLaoIn9YHcNkFXjk3RoGTbQyJbKd9xTpKVf
-        orvqM+/y3+JOrTAMesXAOQCuQZB2kP86gK22w1BK5NYFuN48SVpaJj29fViv5vDkooMP8flzBjPwXipN
-        SGut1T7apUO2px1E3mgksqCZ7PpxWlJWM+a7T0ZOHo5nz0k6f4bYijbDoE96oM3LqvFys/4L7d/lnGLi
-        lfvyyA6cKevlfLvh3lrclekknk5iTOYTSlsMgyHZd4kzSENgik65Jp+K5e2R+cbkdfLYAxVhULCCwuNr
-        KGubYUQM4vV3YJGHXD9DwoAI+uUYQUGunIazq6A+XCpvhMKV3DJvCOV9E6RdqNZksTtHdaA7UWLtLqLt
-        n5iu3A49NviYEapcYtlETLkfc2lrqLJqVKt/h63hMakndkUnH1V2Hj53ZPO+uINlmYdw3BWx+xrFljC2
-        RCRF7Ii6EDWfpxrVqoHGcmHZApZcPrmfK5a9ePMOIN/bhKUL1hXV/DNUNM9fwmT6A+twmxDxQH90AAAA
+        lWeS7NpOfsjimz5onEPHOpdT5+dhADxpDrzpDo6VtxoG/bLaoIn9YHcNkFnjk3RoGTbQyJLKd9xTpKZd
+        prvqM+/y3uJOqTAMesXAOQCuQZB2kPc6gK22w1BK5NQFuNE8SWpqBj29fVivZfPkkoMP8XlzBjPwXipN
+        SGut1T7apUO2px1E3mwkMr+ZrPpxWi6uZsx3n/TsXBzPnpN0/gyxFW2GQZ/0QJuXWePlVv0X2r/LOcXE
+        K/flkR04L66X8+2Ge2txV6aReDqJMZlPKG0xDIZk3yXOIA2BKTrlmnwqlrdH5huT18ljD1SEQf4KCo6v
+        oaxthhExiNffgUUecv0MCQMi6JdjBAW5chrOroL6cKm8EQpWUmjeEMr7Jki7UK0podA5qgPdiRJrdxFt
+        /8R05XboscHH9FDlEssmYsr9mEtbQ5VVo1r9O2wNj0k5sSs6+aiy8/C5I5v3xR0syziE466I3dcptoSx
+        JSIpYkfUhaj5PNWoVg00lgvLFrDkysn9XLXsxZt7APneJixdsK6o5p+honn+EibTH+femwxzKFb1AAAA
         AElFTkSuQmCC
 </value>
   </data>
@@ -783,6 +804,12 @@
     <value>ActionDownloadHebrewWords</value>
   </data>
   <data name="&gt;&gt;ActionDownloadHebrewWords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewReadmeMD.Name" xml:space="preserve">
+    <value>ActionViewReadmeMD</value>
+  </data>
+  <data name="&gt;&gt;ActionViewReadmeMD.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
