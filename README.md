@@ -169,6 +169,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve preferences form.
 - Improve information menu.
 - Improve UI/UX.
+- Refactor project folders hierarchy.
 
 #### 2021.11.22 - Version 5.8
 
