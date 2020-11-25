@@ -162,7 +162,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set automatic vacuum frequency.
 - Add option to set automatic web check update frequency.
 - Add option to set export folder.
-- Add option to set ths application's volume.
+- Add option to set application's volume.
 - Add option to show tray balloon only if main form is hidden.
 - Add option to enable/disable success dialogs.
 - Add sounds to export, clipboard and print actions.
