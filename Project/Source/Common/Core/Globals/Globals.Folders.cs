@@ -100,16 +100,22 @@ namespace Ordisoftware.Core
       => Path.Combine(RootFolderPath, "Project");
 
     /// <summary>
+    /// Indicate the project sounds folder.
+    /// </summary>
+    static public string ProjectMediasFolderPath
+      => Path.Combine(ProjectFolderPath, "Medias");
+
+    /// <summary>
     /// Indicate the project icons folder.
     /// </summary>
     static public string ProjectIconsFolderPath
-      => Path.Combine(ProjectFolderPath, "Icons");
+      => Path.Combine(ProjectMediasFolderPath, "Icons");
 
     /// <summary>
     /// Indicate the project sounds folder.
     /// </summary>
     static public string ProjectSoundsFolderPath
-      => Path.Combine(ProjectFolderPath, "Sounds");
+      => Path.Combine(ProjectMediasFolderPath, "Sounds");
 
     /// <summary>
     /// Indicate the user applicationtrace folder.
