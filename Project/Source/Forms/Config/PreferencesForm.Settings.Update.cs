@@ -88,6 +88,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.TraceEnabled = EditLogEnabled.Checked;
       Settings.ExportFolder = EditExportFolder.Text;
       Settings.ApplicationVolume = EditVolume.Value;
+      Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
+      Settings.UsageStatisticsEnabled = EditUsageStatisticsEnabled.Checked;
     }
 
   }

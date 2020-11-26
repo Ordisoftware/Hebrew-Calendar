@@ -83,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => VolumeMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
                                                                     Settings.ApplicationVolume));
-      StatisticsForm.Run(true);
+      StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
       if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
         SystemManager.TryCatchManage(() =>
         {
@@ -108,6 +108,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeCurrentTimeZone();
       InitializeDialogsDirectory();
       ActionViewLog.Enabled = DebugManager.TraceEnabled;
+      ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
       DebugManager.TraceEnabledChanged += value => ActionViewLog.Enabled = value;
       Refresh();
       ClearLists();

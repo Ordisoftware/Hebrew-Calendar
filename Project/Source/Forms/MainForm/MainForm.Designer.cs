@@ -1419,7 +1419,7 @@
     private System.Windows.Forms.ToolStripButton ActionSearchGregorianMonth;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuumAtNextStartup;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewStats;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewStats;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewLog;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;

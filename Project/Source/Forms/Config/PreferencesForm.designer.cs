@@ -30,6 +30,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
+      System.Windows.Forms.Label LabelDateBookmarksCount;
       System.Windows.Forms.Label LabelVolume;
       System.Windows.Forms.Label LabelCheckUpdateFrequency;
       System.Windows.Forms.Label LabelTrayIconClickOpen;
@@ -54,6 +55,8 @@
       this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
+      this.LabelDateBookmarksCountInterval = new System.Windows.Forms.Label();
+      this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.LabelOptimizeDatabaseIntervalInfo = new System.Windows.Forms.Label();
@@ -66,6 +69,7 @@
       this.EditStartupHide = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditStartWithWindows = new System.Windows.Forms.CheckBox();
+      this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
       this.EditLogEnabled = new System.Windows.Forms.CheckBox();
       this.TabPageCheckUpdate = new System.Windows.Forms.TabPage();
       this.LabelCheckUpdateAtStartupInfo = new System.Windows.Forms.Label();
@@ -77,6 +81,7 @@
       this.EditBalloonLoomingDelay = new System.Windows.Forms.NumericUpDown();
       this.SelectOpenNextCelebrationsForm = new System.Windows.Forms.RadioButton();
       this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
+      this.EditBalloonOnlyIfMainFormIsHidden = new System.Windows.Forms.CheckBox();
       this.EditBalloonAutoHide = new System.Windows.Forms.CheckBox();
       this.SelectOpenNavigationForm = new System.Windows.Forms.RadioButton();
       this.EditBalloon = new System.Windows.Forms.CheckBox();
@@ -199,7 +204,7 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditBalloonOnlyIfMainFormIsHidden = new System.Windows.Forms.CheckBox();
+      LabelDateBookmarksCount = new System.Windows.Forms.Label();
       LabelVolume = new System.Windows.Forms.Label();
       LabelCheckUpdateFrequency = new System.Windows.Forms.Label();
       LabelTrayIconClickOpen = new System.Windows.Forms.Label();
@@ -213,6 +218,7 @@
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
       this.TabPageCheckUpdate.SuspendLayout();
@@ -344,7 +350,10 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountInterval);
+      this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.EditVolume);
+      this.TabPageApplication.Controls.Add(LabelDateBookmarksCount);
       this.TabPageApplication.Controls.Add(LabelVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.LabelOptimizeDatabaseIntervalInfo);
@@ -357,9 +366,38 @@
       this.TabPageApplication.Controls.Add(this.EditStartupHide);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditStartWithWindows);
+      this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
       this.TabPageApplication.Controls.Add(this.EditLogEnabled);
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
+      // 
+      // LabelDateBookmarksCountInterval
+      // 
+      resources.ApplyResources(this.LabelDateBookmarksCountInterval, "LabelDateBookmarksCountInterval");
+      this.LabelDateBookmarksCountInterval.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelDateBookmarksCountInterval.Name = "LabelDateBookmarksCountInterval";
+      // 
+      // EditDateBookmarksCount
+      // 
+      this.EditDateBookmarksCount.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditDateBookmarksCount, "EditDateBookmarksCount");
+      this.EditDateBookmarksCount.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+      this.EditDateBookmarksCount.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      this.EditDateBookmarksCount.Name = "EditDateBookmarksCount";
+      this.EditDateBookmarksCount.ReadOnly = true;
+      this.EditDateBookmarksCount.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
       // 
       // EditVolume
       // 
@@ -369,6 +407,11 @@
       this.EditVolume.TickFrequency = 10;
       this.EditVolume.Value = 100;
       this.EditVolume.ValueChanged += new System.EventHandler(this.EditVolume_ValueChanged);
+      // 
+      // LabelDateBookmarksCount
+      // 
+      resources.ApplyResources(LabelDateBookmarksCount, "LabelDateBookmarksCount");
+      LabelDateBookmarksCount.Name = "LabelDateBookmarksCount";
       // 
       // LabelVolume
       // 
@@ -465,6 +508,13 @@
       this.EditStartWithWindows.Name = "EditStartWithWindows";
       this.EditStartWithWindows.UseVisualStyleBackColor = true;
       this.EditStartWithWindows.CheckedChanged += new System.EventHandler(this.EditStartWithWindows_CheckedChanged);
+      // 
+      // EditUsageStatisticsEnabled
+      // 
+      resources.ApplyResources(this.EditUsageStatisticsEnabled, "EditUsageStatisticsEnabled");
+      this.EditUsageStatisticsEnabled.Name = "EditUsageStatisticsEnabled";
+      this.EditUsageStatisticsEnabled.UseVisualStyleBackColor = true;
+      this.EditUsageStatisticsEnabled.CheckedChanged += new System.EventHandler(this.EditUsageStatisticsEnabled_CheckedChanged);
       // 
       // EditLogEnabled
       // 
@@ -599,6 +649,12 @@
       this.SelectOpenMainForm.Name = "SelectOpenMainForm";
       this.SelectOpenMainForm.TabStop = true;
       this.SelectOpenMainForm.UseVisualStyleBackColor = true;
+      // 
+      // EditBalloonOnlyIfMainFormIsHidden
+      // 
+      resources.ApplyResources(this.EditBalloonOnlyIfMainFormIsHidden, "EditBalloonOnlyIfMainFormIsHidden");
+      this.EditBalloonOnlyIfMainFormIsHidden.Name = "EditBalloonOnlyIfMainFormIsHidden";
+      this.EditBalloonOnlyIfMainFormIsHidden.UseVisualStyleBackColor = true;
       // 
       // EditBalloonAutoHide
       // 
@@ -1648,12 +1704,6 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
-      // EditBalloonOnlyIfMainFormIsHidden
-      // 
-      resources.ApplyResources(this.EditBalloonOnlyIfMainFormIsHidden, "EditBalloonOnlyIfMainFormIsHidden");
-      this.EditBalloonOnlyIfMainFormIsHidden.Name = "EditBalloonOnlyIfMainFormIsHidden";
-      this.EditBalloonOnlyIfMainFormIsHidden.UseVisualStyleBackColor = true;
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1675,6 +1725,7 @@
       this.TabControl.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
       this.TabPageCheckUpdate.ResumeLayout(false);
@@ -1876,5 +1927,8 @@
     private System.Windows.Forms.Label LabelVolumeValue;
     private System.Windows.Forms.LinkLabel LabelSelectReminderSound;
     private System.Windows.Forms.CheckBox EditBalloonOnlyIfMainFormIsHidden;
+    private System.Windows.Forms.CheckBox EditUsageStatisticsEnabled;
+    private System.Windows.Forms.Label LabelDateBookmarksCountInterval;
+    private System.Windows.Forms.NumericUpDown EditDateBookmarksCount;
   }
 }

@@ -31,16 +31,21 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.EditAlwaysOnTop_CheckedChanged(null, null);
     }
 
-    static public void Run(bool isPrepare = false)
+    static public void Run(bool isPrepare = false, bool enabled = true)
     {
       LoadingForm.Instance.Progressing += FormLoadingProgressing;
-      if ( !isPrepare )
+      if ( isPrepare )
+        Instance.Timer.Interval = 5000;
+      else
       {
         Instance.Popup();
-        Instance.Timer_Tick(null, null);
         Instance.Timer.Interval = 1000;
       }
-      Instance.Timer.Start();
+      if ( enabled )
+      {
+        Instance.Timer_Tick(null, null);
+        Instance.Timer.Start();
+      }
       Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
     }
 

@@ -788,4 +788,10 @@
   <data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
     <value>Montrer le ballon seulement si la fenêtre principale est cachée</value>
   </data>
+  <data name="EditUsageStatisticsEnabled.Text" xml:space="preserve">
+    <value>Activer les statistiques d'usage</value>
+  </data>
+  <data name="LabelDateBookmarksCount.Text" xml:space="preserve">
+    <value>Nombre de signets de date</value>
+  </data>
 </root>

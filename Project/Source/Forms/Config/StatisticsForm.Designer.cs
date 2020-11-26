@@ -962,7 +962,7 @@
 
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionClose;
-    private System.Windows.Forms.Timer Timer;
+    internal System.Windows.Forms.Timer Timer;
     private System.Windows.Forms.BindingSource ApplicationStatisticsDataBindingSource;
     private System.Windows.Forms.BindingSource SystemStatisticsDataBindingSource;
     private System.Windows.Forms.Label dBEventsCountLabel1;
