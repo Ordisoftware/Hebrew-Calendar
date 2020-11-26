@@ -159,6 +159,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 202_.__.__ - Version 5.10 or 6.0
 
+>>>>- Add option to set max number of date bookmarks.
+>>>>- Add doption to enable/disable usage statistics.
 - Improve usage statistics form.
 
 #### 2021.11.26 - Version 5.9
