@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Threading;
 using System.Diagnostics;
@@ -109,6 +109,9 @@ namespace Ordisoftware.Core
     }
     static private long _MemoryGCPeak;
 
+    static public ulong _CPUprocessLoadCount;
+    static public ulong _CPUProcessLoadAverage;
+
     public string CPUProcessLoadMax
       => _CPUProcessLoadMax + "%";
 
@@ -126,6 +129,8 @@ namespace Ordisoftware.Core
         }
         int value = (int)PerformanceCounterCPUProcessLoad.NextValue();
         if ( value > _CPUProcessLoadMax ) _CPUProcessLoadMax = value;
+        _CPUprocessLoadCount++;
+        _CPUProcessLoadAverage = _CPUProcessLoadAverage + (ulong)value;
         return value + "%";
       }
     }
@@ -147,6 +152,9 @@ namespace Ordisoftware.Core
       }
     }
 
+    public string CPUProcessLoadAverage
+      => _CPUProcessLoadAverage / _CPUprocessLoadCount + "%";
+
   }
 
-}
+  }

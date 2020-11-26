@@ -458,4 +458,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Statistiques</value>
   </data>
+  <data name="cPUProcessLoadAvgLabel.Text" xml:space="preserve">
+    <value>CPU Process moyen :</value>
+  </data>
 </root>
