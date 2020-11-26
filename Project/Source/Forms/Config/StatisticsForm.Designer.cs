@@ -433,7 +433,7 @@
       this.ActionViewLog.FlatAppearance.BorderSize = 0;
       this.ActionViewLog.Name = "ActionViewLog";
       this.ActionViewLog.UseVisualStyleBackColor = true;
-      this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click_1);
+      this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click);
       // 
       // EditAlwaysOnTop
       // 

@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-11 </edited>
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Xml;
 using System.Data;
@@ -80,7 +81,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
-      SystemManager.TryCatch(() => VolumeMixer.SetApplicationVolume(System.Diagnostics.Process.GetCurrentProcess().Id, Settings.ApplicationVolume));
+      SystemManager.TryCatch(() => VolumeMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
+                                                                    Settings.ApplicationVolume));
       StatisticsForm.Run(true);
       if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
         SystemManager.TryCatchManage(() =>

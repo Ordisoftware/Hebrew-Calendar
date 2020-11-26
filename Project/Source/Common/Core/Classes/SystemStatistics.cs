@@ -26,6 +26,7 @@ namespace Ordisoftware.Core
   public class SystemStatistics
   {
 
+    static private Process Process = Process.GetCurrentProcess();
     static private PerformanceCounter PerformanceCounterCPULoad;
     static private PerformanceCounter PerformanceCounterCPUProcessLoad;
 
@@ -37,9 +38,6 @@ namespace Ordisoftware.Core
         return list.Length == 1 ? list[0].PriorityClass : 0;
       }
     }
-
-    static private Process Process
-      = Process.GetCurrentProcess();
 
     static public SystemStatistics Instance
       = new SystemStatistics();
@@ -109,12 +107,6 @@ namespace Ordisoftware.Core
     }
     static private long _MemoryGCPeak;
 
-    static public ulong _CPUprocessLoadCount;
-    static public ulong _CPUProcessLoadAverage;
-
-    public string CPUProcessLoadMax
-      => _CPUProcessLoadMax + "%";
-
     public string CPUProcessLoad
     {
       get
@@ -127,14 +119,25 @@ namespace Ordisoftware.Core
           PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", Globals.ApplicationExeFileName);
           LoadingForm.Instance.Hide();
         }
-        int value = (int)PerformanceCounterCPUProcessLoad.NextValue();
-        if ( value > _CPUProcessLoadMax ) _CPUProcessLoadMax = value;
+        int value;
+        do
+          value = (int)PerformanceCounterCPUProcessLoad.NextValue();
+        while ( value > 100 );
+        if ( value > _CPUProcessLoadMax && value <= 100 ) _CPUProcessLoadMax = value;
         _CPUprocessLoadCount++;
         _CPUProcessLoadAverage = _CPUProcessLoadAverage + (ulong)value;
         return value + "%";
       }
     }
-    private int _CPUProcessLoadMax;
+    static private int _CPUProcessLoadMax;
+    static private ulong _CPUprocessLoadCount;
+    static private ulong _CPUProcessLoadAverage;
+
+    public string CPUProcessLoadAverage
+      => _CPUProcessLoadAverage / _CPUprocessLoadCount + "%";
+
+    public string CPUProcessLoadMax
+      => _CPUProcessLoadMax + "%";
 
     public string CPULoad
     {
@@ -152,9 +155,6 @@ namespace Ordisoftware.Core
       }
     }
 
-    public string CPUProcessLoadAverage
-      => _CPUProcessLoadAverage / _CPUprocessLoadCount + "%";
-
   }
 
-  }
+}

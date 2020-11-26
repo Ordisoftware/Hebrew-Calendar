@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -87,20 +87,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Application.DoEvents();
     }
 
-    internal void Timer_Tick(object sender, EventArgs e)
-    {
-      if ( Visible )
-      {
-        LabelApplication1.Text = Globals.AssemblyTitleWithVersion;
-        ApplicationStatisticsDataBindingSource.ResetBindings(false);
-        SystemStatisticsDataBindingSource.ResetBindings(false);
-      }
-      else
-      {
-        string dummyUpdate = SystemStatistics.Instance.MemoryGC;
-      }
-    }
-
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
       DebugManager.TraceForm.Popup();
@@ -128,9 +114,19 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.RunShell(EditOpenFolderUserLocalData.Text);
     }
 
-    private void ActionViewLog_Click_1(object sender, EventArgs e)
+    internal void Timer_Tick(object sender, EventArgs e)
     {
-      DebugManager.TraceForm.Popup();
+      if ( Visible )
+      {
+        LabelApplication1.Text = Globals.AssemblyTitleWithVersion;
+        ApplicationStatisticsDataBindingSource.ResetBindings(false);
+        SystemStatisticsDataBindingSource.ResetBindings(false);
+      }
+      else
+      {
+        string dummyMemoryGC = SystemStatistics.Instance.MemoryGC;
+        string dummyCPUProcessLoad = SystemStatistics.Instance.CPUProcessLoad;
+      }
     }
 
   }
