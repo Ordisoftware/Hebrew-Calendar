@@ -45,9 +45,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ManageDateBookmarks_Load(object sender, EventArgs e)
     {
-      this.CenterToMainFormElseScreen();
+      this.CenterToFormElseMainFormElseScreen(DatesDiffCalculatorForm.Instance);
       ListBox.Items.Clear();
-      for ( int index = 0; index < Program.DatesBookmarksCount; index++ )
+      for ( int index = 0; index < Program.Settings.DateBookmarksCount; index++ )
         ListBox.Items.Add(new DateItem { Date = Program.DateBookmarks[index] });
       ListBox.SelectedIndex = 0;
       ActiveControl = ListBox;
@@ -56,7 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ManageDateBookmarks_FormClosed(object sender, FormClosedEventArgs e)
     {
       if ( DialogResult != DialogResult.OK ) return;
-      for ( int index = 0; index < Program.DatesBookmarksCount; index++ )
+      for ( int index = 0; index < Program.Settings.DateBookmarksCount; index++ )
         Program.DateBookmarks[index] = ( (DateItem)ListBox.Items[index] ).Date;
       Program.Settings.Save();
     }

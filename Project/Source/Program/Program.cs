@@ -32,12 +32,6 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     /// <summary>
-    /// Indicate the default Settings instance.
-    /// </summary>
-    static public readonly Properties.Settings Settings
-      = Properties.Settings.Default;
-
-    /// <summary>
     /// Process startup method.
     /// </summary>
     [STAThread]

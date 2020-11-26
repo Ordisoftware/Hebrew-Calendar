@@ -76,6 +76,8 @@ namespace Ordisoftware.Hebrew.Calendar
         form.ShowDialog();
       }
       MainForm.Instance.InitializeDialogsDirectory();
+      Program.DateBookmarks.Resize(Settings.DateBookmarksCount);
+      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
       bool result = Reseted
                  || form.OldShabatDay != Settings.ShabatDay
                  || form.OldLatitude != Settings.GPSLatitude

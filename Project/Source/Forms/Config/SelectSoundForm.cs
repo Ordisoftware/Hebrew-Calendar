@@ -49,7 +49,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( form.SelectDialogSound.SelectedItem != null )
           Program.Settings.ReminderBoxSoundDialog = (MessageBoxIcon)form.SelectDialogSound.SelectedItem;
         Program.Settings.ReminderBoxSoundApplication = ( form.SelectApplicationSound.SelectedItem as SoundItem )?.FilePath;
-        Program.Settings.ReminderBoxSoundWinows = ( form.SelectWindowsSound.SelectedItem as SoundItem )?.FilePath;
+        Program.Settings.ReminderBoxSoundWindows = ( form.SelectWindowsSound.SelectedItem as SoundItem )?.FilePath;
         Program.Settings.ReminderBoxSoundPath = form.EditFilePath.Text;
         Program.Settings.Save();
       }
@@ -72,7 +72,7 @@ namespace Ordisoftware.Hebrew.Calendar
                    select sound ).FirstOrDefault();
       if ( item != null ) SelectApplicationSound.SelectedItem = item;
       item = ( from SoundItem sound in SelectWindowsSound.Items
-               where sound.FilePath == Program.Settings.ReminderBoxSoundWinows
+               where sound.FilePath == Program.Settings.ReminderBoxSoundWindows
                select sound ).FirstOrDefault();
       if ( item != null ) SelectWindowsSound.SelectedItem = item;
       if ( SelectDialogSound.Items.Count > 0 && SelectDialogSound.SelectedIndex == -1 )

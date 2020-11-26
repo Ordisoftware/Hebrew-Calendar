@@ -711,6 +711,13 @@ namespace Ordisoftware.Hebrew.Calendar
       SelectSoundForm.Run();
     }
 
+    private void EditUsageStatisticsEnabled_CheckedChanged(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
+      StatisticsForm.Instance.Timer.Enabled = EditUsageStatisticsEnabled.Checked;
+      if ( !EditUsageStatisticsEnabled.Checked )
+        StatisticsForm.Instance.Close();
+    }
   }
 
 }

@@ -26,6 +26,12 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     /// <summary>
+    /// Indicate the default Settings instance.
+    /// </summary>
+    static public readonly Properties.Settings Settings
+      = Properties.Settings.Default;
+
+    /// <summary>
     /// Indicate phonetic moon months names.
     /// </summary>
     static public readonly string[] MoonMonthsNames =
@@ -46,11 +52,6 @@ namespace Ordisoftware.Hebrew.Calendar
       "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
       "אדר ב"
     };
-
-    /// <summary>
-    /// Indicate minimum items for load data to show the loading form.
-    /// </summary>
-    public const int DatesBookmarksCount = 10;
 
     /// <summary>
     /// Indicate minimum items for load data to show the loading form.

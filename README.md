@@ -157,7 +157,13 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2021.11.26 - Version 5.9
+#### 2020.12.06 - Version 5.10
+
+- Add option to set number of date bookmarks.
+- Add option to enable/disable usage statistics.
+- Improve usage statistics form.
+
+#### 2020.11.26 - Version 5.9
 
 - Add option to set automatic db optimize frequency.
 - Add option to set automatic web check update frequency.
@@ -173,7 +179,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Optimize by preloading sounds lists in a thread.
 - Refactor project folders hierarchy.
 
-#### 2021.11.22 - Version 5.8
+#### 2020.11.22 - Version 5.8
 
 - Add change tab page using function keys in preferences form.
 - Improve new version available form to show current version.

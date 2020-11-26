@@ -1572,12 +1572,12 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ReminderBoxSoundWinows {
+        public string ReminderBoxSoundWindows {
             get {
-                return ((string)(this["ReminderBoxSoundWinows"]));
+                return ((string)(this["ReminderBoxSoundWindows"]));
             }
             set {
-                this["ReminderBoxSoundWinows"] = value;
+                this["ReminderBoxSoundWindows"] = value;
             }
         }
         
@@ -1710,6 +1710,30 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["BalloonOnlyIfMainFormIsHidden"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UsageStatisticsEnabled {
+            get {
+                return ((bool)(this["UsageStatisticsEnabled"]));
+            }
+            set {
+                this["UsageStatisticsEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int DateBookmarksCount {
+            get {
+                return ((int)(this["DateBookmarksCount"]));
+            }
+            set {
+                this["DateBookmarksCount"] = value;
             }
         }
     }
