@@ -69,10 +69,10 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadMenuBookmarks();
     }
 
-    private void LoadMenuBookmarks()
+    internal void LoadMenuBookmarks()
     {
       MenuBookmarks.Items.Clear();
-      for ( int index = 0; index < Program.DatesBookmarksCount; index++ )
+      for ( int index = 0; index < Program.Settings.DateBookmarksCount; index++ )
       {
         var date = Program.DateBookmarks[index];
         string s = date == DateTime.MinValue ? SysTranslations.UndefinedSlot.GetLang() : date.ToLongDateString();
@@ -139,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
           MonthCalendar2.SelectionStart = date;
       void setBookmark(MonthCalendar calendar)
       {
-        for ( int index = 0; index < Program.DatesBookmarksCount; index++ )
+        for ( int index = 0; index < Program.Settings.DateBookmarksCount; index++ )
         {
           var date = Program.DateBookmarks[index];
           if ( calendar.SelectionStart.Date == date ) return;
