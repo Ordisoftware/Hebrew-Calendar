@@ -170,7 +170,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve preferences form.
 - Improve information menu.
 - Improve UI/UX.
-- Optimize by preloading wav sounds in a thread.
+- Optimize by preloading sounds lists in a thread.
 - Refactor project folders hierarchy.
 
 #### 2021.11.22 - Version 5.8
