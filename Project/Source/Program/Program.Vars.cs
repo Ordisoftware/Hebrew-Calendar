@@ -111,12 +111,6 @@ namespace Ordisoftware.Hebrew.Calendar
     };
 
     /// <summary>
-    /// Indicate the application sounds folder.
-    /// </summary>
-    static public string ApplicationSoundsFolderPath
-      => Path.Combine(Globals.RootFolderPath, "Sounds");
-
-    /// <summary>
     /// Indicate file path of date bookmarks.
     /// </summary>
     static public string DateBookmarksFilePath

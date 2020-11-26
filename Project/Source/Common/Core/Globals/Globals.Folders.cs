@@ -82,58 +82,70 @@ namespace Ordisoftware.Core
       => Application.StartupPath;
 
     /// <summary>
-    /// Indicate the application help folder.
+    /// Indicate the application help folder path.
     /// </summary>
     static public string HelpFolderPath
       => Path.Combine(RootFolderPath, "Help");
 
     /// <summary>
-    /// Indicate the application documents folder.
+    /// Indicate the application documents folder path.
     /// </summary>
     static public string DocumentsFolderPath
       => Path.Combine(RootFolderPath, "Documents");
 
     /// <summary>
-    /// Indicate the application project folder.
+    /// Indicate the application project folder path.
     /// </summary>
     static public string ProjectFolderPath
       => Path.Combine(RootFolderPath, "Project");
 
     /// <summary>
-    /// Indicate the project sounds folder.
+    /// Indicate the project sounds folder path.
     /// </summary>
     static public string ProjectMediasFolderPath
       => Path.Combine(ProjectFolderPath, "Medias");
 
     /// <summary>
-    /// Indicate the project icons folder.
+    /// Indicate the project icons folder path.
     /// </summary>
     static public string ProjectIconsFolderPath
       => Path.Combine(ProjectMediasFolderPath, "Icons");
 
     /// <summary>
-    /// Indicate the project sounds folder.
+    /// Indicate the project sounds folder path.
     /// </summary>
     static public string ProjectSoundsFolderPath
       => Path.Combine(ProjectMediasFolderPath, "Sounds");
 
     /// <summary>
-    /// Indicate the user applicationtrace folder.
+    /// Indicate the application sounds folder.
+    /// </summary>
+    static public string ApplicationSoundsFolderPath
+      => Path.Combine(RootFolderPath, "Sounds");
+
+    /// <summary>
+    /// Indicate the user applicationtrace folder path.
     /// </summary>
     static public string TraceFolderPath
       => Path.Combine(UserDataFolderPath, TraceDirectoryName);
 
     /// <summary>
-    /// Indicate the user applicationdatabase folder.
+    /// Indicate the user applicationdatabase folder path.
     /// </summary>
     static public string DatabaseFolderPath
       => UserDataFolderPath;
 
     /// <summary>
-    /// Indicate the Windows media folder.
+    /// Indicate the Windows media folder path.
     /// </summary>
     static public string WindowsMediaFolderPath
       => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "Media");
+
+    /// <summary>
+    /// Indicate the user music folder path.
+    /// </summary>
+    static public string UserMusicFolderPath
+      => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic), "Media");
 
     /// <summary>
     /// Indicate the user documents folder path.
@@ -166,7 +178,7 @@ namespace Ordisoftware.Core
       => CreateSpecialFolderPath(Environment.SpecialFolder.CommonApplicationData, HebrewCommonDirectoryName);
 
     /// <summary>
-    /// Indicate a path for in a special folder.
+    /// Indicate a path for in a special folder path.
     /// </summary>
     static public string CreateSpecialFolderPath(Environment.SpecialFolder folder, string directory)
       => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(folder),
