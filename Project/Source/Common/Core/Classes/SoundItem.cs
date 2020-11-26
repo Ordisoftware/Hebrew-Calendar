@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Media;
 using System.Text;
+using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 
 namespace Ordisoftware.Core
@@ -51,13 +52,13 @@ namespace Ordisoftware.Core
       return -1;
     }
 
-    static private List<SoundItem> ApplicationSounds;
+    static volatile private List<SoundItem> ApplicationSounds;
 
-    static private List<SoundItem> WindowsSounds;
+    static volatile private List<SoundItem> WindowsSounds;
 
-    static public List<SoundItem> GetApplicationSounds(string path)
+    static public List<SoundItem> GetApplicationSounds()
     {
-      if ( ApplicationSounds == null ) ApplicationSounds = GetSounds(path);
+      if ( ApplicationSounds == null ) ApplicationSounds = GetSounds(Globals.ApplicationSoundsFolderPath);
       return ApplicationSounds;
     }
 
@@ -75,6 +76,15 @@ namespace Ordisoftware.Core
       foreach ( string file in files )
         result.Add(new SoundItem(file));
       return result;
+    }
+
+    static public void Initialize()
+    {
+      new Task(() =>
+      {
+        GetApplicationSounds();
+        GetWindowsSounds();
+      }).Start();
     }
 
     public string FilePath { get; }

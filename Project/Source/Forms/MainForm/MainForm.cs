@@ -52,6 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private MainForm()
     {
       InitializeComponent();
+      SoundItem.Initialize();
       Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
       SystemEvents.PowerModeChanged += PowerModeChanged;

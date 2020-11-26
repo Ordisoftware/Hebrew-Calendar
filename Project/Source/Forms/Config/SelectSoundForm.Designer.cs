@@ -43,10 +43,10 @@
       this.SelectDialog = new System.Windows.Forms.RadioButton();
       this.SelectDialogSound = new System.Windows.Forms.ComboBox();
       this.SelectApplication = new System.Windows.Forms.RadioButton();
-      this.EditFilePath = new Ordisoftware.Core.UndoRedoTextBox();
       this.SelectApplicationSound = new System.Windows.Forms.ListBox();
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
+      this.EditFilePath = new Ordisoftware.Core.UndoRedoTextBox();
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.SuspendLayout();
@@ -64,7 +64,6 @@
       this.ActionPlay.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionPlay, "ActionPlay");
       this.ActionPlay.Name = "ActionPlay";
-      this.ActionPlay.TabStop = false;
       this.ActionPlay.UseVisualStyleBackColor = true;
       this.ActionPlay.Click += new System.EventHandler(this.ActionPlay_Click);
       // 
@@ -110,7 +109,6 @@
       this.ActionSelectFilePath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSelectFilePath, "ActionSelectFilePath");
       this.ActionSelectFilePath.Name = "ActionSelectFilePath";
-      this.ActionSelectFilePath.TabStop = false;
       this.ActionSelectFilePath.UseVisualStyleBackColor = true;
       this.ActionSelectFilePath.Click += new System.EventHandler(this.SelectFilePath_Click);
       // 
@@ -149,14 +147,6 @@
       this.SelectApplication.UseVisualStyleBackColor = true;
       this.SelectApplication.CheckedChanged += new System.EventHandler(this.SelectApplication_CheckedChanged);
       // 
-      // EditFilePath
-      // 
-      this.EditFilePath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditFilePath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditFilePath, "EditFilePath");
-      this.EditFilePath.Name = "EditFilePath";
-      this.EditFilePath.ReadOnly = true;
-      // 
       // SelectApplicationSound
       // 
       this.SelectApplicationSound.FormattingEnabled = true;
@@ -179,6 +169,14 @@
       resources.ApplyResources(this.LabelVolumeValue, "LabelVolumeValue");
       this.LabelVolumeValue.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelVolumeValue.Name = "LabelVolumeValue";
+      // 
+      // EditFilePath
+      // 
+      this.EditFilePath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditFilePath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditFilePath, "EditFilePath");
+      this.EditFilePath.Name = "EditFilePath";
+      this.EditFilePath.ReadOnly = true;
       // 
       // SelectSoundForm
       // 

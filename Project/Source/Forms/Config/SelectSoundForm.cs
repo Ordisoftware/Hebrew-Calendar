@@ -59,7 +59,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      SelectApplicationSound.Items.AddRange(SoundItem.GetApplicationSounds(Program.ApplicationSoundsFolderPath).ToArray());
+      SelectApplicationSound.Items.AddRange(SoundItem.GetApplicationSounds().ToArray());
       SelectWindowsSound.Items.AddRange(SoundItem.GetWindowsSounds().ToArray());
       SelectDialogSound.Items.Add(MessageBoxIcon.Information);
       SelectDialogSound.Items.Add(MessageBoxIcon.Question);
@@ -183,7 +183,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectFilePath_Click(object sender, EventArgs e)
     {
-      SystemManager.TryCatch(() => { OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditFilePath.Text); });
+      string path = EditFilePath.Text;
+      if ( path == "" ) path = Globals.UserMusicFolderPath;
+      SystemManager.TryCatch(() => { OpenFileDialog.InitialDirectory = Path.GetDirectoryName(path); });
       SystemManager.TryCatch(() => { OpenFileDialog.FileName = Path.GetFileName(EditFilePath.Text); });
       if ( OpenFileDialog.ShowDialog() != DialogResult.OK ) return;
       var sound = new SoundItem(OpenFileDialog.FileName);
@@ -221,6 +223,7 @@ namespace Ordisoftware.Hebrew.Calendar
       LabelVolumeValue.Text = EditVolume.Value + "%";
       Program.Settings.ApplicationVolume = EditVolume.Value;
       Program.Settings.Save();
+      ActionPlay.PerformClick();
     }
 
   }
