@@ -157,6 +157,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### 202_.__.__ - Version 5.10 or 6.0
+
+- Improve usage statistics form.
+
 #### 2021.11.26 - Version 5.9
 
 - Add option to set automatic db optimize frequency.
