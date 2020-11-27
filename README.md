@@ -162,7 +162,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set number of date bookmarks.
 - Add option to enable/disable usage statistics.
 - Improve usage statistics form.
-- 
+- Improve UI/UX.
 
 #### 2020.11.26 - Version 5.9
 
