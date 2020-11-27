@@ -162,7 +162,7 @@
     <value>10, 213</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 28</value>
+    <value>244, 28</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
@@ -230,7 +230,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 2</value>
+    <value>166, 2</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -260,7 +260,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 2</value>
+    <value>85, 2</value>
   </data>
   <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -299,7 +299,7 @@
     <value>10, 10</value>
   </data>
   <data name="ListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 193</value>
+    <value>197, 193</value>
   </data>
   <data name="ListBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -355,7 +355,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 156</value>
+    <value>213, 156</value>
   </data>
   <data name="ActionDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -405,7 +405,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 60</value>
+    <value>213, 60</value>
   </data>
   <data name="ActionUp.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -455,7 +455,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 108</value>
+    <value>213, 108</value>
   </data>
   <data name="ActionDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -511,7 +511,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 12</value>
+    <value>213, 12</value>
   </data>
   <data name="ActionSort.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -538,7 +538,7 @@
     <value>10, 203</value>
   </data>
   <data name="PanelSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 10</value>
+    <value>244, 10</value>
   </data>
   <data name="PanelSeparator.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -562,10 +562,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>250, 580</value>
+    <value>280, 580</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>250, 290</value>
+    <value>280, 290</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
