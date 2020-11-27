@@ -55,7 +55,7 @@
       this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
-      this.LabelDateBookmarksCountInterval = new System.Windows.Forms.Label();
+      this.LabelDateBookmarksCountIntervalInfo = new System.Windows.Forms.Label();
       this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
@@ -350,7 +350,7 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountInterval);
+      this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.EditVolume);
       this.TabPageApplication.Controls.Add(LabelDateBookmarksCount);
@@ -373,9 +373,9 @@
       // 
       // LabelDateBookmarksCountInterval
       // 
-      resources.ApplyResources(this.LabelDateBookmarksCountInterval, "LabelDateBookmarksCountInterval");
-      this.LabelDateBookmarksCountInterval.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.LabelDateBookmarksCountInterval.Name = "LabelDateBookmarksCountInterval";
+      resources.ApplyResources(this.LabelDateBookmarksCountIntervalInfo, "LabelDateBookmarksCountInterval");
+      this.LabelDateBookmarksCountIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelDateBookmarksCountIntervalInfo.Name = "LabelDateBookmarksCountInterval";
       // 
       // EditDateBookmarksCount
       // 
@@ -1928,7 +1928,7 @@
     private System.Windows.Forms.LinkLabel LabelSelectReminderSound;
     private System.Windows.Forms.CheckBox EditBalloonOnlyIfMainFormIsHidden;
     private System.Windows.Forms.CheckBox EditUsageStatisticsEnabled;
-    private System.Windows.Forms.Label LabelDateBookmarksCountInterval;
+    private System.Windows.Forms.Label LabelDateBookmarksCountIntervalInfo;
     private System.Windows.Forms.NumericUpDown EditDateBookmarksCount;
   }
 }

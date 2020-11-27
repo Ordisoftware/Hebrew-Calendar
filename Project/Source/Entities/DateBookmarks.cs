@@ -37,6 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public void Resize(int size)
     {
       Array.Resize(ref Items, size);
+      Save();
     }
 
     private void Load()

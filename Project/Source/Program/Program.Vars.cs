@@ -69,26 +69,6 @@ namespace Ordisoftware.Hebrew.Calendar
     public const int LoadingFormDatesDiff = 15 * 365;
 
     /// <summary>
-    /// Indicate maximum gregorian years interval that can be generated.
-    /// </summary>
-    public const int GenerateIntervalMaximumHigh = 200;
-
-    /// <summary>
-    /// Indicate minimum gregorian years interval that can be generated.
-    /// </summary>
-    public const int GenerateIntervalMaximumLow = 10;
-
-    /// <summary>
-    /// Indicate default gregorian years interval that can be generated.
-    /// </summary>
-    public const int GenerateIntervalMaximumDefault = 120;
-
-    /// <summary>
-    /// Indicate increment for gregorian years interval that can be generated.
-    /// </summary>
-    public const int GenerateIntervalMaximumIncrement = 5;
-
-    /// <summary>
     /// Indicate minimum torah years interval that can be generated.
     /// </summary>
     /// <remarks>
