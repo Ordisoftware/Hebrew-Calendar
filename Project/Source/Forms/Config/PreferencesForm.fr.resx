@@ -792,6 +792,6 @@
     <value>Activer les statistiques d'usage</value>
   </data>
   <data name="LabelDateBookmarksCount.Text" xml:space="preserve">
-    <value>Nombre de signets de date</value>
+    <value>Nombre de signets de date (modification en temps réel : la réduction effacera les signets enregistrés)</value>
   </data>
 </root>
