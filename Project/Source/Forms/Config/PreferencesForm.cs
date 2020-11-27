@@ -317,6 +317,14 @@ namespace Ordisoftware.Hebrew.Calendar
       StatisticsForm.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
     }
 
+    private void EditUsageStatisticsEnabled_CheckedChanged(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
+      StatisticsForm.Instance.Timer.Enabled = EditUsageStatisticsEnabled.Checked;
+      if ( !EditUsageStatisticsEnabled.Checked )
+        StatisticsForm.Instance.Close();
+    }
+
     private void EditBalloon_CheckedChanged(object sender, EventArgs e)
     {
       EditBalloonLoomingDelay.Enabled = EditBalloon.Checked;
@@ -687,14 +695,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void LabelSelectReminderSound_Click(object sender, EventArgs e)
     {
       SelectSoundForm.Run();
-    }
-
-    private void EditUsageStatisticsEnabled_CheckedChanged(object sender, EventArgs e)
-    {
-      MainForm.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
-      StatisticsForm.Instance.Timer.Enabled = EditUsageStatisticsEnabled.Checked;
-      if ( !EditUsageStatisticsEnabled.Checked )
-        StatisticsForm.Instance.Close();
     }
 
     private void ActionManageBookmarks_Click(object sender, EventArgs e)
