@@ -67,6 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
         c.Increment = v.Item4;
         l.Text = v.Item1 + " - " + v.Item2 + " (" + v.Item3 + ")";
       }
+      ActionManageBookmarks.Left = LabelDateBookmarksCountIntervalInfo.Left + LabelDateBookmarksCountIntervalInfo.Width + 5;
     }
 
     /// <summary>

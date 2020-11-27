@@ -159,10 +159,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 208</value>
+    <value>10, 213</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 28</value>
+    <value>214, 28</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="ActionClear.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -230,7 +230,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 2</value>
+    <value>136, 2</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -260,7 +260,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 2</value>
+    <value>55, 2</value>
   </data>
   <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -283,20 +283,23 @@
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="ListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
+  <data name="ListBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="ListBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="ListBox.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ListBox.ItemHeight" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="ListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
+    <value>10, 10</value>
   </data>
   <data name="ListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 184</value>
+    <value>165, 193</value>
   </data>
   <data name="ListBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -311,7 +314,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ListBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>0</value>
+  </data>
+  <data name="ActionDelete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="ActionDelete.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -349,7 +355,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 156</value>
+    <value>183, 156</value>
   </data>
   <data name="ActionDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -367,7 +373,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionDelete.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
+  </data>
+  <data name="ActionUp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="ActionUp.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -396,7 +405,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 60</value>
+    <value>183, 60</value>
   </data>
   <data name="ActionUp.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -414,7 +423,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionUp.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
+  </data>
+  <data name="ActionDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="ActionDown.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -443,7 +455,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 108</value>
+    <value>183, 108</value>
   </data>
   <data name="ActionDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -461,7 +473,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionDown.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
+  </data>
+  <data name="ActionSort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="ActionSort.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -496,7 +511,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 12</value>
+    <value>183, 12</value>
   </data>
   <data name="ActionSort.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -514,6 +529,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionSort.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PanelSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelSeparator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 203</value>
+  </data>
+  <data name="PanelSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 10</value>
+  </data>
+  <data name="PanelSeparator.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.Name" xml:space="preserve">
+    <value>PanelSeparator</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -522,8 +561,11 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>232, 246</value>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>250, 580</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>250, 290</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

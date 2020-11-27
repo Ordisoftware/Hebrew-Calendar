@@ -1736,5 +1736,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["DateBookmarksCount"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("234, 246")]
+        public global::System.Drawing.Size ManageDateBookmarksFormClientSize {
+            get {
+                return ((global::System.Drawing.Size)(this["ManageDateBookmarksFormClientSize"]));
+            }
+            set {
+                this["ManageDateBookmarksFormClientSize"] = value;
+            }
+        }
     }
 }

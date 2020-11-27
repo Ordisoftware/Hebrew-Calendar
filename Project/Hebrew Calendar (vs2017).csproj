@@ -319,11 +319,11 @@
     <Compile Include="Source\Forms\Boxes\DatesDiffCalculatorForm.Designer.cs">
       <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\ManageDateBookmarks.cs">
+    <Compile Include="Source\Forms\Boxes\ManageDateBookmarksForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\ManageDateBookmarks.Designer.cs">
-      <DependentUpon>ManageDateBookmarks.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\ManageDateBookmarksForm.Designer.cs">
+      <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\StatisticsForm.cs">
       <SubType>Form</SubType>
@@ -656,11 +656,11 @@
     <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffCalculatorForm.resx">
       <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarks.fr.resx">
-      <DependentUpon>ManageDateBookmarks.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarksForm.fr.resx">
+      <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarks.resx">
-      <DependentUpon>ManageDateBookmarks.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarksForm.resx">
+      <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\SelectSoundForm.fr.resx">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
