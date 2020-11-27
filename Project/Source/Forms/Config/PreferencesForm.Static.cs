@@ -30,13 +30,13 @@ namespace Ordisoftware.Hebrew.Calendar
     static public (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
     static public (int, int, int, int) DateBookmarksCountInterval = (0, 30, 10, 1);
     static public (int, int, int, int) LoomingDelayInterval = (500, 5000, 1000, 250);
+    static public (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
     static public (int, int, int, int) RemindShabatHoursBeforeInterval = (1, 24, 6, 1);
     static public (int, int, int, int) RemindShabatEveryMinutesInterval = (5, 120, 15, 5);
     static public (int, int, int, int) RemindCelebrationDaysBeforeInterval = (1, 60, 14, 1);
     static public (int, int, int, int) RemindCelebrationHoursBeforeInterval = (1, 48, 24, 1);
     static public (int, int, int, int) RemindCelebrationEveryMinutesInterval = (5, 120, 15, 5);
     static public (int, int, int, int) RemindAutoLockTimeOutInterval = (10, 300, 30, 5);
-    static public (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
 
     static private readonly Properties.Settings Settings = Program.Settings;
 
