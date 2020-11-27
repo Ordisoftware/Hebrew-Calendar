@@ -48,48 +48,25 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadDays();
       LoadEvents();
       LoadFonts();
-      EditVacuumAtStartupInterval.Minimum = CheckUpdateMin;
-      EditVacuumAtStartupInterval.Maximum = CheckUpdateMax;
-      EditVacuumAtStartupInterval.Value = CheckUpdateDefault;
-      EditCheckUpdateAtStartupInterval.Minimum = CheckUpdateMin;
-      EditCheckUpdateAtStartupInterval.Maximum = CheckUpdateMax;
-      EditCheckUpdateAtStartupInterval.Value = CheckUpdateDefault;
-      EditBalloonLoomingDelay.Minimum = LoomingDelayMin;
-      EditBalloonLoomingDelay.Maximum = LoomingDelayMax;
-      EditBalloonLoomingDelay.Value = LoomingDelayDefault;
-      EditMaxYearsInterval.Minimum = Program.GenerateIntervalMaximumLow;
-      EditMaxYearsInterval.Maximum = Program.GenerateIntervalMaximumHigh;
-      EditMaxYearsInterval.Value = Program.GenerateIntervalMaximumDefault;
-      EditMaxYearsInterval.Increment = Program.GenerateIntervalMaximumIncrement;
-      EditReminderCelebrationsDaysBefore.Minimum = RemindCelebrationDaysBeforeMin;
-      EditReminderCelebrationsDaysBefore.Maximum = RemindCelebrationDaysBeforeMax;
-      EditReminderCelebrationsDaysBefore.Value = RemindCelebrationDaysBeforeDefault;
-      EditRemindShabatHoursBefore.Minimum = RemindShabatHoursBeforeMin;
-      EditRemindShabatHoursBefore.Maximum = RemindShabatHoursBeforeMax;
-      EditRemindShabatHoursBefore.Value = RemindShabatHoursBeforeDefault;
-      EditRemindShabatEveryMinutes.Minimum = RemindShabatEveryMinutesMin;
-      EditRemindShabatEveryMinutes.Maximum = RemindShabatEveryMinutesMax;
-      EditRemindShabatEveryMinutes.Value = RemindShabatEveryMinutesDefault;
-      EditRemindCelebrationHoursBefore.Minimum = RemindCelebrationHoursBeforeMin;
-      EditRemindCelebrationHoursBefore.Maximum = RemindCelebrationHoursBeforeMax;
-      EditRemindCelebrationHoursBefore.Value = RemindCelebrationHoursBeforeDefault;
-      EditRemindCelebrationEveryMinutes.Minimum = RemindCelebrationEveryMinutesMin;
-      EditRemindCelebrationEveryMinutes.Maximum = RemindCelebrationEveryMinutesMax;
-      EditRemindCelebrationEveryMinutes.Value = RemindCelebrationEveryMinutesDefault;
-      EditAutoLockSessionTimeOut.Minimum = RemindAutoLockTimeOutMin;
-      EditAutoLockSessionTimeOut.Maximum = RemindAutoLockTimeOutMax;
-      EditAutoLockSessionTimeOut.Value = RemindAutoLockTimeOutDefault;
-      LabelCheckUpdateAtStartupInfo.Text = CheckUpdateMin + " - " + CheckUpdateMax + " (" + CheckUpdateDefault + ")";
-      LabelOptimizeDatabaseIntervalInfo.Text = CheckUpdateMin + " - " + CheckUpdateMax + " (" + CheckUpdateDefault + ")";
-      LabelCheckUpdateAtStartupInfo.Text = CheckUpdateMin + " - " + CheckUpdateMax + " (" + CheckUpdateDefault + ")";
-      LabelLoomingDelayIntervalInfo.Text = LoomingDelayMin + " - " + LoomingDelayMax + " (" + LoomingDelayDefault + ")";
-      LabelAutoLockSessionTimeOutIntervalInfo.Text = RemindAutoLockTimeOutMin + " - " + RemindAutoLockTimeOutMax + " (" + RemindAutoLockTimeOutDefault + ")";
-      LabelMaxYearsIntervalInfo.Text = Program.GenerateIntervalMaximumLow + " - " + Program.GenerateIntervalMaximumHigh + " (" + Program.GenerateIntervalMaximumDefault + ")";
-      LabelRemindShabatHoursBeforeIntervalInfo.Text = RemindShabatHoursBeforeMin + " - " + RemindShabatHoursBeforeMax + " (" + RemindShabatHoursBeforeDefault + ")";
-      LabelRemindShabatEveryMinutesIntervalInfo.Text = RemindShabatEveryMinutesMin + " - " + RemindShabatEveryMinutesMax + " (" + RemindShabatEveryMinutesDefault + ")";
-      LabelReminderCelebrationsIntervalInfo.Text = RemindCelebrationDaysBeforeMin + " - " + RemindCelebrationDaysBeforeMax + " (" + RemindCelebrationDaysBeforeDefault + ")";
-      LabelRemindCelebrationHoursBeforeIntervalInfo.Text = RemindCelebrationHoursBeforeMin + " - " + RemindCelebrationHoursBeforeMax + " (" + RemindCelebrationHoursBeforeDefault + ")";
-      LabelRemindCelebrationEveryMinutesIntervalInfo.Text = RemindCelebrationEveryMinutesMin + " - " + RemindCelebrationEveryMinutesMax + " (" + RemindCelebrationEveryMinutesDefault + ")";
+      setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
+      setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
+      setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
+      setInterval(EditBalloonLoomingDelay, LabelLoomingDelayIntervalInfo, LoomingDelayInterval);
+      setInterval(EditReminderCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
+      setInterval(EditRemindShabatHoursBefore, LabelRemindShabatHoursBeforeIntervalInfo, RemindShabatHoursBeforeInterval);
+      setInterval(EditRemindShabatEveryMinutes, LabelRemindShabatEveryMinutesIntervalInfo, RemindShabatEveryMinutesInterval);
+      setInterval(EditRemindCelebrationHoursBefore, LabelRemindCelebrationHoursBeforeIntervalInfo, RemindCelebrationHoursBeforeInterval);
+      setInterval(EditRemindCelebrationEveryMinutes, LabelRemindCelebrationEveryMinutesIntervalInfo, RemindCelebrationEveryMinutesInterval);
+      setInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
+      setInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
+      void setInterval(NumericUpDown c, Label l, (int, int, int, int) v)
+      {
+        c.Minimum = v.Item1;
+        c.Maximum = v.Item2;
+        c.Value = v.Item3;
+        c.Increment = v.Item4;
+        l.Text = v.Item1 + " - " + v.Item2 + " (" + v.Item3 + ")";
+      }
     }
 
     /// <summary>
@@ -647,7 +624,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
     {
-      SystemManager.TryCatch(() => 
+      SystemManager.TryCatch(() =>
       {
         OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text);
       });

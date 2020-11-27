@@ -27,30 +27,16 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class PreferencesForm : Form
   {
 
-    const int CheckUpdateMin = 1;
-    const int CheckUpdateMax = 28;
-    const int CheckUpdateDefault = 7;
-    const int LoomingDelayMin = 500;
-    const int LoomingDelayMax = 5000;
-    const int LoomingDelayDefault = 1000;
-    const int RemindShabatHoursBeforeMin = 1;
-    const int RemindShabatHoursBeforeMax = 24;
-    const int RemindShabatHoursBeforeDefault = 6;
-    const int RemindShabatEveryMinutesMin = 5;
-    const int RemindShabatEveryMinutesMax = 120;
-    const int RemindShabatEveryMinutesDefault = 15;
-    const int RemindCelebrationDaysBeforeMin = 1;
-    const int RemindCelebrationDaysBeforeMax = 60;
-    const int RemindCelebrationDaysBeforeDefault = 14;
-    const int RemindCelebrationHoursBeforeMin = 1;
-    const int RemindCelebrationHoursBeforeMax = 48;
-    const int RemindCelebrationHoursBeforeDefault = 24;
-    const int RemindCelebrationEveryMinutesMin = 5;
-    const int RemindCelebrationEveryMinutesMax = 120;
-    const int RemindCelebrationEveryMinutesDefault = 15;
-    const int RemindAutoLockTimeOutMin = 10;
-    const int RemindAutoLockTimeOutMax = 300;
-    const int RemindAutoLockTimeOutDefault = 30;
+    static public (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
+    static public (int, int, int, int) DateBookmarksCountInterval = (0, 30, 10, 1);
+    static public (int, int, int, int) LoomingDelayInterval = (500, 5000, 1000, 250);
+    static public (int, int, int, int) RemindShabatHoursBeforeInterval = (1, 24, 6, 1);
+    static public (int, int, int, int) RemindShabatEveryMinutesInterval = (5, 120, 15, 5);
+    static public (int, int, int, int) RemindCelebrationDaysBeforeInterval = (1, 60, 14, 1);
+    static public (int, int, int, int) RemindCelebrationHoursBeforeInterval = (1, 48, 24, 1);
+    static public (int, int, int, int) RemindCelebrationEveryMinutesInterval = (5, 120, 15, 5);
+    static public (int, int, int, int) RemindAutoLockTimeOutInterval = (10, 300, 30, 5);
+    static public (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
 
     static private readonly Properties.Settings Settings = Program.Settings;
 
@@ -92,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MainForm.Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
         MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
       });
-      if (result ) CalendarDates.Instance.Clear();
+      if ( result ) CalendarDates.Instance.Clear();
       return result;
     }
 
