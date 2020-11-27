@@ -38,6 +38,7 @@
       this.ActionUp = new System.Windows.Forms.Button();
       this.ActionDown = new System.Windows.Forms.Button();
       this.ActionSort = new System.Windows.Forms.Button();
+      this.PanelSeparator = new System.Windows.Forms.Panel();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -104,23 +105,30 @@
       // 
       // ActionSort
       // 
-      this.ActionSort.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSort, "ActionSort");
+      this.ActionSort.FlatAppearance.BorderSize = 0;
       this.ActionSort.Name = "ActionSort";
       this.ActionSort.UseVisualStyleBackColor = true;
       this.ActionSort.Click += new System.EventHandler(this.ActionSort_Click);
+      // 
+      // PanelSeparator
+      // 
+      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
+      this.PanelSeparator.Name = "PanelSeparator";
       // 
       // ManageDateBookmarksForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.ClientSize = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ManageDateBookmarksFormClientSize;
+      this.Controls.Add(this.ListBox);
+      this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.ActionDown);
       this.Controls.Add(this.ActionSort);
       this.Controls.Add(this.ActionUp);
       this.Controls.Add(this.ActionDelete);
-      this.Controls.Add(this.ListBox);
       this.Controls.Add(this.PanelBottom);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ManageDateBookmarksFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ManageDateBookmarksForm";
@@ -143,5 +151,6 @@
     private System.Windows.Forms.Button ActionUp;
     private System.Windows.Forms.Button ActionDown;
     private System.Windows.Forms.Button ActionClear;
+    private System.Windows.Forms.Panel PanelSeparator;
   }
 }
