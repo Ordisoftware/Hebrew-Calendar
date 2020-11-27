@@ -59,14 +59,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SystemStatisticsForm_Load(object sender, EventArgs e)
     {
+      this.CheckLocationOrCenterToMainFormElseScreen();
       EditFolderApplication.Text = Globals.RootFolderPath;
       EditFolderUserData.Text = Globals.UserDataFolderPath;
       EditOpenFolderUserLocalData.Text = Globals.UserLocalDataFolderPath;
-    }
-
-    private void StatisticsForm_Activated(object sender, EventArgs e)
-    {
-      this.CheckLocationOrCenterToMainFormElseScreen();
     }
 
     private void SystemStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
