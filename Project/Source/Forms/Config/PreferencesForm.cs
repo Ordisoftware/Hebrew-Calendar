@@ -695,6 +695,19 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !EditUsageStatisticsEnabled.Checked )
         StatisticsForm.Instance.Close();
     }
+
+    private void ActionManageBookmarks_Click(object sender, EventArgs e)
+    {
+      if ( ManageDateBookmarksForm.Run() )
+        DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
+    }
+
+    private void EditDateBookmarksCount_ValueChanged(object sender, EventArgs e)
+    {
+      Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
+      Program.DateBookmarks.Resize(Settings.DateBookmarksCount);
+      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
+    }
   }
 
 }
