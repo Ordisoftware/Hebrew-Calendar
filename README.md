@@ -160,7 +160,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.12.06 - Version 5.10
+#### 2020.12.01 - Version 5.10
 
 - Change save, copy and print to use the current view (text report, month image or grid csv).
 - Add save/copy/print view selection box.
