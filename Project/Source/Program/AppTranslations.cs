@@ -35,11 +35,11 @@ namespace Ordisoftware.Hebrew.Calendar
       = new TranslationsDictionary
       {
         [Language.EN] = SysTranslations.ResetPreferences[Language.EN] + Globals.NL2 +
-                        "GPS location and shabat day will be keeped." + Globals.NL2 +
+                        "GPS location, shabat day and bookmarks will be keeped." + Globals.NL2 +
                         SysTranslations.AskToContinue[Language.EN],
 
         [Language.FR] = SysTranslations.ResetPreferences[Language.FR] + Globals.NL2 +
-                        "La position GPS et le jour du shabat seront conservés." + Globals.NL2 +
+                        "La position GPS, le jour du shabat et les signets seront conservés." + Globals.NL2 +
                         SysTranslations.AskToContinue[Language.FR]
       };
 

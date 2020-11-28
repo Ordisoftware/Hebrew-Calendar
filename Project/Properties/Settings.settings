@@ -278,7 +278,7 @@
       <Value Profile="(Default)">9</Value>
     </Setting>
     <Setting Name="AutoOpenExportFolder" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="VacuumAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -438,6 +438,9 @@
     </Setting>
     <Setting Name="ManageDateBookmarksFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">264, 311</Value>
+    </Setting>
+    <Setting Name="AutoOpenExportedFile" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
