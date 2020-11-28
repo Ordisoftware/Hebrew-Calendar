@@ -158,6 +158,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.06 - Version 5.10
 
+- Add option to open exported file.
 - Add option to set number of date bookmarks.
 - Add option to enable/disable usage statistics.
 - Improve usage statistics form.
