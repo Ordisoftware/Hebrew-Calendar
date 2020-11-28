@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -75,24 +75,19 @@ namespace Ordisoftware.Hebrew.Calendar
           return true;
         case Keys.NumPad0:
         case Keys.Control | Keys.T:
-          if ( keyData == Keys.NumPad0 && Settings.CurrentView != ViewMode.Month )
-            break;
           GoToDate(DateTime.Today);
           return true;
         case Keys.Control | Keys.D:
           ActionSearchDay.PerformClick();
           return true;
-        case Keys.Control | Keys.P:
-          ActionPrint.PerformClick();
+        case Keys.Control | Keys.S:
+          ActionSaveToFile.PerformClick();
           return true;
         case Keys.Control | Keys.C:
-          ActionCopyReportToClipboard.PerformClick();
+          ActionCopyToClipboard.PerformClick();
           return true;
-        case Keys.Control | Keys.S:
-          ActionSaveReport.PerformClick();
-          return true;
-        case Keys.Alt | Keys.S:
-          ActionExportCSV.PerformClick();
+        case Keys.Control | Keys.P:
+          ActionPrint.PerformClick();
           return true;
         // Month view calendar navigation
         case Keys.Home:

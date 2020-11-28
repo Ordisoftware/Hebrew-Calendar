@@ -44,7 +44,6 @@
       // 
       // PanelBottom
       // 
-      this.PanelBottom.Controls.Add(this.ActionClear);
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
@@ -53,8 +52,8 @@
       // ActionClear
       // 
       this.ActionClear.AllowDrop = true;
-      this.ActionClear.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionClear, "ActionClear");
+      this.ActionClear.FlatAppearance.BorderSize = 0;
       this.ActionClear.Name = "ActionClear";
       this.ActionClear.UseVisualStyleBackColor = true;
       this.ActionClear.Click += new System.EventHandler(this.ActionClear_Click);
@@ -121,6 +120,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ManageDateBookmarksFormClientSize;
+      this.Controls.Add(this.ActionClear);
       this.Controls.Add(this.ListBox);
       this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.ActionDown);

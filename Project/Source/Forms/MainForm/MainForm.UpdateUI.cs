@@ -84,15 +84,15 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
         MenuTray.Enabled = Globals.IsReady && !IsGenerating;
         ToolStrip.Enabled = !IsGenerating;
-        ActionSaveReport.Enabled = DataSet.LunisolarDays.Count > 0;
-        ActionExportCSV.Enabled = ActionSaveReport.Enabled;
-        ActionCopyReportToClipboard.Enabled = ActionSaveReport.Enabled;
-        ActionPrint.Enabled = ActionSaveReport.Enabled;
-        ActionSearchEvent.Enabled = ActionSaveReport.Enabled;
-        ActionSearchMonth.Enabled = ActionSaveReport.Enabled;
-        ActionSearchDay.Enabled = ActionSaveReport.Enabled;
-        ActionNavigate.Enabled = ActionSaveReport.Enabled;
-        ActionViewCelebrations.Enabled = ActionSaveReport.Enabled;
+        ActionSaveToFile.Enabled = DataSet.LunisolarDays.Count > 0;
+        ActionExportCSV.Enabled = ActionSaveToFile.Enabled;
+        ActionCopyToClipboard.Enabled = ActionSaveToFile.Enabled;
+        ActionPrint.Enabled = ActionSaveToFile.Enabled;
+        ActionSearchEvent.Enabled = ActionSaveToFile.Enabled;
+        ActionSearchMonth.Enabled = ActionSaveToFile.Enabled;
+        ActionSearchDay.Enabled = ActionSaveToFile.Enabled;
+        ActionNavigate.Enabled = ActionSaveToFile.Enabled;
+        ActionViewCelebrations.Enabled = ActionSaveToFile.Enabled;
         Refresh();
       });
     }

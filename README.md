@@ -124,10 +124,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today (also Numpad0)
 - Ctrl+D : Search a day
-- Ctrl+C : Copy text report to clipboard
-- Ctrl+P : Print month view
-- Ctrl+S : Save text report to text file
-- Alt+S : Save text report to CSV file
+- Ctrl+S : Save current view to a file
+- Ctrl+C : Copy current view to clipboard
+- Ctrl+P : Print current view
 - Alt+C : Open windows calculator
 - Alt+T : Open windows date and time settings
 - Ctrl+F1 : Dates difference calculator
@@ -162,6 +161,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set number of date bookmarks.
 - Add option to enable/disable usage statistics.
 - Improve usage statistics form.
+- Improve save, copy and print to use the current view (text report, month image or grid csv).
 - Improve UI/UX.
 
 #### 2020.11.26 - Version 5.9

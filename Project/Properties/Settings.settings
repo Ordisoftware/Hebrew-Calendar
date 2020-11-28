@@ -437,7 +437,7 @@
       <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="ManageDateBookmarksFormClientSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">234, 246</Value>
+      <Value Profile="(Default)">264, 311</Value>
     </Setting>
   </Settings>
 </SettingsFile>

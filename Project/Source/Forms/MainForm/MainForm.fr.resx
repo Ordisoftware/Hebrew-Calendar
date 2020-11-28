@@ -205,11 +205,11 @@
         qhuKkV4WZGyHFxG5u1Q08oggUkpdBXnUi6grdamkugLh6Rb1N4Vhj9tgUvXhAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ActionSaveReport.Text" xml:space="preserve">
-    <value>Sauvegarder le rapport dans un fichier texte</value>
+  <data name="ActionSaveToFile.Text" xml:space="preserve">
+    <value>Sauvegarder la vue dans un fichier</value>
   </data>
-  <data name="ActionSaveReport.ToolTipText" xml:space="preserve">
-    <value>Sauvegarder le rapport dans un fichier texte (Ctrl+S)</value>
+  <data name="ActionSaveToFile.ToolTipText" xml:space="preserve">
+    <value>Sauvegarder la vue dans un fichier (Ctrl+S)</value>
   </data>
   <data name="ActionExportCSV.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -285,11 +285,11 @@
         fMUmk+x//WvGP44sYJfcqldpMsme8efU5fobE6Ga/+xWYYUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionCopyReportToClipboard.Text" xml:space="preserve">
-    <value>Copier le rapport dans le presse-papier</value>
+  <data name="ActionCopyToClipboard.Text" xml:space="preserve">
+    <value>Copier la vue dans le presse-papier</value>
   </data>
-  <data name="ActionCopyReportToClipboard.ToolTipText" xml:space="preserve">
-    <value>Copier le rapport dans le presse-papier (Ctrl+C)</value>
+  <data name="ActionCopyToClipboard.ToolTipText" xml:space="preserve">
+    <value>Copier la vue dans le presse-papier (Ctrl+C)</value>
   </data>
   <data name="ActionPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -315,10 +315,10 @@
 </value>
   </data>
   <data name="ActionPrint.Text" xml:space="preserve">
-    <value>Imprimer la vue par mois</value>
+    <value>Imprimer la vue</value>
   </data>
   <data name="ActionPrint.ToolTipText" xml:space="preserve">
-    <value>Imprimer la vue par mois (Ctrl+P)</value>
+    <value>Imprimer la vue (Ctrl+P)</value>
   </data>
   <data name="ActionSearchEvent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1897,5 +1897,8 @@
   </data>
   <data name="EditShowSuccessDialogs.Text" xml:space="preserve">
     <value>Boîtes de dialogue de réussite à la place des sons</value>
+  </data>
+  <data name="LabelGridGoToToday.Text" xml:space="preserve">
+    <value>Aujourd'hui</value>
   </data>
 </root>

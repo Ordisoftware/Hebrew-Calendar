@@ -95,32 +95,25 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Voulez-vous configurer le shabat personnel ?"
       };
 
-    static public readonly TranslationsDictionary TextReportSavedToTXTFile
+    static public readonly TranslationsDictionary ViewSavedToFile
       = new TranslationsDictionary
       {
-        [Language.EN] = $"Text report has been saved to TXT file:{Globals.NL2}{{0}}",
-        [Language.FR] = $"Le rapport textuel a été sauvé dans le fichier TXT :{Globals.NL2}{{0}}",
+        [Language.EN] = $"The view has been saved to file:{Globals.NL2}{{0}}",
+        [Language.FR] = $"La vue a été sauvée dans le fichier :{Globals.NL2}{{0}}",
       };
 
-    static public readonly TranslationsDictionary TextReportSavedToCSVFile
+    static public readonly TranslationsDictionary ViewCopiedToClipboard
       = new TranslationsDictionary
       {
-        [Language.EN] = $"Text report has been saved to CSV file:{Globals.NL2}{{0}}",
-        [Language.FR] = $"Le rapport textuel a été sauvé dans le fichier CSV :{Globals.NL2}{{0}}",
+        [Language.EN] = "The view has been copied to the clipboard.",
+        [Language.FR] = "La vue a été copiée dans le presse-papier."
       };
 
-    static public readonly TranslationsDictionary TextReportCopiedToClipboard
+    static public readonly TranslationsDictionary ViewPrinted
       = new TranslationsDictionary
       {
-        [Language.EN] = "Text report has been copied to the clipboard.",
-        [Language.FR] = "Le rapport textuel a été copié dans le presse-papier."
-      };
-
-    static public readonly TranslationsDictionary MonthViewPrinted
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "The month view has been printed.",
-        [Language.FR] = "La vue par mois a été imprimée."
+        [Language.EN] = "The view has been printed.",
+        [Language.FR] = "La vue a été imprimée."
       };
 
     static public readonly TranslationsDictionary DateNotFound

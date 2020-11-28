@@ -690,6 +690,9 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       VolumeMixer.SetApplicationVolume(System.Diagnostics.Process.GetCurrentProcess().Id, EditVolume.Value);
       LabelVolumeValue.Text = EditVolume.Value + "%";
+      Program.Settings.ApplicationVolume = EditVolume.Value;
+      Program.Settings.Save();
+      DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
     }
 
     private void LabelSelectReminderSound_Click(object sender, EventArgs e)
