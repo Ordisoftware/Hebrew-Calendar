@@ -18,12 +18,12 @@ using System.Windows.Forms;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SelectBirthTime : Form
+  public partial class SelectBirthTimeForm : Form
   {
 
     static public bool Run(out TimeSpan time)
     {
-      using ( var form = new SelectBirthTime() )
+      using ( var form = new SelectBirthTimeForm() )
       {
         bool result = form.ShowDialog() == DialogResult.OK;
         time = result ? form.EditTime.Value.TimeOfDay : TimeSpan.MinValue;
@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private SelectBirthTime()
+    private SelectBirthTimeForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

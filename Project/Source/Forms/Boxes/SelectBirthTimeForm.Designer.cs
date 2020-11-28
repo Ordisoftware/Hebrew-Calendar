@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Hebrew.Calendar
 {
-  partial class SelectBirthTime
+  partial class SelectBirthTimeForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectBirthTime));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectBirthTimeForm));
       this.EditTime = new System.Windows.Forms.DateTimePicker();
       this.Label = new System.Windows.Forms.Label();
       this.PanelButtons = new System.Windows.Forms.Panel();
