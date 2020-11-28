@@ -124,10 +124,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today (also Numpad0)
 - Ctrl+D : Search a day
-- Ctrl+C : Copy text report to clipboard
-- Ctrl+P : Print month view
+- Ctrl+C : Copy current view to clipboard
+- Ctrl+P : Print current view
 - Ctrl+S : Save text report to text file
-- Alt+S : Save text report to CSV file
 - Alt+C : Open windows calculator
 - Alt+T : Open windows date and time settings
 - Ctrl+F1 : Dates difference calculator
@@ -176,6 +175,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve reminder sound selection box with more choices.
 - Improve preferences form.
 - Improve information menu.
+- Improve copy to clipboard to use the current view (text report, month image or grid csv).
+- Change save actions to save the current view (text report, month image or grid csv).
 - Improve UI/UX.
 - Optimize by preloading sounds lists in a thread.
 - Refactor project folders hierarchy.
