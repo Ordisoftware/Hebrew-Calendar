@@ -166,7 +166,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to restore the last view at startup else go to the month.
 - Add option to enable/disable usage statistics.
 - Improve usage statistics form.
+- Improve start menu reset settings to delete all previous app settings folders in AppData\Local.
 - Improve UI/UX.
+- Update help.
 
 #### 2020.11.26 - Version 5.9
 
