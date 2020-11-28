@@ -105,8 +105,6 @@ namespace Ordisoftware.Hebrew.Calendar
         ViewPanels[view].Panel.Parent = PanelCalendar;
         ViewPanels[view].Focused.Focus();
         Settings.CurrentView = view;
-        ActionCopyReportToClipboard.Enabled = Settings.CurrentView != ViewMode.Grid;
-        ActionPrint.Enabled = Settings.CurrentView != ViewMode.Grid;
       }
       catch ( Exception ex )
       {

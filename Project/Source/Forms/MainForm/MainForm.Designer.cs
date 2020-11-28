@@ -53,6 +53,8 @@
       this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+      this.LabelGridGoToToday = new System.Windows.Forms.ToolStripLabel();
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
       this.LabelTitle = new System.Windows.Forms.Label();
@@ -60,10 +62,9 @@
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
-      this.ActionSaveReport = new System.Windows.Forms.ToolStripButton();
+      this.ActionSaveToFile = new System.Windows.Forms.ToolStripButton();
       this.ActionExportCSV = new System.Windows.Forms.ToolStripButton();
-      this.Sep1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionCopyReportToClipboard = new System.Windows.Forms.ToolStripButton();
+      this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.ActionPrint = new System.Windows.Forms.ToolStripButton();
       this.Sep2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchEvent = new System.Windows.Forms.ToolStripButton();
@@ -148,6 +149,7 @@
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
+      this.SaveImageDialog = new System.Windows.Forms.SaveFileDialog();
       this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -166,8 +168,6 @@
       this.DataSet = new Ordisoftware.Hebrew.Calendar.Data.DataSet();
       this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
-      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-      this.LabelGridGoToToday = new System.Windows.Forms.ToolStripLabel();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -382,6 +382,17 @@
       resources.ApplyResources(this.bindingNavigatorMoveLastItem, "bindingNavigatorMoveLastItem");
       this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
       // 
+      // toolStripSeparator5
+      // 
+      this.toolStripSeparator5.Name = "toolStripSeparator5";
+      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+      // 
+      // LabelGridGoToToday
+      // 
+      this.LabelGridGoToToday.Name = "LabelGridGoToToday";
+      resources.ApplyResources(this.LabelGridGoToToday, "LabelGridGoToToday");
+      this.LabelGridGoToToday.Click += new System.EventHandler(this.LabelGridGoToToday_Click);
+      // 
       // PanelSepTop
       // 
       resources.ApplyResources(this.PanelSepTop, "PanelSepTop");
@@ -422,10 +433,9 @@
       this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionSaveReport,
+            this.ActionSaveToFile,
             this.ActionExportCSV,
-            this.Sep1,
-            this.ActionCopyReportToClipboard,
+            this.ActionCopyToClipboard,
             this.ActionPrint,
             this.Sep2,
             this.ActionSearchEvent,
@@ -454,15 +464,15 @@
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
       // 
-      // ActionSaveReport
+      // ActionSaveToFile
       // 
-      this.ActionSaveReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionSaveReport, "ActionSaveReport");
-      this.ActionSaveReport.Name = "ActionSaveReport";
-      this.ActionSaveReport.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionSaveReport.Click += new System.EventHandler(this.ActionSaveReport_Click);
-      this.ActionSaveReport.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionSaveReport.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionSaveToFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionSaveToFile, "ActionSaveToFile");
+      this.ActionSaveToFile.Name = "ActionSaveToFile";
+      this.ActionSaveToFile.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionSaveToFile.Click += new System.EventHandler(this.ActionSave_Click);
+      this.ActionSaveToFile.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionSaveToFile.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // ActionExportCSV
       // 
@@ -470,24 +480,18 @@
       resources.ApplyResources(this.ActionExportCSV, "ActionExportCSV");
       this.ActionExportCSV.Name = "ActionExportCSV";
       this.ActionExportCSV.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionExportCSV.Click += new System.EventHandler(this.ActionExportCSV_Click);
       this.ActionExportCSV.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
       this.ActionExportCSV.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
-      // Sep1
+      // ActionCopyToClipboard
       // 
-      this.Sep1.Name = "Sep1";
-      resources.ApplyResources(this.Sep1, "Sep1");
-      // 
-      // ActionCopyReportToClipboard
-      // 
-      this.ActionCopyReportToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionCopyReportToClipboard, "ActionCopyReportToClipboard");
-      this.ActionCopyReportToClipboard.Name = "ActionCopyReportToClipboard";
-      this.ActionCopyReportToClipboard.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionCopyReportToClipboard.Click += new System.EventHandler(this.ActionCopyReportToClipboard_Click);
-      this.ActionCopyReportToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionCopyReportToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionCopyToClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionCopyToClipboard, "ActionCopyToClipboard");
+      this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
+      this.ActionCopyToClipboard.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
+      this.ActionCopyToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
+      this.ActionCopyToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       // 
       // ActionPrint
       // 
@@ -1109,6 +1113,11 @@
       // 
       this.TimerResumeReminder.Tick += new System.EventHandler(this.TimerResumeReminder_Tick);
       // 
+      // SaveImageDialog
+      // 
+      this.SaveImageDialog.FileName = "Hebrew Calendar.png";
+      resources.ApplyResources(this.SaveImageDialog, "SaveImageDialog");
+      // 
       // CalendarMonth
       // 
       this.CalendarMonth.AllowEditingEvents = false;
@@ -1257,17 +1266,6 @@
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
-      // toolStripSeparator5
-      // 
-      this.toolStripSeparator5.Name = "toolStripSeparator5";
-      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
-      // 
-      // LabelGridGoToToday
-      // 
-      this.LabelGridGoToToday.Name = "LabelGridGoToToday";
-      resources.ApplyResources(this.LabelGridGoToToday, "LabelGridGoToToday");
-      this.LabelGridGoToToday.Click += new System.EventHandler(this.LabelGridGoToToday_Click);
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1330,7 +1328,7 @@
     private System.Windows.Forms.ToolStripSeparator Sep3;
     private System.Windows.Forms.SaveFileDialog SaveFileDialog;
     private System.Windows.Forms.ToolStripSeparator Sep6;
-    private System.Windows.Forms.ToolStripButton ActionCopyReportToClipboard;
+    private System.Windows.Forms.ToolStripButton ActionCopyToClipboard;
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.Panel PanelSepTop;
     private System.Windows.Forms.Panel PanelTitle;
@@ -1364,7 +1362,7 @@
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
     private System.Windows.Forms.DataGridView CalendarGrid;
     internal Data.DataSet DataSet;
-    private System.Windows.Forms.ToolStripButton ActionSaveReport;
+    private System.Windows.Forms.ToolStripButton ActionSaveToFile;
     private System.Windows.Forms.ToolStripButton ActionSearchDay;
     private System.Windows.Forms.ToolStripButton ActionPreferences;
     private System.Windows.Forms.ToolStripButton ActionExportCSV;
@@ -1383,7 +1381,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
     private System.Windows.Forms.ToolStripButton ActionPrint;
     private System.Windows.Forms.PrintDialog PrintDialog;
-    private System.Windows.Forms.ToolStripSeparator Sep1;
     internal global::CodeProjectCalendar.NET.Calendar CalendarMonth;
     internal System.Windows.Forms.Panel PanelViewMonth;
     private System.Windows.Forms.Timer TimerBallon;
@@ -1449,6 +1446,7 @@
     internal System.Windows.Forms.ToolStripMenuItem EditShowSuccessDialogs;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripLabel LabelGridGoToToday;
+    private System.Windows.Forms.SaveFileDialog SaveImageDialog;
   }
 }
 

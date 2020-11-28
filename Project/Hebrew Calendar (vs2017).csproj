@@ -294,6 +294,12 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Action.SaveCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Action.Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoon.cs">
       <SubType>Form</SubType>
     </Compile>

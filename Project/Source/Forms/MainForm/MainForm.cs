@@ -18,9 +18,7 @@ using System.Linq;
 using System.Xml;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
-using System.Drawing.Printing;
 using Microsoft.Win32;
 using Ordisoftware.Core;
 
@@ -237,6 +235,66 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionViewReport for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewReport_Click(object sender, EventArgs e)
+    {
+      SetView(ViewMode.Text);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewMonth for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewMonth_Click(object sender, EventArgs e)
+    {
+      SetView(ViewMode.Month);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewGrid for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewGrid_Click(object sender, EventArgs e)
+    {
+      SetView(ViewMode.Grid);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionSave for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSave_Click(object sender, EventArgs e)
+    {
+      DoSave();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionCopyToClipboard for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionCopyToClipboard_Click(object sender, EventArgs e)
+    {
+      DoCopy();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionPrint for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionPrint_Click(object sender, EventArgs e)
+    {
+      DoPrint();
+    }
+
+    /// <summary>
     /// Event handler. Called by MenuExit for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -253,6 +311,100 @@ namespace Ordisoftware.Hebrew.Calendar
           return;
       Globals.AllowClose = true;
       Close();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionAbout for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    internal void ActionAbout_Click(object sender, EventArgs e)
+    {
+      if ( AboutBox.Instance.Visible )
+        AboutBox.Instance.BringToFront();
+      else
+        AboutBox.Instance.ShowDialog();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionHelp for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionHelp_Click(object sender, EventArgs e)
+    {
+      SystemManager.RunShell(Globals.HelpFilePath);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionWebCheckUpdate for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    internal void ActionWebCheckUpdate_Click(object sender, EventArgs e)
+    {
+      bool menuEnabled = MenuTray.Enabled;
+      try
+      {
+        MenuTray.Enabled = false;
+        var lastdone = Settings.CheckUpdateLastDone;
+        bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
+                                       ref lastdone,
+                                       Settings.CheckUpdateAtStartupDaysInterval,
+                                       e == null);
+        Settings.CheckUpdateLastDone = lastdone;
+        if ( exit )
+        {
+          Globals.AllowClose = true;
+          Close();
+        }
+        else
+        if ( Visible )
+          BringToFront();
+      }
+      finally
+      {
+        MenuTray.Enabled = menuEnabled;
+      }
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionPreferences for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionPreferences_Click(object sender, EventArgs e)
+    {
+      bool formEnabled = Globals.MainForm.Enabled;
+      try
+      {
+        Enabled = false;
+        ActionPreferences.Visible = false;
+        ActionPreferences.Visible = true;
+        TimerReminder.Enabled = false;
+        MenuTray.Enabled = false;
+        ClearLists();
+        if ( PreferencesForm.Run() )
+        {
+          CalendarMonth.CurrentDayForeColor = Settings.CurrentDayForeColor;
+          CalendarMonth.CurrentDayBackColor = Settings.CurrentDayBackColor;
+          UpdateCalendarMonth(false);
+          ActionGenerate_Click(null, EventArgs.Empty);
+        }
+        TimerBallon.Interval = Settings.BalloonLoomingDelay;
+        CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
+        InitializeSpecialMenus();
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+      finally
+      {
+        Enabled = formEnabled;
+        MenuTray.Enabled = true;
+        EnableReminder();
+      }
     }
 
     /// <summary>
@@ -303,6 +455,53 @@ namespace Ordisoftware.Hebrew.Calendar
           FormBorderStyle = FormBorderStyle.SizableToolWindow;
         }
         MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
+      });
+    }
+
+    /// <summary>
+    /// Event handler. Called by TrayIcon for mouse click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Mouse event information.</param>
+    private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
+    {
+      SystemManager.TryCatchManage(() =>
+      {
+        TimerBallon.Stop();
+        TimerTrayMouseMove.Stop();
+        if ( e != null )
+        {
+          if ( e.Button == MouseButtons.Left )
+            switch ( Settings.TrayIconClickOpen )
+            {
+              case TrayIconClickOpen.MainForm:
+                MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? EventArgs.Empty : null);
+                break;
+              case TrayIconClickOpen.NextCelebrationsForm:
+                if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
+                  CelebrationsForm.Instance.Close();
+                else
+                  ActionViewCelebrations.PerformClick();
+                break;
+              case TrayIconClickOpen.NavigationForm:
+                var form = NavigationForm.Instance;
+                if ( form.Visible )
+                  form.Visible = false;
+                else
+                  SystemManager.TryCatchManage(() =>
+                  {
+                    form.Date = DateTime.Today;
+                    form.Visible = true;
+                  });
+                break;
+              default:
+                throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.ToStringFull());
+            }
+          else
+        if ( e.Button == MouseButtons.Right )
+            if ( NavigationForm.Instance.Visible )
+              ActionNavigate.PerformClick();
+        }
       });
     }
 
@@ -363,53 +562,6 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Event handler. Called by TrayIcon for mouse click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Mouse event information.</param>
-    private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
-    {
-      SystemManager.TryCatchManage(() =>
-      {
-        TimerBallon.Stop();
-        TimerTrayMouseMove.Stop();
-        if ( e != null )
-        {
-          if ( e.Button == MouseButtons.Left )
-            switch ( Settings.TrayIconClickOpen )
-            {
-              case TrayIconClickOpen.MainForm:
-                MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? EventArgs.Empty : null);
-                break;
-              case TrayIconClickOpen.NextCelebrationsForm:
-                if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
-                  CelebrationsForm.Instance.Close();
-                else
-                  ActionViewCelebrations.PerformClick();
-                break;
-              case TrayIconClickOpen.NavigationForm:
-                var form = NavigationForm.Instance;
-                if ( form.Visible )
-                  form.Visible = false;
-                else
-                  SystemManager.TryCatchManage(() =>
-                  {
-                    form.Date = DateTime.Today;
-                    form.Visible = true;
-                  });
-                break;
-              default:
-                throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.ToStringFull());
-            }
-          else
-        if ( e.Button == MouseButtons.Right )
-            if ( NavigationForm.Instance.Visible )
-              ActionNavigate.PerformClick();
-        }
-      });
-    }
-
-    /// <summary>
     /// Event handler. Called by TimerTooltip for tick events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -418,7 +570,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !EditShowTips.Checked ) return;
       var item = (ToolStripItem)LastToolTip.Tag;
-      var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionSaveReport.Height + 5);
+      var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionSaveToFile.Height + 5);
       LastToolTip.Tag = sender;
       LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
       TimerTooltip.Enabled = false;
@@ -485,36 +637,6 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionViewReport for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewReport_Click(object sender, EventArgs e)
-    {
-      SetView(ViewMode.Text);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewMonth for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewMonth_Click(object sender, EventArgs e)
-    {
-      SetView(ViewMode.Month);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewGrid for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewGrid_Click(object sender, EventArgs e)
-    {
-      SetView(ViewMode.Grid);
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionResetWinSettings for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -546,100 +668,6 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionPreferences for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionPreferences_Click(object sender, EventArgs e)
-    {
-      bool formEnabled = Globals.MainForm.Enabled;
-      try
-      {
-        Enabled = false;
-        ActionPreferences.Visible = false;
-        ActionPreferences.Visible = true;
-        TimerReminder.Enabled = false;
-        MenuTray.Enabled = false;
-        ClearLists();
-        if ( PreferencesForm.Run() )
-        {
-          CalendarMonth.CurrentDayForeColor = Settings.CurrentDayForeColor;
-          CalendarMonth.CurrentDayBackColor = Settings.CurrentDayBackColor;
-          UpdateCalendarMonth(false);
-          ActionGenerate_Click(null, EventArgs.Empty);
-        }
-        TimerBallon.Interval = Settings.BalloonLoomingDelay;
-        CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
-        InitializeSpecialMenus();
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      finally
-      {
-        Enabled = formEnabled;
-        MenuTray.Enabled = true;
-        EnableReminder();
-      }
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionHelp for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionHelp_Click(object sender, EventArgs e)
-    {
-      SystemManager.RunShell(Globals.HelpFilePath);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionAbout for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    internal void ActionAbout_Click(object sender, EventArgs e)
-    {
-      if ( AboutBox.Instance.Visible )
-        AboutBox.Instance.BringToFront();
-      else
-        AboutBox.Instance.ShowDialog();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionWebCheckUpdate for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    internal void ActionWebCheckUpdate_Click(object sender, EventArgs e)
-    {
-      bool menuEnabled = MenuTray.Enabled;
-      try
-      {
-        MenuTray.Enabled = false;
-        var lastdone = Settings.CheckUpdateLastDone;
-        bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, 
-                                       ref lastdone, 
-                                       Settings.CheckUpdateAtStartupDaysInterval, 
-                                       e == null);
-        Settings.CheckUpdateLastDone = lastdone;
-        if ( exit )
-        {
-          Globals.AllowClose = true;
-          Close();
-        }
-        else
-        if ( Visible )
-          BringToFront();
-      }
-      finally
-      {
-        MenuTray.Enabled = menuEnabled;
-      }
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionExit for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -660,6 +688,9 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuExit_Click(MenuExit, null);
     }
 
+    /// <summary>
+    /// Show a notice.
+    /// </summary>
     private void ShowNotice(object sender, TranslationsDictionary title, TranslationsDictionary text, int width)
     {
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title.GetLang());
@@ -784,104 +815,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
       DebugManager.TraceForm.Popup();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionSaveReport for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSaveReport_Click(object sender, EventArgs e)
-    {
-      if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
-      File.WriteAllText(SaveFileDialog.FileName, CalendarText.Text);
-      DisplayManager.ShowSuccessOrSound(AppTranslations.TextReportSavedToTXTFile.GetLang(SaveFileDialog.FileName),
-                                        Globals.KeyboardSoundFilePath);
-      if ( Settings.AutoOpenExportFolder )
-        SystemManager.RunShell(Path.GetDirectoryName(SaveFileDialog.FileName));
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionExportCSV for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionExportCSV_Click(object sender, EventArgs e)
-    {
-      var content = GenerateReportCSV();
-      if ( content == null ) return;
-      if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
-      File.WriteAllText(SaveCSVDialog.FileName, content.ToString());
-      DisplayManager.ShowSuccessOrSound(AppTranslations.TextReportSavedToCSVFile.GetLang(SaveCSVDialog.FileName),
-                                        Globals.KeyboardSoundFilePath);
-      if ( Settings.AutoOpenExportFolder )
-        SystemManager.RunShell(Path.GetDirectoryName(SaveCSVDialog.FileName));
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionCopyReportToClipboard for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionCopyReportToClipboard_Click(object sender, EventArgs e)
-    {
-      Clipboard.SetText(CalendarText.Text);
-      DisplayManager.ShowSuccessOrSound(AppTranslations.TextReportCopiedToClipboard.GetLang(),
-                                        Globals.ClipboardSoundFilePath);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionPrint for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionPrint_Click(object sender, EventArgs e)
-    {
-      SetView(ViewMode.Month);
-      CalendarMonth.ShowTodayButton = false;
-      CalendarMonth.ShowArrowControls = false;
-      bool finished = true;
-      try
-      {
-        ActionPrint.Visible = false;
-        ActionPrint.Visible = true;
-        ToolStrip.Enabled = false;
-        MenuTray.Enabled = false;
-        var bitmap = CalendarMonth.GetBitmap().Resize(1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
-        using ( var document = new PrintDocument() )
-        {
-          document.DefaultPageSettings.Landscape = true;
-          document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
-          PrintDialog.Document = document;
-          var timer = new Timer();
-          timer.Interval = 250;
-          timer.Tick += (_s, _e) =>
-          {
-            timer.Stop();
-            if ( PrintDialog.ShowDialog(this) == DialogResult.OK )
-              SystemManager.TryCatchManage(() =>
-              {
-                document.Print();
-                DisplayManager.ShowSuccessOrSound(AppTranslations.MonthViewPrinted.GetLang(),
-                                                  Globals.PrinterSoundFilePath);
-              });
-            finished = true;
-          };
-          finished = false;
-          timer.Start();
-          while ( !finished )
-          {
-            Application.DoEvents();
-          }
-        }
-      }
-      finally
-      {
-        ToolStrip.Enabled = true;
-        MenuTray.Enabled = true;
-        CalendarMonth.ShowTodayButton = true;
-        CalendarMonth.ShowArrowControls = true;
-      }
     }
 
     /// <summary>

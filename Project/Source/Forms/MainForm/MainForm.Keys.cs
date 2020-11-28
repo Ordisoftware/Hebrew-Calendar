@@ -84,10 +84,10 @@ namespace Ordisoftware.Hebrew.Calendar
           ActionPrint.PerformClick();
           return true;
         case Keys.Control | Keys.C:
-          ActionCopyReportToClipboard.PerformClick();
+          ActionCopyToClipboard.PerformClick();
           return true;
         case Keys.Control | Keys.S:
-          ActionSaveReport.PerformClick();
+          ActionSaveToFile.PerformClick();
           return true;
         case Keys.Alt | Keys.S:
           ActionExportCSV.PerformClick();
