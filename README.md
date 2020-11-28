@@ -161,6 +161,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set number of date bookmarks.
 - Add option to enable/disable usage statistics.
 - Improve usage statistics form.
+- Improve save and copy to use the current view (text report, month image or grid csv).
 - Improve UI/UX.
 
 #### 2020.11.26 - Version 5.9
@@ -175,8 +176,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve reminder sound selection box with more choices.
 - Improve preferences form.
 - Improve information menu.
-- Improve copy to clipboard to use the current view (text report, month image or grid csv).
-- Change save actions to save the current view (text report, month image or grid csv).
 - Improve UI/UX.
 - Optimize by preloading sounds lists in a thread.
 - Refactor project folders hierarchy.
