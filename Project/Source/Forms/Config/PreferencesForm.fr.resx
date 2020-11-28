@@ -794,4 +794,7 @@
   <data name="LabelDateBookmarksCount.Text" xml:space="preserve">
     <value>Nombre de signets de date (modification en temps réel : la réduction effacera les signets enregistrés)</value>
   </data>
+  <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
+    <value>Ouvrir le fichier exporté en cas de succès</value>
+  </data>
 </root>

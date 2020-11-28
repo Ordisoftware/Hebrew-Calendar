@@ -62,6 +62,8 @@ namespace Ordisoftware.Hebrew.Calendar
                                         Globals.KeyboardSoundFilePath);
       if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(filePath));
+      if ( Settings.AutoOpenExportedFile )
+        SystemManager.RunShell(filePath);
     }
 
     private void DoCopy()

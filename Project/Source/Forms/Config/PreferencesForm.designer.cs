@@ -65,6 +65,7 @@
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
       this.EditVacuumAtStartupInterval = new System.Windows.Forms.NumericUpDown();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
+      this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditStartupHide = new System.Windows.Forms.CheckBox();
@@ -107,10 +108,6 @@
       this.EditBigCalendarWarning = new System.Windows.Forms.CheckBox();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelSelectReminderSound = new System.Windows.Forms.LinkLabel();
       this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
@@ -185,7 +182,6 @@
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -202,6 +198,11 @@
       this.ActionResetCalculatorPath = new System.Windows.Forms.Button();
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
@@ -413,6 +414,7 @@
       this.TabPageApplication.Controls.Add(this.EditVacuumAtStartup);
       this.TabPageApplication.Controls.Add(this.EditVacuumAtStartupInterval);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
+      this.TabPageApplication.Controls.Add(this.EditAutoOpenExportedFile);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportFolder);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditStartupHide);
@@ -530,11 +532,19 @@
       this.ActionSelectLangFR.UseVisualStyleBackColor = true;
       this.ActionSelectLangFR.Click += new System.EventHandler(this.ActionSelectLangFR_Click);
       // 
+      // EditAutoOpenExportedFile
+      // 
+      resources.ApplyResources(this.EditAutoOpenExportedFile, "EditAutoOpenExportedFile");
+      this.EditAutoOpenExportedFile.Name = "EditAutoOpenExportedFile";
+      this.EditAutoOpenExportedFile.UseVisualStyleBackColor = true;
+      this.EditAutoOpenExportedFile.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportedFile_CheckedChanged);
+      // 
       // EditAutoOpenExportFolder
       // 
       resources.ApplyResources(this.EditAutoOpenExportFolder, "EditAutoOpenExportFolder");
       this.EditAutoOpenExportFolder.Name = "EditAutoOpenExportFolder";
       this.EditAutoOpenExportFolder.UseVisualStyleBackColor = true;
+      this.EditAutoOpenExportFolder.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // EditWebLinksMenuEnabled
       // 
@@ -909,38 +919,6 @@
       this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
       // 
       // TabPageReminder
       // 
@@ -1536,14 +1514,6 @@
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
       // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // TabPageTextReport
       // 
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
@@ -1692,6 +1662,46 @@
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
       // 
       // EditExportFolder
       // 
@@ -1944,5 +1954,6 @@
     private System.Windows.Forms.Label LabelDateBookmarksCountIntervalInfo;
     private System.Windows.Forms.NumericUpDown EditDateBookmarksCount;
     private System.Windows.Forms.Button ActionManageBookmarks;
+    private System.Windows.Forms.CheckBox EditAutoOpenExportedFile;
   }
 }

@@ -1103,7 +1103,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool AutoOpenExportFolder {
             get {
                 return ((bool)(this["AutoOpenExportFolder"]));
@@ -1746,6 +1746,18 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["ManageDateBookmarksFormClientSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoOpenExportedFile {
+            get {
+                return ((bool)(this["AutoOpenExportedFile"]));
+            }
+            set {
+                this["AutoOpenExportedFile"] = value;
             }
         }
     }

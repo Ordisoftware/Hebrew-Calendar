@@ -179,10 +179,9 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl+T : Go to today (also Numpad0)" + Globals.NL +
                         "Ctrl+D : Search a day" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+C : Copy text report to clipboard" + Globals.NL +
-                        "Ctrl+P : Print month view" + Globals.NL +
-                        "Ctrl+S : Save text report to text file" + Globals.NL +
-                        "Alt+S : Save text report to CSV file" + Globals.NL +
+                        "Ctrl+S : Save current view to file" + Globals.NL +
+                        "Ctrl+C : Copy current view to clipboard" + Globals.NL +
+                        "Ctrl+P : Print current view " + Globals.NL +
                         Globals.NL +
                         "Alt+C : Open windows calculator" + Globals.NL +
                         "Alt+T : Open windows date and time settings" + Globals.NL +
@@ -222,10 +221,9 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl+T : Aller à aujourd'hui (également Numpad0)" + Globals.NL +
                         "Ctrl+D : Chercher un jour" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+C : Copie le rapport dans le presse-papier" + Globals.NL +
-                        "Ctrl+P : Imprime la vue par mois" + Globals.NL +
-                        "Ctrl+S : Sauvegarde le rapport dans un fichier texte" + Globals.NL +
-                        "Alt+S : Sauvegarde le rapport dans un fichier CSV" + Globals.NL +
+                        "Ctrl+S : Sauvegarde la vue en cours dans un fichier" + Globals.NL +
+                        "Ctrl+C : Copie la vue en cours dans le presse-papier" + Globals.NL +
+                        "Ctrl+P : Imprime la vue en cours" + Globals.NL +
                         Globals.NL +
                         "Alt+C : Ouvre la calculatrice Windows" + Globals.NL +
                         "Alt+T : Ouvre les paramètres de date et heure de Windows" + Globals.NL +

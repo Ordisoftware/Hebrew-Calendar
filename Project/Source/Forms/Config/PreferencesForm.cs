@@ -174,7 +174,9 @@ namespace Ordisoftware.Hebrew.Calendar
       long starttime = Program.Settings.BenchmarkStartingApp;
       long loadtime = Program.Settings.BenchmarkLoadData;
       int shabat = EditShabatDay.SelectedIndex;
+      int bookmarksCount = Settings.DateBookmarksCount;
       Settings.Reset();
+      Settings.DateBookmarksCount = bookmarksCount;
       Settings.UpgradeResetRequiredV3_0 = false;
       Settings.UpgradeResetRequiredV3_6 = false;
       Settings.UpgradeResetRequiredV4_1 = false;
@@ -190,8 +192,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ShabatDay = shabat;
       Settings.RestoreMainForm();
       Settings.LanguageSelected = Languages.Current;
-      Program.Settings.BenchmarkStartingApp = starttime;
-      Program.Settings.BenchmarkLoadData = loadtime;
+      Settings.BenchmarkStartingApp = starttime;
+      Settings.BenchmarkLoadData = loadtime;
       Close();
     }
 
@@ -712,6 +714,19 @@ namespace Ordisoftware.Hebrew.Calendar
       Program.DateBookmarks.Resize(Settings.DateBookmarksCount);
       DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
     }
+
+    private void EditAutoOpenExportFolder_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
+        EditAutoOpenExportedFile.Checked = false;
+    }
+
+    private void EditAutoOpenExportedFile_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
+        EditAutoOpenExportFolder.Checked = false;
+    }
+
   }
 
 }

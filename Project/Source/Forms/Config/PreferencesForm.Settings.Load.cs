@@ -32,12 +32,13 @@ namespace Ordisoftware.Hebrew.Calendar
       EditCalendarColorDefaultText.BackColor = Settings.MonthViewTextColor;
       EditDebuggerEnabled.Checked = Settings.DebuggerEnabled;
       EditVacuumAtStartup.Checked = Settings.VacuumAtStartup;
-      EditVacuumAtStartupInterval.Value = (int)Settings.VacuumAtStartupDaysInterval;
+      EditVacuumAtStartupInterval.Value = Settings.VacuumAtStartupDaysInterval;
       EditHebrewLettersPath.Text = Settings.HebrewLettersExe;
       EditCalculatorPath.Text = Settings.CalculatorExe;
       EditAutoLockSession.Checked = Settings.AutoLockSession;
       EditAutoLockSessionTimeOut.Value = Settings.AutoLockSessionTimeOut;
       EditAutoOpenExportFolder.Checked = Settings.AutoOpenExportFolder;
+      EditAutoOpenExportedFile.Checked = Settings.AutoOpenExportedFile;
       EditBalloon.Checked = Settings.BalloonEnabled;
       EditBalloonOnlyIfMainFormIsHidden.Checked = Settings.BalloonOnlyIfMainFormIsHidden;
       EditBalloonAutoHide.Checked = Settings.BalloonAutoHide;
