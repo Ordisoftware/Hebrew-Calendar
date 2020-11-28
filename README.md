@@ -124,9 +124,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Shift+Ctrl+Tab : Previous view
 - Ctrl+T : Go to today (also Numpad0)
 - Ctrl+D : Search a day
+- Ctrl+S : Save current view to a file
 - Ctrl+C : Copy current view to clipboard
 - Ctrl+P : Print current view
-- Ctrl+S : Save text report to text file
 - Alt+C : Open windows calculator
 - Alt+T : Open windows date and time settings
 - Ctrl+F1 : Dates difference calculator
