@@ -11,10 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
-using System.IO;
-using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -56,13 +54,7 @@ namespace Ordisoftware.Hebrew.Calendar
       UpdateLocalization();
       if ( SystemManager.CommandLineOptions.ContainsKey("reset") )
       {
-        SystemManager.TryCatch(() =>
-        {
-          var list = Directory.GetDirectories(Globals.UserLocalDataFolderPath, "Ordisoftware.Hebrew.Cal*")
-                     .Concat(Directory.GetDirectories(Globals.UserLocalDataFolderPath, "Ordisoftware.HebrewCal*"));
-          foreach ( var item in list )
-            Directory.Delete(item, true);
-        });
+        SystemManager.CleanAllLocalAppSettingsFolders();
         CheckSettingsReset(true);
       }
       else
