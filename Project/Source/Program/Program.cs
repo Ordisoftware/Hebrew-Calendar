@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,6 +52,12 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.CheckCommandLineArguments(args, ref lang);
       Settings.LanguageSelected = lang;
       UpdateLocalization();
+      if ( SystemManager.CommandLineOptions.ContainsKey("reset") )
+      {
+        SystemManager.CleanAllLocalAppSettingsFolders();
+        CheckSettingsReset(true);
+      }
+      else
       if ( !Settings.FirstLaunch )
       {
         if ( SystemManager.CommandLineOptions.ContainsKey("hide") )
@@ -88,13 +94,14 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Check if settings must be reseted.
     /// </summary>
-    private static void CheckSettingsReset()
+    private static void CheckSettingsReset(bool force = false)
     {
-      if ( Settings.UpgradeResetRequiredV3_0
+      if ( force
+        || Settings.UpgradeResetRequiredV3_0
         || Settings.UpgradeResetRequiredV3_6
         || Settings.UpgradeResetRequiredV4_1 )
       {
-        if ( !Settings.FirstLaunch )
+        if ( !force && !Settings.FirstLaunch )
           DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
         Settings.Reset();
         Settings.LanguageSelected = Languages.Current;

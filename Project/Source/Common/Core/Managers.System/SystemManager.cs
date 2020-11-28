@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-10 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -19,11 +19,8 @@ using System.IO.Pipes;
 using System.Configuration;
 using System.Diagnostics;
 using System.Threading;
-using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Versioning;
 using System.Windows.Forms;
-using System.Management;
 using Microsoft.Win32;
 
 namespace Ordisoftware.Core
@@ -97,6 +94,26 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Delete all app settings folders in User\AppData\Local.
+    /// </summary>
+    static public void CleanAllLocalAppSettingsFolders()
+    {
+      try
+      {
+        string filter = Globals.ApplicationExeFileName.Substring(0, 25) + "*";
+        string filterold = filter.Replace("Hebrew.", "Hebrew");
+        var list = Directory.GetDirectories(Globals.UserLocalDataFolderPath, filter)
+                   .Concat(Directory.GetDirectories(Globals.UserLocalDataFolderPath, filterold));
+        foreach ( var item in list )
+          Directory.Delete(item, true);
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+    }
+
+    /// <summary>
     /// Check is application's settings must be upgraded and apply it if necessary.
     /// </summary>
     static public void CheckUpgradeRequired(this ApplicationSettingsBase settings, ref bool upgradeRequired)
@@ -116,16 +133,21 @@ namespace Ordisoftware.Core
       }
     }
 
+    private const string RegistryKeyRun = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+
+    /// <summary>
+    /// Indicate if the application stars with windows user session or not.
+    /// </summary>
     static public bool StartWithWindowsUserRegistry
     {
       get
       {
-        var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+        var key = Registry.CurrentUser.OpenSubKey(RegistryKeyRun, true);
         return (string)key.GetValue(Globals.ApplicationFullFileName) == Globals.ApplicationStartupRegistryValue;
       }
       set
       {
-        var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+        var key = Registry.CurrentUser.OpenSubKey(RegistryKeyRun, true);
         if ( value )
           key.SetValue(Globals.ApplicationFullFileName, Globals.ApplicationStartupRegistryValue);
         else
@@ -165,7 +187,7 @@ namespace Ordisoftware.Core
         action();
         return true;
       }
-      catch (Exception ex)
+      catch ( Exception ex )
       {
         ex.Manage(ShowExceptionMode.None);
         return false;
@@ -229,130 +251,6 @@ namespace Ordisoftware.Core
       return result;
     }
 
-    private const string HKLMWinNTCurrent = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion";
-
-    /// <summary>
-    /// Indicate the processor name.
-    /// </summary>
-    static public string Processor
-    {
-      get
-      {
-        if ( _Processor.IsNullOrEmpty() )
-          try
-          {
-            var list = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor").Get();
-            var enumerator = list.GetEnumerator();
-            bool newline = false;
-            if ( enumerator.MoveNext() )
-              do
-              {
-                _Processor = (string)enumerator.Current["Name"];
-                newline = enumerator.MoveNext();
-                if ( newline ) _Processor += Globals.NL;
-              }
-              while ( newline );
-          }
-          catch
-          {
-            _Processor = SysTranslations.UndefinedSlot.GetLang();
-          }
-        return _Processor;
-      }
-    }
-    static private string _Processor;
-
-    /// <summary>
-    /// Indicate the operating system, framework and CLR names and versions.
-    /// </summary>
-    static public string Platform
-    {
-      get
-      {
-        if ( _Platform.IsNullOrEmpty() )
-        {
-          string osName = get(() => Registry.GetValue(HKLMWinNTCurrent, "productName", "").ToString());
-          string osRelease = get(() => Registry.GetValue(HKLMWinNTCurrent, "ReleaseId", "").ToString());
-          if ( !osRelease.IsNullOrEmpty() ) osRelease = $" ({ osRelease})";
-          string osVersion = Environment.OSVersion.Version.ToString();
-          string osType = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
-          string clr = Environment.Version.ToString();
-          string dotnet = get(() =>
-          {
-            var attributes = Assembly.GetExecutingAssembly().CustomAttributes;
-            var result = attributes.FirstOrDefault(a => a.AttributeType == typeof(TargetFrameworkAttribute));
-            return result == null
-                   ? ".NET Framework " + SysTranslations.UndefinedSlot.GetLang()
-                   : result.NamedArguments[0].TypedValue.Value.ToString();
-          });
-          _Platform = $"{osName} {osType} {osVersion}{osRelease}{Globals.NL}{dotnet}{Globals.NL}CLR {clr}";
-        }
-        return _Platform;
-        string get(Func<string> func)
-        {
-          try { return func(); }
-          catch { return SysTranslations.UndefinedSlot.GetLang(); }
-        }
-      }
-    }
-    static private string _Platform;
-
-    /// <summary>
-    /// Indicate the free physical memory formatted.
-    /// </summary>
-    static public string PhysicalMemoryFree
-    {
-      get
-      {
-        object value = GetWin32OperatingSystemValue("FreePhysicalMemory");
-        return value != null ? ( (ulong)value * 1024 ).FormatBytesSize() : SysTranslations.UndefinedSlot.GetLang();
-      }
-    }
-
-    /// <summary>
-    /// Indicate the total physical memory formatted.
-    /// </summary>
-    static public string TotalVisibleMemory
-    {
-      get
-      {
-        if ( _TotalVisibleMemory.IsNullOrEmpty() )
-        {
-          object value = GetWin32OperatingSystemValue("TotalVisibleMemorySize");
-          _TotalVisibleMemory = value != null
-                                ? ( (ulong)value * 1024 ).FormatBytesSize()
-                                : SysTranslations.UndefinedSlot.GetLang();
-        }
-        return _TotalVisibleMemory;
-      }
-    }
-    static private string _TotalVisibleMemory;
-
-
-    /// <summary>
-    /// Get a Windows Management Object value.
-    /// </summary>
-    static public object GetWin32OperatingSystemValue(string name)
-    {
-      try
-      {
-        var wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
-        var list = new ManagementObjectSearcher(wql).Get();
-        if ( list.Count > 0 )
-        {
-          var enumerator = list.GetEnumerator();
-          if ( enumerator.MoveNext() )
-          {
-            var instance = enumerator.Current;
-            return instance[name];
-          }
-        }
-      }
-      catch
-      {
-      }
-      return null;
-    }
   }
 
 }

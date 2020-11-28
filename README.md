@@ -80,6 +80,10 @@ The software verifies the validity of the certificate of the update server in ad
 
 Reset the preferences to default: it will restore the corrupted values in case of a problem after install or upgrade.
 
+#### What to do if the application does not work normally despite restoring settings?
+
+Use the start menu link "Ordisoftware\Hebrew Calendar\Reset Hebrew Calendar preferences". This will erase all settings as well as those of old versions, which should resolve issues if there is a conflict, otherwise please contact support.
+
 #### What are the times of celebration?
 
 The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
@@ -166,7 +170,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to restore the last view at startup else go to the month.
 - Add option to enable/disable usage statistics.
 - Improve usage statistics form.
+- Improve start menu reset settings to delete all previous app settings folders in AppData\Local.
 - Improve UI/UX.
+- Update help.
 
 #### 2020.11.26 - Version 5.9
 
