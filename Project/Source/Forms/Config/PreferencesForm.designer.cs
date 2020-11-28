@@ -29,8 +29,8 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.Windows.Forms.Label LabelDateBookmarksCount;
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
+      System.Windows.Forms.Label LabelDateBookmarksCount;
       System.Windows.Forms.Label LabelVolume;
       System.Windows.Forms.Label LabelCheckUpdateFrequency;
       System.Windows.Forms.Label LabelTrayIconClickOpen;
@@ -55,6 +55,7 @@
       this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
+      this.EditSelectViewToExport = new System.Windows.Forms.CheckBox();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
       this.LabelDateBookmarksCountIntervalInfo = new System.Windows.Forms.Label();
       this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
@@ -73,7 +74,7 @@
       this.EditStartWithWindows = new System.Windows.Forms.CheckBox();
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
       this.EditLogEnabled = new System.Windows.Forms.CheckBox();
-      this.TabPageCheckUpdate = new System.Windows.Forms.TabPage();
+      this.TabPageStartup = new System.Windows.Forms.TabPage();
       this.LabelCheckUpdateAtStartupInfo = new System.Windows.Forms.Label();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
@@ -198,6 +199,7 @@
       this.ActionResetCalculatorPath = new System.Windows.Forms.Button();
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditRestoreLastViewAtStartup = new System.Windows.Forms.CheckBox();
       this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
@@ -223,7 +225,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
-      this.TabPageCheckUpdate.SuspendLayout();
+      this.TabPageStartup.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).BeginInit();
       this.TabPageTrayIcon.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).BeginInit();
@@ -246,56 +248,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.TabPagePaths.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // LabelDateBookmarksCount
-      // 
-      resources.ApplyResources(LabelDateBookmarksCount, "LabelDateBookmarksCount");
-      LabelDateBookmarksCount.Name = "LabelDateBookmarksCount";
-      // 
-      // LabelVolume
-      // 
-      resources.ApplyResources(LabelVolume, "LabelVolume");
-      LabelVolume.Name = "LabelVolume";
-      // 
-      // LabelCheckUpdateFrequency
-      // 
-      resources.ApplyResources(LabelCheckUpdateFrequency, "LabelCheckUpdateFrequency");
-      LabelCheckUpdateFrequency.Name = "LabelCheckUpdateFrequency";
-      // 
-      // LabelTrayIconClickOpen
-      // 
-      resources.ApplyResources(LabelTrayIconClickOpen, "LabelTrayIconClickOpen");
-      LabelTrayIconClickOpen.Name = "LabelTrayIconClickOpen";
-      // 
-      // LabelGPSLatitude
-      // 
-      resources.ApplyResources(LabelGPSLatitude, "LabelGPSLatitude");
-      LabelGPSLatitude.Name = "LabelGPSLatitude";
-      // 
-      // LabelTimeZone
-      // 
-      resources.ApplyResources(LabelTimeZone, "LabelTimeZone");
-      LabelTimeZone.Name = "LabelTimeZone";
-      // 
-      // LabelGPSLongitude
-      // 
-      resources.ApplyResources(LabelGPSLongitude, "LabelGPSLongitude");
-      LabelGPSLongitude.Name = "LabelGPSLongitude";
-      // 
-      // LabelExportFolder
-      // 
-      resources.ApplyResources(LabelExportFolder, "LabelExportFolder");
-      LabelExportFolder.Name = "LabelExportFolder";
-      // 
-      // LabelCalculatorPath
-      // 
-      resources.ApplyResources(LabelCalculatorPath, "LabelCalculatorPath");
-      LabelCalculatorPath.Name = "LabelCalculatorPath";
-      // 
-      // LabelHebrewLettersPath
-      // 
-      resources.ApplyResources(LabelHebrewLettersPath, "LabelHebrewLettersPath");
-      LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
       // 
       // DialogColor
       // 
@@ -383,7 +335,7 @@
       // 
       resources.ApplyResources(this.TabControl, "TabControl");
       this.TabControl.Controls.Add(this.TabPageApplication);
-      this.TabControl.Controls.Add(this.TabPageCheckUpdate);
+      this.TabControl.Controls.Add(this.TabPageStartup);
       this.TabControl.Controls.Add(this.TabPageTrayIcon);
       this.TabControl.Controls.Add(this.TabPageNavigationWindow);
       this.TabControl.Controls.Add(this.TabPageGeneration);
@@ -402,6 +354,7 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageApplication.Controls.Add(this.EditSelectViewToExport);
       this.TabPageApplication.Controls.Add(this.ActionManageBookmarks);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
@@ -409,21 +362,22 @@
       this.TabPageApplication.Controls.Add(LabelDateBookmarksCount);
       this.TabPageApplication.Controls.Add(LabelVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
-      this.TabPageApplication.Controls.Add(this.LabelOptimizeDatabaseIntervalInfo);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
-      this.TabPageApplication.Controls.Add(this.EditVacuumAtStartup);
-      this.TabPageApplication.Controls.Add(this.EditVacuumAtStartupInterval);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportedFile);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportFolder);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
-      this.TabPageApplication.Controls.Add(this.EditStartupHide);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
-      this.TabPageApplication.Controls.Add(this.EditStartWithWindows);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
       this.TabPageApplication.Controls.Add(this.EditLogEnabled);
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
+      // 
+      // EditSelectViewToExport
+      // 
+      resources.ApplyResources(this.EditSelectViewToExport, "EditSelectViewToExport");
+      this.EditSelectViewToExport.Name = "EditSelectViewToExport";
+      this.EditSelectViewToExport.UseVisualStyleBackColor = true;
       // 
       // ActionManageBookmarks
       // 
@@ -472,6 +426,16 @@
       this.EditVolume.TickFrequency = 10;
       this.EditVolume.Value = 100;
       this.EditVolume.ValueChanged += new System.EventHandler(this.EditVolume_ValueChanged);
+      // 
+      // LabelDateBookmarksCount
+      // 
+      resources.ApplyResources(LabelDateBookmarksCount, "LabelDateBookmarksCount");
+      LabelDateBookmarksCount.Name = "LabelDateBookmarksCount";
+      // 
+      // LabelVolume
+      // 
+      resources.ApplyResources(LabelVolume, "LabelVolume");
+      LabelVolume.Name = "LabelVolume";
       // 
       // LabelVolumeValue
       // 
@@ -586,17 +550,28 @@
       this.EditLogEnabled.UseVisualStyleBackColor = true;
       this.EditLogEnabled.CheckedChanged += new System.EventHandler(this.EditLogEnabled_CheckedChanged);
       // 
-      // TabPageCheckUpdate
+      // TabPageStartup
       // 
-      this.TabPageCheckUpdate.BackColor = System.Drawing.SystemColors.Window;
-      this.TabPageCheckUpdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageCheckUpdate.Controls.Add(LabelCheckUpdateFrequency);
-      this.TabPageCheckUpdate.Controls.Add(this.LabelCheckUpdateAtStartupInfo);
-      this.TabPageCheckUpdate.Controls.Add(this.EditCheckUpdateAtStartup);
-      this.TabPageCheckUpdate.Controls.Add(this.EditCheckUpdateEveryWeek);
-      this.TabPageCheckUpdate.Controls.Add(this.EditCheckUpdateAtStartupInterval);
-      resources.ApplyResources(this.TabPageCheckUpdate, "TabPageCheckUpdate");
-      this.TabPageCheckUpdate.Name = "TabPageCheckUpdate";
+      this.TabPageStartup.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageStartup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageStartup.Controls.Add(LabelCheckUpdateFrequency);
+      this.TabPageStartup.Controls.Add(this.LabelCheckUpdateAtStartupInfo);
+      this.TabPageStartup.Controls.Add(this.EditCheckUpdateAtStartup);
+      this.TabPageStartup.Controls.Add(this.EditCheckUpdateEveryWeek);
+      this.TabPageStartup.Controls.Add(this.EditCheckUpdateAtStartupInterval);
+      this.TabPageStartup.Controls.Add(this.EditStartWithWindows);
+      this.TabPageStartup.Controls.Add(this.EditStartupHide);
+      this.TabPageStartup.Controls.Add(this.EditVacuumAtStartupInterval);
+      this.TabPageStartup.Controls.Add(this.EditRestoreLastViewAtStartup);
+      this.TabPageStartup.Controls.Add(this.EditVacuumAtStartup);
+      this.TabPageStartup.Controls.Add(this.LabelOptimizeDatabaseIntervalInfo);
+      resources.ApplyResources(this.TabPageStartup, "TabPageStartup");
+      this.TabPageStartup.Name = "TabPageStartup";
+      // 
+      // LabelCheckUpdateFrequency
+      // 
+      resources.ApplyResources(LabelCheckUpdateFrequency, "LabelCheckUpdateFrequency");
+      LabelCheckUpdateFrequency.Name = "LabelCheckUpdateFrequency";
       // 
       // LabelCheckUpdateAtStartupInfo
       // 
@@ -661,6 +636,11 @@
       resources.ApplyResources(this.LabelLoomingDelayIntervalInfo, "LabelLoomingDelayIntervalInfo");
       this.LabelLoomingDelayIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelLoomingDelayIntervalInfo.Name = "LabelLoomingDelayIntervalInfo";
+      // 
+      // LabelTrayIconClickOpen
+      // 
+      resources.ApplyResources(LabelTrayIconClickOpen, "LabelTrayIconClickOpen");
+      LabelTrayIconClickOpen.Name = "LabelTrayIconClickOpen";
       // 
       // EditBalloonLoomingDelay
       // 
@@ -899,11 +879,26 @@
       this.SelectAutoGenerateYearsInterval.UseVisualStyleBackColor = true;
       this.SelectAutoGenerateYearsInterval.Click += new System.EventHandler(this.SelectAutoGenerateYearsInterval_Click);
       // 
+      // LabelGPSLatitude
+      // 
+      resources.ApplyResources(LabelGPSLatitude, "LabelGPSLatitude");
+      LabelGPSLatitude.Name = "LabelGPSLatitude";
+      // 
+      // LabelTimeZone
+      // 
+      resources.ApplyResources(LabelTimeZone, "LabelTimeZone");
+      LabelTimeZone.Name = "LabelTimeZone";
+      // 
       // EditBigCalendarWarning
       // 
       resources.ApplyResources(this.EditBigCalendarWarning, "EditBigCalendarWarning");
       this.EditBigCalendarWarning.Name = "EditBigCalendarWarning";
       this.EditBigCalendarWarning.UseVisualStyleBackColor = true;
+      // 
+      // LabelGPSLongitude
+      // 
+      resources.ApplyResources(LabelGPSLongitude, "LabelGPSLongitude");
+      LabelGPSLongitude.Name = "LabelGPSLongitude";
       // 
       // EditAutoRegenerate
       // 
@@ -1229,7 +1224,6 @@
       // 
       // PanelCalendarColors
       // 
-      resources.ApplyResources(this.PanelCalendarColors, "PanelCalendarColors");
       this.PanelCalendarColors.Controls.Add(this.label1);
       this.PanelCalendarColors.Controls.Add(this.EditEventColorTorah);
       this.PanelCalendarColors.Controls.Add(this.EditEventColorShabat);
@@ -1260,6 +1254,7 @@
       this.PanelCalendarColors.Controls.Add(this.LabelColorTorah);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTodayBack);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorTorahEvent);
+      resources.ApplyResources(this.PanelCalendarColors, "PanelCalendarColors");
       this.PanelCalendarColors.Name = "PanelCalendarColors";
       // 
       // label1
@@ -1615,6 +1610,11 @@
       resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
       this.TabPagePaths.Name = "TabPagePaths";
       // 
+      // LabelExportFolder
+      // 
+      resources.ApplyResources(LabelExportFolder, "LabelExportFolder");
+      LabelExportFolder.Name = "LabelExportFolder";
+      // 
       // ActionResetExportFolder
       // 
       this.ActionResetExportFolder.FlatAppearance.BorderSize = 0;
@@ -1630,6 +1630,11 @@
       this.button2.Name = "button2";
       this.button2.UseVisualStyleBackColor = true;
       this.button2.Click += new System.EventHandler(this.button2_Click);
+      // 
+      // LabelCalculatorPath
+      // 
+      resources.ApplyResources(LabelCalculatorPath, "LabelCalculatorPath");
+      LabelCalculatorPath.Name = "LabelCalculatorPath";
       // 
       // ActionResetHebrewLettersPath
       // 
@@ -1655,6 +1660,11 @@
       this.ActionSelectCalculatorPath.UseVisualStyleBackColor = true;
       this.ActionSelectCalculatorPath.Click += new System.EventHandler(this.ActionSelectCalculatorPath_Click);
       // 
+      // LabelHebrewLettersPath
+      // 
+      resources.ApplyResources(LabelHebrewLettersPath, "LabelHebrewLettersPath");
+      LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
+      // 
       // ActionSelectHebrewLettersPath
       // 
       this.ActionSelectHebrewLettersPath.FlatAppearance.BorderSize = 0;
@@ -1662,6 +1672,12 @@
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
+      // 
+      // EditRestoreLastViewAtStartup
+      // 
+      resources.ApplyResources(this.EditRestoreLastViewAtStartup, "EditRestoreLastViewAtStartup");
+      this.EditRestoreLastViewAtStartup.Name = "EditRestoreLastViewAtStartup";
+      this.EditRestoreLastViewAtStartup.UseVisualStyleBackColor = true;
       // 
       // EditGPSLatitude
       // 
@@ -1751,8 +1767,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
-      this.TabPageCheckUpdate.ResumeLayout(false);
-      this.TabPageCheckUpdate.PerformLayout();
+      this.TabPageStartup.ResumeLayout(false);
+      this.TabPageStartup.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).EndInit();
       this.TabPageTrayIcon.ResumeLayout(false);
       this.TabPageTrayIcon.PerformLayout();
@@ -1945,7 +1961,7 @@
     private System.Windows.Forms.Label LabelReminderCelebrationsIntervalInfo;
     private System.Windows.Forms.Label LabelRemindCelebrationHoursBeforeIntervalInfo;
     private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
-    private System.Windows.Forms.TabPage TabPageCheckUpdate;
+    private System.Windows.Forms.TabPage TabPageStartup;
     private System.Windows.Forms.TrackBar EditVolume;
     private System.Windows.Forms.Label LabelVolumeValue;
     private System.Windows.Forms.LinkLabel LabelSelectReminderSound;
@@ -1955,5 +1971,7 @@
     private System.Windows.Forms.NumericUpDown EditDateBookmarksCount;
     private System.Windows.Forms.Button ActionManageBookmarks;
     private System.Windows.Forms.CheckBox EditAutoOpenExportedFile;
+    private System.Windows.Forms.CheckBox EditSelectViewToExport;
+    private System.Windows.Forms.CheckBox EditRestoreLastViewAtStartup;
   }
 }

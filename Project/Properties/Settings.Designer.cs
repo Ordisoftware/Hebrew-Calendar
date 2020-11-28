@@ -1760,5 +1760,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["AutoOpenExportedFile"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SelectViewToExport {
+            get {
+                return ((bool)(this["SelectViewToExport"]));
+            }
+            set {
+                this["SelectViewToExport"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RestoreLastViewAtStartup {
+            get {
+                return ((bool)(this["RestoreLastViewAtStartup"]));
+            }
+            set {
+                this["RestoreLastViewAtStartup"] = value;
+            }
+        }
     }
 }

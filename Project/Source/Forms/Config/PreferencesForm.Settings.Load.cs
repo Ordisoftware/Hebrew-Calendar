@@ -97,6 +97,8 @@ namespace Ordisoftware.Hebrew.Calendar
       EditVolume.Value = Settings.ApplicationVolume;
       EditDateBookmarksCount.Value = Settings.DateBookmarksCount;
       EditUsageStatisticsEnabled.Checked = Settings.UsageStatisticsEnabled;
+      EditSelectViewToExport.Checked = Settings.SelectViewToExport;
+      EditRestoreLastViewAtStartup.Checked = Settings.RestoreLastViewAtStartup;
       EditLogEnabled_CheckedChanged(null, null);
     }
 

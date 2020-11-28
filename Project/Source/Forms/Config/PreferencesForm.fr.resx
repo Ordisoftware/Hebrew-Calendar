@@ -241,8 +241,8 @@
   <data name="EditLogEnabled.Text" xml:space="preserve">
     <value>Activer le fichier log</value>
   </data>
-  <data name="TabPageCheckUpdate.Text" xml:space="preserve">
-    <value>Mise à jour</value>
+  <data name="TabPageStartup.Text" xml:space="preserve">
+    <value>Démarrage</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 17</value>
@@ -796,5 +796,11 @@
   </data>
   <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
     <value>Ouvrir le fichier exporté en cas de succès</value>
+  </data>
+  <data name="EditRestoreLastViewAtStartup.Text" xml:space="preserve">
+    <value>Restaurer la vue précédente au démarrage</value>
+  </data>
+  <data name="EditSelectViewToExport.Text" xml:space="preserve">
+    <value>Sélectionner la vue à sauvegarder, copier ou imprimer</value>
   </data>
 </root>
