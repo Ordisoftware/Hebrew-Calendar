@@ -58,8 +58,8 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         SystemManager.TryCatch(() =>
         {
-          var list = Directory.GetDirectories(Globals.UserLocalDataFolderPath, "Ordisoftware.Hebrew.Calen*")
-                     .Concat(Directory.GetDirectories(Globals.UserLocalDataFolderPath, "Ordisoftware.HebrewCalen*"));
+          var list = Directory.GetDirectories(Globals.UserLocalDataFolderPath, "Ordisoftware.Hebrew.Cal*")
+                     .Concat(Directory.GetDirectories(Globals.UserLocalDataFolderPath, "Ordisoftware.HebrewCal*"));
           foreach ( var item in list )
             Directory.Delete(item, true);
         });
