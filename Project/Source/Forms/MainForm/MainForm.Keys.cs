@@ -80,17 +80,14 @@ namespace Ordisoftware.Hebrew.Calendar
         case Keys.Control | Keys.D:
           ActionSearchDay.PerformClick();
           return true;
-        case Keys.Control | Keys.P:
-          ActionPrint.PerformClick();
+        case Keys.Control | Keys.S:
+          ActionSaveToFile.PerformClick();
           return true;
         case Keys.Control | Keys.C:
           ActionCopyToClipboard.PerformClick();
           return true;
-        case Keys.Control | Keys.S:
-          ActionSaveToFile.PerformClick();
-          return true;
-        case Keys.Alt | Keys.S:
-          ActionExportCSV.PerformClick();
+        case Keys.Control | Keys.P:
+          ActionPrint.PerformClick();
           return true;
         // Month view calendar navigation
         case Keys.Home:
