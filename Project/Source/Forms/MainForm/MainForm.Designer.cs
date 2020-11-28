@@ -166,6 +166,8 @@
       this.DataSet = new Ordisoftware.Hebrew.Calendar.Data.DataSet();
       this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
+      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+      this.LabelGridGoToToday = new System.Windows.Forms.ToolStripLabel();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -325,7 +327,9 @@
             this.bindingNavigatorCountItem,
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem});
+            this.bindingNavigatorMoveLastItem,
+            this.toolStripSeparator5,
+            this.LabelGridGoToToday});
       resources.ApplyResources(this.LunisolarDaysBindingNavigator, "LunisolarDaysBindingNavigator");
       this.LunisolarDaysBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
       this.LunisolarDaysBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -1253,6 +1257,17 @@
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
+      // toolStripSeparator5
+      // 
+      this.toolStripSeparator5.Name = "toolStripSeparator5";
+      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+      // 
+      // LabelGridGoToToday
+      // 
+      this.LabelGridGoToToday.Name = "LabelGridGoToToday";
+      resources.ApplyResources(this.LabelGridGoToToday, "LabelGridGoToToday");
+      this.LabelGridGoToToday.Click += new System.EventHandler(this.LabelGridGoToToday_Click);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1432,6 +1447,8 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripMenuItem ActionShowKeyboardNotice;
     internal System.Windows.Forms.ToolStripMenuItem EditShowSuccessDialogs;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+    private System.Windows.Forms.ToolStripLabel LabelGridGoToToday;
   }
 }
 

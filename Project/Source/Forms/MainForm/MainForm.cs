@@ -899,6 +899,16 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by LabelGridGoToToday for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void LabelGridGoToToday_Click(object sender, EventArgs e)
+    {
+      GoToDate(DateTime.Today);
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionSearchEvent for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

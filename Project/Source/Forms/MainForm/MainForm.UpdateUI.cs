@@ -93,6 +93,8 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionSearchDay.Enabled = ActionSaveReport.Enabled;
         ActionNavigate.Enabled = ActionSaveReport.Enabled;
         ActionViewCelebrations.Enabled = ActionSaveReport.Enabled;
+        ActionCopyReportToClipboard.Enabled = Settings.CurrentView != ViewMode.Grid;
+        ActionPrint.Enabled = Settings.CurrentView != ViewMode.Grid;
         Refresh();
       });
     }
