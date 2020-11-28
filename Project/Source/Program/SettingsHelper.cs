@@ -104,6 +104,9 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.EditShowSuccessDialogs.Checked = settings.ShowSuccessDialogs;
       DisplayManager.ShowSuccessDialogs = settings.ShowSuccessDialogs;
       MainForm.EditDialogBoxesSettings_CheckedChanged(null, null);
+      //
+      if ( settings.AutoOpenExportedFile && settings.AutoOpenExportFolder )
+        settings.AutoOpenExportFolder = false;
     }
 
     /// <summary>

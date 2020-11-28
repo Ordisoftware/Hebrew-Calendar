@@ -300,10 +300,7 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Action.SaveCopy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Action.Print.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Action.SaveCopyPrint.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoon.cs">
