@@ -10,28 +10,49 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2019-10 </created>
-/// <edited> 2019-10 </edited>
+/// <created> 2020-11 </created>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Windows.Forms;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SelectBirthTime : Form
+  public partial class SelectViewForm : Form
   {
 
-    static public bool Run(out TimeSpan time)
+    static public bool Run(ref ViewMode view, string title)
     {
-      using ( var form = new SelectBirthTime() )
+      using ( var form = new SelectViewForm() )
       {
+        form.Text += title;
+        switch ( view )
+        {
+          case ViewMode.Text:
+            form.SelectText.Checked = true;
+            break;
+          case ViewMode.Month:
+            form.SelectMonth.Checked = true;
+            break;
+          case ViewMode.Grid:
+            form.SelectGrid.Checked = true;
+            break;
+        }
         bool result = form.ShowDialog() == DialogResult.OK;
-        time = result ? form.EditTime.Value.TimeOfDay : TimeSpan.MinValue;
+        if ( result )
+        {
+          if ( form.SelectText.Checked )
+            view = ViewMode.Text;
+          if ( form.SelectMonth.Checked )
+            view = ViewMode.Month;
+          if ( form.SelectGrid.Checked )
+            view = ViewMode.Grid;
+        }
         return result;
       }
     }
 
-    private SelectBirthTime()
+    private SelectViewForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

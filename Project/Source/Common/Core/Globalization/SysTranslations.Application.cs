@@ -89,6 +89,27 @@ namespace Ordisoftware.Core
         [Language.FR] = "Vous pouvez choisir Oui pour continuer ou Non pour terminer."
       };
 
+    static public readonly TranslationsDictionary TitleSaveToFile
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Save to file",
+        [Language.FR] = "Sauver dans un fichier"
+      };
+
+    static public readonly TranslationsDictionary TitleCopyToClipboard
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Copy to clipboard",
+        [Language.FR] = "Copier dans le presse-papier"
+      };
+
+    static public readonly TranslationsDictionary TitlePrint
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Print",
+        [Language.FR] = "Imprimer"
+      };
+
     static public readonly NullSafeDictionary<bool, TranslationsDictionary> HideRestoreCaption
       = new NullSafeDictionary<bool, TranslationsDictionary>()
       {

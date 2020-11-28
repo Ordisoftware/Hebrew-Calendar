@@ -220,7 +220,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var date = DateTime.Today; // TODO use saved birthday
       if ( !SelectDayForm.Run(AppTranslations.SelectBirthday.GetLang(), ref date) ) return;
-      if ( !SelectBirthTime.Run(out var time) ) return;
+      if ( !SelectBirthTimeForm.Run(out var time) ) return;
       if ( time >= new TimeSpan(0, 0, 0) && time < CalendarDates.Instance[date].Ephemerisis.Sunset )
         date = date.AddDays(-1);
       Settings.ShabatDay = (int)date.DayOfWeek;

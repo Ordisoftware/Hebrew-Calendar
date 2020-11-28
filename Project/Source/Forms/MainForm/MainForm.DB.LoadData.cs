@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.IO;
 using System.Data;
@@ -108,7 +108,10 @@ namespace Ordisoftware.Hebrew.Calendar
         DataSet.LunisolarDays.RowChanged -= update;
         try
         {
-          SetView(Settings.CurrentView, true);
+          if ( Settings.RestoreLastViewAtStartup )
+            SetView(Settings.CurrentView, true);
+          else
+            SetView(ViewMode.Month, true);
           UpdateButtons();
         }
         catch ( Exception ex )

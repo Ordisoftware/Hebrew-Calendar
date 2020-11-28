@@ -158,11 +158,14 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.06 - Version 5.10
 
-- Add option to open exported file.
-- Add option to set number of date bookmarks.
+- Change save, copy and print to use the current view (text report, month image or grid csv).
+- Add save/copy/print view selection box.
+- Add option to select the view to save/copy/print else use the current.
+- Add option to auto open exported file.
+- Add option to set the number of date bookmarks.
+- Add option to restore the last view at startup else go to the month.
 - Add option to enable/disable usage statistics.
 - Improve usage statistics form.
-- Improve save, copy and print to use the current view (text report, month image or grid csv).
 - Improve UI/UX.
 
 #### 2020.11.26 - Version 5.9

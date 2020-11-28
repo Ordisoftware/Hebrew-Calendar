@@ -285,6 +285,12 @@
     <Compile Include="Source\Common\Core\Classes\SoundItem.cs" />
     <Compile Include="Source\Common\Core\Classes\SoundSource.cs" />
     <Compile Include="Source\Entities\DateBookmarks.cs" />
+    <Compile Include="Source\Forms\Boxes\SelectViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\SelectViewForm.Designer.cs">
+      <DependentUpon>SelectViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Config\SelectSoundForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,10 +300,7 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Action.SaveCopy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Action.Print.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Action.SaveCopyPrint.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoon.cs">
@@ -400,11 +403,11 @@
     <Compile Include="Source\Forms\Boxes\SelectCityForm.Designer.cs">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectBirthTime.cs">
+    <Compile Include="Source\Forms\Boxes\SelectBirthTimeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectBirthTime.Designer.cs">
-      <DependentUpon>SelectBirthTime.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\SelectBirthTimeForm.Designer.cs">
+      <DependentUpon>SelectBirthTimeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.FormClosing.cs">
       <SubType>Form</SubType>
@@ -668,6 +671,12 @@
     <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarksForm.resx">
       <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectViewForm.fr.resx">
+      <DependentUpon>SelectViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectViewForm.resx">
+      <DependentUpon>SelectViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\SelectSoundForm.fr.resx">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -728,11 +737,11 @@
     <EmbeddedResource Include="Source\Forms\Config\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectBirthTime.fr.resx">
-      <DependentUpon>SelectBirthTime.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectBirthTimeForm.fr.resx">
+      <DependentUpon>SelectBirthTimeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectBirthTime.resx">
-      <DependentUpon>SelectBirthTime.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectBirthTimeForm.resx">
+      <DependentUpon>SelectBirthTimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\ReminderForm.fr.resx">
       <DependentUpon>ReminderForm.cs</DependentUpon>

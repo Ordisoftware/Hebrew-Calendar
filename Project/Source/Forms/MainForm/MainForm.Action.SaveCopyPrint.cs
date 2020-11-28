@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-11 </edited>
 using System;
+using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -26,7 +27,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoSave()
     {
       string filePath = "";
-      switch ( Settings.CurrentView )
+      var view = Settings.CurrentView;
+      if ( Settings.SelectViewToExport )
+        if ( !SelectViewForm.Run(ref view, SysTranslations.TitleSaveToFile.GetLang()) )
+          return;
+      switch ( view )
       {
         case ViewMode.Text:
           if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
@@ -68,7 +73,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoCopy()
     {
-      switch ( Settings.CurrentView )
+      var view = Settings.CurrentView;
+      if ( Settings.SelectViewToExport )
+        if ( !SelectViewForm.Run(ref view, SysTranslations.TitleCopyToClipboard.GetLang()) )
+          return;
+      switch ( view )
       {
         case ViewMode.Text:
           Clipboard.SetText(CalendarText.Text);
@@ -94,6 +103,71 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       DisplayManager.ShowSuccessOrSound(AppTranslations.ViewCopiedToClipboard.GetLang(),
                                         Globals.ClipboardSoundFilePath);
+    }
+
+    private void DoPrint()
+    {
+      var view = Settings.CurrentView;
+      if ( Settings.SelectViewToExport )
+        if ( !SelectViewForm.Run(ref view, SysTranslations.TitlePrint.GetLang()) )
+          return;
+      switch ( view )
+      {
+        case ViewMode.Text:
+          break;
+        case ViewMode.Month:
+          PrintMonthView();
+          break;
+        case ViewMode.Grid:
+          break;
+        default:
+          throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
+      }
+    }
+
+    private void PrintMonthView()
+    {
+      bool finished = true;
+      try
+      {
+        CalendarMonth.ShowTodayButton = false;
+        CalendarMonth.ShowArrowControls = false;
+        ActionPrint.Visible = false;
+        ActionPrint.Visible = true;
+        ToolStrip.Enabled = false;
+        MenuTray.Enabled = false;
+        var bitmap = CalendarMonth.GetBitmap().Resize(1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
+        using ( var document = new PrintDocument() )
+        {
+          document.DefaultPageSettings.Landscape = true;
+          document.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, 75, 75);
+          PrintDialog.Document = document;
+          var timer = new Timer();
+          timer.Interval = 250;
+          timer.Tick += (_s, _e) =>
+          {
+            timer.Stop();
+            if ( PrintDialog.ShowDialog(this) == DialogResult.OK )
+              SystemManager.TryCatchManage(() =>
+              {
+                document.Print();
+                DisplayManager.ShowSuccessOrSound(AppTranslations.ViewPrinted.GetLang(),
+                                                  Globals.PrinterSoundFilePath);
+              });
+            finished = true;
+          };
+          finished = false;
+          timer.Start();
+          while ( !finished ) Application.DoEvents();
+        }
+      }
+      finally
+      {
+        CalendarMonth.ShowTodayButton = true;
+        CalendarMonth.ShowArrowControls = true;
+        ToolStrip.Enabled = true;
+        MenuTray.Enabled = true;
+      }
     }
 
   }
