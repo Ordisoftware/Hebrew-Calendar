@@ -118,8 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>477, 13</value>
+  </data>
+  <data name="LabelDateBookmarksCount.Text" xml:space="preserve">
+    <value>Nombre de signets de date (modification en temps réel : la réduction effacera les signets enregistrés)</value>
+  </data>
+  <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 13</value>
+  </data>
+  <data name="LabelVolume.Text" xml:space="preserve">
+    <value>Volume des sons .wav (non applicable aux sons système des boites de dialogue)</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 13</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
+    <value>Fréquence de vérification en nombre de jours</value>
+  </data>
   <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 13</value>
+    <value>152, 13</value>
   </data>
   <data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
     <value>Un clic sur la Tray Icon ouvre :</value>
@@ -137,7 +155,7 @@
     <value>Dossier d'exportation</value>
   </data>
   <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>166, 13</value>
   </data>
   <data name="LabelCalculatorPath.Text" xml:space="preserve">
     <value>Chemin de la calculatrice système</value>
@@ -148,6 +166,24 @@
   <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
     <value>Chemin de Hebrew Letters</value>
   </data>
+  <data name="LabelLastStartupCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 13</value>
+  </data>
+  <data name="LabelLastStartupCheck.Text" xml:space="preserve">
+    <value>Dernière vérification : </value>
+  </data>
+  <data name="LabelLastRunningCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 13</value>
+  </data>
+  <data name="LabelLastRunningCheck.Text" xml:space="preserve">
+    <value>Dernière vérification en cours d'exécution : </value>
+  </data>
+  <data name="LabelLastDBOptimize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 13</value>
+  </data>
+  <data name="LabelLastDBOptimize.Text" xml:space="preserve">
+    <value>Dernière optimisation : </value>
+  </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
@@ -157,11 +193,27 @@
   <data name="ActionResetSettings.Text" xml:space="preserve">
     <value>Restaurer les valeurs par défaut</value>
   </data>
-  <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 17</value>
+  <data name="EditSelectViewToExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 17</value>
   </data>
-  <data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
-    <value>Vérifier la mise à jour durant l'exécution</value>
+  <data name="EditSelectViewToExport.Text" xml:space="preserve">
+    <value>Sélectionner la vue à sauvegarder, copier ou imprimer</value>
+  </data>
+  <data name="ActionManageBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAlBJREFUOE+V00tPE1EYh3GWfgFNEFgoGxcYLppUFEqq1pUujRuNaIzuUeQSaClW
+        gvEKgolBXBHQSEIilwJyaaG0pQgleFmgSIjGiLSdomgLRR/fGWI10i48yT9nZs6c37xn5kwSkGS82q8c
+        tPZhsPajqx3l7olCJvalUy/93poRDpht5Jm6N2LuRm/p4bC1T1HnaoA6eWI+SK65l6kojGclw7mjeDOT
+        mYjAdOAn0/71WF6F0JAYIBqn7rvQmWy4w+DM3M7qSSNu6Yu8UDKsUDrop0RSPODHt/RDqyQGyBI43eSW
+        Cmw4vqlACuHjetxZKVyegspRBZPDT6XdT/mwn/FP65uBwiaPBgyuCCATV47pcGenUOYDs1OhSgA1JkHG
+        PkbjA/sF6F1WgVS+HsnSoOJJKLMrlA8tUSFPN9kDDH+Ikr8JeLABdMm7HctOI6TfhUOW8m+rHAnwbGE1
+        MdARFCAnDSV3pwCpFEkFF4cCXBr4TKlUUTUaoGc+EVDVS3sAXDmpBOVTxqvgijPI03cR9PEAdcM8XpR9
+        sHsroR1bcGdswzwDFpdCtdOP1RWg1hOkYy4BkGfu4dF76LpwnnudPhxGHddmolz3LnNjXNFy0xviydtE
+        gGzV1rk1br+IcOvlGvWeRe74VqibDFH3XNmIHLe9CW8GzgiQL0DLbITG6S80+JZp+N1PhWJplPOW2TAF
+        VX9tZWNNP2ebPdrF1rkoD19/pzlB1LE2ucdQbfsDGCra7Sqi/hMGi02DCqTEuJExdfIhS+dCDJCWLtnz
+        n8kAkn4BwCnDttDqHwAAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="ActionSelectLangEN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -176,12 +228,6 @@
         fsLAgfbTzGc31GT0cHDzZJeHvUDuTvmLX8aeWd7c8La8av11Fd681rYzoCajh4P7yXQ09JT9M0SraTsm
         fJuj/7K/Q/ELT8+ZdBIni3MAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 17</value>
-  </data>
-  <data name="EditVacuumAtStartup.Text" xml:space="preserve">
-    <value>Optimiser les données au démarrage chaque ce nombre de jours</value>
   </data>
   <data name="ActionSelectLangFR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -199,6 +245,12 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 17</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
+    <value>Ouvrir le fichier exporté en cas de succès</value>
+  </data>
   <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 17</value>
   </data>
@@ -211,29 +263,17 @@
   <data name="EditWebLinksMenuEnabled.Text" xml:space="preserve">
     <value>Activer le menu des liens web</value>
   </data>
-  <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 17</value>
-  </data>
-  <data name="EditStartupHide.Text" xml:space="preserve">
-    <value>Cacher au démarrage</value>
-  </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
   </data>
   <data name="EditDebuggerEnabled.Text" xml:space="preserve">
     <value>Activer le debogueur</value>
   </data>
-  <data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 17</value>
+  <data name="EditUsageStatisticsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 17</value>
   </data>
-  <data name="EditStartWithWindows.Text" xml:space="preserve">
-    <value>Démarrer avec Windows</value>
-  </data>
-  <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 17</value>
-  </data>
-  <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
-    <value>Vérifier la mise à jour au démarrage</value>
+  <data name="EditUsageStatisticsEnabled.Text" xml:space="preserve">
+    <value>Activer les statistiques d'usage</value>
   </data>
   <data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 17</value>
@@ -243,6 +283,42 @@
   </data>
   <data name="TabPageStartup.Text" xml:space="preserve">
     <value>Démarrage</value>
+  </data>
+  <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
+    <value>Vérifier la mise à jour au démarrage</value>
+  </data>
+  <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
+  </data>
+  <data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
+    <value>Vérifier la mise à jour durant l'exécution</value>
+  </data>
+  <data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 17</value>
+  </data>
+  <data name="EditStartWithWindows.Text" xml:space="preserve">
+    <value>Démarrer avec Windows</value>
+  </data>
+  <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 17</value>
+  </data>
+  <data name="EditStartupHide.Text" xml:space="preserve">
+    <value>Cacher au démarrage</value>
+  </data>
+  <data name="EditRestoreLastViewAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 17</value>
+  </data>
+  <data name="EditRestoreLastViewAtStartup.Text" xml:space="preserve">
+    <value>Restaurer la vue précédente au démarrage</value>
+  </data>
+  <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 17</value>
+  </data>
+  <data name="EditVacuumAtStartup.Text" xml:space="preserve">
+    <value>Optimiser les données au démarrage chaque ce nombre de jours</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 17</value>
@@ -255,6 +331,12 @@
   </data>
   <data name="SelectOpenMainForm.Text" xml:space="preserve">
     <value>Fenêtre de l'application</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 17</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
+    <value>Montrer le ballon seulement si la fenêtre principale est cachée</value>
   </data>
   <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 17</value>
@@ -273,6 +355,9 @@
   </data>
   <data name="EditBalloon.Text" xml:space="preserve">
     <value>Utiliser le ballon avec ce délai avant surgissement en millisecondes</value>
+  </data>
+  <data name="TabPageNavigationWindow.Text" xml:space="preserve">
+    <value>Fenêtre de navigation</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
@@ -307,8 +392,8 @@
   <data name="ActionUseSystemColors.Text" xml:space="preserve">
     <value>Utiliser couleurs système</value>
   </data>
-  <data name="TabPageNavigationWindow.Text" xml:space="preserve">
-    <value>Fenêtre de navigation</value>
+  <data name="TabPageGeneration.Text" xml:space="preserve">
+    <value>Génération</value>
   </data>
   <data name="LabelMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
@@ -387,8 +472,14 @@
         kM5gAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="TabPageGeneration.Text" xml:space="preserve">
-    <value>Génération</value>
+  <data name="TabPageReminder.Text" xml:space="preserve">
+    <value>Rappeleur</value>
+  </data>
+  <data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 13</value>
+  </data>
+  <data name="LabelSelectReminderSound.Text" xml:space="preserve">
+    <value>Sélectionner le son des boites de rappel</value>
   </data>
   <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 17</value>
@@ -419,9 +510,6 @@
   </data>
   <data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
     <value>Afficher les boites de rappel dans la barre de tâche</value>
-  </data>
-  <data name="TabPageReminder.Text" xml:space="preserve">
-    <value>Rappeleur</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -464,7 +552,7 @@
     <value>Rappeler toutes les minutes</value>
   </data>
   <data name="EditRemindShabatOnlyLight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 17</value>
+    <value>190, 17</value>
   </data>
   <data name="EditRemindShabatOnlyLight.Text" xml:space="preserve">
     <value>Seulement lors de la lumière solaire</value>
@@ -474,6 +562,9 @@
   </data>
   <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
     <value>Utiliser le shabat personnel</value>
+  </data>
+  <data name="TabPageCelebrations.Text" xml:space="preserve">
+    <value>Célébrations</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 13</value>
@@ -499,8 +590,8 @@
   <data name="LabelTimerInterval.Text" xml:space="preserve">
     <value>Jours avant le premier rappel</value>
   </data>
-  <data name="TabPageCelebrations.Text" xml:space="preserve">
-    <value>Célébrations</value>
+  <data name="TabPageMonthView.Text" xml:space="preserve">
+    <value>Vue par mois</value>
   </data>
   <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 13</value>
@@ -650,8 +741,8 @@
   <data name="EditMonthViewSunToolTips.Text" xml:space="preserve">
     <value>Afficher les levers et couchers du soleil dans une info-bulle</value>
   </data>
-  <data name="TabPageMonthView.Text" xml:space="preserve">
-    <value>Vue par mois</value>
+  <data name="TabPageTextReport.Text" xml:space="preserve">
+    <value>Rapport texte</value>
   </data>
   <data name="LabelFontName.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -677,8 +768,8 @@
   <data name="LabelTextColor.Text" xml:space="preserve">
     <value>Texte</value>
   </data>
-  <data name="TabPageTextReport.Text" xml:space="preserve">
-    <value>Rapport texte</value>
+  <data name="TabPagePaths.Text" xml:space="preserve">
+    <value>Chemins</value>
   </data>
   <data name="ActionResetExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -767,40 +858,13 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="TabPagePaths.Text" xml:space="preserve">
-    <value>Chemins</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
-  <data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
-    <value>Fréquence de vérification en nombre de jours</value>
+  <data name="EditShowPrintDialog.Text" xml:space="preserve">
+    <value>Aperçu avant impression</value>
   </data>
-  <data name="EditCheckUpdateAutoInstall.Text" xml:space="preserve">
-    <value>Installer automatiquement lorsque disponible</value>
-  </data>
-  <data name="LabelVolume.Text" xml:space="preserve">
-    <value>Volume des sons .wav (non applicable aux sons système des boites de dialogue)</value>
-  </data>
-  <data name="LabelSelectReminderSound.Text" xml:space="preserve">
-    <value>Sélectionner le son des boites de rappel</value>
-  </data>
-  <data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
-    <value>Montrer le ballon seulement si la fenêtre principale est cachée</value>
-  </data>
-  <data name="EditUsageStatisticsEnabled.Text" xml:space="preserve">
-    <value>Activer les statistiques d'usage</value>
-  </data>
-  <data name="LabelDateBookmarksCount.Text" xml:space="preserve">
-    <value>Nombre de signets de date (modification en temps réel : la réduction effacera les signets enregistrés)</value>
-  </data>
-  <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
-    <value>Ouvrir le fichier exporté en cas de succès</value>
-  </data>
-  <data name="EditRestoreLastViewAtStartup.Text" xml:space="preserve">
-    <value>Restaurer la vue précédente au démarrage</value>
-  </data>
-  <data name="EditSelectViewToExport.Text" xml:space="preserve">
-    <value>Sélectionner la vue à sauvegarder, copier ou imprimer</value>
+  <data name="LabelPrintMargin.Text" xml:space="preserve">
+    <value>Marge d'impression</value>
   </data>
 </root>

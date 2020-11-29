@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="SaveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>8, 53</value>
+    <value>153, 53</value>
   </metadata>
   <data name="SaveFileDialog.Filter" xml:space="preserve">
     <value>Text files|*.txt</value>
@@ -361,10 +361,10 @@
     <value>120</value>
   </data>
   <metadata name="LunisolarDaysBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>553, 17</value>
+    <value>744, 20</value>
   </metadata>
   <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>108, 13</value>
+    <value>307, 16</value>
   </metadata>
   <data name="CalendarGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -391,7 +391,7 @@
     <value>0</value>
   </data>
   <metadata name="LunisolarDaysBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>757, 19</value>
+    <value>948, 22</value>
   </metadata>
   <data name="bindingNavigatorCountItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 22</value>
@@ -842,43 +842,43 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="TimerTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>531, 53</value>
+    <value>497, 54</value>
   </metadata>
   <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>9, 14</value>
+    <value>208, 17</value>
   </metadata>
   <data name="ActionSaveToFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="ActionSaveToFile.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2476,16 +2476,16 @@
     <value>2</value>
   </data>
   <metadata name="SaveCSVDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>128, 53</value>
+    <value>274, 54</value>
   </metadata>
   <data name="SaveCSVDialog.Filter" xml:space="preserve">
     <value>CSV files|*.csv</value>
   </data>
   <metadata name="TrayIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>348, 52</value>
+    <value>16, 16</value>
   </metadata>
   <metadata name="MenuTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>434, 53</value>
+    <value>106, 14</value>
   </metadata>
   <data name="MenuShowHide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2805,46 +2805,43 @@
     <value>True</value>
   </data>
   <metadata name="PrintDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>249, 53</value>
+    <value>395, 54</value>
   </metadata>
   <metadata name="TimerReminder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>640, 53</value>
+    <value>606, 54</value>
   </metadata>
   <metadata name="TimerBallon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>762, 53</value>
+    <value>731, 54</value>
   </metadata>
   <metadata name="TimerTrayMouseMove.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>865, 54</value>
+    <value>837, 56</value>
   </metadata>
   <metadata name="TimerResumeReminder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1025, 54</value>
+    <value>999, 56</value>
   </metadata>
   <metadata name="SaveImageDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1028, 23</value>
+    <value>18, 50</value>
   </metadata>
   <data name="SaveImageDialog.Filter" xml:space="preserve">
     <value>PNG files|*.png</value>
   </data>
   <metadata name="LunisolarDaysTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>364, 16</value>
+    <value>555, 19</value>
   </metadata>
   <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>199, 14</value>
+    <value>390, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>98</value>
+    <value>90</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1004, 711</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1020, 750</value>

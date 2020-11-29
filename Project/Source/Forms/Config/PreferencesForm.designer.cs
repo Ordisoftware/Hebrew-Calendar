@@ -30,16 +30,6 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
-      System.Windows.Forms.Label LabelDateBookmarksCount;
-      System.Windows.Forms.Label LabelVolume;
-      System.Windows.Forms.Label LabelCheckUpdateFrequency;
-      System.Windows.Forms.Label LabelTrayIconClickOpen;
-      System.Windows.Forms.Label LabelGPSLatitude;
-      System.Windows.Forms.Label LabelTimeZone;
-      System.Windows.Forms.Label LabelGPSLongitude;
-      System.Windows.Forms.Label LabelExportFolder;
-      System.Windows.Forms.Label LabelCalculatorPath;
-      System.Windows.Forms.Label LabelHebrewLettersPath;
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
@@ -57,30 +47,43 @@
       this.TabPageApplication = new System.Windows.Forms.TabPage();
       this.EditSelectViewToExport = new System.Windows.Forms.CheckBox();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
+      this.LabelPrintingMarginIntervalInfo = new System.Windows.Forms.Label();
       this.LabelDateBookmarksCountIntervalInfo = new System.Windows.Forms.Label();
+      this.EditPrintingMargin = new System.Windows.Forms.NumericUpDown();
       this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditVolume = new System.Windows.Forms.TrackBar();
+      this.LabelPrintMargin = new System.Windows.Forms.Label();
+      this.LabelDateBookmarksCount = new System.Windows.Forms.Label();
+      this.LabelVolume = new System.Windows.Forms.Label();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
-      this.LabelOptimizeDatabaseIntervalInfo = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
-      this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditVacuumAtStartupInterval = new System.Windows.Forms.NumericUpDown();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
+      this.EditShowPrintDialog = new System.Windows.Forms.CheckBox();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
-      this.EditStartupHide = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
-      this.EditStartWithWindows = new System.Windows.Forms.CheckBox();
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
       this.EditLogEnabled = new System.Windows.Forms.CheckBox();
       this.TabPageStartup = new System.Windows.Forms.TabPage();
+      this.LabelLastDBOptimizeDate = new System.Windows.Forms.Label();
+      this.LabelLastDBOptimize = new System.Windows.Forms.Label();
+      this.LabelLastStartupCheckDate = new System.Windows.Forms.Label();
+      this.LabelLastStartupCheck = new System.Windows.Forms.Label();
+      this.LabelCheckUpdateFrequency = new System.Windows.Forms.Label();
       this.LabelCheckUpdateAtStartupInfo = new System.Windows.Forms.Label();
       this.EditCheckUpdateAtStartup = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateEveryWeek = new System.Windows.Forms.CheckBox();
       this.EditCheckUpdateAtStartupInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditStartWithWindows = new System.Windows.Forms.CheckBox();
+      this.EditStartupHide = new System.Windows.Forms.CheckBox();
+      this.EditVacuumAtStartupInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditRestoreLastViewAtStartup = new System.Windows.Forms.CheckBox();
+      this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
+      this.LabelOptimizeDatabaseIntervalInfo = new System.Windows.Forms.Label();
       this.TabPageTrayIcon = new System.Windows.Forms.TabPage();
       this.LabelLoomingDelayIntervalInfo = new System.Windows.Forms.Label();
+      this.LabelTrayIconClickOpen = new System.Windows.Forms.Label();
       this.EditBalloonLoomingDelay = new System.Windows.Forms.NumericUpDown();
       this.SelectOpenNextCelebrationsForm = new System.Windows.Forms.RadioButton();
       this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
@@ -106,9 +109,16 @@
       this.EditTorahEventsCountAsMoon = new System.Windows.Forms.CheckBox();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
       this.SelectAutoGenerateYearsInterval = new System.Windows.Forms.Button();
+      this.LabelGPSLatitude = new System.Windows.Forms.Label();
+      this.LabelTimeZone = new System.Windows.Forms.Label();
       this.EditBigCalendarWarning = new System.Windows.Forms.CheckBox();
+      this.LabelGPSLongitude = new System.Windows.Forms.Label();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelSelectReminderSound = new System.Windows.Forms.LinkLabel();
       this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
@@ -183,6 +193,7 @@
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -193,40 +204,28 @@
       this.EditTextBackground = new System.Windows.Forms.Panel();
       this.LabelTextColor = new System.Windows.Forms.Label();
       this.TabPagePaths = new System.Windows.Forms.TabPage();
+      this.LabelExportFolder = new System.Windows.Forms.Label();
       this.ActionResetExportFolder = new System.Windows.Forms.Button();
       this.button2 = new System.Windows.Forms.Button();
+      this.LabelCalculatorPath = new System.Windows.Forms.Label();
       this.ActionResetHebrewLettersPath = new System.Windows.Forms.Button();
       this.ActionResetCalculatorPath = new System.Windows.Forms.Button();
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
+      this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
-      this.EditRestoreLastViewAtStartup = new System.Windows.Forms.CheckBox();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
-      LabelDateBookmarksCount = new System.Windows.Forms.Label();
-      LabelVolume = new System.Windows.Forms.Label();
-      LabelCheckUpdateFrequency = new System.Windows.Forms.Label();
-      LabelTrayIconClickOpen = new System.Windows.Forms.Label();
-      LabelGPSLatitude = new System.Windows.Forms.Label();
-      LabelTimeZone = new System.Windows.Forms.Label();
-      LabelGPSLongitude = new System.Windows.Forms.Label();
-      LabelExportFolder = new System.Windows.Forms.Label();
-      LabelCalculatorPath = new System.Windows.Forms.Label();
-      LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
       this.TabPageStartup.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
       this.TabPageTrayIcon.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).BeginInit();
       this.TabPageNavigationWindow.SuspendLayout();
@@ -356,15 +355,19 @@
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPageApplication.Controls.Add(this.EditSelectViewToExport);
       this.TabPageApplication.Controls.Add(this.ActionManageBookmarks);
+      this.TabPageApplication.Controls.Add(this.LabelPrintingMarginIntervalInfo);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
+      this.TabPageApplication.Controls.Add(this.EditPrintingMargin);
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.EditVolume);
-      this.TabPageApplication.Controls.Add(LabelDateBookmarksCount);
-      this.TabPageApplication.Controls.Add(LabelVolume);
+      this.TabPageApplication.Controls.Add(this.LabelPrintMargin);
+      this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCount);
+      this.TabPageApplication.Controls.Add(this.LabelVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportedFile);
+      this.TabPageApplication.Controls.Add(this.EditShowPrintDialog);
       this.TabPageApplication.Controls.Add(this.EditAutoOpenExportFolder);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
@@ -389,11 +392,40 @@
       this.ActionManageBookmarks.UseVisualStyleBackColor = true;
       this.ActionManageBookmarks.Click += new System.EventHandler(this.ActionManageBookmarks_Click);
       // 
+      // LabelPrintingMarginIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelPrintingMarginIntervalInfo, "LabelPrintingMarginIntervalInfo");
+      this.LabelPrintingMarginIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelPrintingMarginIntervalInfo.Name = "LabelPrintingMarginIntervalInfo";
+      // 
       // LabelDateBookmarksCountIntervalInfo
       // 
       resources.ApplyResources(this.LabelDateBookmarksCountIntervalInfo, "LabelDateBookmarksCountIntervalInfo");
       this.LabelDateBookmarksCountIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelDateBookmarksCountIntervalInfo.Name = "LabelDateBookmarksCountIntervalInfo";
+      // 
+      // EditPrintingLMargin
+      // 
+      this.EditPrintingMargin.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditPrintingMargin, "EditPrintingLMargin");
+      this.EditPrintingMargin.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+      this.EditPrintingMargin.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+      this.EditPrintingMargin.Name = "EditPrintingLMargin";
+      this.EditPrintingMargin.ReadOnly = true;
+      this.EditPrintingMargin.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+      this.EditPrintingMargin.ValueChanged += new System.EventHandler(this.EditDateBookmarksCount_ValueChanged);
       // 
       // EditDateBookmarksCount
       // 
@@ -427,27 +459,26 @@
       this.EditVolume.Value = 100;
       this.EditVolume.ValueChanged += new System.EventHandler(this.EditVolume_ValueChanged);
       // 
+      // LabelPrintMargin
+      // 
+      resources.ApplyResources(this.LabelPrintMargin, "LabelPrintMargin");
+      this.LabelPrintMargin.Name = "LabelPrintMargin";
+      // 
       // LabelDateBookmarksCount
       // 
-      resources.ApplyResources(LabelDateBookmarksCount, "LabelDateBookmarksCount");
-      LabelDateBookmarksCount.Name = "LabelDateBookmarksCount";
+      resources.ApplyResources(this.LabelDateBookmarksCount, "LabelDateBookmarksCount");
+      this.LabelDateBookmarksCount.Name = "LabelDateBookmarksCount";
       // 
       // LabelVolume
       // 
-      resources.ApplyResources(LabelVolume, "LabelVolume");
-      LabelVolume.Name = "LabelVolume";
+      resources.ApplyResources(this.LabelVolume, "LabelVolume");
+      this.LabelVolume.Name = "LabelVolume";
       // 
       // LabelVolumeValue
       // 
       resources.ApplyResources(this.LabelVolumeValue, "LabelVolumeValue");
       this.LabelVolumeValue.ForeColor = System.Drawing.SystemColors.GrayText;
       this.LabelVolumeValue.Name = "LabelVolumeValue";
-      // 
-      // LabelOptimizeDatabaseIntervalInfo
-      // 
-      resources.ApplyResources(this.LabelOptimizeDatabaseIntervalInfo, "LabelOptimizeDatabaseIntervalInfo");
-      this.LabelOptimizeDatabaseIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.LabelOptimizeDatabaseIntervalInfo.Name = "LabelOptimizeDatabaseIntervalInfo";
       // 
       // ActionSelectLangEN
       // 
@@ -457,35 +488,6 @@
       this.ActionSelectLangEN.TabStop = false;
       this.ActionSelectLangEN.UseVisualStyleBackColor = true;
       this.ActionSelectLangEN.Click += new System.EventHandler(this.ActionSelectLangEN_Click);
-      // 
-      // EditVacuumAtStartup
-      // 
-      resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
-      this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
-      this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
-      this.EditVacuumAtStartup.CheckedChanged += new System.EventHandler(this.EditVacuumAtStartup_CheckedChanged);
-      // 
-      // EditVacuumAtStartupInterval
-      // 
-      this.EditVacuumAtStartupInterval.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditVacuumAtStartupInterval, "EditVacuumAtStartupInterval");
-      this.EditVacuumAtStartupInterval.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-      this.EditVacuumAtStartupInterval.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.EditVacuumAtStartupInterval.Name = "EditVacuumAtStartupInterval";
-      this.EditVacuumAtStartupInterval.ReadOnly = true;
-      this.EditVacuumAtStartupInterval.Value = new decimal(new int[] {
-            7,
-            0,
-            0,
-            0});
       // 
       // ActionSelectLangFR
       // 
@@ -503,6 +505,13 @@
       this.EditAutoOpenExportedFile.UseVisualStyleBackColor = true;
       this.EditAutoOpenExportedFile.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportedFile_CheckedChanged);
       // 
+      // EditShowPrintDialog
+      // 
+      resources.ApplyResources(this.EditShowPrintDialog, "EditShowPrintDialog");
+      this.EditShowPrintDialog.Name = "EditShowPrintDialog";
+      this.EditShowPrintDialog.UseVisualStyleBackColor = true;
+      this.EditShowPrintDialog.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
+      // 
       // EditAutoOpenExportFolder
       // 
       resources.ApplyResources(this.EditAutoOpenExportFolder, "EditAutoOpenExportFolder");
@@ -516,25 +525,12 @@
       this.EditWebLinksMenuEnabled.Name = "EditWebLinksMenuEnabled";
       this.EditWebLinksMenuEnabled.UseVisualStyleBackColor = true;
       // 
-      // EditStartupHide
-      // 
-      resources.ApplyResources(this.EditStartupHide, "EditStartupHide");
-      this.EditStartupHide.Name = "EditStartupHide";
-      this.EditStartupHide.UseVisualStyleBackColor = true;
-      // 
       // EditDebuggerEnabled
       // 
       resources.ApplyResources(this.EditDebuggerEnabled, "EditDebuggerEnabled");
       this.EditDebuggerEnabled.Name = "EditDebuggerEnabled";
       this.EditDebuggerEnabled.UseVisualStyleBackColor = true;
       this.EditDebuggerEnabled.CheckedChanged += new System.EventHandler(this.EditDebuggerEnabled_CheckedChanged);
-      // 
-      // EditStartWithWindows
-      // 
-      resources.ApplyResources(this.EditStartWithWindows, "EditStartWithWindows");
-      this.EditStartWithWindows.Name = "EditStartWithWindows";
-      this.EditStartWithWindows.UseVisualStyleBackColor = true;
-      this.EditStartWithWindows.CheckedChanged += new System.EventHandler(this.EditStartWithWindows_CheckedChanged);
       // 
       // EditUsageStatisticsEnabled
       // 
@@ -554,7 +550,11 @@
       // 
       this.TabPageStartup.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageStartup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageStartup.Controls.Add(LabelCheckUpdateFrequency);
+      this.TabPageStartup.Controls.Add(this.LabelLastDBOptimizeDate);
+      this.TabPageStartup.Controls.Add(this.LabelLastDBOptimize);
+      this.TabPageStartup.Controls.Add(this.LabelLastStartupCheckDate);
+      this.TabPageStartup.Controls.Add(this.LabelLastStartupCheck);
+      this.TabPageStartup.Controls.Add(this.LabelCheckUpdateFrequency);
       this.TabPageStartup.Controls.Add(this.LabelCheckUpdateAtStartupInfo);
       this.TabPageStartup.Controls.Add(this.EditCheckUpdateAtStartup);
       this.TabPageStartup.Controls.Add(this.EditCheckUpdateEveryWeek);
@@ -568,10 +568,34 @@
       resources.ApplyResources(this.TabPageStartup, "TabPageStartup");
       this.TabPageStartup.Name = "TabPageStartup";
       // 
+      // LabelLastDBOptimizeDate
+      // 
+      resources.ApplyResources(this.LabelLastDBOptimizeDate, "LabelLastDBOptimizeDate");
+      this.LabelLastDBOptimizeDate.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelLastDBOptimizeDate.Name = "LabelLastDBOptimizeDate";
+      // 
+      // LabelLastDBOptimize
+      // 
+      resources.ApplyResources(this.LabelLastDBOptimize, "LabelLastDBOptimize");
+      this.LabelLastDBOptimize.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelLastDBOptimize.Name = "LabelLastDBOptimize";
+      // 
+      // LabelLastStartupCheckDate
+      // 
+      resources.ApplyResources(this.LabelLastStartupCheckDate, "LabelLastStartupCheckDate");
+      this.LabelLastStartupCheckDate.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelLastStartupCheckDate.Name = "LabelLastStartupCheckDate";
+      // 
+      // LabelLastStartupCheck
+      // 
+      resources.ApplyResources(this.LabelLastStartupCheck, "LabelLastStartupCheck");
+      this.LabelLastStartupCheck.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelLastStartupCheck.Name = "LabelLastStartupCheck";
+      // 
       // LabelCheckUpdateFrequency
       // 
-      resources.ApplyResources(LabelCheckUpdateFrequency, "LabelCheckUpdateFrequency");
-      LabelCheckUpdateFrequency.Name = "LabelCheckUpdateFrequency";
+      resources.ApplyResources(this.LabelCheckUpdateFrequency, "LabelCheckUpdateFrequency");
+      this.LabelCheckUpdateFrequency.Name = "LabelCheckUpdateFrequency";
       // 
       // LabelCheckUpdateAtStartupInfo
       // 
@@ -615,12 +639,66 @@
             0,
             0});
       // 
+      // EditStartWithWindows
+      // 
+      resources.ApplyResources(this.EditStartWithWindows, "EditStartWithWindows");
+      this.EditStartWithWindows.Name = "EditStartWithWindows";
+      this.EditStartWithWindows.UseVisualStyleBackColor = true;
+      this.EditStartWithWindows.CheckedChanged += new System.EventHandler(this.EditStartWithWindows_CheckedChanged);
+      // 
+      // EditStartupHide
+      // 
+      resources.ApplyResources(this.EditStartupHide, "EditStartupHide");
+      this.EditStartupHide.Name = "EditStartupHide";
+      this.EditStartupHide.UseVisualStyleBackColor = true;
+      // 
+      // EditVacuumAtStartupInterval
+      // 
+      this.EditVacuumAtStartupInterval.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditVacuumAtStartupInterval, "EditVacuumAtStartupInterval");
+      this.EditVacuumAtStartupInterval.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+      this.EditVacuumAtStartupInterval.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.EditVacuumAtStartupInterval.Name = "EditVacuumAtStartupInterval";
+      this.EditVacuumAtStartupInterval.ReadOnly = true;
+      this.EditVacuumAtStartupInterval.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+      // 
+      // EditRestoreLastViewAtStartup
+      // 
+      resources.ApplyResources(this.EditRestoreLastViewAtStartup, "EditRestoreLastViewAtStartup");
+      this.EditRestoreLastViewAtStartup.Name = "EditRestoreLastViewAtStartup";
+      this.EditRestoreLastViewAtStartup.UseVisualStyleBackColor = true;
+      // 
+      // EditVacuumAtStartup
+      // 
+      resources.ApplyResources(this.EditVacuumAtStartup, "EditVacuumAtStartup");
+      this.EditVacuumAtStartup.Name = "EditVacuumAtStartup";
+      this.EditVacuumAtStartup.UseVisualStyleBackColor = true;
+      this.EditVacuumAtStartup.CheckedChanged += new System.EventHandler(this.EditVacuumAtStartup_CheckedChanged);
+      // 
+      // LabelOptimizeDatabaseIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelOptimizeDatabaseIntervalInfo, "LabelOptimizeDatabaseIntervalInfo");
+      this.LabelOptimizeDatabaseIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelOptimizeDatabaseIntervalInfo.Name = "LabelOptimizeDatabaseIntervalInfo";
+      // 
       // TabPageTrayIcon
       // 
       this.TabPageTrayIcon.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageTrayIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPageTrayIcon.Controls.Add(this.LabelLoomingDelayIntervalInfo);
-      this.TabPageTrayIcon.Controls.Add(LabelTrayIconClickOpen);
+      this.TabPageTrayIcon.Controls.Add(this.LabelTrayIconClickOpen);
       this.TabPageTrayIcon.Controls.Add(this.EditBalloonLoomingDelay);
       this.TabPageTrayIcon.Controls.Add(this.SelectOpenNextCelebrationsForm);
       this.TabPageTrayIcon.Controls.Add(this.SelectOpenMainForm);
@@ -639,8 +717,8 @@
       // 
       // LabelTrayIconClickOpen
       // 
-      resources.ApplyResources(LabelTrayIconClickOpen, "LabelTrayIconClickOpen");
-      LabelTrayIconClickOpen.Name = "LabelTrayIconClickOpen";
+      resources.ApplyResources(this.LabelTrayIconClickOpen, "LabelTrayIconClickOpen");
+      this.LabelTrayIconClickOpen.Name = "LabelTrayIconClickOpen";
       // 
       // EditBalloonLoomingDelay
       // 
@@ -804,10 +882,10 @@
       this.TabPageGeneration.Controls.Add(this.EditTorahEventsCountAsMoon);
       this.TabPageGeneration.Controls.Add(this.ActionGetGPS);
       this.TabPageGeneration.Controls.Add(this.SelectAutoGenerateYearsInterval);
-      this.TabPageGeneration.Controls.Add(LabelGPSLatitude);
-      this.TabPageGeneration.Controls.Add(LabelTimeZone);
+      this.TabPageGeneration.Controls.Add(this.LabelGPSLatitude);
+      this.TabPageGeneration.Controls.Add(this.LabelTimeZone);
       this.TabPageGeneration.Controls.Add(this.EditBigCalendarWarning);
-      this.TabPageGeneration.Controls.Add(LabelGPSLongitude);
+      this.TabPageGeneration.Controls.Add(this.LabelGPSLongitude);
       this.TabPageGeneration.Controls.Add(this.EditAutoRegenerate);
       this.TabPageGeneration.Controls.Add(this.ActionAutoGenerateHelp);
       this.TabPageGeneration.Controls.Add(this.EditGPSLatitude);
@@ -881,13 +959,13 @@
       // 
       // LabelGPSLatitude
       // 
-      resources.ApplyResources(LabelGPSLatitude, "LabelGPSLatitude");
-      LabelGPSLatitude.Name = "LabelGPSLatitude";
+      resources.ApplyResources(this.LabelGPSLatitude, "LabelGPSLatitude");
+      this.LabelGPSLatitude.Name = "LabelGPSLatitude";
       // 
       // LabelTimeZone
       // 
-      resources.ApplyResources(LabelTimeZone, "LabelTimeZone");
-      LabelTimeZone.Name = "LabelTimeZone";
+      resources.ApplyResources(this.LabelTimeZone, "LabelTimeZone");
+      this.LabelTimeZone.Name = "LabelTimeZone";
       // 
       // EditBigCalendarWarning
       // 
@@ -897,8 +975,8 @@
       // 
       // LabelGPSLongitude
       // 
-      resources.ApplyResources(LabelGPSLongitude, "LabelGPSLongitude");
-      LabelGPSLongitude.Name = "LabelGPSLongitude";
+      resources.ApplyResources(this.LabelGPSLongitude, "LabelGPSLongitude");
+      this.LabelGPSLongitude.Name = "LabelGPSLongitude";
       // 
       // EditAutoRegenerate
       // 
@@ -914,6 +992,38 @@
       this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
       // 
       // TabPageReminder
       // 
@@ -1509,6 +1619,14 @@
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
       // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
       // TabPageTextReport
       // 
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
@@ -1595,14 +1713,14 @@
       // 
       this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPagePaths.Controls.Add(LabelExportFolder);
+      this.TabPagePaths.Controls.Add(this.LabelExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionResetExportFolder);
       this.TabPagePaths.Controls.Add(this.button2);
-      this.TabPagePaths.Controls.Add(LabelCalculatorPath);
+      this.TabPagePaths.Controls.Add(this.LabelCalculatorPath);
       this.TabPagePaths.Controls.Add(this.ActionResetHebrewLettersPath);
       this.TabPagePaths.Controls.Add(this.ActionResetCalculatorPath);
       this.TabPagePaths.Controls.Add(this.ActionSelectCalculatorPath);
-      this.TabPagePaths.Controls.Add(LabelHebrewLettersPath);
+      this.TabPagePaths.Controls.Add(this.LabelHebrewLettersPath);
       this.TabPagePaths.Controls.Add(this.ActionSelectHebrewLettersPath);
       this.TabPagePaths.Controls.Add(this.EditExportFolder);
       this.TabPagePaths.Controls.Add(this.EditCalculatorPath);
@@ -1612,8 +1730,8 @@
       // 
       // LabelExportFolder
       // 
-      resources.ApplyResources(LabelExportFolder, "LabelExportFolder");
-      LabelExportFolder.Name = "LabelExportFolder";
+      resources.ApplyResources(this.LabelExportFolder, "LabelExportFolder");
+      this.LabelExportFolder.Name = "LabelExportFolder";
       // 
       // ActionResetExportFolder
       // 
@@ -1633,8 +1751,8 @@
       // 
       // LabelCalculatorPath
       // 
-      resources.ApplyResources(LabelCalculatorPath, "LabelCalculatorPath");
-      LabelCalculatorPath.Name = "LabelCalculatorPath";
+      resources.ApplyResources(this.LabelCalculatorPath, "LabelCalculatorPath");
+      this.LabelCalculatorPath.Name = "LabelCalculatorPath";
       // 
       // ActionResetHebrewLettersPath
       // 
@@ -1662,8 +1780,8 @@
       // 
       // LabelHebrewLettersPath
       // 
-      resources.ApplyResources(LabelHebrewLettersPath, "LabelHebrewLettersPath");
-      LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
+      resources.ApplyResources(this.LabelHebrewLettersPath, "LabelHebrewLettersPath");
+      this.LabelHebrewLettersPath.Name = "LabelHebrewLettersPath";
       // 
       // ActionSelectHebrewLettersPath
       // 
@@ -1672,52 +1790,6 @@
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
-      // 
-      // EditRestoreLastViewAtStartup
-      // 
-      resources.ApplyResources(this.EditRestoreLastViewAtStartup, "EditRestoreLastViewAtStartup");
-      this.EditRestoreLastViewAtStartup.Name = "EditRestoreLastViewAtStartup";
-      this.EditRestoreLastViewAtStartup.UseVisualStyleBackColor = true;
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
-      // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
       // 
       // EditExportFolder
       // 
@@ -1764,12 +1836,13 @@
       this.TabControl.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
       this.TabPageStartup.ResumeLayout(false);
       this.TabPageStartup.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
       this.TabPageTrayIcon.ResumeLayout(false);
       this.TabPageTrayIcon.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).EndInit();
@@ -1973,5 +2046,23 @@
     private System.Windows.Forms.CheckBox EditAutoOpenExportedFile;
     private System.Windows.Forms.CheckBox EditSelectViewToExport;
     private System.Windows.Forms.CheckBox EditRestoreLastViewAtStartup;
+    private System.Windows.Forms.Label LabelDateBookmarksCount;
+    private System.Windows.Forms.Label LabelVolume;
+    private System.Windows.Forms.Label LabelCheckUpdateFrequency;
+    private System.Windows.Forms.Label LabelTrayIconClickOpen;
+    private System.Windows.Forms.Label LabelGPSLatitude;
+    private System.Windows.Forms.Label LabelTimeZone;
+    private System.Windows.Forms.Label LabelGPSLongitude;
+    private System.Windows.Forms.Label LabelExportFolder;
+    private System.Windows.Forms.Label LabelCalculatorPath;
+    private System.Windows.Forms.Label LabelHebrewLettersPath;
+    private System.Windows.Forms.Label LabelLastDBOptimizeDate;
+    private System.Windows.Forms.Label LabelLastDBOptimize;
+    private System.Windows.Forms.Label LabelLastStartupCheckDate;
+    private System.Windows.Forms.Label LabelLastStartupCheck;
+    private System.Windows.Forms.CheckBox EditShowPrintDialog;
+    private System.Windows.Forms.Label LabelPrintingMarginIntervalInfo;
+    private System.Windows.Forms.NumericUpDown EditPrintingMargin;
+    private System.Windows.Forms.Label LabelPrintMargin;
   }
 }
