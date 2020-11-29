@@ -107,7 +107,7 @@ namespace Ordisoftware.Core
     /// </summary>
     public static string RemoveDiacritics(this string str)
     {
-      if ( str.IsNullOrEmpty() ) return ERR;
+      if ( str.IsNullOrEmpty() ) return str;
       var normalized = str.Normalize(NormalizationForm.FormD);
       var builder = new StringBuilder();
       foreach ( var c in normalized )
