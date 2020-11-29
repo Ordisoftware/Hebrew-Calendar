@@ -85,7 +85,6 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuTray.Enabled = Globals.IsReady && !IsGenerating;
         ToolStrip.Enabled = !IsGenerating;
         ActionSaveToFile.Enabled = DataSet.LunisolarDays.Count > 0;
-        ActionExportCSV.Enabled = ActionSaveToFile.Enabled;
         ActionCopyToClipboard.Enabled = ActionSaveToFile.Enabled;
         ActionPrint.Enabled = ActionSaveToFile.Enabled;
         ActionSearchEvent.Enabled = ActionSaveToFile.Enabled;
