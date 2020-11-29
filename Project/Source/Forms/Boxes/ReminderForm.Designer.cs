@@ -56,6 +56,7 @@
       // 
       // PictureBox
       // 
+      this.PictureBox.BackColor = System.Drawing.Color.Transparent;
       resources.ApplyResources(this.PictureBox, "PictureBox");
       this.PictureBox.Name = "PictureBox";
       this.PictureBox.TabStop = false;
