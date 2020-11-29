@@ -100,6 +100,8 @@ namespace Ordisoftware.Hebrew.Calendar
       EditSelectViewToExport.Checked = Settings.SelectViewToExport;
       EditRestoreLastViewAtStartup.Checked = Settings.RestoreLastViewAtStartup;
       EditLogEnabled_CheckedChanged(null, null);
+      LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString();
+      LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString();
     }
 
   }
