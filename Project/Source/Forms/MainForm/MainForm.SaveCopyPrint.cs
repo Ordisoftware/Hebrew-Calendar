@@ -118,17 +118,36 @@ namespace Ordisoftware.Hebrew.Calendar
         case ViewMode.Text:
           throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
         case ViewMode.Month:
-          RunPrint(() =>
-          {
-            var bitmap = CalendarMonth.GetBitmap();//.Resize(1000, CalendarMonth.Height * 1000 / CalendarMonth.Width);
-            DoPrint(true, (s, e) => e.Graphics.DrawImage(bitmap, 75, 75));
-          });
+          DoPrintMonth();
           break;
         case ViewMode.Grid:
           throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
         default:
           throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
       }
+    }
+
+    private void DoPrintMonth()
+    {
+      RunPrint(() =>
+      {
+        DoPrint(true, (s, e) =>
+        {
+          int margin = Settings.PrintingMargin; ;
+          int margin2 = margin + margin;
+          var bitmap = CalendarMonth.GetBitmap();
+          var bounds = e.PageBounds;
+          double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
+          bounds.Height = (int)( bounds.Width * ratio );
+          if ( bounds.Height > e.PageBounds.Height )
+          {
+            ratio = 1 / ratio;
+            bounds.Height = e.PageBounds.Height;
+            bounds.Width = (int)( bounds.Height * ratio );
+          }
+          e.Graphics.DrawImage(bitmap, margin, margin, bounds.Width - margin2, bounds.Height - margin2);
+        });
+      });
     }
 
     private void RunPrint(Action action)
@@ -160,6 +179,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         document.PrintPage += action;
         document.DefaultPageSettings.Landscape = landscape;
+        document.DefaultPageSettings.Margins = new Margins(80, 80, 80, 80); //2cm
         var timer = new Timer();
         timer.Interval = 250;
         timer.Tick += print;
@@ -168,8 +188,7 @@ namespace Ordisoftware.Hebrew.Calendar
         void printed(object sender, PrintPageEventArgs e)
         {
           if ( !e.HasMorePages )
-            DisplayManager.ShowSuccessOrSound(AppTranslations.ViewPrinted.GetLang(),
-                                              Globals.PrinterSoundFilePath);
+            DisplayManager.ShowSuccessOrSound(AppTranslations.ViewPrinted.GetLang(), Globals.PrinterSoundFilePath);
         }
         void print(object sender, EventArgs e)
         {

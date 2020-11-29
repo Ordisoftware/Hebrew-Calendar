@@ -94,6 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.SelectViewToExport = EditSelectViewToExport.Checked;
       Settings.RestoreLastViewAtStartup = EditRestoreLastViewAtStartup.Checked;
       Settings.ShowPrintPreviewDialog = EditShowPrintDialog.Checked;
+      Settings.PrintingMargin = (int)EditPrintingMargin.Value;
     }
 
   }

@@ -864,4 +864,7 @@
   <data name="EditShowPrintDialog.Text" xml:space="preserve">
     <value>Aperçu avant impression</value>
   </data>
+  <data name="LabelPrintMargin.Text" xml:space="preserve">
+    <value>Marge d'impression</value>
+  </data>
 </root>
