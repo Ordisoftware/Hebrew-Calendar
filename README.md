@@ -151,6 +151,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 ## Roadmap
 
 - Add moon months description form and menu in tools.
+- Add print text report and data grid.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Add a different tray icon to indicate if shabat or a celebration is running, including week days.
@@ -162,15 +163,19 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.01 - Version 5.10
 
-- Change save, copy and print to use the current view (text report, month image or grid csv).
+- Change save and copy to use the current view (text report, month image or grid csv).
+- Add print preview dialog.
 - Add save/copy/print view selection box.
 - Add option to select the view to save/copy/print else use the current.
+- Add option to show/hide print preview dialog.
+- Add option to set printing margin.
 - Add option to auto open exported file.
 - Add option to set the number of date bookmarks.
 - Add option to restore the last view at startup else go to the month.
 - Add option to enable/disable usage statistics.
 - Improve usage statistics form.
 - Improve start menu reset settings to delete all previous app settings folders in AppData\Local.
+- Improve print image quality.
 - Improve UI/UX.
 - Update help.
 
