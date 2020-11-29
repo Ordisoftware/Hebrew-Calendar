@@ -84,7 +84,7 @@ namespace Ordisoftware.Core
       = new TranslationsDictionary
       {
         [Language.EN] = "Empty bookmarks?",
-        [Language.FR] = "Vider les signets?"
+        [Language.FR] = "Vider les signets ?"
       };
 
     static public readonly TranslationsDictionary AskToDeleteBookmark
@@ -126,7 +126,7 @@ namespace Ordisoftware.Core
       = new TranslationsDictionary
       {
         [Language.EN] = "<empty>",
-        [Language.FR] = "<empty>"
+        [Language.FR] = "<vide>"
       };
 
     static public readonly TranslationsDictionary ErrorSlot
