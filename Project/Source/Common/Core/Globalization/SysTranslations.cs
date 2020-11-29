@@ -17,10 +17,6 @@ using System;
 namespace Ordisoftware.Core
 {
 
-  public class TranslationsDictionary : NullSafeOfStringDictionary<Language>
-  {
-  }
-
   /// <summary>
   /// Provide localization helper.
   /// </summary>

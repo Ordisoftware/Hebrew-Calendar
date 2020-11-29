@@ -19,6 +19,10 @@ using System.Text;
 namespace Ordisoftware.Core
 {
 
+  public class TranslationsDictionary : NullSafeOfStringDictionary<Language>
+  {
+  }
+
   /// <summary>
   /// Provide localization helper.
   /// </summary>
