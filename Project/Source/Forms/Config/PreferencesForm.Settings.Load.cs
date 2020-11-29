@@ -99,6 +99,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditUsageStatisticsEnabled.Checked = Settings.UsageStatisticsEnabled;
       EditSelectViewToExport.Checked = Settings.SelectViewToExport;
       EditRestoreLastViewAtStartup.Checked = Settings.RestoreLastViewAtStartup;
+      EditShowPrintDialog.Checked = Settings.ShowPrintPreviewDialog;
       EditLogEnabled_CheckedChanged(null, null);
       LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString();
       LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString();

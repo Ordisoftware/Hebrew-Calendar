@@ -1784,5 +1784,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["RestoreLastViewAtStartup"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowPrintPreviewDialog {
+            get {
+                return ((bool)(this["ShowPrintPreviewDialog"]));
+            }
+            set {
+                this["ShowPrintPreviewDialog"] = value;
+            }
+        }
     }
 }
