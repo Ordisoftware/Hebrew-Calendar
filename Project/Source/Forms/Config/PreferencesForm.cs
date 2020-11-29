@@ -422,21 +422,21 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     private void ActionMonthViewThemeDark_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      EditCurrentDayForeColor.BackColor = Color.Black;
-      EditCurrentDayBackColor.BackColor = Color.White;
-      EditCalendarColorTorahEvent.BackColor = Color.Red;
-      EditCalendarColorSeason.BackColor = Color.LightGreen;
-      EditCalendarColorMoon.BackColor = Color.LightBlue;
-      EditCalendarColorFullMoon.BackColor = Color.FromArgb(150, 100, 0);
-      EditEventColorTorah.BackColor = Color.Red;
-      EditEventColorSeason.BackColor = Color.LightGreen;
-      EditEventColorShabat.BackColor = Color.LightGray;
-      EditEventColorMonth.BackColor = Color.LightBlue;
-      EditEventColorNext.BackColor = Color.WhiteSmoke;
+    { //Color.FromArgb(, , );
+      EditCurrentDayForeColor.BackColor = Color.White;
+      EditCurrentDayBackColor.BackColor = Color.FromArgb(200, 0, 0);
+      EditCalendarColorTorahEvent.BackColor = Color.FromArgb(250, 190, 255);
+      EditCalendarColorSeason.BackColor = Color.FromArgb(128, 255, 128);
+      EditCalendarColorMoon.BackColor = Color.FromArgb(128, 255, 255);
+      EditCalendarColorFullMoon.BackColor = Color.FromArgb(255, 255, 128);
+      EditEventColorTorah.BackColor = Color.FromArgb(70, 70, 40);
+      EditEventColorSeason.BackColor = Color.FromArgb(0, 64, 0);
+      EditEventColorShabat.BackColor = Color.FromArgb(60, 50, 60);
+      EditEventColorMonth.BackColor = Color.FromArgb(0, 50, 100);
+      EditEventColorNext.BackColor = Color.FromArgb(20, 20, 20);
       EditCalendarColorEmpty.BackColor = Color.Black;
       EditCalendarColorDefaultText.BackColor = Color.White;
-      EditCalendarColorNoDay.BackColor = Color.FromArgb(50, 50, 50);
+      EditCalendarColorNoDay.BackColor = Color.FromArgb(80, 80, 80);
       MustRefreshMonthView = true;
     }
 

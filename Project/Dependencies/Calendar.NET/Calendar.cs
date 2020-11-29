@@ -78,8 +78,16 @@ namespace CodeProjectCalendar.NET
     // ORDISOFTWARE MODIF END
 
     // ORDISOFTWARE MODIF BEGIN
-    public Color CurrentDayForeColor = Color.White;
-    public Color CurrentDayBackColor = Color.Red;
+    static public Color CurrentDayForeColor = Color.White;
+    static public Color CurrentDayBackColor = Color.Red;
+    static public Color ColorText = Color.Black;
+    static public Pen PenText = Pens.Black;
+    static public Pen PenTextReduced = Pens.DarkGray;
+    static public Brush BrushText = Brushes.Black;
+    static public SolidBrush BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
+    static public SolidBrush BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
+    static public SolidBrush BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
+    static public Pen PenBrushBlack = new Pen(BrushBlack) { DashStyle = DashStyle.Dash };
     // ORDISOFTWARE MODIF END
 
     /// <summary>
@@ -389,7 +397,7 @@ namespace CodeProjectCalendar.NET
       this._btnToday.Name = "_btnToday";
       //this._btnToday.Size = new Size(72, 29);
       this._btnToday.TabIndex = 0;
-      this._btnToday.TextColor = Color.Black;
+      this._btnToday.TextColor = ColorText;
       this._btnToday.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnTodayButtonClicked);
       // 
       // _btnLeft
@@ -406,7 +414,7 @@ namespace CodeProjectCalendar.NET
       this._btnLeft.Name = "_btnLeft";
       this._btnLeft.Size = new Size(42, 29);
       this._btnLeft.TabIndex = 1;
-      this._btnLeft.TextColor = Color.Black;
+      this._btnLeft.TextColor = ColorText;
       this._btnLeft.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnLeftButtonClicked);
       // 
       // _btnRight
@@ -423,7 +431,7 @@ namespace CodeProjectCalendar.NET
       this._btnRight.Name = "_btnRight";
       this._btnRight.Size = new Size(42, 29);
       this._btnRight.TabIndex = 2;
-      this._btnRight.TextColor = Color.Black;
+      this._btnRight.TextColor = ColorText;
       this._btnRight.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnRightButtonClicked);
       // 
       // _contextMenuStrip1
@@ -815,17 +823,17 @@ namespace CodeProjectCalendar.NET
       int xStart = 0;
       int yStart = 0;
 
-      g.DrawRectangle(Pens.Black, 0, 0, ClientSize.Width - MarginSize * 2 - 2, cellHourHeight * 24);
+      g.DrawRectangle(PenText, 0, 0, ClientSize.Width - MarginSize * 2 - 2, cellHourHeight * 24);
       for ( int i = 0; i < 24; i++ )
       {
         var textWidth = (int)g.MeasureString(dt.ToString("htt").ToLower(), _dayViewTimeFont).Width;
-        g.DrawRectangle(Pens.Black, xStart, yStart, cellHourWidth, cellHourHeight);
-        g.DrawLine(Pens.Black, xStart + cellHourWidth, yStart + cellHourHeight,
+        g.DrawRectangle(PenText, xStart, yStart, cellHourWidth, cellHourHeight);
+        g.DrawLine(PenText, xStart + cellHourWidth, yStart + cellHourHeight,
                    ClientSize.Width - MarginSize * 2 - 3, yStart + cellHourHeight);
-        g.DrawLine(Pens.DarkGray, xStart + cellHourWidth, yStart + cellHourHeight / 2,
+        g.DrawLine(PenTextReduced, xStart + cellHourWidth, yStart + cellHourHeight / 2,
                    ClientSize.Width - MarginSize * 2 - 3, yStart + cellHourHeight / 2);
 
-        g.DrawString(dt.ToString("htt").ToLower(), _dayViewTimeFont, Brushes.Black, xStart + cellHourWidth - textWidth, yStart);
+        g.DrawString(dt.ToString("htt").ToLower(), _dayViewTimeFont, BrushText, xStart + cellHourWidth - textWidth, yStart);
         yStart += cellHourHeight;
         dt = dt.AddHours(1);
       }
@@ -907,15 +915,10 @@ namespace CodeProjectCalendar.NET
         g.DrawString(
             _calendarDate.ToString("MMMM") + " " + _calendarDate.Day.ToString(CultureInfo.InvariantCulture) +
             ", " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture),
-            _dateHeaderFont, Brushes.Black, ClientSize.Width - MarginSize - dateHeaderSize.Width,
+            _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width,
             MarginSize);
       }
     }
-
-    static private readonly SolidBrush BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
-    static private readonly SolidBrush BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
-    static private readonly SolidBrush BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
-    static private readonly Pen PenBrushBlack = new Pen(BrushBlack) { DashStyle = DashStyle.Dash };
 
     private void RenderMonthCalendar(PaintEventArgs e)
     {
@@ -1004,12 +1007,12 @@ namespace CodeProjectCalendar.NET
                   g.DrawString(strCounter, _todayFont, brushDayFore, xStart + 5, yStart + 2);
                 }
                 else
-                  g.DrawString(_calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
+                  g.DrawString(_calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture), _todayFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else
               {
-                g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture), _daysFont, Brushes.Black, xStart + 5, yStart + 2);
+                g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture), _daysFont, BrushText, xStart + 5, yStart + 2);
               }
             }
             else
@@ -1026,12 +1029,12 @@ namespace CodeProjectCalendar.NET
                   g.DrawString(strCounter, _todayFont, brushDayFore, xStart + 5, yStart + 2);
                 }
                 else
-                  g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, Brushes.Black, xStart + 5, yStart + 2);
+                  g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else
               {
-                g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _daysFont, Brushes.Black, xStart + 5, yStart + 2);
+                g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _daysFont, BrushText, xStart + 5, yStart + 2);
               }
             }
             counter++;
@@ -1046,7 +1049,7 @@ namespace CodeProjectCalendar.NET
             rogueDays--;
           }
 
-          g.DrawRectangle(Pens.DarkGray, xStart, yStart, cellWidth, cellHeight);
+          g.DrawRectangle(PenTextReduced, xStart, yStart, cellWidth, cellHeight);
 
           if ( rogueDays == 0 && counter > DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month) )
           {
@@ -1082,25 +1085,25 @@ namespace CodeProjectCalendar.NET
       // ORDISOFTWARE MODIF BEGIN
       try
       {
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Sunday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Sunday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
 
         xStart = MarginSize + ( ( cellWidth - (int)monSize.Width ) / 2 ) + cellWidth;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Monday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Monday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
 
         xStart = MarginSize + ( ( cellWidth - (int)tueSize.Width ) / 2 ) + cellWidth * 2;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Tuesday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Tuesday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
 
         xStart = MarginSize + ( ( cellWidth - (int)wedSize.Width ) / 2 ) + cellWidth * 3;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Wednesday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Wednesday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
 
         xStart = MarginSize + ( ( cellWidth - (int)thuSize.Width ) / 2 ) + cellWidth * 4;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Thursday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Thursday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
 
         xStart = MarginSize + ( ( cellWidth - (int)friSize.Width ) / 2 ) + cellWidth * 5;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Friday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Friday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
 
         xStart = MarginSize + ( ( cellWidth - (int)satSize.Width ) / 2 ) + cellWidth * 6;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Saturday]).Substring(0, 3), _dayOfWeekFont, Brushes.Black, xStart, yStart);
+        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Saturday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
       }
       catch
       {
@@ -1109,7 +1112,7 @@ namespace CodeProjectCalendar.NET
 
       if ( _showDateInHeader )
       {
-        g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, Brushes.Black, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
+        g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
       }
 
       // ORDISOFTWARE MODIF BEGIN

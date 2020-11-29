@@ -88,21 +88,55 @@ namespace Ordisoftware.Hebrew.Calendar
         CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
         CalendarMonth.ForeColor = Settings.MonthViewTextColor;
         CalendarMonth.BackColor = Settings.MonthViewBackColor;
-        CalendarMonth.CurrentDayForeColor = Settings.CurrentDayForeColor;
-        CalendarMonth.CurrentDayBackColor = Settings.CurrentDayBackColor;
+        CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
+        CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
+        CodeProjectCalendar.NET.Calendar.ColorText = Settings.MonthViewTextColor;
+        CodeProjectCalendar.NET.Calendar.PenText = new Pen(Settings.MonthViewTextColor);
+        CodeProjectCalendar.NET.Calendar.PenTextReduced
+          = new Pen(Color.FromArgb(CodeProjectCalendar.NET.Calendar.PenText.Color.R < 125 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 2 / 3 : CodeProjectCalendar.NET.Calendar.PenText.Color.R * 2 / 3,
+                                   CodeProjectCalendar.NET.Calendar.PenText.Color.R < 125 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 2 / 3 : CodeProjectCalendar.NET.Calendar.PenText.Color.G * 2 / 3,
+                                   CodeProjectCalendar.NET.Calendar.PenText.Color.R < 125 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 2 / 3 : CodeProjectCalendar.NET.Calendar.PenText.Color.B * 2 / 3));
+        CodeProjectCalendar.NET.Calendar.BrushText = new SolidBrush(Settings.MonthViewTextColor);
+        CodeProjectCalendar.NET.Calendar.BrushBlack = new SolidBrush(Settings.MonthViewTextColor);
+        CodeProjectCalendar.NET.Calendar.BrushGrayMedium //= new SolidBrush(Color.FromArgb(170, 170, 170));
+          = new SolidBrush(Color.FromArgb(CodeProjectCalendar.NET.Calendar.PenText.Color.R < 85 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 2 / 3 : CodeProjectCalendar.NET.Calendar.PenText.Color.R * 2 / 3,
+                                          CodeProjectCalendar.NET.Calendar.PenText.Color.R < 85 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 2 / 3 : CodeProjectCalendar.NET.Calendar.PenText.Color.G * 2 / 3,
+                                          CodeProjectCalendar.NET.Calendar.PenText.Color.R < 85 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 2 / 3 : CodeProjectCalendar.NET.Calendar.PenText.Color.B * 2 / 3));
+        CodeProjectCalendar.NET.Calendar.BrushGrayLight //= new SolidBrush(Color.FromArgb(234, 234, 234));
+          = new SolidBrush(Color.FromArgb((int)( CodeProjectCalendar.NET.Calendar.PenText.Color.R < 20 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 0.92 : CodeProjectCalendar.NET.Calendar.PenText.Color.R * 0.92 ),
+                                          (int)( CodeProjectCalendar.NET.Calendar.PenText.Color.R < 20 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 0.92 : CodeProjectCalendar.NET.Calendar.PenText.Color.G * 0.92 ),
+                                          (int)( CodeProjectCalendar.NET.Calendar.PenText.Color.R < 20 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 0.92 : CodeProjectCalendar.NET.Calendar.PenText.Color.B * 0.92 )));
+        CodeProjectCalendar.NET.Calendar.PenBrushBlack = new Pen(CodeProjectCalendar.NET.Calendar.BrushBlack)
+        {
+          DashStyle = System.Drawing.Drawing2D.DashStyle.Dash
+        };
       }
       else
       {
         CalendarMonth.RogueBrush = new SolidBrush(Color.WhiteSmoke);
         CalendarMonth.ForeColor = Color.Black;
         CalendarMonth.BackColor = Color.White;
-        CalendarMonth.CurrentDayForeColor = Color.White;
-        CalendarMonth.CurrentDayBackColor = Color.Black;
+        CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Color.White;
+        CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Color.Black;
+        CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Color.White;
+        CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Color.Red;
+        CodeProjectCalendar.NET.Calendar.ColorText = Color.Black;
+        CodeProjectCalendar.NET.Calendar.PenText = Pens.Black;
+        CodeProjectCalendar.NET.Calendar.PenTextReduced = Pens.DarkGray;
+        CodeProjectCalendar.NET.Calendar.BrushText = Brushes.Black;
+        CodeProjectCalendar.NET.Calendar.BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
+        CodeProjectCalendar.NET.Calendar.BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
+        CodeProjectCalendar.NET.Calendar.BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
+        CodeProjectCalendar.NET.Calendar.PenBrushBlack = new Pen(CodeProjectCalendar.NET.Calendar.BrushBlack)
+        {
+          DashStyle = System.Drawing.Drawing2D.DashStyle.Dash
+        };
       }
-      CalendarMonth.DateHeaderFont = new Font("Calibri", sizeFont + 5, FontStyle.Bold);
-      CalendarMonth.DayOfWeekFont = new Font("Calibri", sizeFont + 1);
-      CalendarMonth.DayViewTimeFont = new Font("Calibri", sizeFont + 1, FontStyle.Bold);
-      CalendarMonth.DaysFont = new Font("Calibri", sizeFont + 2);
+      string fontname = "Calibri";
+      CalendarMonth.DateHeaderFont = new Font(fontname, sizeFont + 5, FontStyle.Bold);
+      CalendarMonth.DayOfWeekFont = new Font(fontname, sizeFont + 1);
+      CalendarMonth.DayViewTimeFont = new Font(fontname, sizeFont + 1, FontStyle.Bold);
+      CalendarMonth.DaysFont = new Font(fontname, sizeFont + 2);
       CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", sizeFont + 2, FontStyle.Bold);
     }
 

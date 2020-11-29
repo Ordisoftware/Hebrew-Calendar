@@ -386,8 +386,8 @@ namespace Ordisoftware.Hebrew.Calendar
         ClearLists();
         if ( PreferencesForm.Run() )
         {
-          CalendarMonth.CurrentDayForeColor = Settings.CurrentDayForeColor;
-          CalendarMonth.CurrentDayBackColor = Settings.CurrentDayBackColor;
+          CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
+          CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
           UpdateCalendarMonth(false);
           ActionGenerate_Click(null, EventArgs.Empty);
         }
