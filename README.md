@@ -165,13 +165,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 #### 2020.12.01 - Version 5.10
 
 - Add dark theme for month view and reminder boxes.
-- Change save and copy to use the current view (text report, month image or grid csv).
-- Add print preview dialog.
-- Add save/copy/print view selection box.
-- Add option to select the view to save/copy/print else use the current.
-- Add option to show/hide print preview dialog.
+- Add preview dialog for print month view.
+- Add view selection for save to file and copy to clipboard.
+- Add option to show print preview dialog.
 - Add option to set printing margin.
-- Add option to auto open exported file.
+- Add option to auto-open exported file.
 - Add option to set the number of date bookmarks.
 - Add option to restore the last view at startup else go to the month.
 - Add option to enable/disable usage statistics.
