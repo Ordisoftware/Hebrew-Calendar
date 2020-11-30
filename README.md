@@ -161,6 +161,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve month view to show celebration week days with number as text like first and last.
 - Improve navigation form to show celebration week day number.
 - Improve automatic web check update to not run when shabat and special celebration days but the next day.
+- Improve log viewer to select file.
 
 ## Changelog
 
