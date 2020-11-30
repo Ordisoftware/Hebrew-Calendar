@@ -521,13 +521,13 @@
     <value>20, 235</value>
   </data>
   <data name="LabelPrintMargin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
+    <value>472, 13</value>
   </data>
   <data name="LabelPrintMargin.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
   <data name="LabelPrintMargin.Text" xml:space="preserve">
-    <value>Printing margin</value>
+    <value>Printing margin in 100 x inch (20 = 0,5 cm / 50 = 1,25 cm / 80 = 2 cm / 100 = 2,5 cm / 120 = 3 cm)</value>
   </data>
   <data name="&gt;&gt;LabelPrintMargin.Name" xml:space="preserve">
     <value>LabelPrintMargin</value>

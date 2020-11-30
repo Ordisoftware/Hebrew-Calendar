@@ -173,13 +173,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoPrint(bool landscape, PrintPageEventHandler action)
     {
+      int margin = Settings.PrintingMargin;
       bool finished = false;
       bool mutex = false;
       using ( var document = new PrintDocument() )
       {
         document.PrintPage += action;
         document.DefaultPageSettings.Landscape = landscape;
-        document.DefaultPageSettings.Margins = new Margins(80, 80, 80, 80); //2cm
+        document.DefaultPageSettings.Margins = new Margins(margin, margin, margin, margin);
         var timer = new Timer();
         timer.Interval = 250;
         timer.Tick += print;
