@@ -36,6 +36,10 @@
       this.SelectText = new System.Windows.Forms.RadioButton();
       this.SelectMonth = new System.Windows.Forms.RadioButton();
       this.SelectGrid = new System.Windows.Forms.RadioButton();
+      this.EditSelectViewToExport = new System.Windows.Forms.CheckBox();
+      this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
+      this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
+      this.LabelOptions = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -85,16 +89,53 @@
       this.SelectGrid.TabStop = true;
       this.SelectGrid.UseVisualStyleBackColor = true;
       // 
+      // EditSelectViewToExport
+      // 
+      resources.ApplyResources(this.EditSelectViewToExport, "EditSelectViewToExport");
+      this.EditSelectViewToExport.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.SelectViewToExport;
+      this.EditSelectViewToExport.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditSelectViewToExport.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "SelectViewToExport", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditSelectViewToExport.Name = "EditSelectViewToExport";
+      this.EditSelectViewToExport.UseVisualStyleBackColor = true;
+      // 
+      // EditAutoOpenExportedFile
+      // 
+      resources.ApplyResources(this.EditAutoOpenExportedFile, "EditAutoOpenExportedFile");
+      this.EditAutoOpenExportedFile.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.AutoOpenExportedFile;
+      this.EditAutoOpenExportedFile.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditAutoOpenExportedFile.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "AutoOpenExportedFile", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditAutoOpenExportedFile.Name = "EditAutoOpenExportedFile";
+      this.EditAutoOpenExportedFile.UseVisualStyleBackColor = true;
+      this.EditAutoOpenExportedFile.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportedFile_CheckedChanged);
+      // 
+      // EditAutoOpenExportFolder
+      // 
+      resources.ApplyResources(this.EditAutoOpenExportFolder, "EditAutoOpenExportFolder");
+      this.EditAutoOpenExportFolder.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.AutoOpenExportFolder;
+      this.EditAutoOpenExportFolder.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "AutoOpenExportFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditAutoOpenExportFolder.Name = "EditAutoOpenExportFolder";
+      this.EditAutoOpenExportFolder.UseVisualStyleBackColor = true;
+      this.EditAutoOpenExportFolder.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
+      // 
+      // LabelOptions
+      // 
+      resources.ApplyResources(this.LabelOptions, "LabelOptions");
+      this.LabelOptions.Name = "LabelOptions";
+      // 
       // SelectViewForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.EditSelectViewToExport);
+      this.Controls.Add(this.EditAutoOpenExportedFile);
+      this.Controls.Add(this.EditAutoOpenExportFolder);
       this.Controls.Add(this.SelectGrid);
       this.Controls.Add(this.SelectMonth);
       this.Controls.Add(this.SelectText);
       this.Controls.Add(this.PanelButtons);
+      this.Controls.Add(this.LabelOptions);
       this.Controls.Add(this.Label);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
@@ -114,5 +155,9 @@
     private System.Windows.Forms.RadioButton SelectText;
     private System.Windows.Forms.RadioButton SelectMonth;
     private System.Windows.Forms.RadioButton SelectGrid;
+    private System.Windows.Forms.CheckBox EditSelectViewToExport;
+    private System.Windows.Forms.CheckBox EditAutoOpenExportedFile;
+    private System.Windows.Forms.CheckBox EditAutoOpenExportFolder;
+    private System.Windows.Forms.Label LabelOptions;
   }
 }

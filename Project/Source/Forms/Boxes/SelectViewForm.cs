@@ -56,6 +56,19 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      Width = (int)(EditSelectViewToExport.Left * 2.5 + EditSelectViewToExport.Width);
+    }
+
+    private void EditAutoOpenExportedFile_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
+        EditAutoOpenExportFolder.Checked = false;
+    }
+
+    private void EditAutoOpenExportFolder_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
+        EditAutoOpenExportedFile.Checked = false;
     }
 
   }
