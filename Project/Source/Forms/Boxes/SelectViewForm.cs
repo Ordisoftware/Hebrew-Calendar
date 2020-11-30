@@ -59,6 +59,19 @@ namespace Ordisoftware.Hebrew.Calendar
       Width = (int)(EditSelectViewToExport.Left * 2.5 + EditSelectViewToExport.Width);
     }
 
+    private void SelectViewForm_Load(object sender, EventArgs e)
+    {
+      EditAutoOpenExportedFile.Checked = Program.Settings.AutoOpenExportedFile;
+      EditAutoOpenExportFolder.Checked = Program.Settings.AutoOpenExportFolder;
+    }
+
+    private void SelectViewForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Program.Settings.AutoOpenExportedFile = EditAutoOpenExportedFile.Checked;
+      Program.Settings.AutoOpenExportFolder = EditAutoOpenExportFolder.Checked;
+      Program.Settings.Save();
+    }
+
     private void EditAutoOpenExportedFile_CheckedChanged(object sender, EventArgs e)
     {
       if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )

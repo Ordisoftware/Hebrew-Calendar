@@ -101,9 +101,8 @@
       // EditAutoOpenExportedFile
       // 
       resources.ApplyResources(this.EditAutoOpenExportedFile, "EditAutoOpenExportedFile");
-      this.EditAutoOpenExportedFile.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.AutoOpenExportedFile;
+      this.EditAutoOpenExportedFile.Checked = true;
       this.EditAutoOpenExportedFile.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditAutoOpenExportedFile.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "AutoOpenExportedFile", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditAutoOpenExportedFile.Name = "EditAutoOpenExportedFile";
       this.EditAutoOpenExportedFile.UseVisualStyleBackColor = true;
       this.EditAutoOpenExportedFile.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportedFile_CheckedChanged);
@@ -111,8 +110,6 @@
       // EditAutoOpenExportFolder
       // 
       resources.ApplyResources(this.EditAutoOpenExportFolder, "EditAutoOpenExportFolder");
-      this.EditAutoOpenExportFolder.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.AutoOpenExportFolder;
-      this.EditAutoOpenExportFolder.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "AutoOpenExportFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditAutoOpenExportFolder.Name = "EditAutoOpenExportFolder";
       this.EditAutoOpenExportFolder.UseVisualStyleBackColor = true;
       this.EditAutoOpenExportFolder.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
@@ -141,6 +138,8 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SelectViewForm";
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SelectViewForm_FormClosed);
+      this.Load += new System.EventHandler(this.SelectViewForm_Load);
       this.PanelButtons.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();

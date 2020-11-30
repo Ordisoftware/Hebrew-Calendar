@@ -146,7 +146,55 @@
   <data name="&gt;&gt;Label.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
+    <value>ActionCancel</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
+    <value>ActionOK</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 213</value>
+  </data>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 28</value>
+  </data>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -206,30 +254,6 @@
   </data>
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 213</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 28</value>
-  </data>
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="SelectText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
