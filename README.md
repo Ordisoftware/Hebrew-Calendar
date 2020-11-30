@@ -168,7 +168,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 #### 2020.12.01 - Version 5.10
 
 - Add preview dialog for print month view.
-- Add view selection for save to file and copy to clipboard.
+- Add view selection for save to file, copy to clipboard and print.
 - Add option to show print preview dialog.
 - Add option to set printing margin.
 - Add option to auto-open exported file.
