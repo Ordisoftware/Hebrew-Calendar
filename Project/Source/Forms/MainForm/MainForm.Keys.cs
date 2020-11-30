@@ -28,6 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
+      DateTime date;
       switch ( keyData )
       {
         // Change view
@@ -84,6 +85,7 @@ namespace Ordisoftware.Hebrew.Calendar
           ActionSaveToFile.PerformClick();
           return true;
         case Keys.Control | Keys.C:
+          if ( ActiveControl == CalendarText ) break;
           ActionCopyToClipboard.PerformClick();
           return true;
         case Keys.Control | Keys.P:
@@ -91,55 +93,37 @@ namespace Ordisoftware.Hebrew.Calendar
           return true;
         // Month view calendar navigation
         case Keys.Home:
-          if ( Settings.CurrentView == ViewMode.Month )
-          {
-            GoToDate(new DateTime(YearFirst, 1, 1));
-            return true;
-          }
-          break;
+          if ( Settings.CurrentView != ViewMode.Month ) break;
+          GoToDate(new DateTime(YearFirst, 1, 1));
+          return true;
         case Keys.End:
-          if ( Settings.CurrentView == ViewMode.Month )
-          {
-            GoToDate(new DateTime(YearLast, 12, 1));
-            return true;
-          }
-          break;
+          if ( Settings.CurrentView != ViewMode.Month ) break;
+          GoToDate(new DateTime(YearLast, 12, 1));
+          return true;
         case Keys.Left:
-          if ( Settings.CurrentView == ViewMode.Month )
-          {
-            var date = SQLiteDate.ToDateTime(CurrentDay.Date);
-            date = new DateTime(date.Year, date.Month, 1);
-            GoToDate(date.AddMonths(-1));
-            return true;
-          }
-          break;
+          if ( Settings.CurrentView != ViewMode.Month ) break;
+          date = SQLiteDate.ToDateTime(CurrentDay.Date);
+          date = new DateTime(date.Year, date.Month, 1);
+          GoToDate(date.AddMonths(-1));
+          return true;
         case Keys.Right:
-          if ( Settings.CurrentView == ViewMode.Month )
-          {
-            var date = SQLiteDate.ToDateTime(CurrentDay.Date);
-            date = new DateTime(date.Year, date.Month, 1);
-            GoToDate(date.AddMonths(1));
-            return true;
-          }
-          break;
+          if ( Settings.CurrentView != ViewMode.Month ) break;
+          date = SQLiteDate.ToDateTime(CurrentDay.Date);
+          date = new DateTime(date.Year, date.Month, 1);
+          GoToDate(date.AddMonths(1));
+          return true;
         case Keys.Up:
-          if ( Settings.CurrentView == ViewMode.Month )
-          {
-            var date = SQLiteDate.ToDateTime(CurrentDay.Date);
-            date = new DateTime(date.Year, date.Month, 1);
-            GoToDate(date.AddYears(-1));
-            return true;
-          }
-          break;
+          if ( Settings.CurrentView != ViewMode.Month ) break;
+          date = SQLiteDate.ToDateTime(CurrentDay.Date);
+          date = new DateTime(date.Year, date.Month, 1);
+          GoToDate(date.AddYears(-1));
+          return true;
         case Keys.Down:
-          if ( Settings.CurrentView == ViewMode.Month )
-          {
-            var date = SQLiteDate.ToDateTime(CurrentDay.Date);
-            date = new DateTime(date.Year, date.Month, 1);
-            GoToDate(date.AddYears(1));
-            return true;
-          }
-          break;
+          if ( Settings.CurrentView != ViewMode.Month ) break;
+          date = SQLiteDate.ToDateTime(CurrentDay.Date);
+          date = new DateTime(date.Year, date.Month, 1);
+          GoToDate(date.AddYears(1));
+          return true;
       }
       return base.ProcessCmdKey(ref msg, keyData);
     }
