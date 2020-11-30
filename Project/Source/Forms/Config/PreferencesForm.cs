@@ -182,6 +182,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.UpgradeResetRequiredV3_0 = false;
       Settings.UpgradeResetRequiredV3_6 = false;
       Settings.UpgradeResetRequiredV4_1 = false;
+      Settings.UpgradeResetRequiredV5_10 = false;
       Settings.FirstLaunchV4 = false;
       Settings.Save();
       DoReset = true;

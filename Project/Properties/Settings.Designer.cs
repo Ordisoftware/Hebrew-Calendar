@@ -1808,5 +1808,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["PrintingMargin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UpgradeResetRequiredV5_10 {
+            get {
+                return ((bool)(this["UpgradeResetRequiredV5_10"]));
+            }
+            set {
+                this["UpgradeResetRequiredV5_10"] = value;
+            }
+        }
     }
 }
