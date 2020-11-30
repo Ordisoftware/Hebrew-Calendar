@@ -113,7 +113,7 @@ namespace Ordisoftware.Core
       {
         if ( PerformanceCounterCPUProcessLoad == null )
         {
-          LoadingForm.Instance.Initialize(SysTranslations.Initializing.GetLang(), 1, 0);
+          LoadingForm.Instance.Initialize($"{SysTranslations.Initializing.GetLang()} {nameof(CPUProcessLoad)}", 1, 0);
           LoadingForm.Instance.SetProgress(1);
           Application.DoEvents();
           PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", Globals.ApplicationExeFileName);
@@ -145,7 +145,7 @@ namespace Ordisoftware.Core
       {
         if ( PerformanceCounterCPULoad == null )
         {
-          LoadingForm.Instance.Initialize(SysTranslations.Initializing.GetLang(), 1, 0);
+          LoadingForm.Instance.Initialize($"{SysTranslations.Initializing.GetLang()} {nameof(CPULoad)}", 1, 0);
           LoadingForm.Instance.SetProgress(1);
           Application.DoEvents();
           PerformanceCounterCPULoad = new PerformanceCounter("Processor", "% Processor Time", "_Total");

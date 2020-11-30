@@ -717,16 +717,16 @@ namespace Ordisoftware.Hebrew.Calendar
       DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
     }
 
-    private void EditAutoOpenExportFolder_CheckedChanged(object sender, EventArgs e)
-    {
-      if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
-        EditAutoOpenExportedFile.Checked = false;
-    }
-
     private void EditAutoOpenExportedFile_CheckedChanged(object sender, EventArgs e)
     {
       if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
         EditAutoOpenExportFolder.Checked = false;
+    }
+
+    private void EditAutoOpenExportFolder_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
+        EditAutoOpenExportedFile.Checked = false;
     }
 
   }

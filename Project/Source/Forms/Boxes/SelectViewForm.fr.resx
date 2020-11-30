@@ -145,4 +145,16 @@
   <data name="SelectGrid.Text" xml:space="preserve">
     <value>Grille de données</value>
   </data>
+  <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
+    <value>Ouvrir le fichier exporté en cas de succès</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
+    <value>Ouvrir le dossier d'export en cas de succès</value>
+  </data>
+  <data name="EditSelectViewToExport.Text" xml:space="preserve">
+    <value>Activer cette boîte de dialogue sinon utiliser la vue en cours</value>
+  </data>
+  <data name="LabelOptions.Text" xml:space="preserve">
+    <value>Options :</value>
+  </data>
 </root>
