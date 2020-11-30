@@ -454,5 +454,8 @@
     <Setting Name="PrintingMargin" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">50</Value>
     </Setting>
+    <Setting Name="UpgradeResetRequiredV5_10" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

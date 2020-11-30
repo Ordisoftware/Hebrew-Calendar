@@ -109,10 +109,9 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoPrint()
     {
       var view = Settings.CurrentView;
-      //if ( Settings.SelectViewToExport )
-      //  if ( !SelectViewForm.Run(ref view, SysTranslations.TitlePrint.GetLang()) )
-      //    return;
-      view = ViewMode.Month;
+      if ( Settings.SelectViewToExport )
+        if ( !SelectViewForm.Run(ref view, SysTranslations.TitlePrint.GetLang(), ViewMode.Month) )
+          return;
       switch ( view )
       {
         case ViewMode.Text:

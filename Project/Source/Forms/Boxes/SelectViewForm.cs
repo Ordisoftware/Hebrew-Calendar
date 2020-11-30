@@ -13,6 +13,7 @@
 /// <created> 2020-11 </created>
 /// <edited> 2020-11 </edited>
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -21,23 +22,24 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class SelectViewForm : Form
   {
 
-    static public bool Run(ref ViewMode view, string title)
+    static public bool Run(ref ViewMode view, string title, ViewMode available = ViewMode.All)
     {
       using ( var form = new SelectViewForm() )
       {
         form.Text += title;
-        switch ( view )
-        {
-          case ViewMode.Text:
-            form.SelectText.Checked = true;
-            break;
-          case ViewMode.Month:
-            form.SelectMonth.Checked = true;
-            break;
-          case ViewMode.Grid:
-            form.SelectGrid.Checked = true;
-            break;
-        }
+        form.SelectText.Enabled = available.HasFlag(ViewMode.Text);
+        form.SelectMonth.Enabled = available.HasFlag(ViewMode.Month);
+        form.SelectGrid.Enabled = available.HasFlag(ViewMode.Grid);
+        if ( view == ViewMode.Text && form.SelectText.Enabled )
+          form.SelectText.Checked = true;
+        else
+        if ( view == ViewMode.Month && form.SelectMonth.Enabled )
+          form.SelectMonth.Checked = true;
+        else
+        if ( view == ViewMode.Grid && form.SelectGrid.Enabled )
+          form.SelectGrid.Checked = true;
+        else
+          form.Controls.OfType<RadioButton>().FirstOrDefault(c => c.Enabled).Checked = true;
         bool result = form.ShowDialog() == DialogResult.OK;
         if ( result )
         {

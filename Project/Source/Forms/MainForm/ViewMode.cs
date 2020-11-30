@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-01 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -20,8 +20,11 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// View mode enum.
   /// </summary>
+  [Flags]
   public enum ViewMode
   {
+
+    None,
 
     /// <summary>
     /// Text view mode to display the report.
@@ -36,7 +39,9 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Grid view mode to display the database table.
     /// </summary>
-    Grid
+    Grid,
+
+    All = Text | Month | Grid
 
   }
 

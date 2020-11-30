@@ -58,16 +58,8 @@ namespace Ordisoftware.Hebrew.Calendar
         CheckSettingsReset(true);
       }
       else
-      if ( !Settings.FirstLaunch )
-      {
-        if ( SystemManager.CommandLineOptions.ContainsKey("hide") )
-          ForceStartupHide = true;
-        if ( SystemManager.CommandLineOptions.ContainsKey("reset") )
-        {
-          Settings.UpgradeResetRequiredV4_1 = true;
-          CheckSettingsReset();
-        }
-      }
+      if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions.ContainsKey("hide") )
+        ForceStartupHide = true;
       Application.Run(MainForm.Instance);
     }
 
@@ -108,12 +100,15 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.UpgradeResetRequiredV3_0 = false;
         Settings.UpgradeResetRequiredV3_6 = false;
         Settings.UpgradeResetRequiredV4_1 = false;
+        Settings.UpgradeResetRequiredV5_10 = false;
       }
       if ( Settings.FirstLaunchV4 )
       {
         Settings.FirstLaunchV4 = false;
         Settings.FirstLaunch = true;
       }
+      if ( Settings.UpgradeResetRequiredV5_10 )
+        Settings.CurrentView = ViewMode.Month;
       if ( Settings.LanguageSelected == Language.None )
         Settings.LanguageSelected = Languages.Current;
       Settings.Save();
