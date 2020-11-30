@@ -154,7 +154,7 @@
   <data name="EditSelectViewToExport.Text" xml:space="preserve">
     <value>Activer cette boîte de dialogue sinon utiliser la vue en cours</value>
   </data>
-  <data name="LabelOptions" xml:space="preserve">
+  <data name="LabelOptions.Text" xml:space="preserve">
     <value>Options :</value>
   </data>
 </root>
