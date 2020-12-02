@@ -50,8 +50,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 ## Videos
 
-[![Month view showing video](https://img.youtube.com/vi/EJni1fiXpMk/mqdefault.jpg)](https://www.youtube.com/watch?v=EJni1fiXpMk)
-[![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/mqdefault.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
+[![Month view showing video](https://img.youtube.com/vi/EJni1fiXpMk/mqdefault.jpg)](https://www.youtube.com/watch?v=EJni1fiXpMk)&nbsp;&nbsp;&nbsp;&nbsp;[![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/mqdefault.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
 
 ## Frequently asked questions
 
@@ -116,39 +115,41 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### Keyboard shortcuts
 
-- F1 : Text report view
-- F2 : Month view
-- F3 : Database grid view
-- F4 : Next celebrations window
-- F5 : Search a celebration window
-- F6 : Search a moon month window
-- F7 : Search a gregorian month window
-- F9 : Navigation window (also Ctrl+N)
-- Ctrl+Tab : Next view
-- Shift+Ctrl+Tab : Previous view
-- Ctrl+T : Go to today (also Numpad0)
-- Ctrl+D : Search a day
-- Ctrl+S : Save current view to a file
-- Ctrl+C : Copy current view to clipboard
-- Ctrl+P : Print current view
-- Alt+C : Open windows calculator
-- Alt+T : Open windows date and time settings
-- Ctrl+F1 : Dates difference calculator
-- Ctrl+F2 : Generate calendar data
-- Ctrl+F11 : Current log window
-- Ctrl+F12 : Statistics window
-- Home : First month available in the database
-- End : Last month available in the database
-- Up : Previous year
-- Down : Next year
-- Left : Previous month
-- Right : Next month
-- F8 : Preferences
-- F11 : Help
-- F12 : About
-- Escape : Close window
+| Keys | Actions |
+|-|-|
+| F1 | Text report view |
+| F2 | Month view |
+| F3 | Database grid view |
+| F4 | Next celebrations window |
+| F5 | Search a celebration window |
+| F6 | Search a moon month window |
+| F7 | Search a gregorian month window |
+| F9 | Navigation window (also Ctrl + N) |
+| Ctrl + Tab | Next view |
+| Shift + Ctrl + Tab | Previous view |
+| Ctrl + T | Go to today (also Numpad0) |
+| Ctrl + D | Search a day |
+| Ctrl + S | Save current view to a file |
+| Ctrl + C | Copy current view to clipboard |
+| Ctrl + P | Print current view |
+| Alt + C | Open windows calculator |
+| Alt + T | Open windows date and time settings |
+| Ctrl + F1 | Dates difference calculator |
+| Ctrl + F2 | Generate calendar data |
+| Ctrl + F11 | Current log window |
+| Ctrl + F12 | Statistics window |
+| Home | First month available in the database |
+| End | Last month available in the database |
+| Up | Previous year |
+| Down | Next year |
+| Left | Previous month |
+| Right | Next month |
+| F8 | Preferences |
+| F11 | Help |
+| F12 | About |
+| Escape | Close window |
 
-## Roadmap
+## Future improvements
 
 - Add moon months description form and menu in tools.
 - Add save and load calendar theme.
