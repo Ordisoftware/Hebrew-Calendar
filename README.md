@@ -113,7 +113,7 @@ The day before, either the man keeps without going out and strengthens the coupl
 
 If you prefer to use the traditional group shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.
 
-#### Keyboard shortcuts
+## Keyboard shortcuts
 
 | Keys | Actions |
 |-|-|
