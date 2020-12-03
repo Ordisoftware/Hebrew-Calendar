@@ -695,19 +695,16 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionMonthViewThemeLight_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       SetThemeLight();
-      MustRefreshMonthView = true;
     }
 
     private void ActionMonthViewThemeDark_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       SetThemeDark();
-      MustRefreshMonthView = true;
     }
 
     private void ActionOpenTheme_Click(object sender, EventArgs e)
     {
       OpenTheme();
-      MustRefreshMonthView = true;
     }
 
     private void ActionSaveTheme_Click(object sender, EventArgs e)

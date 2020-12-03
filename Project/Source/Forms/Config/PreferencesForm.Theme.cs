@@ -45,6 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditCalendarColorEmpty.BackColor = Color.White;
       EditCalendarColorDefaultText.BackColor = Color.Black;
       EditCalendarColorNoDay.BackColor = Color.FromArgb(250, 250, 250);
+      MustRefreshMonthView = true;
     }
 
     private void SetThemeDark()
@@ -63,6 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditCalendarColorEmpty.BackColor = Color.Black;
       EditCalendarColorDefaultText.BackColor = Color.White;
       EditCalendarColorNoDay.BackColor = Color.FromArgb(80, 80, 80);
+      MustRefreshMonthView = true;
     }
 
     private void OpenTheme()
@@ -109,6 +111,7 @@ namespace Ordisoftware.Hebrew.Calendar
       NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
       MainForm.Instance.CalendarText.ForeColor = EditTextColor.BackColor;
       MainForm.Instance.CalendarText.BackColor = EditTextBackground.BackColor;
+      MustRefreshMonthView = true;
     }
 
     private void SaveTheme()
