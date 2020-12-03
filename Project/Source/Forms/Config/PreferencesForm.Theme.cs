@@ -10,7 +10,7 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2016-04 </created>
+/// <created> 2020-11 </created>
 /// <edited> 2020-11 </edited>
 using System;
 using System.Collections.Generic;
@@ -99,6 +99,16 @@ namespace Ordisoftware.Hebrew.Calendar
       EditEventColorShabat.BackColor = ColorTranslator.FromHtml(items["EventColorShabat"]);
       EditEventColorMonth.BackColor = ColorTranslator.FromHtml(items["EventColorMonth"]);
       EditEventColorNext.BackColor = ColorTranslator.FromHtml(items["EventColorNext"]);
+      EditNavigateTopColor.BackColor = ColorTranslator.FromHtml(items["NavigateTopColor"]);
+      EditNavigateMiddleColor.BackColor = ColorTranslator.FromHtml(items["NavigateMiddleColor"]);
+      EditNavigateBottomColor.BackColor = ColorTranslator.FromHtml(items["NavigateBottomColor"]);
+      EditTextColor.BackColor = ColorTranslator.FromHtml(items["TextColor"]);
+      EditTextBackground.BackColor = ColorTranslator.FromHtml(items["TextBackground "]);
+      NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
+      NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
+      NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
+      MainForm.Instance.CalendarText.ForeColor = EditTextColor.BackColor;
+      MainForm.Instance.CalendarText.BackColor = EditTextBackground.BackColor;
     }
 
     private void SaveTheme()
@@ -124,6 +134,11 @@ namespace Ordisoftware.Hebrew.Calendar
       items.Add("EventColorShabat=" + ColorTranslator.ToHtml(EditEventColorShabat.BackColor));
       items.Add("EventColorMonth=" + ColorTranslator.ToHtml(EditEventColorMonth.BackColor));
       items.Add("EventColorNext=" + ColorTranslator.ToHtml(EditEventColorNext.BackColor));
+      items.Add("NavigateTopColor=" + ColorTranslator.ToHtml(EditNavigateTopColor.BackColor));
+      items.Add("NavigateMiddleColor=" + ColorTranslator.ToHtml(EditNavigateMiddleColor.BackColor));
+      items.Add("NavigateBottomColor=" + ColorTranslator.ToHtml(EditNavigateBottomColor.BackColor));
+      items.Add("TextColor=" + ColorTranslator.ToHtml(EditTextColor.BackColor));
+      items.Add("TextBackground=" + ColorTranslator.ToHtml(EditTextBackground.BackColor));
       File.WriteAllLines(SaveThemeDialog.FileName, items);
     }
 
