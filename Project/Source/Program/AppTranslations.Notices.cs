@@ -171,26 +171,26 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F5 : Search a celebration window" + Globals.NL +
                         "F6 : Search a moon month window" + Globals.NL +
                         "F7 : Search a gregorian month window" + Globals.NL +
-                        "F9 : Navigation window (also Ctrl+N)" + Globals.NL +
+                        "F9 : Navigation window (also Ctrl + N)" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+Tab : Next view" + Globals.NL +
-                        "Shift+Ctrl+Tab : Previous view" + Globals.NL +
+                        "Ctrl + Tab : Next view" + Globals.NL +
+                        "Shift + Ctrl + Tab : Previous view" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+T : Go to today (also Numpad0)" + Globals.NL +
-                        "Ctrl+D : Search a day" + Globals.NL +
+                        "Ctrl + T : Go to today (also Numpad0)" + Globals.NL +
+                        "Ctrl + D : Search a day" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+S : Save current view to file" + Globals.NL +
-                        "Ctrl+C : Copy current view to clipboard" + Globals.NL +
-                        "Ctrl+P : Print current view " + Globals.NL +
+                        "Ctrl + S : Save current view to file" + Globals.NL +
+                        "Ctrl + C : Copy current view to clipboard" + Globals.NL +
+                        "Ctrl + P : Print current view " + Globals.NL +
                         Globals.NL +
-                        "Alt+C : Open windows calculator" + Globals.NL +
-                        "Alt+T : Open windows date and time settings" + Globals.NL +
+                        "Alt + C : Open windows calculator" + Globals.NL +
+                        "Alt + T : Open windows date and time settings" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+F1 : Dates difference calculator" + Globals.NL +
-                        "Ctrl+F2 : Generate calendar data" + Globals.NL +
+                        "Ctrl + F1 : Dates difference calculator" + Globals.NL +
+                        "Ctrl + F2 : Generate calendar data" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+F11 : Current log window" + Globals.NL +
-                        "Ctrl+F12 : Statistics window" + Globals.NL +
+                        "Ctrl + F11 : Current log window" + Globals.NL +
+                        "Ctrl + F12 : Statistics window" + Globals.NL +
                         Globals.NL +
                         "Home : First month available in the database" + Globals.NL +
                         "End : Last month available in the database" + Globals.NL +
@@ -213,26 +213,26 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F5 : Fenêtre de recherche de célébration" + Globals.NL +
                         "F6 : Fenêtre de recherche de mois lunaire" + Globals.NL +
                         "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
-                        "F9 : Fenêtre de navigation (également Ctrl+N)" + Globals.NL +
+                        "F9 : Fenêtre de navigation (également Ctrl + N)" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+Tab : Vue suivante" + Globals.NL +
-                        "Maj+Ctrl+Tab : Vue précédente" + Globals.NL +
+                        "Ctrl + Tab : Vue suivante" + Globals.NL +
+                        "Maj + Ctrl + Tab : Vue précédente" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+T : Aller à aujourd'hui (également Numpad0)" + Globals.NL +
-                        "Ctrl+D : Chercher un jour" + Globals.NL +
+                        "Ctrl + T : Aller à aujourd'hui (également Numpad0)" + Globals.NL +
+                        "Ctrl + D : Chercher un jour" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+S : Sauvegarde la vue en cours dans un fichier" + Globals.NL +
-                        "Ctrl+C : Copie la vue en cours dans le presse-papier" + Globals.NL +
-                        "Ctrl+P : Imprime la vue en cours" + Globals.NL +
+                        "Ctrl + S : Sauvegarde la vue en cours dans un fichier" + Globals.NL +
+                        "Ctrl + C : Copie la vue en cours dans le presse-papier" + Globals.NL +
+                        "Ctrl + P : Imprime la vue en cours" + Globals.NL +
                         Globals.NL +
-                        "Alt+C : Ouvre la calculatrice Windows" + Globals.NL +
-                        "Alt+T : Ouvre les paramètres de date et heure de Windows" + Globals.NL +
+                        "Alt + C : Ouvre la calculatrice Windows" + Globals.NL +
+                        "Alt + T : Ouvre les paramètres de date et heure de Windows" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+F1 : Calculateur de différence de dates" + Globals.NL +
-                        "Ctrl+F2 : Génère les données du calendrier" + Globals.NL +
+                        "Ctrl + F1 : Calculateur de différence de dates" + Globals.NL +
+                        "Ctrl + F2 : Génère les données du calendrier" + Globals.NL +
                         Globals.NL +
-                        "Ctrl+F11 : Fenêtre du log en cours" + Globals.NL +
-                        "Ctrl+F12 : Fenêtre des statistiques" + Globals.NL +
+                        "Ctrl + F11 : Fenêtre du log en cours" + Globals.NL +
+                        "Ctrl + F12 : Fenêtre des statistiques" + Globals.NL +
                         Globals.NL +
                         "Début : Premier mois disponible dans la base de données" + Globals.NL +
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
