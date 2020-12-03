@@ -32,9 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     internal void InitializeDialogsDirectory()
     {
-      string directory = Settings.ExportFolder;
-      if ( directory == "%USER_APP_DOCUMENTS%" )
-        directory = Globals.UserDocumentsFolderPath;
+      string directory = Settings.GetExportDirectory();
       SaveFileDialog.InitialDirectory = directory;
       SaveImageDialog.InitialDirectory = directory;
       SaveCSVDialog.InitialDirectory = directory;
