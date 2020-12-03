@@ -170,6 +170,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add dark theme for month view and reminder boxes.
 - Add print text report.
 - Add open export folder in tools menu.
+- Chenge markdown to html dependency.
 - Update web links.
 - Update help.
 
