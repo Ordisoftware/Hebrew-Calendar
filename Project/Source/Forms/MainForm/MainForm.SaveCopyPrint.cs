@@ -132,7 +132,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoPrintTextReport()
     {
       bool askToContinue = true;
-      var font = new Font(CalendarText.Font.Name, 7);
+      var font = new Font(CalendarText.Font.Name, Settings.PrintingMargin > 75 ? 6 : 7);
       RunPrint(false, (s, e) =>
       {
         float marginLeft = e.MarginBounds.Left;
