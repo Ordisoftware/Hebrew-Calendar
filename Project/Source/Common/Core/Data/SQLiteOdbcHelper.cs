@@ -112,7 +112,8 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <param name="connection">The connection.</param>
     /// <param name="lastdone">The last done date.</param>
-    /// <param name="force"></param>
+    /// <param name="interval">Days interval to check.</param>
+    /// <param name="force">True to force check.</param>
     /// <returns>The new date if done else lastdone.</returns>
     static public DateTime Optimize(this OdbcConnection connection, DateTime lastdone, int interval = -1, bool force = false)
     {
