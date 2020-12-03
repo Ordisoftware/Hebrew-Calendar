@@ -106,7 +106,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() =>
       {
         SaveThemeDialog.InitialDirectory = Settings.GetExportDirectory();
-        SaveThemeDialog.FileName = "Hebrew Calendar Theme.ini";
+        SaveThemeDialog.FileName = "Theme.ini";
       });
       if ( SaveThemeDialog.ShowDialog() != DialogResult.OK ) return;
       var items = new List<string>();

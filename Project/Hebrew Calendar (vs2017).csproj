@@ -292,6 +292,9 @@
     <Compile Include="Source\Forms\Boxes\SelectViewForm.Designer.cs">
       <DependentUpon>SelectViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.Theme.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\Config\SelectSoundForm.cs">
       <SubType>Form</SubType>
     </Compile>
