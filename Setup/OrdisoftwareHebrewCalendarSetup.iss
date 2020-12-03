@@ -1,4 +1,4 @@
-#define MyAppVersion "5.10"
+#define MyAppVersion "5.11"
 #define MyAppName "Hebrew Calendar"
 #define MyAppNameNoSpace "HebrewCalendar"
 #define MyAppExeName "Ordisoftware.Hebrew.Calendar.exe"
