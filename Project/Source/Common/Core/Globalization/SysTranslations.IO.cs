@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -98,6 +98,16 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = $"Wrong checksum for file:{Globals.NL2}{{0}}",
         [Language.FR] = $"Mauvaise somme de contrôle pour le fichier :{Globals.NL2}{{0}}"
+      };
+
+    static public readonly TranslationsDictionary AskToPrintLotsOfPages
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "There is {0} page(s)." + Globals.NL2 +
+                        AskToContinue[Language.EN],
+
+        [Language.FR] = "Il y a {0} page(s)." + Globals.NL2 +
+                        AskToContinue[Language.FR]
       };
 
   }
