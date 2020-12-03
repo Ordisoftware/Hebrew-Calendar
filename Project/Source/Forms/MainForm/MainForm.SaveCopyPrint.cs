@@ -128,28 +128,25 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoPrintMonth()
     {
-      RunPrint(() =>
-      {
-        DoPrint(true, (s, e) =>
-        {
-          int margin = Settings.PrintingMargin; ;
-          int margin2 = margin + margin;
-          var bitmap = CalendarMonth.GetBitmap();
-          var bounds = e.PageBounds;
-          double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
-          bounds.Height = (int)( bounds.Width * ratio );
-          if ( bounds.Height > e.PageBounds.Height )
-          {
-            ratio = 1 / ratio;
-            bounds.Height = e.PageBounds.Height;
-            bounds.Width = (int)( bounds.Height * ratio );
-          }
-          e.Graphics.DrawImage(bitmap, margin, margin, bounds.Width - margin2, bounds.Height - margin2);
-        });
-      });
+      RunPrint(true, (s, e) =>
+     {
+       int margin = Settings.PrintingMargin; ;
+       int margin2 = margin + margin;
+       var bitmap = CalendarMonth.GetBitmap();
+       var bounds = e.PageBounds;
+       double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
+       bounds.Height = (int)( bounds.Width * ratio );
+       if ( bounds.Height > e.PageBounds.Height )
+       {
+         ratio = 1 / ratio;
+         bounds.Height = e.PageBounds.Height;
+         bounds.Width = (int)( bounds.Height * ratio );
+       }
+       e.Graphics.DrawImage(bitmap, margin, margin, bounds.Width - margin2, bounds.Height - margin2);
+     });
     }
 
-    private void RunPrint(Action action)
+    private void RunPrint(bool landscape, PrintPageEventHandler action)
     {
       try
       {
@@ -159,7 +156,10 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionPrint.Visible = true;
         ToolStrip.Enabled = false;
         MenuTray.Enabled = false;
-        action();
+        DoPrint(landscape, (s, e) =>
+        {
+          action(s, e);
+        });
       }
       finally
       {
