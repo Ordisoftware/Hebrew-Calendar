@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
@@ -142,7 +142,7 @@ namespace Ordisoftware.Hebrew.Calendar
         int countLinesInPage = 0;
         int countPages = (int)Math.Round((double)CalendarText.Lines.Length / linesPerPage, MidpointRounding.AwayFromZero);
         if ( askToContinue && countPages > 20 )
-          if ( !DisplayManager.QueryYesNo("There are " + countPages + " pages." + Globals.NL2 + SysTranslations.AskToContinue.GetLang()) )
+          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToPrintLotsOfPages.GetLang(countPages)) )
           {
             e.HasMorePages = false;
             return;
