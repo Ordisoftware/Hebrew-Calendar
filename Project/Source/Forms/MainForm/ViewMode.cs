@@ -24,22 +24,22 @@ namespace Ordisoftware.Hebrew.Calendar
   public enum ViewMode
   {
 
-    None,
+    None = 0,
 
     /// <summary>
     /// Text view mode to display the report.
     /// </summary>
-    Text,
+    Text = 1,
 
     /// <summary>
     /// Month view mode to display the month calendar.
     /// </summary>
-    Month,
+    Month = 2,
 
     /// <summary>
     /// Grid view mode to display the database table.
     /// </summary>
-    Grid,
+    Grid = 4,
 
     All = Text | Month | Grid
 

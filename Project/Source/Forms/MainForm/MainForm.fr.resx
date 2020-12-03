@@ -1877,4 +1877,7 @@
   <data name="LabelGridGoToToday.Text" xml:space="preserve">
     <value>Aujourd'hui</value>
   </data>
+  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
+    <value>Ouvrir le dossier d'export</value>
+  </data>
 </root>

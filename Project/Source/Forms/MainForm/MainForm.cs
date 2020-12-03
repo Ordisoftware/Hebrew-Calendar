@@ -787,6 +787,16 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionOpenExportFolder for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionOpenExportFolder_Click(object sender, EventArgs e)
+    {
+      SystemManager.RunShell(Settings.GetExportDirectory());
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionVacuumAtNextStartup for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

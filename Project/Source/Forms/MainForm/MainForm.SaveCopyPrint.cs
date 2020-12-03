@@ -110,46 +110,78 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var view = Settings.CurrentView;
       if ( Settings.SelectViewToExport )
-        if ( !SelectViewForm.Run(ref view, SysTranslations.TitlePrint.GetLang(), ViewMode.Month) )
+        if ( !SelectViewForm.Run(ref view, SysTranslations.TitlePrint.GetLang(), ViewMode.Month | ViewMode.Text) )
           return;
       switch ( view )
       {
         case ViewMode.Text:
-          throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
+          PrinterCurrentLine = 0;
+          DoPrintTextReport();
+          break;
         case ViewMode.Month:
           DoPrintMonth();
           break;
         case ViewMode.Grid:
-          throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
         default:
-          throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
+          throw new NotImplementedExceptionEx(view.ToStringFull());
       }
+    }
+
+    private int PrinterCurrentLine;
+
+    private void DoPrintTextReport()
+    {
+      bool askToContinue = true;
+      var font = new Font(CalendarText.Font.Name, 7);
+      RunPrint(false, (s, e) =>
+      {
+        float marginLeft = e.MarginBounds.Left;
+        float marginTop = e.MarginBounds.Top;
+        float posY = 0;
+        int linesPerPage = (int)(e.MarginBounds.Height / font.GetHeight(e.Graphics));
+        int countLinesInPage = 0;
+        int countPages = (int)Math.Round((double)CalendarText.Lines.Length / linesPerPage, MidpointRounding.AwayFromZero);
+        if ( askToContinue && countPages > 20 )
+          if ( !DisplayManager.QueryYesNo("There are " + countPages + " pages." + Globals.NL2 + SysTranslations.AskToContinue.GetLang()) )
+          {
+            e.HasMorePages = false;
+            return;
+          }
+          else
+            askToContinue = false;
+        while ( countLinesInPage < linesPerPage && PrinterCurrentLine < CalendarText.Lines.Length )
+        {
+          string line = CalendarText.Lines[PrinterCurrentLine];
+          posY = marginTop + ( countLinesInPage * font.GetHeight(e.Graphics) );
+          e.Graphics.DrawString(line, font, Brushes.Black, marginLeft, posY, new StringFormat());
+          countLinesInPage++;
+          PrinterCurrentLine++;
+        }
+        e.HasMorePages = PrinterCurrentLine < CalendarText.Lines.Length;
+      });
     }
 
     private void DoPrintMonth()
     {
-      RunPrint(() =>
-      {
-        DoPrint(true, (s, e) =>
-        {
-          int margin = Settings.PrintingMargin; ;
-          int margin2 = margin + margin;
-          var bitmap = CalendarMonth.GetBitmap();
-          var bounds = e.PageBounds;
-          double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
-          bounds.Height = (int)( bounds.Width * ratio );
-          if ( bounds.Height > e.PageBounds.Height )
-          {
-            ratio = 1 / ratio;
-            bounds.Height = e.PageBounds.Height;
-            bounds.Width = (int)( bounds.Height * ratio );
-          }
-          e.Graphics.DrawImage(bitmap, margin, margin, bounds.Width - margin2, bounds.Height - margin2);
-        });
-      });
+      RunPrint(true, (s, e) =>
+     {
+       int margin = Settings.PrintingMargin;
+       int margin2 = margin + margin;
+       var bitmap = CalendarMonth.GetBitmap();
+       var bounds = e.PageBounds;
+       double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
+       bounds.Height = (int)( bounds.Width * ratio );
+       if ( bounds.Height > e.PageBounds.Height )
+       {
+         ratio = 1 / ratio;
+         bounds.Height = e.PageBounds.Height;
+         bounds.Width = (int)( bounds.Height * ratio );
+       }
+       e.Graphics.DrawImage(bitmap, margin, margin, bounds.Width - margin2, bounds.Height - margin2);
+     });
     }
 
-    private void RunPrint(Action action)
+    private void RunPrint(bool landscape, PrintPageEventHandler action)
     {
       try
       {
@@ -159,7 +191,10 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionPrint.Visible = true;
         ToolStrip.Enabled = false;
         MenuTray.Enabled = false;
-        action();
+        DoPrint(landscape, (s, e) =>
+        {
+          action(s, e);
+        });
       }
       finally
       {
@@ -201,8 +236,12 @@ namespace Ordisoftware.Hebrew.Calendar
               {
                 var preview = new PrintPreviewDialog();
                 ( (Form)preview ).WindowState = FormWindowState.Maximized;
+                ( (Form)preview ).ShowInTaskbar = true;
+                ( (Form)preview ).Icon = Icon;
                 preview.Document = document;
+                preview.ShowIcon = true;
                 preview.PrintPreviewControl.Zoom = 1;
+                preview.PrintPreviewControl.UseAntiAlias = true;
                 if ( preview.Controls.Count >= 2 )
                 {
                   var toolstrip = preview.Controls[1] as ToolStrip;
