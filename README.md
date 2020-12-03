@@ -152,7 +152,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 ## Future improvements
 
 - Add moon months description form and menu in tools.
-- Add save and load calendar theme.
 - Add dark theme for month view and reminder boxes.
 - Add select months interval for saving and printing month view.
 - Add print text report and data grid.
@@ -165,6 +164,12 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve log viewer to select file.
 
 ## Changelog
+
+#### 2020.12.__ - Version 5.11
+
+- Add save and load calendar theme.
+- Update web links with Rav Emmanuel Bensimon.
+- Update help.
 
 #### 2020.12.01 - Version 5.10
 
