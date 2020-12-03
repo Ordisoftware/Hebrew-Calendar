@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-11 </edited>
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Drawing;
@@ -404,44 +405,6 @@ namespace Ordisoftware.Hebrew.Calendar
       NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
     }
 
-    private void ActionMonthViewThemeLight_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      EditCurrentDayForeColor.BackColor = Color.White;
-      EditCurrentDayBackColor.BackColor = Color.FromArgb(200, 0, 0);
-      EditCalendarColorTorahEvent.BackColor = Color.DarkRed;
-      EditCalendarColorSeason.BackColor = Color.DarkGreen;
-      EditCalendarColorMoon.BackColor = Color.DarkBlue;
-      EditCalendarColorFullMoon.BackColor = Color.FromArgb(150, 100, 0);
-      EditEventColorTorah.BackColor = Color.FromArgb(255, 255, 230);
-      EditEventColorSeason.BackColor = Color.FromArgb(245, 255, 240);
-      EditEventColorShabat.BackColor = Color.FromArgb(243, 243, 243);
-      EditEventColorMonth.BackColor = Color.AliceBlue;
-      EditEventColorNext.BackColor = Color.WhiteSmoke;
-      EditCalendarColorEmpty.BackColor = Color.White;
-      EditCalendarColorDefaultText.BackColor = Color.Black;
-      EditCalendarColorNoDay.BackColor = Color.FromArgb(250, 250, 250);
-      MustRefreshMonthView = true;
-    }
-
-    private void ActionMonthViewThemeDark_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    { //Color.FromArgb(, , );
-      EditCurrentDayForeColor.BackColor = Color.White;
-      EditCurrentDayBackColor.BackColor = Color.FromArgb(200, 0, 0);
-      EditCalendarColorTorahEvent.BackColor = Color.FromArgb(250, 190, 255);
-      EditCalendarColorSeason.BackColor = Color.FromArgb(128, 255, 128);
-      EditCalendarColorMoon.BackColor = Color.FromArgb(128, 255, 255);
-      EditCalendarColorFullMoon.BackColor = Color.FromArgb(255, 255, 128);
-      EditEventColorTorah.BackColor = Color.FromArgb(70, 70, 40);
-      EditEventColorSeason.BackColor = Color.FromArgb(0, 64, 0);
-      EditEventColorShabat.BackColor = Color.FromArgb(60, 50, 60);
-      EditEventColorMonth.BackColor = Color.FromArgb(0, 50, 100);
-      EditEventColorNext.BackColor = Color.FromArgb(20, 20, 20);
-      EditCalendarColorEmpty.BackColor = Color.Black;
-      EditCalendarColorDefaultText.BackColor = Color.White;
-      EditCalendarColorNoDay.BackColor = Color.FromArgb(80, 80, 80);
-      MustRefreshMonthView = true;
-    }
-
     private void PanelTextColor_Click(object sender, EventArgs e)
     {
       DialogColor.Color = EditTextColor.BackColor;
@@ -612,11 +575,11 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( IsReady ) MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
     }
 
-    private void button2_Click(object sender, EventArgs e)
+    private void ActionSelectExportFolder_Click(object sender, EventArgs e)
     {
       SystemManager.TryCatch(() =>
       {
-        FolderBrowserDialog.SelectedPath = Settings.ExportFolder;
+        FolderBrowserDialog.SelectedPath = Settings.GetExportDirectory();
       });
       if ( FolderBrowserDialog.ShowDialog() == DialogResult.OK )
         EditExportFolder.Text = FolderBrowserDialog.SelectedPath;
@@ -626,28 +589,28 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SystemManager.TryCatch(() =>
       {
-        OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditCalculatorPath.Text);
+        OpenExeFileDialog.InitialDirectory = Path.GetDirectoryName(EditCalculatorPath.Text);
       });
       SystemManager.TryCatch(() =>
       {
-        OpenFileDialog.FileName = Path.GetFileName(EditCalculatorPath.Text);
+        OpenExeFileDialog.FileName = Path.GetFileName(EditCalculatorPath.Text);
       });
-      if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
-        EditCalculatorPath.Text = OpenFileDialog.FileName;
+      if ( OpenExeFileDialog.ShowDialog() == DialogResult.OK )
+        EditCalculatorPath.Text = OpenExeFileDialog.FileName;
     }
 
     private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
     {
       SystemManager.TryCatch(() =>
       {
-        OpenFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text);
+        OpenExeFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text);
       });
       SystemManager.TryCatch(() =>
       {
-        OpenFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text);
+        OpenExeFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text);
       });
-      if ( OpenFileDialog.ShowDialog() == DialogResult.OK )
-        EditHebrewLettersPath.Text = OpenFileDialog.FileName;
+      if ( OpenExeFileDialog.ShowDialog() == DialogResult.OK )
+        EditHebrewLettersPath.Text = OpenExeFileDialog.FileName;
     }
 
     private void ActionAutoGenerateHelp_Click(object sender, EventArgs e)
@@ -728,6 +691,29 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
         EditAutoOpenExportedFile.Checked = false;
+    }
+
+    private void ActionMonthViewThemeLight_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      SetThemeLight();
+      MustRefreshMonthView = true;
+    }
+
+    private void ActionMonthViewThemeDark_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      SetThemeDark();
+      MustRefreshMonthView = true;
+    }
+
+    private void ActionOpenTheme_Click(object sender, EventArgs e)
+    {
+      OpenTheme();
+      MustRefreshMonthView = true;
+    }
+
+    private void ActionSaveTheme_Click(object sender, EventArgs e)
+    {
+      SaveTheme();
     }
 
   }

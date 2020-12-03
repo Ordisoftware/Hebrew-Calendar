@@ -34,7 +34,7 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionResetSettings = new System.Windows.Forms.LinkLabel();
-      this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+      this.OpenExeFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.MenuSelectMoonDayTextFormat = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.nissan11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan11ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -158,6 +158,8 @@
       this.LabelMoonDayTextFormat = new System.Windows.Forms.Label();
       this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
       this.PanelCalendarColors = new System.Windows.Forms.Panel();
+      this.ActionOpenTheme = new System.Windows.Forms.Button();
+      this.ActionSaveTheme = new System.Windows.Forms.Button();
       this.label1 = new System.Windows.Forms.Label();
       this.EditEventColorTorah = new System.Windows.Forms.Panel();
       this.EditEventColorShabat = new System.Windows.Forms.Panel();
@@ -206,7 +208,7 @@
       this.TabPagePaths = new System.Windows.Forms.TabPage();
       this.LabelExportFolder = new System.Windows.Forms.Label();
       this.ActionResetExportFolder = new System.Windows.Forms.Button();
-      this.button2 = new System.Windows.Forms.Button();
+      this.ActionSelectExportFolder = new System.Windows.Forms.Button();
       this.LabelCalculatorPath = new System.Windows.Forms.Label();
       this.ActionResetHebrewLettersPath = new System.Windows.Forms.Button();
       this.ActionResetCalculatorPath = new System.Windows.Forms.Button();
@@ -216,6 +218,8 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.SaveThemeDialog = new System.Windows.Forms.SaveFileDialog();
+      this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -276,9 +280,9 @@
       this.ActionResetSettings.TabStop = true;
       this.ActionResetSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionResetSettings_LinkClicked);
       // 
-      // OpenFileDialog
+      // OpenExeFileDialog
       // 
-      resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
+      resources.ApplyResources(this.OpenExeFileDialog, "OpenExeFileDialog");
       // 
       // MenuSelectMoonDayTextFormat
       // 
@@ -1334,6 +1338,8 @@
       // 
       // PanelCalendarColors
       // 
+      this.PanelCalendarColors.Controls.Add(this.ActionOpenTheme);
+      this.PanelCalendarColors.Controls.Add(this.ActionSaveTheme);
       this.PanelCalendarColors.Controls.Add(this.label1);
       this.PanelCalendarColors.Controls.Add(this.EditEventColorTorah);
       this.PanelCalendarColors.Controls.Add(this.EditEventColorShabat);
@@ -1366,6 +1372,23 @@
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorTorahEvent);
       resources.ApplyResources(this.PanelCalendarColors, "PanelCalendarColors");
       this.PanelCalendarColors.Name = "PanelCalendarColors";
+      // 
+      // ActionOpenTheme
+      // 
+      this.ActionOpenTheme.ContextMenuStrip = this.MenuSelectMoonDayTextFormat;
+      this.ActionOpenTheme.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOpenTheme, "ActionOpenTheme");
+      this.ActionOpenTheme.Name = "ActionOpenTheme";
+      this.ActionOpenTheme.UseVisualStyleBackColor = true;
+      this.ActionOpenTheme.Click += new System.EventHandler(this.ActionOpenTheme_Click);
+      // 
+      // ActionSaveTheme
+      // 
+      this.ActionSaveTheme.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSaveTheme, "ActionSaveTheme");
+      this.ActionSaveTheme.Name = "ActionSaveTheme";
+      this.ActionSaveTheme.UseVisualStyleBackColor = true;
+      this.ActionSaveTheme.Click += new System.EventHandler(this.ActionSaveTheme_Click);
       // 
       // label1
       // 
@@ -1715,7 +1738,7 @@
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPagePaths.Controls.Add(this.LabelExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionResetExportFolder);
-      this.TabPagePaths.Controls.Add(this.button2);
+      this.TabPagePaths.Controls.Add(this.ActionSelectExportFolder);
       this.TabPagePaths.Controls.Add(this.LabelCalculatorPath);
       this.TabPagePaths.Controls.Add(this.ActionResetHebrewLettersPath);
       this.TabPagePaths.Controls.Add(this.ActionResetCalculatorPath);
@@ -1741,13 +1764,13 @@
       this.ActionResetExportFolder.UseVisualStyleBackColor = true;
       this.ActionResetExportFolder.Click += new System.EventHandler(this.ActionResetExportFolder_Click);
       // 
-      // button2
+      // ActionSelectExportFolder
       // 
-      this.button2.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.button2, "button2");
-      this.button2.Name = "button2";
-      this.button2.UseVisualStyleBackColor = true;
-      this.button2.Click += new System.EventHandler(this.button2_Click);
+      this.ActionSelectExportFolder.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectExportFolder, "ActionSelectExportFolder");
+      this.ActionSelectExportFolder.Name = "ActionSelectExportFolder";
+      this.ActionSelectExportFolder.UseVisualStyleBackColor = true;
+      this.ActionSelectExportFolder.Click += new System.EventHandler(this.ActionSelectExportFolder_Click);
       // 
       // LabelCalculatorPath
       // 
@@ -1814,6 +1837,15 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
+      // 
+      // SaveThemeDialog
+      // 
+      resources.ApplyResources(this.SaveThemeDialog, "SaveThemeDialog");
+      // 
+      // OpenThemeDialog
+      // 
+      this.OpenThemeDialog.FileName = "openFileDialog1";
+      resources.ApplyResources(this.OpenThemeDialog, "OpenThemeDialog");
       // 
       // PreferencesForm
       // 
@@ -1965,7 +1997,7 @@
     private System.Windows.Forms.CheckBox EditVacuumAtStartup;
     private System.Windows.Forms.Button ActionSelectHebrewLettersPath;
     private Ordisoftware.Core.UndoRedoTextBox EditHebrewLettersPath;
-    private System.Windows.Forms.OpenFileDialog OpenFileDialog;
+    private System.Windows.Forms.OpenFileDialog OpenExeFileDialog;
     private System.Windows.Forms.CheckBox EditDebuggerEnabled;
     private System.Windows.Forms.Label LabelColorText;
     internal System.Windows.Forms.Panel EditCalendarColorDefaultText;
@@ -2021,7 +2053,7 @@
     private System.Windows.Forms.TabPage TabPagePaths;
     private System.Windows.Forms.NumericUpDown EditCheckUpdateAtStartupInterval;
     private System.Windows.Forms.Button ActionResetExportFolder;
-    private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.Button ActionSelectExportFolder;
     private Core.UndoRedoTextBox EditExportFolder;
     private System.Windows.Forms.TabPage TabPageTrayIcon;
     private System.Windows.Forms.Label LabelLoomingDelayIntervalInfo;
@@ -2064,5 +2096,9 @@
     private System.Windows.Forms.Label LabelPrintingMarginIntervalInfo;
     private System.Windows.Forms.NumericUpDown EditPrintingMargin;
     private System.Windows.Forms.Label LabelPrintMargin;
+    private System.Windows.Forms.Button ActionOpenTheme;
+    private System.Windows.Forms.Button ActionSaveTheme;
+    private System.Windows.Forms.SaveFileDialog SaveThemeDialog;
+    private System.Windows.Forms.OpenFileDialog OpenThemeDialog;
   }
 }
