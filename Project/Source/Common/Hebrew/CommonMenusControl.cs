@@ -11,12 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using MarkdownSharp;
+using Markdig;
 
 namespace Ordisoftware.Hebrew
 {
@@ -87,18 +87,17 @@ namespace Ordisoftware.Hebrew
 
     private void ActionViewReadmeMD_Click(object sender, EventArgs e)
     {
-      var md = new Markdown();
-      var lines = File.ReadAllText(Globals.ApplicationReadmeMDPath);
-      string htmlLines = md.Transform(lines);
-      string htmlFilePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
-      File.WriteAllText(htmlFilePath, htmlLines);
-      SystemManager.RunShell(htmlFilePath);
+      var fileLines = Markdown.ToHtml(File.ReadAllText(Globals.ApplicationReadmeMDPath),
+                                      new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
+      string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
+      File.WriteAllText(filePath, fileLines);
+      SystemManager.RunShell(filePath);
       var timer = new Timer();
       timer.Interval = 5000;
       timer.Tick += (_s, _e) =>
       {
         timer.Stop();
-        File.Delete(htmlFilePath);
+        File.Delete(filePath);
       };
       timer.Start();
     }
