@@ -11,12 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-11 </edited>
 using System;
 using System.Linq;
-using System.IO;
 using System.Net;
-using System.Windows.Forms;
 
 namespace Ordisoftware.Core
 {
@@ -73,28 +71,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static SystemManager()
     {
-      try
-      {
-        foreach ( string line in File.ReadAllLines(Globals.ApplicationHomeSSLFilePath) )
-        {
-          var parts = line.SplitNoEmptyLines(" => ");
-          if ( parts.Length == 1 )
-            AuthorWebsiteSSLCertificate.Add(parts[0], "");
-          else
-          if ( parts.Length == 2 )
-            AuthorWebsiteSSLCertificate.Add(parts[0], parts[1]);
-          else
-          if ( parts.Length > 2 )
-            AuthorWebsiteSSLCertificate.Add(parts[0], parts.Skip(1).AsMultiSpace());
-        }
-      }
-      catch ( Exception ex )
-      {
-        MessageBox.Show(SysTranslations.LoadFileError.GetLang(Globals.ApplicationHomeSSLFilePath, ex.Message), 
-                        Globals.AssemblyTitle, 
-                        MessageBoxButtons.OK, 
-                        MessageBoxIcon.Warning);
-      }
+      AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, "=>");
     }
 
   }

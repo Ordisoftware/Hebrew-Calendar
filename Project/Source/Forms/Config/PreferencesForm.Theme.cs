@@ -45,6 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditCalendarColorEmpty.BackColor = Color.White;
       EditCalendarColorDefaultText.BackColor = Color.Black;
       EditCalendarColorNoDay.BackColor = Color.FromArgb(250, 250, 250);
+      MustRefreshMonthView = true;
     }
 
     private void SetThemeDark()
@@ -63,6 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditCalendarColorEmpty.BackColor = Color.Black;
       EditCalendarColorDefaultText.BackColor = Color.White;
       EditCalendarColorNoDay.BackColor = Color.FromArgb(80, 80, 80);
+      MustRefreshMonthView = true;
     }
 
     private void OpenTheme()
@@ -73,18 +75,7 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       if ( OpenThemeDialog.ShowDialog() != DialogResult.OK ) return;
       var items = new NullSafeOfStringDictionary<string>();
-      try
-      {
-        foreach ( string line in File.ReadAllLines(OpenThemeDialog.FileName) )
-        {
-          var parts = line.SplitNoEmptyLines("=");
-          if ( parts.Length == 2 ) items.Add(parts[0], parts[1]);
-        }
-      }
-      catch ( Exception ex )
-      {
-        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(OpenThemeDialog.FileName, ex.Message));
-      }
+      if ( !items.LoadKeyValuePairs(OpenThemeDialog.FileName, "=") ) return;
       EditCalendarColorDefaultText.BackColor = ColorTranslator.FromHtml(items["MonthViewTextColor"]);
       EditCalendarColorEmpty.BackColor = ColorTranslator.FromHtml(items["MonthViewBackColor"]);
       EditCalendarColorNoDay.BackColor = ColorTranslator.FromHtml(items["MonthViewNoDaysBackColor"]);
@@ -109,6 +100,7 @@ namespace Ordisoftware.Hebrew.Calendar
       NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
       MainForm.Instance.CalendarText.ForeColor = EditTextColor.BackColor;
       MainForm.Instance.CalendarText.BackColor = EditTextBackground.BackColor;
+      MustRefreshMonthView = true;
     }
 
     private void SaveTheme()
