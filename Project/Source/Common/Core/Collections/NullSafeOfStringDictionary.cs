@@ -89,13 +89,13 @@ namespace Ordisoftware.Core
         {
           var parts = line.SplitNoEmptyLines(separator);
           if ( parts.Length == 1 )
-            list.Add(parts[0], "");
+            list.Add(parts[0].Trim(), "");
           else
           if ( parts.Length == 2 )
-            list.Add(parts[0], parts[1]);
+            list.Add(parts[0].Trim(), parts[1].Trim());
           else
           if ( parts.Length > 2 )
-            list.Add(parts[0], parts.Skip(1).AsMultiSpace());
+            list.Add(parts[0].Trim(), parts.Skip(1).Select(v => v.Trim()).AsMultiSpace());
         }
         return true;
       }
