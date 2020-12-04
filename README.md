@@ -166,11 +166,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.08 - Version 5.11
 
-- Add save and load calendar theme.
-- Add dark theme for month view and reminder boxes.
+- Add save and load theme for month view, reminder boxes and navigation windows.
+- Add dark theme for month view.
 - Add print text report.
 - Add open export folder in tools menu.
-- Change markdown to html dependency.
+- Change "markdown to html" dependency.
 - Update web links.
 - Update help.
 
