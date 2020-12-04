@@ -11,10 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-11 </edited>
 using System;
+using System.IO;
+using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Windows.Forms;
 
 namespace Ordisoftware.Core
 {
@@ -66,6 +69,44 @@ namespace Ordisoftware.Core
           base[key] = value;
         else
           Add(key, value);
+      }
+    }
+  }
+
+  /// <summary>
+  /// Provide NullSafeOfStringDictionary helper.
+  /// </summary>
+  static public class NullSafeOfStringDictionaryHelper
+  {
+    static public bool LoadKeyValuePairs(this NullSafeOfStringDictionary<string> list,
+                                         string filePath, 
+                                         string separator, 
+                                         bool showError = true)
+    {
+      try
+      {
+        foreach ( string line in File.ReadAllLines(filePath) )
+        {
+          var parts = line.SplitNoEmptyLines(separator);
+          if ( parts.Length == 1 )
+            list.Add(parts[0], "");
+          else
+          if ( parts.Length == 2 )
+            list.Add(parts[0], parts[1]);
+          else
+          if ( parts.Length > 2 )
+            list.Add(parts[0], parts.Skip(1).AsMultiSpace());
+        }
+        return true;
+      }
+      catch ( Exception ex )
+      {
+        if ( showError )
+          MessageBox.Show(SysTranslations.LoadFileError.GetLang(filePath, ex.Message),
+                          Globals.AssemblyTitle,
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Warning);
+        return false;
       }
     }
   }
