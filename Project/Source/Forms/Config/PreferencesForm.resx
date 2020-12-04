@@ -347,7 +347,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionManageBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 303</value>
+    <value>103, 304</value>
   </data>
   <data name="ActionManageBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -521,13 +521,13 @@
     <value>20, 235</value>
   </data>
   <data name="LabelPrintMargin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 13</value>
+    <value>460, 13</value>
   </data>
   <data name="LabelPrintMargin.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
   <data name="LabelPrintMargin.Text" xml:space="preserve">
-    <value>Printing margin in 100 x inch (20 = 0,5 cm / 50 = 1,25 cm / 80 = 2 cm / 100 = 2,5 cm / 120 = 3 cm)</value>
+    <value>Printing margin in 100 x inch (20 = 0,5 cm | 50 = 1,25 cm | 80 = 2 cm | 100 = 2,5 cm | 120 = 3 cm)</value>
   </data>
   <data name="&gt;&gt;LabelPrintMargin.Name" xml:space="preserve">
     <value>LabelPrintMargin</value>
@@ -2232,7 +2232,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 350</value>
+    <value>20, 355</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -2536,7 +2536,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2566,7 +2566,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2590,7 +2590,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2617,7 +2617,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -4150,7 +4150,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMonthViewThemeDark.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 245</value>
+    <value>17, 247</value>
   </data>
   <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -4216,7 +4216,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMonthViewThemeLight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 225</value>
+    <value>17, 227</value>
   </data>
   <data name="ActionMonthViewThemeLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 13</value>
@@ -4753,7 +4753,7 @@
     <value>31</value>
   </data>
   <data name="PanelCalendarColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 122</value>
+    <value>23, 120</value>
   </data>
   <data name="PanelCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>540, 265</value>
@@ -4783,7 +4783,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditUseColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 102</value>
+    <value>23, 100</value>
   </data>
   <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 17</value>
@@ -4919,7 +4919,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMonthViewSunToolTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 77</value>
+    <value>23, 75</value>
   </data>
   <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 17</value>
@@ -4961,7 +4961,7 @@
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthView</value>
@@ -5603,7 +5603,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -5624,7 +5624,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -5645,7 +5645,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>

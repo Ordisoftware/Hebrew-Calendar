@@ -154,6 +154,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add moon months description form and menu in tools.
 - Add select months interval for saving and printing month view.
 - Add print data grid.
+- Add dark theme for month view.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Add a different tray icon to indicate if shabat or a celebration is running, including week days.
@@ -166,8 +167,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.08 - Version 5.11
 
-- Add save and load theme for month view, reminder boxes and navigation windows.
-- Add dark theme for month view.
+- Add save and load theme for month view, reminder boxes and navigation window.
 - Add print text report.
 - Add open export folder in tools menu.
 - Change "markdown to html" dependency.
