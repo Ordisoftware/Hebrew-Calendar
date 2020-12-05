@@ -1610,7 +1610,7 @@
     <value>10</value>
   </data>
   <data name="TabPageTrayIcon.Text" xml:space="preserve">
-    <value>Tray Icon</value>
+    <value>Tray icon</value>
   </data>
   <data name="&gt;&gt;TabPageTrayIcon.Name" xml:space="preserve">
     <value>TabPageTrayIcon</value>
@@ -1907,7 +1907,7 @@
     <value>4</value>
   </data>
   <data name="TabPageNavigationWindow.Text" xml:space="preserve">
-    <value>Navigation Window</value>
+    <value>Navigation window</value>
   </data>
   <data name="&gt;&gt;TabPageNavigationWindow.Name" xml:space="preserve">
     <value>TabPageNavigationWindow</value>
