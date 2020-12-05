@@ -133,16 +133,24 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoPrintTextReport()
     {
-      bool askToContinue = true;
+      var formatString = new StringFormat();
       var font = new Font(CalendarText.Font.Name, Settings.PrintingMargin > 75 ? 6 : 7);
+      float fontHeight = -1;
+      float marginLeft = -1;
+      float marginTop = -1;
+      int linesPerPage = -1;
+      int countPages = -1;
+      int countTotalLines = CalendarText.Lines.Length;
+      bool askToContinue = true;
       RunPrint(false, (s, e) =>
       {
-        float marginLeft = e.MarginBounds.Left;
-        float marginTop = e.MarginBounds.Top;
         float posY = 0;
-        int linesPerPage = (int)(e.MarginBounds.Height / font.GetHeight(e.Graphics));
+        if ( fontHeight == -1 ) fontHeight = font.GetHeight(e.Graphics);
+        if ( marginLeft == -1 ) marginLeft = e.MarginBounds.Left;
+        if ( marginTop == -1 ) marginTop = e.MarginBounds.Top;
+        if ( linesPerPage == -1 ) linesPerPage = (int)( e.MarginBounds.Height / font.GetHeight(e.Graphics) );
+        if ( countPages == -1 ) countPages = (int)Math.Round((double)countTotalLines / linesPerPage, MidpointRounding.AwayFromZero);
         int countLinesInPage = 0;
-        int countPages = (int)Math.Round((double)CalendarText.Lines.Length / linesPerPage, MidpointRounding.AwayFromZero);
         if ( askToContinue )
           if ( Settings.PrintPageCountWarning > 0 && countPages > Settings.PrintPageCountWarning )
             if ( !DisplayManager.QueryYesNo(SysTranslations.AskToPrintLotsOfPages.GetLang(countPages)) )
@@ -154,37 +162,38 @@ namespace Ordisoftware.Hebrew.Calendar
               askToContinue = false;
           else
             askToContinue = false;
-      while ( countLinesInPage < linesPerPage && PrinterCurrentLine < CalendarText.Lines.Length )
+        while ( countLinesInPage < linesPerPage && PrinterCurrentLine < countTotalLines )
         {
           string line = CalendarText.Lines[PrinterCurrentLine];
-          posY = marginTop + ( countLinesInPage * font.GetHeight(e.Graphics) );
-          e.Graphics.DrawString(line, font, Brushes.Black, marginLeft, posY, new StringFormat());
+          posY = marginTop + countLinesInPage * fontHeight;
+          e.Graphics.DrawString(line, font, Brushes.Black, marginLeft, posY);
           countLinesInPage++;
           PrinterCurrentLine++;
         }
-        e.HasMorePages = PrinterCurrentLine < CalendarText.Lines.Length;
+        e.HasMorePages = PrinterCurrentLine < countTotalLines;
         System.Threading.Thread.Sleep(10);
+        Application.DoEvents();
       });
     }
 
     private void DoPrintMonth()
     {
       RunPrint(true, (s, e) =>
-     {
-       int margin = Settings.PrintingMargin;
-       int margin2 = margin + margin;
-       var bitmap = CalendarMonth.GetBitmap();
-       var bounds = e.PageBounds;
-       double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
-       bounds.Height = (int)( bounds.Width * ratio );
-       if ( bounds.Height > e.PageBounds.Height )
-       {
-         ratio = 1 / ratio;
-         bounds.Height = e.PageBounds.Height;
-         bounds.Width = (int)( bounds.Height * ratio );
-       }
-       e.Graphics.DrawImage(bitmap, margin, margin, bounds.Width - margin2, bounds.Height - margin2);
-     });
+      {
+        int margin = Settings.PrintingMargin;
+        int margin2 = margin + margin;
+        var bitmap = CalendarMonth.GetBitmap();
+        var bounds = e.PageBounds;
+        double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
+        bounds.Height = (int)( bounds.Width * ratio );
+        if ( bounds.Height > e.PageBounds.Height )
+        {
+          ratio = 1 / ratio;
+          bounds.Height = e.PageBounds.Height;
+          bounds.Width = (int)( bounds.Height * ratio );
+        }
+        e.Graphics.DrawImage(bitmap, margin, margin, bounds.Width - margin2, bounds.Height - margin2);
+      });
     }
 
     private void RunPrint(bool landscape, PrintPageEventHandler action)
