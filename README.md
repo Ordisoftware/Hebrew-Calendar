@@ -171,6 +171,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add print text report.
 - Add printing option tab in preferences form.
 - Add open export folder in tools menu.
+- Improve UI/UX
 - Change "markdown to html" dependency.
 - Update web links.
 - Update help.

@@ -40,6 +40,7 @@
       this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
       this.LabelOptions = new System.Windows.Forms.Label();
+      this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -119,6 +120,16 @@
       resources.ApplyResources(this.LabelOptions, "LabelOptions");
       this.LabelOptions.Name = "LabelOptions";
       // 
+      // EditShowPrintPreviewDialog
+      // 
+      resources.ApplyResources(this.EditShowPrintPreviewDialog, "EditShowPrintPreviewDialog");
+      this.EditShowPrintPreviewDialog.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ShowPrintPreviewDialog;
+      this.EditShowPrintPreviewDialog.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditShowPrintPreviewDialog.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ShowPrintPreviewDialog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditShowPrintPreviewDialog.Name = "EditShowPrintPreviewDialog";
+      this.EditShowPrintPreviewDialog.UseVisualStyleBackColor = true;
+      this.EditShowPrintPreviewDialog.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
+      // 
       // SelectViewForm
       // 
       this.AcceptButton = this.ActionOK;
@@ -127,6 +138,7 @@
       this.CancelButton = this.ActionCancel;
       this.Controls.Add(this.EditSelectViewToExport);
       this.Controls.Add(this.EditAutoOpenExportedFile);
+      this.Controls.Add(this.EditShowPrintPreviewDialog);
       this.Controls.Add(this.EditAutoOpenExportFolder);
       this.Controls.Add(this.SelectGrid);
       this.Controls.Add(this.SelectMonth);
@@ -158,5 +170,6 @@
     private System.Windows.Forms.CheckBox EditAutoOpenExportedFile;
     private System.Windows.Forms.CheckBox EditAutoOpenExportFolder;
     private System.Windows.Forms.Label LabelOptions;
+    private System.Windows.Forms.CheckBox EditShowPrintPreviewDialog;
   }
 }
