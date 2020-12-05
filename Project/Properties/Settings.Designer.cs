@@ -1820,5 +1820,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["UpgradeResetRequiredV5_10"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int PrintPageCountWarning {
+            get {
+                return ((int)(this["PrintPageCountWarning"]));
+            }
+            set {
+                this["PrintPageCountWarning"] = value;
+            }
+        }
     }
 }

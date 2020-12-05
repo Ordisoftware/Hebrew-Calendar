@@ -169,6 +169,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Add save and load theme for month view, reminder boxes and navigation window.
 - Add print text report.
+- Add printing option tab in preferences form.
 - Add open export folder in tools menu.
 - Change "markdown to html" dependency.
 - Update web links.

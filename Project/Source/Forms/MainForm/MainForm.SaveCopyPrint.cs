@@ -129,6 +129,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private int PrinterCurrentLine;
 
+    const int PrintAskToContinueTrigger = 50;
+
     private void DoPrintTextReport()
     {
       bool askToContinue = true;
@@ -141,15 +143,18 @@ namespace Ordisoftware.Hebrew.Calendar
         int linesPerPage = (int)(e.MarginBounds.Height / font.GetHeight(e.Graphics));
         int countLinesInPage = 0;
         int countPages = (int)Math.Round((double)CalendarText.Lines.Length / linesPerPage, MidpointRounding.AwayFromZero);
-        if ( askToContinue && countPages > 20 )
-          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToPrintLotsOfPages.GetLang(countPages)) )
-          {
-            e.HasMorePages = false;
-            return;
-          }
+        if ( askToContinue )
+          if ( Settings.PrintPageCountWarning > 0 && countPages > Settings.PrintPageCountWarning )
+            if ( !DisplayManager.QueryYesNo(SysTranslations.AskToPrintLotsOfPages.GetLang(countPages)) )
+            {
+              e.HasMorePages = false;
+              return;
+            }
+            else
+              askToContinue = false;
           else
             askToContinue = false;
-        while ( countLinesInPage < linesPerPage && PrinterCurrentLine < CalendarText.Lines.Length )
+      while ( countLinesInPage < linesPerPage && PrinterCurrentLine < CalendarText.Lines.Length )
         {
           string line = CalendarText.Lines[PrinterCurrentLine];
           posY = marginTop + ( countLinesInPage * font.GetHeight(e.Graphics) );
@@ -158,6 +163,7 @@ namespace Ordisoftware.Hebrew.Calendar
           PrinterCurrentLine++;
         }
         e.HasMorePages = PrinterCurrentLine < CalendarText.Lines.Length;
+        System.Threading.Thread.Sleep(10);
       });
     }
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -95,6 +95,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.RestoreLastViewAtStartup = EditRestoreLastViewAtStartup.Checked;
       Settings.ShowPrintPreviewDialog = EditShowPrintDialog.Checked;
       Settings.PrintingMargin = (int)EditPrintingMargin.Value;
+      Settings.PrintPageCountWarning = (int)EditPrintPageCountWarning.Value;
+
     }
 
   }

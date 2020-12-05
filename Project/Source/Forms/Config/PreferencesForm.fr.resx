@@ -867,4 +867,10 @@
   <data name="LabelPrintMargin.Text" xml:space="preserve">
     <value>Marge d'impression en 100 x inch (20 = 0,5 cm | 50 = 1,25 cm | 80 = 2 cm | 100 = 2,5 cm | 120 = 3 cm)</value>
   </data>
+  <data name="LabelPrintPageCountWarning.Text" xml:space="preserve">
+    <value>Nombre de pages pour afficher un avertissement</value>
+  </data>
+  <data name="TabPagePrint.Text" xml:space="preserve">
+    <value>Impression</value>
+  </data>
 </root>
