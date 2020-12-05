@@ -157,4 +157,7 @@
   <data name="LabelOptions.Text" xml:space="preserve">
     <value>Options :</value>
   </data>
+  <data name="EditShowPrintPreviewDialog.Text" xml:space="preserve">
+    <value>Afficher la boîte de dialogue d'aperçu avant impression</value>
+  </data>
 </root>

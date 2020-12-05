@@ -144,57 +144,9 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
-    <value>ActionCancel</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
-    <value>ActionOK</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>9</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 213</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 28</value>
-  </data>
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -255,6 +207,30 @@
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 228</value>
+  </data>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 28</value>
+  </data>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="SelectText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -265,7 +241,7 @@
     <value>76, 17</value>
   </data>
   <data name="SelectText.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
+    <value>0</value>
   </data>
   <data name="SelectText.Text" xml:space="preserve">
     <value>Text report</value>
@@ -280,7 +256,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectText.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="SelectMonth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -295,7 +271,7 @@
     <value>106, 17</value>
   </data>
   <data name="SelectMonth.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
+    <value>1</value>
   </data>
   <data name="SelectMonth.Text" xml:space="preserve">
     <value>Monthly calendar</value>
@@ -310,7 +286,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectMonth.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="SelectGrid.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -325,7 +301,7 @@
     <value>68, 17</value>
   </data>
   <data name="SelectGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
+    <value>2</value>
   </data>
   <data name="SelectGrid.Text" xml:space="preserve">
     <value>Data grid</value>
@@ -340,7 +316,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectGrid.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="EditSelectViewToExport.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -355,7 +331,7 @@
     <value>230, 17</value>
   </data>
   <data name="EditSelectViewToExport.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
+    <value>3</value>
   </data>
   <data name="EditSelectViewToExport.Text" xml:space="preserve">
     <value>Enable this dialog else use the current view</value>
@@ -385,7 +361,7 @@
     <value>178, 17</value>
   </data>
   <data name="EditAutoOpenExportedFile.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
+    <value>4</value>
   </data>
   <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
     <value>Open exported file after success</value>
@@ -415,7 +391,7 @@
     <value>179, 17</value>
   </data>
   <data name="EditAutoOpenExportFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
+    <value>5</value>
   </data>
   <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
     <value>Open export folder after success</value>
@@ -430,7 +406,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LabelOptions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -460,7 +436,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelOptions.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 197</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 17</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Text" xml:space="preserve">
+    <value>Show print preview dialog</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Name" xml:space="preserve">
+    <value>EditShowPrintPreviewDialog</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -469,7 +475,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>364, 251</value>
+    <value>364, 266</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

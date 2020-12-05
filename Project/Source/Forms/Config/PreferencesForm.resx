@@ -335,7 +335,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionManageBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>61</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;ActionManageBookmarks.Name" xml:space="preserve">
     <value>ActionManageBookmarks</value>
@@ -392,7 +392,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditDateBookmarksCount.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;EditDateBookmarksCount.Name" xml:space="preserve">
     <value>EditDateBookmarksCount</value>
@@ -419,7 +419,7 @@
     <value>490, 18</value>
   </data>
   <data name="EditVolume.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;EditVolume.Name" xml:space="preserve">
     <value>EditVolume</value>
@@ -629,7 +629,7 @@
     <value>178, 17</value>
   </data>
   <data name="EditAutoOpenExportedFile.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
     <value>Open exported file after success</value>
@@ -689,7 +689,7 @@
     <value>135, 17</value>
   </data>
   <data name="EditWebLinksMenuEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Text" xml:space="preserve">
     <value>Enable web links menu</value>
@@ -719,7 +719,7 @@
     <value>107, 17</value>
   </data>
   <data name="EditDebuggerEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="EditDebuggerEnabled.Text" xml:space="preserve">
     <value>Enable debugger</value>
@@ -749,7 +749,7 @@
     <value>134, 17</value>
   </data>
   <data name="EditUsageStatisticsEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="EditUsageStatisticsEnabled.Text" xml:space="preserve">
     <value>Enable usage statistics</value>
@@ -779,7 +779,7 @@
     <value>92, 17</value>
   </data>
   <data name="EditLogEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="EditLogEnabled.Text" xml:space="preserve">
     <value>Enable log file</value>
@@ -5126,7 +5126,7 @@
     <value>282, 17</value>
   </data>
   <data name="EditSelectViewToExport.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
+    <value>0</value>
   </data>
   <data name="EditSelectViewToExport.Text" xml:space="preserve">
     <value>Select the view to save, copy or print, else use current</value>
@@ -5285,7 +5285,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditPrintPageCountWarning.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;EditPrintPageCountWarning.Name" xml:space="preserve">
     <value>EditPrintPageCountWarning</value>
@@ -5312,7 +5312,7 @@
     <value>134, 17</value>
   </data>
   <data name="EditShowPrintDialog.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>1</value>
   </data>
   <data name="EditShowPrintDialog.Text" xml:space="preserve">
     <value>Preview before printing</value>
@@ -5339,7 +5339,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditPrintingMargin.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;EditPrintingMargin.Name" xml:space="preserve">
     <value>EditPrintingMargin</value>
