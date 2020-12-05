@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Data;
 using Ordisoftware.Core;
@@ -57,6 +57,9 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
+        TrayIcon.Icon = ShabatForm == null && RemindCelebrationDayForms.Count == 0
+                        ? TrayIconDefault
+                        : TrayIconEvent;
         SystemManager.TryCatch(() =>
         {
           if ( LockSessionForm.Instance?.Visible ?? false )
