@@ -199,22 +199,6 @@
   <data name="EditSelectViewToExport.Text" xml:space="preserve">
     <value>Sélectionner la vue à sauvegarder, copier ou imprimer, sinon utiliser celle en cours</value>
   </data>
-  <data name="ActionManageBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAlBJREFUOE+V00tPE1EYh3GWfgFNEFgoGxcYLppUFEqq1pUujRuNaIzuUeQSaClW
-        gvEKgolBXBHQSEIilwJyaaG0pQgleFmgSIjGiLSdomgLRR/fGWI10i48yT9nZs6c37xn5kwSkGS82q8c
-        tPZhsPajqx3l7olCJvalUy/93poRDpht5Jm6N2LuRm/p4bC1T1HnaoA6eWI+SK65l6kojGclw7mjeDOT
-        mYjAdOAn0/71WF6F0JAYIBqn7rvQmWy4w+DM3M7qSSNu6Yu8UDKsUDrop0RSPODHt/RDqyQGyBI43eSW
-        Cmw4vqlACuHjetxZKVyegspRBZPDT6XdT/mwn/FP65uBwiaPBgyuCCATV47pcGenUOYDs1OhSgA1JkHG
-        PkbjA/sF6F1WgVS+HsnSoOJJKLMrlA8tUSFPN9kDDH+Ikr8JeLABdMm7HctOI6TfhUOW8m+rHAnwbGE1
-        MdARFCAnDSV3pwCpFEkFF4cCXBr4TKlUUTUaoGc+EVDVS3sAXDmpBOVTxqvgijPI03cR9PEAdcM8XpR9
-        sHsroR1bcGdswzwDFpdCtdOP1RWg1hOkYy4BkGfu4dF76LpwnnudPhxGHddmolz3LnNjXNFy0xviydtE
-        gGzV1rk1br+IcOvlGvWeRe74VqibDFH3XNmIHLe9CW8GzgiQL0DLbITG6S80+JZp+N1PhWJplPOW2TAF
-        VX9tZWNNP2ebPdrF1rkoD19/pzlB1LE2ucdQbfsDGCra7Sqi/hMGi02DCqTEuJExdfIhS+dCDJCWLtnz
-        n8kAkn4BwCnDttDqHwAAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="ActionSelectLangEN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -871,6 +855,6 @@
     <value>Nombre de pages pour afficher un avertissement</value>
   </data>
   <data name="TabPagePrint.Text" xml:space="preserve">
-    <value>Impression</value>
+    <value>Export et impression</value>
   </data>
 </root>
