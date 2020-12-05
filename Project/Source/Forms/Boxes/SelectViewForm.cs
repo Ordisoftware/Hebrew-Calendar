@@ -11,10 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-11 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -22,14 +23,17 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class SelectViewForm : Form
   {
 
-    static public bool Run(ref ViewMode view, string title, ViewMode available = ViewMode.All)
+    static public bool Run(ExportAction action, ref ViewMode view, ViewMode available)
     {
       using ( var form = new SelectViewForm() )
       {
-        form.Text += title;
+        form.Text += SysTranslations.ViewActionTitle.GetLang(action);
         form.SelectText.Enabled = available.HasFlag(ViewMode.Text);
         form.SelectMonth.Enabled = available.HasFlag(ViewMode.Month);
         form.SelectGrid.Enabled = available.HasFlag(ViewMode.Grid);
+        form.EditAutoOpenExportedFile.Enabled = action == ExportAction.File;
+        form.EditAutoOpenExportFolder.Enabled = action == ExportAction.File;
+        form.EditShowPrintPreviewDialog.Enabled = action == ExportAction.Print;
         if ( view == ViewMode.Text && form.SelectText.Enabled )
           form.SelectText.Checked = true;
         else

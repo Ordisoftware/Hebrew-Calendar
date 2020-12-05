@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly NullSafeDictionary<DayOfWeek, TranslationsDictionary> DayOfWeek
-      = new NullSafeDictionary<DayOfWeek, TranslationsDictionary>()
+      = new NullSafeDictionary<DayOfWeek, TranslationsDictionary>
       {
         [System.DayOfWeek.Monday] = new TranslationsDictionary
         {
@@ -79,7 +79,7 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly NullSafeDictionary<MoonPhase, TranslationsDictionary> MoonPhase
-      = new NullSafeDictionary<MoonPhase, TranslationsDictionary>()
+      = new NullSafeDictionary<MoonPhase, TranslationsDictionary>
       {
         [Calendar.MoonPhase.New] = new TranslationsDictionary
         {
@@ -124,7 +124,7 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly NullSafeDictionary<Ephemeris, TranslationsDictionary> Ephemeris
-      = new NullSafeDictionary<Ephemeris, TranslationsDictionary>()
+      = new NullSafeDictionary<Ephemeris, TranslationsDictionary>
       {
         [Calendar.Ephemeris.Rise] = new TranslationsDictionary
         {
@@ -149,7 +149,7 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly NullSafeDictionary<ReportFieldText, TranslationsDictionary> ReportFieldText
-      = new NullSafeDictionary<ReportFieldText, TranslationsDictionary>()
+      = new NullSafeDictionary<ReportFieldText, TranslationsDictionary>
       {
         [Calendar.ReportFieldText.Date] = new TranslationsDictionary
         {
@@ -179,7 +179,7 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly NullSafeDictionary<SeasonChange, TranslationsDictionary> SeasonEvent
-      = new NullSafeDictionary<SeasonChange, TranslationsDictionary>()
+      = new NullSafeDictionary<SeasonChange, TranslationsDictionary>
       {
         [SeasonChange.None] = new TranslationsDictionary
         {
@@ -209,7 +209,7 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly NullSafeDictionary<TorahEvent, TranslationsDictionary> TorahEvent
-      = new NullSafeDictionary<TorahEvent, TranslationsDictionary>()
+      = new NullSafeDictionary<TorahEvent, TranslationsDictionary>
       {
         [Calendar.TorahEvent.None] = new TranslationsDictionary
         {
