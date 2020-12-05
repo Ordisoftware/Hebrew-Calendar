@@ -157,7 +157,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add dark theme for month view.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
-- Add a different tray icon to indicate if shabat or a celebration is running, including week days.
 - Improve month view to show celebration week days with number as text like first and last.
 - Improve navigation form to show celebration week day number.
 - Improve automatic web check update to not run when shabat and special celebration days but the next day.
@@ -167,6 +166,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.08 - Version 5.11
 
+- Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add save and load theme for month view, reminder boxes and navigation window.
 - Add print text report.
 - Add printing option tab in preferences form.
