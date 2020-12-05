@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     static public (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
-    static public (int, int, int, int) DateBookmarksCountInterval = (0, 30, 10, 1);
+    static public (int, int, int, int) DateBookmarksCountInterval = (0, 30, 20, 1);
     static public (int, int, int, int) PrintingMarginInterval = (10, 150, 50, 10);
     static public (int, int, int, int) PrintPageCountWarningInterval = (0, 100, 20, 10);
     static public (int, int, int, int) LoomingDelayInterval = (500, 5000, 1000, 250);

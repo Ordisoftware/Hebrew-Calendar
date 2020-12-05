@@ -434,7 +434,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="DateBookmarksCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">10</Value>
+      <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="ManageDateBookmarksFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">264, 311</Value>
