@@ -26,7 +26,9 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private void DoExport(ExportAction action, NullSafeDictionary<ViewMode, Func<bool>> process, Action after)
+    private void DoExport(ExportAction action,
+                          NullSafeDictionary<ViewMode, Func<bool>> process,
+                          Action<ViewMode> after)
     {
       ViewMode available = ViewMode.None;
       foreach (var item in process.Where(p => p.Value != null) )
@@ -38,7 +40,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( process[view] == null )
         throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
       if ( process[view].Invoke() )
-        after?.Invoke();
+        after?.Invoke(view);
     }
 
     private void DoSave()
@@ -80,10 +82,11 @@ namespace Ordisoftware.Hebrew.Calendar
           return true;
         }
       };
-      Action after = () =>
+      Action<ViewMode> after = (view) =>
       {
         DisplayManager.ShowSuccessOrSound(AppTranslations.ViewSavedToFile.GetLang(filePath),
-                                          Globals.KeyboardSoundFilePath);
+                                          view == ViewMode.Month ? Globals.SnapshotSoundFilePath
+                                                                 : Globals.KeyboardSoundFilePath);
         if ( Settings.AutoOpenExportFolder )
           SystemManager.RunShell(Path.GetDirectoryName(filePath));
         if ( Settings.AutoOpenExportedFile )
@@ -122,10 +125,11 @@ namespace Ordisoftware.Hebrew.Calendar
           return true;
         },
       };
-      Action after = () =>
+      Action<ViewMode> after = (view) =>
       {
         DisplayManager.ShowSuccessOrSound(AppTranslations.ViewCopiedToClipboard.GetLang(),
-                                          Globals.ClipboardSoundFilePath);
+                                          view == ViewMode.Month ? Globals.SnapshotSoundFilePath
+                                                                 : Globals.ClipboardSoundFilePath);
       };
       DoExport(ExportAction.Clipboard, process, after);
     }
@@ -181,7 +185,7 @@ namespace Ordisoftware.Hebrew.Calendar
             else
             {
               var form = Application.OpenForms.ToList().LastOrDefault();
-              form.Popup();
+              form?.Popup();
               askToContinue = false;
             }
           else

@@ -164,7 +164,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.12.08 - Version 5.11
+#### 2020.12.06 - Version 5.11
 
 - Add navigation buttons to search event, lunar month and gregorian month windows.
 - Add save and load theme for month view, reminder boxes and navigation window.
