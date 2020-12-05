@@ -26,7 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private void DoExport(ExportAction action, NullSafeDictionary<ViewMode, Action> process, Action after)
+    private void DoExport(ExportAction action, NullSafeDictionary<ViewMode, Func<bool>> process, Action after)
     {
       ViewMode available = ViewMode.None;
       foreach (var item in process.Where(p => p.Value != null) )
@@ -37,30 +37,32 @@ namespace Ordisoftware.Hebrew.Calendar
           return;
       if ( process[view] == null )
         throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
-      process[view].Invoke();
-      after?.Invoke();
+      if ( process[view].Invoke() )
+        after?.Invoke();
     }
 
     private void DoSave()
     {
       string filePath = "";
-      var process = new NullSafeDictionary<ViewMode, Action>
+      var process = new NullSafeDictionary<ViewMode, Func<bool>>
       {
         [ViewMode.Text] = () =>
         {
-          if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
+          if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveFileDialog.FileName;
           File.WriteAllText(filePath, CalendarText.Text);
+          return true;
         },
         [ViewMode.Month] = () =>
         {
-          if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return;
+          if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveImageDialog.FileName;
           try
           {
             CalendarMonth.ShowTodayButton = false;
             CalendarMonth.ShowArrowControls = false;
             CalendarMonth.GetBitmap().Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+            return true;
           }
           finally
           {
@@ -71,10 +73,11 @@ namespace Ordisoftware.Hebrew.Calendar
         [ViewMode.Grid] = () =>
         {
           var content = GenerateReportCSV();
-          if ( content == null ) return;
-          if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
+          if ( content == null ) return false;
+          if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveCSVDialog.FileName;
           File.WriteAllText(filePath, content.ToString());
+          return true;
         }
       };
       Action after = () =>
@@ -91,11 +94,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoCopy()
     {
-      var process = new NullSafeDictionary<ViewMode, Action>
+      var process = new NullSafeDictionary<ViewMode, Func<bool>>
       {
         [ViewMode.Text] = () =>
         {
           Clipboard.SetText(CalendarText.Text);
+          return true;
         },
         [ViewMode.Month] = () =>
         {
@@ -104,6 +108,7 @@ namespace Ordisoftware.Hebrew.Calendar
             CalendarMonth.ShowTodayButton = false;
             CalendarMonth.ShowArrowControls = false;
             Clipboard.SetImage(CalendarMonth.GetBitmap());
+            return true;
           }
           finally
           {
@@ -114,6 +119,7 @@ namespace Ordisoftware.Hebrew.Calendar
         [ViewMode.Grid] = () =>
         {
           Clipboard.SetText(GenerateReportCSV().ToString());
+          return true;
         },
       };
       Action after = () =>
@@ -126,10 +132,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoPrint()
     {
-      var process = new NullSafeDictionary<ViewMode, Action>
+      var process = new NullSafeDictionary<ViewMode, Func<bool>>
       {
-        [ViewMode.Text] = () => DoPrintTextReport(),
-        [ViewMode.Month] = () => DoPrintMonth(),
+        [ViewMode.Text] = () => { DoPrintTextReport(); return true; },
+        [ViewMode.Month] = () =>{ DoPrintMonth(); return true; },
         [ViewMode.Grid] = null
       };
       DoExport(ExportAction.Print, process, null);
@@ -173,7 +179,11 @@ namespace Ordisoftware.Hebrew.Calendar
               return;
             }
             else
+            {
+              var form = Application.OpenForms.ToList().LastOrDefault();
+              form.Popup();
               askToContinue = false;
+            }
           else
             askToContinue = false;
         while ( countLinesInPage < linesPerPage && PrinterCurrentLine < countTotalLines )
