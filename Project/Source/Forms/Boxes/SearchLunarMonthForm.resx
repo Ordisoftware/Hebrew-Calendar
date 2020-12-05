@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="LabelYear.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -211,7 +211,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 11</value>
+    <value>10, 10</value>
   </data>
   <data name="LabelYear.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 13</value>
@@ -232,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelYear.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="ListItems.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -265,7 +265,7 @@
     <value>314, 257</value>
   </data>
   <data name="ListItems.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ListItems.Name" xml:space="preserve">
     <value>ListItems</value>
@@ -277,10 +277,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ListItems.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="EditYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 30</value>
+    <value>12, 29</value>
   </data>
   <data name="EditYear.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 21</value>
@@ -298,6 +298,114 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditYear.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ActionNext.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 28</value>
+  </data>
+  <data name="ActionNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 23</value>
+  </data>
+  <data name="ActionNext.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ActionNext.Text" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="&gt;&gt;ActionNext.Name" xml:space="preserve">
+    <value>ActionNext</value>
+  </data>
+  <data name="&gt;&gt;ActionNext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionNext.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionNext.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionPrevious.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionPrevious.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 28</value>
+  </data>
+  <data name="ActionPrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 23</value>
+  </data>
+  <data name="ActionPrevious.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ActionPrevious.Text" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="&gt;&gt;ActionPrevious.Name" xml:space="preserve">
+    <value>ActionPrevious</value>
+  </data>
+  <data name="&gt;&gt;ActionPrevious.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionPrevious.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionPrevious.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ActionFirst.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionFirst.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 28</value>
+  </data>
+  <data name="ActionFirst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 23</value>
+  </data>
+  <data name="ActionFirst.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ActionFirst.Text" xml:space="preserve">
+    <value>&lt;&lt;</value>
+  </data>
+  <data name="&gt;&gt;ActionFirst.Name" xml:space="preserve">
+    <value>ActionFirst</value>
+  </data>
+  <data name="&gt;&gt;ActionFirst.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionFirst.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionFirst.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 28</value>
+  </data>
+  <data name="ActionLast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 23</value>
+  </data>
+  <data name="ActionLast.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ActionLast.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="&gt;&gt;ActionLast.Name" xml:space="preserve">
+    <value>ActionLast</value>
+  </data>
+  <data name="&gt;&gt;ActionLast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionLast.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionLast.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -63,9 +63,42 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionOK.PerformClick();
     }
 
+    private void ActionFirst_Click(object sender, EventArgs e)
+    {
+      EditYear.SelectedIndex = 0; ;
+      if ( ActiveControl == ListItems ) ActiveControl = ActionNext;
+    }
+
+    private void ActionPrevious_Click(object sender, EventArgs e)
+    {
+      if ( EditYear.SelectedIndex > 0 ) EditYear.SelectedIndex--;
+      if ( ActiveControl == ListItems ) ActiveControl = ActionNext;
+    }
+
+    private void ActionNext_Click(object sender, EventArgs e)
+    {
+      if ( EditYear.SelectedIndex < EditYear.Items.Count - 1 ) EditYear.SelectedIndex++;
+      if ( ActiveControl == ListItems ) ActiveControl = ActionPrevious;
+    }
+
+    private void ActionLast_Click(object sender, EventArgs e)
+    {
+      EditYear.SelectedIndex = EditYear.Items.Count - 1;
+      if ( ActiveControl == ListItems ) ActiveControl = ActionPrevious;
+    }
+
+    private void UpdateNavigation()
+    {
+      ActionFirst.Enabled = EditYear.SelectedIndex != 0;
+      ActionPrevious.Enabled = ActionFirst.Enabled;
+      ActionLast.Enabled = EditYear.SelectedIndex != EditYear.Items.Count - 1;
+      ActionNext.Enabled = ActionLast.Enabled;
+    }
+
     private void EditYear_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
+      UpdateNavigation();
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where (TorahEvent)day.TorahEvents != TorahEvent.None
