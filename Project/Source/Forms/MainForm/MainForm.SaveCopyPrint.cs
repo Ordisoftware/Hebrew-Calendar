@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-12 </edited>
 using System;
+using System.Linq;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
@@ -25,21 +26,34 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
+    private void DoExport(ExportAction action, NullSafeDictionary<ViewMode, Action> process, Action after)
+    {
+      ViewMode available = ViewMode.None;
+      foreach (var item in process.Where(p => p.Value != null) )
+        available |= item.Key;
+      var view = Settings.CurrentView;
+      if ( Settings.SelectViewToExport )
+        if ( !SelectViewForm.Run(action, ref view, available) )
+          return;
+      if ( process[view] == null )
+        throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
+      process[view].Invoke();
+      after?.Invoke();
+    }
+
     private void DoSave()
     {
       string filePath = "";
-      var view = Settings.CurrentView;
-      if ( Settings.SelectViewToExport )
-        if ( !SelectViewForm.Run(ref view, SysTranslations.TitleSaveToFile.GetLang()) )
-          return;
-      switch ( view )
+      var process = new NullSafeDictionary<ViewMode, Action>
       {
-        case ViewMode.Text:
+        [ViewMode.Text] = () =>
+        {
           if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
           filePath = SaveFileDialog.FileName;
           File.WriteAllText(filePath, CalendarText.Text);
-          break;
-        case ViewMode.Month:
+        },
+        [ViewMode.Month] = () =>
+        {
           if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return;
           filePath = SaveImageDialog.FileName;
           try
@@ -53,37 +67,38 @@ namespace Ordisoftware.Hebrew.Calendar
             CalendarMonth.ShowTodayButton = true;
             CalendarMonth.ShowArrowControls = true;
           }
-          break;
-        case ViewMode.Grid:
+        },
+        [ViewMode.Grid] = () =>
+        {
           var content = GenerateReportCSV();
           if ( content == null ) return;
           if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return;
           filePath = SaveCSVDialog.FileName;
           File.WriteAllText(filePath, content.ToString());
-          break;
-        default:
-          throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
-      }
-      DisplayManager.ShowSuccessOrSound(AppTranslations.ViewSavedToFile.GetLang(filePath),
-                                        Globals.KeyboardSoundFilePath);
-      if ( Settings.AutoOpenExportFolder )
-        SystemManager.RunShell(Path.GetDirectoryName(filePath));
-      if ( Settings.AutoOpenExportedFile )
-        SystemManager.RunShell(filePath);
+        }
+      };
+      Action after = () =>
+      {
+        DisplayManager.ShowSuccessOrSound(AppTranslations.ViewSavedToFile.GetLang(filePath),
+                                          Globals.KeyboardSoundFilePath);
+        if ( Settings.AutoOpenExportFolder )
+          SystemManager.RunShell(Path.GetDirectoryName(filePath));
+        if ( Settings.AutoOpenExportedFile )
+          SystemManager.RunShell(filePath);
+      };
+      DoExport(ExportAction.File, process, after);
     }
 
     private void DoCopy()
     {
-      var view = Settings.CurrentView;
-      if ( Settings.SelectViewToExport )
-        if ( !SelectViewForm.Run(ref view, SysTranslations.TitleCopyToClipboard.GetLang()) )
-          return;
-      switch ( view )
+      var process = new NullSafeDictionary<ViewMode, Action>
       {
-        case ViewMode.Text:
+        [ViewMode.Text] = () =>
+        {
           Clipboard.SetText(CalendarText.Text);
-          break;
-        case ViewMode.Month:
+        },
+        [ViewMode.Month] = () =>
+        {
           try
           {
             CalendarMonth.ShowTodayButton = false;
@@ -95,36 +110,29 @@ namespace Ordisoftware.Hebrew.Calendar
             CalendarMonth.ShowTodayButton = true;
             CalendarMonth.ShowArrowControls = true;
           }
-          break;
-        case ViewMode.Grid:
+        },
+        [ViewMode.Grid] = () =>
+        {
           Clipboard.SetText(GenerateReportCSV().ToString());
-          break;
-        default:
-          throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
-      }
-      DisplayManager.ShowSuccessOrSound(AppTranslations.ViewCopiedToClipboard.GetLang(),
-                                        Globals.ClipboardSoundFilePath);
+        },
+      };
+      Action after = () =>
+      {
+        DisplayManager.ShowSuccessOrSound(AppTranslations.ViewCopiedToClipboard.GetLang(),
+                                          Globals.ClipboardSoundFilePath);
+      };
+      DoExport(ExportAction.Clipboard, process, after);
     }
 
     private void DoPrint()
     {
-      var view = Settings.CurrentView;
-      if ( Settings.SelectViewToExport )
-        if ( !SelectViewForm.Run(ref view, SysTranslations.TitlePrint.GetLang(), ViewMode.Month | ViewMode.Text) )
-          return;
-      switch ( view )
+      var process = new NullSafeDictionary<ViewMode, Action>
       {
-        case ViewMode.Text:
-          PrinterCurrentLine = 0;
-          DoPrintTextReport();
-          break;
-        case ViewMode.Month:
-          DoPrintMonth();
-          break;
-        case ViewMode.Grid:
-        default:
-          throw new NotImplementedExceptionEx(view.ToStringFull());
-      }
+        [ViewMode.Text] = () => DoPrintTextReport(),
+        [ViewMode.Month] = () => DoPrintMonth(),
+        [ViewMode.Grid] = null
+      };
+      DoExport(ExportAction.Print, process, null);
     }
 
     private int PrinterCurrentLine;
@@ -142,15 +150,21 @@ namespace Ordisoftware.Hebrew.Calendar
       int countPages = -1;
       int countTotalLines = CalendarText.Lines.Length;
       bool askToContinue = true;
+      PrinterCurrentLine = 0;
       RunPrint(false, (s, e) =>
       {
         float posY = 0;
-        if ( fontHeight == -1 ) fontHeight = font.GetHeight(e.Graphics);
-        if ( marginLeft == -1 ) marginLeft = e.MarginBounds.Left;
-        if ( marginTop == -1 ) marginTop = e.MarginBounds.Top;
-        if ( linesPerPage == -1 ) linesPerPage = (int)( e.MarginBounds.Height / font.GetHeight(e.Graphics) );
-        if ( countPages == -1 ) countPages = (int)Math.Round((double)countTotalLines / linesPerPage, MidpointRounding.AwayFromZero);
         int countLinesInPage = 0;
+        if ( fontHeight == -1 )
+          fontHeight = font.GetHeight(e.Graphics);
+        if ( marginLeft == -1 )
+          marginLeft = e.MarginBounds.Left;
+        if ( marginTop == -1 )
+          marginTop = e.MarginBounds.Top;
+        if ( linesPerPage == -1 )
+          linesPerPage = (int)( e.MarginBounds.Height / font.GetHeight(e.Graphics) );
+        if ( countPages == -1 )
+          countPages = (int)Math.Round((double)countTotalLines / linesPerPage, MidpointRounding.AwayFromZero);
         if ( askToContinue )
           if ( Settings.PrintPageCountWarning > 0 && countPages > Settings.PrintPageCountWarning )
             if ( !DisplayManager.QueryYesNo(SysTranslations.AskToPrintLotsOfPages.GetLang(countPages)) )

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -89,29 +89,8 @@ namespace Ordisoftware.Core
         [Language.FR] = "Vous pouvez choisir Oui pour continuer ou Non pour terminer."
       };
 
-    static public readonly TranslationsDictionary TitleSaveToFile
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Save to file",
-        [Language.FR] = "Sauver dans un fichier"
-      };
-
-    static public readonly TranslationsDictionary TitleCopyToClipboard
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Copy to clipboard",
-        [Language.FR] = "Copier dans le presse-papier"
-      };
-
-    static public readonly TranslationsDictionary TitlePrint
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Print",
-        [Language.FR] = "Imprimer"
-      };
-
     static public readonly NullSafeDictionary<bool, TranslationsDictionary> HideRestoreCaption
-      = new NullSafeDictionary<bool, TranslationsDictionary>()
+      = new NullSafeDictionary<bool, TranslationsDictionary>
       {
         [true] = new TranslationsDictionary
         {
@@ -122,6 +101,26 @@ namespace Ordisoftware.Core
         {
           [Language.EN] = "Restore",
           [Language.FR] = "Restaurer"
+        }
+      };
+
+    static public readonly NullSafeDictionary<ExportAction, TranslationsDictionary> ViewActionTitle
+      = new NullSafeDictionary<ExportAction, TranslationsDictionary>
+      {
+        [ExportAction.File] = new TranslationsDictionary
+        {
+          [Language.EN] = "Save to file",
+          [Language.FR] = "Sauver dans un fichier"
+        },
+        [ExportAction.Clipboard] = new TranslationsDictionary
+        {
+          [Language.EN] = "Copy to clipboard",
+          [Language.FR] = "Copier dans le presse-papier"
+        },
+        [ExportAction.Print] = new TranslationsDictionary
+        {
+          [Language.EN] = "Print",
+          [Language.FR] = "Imprimer"
         }
       };
 
