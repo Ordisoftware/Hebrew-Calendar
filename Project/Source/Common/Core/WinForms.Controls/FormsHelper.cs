@@ -170,6 +170,8 @@ namespace Ordisoftware.Core
         ShowWindow(form.Handle, SW_RESTORE);
     }
 
+    delegate void PopupMethod(Form form, Form sender, bool dialog);
+
     /// <summary>
     /// Popup a form not visible, visible in background or minimized to be visible on top.
     /// </summary>
@@ -179,6 +181,12 @@ namespace Ordisoftware.Core
     static public void Popup(this Form form, Form sender = null, bool dialog = false)
     {
       if ( form == null || form.IsDisposed ) return;
+      if ( form.InvokeRequired )
+      {
+        var method = new PopupMethod(Popup);
+        form.Invoke(method, new object[] { form, sender, dialog });
+        return;
+      }
       if ( form.Visible )
         if ( !dialog )
         {
@@ -200,6 +208,7 @@ namespace Ordisoftware.Core
         if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
         form.Show();
       }
+      form.Activate();
     }
 
     static public void ForceBringToFront(this Form form)
