@@ -11,16 +11,16 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 ## Functionalities
 
 - Generate a calendar with sun and moon rises and sets.
-- Tabular text report, visual month or data grid view.
+- View by tabular text report, visual month or data grid.
 - Event reminder for shabat and celebrations.
-- Search for a day in the database.
-- Window listing annual celebrations.
-- Calculate the difference between two dates.
-- Print the month view.
-- Copy the report to the clipboard.
-- Save the report to a text file.
-- Export data to CSV.
-- Navigation by day window from the Tray Icon.
+- Search for a day or a celebration.
+- Window listing the next celebrations.
+- Navigation window by day from the tray icon.
+- Calculate the difference between two dates with bookmarks.
+- Copy to the clipboard and print the view.
+- Export of the report in a text file.
+- Export of the month in an image file.
+- Export of the data in a CSV file.
 - English, French.
 
 ## Review
