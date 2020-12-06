@@ -57,9 +57,9 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
-        TrayIcon.Icon = ShabatForm == null && RemindCelebrationDayForms.Count == 0
+        /*TrayIcon.Icon = ShabatForm == null && RemindCelebrationForms.Count == 0 not adapted
                         ? TrayIconDefault
-                        : TrayIconEvent;
+                        : TrayIconEvent;*/
         SystemManager.TryCatch(() =>
         {
           if ( LockSessionForm.Instance?.Visible ?? false )
