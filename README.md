@@ -155,6 +155,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add select months interval for saving and printing month view.
 - Add print data grid.
 - Add dark theme for month view.
+- Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Improve month view to show celebration week days with number as text like first and last.
@@ -168,7 +169,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Add navigation buttons to search event, lunar month and gregorian month windows.
 - Add save and load theme for month view, reminder boxes and navigation window.
-- Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add print text report.
 - Add printing option tab in preferences form.
 - Add open export folder in tools menu.
