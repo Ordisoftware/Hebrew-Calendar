@@ -188,6 +188,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Fix usage statistics menu item not disabled in tray menu if stats are disabled at startup.
 - Fix buttons position in search event, lunar month and gregorian month windows.
+- Replace AASharp source dependency by the nuget package.
 
 #### 2020.12.06 - Version 5.11
 
