@@ -48,6 +48,7 @@
     <NoWarn>1587, 1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
     <LangVersion>latest</LangVersion>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>portable</DebugType>
@@ -64,9 +65,8 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AASharp, Version=1.97.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Dependencies\AASharp\Src\AASharp\bin\Release\net45\AASharp.dll</HintPath>
+    <Reference Include="AASharp, Version=1.99.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AASharp.1.99.1\lib\net45\AASharp.dll</HintPath>
     </Reference>
     <Reference Include="Markdig, Version=0.22.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Markdig.0.22.1\lib\net452\Markdig.dll</HintPath>
@@ -97,6 +97,9 @@
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
