@@ -165,6 +165,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### 2020.12.13 - Version 5.12
+
+- Fix usage statistics menu item not disabled in tray menu if stats are disabled at startup.
+- Fix buttons position in search event, lunar month and gregorian month windows.
+
 #### 2020.12.06 - Version 5.11
 
 - Add navigation buttons to search event, lunar month and gregorian month windows.

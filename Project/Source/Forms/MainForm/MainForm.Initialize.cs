@@ -57,6 +57,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     internal void InitializeSpecialMenus()
     {
+      ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
+      ActionViewLog.Enabled = DebugManager.TraceEnabled;
       ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
       MenuWebLinks.Visible = Settings.WebLinksMenuEnabled;
       if ( Settings.WebLinksMenuEnabled )
