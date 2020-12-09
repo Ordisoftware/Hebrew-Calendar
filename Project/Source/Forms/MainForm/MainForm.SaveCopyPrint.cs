@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           Action<ViewMode> after)
     {
       ViewMode available = ViewMode.None;
-      foreach (var item in process.Where(p => p.Value != null) )
+      foreach ( var item in process.Where(p => p.Value != null) )
         available |= item.Key;
       var view = Settings.CurrentView;
       if ( Settings.SelectViewToExport )
@@ -139,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var process = new NullSafeDictionary<ViewMode, Func<bool>>
       {
         [ViewMode.Text] = () => { DoPrintTextReport(); return true; },
-        [ViewMode.Month] = () =>{ DoPrintMonth(); return true; },
+        [ViewMode.Month] = () => { DoPrintMonth(); return true; },
         [ViewMode.Grid] = null
       };
       DoExport(ExportAction.Print, process, null);
