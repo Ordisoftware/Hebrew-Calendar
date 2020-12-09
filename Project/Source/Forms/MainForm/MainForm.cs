@@ -105,8 +105,6 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeCalendarUI();
       InitializeCurrentTimeZone();
       InitializeDialogsDirectory();
-      ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
-      ActionViewLog.Enabled = DebugManager.TraceEnabled;
       DebugManager.TraceEnabledChanged += value => ActionViewLog.Enabled = value;
       Refresh();
       ClearLists();
