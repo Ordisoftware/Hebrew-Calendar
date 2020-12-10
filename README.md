@@ -200,7 +200,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add printing option tab in preferences form.
 - Add open export folder in tools menu.
 - Improve UI/UX
-- Change "markdown to html" dependency.
+- Change Markdownsharp dependency by Markdig NuGet package.
 - Update web links.
 - Update help.
 
