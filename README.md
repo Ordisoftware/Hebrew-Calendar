@@ -191,6 +191,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Replace AASharp source code dependency by the NuGet package.
 - Replace GenericParsing dependency by FileHelpers NuGet package.
 - Code refactoring.
+- File system refactoring.
 
 #### 2020.12.06 - Version 5.11
 
