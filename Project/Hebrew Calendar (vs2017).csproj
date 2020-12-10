@@ -301,6 +301,7 @@
     <Compile Include="Source\Common\Hebrew\ProvidersCollection.cs" />
     <Compile Include="Source\Common\Core\Classes\SoundItem.cs" />
     <Compile Include="Source\Common\Core\Classes\SoundSource.cs" />
+    <Compile Include="Source\Entities\GPS.cs" />
     <Compile Include="Source\Entities\DateBookmarks.cs" />
     <Compile Include="Source\Forms\Boxes\SelectViewForm.cs">
       <SubType>Form</SubType>

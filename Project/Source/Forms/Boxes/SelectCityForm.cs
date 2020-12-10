@@ -11,79 +11,52 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using FileHelpers;
-using System.Text;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
 
   public partial class SelectCityForm : Form
   {
-
-    public class CityItem
-    {
-      public string Name;
-      public string Latitude;
-      public string Longitude;
-      public override string ToString() => Name;
-    }
-
-    [DelimitedRecord(",")]
-    [IgnoreFirst(1)]
-    public class WorldCities
-    {
-      [FieldQuoted] public string city;
-      [FieldQuoted] public string city_ascii;
-      [FieldQuoted] public string lat;
-      [FieldQuoted] public string lng;
-      [FieldQuoted] public string country;
-      [FieldQuoted] public string iso2;
-      [FieldQuoted] public string iso3;
-      [FieldQuoted] public string admin_name;
-      [FieldQuoted] public string capital;
-      [FieldQuoted] public string population;
-      [FieldQuoted] public string id;
-    }
-
+   
     static public readonly SortedAutoDictionary<string, AutoResizedList<CityItem>> GPS
       = new SortedAutoDictionary<string, AutoResizedList<CityItem>>();
 
     static SelectCityForm()
     {
-      DisplayManager.Show(Chronometer.Measure(() =>
+      try
       {
-        try
-        {
-          string filePath = Program.GPSFilePath;
-          var parser = new FileHelperAsyncEngine<WorldCities>(Encoding.UTF8);
-          using ( parser.BeginReadFile(filePath) )
-            foreach ( var item in parser )
-            {
-              var country = GPS[item.country];
-              var city = country[country.Count];
-              city.Name = item.city_ascii;
-              city.Latitude = item.lat;
-              city.Longitude = item.lng;
-            }
-          if ( GPS.Keys.Count == 0 )
+        string filePath = Program.GPSFilePath;
+        var parser = new FileHelperAsyncEngine<WorldCities>(Encoding.UTF8);
+        using ( parser.BeginReadFile(filePath) )
+          foreach ( var item in parser )
           {
-            string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {SysTranslations.UndefinedSlot.GetLang()}";
-            throw new NullReferenceException(msg);
+            var country = GPS[item.country.RemoveDiacritics()];
+            var city = new CityItem();
+            city.Name = item.city_ascii;
+            city.Latitude = item.lat;
+            city.Longitude = item.lng;
+            country.Add(city);
           }
-        }
-        catch ( Exception ex )
+        if ( GPS.Keys.Count == 0 )
         {
-          Enable = false;
-          ex.Manage();
-          if ( !Globals.IsReady )
-            DisplayManager.ShowAndTerminate(AppTranslations.LoadingCitiesError.GetLang());
+          string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {SysTranslations.UndefinedSlot.GetLang()}";
+          throw new NullReferenceException(msg);
         }
-      }).ElapsedMilliseconds.ToString());
+      }
+      catch ( Exception ex )
+      {
+        Enable = false;
+        ex.Manage();
+        if ( !Globals.IsReady )
+          DisplayManager.ShowAndTerminate(AppTranslations.LoadingCitiesError.GetLang());
+      }
     }
 
     /// <summary>
