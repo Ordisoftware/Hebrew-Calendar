@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ordisoftware")]
-[assembly: AssemblyProduct("www.ordisoftware.com/projects/hebrew-calendar")]
+[assembly: AssemblyProduct("www.ordisoftware.com/projects")]
 [assembly: AssemblyCopyright("Copyright 2020 Olivier Rogier")]
 [assembly: AssemblyTrademark("www.ordisoftware.com")]
 [assembly: AssemblyCulture("")]
