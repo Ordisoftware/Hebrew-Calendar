@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.IO;
 
@@ -96,7 +96,19 @@ namespace Ordisoftware.Core
     /// Indicate the file path of the application's icon.
     /// </summary>
     static public string ApplicationIconFilePath
-      => Path.Combine(RootFolderPath, "Application.ico");
+      => Path.Combine(SystemFolderPath, "Application.ico");
+
+    /// <summary>
+    /// Indicate the file path of the application's pause icon.
+    /// </summary>
+    static public string ApplicationPauseIconFilePath
+      => Path.Combine(SystemFolderPath, "ApplicationPause.ico");
+
+    /// <summary>
+    /// Indicate the file path of the application's event icon.
+    /// </summary>
+    static public string ApplicationEventIconFilePath
+      => Path.Combine(SystemFolderPath, "ApplicationEvent.ico");
 
     /// <summary>
     /// Indicate the file path of the application's readme markdown file.
