@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -80,6 +80,12 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string ApplicationExePath
       => Application.StartupPath;
+
+    /// <summary>
+    /// Indicate the application system folder path.
+    /// </summary>
+    static public string SystemFolderPath
+      => Path.Combine(RootFolderPath, "System");
 
     /// <summary>
     /// Indicate the application help folder path.
