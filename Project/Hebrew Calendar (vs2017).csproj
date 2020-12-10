@@ -68,6 +68,9 @@
     <Reference Include="AASharp, Version=1.99.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AASharp.1.99.1\lib\net45\AASharp.dll</HintPath>
     </Reference>
+    <Reference Include="FileHelpers, Version=3.4.2.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>packages\FileHelpers.3.4.2\lib\net45\FileHelpers.dll</HintPath>
+    </Reference>
     <Reference Include="Markdig, Version=0.22.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Markdig.0.22.1\lib\net452\Markdig.dll</HintPath>
     </Reference>
@@ -154,12 +157,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
-    <Compile Include="Dependencies\GenericParsing\FieldType.cs" />
-    <Compile Include="Dependencies\GenericParsing\GenericParser.cs" />
-    <Compile Include="Dependencies\GenericParsing\GenericParserAdapter.cs" />
-    <Compile Include="Dependencies\GenericParsing\Legacy Support\StringArray.cs" />
-    <Compile Include="Dependencies\GenericParsing\ParserState.cs" />
-    <Compile Include="Dependencies\GenericParsing\ParsingException.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportAction.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Errors.cs" />
