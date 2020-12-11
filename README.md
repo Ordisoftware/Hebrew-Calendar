@@ -143,10 +143,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | F5 | Search a celebration window |
 | F6 | Search a moon month window |
 | F7 | Search a gregorian month window |
-| F9 | Navigation window (also Ctrl + N) |
+| F9 (or Ctrl + N)| Navigation window |
 | Ctrl + Tab | Next view |
 | Shift + Ctrl + Tab | Previous view |
-| Ctrl + T | Go to today (also Numpad0) |
+| Ctrl + T (or Numpad0)| Go to today |
 | Ctrl + D | Search a day |
 | Ctrl + S | Save current view to a file |
 | Ctrl + C | Copy current view to clipboard |
