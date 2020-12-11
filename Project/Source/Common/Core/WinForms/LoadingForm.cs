@@ -39,7 +39,7 @@ namespace Ordisoftware.Core
     private LoadingForm()
     {
       InitializeComponent();
-      Icon = Globals.MainForm.Icon;
+      Icon = Globals.MainForm?.Icon;
     }
 
     private void LoadingForm_Load(object sender, EventArgs e)

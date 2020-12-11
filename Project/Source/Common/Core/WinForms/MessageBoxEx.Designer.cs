@@ -150,16 +150,16 @@
     }
 
     #endregion
-    private System.Windows.Forms.Button ActionNo;
     private System.Windows.Forms.Panel PanelMain;
     public System.Windows.Forms.Label Label;
-    private System.Windows.Forms.Button ActionOK;
-    private System.Windows.Forms.Button ActionCancel;
-    private System.Windows.Forms.Button ActionIgnore;
-    private System.Windows.Forms.Button ActionRetry;
-    private System.Windows.Forms.Button ActionYes;
-    private System.Windows.Forms.Button ActionAbort;
     private System.Windows.Forms.FlowLayoutPanel PanelBottom;
     private System.Windows.Forms.PictureBox PictureBox;
+    public System.Windows.Forms.Button ActionNo;
+    public System.Windows.Forms.Button ActionOK;
+    public System.Windows.Forms.Button ActionCancel;
+    public System.Windows.Forms.Button ActionIgnore;
+    public System.Windows.Forms.Button ActionRetry;
+    public System.Windows.Forms.Button ActionYes;
+    public System.Windows.Forms.Button ActionAbort;
   }
 }

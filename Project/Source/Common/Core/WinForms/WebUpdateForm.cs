@@ -45,7 +45,7 @@ namespace Ordisoftware.Core
     private WebUpdateForm()
     {
       InitializeComponent();
-      Icon = Globals.MainForm.Icon;
+      Icon = Globals.MainForm?.Icon;
       Text = Text + Globals.AssemblyTitle;
       this.CenterToMainFormElseScreen();
     }

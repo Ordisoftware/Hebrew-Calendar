@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
     private TraceForm()
     {
       InitializeComponent();
-      Icon = Globals.MainForm.Icon;
+      Icon = Globals.MainForm?.Icon;
     }
 
     public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizepropertyName)
@@ -37,9 +37,15 @@ namespace Ordisoftware.Core
       LocationPropertyName = locationPropertyName;
       ClientSizePropertyName = clientSizePropertyName;
       FontSizepropertyName = fontSizepropertyName;
-      Location = (Point)Globals.Settings[locationPropertyName];
-      ClientSize = (Size)Globals.Settings[clientSizePropertyName];
-      TrackBarFontSize.Value = (int)Globals.Settings[fontSizepropertyName];
+      try
+      {
+        Location = (Point)Globals.Settings[locationPropertyName];
+        ClientSize = (Size)Globals.Settings[clientSizePropertyName];
+        TrackBarFontSize.Value = (int)Globals.Settings[fontSizepropertyName];
+      }
+      catch
+      {
+      }
     }
 
     private void LogForm_Load(object sender, EventArgs e)
@@ -55,10 +61,16 @@ namespace Ordisoftware.Core
 
     private void TraceForm_Deactivate(object sender, EventArgs e)
     {
-      Globals.Settings[LocationPropertyName] = Location;
-      Globals.Settings[ClientSizePropertyName] = ClientSize;
-      Globals.Settings[FontSizepropertyName] = TrackBarFontSize.Value;
-      Globals.Settings.Save();
+      try
+      {
+        Globals.Settings[LocationPropertyName] = Location;
+        Globals.Settings[ClientSizePropertyName] = ClientSize;
+        Globals.Settings[FontSizepropertyName] = TrackBarFontSize.Value;
+        Globals.Settings.Save();
+      }
+      catch
+      {
+      }
     }
 
     private void TraceForm_FormClosing(object sender, FormClosingEventArgs e)

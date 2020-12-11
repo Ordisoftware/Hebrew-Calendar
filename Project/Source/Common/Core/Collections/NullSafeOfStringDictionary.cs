@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -85,6 +85,7 @@ namespace Ordisoftware.Core
     {
       try
       {
+        list.Clear();
         foreach ( string line in File.ReadAllLines(filePath) )
         {
           var parts = line.SplitNoEmptyLines(separator);

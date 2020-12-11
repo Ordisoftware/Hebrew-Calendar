@@ -69,7 +69,7 @@ namespace Ordisoftware.Core
     private DataFileEditorForm()
     {
       InitializeComponent();
-      Icon = Globals.MainForm.Icon;
+      Icon = Globals.MainForm?.Icon;
     }
 
     private void EditProvidersForm_Load(object sender, EventArgs e)

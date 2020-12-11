@@ -91,7 +91,7 @@ namespace Ordisoftware.Core
     private ExceptionForm()
     {
       InitializeComponent();
-      Icon = Globals.MainForm.Icon;
+      Icon = Globals.MainForm?.Icon;
     }
 
     /// <summary>

@@ -133,7 +133,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionNo.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>6</value>
   </data>
   <data name="ActionNo.Text" xml:space="preserve">
     <value>No</value>
@@ -262,7 +262,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionRetry.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>1</value>
   </data>
   <data name="ActionRetry.Text" xml:space="preserve">
     <value>Retry</value>
@@ -295,7 +295,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionIgnore.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>2</value>
   </data>
   <data name="ActionIgnore.Text" xml:space="preserve">
     <value>Ignore</value>
@@ -328,7 +328,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>4</value>
   </data>
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -361,7 +361,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>3</value>
   </data>
   <data name="ActionOK.Text" xml:space="preserve">
     <value>OK</value>
@@ -394,7 +394,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionYes.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>5</value>
   </data>
   <data name="ActionYes.Text" xml:space="preserve">
     <value>Yes</value>
@@ -427,7 +427,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionAbort.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>0</value>
   </data>
   <data name="ActionAbort.Text" xml:space="preserve">
     <value>Abort</value>

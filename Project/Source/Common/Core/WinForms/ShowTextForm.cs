@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
     private ShowTextForm()
     {
       InitializeComponent();
-      Icon = Globals.MainForm.Icon;
+      Icon = Globals.MainForm?.Icon;
     }
 
     public ShowTextForm(string title,

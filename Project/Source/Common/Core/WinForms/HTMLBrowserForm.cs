@@ -33,7 +33,7 @@ namespace Ordisoftware.Core
     private HTMLBrowserForm()
     {
       InitializeComponent();
-      Icon = Globals.MainForm.Icon;
+      Icon = Globals.MainForm?.Icon;
       ActiveControl = WebBrowser;
     }
 

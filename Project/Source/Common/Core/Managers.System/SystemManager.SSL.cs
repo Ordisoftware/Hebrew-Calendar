@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
 using System.Net;
@@ -66,12 +66,17 @@ namespace Ordisoftware.Core
     static private NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate
       = new NullSafeOfStringDictionary<string>();
 
+    static public void LoadSSLCertificate()
+    {
+      AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, "=>");
+    }
+
     /// <summary>
     /// Static constructor.
     /// </summary>
     static SystemManager()
     {
-      AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, "=>");
+      if ( Globals.PreLoadSSLCertificate) LoadSSLCertificate(); 
     }
 
   }

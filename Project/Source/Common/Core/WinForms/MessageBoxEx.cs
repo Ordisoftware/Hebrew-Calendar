@@ -47,7 +47,7 @@ namespace Ordisoftware.Core
     private MessageBoxEx()
     {
       InitializeComponent();
-      Icon = Globals.MainForm.Icon;
+      Icon = Globals.MainForm?.Icon;
     }
 
     public MessageBoxEx(string title,
@@ -155,7 +155,7 @@ namespace Ordisoftware.Core
       Close();
     }
 
-    private void SetIcon(MessageBoxIcon icon)
+    public void SetIcon(MessageBoxIcon icon)
     {
       switch ( icon )
       {
@@ -177,7 +177,7 @@ namespace Ordisoftware.Core
       PictureBox.Visible = true;
     }
 
-    private void SetButtons(MessageBoxButtons buttons)
+    public void SetButtons(MessageBoxButtons buttons)
     {
       switch ( buttons )
       {
