@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Threading;
 
@@ -38,10 +38,11 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string FormatBytesSize(this ulong bytes)
     {
+      string suffix = SysTranslations.MemorySizeSuffix.GetLang();
       ulong unit = 1024;
-      if ( bytes < unit ) return $"{bytes} B";
+      if ( bytes < unit ) return $"{bytes} {suffix}";
       var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
-      string result = $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPEZY" )[exp - 1]}iB";
+      string result = $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPEZY" )[exp - 1]}i{suffix}";
       return result.Replace(Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator + "00", "");
     }
 
