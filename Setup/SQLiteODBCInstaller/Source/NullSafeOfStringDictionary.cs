@@ -73,43 +73,4 @@ namespace Ordisoftware.Core
     }
   }
 
-  /// <summary>
-  /// Provide NullSafeOfStringDictionary helper.
-  /// </summary>
-  static public class NullSafeOfStringDictionaryHelper
-  {
-    static public bool LoadKeyValuePairs(this NullSafeOfStringDictionary<string> list,
-                                         string filePath, 
-                                         string separator, 
-                                         bool showError = true)
-    {
-      try
-      {
-        list.Clear();
-        foreach ( string line in File.ReadAllLines(filePath) )
-        {
-          var parts = line.SplitNoEmptyLines(separator);
-          if ( parts.Length == 1 )
-            list.Add(parts[0].Trim(), "");
-          else
-          if ( parts.Length == 2 )
-            list.Add(parts[0].Trim(), parts[1].Trim());
-          else
-          if ( parts.Length > 2 )
-            list.Add(parts[0].Trim(), parts.Skip(1).Select(v => v.Trim()).AsMultiSpace());
-        }
-        return true;
-      }
-      catch ( Exception ex )
-      {
-        if ( showError )
-          MessageBox.Show(SysTranslations.LoadFileError.GetLang(filePath, ex.Message),
-                          Globals.AssemblyTitle,
-                          MessageBoxButtons.OK,
-                          MessageBoxIcon.Warning);
-        return false;
-      }
-    }
-  }
-
 }

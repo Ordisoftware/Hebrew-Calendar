@@ -34,6 +34,8 @@ namespace Ordisoftware.Core
     static public readonly string NL3 = NL2 + NL;
     static public readonly string NL4 = NL3 + NL;
 
+    static public bool PreLoadSSLCertificate = true;
+
     /// <summary>
     /// Indicate the application code (title without space).
     /// </summary>

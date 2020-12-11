@@ -47,7 +47,6 @@ namespace Ordisoftware.Core
     private MessageBoxEx()
     {
       InitializeComponent();
-      Icon = Globals.MainForm?.Icon;
     }
 
     public MessageBoxEx(string title,
@@ -63,11 +62,6 @@ namespace Ordisoftware.Core
       int labelInitialTop = Label.Top;
       int labelInitialHeight = Label.Height;
       LabelMaxWidth = width - 55;
-      if ( icon == MessageBoxIcon.None && DisplayManager.IconStyle == MessageBoxIconStyle.ForceInformation )
-        icon = MessageBoxIcon.Information;
-      else
-      if ( icon == MessageBoxIcon.Information && DisplayManager.IconStyle == MessageBoxIconStyle.ForceNone )
-        icon = MessageBoxIcon.Information;
       if ( icon != MessageBoxIcon.None )
       {
         SetIcon(icon);
@@ -81,48 +75,14 @@ namespace Ordisoftware.Core
       MaximumSize = new Size(width, MaximumSize.Height);
       Label.MaximumSize = new Size(LabelMaxWidth, Label.MaximumSize.Height);
       Justify = justify;
-      if ( justify )
-        Label.SetTextJustified(text, LabelMaxWidth);
-      else
-        Label.Text = text;
+      Label.Text = text;
       if ( Label.Height > labelInitialHeight )
       {
         Label.Top = labelInitialTop;
         Height -= Label.Top - labelInitialTop;
       }
-      this.CenterToFormElseMainFormElseScreen(ActiveForm);
       Instances.Add(this);
       IconStyle = icon;
-    }
-
-    public MessageBoxEx(TranslationsDictionary title,
-                        TranslationsDictionary text,
-                        int width = DefaultSmallWidth,
-                        MessageBoxButtons buttons = MessageBoxButtons.OK,
-                        MessageBoxIcon icon = MessageBoxIcon.None,
-                        bool justify = DefaultJustifyEnabled)
-      : this(title.GetLang(), text.GetLang(), width, buttons, icon, justify)
-    {
-      LocalizedTitle = title;
-      LocalizedText = text;
-    }
-
-
-    public void RelocalizeText()
-    {
-      if ( LocalizedTitle != null ) Text = LocalizedTitle.GetLang();
-      if ( LocalizedText != null )
-      {
-        AutoSize = false;
-        Label.AutoSize = false;
-        Label.Text = "";
-        if ( Justify )
-          Label.SetTextJustified(LocalizedText.GetLang(), LabelMaxWidth);
-        else
-          Label.Text = LocalizedText.GetLang();
-        AutoSize = true;
-        Label.AutoSize = true;
-      }
     }
 
     internal void ForceClose()
@@ -133,9 +93,6 @@ namespace Ordisoftware.Core
 
     private void MessageBoxEx_Shown(object sender, EventArgs e)
     {
-      TopMost = LoadingForm.Instance.Visible || Application.OpenForms.ToList().Any(f => f.TopMost);
-      DisplayManager.DoSound(IconStyle);
-      this.Popup();
     }
 
     private void MessageBoxEx_FormClosing(object sender, FormClosingEventArgs e)
