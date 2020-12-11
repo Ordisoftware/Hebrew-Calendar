@@ -11,11 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Diagnostics;
-using System.Windows.Forms;
 
 namespace Ordisoftware.Core
 {
@@ -107,18 +107,22 @@ namespace Ordisoftware.Core
     }
     static private long _MemoryGCPeak;
 
+    static private bool CPUProcessLoadInitMutex;
+
     public string CPUProcessLoad
     {
       get
       {
         if ( PerformanceCounterCPUProcessLoad == null )
         {
-          LoadingForm.Instance.Initialize($"{SysTranslations.Initializing.GetLang()} {nameof(CPUProcessLoad)}", 1, 0);
-          LoadingForm.Instance.SetProgress(1);
-          Application.DoEvents();
-          PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", Globals.ApplicationExeFileName);
-          LoadingForm.Instance.Hide();
+          CPUProcessLoadInitMutex = true;
+          new Task(() =>
+          {
+            PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", Globals.ApplicationExeFileName);
+            CPUProcessLoadInitMutex = false;
+          }).Start();
         }
+        if ( CPUProcessLoadInitMutex ) return "(init)";
         int value;
         do
           value = (int)PerformanceCounterCPUProcessLoad.NextValue();
@@ -139,18 +143,22 @@ namespace Ordisoftware.Core
     public string CPUProcessLoadMax
       => _CPUProcessLoadMax + "%";
 
+    static private bool CPULoadInitMutex;
+
     public string CPULoad
     {
       get
       {
         if ( PerformanceCounterCPULoad == null )
         {
-          LoadingForm.Instance.Initialize($"{SysTranslations.Initializing.GetLang()} {nameof(CPULoad)}", 1, 0);
-          LoadingForm.Instance.SetProgress(1);
-          Application.DoEvents();
-          PerformanceCounterCPULoad = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-          LoadingForm.Instance.Hide();
+          CPULoadInitMutex = true;
+          new Task(() =>
+          {
+            PerformanceCounterCPULoad = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+            CPULoadInitMutex = false;
+          }).Start();
         }
+        if ( CPULoadInitMutex ) return "(init)";
         return (int)PerformanceCounterCPULoad.NextValue() + "%";
       }
     }
