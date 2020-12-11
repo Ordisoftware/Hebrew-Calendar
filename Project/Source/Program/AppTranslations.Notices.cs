@@ -171,12 +171,12 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F5 : Search a celebration window" + Globals.NL +
                         "F6 : Search a moon month window" + Globals.NL +
                         "F7 : Search a gregorian month window" + Globals.NL +
-                        "F9 : Navigation window (also Ctrl + N)" + Globals.NL +
+                        "F9 (or Ctrl + N) : Navigation window" + Globals.NL +
                         Globals.NL +
                         "Ctrl + Tab : Next view" + Globals.NL +
                         "Shift + Ctrl + Tab : Previous view" + Globals.NL +
                         Globals.NL +
-                        "Ctrl + T : Go to today (also Numpad0)" + Globals.NL +
+                        "Ctrl + T (or Numpad0) : Go to today" + Globals.NL +
                         "Ctrl + D : Search a day" + Globals.NL +
                         Globals.NL +
                         "Ctrl + S : Save current view to file" + Globals.NL +
@@ -213,12 +213,12 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F5 : Fenêtre de recherche de célébration" + Globals.NL +
                         "F6 : Fenêtre de recherche de mois lunaire" + Globals.NL +
                         "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
-                        "F9 : Fenêtre de navigation (également Ctrl + N)" + Globals.NL +
+                        "F9 (ou Ctrl + N) : Fenêtre de navigation" + Globals.NL +
                         Globals.NL +
                         "Ctrl + Tab : Vue suivante" + Globals.NL +
                         "Maj + Ctrl + Tab : Vue précédente" + Globals.NL +
                         Globals.NL +
-                        "Ctrl + T : Aller à aujourd'hui (également Numpad0)" + Globals.NL +
+                        "Ctrl + T (ou Numpad0) : Aller à aujourd'hui" + Globals.NL +
                         "Ctrl + D : Chercher un jour" + Globals.NL +
                         Globals.NL +
                         "Ctrl + S : Sauvegarde la vue en cours dans un fichier" + Globals.NL +
