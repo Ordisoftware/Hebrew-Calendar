@@ -136,6 +136,13 @@ namespace Ordisoftware.Core
         [Language.FR] = "<erreur>"
       };
 
+    static public readonly TranslationsDictionary MemorySizeSuffix
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "B",
+        [Language.FR] = "o"
+      };
+
     static public NullSafeDictionary<Language, NullSafeStringList> MillisecondsFormat
       = new NullSafeDictionary<Language, NullSafeStringList>
       {

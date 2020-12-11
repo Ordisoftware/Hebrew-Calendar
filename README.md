@@ -189,6 +189,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Optimize statistics initialization at startup.
 - Fix usage statistics menu item not disabled in tray menu if stats are disabled at startup.
 - Fix buttons position in search event, lunar month and gregorian month windows.
+- Fix file and memory sizes diplayed only in english in usage statistics form.
 - Replace AASharp source code dependency by the NuGet package.
 - Replace GenericParsing dependency by FileHelpers NuGet package.
 - Code refactoring.

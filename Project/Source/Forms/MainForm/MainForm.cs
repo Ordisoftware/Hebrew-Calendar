@@ -121,37 +121,44 @@ namespace Ordisoftware.Hebrew.Calendar
     private void MainForm_Shown(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
-      UpdateTextCalendar();
-      CalendarMonth.CalendarDateChanged += date => GoToDate(date);
-      MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
-      Globals.IsReady = true;
-      UpdateButtons();
-      GoToDate(DateTime.Today);
-      CheckRegenerateCalendar();
-      if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
-        ActionPreferences.PerformClick();
-      if ( Settings.StartupHide || Program.ForceStartupHide )
-        MenuShowHide.PerformClick();
-      TimerBallon.Interval = Settings.BalloonLoomingDelay;
-      TimerMidnight.TimeReached += TimerMidnight_Tick;
-      TimerMidnight.Start();
-      TimerReminder_Tick(null, null);
-      ChronoStart.Stop();
-      Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
-      Settings.Save();
-      this.Popup();
-      SystemManager.TryCatch(() =>
+      DebugManager.Enter();
+      try
       {
-        if ( LockSessionForm.Instance?.Visible ?? false )
-          LockSessionForm.Instance.Popup();
-      });
-      NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
-                                                     AppTranslations.NoticeKeyboardShortcuts,
-                                                     true, false, 350, 660, false, false);
-      NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
-      NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+        UpdateTextCalendar();
+        CalendarMonth.CalendarDateChanged += date => GoToDate(date);
+        MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
+        Globals.IsReady = true;
+        UpdateButtons();
+        GoToDate(DateTime.Today);
+        CheckRegenerateCalendar();
+        if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
+          ActionPreferences.PerformClick();
+        if ( Settings.StartupHide || Program.ForceStartupHide )
+          MenuShowHide.PerformClick();
+        TimerBallon.Interval = Settings.BalloonLoomingDelay;
+        TimerMidnight.TimeReached += TimerMidnight_Tick;
+        TimerMidnight.Start();
+        TimerReminder_Tick(null, null);
+        ChronoStart.Stop();
+        Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
+        Settings.Save();
+        this.Popup();
+        SystemManager.TryCatch(() =>
+        {
+          if ( LockSessionForm.Instance?.Visible ?? false )
+            LockSessionForm.Instance.Popup();
+        });
+        NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+                                                       AppTranslations.NoticeKeyboardShortcuts,
+                                                       true, false, 350, 660, false, false);
+        NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
+        NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
-  
 
     /// <summary>
     /// Event handler. Called by MainForm for form closing events.
@@ -175,7 +182,16 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Form closing event information.</param>
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
-      Settings.Store();
+      DebugManager.Enter();
+      DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
+      try
+      {
+        Settings.Store();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
 
     /// <summary>
@@ -186,25 +202,34 @@ namespace Ordisoftware.Hebrew.Calendar
     internal void SessionEnding(object sender, SessionEndingEventArgs e)
     {
       if ( Globals.IsSessionEnding ) return;
-      Globals.IsExiting = true;
-      Globals.IsSessionEnding = true;
-      Globals.AllowClose = true;
-      LockSessionForm.Instance.Timer.Stop();
-      TimerTooltip.Stop();
-      TimerBallon.Stop();
-      TimerTrayMouseMove.Stop();
-      TimerResumeReminder.Stop();
-      TimerMidnight.Stop();
-      TimerReminder.Stop();
-      MessageBoxEx.CloseAll();
-      SystemManager.TryCatch(() => ClearLists());
-      SystemManager.TryCatch(() =>
+      DebugManager.Enter();
+      DebugManager.Trace(LogTraceEvent.Data, e.Reason.ToStringFull());
+      try
       {
-        foreach ( Form form in Application.OpenForms )
-          if ( form != this && form.Visible )
-            SystemManager.TryCatch(() => form.Close());
-      });
-      Close();
+        Globals.IsExiting = true;
+        Globals.IsSessionEnding = true;
+        Globals.AllowClose = true;
+        LockSessionForm.Instance.Timer.Stop();
+        TimerTooltip.Stop();
+        TimerBallon.Stop();
+        TimerTrayMouseMove.Stop();
+        TimerResumeReminder.Stop();
+        TimerMidnight.Stop();
+        TimerReminder.Stop();
+        MessageBoxEx.CloseAll();
+        SystemManager.TryCatch(() => ClearLists());
+        SystemManager.TryCatch(() =>
+        {
+          foreach ( Form form in Application.OpenForms )
+            if ( form != this && form.Visible )
+              SystemManager.TryCatch(() => form.Close());
+        });
+        Close();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
 
     /// <summary>
