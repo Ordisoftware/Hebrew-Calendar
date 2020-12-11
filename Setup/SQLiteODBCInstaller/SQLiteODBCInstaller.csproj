@@ -18,32 +18,55 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>.\</OutputPath>
+    <OutputPath>Bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>.\</OutputPath>
+    <OutputPath>Bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <DebugSymbols>false</DebugSymbols>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Source\Languages.cs" />
+    <Compile Include="Source\Localizer.cs" />
+    <Compile Include="Source\MessageBoxEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\MessageBoxEx.designer.cs">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\NullSafeDictionary.cs" />
+    <Compile Include="Source\NullSafeOfEnumDictionary.cs" />
+    <Compile Include="Source\NullSafeOfStringDictionary.cs" />
+    <Compile Include="Source\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\ShellIcons.cs" />
+    <EmbeddedResource Include="Source\MessageBoxEx.fr.resx">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\MessageBoxEx.resx">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -54,7 +77,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -65,5 +88,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
