@@ -186,7 +186,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.13 - Version 5.12
 
-- Optimize statistics initialization at startup.
+- Optimize statistics initialization at startup to be in a background task.
 - Fix usage statistics menu item not disabled in tray menu if stats are disabled at startup.
 - Fix buttons position in search event, lunar month and gregorian month windows.
 - Fix file and memory sizes diplayed only in english in usage statistics form.
@@ -194,6 +194,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Few fixes.
 - Replace AASharp source code dependency by the NuGet package.
 - Replace GenericParsing dependency by FileHelpers NuGet package.
+- Replace simple internal command line parser by CommandLineParser NuGet package.
 - Code refactoring.
 - File system refactoring.
 
