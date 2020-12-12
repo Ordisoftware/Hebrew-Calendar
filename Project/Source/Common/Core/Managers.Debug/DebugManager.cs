@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Threading;
 using System.Collections.Generic;
@@ -308,7 +308,8 @@ namespace Ordisoftware.Core
       var einfo = new ExceptionInfo(sender, ex);
       if ( !_Enabled )
       {
-        ShowSimple(einfo);
+        if ( show != ShowExceptionMode.None )
+          ShowSimple(einfo);
         return;
       }
       try
