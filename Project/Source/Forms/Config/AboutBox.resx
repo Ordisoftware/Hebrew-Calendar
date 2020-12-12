@@ -409,13 +409,13 @@
     <value>313, 356</value>
   </data>
   <data name="linkLabel11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 13</value>
+    <value>153, 13</value>
   </data>
   <data name="linkLabel11.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="linkLabel11.Text" xml:space="preserve">
-    <value>github.com/pasnox/oxygen-icons-png</value>
+    <value>github.com/KDE/oxygen-icons</value>
   </data>
   <data name="&gt;&gt;linkLabel11.Name" xml:space="preserve">
     <value>linkLabel11</value>
