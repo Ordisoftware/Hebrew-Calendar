@@ -161,7 +161,16 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionManageBookmarks_Click(object sender, EventArgs e)
     {
-      if ( ManageDateBookmarksForm.Run() ) LoadMenuBookmarks();
+      Enabled = false;
+      try
+      {
+        if ( ManageDateBookmarksForm.Run() )
+          LoadMenuBookmarks();
+      }
+      finally
+      {
+        Enabled = true;
+     }
     }
 
     private void ActionHelp_Click(object sender, EventArgs e)
