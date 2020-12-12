@@ -130,7 +130,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.IsReady = true;
         UpdateButtons();
         GoToDate(DateTime.Today);
-        CheckRegenerateCalendar();
+        CheckRegenerateCalendar(force: ((CommandLineArgs)SystemManager.CommandLineOptions).Generate);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
         if ( Settings.StartupHide || Program.ForceStartupHide )
@@ -153,7 +153,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                                        true, false, 350, 660, false, false);
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
         NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-      }
+     }
       finally
       {
         DebugManager.Leave();

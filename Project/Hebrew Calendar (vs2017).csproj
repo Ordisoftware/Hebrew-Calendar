@@ -68,6 +68,9 @@
     <Reference Include="AASharp, Version=1.99.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AASharp.1.99.1\lib\net45\AASharp.dll</HintPath>
     </Reference>
+    <Reference Include="CommandLine, Version=2.8.0.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">
+      <HintPath>packages\CommandLineParser.2.8.0\lib\net461\CommandLine.dll</HintPath>
+    </Reference>
     <Reference Include="FileHelpers, Version=3.4.2.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
       <HintPath>packages\FileHelpers.3.4.2\lib\net45\FileHelpers.dll</HintPath>
     </Reference>
@@ -158,6 +161,7 @@
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
+    <Compile Include="Source\Common\Core\Classes\SystemCommandLineArgs.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportAction.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Errors.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.IO.cs" />
@@ -554,6 +558,7 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Program\CommandLineArgs.cs" />
     <Compile Include="Source\Program\SettingsHelper.cs" />
     <Compile Include="Source\Enums\TorahEvent.cs" />
     <Compile Include="Source\Enums\MoonPhase.cs" />

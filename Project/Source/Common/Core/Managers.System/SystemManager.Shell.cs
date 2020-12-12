@@ -17,6 +17,8 @@ using System.IO;
 using System.Text;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using System.Collections.Generic;
+using CommandLine;
 
 namespace Ordisoftware.Core
 {
@@ -33,34 +35,27 @@ namespace Ordisoftware.Core
     static public string[] CommandLineArguments { get; private set; }
 
     /// <summary>
-    /// Indicate command line commands.
+    /// Indicate command line arguments options instance.
     /// </summary>
-    static public readonly NullSafeDictionary<string, NullSafeStringList> CommandLineOptions
-      = new NullSafeDictionary<string, NullSafeStringList>();
+    static public SystemCommandLineArgs CommandLineOptions { get; private set; }
 
     /// <summary>
-    /// Check command line arguments and apply them.
+    /// Analyse command line arguments.
     /// </summary>
-    static public void CheckCommandLineArguments(string[] args, ref Language language)
+    static public void CheckCommandLineArguments<T>(string[] args, ref Language language)
+      where T : SystemCommandLineArgs
     {
       try
       {
         CommandLineArguments = args;
-        var parts = args.AsMultiSpace().SplitNoEmptyLines("/");
-        foreach ( string arg in parts )
-        {
-          var items = arg.Trim().SplitNoEmptyLines(" ");
-          if ( items.Length == 0 ) continue;
-          var values = new NullSafeStringList();
-          for ( int index = 1; index < items.Length; index++ )
-            values.Add(items[index]);
-          CommandLineOptions[items[0].ToLower()] = values;
-        }
-        if ( CommandLineOptions.ContainsKey("lang"))
+        ParserResult<T> options = Parser.Default.ParseArguments<T>(args);
+        if ( options.Tag == ParserResultType.Parsed )
+          CommandLineOptions = ( (Parsed<T>)options ).Value;
+        if ( !CommandLineOptions.Language.IsNullOrEmpty() )
           foreach (var lang in Languages.Values )
-            if ( CommandLineOptions["lang"][0].ToLower() == lang.Key)
-              language = lang.Value;
-      }
+              if ( CommandLineOptions.Language.ToLower() == lang.Key)
+                language = lang.Value;
+        }
       catch ( Exception ex )
       {
         ex.Manage(ShowExceptionMode.None);

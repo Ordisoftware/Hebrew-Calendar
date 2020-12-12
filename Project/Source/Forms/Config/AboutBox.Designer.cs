@@ -61,6 +61,8 @@
       this.linkLabel8 = new System.Windows.Forms.LinkLabel();
       this.linkLabel9 = new System.Windows.Forms.LinkLabel();
       this.label12 = new System.Windows.Forms.Label();
+      this.linkLabel13 = new System.Windows.Forms.LinkLabel();
+      this.label13 = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -195,7 +197,6 @@
       this.ActionPrivacyNotice.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionPrivacyNotice, "ActionPrivacyNotice");
       this.ActionPrivacyNotice.Name = "ActionPrivacyNotice";
-      this.ActionPrivacyNotice.TabStop = false;
       this.ActionPrivacyNotice.UseVisualStyleBackColor = true;
       this.ActionPrivacyNotice.Click += new System.EventHandler(this.ActionPrivacyNotice_Click);
       // 
@@ -304,6 +305,21 @@
       resources.ApplyResources(this.label12, "label12");
       this.label12.Name = "label12";
       // 
+      // linkLabel13
+      // 
+      this.linkLabel13.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel13, "linkLabel13");
+      this.linkLabel13.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkLabel13.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel13.Name = "linkLabel13";
+      this.linkLabel13.TabStop = true;
+      this.linkLabel13.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelProvider_LinkClicked);
+      // 
+      // label13
+      // 
+      resources.ApplyResources(this.label13, "label13");
+      this.label13.Name = "label13";
+      // 
       // AboutBox
       // 
       resources.ApplyResources(this, "$this");
@@ -314,6 +330,7 @@
       this.Controls.Add(this.label9);
       this.Controls.Add(this.label5);
       this.Controls.Add(this.label12);
+      this.Controls.Add(this.label13);
       this.Controls.Add(this.label8);
       this.Controls.Add(this.label7);
       this.Controls.Add(this.label6);
@@ -325,6 +342,7 @@
       this.Controls.Add(this.linkLabel8);
       this.Controls.Add(this.linkLabel9);
       this.Controls.Add(this.linkLabel7);
+      this.Controls.Add(this.linkLabel13);
       this.Controls.Add(this.linkLabel6);
       this.Controls.Add(this.linkLabel3);
       this.Controls.Add(this.linkLabel5);
@@ -387,5 +405,7 @@
     private System.Windows.Forms.Button ActionPrivacyNotice;
     private System.Windows.Forms.LinkLabel linkLabel9;
     private System.Windows.Forms.Label label12;
+    private System.Windows.Forms.LinkLabel linkLabel13;
+    private System.Windows.Forms.Label label13;
   }
 }
