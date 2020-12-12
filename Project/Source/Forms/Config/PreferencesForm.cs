@@ -630,17 +630,20 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionResetExportFolder_Click(object sender, EventArgs e)
     {
-      EditExportFolder.Text = (string)Settings.Properties["ExportFolder"].DefaultValue;
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+        EditExportFolder.Text = (string)Settings.Properties["ExportFolder"].DefaultValue;
     }
 
     private void ActionResetCalculatorPath_Click(object sender, EventArgs e)
     {
-      EditCalculatorPath.Text = (string)Settings.Properties["CalculatorExe"].DefaultValue;
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+        EditCalculatorPath.Text = (string)Settings.Properties["CalculatorExe"].DefaultValue;
     }
 
     private void ActionResetHebrewLettersPath_Click(object sender, EventArgs e)
     {
-      EditHebrewLettersPath.Text = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+        EditHebrewLettersPath.Text = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
     }
 
     private void EditVacuumAtStartup_CheckedChanged(object sender, EventArgs e)
