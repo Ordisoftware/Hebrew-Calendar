@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public DateTime this[int index]
     {
       get { return Items[index]; }
-      set { Items[index] = value; Save(); } 
+      set { Items[index] = value; Save(); }
     }
 
     public void Resize(int size)
@@ -51,8 +51,16 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           if ( item == "" )
             continue;
-          if ( DateTime.TryParse(item, out var date) )
-            Items[index] = date;
+          DateTime date = DateTime.MinValue;
+          try
+          {
+            date = SQLiteDate.ToDateTime(item);
+          }
+          catch
+          {
+            DateTime.TryParse(item, out date);
+          }
+          Items[index] = date;
           if ( ++index >= Program.Settings.DateBookmarksCount )
             break;
         }
@@ -65,7 +73,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var items = new List<string>();
         foreach ( var item in Items )
-          items.Add(item.ToShortDateString());
+          items.Add(SQLiteDate.ToString(item));
         File.WriteAllLines(FilePath, items);
       });
     }
