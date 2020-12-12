@@ -65,7 +65,7 @@ namespace Ordisoftware.Core
     /// Indicate the application startup regustry value in Run key.
     /// </summary>
     static public string ApplicationStartupRegistryValue
-      => $"\"{Application.ExecutablePath}\" /hide";
+      => $"\"{Application.ExecutablePath}\" --hide";
 
     /// <summary>
     /// Indicate the root folder path of the application.

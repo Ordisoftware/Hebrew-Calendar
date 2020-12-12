@@ -24,12 +24,12 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Check if the calendar must be generated again in it comes near the end.
     /// </summary>
-    private string CheckRegenerateCalendar(bool auto = false)
+    private string CheckRegenerateCalendar(bool auto = false, bool force = false)
     {
       try
       {
-        if ( DateTime.Today.Year >= YearLast )
-          if ( auto || Settings.AutoRegenerate )
+        if ( force || DateTime.Today.Year >= YearLast )
+          if ( force || auto || Settings.AutoRegenerate )
           {
             var interval = new YearsIntervalItem(Program.Settings.AutoGenerateYearsInternal);
             int year = DateTime.Today.Year - 1;

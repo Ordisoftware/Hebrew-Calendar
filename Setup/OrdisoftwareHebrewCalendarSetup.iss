@@ -34,7 +34,6 @@ Source: ..\Sounds\*; DestDir: {app}\Sounds; Excludes: *.bak; Flags: ignoreversio
 
 [Icons]
 #include "Scripts\Icons.iss"
-Name: {group}\{#MyAppName}\{cm:StartAndReset_msg,{#MyAppName}}; Filename: {app}\System\ResetSettings.bat; IconFilename: {app}\System\Application.ico; Parameters: /reset; Flags: runminimized
 
 [Registry]
 Root: HKCU; Subkey: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run; ValueType: string; ValueName: {#MyAppPublisher} {#MyAppName}; ValueData: """{app}\Bin\{#MyAppExeName}"" /hide"; Flags: uninsdeletevalue deletevalue
