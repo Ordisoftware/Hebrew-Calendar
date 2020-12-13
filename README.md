@@ -39,7 +39,7 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 - Copy to the clipboard and print the view.
 - Export of the report in a text file.
 - Export of the month in an image file.
-- Export of the data in a CSV file.
+- Export of the data in a CSV and JSON file.
 - English, French.
 
 ## Review
@@ -171,8 +171,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 ## Future improvements
 
 - Add moon months description form and menu in tools.
-- Add select months interval for saving and printing month view.
-- Add print data grid.
 - Add dark theme for month view.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add reminder for solar and lunar anniversary of birth.
@@ -185,8 +183,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.12.__ - Version 5.14
+#### 2020.12.20 - Version 5.14
 
+- Replace the standard print preview form by an enhanced.
+- Add select months interval for saving and printing month view.
 - Add export data to JSON file.
 - Add option to set preferred data export file format.
 - Add Newtonsoft.Json NuGet package.
