@@ -183,10 +183,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.12.20 - Version 5.14
+#### 2020.12.__ - Version 6.0
 
 - Replace the standard print preview form by an enhanced.
-- Add select months interval for saving and printing month view.
+- Add select years interval for export, else entire report/grid or current month.
+- Add option to set default print month view page orientation.
 - Add export data to JSON file.
 - Add option to set preferred data export file format.
 - Add Newtonsoft.Json NuGet package.
