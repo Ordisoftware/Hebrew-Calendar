@@ -296,7 +296,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionSave_Click(object sender, EventArgs e)
     {
-      DoSave();
+      ExportSave();
     }
 
     /// <summary>
@@ -306,7 +306,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionCopyToClipboard_Click(object sender, EventArgs e)
     {
-      DoCopy();
+      ExportToClipboard();
     }
 
     /// <summary>
@@ -316,7 +316,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionPrint_Click(object sender, EventArgs e)
     {
-      DoPrint();
+      ExportPrint();
     }
 
     /// <summary>

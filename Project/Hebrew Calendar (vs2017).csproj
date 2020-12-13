@@ -66,7 +66,7 @@
     <AllowedReferenceRelatedFileExtensions>
           *.pdb;
     </AllowedReferenceRelatedFileExtensions>
-   </PropertyGroup>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AASharp, Version=1.99.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AASharp.1.99.1\lib\net45\AASharp.dll</HintPath>
@@ -341,7 +341,22 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.SaveCopyPrint.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.Save.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.ToClipboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.Print.Text.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.Print.Month.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoon.cs">
