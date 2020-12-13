@@ -181,8 +181,19 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve navigation form to show celebration week day number.
 - Improve automatic web check update to not run when shabat and special celebration days but the next day.
 - Improve log viewer to select file.
+- Replace simple internal trace/logging by a NuGet package.
 
 ## Changelog
+
+#### 2020.12.20 - Version 5.13
+
+- Fix web check update box remains on top if clicked on view release notes.
+- Fix button print not disabled when data grid view and causes an unhandled error.
+- Fix custom wav is played twice when clicking on the radio box.
+- Fix visual calendar design time exceptions.
+- Add Serilog NuGet package.
+- Add Humanizer NuGet package.
+- Add FluentValidation NuGet package.
 
 #### 2020.12.12 - Version 5.12
 
