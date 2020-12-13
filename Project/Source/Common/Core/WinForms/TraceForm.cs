@@ -104,7 +104,7 @@ namespace Ordisoftware.Core
 
     private void TextBox_TextChanged(object sender, EventArgs e)
     {
-      LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBox.Lines.Length); ;
+      LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBox.Lines.Length);
     }
 
     public void AppendText(string text, bool scrollBottom = true)
