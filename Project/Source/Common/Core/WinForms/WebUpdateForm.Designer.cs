@@ -108,7 +108,6 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "WebUpdateForm";
-      this.TopMost = true;
       this.Shown += new System.EventHandler(this.WebUpdateForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);

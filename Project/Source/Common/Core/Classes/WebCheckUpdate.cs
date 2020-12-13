@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -150,6 +150,12 @@ namespace Ordisoftware.Core
                                   Convert.ToInt32(partsVersion[1]),
                                   Convert.ToInt32(partsVersion[2]));
             break;
+          case 4:
+            version = new Version(Convert.ToInt32(partsVersion[0]),
+                                  Convert.ToInt32(partsVersion[1]),
+                                  Convert.ToInt32(partsVersion[2]),
+                                  Convert.ToInt32(partsVersion[3]));
+            break;
           default:
             throw new ArgumentException(SysTranslations.CheckUpdateFileError.GetLang(lines.AsMultiLine()));
         }
@@ -168,6 +174,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static private bool GetUserChoice(WebClient client, (Version version, string checksum) fileInfo)
     {
+      LoadingForm.Instance.Hide();
       string fileURL = string.Format(Globals.SetupFileURL, fileInfo.version.ToString());
       var result = WebUpdateForm.Run(fileInfo.version);
       switch ( result )
