@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Data;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using Newtonsoft.Json;
@@ -93,7 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
           File.WriteAllText(SaveDataDialog.FileName, content.ToString());
           break;
         case DataExportTarget.JSON:
-          var table = DataSet.LunisolarDays.Select(day => new
+          var data = DataSet.LunisolarDays.Select(day => new
           {
             day.Date,
             IsNewMoon = Convert.ToBoolean(day.IsNewMoon),
@@ -108,8 +109,9 @@ namespace Ordisoftware.Hebrew.Calendar
             SeasonChange = ( (SeasonChange)day.SeasonChange ).ToString(),
             TorahEvent = ( (TorahEvent)day.TorahEvents ).ToString()
           });
-          string str = JsonConvert.SerializeObject(table, Formatting.Indented);
-          File.WriteAllText(SaveDataDialog.FileName, str);
+          var dataset = new DataSet(Globals.AssemblyTitle);
+          dataset.Tables.Add(data.ToDataTable(DataSet.LunisolarDays.TableName));
+          File.WriteAllText(SaveDataDialog.FileName, JsonConvert.SerializeObject(dataset, Formatting.Indented));
           break;
         default:
           throw new NotImplementedExceptionEx(selected.ToString());
