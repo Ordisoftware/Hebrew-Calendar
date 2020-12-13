@@ -16,6 +16,7 @@ using System;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using CoolPrintPreview;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -23,7 +24,6 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    const int PrintAskToContinueTrigger = 10;   // TODO option
     private int PrinterCurrentLine;
 
     private void ExportPrint()
@@ -62,17 +62,29 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       int margin = Settings.PrintingMargin;
       bool finished = false;
-      bool mutex = false;
       using ( var document = new PrintDocument() )
       {
         document.PrintPage += action;
         document.DefaultPageSettings.Landscape = landscape;
         document.DefaultPageSettings.Margins = new Margins(margin, margin, margin, margin);
-        var timer = new Timer();
-        timer.Interval = 250;
-        timer.Tick += print;
-        timer.Start();
-        while ( !finished ) Application.DoEvents();
+        if ( Settings.ShowPrintPreviewDialog )
+        {
+          var preview = new CoolPrintPreviewDialog();
+          preview.WindowState = FormWindowState.Maximized;
+          preview.ShowInTaskbar = true;
+          preview.ShowIcon = true;
+          preview.Icon = Icon;
+          preview.Document = document;
+          preview.ShowDialog(this);
+        }
+        else
+        {
+          var timer = new Timer();
+          timer.Interval = 250;
+          timer.Tick += print;
+          timer.Start();
+          while ( !finished ) Application.DoEvents();
+        }
         void printed(object sender, PrintPageEventArgs e)
         {
           if ( !e.HasMorePages )
@@ -80,40 +92,13 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         void print(object sender, EventArgs e)
         {
-          timer.Stop();
+          ( (Timer)sender ).Stop();
           PrintDialog.Document = document;
           if ( PrintDialog.ShowDialog(this) == DialogResult.OK )
-            SystemManager.TryCatchManage(() =>
-            {
-              if ( Settings.ShowPrintPreviewDialog )
-              {
-                var preview = new PrintPreviewDialog();
-                ( (Form)preview ).WindowState = FormWindowState.Maximized;
-                ( (Form)preview ).ShowInTaskbar = true;
-                ( (Form)preview ).Icon = Icon;
-                preview.Document = document;
-                preview.ShowIcon = true;
-                preview.PrintPreviewControl.Zoom = 1;
-                preview.PrintPreviewControl.UseAntiAlias = true;
-                if ( preview.Controls.Count >= 2 )
-                {
-                  var toolstrip = preview.Controls[1] as ToolStrip;
-                  if ( toolstrip != null && toolstrip.Items.Count > 1 )
-                    toolstrip.Items[0].Click += (_s, _e) =>
-                    {
-                      if ( mutex ) return;
-                      document.PrintPage += printed;
-                      mutex = true;
-                    };
-                }
-                preview.ShowDialog();
-              }
-              else
-              {
-                document.PrintPage += printed;
-                document.Print();
-              }
-            });
+          {
+            document.PrintPage += printed;
+            document.Print();
+          }
           finished = true;
         }
       }

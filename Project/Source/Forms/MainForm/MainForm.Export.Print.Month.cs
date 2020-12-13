@@ -13,6 +13,8 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-12 </edited>
 using System;
+using System.Linq;
+using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -23,13 +25,38 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ExportPrintMonth()
     {
+      int countPages = 0;
+      bool askToContinue = true;
+      bool all = DisplayManager.QueryYesNoCancel("Click Yes to print all months." + Globals.NL +
+                                                 "Click No to print current view." + Globals.NL +
+                                                 "Click Cancel to no printing.") == DialogResult.Yes;
+      if ( all )
+      {
+        CalendarMonth.CalendarDate = DateFirst;
+        countPages = ( DateLast.Year - DateFirst.Year ) * 12;
+      }
+      int margin = Settings.PrintingMargin;
+      int margin2 = margin + margin;
+      var bitmap = CalendarMonth.GetBitmap();
+      double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
       ExportPrintRun(true, (s, e) =>
       {
-        int margin = Settings.PrintingMargin;
-        int margin2 = margin + margin;
-        var bitmap = CalendarMonth.GetBitmap();
+        if ( askToContinue )
+          if ( Settings.PrintPageCountWarning > 0 && countPages > Settings.PrintPageCountWarning )
+            if ( !DisplayManager.QueryYesNo(SysTranslations.AskToPrintLotsOfPages.GetLang(countPages)) )
+            {
+              e.HasMorePages = false;
+              return;
+            }
+            else
+            {
+              var form = Application.OpenForms.ToList().LastOrDefault();
+              form?.Popup();
+              askToContinue = false;
+            }
+          else
+            askToContinue = false;
         var bounds = e.PageBounds;
-        double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
         bounds.Height = (int)( bounds.Width * ratio );
         if ( bounds.Height > e.PageBounds.Height )
         {
@@ -38,6 +65,12 @@ namespace Ordisoftware.Hebrew.Calendar
           bounds.Width = (int)( bounds.Height * ratio );
         }
         e.Graphics.DrawImage(bitmap, margin, margin, bounds.Width - margin2, bounds.Height - margin2);
+        if ( all )
+          if ( !( CalendarMonth.CalendarDate.Year == DateLast.Year && CalendarMonth.CalendarDate.Month == DateLast.Month ) )
+          {
+            CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
+            e.HasMorePages = true;
+          }
       });
     }
 

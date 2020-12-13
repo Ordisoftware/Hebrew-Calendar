@@ -662,6 +662,7 @@
             this.ActionVacuumAtNextStartup});
       resources.ApplyResources(this.ActionTools, "ActionTools");
       this.ActionTools.Name = "ActionTools";
+      this.ActionTools.Padding = new System.Windows.Forms.Padding(5);
       // 
       // ActionViewMoonMonths
       // 
@@ -762,6 +763,7 @@
       this.ActionWebLinks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionWebLinks, "ActionWebLinks");
       this.ActionWebLinks.Name = "ActionWebLinks";
+      this.ActionWebLinks.Padding = new System.Windows.Forms.Padding(5);
       // 
       // Sep6
       // 
