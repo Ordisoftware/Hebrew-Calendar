@@ -20,7 +20,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Hebrew.Calendar.DataExportTarget, string>;
+using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -168,7 +168,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadDataExportFileFormats()
     {
-      foreach ( var item in MainForm.DataExportTargetFileExt )
+      foreach ( var item in Globals.DataExportTargets )
         EditDataExportFileFormat.Items.Add(item);
     }
 
@@ -283,7 +283,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
     {
-      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset, new Point(0, ActionMoonDayTextFormatReset.Height));
+      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset, 
+                                       new Point(0, ActionMoonDayTextFormatReset.Height));
     }
 
     private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
@@ -640,12 +641,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)
     {
-      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval, new Point(0, SelectAutoGenerateYearsInterval.Height));
+      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval, 
+                               new Point(0, SelectAutoGenerateYearsInterval.Height));
     }
 
     private void PredefinedYearsItem_Click(object sender, EventArgs e)
     {
-      EditAutoGenerateYearsInterval.Text = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue.ToString();
+      var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue;
+      EditAutoGenerateYearsInterval.Text = value.ToString();
     }
 
     private void ActionResetExportFolder_Click(object sender, EventArgs e)

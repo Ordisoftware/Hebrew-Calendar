@@ -25,24 +25,8 @@ using Newtonsoft.Json;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public enum DataExportTarget
-  {
-    CSV,
-    JSON,
-    HTML    // TODO implement
-  }
-
   public partial class MainForm
   {
-
-    // TODO move in program or globals & auto generate foreach on enum
-    static public NullSafeOfStringDictionary<DataExportTarget> DataExportTargetFileExt
-      = new NullSafeOfStringDictionary<DataExportTarget>
-      {
-        [DataExportTarget.CSV] = "." + DataExportTarget.CSV.ToString().ToLower(),
-        [DataExportTarget.JSON] = "." + DataExportTarget.JSON.ToString().ToLower(),
-        //[DataExportTarget.HTML] = "." + DataExportTarget.HTML.ToString().ToLower(),
-      };
 
     private void DoExport(ExportAction action,
                           NullSafeDictionary<ViewMode, Func<bool>> process,
@@ -95,8 +79,8 @@ namespace Ordisoftware.Hebrew.Calendar
         [ViewMode.Grid] = () =>
         {
           SaveDataDialog.FileName = Globals.AssemblyTitle;
-          for ( int index = 0; index < DataExportTargetFileExt.Count; index++ )
-            if ( DataExportTargetFileExt.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
+          for ( int index = 0; index < Globals.DataExportTargets.Count; index++ )
+            if ( Globals.DataExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
               SaveDataDialog.FilterIndex = index + 1;
           if ( SaveDataDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveDataDialog.FileName;
@@ -169,7 +153,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private bool DoSaveData(string filePath)
     {
       string extension = Path.GetExtension(SaveDataDialog.FileName);
-      var selected = DataExportTargetFileExt.First(p => p.Value == extension).Key;
+      var selected = Globals.DataExportTargets.First(p => p.Value == extension).Key;
       switch ( selected )
       {
         case DataExportTarget.CSV:

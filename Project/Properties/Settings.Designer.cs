@@ -1836,9 +1836,9 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("CSV")]
-        public global::Ordisoftware.Hebrew.Calendar.DataExportTarget ExportDataPreferredTarget {
+        public global::Ordisoftware.Core.DataExportTarget ExportDataPreferredTarget {
             get {
-                return ((global::Ordisoftware.Hebrew.Calendar.DataExportTarget)(this["ExportDataPreferredTarget"]));
+                return ((global::Ordisoftware.Core.DataExportTarget)(this["ExportDataPreferredTarget"]));
             }
             set {
                 this["ExportDataPreferredTarget"] = value;

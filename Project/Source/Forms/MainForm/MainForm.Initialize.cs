@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-12 </edited>
 using System;
-using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -34,12 +33,10 @@ namespace Ordisoftware.Hebrew.Calendar
     internal void InitializeDialogsDirectory()
     {
       string directory = Settings.GetExportDirectory();
-      string str = SysTranslations.FileExtensionFilter.GetLang();
-      var list = DataExportTargetFileExt.Select(v => $"{string.Format(str, v.Key)}|*.{v.Value}");
-      SaveDataDialog.Filter = string.Join("|", list);
       SaveTextDialog.InitialDirectory = directory;
       SaveImageDialog.InitialDirectory = directory;
       SaveDataDialog.InitialDirectory = directory;
+      SaveDataDialog.Filter = Globals.GetDataExportTargetFilters();
     }
 
     /// <summary>
