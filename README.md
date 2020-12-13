@@ -185,7 +185,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### Version 5.14_
+#### 2020.12.__ - Version 5.14
 
 - Add export data to JSON file.
 - Add option to set preferred data export file format.
