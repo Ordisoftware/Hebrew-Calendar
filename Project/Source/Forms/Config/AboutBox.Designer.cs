@@ -63,6 +63,8 @@
       this.label12 = new System.Windows.Forms.Label();
       this.linkLabel13 = new System.Windows.Forms.LinkLabel();
       this.label13 = new System.Windows.Forms.Label();
+      this.linkLabel14 = new System.Windows.Forms.LinkLabel();
+      this.label14 = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -320,6 +322,21 @@
       resources.ApplyResources(this.label13, "label13");
       this.label13.Name = "label13";
       // 
+      // linkLabel14
+      // 
+      this.linkLabel14.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel14, "linkLabel14");
+      this.linkLabel14.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkLabel14.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel14.Name = "linkLabel14";
+      this.linkLabel14.TabStop = true;
+      this.linkLabel14.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelProvider_LinkClicked);
+      // 
+      // label14
+      // 
+      resources.ApplyResources(this.label14, "label14");
+      this.label14.Name = "label14";
+      // 
       // AboutBox
       // 
       resources.ApplyResources(this, "$this");
@@ -330,6 +347,7 @@
       this.Controls.Add(this.label9);
       this.Controls.Add(this.label5);
       this.Controls.Add(this.label12);
+      this.Controls.Add(this.label14);
       this.Controls.Add(this.label13);
       this.Controls.Add(this.label8);
       this.Controls.Add(this.label7);
@@ -342,6 +360,7 @@
       this.Controls.Add(this.linkLabel8);
       this.Controls.Add(this.linkLabel9);
       this.Controls.Add(this.linkLabel7);
+      this.Controls.Add(this.linkLabel14);
       this.Controls.Add(this.linkLabel13);
       this.Controls.Add(this.linkLabel6);
       this.Controls.Add(this.linkLabel3);
@@ -407,5 +426,7 @@
     private System.Windows.Forms.Label label12;
     private System.Windows.Forms.LinkLabel linkLabel13;
     private System.Windows.Forms.Label label13;
+    private System.Windows.Forms.LinkLabel linkLabel14;
+    private System.Windows.Forms.Label label14;
   }
 }
