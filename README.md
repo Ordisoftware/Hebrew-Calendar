@@ -185,12 +185,13 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.12.20 - Version 5.13
+#### 2020.12.13 - Version 5.13
 
+- Fix app does not start hidden at windows startup in v5.12.
 - Fix web check update box remains on top if clicked on view release notes.
 - Fix button print not disabled when data grid view and causes an unhandled error.
 - Fix custom wav is played twice when clicking on the radio box.
-- Fix visual calendar design time exceptions.
+- Fix visual calendar IDE design time exceptions.
 - Add Serilog NuGet package.
 - Add Humanizer NuGet package.
 - Add FluentValidation NuGet package.
