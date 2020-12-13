@@ -64,6 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      Width = EditShowPrintPreviewDialog.Left * 3 + EditShowPrintPreviewDialog.Width + GroupBoxView.Left * 2;
     }
 
     private void SelectViewForm_Load(object sender, EventArgs e)
