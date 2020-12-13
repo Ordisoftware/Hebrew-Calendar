@@ -110,6 +110,12 @@ namespace Ordisoftware.Core
                         AskToContinue[Language.FR]
       };
 
+    static public readonly TranslationsDictionary FileExtensionFilter
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "{0} files",
+        [Language.FR] = "Fichiers {0}"
+      };
   }
 
 }
