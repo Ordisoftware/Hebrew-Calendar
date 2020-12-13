@@ -13,12 +13,14 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-12 </edited>
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Hebrew.Calendar.DataExportTarget, string>;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -48,6 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadDays();
       LoadEvents();
       LoadFonts();
+      LoadDataExportFileFormats();
       setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
       setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
       setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
@@ -161,6 +164,12 @@ namespace Ordisoftware.Hebrew.Calendar
       foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
         if ( list.Contains(item.Name.ToLower()) )
           EditFontName.Items.Add(item.Name);
+    }
+
+    private void LoadDataExportFileFormats()
+    {
+      foreach ( var item in MainForm.DataExportTargetFileExt )
+        EditDataExportFileFormat.Items.Add(item);
     }
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -301,6 +310,17 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.FontName = EditFontName.Text;
       Settings.FontSize = (int)EditFontSize.Value;
       MainForm.Instance.UpdateTextCalendar();
+    }
+
+    private void EditPreferedDataExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)EditDataExportFileFormat.SelectedItem ).Key;
+    }
+
+    private void EditDataExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+    {
+      e.Value = ( (KVPDataExportTarget)e.ListItem ).Key.ToString();
     }
 
     private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)

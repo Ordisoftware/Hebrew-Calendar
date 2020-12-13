@@ -1832,5 +1832,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["PrintPageCountWarning"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CSV")]
+        public global::Ordisoftware.Hebrew.Calendar.DataExportTarget ExportDataPreferredTarget {
+            get {
+                return ((global::Ordisoftware.Hebrew.Calendar.DataExportTarget)(this["ExportDataPreferredTarget"]));
+            }
+            set {
+                this["ExportDataPreferredTarget"] = value;
+            }
+        }
     }
 }

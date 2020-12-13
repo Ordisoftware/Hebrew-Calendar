@@ -16,15 +16,33 @@ using System;
 using System.Linq;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using Newtonsoft.Json;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
 
+  public enum DataExportTarget
+  {
+    CSV,
+    JSON,
+    HTML    // TODO implement
+  }
+
   public partial class MainForm
   {
+
+    // TODO move in program or globals & auto generate foreach on enum
+    static public NullSafeOfStringDictionary<DataExportTarget> DataExportTargetFileExt
+      = new NullSafeOfStringDictionary<DataExportTarget>
+      {
+        [DataExportTarget.CSV] = "." + DataExportTarget.CSV.ToString().ToLower(),
+        [DataExportTarget.JSON] = "." + DataExportTarget.JSON.ToString().ToLower(),
+        //[DataExportTarget.HTML] = "." + DataExportTarget.HTML.ToString().ToLower(),
+      };
 
     private void DoExport(ExportAction action,
                           NullSafeDictionary<ViewMode, Func<bool>> process,
@@ -50,20 +68,22 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [ViewMode.Text] = () =>
         {
-          if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return false;
-          filePath = SaveFileDialog.FileName;
+          SaveTextDialog.FileName = Globals.AssemblyTitle;
+          if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
+          filePath = SaveTextDialog.FileName;
           File.WriteAllText(filePath, CalendarText.Text);
           return true;
         },
         [ViewMode.Month] = () =>
         {
+          SaveImageDialog.FileName = Globals.AssemblyTitle;
           if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveImageDialog.FileName;
           try
           {
             CalendarMonth.ShowTodayButton = false;
             CalendarMonth.ShowArrowControls = false;
-            CalendarMonth.GetBitmap().Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+            CalendarMonth.GetBitmap().Save(filePath, ImageFormat.Png);
             return true;
           }
           finally
@@ -74,12 +94,13 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [ViewMode.Grid] = () =>
         {
-          var content = GenerateReportCSV();
-          if ( content == null ) return false;
-          if ( SaveCSVDialog.ShowDialog() != DialogResult.OK ) return false;
-          filePath = SaveCSVDialog.FileName;
-          File.WriteAllText(filePath, content.ToString());
-          return true;
+          SaveDataDialog.FileName = Globals.AssemblyTitle;
+          for ( int index = 0; index < DataExportTargetFileExt.Count; index++ )
+            if ( DataExportTargetFileExt.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
+              SaveDataDialog.FilterIndex = index + 1;
+          if ( SaveDataDialog.ShowDialog() != DialogResult.OK ) return false;
+          filePath = SaveDataDialog.FileName;
+          return DoSaveData(filePath);
         }
       };
       Action<ViewMode> after = (view) =>
@@ -143,6 +164,42 @@ namespace Ordisoftware.Hebrew.Calendar
         [ViewMode.Grid] = null
       };
       DoExport(ExportAction.Print, process, null);
+    }
+
+    private bool DoSaveData(string filePath)
+    {
+      string extension = Path.GetExtension(SaveDataDialog.FileName);
+      var selected = DataExportTargetFileExt.First(p => p.Value == extension).Key;
+      switch ( selected )
+      {
+        case DataExportTarget.CSV:
+          var content = GenerateReportCSV();
+          if ( content == null ) return false;
+          File.WriteAllText(SaveDataDialog.FileName, content.ToString());
+          break;
+        case DataExportTarget.JSON:
+          var table = DataSet.LunisolarDays.Select(day => new
+          {
+            day.Date,
+            IsNewMoon = Convert.ToBoolean(day.IsNewMoon),
+            IsFullMoon = Convert.ToBoolean(day.IsFullMoon),
+            day.LunarMonth,
+            day.LunarDay,
+            day.Sunrise,
+            day.Sunset,
+            day.Moonrise,
+            day.Moonset,
+            MoonPhase = ( (MoonPhase)day.MoonPhase ).ToString(),
+            SeasonChange = ( (SeasonChange)day.SeasonChange ).ToString(),
+            TorahEvent = ( (TorahEvent)day.TorahEvents ).ToString()
+          });
+          string str = JsonConvert.SerializeObject(table, Formatting.Indented);
+          File.WriteAllText(SaveDataDialog.FileName, str);
+          break;
+        default:
+          throw new NotImplementedExceptionEx(selected.ToString());
+      }
+      return true;
     }
 
     private int PrinterCurrentLine;
