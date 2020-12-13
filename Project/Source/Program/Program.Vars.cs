@@ -153,6 +153,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static Program()
     {
+      if ( Globals.IsVisualStudioDesigner ) return;
       MoonMonthsMeanings = new NullSafeDictionary<Language, MoonMonthsFile>();
       MoonMonthsLettriqs = new NullSafeDictionary<Language, MoonMonthsFile>();
       foreach ( Language lang in Languages.Managed )

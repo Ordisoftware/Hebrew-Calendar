@@ -104,7 +104,7 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static ProvidersCollection()
     {
-      if ( Globals.IsDesignTime ) return;
+      if ( Globals.IsVisualStudioDesigner ) return;
       var folder = DataFileFolder.ApplicationDocuments;
       OnlineWordProviders = CreateOnlineProviders(folder, OnlineWordProvidersFilePath);
       OnlineBibleProviders = CreateOnlineProviders(folder, OnlineBibleProvidersFilePath);

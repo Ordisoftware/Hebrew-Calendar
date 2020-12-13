@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -79,10 +79,16 @@ namespace Ordisoftware.Core
       || Application.ExecutablePath.Contains(ReleaseDirectoryCombination);
 
     /// <summary>
-    /// Indicate if the code is executed from the IDE else from a running app.
+    /// Indicate if the code is in design time
     /// </summary>
     public static bool IsDesignTime
       => System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
+
+    /// <summary>
+    /// Indicate if the code is executed from the IDE else from a running app.
+    /// </summary>
+    public static bool IsVisualStudioDesigner
+      => ProcessName == "devenv";
 
     /// <summary>
     /// Indicate the main form.

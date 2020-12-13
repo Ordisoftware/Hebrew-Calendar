@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -111,6 +111,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectNone_CheckedChanged(object sender, EventArgs e)
     {
+      if ( !SelectNone.Checked ) return;
       ActionPlay.Enabled = false;
       SelectDialogSound.Enabled = false;
       SelectApplicationSound.Enabled = false;
@@ -121,6 +122,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectDialog_CheckedChanged(object sender, EventArgs e)
     {
+      if ( !SelectDialog.Checked ) return;
       ActionPlay.Enabled = true;
       SelectDialogSound.Enabled = true;
       SelectApplicationSound.Enabled = false;
@@ -132,6 +134,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectApplication_CheckedChanged(object sender, EventArgs e)
     {
+      if ( !SelectApplication.Checked ) return;
       ActionPlay.Enabled = true;
       SelectDialogSound.Enabled = false;
       SelectApplicationSound.Enabled = true;
@@ -143,6 +146,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectWindows_CheckedChanged(object sender, EventArgs e)
     {
+      if ( !SelectWindows.Checked ) return;
       ActionPlay.Enabled = true;
       SelectDialogSound.Enabled = false;
       SelectApplicationSound.Enabled = false;
@@ -154,6 +158,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectCustom_CheckedChanged(object sender, EventArgs e)
     {
+      if ( !SelectCustom.Checked ) return;
       ActionPlay.Enabled = true;
       SelectDialogSound.Enabled = false;
       SelectApplicationSound.Enabled = false;
