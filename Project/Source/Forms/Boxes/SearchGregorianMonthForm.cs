@@ -64,26 +64,26 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionFirst_Click(object sender, EventArgs e)
     {
-      EditYear.SelectedIndex = 0; ;
-      if ( ActiveControl == ListItems ) ActiveControl = ActionNext;
+      EditYear.SelectedIndex = 0;
+      ActiveControl = ActionNext;
     }
 
     private void ActionPrevious_Click(object sender, EventArgs e)
     {
       if ( EditYear.SelectedIndex > 0 ) EditYear.SelectedIndex--;
-      if ( ActiveControl == ListItems ) ActiveControl = ActionNext;
+      if ( EditYear.SelectedIndex == 0 ) ActiveControl = ActionNext;
     }
 
     private void ActionNext_Click(object sender, EventArgs e)
     {
       if ( EditYear.SelectedIndex < EditYear.Items.Count - 1 ) EditYear.SelectedIndex++;
-      if ( ActiveControl == ListItems ) ActiveControl = ActionPrevious;
+      if ( EditYear.SelectedIndex == EditYear.Items.Count - 1 ) ActiveControl = ActionPrevious;
     }
 
     private void ActionLast_Click(object sender, EventArgs e)
     {
       EditYear.SelectedIndex = EditYear.Items.Count - 1;
-      if ( ActiveControl == ListItems ) ActiveControl = ActionPrevious;
+      ActiveControl = ActionPrevious;
     }
 
     private void UpdateNavigation()
