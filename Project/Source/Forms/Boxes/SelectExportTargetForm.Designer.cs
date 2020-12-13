@@ -35,10 +35,8 @@
       this.SelectText = new System.Windows.Forms.RadioButton();
       this.SelectMonth = new System.Windows.Forms.RadioButton();
       this.SelectGrid = new System.Windows.Forms.RadioButton();
-      this.EditSelectViewToExport = new System.Windows.Forms.CheckBox();
       this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
-      this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
       this.ActionLast2 = new System.Windows.Forms.Button();
       this.ActionNext2 = new System.Windows.Forms.Button();
       this.ActionFirst2 = new System.Windows.Forms.Button();
@@ -57,6 +55,9 @@
       this.GroupBoxView = new System.Windows.Forms.GroupBox();
       this.GroupBoxOptions = new System.Windows.Forms.GroupBox();
       this.GroupBoxSettings = new System.Windows.Forms.GroupBox();
+      this.ActionIntervalInfo = new System.Windows.Forms.Button();
+      this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
+      this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.PanelYears.SuspendLayout();
       this.GroupBoxView.SuspendLayout();
@@ -108,15 +109,6 @@
       this.SelectGrid.UseVisualStyleBackColor = true;
       this.SelectGrid.CheckedChanged += new System.EventHandler(this.SelectView_CheckedChanged);
       // 
-      // EditSelectViewToExport
-      // 
-      resources.ApplyResources(this.EditSelectViewToExport, "EditSelectViewToExport");
-      this.EditSelectViewToExport.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.SelectViewToExport;
-      this.EditSelectViewToExport.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditSelectViewToExport.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "SelectViewToExport", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditSelectViewToExport.Name = "EditSelectViewToExport";
-      this.EditSelectViewToExport.UseVisualStyleBackColor = true;
-      // 
       // EditAutoOpenExportedFile
       // 
       resources.ApplyResources(this.EditAutoOpenExportedFile, "EditAutoOpenExportedFile");
@@ -132,16 +124,6 @@
       this.EditAutoOpenExportFolder.Name = "EditAutoOpenExportFolder";
       this.EditAutoOpenExportFolder.UseVisualStyleBackColor = true;
       this.EditAutoOpenExportFolder.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
-      // 
-      // EditShowPrintPreviewDialog
-      // 
-      resources.ApplyResources(this.EditShowPrintPreviewDialog, "EditShowPrintPreviewDialog");
-      this.EditShowPrintPreviewDialog.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ShowPrintPreviewDialog;
-      this.EditShowPrintPreviewDialog.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditShowPrintPreviewDialog.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ShowPrintPreviewDialog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditShowPrintPreviewDialog.Name = "EditShowPrintPreviewDialog";
-      this.EditShowPrintPreviewDialog.UseVisualStyleBackColor = true;
-      this.EditShowPrintPreviewDialog.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // ActionLast2
       // 
@@ -220,6 +202,7 @@
       // 
       // PanelYears
       // 
+      this.PanelYears.Controls.Add(this.ActionIntervalInfo);
       this.PanelYears.Controls.Add(this.LabelYear1);
       this.PanelYears.Controls.Add(this.ActionLast2);
       this.PanelYears.Controls.Add(this.EditYear1);
@@ -272,12 +255,40 @@
       // GroupBoxSettings
       // 
       resources.ApplyResources(this.GroupBoxSettings, "GroupBoxSettings");
-      this.GroupBoxSettings.Controls.Add(this.EditSelectViewToExport);
       this.GroupBoxSettings.Controls.Add(this.EditAutoOpenExportFolder);
+      this.GroupBoxSettings.Controls.Add(this.EditPrintImageInLandscape);
       this.GroupBoxSettings.Controls.Add(this.EditShowPrintPreviewDialog);
       this.GroupBoxSettings.Controls.Add(this.EditAutoOpenExportedFile);
       this.GroupBoxSettings.Name = "GroupBoxSettings";
       this.GroupBoxSettings.TabStop = false;
+      // 
+      // ActionIntervalInfo
+      // 
+      this.ActionIntervalInfo.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionIntervalInfo, "ActionIntervalInfo");
+      this.ActionIntervalInfo.Name = "ActionIntervalInfo";
+      this.ActionIntervalInfo.UseVisualStyleBackColor = true;
+      this.ActionIntervalInfo.Click += new System.EventHandler(this.ActionIntervalInfo_Click);
+      // 
+      // EditShowPrintPreviewDialog
+      // 
+      resources.ApplyResources(this.EditShowPrintPreviewDialog, "EditShowPrintPreviewDialog");
+      this.EditShowPrintPreviewDialog.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ShowPrintPreviewDialog;
+      this.EditShowPrintPreviewDialog.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditShowPrintPreviewDialog.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ShowPrintPreviewDialog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditShowPrintPreviewDialog.Name = "EditShowPrintPreviewDialog";
+      this.EditShowPrintPreviewDialog.UseVisualStyleBackColor = true;
+      this.EditShowPrintPreviewDialog.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
+      // 
+      // EditPrintImageInLandscape
+      // 
+      resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
+      this.EditPrintImageInLandscape.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.PrintImageInLandscape;
+      this.EditPrintImageInLandscape.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditPrintImageInLandscape.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "PrintImageInLandscape", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditPrintImageInLandscape.Name = "EditPrintImageInLandscape";
+      this.EditPrintImageInLandscape.UseVisualStyleBackColor = true;
+      this.EditPrintImageInLandscape.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // SelectExportTargetForm
       // 
@@ -315,7 +326,6 @@
     private System.Windows.Forms.RadioButton SelectText;
     private System.Windows.Forms.RadioButton SelectMonth;
     private System.Windows.Forms.RadioButton SelectGrid;
-    private System.Windows.Forms.CheckBox EditSelectViewToExport;
     private System.Windows.Forms.CheckBox EditAutoOpenExportedFile;
     private System.Windows.Forms.CheckBox EditAutoOpenExportFolder;
     private System.Windows.Forms.CheckBox EditShowPrintPreviewDialog;
@@ -337,5 +347,7 @@
     private System.Windows.Forms.GroupBox GroupBoxView;
     private System.Windows.Forms.GroupBox GroupBoxOptions;
     private System.Windows.Forms.GroupBox GroupBoxSettings;
+    private System.Windows.Forms.Button ActionIntervalInfo;
+    private System.Windows.Forms.CheckBox EditPrintImageInLandscape;
   }
 }

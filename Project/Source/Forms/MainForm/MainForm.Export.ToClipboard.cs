@@ -24,14 +24,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ExportToClipboard()
     {
-      var process = new NullSafeDictionary<ViewMode, Func<bool>>
+      var process = new NullSafeDictionary<ViewMode, Func<int?, int?, bool>>
       {
-        [ViewMode.Text] = () =>
+        [ViewMode.Text] = (year1, year2) =>
         {
           Clipboard.SetText(CalendarText.Text);
           return true;
         },
-        [ViewMode.Month] = () =>
+        [ViewMode.Month] = (year1, year2) =>
         {
           try
           {
@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Calendar
             CalendarMonth.ShowArrowControls = true;
           }
         },
-        [ViewMode.Grid] = () =>
+        [ViewMode.Grid] = (year1, year2) =>
         {
           Clipboard.SetText(GenerateReportCSV().ToString());
           return true;

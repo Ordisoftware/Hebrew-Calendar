@@ -207,6 +207,9 @@
   <data name="SelectText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="SelectText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="SelectText.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 25</value>
   </data>
@@ -291,36 +294,6 @@
   <data name="&gt;&gt;SelectGrid.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="EditSelectViewToExport.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditSelectViewToExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditSelectViewToExport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
-  </data>
-  <data name="EditSelectViewToExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 17</value>
-  </data>
-  <data name="EditSelectViewToExport.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="EditSelectViewToExport.Text" xml:space="preserve">
-    <value>Enable this dialog else use the current view</value>
-  </data>
-  <data name="&gt;&gt;EditSelectViewToExport.Name" xml:space="preserve">
-    <value>EditSelectViewToExport</value>
-  </data>
-  <data name="&gt;&gt;EditSelectViewToExport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditSelectViewToExport.Parent" xml:space="preserve">
-    <value>GroupBoxSettings</value>
-  </data>
-  <data name="&gt;&gt;EditSelectViewToExport.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="EditAutoOpenExportedFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -328,7 +301,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoOpenExportedFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 45</value>
+    <value>15, 25</value>
   </data>
   <data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 17</value>
@@ -358,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoOpenExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 65</value>
+    <value>15, 45</value>
   </data>
   <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>
@@ -379,37 +352,7 @@
     <value>GroupBoxSettings</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="EditShowPrintPreviewDialog.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditShowPrintPreviewDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditShowPrintPreviewDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 85</value>
-  </data>
-  <data name="EditShowPrintPreviewDialog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 17</value>
-  </data>
-  <data name="EditShowPrintPreviewDialog.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="EditShowPrintPreviewDialog.Text" xml:space="preserve">
-    <value>Show print preview dialog</value>
-  </data>
-  <data name="&gt;&gt;EditShowPrintPreviewDialog.Name" xml:space="preserve">
-    <value>EditShowPrintPreviewDialog</value>
-  </data>
-  <data name="&gt;&gt;EditShowPrintPreviewDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditShowPrintPreviewDialog.Parent" xml:space="preserve">
-    <value>GroupBoxSettings</value>
-  </data>
-  <data name="&gt;&gt;EditShowPrintPreviewDialog.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="ActionLast2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -436,7 +379,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;ActionLast2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionNext2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -463,7 +406,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;ActionNext2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ActionFirst2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -490,7 +433,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;ActionFirst2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="ActionPrevious2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -517,7 +460,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;ActionPrevious2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="EditYear2.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 67</value>
@@ -538,7 +481,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;EditYear2.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="LabelYear2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -568,7 +511,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;LabelYear2.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="ActionLast1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -595,7 +538,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;ActionLast1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="ActionNext1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -622,7 +565,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;ActionNext1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="ActionFirst1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -649,7 +592,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;ActionFirst1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="ActionPrevious1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -676,7 +619,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;ActionPrevious1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="EditYear1.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 19</value>
@@ -697,7 +640,7 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;EditYear1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LabelYear1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -727,13 +670,56 @@
     <value>PanelYears</value>
   </data>
   <data name="&gt;&gt;LabelYear1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionIntervalInfo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionIntervalInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 64</value>
+  </data>
+  <data name="ActionIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.Name" xml:space="preserve">
+    <value>ActionIntervalInfo</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.Parent" xml:space="preserve">
+    <value>PanelYears</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="PanelYears.Location" type="System.Drawing.Point, System.Drawing">
     <value>33, 68</value>
   </data>
   <data name="PanelYears.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 95</value>
+    <value>229, 95</value>
   </data>
   <data name="PanelYears.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -865,7 +851,67 @@
     <value>1</value>
   </data>
   <data name="GroupBoxSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="EditPrintImageInLandscape.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditPrintImageInLandscape.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 84</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 17</value>
+  </data>
+  <data name="EditPrintImageInLandscape.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
+    <value>Print images in landscape</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.Name" xml:space="preserve">
+    <value>EditPrintImageInLandscape</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 65</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 17</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Text" xml:space="preserve">
+    <value>Show print preview dialog</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Name" xml:space="preserve">
+    <value>EditShowPrintPreviewDialog</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="GroupBoxSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 312</value>
@@ -899,6 +945,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>297, 476</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

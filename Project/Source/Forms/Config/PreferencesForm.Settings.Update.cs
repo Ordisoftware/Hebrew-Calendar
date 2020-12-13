@@ -91,12 +91,11 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ApplicationVolume = EditVolume.Value;
       Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
       Settings.UsageStatisticsEnabled = EditUsageStatisticsEnabled.Checked;
-      Settings.SelectViewToExport = EditSelectViewToExport.Checked;
       Settings.RestoreLastViewAtStartup = EditRestoreLastViewAtStartup.Checked;
       Settings.ShowPrintPreviewDialog = EditShowPrintDialog.Checked;
       Settings.PrintingMargin = (int)EditPrintingMargin.Value;
       Settings.PrintPageCountWarning = (int)EditPrintPageCountWarning.Value;
-
+      Settings.PrintImageInLandscape = EditPrintImageInLandscape.Checked;
     }
 
   }

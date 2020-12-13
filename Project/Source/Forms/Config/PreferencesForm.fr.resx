@@ -860,4 +860,7 @@
   <data name="LabelDataExportFileFormat.Text" xml:space="preserve">
     <value>Format préféré du fichier d'export de données</value>
   </data>
+  <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
+    <value>Imprimer les images en paysage</value>
+  </data>
 </root>

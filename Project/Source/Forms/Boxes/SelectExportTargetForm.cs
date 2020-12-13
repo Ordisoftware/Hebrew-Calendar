@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class SelectExportTargetForm : Form
   {
 
-    static public bool Run(ExportAction action, ref ViewMode view, ViewMode available)
+    static public (bool isOk, int? year1, int? year2) Run(ExportAction action, ref ViewMode view, ViewMode available)
     {
       using ( var form = new SelectExportTargetForm() )
       {
@@ -54,7 +54,9 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( form.SelectGrid.Checked )
             view = ViewMode.Grid;
         }
-        return result;
+        return form.SelectInterval.Checked
+               ? (result, (int?)form.EditYear1.SelectedItem, (int?)form.EditYear2.SelectedItem)
+               : (result, null, null);
       }
     }
 
@@ -62,7 +64,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      Width = EditSelectViewToExport.Left * 3 + EditSelectViewToExport.Width + GroupBoxView.Left * 2;
     }
 
     private void SelectViewForm_Load(object sender, EventArgs e)
@@ -75,9 +76,9 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         int index1 = EditYear1.Items.Add(indexYear);
         int index2 = EditYear2.Items.Add(indexYear);
-        if ( indexYear - 1 == yearSelected )
+        if ( indexYear == yearSelected )
         {
-          EditYear1.SelectedIndex = index1 - 1;
+          EditYear1.SelectedIndex = index1;
           EditYear2.SelectedIndex = index2;
         }
       }
@@ -125,6 +126,11 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       PanelYears.Enabled = SelectInterval.Checked;
       UpdateControls();
+    }
+
+    private void ActionIntervalInfo_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(AppTranslations.ExportIntervalNotice.GetLang());
     }
 
     private void EditYear1_SelectedIndexChanged(object sender, EventArgs e)

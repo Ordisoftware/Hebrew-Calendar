@@ -30,9 +30,9 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ExportSave()
     {
       string filePath = "";
-      var process = new NullSafeDictionary<ViewMode, Func<bool>>
+      var process = new NullSafeDictionary<ViewMode, Func<int?, int?, bool>>
       {
-        [ViewMode.Text] = () =>
+        [ViewMode.Text] = (year1, year2) =>
         {
           SaveTextDialog.FileName = Globals.AssemblyTitle;
           if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
@@ -40,7 +40,7 @@ namespace Ordisoftware.Hebrew.Calendar
           File.WriteAllText(filePath, CalendarText.Text);
           return true;
         },
-        [ViewMode.Month] = () =>
+        [ViewMode.Month] = (year1, year2) =>
         {
           SaveImageDialog.FileName = Globals.AssemblyTitle;
           if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
             CalendarMonth.ShowArrowControls = true;
           }
         },
-        [ViewMode.Grid] = () =>
+        [ViewMode.Grid] = (year1, year2) =>
         {
           SaveDataDialog.FileName = Globals.AssemblyTitle;
           for ( int index = 0; index < Globals.DataExportTargets.Count; index++ )

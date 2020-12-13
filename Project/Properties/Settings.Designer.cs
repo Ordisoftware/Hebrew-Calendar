@@ -1763,18 +1763,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SelectViewToExport {
-            get {
-                return ((bool)(this["SelectViewToExport"]));
-            }
-            set {
-                this["SelectViewToExport"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool RestoreLastViewAtStartup {
             get {
@@ -1842,6 +1830,18 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["ExportDataPreferredTarget"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool PrintImageInLandscape {
+            get {
+                return ((bool)(this["PrintImageInLandscape"]));
+            }
+            set {
+                this["PrintImageInLandscape"] = value;
             }
         }
     }

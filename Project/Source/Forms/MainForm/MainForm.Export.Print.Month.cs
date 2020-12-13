@@ -23,23 +23,21 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private void ExportPrintMonth()
+    private void ExportPrintMonth(int? year1, int? year2)
     {
+      var current = CalendarMonth.CalendarDate;
       int countPages = 0;
       bool askToContinue = true;
-      bool all = DisplayManager.QueryYesNoCancel("Click Yes to print all months." + Globals.NL +
-                                                 "Click No to print current view." + Globals.NL +
-                                                 "Click Cancel to no printing.") == DialogResult.Yes;
-      if ( all )
+      bool multi = year1.HasValue && year2.HasValue;
+      if ( multi )
       {
-        CalendarMonth.CalendarDate = DateFirst;
-        countPages = ( DateLast.Year - DateFirst.Year ) * 12;
+        CalendarMonth.CalendarDate = new DateTime(year1.Value, 1, 1);
+        countPages = ( year2.Value - year1.Value ) * 12;
       }
       int margin = Settings.PrintingMargin;
       int margin2 = margin + margin;
-      var bitmap = CalendarMonth.GetBitmap();
       double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
-      ExportPrintRun(true, (s, e) =>
+      ExportPrintRun(Settings.PrintImageInLandscape, (s, e) =>
       {
         if ( askToContinue )
           if ( Settings.PrintPageCountWarning > 0 && countPages > Settings.PrintPageCountWarning )
@@ -64,14 +62,31 @@ namespace Ordisoftware.Hebrew.Calendar
           bounds.Height = e.PageBounds.Height;
           bounds.Width = (int)( bounds.Height * ratio );
         }
-        e.Graphics.DrawImage(bitmap, margin, margin, bounds.Width - margin2, bounds.Height - margin2);
-        if ( all )
-          if ( !( CalendarMonth.CalendarDate.Year == DateLast.Year && CalendarMonth.CalendarDate.Month == DateLast.Month ) )
+        bool redone = false;
+        TwoPerPage:
+        var bitmap = CalendarMonth.GetBitmap();
+        int delta = !redone ? 0 : e.PageBounds.Height / 2;
+        e.Graphics.DrawImage(bitmap, margin, margin + delta, bounds.Width - margin2, bounds.Height - margin2);
+        if ( multi )
+          if ( !( CalendarMonth.CalendarDate.Year == year2.Value && CalendarMonth.CalendarDate.Month == 12 ) )
           {
             CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
             e.HasMorePages = true;
+            if ( !redone && !e.PageSettings.Landscape )
+            {
+              redone = true;
+              goto TwoPerPage;
+            }
           }
+          else
+          {
+            CalendarMonth.CalendarDate = new DateTime(year1.Value, 1, 1);
+            e.HasMorePages = false;
+          }
+        else
+          e.HasMorePages = false;
       });
+      CalendarMonth.CalendarDate = current;
     }
 
   }

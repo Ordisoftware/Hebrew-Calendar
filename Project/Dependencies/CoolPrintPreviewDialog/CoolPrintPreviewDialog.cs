@@ -167,6 +167,7 @@ namespace CoolPrintPreview
     void _btnPageSetup_Click(object sender, EventArgs e)
     {
       // ORDISOFTWARE MODIF BEGIN
+      _btnFirst.PerformClick();
       _preview.Document.DefaultPageSettings.Landscape = !_preview.Document.DefaultPageSettings.Landscape;
       _preview.RefreshPreview();
       /*using ( var dlg = new PageSetupDialog() )

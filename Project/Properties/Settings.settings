@@ -442,9 +442,6 @@
     <Setting Name="AutoOpenExportedFile" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="SelectViewToExport" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
     <Setting Name="RestoreLastViewAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
@@ -460,8 +457,11 @@
     <Setting Name="PrintPageCountWarning" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
-    <Setting Name="ExportDataPreferredTarget" Type="Ordisoftware.Hebrew.Calendar.DataExportTarget" Scope="User">
+    <Setting Name="ExportDataPreferredTarget" Type="Ordisoftware.Core.DataExportTarget" Scope="User">
       <Value Profile="(Default)">CSV</Value>
+    </Setting>
+    <Setting Name="PrintImageInLandscape" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

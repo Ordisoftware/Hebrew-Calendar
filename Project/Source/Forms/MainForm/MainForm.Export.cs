@@ -23,20 +23,21 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     private void DoExport(ExportAction action,
-                          NullSafeDictionary<ViewMode, Func<bool>> process,
+                          NullSafeDictionary<ViewMode, Func<int?, int?, bool>> process,
                           Action<ViewMode> after)
     {
       var available = ViewMode.None;
       var view = Settings.CurrentView;
       foreach ( var item in process.Where(p => p.Value != null) )
         available |= item.Key;
-      if ( Settings.SelectViewToExport )
-        if ( !SelectExportTargetForm.Run(action, ref view, available) )
-          return;
+      var result = SelectExportTargetForm.Run(action, ref view, available);
+      if ( !result.isOk ) return;
       if ( process[view] == null )
         throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
-      if ( process[view].Invoke() )
-        after?.Invoke(view);
+      bool done = result.year2 > result.year1
+                  ? process[view].Invoke(result.year1, result.year2)
+                  : process[view].Invoke(result.year2, result.year1);
+      if ( done ) after?.Invoke(view);
     }
 
   }

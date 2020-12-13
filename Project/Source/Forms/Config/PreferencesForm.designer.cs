@@ -203,7 +203,6 @@
       this.TabPagePrint = new System.Windows.Forms.TabPage();
       this.EditDataExportFileFormat = new System.Windows.Forms.ComboBox();
       this.LabelDataExportFileFormat = new System.Windows.Forms.Label();
-      this.EditSelectViewToExport = new System.Windows.Forms.CheckBox();
       this.LabelPrintPageCountWarning = new System.Windows.Forms.Label();
       this.LabelPrintPageCountWarningIntervalInfo = new System.Windows.Forms.Label();
       this.LabelPrintMargin = new System.Windows.Forms.Label();
@@ -226,6 +225,7 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1687,7 +1687,6 @@
       this.TabPagePrint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPagePrint.Controls.Add(this.EditDataExportFileFormat);
       this.TabPagePrint.Controls.Add(this.LabelDataExportFileFormat);
-      this.TabPagePrint.Controls.Add(this.EditSelectViewToExport);
       this.TabPagePrint.Controls.Add(this.LabelPrintPageCountWarning);
       this.TabPagePrint.Controls.Add(this.LabelPrintPageCountWarningIntervalInfo);
       this.TabPagePrint.Controls.Add(this.LabelPrintMargin);
@@ -1695,6 +1694,7 @@
       this.TabPagePrint.Controls.Add(this.EditAutoOpenExportedFile);
       this.TabPagePrint.Controls.Add(this.EditPrintPageCountWarning);
       this.TabPagePrint.Controls.Add(this.EditAutoOpenExportFolder);
+      this.TabPagePrint.Controls.Add(this.EditPrintImageInLandscape);
       this.TabPagePrint.Controls.Add(this.EditShowPrintDialog);
       this.TabPagePrint.Controls.Add(this.EditPrintingMargin);
       resources.ApplyResources(this.TabPagePrint, "TabPagePrint");
@@ -1713,12 +1713,6 @@
       // 
       resources.ApplyResources(this.LabelDataExportFileFormat, "LabelDataExportFileFormat");
       this.LabelDataExportFileFormat.Name = "LabelDataExportFileFormat";
-      // 
-      // EditSelectViewToExport
-      // 
-      resources.ApplyResources(this.EditSelectViewToExport, "EditSelectViewToExport");
-      this.EditSelectViewToExport.Name = "EditSelectViewToExport";
-      this.EditSelectViewToExport.UseVisualStyleBackColor = true;
       // 
       // LabelPrintPageCountWarning
       // 
@@ -1904,6 +1898,13 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
+      // 
+      // EditPrintImageInLandscape
+      // 
+      resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
+      this.EditPrintImageInLandscape.Name = "EditPrintImageInLandscape";
+      this.EditPrintImageInLandscape.UseVisualStyleBackColor = true;
+      this.EditPrintImageInLandscape.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // PreferencesForm
       // 
@@ -2137,7 +2138,6 @@
     private System.Windows.Forms.NumericUpDown EditDateBookmarksCount;
     private System.Windows.Forms.Button ActionManageBookmarks;
     private System.Windows.Forms.CheckBox EditAutoOpenExportedFile;
-    private System.Windows.Forms.CheckBox EditSelectViewToExport;
     private System.Windows.Forms.CheckBox EditRestoreLastViewAtStartup;
     private System.Windows.Forms.Label LabelDateBookmarksCount;
     private System.Windows.Forms.Label LabelVolume;
@@ -2167,5 +2167,6 @@
     private System.Windows.Forms.NumericUpDown EditPrintPageCountWarning;
     private System.Windows.Forms.ComboBox EditDataExportFileFormat;
     private System.Windows.Forms.Label LabelDataExportFileFormat;
+    private System.Windows.Forms.CheckBox EditPrintImageInLandscape;
   }
 }

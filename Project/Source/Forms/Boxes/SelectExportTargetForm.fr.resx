@@ -175,4 +175,7 @@
   <data name="SelectSingle.Text" xml:space="preserve">
     <value>Unique</value>
   </data>
+  <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
+    <value>Imprimer les images en paysage</value>
+  </data>
 </root>
