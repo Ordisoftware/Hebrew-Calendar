@@ -11,12 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Odbc;
 using System.IO;
 using System.Linq;
-using System.Data.Odbc;
-using System.Collections.Generic;
+using System.Reflection;
 using Microsoft.Win32;
 
 namespace Ordisoftware.Core
@@ -274,16 +276,44 @@ namespace Ordisoftware.Core
     /// <param name="valueNotNull">Indicate if not null.</param>
     /// <returns>True if the column exists else false even if created.</returns>
     static public bool CheckColumn(this OdbcConnection connection,
-                                   string table, 
-                                   string column, 
-                                   string type, 
-                                   string valueDefault, 
+                                   string table,
+                                   string column,
+                                   string type,
+                                   string valueDefault,
                                    bool valueNotNull)
     {
       if ( !valueDefault.IsNullOrEmpty() ) valueDefault = " DEFAULT " + valueDefault;
       if ( valueNotNull ) valueDefault += " NOT NULL";
       string sql = $"ALTER TABLE %TABLE% ADD COLUMN %COLUMN% {type} {valueDefault}";
       return connection.CheckColumn(table, column, sql);
+    }
+
+    // https://stackoverflow.com/questions/4460654/best-practice-convert-linq-query-result-to-a-datatable-without-looping#31586395
+    static public DataTable ToDataTable<T>(this IEnumerable<T> query, string name = "") where T : class
+    {
+      if ( query == null ) return null;
+      var table = new DataTable();
+      table.TableName = name;
+      PropertyInfo[] columns = null;
+      foreach ( T item in query )
+      {
+        if ( columns == null )
+        {
+          columns = item.GetType().GetProperties();
+          foreach ( var column in columns )
+          {
+            var colType = column.PropertyType;
+            if ( colType.IsGenericType && colType.GetGenericTypeDefinition() == typeof(Nullable<>) )
+              colType = colType.GetGenericArguments()[0];
+            table.Columns.Add(new DataColumn(column.Name, colType));
+          }
+        }
+        var row = table.NewRow();
+        foreach ( var column in columns )
+          row[column.Name] = column.GetValue(item, null) == null ? DBNull.Value : column.GetValue(item, null);
+        table.Rows.Add(row);
+      }
+      return table;
     }
 
   }
