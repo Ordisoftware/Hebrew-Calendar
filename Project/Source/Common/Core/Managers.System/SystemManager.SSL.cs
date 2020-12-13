@@ -68,6 +68,7 @@ namespace Ordisoftware.Core
 
     static public void LoadSSLCertificate()
     {
+      if ( Globals.IsVisualStudioDesigner ) return;
       AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, "=>");
     }
 
@@ -76,7 +77,8 @@ namespace Ordisoftware.Core
     /// </summary>
     static SystemManager()
     {
-      if ( Globals.PreLoadSSLCertificate) LoadSSLCertificate(); 
+      if ( Globals.PreLoadSSLCertificate)
+        LoadSSLCertificate(); 
     }
 
   }
