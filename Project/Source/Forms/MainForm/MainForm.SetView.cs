@@ -107,6 +107,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ViewPanels[view].Panel.Parent = PanelCalendar;
         ViewPanels[view].Focused.Focus();
         Settings.CurrentView = view;
+        UpdateButtons();
       }
       catch ( Exception ex )
       {

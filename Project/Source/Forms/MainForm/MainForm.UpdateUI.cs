@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -86,7 +86,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ToolStrip.Enabled = !IsGenerating;
         ActionSaveToFile.Enabled = DataSet.LunisolarDays.Count > 0;
         ActionCopyToClipboard.Enabled = ActionSaveToFile.Enabled;
-        ActionPrint.Enabled = ActionSaveToFile.Enabled;
+        ActionPrint.Enabled = ActionSaveToFile.Enabled && Settings.CurrentView != ViewMode.Grid;
         ActionSearchEvent.Enabled = ActionSaveToFile.Enabled;
         ActionSearchMonth.Enabled = ActionSaveToFile.Enabled;
         ActionSearchDay.Enabled = ActionSaveToFile.Enabled;
