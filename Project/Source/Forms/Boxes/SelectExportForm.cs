@@ -20,12 +20,12 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SelectViewForm : Form
+  public partial class SelectExportForm : Form
   {
 
     static public bool Run(ExportAction action, ref ViewMode view, ViewMode available)
     {
-      using ( var form = new SelectViewForm() )
+      using ( var form = new SelectExportForm() )
       {
         form.Text += SysTranslations.ViewActionTitle.GetLang(action);
         form.SelectText.Enabled = available.HasFlag(ViewMode.Text);
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private SelectViewForm()
+    private SelectExportForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

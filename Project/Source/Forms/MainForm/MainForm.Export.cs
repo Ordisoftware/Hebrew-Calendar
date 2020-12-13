@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
       foreach ( var item in process.Where(p => p.Value != null) )
         available |= item.Key;
       if ( Settings.SelectViewToExport )
-        if ( !SelectViewForm.Run(action, ref view, available) )
+        if ( !SelectExportForm.Run(action, ref view, available) )
           return;
       if ( process[view] == null )
         throw new NotImplementedExceptionEx(Settings.CurrentView.ToStringFull());
