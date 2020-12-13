@@ -36,7 +36,7 @@ Source: ..\Sounds\*; DestDir: {app}\Sounds; Excludes: *.bak; Flags: ignoreversio
 #include "Scripts\Icons.iss"
 
 [Registry]
-Root: HKCU; Subkey: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run; ValueType: string; ValueName: {#MyAppPublisher} {#MyAppName}; ValueData: """{app}\Bin\{#MyAppExeName}"" /hide"; Flags: uninsdeletevalue deletevalue
+Root: HKCU; Subkey: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run; ValueType: string; ValueName: {#MyAppPublisher} {#MyAppName}; ValueData: """{app}\Bin\{#MyAppExeName}"" --hide"; Flags: uninsdeletevalue deletevalue
 
 [Run]
 #include "Scripts\Run.iss"
