@@ -121,8 +121,8 @@
   <data name="Label.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 13</value>
   </data>
-  <data name="Label.Text" xml:space="preserve">
-    <value>Sélectionnez la vue :</value>
+  <data name="GroupBoxView.Text" xml:space="preserve">
+    <value>Vue</value>
   </data>
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Annuler</value>
@@ -154,10 +154,25 @@
   <data name="EditSelectViewToExport.Text" xml:space="preserve">
     <value>Activer cette boîte de dialogue sinon utiliser la vue en cours</value>
   </data>
-  <data name="LabelOptions.Text" xml:space="preserve">
+  <data name="GroupBoxOptions.Text" xml:space="preserve">
     <value>Options :</value>
   </data>
   <data name="EditShowPrintPreviewDialog.Text" xml:space="preserve">
     <value>Afficher la boîte de dialogue d'aperçu avant impression</value>
+  </data>
+  <data name="GroupBoxSettings.text" xml:space="preserve">
+    <value>Préférences</value>
+  </data>
+  <data name="LabelYear1.Text" xml:space="preserve">
+    <value>Début</value>
+  </data>
+  <data name="LabelYear2.Text" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="SelectInterval" xml:space="preserve">
+    <value>Intervalle</value>
+  </data>
+  <data name="SelectSingle.Text" xml:space="preserve">
+    <value>Unique</value>
   </data>
 </root>

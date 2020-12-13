@@ -333,11 +333,11 @@
     <Compile Include="Source\Common\Core\Classes\SoundSource.cs" />
     <Compile Include="Source\Entities\GPS.cs" />
     <Compile Include="Source\Entities\DateBookmarks.cs" />
-    <Compile Include="Source\Forms\Boxes\SelectExportForm.cs">
+    <Compile Include="Source\Forms\Boxes\SelectExportTargetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectExportForm.Designer.cs">
-      <DependentUpon>SelectExportForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\SelectExportTargetForm.Designer.cs">
+      <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Theme.cs">
       <SubType>Form</SubType>
@@ -745,11 +745,11 @@
     <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarksForm.resx">
       <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectExportForm.fr.resx">
-      <DependentUpon>SelectExportForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectExportTargetForm.fr.resx">
+      <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectExportForm.resx">
-      <DependentUpon>SelectExportForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\SelectExportTargetForm.resx">
+      <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\SelectSoundForm.fr.resx">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
