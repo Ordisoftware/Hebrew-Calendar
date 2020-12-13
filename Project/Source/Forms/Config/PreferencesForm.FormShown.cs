@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -42,13 +43,19 @@ namespace Ordisoftware.Hebrew.Calendar
           ActionUsePersonalShabat_LinkClicked(null, null);
       }
       UpdateLanguagesButtons();
+      LoadSettings();
       foreach ( var item in EditFontName.Items )
         if ( (string)item == Settings.FontName )
         {
           EditFontName.SelectedItem = item;
           break;
         }
-      LoadSettings();
+      foreach ( KeyValuePair<DataExportTarget, string> item in EditDataExportFileFormat.Items )
+        if ( item.Key == Settings.ExportDataPreferredTarget)
+        {
+          EditDataExportFileFormat.SelectedItem = item;
+          break;
+        }
       EditTimeZone.Text = Settings.GetGPSText();
       switch ( Settings.TrayIconClickOpen )
       {

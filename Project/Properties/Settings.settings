@@ -460,5 +460,8 @@
     <Setting Name="PrintPageCountWarning" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
+    <Setting Name="ExportDataPreferredTarget" Type="Ordisoftware.Hebrew.Calendar.DataExportTarget" Scope="User">
+      <Value Profile="(Default)">CSV</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

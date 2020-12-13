@@ -185,6 +185,12 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### 2020.12.__ - Version 5.14
+
+- Add export data to JSON file.
+- Add option to set preferred data export file format.
+- Add Newtonsoft.Json NuGet package.
+
 #### 2020.12.13 - Version 5.13
 
 - Fix app does not start hidden at windows startup in v5.12.

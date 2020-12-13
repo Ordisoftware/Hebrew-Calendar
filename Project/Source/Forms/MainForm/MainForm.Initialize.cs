@@ -33,9 +33,10 @@ namespace Ordisoftware.Hebrew.Calendar
     internal void InitializeDialogsDirectory()
     {
       string directory = Settings.GetExportDirectory();
-      SaveFileDialog.InitialDirectory = directory;
+      SaveTextDialog.InitialDirectory = directory;
       SaveImageDialog.InitialDirectory = directory;
-      SaveCSVDialog.InitialDirectory = directory;
+      SaveDataDialog.InitialDirectory = directory;
+      SaveDataDialog.Filter = Globals.GetDataExportTargetFilters();
     }
 
     /// <summary>

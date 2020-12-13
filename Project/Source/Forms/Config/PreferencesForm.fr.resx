@@ -857,4 +857,7 @@
   <data name="TabPagePrint.Text" xml:space="preserve">
     <value>Export et impression</value>
   </data>
+  <data name="LabelDataExportFileFormat.Text" xml:space="preserve">
+    <value>Format préféré du fichier d'export de données</value>
+  </data>
 </root>

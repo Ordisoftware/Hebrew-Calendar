@@ -201,6 +201,8 @@
       this.EditTextBackground = new System.Windows.Forms.Panel();
       this.LabelTextColor = new System.Windows.Forms.Label();
       this.TabPagePrint = new System.Windows.Forms.TabPage();
+      this.EditDataExportFileFormat = new System.Windows.Forms.ComboBox();
+      this.LabelPreferredDataExportFileFormat = new System.Windows.Forms.Label();
       this.EditSelectViewToExport = new System.Windows.Forms.CheckBox();
       this.LabelPrintPageCountWarning = new System.Windows.Forms.Label();
       this.LabelPrintPageCountWarningIntervalInfo = new System.Windows.Forms.Label();
@@ -1683,6 +1685,8 @@
       // 
       this.TabPagePrint.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePrint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePrint.Controls.Add(this.EditDataExportFileFormat);
+      this.TabPagePrint.Controls.Add(this.LabelPreferredDataExportFileFormat);
       this.TabPagePrint.Controls.Add(this.EditSelectViewToExport);
       this.TabPagePrint.Controls.Add(this.LabelPrintPageCountWarning);
       this.TabPagePrint.Controls.Add(this.LabelPrintPageCountWarningIntervalInfo);
@@ -1695,6 +1699,20 @@
       this.TabPagePrint.Controls.Add(this.EditPrintingMargin);
       resources.ApplyResources(this.TabPagePrint, "TabPagePrint");
       this.TabPagePrint.Name = "TabPagePrint";
+      // 
+      // EditDataExportFileFormat
+      // 
+      this.EditDataExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditDataExportFileFormat.FormattingEnabled = true;
+      resources.ApplyResources(this.EditDataExportFileFormat, "EditDataExportFileFormat");
+      this.EditDataExportFileFormat.Name = "EditDataExportFileFormat";
+      this.EditDataExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditPreferedDataExportFileFormat_SelectedIndexChanged);
+      this.EditDataExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditDataExportFileFormat_Format);
+      // 
+      // LabelPreferredDataExportFileFormat
+      // 
+      resources.ApplyResources(this.LabelPreferredDataExportFileFormat, "LabelPreferredDataExportFileFormat");
+      this.LabelPreferredDataExportFileFormat.Name = "LabelPreferredDataExportFileFormat";
       // 
       // EditSelectViewToExport
       // 
@@ -2147,5 +2165,7 @@
     private System.Windows.Forms.Label LabelPrintPageCountWarning;
     private System.Windows.Forms.Label LabelPrintPageCountWarningIntervalInfo;
     private System.Windows.Forms.NumericUpDown EditPrintPageCountWarning;
+    private System.Windows.Forms.ComboBox EditDataExportFileFormat;
+    private System.Windows.Forms.Label LabelPreferredDataExportFileFormat;
   }
 }

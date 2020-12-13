@@ -13,12 +13,14 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-12 </edited>
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -48,6 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadDays();
       LoadEvents();
       LoadFonts();
+      LoadDataExportFileFormats();
       setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
       setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
       setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
@@ -163,6 +166,12 @@ namespace Ordisoftware.Hebrew.Calendar
           EditFontName.Items.Add(item.Name);
     }
 
+    private void LoadDataExportFileFormats()
+    {
+      foreach ( var item in Globals.DataExportTargets )
+        EditDataExportFileFormat.Items.Add(item);
+    }
+
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetPreferences.GetLang()) ) return;
@@ -274,7 +283,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
     {
-      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset, new Point(0, ActionMoonDayTextFormatReset.Height));
+      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset, 
+                                       new Point(0, ActionMoonDayTextFormatReset.Height));
     }
 
     private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
@@ -301,6 +311,17 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.FontName = EditFontName.Text;
       Settings.FontSize = (int)EditFontSize.Value;
       MainForm.Instance.UpdateTextCalendar();
+    }
+
+    private void EditPreferedDataExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)EditDataExportFileFormat.SelectedItem ).Key;
+    }
+
+    private void EditDataExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+    {
+      e.Value = ( (KVPDataExportTarget)e.ListItem ).Key.ToString();
     }
 
     private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)
@@ -620,12 +641,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)
     {
-      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval, new Point(0, SelectAutoGenerateYearsInterval.Height));
+      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval, 
+                               new Point(0, SelectAutoGenerateYearsInterval.Height));
     }
 
     private void PredefinedYearsItem_Click(object sender, EventArgs e)
     {
-      EditAutoGenerateYearsInterval.Text = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue.ToString();
+      var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue;
+      EditAutoGenerateYearsInterval.Text = value.ToString();
     }
 
     private void ActionResetExportFolder_Click(object sender, EventArgs e)
