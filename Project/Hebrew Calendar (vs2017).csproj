@@ -131,6 +131,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\Forms\Boxes\CelebrationsBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\CelebrationsBoardForm.Designer.cs">
+      <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dependencies\Calendar.NET\Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -540,11 +546,11 @@
       <DependentUpon>ReminderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Enums\TrayIconClickOpen.cs" />
-    <Compile Include="Source\Forms\Boxes\CelebrationsForm.cs">
+    <Compile Include="Source\Forms\Boxes\NextCelebrationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\CelebrationsForm.Designer.cs">
-      <DependentUpon>CelebrationsForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\NextCelebrationsForm.Designer.cs">
+      <DependentUpon>NextCelebrationsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\DataSet.cs">
       <DependentUpon>DataSet.xsd</DependentUpon>
@@ -624,6 +630,9 @@
     <Compile Include="Source\Forms\Boxes\SelectSuspendDelayForm.Designer.cs">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsBoardForm.resx">
+      <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dependencies\Calendar.NET\Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -734,11 +743,11 @@
     <EmbeddedResource Include="Source\Common\Hebrew\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsForm.fr.resx">
-      <DependentUpon>CelebrationsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\NextCelebrationsForm.fr.resx">
+      <DependentUpon>NextCelebrationsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsForm.resx">
-      <DependentUpon>CelebrationsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\NextCelebrationsForm.resx">
+      <DependentUpon>NextCelebrationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

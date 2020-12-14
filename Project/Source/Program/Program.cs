@@ -139,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
       string tempLogTitle = DebugManager.TraceForm.Text;
       string tempLogContent = DebugManager.TraceForm.TextBox.Text;
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = CelebrationsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = MoonMonthsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;

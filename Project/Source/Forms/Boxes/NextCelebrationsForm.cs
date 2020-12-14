@@ -22,14 +22,14 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class CelebrationsForm : Form
+  public partial class NextCelebrationsForm : Form
   {
 
-    static public CelebrationsForm Instance { get; private set; }
+    static public NextCelebrationsForm Instance { get; private set; }
 
-    static CelebrationsForm()
+    static NextCelebrationsForm()
     {
-      Instance = new CelebrationsForm();
+      Instance = new NextCelebrationsForm();
     }
 
     static public void Run()
@@ -64,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.BringToFront();
     }
 
-    private CelebrationsForm()
+    private NextCelebrationsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

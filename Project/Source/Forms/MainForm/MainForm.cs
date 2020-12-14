@@ -504,8 +504,8 @@ namespace Ordisoftware.Hebrew.Calendar
                 MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? EventArgs.Empty : null);
                 break;
               case TrayIconClickOpen.NextCelebrationsForm:
-                if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
-                  CelebrationsForm.Instance.Close();
+                if ( NextCelebrationsForm.Instance != null && NextCelebrationsForm.Instance.Visible )
+                  NextCelebrationsForm.Instance.Close();
                 else
                   ActionViewCelebrations.PerformClick();
                 break;
@@ -938,10 +938,10 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewCelebrations_Click(object sender, EventArgs e)
     {
-      if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
-        CelebrationsForm.Instance.BringToFront();
+      if ( NextCelebrationsForm.Instance != null && NextCelebrationsForm.Instance.Visible )
+        NextCelebrationsForm.Instance.BringToFront();
       else
-        CelebrationsForm.Run();
+        NextCelebrationsForm.Run();
     }
 
     /// <summary>
