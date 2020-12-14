@@ -170,8 +170,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
-- Add moon months description form and menu in tools.
 - Add dark theme for month view.
+- Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
@@ -191,6 +191,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set preferred data export file format.
 - Add export data to JSON file.
 - Add Newtonsoft.Json NuGet package.
+- Add option for grid export to use enums names instead of translations
+- Fix CSV export to add moon rise type field.
 - Few improvements.
 - Few fixes.
 - Code refactoring.
