@@ -989,6 +989,16 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by EditExportDataEnumsAsTranslations for checked changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void EditExportDataEnumsAsTranslations_CheckedChanged(object sender, EventArgs e)
+    {
+      CalendarGrid.Invalidate();
+    }
+
+    /// <summary>
     /// Event handler. Called by CalendarGrid for cell formatting events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -1003,7 +1013,7 @@ namespace Ordisoftware.Hebrew.Calendar
             e.Value = ( (MoonRiseOccuring)e.Value ).ToString();
             break;
           case 10:
-            e.Value = AppTranslations.MoonPhase.GetLang((MoonPhase)e.Value);
+            e.Value = ((MoonPhase)e.Value).ToStringExport(AppTranslations.MoonPhase);
             break;
           case 8:
             e.Value = (int)e.Value == 0 ? "" : "*";
@@ -1013,11 +1023,11 @@ namespace Ordisoftware.Hebrew.Calendar
             break;
           case 11:
             var season = (SeasonChange)e.Value;
-            e.Value = season == SeasonChange.None ? "" : AppTranslations.SeasonChange.GetLang(season);
+            e.Value = season == SeasonChange.None ? "" : season.ToStringExport(AppTranslations.SeasonChange);
             break;
           case 12:
             var torah = (TorahEvent)e.Value;
-            e.Value = torah == TorahEvent.None ? "" : AppTranslations.TorahEvent.GetLang(torah);
+            e.Value = torah == TorahEvent.None ? "" : torah.ToStringExport(AppTranslations.TorahEvent);
             break;
         }
       });
