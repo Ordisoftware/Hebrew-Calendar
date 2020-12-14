@@ -185,7 +185,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.__ - Version 6.0
 
-- Replace the standard print preview dialog by an enhanced.
+- Add window having a table of celebrations in columns and filtered years in rows.
+- Add advanced print preview window.
 - Add select a years interval to export, else process the entire report/grid or only the current month view.
 - Add option to set the default print month view page orientation.
 - Add option to set preferred data export file format.
@@ -193,6 +194,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add Newtonsoft.Json NuGet package.
 - Add MoreLINQ NuGet package.
 - Add option for grid export to use enums names instead of translations
+- Set save to single image in PNG/JPEG/TIFF/BMP and series in PNG.
 - Fix CSV export to add moon rise type field.
 - Few improvements.
 - Few fixes.

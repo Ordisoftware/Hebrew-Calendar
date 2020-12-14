@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="LabelYear.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -232,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelYear.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="ListItems.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -271,136 +271,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ListItems.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="EditYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 29</value>
-  </data>
-  <data name="EditYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 21</value>
-  </data>
-  <data name="EditYear.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditYear.Name" xml:space="preserve">
-    <value>EditYear</value>
-  </data>
-  <data name="&gt;&gt;EditYear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditYear.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;EditYear.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ActionLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 29</value>
-  </data>
-  <data name="ActionLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 23</value>
-  </data>
-  <data name="ActionLast.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="ActionLast.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
-  </data>
-  <data name="&gt;&gt;ActionLast.Name" xml:space="preserve">
-    <value>ActionLast</value>
-  </data>
-  <data name="&gt;&gt;ActionLast.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionLast.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ActionLast.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActionNext.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 29</value>
-  </data>
-  <data name="ActionNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 23</value>
-  </data>
-  <data name="ActionNext.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="ActionNext.Text" xml:space="preserve">
-    <value>&gt;</value>
-  </data>
-  <data name="&gt;&gt;ActionNext.Name" xml:space="preserve">
-    <value>ActionNext</value>
-  </data>
-  <data name="&gt;&gt;ActionNext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionNext.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ActionNext.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ActionFirst.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="SelectYear.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="ActionFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 29</value>
+  <data name="SelectYear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 29</value>
   </data>
-  <data name="ActionFirst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 23</value>
+  <data name="SelectYear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 25</value>
   </data>
-  <data name="ActionFirst.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="SelectYear.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
   </data>
-  <data name="ActionFirst.Text" xml:space="preserve">
-    <value>&lt;&lt;</value>
+  <data name="&gt;&gt;SelectYear.Name" xml:space="preserve">
+    <value>SelectYear</value>
   </data>
-  <data name="&gt;&gt;ActionFirst.Name" xml:space="preserve">
-    <value>ActionFirst</value>
+  <data name="&gt;&gt;SelectYear.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.Calendar.SelectYearControl, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;ActionFirst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionFirst.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectYear.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ActionFirst.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ActionPrevious.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionPrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 29</value>
-  </data>
-  <data name="ActionPrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 23</value>
-  </data>
-  <data name="ActionPrevious.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ActionPrevious.Text" xml:space="preserve">
-    <value>&lt;</value>
-  </data>
-  <data name="&gt;&gt;ActionPrevious.Name" xml:space="preserve">
-    <value>ActionPrevious</value>
-  </data>
-  <data name="&gt;&gt;ActionPrevious.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionPrevious.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ActionPrevious.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;SelectYear.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

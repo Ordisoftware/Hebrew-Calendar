@@ -190,6 +190,12 @@
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
+    <Compile Include="Source\Forms\Controls\SelectYearControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Controls\SelectYearControl.Designer.cs">
+      <DependentUpon>SelectYearControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Common\Core\Classes\SystemCommandLineArgs.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportAction.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Errors.cs" />
@@ -837,6 +843,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Controls\SelectYearControl.resx">
+      <DependentUpon>SelectYearControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
