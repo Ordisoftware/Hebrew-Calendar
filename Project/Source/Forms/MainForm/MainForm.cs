@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew.Calendar
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
       ActionViewMoonMonths.Visible = Globals.IsDevExecutable; // TODO remove when ready
-      ActionViewMoonMonthsSeparator.Visible = Globals.IsDevExecutable; // TODO remove when ready
+      SeparatorToolsMenuTop.Visible = Globals.IsDevExecutable; // TODO remove when ready
     }
 
     /// <summary>
@@ -759,6 +759,16 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionShowKeyboardNotice_Click(object sender, EventArgs e)
     {
       NoticeKeyboardShortcutsForm.Popup();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewCelebrationsBoard for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewCelebrationsBoard_Click(object sender, EventArgs e)
+    {
+      new CelebrationsBoardForm().Show();
     }
 
     /// <summary>

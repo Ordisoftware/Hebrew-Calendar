@@ -34,6 +34,7 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 - Event reminder for shabat and celebrations.
 - Search for a day or a celebration.
 - Window listing the next celebrations.
+- Window showing a celebrations board by years.
 - Navigation window by day from the tray icon.
 - Calculate the difference between two dates with bookmarks.
 - Copy to the clipboard and print the view.
@@ -151,10 +152,12 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Ctrl + S | Save current view to a file |
 | Ctrl + C | Copy current view to clipboard |
 | Ctrl + P | Print current view |
+| Alt + E | Open export folder |
 | Alt + C | Open windows calculator |
 | Alt + T | Open windows date and time settings |
+| Alt + G | Generate calendar |
 | Ctrl + F1 | Dates difference calculator |
-| Ctrl + F2 | Generate calendar data |
+| Ctrl + F2 | Celebrations board |
 | Ctrl + F11 | Current log window |
 | Ctrl + F12 | Statistics window |
 | Home | First month available in the database |
@@ -186,7 +189,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 #### 2020.12.__ - Version 6.0
 
 >>>>- Add window celebrations board with selection of the years interval and clickable dates.
->>>>- Add export celebrations board TXT/HTML/DOCX/CVS/JSON/PNG/JPEG/TIFF/BMP.
+>>>>- Add export celebrations board in TXT/HTML/DOCX/CVS/JSON/PNG/JPEG/TIFF/BMP.
 - Add advanced print preview window.
 - Add select a years interval to export, else process the entire report/grid or only the current month view.
 - Add option to set the default print month view page orientation.
