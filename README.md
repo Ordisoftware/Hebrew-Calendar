@@ -191,6 +191,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set preferred data export file format.
 - Add export data to JSON file.
 - Add Newtonsoft.Json NuGet package.
+- Add MoreLINQ NuGet package.
 - Add option for grid export to use enums names instead of translations
 - Fix CSV export to add moon rise type field.
 - Few improvements.
