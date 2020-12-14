@@ -117,7 +117,28 @@ namespace Ordisoftware.Hebrew.Calendar
 
       }
       else
-        CalendarMonth.GetBitmap().Save(filePath, ImageFormat.Png);
+      {
+        ImageFormat format = null;
+        string ext = Path.GetExtension(filePath).ToLower();
+        switch ( ext )
+        {
+          case ".png":
+            format = ImageFormat.Png;
+            break;
+          case ".jpg":
+            format = ImageFormat.Jpeg;
+            break;
+          case ".tiff":
+            format = ImageFormat.Tiff;
+            break;
+          case ".bmp":
+            format = ImageFormat.Bmp;
+            break;
+          default:
+            throw new NotImplementedExceptionEx(ext);
+        }
+        CalendarMonth.GetBitmap().Save(filePath, format);
+      }
       return true;
     }
 
