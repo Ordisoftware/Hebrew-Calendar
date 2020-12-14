@@ -40,15 +40,23 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [ViewMode.Month] = (interval) =>
         {
-          SaveImageDialog.FileName = Globals.AssemblyTitle;
-          if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
-          filePath = SaveImageDialog.FileName;
           try
           {
             CalendarMonth.ShowTodayButton = false;
             CalendarMonth.ShowArrowControls = false;
-            CalendarMonth.GetBitmap().Save(filePath, ImageFormat.Png);
-            return true;
+            if ( interval.Start.HasValue && interval.End.HasValue )
+            {
+              if ( FolderDialog.ShowDialog() != DialogResult.OK ) return false;
+              filePath = FolderDialog.SelectedPath;
+              return ExportSaveMonth(filePath, interval);
+            }
+            else
+            {
+              SaveImageDialog.FileName = Globals.AssemblyTitle;
+              if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
+              filePath = SaveImageDialog.FileName;
+              return ExportSaveMonth(filePath, interval);
+            }
           }
           finally
           {
@@ -78,6 +86,39 @@ namespace Ordisoftware.Hebrew.Calendar
           SystemManager.RunShell(filePath);
       };
       DoExport(ExportAction.File, process, after);
+    }
+
+    private bool ExportSaveMonth(string filePath, ExportInterval interval)
+    {
+      if ( interval.Start.HasValue && interval.End.HasValue )
+      {
+        var current = CalendarMonth.CalendarDate;
+        CalendarMonth.CalendarDate = new DateTime(interval.Start.Value, 1, 1);
+        bool HasMorePages = true;
+        while ( HasMorePages )
+        {
+          string filename = string.Format("{0}-{1}-{2}.png",
+                                          Globals.AssemblyTitle,
+                                          CalendarMonth.CalendarDate.Year,
+                                          CalendarMonth.CalendarDate.Month.ToString("00"));
+          CalendarMonth.GetBitmap().Save(Path.Combine(filePath, filename), ImageFormat.Png);
+          if ( !( CalendarMonth.CalendarDate.Year == interval.End.Value && CalendarMonth.CalendarDate.Month == 12 ) )
+          {
+            CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
+            HasMorePages = true;
+          }
+          else
+          {
+            CalendarMonth.CalendarDate = new DateTime(interval.Start.Value, 1, 1);
+            HasMorePages = false;
+          }
+        }
+        CalendarMonth.CalendarDate = current;
+
+      }
+      else
+        CalendarMonth.GetBitmap().Save(filePath, ImageFormat.Png);
+      return true;
     }
 
     private bool ExportSaveGrid(string filePath, ExportInterval interval)

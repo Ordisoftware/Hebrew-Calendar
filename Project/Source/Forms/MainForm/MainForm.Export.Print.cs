@@ -79,27 +79,19 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         {
-          var timer = new Timer();
-          timer.Interval = 250;
-          timer.Tick += print;
-          timer.Start();
-          while ( !finished ) Application.DoEvents();
+          var dialog = new PrintDialog();
+          dialog.UseEXDialog = false;
+          dialog.Document = document;
+          if ( dialog.ShowDialog(this) == DialogResult.OK )
+          {
+            document.PrintPage += printed;
+            document.Print();
+          }
         }
         void printed(object sender, PrintPageEventArgs e)
         {
           if ( !e.HasMorePages )
             DisplayManager.ShowSuccessOrSound(AppTranslations.ViewPrinted.GetLang(), Globals.PrinterSoundFilePath);
-        }
-        void print(object sender, EventArgs e)
-        {
-          ( (Timer)sender ).Stop();
-          PrintDialog.Document = document;
-          if ( PrintDialog.ShowDialog(this) == DialogResult.OK )
-          {
-            document.PrintPage += printed;
-            document.Print();
-          }
-          finished = true;
         }
       }
 

@@ -104,8 +104,8 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary ViewSavedToFile
       = new TranslationsDictionary
       {
-        [Language.EN] = $"The view has been saved to file:{Globals.NL2}{{0}}",
-        [Language.FR] = $"La vue a été sauvée dans le fichier :{Globals.NL2}{{0}}",
+        [Language.EN] = $"The view has been saved to :{Globals.NL2}{{0}}",
+        [Language.FR] = $"La vue a été sauvée dans :{Globals.NL2}{{0}}",
       };
 
     static public readonly TranslationsDictionary ViewCopiedToClipboard

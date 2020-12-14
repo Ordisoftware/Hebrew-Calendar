@@ -26,8 +26,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private string ExportSaveJSON(ExportInterval interval)
     {
-      // todo interval
-      var data = DataSet.LunisolarDays.Select(day => new
+
+      // todo filter if interval defined
+      var query = DataSet.LunisolarDays;
+
+      var data = query.Select(day => new
       {
         day.Date,
         IsNewMoon = Convert.ToBoolean(day.IsNewMoon),

@@ -41,12 +41,10 @@
       this.CalendarText = new System.Windows.Forms.RichTextBox();
       this.TabPageMonth = new System.Windows.Forms.TabPage();
       this.PanelViewMonth = new System.Windows.Forms.Panel();
-      this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.TabPageGrid = new System.Windows.Forms.TabPage();
       this.PanelViewGrid = new System.Windows.Forms.Panel();
+      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.CalendarGrid = new System.Windows.Forms.DataGridView();
-      this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.Hebrew.Calendar.Data.DataSet();
       this.LunisolarDaysBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
       this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -147,14 +145,12 @@
       this.SeparatorTrayMenu5 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
-      this.PrintDialog = new System.Windows.Forms.PrintDialog();
       this.TimerReminder = new System.Windows.Forms.Timer(this.components);
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
       this.SaveImageDialog = new System.Windows.Forms.SaveFileDialog();
-      this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
-      this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
+      this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -168,7 +164,11 @@
       this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
+      this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataSet = new Ordisoftware.Hebrew.Calendar.Data.DataSet();
+      this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
+      this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
+      this.FolderDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -181,14 +181,14 @@
       this.TabPageGrid.SuspendLayout();
       this.PanelViewGrid.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).BeginInit();
       this.LunisolarDaysBindingNavigator.SuspendLayout();
       this.PanelTitle.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
       this.ToolStrip.SuspendLayout();
       this.MenuTray.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       this.SuspendLayout();
       // 
       // SaveTextDialog
@@ -270,29 +270,6 @@
       resources.ApplyResources(this.PanelViewMonth, "PanelViewMonth");
       this.PanelViewMonth.Name = "PanelViewMonth";
       // 
-      // CalendarMonth
-      // 
-      this.CalendarMonth.AllowEditingEvents = false;
-      this.CalendarMonth.BackColor = System.Drawing.Color.White;
-      this.CalendarMonth.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
-      this.CalendarMonth.CalendarView = CodeProjectCalendar.NET.CalendarViews.Month;
-      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DimDisabledEvents = true;
-      resources.ApplyResources(this.CalendarMonth, "CalendarMonth");
-      this.CalendarMonth.HighlightCurrentDay = false;
-      this.CalendarMonth.LoadPresetHolidays = false;
-      this.CalendarMonth.Name = "CalendarMonth";
-      this.CalendarMonth.ShowArrowControls = true;
-      this.CalendarMonth.ShowDashedBorderOnDisabledEvents = true;
-      this.CalendarMonth.ShowDateInHeader = true;
-      this.CalendarMonth.ShowDisabledEvents = false;
-      this.CalendarMonth.ShowEventTooltips = true;
-      this.CalendarMonth.ShowTodayButton = true;
-      this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      // 
       // TabPageGrid
       // 
       this.TabPageGrid.Controls.Add(this.PanelViewGrid);
@@ -307,6 +284,16 @@
       this.PanelViewGrid.Controls.Add(this.LunisolarDaysBindingNavigator);
       resources.ApplyResources(this.PanelViewGrid, "PanelViewGrid");
       this.PanelViewGrid.Name = "PanelViewGrid";
+      // 
+      // EditExportDataEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
+      this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
+      this.EditExportDataEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditExportDataEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
+      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // CalendarGrid
       // 
@@ -337,17 +324,6 @@
       this.CalendarGrid.RowHeadersVisible = false;
       this.CalendarGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.CalendarGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.CalendarGrid_CellFormatting);
-      // 
-      // LunisolarDaysBindingSource
-      // 
-      this.LunisolarDaysBindingSource.DataMember = "LunisolarDays";
-      this.LunisolarDaysBindingSource.DataSource = this.DataSet;
-      this.LunisolarDaysBindingSource.CurrentItemChanged += new System.EventHandler(this.LunisolarDaysBindingSource_CurrentItemChanged);
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // LunisolarDaysBindingNavigator
       // 
@@ -1128,10 +1104,6 @@
       this.MenuExit.Name = "MenuExit";
       this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
       // 
-      // PrintDialog
-      // 
-      this.PrintDialog.UseEXDialog = true;
-      // 
       // TimerReminder
       // 
       this.TimerReminder.Interval = 60000;
@@ -1156,15 +1128,28 @@
       this.SaveImageDialog.FileName = "Hebrew Calendar.png";
       resources.ApplyResources(this.SaveImageDialog, "SaveImageDialog");
       // 
-      // LunisolarDaysTableAdapter
+      // CalendarMonth
       // 
-      this.LunisolarDaysTableAdapter.ClearBeforeFill = true;
-      // 
-      // TableAdapterManager
-      // 
-      this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
-      this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
-      this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+      this.CalendarMonth.AllowEditingEvents = false;
+      this.CalendarMonth.BackColor = System.Drawing.Color.White;
+      this.CalendarMonth.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
+      this.CalendarMonth.CalendarView = CodeProjectCalendar.NET.CalendarViews.Month;
+      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DimDisabledEvents = true;
+      resources.ApplyResources(this.CalendarMonth, "CalendarMonth");
+      this.CalendarMonth.HighlightCurrentDay = false;
+      this.CalendarMonth.LoadPresetHolidays = false;
+      this.CalendarMonth.Name = "CalendarMonth";
+      this.CalendarMonth.ShowArrowControls = true;
+      this.CalendarMonth.ShowDashedBorderOnDisabledEvents = true;
+      this.CalendarMonth.ShowDateInHeader = true;
+      this.CalendarMonth.ShowDisabledEvents = false;
+      this.CalendarMonth.ShowEventTooltips = true;
+      this.CalendarMonth.ShowTodayButton = true;
+      this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       // 
       // dataGridViewTextBoxColumn1
       // 
@@ -1270,14 +1255,26 @@
       this.dataGridViewTextBoxColumn13.ReadOnly = true;
       this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
       // 
-      // EditExportDataEnumsAsTranslations
+      // LunisolarDaysBindingSource
       // 
-      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
-      this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
-      this.EditExportDataEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
-      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
-      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
+      this.LunisolarDaysBindingSource.DataMember = "LunisolarDays";
+      this.LunisolarDaysBindingSource.DataSource = this.DataSet;
+      this.LunisolarDaysBindingSource.CurrentItemChanged += new System.EventHandler(this.LunisolarDaysBindingSource_CurrentItemChanged);
+      // 
+      // DataSet
+      // 
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      // 
+      // LunisolarDaysTableAdapter
+      // 
+      this.LunisolarDaysTableAdapter.ClearBeforeFill = true;
+      // 
+      // TableAdapterManager
+      // 
+      this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
+      this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
+      this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
       // MainForm
       // 
@@ -1305,8 +1302,6 @@
       this.PanelViewGrid.ResumeLayout(false);
       this.PanelViewGrid.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).EndInit();
       this.LunisolarDaysBindingNavigator.ResumeLayout(false);
       this.LunisolarDaysBindingNavigator.PerformLayout();
@@ -1315,6 +1310,8 @@
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.MenuTray.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1392,7 +1389,6 @@
     private System.Windows.Forms.TabPage TabPageMonth;
     private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
     private System.Windows.Forms.ToolStripButton ActionPrint;
-    private System.Windows.Forms.PrintDialog PrintDialog;
     internal global::CodeProjectCalendar.NET.Calendar CalendarMonth;
     internal System.Windows.Forms.Panel PanelViewMonth;
     private System.Windows.Forms.Timer TimerBallon;
@@ -1461,6 +1457,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     private System.Windows.Forms.CheckBox EditExportDataEnumsAsTranslations;
+    private System.Windows.Forms.FolderBrowserDialog FolderDialog;
   }
 }
 

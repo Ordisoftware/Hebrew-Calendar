@@ -28,7 +28,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private string ExportSaveCSV(ExportInterval interval)
     {
-      // todo interval
       IsGenerating = true;
       UpdateButtons();
       var cursor = Cursor;
@@ -42,11 +41,15 @@ namespace Ordisoftware.Hebrew.Calendar
         var result = new StringBuilder();
         result.AppendLine(headerTxt);
         if ( DataSet.LunisolarDays.Count == 0 ) return null;
+
+        // todo filter if interval defined
+        var query = DataSet.LunisolarDays;
+
         var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
-                                        DataSet.LunisolarDays.Count,
+                                        query.Count,
                                         Program.LoadingFormLoadDB);
-        foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
+        foreach ( Data.DataSet.LunisolarDaysRow day in query )
         {
           LoadingForm.Instance.DoProgress();
           var dayDate = SQLiteDate.ToDateTime(day.Date);
