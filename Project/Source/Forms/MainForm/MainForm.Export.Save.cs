@@ -44,7 +44,7 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             CalendarMonth.ShowTodayButton = false;
             CalendarMonth.ShowArrowControls = false;
-            if ( interval.Start.HasValue && interval.End.HasValue )
+            if ( interval.IsDefined )
             {
               if ( FolderDialog.ShowDialog() != DialogResult.OK ) return false;
               filePath = FolderDialog.SelectedPath;
@@ -90,10 +90,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool ExportSaveMonth(string filePath, ExportInterval interval)
     {
-      if ( interval.Start.HasValue && interval.End.HasValue )
+      if ( interval.IsDefined )
       {
+        // TODO waitcursor (& loading form ?)
         var current = CalendarMonth.CalendarDate;
-        CalendarMonth.CalendarDate = new DateTime(interval.Start.Value, 1, 1);
+        CalendarMonth.CalendarDate = interval.Start.Value;
         bool HasMorePages = true;
         while ( HasMorePages )
         {
@@ -102,19 +103,17 @@ namespace Ordisoftware.Hebrew.Calendar
                                           CalendarMonth.CalendarDate.Year,
                                           CalendarMonth.CalendarDate.Month.ToString("00"));
           CalendarMonth.GetBitmap().Save(Path.Combine(filePath, filename), ImageFormat.Png);
-          if ( !( CalendarMonth.CalendarDate.Year == interval.End.Value && CalendarMonth.CalendarDate.Month == 12 ) )
+          CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
+          if ( CalendarMonth.CalendarDate <= interval.End.Value )
           {
-            CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
             HasMorePages = true;
           }
           else
           {
-            CalendarMonth.CalendarDate = new DateTime(interval.Start.Value, 1, 1);
             HasMorePages = false;
           }
         }
         CalendarMonth.CalendarDate = current;
-
       }
       else
       {

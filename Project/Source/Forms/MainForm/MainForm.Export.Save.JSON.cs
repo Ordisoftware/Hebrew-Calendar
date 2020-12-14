@@ -15,8 +15,8 @@
 using System;
 using System.Linq;
 using System.Data;
-using Ordisoftware.Core;
 using Newtonsoft.Json;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -26,11 +26,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private string ExportSaveJSON(ExportInterval interval)
     {
-
-      // todo filter if interval defined
-      var query = DataSet.LunisolarDays;
-
-      var data = query.Select(day => new
+      // TODO waitcursor
+      var data = GetDays(interval).Select(day => new
       {
         day.Date,
         IsNewMoon = Convert.ToBoolean(day.IsNewMoon),

@@ -28,11 +28,11 @@ namespace Ordisoftware.Hebrew.Calendar
       var current = CalendarMonth.CalendarDate;
       int countPages = 0;
       bool askToContinue = true;
-      bool multi = interval.Start.HasValue && interval.End.HasValue;
+      bool multi = interval.IsDefined;
       if ( multi )
       {
-        CalendarMonth.CalendarDate = new DateTime(interval.Start.Value, 1, 1);
-        countPages = ( interval.End.Value - interval.Start.Value ) * 12;
+        CalendarMonth.CalendarDate = interval.Start.Value;
+        countPages = ( interval.End.Value.Year - interval.Start.Value.Year ) * 12;
       }
       int margin = Settings.PrintingMargin;
       int margin2 = margin + margin;
@@ -68,9 +68,10 @@ namespace Ordisoftware.Hebrew.Calendar
         int delta = !redone ? 0 : e.PageBounds.Height / 2;
         e.Graphics.DrawImage(bitmap, margin, margin + delta, bounds.Width - margin2, bounds.Height - margin2);
         if ( multi )
-          if ( !( CalendarMonth.CalendarDate.Year == interval.End.Value && CalendarMonth.CalendarDate.Month == 12 ) )
+        {
+          CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
+          if ( CalendarMonth.CalendarDate <= interval.End.Value )
           {
-            CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
             e.HasMorePages = true;
             if ( !redone && !e.PageSettings.Landscape )
             {
@@ -80,9 +81,10 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           else
           {
-            CalendarMonth.CalendarDate = new DateTime(interval.Start.Value, 1, 1);
+            CalendarMonth.CalendarDate = interval.Start.Value;
             e.HasMorePages = false;
           }
+        }
         else
           e.HasMorePages = false;
       });

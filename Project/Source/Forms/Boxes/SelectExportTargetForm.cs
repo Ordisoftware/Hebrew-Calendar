@@ -60,17 +60,17 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         if ( form.SelectInterval.Checked )
         {
-          var year1 = (int?)form.EditYear1.SelectedItem;
-          var year2 = (int?)form.EditYear2.SelectedItem;
+          var year1 = (int)form.EditYear1.SelectedItem;
+          var year2 = (int)form.EditYear2.SelectedItem;
           if ( year2 > year1 )
           {
-            interval.Start = year1;
-            interval.End = year2;
+            interval.Start = new DateTime(year1, 1, 1);
+            interval.End = new DateTime(year2, 12, 31);
           }
           else
           {
-            interval.Start = year2;
-            interval.End = year1;
+            interval.Start = new DateTime(year2, 1, 1);
+            interval.End = new DateTime(year1, 12, 31);
           }
         }
         else
@@ -143,12 +143,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void UpdateControls()
     {
-      if ( SelectText.Checked )
+      /*if ( SelectText.Checked )
       {
         SelectSingle.Checked = true;
         SelectInterval.Enabled = false;
       }
-      else
+      else*/
         SelectInterval.Enabled = !(SelectMonth.Checked &&  ActionToDo == ExportAction.Clipboard);
       GroupBoxFormat.Enabled = SelectGrid.Checked;
       GroupBoxYears.Enabled = SelectInterval.Checked;

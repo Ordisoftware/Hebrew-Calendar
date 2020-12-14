@@ -15,6 +15,7 @@
 /// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -25,21 +26,46 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoExport(ExportAction action, ExportActions process, Action<ViewMode> after)
     {
+      DateTime check(int year, int delta)
+      {
+        var query = DataSet.LunisolarDays.Where(day => SQLiteDate.ToDateTime(day.Date).Year == year
+                                                    && day.TorahEventsAsEnum == TorahEvent.NewYearD1);
+        return SQLiteDate.ToDateTime(query.FirstOrDefault()?.Date).AddDays(delta);
+      }
       var interval = new ExportInterval();
       var available = ViewMode.None;
       var view = Settings.CurrentView;
       foreach ( var item in process.Where(p => p.Value != null) ) available |= item.Key;
       if ( !SelectExportTargetForm.Run(action, ref view, available, ref interval) ) return;
       if ( process[view] == null ) throw new NotImplementedExceptionEx(Settings.CurrentView);
-      if ( process[view].Invoke(interval) ) after?.Invoke(view);
+      if ( interval.IsDefined )
+      {
+        interval.Start = check(interval.Start.Value.Year, 0);
+        interval.End = check(interval.End.Value.Year + 1, -1);
+      }
+      if ( process[view].Invoke(interval) )
+        after?.Invoke(view);
+    }
+
+    private IEnumerable<Data.DataSet.LunisolarDaysRow> GetDays(ExportInterval interval)
+    {
+      if ( interval.IsDefined )
+      {
+        string start = SQLiteDate.ToString(interval.Start.Value);
+        string end = SQLiteDate.ToString(interval.End.Value);
+        return DataSet.LunisolarDays.Where(day => day.Date.CompareTo(start) >= 0 && day.Date.CompareTo(end) <= 0);
+      }
+      else
+        return DataSet.LunisolarDays;
     }
 
   }
 
   public struct ExportInterval
   {
-    public int? Start;
-    public int? End;
+    public DateTime? Start;
+    public DateTime? End;
+    public bool IsDefined => Start.HasValue && End.HasValue;
   }
 
   public class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>

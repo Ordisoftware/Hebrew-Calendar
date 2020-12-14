@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var process = new ExportActions
       {
-        [ViewMode.Text] = (interval) => { ExportPrintTextReport(); return true; },
+        [ViewMode.Text] = (interval) => { ExportPrintTextReport(interval); return true; },
         [ViewMode.Month] = (interval) => { ExportPrintMonth(interval); return true; },
         [ViewMode.Grid] = null
       };

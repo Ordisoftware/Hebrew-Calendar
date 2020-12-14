@@ -13,8 +13,9 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-12 </edited>
 using System;
-using System.Linq;
 using System.Text;
+using System.Linq;
+using System.Data;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -41,15 +42,12 @@ namespace Ordisoftware.Hebrew.Calendar
         var result = new StringBuilder();
         result.AppendLine(headerTxt);
         if ( DataSet.LunisolarDays.Count == 0 ) return null;
-
-        // todo filter if interval defined
-        var query = DataSet.LunisolarDays;
-
+        var items = GetDays(interval);
         var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
-                                        query.Count,
+                                        items.Count(),
                                         Program.LoadingFormLoadDB);
-        foreach ( Data.DataSet.LunisolarDaysRow day in query )
+        foreach ( Data.DataSet.LunisolarDaysRow day in items )
         {
           LoadingForm.Instance.DoProgress();
           var dayDate = SQLiteDate.ToDateTime(day.Date);
