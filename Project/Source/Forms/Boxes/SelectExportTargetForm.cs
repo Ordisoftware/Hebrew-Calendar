@@ -60,8 +60,8 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         if ( form.SelectInterval.Checked )
         {
-          var year1 = (int)form.EditYear1.SelectedItem;
-          var year2 = (int)form.EditYear2.SelectedItem;
+          var year1 = (int)form.SelectYear1.SelectedItem;
+          var year2 = (int)form.SelectYear2.SelectedItem;
           if ( year2 > year1 )
           {
             interval.Start = new DateTime(year1, 1, 1);
@@ -101,18 +101,11 @@ namespace Ordisoftware.Hebrew.Calendar
       EditAutoOpenExportedFile.Checked = Program.Settings.AutoOpenExportedFile;
       EditAutoOpenExportFolder.Checked = Program.Settings.AutoOpenExportFolder;
       var CurrentDay = MainForm.Instance.CurrentDay;
-      int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;
-      if ( yearSelected == MainForm.Instance.DateLast.Year ) yearSelected--;
-      foreach ( int indexYear in MainForm.Instance.YearsIntervalArray.SkipLast(1) )
-      {
-        int index1 = EditYear1.Items.Add(indexYear);
-        int index2 = EditYear2.Items.Add(indexYear);
-        if ( indexYear == yearSelected )
-        {
-          EditYear1.SelectedIndex = index1;
-          EditYear2.SelectedIndex = index2;
-        }
-      }
+      int year = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;
+      if ( year == MainForm.Instance.DateLast.Year ) year--;
+      var list = MainForm.Instance.YearsIntervalArray.SkipLast(1);
+      SelectYear1.Fill(list, year);
+      SelectYear2.Fill(list, year);
       int posX = 15;
       int posY = 25;
       int index = 0;
@@ -154,8 +147,8 @@ namespace Ordisoftware.Hebrew.Calendar
       GroupBoxYears.Enabled = SelectInterval.Checked;
       EditExportDataEnumsAsTranslations.Enabled = SelectGrid.Checked;
       EditPrintImageInLandscape.Enabled = SelectMonth.Checked;
-      EditYear1_SelectedIndexChanged(null, null);
-      EditYear2_SelectedIndexChanged(null, null);
+      SelectYear1.Refresh();
+      SelectYear2.Refresh();
     }
 
     private void SelectView_CheckedChanged(object sender, EventArgs e)
@@ -174,22 +167,6 @@ namespace Ordisoftware.Hebrew.Calendar
       DisplayManager.ShowInformation(AppTranslations.ExportIntervalNotice.GetLang());
     }
 
-    private void EditYear1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      ActionFirst1.Enabled = EditYear1.SelectedIndex != 0;
-      ActionPrevious1.Enabled = ActionFirst1.Enabled;
-      ActionLast1.Enabled = EditYear1.SelectedIndex != EditYear1.Items.Count - 1;
-      ActionNext1.Enabled = ActionLast1.Enabled;
-    }
-
-    private void EditYear2_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      ActionFirst2.Enabled = EditYear2.SelectedIndex != 0;
-      ActionPrevious2.Enabled = ActionFirst2.Enabled;
-      ActionLast2.Enabled = EditYear2.SelectedIndex != EditYear2.Items.Count - 1;
-      ActionNext2.Enabled = ActionLast2.Enabled;
-    }
-
     private void EditAutoOpenExportedFile_CheckedChanged(object sender, EventArgs e)
     {
       if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
@@ -200,54 +177,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
         EditAutoOpenExportedFile.Checked = false;
-    }
-
-    private void ActionFirst1_Click(object sender, EventArgs e)
-    {
-      EditYear1.SelectedIndex = 0;
-      ActiveControl = ActionNext1;
-    }
-
-    private void ActionPrevious1_Click(object sender, EventArgs e)
-    {
-      if ( EditYear1.SelectedIndex > 0 ) EditYear1.SelectedIndex--;
-      if ( EditYear1.SelectedIndex == 0) ActiveControl = ActionNext1;
-    }
-
-    private void ActionNext1_Click(object sender, EventArgs e)
-    {
-      if ( EditYear1.SelectedIndex < EditYear1.Items.Count - 1 ) EditYear1.SelectedIndex++;
-      if ( EditYear1.SelectedIndex == EditYear1.Items.Count - 1 ) ActiveControl = ActionPrevious1;
-    }
-
-    private void ActionLast1_Click(object sender, EventArgs e)
-    {
-      EditYear1.SelectedIndex = EditYear1.Items.Count - 1;
-      ActiveControl = ActionPrevious1;
-    }
-
-    private void ActionFirst2_Click(object sender, EventArgs e)
-    {
-      EditYear2.SelectedIndex = 0;
-      ActiveControl = ActionNext2;
-    }
-
-    private void ActionPrevious2_Click(object sender, EventArgs e)
-    {
-      if ( EditYear2.SelectedIndex > 0 ) EditYear2.SelectedIndex--;
-      if ( EditYear2.SelectedIndex == 0 ) ActiveControl = ActionNext2;
-    }
-
-    private void ActionNext2_Click(object sender, EventArgs e)
-    {
-      if ( EditYear2.SelectedIndex < EditYear2.Items.Count - 1 ) EditYear2.SelectedIndex++;
-      if ( EditYear2.SelectedIndex == EditYear2.Items.Count - 1 ) ActiveControl = ActionPrevious2;
-    }
-
-    private void ActionLast2_Click(object sender, EventArgs e)
-    {
-      EditYear2.SelectedIndex = EditYear2.Items.Count - 1;
-      ActiveControl = ActionPrevious2;
     }
 
   }

@@ -124,6 +124,7 @@ namespace Ordisoftware.Hebrew.Calendar
       DebugManager.Enter();
       try
       {
+        EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
         UpdateTextCalendar();
         CalendarMonth.CalendarDateChanged += date => GoToDate(date);
         MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);

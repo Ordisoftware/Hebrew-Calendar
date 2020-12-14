@@ -37,17 +37,7 @@
       this.SelectGrid = new System.Windows.Forms.RadioButton();
       this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
-      this.ActionLast2 = new System.Windows.Forms.Button();
-      this.ActionNext2 = new System.Windows.Forms.Button();
-      this.ActionFirst2 = new System.Windows.Forms.Button();
-      this.ActionPrevious2 = new System.Windows.Forms.Button();
-      this.EditYear2 = new System.Windows.Forms.ComboBox();
       this.LabelYear2 = new System.Windows.Forms.Label();
-      this.ActionLast1 = new System.Windows.Forms.Button();
-      this.ActionNext1 = new System.Windows.Forms.Button();
-      this.ActionFirst1 = new System.Windows.Forms.Button();
-      this.ActionPrevious1 = new System.Windows.Forms.Button();
-      this.EditYear1 = new System.Windows.Forms.ComboBox();
       this.ActionIntervalInfo = new System.Windows.Forms.Button();
       this.SelectSingle = new System.Windows.Forms.RadioButton();
       this.SelectInterval = new System.Windows.Forms.RadioButton();
@@ -60,6 +50,8 @@
       this.GroupBoxFormat = new System.Windows.Forms.GroupBox();
       this.GroupBoxYears = new System.Windows.Forms.GroupBox();
       this.labelYear1 = new System.Windows.Forms.Label();
+      this.SelectYear1 = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
+      this.SelectYear2 = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxView.SuspendLayout();
       this.GroupBoxOptions.SuspendLayout();
@@ -127,74 +119,10 @@
       this.EditAutoOpenExportFolder.UseVisualStyleBackColor = true;
       this.EditAutoOpenExportFolder.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
-      // ActionLast2
-      // 
-      resources.ApplyResources(this.ActionLast2, "ActionLast2");
-      this.ActionLast2.Name = "ActionLast2";
-      this.ActionLast2.Click += new System.EventHandler(this.ActionLast2_Click);
-      // 
-      // ActionNext2
-      // 
-      resources.ApplyResources(this.ActionNext2, "ActionNext2");
-      this.ActionNext2.Name = "ActionNext2";
-      this.ActionNext2.Click += new System.EventHandler(this.ActionNext2_Click);
-      // 
-      // ActionFirst2
-      // 
-      resources.ApplyResources(this.ActionFirst2, "ActionFirst2");
-      this.ActionFirst2.Name = "ActionFirst2";
-      this.ActionFirst2.Click += new System.EventHandler(this.ActionFirst2_Click);
-      // 
-      // ActionPrevious2
-      // 
-      resources.ApplyResources(this.ActionPrevious2, "ActionPrevious2");
-      this.ActionPrevious2.Name = "ActionPrevious2";
-      this.ActionPrevious2.Click += new System.EventHandler(this.ActionPrevious2_Click);
-      // 
-      // EditYear2
-      // 
-      this.EditYear2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditYear2.FormattingEnabled = true;
-      resources.ApplyResources(this.EditYear2, "EditYear2");
-      this.EditYear2.Name = "EditYear2";
-      this.EditYear2.SelectedIndexChanged += new System.EventHandler(this.EditYear2_SelectedIndexChanged);
-      // 
       // LabelYear2
       // 
       resources.ApplyResources(this.LabelYear2, "LabelYear2");
       this.LabelYear2.Name = "LabelYear2";
-      // 
-      // ActionLast1
-      // 
-      resources.ApplyResources(this.ActionLast1, "ActionLast1");
-      this.ActionLast1.Name = "ActionLast1";
-      this.ActionLast1.Click += new System.EventHandler(this.ActionLast1_Click);
-      // 
-      // ActionNext1
-      // 
-      resources.ApplyResources(this.ActionNext1, "ActionNext1");
-      this.ActionNext1.Name = "ActionNext1";
-      this.ActionNext1.Click += new System.EventHandler(this.ActionNext1_Click);
-      // 
-      // ActionFirst1
-      // 
-      resources.ApplyResources(this.ActionFirst1, "ActionFirst1");
-      this.ActionFirst1.Name = "ActionFirst1";
-      this.ActionFirst1.Click += new System.EventHandler(this.ActionFirst1_Click);
-      // 
-      // ActionPrevious1
-      // 
-      resources.ApplyResources(this.ActionPrevious1, "ActionPrevious1");
-      this.ActionPrevious1.Name = "ActionPrevious1";
-      this.ActionPrevious1.Click += new System.EventHandler(this.ActionPrevious1_Click);
-      // 
-      // EditYear1
-      // 
-      this.EditYear1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditYear1.FormattingEnabled = true;
-      resources.ApplyResources(this.EditYear1, "EditYear1");
-      this.EditYear1.Name = "EditYear1";
-      this.EditYear1.SelectedIndexChanged += new System.EventHandler(this.EditYear1_SelectedIndexChanged);
       // 
       // ActionIntervalInfo
       // 
@@ -285,17 +213,9 @@
       // 
       // GroupBoxYears
       // 
+      this.GroupBoxYears.Controls.Add(this.SelectYear2);
+      this.GroupBoxYears.Controls.Add(this.SelectYear1);
       this.GroupBoxYears.Controls.Add(this.ActionIntervalInfo);
-      this.GroupBoxYears.Controls.Add(this.EditYear1);
-      this.GroupBoxYears.Controls.Add(this.ActionLast2);
-      this.GroupBoxYears.Controls.Add(this.ActionLast1);
-      this.GroupBoxYears.Controls.Add(this.ActionNext2);
-      this.GroupBoxYears.Controls.Add(this.ActionNext1);
-      this.GroupBoxYears.Controls.Add(this.ActionFirst2);
-      this.GroupBoxYears.Controls.Add(this.ActionFirst1);
-      this.GroupBoxYears.Controls.Add(this.ActionPrevious2);
-      this.GroupBoxYears.Controls.Add(this.ActionPrevious1);
-      this.GroupBoxYears.Controls.Add(this.EditYear2);
       this.GroupBoxYears.Controls.Add(this.labelYear1);
       this.GroupBoxYears.Controls.Add(this.LabelYear2);
       resources.ApplyResources(this.GroupBoxYears, "GroupBoxYears");
@@ -306,6 +226,20 @@
       // 
       resources.ApplyResources(this.labelYear1, "labelYear1");
       this.labelYear1.Name = "labelYear1";
+      // 
+      // SelectYear1
+      // 
+      resources.ApplyResources(this.SelectYear1, "SelectYear1");
+      this.SelectYear1.Name = "SelectYear1";
+      this.SelectYear1.SelectedIndex = -1;
+      this.SelectYear1.SelectedItem = null;
+      // 
+      // SelectYear2
+      // 
+      resources.ApplyResources(this.SelectYear2, "SelectYear2");
+      this.SelectYear2.Name = "SelectYear2";
+      this.SelectYear2.SelectedIndex = -1;
+      this.SelectYear2.SelectedItem = null;
       // 
       // SelectExportTargetForm
       // 
@@ -348,17 +282,7 @@
     private System.Windows.Forms.CheckBox EditAutoOpenExportedFile;
     private System.Windows.Forms.CheckBox EditAutoOpenExportFolder;
     private System.Windows.Forms.CheckBox EditShowPrintPreviewDialog;
-    private System.Windows.Forms.Button ActionLast2;
-    private System.Windows.Forms.Button ActionNext2;
-    private System.Windows.Forms.Button ActionFirst2;
-    private System.Windows.Forms.Button ActionPrevious2;
-    private System.Windows.Forms.ComboBox EditYear2;
     private System.Windows.Forms.Label LabelYear2;
-    private System.Windows.Forms.Button ActionLast1;
-    private System.Windows.Forms.Button ActionNext1;
-    private System.Windows.Forms.Button ActionFirst1;
-    private System.Windows.Forms.Button ActionPrevious1;
-    private System.Windows.Forms.ComboBox EditYear1;
     private System.Windows.Forms.RadioButton SelectSingle;
     private System.Windows.Forms.RadioButton SelectInterval;
     private System.Windows.Forms.GroupBox GroupBoxView;
@@ -370,5 +294,7 @@
     private System.Windows.Forms.GroupBox GroupBoxFormat;
     private System.Windows.Forms.GroupBox GroupBoxYears;
     private System.Windows.Forms.Label labelYear1;
+    private SelectYearControl SelectYear2;
+    private SelectYearControl SelectYear1;
   }
 }

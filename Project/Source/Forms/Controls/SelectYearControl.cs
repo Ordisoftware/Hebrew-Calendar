@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -72,11 +72,12 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( value == selected )
           SelectYear.SelectedIndex = index;
       }
-      UpdateControls();
+      Refresh();
     }
 
-    private void UpdateControls()
+    public override void Refresh()
     {
+      base.Refresh();
       ActionFirst.Enabled = SelectYear.SelectedIndex > 0;
       ActionPrevious.Enabled = ActionFirst.Enabled;
       ActionLast.Enabled = SelectYear.SelectedIndex < SelectYear.Items.Count - 1;
@@ -85,7 +86,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
     {
-      UpdateControls();
+      Refresh();
     }
 
     private void ActionFirst_Click(object sender, EventArgs e)
