@@ -369,7 +369,9 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Export.Print.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.cs" />
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoon.cs">
       <SubType>Form</SubType>
     </Compile>

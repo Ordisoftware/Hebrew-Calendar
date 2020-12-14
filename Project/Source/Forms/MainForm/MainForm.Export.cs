@@ -1,4 +1,5 @@
 ﻿/// <license>
+/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -19,16 +20,6 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public struct ExportInterval
-  {
-    public int? Start;
-    public int? End;
-  }
-
-  public class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>
-  {
-  }
-
   public partial class MainForm
   {
 
@@ -43,6 +34,16 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( process[view].Invoke(interval) ) after?.Invoke(view);
     }
 
+  }
+
+  public struct ExportInterval
+  {
+    public int? Start;
+    public int? End;
+  }
+
+  public class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>
+  {
   }
 
 }
