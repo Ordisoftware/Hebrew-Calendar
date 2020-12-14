@@ -93,7 +93,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( interval.IsDefined )
       {
-        // TODO waitcursor (& loading form ?)
+        // TODO waitcursor as csv & advert si > 60 (5 ans) + option
         var current = CalendarMonth.CalendarDate;
         CalendarMonth.CalendarDate = interval.Start.Value;
         bool HasMorePages = true;

@@ -2338,7 +2338,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2368,7 +2368,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2392,7 +2392,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2419,7 +2419,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -4763,7 +4763,7 @@
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthView</value>
@@ -5054,7 +5054,7 @@
     <value>9</value>
   </data>
   <data name="EditDataExportFileFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 271</value>
+    <value>23, 321</value>
   </data>
   <data name="EditDataExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 21</value>
@@ -5084,7 +5084,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelDataExportFileFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 250</value>
+    <value>20, 300</value>
   </data>
   <data name="LabelDataExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 13</value>
@@ -5107,6 +5107,72 @@
   <data name="&gt;&gt;LabelDataExportFileFormat.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="LabelSaveImageCountWarning.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 140</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 13</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.Text" xml:space="preserve">
+    <value>Number of images to save to show warning</value>
+  </data>
+  <data name="&gt;&gt;LabelSaveImageCountWarning.Name" xml:space="preserve">
+    <value>LabelSaveImageCountWarning</value>
+  </data>
+  <data name="&gt;&gt;LabelSaveImageCountWarning.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSaveImageCountWarning.Parent" xml:space="preserve">
+    <value>TabPagePrint</value>
+  </data>
+  <data name="&gt;&gt;LabelSaveImageCountWarning.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LabelSaveImageCountWarningIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSaveImageCountWarningIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelSaveImageCountWarningIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelSaveImageCountWarningIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 165</value>
+  </data>
+  <data name="LabelSaveImageCountWarningIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelSaveImageCountWarningIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="LabelSaveImageCountWarningIntervalInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelSaveImageCountWarningIntervalInfo.Name" xml:space="preserve">
+    <value>LabelSaveImageCountWarningIntervalInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelSaveImageCountWarningIntervalInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSaveImageCountWarningIntervalInfo.Parent" xml:space="preserve">
+    <value>TabPagePrint</value>
+  </data>
+  <data name="&gt;&gt;LabelSaveImageCountWarningIntervalInfo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="LabelPrintPageCountWarning.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5117,16 +5183,16 @@
     <value>NoControl</value>
   </data>
   <data name="LabelPrintPageCountWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 140</value>
+    <value>20, 190</value>
   </data>
   <data name="LabelPrintPageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 13</value>
+    <value>203, 13</value>
   </data>
   <data name="LabelPrintPageCountWarning.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
   <data name="LabelPrintPageCountWarning.Text" xml:space="preserve">
-    <value>Number of page to show warning</value>
+    <value>Number of pages to print to show warning</value>
   </data>
   <data name="&gt;&gt;LabelPrintPageCountWarning.Name" xml:space="preserve">
     <value>LabelPrintPageCountWarning</value>
@@ -5138,7 +5204,7 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;LabelPrintPageCountWarning.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="LabelPrintPageCountWarningIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5150,7 +5216,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelPrintPageCountWarningIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 165</value>
+    <value>69, 215</value>
   </data>
   <data name="LabelPrintPageCountWarningIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -5171,7 +5237,7 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;LabelPrintPageCountWarningIntervalInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="LabelPrintMargin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5183,7 +5249,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelPrintMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 190</value>
+    <value>20, 240</value>
   </data>
   <data name="LabelPrintMargin.Size" type="System.Drawing.Size, System.Drawing">
     <value>460, 13</value>
@@ -5204,7 +5270,7 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;LabelPrintMargin.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="LabelPrintingMarginIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5216,7 +5282,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelPrintingMarginIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 215</value>
+    <value>69, 265</value>
   </data>
   <data name="LabelPrintingMarginIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -5237,7 +5303,31 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;LabelPrintingMarginIntervalInfo.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="EditSaveImageCountWarning.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditSaveImageCountWarning.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 161</value>
+  </data>
+  <data name="EditSaveImageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="EditSaveImageCountWarning.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="&gt;&gt;EditSaveImageCountWarning.Name" xml:space="preserve">
+    <value>EditSaveImageCountWarning</value>
+  </data>
+  <data name="&gt;&gt;EditSaveImageCountWarning.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSaveImageCountWarning.Parent" xml:space="preserve">
+    <value>TabPagePrint</value>
+  </data>
+  <data name="&gt;&gt;EditSaveImageCountWarning.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="EditAutoOpenExportedFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5267,13 +5357,13 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportedFile.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="EditPrintPageCountWarning.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditPrintPageCountWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 161</value>
+    <value>23, 211</value>
   </data>
   <data name="EditPrintPageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -5291,7 +5381,7 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;EditPrintPageCountWarning.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="EditExportDataEnumsAsTranslations.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5321,7 +5411,7 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;EditExportDataEnumsAsTranslations.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="EditAutoOpenExportFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5351,7 +5441,7 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="EditPrintImageInLandscape.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5381,7 +5471,7 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;EditPrintImageInLandscape.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="EditShowPrintDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5411,13 +5501,13 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;EditShowPrintDialog.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="EditPrintingMargin.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditPrintingMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 211</value>
+    <value>23, 261</value>
   </data>
   <data name="EditPrintingMargin.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -5435,7 +5525,7 @@
     <value>TabPagePrint</value>
   </data>
   <data name="&gt;&gt;EditPrintingMargin.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="TabPagePrint.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -5816,7 +5906,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -5837,7 +5927,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -5858,7 +5948,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>

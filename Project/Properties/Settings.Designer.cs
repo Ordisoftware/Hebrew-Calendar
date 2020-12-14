@@ -1856,5 +1856,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ExportDataEnumsAsTranslations"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
+        public int SaveImageCountWarning {
+            get {
+                return ((int)(this["SaveImageCountWarning"]));
+            }
+            set {
+                this["SaveImageCountWarning"] = value;
+            }
+        }
     }
 }

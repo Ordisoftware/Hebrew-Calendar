@@ -104,6 +104,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatchManage(() => { EditPrintPageCountWarning.Value = Settings.PrintPageCountWarning; });
       SystemManager.TryCatchManage(() => { EditPrintImageInLandscape.Checked = Settings.PrintImageInLandscape; });
       SystemManager.TryCatchManage(() => { EditExportDataEnumsAsTranslations.Checked = Settings.ExportDataEnumsAsTranslations; });
+      SystemManager.TryCatchManage(() => { EditSaveImageCountWarning.Value = Settings.SaveImageCountWarning; });
       EditLogEnabled_CheckedChanged(null, null);
       LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString();
       LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString();

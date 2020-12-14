@@ -26,7 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private string ExportSaveJSON(ExportInterval interval)
     {
-      // TODO waitcursor
+      // TODO waitcursor as csv
       var data = GetDayRows(interval).Select(day => new
       {
         day.Date,
