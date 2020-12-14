@@ -48,22 +48,23 @@
       this.ActionFirst1 = new System.Windows.Forms.Button();
       this.ActionPrevious1 = new System.Windows.Forms.Button();
       this.EditYear1 = new System.Windows.Forms.ComboBox();
-      this.LabelYear1 = new System.Windows.Forms.Label();
-      this.PanelYears = new System.Windows.Forms.Panel();
       this.ActionIntervalInfo = new System.Windows.Forms.Button();
       this.SelectSingle = new System.Windows.Forms.RadioButton();
       this.SelectInterval = new System.Windows.Forms.RadioButton();
       this.GroupBoxView = new System.Windows.Forms.GroupBox();
       this.GroupBoxOptions = new System.Windows.Forms.GroupBox();
       this.GroupBoxSettings = new System.Windows.Forms.GroupBox();
+      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
       this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
-      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
+      this.GroupBoxFormat = new System.Windows.Forms.GroupBox();
+      this.GroupBoxYears = new System.Windows.Forms.GroupBox();
+      this.labelYear1 = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
-      this.PanelYears.SuspendLayout();
       this.GroupBoxView.SuspendLayout();
       this.GroupBoxOptions.SuspendLayout();
       this.GroupBoxSettings.SuspendLayout();
+      this.GroupBoxYears.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelButtons
@@ -195,30 +196,6 @@
       this.EditYear1.Name = "EditYear1";
       this.EditYear1.SelectedIndexChanged += new System.EventHandler(this.EditYear1_SelectedIndexChanged);
       // 
-      // LabelYear1
-      // 
-      resources.ApplyResources(this.LabelYear1, "LabelYear1");
-      this.LabelYear1.BackColor = System.Drawing.SystemColors.Control;
-      this.LabelYear1.Name = "LabelYear1";
-      // 
-      // PanelYears
-      // 
-      this.PanelYears.Controls.Add(this.ActionIntervalInfo);
-      this.PanelYears.Controls.Add(this.LabelYear1);
-      this.PanelYears.Controls.Add(this.ActionLast2);
-      this.PanelYears.Controls.Add(this.EditYear1);
-      this.PanelYears.Controls.Add(this.ActionNext2);
-      this.PanelYears.Controls.Add(this.ActionPrevious1);
-      this.PanelYears.Controls.Add(this.ActionFirst2);
-      this.PanelYears.Controls.Add(this.ActionFirst1);
-      this.PanelYears.Controls.Add(this.ActionPrevious2);
-      this.PanelYears.Controls.Add(this.ActionNext1);
-      this.PanelYears.Controls.Add(this.EditYear2);
-      this.PanelYears.Controls.Add(this.ActionLast1);
-      this.PanelYears.Controls.Add(this.LabelYear2);
-      resources.ApplyResources(this.PanelYears, "PanelYears");
-      this.PanelYears.Name = "PanelYears";
-      // 
       // ActionIntervalInfo
       // 
       this.ActionIntervalInfo.FlatAppearance.BorderSize = 0;
@@ -245,32 +222,40 @@
       // 
       // GroupBoxView
       // 
-      resources.ApplyResources(this.GroupBoxView, "GroupBoxView");
       this.GroupBoxView.Controls.Add(this.SelectText);
       this.GroupBoxView.Controls.Add(this.SelectMonth);
       this.GroupBoxView.Controls.Add(this.SelectGrid);
+      resources.ApplyResources(this.GroupBoxView, "GroupBoxView");
       this.GroupBoxView.Name = "GroupBoxView";
       this.GroupBoxView.TabStop = false;
       // 
       // GroupBoxOptions
       // 
-      resources.ApplyResources(this.GroupBoxOptions, "GroupBoxOptions");
       this.GroupBoxOptions.Controls.Add(this.SelectSingle);
       this.GroupBoxOptions.Controls.Add(this.SelectInterval);
-      this.GroupBoxOptions.Controls.Add(this.PanelYears);
+      resources.ApplyResources(this.GroupBoxOptions, "GroupBoxOptions");
       this.GroupBoxOptions.Name = "GroupBoxOptions";
       this.GroupBoxOptions.TabStop = false;
       // 
       // GroupBoxSettings
       // 
-      resources.ApplyResources(this.GroupBoxSettings, "GroupBoxSettings");
       this.GroupBoxSettings.Controls.Add(this.EditExportDataEnumsAsTranslations);
       this.GroupBoxSettings.Controls.Add(this.EditAutoOpenExportFolder);
       this.GroupBoxSettings.Controls.Add(this.EditPrintImageInLandscape);
       this.GroupBoxSettings.Controls.Add(this.EditShowPrintPreviewDialog);
       this.GroupBoxSettings.Controls.Add(this.EditAutoOpenExportedFile);
+      resources.ApplyResources(this.GroupBoxSettings, "GroupBoxSettings");
       this.GroupBoxSettings.Name = "GroupBoxSettings";
       this.GroupBoxSettings.TabStop = false;
+      // 
+      // EditExportDataEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
+      this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
+      this.EditExportDataEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditExportDataEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
+      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
       // 
       // EditPrintImageInLandscape
       // 
@@ -292,13 +277,35 @@
       this.EditShowPrintPreviewDialog.UseVisualStyleBackColor = true;
       this.EditShowPrintPreviewDialog.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
-      // EditExportDataEnumsAsTranslations
+      // GroupBoxFormat
       // 
-      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
-      this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
-      this.EditExportDataEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
-      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
+      resources.ApplyResources(this.GroupBoxFormat, "GroupBoxFormat");
+      this.GroupBoxFormat.Name = "GroupBoxFormat";
+      this.GroupBoxFormat.TabStop = false;
+      // 
+      // GroupBoxYears
+      // 
+      this.GroupBoxYears.Controls.Add(this.ActionIntervalInfo);
+      this.GroupBoxYears.Controls.Add(this.EditYear1);
+      this.GroupBoxYears.Controls.Add(this.ActionLast2);
+      this.GroupBoxYears.Controls.Add(this.ActionLast1);
+      this.GroupBoxYears.Controls.Add(this.ActionNext2);
+      this.GroupBoxYears.Controls.Add(this.ActionNext1);
+      this.GroupBoxYears.Controls.Add(this.ActionFirst2);
+      this.GroupBoxYears.Controls.Add(this.ActionFirst1);
+      this.GroupBoxYears.Controls.Add(this.ActionPrevious2);
+      this.GroupBoxYears.Controls.Add(this.ActionPrevious1);
+      this.GroupBoxYears.Controls.Add(this.EditYear2);
+      this.GroupBoxYears.Controls.Add(this.labelYear1);
+      this.GroupBoxYears.Controls.Add(this.LabelYear2);
+      resources.ApplyResources(this.GroupBoxYears, "GroupBoxYears");
+      this.GroupBoxYears.Name = "GroupBoxYears";
+      this.GroupBoxYears.TabStop = false;
+      // 
+      // labelYear1
+      // 
+      resources.ApplyResources(this.labelYear1, "labelYear1");
+      this.labelYear1.Name = "labelYear1";
       // 
       // SelectExportTargetForm
       // 
@@ -308,8 +315,10 @@
       this.CancelButton = this.ActionCancel;
       this.Controls.Add(this.GroupBoxSettings);
       this.Controls.Add(this.GroupBoxOptions);
+      this.Controls.Add(this.GroupBoxFormat);
       this.Controls.Add(this.GroupBoxView);
       this.Controls.Add(this.PanelButtons);
+      this.Controls.Add(this.GroupBoxYears);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
@@ -317,14 +326,14 @@
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SelectViewForm_FormClosed);
       this.Load += new System.EventHandler(this.SelectViewForm_Load);
       this.PanelButtons.ResumeLayout(false);
-      this.PanelYears.ResumeLayout(false);
-      this.PanelYears.PerformLayout();
       this.GroupBoxView.ResumeLayout(false);
       this.GroupBoxView.PerformLayout();
       this.GroupBoxOptions.ResumeLayout(false);
       this.GroupBoxOptions.PerformLayout();
       this.GroupBoxSettings.ResumeLayout(false);
       this.GroupBoxSettings.PerformLayout();
+      this.GroupBoxYears.ResumeLayout(false);
+      this.GroupBoxYears.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -350,8 +359,6 @@
     private System.Windows.Forms.Button ActionFirst1;
     private System.Windows.Forms.Button ActionPrevious1;
     private System.Windows.Forms.ComboBox EditYear1;
-    private System.Windows.Forms.Label LabelYear1;
-    private System.Windows.Forms.Panel PanelYears;
     private System.Windows.Forms.RadioButton SelectSingle;
     private System.Windows.Forms.RadioButton SelectInterval;
     private System.Windows.Forms.GroupBox GroupBoxView;
@@ -360,5 +367,8 @@
     private System.Windows.Forms.Button ActionIntervalInfo;
     private System.Windows.Forms.CheckBox EditPrintImageInLandscape;
     private System.Windows.Forms.CheckBox EditExportDataEnumsAsTranslations;
+    private System.Windows.Forms.GroupBox GroupBoxFormat;
+    private System.Windows.Forms.GroupBox GroupBoxYears;
+    private System.Windows.Forms.Label labelYear1;
   }
 }

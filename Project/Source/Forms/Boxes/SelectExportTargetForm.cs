@@ -14,8 +14,10 @@
 /// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
+using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -84,7 +86,10 @@ namespace Ordisoftware.Hebrew.Calendar
       Icon = MainForm.Instance.Icon;
       var control = this.GetAllControls<CheckBox>().OrderByDescending(c => c.Width).FirstOrDefault();
       if ( control != null )
-        Width = control.Left * 3 + control.Width + GroupBoxView.Left * 2;
+      {
+        int width = control.Left * 3 + control.Width + GroupBoxView.Left * 2;
+        if ( width > Width ) Width = width;
+      }
     }
 
     private void SelectViewForm_Load(object sender, EventArgs e)
@@ -102,6 +107,24 @@ namespace Ordisoftware.Hebrew.Calendar
           EditYear1.SelectedIndex = index1;
           EditYear2.SelectedIndex = index2;
         }
+      }
+      int posX = 15;
+      int posY = 25;
+      int index = 0;
+      foreach ( KVPDataExportTarget item in Globals.DataExportTargets )
+      {
+        var checkbox = new RadioButton();
+        GroupBoxFormat.Controls.Add(checkbox);
+        checkbox.Tag = item;
+        checkbox.Text = item.Key.ToString();
+        checkbox.TabStop = true;
+        checkbox.TabIndex = index;
+        checkbox.Location = new Point(posX, posY);
+        if ( item.Key == Program.Settings.ExportDataPreferredTarget )
+          checkbox.Checked = true;
+        checkbox.CheckedChanged += (_s, _e) =>
+          Program.Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)( (RadioButton)_s ).Tag ).Key;
+        posY += 20;
       }
       UpdateControls();
     }
@@ -122,19 +145,11 @@ namespace Ordisoftware.Hebrew.Calendar
         SelectInterval.Enabled = false;
       }
       else
-      if ( SelectMonth.Checked )
-      {
         SelectInterval.Enabled = true;
-      }
-      else
-      if ( SelectGrid.Checked )
-      {
-        SelectSingle.Checked = true;
-        SelectInterval.Checked = false;
-        SelectInterval.Enabled = false;
-      }
-      PanelYears.Enabled = SelectInterval.Checked;
+      GroupBoxFormat.Enabled = SelectGrid.Checked;
+      GroupBoxYears.Enabled = SelectInterval.Checked;
       EditExportDataEnumsAsTranslations.Enabled = SelectGrid.Checked;
+      EditPrintImageInLandscape.Enabled = SelectMonth.Checked;
       EditYear1_SelectedIndexChanged(null, null);
       EditYear2_SelectedIndexChanged(null, null);
     }
@@ -146,7 +161,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectSingleOrInterval_CheckedChanged(object sender, EventArgs e)
     {
-      PanelYears.Enabled = SelectInterval.Checked;
+      GroupBoxYears.Enabled = SelectInterval.Checked;
       UpdateControls();
     }
 
