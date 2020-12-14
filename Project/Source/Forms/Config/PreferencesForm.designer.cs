@@ -230,6 +230,8 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.LabelImageExportFileFormat = new System.Windows.Forms.Label();
+      this.EditImageExportFileFormat = new System.Windows.Forms.ComboBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1690,7 +1692,9 @@
       // 
       this.TabPagePrint.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePrint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePrint.Controls.Add(this.EditImageExportFileFormat);
       this.TabPagePrint.Controls.Add(this.EditDataExportFileFormat);
+      this.TabPagePrint.Controls.Add(this.LabelImageExportFileFormat);
       this.TabPagePrint.Controls.Add(this.LabelDataExportFileFormat);
       this.TabPagePrint.Controls.Add(this.LabelSaveImageCountWarning);
       this.TabPagePrint.Controls.Add(this.LabelSaveImageCountWarningIntervalInfo);
@@ -1920,6 +1924,20 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
+      // 
+      // LabelImageExportFileFormat
+      // 
+      resources.ApplyResources(this.LabelImageExportFileFormat, "LabelImageExportFileFormat");
+      this.LabelImageExportFileFormat.Name = "LabelImageExportFileFormat";
+      // 
+      // EditImageExportFileFormat
+      // 
+      this.EditImageExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditImageExportFileFormat.FormattingEnabled = true;
+      resources.ApplyResources(this.EditImageExportFileFormat, "EditImageExportFileFormat");
+      this.EditImageExportFileFormat.Name = "EditImageExportFileFormat";
+      this.EditImageExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditImageExportFileFormat_SelectedIndexChanged);
+      this.EditImageExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditImageExportFileFormat_Format);
       // 
       // PreferencesForm
       // 
@@ -2188,5 +2206,7 @@
     private System.Windows.Forms.Label LabelSaveImageCountWarning;
     private System.Windows.Forms.Label LabelSaveImageCountWarningIntervalInfo;
     private System.Windows.Forms.NumericUpDown EditSaveImageCountWarning;
+    private System.Windows.Forms.ComboBox EditImageExportFileFormat;
+    private System.Windows.Forms.Label LabelImageExportFileFormat;
   }
 }

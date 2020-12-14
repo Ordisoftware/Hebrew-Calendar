@@ -131,6 +131,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\Common\Core\Globals\Globals.Export.cs" />
     <Compile Include="Source\Forms\Boxes\CelebrationsBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>

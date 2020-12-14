@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-12 </edited>
 using System;
-using System.Linq;
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -101,48 +100,6 @@ namespace Ordisoftware.Core
     }
     static private Form _MainForm;
 
-    /// <summary>
-    /// 
-    /// </summary>
-    static public NullSafeOfStringDictionary<DataExportTarget> DataExportTargets
-      = new NullSafeOfStringDictionary<DataExportTarget>();
-
-    /// <summary>
-    /// 
-    /// </summary>
-    static public string GetDataExportTargetFilters()
-    {
-      string str = SysTranslations.FileExtensionFilter.GetLang();
-      var list = DataExportTargets.Select(v => $"{string.Format(str, v.Key)}|*{v.Value}");
-      return string.Join("|", list);
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    static public void SetSupportedExportTargets(params DataExportTarget[] list)
-    {
-      foreach ( var pair in DataExportTargets.Where(p => !list.Contains(p.Key)).ToList() )
-        DataExportTargets.Remove(pair.Key);
-    }
-
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static Globals()
-    {
-      foreach ( DataExportTarget value in Enum.GetValues(typeof(DataExportTarget)) )
-        DataExportTargets.Add(value, "." + value.ToString().ToLower());
-    }
-
-  }
-
-  public enum DataExportTarget
-  {
-    CSV,
-    JSON,
-    HTML,
-    DOCX
   }
 
 }

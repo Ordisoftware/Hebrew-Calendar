@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
     [STAThread]
     static void Main(string[] args)
     {
-      Globals.SetSupportedExportTargets(DataExportTarget.CSV, DataExportTarget.JSON);
+      Globals.DataExportTargets.SetSupported(DataExportTarget.CSV, DataExportTarget.JSON);
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
       Settings.CheckUpgradeRequired(ref upgrade);
