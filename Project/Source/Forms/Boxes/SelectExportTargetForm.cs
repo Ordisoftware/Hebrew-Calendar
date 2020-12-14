@@ -82,7 +82,9 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      Width = EditShowPrintPreviewDialog.Left * 3 + EditShowPrintPreviewDialog.Width + GroupBoxView.Left * 2;
+      var control = this.GetAllControls<CheckBox>().OrderByDescending(c => c.Width).FirstOrDefault();
+      if ( control != null )
+        Width = control.Left * 3 + control.Width + GroupBoxView.Left * 2;
     }
 
     private void SelectViewForm_Load(object sender, EventArgs e)
@@ -132,6 +134,7 @@ namespace Ordisoftware.Hebrew.Calendar
         SelectInterval.Enabled = false;
       }
       PanelYears.Enabled = SelectInterval.Checked;
+      EditExportDataEnumsAsTranslations.Enabled = SelectGrid.Checked;
       EditYear1_SelectedIndexChanged(null, null);
       EditYear2_SelectedIndexChanged(null, null);
     }

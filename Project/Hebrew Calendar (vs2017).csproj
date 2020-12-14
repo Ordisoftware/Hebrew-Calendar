@@ -574,7 +574,7 @@
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Enums\TorahCelebrations.cs" />
-    <Compile Include="Source\Enums\MoonRise.cs" />
+    <Compile Include="Source\Enums\MoonRiseOccuring.cs" />
     <Compile Include="Dependencies\MoonPhaseImage\MoonPhaseImage.cs">
     </Compile>
     <Compile Include="Source\Forms\Config\AboutBox.cs">

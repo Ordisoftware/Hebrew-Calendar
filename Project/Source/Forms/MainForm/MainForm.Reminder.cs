@@ -165,13 +165,13 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( rowNext.Date == SQLiteDate.ToString(DateTime.Today) )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
-        if ( row.Moonset != "" && (MoonRise)row.MoonriseType == MoonRise.AfterSet )
+        if ( row.Moonset != "" && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.AfterSet )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
-        if ( row.Moonset != "" && (MoonRise)row.MoonriseType == MoonRise.NextDay )
+        if ( row.Moonset != "" && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.NextDay )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
-        if ( row.Moonset != "" && (MoonRise)row.MoonriseType == MoonRise.BeforeSet )
+        if ( row.Moonset != "" && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.BeforeSet )
           SetTimes(times, dateRow, rowPrevious.Moonset, row.Moonset, -1, 0, delta3);
         else
         if ( row.Moonset == "" )

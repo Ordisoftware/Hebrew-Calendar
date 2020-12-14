@@ -209,7 +209,9 @@
       this.LabelPrintingMarginIntervalInfo = new System.Windows.Forms.Label();
       this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
       this.EditPrintPageCountWarning = new System.Windows.Forms.NumericUpDown();
+      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.EditAutoOpenExportFolder = new System.Windows.Forms.CheckBox();
+      this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
       this.EditShowPrintDialog = new System.Windows.Forms.CheckBox();
       this.EditPrintingMargin = new System.Windows.Forms.NumericUpDown();
       this.TabPagePaths = new System.Windows.Forms.TabPage();
@@ -225,7 +227,6 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1693,6 +1694,7 @@
       this.TabPagePrint.Controls.Add(this.LabelPrintingMarginIntervalInfo);
       this.TabPagePrint.Controls.Add(this.EditAutoOpenExportedFile);
       this.TabPagePrint.Controls.Add(this.EditPrintPageCountWarning);
+      this.TabPagePrint.Controls.Add(this.EditExportDataEnumsAsTranslations);
       this.TabPagePrint.Controls.Add(this.EditAutoOpenExportFolder);
       this.TabPagePrint.Controls.Add(this.EditPrintImageInLandscape);
       this.TabPagePrint.Controls.Add(this.EditShowPrintDialog);
@@ -1756,12 +1758,26 @@
             0});
       this.EditPrintPageCountWarning.ValueChanged += new System.EventHandler(this.EditDateBookmarksCount_ValueChanged);
       // 
+      // EditExportDataEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
+      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
+      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
+      // 
       // EditAutoOpenExportFolder
       // 
       resources.ApplyResources(this.EditAutoOpenExportFolder, "EditAutoOpenExportFolder");
       this.EditAutoOpenExportFolder.Name = "EditAutoOpenExportFolder";
       this.EditAutoOpenExportFolder.UseVisualStyleBackColor = true;
       this.EditAutoOpenExportFolder.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
+      // 
+      // EditPrintImageInLandscape
+      // 
+      resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
+      this.EditPrintImageInLandscape.Name = "EditPrintImageInLandscape";
+      this.EditPrintImageInLandscape.UseVisualStyleBackColor = true;
+      this.EditPrintImageInLandscape.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // EditShowPrintDialog
       // 
@@ -1898,13 +1914,6 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
-      // 
-      // EditPrintImageInLandscape
-      // 
-      resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
-      this.EditPrintImageInLandscape.Name = "EditPrintImageInLandscape";
-      this.EditPrintImageInLandscape.UseVisualStyleBackColor = true;
-      this.EditPrintImageInLandscape.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // PreferencesForm
       // 
@@ -2168,5 +2177,6 @@
     private System.Windows.Forms.ComboBox EditDataExportFileFormat;
     private System.Windows.Forms.Label LabelDataExportFileFormat;
     private System.Windows.Forms.CheckBox EditPrintImageInLandscape;
+    private System.Windows.Forms.CheckBox EditExportDataEnumsAsTranslations;
   }
 }

@@ -96,6 +96,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.PrintingMargin = (int)EditPrintingMargin.Value;
       Settings.PrintPageCountWarning = (int)EditPrintPageCountWarning.Value;
       Settings.PrintImageInLandscape = EditPrintImageInLandscape.Checked;
+      Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
     }
 
   }

@@ -184,7 +184,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 438</value>
+    <value>10, 458</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 28</value>
@@ -301,7 +301,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoOpenExportedFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
+    <value>15, 45</value>
   </data>
   <data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 17</value>
@@ -322,7 +322,7 @@
     <value>GroupBoxSettings</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportedFile.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="EditAutoOpenExportFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -331,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoOpenExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 45</value>
+    <value>15, 65</value>
   </data>
   <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>
@@ -352,7 +352,7 @@
     <value>GroupBoxSettings</value>
   </data>
   <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionLast2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -672,6 +672,39 @@
   <data name="&gt;&gt;LabelYear1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;ActionIntervalInfo.Name" xml:space="preserve">
+    <value>ActionIntervalInfo</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.Parent" xml:space="preserve">
+    <value>PanelYears</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelYears.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 68</value>
+  </data>
+  <data name="PanelYears.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 95</value>
+  </data>
+  <data name="PanelYears.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;PanelYears.Name" xml:space="preserve">
+    <value>PanelYears</value>
+  </data>
+  <data name="&gt;&gt;PanelYears.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelYears.Parent" xml:space="preserve">
+    <value>GroupBoxOptions</value>
+  </data>
+  <data name="&gt;&gt;PanelYears.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="ActionIntervalInfo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -714,27 +747,6 @@
   </data>
   <data name="&gt;&gt;ActionIntervalInfo.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="PanelYears.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 68</value>
-  </data>
-  <data name="PanelYears.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 95</value>
-  </data>
-  <data name="PanelYears.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;PanelYears.Name" xml:space="preserve">
-    <value>PanelYears</value>
-  </data>
-  <data name="&gt;&gt;PanelYears.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelYears.Parent" xml:space="preserve">
-    <value>GroupBoxOptions</value>
-  </data>
-  <data name="&gt;&gt;PanelYears.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="SelectSingle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -853,6 +865,36 @@
   <data name="GroupBoxSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="EditExportDataEnumsAsTranslations.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 25</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 17</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
+    <value>Export of enums as humanized translations</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Name" xml:space="preserve">
+    <value>EditExportDataEnumsAsTranslations</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="EditPrintImageInLandscape.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -860,7 +902,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditPrintImageInLandscape.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 85</value>
+    <value>15, 105</value>
   </data>
   <data name="EditPrintImageInLandscape.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 17</value>
@@ -881,7 +923,7 @@
     <value>GroupBoxSettings</value>
   </data>
   <data name="&gt;&gt;EditPrintImageInLandscape.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditShowPrintPreviewDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -890,7 +932,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditShowPrintPreviewDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 65</value>
+    <value>15, 85</value>
   </data>
   <data name="EditShowPrintPreviewDialog.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 17</value>
@@ -911,13 +953,13 @@
     <value>GroupBoxSettings</value>
   </data>
   <data name="&gt;&gt;EditShowPrintPreviewDialog.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="GroupBoxSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 312</value>
   </data>
   <data name="GroupBoxSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 115</value>
+    <value>268, 135</value>
   </data>
   <data name="GroupBoxSettings.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -944,7 +986,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>297, 476</value>
+    <value>297, 496</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

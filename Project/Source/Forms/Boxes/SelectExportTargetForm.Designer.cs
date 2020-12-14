@@ -58,6 +58,7 @@
       this.GroupBoxSettings = new System.Windows.Forms.GroupBox();
       this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
       this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
+      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.PanelYears.SuspendLayout();
       this.GroupBoxView.SuspendLayout();
@@ -263,6 +264,7 @@
       // GroupBoxSettings
       // 
       resources.ApplyResources(this.GroupBoxSettings, "GroupBoxSettings");
+      this.GroupBoxSettings.Controls.Add(this.EditExportDataEnumsAsTranslations);
       this.GroupBoxSettings.Controls.Add(this.EditAutoOpenExportFolder);
       this.GroupBoxSettings.Controls.Add(this.EditPrintImageInLandscape);
       this.GroupBoxSettings.Controls.Add(this.EditShowPrintPreviewDialog);
@@ -289,6 +291,14 @@
       this.EditShowPrintPreviewDialog.Name = "EditShowPrintPreviewDialog";
       this.EditShowPrintPreviewDialog.UseVisualStyleBackColor = true;
       this.EditShowPrintPreviewDialog.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
+      // 
+      // EditExportDataEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
+      this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
+      this.EditExportDataEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
+      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
       // 
       // SelectExportTargetForm
       // 
@@ -349,5 +359,6 @@
     private System.Windows.Forms.GroupBox GroupBoxSettings;
     private System.Windows.Forms.Button ActionIntervalInfo;
     private System.Windows.Forms.CheckBox EditPrintImageInLandscape;
+    private System.Windows.Forms.CheckBox EditExportDataEnumsAsTranslations;
   }
 }

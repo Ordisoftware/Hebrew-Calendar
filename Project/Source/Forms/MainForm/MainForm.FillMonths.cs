@@ -172,22 +172,22 @@ namespace Ordisoftware.Hebrew.Calendar
                       : ( row.IsFullMoon == 1
                         ? Settings.CalendarColorFullMoon
                         : Settings.CalendarColorMoon );
-            if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
+            if ( (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.AfterSet )
             {
               if ( row.Moonset != "" )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
-              if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
+              if ( (MoonRiseOccuring)row.MoonriseType != MoonRiseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
             }
             else
             {
-              if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
+              if ( (MoonRiseOccuring)row.MoonriseType != MoonRiseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
               if ( row.Moonset != "" )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             }
             if ( row.SeasonChange != 0 )
-              add(Settings.CalendarColorSeason, AppTranslations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange));
+              add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang((SeasonChange)row.SeasonChange));
             if ( row.TorahEvents != 0 )
               add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
           }

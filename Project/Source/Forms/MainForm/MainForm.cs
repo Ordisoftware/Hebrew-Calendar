@@ -1000,7 +1000,7 @@ namespace Ordisoftware.Hebrew.Calendar
         switch ( e.ColumnIndex )
         {
           case 7:
-            e.Value = ( (MoonRise)e.Value ).ToString();
+            e.Value = ( (MoonRiseOccuring)e.Value ).ToString();
             break;
           case 10:
             e.Value = AppTranslations.MoonPhase.GetLang((MoonPhase)e.Value);
@@ -1013,7 +1013,7 @@ namespace Ordisoftware.Hebrew.Calendar
             break;
           case 11:
             var season = (SeasonChange)e.Value;
-            e.Value = season == SeasonChange.None ? "" : AppTranslations.SeasonEvent.GetLang(season);
+            e.Value = season == SeasonChange.None ? "" : AppTranslations.SeasonChange.GetLang(season);
             break;
           case 12:
             var torah = (TorahEvent)e.Value;

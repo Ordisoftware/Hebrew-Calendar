@@ -201,14 +201,14 @@ namespace Ordisoftware.Hebrew.Calendar
         day.Sunset = SQLiteDate.ToString(ephemeris.Sunset);
         day.Moonrise = SQLiteDate.ToString(ephemeris.Moonrise);
         day.Moonset = SQLiteDate.ToString(ephemeris.Moonset);
-        MoonRise moonrisetype;
+        MoonRiseOccuring moonrisetype;
         if ( ephemeris.Moonrise == null )
-          moonrisetype = MoonRise.NextDay;
+          moonrisetype = MoonRiseOccuring.NextDay;
         else
         if ( ephemeris.Moonrise < ephemeris.Moonset )
-          moonrisetype = MoonRise.BeforeSet;
+          moonrisetype = MoonRiseOccuring.BeforeSet;
         else
-          moonrisetype = MoonRise.AfterSet;
+          moonrisetype = MoonRiseOccuring.AfterSet;
         day.MoonriseType = (int)moonrisetype;
         day.SeasonChange = (int)data.RealSeasonChange;
         day.LunarMonth = 0;
@@ -245,7 +245,7 @@ namespace Ordisoftware.Hebrew.Calendar
             day.LunarMonth = month;
             if ( day.IsNewMoon == 1 )
               delta = 0;
-            if ( (MoonRise)day.MoonriseType == MoonRise.NextDay && Settings.TorahEventsCountAsMoon )
+            if ( (MoonRiseOccuring)day.MoonriseType == MoonRiseOccuring.NextDay && Settings.TorahEventsCountAsMoon )
               delta = 1;
             day.LunarDay -= delta;
           }
@@ -281,7 +281,7 @@ namespace Ordisoftware.Hebrew.Calendar
             count = toadd;
           else
             for ( int i = 0; i < toadd; i++, count++ )
-              if ( (MoonRise)DataSet.LunisolarDays[index + i].MoonriseType == MoonRise.NextDay )
+              if ( (MoonRiseOccuring)DataSet.LunisolarDays[index + i].MoonriseType == MoonRiseOccuring.NextDay )
                 count++;
           thedate = thedate.AddDays(count);
         }

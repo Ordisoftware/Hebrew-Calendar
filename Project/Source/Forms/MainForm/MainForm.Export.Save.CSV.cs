@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
 using System.Text;
@@ -35,8 +35,8 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         string headerTxt = "";
-        foreach ( ReportFieldCSV v in Enum.GetValues(typeof(ReportFieldCSV)) )
-          headerTxt += v.ToString() + CSVSeparator;
+        foreach ( ReportFieldCSV field in Enum.GetValues(typeof(ReportFieldCSV)) )
+          headerTxt += field.ToString() + CSVSeparator;
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
         var result = new StringBuilder();
         result.AppendLine(headerTxt);
@@ -60,11 +60,13 @@ namespace Ordisoftware.Hebrew.Calendar
           result.Append(day.Sunset + CSVSeparator);
           result.Append(day.Moonrise + CSVSeparator);
           result.Append(day.Moonset + CSVSeparator);
-          string strPhase = AppTranslations.MoonPhase.GetLang((MoonPhase)day.MoonPhase);
+          string strMoonriseType = ( (MoonRiseOccuring)day.MoonriseType ).ToStringExport(AppTranslations.MoonRiseOccuring);
+          string strPhase = ( (MoonPhase)day.MoonPhase ).ToStringExport(AppTranslations.MoonPhase);
+          string strSeason = ( (SeasonChange)day.SeasonChange ).ToStringExport(AppTranslations.SeasonChange);
+          string strEvent = ( (TorahEvent)day.TorahEvents ).ToStringExport(AppTranslations.TorahEvent);
+          result.Append(strMoonriseType + CSVSeparator);
           result.Append(strPhase + CSVSeparator);
-          string strSeason = AppTranslations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
           result.Append(strSeason + CSVSeparator);
-          string strEvent = AppTranslations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
           result.AppendLine(strEvent);
         }
         return result.ToString();

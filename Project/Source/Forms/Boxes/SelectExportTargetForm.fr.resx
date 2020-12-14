@@ -178,4 +178,7 @@
   <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
     <value>Imprimer les images en paysage</value>
   </data>
+  <data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
+    <value>Export des énumérations en tant que traductions humanisées</value>
+  </data>
 </root>
