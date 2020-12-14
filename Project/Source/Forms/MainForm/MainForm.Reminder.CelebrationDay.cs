@@ -38,7 +38,7 @@ namespace Ordisoftware.Hebrew.Calendar
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
       if ( SQLiteDate.ToDateTime(row.Date).Day < dateNow.Day )
-        if ( Settings.TorahEventsCountAsMoon && row.MoonriseTypeAsEnum == MoonRiseOccuring.BeforeSet )
+        if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet )
           return;
       var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return;

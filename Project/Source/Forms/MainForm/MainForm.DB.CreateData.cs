@@ -209,7 +209,7 @@ namespace Ordisoftware.Hebrew.Calendar
           moonrisetype = MoonRiseOccuring.BeforeSet;
         else
           moonrisetype = MoonRiseOccuring.AfterSet;
-        day.MoonriseTypeAsEnum = moonrisetype;
+        day.MoonriseOccuringAsEnum = moonrisetype;
         day.SeasonChangeAsEnum = data.RealSeasonChange;
         day.LunarMonth = 0;
         day.TorahEvents = 0;
@@ -245,7 +245,7 @@ namespace Ordisoftware.Hebrew.Calendar
             day.LunarMonth = month;
             if ( day.IsNewMoon == 1 )
               delta = 0;
-            if ( day.MoonriseTypeAsEnum == MoonRiseOccuring.NextDay && Settings.TorahEventsCountAsMoon )
+            if ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay && Settings.TorahEventsCountAsMoon )
               delta = 1;
             day.LunarDay -= delta;
           }
@@ -281,7 +281,7 @@ namespace Ordisoftware.Hebrew.Calendar
             count = toadd;
           else
             for ( int i = 0; i < toadd; i++, count++ )
-              if ( DataSet.LunisolarDays[index + i].MoonriseTypeAsEnum == MoonRiseOccuring.NextDay )
+              if ( DataSet.LunisolarDays[index + i].MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay )
                 count++;
           thedate = thedate.AddDays(count);
         }

@@ -9,7 +9,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     partial class LunisolarDaysRow
     {
 
-      public MoonRiseOccuring MoonriseTypeAsEnum
+      public MoonRiseOccuring MoonriseOccuringAsEnum
       {
         get { return (MoonRiseOccuring)MoonriseType; }
         set { MoonriseType = (int)value; }

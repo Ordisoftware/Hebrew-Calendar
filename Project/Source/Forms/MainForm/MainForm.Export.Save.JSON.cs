@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
         day.Sunset,
         day.Moonrise,
         day.Moonset,
-        MoonRiseType = day.MoonriseTypeAsEnum.ToStringExport(AppTranslations.MoonRiseOccuring),
+        MoonRiseType = day.MoonriseOccuringAsEnum.ToStringExport(AppTranslations.MoonRiseOccuring),
         MoonPhase = day.MoonPhaseAsEnum.ToStringExport(AppTranslations.MoonPhase),
         SeasonChange = day.SeasonChangeAsEnum.ToStringExport(AppTranslations.SeasonChange),
         TorahEvent = day.TorahEventsAsEnum.ToStringExport(AppTranslations.TorahEvent),

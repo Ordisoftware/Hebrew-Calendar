@@ -172,16 +172,16 @@ namespace Ordisoftware.Hebrew.Calendar
                       : ( row.IsFullMoon == 1
                         ? Settings.CalendarColorFullMoon
                         : Settings.CalendarColorMoon );
-            if ( row.MoonriseTypeAsEnum == MoonRiseOccuring.AfterSet )
+            if ( row.MoonriseOccuringAsEnum == MoonRiseOccuring.AfterSet )
             {
               if ( row.Moonset != "" )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
-              if ( row.MoonriseTypeAsEnum != MoonRiseOccuring.NextDay )
+              if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
             }
             else
             {
-              if ( row.MoonriseTypeAsEnum != MoonRiseOccuring.NextDay )
+              if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
               if ( row.Moonset != "" )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);

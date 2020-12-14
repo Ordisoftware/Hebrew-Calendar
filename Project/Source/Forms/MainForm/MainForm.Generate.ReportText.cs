@@ -82,7 +82,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
             if ( day.IsNewMoon == 1 ) content.Append(headerSep + Globals.NL);
             string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
-            string strDay = ( day.MoonriseTypeAsEnum == MoonRiseOccuring.NextDay
+            string strDay = ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay
                             ? "  "
                             : string.Format("{0:00}", day.LunarDay) ) + " " + ( day.IsNewMoon == 1
                                                                                 ? MoonNewText
@@ -105,7 +105,7 @@ namespace Ordisoftware.Hebrew.Calendar
             string strMoonset = day.Moonset == ""
                               ? MoonNoText
                               : AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + day.Moonset;
-            string strMoon = day.MoonriseTypeAsEnum == MoonRiseOccuring.BeforeSet
+            string strMoon = day.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet
                            ? strMoonrise + ColumnSepInner + strMoonset
                            : strMoonset + ColumnSepInner + strMoonrise;
             string textDate = AppTranslations.DayOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);
