@@ -32,18 +32,18 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
       var row = ( from day in DataSet.LunisolarDays
-                  where (TorahEvent)day.TorahEvents != TorahEvent.None
-                     && check((TorahEvent)day.TorahEvents)
+                  where day.TorahEventsAsEnum != TorahEvent.None
+                     && check(day.TorahEventsAsEnum)
                      && SQLiteDate.ToDateTime(day.Date) >= SQLiteDate.ToDateTime(strDateNow).AddDays(-1)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null ) return;
       if ( SQLiteDate.ToDateTime(row.Date).Day < dateNow.Day )
-        if ( Settings.TorahEventsCountAsMoon && row.MoonriseType == (int)MoonRiseOccuring.BeforeSet )
+        if ( Settings.TorahEventsCountAsMoon && row.MoonriseTypeAsEnum == MoonRiseOccuring.BeforeSet )
           return;
       var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return;
       var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
-      var torahevent = (TorahEvent)row.TorahEvents;
+      var torahevent = row.TorahEventsAsEnum;
       if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
       {
         LastCelebrationReminded[torahevent] = null;

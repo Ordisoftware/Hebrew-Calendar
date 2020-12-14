@@ -101,17 +101,17 @@ namespace Ordisoftware.Hebrew.Calendar
       UpdateNavigation();
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
-                 where (TorahEvent)day.TorahEvents != TorahEvent.None
+                 where day.TorahEventsAsEnum != TorahEvent.None
                     && SQLiteDate.ToDateTime(day.Date).Year == (int)EditYear.SelectedItem
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
       {
-        var item = ListItems.Items.Add(AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
+        var item = ListItems.Items.Add(AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
         string str = SQLiteDate.ToDateTime(row.Date).ToLongDateString();
         item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
         item.Tag = row;
-        if ( (TorahEvent)row.TorahEvents == TorahEvent.NewYearD1 )
+        if ( row.TorahEventsAsEnum == TorahEvent.NewYearD1 )
         {
           item.Focused = true;
           item.Selected = true;

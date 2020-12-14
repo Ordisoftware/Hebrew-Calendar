@@ -196,7 +196,7 @@ namespace Ordisoftware.Hebrew.Calendar
         day.LunarDay = data.MoonDay;
         day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
         day.MoonPhase = data.MoonPhase;
-        day.IsFullMoon = Convert.ToInt32((MoonPhase)day.MoonPhase == MoonPhase.Full);
+        day.IsFullMoon = Convert.ToInt32(day.MoonPhaseAsEnum == MoonPhase.Full);
         day.Sunrise = SQLiteDate.ToString(ephemeris.Sunrise);
         day.Sunset = SQLiteDate.ToString(ephemeris.Sunset);
         day.Moonrise = SQLiteDate.ToString(ephemeris.Moonrise);
@@ -209,8 +209,8 @@ namespace Ordisoftware.Hebrew.Calendar
           moonrisetype = MoonRiseOccuring.BeforeSet;
         else
           moonrisetype = MoonRiseOccuring.AfterSet;
-        day.MoonriseType = (int)moonrisetype;
-        day.SeasonChange = (int)data.RealSeasonChange;
+        day.MoonriseTypeAsEnum = moonrisetype;
+        day.SeasonChangeAsEnum = data.RealSeasonChange;
         day.LunarMonth = 0;
         day.TorahEvents = 0;
       }
@@ -245,7 +245,7 @@ namespace Ordisoftware.Hebrew.Calendar
             day.LunarMonth = month;
             if ( day.IsNewMoon == 1 )
               delta = 0;
-            if ( (MoonRiseOccuring)day.MoonriseType == MoonRiseOccuring.NextDay && Settings.TorahEventsCountAsMoon )
+            if ( day.MoonriseTypeAsEnum == MoonRiseOccuring.NextDay && Settings.TorahEventsCountAsMoon )
               delta = 1;
             day.LunarDay -= delta;
           }
@@ -281,7 +281,7 @@ namespace Ordisoftware.Hebrew.Calendar
             count = toadd;
           else
             for ( int i = 0; i < toadd; i++, count++ )
-              if ( (MoonRiseOccuring)DataSet.LunisolarDays[index + i].MoonriseType == MoonRiseOccuring.NextDay )
+              if ( DataSet.LunisolarDays[index + i].MoonriseTypeAsEnum == MoonRiseOccuring.NextDay )
                 count++;
           thedate = thedate.AddDays(count);
         }
@@ -298,7 +298,8 @@ namespace Ordisoftware.Hebrew.Calendar
         bool check(Data.DataSet.LunisolarDaysRow row)
         {
           var dateRow = SQLiteDate.ToDateTime(row.Date);
-          return dateRow.Year == dateDay.Year && CalendarDates.Instance[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
+          return dateRow.Year == dateDay.Year 
+                              && CalendarDates.Instance[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
         }
         var equinoxe = DataSet.LunisolarDays.Where(d => check(d)).First();
         var dateEquinox = SQLiteDate.ToDateTime(equinoxe.Date);

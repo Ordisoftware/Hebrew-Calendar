@@ -37,10 +37,10 @@ namespace Ordisoftware.Hebrew.Calendar
         day.Sunset,
         day.Moonrise,
         day.Moonset,
-        MoonRiseType = ((MoonRiseOccuring)day.MoonriseType ).ToStringExport(AppTranslations.MoonRiseOccuring),
-        MoonPhase = ( (MoonPhase)day.MoonPhase ).ToStringExport(AppTranslations.MoonPhase),
-        SeasonChange = ( (SeasonChange)day.SeasonChange ).ToStringExport(AppTranslations.SeasonChange),
-        TorahEvent = ( (TorahEvent)day.TorahEvents ).ToStringExport(AppTranslations.TorahEvent),
+        MoonRiseType = day.MoonriseTypeAsEnum.ToStringExport(AppTranslations.MoonRiseOccuring),
+        MoonPhase = day.MoonPhaseAsEnum.ToStringExport(AppTranslations.MoonPhase),
+        SeasonChange = day.SeasonChangeAsEnum.ToStringExport(AppTranslations.SeasonChange),
+        TorahEvent = day.TorahEventsAsEnum.ToStringExport(AppTranslations.TorahEvent),
       });
       var dataset = new DataSet(Globals.AssemblyTitle);
       dataset.Tables.Add(data.ToDataTable(DataSet.LunisolarDays.TableName));

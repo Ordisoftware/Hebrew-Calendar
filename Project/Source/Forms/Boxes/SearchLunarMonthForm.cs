@@ -113,7 +113,7 @@ namespace Ordisoftware.Hebrew.Calendar
           string str = SQLiteDate.ToDateTime(row.Date).ToLongDateString();
           item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
           item.Tag = row;
-          if ( (TorahEvent)row.TorahEvents == TorahEvent.NewYearD1 )
+          if ( row.TorahEventsAsEnum == TorahEvent.NewYearD1 )
           {
             item.Focused = true;
             item.Selected = true;
