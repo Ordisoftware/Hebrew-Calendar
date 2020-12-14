@@ -14,33 +14,36 @@
 /// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
+using System.Data;
 using Ordisoftware.Core;
+using Newtonsoft.Json;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public struct ExportInterval
-  {
-    public int? Start;
-    public int? End;
-  }
-
-  public class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>
-  {
-  }
-
   public partial class MainForm
   {
 
-    private void DoExport(ExportAction action, ExportActions process, Action<ViewMode> after)
+    private string ExportSaveJSON()
     {
-      var interval = new ExportInterval();
-      var available = ViewMode.None;
-      var view = Settings.CurrentView;
-      foreach ( var item in process.Where(p => p.Value != null) ) available |= item.Key;
-      if ( !SelectExportTargetForm.Run(action, ref view, available, ref interval) ) return;
-      if ( process[view] == null ) throw new NotImplementedExceptionEx(Settings.CurrentView);
-      if ( process[view].Invoke(interval) ) after?.Invoke(view);
+      var data = DataSet.LunisolarDays.Select(day => new
+      {
+        day.Date,
+        IsNewMoon = Convert.ToBoolean(day.IsNewMoon),
+        IsFullMoon = Convert.ToBoolean(day.IsFullMoon),
+        day.LunarMonth,
+        day.LunarDay,
+        day.Sunrise,
+        day.Sunset,
+        day.Moonrise,
+        day.Moonset,
+        MoonPhase = ( (MoonPhase)day.MoonPhase ).ToString(),
+        SeasonChange = ( (SeasonChange)day.SeasonChange ).ToString(),
+        TorahEvent = ( (TorahEvent)day.TorahEvents ).ToString()
+      });
+      var dataset = new DataSet(Globals.AssemblyTitle);
+      dataset.Tables.Add(data.ToDataTable(DataSet.LunisolarDays.TableName));
+      return JsonConvert.SerializeObject(dataset, Formatting.Indented);
     }
 
   }

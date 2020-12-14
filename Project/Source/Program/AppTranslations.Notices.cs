@@ -135,8 +135,8 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary ExportIntervalNotice
       = new TranslationsDictionary
       {
-        [Language.EN] = "The export goes from the start year to the end year, and for each year are taken into account the Gregorian months going from Nissan to Adar.",
-        [Language.FR] = "L'export va de l'année de début à l'année de fin, et pour chaque année sont pris en compte les mois grégoriens allant de Nissan à Adar."
+        [Language.EN] = "The export goes from the start year to the end year, and for each year are taken into account the Gregorian months going from Nissan of this year to Adar of the next year.",
+        [Language.FR] = "L'export va de l'année de début à l'année de fin, et pour chaque année sont pris en compte les mois grégoriens allant de Nissan cette année à Adar de l'année suivante."
       };
 
     static public readonly TranslationsDictionary NoticeMoonMonthsTitle

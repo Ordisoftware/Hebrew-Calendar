@@ -26,7 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private const string CSVSeparator = ",";
 
-    private StringBuilder GenerateReportCSV()
+    private string ExportSaveCSV()
     {
       IsGenerating = true;
       UpdateButtons();
@@ -67,7 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
           string strEvent = AppTranslations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
           result.AppendLine(strEvent);
         }
-        return result;
+        return result.ToString();
       }
       catch ( Exception ex )
       {

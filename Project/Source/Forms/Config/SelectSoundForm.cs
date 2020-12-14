@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew.Calendar
           SelectCustom.Checked = true;
           break;
         default:
-          throw new NotImplementedExceptionEx(Program.Settings.ReminderBoxSoundSource.ToStringFull());
+          throw new NotImplementedExceptionEx(Program.Settings.ReminderBoxSoundSource);
       }
     }
 

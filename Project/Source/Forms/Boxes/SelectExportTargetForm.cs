@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class SelectExportTargetForm : Form
   {
 
-    static public (bool isOk, int? year1, int? year2) Run(ExportAction action, ref ViewMode view, ViewMode available)
+    static public bool Run(ExportAction action, ref ViewMode view, ViewMode available, ref ExportInterval interval)
     {
       using ( var form = new SelectExportTargetForm() )
       {
@@ -54,9 +54,27 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( form.SelectGrid.Checked )
             view = ViewMode.Grid;
         }
-        return form.SelectInterval.Checked
-               ? (result, (int?)form.EditYear1.SelectedItem, (int?)form.EditYear2.SelectedItem)
-               : (result, null, null);
+        if ( form.SelectInterval.Checked )
+        {
+          var year1 = (int?)form.EditYear1.SelectedItem;
+          var year2 = (int?)form.EditYear2.SelectedItem;
+          if ( year2 > year1 )
+          {
+            interval.Start = year1;
+            interval.End = year2;
+          }
+          else
+          {
+            interval.Start = year2;
+            interval.End = year1;
+          }
+        }
+        else
+        {
+          interval.Start = null;
+          interval.End = null;
+        }
+        return result;
       }
     }
 

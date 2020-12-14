@@ -23,16 +23,16 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private void ExportPrintMonth(int? year1, int? year2)
+    private void ExportPrintMonth(ExportInterval interval)
     {
       var current = CalendarMonth.CalendarDate;
       int countPages = 0;
       bool askToContinue = true;
-      bool multi = year1.HasValue && year2.HasValue;
+      bool multi = interval.Start.HasValue && interval.End.HasValue;
       if ( multi )
       {
-        CalendarMonth.CalendarDate = new DateTime(year1.Value, 1, 1);
-        countPages = ( year2.Value - year1.Value ) * 12;
+        CalendarMonth.CalendarDate = new DateTime(interval.Start.Value, 1, 1);
+        countPages = ( interval.End.Value - interval.Start.Value ) * 12;
       }
       int margin = Settings.PrintingMargin;
       int margin2 = margin + margin;
@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew.Calendar
         int delta = !redone ? 0 : e.PageBounds.Height / 2;
         e.Graphics.DrawImage(bitmap, margin, margin + delta, bounds.Width - margin2, bounds.Height - margin2);
         if ( multi )
-          if ( !( CalendarMonth.CalendarDate.Year == year2.Value && CalendarMonth.CalendarDate.Month == 12 ) )
+          if ( !( CalendarMonth.CalendarDate.Year == interval.End.Value && CalendarMonth.CalendarDate.Month == 12 ) )
           {
             CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
             e.HasMorePages = true;
@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           else
           {
-            CalendarMonth.CalendarDate = new DateTime(year1.Value, 1, 1);
+            CalendarMonth.CalendarDate = new DateTime(interval.Start.Value, 1, 1);
             e.HasMorePages = false;
           }
         else

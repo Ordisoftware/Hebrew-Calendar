@@ -16,10 +16,8 @@ using System;
 using System.Linq;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Data;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using Newtonsoft.Json;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -30,9 +28,9 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ExportSave()
     {
       string filePath = "";
-      var process = new NullSafeDictionary<ViewMode, Func<int?, int?, bool>>
+      var process = new ExportActions
       {
-        [ViewMode.Text] = (year1, year2) =>
+        [ViewMode.Text] = (interval) =>
         {
           SaveTextDialog.FileName = Globals.AssemblyTitle;
           if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
@@ -40,7 +38,7 @@ namespace Ordisoftware.Hebrew.Calendar
           File.WriteAllText(filePath, CalendarText.Text);
           return true;
         },
-        [ViewMode.Month] = (year1, year2) =>
+        [ViewMode.Month] = (interval) =>
         {
           SaveImageDialog.FileName = Globals.AssemblyTitle;
           if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
@@ -58,7 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
             CalendarMonth.ShowArrowControls = true;
           }
         },
-        [ViewMode.Grid] = (year1, year2) =>
+        [ViewMode.Grid] = (interval) =>
         {
           SaveDataDialog.FileName = Globals.AssemblyTitle;
           for ( int index = 0; index < Globals.DataExportTargets.Count; index++ )
@@ -89,32 +87,13 @@ namespace Ordisoftware.Hebrew.Calendar
       switch ( selected )
       {
         case DataExportTarget.CSV:
-          var content = GenerateReportCSV();
-          if ( content == null ) return false;
-          File.WriteAllText(SaveDataDialog.FileName, content.ToString());
+          File.WriteAllText(SaveDataDialog.FileName, ExportSaveCSV());
           break;
         case DataExportTarget.JSON:
-          var data = DataSet.LunisolarDays.Select(day => new
-          {
-            day.Date,
-            IsNewMoon = Convert.ToBoolean(day.IsNewMoon),
-            IsFullMoon = Convert.ToBoolean(day.IsFullMoon),
-            day.LunarMonth,
-            day.LunarDay,
-            day.Sunrise,
-            day.Sunset,
-            day.Moonrise,
-            day.Moonset,
-            MoonPhase = ( (MoonPhase)day.MoonPhase ).ToString(),
-            SeasonChange = ( (SeasonChange)day.SeasonChange ).ToString(),
-            TorahEvent = ( (TorahEvent)day.TorahEvents ).ToString()
-          });
-          var dataset = new DataSet(Globals.AssemblyTitle);
-          dataset.Tables.Add(data.ToDataTable(DataSet.LunisolarDays.TableName));
-          File.WriteAllText(SaveDataDialog.FileName, JsonConvert.SerializeObject(dataset, Formatting.Indented));
+          File.WriteAllText(SaveDataDialog.FileName, ExportSaveJSON());
           break;
         default:
-          throw new NotImplementedExceptionEx(selected.ToString());
+          throw new NotImplementedExceptionEx(selected);
       }
       return true;
     }

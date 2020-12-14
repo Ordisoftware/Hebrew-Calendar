@@ -520,7 +520,7 @@ namespace Ordisoftware.Hebrew.Calendar
                   });
                 break;
               default:
-                throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.ToStringFull());
+                throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen);
             }
           else
         if ( e.Button == MouseButtons.Right )

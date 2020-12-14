@@ -351,6 +351,9 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.Save.JSON.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Export.Save.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,9 +369,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Export.Print.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.cs" />
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -542,7 +543,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Generate.ReportCSV.cs">
+    <Compile Include="Source\Forms\MainForm\MainForm.Export.Save.CSV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.FillMonths.cs">

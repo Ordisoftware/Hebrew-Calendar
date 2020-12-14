@@ -50,14 +50,14 @@
       this.EditYear1 = new System.Windows.Forms.ComboBox();
       this.LabelYear1 = new System.Windows.Forms.Label();
       this.PanelYears = new System.Windows.Forms.Panel();
+      this.ActionIntervalInfo = new System.Windows.Forms.Button();
       this.SelectSingle = new System.Windows.Forms.RadioButton();
       this.SelectInterval = new System.Windows.Forms.RadioButton();
       this.GroupBoxView = new System.Windows.Forms.GroupBox();
       this.GroupBoxOptions = new System.Windows.Forms.GroupBox();
       this.GroupBoxSettings = new System.Windows.Forms.GroupBox();
-      this.ActionIntervalInfo = new System.Windows.Forms.Button();
-      this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
       this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
+      this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.PanelYears.SuspendLayout();
       this.GroupBoxView.SuspendLayout();
@@ -218,6 +218,14 @@
       resources.ApplyResources(this.PanelYears, "PanelYears");
       this.PanelYears.Name = "PanelYears";
       // 
+      // ActionIntervalInfo
+      // 
+      this.ActionIntervalInfo.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionIntervalInfo, "ActionIntervalInfo");
+      this.ActionIntervalInfo.Name = "ActionIntervalInfo";
+      this.ActionIntervalInfo.UseVisualStyleBackColor = true;
+      this.ActionIntervalInfo.Click += new System.EventHandler(this.ActionIntervalInfo_Click);
+      // 
       // SelectSingle
       // 
       resources.ApplyResources(this.SelectSingle, "SelectSingle");
@@ -262,13 +270,15 @@
       this.GroupBoxSettings.Name = "GroupBoxSettings";
       this.GroupBoxSettings.TabStop = false;
       // 
-      // ActionIntervalInfo
+      // EditPrintImageInLandscape
       // 
-      this.ActionIntervalInfo.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionIntervalInfo, "ActionIntervalInfo");
-      this.ActionIntervalInfo.Name = "ActionIntervalInfo";
-      this.ActionIntervalInfo.UseVisualStyleBackColor = true;
-      this.ActionIntervalInfo.Click += new System.EventHandler(this.ActionIntervalInfo_Click);
+      resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
+      this.EditPrintImageInLandscape.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.PrintImageInLandscape;
+      this.EditPrintImageInLandscape.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditPrintImageInLandscape.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "PrintImageInLandscape", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditPrintImageInLandscape.Name = "EditPrintImageInLandscape";
+      this.EditPrintImageInLandscape.UseVisualStyleBackColor = true;
+      this.EditPrintImageInLandscape.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // EditShowPrintPreviewDialog
       // 
@@ -279,16 +289,6 @@
       this.EditShowPrintPreviewDialog.Name = "EditShowPrintPreviewDialog";
       this.EditShowPrintPreviewDialog.UseVisualStyleBackColor = true;
       this.EditShowPrintPreviewDialog.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
-      // 
-      // EditPrintImageInLandscape
-      // 
-      resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
-      this.EditPrintImageInLandscape.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.PrintImageInLandscape;
-      this.EditPrintImageInLandscape.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditPrintImageInLandscape.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "PrintImageInLandscape", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditPrintImageInLandscape.Name = "EditPrintImageInLandscape";
-      this.EditPrintImageInLandscape.UseVisualStyleBackColor = true;
-      this.EditPrintImageInLandscape.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // SelectExportTargetForm
       // 

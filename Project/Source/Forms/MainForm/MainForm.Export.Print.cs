@@ -28,10 +28,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ExportPrint()
     {
-      var process = new NullSafeDictionary<ViewMode, Func<int?, int?, bool>>
+      var process = new ExportActions
       {
-        [ViewMode.Text] = (year1, year2) => { ExportPrintTextReport(); return true; },
-        [ViewMode.Month] = (year1, year2) => { ExportPrintMonth(year1, year2); return true; },
+        [ViewMode.Text] = (interval) => { ExportPrintTextReport(); return true; },
+        [ViewMode.Month] = (interval) => { ExportPrintMonth(interval); return true; },
         [ViewMode.Grid] = null
       };
       DoExport(ExportAction.Print, process, null);

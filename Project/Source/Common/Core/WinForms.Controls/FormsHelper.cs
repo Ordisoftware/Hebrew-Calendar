@@ -95,7 +95,7 @@ namespace Ordisoftware.Core
         case ControlLocation.Loose:
           break;
         default:
-          throw new NotImplementedExceptionEx(location.ToString());
+          throw new NotImplementedExceptionEx(location);
       }
     }
 
