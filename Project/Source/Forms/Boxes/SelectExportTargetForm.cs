@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
+using MoreLinq;
 using Ordisoftware.Core;
 using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
 
@@ -29,6 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       using ( var form = new SelectExportTargetForm() )
       {
+        form.ActionToDo = action;
         form.Text += SysTranslations.ViewActionTitle.GetLang(action);
         form.SelectText.Enabled = available.HasFlag(ViewMode.Text);
         form.SelectMonth.Enabled = available.HasFlag(ViewMode.Month);
@@ -80,6 +82,8 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
+    private ExportAction ActionToDo;
+
     private SelectExportTargetForm()
     {
       InitializeComponent();
@@ -98,7 +102,8 @@ namespace Ordisoftware.Hebrew.Calendar
       EditAutoOpenExportFolder.Checked = Program.Settings.AutoOpenExportFolder;
       var CurrentDay = MainForm.Instance.CurrentDay;
       int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;
-      foreach ( int indexYear in MainForm.Instance.YearsIntervalArray )
+      if ( yearSelected == MainForm.Instance.DateLast.Year ) yearSelected--;
+      foreach ( int indexYear in MainForm.Instance.YearsIntervalArray.SkipLast(1) )
       {
         int index1 = EditYear1.Items.Add(indexYear);
         int index2 = EditYear2.Items.Add(indexYear);
@@ -141,11 +146,10 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( SelectText.Checked )
       {
         SelectSingle.Checked = true;
-        SelectInterval.Checked = false;
         SelectInterval.Enabled = false;
       }
       else
-        SelectInterval.Enabled = true;
+        SelectInterval.Enabled = !(SelectMonth.Checked &&  ActionToDo == ExportAction.Clipboard);
       GroupBoxFormat.Enabled = SelectGrid.Checked;
       GroupBoxYears.Enabled = SelectInterval.Checked;
       EditExportDataEnumsAsTranslations.Enabled = SelectGrid.Checked;

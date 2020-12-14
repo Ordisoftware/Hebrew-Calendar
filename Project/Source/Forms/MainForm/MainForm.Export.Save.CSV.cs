@@ -26,8 +26,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private const string CSVSeparator = ",";
 
-    private string ExportSaveCSV()
+    private string ExportSaveCSV(ExportInterval interval)
     {
+      // todo interval
       IsGenerating = true;
       UpdateButtons();
       var cursor = Cursor;

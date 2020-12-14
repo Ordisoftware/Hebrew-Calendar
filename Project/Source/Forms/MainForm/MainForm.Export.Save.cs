@@ -64,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
               SaveDataDialog.FilterIndex = index + 1;
           if ( SaveDataDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveDataDialog.FileName;
-          return ExportSaveGrid(filePath);
+          return ExportSaveGrid(filePath, interval);
         }
       };
       Action<ViewMode> after = (view) =>
@@ -80,17 +80,17 @@ namespace Ordisoftware.Hebrew.Calendar
       DoExport(ExportAction.File, process, after);
     }
 
-    private bool ExportSaveGrid(string filePath)
+    private bool ExportSaveGrid(string filePath, ExportInterval interval)
     {
       string extension = Path.GetExtension(SaveDataDialog.FileName);
       var selected = Globals.DataExportTargets.First(p => p.Value == extension).Key;
       switch ( selected )
       {
         case DataExportTarget.CSV:
-          File.WriteAllText(SaveDataDialog.FileName, ExportSaveCSV());
+          File.WriteAllText(SaveDataDialog.FileName, ExportSaveCSV(interval));
           break;
         case DataExportTarget.JSON:
-          File.WriteAllText(SaveDataDialog.FileName, ExportSaveJSON());
+          File.WriteAllText(SaveDataDialog.FileName, ExportSaveJSON(interval));
           break;
         default:
           throw new NotImplementedExceptionEx(selected);

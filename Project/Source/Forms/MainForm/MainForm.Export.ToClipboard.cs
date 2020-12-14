@@ -48,9 +48,17 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [ViewMode.Grid] = (interval) =>
         {
-
-          // TODO choose csv or json...
-          Clipboard.SetText(ExportSaveCSV().ToString());
+          switch ( Settings.ExportDataPreferredTarget )
+          {
+            case DataExportTarget.CSV:
+              Clipboard.SetText(ExportSaveCSV(interval).ToString());
+              break;
+            case DataExportTarget.JSON:
+              Clipboard.SetText(ExportSaveJSON(interval).ToString());
+              break;
+            default:
+              throw new NotImplementedExceptionEx(Settings.ExportDataPreferredTarget);
+          }
           return true;
         },
       };

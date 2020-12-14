@@ -239,12 +239,12 @@
       // 
       // GroupBoxSettings
       // 
+      resources.ApplyResources(this.GroupBoxSettings, "GroupBoxSettings");
       this.GroupBoxSettings.Controls.Add(this.EditExportDataEnumsAsTranslations);
       this.GroupBoxSettings.Controls.Add(this.EditAutoOpenExportFolder);
       this.GroupBoxSettings.Controls.Add(this.EditPrintImageInLandscape);
       this.GroupBoxSettings.Controls.Add(this.EditShowPrintPreviewDialog);
       this.GroupBoxSettings.Controls.Add(this.EditAutoOpenExportedFile);
-      resources.ApplyResources(this.GroupBoxSettings, "GroupBoxSettings");
       this.GroupBoxSettings.Name = "GroupBoxSettings";
       this.GroupBoxSettings.TabStop = false;
       // 

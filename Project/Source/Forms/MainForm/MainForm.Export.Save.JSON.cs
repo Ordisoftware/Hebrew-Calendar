@@ -24,8 +24,9 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private string ExportSaveJSON()
+    private string ExportSaveJSON(ExportInterval interval)
     {
+      // todo interval
       var data = DataSet.LunisolarDays.Select(day => new
       {
         day.Date,

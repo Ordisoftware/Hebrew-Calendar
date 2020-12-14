@@ -689,7 +689,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 9</value>
+    <value>167, 14</value>
   </data>
   <data name="ActionIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -817,6 +817,69 @@
   <data name="&gt;&gt;GroupBoxOptions.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="GroupBoxSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Name" xml:space="preserve">
+    <value>EditExportDataEnumsAsTranslations</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.Name" xml:space="preserve">
+    <value>EditPrintImageInLandscape</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Name" xml:space="preserve">
+    <value>EditShowPrintPreviewDialog</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupBoxSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 262</value>
+  </data>
+  <data name="GroupBoxSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 135</value>
+  </data>
+  <data name="GroupBoxSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="GroupBoxSettings.Text" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSettings.Name" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="EditExportDataEnumsAsTranslations.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -907,30 +970,6 @@
   <data name="&gt;&gt;EditShowPrintPreviewDialog.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="GroupBoxSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 262</value>
-  </data>
-  <data name="GroupBoxSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 135</value>
-  </data>
-  <data name="GroupBoxSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="GroupBoxSettings.Text" xml:space="preserve">
-    <value>Preferences</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxSettings.Name" xml:space="preserve">
-    <value>GroupBoxSettings</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxSettings.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="GroupBoxFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 15</value>
   </data>
@@ -1017,9 +1056,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>399, 446</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
