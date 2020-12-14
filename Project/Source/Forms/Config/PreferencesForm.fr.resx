@@ -869,4 +869,7 @@
   <data name="LabelSaveImageCountWarning.Text" xml:space="preserve">
     <value>Nombre d'images à sauver pour afficher un avertissement</value>
   </data>
+  <data name="LabelImageExportFileFormat.Text" xml:space="preserve">
+    <value>Format préféré du fichier d'export d'images</value>
+  </data>
 </root>

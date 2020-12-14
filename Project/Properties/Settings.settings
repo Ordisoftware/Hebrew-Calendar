@@ -469,5 +469,8 @@
     <Setting Name="SaveImageCountWarning" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">50</Value>
     </Setting>
+    <Setting Name="ExportImagePreferredTarget" Type="Ordisoftware.Core.ImageExportTarget" Scope="User">
+      <Value Profile="(Default)">PNG</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

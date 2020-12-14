@@ -20,6 +20,7 @@ using System.Drawing.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
+using KVPImageExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.ImageExportTarget, string>;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -322,6 +323,17 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EditDataExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
     {
       e.Value = ( (KVPDataExportTarget)e.ListItem ).Key.ToString();
+    }
+
+    private void EditImageExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)EditImageExportFileFormat.SelectedItem ).Key;
+    }
+
+    private void EditImageExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+    {
+      e.Value = ( (KVPImageExportTarget)e.ListItem ).Key.ToString();
     }
 
     private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)

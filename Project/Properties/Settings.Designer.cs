@@ -1868,5 +1868,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["SaveImageCountWarning"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PNG")]
+        public global::Ordisoftware.Core.ImageExportTarget ExportImagePreferredTarget {
+            get {
+                return ((global::Ordisoftware.Core.ImageExportTarget)(this["ExportImagePreferredTarget"]));
+            }
+            set {
+                this["ExportImagePreferredTarget"] = value;
+            }
+        }
     }
 }
