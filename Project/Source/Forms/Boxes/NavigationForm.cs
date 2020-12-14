@@ -54,7 +54,7 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelSunsetValue.Text = row.Sunset.ToString();
           LabelMoonriseValue.Text = row.Moonrise.ToString();
           LabelMoonsetValue.Text = row.Moonset.ToString();
-          LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang((SeasonChange)row.SeasonChange);
+          LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum);
           if ( LabelEventSeasonValue.Text == "" ) LabelEventSeasonValue.Text = "-";
           LabelEventTorahValue.Text = AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum);
           if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
