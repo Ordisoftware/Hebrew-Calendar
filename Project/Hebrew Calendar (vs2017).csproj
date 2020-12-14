@@ -57,14 +57,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>..\Bin\Release\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
     <NoWarn>1587, 1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
     <DebugSymbols>true</DebugSymbols>
     <LangVersion>latest</LangVersion>
     <AllowedReferenceRelatedFileExtensions>
           *.pdb;
+          Ordisoftware*.xml;
     </AllowedReferenceRelatedFileExtensions>
   </PropertyGroup>
   <ItemGroup>
