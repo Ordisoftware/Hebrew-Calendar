@@ -37,11 +37,7 @@
       this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.EditYear = new System.Windows.Forms.ComboBox();
-      this.ActionNext = new System.Windows.Forms.Button();
-      this.ActionPrevious = new System.Windows.Forms.Button();
-      this.ActionFirst = new System.Windows.Forms.Button();
-      this.ActionLast = new System.Windows.Forms.Button();
+      this.SelectYear = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -99,37 +95,13 @@
       // 
       resources.ApplyResources(this.columnHeader2, "columnHeader2");
       // 
-      // EditYear
+      // SelectYear
       // 
-      this.EditYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditYear.FormattingEnabled = true;
-      resources.ApplyResources(this.EditYear, "EditYear");
-      this.EditYear.Name = "EditYear";
-      this.EditYear.SelectedIndexChanged += new System.EventHandler(this.EditYear_SelectedIndexChanged);
-      // 
-      // ActionNext
-      // 
-      resources.ApplyResources(this.ActionNext, "ActionNext");
-      this.ActionNext.Name = "ActionNext";
-      this.ActionNext.Click += new System.EventHandler(this.ActionNext_Click);
-      // 
-      // ActionPrevious
-      // 
-      resources.ApplyResources(this.ActionPrevious, "ActionPrevious");
-      this.ActionPrevious.Name = "ActionPrevious";
-      this.ActionPrevious.Click += new System.EventHandler(this.ActionPrevious_Click);
-      // 
-      // ActionFirst
-      // 
-      resources.ApplyResources(this.ActionFirst, "ActionFirst");
-      this.ActionFirst.Name = "ActionFirst";
-      this.ActionFirst.Click += new System.EventHandler(this.ActionFirst_Click);
-      // 
-      // ActionLast
-      // 
-      resources.ApplyResources(this.ActionLast, "ActionLast");
-      this.ActionLast.Name = "ActionLast";
-      this.ActionLast.Click += new System.EventHandler(this.ActionLast_Click);
+      resources.ApplyResources(this.SelectYear, "SelectYear");
+      this.SelectYear.Name = "SelectYear";
+      this.SelectYear.SelectedIndex = -1;
+      this.SelectYear.SelectedItem = null;
+      this.SelectYear.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
       // SearchLunarMonthForm
       // 
@@ -137,11 +109,7 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.ActionLast);
-      this.Controls.Add(this.ActionNext);
-      this.Controls.Add(this.ActionFirst);
-      this.Controls.Add(this.ActionPrevious);
-      this.Controls.Add(this.EditYear);
+      this.Controls.Add(this.SelectYear);
       this.Controls.Add(this.ListItems);
       this.Controls.Add(this.PanelBottom);
       this.Controls.Add(this.LabelYear);
@@ -170,10 +138,6 @@
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader2;
     private System.Windows.Forms.ColumnHeader columnHeader3;
-    private System.Windows.Forms.ComboBox EditYear;
-    private System.Windows.Forms.Button ActionNext;
-    private System.Windows.Forms.Button ActionPrevious;
-    private System.Windows.Forms.Button ActionFirst;
-    private System.Windows.Forms.Button ActionLast;
+    private SelectYearControl SelectYear;
   }
 }

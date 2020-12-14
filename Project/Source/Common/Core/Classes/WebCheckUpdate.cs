@@ -188,7 +188,7 @@ namespace Ordisoftware.Core
         case WebUpdateSelection.Install:
           return ProcessAutoInstall(client, fileInfo, fileURL);
         default:
-          throw new NotImplementedExceptionEx(result.ToStringFull());
+          throw new NotImplementedExceptionEx(result);
       }
       return false;
     }

@@ -11,10 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
-using System.Linq;
 using System.Text;
+using System.Linq;
+using System.Data;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -26,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private const string CSVSeparator = ",";
 
-    private StringBuilder GenerateReportCSV()
+    private string ExportSaveCSV(ExportInterval interval)
     {
       IsGenerating = true;
       UpdateButtons();
@@ -35,17 +36,18 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         string headerTxt = "";
-        foreach ( ReportFieldCSV v in Enum.GetValues(typeof(ReportFieldCSV)) )
-          headerTxt += v.ToString() + CSVSeparator;
+        foreach ( ReportFieldCSV field in Enum.GetValues(typeof(ReportFieldCSV)) )
+          headerTxt += field.ToString() + CSVSeparator;
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
         var result = new StringBuilder();
         result.AppendLine(headerTxt);
         if ( DataSet.LunisolarDays.Count == 0 ) return null;
+        var items = GetDayRows(interval);
         var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
-                                        DataSet.LunisolarDays.Count,
+                                        items.Count(),
                                         Program.LoadingFormLoadDB);
-        foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
+        foreach ( Data.DataSet.LunisolarDaysRow day in items )
         {
           LoadingForm.Instance.DoProgress();
           var dayDate = SQLiteDate.ToDateTime(day.Date);
@@ -60,14 +62,16 @@ namespace Ordisoftware.Hebrew.Calendar
           result.Append(day.Sunset + CSVSeparator);
           result.Append(day.Moonrise + CSVSeparator);
           result.Append(day.Moonset + CSVSeparator);
-          string strPhase = AppTranslations.MoonPhase.GetLang((MoonPhase)day.MoonPhase);
+          string strMoonriseType = day.MoonriseOccuringAsEnum.ToStringExport(AppTranslations.MoonRiseOccuring);
+          string strPhase = day.MoonPhaseAsEnum.ToStringExport(AppTranslations.MoonPhase);
+          string strSeason = day.SeasonChangeAsEnum.ToStringExport(AppTranslations.SeasonChange);
+          string strEvent = day.TorahEventsAsEnum.ToStringExport(AppTranslations.TorahEvent);
+          result.Append(strMoonriseType + CSVSeparator);
           result.Append(strPhase + CSVSeparator);
-          string strSeason = AppTranslations.SeasonEvent.GetLang((SeasonChange)day.SeasonChange);
           result.Append(strSeason + CSVSeparator);
-          string strEvent = AppTranslations.TorahEvent.GetLang((TorahEvent)day.TorahEvents);
           result.AppendLine(strEvent);
         }
-        return result;
+        return result.ToString();
       }
       catch ( Exception ex )
       {

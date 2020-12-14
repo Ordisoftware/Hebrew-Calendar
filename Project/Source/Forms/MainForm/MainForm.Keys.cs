@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -57,11 +57,6 @@ namespace Ordisoftware.Hebrew.Calendar
         case Keys.F9:
         case Keys.Control | Keys.N:
           ActionNavigate.PerformClick();
-          return true;
-        case Keys.F10:
-        case Keys.Control | Keys.M:
-          if ( !Globals.IsDevExecutable ) return false; // TODO remove when finished
-          ActionViewMoonMonths.PerformClick();
           return true;
         case Keys.F11:
           ActionHelp.PerformClick();

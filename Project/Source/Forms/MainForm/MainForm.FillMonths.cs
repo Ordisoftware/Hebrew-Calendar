@@ -85,7 +85,7 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             LoadingForm.Instance.DoProgress();
             var ev = (TorahEvent)row.TorahEvents;
-            var season = (SeasonChange)row.SeasonChange;
+            var season = row.SeasonChangeAsEnum;
             if ( ev == TorahEvent.PessahD1
               || ev == TorahEvent.SoukotD1
               || ev == TorahEvent.ChavouotDiet )
@@ -172,24 +172,24 @@ namespace Ordisoftware.Hebrew.Calendar
                       : ( row.IsFullMoon == 1
                         ? Settings.CalendarColorFullMoon
                         : Settings.CalendarColorMoon );
-            if ( (MoonRise)row.MoonriseType == MoonRise.AfterSet )
+            if ( row.MoonriseOccuringAsEnum == MoonRiseOccuring.AfterSet )
             {
               if ( row.Moonset != "" )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
-              if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
+              if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
             }
             else
             {
-              if ( (MoonRise)row.MoonriseType != MoonRise.NextDay )
+              if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
               if ( row.Moonset != "" )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             }
             if ( row.SeasonChange != 0 )
-              add(Settings.CalendarColorSeason, AppTranslations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange));
+              add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum));
             if ( row.TorahEvents != 0 )
-              add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents));
+              add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
           }
           catch ( Exception ex )
           {

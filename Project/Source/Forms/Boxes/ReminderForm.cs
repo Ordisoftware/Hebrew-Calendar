@@ -84,7 +84,7 @@ namespace Ordisoftware.Hebrew.Calendar
         form.LabelTitle.Text = isShabat
                                ? "Shabat"
                                : AppTranslations.TorahEvent.GetLang(torahevent == TorahEvent.None
-                                                                    ? (TorahEvent)row.TorahEvents
+                                                                    ? row.TorahEventsAsEnum
                                                                     : torahevent);
         form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
         if ( times.dateStart != null && times.dateEnd != null )

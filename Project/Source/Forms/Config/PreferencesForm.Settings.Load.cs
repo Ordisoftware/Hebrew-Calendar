@@ -98,11 +98,13 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatchManage(() => { EditVolume.Value = Settings.ApplicationVolume; });
       SystemManager.TryCatchManage(() => { EditDateBookmarksCount.Value = Settings.DateBookmarksCount; });
       SystemManager.TryCatchManage(() => { EditUsageStatisticsEnabled.Checked = Settings.UsageStatisticsEnabled; });
-      SystemManager.TryCatchManage(() => { EditSelectViewToExport.Checked = Settings.SelectViewToExport; });
       SystemManager.TryCatchManage(() => { EditRestoreLastViewAtStartup.Checked = Settings.RestoreLastViewAtStartup; });
       SystemManager.TryCatchManage(() => { EditShowPrintDialog.Checked = Settings.ShowPrintPreviewDialog; });
       SystemManager.TryCatchManage(() => { EditPrintingMargin.Value = Settings.PrintingMargin; });
       SystemManager.TryCatchManage(() => { EditPrintPageCountWarning.Value = Settings.PrintPageCountWarning; });
+      SystemManager.TryCatchManage(() => { EditPrintImageInLandscape.Checked = Settings.PrintImageInLandscape; });
+      SystemManager.TryCatchManage(() => { EditExportDataEnumsAsTranslations.Checked = Settings.ExportDataEnumsAsTranslations; });
+      SystemManager.TryCatchManage(() => { EditSaveImageCountWarning.Value = Settings.SaveImageCountWarning; });
       EditLogEnabled_CheckedChanged(null, null);
       LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString();
       LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString();

@@ -38,6 +38,20 @@ namespace Ordisoftware.Core
     }
     static private TranslationsDictionary _AskToContinue;
 
+    static public readonly TranslationsDictionary ActionCancel
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Cancel",
+        [Language.FR] = "Annuler",
+      };
+
+    static public readonly TranslationsDictionary ActionClose
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Close",
+        [Language.FR] = "Fermer",
+      };
+
     static public readonly TranslationsDictionary NotImplemented
       = new TranslationsDictionary
       {
@@ -111,29 +125,29 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary NullSlot
       = new TranslationsDictionary
       {
-        [Language.EN] = "<null>",
-        [Language.FR] = "<null>"
+        [Language.EN] = "(null)",
+        [Language.FR] = "(null)"
       };
 
     static public readonly TranslationsDictionary UndefinedSlot
       = new TranslationsDictionary
       {
-        [Language.EN] = "<not defined>",
-        [Language.FR] = "<non définit>"
+        [Language.EN] = "(not defined)",
+        [Language.FR] = "(non définit)"
       };
 
     static public readonly TranslationsDictionary EmptySLot
       = new TranslationsDictionary
       {
-        [Language.EN] = "<empty>",
-        [Language.FR] = "<vide>"
+        [Language.EN] = "(empty)",
+        [Language.FR] = "(vide)"
       };
 
     static public readonly TranslationsDictionary ErrorSlot
       = new TranslationsDictionary
       {
-        [Language.EN] = "<error>",
-        [Language.FR] = "<erreur>"
+        [Language.EN] = "(error)",
+        [Language.FR] = "(erreur)"
       };
 
     static public readonly TranslationsDictionary MemorySizeSuffix

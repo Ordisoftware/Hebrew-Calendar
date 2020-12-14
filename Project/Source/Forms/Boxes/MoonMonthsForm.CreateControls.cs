@@ -63,7 +63,7 @@ namespace Ordisoftware.Hebrew.Calendar
           colorsMonth = ColorsFlashy;
           break;
         default:
-          throw new NotImplementedExceptionEx(Program.Settings.MoonMonthsFormUseColors.ToStringFull());
+          throw new NotImplementedExceptionEx(Program.Settings.MoonMonthsFormUseColors);
       }
       for ( int index = 1; index < Program.MoonMonthsNames.Length; index++ )
       {

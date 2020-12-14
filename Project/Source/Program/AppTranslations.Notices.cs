@@ -132,6 +132,13 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Concernant les jours lunaires, la lune saute régulièrement un jour solaire qui se trouve donc être à cheval entre deux jours lunaires, comme par exemple le 10/08/2020 qui n'est pas compté car il n'y a pas de lever de la lune ce jour solaire-là."
       };
 
+    static public readonly TranslationsDictionary ExportIntervalNotice
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "The export goes from the start year to the end year, and for each year are taken into account the Gregorian months going from Nissan of this year to Adar of the next year.",
+        [Language.FR] = "L'export va de l'année de début à l'année de fin, et pour chaque année sont pris en compte les mois grégoriens allant de Nissan cette année à Adar de l'année suivante."
+      };
+
     static public readonly TranslationsDictionary NoticeMoonMonthsTitle
       = new TranslationsDictionary
       {

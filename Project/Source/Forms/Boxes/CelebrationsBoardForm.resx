@@ -117,47 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Label.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 13</value>
-  </data>
-  <data name="Label.Text" xml:space="preserve">
-    <value>Sélectionnez la vue :</value>
-  </data>
-  <data name="ActionCancel.Text" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
-  <data name="SelectText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 17</value>
-  </data>
-  <data name="SelectText.Text" xml:space="preserve">
-    <value>Rapport textuel</value>
-  </data>
-  <data name="SelectMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 17</value>
-  </data>
-  <data name="SelectMonth.Text" xml:space="preserve">
-    <value>Calendrier mensuel</value>
-  </data>
-  <data name="SelectGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 17</value>
-  </data>
-  <data name="SelectGrid.Text" xml:space="preserve">
-    <value>Grille de données</value>
-  </data>
-  <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
-    <value>Ouvrir le fichier exporté en cas de succès</value>
-  </data>
-  <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
-    <value>Ouvrir le dossier d'export en cas de succès</value>
-  </data>
-  <data name="EditSelectViewToExport.Text" xml:space="preserve">
-    <value>Activer cette boîte de dialogue sinon utiliser la vue en cours</value>
-  </data>
-  <data name="LabelOptions.Text" xml:space="preserve">
-    <value>Options :</value>
-  </data>
-  <data name="EditShowPrintPreviewDialog.Text" xml:space="preserve">
-    <value>Afficher la boîte de dialogue d'aperçu avant impression</value>
-  </data>
 </root>

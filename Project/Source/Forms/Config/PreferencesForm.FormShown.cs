@@ -69,7 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
           SelectOpenNextCelebrationsForm.Select();
           break;
         default:
-          throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.ToStringFull());
+          throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen);
       }
       EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
       EditLogEnabled.Enabled = DebugManager.Enabled;

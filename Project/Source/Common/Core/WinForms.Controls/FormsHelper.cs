@@ -38,6 +38,14 @@ namespace Ordisoftware.Core
         yield return form;
     }
 
+    static public IEnumerable<T> GetAllControls<T>(this Control control)
+    {
+      var controls = control.Controls.OfType<T>();
+      return control.Controls.Cast<Control>()
+                             .SelectMany(c => c.GetAllControls<T>())
+                             .Concat(controls);
+    }
+
     /// <summary>
     /// Apply localized resources.
     /// </summary>
@@ -95,7 +103,7 @@ namespace Ordisoftware.Core
         case ControlLocation.Loose:
           break;
         default:
-          throw new NotImplementedExceptionEx(location.ToString());
+          throw new NotImplementedExceptionEx(location);
       }
     }
 

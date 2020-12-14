@@ -73,7 +73,7 @@ namespace Ordisoftware.Core
           FilePath = filePath.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
           break;
         default:
-          throw new NotImplementedExceptionEx(folder.ToStringFull());
+          throw new NotImplementedExceptionEx(folder);
       }
       ReLoad();
     }

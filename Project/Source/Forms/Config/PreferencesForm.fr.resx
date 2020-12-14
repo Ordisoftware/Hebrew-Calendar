@@ -852,12 +852,21 @@
     <value>Marge d'impression en 100 x inch (20 = 0,5 cm | 50 = 1,25 cm | 80 = 2 cm | 100 = 2,5 cm | 120 = 3 cm)</value>
   </data>
   <data name="LabelPrintPageCountWarning.Text" xml:space="preserve">
-    <value>Nombre de pages pour afficher un avertissement</value>
+    <value>Nombre de pages à imprimer pour afficher un avertissement</value>
   </data>
   <data name="TabPagePrint.Text" xml:space="preserve">
     <value>Export et impression</value>
   </data>
   <data name="LabelDataExportFileFormat.Text" xml:space="preserve">
     <value>Format préféré du fichier d'export de données</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
+    <value>Imprimer les images en paysage</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
+    <value>Export des énumérations en tant que traductions humanisées</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.Text" xml:space="preserve">
+    <value>Nombre d'images à sauver pour afficher un avertissement</value>
   </data>
 </root>

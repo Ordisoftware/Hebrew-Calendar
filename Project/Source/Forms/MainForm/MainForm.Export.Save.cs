@@ -16,10 +16,9 @@ using System;
 using System.Linq;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Data;
+using System.Globalization;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using Newtonsoft.Json;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -30,27 +29,35 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ExportSave()
     {
       string filePath = "";
-      var process = new NullSafeDictionary<ViewMode, Func<bool>>
+      var process = new ExportActions
       {
-        [ViewMode.Text] = () =>
+        [ViewMode.Text] = (interval) =>
         {
           SaveTextDialog.FileName = Globals.AssemblyTitle;
           if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveTextDialog.FileName;
-          File.WriteAllText(filePath, CalendarText.Text);
+          File.WriteAllText(filePath, string.Join(Globals.NL, GetTextReportLines(interval)));
           return true;
         },
-        [ViewMode.Month] = () =>
+        [ViewMode.Month] = (interval) =>
         {
-          SaveImageDialog.FileName = Globals.AssemblyTitle;
-          if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
-          filePath = SaveImageDialog.FileName;
           try
           {
             CalendarMonth.ShowTodayButton = false;
             CalendarMonth.ShowArrowControls = false;
-            CalendarMonth.GetBitmap().Save(filePath, ImageFormat.Png);
-            return true;
+            if ( interval.IsDefined )
+            {
+              if ( FolderDialog.ShowDialog() != DialogResult.OK ) return false;
+              filePath = FolderDialog.SelectedPath;
+              return ExportSaveMonth(filePath, interval);
+            }
+            else
+            {
+              SaveImageDialog.FileName = Globals.AssemblyTitle;
+              if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
+              filePath = SaveImageDialog.FileName;
+              return ExportSaveMonth(filePath, interval);
+            }
           }
           finally
           {
@@ -58,7 +65,7 @@ namespace Ordisoftware.Hebrew.Calendar
             CalendarMonth.ShowArrowControls = true;
           }
         },
-        [ViewMode.Grid] = () =>
+        [ViewMode.Grid] = (interval) =>
         {
           SaveDataDialog.FileName = Globals.AssemblyTitle;
           for ( int index = 0; index < Globals.DataExportTargets.Count; index++ )
@@ -66,7 +73,7 @@ namespace Ordisoftware.Hebrew.Calendar
               SaveDataDialog.FilterIndex = index + 1;
           if ( SaveDataDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveDataDialog.FileName;
-          return ExportSaveGrid(filePath);
+          return ExportSaveGrid(filePath, interval);
         }
       };
       Action<ViewMode> after = (view) =>
@@ -82,39 +89,73 @@ namespace Ordisoftware.Hebrew.Calendar
       DoExport(ExportAction.File, process, after);
     }
 
-    private bool ExportSaveGrid(string filePath)
+    private bool ExportSaveMonth(string filePath, ExportInterval interval)
+    {
+      if ( interval.IsDefined )
+      {
+        // TODO waitcursor as csv & advert si > 60 (5 ans) + option
+        var current = CalendarMonth.CalendarDate;
+        CalendarMonth.CalendarDate = interval.Start.Value;
+        bool HasMorePages = true;
+        while ( HasMorePages )
+        {
+          string filename = string.Format("{0}-{1}-{2}.png",
+                                          Globals.AssemblyTitle,
+                                          CalendarMonth.CalendarDate.Year,
+                                          CalendarMonth.CalendarDate.Month.ToString("00"));
+          CalendarMonth.GetBitmap().Save(Path.Combine(filePath, filename), ImageFormat.Png);
+          CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
+          if ( CalendarMonth.CalendarDate <= interval.End.Value )
+          {
+            HasMorePages = true;
+          }
+          else
+          {
+            HasMorePages = false;
+          }
+        }
+        CalendarMonth.CalendarDate = current;
+      }
+      else
+      {
+        ImageFormat format = null;
+        string ext = Path.GetExtension(filePath).ToLower();
+        switch ( ext )
+        {
+          case ".png":
+            format = ImageFormat.Png;
+            break;
+          case ".jpg":
+            format = ImageFormat.Jpeg;
+            break;
+          case ".tiff":
+            format = ImageFormat.Tiff;
+            break;
+          case ".bmp":
+            format = ImageFormat.Bmp;
+            break;
+          default:
+            throw new NotImplementedExceptionEx(ext);
+        }
+        CalendarMonth.GetBitmap().Save(filePath, format);
+      }
+      return true;
+    }
+
+    private bool ExportSaveGrid(string filePath, ExportInterval interval)
     {
       string extension = Path.GetExtension(SaveDataDialog.FileName);
       var selected = Globals.DataExportTargets.First(p => p.Value == extension).Key;
       switch ( selected )
       {
         case DataExportTarget.CSV:
-          var content = GenerateReportCSV();
-          if ( content == null ) return false;
-          File.WriteAllText(SaveDataDialog.FileName, content.ToString());
+          File.WriteAllText(SaveDataDialog.FileName, ExportSaveCSV(interval));
           break;
         case DataExportTarget.JSON:
-          var data = DataSet.LunisolarDays.Select(day => new
-          {
-            day.Date,
-            IsNewMoon = Convert.ToBoolean(day.IsNewMoon),
-            IsFullMoon = Convert.ToBoolean(day.IsFullMoon),
-            day.LunarMonth,
-            day.LunarDay,
-            day.Sunrise,
-            day.Sunset,
-            day.Moonrise,
-            day.Moonset,
-            MoonPhase = ( (MoonPhase)day.MoonPhase ).ToString(),
-            SeasonChange = ( (SeasonChange)day.SeasonChange ).ToString(),
-            TorahEvent = ( (TorahEvent)day.TorahEvents ).ToString()
-          });
-          var dataset = new DataSet(Globals.AssemblyTitle);
-          dataset.Tables.Add(data.ToDataTable(DataSet.LunisolarDays.TableName));
-          File.WriteAllText(SaveDataDialog.FileName, JsonConvert.SerializeObject(dataset, Formatting.Indented));
+          File.WriteAllText(SaveDataDialog.FileName, ExportSaveJSON(interval));
           break;
         default:
-          throw new NotImplementedExceptionEx(selected.ToString());
+          throw new NotImplementedExceptionEx(selected);
       }
       return true;
     }

@@ -32,6 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
     Moonrise,
     Moonset,
     MoonPhase,
+    MoonRiseOccuring,
     Season,
     Event
   }

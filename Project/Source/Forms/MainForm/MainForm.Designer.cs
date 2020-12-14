@@ -43,6 +43,7 @@
       this.PanelViewMonth = new System.Windows.Forms.Panel();
       this.TabPageGrid = new System.Windows.Forms.TabPage();
       this.PanelViewGrid = new System.Windows.Forms.Panel();
+      this.EditEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.CalendarGrid = new System.Windows.Forms.DataGridView();
       this.LunisolarDaysBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
       this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -84,21 +85,22 @@
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewMoonMonths = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewMoonMonthsSeparator = new System.Windows.Forms.ToolStripSeparator();
+      this.SeparatorToolsMenuTop = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowCelebrationsNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowShabatNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewCelebrationsBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenSystemDateAndTime = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionVacuumAtNextStartup = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewLog = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewStats = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionVacuumAtNextStartup = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
@@ -144,12 +146,12 @@
       this.SeparatorTrayMenu5 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
-      this.PrintDialog = new System.Windows.Forms.PrintDialog();
       this.TimerReminder = new System.Windows.Forms.Timer(this.components);
       this.TimerBallon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
       this.SaveImageDialog = new System.Windows.Forms.SaveFileDialog();
+      this.FolderDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -278,10 +280,21 @@
       // 
       // PanelViewGrid
       // 
+      this.PanelViewGrid.Controls.Add(this.EditEnumsAsTranslations);
       this.PanelViewGrid.Controls.Add(this.CalendarGrid);
       this.PanelViewGrid.Controls.Add(this.LunisolarDaysBindingNavigator);
       resources.ApplyResources(this.PanelViewGrid, "PanelViewGrid");
       this.PanelViewGrid.Name = "PanelViewGrid";
+      // 
+      // EditEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditEnumsAsTranslations, "EditEnumsAsTranslations");
+      this.EditEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
+      this.EditEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditEnumsAsTranslations.Name = "EditEnumsAsTranslations";
+      this.EditEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // CalendarGrid
       // 
@@ -604,6 +617,7 @@
       this.ActionInformation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionInformation, "ActionInformation");
       this.ActionInformation.Name = "ActionInformation";
+      this.ActionInformation.Padding = new System.Windows.Forms.Padding(5);
       // 
       // ActionResetReminder
       // 
@@ -645,23 +659,25 @@
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewMoonMonths,
-            this.ActionViewMoonMonthsSeparator,
+            this.SeparatorToolsMenuTop,
             this.ActionShowCelebrationsNotice,
             this.ActionShowShabatNotice,
             this.toolStripSeparator8,
             this.ActionCalculateDateDiff,
-            this.ActionGenerate,
+            this.ActionViewCelebrationsBoard,
             this.toolStripSeparator1,
             this.ActionOpenCalculator,
             this.ActionOpenSystemDateAndTime,
-            this.toolStripSeparator10,
-            this.ActionViewLog,
-            this.ActionViewStats,
             this.toolStripSeparator11,
             this.ActionOpenExportFolder,
-            this.ActionVacuumAtNextStartup});
+            this.ActionGenerate,
+            this.ActionVacuumAtNextStartup,
+            this.toolStripSeparator10,
+            this.ActionViewLog,
+            this.ActionViewStats});
       resources.ApplyResources(this.ActionTools, "ActionTools");
       this.ActionTools.Name = "ActionTools";
+      this.ActionTools.Padding = new System.Windows.Forms.Padding(5);
       // 
       // ActionViewMoonMonths
       // 
@@ -669,10 +685,10 @@
       this.ActionViewMoonMonths.Name = "ActionViewMoonMonths";
       this.ActionViewMoonMonths.Click += new System.EventHandler(this.ActionViewMoonMonths_Click);
       // 
-      // ActionViewMoonMonthsSeparator
+      // SeparatorToolsMenuTop
       // 
-      this.ActionViewMoonMonthsSeparator.Name = "ActionViewMoonMonthsSeparator";
-      resources.ApplyResources(this.ActionViewMoonMonthsSeparator, "ActionViewMoonMonthsSeparator");
+      this.SeparatorToolsMenuTop.Name = "SeparatorToolsMenuTop";
+      resources.ApplyResources(this.SeparatorToolsMenuTop, "SeparatorToolsMenuTop");
       // 
       // ActionShowCelebrationsNotice
       // 
@@ -697,11 +713,11 @@
       this.ActionCalculateDateDiff.Name = "ActionCalculateDateDiff";
       this.ActionCalculateDateDiff.Click += new System.EventHandler(this.ActionCalculateDateDiff_Click);
       // 
-      // ActionGenerate
+      // ActionViewCelebrationsBoard
       // 
-      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
-      this.ActionGenerate.Name = "ActionGenerate";
-      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
+      resources.ApplyResources(this.ActionViewCelebrationsBoard, "ActionViewCelebrationsBoard");
+      this.ActionViewCelebrationsBoard.Name = "ActionViewCelebrationsBoard";
+      this.ActionViewCelebrationsBoard.Click += new System.EventHandler(this.ActionViewCelebrationsBoard_Click);
       // 
       // toolStripSeparator1
       // 
@@ -722,6 +738,30 @@
       this.ActionOpenSystemDateAndTime.Name = "ActionOpenSystemDateAndTime";
       this.ActionOpenSystemDateAndTime.Click += new System.EventHandler(this.ActionOpenSystemDateAndTime_Click);
       // 
+      // toolStripSeparator11
+      // 
+      this.toolStripSeparator11.Name = "toolStripSeparator11";
+      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      // 
+      // ActionOpenExportFolder
+      // 
+      resources.ApplyResources(this.ActionOpenExportFolder, "ActionOpenExportFolder");
+      this.ActionOpenExportFolder.Name = "ActionOpenExportFolder";
+      this.ActionOpenExportFolder.Click += new System.EventHandler(this.ActionOpenExportFolder_Click);
+      // 
+      // ActionGenerate
+      // 
+      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
+      this.ActionGenerate.Name = "ActionGenerate";
+      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
+      // 
+      // ActionVacuumAtNextStartup
+      // 
+      this.ActionVacuumAtNextStartup.CheckOnClick = true;
+      resources.ApplyResources(this.ActionVacuumAtNextStartup, "ActionVacuumAtNextStartup");
+      this.ActionVacuumAtNextStartup.Name = "ActionVacuumAtNextStartup";
+      this.ActionVacuumAtNextStartup.Click += new System.EventHandler(this.ActionVacuumAtNextStartup_Click);
+      // 
       // toolStripSeparator10
       // 
       this.toolStripSeparator10.Name = "toolStripSeparator10";
@@ -739,29 +779,12 @@
       this.ActionViewStats.Name = "ActionViewStats";
       this.ActionViewStats.Click += new System.EventHandler(this.ActionViewStats_Click);
       // 
-      // toolStripSeparator11
-      // 
-      this.toolStripSeparator11.Name = "toolStripSeparator11";
-      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
-      // 
-      // ActionOpenExportFolder
-      // 
-      resources.ApplyResources(this.ActionOpenExportFolder, "ActionOpenExportFolder");
-      this.ActionOpenExportFolder.Name = "ActionOpenExportFolder";
-      this.ActionOpenExportFolder.Click += new System.EventHandler(this.ActionOpenExportFolder_Click);
-      // 
-      // ActionVacuumAtNextStartup
-      // 
-      this.ActionVacuumAtNextStartup.CheckOnClick = true;
-      resources.ApplyResources(this.ActionVacuumAtNextStartup, "ActionVacuumAtNextStartup");
-      this.ActionVacuumAtNextStartup.Name = "ActionVacuumAtNextStartup";
-      this.ActionVacuumAtNextStartup.Click += new System.EventHandler(this.ActionVacuumAtNextStartup_Click);
-      // 
       // ActionWebLinks
       // 
       this.ActionWebLinks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionWebLinks, "ActionWebLinks");
       this.ActionWebLinks.Name = "ActionWebLinks";
+      this.ActionWebLinks.Padding = new System.Windows.Forms.Padding(5);
       // 
       // Sep6
       // 
@@ -800,6 +823,7 @@
             this.EditConfirmClosing});
       resources.ApplyResources(this.ActionSettings, "ActionSettings");
       this.ActionSettings.Name = "ActionSettings";
+      this.ActionSettings.Padding = new System.Windows.Forms.Padding(5);
       // 
       // MenuitemScreenPosition
       // 
@@ -949,6 +973,7 @@
             this.ActionViewGrid});
       resources.ApplyResources(this.ActionView, "ActionView");
       this.ActionView.Name = "ActionView";
+      this.ActionView.Padding = new System.Windows.Forms.Padding(5);
       // 
       // ActionViewReport
       // 
@@ -1086,10 +1111,6 @@
       resources.ApplyResources(this.MenuExit, "MenuExit");
       this.MenuExit.Name = "MenuExit";
       this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
-      // 
-      // PrintDialog
-      // 
-      this.PrintDialog.UseEXDialog = true;
       // 
       // TimerReminder
       // 
@@ -1376,7 +1397,6 @@
     private System.Windows.Forms.TabPage TabPageMonth;
     private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
     private System.Windows.Forms.ToolStripButton ActionPrint;
-    private System.Windows.Forms.PrintDialog PrintDialog;
     internal global::CodeProjectCalendar.NET.Calendar CalendarMonth;
     internal System.Windows.Forms.Panel PanelViewMonth;
     private System.Windows.Forms.Timer TimerBallon;
@@ -1405,21 +1425,7 @@
     private System.Windows.Forms.ToolStripDropDownButton ActionWebLinks;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
-    private System.Windows.Forms.ToolStripSeparator ActionViewMoonMonthsSeparator;
     private System.Windows.Forms.Timer TimerResumeReminder;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     private System.Windows.Forms.ToolStripMenuItem MenuWebLinks;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenSystemDateAndTime;
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu5;
@@ -1444,6 +1450,23 @@
     private System.Windows.Forms.ToolStripLabel LabelGridGoToToday;
     private System.Windows.Forms.SaveFileDialog SaveImageDialog;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenExportFolder;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+    private System.Windows.Forms.CheckBox EditEnumsAsTranslations;
+    private System.Windows.Forms.FolderBrowserDialog FolderDialog;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewCelebrationsBoard;
+    private System.Windows.Forms.ToolStripSeparator SeparatorToolsMenuTop;
   }
 }
 

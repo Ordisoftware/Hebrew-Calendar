@@ -170,7 +170,7 @@ namespace Ordisoftware.Core
           SelectionStart = pos + length;
           break;
         default:
-          throw new NotImplementedExceptionEx(CaretAfterPaste.ToStringFull());
+          throw new NotImplementedExceptionEx(CaretAfterPaste);
       }
     }
 

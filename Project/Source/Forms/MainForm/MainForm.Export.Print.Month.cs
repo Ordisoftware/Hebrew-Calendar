@@ -13,6 +13,8 @@
 /// <created> 2019-01 </created>
 /// <edited> 2020-12 </edited>
 using System;
+using System.Linq;
+using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -21,15 +23,38 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private void ExportPrintMonth()
+    private void ExportPrintMonth(ExportInterval interval)
     {
-      ExportPrintRun(true, (s, e) =>
+      var current = CalendarMonth.CalendarDate;
+      int countPages = 0;
+      bool askToContinue = true;
+      bool multi = interval.IsDefined;
+      if ( multi )
       {
-        int margin = Settings.PrintingMargin;
-        int margin2 = margin + margin;
-        var bitmap = CalendarMonth.GetBitmap();
+        CalendarMonth.CalendarDate = interval.Start.Value;
+        countPages = ( interval.End.Value.Year - interval.Start.Value.Year ) * 12;
+      }
+      int margin = Settings.PrintingMargin;
+      int margin2 = margin + margin;
+      double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
+      ExportPrintRun(Settings.PrintImageInLandscape, (s, e) =>
+      {
+        if ( askToContinue )
+          if ( Settings.PrintPageCountWarning > 0 && countPages > Settings.PrintPageCountWarning )
+            if ( !DisplayManager.QueryYesNo(SysTranslations.AskToPrintLotsOfPages.GetLang(countPages)) )
+            {
+              e.HasMorePages = false;
+              return;
+            }
+            else
+            {
+              var form = Application.OpenForms.ToList().LastOrDefault();
+              form?.Popup();
+              askToContinue = false;
+            }
+          else
+            askToContinue = false;
         var bounds = e.PageBounds;
-        double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
         bounds.Height = (int)( bounds.Width * ratio );
         if ( bounds.Height > e.PageBounds.Height )
         {
@@ -37,8 +62,33 @@ namespace Ordisoftware.Hebrew.Calendar
           bounds.Height = e.PageBounds.Height;
           bounds.Width = (int)( bounds.Height * ratio );
         }
-        e.Graphics.DrawImage(bitmap, margin, margin, bounds.Width - margin2, bounds.Height - margin2);
+        bool redone = false;
+        TwoPerPage:
+        var bitmap = CalendarMonth.GetBitmap();
+        int delta = !redone ? 0 : e.PageBounds.Height / 2;
+        e.Graphics.DrawImage(bitmap, margin, margin + delta, bounds.Width - margin2, bounds.Height - margin2);
+        if ( multi )
+        {
+          CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
+          if ( CalendarMonth.CalendarDate <= interval.End.Value )
+          {
+            e.HasMorePages = true;
+            if ( !redone && !e.PageSettings.Landscape )
+            {
+              redone = true;
+              goto TwoPerPage;
+            }
+          }
+          else
+          {
+            CalendarMonth.CalendarDate = interval.Start.Value;
+            e.HasMorePages = false;
+          }
+        }
+        else
+          e.HasMorePages = false;
       });
+      CalendarMonth.CalendarDate = current;
     }
 
   }

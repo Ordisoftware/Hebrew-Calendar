@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew.Calendar
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
         LastCelebrationReminded.Add(value, null);
       ActionViewMoonMonths.Visible = Globals.IsDevExecutable; // TODO remove when ready
-      ActionViewMoonMonthsSeparator.Visible = Globals.IsDevExecutable; // TODO remove when ready
+      SeparatorToolsMenuTop.Visible = Globals.IsDevExecutable; // TODO remove when ready
     }
 
     /// <summary>
@@ -124,6 +124,7 @@ namespace Ordisoftware.Hebrew.Calendar
       DebugManager.Enter();
       try
       {
+        EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
         UpdateTextCalendar();
         CalendarMonth.CalendarDateChanged += date => GoToDate(date);
         MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
@@ -503,8 +504,8 @@ namespace Ordisoftware.Hebrew.Calendar
                 MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? EventArgs.Empty : null);
                 break;
               case TrayIconClickOpen.NextCelebrationsForm:
-                if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
-                  CelebrationsForm.Instance.Close();
+                if ( NextCelebrationsForm.Instance != null && NextCelebrationsForm.Instance.Visible )
+                  NextCelebrationsForm.Instance.Close();
                 else
                   ActionViewCelebrations.PerformClick();
                 break;
@@ -520,7 +521,7 @@ namespace Ordisoftware.Hebrew.Calendar
                   });
                 break;
               default:
-                throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen.ToStringFull());
+                throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen);
             }
           else
         if ( e.Button == MouseButtons.Right )
@@ -761,6 +762,16 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionViewCelebrationsBoard for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewCelebrationsBoard_Click(object sender, EventArgs e)
+    {
+      new CelebrationsBoardForm().Show();
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionViewMoonMonths for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -937,10 +948,10 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewCelebrations_Click(object sender, EventArgs e)
     {
-      if ( CelebrationsForm.Instance != null && CelebrationsForm.Instance.Visible )
-        CelebrationsForm.Instance.BringToFront();
+      if ( NextCelebrationsForm.Instance != null && NextCelebrationsForm.Instance.Visible )
+        NextCelebrationsForm.Instance.BringToFront();
       else
-        CelebrationsForm.Run();
+        NextCelebrationsForm.Run();
     }
 
     /// <summary>
@@ -989,6 +1000,16 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by EditExportDataEnumsAsTranslations for checked changed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void EditExportDataEnumsAsTranslations_CheckedChanged(object sender, EventArgs e)
+    {
+      CalendarGrid.Invalidate();
+    }
+
+    /// <summary>
     /// Event handler. Called by CalendarGrid for cell formatting events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -1000,10 +1021,10 @@ namespace Ordisoftware.Hebrew.Calendar
         switch ( e.ColumnIndex )
         {
           case 7:
-            e.Value = ( (MoonRise)e.Value ).ToString();
+            e.Value = ( (MoonRiseOccuring)e.Value ).ToString();
             break;
           case 10:
-            e.Value = AppTranslations.MoonPhase.GetLang((MoonPhase)e.Value);
+            e.Value = ((MoonPhase)e.Value).ToStringExport(AppTranslations.MoonPhase);
             break;
           case 8:
             e.Value = (int)e.Value == 0 ? "" : "*";
@@ -1013,11 +1034,11 @@ namespace Ordisoftware.Hebrew.Calendar
             break;
           case 11:
             var season = (SeasonChange)e.Value;
-            e.Value = season == SeasonChange.None ? "" : AppTranslations.SeasonEvent.GetLang(season);
+            e.Value = season == SeasonChange.None ? "" : season.ToStringExport(AppTranslations.SeasonChange);
             break;
           case 12:
             var torah = (TorahEvent)e.Value;
-            e.Value = torah == TorahEvent.None ? "" : AppTranslations.TorahEvent.GetLang(torah);
+            e.Value = torah == TorahEvent.None ? "" : torah.ToStringExport(AppTranslations.TorahEvent);
             break;
         }
       });

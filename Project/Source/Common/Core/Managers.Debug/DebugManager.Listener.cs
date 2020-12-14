@@ -162,7 +162,7 @@ namespace Ordisoftware.Core
               limit = DateTime.Now.Date.AddMonths(-KeepCount);
               break;
             default:
-              throw new NotImplementedExceptionEx(Mode.ToStringFull());
+              throw new NotImplementedExceptionEx(Mode);
           }
           foreach ( var file in list.Where(f => f.Date <= limit) )
             try

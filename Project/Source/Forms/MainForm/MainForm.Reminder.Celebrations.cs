@@ -34,7 +34,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateLimit = dateNow.AddDays((int)Settings.ReminderCelebrationsInterval);
       var rows = from day in DataSet.LunisolarDays
                  where !RemindCelebrationDates.Contains(day.Date)
-                    && check((TorahEvent)day.TorahEvents)
+                    && check(day.TorahEventsAsEnum)
                     && SQLiteDate.ToDateTime(day.Date) >= dateNow
                     && SQLiteDate.ToDateTime(day.Date) <= dateLimit
                  select day;

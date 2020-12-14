@@ -24,6 +24,12 @@ namespace Ordisoftware.Hebrew.Calendar
   static public partial class AppTranslations
   {
 
+    static public string ToStringExport<T>(this Enum value, NullSafeDictionary<T, TranslationsDictionary> translations) 
+      where T : Enum
+    {
+      return Program.Settings.ExportDataEnumsAsTranslations ? translations.GetLang((T)value) : ( (T)value ).ToString();
+    }
+
     static public readonly TranslationsDictionary ApplicationDescription
       = new TranslationsDictionary
       {
@@ -98,8 +104,8 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary ViewSavedToFile
       = new TranslationsDictionary
       {
-        [Language.EN] = $"The view has been saved to file:{Globals.NL2}{{0}}",
-        [Language.FR] = $"La vue a été sauvée dans le fichier :{Globals.NL2}{{0}}",
+        [Language.EN] = $"The view has been saved to :{Globals.NL2}{{0}}",
+        [Language.FR] = $"La vue a été sauvée dans :{Globals.NL2}{{0}}",
       };
 
     static public readonly TranslationsDictionary ViewCopiedToClipboard

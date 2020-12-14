@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -24,38 +24,23 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class SearchLunarMonthForm : Form
   {
 
-    private bool Mutex;
-
-    private Data.DataSet.LunisolarDaysRow CurrentDay;
-
     public SearchLunarMonthForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       ActiveControl = ListItems;
+      SelectYear.Fill();
     }
 
     private void SearchEventForm_Load(object sender, EventArgs e)
     {
       this.CheckLocationOrCenterToMainFormElseScreen();
-      Mutex = true;
-      CurrentDay = MainForm.Instance.CurrentDay;
-      int yearSelected = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;
-      foreach ( int indexYear in MainForm.Instance.YearsIntervalArray )
-      {
-        int index = EditYear.Items.Add(indexYear);
-        if ( indexYear == yearSelected )
-          EditYear.SelectedIndex = index;
-      }
-      Mutex = false;
-      EditYear_SelectedIndexChanged(null, null);
     }
 
     private void SearchMonthForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( DialogResult == DialogResult.Cancel )
-        if ( CurrentDay != null )
-          MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date));
+      if ( DialogResult == DialogResult.Cancel && SelectYear.CurrentDay != null )
+        MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(SelectYear.CurrentDay.Date));
     }
 
     private void ListItems_DoubleClick(object sender, EventArgs e)
@@ -63,46 +48,12 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionOK.PerformClick();
     }
 
-    private void ActionFirst_Click(object sender, EventArgs e)
+    private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
     {
-      EditYear.SelectedIndex = 0; ;
-      if ( ActiveControl == ListItems ) ActiveControl = ActionNext;
-    }
-
-    private void ActionPrevious_Click(object sender, EventArgs e)
-    {
-      if ( EditYear.SelectedIndex > 0 ) EditYear.SelectedIndex--;
-      if ( ActiveControl == ListItems ) ActiveControl = ActionNext;
-    }
-
-    private void ActionNext_Click(object sender, EventArgs e)
-    {
-      if ( EditYear.SelectedIndex < EditYear.Items.Count - 1 ) EditYear.SelectedIndex++;
-      if ( ActiveControl == ListItems ) ActiveControl = ActionPrevious;
-    }
-
-    private void ActionLast_Click(object sender, EventArgs e)
-    {
-      EditYear.SelectedIndex = EditYear.Items.Count - 1;
-      if ( ActiveControl == ListItems ) ActiveControl = ActionPrevious;
-    }
-
-    private void UpdateNavigation()
-    {
-      ActionFirst.Enabled = EditYear.SelectedIndex != 0;
-      ActionPrevious.Enabled = ActionFirst.Enabled;
-      ActionLast.Enabled = EditYear.SelectedIndex != EditYear.Items.Count - 1;
-      ActionNext.Enabled = ActionLast.Enabled;
-    }
-
-    private void EditYear_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      if ( Mutex ) return;
-      UpdateNavigation();
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where day.IsNewMoon == 1
-                    && SQLiteDate.ToDateTime(day.Date).Year == (int)EditYear.SelectedItem
+                    && SQLiteDate.ToDateTime(day.Date).Year == (int)SelectYear.SelectedItem
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
@@ -113,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
           string str = SQLiteDate.ToDateTime(row.Date).ToLongDateString();
           item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
           item.Tag = row;
-          if ( (TorahEvent)row.TorahEvents == TorahEvent.NewYearD1 )
+          if ( row.TorahEventsAsEnum == TorahEvent.NewYearD1 )
           {
             item.Focused = true;
             item.Selected = true;
@@ -129,7 +80,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if ( Mutex ) return;
       if ( ListItems.SelectedItems.Count > 0 )
       {
         var row = (Data.DataSet.LunisolarDaysRow)ListItems.SelectedItems[0].Tag;

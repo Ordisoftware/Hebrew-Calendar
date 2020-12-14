@@ -32,6 +32,11 @@ namespace Ordisoftware.Core
     {
     }
 
+    public NotImplementedExceptionEx(Enum value)
+      : base(value.ToStringFull())
+    {
+    }
+
     public NotImplementedExceptionEx(string message)
       : base(message)
     {

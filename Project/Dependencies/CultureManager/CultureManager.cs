@@ -289,7 +289,7 @@ namespace Infralution.Localization
         /// <returns>True if the style should be serialized</returns>
         private bool ShouldSerializeExcludeProperties()
         {
-            return (_excludeProperties.Count > 0); ;
+            return (_excludeProperties.Count > 0);
         }
 
         /// <summary>

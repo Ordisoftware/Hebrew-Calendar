@@ -22,14 +22,14 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class CelebrationsForm : Form
+  public partial class NextCelebrationsForm : Form
   {
 
-    static public CelebrationsForm Instance { get; private set; }
+    static public NextCelebrationsForm Instance { get; private set; }
 
-    static CelebrationsForm()
+    static NextCelebrationsForm()
     {
-      Instance = new CelebrationsForm();
+      Instance = new NextCelebrationsForm();
     }
 
     static public void Run()
@@ -44,19 +44,18 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateEnd = dateStart.AddYears(1);
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where SQLiteDate.ToDateTime(day.Date) >= dateStart && SQLiteDate.ToDateTime(day.Date) <= dateEnd
-                    && ( (SeasonChange)day.SeasonChange != SeasonChange.None
-                    || (TorahEvent)day.TorahEvents != TorahEvent.None )
+                    && ( day.SeasonChangeAsEnum != SeasonChange.None || day.TorahEventsAsEnum != TorahEvent.None )
                  select day;
       foreach ( var row in rows )
       {
         var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SQLiteDate.ToDateTime(row.Date).ToLongDateString());
-        if ( (SeasonChange)row.SeasonChange != SeasonChange.None )
+        if ( row.SeasonChangeAsEnum != SeasonChange.None )
           Instance.ListView.Items.Add(item)
-                                 .SubItems.Add(AppTranslations.SeasonEvent.GetLang((SeasonChange)row.SeasonChange))
+                                 .SubItems.Add(AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum))
                                  .Tag = row.Date;
-        if ( (TorahEvent)row.TorahEvents != TorahEvent.None )
+        if ( row.TorahEventsAsEnum != TorahEvent.None )
           Instance.ListView.Items.Add(item)
-                                 .SubItems.Add(AppTranslations.TorahEvent.GetLang((TorahEvent)row.TorahEvents))
+                                 .SubItems.Add(AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum))
                                  .Tag = row.Date;
       }
       Instance.ListView.Columns[Instance.ListView.Columns.Count - 1].Width = -2;
@@ -65,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.BringToFront();
     }
 
-    private CelebrationsForm()
+    private NextCelebrationsForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

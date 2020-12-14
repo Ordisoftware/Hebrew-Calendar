@@ -226,7 +226,7 @@
     <value>CalendarMonth</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Type" xml:space="preserve">
-    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Parent" xml:space="preserve">
     <value>PanelViewMonth</value>
@@ -285,6 +285,42 @@
   <data name="&gt;&gt;TabPageMonth.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="EditEnumsAsTranslations.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="EditEnumsAsTranslations.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditEnumsAsTranslations.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="EditEnumsAsTranslations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditEnumsAsTranslations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>740, 4</value>
+  </data>
+  <data name="EditEnumsAsTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 17</value>
+  </data>
+  <data name="EditEnumsAsTranslations.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="EditEnumsAsTranslations.Text" xml:space="preserve">
+    <value>Export of enums as humanized translations</value>
+  </data>
+  <data name="&gt;&gt;EditEnumsAsTranslations.Name" xml:space="preserve">
+    <value>EditEnumsAsTranslations</value>
+  </data>
+  <data name="&gt;&gt;EditEnumsAsTranslations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditEnumsAsTranslations.Parent" xml:space="preserve">
+    <value>PanelViewGrid</value>
+  </data>
+  <data name="&gt;&gt;EditEnumsAsTranslations.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
     <value>Date</value>
   </data>
@@ -319,19 +355,16 @@
     <value>Moonrise</value>
   </data>
   <data name="dataGridViewTextBoxColumn6.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>55</value>
   </data>
   <data name="dataGridViewTextBoxColumn7.HeaderText" xml:space="preserve">
     <value>Moonset</value>
   </data>
   <data name="dataGridViewTextBoxColumn7.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>55</value>
   </data>
   <data name="dataGridViewTextBoxColumn8.HeaderText" xml:space="preserve">
-    <value>MoonriseType</value>
-  </data>
-  <data name="dataGridViewTextBoxColumn8.Width" type="System.Int32, mscorlib">
-    <value>80</value>
+    <value>MoonriseOccuring</value>
   </data>
   <data name="dataGridViewTextBoxColumn9.HeaderText" xml:space="preserve">
     <value>IsNewMoon</value>
@@ -348,17 +381,20 @@
   <data name="dataGridViewTextBoxColumn11.HeaderText" xml:space="preserve">
     <value>MoonPhase</value>
   </data>
+  <data name="dataGridViewTextBoxColumn11.Width" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
   <data name="dataGridViewTextBoxColumn12.HeaderText" xml:space="preserve">
     <value>SeasonChange</value>
   </data>
   <data name="dataGridViewTextBoxColumn12.Width" type="System.Int32, mscorlib">
-    <value>110</value>
+    <value>105</value>
   </data>
   <data name="dataGridViewTextBoxColumn13.HeaderText" xml:space="preserve">
     <value>TorahEvents</value>
   </data>
   <data name="dataGridViewTextBoxColumn13.Width" type="System.Int32, mscorlib">
-    <value>120</value>
+    <value>110</value>
   </data>
   <metadata name="LunisolarDaysBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>744, 20</value>
@@ -388,7 +424,7 @@
     <value>PanelViewGrid</value>
   </data>
   <data name="&gt;&gt;CalendarGrid.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="LunisolarDaysBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>948, 22</value>
@@ -530,7 +566,7 @@
     <value>PanelViewGrid</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysBindingNavigator.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="PanelViewGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1386,7 +1422,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 46</value>
+    <value>55, 46</value>
   </data>
   <data name="ActionResetReminder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1562,7 +1598,7 @@
   <data name="ActionViewMoonMonths.Text" xml:space="preserve">
     <value>Lunar months description</value>
   </data>
-  <data name="ActionViewMoonMonthsSeparator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SeparatorToolsMenuTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 6</value>
   </data>
   <data name="ActionShowCelebrationsNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1636,32 +1672,37 @@
   <data name="ActionCalculateDateDiff.Text" xml:space="preserve">
     <value>Dates difference calculator</value>
   </data>
-  <data name="ActionGenerate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionViewCelebrationsBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAjBJREFUOE+Nkm9IE2Ecx9cLexkZ0YveVS/qhZW7bNNJt2FNLHzRq4TeRBQW1LI/
-        UJQvMkNiFJGpzdvWRS8Mxkb0YlAa1ovSoLBomefubqfZpmUlm9ttt399e7YbJDjnPvCD53l+n+893O9O
-        sxSBaTTw9v3w24zwP6DVstHgGRMEpxki24SCWpzPPfStXyNngRSHbHwM2egbQPEhHRkFbzehu7XKUlCL
-        M95b74vyt5Gc9yD8wYjwmBnp8EvMDVnw6b7BT5R1qrkCvL0e6QUP5EAnIh+bEZ/qhDLrJq9Sh03rK3YW
-        tOII/fuo4NNm8oBniE22IvqlBek/HoS8J+C+UmUlyhrVXAFfT13X7xELUj+ciE0cQ4w7jllvIya7teD7
-        9oK36SEwBohOGgHWtHyYX3t1PlnsghKyIs6fzlcmPIjs4gtkFr3IRlzIRNyYcR3A+3u1rwux/wiMnkgs
-        kqEOJKcvISG1ISFakAicI/sLUKbOY/qJCe/u1AwSfZuaWoLoqEXQ00RuMOPbgJF8wmEowetIfb8G2U/C
-        Aw143rGLIepWNbGcPbm6e3LLmRlXA/7Kw0jP3UBcuAzRoQfbtuMq6W/Om6Xg+rRD869aANkFRWonQ9Ph
-        8cXt7aRVqRqrINi1iHI3kQpaSbgGh/WVB8nxBrW7CiJLHQ04KCyMnoL0SIcj9MZD5LhC7ZYBx2jfSg8p
-        TPTv/km2uZmszTfKRWIpCI7qCFmW/m1LkLu1Wl2Wg0bzD7bgTNA/q3ncAAAAAElFTkSuQmCC
+        wwAADsMBx2+oZAAAAn1JREFUOE+dkstPE2EUxWfnK8aVYeMfQeIWTcSF/5ELd6gQoDPtlEILlhiUiNsW
+        LB06bXkaY0RU2pnysm+UlvJoEW2RcjzfV3RnYvySM797b++5vfNQbnRHNtoeGrjeFaam/1FhCA+9AaXt
+        kYGJRAX+lb2/SPz2W618lHxJj/AqV7tmcPdFAbeeZdAhlUbHWBq3yTvj1PPP1BY6yc5x6pz3JnK4Rq9y
+        X/Whvl9CrbyNt/NRVEtFVHcKOC4X0RdcRTBVQ8CqSaqTq5i0DhFMHiC0dowHmheKx6XiW3Uf1UoZb+bj
+        ONzdwQF1VN1DdySHQAEI5IEg2WdmMbVZx1TqCKHNBny6A8qAS0NvaAM9wSR6J5PoCSTwmHG3mUfssoLo
+        FeqSghg5y7wvmkP/VBLq9DoGdU0MUBHPNxHP/IDzVQKx9HeYmToiu4BJk3EMGAcUKYaZrEezDekRXjng
+        9RdgqdCAHkpiMV/HQv4EczSJAfEGED+iSJGL+kLhJ5bo+TPAY27BE7YxaNgYmE7CzVifLyJ6UUGE6xsX
+        WhS5qLvDKemRA9xOFZ/2gY+7TXgNCx9Kp1jZofYAz+I23n8H3nF9QZGL+kqpKT3Cq+i88A3BZsE3Y8Oq
+        nCHBYRYbvZF18I1hlbGgzBkn2GNXAeGVG/jn0ngSTcFPjZg2hmcsSZH7IjaGuJmXw4fNNckhamQ23Rrg
+        0lQUT4A8VxyNryHHdTN8aIL+2DrEOT0DmuTy8rLkqawCmipugd9BhUmZTWOLWfD28JUdgk8Xsq3O82Pb
+        1nnUOk6N34Fb12u6U4NLc0DnNoJOtV9SbKepDjgc/ZQDKv9RUEijWadX4Wmnbv6flPZfYGzwKZiwNXoA
+        AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionGenerate.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionViewCelebrationsBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionGenerate.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="ActionViewCelebrationsBoard.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionViewCelebrationsBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F2</value>
   </data>
-  <data name="ActionGenerate.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionViewCelebrationsBoard.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 22</value>
   </data>
-  <data name="ActionGenerate.Text" xml:space="preserve">
-    <value>Generate calendar</value>
+  <data name="ActionViewCelebrationsBoard.Text" xml:space="preserve">
+    <value>Celebrations board</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 6</value>
@@ -1725,6 +1766,97 @@
   </data>
   <data name="ActionOpenSystemDateAndTime.Text" xml:space="preserve">
     <value>Windows date and time</value>
+  </data>
+  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 6</value>
+  </data>
+  <data name="ActionOpenExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKBSURBVDhPhZJbSJNxGMb/d7UiL4OuowgiPIwVlufpugsi
+        igKhw5WakSc85Fp1kYKC6Txs00qJuintIo8zNcMoEGwHnc7ZtjSzsER0ZM7T0/Ptm7Yo8oEf//f7vvd9
+        eP/v+wm7QT1vrYmFRX88gBTb9LHTlvrEwzZjUpS9TqPcokGjdBhTjolQSQVY+wD8dMqsTGCoQoX3VdFb
+        pqFI+XZD0mywXAiL/gQLHfDbLmHZehnr39qApXFg2SXjl5iQzxWy4Q2YDJvUqt8GS4PwO9JJJvwjGVhh
+        vDqahvWxNGA8A5i4GiSdBi4M18agRXs0PGgQA/j6sTqehVVXLsljYg7guQ5MXsP885Nw66PgqZaIhLcm
+        EpNGFabqozFpim6hAWfg62JnBdj4WMwiMp2P1MYnEHmvIfL7IQp4FoZQRLQDiCh5CmGpjuMVXsDTfBqD
+        ZSoMlSvhqjgSKNxOCp0ZwlqbgGV3JZxNydyGG7wLPzkgcrvlrAG+f6uBrv0T8E7DOAW6Vm6NUmjbIWx1
+        SZh9k42Znkxg8SXg5Qw+Z0FkmwNJt1vduNvhQVmXB6WdXpQwLm3nNijZwKCGu/kcfrgqgLlHwMwd4PtN
+        GsgdTPn5ag2oNDvxlecXcq+L/wulKKaB3ZTMvcaz9WccZgO7qOJMynkFdkPNsWBhAzB2j8HH50ViYCwp
+        YGA1xi/YjWqaJPBPi4OdW/HWKDn5vkCSyTyC+z2jaHrlxMPeUTxg3NgbYkCFF54/dDHv7MFUiZwzBy5c
+        Sdx7ShT9uYXHfXKRpM04MIOgdpNdIewQ2u3XGKbr2DL4S2EFzf17mKAobsPOG2TzJFLrUvG+W52LwfR/
+        aj9R/h8R8QvYyZvV54yKzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionOpenExportFolder.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionOpenExportFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionOpenExportFolder.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+E</value>
+  </data>
+  <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 22</value>
+  </data>
+  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
+    <value>Open export folder</value>
+  </data>
+  <data name="ActionGenerate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAjBJREFUOE+Nkm9IE2Ecx9cLexkZ0YveVS/qhZW7bNNJt2FNLHzRq4TeRBQW1LI/
+        UJQvMkNiFJGpzdvWRS8Mxkb0YlAa1ovSoLBomefubqfZpmUlm9ttt399e7YbJDjnPvCD53l+n+893O9O
+        sxSBaTTw9v3w24zwP6DVstHgGRMEpxki24SCWpzPPfStXyNngRSHbHwM2egbQPEhHRkFbzehu7XKUlCL
+        M95b74vyt5Gc9yD8wYjwmBnp8EvMDVnw6b7BT5R1qrkCvL0e6QUP5EAnIh+bEZ/qhDLrJq9Sh03rK3YW
+        tOII/fuo4NNm8oBniE22IvqlBek/HoS8J+C+UmUlyhrVXAFfT13X7xELUj+ciE0cQ4w7jllvIya7teD7
+        9oK36SEwBohOGgHWtHyYX3t1PlnsghKyIs6fzlcmPIjs4gtkFr3IRlzIRNyYcR3A+3u1rwux/wiMnkgs
+        kqEOJKcvISG1ISFakAicI/sLUKbOY/qJCe/u1AwSfZuaWoLoqEXQ00RuMOPbgJF8wmEowetIfb8G2U/C
+        Aw143rGLIepWNbGcPbm6e3LLmRlXA/7Kw0jP3UBcuAzRoQfbtuMq6W/Om6Xg+rRD869aANkFRWonQ9Ph
+        8cXt7aRVqRqrINi1iHI3kQpaSbgGh/WVB8nxBrW7CiJLHQ04KCyMnoL0SIcj9MZD5LhC7ZYBx2jfSg8p
+        TPTv/km2uZmszTfKRWIpCI7qCFmW/m1LkLu1Wl2Wg0bzD7bgTNA/q3ncAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionGenerate.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionGenerate.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+G</value>
+  </data>
+  <data name="ActionGenerate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 22</value>
+  </data>
+  <data name="ActionGenerate.Text" xml:space="preserve">
+    <value>Generate calendar</value>
+  </data>
+  <data name="ActionVacuumAtNextStartup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKeSURBVDhPfZLJT1NRFMbvAlf+AW6NiSs3GoMLEySRMQTj
+        QhQiYAQcSYgoYgBDBBEsLUVodSUx0ZioBAPlda5VlDKVFkqRqZXZVksxKFCHuPg8R55BcDjJl5d7z/e7
+        Ofe7T/yqVJWITlKJx7FKEUmsFfibuMce9srYWqWoxMU0TRSq9btxz5GIdm8GdEPpG8R73GMPe5mRcSH4
+        dOPEORjHT6N9NA+6kVxZObLW1twzkIe9zMi4EHE3BSIYgH+1Ga4FLToDNaTqP+Ra0JDnCXndYEbGhYin
+        hW7oGPrfqTD3VY9PGCS58BH9sly0HsDsNyPcoQYYRnPAjIwLkUDjtHnS0OLJQBuNrPcVwDpbhu5wAxwL
+        atjfVsA0dRnSRD50r09CGjmBBMVvB/B9JG862oazoR8/C/NkEZ7PV6CT4J5FDTqC1bDNlMH0phD6sTOU
+        Vc7GDA6UCH1J83aozPvwwHkERjK+DFahe7ERzqU76AzVwjJ9BQ/dx6G2xaC0ZSeYkXEhYsvF02X0wuKr
+        xN2uTNRa46G0JqPuWSrU9kNQ2VKgtCWiqTsLFn8VltEHZmScQqT7SPTO7lA9At/N+IxhStqDFQpzhcJb
+        pW8EXupZ4AlrYRrL2xQiHbAeYi4M/gLYZq+iJ9wIR7ge9kAlzFPF/w+R/7ZWbxYkCsk0eQn2+Wt09zp6
+        iUa8CN6AdaYURv8FSKOnYBjbFGKyUqCVJpDofY2+fFini9ERuI6u8C30fbiNV+8VsM+VwzpVBLPvPE2Q
+        jSRiZFyImEKhTtNGocYQjUeDmXAEK+BcrIdnpQnDkftwLWnRG1Kg2ZsLhWU/jmq2gBkZ/1nbdh0W2QfL
+        hYXu9oUDiqvZKN7jHnvYy8waul5bSTtIe0h7/yHusYe9VEL8ADwuLVho+a2eAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionVacuumAtNextStartup.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionVacuumAtNextStartup.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionVacuumAtNextStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 22</value>
+  </data>
+  <data name="ActionVacuumAtNextStartup.Text" xml:space="preserve">
+    <value>Optimize data at next startup</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 6</value>
@@ -1791,67 +1923,6 @@
   <data name="ActionViewStats.Text" xml:space="preserve">
     <value>Usage statistics</value>
   </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 6</value>
-  </data>
-  <data name="ActionOpenExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKBSURBVDhPhZJbSJNxGMb/d7UiL4OuowgiPIwVlufpugsi
-        igKhw5WakSc85Fp1kYKC6Txs00qJuintIo8zNcMoEGwHnc7ZtjSzsER0ZM7T0/Ptm7Yo8oEf//f7vvd9
-        eP/v+wm7QT1vrYmFRX88gBTb9LHTlvrEwzZjUpS9TqPcokGjdBhTjolQSQVY+wD8dMqsTGCoQoX3VdFb
-        pqFI+XZD0mywXAiL/gQLHfDbLmHZehnr39qApXFg2SXjl5iQzxWy4Q2YDJvUqt8GS4PwO9JJJvwjGVhh
-        vDqahvWxNGA8A5i4GiSdBi4M18agRXs0PGgQA/j6sTqehVVXLsljYg7guQ5MXsP885Nw66PgqZaIhLcm
-        EpNGFabqozFpim6hAWfg62JnBdj4WMwiMp2P1MYnEHmvIfL7IQp4FoZQRLQDiCh5CmGpjuMVXsDTfBqD
-        ZSoMlSvhqjgSKNxOCp0ZwlqbgGV3JZxNydyGG7wLPzkgcrvlrAG+f6uBrv0T8E7DOAW6Vm6NUmjbIWx1
-        SZh9k42Znkxg8SXg5Qw+Z0FkmwNJt1vduNvhQVmXB6WdXpQwLm3nNijZwKCGu/kcfrgqgLlHwMwd4PtN
-        GsgdTPn5ag2oNDvxlecXcq+L/wulKKaB3ZTMvcaz9WccZgO7qOJMynkFdkPNsWBhAzB2j8HH50ViYCwp
-        YGA1xi/YjWqaJPBPi4OdW/HWKDn5vkCSyTyC+z2jaHrlxMPeUTxg3NgbYkCFF54/dDHv7MFUiZwzBy5c
-        Sdx7ShT9uYXHfXKRpM04MIOgdpNdIewQ2u3XGKbr2DL4S2EFzf17mKAobsPOG2TzJFLrUvG+W52LwfR/
-        aj9R/h8R8QvYyZvV54yKzwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionOpenExportFolder.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionOpenExportFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
-  </data>
-  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
-    <value>Open export folder</value>
-  </data>
-  <data name="ActionVacuumAtNextStartup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKeSURBVDhPfZLJT1NRFMbvAlf+AW6NiSs3GoMLEySRMQTj
-        QhQiYAQcSYgoYgBDBBEsLUVodSUx0ZioBAPlda5VlDKVFkqRqZXZVksxKFCHuPg8R55BcDjJl5d7z/e7
-        Ofe7T/yqVJWITlKJx7FKEUmsFfibuMce9srYWqWoxMU0TRSq9btxz5GIdm8GdEPpG8R73GMPe5mRcSH4
-        dOPEORjHT6N9NA+6kVxZObLW1twzkIe9zMi4EHE3BSIYgH+1Ga4FLToDNaTqP+Ra0JDnCXndYEbGhYin
-        hW7oGPrfqTD3VY9PGCS58BH9sly0HsDsNyPcoQYYRnPAjIwLkUDjtHnS0OLJQBuNrPcVwDpbhu5wAxwL
-        atjfVsA0dRnSRD50r09CGjmBBMVvB/B9JG862oazoR8/C/NkEZ7PV6CT4J5FDTqC1bDNlMH0phD6sTOU
-        Vc7GDA6UCH1J83aozPvwwHkERjK+DFahe7ERzqU76AzVwjJ9BQ/dx6G2xaC0ZSeYkXEhYsvF02X0wuKr
-        xN2uTNRa46G0JqPuWSrU9kNQ2VKgtCWiqTsLFn8VltEHZmScQqT7SPTO7lA9At/N+IxhStqDFQpzhcJb
-        pW8EXupZ4AlrYRrL2xQiHbAeYi4M/gLYZq+iJ9wIR7ge9kAlzFPF/w+R/7ZWbxYkCsk0eQn2+Wt09zp6
-        iUa8CN6AdaYURv8FSKOnYBjbFGKyUqCVJpDofY2+fFini9ERuI6u8C30fbiNV+8VsM+VwzpVBLPvPE2Q
-        jSRiZFyImEKhTtNGocYQjUeDmXAEK+BcrIdnpQnDkftwLWnRG1Kg2ZsLhWU/jmq2gBkZ/1nbdh0W2QfL
-        hYXu9oUDiqvZKN7jHnvYy8waul5bSTtIe0h7/yHusYe9VEL8ADwuLVho+a2eAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionVacuumAtNextStartup.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionVacuumAtNextStartup.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionVacuumAtNextStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
-  </data>
-  <data name="ActionVacuumAtNextStartup.Text" xml:space="preserve">
-    <value>Optimize data at next startup</value>
-  </data>
   <data name="ActionTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1895,7 +1966,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 46</value>
+    <value>55, 46</value>
   </data>
   <data name="ActionWebLinks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1941,7 +2012,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionWebLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 46</value>
+    <value>55, 46</value>
   </data>
   <data name="Sep6.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
@@ -2267,7 +2338,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 46</value>
+    <value>55, 46</value>
   </data>
   <data name="ActionViewReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2423,7 +2494,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 46</value>
+    <value>55, 46</value>
   </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -2778,9 +2849,6 @@
   <data name="TrayIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <metadata name="PrintDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>395, 54</value>
-  </metadata>
   <metadata name="TimerReminder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>606, 54</value>
   </metadata>
@@ -2797,8 +2865,11 @@
     <value>18, 50</value>
   </metadata>
   <data name="SaveImageDialog.Filter" xml:space="preserve">
-    <value>PNG files|*.png</value>
+    <value>PNG files|*.png|JPEG files|*.jpg|TIFF files|*.tiff|BMP files|*.bmp</value>
   </data>
+  <metadata name="FolderDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>389, 55</value>
+  </metadata>
   <metadata name="LunisolarDaysTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>555, 19</value>
   </metadata>
@@ -3030,10 +3101,10 @@
   <data name="&gt;&gt;ActionViewMoonMonths.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionViewMoonMonthsSeparator.Name" xml:space="preserve">
-    <value>ActionViewMoonMonthsSeparator</value>
+  <data name="&gt;&gt;SeparatorToolsMenuTop.Name" xml:space="preserve">
+    <value>SeparatorToolsMenuTop</value>
   </data>
-  <data name="&gt;&gt;ActionViewMoonMonthsSeparator.Type" xml:space="preserve">
+  <data name="&gt;&gt;SeparatorToolsMenuTop.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionShowCelebrationsNotice.Name" xml:space="preserve">
@@ -3060,10 +3131,10 @@
   <data name="&gt;&gt;ActionCalculateDateDiff.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionGenerate.Name" xml:space="preserve">
-    <value>ActionGenerate</value>
+  <data name="&gt;&gt;ActionViewCelebrationsBoard.Name" xml:space="preserve">
+    <value>ActionViewCelebrationsBoard</value>
   </data>
-  <data name="&gt;&gt;ActionGenerate.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionViewCelebrationsBoard.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
@@ -3084,6 +3155,30 @@
   <data name="&gt;&gt;ActionOpenSystemDateAndTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
+    <value>toolStripSeparator11</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenExportFolder.Name" xml:space="preserve">
+    <value>ActionOpenExportFolder</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenExportFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionGenerate.Name" xml:space="preserve">
+    <value>ActionGenerate</value>
+  </data>
+  <data name="&gt;&gt;ActionGenerate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionVacuumAtNextStartup.Name" xml:space="preserve">
+    <value>ActionVacuumAtNextStartup</value>
+  </data>
+  <data name="&gt;&gt;ActionVacuumAtNextStartup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator10.Name" xml:space="preserve">
     <value>toolStripSeparator10</value>
   </data>
@@ -3100,24 +3195,6 @@
     <value>ActionViewStats</value>
   </data>
   <data name="&gt;&gt;ActionViewStats.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
-    <value>toolStripSeparator11</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenExportFolder.Name" xml:space="preserve">
-    <value>ActionOpenExportFolder</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenExportFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionVacuumAtNextStartup.Name" xml:space="preserve">
-    <value>ActionVacuumAtNextStartup</value>
-  </data>
-  <data name="&gt;&gt;ActionVacuumAtNextStartup.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionWebLinks.Name" xml:space="preserve">
@@ -3384,12 +3461,6 @@
   <data name="&gt;&gt;MenuExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PrintDialog.Name" xml:space="preserve">
-    <value>PrintDialog</value>
-  </data>
-  <data name="&gt;&gt;PrintDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PrintDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;TimerReminder.Name" xml:space="preserve">
     <value>TimerReminder</value>
   </data>
@@ -3419,6 +3490,12 @@
   </data>
   <data name="&gt;&gt;SaveImageDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FolderDialog.Name" xml:space="preserve">
+    <value>FolderDialog</value>
+  </data>
+  <data name="&gt;&gt;FolderDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn1</value>
@@ -3508,19 +3585,19 @@
     <value>DataSet</value>
   </data>
   <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSet, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Calendar.Data.DataSet, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysTableAdapter.Name" xml:space="preserve">
     <value>LunisolarDaysTableAdapter</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.Hebrew.Calendar, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

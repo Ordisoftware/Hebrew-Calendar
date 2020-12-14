@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -76,6 +76,26 @@ namespace Ordisoftware.Hebrew.Calendar
           [Language.EN] = "Sunday",
           [Language.FR] = "Dimanche"
         }
+      };
+
+    static public readonly NullSafeDictionary<MoonRiseOccuring, TranslationsDictionary> MoonRiseOccuring
+      = new NullSafeDictionary<MoonRiseOccuring, TranslationsDictionary>
+      {
+        [Calendar.MoonRiseOccuring.AfterSet] = new TranslationsDictionary
+        {
+          [Language.EN] = "After the set",
+          [Language.FR] = "Après le lever"
+        },
+        [Calendar.MoonRiseOccuring.BeforeSet] = new TranslationsDictionary
+        {
+          [Language.EN] = "Before the set",
+          [Language.FR] = "Avant le lever"
+        },
+        [Calendar.MoonRiseOccuring.NextDay] = new TranslationsDictionary
+        {
+          [Language.EN] = "The next day",
+          [Language.FR] = "Le jour d'après"
+        },
       };
 
     static public readonly NullSafeDictionary<MoonPhase, TranslationsDictionary> MoonPhase
@@ -178,30 +198,30 @@ namespace Ordisoftware.Hebrew.Calendar
         }
       };
 
-    static public readonly NullSafeDictionary<SeasonChange, TranslationsDictionary> SeasonEvent
+    static public readonly NullSafeDictionary<SeasonChange, TranslationsDictionary> SeasonChange
       = new NullSafeDictionary<SeasonChange, TranslationsDictionary>
       {
-        [SeasonChange.None] = new TranslationsDictionary
+        [Calendar.SeasonChange.None] = new TranslationsDictionary
         {
           [Language.EN] = "",
           [Language.FR] = ""
         },
-        [SeasonChange.SpringEquinox] = new TranslationsDictionary
+        [Calendar.SeasonChange.SpringEquinox] = new TranslationsDictionary
         {
           [Language.EN] = "Spring equinox",
           [Language.FR] = "Equinoxe de printemps"
         },
-        [SeasonChange.SummerSolstice] = new TranslationsDictionary
+        [Calendar.SeasonChange.SummerSolstice] = new TranslationsDictionary
         {
           [Language.EN] = "Summer solstice",
           [Language.FR] = "Solstice d'été"
         },
-        [SeasonChange.AutumnEquinox] = new TranslationsDictionary
+        [Calendar.SeasonChange.AutumnEquinox] = new TranslationsDictionary
         {
           [Language.EN] = "Autumn equinox",
           [Language.FR] = "Equinoxe d'automne"
         },
-        [SeasonChange.WinterSolstice] = new TranslationsDictionary
+        [Calendar.SeasonChange.WinterSolstice] = new TranslationsDictionary
         {
           [Language.EN] = "Winter solstice",
           [Language.FR] = "Solstice d'hiver"

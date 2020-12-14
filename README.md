@@ -34,12 +34,13 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 - Event reminder for shabat and celebrations.
 - Search for a day or a celebration.
 - Window listing the next celebrations.
+- Window showing a celebrations board by years.
 - Navigation window by day from the tray icon.
 - Calculate the difference between two dates with bookmarks.
 - Copy to the clipboard and print the view.
 - Export of the report in a text file.
 - Export of the month in an image file.
-- Export of the data in a CSV file.
+- Export of the data in a CSV and JSON file.
 - English, French.
 
 ## Review
@@ -151,10 +152,12 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Ctrl + S | Save current view to a file |
 | Ctrl + C | Copy current view to clipboard |
 | Ctrl + P | Print current view |
+| Alt + E | Open export folder |
 | Alt + C | Open windows calculator |
 | Alt + T | Open windows date and time settings |
+| Alt + G | Generate calendar |
 | Ctrl + F1 | Dates difference calculator |
-| Ctrl + F2 | Generate calendar data |
+| Ctrl + F2 | Celebrations board |
 | Ctrl + F11 | Current log window |
 | Ctrl + F12 | Statistics window |
 | Home | First month available in the database |
@@ -170,10 +173,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
-- Add moon months description form and menu in tools.
-- Add select months interval for saving and printing month view.
-- Add print data grid.
 - Add dark theme for month view.
+- Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
@@ -185,11 +186,23 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.12.__ - Version 5.14
+#### 2020.12.__ - Version 6.0
 
-- Add export data to JSON file.
+>>>>- Add window celebrations board with selection of the years interval and clickable dates.
+>>>>- Add export celebrations board in TXT/HTML/DOCX/CVS/JSON/PNG/JPEG/TIFF/BMP.
+- Add advanced print preview window.
+- Add select a years interval to export, else process the entire report/grid or only the current month view.
+- Add option to set the default print month view page orientation.
 - Add option to set preferred data export file format.
+- Add export data to JSON file.
 - Add Newtonsoft.Json NuGet package.
+- Add MoreLINQ NuGet package.
+- Add option for grid export to use enums names instead of translations
+- Set save to single image in PNG/JPEG/TIFF/BMP and series in PNG.
+- Fix CSV export to add moon rise type field.
+- Few improvements.
+- Few fixes.
+- Code refactoring.
 
 #### 2020.12.13 - Version 5.13
 
