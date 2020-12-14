@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [ViewMode.Text] = (interval) =>
         {
-          Clipboard.SetText(CalendarText.Text);
+          Clipboard.SetText(string.Join(Globals.NL, GetTextReportLines(interval)));
           return true;
         },
         [ViewMode.Month] = (interval) =>

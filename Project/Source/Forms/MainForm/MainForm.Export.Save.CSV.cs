@@ -42,7 +42,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var result = new StringBuilder();
         result.AppendLine(headerTxt);
         if ( DataSet.LunisolarDays.Count == 0 ) return null;
-        var items = GetDays(interval);
+        var items = GetDayRows(interval);
         var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                         items.Count(),

@@ -16,6 +16,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Globalization;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -47,16 +48,34 @@ namespace Ordisoftware.Hebrew.Calendar
         after?.Invoke(view);
     }
 
-    private IEnumerable<Data.DataSet.LunisolarDaysRow> GetDays(ExportInterval interval)
+    private IEnumerable<Data.DataSet.LunisolarDaysRow> GetDayRows(ExportInterval interval)
     {
-      if ( interval.IsDefined )
+      if ( !interval.IsDefined ) return DataSet.LunisolarDays;
+      string start = SQLiteDate.ToString(interval.Start.Value);
+      string end = SQLiteDate.ToString(interval.End.Value);
+      return DataSet.LunisolarDays.Where(day => day.Date.CompareTo(start) >= 0 && day.Date.CompareTo(end) <= 0);
+    }
+
+    private IEnumerable<string> GetTextReportLines(ExportInterval interval)
+    {
+      if ( !interval.IsDefined ) return CalendarText.Lines;
+      int lengthToCheck = CalendarFieldSize[ReportFieldText.Date] + ColumnSepLeft.Length;
+      int lengthToExtract = ColumnSepLeft.Length + 4;
+      var linesFiltered = CalendarText.Lines
+                                      .Skip(3)
+                                      .SkipWhile(line => filter(line, interval.Start.Value, true))
+                                      .TakeWhile(line => filter(line, interval.End.Value, false));
+      return CalendarText.Lines.Take(3).Concat(linesFiltered).Append(CalendarText.Lines.Last());
+      //
+      bool filter(string line, DateTime dateTrigger, bool strict)
       {
-        string start = SQLiteDate.ToString(interval.Start.Value);
-        string end = SQLiteDate.ToString(interval.End.Value);
-        return DataSet.LunisolarDays.Where(day => day.Date.CompareTo(start) >= 0 && day.Date.CompareTo(end) <= 0);
+        if ( line.Length < lengthToCheck ) return true;
+        string str = line.Substring(lengthToExtract, 10);
+        if ( DateTime.TryParseExact(str, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out var date) )
+          return strict ? date < dateTrigger : date <= dateTrigger;
+        else
+          return true;
       }
-      else
-        return DataSet.LunisolarDays;
     }
 
   }

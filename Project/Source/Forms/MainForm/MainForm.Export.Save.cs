@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Globalization;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -35,7 +36,7 @@ namespace Ordisoftware.Hebrew.Calendar
           SaveTextDialog.FileName = Globals.AssemblyTitle;
           if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveTextDialog.FileName;
-          File.WriteAllText(filePath, CalendarText.Text);
+          File.WriteAllText(filePath, string.Join(Globals.NL, GetTextReportLines(interval)));
           return true;
         },
         [ViewMode.Month] = (interval) =>

@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private string ExportSaveJSON(ExportInterval interval)
     {
       // TODO waitcursor
-      var data = GetDays(interval).Select(day => new
+      var data = GetDayRows(interval).Select(day => new
       {
         day.Date,
         IsNewMoon = Convert.ToBoolean(day.IsNewMoon),
