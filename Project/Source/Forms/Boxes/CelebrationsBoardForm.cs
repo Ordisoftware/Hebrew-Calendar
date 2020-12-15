@@ -48,6 +48,10 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      Text += " - ";
+      Text += Program.Settings.TorahEventsCountAsMoon
+              ? AppTranslations.OmerMoon.GetLang()
+              : AppTranslations.OmerSun.GetLang();
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(AppTranslations.Year.GetLang(), typeof(int)) };
       foreach ( TorahEvent col in Enum.GetValues(typeof(TorahEvent)) )
         if ( col != TorahEvent.None && col <= TorahEvent.SoukotD8 ) // TODO change when others managed
