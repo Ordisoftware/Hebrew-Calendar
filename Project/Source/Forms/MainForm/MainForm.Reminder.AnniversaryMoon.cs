@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( RemindCelebrationDayForms[TorahEvent.AnniversaryMoon] != null )
           return;
 
-      var dateBirth = new DateTime(DateTime.Today.Year, BirthDate.Month, BirthDate.Day);
+      var dateBirth = BirthDate.Change(year: DateTime.Today.Year);
       var moonDateBirth = CalendarDates.Instance[dateBirth];
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
