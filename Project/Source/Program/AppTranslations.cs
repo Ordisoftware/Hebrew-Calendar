@@ -136,6 +136,13 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Jour de naissance"
       };
 
+    static public readonly TranslationsDictionary Year
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Year",
+        [Language.FR] = "Année"
+      };
+
     static public readonly TranslationsDictionary FirstDay
       = new TranslationsDictionary
       {

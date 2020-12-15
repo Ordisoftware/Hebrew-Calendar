@@ -23,6 +23,8 @@ namespace Ordisoftware.Hebrew.Calendar
   public enum TorahEvent
   {
 
+    // Database values
+
     /// <summary>
     /// The no event.
     /// </summary>
@@ -82,6 +84,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// The soukot last day.
     /// </summary>
     SoukotD8,
+
+    // Actually non database values
 
     /// <summary>
     /// The 'hanouka first day.
