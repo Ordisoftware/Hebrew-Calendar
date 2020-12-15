@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Icon = MainForm.Instance.Icon;
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(AppTranslations.Year.GetLang(), typeof(int)) };
       foreach ( TorahEvent col in Enum.GetValues(typeof(TorahEvent)) )
-        if ( col != TorahEvent.None && col < TorahEvent.SoukotD8 ) // TODO change when others managed
+        if ( col != TorahEvent.None && col <= TorahEvent.SoukotD8 ) // TODO change when others managed
           Board.Columns.Add(col.ToStringExport(AppTranslations.TorahEvent), typeof(DateTime));
     }
 
@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
       // TODO only one loop ?
       var query = from day in MainForm.Instance.DataSet.LunisolarDays
                   where day.TorahEventsAsEnum != TorahEvent.None
-                     && day.TorahEventsAsEnum < TorahEvent.SoukotD8 // TODO change when others managed
+                     && day.TorahEventsAsEnum <= TorahEvent.SoukotD8 // TODO change when others managed
                   select new
                   {
                     date = SQLiteDate.ToDateTime(day.Date),
