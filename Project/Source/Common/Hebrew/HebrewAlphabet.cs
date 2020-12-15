@@ -12,7 +12,7 @@
 /// </license>
 /// <created> 2012-10 </created>
 /// <edited> 2020-08 </edited>
-using System.Collections.Generic;
+using System;
 using System.Linq;
 using Ordisoftware.Core;
 
