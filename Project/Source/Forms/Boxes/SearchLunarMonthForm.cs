@@ -60,7 +60,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( row.LunarMonth > 0 )
         {
           var item = ListItems.Items.Add(row.LunarMonth.ToString());
-          item.SubItems.Add(Program.MoonMonthsNames[row.LunarMonth]);
+          item.SubItems.Add(HebrewAlphabet.MoonMonthsTransliterations[row.LunarMonth]);
           string str = SQLiteDate.ToDateTime(row.Date).ToLongDateString();
           item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
           item.Tag = row;

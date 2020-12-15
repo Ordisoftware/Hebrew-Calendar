@@ -28,17 +28,26 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-      DateTime date;
       switch ( keyData )
       {
-        // Change view
-        case Keys.Control | Keys.Shift | Keys.Tab:
-          SetView(Settings.CurrentView.Previous());
+        // System
+        case Keys.Alt | Keys.Control | Keys.F4:
+          MenuExit.PerformClick();
           return true;
-        case Keys.Control | Keys.Tab:
-          SetView(Settings.CurrentView.Next());
+        case Keys.Escape:
+          if ( EditESCtoExit.Checked ) Close();
           return true;
-        // Function keys
+        // System function
+        case Keys.F8:
+          ActionPreferences.PerformClick();
+          return true;
+        case Keys.F11:
+          ActionHelp.PerformClick();
+          return true;
+        case Keys.F12:
+          ActionAbout_Click(null, null);
+          return true;
+        // Application function
         case Keys.F4:
           ActionViewCelebrations.PerformClick();
           return true;
@@ -51,31 +60,35 @@ namespace Ordisoftware.Hebrew.Calendar
         case Keys.F7:
           ActionSearchGregorianMonth.PerformClick();
           return true;
-        case Keys.F8:
-          ActionPreferences.PerformClick();
-          return true;
         case Keys.F9:
         case Keys.Control | Keys.N:
           ActionNavigate.PerformClick();
           return true;
-        case Keys.F11:
-          ActionHelp.PerformClick();
+        // Change view
+        case Keys.Control | Keys.Shift | Keys.Tab:
+          SetView(Settings.CurrentView.Previous());
           return true;
-        case Keys.F12:
-          ActionAbout_Click(null, null);
+        case Keys.Control | Keys.Tab:
+          SetView(Settings.CurrentView.Next());
           return true;
-        //Various actions
-        case Keys.Escape:
-          if ( EditESCtoExit.Checked )
-            Close();
+        // Application menu
+        case Keys.Alt | Keys.T:
+          ActionTools.ShowDropDown();
           return true;
-        case Keys.NumPad0:
-        case Keys.Control | Keys.T:
-          GoToDate(DateTime.Today);
+        case Keys.Alt | Keys.L:
+          ActionWebLinks.ShowDropDown();
           return true;
-        case Keys.Control | Keys.D:
-          ActionSearchDay.PerformClick();
+        case Keys.Alt | Keys.V:
+          ActionView.ShowDropDown();
           return true;
+        // System menu
+        case Keys.Alt | Keys.S:
+          ActionSettings.ShowDropDown();
+          return true;
+        case Keys.Alt | Keys.I:
+          ActionInformation.ShowDropDown();
+          return true;
+        // Export
         case Keys.Control | Keys.S:
           ActionSaveToFile.PerformClick();
           return true;
@@ -86,40 +99,40 @@ namespace Ordisoftware.Hebrew.Calendar
         case Keys.Control | Keys.P:
           ActionPrint.PerformClick();
           return true;
-        // Month view calendar navigation
-        case Keys.Home:
-          if ( Settings.CurrentView != ViewMode.Month ) break;
-          GoToDate(new DateTime(YearFirst, 1, 1));
+        // Search
+        case Keys.Control | Keys.D:
+          ActionSearchDay.PerformClick();
           return true;
-        case Keys.End:
-          if ( Settings.CurrentView != ViewMode.Month ) break;
-          GoToDate(new DateTime(YearLast, 12, 1));
-          return true;
-        case Keys.Left:
-          if ( Settings.CurrentView != ViewMode.Month ) break;
-          date = SQLiteDate.ToDateTime(CurrentDay.Date);
-          date = new DateTime(date.Year, date.Month, 1);
-          GoToDate(date.AddMonths(-1));
-          return true;
-        case Keys.Right:
-          if ( Settings.CurrentView != ViewMode.Month ) break;
-          date = SQLiteDate.ToDateTime(CurrentDay.Date);
-          date = new DateTime(date.Year, date.Month, 1);
-          GoToDate(date.AddMonths(1));
-          return true;
-        case Keys.Up:
-          if ( Settings.CurrentView != ViewMode.Month ) break;
-          date = SQLiteDate.ToDateTime(CurrentDay.Date);
-          date = new DateTime(date.Year, date.Month, 1);
-          GoToDate(date.AddYears(-1));
-          return true;
-        case Keys.Down:
-          if ( Settings.CurrentView != ViewMode.Month ) break;
-          date = SQLiteDate.ToDateTime(CurrentDay.Date);
-          date = new DateTime(date.Year, date.Month, 1);
-          GoToDate(date.AddYears(1));
+        case Keys.NumPad0:
+        case Keys.Control | Keys.T:
+          GoToDate(DateTime.Today);
           return true;
       }
+      // Visual month navigation
+      if ( Settings.CurrentView == ViewMode.Month )
+        switch ( keyData )
+        {
+          case Keys.Home:
+            GoToDate(new DateTime(YearFirst, 1, 1));
+            return true;
+          case Keys.End:
+            GoToDate(new DateTime(YearLast, 12, 1));
+            return true;
+          case Keys.Up:
+          case Keys.PageUp:
+            GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddYears(-1));
+            return true;
+          case Keys.Down:
+          case Keys.PageDown:
+            GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddYears(1));
+            return true;
+          case Keys.Left:
+            GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddMonths(-1));
+            return true;
+          case Keys.Right:
+            GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddMonths(1));
+            return true;
+        }
       return base.ProcessCmdKey(ref msg, keyData);
     }
 

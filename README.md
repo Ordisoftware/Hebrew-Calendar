@@ -152,9 +152,14 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Ctrl + S | Save current view to a file |
 | Ctrl + C | Copy current view to clipboard |
 | Ctrl + P | Print current view |
+| Alt + T | Show tools menu |
+| Alt + L | Open web links menu |
+| Alt + V | Show view menu |
+| Alt + S | Show settings menu |
+| Alt + I | Show information menu |
 | Alt + E | Open export folder |
 | Alt + C | Open windows calculator |
-| Alt + T | Open windows date and time settings |
+| Alt + D | Open windows date and time settings |
 | Alt + G | Generate calendar |
 | Ctrl + F1 | Dates difference calculator |
 | Ctrl + F2 | Celebrations board |
@@ -162,14 +167,15 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Ctrl + F12 | Statistics window |
 | Home | First month available in the database |
 | End | Last month available in the database |
-| Up | Previous year |
-| Down | Next year |
+| Up, PageUp | Previous year |
+| Down, PageDown | Next year |
 | Left | Previous month |
 | Right | Next month |
 | F8 | Preferences |
 | F11 | Help |
 | F12 | About |
-| Escape | Close window |
+| Alt+F4, Escape | Close window |
+| Ctrl+Alt+F4 | Exit application |
 
 ## Future improvements
 
@@ -188,8 +194,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.__ - Version 6.0
 
->>>>- Add window celebrations board with selection of the years interval and clickable dates.
->>>>- Add export celebrations board in TXT/HTML/DOCX/CVS/JSON/PNG/JPEG/TIFF/BMP.
+- Add window celebrations board with selection of the years interval and clickable dates.
 - Add advanced print preview window.
 - Add select a years interval to export, else process the entire report/grid or only the current month view.
 - Add option to set the default print month view page orientation.
@@ -203,6 +208,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Few improvements.
 - Few fixes.
 - Code refactoring.
+
+>- Add export celebrations board in TXT/HTML/DOCX/CVS/JSON/PNG/JPEG/TIFF/BMP.
 
 #### 2020.12.13 - Version 5.13
 

@@ -12,7 +12,7 @@
 /// </license>
 /// <created> 2012-10 </created>
 /// <edited> 2020-08 </edited>
-using System.Collections.Generic;
+using System;
 using System.Linq;
 using Ordisoftware.Core;
 
@@ -51,6 +51,56 @@ namespace Ordisoftware.Hebrew
     {
       111, 412, 83, 434, 6, 12, 67, 418, 419, 20, 100,
       74, 90, 106, 120, 130, 81, 104, 186, 510, 360, 406
+    };
+
+    /// <summary>
+    /// Indicate letters names in hebrew font chars.
+    /// </summary>
+    static public readonly string[] Names =
+    {
+      "pla", "tyb", "lmyg", "tld", "ah", "vv", "]yz", "tx", "tu", "dvy", "pk",
+      "dml", ",m", "]vn", "!mc", "]yi", "hp", "ydj", "pvq", ">r", "]y>", "vt",
+    };
+
+
+    /// <summary>
+    /// Indicate phonetic letters names.
+    /// </summary>
+    static public readonly NullSafeDictionary<Language, string[]> Translitterations
+      = new NullSafeDictionary<Language, string[]>()
+      {
+        [Language.EN] = new string[]
+        {
+          "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
+          "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
+        },
+        [Language.FR] = new string[]
+        {
+          "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
+          "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
+        }
+      };
+
+    /// <summary>
+    /// Indicate unicode moon months names.
+    /// </summary>
+    static public readonly string[] MoonMonthsNamesUnicode =
+    {
+      "",
+      "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
+      "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
+      "אדר ב"
+    };
+
+    /// <summary>
+    /// Indicate phonetic moon months names.
+    /// </summary>
+    static public readonly string[] MoonMonthsTransliterations =
+    {
+      "",
+      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
+      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
+      "Adar II"
     };
 
     /// <summary>
@@ -226,32 +276,6 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    /// <summary>
-    /// Indicate phonetic letters names.
-    /// </summary>
-    static public readonly NullSafeDictionary<Language, string[]> Names
-      = new NullSafeDictionary<Language, string[]>()
-      {
-        [Language.EN] = new string[]
-        {
-          "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
-          "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
-        },
-        [Language.FR] = new string[]
-        {
-          "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
-          "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
-        }
-      };
-
-    /// <summary>
-    /// Indicate letters names in hebrew font chars.
-    /// </summary>
-    static public readonly string[] HebrewFontNames =
-    {
-      "pla", "tyb", "lmyg", "tld", "ah", "vv", "]yz", "tx", "tu", "dvy", "pk",
-      "dml", ",m", "]vn", "!mc", "]yi", "hp", "ydj", "pvq", ">r", "]y>", "vt",
-    };
 
   }
 

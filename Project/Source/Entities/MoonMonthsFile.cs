@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             DisplayManager.ShowError(SysTranslations.ErrorInFile.GetLang(filePath, index + 1, lines[index]));
           }
-          if ( index >= Program.MoonMonthsNames.Length )
+          if ( index >= HebrewAlphabet.MoonMonthsTransliterations.Length )
             break;
           string line = lines[index];
           if ( line.Trim() == "" )

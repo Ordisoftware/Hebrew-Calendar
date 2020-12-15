@@ -17,11 +17,28 @@ using System;
 namespace Ordisoftware.Core
 {
 
-  public enum ExportAction
+  /// <summary>
+  /// Indicate supported data file format for export.
+  /// </summary>
+  public enum DataExportTarget
   {
-    SaveToFile,
-    CopyToClipboard,
-    Print
+    TXT,
+    HTML,
+    DOCX,
+    CSV,
+    JSON,
+  }
+
+  /// <summary>
+  /// Indicate supported image file format for export.
+  /// </summary>
+  public enum ImageExportTarget
+  {
+    PNG,
+    JPG,
+    TIFF,
+    BMP,
+    GIF
   }
 
 }

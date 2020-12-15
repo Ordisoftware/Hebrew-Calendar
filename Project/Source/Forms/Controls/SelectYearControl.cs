@@ -84,6 +84,11 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionNext.Enabled = ActionLast.Enabled;
     }
 
+    private void SelectYearControl_VisibleChanged(object sender, EventArgs e)
+    {
+      Refresh();
+    }
+
     private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
     {
       Refresh();

@@ -35,8 +35,8 @@ namespace Ordisoftware.Hebrew.Calendar
         form.SelectText.Enabled = available.HasFlag(ViewMode.Text);
         form.SelectMonth.Enabled = available.HasFlag(ViewMode.Month);
         form.SelectGrid.Enabled = available.HasFlag(ViewMode.Grid);
-        form.EditAutoOpenExportedFile.Enabled = action == ExportAction.File;
-        form.EditAutoOpenExportFolder.Enabled = action == ExportAction.File;
+        form.EditAutoOpenExportedFile.Enabled = action == ExportAction.SaveToFile;
+        form.EditAutoOpenExportFolder.Enabled = action == ExportAction.SaveToFile;
         form.EditShowPrintPreviewDialog.Enabled = action == ExportAction.Print;
         if ( view == ViewMode.Text && form.SelectText.Enabled )
           form.SelectText.Checked = true;
@@ -109,7 +109,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int posX = 15;
       int posY = 25;
       int index = 0;
-      foreach ( KVPDataExportTarget item in Globals.DataExportTargets )
+      foreach ( KVPDataExportTarget item in Program.GridExportTargets )
       {
         var checkbox = new RadioButton();
         GroupBoxFormat.Controls.Add(checkbox);
@@ -136,13 +136,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void UpdateControls()
     {
-      /*if ( SelectText.Checked )
-      {
-        SelectSingle.Checked = true;
-        SelectInterval.Enabled = false;
-      }
-      else*/
-        SelectInterval.Enabled = !(SelectMonth.Checked &&  ActionToDo == ExportAction.Clipboard);
+      SelectInterval.Enabled = !(SelectMonth.Checked &&  ActionToDo == ExportAction.CopyToClipboard);
       GroupBoxFormat.Enabled = SelectGrid.Checked;
       GroupBoxYears.Enabled = SelectInterval.Checked;
       EditExportDataEnumsAsTranslations.Enabled = SelectGrid.Checked;

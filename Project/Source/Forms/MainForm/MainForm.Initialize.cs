@@ -37,8 +37,8 @@ namespace Ordisoftware.Hebrew.Calendar
       SaveImageDialog.InitialDirectory = directory;
       SaveDataDialog.InitialDirectory = directory;
       FolderDialog.SelectedPath = directory;
-      SaveDataDialog.Filter = Globals.DataExportTargets.CreateFilters();
-      SaveImageDialog.Filter = Globals.ImageExportTargets.CreateFilters();
+      SaveDataDialog.Filter = Program.GridExportTargets.CreateFilters();
+      SaveImageDialog.Filter = Program.ImageExportTargets.CreateFilters();
     }
 
     /// <summary>

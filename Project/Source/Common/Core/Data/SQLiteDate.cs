@@ -67,6 +67,23 @@ namespace Ordisoftware.Core
       return time.HasValue ? $"{time.Value.Hours.ToString("00")}:{time.Value.Minutes.ToString("00")}" : "";
     }
 
+    /// <summary>
+    /// CHange the year and month and day of a date.
+    /// </summary>
+    /// <param name="date">The DateTime instance.</param>
+    /// <param name="year">The new year.</param>
+    /// <param name="month">The new month.</param>
+    /// <param name="day">The new day.</param>
+    /// <returns>The new date without time</returns>
+    static public DateTime Change(this DateTime date, int year = -1, int month = -1, int day = -1)
+    {
+      if ( date == null ) return date;
+      if ( year == -1 ) year = date.Year;
+      if ( month == -1 ) month = date.Month;
+      if ( day == -1 ) day = date.Day;
+      return new DateTime(year, month, day);
+    }
+
   }
 
 }

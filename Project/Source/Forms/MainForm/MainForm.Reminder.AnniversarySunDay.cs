@@ -29,7 +29,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CheckAnniversarySunDay()
     {
-      var dateBirth = new DateTime(DateTime.Today.Year, BirthDate.Month, BirthDate.Day);
+      var dateBirth = BirthDate.Change(year: DateTime.Today.Year);
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
       var row = ( from day in DataSet.LunisolarDays
