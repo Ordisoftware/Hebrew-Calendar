@@ -117,7 +117,7 @@ namespace Ordisoftware.Core
           [Language.EN] = "Copy to clipboard",
           [Language.FR] = "Copier dans le presse-papier"
         },
-        [ExportAction.Print] = new TranslationsDictionary
+        [ExportAction.Printer] = new TranslationsDictionary
         {
           [Language.EN] = "Print",
           [Language.FR] = "Imprimer"

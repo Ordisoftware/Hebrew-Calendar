@@ -54,6 +54,56 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
+    /// Indicate letters names in hebrew font chars.
+    /// </summary>
+    static public readonly string[] Names =
+    {
+      "pla", "tyb", "lmyg", "tld", "ah", "vv", "]yz", "tx", "tu", "dvy", "pk",
+      "dml", ",m", "]vn", "!mc", "]yi", "hp", "ydj", "pvq", ">r", "]y>", "vt",
+    };
+
+
+    /// <summary>
+    /// Indicate phonetic letters names.
+    /// </summary>
+    static public readonly NullSafeDictionary<Language, string[]> Translitterations
+      = new NullSafeDictionary<Language, string[]>()
+      {
+        [Language.EN] = new string[]
+        {
+          "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
+          "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
+        },
+        [Language.FR] = new string[]
+        {
+          "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
+          "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
+        }
+      };
+
+    /// <summary>
+    /// Indicate unicode moon months names.
+    /// </summary>
+    static public readonly string[] MoonMonthsNamesUnicode =
+    {
+      "",
+      "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
+      "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
+      "אדר ב"
+    };
+
+    /// <summary>
+    /// Indicate phonetic moon months names.
+    /// </summary>
+    static public readonly string[] MoonMonthsTransliterations =
+    {
+      "",
+      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
+      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
+      "Adar II"
+    };
+
+    /// <summary>
     /// Indicate final letters disabled keyboard codes for hebrew font.
     /// </summary>
     static private readonly char[][] FinalDisable =
@@ -226,32 +276,6 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    /// <summary>
-    /// Indicate phonetic letters names.
-    /// </summary>
-    static public readonly NullSafeDictionary<Language, string[]> Names
-      = new NullSafeDictionary<Language, string[]>()
-      {
-        [Language.EN] = new string[]
-        {
-          "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
-          "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
-        },
-        [Language.FR] = new string[]
-        {
-          "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
-          "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
-        }
-      };
-
-    /// <summary>
-    /// Indicate letters names in hebrew font chars.
-    /// </summary>
-    static public readonly string[] HebrewFontNames =
-    {
-      "pla", "tyb", "lmyg", "tld", "ah", "vv", "]yz", "tx", "tu", "dvy", "pk",
-      "dml", ",m", "]vn", "!mc", "]yi", "hp", "ydj", "pvq", ">r", "]y>", "vt",
-    };
 
   }
 

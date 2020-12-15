@@ -16,7 +16,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using Ordisoftware.Hebrew;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -65,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
         default:
           throw new NotImplementedExceptionEx(Program.Settings.MoonMonthsFormUseColors);
       }
-      for ( int index = 1; index < Program.MoonMonthsNames.Length; index++ )
+      for ( int index = 1; index < HebrewAlphabet.MoonMonthsTransliterations.Length; index++ )
       {
         Func<int, int, string, Color, Font, bool, bool, bool, LinkLabel> createLabel
           = (posX, posY, text, color, font, tabstop, isAlignRight, checkWidth) =>
@@ -95,12 +94,12 @@ namespace Ordisoftware.Hebrew.Calendar
             return label;
           };
         var label1 = createLabel(x, y,
-                                 HebrewAlphabet.ConvertToHebrewFont(Program.MoonMonthsUnicode[index]),
+                                 HebrewAlphabet.ConvertToHebrewFont(HebrewAlphabet.MoonMonthsNamesUnicode[index]),
                                  colorsMonth[index - 1],
                                  new Font("Hebrew", 14f),
                                  true, true, false);
         var label2 = createLabel(x + dx1, y + dy1,
-                                 Program.MoonMonthsNames[index],
+                                 HebrewAlphabet.MoonMonthsTransliterations[index],
                                  colorsMonth[index - 1],
                                  new Font("Microsoft Sans Serif", 10f),
                                  false, false, false);

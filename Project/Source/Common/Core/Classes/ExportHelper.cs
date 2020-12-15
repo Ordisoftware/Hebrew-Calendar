@@ -19,28 +19,6 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Indicate supported data file format for export.
-  /// </summary>
-  public enum DataExportTarget
-  {
-    CSV,
-    JSON,
-    HTML,
-    DOCX
-  }
-
-  /// <summary>
-  /// Indicate supported image file format for export.
-  /// </summary>
-  public enum ImageExportTarget
-  {
-    PNG,
-    JPG,
-    TIFF,
-    BMP
-  }
-
-  /// <summary>
   /// Provide export helper.
   /// </summary>
   static public partial class ExportHelper
@@ -60,6 +38,14 @@ namespace Ordisoftware.Core
       where T : Enum
     {
       foreach ( var pair in values.Where(p => !list.Contains(p.Key)).ToList() )
+        values.Remove(pair.Key);
+      return values;
+    }
+
+    static public NullSafeOfStringDictionary<T> SetUnsupported<T>(this NullSafeOfStringDictionary<T> values, params T[] list)
+      where T : Enum
+    {
+      foreach ( var pair in values.Where(p => list.Contains(p.Key)).ToList() )
         values.Remove(pair.Key);
       return values;
     }

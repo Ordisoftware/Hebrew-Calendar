@@ -31,28 +31,6 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly Properties.Settings Settings
       = Properties.Settings.Default;
 
-    /// <summary>
-    /// Indicate phonetic moon months names.
-    /// </summary>
-    static public readonly string[] MoonMonthsNames =
-    {
-      "",
-      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
-      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
-      "Adar II"
-    };
-
-    /// <summary>
-    /// Indicate unicode moon months names.
-    /// </summary>
-    static public readonly string[] MoonMonthsUnicode =
-    {
-      "",
-      "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
-      "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
-      "אדר ב"
-    };
-
     static public readonly NullSafeOfStringDictionary<DataExportTarget> GridExportTargets
       = ExportHelper.CreateExportTargets(DataExportTarget.CSV, DataExportTarget.JSON);
 
@@ -60,7 +38,7 @@ namespace Ordisoftware.Hebrew.Calendar
       = ExportHelper.CreateExportTargets<DataExportTarget>();
 
     static public readonly NullSafeOfStringDictionary<ImageExportTarget> ImageExportTargets
-      = ExportHelper.CreateExportTargets<ImageExportTarget>();
+      = ExportHelper.CreateExportTargets<ImageExportTarget>().SetUnsupported(ImageExportTarget.GIF);
 
     /// <summary>
     /// Indicate minimum items for load data to show the loading form.

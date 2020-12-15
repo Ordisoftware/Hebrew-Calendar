@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
         form.SelectGrid.Enabled = available.HasFlag(ViewMode.Grid);
         form.EditAutoOpenExportedFile.Enabled = action == ExportAction.File;
         form.EditAutoOpenExportFolder.Enabled = action == ExportAction.File;
-        form.EditShowPrintPreviewDialog.Enabled = action == ExportAction.Print;
+        form.EditShowPrintPreviewDialog.Enabled = action == ExportAction.Printer;
         if ( view == ViewMode.Text && form.SelectText.Enabled )
           form.SelectText.Checked = true;
         else

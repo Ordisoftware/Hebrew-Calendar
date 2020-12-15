@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
   {
     File,
     Clipboard,
-    Print
+    Printer
   }
 
 }

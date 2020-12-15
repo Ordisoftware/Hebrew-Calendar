@@ -34,7 +34,7 @@ namespace Ordisoftware.Hebrew.Calendar
         [ViewMode.Month] = (interval) => { ExportPrintMonth(interval); return true; },
         [ViewMode.Grid] = null
       };
-      DoExport(ExportAction.Print, process, null);
+      DoExport(ExportAction.Printer, process, null);
     }
 
     private void ExportPrintRun(bool landscape, PrintPageEventHandler action)
