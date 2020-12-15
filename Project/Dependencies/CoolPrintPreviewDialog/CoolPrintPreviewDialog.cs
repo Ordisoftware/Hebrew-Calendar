@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Text;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace CoolPrintPreview
 {
@@ -22,6 +21,9 @@ namespace CoolPrintPreview
   /// </remarks>
   internal partial class CoolPrintPreviewDialog : Form
   {
+
+    static public 
+
     //--------------------------------------------------------------------
     #region ** fields
 
@@ -320,15 +322,9 @@ namespace CoolPrintPreview
     {
       this.Update();
       Application.DoEvents();
-      _lblPageCount.Text = string.Format(Position.GetLang() + " {0}", _preview.PageCount);
+      _lblPageCount.Text = string.Format(OfPageText + " {0}", _preview.PageCount);
     }
-
-    static private readonly TranslationsDictionary Position
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "of",
-        [Language.FR] = "de",
-      };
+    static public string OfPageText = "of";
     // ORDISOFTWARE MODIF END
 
     #endregion
