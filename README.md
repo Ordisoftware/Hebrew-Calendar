@@ -209,7 +209,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Few fixes.
 - Code refactoring.
 
->- Add export celebrations board in TXT/HTML/DOCX/CVS/JSON/PNG/JPEG/TIFF/BMP.
+>- Add export celebrations board.
+>- Add print celebrations board.
 
 #### 2020.12.13 - Version 5.13
 

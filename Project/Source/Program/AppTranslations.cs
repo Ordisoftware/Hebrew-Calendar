@@ -136,6 +136,20 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Jour de naissance"
       };
 
+    static public readonly TranslationsDictionary OmerMoon
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Count the days according to the moon",
+        [Language.FR] = "Compte des jours selon la lune",
+      };
+
+    static public readonly TranslationsDictionary OmerSun
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Count the days according to the sun",
+        [Language.FR] = "Compte des jours selon le soleil",
+      };
+
     static public readonly TranslationsDictionary Year
       = new TranslationsDictionary
       {
