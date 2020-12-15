@@ -19,9 +19,9 @@ namespace Ordisoftware.Core
 
   public enum ExportAction
   {
-    File,
-    Clipboard,
-    Printer
+    SaveToFile,
+    CopyToClipboard,
+    Print
   }
 
 }

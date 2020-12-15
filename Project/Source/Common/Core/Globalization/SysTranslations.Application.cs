@@ -107,17 +107,17 @@ namespace Ordisoftware.Core
     static public readonly NullSafeDictionary<ExportAction, TranslationsDictionary> ViewActionTitle
       = new NullSafeDictionary<ExportAction, TranslationsDictionary>
       {
-        [ExportAction.File] = new TranslationsDictionary
+        [ExportAction.SaveToFile] = new TranslationsDictionary
         {
           [Language.EN] = "Save to file",
           [Language.FR] = "Sauver dans un fichier"
         },
-        [ExportAction.Clipboard] = new TranslationsDictionary
+        [ExportAction.CopyToClipboard] = new TranslationsDictionary
         {
           [Language.EN] = "Copy to clipboard",
           [Language.FR] = "Copier dans le presse-papier"
         },
-        [ExportAction.Printer] = new TranslationsDictionary
+        [ExportAction.Print] = new TranslationsDictionary
         {
           [Language.EN] = "Print",
           [Language.FR] = "Imprimer"

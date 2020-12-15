@@ -86,7 +86,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
       };
-      DoExport(ExportAction.File, process, after);
+      DoExport(ExportAction.SaveToFile, process, after);
     }
 
     private bool ExportSaveMonth(string filePath, ExportInterval interval)

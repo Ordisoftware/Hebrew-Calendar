@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                           view == ViewMode.Month ? Globals.SnapshotSoundFilePath
                                                                  : Globals.ClipboardSoundFilePath);
       };
-      DoExport(ExportAction.Clipboard, process, after);
+      DoExport(ExportAction.CopyToClipboard, process, after);
     }
 
   }
