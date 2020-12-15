@@ -174,8 +174,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | F8 | Preferences |
 | F11 | Help |
 | F12 | About |
-| Alt+F4, Escape | Close window |
-| Ctrl+Alt+F4 | Exit application |
+| Alt + F4, Escape | Close window |
+| Ctrl + Alt + F4 | Exit application |
 
 ## Future improvements
 
@@ -201,14 +201,16 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set preferred data export file format (CSV/JSON)
 - Add option to set preferred image export file format (PNG/JPEG/TIFF/BMP).
 - Add export data to JSON file.
-- Add Newtonsoft.Json NuGet package.
-- Add MoreLINQ NuGet package.
-- Add Serilog-sinks-file NuGet package.
 - Add option for grid export to use enums names instead of translations
+- Add some keyboard shortcuts and change few.
 - Fix CSV export to add moon rise type field.
 - Few improvements.
 - Few fixes.
 - Code refactoring.
+- Add Newtonsoft.Json NuGet package.
+- Add MoreLINQ NuGet package.
+- Add Serilog-sinks-file NuGet package.
+- Update help.
 
 > Add export celebrations board.
 
