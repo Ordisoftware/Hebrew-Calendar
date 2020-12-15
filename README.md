@@ -192,7 +192,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.12.__ - Version 6.0
+#### Version 6.0 (in progress)
 
 - Add window celebrations board with selection of the years interval and clickable dates.
 - Add advanced print preview window.
@@ -203,14 +203,16 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add export data to JSON file.
 - Add Newtonsoft.Json NuGet package.
 - Add MoreLINQ NuGet package.
+- Add Serilog-sinks-file NuGet package.
 - Add option for grid export to use enums names instead of translations
 - Fix CSV export to add moon rise type field.
 - Few improvements.
 - Few fixes.
 - Code refactoring.
 
->- Add export celebrations board.
->- Add print celebrations board.
+> Add export celebrations board.
+> Add print celebrations board.
+> Add bookmarks backup/restore.
 
 #### 2020.12.13 - Version 5.13
 
