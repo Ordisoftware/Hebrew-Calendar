@@ -21,17 +21,29 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Indicate supported data file format for export.
   /// </summary>
-  public enum DataExportTarget { CSV, JSON, HTML, DOCX }
+  public enum DataExportTarget
+  {
+    CSV,
+    JSON,
+    HTML,
+    DOCX
+  }
 
   /// <summary>
   /// Indicate supported image file format for export.
   /// </summary>
-  public enum ImageExportTarget { PNG, JPG, TIFF, BMP }
+  public enum ImageExportTarget
+  {
+    PNG,
+    JPG,
+    TIFF,
+    BMP
+  }
 
   /// <summary>
-  /// Provide global variables.
+  /// Provide export helper.
   /// </summary>
-  static public partial class Globals
+  static public partial class ExportHelper
   {
 
     static public NullSafeOfStringDictionary<T> CreateExportTargets<T>(params T[] list)
