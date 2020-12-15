@@ -194,8 +194,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.__ - Version 6.0
 
->- Add window celebrations board with selection of the years interval and clickable dates.
->- Add export celebrations board in TXT/HTML/DOCX/CVS/JSON/PNG/JPEG/TIFF/BMP.
+- Add window celebrations board with selection of the years interval and clickable dates.
 - Add advanced print preview window.
 - Add select a years interval to export, else process the entire report/grid or only the current month view.
 - Add option to set the default print month view page orientation.
@@ -209,6 +208,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Few improvements.
 - Few fixes.
 - Code refactoring.
+
+>- Add export celebrations board in TXT/HTML/DOCX/CVS/JSON/PNG/JPEG/TIFF/BMP.
 
 #### 2020.12.13 - Version 5.13
 
