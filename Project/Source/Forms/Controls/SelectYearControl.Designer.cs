@@ -97,6 +97,7 @@
       this.Controls.Add(this.ActionPrevious);
       this.Name = "SelectYearControl";
       this.Size = new System.Drawing.Size(194, 34);
+      this.VisibleChanged += new System.EventHandler(this.SelectYearControl_VisibleChanged);
       this.ResumeLayout(false);
 
     }
