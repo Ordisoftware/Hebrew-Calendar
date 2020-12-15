@@ -188,10 +188,18 @@ namespace Ordisoftware.Hebrew.Calendar
                         Globals.NL +
                         "Ctrl + S : Save current view to file" + Globals.NL +
                         "Ctrl + C : Copy current view to clipboard" + Globals.NL +
-                        "Ctrl + P : Print current view " + Globals.NL +
+                        "Ctrl + P : Print current view" + Globals.NL +
                         Globals.NL +
+                        "Alt + T : Show tools menu" + Globals.NL +
+                        "Alt + L : Open web links menu" + Globals.NL +
+                        "Alt + V : Show view menu" + Globals.NL +
+                        "Alt + S : Show settings menu" + Globals.NL +
+                        "Alt + I : Show information menu" + Globals.NL +
+                        Globals.NL +
+                        "Alt + E : Open export folder" + Globals.NL +
                         "Alt + C : Open windows calculator" + Globals.NL +
-                        "Alt + T : Open windows date and time settings" + Globals.NL +
+                        "Alt + D : Open windows date and time settings" + Globals.NL +
+                        "Alt + G : Generate calendar" + Globals.NL +
                         Globals.NL +
                         "Ctrl + F1 : Dates difference calculator" + Globals.NL +
                         "Ctrl + F2 : Generate calendar data" + Globals.NL +
@@ -202,15 +210,16 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Home : First month available in the database" + Globals.NL +
                         "End : Last month available in the database" + Globals.NL +
                         Globals.NL +
-                        "Up : Previous year" + Globals.NL +
-                        "Down : Next year" + Globals.NL +
+                        "Up, PageUp : Previous year" + Globals.NL +
+                        "Down, PageDown : Next year" + Globals.NL +
                         "Left : Previous month" + Globals.NL +
                         "Right : Next month" + Globals.NL +
                         Globals.NL +
                         "F8 : Preferences" + Globals.NL +
                         "F11 : Help" + Globals.NL +
                         "F12 : About" + Globals.NL +
-                        "Escape : Close window",
+                        "Alt + F4, Escape : Close window" + Globals.NL +
+                        "Ctrl + Alt + F4 : Exit application",
 
         [Language.FR] = "F1 : Vue du rapport textuel" + Globals.NL +
                         "F2 : Vue du mois" + Globals.NL +
@@ -232,8 +241,16 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + C : Copie la vue en cours dans le presse-papier" + Globals.NL +
                         "Ctrl + P : Imprime la vue en cours" + Globals.NL +
                         Globals.NL +
+                        "Alt + T : Montre le menu des outils" + Globals.NL +
+                        "Alt + L : Montre le menu des liens web" + Globals.NL +
+                        "Alt + V : Montre le menu des vues" + Globals.NL +
+                        "Alt + S : Montre le menu des paramètres" + Globals.NL +
+                        "Alt + I : Montre le menu des informations" + Globals.NL +
+                        Globals.NL +
+                        "Alt + E : Open export folder" + Globals.NL +
                         "Alt + C : Ouvre la calculatrice Windows" + Globals.NL +
-                        "Alt + T : Ouvre les paramètres de date et heure de Windows" + Globals.NL +
+                        "Alt + D : Ouvre les paramètres de date et heure de Windows" + Globals.NL +
+                        "Alt + G : Génèrate le calendrier" + Globals.NL +
                         Globals.NL +
                         "Ctrl + F1 : Calculateur de différence de dates" + Globals.NL +
                         "Ctrl + F2 : Génère les données du calendrier" + Globals.NL +
@@ -244,15 +261,16 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Début : Premier mois disponible dans la base de données" + Globals.NL +
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
                         Globals.NL +
-                        "Haut : Année précédente" + Globals.NL +
-                        "Bas : Année suivante" + Globals.NL +
+                        "Haut, PagePrec : Année précédente" + Globals.NL +
+                        "Bas, PageSuiv : Année suivante" + Globals.NL +
                         "Gauche : Mois précédent" + Globals.NL +
                         "Droite : Mois suivant" + Globals.NL +
                         Globals.NL +
                         "F8 : Préférences" + Globals.NL +
                         "F11 : Aide" + Globals.NL +
                         "F12 : A propos" + Globals.NL +
-                        "Echap : Ferme la fenêtre"
+                        "Alt + F4, Echap : Ferme la fenêtre" + Globals.NL +
+                        "Ctrl + Alt + F4 : Ferme l'application",
       };
 
   }
