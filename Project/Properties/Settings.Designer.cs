@@ -1880,5 +1880,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ExportImagePreferredTarget"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public decimal CelebrationsBoardFormFontSize {
+            get {
+                return ((decimal)(this["CelebrationsBoardFormFontSize"]));
+            }
+            set {
+                this["CelebrationsBoardFormFontSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CelebrationsBoardFormUseLongDateFormat {
+            get {
+                return ((bool)(this["CelebrationsBoardFormUseLongDateFormat"]));
+            }
+            set {
+                this["CelebrationsBoardFormUseLongDateFormat"] = value;
+            }
+        }
     }
 }

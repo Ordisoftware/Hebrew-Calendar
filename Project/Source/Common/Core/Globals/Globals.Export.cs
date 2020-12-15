@@ -34,23 +34,22 @@ namespace Ordisoftware.Core
   static public partial class Globals
   {
 
-    static public readonly NullSafeOfStringDictionary<DataExportTarget> DataExportTargets;
-    static public readonly NullSafeOfStringDictionary<ImageExportTarget> ImageExportTargets;
-
-    static public NullSafeOfStringDictionary<T> CreateExportTargets<T>()
+    static public NullSafeOfStringDictionary<T> CreateExportTargets<T>(params T[] list)
       where T : Enum
     {
       var result = new NullSafeOfStringDictionary<T>();
       foreach ( T value in Enum.GetValues(typeof(T)) )
-        result.Add(value, "." + value.ToString().ToLower());
+        if ( list.Length == 0 || list.Contains(value) )
+          result.Add(value, "." + value.ToString().ToLower());
       return result;
     }
 
-    static public void SetSupported<T>(this NullSafeOfStringDictionary<T> values, params T[] list)
+    static public NullSafeOfStringDictionary<T> SetSupported<T>(this NullSafeOfStringDictionary<T> values, params T[] list)
       where T : Enum
     {
       foreach ( var pair in values.Where(p => !list.Contains(p.Key)).ToList() )
         values.Remove(pair.Key);
+      return values;
     }
 
     static public string CreateFilters<T>(this NullSafeOfStringDictionary<T> values)
@@ -59,12 +58,6 @@ namespace Ordisoftware.Core
       string str = SysTranslations.FileExtensionFilter.GetLang();
       var list = values.Select(v => $"{string.Format(str, v.Key)}|*{v.Value}");
       return string.Join("|", list);
-    }
-
-    static Globals()
-    {
-      DataExportTargets = CreateExportTargets<DataExportTarget>();
-      ImageExportTargets = CreateExportTargets<ImageExportTarget>();
     }
 
   }

@@ -768,7 +768,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewCelebrationsBoard_Click(object sender, EventArgs e)
     {
-      new CelebrationsBoardForm().Show();
+      CelebrationsBoardForm.Run();
     }
 
     /// <summary>

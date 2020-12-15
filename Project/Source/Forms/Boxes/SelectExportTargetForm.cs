@@ -109,7 +109,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int posX = 15;
       int posY = 25;
       int index = 0;
-      foreach ( KVPDataExportTarget item in Globals.DataExportTargets )
+      foreach ( KVPDataExportTarget item in Program.GridExportTargets )
       {
         var checkbox = new RadioButton();
         GroupBoxFormat.Controls.Add(checkbox);

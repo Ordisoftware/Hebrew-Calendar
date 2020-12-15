@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -94,7 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatchManage(() =>
       {
         Application.OpenForms.ToList().FirstOrDefault(f => f is ManageDateBookmarksForm)?.Close();
-        Application.OpenForms.ToList().FirstOrDefault(f => f is CelebrationsBoardForm)?.Close();
+        CelebrationsBoardForm.Instance?.Close();
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();
         RemindCelebrationDates.Clear();

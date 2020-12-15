@@ -472,5 +472,11 @@
     <Setting Name="ExportImagePreferredTarget" Type="Ordisoftware.Core.ImageExportTarget" Scope="User">
       <Value Profile="(Default)">PNG</Value>
     </Setting>
+    <Setting Name="CelebrationsBoardFormFontSize" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormUseLongDateFormat" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

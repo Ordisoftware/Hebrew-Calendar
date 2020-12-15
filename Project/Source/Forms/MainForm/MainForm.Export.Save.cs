@@ -68,8 +68,8 @@ namespace Ordisoftware.Hebrew.Calendar
         [ViewMode.Grid] = (interval) =>
         {
           SaveDataDialog.FileName = Globals.AssemblyTitle;
-          for ( int index = 0; index < Globals.DataExportTargets.Count; index++ )
-            if ( Globals.DataExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
+          for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
+            if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
               SaveDataDialog.FilterIndex = index + 1;
           if ( SaveDataDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveDataDialog.FileName;
@@ -145,7 +145,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private bool ExportSaveGrid(string filePath, ExportInterval interval)
     {
       string extension = Path.GetExtension(SaveDataDialog.FileName);
-      var selected = Globals.DataExportTargets.First(p => p.Value == extension).Key;
+      var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
       switch ( selected )
       {
         case DataExportTarget.CSV:

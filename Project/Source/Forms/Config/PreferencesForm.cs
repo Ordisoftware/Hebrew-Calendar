@@ -169,7 +169,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadDataExportFileFormats()
     {
-      foreach ( var item in Globals.DataExportTargets )
+      foreach ( var item in Program.GridExportTargets )
         EditDataExportFileFormat.Items.Add(item);
     }
 

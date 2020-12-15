@@ -53,6 +53,15 @@ namespace Ordisoftware.Hebrew.Calendar
       "אדר ב"
     };
 
+    static public readonly NullSafeOfStringDictionary<DataExportTarget> GridExportTargets
+      = Globals.CreateExportTargets(DataExportTarget.CSV, DataExportTarget.JSON);
+
+    static public readonly NullSafeOfStringDictionary<DataExportTarget> BoardExportTargets
+      = Globals.CreateExportTargets<DataExportTarget>();
+
+    static public readonly NullSafeOfStringDictionary<ImageExportTarget> ImageExportTargets
+      = Globals.CreateExportTargets<ImageExportTarget>();
+
     /// <summary>
     /// Indicate minimum items for load data to show the loading form.
     /// </summary>
