@@ -1759,7 +1759,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionOpenSystemDateAndTime.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+T</value>
+    <value>Alt+D</value>
   </data>
   <data name="ActionOpenSystemDateAndTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 22</value>
