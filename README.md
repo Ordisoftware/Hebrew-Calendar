@@ -211,7 +211,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Code refactoring.
 
 > Add export celebrations board.
+
 > Add print celebrations board.
+
 > Add bookmarks backup/restore.
 
 #### 2020.12.13 - Version 5.13
