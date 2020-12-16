@@ -210,6 +210,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add Newtonsoft.Json NuGet package.
 - Add MoreLINQ NuGet package.
 - Add Enums.NET NuGet package.
+- Add GlobalHotKey NuGet package.
+- Add InputSimulatorStandard NuGet package.
 - Add Serilog-sinks-file NuGet package.
 - Update help.
 
