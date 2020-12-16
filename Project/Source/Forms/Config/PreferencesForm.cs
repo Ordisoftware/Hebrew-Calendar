@@ -19,6 +19,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using WinKey = System.Windows.Input.Key;
 using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
 using KVPImageExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.ImageExportTarget, string>;
 
@@ -51,6 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadEvents();
       LoadFonts();
       LoadDataExportFileFormats();
+      LoadHotKeys();
       setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
       setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
       setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
@@ -96,7 +98,21 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       TopMost = MainForm.Instance.TopMost;
       BringToFront();
-      DoFormShown(sender, e);
+      UpdateLanguagesButtons();
+      LoadSettings();
+      PanelHotKey.Enabled = Settings.GlobalHotKeyPopupMainFormEnabled;
+      EditVacuumAtStartup_CheckedChanged(null, null);
+      EditCheckUpdateAtStartup_CheckedChanged(null, null);
+      EditBalloon_CheckedChanged(null, null);
+      EditAutoRegenerate_CheckedChanged(null, null);
+      EditRemindAutoLock_CheckedChanged(null, null);
+      EditRemindShabat_ValueChanged(null, null);
+      EditTimerEnabled_CheckedChanged(null, null);
+      EditUseColors_CheckedChanged(null, null);
+      EditLogEnabled_CheckedChanged(null, null);
+      ActiveControl = ActionClose;
+      ActionResetSettings.TabStop = false;
+      IsReady = true;
     }
 
     /// <summary>
@@ -144,26 +160,12 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Mono spaced font list.
-    /// </summary>
-    static private readonly string[] list =
-    {
-      "andalé mono", "bitstream vera sans mono", "cascadia code", "consolas", "courier new", "courier",
-      "cutive mono", "dejavu sans mono", "droid sans mono", "droid sans mono", "everson mono", "fixed",
-      "fixedsys", "freemono", "go mono", "inconsolata", "iosevka", "jetbrains mono", "letter gothic",
-      "liberation mono", "lucida console", "menlo", "monaco", "monofur", "monospace", "nimbus mono l",
-      "noto mono", "overpass mono", "oxygen mono", "pragmatapro", "prestige elite", "pro font",
-      "roboto mono", "san francisco mono", "source code pro", "terminal", "terminus",
-      "tex gyre cursor", "ubuntu mono", "um typewriter"
-    };
-
-    /// <summary>
     /// Loads the windows fonts names.
     /// </summary>
     private void LoadFonts()
     {
       foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
-        if ( list.Contains(item.Name.ToLower()) )
+        if ( MonoSpacedFonts.Contains(item.Name.ToLower()) )
           EditFontName.Items.Add(item.Name);
     }
 
@@ -171,6 +173,23 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       foreach ( var item in Program.GridExportTargets )
         EditDataExportFileFormat.Items.Add(item);
+    }
+
+    private void LoadHotKeys()
+    {
+      SelectGlobalHotKeyPopupMainFormKey.Items.Clear();
+      foreach ( var item in AvailableHotKeyKeys )
+        SelectGlobalHotKeyPopupMainFormKey.Items.Add(item);
+      HotKeyMutex = true;
+      EditGlobalHotKeyPopupMainFormShift.Checked = Globals.BringToFrontApplicationHotKey.Shift;
+      EditGlobalHotKeyPopupMainFormCtrl.Checked = Globals.BringToFrontApplicationHotKey.Control;
+      EditGlobalHotKeyPopupMainFormAlt.Checked = Globals.BringToFrontApplicationHotKey.Alt;
+      EditGlobalHotKeyPopupMainFormWin.Checked = Globals.BringToFrontApplicationHotKey.Windows;
+      SelectGlobalHotKeyPopupMainFormKey.SelectedIndex = SelectGlobalHotKeyPopupMainFormKey.FindString(Globals.BringToFrontApplicationHotKey.Key.ToString());
+      EditGlobalHotKeyPopupMainFormEnabled.Checked = Globals.BringToFrontApplicationHotKey.Active;
+      HotKeyMutex = false;
+      UpdateGlobalHotKeyPopupMainFormStatus();
+
     }
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -284,7 +303,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
     {
-      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset, 
+      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset,
                                        new Point(0, ActionMoonDayTextFormatReset.Height));
     }
 
@@ -653,7 +672,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)
     {
-      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval, 
+      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval,
                                new Point(0, SelectAutoGenerateYearsInterval.Height));
     }
 
@@ -749,6 +768,96 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionSaveTheme_Click(object sender, EventArgs e)
     {
       SaveTheme();
+    }
+
+    private void EditGlobalHotKeyPopupMainFormEnabled_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( HotKeyMutex ) return;
+      Globals.BringToFrontApplicationHotKey.Active = EditGlobalHotKeyPopupMainFormEnabled.Checked;
+      UpdateGlobalHotKeyPopupMainFormStatus();
+    }
+
+    private void EditGlobalHotKeyPopupMainFormShift_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( HotKeyMutex ) return;
+      if ( !CheckModifiersChanged(sender) ) return;
+      Globals.BringToFrontApplicationHotKey.Shift = EditGlobalHotKeyPopupMainFormShift.Checked;
+      UpdateGlobalHotKeyPopupMainFormStatus();
+    }
+
+    private void EditGlobalHotKeyPopupMainFormCtrl_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( HotKeyMutex ) return;
+      if ( !CheckModifiersChanged(sender) ) return;
+      Globals.BringToFrontApplicationHotKey.Control = EditGlobalHotKeyPopupMainFormCtrl.Checked;
+      UpdateGlobalHotKeyPopupMainFormStatus();
+    }
+
+    private void EditGlobalHotKeyPopupMainFormAlt_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( HotKeyMutex ) return;
+      if ( !CheckModifiersChanged(sender) ) return;
+      Globals.BringToFrontApplicationHotKey.Alt = EditGlobalHotKeyPopupMainFormAlt.Checked;
+      UpdateGlobalHotKeyPopupMainFormStatus();
+    }
+
+    private void EditGlobalHotKeyPopupMainFormWin_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( HotKeyMutex ) return;
+      if ( !CheckModifiersChanged(sender) ) return;
+      Globals.BringToFrontApplicationHotKey.Windows = EditGlobalHotKeyPopupMainFormWin.Checked;
+      UpdateGlobalHotKeyPopupMainFormStatus();
+    }
+
+    private void SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( HotKeyMutex ) return;
+      Globals.BringToFrontApplicationHotKey.Key = (WinKey)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;
+      UpdateGlobalHotKeyPopupMainFormStatus();
+    }
+
+    private void ActionResetHotKey_Click(object sender, EventArgs e)
+    {
+      Globals.BringToFrontApplicationHotKey.Key = MainForm.DefaultHotKeyKey;
+      Globals.BringToFrontApplicationHotKey.Modifiers = MainForm.DefaultHotKeyModifiers;
+      LoadHotKeys();
+      EditGlobalHotKeyPopupMainFormEnabled.Checked = true;
+      Globals.BringToFrontApplicationHotKey.Active = EditGlobalHotKeyPopupMainFormEnabled.Checked;
+    }
+
+    private bool CheckModifiersChanged(object sender)
+    {
+      var checkbox = (CheckBox)sender;
+      if ( checkbox.Checked ) return true;
+      if ( !PanelHotKey.Controls.OfType<CheckBox>().Where(c => c != checkbox).ToList().All(c => !c.Checked) )
+        return true;
+      HotKeyMutex = true;
+      checkbox.Checked = true;
+      HotKeyMutex = false;
+      return false;
+    }
+
+    private async void UpdateGlobalHotKeyPopupMainFormStatus()
+    {
+      bool enabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
+      EditGlobalHotKeyPopupMainFormStatus.Visible = false; ;
+      Globals.BringToFrontApplicationHotKey.Active = enabled;
+      Globals.BringToFrontApplicationHotKey.UpdateKeys();
+      if ( enabled )
+      {
+        PanelHotKey.Enabled = false;
+        bool result = await Globals.BringToFrontApplicationHotKey.IsValid();
+        PanelHotKey.Enabled = true;
+        EditGlobalHotKeyPopupMainFormStatus.Text = result
+                                                 ? SysTranslations.Valid.GetLang()
+                                                 : SysTranslations.Invalid.GetLang();
+        if ( result )
+        {
+          Settings.GlobalHotKeyPopupMainFormKey = (int)Globals.BringToFrontApplicationHotKey.Key;
+          Settings.GlobalHotKeyPopupMainFormModifiers = (int)Globals.BringToFrontApplicationHotKey.Modifiers;
+        }
+      }
+      EditGlobalHotKeyPopupMainFormStatus.Visible = enabled;
     }
 
   }

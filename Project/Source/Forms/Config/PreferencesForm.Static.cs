@@ -14,8 +14,13 @@
 /// <edited> 2020-12 </edited>
 using System;
 using System.Xml;
+using System.Linq;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using EnumsNET;
 using Ordisoftware.Core;
+using WinKey = System.Windows.Input.Key;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -46,6 +51,32 @@ namespace Ordisoftware.Hebrew.Calendar
     static private bool LanguageChanged;
     static private bool DoReset;
     static public bool Reseted { get; private set; }
+
+    static private readonly string[] MonoSpacedFonts =
+    {
+      "andalé mono", "bitstream vera sans mono", "cascadia code", "consolas", "courier new", "courier",
+      "cutive mono", "dejavu sans mono", "droid sans mono", "droid sans mono", "everson mono", "fixed",
+      "fixedsys", "freemono", "go mono", "inconsolata", "iosevka", "jetbrains mono", "letter gothic",
+      "liberation mono", "lucida console", "menlo", "monaco", "monofur", "monospace", "nimbus mono l",
+      "noto mono", "overpass mono", "oxygen mono", "pragmatapro", "prestige elite", "pro font",
+      "roboto mono", "san francisco mono", "source code pro", "terminal", "terminus",
+      "tex gyre cursor", "ubuntu mono", "um typewriter"
+    };
+
+    static private readonly List<WinKey> AvailableHotKeyKeys;
+
+    static PreferencesForm()
+    {
+      var filter1 = new Regex("(^F[0-9]{1,2}$)");
+      var filter2 = new Regex("(^[A-Z]$)");
+      var filter3 = new Regex("(^D[0-D9]$)");
+      var filter4 = new Regex("(^NumPad[0-D9]$)");
+      AvailableHotKeyKeys = Enums.GetValues<WinKey>().Where(x => filter1.Match(x.ToString()).Success)
+                                 .Concat(Enums.GetValues<WinKey>().Where(x => filter2.Match(x.ToString()).Success))
+                                 .Concat(Enums.GetValues<WinKey>().Where(x => filter3.Match(x.ToString()).Success))
+                                 .Concat(Enums.GetValues<WinKey>().Where(x => filter4.Match(x.ToString()).Success))
+                                 .ToList();
+    }
 
     static public bool Run()
     {

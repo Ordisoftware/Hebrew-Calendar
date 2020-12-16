@@ -1904,5 +1904,41 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CelebrationsBoardFormUseLongDateFormat"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("46")]
+        public int GlobalHotKeyPopupMainFormKey {
+            get {
+                return ((int)(this["GlobalHotKeyPopupMainFormKey"]));
+            }
+            set {
+                this["GlobalHotKeyPopupMainFormKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public int GlobalHotKeyPopupMainFormModifiers {
+            get {
+                return ((int)(this["GlobalHotKeyPopupMainFormModifiers"]));
+            }
+            set {
+                this["GlobalHotKeyPopupMainFormModifiers"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool GlobalHotKeyPopupMainFormEnabled {
+            get {
+                return ((bool)(this["GlobalHotKeyPopupMainFormEnabled"]));
+            }
+            set {
+                this["GlobalHotKeyPopupMainFormEnabled"] = value;
+            }
+        }
     }
 }

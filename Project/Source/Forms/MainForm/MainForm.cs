@@ -21,6 +21,9 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using Ordisoftware.Core;
+using GlobalHotKey;
+using WinKey = System.Windows.Input.Key;
+using WinModKeys = System.Windows.Input.ModifierKeys;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -91,9 +94,9 @@ namespace Ordisoftware.Hebrew.Calendar
           Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
         });
       var lastdone = Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup, 
-                                     ref lastdone, 
-                                     Settings.CheckUpdateAtStartupDaysInterval, 
+      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
+                                     ref lastdone,
+                                     Settings.CheckUpdateAtStartupDaysInterval,
                                      true);
       Settings.CheckUpdateLastDone = lastdone;
       if ( exit )
@@ -131,7 +134,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.IsReady = true;
         UpdateButtons();
         GoToDate(DateTime.Today);
-        CheckRegenerateCalendar(force: ((CommandLineArgs)SystemManager.CommandLineOptions).Generate);
+        CheckRegenerateCalendar(force: ( (CommandLineArgs)SystemManager.CommandLineOptions ).Generate);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
         if ( Settings.StartupHide || Program.ForceStartupHide )
@@ -154,12 +157,24 @@ namespace Ordisoftware.Hebrew.Calendar
                                                        true, false, 350, 660, false, false);
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
         NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-     }
+        //
+        var shortcutKey = DefaultHotKeyKey;
+        var shortcutModifiers = DefaultHotKeyModifiers;
+        SystemManager.TryCatch(() => { shortcutKey = (WinKey)Settings.GlobalHotKeyPopupMainFormKey; });
+        SystemManager.TryCatch(() => { shortcutModifiers = (WinModKeys)Settings.GlobalHotKeyPopupMainFormModifiers; });
+        Globals.BringToFrontApplicationHotKey.Key = shortcutKey;
+        Globals.BringToFrontApplicationHotKey.Modifiers = shortcutModifiers;
+        Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKey_KeyPressed;
+        SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
+      }
       finally
       {
         DebugManager.Leave();
       }
     }
+
+    public const WinKey DefaultHotKeyKey = WinKey.C;
+    public const WinModKeys DefaultHotKeyModifiers = WinModKeys.Shift | WinModKeys.Control | WinModKeys.Alt;
 
     /// <summary>
     /// Event handler. Called by MainForm for form closing events.
@@ -258,6 +273,22 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.Store();
       if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick(); // TODO don't call if minimized
+    }
+
+    /// <summary>
+    /// Event handler. Called by BrintToFrontApplicationHotKey key pressed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void BrintToFrontApplicationHotKey_KeyPressed(object sender, KeyPressedEventArgs e)
+    {
+      //var shortcutKey = (WinKey)Settings.GlobalHotKeyPopupMainFormKey;
+      //var shortcutModifiers = (WinModKeys)Settings.GlobalHotKeyPopupMainFormModifiers;
+      //if ( e.HotKey.Key == shortcutKey && e.HotKey.Modifiers == shortcutModifiers )
+      {
+        MenuShowHide_Click(null, null);
+        Application.OpenForms.ToList().LastOrDefault()?.Popup();
+      }
     }
 
     /// <summary>
@@ -732,9 +763,9 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     internal void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
-      ShowNotice(sender, 
-                 AppTranslations.NoticeCelebrationsTitle, 
-                 AppTranslations.NoticeCelebrations, 
+      ShowNotice(sender,
+                 AppTranslations.NoticeCelebrationsTitle,
+                 AppTranslations.NoticeCelebrations,
                  MessageBoxEx.DefaultMediumWidth);
     }
 
@@ -1024,7 +1055,7 @@ namespace Ordisoftware.Hebrew.Calendar
             e.Value = ( (MoonRiseOccuring)e.Value ).ToString();
             break;
           case 10:
-            e.Value = ((MoonPhase)e.Value).ToStringExport(AppTranslations.MoonPhase);
+            e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhase);
             break;
           case 8:
             e.Value = (int)e.Value == 0 ? "" : "*";

@@ -117,7 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ActionClose.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
+  </data>
+  <data name="ActionResetSettings.Text" xml:space="preserve">
+    <value>Restaurer les valeurs par défaut</value>
+  </data>
+  <data name="ActionManageBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAlBJREFUOE+V00tPE1EYh3GWfgFNEFgoGxcYLppUFEqq1pUujRuNaIzuUeQSaClW
+        gvEKgolBXBHQSEIilwJyaaG0pQgleFmgSIjGiLSdomgLRR/fGWI10i48yT9nZs6c37xn5kwSkGS82q8c
+        tPZhsPajqx3l7olCJvalUy/93poRDpht5Jm6N2LuRm/p4bC1T1HnaoA6eWI+SK65l6kojGclw7mjeDOT
+        mYjAdOAn0/71WF6F0JAYIBqn7rvQmWy4w+DM3M7qSSNu6Yu8UDKsUDrop0RSPODHt/RDqyQGyBI43eSW
+        Cmw4vqlACuHjetxZKVyegspRBZPDT6XdT/mwn/FP65uBwiaPBgyuCCATV47pcGenUOYDs1OhSgA1JkHG
+        PkbjA/sF6F1WgVS+HsnSoOJJKLMrlA8tUSFPN9kDDH+Ikr8JeLABdMm7HctOI6TfhUOW8m+rHAnwbGE1
+        MdARFCAnDSV3pwCpFEkFF4cCXBr4TKlUUTUaoGc+EVDVS3sAXDmpBOVTxqvgijPI03cR9PEAdcM8XpR9
+        sHsroR1bcGdswzwDFpdCtdOP1RWg1hOkYy4BkGfu4dF76LpwnnudPhxGHddmolz3LnNjXNFy0xviydtE
+        gGzV1rk1br+IcOvlGvWeRe74VqibDFH3XNmIHLe9CW8GzgiQL0DLbITG6S80+JZp+N1PhWJplPOW2TAF
+        VX9tZWNNP2ebPdrF1rkoD19/pzlB1LE2ucdQbfsDGCra7Sqi/hMGi02DCqTEuJExdfIhS+dCDJCWLtnz
+        n8kAkn4BwCnDttDqHwAAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="LabelDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>477, 13</value>
   </data>
@@ -129,75 +154,6 @@
   </data>
   <data name="LabelVolume.Text" xml:space="preserve">
     <value>Volume des sons .wav (non applicable aux sons système des boites de dialogue)</value>
-  </data>
-  <data name="LabelCheckUpdateFrequency.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 13</value>
-  </data>
-  <data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
-    <value>Fréquence de vérification en nombre de jours</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 13</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
-    <value>Un clic sur la Tray Icon ouvre :</value>
-  </data>
-  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 13</value>
-  </data>
-  <data name="LabelTimeZone.Text" xml:space="preserve">
-    <value>Fuseau horaire</value>
-  </data>
-  <data name="LabelExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 13</value>
-  </data>
-  <data name="LabelExportFolder.Text" xml:space="preserve">
-    <value>Dossier d'exportation</value>
-  </data>
-  <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 13</value>
-  </data>
-  <data name="LabelCalculatorPath.Text" xml:space="preserve">
-    <value>Chemin de la calculatrice système</value>
-  </data>
-  <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 13</value>
-  </data>
-  <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
-    <value>Chemin de Hebrew Letters</value>
-  </data>
-  <data name="LabelLastStartupCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 13</value>
-  </data>
-  <data name="LabelLastStartupCheck.Text" xml:space="preserve">
-    <value>Dernière vérification : </value>
-  </data>
-  <data name="LabelLastRunningCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 13</value>
-  </data>
-  <data name="LabelLastRunningCheck.Text" xml:space="preserve">
-    <value>Dernière vérification en cours d'exécution : </value>
-  </data>
-  <data name="LabelLastDBOptimize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 13</value>
-  </data>
-  <data name="LabelLastDBOptimize.Text" xml:space="preserve">
-    <value>Dernière optimisation : </value>
-  </data>
-  <data name="ActionClose.Text" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
-  <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 13</value>
-  </data>
-  <data name="ActionResetSettings.Text" xml:space="preserve">
-    <value>Restaurer les valeurs par défaut</value>
-  </data>
-  <data name="EditSelectViewToExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 17</value>
-  </data>
-  <data name="EditSelectViewToExport.Text" xml:space="preserve">
-    <value>Sélectionner la vue à sauvegarder, copier ou imprimer, sinon utiliser celle en cours</value>
   </data>
   <data name="ActionSelectLangEN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -229,17 +185,17 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 17</value>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 17</value>
   </data>
-  <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
-    <value>Ouvrir le fichier exporté en cas de succès</value>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Maj +</value>
   </data>
-  <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 17</value>
+  <data name="EditEnableGlobalHotKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>309, 17</value>
   </data>
-  <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
-    <value>Ouvrir le dossier d'export en cas de succès</value>
+  <data name="EditEnableGlobalHotKey.Text" xml:space="preserve">
+    <value>Activer le HotKey global pour faire survir la fenêtre principale</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 17</value>
@@ -267,6 +223,24 @@
   </data>
   <data name="TabPageStartup.Text" xml:space="preserve">
     <value>Démarrage</value>
+  </data>
+  <data name="LabelLastDBOptimize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 13</value>
+  </data>
+  <data name="LabelLastDBOptimize.Text" xml:space="preserve">
+    <value>Dernière optimisation : </value>
+  </data>
+  <data name="LabelLastStartupCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
+  </data>
+  <data name="LabelLastStartupCheck.Text" xml:space="preserve">
+    <value>Dernière vérification : </value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 13</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
+    <value>Fréquence de vérification en nombre de jours</value>
   </data>
   <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 17</value>
@@ -303,6 +277,12 @@
   </data>
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimiser les données au démarrage chaque ce nombre de jours</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 13</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
+    <value>Un clic sur la Tray Icon ouvre :</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 17</value>
@@ -427,6 +407,12 @@
         5+CbvkDmeQw+bcYXdQ4jlouISVbsvBHhvXwY77Ob9X+j6A0zwV7pvNIMx9UmLIhmthZ8j+sFtr4HCSqh
         V1JPGKJvEp7RGDz+KbjJdI1EYev3J4yttRwh0Hv6V2jfCMf9AKQQlciR8BlNAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <data name="LabelTimeZone.Text" xml:space="preserve">
+    <value>Fuseau horaire</value>
   </data>
   <data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 17</value>
@@ -598,6 +584,38 @@
         V1JPGKJvEp7RGDz+KbjJdI1EYev3J4yttRwh0Hv6V2jfCMf9AKQQlciR8BlNAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="ActionOpenTheme.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgxJREFUOE/F0t9LU2EYB/DzF/ivNCh1/drWHHUV3XVVlheWOsVKrSCDkHlTy8rp
+        Vqxd2IUXSdCFF5pl3Rk159lpv2drIA1rILq1uZ2z9e37njNaBBJB0Asf9nLG8zzv87yv9P+X8tD+XJ46
+        irXJQzqxl73HlMbff14iALV1YDdhUNNYnWhF6MHBn0mbDusFwj57vBEuSeIjdqOohs+jInehnp8Hykmg
+        kjJU00zKAoJGyEKetkDxH9/fTFB+h2q0l/rJqe9V0uJ9UCM92FnpREF4exaVjXn9FCv3rL2NBEeA4hto
+        qcvQ0sOopUcM61ehpoYQeezAe3c7tSHobkXw7gGE7pv1JIqvI88EnMG3RQYPoRB0orjaj2JIGGDwCXx5
+        cdpopRynGEX1llmFSSzgEC3A9hxiAVGprelOO74un4GWHIQa62NbPahGLtIF1DJjKGefYsllXpTkaRtK
+        8dtIzDiA+kcOi9V4E1AzbGOYW9HKCHEvJK8AmzPIvR5FYNDUKYW9dmwuO5F7NQAUllDPsP/MNbqO2qcb
+        dPMXo6hnb/HEz/AhcBIcYQsfUgeSs6dQSk0AW0/w/fMYuQy58d+4gLwXpYQbL8fNC/otKI8cHIaVdzzH
+        2/ADO5Pk2VtlFhsL3fBfMp3TE8g+R0GcQp6y8aVZENJZ97Tm4a/Hts3QFj0Bl4nEq/ob++hfLEn6ARk1
+        G0tPEW/pAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionSaveTheme.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAoNJREFUOE+Nkl1IU2EYx89FRNFFUCsUuvem6CLooqsGCaLdhBdRdwZBUEFe2ZZ9
+        2EUWRRclJZruw6igiDB0N96EIWipfTg3peS4Nbfp5na2ec7Ox/bveZ5GeCHUC/+9z/b8fs97OO+Uuq5Q
+        p6srhN03RrCrcwQ7/xFmmGWHXWUfFdMZYDzp4H8Xs+ywq+y5NYqvmQqUO4vSjCY0SgERynw8j3Ash8gv
+        DfOceE4YZtlhVwZMpKtQ3O3S9Ho88Hq9CASC8Pl8WMro6OjooO8B+H2DwijuK+LIgL1doxiLO9jW1g/T
+        qSC1UUGyVEWiYFOc2m4jrllIaCYMi9k+cdhVXDTl3Y8yDvSqKNs2rl31IOgPYlV34KF6KDCEgM+PdMmC
+        f2AAumkKyw67MuBlVEfDM5UezkbRdpAzHayXbeTpNM66aSNbNqGZFqpVCw39qjh/BtBj+OdKOBpYRmip
+        QEMcVGiQQ+F9c/gAZphlh126xlH0fSmi8VUCx1/EqRnD4cEYDg0s42AtXPNv3GOGWXbYlQE9M0WceruC
+        ltcJPJ9c4Re9aVUpFdm51/ImISw7MmA/fTz8XMTZ4RQ1kgQ6iKgZLNK9L9J/Iqxm8f3nKsJLaerZwjDL
+        Drsy4N4nDedCaZweTsKml1UwKvDc7Ib7RDPVVUTj61iIZWEbZWJSwrLzd0D3VBGXx7JoC63B2CjTSYC7
+        sRl3H/RIraY0qMk8jJIhDLPsyIC62yHcn9ZxfaKA9g95OsUSqanpJB497pV6NWdgLafD0k1hmGWHXcV1
+        6ekTLvhOt3vf49tsBJMzUZy/cLFVOXamdWZ2AeNTYXycmqPevDDMikOuQquecmSL7Khlq14tSv1vbU/x
+        i7m5HQgAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Fond Torah</value>
   </data>
@@ -752,8 +770,77 @@
   <data name="LabelTextColor.Text" xml:space="preserve">
     <value>Texte</value>
   </data>
+  <data name="TabPagePrint.Text" xml:space="preserve">
+    <value>Export et impression</value>
+  </data>
+  <data name="LabelImageExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 13</value>
+  </data>
+  <data name="LabelImageExportFileFormat.Text" xml:space="preserve">
+    <value>Format préféré du fichier d'export d'images</value>
+  </data>
+  <data name="LabelDataExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 13</value>
+  </data>
+  <data name="LabelDataExportFileFormat.Text" xml:space="preserve">
+    <value>Format préféré du fichier d'export de données</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 13</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.Text" xml:space="preserve">
+    <value>Nombre d'images à sauver pour afficher un avertissement</value>
+  </data>
+  <data name="LabelPrintPageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 13</value>
+  </data>
+  <data name="LabelPrintPageCountWarning.Text" xml:space="preserve">
+    <value>Nombre de pages à imprimer pour afficher un avertissement</value>
+  </data>
+  <data name="LabelPrintMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>485, 13</value>
+  </data>
+  <data name="LabelPrintMargin.Text" xml:space="preserve">
+    <value>Marge d'impression en 100 x inch (20 = 0,5 cm | 50 = 1,25 cm | 80 = 2 cm | 100 = 2,5 cm | 120 = 3 cm)</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 17</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
+    <value>Ouvrir le fichier exporté en cas de succès</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 17</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
+    <value>Export des énumérations en tant que traductions humanisées</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 17</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
+    <value>Ouvrir le dossier d'export en cas de succès</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 17</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
+    <value>Imprimer les images en paysage</value>
+  </data>
+  <data name="EditShowPrintDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="EditShowPrintDialog.Text" xml:space="preserve">
+    <value>Aperçu avant impression</value>
+  </data>
   <data name="TabPagePaths.Text" xml:space="preserve">
     <value>Chemins</value>
+  </data>
+  <data name="LabelExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="LabelExportFolder.Text" xml:space="preserve">
+    <value>Dossier d'exportation</value>
   </data>
   <data name="ActionResetExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -768,7 +855,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionSelectExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
@@ -783,6 +870,12 @@
         kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
         AABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 13</value>
+  </data>
+  <data name="LabelCalculatorPath.Text" xml:space="preserve">
+    <value>Chemin de la calculatrice système</value>
   </data>
   <data name="ActionResetHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -826,6 +919,12 @@
         AABJRU5ErkJggg==
 </value>
   </data>
+  <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 13</value>
+  </data>
+  <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
+    <value>Chemin de Hebrew Letters</value>
+  </data>
   <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -844,32 +943,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="EditShowPrintDialog.Text" xml:space="preserve">
-    <value>Aperçu avant impression</value>
-  </data>
-  <data name="LabelPrintMargin.Text" xml:space="preserve">
-    <value>Marge d'impression en 100 x inch (20 = 0,5 cm | 50 = 1,25 cm | 80 = 2 cm | 100 = 2,5 cm | 120 = 3 cm)</value>
-  </data>
-  <data name="LabelPrintPageCountWarning.Text" xml:space="preserve">
-    <value>Nombre de pages à imprimer pour afficher un avertissement</value>
-  </data>
-  <data name="TabPagePrint.Text" xml:space="preserve">
-    <value>Export et impression</value>
-  </data>
-  <data name="LabelDataExportFileFormat.Text" xml:space="preserve">
-    <value>Format préféré du fichier d'export de données</value>
-  </data>
-  <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
-    <value>Imprimer les images en paysage</value>
-  </data>
-  <data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
-    <value>Export des énumérations en tant que traductions humanisées</value>
-  </data>
-  <data name="LabelSaveImageCountWarning.Text" xml:space="preserve">
-    <value>Nombre d'images à sauver pour afficher un avertissement</value>
-  </data>
-  <data name="LabelImageExportFileFormat.Text" xml:space="preserve">
-    <value>Format préféré du fichier d'export d'images</value>
   </data>
 </root>

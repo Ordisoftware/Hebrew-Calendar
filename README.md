@@ -1,10 +1,9 @@
 # Hebrew Calendar
 
->This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).
-
->Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
->[Project Website](https://www.ordisoftware.com/projects/hebrew-calendar)<br/>
->[Twitter](https://twitter.com/ordisoftware)<br/>
+> Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
+> This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).<br/>
+> [Project Website](https://www.ordisoftware.com/projects/hebrew-calendar)<br/>
+> [Twitter](https://twitter.com/ordisoftware)<br/>
 
 A tool for Windows written in C# that allows to generate a calendar based on solar and lunar cycles in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippour and Sukkot festivities.
 
@@ -202,6 +201,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set preferred image export file format (PNG/JPEG/TIFF/BMP).
 - Add export data to JSON file.
 - Add option for grid export to use enums names instead of translations
+- Add option to set global HotKey to popup the main form.
 - Add some keyboard shortcuts and change few.
 - Fix CSV export to add moon rise type field.
 - Few improvements.
@@ -209,14 +209,15 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Code refactoring.
 - Add Newtonsoft.Json NuGet package.
 - Add MoreLINQ NuGet package.
+- Add Enums.NET NuGet package.
+- Add GlobalHotKey NuGet package.
+- Add InputSimulatorStandard NuGet package.
 - Add Serilog-sinks-file NuGet package.
 - Update help.
 
-> Add export celebrations board.
-
-> Add print celebrations board.
-
-> Add bookmarks backup/restore.
+>- Add export celebrations board.
+>- Add print celebrations board.
+>- Add bookmarks backup/restore.
 
 #### 2020.12.13 - Version 5.13
 

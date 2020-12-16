@@ -478,5 +478,14 @@
     <Setting Name="CelebrationsBoardFormUseLongDateFormat" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="GlobalHotKeyPopupMainFormKey" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">46</Value>
+    </Setting>
+    <Setting Name="GlobalHotKeyPopupMainFormModifiers" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="GlobalHotKeyPopupMainFormEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

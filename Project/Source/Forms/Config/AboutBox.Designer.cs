@@ -67,6 +67,14 @@
       this.label14 = new System.Windows.Forms.Label();
       this.label15 = new System.Windows.Forms.Label();
       this.linkLabel15 = new System.Windows.Forms.LinkLabel();
+      this.linkLabel16 = new System.Windows.Forms.LinkLabel();
+      this.label16 = new System.Windows.Forms.Label();
+      this.linkLabel17 = new System.Windows.Forms.LinkLabel();
+      this.label17 = new System.Windows.Forms.Label();
+      this.linkLabel18 = new System.Windows.Forms.LinkLabel();
+      this.label18 = new System.Windows.Forms.Label();
+      this.linkLabel19 = new System.Windows.Forms.LinkLabel();
+      this.label19 = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -355,6 +363,66 @@
       this.linkLabel15.TabStop = true;
       this.linkLabel15.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel15_LinkClicked);
       // 
+      // linkLabel16
+      // 
+      this.linkLabel16.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel16, "linkLabel16");
+      this.linkLabel16.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkLabel16.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel16.Name = "linkLabel16";
+      this.linkLabel16.TabStop = true;
+      this.linkLabel16.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelProvider_LinkClicked);
+      // 
+      // label16
+      // 
+      resources.ApplyResources(this.label16, "label16");
+      this.label16.Name = "label16";
+      // 
+      // linkLabel17
+      // 
+      this.linkLabel17.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel17, "linkLabel17");
+      this.linkLabel17.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkLabel17.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel17.Name = "linkLabel17";
+      this.linkLabel17.TabStop = true;
+      this.linkLabel17.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelProvider_LinkClicked);
+      // 
+      // label17
+      // 
+      resources.ApplyResources(this.label17, "label17");
+      this.label17.Name = "label17";
+      // 
+      // linkLabel18
+      // 
+      this.linkLabel18.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel18, "linkLabel18");
+      this.linkLabel18.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkLabel18.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel18.Name = "linkLabel18";
+      this.linkLabel18.TabStop = true;
+      this.linkLabel18.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelProvider_LinkClicked);
+      // 
+      // label18
+      // 
+      resources.ApplyResources(this.label18, "label18");
+      this.label18.Name = "label18";
+      // 
+      // linkLabel19
+      // 
+      this.linkLabel19.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel19, "linkLabel19");
+      this.linkLabel19.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkLabel19.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel19.Name = "linkLabel19";
+      this.linkLabel19.TabStop = true;
+      this.linkLabel19.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelProvider_LinkClicked);
+      // 
+      // label19
+      // 
+      resources.ApplyResources(this.label19, "label19");
+      this.label19.Name = "label19";
+      // 
       // AboutBox
       // 
       resources.ApplyResources(this, "$this");
@@ -369,6 +437,10 @@
       this.Controls.Add(this.label12);
       this.Controls.Add(this.label14);
       this.Controls.Add(this.label13);
+      this.Controls.Add(this.label17);
+      this.Controls.Add(this.label16);
+      this.Controls.Add(this.label19);
+      this.Controls.Add(this.label18);
       this.Controls.Add(this.label8);
       this.Controls.Add(this.label7);
       this.Controls.Add(this.label6);
@@ -382,6 +454,10 @@
       this.Controls.Add(this.linkLabel7);
       this.Controls.Add(this.linkLabel14);
       this.Controls.Add(this.linkLabel13);
+      this.Controls.Add(this.linkLabel17);
+      this.Controls.Add(this.linkLabel16);
+      this.Controls.Add(this.linkLabel19);
+      this.Controls.Add(this.linkLabel18);
       this.Controls.Add(this.linkLabel6);
       this.Controls.Add(this.linkLabel3);
       this.Controls.Add(this.linkLabel5);
@@ -450,5 +526,13 @@
     private System.Windows.Forms.Label label14;
     private System.Windows.Forms.Label label15;
     private System.Windows.Forms.LinkLabel linkLabel15;
+    private System.Windows.Forms.LinkLabel linkLabel16;
+    private System.Windows.Forms.Label label16;
+    private System.Windows.Forms.LinkLabel linkLabel17;
+    private System.Windows.Forms.Label label17;
+    private System.Windows.Forms.LinkLabel linkLabel18;
+    private System.Windows.Forms.Label label18;
+    private System.Windows.Forms.LinkLabel linkLabel19;
+    private System.Windows.Forms.Label label19;
   }
 }
