@@ -201,7 +201,9 @@
       this.EditTextBackground = new System.Windows.Forms.Panel();
       this.LabelTextColor = new System.Windows.Forms.Label();
       this.TabPagePrint = new System.Windows.Forms.TabPage();
+      this.EditImageExportFileFormat = new System.Windows.Forms.ComboBox();
       this.EditDataExportFileFormat = new System.Windows.Forms.ComboBox();
+      this.LabelImageExportFileFormat = new System.Windows.Forms.Label();
       this.LabelDataExportFileFormat = new System.Windows.Forms.Label();
       this.LabelSaveImageCountWarning = new System.Windows.Forms.Label();
       this.LabelSaveImageCountWarningIntervalInfo = new System.Windows.Forms.Label();
@@ -230,8 +232,12 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.LabelImageExportFileFormat = new System.Windows.Forms.Label();
-      this.EditImageExportFileFormat = new System.Windows.Forms.ComboBox();
+      this.EditEnableGlobalHotKey = new System.Windows.Forms.CheckBox();
+      this.checkBox1 = new System.Windows.Forms.CheckBox();
+      this.checkBox2 = new System.Windows.Forms.CheckBox();
+      this.checkBox3 = new System.Windows.Forms.CheckBox();
+      this.checkBox4 = new System.Windows.Forms.CheckBox();
+      this.SelectHotKeyKey = new System.Windows.Forms.ComboBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -382,6 +388,7 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageApplication.Controls.Add(this.SelectHotKeyKey);
       this.TabPageApplication.Controls.Add(this.ActionManageBookmarks);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
@@ -391,6 +398,11 @@
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
+      this.TabPageApplication.Controls.Add(this.checkBox4);
+      this.TabPageApplication.Controls.Add(this.checkBox3);
+      this.TabPageApplication.Controls.Add(this.checkBox2);
+      this.TabPageApplication.Controls.Add(this.checkBox1);
+      this.TabPageApplication.Controls.Add(this.EditEnableGlobalHotKey);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
@@ -1713,6 +1725,15 @@
       resources.ApplyResources(this.TabPagePrint, "TabPagePrint");
       this.TabPagePrint.Name = "TabPagePrint";
       // 
+      // EditImageExportFileFormat
+      // 
+      this.EditImageExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.EditImageExportFileFormat.FormattingEnabled = true;
+      resources.ApplyResources(this.EditImageExportFileFormat, "EditImageExportFileFormat");
+      this.EditImageExportFileFormat.Name = "EditImageExportFileFormat";
+      this.EditImageExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditImageExportFileFormat_SelectedIndexChanged);
+      this.EditImageExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditImageExportFileFormat_Format);
+      // 
       // EditDataExportFileFormat
       // 
       this.EditDataExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1721,6 +1742,11 @@
       this.EditDataExportFileFormat.Name = "EditDataExportFileFormat";
       this.EditDataExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditPreferedDataExportFileFormat_SelectedIndexChanged);
       this.EditDataExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditDataExportFileFormat_Format);
+      // 
+      // LabelImageExportFileFormat
+      // 
+      resources.ApplyResources(this.LabelImageExportFileFormat, "LabelImageExportFileFormat");
+      this.LabelImageExportFileFormat.Name = "LabelImageExportFileFormat";
       // 
       // LabelDataExportFileFormat
       // 
@@ -1925,19 +1951,42 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
-      // LabelImageExportFileFormat
+      // EditEnableGlobalHotKey
       // 
-      resources.ApplyResources(this.LabelImageExportFileFormat, "LabelImageExportFileFormat");
-      this.LabelImageExportFileFormat.Name = "LabelImageExportFileFormat";
+      resources.ApplyResources(this.EditEnableGlobalHotKey, "EditEnableGlobalHotKey");
+      this.EditEnableGlobalHotKey.Name = "EditEnableGlobalHotKey";
+      this.EditEnableGlobalHotKey.UseVisualStyleBackColor = true;
       // 
-      // EditImageExportFileFormat
+      // checkBox1
       // 
-      this.EditImageExportFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.EditImageExportFileFormat.FormattingEnabled = true;
-      resources.ApplyResources(this.EditImageExportFileFormat, "EditImageExportFileFormat");
-      this.EditImageExportFileFormat.Name = "EditImageExportFileFormat";
-      this.EditImageExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditImageExportFileFormat_SelectedIndexChanged);
-      this.EditImageExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditImageExportFileFormat_Format);
+      resources.ApplyResources(this.checkBox1, "checkBox1");
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.UseVisualStyleBackColor = true;
+      // 
+      // checkBox2
+      // 
+      resources.ApplyResources(this.checkBox2, "checkBox2");
+      this.checkBox2.Name = "checkBox2";
+      this.checkBox2.UseVisualStyleBackColor = true;
+      // 
+      // checkBox3
+      // 
+      resources.ApplyResources(this.checkBox3, "checkBox3");
+      this.checkBox3.Name = "checkBox3";
+      this.checkBox3.UseVisualStyleBackColor = true;
+      // 
+      // checkBox4
+      // 
+      resources.ApplyResources(this.checkBox4, "checkBox4");
+      this.checkBox4.Name = "checkBox4";
+      this.checkBox4.UseVisualStyleBackColor = true;
+      // 
+      // SelectHotKeyKey
+      // 
+      this.SelectHotKeyKey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectHotKeyKey.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectHotKeyKey, "SelectHotKeyKey");
+      this.SelectHotKeyKey.Name = "SelectHotKeyKey";
       // 
       // PreferencesForm
       // 
@@ -2208,5 +2257,11 @@
     private System.Windows.Forms.NumericUpDown EditSaveImageCountWarning;
     private System.Windows.Forms.ComboBox EditImageExportFileFormat;
     private System.Windows.Forms.Label LabelImageExportFileFormat;
+    private System.Windows.Forms.ComboBox SelectHotKeyKey;
+    private System.Windows.Forms.CheckBox checkBox4;
+    private System.Windows.Forms.CheckBox checkBox3;
+    private System.Windows.Forms.CheckBox checkBox2;
+    private System.Windows.Forms.CheckBox checkBox1;
+    private System.Windows.Forms.CheckBox EditEnableGlobalHotKey;
   }
 }

@@ -17,7 +17,10 @@ using System.Linq;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using GlobalHotKey;
+using EnumsNET;
 using Ordisoftware.Core;
 using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
 using KVPImageExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.ImageExportTarget, string>;
@@ -51,6 +54,7 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadEvents();
       LoadFonts();
       LoadDataExportFileFormats();
+      LoadHotKeys();
       setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
       setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
       setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
@@ -171,6 +175,21 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       foreach ( var item in Program.GridExportTargets )
         EditDataExportFileFormat.Items.Add(item);
+    }
+
+    private void LoadHotKeys()
+    {
+      // TODO static initialized
+      var filter1 = new Regex("(^F[0-9]{1,2}$)");
+      var filter2 = new Regex("(^[A-Z]$)");
+      var filter3 = new Regex("(^D[0-D9]$)");
+      var filter4 = new Regex("(^NumPad[0-D9]$)");
+      var keys = Enums.GetValues<System.Windows.Input.Key>().Where(x => filter1.Match(x.ToString()).Success)
+                .Concat(Enums.GetValues<System.Windows.Input.Key>().Where(x => filter2.Match(x.ToString()).Success))
+                .Concat(Enums.GetValues<System.Windows.Input.Key>().Where(x => filter3.Match(x.ToString()).Success))
+                .Concat(Enums.GetValues<System.Windows.Input.Key>().Where(x => filter4.Match(x.ToString()).Success));
+      foreach ( var item in keys )
+        SelectHotKeyKey.Items.Add(item);
     }
 
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
