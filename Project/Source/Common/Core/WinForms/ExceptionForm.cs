@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
 using System.Net;
@@ -50,6 +50,8 @@ namespace Ordisoftware.Core
     private readonly List<string> ErrorMessages 
       = new List<string>();
 
+    private bool IsInner;
+
     /// <summary>
     /// Run the form.
     /// </summary>
@@ -57,6 +59,7 @@ namespace Ordisoftware.Core
     {
       using ( var form = new ExceptionForm() )
       {
+        form.IsInner = isInner;
         form.PictureBox.Image = ShellIcons.Error;
         form.ActionViewLog.Enabled = DebugManager.TraceEnabled;
         form.ActionViewInner.Enabled = einfo.InnerInfo != null;
@@ -101,7 +104,7 @@ namespace Ordisoftware.Core
     /// <param name="e">Event information.</param>
     private void ExceptionForm_Shown(object sender, EventArgs e)
     {
-      DisplayManager.DoSound(MessageBoxIcon.Error);
+      if ( !IsInner ) DisplayManager.DoSound(MessageBoxIcon.Error);
     }
 
     /// <summary>

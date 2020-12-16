@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -120,6 +120,34 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "Replace bookmark?",
         [Language.FR] = "Remplacer le signet ?"
+      };
+
+    static public readonly TranslationsDictionary Valid
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Valid",
+        [Language.FR] = "Valide"
+      };
+
+    static public readonly TranslationsDictionary Invalid
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Invalid",
+        [Language.FR] = "Invalide"
+      };
+
+    static public readonly TranslationsDictionary Accepted
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Accepted",
+        [Language.FR] = "Accepté"
+      };
+
+    static public readonly TranslationsDictionary Rejected
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Rejected",
+        [Language.FR] = "Rejeté"
       };
 
     static public readonly TranslationsDictionary NullSlot

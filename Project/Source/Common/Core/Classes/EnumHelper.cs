@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
+using System.Globalization;
 
 namespace Ordisoftware.Core
 {
@@ -43,6 +44,17 @@ namespace Ordisoftware.Core
       return value.GetType().Name + "." + value.ToString();
     }
 
+    static public T SetFlag<T>(this T flags, T flag, bool value) 
+      where T : struct, IComparable, IFormattable, IConvertible
+    {
+      int flagsInt = flags.ToInt32(NumberFormatInfo.CurrentInfo);
+      int flagInt = flag.ToInt32(NumberFormatInfo.CurrentInfo);
+      if ( value )
+        flagsInt |= flagInt;
+      else
+        flagsInt &= ~flagInt;
+      return (T)(object)flagsInt;
+    }
   }
 
 }
