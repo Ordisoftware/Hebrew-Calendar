@@ -202,7 +202,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set preferred image export file format (PNG/JPEG/TIFF/BMP).
 - Add export data to JSON file.
 - Add option for grid export to use enums names instead of translations
-- Add option to set global windows shortcut to popup the main form.
+- Add option to set global HotKey to popup the main form.
 - Add some keyboard shortcuts and change few.
 - Fix CSV export to add moon rise type field.
 - Few improvements.
@@ -210,6 +210,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Code refactoring.
 - Add Newtonsoft.Json NuGet package.
 - Add MoreLINQ NuGet package.
+- Add Enums.NET NuGet package.
 - Add Serilog-sinks-file NuGet package.
 - Update help.
 
