@@ -239,6 +239,11 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.InitializeCurrentTimeZone();
     }
 
+    private void ActionHotKeyInfo_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(AppTranslations.HotKeyNotice.GetLang());
+    }
+
     private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
     {
       MainForm.Instance.ActionShowShabatNotice_Click(null, null);
@@ -816,7 +821,7 @@ namespace Ordisoftware.Hebrew.Calendar
       UpdateGlobalHotKeyPopupMainFormStatus();
     }
 
-    private void ActionResetHotKey_Click(object sender, EventArgs e)
+    private void ActionHotKeyReset_Click(object sender, EventArgs e)
     {
       Globals.BringToFrontApplicationHotKey.Key = MainForm.DefaultHotKeyKey;
       Globals.BringToFrontApplicationHotKey.Modifiers = MainForm.DefaultHotKeyModifiers;
