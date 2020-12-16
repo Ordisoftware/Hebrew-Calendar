@@ -48,33 +48,12 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      LoadEditIntervals();
+      LoadExportFileFormats();
       LoadDays();
       LoadEvents();
       LoadFonts();
-      LoadDataExportFileFormats();
       LoadHotKeys();
-      setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
-      setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
-      setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
-      setInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
-      setInterval(EditPrintPageCountWarning, LabelPrintPageCountWarningIntervalInfo, PrintPageCountWarningInterval);
-      setInterval(EditSaveImageCountWarning, LabelSaveImageCountWarningIntervalInfo, SaveImageCountWarningInterval);
-      setInterval(EditBalloonLoomingDelay, LabelLoomingDelayIntervalInfo, LoomingDelayInterval);
-      setInterval(EditReminderCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
-      setInterval(EditRemindShabatHoursBefore, LabelRemindShabatHoursBeforeIntervalInfo, RemindShabatHoursBeforeInterval);
-      setInterval(EditRemindShabatEveryMinutes, LabelRemindShabatEveryMinutesIntervalInfo, RemindShabatEveryMinutesInterval);
-      setInterval(EditRemindCelebrationHoursBefore, LabelRemindCelebrationHoursBeforeIntervalInfo, RemindCelebrationHoursBeforeInterval);
-      setInterval(EditRemindCelebrationEveryMinutes, LabelRemindCelebrationEveryMinutesIntervalInfo, RemindCelebrationEveryMinutesInterval);
-      setInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
-      setInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
-      void setInterval(NumericUpDown c, Label l, (int, int, int, int) v)
-      {
-        c.Minimum = v.Item1;
-        c.Maximum = v.Item2;
-        c.Value = v.Item3;
-        c.Increment = v.Item4;
-        l.Text = v.Item1 + " - " + v.Item2 + " (" + v.Item3 + ")";
-      }
       //ActionManageBookmarks.Left = LabelDateBookmarksCountIntervalInfo.Left + LabelDateBookmarksCountIntervalInfo.Width + 5;
       ActionMonthViewThemeDark.Visible = Globals.IsDevExecutable; // TODO remove when ready
     }
@@ -127,7 +106,45 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Loads the days.
+    /// Load edit intervals.
+    /// </summary>
+    private void LoadEditIntervals()
+    {
+      setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
+      setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
+      setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
+      setInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
+      setInterval(EditPrintPageCountWarning, LabelPrintPageCountWarningIntervalInfo, PrintPageCountWarningInterval);
+      setInterval(EditSaveImageCountWarning, LabelSaveImageCountWarningIntervalInfo, SaveImageCountWarningInterval);
+      setInterval(EditBalloonLoomingDelay, LabelLoomingDelayIntervalInfo, LoomingDelayInterval);
+      setInterval(EditReminderCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
+      setInterval(EditRemindShabatHoursBefore, LabelRemindShabatHoursBeforeIntervalInfo, RemindShabatHoursBeforeInterval);
+      setInterval(EditRemindShabatEveryMinutes, LabelRemindShabatEveryMinutesIntervalInfo, RemindShabatEveryMinutesInterval);
+      setInterval(EditRemindCelebrationHoursBefore, LabelRemindCelebrationHoursBeforeIntervalInfo, RemindCelebrationHoursBeforeInterval);
+      setInterval(EditRemindCelebrationEveryMinutes, LabelRemindCelebrationEveryMinutesIntervalInfo, RemindCelebrationEveryMinutesInterval);
+      setInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
+      setInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
+      void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
+      {
+        control.Minimum = interval.Item1;
+        control.Maximum = interval.Item2;
+        control.Value = interval.Item3;
+        control.Increment = interval.Item4;
+        label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
+      }
+    }
+
+    /// <summary>
+    /// Load export file formats.
+    /// </summary>
+    private void LoadExportFileFormats()
+    {
+      EditDataExportFileFormat.Fill(Program.GridExportTargets, Settings.ExportDataPreferredTarget);
+      EditImageExportFileFormat.Fill(Program.ImageExportTargets, Settings.ExportImagePreferredTarget);
+    }
+
+    /// <summary>
+    /// Load week days.
     /// </summary>
     private void LoadDays()
     {
@@ -141,7 +158,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Loads the events.
+    /// Load Torah events.
     /// </summary>
     private void LoadEvents()
     {
@@ -160,21 +177,22 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Loads the windows fonts names.
+    /// Load fonts names.
     /// </summary>
     private void LoadFonts()
     {
       foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
         if ( MonoSpacedFonts.Contains(item.Name.ToLower()) )
-          EditFontName.Items.Add(item.Name);
+        {
+          int index = EditFontName.Items.Add(item.Name);
+          if ( item.Name == Settings.FontName )
+            EditFontName.SelectedIndex = index;
+        }
     }
 
-    private void LoadDataExportFileFormats()
-    {
-      foreach ( var item in Program.GridExportTargets )
-        EditDataExportFileFormat.Items.Add(item);
-    }
-
+    /// <summary>
+    /// Load hotkeys.
+    /// </summary>
     private void LoadHotKeys()
     {
       SelectGlobalHotKeyPopupMainFormKey.Items.Clear();
