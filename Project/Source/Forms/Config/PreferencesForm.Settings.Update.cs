@@ -14,6 +14,8 @@
 /// <edited> 2020-12 </edited>
 using System;
 using System.Windows.Forms;
+using System.Windows.Input;
+using ModKeys = System.Windows.Input.ModifierKeys;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -98,6 +100,20 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.PrintImageInLandscape = EditPrintImageInLandscape.Checked;
       Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
       Settings.SaveImageCountWarning = (int)EditSaveImageCountWarning.Value;
+      // HotKey
+      Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
+      Settings.GlobalHotKeyPopupMainFormKey = (int)(Key)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;
+      var modifierKeys = ModKeys.None;
+      if ( EditGlobalHotKeyPopupMainFormWin.Checked )
+        modifierKeys |= ModKeys.Windows;
+      if ( EditGlobalHotKeyPopupMainFormAlt.Checked )
+        modifierKeys |= ModKeys.Alt;
+      if ( EditGlobalHotKeyPopupMainFormCtrl.Checked )
+        modifierKeys |= ModKeys.Control;
+      if ( EditGlobalHotKeyPopupMainFormShift.Checked )
+        modifierKeys |= ModKeys.Shift;
+      Settings.GlobalHotKeyPopupMainFormModifiers = (int)modifierKeys;
+
     }
 
   }

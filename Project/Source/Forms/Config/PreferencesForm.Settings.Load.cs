@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-12 </edited>
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -26,8 +27,12 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class PreferencesForm : Form
   {
 
+    private bool HotKeyMutex;
+
     private void LoadSettings()
     {
+      SystemManager.TryCatch(() => { LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString(); });
+      SystemManager.TryCatch(() => { LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString(); });
       SystemManager.TryCatch(() => { EditCalendarColorNoDay.BackColor = Settings.MonthViewNoDaysBackColor; });
       SystemManager.TryCatch(() => { EditCalendarColorEmpty.BackColor = Settings.MonthViewBackColor; });
       SystemManager.TryCatch(() => { EditCalendarColorDefaultText.BackColor = Settings.MonthViewTextColor; });
@@ -105,10 +110,52 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditPrintImageInLandscape.Checked = Settings.PrintImageInLandscape; });
       SystemManager.TryCatch(() => { EditExportDataEnumsAsTranslations.Checked = Settings.ExportDataEnumsAsTranslations; });
       SystemManager.TryCatch(() => { EditSaveImageCountWarning.Value = Settings.SaveImageCountWarning; });
-      EditLogEnabled_CheckedChanged(null, null);
-      LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString();
-      LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString();
+      // System
+      EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
+      EditLogEnabled.Enabled = DebugManager.Enabled;
+      // TrayIcon
+      switch ( Settings.TrayIconClickOpen )
+      {
+        case TrayIconClickOpen.NavigationForm:
+          SelectOpenNavigationForm.Select();
+          break;
+        case TrayIconClickOpen.NextCelebrationsForm:
+          SelectOpenNextCelebrationsForm.Select();
+          break;
+        default:
+          SelectOpenMainForm.Select();
+          break;
+      }
+      // Font
+      foreach ( var item in EditFontName.Items )
+        if ( (string)item == Settings.FontName )
+        {
+          EditFontName.SelectedItem = item;
+          break;
+        }
+      foreach ( KeyValuePair<DataExportTarget, string> item in EditDataExportFileFormat.Items )
+        if ( item.Key == Settings.ExportDataPreferredTarget )
+        {
+          EditDataExportFileFormat.SelectedItem = item;
+          break;
+        }
+      // GPS
+      if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
+        ActionGetGPS_LinkClicked(null, null);
+      if ( Settings.FirstLaunch )
+      {
+        Settings.FirstLaunchV4 = false;
+        Settings.FirstLaunch = false;
+        Settings.Save();
+        MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
+        Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(AppTranslations.AskToUseMoonOmer.GetLang());
+        MainForm.Instance.ActionShowShabatNotice_Click(null, null);
+        if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
+          ActionUsePersonalShabat_LinkClicked(null, null);
+      }
+      EditTimeZone.Text = Settings.GetGPSText();
     }
+
   }
 
 }

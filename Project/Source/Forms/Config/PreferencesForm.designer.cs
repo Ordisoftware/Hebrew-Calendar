@@ -47,6 +47,13 @@
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
+      this.PanelHotKey = new System.Windows.Forms.Panel();
+      this.EditGlobalHotKeyPopupMainFormShift = new System.Windows.Forms.CheckBox();
+      this.SelectGlobalHotKeyPopupMainFormKey = new System.Windows.Forms.ComboBox();
+      this.EditGlobalHotKeyPopupMainFormCtrl = new System.Windows.Forms.CheckBox();
+      this.EditGlobalHotKeyPopupMainFormAlt = new System.Windows.Forms.CheckBox();
+      this.EditGlobalHotKeyPopupMainFormStatus = new System.Windows.Forms.Label();
+      this.EditGlobalHotKeyPopupMainFormWin = new System.Windows.Forms.CheckBox();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
       this.LabelDateBookmarksCountIntervalInfo = new System.Windows.Forms.Label();
       this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
@@ -56,6 +63,7 @@
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
+      this.EditGlobalHotKeyPopupMainFormEnabled = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
@@ -110,10 +118,6 @@
       this.LabelGPSLongitude = new System.Windows.Forms.Label();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelSelectReminderSound = new System.Windows.Forms.LinkLabel();
       this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
@@ -190,7 +194,6 @@
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -229,19 +232,20 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.ActionResetHotKey = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditEnableGlobalHotKey = new System.Windows.Forms.CheckBox();
-      this.checkBox1 = new System.Windows.Forms.CheckBox();
-      this.checkBox2 = new System.Windows.Forms.CheckBox();
-      this.checkBox3 = new System.Windows.Forms.CheckBox();
-      this.checkBox4 = new System.Windows.Forms.CheckBox();
-      this.SelectHotKeyKey = new System.Windows.Forms.ComboBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
+      this.PanelHotKey.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.TabPageStartup.SuspendLayout();
@@ -388,7 +392,8 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageApplication.Controls.Add(this.SelectHotKeyKey);
+      this.TabPageApplication.Controls.Add(this.ActionResetHotKey);
+      this.TabPageApplication.Controls.Add(this.PanelHotKey);
       this.TabPageApplication.Controls.Add(this.ActionManageBookmarks);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
@@ -398,17 +403,66 @@
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
-      this.TabPageApplication.Controls.Add(this.checkBox4);
-      this.TabPageApplication.Controls.Add(this.checkBox3);
-      this.TabPageApplication.Controls.Add(this.checkBox2);
-      this.TabPageApplication.Controls.Add(this.checkBox1);
-      this.TabPageApplication.Controls.Add(this.EditEnableGlobalHotKey);
+      this.TabPageApplication.Controls.Add(this.EditGlobalHotKeyPopupMainFormEnabled);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
       this.TabPageApplication.Controls.Add(this.EditLogEnabled);
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
+      // 
+      // PanelHotKey
+      // 
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormShift);
+      this.PanelHotKey.Controls.Add(this.SelectGlobalHotKeyPopupMainFormKey);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormCtrl);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormAlt);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormStatus);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormWin);
+      resources.ApplyResources(this.PanelHotKey, "PanelHotKey");
+      this.PanelHotKey.Name = "PanelHotKey";
+      // 
+      // EditGlobalHotKeyPopupMainFormShift
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormShift, "EditGlobalHotKeyPopupMainFormShift");
+      this.EditGlobalHotKeyPopupMainFormShift.Name = "EditGlobalHotKeyPopupMainFormShift";
+      this.EditGlobalHotKeyPopupMainFormShift.UseVisualStyleBackColor = true;
+      this.EditGlobalHotKeyPopupMainFormShift.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormShift_CheckedChanged);
+      // 
+      // SelectGlobalHotKeyPopupMainFormKey
+      // 
+      this.SelectGlobalHotKeyPopupMainFormKey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectGlobalHotKeyPopupMainFormKey.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectGlobalHotKeyPopupMainFormKey, "SelectGlobalHotKeyPopupMainFormKey");
+      this.SelectGlobalHotKeyPopupMainFormKey.Name = "SelectGlobalHotKeyPopupMainFormKey";
+      this.SelectGlobalHotKeyPopupMainFormKey.SelectedIndexChanged += new System.EventHandler(this.SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged);
+      // 
+      // EditGlobalHotKeyPopupMainFormCtrl
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormCtrl, "EditGlobalHotKeyPopupMainFormCtrl");
+      this.EditGlobalHotKeyPopupMainFormCtrl.Name = "EditGlobalHotKeyPopupMainFormCtrl";
+      this.EditGlobalHotKeyPopupMainFormCtrl.UseVisualStyleBackColor = true;
+      this.EditGlobalHotKeyPopupMainFormCtrl.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormCtrl_CheckedChanged);
+      // 
+      // EditGlobalHotKeyPopupMainFormAlt
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormAlt, "EditGlobalHotKeyPopupMainFormAlt");
+      this.EditGlobalHotKeyPopupMainFormAlt.Name = "EditGlobalHotKeyPopupMainFormAlt";
+      this.EditGlobalHotKeyPopupMainFormAlt.UseVisualStyleBackColor = true;
+      this.EditGlobalHotKeyPopupMainFormAlt.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormAlt_CheckedChanged);
+      // 
+      // EditGlobalHotKeyPopupMainFormStatus
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormStatus, "EditGlobalHotKeyPopupMainFormStatus");
+      this.EditGlobalHotKeyPopupMainFormStatus.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.EditGlobalHotKeyPopupMainFormStatus.Name = "EditGlobalHotKeyPopupMainFormStatus";
+      // 
+      // EditGlobalHotKeyPopupMainFormWin
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormWin, "EditGlobalHotKeyPopupMainFormWin");
+      this.EditGlobalHotKeyPopupMainFormWin.Name = "EditGlobalHotKeyPopupMainFormWin";
+      this.EditGlobalHotKeyPopupMainFormWin.UseVisualStyleBackColor = true;
+      this.EditGlobalHotKeyPopupMainFormWin.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormWin_CheckedChanged);
       // 
       // ActionManageBookmarks
       // 
@@ -490,6 +544,13 @@
       this.ActionSelectLangFR.TabStop = false;
       this.ActionSelectLangFR.UseVisualStyleBackColor = true;
       this.ActionSelectLangFR.Click += new System.EventHandler(this.ActionSelectLangFR_Click);
+      // 
+      // EditGlobalHotKeyPopupMainFormEnabled
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormEnabled, "EditGlobalHotKeyPopupMainFormEnabled");
+      this.EditGlobalHotKeyPopupMainFormEnabled.Name = "EditGlobalHotKeyPopupMainFormEnabled";
+      this.EditGlobalHotKeyPopupMainFormEnabled.UseVisualStyleBackColor = true;
+      this.EditGlobalHotKeyPopupMainFormEnabled.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormEnabled_CheckedChanged);
       // 
       // EditWebLinksMenuEnabled
       // 
@@ -964,38 +1025,6 @@
       this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
       // 
       // TabPageReminder
       // 
@@ -1610,14 +1639,6 @@
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
       // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // TabPageTextReport
       // 
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
@@ -1927,6 +1948,54 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // ActionResetHotKey
+      // 
+      this.ActionResetHotKey.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetHotKey, "ActionResetHotKey");
+      this.ActionResetHotKey.Name = "ActionResetHotKey";
+      this.ActionResetHotKey.UseVisualStyleBackColor = true;
+      this.ActionResetHotKey.Click += new System.EventHandler(this.ActionResetHotKey_Click);
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
       // EditExportFolder
       // 
       this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
@@ -1951,43 +2020,6 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
-      // EditEnableGlobalHotKey
-      // 
-      resources.ApplyResources(this.EditEnableGlobalHotKey, "EditEnableGlobalHotKey");
-      this.EditEnableGlobalHotKey.Name = "EditEnableGlobalHotKey";
-      this.EditEnableGlobalHotKey.UseVisualStyleBackColor = true;
-      // 
-      // checkBox1
-      // 
-      resources.ApplyResources(this.checkBox1, "checkBox1");
-      this.checkBox1.Name = "checkBox1";
-      this.checkBox1.UseVisualStyleBackColor = true;
-      // 
-      // checkBox2
-      // 
-      resources.ApplyResources(this.checkBox2, "checkBox2");
-      this.checkBox2.Name = "checkBox2";
-      this.checkBox2.UseVisualStyleBackColor = true;
-      // 
-      // checkBox3
-      // 
-      resources.ApplyResources(this.checkBox3, "checkBox3");
-      this.checkBox3.Name = "checkBox3";
-      this.checkBox3.UseVisualStyleBackColor = true;
-      // 
-      // checkBox4
-      // 
-      resources.ApplyResources(this.checkBox4, "checkBox4");
-      this.checkBox4.Name = "checkBox4";
-      this.checkBox4.UseVisualStyleBackColor = true;
-      // 
-      // SelectHotKeyKey
-      // 
-      this.SelectHotKeyKey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectHotKeyKey.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectHotKeyKey, "SelectHotKeyKey");
-      this.SelectHotKeyKey.Name = "SelectHotKeyKey";
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2009,6 +2041,8 @@
       this.TabControl.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
+      this.PanelHotKey.ResumeLayout(false);
+      this.PanelHotKey.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
       this.TabPageStartup.ResumeLayout(false);
@@ -2257,11 +2291,14 @@
     private System.Windows.Forms.NumericUpDown EditSaveImageCountWarning;
     private System.Windows.Forms.ComboBox EditImageExportFileFormat;
     private System.Windows.Forms.Label LabelImageExportFileFormat;
-    private System.Windows.Forms.ComboBox SelectHotKeyKey;
-    private System.Windows.Forms.CheckBox checkBox4;
-    private System.Windows.Forms.CheckBox checkBox3;
-    private System.Windows.Forms.CheckBox checkBox2;
-    private System.Windows.Forms.CheckBox checkBox1;
-    private System.Windows.Forms.CheckBox EditEnableGlobalHotKey;
+    private System.Windows.Forms.ComboBox SelectGlobalHotKeyPopupMainFormKey;
+    private System.Windows.Forms.CheckBox EditGlobalHotKeyPopupMainFormWin;
+    private System.Windows.Forms.CheckBox EditGlobalHotKeyPopupMainFormAlt;
+    private System.Windows.Forms.CheckBox EditGlobalHotKeyPopupMainFormCtrl;
+    private System.Windows.Forms.CheckBox EditGlobalHotKeyPopupMainFormShift;
+    private System.Windows.Forms.CheckBox EditGlobalHotKeyPopupMainFormEnabled;
+    private System.Windows.Forms.Label EditGlobalHotKeyPopupMainFormStatus;
+    private System.Windows.Forms.Panel PanelHotKey;
+    private System.Windows.Forms.Button ActionResetHotKey;
   }
 }

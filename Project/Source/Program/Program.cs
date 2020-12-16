@@ -21,8 +21,6 @@ using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.Pipes;
 using Ordisoftware.Core;
-using System.Windows.Input;
-using GlobalHotKey;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -62,28 +60,10 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions.HideGUI )
         ForceStartupHide = true;
-      SetHotKey();
       Application.Run(MainForm.Instance);
     }
 
-    private static void SetHotKey()
-    {
-      var shortcutKey = Key.C;
-      var shortcutModifiers = ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt;
-      var hotKeyManager = new HotKeyManager();
-      var hotKey = hotKeyManager.Register(shortcutKey, shortcutModifiers);
-      hotKeyManager.KeyPressed += (sender, e) =>
-      {
-        if ( e.HotKey.Key == shortcutKey && e.HotKey.Modifiers == shortcutModifiers )
-          MainForm.Instance.MenuShowHide_Click(null, null);
-      };
-      Application.ApplicationExit += (sender, e) =>
-      {
-        hotKeyManager.Unregister(hotKey);
-        hotKeyManager.Dispose();
-      };
-    }
-
+    // TODO move in Globals
     /// <summary>
     /// Indicate if the application must go to tray icon at startup.
     /// </summary>

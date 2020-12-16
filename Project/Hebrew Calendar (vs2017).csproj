@@ -83,8 +83,14 @@
     <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>packages\FluentValidation.9.3.0\lib\net461\FluentValidation.dll</HintPath>
     </Reference>
+    <Reference Include="GlobalHotKey, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\GlobalHotKey.1.1.0\lib\GlobalHotKey.dll</HintPath>
+    </Reference>
     <Reference Include="Humanizer, Version=2.8.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
       <HintPath>packages\Humanizer.Core.2.8.26\lib\netstandard2.0\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="InputSimulatorStandard, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\InputSimulatorStandard.1.0.0\lib\netstandard2.0\InputSimulatorStandard.dll</HintPath>
     </Reference>
     <Reference Include="Markdig, Version=0.22.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Markdig.0.22.1\lib\net452\Markdig.dll</HintPath>
@@ -141,12 +147,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dependencies\GlobalHotKey\HotKey.cs" />
-    <Compile Include="Dependencies\GlobalHotKey\HotKeyManager.cs" />
-    <Compile Include="Dependencies\GlobalHotKey\KeyPressedEventArgs.cs" />
-    <Compile Include="Dependencies\GlobalHotKey\WinApi.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
+    <Compile Include="Source\Common\Core\Classes\GlobalHotKeyItem.cs" />
     <Compile Include="Source\Forms\Boxes\CelebrationsBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,9 +513,6 @@
       <DependentUpon>SelectBirthTimeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.FormClosing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\Config\PreferencesForm.FormShown.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Settings.Update.cs">

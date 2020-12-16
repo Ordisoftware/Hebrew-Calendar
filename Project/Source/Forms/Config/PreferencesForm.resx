@@ -306,26 +306,243 @@
   <data name="TabControl.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
   </data>
-  <data name="SelectHotKeyKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 275</value>
+  <data name="ActionResetHotKey.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="SelectHotKeyKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 21</value>
+  <data name="ActionResetHotKey.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
+        Wmp+hAvbOWebNoxdKBKlMSkXk9pJrVEu9PW858rFe+HkqU/P+37P+3yf5307DMC/EIpWEIpWEIpWYPJc
+        inkIdyjJ2mZ1h6RoMVdA/XAGVDj9BM+ES9HQMqPH3LNJmyeUMus4jAT+IdqsaJtdC8dY0gtQ796QeSwT
+        hkm2aODw5hWBw1u0z6dBjdZ4U9OAOmI5+4ye1QukHwxEL0uYOipiKHKNwY0LeNdy8K6fY5AY37pCJP+C
+        AVrTxDumgdOfQMH4glZ4x8h+Ed2Re8iLOUj+RLXRFw7Z5eG+unZfP88OX3hOCmqfvSunoGuADGTTIP5Y
+        RV/sCd7dZ3Su5NE0EcswxuqJGsL2C75vcE1u61TMDcCaFRVnpW+MJssYSxuIFyroUA4OPPSofEQRFLXS
+        9N4JnflirUG1IpFJi5IgKAc18IcVFf6Gws6n4Qs+qkPA30L0c1hBKFpBKFpBKP4dsB8ReHHdeAdE8gAA
+        AABJRU5ErkJggg==
+</value>
   </data>
-  <data name="SelectHotKeyKey.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="ActionResetHotKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;SelectHotKeyKey.Name" xml:space="preserve">
-    <value>SelectHotKeyKey</value>
+  <data name="ActionResetHotKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>55, 299</value>
   </data>
-  <data name="&gt;&gt;SelectHotKeyKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ActionResetHotKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
   </data>
-  <data name="&gt;&gt;SelectHotKeyKey.Parent" xml:space="preserve">
+  <data name="ActionResetHotKey.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;ActionResetHotKey.Name" xml:space="preserve">
+    <value>ActionResetHotKey</value>
+  </data>
+  <data name="&gt;&gt;ActionResetHotKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionResetHotKey.Parent" xml:space="preserve">
     <value>TabPageApplication</value>
   </data>
-  <data name="&gt;&gt;SelectHotKeyKey.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionResetHotKey.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 3</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.Text" xml:space="preserve">
+    <value>Shift +</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormShift</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SelectGlobalHotKeyPopupMainFormKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 1</value>
+  </data>
+  <data name="SelectGlobalHotKeyPopupMainFormKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 21</value>
+  </data>
+  <data name="SelectGlobalHotKeyPopupMainFormKey.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Name" xml:space="preserve">
+    <value>SelectGlobalHotKeyPopupMainFormKey</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 3</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.Text" xml:space="preserve">
+    <value>Ctrt +</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormCtrl</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 3</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.Text" xml:space="preserve">
+    <value>Alt +</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormAlt</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 5</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormStatus.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormStatus.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormStatus.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormStatus</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormStatus.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormStatus.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 3</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.Text" xml:space="preserve">
+    <value>Win +</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormWin</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="PanelHotKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 273</value>
+  </data>
+  <data name="PanelHotKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 24</value>
+  </data>
+  <data name="PanelHotKey.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;PanelHotKey.Name" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;PanelHotKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelHotKey.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;PanelHotKey.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="ActionManageBookmarks.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -368,7 +585,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionManageBookmarks.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -401,7 +618,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelDateBookmarksCountIntervalInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="EditDateBookmarksCount.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -425,7 +642,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditDateBookmarksCount.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="EditVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -434,7 +651,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 350</value>
+    <value>18, 355</value>
   </data>
   <data name="EditVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>490, 18</value>
@@ -452,7 +669,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditVolume.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="LabelDateBookmarksCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -485,7 +702,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelDateBookmarksCount.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="LabelVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -497,7 +714,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 330</value>
+    <value>20, 335</value>
   </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 13</value>
@@ -518,7 +735,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelVolume.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="LabelVolumeValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -530,7 +747,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolumeValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>515, 350</value>
+    <value>515, 355</value>
   </data>
   <data name="LabelVolumeValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -551,7 +768,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelVolumeValue.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="ActionSelectLangEN.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -592,7 +809,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -635,157 +852,37 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="checkBox4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 277</value>
-  </data>
-  <data name="checkBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 17</value>
-  </data>
-  <data name="checkBox4.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="checkBox4.Text" xml:space="preserve">
-    <value>Win +</value>
-  </data>
-  <data name="&gt;&gt;checkBox4.Name" xml:space="preserve">
-    <value>checkBox4</value>
-  </data>
-  <data name="&gt;&gt;checkBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox4.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
-  </data>
-  <data name="&gt;&gt;checkBox4.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="checkBox3.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 277</value>
-  </data>
-  <data name="checkBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 17</value>
-  </data>
-  <data name="checkBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="checkBox3.Text" xml:space="preserve">
-    <value>Alt +</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.Name" xml:space="preserve">
-    <value>checkBox3</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 277</value>
-  </data>
-  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 17</value>
-  </data>
-  <data name="checkBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="checkBox2.Text" xml:space="preserve">
-    <value>Ctrt +</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
-    <value>checkBox2</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 277</value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 17</value>
-  </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>Shift +</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="EditEnableGlobalHotKey.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditEnableGlobalHotKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditEnableGlobalHotKey.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 250</value>
   </data>
-  <data name="EditEnableGlobalHotKey.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 17</value>
   </data>
-  <data name="EditEnableGlobalHotKey.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="EditEnableGlobalHotKey.Text" xml:space="preserve">
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
     <value>Enable global HotKey to popup the main form</value>
   </data>
-  <data name="&gt;&gt;EditEnableGlobalHotKey.Name" xml:space="preserve">
-    <value>EditEnableGlobalHotKey</value>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormEnabled</value>
   </data>
-  <data name="&gt;&gt;EditEnableGlobalHotKey.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditEnableGlobalHotKey.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.Parent" xml:space="preserve">
     <value>TabPageApplication</value>
   </data>
-  <data name="&gt;&gt;EditEnableGlobalHotKey.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -815,7 +912,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>12</value>
   </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -845,7 +942,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>13</value>
   </data>
   <data name="EditUsageStatisticsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -875,7 +972,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditUsageStatisticsEnabled.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>14</value>
   </data>
   <data name="EditLogEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -905,7 +1002,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>15</value>
   </data>
   <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
