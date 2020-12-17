@@ -37,13 +37,13 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate command line arguments options instance.
     /// </summary>
-    static public SystemCommandLineArgs CommandLineOptions { get; private set; }
+    static public CommandLineOptions CommandLineOptions { get; private set; }
 
     /// <summary>
     /// Analyse command line arguments.
     /// </summary>
     static public void CheckCommandLineArguments<T>(string[] args, ref Language language)
-      where T : SystemCommandLineArgs
+      where T : CommandLineOptions
     {
       try
       {
