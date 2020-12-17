@@ -480,7 +480,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHotKeyStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 29</value>
+    <value>67, 29</value>
   </data>
   <data name="LabelHotKeyStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
