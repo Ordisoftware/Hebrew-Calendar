@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-12 </edited>
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -126,19 +125,6 @@ namespace Ordisoftware.Hebrew.Calendar
           SelectOpenMainForm.Select();
           break;
       }
-      // Font
-      foreach ( var item in EditFontName.Items )
-        if ( (string)item == Settings.FontName )
-        {
-          EditFontName.SelectedItem = item;
-          break;
-        }
-      foreach ( KeyValuePair<DataExportTarget, string> item in EditDataExportFileFormat.Items )
-        if ( item.Key == Settings.ExportDataPreferredTarget )
-        {
-          EditDataExportFileFormat.SelectedItem = item;
-          break;
-        }
       // GPS
       if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
         ActionGetGPS_LinkClicked(null, null);

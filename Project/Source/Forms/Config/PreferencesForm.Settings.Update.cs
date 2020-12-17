@@ -14,8 +14,8 @@
 /// <edited> 2020-12 </edited>
 using System;
 using System.Windows.Forms;
-using System.Windows.Input;
-using ModKeys = System.Windows.Input.ModifierKeys;
+using BondTech.HotkeyManagement.Win;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -102,18 +102,24 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.SaveImageCountWarning = (int)EditSaveImageCountWarning.Value;
       // HotKey
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
-      Settings.GlobalHotKeyPopupMainFormKey = (int)(Key)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;
-      var modifierKeys = ModKeys.None;
+      Settings.GlobalHotKeyPopupMainFormKey = (int)(Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;
+      var modifierKeys = Modifiers.None;
       if ( EditGlobalHotKeyPopupMainFormWin.Checked )
-        modifierKeys |= ModKeys.Windows;
+        modifierKeys |= Modifiers.Win;
       if ( EditGlobalHotKeyPopupMainFormAlt.Checked )
-        modifierKeys |= ModKeys.Alt;
+        modifierKeys |= Modifiers.Alt;
       if ( EditGlobalHotKeyPopupMainFormCtrl.Checked )
-        modifierKeys |= ModKeys.Control;
+        modifierKeys |= Modifiers.Control;
       if ( EditGlobalHotKeyPopupMainFormShift.Checked )
-        modifierKeys |= ModKeys.Shift;
+        modifierKeys |= Modifiers.Shift;
       Settings.GlobalHotKeyPopupMainFormModifiers = (int)modifierKeys;
-
+      try
+      {
+        Globals.BringToFrontApplicationHotKey.Active = EditGlobalHotKeyPopupMainFormEnabled.Checked;
+      }
+      catch
+      {
+      }
     }
 
   }

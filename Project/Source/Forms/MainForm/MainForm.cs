@@ -20,10 +20,8 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using BondTech.HotkeyManagement.Win;
 using Ordisoftware.Core;
-using GlobalHotKey;
-using WinKey = System.Windows.Input.Key;
-using WinModKeys = System.Windows.Input.ModifierKeys;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -34,6 +32,10 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class MainForm : Form
   {
+
+    public const Modifiers DefaultHotKeyModifiers = Modifiers.Shift | Modifiers.Control | Modifiers.Alt;
+    //public const Modifiers DefaultHotKeyModifiers = Modifiers.Win;
+    public const Keys DefaultHotKeyKey = Keys.C;
 
     /// <summary>
     /// Indicate the singleton instance.
@@ -160,8 +162,8 @@ namespace Ordisoftware.Hebrew.Calendar
         //
         var shortcutKey = DefaultHotKeyKey;
         var shortcutModifiers = DefaultHotKeyModifiers;
-        SystemManager.TryCatch(() => { shortcutKey = (WinKey)Settings.GlobalHotKeyPopupMainFormKey; });
-        SystemManager.TryCatch(() => { shortcutModifiers = (WinModKeys)Settings.GlobalHotKeyPopupMainFormModifiers; });
+        SystemManager.TryCatch(() => { shortcutKey = (Keys)Settings.GlobalHotKeyPopupMainFormKey; });
+        SystemManager.TryCatch(() => { shortcutModifiers = (Modifiers)Settings.GlobalHotKeyPopupMainFormModifiers; });
         Globals.BringToFrontApplicationHotKey.Key = shortcutKey;
         Globals.BringToFrontApplicationHotKey.Modifiers = shortcutModifiers;
         Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKey_KeyPressed;
@@ -172,9 +174,6 @@ namespace Ordisoftware.Hebrew.Calendar
         DebugManager.Leave();
       }
     }
-
-    public const WinKey DefaultHotKeyKey = WinKey.C;
-    public const WinModKeys DefaultHotKeyModifiers = WinModKeys.Shift | WinModKeys.Control | WinModKeys.Alt;
 
     /// <summary>
     /// Event handler. Called by MainForm for form closing events.
@@ -278,17 +277,10 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Event handler. Called by BrintToFrontApplicationHotKey key pressed events.
     /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void BrintToFrontApplicationHotKey_KeyPressed(object sender, KeyPressedEventArgs e)
+    private void BrintToFrontApplicationHotKey_KeyPressed(object sender, GlobalHotKeyEventArgs e)
     {
-      //var shortcutKey = (WinKey)Settings.GlobalHotKeyPopupMainFormKey;
-      //var shortcutModifiers = (WinModKeys)Settings.GlobalHotKeyPopupMainFormModifiers;
-      //if ( e.HotKey.Key == shortcutKey && e.HotKey.Modifiers == shortcutModifiers )
-      {
-        MenuShowHide_Click(null, null);
-        Application.OpenForms.ToList().LastOrDefault()?.Popup();
-      }
+      MenuShowHide_Click(null, null);
+      Application.OpenForms.ToList().LastOrDefault()?.Popup();
     }
 
     /// <summary>

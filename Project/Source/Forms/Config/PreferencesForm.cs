@@ -19,7 +19,6 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using WinKey = System.Windows.Input.Key;
 using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
 using KVPImageExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.ImageExportTarget, string>;
 
@@ -48,33 +47,12 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      LoadEditIntervals();
+      LoadExportFileFormats();
       LoadDays();
       LoadEvents();
       LoadFonts();
-      LoadDataExportFileFormats();
       LoadHotKeys();
-      setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
-      setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
-      setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
-      setInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
-      setInterval(EditPrintPageCountWarning, LabelPrintPageCountWarningIntervalInfo, PrintPageCountWarningInterval);
-      setInterval(EditSaveImageCountWarning, LabelSaveImageCountWarningIntervalInfo, SaveImageCountWarningInterval);
-      setInterval(EditBalloonLoomingDelay, LabelLoomingDelayIntervalInfo, LoomingDelayInterval);
-      setInterval(EditReminderCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
-      setInterval(EditRemindShabatHoursBefore, LabelRemindShabatHoursBeforeIntervalInfo, RemindShabatHoursBeforeInterval);
-      setInterval(EditRemindShabatEveryMinutes, LabelRemindShabatEveryMinutesIntervalInfo, RemindShabatEveryMinutesInterval);
-      setInterval(EditRemindCelebrationHoursBefore, LabelRemindCelebrationHoursBeforeIntervalInfo, RemindCelebrationHoursBeforeInterval);
-      setInterval(EditRemindCelebrationEveryMinutes, LabelRemindCelebrationEveryMinutesIntervalInfo, RemindCelebrationEveryMinutesInterval);
-      setInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
-      setInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
-      void setInterval(NumericUpDown c, Label l, (int, int, int, int) v)
-      {
-        c.Minimum = v.Item1;
-        c.Maximum = v.Item2;
-        c.Value = v.Item3;
-        c.Increment = v.Item4;
-        l.Text = v.Item1 + " - " + v.Item2 + " (" + v.Item3 + ")";
-      }
       //ActionManageBookmarks.Left = LabelDateBookmarksCountIntervalInfo.Left + LabelDateBookmarksCountIntervalInfo.Width + 5;
       ActionMonthViewThemeDark.Visible = Globals.IsDevExecutable; // TODO remove when ready
     }
@@ -127,7 +105,45 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Loads the days.
+    /// Load edit intervals.
+    /// </summary>
+    private void LoadEditIntervals()
+    {
+      setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
+      setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
+      setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
+      setInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
+      setInterval(EditPrintPageCountWarning, LabelPrintPageCountWarningIntervalInfo, PrintPageCountWarningInterval);
+      setInterval(EditSaveImageCountWarning, LabelSaveImageCountWarningIntervalInfo, SaveImageCountWarningInterval);
+      setInterval(EditBalloonLoomingDelay, LabelLoomingDelayIntervalInfo, LoomingDelayInterval);
+      setInterval(EditReminderCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
+      setInterval(EditRemindShabatHoursBefore, LabelRemindShabatHoursBeforeIntervalInfo, RemindShabatHoursBeforeInterval);
+      setInterval(EditRemindShabatEveryMinutes, LabelRemindShabatEveryMinutesIntervalInfo, RemindShabatEveryMinutesInterval);
+      setInterval(EditRemindCelebrationHoursBefore, LabelRemindCelebrationHoursBeforeIntervalInfo, RemindCelebrationHoursBeforeInterval);
+      setInterval(EditRemindCelebrationEveryMinutes, LabelRemindCelebrationEveryMinutesIntervalInfo, RemindCelebrationEveryMinutesInterval);
+      setInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
+      setInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
+      void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
+      {
+        control.Minimum = interval.Item1;
+        control.Maximum = interval.Item2;
+        control.Value = interval.Item3;
+        control.Increment = interval.Item4;
+        label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
+      }
+    }
+
+    /// <summary>
+    /// Load export file formats.
+    /// </summary>
+    private void LoadExportFileFormats()
+    {
+      EditDataExportFileFormat.Fill(Program.GridExportTargets, Settings.ExportDataPreferredTarget);
+      EditImageExportFileFormat.Fill(Program.ImageExportTargets, Settings.ExportImagePreferredTarget);
+    }
+
+    /// <summary>
+    /// Load week days.
     /// </summary>
     private void LoadDays()
     {
@@ -141,7 +157,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Loads the events.
+    /// Load Torah events.
     /// </summary>
     private void LoadEvents()
     {
@@ -160,21 +176,22 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Loads the windows fonts names.
+    /// Load fonts names.
     /// </summary>
     private void LoadFonts()
     {
       foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
         if ( MonoSpacedFonts.Contains(item.Name.ToLower()) )
-          EditFontName.Items.Add(item.Name);
+        {
+          int index = EditFontName.Items.Add(item.Name);
+          if ( item.Name == Settings.FontName )
+            EditFontName.SelectedIndex = index;
+        }
     }
 
-    private void LoadDataExportFileFormats()
-    {
-      foreach ( var item in Program.GridExportTargets )
-        EditDataExportFileFormat.Items.Add(item);
-    }
-
+    /// <summary>
+    /// Load hotkeys.
+    /// </summary>
     private void LoadHotKeys()
     {
       SelectGlobalHotKeyPopupMainFormKey.Items.Clear();
@@ -237,6 +254,11 @@ namespace Ordisoftware.Hebrew.Calendar
       EditGPSLongitude.Text = Settings.GPSLongitude;
       EditTimeZone.Text = Settings.GetGPSText();
       MainForm.Instance.InitializeCurrentTimeZone();
+    }
+
+    private void ActionHotKeyInfo_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(AppTranslations.HotKeyNotice.GetLang());
     }
 
     private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
@@ -773,51 +795,54 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EditGlobalHotKeyPopupMainFormEnabled_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
-      Globals.BringToFrontApplicationHotKey.Active = EditGlobalHotKeyPopupMainFormEnabled.Checked;
-      UpdateGlobalHotKeyPopupMainFormStatus();
+      if ( EditGlobalHotKeyPopupMainFormEnabled.Checked )
+        ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Active = true);
+    }
+
+    private void SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( HotKeyMutex ) return;
+      var key = Globals.BringToFrontApplicationHotKey.Key;
+      if ( !ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Key = (Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem) )
+        SelectGlobalHotKeyPopupMainFormKey.SelectedIndex = SelectGlobalHotKeyPopupMainFormKey.Items.IndexOf(key);
+
     }
 
     private void EditGlobalHotKeyPopupMainFormShift_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      Globals.BringToFrontApplicationHotKey.Shift = EditGlobalHotKeyPopupMainFormShift.Checked;
-      UpdateGlobalHotKeyPopupMainFormStatus();
+      if ( !ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Shift = EditGlobalHotKeyPopupMainFormShift.Checked) )
+        EditGlobalHotKeyPopupMainFormShift.Checked = !EditGlobalHotKeyPopupMainFormShift.Checked;
     }
 
     private void EditGlobalHotKeyPopupMainFormCtrl_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      Globals.BringToFrontApplicationHotKey.Control = EditGlobalHotKeyPopupMainFormCtrl.Checked;
-      UpdateGlobalHotKeyPopupMainFormStatus();
+      if ( !ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Control = EditGlobalHotKeyPopupMainFormCtrl.Checked) )
+        EditGlobalHotKeyPopupMainFormCtrl.Checked = !EditGlobalHotKeyPopupMainFormCtrl.Checked;
     }
 
     private void EditGlobalHotKeyPopupMainFormAlt_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      Globals.BringToFrontApplicationHotKey.Alt = EditGlobalHotKeyPopupMainFormAlt.Checked;
-      UpdateGlobalHotKeyPopupMainFormStatus();
+      if ( !ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Alt = EditGlobalHotKeyPopupMainFormAlt.Checked) )
+        EditGlobalHotKeyPopupMainFormAlt.Checked = !EditGlobalHotKeyPopupMainFormAlt.Checked;
     }
 
     private void EditGlobalHotKeyPopupMainFormWin_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      Globals.BringToFrontApplicationHotKey.Windows = EditGlobalHotKeyPopupMainFormWin.Checked;
-      UpdateGlobalHotKeyPopupMainFormStatus();
+      if ( !ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Windows = EditGlobalHotKeyPopupMainFormWin.Checked) )
+        EditGlobalHotKeyPopupMainFormWin.Checked = !EditGlobalHotKeyPopupMainFormWin.Checked;
     }
 
-    private void SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged(object sender, EventArgs e)
+    private void ActionHotKeyReset_Click(object sender, EventArgs e)
     {
-      if ( HotKeyMutex ) return;
-      Globals.BringToFrontApplicationHotKey.Key = (WinKey)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;
-      UpdateGlobalHotKeyPopupMainFormStatus();
-    }
-
-    private void ActionResetHotKey_Click(object sender, EventArgs e)
-    {
+      Globals.BringToFrontApplicationHotKey.Active = false;
       Globals.BringToFrontApplicationHotKey.Key = MainForm.DefaultHotKeyKey;
       Globals.BringToFrontApplicationHotKey.Modifiers = MainForm.DefaultHotKeyModifiers;
       LoadHotKeys();
@@ -837,21 +862,57 @@ namespace Ordisoftware.Hebrew.Calendar
       return false;
     }
 
+    private bool ChangeHotKeyCombination(Action action)
+    {
+      try
+      {
+        action();
+        label6.Text = "";
+        return true;
+      }
+      catch ( Exception ex )
+      {
+        label6.Text = ex.Message;
+        return false;
+      }
+    }
+
     private async void UpdateGlobalHotKeyPopupMainFormStatus()
     {
+      return;
+      bool isValid = true;
       bool enabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
-      EditGlobalHotKeyPopupMainFormStatus.Visible = false; ;
-      Globals.BringToFrontApplicationHotKey.Active = enabled;
-      Globals.BringToFrontApplicationHotKey.UpdateKeys();
+      EditGlobalHotKeyPopupMainFormStatus.Visible = false;
+      try
+      {
+        if ( enabled && Globals.BringToFrontApplicationHotKey.Active )
+          ;// Globals.BringToFrontApplicationHotKey.UpdateKeys();
+        else
+          Globals.BringToFrontApplicationHotKey.Active = enabled;
+      }
+      catch ( Exception ex )
+      {
+        isValid = false;
+        label6.Text = ex.Message;
+      }
       if ( enabled )
       {
         PanelHotKey.Enabled = false;
-        bool result = await Globals.BringToFrontApplicationHotKey.IsValid();
+        try
+        {
+          isValid = isValid && await Globals.BringToFrontApplicationHotKey.IsValid();
+        }
+        catch ( Exception ex )
+        {
+          isValid = false;
+          label6.Text = ex.Message;
+        }
         PanelHotKey.Enabled = true;
-        EditGlobalHotKeyPopupMainFormStatus.Text = result
+        EditGlobalHotKeyPopupMainFormStatus.Text = isValid
                                                  ? SysTranslations.Valid.GetLang()
                                                  : SysTranslations.Invalid.GetLang();
-        if ( result )
+
+        if ( isValid )
         {
           Settings.GlobalHotKeyPopupMainFormKey = (int)Globals.BringToFrontApplicationHotKey.Key;
           Settings.GlobalHotKeyPopupMainFormModifiers = (int)Globals.BringToFrontApplicationHotKey.Modifiers;

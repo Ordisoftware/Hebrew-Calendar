@@ -14,9 +14,7 @@
 /// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Globalization;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -54,6 +52,9 @@ namespace Ordisoftware.Hebrew.Calendar
             else
             {
               SaveImageDialog.FileName = Globals.AssemblyTitle;
+              for ( int index = 0; index < Program.ImageExportTargets.Count; index++ )
+                if ( Program.ImageExportTargets.ElementAt(index).Key == Settings.ExportImagePreferredTarget )
+                  SaveImageDialog.FilterIndex = index + 1;
               if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
               filePath = SaveImageDialog.FileName;
               return ExportSaveMonth(filePath, interval);
@@ -103,41 +104,17 @@ namespace Ordisoftware.Hebrew.Calendar
                                           Globals.AssemblyTitle,
                                           CalendarMonth.CalendarDate.Year,
                                           CalendarMonth.CalendarDate.Month.ToString("00"));
-          CalendarMonth.GetBitmap().Save(Path.Combine(filePath, filename), ImageFormat.Png);
+          var bitmap = CalendarMonth.GetBitmap();
+          bitmap.Save(Path.Combine(filePath, filename), Settings.ExportImagePreferredTarget.GetFormat());
           CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
-          if ( CalendarMonth.CalendarDate <= interval.End.Value )
-          {
-            HasMorePages = true;
-          }
-          else
-          {
-            HasMorePages = false;
-          }
+          HasMorePages = CalendarMonth.CalendarDate <= interval.End.Value;
         }
         CalendarMonth.CalendarDate = current;
       }
       else
       {
-        ImageFormat format = null;
-        string ext = Path.GetExtension(filePath).ToLower();
-        switch ( ext )
-        {
-          case ".png":
-            format = ImageFormat.Png;
-            break;
-          case ".jpg":
-            format = ImageFormat.Jpeg;
-            break;
-          case ".tiff":
-            format = ImageFormat.Tiff;
-            break;
-          case ".bmp":
-            format = ImageFormat.Bmp;
-            break;
-          default:
-            throw new NotImplementedExceptionEx(ext);
-        }
-        CalendarMonth.GetBitmap().Save(filePath, format);
+        var bitmap = CalendarMonth.GetBitmap();
+        bitmap.Save(filePath, Program.ImageExportTargets.GetFormat(Path.GetExtension(filePath)));
       }
       return true;
     }

@@ -24,16 +24,6 @@ namespace Ordisoftware.Hebrew.Calendar
   static public partial class AppTranslations
   {
 
-    static public readonly TranslationsDictionary AutoGenerateIntervalNotice
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "A positive value generates the next years." + Globals.NL2 +
-                        "A negative value generates the years before and after now.",
-
-        [Language.FR] = "Une valeur positive permet de générer les prochaines années." + Globals.NL2 +
-                        "Une valeur négative permet de générer les années avant et après maintenant."
-      };
-
     static public readonly TranslationsDictionary NoticeMoonDayTextFormat
       = new TranslationsDictionary
       {
@@ -46,6 +36,24 @@ namespace Ordisoftware.Hebrew.Calendar
                         "%MONTHNAME% : nom du mois lunaire" + Globals.NL +
                         "%MONTHNUM% : numéro du mois lunaire" + Globals.NL +
                         "%DAYNUM% : numéro du jour lunaire"
+      };
+
+    static public readonly TranslationsDictionary HotKeyNotice
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "The application checks the availability of the combination with the operating system. If so, it is tested in case it is captured by another application, which will trigger its activation and it will be considered invalid.",
+
+        [Language.FR] = "L'application vérifie la disponibilité de la combinaison auprès du système d'exploitation. Dans l'affirmative, elle est testé au cas où elle serait capturé par une autre application, ce qui déclenchera son activation et elle sera considérée comme invalide."
+      };
+
+    static public readonly TranslationsDictionary AutoGenerateIntervalNotice
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "A positive value generates the next years." + Globals.NL2 +
+                        "A negative value generates the years before and after now.",
+
+        [Language.FR] = "Une valeur positive permet de générer les prochaines années." + Globals.NL2 +
+                        "Une valeur négative permet de générer les années avant et après maintenant."
       };
 
     static public readonly TranslationsDictionary NoticeShabatTitle

@@ -20,7 +20,6 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using EnumsNET;
 using Ordisoftware.Core;
-using WinKey = System.Windows.Input.Key;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -32,26 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class PreferencesForm : Form
   {
 
-    static public (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
-    static public (int, int, int, int) DateBookmarksCountInterval = (0, 30, 15, 1);
-    static public (int, int, int, int) PrintingMarginInterval = (10, 150, 50, 10);
-    static public (int, int, int, int) PrintPageCountWarningInterval = (10, 100, 20, 10);
-    static public (int, int, int, int) SaveImageCountWarningInterval = (25, 300, 50, 25);
-    static public (int, int, int, int) LoomingDelayInterval = (500, 5000, 1000, 250);
-    static public (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
-    static public (int, int, int, int) RemindShabatHoursBeforeInterval = (1, 24, 6, 1);
-    static public (int, int, int, int) RemindShabatEveryMinutesInterval = (5, 120, 15, 5);
-    static public (int, int, int, int) RemindCelebrationDaysBeforeInterval = (1, 60, 14, 1);
-    static public (int, int, int, int) RemindCelebrationHoursBeforeInterval = (1, 48, 24, 1);
-    static public (int, int, int, int) RemindCelebrationEveryMinutesInterval = (5, 120, 15, 5);
-    static public (int, int, int, int) RemindAutoLockTimeOutInterval = (10, 300, 30, 5);
-
-    static private readonly Properties.Settings Settings = Program.Settings;
-
-    static private bool LanguageChanged;
-    static private bool DoReset;
-    static public bool Reseted { get; private set; }
-
+    // Mono spaced fonts list
     static private readonly string[] MonoSpacedFonts =
     {
       "andalé mono", "bitstream vera sans mono", "cascadia code", "consolas", "courier new", "courier",
@@ -63,7 +43,29 @@ namespace Ordisoftware.Hebrew.Calendar
       "tex gyre cursor", "ubuntu mono", "um typewriter"
     };
 
-    static private readonly List<WinKey> AvailableHotKeyKeys;
+    // Intervals Min, Max, Default, Increment
+    static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
+    static public readonly (int, int, int, int) DateBookmarksCountInterval = (0, 30, 15, 1);
+    static public readonly (int, int, int, int) PrintingMarginInterval = (10, 150, 50, 10);
+    static public readonly (int, int, int, int) PrintPageCountWarningInterval = (10, 100, 20, 10);
+    static public readonly (int, int, int, int) SaveImageCountWarningInterval = (25, 300, 50, 25);
+    static public readonly (int, int, int, int) LoomingDelayInterval = (500, 5000, 1000, 250);
+    static public readonly (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
+    static public readonly (int, int, int, int) RemindShabatHoursBeforeInterval = (1, 24, 6, 1);
+    static public readonly (int, int, int, int) RemindShabatEveryMinutesInterval = (5, 120, 15, 5);
+    static public readonly (int, int, int, int) RemindCelebrationDaysBeforeInterval = (1, 60, 14, 1);
+    static public readonly (int, int, int, int) RemindCelebrationHoursBeforeInterval = (1, 48, 24, 1);
+    static public readonly (int, int, int, int) RemindCelebrationEveryMinutesInterval = (5, 120, 15, 5);
+    static public readonly (int, int, int, int) RemindAutoLockTimeOutInterval = (10, 300, 30, 5);
+
+    // Available keys for hotkey keys
+    static private readonly List<Keys> AvailableHotKeyKeys;
+
+    static private readonly Properties.Settings Settings = Program.Settings;
+
+    static public bool Reseted { get; private set; }
+    static private bool DoReset;
+    static private bool LanguageChanged;
 
     static PreferencesForm()
     {
@@ -71,10 +73,10 @@ namespace Ordisoftware.Hebrew.Calendar
       var filter2 = new Regex("(^[A-Z]$)");
       var filter3 = new Regex("(^D[0-D9]$)");
       var filter4 = new Regex("(^NumPad[0-D9]$)");
-      AvailableHotKeyKeys = Enums.GetValues<WinKey>().Where(x => filter1.Match(x.ToString()).Success)
-                                 .Concat(Enums.GetValues<WinKey>().Where(x => filter2.Match(x.ToString()).Success))
-                                 .Concat(Enums.GetValues<WinKey>().Where(x => filter3.Match(x.ToString()).Success))
-                                 .Concat(Enums.GetValues<WinKey>().Where(x => filter4.Match(x.ToString()).Success))
+      AvailableHotKeyKeys = Enums.GetValues<Keys>().Where(x => filter1.Match(x.ToString()).Success)
+                                 .Concat(Enums.GetValues<Keys>().Where(x => filter2.Match(x.ToString()).Success))
+                                 .Concat(Enums.GetValues<Keys>().Where(x => filter3.Match(x.ToString()).Success))
+                                 .Concat(Enums.GetValues<Keys>().Where(x => filter4.Match(x.ToString()).Success))
                                  .ToList();
     }
 

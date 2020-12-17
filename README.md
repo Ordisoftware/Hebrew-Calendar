@@ -187,7 +187,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve navigation form to show celebration week day number.
 - Improve automatic web check update to not run when shabat and special celebration days but the next day.
 - Improve log viewer to select file.
-- Replace simple internal trace/logging by a NuGet package.
+- Replace simple internal trace/logging by SeriLog.
 
 ## Changelog
 
@@ -210,9 +210,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add Newtonsoft.Json NuGet package.
 - Add MoreLINQ NuGet package.
 - Add Enums.NET NuGet package.
-- Add GlobalHotKey NuGet package.
-- Add InputSimulatorStandard NuGet package.
 - Add Serilog-sinks-file NuGet package.
+- Add InputSimulatorStandard NuGet package.
+- Add Global Shortcut Manager dependency.
 - Update help.
 
 >- Add export celebrations board.

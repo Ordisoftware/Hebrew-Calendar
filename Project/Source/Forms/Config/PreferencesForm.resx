@@ -196,7 +196,7 @@
     <value>579, 28</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
     <value>PanelButtons</value>
@@ -306,10 +306,56 @@
   <data name="TabControl.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
   </data>
-  <data name="ActionResetHotKey.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionHotKeyInfo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionResetHotKey.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionHotKeyInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionHotKeyInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionHotKeyInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 299</value>
+  </data>
+  <data name="ActionHotKeyInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionHotKeyInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="ActionHotKeyInfo.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.Name" xml:space="preserve">
+    <value>ActionHotKeyInfo</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionHotKeyReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionHotKeyReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
@@ -322,29 +368,32 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionResetHotKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionHotKeyReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionResetHotKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 299</value>
+  <data name="ActionHotKeyReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 299</value>
   </data>
-  <data name="ActionResetHotKey.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionHotKeyReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="ActionResetHotKey.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+  <data name="ActionHotKeyReset.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="&gt;&gt;ActionResetHotKey.Name" xml:space="preserve">
-    <value>ActionResetHotKey</value>
+  <data name="ActionHotKeyReset.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;ActionResetHotKey.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionHotKeyReset.Name" xml:space="preserve">
+    <value>ActionHotKeyReset</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyReset.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionResetHotKey.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionHotKeyReset.Parent" xml:space="preserve">
     <value>TabPageApplication</value>
   </data>
-  <data name="&gt;&gt;ActionResetHotKey.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;ActionHotKeyReset.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormShift.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -359,7 +408,7 @@
     <value>56, 17</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormShift.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormShift.Text" xml:space="preserve">
     <value>Shift +</value>
@@ -383,7 +432,7 @@
     <value>79, 21</value>
   </data>
   <data name="SelectGlobalHotKeyPopupMainFormKey.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Name" xml:space="preserve">
     <value>SelectGlobalHotKeyPopupMainFormKey</value>
@@ -410,7 +459,7 @@
     <value>51, 17</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormCtrl.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormCtrl.Text" xml:space="preserve">
     <value>Ctrt +</value>
@@ -440,7 +489,7 @@
     <value>47, 17</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormAlt.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormAlt.Text" xml:space="preserve">
     <value>Alt +</value>
@@ -473,7 +522,7 @@
     <value>13, 13</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>5</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormStatus.Text" xml:space="preserve">
     <value>0</value>
@@ -506,7 +555,7 @@
     <value>54, 17</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormWin.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormWin.Text" xml:space="preserve">
     <value>Win +</value>
@@ -530,7 +579,10 @@
     <value>454, 24</value>
   </data>
   <data name="PanelHotKey.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+    <value>11</value>
+  </data>
+  <data name="PanelHotKey.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;PanelHotKey.Name" xml:space="preserve">
     <value>PanelHotKey</value>
@@ -542,7 +594,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;PanelHotKey.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionManageBookmarks.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -573,7 +625,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionManageBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;ActionManageBookmarks.Name" xml:space="preserve">
     <value>ActionManageBookmarks</value>
@@ -585,7 +637,43 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionManageBookmarks.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 306</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 13</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>err</value>
+  </data>
+  <data name="label6.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -603,7 +691,7 @@
     <value>28, 13</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>8</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.Text" xml:space="preserve">
     <value>0 - 0</value>
@@ -618,7 +706,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelDateBookmarksCountIntervalInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="EditDateBookmarksCount.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -630,7 +718,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditDateBookmarksCount.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;EditDateBookmarksCount.Name" xml:space="preserve">
     <value>EditDateBookmarksCount</value>
@@ -642,7 +730,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditDateBookmarksCount.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="EditVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -657,7 +745,7 @@
     <value>490, 18</value>
   </data>
   <data name="EditVolume.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;EditVolume.Name" xml:space="preserve">
     <value>EditVolume</value>
@@ -669,7 +757,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditVolume.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="LabelDateBookmarksCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -687,7 +775,7 @@
     <value>436, 13</value>
   </data>
   <data name="LabelDateBookmarksCount.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>6</value>
   </data>
   <data name="LabelDateBookmarksCount.Text" xml:space="preserve">
     <value>Number of date bookmarks (modification in real time: reduction will erase saved bookmarks)</value>
@@ -702,7 +790,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelDateBookmarksCount.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="LabelVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -720,7 +808,7 @@
     <value>310, 13</value>
   </data>
   <data name="LabelVolume.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>13</value>
   </data>
   <data name="LabelVolume.Text" xml:space="preserve">
     <value>Volume for .wav sounds (not applicable to system dialog sounds)</value>
@@ -735,7 +823,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelVolume.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="LabelVolumeValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -753,7 +841,7 @@
     <value>33, 13</value>
   </data>
   <data name="LabelVolumeValue.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>15</value>
   </data>
   <data name="LabelVolumeValue.Text" xml:space="preserve">
     <value>100%</value>
@@ -768,7 +856,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelVolumeValue.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="ActionSelectLangEN.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -809,7 +897,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -852,7 +940,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -867,10 +955,13 @@
     <value>239, 17</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
     <value>Enable global HotKey to popup the main form</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.Name" xml:space="preserve">
     <value>EditGlobalHotKeyPopupMainFormEnabled</value>
@@ -882,7 +973,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -912,7 +1003,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -942,7 +1033,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="EditUsageStatisticsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -972,7 +1063,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditUsageStatisticsEnabled.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="EditLogEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1002,7 +1093,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -1491,13 +1582,13 @@
     <value>14</value>
   </data>
   <data name="TabPageStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 49</value>
+    <value>4, 25</value>
   </data>
   <data name="TabPageStartup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
+    <value>571, 419</value>
   </data>
   <data name="TabPageStartup.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -5328,7 +5419,7 @@
     <value>60, 21</value>
   </data>
   <data name="EditImageExportFileFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;EditImageExportFileFormat.Name" xml:space="preserve">
     <value>EditImageExportFileFormat</value>
@@ -5349,7 +5440,7 @@
     <value>60, 21</value>
   </data>
   <data name="EditDataExportFileFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;EditDataExportFileFormat.Name" xml:space="preserve">
     <value>EditDataExportFileFormat</value>
@@ -5379,7 +5470,7 @@
     <value>161, 13</value>
   </data>
   <data name="LabelImageExportFileFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>16</value>
   </data>
   <data name="LabelImageExportFileFormat.Text" xml:space="preserve">
     <value>Preferred image export file format</value>
@@ -5412,7 +5503,7 @@
     <value>154, 13</value>
   </data>
   <data name="LabelDataExportFileFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>14</value>
   </data>
   <data name="LabelDataExportFileFormat.Text" xml:space="preserve">
     <value>Preferred data export file format</value>
@@ -5445,7 +5536,7 @@
     <value>210, 13</value>
   </data>
   <data name="LabelSaveImageCountWarning.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>5</value>
   </data>
   <data name="LabelSaveImageCountWarning.Text" xml:space="preserve">
     <value>Number of images to save to show warning</value>
@@ -5478,7 +5569,7 @@
     <value>28, 13</value>
   </data>
   <data name="LabelSaveImageCountWarningIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>7</value>
   </data>
   <data name="LabelSaveImageCountWarningIntervalInfo.Text" xml:space="preserve">
     <value>0 - 0</value>
@@ -5511,7 +5602,7 @@
     <value>203, 13</value>
   </data>
   <data name="LabelPrintPageCountWarning.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>8</value>
   </data>
   <data name="LabelPrintPageCountWarning.Text" xml:space="preserve">
     <value>Number of pages to print to show warning</value>
@@ -5544,7 +5635,7 @@
     <value>28, 13</value>
   </data>
   <data name="LabelPrintPageCountWarningIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>10</value>
   </data>
   <data name="LabelPrintPageCountWarningIntervalInfo.Text" xml:space="preserve">
     <value>0 - 0</value>
@@ -5577,7 +5668,7 @@
     <value>460, 13</value>
   </data>
   <data name="LabelPrintMargin.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>11</value>
   </data>
   <data name="LabelPrintMargin.Text" xml:space="preserve">
     <value>Printing margin in 100 x inch (20 = 0,5 cm | 50 = 1,25 cm | 80 = 2 cm | 100 = 2,5 cm | 120 = 3 cm)</value>
@@ -5610,7 +5701,7 @@
     <value>28, 13</value>
   </data>
   <data name="LabelPrintingMarginIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>13</value>
   </data>
   <data name="LabelPrintingMarginIntervalInfo.Text" xml:space="preserve">
     <value>0 - 0</value>
@@ -5637,7 +5728,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditSaveImageCountWarning.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EditSaveImageCountWarning.Name" xml:space="preserve">
     <value>EditSaveImageCountWarning</value>
@@ -5691,7 +5782,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditPrintPageCountWarning.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;EditPrintPageCountWarning.Name" xml:space="preserve">
     <value>EditPrintPageCountWarning</value>
@@ -5718,7 +5809,7 @@
     <value>226, 17</value>
   </data>
   <data name="EditExportDataEnumsAsTranslations.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
     <value>Export of enums as humanized translations</value>
@@ -5778,7 +5869,7 @@
     <value>146, 17</value>
   </data>
   <data name="EditPrintImageInLandscape.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
     <value>Print images in landscape</value>
@@ -5835,7 +5926,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditPrintingMargin.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;EditPrintingMargin.Name" xml:space="preserve">
     <value>EditPrintingMargin</value>
@@ -6340,6 +6431,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
