@@ -20,7 +20,6 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using EnumsNET;
 using Ordisoftware.Core;
-using WinKey = System.Windows.Input.Key;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -59,8 +58,8 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly (int, int, int, int) RemindCelebrationEveryMinutesInterval = (5, 120, 15, 5);
     static public readonly (int, int, int, int) RemindAutoLockTimeOutInterval = (10, 300, 30, 5);
 
-    // Available keys for hotkey combination
-    static private readonly List<WinKey> AvailableHotKeyKeys;
+    // Available keys for hotkey keys
+    static private readonly List<Keys> AvailableHotKeyKeys;
 
     static private readonly Properties.Settings Settings = Program.Settings;
 
@@ -74,10 +73,10 @@ namespace Ordisoftware.Hebrew.Calendar
       var filter2 = new Regex("(^[A-Z]$)");
       var filter3 = new Regex("(^D[0-D9]$)");
       var filter4 = new Regex("(^NumPad[0-D9]$)");
-      AvailableHotKeyKeys = Enums.GetValues<WinKey>().Where(x => filter1.Match(x.ToString()).Success)
-                                 .Concat(Enums.GetValues<WinKey>().Where(x => filter2.Match(x.ToString()).Success))
-                                 .Concat(Enums.GetValues<WinKey>().Where(x => filter3.Match(x.ToString()).Success))
-                                 .Concat(Enums.GetValues<WinKey>().Where(x => filter4.Match(x.ToString()).Success))
+      AvailableHotKeyKeys = Enums.GetValues<Keys>().Where(x => filter1.Match(x.ToString()).Success)
+                                 .Concat(Enums.GetValues<Keys>().Where(x => filter2.Match(x.ToString()).Success))
+                                 .Concat(Enums.GetValues<Keys>().Where(x => filter3.Match(x.ToString()).Success))
+                                 .Concat(Enums.GetValues<Keys>().Where(x => filter4.Match(x.ToString()).Success))
                                  .ToList();
     }
 

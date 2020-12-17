@@ -19,7 +19,6 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using WinKey = System.Windows.Input.Key;
 using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
 using KVPImageExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.ImageExportTarget, string>;
 
@@ -793,50 +792,58 @@ namespace Ordisoftware.Hebrew.Calendar
       SaveTheme();
     }
 
+    private void ChangeHotKeyCombination(Action action)
+    {
+      try
+      {
+        action();
+        label6.Text = "";
+      }
+      catch ( Exception ex )
+      {
+        label6.Text = ex.Message;
+      }
+    }
+
     private void EditGlobalHotKeyPopupMainFormEnabled_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
-      Globals.BringToFrontApplicationHotKey.Active = EditGlobalHotKeyPopupMainFormEnabled.Checked;
-      UpdateGlobalHotKeyPopupMainFormStatus();
+      if ( EditGlobalHotKeyPopupMainFormEnabled.Checked )
+        ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Active = true);
+    }
+
+    private void SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( HotKeyMutex ) return;
+      ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Key = (Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem);
     }
 
     private void EditGlobalHotKeyPopupMainFormShift_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      Globals.BringToFrontApplicationHotKey.Shift = EditGlobalHotKeyPopupMainFormShift.Checked;
-      UpdateGlobalHotKeyPopupMainFormStatus();
+      ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Shift = EditGlobalHotKeyPopupMainFormShift.Checked);
     }
 
     private void EditGlobalHotKeyPopupMainFormCtrl_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      Globals.BringToFrontApplicationHotKey.Control = EditGlobalHotKeyPopupMainFormCtrl.Checked;
-      UpdateGlobalHotKeyPopupMainFormStatus();
+      ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Control = EditGlobalHotKeyPopupMainFormCtrl.Checked);
     }
 
     private void EditGlobalHotKeyPopupMainFormAlt_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      Globals.BringToFrontApplicationHotKey.Alt = EditGlobalHotKeyPopupMainFormAlt.Checked;
-      UpdateGlobalHotKeyPopupMainFormStatus();
+      ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Alt = EditGlobalHotKeyPopupMainFormAlt.Checked);
     }
 
     private void EditGlobalHotKeyPopupMainFormWin_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      Globals.BringToFrontApplicationHotKey.Windows = EditGlobalHotKeyPopupMainFormWin.Checked;
-      UpdateGlobalHotKeyPopupMainFormStatus();
-    }
-
-    private void SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      if ( HotKeyMutex ) return;
-      Globals.BringToFrontApplicationHotKey.Key = (WinKey)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;
-      UpdateGlobalHotKeyPopupMainFormStatus();
+      ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Windows = EditGlobalHotKeyPopupMainFormWin.Checked);
     }
 
     private void ActionHotKeyReset_Click(object sender, EventArgs e)
@@ -862,19 +869,40 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private async void UpdateGlobalHotKeyPopupMainFormStatus()
     {
+      return;
+      bool isValid = true;
       bool enabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
-      EditGlobalHotKeyPopupMainFormStatus.Visible = false; ;
-      Globals.BringToFrontApplicationHotKey.Active = enabled;
-      Globals.BringToFrontApplicationHotKey.UpdateKeys();
+      EditGlobalHotKeyPopupMainFormStatus.Visible = false;
+      try
+      {
+        if ( enabled && Globals.BringToFrontApplicationHotKey.Active )
+          ;// Globals.BringToFrontApplicationHotKey.UpdateKeys();
+        else
+          Globals.BringToFrontApplicationHotKey.Active = enabled;
+      }
+      catch ( Exception ex )
+      {
+        isValid = false;
+        label6.Text = ex.Message;
+      }
       if ( enabled )
       {
         PanelHotKey.Enabled = false;
-        bool result = await Globals.BringToFrontApplicationHotKey.IsValid();
+        try
+        {
+          isValid = isValid && await Globals.BringToFrontApplicationHotKey.IsValid();
+        }
+        catch ( Exception ex )
+        {
+          isValid = false;
+          label6.Text = ex.Message;
+        }
         PanelHotKey.Enabled = true;
-        EditGlobalHotKeyPopupMainFormStatus.Text = result
+        EditGlobalHotKeyPopupMainFormStatus.Text = isValid
                                                  ? SysTranslations.Valid.GetLang()
                                                  : SysTranslations.Invalid.GetLang();
-        if ( result )
+
+        if ( isValid )
         {
           Settings.GlobalHotKeyPopupMainFormKey = (int)Globals.BringToFrontApplicationHotKey.Key;
           Settings.GlobalHotKeyPopupMainFormModifiers = (int)Globals.BringToFrontApplicationHotKey.Modifiers;

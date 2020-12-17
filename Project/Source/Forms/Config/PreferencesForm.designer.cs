@@ -234,6 +234,7 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.label6 = new System.Windows.Forms.Label();
       this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
@@ -397,6 +398,7 @@
       this.TabPageApplication.Controls.Add(this.ActionHotKeyReset);
       this.TabPageApplication.Controls.Add(this.PanelHotKey);
       this.TabPageApplication.Controls.Add(this.ActionManageBookmarks);
+      this.TabPageApplication.Controls.Add(this.label6);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.EditVolume);
@@ -1966,6 +1968,12 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // label6
+      // 
+      resources.ApplyResources(this.label6, "label6");
+      this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.label6.Name = "label6";
+      // 
       // EditGPSLatitude
       // 
       this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
@@ -2311,5 +2319,6 @@
     private System.Windows.Forms.Panel PanelHotKey;
     private System.Windows.Forms.Button ActionHotKeyReset;
     private System.Windows.Forms.Button ActionHotKeyInfo;
+    private System.Windows.Forms.Label label6;
   }
 }

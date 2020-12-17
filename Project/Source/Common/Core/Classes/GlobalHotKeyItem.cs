@@ -13,14 +13,13 @@
 /// <created> 2020-12 </created>
 /// <edited> 2020-12 </edited>
 using System;
-using System.Windows.Input;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InputSimulatorStandard;
 using InputSimulatorStandard.Native;
-using GlobalHotKey;
+using BondTech.HotkeyManagement.Win;
 using EnumsNET;
 
 namespace Ordisoftware.Core
@@ -31,57 +30,93 @@ namespace Ordisoftware.Core
 
     static ManagedGlobalHotKey()
     {
-      Application.ApplicationExit += (s, e) => HotKeyManager.Dispose();
+      Application.ApplicationExit += (s, e) => Manager.Dispose();
     }
 
-    static private InputSimulator InputSimulator = new InputSimulator();
+    static private HotKeyManager Manager
+    {
+      get
+      {
+        if ( _Manager == null )
+          _Manager = new HotKeyManager(Globals.MainForm);
+        return _Manager;
+      }
+    }
+    static private HotKeyManager _Manager;
 
-    static private readonly HotKeyManager HotKeyManager = new HotKeyManager();
+    static private readonly InputSimulator InputSimulator = new InputSimulator();
 
     static public readonly List<ManagedGlobalHotKey> All = new List<ManagedGlobalHotKey>();
 
-    private HotKey InternalHotKey;
-
-    public Key Key { get; set; }
-
-    public ModifierKeys Modifiers { get; set; }
+    private GlobalHotKey InternalHotKey;
 
     public bool Shift
     {
-      get => Modifiers.HasAnyFlags(ModifierKeys.Shift);
-      set => Modifiers = Modifiers.SetFlag(ModifierKeys.Shift, value);
+      get => Modifiers.HasAnyFlags(Modifiers.Shift);
+      set => Modifiers = Modifiers.SetFlag(Modifiers.Shift, value);
     }
 
     public bool Control
     {
-      get => Modifiers.HasAnyFlags(ModifierKeys.Control);
-      set => Modifiers = Modifiers.SetFlag(ModifierKeys.Control, value);
+      get => Modifiers.HasAnyFlags(Modifiers.Control);
+      set => Modifiers = Modifiers.SetFlag(Modifiers.Control, value);
     }
 
     public bool Alt
     {
-      get => Modifiers.HasAnyFlags(ModifierKeys.Alt);
-      set => Modifiers = Modifiers.SetFlag(ModifierKeys.Alt, value);
+      get => Modifiers.HasAnyFlags(Modifiers.Alt);
+      set => Modifiers = Modifiers.SetFlag(Modifiers.Alt, value);
     }
 
     public bool Windows
     {
-      get => Modifiers.HasAnyFlags(ModifierKeys.Windows);
-      set => Modifiers = Modifiers.SetFlag(ModifierKeys.Windows, value);
+      get => Modifiers.HasAnyFlags(Modifiers.Win);
+      set => Modifiers = Modifiers.SetFlag(Modifiers.Win, value);
     }
 
-    public EventHandler<KeyPressedEventArgs> KeyPressed
+    public Keys Key
+    {
+      get { return _Key; }
+      set
+      {
+        if ( _Key == value || value == Keys.None ) return;
+        if ( InternalHotKey != null )
+          InternalHotKey.Key = value;
+        _Key = value;
+      }
+    }
+    public Keys _Key;
+
+    public Modifiers Modifiers
+    {
+      get { return _Modifiers; }
+      set
+      {
+        if ( _Modifiers == value || value == Modifiers.None ) return;
+        if ( InternalHotKey != null )
+          InternalHotKey.Modifier = value;
+        _Modifiers = value;
+      }
+    }
+    public Modifiers _Modifiers;
+
+    public GlobalHotKeyEventHandler KeyPressed
     {
       get { return _KeyPressed; }
       set
       {
-        if ( KeyPressed == value ) return;
-        Unregister();
+        if ( _KeyPressed == value ) return;
+        if ( InternalHotKey != null )
+        {
+          if ( _KeyPressed != null )
+            InternalHotKey.HotKeyPressed += _KeyPressed;
+          if ( value != null )
+            InternalHotKey.HotKeyPressed += value;
+        }
         _KeyPressed = value;
-        Register();
       }
     }
-    private EventHandler<KeyPressedEventArgs> _KeyPressed;
+    private GlobalHotKeyEventHandler _KeyPressed;
 
     public bool Active
     {
@@ -96,24 +131,15 @@ namespace Ordisoftware.Core
       }
     }
 
-    public void UpdateKeys()
-    {
-      if ( !Active ) return;
-      Unregister();
-      Register();
-    }
-
     private void Register()
     {
-      Unregister();
-      try
+      if ( InternalHotKey == null && Key != Keys.None && Modifiers != Modifiers.None )
       {
-        InternalHotKey = HotKeyManager.Register(Key, Modifiers);
-        HotKeyManager.KeyPressed += KeyPressed;
+        InternalHotKey = new GlobalHotKey(Globals.ApplicationCode, Modifiers, Key);
+        Manager.AddGlobalHotKey(InternalHotKey);
+        if ( _KeyPressed != null )
+          InternalHotKey.HotKeyPressed += KeyPressed;
         All.Add(this);
-      }
-      catch ( Exception ex )
-      {
       }
     }
 
@@ -121,9 +147,8 @@ namespace Ordisoftware.Core
     {
       if ( InternalHotKey != null )
       {
-        HotKeyManager.KeyPressed -= KeyPressed;
-        HotKeyManager.Unregister(InternalHotKey);
-        InternalHotKey = null;
+        InternalHotKey.HotKeyPressed -= KeyPressed;
+        Manager.RemoveGlobalHotKey(InternalHotKey);
         All.Remove(this);
       }
     }
@@ -133,19 +158,22 @@ namespace Ordisoftware.Core
       if ( !Active ) return false;
       var token = new CancellationTokenSource();
       bool result = false;
-      var key = (VirtualKeyCode)KeyInterop.VirtualKeyFromKey(Key);
+      var key = (VirtualKeyCode)Key;
       var modifiers = new List<VirtualKeyCode>();
       if ( Shift ) modifiers.Add(VirtualKeyCode.SHIFT);
       if ( Control ) modifiers.Add(VirtualKeyCode.CONTROL);
       if ( Alt ) modifiers.Add(VirtualKeyCode.MENU);
-      if ( Windows ) { modifiers.Add(VirtualKeyCode.LWIN); modifiers.Add(VirtualKeyCode.RWIN); }
+      if ( Windows ) { modifiers.Add(VirtualKeyCode.LWIN); }
       var old = KeyPressed;
-      KeyPressed = (s, e) => { token.Cancel(); result = true; };
+      InternalHotKey.HotKeyPressed -= old;
+      GlobalHotKeyEventHandler action = (s, e) => { token.Cancel(); result = true; };
+      InternalHotKey.HotKeyPressed += action;
       InputSimulator.Keyboard.ModifiedKeyStroke(modifiers.ToArray(), key);
       if ( !result )
-        try { await Task.Delay(1000, token.Token); }
+        try { await Task.Delay(5000, token.Token); }
         catch { }
-      KeyPressed = old;
+      InternalHotKey.HotKeyPressed -= action;
+      InternalHotKey.HotKeyPressed += old;
       if ( !result ) Unregister();
       return result;
     }
