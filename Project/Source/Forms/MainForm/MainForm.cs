@@ -33,6 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm : Form
   {
 
+    public const bool HotKeyEnabledByDefault = true;
     public const Modifiers DefaultHotKeyModifiers = Modifiers.Shift | Modifiers.Control | Modifiers.Alt;
     //public const Modifiers DefaultHotKeyModifiers = Modifiers.Win;
     public const Keys DefaultHotKeyKey = Keys.C;

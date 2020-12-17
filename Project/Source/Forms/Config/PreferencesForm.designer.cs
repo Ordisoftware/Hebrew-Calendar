@@ -54,10 +54,8 @@
       this.SelectGlobalHotKeyPopupMainFormKey = new System.Windows.Forms.ComboBox();
       this.EditGlobalHotKeyPopupMainFormCtrl = new System.Windows.Forms.CheckBox();
       this.EditGlobalHotKeyPopupMainFormAlt = new System.Windows.Forms.CheckBox();
-      this.EditGlobalHotKeyPopupMainFormStatus = new System.Windows.Forms.Label();
       this.EditGlobalHotKeyPopupMainFormWin = new System.Windows.Forms.CheckBox();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
-      this.label6 = new System.Windows.Forms.Label();
       this.LabelDateBookmarksCountIntervalInfo = new System.Windows.Forms.Label();
       this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditVolume = new System.Windows.Forms.TrackBar();
@@ -121,10 +119,6 @@
       this.LabelGPSLongitude = new System.Windows.Forms.Label();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelSelectReminderSound = new System.Windows.Forms.LinkLabel();
       this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
@@ -201,7 +195,6 @@
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -240,6 +233,11 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
@@ -394,11 +392,8 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageApplication.Controls.Add(this.ActionHotKeyInfo);
-      this.TabPageApplication.Controls.Add(this.ActionHotKeyReset);
       this.TabPageApplication.Controls.Add(this.PanelHotKey);
       this.TabPageApplication.Controls.Add(this.ActionManageBookmarks);
-      this.TabPageApplication.Controls.Add(this.label6);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.EditVolume);
@@ -433,11 +428,12 @@
       // 
       // PanelHotKey
       // 
+      this.PanelHotKey.Controls.Add(this.ActionHotKeyInfo);
+      this.PanelHotKey.Controls.Add(this.ActionHotKeyReset);
       this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormShift);
       this.PanelHotKey.Controls.Add(this.SelectGlobalHotKeyPopupMainFormKey);
       this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormCtrl);
       this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormAlt);
-      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormStatus);
       this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormWin);
       resources.ApplyResources(this.PanelHotKey, "PanelHotKey");
       this.PanelHotKey.Name = "PanelHotKey";
@@ -471,12 +467,6 @@
       this.EditGlobalHotKeyPopupMainFormAlt.UseVisualStyleBackColor = true;
       this.EditGlobalHotKeyPopupMainFormAlt.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormAlt_CheckedChanged);
       // 
-      // EditGlobalHotKeyPopupMainFormStatus
-      // 
-      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormStatus, "EditGlobalHotKeyPopupMainFormStatus");
-      this.EditGlobalHotKeyPopupMainFormStatus.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.EditGlobalHotKeyPopupMainFormStatus.Name = "EditGlobalHotKeyPopupMainFormStatus";
-      // 
       // EditGlobalHotKeyPopupMainFormWin
       // 
       resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormWin, "EditGlobalHotKeyPopupMainFormWin");
@@ -492,12 +482,6 @@
       this.ActionManageBookmarks.Name = "ActionManageBookmarks";
       this.ActionManageBookmarks.UseVisualStyleBackColor = true;
       this.ActionManageBookmarks.Click += new System.EventHandler(this.ActionManageBookmarks_Click);
-      // 
-      // label6
-      // 
-      resources.ApplyResources(this.label6, "label6");
-      this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.label6.Name = "label6";
       // 
       // LabelDateBookmarksCountIntervalInfo
       // 
@@ -1051,38 +1035,6 @@
       this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
       // 
       // TabPageReminder
       // 
@@ -1697,14 +1649,6 @@
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
       // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // TabPageTextReport
       // 
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
@@ -2014,6 +1958,46 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
       // EditExportFolder
       // 
       this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
@@ -2315,10 +2299,8 @@
     private System.Windows.Forms.CheckBox EditGlobalHotKeyPopupMainFormCtrl;
     private System.Windows.Forms.CheckBox EditGlobalHotKeyPopupMainFormShift;
     private System.Windows.Forms.CheckBox EditGlobalHotKeyPopupMainFormEnabled;
-    private System.Windows.Forms.Label EditGlobalHotKeyPopupMainFormStatus;
     private System.Windows.Forms.Panel PanelHotKey;
     private System.Windows.Forms.Button ActionHotKeyReset;
     private System.Windows.Forms.Button ActionHotKeyInfo;
-    private System.Windows.Forms.Label label6;
   }
 }

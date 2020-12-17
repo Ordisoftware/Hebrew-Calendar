@@ -76,7 +76,11 @@ namespace Ordisoftware.Core
       {
         if ( _Key == value || value == Keys.None ) return;
         if ( InternalHotKey != null )
-          InternalHotKey.Key = value;
+        {
+          Active = false;
+          Key = value;
+          Active = true;
+        }
         _Key = value;
       }
     }
@@ -89,7 +93,11 @@ namespace Ordisoftware.Core
       {
         if ( _Modifiers == value || value == Modifiers.None ) return;
         if ( InternalHotKey != null )
-          InternalHotKey.Modifier = value;
+        {
+          Active = false;
+          Modifiers = value;
+          Active = true;
+        }
         _Modifiers = value;
       }
     }
@@ -104,7 +112,7 @@ namespace Ordisoftware.Core
         if ( InternalHotKey != null )
         {
           if ( _KeyPressed != null )
-            InternalHotKey.HotKeyPressed += _KeyPressed;
+            InternalHotKey.HotKeyPressed -= _KeyPressed;
           if ( value != null )
             InternalHotKey.HotKeyPressed += value;
         }
@@ -142,17 +150,17 @@ namespace Ordisoftware.Core
     {
       if ( InternalHotKey != null )
       {
-        InternalHotKey.HotKeyPressed -= KeyPressed;
+        if ( KeyPressed != null )
+          InternalHotKey.HotKeyPressed -= KeyPressed;
         Manager.RemoveGlobalHotKey(InternalHotKey);
-        All.Remove(this);
         InternalHotKey = null;
+        All.Remove(this);
       }
     }
 
-    public async Task<bool> IsValid()
+    public bool IsValid()
     {
       if ( !Active ) return false;
-      var token = new CancellationTokenSource();
       bool result = false;
       var key = (VirtualKeyCode)Key;
       var modifiers = new List<VirtualKeyCode>();
@@ -162,15 +170,19 @@ namespace Ordisoftware.Core
       if ( Windows ) { modifiers.Add(VirtualKeyCode.LWIN); }
       var old = KeyPressed;
       InternalHotKey.HotKeyPressed -= old;
-      GlobalHotKeyEventHandler action = (s, e) => { token.Cancel(); result = true; };
+      GlobalHotKeyEventHandler action = (s, e) => { result = true; };
       InternalHotKey.HotKeyPressed += action;
       InputSimulator.Keyboard.ModifiedKeyStroke(modifiers.ToArray(), key);
       if ( !result )
-        try { await Task.Delay(5000, token.Token); }
-        catch { }
+          for ( int s = 1; s < 100; s++ )
+          {
+            Thread.Sleep(10);
+            Application.DoEvents();
+            if ( result ) break;
+          }
       InternalHotKey.HotKeyPressed -= action;
       InternalHotKey.HotKeyPressed += old;
-      if ( !result ) Unregister();
+      if ( !result ) Active = false;
       return result;
     }
 
