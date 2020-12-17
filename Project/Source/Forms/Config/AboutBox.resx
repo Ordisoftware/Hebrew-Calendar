@@ -1304,16 +1304,16 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 516</value>
+    <value>113, 516</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 13</value>
+    <value>202, 13</value>
   </data>
   <data name="label16.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
-    <value>Global Shortcut Manager (MIT) :</value>
+    <value>Modified Global Shortcut Manager (MIT) :</value>
   </data>
   <data name="&gt;&gt;label16.Name" xml:space="preserve">
     <value>label16</value>

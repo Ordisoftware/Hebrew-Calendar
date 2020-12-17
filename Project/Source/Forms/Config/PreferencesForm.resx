@@ -329,16 +329,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionHotKeyInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 299</value>
+    <value>3, 22</value>
   </data>
   <data name="ActionHotKeyInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
   <data name="ActionHotKeyInfo.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="ActionHotKeyInfo.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;ActionHotKeyInfo.Name" xml:space="preserve">
     <value>ActionHotKeyInfo</value>
@@ -347,7 +344,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionHotKeyInfo.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
+    <value>PanelHotKey</value>
   </data>
   <data name="&gt;&gt;ActionHotKeyInfo.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -372,16 +369,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionHotKeyReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 299</value>
+    <value>35, 22</value>
   </data>
   <data name="ActionHotKeyReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
   <data name="ActionHotKeyReset.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
-  </data>
-  <data name="ActionHotKeyReset.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;ActionHotKeyReset.Name" xml:space="preserve">
     <value>ActionHotKeyReset</value>
@@ -390,7 +384,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionHotKeyReset.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
+    <value>PanelHotKey</value>
   </data>
   <data name="&gt;&gt;ActionHotKeyReset.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -423,7 +417,7 @@
     <value>PanelHotKey</value>
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="SelectGlobalHotKeyPopupMainFormKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>240, 1</value>
@@ -444,7 +438,7 @@
     <value>PanelHotKey</value>
   </data>
   <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormCtrl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -474,7 +468,7 @@
     <value>PanelHotKey</value>
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormAlt.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -504,43 +498,7 @@
     <value>PanelHotKey</value>
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormStatus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormStatus.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 5</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormStatus.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormStatus.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormStatus.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormStatus.Name" xml:space="preserve">
-    <value>EditGlobalHotKeyPopupMainFormStatus</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormStatus.Parent" xml:space="preserve">
-    <value>PanelHotKey</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormStatus.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormWin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -570,19 +528,16 @@
     <value>PanelHotKey</value>
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="PanelHotKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 273</value>
   </data>
   <data name="PanelHotKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 24</value>
+    <value>454, 55</value>
   </data>
   <data name="PanelHotKey.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="PanelHotKey.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;PanelHotKey.Name" xml:space="preserve">
     <value>PanelHotKey</value>
@@ -594,7 +549,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;PanelHotKey.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="ActionManageBookmarks.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -637,43 +592,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionManageBookmarks.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 306</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 13</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>err</value>
-  </data>
-  <data name="label6.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>TabPageApplication</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -706,7 +625,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelDateBookmarksCountIntervalInfo.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="EditDateBookmarksCount.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -730,7 +649,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditDateBookmarksCount.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="EditVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -757,7 +676,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditVolume.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="LabelDateBookmarksCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -790,7 +709,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelDateBookmarksCount.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="LabelVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -823,7 +742,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelVolume.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="LabelVolumeValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -856,7 +775,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;LabelVolumeValue.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="ActionSelectLangEN.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -897,7 +816,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangEN.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="ActionSelectLangFR.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -940,7 +859,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>9</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -960,9 +879,6 @@
   <data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
     <value>Enable global HotKey to popup the main form</value>
   </data>
-  <data name="EditGlobalHotKeyPopupMainFormEnabled.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.Name" xml:space="preserve">
     <value>EditGlobalHotKeyPopupMainFormEnabled</value>
   </data>
@@ -973,7 +889,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>10</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1003,7 +919,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>11</value>
   </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1033,7 +949,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>12</value>
   </data>
   <data name="EditUsageStatisticsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1063,7 +979,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditUsageStatisticsEnabled.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>13</value>
   </data>
   <data name="EditLogEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1093,7 +1009,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>14</value>
   </data>
   <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -1582,13 +1498,13 @@
     <value>14</value>
   </data>
   <data name="TabPageStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
+    <value>4, 49</value>
   </data>
   <data name="TabPageStartup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 419</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageStartup.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -6431,9 +6347,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
