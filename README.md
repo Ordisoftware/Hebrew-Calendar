@@ -178,6 +178,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
+- Add export celebrations board.
+- Add print celebrations board.
+- Add bookmarks backup/restore.
 - Add dark theme for month view.
 - Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
@@ -193,9 +196,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### Version 6.0 (in progress)
 
-- Add window celebrations board with selection of the years interval and clickable dates.
+- Add window celebrations board with clickable dates and selection of years interval.
 - Add advanced print preview window.
-- Add select a years interval to export, else process the entire report/grid or only the current month view.
+- Add select years interval to export, else process the entire report/grid or only the current month view.
 - Add option to set the default print month view page orientation.
 - Add option to set preferred data export file format (CSV/JSON)
 - Add option to set preferred image export file format (PNG/JPEG/TIFF/BMP).
@@ -214,10 +217,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add InputSimulatorStandard NuGet package.
 - Add Global Shortcut Manager dependency.
 - Update help.
-
->- Add export celebrations board.
->- Add print celebrations board.
->- Add bookmarks backup/restore.
 
 #### 2020.12.13 - Version 5.13
 
