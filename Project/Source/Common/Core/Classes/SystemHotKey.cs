@@ -24,7 +24,7 @@ using EnumsNET;
 namespace Ordisoftware.Core
 {
 
-  public class ManagedGlobalHotKey
+  public class SystemHotKey
   {
 
     static private HotKeyManager Manager
@@ -40,7 +40,7 @@ namespace Ordisoftware.Core
 
     static private readonly InputSimulator InputSimulator = new InputSimulator();
 
-    static public readonly List<ManagedGlobalHotKey> All = new List<ManagedGlobalHotKey>();
+    static public readonly List<SystemHotKey> AllActivated = new List<SystemHotKey>();
 
     private GlobalHotKey InternalHotKey;
 
@@ -141,7 +141,7 @@ namespace Ordisoftware.Core
         Manager.AddGlobalHotKey(InternalHotKey);
         if ( _KeyPressed != null )
           InternalHotKey.HotKeyPressed += KeyPressed;
-        All.Add(this);
+        AllActivated.Add(this);
       }
     }
 
@@ -153,7 +153,7 @@ namespace Ordisoftware.Core
           InternalHotKey.HotKeyPressed -= KeyPressed;
         Manager.RemoveGlobalHotKey(InternalHotKey);
         InternalHotKey = null;
-        All.Remove(this);
+        AllActivated.Remove(this);
       }
     }
 

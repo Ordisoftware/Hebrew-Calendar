@@ -19,7 +19,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public class CommandLineArgs : SystemCommandLineArgs
+  public class CommandLineArgs : CommandLineOptions
   {
     [Option('g', "generate", Required = false, HelpText = "Generate the calendar's data.")]
     public bool Generate { get; set; }

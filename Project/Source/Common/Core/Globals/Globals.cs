@@ -100,8 +100,8 @@ namespace Ordisoftware.Core
     }
     static private Form _MainForm;
 
-    static public readonly ManagedGlobalHotKey BringToFrontApplicationHotKey
-      = new ManagedGlobalHotKey();
+    static public readonly SystemHotKey BringToFrontApplicationHotKey
+      = new SystemHotKey();
 
   }
 

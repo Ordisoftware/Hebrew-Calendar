@@ -153,7 +153,7 @@
     <Compile Include="Dependencies\Global Shortcut Manager\Win32.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
-    <Compile Include="Source\Common\Core\Classes\GlobalHotKeyItem.cs" />
+    <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
     <Compile Include="Source\Forms\Boxes\CelebrationsBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,7 +225,7 @@
     <Compile Include="Source\Forms\Controls\SelectYearControl.Designer.cs">
       <DependentUpon>SelectYearControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Core\Classes\SystemCommandLineArgs.cs" />
+    <Compile Include="Source\Common\Core\Classes\CommandLineOptions.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportAction.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Errors.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.IO.cs" />
