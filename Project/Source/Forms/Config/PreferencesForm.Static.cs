@@ -111,8 +111,9 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         MainForm.Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
         MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
+        if ( result ) CalendarDates.Instance.Clear();
       });
-      if ( result ) CalendarDates.Instance.Clear();
+      SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
       return result;
     }
 

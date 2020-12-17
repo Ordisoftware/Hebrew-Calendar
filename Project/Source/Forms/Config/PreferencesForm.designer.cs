@@ -47,9 +47,9 @@
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
+      this.PanelHotKey = new System.Windows.Forms.Panel();
       this.ActionHotKeyInfo = new System.Windows.Forms.Button();
       this.ActionHotKeyReset = new System.Windows.Forms.Button();
-      this.PanelHotKey = new System.Windows.Forms.Panel();
       this.EditGlobalHotKeyPopupMainFormShift = new System.Windows.Forms.CheckBox();
       this.SelectGlobalHotKeyPopupMainFormKey = new System.Windows.Forms.ComboBox();
       this.EditGlobalHotKeyPopupMainFormCtrl = new System.Windows.Forms.CheckBox();
@@ -233,6 +233,7 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.LabelHotKeyStatus = new System.Windows.Forms.Label();
       this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
@@ -410,6 +411,19 @@
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
       // 
+      // PanelHotKey
+      // 
+      this.PanelHotKey.Controls.Add(this.ActionHotKeyInfo);
+      this.PanelHotKey.Controls.Add(this.ActionHotKeyReset);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormShift);
+      this.PanelHotKey.Controls.Add(this.SelectGlobalHotKeyPopupMainFormKey);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormCtrl);
+      this.PanelHotKey.Controls.Add(this.LabelHotKeyStatus);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormAlt);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormWin);
+      resources.ApplyResources(this.PanelHotKey, "PanelHotKey");
+      this.PanelHotKey.Name = "PanelHotKey";
+      // 
       // ActionHotKeyInfo
       // 
       this.ActionHotKeyInfo.FlatAppearance.BorderSize = 0;
@@ -425,18 +439,6 @@
       this.ActionHotKeyReset.Name = "ActionHotKeyReset";
       this.ActionHotKeyReset.UseVisualStyleBackColor = true;
       this.ActionHotKeyReset.Click += new System.EventHandler(this.ActionHotKeyReset_Click);
-      // 
-      // PanelHotKey
-      // 
-      this.PanelHotKey.Controls.Add(this.ActionHotKeyInfo);
-      this.PanelHotKey.Controls.Add(this.ActionHotKeyReset);
-      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormShift);
-      this.PanelHotKey.Controls.Add(this.SelectGlobalHotKeyPopupMainFormKey);
-      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormCtrl);
-      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormAlt);
-      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormWin);
-      resources.ApplyResources(this.PanelHotKey, "PanelHotKey");
-      this.PanelHotKey.Name = "PanelHotKey";
       // 
       // EditGlobalHotKeyPopupMainFormShift
       // 
@@ -1958,6 +1960,11 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // LabelHotKeyStatus
+      // 
+      resources.ApplyResources(this.LabelHotKeyStatus, "LabelHotKeyStatus");
+      this.LabelHotKeyStatus.Name = "LabelHotKeyStatus";
+      // 
       // EditGPSLatitude
       // 
       this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
@@ -2302,5 +2309,6 @@
     private System.Windows.Forms.Panel PanelHotKey;
     private System.Windows.Forms.Button ActionHotKeyReset;
     private System.Windows.Forms.Button ActionHotKeyInfo;
+    private System.Windows.Forms.Label LabelHotKeyStatus;
   }
 }

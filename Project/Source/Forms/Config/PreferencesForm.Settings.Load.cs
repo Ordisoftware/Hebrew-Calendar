@@ -26,8 +26,6 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class PreferencesForm : Form
   {
 
-    private bool HotKeyMutex;
-
     private void LoadSettings()
     {
       SystemManager.TryCatch(() => { LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString(); });
@@ -109,6 +107,11 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditPrintImageInLandscape.Checked = Settings.PrintImageInLandscape; });
       SystemManager.TryCatch(() => { EditExportDataEnumsAsTranslations.Checked = Settings.ExportDataEnumsAsTranslations; });
       SystemManager.TryCatch(() => { EditSaveImageCountWarning.Value = Settings.SaveImageCountWarning; });
+      SystemManager.TryCatch(() => { EditGlobalHotKeyPopupMainFormEnabled.Checked = Settings.GlobalHotKeyPopupMainFormEnabled; });
+      // Hotkey
+      InitialHotKeyEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
+      SystemManager.TryCatchManage(() => Globals.BringToFrontApplicationHotKey.Active = false);
+      CheckHotKeyCombination(null);
       // System
       EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
       EditLogEnabled.Enabled = DebugManager.Enabled;
