@@ -337,6 +337,9 @@
   <data name="ActionHotKeyInfo.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
+  <data name="ActionHotKeyInfo.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;ActionHotKeyInfo.Name" xml:space="preserve">
     <value>ActionHotKeyInfo</value>
   </data>
@@ -376,6 +379,9 @@
   </data>
   <data name="ActionHotKeyReset.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
+  </data>
+  <data name="ActionHotKeyReset.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;ActionHotKeyReset.Name" xml:space="preserve">
     <value>ActionHotKeyReset</value>
@@ -575,6 +581,9 @@
   <data name="PanelHotKey.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
+  <data name="PanelHotKey.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;PanelHotKey.Name" xml:space="preserve">
     <value>PanelHotKey</value>
   </data>
@@ -650,6 +659,9 @@
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>err</value>
+  </data>
+  <data name="label6.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -947,6 +959,9 @@
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
     <value>Enable global HotKey to popup the main form</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.Name" xml:space="preserve">
     <value>EditGlobalHotKeyPopupMainFormEnabled</value>
@@ -1567,13 +1582,13 @@
     <value>14</value>
   </data>
   <data name="TabPageStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 49</value>
+    <value>4, 25</value>
   </data>
   <data name="TabPageStartup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
+    <value>571, 419</value>
   </data>
   <data name="TabPageStartup.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>

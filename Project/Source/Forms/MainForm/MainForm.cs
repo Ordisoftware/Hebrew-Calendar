@@ -33,10 +33,9 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm : Form
   {
 
-    // TODO restore defaults
-    //public const Modifiers DefaultHotKeyModifiers = Modifiers.Shift | Modifiers.Control | Modifiers.Alt;
-    public const Modifiers DefaultHotKeyModifiers = Modifiers.Win;
-    public const Keys DefaultHotKeyKey = Keys.H;
+    public const Modifiers DefaultHotKeyModifiers = Modifiers.Shift | Modifiers.Control | Modifiers.Alt;
+    //public const Modifiers DefaultHotKeyModifiers = Modifiers.Win;
+    public const Keys DefaultHotKeyKey = Keys.C;
 
     /// <summary>
     /// Indicate the singleton instance.

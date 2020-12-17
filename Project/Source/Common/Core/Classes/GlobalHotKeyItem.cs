@@ -28,11 +28,6 @@ namespace Ordisoftware.Core
   public class ManagedGlobalHotKey
   {
 
-    static ManagedGlobalHotKey()
-    {
-      Application.ApplicationExit += (s, e) => Manager.Dispose();
-    }
-
     static private HotKeyManager Manager
     {
       get
@@ -150,6 +145,7 @@ namespace Ordisoftware.Core
         InternalHotKey.HotKeyPressed -= KeyPressed;
         Manager.RemoveGlobalHotKey(InternalHotKey);
         All.Remove(this);
+        InternalHotKey = null;
       }
     }
 

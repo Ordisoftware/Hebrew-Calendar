@@ -792,19 +792,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SaveTheme();
     }
 
-    private void ChangeHotKeyCombination(Action action)
-    {
-      try
-      {
-        action();
-        label6.Text = "";
-      }
-      catch ( Exception ex )
-      {
-        label6.Text = ex.Message;
-      }
-    }
-
     private void EditGlobalHotKeyPopupMainFormEnabled_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
@@ -815,39 +802,47 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
-      ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Key = (Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem);
+      var key = Globals.BringToFrontApplicationHotKey.Key;
+      if ( !ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Key = (Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem) )
+        SelectGlobalHotKeyPopupMainFormKey.SelectedIndex = SelectGlobalHotKeyPopupMainFormKey.Items.IndexOf(key);
+
     }
 
     private void EditGlobalHotKeyPopupMainFormShift_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Shift = EditGlobalHotKeyPopupMainFormShift.Checked);
+      if ( !ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Shift = EditGlobalHotKeyPopupMainFormShift.Checked) )
+        EditGlobalHotKeyPopupMainFormShift.Checked = !EditGlobalHotKeyPopupMainFormShift.Checked;
     }
 
     private void EditGlobalHotKeyPopupMainFormCtrl_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Control = EditGlobalHotKeyPopupMainFormCtrl.Checked);
+      if ( !ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Control = EditGlobalHotKeyPopupMainFormCtrl.Checked) )
+        EditGlobalHotKeyPopupMainFormCtrl.Checked = !EditGlobalHotKeyPopupMainFormCtrl.Checked;
     }
 
     private void EditGlobalHotKeyPopupMainFormAlt_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Alt = EditGlobalHotKeyPopupMainFormAlt.Checked);
+      if ( !ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Alt = EditGlobalHotKeyPopupMainFormAlt.Checked) )
+        EditGlobalHotKeyPopupMainFormAlt.Checked = !EditGlobalHotKeyPopupMainFormAlt.Checked;
     }
 
     private void EditGlobalHotKeyPopupMainFormWin_CheckedChanged(object sender, EventArgs e)
     {
       if ( HotKeyMutex ) return;
       if ( !CheckModifiersChanged(sender) ) return;
-      ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Windows = EditGlobalHotKeyPopupMainFormWin.Checked);
+      if ( !ChangeHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Windows = EditGlobalHotKeyPopupMainFormWin.Checked) )
+        EditGlobalHotKeyPopupMainFormWin.Checked = !EditGlobalHotKeyPopupMainFormWin.Checked;
     }
 
     private void ActionHotKeyReset_Click(object sender, EventArgs e)
     {
+      Globals.BringToFrontApplicationHotKey.Active = false;
       Globals.BringToFrontApplicationHotKey.Key = MainForm.DefaultHotKeyKey;
       Globals.BringToFrontApplicationHotKey.Modifiers = MainForm.DefaultHotKeyModifiers;
       LoadHotKeys();
@@ -865,6 +860,21 @@ namespace Ordisoftware.Hebrew.Calendar
       checkbox.Checked = true;
       HotKeyMutex = false;
       return false;
+    }
+
+    private bool ChangeHotKeyCombination(Action action)
+    {
+      try
+      {
+        action();
+        label6.Text = "";
+        return true;
+      }
+      catch ( Exception ex )
+      {
+        label6.Text = ex.Message;
+        return false;
+      }
     }
 
     private async void UpdateGlobalHotKeyPopupMainFormStatus()

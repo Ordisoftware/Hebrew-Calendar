@@ -1907,7 +1907,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("46")]
+        [global::System.Configuration.DefaultSettingValueAttribute("67")]
         public int GlobalHotKeyPopupMainFormKey {
             get {
                 return ((int)(this["GlobalHotKeyPopupMainFormKey"]));

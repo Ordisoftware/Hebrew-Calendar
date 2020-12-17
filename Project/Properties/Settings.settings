@@ -479,7 +479,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="GlobalHotKeyPopupMainFormKey" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">46</Value>
+      <Value Profile="(Default)">67</Value>
     </Setting>
     <Setting Name="GlobalHotKeyPopupMainFormModifiers" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">7</Value>
