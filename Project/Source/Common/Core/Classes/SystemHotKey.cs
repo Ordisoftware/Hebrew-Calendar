@@ -138,9 +138,23 @@ namespace Ordisoftware.Core
       if ( InternalHotKey == null && Key != Keys.None && Modifiers != Modifiers.None )
       {
         InternalHotKey = new GlobalHotKey(Globals.ApplicationCode, Modifiers, Key);
-        Manager.AddGlobalHotKey(InternalHotKey);
-        if ( _KeyPressed != null )
-          InternalHotKey.HotKeyPressed += KeyPressed;
+        if ( _KeyPressed != null ) InternalHotKey.HotKeyPressed += KeyPressed;
+        try
+        {
+          Manager.AddGlobalHotKey(InternalHotKey);
+        }
+        catch ( Exception ex )
+        {
+          try
+          {
+            Unregister();
+          }
+          catch ( Exception inner )
+          {
+            throw new Exception(ex.Message, inner);
+          }
+          throw ex;
+        }
         AllActivated.Add(this);
       }
     }
@@ -170,9 +184,9 @@ namespace Ordisoftware.Core
       var old = KeyPressed;
       GlobalHotKeyEventHandler action = (s, e) => { result = true; };
       KeyPressed = action;
-      Active = true;
       try
       {
+        Active = true;
         InputSimulator.Keyboard.ModifiedKeyStroke(modifiers.ToArray(), key);
         if ( !result )
           for ( int s = 1; s < 100; s++ )
