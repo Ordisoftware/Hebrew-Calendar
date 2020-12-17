@@ -159,7 +159,7 @@ namespace Ordisoftware.Core
 
     public bool IsValid()
     {
-      if ( !Active ) return false;
+      if ( Active ) return true;
       bool result = false;
       var key = (VirtualKeyCode)Key;
       var modifiers = new List<VirtualKeyCode>();
@@ -168,20 +168,25 @@ namespace Ordisoftware.Core
       if ( Alt ) modifiers.Add(VirtualKeyCode.MENU);
       if ( Windows ) { modifiers.Add(VirtualKeyCode.LWIN); }
       var old = KeyPressed;
-      InternalHotKey.HotKeyPressed -= old;
       GlobalHotKeyEventHandler action = (s, e) => { result = true; };
-      InternalHotKey.HotKeyPressed += action;
-      InputSimulator.Keyboard.ModifiedKeyStroke(modifiers.ToArray(), key);
-      if ( !result )
+      KeyPressed = action;
+      Active = true;
+      try
+      {
+        InputSimulator.Keyboard.ModifiedKeyStroke(modifiers.ToArray(), key);
+        if ( !result )
           for ( int s = 1; s < 100; s++ )
           {
             Thread.Sleep(10);
             Application.DoEvents();
             if ( result ) break;
           }
-      InternalHotKey.HotKeyPressed -= action;
-      InternalHotKey.HotKeyPressed += old;
-      if ( !result ) Active = false;
+      }
+      finally
+      {
+        Active = false;
+        KeyPressed = old;
+      }
       return result;
     }
 

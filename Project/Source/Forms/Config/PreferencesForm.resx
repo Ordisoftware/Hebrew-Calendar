@@ -470,6 +470,39 @@
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="LabelHotKeyStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelHotKeyStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelHotKeyStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelHotKeyStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 29</value>
+  </data>
+  <data name="LabelHotKeyStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="LabelHotKeyStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="LabelHotKeyStatus.Text" xml:space="preserve">
+    <value>HotKey status</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.Name" xml:space="preserve">
+    <value>LabelHotKeyStatus</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="EditGlobalHotKeyPopupMainFormAlt.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -498,7 +531,7 @@
     <value>PanelHotKey</value>
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormWin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -528,7 +561,7 @@
     <value>PanelHotKey</value>
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="PanelHotKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 273</value>
@@ -6347,6 +6380,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

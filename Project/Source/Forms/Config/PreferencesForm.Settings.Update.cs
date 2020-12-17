@@ -100,6 +100,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.PrintImageInLandscape = EditPrintImageInLandscape.Checked;
       Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
       Settings.SaveImageCountWarning = (int)EditSaveImageCountWarning.Value;
+      Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
       // HotKey
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
       Settings.GlobalHotKeyPopupMainFormKey = (int)(Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;
@@ -113,13 +114,6 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( EditGlobalHotKeyPopupMainFormShift.Checked )
         modifierKeys |= Modifiers.Shift;
       Settings.GlobalHotKeyPopupMainFormModifiers = (int)modifierKeys;
-      try
-      {
-        Globals.BringToFrontApplicationHotKey.Active = EditGlobalHotKeyPopupMainFormEnabled.Checked;
-      }
-      catch
-      {
-      }
     }
 
   }
