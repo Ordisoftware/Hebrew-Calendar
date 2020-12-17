@@ -855,8 +855,8 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         action?.Invoke();
         if ( !Globals.BringToFrontApplicationHotKey.IsValid() )
-          throw new Exception("Captured by another application.");
-        LabelHotKeyStatus.Text = "OK";
+          throw new Exception(SysTranslations.HotKeyCapturedByAnotherApplication.GetLang());
+        LabelHotKeyStatus.Text = SysTranslations.Valid.GetLang();
         IsReady = false;
         EditGlobalHotKeyPopupMainFormEnabled.Checked = InitialHotKeyEnabled;
         EditGlobalHotKeyPopupMainFormEnabled.Enabled = true;
