@@ -850,6 +850,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CheckHotKeyCombination(Action action)
     {
+      var temp = ActiveControl;
       PanelHotKey.Enabled = false;
       try
       {
@@ -873,6 +874,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         PanelHotKey.Enabled = true;
+        ActiveControl = temp;
       }
     }
 

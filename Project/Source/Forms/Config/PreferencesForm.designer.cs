@@ -53,6 +53,7 @@
       this.EditGlobalHotKeyPopupMainFormShift = new System.Windows.Forms.CheckBox();
       this.SelectGlobalHotKeyPopupMainFormKey = new System.Windows.Forms.ComboBox();
       this.EditGlobalHotKeyPopupMainFormCtrl = new System.Windows.Forms.CheckBox();
+      this.LabelHotKeyStatus = new System.Windows.Forms.Label();
       this.EditGlobalHotKeyPopupMainFormAlt = new System.Windows.Forms.CheckBox();
       this.EditGlobalHotKeyPopupMainFormWin = new System.Windows.Forms.CheckBox();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
@@ -233,7 +234,6 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
-      this.LabelHotKeyStatus = new System.Windows.Forms.Label();
       this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
@@ -462,6 +462,12 @@
       this.EditGlobalHotKeyPopupMainFormCtrl.UseVisualStyleBackColor = true;
       this.EditGlobalHotKeyPopupMainFormCtrl.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormCtrl_CheckedChanged);
       // 
+      // LabelHotKeyStatus
+      // 
+      resources.ApplyResources(this.LabelHotKeyStatus, "LabelHotKeyStatus");
+      this.LabelHotKeyStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelHotKeyStatus.Name = "LabelHotKeyStatus";
+      // 
       // EditGlobalHotKeyPopupMainFormAlt
       // 
       resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormAlt, "EditGlobalHotKeyPopupMainFormAlt");
@@ -488,7 +494,7 @@
       // LabelDateBookmarksCountIntervalInfo
       // 
       resources.ApplyResources(this.LabelDateBookmarksCountIntervalInfo, "LabelDateBookmarksCountIntervalInfo");
-      this.LabelDateBookmarksCountIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelDateBookmarksCountIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelDateBookmarksCountIntervalInfo.Name = "LabelDateBookmarksCountIntervalInfo";
       // 
       // EditDateBookmarksCount
@@ -536,7 +542,7 @@
       // LabelVolumeValue
       // 
       resources.ApplyResources(this.LabelVolumeValue, "LabelVolumeValue");
-      this.LabelVolumeValue.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelVolumeValue.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelVolumeValue.Name = "LabelVolumeValue";
       // 
       // ActionSelectLangEN
@@ -616,25 +622,25 @@
       // LabelLastDBOptimizeDate
       // 
       resources.ApplyResources(this.LabelLastDBOptimizeDate, "LabelLastDBOptimizeDate");
-      this.LabelLastDBOptimizeDate.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelLastDBOptimizeDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelLastDBOptimizeDate.Name = "LabelLastDBOptimizeDate";
       // 
       // LabelLastDBOptimize
       // 
       resources.ApplyResources(this.LabelLastDBOptimize, "LabelLastDBOptimize");
-      this.LabelLastDBOptimize.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelLastDBOptimize.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelLastDBOptimize.Name = "LabelLastDBOptimize";
       // 
       // LabelLastStartupCheckDate
       // 
       resources.ApplyResources(this.LabelLastStartupCheckDate, "LabelLastStartupCheckDate");
-      this.LabelLastStartupCheckDate.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelLastStartupCheckDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelLastStartupCheckDate.Name = "LabelLastStartupCheckDate";
       // 
       // LabelLastStartupCheck
       // 
       resources.ApplyResources(this.LabelLastStartupCheck, "LabelLastStartupCheck");
-      this.LabelLastStartupCheck.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelLastStartupCheck.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelLastStartupCheck.Name = "LabelLastStartupCheck";
       // 
       // LabelCheckUpdateFrequency
@@ -645,7 +651,7 @@
       // LabelCheckUpdateAtStartupInfo
       // 
       resources.ApplyResources(this.LabelCheckUpdateAtStartupInfo, "LabelCheckUpdateAtStartupInfo");
-      this.LabelCheckUpdateAtStartupInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelCheckUpdateAtStartupInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelCheckUpdateAtStartupInfo.Name = "LabelCheckUpdateAtStartupInfo";
       // 
       // EditCheckUpdateAtStartup
@@ -735,7 +741,7 @@
       // LabelOptimizeDatabaseIntervalInfo
       // 
       resources.ApplyResources(this.LabelOptimizeDatabaseIntervalInfo, "LabelOptimizeDatabaseIntervalInfo");
-      this.LabelOptimizeDatabaseIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelOptimizeDatabaseIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelOptimizeDatabaseIntervalInfo.Name = "LabelOptimizeDatabaseIntervalInfo";
       // 
       // TabPageTrayIcon
@@ -757,7 +763,7 @@
       // LabelLoomingDelayIntervalInfo
       // 
       resources.ApplyResources(this.LabelLoomingDelayIntervalInfo, "LabelLoomingDelayIntervalInfo");
-      this.LabelLoomingDelayIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelLoomingDelayIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelLoomingDelayIntervalInfo.Name = "LabelLoomingDelayIntervalInfo";
       // 
       // LabelTrayIconClickOpen
@@ -943,7 +949,7 @@
       // LabelMaxYearsIntervalInfo
       // 
       resources.ApplyResources(this.LabelMaxYearsIntervalInfo, "LabelMaxYearsIntervalInfo");
-      this.LabelMaxYearsIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelMaxYearsIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelMaxYearsIntervalInfo.Name = "LabelMaxYearsIntervalInfo";
       // 
       // LabelMaxYearsInterval
@@ -1066,7 +1072,7 @@
       // LabelAutoLockSessionTimeOutIntervalInfo
       // 
       resources.ApplyResources(this.LabelAutoLockSessionTimeOutIntervalInfo, "LabelAutoLockSessionTimeOutIntervalInfo");
-      this.LabelAutoLockSessionTimeOutIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelAutoLockSessionTimeOutIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelAutoLockSessionTimeOutIntervalInfo.Name = "LabelAutoLockSessionTimeOutIntervalInfo";
       // 
       // EditAllowSuspendReminder
@@ -1133,13 +1139,13 @@
       // LabelRemindShabatEveryMinutesIntervalInfo
       // 
       resources.ApplyResources(this.LabelRemindShabatEveryMinutesIntervalInfo, "LabelRemindShabatEveryMinutesIntervalInfo");
-      this.LabelRemindShabatEveryMinutesIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelRemindShabatEveryMinutesIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelRemindShabatEveryMinutesIntervalInfo.Name = "LabelRemindShabatEveryMinutesIntervalInfo";
       // 
       // LabelRemindShabatHoursBeforeIntervalInfo
       // 
       resources.ApplyResources(this.LabelRemindShabatHoursBeforeIntervalInfo, "LabelRemindShabatHoursBeforeIntervalInfo");
-      this.LabelRemindShabatHoursBeforeIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelRemindShabatHoursBeforeIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelRemindShabatHoursBeforeIntervalInfo.Name = "LabelRemindShabatHoursBeforeIntervalInfo";
       // 
       // LabelRemindShabatHoursBefore
@@ -1238,19 +1244,19 @@
       // LabelRemindCelebrationEveryMinutesIntervalInfo
       // 
       resources.ApplyResources(this.LabelRemindCelebrationEveryMinutesIntervalInfo, "LabelRemindCelebrationEveryMinutesIntervalInfo");
-      this.LabelRemindCelebrationEveryMinutesIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelRemindCelebrationEveryMinutesIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelRemindCelebrationEveryMinutesIntervalInfo.Name = "LabelRemindCelebrationEveryMinutesIntervalInfo";
       // 
       // LabelReminderCelebrationsIntervalInfo
       // 
       resources.ApplyResources(this.LabelReminderCelebrationsIntervalInfo, "LabelReminderCelebrationsIntervalInfo");
-      this.LabelReminderCelebrationsIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelReminderCelebrationsIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelReminderCelebrationsIntervalInfo.Name = "LabelReminderCelebrationsIntervalInfo";
       // 
       // LabelRemindCelebrationHoursBeforeIntervalInfo
       // 
       resources.ApplyResources(this.LabelRemindCelebrationHoursBeforeIntervalInfo, "LabelRemindCelebrationHoursBeforeIntervalInfo");
-      this.LabelRemindCelebrationHoursBeforeIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelRemindCelebrationHoursBeforeIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelRemindCelebrationHoursBeforeIntervalInfo.Name = "LabelRemindCelebrationHoursBeforeIntervalInfo";
       // 
       // EditRemindCelebrationEveryMinutes
@@ -1794,7 +1800,7 @@
       // LabelSaveImageCountWarningIntervalInfo
       // 
       resources.ApplyResources(this.LabelSaveImageCountWarningIntervalInfo, "LabelSaveImageCountWarningIntervalInfo");
-      this.LabelSaveImageCountWarningIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelSaveImageCountWarningIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelSaveImageCountWarningIntervalInfo.Name = "LabelSaveImageCountWarningIntervalInfo";
       // 
       // LabelPrintPageCountWarning
@@ -1805,7 +1811,7 @@
       // LabelPrintPageCountWarningIntervalInfo
       // 
       resources.ApplyResources(this.LabelPrintPageCountWarningIntervalInfo, "LabelPrintPageCountWarningIntervalInfo");
-      this.LabelPrintPageCountWarningIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelPrintPageCountWarningIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelPrintPageCountWarningIntervalInfo.Name = "LabelPrintPageCountWarningIntervalInfo";
       // 
       // LabelPrintMargin
@@ -1816,7 +1822,7 @@
       // LabelPrintingMarginIntervalInfo
       // 
       resources.ApplyResources(this.LabelPrintingMarginIntervalInfo, "LabelPrintingMarginIntervalInfo");
-      this.LabelPrintingMarginIntervalInfo.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelPrintingMarginIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelPrintingMarginIntervalInfo.Name = "LabelPrintingMarginIntervalInfo";
       // 
       // EditSaveImageCountWarning
@@ -1959,11 +1965,6 @@
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
-      // 
-      // LabelHotKeyStatus
-      // 
-      resources.ApplyResources(this.LabelHotKeyStatus, "LabelHotKeyStatus");
-      this.LabelHotKeyStatus.Name = "LabelHotKeyStatus";
       // 
       // EditGPSLatitude
       // 
