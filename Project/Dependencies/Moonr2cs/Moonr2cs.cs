@@ -1,4 +1,4 @@
-// Taked from http://samik26.webgarden.cz/temata/class-sun-moonrise-set
+// http://samik26.webgarden.cz/temata/class-sun-moonrise-set
 using System;
 
 namespace Keith_Burnett_moonr2cs
