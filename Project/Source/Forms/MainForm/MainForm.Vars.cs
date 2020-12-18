@@ -104,7 +104,7 @@ namespace Ordisoftware.Hebrew.Calendar
         foreach ( Form form in RemindCelebrationForms.ToList() ) form.Close();
         foreach ( Form form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
         foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
-          if ( value != TorahEvent.None && value < TorahEvent.HanoukaD1 ) // TODO change when manage others
+          if ( value != TorahEvent.None && value <= TorahEvent.SoukotD8 ) // TODO change when manage others
           {
             TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value.ToString()]);
             TorahEventRemindDayList.Add(value, (bool)Settings["TorahEventRemindDay" + value.ToString()]);

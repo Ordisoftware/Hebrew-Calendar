@@ -66,6 +66,7 @@ namespace Ordisoftware.Hebrew.Calendar
     static public bool Reseted { get; private set; }
     static private bool DoReset;
     static private bool LanguageChanged;
+    static private bool RestartRequired;
 
     static PreferencesForm()
     {
@@ -82,6 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public bool Run()
     {
+      SystemManager.TryCatchManage(() => Globals.BringToFrontApplicationHotKey.Active = false);
       Reseted = false;
       Language lang = Settings.LanguageSelected;
       var form = new PreferencesForm();
@@ -113,7 +115,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
         if ( result ) CalendarDates.Instance.Clear();
       });
-      SystemManager.TryCatchManage(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
+      SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
       return result;
     }
 

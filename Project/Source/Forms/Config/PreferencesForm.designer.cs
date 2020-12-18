@@ -47,15 +47,6 @@
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
-      this.PanelHotKey = new System.Windows.Forms.Panel();
-      this.ActionHotKeyInfo = new System.Windows.Forms.Button();
-      this.ActionHotKeyReset = new System.Windows.Forms.Button();
-      this.EditGlobalHotKeyPopupMainFormShift = new System.Windows.Forms.CheckBox();
-      this.SelectGlobalHotKeyPopupMainFormKey = new System.Windows.Forms.ComboBox();
-      this.EditGlobalHotKeyPopupMainFormCtrl = new System.Windows.Forms.CheckBox();
-      this.LabelHotKeyStatus = new System.Windows.Forms.Label();
-      this.EditGlobalHotKeyPopupMainFormAlt = new System.Windows.Forms.CheckBox();
-      this.EditGlobalHotKeyPopupMainFormWin = new System.Windows.Forms.CheckBox();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
       this.LabelDateBookmarksCountIntervalInfo = new System.Windows.Forms.Label();
       this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
@@ -65,7 +56,6 @@
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
-      this.EditGlobalHotKeyPopupMainFormEnabled = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
@@ -87,11 +77,21 @@
       this.EditVacuumAtStartup = new System.Windows.Forms.CheckBox();
       this.LabelOptimizeDatabaseIntervalInfo = new System.Windows.Forms.Label();
       this.TabPageTrayIcon = new System.Windows.Forms.TabPage();
+      this.PanelHotKey = new System.Windows.Forms.Panel();
+      this.ActionHotKeyInfo = new System.Windows.Forms.Button();
+      this.ActionHotKeyReset = new System.Windows.Forms.Button();
+      this.EditGlobalHotKeyPopupMainFormShift = new System.Windows.Forms.CheckBox();
+      this.SelectGlobalHotKeyPopupMainFormKey = new System.Windows.Forms.ComboBox();
+      this.EditGlobalHotKeyPopupMainFormCtrl = new System.Windows.Forms.CheckBox();
+      this.LabelHotKeyStatus = new System.Windows.Forms.Label();
+      this.EditGlobalHotKeyPopupMainFormAlt = new System.Windows.Forms.CheckBox();
+      this.EditGlobalHotKeyPopupMainFormWin = new System.Windows.Forms.CheckBox();
       this.LabelLoomingDelayIntervalInfo = new System.Windows.Forms.Label();
       this.LabelTrayIconClickOpen = new System.Windows.Forms.Label();
       this.EditBalloonLoomingDelay = new System.Windows.Forms.NumericUpDown();
       this.SelectOpenNextCelebrationsForm = new System.Windows.Forms.RadioButton();
       this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
+      this.EditGlobalHotKeyPopupMainFormEnabled = new System.Windows.Forms.CheckBox();
       this.EditBalloonOnlyIfMainFormIsHidden = new System.Windows.Forms.CheckBox();
       this.EditBalloonAutoHide = new System.Windows.Forms.CheckBox();
       this.SelectOpenNavigationForm = new System.Windows.Forms.RadioButton();
@@ -246,13 +246,13 @@
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
-      this.PanelHotKey.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.TabPageStartup.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
       this.TabPageTrayIcon.SuspendLayout();
+      this.PanelHotKey.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).BeginInit();
       this.TabPageNavigationWindow.SuspendLayout();
       this.TabPageGeneration.SuspendLayout();
@@ -393,7 +393,6 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageApplication.Controls.Add(this.PanelHotKey);
       this.TabPageApplication.Controls.Add(this.ActionManageBookmarks);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
@@ -403,84 +402,12 @@
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
-      this.TabPageApplication.Controls.Add(this.EditGlobalHotKeyPopupMainFormEnabled);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
       this.TabPageApplication.Controls.Add(this.EditLogEnabled);
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
-      // 
-      // PanelHotKey
-      // 
-      this.PanelHotKey.Controls.Add(this.ActionHotKeyInfo);
-      this.PanelHotKey.Controls.Add(this.ActionHotKeyReset);
-      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormShift);
-      this.PanelHotKey.Controls.Add(this.SelectGlobalHotKeyPopupMainFormKey);
-      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormCtrl);
-      this.PanelHotKey.Controls.Add(this.LabelHotKeyStatus);
-      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormAlt);
-      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormWin);
-      resources.ApplyResources(this.PanelHotKey, "PanelHotKey");
-      this.PanelHotKey.Name = "PanelHotKey";
-      // 
-      // ActionHotKeyInfo
-      // 
-      this.ActionHotKeyInfo.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionHotKeyInfo, "ActionHotKeyInfo");
-      this.ActionHotKeyInfo.Name = "ActionHotKeyInfo";
-      this.ActionHotKeyInfo.UseVisualStyleBackColor = true;
-      this.ActionHotKeyInfo.Click += new System.EventHandler(this.ActionHotKeyInfo_Click);
-      // 
-      // ActionHotKeyReset
-      // 
-      this.ActionHotKeyReset.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionHotKeyReset, "ActionHotKeyReset");
-      this.ActionHotKeyReset.Name = "ActionHotKeyReset";
-      this.ActionHotKeyReset.UseVisualStyleBackColor = true;
-      this.ActionHotKeyReset.Click += new System.EventHandler(this.ActionHotKeyReset_Click);
-      // 
-      // EditGlobalHotKeyPopupMainFormShift
-      // 
-      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormShift, "EditGlobalHotKeyPopupMainFormShift");
-      this.EditGlobalHotKeyPopupMainFormShift.Name = "EditGlobalHotKeyPopupMainFormShift";
-      this.EditGlobalHotKeyPopupMainFormShift.UseVisualStyleBackColor = true;
-      this.EditGlobalHotKeyPopupMainFormShift.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormShift_CheckedChanged);
-      // 
-      // SelectGlobalHotKeyPopupMainFormKey
-      // 
-      this.SelectGlobalHotKeyPopupMainFormKey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectGlobalHotKeyPopupMainFormKey.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectGlobalHotKeyPopupMainFormKey, "SelectGlobalHotKeyPopupMainFormKey");
-      this.SelectGlobalHotKeyPopupMainFormKey.Name = "SelectGlobalHotKeyPopupMainFormKey";
-      this.SelectGlobalHotKeyPopupMainFormKey.SelectedIndexChanged += new System.EventHandler(this.SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged);
-      // 
-      // EditGlobalHotKeyPopupMainFormCtrl
-      // 
-      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormCtrl, "EditGlobalHotKeyPopupMainFormCtrl");
-      this.EditGlobalHotKeyPopupMainFormCtrl.Name = "EditGlobalHotKeyPopupMainFormCtrl";
-      this.EditGlobalHotKeyPopupMainFormCtrl.UseVisualStyleBackColor = true;
-      this.EditGlobalHotKeyPopupMainFormCtrl.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormCtrl_CheckedChanged);
-      // 
-      // LabelHotKeyStatus
-      // 
-      resources.ApplyResources(this.LabelHotKeyStatus, "LabelHotKeyStatus");
-      this.LabelHotKeyStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelHotKeyStatus.Name = "LabelHotKeyStatus";
-      // 
-      // EditGlobalHotKeyPopupMainFormAlt
-      // 
-      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormAlt, "EditGlobalHotKeyPopupMainFormAlt");
-      this.EditGlobalHotKeyPopupMainFormAlt.Name = "EditGlobalHotKeyPopupMainFormAlt";
-      this.EditGlobalHotKeyPopupMainFormAlt.UseVisualStyleBackColor = true;
-      this.EditGlobalHotKeyPopupMainFormAlt.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormAlt_CheckedChanged);
-      // 
-      // EditGlobalHotKeyPopupMainFormWin
-      // 
-      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormWin, "EditGlobalHotKeyPopupMainFormWin");
-      this.EditGlobalHotKeyPopupMainFormWin.Name = "EditGlobalHotKeyPopupMainFormWin";
-      this.EditGlobalHotKeyPopupMainFormWin.UseVisualStyleBackColor = true;
-      this.EditGlobalHotKeyPopupMainFormWin.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormWin_CheckedChanged);
       // 
       // ActionManageBookmarks
       // 
@@ -562,13 +489,6 @@
       this.ActionSelectLangFR.TabStop = false;
       this.ActionSelectLangFR.UseVisualStyleBackColor = true;
       this.ActionSelectLangFR.Click += new System.EventHandler(this.ActionSelectLangFR_Click);
-      // 
-      // EditGlobalHotKeyPopupMainFormEnabled
-      // 
-      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormEnabled, "EditGlobalHotKeyPopupMainFormEnabled");
-      this.EditGlobalHotKeyPopupMainFormEnabled.Name = "EditGlobalHotKeyPopupMainFormEnabled";
-      this.EditGlobalHotKeyPopupMainFormEnabled.UseVisualStyleBackColor = true;
-      this.EditGlobalHotKeyPopupMainFormEnabled.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormEnabled_CheckedChanged);
       // 
       // EditWebLinksMenuEnabled
       // 
@@ -748,17 +668,90 @@
       // 
       this.TabPageTrayIcon.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageTrayIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageTrayIcon.Controls.Add(this.PanelHotKey);
       this.TabPageTrayIcon.Controls.Add(this.LabelLoomingDelayIntervalInfo);
       this.TabPageTrayIcon.Controls.Add(this.LabelTrayIconClickOpen);
       this.TabPageTrayIcon.Controls.Add(this.EditBalloonLoomingDelay);
       this.TabPageTrayIcon.Controls.Add(this.SelectOpenNextCelebrationsForm);
       this.TabPageTrayIcon.Controls.Add(this.SelectOpenMainForm);
+      this.TabPageTrayIcon.Controls.Add(this.EditGlobalHotKeyPopupMainFormEnabled);
       this.TabPageTrayIcon.Controls.Add(this.EditBalloonOnlyIfMainFormIsHidden);
       this.TabPageTrayIcon.Controls.Add(this.EditBalloonAutoHide);
       this.TabPageTrayIcon.Controls.Add(this.SelectOpenNavigationForm);
       this.TabPageTrayIcon.Controls.Add(this.EditBalloon);
       resources.ApplyResources(this.TabPageTrayIcon, "TabPageTrayIcon");
       this.TabPageTrayIcon.Name = "TabPageTrayIcon";
+      // 
+      // PanelHotKey
+      // 
+      this.PanelHotKey.Controls.Add(this.ActionHotKeyInfo);
+      this.PanelHotKey.Controls.Add(this.ActionHotKeyReset);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormShift);
+      this.PanelHotKey.Controls.Add(this.SelectGlobalHotKeyPopupMainFormKey);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormCtrl);
+      this.PanelHotKey.Controls.Add(this.LabelHotKeyStatus);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormAlt);
+      this.PanelHotKey.Controls.Add(this.EditGlobalHotKeyPopupMainFormWin);
+      resources.ApplyResources(this.PanelHotKey, "PanelHotKey");
+      this.PanelHotKey.Name = "PanelHotKey";
+      // 
+      // ActionHotKeyInfo
+      // 
+      this.ActionHotKeyInfo.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionHotKeyInfo, "ActionHotKeyInfo");
+      this.ActionHotKeyInfo.Name = "ActionHotKeyInfo";
+      this.ActionHotKeyInfo.UseVisualStyleBackColor = true;
+      this.ActionHotKeyInfo.Click += new System.EventHandler(this.ActionHotKeyInfo_Click);
+      // 
+      // ActionHotKeyReset
+      // 
+      this.ActionHotKeyReset.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionHotKeyReset, "ActionHotKeyReset");
+      this.ActionHotKeyReset.Name = "ActionHotKeyReset";
+      this.ActionHotKeyReset.UseVisualStyleBackColor = true;
+      this.ActionHotKeyReset.Click += new System.EventHandler(this.ActionHotKeyReset_Click);
+      // 
+      // EditGlobalHotKeyPopupMainFormShift
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormShift, "EditGlobalHotKeyPopupMainFormShift");
+      this.EditGlobalHotKeyPopupMainFormShift.Name = "EditGlobalHotKeyPopupMainFormShift";
+      this.EditGlobalHotKeyPopupMainFormShift.UseVisualStyleBackColor = true;
+      this.EditGlobalHotKeyPopupMainFormShift.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormShift_CheckedChanged);
+      // 
+      // SelectGlobalHotKeyPopupMainFormKey
+      // 
+      this.SelectGlobalHotKeyPopupMainFormKey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectGlobalHotKeyPopupMainFormKey.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectGlobalHotKeyPopupMainFormKey, "SelectGlobalHotKeyPopupMainFormKey");
+      this.SelectGlobalHotKeyPopupMainFormKey.Name = "SelectGlobalHotKeyPopupMainFormKey";
+      this.SelectGlobalHotKeyPopupMainFormKey.SelectedIndexChanged += new System.EventHandler(this.SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged);
+      // 
+      // EditGlobalHotKeyPopupMainFormCtrl
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormCtrl, "EditGlobalHotKeyPopupMainFormCtrl");
+      this.EditGlobalHotKeyPopupMainFormCtrl.Name = "EditGlobalHotKeyPopupMainFormCtrl";
+      this.EditGlobalHotKeyPopupMainFormCtrl.UseVisualStyleBackColor = true;
+      this.EditGlobalHotKeyPopupMainFormCtrl.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormCtrl_CheckedChanged);
+      // 
+      // LabelHotKeyStatus
+      // 
+      resources.ApplyResources(this.LabelHotKeyStatus, "LabelHotKeyStatus");
+      this.LabelHotKeyStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelHotKeyStatus.Name = "LabelHotKeyStatus";
+      // 
+      // EditGlobalHotKeyPopupMainFormAlt
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormAlt, "EditGlobalHotKeyPopupMainFormAlt");
+      this.EditGlobalHotKeyPopupMainFormAlt.Name = "EditGlobalHotKeyPopupMainFormAlt";
+      this.EditGlobalHotKeyPopupMainFormAlt.UseVisualStyleBackColor = true;
+      this.EditGlobalHotKeyPopupMainFormAlt.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormAlt_CheckedChanged);
+      // 
+      // EditGlobalHotKeyPopupMainFormWin
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormWin, "EditGlobalHotKeyPopupMainFormWin");
+      this.EditGlobalHotKeyPopupMainFormWin.Name = "EditGlobalHotKeyPopupMainFormWin";
+      this.EditGlobalHotKeyPopupMainFormWin.UseVisualStyleBackColor = true;
+      this.EditGlobalHotKeyPopupMainFormWin.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormWin_CheckedChanged);
       // 
       // LabelLoomingDelayIntervalInfo
       // 
@@ -811,6 +804,13 @@
       this.SelectOpenMainForm.Name = "SelectOpenMainForm";
       this.SelectOpenMainForm.TabStop = true;
       this.SelectOpenMainForm.UseVisualStyleBackColor = true;
+      // 
+      // EditGlobalHotKeyPopupMainFormEnabled
+      // 
+      resources.ApplyResources(this.EditGlobalHotKeyPopupMainFormEnabled, "EditGlobalHotKeyPopupMainFormEnabled");
+      this.EditGlobalHotKeyPopupMainFormEnabled.Name = "EditGlobalHotKeyPopupMainFormEnabled";
+      this.EditGlobalHotKeyPopupMainFormEnabled.UseVisualStyleBackColor = true;
+      this.EditGlobalHotKeyPopupMainFormEnabled.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormEnabled_CheckedChanged);
       // 
       // EditBalloonOnlyIfMainFormIsHidden
       // 
@@ -2043,6 +2043,7 @@
       this.MinimizeBox = false;
       this.Name = "PreferencesForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PreferencesForm_FormClosed);
       this.Load += new System.EventHandler(this.PreferencesForm_Load);
       this.Shown += new System.EventHandler(this.PreferencesForm_Shown);
       this.PanelButtons.ResumeLayout(false);
@@ -2051,8 +2052,6 @@
       this.TabControl.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
-      this.PanelHotKey.ResumeLayout(false);
-      this.PanelHotKey.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
       this.TabPageStartup.ResumeLayout(false);
@@ -2061,6 +2060,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
       this.TabPageTrayIcon.ResumeLayout(false);
       this.TabPageTrayIcon.PerformLayout();
+      this.PanelHotKey.ResumeLayout(false);
+      this.PanelHotKey.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).EndInit();
       this.TabPageNavigationWindow.ResumeLayout(false);
       this.TabPageNavigationWindow.PerformLayout();

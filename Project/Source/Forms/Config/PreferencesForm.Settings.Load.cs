@@ -110,7 +110,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditGlobalHotKeyPopupMainFormEnabled.Checked = Settings.GlobalHotKeyPopupMainFormEnabled; });
       // Hotkey
       InitialHotKeyEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
-      SystemManager.TryCatchManage(() => Globals.BringToFrontApplicationHotKey.Active = false);
       CheckHotKeyCombination(null);
       // System
       EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;

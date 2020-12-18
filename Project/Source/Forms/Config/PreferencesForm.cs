@@ -55,7 +55,6 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadEvents();
       LoadFonts();
       LoadHotKeys();
-      //ActionManageBookmarks.Left = LabelDateBookmarksCountIntervalInfo.Left + LabelDateBookmarksCountIntervalInfo.Width + 5;
       ActionMonthViewThemeDark.Visible = Globals.IsDevExecutable; // TODO remove when ready
     }
 
@@ -103,6 +102,16 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
       DoFormClosing(sender, e);
+    }
+
+    /// <summary>
+    /// Event handler. Called by PreferencesForm for closed events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void PreferencesForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      IsReady = true;
     }
 
     /// <summary>
@@ -163,7 +172,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void LoadEvents()
     {
       foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
-        if ( value != TorahEvent.None && value < TorahEvent.HanoukaD1 ) // TODO change when manage others
+        if ( value != TorahEvent.None && value <= TorahEvent.SoukotD8 ) // TODO change when manage others
           SystemManager.TryCatch(() =>
           {
             var item = new TorahEventItem() { Text = AppTranslations.TorahEvent.GetLang(value), Event = value };
@@ -230,6 +239,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.Save();
       DoReset = true;
       Reseted = true;
+      RestartRequired = true;
       Settings.GPSCountry = country;
       Settings.GPSCity = city;
       Settings.GPSLatitude = lat;
@@ -241,43 +251,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.BenchmarkStartingApp = starttime;
       Settings.BenchmarkLoadData = loadtime;
       Close();
-    }
-
-    private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      if ( !SelectCityForm.Run(e != null) ) return;
-      EditGPSLatitude.Text = Settings.GPSLatitude;
-      EditGPSLongitude.Text = Settings.GPSLongitude;
-      EditTimeZone.Text = Settings.GetGPSText();
-      MainForm.Instance.InitializeCurrentTimeZone();
-    }
-
-    private void ActionHotKeyInfo_Click(object sender, EventArgs e)
-    {
-      DisplayManager.ShowInformation(AppTranslations.HotKeyNotice.GetLang());
-    }
-
-    private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
-    {
-      MainForm.Instance.ActionShowShabatNotice_Click(null, null);
-    }
-
-    private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
-    {
-      MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
-    }
-
-    private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      var date = DateTime.Today; // TODO use saved birthday
-      if ( !SelectDayForm.Run(AppTranslations.SelectBirthday.GetLang(), ref date) ) return;
-      if ( !SelectBirthTimeForm.Run(out var time) ) return;
-      if ( time >= new TimeSpan(0, 0, 0) && time < CalendarDates.Instance[date].Ephemerisis.Sunset )
-        date = date.AddDays(-1);
-      Settings.ShabatDay = (int)date.DayOfWeek;
-      foreach ( DayOfWeekItem day in EditShabatDay.Items )
-        if ( (DayOfWeek)Settings.ShabatDay == day.Day )
-          EditShabatDay.SelectedItem = day;
     }
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
@@ -314,65 +287,6 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private void ActionMoonDayTextFormatHelp_Click(object sender, EventArgs e)
-    {
-      DisplayManager.ShowInformation(AppTranslations.NoticeMoonDayTextFormat.GetLang());
-    }
-
-    private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
-    {
-      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset,
-                                       new Point(0, ActionMoonDayTextFormatReset.Height));
-    }
-
-    private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
-    {
-      EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem ).Tag;
-    }
-
-    private void EditMaxYearsInterval_ValueChanged(object sender, EventArgs e)
-    {
-      if ( Created ) Program.Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
-      YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
-                                       Program.AutoGenerateYearsIntervalMax,
-                                       PredefinedYearsItem_Click);
-    }
-
-    private void EditMoonDayTextFormat_TextChanged(object sender, EventArgs e)
-    {
-      if ( IsReady ) MustRefreshMonthView = true;
-    }
-
-    private void EditReportFont_Changed(object sender, EventArgs e)
-    {
-      if ( !IsReady ) return;
-      Settings.FontName = EditFontName.Text;
-      Settings.FontSize = (int)EditFontSize.Value;
-      MainForm.Instance.UpdateTextCalendar();
-    }
-
-    private void EditPreferedDataExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      if ( !IsReady ) return;
-      Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)EditDataExportFileFormat.SelectedItem ).Key;
-    }
-
-    private void EditDataExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
-    {
-      e.Value = ( (KVPDataExportTarget)e.ListItem ).Key.ToString();
-    }
-
-    private void EditImageExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      if ( !IsReady ) return;
-      Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)EditImageExportFileFormat.SelectedItem ).Key;
-    }
-
-    private void EditImageExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
-    {
-      e.Value = ( (KVPImageExportTarget)e.ListItem ).Key.ToString();
-    }
-
     private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)
     {
       SystemManager.StartWithWindowsUserRegistry = EditStartWithWindows.Checked;
@@ -399,6 +313,90 @@ namespace Ordisoftware.Hebrew.Calendar
       StatisticsForm.Instance.Timer.Enabled = EditUsageStatisticsEnabled.Checked;
       if ( !EditUsageStatisticsEnabled.Checked )
         StatisticsForm.Instance.Close();
+    }
+
+    private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      if ( !SelectCityForm.Run(e != null) ) return;
+      EditGPSLatitude.Text = Settings.GPSLatitude;
+      EditGPSLongitude.Text = Settings.GPSLongitude;
+      EditTimeZone.Text = Settings.GetGPSText();
+      MainForm.Instance.InitializeCurrentTimeZone();
+    }
+
+    private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
+    }
+
+    private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionShowShabatNotice_Click(null, null);
+    }
+
+    private void ActionHotKeyInfo_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(AppTranslations.HotKeyNotice.GetLang());
+    }
+
+    private void ActionAutoGenerateHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(AppTranslations.AutoGenerateIntervalNotice.GetLang());
+    }
+
+    private void ActionMoonDayTextFormatHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(AppTranslations.NoticeMoonDayTextFormat.GetLang());
+    }
+
+    private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      var date = DateTime.Today; // TODO use saved birthday
+      if ( !SelectDayForm.Run(AppTranslations.SelectBirthday.GetLang(), ref date) ) return;
+      if ( !SelectBirthTimeForm.Run(out var time) ) return;
+      if ( time >= new TimeSpan(0, 0, 0) && time < CalendarDates.Instance[date].Ephemerisis.Sunset )
+        date = date.AddDays(-1);
+      Settings.ShabatDay = (int)date.DayOfWeek;
+      foreach ( DayOfWeekItem day in EditShabatDay.Items )
+        if ( (DayOfWeek)Settings.ShabatDay == day.Day )
+          EditShabatDay.SelectedItem = day;
+    }
+
+    private void EditMonthViewSunToolTips_CheckedChanged(object sender, EventArgs e)
+    {
+      MustRefreshMonthView = true;
+    }
+
+    private void EditMoonDayTextFormat_TextChanged(object sender, EventArgs e)
+    {
+      if ( IsReady ) MustRefreshMonthView = true;
+    }
+
+    private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
+    {
+      EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem ).Tag;
+    }
+
+    private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
+    {
+      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset,
+                                       new Point(0, ActionMoonDayTextFormatReset.Height));
+    }
+
+    private void EditMaxYearsInterval_ValueChanged(object sender, EventArgs e)
+    {
+      if ( Created ) Program.Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
+      YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
+                                       Program.AutoGenerateYearsIntervalMax,
+                                       PredefinedYearsItem_Click);
+    }
+
+    private void EditReportFont_Changed(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      Settings.FontName = EditFontName.Text;
+      Settings.FontSize = (int)EditFontSize.Value;
+      MainForm.Instance.UpdateTextCalendar();
     }
 
     private void EditBalloon_CheckedChanged(object sender, EventArgs e)
@@ -630,11 +628,6 @@ namespace Ordisoftware.Hebrew.Calendar
       MustRefreshMonthView = true;
     }
 
-    private void EditMonthViewSunToolTips_CheckedChanged(object sender, EventArgs e)
-    {
-      MustRefreshMonthView = true;
-    }
-
     private void EditUseColors_CheckedChanged(object sender, EventArgs e)
     {
       if ( IsReady ) MustRefreshMonthView = true;
@@ -643,6 +636,28 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
       if ( IsReady ) MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
+    }
+
+    private void EditPreferedDataExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)EditDataExportFileFormat.SelectedItem ).Key;
+    }
+
+    private void EditDataExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+    {
+      e.Value = ( (KVPDataExportTarget)e.ListItem ).Key.ToString();
+    }
+
+    private void EditImageExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)EditImageExportFileFormat.SelectedItem ).Key;
+    }
+
+    private void EditImageExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+    {
+      e.Value = ( (KVPImageExportTarget)e.ListItem ).Key.ToString();
     }
 
     private void ActionSelectExportFolder_Click(object sender, EventArgs e)
@@ -681,11 +696,6 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       if ( OpenExeFileDialog.ShowDialog() == DialogResult.OK )
         EditHebrewLettersPath.Text = OpenExeFileDialog.FileName;
-    }
-
-    private void ActionAutoGenerateHelp_Click(object sender, EventArgs e)
-    {
-      DisplayManager.ShowInformation(AppTranslations.AutoGenerateIntervalNotice.GetLang());
     }
 
     private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)
@@ -850,6 +860,13 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CheckHotKeyCombination(Action action)
     {
+      if ( RestartRequired )
+      {
+        EditGlobalHotKeyPopupMainFormEnabled.Enabled = false;
+        LabelHotKeyStatus.Text = SysTranslations.RestartRequired.GetLang();
+        PanelHotKey.Enabled = false;
+        return;
+      }
       var temp = ActiveControl;
       PanelHotKey.Enabled = false;
       try
