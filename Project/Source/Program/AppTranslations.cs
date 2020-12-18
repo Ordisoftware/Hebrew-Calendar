@@ -42,12 +42,10 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [Language.EN] = SysTranslations.ResetPreferences[Language.EN] + Globals.NL2 +
                         "GPS location, shabat day and bookmarks will be keeped." + Globals.NL2 +
-                        "The global shortcut will be effective the next application start." + Globals.NL2 +
                         SysTranslations.AskToContinue[Language.EN],
 
         [Language.FR] = SysTranslations.ResetPreferences[Language.FR] + Globals.NL2 +
                         "La position GPS, le jour du shabat et les signets seront conservés." + Globals.NL2 +
-                        "Le raccourci global sera effectif au prochain démarrage de l'application." + Globals.NL2 +
                         SysTranslations.AskToContinue[Language.FR]
       };
 

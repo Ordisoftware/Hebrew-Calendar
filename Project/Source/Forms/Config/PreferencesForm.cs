@@ -75,6 +75,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
+      SystemManager.TryCatchManage(() => Globals.BringToFrontApplicationHotKey.Active = false);
       TopMost = MainForm.Instance.TopMost;
       BringToFront();
       UpdateLanguagesButtons();
@@ -239,7 +240,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.Save();
       DoReset = true;
       Reseted = true;
-      RestartRequired = true;
       Settings.GPSCountry = country;
       Settings.GPSCity = city;
       Settings.GPSLatitude = lat;
@@ -860,13 +860,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CheckHotKeyCombination(Action action)
     {
-      if ( RestartRequired )
-      {
-        EditGlobalHotKeyPopupMainFormEnabled.Enabled = false;
-        LabelHotKeyStatus.Text = SysTranslations.RestartRequired.GetLang();
-        PanelHotKey.Enabled = false;
-        return;
-      }
       var temp = ActiveControl;
       PanelHotKey.Enabled = false;
       try
