@@ -35,7 +35,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     public const bool HotKeyEnabledByDefault = true;
     public const Modifiers DefaultHotKeyModifiers = Modifiers.Shift | Modifiers.Control | Modifiers.Alt;
-    //public const Modifiers DefaultHotKeyModifiers = Modifiers.Win;
     public const Keys DefaultHotKeyKey = Keys.C;
 
     /// <summary>
@@ -286,7 +285,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void BrintToFrontApplicationHotKey_KeyPressed(object sender, GlobalHotKeyEventArgs e)
     {
       MenuShowHide_Click(null, null);
-      Application.OpenForms.ToList().LastOrDefault()?.Popup();
+      var forms = Application.OpenForms.ToList().Where(f => f.Visible);
+      forms.ToList().ForEach(f => f.ForceBringToFront());
+      var form = forms.LastOrDefault();
+      if ( form != null && form.Visible )
+        form.Popup();
     }
 
     /// <summary>
