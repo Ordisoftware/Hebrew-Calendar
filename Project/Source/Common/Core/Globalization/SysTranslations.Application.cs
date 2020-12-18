@@ -38,6 +38,13 @@ namespace Ordisoftware.Core
     }
     static private TranslationsDictionary _ApplicationMustExit;
 
+    static public readonly TranslationsDictionary RestartRequired
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Application must be restarted",
+        [Language.FR] = "L'application doit être redémarrée"
+      };
+
     static public readonly TranslationsDictionary AboutBoxTitle
       = new TranslationsDictionary
       {

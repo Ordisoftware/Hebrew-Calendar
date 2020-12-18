@@ -150,10 +150,10 @@
     <value>Nombre de signets de date (modification en temps réel : la réduction effacera les signets enregistrés)</value>
   </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 13</value>
+    <value>360, 13</value>
   </data>
   <data name="LabelVolume.Text" xml:space="preserve">
-    <value>Volume des sons .wav (non applicable aux sons système des boites de dialogue)</value>
+    <value>Volume des sons (non applicable aux sons système des boites de dialogue)</value>
   </data>
   <data name="ActionSelectLangEN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -184,18 +184,6 @@
         wqZKaCvRzkOctqB4nLgcb7Hb7TqXizZ/FwFZoBXN6hFClY9BlEil/6jkr9e1MIjfPBq4naIGznYAAAAA
         SUVORK5CYII=
 </value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 17</value>
-  </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>Maj +</value>
-  </data>
-  <data name="EditEnableGlobalHotKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>309, 17</value>
-  </data>
-  <data name="EditEnableGlobalHotKey.Text" xml:space="preserve">
-    <value>Activer le HotKey global pour faire survir la fenêtre principale</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 17</value>
@@ -278,6 +266,41 @@
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimiser les données au démarrage chaque ce nombre de jours</value>
   </data>
+  <data name="ActionHotKeyInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionHotKeyReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
+        Wmp+hAvbOWebNoxdKBKlMSkXk9pJrVEu9PW858rFe+HkqU/P+37P+3yf5307DMC/EIpWEIpWEIpWYPJc
+        inkIdyjJ2mZ1h6RoMVdA/XAGVDj9BM+ES9HQMqPH3LNJmyeUMus4jAT+IdqsaJtdC8dY0gtQ796QeSwT
+        hkm2aODw5hWBw1u0z6dBjdZ4U9OAOmI5+4ye1QukHwxEL0uYOipiKHKNwY0LeNdy8K6fY5AY37pCJP+C
+        AVrTxDumgdOfQMH4glZ4x8h+Ed2Re8iLOUj+RLXRFw7Z5eG+unZfP88OX3hOCmqfvSunoGuADGTTIP5Y
+        RV/sCd7dZ3Su5NE0EcswxuqJGsL2C75vcE1u61TMDcCaFRVnpW+MJssYSxuIFyroUA4OPPSofEQRFLXS
+        9N4JnflirUG1IpFJi5IgKAc18IcVFf6Gws6n4Qs+qkPA30L0c1hBKFpBKFpBKP4dsB8ReHHdeAdE8gAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.Text" xml:space="preserve">
+    <value>Maj +</value>
+  </data>
   <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 13</value>
   </data>
@@ -295,6 +318,12 @@
   </data>
   <data name="SelectOpenMainForm.Text" xml:space="preserve">
     <value>Fenêtre de l'application</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
+    <value>Activer le raccourci global pour faire apparaître l'application</value>
   </data>
   <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
     <value>316, 17</value>

@@ -116,6 +116,7 @@ namespace Ordisoftware.Core
         [Language.EN] = "{0} files",
         [Language.FR] = "Fichiers {0}"
       };
+
   }
 
 }
