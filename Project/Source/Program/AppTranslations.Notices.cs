@@ -199,7 +199,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + P : Print current view" + Globals.NL +
                         Globals.NL +
                         "Alt + T : Show tools menu" + Globals.NL +
-                        "Alt + L : Open web links menu" + Globals.NL +
+                        "Alt + L : Show web links menu" + Globals.NL +
                         "Alt + V : Show view menu" + Globals.NL +
                         "Alt + S : Show settings menu" + Globals.NL +
                         "Alt + I : Show information menu" + Globals.NL +
@@ -255,7 +255,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Alt + S : Montre le menu des paramètres" + Globals.NL +
                         "Alt + I : Montre le menu des informations" + Globals.NL +
                         Globals.NL +
-                        "Alt + E : Open export folder" + Globals.NL +
+                        "Alt + E : Ouvre le dossier d'export" + Globals.NL +
                         "Alt + C : Ouvre la calculatrice Windows" + Globals.NL +
                         "Alt + D : Ouvre les paramètres de date et heure de Windows" + Globals.NL +
                         "Alt + G : Génèrate le calendrier" + Globals.NL +
