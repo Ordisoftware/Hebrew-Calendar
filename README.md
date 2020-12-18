@@ -194,7 +194,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### Version 6.0 (in progress)
+#### In progress - Version 6.0
 
 - Add window celebrations board with clickable dates and selection of years interval.
 - Add advanced print preview window.
@@ -207,6 +207,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set global HotKey to popup the main form.
 - Add some keyboard shortcuts and change few.
 - Fix CSV export to add moon rise type field.
+- Fix moon months menu item not available yet in the main form is available in the tray icon menu.
 - Few improvements.
 - Few fixes.
 - Code refactoring.
