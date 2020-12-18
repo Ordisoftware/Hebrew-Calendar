@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -228,20 +228,20 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Duplicate menu content.
+    /// Duplicate menu sbu items.
     /// </summary>
     static public void DuplicateTo(this ToolStripDropDownButton source, ToolStripMenuItem destination)
     {
-      int count = 0;
-      var items = new ToolStripItem[source.DropDownItems.Count];
+      var items = new List<ToolStripItem>();
       foreach ( ToolStripItem item in source.DropDownItems )
-        if ( item is ToolStripMenuItem menuItem )
-          items[count++] = menuItem.Clone();
-        else
-        if ( item is ToolStripSeparator )
-          items[count++] = new ToolStripSeparator();
+        if ( item.Tag == null || !( item.Tag is int ) || (int)item.Tag != int.MinValue )
+          if ( item is ToolStripMenuItem menuItem )
+            items.Add(menuItem.Clone());
+          else
+          if ( item is ToolStripSeparator )
+            items.Add(new ToolStripSeparator());
       destination.DropDownItems.Clear();
-      destination.DropDownItems.AddRange(items);
+      destination.DropDownItems.AddRange(items.ToArray());
     }
 
     static public Icon GetBySize(this Icon icon, int width, int height)
