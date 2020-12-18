@@ -165,19 +165,25 @@ namespace Ordisoftware.Hebrew.Calendar
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
         NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
         //
-        var shortcutKey = DefaultHotKeyKey;
-        var shortcutModifiers = DefaultHotKeyModifiers;
-        SystemManager.TryCatch(() => { shortcutKey = (Keys)Settings.GlobalHotKeyPopupMainFormKey; });
-        SystemManager.TryCatch(() => { shortcutModifiers = (Modifiers)Settings.GlobalHotKeyPopupMainFormModifiers; });
-        Globals.BringToFrontApplicationHotKey.Key = shortcutKey;
-        Globals.BringToFrontApplicationHotKey.Modifiers = shortcutModifiers;
-        Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKey_KeyPressed;
-        SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
+        SetGlobalHotKey();
       }
       finally
       {
         DebugManager.Leave();
       }
+    }
+
+    internal void SetGlobalHotKey(bool noactive = false)
+    {
+      var shortcutKey = DefaultHotKeyKey;
+      var shortcutModifiers = DefaultHotKeyModifiers;
+      SystemManager.TryCatch(() => { shortcutKey = (Keys)Settings.GlobalHotKeyPopupMainFormKey; });
+      SystemManager.TryCatch(() => { shortcutModifiers = (Modifiers)Settings.GlobalHotKeyPopupMainFormModifiers; });
+      Globals.BringToFrontApplicationHotKey.Key = shortcutKey;
+      Globals.BringToFrontApplicationHotKey.Modifiers = shortcutModifiers;
+      Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKey_KeyPressed;
+      if (!noactive)
+        SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
     }
 
     /// <summary>
