@@ -152,7 +152,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Ctrl + C | Copy current view to clipboard |
 | Ctrl + P | Print current view |
 | Alt + T | Show tools menu |
-| Alt + L | Open web links menu |
+| Alt + L | Show web links menu |
 | Alt + V | Show view menu |
 | Alt + S | Show settings menu |
 | Alt + I | Show information menu |
