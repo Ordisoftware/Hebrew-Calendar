@@ -329,7 +329,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionManageBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 183</value>
+    <value>74, 183</value>
   </data>
   <data name="ActionManageBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -359,7 +359,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 190</value>
+    <value>106, 190</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -509,7 +509,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolumeValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>515, 248</value>
+    <value>515, 245</value>
   </data>
   <data name="LabelVolumeValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -1109,7 +1109,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditVacuumAtStartupInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 212</value>
+    <value>43, 222</value>
   </data>
   <data name="EditVacuumAtStartupInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -1166,7 +1166,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVacuumAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 190</value>
+    <value>23, 195</value>
   </data>
   <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>283, 17</value>
@@ -1199,7 +1199,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelOptimizeDatabaseIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 216</value>
+    <value>89, 226</value>
   </data>
   <data name="LabelOptimizeDatabaseIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -1278,7 +1278,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionHotKeyInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionHotKeyInfo.Name" xml:space="preserve">
     <value>ActionHotKeyInfo</value>
@@ -1318,7 +1318,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionHotKeyReset.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;ActionHotKeyReset.Name" xml:space="preserve">
     <value>ActionHotKeyReset</value>
@@ -1429,7 +1429,7 @@
     <value>22, 13</value>
   </data>
   <data name="LabelHotKeyStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="LabelHotKeyStatus.Text" xml:space="preserve">
     <value>     </value>
@@ -1513,7 +1513,7 @@
     <value>454, 50</value>
   </data>
   <data name="PanelHotKey.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;PanelHotKey.Name" xml:space="preserve">
     <value>PanelHotKey</value>
@@ -1543,7 +1543,7 @@
     <value>28, 13</value>
   </data>
   <data name="LabelLoomingDelayIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>8</value>
   </data>
   <data name="LabelLoomingDelayIntervalInfo.Text" xml:space="preserve">
     <value>0 - 0</value>
@@ -1576,7 +1576,7 @@
     <value>112, 13</value>
   </data>
   <data name="LabelTrayIconClickOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
     <value>Tray Icon click opens:</value>
@@ -1603,7 +1603,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditBalloonLoomingDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;EditBalloonLoomingDelay.Name" xml:space="preserve">
     <value>EditBalloonLoomingDelay</value>
@@ -1633,7 +1633,7 @@
     <value>122, 17</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
     <value>Celebrations window</value>
@@ -1666,7 +1666,7 @@
     <value>116, 17</value>
   </data>
   <data name="SelectOpenMainForm.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="SelectOpenMainForm.Text" xml:space="preserve">
     <value>Application window</value>
@@ -1696,7 +1696,7 @@
     <value>245, 17</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
     <value>Enable global HotKey to popup the application</value>
@@ -1729,7 +1729,7 @@
     <value>182, 17</value>
   </data>
   <data name="EditBalloonOnlyIfMainFormIsHidden.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
     <value>Show only if application is hidden</value>
@@ -1762,7 +1762,7 @@
     <value>108, 17</value>
   </data>
   <data name="EditBalloonAutoHide.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="EditBalloonAutoHide.Text" xml:space="preserve">
     <value>Auto hide balloon</value>
@@ -1795,7 +1795,7 @@
     <value>115, 17</value>
   </data>
   <data name="SelectOpenNavigationForm.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="SelectOpenNavigationForm.Text" xml:space="preserve">
     <value>Navigation window</value>
@@ -1828,7 +1828,7 @@
     <value>241, 17</value>
   </data>
   <data name="EditBalloon.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="EditBalloon.Text" xml:space="preserve">
     <value>Use balloon with looming delay in milliseconds</value>
