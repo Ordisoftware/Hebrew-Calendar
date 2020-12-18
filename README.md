@@ -198,7 +198,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Add window celebrations board with clickable dates and selection of years interval.
 - Add advanced print preview window.
-- Add select years interval to export, else process the entire report/grid or only the current month view.
+- Add select years interval to export/print, else process the entire report/grid or only the current month view.
 - Add option to set the default print month view page orientation.
 - Add option to set preferred data export file format (CSV/JSON)
 - Add option to set preferred image export file format (PNG/JPEG/TIFF/BMP).
