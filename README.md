@@ -207,6 +207,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set global HotKey to popup the main form.
 - Add some keyboard shortcuts and change few.
 - Fix CSV export to add moon rise type field.
+- Fix moon month menu item not available yet in the main form is available in the tray icon menu.
 - Few improvements.
 - Few fixes.
 - Code refactoring.
