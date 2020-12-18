@@ -66,6 +66,7 @@ namespace Ordisoftware.Hebrew.Calendar
       UpdateSettings();
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       Settings.Save();
+      SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
     }
 
   }
