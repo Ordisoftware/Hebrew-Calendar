@@ -2,7 +2,7 @@
 
 > Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
 > This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).<br/>
-> [Project Website](https://www.ordisoftware.com/projects/hebrew-calendar)<br/>
+> [Website](https://www.ordisoftware.com/projects/hebrew-calendar)<br/>
 > [Twitter](https://twitter.com/ordisoftware)<br/>
 
 A tool for Windows written in C# that allows to generate a calendar based on solar and lunar cycles in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippour and Sukkot festivities.
@@ -12,12 +12,13 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 1. [Functionalities](#Functionalities)
 2. [Review](#Review)
 3. [Requirements](#Requirements)
-4. [Screenshots](#Screenshots)
-5. [Videos](#Videos)
-6. [Frequently asked questions](#Frequently-asked-questions)
-7. [Keyboard shortcuts](#Keyboard-shortcuts)
-8. [Future improvements](#Future-improvements)
-9. [Changelog](#Changelog)
+4. [Download](#Download)
+5. [Screenshots](#Screenshots)
+6. [Videos](#Videos)
+7. [Frequently asked questions](#Frequently-asked-questions)
+8. [Keyboard shortcuts](#Keyboard-shortcuts)
+9. [Future improvements](#Future-improvements)
+10. [Changelog](#Changelog)
 
 ## Functionalities
 
@@ -26,13 +27,11 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 - Event reminder for shabat and celebrations.
 - Search for a day or a celebration.
 - Window listing the next celebrations.
-- Window showing a celebrations board by years.
-- Navigation window by day from the tray icon.
+- Window showing a board of celebrations by years.
+- Balloon window from the Tray Icon to navigate between days with a summary.
 - Calculate the difference between two dates with bookmarks.
-- Copy to the clipboard and print the view.
-- Export of the report in a text file.
-- Export of the month in an image file.
-- Export of the data in a CSV and JSON file.
+- Advanced dialog to save, copy to the clipboard and print the view and the data.
+- Supported file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.
 - English, French.
 
 ## Review
@@ -49,6 +48,10 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 - Screen 1024x768 or higher
 - Framework .NET 4.7.2
 - SQLite ODBC Driver
+
+## Download
+
+[Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
 ## Screenshots
 
