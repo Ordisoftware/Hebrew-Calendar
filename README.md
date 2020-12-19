@@ -214,7 +214,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add Enums.NET NuGet package.
 - Add Serilog-sinks-file NuGet package.
 - Add InputSimulatorStandard NuGet package.
-- Add Global Shortcut Manager dependency.
+- Add Windows Global Hotkey dependency.
 - Update help.
 
 #### 2020.12.13 - Version 5.13

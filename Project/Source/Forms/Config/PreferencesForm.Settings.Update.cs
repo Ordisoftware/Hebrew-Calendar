@@ -14,8 +14,7 @@
 /// <edited> 2020-12 </edited>
 using System;
 using System.Windows.Forms;
-using BondTech.HotkeyManagement.Win;
-using Ordisoftware.Core;
+using Base.Hotkeys;
 
 namespace Ordisoftware.Hebrew.Calendar
 {

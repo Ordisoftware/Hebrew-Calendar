@@ -1283,7 +1283,7 @@
     <value>9</value>
   </data>
   <data name="linkLabel16.Text" xml:space="preserve">
-    <value>www.codeproject.com/Articles/442285/Global-Shortcuts-in-WinForms-and-WPF</value>
+    <value>github.com/MarvinDrude/Windows-Global-Hotkey</value>
   </data>
   <data name="&gt;&gt;linkLabel16.Name" xml:space="preserve">
     <value>linkLabel16</value>
@@ -1304,16 +1304,16 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 516</value>
+    <value>88, 516</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 13</value>
+    <value>227, 13</value>
   </data>
   <data name="label16.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
-    <value>Modified Global Shortcut Manager (MIT) :</value>
+    <value>Modified Windows Global Hotkey (no license) :</value>
   </data>
   <data name="&gt;&gt;label16.Name" xml:space="preserve">
     <value>label16</value>

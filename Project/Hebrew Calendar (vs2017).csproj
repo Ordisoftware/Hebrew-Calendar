@@ -143,14 +143,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dependencies\Global Shortcut Manager\Enums and Structs.cs" />
-    <Compile Include="Dependencies\Global Shortcut Manager\Event Args.cs" />
-    <Compile Include="Dependencies\Global Shortcut Manager\Event Handlers.cs" />
-    <Compile Include="Dependencies\Global Shortcut Manager\Exceptions.cs" />
-    <Compile Include="Dependencies\Global Shortcut Manager\Global Shortcut Manager.cs" />
-    <Compile Include="Dependencies\Global Shortcut Manager\Helpers.cs" />
-    <Compile Include="Dependencies\Global Shortcut Manager\HotKeys.cs" />
-    <Compile Include="Dependencies\Global Shortcut Manager\Win32.cs" />
+    <Compile Include="Dependencies\Windows Global Hotkey\Hotkey.cs" />
+    <Compile Include="Dependencies\Windows Global Hotkey\HotkeyAction.cs" />
+    <Compile Include="Dependencies\Windows Global Hotkey\HotkeyEventArgs.cs" />
+    <Compile Include="Dependencies\Windows Global Hotkey\HotkeyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dependencies\Windows Global Hotkey\HotkeyManager.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />

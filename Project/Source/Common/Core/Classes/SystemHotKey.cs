@@ -18,8 +18,8 @@ using System.Threading;
 using System.Windows.Forms;
 using InputSimulatorStandard;
 using InputSimulatorStandard.Native;
-using BondTech.HotkeyManagement.Win;
 using EnumsNET;
+using Base.Hotkeys;
 
 namespace Ordisoftware.Core
 {
@@ -27,22 +27,23 @@ namespace Ordisoftware.Core
   public class SystemHotKey
   {
 
-    static private HotKeyManager Manager
+    static private HotkeyManager Manager
     {
       get
       {
         if ( _Manager == null )
-          _Manager = new HotKeyManager();
+          _Manager = new HotkeyManager();
         return _Manager;
       }
     }
-    static private HotKeyManager _Manager;
+    static private HotkeyManager _Manager;
 
     static private readonly InputSimulator InputSimulator = new InputSimulator();
 
     static public readonly List<SystemHotKey> AllActivated = new List<SystemHotKey>();
 
-    private GlobalHotKey InternalHotKey;
+    private Hotkey InternalHotKey;
+    private int InternalHotKeyID;
 
     public bool Shift
     {
@@ -102,7 +103,7 @@ namespace Ordisoftware.Core
     }
     public Modifiers _Modifiers;
 
-    public GlobalHotKeyEventHandler KeyPressed
+    public Action KeyPressed
     {
       get { return _KeyPressed; }
       set
@@ -110,15 +111,14 @@ namespace Ordisoftware.Core
         if ( _KeyPressed == value ) return;
         if ( InternalHotKey != null )
         {
-          if ( _KeyPressed != null )
-            InternalHotKey.HotKeyPressed -= _KeyPressed;
-          if ( value != null )
-            InternalHotKey.HotKeyPressed += value;
+          Active = false;
+          KeyPressed = value;
+          Active = true;
         }
         _KeyPressed = value;
       }
     }
-    private GlobalHotKeyEventHandler _KeyPressed;
+    private Action _KeyPressed;
 
     public bool Active
     {
@@ -137,11 +137,18 @@ namespace Ordisoftware.Core
     {
       if ( InternalHotKey == null && Key != Keys.None && Modifiers != Modifiers.None )
       {
-        InternalHotKey = new GlobalHotKey(Globals.ApplicationCode, Modifiers, Key);
-        if ( _KeyPressed != null ) InternalHotKey.HotKeyPressed += KeyPressed;
+        var key = Key;
+        if ( Shift ) key |= Keys.Shift;
+        if ( Control ) key |= Keys.Control;
+        if ( Alt ) key |= Keys.Alt;
+        InternalHotKey = new Hotkey(key);
+        if ( Windows ) InternalHotKey.Win = true;
         try
         {
-          Manager.AddGlobalHotKey(InternalHotKey);
+          var hka = new HotkeyAction(InternalHotKey, KeyPressed);
+          InternalHotKeyID = 1;
+          if ( !Manager.RegisterHotkey(InternalHotKeyID, hka) )
+            throw new Exception(SysTranslations.HotKeyRefusedBySystem.GetLang());
         }
         catch ( Exception ex )
         {
@@ -163,9 +170,8 @@ namespace Ordisoftware.Core
     {
       if ( InternalHotKey != null )
       {
-        if ( KeyPressed != null )
-          InternalHotKey.HotKeyPressed -= KeyPressed;
-        Manager.RemoveGlobalHotKey(InternalHotKey);
+        if ( !Manager.UnregisterHotkey(InternalHotKeyID) )
+          throw new Exception(SysTranslations.HotKeyUnregisterError.GetLang());
         InternalHotKey = null;
         AllActivated.Remove(this);
       }
@@ -173,7 +179,7 @@ namespace Ordisoftware.Core
 
     public bool IsValid()
     {
-      if ( Active ) return true;
+      if ( InternalHotKey != null ) return true;
       bool result = false;
       var key = (VirtualKeyCode)Key;
       var modifiers = new List<VirtualKeyCode>();
@@ -182,7 +188,7 @@ namespace Ordisoftware.Core
       if ( Alt ) modifiers.Add(VirtualKeyCode.MENU);
       if ( Windows ) { modifiers.Add(VirtualKeyCode.LWIN); }
       var old = KeyPressed;
-      GlobalHotKeyEventHandler action = (s, e) => { result = true; };
+      Action action = () => { result = true; };
       KeyPressed = action;
       try
       {

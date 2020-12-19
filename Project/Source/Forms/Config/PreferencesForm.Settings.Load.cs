@@ -109,14 +109,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditSaveImageCountWarning.Value = Settings.SaveImageCountWarning; });
       SystemManager.TryCatch(() => { EditGlobalHotKeyPopupMainFormEnabled.Checked = Settings.GlobalHotKeyPopupMainFormEnabled; });
       // Hotkey
-      MainForm.Instance.SetGlobalHotKey(true);
-      InitialHotKeyEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
-      EditGlobalHotKeyPopupMainFormShift.Checked = Globals.BringToFrontApplicationHotKey.Shift;
-      EditGlobalHotKeyPopupMainFormCtrl.Checked = Globals.BringToFrontApplicationHotKey.Control;
-      EditGlobalHotKeyPopupMainFormAlt.Checked = Globals.BringToFrontApplicationHotKey.Alt;
-      EditGlobalHotKeyPopupMainFormWin.Checked = Globals.BringToFrontApplicationHotKey.Windows;
-      SelectGlobalHotKeyPopupMainFormKey.SelectedIndex = SelectGlobalHotKeyPopupMainFormKey.FindString(Globals.BringToFrontApplicationHotKey.Key.ToString());
-      CheckHotKeyCombination(null);
+      InitHotKeyControls();
       // System
       EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
       EditLogEnabled.Enabled = DebugManager.Enabled;

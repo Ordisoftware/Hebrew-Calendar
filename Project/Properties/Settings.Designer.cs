@@ -1151,7 +1151,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2000-01-01")]
         public global::System.DateTime VacuumLastDone {
             get {
                 return ((global::System.DateTime)(this["VacuumLastDone"]));
@@ -1271,7 +1270,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2000-01-01")]
         public global::System.DateTime CheckUpdateLastDone {
             get {
                 return ((global::System.DateTime)(this["CheckUpdateLastDone"]));
@@ -1379,7 +1377,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2000-01-01")]
         public global::System.DateTime LastGenerated {
             get {
                 return ((global::System.DateTime)(this["LastGenerated"]));
