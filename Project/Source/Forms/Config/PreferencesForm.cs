@@ -210,6 +210,18 @@ namespace Ordisoftware.Hebrew.Calendar
         SelectGlobalHotKeyPopupMainFormKey.Items.Add(item);
     }
 
+    private void InitHotKeyControls()
+    {
+      MainForm.Instance.SetGlobalHotKey(true);
+      InitialHotKeyEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
+      EditGlobalHotKeyPopupMainFormShift.Checked = Globals.BringToFrontApplicationHotKey.Shift;
+      EditGlobalHotKeyPopupMainFormCtrl.Checked = Globals.BringToFrontApplicationHotKey.Control;
+      EditGlobalHotKeyPopupMainFormAlt.Checked = Globals.BringToFrontApplicationHotKey.Alt;
+      EditGlobalHotKeyPopupMainFormWin.Checked = Globals.BringToFrontApplicationHotKey.Windows;
+      SelectGlobalHotKeyPopupMainFormKey.SelectedIndex = SelectGlobalHotKeyPopupMainFormKey.FindString(Globals.BringToFrontApplicationHotKey.Key.ToString());
+      CheckHotKeyCombination(null);
+    }
+
     private void ActionResetSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetPreferences.GetLang()) ) return;
@@ -836,11 +848,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionHotKeyReset_Click(object sender, EventArgs e)
     {
-      Globals.BringToFrontApplicationHotKey.Key = MainForm.DefaultHotKeyKey;
-      Globals.BringToFrontApplicationHotKey.Modifiers = MainForm.DefaultHotKeyModifiers;
-      LoadHotKeys();
-      EditGlobalHotKeyPopupMainFormEnabled.Checked = MainForm.HotKeyEnabledByDefault;
-      CheckHotKeyCombination(null);
+      Settings.GlobalHotKeyPopupMainFormKey = (int)MainForm.DefaultHotKeyKey;
+      Settings.GlobalHotKeyPopupMainFormModifiers = (int)MainForm.DefaultHotKeyModifiers;
+      Settings.GlobalHotKeyPopupMainFormEnabled = MainForm.HotKeyEnabledByDefault;
+      InitHotKeyControls();
     }
 
     private bool CheckModifiersChanged(object sender)

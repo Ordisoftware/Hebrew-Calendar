@@ -78,11 +78,25 @@ namespace Ordisoftware.Core
         [Language.FR] = "Suivante"
       };
 
+    static public readonly TranslationsDictionary HotKeyUnregisterError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Error on unregistering the HotKey.",
+        [Language.FR] = "Erreur au désenregistrement du HotKey."
+      };
+
+    static public readonly TranslationsDictionary HotKeyRefusedBySystem
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "The HotKey combination is refused by the system.",
+        [Language.FR] = "La combinaison du HotKey est refusé par le système."
+      };
+
     static public readonly TranslationsDictionary HotKeyCapturedByAnotherApplication
       = new TranslationsDictionary
       {
-        [Language.EN] = "Captured by another application",
-        [Language.FR] = "Capturé par une autre application"
+        [Language.EN] = "The HotKey combination is captured by another application",
+        [Language.FR] = "La combinaison du HotKey est capturée par une autre application"
       };
 
     static public readonly TranslationsDictionary LockSessionError

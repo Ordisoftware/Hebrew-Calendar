@@ -20,8 +20,10 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using BondTech.HotkeyManagement.Win;
 using Ordisoftware.Core;
+//using BondTech.HotkeyManagement.Win;
+using Base.Hotkeys;
+using Modifiers = Base.Hotkeys.Modifiers;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -187,6 +189,22 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by BrintToFrontApplicationHotKey key pressed events.
+    /// </summary>
+    private void BrintToFrontApplicationHotKey_KeyPressed()
+    {
+      this.SyncUI(() =>
+      {
+        MenuShowHide_Click(null, null);
+        var forms = Application.OpenForms.ToList().Where(f => f.Visible);
+        forms.ToList().ForEach(f => f.ForceBringToFront());
+        var form = forms.LastOrDefault();
+        if ( form != null && form.Visible )
+          form.Popup();
+      });
+    }
+
+    /// <summary>
     /// Event handler. Called by MainForm for form closing events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -283,19 +301,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.Store();
       if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick(); // TODO don't call if minimized
-    }
-
-    /// <summary>
-    /// Event handler. Called by BrintToFrontApplicationHotKey key pressed events.
-    /// </summary>
-    private void BrintToFrontApplicationHotKey_KeyPressed(object sender, GlobalHotKeyEventArgs e)
-    {
-      MenuShowHide_Click(null, null);
-      var forms = Application.OpenForms.ToList().Where(f => f.Visible);
-      forms.ToList().ForEach(f => f.ForceBringToFront());
-      var form = forms.LastOrDefault();
-      if ( form != null && form.Visible )
-        form.Popup();
     }
 
     /// <summary>

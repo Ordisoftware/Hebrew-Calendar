@@ -141,7 +141,6 @@
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SelectCityForm";
-      this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectCityForm_FormClosing);
       this.Load += new System.EventHandler(this.SelectCityForm_Load);
       this.PanelBottom.ResumeLayout(false);
