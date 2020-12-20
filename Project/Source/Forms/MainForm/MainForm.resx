@@ -1592,6 +1592,9 @@
   <data name="ActionViewMoonMonths.ShortcutKeyDisplayString" xml:space="preserve">
     <value />
   </data>
+  <data name="ActionViewMoonMonths.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F10</value>
+  </data>
   <data name="ActionViewMoonMonths.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 22</value>
   </data>
