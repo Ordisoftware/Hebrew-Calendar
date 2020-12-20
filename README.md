@@ -59,11 +59,11 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 &nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-navigation-en-275x300.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-navigation-en.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-celebrations-en-282x300.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-celebrations-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-reminderpopup-en-300x126.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-reminderpopup-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-locksession-en-300x201.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-locksession-en.png)
+[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-reminderpopup-en-300x126.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-reminderpopup-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/12/hebrew-calendar-celebrationsboard-en-300x74.png)](https://www.ordisoftware.com/uploads/2020/12/hebrew-calendar-celebrationsboard-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-diffdates-en-300x258.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-diffdates-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/12/hebrew-calendar-export-en-252x300.png)](https://www.ordisoftware.com/uploads/2020/12/hebrew-calendar-export-en.png)
+[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-locksession-en-300x201.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-locksession-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-diffdates-en-300x258.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-diffdates-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-preferences-en-300x289.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-preferences-en.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/12/hebrew-calendar-export-en-1-252x300.png)](https://www.ordisoftware.com/uploads/2020/12/hebrew-calendar-export-en-1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-preferences-en-300x289.png)](https://www.ordisoftware.com/uploads/2020/09/hebrew-calendar-preferences-en.png)
 
 ## Videos
 
@@ -176,9 +176,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
+- Add bookmarks backup/restore.
 - Add export celebrations board.
 - Add print celebrations board.
-- Add bookmarks backup/restore.
 - Add dark theme for month view.
 - Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
@@ -192,7 +192,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### In progress - Version 6.0
+#### 2020.12.24 - Version 6.0
 
 - Add window celebrations board with clickable dates and selection of years interval.
 - Add advanced print preview window.

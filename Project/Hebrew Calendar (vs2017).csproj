@@ -649,6 +649,9 @@
     <Compile Include="Source\Forms\Boxes\SelectSuspendDelayForm.Designer.cs">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsBoardForm.fr.resx">
+      <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsBoardForm.resx">
       <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>
     </EmbeddedResource>

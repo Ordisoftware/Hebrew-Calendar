@@ -49,9 +49,9 @@
       this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
       this.GroupBoxFormat = new System.Windows.Forms.GroupBox();
       this.GroupBoxYears = new System.Windows.Forms.GroupBox();
-      this.labelYear1 = new System.Windows.Forms.Label();
-      this.SelectYear1 = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
       this.SelectYear2 = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
+      this.SelectYear1 = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
+      this.labelYear1 = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxView.SuspendLayout();
       this.GroupBoxOptions.SuspendLayout();
@@ -61,9 +61,9 @@
       // 
       // PanelButtons
       // 
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ActionCancel);
       this.PanelButtons.Controls.Add(this.ActionOK);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionCancel
@@ -126,8 +126,8 @@
       // 
       // ActionIntervalInfo
       // 
-      this.ActionIntervalInfo.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionIntervalInfo, "ActionIntervalInfo");
+      this.ActionIntervalInfo.FlatAppearance.BorderSize = 0;
       this.ActionIntervalInfo.Name = "ActionIntervalInfo";
       this.ActionIntervalInfo.UseVisualStyleBackColor = true;
       this.ActionIntervalInfo.Click += new System.EventHandler(this.ActionIntervalInfo_Click);
@@ -150,18 +150,18 @@
       // 
       // GroupBoxView
       // 
+      resources.ApplyResources(this.GroupBoxView, "GroupBoxView");
       this.GroupBoxView.Controls.Add(this.SelectText);
       this.GroupBoxView.Controls.Add(this.SelectMonth);
       this.GroupBoxView.Controls.Add(this.SelectGrid);
-      resources.ApplyResources(this.GroupBoxView, "GroupBoxView");
       this.GroupBoxView.Name = "GroupBoxView";
       this.GroupBoxView.TabStop = false;
       // 
       // GroupBoxOptions
       // 
+      resources.ApplyResources(this.GroupBoxOptions, "GroupBoxOptions");
       this.GroupBoxOptions.Controls.Add(this.SelectSingle);
       this.GroupBoxOptions.Controls.Add(this.SelectInterval);
-      resources.ApplyResources(this.GroupBoxOptions, "GroupBoxOptions");
       this.GroupBoxOptions.Name = "GroupBoxOptions";
       this.GroupBoxOptions.TabStop = false;
       // 
@@ -213,19 +213,21 @@
       // 
       // GroupBoxYears
       // 
+      resources.ApplyResources(this.GroupBoxYears, "GroupBoxYears");
       this.GroupBoxYears.Controls.Add(this.SelectYear2);
       this.GroupBoxYears.Controls.Add(this.SelectYear1);
       this.GroupBoxYears.Controls.Add(this.ActionIntervalInfo);
       this.GroupBoxYears.Controls.Add(this.labelYear1);
       this.GroupBoxYears.Controls.Add(this.LabelYear2);
-      resources.ApplyResources(this.GroupBoxYears, "GroupBoxYears");
       this.GroupBoxYears.Name = "GroupBoxYears";
       this.GroupBoxYears.TabStop = false;
       // 
-      // labelYear1
+      // SelectYear2
       // 
-      resources.ApplyResources(this.labelYear1, "labelYear1");
-      this.labelYear1.Name = "labelYear1";
+      resources.ApplyResources(this.SelectYear2, "SelectYear2");
+      this.SelectYear2.Name = "SelectYear2";
+      this.SelectYear2.SelectedIndex = -1;
+      this.SelectYear2.SelectedItem = null;
       // 
       // SelectYear1
       // 
@@ -234,12 +236,10 @@
       this.SelectYear1.SelectedIndex = -1;
       this.SelectYear1.SelectedItem = null;
       // 
-      // SelectYear2
+      // labelYear1
       // 
-      resources.ApplyResources(this.SelectYear2, "SelectYear2");
-      this.SelectYear2.Name = "SelectYear2";
-      this.SelectYear2.SelectedIndex = -1;
-      this.SelectYear2.SelectedItem = null;
+      resources.ApplyResources(this.labelYear1, "labelYear1");
+      this.labelYear1.Name = "labelYear1";
       // 
       // SelectExportTargetForm
       // 
