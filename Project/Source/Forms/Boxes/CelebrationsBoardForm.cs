@@ -207,6 +207,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
+      if ( e.ColumnIndex == 0 )
+      {
+        e.CellStyle.BackColor = SystemColors.Control;
+        e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+      }
+      else
       if ( e.ColumnIndex > 0 && e.Value != null )
         if (EditUseLongDateFormat.Checked)
           e.Value = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(( (DateTime)e.Value ).ToLongDateString());
