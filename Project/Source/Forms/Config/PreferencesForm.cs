@@ -850,7 +850,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       Settings.GlobalHotKeyPopupMainFormKey = (int)MainForm.DefaultHotKeyKey;
       Settings.GlobalHotKeyPopupMainFormModifiers = (int)MainForm.DefaultHotKeyModifiers;
-      Settings.GlobalHotKeyPopupMainFormEnabled = MainForm.HotKeyEnabledByDefault;
       InitHotKeyControls();
     }
 

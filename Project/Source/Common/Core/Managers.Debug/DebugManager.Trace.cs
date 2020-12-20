@@ -115,9 +115,9 @@ namespace Ordisoftware.Core
       {
       }
       Trace(LogTraceEvent.System, Separator);
-      Trace(LogTraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
-      Trace(LogTraceEvent.System, "# " + "START  : " + DateTime.Now);
-      Trace(LogTraceEvent.System, "# " + "SYSTEM : " + platform);
+      Trace(LogTraceEvent.System, "# " + "START   : " + DateTime.Now);
+      Trace(LogTraceEvent.System, "# " + "PROCESS : " + Globals.AssemblyTitle);
+      Trace(LogTraceEvent.System, "# " + "SYSTEM  : " + platform);
       Trace(LogTraceEvent.System, Separator);
       Trace(LogTraceEvent.System);
     }
@@ -127,9 +127,9 @@ namespace Ordisoftware.Core
       string unleft = TraceListener != null ? TraceListener.IsRollOver ? " (RollOver)" : "" : "";
       Trace(LogTraceEvent.System);
       Trace(LogTraceEvent.System, Separator);
-      Trace(LogTraceEvent.System, "# " + "APP    : " + Globals.AssemblyTitle);
-      Trace(LogTraceEvent.System, "# " + "STOP   : " + DateTime.Now);
-      Trace(LogTraceEvent.System, "# " + "UNLEFT : " + EnterCount + unleft);
+      Trace(LogTraceEvent.System, "# " + "STOP    : " + DateTime.Now);
+      Trace(LogTraceEvent.System, "# " + "PROCESS : " + Globals.AssemblyTitle);
+      Trace(LogTraceEvent.System, "# " + "UNLEFT  : " + EnterCount + unleft);
       Trace(LogTraceEvent.System, Separator);
       Trace(LogTraceEvent.System);
     }
