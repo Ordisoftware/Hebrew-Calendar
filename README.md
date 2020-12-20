@@ -176,9 +176,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
+- Add bookmarks backup/restore.
 - Add export celebrations board.
 - Add print celebrations board.
-- Add bookmarks backup/restore.
 - Add dark theme for month view.
 - Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
@@ -192,7 +192,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### In progress - Version 6.0
+#### 2020.12.24 - Version 6.0
 
 - Add window celebrations board with clickable dates and selection of years interval.
 - Add advanced print preview window.
