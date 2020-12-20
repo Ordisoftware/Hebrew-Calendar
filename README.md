@@ -215,6 +215,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add Serilog-sinks-file NuGet package.
 - Add InputSimulatorStandard NuGet package.
 - Add Windows Global Hotkey dependency.
+- Update web links.
 - Update help.
 
 #### 2020.12.13 - Version 5.13
