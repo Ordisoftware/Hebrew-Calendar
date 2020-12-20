@@ -18,6 +18,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
+using MoreLinq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -52,25 +53,44 @@ namespace Ordisoftware.Hebrew.Calendar
       Text += Program.Settings.TorahEventsCountAsMoon
               ? AppTranslations.OmerMoon.GetLang()
               : AppTranslations.OmerSun.GetLang();
+      var list = MainForm.Instance.YearsIntervalArray;
+      SelectYear1.Fill(list, list.Min());
+      SelectYear2.Fill(list, list.Max());
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(AppTranslations.Year.GetLang(), typeof(int)) };
       foreach ( TorahEvent col in Enum.GetValues(typeof(TorahEvent)) )
         if ( col != TorahEvent.None && col <= TorahEvent.SoukotD8 ) // TODO change when others managed
           Board.Columns.Add(col.ToStringExport(AppTranslations.TorahEvent), typeof(DateTime));
+      DataGridView.CellFormatting += DataGridView_CellFormatting;
+      DataGridView.CellMouseDoubleClick += DataGridView_CellMouseDoubleClick;
+      if ( DataGridView.Columns.Count > 0 )
+        DataGridView.Columns[0].DefaultCellStyle.BackColor = SystemColors.Control;
     }
 
     private void CelebrationsBoardForm_Load(object sender, EventArgs e)
     {
-      this.CenterToMainFormElseScreen();
-      WindowState = FormWindowState.Maximized;
+      this.CheckLocationOrCenterToMainFormElseScreen();
+      if ( Program.Settings.CelebrationsBoardFormWindowState == FormWindowState.Maximized )
+        WindowState = FormWindowState.Maximized;
+      LoadGrid();
+    }
+
+    private void LoadGrid()
+    {
       // TODO only one loop ?
+      int year1 = (int)SelectYear1.SelectedItem;
+      int year2 = (int)SelectYear2.SelectedItem;
       var query = from day in MainForm.Instance.DataSet.LunisolarDays
                   where day.TorahEventsAsEnum != TorahEvent.None
                      && day.TorahEventsAsEnum <= TorahEvent.SoukotD8 // TODO change when others managed
+                     && SQLiteDate.ToDateTime(day.Date).Year >= year1
+                     && SQLiteDate.ToDateTime(day.Date).Year <= year2
                   select new
                   {
                     date = SQLiteDate.ToDateTime(day.Date),
                     torah = day.TorahEventsAsEnum
                   };
+      DataGridView.DataSource = null;
+      Board.Rows.Clear();
       foreach ( var item in query )
       {
         var row = Board.Rows.Find(item.date.Year);
@@ -85,19 +105,19 @@ namespace Ordisoftware.Hebrew.Calendar
         }
       }
       Board.AcceptChanges();
+      DataGridView.DataSource = Board;
+      DataGridView.ClearSelection();
     }
 
     private void CelebrationsBoardForm_Shown(object sender, EventArgs e)
     {
-      DataGridView.CellFormatting += DataGridView_CellFormatting;
-      DataGridView.CellMouseDoubleClick += DataGridView_CellMouseDoubleClick;
-      DataGridView.DataSource = Board;
       EditFontSize_ValueChanged(null, null);
     }
 
     private void CelebrationsBoardForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Instance = null;
+      Program.Settings.CelebrationsBoardFormWindowState = WindowState;
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -115,6 +135,50 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
+
+    private bool Mutex;
+
+    private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( !Created ) return;
+      if ( Mutex ) return;
+      Mutex = true;
+      try
+      {
+        int year1 = (int)SelectYear1.SelectedItem;
+        int year2 = (int)SelectYear2.SelectedItem;
+        var control = ( (ComboBox)sender ).Parent;
+        if ( control == SelectYear1 && year1 > year2 )
+          SelectYear2.SelectedIndex = SelectYear1.SelectedIndex;
+        if ( control == SelectYear2 && year2 < year1 )
+          SelectYear1.SelectedIndex = SelectYear2.SelectedIndex;
+        LoadGrid();
+      }
+      finally
+      {
+        Mutex = false;
+      }
+    }
+
+    private void EditFontSize_ValueChanged(object sender, EventArgs e)
+    {
+      DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
+      if ( DataGridView.Rows.Count > 0 )
+        DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
+    }
+
+    private void EditUseLongDateFormat_CheckedChanged(object sender, EventArgs e)
+    {
+      DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+      DataGridView.Refresh();
+      DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+    }
+
+    private void EditIncludeSeasons_CheckedChanged(object sender, EventArgs e)
+    {
+      LoadGrid();
+    }
+
     private void DataGridView_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
     {
       DataGridView.Columns[e.Column.Index].SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -129,25 +193,16 @@ namespace Ordisoftware.Hebrew.Calendar
           e.Value = ( (DateTime)e.Value ).ToShortDateString();
     }
 
+    private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+      if ( e.ColumnIndex == 0 ) DataGridView.ClearSelection();
+    }
+
     private void DataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
     {
       if ( e.RowIndex < 0 || e.ColumnIndex < 1 ) return;
       MainForm.Instance.MenuShowHide_Click(null, null);
       MainForm.Instance.GoToDate((DateTime)DataGridView[e.ColumnIndex, e.RowIndex].Value);
-    }
-
-    private void EditFontSize_ValueChanged(object sender, EventArgs e)
-    {
-      DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
-      if ( DataGridView.Rows.Count > 0)
-        DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
-    }
-
-    private void EditUseLongDateFormat_CheckedChanged(object sender, EventArgs e)
-    {
-      DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-      DataGridView.Refresh();
-      DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
     }
 
   }

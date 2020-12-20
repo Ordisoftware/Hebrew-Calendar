@@ -1937,5 +1937,53 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["GlobalHotKeyPopupMainFormEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point CelebrationsBoardFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["CelebrationsBoardFormLocation"]));
+            }
+            set {
+                this["CelebrationsBoardFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.Forms.FormWindowState CelebrationsBoardFormWindowState {
+            get {
+                return ((global::System.Windows.Forms.FormWindowState)(this["CelebrationsBoardFormWindowState"]));
+            }
+            set {
+                this["CelebrationsBoardFormWindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("984, 461")]
+        public global::System.Drawing.Size CelebrationsBoardFormClientSize {
+            get {
+                return ((global::System.Drawing.Size)(this["CelebrationsBoardFormClientSize"]));
+            }
+            set {
+                this["CelebrationsBoardFormClientSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CelebrationsBoardFormIncludeSeasons {
+            get {
+                return ((bool)(this["CelebrationsBoardFormIncludeSeasons"]));
+            }
+            set {
+                this["CelebrationsBoardFormIncludeSeasons"] = value;
+            }
+        }
     }
 }

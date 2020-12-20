@@ -487,5 +487,17 @@
     <Setting Name="GlobalHotKeyPopupMainFormEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="CelebrationsBoardFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">984, 461</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormIncludeSeasons" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
