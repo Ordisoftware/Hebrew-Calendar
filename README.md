@@ -31,7 +31,7 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 - Balloon window from the Tray Icon to navigate between days with a summary.
 - Calculate the difference between two dates with bookmarks.
 - Advanced dialog to save, copy to the clipboard and print the view and the data.
-- Supported file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.
+- Supported export file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.
 - English, French.
 
 ## Review
