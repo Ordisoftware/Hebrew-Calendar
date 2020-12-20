@@ -75,18 +75,21 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk
 
 -
 
-Name = (FR/EN) Science - Biologie, musique, astronomie
+Name = (FR) Science - Mathématiques et physiques
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Boo3Ss5OZSYCNHEGpFXcPc
+
+Name = (FR/EN) Science - Biologie et génétique
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BEv_KNGXktzeF8oBTXGoKR
 
-Name = (FR/EN) Science - Bodybuilding
+Name = (FR/EN) Science - Bodybuilding et nutrition
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BEAk_k9s5tCMG5ZPwK6KVz
 
-Name = (FR) Science - Mentalisme
+Name = (FR) Science - Mentalisme et psychologie
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-B3m_jadFZi3rvJx9LPhHeG
 
 -
 
-Name = (FR) Documentaires sujets de société
+Name = (FR) Documentaires et sujets de société
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DfPB3GAU-e6hLSzJIjVc18
 
 Name = (EN) CoSM
