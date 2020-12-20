@@ -117,16 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Label.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 13</value>
-  </data>
-  <data name="GroupBoxView.Text" xml:space="preserve">
-    <value>Vue</value>
-  </data>
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="SelectText.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 17</value>
   </data>
@@ -145,40 +139,86 @@
   <data name="SelectGrid.Text" xml:space="preserve">
     <value>Grille de données</value>
   </data>
+  <data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 17</value>
+  </data>
   <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
     <value>Ouvrir le fichier exporté en cas de succès</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 17</value>
   </data>
   <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
     <value>Ouvrir le dossier d'export en cas de succès</value>
   </data>
-  <data name="EditSelectViewToExport.Text" xml:space="preserve">
-    <value>Activer cette boîte de dialogue sinon utiliser la vue en cours</value>
-  </data>
-  <data name="GroupBoxOptions.Text" xml:space="preserve">
-    <value>Options :</value>
-  </data>
-  <data name="EditShowPrintPreviewDialog.Text" xml:space="preserve">
-    <value>Afficher la boîte de dialogue d'aperçu avant impression</value>
-  </data>
-  <data name="GroupBoxSettings.text" xml:space="preserve">
-    <value>Préférences</value>
-  </data>
-  <data name="LabelYear1.Text" xml:space="preserve">
-    <value>Début</value>
+  <data name="LabelYear2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 13</value>
   </data>
   <data name="LabelYear2.Text" xml:space="preserve">
     <value>Fin</value>
   </data>
-  <data name="SelectInterval" xml:space="preserve">
-    <value>Intervalle</value>
+  <data name="ActionIntervalInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="SelectSingle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 17</value>
   </data>
   <data name="SelectSingle.Text" xml:space="preserve">
     <value>Unique</value>
   </data>
-  <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
-    <value>Imprimer les images en paysage</value>
+  <data name="SelectInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="SelectInterval.Text" xml:space="preserve">
+    <value>Intervalle</value>
+  </data>
+  <data name="GroupBoxView.Text" xml:space="preserve">
+    <value>Vue</value>
+  </data>
+  <data name="GroupBoxOptions.Text" xml:space="preserve">
+    <value>Options :</value>
+  </data>
+  <data name="GroupBoxSettings.Text" xml:space="preserve">
+    <value>Préférences</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 17</value>
   </data>
   <data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
     <value>Export des énumérations en tant que traductions humanisées</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 17</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
+    <value>Imprimer les images en paysage</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 17</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Text" xml:space="preserve">
+    <value>Afficher la boîte de dialogue d'aperçu avant impression</value>
+  </data>
+  <data name="GroupBoxYears.Text" xml:space="preserve">
+    <value>Années</value>
+  </data>
+  <data name="labelYear1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="labelYear1.Text" xml:space="preserve">
+    <value>Début</value>
   </data>
 </root>
