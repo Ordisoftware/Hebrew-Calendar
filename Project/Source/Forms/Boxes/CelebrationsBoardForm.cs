@@ -18,7 +18,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
-using MoreLinq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -43,7 +42,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.BringToFront();
     }
 
-    public DataTable Board = new DataTable();
+    public DataTable Board;
 
     private CelebrationsBoardForm()
     {
@@ -56,10 +55,6 @@ namespace Ordisoftware.Hebrew.Calendar
       var list = MainForm.Instance.YearsIntervalArray;
       SelectYear1.Fill(list, list.Min());
       SelectYear2.Fill(list, list.Max());
-      Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(AppTranslations.Year.GetLang(), typeof(int)) };
-      foreach ( TorahEvent col in Enum.GetValues(typeof(TorahEvent)) )
-        if ( col != TorahEvent.None && col <= TorahEvent.SoukotD8 ) // TODO change when others managed
-          Board.Columns.Add(col.ToStringExport(AppTranslations.TorahEvent), typeof(DateTime));
       DataGridView.CellFormatting += DataGridView_CellFormatting;
       DataGridView.CellMouseDoubleClick += DataGridView_CellMouseDoubleClick;
       if ( DataGridView.Columns.Count > 0 )
@@ -71,7 +66,27 @@ namespace Ordisoftware.Hebrew.Calendar
       this.CheckLocationOrCenterToMainFormElseScreen();
       if ( Program.Settings.CelebrationsBoardFormWindowState == FormWindowState.Maximized )
         WindowState = FormWindowState.Maximized;
+      CreateDataTable();
       LoadGrid();
+    }
+
+    // TODO change when others managed
+    private const TorahEvent MaxEvent = TorahEvent.SoukotD8;
+
+    private void CreateDataTable()
+    {
+      string name = AppTranslations.Year.GetLang();
+      if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
+      DataGridView.DataSource = null;
+      Board = new DataTable();
+      Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
+      foreach ( TorahEvent col in Enum.GetValues(typeof(TorahEvent)) )
+        if ( col != TorahEvent.None && col <= MaxEvent )
+        {
+          name = col.ToStringExport(AppTranslations.TorahEvent);
+          if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
+          Board.Columns.Add(name, typeof(DateTime));
+        }
     }
 
     private void LoadGrid()
@@ -81,7 +96,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int year2 = (int)SelectYear2.SelectedItem;
       var query = from day in MainForm.Instance.DataSet.LunisolarDays
                   where day.TorahEventsAsEnum != TorahEvent.None
-                     && day.TorahEventsAsEnum <= TorahEvent.SoukotD8 // TODO change when others managed
+                     && day.TorahEventsAsEnum <= MaxEvent
                      && SQLiteDate.ToDateTime(day.Date).Year >= year1
                      && SQLiteDate.ToDateTime(day.Date).Year <= year2
                   select new
@@ -165,6 +180,12 @@ namespace Ordisoftware.Hebrew.Calendar
       DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
       if ( DataGridView.Rows.Count > 0 )
         DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
+    }
+
+    private void EditColumnUpperCase_CheckedChanged(object sender, EventArgs e)
+    {
+      CreateDataTable();
+      LoadGrid();
     }
 
     private void EditUseLongDateFormat_CheckedChanged(object sender, EventArgs e)

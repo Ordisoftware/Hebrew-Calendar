@@ -69,9 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
         ActionWebLinks.DuplicateTo(MenuWebLinks);
       }
-      ActionViewMoonMonths.ShortcutKeys = Keys.None;
       ActionTools.DuplicateTo(MenuTools);
-      ActionViewMoonMonths.ShortcutKeys = Keys.F10;
       ActionInformation.DuplicateTo(MenuInformation);
       if ( !Settings.AllowSuspendReminder && ActionEnableReminder.Enabled )
         ActionEnableReminder.PerformClick();

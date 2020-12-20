@@ -148,4 +148,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Tableau des célébrations</value>
   </data>
+  <data name="EditColumnUpperCase.Text" xml:space="preserve">
+    <value>Utiliser le titre de la colonne en majuscules</value>
+  </data>
 </root>

@@ -33,6 +33,7 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.PanelOptions = new System.Windows.Forms.Panel();
+      this.EditColumnUpperCase = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.SelectYear1 = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
@@ -80,6 +81,7 @@
       // 
       // PanelOptions
       // 
+      this.PanelOptions.Controls.Add(this.EditColumnUpperCase);
       this.PanelOptions.Controls.Add(this.EditUseLongDateFormat);
       this.PanelOptions.Controls.Add(this.EditFontSize);
       this.PanelOptions.Controls.Add(this.SelectYear1);
@@ -89,6 +91,16 @@
       this.PanelOptions.Controls.Add(this.LabelFontSize);
       resources.ApplyResources(this.PanelOptions, "PanelOptions");
       this.PanelOptions.Name = "PanelOptions";
+      // 
+      // EditColumnUpperCase
+      // 
+      resources.ApplyResources(this.EditColumnUpperCase, "EditColumnUpperCase");
+      this.EditColumnUpperCase.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormUseTitleUpperCase;
+      this.EditColumnUpperCase.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditColumnUpperCase.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormUseTitleUpperCase", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditColumnUpperCase.Name = "EditColumnUpperCase";
+      this.EditColumnUpperCase.UseVisualStyleBackColor = true;
+      this.EditColumnUpperCase.CheckedChanged += new System.EventHandler(this.EditColumnUpperCase_CheckedChanged);
       // 
       // EditUseLongDateFormat
       // 
@@ -189,5 +201,6 @@
     private System.Windows.Forms.Label LabelEnd;
     private System.Windows.Forms.Label LabelStart;
     private System.Windows.Forms.Label LabelFontSize;
+    private System.Windows.Forms.CheckBox EditColumnUpperCase;
   }
 }
