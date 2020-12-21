@@ -218,15 +218,15 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Home : First month available in the database" + Globals.NL +
                         "End : Last month available in the database" + Globals.NL +
                         Globals.NL +
-                        "Up, PageUp : Previous year" + Globals.NL +
-                        "Down, PageDown : Next year" + Globals.NL +
+                        "Up (ou PageUp) : Previous year" + Globals.NL +
+                        "Down (ou PageDown) : Next year" + Globals.NL +
                         "Left : Previous month" + Globals.NL +
                         "Right : Next month" + Globals.NL +
                         Globals.NL +
                         "F8 : Preferences" + Globals.NL +
                         "F11 : Help" + Globals.NL +
                         "F12 : About" + Globals.NL +
-                        "Alt + F4, Escape : Close window" + Globals.NL +
+                        "Alt + F4 (ou Escape) : Close window" + Globals.NL +
                         "Ctrl + Alt + F4 : Exit application",
 
         [Language.FR] = "F1 : Vue du rapport textuel" + Globals.NL +
@@ -269,15 +269,15 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Début : Premier mois disponible dans la base de données" + Globals.NL +
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
                         Globals.NL +
-                        "Haut, PagePrec : Année précédente" + Globals.NL +
-                        "Bas, PageSuiv : Année suivante" + Globals.NL +
+                        "Haut (ou PagePrec) : Année précédente" + Globals.NL +
+                        "Bas (ou PageSuiv) : Année suivante" + Globals.NL +
                         "Gauche : Mois précédent" + Globals.NL +
                         "Droite : Mois suivant" + Globals.NL +
                         Globals.NL +
                         "F8 : Préférences" + Globals.NL +
                         "F11 : Aide" + Globals.NL +
                         "F12 : A propos" + Globals.NL +
-                        "Alt + F4, Echap : Ferme la fenêtre" + Globals.NL +
+                        "Alt + F4 (ou Echap) : Ferme la fenêtre" + Globals.NL +
                         "Ctrl + Alt + F4 : Ferme l'application",
       };
 
