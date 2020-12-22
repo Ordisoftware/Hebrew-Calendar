@@ -176,9 +176,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
-- Add bookmarks backup/restore.
-- Add export celebrations board.
-- Add print celebrations board.
 - Add dark theme for month view.
 - Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
@@ -191,6 +188,15 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Replace simple internal trace/logging by SeriLog.
 
 ## Changelog
+
+#### In progress - Version 6.1
+
+- Add bookmarks backup/restore.
+- Add export celebrations board.
+- Add print celebrations board.
+- Add option to go to today on main form popup else keep last cursor.
+- Fix a strange behavior when resizing celebrations board from the top or left, and un-maximize.
+- Code refactoring.
 
 #### 2020.12.21 - Version 6.0
 
