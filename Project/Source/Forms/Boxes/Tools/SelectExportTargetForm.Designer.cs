@@ -49,8 +49,8 @@
       this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
       this.GroupBoxFormat = new System.Windows.Forms.GroupBox();
       this.GroupBoxYears = new System.Windows.Forms.GroupBox();
-      this.SelectYear2 = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
-      this.SelectYear1 = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
+      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
+      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.labelYear1 = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxView.SuspendLayout();
@@ -294,7 +294,7 @@
     private System.Windows.Forms.GroupBox GroupBoxFormat;
     private System.Windows.Forms.GroupBox GroupBoxYears;
     private System.Windows.Forms.Label labelYear1;
-    private SelectYearControl SelectYear2;
-    private SelectYearControl SelectYear1;
+    private SelectValueComboBox SelectYear2;
+    private SelectValueComboBox SelectYear1;
   }
 }

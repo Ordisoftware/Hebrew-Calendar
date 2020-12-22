@@ -49,17 +49,20 @@ namespace Ordisoftware.Hebrew.Calendar
       DebugManager.Enabled = Settings.DebuggerEnabled;
       DebugManager.TraceEnabled = Settings.TraceEnabled;
       Language lang = Settings.LanguageSelected;
-      SystemManager.CheckCommandLineArguments<CommandLineArgs>(args, ref lang);
+      SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
       Settings.LanguageSelected = lang;
       UpdateLocalization();
-      if ( SystemManager.CommandLineOptions.ResetSettings )
-      {
-        SystemManager.CleanAllLocalAppSettingsFolders();
-        CheckSettingsReset(true);
-      }
-      else
-      if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions.HideGUI )
-        ForceStartupHide = true;
+      if ( SystemManager.CommandLineOptions != null )
+        if ( SystemManager.CommandLineOptions.ResetSettings )
+        {
+          SystemManager.CleanAllLocalAppSettingsFolders();
+          CheckSettingsReset(true);
+        }
+        else
+        if ( !Settings.FirstLaunch
+          && SystemManager.CommandLineOptions != null
+          && SystemManager.CommandLineOptions.HideGUI )
+          ForceStartupHide = true;
       Application.Run(MainForm.Instance);
     }
 

@@ -818,7 +818,7 @@ namespace Ordisoftware.Hebrew.Calendar
       CheckHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Key = (Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem);
     }
 
-      private void EditGlobalHotKeyPopupMainFormShift_CheckedChanged(object sender, EventArgs e)
+    private void EditGlobalHotKeyPopupMainFormShift_CheckedChanged(object sender, EventArgs e)
     {
       if ( !IsReady ) return;
       if ( !CheckModifiersChanged(sender) ) return;

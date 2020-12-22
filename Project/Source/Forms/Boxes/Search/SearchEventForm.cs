@@ -24,12 +24,16 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class SearchEventForm : Form
   {
 
+    public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
+
     public SearchEventForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       ActiveControl = ListItems;
-      SelectYear.Fill();
+      CurrentDay = MainForm.Instance.CurrentDay;
+      int year = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;
+      SelectYear.Fill(MainForm.Instance.YearsIntervalArray, year);
     }
 
     private void SearchEventForm_Load(object sender, EventArgs e)
@@ -39,8 +43,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SearchEventForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( DialogResult == DialogResult.Cancel && SelectYear.CurrentDay != null )
-        MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(SelectYear.CurrentDay.Date));
+      if ( DialogResult == DialogResult.Cancel && CurrentDay != null )
+        MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date));
     }
 
     private void ListItems_DoubleClick(object sender, EventArgs e)

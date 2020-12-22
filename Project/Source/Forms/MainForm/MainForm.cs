@@ -21,8 +21,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using Ordisoftware.Core;
-//using BondTech.HotkeyManagement.Win;
-using Base.Hotkeys;
 using Modifiers = Base.Hotkeys.Modifiers;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -143,7 +141,8 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.IsReady = true;
         UpdateButtons();
         GoToDate(DateTime.Today);
-        CheckRegenerateCalendar(force: ( (CommandLineArgs)SystemManager.CommandLineOptions ).Generate);
+        bool doforce = ( SystemManager.CommandLineOptions as ApplicationCommandLine )?.Generate ?? false;
+        CheckRegenerateCalendar(force: doforce);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
         if ( Settings.StartupHide || Program.ForceStartupHide )
@@ -184,7 +183,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.BringToFrontApplicationHotKey.Key = shortcutKey;
       Globals.BringToFrontApplicationHotKey.Modifiers = shortcutModifiers;
       Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKey_KeyPressed;
-      if (!noactive)
+      if ( !noactive )
         SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
     }
 
