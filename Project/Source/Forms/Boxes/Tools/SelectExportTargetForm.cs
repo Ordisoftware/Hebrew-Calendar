@@ -38,6 +38,8 @@ namespace Ordisoftware.Hebrew.Calendar
         form.EditAutoOpenExportedFile.Enabled = action == ExportAction.SaveToFile;
         form.EditAutoOpenExportFolder.Enabled = action == ExportAction.SaveToFile;
         form.EditShowPrintPreviewDialog.Enabled = action == ExportAction.Print;
+        form.EditPrintImageInLandscape.Enabled = action == ExportAction.Print;
+        form.EditPrintImageInLandscape.Tag = form.EditPrintImageInLandscape.Enabled;
         if ( view == ViewMode.Text && form.SelectText.Enabled )
           form.SelectText.Checked = true;
         else
@@ -140,7 +142,7 @@ namespace Ordisoftware.Hebrew.Calendar
       GroupBoxFormat.Enabled = SelectGrid.Checked;
       GroupBoxYears.Enabled = SelectInterval.Checked;
       EditExportDataEnumsAsTranslations.Enabled = SelectGrid.Checked;
-      EditPrintImageInLandscape.Enabled = SelectMonth.Checked;
+      EditPrintImageInLandscape.Enabled = (bool)EditPrintImageInLandscape.Tag && SelectMonth.Checked;
       SelectYear1.Refresh();
       SelectYear2.Refresh();
     }
