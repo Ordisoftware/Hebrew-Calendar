@@ -13,18 +13,18 @@
 Lang/EN = Asher 'Haïm HaLevi
 Lang/FR = Asher 'Haïm HaLevi
 
-Name = (FR) Livre "Le problème religieux"
+Name = (FR) Le problème religieux
 URL = https://sites.google.com/site/asherhaimhalevi/the-religious-problem
 
 -
 
-Name = (FR) Livret "L'alphabet hébreu"
+Name = (FR) L'alphabet hébreu
 URL = https://sites.google.com/site/asherhaimhalevi/hebrew-alphabet
 
-Name = (FR) Livret "L'alliance"
+Name = (FR) L'alliance
 URL = https://sites.google.com/site/asherhaimhalevi/alliance
 
-Name = (FR) Livret "Les séfitot"
+Name = (FR) Les séfitot
 URL = https://sites.google.com/site/asherhaimhalevi/sefirot
 
 -
