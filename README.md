@@ -197,6 +197,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add print celebrations board.
 - Add option to go to today on main form popup else keep last cursor.
 - Fix a strange behavior when resizing celebrations board from the top or left, and un-maximize.
+- Fix export dialog that has print image orientation option always enabled.
 - Code refactoring.
 - Update web links.
 
