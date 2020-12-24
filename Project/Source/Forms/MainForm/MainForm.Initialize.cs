@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// Provide application's main form.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class MainForm : Form
+  public partial class MainForm
   {
 
     /// <summary>
