@@ -117,6 +117,111 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionExport.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVDhPhZPLaxNRFMYH/xA37lyJj7Yq8dFFH0mrgitx
+        6bK6cCGt4gsmjTstDQUXCiJNIjSTTIwiNrTIQC3ahUJ1IYJW+0gmrc3LaadJ0897Tu4kmdrqDz7uuZdz
+        vnvunbmKQyKZzGm6jmgshrG6NB61eBwxXc/K1J2hpH9hmiaimhaW6X9DOxPfvs8J/ZCa47WnoRCPmXQa
+        0Xg8IkvcUKvEz/kFzC8ssigmRsNhlCsVjqkTcdSoLGswpmmcsCR2SWcyrMX0Eq+9n5lhE6cTOq4sa+AY
+        mGYW2exyXZa1xuvN6Prz3Q2WV1ax8msVuVwBVmkdG9Ymyla1LiL1cnJ3g1w+j3yhAHutjLuRW2jpP4jW
+        gcNCR1hHr7fi9B0PvIOdz2RpDcegWCzhd8kCxJ1R8cTnIbyevY/x2SGkPg2L8QGMLyPw+jvdXTgGdGZ7
+        fYNj2jH5QeX4iXEFF0b2cPzio4outWNnA9u2USnXPlnbQAsi764iMt3P88dGH4+j05eFwfYO5H+wWa1i
+        a4tDcd42PJq6hL7QXlF0rbYoeGhcRLfa5Tagd7Cd4zeOIWicl7MGQeOcuAOv2yCWSBTpB3Eez6vkuLjt
+        kxieOoN7k+3wp05ATXkQmDiF4Nuz6A343AaCA0KHmtV+2/O1Z9ALn9/HO5Io7g30oPtmxxuR81/2C7lM
+        m7RPURTlD3THQHnMyk2+AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionExport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 0</value>
+  </data>
+  <data name="ActionExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionExport.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.Name" xml:space="preserve">
+    <value>ActionExport</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionImport.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgtJREFUOE99k8tPE2EUxfsf+Ee4My6MwPhIlGAgtQ+NCzcu2BgXusZQNCHV2EJq
+        SIwm3aGJRIoJnc7UAhIggBg0sSEEjQtjoiiPdgrSlwNDSzl891raaUs9yck9c2fub75vHhYA7HAkkpRV
+        FcFQCMMly1xlRUFIVROWKtFcCUAX/U+aphE8UJxliXYZQHcm/fi5LPyr6GXuDQwOco3HYggqylBxvhJA
+        SyX9XlnFyuoamzLpVSCAXD7PmVYithOsBcgynce6uEssHmevxda59ykaZcjhSmi7dQGalkAisVGyrm9z
+        3yxVfVMfsLG5hc0/W0gm09CzO9jV95DTCyWTJken6wOSqRRS6TSM7RweDHVDcp2G1NUoagP77L0mtLgv
+        wNFjfU1zNYBMJou/WR0Qz4yGp74+wdiSD5HFHows9mL8cx/mvvlh91rp8loA7dnY2eUsuRqhLrg5mzW2
+        1AvbozoAwzCQz/17ZZKrCS/nb3Mm9c/dwc3nxzAc7YTNc5laJkDxO9grFLC/zxFnXBL8szc4D3zs4Bpc
+        eIgXH27B7rHRYRlA/0G1zt8/h6fvrnG+GzqJkS99nP3vrwuAnWIZoITDGfpADn+et5EJ8bSb8Wz+Knwz
+        bXg8Y4Vvuk24Ff3RdlzxOioBQqeEG8y+5L743em1w+lxCDu5OoRp2NZtna0GHKUTwhVQk48DsBwAe3nQ
+        hDZnsaQAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>218, 0</value>
+  </data>
+  <data name="ActionImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionImport.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.Name" xml:space="preserve">
+    <value>ActionImport</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 1</value>
+  </data>
+  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ActionCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
     <value>ActionCancel</value>
   </data>
@@ -127,7 +232,25 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 1</value>
+  </data>
+  <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="ActionOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
   <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
     <value>ActionOK</value>
@@ -139,22 +262,19 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 273</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 28</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
     <value>PanelBottom</value>
@@ -223,7 +343,7 @@
     <value>42, 42</value>
   </data>
   <data name="ActionClear.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionClear.Name" xml:space="preserve">
     <value>ActionClear</value>
@@ -236,66 +356,6 @@
   </data>
   <data name="&gt;&gt;ActionClear.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 3</value>
-  </data>
-  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ActionCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
-    <value>ActionCancel</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ActionOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 2</value>
-  </data>
-  <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ActionOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
-    <value>ActionOK</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="ListBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -569,6 +629,12 @@
   <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="SaveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>155, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -589,6 +655,18 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Manage date bookmarks</value>
+  </data>
+  <data name="&gt;&gt;SaveFileDialog.Name" xml:space="preserve">
+    <value>SaveFileDialog</value>
+  </data>
+  <data name="&gt;&gt;SaveFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpenFileDialog.Name" xml:space="preserve">
+    <value>OpenFileDialog</value>
+  </data>
+  <data name="&gt;&gt;OpenFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ManageDateBookmarksForm</value>
