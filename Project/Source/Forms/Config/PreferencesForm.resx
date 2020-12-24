@@ -153,10 +153,10 @@
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="ActionExport.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionExportSettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionExportSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAbxJREFUOE+tUssuQ1EUvYNG20gw5C8k/QWPmPgAfyAxECZoS4QQiQiJZ1IJQXRC
@@ -169,34 +169,34 @@
         zkMq6/TfcAgnG9u8MDFJi5qleZ6fMfv11gzKibyl35L9/wVJ+gSokUfg/l5p0QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionExportSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionExport.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionExportSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 1</value>
   </data>
-  <data name="ActionExport.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionExportSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="ActionExport.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionExportSettings.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;ActionExport.Name" xml:space="preserve">
-    <value>ActionExport</value>
+  <data name="&gt;&gt;ActionExportSettings.Name" xml:space="preserve">
+    <value>ActionExportSettings</value>
   </data>
-  <data name="&gt;&gt;ActionExport.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionExportSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionExport.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionExportSettings.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
-  <data name="&gt;&gt;ActionExport.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionExportSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ActionImport.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionImportSettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionImportSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAActJREFUOE+lU+9LU2EYfSFJL5FfIxL7Fwb9C6L4t0j1IT+kzUHbYl8ClZAytMj2
@@ -210,28 +210,28 @@
         hAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionImportSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionImport.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionImportSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>32, 1</value>
   </data>
-  <data name="ActionImport.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionImportSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="ActionImport.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionImportSettings.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;ActionImport.Name" xml:space="preserve">
-    <value>ActionImport</value>
+  <data name="&gt;&gt;ActionImportSettings.Name" xml:space="preserve">
+    <value>ActionImportSettings</value>
   </data>
-  <data name="&gt;&gt;ActionImport.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionImportSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionImport.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionImportSettings.Parent" xml:space="preserve">
     <value>PanelButtons</value>
   </data>
-  <data name="&gt;&gt;ActionImport.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionImportSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="ActionResetSettings.AutoSize" type="System.Boolean, mscorlib">
@@ -6500,9 +6500,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
