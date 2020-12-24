@@ -194,7 +194,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.27 - Version 6.1
 
-- Add date bookmarks backup/restore.
+- Add export and import preferences.
+- Add backup and restore date bookmarks.
 - Add option to go to today when main form popup else keep the selected.
 - Fix a strange behavior when resizing celebrations board from the top or left, and un-maximize.
 - Fix export dialog that has print image orientation option always enabled.
