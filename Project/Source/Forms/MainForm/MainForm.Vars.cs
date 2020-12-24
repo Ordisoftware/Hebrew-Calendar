@@ -101,6 +101,7 @@ namespace Ordisoftware.Hebrew.Calendar
         LastShabatReminded = null;
         ShabatForm?.Close();
         LockSessionForm.Instance?.Close();
+        CurrentDay = null;
         foreach ( Form form in RemindCelebrationForms.ToList() ) form.Close();
         foreach ( Form form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
         foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
