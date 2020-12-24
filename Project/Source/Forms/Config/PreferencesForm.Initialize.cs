@@ -29,9 +29,9 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     /// <summary>
-    /// Initialize the form.
+    /// Do form load.
     /// </summary>
-    private void Initialize()
+    private void DoFormLoad()
     {
       SaveSettingsDialog.InitialDirectory = Program.Settings.GetExportDirectory();
       SaveSettingsDialog.Filter = ExportTarget.CreateFilters();
@@ -42,6 +42,30 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadEvents();
       LoadFonts();
       LoadHotKeys();
+    }
+
+    /// <summary>
+    /// Do form show.
+    /// </summary>
+    private void DoFormShow()
+    {
+      SystemManager.TryCatchManage(() => Globals.BringToFrontApplicationHotKey.Active = false);
+      TopMost = MainForm.Instance.TopMost;
+      BringToFront();
+      UpdateLanguagesButtons();
+      LoadSettings();
+      EditVacuumAtStartup_CheckedChanged(null, null);
+      EditCheckUpdateAtStartup_CheckedChanged(null, null);
+      EditBalloon_CheckedChanged(null, null);
+      EditAutoRegenerate_CheckedChanged(null, null);
+      EditRemindAutoLock_CheckedChanged(null, null);
+      EditRemindShabat_ValueChanged(null, null);
+      EditTimerEnabled_CheckedChanged(null, null);
+      EditUseColors_CheckedChanged(null, null);
+      EditLogEnabled_CheckedChanged(null, null);
+      ActiveControl = ActionClose;
+      ActionResetSettings.TabStop = false;
+      IsReady = true;
     }
 
     /// <summary>

@@ -49,7 +49,6 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       ActionMonthViewThemeDark.Visible = Globals.IsDevExecutable; // TODO remove when ready
-      Initialize();
     }
 
     /// <summary>
@@ -60,6 +59,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void PreferencesForm_Load(object sender, EventArgs e)
     {
       this.CenterToMainFormElseScreen();
+      DoFormLoad();
     }
 
     /// <summary>
@@ -69,23 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_Shown(object sender, EventArgs e)
     {
-      SystemManager.TryCatchManage(() => Globals.BringToFrontApplicationHotKey.Active = false);
-      TopMost = MainForm.Instance.TopMost;
-      BringToFront();
-      UpdateLanguagesButtons();
-      LoadSettings();
-      EditVacuumAtStartup_CheckedChanged(null, null);
-      EditCheckUpdateAtStartup_CheckedChanged(null, null);
-      EditBalloon_CheckedChanged(null, null);
-      EditAutoRegenerate_CheckedChanged(null, null);
-      EditRemindAutoLock_CheckedChanged(null, null);
-      EditRemindShabat_ValueChanged(null, null);
-      EditTimerEnabled_CheckedChanged(null, null);
-      EditUseColors_CheckedChanged(null, null);
-      EditLogEnabled_CheckedChanged(null, null);
-      ActiveControl = ActionClose;
-      ActionResetSettings.TabStop = false;
-      IsReady = true;
+      DoFormShow();
     }
 
     /// <summary>
