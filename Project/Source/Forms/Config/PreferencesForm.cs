@@ -918,13 +918,11 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       OpenSettingsDialog.FileName = "";
       if ( OpenSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-      string extension = Path.GetExtension(OpenSettingsDialog.FileName);
       MainForm.Instance.MenuShowHide_Click(null, null);
       MoonMonthsForm.Instance.Hide();
       StatisticsForm.Instance.Hide();
       long starttime = Program.Settings.BenchmarkStartingApp;
       long loadtime = Program.Settings.BenchmarkLoadData;
-      var appSettings = Program.Settings;
       try
       {
         var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
@@ -937,11 +935,11 @@ namespace Ordisoftware.Hebrew.Calendar
               .SetRawXml(settings.Single().ToString());
         config.Save(ConfigurationSaveMode.Modified);
         ConfigurationManager.RefreshSection("userSettings");
-        appSettings.Reload();
-        appSettings.BenchmarkStartingApp = starttime;
-        appSettings.BenchmarkLoadData = loadtime;
-        appSettings.Save();
-        appSettings.Retrieve();
+        Program.Settings.Reload();
+        Program.Settings.BenchmarkStartingApp = starttime;
+        Program.Settings.BenchmarkLoadData = loadtime;
+        Program.Settings.Save();
+        Program.Settings.Retrieve();
         DoReset = true;
         Reseted = true;
         Close();
@@ -949,7 +947,7 @@ namespace Ordisoftware.Hebrew.Calendar
       catch ( Exception ex )
       {
         DisplayManager.ShowError(ex.Message);
-        appSettings.Reload();
+        Program.Settings.Reload();
       }
     }
   }
