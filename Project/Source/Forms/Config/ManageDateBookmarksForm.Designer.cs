@@ -30,33 +30,48 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageDateBookmarksForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
-      this.ActionClear = new System.Windows.Forms.Button();
+      this.ActionExport = new System.Windows.Forms.Button();
+      this.ActionImport = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionOK = new System.Windows.Forms.Button();
+      this.ActionClear = new System.Windows.Forms.Button();
       this.ListBox = new System.Windows.Forms.ListBox();
       this.ActionDelete = new System.Windows.Forms.Button();
       this.ActionUp = new System.Windows.Forms.Button();
       this.ActionDown = new System.Windows.Forms.Button();
       this.ActionSort = new System.Windows.Forms.Button();
       this.PanelSeparator = new System.Windows.Forms.Panel();
+      this.SaveBookmarksDialog = new System.Windows.Forms.SaveFileDialog();
+      this.OpenBookmarksDialog = new System.Windows.Forms.OpenFileDialog();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionExport);
+      this.PanelBottom.Controls.Add(this.ActionImport);
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOK);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
-      // ActionClear
+      // ActionExport
       // 
-      this.ActionClear.AllowDrop = true;
-      resources.ApplyResources(this.ActionClear, "ActionClear");
-      this.ActionClear.FlatAppearance.BorderSize = 0;
-      this.ActionClear.Name = "ActionClear";
-      this.ActionClear.UseVisualStyleBackColor = true;
-      this.ActionClear.Click += new System.EventHandler(this.ActionClear_Click);
+      this.ActionExport.AllowDrop = true;
+      this.ActionExport.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionExport, "ActionExport");
+      this.ActionExport.Name = "ActionExport";
+      this.ActionExport.UseVisualStyleBackColor = true;
+      this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
+      // 
+      // ActionImport
+      // 
+      this.ActionImport.AllowDrop = true;
+      this.ActionImport.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionImport, "ActionImport");
+      this.ActionImport.Name = "ActionImport";
+      this.ActionImport.UseVisualStyleBackColor = true;
+      this.ActionImport.Click += new System.EventHandler(this.ActionImport_Click);
       // 
       // ActionCancel
       // 
@@ -70,6 +85,15 @@
       this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionOK.Name = "ActionOK";
       this.ActionOK.UseVisualStyleBackColor = true;
+      // 
+      // ActionClear
+      // 
+      this.ActionClear.AllowDrop = true;
+      resources.ApplyResources(this.ActionClear, "ActionClear");
+      this.ActionClear.FlatAppearance.BorderSize = 0;
+      this.ActionClear.Name = "ActionClear";
+      this.ActionClear.UseVisualStyleBackColor = true;
+      this.ActionClear.Click += new System.EventHandler(this.ActionClear_Click);
       // 
       // ListBox
       // 
@@ -115,6 +139,10 @@
       resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
       this.PanelSeparator.Name = "PanelSeparator";
       // 
+      // SaveBookmarksDialog
+      // 
+      this.SaveBookmarksDialog.FileName = "Date Bookmarks";
+      // 
       // ManageDateBookmarksForm
       // 
       resources.ApplyResources(this, "$this");
@@ -152,5 +180,9 @@
     private System.Windows.Forms.Button ActionDown;
     private System.Windows.Forms.Button ActionClear;
     private System.Windows.Forms.Panel PanelSeparator;
+    private System.Windows.Forms.Button ActionExport;
+    private System.Windows.Forms.Button ActionImport;
+    private System.Windows.Forms.SaveFileDialog SaveBookmarksDialog;
+    private System.Windows.Forms.OpenFileDialog OpenBookmarksDialog;
   }
 }

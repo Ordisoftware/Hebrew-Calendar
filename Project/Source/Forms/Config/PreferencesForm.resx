@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="DialogColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>716, 22</value>
+    <value>738, 9</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -151,6 +151,87 @@
     <value>PanelButtons</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ActionExport.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAbxJREFUOE+tUssuQ1EUvYNG20gw5C8k/QWPmPgAfyAxECZoS4QQiQiJZ1IJQXRC
+        W9rbSksjomLCwOO2tNymA5UI8X5b9j73qupIw0pW9rrnrL3O4x7pzyjtWnEXtcsw22QYrTJMgj69fmue
+        Zx/79VYNPJgPismvt2ow23zazEYFsFkDRKrR7ksBW1WCQkdIRyqFrdCeG0BbZNg9CXR4VXTJKnr9J+iW
+        TwV7Ayfo8avoC6ho8CjiSHqrBpPVKwJi90D8AVCfgX6fgiTV5AswGIjhguaviVKzW3gLWpe/Q74Ckk9A
+        iprO3rhJQZrq+TswGopBalwgLqJ2Zgenj8IOQ8uSFvIVMODdx5B8gOEVBWPBKEaoMidIZyNxR4vRThn8
+        AzIBl7TiFa14S3o8qIB8oFPBsRoF+/mbPWna6QUdjfEj4PGDSPWVOBlSQF5QHubXjyA1uQTrnLs0osHQ
+        Ko5gyQQ4ggdwhA4xtRbFzHoM0+GooHPjGK5IHPJ2IvcSLeIOzHpANmbDiq6AuSxd79oD+zPNjHxfYklH
+        zkMq6/TfcAgnG9u8MDFJi5qleZ6fMfv11gzKibyl35L9/wVJ+gSokUfg/l5p0QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionExport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 1</value>
+  </data>
+  <data name="ActionExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionExport.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.Name" xml:space="preserve">
+    <value>ActionExport</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionImport.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAActJREFUOE+lU+9LU2EYfSFJL5FfIxL7Fwb9C6L4t0j1IT+kzUHbYl8ClZAytMj2
+        SRyTdu/d1lYzmPYPlHcT2malBgXa77T0eJ7nbnrFL4kHzp7D+x7O87zvu2sAnIrmcqKg7CYvxvPznREX
+        VthF+y0XHUqnWQ+17IuP/s2DgK47z40sngTiPwi4xADpoCj3AIv9wFIfIs4H4HWvUvUStewTVtjxA2T8
+        C7EcztzM6EbUruG200DMbSCRrSHu1pWio04dI8/eqc9iQ+3Ms5jzI353c3UOG/+A99vAKnnX8bS2dP0P
+        sPJTrbwPG6Zj2MbZ4QzMjTRWuSkwA7PYYv2yB4znPXxioHAs52H9L8ObPg3wpY8Gkxu/fG2upzD9oorJ
+        YhUTDBHeL1RwL7eMUeeNejRgbQf4SNZ+A59ZhQJzLQUOgIdFDz9YhQ8KHr6zbu7yh9CAc2EblhxhMO2v
+        EnIPLTxiAKdXTlPzBGAvhQYQV4SdkcNLnCuvILlQwUypgqevqnjCKhT9+KWHqeJb9WpA8BnbhvxnDCJZ
+        8prqqBZYrQChP8Up/on6LUSzX2VRktv5vPLEMqbWgJZ98dH/TToHESL1Tv6ToWOf58kIsw9Be8/qHF26
+        hAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 1</value>
+  </data>
+  <data name="ActionImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionImport.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.Name" xml:space="preserve">
+    <value>ActionImport</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="ActionResetSettings.AutoSize" type="System.Boolean, mscorlib">
@@ -163,7 +244,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionResetSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 8</value>
+    <value>64, 8</value>
   </data>
   <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 13</value>
@@ -184,7 +265,7 @@
     <value>PanelButtons</value>
   </data>
   <data name="&gt;&gt;ActionResetSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -211,13 +292,13 @@
     <value>4</value>
   </data>
   <metadata name="OpenExeFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>584, 19</value>
+    <value>588, 10</value>
   </metadata>
   <data name="OpenExeFileDialog.Filter" xml:space="preserve">
     <value>Exe files (*.exe)|*.exe</value>
   </data>
   <metadata name="MenuSelectMoonDayTextFormat.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>19, 21</value>
+    <value>12, 14</value>
   </metadata>
   <data name="nissan11ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 22</value>
@@ -253,7 +334,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="MenuPredefinedYears.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>249, 21</value>
+    <value>240, 13</value>
   </metadata>
   <data name="MenuPredefinedYears.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 4</value>
@@ -289,16 +370,16 @@
     <value>3</value>
   </data>
   <metadata name="FolderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>420, 21</value>
+    <value>419, 9</value>
   </metadata>
   <metadata name="SaveThemeDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>832, 22</value>
+    <value>861, 11</value>
   </metadata>
   <data name="SaveThemeDialog.Filter" xml:space="preserve">
     <value>Theme files (*.ini)|*.ini</value>
   </data>
   <metadata name="OpenThemeDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>968, 22</value>
+    <value>1008, 12</value>
   </metadata>
   <data name="OpenThemeDialog.Filter" xml:space="preserve">
     <value>Theme files (*.ini)|*.ini</value>
@@ -1507,7 +1588,7 @@
     <value>7</value>
   </data>
   <data name="PanelHotKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 43</value>
+    <value>54, 68</value>
   </data>
   <data name="PanelHotKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>454, 50</value>
@@ -1537,7 +1618,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLoomingDelayIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 234</value>
+    <value>99, 259</value>
   </data>
   <data name="LabelLoomingDelayIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -1570,7 +1651,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTrayIconClickOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 105</value>
+    <value>20, 130</value>
   </data>
   <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 13</value>
@@ -1597,7 +1678,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditBalloonLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 230</value>
+    <value>43, 255</value>
   </data>
   <data name="EditBalloonLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1627,7 +1708,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 170</value>
+    <value>23, 195</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 17</value>
@@ -1660,7 +1741,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenMainForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 126</value>
+    <value>23, 151</value>
   </data>
   <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 17</value>
@@ -1690,7 +1771,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 20</value>
+    <value>23, 45</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 17</value>
@@ -1713,6 +1794,39 @@
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="EditMainFormShownGoToToday.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 17</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
+    <value>Go to today when main form popup else keep the selected</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.Name" xml:space="preserve">
+    <value>EditMainFormShownGoToToday</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="EditBalloonOnlyIfMainFormIsHidden.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1723,7 +1837,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloonOnlyIfMainFormIsHidden.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 280</value>
+    <value>23, 305</value>
   </data>
   <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 17</value>
@@ -1744,7 +1858,7 @@
     <value>TabPageTrayIcon</value>
   </data>
   <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="EditBalloonAutoHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1756,7 +1870,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloonAutoHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 260</value>
+    <value>23, 285</value>
   </data>
   <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 17</value>
@@ -1777,7 +1891,7 @@
     <value>TabPageTrayIcon</value>
   </data>
   <data name="&gt;&gt;EditBalloonAutoHide.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="SelectOpenNavigationForm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1789,7 +1903,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenNavigationForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 148</value>
+    <value>23, 173</value>
   </data>
   <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 17</value>
@@ -1810,7 +1924,7 @@
     <value>TabPageTrayIcon</value>
   </data>
   <data name="&gt;&gt;SelectOpenNavigationForm.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditBalloon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1822,7 +1936,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 205</value>
+    <value>23, 230</value>
   </data>
   <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 17</value>
@@ -1843,7 +1957,7 @@
     <value>TabPageTrayIcon</value>
   </data>
   <data name="&gt;&gt;EditBalloon.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="TabPageTrayIcon.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -2646,7 +2760,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2676,7 +2790,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2700,7 +2814,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2727,7 +2841,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -5071,7 +5185,7 @@
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthView</value>
@@ -6268,7 +6382,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -6289,7 +6403,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -6310,7 +6424,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -6372,6 +6486,12 @@
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="SaveSettingsDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>21, 43</value>
+  </metadata>
+  <metadata name="OpenSettingsDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>177, 46</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -6380,6 +6500,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -6442,6 +6565,18 @@
     <value>OpenThemeDialog</value>
   </data>
   <data name="&gt;&gt;OpenThemeDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SaveSettingsDialog.Name" xml:space="preserve">
+    <value>SaveSettingsDialog</value>
+  </data>
+  <data name="&gt;&gt;SaveSettingsDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpenSettingsDialog.Name" xml:space="preserve">
+    <value>OpenSettingsDialog</value>
+  </data>
+  <data name="&gt;&gt;OpenSettingsDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

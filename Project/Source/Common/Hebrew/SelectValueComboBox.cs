@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
 /// Copyright 2016-2020 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -15,72 +15,65 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+namespace Ordisoftware.Hebrew
 {
-  public partial class SelectYearControl : UserControl
+  public partial class SelectValueComboBox : UserControl
   {
-
-    public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
 
     public event EventHandler SelectedIndexChanged
     {
-      add { SelectYear.SelectedIndexChanged += value; }
-      remove { SelectYear.SelectedIndexChanged -= value; }
-    }
-
-    public int Count
-    {
-      get { return SelectYear.Items.Count; }
+      add { SelectValue.SelectedIndexChanged += value; }
+      remove { SelectValue.SelectedIndexChanged -= value; }
     }
 
     public ComboBox.ObjectCollection Items
     {
-      get { return SelectYear.Items; }
+      get { return SelectValue.Items; }
+    }
+
+    public int Count
+    {
+      get { return SelectValue.Items.Count; }
     }
 
     public int SelectedIndex
     {
-      get { return SelectYear.SelectedIndex; }
-      set { SelectYear.SelectedIndex = value; }
+      get { return SelectValue.SelectedIndex; }
+      set { SelectValue.SelectedIndex = value; }
     }
 
     public object SelectedItem
     {
-      get { return SelectYear.SelectedItem; }
-      set { SelectYear.SelectedItem = value; }
+      get { return SelectValue.SelectedItem; }
+      set { SelectValue.SelectedItem = value; }
     }
 
-    public SelectYearControl()
+    public SelectValueComboBox()
     {
       InitializeComponent();
     }
 
-    public void Fill()
-    {
-      CurrentDay = MainForm.Instance.CurrentDay;
-      int year = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;
-      Fill(MainForm.Instance.YearsIntervalArray, year);
-    }
-
-    public void Fill(IEnumerable<int> list, int selected)
+    public void Fill(IEnumerable<int> list, int selected = -1)
     {
       foreach ( int value in list )
       {
-        int index = SelectYear.Items.Add(value);
+        int index = SelectValue.Items.Add(value);
         if ( value == selected )
-          SelectYear.SelectedIndex = index;
+          SelectValue.SelectedIndex = index;
       }
+      if ( SelectValue.SelectedIndex == -1 )
+        if ( SelectValue.Items.Count > 0 )
+          SelectValue.SelectedIndex = 0;
       Refresh();
     }
 
     public override void Refresh()
     {
       base.Refresh();
-      ActionFirst.Enabled = SelectYear.SelectedIndex > 0;
+      ActionFirst.Enabled = SelectValue.SelectedIndex > 0;
       ActionPrevious.Enabled = ActionFirst.Enabled;
-      ActionLast.Enabled = SelectYear.SelectedIndex < SelectYear.Items.Count - 1;
+      ActionLast.Enabled = SelectValue.SelectedIndex < SelectValue.Items.Count - 1;
       ActionNext.Enabled = ActionLast.Enabled;
     }
 
@@ -96,25 +89,25 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionFirst_Click(object sender, EventArgs e)
     {
-      SelectYear.SelectedIndex = 0;
+      SelectValue.SelectedIndex = 0;
       ActiveControl = ActionNext;
     }
 
     private void ActionPrevious_Click(object sender, EventArgs e)
     {
-      if ( SelectYear.SelectedIndex > 0 ) SelectYear.SelectedIndex--;
-      if ( SelectYear.SelectedIndex == 0 ) ActiveControl = ActionNext;
+      if ( SelectValue.SelectedIndex > 0 ) SelectValue.SelectedIndex--;
+      if ( SelectValue.SelectedIndex == 0 ) ActiveControl = ActionNext;
     }
 
     private void ActionNext_Click(object sender, EventArgs e)
     {
-      if ( SelectYear.SelectedIndex < SelectYear.Items.Count - 1 ) SelectYear.SelectedIndex++;
-      if ( SelectYear.SelectedIndex == SelectYear.Items.Count - 1 ) ActiveControl = ActionPrevious;
+      if ( SelectValue.SelectedIndex < SelectValue.Items.Count - 1 ) SelectValue.SelectedIndex++;
+      if ( SelectValue.SelectedIndex == SelectValue.Items.Count - 1 ) ActiveControl = ActionPrevious;
     }
 
     private void ActionLast_Click(object sender, EventArgs e)
     {
-      SelectYear.SelectedIndex = SelectYear.Items.Count - 1;
+      SelectValue.SelectedIndex = SelectValue.Items.Count - 1;
       ActiveControl = ActionPrevious;
     }
 

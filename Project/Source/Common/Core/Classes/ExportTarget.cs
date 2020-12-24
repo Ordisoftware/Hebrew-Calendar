@@ -31,6 +31,7 @@ namespace Ordisoftware.Core
     DOCX,
     CSV,
     JSON,
+    XML
   }
 
   /// <summary>

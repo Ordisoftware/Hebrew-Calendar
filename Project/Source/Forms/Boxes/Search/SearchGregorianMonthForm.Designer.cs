@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Hebrew.Calendar
 {
-  partial class SearchLunarMonthForm
+  partial class SearchGregorianMonthForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchLunarMonthForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchGregorianMonthForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionOK = new System.Windows.Forms.Button();
@@ -36,8 +36,7 @@
       this.ListItems = new System.Windows.Forms.ListView();
       this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.SelectYear = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
+      this.SelectYear = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -71,8 +70,7 @@
       resources.ApplyResources(this.ListItems, "ListItems");
       this.ListItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
-            this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader1});
       this.ListItems.FullRowSelect = true;
       this.ListItems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListItems.HideSelection = false;
@@ -91,10 +89,6 @@
       // 
       resources.ApplyResources(this.columnHeader1, "columnHeader1");
       // 
-      // columnHeader2
-      // 
-      resources.ApplyResources(this.columnHeader2, "columnHeader2");
-      // 
       // SelectYear
       // 
       resources.ApplyResources(this.SelectYear, "SelectYear");
@@ -103,7 +97,7 @@
       this.SelectYear.SelectedItem = null;
       this.SelectYear.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
-      // SearchLunarMonthForm
+      // SearchGregorianMonthForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
@@ -113,12 +107,12 @@
       this.Controls.Add(this.ListItems);
       this.Controls.Add(this.PanelBottom);
       this.Controls.Add(this.LabelYear);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "SearchLunarMonthFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "SearchGregorianMonthFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.SearchLunarMonthFormLocation;
+      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.SearchGregorianMonthFormLocation;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "SearchLunarMonthForm";
+      this.Name = "SearchGregorianMonthForm";
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchMonthForm_FormClosing);
       this.Load += new System.EventHandler(this.SearchEventForm_Load);
@@ -136,8 +130,7 @@
     private System.Windows.Forms.Label LabelYear;
     internal System.Windows.Forms.ListView ListItems;
     private System.Windows.Forms.ColumnHeader columnHeader1;
-    private System.Windows.Forms.ColumnHeader columnHeader2;
     private System.Windows.Forms.ColumnHeader columnHeader3;
-    private SelectYearControl SelectYear;
+    private SelectValueComboBox SelectYear;
   }
 }

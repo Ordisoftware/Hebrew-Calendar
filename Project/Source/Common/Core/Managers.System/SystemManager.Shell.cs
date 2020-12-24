@@ -17,7 +17,6 @@ using System.IO;
 using System.Text;
 using System.Diagnostics;
 using System.Security.Cryptography;
-using System.Collections.Generic;
 using CommandLine;
 
 namespace Ordisoftware.Core
@@ -37,28 +36,28 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate command line arguments options instance.
     /// </summary>
-    static public CommandLineOptions CommandLineOptions { get; private set; }
+    static public SystemCommandLine CommandLineOptions { get; private set; }
 
     /// <summary>
     /// Analyse command line arguments.
     /// </summary>
     static public void CheckCommandLineArguments<T>(string[] args, ref Language language)
-      where T : CommandLineOptions
+      where T : SystemCommandLine
     {
       try
       {
         CommandLineArguments = args;
         ParserResult<T> options = Parser.Default.ParseArguments<T>(args);
-        if ( options.Tag == ParserResultType.Parsed )
-          CommandLineOptions = ( (Parsed<T>)options ).Value;
+        if ( options.Tag != ParserResultType.Parsed ) return;
+        CommandLineOptions = ( (Parsed<T>)options ).Value;
         if ( !CommandLineOptions.Language.IsNullOrEmpty() )
-          foreach (var lang in Languages.Values )
-              if ( CommandLineOptions.Language.ToLower() == lang.Key)
-                language = lang.Value;
-        }
+          foreach ( var lang in Languages.Values )
+            if ( CommandLineOptions.Language.ToLower() == lang.Key )
+              language = lang.Value;
+      }
       catch ( Exception ex )
       {
-        ex.Manage(ShowExceptionMode.None);
+        ex.Manage();
       }
     }
 

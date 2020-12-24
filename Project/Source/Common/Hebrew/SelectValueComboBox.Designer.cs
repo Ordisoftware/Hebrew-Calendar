@@ -1,6 +1,6 @@
-﻿namespace Ordisoftware.Hebrew.Calendar
+﻿namespace Ordisoftware.Hebrew
 {
-  partial class SelectYearControl
+  partial class SelectValueComboBox
   {
     /// <summary> 
     /// Variable nécessaire au concepteur.
@@ -28,22 +28,22 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.SelectYear = new System.Windows.Forms.ComboBox();
+      this.SelectValue = new System.Windows.Forms.ComboBox();
       this.ActionLast = new System.Windows.Forms.Button();
       this.ActionNext = new System.Windows.Forms.Button();
       this.ActionFirst = new System.Windows.Forms.Button();
       this.ActionPrevious = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
-      // SelectYear
+      // SelectValue
       // 
-      this.SelectYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectYear.FormattingEnabled = true;
-      this.SelectYear.Location = new System.Drawing.Point(0, 0);
-      this.SelectYear.Name = "SelectYear";
-      this.SelectYear.Size = new System.Drawing.Size(55, 21);
-      this.SelectYear.TabIndex = 5;
-      this.SelectYear.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
+      this.SelectValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectValue.FormattingEnabled = true;
+      this.SelectValue.Location = new System.Drawing.Point(0, 0);
+      this.SelectValue.Name = "SelectValue";
+      this.SelectValue.Size = new System.Drawing.Size(55, 21);
+      this.SelectValue.TabIndex = 5;
+      this.SelectValue.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
       // ActionLast
       // 
@@ -85,17 +85,17 @@
       this.ActionPrevious.Text = "<";
       this.ActionPrevious.Click += new System.EventHandler(this.ActionPrevious_Click);
       // 
-      // SelectYearControl
+      // SelectValueComboBox
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoSize = true;
-      this.Controls.Add(this.SelectYear);
+      this.Controls.Add(this.SelectValue);
       this.Controls.Add(this.ActionLast);
       this.Controls.Add(this.ActionNext);
       this.Controls.Add(this.ActionFirst);
       this.Controls.Add(this.ActionPrevious);
-      this.Name = "SelectYearControl";
+      this.Name = "SelectValueComboBox";
       this.Size = new System.Drawing.Size(194, 34);
       this.VisibleChanged += new System.EventHandler(this.SelectYearControl_VisibleChanged);
       this.ResumeLayout(false);
@@ -107,6 +107,6 @@
     private System.Windows.Forms.Button ActionNext;
     private System.Windows.Forms.Button ActionFirst;
     private System.Windows.Forms.Button ActionPrevious;
-    public System.Windows.Forms.ComboBox SelectYear;
+    public System.Windows.Forms.ComboBox SelectValue;
   }
 }

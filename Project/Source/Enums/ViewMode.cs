@@ -10,19 +10,37 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2020-12 </created>
+/// <created> 2016-04 </created>
 /// <edited> 2020-12 </edited>
 using System;
-using CommandLine;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public class CommandLineArgs : CommandLineOptions
+  /// <summary>
+  /// View mode enum.
+  /// </summary>
+  [Flags]
+  public enum ViewMode
   {
-    [Option('g', "generate", Required = false, HelpText = "Generate the calendar's data.")]
-    public bool Generate { get; set; }
+
+    None = 0,
+
+    /// <summary>
+    /// Text view mode to display the report.
+    /// </summary>
+    Text = 1,
+
+    /// <summary>
+    /// Month view mode to display the month calendar.
+    /// </summary>
+    Month = 2,
+
+    /// <summary>
+    /// Grid view mode to display the database table.
+    /// </summary>
+    Grid = 4
+
   }
 
 }

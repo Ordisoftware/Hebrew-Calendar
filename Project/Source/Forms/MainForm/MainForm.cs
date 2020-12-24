@@ -21,8 +21,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using Ordisoftware.Core;
-//using BondTech.HotkeyManagement.Win;
-using Base.Hotkeys;
 using Modifiers = Base.Hotkeys.Modifiers;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -138,24 +136,25 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
         UpdateTextCalendar();
-        CalendarMonth.CalendarDateChanged += date => GoToDate(date);
+        CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
         MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
         Globals.IsReady = true;
         UpdateButtons();
         GoToDate(DateTime.Today);
-        CheckRegenerateCalendar(force: ( (CommandLineArgs)SystemManager.CommandLineOptions ).Generate);
+        bool doforce = ( SystemManager.CommandLineOptions as ApplicationCommandLine )?.Generate ?? false;
+        CheckRegenerateCalendar(force: doforce);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
-        if ( Settings.StartupHide || Program.ForceStartupHide )
-          MenuShowHide.PerformClick();
+        ChronoStart.Stop();
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         TimerMidnight.TimeReached += TimerMidnight_Tick;
         TimerMidnight.Start();
         TimerReminder_Tick(null, null);
-        ChronoStart.Stop();
         Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
         Settings.Save();
         this.Popup();
+        if ( Settings.StartupHide || Program.ForceStartupHide )
+          MenuShowHide.PerformClick();
         SystemManager.TryCatch(() =>
         {
           if ( LockSessionForm.Instance?.Visible ?? false )
@@ -184,7 +183,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.BringToFrontApplicationHotKey.Key = shortcutKey;
       Globals.BringToFrontApplicationHotKey.Modifiers = shortcutModifiers;
       Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKey_KeyPressed;
-      if (!noactive)
+      if ( !noactive )
         SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
     }
 
@@ -513,7 +512,10 @@ namespace Ordisoftware.Hebrew.Calendar
             this.Popup();
           }
           if ( !NavigationForm.Instance.Visible )
-            GoToDate(DateTime.Today);
+            if ( Settings.MainFormShownGoToToday )
+              GoToDate(DateTime.Today);
+            else
+              GoToDate(CalendarMonth.CalendarDate.Date);
         }
         else
         {
@@ -559,7 +561,10 @@ namespace Ordisoftware.Hebrew.Calendar
                 else
                   SystemManager.TryCatchManage(() =>
                   {
-                    form.Date = DateTime.Today;
+                    if ( Settings.MainFormShownGoToToday )
+                      form.Date = DateTime.Today;
+                    else
+                      GoToDate(CalendarMonth.CalendarDate.Date);
                     form.Visible = true;
                   });
                 break;
@@ -977,7 +982,10 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         {
-          GoToDate(DateTime.Today);
+          if ( Settings.MainFormShownGoToToday )
+            GoToDate(DateTime.Today);
+          else
+            GoToDate(CalendarMonth.CalendarDate.Date);
           NavigationForm.Instance.Show();
           NavigationForm.Instance.BringToFront();
         }

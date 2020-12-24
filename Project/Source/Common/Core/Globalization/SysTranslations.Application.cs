@@ -63,9 +63,11 @@ namespace Ordisoftware.Core
       = new TranslationsDictionary
       {
         [Language.EN] = "This software doesn't collect any personal information about you, your computer and your network, unless it is specified by its features." + Globals.NL2 +
-                        "However, it can collect for debugging purposes the type of processor and operating system as well as errors caused by the code, but these information are only stored locally and only transmitted upon conscious validations by the user.",
+                        "However, it can collect for debugging purposes the type of processor and operating system as well as errors caused by the code, but these information are only stored locally and only transmitted upon conscious validations by the user." + Globals.NL2 +
+                        "Links to external resources and websites are listed for informational purposes and they do not engage any responsibility.",
         [Language.FR] = "Ce logiciel ne collecte aucune information personnelle concernant vous-même, votre ordinateur et votre réseau, à moins que cela ne soit indiqué par ses fonctionnalités." + Globals.NL2 +
-                        "Il peut cependant collecter à des fins de débogage le type de processeur et de système d'exploitation ainsi que les erreurs provoquées par le code, mais ces informations ne sont stockées localement et ne sont transmises que sur validations consciente de l'utilisateur."
+                        "Il peut cependant collecter à des fins de débogage le type de processeur et de système d'exploitation ainsi que les erreurs provoquées par le code, mais ces informations ne sont stockées localement et ne sont transmises que sur validations consciente de l'utilisateur." + Globals.NL2 +
+                        "Les liens vers des ressources et sites internet externes sont indiqués à titre informatif et ils n'engagent pas de responsabilité.",
       };
 
     static public readonly TranslationsDictionary AskToExitApplication

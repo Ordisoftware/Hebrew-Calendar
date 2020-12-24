@@ -111,6 +111,7 @@
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -153,10 +154,10 @@
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
-    <Compile Include="Source\Forms\Boxes\CelebrationsBoardForm.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\CelebrationsBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\CelebrationsBoardForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\CelebrationsBoardForm.Designer.cs">
       <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Dependencies\Calendar.NET\Calendar.cs">
@@ -218,13 +219,13 @@
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
-    <Compile Include="Source\Forms\Controls\SelectYearControl.cs">
+    <Compile Include="Source\Common\Hebrew\SelectValueComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Controls\SelectYearControl.Designer.cs">
-      <DependentUpon>SelectYearControl.cs</DependentUpon>
+    <Compile Include="Source\Common\Hebrew\SelectValueComboBox.Designer.cs">
+      <DependentUpon>SelectValueComboBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Core\Classes\CommandLineOptions.cs" />
+    <Compile Include="Source\Common\Core\Classes\SystemCommandLine.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportAction.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Errors.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.IO.cs" />
@@ -370,10 +371,10 @@
     <Compile Include="Source\Common\Core\Classes\SoundSource.cs" />
     <Compile Include="Source\Entities\GPS.cs" />
     <Compile Include="Source\Entities\DateBookmarks.cs" />
-    <Compile Include="Source\Forms\Boxes\SelectExportTargetForm.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\SelectExportTargetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectExportTargetForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\SelectExportTargetForm.Designer.cs">
       <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Theme.cs">
@@ -428,16 +429,16 @@
     <Compile Include="Source\Entities\DatesDiffItem.cs" />
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
     <Compile Include="Source\Entities\MoonMonthsFile.cs" />
-    <Compile Include="Source\Forms\Boxes\DatesDiffCalculatorForm.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\DatesDiffCalculatorForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.Designer.cs">
       <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\ManageDateBookmarksForm.cs">
+    <Compile Include="Source\Forms\Config\ManageDateBookmarksForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\ManageDateBookmarksForm.Designer.cs">
+    <Compile Include="Source\Forms\Config\ManageDateBookmarksForm.Designer.cs">
       <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\StatisticsForm.cs">
@@ -446,10 +447,10 @@
     <Compile Include="Source\Forms\Config\StatisticsForm.Designer.cs">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SearchGregorianMonthForm.cs">
+    <Compile Include="Source\Forms\Boxes\Search\SearchGregorianMonthForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SearchGregorianMonthForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Search\SearchGregorianMonthForm.Designer.cs">
       <DependentUpon>SearchGregorianMonthForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateData.cs">
@@ -464,24 +465,24 @@
     <Compile Include="Source\Enums\ReportFieldCSV.cs" />
     <Compile Include="Source\Program\AppTranslations.Notices.cs" />
     <Compile Include="Source\Program\AppTranslations.Calendar.cs" />
-    <Compile Include="Source\Forms\Boxes\MoonMonthsForm.Colors.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\MoonMonthsForm.Colors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\MoonMonthsForm.CreateControls.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\MoonMonthsForm.CreateControls.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Enums\MoonMonthsListColors.cs" />
-    <Compile Include="Source\Forms\Boxes\MoonMonthsForm.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\MoonMonthsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\MoonMonthsForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\MoonMonthsForm.Designer.cs">
       <DependentUpon>MoonMonthsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.Media.cs" />
-    <Compile Include="Source\Forms\Boxes\LockSessionForm.cs">
+    <Compile Include="Source\Forms\Boxes\Reminder\LockSessionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\LockSessionForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Reminder\LockSessionForm.Designer.cs">
       <DependentUpon>LockSessionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Entities\DayOfWeekMap.Names.cs" />
@@ -491,28 +492,28 @@
     <Compile Include="Source\Program\AppTranslations.cs" />
     <Compile Include="Source\Enums\ReportFieldText.cs" />
     <Compile Include="Source\Enums\Ephemeris.cs" />
-    <Compile Include="Source\Forms\Boxes\SearchLunarMonthForm.cs">
+    <Compile Include="Source\Forms\Boxes\Search\SearchLunarMonthForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SearchLunarMonthForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Search\SearchLunarMonthForm.Designer.cs">
       <DependentUpon>SearchLunarMonthForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SearchEventForm.cs">
+    <Compile Include="Source\Forms\Boxes\Search\SearchEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SearchEventForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Search\SearchEventForm.Designer.cs">
       <DependentUpon>SearchEventForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectCityForm.cs">
+    <Compile Include="Source\Forms\Config\SelectCityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectCityForm.Designer.cs">
+    <Compile Include="Source\Forms\Config\SelectCityForm.Designer.cs">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectBirthTimeForm.cs">
+    <Compile Include="Source\Forms\Boxes\Select\SelectBirthTimeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectBirthTimeForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Select\SelectBirthTimeForm.Designer.cs">
       <DependentUpon>SelectBirthTimeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.FormClosing.cs">
@@ -558,17 +559,17 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Reminder.Celebrations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\ReminderForm.cs">
+    <Compile Include="Source\Forms\Boxes\Reminder\ReminderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\ReminderForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Reminder\ReminderForm.Designer.cs">
       <DependentUpon>ReminderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Enums\TrayIconClickOpen.cs" />
-    <Compile Include="Source\Forms\Boxes\NextCelebrationsForm.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\NextCelebrationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\NextCelebrationsForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\NextCelebrationsForm.Designer.cs">
       <DependentUpon>NextCelebrationsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\DataSet.cs">
@@ -588,23 +589,23 @@
     <Compile Include="Source\Forms\MainForm\MainForm.SetView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\NavigationForm.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\NavigationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\NavigationForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\NavigationForm.Designer.cs">
       <DependentUpon>NavigationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectDayForm.cs">
+    <Compile Include="Source\Forms\Boxes\Select\SelectDayForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectDayForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Select\SelectDayForm.Designer.cs">
       <DependentUpon>SelectDayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\ViewMode.cs" />
-    <Compile Include="Source\Forms\Boxes\SelectYearsForm.cs">
+    <Compile Include="Source\Enums\ViewMode.cs" />
+    <Compile Include="Source\Forms\Boxes\Select\SelectYearsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectYearsForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Select\SelectYearsForm.Designer.cs">
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Enums\TorahCelebrations.cs" />
@@ -636,23 +637,23 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Program\CommandLineArgs.cs" />
+    <Compile Include="Source\Program\ApplicationCommandLine.cs" />
     <Compile Include="Source\Program\SettingsHelper.cs" />
     <Compile Include="Source\Enums\TorahEvent.cs" />
     <Compile Include="Source\Enums\MoonPhase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Entities\ReminderTimes.cs" />
     <Compile Include="Source\Program\Program.Vars.cs" />
-    <Compile Include="Source\Forms\Boxes\SelectSuspendDelayForm.cs">
+    <Compile Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\SelectSuspendDelayForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.Designer.cs">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsBoardForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\CelebrationsBoardForm.fr.resx">
       <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\CelebrationsBoardForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\CelebrationsBoardForm.resx">
       <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dependencies\Calendar.NET\Calendar.resx">
@@ -765,10 +766,10 @@
     <EmbeddedResource Include="Source\Common\Hebrew\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\NextCelebrationsForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\NextCelebrationsForm.fr.resx">
       <DependentUpon>NextCelebrationsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\NextCelebrationsForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\NextCelebrationsForm.resx">
       <DependentUpon>NextCelebrationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -776,22 +777,22 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffCalculatorForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.fr.resx">
       <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\DatesDiffCalculatorForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.resx">
       <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarksForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Config\ManageDateBookmarksForm.fr.resx">
       <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\ManageDateBookmarksForm.resx">
+    <EmbeddedResource Include="Source\Forms\Config\ManageDateBookmarksForm.resx">
       <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectExportTargetForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\SelectExportTargetForm.fr.resx">
       <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectExportTargetForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\SelectExportTargetForm.resx">
       <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\SelectSoundForm.fr.resx">
@@ -806,46 +807,46 @@
     <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\LockSessionForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Reminder\LockSessionForm.fr.resx">
       <DependentUpon>LockSessionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\LockSessionForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Reminder\LockSessionForm.resx">
       <DependentUpon>LockSessionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\MoonMonthsForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\MoonMonthsForm.fr.resx">
       <DependentUpon>MoonMonthsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\MoonMonthsForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\MoonMonthsForm.resx">
       <DependentUpon>MoonMonthsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SearchGregorianMonthForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Search\SearchGregorianMonthForm.fr.resx">
       <DependentUpon>SearchGregorianMonthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SearchGregorianMonthForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Search\SearchGregorianMonthForm.resx">
       <DependentUpon>SearchGregorianMonthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SearchLunarMonthForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Search\SearchLunarMonthForm.fr.resx">
       <DependentUpon>SearchLunarMonthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SearchLunarMonthForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Search\SearchLunarMonthForm.resx">
       <DependentUpon>SearchLunarMonthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SearchEventForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Search\SearchEventForm.fr.resx">
       <DependentUpon>SearchEventForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SearchEventForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Search\SearchEventForm.resx">
       <DependentUpon>SearchEventForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectCityForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Config\SelectCityForm.fr.resx">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectCityForm.resx">
+    <EmbeddedResource Include="Source\Forms\Config\SelectCityForm.resx">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectSuspendDelayForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.fr.resx">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectSuspendDelayForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.resx">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\AboutBox.fr.resx">
@@ -854,29 +855,29 @@
     <EmbeddedResource Include="Source\Forms\Config\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectBirthTimeForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectBirthTimeForm.fr.resx">
       <DependentUpon>SelectBirthTimeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectBirthTimeForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectBirthTimeForm.resx">
       <DependentUpon>SelectBirthTimeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\ReminderForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Reminder\ReminderForm.fr.resx">
       <DependentUpon>ReminderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\ReminderForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Reminder\ReminderForm.resx">
       <DependentUpon>ReminderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectDayForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectDayForm.fr.resx">
       <DependentUpon>SelectDayForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectDayForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectDayForm.resx">
       <DependentUpon>SelectDayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Controls\SelectYearControl.resx">
-      <DependentUpon>SelectYearControl.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Common\Hebrew\SelectValueComboBox.resx">
+      <DependentUpon>SelectValueComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -893,16 +894,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectYearsForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectYearsForm.fr.resx">
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\SelectYearsForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectYearsForm.resx">
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\NavigationForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\NavigationForm.fr.resx">
       <DependentUpon>NavigationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\NavigationForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\NavigationForm.resx">
       <DependentUpon>NavigationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\README.md">

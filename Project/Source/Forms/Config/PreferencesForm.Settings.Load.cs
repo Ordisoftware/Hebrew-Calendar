@@ -108,6 +108,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditExportDataEnumsAsTranslations.Checked = Settings.ExportDataEnumsAsTranslations; });
       SystemManager.TryCatch(() => { EditSaveImageCountWarning.Value = Settings.SaveImageCountWarning; });
       SystemManager.TryCatch(() => { EditGlobalHotKeyPopupMainFormEnabled.Checked = Settings.GlobalHotKeyPopupMainFormEnabled; });
+      SystemManager.TryCatch(() => { EditMainFormShownGoToToday.Checked = Settings.MainFormShownGoToToday; });
       // Hotkey
       InitHotKeyControls();
       // System

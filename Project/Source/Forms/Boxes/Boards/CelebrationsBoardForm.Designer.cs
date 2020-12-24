@@ -36,8 +36,8 @@
       this.EditColumnUpperCase = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
-      this.SelectYear1 = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
-      this.SelectYear2 = new Ordisoftware.Hebrew.Calendar.SelectYearControl();
+      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
+      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.LabelEnd = new System.Windows.Forms.Label();
       this.LabelStart = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
@@ -166,13 +166,9 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.ClientSize = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormClientSize;
       this.Controls.Add(this.DataGridView);
       this.Controls.Add(this.PanelOptions);
       this.Controls.Add(this.PanelBottom);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormLocation;
       this.Name = "CelebrationsBoardForm";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CelebrationsBoardForm_FormClosed);
@@ -195,8 +191,8 @@
     private System.Windows.Forms.Panel PanelOptions;
     private System.Windows.Forms.CheckBox EditUseLongDateFormat;
     private System.Windows.Forms.NumericUpDown EditFontSize;
-    private SelectYearControl SelectYear1;
-    private SelectYearControl SelectYear2;
+    private SelectValueComboBox SelectYear1;
+    private SelectValueComboBox SelectYear2;
     private System.Windows.Forms.Label LabelEnd;
     private System.Windows.Forms.Label LabelStart;
     private System.Windows.Forms.Label LabelFontSize;

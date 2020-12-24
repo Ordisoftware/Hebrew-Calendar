@@ -134,7 +134,6 @@
       this.ActionHelp.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionHelp, "ActionHelp");
       this.ActionHelp.Name = "ActionHelp";
-      this.ActionHelp.TabStop = false;
       this.ActionHelp.UseVisualStyleBackColor = true;
       this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
       // 
@@ -151,7 +150,6 @@
       this.ActionManageBookmarks.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionManageBookmarks, "ActionManageBookmarks");
       this.ActionManageBookmarks.Name = "ActionManageBookmarks";
-      this.ActionManageBookmarks.TabStop = false;
       this.ActionManageBookmarks.UseVisualStyleBackColor = true;
       this.ActionManageBookmarks.Click += new System.EventHandler(this.ActionManageBookmarks_Click);
       // 

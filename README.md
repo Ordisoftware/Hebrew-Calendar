@@ -176,7 +176,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
-- Add bookmarks backup/restore.
 - Add export celebrations board.
 - Add print celebrations board.
 - Add dark theme for month view.
@@ -184,6 +183,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
+- Improve celebrations board to indicate the day of the shabat in the title.
 - Improve month view to show celebration week days with number as text like first and last.
 - Improve navigation form to show celebration week day number.
 - Improve automatic web check update to not run when shabat and special celebration days but the next day.
@@ -191,6 +191,17 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Replace simple internal trace/logging by SeriLog.
 
 ## Changelog
+
+#### 2020.12.27 - Version 6.1
+
+- Add export and import preferences.
+- Add backup and restore date bookmarks.
+- Add option to go to today when main form popup else keep the selected.
+- Fix a strange behavior when resizing celebrations board from the top or left, and un-maximize.
+- Fix export dialog that has print image orientation option always enabled.
+- Fix navigation form that doesn't ballon when app is started hidden.
+- Code refactoring.
+- Update web links.
 
 #### 2020.12.21 - Version 6.0
 

@@ -13,7 +13,12 @@
 /// <created> 2020-08 </created>
 /// <edited> 2020-09 </edited>
 using System;
+using System.Linq;
+using System.Data;
+using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -41,6 +46,9 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      SaveBookmarksDialog.InitialDirectory = Program.Settings.GetExportDirectory();
+      SaveBookmarksDialog.Filter = Program.GridExportTargets.CreateFilters();
+      OpenBookmarksDialog.Filter = SaveBookmarksDialog.Filter;
     }
 
     private void ManageDateBookmarks_Load(object sender, EventArgs e)
@@ -137,6 +145,73 @@ namespace Ordisoftware.Hebrew.Calendar
       while ( swapped );
       ListBox_SelectedIndexChanged(null, null);
       ListBox.Focus();
+    }
+
+    private void ActionExport_Click(object sender, EventArgs e)
+    {
+      SaveBookmarksDialog.FileName = "Date Bookmarks";
+      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
+        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+          SaveBookmarksDialog.FilterIndex = index + 1;
+      if ( SaveBookmarksDialog.ShowDialog() != DialogResult.OK ) return;
+      string extension = Path.GetExtension(SaveBookmarksDialog.FileName);
+      var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
+      switch ( selected )
+      {
+        case DataExportTarget.CSV:
+          var lines = new List<string>();
+          lines.Add("Date");
+          foreach ( DateItem item in ListBox.Items )
+            lines.Add(SQLiteDate.ToString(item.Date));
+          File.WriteAllLines(SaveBookmarksDialog.FileName, lines);
+          break;
+        case DataExportTarget.JSON:
+          var data = ListBox.Items.Cast<DateItem>().Select(item => new { item.Date });
+          var dataset = new DataSet("DataSet");
+          dataset.Tables.Add(data.ToDataTable("Date Bookmarks"));
+          string str = JsonConvert.SerializeObject(dataset, Formatting.Indented);
+          File.WriteAllText(SaveBookmarksDialog.FileName, str);
+          break;
+        default:
+          throw new NotImplementedExceptionEx(selected);
+      }
+    }
+
+    private void ActionImport_Click(object sender, EventArgs e)
+    {
+      OpenBookmarksDialog.FileName = "";
+      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
+        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+          OpenBookmarksDialog.FilterIndex = index + 1;
+      if ( OpenBookmarksDialog.ShowDialog() != DialogResult.OK ) return;
+      string extension = Path.GetExtension(OpenBookmarksDialog.FileName);
+      var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
+      int indexListBox = 0;
+      switch ( selected )
+      {
+        case DataExportTarget.CSV:
+          var lines = File.ReadAllLines(OpenBookmarksDialog.FileName);
+          foreach ( string line in lines.Skip(1) )
+          {
+            if ( indexListBox > ListBox.Items.Count ) break;
+            var date = DateTime.MinValue;
+            try { date = SQLiteDate.ToDateTime(line); }
+            catch { }
+            ListBox.Items[indexListBox++] = new DateItem { Date = date };
+          }
+          break;
+        case DataExportTarget.JSON:
+          string str = File.ReadAllText(OpenBookmarksDialog.FileName);
+          var dataset = JsonConvert.DeserializeObject<DataSet>(str);
+          foreach ( DataRow row in dataset.Tables[0].Rows )
+          {
+            if ( indexListBox > ListBox.Items.Count ) break;
+            ListBox.Items[indexListBox++] = new DateItem { Date = (DateTime)row[0] };
+          }
+          break;
+        default:
+          throw new NotImplementedExceptionEx(selected);
+      }
     }
 
   }

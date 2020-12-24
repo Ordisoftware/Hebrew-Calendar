@@ -63,9 +63,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CelebrationsBoardForm_Load(object sender, EventArgs e)
     {
+      Location = Program.Settings.CelebrationsBoardFormLocation;
+      ClientSize = Program.Settings.CelebrationsBoardFormClientSize;
       this.CheckLocationOrCenterToMainFormElseScreen();
-      if ( Program.Settings.CelebrationsBoardFormWindowState == FormWindowState.Maximized )
-        WindowState = FormWindowState.Maximized;
+      WindowState = Program.Settings.CelebrationsBoardFormWindowState;
       CreateDataTable();
       LoadGrid();
     }
@@ -132,7 +133,14 @@ namespace Ordisoftware.Hebrew.Calendar
     private void CelebrationsBoardForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Instance = null;
+      if ( WindowState == FormWindowState.Minimized)
+        WindowState = FormWindowState.Normal;
       Program.Settings.CelebrationsBoardFormWindowState = WindowState;
+      if ( WindowState == FormWindowState.Maximized )
+        WindowState = FormWindowState.Normal;
+      Program.Settings.CelebrationsBoardFormLocation = Location;
+      Program.Settings.CelebrationsBoardFormClientSize = ClientSize;
+      Program.Settings.Save();
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
