@@ -1997,5 +1997,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CelebrationsBoardFormUseTitleUpperCase"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MainFormShownGoToToday {
+            get {
+                return ((bool)(this["MainFormShownGoToToday"]));
+            }
+            set {
+                this["MainFormShownGoToToday"] = value;
+            }
+        }
     }
 }

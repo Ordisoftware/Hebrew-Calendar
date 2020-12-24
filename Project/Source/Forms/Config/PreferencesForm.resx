@@ -1507,7 +1507,7 @@
     <value>7</value>
   </data>
   <data name="PanelHotKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 43</value>
+    <value>54, 68</value>
   </data>
   <data name="PanelHotKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>454, 50</value>
@@ -1537,7 +1537,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLoomingDelayIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 234</value>
+    <value>99, 259</value>
   </data>
   <data name="LabelLoomingDelayIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -1570,7 +1570,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTrayIconClickOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 105</value>
+    <value>20, 130</value>
   </data>
   <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 13</value>
@@ -1597,7 +1597,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditBalloonLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 230</value>
+    <value>43, 255</value>
   </data>
   <data name="EditBalloonLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -1627,7 +1627,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 170</value>
+    <value>23, 195</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 17</value>
@@ -1660,7 +1660,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenMainForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 126</value>
+    <value>23, 151</value>
   </data>
   <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 17</value>
@@ -1690,7 +1690,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 20</value>
+    <value>23, 45</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 17</value>
@@ -1713,6 +1713,39 @@
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="EditMainFormShownGoToToday.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 17</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
+    <value>Go to today when main form popup else keep the selected</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.Name" xml:space="preserve">
+    <value>EditMainFormShownGoToToday</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="EditBalloonOnlyIfMainFormIsHidden.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1723,7 +1756,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloonOnlyIfMainFormIsHidden.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 280</value>
+    <value>23, 305</value>
   </data>
   <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 17</value>
@@ -1744,7 +1777,7 @@
     <value>TabPageTrayIcon</value>
   </data>
   <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="EditBalloonAutoHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1756,7 +1789,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloonAutoHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 260</value>
+    <value>23, 285</value>
   </data>
   <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 17</value>
@@ -1777,7 +1810,7 @@
     <value>TabPageTrayIcon</value>
   </data>
   <data name="&gt;&gt;EditBalloonAutoHide.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="SelectOpenNavigationForm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1789,7 +1822,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenNavigationForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 148</value>
+    <value>23, 173</value>
   </data>
   <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 17</value>
@@ -1810,7 +1843,7 @@
     <value>TabPageTrayIcon</value>
   </data>
   <data name="&gt;&gt;SelectOpenNavigationForm.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditBalloon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1822,7 +1855,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditBalloon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 205</value>
+    <value>23, 230</value>
   </data>
   <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 17</value>
@@ -1843,7 +1876,7 @@
     <value>TabPageTrayIcon</value>
   </data>
   <data name="&gt;&gt;EditBalloon.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="TabPageTrayIcon.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -2646,7 +2679,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2676,7 +2709,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2700,7 +2733,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2727,7 +2760,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -5071,7 +5104,7 @@
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthView</value>
@@ -6268,7 +6301,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -6289,7 +6322,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -6310,7 +6343,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -6380,6 +6413,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

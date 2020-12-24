@@ -973,4 +973,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
+  <data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
+    <value>Aller à aujourd'hui lorsque le formulaire principal apparaît sinon conserver la sélection</value>
+  </data>
 </root>

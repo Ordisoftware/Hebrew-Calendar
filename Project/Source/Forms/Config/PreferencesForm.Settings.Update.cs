@@ -100,6 +100,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
       Settings.SaveImageCountWarning = (int)EditSaveImageCountWarning.Value;
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
+      Settings.MainFormShownGoToToday = EditMainFormShownGoToToday.Checked;
       // HotKey
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
       Settings.GlobalHotKeyPopupMainFormKey = (int)(Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;

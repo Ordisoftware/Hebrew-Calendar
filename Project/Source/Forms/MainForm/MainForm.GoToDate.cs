@@ -31,9 +31,10 @@ namespace Ordisoftware.Hebrew.Calendar
     internal void GoToDate(DateTime date)
     {
       if ( !Globals.IsReady || IsGenerating || GoToDateMutex ) return;
-      GoToDateMutex = true;
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;
+      if ( CurrentDay != null && CurrentDay.Date == SQLiteDate.ToString(date) ) return;
+      GoToDateMutex = true;
       SystemManager.TryCatch(() =>
       {
         if ( NavigationForm.Instance != null )
