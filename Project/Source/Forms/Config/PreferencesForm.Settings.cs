@@ -33,6 +33,44 @@ namespace Ordisoftware.Hebrew.Calendar
     private NullSafeOfStringDictionary<DataExportTarget> ExportTarget
       = ExportHelper.CreateExportTargets(DataExportTarget.XML);
 
+    private void DoResetSettings()
+    {
+      if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetPreferences.GetLang()) ) return;
+      MainForm.Instance.MenuShowHide_Click(null, null);
+      MoonMonthsForm.Instance.Hide();
+      StatisticsForm.Instance.Hide();
+      string country = Settings.GPSCountry;
+      string city = Settings.GPSCity;
+      string lat = Settings.GPSLatitude;
+      string lng = Settings.GPSLongitude;
+      string timezone = Settings.TimeZone;
+      long starttime = Program.Settings.BenchmarkStartingApp;
+      long loadtime = Program.Settings.BenchmarkLoadData;
+      int shabat = EditShabatDay.SelectedIndex;
+      int bookmarksCount = Settings.DateBookmarksCount;
+      Settings.Reset();
+      Settings.DateBookmarksCount = bookmarksCount;
+      Settings.UpgradeResetRequiredV3_0 = false;
+      Settings.UpgradeResetRequiredV3_6 = false;
+      Settings.UpgradeResetRequiredV4_1 = false;
+      Settings.UpgradeResetRequiredV5_10 = false;
+      Settings.FirstLaunchV4 = false;
+      Settings.Save();
+      DoReset = true;
+      Reseted = true;
+      Settings.GPSCountry = country;
+      Settings.GPSCity = city;
+      Settings.GPSLatitude = lat;
+      Settings.GPSLongitude = lng;
+      Settings.TimeZone = timezone;
+      Settings.ShabatDay = shabat;
+      Settings.RestoreMainForm();
+      Settings.LanguageSelected = Languages.Current;
+      Settings.BenchmarkStartingApp = starttime;
+      Settings.BenchmarkLoadData = loadtime;
+      Close();
+    }
+
     private void DoExportSettings()
     {
       SaveSettingsDialog.FileName = Globals.AssemblyTitle + " Settings";
@@ -78,44 +116,6 @@ namespace Ordisoftware.Hebrew.Calendar
         DisplayManager.ShowError(ex.Message);
         Program.Settings.Reload();
       }
-    }
-
-    private void DoResetSettings()
-    {
-      if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetPreferences.GetLang()) ) return;
-      MainForm.Instance.MenuShowHide_Click(null, null);
-      MoonMonthsForm.Instance.Hide();
-      StatisticsForm.Instance.Hide();
-      string country = Settings.GPSCountry;
-      string city = Settings.GPSCity;
-      string lat = Settings.GPSLatitude;
-      string lng = Settings.GPSLongitude;
-      string timezone = Settings.TimeZone;
-      long starttime = Program.Settings.BenchmarkStartingApp;
-      long loadtime = Program.Settings.BenchmarkLoadData;
-      int shabat = EditShabatDay.SelectedIndex;
-      int bookmarksCount = Settings.DateBookmarksCount;
-      Settings.Reset();
-      Settings.DateBookmarksCount = bookmarksCount;
-      Settings.UpgradeResetRequiredV3_0 = false;
-      Settings.UpgradeResetRequiredV3_6 = false;
-      Settings.UpgradeResetRequiredV4_1 = false;
-      Settings.UpgradeResetRequiredV5_10 = false;
-      Settings.FirstLaunchV4 = false;
-      Settings.Save();
-      DoReset = true;
-      Reseted = true;
-      Settings.GPSCountry = country;
-      Settings.GPSCity = city;
-      Settings.GPSLatitude = lat;
-      Settings.GPSLongitude = lng;
-      Settings.TimeZone = timezone;
-      Settings.ShabatDay = shabat;
-      Settings.RestoreMainForm();
-      Settings.LanguageSelected = Languages.Current;
-      Settings.BenchmarkStartingApp = starttime;
-      Settings.BenchmarkLoadData = loadtime;
-      Close();
     }
 
   }
