@@ -17,9 +17,6 @@ using System.Linq;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Text;
-using System.Configuration;
-using System.Xml.Linq;
-using System.Xml.XPath;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
@@ -899,57 +896,6 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private NullSafeOfStringDictionary<DataExportTarget> ExportTarget
-      = ExportHelper.CreateExportTargets(DataExportTarget.XML);
-
-    private void ActionExport_Click(object sender, EventArgs e)
-    {
-      SaveSettingsDialog.FileName = Globals.AssemblyTitle + " Settings";
-      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
-          SaveSettingsDialog.FilterIndex = index + 1;
-      if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-      Program.Settings.Store();
-      var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-      config.SaveAs(SaveSettingsDialog.FileName);
-    }
-
-    private void ActionImport_Click(object sender, EventArgs e)
-    {
-      OpenSettingsDialog.FileName = "";
-      if ( OpenSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-      MainForm.Instance.MenuShowHide_Click(null, null);
-      MoonMonthsForm.Instance.Hide();
-      StatisticsForm.Instance.Hide();
-      long starttime = Program.Settings.BenchmarkStartingApp;
-      long loadtime = Program.Settings.BenchmarkLoadData;
-      try
-      {
-        var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-        string appSettingsXmlName = Properties.Settings.Default.Context["GroupName"].ToString();
-        var import = XDocument.Load(OpenSettingsDialog.FileName);
-        var settings = import.XPathSelectElements("//" + appSettingsXmlName);
-        config.GetSectionGroup("userSettings")
-              .Sections[appSettingsXmlName]
-              .SectionInformation
-              .SetRawXml(settings.Single().ToString());
-        config.Save(ConfigurationSaveMode.Modified);
-        ConfigurationManager.RefreshSection("userSettings");
-        Program.Settings.Reload();
-        Program.Settings.BenchmarkStartingApp = starttime;
-        Program.Settings.BenchmarkLoadData = loadtime;
-        Program.Settings.Save();
-        Program.Settings.Retrieve();
-        DoReset = true;
-        Reseted = true;
-        Close();
-      }
-      catch ( Exception ex )
-      {
-        DisplayManager.ShowError(ex.Message);
-        Program.Settings.Reload();
-      }
-    }
   }
 
 }

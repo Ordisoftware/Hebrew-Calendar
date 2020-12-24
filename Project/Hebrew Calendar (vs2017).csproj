@@ -377,6 +377,9 @@
     <Compile Include="Source\Forms\Boxes\Tools\SelectExportTargetForm.Designer.cs">
       <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Config\PreferencesForm.ImportExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Theme.cs">
       <SubType>Form</SubType>
     </Compile>
