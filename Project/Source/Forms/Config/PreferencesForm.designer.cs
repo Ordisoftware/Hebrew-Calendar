@@ -235,6 +235,8 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.ActionExport = new System.Windows.Forms.Button();
+      this.ActionImport = new System.Windows.Forms.Button();
       this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
@@ -243,6 +245,8 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
+      this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -292,6 +296,8 @@
       // 
       // PanelButtons
       // 
+      this.PanelButtons.Controls.Add(this.ActionExport);
+      this.PanelButtons.Controls.Add(this.ActionImport);
       this.PanelButtons.Controls.Add(this.ActionResetSettings);
       this.PanelButtons.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelButtons, "PanelButtons");
@@ -1974,6 +1980,24 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // ActionExport
+      // 
+      this.ActionExport.AllowDrop = true;
+      this.ActionExport.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionExport, "ActionExport");
+      this.ActionExport.Name = "ActionExport";
+      this.ActionExport.UseVisualStyleBackColor = true;
+      this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
+      // 
+      // ActionImport
+      // 
+      this.ActionImport.AllowDrop = true;
+      this.ActionImport.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionImport, "ActionImport");
+      this.ActionImport.Name = "ActionImport";
+      this.ActionImport.UseVisualStyleBackColor = true;
+      this.ActionImport.Click += new System.EventHandler(this.ActionImport_Click);
+      // 
       // EditGPSLatitude
       // 
       this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
@@ -2037,6 +2061,10 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
+      // 
+      // SaveSettingsDialog
+      // 
+      this.SaveSettingsDialog.FileName = "Date Bookmarks";
       // 
       // PreferencesForm
       // 
@@ -2321,5 +2349,9 @@
     private System.Windows.Forms.Button ActionHotKeyInfo;
     private System.Windows.Forms.Label LabelHotKeyStatus;
     private System.Windows.Forms.CheckBox EditMainFormShownGoToToday;
+    private System.Windows.Forms.Button ActionExport;
+    private System.Windows.Forms.Button ActionImport;
+    private System.Windows.Forms.SaveFileDialog SaveSettingsDialog;
+    private System.Windows.Forms.OpenFileDialog OpenSettingsDialog;
   }
 }
