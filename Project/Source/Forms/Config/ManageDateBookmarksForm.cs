@@ -149,7 +149,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      SaveBookmarksDialog.FileName = "Date Bookmarks";
+      SaveBookmarksDialog.FileName = Globals.AssemblyTitle + " Date Bookmarks";
       for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
         if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           SaveBookmarksDialog.FilterIndex = index + 1;
