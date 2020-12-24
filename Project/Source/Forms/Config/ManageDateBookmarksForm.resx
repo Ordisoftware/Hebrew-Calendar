@@ -124,17 +124,15 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVDhPhZPLaxNRFMYH/xA37lyJj7Yq8dFFH0mrgitx
-        6bK6cCGt4gsmjTstDQUXCiJNIjSTTIwiNrTIQC3ahUJ1IYJW+0gmrc3LaadJ0897Tu4kmdrqDz7uuZdz
-        vnvunbmKQyKZzGm6jmgshrG6NB61eBwxXc/K1J2hpH9hmiaimhaW6X9DOxPfvs8J/ZCa47WnoRCPmXQa
-        0Xg8IkvcUKvEz/kFzC8ssigmRsNhlCsVjqkTcdSoLGswpmmcsCR2SWcyrMX0Eq+9n5lhE6cTOq4sa+AY
-        mGYW2exyXZa1xuvN6Prz3Q2WV1ax8msVuVwBVmkdG9Ymyla1LiL1cnJ3g1w+j3yhAHutjLuRW2jpP4jW
-        gcNCR1hHr7fi9B0PvIOdz2RpDcegWCzhd8kCxJ1R8cTnIbyevY/x2SGkPg2L8QGMLyPw+jvdXTgGdGZ7
-        fYNj2jH5QeX4iXEFF0b2cPzio4outWNnA9u2USnXPlnbQAsi764iMt3P88dGH4+j05eFwfYO5H+wWa1i
-        a4tDcd42PJq6hL7QXlF0rbYoeGhcRLfa5Tagd7Cd4zeOIWicl7MGQeOcuAOv2yCWSBTpB3Eez6vkuLjt
-        kxieOoN7k+3wp05ATXkQmDiF4Nuz6A343AaCA0KHmtV+2/O1Z9ALn9/HO5Io7g30oPtmxxuR81/2C7lM
-        m7RPURTlD3THQHnMyk2+AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAbxJREFUOE+tUssuQ1EUvYNG20gw5C8k/QWPmPgAfyAxECZoS4QQiQiJZ1IJQXRC
+        W9rbSksjomLCwOO2tNymA5UI8X5b9j73qupIw0pW9rrnrL3O4x7pzyjtWnEXtcsw22QYrTJMgj69fmue
+        Zx/79VYNPJgPismvt2ow23zazEYFsFkDRKrR7ksBW1WCQkdIRyqFrdCeG0BbZNg9CXR4VXTJKnr9J+iW
+        TwV7Ayfo8avoC6ho8CjiSHqrBpPVKwJi90D8AVCfgX6fgiTV5AswGIjhguaviVKzW3gLWpe/Q74Ckk9A
+        iprO3rhJQZrq+TswGopBalwgLqJ2Zgenj8IOQ8uSFvIVMODdx5B8gOEVBWPBKEaoMidIZyNxR4vRThn8
+        AzIBl7TiFa14S3o8qIB8oFPBsRoF+/mbPWna6QUdjfEj4PGDSPWVOBlSQF5QHubXjyA1uQTrnLs0osHQ
+        Ko5gyQQ4ggdwhA4xtRbFzHoM0+GooHPjGK5IHPJ2IvcSLeIOzHpANmbDiq6AuSxd79oD+zPNjHxfYklH
+        zkMq6/TfcAgnG9u8MDFJi5qleZ6fMfv11gzKibyl35L9/wVJ+gSokUfg/l5p0QAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -168,16 +166,15 @@
   <data name="ActionImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAgtJREFUOE99k8tPE2EUxfsf+Ee4My6MwPhIlGAgtQ+NCzcu2BgXusZQNCHV2EJq
-        SIwm3aGJRIoJnc7UAhIggBg0sSEEjQtjoiiPdgrSlwNDSzl891raaUs9yck9c2fub75vHhYA7HAkkpRV
-        FcFQCMMly1xlRUFIVROWKtFcCUAX/U+aphE8UJxliXYZQHcm/fi5LPyr6GXuDQwOco3HYggqylBxvhJA
-        SyX9XlnFyuoamzLpVSCAXD7PmVYithOsBcgynce6uEssHmevxda59ykaZcjhSmi7dQGalkAisVGyrm9z
-        3yxVfVMfsLG5hc0/W0gm09CzO9jV95DTCyWTJken6wOSqRRS6TSM7RweDHVDcp2G1NUoagP77L0mtLgv
-        wNFjfU1zNYBMJou/WR0Qz4yGp74+wdiSD5HFHows9mL8cx/mvvlh91rp8loA7dnY2eUsuRqhLrg5mzW2
-        1AvbozoAwzCQz/17ZZKrCS/nb3Mm9c/dwc3nxzAc7YTNc5laJkDxO9grFLC/zxFnXBL8szc4D3zs4Bpc
-        eIgXH27B7rHRYRlA/0G1zt8/h6fvrnG+GzqJkS99nP3vrwuAnWIZoITDGfpADn+et5EJ8bSb8Wz+Knwz
-        bXg8Y4Vvuk24Ff3RdlzxOioBQqeEG8y+5L743em1w+lxCDu5OoRp2NZtna0GHKUTwhVQk48DsBwAe3nQ
-        hDZnsaQAAAAASUVORK5CYII=
+        wwAADsMBx2+oZAAAActJREFUOE+lU+9LU2EYfSFJL5FfIxL7Fwb9C6L4t0j1IT+kzUHbYl8ClZAytMj2
+        SRyTdu/d1lYzmPYPlHcT2malBgXa77T0eJ7nbnrFL4kHzp7D+x7O87zvu2sAnIrmcqKg7CYvxvPznREX
+        VthF+y0XHUqnWQ+17IuP/s2DgK47z40sngTiPwi4xADpoCj3AIv9wFIfIs4H4HWvUvUStewTVtjxA2T8
+        C7EcztzM6EbUruG200DMbSCRrSHu1pWio04dI8/eqc9iQ+3Ms5jzI353c3UOG/+A99vAKnnX8bS2dP0P
+        sPJTrbwPG6Zj2MbZ4QzMjTRWuSkwA7PYYv2yB4znPXxioHAs52H9L8ObPg3wpY8Gkxu/fG2upzD9oorJ
+        YhUTDBHeL1RwL7eMUeeNejRgbQf4SNZ+A59ZhQJzLQUOgIdFDz9YhQ8KHr6zbu7yh9CAc2EblhxhMO2v
+        EnIPLTxiAKdXTlPzBGAvhQYQV4SdkcNLnCuvILlQwUypgqevqnjCKhT9+KWHqeJb9WpA8BnbhvxnDCJZ
+        8prqqBZYrQChP8Up/on6LUSzX2VRktv5vPLEMqbWgJZ98dH/TToHESL1Tv6ToWOf58kIsw9Be8/qHF26
+        hAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -629,11 +626,11 @@
   <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="SaveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="SaveBookmarksDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>155, 17</value>
+  <metadata name="OpenBookmarksDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>186, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -656,16 +653,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Manage date bookmarks</value>
   </data>
-  <data name="&gt;&gt;SaveFileDialog.Name" xml:space="preserve">
-    <value>SaveFileDialog</value>
+  <data name="&gt;&gt;SaveBookmarksDialog.Name" xml:space="preserve">
+    <value>SaveBookmarksDialog</value>
   </data>
-  <data name="&gt;&gt;SaveFileDialog.Type" xml:space="preserve">
+  <data name="&gt;&gt;SaveBookmarksDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;OpenFileDialog.Name" xml:space="preserve">
-    <value>OpenFileDialog</value>
+  <data name="&gt;&gt;OpenBookmarksDialog.Name" xml:space="preserve">
+    <value>OpenBookmarksDialog</value>
   </data>
-  <data name="&gt;&gt;OpenFileDialog.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpenBookmarksDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

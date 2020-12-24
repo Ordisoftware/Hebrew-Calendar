@@ -46,9 +46,9 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      SaveFileDialog.InitialDirectory = Program.Settings.GetExportDirectory();
-      SaveFileDialog.Filter = Program.GridExportTargets.CreateFilters();
-      OpenFileDialog.Filter = SaveFileDialog.Filter;
+      SaveBookmarksDialog.InitialDirectory = Program.Settings.GetExportDirectory();
+      SaveBookmarksDialog.Filter = Program.GridExportTargets.CreateFilters();
+      OpenBookmarksDialog.Filter = SaveBookmarksDialog.Filter;
     }
 
     private void ManageDateBookmarks_Load(object sender, EventArgs e)
@@ -149,12 +149,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      SaveFileDialog.FileName = "Date Bookmarks";
+      SaveBookmarksDialog.FileName = "Date Bookmarks";
       for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
         if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
-          SaveFileDialog.FilterIndex = index + 1;
-      if ( SaveFileDialog.ShowDialog() != DialogResult.OK ) return;
-      string extension = Path.GetExtension(SaveFileDialog.FileName);
+          SaveBookmarksDialog.FilterIndex = index + 1;
+      if ( SaveBookmarksDialog.ShowDialog() != DialogResult.OK ) return;
+      string extension = Path.GetExtension(SaveBookmarksDialog.FileName);
       var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
       switch ( selected )
       {
@@ -163,14 +163,14 @@ namespace Ordisoftware.Hebrew.Calendar
           lines.Add("Date");
           foreach ( DateItem item in ListBox.Items )
             lines.Add(SQLiteDate.ToString(item.Date));
-          File.WriteAllLines(SaveFileDialog.FileName, lines);
+          File.WriteAllLines(SaveBookmarksDialog.FileName, lines);
           break;
         case DataExportTarget.JSON:
           var data = ListBox.Items.Cast<DateItem>().Select(item => new { item.Date });
           var dataset = new DataSet("DataSet");
           dataset.Tables.Add(data.ToDataTable("Date Bookmarks"));
           string str = JsonConvert.SerializeObject(dataset, Formatting.Indented);
-          File.WriteAllText(SaveFileDialog.FileName, str);
+          File.WriteAllText(SaveBookmarksDialog.FileName, str);
           break;
         default:
           throw new NotImplementedExceptionEx(selected);
@@ -179,18 +179,18 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionImport_Click(object sender, EventArgs e)
     {
-      SaveFileDialog.FileName = "";
+      OpenBookmarksDialog.FileName = "";
       for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
         if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
-          OpenFileDialog.FilterIndex = index + 1;
-      if ( OpenFileDialog.ShowDialog() != DialogResult.OK ) return;
-      string extension = Path.GetExtension(OpenFileDialog.FileName);
+          OpenBookmarksDialog.FilterIndex = index + 1;
+      if ( OpenBookmarksDialog.ShowDialog() != DialogResult.OK ) return;
+      string extension = Path.GetExtension(OpenBookmarksDialog.FileName);
       var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
       int indexListBox = 0;
       switch ( selected )
       {
         case DataExportTarget.CSV:
-          var lines = File.ReadAllLines(OpenFileDialog.FileName);
+          var lines = File.ReadAllLines(OpenBookmarksDialog.FileName);
           foreach ( string line in lines.Skip(1) )
           {
             if ( indexListBox > ListBox.Items.Count ) break;
@@ -201,7 +201,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           break;
         case DataExportTarget.JSON:
-          string str = File.ReadAllText(OpenFileDialog.FileName);
+          string str = File.ReadAllText(OpenBookmarksDialog.FileName);
           var dataset = JsonConvert.DeserializeObject<DataSet>(str);
           foreach ( DataRow row in dataset.Tables[0].Rows )
           {
