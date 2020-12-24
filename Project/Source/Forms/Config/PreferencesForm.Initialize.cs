@@ -34,6 +34,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoFormLoad()
     {
       SaveSettingsDialog.InitialDirectory = Program.Settings.GetExportDirectory();
+      OpenSettingsDialog.InitialDirectory = SaveSettingsDialog.InitialDirectory;
       SaveSettingsDialog.Filter = ExportTarget.CreateFilters();
       OpenSettingsDialog.Filter = SaveSettingsDialog.Filter;
       LoadEditIntervals();
