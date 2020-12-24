@@ -295,7 +295,7 @@
     <value>SelectYear1</value>
   </data>
   <data name="&gt;&gt;SelectYear1.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectYear1.Parent" xml:space="preserve">
     <value>PanelOptions</value>
@@ -319,7 +319,7 @@
     <value>SelectYear2</value>
   </data>
   <data name="&gt;&gt;SelectYear2.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectYear2.Parent" xml:space="preserve">
     <value>PanelOptions</value>
@@ -446,6 +446,12 @@
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>984, 461</value>
+  </data>
+  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, -1</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 400</value>

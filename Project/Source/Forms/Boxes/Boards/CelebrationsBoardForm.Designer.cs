@@ -166,13 +166,9 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.ClientSize = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormClientSize;
       this.Controls.Add(this.DataGridView);
       this.Controls.Add(this.PanelOptions);
       this.Controls.Add(this.PanelBottom);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormLocation;
       this.Name = "CelebrationsBoardForm";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CelebrationsBoardForm_FormClosed);
