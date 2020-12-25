@@ -19,6 +19,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using MoreLinq;
 
 namespace Ordisoftware.Core
 {
@@ -246,8 +247,9 @@ namespace Ordisoftware.Core
                               .TextBox
                               .Lines
                               .ToList()
-                              .Select(l => (l.StartsWith("# ") ? l.Remove(0,2) : l).TrimStart())
-                              .Where(l => !l.StartsWith("--"));
+                              .Select(l => ( l.StartsWith("# ") ? l.Remove(0, 2) : l ).TrimStart())
+                              .Where(l => !l.StartsWith("--"))
+                              .TakeLast(100);
       body.Append(lines.AsMultiLine());
       return body;
     }

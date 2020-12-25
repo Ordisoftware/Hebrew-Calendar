@@ -24,7 +24,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class ManageDateBookmarksForm : Form
+  public partial class EditDateBookmarksForm : Form
   {
 
     private class DateItem
@@ -38,11 +38,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public bool Run()
     {
-      using ( var form = new ManageDateBookmarksForm() )
+      using ( var form = new EditDateBookmarksForm() )
         return form.ShowDialog() == DialogResult.OK;
     }
 
-    private ManageDateBookmarksForm()
+    private EditDateBookmarksForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

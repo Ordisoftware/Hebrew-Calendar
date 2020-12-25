@@ -38,12 +38,14 @@ namespace Ordisoftware.Core
 
     static public bool Run(string title, IEnumerable<DataFile> files)
     {
-      var form = new DataFileEditorForm();
-      form.Text = title;
-      foreach ( var item in files ) AddTab(form.TabControl, item);
-      bool result = form.ShowDialog() == DialogResult.OK;
-      if ( result ) foreach ( var item in files ) item.ReLoad();
-      return result;
+      using ( var form = new DataFileEditorForm() )
+      {
+        form.Text = title;
+        foreach ( var item in files ) AddTab(form.TabControl, item);
+        bool result = form.ShowDialog() == DialogResult.OK;
+        if ( result ) foreach ( var item in files ) item.ReLoad();
+        return result;
+      }
     }
 
     private static void AddTab(TabControl tabcontrol, DataFile file)

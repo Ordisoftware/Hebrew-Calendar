@@ -92,6 +92,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         LanguageChanged = false;
         DoReset = false;
+        form.Dispose();
         form = new PreferencesForm();
         if ( !MainForm.Instance.Visible )
           form.ShowInTaskbar = true;
@@ -113,6 +114,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
         if ( result ) CalendarDates.Instance.Clear();
       });
+      form.Dispose();
       return result;
     }
 

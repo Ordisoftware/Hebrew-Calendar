@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -88,6 +88,8 @@ namespace Ordisoftware.Hebrew.Calendar
       var date1 = MonthCalendar1.SelectionStart;
       var date2 = MonthCalendar2.SelectionStart;
       bool isVisible = Instance.Visible;
+      var location = Instance.Location;
+      Instance.Dispose();
       Instance = new DatesDiffCalculatorForm();
       Run(new Tuple<DateTime, DateTime>(date1, date2), true);
       Instance.MonthCalendar1.Tag = date1;
@@ -95,6 +97,11 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.DateChanged(true);
       AllowClose = true;
       Close();
+      if ( isVisible )
+      {
+        Instance.Show();
+        Instance.Location = location;
+      }
     }
 
     private bool AllowClose;
@@ -164,7 +171,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Enabled = false;
       try
       {
-        if ( ManageDateBookmarksForm.Run() )
+        if ( EditDateBookmarksForm.Run() )
           LoadMenuBookmarks();
       }
       finally

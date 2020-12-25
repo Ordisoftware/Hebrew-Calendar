@@ -145,11 +145,11 @@ namespace Ordisoftware.Core
       // 
       // ActionViewLog
       // 
-      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
       this.ActionViewLog.FlatAppearance.BorderSize = 0;
       this.ActionViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       this.ActionViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.ActionViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
       this.ActionViewLog.Name = "ActionViewLog";
       this.ActionViewLog.UseVisualStyleBackColor = true;
       this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click);
@@ -171,7 +171,6 @@ namespace Ordisoftware.Core
       this.Controls.Add(this.PictureBox);
       this.Controls.Add(this.EditMessage);
       this.Controls.Add(this.ActionViewStack);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ExceptionForm";
