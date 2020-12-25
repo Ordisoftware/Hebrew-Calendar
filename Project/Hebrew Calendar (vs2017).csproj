@@ -930,7 +930,7 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="Licenses\MPL 2.0.rtf" />
-    <None Include="packages.config" />
+    <None Include="Packages.config" />
     <None Include="Properties\DataSources\ApplicationStatistics.datasource" />
     <None Include="Properties\DataSources\DatesDiffItem.datasource" />
     <None Include="Properties\DataSources\Ordisoftware.Core.SystemStatistics.datasource" />
