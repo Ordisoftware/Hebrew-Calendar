@@ -124,16 +124,16 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHlSURBVDhPrZJJaxRRFIULRbs6wQFXBhUSXbkRwYV/wAER
-        /AH+A8GFw85MSsSoSDBgNIEWDFHMRjuB7uoO3RpCsMWFXTjEqtYkVpOFCqI4j/Hz3leVSpuVQQ8c7ql6
-        95z7XtWz/hlrO0aGVrY5JFscEs0OtmE2qvNa17VP+yNrCH25GKyS/sgaItmSDVfGd8CdPVDaTVt2Bu7u
-        MjS6JLq007TVty4MkC0qWoenaM8EdDgBnblpTjrPDTvz05zKBZzJBxwc9syRImsIuzljAiqfYPIzBN/g
-        XNajKrX6Hc7nK7yW9XdC6+gQe/3t1J3ung+ZC6h+hRkxvfipJo+XUl/NwsViBevQDeFN9g2UaXLraHRt
-        lh/vD0PmAroyj+l2Jrgw4nGp4NMjVdknWqduEuP68lLW3V9iuPnBGvNX4oA3MvGtTPwgurfg8VGqnIrU
-        LZ8tDxvM1I1ufRygz38EfPkllPpDeLnoIXlIHtfHnmIdSRvuH3RpLCfYUF6GfbZLj7AtDkgVJkgVn3Dl
-        ts/AWIX+Ud9wcPwZ6dIkzr0p8xGb3CQreg+HZkUyCqjF1VEvUnCtRh9IP0L7Y7NisTdxdfuCi9RwIvde
-        QzQ5cSyDrRRtao3Wdb3G2h9ZY2wV6pb+ltr/v2BZvwEk6iTSl7yOKwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAeVJREFUOE+tkklrFFEUhQtFuzrBAVcGFRJduRHBhX/AARH8Af4DwYXDzkxKxKhI
+        MGA0gRYMUcxGO4Hu6g7dGkKwxYVdOMSq1iRWk4UKojiP8fPeV5VKm5VBDxzuqXr3nPte1bP+GWs7RoZW
+        tjkkWxwSzQ62YTaq81rXtU/7I2sIfbkYrJL+yBoi2ZINV8Z3wJ09UNpNW3YG7u4yNLokurTTtNW3LgyQ
+        LSpah6dozwR0OAGduWlOOs8NO/PTnMoFnMkHHBz2zJEiawi7OWMCKp9g8jME3+Bc1qMqtfodzucrvJb1
+        d0Lr6BB7/e3Une6eD5kLqH6FGTG9+Kkmj5dSX83CxWIF69AN4U32DZRpcutodG2WH+8PQ+YCujKP6XYm
+        uDDicang0yNV2Sdap24S4/ryUtbdX2K4+cEa81figDcy8a1M/CC6t+DxUaqcitQtny0PG8zUjW59HKDP
+        fwR8+SWU+kN4uegheUge18eeYh1JG+4fdGksJ9hQXoZ9tkuPsC0OSBUmSBWfcOW2z8BYhf5R33Bw/Bnp
+        0iTOvSnzEZvcJCt6D4dmRTIKqMXVUS9ScK1GH0g/Qvtjs2KxN3F1+4KL1HAi915DNDlxLIOtFG1qjdZ1
+        vcbaH1ljbBXqlv6W2v+/YFm/ASTqJNKXvI4rAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -166,16 +166,16 @@
   </data>
   <data name="ActionImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHISURBVDhPrVJNS1tREL2NxeRhKe40caGF/oCCf6G0+Fuk
-        deGmahLIR3GjVAmlVYzFxpUoLSbvJZL4UbB2lbQL9SVCk2ihdSHET1SsPc5MnvmgG4s9cN4c7sycO/fe
-        p/4rWgMLH+97DWhuA/YBAw6hbsWq5jzXtQYTJau1DF78F3C91VoG7yBYfQx87gLWnsKr/wC+PBGKXiPN
-        eYLm1qsGLYEEGl5EJeGP5eHTiwgYRQzG8wgaBSFrv16AZ/671Gm0odVO47+M4EHGAfVsFr9+AzvnwDZx
-        SDclXuvCGbB1Iv10HzEoR38Mjf1RqN4PcKYVHn5rguqewT4V7P0BRhdM7JIhcyRh4ucFmZNJxaAtbQPT
-        lb4jBmLy9R5UzxzCizmMpXJ4TSbMN8ksQolNvNLXqwYuq/kvg+dzoAEwnjJxTJH5NmniiGLpkj4EMWhy
-        x6DREWyeSWnusO7hGpNkQNMLw6TpBDjlBEEMCJ3M5uEQ2jN2aZ5d3cL0Shbvl7OIfMphiiKT9bslExOp
-        jToDAT/j3b7yM9Zietm0VL1maLUGhM5b/4lOf/yAF9nZTs/LT8xjSqzRnOc6py9+aLVW8Igod3JDcv1t
-        oNQV92gwsSlgsykAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAchJREFUOE+tUk1LW1EQvY3F5GEp7jRxoYX+gIJ/obT4W6R14aZqEshHcaNUCaVV
+        jMXGlSgtJu8lkvhRsHaVtAv1JUKTaKF1IcRPVKw9zkye+aAbiz1w3hzuzJw7996n/itaAwsf73sNaG4D
+        9gEDDqFuxarmPNe1BhMlq7UMXvwXcL3VWgbvIFh9DHzuAtaewqv/AL48EYpeI815gubWqwYtgQQaXkQl
+        4Y/l4dOLCBhFDMbzCBoFIWu/XoBn/rvUabSh1U7jv4zgQcYB9WwWv34DO+fANnFINyVe68IZsHUi/XQf
+        MShHfwyN/VGo3g9wphUefmuC6p7BPhXs/QFGF0zskiFzJGHi5wWZk0nFoC1tA9OVviMGYvL1HlTPHMKL
+        OYylcnhNJsw3ySxCiU280terBi6r+S+D53OgATCeMnFMkfk2aeKIYumSPgQxaHLHoNERbJ5Jae6w7uEa
+        k2RA0wvDpOkEOOUEQQwInczm4RDaM3Zpnl3dwvRKFu+Xs4h8ymGKIpP1uyUTE6mNOgMBP+PdvvIz1mJ6
+        2bRUvWZotQaEzlv/iU5//IAX2dlOz8tPzGNKrNGc5zqnL35otVbwiCh3ckNy/W2g1BX3aDCxKWCzKQAA
+        AABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -667,7 +667,7 @@
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ManageDateBookmarksForm</value>
+    <value>EditDateBookmarksForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
