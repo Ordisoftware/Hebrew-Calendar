@@ -93,11 +93,12 @@ namespace Ordisoftware.Hebrew
       File.WriteAllText(filePath, fileLines);
       SystemManager.RunShell(filePath);
       var timer = new Timer();
-      timer.Interval = 30000;
+      timer.Interval = 60000;
       timer.Tick += (_s, _e) =>
       {
         timer.Stop();
-        File.Delete(filePath);
+        try { File.Delete(filePath); }
+        catch { }
       };
       timer.Start();
     }
