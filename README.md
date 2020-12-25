@@ -190,7 +190,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2020.01.01 - Version 6.1
+#### 2021.01.01 - Version 6.1
 
 - Add export celebrations board.
 - Add export and import preferences.
