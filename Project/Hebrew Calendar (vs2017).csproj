@@ -386,10 +386,10 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.Theme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Config\SelectSoundForm.cs">
+    <Compile Include="Source\Forms\Boxes\Select\SelectSoundForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Config\SelectSoundForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Select\SelectSoundForm.Designer.cs">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
@@ -441,11 +441,11 @@
     <Compile Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.Designer.cs">
       <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Config\ManageDateBookmarksForm.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\EditDateBookmarksForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Config\ManageDateBookmarksForm.Designer.cs">
-      <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\Tools\EditDateBookmarksForm.Designer.cs">
+      <DependentUpon>EditDateBookmarksForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\StatisticsForm.cs">
       <SubType>Form</SubType>
@@ -510,10 +510,10 @@
     <Compile Include="Source\Forms\Boxes\Search\SearchEventForm.Designer.cs">
       <DependentUpon>SearchEventForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Config\SelectCityForm.cs">
+    <Compile Include="Source\Forms\Boxes\Select\SelectCityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Config\SelectCityForm.Designer.cs">
+    <Compile Include="Source\Forms\Boxes\Select\SelectCityForm.Designer.cs">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Boxes\Select\SelectBirthTimeForm.cs">
@@ -789,11 +789,11 @@
     <EmbeddedResource Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.resx">
       <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\ManageDateBookmarksForm.fr.resx">
-      <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\EditDateBookmarksForm.fr.resx">
+      <DependentUpon>EditDateBookmarksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\ManageDateBookmarksForm.resx">
-      <DependentUpon>ManageDateBookmarksForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\EditDateBookmarksForm.resx">
+      <DependentUpon>EditDateBookmarksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Tools\SelectExportTargetForm.fr.resx">
       <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
@@ -801,10 +801,10 @@
     <EmbeddedResource Include="Source\Forms\Boxes\Tools\SelectExportTargetForm.resx">
       <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\SelectSoundForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectSoundForm.fr.resx">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\SelectSoundForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectSoundForm.resx">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.fr.resx">
@@ -843,10 +843,10 @@
     <EmbeddedResource Include="Source\Forms\Boxes\Search\SearchEventForm.resx">
       <DependentUpon>SearchEventForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\SelectCityForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectCityForm.fr.resx">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\SelectCityForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectCityForm.resx">
       <DependentUpon>SelectCityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.fr.resx">
@@ -930,7 +930,7 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="Licenses\MPL 2.0.rtf" />
-    <None Include="packages.config" />
+    <None Include="Packages.config" />
     <None Include="Properties\DataSources\ApplicationStatistics.datasource" />
     <None Include="Properties\DataSources\DatesDiffItem.datasource" />
     <None Include="Properties\DataSources\Ordisoftware.Core.SystemStatistics.datasource" />
