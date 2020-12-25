@@ -517,16 +517,16 @@
     <value>True</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 379</value>
+    <value>27, 379</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 13</value>
+    <value>288, 13</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Unmodified rises and sets computation (unknown license) :</value>
+    <value>Unmodified rises and sets computation (UInknown license) :</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -597,6 +597,9 @@
   <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
     <value>35</value>
   </data>
+  <data name="linkLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="linkLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -604,7 +607,7 @@
     <value>313, 366</value>
   </data>
   <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>261, 13</value>
   </data>
   <data name="linkLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -695,16 +698,16 @@
     <value>True</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 366</value>
+    <value>49, 366</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 13</value>
+    <value>266, 13</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Modified moon phase computation (unknown license) :</value>
+    <value>Modified moon phase computation (Unknown license) :</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -1270,6 +1273,9 @@
   <data name="&gt;&gt;linkLabel15.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="linkLabel16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="linkLabel16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1277,7 +1283,7 @@
     <value>313, 483</value>
   </data>
   <data name="linkLabel16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 13</value>
+    <value>244, 13</value>
   </data>
   <data name="linkLabel16.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1304,16 +1310,16 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 483</value>
+    <value>54, 483</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 13</value>
+    <value>261, 13</value>
   </data>
   <data name="label16.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
-    <value>Modified Windows Global Hotkey (no license) :</value>
+    <value>Modified Windows Global Hotkey (Unknown license) :</value>
   </data>
   <data name="&gt;&gt;label16.Name" xml:space="preserve">
     <value>label16</value>
@@ -1515,9 +1521,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>619, 631</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

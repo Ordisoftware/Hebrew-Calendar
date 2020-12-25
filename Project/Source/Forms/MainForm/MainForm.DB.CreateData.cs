@@ -129,9 +129,11 @@ namespace Ordisoftware.Hebrew.Calendar
         GenerateErrors.Clear();
         errors = Settings.GetGPSText() + Globals.NL2 + errors;
         DebugManager.Trace(LogTraceEvent.Data, errors);
-        var form = new ShowTextForm(Text, errors, false, true, 600, 400, false, false);
-        form.TextBox.Font = new System.Drawing.Font("Courier new", 8);
-        form.ShowDialog();
+        using ( var form = new ShowTextForm(Text, errors, false, true, 600, 400, false, false) )
+        {
+          form.TextBox.Font = new System.Drawing.Font("Courier new", 8);
+          form.ShowDialog();
+        }
         if ( DisplayManager.QueryYesNo(SysTranslations.ContactSupport.GetLang()) )
           ExceptionForm.Run(new ExceptionInfo(this, new TooManyErrorsException(errors)));
         return errors;

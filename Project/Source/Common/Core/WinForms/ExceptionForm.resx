@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="EditMessage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Top, Left, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="EditMessage.Location" type="System.Drawing.Point, System.Drawing">
@@ -133,7 +133,7 @@
     <value>Both</value>
   </data>
   <data name="EditMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>419, 142</value>
+    <value>409, 142</value>
   </data>
   <data name="EditMessage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -206,10 +206,10 @@
     <value>10</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
+    <value>Top, Right</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 235</value>
+    <value>351, 235</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 26</value>
@@ -233,10 +233,10 @@
     <value>9</value>
   </data>
   <data name="ActionTerminate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
+    <value>Top, Right</value>
   </data>
   <data name="ActionTerminate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>286, 235</value>
+    <value>276, 235</value>
   </data>
   <data name="ActionTerminate.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 26</value>
@@ -290,7 +290,7 @@
     <value>12</value>
   </data>
   <data name="EditStack.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="EditStack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 8.25pt</value>
@@ -305,7 +305,7 @@
     <value>Both</value>
   </data>
   <data name="EditStack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>419, 135</value>
+    <value>409, 130</value>
   </data>
   <data name="EditStack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -359,7 +359,7 @@
     <value>12, 55</value>
   </data>
   <data name="EditType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>419, 20</value>
+    <value>409, 20</value>
   </data>
   <data name="EditType.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -403,9 +403,6 @@
   <data name="&gt;&gt;LabelInfo2.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ActionViewInner.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
   <data name="ActionViewInner.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 235</value>
   </data>
@@ -446,7 +443,7 @@
 </value>
   </data>
   <data name="ActionSendMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 8</value>
+    <value>406, 2</value>
   </data>
   <data name="ActionSendMail.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -470,10 +467,10 @@
     <value>0</value>
   </data>
   <data name="ActionSendToGitHub.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
+    <value>Top, Right</value>
   </data>
   <data name="ActionSendToGitHub.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 235</value>
+    <value>137, 235</value>
   </data>
   <data name="ActionSendToGitHub.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 26</value>
@@ -495,9 +492,6 @@
   </data>
   <data name="&gt;&gt;ActionSendToGitHub.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="ActionViewLog.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
   </data>
   <data name="ActionViewLog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -540,10 +534,16 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>444, 416</value>
+    <value>434, 411</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>700, 700</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>450, 270</value>
+    <value>450, 450</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

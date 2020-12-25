@@ -610,7 +610,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionManageBookmarks_Click(object sender, EventArgs e)
     {
-      if ( ManageDateBookmarksForm.Run() )
+      if ( EditDateBookmarksForm.Run() )
         DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
     }
 

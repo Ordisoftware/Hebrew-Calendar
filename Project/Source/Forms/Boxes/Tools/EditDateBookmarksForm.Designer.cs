@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Hebrew.Calendar
 {
-  partial class ManageDateBookmarksForm
+  partial class EditDateBookmarksForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageDateBookmarksForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditDateBookmarksForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionExport = new System.Windows.Forms.Button();
       this.ActionImport = new System.Windows.Forms.Button();

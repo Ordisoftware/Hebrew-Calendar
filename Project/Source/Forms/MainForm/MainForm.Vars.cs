@@ -93,7 +93,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SystemManager.TryCatchManage(() =>
       {
-        Application.OpenForms.ToList().FirstOrDefault(f => f is ManageDateBookmarksForm)?.Close();
+        Application.OpenForms.ToList().FirstOrDefault(f => f is EditDateBookmarksForm)?.Close();
         CelebrationsBoardForm.Instance?.Close();
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();

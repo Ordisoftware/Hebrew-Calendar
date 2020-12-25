@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class NavigationForm : Form
   {
 
-    static public NavigationForm Instance { get; internal set; }
+    static public NavigationForm Instance { get; private set; }
 
     static NavigationForm()
     {
