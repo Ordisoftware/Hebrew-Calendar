@@ -52,6 +52,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Text += Program.Settings.TorahEventsCountAsMoon
               ? AppTranslations.OmerMoon.GetLang()
               : AppTranslations.OmerSun.GetLang();
+      Text += " - Shabat : ";
+      Text += AppTranslations.DayOfWeek.GetLang((DayOfWeek)Program.Settings.ShabatDay);
       var list = MainForm.Instance.YearsIntervalArray;
       SelectYear1.Fill(list, list.Min());
       SelectYear2.Fill(list, list.Max());
